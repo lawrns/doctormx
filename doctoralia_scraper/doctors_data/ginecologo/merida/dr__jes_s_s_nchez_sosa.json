@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jesús Sánchez Sosa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 165,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1d9fa8/1d9fa8bdc65a24c2c830f1254a5250e6_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "76 # 446 x 45 y 47 Centro,"
+    },
+    {
+      "full": "76 # 446 x 45 y 47 Centro,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-sanchez-sosa/ginecologo/yucatan#address-id=399684&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:43:06.668Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__jes_s_s_nchez_sosa.webp"
+}

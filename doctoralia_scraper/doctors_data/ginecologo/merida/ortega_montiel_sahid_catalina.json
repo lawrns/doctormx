@@ -1,0 +1,25 @@
+{
+  "name": "Ortega Montiel Sahid Catalina",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 544,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/8044e8a9/8044e8a9-d9e0-40e7-bdd2-d541cc9d8009_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 26 Por 7 Y 15 199. Col. Fracc.Altabrisa. ,"
+    },
+    {
+      "full": "Calle 26 Por 7 Y 15 199. Col. Fracc.Altabrisa. ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ortega-montiel-sahid-catalina/ginecologo/merida#address-id=359179&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:45:23.434Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/ortega_montiel_sahid_catalina.webp"
+}

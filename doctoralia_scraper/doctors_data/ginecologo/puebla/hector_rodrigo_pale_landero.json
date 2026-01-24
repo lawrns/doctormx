@@ -1,0 +1,37 @@
+{
+  "name": "Hector Rodrigo Pale Landero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e65d76/e65d7607296bb156698e8b3177fa975b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Reforma 217,"
+    },
+    {
+      "full": "Av. Reforma 127,"
+    },
+    {
+      "full": "3 Pte. 141,"
+    },
+    {
+      "full": "Av. Reforma 217,"
+    },
+    {
+      "full": "Av. Reforma 127,"
+    },
+    {
+      "full": "3 Pte. 141,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-rodrigo-pale-landero/ginecologo/tehuacan#address-id=221658&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:33:46.267Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/hector_rodrigo_pale_landero.webp"
+}

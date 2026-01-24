@@ -1,0 +1,25 @@
+{
+  "name": "Maria Del Carmen Salcedo Correa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f03c1679/f03c1679-faa4-48e0-8163-d3c2bea3eb10_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Fundadores 6547,"
+    },
+    {
+      "full": "Blvd. Fundadores 6547,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-del-carmen-salcedo-correa/ginecologo/tijuana#address-id=193757&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:24:08.211Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/maria_del_carmen_salcedo_correa.webp"
+}

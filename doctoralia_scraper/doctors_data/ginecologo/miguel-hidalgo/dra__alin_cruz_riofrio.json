@@ -1,0 +1,55 @@
+{
+  "name": "Dra. Alin Cruz Riofrio",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 179,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e61fb5c9/e61fb5c9-eec7-4bcb-8370-bac144cff092_small_square.jpg",
+  "about": "¡Hola! Soy la Dra. Alin Cruz Riofrío, ginecóloga y obstetra, y mi misión es acompañarte a vivir una salud plena, informada y libre de prejuicios.Creo firmemente que el bienestar de la mujer es la base de su libertad. Por eso, mi consulta no es solo un espacio de revisión médica, sino un entorno seguro y sin tabúes donde puedes hablar con total libertad. Mi objetivo es que salgas de la consulta no solo con un diagnóstico, sino entendiendo perfectamente cómo funciona tu cuerpo y por qué cada cuidado es un paso hacia tu propio empoderamiento.Mi formación y experienciaMe formé en el Hospital General de México \"Dr. Eduardo Liceaga\" (avalado por la UNAM), el centro hospitalario más grande de América Latina, donde desarrollé una visión clínica, sólida y humana. Mi compromiso con tu salud me lleva a mantenerme a la vanguardia internacional, especializándome en áreas clave que impactan tu calidad de vida:Cirugía de Mínima Invasión: Especialista en Laparoscopía e Histeroscopía (Hospital General de México y la Pontificia Universidad Católica de Chile), buscando siempre los procedimientos menos invasivos y de pronta recuperación para mis pacientes.Manejo Experto en Endometriosis: Cuento con un Máster en Endometriosis por Tech Universidad, enfocándome en brindar soluciones reales a una de las condiciones más complejas de la salud femenina.Prevención y Detección: Experta en Colposcopía y lesiones del tracto genital inferior (Instituto Blackwell / UAG), para cuidar tu salud cervical de forma integral.¿Qué puedes esperar en nuestra consulta?Cero Juicios: Aquí todas las preguntas son válidas y todas las dudas son escuchadas.Claridad: Me tomo el tiempo necesario para explicarte tu patología de forma sencilla.Tu salud no tiene por qué ser un misterio ni una fuente de ansiedad. ¡Agendemos una cita y juntas tomemos el control de tu bienestar!",
+  "addresses": [
+    {
+      "full": "Cantú 11, Piso 3,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $899"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $999"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $5,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $699"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Electrocauterización",
+      "price": "• $5,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alin-cruz-riofrio/ginecologo/ciudad-de-mexico#address-id=537217&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:57:50.793Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__alin_cruz_riofrio.webp"
+}

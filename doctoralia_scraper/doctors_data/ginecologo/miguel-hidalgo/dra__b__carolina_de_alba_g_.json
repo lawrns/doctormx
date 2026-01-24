@@ -1,0 +1,64 @@
+{
+  "name": "Dra. B. Carolina De Alba G.",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 68,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/844c67/844c671ec7fd4f8f2953b783301776b5_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Lomas Verdes 2165. Col. Santiago Occipaco, Naucalpan de Juárez.,"
+    },
+    {
+      "full": "Calle Jaime Balmes 11,"
+    },
+    {
+      "full": "Av Lomas Verdes 2165. Col. Santiago Occipaco, Naucalpan de Juárez.,"
+    },
+    {
+      "full": "Calle Jaime Balmes 11,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/b-carolina-de-alba-g/ginecologo/miguel-hidalgo#address-id=403221&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:03:04.090Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__b__carolina_de_alba_g_.webp"
+}

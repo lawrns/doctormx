@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Ricardo Angel Canseco Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 704,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/beb615/beb61510232d08374ed0f23b5aef2d32_220_square.jpg",
+  "about": "Experto en Colposcopia en Querérato. Se que visitar al ginecólogo puede generar cierta aprehensión, por lo que me esfuerzo en crear un entorno relajado donde te sientas escuchada y apoyada en todo momento. Mi enfoque se basa en la empatía y la comunicación abierta. Quiero que te sientas cómoda al compartir tus preocupaciones. Me especializado en: - Colposcopia - Ginecología y Obstetricia - Laparoscopia - Ultrasonido Y algo de lo que atiendo es: -Virus del papiloma humano (VPH) - Miomas uterinos - Rejuvenecimiento vaginal - Láser Vaginal - Sangrados menstruales irregulares - Enfermedad de los ovarios poliquísticos, entre otros. Estoy comprometido a proporcionar respuestas claras, asegurándome de que estés completamente informada sobre tu salud y opciones de tratamiento. Si buscas un ginecólogo que te brinde la atención personalizada que mereces, te invito a programar una cita. Estoy preparado para cuidar de tu salud y ser tu aliado en tu bienestar ginecológico. No dejes tu salud en manos de cualquiera. ¡ Agenda tu cita por Doctoralia !",
+  "addresses": [
+    {
+      "full": "Av. de las Ciencias 2070,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-angel-canseco-flores/ginecologo/queretaro#address-id=34301&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:42:13.295Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__ricardo_angel_canseco_flores.webp"
+}

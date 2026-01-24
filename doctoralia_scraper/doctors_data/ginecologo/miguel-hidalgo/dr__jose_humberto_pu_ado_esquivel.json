@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jose Humberto Puñado Esquivel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 25,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/122996db/122996db-afa8-4251-8ad5-8504619a6ec9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ejercito Nacional No.542,"
+    },
+    {
+      "full": "Ejercito Nacional No.542,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-humberto-punado-esquivel/ginecologo/miguel-hidalgo#address-id=115945&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:51:42.731Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__jose_humberto_pu_ado_esquivel.webp"
+}

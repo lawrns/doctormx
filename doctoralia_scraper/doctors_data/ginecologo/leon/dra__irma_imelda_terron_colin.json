@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Irma Imelda Terron Colin",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 275,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/07bd7e/07bd7efe1d6de74136a8481a28f98ab7_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Cerro Gordo 311,"
+    },
+    {
+      "full": "Av Cerro Gordo 311,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/irma-imelda-terron-colin/ginecologo/leon#address-id=119138&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:30:14.295Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__irma_imelda_terron_colin.webp"
+}

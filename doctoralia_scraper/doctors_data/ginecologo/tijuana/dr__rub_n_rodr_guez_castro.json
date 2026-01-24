@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Rubén Rodríguez Castro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 90,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/58a047/58a0471066bbf5b6d6d82c3ba1f76f53_220_square.jpg",
+  "about": "Soy un médico especialista comprometido en atender en la mejor manera la salud integral de la mujer a lo largo de su vida.",
+  "addresses": [
+    {
+      "full": "Antonio Caso 2255,"
+    },
+    {
+      "full": "Antonio Caso 2255,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ruben-rodriguez-castro-4/ginecologo/tijuana#address-id=392754&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:43:28.641Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__rub_n_rodr_guez_castro.webp"
+}

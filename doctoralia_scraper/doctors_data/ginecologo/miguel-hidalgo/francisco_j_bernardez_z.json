@@ -1,0 +1,25 @@
+{
+  "name": "Francisco J Bernardez Z",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 375,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/068b62/068b629b5480ca734b3253b382d26ed7_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "torre nueva de consultorios, av. ejercito nacional mexicano 613-903-d, granada, miguel hidalgo,"
+    },
+    {
+      "full": "torre nueva de consultorios, av. ejercito nacional mexicano 613-903-d, granada, miguel hidalgo,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-j-bernardez-z/ginecologo/ciudad-de-mexico#address-id=539281&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:42:04.402Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/francisco_j_bernardez_z.webp"
+}

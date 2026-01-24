@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Norma Angelica Guiza Suarez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3fc0fc18/3fc0fc18-4414-4fa2-81c0-94c53e5c1a52_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Zaragoza Poniente 39 B,"
+    },
+    {
+      "full": "Zaragoza Poniente 39 B,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/norma-angelica-guiza-suarez-2/ginecologo/santiago-de-queretaro#address-id=53875&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:52:30.648Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__norma_angelica_guiza_suarez.webp"
+}

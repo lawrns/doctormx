@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Jaqueline Ruiz Monreal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 885,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/16f4fe60/16f4fe60-813e-4488-a1ea-b9f13218d874_small_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Lopez Mateos Sur#1450, local 22-A, Plaza las villas,"
+    },
+    {
+      "full": "Justo Sierra No. 2620,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Biopsia cervical",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama por marcaje",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jaqueline-ruiz-monreal/ginecologo/tlajomulco-de-zuniga#address-id=33471&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:14:17.855Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__jaqueline_ruiz_monreal.webp"
+}

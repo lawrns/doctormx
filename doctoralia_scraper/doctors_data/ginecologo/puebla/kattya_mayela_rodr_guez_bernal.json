@@ -1,0 +1,25 @@
+{
+  "name": "Kattya Mayela Rodríguez Bernal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 492,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/df46f79b/df46f79b-a4f5-4080-8361-586c764cfabf_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "25 Años Retorno 7 Sur No. 5324 Prados Agua Azul,"
+    },
+    {
+      "full": "25 Años Retorno 7 Sur No. 5324 Prados Agua Azul,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/kattya-mayela-rodriguez-bernal/ginecologo/puebla#address-id=148107&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:22:55.249Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/kattya_mayela_rodr_guez_bernal.webp"
+}

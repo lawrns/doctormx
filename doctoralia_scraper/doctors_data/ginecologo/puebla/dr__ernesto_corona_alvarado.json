@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Ernesto Corona Alvarado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 81,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/15f596cf/15f596cf-7293-45ff-8d71-42045cc1949e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "16 De Septiembre 6178,"
+    },
+    {
+      "full": "16 De Septiembre 6178,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ernesto-corona-alvarado/ginecologo/puebla#address-id=230601&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:22:05.769Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__ernesto_corona_alvarado.webp"
+}

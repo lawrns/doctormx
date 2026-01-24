@@ -1,0 +1,84 @@
+{
+  "name": "Dra. Rosa Sandoval Pirela",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/56e12b/56e12be0973a518e67ba410b9fba51b5_220_square.jpg",
+  "about": "La Clínica de Medicina Reproductiva y Fertilidad de la Dra. Rosa Sandoval Pirela cuenta con más de 10 años de experiencia clínica y de investigación, con una Subespecialidad en Biología de la Reproducción en el Infertility Center of Houston & Center for Women´s Medicine, en Texas y aplicando siempre los más altos estándares terapéuticos y tecnológicos, puedes tener la confianza de que obtendrás siempre los mejores resultados. Para que tengas el mejor tratamiento, con la atención, confianza y tecnología que necesitas Especialidades: Certificada por el Consejo Mexicano de Ginecología y Obstetricia #4162. Ginecología y Obstetricia Instituto Nacional de Perinatología. Fellowship en Endocrinologia Reproductiva e Infertilidad. Infertility Center of Houston And Center For Women´s Medicine, Memorial City Hermann, Houston, Texas.",
+  "addresses": [
+    {
+      "full": "Av. Vialidad De La Barranca S/N,"
+    },
+    {
+      "full": "Miguel Laurent 15 Bis,"
+    },
+    {
+      "full": "Miguel Laurent 15,"
+    },
+    {
+      "full": "Vialidad de la bBarranca s/n, consultorio 401, (Torre de especialidades),"
+    },
+    {
+      "full": "Av. Vialidad De La Barranca S/N,"
+    },
+    {
+      "full": "Miguel Laurent 15 Bis,"
+    },
+    {
+      "full": "Miguel Laurent 15,"
+    },
+    {
+      "full": "Vialidad de la bBarranca s/n, consultorio 401, (Torre de especialidades),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Coito Programado",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Estudio para el embrión (PGS)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-sandoval-pirela/ginecologo/benito-juarez#address-id=343294&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:08:56.938Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__rosa_sandoval_pirela.webp"
+}

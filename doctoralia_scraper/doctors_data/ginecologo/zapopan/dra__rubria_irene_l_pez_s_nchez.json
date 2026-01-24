@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Rubria Irene López Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1055,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f2072f/f2072fd48f6b1b626e72517a4114f5cc_220_square.jpg",
+  "about": "Hola, espero que tu visita a la consulta sea confortable, trato de explicar las veces que sea necesario el padecimiento y las opciones de tratamiento. En cuanto a lo que es control prenatal podemos dar cotizaciones en la consulta y darte también opciones de hospitales y costos reales, en tu trabajo de parto te acompaño monitorizando tu bebé en todo momento para poder llegar a un feliz término del embarazo., ademas en tu visita del post parto asesoro sobre los métodos que puedes utilizar para evitar un embarazo durante la lactancia. Si tu visita es por alguna enfermedad propia de la mujer, podrás obtener tu diagnóstico y el tratamiento adecuado para el mismo .",
+  "addresses": [
+    {
+      "full": "Nebulosa ( 2956 int 9 ),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,250"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Resección cuneiforme de ovarios",
+      "price": ""
+    },
+    {
+      "name": "Retiro de dispositivo DIU",
+      "price": "• $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rubria-irene-lopez-sanchez/ginecologo/guadalajara#address-id=84496&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:08:28.897Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__rubria_irene_l_pez_s_nchez.webp"
+}

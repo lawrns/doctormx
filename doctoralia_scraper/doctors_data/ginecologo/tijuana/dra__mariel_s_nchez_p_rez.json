@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Mariel Sánchez Pérez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 94,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a85369/a85369cbd1a1a545f3c988831088a571_220_square.jpg",
+  "about": "¡Hola! Soy la Dra.Mariel Sánchez, especialista en Ginecología y Obstetricia. Mi pasión es el cuidado integral de la salud de las mujeres, mi objetivo es brindarte atención médica de calidad, apoyo emocional y educación para promover el bienestar en todas las etapas de la vida. ¡Es un placer estar aquí para ayudarte!\"",
+  "addresses": [
+    {
+      "full": "José María Velazco 2524,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mariel-sanchez-perez/ginecologo/tijuana#address-id=494648&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:40:17.299Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__mariel_s_nchez_p_rez.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jose Luis Leon Vazquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e65d76/e65d7607296bb156698e8b3177fa975b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 1 Norte 131 5,"
+    },
+    {
+      "full": "Calle 1 Norte 131 5,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-luis-leon-vazquez/ginecologo/tehuacan#address-id=135772&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:18:59.561Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__jose_luis_leon_vazquez.webp"
+}

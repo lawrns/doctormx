@@ -1,0 +1,25 @@
+{
+  "name": "Miriam Guadalupe Serrano Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 74,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/546a1655/546a1655-9a6f-4fcf-89cd-aca81248cd0c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "TEMISTOCLES 210 4 PISO POLANCO ,"
+    },
+    {
+      "full": "TEMISTOCLES 210 4 PISO POLANCO ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miriam-guadalupe-serrano-garcia/ginecologo/miguel-hidalgo#address-id=16799&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:44:44.724Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/miriam_guadalupe_serrano_garcia.webp"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "Dr. Carlos Enrique Villalaz Villalobos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a09730/a0973038f58fe346577b6c69e99c8b78_220_square.jpg",
+  "about": "Me caracterizo, por se un Ginecólogo que inspira confianza a la paciente, ya que la privacidad y confidencialidad, son parte importante de consulta. Así como también me caracterizo por explicar en forma clara, tomando en cuanta todos los puntos médicos para que la paciente entienda su diagnostico, tratamiento y plan a seguir. Cabe señalar que mi experiencia en el campo de la Ginecología fue adquirida en las mejores universidades y hospitales, del occidente del país. Por ultimo cabe señalar que la pacientes que han tenido oportunidad de visitarme, salen con la mejor expectativa, ya que estoy plenamente interesado en la salud femenina, sus enfermedades y el mejor tratamiento según su patología.",
+  "addresses": [
+    {
+      "full": "Av Manuel J. Clouthier 596,"
+    },
+    {
+      "full": "Av Manuel J. Clouthier 596,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-enrique-villalaz-villalobos/ginecologo/zapopan#address-id=137433&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:22:14.742Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__carlos_enrique_villalaz_villalobos.webp"
+}

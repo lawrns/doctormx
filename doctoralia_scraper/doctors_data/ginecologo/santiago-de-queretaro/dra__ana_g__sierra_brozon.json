@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Ana G. Sierra Brozon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 34,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4fb05a/4fb05a33aee2656d593636e0e889b1c3_220_square.jpg",
+  "about": "Servicios: - Colposcopía y papanicolau - Ultrasonido HD live - Toma de biopsia cervical /endometrial - Tratamiento VPH - Cirugía ginecológica de mínima invasión - Cirugía laparoscópica - Histeroscopías - Tratamiento de miomatosis - Tratamiento de sangrados irregulares - Hormonas femeninas - Menopausia - Consulta de ginecología, anticoncepción. *Trabajo con todas las compañías de seguro.",
+  "addresses": [
+    {
+      "full": "Corregidora #235 Esq. Ignacio Lopez Rayon,"
+    },
+    {
+      "full": "Boulevard Bernardo Quintana 4060,"
+    },
+    {
+      "full": "Corregidora #235 Esq. Ignacio Lopez Rayon,"
+    },
+    {
+      "full": "Boulevard Bernardo Quintana 4060,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-g-sierra-brozon/ginecologo/queretaro#address-id=435597&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:48:13.746Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__ana_g__sierra_brozon.webp"
+}

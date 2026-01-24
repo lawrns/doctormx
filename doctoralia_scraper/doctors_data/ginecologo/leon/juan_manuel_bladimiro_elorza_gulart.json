@@ -1,0 +1,25 @@
+{
+  "name": "Juan Manuel Bladimiro Elorza Gulart",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 499,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2602c2/2602c22e4a6d532bf43241312f00c73a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Francisco I Madero 108,"
+    },
+    {
+      "full": "C. Francisco I Madero 108,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-manuel-bladimiro-elorza-gulart/ginecologo/leon#address-id=205326&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:37:54.500Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/juan_manuel_bladimiro_elorza_gulart.webp"
+}

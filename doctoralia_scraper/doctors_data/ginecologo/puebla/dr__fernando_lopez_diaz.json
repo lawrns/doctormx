@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Fernando Lopez Diaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6eb7ba/6eb7bab176de7c43db6d2a5386d87e22_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Privada 12 A sur 3518-B Centro Médico Anzures,"
+    },
+    {
+      "full": "Privada 12 A sur 3518-B Centro Médico Anzures,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Laparascopia diagnóstica con biopsia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-lopez-diaz/ginecologo/puebla#address-id=48859&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:13:04.615Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__fernando_lopez_diaz.webp"
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Maricruz Puente Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 148,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a3f03922/a3f03922-f2ff-4847-b941-d9d4dcce2088_small_square.jpg",
+  "about": "Brindar atención de calidad para un correcto control prenatal",
+  "addresses": [
+    {
+      "full": "TORRE DE ESPECIALIDADES SAN ANGEL INN ACORA DEL VALLE Av. Cuauhtémoc 1040 CONSULTORIO 1151-3,"
+    },
+    {
+      "full": "CEDPRE LINDAVISTA Avenida Montevideo 303, consultorio 511,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• $3,500"
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• $2,400"
+    },
+    {
+      "name": "Ultrasonido 3D",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ultrasonido doppler bienestar fetal",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ultrasonido estructural",
+      "price": "• $2,400"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• $3,500"
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• $2,400"
+    },
+    {
+      "name": "Ultrasonido 3D",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ultrasonido doppler bienestar fetal",
+      "price": "• $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maricruz-puente-hernandez/ginecologo/ciudad-de-mexico#address-id=467067&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:05:24.906Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__maricruz_puente_hern_ndez.webp"
+}

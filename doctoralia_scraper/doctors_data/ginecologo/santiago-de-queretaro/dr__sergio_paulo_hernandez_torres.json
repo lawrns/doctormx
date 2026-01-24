@@ -1,0 +1,98 @@
+{
+  "name": "Dr. Sergio Paulo Hernandez Torres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 660,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f55e7d1c/f55e7d1c-bd1f-4f65-b495-2de7b6c19fd2_small_square.jpg",
+  "about": "Mi compromiso es ofrecer una atención integral en cada una de las etapas de la vida de la mujer, manteniendo una relación médico paciente con profesionalismo, confidencialidad y respeto. Mi propósito es la prevención y atención oportuna de las patologías gineco-obstétricas procurando estar constantemente actualizado para brindar una atención de calidad.",
+  "addresses": [
+    {
+      "full": "Ignacion Zaragoza 16A Col. Centro Consultorio 1302 Torre 3, Piso 13, Santiago de Querétaro, Queretaro,"
+    },
+    {
+      "full": "Av. de las Ciencias 2058,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $900"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $900"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $3,000"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-paulo-hernandez-torres/ginecologo/santiago-de-queretaro#address-id=149467&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:46:41.671Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__sergio_paulo_hernandez_torres.webp"
+}

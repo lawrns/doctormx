@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Fabiola Kristell Avilez Orzell",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 195,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/22e4f6/22e4f62b779df05ae8094926bbbedd61_220_square.jpg",
+  "about": "Conóceme, soy ginecóloga obstetra. Me presento, soy la doctora Fabiola Avilez, tengo una licenciatura en medicina general por la Universidad Autónoma de Guadalajara y posteriormente me especialicé en Ginecología y Obstetricia, estoy certificada por el Consejo Mexicano de Ginecología y Obstetricia. Cuento con un diplomado en Laparoscopia Ginecológica avalado por la Universidad Autónoma de Querétaro y un diplomado en Colposcopia y Patología Vulvovaginal avalado por la Universidad Autónoma de Coahuila. Me pongo a tus órdenes para agendar tu chequeo anual, consulta de revisión, control prenatal o cirugía laparoscópica. Bienvenidas todas a esta nueva aventura de conocernos y ser tu Ginecóloga, de confianza.",
+  "addresses": [
+    {
+      "full": "Hospital MAC León - Piso 10 Consultorio 1019,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $16,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fabiola-kristell-avilez-orzell/ginecologo/leon#address-id=451345&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:25:49.201Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__fabiola_kristell_avilez_orzell.webp"
+}

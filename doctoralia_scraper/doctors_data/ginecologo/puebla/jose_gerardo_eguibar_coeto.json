@@ -1,0 +1,25 @@
+{
+  "name": "Jose Gerardo Eguibar Coeto",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ec06ab2d/ec06ab2d-c069-4b8e-8040-444c5973b660_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Privada De Las Ramblas 4,"
+    },
+    {
+      "full": "Privada De Las Ramblas 4,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-gerardo-eguibar-coeto-2/ginecologo/puebla#address-id=68706&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:24:47.694Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/jose_gerardo_eguibar_coeto.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Tanner Renan Rivero Barcelo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 20,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/532b84ed/532b84ed-b7cb-4956-8aac-68cab8bda0dc_small_square.jpg",
+  "about": "Soy ginecólogo con 15 años de experiencia en ginecoobstetricia, laparoscopia ginecológica e histeroscopia. Mi enfoque está en brindar atención médica personalizada y de calidad, priorizando siempre la salud y el bienestar de mis pacientes. Además, he tenido el privilegio de formar a futuras generaciones como profesor en tres universidades, lo que me permite mantenerme actualizado y comprometido con los avances en mi especialidad. Estoy aquí para acompañarte en cada etapa de tu vida con profesionalismo y empatía.",
+  "addresses": [
+    {
+      "full": "Av. Alfredo Barrera Vazquez O C. 7 215,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tanner-renan-rivero-barcelo/ginecologo/yucatan#address-id=170741&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:29:06.825Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__tanner_renan_rivero_barcelo.webp"
+}

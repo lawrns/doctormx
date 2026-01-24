@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Rene Manrique Vilorio Fiallos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/661950/6619505778bc93522116e6fc6e6bcb20_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Manuel J. Clouthier 669,"
+    },
+    {
+      "full": "Av. Manuel J. Clouthier 669,"
+    },
+    {
+      "full": "Manuel J. Clouthier 669,"
+    },
+    {
+      "full": "Av. Manuel J. Clouthier 669,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rene-manrique-vilorio-fiallos-2/ginecologo/zapopan#address-id=80510&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:31:24.359Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__rene_manrique_vilorio_fiallos.webp"
+}

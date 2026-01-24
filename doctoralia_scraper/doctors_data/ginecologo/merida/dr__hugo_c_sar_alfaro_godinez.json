@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Hugo César Alfaro Godinez",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 123,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d76940/d7694034218ce031c92d7bdf995fa71c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 40 525 A,"
+    },
+    {
+      "full": "C. 40 525 A,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hugo-cesar-alfaro-godinez/ginecologo/merida#address-id=220585&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:43:52.752Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__hugo_c_sar_alfaro_godinez.webp"
+}

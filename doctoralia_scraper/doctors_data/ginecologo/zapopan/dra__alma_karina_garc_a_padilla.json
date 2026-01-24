@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Alma Karina García Padilla",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 49,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4638cc/4638ccce7155e9bf584d58a80a7bf5a8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Manuel Acuña 2975,"
+    },
+    {
+      "full": "Av. Manuel Acuña 2975,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alma-karina-garcia-padilla/ginecologo/guadalajara#address-id=130127&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:31:12.708Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__alma_karina_garc_a_padilla.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Maria Fernanda Perez Gomez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 882,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0c6a22/0c6a224b527f62cffe722090a29d2a25.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Central Guillermo Gonzalez Camarena 911 Piso 6, Consultorio 9A,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-fernanda-perez-gomez/ginecologo/zapopan#address-id=432766&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:14:25.299Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__maria_fernanda_perez_gomez.webp"
+}

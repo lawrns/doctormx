@@ -1,0 +1,48 @@
+{
+  "name": "Dra. Angélica Vázquez Estrada",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 26,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/59d023c6/59d023c6-8aaf-4215-b734-6a46707f8ff3_140_square.jpg",
+  "about": "mas de 20 años de experiencia",
+  "addresses": [
+    {
+      "full": "German Gedovius,"
+    },
+    {
+      "full": "Plaza Loma Dorada,"
+    },
+    {
+      "full": "German Gedovius,"
+    },
+    {
+      "full": "Plaza Loma Dorada,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angelica-vazquez-estrada/ginecologo/tijuana#address-id=46736&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:44:28.617Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__ang_lica_v_zquez_estrada.webp"
+}

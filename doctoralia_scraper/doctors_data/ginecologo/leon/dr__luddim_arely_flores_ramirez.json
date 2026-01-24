@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Luddim Arely Flores Ramirez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 175,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c61099/c610995f2be0960c1d019ae8ca46903e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Nardos 220,"
+    },
+    {
+      "full": "Calle Nardos 220,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luddim-arely-flores-ramirez-2/ginecologo/leon#address-id=46882&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:36:48.401Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__luddim_arely_flores_ramirez.webp"
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Marxlenin Rodríguez Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/43fa95f0/43fa95f0-3eea-4cd2-b2fd-cc0a326ec9f9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tlaxcala # 161 -502,"
+    },
+    {
+      "full": "Ejército Nacional Mexicano 613,"
+    },
+    {
+      "full": "Tlaxcala # 161 -502,"
+    },
+    {
+      "full": "Ejército Nacional Mexicano 613,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marxlenin-rodriguez-martinez/ginecologo/ciudad-de-mexico#address-id=19022&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:05:52.431Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__marxlenin_rodr_guez_mart_nez.webp"
+}

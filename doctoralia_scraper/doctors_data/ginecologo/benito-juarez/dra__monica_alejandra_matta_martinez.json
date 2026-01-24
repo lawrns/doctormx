@@ -1,0 +1,82 @@
+{
+  "name": "Dra. Monica Alejandra Matta Martinez",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 459,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/abfe3a/abfe3a6094a61cfee9a9f5276c728165_220_square.jpg",
+  "about": "• Médico egresada de la Universidad Tecnológica de Pereira, Colombia . • Especialidad en Ginecología y Obstetricia. Hospital de la Mujer, UNAM. • Subespecialidad en Ginecología Oncológica. Hospital General de México, UNAM. • Diplomado en colposcopia y patología del tracto genital inferior. Hospital General de México, UNAM. • Diplomado en cirugía laparoscópica. Hospital Juárez de México, UNAM. . Diplomado en cirugía ginecológica de mínima invasión ( Histeroscopía , laparoscopía). Hospital Ángeles. . Certificada en cirugia robótica. Memorial Hermann (Houston, TX) • Curso avanzado en cáncer ginecológico y el enfoque laparoscópico. IRCAD Latin America. Brasil. • Ponente en el congreso del COMEGO en el modulo de cáncer ginecológico. CDMX. Junio 2021. • Profesora en el diplomado de “colposcopía y patología del tracto genital inferior”. Universidad de la Salud del Estado de México. Ciudad de México. Junio 2021. • Profesora en el diplomado de actualización medicina general y familiar, modulo de cáncer en la mujer. 2018. • Autora de: Role of Surgery in the treatment of Cervical Cancer Persistent to Chemoradiotherapy and its Importance in the Management of Adenocarcinomas: Experience with 100 Patients. En la revista internacional World Journal of Medical Oncology. 2020.",
+  "addresses": [
+    {
+      "full": "Av. Cuauhtémoc 1040,"
+    },
+    {
+      "full": "Av. Universidad 1080. Col. Xoco.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama por marcaje",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $390"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $750"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": "• $750"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/monica-alejandra-matta-martinez/ginecologo-oncologico-ginecologo/benito-juarez#address-id=400423&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:03:46.977Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__monica_alejandra_matta_martinez.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Lorenzo H. Valladares Basulto",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/60d915/60d91598819ff98d2c2d5115dac5bf30_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 41 X 34 439,"
+    },
+    {
+      "full": "C. 26 199,"
+    },
+    {
+      "full": "Calle 60 X Av Colon 329 B,"
+    },
+    {
+      "full": "Calle 26 199,"
+    },
+    {
+      "full": "C. 41 X 34 439,"
+    },
+    {
+      "full": "C. 26 199,"
+    },
+    {
+      "full": "Calle 60 X Av Colon 329 B,"
+    },
+    {
+      "full": "Calle 26 199,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lorenzo-h-valladares-basulto/ginecologo/merida#address-id=256905&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:42:42.800Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__lorenzo_h__valladares_basulto.webp"
+}

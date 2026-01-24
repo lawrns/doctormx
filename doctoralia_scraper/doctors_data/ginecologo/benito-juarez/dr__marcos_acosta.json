@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Marcos Acosta",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 180,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/696668/6966682774ebcb22f0e7537024373834_220_square.jpg",
+  "about": "¡Hola! Soy especialista en Ginecología, egresado de la Universidad Anáhuac con reconocimiento a la excelencia académica. Cuento con varias distinciones obtenidas a lo largo de mi carrera por diversas instituciones, además de contar con diversos cursos y diplomados de ultrasonido, colposcopía, infertilidad y reproducción asistida, entre muchos otros. Participo de forma constante en diferentes cursos y congresos, además de ser profesor de estudiantes de Medicina de pregrado así como de Postgrado (sub-especialidad). Soy un Dr. muy capacitado, humano y empático, siempre dispuesto a atender tus dudas y preocupaciones. Me esfuerzo por ofrecer un trato respetuoso y eficaz, proporcionando explicaciones detalladas y opciones de tratamiento pertinentes. Si buscas un ginecólogo profesional y paciente, no dudes en visitarme. ¡Te espero en mi consulta!",
+  "addresses": [
+    {
+      "full": "Vialidad de la Barranca S/N,"
+    },
+    {
+      "full": "Avenida Cuauhtémoc 954,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Endocrinología Ginecológica",
+      "price": ""
+    },
+    {
+      "name": "Sangrado menstrual abundante",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marcos-acosta/ginecologo/huixquilucan",
+  "scrapedAt": "2026-01-22T02:59:22.088Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__marcos_acosta.webp"
+}

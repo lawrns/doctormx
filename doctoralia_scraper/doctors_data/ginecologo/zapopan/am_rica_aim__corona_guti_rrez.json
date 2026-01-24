@@ -1,0 +1,25 @@
+{
+  "name": "América Aimé Corona Gutiérrez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 244,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/c97ed796/c97ed796-55c6-4f5c-ae4a-293d57063b88_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Salvador Quevedo Y Zubieta 750, Independencia Oriente,,"
+    },
+    {
+      "full": "Salvador Quevedo Y Zubieta 750, Independencia Oriente,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/america-aime-corona-gutierrez/ginecologo/guadalajara#address-id=148250&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:43:39.574Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/am_rica_aim__corona_guti_rrez.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Maria Isabel Garcia Albarran",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 53,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/b3701c16/b3701c16-d79b-4766-8ecf-6bdf61b83352_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "57D X 80 Y 84A,683,Las Americas,,"
+    },
+    {
+      "full": "57D X 80 Y 84A,683,Las Americas,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-isabel-garcia-albarran/ginecologo/merida#address-id=355547&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:48:10.446Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/maria_isabel_garcia_albarran.webp"
+}

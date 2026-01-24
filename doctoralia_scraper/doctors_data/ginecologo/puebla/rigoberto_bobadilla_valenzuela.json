@@ -1,0 +1,37 @@
+{
+  "name": "Rigoberto Bobadilla Valenzuela",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 121,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/25a78bf5/25a78bf5-6f76-4216-bb56-45538db5ae77_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Heroes De La Ind 922,"
+    },
+    {
+      "full": "16 De Septiembre 200,"
+    },
+    {
+      "full": "16 De Septiembre 700 Altos,"
+    },
+    {
+      "full": "Heroes De La Ind 922,"
+    },
+    {
+      "full": "16 De Septiembre 200,"
+    },
+    {
+      "full": "16 De Septiembre 700 Altos,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rigoberto-bobadilla-valenzuela/ginecologo/puebla#address-id=177748&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:26:52.692Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/rigoberto_bobadilla_valenzuela.webp"
+}

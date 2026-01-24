@@ -1,0 +1,25 @@
+{
+  "name": "Javier Rosas Carrillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 91,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cb0667/cb06672aaeeb519feb3cfdbbe61b67be_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida 551 no. 1, Unidad adolfo lopez mateos,"
+    },
+    {
+      "full": "Avenida 551 no. 1, Unidad adolfo lopez mateos,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/javier-rosas-carrillo/ginecologo/tlalnepantla-de-baz#address-id=110882&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:38:36.832Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/javier_rosas_carrillo.webp"
+}

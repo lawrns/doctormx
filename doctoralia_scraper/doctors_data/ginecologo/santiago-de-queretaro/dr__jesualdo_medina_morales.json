@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jesualdo Medina Morales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/93602d/93602d92cce014984fee88afc328be29_220_square.jpg",
+  "about": "Soy Médico Gineco Obstetra con 8 años de experiencia. Especialista en Laparoscopía Ginecológica Avanzada Especialista en Colposcopía. Atención Médica a mujeres de todas las edades que requieran - Control Prenatal (Embarazo) - Control Prenatal (Embarazo de alto riesgo) - Atención de Parto y Cesarea Humanizada - Manejo de los Trastornos Menstruales - Manejo del Climaterio y Menopausia - Cirugía Ginecológica - Detección y Tratamiento del Virus del Papiloma Humano - Consejeria sobre Metodos Anticonceptivos - Cirugía Laparoscópica Ginecológica",
+  "addresses": [
+    {
+      "full": "Blvd. Bernardo Quintana Arrioja,"
+    },
+    {
+      "full": "Blvd. Bernardo Quintana Arrioja,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesualdo-medina-morales/ginecologo/santiago-de-queretaro#address-id=141691&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:50:41.941Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__jesualdo_medina_morales.webp"
+}

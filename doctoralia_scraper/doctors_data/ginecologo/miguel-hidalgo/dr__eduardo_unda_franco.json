@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Eduardo Unda Franco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 274,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/988d29/988d29a40436062cabae86781e9f56f3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Acueducto Río Hondo 20 (entre Prado Sur y Aguiar y Seijas),"
+    },
+    {
+      "full": "Acueducto Río Hondo 20 (entre Prado Sur y Aguiar y Seijas),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-unda-franco/ginecologo/ciudad-de-mexico#address-id=10968&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:54:14.955Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__eduardo_unda_franco.webp"
+}

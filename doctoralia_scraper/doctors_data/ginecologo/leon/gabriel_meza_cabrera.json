@@ -1,0 +1,25 @@
+{
+  "name": "Gabriel Meza Cabrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1229,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/667f5a/667f5ae4015d4969f2fd045712355f6c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Trebol 105,"
+    },
+    {
+      "full": "Trebol 105,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriel-meza-cabrera/ginecologo/leon#address-id=225472&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:37:24.468Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/gabriel_meza_cabrera.webp"
+}

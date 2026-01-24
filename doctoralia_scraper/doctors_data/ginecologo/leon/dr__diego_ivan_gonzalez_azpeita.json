@@ -1,0 +1,89 @@
+{
+  "name": "Dr. Diego Ivan Gonzalez Azpeita",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 130,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/2443bcec/2443bcec-57e5-413e-95b6-95c2be65334e_small_square.jpg",
+  "about": "Soy el Dr. Diego Azpeitia. Durante años, he acompañado a mujeres y parejas en uno de los momentos más importantes (y a veces más difíciles) de su vida: el camino hacia la maternidad y el bienestar ginecológico. Aquí no hay juicios. Solo escucha, ciencia, empatía y un plan claro para ti. Trabajo con lo mejor de la medicina reproductiva y una visión cercana: porque tu historia importa, y cada cuerpo tiene su propio ritmo. Si estás embarazada, buscando embarazarte o necesitas atención ginecológica, aquí estoy. Para ti.",
+  "addresses": [
+    {
+      "full": "Avenida Cerro Gordo,"
+    },
+    {
+      "full": "Bajío 5,"
+    },
+    {
+      "full": "Avenida cerro Gordo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diego-ivan-gonzalez-azpeita/ginecologo/silao#address-id=572499&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:24:53.416Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__diego_ivan_gonzalez_azpeita.webp"
+}

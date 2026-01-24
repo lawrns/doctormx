@@ -1,0 +1,56 @@
+{
+  "name": "Dra. Yolanda Piña Maciel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8438eb/8438eb8cb0a083a04ded12981918bec1_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tuxpan 2 interior 204,"
+    },
+    {
+      "full": "Av. Universidad 1080,"
+    },
+    {
+      "full": "Tuxpan 2 interior 204,"
+    },
+    {
+      "full": "Av. Universidad 1080,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cesárea con histerectomia postparto",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yolanda-pina-maciel/ginecologo/ciudad-de-mexico#address-id=406521&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:09:50.951Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__yolanda_pi_a_maciel.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Monica Graciela Garcia Barbara",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 48,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e0907d7e/e0907d7e-6e93-4ef6-a49d-0e6e1ccc51de_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Circunvalación 6,"
+    },
+    {
+      "full": "Av Circunvalación 6,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/monica-graciela-garcia-barbara/ginecologo/santiago-de-queretaro#address-id=14366&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:54:58.814Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__monica_graciela_garcia_barbara.webp"
+}

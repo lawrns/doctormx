@@ -1,0 +1,25 @@
+{
+  "name": "Benito Villanueva Palomo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 76,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/501fee/501feef9813757cf9e0099a3d7b22c3a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Agua Caliente 4558 Pis,"
+    },
+    {
+      "full": "Blvd. Agua Caliente 4558 Pis,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/benito-villanueva-palomo/ginecologo/tijuana#address-id=242842&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:49:56.732Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/benito_villanueva_palomo.webp"
+}

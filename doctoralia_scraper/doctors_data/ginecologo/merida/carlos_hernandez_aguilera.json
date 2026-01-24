@@ -1,0 +1,31 @@
+{
+  "name": "Carlos Hernandez Aguilera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 39,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a10f5777/a10f5777-f26b-476c-8e30-067211771680_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Colon 791,"
+    },
+    {
+      "full": "Av. Itzaes 242,"
+    },
+    {
+      "full": "Colon 791,"
+    },
+    {
+      "full": "Av. Itzaes 242,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-hernandez-aguilera/ginecologo/saltillo#address-id=240114&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:44:55.755Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/carlos_hernandez_aguilera.webp"
+}

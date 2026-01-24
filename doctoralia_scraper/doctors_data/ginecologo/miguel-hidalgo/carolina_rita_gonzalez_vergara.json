@@ -1,0 +1,31 @@
+{
+  "name": "Carolina Rita Gonzalez Vergara",
+  "specialty": "Radiólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9284ad37/9284ad37-f64e-436b-a251-2291860e1424_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Gelati 29 Cons. 409 Col. San Miguel Chapultepec,"
+    },
+    {
+      "full": "Mexico City,"
+    },
+    {
+      "full": "Gelati 29 Cons. 409 Col. San Miguel Chapultepec,"
+    },
+    {
+      "full": "Mexico City,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carolina-rita-gonzalez-vergara/radiologo-pediatra/ciudad-de-mexico#address-id=337944&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:44:37.790Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/carolina_rita_gonzalez_vergara.webp"
+}

@@ -1,0 +1,96 @@
+{
+  "name": "Dr. Erick Peñuelas Castañeda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 94,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/deb3cd/deb3cd3ed1cad291336aca57505be76a_220_square.jpg",
+  "about": "¡Bienvenidos a mi sitio web! Soy Erick Peñuelas Castañeda, originario de Sinaloa, con una sólida formación académica y una pasión por la ginecología que me impulsa a mantenerme siempre actualizado y brindar la mejor atención a mis pacientes. Me gradué en la facultad de medicina en Culiacán, destacándome como uno de los primeros de mi clase. Posteriormente, realicé mi especialidad en ginecología en el hospital regional de Pemex en Ciudad Madero, donde fui elegido jefe de residentes. Mi camino hacia la excelencia continuó con la subespecialidad en el Instituto de Estudio para la Concepción Humana en Monterrey, junto a renombrados doctores y maestros internacionales pioneros en fertilidad en México. Durante mi formación, obtuve diversos reconocimientos y participé activamente en congresos médicos organizados por COMEGO (Colegio Mexicano de Especialistas en Ginecologia y Obstetricia), FIGO ( Federacion Internacional de Ginecologia y Obstetricia), AMMR (Asociacion Mexicana de Medicina de la Reproducción ), ASRM ( American Society for Reproductive Medicine). Además, complementé mi formación con un diplomado en investigación, otro en menopausia y climaterio, así como una maestría en climaterio y menopausia. Cuento con Certificación por el Consejo Mexicano de Ginecologia y Obstetricia en Ginecologia y Obstetricia y en Biología de la Reproducción Humana, ademas cuento con Certificación ABLS, la cual es la única junta en el Mundo que proporciona certificación en cirugía y medicina LASER, para garantizar resultados eficaces y seguros para las pacientes. Mi compromiso con la actualización constante me permite ofrecer a mis pacientes una atención de calidad y personalizada. ¡Confíe en mi experiencia, dedicación y vocación para cuidar de su salud ginecológica con profesionalismo y empatía!",
+  "addresses": [
+    {
+      "full": "P.º del Centenario,"
+    },
+    {
+      "full": "Av. Miguel Hidalgo 172,"
+    },
+    {
+      "full": "Fray Servando Teresa,"
+    },
+    {
+      "full": "DEL PRADO MEDICAL TOWER 4083,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Desde $1,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/erick-penuelas-castaneda-2/ginecologo/tijuana#address-id=543242&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:40:32.200Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__erick_pe_uelas_casta_eda.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Luis Zamudio Díaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d46f0b/d46f0b637c9d0cfcfbe4f127560455ba_220_square.jpg",
+  "about": "Gineco y Obstetricia Te invitamos a conocer más sobre el cuidado del bebé y de la mamá durante el embarazo. Para consultar personalizadas agendar una cita con el Dr. Luis Zamudio Díaz Esta ubicado en Tijuana Baja California México",
+  "addresses": [
+    {
+      "full": "Ing. Juan Ojeda Robles, Colonia buena vista. Frente al parque,"
+    },
+    {
+      "full": "Ing. Juan Ojeda Robles, Colonia buena vista. Frente al parque,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-zamudio-diaz/ginecologo/tijuana#address-id=58413&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:44:22.483Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__luis_zamudio_d_az.webp"
+}

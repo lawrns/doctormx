@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Ramón Jafit Gonzalez López",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/130631/13063129460d77edc2a879f1a1db7f29_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Central No. 911, Col. Residencial Poniente,"
+    },
+    {
+      "full": "Av. Central No. 911, Col. Residencial Poniente,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ramon-jafit-gonzalez-lopez/ginecologo/zapopan#address-id=445333&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:31:46.722Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__ram_n_jafit_gonzalez_l_pez.webp"
+}

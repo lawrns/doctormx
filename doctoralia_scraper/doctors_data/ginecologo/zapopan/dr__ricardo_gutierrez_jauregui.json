@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Ricardo Gutierrez Jauregui",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 36,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/de5408/de5408a1bcff587b541c0ef5a4826b10_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Niño Obrero 1538,"
+    },
+    {
+      "full": "Niño Obrero 1538,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-gutierrez-jauregui/ginecologo/zapopan#address-id=33551&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:17:03.570Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__ricardo_gutierrez_jauregui.webp"
+}

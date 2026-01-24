@@ -1,0 +1,46 @@
+{
+  "name": "Margarita Romero Chavez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 195,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e5f771/e5f7718f01c017f3d920679463c30660_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ignacio Allende 146,"
+    },
+    {
+      "full": "Ignacio Allende 146,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": "• $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/margarita-romero-chavez/ginecologo/azcapotzalco#address-id=90927&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:03:45.719Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/margarita_romero_chavez.webp"
+}

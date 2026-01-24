@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Rocio Margarita Gonzalez Villegas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 80,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cb9bcf/cb9bcf954d53626609e9ba30fbe1fddd_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Industria Militar 1057,"
+    },
+    {
+      "full": "Mar Negro 17 A,"
+    },
+    {
+      "full": "Av. Industria Militar 1057,"
+    },
+    {
+      "full": "Mar Negro 17 A,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rocio-margarita-gonzalez-villegas/ginecologo/miguel-hidalgo#address-id=176900&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:40:53.904Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__rocio_margarita_gonzalez_villegas.webp"
+}

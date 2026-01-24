@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Laura E. Trejo Santos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 438,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ea1e07/ea1e07d279ceb2f23aff2af7f82fc197_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Privada de las Ramblas 4,,"
+    },
+    {
+      "full": "Privada de las Ramblas 4,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-e-trejo-santos/ginecologo/puebla#address-id=6069&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:15:17.324Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__laura_e__trejo_santos.webp"
+}

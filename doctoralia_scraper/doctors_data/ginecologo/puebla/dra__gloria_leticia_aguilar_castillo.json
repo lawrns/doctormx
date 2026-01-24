@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Gloria Leticia Aguilar Castillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 428,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ead66b/ead66bdd9f3363529792bd671c9c68a8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "25 poniente 1721-102,"
+    },
+    {
+      "full": "25 poniente 1721-102,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gloria-leticia-aguilar-castillo/ginecologo/puebla#address-id=98962&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:18:59.682Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__gloria_leticia_aguilar_castillo.webp"
+}

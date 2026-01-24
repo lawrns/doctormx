@@ -1,0 +1,25 @@
+{
+  "name": "Luis Alberto Barrera Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 255,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2cd01a/2cd01a52fb2946f36f08a6e729b9fe63_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 54 X 33 A 365,"
+    },
+    {
+      "full": "C. 54 X 33 A 365,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-alberto-barrera-gonzalez/ginecologo/merida#address-id=200010&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:47:25.352Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/luis_alberto_barrera_gonzalez.webp"
+}

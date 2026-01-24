@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Juan Carlos Igoa Muñoz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 48,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/305b04/305b0447aeb9271f007a1e633f53247b_220_square.jpg",
+  "about": "Soy especialista en Ginecologia y Obstetricia. Ademas realice una especializacion en Urologia Ginecologica por lo cua soy experto en problemas de piso pelvico como son: * Prolapso de Organos Pelvicos (CIstocele o Vejiga Caida) * Incontinencia Urinaria. * Rejuvenecimiento Vaginal (Labioplastia y PLastia Vaginal) * CIrugia Vaginal de Minima Invasion ( HIsterectomia)",
+  "addresses": [
+    {
+      "full": "Carlos G. Villaseñor 921 Jardines Alcalde,"
+    },
+    {
+      "full": "Carlos G. Villaseñor 921 Jardines Alcalde,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina",
+      "price": ""
+    },
+    {
+      "name": "Cirugía vaginal y reconstructiva",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-igoa-munoz-2/ginecologo/guadalajara#address-id=432797&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:16:45.678Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__juan_carlos_igoa_mu_oz.webp"
+}

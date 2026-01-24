@@ -1,0 +1,25 @@
+{
+  "name": "Jaime Jasso Kamel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e133cac3/e133cac3-cbdb-459c-8967-a1b0a427bf7a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. de las naciones no. 1 piso 25, Napoles,"
+    },
+    {
+      "full": "Av. de las naciones no. 1 piso 25, Napoles,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jaime-jasso-kamel/ginecologo/benito-juarez#address-id=111800&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:15:22.210Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/jaime_jasso_kamel.webp"
+}

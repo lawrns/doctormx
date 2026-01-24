@@ -1,0 +1,31 @@
+{
+  "name": "Alicia Avalos Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 118,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/38870de9/38870de9-581d-4888-8169-e780041a216e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Mexico 2126,"
+    },
+    {
+      "full": "Av. Inglaterra 4957,"
+    },
+    {
+      "full": "Av. Mexico 2126,"
+    },
+    {
+      "full": "Av. Inglaterra 4957,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alicia-avalos-rodriguez/ginecologo/guadalajara#address-id=248597&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:41:05.469Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/alicia_avalos_rodriguez.webp"
+}

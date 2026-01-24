@@ -1,0 +1,18 @@
+{
+  "name": "Dr. Miguel Ángel Carvajal Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4a8180/4a8180259ce6c219e3b06716d0e833d6_220_square.jpg",
+  "about": "El Dr. Miguel Ángel Carvajal Hernández es egresado como Médico Cirujano y Partero de la Benemérita Universidad Autónoma de Puebla. Posteriormente se especializó en Ginecología y Obstetricia de la Universidad Nacional Autónoma de México. Atiende a sus pacientes en el Hospital Ángeles Puebla, ubicado en la ciudad de Puebla, Pue y en Tepeaca.",
+  "addresses": [],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-carvajal-hernandez/ginecologo/tehuacan#address-id=420706&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:13:58.153Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__miguel__ngel_carvajal_hern_ndez.webp"
+}

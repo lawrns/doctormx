@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Jessica Aideé Mora Galván",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 56,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5a04d1bb/5a04d1bb-ccbc-4b24-b8d2-4aa3e271c561_small_square.jpg",
+  "about": "Hola! Soy la Dra. Jessica Mora, ginecóloga y obstetra con subespecialidad en biología de la reproducción. Estudié medicina en la Facultad de Medicina de la UNAM; posteriormente realicé mi especialidad y subespecialidad en el Instituto Nacional de Perinatología. Realicé un diplomado de ginecología infanto-juvenil avalado por la Federación Latinoamericana de Sociedades de Obstetricia y Ginecología. Estoy aquí para ayudarte y acompañarte en el cuidado de tu salud desde tu primera visita ginecológica y en cada etapa de tu vida. Puedo ayudarte con la regularización de tu ciclo menstrual, elección y colocación de métodos anticonceptivos, búsqueda de embarazo con diferentes métodos (inseminación intrauterina, fertilización in vitro, coito programado), seguimiento durante tu embarazo, nacimiento por parto o cesárea, cirugías ginecológicas, tratamiento para la menopausia, entre otras cosas. Juntas podemos encontrar el seguimiento y el tratamiento más adecuado para ti. Si tienes alguna duda, no dudes en contactarme, con mucho gusto las resolveré. ¡Te espero en consulta!",
+  "addresses": [
+    {
+      "full": "Avenida Revolución 1225,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jessica-aidee-mora-galvan/ginecologo/alvaro-obregon#address-id=568360&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:02:41.003Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__jessica_aide__mora_galv_n.webp"
+}

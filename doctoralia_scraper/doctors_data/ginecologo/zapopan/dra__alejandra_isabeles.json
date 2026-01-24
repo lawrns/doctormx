@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Alejandra Isabeles",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 163,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8b22fb/8b22fb411a77770f10686e4346f1fe1e_220_square.jpg",
+  "about": "Te ofrecemos consulta en obstetricia y ginecologia con calidad, calidez y profesionalismo, entendiendo que cada etapa de la mujer requiere un cuidado especial. Con evaluación tanto de exploración física, laboratorios e imagen, para obtener un mejor diagnóstico y tratamiento. Control prenatal en donde paso a paso llevamos esta etapa tan especial entendiendo que no hay nada mas importante que la salud de usted y su bebé. Para culminar en el nacimiento de un nuevo ser, poniendo a su alcance desde cesáreas electivas hasta partos humanizados. Así también ofrecemos consulta de ginecologia en donde se abarca un gran número de enfermedades que afectan a todas las mujeres en su etapa reproductiva y no reproductiva. Realizando revisiones periodicas con toma de citologia vaginal (papanicolau) complementada con colposcopia para deteccion oportuna de cancer cervico uterino contribuyendo con esto a una buena salud femenina. Teniendo en cuenta que cada día se ven más embarazos en adolescente, se pone a su alcance consultas sobre métodos de planificación familiar con atención importante a todas tus dudas para encontrar el método más adecuado para ti. Por último y sin ser menos importante se ofrece atención a todas las mujeres que se encuentran en la transición de su etapa reproductiva a la no reproductiva. Si estas buscando atención, profesionalismo y mas que una ginecologa una amiga que te cuide hasta en tus dias más dificiles. Te ofrecemos nuestro servicio de consulta prenatal, parto humanizado, cesáreas, deteccion de cáncer cervicouterino y vph.",
+  "addresses": [
+    {
+      "full": "Calle La Ley #2664,"
+    },
+    {
+      "full": "Calle La Ley #2664,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $750"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-isabeles/ginecologo/guadalajara#address-id=89030&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:17:27.570Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__alejandra_isabeles.webp"
+}

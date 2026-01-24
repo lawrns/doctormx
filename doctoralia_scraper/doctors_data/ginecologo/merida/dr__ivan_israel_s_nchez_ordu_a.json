@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Ivan Israel Sánchez Orduña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 577,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/05284e/05284e3bb72cb4868efebdf7379bd69b_220_square.jpg",
+  "about": "Soy médico especialista en Ginecología y Obstetricia, con subespecialidad en Biología de la reproducción humana por la Universidad Nacional Autónoma de México. Certificación actual por el Consejo Mexicano de Ginecología y Obstetricia para ambas especialidades. Con más de 10 años de experiencia, pongo a su disposición mis conocimientos para tratar problemas de infertilidad mediante técnicas de baja y alta complejidad, trastornos relacionados con menopausia, alteraciones de la menstruación, síndrome de ovarios poliquísticos, anticoncepción, cirugía histeroscópica, control del embarazo, atención del parto, cesárea o cirugías ginecológicas. Su atención, con un trato cálido y humano son mi prioridad ¡ Agenda tu cita, te espero !",
+  "addresses": [
+    {
+      "full": "Calle 6 #67, entre calle 7 y calle 9, colonia Felipe Carrillo Puerto Norte,"
+    },
+    {
+      "full": "Calle 6 #67, entre calle 7 y calle 9, colonia Felipe Carrillo Puerto Norte,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Tratamiento para síndrome de ovario poliqístico",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Tratamientos de Reproducción Asistida e Infertilidad",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ivan-israel-sanchez-orduna/ginecologo/yucatan#address-id=335175&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:32:30.589Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__ivan_israel_s_nchez_ordu_a.webp"
+}

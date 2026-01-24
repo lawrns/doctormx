@@ -1,0 +1,58 @@
+{
+  "name": "Dra. Raquel Loza Ochoa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f620b3/f620b3bd87515424145e98cb006bd3de_220_square.jpg",
+  "about": "Ginecóloga especialista en la atención de nacimiento humanizado.",
+  "addresses": [
+    {
+      "full": "Detroit 9,"
+    },
+    {
+      "full": "Acapulco 35,"
+    },
+    {
+      "full": "Pro Parto Natural Acapulco 35 Int 704,"
+    },
+    {
+      "full": "Detroit 9,"
+    },
+    {
+      "full": "Acapulco 35,"
+    },
+    {
+      "full": "Pro Parto Natural Acapulco 35 Int 704,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $20,500"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": "• $20,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raquel-loza-ochoa/ginecologo/ciudad-de-mexico#address-id=343662&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:09:30.907Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__raquel_loza_ochoa.webp"
+}

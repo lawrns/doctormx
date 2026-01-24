@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Sandra Cruz Rayón",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 653,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5da054/5da0549cba8220ca64a7a47d330a668a_220_square.jpg",
+  "about": "SOY GINECOLÓGIA Y OBSTETRA , CON EXPERIENCIA EN EMBARAZO DE ALTO RIESGO, CONTROL PRENATAL CON ENFOQUE PREVENTIVO ( MALFORMACIÓN FETAL Y COMPLICACIONES MATERNAS),ENFERMEDADES DE LA MUJER EN SUS DIVERSAS ETAPAS, ENFERMEDADES DE TRANSMISIÓN SEXUAL, CLIMATERIO Y MENOPAUSIA ASI COMO OSTEOPOROSIS. LA CONSULTA ESTA ENFOCADA EN DETECTAR LOS FACTORES DE RIESGO ESPECÍFICOS DE CADA PACIENTE ASÍ COMO UN ESTUDIO CLÍNICO INTEGRAL PARA PODER OFRECERTE LAS MEJORES RECOMENDACIONES ACTUALIZADAS A TI Y TU PAREJA EN CASO DE SER NECESARIO, CON LA DISPOSICIÓN DE ACLARAR TODAS TUS DUDAS E INQUIETUDES. CUENTO CON DIPLOMADO EN ULTRASONIDO GINECOLÓGICO Y OBSTÉTRICO ASI COMO EN HISTEROSCOPIA DIAGNOSTICA Y QUIRURGICA. MI INTERÉS ES AYUDARTE Y DARTE LA CONFIANZA Y SEGURIDAD QUE TODA MUJER NECESITA AL IR AL GINECÓLOGO. NO DUDES EN ACERCARTE. \" DE MUJER A MUJER\"",
+  "addresses": [
+    {
+      "full": "Calle 15 Numero 501, Colonia Altabrisa.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Vacunas virus del papiloma humano",
+      "price": "• $3,900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sandra-cruz-rayon/ginecologo/yucatan#address-id=116736&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:32:12.154Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__sandra_cruz_ray_n.webp"
+}

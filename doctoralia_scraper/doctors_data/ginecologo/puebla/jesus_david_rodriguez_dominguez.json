@@ -1,0 +1,25 @@
+{
+  "name": "Jesus David Rodriguez Dominguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 213,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a806a8/a806a8ccd0e3d24562bee57d3374d7b1_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 14 Sur 3926,"
+    },
+    {
+      "full": "C. 14 Sur 3926,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-david-rodriguez-dominguez/ginecologo/puebla#address-id=216332&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:31:22.962Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/jesus_david_rodriguez_dominguez.webp"
+}

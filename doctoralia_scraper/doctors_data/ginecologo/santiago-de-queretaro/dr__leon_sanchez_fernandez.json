@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Leon Sanchez Fernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 578,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a15552/a155528d87255a7e32839b970064237e_220_square.jpg",
+  "about": "Medico Ginecólogo, Certificado por Consejo Mexicano de Ginecologia y Obstetricia, Subespecialista en Medicina Perinatal, Medico Colposcopista egresado de la Centro Nacional de Clínicas de Displasias de la Secretaria de Salud, Fundador de la Clínica de Colposcopia del Hospital General San Juan del Rio de la Secretaria de Salud, Grados Académicos: Maestría y Doctorado en Investigación Médica, Profesor de la Facultad de Medicina de la Universidad Autónoma de Querétaro (UAQ) Miembro del Comité Estatal de Investigación en Salud, , Coordinador del Núcleo Académico de la Especialidad de Ginecóloga y Obstetricia UAQ, Coordinador del programa de Especialidad en Ginecología y Obstetricia PNPC-CONACYT",
+  "addresses": [
+    {
+      "full": "Camino a los Olvera 680,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $900"
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/leon-sanchez-fernandez/ginecologo/queretaro#address-id=94198&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:43:23.136Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__leon_sanchez_fernandez.webp"
+}

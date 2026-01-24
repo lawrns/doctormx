@@ -1,0 +1,31 @@
+{
+  "name": "Raquel Villegas Pacheco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 22,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/838e8940/838e8940-5fc0-43d4-bf94-c19faeaedaee_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Rio Tuito 589,"
+    },
+    {
+      "full": "Av. Belisario Domínguez 1000,"
+    },
+    {
+      "full": "Rio Tuito 589,"
+    },
+    {
+      "full": "Av. Belisario Domínguez 1000,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raquel-villegas-pacheco/ginecologo/zapopan#address-id=179685&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:38:02.132Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/raquel_villegas_pacheco.webp"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Maria Dolores Cuevas De La Torre",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 51,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d6b013e7/d6b013e7-278d-4297-bdbf-eb5d36d16663_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Federalismo 484,"
+    },
+    {
+      "full": "C.Hospital 278,"
+    },
+    {
+      "full": "Av. Belisario Dominguez 771,"
+    },
+    {
+      "full": "Federalismo 484,"
+    },
+    {
+      "full": "C.Hospital 278,"
+    },
+    {
+      "full": "Av. Belisario Dominguez 771,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-dolores-cuevas-de-la-torre/ginecologo/guadalajara#address-id=193181&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:40:19.681Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/maria_dolores_cuevas_de_la_torre.webp"
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Elida Silvana Servin Zenteno",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 54,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/701426/701426eac7ea3ba491602261861d77be_140_square.jpg",
+  "about": "Licenciatura en Medicina General UABC Tijuana Ginecologia y Obstetricia Hospital Universitario Monterrey Nuevo León Biología de la Reproducción Humana Hospital Universitario Monterrey Nuevo León",
+  "addresses": [
+    {
+      "full": "Blvd. Salinas # 10755. Local 6. Plaza Conquistador.,"
+    },
+    {
+      "full": "Blvd. Salinas # 10755. Local 6. Plaza Conquistador.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": ""
+    },
+    {
+      "name": "Histeroscopia diagnóstica con biopsia",
+      "price": ""
+    },
+    {
+      "name": "Histeroscopia en malformaciones uterinas",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": ""
+    },
+    {
+      "name": "Histeroscopia diagnóstica con biopsia",
+      "price": ""
+    },
+    {
+      "name": "Histeroscopia en malformaciones uterinas",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elida-silvana-servin-zenteno/ginecologo/tijuana#address-id=87944&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:43:55.379Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__elida_silvana_servin_zenteno.webp"
+}

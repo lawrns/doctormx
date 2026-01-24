@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Fernando Antonio Medrano Uribe",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 59,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/55d116/55d1169c7fbd7d20bea4e659b634ddb5_220_square.jpg",
+  "about": "Licenciatura en Medicina. • Facultad de Medicina de León, Universidad de Guanajuato. (2003 – 2009). • Título de médico cirujano obtenido bajo la modalidad “Excelencia académica”. Especialidad en Ginecología y Obstetricia. • Instituto Nacional de Perinatología (INPer). Universidad Nacional Autónoma de México. México, D. F. (2010 – 2014) • “Mención honorífica” al desempeño académico durante la especialidad. • Enfoque de la especialidad por sede: Atención médica especializada en embarazos de alto riesgo y patología ginecológica compleja. • Certificado por el Consejo Mexicano de Ginecología y Obstetricia. Subespecialidad en Biología de la Reproducción Humana. • Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán (INNSZ). Universidad Nacional Autónoma de México. México, D. F. (2014 – 2016) • Enfoque de la subespecialidad por sede: Atención médica especializada en la salud sexual y reproductiva con áreas de concentración en: Infertilidad, endocrinología de la reproducción, endocrinología del desarrollo y planificación familiar. • Miembro de la Asociación de Médicos del Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán.",
+  "addresses": [
+    {
+      "full": "Avenida León 428,"
+    },
+    {
+      "full": "Avenida León 428, Consultorio 304,"
+    },
+    {
+      "full": "Avenida León 428,"
+    },
+    {
+      "full": "Avenida León 428, Consultorio 304,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-antonio-medrano-uribe/ginecologo/leon#address-id=22982&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:28:17.018Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__fernando_antonio_medrano_uribe.webp"
+}

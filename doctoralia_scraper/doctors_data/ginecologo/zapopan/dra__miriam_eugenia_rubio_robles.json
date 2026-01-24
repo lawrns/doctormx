@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Miriam Eugenia Rubio Robles",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 4,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/c7614fdb/c7614fdb-5f01-41d1-9097-803ad8cdb900_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Francisco Rojas Gonzalez #213,"
+    },
+    {
+      "full": "Francisco Rojas Gonzalez #213,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miriam-eugenia-rubio-robles/ginecologo/guadalajara#address-id=118081&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:35:11.538Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__miriam_eugenia_rubio_robles.webp"
+}

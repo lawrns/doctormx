@@ -1,0 +1,25 @@
+{
+  "name": "Carlos Vizcaino Magaña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 88,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/494aa8/494aa83ba82bde9c7f7e46fa4bf0f733_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Paseo De Los Cafetos 1240,"
+    },
+    {
+      "full": "Paseo De Los Cafetos 1240,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-vizcaino-magana/ginecologo/zapopan#address-id=239757&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:40:42.907Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/carlos_vizcaino_maga_a.webp"
+}

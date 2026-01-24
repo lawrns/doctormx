@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jose Angel Lopez Farfan",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 266,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a5c504/a5c5044044642c0892115816f1f7e38d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Zavaleta 1108, plaza centro mayor, torre omega oficina 503.,"
+    },
+    {
+      "full": "Zavaleta 1108, plaza centro mayor, torre omega oficina 503.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-angel-lopez-farfan/ginecologo/puebla#address-id=124108&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:19:45.788Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__jose_angel_lopez_farfan.webp"
+}

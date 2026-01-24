@@ -1,0 +1,25 @@
+{
+  "name": "Humberto Romo Rivas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 244,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1146d2/1146d2eda0aad950cbeab501283d9a9e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Guadalupe 4064,"
+    },
+    {
+      "full": "Av. Guadalupe 4064,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/humberto-romo-rivas/ginecologo/guadalajara#address-id=99021&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:44:40.354Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/humberto_romo_rivas.webp"
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Sergio Ricardo Vargas Diaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 833,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/88a0b2/88a0b243016cdfb7772ee0aa19e38959.jpg",
+  "about": "HOLA SOY EL DR. SERGIO RICARDO VARGAS DIAZ SOY ESPECIALISTA GINECÓLOGO Y OBSTETRA, MEDICO CIRUJANO MILITAR EGRESADO DE LA ESCUELA MÉDICO MILITAR Y ESPECIALISTA EGRESADO DE LA ESCUELA MILITAR DE GRADUADOS DE SANIDAD, UNIVERSIDAD DEL EJERCITO Y FUERZA AÉREA MEXICANA, CERTIFICADO POR EL CONSEJO MEXICANO DE GINECOLOGIA Y OBSTETRICIA A.C., MIEMBRO ACTIVO DEL COLEGIO MEXICANO DE GINECOLOGIA Y OBSTETRICIA DE YUCATAN A.C., CUENTO CON UNA EXPERIENCIA EN EL ÁREA DE SALUD DE MAS DE 25 AÑOS, ME HE DESEMPEÑADO DESDE MI FORMACIÓN (PLANTELES MILITARES) COMO MEDICO CIRUJANO MILITAR Y EN LA ESPECIALIDAD DE GINECOLOGIA Y OBSTETRICIA COMO JEFE DE RESIDENTES DE LA MISMA Y SE HA DESEMPEÑADO EN HOSPITALES INSTITUCIONALES MILITARES DEL PAÍS, COMO JEFE DE LA ESPECIALIDAD, JEFE DE ÁREA DE QUIRÓFANOS Y JEFE DE ENSEÑANZA, MI CARTA DE PRESENTACIÓN ES MI TRABAJO QUE ME APASIONA BRINDARLOS CON ALTOS NIEVLES DE CALIDAD, CALIDEZ Y PROFESIONALISMO, BRINDO ATENCIÓN MÉDICA EN CADA CONSULTA EXPLICANDO Y ACLARANDO TODAS SUS DUDAS A MIS PACIENTES, DEDICANDOLES EL TIEMPO NECESARIO QUE SE MERECEN EN CADA CASO, SIN PRISAS, REALIZANDO UNA EXPLORACIÓN MÉDICA DETALLADA Y PLANTEANDO EL MEJOR TRATAMIENTO EN BASE A SU PADECIMIENTO, APEGÁNDOSE A LAS NORMAS ACTUALES EN SALUD, BRINDANDO SEGURIDAD QUIRÚRGICA Y ANTEPONIENDO SIEMPRE LA SEGURIDAD DE NUESTROS PACIENTES, POR LO QUE LA ÉTICA, LA CALIDAD Y CALIDEZ NOS CARACTERIZA Y NOS HA BRINDADO LA SEGURIDAD Y CONFIANZA DE NUESTROS PACIENTES, SIENDO ELLOS NUESTRA MEJOR RECOMENDACION DESDE SIEMPRE.",
+  "addresses": [
+    {
+      "full": "C. 26 124, entre Av. José Díaz Bolio y Calle 23, Col. México, México, 97125 Mérid,"
+    },
+    {
+      "full": "Hospital Faro del Mayab Grupo Christus Muguerza, Temozon Norte, 97115 Mérida, Yuc.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-ricardo-vargas-diaz/ginecologo/yucatan#address-id=406202&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:32:24.417Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__sergio_ricardo_vargas_diaz.webp"
+}

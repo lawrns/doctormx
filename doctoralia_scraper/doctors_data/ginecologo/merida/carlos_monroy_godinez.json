@@ -1,0 +1,37 @@
+{
+  "name": "Carlos Monroy Godinez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 631,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6ce73c/6ce73cc0801040c5d06e52235743b805_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Jacinto Canek 612,"
+    },
+    {
+      "full": "C. 59-A 612 X 98 Y 100,"
+    },
+    {
+      "full": "Calle 19-B X 44 Y 44-A 372,"
+    },
+    {
+      "full": "Av. Jacinto Canek 612,"
+    },
+    {
+      "full": "C. 59-A 612 X 98 Y 100,"
+    },
+    {
+      "full": "Calle 19-B X 44 Y 44-A 372,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-monroy-godinez/ginecologo/merida#address-id=239992&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:45:35.484Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/carlos_monroy_godinez.webp"
+}

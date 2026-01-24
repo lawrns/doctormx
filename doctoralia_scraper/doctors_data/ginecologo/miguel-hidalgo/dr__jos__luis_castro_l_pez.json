@@ -1,0 +1,56 @@
+{
+  "name": "Dr. José Luis Castro López",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 24,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fd93d8/fd93d8f13c47bd1b08aea6d8ebad2cd2_220_square.jpg",
+  "about": "Soy el Dr. José Luis Castro López Ginecólogo Obstetra, experto en Reproducción Asistida y Cirugía Laparoscópica. Trayectoria Académica Estudió la Licenciatura de Médico Cirujano en la Universidad Anáhuac (UANÁHUAC), posteriormente estudió las especialidades de Ginecología y Obstetricia, y la de Biología de la Reproducción Humana en el Instituto Nacional de Perinatología (INPer). Por ello, es experto en diferentes tratamientos y enfermedades como: - Infertilidad - Histeroscopía Quirúrgica - Cirugía Laparoscópica - Fecundación In Vitro - Parto Natural - Aborto de Repetición - Miomatosis Uterina - Endometriosis - Parto Prematuro - Trastornos Menstruales - Miomas - Ovario Poliquístico Autor de varias publicaciones especializadas en Reproducción Humana y está certificado en sus dos especialidades por el Consejo Mexicano de Ginecología y Obstetricia. Es socio titular de la American Society for Reproductive Medicine (ASRM), Vocal de la Asociación Mexicana para el Estudio del Climaterio AMEC y Protesorero de la Asociación Mexicana de Medicina de la Reproducción AMMR.",
+  "addresses": [
+    {
+      "full": "Av. Ejercito Nacional #613, Granada, Polanco Piso 8, Consultorio 804.,"
+    },
+    {
+      "full": "Ejército Nacional Mexicano 613,"
+    },
+    {
+      "full": "Av. Ejercito Nacional #613, Granada, Polanco Piso 8, Consultorio 804.,"
+    },
+    {
+      "full": "Ejército Nacional Mexicano 613,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $2,200"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $2,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-luis-castro-lopez/ginecologo/queretaro#address-id=19170&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:05:07.669Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__jos__luis_castro_l_pez.webp"
+}

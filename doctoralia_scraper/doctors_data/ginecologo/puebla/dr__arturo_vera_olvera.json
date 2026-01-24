@@ -1,0 +1,38 @@
+{
+  "name": "Dr. Arturo Vera Olvera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/862391/862391d5d7e66366a3ed9deef5f2ddd9_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Cue Merlo 802 Int 2 Col. San Baltazar Campeche,"
+    },
+    {
+      "full": "Ave. Cue Merlo 802 Int 2 Col. San Baltazar Campeche,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Tratamientos de Reproducción Asistida e Infertilidad",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arturo-vera-olvera/ginecologo/puebla#address-id=397311&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T23:56:49.183Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__arturo_vera_olvera.webp"
+}

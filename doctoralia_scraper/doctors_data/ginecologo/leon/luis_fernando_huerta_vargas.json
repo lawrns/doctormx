@@ -1,0 +1,25 @@
+{
+  "name": "Luis Fernando Huerta Vargas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 432,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5aff7c/5aff7c93716e1f020e3198896b6e014f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av.Alud 804,"
+    },
+    {
+      "full": "Av.Alud 804,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-fernando-huerta-vargas/ginecologo/leon#address-id=199184&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:37:45.203Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/luis_fernando_huerta_vargas.webp"
+}

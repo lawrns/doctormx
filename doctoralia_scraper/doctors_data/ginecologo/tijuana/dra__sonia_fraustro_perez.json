@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Sonia Fraustro Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6834e8/6834e8afac2b89bfaabf6f2009d286cc_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cda Arete 10,"
+    },
+    {
+      "full": "Paseo De Los Héroes 10999 405 B,"
+    },
+    {
+      "full": "Cda Arete 10,"
+    },
+    {
+      "full": "Paseo De Los Héroes 10999 405 B,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sonia-fraustro-perez-2/ginecologo/tijuana#address-id=577979&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:45:56.196Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__sonia_fraustro_perez.webp"
+}

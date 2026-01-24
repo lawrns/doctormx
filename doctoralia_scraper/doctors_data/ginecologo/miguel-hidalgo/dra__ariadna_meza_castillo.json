@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Ariadna Meza Castillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 73,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4e1a8b/4e1a8bdf72b75d788e42a250e1169fdd_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Euklin Num Ext 15 Col Anzures,"
+    },
+    {
+      "full": "Euklin Num Ext 15 Col Anzures,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ariadna-meza-castillo/ginecologo/miguel-hidalgo#address-id=119516&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:42:23.045Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__ariadna_meza_castillo.webp"
+}

@@ -1,0 +1,89 @@
+{
+  "name": "Dra. Gabriela León Flores",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 623,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/13499e74/13499e74-23e2-4004-8984-00099a634a68_large.jpg",
+  "about": "Soy la Dra. Gabriela Leon Flores Médico Ginecóloga especialista en enfermedades del útero y ovarios, embarazo, Certificada ante COMEGO que es el Consejo Mexicano de Ginecología y obstetricia vigente. Experiencia en el manejo de enfermedades de Útero como Miomas, Adenomiosis, Endometriosis, Sangrados anormales, Quistes en los ovarios, Adherenias, Embarazo, Parto y Puerperio, Tumores de Mama, Cirugía Laparoscopica Y Estetica y Rejuvenecimiento Vaginal. Actualmente parte del equipo del departamento de cirugía laparoscopica de ginecología en el Hospital “José María Morelos y Pavón” del ISSSTE, en el grupo San Ángel inn y Ángeles. Soy un médico en constante preparación, honesta, responsable y empática con los pacientes, a sus ordenes para valoración de la función de útero, ovarios y embarazo en la Torre A, piso 6 consultorio 608, Hospital Ángeles México, Angeles Universidad, San Angel inn Patriotismo.",
+  "addresses": [
+    {
+      "full": "Agrarismo 208,"
+    },
+    {
+      "full": "Avenida Universidad 1080,"
+    },
+    {
+      "full": "Patriotismo 67,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Manejo de atrofia genital con Laser Co2 Fraccionado",
+      "price": "• $8,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $950"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $950"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriela-leon-flores/ginecologo/benito-juarez#address-id=104&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:01:00.751Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__gabriela_le_n_flores.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Marthel Raul Alvarado Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 275,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0744bd/0744bd4ac5c6d38b7dc6ff1391083d69_220_square.jpg",
+  "about": "Hola, soy el Dr. Marthel Alvarado López. Soy médico especializado en ginecología y obstetricia, con una pasión por cuidar la salud de las mujeres en todas las etapas de sus vidas. Me gradué de la Universidad La Salle en México y realicé mi especialidad y subespecialidad en Medicina Materno-Fetal en el IMSS. He complementado mi formación con diplomados en laparoscopía, gineco-endocrinología y menopausia, lo que me permite ofrecer un enfoque integral a mis pacientes. Además, disfruto compartir mis conocimientos como profesor en cursos y congresos, así como en la especialidad de ginecología y obstetricia. He tenido la oportunidad de liderar como presidente del Colegio de Ginecología y Obstetricia de León y actualmente soy jefe de la división de ginecología en el Hospital Ángeles León. Siempre estoy buscando nuevas maneras de mejorar la atención que brindamos y de apoyar a mis colegas en el camino. Será un gusto atenderte.",
+  "addresses": [
+    {
+      "full": "Av. Cerro Gordo 311 int 750,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Embarazo de alto riesgo",
+      "price": ""
+    },
+    {
+      "name": "Menopausia y Climaterio",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marthel-raul-alvarado-lopez-2/ginecologo/leon#address-id=68921&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:25:54.015Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__marthel_raul_alvarado_lopez.webp"
+}

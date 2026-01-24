@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Arturo Herrera Cervantes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8c1790/8c1790a2ac8b295c1b358e0517464f1b_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Guadalupe Victoria 9308-205 (centro medico Nova ),"
+    },
+    {
+      "full": "Int. A,Francisco Javier Mina 9308 (Zona Urbana Rio Tijuana),"
+    },
+    {
+      "full": "Guadalupe Victoria 9308-205 (centro medico Nova ),"
+    },
+    {
+      "full": "Int. A,Francisco Javier Mina 9308 (Zona Urbana Rio Tijuana),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": ""
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": ""
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arturo-herrera-cervantes/ginecologo/tijuana#address-id=85605&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:44:52.408Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__arturo_herrera_cervantes.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Guadalupe Del Ángel Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 113,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8438eb/8438eb8cb0a083a04ded12981918bec1_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cto Interior Avenida Río Churubusco 318 colonia Del Carmen Coyoacán ,"
+    },
+    {
+      "full": "Cto Interior Avenida Río Churubusco 318 colonia Del Carmen Coyoacán ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guadalupe-del-angel-garcia-2/ginecologo/ciudad-de-mexico#address-id=401876&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:12:00.831Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/guadalupe_del__ngel_garcia.webp"
+}

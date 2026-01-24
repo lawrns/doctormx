@@ -1,0 +1,25 @@
+{
+  "name": "Margarita Grajeda Peña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f57cfdb4/f57cfdb4-1a03-45d8-94da-b8fdd75d41d5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Retorno De Los Pirineos 195, Col. Lomas De Angelopolis Cluster 1010, ,"
+    },
+    {
+      "full": "Retorno De Los Pirineos 195, Col. Lomas De Angelopolis Cluster 1010, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/margarita-grajeda-pena/ginecologo/puebla#address-id=355847&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:32:58.871Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/margarita_grajeda_pe_a.webp"
+}

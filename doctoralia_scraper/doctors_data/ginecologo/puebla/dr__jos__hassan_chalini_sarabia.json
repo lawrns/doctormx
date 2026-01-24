@@ -1,0 +1,25 @@
+{
+  "name": "Dr. José Hassan Chalini Sarabia",
+  "specialty": "Ginecólogo",
+  "rating": 3.5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/348647/3486479ce81f6e6ce5cf289f5d7d9f0f_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Reforma Sur 302,"
+    },
+    {
+      "full": "Reforma Sur 302,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-hassan-chalini-sarabia/ginecologo/tehuacan#address-id=14338&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:18:34.329Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__jos__hassan_chalini_sarabia.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Citlalli Guauxochitl Marin",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/045935fe/045935fe-5b66-45af-8a2d-f6e70ce07650_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Insurgentes Sur 1673,"
+    },
+    {
+      "full": "Insurgentes Sur 1673,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/citlalli-guauxochitl-marin/ginecologo/ciudad-de-mexico#address-id=238368&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:22:23.139Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/citlalli_guauxochitl_marin.webp"
+}

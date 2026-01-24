@@ -1,0 +1,25 @@
+{
+  "name": "Ixi De Marin",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/59d023c6/59d023c6-8aaf-4215-b734-6a46707f8ff3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "German Gedovius No. 10431 402 Col. Zona Urbana Rio Tijuana ,"
+    },
+    {
+      "full": "German Gedovius No. 10431 402 Col. Zona Urbana Rio Tijuana ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ixi-de-marin/ginecologo/tijuana#address-id=359074&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:23:58.516Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/ixi_de_marin.webp"
+}

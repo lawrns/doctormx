@@ -1,0 +1,25 @@
+{
+  "name": "Jimenez Roberto Luna",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 68,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b4326a/b4326a17c1c472631b93b281a66e1f2e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Paseo De Los Héroes 10999 Cons. 305. Col. Zona Río. ,"
+    },
+    {
+      "full": "Av. Paseo De Los Héroes 10999 Cons. 305. Col. Zona Río. ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jimenez-roberto-luna/ginecologo/tijuana#address-id=359075&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:24:02.394Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/jimenez_roberto_luna.webp"
+}

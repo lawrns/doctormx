@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José Carlos Guerrero Dorado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 29,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/269400/2694001612b76a211a59c5ce75d8d706_220_square.jpg",
+  "about": "Médico ginecólogo con 32 años de experiencia clínica y quirúrgica. Desarrollo institucional en el Instituto Mexicano del Seguro Social por 30 años. Recertificado por el Consejo Mexicano de Ginecología y Obstetricia. Médico de Red de distintas aseguradoras. Mi objetivo es brindar los mejores servicios para la salud plena de la mujer.",
+  "addresses": [
+    {
+      "full": "Temistocles 210,,"
+    },
+    {
+      "full": "Temistocles 210,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-carlos-guerrero-dorado/ginecologo/colima#address-id=85679&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:04:38.944Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__jos__carlos_guerrero_dorado.webp"
+}

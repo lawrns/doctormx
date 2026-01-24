@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Viridiana Martinez Avendaño",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 461,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f24cc2/f24cc20c27f44d190cbad093d2d00efb_220_square.jpg",
+  "about": "Hola! soy la Dra. Viridiana Martinez, soy especialista en Ginecología y Obstetricia con subespecialidad en Medicina Materno Fetal. Estoy certificada por el Consejo Mexicano en Ginecología y Obstetricia y Medicina Materno Fetal (COMEGO), avalada por Fetal Medicine Foundation FMF. Soy parte de NACER: Diagnostico Fetal Tijuana, en donde nos encargamos de ofrecer un manejo integral desde el período prenatal para garantizar la salud y bienestar de la madre y su bebé.",
+  "addresses": [
+    {
+      "full": "P.º de los Héroes 9365, Zona Urbana Rio Tijuana, 22010 Tijuana, B.C.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Control prenatal de embarazo múltiple",
+      "price": "• $4,000"
+    },
+    {
+      "name": "Ecocardiografia fetal avanzada",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ecografía",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/viridiana-martinez-avendano/ginecologo/tijuana#address-id=422356&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:42:33.788Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__viridiana_martinez_avenda_o.webp"
+}

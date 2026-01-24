@@ -1,0 +1,31 @@
+{
+  "name": "Paulino Osorio Ramos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 565,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8a62a2/8a62a2125ecaeb65a8c9527282cdb392_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 26 199,"
+    },
+    {
+      "full": "C. 14 5 Y 6 681,"
+    },
+    {
+      "full": "C. 26 199,"
+    },
+    {
+      "full": "C. 14 5 Y 6 681,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paulino-osorio-ramos/ginecologo/merida#address-id=181572&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:47:50.511Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/paulino_osorio_ramos.webp"
+}

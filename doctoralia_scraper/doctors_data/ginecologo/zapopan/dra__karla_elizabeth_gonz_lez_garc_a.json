@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Karla Elizabeth González García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 219,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/aa1e8c/aa1e8cd238a28b3a758ee83060b059ea_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Río de Janeiro 2481- A,"
+    },
+    {
+      "full": "Río de Janeiro 2481- A,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-elizabeth-gonzalez-garcia-2/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:27:09.471Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__karla_elizabeth_gonz_lez_garc_a.webp"
+}

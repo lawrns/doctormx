@@ -1,0 +1,25 @@
+{
+  "name": "Luis Enrique Rosado Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 717,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/38803f/38803f2d2e6f38ec495fbd8fda8ac147_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Norte 24 Esq. Ote. 3 98,"
+    },
+    {
+      "full": "Norte 24 Esq. Ote. 3 98,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-enrique-rosado-perez/ginecologo/orizaba#address-id=79837&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:27:42.513Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/luis_enrique_rosado_perez.webp"
+}

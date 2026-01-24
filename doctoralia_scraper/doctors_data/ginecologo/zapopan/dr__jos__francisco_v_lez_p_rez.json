@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José Francisco Vélez Pérez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6cac29/6cac2936405af633125294a81ce01990_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Torre Medica San Javier, 1er piso, consultorio 104,"
+    },
+    {
+      "full": "Torre Medica San Javier, 1er piso, consultorio 104,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-francisco-velez-perez/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:26:35.465Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jos__francisco_v_lez_p_rez.webp"
+}

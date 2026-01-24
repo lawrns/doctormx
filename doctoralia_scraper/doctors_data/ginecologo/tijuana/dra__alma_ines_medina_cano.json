@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Alma Ines Medina Cano",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 72,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/30e76b/30e76b73fd0090c332e29ad3e6eba765_220_square.jpg",
+  "about": "Sobre mí Soy Medico especialista en Ginecologia y Obstetricia, me encanta la atención de partos y cesáreas, orientación de métodos anticonceptivos, salud femenina en general. Desde que inicié mi carrera de medicina supe que esta era la especialidad a la que queria dedicarme y trato de atender siempre a mis pacientes con toda el profesionalismo posible. Me encantaría ser tu ginecóloga. Me gusta mucho mi trabajo. ¿Por qué elegirme a mí? Me gusta mi trabajo, me gusta dar una atencion de calidad a mis pacientes siempre explicando a cada paso de mi consulta lo que realizamos para que ellas entiendan por que es importante la salud ginecologica Principales áreas de tratamiento Control prenatal, colposcopia, toma de Papanicolaou. Mi consulta y mi equipo Trabajamos con un grupo de asistentes, anestesiologos, pediatras, que manejan de forma integral, ética y responsable, cada caso que tratamos Otros servicios atención de partos y cesáreas, métodos anticonceptivos, vacuna de VPH. Colocación y retiro de DIU Colocación y retiro de Implante subdérmico Más sobre mí me gusta bailar, cantar, y recibir bebés, y sobre todo ser mamá",
+  "addresses": [
+    {
+      "full": "Boulevard Gustavo Díaz Ordaz 1111,"
+    },
+    {
+      "full": "Boulevard Gustavo Díaz Ordaz 1111,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,200"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alma-ines-medina-cano/ginecologo/tijuana#address-id=562093&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:43:28.421Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__alma_ines_medina_cano.webp"
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Dra. Susana Jiménez Juárez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 165,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a63939/a63939bd2e64f8e9a2c8749e0d23d848_220_square.jpg",
+  "about": "Ginecologa colaboradora en Centro Médico San Lucas",
+  "addresses": [
+    {
+      "full": "Prolongación Av. el Jacal No.1050, Fraccionamiento Puerta Real,"
+    },
+    {
+      "full": "Prolongación Av. el Jacal No.1050, Fraccionamiento Puerta Real,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $680"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $680"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/susana-jimenez-juarez/ginecologo/santiago-de-queretaro#address-id=368535&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:48:28.899Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__susana_jim_nez_ju_rez.webp"
+}

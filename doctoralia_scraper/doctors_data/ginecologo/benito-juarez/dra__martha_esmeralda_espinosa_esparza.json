@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Martha Esmeralda Espinosa Esparza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9620f5/9620f577edc6983be1d3d12945f81616_220_square.jpg",
+  "about": "GINECOLOGÍA Y OBSTETRICIA INFERTILIDAD",
+  "addresses": [
+    {
+      "full": "Avenida Río Churubusco 601,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martha-esmeralda-espinosa-esparza/ginecologo/benito-juarez#address-id=550798&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:01:49.961Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__martha_esmeralda_espinosa_esparza.webp"
+}

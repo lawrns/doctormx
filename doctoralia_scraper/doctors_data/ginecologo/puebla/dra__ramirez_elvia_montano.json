@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Ramirez Elvia Montano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4c76bb/4c76bb54ede2f0079a48b1888402d9b8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Agustin Melgar 907,"
+    },
+    {
+      "full": "Agustin Melgar 907,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ramirez-elvia-montano-2/ginecologo/puebla#address-id=54051&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:25:13.767Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__ramirez_elvia_montano.webp"
+}

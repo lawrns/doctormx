@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Elizabeth Adriana Valencia Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 235,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3fbe87/3fbe873c4a01ebc5e93af4c86b12c25b_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "AV. LOPEZ DE LAGAZPI 2408,"
+    },
+    {
+      "full": "AV. LOPEZ DE LAGAZPI 2408,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elizabeth-adriana-valencia-garcia/ginecologo/guadalajara#address-id=117287&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:29:35.984Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__elizabeth_adriana_valencia_garcia.webp"
+}

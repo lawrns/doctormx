@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Carlos Enrique Orozco Sanchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/38870de9/38870de9-581d-4888-8169-e780041a216e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Justo Sierra 2117,"
+    },
+    {
+      "full": "Calle Justo Sierra 2117,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-enrique-orozco-sanchez-2/ginecologo/guadalajara#address-id=57968&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:39:13.057Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__carlos_enrique_orozco_sanchez.webp"
+}

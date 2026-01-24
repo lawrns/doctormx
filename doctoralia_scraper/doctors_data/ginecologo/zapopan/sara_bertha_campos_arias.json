@@ -1,0 +1,25 @@
+{
+  "name": "Sara Bertha Campos Arias",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 24,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/8a393b2e/8a393b2e-fc4a-4da3-a9e3-3978fa13dfad_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Lerdo De Tejada 2593 - B,"
+    },
+    {
+      "full": "Av Lerdo De Tejada 2593 - B,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sara-bertha-campos-arias/ginecologo/guadalajara#address-id=102815&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:43:10.476Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/sara_bertha_campos_arias.webp"
+}

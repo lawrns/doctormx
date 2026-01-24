@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Alejandra Ramírez Lepe",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 35,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/92e6ec/92e6ecdb8c6381b4c8cc05a01c058c63_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Jesús García #2566. Col. Italia Providencia.,"
+    },
+    {
+      "full": "Av. Jesús García #2566. Col. Italia Providencia.,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-ramirez-lepe/ginecologo/guadalajara#address-id=135309&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:36:44.166Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__alejandra_ram_rez_lepe.webp"
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Armando Avilez Bacre",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 79,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/761d10/761d10b9f6f14007bb61e3af14b94f7f_220_square.jpg",
+  "about": "La ginecología puede ser tan amplia y ofrecer tantos escenarios desde las urgencias quirúrgicas hasta las consultas programadas para atención prenatal o por padecimientos ginecológicos. Soy Médico Ginecólogo-Obstetra con subespecialidad en Medicina Materno Fetal y alta especialidad en cirugía de mínima invasión; me formé como médico general en la Universidad La Salle, y soy egresado de la especialidad y subespecialidades del Instituto Nacional de Perinatología, avaladas por la Universidad Nacional Autónoma de México. Estoy certificado por el Consejo Mexicano de Ginecología y Obstetricia (Ginecología y Obstetricia y Medicina Materno Fetal) y por The Fetal Medicine Foundation de Reino Unido. Me especializo en control prenatal, embarazo de alto riesgo, tratamiento de padecimientos ginecológicos, métodos anticonceptivos y trastornos del climaterio. Las certificaciones que cada año tengo tanto para atender padecimientos de urgencia como consultas de seguimiento, así como congresos de las diferentes áreas de la ginecoobstetricia me hacen estar al día en tratamientos novedosos y estar a la vanguardia para mantener la salud de las mujeres, desde su adolescencia hasta la menopausia.",
+  "addresses": [
+    {
+      "full": "Av. Universidad 1080, Consultorio 4000, Xoco, Ciudad de México,"
+    },
+    {
+      "full": "Providencia 717, Colonia Del Valle Norte,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido estructural",
+      "price": "• Desde $2,600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido estructural",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/armando-avilez-bacre/ginecologo/ciudad-de-mexico#address-id=441989&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:05:36.107Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__armando_avilez_bacre.webp"
+}

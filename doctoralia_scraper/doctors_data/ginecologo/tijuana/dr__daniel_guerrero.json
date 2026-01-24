@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Daniel Guerrero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 149,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8cd3ba/8cd3bab25acef178f01cf8623b4996a6_220_square.jpg",
+  "about": "Soy el Dr. Daniel Guerrero, especialista en ginecología y obstetricia con sede en Tijuana. Me gradué de la Universidad La Salle y Universidad Autónoma de Mexico, me he especializado en el cuidado de la salud de la mujer y el embarazo. Como médico, mi prioridad es atender las necesidades de mis pacientes y brindarles la mejor atención médica posible. Me esfuerzo constantemente por mejorar mis habilidades y conocimientos a través de la educación continua y la asistencia a cursos y conferencias. Si está buscando un ginecólogo confiable en Tijuana, ¡no dude en ponerse en contacto conmigo!",
+  "addresses": [
+    {
+      "full": "Av. Sta. maria, Calete, 22044 Tijuana, B.C.,"
+    },
+    {
+      "full": "Av. Sta. maria, Calete, 22044 Tijuana, B.C.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniel-guerrero/ginecologo/tijuana#address-id=492488&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:42:57.270Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__daniel_guerrero.webp"
+}

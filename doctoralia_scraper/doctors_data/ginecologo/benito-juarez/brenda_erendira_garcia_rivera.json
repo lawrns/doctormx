@@ -1,0 +1,25 @@
+{
+  "name": "Brenda Erendira Garcia Rivera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 281,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6e48c1/6e48c1b8550bfa8505b49d618d760b82_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Plutarco Elias Calles 1222, Col. Banjidal, ,"
+    },
+    {
+      "full": "Plutarco Elias Calles 1222, Col. Banjidal, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/brenda-erendira-garcia-rivera/ginecologo/iztapalapa#address-id=356895&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:19:09.127Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/brenda_erendira_garcia_rivera.webp"
+}

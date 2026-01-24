@@ -1,0 +1,31 @@
+{
+  "name": "Maria Lorena Guadalupe Gonzalez Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 46,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/fe3fb476/fe3fb476-210b-4d82-8af8-b1a176f05ca7_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 15 Sur 505,"
+    },
+    {
+      "full": "Agrarismo 208,"
+    },
+    {
+      "full": "C. 15 Sur 505,"
+    },
+    {
+      "full": "Agrarismo 208,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-lorena-guadalupe-gonzalez-hernandez/ginecologo/puebla#address-id=191714&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:47:50.203Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/maria_lorena_guadalupe_gonzalez_hernandez.webp"
+}

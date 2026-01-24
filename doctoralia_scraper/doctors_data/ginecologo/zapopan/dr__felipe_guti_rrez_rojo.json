@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Felipe Gutiérrez Rojo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/620b70c2/620b70c2-e604-4ebe-941c-e294f231753c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Empresarios 150,"
+    },
+    {
+      "full": "Av Empresarios 150,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/felipe-gutierrez-rojo/ginecologo/zapopan#address-id=69941&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:29:25.432Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__felipe_guti_rrez_rojo.webp"
+}

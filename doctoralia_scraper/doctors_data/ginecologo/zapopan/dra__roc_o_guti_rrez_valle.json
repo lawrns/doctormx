@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Rocío Gutiérrez Valle",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 35,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5dbb8a4d/5dbb8a4d-9c88-4b47-a3bc-6cd0b1c6c29e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Horizonte 1357, Col. Jardines del sol,"
+    },
+    {
+      "full": "C. Horizonte 1357, Col. Jardines del sol,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rocio-gutierrez-valle/ginecologo/guadalajara#address-id=410123&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:29:00.325Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__roc_o_guti_rrez_valle.webp"
+}

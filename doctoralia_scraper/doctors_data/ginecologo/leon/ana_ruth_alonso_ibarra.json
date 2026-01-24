@@ -1,0 +1,43 @@
+{
+  "name": "Ana Ruth Alonso Ibarra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 336,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/31cb41/31cb410ee8995735ecd81a75032a041d_220_square.jpg",
+  "about": "En Colpogynelaser , nos especializamos en el manejo integral de salud de las mujeres . Nuestro enfoque es principalmente en la prevención, haciendo revisiones y recomendaciones especificas que ayudan a potenciar el bienestar en salud que es necesaria para evitar patologías .Somos especialistas en el uso del LASER para manejo especifico de ciertas condiciones ginecológicas del tracto genital. El manejo de alteraciones en el ciclo menstrual , así como cualquier patología que involucre útero , ovarios y vulva es nuestro campo. Si necesitas una valoración con calidad y experiencia , no dudes en contactarnos.",
+  "addresses": [
+    {
+      "full": "Circunvalación Oriente 113,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": "• Desde $1,600"
+    },
+    {
+      "name": "Ultrasonido Endovaginal",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-ruth-alonso-ibarra/ginecologo/leon#address-id=22978&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:26:47.952Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/ana_ruth_alonso_ibarra.webp"
+}

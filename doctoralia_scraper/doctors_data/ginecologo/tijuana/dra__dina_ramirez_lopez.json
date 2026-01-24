@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Dina Ramirez Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 20,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c8db74/c8db7448e86b4090aafd241e68e4c655_220_square.jpg",
+  "about": "Ginecólogo egresado del Centro Medico de Occidente en Guadalajara, Jalisco. (1991 - 1994) Colposcopia en Instituto Mexicano del Seguro Social en Guadalajara, Jalisco. (2007 HGZ 14 ) Coordinador Clínico en Clínica 7 del IMSS en Tijuana, Baja California ( 2013 - 2018) - Posgrado Urgencias Medico Quirúrgicas avalado por la Universidad de Guadalajara sede Cruz Roja Mexicana (1988 - 1990) - Miembro activo de la Asociación Mexicana de Ginecología y Obstetricia - Solo Practica Privada actualmente.",
+  "addresses": [
+    {
+      "full": "Mision de Mulege 3063 5to piso 501A Zona Rio,"
+    },
+    {
+      "full": "Mision de Mulege 3063 5to piso 501A Zona Rio,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dina-ramirez-lopez/ginecologo/tijuana#address-id=46696&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:44:02.174Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__dina_ramirez_lopez.webp"
+}

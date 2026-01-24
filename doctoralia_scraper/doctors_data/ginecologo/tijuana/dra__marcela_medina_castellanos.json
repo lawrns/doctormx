@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Marcela Medina Castellanos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/4f4c937d/4f4c937d-b79a-419f-9469-9a349be475ad_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida 5 De Mayo 1112-5 Zona Centro,"
+    },
+    {
+      "full": "Avenida 5 De Mayo 1112-5 Zona Centro,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marcela-medina-castellanos/ginecologo/tijuana#address-id=128290&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:46:36.995Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__marcela_medina_castellanos.webp"
+}

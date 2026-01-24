@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Hilda Rguez Zubieta",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 102,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/645d3860/645d3860-3934-49f3-998e-94ec93bf0c8c_small_square.jpg",
+  "about": "Soy médico Ginecólogo Obstetra, con Diplomado en Colposcopía y Tracto Genital inferior, así como un Alta Especialidad en Endoscopía Ginecológica. Por lo que me encuentro comprometida con mis pacientes a lo largo de su vida, tanto en áreas ginecológicas como en el ámbito obstétrico.Puedo acompañarte durante tu etapa más vulnerable, en tu embarazo por ejemplo, así como si estás cursando algún diagnóstico como Miomatosis Uterina, Adenoiosis, Sangrados anormales, Tumoraciones en cavidad Pélvica o si te encuentras en proceso de diagnóstico para algo más. Me comprometo a acompañarte hasta donde sea posible con un trato amable y calidez, dentro de un ambiente seguro.",
+  "addresses": [
+    {
+      "full": "Boulevard Bernardo Quintana Arrioja 4060,"
+    },
+    {
+      "full": "Av. de las Ciencias 2058,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hilda-rguez-zubieta/ginecologo/santiago-de-queretaro#address-id=444109&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:48:01.250Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__hilda_rguez_zubieta.webp"
+}

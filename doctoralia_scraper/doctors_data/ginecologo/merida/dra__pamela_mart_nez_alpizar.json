@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Pamela Martínez Alpizar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 67,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0c70c8/0c70c8e457294d547b49767aaf42514b.jpg",
+  "about": "Soy la Dra Pamela Martínez Alpizar,. Realice la licenciatura de médico cirujano en la Universidad Anáhuac Mayab en Mérida, Yucatán. Especialidad de Ginecología y obstetricia en la Universidad Autónoma de Yucatán Subespecialidad en Ginecología Oncológica en el Instituto Nacional de Cancerología, Universidad Autónoma de México, CDMX. Diplomado en Colposcopía y patología del tracto genital inferior en el Hospital General de México, Universidad Autónoma de México, CDMX.",
+  "addresses": [
+    {
+      "full": "Star Médica,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pamela-martinez-alpizar/ginecologo-ginecologo-oncologico/yucatan#address-id=574458&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:32:47.898Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__pamela_mart_nez_alpizar.webp"
+}

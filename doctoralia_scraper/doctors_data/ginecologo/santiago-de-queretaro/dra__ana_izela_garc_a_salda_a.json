@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ana Izela García Saldaña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 268,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5f78bc/5f78bcadad4c2dde53b23ec17e3133e4_220_square.jpg",
+  "about": "Especialista en Ginecología y obstetricia, colposcopia, Endocrinología Ginecológica. Ginecóloga Obstetra apasionada y comprometida por la salud y el bienestar de las mujeres. Experta en: Diagnóstico y tratamiento de enfermedades ginecológicas Atención prenatal y postnatal Cirugía ginecológica mínimamente invasiva Endocrinología ginecológica Colposcopia Educación: Título de Medicina por la Universidad Autónoma de Querétaro (UAQ) Especialización en Ginecología y Obstetricia en el Hospital del Niño y la Mujer Comprometida con: Brindar una atención de calidad, personalizada y empática Promover la educación en salud femenina Innovar en tratamientos y técnicas quirúrgicas Mi misión como ginecóloga es acompañar a cada mujer en su viaje hacia una vida saludable y plena.",
+  "addresses": [
+    {
+      "full": "Avenida Constituyentes 302,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-izela-garcia-saldana/ginecologo/santiago-de-queretaro#address-id=485841&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:42:45.395Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__ana_izela_garc_a_salda_a.webp"
+}

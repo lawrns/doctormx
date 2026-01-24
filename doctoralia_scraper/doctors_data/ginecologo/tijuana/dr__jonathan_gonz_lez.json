@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jonathan González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 70,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/57837327/57837327-4772-4a97-a3e1-ac21cc4acfe7_small_square.jpg",
+  "about": "Egresado De La Especialidad de Ginecologia y Obstetricia por la Universidad Autonoma De Baja California. Cuento con la Certifiacion del Consejo Mexicano de Ginecologia yObstetricia(CMGO). Diplomado en Colposcopia y Patologia Vulvovaginal Avalado por Universidad Mesoamericana Diplomado en Ginecologia Endocrinologica avalado por la Universidad Nacional Autonoma de Mexico. Diplomado en Climaterio y Menopausia. Diplomado en Ultrasonido Obstetrico Avalador Por Medicina Fetal Mexico",
+  "addresses": [
+    {
+      "full": "José María Velazco 2613 Consultorio 101,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jonathan-gonzalez-3/ginecologo/tijuana#address-id=575736&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:41:09.500Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__jonathan_gonz_lez.webp"
+}

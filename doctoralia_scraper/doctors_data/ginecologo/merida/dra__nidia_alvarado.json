@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Nidia Alvarado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 610,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/94320d/94320db5833747979c561ad331c1025c.jpg",
+  "about": "ME GRADUE DE MEDICO GENERAL EN LA UNAM ESPECIALIDAD DE GINECOLOGIA Y OBSTETRICIA EN EL HOSPITAL AGUSTIN O'HORAN DE MERIDA YUCATAN, TITULADA POR LA UADY DIPLOMADO DE COLPOSCOPIA Y PATOLOGIA DEL TRACTO GENITAL INFERIOR POR LA UNAM ADIESTRAMIENTO EN PARTO GENTIL (HUMANIZADO) Y PARTO EN AGUA, CERTIFICADO INTERNACIONAL AVALADO POR BARBARA HARPER MASTER DE VIRUS DE PAPILOMA HUMANO POR UNIVERSIDAD TECH ITITUDE DE MADRID ESPAÑA ACTUALMENTE CURSANDO UN GRAN MASTER EN ENDOCRINOLOGIA CLINICA EN ESPAÑA",
+  "addresses": [
+    {
+      "full": "Av. Alfredo Barrera Vazquez 215A,"
+    },
+    {
+      "full": "Av. Alfredo Barrera Vazquez 215a,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $800"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Parto en Agua",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $800"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nidia-alvarado/ginecologo/yucatan#address-id=535956&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:32:17.743Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__nidia_alvarado.webp"
+}

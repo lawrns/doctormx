@@ -1,0 +1,25 @@
+{
+  "name": "Jesus Herberth Avila",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 35,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/af4265/af4265cd0367b74ed31dc7e2df31c2b6_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Santa Fe,64, Col. Villas De Nuevo Mexico, ,"
+    },
+    {
+      "full": "Santa Fe,64, Col. Villas De Nuevo Mexico, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-herberth-avila/ginecologo/zapopan#address-id=355372&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:44:08.972Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/jesus_herberth_avila.webp"
+}

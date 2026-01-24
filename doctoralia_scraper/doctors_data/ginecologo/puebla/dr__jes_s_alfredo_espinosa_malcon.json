@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jesús Alfredo Espinosa Malcon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e65d76/e65d7607296bb156698e8b3177fa975b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 1 Nte 128,"
+    },
+    {
+      "full": "Calle 1 Nte 128,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-alfredo-espinosa-malcon/ginecologo/tehuacan#address-id=107804&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:30:09.158Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__jes_s_alfredo_espinosa_malcon.webp"
+}

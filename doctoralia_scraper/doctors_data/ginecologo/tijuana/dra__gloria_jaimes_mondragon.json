@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Gloria Jaimes Mondragon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 62,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d8fdad/d8fdad3269daaddfe3cfe6e091708141_220_square.jpg",
+  "about": "Hola! Soy la Dra. Gloria Jaimes Mondragon, originaria del Estado de México. Egresada de la escuela superior de medicina el Instituto Politécnico Nacional, realice mi residencia medica en el Centro Medico Nacional del Noroeste durante 3 años, donde también realice mi especialidad en Ginecologia y Obstetricia. Posteriormente realice un diplomado en Colposcopia avalado por la Universidad de Puebla. Actualmente radico en la ciudad de Tijuana. Mediante esta plataforma me gustaría que conozcas sobre nuestro servicio y así brindarte información sobre nuestra especialidad. Puedes agendar una cita directamente en esta pagina o a los números que aparecen en el contacto. Estoy para servirte, Gracias!",
+  "addresses": [
+    {
+      "full": "José Clemente Orozco 10122,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gloria-jaimes-mondragon-2/ginecologo/tijuana#address-id=71736&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:40:50.615Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__gloria_jaimes_mondragon.webp"
+}

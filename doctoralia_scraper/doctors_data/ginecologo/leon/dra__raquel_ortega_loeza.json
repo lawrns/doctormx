@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Raquel Ortega Loeza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 592,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7922d0/7922d071bcf328be102d0aec87c30773_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Aeropuerto 101,"
+    },
+    {
+      "full": "Av. Cerro Gordo 311,"
+    },
+    {
+      "full": "Blvd. Aeropuerto 101,"
+    },
+    {
+      "full": "Av. Cerro Gordo 311,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Cono cervical",
+      "price": "• Desde $14,500"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raquel-ortega-loeza/ginecologo/leon#address-id=521875&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:27:34.032Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__raquel_ortega_loeza.webp"
+}

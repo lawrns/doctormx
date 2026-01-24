@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Humberto Vital Cabrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 324,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/2d56c445/2d56c445-d4b2-4709-8b65-2190a341b295_small_square.jpg",
+  "about": "El arte de la Medicina como una gran vocación, se origino en mi desde épocas muy tempranas; esto motiva a prepararse y actualizarse constantemente para dar una atención integral a mis pacientes con calidad, respeto, empatía y honestidad con un fin común...devolverles la salud y su bienestar. * Medico cirujano egresado de la Universidad Anahuac Mayab, posteriormente cursando la especialidad en Ginecología y Obstetricia en el Hospital General México. * Diplomado en colposcopía y enfermedades del tracto genital inferior en el Centro Nacional de displasias. * Diplomado en Reproducción Asistida e Infertilidad en Hospital Español en CDMX/ Hisparep avalado por la Universidad La Salle. * Diplomado en Ultrasonido por el colegio Mexicano de Médicos Militares. Diplomado en Cirugía laparoscópica por el Hospital Ángeles CDMX avalado por la Universidad Anahuac. Certificado por el consejo mexicano de ginecología y obstetricia. Miembro del colegio yucateco de ginecología y obstetricia y la FEMECOG.",
+  "addresses": [
+    {
+      "full": "Calle 15,"
+    },
+    {
+      "full": "Calle 15,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $650"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $25"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/humberto-vital-cabrera/ginecologo/yucatan#address-id=34514&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:34:13.728Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__humberto_vital_cabrera.webp"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "Dr. Hiram Kazim Cárdenas Zavala",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 261,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9fb0f1/9fb0f17187b1a366f172da940bddc0f6_220_square.jpg",
+  "about": "Medico egresado de la Universidad Autónoma de Guadalajara como medico general, realizando mi adiestramiento como Gineco-Obstetra en el estado de Colima en el Hospital Regional Universitario, avalado por la Universidad de Colima y realizando a manera de post grado un adiestramiento en Cirugía laparoscópica y de mínima invasión ginecologica en el Hospital Civil de Guadalajara \"Juan I. Mechaca\"",
+  "addresses": [
+    {
+      "full": "Bernardo de Balbuena 864,"
+    },
+    {
+      "full": "Bernardo de Balbuena 864,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Medicina General",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hiram-kazim-cardenas-zavala/ginecologo-medico-general/guadalajara#address-id=346373&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:16:52.061Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__hiram_kazim_c_rdenas_zavala.webp"
+}

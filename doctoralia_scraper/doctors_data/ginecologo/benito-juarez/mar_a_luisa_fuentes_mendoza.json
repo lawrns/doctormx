@@ -1,0 +1,43 @@
+{
+  "name": "María Luisa Fuentes Mendoza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 709,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/40d8f1/40d8f1e42601501cfee594c90d857120.jpg",
+  "about": "Realicé mis estudios de médico general en la Facultad de Medicina de la UNAM, posteriormente me especialicé en Ginecología y Obstetricia en el Hospital de la Mujer de la Ciudad de México avalado por la UNAM. Estoy certificada por el Consejo Mexicano de Ginecología y Obstetricia. Cuento con un Diplomado en Colposcopía y Patología del tracto genital inferior del Hospital General de México. Dentro de mi profesión atiendo, diagnostico y ayudo a prevenir enfermedades que afectan a las mujeres en la adolescencia, edad adulta, embarazo, climaterio y menopausia. Como ginecóloga sé que mis pacientes necesitan confianza y profesionalismo en su atención, por ello, quien acude a mi consulta recibe atención ginecológica de calidad y siempre cuentan con la información y tratamiento necesario ya que es vital para un adecuado apego al tratamiento.",
+  "addresses": [
+    {
+      "full": "Gabriel Mancera 704,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-luisa-fuentes-mendoza-2/ginecologo/benito-juarez",
+  "scrapedAt": "2026-01-22T02:59:17.016Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/mar_a_luisa_fuentes_mendoza.webp"
+}

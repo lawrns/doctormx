@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Aline Cortés",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 116,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/e9bcc5d7/e9bcc5d7-ac00-4ca7-aaba-1914b382aff3_large.jpg",
+  "about": "Sobre mí Soy ginecóloga, obstetra y especialista en Biología de la Reproducción Humana. Me especializo en el cuidado integral de la salud femenina, con un enfoque en ginecología, fertilidad e infertilidad. Mi objetivo es brindar atención personalizada y actualizada, acompañando a cada paciente en cada etapa de su vida reproductiva. ¿Por qué elegirme a mí? Elegirme significa confiar en una atención médica personalizada, actualizada y empática. Como ginecóloga, obstetra y especialista en Biología de la Reproducción Humana, ofrezco un enfoque integral para el cuidado de tu salud en cada etapa de la vida. Me comprometo a escuchar tus inquietudes, brindarte un diagnóstico preciso y acompañarte con tratamientos basados ​​en la más avanzada evidencia científica. Mi prioridad es que te sientas cómoda, segura y bien informada en todo momento. Principales áreas de tratamiento Infertilidad, reproducción asistida, ginecología endocrinologica Mi consulta y mi equipo Atención completamente personalizada y humanizada Consulta en español e inglés, asegurando una comunicación clara y efectiva. Enfoque integral en motor un espacio donde tu bienestar, comodidad y confianza son mi prioridad. Otros servicios perdida gestacional recurrente, control prenatal, atención del nacimiento (parto o cesárea), cirugía de minima invasión, colposcopia, menopausia y climaterio Más sobre mí Me encuentro en la Ciudad de México en la colonia Narvarte Poniente, mi consultorio esta equipado con la mas alta tecnología para evaluarte de manera integral",
+  "addresses": [
+    {
+      "full": "Av. Cuauhtémoc 1040,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aline-cortes/ginecologo/benito-juarez#address-id=568247&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:00:33.233Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__aline_cort_s.webp"
+}

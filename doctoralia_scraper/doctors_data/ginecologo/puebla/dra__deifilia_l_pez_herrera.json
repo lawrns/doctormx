@@ -1,0 +1,38 @@
+{
+  "name": "Dra. Deifilia López Herrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/931537/93153717434e51567418c0bb48272b2c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "8 poniente 1304 Centro,"
+    },
+    {
+      "full": "8 poniente 1304 Centro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/deifilia-lopez-herrera/ginecologo/puebla#address-id=24277&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:14:35.955Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__deifilia_l_pez_herrera.webp"
+}

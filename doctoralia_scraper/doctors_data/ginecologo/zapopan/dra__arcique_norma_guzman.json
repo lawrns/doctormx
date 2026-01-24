@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Arcique Norma Guzman",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d6b013e7/d6b013e7-278d-4297-bdbf-eb5d36d16663_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Herrera Y Cairo 1125,"
+    },
+    {
+      "full": "Herrera Y Cairo 1125,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arcique-norma-guzman/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:27:28.683Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__arcique_norma_guzman.webp"
+}

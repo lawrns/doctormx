@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Ronald Antonio Alcázar Alarcón",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/0663a61a/0663a61a-0df1-4091-b66f-73ad19b6dab3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tehuantepec 251,"
+    },
+    {
+      "full": "Tehuantepec 251,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ronald-antonio-alcazar-alarcon/ginecologo/cuauhtemoc#address-id=84426&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:11:13.010Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__ronald_antonio_alc_zar_alarc_n.webp"
+}

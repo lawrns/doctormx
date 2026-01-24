@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Yuritzi Elizabeth Maldonado Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 149,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6e1c0c/6e1c0c71e80106c26f4c2c814cc23eb7_220_square.jpg",
+  "about": "HOLA!! MUY BUEN DIA!! SOY LA DRA. YURI, MEDICO ESPECIALISTA EN GINECOLOGIA Y OBSTETRICIA...PARA QUE CONOZCAN MAS DE MI LES DEJO LOS SIGUIENTES DATOS: - REALICE LA LICENCIATURA COMO MEDICO CIRUJANO Y PARTERO EN LA UNIVERSIDAD MICHOACANA DE SAN NICOLAS DE HIDALGO, EN MORELIA MICHOACAN - POSTERIORMENTE, LA ESPECIALIDAD DE GINECOLOGIA Y OBSTETRICIA EN LA UNIVERSIDAD AUTONOMA DEL ESTADO DE MEXICO, EN TOLUCA - CUENTO CON DIPLOMADO EN COLPOSCOPIA DE ALTA ESPECIALIDAD, EL CUAL LO REALICE DURANTE UN AÑO EN EL HOSPITAL GEA GONZALEZ, EN LA CIUDAD DE MEXICO, AVALADO POR LA UNAM (COLPOSCOPIA ES ENFOCADO A VIRUS DE PAPILOMA HUMANO Y PREVENCION DE CANCER CERVICOUTERINO), YA CON 2 AÑOS DE EXPERIENCIA EN HOSPITAL PUBLICO - REALICE UN SEGUNDO DIPLOMADO EN ULTRASONIDO GINECOLOGICO Y OBSTETRICO, AVALADO POR LA UNIVERSIDAD AUTONOMA DE QUERETARO (CON ENFOQUE EN ULTRASONIDO OBSTETRICO, ES DECIR, ULTRASONIDO DURANTE EL EMBARAZO) - RECIENTEMENTE REALICE UN POSGRADO EN MEDICINA MATERNO FETAL, ESTE ULTIMO AVALADO POR LA UNIVERSIDAD DE BARCELONA...NO SOY MEDICO SUBESPECIALISTA EN ESTA AREA, PERO CUENTO CON EL ADIESTRAMIENTO NECESARIO PARA LA DETECCION DE PATOLOGIAS O ENFERMEDADES EN EL BEBE, Y ASI MISMO, PODER CANALIZAR A TIEMPO CON EL MEDICO SUBESPECIALISTA SOY UNA PERSONA COMPROMETIDA CON MI TRABAJO, CONFIABLE, HONESTA Y SINCERA, SOBRETODO EN LA PARTE DIAGNOSTICA Y TERAPEUTICA, ES DECIR, DIAGNOSTICOS CERTEROS Y PROBABILIDADES DE TRATAMIENTO ESPECIFICOS",
+  "addresses": [
+    {
+      "full": "Calle Molino del Rey No. 401 Colonia las Campanas,"
+    },
+    {
+      "full": "Calle Molino del Rey No. 401 Colonia las Campanas,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yuritzi-elizabeth-maldonado-flores/ginecologo/santiago-de-queretaro#address-id=336800&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:54:46.841Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__yuritzi_elizabeth_maldonado_flores.webp"
+}

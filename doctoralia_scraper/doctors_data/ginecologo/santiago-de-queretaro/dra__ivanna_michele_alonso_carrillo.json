@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ivanna Michele Alonso Carrillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/873aea18/873aea18-eb08-48ca-9778-be0186e1cde2_small_square.jpg",
+  "about": "Médico ginecólogo formada en la Unidad Médica de Alta Especialidad más importante en Latinoamérica. Especialista en control, cuidado y resolución de embarazo de bajo y alto riesgo. Con Alta especialidad en Colposcopia y Patología del Tracto Genital Inferior. Especialista en Atención Ginecológica en Adolescencia, cirugía de mínimamente invasiva y experta en Balance Hormonal. Dedicada a la prevención, detección y tratamiento de Enfermedades de Transmisión Sexual y Regulación Hormonal. Como ginecóloga, estoy convencida de la importancia del acompañamiento en cada una de las etapas de la mujer desde el inicio de su desarrollo, la orientación sobre sus inquietudes, hasta alcanzar la madurez hormonal, sexual y reproductiva. En su paso por el maravilloso proceso de dar vida hasta la etapa de menopausia y climaterio. Utilizando los avances tecnológicos y científicos en favor de la Salud Femenina Integral procurando siempre un enfoque cálido, ético y empático.",
+  "addresses": [
+    {
+      "full": "HOSPITAL ÁNGELES CENTRO SUR PISO 18 Boulevard Bernardo Quintana Arrioja #9670, Centro Sur.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ivanna-michele-alonso-carrillo/ginecologo/santiago-de-queretaro#address-id=550913&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:47:19.074Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__ivanna_michele_alonso_carrillo.webp"
+}

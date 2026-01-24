@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Cesia Patricia Borjon Moya",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 190,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/110ac7/110ac7f2b89751812a1176e23fad1ee7_220_square.jpg",
+  "about": "Hola, soy Cesia Borjón, Ginecóloga egresada de la Universidad Autónoma de México, con casi 15 años de trayectoria en el cuidado de la salud de las mujeres. Mi actualización médica continua ha estado enfocado ultimamente en temas como nacimiento respetado, trato amigable a la embarazada, lactancia materna y apego inmediato piel a piel, empoderamiento femenino para la medicina preventiva, colposcopía, asesoría anticonceptiva individualizada, y educación sexual integral, endocrinología ginecológica, aborto legal y seguro, entre otros. Así mismo dentro de mis habilidades quirúrgicas está la atención de partos y cesárea humanizada, histerectomia abierta, cirugía laparoscópica, y colposcopía. En mi consultorio encontrarás un espacio abierto, imparcial, libre de prejuicios, donde tendrás la seguridad que la información manejada es 100% confidencial, en un marco científico en base al respeto de los derechos humanos, lo que fortalecerá nuestro vínculo médico-paciente. Estoy para servirte!!!",
+  "addresses": [
+    {
+      "full": "Fray Servando Teresa de Mier 1351,"
+    },
+    {
+      "full": "Fray Servando Teresa de Mier 1351,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $2,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cesia-patricia-borjon-moya-2/ginecologo/tijuana#address-id=383062&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:43:34.775Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__cesia_patricia_borjon_moya.webp"
+}

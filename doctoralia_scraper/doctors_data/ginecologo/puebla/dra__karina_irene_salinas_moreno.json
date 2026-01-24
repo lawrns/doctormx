@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Karina Irene Salinas Moreno",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 116,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/910c86/910c86fa7a57f002eacd17fbd0da4fdb_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Perifero Ecologico #3507 Col. Tlaxcalancingo,"
+    },
+    {
+      "full": "Perifero Ecologico #3507 Col. Tlaxcalancingo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karina-irene-salinas-moreno/ginecologo/puebla#address-id=428811&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:17:09.805Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__karina_irene_salinas_moreno.webp"
+}

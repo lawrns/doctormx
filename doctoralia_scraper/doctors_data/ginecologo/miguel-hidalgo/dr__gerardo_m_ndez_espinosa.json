@@ -1,0 +1,78 @@
+{
+  "name": "Dr. Gerardo Méndez Espinosa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5f8421/5f8421367843a9a904146444b879f616_220_square.jpg",
+  "about": "En la primera consulta aparte de de apertura de historial se realiza lo que es un estudios (ultrasonido transvaginal o papanicolao ultrasonido de mama). En el caso de la revisión anual se realizan varios estudios para un chequeo completo te incluye: papanicolaou, colposcopia, ultrasonido transvaginal y ultrasonido de mama.",
+  "addresses": [
+    {
+      "full": "Hospital Angeles México Agrarismo 208 - Torre A, Consultorio 606,"
+    },
+    {
+      "full": "Agrarismo 208 Torre A Consultorio 606 (Hospital Ángeles México) ,"
+    },
+    {
+      "full": "Vialidad de la Barranca S/N (Consultorio 040 Hospital Ángeles Lomas),"
+    },
+    {
+      "full": "Hospital Angeles México Agrarismo 208 - Torre A, Consultorio 606,"
+    },
+    {
+      "full": "Agrarismo 208 Torre A Consultorio 606 (Hospital Ángeles México) ,"
+    },
+    {
+      "full": "Vialidad de la Barranca S/N (Consultorio 040 Hospital Ángeles Lomas),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gerardo-mendez-espinosa-2/ginecologo/miguel-hidalgo#address-id=339613&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:06:36.823Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__gerardo_m_ndez_espinosa.webp"
+}

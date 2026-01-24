@@ -1,0 +1,25 @@
+{
+  "name": "Calva Socorro Luna De Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 179,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e61fb5c9/e61fb5c9-eec7-4bcb-8370-bac144cff092_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Thiers no. 42, Anzurez,"
+    },
+    {
+      "full": "Thiers no. 42, Anzurez,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/calva-socorro-luna-de-garcia/ginecologo/miguel-hidalgo#address-id=110828&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:44:25.248Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/calva_socorro_luna_de_garcia.webp"
+}

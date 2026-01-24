@@ -1,0 +1,37 @@
+{
+  "name": "Dr. Jorge Sanchez Huerta",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 37,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/45397f06/45397f06-30e7-4ea3-928e-444ba7e60184_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Canadá 16801,"
+    },
+    {
+      "full": "Blvd. Diaz Ordaz 15260,"
+    },
+    {
+      "full": "Antonio Caso 2055,"
+    },
+    {
+      "full": "Canadá 16801,"
+    },
+    {
+      "full": "Blvd. Diaz Ordaz 15260,"
+    },
+    {
+      "full": "Antonio Caso 2055,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-sanchez-huerta/ginecologo/tijuana#address-id=213130&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:47:13.177Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__jorge_sanchez_huerta.webp"
+}

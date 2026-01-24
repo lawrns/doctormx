@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Carlos Alejandro Parra Vargas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/60729037/60729037-4ea8-413f-a08e-481f1d9c098e_small_square.jpg",
+  "about": "Dr. Carlos Parra es especialista en reproducción asistida basado en Guadalajara con más de 10 años de experiencia. Se especializó en el Hospital Centro Médico Nacional de Occidente y enriqueció su formación con programa de alta complejidad en Valencia, España. Combina ciencia de punta con acompañamiento emocional, distinguiéndose por su mensaje esperanzador: \"No están solos; exploraremos cada opción con claridad y empatía\". Participa como conferencista en congresos y enseña ginecología y obstetricia.",
+  "addresses": [
+    {
+      "full": "Avenida Pablo Neruda 2828,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $4,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Consulta de infertilidad",
+      "price": "• $2,500"
+    },
+    {
+      "name": "Capacitación espermática e inseminación",
+      "price": "• $1,750"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-alejandro-parra-vargas/ginecologo/guadalajara#address-id=593775&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:12:40.502Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__carlos_alejandro_parra_vargas.webp"
+}

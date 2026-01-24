@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Victor Godinez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b6ebb5/b6ebb5261c05a5dc771df04292504950_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Manantial 106,"
+    },
+    {
+      "full": "Av. Manantial # 114, interior 102. Primer piso.,"
+    },
+    {
+      "full": "Manantial 106,"
+    },
+    {
+      "full": "Av. Manantial # 114, interior 102. Primer piso.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victor-godinez/ginecologo/leon#address-id=86492&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:29:26.680Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__victor_godinez.webp"
+}

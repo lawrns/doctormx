@@ -1,0 +1,43 @@
+{
+  "name": "Dr. José Antonio Garzón Núñez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 51,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cdc9be/cdc9be9ef84f74cd441fd95019de2e2a_220_square.jpg",
+  "about": "El Dr. José Antonio Garzón inició sus estudios de medicina en la Universidad La Salle en México, D.F., en junio de 1988 y concluyó exitosamente su preparación profesional en junio de 1993. Realizó su internado de pregrado en el Hospital Ángeles del Pedregal donde por su desempeño académico logró ser aceptado en Baylor College of Medicine en la ciudad de Houston Texas, fue calificado como un estudiante sobresaliente y estar dentro del 10 % de los estudiantes más destacados y postulado como un buen candidato para realizar sus estudios de posgrado en esa institución. El Dr. Garzón logró obtener la certificación para ejercer medicina en los Estados Unidos después de aprobar los exámenes de certificación USMLE (United States Medical Licensing Examination). Sus estudios de posgrado los realizó en el Instituto Nacional de Perinatología después de haber obtenido el primer lugar en el examen nacional de residencias médicas en la especialidad de Ginecología y Obstetricia, finalizando sus estudios en dicha especialidad con Mención Honorífica en febrero del año 2000. Por su destacada actuación como médico residente recibió el premio al mejor residente de su generación otorgado por la Secretaría de Salud e igualmente fungió como jefe de residentes en el periodo comprendido de marzo de 2000 a febrero del 2001, función que fue ampliamente reconocida en el Instituto Nacional de Perinatología. En dicho instituto cursó la subespecialidad de Biología de la Reproducción Humana siendo el único programa gubernamental que cuenta con el servicio de reproducción asistida. Obtuvo el título en la subespecialidad con la tesis: factores pronósticos en reproducción asistida, de la cual se desprendió una investigación científica en el área, llamada, porcentaje de fertilización como factor pronóstico de embarazo en ciclos de Fecundación In Vitro, la cual fue premiada con el primer lugar en el área de investigación médica en el Congreso Mexicano de Ginecología y Obstetricia. Al terminar sus estudios profesionales formó parte del reconocido centro de alta especialidad para la atención de la mujer en el Hospital Ángeles de las Lomas donde bajo la guía del Dr Samuel Karchmer y del Dr Alberto Kably logró una formación médica de excelencia. Obtuvo una beca médica para estudiar en el extranjero, en la Universidad de Schlewing Holstein, en Kiel Alemania, técnicas de reproducción asistida y cirugía endoscópica y de mínima invasión. Es un experto en el área de histeroscopia diagnóstica y de consultorio así como en histeroscopia quirúrgica avanzada. Su grupo fue el primero en realizar miomectomía submucosa con la tecnología mas novedosa en la actualidad, la morecelación histeroscópica de miomas intracavitarios, en el Hospital H+ de la ciudad de Querétaro. Igualmente ha continuado sus preparación en el área de cirugía laparoscópica y de mínima invasión y así ofrecer las alternativas mas modernas y menos invasivas a sus pacientes. Desde marzo del 2006 reside en la ciudad de Querétaro y es actualmente el Director del Centro de Reproducción y Ginecología de Querétaro, así mismo su centro se encuentra asociado a la clínica FERTILITE de la Cd. de Tijuana, la cual es reconocida como un centro de excelencia en noroeste de México por sus altos estándares de calidad internacional. El Dr. Garzón se desempeña actualmente como director médico de dicho centro en la Cd de Querétaro. El Dr. Garzón ha participado en múltiples publicaciones nacionales en revistas de la especialidad y ha colaborado en la realización de diferentes textos médicos. Es un Médico altamente calificado ya que se encuentra certificado en la especialidad de Ginecología y Obstetricia así como en la subespecialidad de Biología de la Reproducción Humana. Es miembro del Colegio Americano de Ginecología y Obstetricia y miembro de la American Society of Reproductive Medicine y del American Association for Gynecological Laparoscopy (AAGL) Tiene un sólido compromiso con la actualización y vanguardia médica por lo que es asistente regular a diversos congresos americanos, europeos y nacionales de la especialidad.",
+  "addresses": [
+    {
+      "full": "Av. Ignacio Zaragoza 16, Centro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia Testicular",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-antonio-garzon-nunez-2/ginecologo/santiago-de-queretaro",
+  "scrapedAt": "2026-01-22T03:42:08.227Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__jos__antonio_garz_n_n__ez.webp"
+}

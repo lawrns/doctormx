@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Abraham Gilberto Garcia Peña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 122,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/24029160/24029160-cd1f-4d08-9f13-c7b94f5dfbea_small_square.jpg",
+  "about": "Soy el Dr Abraham Garcia, ginecólogo y obstetra con mas de 5 años de experiencia dedicados a la salud integral de la mujer. Me gradué del Centro Medico Nacional del Noroeste y he complementado mi formación asistiendo a multiples cursos y diplomados para mantenerme actualizado en las ultimas técnicas y tratamientos. Mi objetivo es ofrecer una atencion personalizada y empatica, asegurando que cada paciente reciba el mejor cuidado posible en todas las etapas de su vida, desde la adolescencia hasta la menopausia. Entre mis areas de especialización se incluyen: -Atencion integral del embarazo y el parto. -Diagnostico y tratamiento de enfermedades ginecológicas. -Control y manejo de la menopausia. -Cirugia ginecologica minimamente invasiva. -Planificacion familiar y anticoncepción. Me esfuerzo por explicar de manera clara y comprensible los diagnósticos y tratamientos, involucrando siempre a mis pacientes en el proceso de la toma de decisiones. Mi practica se basa en un profundo respeto por la individualidad de cada mujer y una pasión por mejorar su calidad de vida. Formación: -Medico general en la Universidad Autónoma de Baja California (UABC) -Especialidad en Ginecologia y Obstetricia en Centro Medico Nacional Del Noroeste en Ciudad Obregon Sonora -Diplomado en Colposcopia avalado por la Universidad Autónoma de Baja California -Diplomado en Endocrinologia ginecologica avalado por la Universidad de las Americas Puebla (UDLAP)",
+  "addresses": [
+    {
+      "full": "Blvd. Gustavo Díaz Ordaz 2208,"
+    },
+    {
+      "full": "Blvd. Agua Caliente 9955,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• $700"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/abraham-gilberto-garcia-pena/ginecologo/tijuana#address-id=505476&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:41:35.655Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__abraham_gilberto_garcia_pe_a.webp"
+}

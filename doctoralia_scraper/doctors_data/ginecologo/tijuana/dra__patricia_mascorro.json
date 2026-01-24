@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Patricia Mascorro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/701d32/701d32021fa940c101c3fb469677e5e6_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Gonzalez Ortega 876,"
+    },
+    {
+      "full": "Carrillo Puerto O C. 3A. 1830,"
+    },
+    {
+      "full": "Av. Gonzalez Ortega 876,"
+    },
+    {
+      "full": "Carrillo Puerto O C. 3A. 1830,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/patricia-mascorro/ginecologo/ciudad-de-mexico#address-id=352561&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:46:31.434Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__patricia_mascorro.webp"
+}

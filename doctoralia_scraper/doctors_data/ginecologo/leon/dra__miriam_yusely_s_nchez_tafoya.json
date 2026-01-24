@@ -1,0 +1,35 @@
+{
+  "name": "Dra. Miriam Yusely Sánchez Tafoya",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 138,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ae266fe9/ae266fe9-e36e-43d9-8352-b0ef5eea03d9_small_square.jpg",
+  "about": "Soy especialista en Ginecología y obstetricia Su especialidad en Biología de la reproducción Humana, realizó colposcopia, hosteroscopia, laparoscopia, rejuvenecimiento vaginal.",
+  "addresses": [
+    {
+      "full": "Calle Hidalgo 311,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Histeroscopia Diagnostica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miriam-yusely-sanchez-tafoya/ginecologo/leon#address-id=456521&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:27:06.524Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__miriam_yusely_s_nchez_tafoya.webp"
+}

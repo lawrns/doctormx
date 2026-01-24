@@ -1,0 +1,31 @@
+{
+  "name": "Alexis Jesus Deya Oropeza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 24,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/8a393b2e/8a393b2e-fc4a-4da3-a9e3-3978fa13dfad_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Universidad 246,"
+    },
+    {
+      "full": "Francisco I. Madero 1120,"
+    },
+    {
+      "full": "Av. Universidad 246,"
+    },
+    {
+      "full": "Francisco I. Madero 1120,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alexis-jesus-deya-oropeza/ginecologo/centro#address-id=249334&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:34:55.051Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/alexis_jesus_deya_oropeza.webp"
+}

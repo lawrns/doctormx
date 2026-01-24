@@ -1,0 +1,37 @@
+{
+  "name": "Felipe Caldiño Soto",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e8fff58a/e8fff58a-5119-4a57-a0c7-7d19cbd9ada9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cam. De Sta. Teresa 1055,"
+    },
+    {
+      "full": "Av. Paseo De Las Palmas 745,"
+    },
+    {
+      "full": "Av. Rio Magdalena 289,"
+    },
+    {
+      "full": "Cam. De Sta. Teresa 1055,"
+    },
+    {
+      "full": "Av. Paseo De Las Palmas 745,"
+    },
+    {
+      "full": "Av. Rio Magdalena 289,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/felipe-caldino-soto/ginecologo/ciudad-de-mexico#address-id=228942&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:55:23.445Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/felipe_caldi_o_soto.webp"
+}

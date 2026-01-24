@@ -1,0 +1,25 @@
+{
+  "name": "Maria Hermelind Varela Baca",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 113,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8438eb/8438eb8cb0a083a04ded12981918bec1_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Pirineos letra b no. 157, Portales,"
+    },
+    {
+      "full": "Pirineos letra b no. 157, Portales,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-hermelind-varela-baca/ginecologo/tlalpan#address-id=133729&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:16:57.332Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/maria_hermelind_varela_baca.webp"
+}

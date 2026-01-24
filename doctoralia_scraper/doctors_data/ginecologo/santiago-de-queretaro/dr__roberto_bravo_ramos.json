@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Roberto Bravo Ramos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f55e7d1c/f55e7d1c-bd1f-4f65-b495-2de7b6c19fd2_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "PRIVADA IGNACIO ZARAGOZA 16 A,"
+    },
+    {
+      "full": "PRIVADA IGNACIO ZARAGOZA 16 A,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-bravo-ramos/ginecologo/santiago-de-queretaro#address-id=25755&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:52:07.444Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__roberto_bravo_ramos.webp"
+}

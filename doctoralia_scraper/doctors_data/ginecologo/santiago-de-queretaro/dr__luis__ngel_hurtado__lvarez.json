@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Luis Ángel Hurtado Álvarez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 102,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0d5644/0d56440a7ea0482efe431cfb633db88e_220_square.jpg",
+  "about": "Como ginecólogo y obstetra, me enorgullece ofrecer una atención médica de vanguardia, respaldada por una sólida formación profesional. Mi enfoque se distingue por la fusión de precisión clínica y empatía, buscando establecer un entorno cálido donde mis pacientes se sientan comprendidos. Mi compromiso se refleja en la dedicación a proporcionar respuestas claras y soluciones personalizadas, abordando cada inquietud con atención meticulosa. En mi práctica, priorizo la excelencia médica junto con el cuidado personalizado, contribuyendo así al bienestar integral de mis pacientes. Estoy especializado en el área de infertilidad y reproducción asistida; además realizo colposcopias.",
+  "addresses": [
+    {
+      "full": "Paseo de la República 135 (Edificio Platinum Business Center, Piso 4),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $500"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-angel-hurtado-alvarez/ginecologo/santiago-de-queretaro#address-id=462509&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:42:38.348Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__luis__ngel_hurtado__lvarez.webp"
+}

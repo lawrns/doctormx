@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Ferrari Ricardo Quiroz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/403687/40368767cc3dc3914af6c3143b5fec1d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Agrarismo 208 702,"
+    },
+    {
+      "full": "Calle Agrarismo 208 702,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ferrari-ricardo-quiroz/ginecologo/ciudad-de-mexico#address-id=36494&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:46:28.976Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__ferrari_ricardo_quiroz.webp"
+}

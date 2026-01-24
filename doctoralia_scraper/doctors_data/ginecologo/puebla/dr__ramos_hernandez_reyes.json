@@ -1,0 +1,36 @@
+{
+  "name": "Dr. Ramos Hernandez Reyes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 95,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dfa6af/dfa6afc23d7595f034652540eae3e1b8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Del Deporte S/N,"
+    },
+    {
+      "full": "Blvd. Revolucion 10 A,"
+    },
+    {
+      "full": "Av. Del Deporte S/N,"
+    },
+    {
+      "full": "Blvd. Revolucion 10 A,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ramos-hernandez-reyes/ginecologo/tlaxcala#address-id=179791&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:20:06.310Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__ramos_hernandez_reyes.webp"
+}

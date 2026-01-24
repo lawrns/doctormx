@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Stephanie Rosas González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 59,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0f7fa8/0f7fa8971e8cc964cbadee6c56455d21_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Franz Schubert, 5500 , La Estancia,"
+    },
+    {
+      "full": "Franz Schubert, 5500 , La Estancia,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Retiro de DIU",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/stephanie-rosas-gonzalez/ginecologo/zapopan#address-id=387921&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:20:43.520Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__stephanie_rosas_gonz_lez.webp"
+}

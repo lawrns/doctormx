@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Erika Georgina Estrada Lara",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 39,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/87fca0/87fca07e35cb49d4e8e3ea57d60c9492_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Sur 136 116,"
+    },
+    {
+      "full": "Sur 136 116,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• Desde $1,100"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/erika-georgina-estrada-lara/ginecologo/coyoacan#address-id=230908&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:04:44.982Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__erika_georgina_estrada_lara.webp"
+}

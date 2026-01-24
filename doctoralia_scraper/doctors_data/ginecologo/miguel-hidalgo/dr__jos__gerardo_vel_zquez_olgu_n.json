@@ -1,0 +1,43 @@
+{
+  "name": "Dr. José Gerardo Velázquez Olguín",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 38,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3cd095e5/3cd095e5-4dac-46f3-89f5-e49d0f2101f4_small_square.jpg",
+  "about": "¡Bienvenido a mi perfil! Mi nombre es José Gerardo Velázquez Olguín cuento con 2 especialidades, Gineco-obstetricia y Ginecología oncológica, mi práctica se centra en prevención, diagnostico y tratamiento oportuno de cáncer de mama y diversos cánceres ginecológicos, así como chequeos ginecológicos, utilizando las herramientas más avanzadas como la mínima invasión (ej. laparoscopia). ¡Te invito a reservar tu cita!",
+  "addresses": [
+    {
+      "full": "Av. Ejército Nacional Mexicano 613,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Biopsia mamaria",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $2,400"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-gerardo-velazquez-olguin/ginecologo-oncologico-ginecologo/miguel-hidalgo#address-id=565758&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:02:54.123Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__jos__gerardo_vel_zquez_olgu_n.webp"
+}

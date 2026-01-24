@@ -1,0 +1,25 @@
+{
+  "name": "Amparo Eugenia Arredondo Zamora",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 35,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/92e6ec/92e6ecdb8c6381b4c8cc05a01c058c63_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Jesús García 2447,"
+    },
+    {
+      "full": "C. Jesús García 2447,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/amparo-eugenia-arredondo-zamora/ginecologo/guadalajara#address-id=247663&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:40:59.745Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/amparo_eugenia_arredondo_zamora.webp"
+}

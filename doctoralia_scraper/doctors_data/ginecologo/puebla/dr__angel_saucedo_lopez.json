@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Angel Saucedo Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 90,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/11309e/11309e881f617e06c9575a4130bae0fd_220_square.jpg",
+  "about": "Dr. Angel Saucedo Lopez Ginecólogo especialista en Reproducción Asistida con más de 12 años de experiencia profesional y una gran calidez humana. El doctor Saucedo ha logrado conjuntar experiencia, juventud y profesionalismo, logrando con ello contribuir a muchas parejas en la búsqueda de un embarazo.",
+  "addresses": [
+    {
+      "full": "16 de septiembre num 35,"
+    },
+    {
+      "full": "16 de septiembre num 35,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angel-saucedo-lopez-2/ginecologo/tlaxcala#address-id=434113&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:12:15.449Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__angel_saucedo_lopez.webp"
+}

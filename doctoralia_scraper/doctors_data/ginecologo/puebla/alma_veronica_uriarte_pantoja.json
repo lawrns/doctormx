@@ -1,0 +1,25 @@
+{
+  "name": "Alma Veronica Uriarte Pantoja",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 150,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/40f6a6/40f6a63de95b52445301b115a701e642_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. 16 De Septiembre 4102,"
+    },
+    {
+      "full": "Av. 16 De Septiembre 4102,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alma-veronica-uriarte-pantoja/ginecologo/puebla#address-id=156982&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:34:43.003Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/alma_veronica_uriarte_pantoja.webp"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Teresita Ríos Casillas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Torre Trajana 145,"
+    },
+    {
+      "full": "Torre Trajana 145,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/teresita-rios-casillas/ginecologo/leon#address-id=66803&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:29:42.674Z",
+  "localPhotoPath": null
+}

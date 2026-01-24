@@ -1,0 +1,30 @@
+{
+  "name": "Sergio Dickter",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 80,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d098bb/d098bbcf82d05444b8b05ddd09e17be5_140_square.jpg",
+  "about": "GINECOLOGO, ESPECIALISTA EN TRATAMIENTO PARA LA PERIMENOPAUSIA , MENOPAUSIA Y ANDROPAUSIA DE ORIGEN NATURAL , MEDICINA FUNCIONAL.",
+  "addresses": [
+    {
+      "full": "Avenida avenida de Las Palmas 745-904,"
+    },
+    {
+      "full": "Avenida avenida de Las Palmas 745-904,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-dickter/ginecologo/ciudad-de-mexico#address-id=593433&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:40:17.830Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/sergio_dickter.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Luciano Muñoz Durán",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 366,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5ccbee/5ccbee8819cfb1565bfca66b0d02fc9f_220_square.jpg",
+  "about": "Hola . Soy Dr. Luciano. Atendemos enfermedades. Relacionadas a cáncer de mama y cáncer ginecólogico. Así como. Enfermedades relacionadas al virus del papiloma humano.",
+  "addresses": [
+    {
+      "full": "bvld,aguacaliente 1844 interior 301,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Atención pacientes con cáncer",
+      "price": "• $800"
+    },
+    {
+      "name": "Biopsia con marcaje con arpón",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Biopsia trucut de mama",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Cirugía conservadora de glándula mamaria",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Cirugía ginecológica y obstetrica de alta complejidad",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luciano-munoz-duran-2/ginecologo-oncologico/tijuana#address-id=389190&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:41:33.035Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__luciano_mu_oz_dur_n.webp"
+}

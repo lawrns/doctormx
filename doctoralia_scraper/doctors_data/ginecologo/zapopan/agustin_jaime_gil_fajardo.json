@@ -1,0 +1,25 @@
+{
+  "name": "Agustin Jaime Gil Fajardo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b3938a/b3938a15992897ce1ab3312cf31a0b78_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Acatempan 2205 Inter 4,"
+    },
+    {
+      "full": "Acatempan 2205 Inter 4,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/agustin-jaime-gil-fajardo/ginecologo/guadalajara#address-id=135320&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:43:06.637Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/agustin_jaime_gil_fajardo.webp"
+}

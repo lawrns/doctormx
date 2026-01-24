@@ -1,0 +1,37 @@
+{
+  "name": "Ubaldo Ramos Alamillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/76acd50f/76acd50f-f1e6-47cf-bb47-ff2f76bf2ba9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Melchor Ocampo 212,"
+    },
+    {
+      "full": "General Benjamín Hill 24,"
+    },
+    {
+      "full": "Herschel 119,"
+    },
+    {
+      "full": "Melchor Ocampo 212,"
+    },
+    {
+      "full": "General Benjamín Hill 24,"
+    },
+    {
+      "full": "Herschel 119,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ubaldo-ramos-alamillo/ginecologo/ciudad-de-mexico#address-id=170208&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:44:43.347Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/ubaldo_ramos_alamillo.webp"
+}

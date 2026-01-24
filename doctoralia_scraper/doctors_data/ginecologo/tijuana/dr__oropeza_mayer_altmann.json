@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Oropeza Mayer Altmann",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d8fdad/d8fdad3269daaddfe3cfe6e091708141_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Jose C Orozco 2251 2,"
+    },
+    {
+      "full": "Calle Jose C Orozco 2251 2,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/oropeza-mayer-altmann/ginecologo/tijuana#address-id=66766&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:48:40.145Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__oropeza_mayer_altmann.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. José Miguel Navarro Martín",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/351899/351899ab489f89500b7e7e6e79ad3e47_220_square.jpg",
+  "about": "Soy el Dr. José Miguel Navarro Martín, especialista en Ginecología y Obstetricia en Ciudad de México. En el área ginecológica me enfoco en ofrecer tratamientos mínimamente invasivos, tanto quirúrgicos como farmacológicos, y en obstetricia brindo un trato humano y cercano en cada etapa, ya sea en parto o cesárea, siempre priorizando la seguridad y el bienestar de mis pacientes.",
+  "addresses": [
+    {
+      "full": "Avenida Universidad 1080,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-miguel-navarro-martin/ginecologo/benito-juarez",
+  "scrapedAt": "2026-01-22T02:59:24.604Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__jos__miguel_navarro_mart_n.webp"
+}

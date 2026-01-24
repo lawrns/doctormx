@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Jose Manuel Madrazo Cabo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/373cfc6a/373cfc6a-0e42-4407-8f46-35e57c35ff0c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Kepler 3143 780 B,"
+    },
+    {
+      "full": "Av. Kepler 2143,"
+    },
+    {
+      "full": "Ave. Kepler 3143 780 B,"
+    },
+    {
+      "full": "Av. Kepler 2143,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-manuel-madrazo-cabo/ginecologo/puebla#address-id=5515&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:17:01.517Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__jose_manuel_madrazo_cabo.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Karina Rojo de la Vega Reyes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 70,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/71c264/71c2643a9a76b325d1473d3dbb38c11e_220_square.jpg",
+  "about": "Soy un médico al que le gusta siempre estar a la vanguardia, amo lo que hago y lo realizo con gran pasión ... Siempre venciendo nuevos retos para poder ofrecerte lo mejor",
+  "addresses": [
+    {
+      "full": "David Alfaro Siqueiros 2800 int 12, Zona Urbana Rio Tijuana, 22010 Tijuana, B.C.,"
+    },
+    {
+      "full": "David Alfaro Siqueiros 2800 int 12, Zona Urbana Rio Tijuana, 22010 Tijuana, B.C.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karina-rojo-de-la-vega-reyes/ginecologo/tijuana#address-id=94663&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:44:58.463Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__karina_rojo_de_la_vega_reyes.webp"
+}

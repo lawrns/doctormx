@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Jose Ulises Cisneros Herrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 244,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/c97ed796/c97ed796-55c6-4f5c-ae4a-293d57063b88_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Angulo 28-Z,"
+    },
+    {
+      "full": "Av. Tabachines 3661,"
+    },
+    {
+      "full": "Angulo 28-Z,"
+    },
+    {
+      "full": "Av. Tabachines 3661,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-ulises-cisneros-herrera/ginecologo/guadalajara#address-id=207550&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:35:18.970Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jose_ulises_cisneros_herrera.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Carlos Guillermo Valdes Ciau",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 611,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/89e0f2/89e0f2495c8db4b21a1c52efb73f3e5b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Isla Del Coco 2248 2248,"
+    },
+    {
+      "full": "Isla Del Coco 2248 2248,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-guillermo-valdes-ciau/ginecologo/guadalajara#address-id=240852&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:34:06.948Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__carlos_guillermo_valdes_ciau.webp"
+}

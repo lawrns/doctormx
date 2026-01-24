@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Octavio Adolfo Trigo Viguri",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c76093/c760938459a52717b489ef8730e1ea16_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Agrarismo (Torre B Hospital Angeles Mexico), 208, Cons. 654 A,"
+    },
+    {
+      "full": "Agrarismo (Torre B Hospital Angeles Mexico), 208, Cons. 654 A,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/octavio-adolfo-trigo-viguri/ginecologo/miguel-hidalgo#address-id=78660&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:46:21.841Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__octavio_adolfo_trigo_viguri.webp"
+}

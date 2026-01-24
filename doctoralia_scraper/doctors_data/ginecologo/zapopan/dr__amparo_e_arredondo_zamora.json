@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Amparo E Arredondo Zamora",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 127,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bfa25c/bfa25cde31fe04ef0d9cbadf78932a6f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Jesus Garcompania 2447 P 6 602,"
+    },
+    {
+      "full": "Jesus Garcompania 2447 P 6 602,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/amparo-e-arredondo-zamora/ginecologo/guadalajara#address-id=46807&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:38:42.732Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__amparo_e_arredondo_zamora.webp"
+}

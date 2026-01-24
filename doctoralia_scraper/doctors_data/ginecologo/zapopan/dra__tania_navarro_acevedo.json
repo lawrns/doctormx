@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Tania Navarro Acevedo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 262,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/590582/59058238ceeae1b64c428d30da5e9606_220_square.jpg",
+  "about": "Mi nombre es Tania Navarro, soy médico egresado de la Universidad de Guadalajara, realicé la especialidad en Ginecología y Obstetricia en Centro Médico Nacional de Occidente, y cuento con certificación por el Consejo Mexicano de Ginecología y Obstetricia. Me gustaria conocerte y guiarte para tener una buena salud ginecologica, brindando siempre la mejor atención a mis pacientes con un servicio de calidad y calidez.",
+  "addresses": [
+    {
+      "full": "Calle de la Nebulosa 3026,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tania-navarro-acevedo/ginecologo/guadalajara#address-id=455276&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:10:15.107Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__tania_navarro_acevedo.webp"
+}

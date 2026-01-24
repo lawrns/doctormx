@@ -1,0 +1,31 @@
+{
+  "name": "Maria Gpe Zapata Sanchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 498,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/670f99/670f99fac540eac6e3e4508f3a344d34_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Fuego 501,"
+    },
+    {
+      "full": "C. Niebla 105,"
+    },
+    {
+      "full": "C. Fuego 501,"
+    },
+    {
+      "full": "C. Niebla 105,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-gpe-zapata-sanchez/ginecologo/leon#address-id=192438&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:35:15.421Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/maria_gpe_zapata_sanchez.webp"
+}

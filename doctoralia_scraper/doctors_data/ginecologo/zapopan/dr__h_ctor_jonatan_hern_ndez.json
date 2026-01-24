@@ -1,0 +1,47 @@
+{
+  "name": "Dr. Héctor Jonatan Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2837,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2b734d/2b734d369d939bc1bc34f16fc131505f.jpg",
+  "about": "Soy el Dr. Héctor Jonatan Hernández, especialista en Ginecología y Obstetricia, egresado de la Universidad de Guadalajara, uno de los hospitales más importantes en la formación de gineco-obstetras en México.Estoy certificado por el Consejo Mexicano de Ginecología y Obstetricia, además de contar con una subespecialidad en Ginecología Oncológica y formación en laparoscopia y cirugía de mínima invasión.Mi formación me permite ayudar a mis pacientes en el diagnóstico y tratamiento de enfermedades ginecológicas como endometriosis, miomatosis, embarazo de alto riesgo, detección oportuna de cáncer y atención oncológica integral, brindando atención de calidad y actualizada.¡No dudes en programar una cita conmigo! Estoy comprometido en ayudarte a sentirte mejor y lograr una salud integral.",
+  "addresses": [
+    {
+      "full": "Avenida Miguel Hidalgo y Costilla 930,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $650"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $650"
+    },
+    {
+      "name": "Atención del cáncer en la mujer",
+      "price": ""
+    },
+    {
+      "name": "Endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Histeroscopia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-jonatan-hernandez/ginecologo-ginecologo-oncologico/guadalajara#address-id=437189&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:13:40.144Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__h_ctor_jonatan_hern_ndez.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Sue Eugenio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 333,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a9a406/a9a40672d15879a7ac1deff3260888bb_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Eugenio Sue 355,"
+    },
+    {
+      "full": "Ave. Eugenio Sue 355,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sue-eugenio/ginecologo/ciudad-de-mexico#address-id=46888&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:52:06.151Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__sue_eugenio.webp"
+}

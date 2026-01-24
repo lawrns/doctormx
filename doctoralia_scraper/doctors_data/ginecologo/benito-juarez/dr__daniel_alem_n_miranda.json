@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Daniel Alemán Miranda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 160,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ba3765/ba3765979d0d7ea3b861d1fd02e3adeb_220_square.jpg",
+  "about": "Hola, mucho gusto, soy Dani, Ginecólogo y Obstetra; egresado del Hospital General \"Dr. Manuel Gea González\". Brindo atención gustoso a ambas ramas de la especialidad con un interés especial en problemas de infertilidad. Mi consulta es inclusiva, brindando un espacio seguro para la comunidad LGBT+. Si tú formas parte de población diversa o conoces a alguien que necesite este tipo de consulta no dudes en recomendarme, es mi compromiso poder brindar una atención médica segura e integral a pacientes no binaries y hombres y mujeres transexuales. Egresado como Médico Cirujano de la Facultad de Medicina de la Universidad Nacional Autónoma de México. Estoy certificado por el Colegio Mexicano de Ginecología y Obstetricia. Estoy a tus órdenes.",
+  "addresses": [
+    {
+      "full": "Perpetua 40,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Terapia hormonal a personas transgénero",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniel-aleman-miranda/ginecologo/ciudad-de-mexico",
+  "scrapedAt": "2026-01-22T02:59:29.628Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__daniel_alem_n_miranda.webp"
+}

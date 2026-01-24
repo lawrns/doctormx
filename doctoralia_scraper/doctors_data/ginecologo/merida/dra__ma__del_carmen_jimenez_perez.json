@@ -1,0 +1,37 @@
+{
+  "name": "Dra. Ma. Del Carmen Jimenez Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 610,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dfb1df/dfb1dff98c57f00de9bcd71ee43e0bc4_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Siete 215,"
+    },
+    {
+      "full": "Calle 7a N° 215 A X 32 Y 34,"
+    },
+    {
+      "full": "Septima 215 A,"
+    },
+    {
+      "full": "Siete 215,"
+    },
+    {
+      "full": "Calle 7a N° 215 A X 32 Y 34,"
+    },
+    {
+      "full": "Septima 215 A,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ma-del-carmen-jimenez-perez/ginecologo/merida#address-id=57721&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:44:27.788Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__ma__del_carmen_jimenez_perez.webp"
+}

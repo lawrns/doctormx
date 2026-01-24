@@ -1,0 +1,38 @@
+{
+  "name": "Dra. Tánger Andrea Arroyo Loranca",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 285,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d12870ae/d12870ae-1e6e-457e-a717-2a76abb066b4_small_square.jpg",
+  "about": "Gracias a más de 10 años de experiencia atendiendo mujeres embarazadas tanto en el sector público como privado, principalmente busco ser el apoyo a las mujeres en cualquier etapa de su vida, ya sea antes, durante o después del embarazo; como mujer y como madre entiendo la importancia de contar con un respaldo clínico y emocional ante los diversos cambios que enfrenta nuestro cuerpo. Una buena preparación para la llegada del nuevo integrante a la familia es trascendente y poder ser parte de este proceso es extraordinario. Día a día, apoyo a mis pacientes brindándoles la mejor atención con la calidad y calidez que ellas merecen; la obstetricia es mi pasión y dedico el tiempo necesario para que ellas se sientan seguras de las decisiones sobre parto o cesárea, lactancia exclusiva y otros temas como métodos anticonceptivos",
+  "addresses": [
+    {
+      "full": "Calle 28 num 218 x 67 y 69, Montes de Amé, Mérida, Yucatán,"
+    },
+    {
+      "full": "Calle 28 num 218 x 67 y 69, Montes de Amé, Mérida, Yucatán,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tanger-andrea-arroyo-loranca/ginecologo/yucatan#address-id=396770&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:34:25.177Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__t_nger_andrea_arroyo_loranca.webp"
+}

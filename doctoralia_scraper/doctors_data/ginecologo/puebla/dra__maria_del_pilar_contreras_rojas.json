@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Maria Del Pilar Contreras Rojas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/931537/93153717434e51567418c0bb48272b2c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida 16 Pte 1907 1,"
+    },
+    {
+      "full": "16 Poniente N0 1907 Cons-301,"
+    },
+    {
+      "full": "Avenida 16 Pte 1907 1,"
+    },
+    {
+      "full": "16 Poniente N0 1907 Cons-301,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-del-pilar-contreras-rojas/ginecologo/puebla#address-id=106392&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:18:37.167Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__maria_del_pilar_contreras_rojas.webp"
+}

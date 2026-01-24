@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Alicia Oropeza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c98972/c98972cee70e3082ca45cde828516dc5_220_square.jpg",
+  "about": "Hola soy la Dra. Alicia Oropeza, actualmente mi consulta esta enfocada en la atencion integral a las mujeres.",
+  "addresses": [
+    {
+      "full": "Luis Cabrera, zona,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alicia-oropeza/ginecologo/tijuana",
+  "scrapedAt": "2026-01-22T00:39:29.900Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__alicia_oropeza.webp"
+}

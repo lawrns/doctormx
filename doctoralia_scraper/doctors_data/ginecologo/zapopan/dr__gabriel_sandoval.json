@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Gabriel Sandoval",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 219,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bbe69d/bbe69d3724cc5642c222d672c10dd706_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Buenos Aires 2272,"
+    },
+    {
+      "full": "Buenos Aires 2272,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriel-sandoval/ginecologo/guadalajara#address-id=39798&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:38:37.818Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__gabriel_sandoval.webp"
+}

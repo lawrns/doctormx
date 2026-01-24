@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Liliana Elizabeth Hernández Lara",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0744bd/0744bd4ac5c6d38b7dc6ff1391083d69_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Cerro Gordo 311,"
+    },
+    {
+      "full": "Av. Cerro Gordo 311,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/liliana-elizabeth-hernandez-lara/ginecologo/leon#address-id=3479&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:30:45.703Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__liliana_elizabeth_hern_ndez_lara.webp"
+}

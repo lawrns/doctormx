@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Maria Teresa Contreras Castillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/89e0f2/89e0f2495c8db4b21a1c52efb73f3e5b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Isla Margarita 2890,"
+    },
+    {
+      "full": "Isla Margarita 2890,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-teresa-contreras-castillo/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:27:19.946Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__maria_teresa_contreras_castillo.webp"
+}

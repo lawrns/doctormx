@@ -1,0 +1,25 @@
+{
+  "name": "Fernando Ortega Montoya",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 24,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e350bd3e/e350bd3e-7fa2-421e-8e5f-3b9ce2cfcf77_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Pampas 80, Col. Moderna, ,"
+    },
+    {
+      "full": "Pampas 80, Col. Moderna, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-ortega-montoya/ginecologo/benito-juarez#address-id=355733&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:20:09.896Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/fernando_ortega_montoya.webp"
+}

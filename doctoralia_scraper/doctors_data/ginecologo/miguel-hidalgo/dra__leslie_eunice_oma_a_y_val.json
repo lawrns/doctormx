@@ -1,0 +1,55 @@
+{
+  "name": "Dra. Leslie Eunice Omaña Yóval",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/90359f96/90359f96-d05e-4de5-9d75-ac9890bf19c5_small_square.jpg",
+  "about": "Soy ginecóloga, enfocada en un buen trato con las pacientes, para que se sientan cómodas en la consulta, poder valorar integralmente y elegir el mejor tratamiento.",
+  "addresses": [
+    {
+      "full": "Cantú 11, Piso 3,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• $699"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Electrocauterización",
+      "price": "• $5,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $999"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $899"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $5,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/leslie-eunice-omana-yoval/ginecologo/ciudad-de-mexico#address-id=593491&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:58:08.538Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__leslie_eunice_oma_a_y_val.webp"
+}

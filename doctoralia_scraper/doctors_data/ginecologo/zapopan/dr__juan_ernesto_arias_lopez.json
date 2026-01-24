@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Juan Ernesto Arias Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e2f7b2/e2f7b211e97bc5432dba3626c897260b_220_square.jpg",
+  "about": "miembro del colegio de ginecologia jalisco egresado de isste ciudad de mexico 1983 ginecologo del imss durante 30 años expresidente colegio de climaterio y menopausia jalisco",
+  "addresses": [
+    {
+      "full": "Avenida Tepeyac 1287,"
+    },
+    {
+      "full": "Avenida Tepeyac 1287,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $700"
+    },
+    {
+      "name": "Cirugía conservadora de malformaciones uterinas",
+      "price": "• $700"
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": "• $700"
+    },
+    {
+      "name": "Cirugía de fístula genitourinaria",
+      "price": "• $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-ernesto-arias-lopez-2/ginecologo/zapopan#address-id=258422&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:21:43.837Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__juan_ernesto_arias_lopez.webp"
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Dr. Carlos Villarreal Bohsain",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/70047c/70047c4e853963cc963f579de87eaaf0_220_square.jpg",
+  "about": "Médico especialista en Urología Ginecológica (Cirugía reconstructiva y Rehabilitación del piso pélvico) egresado del Instituto Nacional de Perinatología; y especialidad de Ginecología y Obstetricia en el Hospital Ángeles México. Enfocado en pacientes disfunciones del piso pélvico: -Incontinencia (urinaria y fecal) -Urgencia y Frecuencia urinaria (síndrome Vejiga Hiperactiva) -Prolapsos de órganos pélvicos (vejiga, útero, recto, etc.) -Infecciones del Tracto Urinario recurrentes -Fístulas genito-urinaria o rectal -Dolor Pélvico -Malformaciones genitales (auscencia de vagina, tabiques, clitoromegalia etc.) -Labioplastías -Cirugía mínima invasión (laparoscopía)",
+  "addresses": [
+    {
+      "full": "Agrarismo 208; Col. Escandón; Del. Miguel Hidalgo,"
+    },
+    {
+      "full": "Tuxpan 54,"
+    },
+    {
+      "full": "Agrarismo 208; Col. Escandón; Del. Miguel Hidalgo,"
+    },
+    {
+      "full": "Tuxpan 54,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-villarreal-bohsain/ginecologo/ciudad-de-mexico#address-id=499790&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:03:56.669Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__carlos_villarreal_bohsain.webp"
+}

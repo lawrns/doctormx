@@ -1,0 +1,25 @@
+{
+  "name": "Raul Rosano Leon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b28acd/b28acd5421821c25d69e8d90efe67e79_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Bvld Lic. Luis Sánchez Pontón 804,"
+    },
+    {
+      "full": "Bvld Lic. Luis Sánchez Pontón 804,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-rosano-leon/ginecologo/puebla#address-id=179156&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:28:10.793Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/raul_rosano_leon.webp"
+}

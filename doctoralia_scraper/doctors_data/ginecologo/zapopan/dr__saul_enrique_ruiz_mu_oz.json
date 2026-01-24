@@ -1,0 +1,56 @@
+{
+  "name": "Dr. Saul Enrique Ruiz Muñoz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/064a43/064a43fef5834d758a74f7364fec5573_220_square.jpg",
+  "about": "Hola, soy un Ginecólogo sub especialista en Reproducción Asistida con más de 20 años de experiencia, mi formación internacional fue en uno de los centros más importantes a nivel Mundial como lo es el Instituto Valenciano de Infertilidad en Sevilla y Valencia , España. Posteriormente fuimos parte del Instituto Valenciano en la Ciudad de México donde durante 4 años estuve a cargo del programa de ovodonacion con excelentes resultados, posteriormente llegué a ser Director Médico. Cuento con mucha experiencia en tratamientos de alta complejidad como la Fecundación In Vitro, donación de óvulos, genética reproductiva. Estoy seguro que siguiendo los procesos adecuados te ayudaré a ti y tu pareja a lograr su sueño de tener un bebé en casa en el menor tiempo posible y con el menor desgaste emocional. Todo esto bajo los principios de ética y honestidad.",
+  "addresses": [
+    {
+      "full": "Avenida Central 911,"
+    },
+    {
+      "full": "Lluvia 303,"
+    },
+    {
+      "full": "Avenida Central 911,"
+    },
+    {
+      "full": "Lluvia 303,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Ultrasonido transvaginal",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/saul-enrique-ruiz-munoz/ginecologo/leon#address-id=21552&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:17:10.361Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__saul_enrique_ruiz_mu_oz.webp"
+}

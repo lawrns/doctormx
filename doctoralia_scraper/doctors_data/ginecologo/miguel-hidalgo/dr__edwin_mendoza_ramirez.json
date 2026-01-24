@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Edwin Mendoza Ramirez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 108,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/3c64c389/3c64c389-f20f-4f71-9108-266ed070ad51_large.jpg",
+  "about": "Médico Ginecólogo con subespecialidad en Medicina Materno-Fetal y Ecocardiografía Fetal Avanzada. Cuento con Diplomado en Colposcopia y Ultrasonido de Mama.Me especializo en cuatro áreas clave:Control prenatal de embarazos de alto y bajo riesgo: Experto en ultrasonido para la detección temprana de defectos fetales, síndromes genéticos y anomalías cardiacas in útero. Contamos con estudio de ADN fetal en sangre materna.Ultrasonido ginecológico: para identificar problemas en útero, ovarios y salud reproductiva de la mujer.Detección y prevención de cáncer cérvicouterino y enfermedades de transmisión sexual (ETS): realizamos estudios especializados como colposcopia y papanicolaou para un diagnóstico precoz y manejo integral de infecciones de virus del papiloma humano. Tratamiento de última generación láser para infección por virus del papiloma y verrugas genitales.Ultrasonido de mama: Enfocado en la identificación temprana de patología mamaria, incluyendo tumores, quistes y otras anomalías, para un tratamiento oportuno. Revisión de mamas con ultrasonido así como toma de biopsias guiadas por ultrasonido.",
+  "addresses": [
+    {
+      "full": "Calle Agrarismo no208,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Ecocardiografia fetal avanzada",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edwin-mendoza-ramirez/ginecologo/miguel-hidalgo#address-id=80865&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:03:03.397Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__edwin_mendoza_ramirez.webp"
+}

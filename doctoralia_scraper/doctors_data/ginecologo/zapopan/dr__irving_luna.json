@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Irving Luna",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 22,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/838e8940/838e8940-5fc0-43d4-bf94-c19faeaedaee_small_square.jpg",
+  "about": "Hola, soy el Dr. Irving Luna, especialista en Ginecología y Obstetricia.Mi compromiso es brindarte atención personalizada con humanidad, respeto y empatía para la prevención, diagnóstico y tratamiento oportuno de tu padecimiento a través de mis aptitudes y conocimientos.Soy egresado de la Universidad de Guadalajara como Médico Cirujano con especialidad en Ginecología y Obstetricia por la Universidad de Guanajuato. Cuento con certificación vigente por el Consejo Mexicano de Ginecología y Obstetricia. Manejo de ecografía obstétrica 4D con enfoque en Doppler.Será un gusto poder atenderte.",
+  "addresses": [
+    {
+      "full": "Calle Carnero 3971,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": "• $1,150"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/irving-luna/ginecologo/zapopan#address-id=586084&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:08:07.459Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__irving_luna.webp"
+}

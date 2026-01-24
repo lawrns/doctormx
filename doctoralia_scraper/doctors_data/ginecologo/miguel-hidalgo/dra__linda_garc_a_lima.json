@@ -1,0 +1,52 @@
+{
+  "name": "Dra. Linda García Lima",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 82,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/605c0c/605c0c5dab46267aab840a863dcf20e3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "AV. MIGUEL DE CERVANTES SAAVEDRA 23,"
+    },
+    {
+      "full": "División del Norte y Árbol de Fuego 80,"
+    },
+    {
+      "full": "AV. MIGUEL DE CERVANTES SAAVEDRA 23,"
+    },
+    {
+      "full": "División del Norte y Árbol de Fuego 80,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora de malformaciones uterinas",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/linda-garcia-lima-2/ginecologo/coyoacan#address-id=325692&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:41:00.595Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__linda_garc_a_lima.webp"
+}

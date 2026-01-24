@@ -1,0 +1,25 @@
+{
+  "name": "Tania Teresa Uribe Araiza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 201,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f0f3d4/f0f3d41aa29a30a2fa2b64407e362451_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blv Campestre 304 , Jardines Del Moral,"
+    },
+    {
+      "full": "Blv Campestre 304 , Jardines Del Moral,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tania-teresa-uribe-araiza/ginecologo/leon#address-id=123257&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:38:47.668Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/tania_teresa_uribe_araiza.webp"
+}

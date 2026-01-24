@@ -1,0 +1,46 @@
+{
+  "name": "Lorena Candelas Huerta",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 625,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/392ebc/392ebc7b9b76620ad13f1c5b412041bd_220_square.jpg",
+  "about": "La Endocrinología Ginecológica es una rama que estudia las afecciones hormonales y cuyas alteraciones producen estados anormales en las mujeres, como ciclos menstruales alterados, exceso de vello, alteraciones tiroideas, menopausia a edad temprana, alteraciones en el crecimiento en niñas con pubertad retrasada o temprana, sobrepeso, obesidad, infertilidad, esterilidad, secreción de leche por mamas no relacionada a la lactancia, ciclos sin ovulación, alteraciones anatómicas como miomas, crecimiento del endometrio con menstruaciones abundantes, quistes ováricos benignos, síndrome premenstrual con síntomas que interfieran en su vida cotidiana como dolor intenso, depresión o ansiedad y lo mas frecuente en la consulta el síndrome de ovario poliquístico. La Ginecologia estudia la función y enfermedades del aparato reproductor femenino en pacientes NO embarazadas, que incluye la detección de enfermedades de transmisión sexual, toma de papanicolaou, valoración de utero y ovarios por ultrasonido, estudio de alteraciones menstruales, orientación en anticoncepción, entre otros. La Obstetricia la rama que estudia el embarazo normal y de riesgo, en mi especialidad el enfoque va hacia enfermedades metabólicas como resistencia a la insulina, diabetes pre gestacional y gestacional, enfermedades tiroideas, obesidad pregestacional, que compliquen el embarazo actual. En esta consulta Usted encontrará un análisis de su estado hormonal, y exploración ginecológica, y obstétrica con ultrasonido incluido en caso necesario que engloba su estado metabólico, valoración uterina, ovárica, y en caso necesario colposcópica, con lo que podremos establecer qué factores hormonales, infecciosos o anatómicos están alterando su función femenina, reproductiva, sexual y metabólica. Encontrarás comodidad, confidencialidad, solución especializada y empatía.",
+  "addresses": [
+    {
+      "full": "Torre Medica Santiago, Modulo i Consultorio 22, Camino a los Olvera, para ubicacion ingrese en el siguiente link. https://goo.gl/maps/W22uqp8aTMGh56ab6,"
+    },
+    {
+      "full": "Torre Medica Santiago, Modulo i Consultorio 22, Camino a los Olvera, para ubicacion ingrese en el siguiente link. https://goo.gl/maps/W22uqp8aTMGh56ab6,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lorena-candelas-huerta/ginecologo/queretaro#address-id=253864&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:47:40.695Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/lorena_candelas_huerta.webp"
+}

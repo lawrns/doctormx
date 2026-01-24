@@ -1,0 +1,25 @@
+{
+  "name": "Jose Esaul Hernandez Arvizu",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fb6b4d/fb6b4d0436c39ae602d9638264654f63_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Hidalgo 327,"
+    },
+    {
+      "full": "C. Hidalgo 327,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-esaul-hernandez-arvizu/ginecologo/leon#address-id=211002&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:37:16.416Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/jose_esaul_hernandez_arvizu.webp"
+}

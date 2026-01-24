@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Adriana Berenice Ruiz Limón",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/539bd3/539bd3c6a7ea1196c6f2998c7bf8f15e_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hospital Real San José Valle Real Piso 3 Consultorio 4A, Ave. Central 911 Residencia, Poniente, 45136 Zapopan, Jal.,"
+    },
+    {
+      "full": "Hospital Real San José Valle Real Piso 3 Consultorio 4A, Ave. Central 911 Residencia, Poniente, 45136 Zapopan, Jal.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adriana-berenice-ruiz-limon/ginecologo/zapopan",
+  "scrapedAt": "2026-01-22T04:25:10.022Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__adriana_berenice_ruiz_lim_n.webp"
+}

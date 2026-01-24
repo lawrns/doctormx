@@ -1,0 +1,56 @@
+{
+  "name": "Dra. Mayra Alejandra Serrano Fraire",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6809e6/6809e67f28b2c1bb56d5d59bb5cfe709_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "JOSE MARIA MERCADO 208-2, CENTRO,"
+    },
+    {
+      "full": "Misión de Santo Tomás 810,"
+    },
+    {
+      "full": "JOSE MARIA MERCADO 208-2, CENTRO,"
+    },
+    {
+      "full": "Misión de Santo Tomás 810,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mayra-alejandra-serrano-fraire-2/ginecologo/zapopan#address-id=449405&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:21:40.594Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__mayra_alejandra_serrano_fraire.webp"
+}

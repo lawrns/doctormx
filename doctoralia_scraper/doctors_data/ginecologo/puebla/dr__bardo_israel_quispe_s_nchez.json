@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Bardo Israel Quispe Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 37,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e464d1/e464d12133a8f2ddea98713c78e3121a_220_square.jpg",
+  "about": "Mi compromiso es proporcionar una atención especializada segura, empática y de confianza a la mujer en todas las etapas de su vida desde el inicio de su pubertad o alteraciones del ciclo menstrual hasta el manejo de la menopausia. La mejor atención en control del embarazo normal y de alto riesgo con el mejor sentido humano y profesional con paquetes de cirugía ginecológica y de embarazo en los mejores hospitales de Puebla al alcance de todas.",
+  "addresses": [
+    {
+      "full": "Perif. Ecológico 3507, Reserva Territorial Atlixcáyotl,"
+    },
+    {
+      "full": "Perif. Ecológico 3507, Reserva Territorial Atlixcáyotl,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/bardo-israel-quispe-sanchez/ginecologo/puebla#address-id=446139&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:12:26.557Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__bardo_israel_quispe_s_nchez.webp"
+}

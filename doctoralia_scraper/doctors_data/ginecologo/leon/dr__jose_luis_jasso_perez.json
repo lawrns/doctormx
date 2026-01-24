@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Jose Luis Jasso Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 77,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2608b4/2608b45d5982f34b7701c87fff5b33ca_220_square.jpg",
+  "about": "Medico con amplia dedicación con cada uno de sus pacientes. El cual se enfoca en dar una atención de calidad profesional, humana y ética. La atención integral de la mujer es nuestra prioridad, tanto en aspectos obstétricos como ginecológicos. Cuento con un diplomado de alta especialidad en colposcopia y patologia vulvovaginal. Nuestros objetivos y prioridades son ser pacientes, resolver todas tus dudas y los problemas de salud relacionados a nuestra especialidad.",
+  "addresses": [
+    {
+      "full": "Avenida hidalgo 329, Hospital Aranda de la Parra,"
+    },
+    {
+      "full": "Avenida hidalgo 329, Hospital Aranda de la Parra,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-luis-jasso-perez/ginecologo/leon#address-id=379139&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:27:49.613Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__jose_luis_jasso_perez.webp"
+}

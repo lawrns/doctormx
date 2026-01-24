@@ -1,0 +1,25 @@
+{
+  "name": "Gloria Rosalba Pinto Ontiveros",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 773,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/82730e/82730e29de2edebe77c7378f48b30b6c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Del Lago 6B M 10 L,14,Sm 513,,"
+    },
+    {
+      "full": "Del Lago 6B M 10 L,14,Sm 513,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gloria-rosalba-pinto-ontiveros/ginecologo/benito-juarez#address-id=357892&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:20:58.224Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/gloria_rosalba_pinto_ontiveros.webp"
+}

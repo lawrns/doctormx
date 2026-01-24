@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jorge Martín Ruiz Calderon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 268,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ff943a/ff943af10b2521ec3bbed18dccb4c286_220_square.jpg",
+  "about": "Medico Materno Fetal egresado del INPER, con mas de 25 años de practica profesional continua en el sector privado y publico, IMSS, ISESALUD.",
+  "addresses": [
+    {
+      "full": "Francisco Javier Mina 1415,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-martin-ruiz-calderon/ginecologo/tijuana#address-id=91127&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:40:29.106Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__jorge_mart_n_ruiz_calderon.webp"
+}

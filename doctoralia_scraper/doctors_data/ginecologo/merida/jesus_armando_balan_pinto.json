@@ -1,0 +1,31 @@
+{
+  "name": "Jesus Armando Balan Pinto",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 203,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/12ac59/12ac59639e1bf4f3378f94e9479526f0_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 34 215 A,"
+    },
+    {
+      "full": "Av. Itzaes X Av. Jacinto Canek,"
+    },
+    {
+      "full": "C. 34 215 A,"
+    },
+    {
+      "full": "Av. Itzaes X Av. Jacinto Canek,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-armando-balan-pinto/ginecologo/merida#address-id=216419&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:50:03.139Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/jesus_armando_balan_pinto.webp"
+}

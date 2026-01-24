@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Abel Escobedo González",
+  "specialty": "Ginecólogo",
+  "rating": 3.5,
+  "reviewCount": 5,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/464f9d/464f9d63dde29f3260ad933402133dc6_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Edmundo O'Gorman #1571 (Cons. 308),"
+    },
+    {
+      "full": "Edmundo O'Gorman #1571 (Cons. 308),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/abel-escobedo-gonzalez/ginecologo/tijuana#address-id=84354&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:44:22.412Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__abel_escobedo_gonz_lez.webp"
+}

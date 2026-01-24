@@ -1,0 +1,37 @@
+{
+  "name": "Dr. Enrique Rafael Morcate Cambos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 153,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/72eb4b/72eb4b7e0af7ce04ebc2e18ef78e9fce_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Eucaliptos 407 Letra D Col. Reforma ,"
+    },
+    {
+      "full": "Juan Ruiz De Alarcon 20,"
+    },
+    {
+      "full": "Av. Vallarta 3062,"
+    },
+    {
+      "full": "Eucaliptos 407 Letra D Col. Reforma ,"
+    },
+    {
+      "full": "Juan Ruiz De Alarcon 20,"
+    },
+    {
+      "full": "Av. Vallarta 3062,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/enrique-rafael-morcate-cambos/ginecologo/guadalajara#address-id=231626&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:27:49.766Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__enrique_rafael_morcate_cambos.webp"
+}

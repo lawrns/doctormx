@@ -1,0 +1,25 @@
+{
+  "name": "Lyana Vazquez Arroyo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 190,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b6ebb5/b6ebb5261c05a5dc771df04292504950_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Manantial 114, Villas del Moral, 37160 Leon, Gto., Mexico,"
+    },
+    {
+      "full": "Manantial 114, Villas del Moral, 37160 Leon, Gto., Mexico,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lyana-vazquez-arroyo/ginecologo/leon#address-id=255018&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:34:35.915Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/lyana_vazquez_arroyo.webp"
+}

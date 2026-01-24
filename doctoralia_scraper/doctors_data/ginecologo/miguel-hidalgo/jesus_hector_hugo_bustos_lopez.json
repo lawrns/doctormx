@@ -1,0 +1,25 @@
+{
+  "name": "Jesus Hector Hugo Bustos Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 200,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/563036/563036e6bc7c67c24b8853d839947555_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Paseo De La Reforma 2608,"
+    },
+    {
+      "full": "Paseo De La Reforma 2608,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-hector-hugo-bustos-lopez/ginecologo/miguel-hidalgo#address-id=159284&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:49:19.314Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/jesus_hector_hugo_bustos_lopez.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Carlos Valentín López Muñoz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 224,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5da49d/5da49d1e1828ecda64ca7568606f25ba.jpg",
+  "about": "Un médico materno fetal es un ginecobstetra con una subespecialidad de medicina materno fetal y está específicamente capacitado para diagnosticar condiciones como el síndrome de Down, problemas placentarios, restricción en el crecimiento del feto, malformaciones fetales, experto en USG obstétrico, estructural (anatómico), doppler, marcadores del primer trimestre, etc. Además, puede detectar y tratar enfermedades asociadas al embarazo, tales como preeclampsia (una de las complicaciones con mayor índice de mortandad durante el embarazo en nuestro país) y diabetes gestacional. El diagnóstico oportuno de estos padecimientos permite tomar acciones que deriven en mejor atención y resultados para las pacientes y sus bebés. Los controles periódicos ayudarán a monitorear el progreso del embarazo y son esenciales para detectar cualquier problema de salud antes de que éste se vuelva serio.",
+  "addresses": [
+    {
+      "full": "C. 26 199,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-valentin-lopez-munoz/ginecologo/yucatan#address-id=863&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:28:47.376Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__carlos_valent_n_l_pez_mu_oz.webp"
+}

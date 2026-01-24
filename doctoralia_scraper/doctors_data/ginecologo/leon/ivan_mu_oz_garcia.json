@@ -1,0 +1,25 @@
+{
+  "name": "Ivan Muñoz Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1229,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/667f5a/667f5ae4015d4969f2fd045712355f6c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Lago De Cuquio 106 A, Col. Brisas Del Lago, ,"
+    },
+    {
+      "full": "Lago De Cuquio 106 A, Col. Brisas Del Lago, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ivan-munoz-garcia/ginecologo/leon#address-id=357174&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:38:47.668Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/ivan_mu_oz_garcia.webp"
+}

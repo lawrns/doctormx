@@ -1,0 +1,25 @@
+{
+  "name": "Marcela Robles Romero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/93320a9a/93320a9a-36eb-4aac-b4d4-c7a606b58823_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Conchitas 2816,"
+    },
+    {
+      "full": "Av. Conchitas 2816,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marcela-robles-romero/ginecologo/zapopan#address-id=166020&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:42:21.026Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/marcela_robles_romero.webp"
+}

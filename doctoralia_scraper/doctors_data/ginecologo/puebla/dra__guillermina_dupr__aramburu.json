@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Guillermina Dupré Aramburu",
+  "specialty": "Ginecólogo",
+  "rating": 3.5,
+  "reviewCount": 3,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/373cfc6a/373cfc6a-0e42-4407-8f46-35e57c35ff0c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Kepler 2143,"
+    },
+    {
+      "full": "Av. Kepler 2143,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermina-dupre-aramburu/ginecologo/puebla#address-id=6104&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:17:01.750Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__guillermina_dupr__aramburu.webp"
+}

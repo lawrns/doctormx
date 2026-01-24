@@ -1,0 +1,46 @@
+{
+  "name": "Dr. ALEXANDER PORTER MAGAÑA",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d76940/d7694034218ce031c92d7bdf995fa71c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 33 entre 56 y 56 A Colonia Centro,"
+    },
+    {
+      "full": "Calle 33 entre 56 y 56 A Colonia Centro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alexander-porter-magana/ginecologo/yucatan#address-id=373461&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:46:13.575Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__alexander_porter_maga_a.webp"
+}

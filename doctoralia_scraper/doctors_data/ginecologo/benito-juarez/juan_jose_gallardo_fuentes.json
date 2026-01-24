@@ -1,0 +1,25 @@
+{
+  "name": "Juan Jose Gallardo Fuentes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 47,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e133cac3/e133cac3-cbdb-459c-8967-a1b0a427bf7a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Insurgentes Sur 682,"
+    },
+    {
+      "full": "Av. Insurgentes Sur 682,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-jose-gallardo-fuentes/ginecologo/benito-juarez#address-id=160169&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:17:56.461Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/juan_jose_gallardo_fuentes.webp"
+}

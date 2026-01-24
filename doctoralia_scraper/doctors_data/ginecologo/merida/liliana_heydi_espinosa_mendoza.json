@@ -1,0 +1,25 @@
+{
+  "name": "Liliana Heydi Espinosa Mendoza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 631,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6ce73c/6ce73cc0801040c5d06e52235743b805_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Itzaes X 71 Bios Consultorios Esq. 528 Col. Centro ,"
+    },
+    {
+      "full": "Av. Itzaes X 71 Bios Consultorios Esq. 528 Col. Centro ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/liliana-heydi-espinosa-mendoza/ginecologo/merida#address-id=358674&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:49:00.868Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/liliana_heydi_espinosa_mendoza.webp"
+}

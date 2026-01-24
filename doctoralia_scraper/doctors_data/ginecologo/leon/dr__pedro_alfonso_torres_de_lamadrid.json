@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Pedro Alfonso Torres de Lamadrid",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 237,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/89cdbb/89cdbb9843fa058e80034aa828ace9ed_220_square.jpg",
+  "about": "Especialista en Ginecología y Obstetricia. Certificado por el consejo Mexicano de Ginecología y Obstetricia Especialista en cirugía de mínima invasión: laparoscopía e histeroscopia Especialista en cirugía reproductiva y conservadora de útero y ovarios Especialista en cirugía de endometriosis Especialista en cirugía intrauterina e histeroscopía de consultorio",
+  "addresses": [
+    {
+      "full": "Blvd. Jorge Vertiz Campero #761,"
+    },
+    {
+      "full": "Apolo XI 101,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas ginecológicas",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pedro-alfonso-torres-de-lamadrid/ginecologo-medico-general/leon#address-id=389663&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:27:01.198Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__pedro_alfonso_torres_de_lamadrid.webp"
+}

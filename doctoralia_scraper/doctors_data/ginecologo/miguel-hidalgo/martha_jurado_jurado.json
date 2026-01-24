@@ -1,0 +1,25 @@
+{
+  "name": "Martha Jurado Jurado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 385,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/96c299/96c29965d0616b14dad30378edfddeb5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Sur 132 (Hospital Abc), 118, Cons. 405,"
+    },
+    {
+      "full": "Sur 132 (Hospital Abc), 118, Cons. 405,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martha-jurado-jurado/ginecologo/alvaro-obregon#address-id=77707&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:51:14.891Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/martha_jurado_jurado.webp"
+}

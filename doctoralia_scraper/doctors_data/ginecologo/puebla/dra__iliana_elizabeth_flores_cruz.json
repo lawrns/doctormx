@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Iliana Elizabeth Flores Cruz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/99d5d4/99d5d41faaf9e65fff747ad1411be515_220_square.jpg",
+  "about": "Soy médico especialista en Ginecología y Obstetricia con más de 3 años de experiencia enfocada en la salud integral de la mujer, brindándote una atención de calidad y calidez humana. Mi objetivo es otorgarte una valoración completa para realizar un diagnostico certero y tratamiento individualizado para con ello resolver la problemática por la cual acudes a mi. También te ofrezco el acompañamiento y asesoría necesaria durante tu embarazo, parto y puerperio con atención las 24 horas del día.",
+  "addresses": [
+    {
+      "full": "Av. 18 Poniente No. 2921 Col. Villa San Alejandro,"
+    },
+    {
+      "full": "Av. 18 Poniente No. 2921 Col. Villa San Alejandro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/iliana-elizabeth-flores-cruz/ginecologo/puebla#address-id=394773&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:14:03.640Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__iliana_elizabeth_flores_cruz.webp"
+}

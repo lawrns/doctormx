@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Erika Lucia Hernandez De La Cruz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 92,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5d84e8/5d84e8c673b706db9be94ec616df963f.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Aeropuerto 101, Villas Santa Julia, 37530 León de los Aldama, Gto.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/erika-lucia-hernandez-de-la-cruz/ginecologo/leon#address-id=472076&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:26:48.647Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__erika_lucia_hernandez_de_la_cruz.webp"
+}

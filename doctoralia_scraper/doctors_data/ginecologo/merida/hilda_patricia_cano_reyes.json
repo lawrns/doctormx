@@ -1,0 +1,25 @@
+{
+  "name": "Hilda Patricia Cano Reyes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 895,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9a6ca5e6/9a6ca5e6-593e-46f3-bd84-9730fa635dca_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "19 A Bis X 72 E,716,Fracc Gran Santa Fe Ii,,"
+    },
+    {
+      "full": "19 A Bis X 72 E,716,Fracc Gran Santa Fe Ii,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hilda-patricia-cano-reyes/ginecologo/merida#address-id=357845&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:49:15.685Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/hilda_patricia_cano_reyes.webp"
+}

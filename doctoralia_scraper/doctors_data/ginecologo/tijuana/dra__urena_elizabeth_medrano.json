@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Urena Elizabeth Medrano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 369,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9c35ce/9c35ce8b88ea2309b221f17ea808d8c7_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Rio Suchiate 180 C,"
+    },
+    {
+      "full": "Bugambilias 50 404,"
+    },
+    {
+      "full": "Calle Rio Suchiate 180 C,"
+    },
+    {
+      "full": "Bugambilias 50 404,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/urena-elizabeth-medrano/ginecologo-neumologo/tijuana#address-id=35245&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:07:00.316Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__urena_elizabeth_medrano.webp"
+}

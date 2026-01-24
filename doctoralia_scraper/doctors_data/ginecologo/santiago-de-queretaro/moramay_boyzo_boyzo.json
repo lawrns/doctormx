@@ -1,0 +1,25 @@
+{
+  "name": "Moramay Boyzo Boyzo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/785e33/785e33670a9e3351172ae99e689e4872_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Bernardo Quintana 4060 Col. San Pablo,"
+    },
+    {
+      "full": "Blvd. Bernardo Quintana 4060 Col. San Pablo,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/moramay-boyzo-boyzo/ginecologo/santiago-de-queretaro#address-id=105384&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:55:31.099Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/moramay_boyzo_boyzo.webp"
+}

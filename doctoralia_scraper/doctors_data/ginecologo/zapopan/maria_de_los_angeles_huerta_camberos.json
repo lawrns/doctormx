@@ -1,0 +1,25 @@
+{
+  "name": "Maria De Los Angeles Huerta Camberos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 49,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4638cc/4638ccce7155e9bf584d58a80a7bf5a8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Lagunitas 820,"
+    },
+    {
+      "full": "Lagunitas 820,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-de-los-angeles-huerta-camberos/ginecologo/guadalajara#address-id=125334&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:38:37.657Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/maria_de_los_angeles_huerta_camberos.webp"
+}

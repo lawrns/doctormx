@@ -1,0 +1,25 @@
+{
+  "name": "Ignacio Salvador Najar Fuentes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/838e8940/838e8940-5fc0-43d4-bf94-c19faeaedaee_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Carnero 5385,"
+    },
+    {
+      "full": "Carnero 5385,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ignacio-salvador-najar-fuentes/ginecologo/zapopan#address-id=220026&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:39:57.688Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/ignacio_salvador_najar_fuentes.webp"
+}

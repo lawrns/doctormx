@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jose Antonio Alvarez Cisneros",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dcc13f/dcc13fb0a0af17659820d09cece757ff_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Mariano Escobedo 2304,"
+    },
+    {
+      "full": "Mariano Escobedo 2304,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-antonio-alvarez-cisneros/ginecologo/leon#address-id=57920&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:30:42.605Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__jose_antonio_alvarez_cisneros.webp"
+}

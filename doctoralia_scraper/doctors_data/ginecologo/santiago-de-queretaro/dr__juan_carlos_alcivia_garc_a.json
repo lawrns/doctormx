@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Juan Carlos Alcivia García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/b4d81b4d/b4d81b4d-bc9b-43fb-b5c3-1db0d17f56ee_small_square.jpg",
+  "about": "Soy médico cirujano por la UNAM, especializado en Ginecología y Obstetricia y subespecializado en Medicina Reproductiva en el Hospital Luis Castelazo Ayala del IMSS. Actualmente, soy Director General de Médica Fértil, Jefe de la División de Gineco-Obstetricia del Hospital Ángeles Querétaro y Hospital Ángeles Centro Sur. A lo largo de mi carrera, he ocupado diversos cargos, como Presidente de la Asociación Médica del Hospital Ángeles Querétaro, Presidente de la Asociación Médica del Hospital Ángeles Centro Sur, y Ex Presidente de la Asociación de Ginecología y Obstetricia de Querétaro. También fui Médico Adscrito al Servicio de Medicina Reproductiva del Hospital Luis Castelazo Ayala IMSS y Director General del Instituto de Salud Integral Femenina (INSIFEM). Soy miembro de asociaciones médicas de prestigio como la American Society of Reproductive Medicine (ASRM), el American College of Obstetrics and Gynecologists (ACOG) y la Federación Mexicana de Ginecología y Obstetricia. Además de mi formación médica, cuento con una Licenciatura en Derecho, con especialidad en Derecho en Reproducción Asistida, así como una Maestría en Derecho Procesal Penal Acusatorio, lo que me permite un enfoque integral en la medicina reproductiva. Mi compromiso es brindar atención médica de excelencia, con tratamientos innovadores en reproducción asistida y cirugía ginecológica avanzada.",
+  "addresses": [
+    {
+      "full": "HOSPITAL ÁNGELES CENTRO SUR PISO 18 Boulevard Bernardo Quintana Arrioja #9670, Centro Sur.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-alcivia-garcia/ginecologo/santiago-de-queretaro#address-id=550912&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:44:52.035Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__juan_carlos_alcivia_garc_a.webp"
+}

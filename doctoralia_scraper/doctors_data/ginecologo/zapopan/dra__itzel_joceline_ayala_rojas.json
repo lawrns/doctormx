@@ -1,0 +1,48 @@
+{
+  "name": "Dra. Itzel Joceline Ayala Rojas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 205,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9f20e7/9f20e72a2536fd5c079f8fd2508e1b0b_220_square.jpg",
+  "about": "Médico Cirujano con especialidad en Ginecología y obstetricia. Recientemente, culminé mi sub especialidad en Ginecología Oncológica, atendiendo pacientes en Guadalajara, Jalisco. Estoy profundamente comprometida con la salud y el bienestar de mis pacientes.",
+  "addresses": [
+    {
+      "full": "Calle Venustiano Carranza,"
+    },
+    {
+      "full": "Calle Luis Pérez Verdía,"
+    },
+    {
+      "full": "Calle Venustiano Carranza,"
+    },
+    {
+      "full": "Calle Luis Pérez Verdía,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/itzel-joceline-ayala-rojas/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:25:23.516Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__itzel_joceline_ayala_rojas.webp"
+}

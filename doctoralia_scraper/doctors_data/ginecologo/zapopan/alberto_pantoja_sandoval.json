@@ -1,0 +1,25 @@
+{
+  "name": "Alberto Pantoja Sandoval",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/21897b/21897b5c8e30fc6eac7a40ba93d74366_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Juan Cano 926,"
+    },
+    {
+      "full": "Juan Cano 926,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alberto-pantoja-sandoval/ginecologo/guadalajara#address-id=14071&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:39:23.534Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/alberto_pantoja_sandoval.webp"
+}

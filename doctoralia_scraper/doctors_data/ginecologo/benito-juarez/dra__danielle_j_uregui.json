@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Danielle Jáuregui",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 560,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6dcb68/6dcb6816767d8c362700b3bc9470961a.jpg",
+  "about": "Hola! Soy la Dra. Danielle Jáuregui Casillas. Estudié Medicina en la Universidad La Salle y posteriormente hice mi especialidad en Ginecología y Obstetricia en el Hospital Dr. Manuel Gea González. Al terminar realicé un alta especialidad de Endoscopía Ginecológica por el Instituto Nacional de Perinatología Isidro Espinosa de los Reyes y finalmente un diplomado en Colposcopía en el ISSSTE Hospital Regional Lic. Adolfo López Mateos. Estoy certificada por el Consejo Mexicano de Ginecología y Obstetricia. Estoy para ayudarte, resolver tus dudas y procurar tu salud :)",
+  "addresses": [
+    {
+      "full": "Perpetua #40, piso 2, consultorio 5, San José Insurgentes, Benito Juárez,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/danielle-jauregui/ginecologo/benito-juarez#address-id=399424&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:00:04.711Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__danielle_j_uregui.webp"
+}

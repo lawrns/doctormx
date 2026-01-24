@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Arcelia Patr Jimenez Brizuela",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 104,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6e6bc3/6e6bc3e69ece54f61a9d474477ff7dcf_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 18 De Marzo 002375510,"
+    },
+    {
+      "full": "Calle 18 De Marzo 002375510,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arcelia-patr-jimenez-brizuela/ginecologo/tijuana#address-id=58649&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:06:54.307Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__arcelia_patr_jimenez_brizuela.webp"
+}

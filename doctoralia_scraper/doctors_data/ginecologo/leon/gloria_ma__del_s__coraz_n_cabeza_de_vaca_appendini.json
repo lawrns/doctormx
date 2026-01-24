@@ -1,0 +1,25 @@
+{
+  "name": "Gloria Ma. del S. Corazón Cabeza de Vaca Appendini",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b6ebb5/b6ebb5261c05a5dc771df04292504950_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Manantial 106,"
+    },
+    {
+      "full": "Manantial 106,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gloria-ma-del-s-corazon-cabeza-de-vaca-appendini/ginecologo/leon#address-id=2830&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:34:08.462Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/gloria_ma__del_s__coraz_n_cabeza_de_vaca_appendini.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Ysauro Cid Polo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cabf68/cabf688bded681e52b80f301f44bfbc2_220_square.jpg",
+  "about": "La honestidad y el compromiso con la paciente es lo que siempre tengo presente. En algunas ocasiones en medicina hay varias opciones terapéuticas para un mismo problema, mi cometido es explicar todas las opciones posibles, con sus ventajas e inconvenientes, para que la verdadera protagonista de las decisiones que se tomen sobre su cuerpo siempre sea la mujer. Por eso, me guío por un modelo de atención biopsicosocial, que integra a la perfección ciencia y humanismo, considerando a la mujer como centro de la atención médica.",
+  "addresses": [
+    {
+      "full": "Periférico Ecológico 3507 (Torres Médicas Angelópolis),"
+    },
+    {
+      "full": "Periférico Ecológico 3507 (Torres Médicas Angelópolis),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ysauro-cid-polo/ginecologo/puebla#address-id=119046&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:14:53.301Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__ysauro_cid_polo.webp"
+}

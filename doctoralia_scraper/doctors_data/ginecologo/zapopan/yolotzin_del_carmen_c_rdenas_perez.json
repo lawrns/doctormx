@@ -1,0 +1,43 @@
+{
+  "name": "Yolotzin del Carmen Cárdenas Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 80,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c29c0d/c29c0d78e15d84023b1c0ec42db13313_220_square.jpg",
+  "about": "MEDICO GINECOOBSTETRA CON AMPLIA EXPERIENCIA EN EL MANEJO DE HEMORRAGIA OBSTETRICA Y GINECOLOGICA, PROFESOR DE CURSOS DE LIGADURA DE ARTERIAS HIPOGASTRICAS (TECNICA EMPLEADA PARA EL CONTROL DE HEMORRAGIA SEVERA DURANTE LA CIRUGIA GINECOLOGICA Y DURANTE LA ATENCION DEL PARTO Y/O CESAREA). DIPLOMADO EN COLPOSCOPIA, MANEJO DE INFECCION POR VIRUS DEL PAPILOMA HUMANO. CONTROL DEL EMBARAZO NORMAL Y DE ALTO RIESGO.",
+  "addresses": [
+    {
+      "full": "AV TEPEYAC 4445,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $750"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yolotzin-del-carmen-cardenas-perez/ginecologo/zapopan#address-id=93191&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:11:11.717Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/yolotzin_del_carmen_c_rdenas_perez.webp"
+}

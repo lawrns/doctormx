@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Jessica del Rocío Huerta Gutiérrez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1001,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/photos/87b4ff09/87b4ff09-23c4-43dc-8797-d55a3bd69cec_large.jpg",
+  "about": "Soy la Dra. Jessica Huerta, ginecòloga, con especiallidad en Biologia de la Reproducciòn Humana, la cual es una especialidad poco conocida, pero nuestra mision es diagnòsticar y dar tratamiento a parejas que no han podido cumplir el sueño de ser papàs. Durante la consulta se hara una historia clinica muy minuciosa y cuidadosa, se solicitaran los estudios basicos,para tener un diagnòstico certero y ofrecer la mejor opciòn a los pacientes. Ofrecemos tratamientos de alta y baja complejidad, como coito programado, inseminación intrauterina con semen de la pareja o semen de donador, fertilizaciòn in vitro, donaciòn de ovulos y estudio genetico de los embriones. Serà un placer poder ayudarte.",
+  "addresses": [
+    {
+      "full": "Hidalgo 329,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jessica-del-rocio-huerta-gutierrez/ginecologo/leon#address-id=117536&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:25:56.154Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__jessica_del_roc_o_huerta_guti_rrez.webp"
+}

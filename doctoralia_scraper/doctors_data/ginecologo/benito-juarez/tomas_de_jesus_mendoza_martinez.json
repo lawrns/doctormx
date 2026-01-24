@@ -1,0 +1,25 @@
+{
+  "name": "Tomas De Jesus Mendoza Martinez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 477,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4751aa/4751aaf67a5f3ab41bcec4e24734706f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Fuentes brotantes no. 19, Portales,"
+    },
+    {
+      "full": "Fuentes brotantes no. 19, Portales,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tomas-de-jesus-mendoza-martinez/ginecologo/tlalpan#address-id=111426&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:18:38.854Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/tomas_de_jesus_mendoza_martinez.webp"
+}

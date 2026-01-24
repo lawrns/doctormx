@@ -1,0 +1,25 @@
+{
+  "name": "Mary Carmen Herrero Otero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 165,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/63b901/63b901529397ae4fdffba7438bbccde2_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "1H X 8 Y 10 109, Col. Mexico Norte, ,"
+    },
+    {
+      "full": "1H X 8 Y 10 109, Col. Mexico Norte, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mary-carmen-herrero-otero/ginecologo/merida#address-id=357628&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:50:34.880Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/mary_carmen_herrero_otero.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jorge L. Vázquez Ramírez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 16,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/aa909d/aa909db5bb47efa4fd3a7a962021d0c3_220_square.jpg",
+  "about": "Actualmente soy Médico Adscrito al Servicio de Obstetricia y Embarazo de Alto Riesgo en el Hospital Militar de Especialidades de la Mujer y Neonatología de la Secretaría de la Defensa Nacional Cirugía de Mínima Invasión, Diplomado en Endoscopía Ginecológica Avanzada(Laparoscopía/Histeroscopía) avalado por el Instituto Latinoamericano de Endoscopía Ginecológica A.C. y Universidad La Salle Médico Gineco-Obstetra certificado por el Consejo Mexicano de Ginecología y Obstetricia A.C. Misión: Brindar atención médica especializada y personalizada para la mujer en todas las etapas de su vida con calidez, humanismo y profesionalidad.",
+  "addresses": [
+    {
+      "full": "Av. Río Churubusco 601 Consultorio 1018,"
+    },
+    {
+      "full": "Av. Río Churubusco 601 Consultorio 1018,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-l-vazquez-ramirez/ginecologo/ciudad-de-mexico#address-id=257388&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:07:39.862Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__jorge_l__v_zquez_ram_rez.webp"
+}

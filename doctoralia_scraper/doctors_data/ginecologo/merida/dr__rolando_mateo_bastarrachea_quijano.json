@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Rolando Mateo Bastarrachea Quijano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 653,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5da054/5da0549cba8220ca64a7a47d330a668a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. 7 215-A,"
+    },
+    {
+      "full": "Av. 7 215-A,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rolando-mateo-bastarrachea-quijano/ginecologo/merida#address-id=176078&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:42:12.970Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__rolando_mateo_bastarrachea_quijano.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Edgar Israel Moreno López",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 31,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/791a4661/791a4661-89ac-42ba-b114-3779ba9b0c82_small_square.jpg",
+  "about": "Como médico ginecólogo obstetra, mi vocación es acompañar a la mujer en todas las etapas de su vida, desde el inicio de su desarrollo reproductivo hasta el embarazo, parto y menopausia. Me enfoco en la prevención, el diagnóstico y el tratamiento de enfermedades ginecológicas y obstétricas, con el objetivo de cuidar no solo la salud física, sino también el bienestar emocional de cada paciente.",
+  "addresses": [
+    {
+      "full": "Blvd. Hermenegildo Galeana G 22412, Torres de Matamoro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $750"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $750"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $750"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $950"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edgar-israel-moreno-lopez/ginecologo/tijuana#address-id=579760&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:42:10.353Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__edgar_israel_moreno_l_pez.webp"
+}

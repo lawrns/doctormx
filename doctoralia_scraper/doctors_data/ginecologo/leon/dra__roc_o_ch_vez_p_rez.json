@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Rocío Chávez Pérez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/165bbb/165bbb75202ad0be074e141152dd2018_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 20 de Enero #417, colonia Obregón en Hospital Chávez ,"
+    },
+    {
+      "full": "Calle 20 de Enero #417, colonia Obregón en Hospital Chávez ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rocio-chavez-perez/ginecologo/leon#address-id=499548&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:28:42.250Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__roc_o_ch_vez_p_rez.webp"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Dr. Juan Carlos González Castellanos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/130631/13063129460d77edc2a879f1a1db7f29_140_square.jpg",
+  "about": "",
+  "addresses": [],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-gonzalez-castellanos/ginecologo/guadalajara#address-id=425029&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:29:32.930Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__juan_carlos_gonz_lez_castellanos.webp"
+}

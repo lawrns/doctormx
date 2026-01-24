@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Coinda Arias",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 134,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d02260/d02260df937572d6914ac403ee9631e2_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "José Clemente Orozco No 10122 - 2do Piso - Consultorio 209 (Condominio Plaza Pacífico) - Zona Río - Tijuana B.C,"
+    },
+    {
+      "full": "Jose Clemente Orozco 10122 209 210,"
+    },
+    {
+      "full": "José Clemente Orozco No 10122 - 2do Piso - Consultorio 209 (Condominio Plaza Pacífico) - Zona Río - Tijuana B.C,"
+    },
+    {
+      "full": "Jose Clemente Orozco 10122 209 210,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/coinda-arias/ginecologo/tijuana#address-id=74&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:45:41.748Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__coinda_arias.webp"
+}

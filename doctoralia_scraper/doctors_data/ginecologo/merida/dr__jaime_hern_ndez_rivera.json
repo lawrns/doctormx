@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Jaime Hernández Rivera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 165,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/63b901/63b901529397ae4fdffba7438bbccde2_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Qetlzatlcoatl 104 Entre 8b Y 104 Entre 8b Y 8c,"
+    },
+    {
+      "full": "Av Qetlzatlcoatl 104 Entre 8b Y 104 Entre 8b Y 8c,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jaime-hernandez-rivera/ginecologo/yucatan#address-id=352505&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:43:31.989Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__jaime_hern_ndez_rivera.webp"
+}

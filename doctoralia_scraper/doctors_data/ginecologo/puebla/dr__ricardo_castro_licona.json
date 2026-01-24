@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Ricardo Castro Licona",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 216,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/fb78477a/fb78477a-abec-4d92-bfaa-edaea4ea77c3_140_square.jpg",
+  "about": "Médico especialista egresado de la Universidad Autónoma de Tamaulipas con cédula de especialidad expedida por la Benemerita Universidad de Puebla. Certificado por el colegio de ginecología y obstetricia con diplomado en colposcopia. Amabilidad, experiencia, profesionalismo.",
+  "addresses": [
+    {
+      "full": "Apizaco ,"
+    },
+    {
+      "full": "Apizaco ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-castro-licona/ginecologo/apizaco#address-id=394794&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:15:39.396Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__ricardo_castro_licona.webp"
+}

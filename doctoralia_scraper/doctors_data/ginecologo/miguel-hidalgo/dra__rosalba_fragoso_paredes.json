@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Rosalba Fragoso Paredes",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 4,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/988d29/988d29a40436062cabae86781e9f56f3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Acueducto Río Hondo 20 (entre Prado Sur y Aguiar y Seijas),"
+    },
+    {
+      "full": "Acueducto Río Hondo 20 (entre Prado Sur y Aguiar y Seijas),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosalba-fragoso-paredes/ginecologo/ciudad-de-mexico#address-id=10908&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:41:01.682Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__rosalba_fragoso_paredes.webp"
+}

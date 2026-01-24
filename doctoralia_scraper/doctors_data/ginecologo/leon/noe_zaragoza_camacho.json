@@ -1,0 +1,25 @@
+{
+  "name": "Noe Zaragoza Camacho",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dcc13f/dcc13fb0a0af17659820d09cece757ff_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. las Americas 201, Anade, 37370 Leon, Gto., Mexico,"
+    },
+    {
+      "full": "Blvd. las Americas 201, Anade, 37370 Leon, Gto., Mexico,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/noe-zaragoza-camacho/ginecologo/leon#address-id=254956&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:34:10.152Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/noe_zaragoza_camacho.webp"
+}

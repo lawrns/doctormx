@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Roberto Molina Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8b46c1/8b46c143e3aa73e28192f00afdda61c2_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Sion 409,"
+    },
+    {
+      "full": "Av. Sion 409,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-molina-rodriguez/ginecologo/leon#address-id=108199&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:30:40.029Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__roberto_molina_rodriguez.webp"
+}

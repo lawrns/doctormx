@@ -1,0 +1,37 @@
+{
+  "name": "Roberto De Jesus Martinez Mungarro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 217,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/21897b/21897b5c8e30fc6eac7a40ba93d74366_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Juan Cano 926,"
+    },
+    {
+      "full": "C. Tarascos 3473,"
+    },
+    {
+      "full": "Av. De Los Maestros 196,"
+    },
+    {
+      "full": "C. Juan Cano 926,"
+    },
+    {
+      "full": "C. Tarascos 3473,"
+    },
+    {
+      "full": "Av. De Los Maestros 196,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-de-jesus-martinez-mungarro/ginecologo/guadalajara#address-id=177569&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:42:15.300Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/roberto_de_jesus_martinez_mungarro.webp"
+}

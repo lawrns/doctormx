@@ -1,0 +1,25 @@
+{
+  "name": "Guillermo Sandoval Coyotl",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 47,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/12747258/12747258-b963-4ebc-a7b7-29c3c14943ce_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Estatal A Coronango 510 A, Col. San Diego Los Sauces, ,"
+    },
+    {
+      "full": "Estatal A Coronango 510 A, Col. San Diego Los Sauces, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-sandoval-coyotl/ginecologo/san-pedro-cholula#address-id=356298&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:36:17.457Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/guillermo_sandoval_coyotl.webp"
+}

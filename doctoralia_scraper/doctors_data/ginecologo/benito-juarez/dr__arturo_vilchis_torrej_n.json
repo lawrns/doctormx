@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Arturo Vilchis Torrejón",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2931f4/2931f43894f4ff89be87325c4210a26e_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Montecito 38 Nivel 2 local 6 consultorio 4,"
+    },
+    {
+      "full": "Montecito 38 Nivel 2 local 6 consultorio 4,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dr-arturo-vilchis-torrejon/ginecologo/ciudad-de-mexico#address-id=367136&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:09:34.474Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__arturo_vilchis_torrej_n.webp"
+}

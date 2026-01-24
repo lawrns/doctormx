@@ -1,0 +1,37 @@
+{
+  "name": "Dr. Joaquín Orrego Ruiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/373cfc6a/373cfc6a-0e42-4407-8f46-35e57c35ff0c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Kepler 2143 745,"
+    },
+    {
+      "full": "Av. Kepler 2143,"
+    },
+    {
+      "full": "Ave. 11 Oriente 1828 101 101,"
+    },
+    {
+      "full": "Kepler 2143 745,"
+    },
+    {
+      "full": "Av. Kepler 2143,"
+    },
+    {
+      "full": "Ave. 11 Oriente 1828 101 101,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/joaquin-orrego-ruiz-2/ginecologo/puebla#address-id=5518&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:19:31.188Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__joaqu_n_orrego_ruiz.webp"
+}

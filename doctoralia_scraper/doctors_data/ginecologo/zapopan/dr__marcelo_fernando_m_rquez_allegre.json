@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Marcelo Fernando Márquez Allegre",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 159,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/89bb79/89bb79d8e84a23609080a1c17323a5fd_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Tarascos, 3435 Fracc. Monraz,"
+    },
+    {
+      "full": "Calle Tarascos, 3435 Fracc. Monraz,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marcelo-fernando-marquez-allegre/ginecologo/guadalajara#address-id=97563&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:27:55.760Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__marcelo_fernando_m_rquez_allegre.webp"
+}

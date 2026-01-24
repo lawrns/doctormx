@@ -1,0 +1,25 @@
+{
+  "name": "Emanuel Jesus Pereira Olivares",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 138,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c5654f/c5654fcf01766458413de534672ccb6d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "43 X 32 Y 34,395,Industrial,,"
+    },
+    {
+      "full": "43 X 32 Y 34,395,Industrial,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/emanuel-jesus-pereira-olivares/ginecologo/merida#address-id=357858&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:48:33.058Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/emanuel_jesus_pereira_olivares.webp"
+}

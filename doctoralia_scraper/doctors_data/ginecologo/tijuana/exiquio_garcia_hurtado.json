@@ -1,0 +1,25 @@
+{
+  "name": "Exiquio Garcia Hurtado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 369,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9c35ce/9c35ce8b88ea2309b221f17ea808d8c7_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 4A. 8150,"
+    },
+    {
+      "full": "C. 4A. 8150,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/exiquio-garcia-hurtado/ginecologo/tijuana#address-id=229634&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:50:24.823Z",
+  "localPhotoPath": null
+}

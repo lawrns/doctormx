@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Guillermo Rocha Del Valle",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/96c299/96c29965d0616b14dad30378edfddeb5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Sur 136 116,"
+    },
+    {
+      "full": "Sur 136 116,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-rocha-del-valle/ginecologo/ciudad-de-mexico#address-id=222683&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:40:23.698Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__guillermo_rocha_del_valle.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Miguel Eduardo Hoyos Enríquez",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/db6ad5c1/db6ad5c1-c755-44a5-9e66-0b2495a765f3_small_square.jpg",
+  "about": "El Dr. Miguel Eduardo Hoyos Enríquez, ginecólogo oncólogo, graduado como Médico Cirujano por la Universidad Autónoma de Nayarit, ha consolidado su experiencia con una especialidad en Ginecología y Obstetricia respaldada por la Universidad de Guanajuato, certificado por el Consejo Mexicano de Ginecología y Obstetricia. Su dedicación al cuidado de las mujeres se amplía con una subespecialidad en Ginecología Oncológica avalada por la Universidad de Guanajuato y certificada por el Consejo Mexicano de Oncología. Su sólida formación académica es respaldada por una destacada trayectoria laboral que incluye roles en el Hospital Alijadores en Tampico, la Fundación Best, y servicios de emergencia con Paramedicall. El Dr. Hoyos Enríquez ha contribuido significativamente a la investigación médica, presentando tesis y carteles en eventos nacionales e internacionales. Su enfoque no se limita solo a la práctica clínica, ya que también se ha destacado en congresos como el 6to Congreso Nacional de Ginecología Oncológica y el 41 Congreso Nacional de Oncología. Su compromiso con la actualización constante se refleja en su participación en cursos y talleres especializados, abordando desde la Laparoscopía Básica hasta la gestión de emergencias obstétricas y oncología quirúrgica. Además, ha sido reconocido por su destacado desempeño académico, recibiendo el Premio “Dra Aura A. Erazo” de la Sociedad Mexicana de Oncología. Con domicilio en León, Guanajuato, el Dr. Miguel Eduardo Hoyos Enríquez ofrece sus servicios en el Hospital General de Regional No. 58 IMSS y en su consultorio particular en el Hospital MAC León. Su compromiso con la excelencia y la continua actualización lo convierte en un referente en el campo de la Ginecología Oncológica.",
+  "addresses": [
+    {
+      "full": "Blvd. Aeropuerto 101, Villa Santa Julia,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita ginecología oncológica",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas ginecología oncológica",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-eduardo-hoyos-enriquez/ginecologo-oncologico/leon#address-id=569288&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:25:17.597Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__miguel_eduardo_hoyos_enr_quez.webp"
+}

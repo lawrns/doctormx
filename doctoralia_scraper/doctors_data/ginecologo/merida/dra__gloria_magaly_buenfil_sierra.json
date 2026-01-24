@@ -1,0 +1,35 @@
+{
+  "name": "Dra. Gloria Magaly Buenfil Sierra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 27,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e65eba/e65eba3d8201da7ec7f0da0ea69bd970_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 7 # 215 A x 32 y 34 col García Gineres,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gloria-magaly-buenfil-sierra-2/ginecologo/yucatan#address-id=480096&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:29:07.124Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__gloria_magaly_buenfil_sierra.webp"
+}

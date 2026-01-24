@@ -1,0 +1,37 @@
+{
+  "name": "Dr. José Luis Pérez Díaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 400,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cbb4d4/cbb4d4201a0702482e575c79ac7652d9_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd Campestre 1633, Int 3, Col Lomas del Campestre ,"
+    },
+    {
+      "full": "Prol. Campestre 1633,"
+    },
+    {
+      "full": "Lomas De Arroyo 214,"
+    },
+    {
+      "full": "Blvd Campestre 1633, Int 3, Col Lomas del Campestre ,"
+    },
+    {
+      "full": "Prol. Campestre 1633,"
+    },
+    {
+      "full": "Lomas De Arroyo 214,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-luis-perez-diaz/ginecologo/leon#address-id=209119&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:30:43.679Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__jos__luis_p_rez_d_az.webp"
+}

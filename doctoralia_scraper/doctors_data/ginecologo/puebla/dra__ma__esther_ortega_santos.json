@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Ma. Esther Ortega Santos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/907c0b/907c0b17d6c937d871a42f664a91deb0_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "11 Oriente 1818 (Torre 2) hospital betania consultorio 708. Tel 5518051223,"
+    },
+    {
+      "full": "11 Oriente 1818 (Torre 2) hospital betania consultorio 708. Tel 5518051223,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ma-esther-ortega-santos/ginecologo/puebla#address-id=133861&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:13:15.047Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__ma__esther_ortega_santos.webp"
+}

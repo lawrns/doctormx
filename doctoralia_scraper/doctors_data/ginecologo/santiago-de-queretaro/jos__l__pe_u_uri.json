@@ -1,0 +1,25 @@
+{
+  "name": "José L. Peñuñuri",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 51,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cdc9be/cdc9be9ef84f74cd441fd95019de2e2a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Priv. Circunvalación G. 6 10 Col. Jardínes De Querétaro ,"
+    },
+    {
+      "full": "Priv. Circunvalación G. 6 10 Col. Jardínes De Querétaro ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-l-penunuri/ginecologo/santiago-de-queretaro#address-id=359363&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:59:25.422Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/jos__l__pe_u_uri.webp"
+}

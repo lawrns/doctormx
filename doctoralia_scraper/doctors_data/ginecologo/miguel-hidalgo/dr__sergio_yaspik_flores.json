@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Sergio Yaspik Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 494,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/730fe2/730fe241f34cbfa1acd2c8356367cffe_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Camino a Santa Teresa 1055,"
+    },
+    {
+      "full": "Gelati 29,"
+    },
+    {
+      "full": "Calle Gelati 33,"
+    },
+    {
+      "full": "Camino a Santa Teresa 1055 (Hospital Angeles del Pedregal, cons. 820),"
+    },
+    {
+      "full": "Camino a Santa Teresa 1055,"
+    },
+    {
+      "full": "Gelati 29,"
+    },
+    {
+      "full": "Calle Gelati 33,"
+    },
+    {
+      "full": "Camino a Santa Teresa 1055 (Hospital Angeles del Pedregal, cons. 820),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-yaspik-flores-3/ginecologo/-#address-id=139153&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:42:18.961Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__sergio_yaspik_flores.webp"
+}

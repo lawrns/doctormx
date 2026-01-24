@@ -1,0 +1,31 @@
+{
+  "name": "Martha Liliana Regalado Ortiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 16,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/90450f/90450fa760344270a1d7533da97a7989_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Centro Sur 2,"
+    },
+    {
+      "full": "Priv. Ignacio Zaragoza 16 B,"
+    },
+    {
+      "full": "Blvd. Centro Sur 2,"
+    },
+    {
+      "full": "Priv. Ignacio Zaragoza 16 B,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martha-liliana-regalado-ortiz/ginecologo/santiago-de-queretaro#address-id=188781&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:00:07.478Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/martha_liliana_regalado_ortiz.webp"
+}

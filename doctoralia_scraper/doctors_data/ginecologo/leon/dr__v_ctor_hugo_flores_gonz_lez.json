@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Víctor Hugo Flores González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 251,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d16576/d165765d179c80988d944fc3d51becd4_220_square.jpg",
+  "about": "Tu salud no es una opción y es mi prioridad!",
+  "addresses": [
+    {
+      "full": "San Jorge 202, La Martinica,"
+    },
+    {
+      "full": "San Jorge 202, La Martinica,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victor-hugo-flores-gonzalez/ginecologo/leon#address-id=531717&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:28:28.802Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__v_ctor_hugo_flores_gonz_lez.webp"
+}

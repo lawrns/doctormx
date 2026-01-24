@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Abisaí Montaño Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/23621b/23621b14111cd4bb74847272929cc4cf_220_square.jpg",
+  "about": "¡Qué tal! Soy el Dr. Abisaí Montaño, será un gusto atenderte de la forma más profesional. Te cuento que pertenezco a sociedades científicas tanto nacionales como internacionales, que me permite seguir actualizándome para brindarte la mejor atención.",
+  "addresses": [
+    {
+      "full": "Saturnino Herrán 59,"
+    },
+    {
+      "full": "Saturnino Herrán 59,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Atención del cáncer en la mujer",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Atención pacientes con cáncer",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Biopsia con marcaje con arpón",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Biopsia trucut de mama",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/abisai-montano-martinez/ginecologo-ginecologo-oncologico/ciudad-de-mexico#address-id=406850&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:08:03.741Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__abisa__monta_o_mart_nez.webp"
+}

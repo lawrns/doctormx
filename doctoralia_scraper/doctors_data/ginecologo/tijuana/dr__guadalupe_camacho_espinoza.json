@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Guadalupe Camacho Espinoza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "-Cesareas económicas",
+  "addresses": [
+    {
+      "full": "C. Principal 9737,"
+    },
+    {
+      "full": "C. Principal 9737,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guadalupe-camacho-espinoza/ginecologo/tijuana#address-id=223334&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:43:22.721Z",
+  "localPhotoPath": null
+}

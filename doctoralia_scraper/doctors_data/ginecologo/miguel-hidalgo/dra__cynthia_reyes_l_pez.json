@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Cynthia Reyes López",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 25,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/122996db/122996db-afa8-4251-8ad5-8504619a6ec9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Ejercito Nacional Mexicano 613, Granada, Miguel Hidalgo,"
+    },
+    {
+      "full": "Av. Ejercito Nacional Mexicano 613, Granada, Miguel Hidalgo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $950"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $950"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cynthia-reyes-lopez/ginecologo/ciudad-de-mexico#address-id=536482&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:40:03.459Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__cynthia_reyes_l_pez.webp"
+}

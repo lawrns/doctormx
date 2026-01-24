@@ -1,0 +1,25 @@
+{
+  "name": "Porfiria Pérez Soriano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 104,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ba92c248/ba92c248-322f-453f-813f-499bc67ea348_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Nicolás San Juan No. 1527 Del Valle, ,,"
+    },
+    {
+      "full": "Nicolás San Juan No. 1527 Del Valle, ,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/porfiria-perez-soriano/ginecologo/ciudad-de-mexico#address-id=126345&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:22:12.723Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/porfiria_p_rez_soriano.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jose Lorenzo Reyna Peraza",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 123,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d76940/d7694034218ce031c92d7bdf995fa71c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 26 199,"
+    },
+    {
+      "full": "Calle 26 199,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-lorenzo-reyna-peraza/ginecologo/merida#address-id=7172&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:48:02.699Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__jose_lorenzo_reyna_peraza.webp"
+}

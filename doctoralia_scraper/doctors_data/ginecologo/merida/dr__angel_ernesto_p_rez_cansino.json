@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Angel Ernesto Pérez Cansino",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 895,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9a6ca5e6/9a6ca5e6-593e-46f3-bd84-9730fa635dca_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 59 num 720a (entre 90 y 92) ,"
+    },
+    {
+      "full": "Calle 59 num 720a (entre 90 y 92) ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angel-ernesto-perez-cansino/ginecologo/merida#address-id=119373&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:43:22.521Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__angel_ernesto_p_rez_cansino.webp"
+}

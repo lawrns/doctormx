@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Lavastida Dominguez Victor Manuel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 130,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/be884edf/be884edf-df0f-4558-8691-9af705d8d7f9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "22 Sur 5107 Int4,"
+    },
+    {
+      "full": "22 Sur 5107 Int4,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lavastida-dominguez-victor-manuel/ginecologo/puebla#address-id=552&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:32:27.834Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__lavastida_dominguez_victor_manuel.webp"
+}

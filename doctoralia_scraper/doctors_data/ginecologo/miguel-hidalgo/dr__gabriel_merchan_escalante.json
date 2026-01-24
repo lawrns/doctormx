@@ -1,0 +1,40 @@
+{
+  "name": "Dr. Gabriel Merchan Escalante",
+  "specialty": "Ginecólogo",
+  "rating": 2,
+  "reviewCount": 140,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c68b90/c68b90c50ffa5fca2c4de67f36311f6f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Tuxpan 10,"
+    },
+    {
+      "full": "Altadena 47,"
+    },
+    {
+      "full": "Calle Tuxpan 10,"
+    },
+    {
+      "full": "Altadena 47,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriel-merchan-escalante/ginecologo/benito-juarez#address-id=337259&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:07:44.757Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__gabriel_merchan_escalante.webp"
+}

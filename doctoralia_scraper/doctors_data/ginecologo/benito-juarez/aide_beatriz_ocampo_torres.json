@@ -1,0 +1,31 @@
+{
+  "name": "Aide Beatriz Ocampo Torres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 28,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ced0524e/ced0524e-b409-4e4d-b71d-06c06bdf0986_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Instituto Politécnico Nacional 516,"
+    },
+    {
+      "full": "Félix Cuevas 540,"
+    },
+    {
+      "full": "Av. Instituto Politécnico Nacional 516,"
+    },
+    {
+      "full": "Félix Cuevas 540,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aide-beatriz-ocampo-torres/ginecologo/benito-juarez#address-id=251122&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:16:25.535Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/aide_beatriz_ocampo_torres.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Agustin Huerta Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 216,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/fb78477a/fb78477a-abec-4d92-bfaa-edaea4ea77c3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Francisco I. Madero 302, Centro,"
+    },
+    {
+      "full": "Hueyotlipan,"
+    },
+    {
+      "full": "Blvd. Francisco I. Madero 302, Centro,"
+    },
+    {
+      "full": "Hueyotlipan,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/agustin-huerta-hernandez/ginecologo/apizaco#address-id=140689&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:21:03.210Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__agustin_huerta_hern_ndez.webp"
+}

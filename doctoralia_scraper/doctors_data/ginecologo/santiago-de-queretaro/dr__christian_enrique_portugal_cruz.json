@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Christian Enrique Portugal Cruz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 98,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ab2982/ab29825d7f346cd0161f1a07b8c7f6b9_220_square.jpg",
+  "about": "Soy el Dr. Christian Portugal Cruz, especializado en ginecología y obstetricia por la Universidad Autonoma del Estado de México. Obtuve mi licenciatura en medicina en la Universidad Michoacana de San Nicolás de Hidalgo Posteriormente, realicé una subespecialización en Medicina Materno Fetal en el Instituto Nacional de Perinatología por la Universidad Nacional Autónoma de México. Me dedico a atender a mujeres en todas las áreas de la ginecología y obstetricia, con especial énfasis en la detecciòn prenatal de enfermedades fetales, embarazo y el embarazo de alto riesgo. También tengo experiencia en detección de malformaciones fetales y la realización de procedimientos invasivos para el diagnóstico prenatal. Mi enfoque es siempre brindar una atención personalizada y de calidad, basada en mi amplia formación académica y mi experiencia en el campo. Me aseguro de que mis pacientes se sientan cómodas y bien informadas en todo momento, y trabajo en estrecha colaboración y acompañamiento con ellas. Siempre me mantengo actualizado en los últimos avances y técnicas en mi campo para ofrecer la atención más efectiva y de alta calidad, para lograr el exito en el embarazo.",
+  "addresses": [
+    {
+      "full": "Prol. Bernardo Quintana 4060,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido 4D",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido avanzado de embarazo múltiple",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido doppler bienestar fetal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/christian-enrique-portugal-cruz/ginecologo/queretaro#address-id=482132&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:46:35.349Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__christian_enrique_portugal_cruz.webp"
+}

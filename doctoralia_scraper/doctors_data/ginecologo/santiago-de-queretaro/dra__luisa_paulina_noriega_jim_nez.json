@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Luisa Paulina Noriega Jiménez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 401,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2ccde4/2ccde4ba8f5a75c2b6d82010a0cd59dd_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hospital San Jose Celaya, Guanajuato,"
+    },
+    {
+      "full": "Paseo de la República 135, Zona Industrial Jurica,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Control postparto o cesárea",
+      "price": "• $900"
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• $900"
+    },
+    {
+      "name": "Control prenatal de embarazo múltiple",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Revisión de embarazo (Primera vez)",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vellosidades coriales",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luisa-paulina-noriega-jimenez/ginecologo/juriquilla#address-id=89538&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:47:08.435Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__luisa_paulina_noriega_jim_nez.webp"
+}

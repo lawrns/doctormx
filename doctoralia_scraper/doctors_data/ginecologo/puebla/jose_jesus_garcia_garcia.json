@@ -1,0 +1,25 @@
+{
+  "name": "Jose Jesus Garcia Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 25,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3fcdd4c0/3fcdd4c0-55b5-4d67-b493-0a13a15ecaff_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 16 Sur 1314,"
+    },
+    {
+      "full": "C. 16 Sur 1314,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-jesus-garcia-garcia/ginecologo/puebla#address-id=160298&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:28:55.390Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/jose_jesus_garcia_garcia.webp"
+}

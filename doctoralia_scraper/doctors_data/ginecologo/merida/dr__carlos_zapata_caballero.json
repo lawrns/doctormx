@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Carlos Zapata Caballero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b7c95a/b7c95a41d66ef998336b55ee5d4bc7a9_220_square.jpg",
+  "about": "Urología Ginecológica y Medicina Sexual Instituto Nacional de Perinatología, CDMX, México. European School of Sexual Medicine, Budapest, Hungría.",
+  "addresses": [
+    {
+      "full": "Calle 24 S/N,"
+    },
+    {
+      "full": "Calle 24 S/N,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-zapata-caballero/ginecologo/yucatan#address-id=532574&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:37:16.794Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__carlos_zapata_caballero.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Maria Rosalia Juarez Rosete",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 645,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cfa18b/cfa18bb0bcde628c4045406c9aab8c7b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Priv. De Las Ramblas 4,"
+    },
+    {
+      "full": "13 Sur 1907,"
+    },
+    {
+      "full": "Priv. De Las Ramblas 4,"
+    },
+    {
+      "full": "13 Sur 1907,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-rosalia-juarez-rosete/ginecologo/puebla#address-id=191181&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:26:29.872Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/maria_rosalia_juarez_rosete.webp"
+}

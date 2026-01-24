@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Rodolfo Aboytes Fuentes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 109,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/af5cf0/af5cf0c95e55cbc5596a11d508fd6427_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "av. de las Ciencias 2058 Rancho Largo 76230 Juriquilla Querétaro,"
+    },
+    {
+      "full": "av. de las Ciencias 2058 Rancho Largo 76230 Juriquilla Querétaro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rodolfo-aboytes-fuentes/ginecologo/queretaro#address-id=403258&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:52:38.526Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__rodolfo_aboytes_fuentes.webp"
+}

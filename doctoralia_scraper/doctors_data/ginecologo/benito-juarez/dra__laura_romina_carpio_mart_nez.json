@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Laura Romina Carpio Martínez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 962,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/48fe0453/48fe0453-16f1-46ac-a674-6e20d05a2369_large.jpg",
+  "about": "Como ginecóloga, mi misión es acompañarte con empatía, respeto y conocimiento. Me especializo en el diagnóstico y tratamiento de virus del papiloma, enfermedades de transmisión sexual, Cáncer, Sindrome de Ovario Poliquístico así como en cirugías de mínima invasión (laparoscopia/histeroscopia) que son más seguras, menos dolorosas y ofrecen una recuperación más rápida.Tengo formación sólida para atender embarazos de alto riesgo con seguridad y dedicación, cuidando cada detalle para ti y tu bebé. Estoy aquí para escucharte, orientarte y brindarte una atención cálida y cercana en cada paso de tu embarazo.",
+  "addresses": [
+    {
+      "full": "Avenida Revolución, 1225 COND, CMC 2, Consultorio 03N6, Col. Los Alpes,"
+    },
+    {
+      "full": "Río Bamba 800,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Ablación Vaginal",
+      "price": "• $3,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-romina-carpio-martinez/ginecologo/gustavo-a-madero#address-id=598274&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:00:18.470Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__laura_romina_carpio_mart_nez.webp"
+}

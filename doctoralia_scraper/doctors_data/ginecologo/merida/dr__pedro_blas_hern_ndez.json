@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Pedro Blas Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 260,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/44a8c7/44a8c719f2efe794b04915b1c88d3a44_220_square.jpg",
+  "about": "Ginecólogo enfocado al apartado Oncológico de la mujer.",
+  "addresses": [
+    {
+      "full": "Calle 24 s/n x 7 y 7A Santa Gertrudis, Copó,"
+    },
+    {
+      "full": "Calle 24 s/n x 7 y 7A Santa Gertrudis, Copó,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pedro-blas-hernandez/ginecologo-ginecologo-oncologico/yucatan#address-id=253726&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:34:37.284Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__pedro_blas_hern_ndez.webp"
+}

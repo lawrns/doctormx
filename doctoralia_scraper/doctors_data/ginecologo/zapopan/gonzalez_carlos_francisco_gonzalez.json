@@ -1,0 +1,25 @@
+{
+  "name": "Gonzalez Carlos Francisco Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 518,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1d139d/1d139d6b744d5cd30734782435889da9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Niño Obrero 996 208,"
+    },
+    {
+      "full": "Av. Niño Obrero 996 208,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gonzalez-carlos-francisco-gonzalez/ginecologo/guadalajara#address-id=130160&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:45:01.733Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/gonzalez_carlos_francisco_gonzalez.webp"
+}

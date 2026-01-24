@@ -1,0 +1,25 @@
+{
+  "name": "Antonio Cruces Mada",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 179,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7bb6d0/7bb6d0df0692de6ed6fcae6b1517b615_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "San Francisco 3376,"
+    },
+    {
+      "full": "San Francisco 3376,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/antonio-cruces-mada/ginecologo/guadalajara#address-id=6439&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:41:29.112Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/antonio_cruces_mada.webp"
+}

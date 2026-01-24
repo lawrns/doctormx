@@ -1,0 +1,25 @@
+{
+  "name": "Antonio M. Gutierrez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 53,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/80d989/80d989b339476328718cf5a3a7051ad3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Colon 204-D. Col. Garcia Gineres. ,"
+    },
+    {
+      "full": "Av. Colon 204-D. Col. Garcia Gineres. ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/antonio-m-gutierrez/ginecologo/merida#address-id=359166&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:48:16.335Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/antonio_m__gutierrez.webp"
+}

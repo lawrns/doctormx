@@ -1,0 +1,37 @@
+{
+  "name": "Jose Luz Antonio De La Cruz Puente",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 190,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b6ebb5/b6ebb5261c05a5dc771df04292504950_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Manantial 114,"
+    },
+    {
+      "full": "Paseo 402,"
+    },
+    {
+      "full": "Av. 20 De Enero 927,"
+    },
+    {
+      "full": "Manantial 114,"
+    },
+    {
+      "full": "Paseo 402,"
+    },
+    {
+      "full": "Av. 20 De Enero 927,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-luz-antonio-de-la-cruz-puente/ginecologo/leon#address-id=208813&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:37:16.728Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/jose_luz_antonio_de_la_cruz_puente.webp"
+}

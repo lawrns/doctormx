@@ -1,0 +1,25 @@
+{
+  "name": "Antonio García Luna Vásquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 51,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cdc9be/cdc9be9ef84f74cd441fd95019de2e2a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Venustiano Carranza 31 Col. Centro ,"
+    },
+    {
+      "full": "Venustiano Carranza 31 Col. Centro ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/antonio-garcia-luna-vasquez/ginecologo/santiago-de-queretaro#address-id=359332&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:58:16.328Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/antonio_garc_a_luna_v_squez.webp"
+}

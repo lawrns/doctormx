@@ -1,0 +1,25 @@
+{
+  "name": "Colli Elsy Cardeñas Bazán",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 219,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/544bdd/544bdda72c4c590c2e4bd7f432e7edac_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 69 430,"
+    },
+    {
+      "full": "Calle 69 430,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/colli-elsy-cardenas-bazan/ginecologo/merida#address-id=87385&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:45:13.541Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/colli_elsy_carde_as_baz_n.webp"
+}

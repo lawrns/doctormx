@@ -1,0 +1,25 @@
+{
+  "name": "Fernando Catalino Mendoza Enriquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 116,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/910c86/910c86fa7a57f002eacd17fbd0da4fdb_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "8A De San Gabriel 5D, Col. Fracc Ara Paseos Del Angel, ,"
+    },
+    {
+      "full": "8A De San Gabriel 5D, Col. Fracc Ara Paseos Del Angel, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-catalino-mendoza-enriquez/ginecologo/puebla#address-id=356303&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:31:39.717Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/fernando_catalino_mendoza_enriquez.webp"
+}

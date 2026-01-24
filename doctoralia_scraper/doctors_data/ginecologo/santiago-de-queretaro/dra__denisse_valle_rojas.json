@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Denisse Valle Rojas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 636,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1dcada/1dcadadeab9456f14ebac242839087ef_220_square.jpg",
+  "about": "Hola soy la Dra. Denisse Valle, médico especialista en ginecología y obstetricia. Como mujer entiendo y tengo presente la preocupación que a toda mujer nos llega en algún momento de nuestras vidas ya sea en una etapa especial de nuestra vida por la que estemos cursando, o en ese momento maravilloso del embarazo, es por ello que con empatía me conduzco para poder resolver todas tus dudas y preocupaciones y con vocación en el cuidado y salud, enfoco mi misión en ofrecerte una atención integral en el diagnóstico y tratamiento para mejorar tu calidad de vida.",
+  "addresses": [
+    {
+      "full": "Boulevard Bernardo Quintana #4060,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/denisse-valle-rojas/ginecologo/santiago-de-queretaro#address-id=449211&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:45:15.911Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__denisse_valle_rojas.webp"
+}

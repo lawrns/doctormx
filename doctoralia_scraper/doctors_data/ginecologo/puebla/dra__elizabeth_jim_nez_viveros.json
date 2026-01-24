@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Elizabeth Jiménez Viveros",
+  "specialty": "Ginecólogo",
+  "rating": 1,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/82d935/82d935512cc331fedf8453d369b9649e_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "11 Oriente 1826. Torre 1, Sexto Piso, Consultorio 604 (Christus Muguerza Hospital Betania),"
+    },
+    {
+      "full": "Av. 11 Ote 1826,"
+    },
+    {
+      "full": "11 Oriente 1826. Torre 1, Sexto Piso, Consultorio 604 (Christus Muguerza Hospital Betania),"
+    },
+    {
+      "full": "Av. 11 Ote 1826,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elizabeth-jimenez-viveros/ginecologo/puebla#address-id=12896&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:17:44.041Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__elizabeth_jim_nez_viveros.webp"
+}

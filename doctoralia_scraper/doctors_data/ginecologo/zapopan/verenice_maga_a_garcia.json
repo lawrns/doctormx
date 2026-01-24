@@ -1,0 +1,31 @@
+{
+  "name": "Verenice Magaña Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0e797d/0e797dcd873cdcfa1ef979182f8c58fc_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Nicolas Copernico 3971,"
+    },
+    {
+      "full": "Cam. Nacional 2125,"
+    },
+    {
+      "full": "Nicolas Copernico 3971,"
+    },
+    {
+      "full": "Cam. Nacional 2125,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/verenice-magana-garcia/ginecologo/zapopan#address-id=169895&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:39:29.342Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/verenice_maga_a_garcia.webp"
+}

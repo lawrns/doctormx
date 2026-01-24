@@ -1,0 +1,43 @@
+{
+  "name": "Dra. María Mercedes del Rocío López Lizárraga",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 83,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a1575b92/a1575b92-33d5-4707-b1f8-867d213d2820_small_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Empresarios 150,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-mercedes-del-rocio-lopez-lizarraga/ginecologo/zapopan",
+  "scrapedAt": "2026-01-22T04:07:27.701Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__mar_a_mercedes_del_roc_o_l_pez_liz_rraga.webp"
+}

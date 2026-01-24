@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Rodolfo González Andérica",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fe6b5d/fe6b5dd75371787edb70f5ac1b9dde08_220_square.jpg",
+  "about": "Consulta especializada en cáncer ginecológico, lesiones precursoras de cáncer, prevención y consejo genético. 14 años de entrenamiento médico en centros especializados de referencia nacional e internacional; sin embargo, lo más importante, aquí tratamos y cuidamos de lo más importante, tus seres queridos…",
+  "addresses": [
+    {
+      "full": "Av. Kepler 2143,"
+    },
+    {
+      "full": "Av. Kepler 2143,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama por marcaje",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rodolfo-gonzalez-anderica/ginecologo-oncologico-ginecologo/puebla#address-id=444136&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:12:21.001Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__rodolfo_gonz_lez_and_rica.webp"
+}

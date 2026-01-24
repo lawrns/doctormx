@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Gabriel Corona",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 547,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ac17f2/ac17f29d9e89935a140f7dbd6c737cf0.jpg",
+  "about": "Soy el Dr. Gabriel Corona, Ginecólogo con Alta Especialidad en Endoscopia Ginecológica por el Hospital de la Mujer Morelia. Experto en cirugía de miomas, endometriosis Especialista en: - Laparoscopia - Cirugía Reproductiva - Infertilidad - Endoscopia ginecológica - Endometriosis - Miomas uterinos - Sangrado uterino disfuncional - Ovarios poliquísticos Tú salud es lo más importante para mi y tengo el tratamiento adecuado para tu salud, te espero. ¡Agenda tu cita por Doctoralia !",
+  "addresses": [
+    {
+      "full": "Manantial 506, Villas del Moral,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $3,000"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriel-corona-2/ginecologo/leon#address-id=255922&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:26:29.940Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__gabriel_corona.webp"
+}

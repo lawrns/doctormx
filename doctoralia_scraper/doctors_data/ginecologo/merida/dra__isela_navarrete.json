@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Isela Navarrete",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 172,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/84dd6c/84dd6c8fed360b560b815f21f01612ba_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 31 #183 A (por 20 y 22),"
+    },
+    {
+      "full": "Calle 31 #183 A (por 20 y 22),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/isela-navarrete/ginecologo/ciudad-de-mexico#address-id=155269&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:44:16.176Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__isela_navarrete.webp"
+}

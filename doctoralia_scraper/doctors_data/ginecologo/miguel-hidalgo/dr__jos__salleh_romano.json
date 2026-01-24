@@ -1,0 +1,43 @@
+{
+  "name": "Dr. José Salleh Romano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 33,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/04a973/04a973aa3a500f92071f0201f233966b_220_square.jpg",
+  "about": "Clinica de fertilidad, control materno fetal, cirugia laparoscopica, metodos en el consultorio, ultrasonido, citologia vaginal, colposcopia. Tomas de biopsias",
+  "addresses": [
+    {
+      "full": "Avenida Ejército Nacional Mexicano 615,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $799"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $799"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $799"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $799"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-salleh-romano/ginecologo/miguel-hidalgo#address-id=87744&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:59:03.822Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__jos__salleh_romano.webp"
+}

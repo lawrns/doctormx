@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Ignacio Aboytes Cardeña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 164,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c749c2/c749c2cfbe913544f7ffc0461258fab7_220_square.jpg",
+  "about": "Soy un médico con experiencia en problemas de fertilidad ( fertilización in vitro y inseminación intrauterina) y endocrinología ginecológica con gran experiencia en manejo de Menopausia y terapia con hormonas Bioidenticas de origen natura, con un enfoque Bioético participó en programas involucrados en: parto humanizado, cesárea respetada y cursos de preparación para el nacimiento, con un equipo multidisciplinario con principios bioéticos y estándares de la más alta calidad, para brindar una experiencia de satisfacción y compromiso enfocada en la salud de la mujer y la Familia.",
+  "addresses": [
+    {
+      "full": "Blvd. Adolfo López Mateos 2980,"
+    },
+    {
+      "full": "Blvd. Adolfo López Mateos 2980,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ignacio-aboytes-cardena-2/ginecologo/leon#address-id=369503&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:27:21.173Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__ignacio_aboytes_carde_a.webp"
+}

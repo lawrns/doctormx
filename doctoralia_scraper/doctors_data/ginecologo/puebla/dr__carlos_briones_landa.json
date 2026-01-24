@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Carlos Briones Landa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/651610/651610d72d173b5861496a5797e31f03_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "20 sur 705-406 (Hospital Betania Torre III),"
+    },
+    {
+      "full": "HOSPITAL ANGELES PUEBLA CONSULTORIO 820,"
+    },
+    {
+      "full": "20 sur 705-406 (Hospital Betania Torre III),"
+    },
+    {
+      "full": "HOSPITAL ANGELES PUEBLA CONSULTORIO 820,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    },
+    {
+      "name": "Laparascopia diagnóstica con biopsia",
+      "price": ""
+    },
+    {
+      "name": "Miomectomía por histeroscopia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    },
+    {
+      "name": "Laparascopia diagnóstica con biopsia",
+      "price": ""
+    },
+    {
+      "name": "Miomectomía por histeroscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-briones-landa/ginecologo/puebla#address-id=66560&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:13:58.322Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__carlos_briones_landa.webp"
+}

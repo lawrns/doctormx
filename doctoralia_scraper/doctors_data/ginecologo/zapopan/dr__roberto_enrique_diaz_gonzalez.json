@@ -1,0 +1,37 @@
+{
+  "name": "Dr. Roberto Enrique Diaz Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/98c94647/98c94647-aed8-481f-9446-6efa6400b06d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Arco Del Triunfo 531,"
+    },
+    {
+      "full": "Cerezos 954,"
+    },
+    {
+      "full": "Blvd. Pta. De Hierro 5150,"
+    },
+    {
+      "full": "Av. Arco Del Triunfo 531,"
+    },
+    {
+      "full": "Cerezos 954,"
+    },
+    {
+      "full": "Blvd. Pta. De Hierro 5150,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-enrique-diaz-gonzalez/ginecologo/zapopan#address-id=177554&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:30:24.128Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__roberto_enrique_diaz_gonzalez.webp"
+}

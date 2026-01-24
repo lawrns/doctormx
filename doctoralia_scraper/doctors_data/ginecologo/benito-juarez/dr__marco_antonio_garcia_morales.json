@@ -1,0 +1,52 @@
+{
+  "name": "Dr. Marco Antonio Garcia Morales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a61d22/a61d22904379e430df1d92d646444ade_220_square.jpg",
+  "about": "Médico Certificado por el Consejo Mexicano de Ginecología y Obstetricia, y como Médico Cirujano con más de 20 años de experiencia, siempre se ha dirigido con gran responsabilidad y una ética que lo ha precedido durante toda su trayectoria. Diplomado en Cirugía Laparoscópica Curso avanzado para el Paciente Traumatizado Curso de Adiestramiento en Esterilidad Médico Cirujano Partero Cédula Prof: 1292242 Especialidad en Ginecología y Obstetricia Ced. Prof: AE-04362",
+  "addresses": [
+    {
+      "full": "Acueducto Río Hondo 20 (entre Prado Sur y Aguiar y Seijas),"
+    },
+    {
+      "full": "World Trade Center, | Montecito # 38 Piso 12, Oficina 9 y 10,"
+    },
+    {
+      "full": "Acueducto Río Hondo 20 (entre Prado Sur y Aguiar y Seijas),"
+    },
+    {
+      "full": "World Trade Center, | Montecito # 38 Piso 12, Oficina 9 y 10,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía postparto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marco-antonio-garcia-morales-2/ginecologo/benito-juarez#address-id=92016&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:07:56.182Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__marco_antonio_garcia_morales.webp"
+}

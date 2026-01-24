@@ -1,0 +1,25 @@
+{
+  "name": "Damaris Prado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 63,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/96bc20/96bc20e1db086395e2ef10fed6d2be1f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Obsidiana 2643, Victoria,"
+    },
+    {
+      "full": "Av. Obsidiana 2643, Victoria,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/damaris-prado/ginecologo/zapopan#address-id=525597&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:34:31.079Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/damaris_prado.webp"
+}

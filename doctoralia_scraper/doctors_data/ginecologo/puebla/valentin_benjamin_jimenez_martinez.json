@@ -1,0 +1,25 @@
+{
+  "name": "Valentin Benjamin Jimenez Martinez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 375,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/171cc3/171cc3a56e96e37caf1a14274402dd28_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Santander 5325,"
+    },
+    {
+      "full": "Santander 5325,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/valentin-benjamin-jimenez-martinez/ginecologo/puebla#address-id=170069&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:28:21.018Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/valentin_benjamin_jimenez_martinez.webp"
+}

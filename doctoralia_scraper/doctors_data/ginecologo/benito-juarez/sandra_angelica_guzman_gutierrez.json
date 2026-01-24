@@ -1,0 +1,37 @@
+{
+  "name": "Sandra Angelica Guzman Gutierrez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 281,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6e48c1/6e48c1b8550bfa8505b49d618d760b82_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Sur. 71 117,"
+    },
+    {
+      "full": "Angel De La Independencia 87,"
+    },
+    {
+      "full": "Div. Del Nte. 3086,"
+    },
+    {
+      "full": "Sur. 71 117,"
+    },
+    {
+      "full": "Angel De La Independencia 87,"
+    },
+    {
+      "full": "Div. Del Nte. 3086,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sandra-angelica-guzman-gutierrez/ginecologo/ciudad-de-mexico#address-id=173631&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:17:18.779Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/sandra_angelica_guzman_gutierrez.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Diego Alejandro Favila Escobar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 155,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/aee73d81/aee73d81-883f-4728-aad8-db3482666d4a_small_square.jpg",
+  "about": "¡Bienvenida!Soy el Dr. Diego Favila, Ginecólogo y Obstetra, especialista en Colposcopia en Querétaro.Sé que visitar al ginecólogo puede generar inquietud, por eso mi compromiso es ofrecerte un ambiente tranquilo y de confianza, donde te sientas escuchada, acompañada y segura.Mi enfoque se basa en la empatía, la comunicación abierta y el cuidado integral de la salud femenina, utilizando técnicas avanzadas y menos invasivas para una recuperación más rápida y segura.Estoy especializado en:ColposcopiaGinecología y ObstetriciaCirugía Ginecológica de Alta ComplejidadUltrasonidoPuedo ayudarte en el diagnóstico y tratamiento de:Virus del Papiloma Humano (VPH) y sus seguimientosMiomas uterinosSeguimiento de embarazos de alto riesgoAsesoría en anticonceptivosSangrados menstruales irregularesSíndrome de ovario poliquísticoClimaterio y menopausia, entre otrosSerá un placer acompañarte en el cuidado de tu salud.",
+  "addresses": [
+    {
+      "full": "Avenida de las Ciencias 2058,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría para pacientes embarazadas con riesgo alto de hemorragia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diego-alejandro-favila-escobar-2/ginecologo/santiago-de-queretaro#address-id=577518&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:43:06.992Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__diego_alejandro_favila_escobar.webp"
+}

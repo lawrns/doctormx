@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Oscar Flores Carreras",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 631,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/69df83bb/69df83bb-1401-4704-9559-5eef4ba64a93_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Juan Ruiz De Alarcon 176 S/n,"
+    },
+    {
+      "full": "Juan Ruiz De Alarcon 176 S/n,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/oscar-flores-carreras/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:27:02.800Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__oscar_flores_carreras.webp"
+}

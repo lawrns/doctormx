@@ -1,0 +1,31 @@
+{
+  "name": "Rosalina Corzo Buenrostro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 418,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/aaa002/aaa002ab73d2b22a98692a38215e66e3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ruta Independencia 6124,"
+    },
+    {
+      "full": "C. Tecate 21330,"
+    },
+    {
+      "full": "Ruta Independencia 6124,"
+    },
+    {
+      "full": "C. Tecate 21330,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosalina-corzo-buenrostro/ginecologo/tijuana#address-id=175234&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:05:40.832Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/rosalina_corzo_buenrostro.webp"
+}

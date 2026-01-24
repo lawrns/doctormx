@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Ma Mercedes Bautista Rugerio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/40f6a6/40f6a63de95b52445301b115a701e642_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Gustavo Diaz Ordaz 4355,"
+    },
+    {
+      "full": "Gustavo Diaz Ordaz 4355,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ma-mercedes-bautista-rugerio/ginecologo/puebla#address-id=66893&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:25:03.406Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__ma_mercedes_bautista_rugerio.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Francisco Javier Hernández Malerva",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 385,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/028f5b/028f5b3fd2f33c2266265a0d8fe134c1_220_square.jpg",
+  "about": "Soy el Dr. Francisco Javier Hernández Malerva, especialista en Esterilidad y Reproducción Asistida Colposcopia, Laparoscopia, Cirugía Endoscópica y Cirugía Reproductiva, egresado de Egresado Universidad de Guadalajara. Además de contar con Especialidad Ginecología y Obstetricia H.G.O. / U de G. Mi formación me permite ayudar a mis pacientes en el diagnóstico y tratamiento de Infertilidad,Ovarios poliquísticos, Vulvovaginitis, Embarazo de alto riesgo, Sangrado uterino disfuncional, Adenomiosis Virus del papiloma humano (VPH), Endometriosis,Síndrome de los ovarios poliquísticos (PCOS), Miomas uterinos, Verrugas genitales, Reducción Labios Menores y Mayores ( Labioplastia ),Rejuvenecimiento Vaginal, Estetica Genital, brindando atención de calidad y actualizada",
+  "addresses": [
+    {
+      "full": "Québec # 631 ( Torre Médica San Javier 1, Piso 5 Consultorio: 502),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-javier-hernandez-malerva/ginecologo/guadalajara#address-id=74725&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:12:10.397Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__francisco_javier_hern_ndez_malerva.webp"
+}

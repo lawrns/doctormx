@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Gilberto Zapata Medina",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 53,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/80d989/80d989b339476328718cf5a3a7051ad3_220_square.jpg",
+  "about": "Estoy convencido de que el embarazo, bajo una atención especializada, cercana, y con seguimiento puntual e informado, permitirán un parto tranquilo y controlado, generando seguridad en las futuras madres y una estabilidad en el bebe.",
+  "addresses": [
+    {
+      "full": "Calle 26 199, Piso 9 Consultorio 906,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gilberto-zapata-medina/ginecologo/yucatan#address-id=31479&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:32:38.715Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__gilberto_zapata_medina.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Griselda Nahuatlato Tuxpan",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 95,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dfa6af/dfa6afc23d7595f034652540eae3e1b8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Adolfo Lopez Mateos Sn, Col. San Lorenzo Axocomanitla, ,"
+    },
+    {
+      "full": "Adolfo Lopez Mateos Sn, Col. San Lorenzo Axocomanitla, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/griselda-nahuatlato-tuxpan/ginecologo/zacatelco#address-id=357220&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:34:19.375Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/griselda_nahuatlato_tuxpan.webp"
+}

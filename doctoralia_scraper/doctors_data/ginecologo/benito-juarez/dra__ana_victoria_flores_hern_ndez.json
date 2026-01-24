@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Ana Victoria Flores Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 83,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/6e4949d0/6e4949d0-7954-4c3e-bfb0-7e4ac1097734_small_square.jpg",
+  "about": "Soy la Dra. Ana Victoria Flores Hernández, médico cirujano y especialista en Ginecología y Obstetricia, egresada de la Universidad Nacional Autónoma de México (UNAM). Con más de 13 años de experiencia, me he dedicado a brindar atención integral y personalizada a la salud femenina. A lo largo de mi trayectoria, he enfocado mi práctica en áreas como citologías, obstetricia, colposcopia y ultrasonido. Mi compromiso es ofrecer un acompañamiento cercano y profesional en cada etapa de la vida de mis pacientes. Actualmente, atiendo en el consultorio ubicado Torre Medica San Ángel Inn Acora del Valle, en Av. Cuauhtémoc 1040, Benito Juárez Si buscas una atención médica basada en la confianza, el respeto y la excelencia clínica, estoy a tu disposición para agendar una consulta.",
+  "addresses": [
+    {
+      "full": "Av. Cuauhtémoc 1040,"
+    },
+    {
+      "full": "San Luis Potosí 143,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-victoria-flores-hernandez-3/ginecologo/benito-juarez#address-id=542604&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:03:21.050Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__ana_victoria_flores_hern_ndez.webp"
+}

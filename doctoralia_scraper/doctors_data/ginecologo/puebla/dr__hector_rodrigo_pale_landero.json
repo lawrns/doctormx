@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Hector Rodrigo Pale Landero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e65d76/e65d7607296bb156698e8b3177fa975b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Heroes de la indepencia no. 501 Altos 1 Col. Guadalupe,"
+    },
+    {
+      "full": "Heroes de la indepencia no. 501 Altos 1 Col. Guadalupe,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-rodrigo-pale-landero-2/ginecologo/tehuacan#address-id=60722&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:27:14.767Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__hector_rodrigo_pale_landero.webp"
+}

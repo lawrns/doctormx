@@ -1,0 +1,25 @@
+{
+  "name": "María De Los Angeles Terriquez Fimbres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 707,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9cebff/9cebffe02a22d8d636b93d45890d82b6_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Madero 710 A - Zona Centro,"
+    },
+    {
+      "full": "Madero 710 A - Zona Centro,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-de-los-angeles-terriquez-fimbres/ginecologo/mexicali#address-id=124542&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:26:39.309Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/mar_a_de_los_angeles_terriquez_fimbres.webp"
+}

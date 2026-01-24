@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Miguel Angel Robles Frieland",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 14,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/c2569c02/c2569c02-4716-4a4c-bbd7-2b5baa991497_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Insurgentes No.605,"
+    },
+    {
+      "full": "Insurgentes No.605,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-robles-frieland/ginecologo/benito-juarez#address-id=116755&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:44:12.423Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__miguel_angel_robles_frieland.webp"
+}

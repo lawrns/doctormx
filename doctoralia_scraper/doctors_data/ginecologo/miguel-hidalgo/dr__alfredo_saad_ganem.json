@@ -1,0 +1,36 @@
+{
+  "name": "Dr. Alfredo Saad Ganem",
+  "specialty": "Ginecólogo",
+  "rating": 3.5,
+  "reviewCount": 5,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/914138e7/914138e7-dbda-43b5-82bf-1c1714b5e79b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "EJERCITO NACIONAL 613 1004,"
+    },
+    {
+      "full": "Ejercito Nal. No. 617-6 Piso,,"
+    },
+    {
+      "full": "EJERCITO NACIONAL 613 1004,"
+    },
+    {
+      "full": "Ejercito Nal. No. 617-6 Piso,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfredo-saad-ganem-2/ginecologo/miguel-hidalgo#address-id=127751&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:40:41.911Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__alfredo_saad_ganem.webp"
+}

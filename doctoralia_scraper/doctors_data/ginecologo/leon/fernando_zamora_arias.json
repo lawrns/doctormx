@@ -1,0 +1,25 @@
+{
+  "name": "Fernando Zamora Arias",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 430,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c6eef1/c6eef17ef3e1d0c7ba0108d92b820c8b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Beato Jose Sanchez Del Rio 137-A,"
+    },
+    {
+      "full": "Beato Jose Sanchez Del Rio 137-A,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-zamora-arias/ginecologo/leon#address-id=227977&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:34:56.205Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/fernando_zamora_arias.webp"
+}

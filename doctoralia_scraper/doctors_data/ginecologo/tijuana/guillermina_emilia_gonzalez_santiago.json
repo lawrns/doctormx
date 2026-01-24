@@ -1,0 +1,25 @@
+{
+  "name": "Guillermina Emilia Gonzalez Santiago",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 76,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/501fee/501feef9813757cf9e0099a3d7b22c3a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cumpas,436, Col. Chapultepec, ,"
+    },
+    {
+      "full": "Cumpas,436, Col. Chapultepec, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermina-emilia-gonzalez-santiago/ginecologo/tijuana#address-id=355415&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:06:27.446Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/guillermina_emilia_gonzalez_santiago.webp"
+}

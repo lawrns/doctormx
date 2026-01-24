@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Tony Maalouf Fahme",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 166,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0e797d/0e797dcd873cdcfa1ef979182f8c58fc_220_square.jpg",
+  "about": "Toma de Papanicolaou Sin Costo Extra con la consulta Especialidad en Ginecología y Obstetricia Unidad Medica de Alta Especialidad Centro Médico Nacional de Occidente Embarazo normal y de Alto Riesgo Ultrasonografia, toma de papanicolaou, Cesareas, partos, Deteccion oportuna del virus del papiloma humano",
+  "addresses": [
+    {
+      "full": "Av. Nicolas Copernico 3875, (entre carnero y sagitario),"
+    },
+    {
+      "full": "(San Adrian Medical Unit.) Av. N. Copernico 3875-7 (entre carnero y sagitario),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tony-maalouf-fahme/ginecologo/zapopan",
+  "scrapedAt": "2026-01-22T04:24:32.567Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__tony_maalouf_fahme.webp"
+}

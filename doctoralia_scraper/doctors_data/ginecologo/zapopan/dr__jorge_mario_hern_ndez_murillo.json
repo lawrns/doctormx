@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jorge Mario Hernández Murillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d5c8ebb7/d5c8ebb7-6519-4ff2-a77b-27f710ea05e7_small_square.jpg",
+  "about": "Soy un medico subespecialista dedicado 100% a la salud femenina. Estoy certificado por el Consejo Mexicano de Ginecología y Obstetricia, además de tener subespecialidad en Ginecología Oncológica igual certificado por el Consejo Mexicano de Oncología, avalando los conocimientos indispensable para realizar procedimientos medico/quirúrgicos de calidad, y aunado a la calidez de la atención se crea un ambiente armónico para tu salud. Agenda tu cita y disipa cualquier duda Ginecológica, Obstétrica y Oncológica que tengas! Te invito a ser disciplinada con tus chequeos Ginecológicos anuales para prevenir futuras patologías que se puedan tratar a tiempo e incluso evitar adquirirlas.",
+  "addresses": [
+    {
+      "full": "Calle Manuel López Cotilla 2128, Arcos Vallarta, Guadalajara, Jalisco, Mexico,"
+    },
+    {
+      "full": "Calle Manuel López Cotilla 2128, Arcos Vallarta, Guadalajara, Jalisco, Mexico,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama por marcaje",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-mario-hernandez-murillo/ginecologo/guadalajara#address-id=413369&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:21:46.154Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jorge_mario_hern_ndez_murillo.webp"
+}

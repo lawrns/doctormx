@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Ernesto Gómez Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 118,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f04078/f0407828055b2bd62f51e3d756b9a92d_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Cupules 105,"
+    },
+    {
+      "full": "Avenida Cupules 105,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $850"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ernesto-gomez-rodriguez/ginecologo/yucatan#address-id=117284&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:34:32.892Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__ernesto_g_mez_rodr_guez.webp"
+}

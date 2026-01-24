@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Georgina Beltrán Aldana",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 281,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/582cc3/582cc399713a4e044d9a263751235268_220_square.jpg",
+  "about": "La consulta de Gineco-Obstetricia forma parte fundamental de los cuidados de la salud de la mujer, por ello desde la consulta de primera vez buscamos que la paciente se sienta confiada y segura que cuidaremos cada detalle de la atención y resolveremos cada inquietud por la que la paciente acuda. En la atención de la embarazada, no solo valoramos el crecimiento adecuado del bebe y el bienestar de la mamá, también velamos por que la familia se sienta cómoda y contenta incluso después del nacimiento. Como mujer y médico, entiendo las necesidades de cada paciente y no solo con mi conocimiento científico, sino con la experiencia propia, puedo brindar una mayor comprensión y empatía al atender los diversos padecimientos.",
+  "addresses": [
+    {
+      "full": "Blvd. Aeropuerto 101, Villas Santa Julia,,"
+    },
+    {
+      "full": "Blvd. La luz # 5235,"
+    },
+    {
+      "full": "Blvd. Aeropuerto 101, Villas Santa Julia,,"
+    },
+    {
+      "full": "Blvd. La luz # 5235,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    },
+    {
+      "name": "Dolor menstrual",
+      "price": ""
+    },
+    {
+      "name": "Infección urinaria recurrente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/georgina-beltran-aldana/ginecologo/leon#address-id=21384&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:27:30.687Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__georgina_beltr_n_aldana.webp"
+}

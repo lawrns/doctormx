@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Brenda Manriquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 91,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cb0667/cb06672aaeeb519feb3cfdbbe61b67be_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Boulevard Aeropuerto,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/brenda-manriquez/ginecologo/leon#address-id=547600&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:26:02.149Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__brenda_manriquez.webp"
+}

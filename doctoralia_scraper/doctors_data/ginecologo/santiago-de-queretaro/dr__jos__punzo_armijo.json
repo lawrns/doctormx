@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José Punzo Armijo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9786209f/9786209f-69f6-452d-b47c-acfcae292360_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Bernardino del Razo #21 interior 120 colonia ensueño,"
+    },
+    {
+      "full": "Bernardino del Razo #21 interior 120 colonia ensueño,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea con histerectomia postparto",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía total",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía total con anexectomía",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-punzo-armijo-2/ginecologo/santiago-de-queretaro#address-id=81748&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:51:54.753Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__jos__punzo_armijo.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Ángel Miguel Siolo Julio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/25a6a5b2/25a6a5b2-f2e9-4cce-b7b5-5e1012650abb_small_square.jpg",
+  "about": "Soy médico Ginecólogo y Obstetra con más de 32 años de experiencia en la atención integral de la salud de la mujer en Puebla. He acompañado a mis pacientes en todas las etapas de su vida con un enfoque humano, ético y profesional.Me formé como médico en la BUAP y realicé la especialidad en Ginecología y Obstetricia en la UNAM. Me especializo en el diagnóstico, tratamiento y prevención de enfermedades ginecológicas, así como en el control del embarazo, parto y posparto.Mi compromiso es ofrecer una atención médica cálida, actualizada y personalizada, en un espacio de confianza donde cada mujer se sienta escuchada, segura y bien informada.¡Será un gusto poder acompañarte en el cuidado de tu salud!",
+  "addresses": [
+    {
+      "full": "Priv. de las Ramblas 4,"
+    },
+    {
+      "full": "Priv. de las Ramblas 4,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angel-miguel-siolo-julio-3/ginecologo/puebla#address-id=589544&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:12:52.811Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr___ngel_miguel_siolo_julio.webp"
+}

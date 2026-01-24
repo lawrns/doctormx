@@ -1,0 +1,46 @@
+{
+  "name": "Jose de Jesus Perez Daniel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 155,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1a0965/1a0965e1fcbf1440b612469909aed826_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "San Francisco 1626,"
+    },
+    {
+      "full": "San Francisco 1626,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-de-jesus-perez-daniel/ginecologo/miguel-hidalgo-mexico#address-id=594413&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:15:18.927Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/jose_de_jesus_perez_daniel.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Emma Cristóbal Cortés",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 180,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/4f720619/4f720619-1431-4956-9f99-1020753ce81f_small_square.jpg",
+  "about": "Para mi ser ginecóloga es más que una profesión; es una vocación que me llena de satisfacción y alegría. A lo largo de mi carrera he tenido el privilegio de acompañar a muchas mujeres en diversas etapas de su vida. Permíteme acompañarte.",
+  "addresses": [
+    {
+      "full": "Calle 18, 185, México norte, Mérida, Yuc., Mexico,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,350"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• Desde $1,600"
+    },
+    {
+      "name": "Ultrasonido estructural (18-24 semanas)",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/emma-cristobal-cortes/ginecologo/yucatan#address-id=528903&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:32:24.784Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__emma_crist_bal_cort_s.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Jessica Joseline Gonzalez Vidal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 70,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/aefa60/aefa605b93e5ae64fd25445f5a99bec3_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Diego Rivera 2863,"
+    },
+    {
+      "full": "Diego Rivera 2863,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jessica-joseline-gonzalez-vidal/ginecologo/tijuana#address-id=386697&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:44:58.884Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__jessica_joseline_gonzalez_vidal.webp"
+}

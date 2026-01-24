@@ -1,0 +1,25 @@
+{
+  "name": "Alejandro Peña De La Mora",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 268,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ff943a/ff943af10b2521ec3bbed18dccb4c286_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Leona Vicario 1450 Suite 305. Col. Zona Río. ,"
+    },
+    {
+      "full": "Leona Vicario 1450 Suite 305. Col. Zona Río. ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-pena-de-la-mora/ginecologo/tijuana#address-id=359064&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:23:47.820Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/alejandro_pe_a_de_la_mora.webp"
+}

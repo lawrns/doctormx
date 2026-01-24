@@ -1,0 +1,25 @@
+{
+  "name": "Tito Jiménez Barron",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 25,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3fcdd4c0/3fcdd4c0-55b5-4d67-b493-0a13a15ecaff_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hospital Guadalupe, Av. 13 Ote. 1617-303, Zona Sin Asignación De Nombre De Col 39, Azcarate,"
+    },
+    {
+      "full": "Hospital Guadalupe, Av. 13 Ote. 1617-303, Zona Sin Asignación De Nombre De Col 39, Azcarate,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tito-jimenez-barron/ginecologo/puebla#address-id=140589&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:35:53.504Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/tito_jim_nez_barron.webp"
+}

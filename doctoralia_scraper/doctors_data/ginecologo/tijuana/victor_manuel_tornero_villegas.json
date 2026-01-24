@@ -1,0 +1,37 @@
+{
+  "name": "Victor Manuel Tornero Villegas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 298,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d79094/d790948afe542913f762fd6ea2072a5e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. De La Amistad 9077,"
+    },
+    {
+      "full": "Blvd. Agua Caliente 4558,"
+    },
+    {
+      "full": "Misión De Sto. Tomas 1507,"
+    },
+    {
+      "full": "Av. De La Amistad 9077,"
+    },
+    {
+      "full": "Blvd. Agua Caliente 4558,"
+    },
+    {
+      "full": "Misión De Sto. Tomas 1507,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victor-manuel-tornero-villegas/ginecologo/tijuana#address-id=168647&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:06:10.273Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/victor_manuel_tornero_villegas.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Gregorio Hernandez Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 39,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/51038f/51038fb14b1fb9a42ee674799b659b7b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. 20 De Noviembre 315-19,"
+    },
+    {
+      "full": "Abelardo L Rodriguez 2916,"
+    },
+    {
+      "full": "Av. 20 De Noviembre 315-19,"
+    },
+    {
+      "full": "Abelardo L Rodriguez 2916,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gregorio-hernandez-garcia/ginecologo/tijuana#address-id=223608&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:24:15.223Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/gregorio_hernandez_garcia.webp"
+}

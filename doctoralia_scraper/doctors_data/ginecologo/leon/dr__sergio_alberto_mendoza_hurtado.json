@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Sergio Alberto Mendoza Hurtado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 400,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dab946/dab946426a54d24fe58459e90a3fdc71_220_square.jpg",
+  "about": "Sobre mí Originario de León Gto. Egresado de la Facultad de Medicina de León Gto. Especialidad de Ginecología y Obstetricia del CMN UMAE # 48 León Gto. Biólogo de la Reproducción del IVI Madrid Múltiples cursos de Esterilidad y Cirugía Laparoscópica durante mi trayectoria ¿Por qué elegirme a mí? Una larga experiencia en los tratamientos de esterilidad y buena cantidad de bebés obtenidos por diversas técnicas de reproducción asistida Principales áreas de tratamiento Esterilidad e Infertilidad(ayudar a conseguir el embazo y llevarlo a término) Trastornos menstruales(sangrados menstruales irregulares en cantidad y duración) Alteraciones Ginecológicas( tumoraciones de mama y de genitales, miomas, quistes etc.) Mi consulta y mi equipo En el Instituto Ginecológico Especializado \"NUEVO SER\", Formamos un grupo unido para la atención conjunta de nuestros pacientes, desde las recepcionistas, nutrición, laboratorio y ginecólogos para tu atención. ubicados en Loma del Arroyo #214 en Col. Lomas del Campestre Otros servicios Detección oportuna de cáncer ginecológico.(mama, cervicouterino y ovarios) Control de embarazo Esterilidad e Infertilidad Menopausia y Osteoporosis Infecciones Genitourinarias Cirugía Laparoscópica y Endoscópica",
+  "addresses": [
+    {
+      "full": "Loma Del Arroyo 214,"
+    },
+    {
+      "full": "Loma del Arroyo 214,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-alberto-mendoza-hurtado/ginecologo/leon#address-id=561542&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:27:11.000Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__sergio_alberto_mendoza_hurtado.webp"
+}

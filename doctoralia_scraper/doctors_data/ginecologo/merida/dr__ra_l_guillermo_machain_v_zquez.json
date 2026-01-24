@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Raúl Guillermo Machain Vázquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 506,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2802a2/2802a220451456b88311a7310f73ead5.jpg",
+  "about": "Me apasiona tratar a parejas con problemas de infertilidad, acompañarlos en su proceso, ver los logros obtenidos ( el bebé tan anhelado en casa) , porque al final al ver el resultado todo habrá valido la pena.",
+  "addresses": [
+    {
+      "full": "Hospital Faro del Mayab, consultorio 817,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-guillermo-machain-vazquez/ginecologo/yucatan#address-id=141456&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:29:26.815Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__ra_l_guillermo_machain_v_zquez.webp"
+}

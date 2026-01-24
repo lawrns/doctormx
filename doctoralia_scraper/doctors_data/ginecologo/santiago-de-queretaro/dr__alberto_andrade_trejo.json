@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Alberto Andrade Trejo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 322,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/26a27b86/26a27b86-52bc-49a9-98f6-00292459f80c_small_square.jpg",
+  "about": "¡Hola! Mi nombre es Alberto Andrade Trejo, soy especialista en Ginecología y Obstetricia, con una alta especialización en cirugía de mínima invasión. Mi enfoque se centra en brindar atención integral a las mujeres, abarcando desde el cuidado durante el embarazo y el parto hasta el tratamiento de diversas condiciones ginecológicas mediante técnicas quirúrgicas avanzadas y menos invasivas. El uso de la cirugía de mínima invasión me permite ofrecer una atención médica de alta calidad, reduciendo las molestias y acelerando la recuperación de mis pacientes. Esta metodología no solo mejora los resultados inmediatos, sino que también contribuye a una recuperación más rápida y con menor impacto en la vida diaria. Mi objetivo es siempre mejorar la calidad de vida mis pacientes y el bienestar de cada mujer que confía en mi cuidado. Será un gusto atenderte.",
+  "addresses": [
+    {
+      "full": "Boulevard Bernardo Quintana 9670,"
+    },
+    {
+      "full": "Avenida de las Fuentes 2200,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Aspiracion Manual Endouterina AMEU",
+      "price": ""
+    },
+    {
+      "name": "Atención de parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cérvix",
+      "price": "• $2,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Aspiracion Manual Endouterina AMEU",
+      "price": ""
+    },
+    {
+      "name": "Atención de parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cérvix",
+      "price": "• $2,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alberto-andrade-trejo/ginecologo/queretaro#address-id=460268&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:44:27.297Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__alberto_andrade_trejo.webp"
+}

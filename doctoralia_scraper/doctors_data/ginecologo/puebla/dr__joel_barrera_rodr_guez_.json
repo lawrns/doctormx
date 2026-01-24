@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Joel Barrera Rodríguez.",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "5 de Mayo sur 103. Colonia Centro.,"
+    },
+    {
+      "full": "5 de Mayo sur 103. Colonia Centro.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $500"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": "• $500"
+    },
+    {
+      "name": "Registro cardiotocográfico",
+      "price": "• $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/joel-barrera-rodriguez-2/ginecologo/san-martin-texmelucan#address-id=363953&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:13:34.470Z",
+  "localPhotoPath": null
+}

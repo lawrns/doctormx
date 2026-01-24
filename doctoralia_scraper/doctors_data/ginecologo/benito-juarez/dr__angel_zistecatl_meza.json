@@ -1,0 +1,73 @@
+{
+  "name": "Dr. Angel Zistecatl Meza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 38,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/4462be8d/4462be8d-791d-4790-826e-7141acdd104e_large.jpg",
+  "about": "Sobre mí \"\"Soy el Dr. Angel Zistecatl Meza, Medico especialista en Ginecología, Obstetricia, Fertilidad y Cirugía de mínima invasión en Ginecología. Soy gran apasionado por mi profesión, brindando atención personalizada, clara y de manera integral sobre la salud de la mujer en sus diferentes etapas (adolescencia, juventud, adultez, reproductiva, climaterio y menopausia). Si estas buscando un Ginecólogo de confianza ¡estoy para ayudarte!\"\" Principales áreas de tratamiento Ginecología - Abordaje integral de la patología ginecológica en las diferentes etapas de la vida (sangrado vaginal/uterino anormal, ciclos menstruales irregulares, síndrome de ovario poliquistico, endometriosis, anticoncepción, infecciones vaginales) Biología de la Reproducción Humana - Abordaje de la pareja infértil desde el diagnostico hasta tratamientos de reproducción asistida con la intención de lograr un embarazo. Cirugía Endoscópica Ginecológica - cirugía mínimamente invasiva como laparoscopia (incisiones de 0.5 a 1 cm en abdomen) e Histeroscopia (diagnostica o quirúrgica de patología intrauterina, con abordaje a través de vía vaginal) de cualquier patología de la mujer, como miomatosis uterina, pólipos endometriales, sinequias uterinas, endometriosis, istmocele, engrosamiento endometrial, hiperplasia endometrial etc. Otros servicios Consulta de Ginecología Consulta de infertilidad Consulta de Endocrinologia Ginecologica Consulta de Climaterio Consulta de Adolescencia Consulta de Anticoncepción Cirugía con enfoque minimamente invasivo de cualquier patología ginecológica Histeroscopia Laparoscopia",
+  "addresses": [
+    {
+      "full": "Boulevard Miguel Alemán 57,"
+    },
+    {
+      "full": "Av. Revolución 1225,"
+    },
+    {
+      "full": "Temístocles 314,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angel-zistecatl-meza/ginecologo/ciudad-de-mexico#address-id=570349&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:05:14.201Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__angel_zistecatl_meza.webp"
+}

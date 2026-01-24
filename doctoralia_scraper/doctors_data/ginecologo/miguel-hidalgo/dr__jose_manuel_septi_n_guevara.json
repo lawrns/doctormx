@@ -1,0 +1,150 @@
+{
+  "name": "Dr. Jose Manuel Septién Guevara",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5ca23e28/5ca23e28-3124-4144-96d6-283822d7c4e6_140_square.jpg",
+  "about": "Medico cirujano egresado de la Universidad Anahuac Especialidad de ginecologia y obstetricia en el Instituto Nacional de Perinatologia (INPer) Posgrado en laparoscopia ginecologica e histeroscopia en el Hospital General Dr. Manuel Gea Gonzalez Diplomado de colposcopia por la Asociacion de Patologia del Tracto Genital Inferior y la Universidad Anahuac Medico adscrito al servicio de ginecologia del Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán (INCMNSZ) Certificado por el Consejo Mexicano de Ginecologia y Obstetricia Miembro de Asociaciones cientificas: Colegio Mexicano de Especialistas en Ginecologia y Obstetricia, American Congress of Obstetricians and Gynecologists, American Association of Gynecologic Laparoscopists, Asociacion Mexicana para el Estudio del Climaterio, Sociedad de Medicos de Medica Sur . Asociación Mexicana de Endoscopia Ginecologica y Microcirugía Profesor de histeroscopia en el Hospital General Dr. Manuel Gea Gonzalez Profesor de Ginecologia y Obstetricia Universidad Anahuac Autor y coautor de múltiples publicaciones en revistas científicas y libros. Ponente en diferentes congresos en México y en el extranjero.",
+  "addresses": [
+    {
+      "full": "Av. Carlos Graef Fernandez # 154,"
+    },
+    {
+      "full": "Ejército Nacional Mexicano 613,"
+    },
+    {
+      "full": "Homero 655 Esq. Temistocles,"
+    },
+    {
+      "full": "Temistocles 210,,"
+    },
+    {
+      "full": "Av. Carlos Fernández Graef 154,"
+    },
+    {
+      "full": "Av. Carlos Graef Fernandez # 154,"
+    },
+    {
+      "full": "Ejército Nacional Mexicano 613,"
+    },
+    {
+      "full": "Homero 655 Esq. Temistocles,"
+    },
+    {
+      "full": "Temistocles 210,,"
+    },
+    {
+      "full": "Av. Carlos Fernández Graef 154,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-manuel-septien-guevara/ginecologo/cuajimalpa-de-morelos#address-id=31142&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:07:01.361Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__jose_manuel_septi_n_guevara.webp"
+}

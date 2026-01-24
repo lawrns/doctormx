@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ericka Patricia Treviño Taboada",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 27,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/124d6d5b/124d6d5b-a673-4af7-9ec7-404653c6fea8_small_square.jpg",
+  "about": "¡Hola!, Soy la Dra. Ericka Patricia Treviño Taboada, especialista en Ginecología y Obstetricia, certificada por la Universidad de Guadalajara, con subespecialidad en Biología de la Reproducción Humana/ Fertilidad avalada por la UNAM. Alta especialidad en Colposcopía y enfermedades del tracto integral inferior, Láser CO2. Especialista en Cirugía de mínima invasión, Laparoscopía e Histeroscopía. Certificada en Balance Hormonal, Climaterio y Menopausia. Mi vocación siempre ha sido cuidar la salud integral de la mujer, acompañándola en cada etapa de su vida con empatía, respeto y profesionalismo. En mi consulta, busco crear un ambiente de confianza donde puedas sentirte cómoda al expresar tus dudas y necesidades. Brindo atención personalizada en temas de fertilidad, embarazo, anticoncepción y salud reproductiva, con el propósito de ayudarte a tomar decisiones informadas y seguras. Mi objetivo es ofrecerte una atención médica integral que te haga sentir acompañada y en equilibrio con tu bienestar.",
+  "addresses": [
+    {
+      "full": "Av. Niño Obrero 476,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ericka-patricia-trevino-taboada/ginecologo/zapopan#address-id=613896&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:08:46.747Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__ericka_patricia_trevin_o_taboada.webp"
+}

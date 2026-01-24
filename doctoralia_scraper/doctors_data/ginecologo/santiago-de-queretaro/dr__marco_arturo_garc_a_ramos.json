@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Marco Arturo García Ramos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6dc8b9/6dc8b95ff57c4c2fb801b8630ff8ca54_220_square.jpg",
+  "about": "Gineco Obstetra Colposcopista con 28 años de experiencia en esta area",
+  "addresses": [
+    {
+      "full": "Avenida Universidad,"
+    },
+    {
+      "full": "Avenida de las Ciencias 2058,"
+    },
+    {
+      "full": "Avenida Universidad,"
+    },
+    {
+      "full": "Avenida de las Ciencias 2058,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Ultrasonido 4D",
+      "price": "• $500"
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": "• $500"
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": "• $500"
+    },
+    {
+      "name": "Ultrasonido transvaginal",
+      "price": "• $500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Ultrasonido 4D",
+      "price": "• $500"
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": "• $500"
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": "• $500"
+    },
+    {
+      "name": "Ultrasonido transvaginal",
+      "price": "• $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marco-arturo-garcia-ramos/ginecologo/san-juan-del-rio#address-id=424897&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:47:54.884Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__marco_arturo_garc_a_ramos.webp"
+}

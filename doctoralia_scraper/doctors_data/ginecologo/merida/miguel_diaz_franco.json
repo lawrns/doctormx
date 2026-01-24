@@ -1,0 +1,25 @@
+{
+  "name": "Miguel Diaz Franco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 66,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5c1d0c84/5c1d0c84-5afd-478b-acca-da0e71f2b3d0_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 44 406.Col. Jesús Carranza. ,"
+    },
+    {
+      "full": "Calle 44 406.Col. Jesús Carranza. ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-diaz-franco/ginecologo/merida#address-id=359167&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:48:16.326Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/miguel_diaz_franco.webp"
+}

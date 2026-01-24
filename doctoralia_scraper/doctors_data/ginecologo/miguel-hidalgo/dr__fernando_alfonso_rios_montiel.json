@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Fernando Alfonso Rios Montiel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/403687/40368767cc3dc3914af6c3143b5fec1d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Agrarismo 208 754,"
+    },
+    {
+      "full": "Calle Agrarismo 208 754,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-alfonso-rios-montiel-2/ginecologo/ciudad-de-mexico#address-id=36497&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:45:57.907Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__fernando_alfonso_rios_montiel.webp"
+}

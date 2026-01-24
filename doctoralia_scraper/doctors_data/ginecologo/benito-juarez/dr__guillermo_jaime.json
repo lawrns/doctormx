@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Guillermo Jaime",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 36,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8dc54e/8dc54e447983c8f293e3ea32f3544b62_220_square.jpg",
+  "about": "Hola, soy el Dr. Guillermo Jaime Barrera. Soy especialista en Gineco-Obstetricia y Medicina Materno Fetal. Certificado por: -Colegio Mexicano de Ginecología y Obstetricia -Fetal Medicine Foundation. Soy especialista en la atención de embarazos normales y también de alto riesgo, como por ejemplo pacientes con enfermedades que complican el embarazo como: Diabetes Mellitus, Hipertensión, Hipotiroidismo e hipertiroidismo, Obesidad, Lupus eritematoso sistémico, Antecedentes de pérdida gestacional (aborto o parto prematuro), Embarazo Gemelar y/o Embarazo logrado mediante técnicas de reproducción asistida, entre otras. Lo más importante para nosotros es tu bienestar y el de tu bebé.",
+  "addresses": [
+    {
+      "full": "Avenida Universidad 1080,"
+    },
+    {
+      "full": "Avenida Universidad 1080,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-jaime/ginecologo/benito-juarez#address-id=446490&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:06:47.818Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__guillermo_jaime.webp"
+}

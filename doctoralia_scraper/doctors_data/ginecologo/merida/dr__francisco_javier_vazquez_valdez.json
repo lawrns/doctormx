@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Francisco Javier Vazquez Valdez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 219,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/544bdd/544bdda72c4c590c2e4bd7f432e7edac_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 50 X 95 Y 97 675 B,"
+    },
+    {
+      "full": "C. 7 A 240,"
+    },
+    {
+      "full": "C. 50 X 95 Y 97 675 B,"
+    },
+    {
+      "full": "C. 7 A 240,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-javier-vazquez-valdez/ginecologo/merida#address-id=226883&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:43:51.006Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__francisco_javier_vazquez_valdez.webp"
+}

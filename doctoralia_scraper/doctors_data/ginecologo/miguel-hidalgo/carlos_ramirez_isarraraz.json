@@ -1,0 +1,31 @@
+{
+  "name": "Carlos Ramirez Isarraraz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a0bedc/a0bedccbd2fecac0f569d74fa3c358e3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tuxpan, 2, Cons. 603,"
+    },
+    {
+      "full": "LOPE DE VEGA 213 PB,"
+    },
+    {
+      "full": "Tuxpan, 2, Cons. 603,"
+    },
+    {
+      "full": "LOPE DE VEGA 213 PB,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-ramirez-isarraraz-2/ginecologo/cuauhtemoc2#address-id=326985&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:46:42.287Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/carlos_ramirez_isarraraz.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Ignacio J. González Jiménez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 174,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/41a65d73/41a65d73-4e43-4cfc-8f01-b126a6a98527_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Guadalupe 865. Col. Chapalita. ,"
+    },
+    {
+      "full": "Guadalupe 865. Col. Chapalita. ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ignacio-j-gonzalez-jimenez/ginecologo/guadalajara#address-id=358974&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:44:29.672Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/ignacio_j__gonz_lez_jim_nez.webp"
+}

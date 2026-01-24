@@ -1,0 +1,46 @@
+{
+  "name": "Martha Paola Martínez Vázquez",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8f8708/8f8708dafff5ca0a0a857aa132d524a0_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Capulin 48 ( consultorio 10), ,"
+    },
+    {
+      "full": "Capulin 48 ( consultorio 10), ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martha-paola-martinez-vazquez/ginecologo/benito-juarez#address-id=111560&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:13:57.077Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/martha_paola_mart_nez_v_zquez.webp"
+}

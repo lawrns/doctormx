@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Rafael Melgoza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a8eaa6/a8eaa69e386a48cba0b896cd29908aad_220_square.jpg",
+  "about": "Soy el Dr. Rafael Melgoza, graduado en Medicina General por la Universidad Autónoma de Baja California. Mi especialización se enfoca en la ginecología, y mi objetivo es brindar atención médica de calidad a las mujeres de mi comunidad en Tijuana. Me apasiona ayudar a mis pacientes a mantener su salud reproductiva y a enfrentar cualquier problema relacionado con su sistema reproductivo. Siempre me esfuerzo por mantenerme actualizado en los avances de la medicina y asisto regularmente a conferencias y seminarios para mejorar mis habilidades y conocimientos. Me enorgullece poder servir a mi comunidad y mejorar la calidad de vida de mis pacientes.",
+  "addresses": [
+    {
+      "full": "Luis Cabrera 1509,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rafael-melgoza/ginecologo/tijuana",
+  "scrapedAt": "2026-01-22T00:39:44.008Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__rafael_melgoza.webp"
+}

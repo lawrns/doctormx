@@ -1,0 +1,37 @@
+{
+  "name": "Leny Del Carmen Alvarez Manzanilla",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 357,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7835f6/7835f6603967a7448eeb595b563d94c9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "16 Sur 3902,"
+    },
+    {
+      "full": "C. 2 Nte.,"
+    },
+    {
+      "full": "Av Aquiles Serdan,"
+    },
+    {
+      "full": "16 Sur 3902,"
+    },
+    {
+      "full": "C. 2 Nte.,"
+    },
+    {
+      "full": "Av Aquiles Serdan,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/leny-del-carmen-alvarez-manzanilla/ginecologo/puebla#address-id=201975&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:33:51.863Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/leny_del_carmen_alvarez_manzanilla.webp"
+}

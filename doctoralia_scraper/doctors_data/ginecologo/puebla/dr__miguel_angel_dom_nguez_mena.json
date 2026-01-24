@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Miguel Angel Domínguez Mena",
+  "specialty": "Ginecólogo",
+  "rating": 1.5,
+  "reviewCount": 2,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/12747258/12747258-b963-4ebc-a7b7-29c3c14943ce_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Angelopolis 234,"
+    },
+    {
+      "full": "Angelopolis 234,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-dominguez-mena/ginecologo/puebla#address-id=89405&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:19:31.931Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__miguel_angel_dom_nguez_mena.webp"
+}

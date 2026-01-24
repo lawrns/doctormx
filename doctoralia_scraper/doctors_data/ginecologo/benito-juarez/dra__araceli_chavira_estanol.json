@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Araceli Chavira Estanol",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 709,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/962096/962096bd91a44f54f71800be57f0c140_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Gabriel Mancera 235,"
+    },
+    {
+      "full": "Amores 916,"
+    },
+    {
+      "full": "Gabriel Mancera 235,"
+    },
+    {
+      "full": "Amores 916,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/araceli-chavira-estanol/ginecologo/ciudad-de-mexico#address-id=56248&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:13:20.759Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__araceli_chavira_estanol.webp"
+}

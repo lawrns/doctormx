@@ -1,0 +1,64 @@
+{
+  "name": "Dr. José Luis Suárez Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 69,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8d7829/8d782938d2a8f3e2339ef761e9632ad3_220_square.jpg",
+  "about": "Soy el Dr. José Luis Suárez Rodríguez, especialista en Ginecólogo, egresado de la Universidad de Guadalajara. además de contar con de Ginecología Oncológica. Mi formación me permite ayudar a mis pacientes en el diagnóstico y tratamiento de enfermedades de la mujer, brindando atención de calidad y actualizada. Cuidamos todos los detalles ofreciendo a nuestras pacientes, un lugar agradable en dónde el trato personal, el respeto a la intimidad y la confianza mutua son sinónimos de profesionalismo y calidad. Visítanos en Oncología Ginecológica Guadalajara y conoce nuestro excelente servicio. Ponte en manos de un experto.",
+  "addresses": [
+    {
+      "full": "Justo Sierra 2082 (Torre Marsella),"
+    },
+    {
+      "full": "Calle Tarascos 3473,"
+    },
+    {
+      "full": "Justo Sierra 2082 (Torre Marsella),"
+    },
+    {
+      "full": "Calle Tarascos 3473,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-luis-suarez-rodriguez/ginecologo/guadalajara#address-id=117449&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:17:54.325Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jos__luis_su_rez_rodr_guez.webp"
+}

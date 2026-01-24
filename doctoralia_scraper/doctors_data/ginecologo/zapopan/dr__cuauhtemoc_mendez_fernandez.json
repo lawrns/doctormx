@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Cuauhtemoc Mendez Fernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/44b0c3f5/44b0c3f5-62b0-4a4e-a2d7-b48847247e5d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Ninos Herues 2672 5,"
+    },
+    {
+      "full": "Ave. Ninos Herues 2672 5,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cuauhtemoc-mendez-fernandez-2/ginecologo/guadalajara#address-id=43230&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:28:53.865Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__cuauhtemoc_mendez_fernandez.webp"
+}

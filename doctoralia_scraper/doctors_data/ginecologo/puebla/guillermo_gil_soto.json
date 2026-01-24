@@ -1,0 +1,25 @@
+{
+  "name": "Guillermo Gil Soto",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 168,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5f2e78/5f2e7840c4a12eba2e1fadb732b6c93e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave Poniente 7 905,"
+    },
+    {
+      "full": "Ave Poniente 7 905,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-gil-soto/ginecologo/orizaba#address-id=126301&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:35:18.111Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/guillermo_gil_soto.webp"
+}

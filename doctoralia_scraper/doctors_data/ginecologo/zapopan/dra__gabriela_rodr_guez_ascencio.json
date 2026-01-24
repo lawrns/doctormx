@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Gabriela Rodríguez Ascencio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 251,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c20880/c20880339753f6a27867d0339f20a326_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "1,"
+    },
+    {
+      "full": "1,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriela-rodriguez-ascencio/ginecologo/guadalajara#address-id=566528&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:32:43.661Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__gabriela_rodr_guez_ascencio.webp"
+}

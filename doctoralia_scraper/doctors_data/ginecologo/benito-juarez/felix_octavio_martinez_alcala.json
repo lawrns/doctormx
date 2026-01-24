@@ -1,0 +1,25 @@
+{
+  "name": "Felix Octavio Martinez Alcala",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/982e08/982e08e226ef2766243c6e458486bd67_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. 2 34,"
+    },
+    {
+      "full": "Av. 2 34,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/felix-octavio-martinez-alcala/ginecologo/ciudad-de-mexico#address-id=228785&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:15:33.889Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/felix_octavio_martinez_alcala.webp"
+}

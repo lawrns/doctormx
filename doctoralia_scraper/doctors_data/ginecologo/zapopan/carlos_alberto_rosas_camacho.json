@@ -1,0 +1,31 @@
+{
+  "name": "Carlos Alberto Rosas Camacho",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 35,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/92e6ec/92e6ecdb8c6381b4c8cc05a01c058c63_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Lopez Mateos Nte. 749,"
+    },
+    {
+      "full": "Ignacio Aldama 6,"
+    },
+    {
+      "full": "Lopez Mateos Nte. 749,"
+    },
+    {
+      "full": "Ignacio Aldama 6,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-alberto-rosas-camacho/ginecologo/guadalajara#address-id=241421&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:40:54.462Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/carlos_alberto_rosas_camacho.webp"
+}

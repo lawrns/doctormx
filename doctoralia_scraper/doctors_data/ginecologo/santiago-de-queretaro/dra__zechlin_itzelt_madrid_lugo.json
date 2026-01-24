@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Zechlin Itzelt Madrid Lugo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1222,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0a80ab/0a80ab0cdd46fe3501cf0d1baa1f1dde_220_square.jpg",
+  "about": "En mi consultorio cuento con personal experimentado y altamente capacitado para el cuidado de tu salud. Te ofrecemos confianza, un trato amable y profesional. Sé que el acudir al ginecólogo es un tema personal e íntimo; por ello, yo y nuestro personal cuidará de ti y se asegurará de que te sientas cómoda EN TODO MOMENTO",
+  "addresses": [
+    {
+      "full": "Boulevard Centro Sur 9800,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/zechlin-itzelt-madrid-lugo/ginecologo/santiago-de-queretaro#address-id=104218&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:46:35.859Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__zechlin_itzelt_madrid_lugo.webp"
+}

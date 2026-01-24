@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Paula Ma Canche Cetz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 219,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/544bdd/544bdda72c4c590c2e4bd7f432e7edac_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 64 #570 Centro,"
+    },
+    {
+      "full": "Calle 64 #570 Centro,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paula-ma-canche-cetz/ginecologo/merida#address-id=106906&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:47:31.942Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__paula_ma_canche_cetz.webp"
+}

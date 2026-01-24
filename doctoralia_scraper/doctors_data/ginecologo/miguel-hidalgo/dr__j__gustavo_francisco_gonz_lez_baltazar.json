@@ -1,0 +1,66 @@
+{
+  "name": "Dr. J. Gustavo Francisco González Baltazar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/1a8e4fbe/1a8e4fbe-d251-4521-99f7-05fd8688c70a_small_square.jpg",
+  "about": "Soy médico especialista en Ginecología y Obstetricia, con formación en cirugía de mínima invasión, endocrinología ginecológica y colposcopia. Mi prioridad es brindar una atención médica profesional, ética y personalizada, siempre buscando que cada paciente se sienta escuchada, acompañada y con la confianza de resolver sus dudas.Cuento con experiencia en el diagnóstico y tratamiento integral de las principales condiciones ginecológicas y obstétricas, así como en procedimientos quirúrgicos de mínima invasión. Mi compromiso es ofrecer un servicio de calidad, con calidez humana y basado en la evidencia científica más actual.Creo firmemente que la salud de la mujer requiere un enfoque integral, donde la información clara y la prevención juegan un papel fundamental. Mi objetivo es acompañarte en cada etapa de tu vida, priorizando siempre tu bienestar y tranquilidad.",
+  "addresses": [
+    {
+      "full": "Calle Gobernador Gregorio V. Gelati 29,"
+    },
+    {
+      "full": "Mar Tirreno 96,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• $800"
+    },
+    {
+      "name": "Revisión Ginecológica anual",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/j-gustavo-francisco-gonzalez-baltazar/ginecologo/miguel-hidalgo#address-id=622011&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:58:01.123Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__j__gustavo_francisco_gonz_lez_baltazar.webp"
+}

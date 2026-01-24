@@ -1,0 +1,36 @@
+{
+  "name": "Dra. Laura Coronel Campos",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 21,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6fa021/6fa02199a6bc6f53e2c27e123159ba33_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ignacio Pérez 11 Sur centro,"
+    },
+    {
+      "full": "Ignacio Perez 11,"
+    },
+    {
+      "full": "Ignacio Pérez 11 Sur centro,"
+    },
+    {
+      "full": "Ignacio Perez 11,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-coronel-campos/ginecologo/santiago-de-queretaro#address-id=60889&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:51:55.306Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__laura_coronel_campos.webp"
+}

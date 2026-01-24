@@ -1,0 +1,42 @@
+{
+  "name": "Dra. Maira Cindy Tapia Garduño",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 150,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/17aad8b6/17aad8b6-d8f7-44cf-bb29-e75a69882987_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "ORIENTE 9 # 1510 (ESQUINA NORTE 28),"
+    },
+    {
+      "full": "ORIENTE 9 # 1510 (ESQUINA NORTE 28),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maira-cindy-tapia-garduno/ginecologo/orizaba#address-id=19329&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:25:49.869Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__maira_cindy_tapia_gardu_o.webp"
+}

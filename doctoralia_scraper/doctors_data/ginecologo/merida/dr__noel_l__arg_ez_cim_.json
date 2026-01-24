@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Noel L. Argáez Cimé",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 115,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d7e977/d7e97776b6896cd6407154d54f4dd806_220_square.jpg",
+  "about": "Soy Médico Cirujano Militar, originario de Mérida Yucatán. Realicé mis estudios de Medicina en la Escuela Médico Militar de la Universidad del Ejército y Fuerza Aérea Mexicanos en México D.F. Realicé mi internado en el Hospital Militar, México D.F, a través de la Escuela Militar de Graduados de la Universidad del Ejército y Fuerza Aérea Mexicanos obteniendo la especialidad en Medicina Integral y de Urgencias. Posteriormente hice el Curso de Especialización y residencia en Ginecología y Obstetricia en la Clínica de Especialidades de la Mujer en la ciudad de México, por parte de la Escuela Militar de Graduados de Sanidad, Universidad del Ejército y Fuerza Aérea Mexicanos, continuando con una alta especialidad en Urología Ginecológica en el Instituto Nacional de Perinatología por parte de la Universidad autónoma de México. Soy médico especialista, capacitado y adiestrado en la atención de enfermedades propias de la mujer, con amplia experiencia en el manejo ginecológico integral. Experto en el manejo médico y quirúrgico de patologías del piso pélvico, así como en cirugías de mínima invasión para el tratamiento de incontinencia urinaria, incontinencia anal, disfunción sexual y prolapso genital.",
+  "addresses": [
+    {
+      "full": "C. 50 330,"
+    },
+    {
+      "full": "C. 50 330,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/noel-l-argaez-cime/ginecologo/yucatan#address-id=79858&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:34:19.638Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__noel_l__arg_ez_cim_.webp"
+}

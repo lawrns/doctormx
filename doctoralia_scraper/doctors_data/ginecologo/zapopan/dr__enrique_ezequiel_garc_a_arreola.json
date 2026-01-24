@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Enrique Ezequiel García Arreola",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 74,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/eb5b48/eb5b482971c0b3ff4b69db3455e90d81_220_square.jpg",
+  "about": "Ginecólogo/Obstetra con formación en Laparoscopia ginecológica básica y avanzada así como colposcopia y patología del tracto genital inferior, Control prenatal y consulta ginecológica en general.",
+  "addresses": [
+    {
+      "full": "Comerciantes 5812,"
+    },
+    {
+      "full": "Comerciantes 5812,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/enrique-ezequiel-garcia-arreola/ginecologo/zapopan#address-id=17681&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:21:00.731Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__enrique_ezequiel_garc_a_arreola.webp"
+}

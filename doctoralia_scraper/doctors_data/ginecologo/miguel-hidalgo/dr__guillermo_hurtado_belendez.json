@@ -1,0 +1,37 @@
+{
+  "name": "Dr. Guillermo Hurtado Belendez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 33,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4e21de/4e21de39108d02642a877fce18a71716_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Gelati, 33-305,"
+    },
+    {
+      "full": "Prol. Paseo de la Reforma, 19,"
+    },
+    {
+      "full": "SATURNINO HERRAN 59 CONS. 102,"
+    },
+    {
+      "full": "Gelati, 33-305,"
+    },
+    {
+      "full": "Prol. Paseo de la Reforma, 19,"
+    },
+    {
+      "full": "SATURNINO HERRAN 59 CONS. 102,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-hurtado-belendez-2/ginecologo/-#address-id=340121&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:43:05.966Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__guillermo_hurtado_belendez.webp"
+}

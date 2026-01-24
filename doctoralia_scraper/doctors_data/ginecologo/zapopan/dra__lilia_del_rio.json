@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Lilia Del Rio",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 518,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a5c22559/a5c22559-3f6d-4a0e-a11d-b38ca4b52fd4_small_square.jpg",
+  "about": "Hola! Soy la dra. Lili del Rio, Gineco-obstetra. Mi misión es establecer un espacio seguro para las mujeres; en donde pueda acompañarlas en todas las etapas de su vida.",
+  "addresses": [
+    {
+      "full": "Av. Niño Obrero 776,"
+    },
+    {
+      "full": "Av. Niño Obrero 776,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lilia-del-rio/ginecologo/zapopan",
+  "scrapedAt": "2026-01-22T04:27:35.758Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__lilia_del_rio.webp"
+}

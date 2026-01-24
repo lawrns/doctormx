@@ -1,0 +1,31 @@
+{
+  "name": "Maria Del Pilar Simon Diaz",
+  "specialty": "Dermatólogo",
+  "rating": 5,
+  "reviewCount": 211,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/64135b/64135b8fbde411fae845098b291f9b72_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Paseo De La Reforma 2654,"
+    },
+    {
+      "full": "Bosque De Duraznos 65,"
+    },
+    {
+      "full": "Paseo De La Reforma 2654,"
+    },
+    {
+      "full": "Bosque De Duraznos 65,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-del-pilar-simon-diaz/dermatologo-ginecologo/miguel-hidalgo#address-id=193590&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:55:00.028Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/maria_del_pilar_simon_diaz.webp"
+}

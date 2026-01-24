@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Abraham Flores Barragán",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d01551/d015510ad8bcb5a9eb0d628e5e701266_220_square.jpg",
+  "about": "La Medicina Materno Fetal es la sub especilidad que nos permite evaluar a la Madre y al feto desde la concepción hasta el momento del nacimiento. Es posible visualizar al feto desde la semana 6 y ademas prioritario realizar la vigilancia en cada trimestre con sus ultrasonidos de tamizaje de primer trimestre entre las semanas 11 y 13.6, para descartar alteraciones genéticas. El ultrasonido estructural o morfológico entre las semanas 18 y 22 (de manera ideal), nos permite descartar malformaciones o defectos fetales. El ultrasonido doppler nos permite evaluar la calidad de alimento y oxigeno que recibe el feto a través de los flujos de sangre del cordón y que le llegan hasta el cerebro, y con ello evaluar si se encuentra en un estado de plena normalidad o con dificultades que lo pueden llevar a la muerte. El ultrasonido para valorar el riesgo de que nazca antes de tiempo a través de la medición del cuello del útero. TODA MUJER EMBARAZADA DEBE IR A LOS ULTRASONIDOS ANTERIORES CON EL MEDICO MATERNO FETAL.",
+  "addresses": [
+    {
+      "full": "Av. Patria 138,"
+    },
+    {
+      "full": "Av. Manuel J. Clouthier 596 Torre 2 Consultorio 16, 45030 Zapopan,"
+    },
+    {
+      "full": "Av. Patria 138,"
+    },
+    {
+      "full": "Av. Manuel J. Clouthier 596 Torre 2 Consultorio 16, 45030 Zapopan,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/abraham-flores-barragan/ginecologo/zapopan#address-id=88945&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:17:10.300Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__abraham_flores_barrag_n.webp"
+}

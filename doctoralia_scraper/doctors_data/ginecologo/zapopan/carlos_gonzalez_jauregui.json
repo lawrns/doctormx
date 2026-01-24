@@ -1,0 +1,25 @@
+{
+  "name": "Carlos Gonzalez Jauregui",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 20,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a76fc0/a76fc0e926ca7ce91fcd7299f8e107d6_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cardenal 1218,"
+    },
+    {
+      "full": "Cardenal 1218,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-gonzalez-jauregui/ginecologo/guadalajara#address-id=161045&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:43:51.756Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/carlos_gonzalez_jauregui.webp"
+}

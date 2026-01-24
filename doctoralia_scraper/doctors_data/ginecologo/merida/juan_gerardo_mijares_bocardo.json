@@ -1,0 +1,25 @@
+{
+  "name": "Juan Gerardo Mijares Bocardo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 787,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9bf23e/9bf23ea0035cfee24a67554beee63738_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 7 X 32 Y 34 215 A,"
+    },
+    {
+      "full": "C. 7 X 32 Y 34 215 A,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-gerardo-mijares-bocardo/ginecologo/merida#address-id=205757&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:49:56.417Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/juan_gerardo_mijares_bocardo.webp"
+}

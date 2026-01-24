@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Eulalio Morales Palacios",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 428,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ead66b/ead66bdd9f3363529792bd671c9c68a8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "27 Pte # 528 Col. Chulavista,"
+    },
+    {
+      "full": "27 Pte # 528 Col. Chulavista,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eulalio-morales-palacios/ginecologo/puebla#address-id=135478&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:21:21.950Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__eulalio_morales_palacios.webp"
+}

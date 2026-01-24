@@ -1,0 +1,25 @@
+{
+  "name": "Carla Vazquez Obregon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 131,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/2443bcec/2443bcec-57e5-413e-95b6-95c2be65334e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C Villa De Santa Cruz 314, Col. Fracc Villas Del Campestre, ,"
+    },
+    {
+      "full": "C Villa De Santa Cruz 314, Col. Fracc Villas Del Campestre, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carla-vazquez-obregon/ginecologo/leon#address-id=357172&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:36:25.005Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/carla_vazquez_obregon.webp"
+}

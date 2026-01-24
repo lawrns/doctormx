@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Juan Manuel Solar Jurado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 22,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/651610/651610d72d173b5861496a5797e31f03_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. 11 Ote 1826,"
+    },
+    {
+      "full": "Av. 11 Ote 1826,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-manuel-solar-jurado/ginecologo/puebla#address-id=12880&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:21:18.943Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__juan_manuel_solar_jurado.webp"
+}

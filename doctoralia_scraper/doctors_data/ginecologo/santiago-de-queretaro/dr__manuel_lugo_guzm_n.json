@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Manuel Lugo Guzmán",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/02763c/02763c726fae6576d988a4725dba6066_220_square.jpg",
+  "about": "Dirigido a todas las pacientes con problemas de fertilidad y problemas uterinos y de ovarios incluye tratamientos y estudios especializados con 20 años de experiencia de tratamientos y constantes actualizaciones asi como satisfaccion de hacer feliz a todad pareja con deseos de ser madres",
+  "addresses": [
+    {
+      "full": "Antonio Pérez Alcocer 59 (INSTITUTO QUERETANO DE FERTILIDAD),"
+    },
+    {
+      "full": "Antonio Pérez Alcocer 59 (INSTITUTO QUERETANO DE FERTILIDAD),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuel-lugo-guzman/ginecologo/santiago-de-queretaro#address-id=119429&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:49:16.797Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__manuel_lugo_guzm_n.webp"
+}

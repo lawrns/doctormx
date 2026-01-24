@@ -1,0 +1,25 @@
+{
+  "name": "Monica Elizabeth Jimenez Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c30041/c300411ebb5637239df17632b03d330e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Gob J M Tornel20, Col. San Miguel Chapultepec, ,"
+    },
+    {
+      "full": "Gob J M Tornel20, Col. San Miguel Chapultepec, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/monica-elizabeth-jimenez-perez/ginecologo/miguel-hidalgo#address-id=357052&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:50:27.063Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/monica_elizabeth_jimenez_perez.webp"
+}

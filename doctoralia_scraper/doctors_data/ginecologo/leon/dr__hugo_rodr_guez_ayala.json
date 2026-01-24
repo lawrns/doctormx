@@ -1,0 +1,50 @@
+{
+  "name": "Dr. Hugo Rodríguez Ayala",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/181658/18165842cef6a7e0cca319d88fc1aa86_220_square.jpg",
+  "about": "Colaboradora en Sanatorio Celaya",
+  "addresses": [
+    {
+      "full": "Benito Juárez 426 (Primer piso Consultorio 39),"
+    },
+    {
+      "full": "Benito Juárez 426,"
+    },
+    {
+      "full": "Boulevard Aeropuerto 101, Villas de Santa Juliam, Piso 1, consultorio 107,"
+    },
+    {
+      "full": "Benito Juárez 426 (Primer piso Consultorio 39),"
+    },
+    {
+      "full": "Benito Juárez 426,"
+    },
+    {
+      "full": "Boulevard Aeropuerto 101, Villas de Santa Juliam, Piso 1, consultorio 107,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Cardiología",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hugo-rodriguez-ayala/ginecologo/leon#address-id=494182&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:28:36.135Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__hugo_rodr_guez_ayala.webp"
+}

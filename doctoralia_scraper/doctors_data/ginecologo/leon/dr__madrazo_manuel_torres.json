@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Madrazo Manuel Torres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f0f3d4/f0f3d41aa29a30a2fa2b64407e362451_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Campestre 2010000,"
+    },
+    {
+      "full": "Campestre 201,"
+    },
+    {
+      "full": "Campestre 2010000,"
+    },
+    {
+      "full": "Campestre 201,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/madrazo-manuel-torres/ginecologo/leon#address-id=48807&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:33:32.256Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__madrazo_manuel_torres.webp"
+}

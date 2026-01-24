@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Jose de Jesus Gonzalez Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 225,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3d32d3/3d32d39db3cddefd3d68b0668f99d5ba_220_square.jpg",
+  "about": "El Dr. JOSE DE JESÚS GONZÁLEZ LÓPEZ, Médico especialista en Ginecología y Obstetricia, maestría de salud pública, de 55 años de edad, originario de la ciudad de Tijuana, egresado de la Universidad Autónoma de Baja California y Postgraduado del Centro Médico Nacional del Noroeste del Instituto Mexicano del Seguro Social en el mes de Marzo de 1995. Realizó sus estudios en escuelas públicas reconocidas como lo son la preparatoria federal Lázaro Cardenas, destacando siempre como uno de los estudiantes más distinguidos de su generación, demostrando desde entonces su vocación por la ciencia y el arte de la medicina. Ingresa a la UABC en el año de 1982, realiza su rotación de médico interno en 1990 en el Hospital General de Zona No.20 (IMSS), posteriormente su servicio social en la Clínica Rural de Santo Tomás (Población ubicada a 45 min. al sur de Ensenada B.C.), esto en 1991. La especialidad la efectuó en el CMNNO Hospital del IMSS, en el área de Ginecología y Obstetricia eligiendo esta parte de la medicina por su vocación en el área médica endocrinologica y por su gusto en las habilidades quirúrgicas. En el año 2007 obtuvo el grado de maestria en Salud Pública con un perfil en docencia e investigación, trabajando en un protocolo sobre factores de riesgo para cáncer de mama en nuestra entidad. Además de su práctica privada en el Hospital Angeles de Tijuana como Gineco-Obstetra ha laborado con dedicación y entrega en instituciones públicas como la Cruz Roja de la Ciudad de Playas de Rosarito y el Hospital de Gineco-Obstetricia del IMSS No. 7., En donde aparte de su trabajo asistencial ha participado activamente en todo lo relacionado con el apoyo a la docencia. Hoy en día se desempeña como jefe de servicio del departamento de ginecología obstetricia del hospital general de subzona del IMSS en la región. Es la aspiración del Dr. Jesús González L. seguir participando en las actividades docentes del Hospital Angeles como tambien seguir trabajando por el bienestar de las familias y la comunidad Tijuanense. Certificado por el Consejo Mexicano de Ginecología y Obstetricia Fellow of the American College of Obstetricians and Gynecologists Miembro de la Federación Mexicana de Ginecología y Obstetricia Colegio Médico de Tijuana A.C. Socio Fundador del Colegio de Médicos de Playas de Rosarito Miembro del consejo consultivo del Colegio de Ginecología y Obstetricia de Tijuana A.C. Miembro de la Asociación de colposcopía de Tijuana A.C. Miembro de la Sociedad Médica Hospital Angeles de Tijuana. DGP 1859633 Ced. Prof. Especialista Ginecologia y Obst 3393700 Ced. Prof. Maestro en Salud Publica 7435917",
+  "addresses": [
+    {
+      "full": "PASEO DE LOS HEROES 10999 INT 609 611,"
+    },
+    {
+      "full": "PASEO DE LOS HEROES 10999 INT 609 611,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $25"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-de-jesus-gonzalez-lopez-2/ginecologo/tijuana#address-id=405099&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:43:11.002Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__jose_de_jesus_gonzalez_lopez.webp"
+}

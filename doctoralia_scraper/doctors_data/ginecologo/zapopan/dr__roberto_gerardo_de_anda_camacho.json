@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Roberto Gerardo De Anda Camacho",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 44,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2fd654/2fd654c8fdc514faacd675e30ad9b4f2_220_square.jpg",
+  "about": "Hola soy el Dr. Roberto De Anda soy médico egresado de la Universidad Autónoma de Guadalajara, posteriormente decidí realizar la especialidad de Ginecología y Obstetricia en Centro Médico Nacional de Occidente IMSS, secundario a que me encanta la obstetricia y una de mis más grandes motivaciones siempre ha sido llevar un control parental adecuado con la lo mejor que se le pueda ofrecer a la mama y bebe me incliné a realizar la subespecialidad de Medicina Materno Fetal en el Hospital Civil de Guadalajara Juan I. Menchaca, durante el transcurso de esta subespecialidad me certifiqué por Fetal Medicine Foundation en Londres, Inglaterra así como por Medicina Fetal Barcelona en Barcelona, España; obteniendo los conocimientos y herramientas necesarias para brindarte la mejor atención. Mi objetivo es que como paciente te sientas con la mayor tranquilidad y confianza al estar con un médico preparado y certificado siempre con el trato honesto y respetuoso que te mereces",
+  "addresses": [
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911,"
+    },
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-gerardo-de-anda-camacho/ginecologo/zapopan#address-id=432402&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:18:38.209Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__roberto_gerardo_de_anda_camacho.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Pilar Figueroa Gómez Crespo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b4304d/b4304dfbc064eb3914660be9f4dde4af_220_square.jpg",
+  "about": "Médico egresado de la Universidad Nacional Autónoma de México, especialista certificado en Ginecología y Obstetricia por el Consejo Mexicano de Ginecología y Obstetricia A.C. Realicé mi formación profesional en el Hospital Español de México tanto la especialidad en Ginecología y Obstetricia así como la alta especialidad en Cirugía Endoscópica Ginecológica. Soy una ginecóloga comprometida con la atención de mis pacientes, su correcto diagnóstico y la preparación necesaria para llevar a cabo los tratamientos médicos y quirúrgicos para la salud de las mismas.",
+  "addresses": [
+    {
+      "full": "Moras 613, ,"
+    },
+    {
+      "full": "Moras 613, ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pilar-figueroa-gomez-crespo/ginecologo/benito-juarez#address-id=89627&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:08:57.808Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__pilar_figueroa_g_mez_crespo.webp"
+}

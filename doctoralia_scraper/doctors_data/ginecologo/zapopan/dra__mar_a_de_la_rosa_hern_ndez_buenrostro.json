@@ -1,0 +1,66 @@
+{
+  "name": "Dra. María de la Rosa Hernández Buenrostro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 514,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/55e615/55e6153c8b66ca01f655efb9c09d9aa3_220_square.jpg",
+  "about": "SOY ESPECIALISTA EN GINECOLOGIA Y OBSTETRICIA CON DIPLOMADO EN COLPOSCOPIA, CLIMATERIO.",
+  "addresses": [
+    {
+      "full": "Calle Miguel Lerdo de Tejada 2344,"
+    },
+    {
+      "full": "Av. Nicolás Copérnico 3815,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-de-la-rosa-hernandez-buenrostro/ginecologo/guadalajara#address-id=398268&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:12:54.010Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__mar_a_de_la_rosa_hern_ndez_buenrostro.webp"
+}

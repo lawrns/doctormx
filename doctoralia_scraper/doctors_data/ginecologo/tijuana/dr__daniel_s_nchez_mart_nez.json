@@ -1,0 +1,52 @@
+{
+  "name": "Dr. Daniel Sánchez Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d7a94d/d7a94d1e87458e29fd282002b2af68be_220_square.jpg",
+  "about": "Con 32 años de experiencia en tratamiento de infertilidad y cirugía laparoscopica, Medicina Reproductiva Experto en Recanalizacion Tubaria. Muchísimos casos de éxito. Tratado humano y con la más alta tecnología.",
+  "addresses": [
+    {
+      "full": "Av. Diego Rivera #2351 (Edificio Torre Norte),"
+    },
+    {
+      "full": "Diego Rivera 2351-407,"
+    },
+    {
+      "full": "Av. Diego Rivera #2351 (Edificio Torre Norte),"
+    },
+    {
+      "full": "Diego Rivera 2351-407,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Colocación de cerclaje de cuello uterino",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Histerectomía",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Histerectomía total",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniel-sanchez-martinez-2/ginecologo/tijuana#address-id=425572&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:44:16.128Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__daniel_s_nchez_mart_nez.webp"
+}

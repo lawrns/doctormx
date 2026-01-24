@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Miguel Jaimes Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 36,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2735f9/2735f9283573adcec677abe4e5cda754_220_square.jpg",
+  "about": "Médico Cirujano por la Universidad Autónoma de Campeche Especialista en Ginecología y Obstetricia por la Universidad Autónoma de Campeche Sub especialista en Biología de la Reproducción Humana , en el Hospital Juárez de México (Por la Universidad Autónoma de México. Certificado por el Consejo Mexicano de Ginecología y Obstetricia y 2 Recertificaciones por el mismo consejo de la especialidad. Coautor de Artículo de istmocele uterino en revista Internacional Colaborador en realización de Capítulo de Libro de Ginecología Asistencia a Congresos Internaciones de la Sociedad Europea de Reproducción Humana y Embriología Asistencia a Congresos Internacionales de la Sociedad Americana de Medicina Reproductiva Director Médico de Clínica de Fertilidad durante 6 años Últimos 10 años dedicado a atender pacientes y parejas con alteraciones que afectan la Fertilidad tales como Síndrome de Ovario Poliquistico, Endometriosis, Miomatosis , Poliposis Endometrial, Malformaciones uterinas, Factor masculino etc.",
+  "addresses": [
+    {
+      "full": "Calle 25 201, entre 26 y 28,,"
+    },
+    {
+      "full": "Calle 25 201, entre 26 y 28,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-jaimes-rodriguez-2/ginecologo/yucatan#address-id=507911&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:37:04.124Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__miguel_jaimes_rodriguez.webp"
+}

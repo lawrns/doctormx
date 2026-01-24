@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Tomás Martín Guzmán Esquivel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5b90cc/5b90cc23507dc5c2eaec48699627b819_220_square.jpg",
+  "about": "Medico ginecobstetra UAQ Colposcopia INPer Ultrasonido FMUMB, A.C.-IMDI",
+  "addresses": [
+    {
+      "full": "Hospital H+ Torre2 Consultorio 210 Piso 2 (drmaguz.wixsite.com/ginecotomasguzman),"
+    },
+    {
+      "full": "Prol. Privada Ignacio Zaragoza 16-A,"
+    },
+    {
+      "full": "Hospital H+ Torre2 Consultorio 210 Piso 2 (drmaguz.wixsite.com/ginecotomasguzman),"
+    },
+    {
+      "full": "Prol. Privada Ignacio Zaragoza 16-A,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tomas-martin-guzman-esquivel/ginecologo/santiago-de-queretaro#address-id=26415&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:49:37.358Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__tom_s_mart_n_guzm_n_esquivel.webp"
+}

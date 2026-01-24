@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Cynthia Rosángela Pérez Chávez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 17,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fcd0be/fcd0be6c45c83afca0ef9b85e12e032e_220_square.jpg",
+  "about": "La Dra. Cynthia Perez es médico especialista en Ginecología, Obstetricia y Biología de la Reproducción Humana, con formación avanzad Cirugía Ginecológica de Mínima Invasión, incluyendo procedimientos por Laparoscopía e Histeroscopía. Egresada como Medico y Cirujano en la Universidad Privada de Valle, completó su residencia y especialización en Ginecología y Obstetricia en el Hospital Materno Infantil avalada por la Universidad Mayor de San Andres en la Ciudad de La Paz - Bolivia, y posteriormente se perfeccionó en Medicina Reproductiva en la Ciudad de México en el Instituto Nacional de Perinatología, avalada por la Universidad Nacional Autónoma de México (UNAM) y Cirugía Endoscópica Ginecológica en el Hospital General Dr. Manuel Gea Gonzales avalada por la Universidad Nacional Autónoma de México (UNAM). Ademas mencionar que tuvo postgrado en Colposcopia Diagnostica y Terapéutica para detección temprana del cancer cérvicouterino, realizado en la Fundación Cruz Talonia, avalada por la Universidad Nacional Autónoma de México (UNAM).Cuenta con más de 2 años de experiencia brindando atención integral a mujeres en todas las etapas de su vida. Su práctica combina el manejo de problemas ginecológicos comunes y complejos, el control del embarazo y atención del parto, y el tratamiento especializado en fertilidad y técnicas de reproducción asistida, como la inseminación intrauterina (IIU) y la fertilización in vitro (FIV).Además, posee amplia experiencia en el tratamiento quirúrgico de patologías como miomas, endometriosis, quistes ováricos, pólipos endometriales y malformaciones uterinas, mediante técnicas de cirugía mínimamente invasiva, lo que permite una recuperación más rápida y menos complicaciones. También aborda afecciones como trastornos del ciclo menstrual, síndrome de ovario poliquístico, infecciones ginecológicas, menopausia, patologías cervicales y planificación anticonceptiva.El Dra. Cynthia Perez se caracteriza por ofrecer una atención cercana, empática y personalizada, con una comunicación clara y un enfoque ético que prioriza el bienestar físico y emocional de sus pacientes. Acompaña a cada mujer desde la prevención hasta el tratamiento, brindando confianza y seguridad en cada consulta.Participa activamente en congresos y actualizaciones científicas, integrando equipos multidisciplinarios comprometidos con una medicina basada en la evidencia y en el respeto por las decisiones de cada paciente.",
+  "addresses": [
+    {
+      "full": "Paseo del Centenario 9580,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Terapia de Reemplazo Hormonal (TRH)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cynthia-rosangela-perez-chavez/ginecologo/tijuana",
+  "scrapedAt": "2026-01-22T00:39:59.281Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__cynthia_ros_ngela_p_rez_ch_vez.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Erika D. Salinas González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 65,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1ea4df/1ea4dfbe22ba58f11df816fe09c610b8_220_square.jpg",
+  "about": "Cuento con una especialidad en Ginecología y Obstetricia, y una Subespecialidad en Biología de la Reproducción, lo que mas me ha apasionado en los últimos años es la Fertilidad, me llena de alegría poder ayudar a pacientes que han buscado por largo tiempo un Bebé y no lo consiguen, y cuando el resultado es positivo, es una satisfacción tan grande e indescriptible que sin duda alguna es una de las mejores experiencias que me ha dejado la subespecialidad. Sin embargo, cada vez me buscan mas mujeres en Etapa de Perimenopausia y Menopausia, y me llena de dicha ver como con atendiendo sus necesidades les cambia la vida por completo, vuelven a ser como ellas refieren \"funcionales\", recobran el deseo sexual, pueden regresar a dormir, a vivir.... considero esa es un àrea bastante abandonada, asì que trato de enfocarme mucho en ellas. Sin olvidar a mis pacientes que asisten por primera vez a un ginecólogo, insistirles en el cuidado que deben de tener, realizando sus chequeos anuales... en verdad me satisface poder ayudar a otras mujeres a que vivan en Plenitud, desde la adolescencia, pasando por la etapa reproductiva, hasta la menopausia.",
+  "addresses": [
+    {
+      "full": "Avenida de las Ciencias 2058 Juriquilla Qro.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cesárea humanizada",
+      "price": ""
+    },
+    {
+      "name": "Climaterio y menopausia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/erika-d-salinas-gonzalez/ginecologo/santiago-de-queretaro#address-id=434981&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:47:46.764Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__erika_d__salinas_gonz_lez.webp"
+}

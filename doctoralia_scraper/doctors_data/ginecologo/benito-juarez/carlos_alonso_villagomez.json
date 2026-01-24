@@ -1,0 +1,31 @@
+{
+  "name": "Carlos Alonso Villagomez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 115,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cc7bf1/cc7bf135c18b2f3ffbc46094274175ca_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Boston 98,"
+    },
+    {
+      "full": "Av. Sta. Lucia 57,"
+    },
+    {
+      "full": "C. Boston 98,"
+    },
+    {
+      "full": "Av. Sta. Lucia 57,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-alonso-villagomez/ginecologo/benito-juarez#address-id=240358&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:20:35.356Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/carlos_alonso_villagomez.webp"
+}

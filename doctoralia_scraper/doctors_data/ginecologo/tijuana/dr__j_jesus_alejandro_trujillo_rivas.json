@@ -1,0 +1,25 @@
+{
+  "name": "Dr. J Jesus Alejandro Trujillo Rivas",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 54,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/701426/701426eac7ea3ba491602261861d77be_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Francisco Medina De La Torre 35,"
+    },
+    {
+      "full": "Calle Francisco Medina De La Torre 35,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/j-jesus-alejandro-trujillo-rivas/ginecologo/tijuana#address-id=48849&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:07:13.266Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__j_jesus_alejandro_trujillo_rivas.webp"
+}

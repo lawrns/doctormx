@@ -1,0 +1,25 @@
+{
+  "name": "Guillermo Sidney Herbert Nuñez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 712,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9786209f/9786209f-69f6-452d-b47c-acfcae292360_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Bernardino Del Razo 21,"
+    },
+    {
+      "full": "Av. Bernardino Del Razo 21,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-sidney-herbert-nunez-2/ginecologo/santiago-de-queretaro#address-id=69226&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:56:19.751Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/guillermo_sidney_herbert_nu_ez.webp"
+}

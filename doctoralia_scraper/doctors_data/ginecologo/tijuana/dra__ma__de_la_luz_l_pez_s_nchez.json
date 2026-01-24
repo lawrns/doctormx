@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ma. de la Luz López Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 51,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Paseo de los Héroes #9288 Suite A-4,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ma-de-la-luz-lopez-sanchez/ginecologo/tijuana#address-id=131210&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:42:17.887Z",
+  "localPhotoPath": null
+}

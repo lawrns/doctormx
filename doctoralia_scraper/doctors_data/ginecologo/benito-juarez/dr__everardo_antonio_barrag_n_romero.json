@@ -1,0 +1,77 @@
+{
+  "name": "Dr. Everardo Antonio Barragán Romero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3174,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/477ab8/477ab8283d8f392453f23ef21b99a456_220_square.jpg",
+  "about": "Mi misión es empoderar a la mujer a través de la salud digna, el parto respetado y del autoconocimiento del cuerpo para que tengan un futuro brillante, sin miedos y más saludable. Originario de la hermosa ciudad de Oaxaca y formado como profesional por el INSTITUTO NACIONAL DE PERINATOLOGÍA. Amo mi trabajo. Ofrezco un trato humano, amable en un ambiente de respeto y credibilidad. Cuento con la experiencia amplia en el cuidado de la salud de la mujer y la pareja.",
+  "addresses": [
+    {
+      "full": "Tlacotalpan 59,"
+    },
+    {
+      "full": "Frontera 74, Roma Norte. Cuauhtémoc.,"
+    },
+    {
+      "full": "Av. Cuauhtémoc 1040,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/everardo-antonio-barragan-romero/ginecologo/cuauhtemoc2#address-id=411657&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:03:39.869Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__everardo_antonio_barrag_n_romero.webp"
+}

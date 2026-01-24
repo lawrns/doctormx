@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Blanca Anahí Cárdenas Santos",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/22cfe259/22cfe259-2e12-48af-9131-3258b5280faa_small_square.jpg",
+  "about": "Médico Cirujano y Partero, Ginecóloga y Obstetra especializada en Biología de la Reproducción Humana.",
+  "addresses": [
+    {
+      "full": "Avenida Pablo Neruda 2828,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $4,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta de infertilidad",
+      "price": "• $2,500"
+    },
+    {
+      "name": "Capacitación espermática e inseminación",
+      "price": "• $1,750"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/blanca-anahi-cardenas-santos/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:07:18.908Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__blanca_anah__c_rdenas_santos.webp"
+}

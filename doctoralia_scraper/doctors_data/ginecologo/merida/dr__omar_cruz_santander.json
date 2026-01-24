@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Omar Cruz Santander",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 89,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/84d8ba/84d8ba4209c577c2829d13c19736352f_220_square.jpg",
+  "about": "Soy Médico Ginecólogo-Obstetra con Diplomado en Colposcopía y patología del tracto genital femenino, me formé como médico general en la Universidad Autónoma de Yucatán, soy graduado como médico especialista del Centro Médico Nacional la Raza, avalado por la Universidad Nacional Autónoma de México. Estoy certificado por el Consejo Mexicano de Ginecología y Obstetricia. Me especializo en control prenatal, embarazo de alto riesgo, tratamiento de padecimientos ginecológicos, métodos anticonceptivos, papanicolaou y trastornos del climaterio.",
+  "addresses": [
+    {
+      "full": "Star Médica,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/omar-cruz-santander/ginecologo/yucatan#address-id=516102&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:28:46.269Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__omar_cruz_santander.webp"
+}

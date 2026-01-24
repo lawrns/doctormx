@@ -1,0 +1,89 @@
+{
+  "name": "Dra. Jaqueline Nayeli Quintana Calvillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 156,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/18baccb8/18baccb8-7777-4b93-a19b-4e563208130c_small_square.jpg",
+  "about": "Hola soy la Dra. Jaqueline Nayeli Quintana Calvillo. Gnecóloga y obstetra. Entiendo, desde la experiencia personal y profesional, lo importante que es sentirse escuchada, acompañada y cuidada en cada etapa de la vida. Desde la adolescencia hasta la menopausia, brindándote una atención cálida, respetuosa y basada en la confianza. Juntas, construiremos un plan de cuidado que se adapte a ti, con información clara, decisiones compartidas y tratamientos basados en evidencia.",
+  "addresses": [
+    {
+      "full": "Paseos de Zakia Poniente 4100,"
+    },
+    {
+      "full": "Campo Real 1419,"
+    },
+    {
+      "full": "Av. de las Ciencias 2058, Juriquilla, Qro.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Colocación de implante subdérmico",
+      "price": "• $4,500"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Retiro de DIU",
+      "price": "• Desde $750"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": "• $800"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Check up premium",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jaqueline-nayeli-quintana-calvillo/ginecologo/queretaro#address-id=446560&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:46:52.759Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__jaqueline_nayeli_quintana_calvillo.webp"
+}

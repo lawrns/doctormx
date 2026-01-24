@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Jonathan Pérez Castillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9ac580/9ac580957c4387fdd385d86e891698fa_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Oriente 6 1888,"
+    },
+    {
+      "full": "Av Oriente 6 1888,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Androscopia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $950"
+    },
+    {
+      "name": "Mastectomía radical con vaciado axilar",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jonathan-perez-castillo/ginecologo-ginecologo-oncologico/orizaba#address-id=4632&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:14:08.719Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__jonathan_p_rez_castillo.webp"
+}

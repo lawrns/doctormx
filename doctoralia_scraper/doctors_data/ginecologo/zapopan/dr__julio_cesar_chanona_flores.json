@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Julio Cesar Chanona Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4638cc/4638ccce7155e9bf584d58a80a7bf5a8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "TARASCOS 3432 CONSULTORIO 7,"
+    },
+    {
+      "full": "TARASCOS 3432 CONSULTORIO 7,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia punción testicular",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de varicocele",
+      "price": ""
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": ""
+    },
+    {
+      "name": "Histeroscopia diagnóstica con biopsia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/julio-cesar-chanona-flores/ginecologo/guadalajara#address-id=64705&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:25:35.826Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__julio_cesar_chanona_flores.webp"
+}

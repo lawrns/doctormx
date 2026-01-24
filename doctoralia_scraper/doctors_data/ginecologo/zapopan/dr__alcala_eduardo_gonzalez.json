@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Alcala Eduardo Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 20,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a76fc0/a76fc0e926ca7ce91fcd7299f8e107d6_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Espana 1559,"
+    },
+    {
+      "full": "Ave. Espana 1559,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alcala-eduardo-gonzalez/ginecologo/guadalajara#address-id=66945&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:41:44.112Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__alcala_eduardo_gonzalez.webp"
+}

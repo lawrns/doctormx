@@ -1,0 +1,25 @@
+{
+  "name": "Carolina Eloisa Flores Vera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 113,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8438eb/8438eb8cb0a083a04ded12981918bec1_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Lazaro Cardenas Eje Central 1009,"
+    },
+    {
+      "full": "Lazaro Cardenas Eje Central 1009,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carolina-eloisa-flores-vera/ginecologo/benito-juarez#address-id=125772&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:21:18.660Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/carolina_eloisa_flores_vera.webp"
+}

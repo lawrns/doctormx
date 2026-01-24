@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Garcia Nuria Alberich",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/59d023c6/59d023c6-8aaf-4215-b734-6a46707f8ff3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "German Gedovius 1606 406,"
+    },
+    {
+      "full": "German Gedovius 1606 406,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/garcia-nuria-alberich/ginecologo/tijuana#address-id=66877&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:48:32.270Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__garcia_nuria_alberich.webp"
+}

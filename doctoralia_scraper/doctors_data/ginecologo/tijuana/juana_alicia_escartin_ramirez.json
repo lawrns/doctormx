@@ -1,0 +1,25 @@
+{
+  "name": "Juana Alicia Escartin Ramirez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6834e8/6834e8afac2b89bfaabf6f2009d286cc_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Arete 10,"
+    },
+    {
+      "full": "Arete 10,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juana-alicia-escartin-ramirez-2/ginecologo/tijuana#address-id=71094&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:48:23.509Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/juana_alicia_escartin_ramirez.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Hurtado Hernandez Gomez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/403687/40368767cc3dc3914af6c3143b5fec1d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Agrarismo 208,"
+    },
+    {
+      "full": "Agrarismo 208,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hurtado-hernandez-gomez/ginecologo/ciudad-de-mexico#address-id=66997&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:43:58.649Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__hurtado_hernandez_gomez.webp"
+}

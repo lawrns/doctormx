@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Karla Rodríguez Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 202,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d26122f0/d26122f0-753e-4968-9a66-333f32952f34_small_square.jpg",
+  "about": "Soy la Dra. Karla Rodríguez, especialista en Ginecología y Obstetricia, desde hace 7 años brindo atención médica e integral a la mujer en cualquier etapa de la vida. Cuento con Diplomado en Colposcopía y Ultrasonido Ginecológico-Obstétrico lo cual me permite realizar detección y tratamiento de patologías del tracto genital femenino",
+  "addresses": [
+    {
+      "full": "Avenida Clavería # 154 Delegación Azcapotzalco,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $800"
+    },
+    {
+      "name": "Seguimiento del embarazo",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-rodriguez-rodriguez/ginecologo/ciudad-de-mexico#address-id=493104&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:58:32.018Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__karla_rodr_guez_rodr_guez.webp"
+}

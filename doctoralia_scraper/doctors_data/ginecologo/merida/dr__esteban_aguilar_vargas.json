@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Esteban Aguilar Vargas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 66,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5c1d0c84/5c1d0c84-5afd-478b-acca-da0e71f2b3d0_small_square.jpg",
+  "about": "Hola! soy el Dr. Esteban Aguilar Vargas, uroginecólogo especializado en salud íntima femenina, enfocándome en el cuidado del piso pélvico y el manejo de la menopausia. Mi misión es ayudarte a recuperar tu bienestar, tu confianza y a que cada etapa de tu vida la vivas plenamente. Egresado de médico general de la Universidad Marista de Mérida, Ginecología y Obstétrica y Uroginecología del hospital HGO4 “Luis castelazo Ayala” avalado por la UNAM. Certificado por el Consejo Mexicano de Ginecología y Obstetricia Cédulas: Médico general: 11567446 Ginecología: 13399019 Uroginecología: 14820205 Principales patologías de consulta: -Prolapso genital -Incontinencia urinaria -Disfunción miccional (para orinar) -Infecciones de vías urinarias -Menopausia Juntos, para una salud pélvica integral ¡Es hora de priorizarte!",
+  "addresses": [
+    {
+      "full": "Calle 33ᴬ número 467b,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/esteban-aguilar-vargas/ginecologo/yucatan#address-id=571351&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:30:10.813Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__esteban_aguilar_vargas.webp"
+}

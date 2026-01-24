@@ -1,0 +1,25 @@
+{
+  "name": "Octavio Lopez Cardenas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 82,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/236680/236680b4c24e5ac09baff845333e65c0_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Insurgentes Sur, 662-301,"
+    },
+    {
+      "full": "Av. Insurgentes Sur, 662-301,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/octavio-lopez-cardenas/ginecologo/benito-juarez#address-id=76079&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:21:32.173Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/octavio_lopez_cardenas.webp"
+}

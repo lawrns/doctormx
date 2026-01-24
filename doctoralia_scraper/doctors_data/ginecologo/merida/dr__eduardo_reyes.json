@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Eduardo Reyes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c8c8cc/c8c8cceff3b303cb1882e79a7e7a2988_220_square.jpg",
+  "about": "Médico Especialista Certificado en Ginecología y Obstetricia, con amplio conocimiento en el cuidado de la salud de la mujer",
+  "addresses": [
+    {
+      "full": "Calle 149,"
+    },
+    {
+      "full": "Calle 149,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $15"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-reyes/ginecologo/yucatan#address-id=455101&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:37:05.046Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__eduardo_reyes.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Rosa Vargas Jose Luis De La",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 268,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ff943a/ff943af10b2521ec3bbed18dccb4c286_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Jose Clemente Orozco 10122,"
+    },
+    {
+      "full": "Calle Jose Clemente Orozco 10122,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-vargas-jose-luis-de-la/ginecologo/tijuana#address-id=46866&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:07:06.013Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__rosa_vargas_jose_luis_de_la.webp"
+}

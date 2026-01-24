@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Jorge Bravo Rubio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 132,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0e4f00/0e4f00673af9e62210a3b99c51f6ce8b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Rio Yaqui 225,"
+    },
+    {
+      "full": "Av. Niño Obrero 776,"
+    },
+    {
+      "full": "Rio Yaqui 225,"
+    },
+    {
+      "full": "Av. Niño Obrero 776,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-bravo-rubio/ginecologo/puerto-vallarta#address-id=213560&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:40:02.867Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jorge_bravo_rubio.webp"
+}

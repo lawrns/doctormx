@@ -1,0 +1,25 @@
+{
+  "name": "María Lares Quinto",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 357,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7835f6/7835f6603967a7448eeb595b563d94c9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av 35 Ote 1627, Mirador,"
+    },
+    {
+      "full": "Av 35 Ote 1627, Mirador,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-lares-quinto/ginecologo/puebla#address-id=527600&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:20:32.521Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/mar_a_lares_quinto.webp"
+}

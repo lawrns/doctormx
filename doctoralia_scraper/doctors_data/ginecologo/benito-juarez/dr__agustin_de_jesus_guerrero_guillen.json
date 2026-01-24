@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Agustin de Jesus Guerrero Guillen",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1878,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9129e7/9129e7c9b20c4906d0d71b82b3f21f5c_220_square.jpg",
+  "about": "Ginecología / Obstetricia y Medicina Materno Fetal. Medicina de calidad, humana y honesta al servicio de la mujer y su bebé. UNACH Ced. Prof. 6872276 UNAM Ced. Esp. 10128773 UNAM Ced. SubEsp. 11055453 COFEPRIS: 2409042002A00078",
+  "addresses": [
+    {
+      "full": "Periferico sur 5246,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": "• $16,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/agustin-de-jesus-guerrero-guillen/ginecologo/coyoacan#address-id=419743&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:04:16.505Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__agustin_de_jesus_guerrero_guillen.webp"
+}

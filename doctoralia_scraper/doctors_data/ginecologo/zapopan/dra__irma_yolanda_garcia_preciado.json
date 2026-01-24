@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Irma Yolanda Garcia Preciado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 486,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/934a64/934a6492caab84d3b552f1d384fe8001_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Pablo Neruda 3148,"
+    },
+    {
+      "full": "Av. Pablo Neruda 3148,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/irma-yolanda-garcia-preciado/ginecologo/guadalajara#address-id=219353&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:36:07.179Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__irma_yolanda_garcia_preciado.webp"
+}

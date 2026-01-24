@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Manuela Osuna Aramburo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 59,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/092fbb/092fbbf740eceb880402d649eb8d0b38_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Guadalupe 6818,"
+    },
+    {
+      "full": "Av. Guadalupe 6111,"
+    },
+    {
+      "full": "Av. Guadalupe 6818,"
+    },
+    {
+      "full": "Av. Guadalupe 6111,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuela-osuna-aramburo/ginecologo/zapopan#address-id=196721&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:35:42.698Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__manuela_osuna_aramburo.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Jose Alberto Monsalve Zamudio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 163,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Morelos Poniente No. 105,"
+    },
+    {
+      "full": "Morelos Poniente No. 105,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-alberto-monsalve-zamudio/ginecologo/san-martin-texmelucan#address-id=212869&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:31:27.932Z",
+  "localPhotoPath": null
+}

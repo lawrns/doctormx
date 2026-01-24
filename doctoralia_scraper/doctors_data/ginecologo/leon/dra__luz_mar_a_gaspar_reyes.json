@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Luz María Gaspar Reyes",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 57,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/17ef30b6/17ef30b6-a7f7-4525-87f2-93ede81f195c_large.jpg",
+  "about": "Sobre mí Profesional Atención de calidad humana Principales áreas de tratamiento seguimiento de embarazo de alto riesgo, tamizaje de riesgos en fetos para sindromes detectables Mi consulta y mi equipo Contamos con equipo esencial para la atención ginecológica Otros servicios Atención de urgencias",
+  "addresses": [
+    {
+      "full": "Av manantial 607,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luz-maria-gaspar-reyes/ginecologo/leon#address-id=567811&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:26:56.060Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__luz_mar_a_gaspar_reyes.webp"
+}

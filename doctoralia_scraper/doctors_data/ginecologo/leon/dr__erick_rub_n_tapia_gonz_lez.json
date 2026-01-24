@@ -1,0 +1,38 @@
+{
+  "name": "Dr. Erick Rubén Tapia González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 29,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/527c9a/527c9ab68af13d9ef94ddee8ace8c1a0_220_square.jpg",
+  "about": "Medico cirujano y partero egresado de la Universidad de Guadalajara, especialista en Ginecologia y Obstetricia avalado por la Universidad de Guanajuato, diplomado en Colposcopia Ginecologica y de tracto inferior. Competente en el diagnostico, abordaje y resolucion de las principales enfermedades de las mujeres, el control prenatal y postnatal, la resolucion del embarazo vía vaginal (parto) o vía abdominal. (cesárea) y sus complicaciones. Asesoría y aplicación de los diferentes métodos de planificación familiar, médicos y quirúrgicos. Trabajo conjunto con cirugía laparoscopica, oncoginecologia, medicina maternofetal, biologia de la reproducción asistida y uroginecologia.",
+  "addresses": [
+    {
+      "full": "Blvd. Campestre 304, Jardines del Moral,"
+    },
+    {
+      "full": "Blvd. Campestre 304, Jardines del Moral,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/erick-ruben-tapia-gonzalez-2/ginecologo-medico-general/leon#address-id=416351&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:28:10.943Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__erick_rub_n_tapia_gonz_lez.webp"
+}

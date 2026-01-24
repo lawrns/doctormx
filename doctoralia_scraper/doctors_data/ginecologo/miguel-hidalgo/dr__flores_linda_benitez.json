@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Flores Linda Benitez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 385,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/96c299/96c29965d0616b14dad30378edfddeb5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Sur 136 116,"
+    },
+    {
+      "full": "Calle Sur 136 116,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/flores-linda-benitez/ginecologo/ciudad-de-mexico#address-id=58006&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:49:51.685Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__flores_linda_benitez.webp"
+}

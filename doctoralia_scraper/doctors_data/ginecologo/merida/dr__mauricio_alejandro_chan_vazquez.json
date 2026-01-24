@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Mauricio Alejandro Chan Vazquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7d20e5/7d20e59e4f1dc160159d63a46f777925_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "calle 62 numero 570 por 71 y 73 centro,"
+    },
+    {
+      "full": "calle 62 numero 570 por 71 y 73 centro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $400"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $400"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $400"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $400"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mauricio-alejandro-chan-vazquez/ginecologo/yucatan#address-id=418400&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:44:41.528Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__mauricio_alejandro_chan_vazquez.webp"
+}

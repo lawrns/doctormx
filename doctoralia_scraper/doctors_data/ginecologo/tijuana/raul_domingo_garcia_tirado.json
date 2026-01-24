@@ -1,0 +1,31 @@
+{
+  "name": "Raul Domingo Garcia Tirado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 363,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Aquiles Serdan 11436,"
+    },
+    {
+      "full": "Av. Centenario 10851,"
+    },
+    {
+      "full": "Aquiles Serdan 11436,"
+    },
+    {
+      "full": "Av. Centenario 10851,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-domingo-garcia-tirado/ginecologo/tijuana#address-id=179589&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:05:58.055Z",
+  "localPhotoPath": null
+}

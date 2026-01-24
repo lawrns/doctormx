@@ -1,0 +1,25 @@
+{
+  "name": "Manuel Gonzalez Garayzar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 268,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ff943a/ff943af10b2521ec3bbed18dccb4c286_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Francisco Javier Mina 1415,"
+    },
+    {
+      "full": "Francisco Javier Mina 1415,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuel-gonzalez-garayzar/ginecologo/tijuana#address-id=161139&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:06:21.157Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/manuel_gonzalez_garayzar.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Cristina Ruiz Díaz De León",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 47,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/12747258/12747258-b963-4ebc-a7b7-29c3c14943ce_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Centro, Libertad, San Pedro Cholula,"
+    },
+    {
+      "full": "Centro, Libertad, San Pedro Cholula,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cristina-ruiz-diaz-de-leon/ginecologo/san-pedro-cholula#address-id=140690&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:29:27.769Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/cristina_ruiz_d_az_de_le_n.webp"
+}

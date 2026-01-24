@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Abraham Martínez Ruíz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 347,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8337eb/8337ebc743c06625726788955c51095b_220_square.jpg",
+  "about": "Soy originario y residente de la Ciudad de México, nací en el Hospital donde hoy ejerzo mi profesión ( Centro Medico ABC campus Observatorio), soy hijo de un chilango y una mujer originaria de Aguascalientes, tengo un hermano mayor, quien es abogado. Tengo tres hijos que van desde los 26 pasando por los 16 y hasta los 11 años, sin duda el máximo tesoro de un ser humano, los hijos. Mis estudios profesionales los hice en la Universidad Anáhuac, para posteriormente realzar mi espacialidad en el Instituto Nacional de Perinatología, por 4 años, al termino de estos decidí que era necesario seguir estudiando y logre empezar una subespecialidad en el extranjero , en especifico en la ciudad de Houston ,Texas, bajo la tutelo de uno de los pioneros en el mundo en el desarrollo de la cirugía laparoscópica, el Dr. Robert R Franklin asi mismo pude desarrollarme en el estudio de la fertilidad humana bajo la tutela del Dr. Rakesh Mangal y George M Grunert, todo esto en el Womas´s Hospital of Texas, todo esto en el periodo de los años 2002 al 2004, en esta época pude vivir lo complejo es es vivir con temas de infertilidad ya que nosotros mismos tuvimos que recurrir a un tratamiento de medicina reproductiva para lograr un embarazo, mi tercer hijo también fue resultado de técnicas de reproducción asistida, todo esto me llevo a tener una empatía mayor con mis pacientes en aquel entonces y hasta la fecha. A mi regreso a Mexico empecé a intentar aplicar todo lo aprendido , siendo esto difícil por aquella idea que los jóvenes son muy entusiastas y no siempre es bueno apoyarlos. Sin embargo con el favor de Dios y con mucho esfuerzo fui creando mi propio camino en donde logre fundar mi propio centro de reproducción asistida , llegando a tener hasta 10 oficinas al rededor del país, fue entonces cuando incluso nos unimos al grupo de reproducción asistida mas grande del mundo, en donde llegue a ser el director en Mexico, gran experiencia en muchos sentidos, en donde sin duda ,la experiencia mas importante es que uno debe Humanizar la atención de nuestros pacientes, estos grandes centros y grandes publicidades, sin duda no son la mejor vía para atender a pacientes con problemas de infertilidad, es por ello que ahora me he dado a la tarea de poder dar una atención mucho mas personalizada en todo el abanico de servicios que puedo prestar a mis pacientes. En lo personal son alguien alegre, que gusta de las reuniones de amigos y familia, el deporte a estado presente siempre en mi vida no tengo una actividad especifica, pero considero el ejercicio fundamental para el desarrollo humano Hoy mi hija mayo se a graduado de medicina y es muy halagador saber que sus intenciones son seguir por este camino de la GinecoObstetrica. Espero poder ayudar a todas aquellas parejas que buscan de mi apoyo y conocimientos",
+  "addresses": [
+    {
+      "full": "Av Ejército Nacional 613,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $2,300"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $2,300"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $2,300"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $2,300"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $2,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/abraham-martinez-ruiz/ginecologo/miguel-hidalgo#address-id=325175&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:58:16.086Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__abraham_mart_nez_ru_z.webp"
+}

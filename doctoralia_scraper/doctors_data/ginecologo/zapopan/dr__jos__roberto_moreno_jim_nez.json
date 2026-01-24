@@ -1,0 +1,30 @@
+{
+  "name": "Dr. José Roberto Moreno Jiménez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 164,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/52bf88/52bf8866fd657155d5858a4a606ff407_140_square.jpg",
+  "about": "Ginecólogo y ObstetraEspecialista en ginecología y obstetricia con amplia experiencia en parto humanizado y atención integral a la salud femenina. Egresado de la Universidad Autónoma de Guadalajara (UAG), complementó su formación l en Málaga, España, lo que le ha brindado una perspectiva internacional y enfoque humanista en el cuidado de sus pacientes.Comprometido con ofrecer una atención cálida, profesional y personalizada, acompañando a sus pacientes en cada etapa de la maternidad y salud reproductiva.",
+  "addresses": [
+    {
+      "full": "Pedro Antonio Buzeta 970,"
+    },
+    {
+      "full": "Pedro Antonio Buzeta 970,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-roberto-moreno-jimenez-2/ginecologo/guadalajara#address-id=586271&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:31:51.059Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jos__roberto_moreno_jim_nez.webp"
+}

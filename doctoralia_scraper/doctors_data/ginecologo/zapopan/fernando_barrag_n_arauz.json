@@ -1,0 +1,25 @@
+{
+  "name": "Fernando Barragán Arauz",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 12,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3eabb798/3eabb798-dd47-45fa-a2a3-907c6cec93fa_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Analco 765,"
+    },
+    {
+      "full": "Analco 765,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-barragan-arauz/ginecologo/guadalajara#address-id=128510&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:43:00.164Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/fernando_barrag_n_arauz.webp"
+}

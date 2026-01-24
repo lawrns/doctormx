@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Ana Karen Trejo Paredes",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 189,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5849d5/5849d5239f05650a42f6e8e49d4c89bd_220_square.jpg",
+  "about": "Soy la Dra. Karen Trejo y quiero platicarte un poco sobre mi formación, me forme como médico general en la Universidad de Guadalajara, realice mi especialidad en el Hospital General de Zapopan (Universidad de Guadalajara), tengo un diplomado en climaterio y osteoporosis, un diplomado en ultrasonido obstétrico y estoy Certificada por El Consejo Mexicano de Ginecología y Obstetricia. Mi especialidad se enfoca en buscar el bienestar integral de la mujer en las diferentes etapas, pero como mujer y ginecóloga, busco que acudas a una consulta en la cuál te sientas cómoda, en confianza, que podamos resolver todas tus dudas sin prejuicios y que tengas la tranquilidad de que recibirás el mejor tratamiento.",
+  "addresses": [
+    {
+      "full": "Santa Rita 1509,"
+    },
+    {
+      "full": "Priv. Jose Ocampo 20,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-karen-trejo-paredes/ginecologo/guadalajara#address-id=484447&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:10:47.712Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__ana_karen_trejo_paredes.webp"
+}

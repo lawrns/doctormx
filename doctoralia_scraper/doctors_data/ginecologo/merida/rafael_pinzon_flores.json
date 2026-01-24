@@ -1,0 +1,25 @@
+{
+  "name": "Rafael Pinzon Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 325,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ec99d4/ec99d4859eefe7384f8e4db2ae78d2ed_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 23 #512 Alcala Martin,"
+    },
+    {
+      "full": "Calle 23 #512 Alcala Martin,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rafael-pinzon-flores/ginecologo/merida#address-id=133409&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:45:01.248Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/rafael_pinzon_flores.webp"
+}

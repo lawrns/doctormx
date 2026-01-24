@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Alejandro Robles Señkowsky",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1d139d/1d139d6b744d5cd30734782435889da9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Niҏ Obrero ϴϰϲ,"
+    },
+    {
+      "full": "Av Niҏ Obrero ϴϰϲ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-robles-senkowsky/ginecologo/zapopan#address-id=97833&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:32:11.257Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__alejandro_robles_se_kowsky.webp"
+}

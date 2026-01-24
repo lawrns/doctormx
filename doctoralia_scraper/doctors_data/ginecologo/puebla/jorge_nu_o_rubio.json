@@ -1,0 +1,25 @@
+{
+  "name": "Jorge Nuño Rubio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/25a78bf5/25a78bf5-6f76-4216-bb56-45538db5ae77_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "14 Sur 301 A,"
+    },
+    {
+      "full": "14 Sur 301 A,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-nuno-rubio/ginecologo/tecamachalco#address-id=213250&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:25:24.382Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/jorge_nu_o_rubio.webp"
+}

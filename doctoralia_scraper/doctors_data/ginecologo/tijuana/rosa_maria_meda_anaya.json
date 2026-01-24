@@ -1,0 +1,37 @@
+{
+  "name": "Rosa Maria Meda Anaya",
+  "specialty": "Sexólogo",
+  "rating": 5,
+  "reviewCount": 214,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/0ea85a68/0ea85a68-3121-4192-b259-16b5326dc492_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Diaz Ordaz Lt. 14 1473,"
+    },
+    {
+      "full": "Av. Guadalajara 6908,"
+    },
+    {
+      "full": "Canadá 16801,"
+    },
+    {
+      "full": "Blvd. Diaz Ordaz Lt. 14 1473,"
+    },
+    {
+      "full": "Av. Guadalajara 6908,"
+    },
+    {
+      "full": "Canadá 16801,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-maria-meda-anaya/sexologo-ginecologo/tijuana#address-id=175522&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:25:11.207Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/rosa_maria_meda_anaya.webp"
+}

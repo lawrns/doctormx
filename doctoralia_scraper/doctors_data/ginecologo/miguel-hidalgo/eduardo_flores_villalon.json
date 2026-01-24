@@ -1,0 +1,25 @@
+{
+  "name": "Eduardo Flores Villalon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/174f8c/174f8c1c4cd36c286a882e47389a4b23_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "NEWTON 186 - 104,"
+    },
+    {
+      "full": "NEWTON 186 - 104,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-flores-villalon/ginecologo/ciudad-de-mexico#address-id=127267&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:54:30.825Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/eduardo_flores_villalon.webp"
+}

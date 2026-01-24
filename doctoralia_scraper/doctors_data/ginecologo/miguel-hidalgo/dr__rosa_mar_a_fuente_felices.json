@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Rosa María Fuente Felices",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 30,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/65cf83/65cf83992d18b49f26d8677b9c9db7dc_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Torcuato Tasso 335,"
+    },
+    {
+      "full": "Calle Torcuato Tasso 335,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-maria-fuente-felices/ginecologo/ciudad-de-mexico#address-id=64186&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:08:12.693Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__rosa_mar_a_fuente_felices.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Adriana Margarita Velazquez Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 59,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/092fbb/092fbbf740eceb880402d649eb8d0b38_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Arrayan 1575,"
+    },
+    {
+      "full": "Arrayan 1575,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adriana-margarita-velazquez-gonzalez/ginecologo/zapopan#address-id=251731&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:41:11.950Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/adriana_margarita_velazquez_gonzalez.webp"
+}

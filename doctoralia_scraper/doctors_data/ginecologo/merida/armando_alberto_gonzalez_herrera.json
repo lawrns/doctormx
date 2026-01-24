@@ -1,0 +1,25 @@
+{
+  "name": "Armando Alberto Gonzalez Herrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 653,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5da054/5da0549cba8220ca64a7a47d330a668a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 26 199,"
+    },
+    {
+      "full": "Calle 26 199,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/armando-alberto-gonzalez-herrera-2/ginecologo/merida#address-id=72394&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:51:18.331Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/armando_alberto_gonzalez_herrera.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Ricardo Peña Pelayo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/89bb79/89bb79d8e84a23609080a1c17323a5fd_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Tarascos, 3435 Fracc. Monraz,"
+    },
+    {
+      "full": "Calle Tarascos, 3435 Fracc. Monraz,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-pena-pelayo-2/ginecologo/-#address-id=340271&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:32:45.393Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__ricardo_pe_a_pelayo.webp"
+}

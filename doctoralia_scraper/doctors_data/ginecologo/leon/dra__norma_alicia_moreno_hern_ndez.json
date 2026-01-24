@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Norma Alicia Moreno Hernández",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 34,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/6a1a1c71/6a1a1c71-facf-4b27-9cda-865ff706a017_small_square.jpg",
+  "about": "Soy la doctora Norma Alicia Moreno Hernández, ginecóloga obstetra.Egresé como Médico Cirujano y Partero de la Universidad Michoacana de San Nicolás de Hidalgo, y posteriormente me especialicé en Ginecología y Obstetricia en la Universidad de Guanajuato.Me dedico a brindar atención especializada en el control del embarazo, así como en el diagnóstico y tratamiento de enfermedades ginecológicas como miomas y sangrados uterinos anormales. Mi compromiso es acompañar a mis pacientes en cada etapa de su salud ginecológica, garantizando un trato cercano, profesional y personalizado.",
+  "addresses": [
+    {
+      "full": "Blvd aeropuerto 101,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Embarazo de alto riesgo",
+      "price": "• $900"
+    },
+    {
+      "name": "Cirugía de los quistes y de los tumores complejos",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Cono cervical",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/norma-alicia-moreno-hernandez/ginecologo/leon#address-id=593127&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:26:18.337Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__norma_alicia_moreno_hern_ndez.webp"
+}

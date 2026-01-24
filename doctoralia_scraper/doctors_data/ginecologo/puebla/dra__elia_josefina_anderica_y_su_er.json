@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Elia Josefina Anderica Y Suñer",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 106,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/aaec038d/aaec038d-a97d-4183-93c2-2a2db4acec09_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Kepler, 2143 Cons. 755,"
+    },
+    {
+      "full": "2 Sur 908,"
+    },
+    {
+      "full": "Avenida Kepler, 2143 Cons. 755,"
+    },
+    {
+      "full": "2 Sur 908,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elia-josefina-anderica-y-suner-2/ginecologo/atlixco#address-id=46702&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:21:54.282Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__elia_josefina_anderica_y_su_er.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Blanca Soledad García Carranza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 499,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2602c2/2602c22e4a6d532bf43241312f00c73a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Hidalgo 329,"
+    },
+    {
+      "full": "Av. Tlaxcala 177,"
+    },
+    {
+      "full": "Hidalgo 329 Col Cp37000,,"
+    },
+    {
+      "full": "Hidalgo 327,"
+    },
+    {
+      "full": "C. Hidalgo 329,"
+    },
+    {
+      "full": "Av. Tlaxcala 177,"
+    },
+    {
+      "full": "Hidalgo 329 Col Cp37000,,"
+    },
+    {
+      "full": "Hidalgo 327,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/blanca-soledad-garcia-carranza-2/ginecologo/ciudad-de-mexico#address-id=70113&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:31:08.729Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__blanca_soledad_garc_a_carranza.webp"
+}

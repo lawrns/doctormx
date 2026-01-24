@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jose H. Osorio Ramos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 27,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4d5e07/4d5e073f607d543d8e2c0f37c11b5163_220_square.jpg",
+  "about": "Hola, soy Dr. Jose H. Osorio Ramos . Como Ginecologo mi vocación es ayudarte, por eso en la primera consulta nos enfocaremos exclusivamente a entender tu problema, cómo solucionarlo paso a paso y qué herramientas tenemos a nuestro alcance para conseguirlo. Desde que empecé mi carrera profesional en 2017. Entre mis principales atenciones llevo a cabo como: Planificación familiar, embarazo, papanicolao y colposcopia.. Te invito a reservar una cita conmigo. Será un placer ser tu especialista.",
+  "addresses": [
+    {
+      "full": "Anillo Periférico Ecológico 3507,"
+    },
+    {
+      "full": "Anillo Periférico Ecológico 3507,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-h-osorio-ramos/ginecologo/puebla#address-id=416936&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:12:31.477Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__jose_h__osorio_ramos.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Dr. José Gerardo Oviedo Ortega",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/96c299/96c29965d0616b14dad30378edfddeb5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Sur 136 No. 116-101,"
+    },
+    {
+      "full": "Sur 136 116,"
+    },
+    {
+      "full": "Sur 136 No. 116-101,"
+    },
+    {
+      "full": "Sur 136 116,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-gerardo-oviedo-ortega/ginecologo/alvaro-obregon#address-id=98993&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:22:48.874Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__jos__gerardo_oviedo_ortega.webp"
+}

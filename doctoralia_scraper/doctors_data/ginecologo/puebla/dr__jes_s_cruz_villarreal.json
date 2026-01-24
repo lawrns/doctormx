@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jesús Cruz Villarreal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 13,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8de29e/8de29e03ad7d24ffb677fd45c620e6db_220_square.jpg",
+  "about": "Licenciatura de médico cirujano y partero por la Universidad Autónoma de Nuevo León Especialidad en ginecología y obstetricia por la Benemérita Universidad Autónoma de Puebla. Diplomado en Endocrinología ginecológica por la Universidad de las Américas Puebla.",
+  "addresses": [
+    {
+      "full": "Periférico Ecológico 3507, Reserva Territorial Atlixcáyotl, Tlaxcalancingo Hospital MAC,"
+    },
+    {
+      "full": "Periférico Ecológico 3507, Reserva Territorial Atlixcáyotl, Tlaxcalancingo Hospital MAC,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-cruz-villarreal/ginecologo/san-andres-cholula#address-id=416488&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:13:09.960Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__jes_s_cruz_villarreal.webp"
+}

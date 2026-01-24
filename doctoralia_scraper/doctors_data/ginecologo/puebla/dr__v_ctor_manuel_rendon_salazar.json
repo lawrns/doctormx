@@ -1,0 +1,52 @@
+{
+  "name": "Dr. Víctor Manuel Rendon Salazar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/76fc95/76fc956bf9f7ecac1eaab74062f04156_220_square.jpg",
+  "about": "Estudie medicina general en la Benemérita Universidad Autónoma de Puebla posteriormente realizó la especialidad médica en el Hospital de la Mujer Puebla, avalado por la misma Universidad, certificado por el Consejo Mexicano de Ginecología y Obstetricia, cuento con diplomado de colposcopia y patología del tracto genital inferior avalado por el colegio de colposcopistas del Estado de Puebla, diplomado en Ginecología láser Co2, actualmente cursando diplomado en ultrasonido obstétrico impartido por la Medicina Fetal México Education avalado por la Universidad de Queretaro, continuamos con el compromiso de ser mejor cada día para atender a nuestras. pacientes con calidez y calidad",
+  "addresses": [
+    {
+      "full": "IGNACIO ZARAGOZA 4,"
+    },
+    {
+      "full": "8 PONIENTE NUMERO 307 CONSULTORIO 9,"
+    },
+    {
+      "full": "IGNACIO ZARAGOZA 4,"
+    },
+    {
+      "full": "8 PONIENTE NUMERO 307 CONSULTORIO 9,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Control prenatal",
+      "price": "• $500"
+    },
+    {
+      "name": "Primera visita Medicina General",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $500"
+    },
+    {
+      "name": "Consulta de Urgencias",
+      "price": "• Desde $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victor-manuel-rendon-salazar/ginecologo/san-juan-amecac#address-id=459461&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:13:45.984Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__v_ctor_manuel_rendon_salazar.webp"
+}

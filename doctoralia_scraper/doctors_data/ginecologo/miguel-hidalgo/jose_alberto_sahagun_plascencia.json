@@ -1,0 +1,31 @@
+{
+  "name": "Jose Alberto Sahagun Plascencia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bcbaed/bcbaed8921f55a43b7b7ca2dee32b770_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Homero, 109 - 204,"
+    },
+    {
+      "full": "Ejercito Nacional 613,"
+    },
+    {
+      "full": "Homero, 109 - 204,"
+    },
+    {
+      "full": "Ejercito Nacional 613,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-alberto-sahagun-plascencia-2/ginecologo/miguel-hidalgo#address-id=76873&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:43:33.421Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/jose_alberto_sahagun_plascencia.webp"
+}

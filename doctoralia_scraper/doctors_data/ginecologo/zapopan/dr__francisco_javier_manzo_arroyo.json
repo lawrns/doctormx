@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Francisco Javier Manzo Arroyo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 149,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f37e43/f37e4361d0ca71f7383751b7ff03911c.jpg",
+  "about": "Soy un médico certificado en la especialidad de Ginecología-Obstetricia, cuento con el conocimiento y experiencia necesarios para brindar el acompañamiento adecuado a mis pacientes durante su embarazo, así como prevenir, atender y resolver las posibles complicaciones derivadas del mismo, ofreciendo tratamientos actualizados y novedosos enfocados en el presente que viven las mujeres en nuestro país. Además, cuento con la basta experiencia para el diagnostico y tratamiento de las alteraciones ginecológicas que aquejan a mis pacientes, así como consejería para lactancia materna y métodos de planificación familiar. Siempre con el objetivo de que la atención se otorgue con la calidad y calidez que mis pacientes se merecen. Egresado de la Universidad de Guadalajara LAMAR, 1er lugar como médico General. Especialidad de Ginecología y Obstetricia en la UMAE-CMNNO. Médico adscrito al servicio de Embarazo de alto riesgo de la Unidad Médica de Alta Especialidad CMNO (2019) Certificado por el consejo de ginecología y obstetricia de México (2020)",
+  "addresses": [
+    {
+      "full": "Av. Niño Obrero 1538, Chapalita Oriente, Zapopan Jalisco,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $650"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $750"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-javier-manzo-arroyo/ginecologo/zapopan#address-id=387563&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:09:19.074Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__francisco_javier_manzo_arroyo.webp"
+}

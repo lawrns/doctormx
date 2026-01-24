@@ -1,0 +1,37 @@
+{
+  "name": "Rosa Erika Deyanira Reyes Gonzalez Roa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 122,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/24029160/24029160-cd1f-4d08-9f13-c7b94f5dfbea_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Diaz Ordaz 3600,"
+    },
+    {
+      "full": "C. 2 A 1350,"
+    },
+    {
+      "full": "Blvd. Gustavo Diaz Ordaz 640,"
+    },
+    {
+      "full": "Blvd. Diaz Ordaz 3600,"
+    },
+    {
+      "full": "C. 2 A 1350,"
+    },
+    {
+      "full": "Blvd. Gustavo Diaz Ordaz 640,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-erika-deyanira-reyes-gonzalez-roa/ginecologo/tijuana#address-id=175729&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:05:46.753Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/rosa_erika_deyanira_reyes_gonzalez_roa.webp"
+}

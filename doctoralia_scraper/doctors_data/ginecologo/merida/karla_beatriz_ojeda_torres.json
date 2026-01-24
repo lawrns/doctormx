@@ -1,0 +1,31 @@
+{
+  "name": "Karla Beatriz Ojeda Torres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 255,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2cd01a/2cd01a52fb2946f36f08a6e729b9fe63_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "54 X 33 A P Ponce 365,"
+    },
+    {
+      "full": "Av. Itzaes X 59 Y 59A 499 A,"
+    },
+    {
+      "full": "54 X 33 A P Ponce 365,"
+    },
+    {
+      "full": "Av. Itzaes X 59 Y 59A 499 A,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-beatriz-ojeda-torres/ginecologo/merida#address-id=203099&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:51:05.720Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/karla_beatriz_ojeda_torres.webp"
+}

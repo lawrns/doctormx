@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Fernanda Gutierrez Sanchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c20880/c20880339753f6a27867d0339f20a326_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Guadalajara 1 ,"
+    },
+    {
+      "full": "Guadalajara 1 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernanda-gutierrez-sanchez/ginecologo/guadalajara#address-id=492492&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:32:31.521Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__fernanda_gutierrez_sanchez.webp"
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Dr. Adrian Guerrero Cruz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 64,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d3debfcb/d3debfcb-f3c1-490e-b0a6-26990ffa0e97_small_square.jpg",
+  "about": "Soy médico especialista en Ginecología y Obstetricia; mi formación como médico cirujano la realicé en la Universidad Nacional Autónoma de México y posteriormente especialidad en Ginecología y Obstetricia en el Hospital Juárez de México, avalado por la misma universidad. Tengo formación complementaria en colposcopía y patología de tracto genital inferior, diplomado en Láser y ginecología regenerativa avalados por la UNAM, diplomado en ultrasonido obstétrico y ginecológico avalado por la Universidad La Salle, así mismo cuento con certificación vigente ante el Consejo Mexicano de Ginecología y Obstetricia y soy miembro colegiado titular del Colegio Mexicano de Especialistas en Ginecología y Obstetricia A.C. (COMEGO). Actualmente desempeño mi práctica profesional en sector público como adscrito del servicio de ginecología y obstetricia en el Centro Médico Nacional \"La Raza\" y también en sector privado. Mi enfoque se centra en ofrecer una atención integral, personalizada y empática, utilizándo las ultimas innovaciones médicas para garantizar el bienestar y la confianza de mis pacientes. Mi compromiso es brindar excelencia en cada consulta, priorizando siempre tu salud y tranquilidad.",
+  "addresses": [
+    {
+      "full": "Avenida Benito Juárez no. 103,"
+    },
+    {
+      "full": "Tehuantepec 251, Colonia Roma Sur, Ciudad de México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $400"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $2,500"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": "• $4,000"
+    },
+    {
+      "name": "Colocación de DIU T de Plata",
+      "price": "• $2,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adrian-guerrero-cruz-2/ginecologo/tlalnepantla-de-baz2#address-id=575097&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:02:06.769Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__adrian_guerrero_cruz.webp"
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Dra. Wendy Belen Castro Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/00bdf3d0/00bdf3d0-4fb8-412d-96d7-243ecb4a80ac_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Pta. De Hierro 5150,"
+    },
+    {
+      "full": "Av. Homero 70,"
+    },
+    {
+      "full": "Av. Hidalgo 1911,"
+    },
+    {
+      "full": "Blvd. Pta. De Hierro 5150,"
+    },
+    {
+      "full": "Av. Homero 70,"
+    },
+    {
+      "full": "Av. Hidalgo 1911,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/wendy-belen-castro-hernandez/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:33:04.646Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__wendy_belen_castro_hernandez.webp"
+}

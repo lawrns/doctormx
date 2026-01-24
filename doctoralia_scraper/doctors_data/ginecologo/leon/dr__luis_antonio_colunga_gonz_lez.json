@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Luis Antonio Colunga González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 432,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5aff7c/5aff7c93716e1f020e3198896b6e014f_220_square.jpg",
+  "about": "La visita al Ginecólogo debe ser sin prisas y sin miedos. Durante la entrevista médica, me gusta explicar en términos sencillos para que las pacientes y sus familiares comprendan la naturaleza del padecimiento, y al mismo tiempo, resuelvo todas las dudas que puedan surgir, porque desde siempre he tenido la convicción de que un paciente informado y sin dudas, seguirá las indicaciones médicas con mas apego al tratamiento, y eso es pilar fundamental para el completo bienestar de la paciente. También es importante hacer notar que los estudios y tratamientos se apegan a las Normas oficiales Mexicanas y a las Guías de práctica clínica, buscando ofrecer lo mejor a las pacientes con el menor riesgo posible y siempre pensando en su bienestar.",
+  "addresses": [
+    {
+      "full": "Niebla 105,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Medicina General",
+      "price": "• $700"
+    },
+    {
+      "name": "Cesárea",
+      "price": "• $30,000"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $800"
+    },
+    {
+      "name": "Remoción de verrugas por VPH",
+      "price": "• Desde $2,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-antonio-colunga-gonzalez/ginecologo-medico-general/leon#address-id=365208&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:25:42.175Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__luis_antonio_colunga_gonz_lez.webp"
+}

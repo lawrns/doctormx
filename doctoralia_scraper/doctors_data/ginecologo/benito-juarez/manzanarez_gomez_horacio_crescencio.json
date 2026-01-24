@@ -1,0 +1,25 @@
+{
+  "name": "Manzanarez Gomez Horacio Crescencio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 928,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/63ec0d/63ec0d562c51ec9101b282ca28d54955_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Gabriel Ramos Millán 128 Col. Periodista ,"
+    },
+    {
+      "full": "Gabriel Ramos Millán 128 Col. Periodista ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manzanarez-gomez-horacio-crescencio/ginecologo/benito-juarez#address-id=358882&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:18:14.753Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/manzanarez_gomez_horacio_crescencio.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Ibarra Sergio Minakata",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/38870de9/38870de9-581d-4888-8169-e780041a216e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Justo Sierra 2135,"
+    },
+    {
+      "full": "Justo Sierra 2135,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ibarra-sergio-minakata/ginecologo/guadalajara#address-id=46858&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:39:02.120Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__ibarra_sergio_minakata.webp"
+}

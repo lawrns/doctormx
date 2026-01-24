@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Norma Patricia Trejo Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 764,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/15f0c0/15f0c07e6023ee01f68dc304b0589eb7.jpg",
+  "about": "Médico Cirujano: Universidad Autónoma del Estado de Hidalgo, 2007 Especialista en Medicina: Ginecología y Obstetricia/UNAM 2013 Máster en Reproducción Humana, Universidad de Valencia España y por el Instituto Valenciano de Infertilidad (IVI), 2017. Diplomado en Colposcopía y Tracto Genital Inferior, UNAM Certificada por el Consejo Mexicano de Ginecología y Obstetricia (COMEGO) Miembro del Colegio Mexicano de Ginecológos dedicados a la Colposcopia AC (COMEGIC) Miembro de la Federación Mexicana de Colegios de Ginecología y Obstetricia, A, C (FEMECOG) Miembro de la Sociedad Médica del Grupo Angeles Secretario del Colegio de Ginecología y Obstetricia de Querétaro, periodo comprendido 2014-2015",
+  "addresses": [
+    {
+      "full": "Tuxpan,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de los quistes y de los tumores complejos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/norma-patricia-trejo-gonzalez-2/ginecologo/ciudad-de-mexico#address-id=2390&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:03:39.411Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__norma_patricia_trejo_gonzalez.webp"
+}

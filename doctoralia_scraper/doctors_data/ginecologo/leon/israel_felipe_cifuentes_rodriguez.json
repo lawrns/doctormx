@@ -1,0 +1,25 @@
+{
+  "name": "Israel Felipe Cifuentes Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 31,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/052ea9/052ea99b3f72221611fcf1b9aab18d46_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Aquiles Serdan 646,"
+    },
+    {
+      "full": "Aquiles Serdan 646,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/israel-felipe-cifuentes-rodriguez/ginecologo/centro#address-id=218831&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:35:11.262Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/israel_felipe_cifuentes_rodriguez.webp"
+}

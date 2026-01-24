@@ -1,0 +1,38 @@
+{
+  "name": "Dr. Cuauhtémoc Cano Aguilar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 149,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4179b2/4179b27eee131fbd41e116c5945f3075_220_square.jpg",
+  "about": "Mi profesión como ginecólogo es mi segunda gran pasión después de mi familia. Soy graduado de la universidad popular autónoma del estado de Puebla, hice la especialidad en ginecología y obstetricia en el Hospital Español de la Ciudad de México, después hice una estancia docente en Barcelona España donde profundicé en los conocimientos y tratamientos de las diferentes patologías mamarias que aquejan a las mujeres y también obtuve experiencia y conocimientos en cirugía de mínima invasión (laparoscópica) Tengo 15 años de experiencia y Dios me ha permitido ayudar a muchas pacientes y bebés, siempre doy lo mejor de mi y mis valores y ética me han llevado a ser un referente en la ciudad de Puebla.",
+  "addresses": [
+    {
+      "full": "Avenida 5 Poniente 715-13,"
+    },
+    {
+      "full": "Avenida 5 Poniente 715-13,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cuauhtemoc-cano-aguilar/ginecologo/puebla#address-id=63377&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:12:09.437Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__cuauht_moc_cano_aguilar.webp"
+}

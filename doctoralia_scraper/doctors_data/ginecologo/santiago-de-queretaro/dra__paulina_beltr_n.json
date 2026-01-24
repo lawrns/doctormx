@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Paulina Beltrán",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 708,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/628286/6282864fe0738fd3285a030b14f00eb4_220_square.jpg",
+  "about": "Es bien sabido la importancia de tener un ginecólogo de confianza. La parte más importante de mi trabajo es estar que esté contigo en las diferentes etapas de tu vida con tus cambios físicos, hormonales y emocionales y que pueda darte la mejor asesoría para vivirlas con salud, desde tu cambios en la adolescencia hasta posterior a la menopausia. Mi misión es generar confianza desde la primera consulta no sólo para conocer tus síntomas sino para conocerte y que tengas la seguridad de poder resolver todas esas dudas que no siempre nos atrevemos a preguntar con respecto a nuestra salud reproductiva. Me caracterizo por ser un médico con alto valor humanístico y sensible para estar sintonía contigo.",
+  "addresses": [
+    {
+      "full": "Calle Privada Ignacio Zaragoza 16,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paulina-beltran-2/ginecologo/santiago-de-queretaro#address-id=258777&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:43:50.600Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__paulina_beltr_n.webp"
+}

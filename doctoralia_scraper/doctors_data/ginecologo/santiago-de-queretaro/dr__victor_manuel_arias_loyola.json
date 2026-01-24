@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Victor Manuel Arias Loyola",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 863,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/db8ebb/db8ebb6bb2d90f8ef70a9dbe7e4cab0b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Prol. Privada Ignacio Zaragoza 16-A,"
+    },
+    {
+      "full": "Prol. Privada Ignacio Zaragoza 16-A, (Hospital Médica Tec 100, Torre II, Piso 8 Consultorio 3),"
+    },
+    {
+      "full": "Prol. Privada Ignacio Zaragoza 16-A,"
+    },
+    {
+      "full": "Prol. Privada Ignacio Zaragoza 16-A, (Hospital Médica Tec 100, Torre II, Piso 8 Consultorio 3),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victor-manuel-arias-loyola/ginecologo/santiago-de-queretaro#address-id=26369&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:52:49.627Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__victor_manuel_arias_loyola.webp"
+}

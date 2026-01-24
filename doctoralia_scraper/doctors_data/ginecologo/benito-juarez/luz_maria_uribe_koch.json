@@ -1,0 +1,37 @@
+{
+  "name": "Luz Maria Uribe Koch",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 281,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6e48c1/6e48c1b8550bfa8505b49d618d760b82_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Sur 71 117,"
+    },
+    {
+      "full": "Av. Angel De La Independencia S/N,"
+    },
+    {
+      "full": "Av. Tlahuac 1004,"
+    },
+    {
+      "full": "Sur 71 117,"
+    },
+    {
+      "full": "Av. Angel De La Independencia S/N,"
+    },
+    {
+      "full": "Av. Tlahuac 1004,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luz-maria-uribe-koch/ginecologo/iztapalapa#address-id=197979&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:15:58.488Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/luz_maria_uribe_koch.webp"
+}

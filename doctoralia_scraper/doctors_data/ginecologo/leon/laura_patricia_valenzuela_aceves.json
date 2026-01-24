@@ -1,0 +1,25 @@
+{
+  "name": "Laura Patricia Valenzuela Aceves",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 368,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5f0bce/5f0bce4fc831917fcf62b9b027071c16_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Manantial 103, int. 10-C,"
+    },
+    {
+      "full": "Manantial 103, int. 10-C,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-patricia-valenzuela-aceves/ginecologo/leon#address-id=105636&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:38:41.232Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/laura_patricia_valenzuela_aceves.webp"
+}

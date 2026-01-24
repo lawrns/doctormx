@@ -1,0 +1,90 @@
+{
+  "name": "Dra. Eva Mariana Flores Rosas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 14,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5306a687/5306a687-8591-4162-8316-9c556c754763_small_square.jpg",
+  "about": "Médico Cirujano General Universidad Autónoma del Estado de Hidalgo Especialista en Ginecología y Obstetricia en el Hospital de la Mujer Universidad Nacional Autónoma de México Cirugía Endoscópica Ginecológica en el Hospital General de México Eduardo Liceaga Universidad Nacional Autónoma de México Biología de la Reproducción Humana Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán",
+  "addresses": [
+    {
+      "full": "Tuxpan 6,"
+    },
+    {
+      "full": "Calle Gobernador Gregorio V. Gelati 33,"
+    },
+    {
+      "full": "José María Morelos Oriente 102,"
+    },
+    {
+      "full": "Tuxpan 6,"
+    },
+    {
+      "full": "Calle Gobernador Gregorio V. Gelati 33,"
+    },
+    {
+      "full": "José María Morelos Oriente 102,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Biología de la reproducción",
+      "price": ""
+    },
+    {
+      "name": "Miomectomía",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biología de la reproducción",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $3,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biología de la reproducción",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $3,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eva-mariana-flores-rosas/ginecologo/tulancingo#address-id=481833&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:05:05.834Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__eva_mariana_flores_rosas.webp"
+}

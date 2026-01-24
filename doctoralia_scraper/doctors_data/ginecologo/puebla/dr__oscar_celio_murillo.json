@@ -1,0 +1,37 @@
+{
+  "name": "Dr. Oscar Celio Murillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e65d76/e65d7607296bb156698e8b3177fa975b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 2 Pte. 101,"
+    },
+    {
+      "full": "31 Pte. 1418,"
+    },
+    {
+      "full": "2 Poniente 101 Pb,"
+    },
+    {
+      "full": "C. 2 Pte. 101,"
+    },
+    {
+      "full": "31 Pte. 1418,"
+    },
+    {
+      "full": "2 Poniente 101 Pb,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/oscar-celio-murillo/ginecologo/tehuacan#address-id=182832&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:17:32.718Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__oscar_celio_murillo.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Miguel Martinez Esparza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 82,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/63b088/63b088f8506ecdaf2d31768d3bab9a77_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Mexico Num Ext 2490 Col Ladron De Guevara,"
+    },
+    {
+      "full": "Av Mexico Num Ext 2490 Col Ladron De Guevara,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-martinez-esparza/ginecologo/guadalajara#address-id=118932&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:35:04.365Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__miguel_martinez_esparza.webp"
+}

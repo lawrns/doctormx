@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Alejandra Robles Salmán",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 151,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/1043372a/1043372a-7449-4eab-8478-77a7ed6ef556_small_square.jpg",
+  "about": "Soy la Dra. Alejandra Robles Salmán, ginecóloga y obstetra egresada de la BUAP, con fellow en Biología de la reproducción y técnicas de reproducción asistida. Puedo ofrecerte desde un acompañamiento en el cuidado de la salud de la mujer sana, embarazo, patologías en la mujer, así como ayudarte a cumplir tu sueño de tener una familia.",
+  "addresses": [
+    {
+      "full": "Manantial 607,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $750"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $750"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-robles-salman/ginecologo/leon#address-id=491771&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:26:58.259Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__alejandra_robles_salm_n.webp"
+}

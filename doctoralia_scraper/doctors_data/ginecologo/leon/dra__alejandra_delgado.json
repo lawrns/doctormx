@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Alejandra Delgado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 305,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7c3995/7c3995dde52f2d5b70c7684629b05da8_220_square.jpg",
+  "about": "Especialista en el cuidado integral de la mujer, en cada una de sus etapas de vida, me encargo de ayudarte a prevenir, tratar enfermedades y complicaciones, así como orientarte de manera profesional en tu toma de decisiones. Como mujer entiendo el miedo y pudor que nos dan las visitas al ginecólogo, por lo que en mi consulta encontrarás un lugar seguro, confidencial, empático y respetuoso. Es tu espacio de confianza y trataré de que te sientas lo más cómoda posible. Mi camino hasta aquí ha sido lleno de retos pero sobre todo de satisfacciones, veo en mi profesión el privilegio de poder ayudar a mis pacientes, acompañarlas durante su proceso, ofrecerles una explicación clara y resolver sus dudas. Me sigo dejando sorprender por el milagro de la vida, me gusta cuidar de cada embarazo de manera personalizada, mi objetivo es traer al mundo un bebé sano con mamá sana, estoy a favor de los nacimientos respetados y soy pro-lactancia. Agenda una cita conmigo, con gusto te atenderé.",
+  "addresses": [
+    {
+      "full": "Avenida León Norte 508,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $400"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-delgado/ginecologo/leon#address-id=419459&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:26:10.844Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__alejandra_delgado.webp"
+}

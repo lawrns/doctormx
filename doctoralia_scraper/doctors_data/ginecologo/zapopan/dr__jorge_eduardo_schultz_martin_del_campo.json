@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jorge Eduardo Schultz Martin Del Campo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c74066/c7406622abf94d6ab8265e20dad2a6ed_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Toltecas 3597,"
+    },
+    {
+      "full": "Toltecas 3597,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-eduardo-schultz-martin-del-campo/ginecologo/guadalajara#address-id=214258&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:31:06.519Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jorge_eduardo_schultz_martin_del_campo.webp"
+}

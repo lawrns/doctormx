@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jorge Luis Lezama Ruvalcaba",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 153,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/05ee8f/05ee8f608b8685594970cb2ca2e009de_220_square.jpg",
+  "about": "Soy Médico egresado de la Universidad La Salle, con especialidad en Ginecología y Obstetricia abarcando patologías enfocadas en la mujer en todas sus etapas desde la adolescencia hasta la menopausia, además del control del embarazo y su descenlace. Así mismo cuento con subepecialidad en Biología de la Reproducción Humana, enfocando los problemas reproductivos en parejas que no pueden lograr el embarazo y así mismo en técnicas de Reproducción y cirugía de mínima invasión en ginecología como es la cirugia laparoscopica y la histeroscopia.",
+  "addresses": [
+    {
+      "full": "Avenida Ejército Nacional 613, Polanco Hospital Español,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-luis-lezama-ruvalcaba/ginecologo/ciudad-de-mexico#address-id=361372&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:02:00.077Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__jorge_luis_lezama_ruvalcaba.webp"
+}

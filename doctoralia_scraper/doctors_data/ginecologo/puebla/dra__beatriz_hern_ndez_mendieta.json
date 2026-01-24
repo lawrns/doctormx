@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Beatriz Hernández Mendieta",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 227,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/21cbfd/21cbfd251a89876f6057c08691532084_220_square.jpg",
+  "about": "Médico Cirujano por la Benemérita Universidad Autónoma de Puebla. Posterior, egresada de la Universidad Nacional Autónoma de México, para la especialidad en Ginecología y Obstetricia así como la subespecialidad en Biología de la Reproducción Humana. Mi objetivo al ponerme al servicio de las pacientes, es utilizar mis habilidades para prevenir, diagnosticar y tratar los padecimientos en el campo de la infertilidad, endocrinología ginecológica, así como ginecología y obstetricia. Para poder brindar una atención adecuada y así mejorar su calidad de vida, dando la posibilidad de lograr un embarazo y llevar un recién nacido sano a casa.",
+  "addresses": [
+    {
+      "full": "Blvd Atlixcáyotl #1499-A interior 13 Torre A Edificio Valcob,"
+    },
+    {
+      "full": "Blvd Atlixcáyotl #1499-A interior 13 Torre A Edificio Valcob,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/beatriz-hernandez-mendieta/ginecologo/puebla#address-id=394749&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:11:38.422Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__beatriz_hern_ndez_mendieta.webp"
+}

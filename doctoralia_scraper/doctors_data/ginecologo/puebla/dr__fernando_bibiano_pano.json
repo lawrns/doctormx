@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Fernando Bibiano Pano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 717,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/38803f/38803f2d2e6f38ec495fbd8fda8ac147_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "5 Sur 3508,"
+    },
+    {
+      "full": "C. 13 Sur 1905,"
+    },
+    {
+      "full": "5 Sur 3508,"
+    },
+    {
+      "full": "C. 13 Sur 1905,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-bibiano-pano/ginecologo/puebla#address-id=228396&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:22:02.149Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__fernando_bibiano_pano.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Jose Exaltacion Gongora Lara",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/544bdd/544bdda72c4c590c2e4bd7f432e7edac_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 87 X 62 Y 64 501,"
+    },
+    {
+      "full": "C. 56 434,"
+    },
+    {
+      "full": "C. 87 X 62 Y 64 501,"
+    },
+    {
+      "full": "C. 56 434,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-exaltacion-gongora-lara/ginecologo/merida#address-id=210965&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:46:32.407Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/jose_exaltacion_gongora_lara.webp"
+}

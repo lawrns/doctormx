@@ -1,0 +1,25 @@
+{
+  "name": "Samuel Ortiz Miranda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 648,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5baec5/5baec591d9371143109ce625c6cd4226_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Via De La Juventud 8800,"
+    },
+    {
+      "full": "Via De La Juventud 8800,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/samuel-ortiz-miranda/ginecologo/tijuana#address-id=164799&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:06:09.714Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/samuel_ortiz_miranda.webp"
+}

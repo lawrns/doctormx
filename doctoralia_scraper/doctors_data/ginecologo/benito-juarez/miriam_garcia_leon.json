@@ -1,0 +1,43 @@
+{
+  "name": "Miriam Garcia Leon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 44,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e540af/e540af94779fbf61006cbae8f70295e8_220_square.jpg",
+  "about": "Médico especialista en Ginecología y Obstetricia, certificada por El Consejo Mexicano de Ginecología y Obstetricia. Me gusta brindar una atención con profesionalismo y calidad humana. Me especializo en consultas relacionadas a la salud de la mujer en sus diferentes etapas de vida, control prenatal, orientación sobre métodos de planificación familiar y colocación de métodos anticonceptivos, detección y prevención del virus del papiloma humano (VPH), vacunación contra el VPH, enfermedad benigna de mama, síndrome de ovario poliquístico, dismenorrea, entre otras.",
+  "addresses": [
+    {
+      "full": "Sinaloa #149, Int. 304, Roma Norte, Cuauhtémoc,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $950"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $950"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $950"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $950"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miriam-garcia-leon/ginecologo/ciudad-de-mexico#address-id=485948&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:03:36.722Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/miriam_garcia_leon.webp"
+}

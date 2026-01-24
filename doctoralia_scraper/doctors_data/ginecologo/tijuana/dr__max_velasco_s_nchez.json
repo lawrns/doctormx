@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Max Velasco Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 29,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dfaae4/dfaae49fe508e32034da446ba0e8036a_220_square.jpg",
+  "about": "Los seguros solo aplican para procedimientos a realizar.",
+  "addresses": [
+    {
+      "full": "Blvd. Insurgentes 200-d,"
+    },
+    {
+      "full": "Blvd. Insurgentes 200-d,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/max-velasco-sanchez/ginecologo/tijuana#address-id=1238&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:44:02.099Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__max_velasco_s_nchez.webp"
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Germán Delgadillo Espejo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f3d754/f3d7546af8077a7515472cffddb19e38_220_square.jpg",
+  "about": "Medico cirujano y partero con título y cédula profesional obtenido por la U.deG. Especialista en Ginecología y Obstetricia con título y cédula profesional. Certificado por el Consejo Mexicano de Ginecología y Obstetricia. Diplomado en Colposcopia y Patología del Tracto Genital Inferior. Experiencia en cirugías ginecológicas y atención de embarazo con partos o cesáreas por más de 9 años en medio privado. La mejor atención con el mejor equipo multidisciplinario.",
+  "addresses": [
+    {
+      "full": "Calle Ignacio Herrera y Cairo 2604, Circunvalación Vallarta, C.P. 44680,"
+    },
+    {
+      "full": "Calle Ignacio Herrera y Cairo 2604, Circunvalación Vallarta, C.P. 44680,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/german-delgadillo-espejo/ginecologo/guadalajara#address-id=3058&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:17:47.209Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__germ_n_delgadillo_espejo.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Adrian Velazquez Barragan",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 677,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c0fa83/c0fa8332456d314c980e2d7ebf72856b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Sebastian Bach 5064,"
+    },
+    {
+      "full": "Bethoveen 2130,"
+    },
+    {
+      "full": "Sebastian Bach 5064,"
+    },
+    {
+      "full": "Bethoveen 2130,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adrian-velazquez-barragan/ginecologo/zapopan#address-id=251396&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:41:05.776Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/adrian_velazquez_barragan.webp"
+}

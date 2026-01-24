@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Rosa Elena Pech Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/60d915/60d91598819ff98d2c2d5115dac5bf30_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "26 Por 15 Y 17 717,"
+    },
+    {
+      "full": "Calle 26 199,"
+    },
+    {
+      "full": "26 X 15 Y 7 Nâ° 199 Consult 719,"
+    },
+    {
+      "full": "Calle 26 No 199 X 15 Y 7,"
+    },
+    {
+      "full": "26 Por 15 Y 17 717,"
+    },
+    {
+      "full": "Calle 26 199,"
+    },
+    {
+      "full": "26 X 15 Y 7 Nâ° 199 Consult 719,"
+    },
+    {
+      "full": "Calle 26 No 199 X 15 Y 7,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-elena-pech-hernandez-2/ginecologo-nefrologo/merida#address-id=7479&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:46:00.921Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__rosa_elena_pech_hernandez.webp"
+}

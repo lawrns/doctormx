@@ -1,0 +1,37 @@
+{
+  "name": "Areli Reyes Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d0760e22/d0760e22-b07d-444a-9e55-fe8f08c85ea4_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Escolta 45,"
+    },
+    {
+      "full": "Priv. Las Ramblas 4,"
+    },
+    {
+      "full": "5 Ote 1213,"
+    },
+    {
+      "full": "Escolta 45,"
+    },
+    {
+      "full": "Priv. Las Ramblas 4,"
+    },
+    {
+      "full": "5 Ote 1213,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/areli-reyes-gonzalez/ginecologo/ciudad-de-mexico#address-id=244977&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:36:00.983Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/areli_reyes_gonzalez.webp"
+}

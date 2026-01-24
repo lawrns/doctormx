@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Miguel Angel Frausto Velazquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ca055982/ca055982-eaa4-4efe-a95b-f7132cfaded1_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Panorama 205,"
+    },
+    {
+      "full": "Ave. Panorama 205,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-frausto-velazquez-2/ginecologo/leon#address-id=36485&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:30:09.412Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__miguel_angel_frausto_velazquez.webp"
+}

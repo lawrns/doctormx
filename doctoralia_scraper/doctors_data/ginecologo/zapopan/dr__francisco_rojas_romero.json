@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Francisco Rojas Romero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 253,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7d37ab/7d37ab0da8a9ea8f4d11c5d9f744c53d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Empresarios 150,"
+    },
+    {
+      "full": "Av. Empresarios 150,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-rojas-romero/ginecologo/zapopan",
+  "scrapedAt": "2026-01-22T04:33:03.308Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__francisco_rojas_romero.webp"
+}

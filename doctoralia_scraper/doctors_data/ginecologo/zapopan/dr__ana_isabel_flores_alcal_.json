@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Ana Isabel Flores Alcalá",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d6b013e7/d6b013e7-278d-4297-bdbf-eb5d36d16663_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Manuel Acuña 827,"
+    },
+    {
+      "full": "Manuel Acuña 827,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-isabel-flores-alcala/ginecologo/guadalajara#address-id=70082&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:28:33.445Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__ana_isabel_flores_alcal_.webp"
+}

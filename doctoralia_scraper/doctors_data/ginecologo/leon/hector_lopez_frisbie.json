@@ -1,0 +1,25 @@
+{
+  "name": "Hector Lopez Frisbie",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 275,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0744bd/0744bd4ac5c6d38b7dc6ff1391083d69_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Cerro Gordo 311, Lomas Del Campestre Col Cp,,"
+    },
+    {
+      "full": "Av Cerro Gordo 311, Lomas Del Campestre Col Cp,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-lopez-frisbie/ginecologo/leon#address-id=116788&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:33:19.532Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/hector_lopez_frisbie.webp"
+}

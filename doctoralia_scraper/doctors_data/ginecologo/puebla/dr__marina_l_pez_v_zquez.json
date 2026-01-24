@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Marina López Vázquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/651610/651610d72d173b5861496a5797e31f03_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. 11 Oriente 1817 103 103,"
+    },
+    {
+      "full": "Ave. 11 Oriente 1817 103 103,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marina-lopez-vazquez/ginecologo/puebla#address-id=67229&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:15:16.621Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__marina_l_pez_v_zquez.webp"
+}

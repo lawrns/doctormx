@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Daniel Martinez Rocha",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 15,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/06ad03/06ad0377ffa3a723c812c076b5c45477_220_square.jpg",
+  "about": "Soy un médico especialista en ginecología y obstetricia, formado en una de las mejores instituciones de la república, con los mas altos estanderes en atención de las diferentes patologías que presenta una mujer durante su vida, desde dolor al mentruar, trastornos en la menstruación, miomatosis, endometriosis, pólipos, así como atención preconcepcional, control prenatal, control de embarazos, atención de partos, cesáreas, legrados y experto en control de hemorragias. con disposición para una atención cálida y humana.",
+  "addresses": [
+    {
+      "full": "Calzada de Tlalpan 1220,"
+    },
+    {
+      "full": "Calzada de Tlalpan 1220,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniel-martinez-rocha/ginecologo/benito-juarez#address-id=90389&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:07:56.165Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__daniel_martinez_rocha.webp"
+}

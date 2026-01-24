@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Lizeth Jazmín Cortés Galdean",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 385,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0b58ea/0b58ea67f158548ca921451f5a81a903_220_square.jpg",
+  "about": "Ginecóloga especializada en atención de parto, cesárea, amenaza de aborto, ausencia de la menstruación, atención de embarazo de alto riesgo. Cirugia de mínima invasion. Toma de Papanicolaou, realización de colposcopia. Mi número de colegiado: 8630604.",
+  "addresses": [
+    {
+      "full": "DEL PRADO MEDICAL TOWER 4083,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lizeth-jazmin-cortes-galdean/ginecologo/tijuana#address-id=130309&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:40:13.827Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__lizeth_jazm_n_cort_s_galdean.webp"
+}

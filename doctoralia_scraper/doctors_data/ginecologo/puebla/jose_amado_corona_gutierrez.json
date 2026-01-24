@@ -1,0 +1,25 @@
+{
+  "name": "Jose Amado Corona Gutierrez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2a621b/2a621b62b230b0dcbbe20b18eff656cf_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Plutarco Elias Calles 16,"
+    },
+    {
+      "full": "Plutarco Elias Calles 16,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-amado-corona-gutierrez/ginecologo/puebla#address-id=162309&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:28:30.947Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/jose_amado_corona_gutierrez.webp"
+}

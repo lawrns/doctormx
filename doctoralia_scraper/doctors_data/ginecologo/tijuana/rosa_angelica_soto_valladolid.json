@@ -1,0 +1,25 @@
+{
+  "name": "Rosa Angelica Soto Valladolid",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 80,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/54dea4/54dea456ec4599160082d76e4276169f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Paseo De Los Heroes Num Ext 10999 Num Int 805 Zona Rio,"
+    },
+    {
+      "full": "Av. Paseo De Los Heroes Num Ext 10999 Num Int 805 Zona Rio,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-angelica-soto-valladolid/ginecologo/tijuana#address-id=119837&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:24:51.079Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/rosa_angelica_soto_valladolid.webp"
+}

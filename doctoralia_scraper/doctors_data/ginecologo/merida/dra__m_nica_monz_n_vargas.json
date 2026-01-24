@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Mónica Monzón Vargas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 631,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6ce73c/6ce73cc0801040c5d06e52235743b805_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Itzáes 489,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $650"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": "• $6,500"
+    },
+    {
+      "name": "Colocación de DIU T de Plata",
+      "price": "• $2,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/monica-monzon-vargas/ginecologo/yucatan#address-id=377850&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:30:04.833Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__m_nica_monz_n_vargas.webp"
+}

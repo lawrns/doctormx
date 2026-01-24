@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Carolina De Santiago",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6834e8/6834e8afac2b89bfaabf6f2009d286cc_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Arete #10 La Herradura,"
+    },
+    {
+      "full": "Calle Arete #10 La Herradura,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carolina-de-santiago/ginecologo/tijuana#address-id=437723&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:45:13.192Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__carolina_de_santiago.webp"
+}

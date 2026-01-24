@@ -1,0 +1,25 @@
+{
+  "name": "Luis Victoria Laborín",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 298,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d79094/d790948afe542913f762fd6ea2072a5e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Paseo Tijuana # 406, 2Do. Piso Edificio Simnsa,"
+    },
+    {
+      "full": "Av. Paseo Tijuana # 406, 2Do. Piso Edificio Simnsa,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-victoria-laborin/ginecologo/tijuana#address-id=148268&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:24:44.441Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/luis_victoria_labor_n.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Oscar Edgar Cruz Medina",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0204b7/0204b7d39e7a8107223e530fd8ab24c0_220_square.jpg",
+  "about": "Médico Especialista en Ginecología y Obstetricia, experto en las áreas de Colposcopía, Cirugía Mínima Invasiva (Laparoscopía e Histeroscopía), Cirugía Colposcópica, Menopausia y Climaterio, Embarazo de Alto Riesgo, Ultrasonido Obstétrico, Infertilidad. Egresado de la Universidad Nacional Autónoma de México (U.N.A.M.), Secretaría de Salud Cd. Mx. Atención médica de calidad y con conocimientos actualizados. Empatía y sensibilización con sus problemas de salud, trato respetuoso y humanizado. Explicación detallada sobre su enfermedad y alternativas de tratamiento. Costos accesibles.",
+  "addresses": [
+    {
+      "full": "Star Médica, Calle 26, No.199, Consultorios 827 y 828,"
+    },
+    {
+      "full": "Star Médica, Calle 26, No.199, Consultorios 827 y 828,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Miomectomía",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/oscar-edgar-cruz-medina/ginecologo/yucatan#address-id=155883&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:36:57.498Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__oscar_edgar_cruz_medina.webp"
+}

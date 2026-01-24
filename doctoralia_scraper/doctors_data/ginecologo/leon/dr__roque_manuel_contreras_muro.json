@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Roque Manuel Contreras Muro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6d9805/6d98052b9b168e44350ac1ce7733be70_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hidalgo 329,"
+    },
+    {
+      "full": "Hidalgo 329,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roque-manuel-contreras-muro/ginecologo/leon#address-id=13773&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:28:30.307Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__roque_manuel_contreras_muro.webp"
+}

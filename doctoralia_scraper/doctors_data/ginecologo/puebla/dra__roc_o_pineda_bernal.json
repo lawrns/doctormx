@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Rocío Pineda Bernal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/fb78477a/fb78477a-abec-4d92-bfaa-edaea4ea77c3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Compostela 5324,"
+    },
+    {
+      "full": "Calle Compostela 5324,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rocio-pineda-bernal/ginecologo/puebla#address-id=93857&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:14:59.934Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__roc_o_pineda_bernal.webp"
+}

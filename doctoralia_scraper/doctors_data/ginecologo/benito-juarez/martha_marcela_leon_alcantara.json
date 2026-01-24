@@ -1,0 +1,25 @@
+{
+  "name": "Martha Marcela Leon Alcantara",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 57,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/dd61983d/dd61983d-7167-4d1d-9e01-1f864c85994e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Jose Maria Vertiz 1143 Pisoo 1,"
+    },
+    {
+      "full": "Jose Maria Vertiz 1143 Pisoo 1,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martha-marcela-leon-alcantara/ginecologo/benito-juarez#address-id=124434&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:22:06.290Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/martha_marcela_leon_alcantara.webp"
+}

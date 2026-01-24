@@ -1,0 +1,25 @@
+{
+  "name": "Zaragoza Juan Manuel Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 53,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8408de/8408de4836033c56b3aab3b90662b10b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Pino Suarez 4,"
+    },
+    {
+      "full": "Pino Suarez 4,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/zaragoza-juan-manuel-hernandez/ginecologo/santiago-de-queretaro#address-id=128083&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:00:42.271Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/zaragoza_juan_manuel_hernandez.webp"
+}

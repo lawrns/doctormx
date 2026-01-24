@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Julio Macías Sandoval",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 97,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fe76a7/fe76a75d6220b2d6276c87c52c540c16.jpg",
+  "about": "Mi función como Médico Cirujano Fetal consiste en ayudarte a llevar un adecuado control prenatal en conjunto con tu médico gineco-obstetra, enfocado en la atención, la predicción, la prevención, la detección y, en algunos casos la corrección de las principales enfermedades y/o complicaciones que pueden ocurrir en cualquier momento de tu embarazo.De igual forma, te puedo ayudar a confirmar que tu bebé se encuentre en óptimas condiciones, cuente con un crecimiento adecuado para su edad gestacional, así como descartar algún defecto estructural o disrupción en su formación a lo largo del embarazo, incluyendo aquellos casos que son susceptibles de una terapia o una cirugía antes del nacimiento.En la actualidad, el feto se considera un “paciente” y, como tal, puede enfermarse durante el embarazo. En algunos casos, sólo una intervención quirúrgica realizada en tiempo y forma puede mejorar su pronóstico de vida extrauterina, intentando evitar la muerte fetal intrauterina, la muerte neonatal y las lesiones residuales en el recién nacido.",
+  "addresses": [
+    {
+      "full": "Blvd. Luis Donaldo Colosio Murrieta 106,"
+    },
+    {
+      "full": "Avenida León 428,"
+    },
+    {
+      "full": "Blvd. Luis Donaldo Colosio Murrieta 106,"
+    },
+    {
+      "full": "Avenida León 428,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Perfil biofísico fetal",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Ultrasonido avanzado de embarazo gemelar",
+      "price": "• $2,700"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Ultrasonido avanzado de embarazo gemelar",
+      "price": "• $2,700"
+    },
+    {
+      "name": "Ultrasonido avanzado de primer trimestre (semanas 11 a 14)",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Ultrasonido avanzado de segundo trimestre (semanas 18 a 24)",
+      "price": "• $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/julio-macias-sandoval-4/ginecologo/aguascalientes#address-id=561228&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:27:09.356Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__julio_mac_as_sandoval.webp"
+}

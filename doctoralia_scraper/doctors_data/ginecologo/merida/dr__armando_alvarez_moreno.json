@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Armando Alvarez Moreno",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 473,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c114ab/c114ab510c419c550238013fdeb3ece6_220_square.jpg",
+  "about": "Soy el Dr. Armando Alvarez, tengo la subespecialidad de Ginecología Oncológica, la cual se encarga de tratar el cáncer en la mujer así como las lesiones precursoras del cáncer, de igual manera soy experto en VPH. Cuento con 9 años de experiencia en el manejo de las enfermedades oncológicas de la mujer.",
+  "addresses": [
+    {
+      "full": "C. 15 501, Colonia Altabrisa,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/armando-alvarez-moreno/ginecologo-oncologico-ginecologo/yucatan#address-id=410672&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:28:38.736Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__armando_alvarez_moreno.webp"
+}

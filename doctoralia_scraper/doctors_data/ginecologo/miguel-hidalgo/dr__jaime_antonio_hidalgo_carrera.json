@@ -1,0 +1,86 @@
+{
+  "name": "Dr. Jaime Antonio Hidalgo Carrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 62,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2285b9/2285b907f7d347c1c2949a9b0dbe9a5f_220_square.jpg",
+  "about": "Certificado por el Consejo Mexicano de Ginecología y Obstetricia Ginecología y Obstetricia en el Hospital ABC Biología de la Reproducción Humana en el Hospital Español de México Cirugía Laparoscópica Avanzada en Barcelona, España y SIU MED SLU, en Estados Unidos Diplomado de Infertilidad y Endocrinología Ginecológica en Barcelona, España Permiso COFEPRIS 2409072002A00028",
+  "addresses": [
+    {
+      "full": "Avenida Ejército Nacional Mexicano 769,"
+    },
+    {
+      "full": "Carlos Graef Fernández 154,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Consulta de infertilidad",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Diagnóstico de fertilidad",
+      "price": ""
+    },
+    {
+      "name": "Endometriosis abdominal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jaime-antonio-hidalgo-carrera/ginecologo/cuajimalpa-de-morelos#address-id=437182&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:00:45.431Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__jaime_antonio_hidalgo_carrera.webp"
+}

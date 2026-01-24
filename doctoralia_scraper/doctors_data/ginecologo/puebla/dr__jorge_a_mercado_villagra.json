@@ -1,0 +1,40 @@
+{
+  "name": "Dr. Jorge A Mercado Villagra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 438,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a4c453/a4c453952171ce74f3932e0c62ca3626_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Privada de las Ramblas 4,,"
+    },
+    {
+      "full": "Privada Ramblas No. 4 consultorio 1030 Hospital Puebla Col: Concepcion Guadalupe Puebla Pue ,"
+    },
+    {
+      "full": "Privada de las Ramblas 4,,"
+    },
+    {
+      "full": "Privada Ramblas No. 4 consultorio 1030 Hospital Puebla Col: Concepcion Guadalupe Puebla Pue ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-a-mercado-villagra/ginecologo/puebla#address-id=6062&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:19:52.604Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__jorge_a_mercado_villagra.webp"
+}

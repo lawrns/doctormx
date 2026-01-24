@@ -1,0 +1,65 @@
+{
+  "name": "Dra. Verónica Noemí Reyes Santillán",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 1386,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/d2c88a42/d2c88a42-8181-49b2-b80d-7414b3146191_large.jpg",
+  "about": "Soy Verónica Reyes, especialista en Ginecología y Obstetricia, con alta Especialidad en Cirugía de Mínima Invasión Ginecológica y Colposcopia, adscrita del Centro Médico Nacional 20 de Noviembre.",
+  "addresses": [
+    {
+      "full": "Av. Insurgentes Sur 427, Colonia Condesa, Cuauhtémoc, 06100,"
+    },
+    {
+      "full": "Av. Universidad 1080,"
+    },
+    {
+      "full": "Av. Río Churubusco 601,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Check up",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Check up",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• Desde $1,100"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/veronica-noemi-reyes-santillan/ginecologo/benito-juarez#address-id=531636&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:02:16.534Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__ver_nica_noem__reyes_santill_n.webp"
+}

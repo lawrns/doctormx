@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Hugo Kaleb Encorrada Luarca",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2647,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/038c14/038c1484eb971603abe77f7545bb6902.jpg",
+  "about": "Sobre mí Soy originario de Querétaro; estudie la carrera de Médico Cirujano en la Universidad del Valle de México. Realicé mis estudios de especialidad en Ginecología y Obstetricia en La Habana, Cuba. Mantengo actualización médica para brindarte un servicio eficiente y de calidad. Mi compromiso es atender tus necesidades y resolver tu problema de salud de manera satisfactoria. Mi consulta y mi equipo Cuento con equipo de tecnología avanzada para diagnóstico y tratamiento en áreas de ginecología y obstetricia. Otros servicios Ofrezco aparte de consulta, ultrasonido pélvico ya sea vaginal o abdominal, ultrasonido mamario, colposcopia, toma de citología cervical para Papanicolaou, entre otros.",
+  "addresses": [
+    {
+      "full": "Hospital Star Médica. Consultorio 1010,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hugo-kaleb-encorrada-luarca/ginecologo/santiago-de-queretaro#address-id=25738&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:44:30.949Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__hugo_kaleb_encorrada_luarca.webp"
+}

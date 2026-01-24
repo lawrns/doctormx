@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Paola Guadalupe Santillán Loza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 206,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5d26d7/5d26d7bafbff14f780503e69dc033ab5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Hidalgo #2354 Colonia Vallarta Norte,"
+    },
+    {
+      "full": "Av. Hidalgo #2354 Colonia Vallarta Norte,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paola-guadalupe-santillan-loza/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:26:41.845Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__paola_guadalupe_santill_n_loza.webp"
+}

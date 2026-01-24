@@ -1,0 +1,52 @@
+{
+  "name": "Dra. Ana Luisa Canales Alonso",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 37,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/29f101/29f1016804eff154cf4f14d5f662398b_220_square.jpg",
+  "about": "Hola bienvenida. Soy Ana Luisa Canales Alonso, tengo 32 años de experiencia en la especialidad de Ginecología y Obstetricia y en todo lo que esta hermosa especialidad encierra. Soy egresada de la UPAEP, orgullosamente ganadora de dos cruces forjadas. Tuve la suerte de formarme profesionalmente en San Luis Potosí en mi internado de pregrado y en el hospital General de Huejotzingo mi servicio social. Dos años importantísimos para mi en mi formación medica ya que todos los sacrificios realizados en estos años me permitió entrar inmediatamente a mi especialidad en Ginecología y Obstetricia en el Hospital General \"Manuel Gea González\", en la ciudad de México. Para quien conoce de Hospitales Generales, sabe que el Gea González ha gozado de una fama muy bien ganada. Regresando de mi especialidad tuve la suerte de entrar a trabajar al Hospital General del Sur de Puebla hasta 1997 y trabaje durante 10 años en una institución medica de renombre en Puebla. Tuve la suerte de estar en el Staff medico de La Beneficencia Española. Desde 1993 me dedico a hacer lo que mas me gusta. CUIDAR DE LA SALUD DE LA MUJER EN TODOS LOS SENTIDOS. Quien me conoce sabe que amo lo que hago y que hago lo mejor que se hacer. Soy PROVIDA en todos los sentidos, me gusta tomarme el tiempo necesario para revisar a cada paciente. Me declaro CATOLICA y comprometida con la verdad y la vida. Mi consulta consta de una historia clínica completa, una exploración física completa y explicación clara y precisa de los hallazgos que encuentre en mi revisión. Cuento con la tecnología necesaria para realizar estudios complementarios y en su caso enviarlos con los especialistas necesarios. (Ultrasonido, colposcopia e histeroscopia) Además llevo 4 años descubriendo las bondades de la acupuntura que aplicándola en la consulta me ha dado excelentes resultados. Creo firmemente que la salud de la mujer es un derecho y una obligación. Que la falta de una mujer en un hogar puede hacer la diferencia. El medico ginecólogo se convierte en el confidente de sus pacientes o así debería de serlo. Por ultimo me queda solo aconsejarte que si has recibido las vacunas contra covid , acudas mas prontamente a una revisión ginecológica ya que cada día hay mas evidencia medicas de transtornos ginecológicos post vacunas. GRACIAS POR TU CONFIANZA",
+  "addresses": [
+    {
+      "full": "CALLE TEHUACAN SUR 129,"
+    },
+    {
+      "full": "C. Tehuacan Sur 129, La Paz,"
+    },
+    {
+      "full": "CALLE TEHUACAN SUR 129,"
+    },
+    {
+      "full": "C. Tehuacan Sur 129, La Paz,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-luisa-canales-alonso/ginecologo/puebla#address-id=149626&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:12:01.612Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__ana_luisa_canales_alonso.webp"
+}

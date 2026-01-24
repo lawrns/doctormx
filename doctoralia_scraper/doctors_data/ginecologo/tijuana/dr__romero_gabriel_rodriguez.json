@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Romero Gabriel Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d9c0f633/d9c0f633-130b-4cf3-bf26-7a4056cb0a3f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Carretera Aeropuerto 1900,"
+    },
+    {
+      "full": "Carretera Aeropuerto 1900,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/romero-gabriel-rodriguez/ginecologo/tijuana#address-id=54378&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:24:57.944Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__romero_gabriel_rodriguez.webp"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Stephanie Ana Karen Espinoza Villarreal",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 22,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/838e8940/838e8940-5fc0-43d4-bf94-c19faeaedaee_140_square.jpg",
+  "about": "Ginecóloga Titulada Centro Médico/UdG.Certificada por Consejo Mexicano de Ginecología y Obstetricia.DGP 10317626 Cédula Especial 12632090",
+  "addresses": [
+    {
+      "full": "Calle Allioth 3810 Colonia Arboledas,"
+    },
+    {
+      "full": "Calle Allioth 3810 Colonia Arboledas,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/stephanie-ana-karen-espinoza-villarreal/ginecologo/zapopan#address-id=613400&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:29:07.207Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__stephanie_ana_karen_espinoza_villarreal.webp"
+}

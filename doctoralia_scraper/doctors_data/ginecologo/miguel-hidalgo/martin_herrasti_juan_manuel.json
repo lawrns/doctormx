@@ -1,0 +1,25 @@
+{
+  "name": "Martin Herrasti Juan Manuel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 44,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c76093/c760938459a52717b489ef8730e1ea16_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Agrarismo 208 403 A Col. Escandón ,"
+    },
+    {
+      "full": "Agrarismo 208 403 A Col. Escandón ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martin-herrasti-juan-manuel/ginecologo/miguel-hidalgo#address-id=358917&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:55:26.487Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/martin_herrasti_juan_manuel.webp"
+}

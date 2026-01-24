@@ -1,0 +1,25 @@
+{
+  "name": "Jorge Garza Ramirez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2a621b/2a621b62b230b0dcbbe20b18eff656cf_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Tepeyac 30,"
+    },
+    {
+      "full": "Av. Tepeyac 30,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-garza-ramirez/ginecologo/puebla#address-id=213435&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:33:32.072Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/jorge_garza_ramirez.webp"
+}

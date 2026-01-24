@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Luz Ma Adriana Balderas Peña",
+  "specialty": "Ginecóloga",
+  "rating": 4,
+  "reviewCount": 4,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/c7614fdb/c7614fdb-5f01-41d1-9097-803ad8cdb900_small_square.jpg",
+  "about": "Buen día, permítanme presentarme Soy la Dra. Luz Ma. Adriana Balderas Peña, soy médico especialista en Ginecología y Obstetricia certificada por el Consejo Mexicano de Ginecología y Obstetricia. A continuación les comparto una pequeña reseña sobre mi experiencia como médico especialista Me formé como Médico Cirujano y Partero en el Centro Universitario de Ciencias de la Salud de la Universidad de Guadalajara, de donde egresé en el año 1996, posteriormente realicé mi curso de Especialización en Ginecología y Obstetricia en el Hospital de Gineco-Obstetricia del Centro Médico Nacional de Occidente del IMSS, con el aval de la Universidad de Guadalajara, de donde egresé en el año 2001. A partir de entonces he laborado para instituciones como la Secretaría de Salud Jalisco, Dirección de Pensiones del Estado de Jalisco y el Instituto Mexicano del Seguro Social, así como en la Universidad de Guadalajara. Mi vida laboral-académica se caracteriza por la búsqueda constante de alternativas de tratamiento con bases científicas sólidas, lo que me ha llevado a reforzar mi formación con la Maestría en Ciencias Médicas con Orientación en Cirugía (2001-2003)y por el Doctorado en Ciencias Biomédicas con Orientación en Inmunología (2003-2006), y convertirme no solo en un médico especialista, sino también en un médico especialista reconocido como investigador tanto en el Instituto Mexicano del Seguro Social, donde actualmente soy Investigador Médico Titular A y por el Sistema Nacional de Investigadores e Investigadoras, quién me otorgó el Reconocimiento como Investigadora Nacional Nivel II del propio Sistema Nacional de Investigadores e Investigadoras. Cuento con amplia experiencia en el manejo conjunto siempre apoyada con diversos especialistas de la oncología en el manejo de enfermedades onco-ginecológicas como cáncer de mama, cáncer cervico-uterino, cáncer de ovario y de endometrio. Así mismo ejerzo la obstetricia con un amplio sentido humanista y científico para lo cual ha sido un puntal importante mi formación en el Doctorado en Inmunología para el manejo de enfermedades obstétricas con un fondo inmunológico como la pre-eclampsia (hipertensión durante el embarazo acompañada de compromiso del riñón de la madre). Con lo anteriormente citado pongo a su disposición esta amplia experiencia para el manejo multidisciplinario y la atención de su salud, tanto en términos preventivos como de tratamiento.",
+  "addresses": [
+    {
+      "full": "Calle Luis Pérez Verdía 325, Ladron De Guevara,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luz-ma-adriana-balderas-pena-2/ginecologo-medico-general/guadalajara#address-id=578547&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:14:23.459Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__luz_ma_adriana_balderas_pe_a.webp"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Manuel Esparza Piña",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 34,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b4326a/b4326a17c1c472631b93b281a66e1f2e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Paseo De Los Heroes 10999 ,"
+    },
+    {
+      "full": "Paseo De Los Heroes 10999 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuel-esparza-pina/ginecologo/tijuana#address-id=48770&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:44:02.027Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__manuel_esparza_pi_a.webp"
+}

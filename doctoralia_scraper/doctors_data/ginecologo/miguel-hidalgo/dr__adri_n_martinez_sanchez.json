@@ -1,0 +1,48 @@
+{
+  "name": "Dr. Adrián Martinez Sanchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9429fc/9429fc310b24ec40615d29ab903deb6b_220_square.jpg",
+  "about": "Médico-cirujano por la Universidad Panamericana , Especialidad (Residencia) realizada en el Instituto Nacional de Perinatología realizando rotaciones en el extranjero en cirugía de mínima invasión y robótica en Albuquerque Nuevo México , Reproducción Asistida realizada en el Hospital Universitario Clinic de Barcelona uno de los centros hospitalarios mas reconocidos en España y Europa logrando actualmente tasas de éxito muy favorables en tratamientos de reproducción asistida tanto en baja como alta complejidad (in vitro), presentando varias ponencias en congresos de la asociación mexicana de medicina de la reproducción (AMMR) en temas diversos , Endoscopia en Ginecología realizada en el Instituto Nacional de Perinatología ,realizando presentación de casos complicados en varios congresos internacionales de cirugía minimamente invasiva , adscrito por 6 años en el Instituto Nacional de Perinatología siendo profesor adjunto al curso de los residentes en Ginecología y Obstetricia el cual avala la UNAM y del curso de alta especialidad en cirugía endoscópica ginecológica también avalado por la UNAM , actualmente uno de los cirujanos minimanete invasivos en Ginecología con mayor experiencia .",
+  "addresses": [
+    {
+      "full": "Puente de Piedra,"
+    },
+    {
+      "full": "Jaime Balmes 11 ( Plaza Polanco Torre A 5o piso),"
+    },
+    {
+      "full": "Puente de Piedra,"
+    },
+    {
+      "full": "Jaime Balmes 11 ( Plaza Polanco Torre A 5o piso),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adrian-martinez-sanchez-2/ginecologo/ciudad-de-mexico#address-id=351136&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:07:40.971Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__adri_n_martinez_sanchez.webp"
+}

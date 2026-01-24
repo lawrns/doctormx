@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jorge Alberto Pérez Aguirre",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/85d185/85d1857a468023c907839f495f6ccea0_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Comerciantes 5812,"
+    },
+    {
+      "full": "Comerciantes 5812,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-alberto-perez-aguirre/ginecologo/zapopan",
+  "scrapedAt": "2026-01-22T04:27:17.486Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jorge_alberto_p_rez_aguirre.webp"
+}

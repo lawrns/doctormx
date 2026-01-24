@@ -1,0 +1,102 @@
+{
+  "name": "Dr. Rolando Álvarez Valero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3a2a03/3a2a032808fcd407680f1ab5f1a9cd2d_220_square.jpg",
+  "about": "Graduado en medicina por la Universidad Panamericana, como Presidente de la Generación 1996-2001. Realizó la especialidad en Ginecología y Obstetricia en el Centro Médico ABC y fue electo Jefe de Residentes en la generación 2003-2007. Cuenta con estudios a nivel internacional en la Universidad de Harvard, así como, en la Universidad de Navarra, en Pamplona, España. Realizó dos Fellowships, el primero en Endoscopia Ginecológica Avanzada en el Centro de Cirugía de Mínima Invasión del Centro Médico de Wellington en Palm Beach, Florida y posteriormente en Medicina Reproductiva en la Universidad de Cornell en la Ciudad de Nueva York, USA. Certificación para Cirugía Robótica Da Vinci en Surgical Innovation and Robotics Institute, Memorial Hermann, Texas Medical Center, USA. Es reconocido por la atención de pacientes con Endometriosis, Endocrinología de la Reproducción, ayudar a los pacientes a recuperar su salud reproductiva para el tratamiento de Infertilidad, así como de pacientes con múltiples tratamientos fallidos y la aplicación de técnicas quirúrgicas de mínima invasión en cirugía reproductiva y cirugía ginecológica. Profesionalmente tiene como principal área de interés la Endocrinología de la Reproducción e Infertilidad, Cirugía Reproductiva, Dolor pélvico y Endometriosis; así como la aplicación de tecnología reproductiva aplicada a mejorar y preservar la Fertilidad en pacientes con tratamientos oncológicos o condiciones de salud que amenazan su futuro reproductivo. Dentro de las área de innovación en cirugía de mínima invasión, se encuentra la cirugía robótica, nuestro hospital realiza 1 de cada 4 cirugías asistidas por robot en medicina privada en el país y en nuestro grupo hemos realizado el 48% de estos procedimientos en el área de ginecología, tan solo en 2019 realizamos el 65% de estos procedimientos, logrando un área de experiencia que nos permite ofrecer a nuestros pacientes excelencia en atención para los procedimientos en dónde este tecnología nos ayuda a cuidar mejor a nuestros pacientes. Ha sido autor de diversas publicaciones científicas y es miembro de asociaciones científicas nacionales e internacionales; como el Colegio Mexicano de Ginecología y Obstetricia, Asociación Mexicana de Medicina de la Reproducción, el Colegio Americano de Ginecologia y Obstetricia, la Sociedad Americana de Reproducción, Sociedad Americana de Cirujanos en Reproducción, la Sociedad Americana de Endocrinología, AAGL Elevating Gynecologic Surgery, la Federación Mexicana de Endoscopia Ginecológica y Microcirugía, entre otros.",
+  "addresses": [
+    {
+      "full": "Avenida Carlos Fernández Graef 154,"
+    },
+    {
+      "full": "Boulevard Bernardo Quintana #4060,"
+    },
+    {
+      "full": "Av. Carlos Fernández Graef 154, Contadero, Ciudad de México, CDMX, México,"
+    },
+    {
+      "full": "Avenida Carlos Fernández Graef 154,"
+    },
+    {
+      "full": "Boulevard Bernardo Quintana #4060,"
+    },
+    {
+      "full": "Av. Carlos Fernández Graef 154, Contadero, Ciudad de México, CDMX, México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rolando-alvarez-valero/ginecologo/cuajimalpa-de-morelos#address-id=25737&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:50:01.442Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__rolando__lvarez_valero.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Mario Javier Martínez Pérez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 53,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/80d989/80d989b339476328718cf5a3a7051ad3_140_square.jpg",
+  "about": "Egresado de la Universidad la Salle, Especialidad en ginecología y Obstetricia en el Hospital Español de México avalado por la UNAM, Diplomado en laparoscopia ginecológica en el Hospital General Dr. Manuel GEA González. Creo que el parto es la mejor vía de nacimiento. Experiencia de mas de 10 años. Inglés al 100%.",
+  "addresses": [
+    {
+      "full": "Avenida Itzaes 242, int 122, x 25 y 27 colonia garcía gineres, ,"
+    },
+    {
+      "full": "Avenida Itzaes 242, int 122, x 25 y 27 colonia garcía gineres, ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $850"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $850"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $850"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $850"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mario-javier-martinez-perez-2/ginecologo/yucatan#address-id=386269&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:42:00.744Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__mario_javier_mart_nez_p_rez.webp"
+}

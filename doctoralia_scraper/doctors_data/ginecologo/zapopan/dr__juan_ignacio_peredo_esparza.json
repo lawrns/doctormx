@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Juan Ignacio Peredo Esparza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 631,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/69df83bb/69df83bb-1401-4704-9559-5eef4ba64a93_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Lerdo de Tejada 2342 Lafayette,"
+    },
+    {
+      "full": "Lerdo de Tejada 2342 Lafayette,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-ignacio-peredo-esparza/ginecologo/guadalajara#address-id=107910&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:34:37.989Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__juan_ignacio_peredo_esparza.webp"
+}

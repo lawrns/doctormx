@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Alejandro Zúñiga Díaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a76fc0/a76fc0e926ca7ce91fcd7299f8e107d6_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Mexicaltzingo 2176,,"
+    },
+    {
+      "full": "Mexicaltzingo 2176,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-zuniga-diaz/ginecologo/guadalajara#address-id=114953&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:30:16.650Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__alejandro_z__iga_d_az.webp"
+}

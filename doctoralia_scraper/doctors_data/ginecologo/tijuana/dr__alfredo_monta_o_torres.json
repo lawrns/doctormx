@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Alfredo Montaño Torres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 15,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ff943a/ff943af10b2521ec3bbed18dccb4c286_140_square.jpg",
+  "about": "MEDICO CIRUJANO Y PARTERO ( Universidad Autónoma de Baja California ) 1990-1995, Cédula: 2711696 INTERNADO DE PREGRADO: Hospital General (SSA) Mexicali B.C. 1995-1996. Mención Honorífica. SERVICIO SOCIAL: Policlínica y Centro de Diagnóstico de la UABC ( Universidad Autónoma e Baja California) 1996-1997. APROBACION DE EXAMEN NACIONAL DE RESIDENCIAS MEDICAS: 26-27 octubre 1996. 9no Lugar Nacional. ESPECIALIDAD EN GINECOLOGIA Y OBSTETRICIA : Instituto Nacional de Perinatología (INPer) 1997-2001, Mexico D.F. UNAM ( Universidad Nacional Autónoma de México). CEDULA PROF: 3815546 JEFE DE RESIDENTES (INPer): 2001-2002. SUBESPECIALIDAD EN BIOLOGIA DE LA REPRODUCCION: Instituto Nacional de Perinatología (INPer) 2001-2003, Mención Honorífica. CEDULA PROF: 3815544 CURSO DE LAPAROSCOPIA BASICA Y AVANZADA. HOSPITAL ABC ( American British Cowdray), 2001. Dr. Hugo Bustos L. MEDICO ADJUNTO Y PROFESOR ADJUNTO AL SERV ICIO DE GINECOLOGIA Y OBSTETRICIA, HOSPITAL GENERAL DE MEXICALI 2003-2006. PRACTICA PRIVADA EN GINECOLOGIA, OBSTETRICIA Y MEDICINA REPRODUCTIVA DESDE 2003. ACTUAL COORDINADOR MEDICO DE IECH DE BC ( Instituto para el Estudio de la Concepción Humana de B.C.). CERTIFICACIONES: CERTIFICADO POR EL CONSEJO MEXICANO DE GINECOLOGIA Y OBSTETRICIA: No 2644 CERTIFICADO POR EL CONSEJO MEXICANO EN BIOLOGIA DE LA REPRODUCCION HUMANA: No: 0023 F.A.C.O.G. : FELLOW OF THE AMERICAN COLLEGE OF OBSTETRICIANS AND GYNECOLOGISTS (ACOG) MEMBER OF THE AMERICAN SOCIETY FOR REPRODUCTIVE MEDICINE ( ASRM ) MIEMBRO DE LA AMERICAN ASSOCIATION OF GYNECOLOGIC LAPAROSCOPISTS ( AAGL) SOCIO TITULAR DE AMMR ( ASOCIACION MEXICANA DE MEDICINA DE LA REPRODUCCION ) SOCIO ACTIVO DE LA FEDERACION MEXICANA DE GINECOLOGIA Y OBSTETRICIA (FEMEGO) MIEMBRO DE LA ASOCIACION DE GINECOLOGIA Y OBSTETRICIA DE TIJUANA AC (AGOT) SOCIO FUNDADOR Y PRESIDENTE ELECTO PARA EL COLEGIO DE ENDOSCOPIA GINECOLOGICA Y MEDICINA REPRODUCTIVA DE TIJUANA (CEGYMER) PARA EL PERIODO 2014-2016 PARTICIPACION Y ASISTENCIA A VARIOS EVENTOS ACADEMICOS LOCALES, NACIONALES E INTERNACIONALES.",
+  "addresses": [
+    {
+      "full": "Leona Vicario 1451 Hospital Rio Médica, Cons 15 Primer Piso,"
+    },
+    {
+      "full": "Leona Vicario 1451 Hospital Rio Médica, Cons 15 Primer Piso,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Histeroscopia en malformaciones uterinas",
+      "price": ""
+    },
+    {
+      "name": "Laparascopia diagnóstica con biopsia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfredo-montano-torres/ginecologo/tijuana#address-id=62675&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:44:09.481Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__alfredo_monta_o_torres.webp"
+}

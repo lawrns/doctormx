@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Olivia Reséndiz Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 91,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/931537/93153717434e51567418c0bb48272b2c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "16 Poniente N0 1907, Jesús García,"
+    },
+    {
+      "full": "16 Poniente N0 1907, Jesús García,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/olivia-resendiz-hernandez/ginecologo/-#address-id=338625&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:21:17.047Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__olivia_res_ndiz_hern_ndez.webp"
+}

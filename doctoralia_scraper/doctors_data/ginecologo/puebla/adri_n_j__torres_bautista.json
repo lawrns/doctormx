@@ -1,0 +1,25 @@
+{
+  "name": "Adrián J. Torres Bautista",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 150,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/40f6a6/40f6a63de95b52445301b115a701e642_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 5 Oriente 206, Col. Centro, ,"
+    },
+    {
+      "full": "Calle 5 Oriente 206, Col. Centro, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adrian-j-torres-bautista/ginecologo/amozoc#address-id=359282&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:29:55.757Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/adri_n_j__torres_bautista.webp"
+}

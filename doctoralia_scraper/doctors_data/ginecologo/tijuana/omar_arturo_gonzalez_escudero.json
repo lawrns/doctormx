@@ -1,0 +1,25 @@
+{
+  "name": "Omar Arturo Gonzalez Escudero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 369,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9c35ce/9c35ce8b88ea2309b221f17ea808d8c7_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Netzahualcoyotl 4550, Col. Ruiz Valencia, ,"
+    },
+    {
+      "full": "Netzahualcoyotl 4550, Col. Ruiz Valencia, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/omar-arturo-gonzalez-escudero/ginecologo/tijuana#address-id=357239&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:47:57.213Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/omar_arturo_gonzalez_escudero.webp"
+}

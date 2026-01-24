@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Angélica Bustos Otero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/775b8e/775b8ecc0ce0764ae951a9da213dd4b1_220_square.jpg",
+  "about": "Ginecóloga con más de 10 años de experiencia especializada en Colposcopia. Mi número de colegiado: 9976007. Interesada en la atención a la salud de la mujer pongo a su disposición como principales servicios la consulta ginecologica manejo de sangrado uterino anormal, infecciones, asesoria sobre métodos de planificación familiar, problemas mamarios y control del embarazo; entre otros. Cuento con preparación especial para el manejo de colposcopia, virus del papiloma humano y condilomas",
+  "addresses": [
+    {
+      "full": "Tehuantepec #251,"
+    },
+    {
+      "full": "Tehuantepec #251,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angelica-bustos-otero/ginecologo/cuauhtemoc#address-id=119874&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:08:51.453Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__ang_lica_bustos_otero.webp"
+}

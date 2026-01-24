@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Laura Esmeralda González López",
+  "specialty": "Ginecólogo",
+  "rating": 3.5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/46000c/46000cc67ef68f27d60d3a45a62c8537_220_square.jpg",
+  "about": "Soy un médico comprometido con tu salud, resolviendo problemas ginecológicos y obstétricos, ayudando a las parejas que no han conseguido tener a su bebe en casa, teniendo como subespecialidad BIOLOGIA DE LA REPRODUCCIÓN en donde engloba los problemas de la pareja con infertilidad, y atendiendo todas las etapas de la vida de la mujer desde la adolescencia, la juventud y la menopausia. Asi mismo ayudando a traer a los bebes que vienen en camino, haciendo el embarazo y el nacimiento como lo que es: el momento mas hermoso en la vida de la mujer.",
+  "addresses": [
+    {
+      "full": "Capulin 48 Consultorio 10 Col Tlacoquemecatl del Valle Delegación Benito Juárez Ciudad de México ,"
+    },
+    {
+      "full": "Capulin 48 Consultorio 10 Col Tlacoquemecatl del Valle Delegación Benito Juárez Ciudad de México ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-esmeralda-gonzalez-lopez/ginecologo/benito-juarez#address-id=19127&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:09:17.375Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__laura_esmeralda_gonz_lez_l_pez.webp"
+}

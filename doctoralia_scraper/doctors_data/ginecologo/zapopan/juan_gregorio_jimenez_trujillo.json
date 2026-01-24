@@ -1,0 +1,25 @@
+{
+  "name": "Juan Gregorio Jimenez Trujillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 101,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/6d37cccd/6d37cccd-cb64-43fc-a997-169c70885fab_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cruz Del Sur 227, Col. Del Sur, ,"
+    },
+    {
+      "full": "Cruz Del Sur 227, Col. Del Sur, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-gregorio-jimenez-trujillo/ginecologo/guadalajara#address-id=357756&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:45:30.655Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/juan_gregorio_jimenez_trujillo.webp"
+}

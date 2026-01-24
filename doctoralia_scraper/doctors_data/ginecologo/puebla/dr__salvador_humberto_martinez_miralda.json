@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Salvador Humberto Martinez Miralda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5fb420/5fb420141ac6399cbad25e4ca0bcea88_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. 5 Pte. 715,"
+    },
+    {
+      "full": "Av. 5 Pte. 715 Cons 103,"
+    },
+    {
+      "full": "Av. 5 Pte. 715,"
+    },
+    {
+      "full": "Av. 5 Pte. 715 Cons 103,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/salvador-humberto-martinez-miralda/ginecologo/puebla#address-id=174219&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:16:39.785Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__salvador_humberto_martinez_miralda.webp"
+}

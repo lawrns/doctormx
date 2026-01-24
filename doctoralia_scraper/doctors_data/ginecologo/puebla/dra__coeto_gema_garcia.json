@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Coeto Gema Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a5f06534/a5f06534-28f6-456a-8268-6bd2e89e12cb_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "15 De Mayo 15,"
+    },
+    {
+      "full": "15 De Mayo 15,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/coeto-gema-garcia/ginecologo/puebla#address-id=57632&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:22:20.294Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__coeto_gema_garcia.webp"
+}

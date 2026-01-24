@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Mariana Moguel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 301,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/126bba/126bba1ed5497d7a3155362ce4d0de18_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 18 59,"
+    },
+    {
+      "full": "Calle 55, 420,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,000"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Biopsia de cérvix",
+      "price": "• $3,000"
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": "• $6,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,000"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Biopsia de cérvix",
+      "price": "• $3,000"
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": "• $6,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mariana-moguel/ginecologo/tizimin#address-id=460484&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:29:32.413Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__mariana_moguel.webp"
+}

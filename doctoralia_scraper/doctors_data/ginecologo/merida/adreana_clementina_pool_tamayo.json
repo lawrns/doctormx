@@ -1,0 +1,25 @@
+{
+  "name": "Adreana Clementina Pool Tamayo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/80d989/80d989b339476328718cf5a3a7051ad3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Itzaez O (C. 32) 252,"
+    },
+    {
+      "full": "Av. Itzaez O (C. 32) 252,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adreana-clementina-pool-tamayo/ginecologo/merida#address-id=251903&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:46:41.597Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/adreana_clementina_pool_tamayo.webp"
+}

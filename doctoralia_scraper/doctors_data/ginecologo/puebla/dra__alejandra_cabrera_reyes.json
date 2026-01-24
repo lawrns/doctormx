@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Alejandra Cabrera Reyes",
+  "specialty": "Ginecólogo",
+  "rating": 1,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e65d76/e65d7607296bb156698e8b3177fa975b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Reforma Norte # 422 Consultorio 6, Col. Centro,"
+    },
+    {
+      "full": "Reforma Norte # 422 Consultorio 6, Col. Centro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-cabrera-reyes/ginecologo/tehuacan#address-id=387456&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:17:32.640Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__alejandra_cabrera_reyes.webp"
+}

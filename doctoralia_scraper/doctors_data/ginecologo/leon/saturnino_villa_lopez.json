@@ -1,0 +1,37 @@
+{
+  "name": "Saturnino Villa Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 31,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/052ea9/052ea99b3f72221611fcf1b9aab18d46_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Aquiles Serdan 315,"
+    },
+    {
+      "full": "Melchor Ocampo 412,"
+    },
+    {
+      "full": "Honduras 520,"
+    },
+    {
+      "full": "Aquiles Serdan 315,"
+    },
+    {
+      "full": "Melchor Ocampo 412,"
+    },
+    {
+      "full": "Honduras 520,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/saturnino-villa-lopez/ginecologo/leon#address-id=172995&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:32:42.130Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/saturnino_villa_lopez.webp"
+}

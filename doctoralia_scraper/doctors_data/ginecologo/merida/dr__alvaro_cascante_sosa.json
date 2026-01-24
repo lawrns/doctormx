@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Alvaro Cascante Sosa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 563,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/60d915/60d91598819ff98d2c2d5115dac5bf30_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 26 199,"
+    },
+    {
+      "full": "Calle 26 199,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alvaro-cascante-sosa/ginecologo/merida#address-id=6890&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:44:14.785Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__alvaro_cascante_sosa.webp"
+}

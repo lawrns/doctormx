@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Rafael Lopez Resinez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fbd152/fbd1523967fee9706edf5514ed4b384f_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Francisco I Madero Norte #100,"
+    },
+    {
+      "full": "Francisco I Madero Norte #100,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rafael-lopez-resinez/ginecologo/san-martin-texmelucan#address-id=436917&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:14:18.977Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__rafael_lopez_resinez.webp"
+}

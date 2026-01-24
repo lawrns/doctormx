@@ -1,0 +1,31 @@
+{
+  "name": "Jaime Gomez Murillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 589,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/0debdfa5/0debdfa5-7a11-4e47-9d1e-293eae2120d5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Plan De Ayala 122,"
+    },
+    {
+      "full": "C. 7 200,"
+    },
+    {
+      "full": "Plan De Ayala 122,"
+    },
+    {
+      "full": "C. 7 200,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jaime-gomez-murillo/ginecologo/iztacalco#address-id=217707&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:53:37.224Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/jaime_gomez_murillo.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Francisco Francisco Guadarrama Sanchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 46,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f39c19ff/f39c19ff-f5fb-40b8-9f9f-b55d3a5dccbe_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Enrique Pestalozzi Número: 408-303 Colonia: Narvarte,"
+    },
+    {
+      "full": "Enrique Pestalozzi Número: 408-303 Colonia: Narvarte,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-francisco-guadarrama-sanchez/ginecologo/benito-juarez#address-id=358912&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:18:28.903Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/francisco_francisco_guadarrama_sanchez.webp"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Esmeralda Bañuelos",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 12,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3eabb798/3eabb798-dd47-45fa-a2a3-907c6cec93fa_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "guadalajara,"
+    },
+    {
+      "full": "guadalajara,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/esmeralda-banuelos/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:33:03.698Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__esmeralda_ba_uelos.webp"
+}

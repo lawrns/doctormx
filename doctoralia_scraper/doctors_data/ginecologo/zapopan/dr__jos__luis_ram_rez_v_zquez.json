@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José Luis Ramírez Vázquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/62593e/62593e6625a184b66c1beecfa2e3c175_220_square.jpg",
+  "about": "¿Qué es un ginecólogo obstetra, es decir, qué áreas de la salud le competen? El ginecólogo es el médico especialista en el cuidado de la salud femenina; la obstetricia, por su parte se encarga específicamente del cuidado del embarazo, tanto de los cuidados, riesgos y complicaciones que puede tener la mujer como de la salud del feto, durante el embarazo, durante el parto o durante el puerperio (periodo posterior al parto). ¿Cuándo debemos acudir a consulta ginecológica u obstétrica, es decir, cuando el cuerpo nos envíe qué señales? Las enfermedades relacionadas a los órganos reproductivos femeninos generalmente se manifiestan con alteraciones de la menstruación o con hemorragias anormales a través de los órganos genitales, con dolor en el área correspondiente a los órganos reproductivos o coincidente con los periodos de menstruación u ovulación, secreciones o escurrimientos genitales anormales, molestias o problemas con las relaciones sexuales, presencia de cambios aparentes en los genitales o las mamas (bolitas, úlceras, verrugas, etc.), sospecha de cáncer de los órganos de la reproducción (útero, vagina, vulva, ovarios y mama), entre otras. En el caso del embarazo, es importante acudir al médico en cuanto se ausenta la menstruación, cuando se presentan hemorragias o cólicos persistentes, cuando hay salida de líquido a través de la vagina, o cuando se percibe una disminución notoria de los movimientos del bebé. También en caso de que se presenten síntomas no habituales o enfermedades concomitantes. En caso de requerir cualquier medicamento para cualquier otro problema de salud es muy importante informarles, tanto a su médico, que está embarazada, como al obstetra, consultarle cual fue el medicamento que le indicaron para que le explique si existen riesgos para el embarazo por la enfermedad o por el medicamento, y se seleccione la opción más segura para la madre y el feto.",
+  "addresses": [
+    {
+      "full": "Manuel J. Clouthier 596 (Consultorio 4),"
+    },
+    {
+      "full": "Manuel J. Clouthier 596 (Consultorio 4),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-luis-ramirez-vazquez/ginecologo/zapopan#address-id=126770&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:23:46.390Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jos__luis_ram_rez_v_zquez.webp"
+}

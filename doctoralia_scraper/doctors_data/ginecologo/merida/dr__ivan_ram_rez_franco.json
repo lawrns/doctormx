@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Ivan Ramírez Franco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 219,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b68306/b683060ea8b2e77febd8517e22bb2e38_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 69, Num 462 por 54 y 56,"
+    },
+    {
+      "full": "Calle 69, Num 462 por 54 y 56,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de la enfermedad inflamatoria pélvica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ivan-ramirez-franco/ginecologo/merida#address-id=114463&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:42:26.014Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__ivan_ram_rez_franco.webp"
+}

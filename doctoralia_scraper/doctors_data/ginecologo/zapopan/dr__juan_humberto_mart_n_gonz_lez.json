@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Juan Humberto Martín González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 96,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/578ad2/578ad2432b7c7b1c81fa46f46988f949_220_square.jpg",
+  "about": "Medico Gineco-Obstetra, Intensivista y Bioeticista Atención a Embarazos de Alto Riesgo SEMBLANZA DE MI EXPERIENCIA La experiencia de la practica en la Gineco-Obstetricia me ha llevado apreciar a la mujer en sus cualidades, siendo mujer, hija, ama de casa, profesionista, madre y respetando sus expectativas de vida. Si bien al inicio lo que a mi hizo decidirme por esta profesión es apoyar a las mujeres a dar vida y también he logrado admirar todo su potencial. Por lo que me he comprometido para ser un profesional de la salud, humano, respetuoso, competente y actualizado. SERVICIOS : OBSTETRICIA : Embarazos y Partos de Bajo Riesgo con orientación de Estimulación Prenatal, Aborto de Repetición como problema de fertilidad, Embarazos y Partos con Bebes de bajo peso, Embarazo y Diabetes gestacional, Mamas con Rh Negativo y Papas con Rh positivo, Hipertensión y/o preclampsia durante el embarazo, Embarazos con problemas Médicos. GINECOLOGIA : Ginecología en niñas y/o adolescentes. Sangrado genital anormal. Miomatosis y sus complicaciones. Colposcopia y tratamientos con Rayo Láser en patología premaligna del aparato genital inferior. Menopausia y sus patologías médicas asociadas. Osteoporosis y tratamientos.",
+  "addresses": [
+    {
+      "full": "Avenida Pablo Neruda 3265,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-humberto-martin-gonzalez/ginecologo/guadalajara#address-id=132769&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:09:49.584Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__juan_humberto_mart_n_gonz_lez.webp"
+}

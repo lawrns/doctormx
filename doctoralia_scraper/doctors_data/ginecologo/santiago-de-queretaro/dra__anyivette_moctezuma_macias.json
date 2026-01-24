@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Anyivette Moctezuma Macias",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 116,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/d6c3687a/d6c3687a-d2ed-44de-9e82-6ca0f0bd7477_large.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Privada Ignacio Zaragoza 16,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $900"
+    },
+    {
+      "name": "Vacuna virus del papiloma humano",
+      "price": "• $4,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/anyivette-moctezuma-macias/ginecologo/santiago-de-queretaro#address-id=494192&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:46:59.971Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__anyivette_moctezuma_macias.webp"
+}

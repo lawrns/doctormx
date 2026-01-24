@@ -1,0 +1,25 @@
+{
+  "name": "Miguel Angel Arzola Vivar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 81,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/15f596cf/15f596cf-7293-45ff-8d71-42045cc1949e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "119 Ote Mz 13 1428 52, Col. Heroes Puebla Perif 08, ,"
+    },
+    {
+      "full": "119 Ote Mz 13 1428 52, Col. Heroes Puebla Perif 08, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-arzola-vivar/ginecologo/puebla#address-id=357122&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:30:40.429Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/miguel_angel_arzola_vivar.webp"
+}

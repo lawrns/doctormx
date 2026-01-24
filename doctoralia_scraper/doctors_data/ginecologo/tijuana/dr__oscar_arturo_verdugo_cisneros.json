@@ -1,0 +1,38 @@
+{
+  "name": "Dr. Oscar Arturo Verdugo Cisneros",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 68,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b4326a/b4326a17c1c472631b93b281a66e1f2e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Corporativo Lopasa 3063 Consultorio 501-A Mision de Mulege Zona Urbana Rio Tijuana,"
+    },
+    {
+      "full": "Corporativo Lopasa 3063 Consultorio 501-A Mision de Mulege Zona Urbana Rio Tijuana,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/oscar-arturo-verdugo-cisneros/ginecologo/tijuana#address-id=137667&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:46:05.617Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__oscar_arturo_verdugo_cisneros.webp"
+}

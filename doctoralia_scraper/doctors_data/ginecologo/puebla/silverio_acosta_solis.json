@@ -1,0 +1,37 @@
+{
+  "name": "Silverio Acosta Solis",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 112,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/04dc7c/04dc7c1803211d92ffbf9d367df87d31_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cuauhtemoc 606,"
+    },
+    {
+      "full": "39 Oriente 1213,"
+    },
+    {
+      "full": "Perif. Arco Sur S/N,"
+    },
+    {
+      "full": "Cuauhtemoc 606,"
+    },
+    {
+      "full": "39 Oriente 1213,"
+    },
+    {
+      "full": "Perif. Arco Sur S/N,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/silverio-acosta-solis/ginecologo/teziutlan#address-id=171929&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:28:11.201Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/silverio_acosta_solis.webp"
+}

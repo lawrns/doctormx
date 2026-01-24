@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Gisela Ruezga Romo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9725e9/9725e97f81a1f46c97f9579c1de3af17_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle José María Heredia 2969,"
+    },
+    {
+      "full": "Calle José María Heredia 2969,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Aclaramiento genital",
+      "price": ""
+    },
+    {
+      "name": "Borrado de cicatrices",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Cono cervical",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gisela-ruezga-romo/ginecologo/guadalajara#address-id=447892&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:25:51.919Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__gisela_ruezga_romo.webp"
+}

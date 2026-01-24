@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Laura Salinas Avelino",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8d7f3e/8d7f3ef0d6d16b0e621297a40816a9f6_220_square.jpg",
+  "about": "Ginecologia y Obstetricia Especialista en el cuidado de la salud de la mujer. Certificada por el Colegio Mexicano de Ginecología y Obstetricia Egresada del Hospital General Regional No. 1 Ignacio García Tellez INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+  "addresses": [
+    {
+      "full": "Calle 2 Sur 322,"
+    },
+    {
+      "full": "Calle 2 Sur 322,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-salinas-avelino/ginecologo-medico-general/tehuacan#address-id=390467&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:12:38.279Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__laura_salinas_avelino.webp"
+}

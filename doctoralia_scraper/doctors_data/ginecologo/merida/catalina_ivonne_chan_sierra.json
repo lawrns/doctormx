@@ -1,0 +1,43 @@
+{
+  "name": "Catalina Ivonne Chan Sierra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 454,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e9cc16/e9cc169169f0114b96510484d7a9ce37_220_square.jpg",
+  "about": "Amplia experiencia en supervisión y manejo de la mujer embarazada que incluye la detección de factores de riesgo que pueden complicar la gestación y su manejo oportuno, así como tratamiento de la gestante que cursa con algún problema de salud, como Diabetes Mellitus y Diabetes gestacional, hipertensión arterial sistémica crónica, hipotiroidismos, preclampsia entre otras. Realizamos estudios de diagnóstico prenatal como lo son estructural del primer y segundo trimestre, flujometría dopler, ultrasonido obstétrico, ultrasonido endovaginal para diagnostico temprano del embarazo, atención de parto y en los casos pertinentes cesárea. Contamos equipos de primera tecnología que nos permiten realizar las tomas en 3, 4 y 5D. También manejamos todos los problemas que afectan la salud de la mujer no embarazada se realizan valoraciones ginecologicas completas, toma de papanicolau, detección oportuna de cancer de mama, ultrasonido de útero y ovarios, manejo de miomatosis uterina, endometriosis, climaterio y menopausia.",
+  "addresses": [
+    {
+      "full": "Calle 15 Num 501 x 18 y 22 Torre Cenit Consultorio 710, Fracc. Altabrisa,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/catalina-ivonne-chan-sierra/ginecologo/yucatan#address-id=166250&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:32:42.033Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/catalina_ivonne_chan_sierra.webp"
+}

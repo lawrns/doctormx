@@ -1,0 +1,46 @@
+{
+  "name": "Maria Teresa Márquez Cristino",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ba92c248/ba92c248-322f-453f-813f-499bc67ea348_140_square.jpg",
+  "about": "Atención médica especializada y personalizada, con la más alta calidad y calidez. Desde la primera consulta se le realizará una historia clínica detallada con la exploración física correspondiente incluyendo estudios de gabinete como ultrasonografia ginecológica y de ser necesario exámenes de laboratorio. El horario de consulta es sumamente amplio para que usted pueda programar las citas de acuerdo a sus actividades, le atendemos de lunes a sábado y contamos con meses sin intereses con tarjetas bancarias y planes de financiamiento con IXE y MULTIVA. PROMOCION: Este mes de la mujer ofrecemos un 30% de descuento en la consulta ginecológica de primera vez.",
+  "addresses": [
+    {
+      "full": "Enrique Pestalozzi 1204 esquina Matias Romero (Segundo Piso Consultorio 202),"
+    },
+    {
+      "full": "Enrique Pestalozzi 1204 esquina Matias Romero (Segundo Piso Consultorio 202),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-teresa-marquez-cristino/ginecologo/benito-juarez#address-id=92584&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:09:09.745Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/maria_teresa_m_rquez_cristino.webp"
+}

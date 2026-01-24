@@ -1,0 +1,25 @@
+{
+  "name": "Humberto Moreno Bonet",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 623,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/982e08/982e08e226ef2766243c6e458486bd67_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Revolucion no. 343, Tacubaya,,"
+    },
+    {
+      "full": "Revolucion no. 343, Tacubaya,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/humberto-moreno-bonet/ginecologo/benito-juarez#address-id=114462&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:54:08.628Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/humberto_moreno_bonet.webp"
+}

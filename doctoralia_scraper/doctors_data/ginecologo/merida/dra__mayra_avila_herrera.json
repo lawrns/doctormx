@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Mayra Avila Herrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 232,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/92531c/92531cd1a1b8b5615597e59c9fa612a7.jpg",
+  "about": "* Egresada de la Universidad Anáhuac Mayab de la licenciatura de médico cirujano. * Especialidad en ginecología y obstetricia en el Hospital General “Dr. Enrique Cabrera Cossío”, Secretaría de salud CdMx, UNAM. * Alta especialidad en peri-post menopausia y metabolismo óseo en el Hospital Regional 1º de Octubre, ISSSTE, UNAM. * Diplomado en colposcopía y patología del tracto genital inferior en el Hospital General de México “Dr. Eduardo Liceaga”, SSA, UNAM. * Diplomado en laser en tracto genital inferior y ginecología regenerativa por COMEGIC, A,C., UNAM * Certificada por el Colegio Mexicano de Ginecología y obstetricia, A.C. * Perteneciente a la Asociación Mexicana para el Estudio del Climaterio, A.C. (AMEC, A.C.) * Perteneciente al Colegio Mexicano de Ginecólogos dedicados a la Colposcopía (COMEGIC, A.C.)",
+  "addresses": [
+    {
+      "full": "Calle 26 #182, García Ginerés, Mérida, Yucatán, México,"
+    },
+    {
+      "full": "C. 26 199, colonia Altabrisa,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de ginecología",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Colposcopía del Tracto Genital Inferior del Hombre y la Mujer",
+      "price": ""
+    },
+    {
+      "name": "Electrocirugía",
+      "price": ""
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Cirugía láser para vph",
+      "price": ""
+    },
+    {
+      "name": "Ginecología láser, estética y funcional",
+      "price": ""
+    },
+    {
+      "name": "Rejuvenecimiento genital femenino",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mayra-avila-herrera-2/ginecologo/yucatan#address-id=426876&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:32:10.515Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__mayra_avila_herrera.webp"
+}

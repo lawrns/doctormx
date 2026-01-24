@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Alejandro Gonzalez Mendoza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 72,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1c170b/1c170b2835b24f31b1d836f3385ab34b_220_square.jpg",
+  "about": "Soy el Dr. Alejandro González Mendoza. Tengo 30 años de experiencia, egresado de la especialidad en el Hospital Universitario de Puebla. Recertificado por el Consejo Mexicano de Ginecología y Obstetricia con diplomado en colposcopía médica y quirúrgica. Realizo colposcopía integral. Para su comodidad cuento con dos consultorios para que asista al que le sea más cercano. Uno en el Hospital Ángeles de Puebla y otro en la 16 sur 4508. Atiendo a personal de Banco Santander, HSBC y todas las aseguradoras de acuerdo a tabulador.",
+  "addresses": [
+    {
+      "full": "16 Sur 4508,"
+    },
+    {
+      "full": "16 Sur 4508,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-gonzalez-mendoza/ginecologo/puebla#address-id=73969&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:11:58.771Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__alejandro_gonzalez_mendoza.webp"
+}

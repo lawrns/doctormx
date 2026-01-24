@@ -1,0 +1,36 @@
+{
+  "name": "Dr. Guillermo Tulio Ortíz Maní",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5ce709/5ce7095c643407e5a878aa92a0ee5f55_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ejercito Nacional No. 613, Col. Granada,"
+    },
+    {
+      "full": "EJERCITO NACIONAL 617 1001,"
+    },
+    {
+      "full": "Ejercito Nacional No. 613, Col. Granada,"
+    },
+    {
+      "full": "EJERCITO NACIONAL 617 1001,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-tulio-ortiz-mani-2/ginecologo/ciudad-de-mexico#address-id=126691&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:39:30.640Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__guillermo_tulio_ort_z_man_.webp"
+}

@@ -1,0 +1,54 @@
+{
+  "name": "Dra. Rosana Hernandez Osornio",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 8,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/66b238dc/66b238dc-2b0d-4d7e-9406-fa1e7ff839f2_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Heroico Colegio Militar 29,"
+    },
+    {
+      "full": "Av. Independencia 32 Sur,"
+    },
+    {
+      "full": "Heroico Colegio Militar 24,"
+    },
+    {
+      "full": "C. Heroico Colegio Militar 29,"
+    },
+    {
+      "full": "Av. Independencia 32 Sur,"
+    },
+    {
+      "full": "Heroico Colegio Militar 24,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosana-hernandez-osornio/ginecologo/corregidora#address-id=175147&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:53:47.784Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__rosana_hernandez_osornio.webp"
+}

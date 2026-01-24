@@ -1,0 +1,25 @@
+{
+  "name": "Jose Enrique Aguilar Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 125,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/661950/6619505778bc93522116e6fc6e6bcb20_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Asesores 5363,"
+    },
+    {
+      "full": "Asesores 5363,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-enrique-aguilar-lopez/ginecologo/zapopan#address-id=158227&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:43:29.924Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/jose_enrique_aguilar_lopez.webp"
+}

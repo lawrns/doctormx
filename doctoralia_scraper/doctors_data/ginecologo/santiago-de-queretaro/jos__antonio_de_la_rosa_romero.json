@@ -1,0 +1,25 @@
+{
+  "name": "José Antonio De La Rosa Romero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 149,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ddfbf258/ddfbf258-8594-44c7-bf0a-ebd955f7ac1e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. 5 De Febrero 505 Col. La Capilla ,"
+    },
+    {
+      "full": "Av. 5 De Febrero 505 Col. La Capilla ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-antonio-de-la-rosa-romero/ginecologo/santiago-de-queretaro#address-id=359361&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:55:09.413Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/jos__antonio_de_la_rosa_romero.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Carolina Huerta Ortiz",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 72,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/70823789/70823789-48ae-4214-8f42-8b47c1d77349_small_square.jpg",
+  "about": "Sobre míSoy la Dra. Carolina Huerta, ginecóloga con formación y experiencia en la atención integral de la salud femenina. Me especializo en brindar una consulta privada cálida, respetuosa y centrada en las necesidades de cada paciente, en un espacio de confianza donde puedan sentirse escuchadas y acompañadas.Mi enfoque combina la medicina basada en evidencia con una visión humana y empática, priorizando siempre el bienestar físico, emocional y reproductivo de cada mujer en las distintas etapas de su vida. Creo firmemente en la importancia de la prevención, el autocuidado y el acompañamiento cercano para lograr una salud ginecológica plena.Estoy aquí para ayudarte a resolver tus dudas, atender tus síntomas y guiarte en tus decisiones con información clara, ética y profesional.",
+  "addresses": [
+    {
+      "full": "Avenida 5 de mayo # 992, zona centro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Biopsia de cérvix",
+      "price": "• $4,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carolina-huerta-ortiz-2/ginecologo/tijuana",
+  "scrapedAt": "2026-01-22T00:39:58.976Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__carolina_huerta_ortiz.webp"
+}

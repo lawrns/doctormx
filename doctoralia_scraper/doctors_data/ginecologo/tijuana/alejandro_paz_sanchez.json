@@ -1,0 +1,25 @@
+{
+  "name": "Alejandro Paz Sanchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c98972/c98972cee70e3082ca45cde828516dc5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Santander,11, Col. Niños Heroes Este, ,"
+    },
+    {
+      "full": "Santander,11, Col. Niños Heroes Este, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-paz-sanchez/ginecologo/tijuana#address-id=355442&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:06:36.960Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/alejandro_paz_sanchez.webp"
+}

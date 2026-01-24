@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Carla Mariana Zamudio Valdez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 369,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/798b7a/798b7aac089d1b92a067e7c604a56d98.jpg",
+  "about": "Hola ! Soy la Dra. Carla Mariana Zamudio Valdez, originaria de Sonora. Estudie Medico Cirujano y Partero, en Facultad de Medicina, en la Universidad Autónoma de Chihuahua. Hice Ginecología y Obstetricia en Hospital Integral de la Mujer, en Hermosillo, Sonora avalada por UNAM. Hice un Workshop en Rejuvenecimiento vaginal en la ciudad de Tijuana en Agosto de 2019 Workshop en Rejuvenecimiento vaginal en la ciudad de Culiacán, Sinaloa en Diciembre, 2019 Actualmente radico en Tijuana, Baja California. Me gustaría con Doctoralia como herramienta, poder ofrecerte un servicio medico y atención de mayor calidad. Que se nos facilite en ambas partes el proceso de agendar y llevar acabo tu cita con mayor satisfacción Pregunta por las consultas online. ¡ Estoy para Servirte !",
+  "addresses": [
+    {
+      "full": "Blvd. el Mirador 548,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carla-mariana-zamudio-valdez/ginecologo/tijuana#address-id=115974&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:41:09.577Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__carla_mariana_zamudio_valdez.webp"
+}

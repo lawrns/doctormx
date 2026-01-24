@@ -1,0 +1,39 @@
+{
+  "name": "Dr. Eduardo Lopez Ceh",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 213,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5266b5ef/5266b5ef-3757-4b92-ba01-bdf1c346fdf9_small_square.jpg",
+  "about": "Formación y experiencia Cédula profesional, médico cirujano y partero: 103227891 Cédula profesional, ginecología y obstetricia: 13890998 ​ 2024: Observer en el Servicio de Ginecología, Cirugía de Mínima Invasión - Hospital Sacro Cuore Don Calabria, Negrar di Valpolicella, Italia. 2024: Formación en Colposcopia y enfermedades del tracto genital, tratamiento con Láser CO2 - Colegio Mexicano de Formación Médica Continua - Universidad La Salle. 2024: Formación en Endocrinología Ginecológica - Asociación Mexicana de Endocrinología Ginecológica - Universidad de las Américas, Puebla. 2023: Especialidad en cirugía endoscópica ginecológica (mínima invasión): Laparoscopía e Histeroscopía - Hospital General de México “Dr. Eduado Liceaga”, el hospital más grande de América Latina. Programa avalado por la UNAM. 2019: Especialidad en Ginecología y Obstetricia. Hospital General de México “Dr. Eduado Liceaga”, el hospital más grande de América Latina. Programa avalado por la UNAM.",
+  "addresses": [
+    {
+      "full": "Temístocles 219,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-lopez-ceh/ginecologo/miguel-hidalgo",
+  "scrapedAt": "2026-01-22T01:57:13.515Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__eduardo_lopez_ceh.webp"
+}

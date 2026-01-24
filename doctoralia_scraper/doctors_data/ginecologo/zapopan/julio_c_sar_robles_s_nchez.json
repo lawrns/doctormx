@@ -1,0 +1,25 @@
+{
+  "name": "Julio César Robles Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 20,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a76fc0/a76fc0e926ca7ce91fcd7299f8e107d6_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cedro No. 1405,"
+    },
+    {
+      "full": "Cedro No. 1405,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/julio-cesar-robles-sanchez/ginecologo/guadalajara#address-id=123518&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:35:34.997Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/julio_c_sar_robles_s_nchez.webp"
+}

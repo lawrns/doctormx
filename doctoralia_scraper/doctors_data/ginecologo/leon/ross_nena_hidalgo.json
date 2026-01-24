@@ -1,0 +1,25 @@
+{
+  "name": "Ross Nena Hidalgo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 251,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dcc13f/dcc13fb0a0af17659820d09cece757ff_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. las Americas 201, Anade, 37370 Leon, Gto., Mexico,"
+    },
+    {
+      "full": "Blvd. las Americas 201, Anade, 37370 Leon, Gto., Mexico,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ross-nena-hidalgo/ginecologo/leon#address-id=254989&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:34:29.809Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/ross_nena_hidalgo.webp"
+}

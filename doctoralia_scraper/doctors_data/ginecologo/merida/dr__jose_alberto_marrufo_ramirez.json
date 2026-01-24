@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Jose Alberto Marrufo Ramirez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 51,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bbdf35/bbdf352c8b26163822d6d1ca0f33625b_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Colón 203 A, entre 26 Y 28, García Ginerés,,"
+    },
+    {
+      "full": "Av. Colón 203 A, entre 26 Y 28, García Ginerés,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Tratamiento para menopausia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-alberto-marrufo-ramirez/ginecologo/yucatan#address-id=212879&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:34:48.403Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__jose_alberto_marrufo_ramirez.webp"
+}

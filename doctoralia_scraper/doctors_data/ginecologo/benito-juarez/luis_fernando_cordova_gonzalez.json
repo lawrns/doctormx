@@ -1,0 +1,25 @@
+{
+  "name": "Luis Fernando Cordova Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 923,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2cb5e2/2cb5e2fd991f36f6bdd674329a375648_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ernesto elorduy no. 77, Guadalupe inn,,"
+    },
+    {
+      "full": "Ernesto elorduy no. 77, Guadalupe inn,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-fernando-cordova-gonzalez/ginecologo/alvaro-obregon#address-id=111353&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:14:13.900Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/luis_fernando_cordova_gonzalez.webp"
+}

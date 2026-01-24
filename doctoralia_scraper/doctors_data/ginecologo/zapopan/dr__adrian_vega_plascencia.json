@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Adrian Vega Plascencia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 253,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/de2567/de256782a44d3077edc68247d9d2605f_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Empresarios 150,"
+    },
+    {
+      "full": "Av. Empresarios 150,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adrian-vega-plascencia/ginecologo/zapopan",
+  "scrapedAt": "2026-01-22T04:26:47.895Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__adrian_vega_plascencia.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Javier Perez Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 63,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/450255/4502552b5cf7533e54b0c34338db1b85_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "San Francisco, 1838, 7° Piso,"
+    },
+    {
+      "full": "San Francisco, 1838, 7° Piso,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/javier-perez-gonzalez-2/ginecologo/-#address-id=340028&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:09:17.345Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__javier_perez_gonzalez.webp"
+}

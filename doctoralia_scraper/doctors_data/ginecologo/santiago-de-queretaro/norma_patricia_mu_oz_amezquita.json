@@ -1,0 +1,43 @@
+{
+  "name": "Norma Patricia Muñoz Amezquita",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 472,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/db2a03/db2a035d6ef388b98c6d280d94755995_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "TORRE MEDICA SANTIAGO, MODULO B 7 ,camino a los olvera 680 para ubicacion ingrese al siguiente link. https://goo.gl/maps/2fiQ7vkXR5Avunew6,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/norma-patricia-munoz-amezquita/ginecologo/queretaro",
+  "scrapedAt": "2026-01-22T03:41:44.274Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/norma_patricia_mu_oz_amezquita.webp"
+}

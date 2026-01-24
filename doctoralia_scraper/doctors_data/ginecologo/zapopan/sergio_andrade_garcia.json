@@ -1,0 +1,25 @@
+{
+  "name": "Sergio Andrade Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 174,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/41a65d73/41a65d73-4e43-4cfc-8f01-b126a6a98527_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. De Las Rosas 430,"
+    },
+    {
+      "full": "Av. De Las Rosas 430,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-andrade-garcia/ginecologo/zapopan#address-id=158075&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:38:12.132Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/sergio_andrade_garcia.webp"
+}

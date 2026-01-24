@@ -1,0 +1,25 @@
+{
+  "name": "Martha Olivia Castro Bañuelos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 121,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/25a78bf5/25a78bf5-6f76-4216-bb56-45538db5ae77_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 3 Nte. 24,"
+    },
+    {
+      "full": "C. 3 Nte. 24,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martha-olivia-castro-banuelos/ginecologo/acatzingo#address-id=188714&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:34:39.655Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/martha_olivia_castro_ba_uelos.webp"
+}

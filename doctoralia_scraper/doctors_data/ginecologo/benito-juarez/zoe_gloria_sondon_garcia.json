@@ -1,0 +1,31 @@
+{
+  "name": "Zoe Gloria Sondon Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 346,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/621c15/621c153905ee245cbe44da06dd455daf_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tlaxcala 180 Pb,"
+    },
+    {
+      "full": "Félix Cuevas 540,"
+    },
+    {
+      "full": "Tlaxcala 180 Pb,"
+    },
+    {
+      "full": "Félix Cuevas 540,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/zoe-gloria-sondon-garcia/ginecologo/benito-juarez#address-id=167060&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:17:29.604Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/zoe_gloria_sondon_garcia.webp"
+}

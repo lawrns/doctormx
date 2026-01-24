@@ -1,0 +1,25 @@
+{
+  "name": "Adrian Javier Torres Bautista",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 334,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/75056334/75056334-55dc-43f3-809a-1aa7a7d62ccf_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "De La Nieve 203,"
+    },
+    {
+      "full": "De La Nieve 203,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adrian-javier-torres-bautista/ginecologo/tijuana#address-id=251856&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:50:21.946Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/adrian_javier_torres_bautista.webp"
+}

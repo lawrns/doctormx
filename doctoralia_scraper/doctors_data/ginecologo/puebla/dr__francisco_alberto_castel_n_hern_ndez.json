@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Francisco Alberto Castelán Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 20,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cc232e/cc232e6d591968c9bd62fc4ab71ad968_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 5 Sur # 203,"
+    },
+    {
+      "full": "Calle 5 Sur # 203,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $650"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-alberto-castelan-hernandez/ginecologo/veracruz#address-id=481810&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:15:39.336Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__francisco_alberto_castel_n_hern_ndez.webp"
+}

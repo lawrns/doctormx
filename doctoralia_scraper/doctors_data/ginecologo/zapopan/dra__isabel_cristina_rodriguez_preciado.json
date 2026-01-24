@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Isabel Cristina Rodriguez Preciado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 35,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/92e6ec/92e6ecdb8c6381b4c8cc05a01c058c63_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Jesús García 2574,"
+    },
+    {
+      "full": "Jesús García 2574,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/isabel-cristina-rodriguez-preciado/ginecologo/guadalajara#address-id=128537&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:35:58.490Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__isabel_cristina_rodriguez_preciado.webp"
+}

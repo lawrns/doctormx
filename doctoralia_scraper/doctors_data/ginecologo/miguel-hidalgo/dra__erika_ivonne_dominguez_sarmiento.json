@@ -1,0 +1,37 @@
+{
+  "name": "Dra. Erika Ivonne Dominguez Sarmiento",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/652d447d/652d447d-006e-499b-b737-7747f25f071f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Vialidad De La Barranca S/N,"
+    },
+    {
+      "full": "Av. Ejército Nacional 613,"
+    },
+    {
+      "full": "Vialidad De La Barranca S/N,"
+    },
+    {
+      "full": "Av. Vialidad De La Barranca S/N,"
+    },
+    {
+      "full": "Av. Ejército Nacional 613,"
+    },
+    {
+      "full": "Vialidad De La Barranca S/N,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/erika-ivonne-dominguez-sarmiento-2/ginecologo/huixquilucan#address-id=327441&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:42:23.100Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__erika_ivonne_dominguez_sarmiento.webp"
+}

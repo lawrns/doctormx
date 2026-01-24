@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Carlos Armando Rodríguez Acevedo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 82,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/236680/236680b4c24e5ac09baff845333e65c0_220_square.jpg",
+  "about": "Hola soy el Dr. Armando Rodríguez Acevedo, especialista en Ginecología y Obstetricia con subespecialidad en Urología Ginecológica y Cirugía Pélvica Reconstructiva y además con alta especialidad en Cirugía Laparoscópica Ginecológica, egresado del Instituto Nacional de Perinatología (INPer), el cual es el hospital de mayor nivel de resolución y más importante en la formación de mi especialidad en México. Estoy certificado por el Consejo Mexicano de Ginecología y Obstetricia para la especialidad y subespecialidad. Mi formación me permite ayudar a mis pacientes en el diagnóstico y tratamiento de enfermedades del embarazo, ginecológicas, uroginecológicas y del piso pélvico, de alta complejidad, brindando atención de calidad y actualizada. El bienestar de mi paciente es mi prioridad, por ello para mi es importante acompañar a mis pacientes con un trato amable y respetuoso, así como brindarle apoyo a cada una, desde el diagnóstico, pasando por todo el proceso de tratamiento hasta que mejore y se recupere. Puedes sentir la tranquilidad que tu salud estará en manos expertas. ¡Será un gusto atenderte! Actualmente estoy certificado por el Consejo Mexicano de Ginecología y Obstetricia, para la especialidad y subespecialidad.",
+  "addresses": [
+    {
+      "full": "Montecito 38,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-armando-rodriguez-acevedo/ginecologo/ciudad-de-mexico#address-id=447956&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:01:15.319Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__carlos_armando_rodr_guez_acevedo.webp"
+}

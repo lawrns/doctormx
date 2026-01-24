@@ -1,0 +1,38 @@
+{
+  "name": "Dr. Marcelino Morales Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/07c5ff/07c5ff470684a2590b0d6837043b5a7a_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "13 Sur 1903-B, Colonia Santiago,"
+    },
+    {
+      "full": "13 Sur 1903-B, Colonia Santiago,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marcelino-morales-hernandez/ginecologo/puebla#address-id=95250&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:14:24.028Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__marcelino_morales_hern_ndez.webp"
+}

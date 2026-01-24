@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Nancy Alejandra Martínez Menjívar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/91e6bc/91e6bc9670ede1b28b4769858168fdba_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Ejército Nacional 613,"
+    },
+    {
+      "full": "Av. Ejército Nacional 613,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nancy-alejandra-martinez-menjivar-2/ginecologo/azcapotzalco#address-id=355062&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:22:57.336Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__nancy_alejandra_mart_nez_menj_var.webp"
+}

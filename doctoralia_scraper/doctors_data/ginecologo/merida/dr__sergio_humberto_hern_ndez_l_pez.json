@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Sergio Humberto Hernández López",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 229,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/316f35/316f358babc08f88eb2832c7e25b52d8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 15 No. 491 X 22. Torre Altabrisa Millenium, Local 5B2. Fraccionamiento Altabrisa,"
+    },
+    {
+      "full": "Calle 15 No. 491 X 22. Torre Altabrisa Millenium, Local 5B2. Fraccionamiento Altabrisa,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-humberto-hernandez-lopez/ginecologo/merida#address-id=148017&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:44:21.020Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__sergio_humberto_hern_ndez_l_pez.webp"
+}

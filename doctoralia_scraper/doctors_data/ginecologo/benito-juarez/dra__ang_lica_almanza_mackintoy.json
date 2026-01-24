@@ -1,0 +1,50 @@
+{
+  "name": "Dra. Angélica Almanza Mackintoy",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 41,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5e81ea52/5e81ea52-db68-48df-b0ca-e804725b4ed7_small_square.jpg",
+  "about": "Hola, soy la Dra Angélica Almanza Mackintoy, ginecóloga y obstetra.",
+  "addresses": [
+    {
+      "full": "Vialidad de la Barranca,"
+    },
+    {
+      "full": "Av. Universidad 1080,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angelica-almanza-mackintoy/ginecologo/ciudad-de-mexico#address-id=567668&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:00:38.790Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__ang_lica_almanza_mackintoy.webp"
+}

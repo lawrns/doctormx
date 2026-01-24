@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Eduardo Carrillo Nolasco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 271,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1bb43d/1bb43dfcaeefdb0546053143a734f360.jpg",
+  "about": "Soy médico especialista en Ginecología y Obstetricia y subespecialista en Oncologia, titulado y Certificado. Tengo como OBJETIVO: La prevención, detección oportuna y atención de las enfermedades que afectan a las mujeres en padecimientos ginecológicos y oncológicos. Así como, el control y manejo adecuado de pacientes que cursan con embarazo y sus problemas asociados.",
+  "addresses": [
+    {
+      "full": "Av. Nezahualcóyotl 255,"
+    },
+    {
+      "full": "Avenida Revolución 1225,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Cirugía Laparoscópica",
+      "price": ""
+    },
+    {
+      "name": "Consulta Ginecología Oncológica",
+      "price": ""
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Atención pacientes con cáncer",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-carrillo-nolasco/ginecologo/nezahualcoyotl#address-id=596557&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:02:24.602Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__eduardo_carrillo_nolasco.webp"
+}

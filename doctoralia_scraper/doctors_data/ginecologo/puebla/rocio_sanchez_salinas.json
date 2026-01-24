@@ -1,0 +1,25 @@
+{
+  "name": "Rocio Sanchez Salinas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 156,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/743b60/743b60d2fcee13b8aeb528d09cdb30d1_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "12 Ote. 101,"
+    },
+    {
+      "full": "12 Ote. 101,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rocio-sanchez-salinas/ginecologo/tehuacan#address-id=176783&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:26:43.640Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/rocio_sanchez_salinas.webp"
+}

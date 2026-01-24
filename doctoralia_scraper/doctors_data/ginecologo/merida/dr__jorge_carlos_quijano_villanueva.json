@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jorge Carlos Quijano Villanueva",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 44,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a3eea2/a3eea2aa1974a7bf8d1ba52adf79dd9f_220_square.jpg",
+  "about": "Soy el Dr. Jorge Carlos Quijano Villanueva, especializado en Ginecología y Obstetricia. Tengo una amplia experiencia en el tratamiento de enfermedades ginecológicas y en el cuidado de la paciente embarazada . Mi enfoque se centra en proporcionar una atención médica de calidad, basada en las necesidades individuales de cada paciente. Me considero un profesional comprometido con el bienestar de mis pacientes y siempre trato de explicar de manera clara y comprensible cualquier diagnóstico o tratamiento que se requiera. Me enorgullece haber recibido varios comentarios positivos de mis pacientes, quienes han elogiado mi atención, profesionalismo y explicaciones detalladas. Si necesita atención médica especializada en ginecología, no dude en programar una cita conmigo. Estoy aquí para ayudar y brindar la atención que necesita.",
+  "addresses": [
+    {
+      "full": "Av cúpules 105-20 y 22,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-carlos-quijano-villanueva/ginecologo/yucatan#address-id=442814&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:32:59.487Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__jorge_carlos_quijano_villanueva.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Alejandro Guizar Martnez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 418,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/aaa002/aaa002ab73d2b22a98692a38215e66e3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Cucapah 442,"
+    },
+    {
+      "full": "Blvd. Cucapah 442,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-guizar-martnez/ginecologo/tijuana#address-id=249736&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:50:12.589Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/alejandro_guizar_martnez.webp"
+}

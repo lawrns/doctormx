@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Graciela Ledesma Leal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/017c3e/017c3ee10945e705ee138abd29b9a065_220_square.jpg",
+  "about": "Ginecología y Obstetricia UAQ-SESEQ. Experiencia de 22 años. Médico especialista adscrito al HENM. Grupo multidisciplinario de trabajo.",
+  "addresses": [
+    {
+      "full": "Arroyo Seco 301 Colonia Estrella,"
+    },
+    {
+      "full": "Arroyo Seco 301 Colonia Estrella,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/graciela-ledesma-leal/ginecologo/santiago-de-queretaro#address-id=418424&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:50:27.779Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__graciela_ledesma_leal.webp"
+}

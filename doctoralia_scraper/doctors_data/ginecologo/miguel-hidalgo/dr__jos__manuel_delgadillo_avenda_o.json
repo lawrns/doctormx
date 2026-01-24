@@ -1,0 +1,40 @@
+{
+  "name": "Dr. José Manuel Delgadillo Avendaño",
+  "specialty": "Pediatra",
+  "rating": 5,
+  "reviewCount": 130,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b63d0f/b63d0faea523a31c59dc4bf17122078e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tejocotes 216 - 401,"
+    },
+    {
+      "full": "Calle General Cano, 94 Cons. 502,"
+    },
+    {
+      "full": "Tejocotes 216 - 401,"
+    },
+    {
+      "full": "Calle General Cano, 94 Cons. 502,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Pediatría",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Endoscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-manuel-delgadillo-avendano-2/pediatra/benito-juarez#address-id=327523&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:40:55.468Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__jos__manuel_delgadillo_avenda_o.webp"
+}

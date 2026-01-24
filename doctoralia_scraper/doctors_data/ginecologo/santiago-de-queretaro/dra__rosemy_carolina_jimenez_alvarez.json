@@ -1,0 +1,38 @@
+{
+  "name": "Dra. Rosemy Carolina Jimenez Alvarez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 68,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0558ff/0558ffb72b51a25563a9045dbf9b83df_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Felipe Ángeles 178,"
+    },
+    {
+      "full": "Avenida Felipe Ángeles 178,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido 4D",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosemy-carolina-jimenez-alvarez/ginecologo/queretaro#address-id=468673&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:48:17.414Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__rosemy_carolina_jimenez_alvarez.webp"
+}

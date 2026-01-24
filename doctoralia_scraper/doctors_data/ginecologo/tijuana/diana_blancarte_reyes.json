@@ -1,0 +1,50 @@
+{
+  "name": "Diana Blancarte Reyes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 250,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6dd629/6dd629e85500ca0d97b948e544f34791.jpg",
+  "about": "Ginecologa certificada, especializada en Biología de la Reproducción Humana. Egresado del Centro Médico Nacional “La Raza”, avalado por la UNAM en Ciudad de México. Especialista en problemas de infertilidad, Reproducción asistida, inseminacion intrauterina, así como atención ginecológica y obstétrica.",
+  "addresses": [
+    {
+      "full": "David Alfaro Siqueiros 2621, torre 36, piso 4, consultorio 405,"
+    },
+    {
+      "full": "Blvd. Padre Kino, Cuauhtemoc,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diana-blancarte-reyes/ginecologo/tijuana#address-id=567262&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:41:01.592Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/diana_blancarte_reyes.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. La Pena Raul Ortiz De",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 34,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Agrarismo 208 9con953 9con953,"
+    },
+    {
+      "full": "Calle Agrarismo 208 9con953 9con953,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/la-pena-raul-ortiz-de/ginecologo/ciudad-de-mexico#address-id=42780&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:48:53.940Z",
+  "localPhotoPath": null
+}

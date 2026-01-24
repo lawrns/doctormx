@@ -1,0 +1,31 @@
+{
+  "name": "Maria Asuncion Betancurt Ancona",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 631,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6ce73c/6ce73cc0801040c5d06e52235743b805_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Itzaes X 71 Y 73 528 A,"
+    },
+    {
+      "full": "C. 59 X 86,"
+    },
+    {
+      "full": "Av. Itzaes X 71 Y 73 528 A,"
+    },
+    {
+      "full": "C. 59 X 86,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-asuncion-betancurt-ancona/ginecologo/merida#address-id=194990&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:47:11.559Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/maria_asuncion_betancurt_ancona.webp"
+}

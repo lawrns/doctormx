@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Dayana Infante Mejia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 417,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/3c5f677d/3c5f677d-0ea9-4d7a-b74b-f405f486cd27_large.jpg",
+  "about": "Ginecóloga especialista en el diagnóstico y tratamiento integral de la salud femenina: infecciones ginecológicas y ETS, patología mamaria, tumores, cáncer ginecológico, embarazo y menopausia. Experta en detección oportuna de cáncer de mama y cervicouterino (Papanicolaou, colposcopia, PCR para VPH). Brindo atención cálida y segura, respetando siempre tu privacidad y bienestar.",
+  "addresses": [
+    {
+      "full": "Boulevard Bernardo Quintana Arrioja 4060,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    },
+    {
+      "name": "Vacunas virus del papiloma humano",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dayana-infante-mejia/ginecologo-ginecologo-oncologico/santiago-de-queretaro#address-id=416958&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:47:20.842Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__dayana_infante_mejia.webp"
+}

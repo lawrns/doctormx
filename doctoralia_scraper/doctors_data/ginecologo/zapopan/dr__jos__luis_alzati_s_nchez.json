@@ -1,0 +1,30 @@
+{
+  "name": "Dr. José Luis Alzati Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 36,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bf03c2/bf03c2f95a0dd2a09565dd69ce97a014_220_square.jpg",
+  "about": "Soy el Dr. José Luis Alzati Sánchez, Ginecólogo Obstetra certificado por el Consejo Mexicano de Ginecología y Obstetricia, con más de 40 años de experiencia en Salud de la Mujer. Egresé de la Universidad de Guadalajara como Médico Cirujano y Partero en 1972, con especialidad en Ginecología y Obstetricia avalada por el IMSS. Soy experto en atención ginecológica para cada etapa de la mujer, desde la adolescencia hasta la madurez, en prevención de osteopenia y osteoporosis, así como en detección oportuna de cáncer ginecológico. Soy miembro de sociedades científicas como la Sociedad de Ginecología y Obstetricia de Guadalajara (1982), The American College of Obstetricians and Gynecologists (1995 a la fecha), de la Asociación Jalisciense para el Estudio del Climaterio (Socio fundador, 1997) y de la Federación de Sociedades de Ginecología y Obstetricia (1983 a la fecha).",
+  "addresses": [
+    {
+      "full": "Av. Empresarios 150,"
+    },
+    {
+      "full": "Av. Empresarios 150,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-luis-alzati-sanchez/ginecologo/zapopan#address-id=43395&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:25:58.934Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jos__luis_alzati_s_nchez.webp"
+}

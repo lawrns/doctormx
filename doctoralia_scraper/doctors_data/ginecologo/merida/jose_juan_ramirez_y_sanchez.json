@@ -1,0 +1,31 @@
+{
+  "name": "Jose Juan Ramirez Y Sanchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 53,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/80d989/80d989b339476328718cf5a3a7051ad3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 41 439,"
+    },
+    {
+      "full": "C. 69 430A,"
+    },
+    {
+      "full": "C. 41 439,"
+    },
+    {
+      "full": "C. 69 430A,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-juan-ramirez-y-sanchez/ginecologo/merida#address-id=209940&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:49:44.965Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/jose_juan_ramirez_y_sanchez.webp"
+}

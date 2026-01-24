@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Elvia Elena Hernandez Madera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 71,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3831a8a8/3831a8a8-8c73-4cbd-b550-1ad5cb9cc143_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Plan De San Luis 1789 -,"
+    },
+    {
+      "full": "Lerdo de Tejada 2342 Lafayette,"
+    },
+    {
+      "full": "Plan De San Luis 1789 -,"
+    },
+    {
+      "full": "Lerdo de Tejada 2342 Lafayette,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elvia-elena-hernandez-madera/ginecologo/guadalajara#address-id=97088&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:36:18.525Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__elvia_elena_hernandez_madera.webp"
+}

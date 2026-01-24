@@ -1,0 +1,35 @@
+{
+  "name": "Dr. Juan Manuel Cacho Gutiérrez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 16,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/89c0d4/89c0d48bf20f3bd85df4f2bb0d8c1531_220_square.jpg",
+  "about": "El control adecuado del embarazo y la atención humanizada del parto o cesárea para lograr la mejor experiencia para la mamá y el bebé es lo más importante para mí.Aceptamos pagos con efectivo, tarjeta y transferencia. Se realiza recibo de honorarios/factura.",
+  "addresses": [
+    {
+      "full": "Bolonia 108 Residencial Italia,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": "• Desde $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-manuel-cacho-gutierrez/ginecologo/santiago-de-queretaro#address-id=399469&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:43:22.379Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__juan_manuel_cacho_guti_rrez.webp"
+}

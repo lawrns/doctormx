@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Miguel González Silis",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 31,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/1205ddfd/1205ddfd-b2e8-43a5-9291-cbc6374af840_small_square.jpg",
+  "about": "MEDICO EGRESADO DE LA UNAM Y ESPECIALISTA EN GINECOLOGIA Y OBSTETRICIA CON RECONOCIMIENTO POR LA UNIVERSIDAD LA SALLE. CERTIFICADO POR EL CONSEJO MEXICANO DE GINECOLOGIA Y OBSTETRICIA CON 28 AÑOS DE EXPERIENCIA",
+  "addresses": [
+    {
+      "full": "C. Gobernador Gregorio V. Gelati 33, San Miguel Chapultepec I Secc, Miguel Hidalgo, 11850 Ciudad de México, CDMX,"
+    },
+    {
+      "full": "C. Gobernador Gregorio V. Gelati 33, San Miguel Chapultepec I Secc, Miguel Hidalgo, 11850 Ciudad de México, CDMX,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-gonzalez-silis-2/ginecologo/miguel-hidalgo#address-id=416074&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:04:18.355Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__miguel_gonz_lez_silis.webp"
+}

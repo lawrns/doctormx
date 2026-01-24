@@ -1,0 +1,38 @@
+{
+  "name": "Dra. Jessica García Cataño",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 486,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b25885/b258859758b10a052d686f44aa376f48_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Pablo Neruda # 3148,"
+    },
+    {
+      "full": "Av. Pablo Neruda # 3148,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jessica-garcia-catano/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:27:35.415Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__jessica_garc_a_cata_o.webp"
+}

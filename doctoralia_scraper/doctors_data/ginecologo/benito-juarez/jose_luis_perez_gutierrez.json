@@ -1,0 +1,25 @@
+{
+  "name": "Jose Luis Perez Gutierrez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 57,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/dd61983d/dd61983d-7167-4d1d-9e01-1f864c85994e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Xochicalco 560, Col. Vertiz Narvarte, ,"
+    },
+    {
+      "full": "Xochicalco 560, Col. Vertiz Narvarte, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-luis-perez-gutierrez/ginecologo/benito-juarez#address-id=357189&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:19:27.263Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/jose_luis_perez_gutierrez.webp"
+}

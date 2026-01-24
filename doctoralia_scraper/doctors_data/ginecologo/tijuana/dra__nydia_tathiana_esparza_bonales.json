@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Nydia Tathiana Esparza Bonales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/57837327/57837327-4772-4a97-a3e1-ac21cc4acfe7_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Paseo De Los Héroes 10289 Int. 7003, Zona Urbana Río,"
+    },
+    {
+      "full": "Paseo De Los Héroes 10289 Int. 7003, Zona Urbana Río,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nydia-tathiana-esparza-bonales/ginecologo/tijuana#address-id=148227&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:45:07.636Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__nydia_tathiana_esparza_bonales.webp"
+}

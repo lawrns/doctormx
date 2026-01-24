@@ -1,0 +1,90 @@
+{
+  "name": "Dra. Karina Guadalupe Muñoz Lomelí",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 68,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/19b9b6/19b9b6530f2ca73166ba548d7217d7ca_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "avenida union 163,"
+    },
+    {
+      "full": "Avenida Circunvalación Jorge Álvarez del Castillo 1525,"
+    },
+    {
+      "full": "Esteban Alatorre 51,"
+    },
+    {
+      "full": "avenida union 163,"
+    },
+    {
+      "full": "Avenida Circunvalación Jorge Álvarez del Castillo 1525,"
+    },
+    {
+      "full": "Esteban Alatorre 51,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Infertilidad",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de infertilidad",
+      "price": ""
+    },
+    {
+      "name": "Histerectomia por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Histeroscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karina-guadalupe-munoz-lomeli/ginecologo/zapotlanejo#address-id=509764&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:22:36.483Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__karina_guadalupe_mu_oz_lomel_.webp"
+}

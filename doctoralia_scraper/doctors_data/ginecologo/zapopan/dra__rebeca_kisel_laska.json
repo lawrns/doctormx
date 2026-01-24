@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Rebeca Kisel Laska",
+  "specialty": "Ginecólogo",
+  "rating": 1,
+  "reviewCount": 18,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/63b495/63b49534b9467c2bcb2577bee292e839_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Guadalupe 4064,"
+    },
+    {
+      "full": "Av. Guadalupe 4064,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rebeca-kisel-laska/ginecologo/zapopan#address-id=19852&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:28:34.031Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__rebeca_kisel_laska.webp"
+}

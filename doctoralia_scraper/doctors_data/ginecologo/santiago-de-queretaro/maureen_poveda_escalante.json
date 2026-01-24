@@ -1,0 +1,89 @@
+{
+  "name": "Maureen Poveda Escalante",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 300,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1ade19/1ade19c038a8ca860ba3d6b4b209c5e4.jpg",
+  "about": "MEDICO CIRUJANO: UNIVERSIDAD AUTONOMA DE YUCATAN. 1999-2006 GINECOLOGIA Y OBSTETRICIA: UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO. HOSPITAL DE GINECOLOGIA Y OBSTETRICIA NO. 4 \"DR. LUIS CASTELAZO AYALA\" IMSS. 2007-2011 ALTA ESPECIALIDAD EN COLPOSCOPIA Y PATOLOGIA DEL TRACTO GENITAL INFERIOR: UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO. HOSPITAL REGIONAL 1ERO DE OCTUBRE ISSSTE 2011-2012 MEDICO GINECOLOGO CERTIFICADO POR EL CONSEJO MEXICANO DE GINECOLOGIA Y OBSTETRICIA DESDE AGOSTO 2012 MEDICO DE BASE DEL HOSPITAL REGIONAL NO. 1 DEL IMSS, QRO,QRO. Maestría en Investigación Médica con rama terminal en Salud Pública por la Universidad Autónoma de Querétaro",
+  "addresses": [
+    {
+      "full": "Boulevard Bernardo Quintana 4060,"
+    },
+    {
+      "full": "Bernardino Del Razo 21,"
+    },
+    {
+      "full": "Av Fray Luis de León 7072,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maureen-poveda-escalante/ginecologo/santiago-de-queretaro#address-id=562243&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:46:24.513Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/maureen_poveda_escalante.webp"
+}

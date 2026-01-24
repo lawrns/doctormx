@@ -1,0 +1,31 @@
+{
+  "name": "David Larios Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 101,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/6d37cccd/6d37cccd-cb64-43fc-a997-169c70885fab_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calz. Lázaro Cárdenas 2063,"
+    },
+    {
+      "full": "Av. Niño Obrero 1052,"
+    },
+    {
+      "full": "Calz. Lázaro Cárdenas 2063,"
+    },
+    {
+      "full": "Av. Niño Obrero 1052,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/david-larios-perez/ginecologo/guadalajara#address-id=236015&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:40:36.272Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/david_larios_perez.webp"
+}

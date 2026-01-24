@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Estela Varela de la Madrid",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 188,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ee6750/ee6750c7893923c35fa01607c72cb135.jpg",
+  "about": "Principales áreas de tratamiento Ginecología Obstetricia Colposcopia",
+  "addresses": [
+    {
+      "full": "Calle Ignacio Zaragoza,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/estela-varela-de-la-madrid/ginecologo/santiago-de-queretaro#address-id=390285&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:43:14.406Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__estela_varela_de_la_madrid.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Victor Armando Pinto Brito",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 219,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/544bdd/544bdda72c4c590c2e4bd7f432e7edac_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 50 No 540 (x 67 y 67-A, Consultorio 3),"
+    },
+    {
+      "full": "Calle 50 No 540 (x 67 y 67-A, Consultorio 3),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victor-armando-pinto-brito/ginecologo/merida#address-id=124207&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:43:00.614Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__victor_armando_pinto_brito.webp"
+}

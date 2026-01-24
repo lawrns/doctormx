@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Karina Muñoz Velazco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 430,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f18a03/f18a034aa56c6971b6ea9a8ae3aa9805_220_square.jpg",
+  "about": "Soy egresada de la máxima casa de estudios UNAM, cursando la especialidad de Ginecología y Obstetricia, en el Hospital de la Mujer de México. Estoy acutalmente Certificada por el Consejo Mexicano de Ginecología y Obstetricia. Realice un posgrado en Colposcopia y Patología de Tracto Genital Inferior en el Hospital General de México, y así mismo realice un Fellowship en Ultrasonido Ginecológico y Obstétrico por la Universidad la Salle. Labore en los dos centros ginecológico más importantes del país Centro Médico Nacional la Raza y el Centro Médico ABC campus observatorio y santa fe.",
+  "addresses": [
+    {
+      "full": "Paseo del Centenario 9580 Torre NewCity Medical piso 6 consultorio 603,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,900"
+    },
+    {
+      "name": "Biopsia cervical",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karina-munoz-velazco-2/ginecologo/tijuana#address-id=461067&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:41:12.176Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__karina_mu_oz_velazco.webp"
+}

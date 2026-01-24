@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Pedro Heriberto Quintana León",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d5f8ac/d5f8ace99fc7d622c14b5c581889a39f_220_square.jpg",
+  "about": "Soy el Dr. Pedro Quintana, Especialista Certificado en Ginecología y Obstetricia, cuento con más de 33 años de experiencia. Lo que más me gusta de mi consulta es brindar certeza a mis pacientes desde el diagnóstico, tratamiento y al final obtener un excelente resultado acerca de la duda o padecimiento con la que llegan a mi consultorio.",
+  "addresses": [
+    {
+      "full": "Alfredo de Musset 650, Esq. Ejercito Nacional. Piso 2 Consultorio 203,"
+    },
+    {
+      "full": "Alfredo de Musset 650, Esq. Ejercito Nacional. Piso 2 Consultorio 203,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pedro-heriberto-quintana-leon/ginecologo/miguel-hidalgo#address-id=36487&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:03:50.558Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__pedro_heriberto_quintana_le_n.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Rene Márquez Allegre",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 90,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/67cece/67cece11181f35d3104cf1edc1fb3849_220_square.jpg",
+  "about": "Especialidad Ginecología y Obstetricia realizada en el Hospital 20 de Noviembre ISSSTE Cd. de México Especialidad en Urología Ginecológica y Cirugía Reconstructiva del Piso Pélvico en el Hospital Civil Fray Antonio Alcalde Guadalajara Jalisco Fundador y Profesor Titular de la Especialidad de Urología Ginecológica en el Hospital de Gineco-Obstetricia CMNO IMSS hasta el año 2017 Expresidente, participante del Consejo Consultivo y miembro activo de SMUG (Sociedad Mexicana de Urología Ginecológica) Miembro activo de IUGA (Asociación Internacional de Urología Ginecológica) Profesor del Consejo Mexicano de Ginecología y Obstetricia Certificación en Ginecología y Obstetricia por en Consejo Mexicano de Ginecología y Obstetricia Certificación en Urología Ginecológica por el Consejo Mexicano de Ginecología y Obstetricia",
+  "addresses": [
+    {
+      "full": "CENTRO MEDICO REAL SAN JOSE VALLE REAL CUARTO PISO CONSULTORIO 7 LADO B,"
+    },
+    {
+      "full": "CENTRO MEDICO REAL SAN JOSE VALLE REAL CUARTO PISO CONSULTORIO 7 LADO B,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rene-marquez-allegre-2/ginecologo/zapopan#address-id=398806&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:16:28.184Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__rene_m_rquez_allegre.webp"
+}

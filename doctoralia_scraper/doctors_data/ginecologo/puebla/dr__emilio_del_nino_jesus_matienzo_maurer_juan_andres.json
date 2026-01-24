@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Emilio Del Nino Jesus Matienzo Maurer Juan Andres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 375,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/171cc3/171cc3a56e96e37caf1a14274402dd28_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. 18 Oriente 205 12 D 12 D,"
+    },
+    {
+      "full": "Ave. 18 Oriente 205 12 D 12 D,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/emilio-del-nino-jesus-matienzo-maurer-juan-andres/ginecologo/puebla#address-id=54416&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:34:52.382Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__emilio_del_nino_jesus_matienzo_maurer_juan_andres.webp"
+}

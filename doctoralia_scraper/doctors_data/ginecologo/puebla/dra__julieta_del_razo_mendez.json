@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Julieta del Razo Mendez",
+  "specialty": "Ginecólogo",
+  "rating": 1,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/131d46/131d4600b00c5a90db37c6b3b08b3a2a_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tecamachalco Barrio San José Calle 12 No.14 Esquina 2 ote ,"
+    },
+    {
+      "full": "Tecamachalco Barrio San José Calle 12 No.14 Esquina 2 ote ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/julieta-del-razo-mendez-2/ginecologo/puebla#address-id=419092&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:16:56.957Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__julieta_del_razo_mendez.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Iván Ruiseco Herrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 113,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8438eb/8438eb8cb0a083a04ded12981918bec1_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Mayorazgo 130 (Churubusco-Universidad), Torre 2 Piso 8, consultorio 840. Xoco, Benito Juarez,"
+    },
+    {
+      "full": "Mayorazgo 130 (Churubusco-Universidad), Torre 2 Piso 8, consultorio 840. Xoco, Benito Juarez,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ivan-ruiseco-herrera/ginecologo/ciudad-de-mexico#address-id=488133&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:12:27.681Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__iv_n_ruiseco_herrera.webp"
+}

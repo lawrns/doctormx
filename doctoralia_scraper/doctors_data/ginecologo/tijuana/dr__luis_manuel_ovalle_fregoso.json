@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Luis Manuel Ovalle Fregoso",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/7dc8b7d8/7dc8b7d8-f25a-4cd5-85c4-27954224cd73_small_square.jpg",
+  "about": "Médico egresado de la Universidad Autónoma de Baja California, con especialidad en Ginecología y Obstetricia realizada en Hospital Central Norte de PEMEX en México DF. Diplomado en Colposcopia y patolgoia del Tracto Genital Inferior en el Instituto Nacional de Perinatologia, Curso de laparoscopia ginecologica en UNEME Tijuana, y ginecología cosmética porla Universidad Veracruzana. Múltiples cursos de actualización de la especialidad, ponente en cursos nacionales en diferentes temas relacionados con el embarazo. Diplomados en administración hospitalaria. Participación directa y responsable de la contruccion y puesta en marcha del Hospital General de Tecate, siendo director del mismo durante 5 años, coordinador clínico de turno en IMSS Tecate. Consulta privada de más de 8 años.",
+  "addresses": [
+    {
+      "full": "Villa De La Juventud 8800,"
+    },
+    {
+      "full": "Av, Via de la Juventud 8800 int 108 Edificio 22-108,"
+    },
+    {
+      "full": "Villa De La Juventud 8800,"
+    },
+    {
+      "full": "Av, Via de la Juventud 8800 int 108 Edificio 22-108,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-manuel-ovalle-fregoso/ginecologo/tijuana#address-id=3605&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:44:09.653Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__luis_manuel_ovalle_fregoso.webp"
+}

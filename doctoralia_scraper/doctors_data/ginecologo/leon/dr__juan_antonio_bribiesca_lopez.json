@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Juan Antonio Bribiesca Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 354,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8b46c1/8b46c143e3aa73e28192f00afdda61c2_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Héroes De La Independencia 1913,"
+    },
+    {
+      "full": "Héroes De La Independencia 1913,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-antonio-bribiesca-lopez/ginecologo/leon#address-id=4036&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:29:07.269Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__juan_antonio_bribiesca_lopez.webp"
+}

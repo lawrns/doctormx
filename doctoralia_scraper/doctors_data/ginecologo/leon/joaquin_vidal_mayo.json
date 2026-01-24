@@ -1,0 +1,31 @@
+{
+  "name": "Joaquin Vidal Mayo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 27,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0d0d1f/0d0d1f4073d2f5399685e2e0b1a0accc_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Zaragoza 616,"
+    },
+    {
+      "full": "Parrilla,"
+    },
+    {
+      "full": "Zaragoza 616,"
+    },
+    {
+      "full": "Parrilla,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/joaquin-vidal-mayo/ginecologo/centro#address-id=215100&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:33:03.506Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/joaquin_vidal_mayo.webp"
+}

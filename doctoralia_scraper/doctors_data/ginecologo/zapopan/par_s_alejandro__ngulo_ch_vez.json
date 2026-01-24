@@ -1,0 +1,25 @@
+{
+  "name": "París Alejandro Ángulo Chávez",
+  "specialty": "Ginecólogo",
+  "rating": 3.5,
+  "reviewCount": 6,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/71f95b/71f95bcc773e01508161d978e39096f6_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Alfredo R Plascencia 889,"
+    },
+    {
+      "full": "Alfredo R Plascencia 889,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paris-alejandro-angulo-chavez/ginecologo/guadalajara#address-id=148079&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:39:40.206Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/par_s_alejandro__ngulo_ch_vez.webp"
+}

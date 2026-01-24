@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Sinuhe Chávez Coss",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fb6b4d/fb6b4d0436c39ae602d9638264654f63_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "HIDALGO 329, ZONA CENTRO,"
+    },
+    {
+      "full": "BLVD. MINERAL DE CATA #901 MINERAL DE RAYAS, PUERTO INTERIOR,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Revisión de embarazo (Primera vez)",
+      "price": ""
+    },
+    {
+      "name": "Revisión de resultados",
+      "price": ""
+    },
+    {
+      "name": "Seguimiento del embarazo",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Revisión de embarazo (Primera vez)",
+      "price": ""
+    },
+    {
+      "name": "Revisión de resultados",
+      "price": ""
+    },
+    {
+      "name": "Seguimiento del embarazo",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sinuhe-chavez-coss-2/ginecologo-oncologico-ginecologo/silao#address-id=451081&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:27:12.778Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__sinuhe_ch_vez_coss.webp"
+}

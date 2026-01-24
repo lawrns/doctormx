@@ -1,0 +1,25 @@
+{
+  "name": "Alejandro San Luis Aguirre",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2a621b/2a621b62b230b0dcbbe20b18eff656cf_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Priv 3 Nte 321 2, Col. Guadalupe Calera, ,"
+    },
+    {
+      "full": "Priv 3 Nte 321 2, Col. Guadalupe Calera, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-san-luis-aguirre/ginecologo/puebla#address-id=357375&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:31:08.364Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/alejandro_san_luis_aguirre.webp"
+}

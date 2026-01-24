@@ -1,0 +1,89 @@
+{
+  "name": "Dra. Tania Echeveste Mora",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 253,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c8bd6a/c8bd6a9bd6702f6b5cc367de955ca4d8.jpg",
+  "about": "Soy Ginecóloga Oncóloga y Colposcopista certificada, experta en enfermedades benignas de la mujer como los miomas; así como experta en Virus de Papiloma Humano con ponencias nacionales e internacionales; actualizándome continuamente para brindar atención de calidad para tú salud",
+  "addresses": [
+    {
+      "full": "Av. Empresarios 150,"
+    },
+    {
+      "full": "Blvd. Miguel Aleman #57 Lte. 2 Torre Medica 57 Consultorio 121,"
+    },
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Atención pacientes con cáncer",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Biopsia trucut de mama",
+      "price": "• Desde $5,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,000"
+    },
+    {
+      "name": "Biopsia cervical",
+      "price": "• $3,100"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $1,900"
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": "• $3,100"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• Desde $3,100"
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": "• Desde $2,300"
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": "• Desde $4,500"
+    },
+    {
+      "name": "Histerectomia por laparoscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tania-echeveste-mora/ginecologo-ginecologo-oncologico/zapopan#address-id=434775&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:13:31.454Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__tania_echeveste_mora.webp"
+}

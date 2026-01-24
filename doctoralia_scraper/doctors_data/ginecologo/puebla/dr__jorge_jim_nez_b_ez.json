@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Jorge Jiménez Báez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 121,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/25a78bf5/25a78bf5-6f76-4216-bb56-45538db5ae77_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "2 oriente # 126,"
+    },
+    {
+      "full": "2 oriente # 126,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-jimenez-baez-2/ginecologo/puebla#address-id=566628&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:18:34.329Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__jorge_jim_nez_b_ez.webp"
+}

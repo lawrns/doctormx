@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Veronica Nuñez Beltran",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2cb5f9/2cb5f918b3708ef39b305cce56884b03_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Leandro Valle 62,"
+    },
+    {
+      "full": "Av. Moreno 248,"
+    },
+    {
+      "full": "Calle Leandro Valle 62,"
+    },
+    {
+      "full": "Av. Moreno 248,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/veronica-nunez-beltran/ginecologo/valle-de-santiago#address-id=327062&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:30:54.072Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__veronica_nu_ez_beltran.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Montserrat Godinez Mendoza",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 28,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/5a8b0f8e/5a8b0f8e-8f11-4b5e-b0be-50ab86c1db4b_large.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Luis Pérez Verdía 325,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/montserrat-godinez-mendoza/ginecologo/guadalajara#address-id=621823&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:13:11.303Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__montserrat_godinez_mendoza.webp"
+}

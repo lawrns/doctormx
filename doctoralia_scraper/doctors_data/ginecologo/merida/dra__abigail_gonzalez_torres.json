@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Abigail Gonzalez Torres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 751,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/0f6fe7ae/0f6fe7ae-d973-48f3-9f0c-91e05c282508_small_square.jpg",
+  "about": "Acompaño a cada mujer con información clara, respeto y decisiones compartidas. Mi consulta es un espacio donde puedes hablar sin prisa, resolver dudas y recibir opciones de tratamiento basadas en evidencia. Me actualizo de forma constante para ofrecerte diagnósticos claros y soluciones precisas para ti que buscas tratamientos efectivos de vanguardia.Aquí encontrarás un espacio profesional pensado en ti, para cuidar tu salud de manera integral y respetuosa.",
+  "addresses": [
+    {
+      "full": "C. 7 215A, García Ginerés,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/abigail-gonzalez-torres/ginecologo/yucatan#address-id=363319&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:29:26.528Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__abigail_gonzalez_torres.webp"
+}

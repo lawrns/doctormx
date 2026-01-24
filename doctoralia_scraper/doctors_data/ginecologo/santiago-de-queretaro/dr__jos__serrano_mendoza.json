@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José Serrano Mendoza",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5b50a8/5b50a8853a46bf75ab2715e66110186b_220_square.jpg",
+  "about": "Ginecológo y Obstetra egresado del Centro Medico Nacional Manuel Ávila Camacho, posteriormente realice el diplomado en Colposcopía y Manejo de Lesiones Tempranas del Tracto Genital Inferior en el Instituto Nacional de Cancerología. Soy un medico dedicado a dar una atención integral a todas las mujeres, desde el asesoramiento previo a la concepción hasta el parto y la recuperación, así como el cuidado ginecológico en sus diferentes etapas de la vida; siempre enfocado en que el trato sea humanitario, de calidad y profesional, en un ambiente cómodo, con el objetivo de que su visita a revisión ginecológica sea una experiencia agradable, y que al finalizar su tratamiento quede satisfecha y con la tranquilidad de que esta en las mejores manos.",
+  "addresses": [
+    {
+      "full": "Avenida Zaragoza 88 ,"
+    },
+    {
+      "full": "Avenida Zaragoza 88 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-serrano-mendoza/ginecologo/santiago-de-queretaro#address-id=127389&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:48:46.840Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__jos__serrano_mendoza.webp"
+}

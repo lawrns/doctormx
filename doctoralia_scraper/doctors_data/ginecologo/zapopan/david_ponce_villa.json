@@ -1,0 +1,31 @@
+{
+  "name": "David Ponce Villa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/461c1d9d/461c1d9d-4393-4085-ae56-0c904ed7d59a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Hidalgo 1911,"
+    },
+    {
+      "full": "Alfredo R. Plascencia 248,"
+    },
+    {
+      "full": "Av. Hidalgo 1911,"
+    },
+    {
+      "full": "Alfredo R. Plascencia 248,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/david-ponce-villa/ginecologo/guadalajara#address-id=235929&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:40:31.185Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/david_ponce_villa.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Arturo Martinez Vargas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d52d2e/d52d2ef542f1e9e8ce2c0903e987a6b8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Melchor Ocampo 58,"
+    },
+    {
+      "full": "4 Nte. 20176,"
+    },
+    {
+      "full": "Melchor Ocampo 58,"
+    },
+    {
+      "full": "4 Nte. 20176,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arturo-martinez-vargas/ginecologo/apetatitlan#address-id=243817&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:19:09.331Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__arturo_martinez_vargas.webp"
+}

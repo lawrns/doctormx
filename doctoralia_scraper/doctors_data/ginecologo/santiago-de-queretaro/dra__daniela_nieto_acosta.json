@@ -1,0 +1,64 @@
+{
+  "name": "Dra. Daniela Nieto Acosta",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 39,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8e28f0/8e28f07fe91b99883ba95d0b51bb8783_220_square.jpg",
+  "about": "Soy una mujer médica que prepondera la salud femenina, siempre estoy en busca de actualizaciones médicas que me permitan ayudar a mis pacientes de varias formas, adaptándome a las necesidades de cada una de ellas. A nivel académico siempre he sobresalido, obtuve el lugar 64 a nivel nacional en el Examen Nacional de Residencias Médicas en el año 2009. Fui el primer lugar de mi generación durante la Residencia Médica. Soy una persona que ama ejercer la ginecología y obstetricia, me apasiona la consulta médica por lo que estoy comprometida al 100% con mis pacientes.",
+  "addresses": [
+    {
+      "full": "Av. Campanario 99 Local C3 Plaza Campanario, Querétaro,"
+    },
+    {
+      "full": "Villa Tenochtitlan 3,"
+    },
+    {
+      "full": "Av. Campanario 99 Local C3 Plaza Campanario, Querétaro,"
+    },
+    {
+      "full": "Villa Tenochtitlan 3,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,550"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniela-nieto-acosta/ginecologo/queretaro#address-id=362635&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:48:42.471Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__daniela_nieto_acosta.webp"
+}

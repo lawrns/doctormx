@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Luis Fernando Flores Silva",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 82,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/914138e7/914138e7-dbda-43b5-82bf-1c1714b5e79b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ejercito Nacional No. 613, Col. Granada,"
+    },
+    {
+      "full": "Ejercito Nacional No. 613, Col. Granada,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Cirugía General",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-fernando-flores-silva/ginecologo/ciudad-de-mexico#address-id=107889&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:41:20.803Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__luis_fernando_flores_silva.webp"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Blanca Cardenas",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e098e640/e098e640-0ad1-4aff-a9f4-19cf9c78711b_small_square.jpg",
+  "about": "Subespecialidad en Fertilidad, Menopausia y Cirugía Laparoscópica. Certificada por el Consejo Mexicano de Ginecología y Obstetricia",
+  "addresses": [
+    {
+      "full": "Calle de la Nebulosa 2916,"
+    },
+    {
+      "full": "Calle de la Nebulosa 2916,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/blanca-cardenas/ginecologo/guadalajara#address-id=591543&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:28:20.948Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__blanca_cardenas.webp"
+}

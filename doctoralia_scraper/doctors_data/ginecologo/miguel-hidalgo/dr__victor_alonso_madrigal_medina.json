@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Victor Alonso Madrigal Medina",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 201,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/66a487/66a487a37f89ae756d8544f257813a4f_220_square.jpg",
+  "about": "Contamos con todas las técnicas de diagnóstico de vanguardia y tratamientos especializados para la prevención, detección oportuna y cura de diversas enfermedades y padecimientos de la mujer, así como seguimiento médico profesional en: 1. Trastornos del ciclo menstrual (medido en frecuencia, cantidad y duración del ciclo menstrual) 2. Infecciones vaginales 3. Enfermedades: Virus del Papiloma Humano, verrugas genitales, cáncer cervicouterino. 4. Miomatosis uterina (tumores benignos estrógeno-dependientes) 5. Embarazo 6. Menopausia 7. Climaterio 8. Incontinencia urinaria: de esfuerzo, de urgencia, mixto, continua. Orientamos a las parejas en los procesos que deben seguir ante un problema de infertilidad con un alto grado de confiabilidad Cuidamos la gestación, el parto y el puerperio (atención durante los 40 días después del parto). Nos diferenciamos en manejar partos humanizados, respetando la decisión de la mujer sobre el cómo quiere traer al mundo a su bebé, bajo un método de: 1.Confianza 2.Seguridad 3.Intimidad 4.Dignidad Mantenemos el cuidado de la salud sexual y reproductiva de la mujer.",
+  "addresses": [
+    {
+      "full": "ARQUIMEDES 130 OFICINA 202, Polanco IV Sección, Mexico City, Distrito Federal,"
+    },
+    {
+      "full": "Calle Arquímedes 130,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victor-alonso-madrigal-medina/ginecologo/ciudad-de-mexico#address-id=66455&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:57:35.689Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__victor_alonso_madrigal_medina.webp"
+}

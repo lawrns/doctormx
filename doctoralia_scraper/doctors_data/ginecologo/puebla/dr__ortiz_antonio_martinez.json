@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Ortiz Antonio Martinez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 191,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/180e54/180e549f26302edf33ea58eef3fa3279_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Josefa Ortiz De Dominguez 64,"
+    },
+    {
+      "full": "Calle Josefa Ortiz De Dominguez 64,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ortiz-antonio-martinez/ginecologo/tehuacan#address-id=44821&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:34:58.904Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__ortiz_antonio_martinez.webp"
+}

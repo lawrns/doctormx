@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Susana Quintana",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9ea7ee69/9ea7ee69-a988-450b-a02a-100008065cfe_small_square.jpg",
+  "about": "Gracias por tu confianza. Atención empática, mi vocación a tu servicio. Soy la Dra Carmen Susana Quintana Becerra Egresada del Hospital Juárez de México.",
+  "addresses": [
+    {
+      "full": "Avenida León 428,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/susana-quintana/ginecologo/leon#address-id=618051&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:26:41.378Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__susana_quintana.webp"
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Félix José Molina Aguiar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 787,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9bf23e/9bf23ea0035cfee24a67554beee63738_220_square.jpg",
+  "about": "Médico Cirujano, Estudió en la Facultad de Medicina de la Universidad Autónoma de Yucatán (UADY). Especialidad en Ginecología y Obstetricia, en el IMSS por la Universidad Autónoma de Yucatán. · Certificación por el Consejo Mexicano de Ginecología y Obstetricia No. 7639 · Diplomado en Colposcopía Básica y Patología del Tracto Genital Inferior por la Universidad Autónoma de México · Diplomado en Ultrasonido Diagnostico por la Universidad Autónoma de Zacatecas · Diplomado en Ginecología Estética y Láser Ginecológico por la Universidad Autónoma de Zacatecas · Adiestramiento en Laparoscopia básica y Avanzada en infertilidad femenina por la Unidad Médica de Alta Especialidad del IMSS - Adiestramiento en ultrasonido obstétrico y Doppler por la Unidad Médica de Alta Especialidad del IMSS · Waterbirth & Gentle BirthCertification aprobado por el American College of Nurse Midwives and the American College of Obstetricians and Gynecology-Waterbirth International",
+  "addresses": [
+    {
+      "full": "Calle 13 199G, García Generés,"
+    },
+    {
+      "full": "Calle 60,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $22,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/felix-jose-molina-aguiar-2/ginecologo/yucatan#address-id=487522&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:32:29.361Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__f_lix_jos__molina_aguiar.webp"
+}

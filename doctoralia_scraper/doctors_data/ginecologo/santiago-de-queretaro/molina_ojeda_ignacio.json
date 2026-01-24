@@ -1,0 +1,25 @@
+{
+  "name": "Molina Ojeda Ignacio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 23,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f88ebd/f88ebd05d76c1b12ed037e00fe089f73_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Plaza De Armas 80 Col. Las Plazas ,"
+    },
+    {
+      "full": "Plaza De Armas 80 Col. Las Plazas ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/molina-ojeda-ignacio/ginecologo/santiago-de-queretaro#address-id=359326&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:58:07.265Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/molina_ojeda_ignacio.webp"
+}

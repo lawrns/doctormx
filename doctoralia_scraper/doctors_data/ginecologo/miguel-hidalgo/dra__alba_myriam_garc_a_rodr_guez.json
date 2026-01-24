@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Alba Myriam García Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 74,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/546a1655/546a1655-9a6f-4fcf-89cd-aca81248cd0c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Temistocles 210,,"
+    },
+    {
+      "full": "Temistocles 210,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alba-myriam-garcia-rodriguez/ginecologo/miguel-hidalgo#address-id=31118&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:06:38.457Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__alba_myriam_garc_a_rodr_guez.webp"
+}

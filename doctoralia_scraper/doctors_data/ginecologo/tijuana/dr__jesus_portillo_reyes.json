@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jesus Portillo Reyes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 90,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bc2c43/bc2c43738bf0d89a36255f27d56fe968_220_square.jpg",
+  "about": "Tenemos el conocimiento y la experiencia. Para realizar el diagnostico, tratamiento y seguimiento de las pacientes con cancer ginecologico. Nuestro plus. Es poder a la paciente ofrecer el mejor tratamiento oncologico siendo lo menos radical posible, realizando cirugias oncoplasticas o reconstructivas en cirugias mamarias y procedimientos laparoscopicos oncologicos en patologias ginecologicas. (Cirugias laser).",
+  "addresses": [
+    {
+      "full": "Calle Diego Rivera no. 2351,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-portillo-reyes/ginecologo-ginecologo-oncologico/tijuana#address-id=93788&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:43:11.326Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__jesus_portillo_reyes.webp"
+}

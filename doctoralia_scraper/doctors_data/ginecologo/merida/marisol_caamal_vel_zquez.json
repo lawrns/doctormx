@@ -1,0 +1,66 @@
+{
+  "name": "Marisol Caamal Velázquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 643,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f28913/f28913695a15042c63d4e99b97e20003_220_square.jpg",
+  "about": "Atención personalizada, trato amable, confiable, profesionalismo,me dedico a control prenatal de alto y bajo riesgo, check up anuales contamos con paquetes, patología ginecóloga, in fertilidad, colposcopia.",
+  "addresses": [
+    {
+      "full": "Calle 7 Numero 215 A x 32 y 24 Col. García Gíneres, Consultorio 211,"
+    },
+    {
+      "full": "Calle 13 192,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marisol-caamal-velazquez/ginecologo/yucatan#address-id=619370&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:30:19.593Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/marisol_caamal_vel_zquez.webp"
+}

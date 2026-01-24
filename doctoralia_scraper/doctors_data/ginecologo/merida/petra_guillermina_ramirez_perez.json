@@ -1,0 +1,25 @@
+{
+  "name": "Petra Guillermina Ramirez Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 653,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5da054/5da0549cba8220ca64a7a47d330a668a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 33 311,"
+    },
+    {
+      "full": "C. 33 311,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/petra-guillermina-ramirez-perez/ginecologo/merida#address-id=180940&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:47:50.375Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/petra_guillermina_ramirez_perez.webp"
+}

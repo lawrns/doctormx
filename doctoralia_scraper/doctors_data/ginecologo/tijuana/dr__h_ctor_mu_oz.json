@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Héctor Muñoz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 104,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6e6bc3/6e6bc3e69ece54f61a9d474477ff7dcf_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ruta Independencia 7773,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-munoz/ginecologo/tijuana",
+  "scrapedAt": "2026-01-22T00:39:23.894Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__h_ctor_mu_oz.webp"
+}

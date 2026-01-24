@@ -1,0 +1,27 @@
+{
+  "name": "Dr. Alan Fernando Sánchez Gámez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/77d656e8/77d656e8-6b99-422b-ab80-8968d413655f_small_square.jpg",
+  "about": ".",
+  "addresses": [
+    {
+      "full": "Avenida Homero 404,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alan-fernando-sanchez-gamez/ginecologo/miguel-hidalgo#address-id=610282&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:03:01.716Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__alan_fernando_s_nchez_g_mez.webp"
+}

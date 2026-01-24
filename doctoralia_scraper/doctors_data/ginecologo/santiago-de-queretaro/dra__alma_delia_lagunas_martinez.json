@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Alma Delia Lagunas Martinez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 102,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/645d3860/645d3860-3934-49f3-998e-94ec93bf0c8c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "boulevard bernando quintana #4060,"
+    },
+    {
+      "full": "boulevard bernando quintana #4060,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alma-delia-lagunas-martinez/ginecologo/santiago-de-queretaro#address-id=460832&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:52:51.151Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__alma_delia_lagunas_martinez.webp"
+}

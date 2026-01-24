@@ -1,0 +1,98 @@
+{
+  "name": "Dr. Gabriel Rojas Poceros",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7151eb/7151eb0427e6309001426efa1b4fe41c_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hospital Español Ejército Nacional no. 617 Torre AMARILLA Consultorio. 305,"
+    },
+    {
+      "full": "Sur 136 No. 116,"
+    },
+    {
+      "full": "Ejército Nacional Mexicano 613,"
+    },
+    {
+      "full": "Hospital Español Ejército Nacional no. 617 Torre AMARILLA Consultorio. 305,"
+    },
+    {
+      "full": "Sur 136 No. 116,"
+    },
+    {
+      "full": "Ejército Nacional Mexicano 613,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Laparascopia diagnóstica con biopsia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Laparascopia diagnóstica con biopsia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Laparascopia diagnóstica con biopsia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriel-rojas-poceros/ginecologo/miguel-hidalgo#address-id=13418&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:06:26.376Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__gabriel_rojas_poceros.webp"
+}

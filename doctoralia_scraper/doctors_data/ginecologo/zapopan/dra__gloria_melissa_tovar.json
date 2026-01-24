@@ -1,0 +1,18 @@
+{
+  "name": "Dra. Gloria Melissa Tovar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 518,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1d139d/1d139d6b744d5cd30734782435889da9_140_square.jpg",
+  "about": "",
+  "addresses": [],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gloria-melissa-tovar/ginecologo/santa-cruz-de-juventino-rosas#address-id=440651&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:36:42.969Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__gloria_melissa_tovar.webp"
+}

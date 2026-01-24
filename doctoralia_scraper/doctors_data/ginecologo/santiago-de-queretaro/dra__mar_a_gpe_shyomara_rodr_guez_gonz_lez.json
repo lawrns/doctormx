@@ -1,0 +1,46 @@
+{
+  "name": "Dra. María Gpe Shyomara Rodríguez González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 294,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bcfece/bcfeceecacf7007cf6ea480593d7d7c5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Guerrero Sur 32 Colonia Centro ,"
+    },
+    {
+      "full": "Guerrero Sur 32 Colonia Centro ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Control prenatal",
+      "price": ""
+    },
+    {
+      "name": "Ecografía",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-gpe-shyomara-rodriguez-gonzalez/ginecologo/santiago-de-queretaro#address-id=106524&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:52:12.741Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__mar_a_gpe_shyomara_rodr_guez_gonz_lez.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Juan Fernando Rovira Haquet",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 52,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fca04d/fca04d31f52b4fb674da6120e9ae7fbb_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Palenque,12, Col. Narvarte Poniente, ,"
+    },
+    {
+      "full": "Palenque,12, Col. Narvarte Poniente, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-fernando-rovira-haquet/ginecologo/benito-juarez#address-id=357460&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:19:40.969Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/juan_fernando_rovira_haquet.webp"
+}

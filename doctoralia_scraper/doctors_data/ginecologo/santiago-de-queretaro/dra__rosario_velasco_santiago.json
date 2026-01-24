@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Rosario Velasco Santiago",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cdc9be/cdc9be9ef84f74cd441fd95019de2e2a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Prolongacion Constituyentes 302 708,"
+    },
+    {
+      "full": "Prolongacion Constituyentes 302 708,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosario-velasco-santiago/ginecologo/santiago-de-queretaro#address-id=58485&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:52:57.601Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__rosario_velasco_santiago.webp"
+}

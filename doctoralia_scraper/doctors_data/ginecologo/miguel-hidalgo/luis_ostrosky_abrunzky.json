@@ -1,0 +1,25 @@
+{
+  "name": "Luis Ostrosky Abrunzky",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 37,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/64f913/64f913e5d6473617ed8a2ce97f19c317_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Presa endo no. 38, Irrigacion,"
+    },
+    {
+      "full": "Presa endo no. 38, Irrigacion,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-ostrosky-abrunzky/ginecologo/miguel-hidalgo#address-id=111773&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:48:29.384Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/luis_ostrosky_abrunzky.webp"
+}

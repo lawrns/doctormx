@@ -1,0 +1,37 @@
+{
+  "name": "Braulio Juan Matamoros Torres",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Venustiano Carranza 366,"
+    },
+    {
+      "full": "Juarez X Zaragoza 76,"
+    },
+    {
+      "full": "Homero 290,"
+    },
+    {
+      "full": "Venustiano Carranza 366,"
+    },
+    {
+      "full": "Juarez X Zaragoza 76,"
+    },
+    {
+      "full": "Homero 290,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/braulio-juan-matamoros-torres/ginecologo/othon-p-blanco#address-id=241986&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:40:54.462Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Socorro García Garza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 330,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b915d3/b915d3c1611bc00baa4e0a23ceba90db_220_square.jpg",
+  "about": "La Medicina no es solo curar el cuerpo sino alimentar el espíritu.... Como mujer entiendo todas las diversas emociones y sentimientos que podemos llegar a vivir... Como ginecóloga puedo saber y dar tratamiento para aliviar la enfermedad que puede aquejarte, ayudar a mantener tu cuerpo saludable y a orientarte para resolver las dudas que puedas tener.... Porque la Gineco-Obstetricia es mucho más que la toma de Papanicolaou o un embarazo",
+  "addresses": [
+    {
+      "full": "Calle Dique 211,"
+    },
+    {
+      "full": "Calle Dique 211,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": "• Desde $5,000"
+    },
+    {
+      "name": "Blanqueamiento genital",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/socorro-garcia-garza/ginecologo/leon#address-id=85791&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:27:47.780Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__socorro_garc_a_garza.webp"
+}

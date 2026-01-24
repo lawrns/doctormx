@@ -1,0 +1,58 @@
+{
+  "name": "Nelly Achar San Vicente",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 101,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d0e530/d0e53033ea73a445d82a549d8b45c96b_220_square.jpg",
+  "about": "Ginecóloga con amplia experiencia con atención humanizada en las mujer en las diferentes etapas de la vida, adolescencia, edad fértil, embarazo, parto en agua, parto respetado, Menopausia, hormonas bioidénticas, así como sus diferentes patologías: enfermedades de transmisión sexual, transtornos menstruales, sangrados anormales, disfunción del piso pélvico, incontinecia urinaria, miomatosis uterina, osteoporosis, entre otros. Con experiencia en cirugía de mínima invasión (laparoscopia, histeroscopia).",
+  "addresses": [
+    {
+      "full": "Av. Vialidad de la Barranca s/n,"
+    },
+    {
+      "full": "Avenida Ejército Nacional Mexicano 613,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,850"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Parto en Agua",
+      "price": ""
+    },
+    {
+      "name": "Parto humanizado",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,850"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• Desde $1,550"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nelly-achar-san-vicente/ginecologo/ciudad-de-mexico#address-id=399413&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:03:12.193Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/nelly_achar_san_vicente.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Fernando Escobedo Aguirre",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 44,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/757490/757490d3fae22dd28d846749b6d0585c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Rio Mixcoac 206 Pisoo 2,"
+    },
+    {
+      "full": "Rio Mixcoac 206 Pisoo 2,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-escobedo-aguirre/ginecologo/ciudad-de-mexico#address-id=148049&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:17:54.358Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/fernando_escobedo_aguirre.webp"
+}

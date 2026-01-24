@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Tania Ayala Ruiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/fb78477a/fb78477a-abec-4d92-bfaa-edaea4ea77c3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Del Maestro 1904 7,"
+    },
+    {
+      "full": "Del Maestro 1904 7,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tania-ayala-ruiz/ginecologo/tlaxcala#address-id=11194&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:18:08.412Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__tania_ayala_ruiz.webp"
+}

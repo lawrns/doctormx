@@ -1,0 +1,37 @@
+{
+  "name": "Jose De Jesus Gonzalez Maldonado",
+  "specialty": "Urólogo",
+  "rating": 5,
+  "reviewCount": 354,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/178347a3/178347a3-5b74-4f7b-a9b0-e91121d95514_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Baja California 914,"
+    },
+    {
+      "full": "Tulipanes 22160,"
+    },
+    {
+      "full": "Av. Gustavo Díaz Ordaz 400,"
+    },
+    {
+      "full": "Baja California 914,"
+    },
+    {
+      "full": "Tulipanes 22160,"
+    },
+    {
+      "full": "Av. Gustavo Díaz Ordaz 400,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-de-jesus-gonzalez-maldonado/urologo-ginecologo/tijuana#address-id=211434&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:24:14.873Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/jose_de_jesus_gonzalez_maldonado.webp"
+}

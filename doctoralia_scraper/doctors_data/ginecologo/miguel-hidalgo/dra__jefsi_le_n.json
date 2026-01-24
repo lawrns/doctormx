@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Jefsi León",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 435,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/679412/67941259f1e9a466b7f4694fb296946c_220_square.jpg",
+  "about": "Me gusta brindar una atención médica con un enfoque integral para promover la salud y el autocuidado de la mujer, brindando una atención cálida para que el proceso de acudir a consulta sea lo más cómodo para ti. Te cuento un poco de mí: -Cursé mis estudios de medicina en la Universidad Popular Autónoma del Estado de Puebla, concluí esta etapa realizando mi servicio social en el departamento de Endocrinología del Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán. -Realicé la especialidad de Ginecología y Obstetricia en el Instituto Nacional de Perinatología, además para completar mi formación realicé un Diplomado de colposcopia y patología del tracto genital inferior. -Actualmente Certificada por el Consejo Mexicano de Ginecología y Obstetricia (2021-2026). -Cursé la subespecialidad en Biología de la Reproducción Humana en el Instituto Nacional de Perinatología para lo cuál puedo resolver problemas de para lograr un embarazo (inseminación intrauterina, Fertilización in vitro, congelación de óvulos). Además, puedo brindarte apoyo y resolver dudas desde la etapa de adolescencia hasta la menopausia con un enfoque de endocrinología ginecológica; todo lo relacionado a trastornos menstruales, sangrado uterino anormal, enfermedades de la mama, incontinencia urinaria, o seguimiento antes, durante y después el embarazo. -Si lo deseas, antes de agendar tu consulta puedes escribirme por whatsapp o doctoralia para aclarar cualquier duda. -Si requieres alguna cita urgente, o algún horario fuera de los que se muestran en la página contáctame por doctoralia o whatsapp al número de citas.",
+  "addresses": [
+    {
+      "full": "Calle Arquímedes 130,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jefsi-leon/ginecologo/ciudad-de-mexico#address-id=406509&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:57:37.661Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__jefsi_le_n.webp"
+}

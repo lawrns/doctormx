@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Noel Fario Salgado Alcocer",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/17aad8b6/17aad8b6-d8f7-44cf-bb29-e75a69882987_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Norte 24 98 -,"
+    },
+    {
+      "full": "Norte 24 98 -,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/noel-fario-salgado-alcocer/ginecologo/orizaba#address-id=96155&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:14:41.604Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__noel_fario_salgado_alcocer.webp"
+}

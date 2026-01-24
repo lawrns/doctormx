@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Gustavo Santos Martinez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/67dd3cf2/67dd3cf2-4696-40a6-b114-2c85666e979d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Mulege 1648,"
+    },
+    {
+      "full": "Ave. Mulege 1648,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gustavo-santos-martinez/ginecologo/tijuana#address-id=48744&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:45:35.639Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__gustavo_santos_martinez.webp"
+}

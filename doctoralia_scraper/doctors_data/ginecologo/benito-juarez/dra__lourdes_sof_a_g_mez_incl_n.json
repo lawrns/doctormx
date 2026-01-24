@@ -1,0 +1,73 @@
+{
+  "name": "Dra. Lourdes Sofía Gómez Inclán",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 923,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2cb5e2/2cb5e2fd991f36f6bdd674329a375648_220_square.jpg",
+  "about": "Me encuentro siempre disponible para resolver tus dudas, la atención a la mujer no sólo es física, nosotras somos complejas y únicas, buscaremos juntas la mejor opción enfocada en tu individualidad siempre en confianza. Estoy preparada en Endocrinología Ginecológica, así que siéntete en confianza de que podremos estabilizar tu estado hormonal juntas. Estoy encantada de poder ofrecerte cirugías de Mínima Invasión, para que tengas una fácil y pronta recuperación de cualquier problema. Atención a infección por Virus de Papiloma humano por Colposcopía, Anoscopía de Alta Resolución y Peneoscopia (Androscopía en hombres). Realizamos atención a pareja en problemas de Enfermedades de Transmisión Sexual y Anticoncepción con especialidad en Vasectomía Sin Bisturí. URGENCIAS LAS 24HRS *Certificada por el Consejo Mexicano de Ginecología y Obstetricia. *Ginecología y Obstetricia en ISSSTE Hospital Regional Lic. Adolfo López Mateos *Diplomado de Colposcopía SSA Hospital General de México ENDOCRINOLOGÍA GINECOLÓGICA miembro de AMEGIN. *Titular de Área de Colposcopía ISSSTE Clínica de Especialidades *Coordinador de Salud Reproductiva y Métodos Anticonceptivos, ISSSTE *Programa de Vasectomía sin Bisturí. ISSSTE *Maestría en Gestión y Políticas de Salud UNAM, Facultad de Medicina",
+  "addresses": [
+    {
+      "full": "Insurgentes Sur 1793,"
+    },
+    {
+      "full": "Patriotismo 67,"
+    },
+    {
+      "full": "Avenida Professor, Carlos Hank González,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lourdes-sofia-gomez-inclan/ginecologo/ciudad-de-mexico#address-id=487869&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:01:40.446Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__lourdes_sof_a_g_mez_incl_n.webp"
+}

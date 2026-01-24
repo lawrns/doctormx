@@ -1,0 +1,30 @@
+{
+  "name": "Dr. José Luis Casillas Magaña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2837,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d07bd9/d07bd9a2cb62a3c3585da78b37a87f12_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "DONATO GUERRA 619,"
+    },
+    {
+      "full": "DONATO GUERRA 619,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-luis-casillas-magana/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:33:21.669Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jos__luis_casillas_maga_a.webp"
+}

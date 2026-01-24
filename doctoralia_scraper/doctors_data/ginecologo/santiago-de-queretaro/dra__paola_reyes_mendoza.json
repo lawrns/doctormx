@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Paola Reyes Mendoza",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 43,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/43f0d0e1/43f0d0e1-a7d7-49c5-b119-ed641a08911a_small_square.jpg",
+  "about": "¡Hola! Soy Paola Reyes, Ginecóloga egresada de la Universidad Autónoma de Querétaro (UAQ) Mi práctica se enfoca en ofrecer una atención ginecológica integral, cálida y basada en evidencia científica, acompañando a cada mujer en las distintas etapas de su vida: desde la adolescencia y el embarazo hasta el climaterio y la menopausia.En mi consultorio encontrarás un espacio seguro donde podrás sentirte escuchada y atendida con empatía y profesionalismo.Principales áreas de atención:• Control prenatal y atención del embarazo• Parto y cesárea• Salud reproductiva y anticoncepción• Trastornos menstruales• Síndrome de ovario poliquístico• Climaterio y menopausia• Terapia hormonal• Citología cervical (Papanicolaou)• Infecciones de transmisión sexual • Vacunas contra VPH Mi compromiso es ayudarte a cuidar tu salud femenina de forma integral, promoviendo tu bienestar físico, emocional y hormonal.",
+  "addresses": [
+    {
+      "full": "Calle Privada Ignacio Zaragoza 16,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paola-reyes-mendoza/ginecologo/queretaro#address-id=597067&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:44:54.664Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__paola_reyes_mendoza.webp"
+}

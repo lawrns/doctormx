@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Diana Gabriela Meza Aguilar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 45,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ad3053/ad30531db64990511dff4674e610dcd9_220_square.jpg",
+  "about": "Hola! Soy la Dra. Diana Meza, estudié la carrera de médico cirujano en la Universidad Autónoma de Guadalajara, soy ginecóloga y obstetra egresada del ISSSTE. Realicé una alta especialidad en cirugía oncológica de la mama en FUCAM, asi como un diplomado de colposcopia y patología del tracto genital inferior, ambos avalados por la UNAM. Certificada por el Consejo Mexicano de Ginecología y Obstetricia. Estoy aquí para acompañarte en todas las etapas de tu vida!",
+  "addresses": [
+    {
+      "full": "Agrarismo 208, Escandón II Secc, 11800,"
+    },
+    {
+      "full": "Agrarismo 208, Escandón II Secc, 11800,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diana-gabriela-meza-aguilar/ginecologo/ciudad-de-mexico#address-id=477662&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:06:17.880Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__diana_gabriela_meza_aguilar.webp"
+}

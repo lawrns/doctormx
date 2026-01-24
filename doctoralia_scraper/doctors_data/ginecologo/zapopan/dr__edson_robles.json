@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Edson Robles",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 42,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/46a88f/46a88f93f5fd3797ed722e256e3bf32f_220_square.jpg",
+  "about": "- Médico Cirujano y Partero. Universidad de Guadalajara - Centro Universitario de Ciencias de la Salud (2009 - 2014). Modalidad de titulación: Excelencia académica. - Residencia Ginecología y Obstetricia. Centro Medico Nacional de Occidente (2016 - 2020) Tesis de especialidad: \"Prevalencia de depresión posparto en madres con hijos hospitalizados en la Unidad de Cuidados Intensivos Neonatales\" - Residencia Medicina Materno Fetal. Centro Medico Nacional de Occidente (2020 - 2022) Tesis de especialidad: \"Eficacia del Doppler pulsado y doppler tisular en la evaluación de la función cardíaca derecha\" - Diplomado en procedimientos invasivos intrauterinos. (2022). Universidad Autónoma de Querétaro. - Diplomado en duelo gestacional, perinatal y neonatal. Secretaría del Trabajo (2022). - Diplomado en Cardiología Fetal. (2023). Universidad Católica de Cordoba. Argentina. - Diplomado en desarrollo humano y comunicación. (2023). ITESO. - Maestria en Desarrollo Humano. (2024 a la fecha). ITESO.",
+  "addresses": [
+    {
+      "full": "Calle Garibaldi 1695,"
+    },
+    {
+      "full": "Calle Garibaldi 1695,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edson-robles/ginecologo/zapopan#address-id=454784&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:18:00.364Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__edson_robles.webp"
+}

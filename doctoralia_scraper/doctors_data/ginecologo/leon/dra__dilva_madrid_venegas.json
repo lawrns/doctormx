@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Dilva Madrid Venegas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ac63e6/ac63e6935f1f71e6a838f23a821ba9ca_220_square.jpg",
+  "about": "Postgraduada del IMSS UMAE 48 de León. Certificada por el consejo mexicano de ginecologia y obstetricia. Experta en ultrasonido obstétrico y seguimiento del embarzo. Así como en todo lo relacionado a la salud de la mujer desde la adolescencia hasta la edad mayor",
+  "addresses": [
+    {
+      "full": "Calle 20 de enero 510 Int 5,"
+    },
+    {
+      "full": "Calle 20 de enero 510 Int 5,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $6,000"
+    },
+    {
+      "name": "Cesárea",
+      "price": "• Desde $8,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dilva-madrid-venegas/ginecologo/leon#address-id=256750&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:29:12.819Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__dilva_madrid_venegas.webp"
+}

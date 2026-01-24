@@ -1,0 +1,25 @@
+{
+  "name": "Socorro Luna Amezcua",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 179,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e61fb5c9/e61fb5c9-eec7-4bcb-8370-bac144cff092_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Melchor Ocampo 409,"
+    },
+    {
+      "full": "Melchor Ocampo 409,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/socorro-luna-amezcua/ginecologo/miguel-hidalgo#address-id=171385&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:48:16.361Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/socorro_luna_amezcua.webp"
+}

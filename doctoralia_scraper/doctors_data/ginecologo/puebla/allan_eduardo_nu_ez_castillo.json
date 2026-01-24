@@ -1,0 +1,25 @@
+{
+  "name": "Allan Eduardo Nuñez Castillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 168,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5f2e78/5f2e7840c4a12eba2e1fadb732b6c93e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Norte 8 465, Col. Centro, ,"
+    },
+    {
+      "full": "Norte 8 465, Col. Centro, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/allan-eduardo-nunez-castillo/ginecologo/orizaba#address-id=357124&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:30:42.958Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/allan_eduardo_nu_ez_castillo.webp"
+}

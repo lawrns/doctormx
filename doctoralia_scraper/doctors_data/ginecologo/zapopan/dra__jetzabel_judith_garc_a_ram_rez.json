@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Jetzabel Judith García Ramírez",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 9,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3eabb798/3eabb798-dd47-45fa-a2a3-907c6cec93fa_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Charro 122,"
+    },
+    {
+      "full": "Francisco Rojas González 213,"
+    },
+    {
+      "full": "Charro 122,"
+    },
+    {
+      "full": "Francisco Rojas González 213,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Colocación de cerclaje de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jetzabel-judith-garcia-ramirez-2/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:24:44.152Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__jetzabel_judith_garc_a_ram_rez.webp"
+}

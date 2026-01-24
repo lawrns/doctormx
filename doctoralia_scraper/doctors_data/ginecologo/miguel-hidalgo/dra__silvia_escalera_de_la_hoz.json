@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Silvia Escalera de la hoz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 67,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f8cc58/f8cc58a2dea70647c849df06b413a997_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "BLVD. Miguel de Cervantes Saavedra 233 Piso 3 Edificio Corporativo MCS,"
+    },
+    {
+      "full": "FRANCISCO DEL PASO Y TRONCOSO 137,"
+    },
+    {
+      "full": "BLVD. Miguel de Cervantes Saavedra 233 Piso 3 Edificio Corporativo MCS,"
+    },
+    {
+      "full": "FRANCISCO DEL PASO Y TRONCOSO 137,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora de malformaciones uterinas",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora de malformaciones uterinas",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/silvia-escalera-de-la-hoz/ginecologo/miguel-hidalgo#address-id=31862&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:09:17.069Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__silvia_escalera_de_la_hoz.webp"
+}

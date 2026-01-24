@@ -1,0 +1,25 @@
+{
+  "name": "Castro Urueta Yisela",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 347,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8337eb/8337ebc743c06625726788955c51095b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Ejercito Nacional 613 Cons. 804. Col. Granada. ,"
+    },
+    {
+      "full": "Av. Ejercito Nacional 613 Cons. 804. Col. Granada. ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/castro-urueta-yisela/ginecologo/miguel-hidalgo#address-id=358941&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:50:10.130Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/castro_urueta_yisela.webp"
+}

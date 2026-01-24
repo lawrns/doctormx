@@ -1,0 +1,31 @@
+{
+  "name": "Eduardo Sirahuen Neri Ruz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 385,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/96c299/96c29965d0616b14dad30378edfddeb5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Sur 132 118 (entre Artificios y Av. Observatorio),"
+    },
+    {
+      "full": "Ejercito Nacional No. 613, Col. Granada,"
+    },
+    {
+      "full": "Calle Sur 132 118 (entre Artificios y Av. Observatorio),"
+    },
+    {
+      "full": "Ejercito Nacional No. 613, Col. Granada,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-sirahuen-neri-ruz/ginecologo/ciudad-de-mexico#address-id=126247&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:51:52.262Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/eduardo_sirahuen_neri_ruz.webp"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Lorena Ruvalcaba Ortega",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 307,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/528599/5285999246ba9ba4007a2a84cc604f05_220_square.jpg",
+  "about": "Creo en una atención ginecológica empática y de confianza. Espero que sientas mi consultorio como un espacio seguro y desde ahí poder sumar en salud. Tengo amplia experiencia en problemas ginecológicos y me especializo en cuestiones de infertilidad. Espero que juntos sumemos a que el camino de la infertilidad te lleve a sumar no únicamente un integrante más a tu familia sino también bienestar físico y emocional",
+  "addresses": [
+    {
+      "full": "Boulevard Bernardo Quintana Arrioja 9670,"
+    },
+    {
+      "full": "Boulevard Bernardo Quintana Arrioja 9670,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lorena-ruvalcaba-ortega/ginecologo/santiago-de-queretaro#address-id=624497&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:47:39.207Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__lorena_ruvalcaba_ortega.webp"
+}

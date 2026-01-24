@@ -1,0 +1,25 @@
+{
+  "name": "Francisco Javier Espinoza Yañez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/35c7da/35c7daf960a51f6277fb50079e4282b4_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "19 Por 60 Y 12 370, Col. Fracc Malaga, ,"
+    },
+    {
+      "full": "19 Por 60 Y 12 370, Col. Fracc Malaga, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-javier-espinoza-yanez/ginecologo/merida#address-id=357157&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:50:40.890Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/francisco_javier_espinoza_ya_ez.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Iliana Higareda Almaraz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2837,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d07bd9/d07bd9a2cb62a3c3585da78b37a87f12_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Prisciliano Sanchez 530,"
+    },
+    {
+      "full": "Prisciliano Sanchez 530,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/iliana-higareda-almaraz/ginecologo/guadalajara#address-id=125434&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:43:14.017Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/iliana_higareda_almaraz.webp"
+}

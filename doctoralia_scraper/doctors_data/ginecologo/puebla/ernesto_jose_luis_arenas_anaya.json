@@ -1,0 +1,31 @@
+{
+  "name": "Ernesto Jose Luis Arenas Anaya",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 61,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/c628c101/c628c101-4446-48cf-af82-e1f1128bb96b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "21 Pte. 308,"
+    },
+    {
+      "full": "Pte. Y 13 Sur 25,"
+    },
+    {
+      "full": "21 Pte. 308,"
+    },
+    {
+      "full": "Pte. Y 13 Sur 25,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ernesto-jose-luis-arenas-anaya/ginecologo/puebla#address-id=230672&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:36:09.490Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/ernesto_jose_luis_arenas_anaya.webp"
+}

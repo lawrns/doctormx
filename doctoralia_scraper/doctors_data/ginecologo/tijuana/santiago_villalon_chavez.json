@@ -1,0 +1,31 @@
+{
+  "name": "Santiago Villalon Chavez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 32,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a364e04a/a364e04a-1d71-461d-b3a3-3df2ec21f6ac_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tecate 20189,"
+    },
+    {
+      "full": "C. Tecate 21330,"
+    },
+    {
+      "full": "Tecate 20189,"
+    },
+    {
+      "full": "C. Tecate 21330,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/santiago-villalon-chavez/ginecologo/tijuana#address-id=173200&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:05:41.034Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/santiago_villalon_chavez.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Lia Patricia Ponce Chavez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 44,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a3eea2/a3eea2aa1974a7bf8d1ba52adf79dd9f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "37G X 12 Y 16,40,Fracc Las Aguilas De Chuburna,,"
+    },
+    {
+      "full": "37G X 12 Y 16,40,Fracc Las Aguilas De Chuburna,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lia-patricia-ponce-chavez/ginecologo/merida#address-id=357902&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:48:46.537Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/lia_patricia_ponce_chavez.webp"
+}

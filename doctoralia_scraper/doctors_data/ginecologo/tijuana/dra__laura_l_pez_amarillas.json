@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Laura López Amarillas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f03c1679/f03c1679-faa4-48e0-8163-d3c2bea3eb10_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Santa Fe #10050 ,"
+    },
+    {
+      "full": "Blvd. Santa Fe #10050 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-lopez-amarillas/ginecologo/tijuana#address-id=20986&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:44:53.131Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__laura_l_pez_amarillas.webp"
+}

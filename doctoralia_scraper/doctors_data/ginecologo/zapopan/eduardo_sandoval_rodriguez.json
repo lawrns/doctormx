@@ -1,0 +1,37 @@
+{
+  "name": "Eduardo Sandoval Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 12,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3eabb798/3eabb798-dd47-45fa-a2a3-907c6cec93fa_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Antonio Tello 215,"
+    },
+    {
+      "full": "Monte Alban 978,"
+    },
+    {
+      "full": "Leandro Valle Sur 3,"
+    },
+    {
+      "full": "Antonio Tello 215,"
+    },
+    {
+      "full": "Monte Alban 978,"
+    },
+    {
+      "full": "Leandro Valle Sur 3,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-sandoval-rodriguez/ginecologo/guadalajara#address-id=233520&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:37:22.832Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/eduardo_sandoval_rodriguez.webp"
+}

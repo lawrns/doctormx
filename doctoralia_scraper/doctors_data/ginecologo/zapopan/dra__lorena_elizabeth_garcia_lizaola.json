@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Lorena Elizabeth Garcia Lizaola",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 244,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1146d2/1146d2eda0aad950cbeab501283d9a9e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Guadalupe 4320,"
+    },
+    {
+      "full": "Av. Guadalupe 4320,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lorena-elizabeth-garcia-lizaola/ginecologo/zapopan#address-id=200640&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:36:14.218Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__lorena_elizabeth_garcia_lizaola.webp"
+}

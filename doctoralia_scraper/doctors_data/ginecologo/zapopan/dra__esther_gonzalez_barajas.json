@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Esther Gonzalez Barajas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/98ccef/98ccef433139de9d84fd42c98426da32_220_square.jpg",
+  "about": "Soy especialista en Ginecología y Obstetricia, con más de 10 años de experiencia. Mi práctica se centra principalmente, en el diagnostico y tratamiento del Virus del Papiloma Humano, y de las lesiones que esté provoca. Cuento con equipo especializado para el tratamiento de condilomas y verrugas asociadas a este virus. Así mismo, si es el caso puedo realizar cirugías de mínima invasión para el tratamiento de cáncer cervico uterino in situ. Además, mi especialidad me permite llevar el control prenatal a pacientes embarazadas, así como la atención del parto ó cesárea. Como complemento a mi práctica utilizo la medicina personalizada, la cual a través de un perfil genético, podemos predecir el riesgo para padecer 28 enfermedades de las más comunes en nuestra población (cáncer de mama, cáncer de pulmón, cáncer de piel, enfermedad coronaria, diabetes mellitus, hipertensión, etc.). También nos provee información sobre el metabolismo de nutrientes, por lo que es una excelente herramienta para diseñar dietas a la medida, y lo más importante informa sobre el metabolismo de casi 700 fármacos, con lo que podemos evitar complicaciones por efectos adversos de medicamentos.",
+  "addresses": [
+    {
+      "full": "Victoriano Agueros 2188,"
+    },
+    {
+      "full": "Victoriano Agueros 2188,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/esther-gonzalez-barajas/ginecologo/guadalajara#address-id=92630&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:18:13.572Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__esther_gonzalez_barajas.webp"
+}

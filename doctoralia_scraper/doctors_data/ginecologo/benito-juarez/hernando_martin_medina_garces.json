@@ -1,0 +1,25 @@
+{
+  "name": "Hernando Martin Medina Garces",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 113,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8438eb/8438eb8cb0a083a04ded12981918bec1_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Montes De Oca 3,"
+    },
+    {
+      "full": "Montes De Oca 3,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hernando-martin-medina-garces/ginecologo/tlahuac#address-id=128453&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:16:38.845Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/hernando_martin_medina_garces.webp"
+}

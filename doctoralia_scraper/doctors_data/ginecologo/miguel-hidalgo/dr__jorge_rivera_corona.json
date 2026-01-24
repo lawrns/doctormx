@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jorge Rivera Corona",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/c2569c02/c2569c02-4716-4a4c-bbd7-2b5baa991497_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Insurgentes 605 9,"
+    },
+    {
+      "full": "Ave. Insurgentes 605 9,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-rivera-corona/ginecologo/ciudad-de-mexico#address-id=58913&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:46:01.994Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__jorge_rivera_corona.webp"
+}

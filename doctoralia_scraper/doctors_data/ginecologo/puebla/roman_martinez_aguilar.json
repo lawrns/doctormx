@@ -1,0 +1,25 @@
+{
+  "name": "Roman Martinez Aguilar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5a0fb1bb/5a0fb1bb-ea56-4f51-a436-d13df01a431b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "20 De Noviembre 122 Huamantla,,"
+    },
+    {
+      "full": "20 De Noviembre 122 Huamantla,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roman-martinez-aguilar/ginecologo/huamantla#address-id=128815&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:33:22.356Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/roman_martinez_aguilar.webp"
+}

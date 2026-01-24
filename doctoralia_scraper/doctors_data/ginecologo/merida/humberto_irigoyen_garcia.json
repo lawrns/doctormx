@@ -1,0 +1,31 @@
+{
+  "name": "Humberto Irigoyen Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 572,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c5e1b6/c5e1b6bc6e6240b803834f7ec207bcd8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Bonampak 74,"
+    },
+    {
+      "full": "C. 41 X 34 439,"
+    },
+    {
+      "full": "Av. Bonampak 74,"
+    },
+    {
+      "full": "C. 41 X 34 439,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/humberto-irigoyen-garcia/ginecologo/benito-juarez#address-id=220196&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:50:54.036Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/humberto_irigoyen_garcia.webp"
+}

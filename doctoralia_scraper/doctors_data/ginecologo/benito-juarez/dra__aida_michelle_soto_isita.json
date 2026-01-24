@@ -1,0 +1,86 @@
+{
+  "name": "Dra. Aida Michelle Soto Isita",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 281,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/045f5c/045f5ce49c338d85869da9475bd43f82.jpg",
+  "about": "¡Bienvenidos a la consulta de la Dra. Michelle Soto, especialista en Ginecología y Mastología! Con una sólida formación en instituciones educativas hospitalarias en México, he adquirido habilidades quirúrgicas y conocimientos actualizados en diversas áreas de mi especialidad y subespecialidad. Esto me permite ofrecer a mis pacientes una atención integral en Obstetricia, Ginecología, patología mamaria y cirugía de mínima invasión. Mi enfoque va más allá de tratar enfermedades; mi compromiso es establecer una relación médico-paciente de calidad, basada en la confianza y el respeto. Reconozco la importancia de crear un ambiente cómodo y de apoyo, especialmente en un ámbito como la ginecología, donde aún existen tabúes. Esta conexión sólida nos permite trabajar juntas para alcanzar resultados óptimos en la salud y el bienestar de mis pacientes. La medicina preventiva es una piedra angular de mi práctica. Creo firmemente en la importancia de realizar estudios diagnósticos oportunos para detectar y prevenir enfermedades. Mi objetivo es proporcionar diagnósticos ágiles, precisos y confiables, garantizando así un tratamiento médico de alta calidad y resultados efectivos. Si buscas una atención ginecológica centrada en ti, que combine experiencia, calidez y compromiso con tu salud, ¡estás en el lugar correcto! ¡Espero poder acompañarte en cada etapa de tu vida!",
+  "addresses": [
+    {
+      "full": "Camino Santa Teresa 1055s,"
+    },
+    {
+      "full": "Av. Río Churubusco 188, el Prado, Iztapalapa,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Consulta de mastología",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aida-michelle-soto-isita/ginecologo/magdalena-contreras2",
+  "scrapedAt": "2026-01-22T02:59:47.064Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__aida_michelle_soto_isita.webp"
+}

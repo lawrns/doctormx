@@ -1,0 +1,89 @@
+{
+  "name": "Dra. Luz Maria Santiago Ponce",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 392,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6e818c/6e818c0adbfc9b3f8c4a3363ef1935e3_220_square.jpg",
+  "about": "Médica ginecóloga, obstetra, con formación adicional en homeopatía. Amplia experiencia profesional en parto humanizado y consulta integral de aspectos físicos y emocionales. A través de un diálogo empático, podemos (paciente y médica) hacer una buena selección del cuidado y tratamiento ideal para cada paciente (hombre, mujer o niño). Un tratamiento efectivo, suficiente, seguro y respetuoso. Mi formación profesional incluye la carrera de medicina en la Facultad de medicina de la UNAM, donde obtuve la medalla \"Gabino Barreda\" por el más alto promedio obtenido; La especialidad en el IMSS y los diplomados en psicodiagnóstico y homeopatía. Actualmente me encuentro en formación como traductora de textos científicos francés-español-francés, lo cual permite mantenerme al día sobre las investigaciones actuales.",
+  "addresses": [
+    {
+      "full": "Venustiano Carranza 40 ,"
+    },
+    {
+      "full": "Zempoala 633,"
+    },
+    {
+      "full": "Avenida Venustiano Carranza 40, Santiago,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luz-maria-santiago-ponce/ginecologo/huixquilucan#address-id=95158&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:01:18.940Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__luz_maria_santiago_ponce.webp"
+}

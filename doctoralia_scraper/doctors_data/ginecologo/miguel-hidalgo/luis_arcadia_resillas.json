@@ -1,0 +1,25 @@
+{
+  "name": "Luis Arcadia Resillas",
+  "specialty": "Ginecólogo",
+  "rating": 3,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c30041/c300411ebb5637239df17632b03d330e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Manuel Reyes Veramendi,24, Col. San Miguel Chapultepec, ,"
+    },
+    {
+      "full": "Manuel Reyes Veramendi,24, Col. San Miguel Chapultepec, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-arcadia-resillas/ginecologo/miguel-hidalgo#address-id=355400&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:47:13.998Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/luis_arcadia_resillas.webp"
+}

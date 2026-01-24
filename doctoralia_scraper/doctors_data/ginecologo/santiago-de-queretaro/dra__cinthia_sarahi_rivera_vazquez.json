@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Cinthia Sarahi Rivera Vazquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 48,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b2e74e/b2e74e62717ee484ba0e90c39342d484_220_square.jpg",
+  "about": "Colaborador en CESFAM",
+  "addresses": [
+    {
+      "full": "Avenida Paseo de la Reforma 139 Int. 2-3 Col Lomas del Marqués,"
+    },
+    {
+      "full": "Avenida Paseo de la Reforma 139 Int. 2-3 Col Lomas del Marqués,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cinthia-sarahi-rivera-vazquez/ginecologo/santiago-de-queretaro#address-id=364022&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:51:06.098Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__cinthia_sarahi_rivera_vazquez.webp"
+}

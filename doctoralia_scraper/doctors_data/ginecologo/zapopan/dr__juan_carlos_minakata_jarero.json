@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Juan Carlos Minakata Jarero",
+  "specialty": "Médico general",
+  "rating": 5,
+  "reviewCount": 23,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/177e5cc9/177e5cc9-7cac-4ded-aae6-6e21930c95b5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Montevideo 2655, Providencia,"
+    },
+    {
+      "full": "Av Montevideo 2655, Providencia,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Segunda opinión médica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-minakata-jarero/medico-general-ginecologo/zapopan#address-id=515190&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:32:58.631Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__juan_carlos_minakata_jarero.webp"
+}

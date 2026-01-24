@@ -1,0 +1,54 @@
+{
+  "name": "Dra. Mireya Cruz Gutierrez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 430,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c6eef1/c6eef17ef3e1d0c7ba0108d92b820c8b_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Boulevard la Luz 5235,"
+    },
+    {
+      "full": "Andrés Landa y Piña norte 79,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": "• Desde $400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mireya-cruz-gutierrez/ginecologo/leon#address-id=186239&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:26:11.272Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__mireya_cruz_gutierrez.webp"
+}

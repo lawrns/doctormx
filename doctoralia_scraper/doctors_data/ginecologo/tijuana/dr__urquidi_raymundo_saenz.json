@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Urquidi Raymundo Saenz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 39,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/51038f/51038fb14b1fb9a42ee674799b659b7b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Brasilia 1,"
+    },
+    {
+      "full": "Brasilia 1,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/urquidi-raymundo-saenz/ginecologo/tijuana#address-id=42528&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:25:02.977Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__urquidi_raymundo_saenz.webp"
+}

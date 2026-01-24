@@ -1,0 +1,25 @@
+{
+  "name": "Guillermo Joaquin Ancona Palomino",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 347,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e6f69e/e6f69e1bb320b1caa6b3eb63cfaacf6e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C 8 A X 17 B,300,Fracc Jardines De Vista Alegre,,"
+    },
+    {
+      "full": "C 8 A X 17 B,300,Fracc Jardines De Vista Alegre,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-joaquin-ancona-palomino/ginecologo/merida#address-id=357851&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:49:22.509Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/guillermo_joaquin_ancona_palomino.webp"
+}

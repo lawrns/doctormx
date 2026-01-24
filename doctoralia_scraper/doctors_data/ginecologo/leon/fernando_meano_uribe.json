@@ -1,0 +1,25 @@
+{
+  "name": "Fernando Meano Uribe",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9ea7ee69/9ea7ee69-a988-450b-a02a-100008065cfe_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Leon 428, Jardines del Moral, 37160 Leon, Gto., Mexico,"
+    },
+    {
+      "full": "Av. Leon 428, Jardines del Moral, 37160 Leon, Gto., Mexico,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-meano-uribe/ginecologo/leon#address-id=255821&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:35:01.179Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/fernando_meano_uribe.webp"
+}

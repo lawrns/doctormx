@@ -1,0 +1,25 @@
+{
+  "name": "Jose Manuel Arias Ruvalcaba",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 543,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/762074/76207454fd56e0570bd1ab802b0256ff_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "22 Por 5A Y 5B,207,Juan B Sosa,,"
+    },
+    {
+      "full": "22 Por 5A Y 5B,207,Juan B Sosa,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-manuel-arias-ruvalcaba/ginecologo/merida#address-id=357850&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:49:17.168Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/jose_manuel_arias_ruvalcaba.webp"
+}

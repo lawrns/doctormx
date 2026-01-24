@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Rafael Aguilera Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/db5e6254/db5e6254-361e-448e-acb4-d4814262f1ea_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Kansas 160,"
+    },
+    {
+      "full": "Montes Urales 800,"
+    },
+    {
+      "full": "Av. Río Churubusco 601,"
+    },
+    {
+      "full": "Calle Kansas, 160,"
+    },
+    {
+      "full": "Kansas 160,"
+    },
+    {
+      "full": "Montes Urales 800,"
+    },
+    {
+      "full": "Av. Río Churubusco 601,"
+    },
+    {
+      "full": "Calle Kansas, 160,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rafael-aguilera-perez/ginecologo/benito-juarez#address-id=353295&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:08:48.066Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__rafael_aguilera_perez.webp"
+}

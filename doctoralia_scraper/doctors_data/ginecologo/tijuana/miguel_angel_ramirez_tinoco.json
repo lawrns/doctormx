@@ -1,0 +1,31 @@
+{
+  "name": "Miguel Angel Ramirez Tinoco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 392,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/edd0d5/edd0d5dea21b9786f22f4574a26a103f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Bellas Artes 19213,"
+    },
+    {
+      "full": "Prol. Hidalgo Esq. Hutsaguay S/N,"
+    },
+    {
+      "full": "Blvd. Bellas Artes 19213,"
+    },
+    {
+      "full": "Prol. Hidalgo Esq. Hutsaguay S/N,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-ramirez-tinoco/ginecologo/tijuana#address-id=186864&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:05:51.798Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/miguel_angel_ramirez_tinoco.webp"
+}

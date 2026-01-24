@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Herring Chavez Juan Carlos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/052ea9/052ea99b3f72221611fcf1b9aab18d46_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Melchor Ocampo 302,"
+    },
+    {
+      "full": "Melchor Ocampo 302,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/herring-chavez-juan-carlos/ginecologo/leon#address-id=58560&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:29:32.067Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__herring_chavez_juan_carlos.webp"
+}

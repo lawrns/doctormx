@@ -1,0 +1,46 @@
+{
+  "name": "Dr. J. Daniel López Ceja",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fd5072/fd50720b91cdd5815bfe7a72e2bb8d10_220_square.jpg",
+  "about": "Soy el Dr. J. Daniel López Ceja, especialista en Ginecología. Me gradué como Medico Cirujano y Partero en la Universidad Michoacana en 1983. Me he especializado en la atención de adultos y en el tratamiento de la Endometriosis. Mi enfoque principal es brindar una atención médica integral y humana a mis pacientes. Me enorgullece ofrecer una explicación clara y detallada de todas las opciones de tratamiento disponibles para cada paciente, para que puedan tomar decisiones informadas sobre su salud. Me esfuerzo por crear un ambiente cómodo y seguro en mi consultorio para que mis pacientes se sientan a gusto al hablar sobre cualquier tema relacionado con su salud. Agradecido por las numerosas recomendaciones y opiniones positivas de mis pacientes, sigo trabajando para mejorar mis habilidades y conocimientos en el campo de la Ginecología. Espero poder seguir ayudando a mis pacientes a lo largo de su viaje de salud y bienestar.",
+  "addresses": [
+    {
+      "full": "Blvd. Campestre 304 primer piso, Col. Jardines del Moral Hospital Siena,"
+    },
+    {
+      "full": "Blvd. Campestre 304 primer piso, Col. Jardines del Moral Hospital Siena,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cesárea con histerectomia postparto",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/j-daniel-lopez-ceja/ginecologo/leon#address-id=83183&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:28:18.738Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__j__daniel_l_pez_ceja.webp"
+}

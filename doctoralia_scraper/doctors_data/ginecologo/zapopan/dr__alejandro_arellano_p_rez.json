@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Alejandro Arellano Pérez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 25,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e346a9/e346a92e4ed214d66e2908d6647c01fa_220_square.jpg",
+  "about": "Soy médico especialista en Ginecología y Obstetricia con subespecialidad en Medicina Materno Fetal por la Universidad de Guadalajara y Fellow en Endocrinología de la Reproducción y Técnicas de Reproducción Asistida por la misma Universidad. ¿Qué es lo que puedo tratar? Los problemas de fertilidad desde baja hasta alta complejidad, como Inseminación Artificial, Fertilización In Vitro, endometriosis, miomatosis, alteraciones del ciclo menstrual, preservación de la fertilidad ya sea porque en este momento no te quieres embarazar o porque te vas a someter a un tratamiento que pudiera afectar tu fertilidad, poliposis endometrial, síndrome de ovario poliquístico, entre muchos otros factores que afectan la reproducción. Con respecto a la Medicina Materno Fetal es posible llevar el control prenatal de los embarazos de alto riesgo ya sea porque tienes alguna enfermedad previa al embarazo o porque la haz desarrollado durante el mismo, realizar una evaluación avanzada de la salud de tu bebé por medio de ultrasonido de segundo nivel 3D y 4D, además de poder realizar procedimientos invasivos de alta complejidad para el diagnóstico de enfermedades cromosómicas como el Síndrome de Down. El área de Ginecología me permite diagnosticar y tratar enfermedades de la mujer no embarazada y que involucran a la glándula mamaria, útero, ovarios, cérvix y vagina, estudios preventivos como Papanicolaou, cirugía por un quiste de ovario, un mioma, alteraciones en la menstruación, entre otros. Mi compromiso es con la salud integral de la mujer y mi objetivo es que sea posible tener un bebé recién nacido en casa.",
+  "addresses": [
+    {
+      "full": "Calle Colomos 2110,"
+    },
+    {
+      "full": "Calle Colomos 2110,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Medicina Materno-Fetal",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-arellano-perez/ginecologo/guadalajara#address-id=166525&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:17:41.321Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__alejandro_arellano_p_rez.webp"
+}

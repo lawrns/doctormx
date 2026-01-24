@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Javier Garcia Barajas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 118,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/38870de9/38870de9-581d-4888-8169-e780041a216e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Reforma 1580,"
+    },
+    {
+      "full": "Otomíes 3266,"
+    },
+    {
+      "full": "C. Reforma 1580,"
+    },
+    {
+      "full": "Otomíes 3266,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/javier-garcia-barajas/ginecologo/guadalajara#address-id=217070&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:35:19.625Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__javier_garcia_barajas.webp"
+}

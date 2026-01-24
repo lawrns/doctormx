@@ -1,0 +1,25 @@
+{
+  "name": "Moises Lira Furlong",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 393,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3ca6c0/3ca6c07f40392b2d625587c999498b0c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Jardin Del Obispo,3,Fracc Jardines De San Carlos,,"
+    },
+    {
+      "full": "Jardin Del Obispo,3,Fracc Jardines De San Carlos,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/moises-lira-furlong/ginecologo/san-andres-cholula#address-id=355571&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:29:37.175Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/moises_lira_furlong.webp"
+}

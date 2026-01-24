@@ -1,0 +1,31 @@
+{
+  "name": "Yuritzi Legorreta Mejia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 449,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c3acea/c3acea60d464328428e2c6f21b068ebb_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Del Parque 37,"
+    },
+    {
+      "full": "Pablo Valdez 719,"
+    },
+    {
+      "full": "Av. Del Parque 37,"
+    },
+    {
+      "full": "Pablo Valdez 719,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yuritzi-legorreta-mejia/ginecologo/guadalajara#address-id=167210&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:42:22.309Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/yuritzi_legorreta_mejia.webp"
+}

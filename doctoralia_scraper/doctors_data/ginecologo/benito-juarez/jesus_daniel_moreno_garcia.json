@@ -1,0 +1,31 @@
+{
+  "name": "Jesus Daniel Moreno Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1a0965/1a0965e1fcbf1440b612469909aed826_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Félix Cuevas 540,"
+    },
+    {
+      "full": "Félix Cuevas 301,"
+    },
+    {
+      "full": "Félix Cuevas 540,"
+    },
+    {
+      "full": "Félix Cuevas 301,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-daniel-moreno-garcia/ginecologo/benito-juarez#address-id=216344&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:15:48.892Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/jesus_daniel_moreno_garcia.webp"
+}

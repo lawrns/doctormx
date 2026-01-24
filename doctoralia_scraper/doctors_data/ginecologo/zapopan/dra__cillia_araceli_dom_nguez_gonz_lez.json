@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Cillia Araceli Domínguez González",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 391,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/706ce31c/706ce31c-6a34-4760-a388-c6094855bb8b_large.jpg",
+  "about": "Soy un profesionista dedicado al área de ginecología (mujer no embarazada ) y Obstetricia (embarazo) con enfoque a la medicina materno fetal. Esta rama de la ginecologÍa y obstetricia ve embarazo de alto riesgo, ademas de salud y enfermedad fetal. Hoy en día sabemos existen varias enfermedades fetales detectables durante el embarazo las cuales se pueden tratar en el mismo. Hablando del área de la ginecológia como lo es detección de enfermedades propias de la mujer no embarazada como son patología de mama, útero, cérvix y ovario; cuento con amplia experiencia para poder otorgarte el mejor tratamiento y la detección oportuna de estas enfermedades. Mi experiencia trata desde la niña hasta la mujer déspues de la menopausia. Mi formación en Ginecología y Obstetricia fue otorgada en uno de los mejores programas de especialidad en nuestro país, como es el Programa Multicentrico de especialidades Medicas avalado por la Secretaria de Salud de Nuevo Leon y el Tecnológico de Monterrey. Mi formación como materno fetal fue realizada en Hospital Civil de Guadalajara \" Dr. Juan I. Menchaca\" un hospital de referencia para el occidente de la república.",
+  "addresses": [
+    {
+      "full": "Avenida Central Guillermo Gonzalez Camarena 911,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cillia-araceli-dominguez-gonzalez/ginecologo/zapopan",
+  "scrapedAt": "2026-01-22T04:27:29.683Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__cillia_araceli_dom_nguez_gonz_lez.webp"
+}

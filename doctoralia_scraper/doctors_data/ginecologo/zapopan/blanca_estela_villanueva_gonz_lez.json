@@ -1,0 +1,43 @@
+{
+  "name": "Blanca Estela Villanueva González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 828,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/392ba2/392ba2a9ee5ef799a0a11ef1161d80c1_220_square.jpg",
+  "about": "GINECO-OBSTETRA CERTIFICADA POR EL CONSEJO MEXICANO DE GINECOLOGÍA Y OBSTETRICIA MENCIÓN HONORÍFICA DE LA ESPECIALIDAD EN GINECOLOGÍA Y OBSTETRICIA Diplomado en Cirugía Laparoscopica Ginecológica Avanzada Diplomado en Infertilidad y Reproducción Humana Socio activo del Colegio de Gineco-Obstetras del Estado de Jalisco Miembro de la Mesa directiva del Coelgio de Colposcopía y Patología Genital Inferior Médico Cirujano por la Universidad Autónoma de Guadalajara (UAG) 1998-2004. - Hospitales de Pre-Grado: . Hospital San José, Hospital Santa María Chapalita, Hospital Angel Leaño, Hospital 46 y 89 IMSS, Hospital Regional de Zona SSA, Hospital General del Occidente SSA. - Internado Rotatorio: Hospital Aranda De La Parra, León Guanajuato. Especialidad en Ginecología y Obstetricia, en el Hospital Regional Dr. Valentín Gómez Farías del Instituto de Seguridad y Servicios Sociales para los Trabajadores del Estado. Título otorgado por la Universidad de Guadalajara. MENCIÓN HONORÍFICA otorgada por los sinodales en la Especialidad de Ginecología y Obstetricia del Hospital Regional Dr. Valentín Gómez Farías del Instituto de Seguridad y Servicios Sociales para los Trabajadores del Estado (ISSSTE), en el período 2004-2008. Tesis de Especialidad: Anticoncepción definitiva con el métdo Essure. Diplomado y adiestramiento básico en Cirugía Laparoscopica Ginecológica, en el Instituto de Endoscopía Ginecológica A.C. Diplomado y adiestramiento en Cirugía Laparoscópica Ginecológica Avanzada en el Instituto de Endoscopía Ginecológica A.C. Diplomado y adiestramiento en Histeroscopía Diagnóstica y Quirúrgica, en el Instituto de Endoscopía Ginecológica A.C. Diplomado en Infertilidad, Endocrinología de la Reproducción y Reproducción Asistida en el Instituto VIDA, Hospital de Especialidades Puerta de Hierro. Socio y miembro del comité científico del Colegio de Colposcopía de Occidente. Socio del Colegio de Gineco-Obstetras del Estado de Jalisco A.C.",
+  "addresses": [
+    {
+      "full": "Justo Sierra No. 2620,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/blanca-estela-villanueva-gonzalez/ginecologo/guadalajara#address-id=33477&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:12:27.575Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/blanca_estela_villanueva_gonz_lez.webp"
+}

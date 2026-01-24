@@ -1,0 +1,31 @@
+{
+  "name": "Blanca Nataly Rodriguez Grijalva",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 119,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d31e0b/d31e0bd65701043f7d592db0d90f390f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Burdeos 40,"
+    },
+    {
+      "full": "Av. Ejército Nacional 617,"
+    },
+    {
+      "full": "Burdeos 40,"
+    },
+    {
+      "full": "Av. Ejército Nacional 617,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/blanca-nataly-rodriguez-grijalva/ginecologo/ciudad-de-mexico#address-id=242106&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:54:21.078Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/blanca_nataly_rodriguez_grijalva.webp"
+}

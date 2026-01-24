@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Yuriko Imelda Maeshiro Nieves",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 773,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/82730e/82730e29de2edebe77c7378f48b30b6c_220_square.jpg",
+  "about": "Hola, soy la Dra. Yuriko Maeshiro, me especializo en Ginecología y Obstetricia, es decir en los problemas de salud de la mujer. También me dedico al cuidado de la mujer embarazada. Dentro de la consulta podemos hacer medicina preventiva, la cual trata de encontrar áreas donde podamos trabajar para mejorar la salud, así como hacer los estudios necesarios para el diagnóstico oportuno de enfermedades como la toma de Papanicolaou y el ultrasonido pélvico. En mi caso, además cuento con la subespecialidad de Biología de la Reproducción lo que quiere decir que puedo realizar diagnóstico y tratamiento de problemas de fertilidad y hormonales en las diferentes etapas de la vida. Durante la consulta me gusta que la paciente se sienta en confianza conmigo para poder realizar un diagnóstico oportuno y darle atención personalizada. Para mí es muy importante tu salud física y mental.",
+  "addresses": [
+    {
+      "full": "Av. Lago 17,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yuriko-imelda-maeshiro-nieves/ginecologo/benito-juarez",
+  "scrapedAt": "2026-01-22T02:59:38.777Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__yuriko_imelda_maeshiro_nieves.webp"
+}

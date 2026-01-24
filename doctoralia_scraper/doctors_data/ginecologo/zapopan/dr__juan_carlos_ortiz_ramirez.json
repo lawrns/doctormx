@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Juan Carlos Ortiz Ramirez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/22f5cb/22f5cb3a362b7b559300892c6ad03747_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "AURELIO L GALLARDO #236,"
+    },
+    {
+      "full": "AURELIO L GALLARDO #236,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-ortiz-ramirez/ginecologo/guadalajara#address-id=92897&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:21:21.523Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__juan_carlos_ortiz_ramirez.webp"
+}

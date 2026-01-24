@@ -1,0 +1,34 @@
+{
+  "name": "Dra. Elia Pimentel Morales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/58a37d/58a37dc5ae720750ac30eceb01d9f0e3_220_square.jpg",
+  "about": "Soy la Dra. Elia Pimentel Morales, ginecóloga y obstetra, atiendo a pacientes desde la adolescencia hasta la edad adulta; mi principal enfoque de atención: es a problemas ginecológicos en las diferentes etapas de la vida en la mujer, así como también control de embarazo donde me aseguro de brindar un cuidado integral durante esta etapa tan importante de su vida. Realizo, revisión colposcópica, cirugía ginecológica abierta y de mínima invasión por laparoscopia, atención de partos y operación cesárea. MI FORMACION MEDICA Egresada como médico general, de la Benemérita Universidad Autónoma de Puebla y la especialidad como ginecóloga y obstetra, en la ciudad de México en el hospital Ignacio Zaragoza del ISSSTE, con mención honorifica; certificación vigente por el consejo mexicano de ginecología y obstetricia, desde que concluí la especialidad me he mantenido en constante actualización y formación asistiendo a congresos, diplomados y cursos para estar al día, de los últimos avances en mi especialidad. Mi objetivo principal es brindar un trato cálido y personalizado a cada una de mis pacientes, escuchando su preocupaciones y necesidades para poder ofrecerles el mejor tratamiento posible, esforzándome para mantener un ambiente de confianza y empatía hacia mi paciente durante la consulta.",
+  "addresses": [
+    {
+      "full": "AV. KEPLER No 2143,"
+    },
+    {
+      "full": "AV. KEPLER No 2143,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elia-pimentel-morales/ginecologo/puebla#address-id=505571&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:12:53.215Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__elia_pimentel_morales.webp"
+}

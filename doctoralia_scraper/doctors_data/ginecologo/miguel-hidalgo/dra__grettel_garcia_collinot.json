@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Grettel Garcia Collinot",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 167,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f83373/f83373e16a083e863fb93988f4938c55.jpg",
+  "about": "Ginecóloga y mamá, comprendo los problemas de salud a la que nos enfrentamos las mujeres en las distintas etapas de nuestra vida.",
+  "addresses": [
+    {
+      "full": "Tebas 64, Clavería,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/grettel-garcia-collinot/ginecologo/azcapotzalco#address-id=454459&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:59:17.014Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__grettel_garcia_collinot.webp"
+}

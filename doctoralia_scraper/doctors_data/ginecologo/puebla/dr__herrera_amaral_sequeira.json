@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Herrera Amaral Sequeira",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2a621b/2a621b62b230b0dcbbe20b18eff656cf_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Argentina 27 B Norte 1824,"
+    },
+    {
+      "full": "Argentina 27 B Norte 1824,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/herrera-amaral-sequeira/ginecologo/puebla#address-id=36554&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:25:34.113Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__herrera_amaral_sequeira.webp"
+}

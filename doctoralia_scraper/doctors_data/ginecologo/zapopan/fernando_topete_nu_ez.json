@@ -1,0 +1,25 @@
+{
+  "name": "Fernando Topete Nuñez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 34,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4556d1/4556d103262dede19c7dbfc2fd1dbc77_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Aurelio Luis Gallardo 426,,"
+    },
+    {
+      "full": "Calle Aurelio Luis Gallardo 426,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-topete-nunez/ginecologo/guadalajara#address-id=140475&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:44:03.726Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/fernando_topete_nu_ez.webp"
+}

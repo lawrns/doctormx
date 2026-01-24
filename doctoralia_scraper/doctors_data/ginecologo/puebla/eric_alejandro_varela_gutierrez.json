@@ -1,0 +1,31 @@
+{
+  "name": "Eric Alejandro Varela Gutierrez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b28acd/b28acd5421821c25d69e8d90efe67e79_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Venustiano Carranza 810,"
+    },
+    {
+      "full": "Diag. Zaragoza 5128,"
+    },
+    {
+      "full": "Av. Venustiano Carranza 810,"
+    },
+    {
+      "full": "Diag. Zaragoza 5128,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eric-alejandro-varela-gutierrez/ginecologo/puebla#address-id=231126&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:22:41.701Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/eric_alejandro_varela_gutierrez.webp"
+}

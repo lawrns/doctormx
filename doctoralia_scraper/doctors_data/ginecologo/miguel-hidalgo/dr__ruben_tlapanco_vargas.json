@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Ruben Tlapanco Vargas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 127,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/916a70/916a70b97352d7562c83821db2ddb397_220_square.jpg",
+  "about": "Licenciatura en Médico Cirujano - Universidad La Salle Facultad Mexicana de Medicina Cédula Profesional: 6000601 ESTUDIOS DE POSGRADO Especialidad: Ginecología y Obstetricia Instituto Nacional de Perinatología (INPer) México D.F. Cédula de Especialidad: 8025293 Especialidad: Biología de la Reproducción Humana Instituto Nacional de Perinatología (INPer) México D.F. Cédula de Subespecialidad: 09177530 Curso de Alta Especialidad: Cirugía laparoscópica Ginecológica Hospital General Dr. Manuel Gea González México D.F. Miembro Colegiado Titular del Colegio Mexicano de Especialistas en Ginecología y Obstetricia A.C. (COMEGO) Miembro Asociado Titular de la Asociación Mexicana de Medicina de la Reproducción (AMMR) Presidente de la mesa directiva 2023 - 2024 de la Asociación Mexicana de Medicina de la Reproducción (AMMR) Certificado por el Consejo Mexicano de Ginecología y Obstetricia. Número de certificación: 6836 Certificado por el Consejo Mexicano de Ginecoloía y Obstetricia, en Biología de la reproducción Humana. Número de certificación 193 Fellow of the American Congress of Obstetricians and Gynecologist. (ACOG). Miembro activo de la American Society for Reproductive Medicine (ASRM). Fellow MemberAdvancing Minimally Invasive Gynecology Worldwide (AAGL). Miembro de la sociedad médica del Hospital Ángeles del Pedregal (HAP). Profesor titular de la cátedra \"Seminarios de Integración Clínica- Basica\" de la Licenciatura de Médico Cirujano, en la Facultad Mexicana de Medicina de la Universidad La Salle. Profesor de la Cátedra de Ginecología en el Curso de extensión universitaria, de preparación para el examen nacional de aspirantes a residencias médicas (ENARM) Facultad Mexicana de Medicina de la Universidad La Salle. Profesor de la Cátedra de Ginecología en el Curso Online, de preparación para el examen nacional de aspirantes a residencias médicas (ENARM) de la Universidad La Salle Victoria.",
+  "addresses": [
+    {
+      "full": "Camino a Santa Teresa 1055,"
+    },
+    {
+      "full": "Lamartine 139,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ruben-tlapanco-vargas/ginecologo/miguel-hidalgo#address-id=31942&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:58:45.602Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__ruben_tlapanco_vargas.webp"
+}

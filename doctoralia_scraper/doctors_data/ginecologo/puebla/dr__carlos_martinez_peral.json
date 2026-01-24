@@ -1,0 +1,50 @@
+{
+  "name": "Dr. Carlos Martinez Peral",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 580,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ec06ab2d/ec06ab2d-c069-4b8e-8040-444c5973b660_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "TORRE MEDICA HOSPITAL PUEBLA DESARROLLO ATLICAYOTL, CONSULTORIO 907,"
+    },
+    {
+      "full": "Privada De Las Ramblas 4,"
+    },
+    {
+      "full": "Privada de las Ramblas 4,,"
+    },
+    {
+      "full": "TORRE MEDICA HOSPITAL PUEBLA DESARROLLO ATLICAYOTL, CONSULTORIO 907,"
+    },
+    {
+      "full": "Privada De Las Ramblas 4,"
+    },
+    {
+      "full": "Privada de las Ramblas 4,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-martinez-peral/ginecologo/puebla#address-id=6360&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:15:04.064Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__carlos_martinez_peral.webp"
+}

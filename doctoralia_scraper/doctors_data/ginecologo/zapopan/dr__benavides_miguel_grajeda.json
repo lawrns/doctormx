@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Benavides Miguel Grajeda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 304,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/22f5cb/22f5cb3a362b7b559300892c6ad03747_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Justo Sierra 2209 1,"
+    },
+    {
+      "full": "Calle Justo Sierra 2209 1,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/benavides-miguel-grajeda/ginecologo/guadalajara#address-id=66954&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:41:39.909Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__benavides_miguel_grajeda.webp"
+}

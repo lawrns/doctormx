@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Marketh Sc Lideres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 94,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/deb3cd/deb3cd3ed1cad291336aca57505be76a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Transpeninsular 6500 4,"
+    },
+    {
+      "full": "Fundadores 2254 4,"
+    },
+    {
+      "full": "Transpeninsular 6500 4,"
+    },
+    {
+      "full": "Fundadores 2254 4,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marketh-sc-lideres/ginecologo/tijuana#address-id=46859&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:25:02.997Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__marketh_sc_lideres.webp"
+}

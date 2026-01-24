@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Maikel Enrique Rodríguez Morales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/30fe1a2d/30fe1a2d-b2eb-49ba-8f14-b543487f65ab_small_square.jpg",
+  "about": "Ginecología y Obstetricia Graduado de médico en 2011 Graduado de especialista 2015 Facultad Ciencias Médicas Ciego de Ávila, Cuba Miembro Certificado del Consejo Mexicano de Ginecología y Obstetricia",
+  "addresses": [
+    {
+      "full": "Avenida 13 entre calle 32 y calle 34,"
+    },
+    {
+      "full": "Avenida 13 entre calle 32 y calle 34,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maikel-enrique-rodriguez-morales/ginecologo/cordoba#address-id=407426&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:13:52.713Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__maikel_enrique_rodr_guez_morales.webp"
+}

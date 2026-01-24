@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Delia A. Márquez Gamiño",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dcc13f/dcc13fb0a0af17659820d09cece757ff_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida León 428 303 Col Jardines Del Moral,"
+    },
+    {
+      "full": "Boulevard Hermanos Aldama 314, Centro,"
+    },
+    {
+      "full": "Avenida León 428 303 Col Jardines Del Moral,"
+    },
+    {
+      "full": "Boulevard Hermanos Aldama 314, Centro,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/delia-a-marquez-gamino/ginecologo/leon#address-id=140485&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:31:00.378Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__delia_a__m_rquez_gami_o.webp"
+}

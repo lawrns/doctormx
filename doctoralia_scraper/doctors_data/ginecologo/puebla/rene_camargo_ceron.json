@@ -1,0 +1,31 @@
+{
+  "name": "Rene Camargo Ceron",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 266,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a5c504/a5c5044044642c0892115816f1f7e38d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Lateral Sur Recta A Cholula 33,"
+    },
+    {
+      "full": "Blvd. 14 Sur 4336,"
+    },
+    {
+      "full": "Lateral Sur Recta A Cholula 33,"
+    },
+    {
+      "full": "Blvd. 14 Sur 4336,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rene-camargo-ceron/ginecologo/puebla#address-id=178673&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:28:15.117Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/rene_camargo_ceron.webp"
+}

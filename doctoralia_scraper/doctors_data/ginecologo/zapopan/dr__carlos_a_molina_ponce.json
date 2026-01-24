@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Carlos A Molina Ponce",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 278,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0608e0/0608e04223eed1985d21f7a04ce0dd47_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Ignacio L Vallarta 6104,"
+    },
+    {
+      "full": "Calle Ignacio L Vallarta 6104,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-a-molina-ponce/ginecologo/guadalajara#address-id=46868&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:41:27.465Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__carlos_a_molina_ponce.webp"
+}

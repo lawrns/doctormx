@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Canul Wilbert R. Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 800,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/05fa6f/05fa6fd3778283f0f3d419c30bdf6ffc_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "7 Centro Medico Pensiones 215-A Const. 104,"
+    },
+    {
+      "full": "7 Centro Medico Pensiones 215-A Const. 104,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/canul-wilbert-r-perez/ginecologo/merida#address-id=127327&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:51:18.258Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__canul_wilbert_r__perez.webp"
+}

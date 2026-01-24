@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Judit Hadassa Ramírez Negrete",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/55dd36/55dd36bc091f5c0e34786b7162476f97_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. de los Montes 60, Portales,"
+    },
+    {
+      "full": "Av. de los Montes 60, Portales,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $300"
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": "• $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/judit-hadassa-ramirez-negrete/medico-general/cuauhtemoc#address-id=16491&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:09:24.190Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__judit_hadassa_ram_rez_negrete.webp"
+}

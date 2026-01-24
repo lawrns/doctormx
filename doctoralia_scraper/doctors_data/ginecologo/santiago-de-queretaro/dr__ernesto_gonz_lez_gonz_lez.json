@@ -1,0 +1,18 @@
+{
+  "name": "Dr. Ernesto González González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5bc7e3/5bc7e366654c4b602ea5a72093a17706_220_square.jpg",
+  "about": "",
+  "addresses": [],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ernesto-gonzalez-gonzalez/ginecologo/queretaro#address-id=428750&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:50:36.443Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__ernesto_gonz_lez_gonz_lez.webp"
+}

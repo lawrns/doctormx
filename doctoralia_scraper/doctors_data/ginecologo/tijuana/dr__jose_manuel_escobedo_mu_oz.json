@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jose Manuel Escobedo Muñoz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 418,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/aaa002/aaa002ab73d2b22a98692a38215e66e3_220_square.jpg",
+  "about": "Hola! Soy un medico con especialidad en ginecología y obstetricia, formado en UABC; actualmente con 8 años de experiencia en el área, certificado por el Consejo Mexicano de Ginecología y Obstetricia, y uno de mis principales objetivos es darte una atención profesional y de confianza.",
+  "addresses": [
+    {
+      "full": "Ruta Mariano Matamoros #7773, Mariano Matamoros,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-manuel-escobedo-munoz/ginecologo/tijuana",
+  "scrapedAt": "2026-01-22T00:39:23.770Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__jose_manuel_escobedo_mu_oz.webp"
+}

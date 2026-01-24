@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Claudia Angela Navarro Mendez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 211,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dfad82/dfad82788fa3b6fcadda8903c2db609c_220_square.jpg",
+  "about": "Soy Dra. Claudia Angela Navarro Mendez, especialista en ginecología y obstetricia, con experiencia en atender a pacientes adultos y en el diagnóstico y tratamiento de cambios precancerosos del cuello uterino. Mi objetivo es brindar una atención médica de calidad y personalizada a mis pacientes, siempre teniendo en cuenta sus necesidades y preocupaciones. Me esfuerzo por establecer una relación de confianza y empatía con cada uno de ellos, para que se sientan cómodos y seguros durante su consulta. Mi formación y experiencia me permiten ofrecer un enfoque integral en el cuidado de la salud femenina, abordando desde la prevención hasta el tratamiento de enfermedades. Siempre me mantengo actualizada en las últimas técnicas y avances médicos, para poder ofrecer el mejor tratamiento a mis pacientes. Es un honor para mí servir a la comunidad de Yucatán y ayudar a mejorar la calidad de vida de mis pacientes.",
+  "addresses": [
+    {
+      "full": "Calle 15 501,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/claudia-angela-navarro-mendez-2/ginecologo/yucatan#address-id=493354&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:29:46.512Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__claudia_angela_navarro_mendez.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Natalia Toro Arzayus",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 219,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/65a3ee/65a3ee7f21f4384d4d265de49d980009.jpg",
+  "about": "Ginecóloga y obstetra, experta en colposcopia y patología del tracto genital inferior. Actualizada en láser ginecológico estético.",
+  "addresses": [
+    {
+      "full": "Avenida de las Américas 1506,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/natalia-toro-arzayus/ginecologo/guadalajara#address-id=459778&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:09:02.103Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__natalia_toro_arzayus.webp"
+}

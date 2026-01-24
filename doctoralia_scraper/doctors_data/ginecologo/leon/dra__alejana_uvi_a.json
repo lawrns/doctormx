@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Alejana Uviña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 498,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/670f99/670f99fac540eac6e3e4508f3a344d34_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Valle de Mezquital 101 esquina, Calle Valle de Señora, Valle del Campestre, 37150 Leon, Gto., Mexico,"
+    },
+    {
+      "full": "Valle de Mezquital 101 esquina, Calle Valle de Señora, Valle del Campestre, 37150 Leon, Gto., Mexico,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejana-uvina/ginecologo/leon#address-id=255900&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:29:36.095Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__alejana_uvi_a.webp"
+}

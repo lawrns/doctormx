@@ -1,0 +1,25 @@
+{
+  "name": "Carlos Alberto Santelices Llanos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 132,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5fb420/5fb420141ac6399cbad25e4ca0bcea88_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "5 Poniente 715,"
+    },
+    {
+      "full": "5 Poniente 715,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-alberto-santelices-llanos-2/ginecologo/puebla#address-id=72125&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:34:06.315Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/carlos_alberto_santelices_llanos.webp"
+}

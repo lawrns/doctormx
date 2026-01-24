@@ -1,0 +1,25 @@
+{
+  "name": "Ana Angelica Ibarguen Sixtos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 132,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5fb420/5fb420141ac6399cbad25e4ca0bcea88_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "8 Poniente 512 Int20, Col. Centro Historico, ,"
+    },
+    {
+      "full": "8 Poniente 512 Int20, Col. Centro Historico, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-angelica-ibarguen-sixtos/ginecologo/puebla#address-id=355586&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:32:04.386Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/ana_angelica_ibarguen_sixtos.webp"
+}

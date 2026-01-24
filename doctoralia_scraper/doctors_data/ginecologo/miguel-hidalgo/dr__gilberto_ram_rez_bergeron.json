@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Gilberto Ramírez Bergeron",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/01cf98/01cf98011fc60380e75b7061da191c65_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "PRADO SUR 480,"
+    },
+    {
+      "full": "PRADO SUR 480,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gilberto-ramirez-bergeron/ginecologo/ciudad-de-mexico#address-id=105951&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:40:10.959Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__gilberto_ram_rez_bergeron.webp"
+}

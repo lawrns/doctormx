@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Sarahí Rosas",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 319,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/4e07cd22/4e07cd22-d84f-4b03-a562-ba8c1cee5eac_small_square.jpg",
+  "about": "Mi nombre es Sarahí Michelle Rosas y soy ginecóloga egresada del Hospital Civil de Guadalajara Dr. Juan I Menchaca y con subespecialidad en el Instituto Jalisciense de Cancerología. Mi enfoque se centra en la prevención, detección y tratamiento de lesiones por VPH, Alteraciones de la mama y ovarios. Sangrados uterinos anormales y alteraciones hormonales como síndrome de ovário poliquistico, así como asesoria de anticoncepción.Mi objetivo como médico es brindar una atención personalizada, cuidadosa y actualizada a mis pacientes, con los equipos médicos más óptimos.Con cada cita, tomo el tiempo para escuchar todas las inquietudes y preguntas que puedan tener. Me enorgullezco de crear un ambiente de confianza, calidez y empatía para ayudar a mis pacientes a sentirse cómodas y seguras. Mi experiencia y conocimiento me permiten proporcionar a mis pacientes un tratamiento eficaz y actual para cualquier problema ginecológico que puedan tener. Soy una firme defensora de la educación y la prevención, y siempre estoy dispuesta a compartir información relevante y útil para mejorar la salud y el bienestar de mis pacientes. Estoy ubicada en Zapopan y estaré encantada de poderte recibir en mi consulta. No dudes en contactarme si necesitas atención ginecológica.",
+  "addresses": [
+    {
+      "full": "Avenida Ignacio L Vallarta 1370,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,350"
+    },
+    {
+      "name": "Cirugía láser para vph",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sarahi-rosas/ginecologo/guadalajara#address-id=446774&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:11:26.190Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__sarah__rosas.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Maria Elena Lamadrid Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 235,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/36ca28/36ca28f537d5ff00e2c23826f9aa15ab_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ignacio Zaragoza,"
+    },
+    {
+      "full": "Ote. 6 629,"
+    },
+    {
+      "full": "Ignacio Zaragoza,"
+    },
+    {
+      "full": "Ote. 6 629,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-elena-lamadrid-garcia/ginecologo/zinacantepec#address-id=193009&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:35:47.336Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/maria_elena_lamadrid_garcia.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Jose Guillermo Cobos Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 717,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/38803f/38803f2d2e6f38ec495fbd8fda8ac147_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "7 Sur 3916,"
+    },
+    {
+      "full": "7 Sur 3916,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-guillermo-cobos-garcia/ginecologo/puebla#address-id=162221&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:28:27.477Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/jose_guillermo_cobos_garcia.webp"
+}

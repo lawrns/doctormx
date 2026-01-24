@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Leopoldo Torres Herrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/685cc0/685cc052e31c821edd8ae9884f7f2b9f_220_square.jpg",
+  "about": "Egresado UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO HOSPITAL GENERAL DR. MANUEL GEA GONZALEZ POSTGRADO EN CIRUGIA LAPAROSCOPICA E HISTEROSCOPICA DETECCION DEL VIRUS DEL PAPILOMA HUMANO Y COLPOSCOPIA DEL TRACTO GENITAL",
+  "addresses": [
+    {
+      "full": "HOSPITAL SAN JOSE, Torre 3, segundo piso, consultorio 204,"
+    },
+    {
+      "full": "HOSPITAL SAN JOSE, Torre 3, segundo piso, consultorio 204,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/leopoldo-torres-herrera/ginecologo/santiago-de-queretaro#address-id=91778&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:49:20.787Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__leopoldo_torres_herrera.webp"
+}

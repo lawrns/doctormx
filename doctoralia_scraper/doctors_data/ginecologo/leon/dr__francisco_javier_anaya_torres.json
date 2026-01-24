@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Francisco Javier Anaya Torres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 498,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/670f99/670f99fac540eac6e3e4508f3a344d34_220_square.jpg",
+  "about": "Cuento con más de 15 años de experiencia tratando pacientes con problemas de fertilidad, acompañándolos durante todo el proceso desde la búsqueda del embarazo, la consecución del mismo, hasta el nacimiento del bebé tan deseado. Mi misión es estar cerca de mis pacientes todo el tiempo, apoyarlos para que se sientan acompañados durante todo el maravilloso proceso de ver sus sueños nacer. Estudie Medicina General en la Universidad Michoacana de San Nicolás de Hidalgo, realice mi especialidad en Ginecología y Obstetricia en la Universidad Autónoma del Estado de México. Y mi Master en Biología de la Reproducción Humana en la Universidad Rey Juan Carlos, en Madrid, España.",
+  "addresses": [
+    {
+      "full": "Valle del Mezquital 101, Valle del Campestre,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia Testicular",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-javier-anaya-torres/ginecologo/leon#address-id=353686&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:25:02.277Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__francisco_javier_anaya_torres.webp"
+}

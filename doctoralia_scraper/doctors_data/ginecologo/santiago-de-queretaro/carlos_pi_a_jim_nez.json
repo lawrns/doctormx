@@ -1,0 +1,25 @@
+{
+  "name": "Carlos Piña Jiménez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 294,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bcfece/bcfeceecacf7007cf6ea480593d7d7c5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hidalgo 103 Col. Centro ,"
+    },
+    {
+      "full": "Hidalgo 103 Col. Centro ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-pina-jimenez/ginecologo/santiago-de-queretaro#address-id=359309&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:57:32.309Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/carlos_pi_a_jim_nez.webp"
+}

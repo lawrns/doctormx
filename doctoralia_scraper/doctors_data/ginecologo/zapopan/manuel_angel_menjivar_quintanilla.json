@@ -1,0 +1,25 @@
+{
+  "name": "Manuel Angel Menjivar Quintanilla",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7bb6d0/7bb6d0df0692de6ed6fcae6b1517b615_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Guadalupe 605,"
+    },
+    {
+      "full": "Av. Guadalupe 605,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuel-angel-menjivar-quintanilla-2/ginecologo/guadalajara#address-id=73877&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:39:13.169Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/manuel_angel_menjivar_quintanilla.webp"
+}

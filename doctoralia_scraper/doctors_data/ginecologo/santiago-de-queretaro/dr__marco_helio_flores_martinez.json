@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Marco Helio Flores Martinez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d644c068/d644c068-4b72-40f6-b994-e33570729224_small_square.jpg",
+  "about": "Hola, soy el dr Marco Helio Flores Martínez, especialista en ginecólogia y obstetricia con una subespecialidad en Urologia Ginecólogica y cirugía reconstructiva del piso pelvico. Experto en enfermedades del piso pelvico como incontinencia urinaria, Prolapso de órganos pelvicos, infecciones de vias urinarias, así como síntomas de la menopausia. Mi misión es que juntos recuperamos tú bienestar y calidad de vida. ¿Por qué elegirme a mí? Cuanto con dos especialidades las cuales me permiten ayudarte en cualquier enfermedad que afecte el piso pelvico, así también con diplomado en colposcopia y patología del tracto genital interior, menopausia y climaterio. Contactame si tienes alguno de los siguientes síntomas: - sensación de bulto vaginal - perdidas involuntarias de orina - ardor vaginal - ardor al orinar - dolor durante relaciones sexuales - dolor pelvico - dificultades al orinar - síntomas de la menopausia",
+  "addresses": [
+    {
+      "full": "Avenida de las Ciencias 2058,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora parcial de prolapso uterino",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de fístula genitourinaria",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marco-helio-flores-martinez/urologo/queretaro#address-id=570850&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:45:42.198Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__marco_helio_flores_martinez.webp"
+}

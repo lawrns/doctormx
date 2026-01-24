@@ -1,0 +1,25 @@
+{
+  "name": "Enrique Acosta Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 50,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/60a870c2/60a870c2-599c-47fb-b440-f7d539003908_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Circunvalacion 124, Jardines del Moral, 37160 Leon, Gto., Mexico,"
+    },
+    {
+      "full": "Circunvalacion 124, Jardines del Moral, 37160 Leon, Gto., Mexico,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/enrique-acosta-perez/ginecologo/leon#address-id=254859&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:32:35.637Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/enrique_acosta_perez.webp"
+}

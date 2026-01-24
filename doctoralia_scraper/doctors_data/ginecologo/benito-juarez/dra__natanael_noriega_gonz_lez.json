@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Natanael Noriega González",
+  "specialty": "Médico general",
+  "rating": 5,
+  "reviewCount": 17,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c0205c/c0205c874abc43331f0a9a9473a216f5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Montecito, 38 Piso 8 Desp. 6 (Wtc),"
+    },
+    {
+      "full": "Montecito, 38 Piso 8 Desp. 6 (Wtc),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/natanael-noriega-gonzalez-2/medico-general/-#address-id=339846&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:10:31.612Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__natanael_noriega_gonz_lez.webp"
+}

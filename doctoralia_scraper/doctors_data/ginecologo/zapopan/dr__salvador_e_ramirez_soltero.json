@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Salvador E Ramirez Soltero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 35,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/92e6ec/92e6ecdb8c6381b4c8cc05a01c058c63_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Adolfo Lopez Mateos Norte 745,"
+    },
+    {
+      "full": "Ave. Adolfo Lopez Mateos Norte 745,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/salvador-e-ramirez-soltero/ginecologo/guadalajara#address-id=58356&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:43:01.647Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__salvador_e_ramirez_soltero.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Juan Amed Cruz Santiago",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 99,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8ac007/8ac0077b0fc08bd4999b3f0107b862dc_140_square.jpg",
+  "about": "MEDICO CIRUJANO MILITAR. EGRESADO DE LA ESCUELA MEDICO MILITAR Y FORMADO COMO ESPECIALISTA EN EL HOSPITAL CENTRAL MILITAR EN LA CD. DE MEXICO. MEDICO RECERTIFICADO POR EL CONSEJO MEXICANO DE GINECOLOGIA Y OBSTETRICIA, A.C.",
+  "addresses": [
+    {
+      "full": "Díaz Ordaz No. 4508, Jardines De San Manuel,"
+    },
+    {
+      "full": "Díaz Ordaz No. 4508, Jardines De San Manuel,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-amed-cruz-santiago/ginecologo/puebla#address-id=135400&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:15:05.083Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__juan_amed_cruz_santiago.webp"
+}

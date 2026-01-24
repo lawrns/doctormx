@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Alfredo Eduardo Santamaria Martinez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 470,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a48f89/a48f897fa3f747f2ef76c4ada378b764_220_square.jpg",
+  "about": "Medico especialista en Ginecóloga y obstetricia. Postgraduado de la Universidad Autónoma de Yucatán. Diplomados en Ultrasonido Ginecoobstetrico. Diplomado en Colposcopía. Diplomado en Sexualidad DIplomado en Salud materno fetal. Profesor titular del Modulo de Ginecología y obstetricia en la Facultad de Medicina UADY.",
+  "addresses": [
+    {
+      "full": "Calle 18 número 82 x 17 y 19 Uman,"
+    },
+    {
+      "full": "Calle 7, Numero 215A , por 32 y 34,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $900"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $900"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfredo-eduardo-santamaria-martinez/ginecologo/yucatan#address-id=5067&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:28:59.055Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__alfredo_eduardo_santamaria_martinez.webp"
+}

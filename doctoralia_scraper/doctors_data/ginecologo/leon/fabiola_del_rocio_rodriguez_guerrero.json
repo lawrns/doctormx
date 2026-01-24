@@ -1,0 +1,31 @@
+{
+  "name": "Fabiola Del Rocio Rodriguez Guerrero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 47,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/160e48/160e4880a2dc38115cbfe3c190ece5f9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Benito Juarez 109,"
+    },
+    {
+      "full": "Av. Roma 1001,"
+    },
+    {
+      "full": "Benito Juarez 109,"
+    },
+    {
+      "full": "Av. Roma 1001,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fabiola-del-rocio-rodriguez-guerrero/ginecologo/san-francisco-del-rincon#address-id=229529&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:38:34.963Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/fabiola_del_rocio_rodriguez_guerrero.webp"
+}

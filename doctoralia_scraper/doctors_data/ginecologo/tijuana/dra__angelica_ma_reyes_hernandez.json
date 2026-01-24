@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Angelica Ma Reyes Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 25,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/786602/78660278bba76256960035de27d85967_140_square.jpg",
+  "about": "Experiencia y conocimientos: Ginecóloga Obstetra, colposcopia, Fertilidad, cirugía reconstructiva vaginal y Láser. Con amplia experiencia en partos, cesáreas, embarazo de alto riesgo, colposcopia y un alto numero de cirugías reconstructivas vaginales y rejuvenecimiento vaginal. Persona profesional altamente comprometida con sus pacientes, al ser ella misma mujer entiende con empatia y amabilidad a sus pacientes mujeres, brindado servicio cordial y humanitario, en constante superación profesional y personal.",
+  "addresses": [
+    {
+      "full": "Mision De San Ignacio 10616,"
+    },
+    {
+      "full": "Mision De San Ignacio 10616,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angelica-ma-reyes-hernandez/ginecologo/tijuana#address-id=885&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:43:40.969Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__angelica_ma_reyes_hernandez.webp"
+}

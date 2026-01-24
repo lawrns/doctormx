@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Bertha Alicia Del Toro Anaya",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/df6d0d/df6d0d29e6c79d66f29b8ea9e5b63f85_220_square.jpg",
+  "about": "Mi propósito es brindar atención de la mayor calidad y confianza a mujeres de todas las edades. Soy especialista en Ginecología y Obstetricia con una alta especialidad en Cirugía de mínima invasión y diplomados especializados en Endócrinología ginecológica, Colposcopía, Menopausia y Osteoporosis. Si estás buscando una ginecóloga de confianza que te expliqué detalle a detalle sobre tu salud, ¡estoy para ayudarte!",
+  "addresses": [
+    {
+      "full": "Pablo Neruda #3172, Col Providencia,"
+    },
+    {
+      "full": "Pablo Neruda #3172, Col Providencia,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Cesárea",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/bertha-alicia-del-toro-anaya/ginecologo/guadalajara#address-id=445469&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:24:14.795Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__bertha_alicia_del_toro_anaya.webp"
+}

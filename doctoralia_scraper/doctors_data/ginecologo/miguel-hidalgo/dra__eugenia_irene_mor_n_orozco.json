@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Eugenia Irene Morán Orozco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 13,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3ccd4e/3ccd4ed784183bc5fb534a3c24ff2784_220_square.jpg",
+  "about": "Soy la Dra. Eugenia Irene Morán Orozco, especialista en ginecología con subespecialidad en Biología de la Reproducción. Me gradué de la Universidad Panamericana y realicé mis estudios de posgrado en la Universidad Nacional Autónoma de México. Actualmente, ejerzo mi profesión en el Hospital Español, atendiendo a pacientes adultos. Mi enfoque es brindar una atención médica integral y de calidad, basada en el conocimiento científico actualizado y en una atención personalizada a cada paciente. Me preocupo por escuchar y entender las necesidades de mis pacientes para poder ofrecerles los mejores tratamientos y opciones de cuidado de la salud. Me apasiona mi trabajo y me esfuerzo por seguir aprendiendo y actualizándome constantemente para poder ofrecer un servicio médico de excelencia. Mi objetivo es contribuir al bienestar de mis pacientes y ayudarles a mejorar su calidad de vida. Gracias por confiar en mí como su médico ginecólogo.",
+  "addresses": [
+    {
+      "full": "Av. Lomas verdes 640, Local 67 Colonia La Soledad, Estado de México,"
+    },
+    {
+      "full": "Av Ejército Nacional 613,"
+    },
+    {
+      "full": "Av. Lomas verdes 640, Local 67 Colonia La Soledad, Estado de México,"
+    },
+    {
+      "full": "Av Ejército Nacional 613,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biología de la reproducción",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de infertilidad",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biología de la reproducción",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de infertilidad",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eugenia-irene-moran-orozco/ginecologo/naucalpan-de-juarez2#address-id=453122&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:05:18.910Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__eugenia_irene_mor_n_orozco.webp"
+}

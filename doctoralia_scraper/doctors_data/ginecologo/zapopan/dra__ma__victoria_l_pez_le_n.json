@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Ma. Victoria Lòpez Leòn",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/949002/949002c269fb968dc6fc3c4f536cad7b_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Central Guillermo Gonzàlez Camarena 911, Puerta del Valle,"
+    },
+    {
+      "full": "Tarascos 3384-A,"
+    },
+    {
+      "full": "Avenida Central Guillermo Gonzàlez Camarena 911, Puerta del Valle,"
+    },
+    {
+      "full": "Tarascos 3384-A,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ma-victoria-lopez-leon/ginecologo/zapopan",
+  "scrapedAt": "2026-01-22T04:24:44.677Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__ma__victoria_l_pez_le_n.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Moises Hector Sanchez Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 27,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/1d432ee9/1d432ee9-6ee4-4279-8fce-d0fda41f9e56_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "2 Ote. 307 Altos,"
+    },
+    {
+      "full": "2 Ote. 307 Altos,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/moises-hector-sanchez-perez/ginecologo/tehuacan#address-id=185865&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:36:02.629Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/moises_hector_sanchez_perez.webp"
+}

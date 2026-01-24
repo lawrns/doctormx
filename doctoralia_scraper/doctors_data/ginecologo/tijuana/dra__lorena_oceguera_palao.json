@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Lorena Oceguera Palao",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 128,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/8dd9c54b/8dd9c54b-8d20-4d97-afd1-2948095b203b_large.jpg",
+  "about": "Soy especialista en reproducción, nuestro equipo cuenta con la mejor tecnología para que puedas lograr tu sueño de tener un bebé",
+  "addresses": [
+    {
+      "full": "Av Bugambilias 4083,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lorena-oceguera-palao/ginecologo/tijuana#address-id=413615&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:40:34.332Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__lorena_oceguera_palao.webp"
+}

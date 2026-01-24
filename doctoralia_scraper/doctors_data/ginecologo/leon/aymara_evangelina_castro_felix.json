@@ -1,0 +1,37 @@
+{
+  "name": "Aymara Evangelina Castro Felix",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/8a393b2e/8a393b2e-fc4a-4da3-a9e3-3978fa13dfad_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Universidad 10,"
+    },
+    {
+      "full": "Francisco I. Madero 1120,"
+    },
+    {
+      "full": "Av. Gregorio Mendez 2838,"
+    },
+    {
+      "full": "Av. Universidad 10,"
+    },
+    {
+      "full": "Francisco I. Madero 1120,"
+    },
+    {
+      "full": "Av. Gregorio Mendez 2838,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aymara-evangelina-castro-felix/ginecologo/centro#address-id=243301&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:34:04.011Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/aymara_evangelina_castro_felix.webp"
+}

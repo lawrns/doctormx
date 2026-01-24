@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Miguel Angel Rojas Vera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 181,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9fc8c7/9fc8c7dbd3219a02840397a26c338f37_220_square.jpg",
+  "about": "9 años de Experiencia. Jefe se Servicio de Ginecología y Obstetricia Hospital General de Cholula.",
+  "addresses": [
+    {
+      "full": "Torres Medicas 3 Hospital Fifty Doctors Blvrd 14 Sur 4302 Jardines de San Manuel,"
+    },
+    {
+      "full": "Torres Medicas 3 Hospital Fifty Doctors Blvrd 14 Sur 4302 Jardines de San Manuel,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-rojas-vera/ginecologo/puebla#address-id=441261&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:14:03.393Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__miguel_angel_rojas_vera.webp"
+}

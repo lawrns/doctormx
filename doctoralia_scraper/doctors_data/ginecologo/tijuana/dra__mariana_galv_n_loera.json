@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Mariana Galván Loera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 74,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/12eac1/12eac19ca1aec0b60ee82caa8c30ba1e_220_square.jpg",
+  "about": "Ginecóloga Obstetra certificada por el Consejo Mexicano de Ginecología y Obstetricia 2023, Egresada del Centro Medico Nacional \"La Raza\" en Ciudad de México. Miembro asociado de la Sociedad Mexicana de Ginecología Estética Regenerativa y Funcional",
+  "addresses": [
+    {
+      "full": "Jose Maria Velazco 2524,"
+    },
+    {
+      "full": "Jose Maria Velazco 2524,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mariana-galvan-loera/ginecologo/tijuana#address-id=453762&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:43:41.883Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__mariana_galv_n_loera.webp"
+}

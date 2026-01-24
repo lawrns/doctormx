@@ -1,0 +1,25 @@
+{
+  "name": "Andrea Lizet Covarrubias Castrejon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 94,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/deb3cd/deb3cd3ed1cad291336aca57505be76a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "De Las Viboras,23661, Col. Fracc Lomas De La Presa, ,"
+    },
+    {
+      "full": "De Las Viboras,23661, Col. Fracc Lomas De La Presa, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/andrea-lizet-covarrubias-castrejon/ginecologo/tijuana#address-id=355416&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:06:30.721Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/andrea_lizet_covarrubias_castrejon.webp"
+}

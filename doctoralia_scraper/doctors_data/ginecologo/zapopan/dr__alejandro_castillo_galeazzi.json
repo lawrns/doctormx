@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Alejandro Castillo Galeazzi",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 398,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/abed8de3/abed8de3-bd35-4486-b460-f3078def71c0_small_square.jpg",
+  "about": "Soy el Dr. Alejandro Castillo Galeazzi, egresado del Instituto Nacional de Cancerología de México, avalado por la UNAM y con certificación vigente por el Consejo Mexicano de Oncología. A lo largo de mi carrera he podido combinar mi formación profesional con mi profundo compromiso por brindar una atención médica humanizada, cercana y con el más alto nivel de calidad. Me especializo en Ginecología Oncológica, ofreciendo un manejo basado en la evidencia científica más actual y en las mejores prácticas en cirugía de la mama, patología mamaria, colposcopia y laparoscopia. Mi objetivo es acompañar a mis pacientes no solo con un enfoque técnico, sino también con la calidez y empatía que cada situación requiere, brindándoles orientación integral en cada paso del proceso oncológico. Mi labor es mucho más que tratar una enfermedad, se trata de acompañar a cada paciente de manera integral, entendiendo sus miedos, dudas y necesidades.",
+  "addresses": [
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Colposcopía del Tracto Genital Inferior del Hombre y la Mujer",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Primera visita ginecología oncológica",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-castillo-galeazzi/ginecologo-oncologico-ginecologo/zapopan#address-id=400166&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:10:29.304Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__alejandro_castillo_galeazzi.webp"
+}

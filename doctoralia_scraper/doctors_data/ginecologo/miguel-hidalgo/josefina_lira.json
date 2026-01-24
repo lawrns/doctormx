@@ -1,0 +1,64 @@
+{
+  "name": "Josefina Lira",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c6aed3/c6aed30aeca98d00bc48ef86b8b61702_220_square.jpg",
+  "about": "Ginecóloga egresada del Instituto Nacional de Perinatología, con más de 20 años de experiencia. Certificada por el Consejo Mexicano de Especialistas en Ginecología y Obstetricia. Ex Presidente del Colegio Mexicano de Especialistas en Ginecología y Obstetricia. Nombrada por la Federación Internacional de Ginecología y Obstetricia, como Ginecóloga Reconocida en México por su trabajo en pro las mujeres. Ha presentado más de 500 ponencias en foros nacionales e internacionales, publicado mas de 70 artículos en libros y revistas científicas. Área de experiencia: adolescencia, anticoncepción, alteraciones hormonales, menopausia, enfermedades de transmisión sexual.",
+  "addresses": [
+    {
+      "full": "Hospital Angeles del Pedregal,"
+    },
+    {
+      "full": "Cam. De Sta. Teresa 1055,"
+    },
+    {
+      "full": "Montes Urales 800,"
+    },
+    {
+      "full": "Camino Santa Teresa, 1055 Cons. 747,"
+    },
+    {
+      "full": "Hospital Angeles del Pedregal,"
+    },
+    {
+      "full": "Cam. De Sta. Teresa 1055,"
+    },
+    {
+      "full": "Montes Urales 800,"
+    },
+    {
+      "full": "Camino Santa Teresa, 1055 Cons. 747,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $1,700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/josefina-lira/ginecologo/ciudad-de-mexico#address-id=370751&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:08:04.736Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/josefina_lira.webp"
+}

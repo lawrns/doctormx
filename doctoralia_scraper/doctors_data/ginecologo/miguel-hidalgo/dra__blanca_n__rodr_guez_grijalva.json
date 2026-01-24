@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Blanca N. Rodríguez Grijalva",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 635,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/678f9980/678f9980-2fc6-4618-a5db-62035b7072f7_large.jpg",
+  "about": "¡Hola! soy la Dra. Blanca Rodríguez Grijalva , egresada de Medico Cirujano de la Universidad Autónoma de Guadalajara (UAG). Estudié Ginecología y Obstetricia en el Hospital de la Mujer del Estado de Sonora HIES (UNAM), realicé el Diplomado de Colposcopía durante la especialidad en la actualidad Profesor Adjunto (UANL), Tengo Alta Especialidad del Hospital Español de México de urología ginecológica/urodinámia (UNAM), y en este mismo lugar Alta especialidad de cirugía de mínima invasión (La Salle). Siempre me mantengo actualizada para poder brindar siempre el mejor servicio. Me apasiona mi trabajo y todas las áreas que conlleva, desde un examen rutinario como prevención hasta tratamiento de problemas más severos como cáncer.",
+  "addresses": [
+    {
+      "full": "Av. Ejército Nacional Mexicano 613 INT 602,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/blanca-n-rodriguez-grijalva/ginecologo/miguel-hidalgo#address-id=19501&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:57:30.547Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__blanca_n__rodr_guez_grijalva.webp"
+}

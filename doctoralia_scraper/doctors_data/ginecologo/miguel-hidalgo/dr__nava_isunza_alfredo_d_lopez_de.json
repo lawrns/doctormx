@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Nava Isunza Alfredo D Lopez De",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/1a8e4fbe/1a8e4fbe-d251-4521-99f7-05fd8688c70a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Gelati 19,"
+    },
+    {
+      "full": "Calle Gelati 19,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nava-isunza-alfredo-d-lopez-de/ginecologo/ciudad-de-mexico#address-id=57989&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:54:08.043Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__nava_isunza_alfredo_d_lopez_de.webp"
+}

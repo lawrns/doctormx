@@ -1,0 +1,58 @@
+{
+  "name": "Dr. Rene Jaime Toro Calzada",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5ce709/5ce7095c643407e5a878aa92a0ee5f55_220_square.jpg",
+  "about": "Médico ginecobstetra, con postgrado en Reproducción Humana. Con enfoque principal en menopausia, problemas endocrinos y fertilidad. Experiencia en cirugía vaginal. Deteccion oportuna del cancer ginecologico.",
+  "addresses": [
+    {
+      "full": "Avenida Ejército Nacional 617,"
+    },
+    {
+      "full": "VIALIDAD DE LA BARRANCA MZ II LOTE 1 cons. 40,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta por fallo de método anticonceptivo",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rene-jaime-toro-calzada/ginecologo/huixquilucan#address-id=353403&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:01:10.464Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__rene_jaime_toro_calzada.webp"
+}

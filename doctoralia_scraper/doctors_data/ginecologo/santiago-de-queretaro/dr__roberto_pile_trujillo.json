@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Roberto Pile Trujillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 185,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b9b41c/b9b41ca042c373a4de4bae88b1d9e284_220_square.jpg",
+  "about": "El Dr. Roberto Pile Trujillo es especialista en Ginecología y Obstetricia por la Universidad Nacional Autónoma de México (UNAM). Además, es Licenciado como Médico Cirujano por la Universidad La Salle (ULSA). Cuenta con una subespecialidad en biología de la reproducción por el Centro de Fertilidad Avanzada de Houston Texas. También realizó un Fellow en Endocrinología de la Reproducción en España y un Diplomado en Colposcopia por la Universidad Nacional autónoma de México (UNAM). Con más de 15 años en su trayectoria médica, destaca en los tratamientos de Colposcopía, Infertilidad, Menopausia, Miomatosis, Embarazo de Alto Riesgo e Infecciones Genitales. Sus logros académicos nacionales e internacionales, así como el cuidado que brinda a sus pacientes los consolidan como un médico del más alto nivel.",
+  "addresses": [
+    {
+      "full": "PRIVADA IGNACIO ZARAGOZA 17 B,"
+    },
+    {
+      "full": "PRIVADA IGNACIO ZARAGOZA 17 B,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-pile-trujillo/ginecologo/santiago-de-queretaro#address-id=383746&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:48:05.143Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__roberto_pile_trujillo.webp"
+}

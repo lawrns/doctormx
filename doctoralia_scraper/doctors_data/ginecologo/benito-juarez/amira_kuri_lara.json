@@ -1,0 +1,25 @@
+{
+  "name": "Amira Kuri Lara",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 46,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f39c19ff/f39c19ff-f5fb-40b8-9f9f-b55d3a5dccbe_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Enrique Rebsamen 731Col. Del Valle,"
+    },
+    {
+      "full": "Enrique Rebsamen 731Col. Del Valle,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/amira-kuri-lara/ginecologo/benito-juarez#address-id=356532&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:20:01.356Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/amira_kuri_lara.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dra. María Del Rosario Varela Morán",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/15f596cf/15f596cf-7293-45ff-8d71-42045cc1949e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "14 Sur 5101 Int 217,"
+    },
+    {
+      "full": "14 Sur 5101 Int 217,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-del-rosario-varela-moran-2/ginecologo/puebla#address-id=46698&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:15:51.722Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__mar_a_del_rosario_varela_mor_n.webp"
+}

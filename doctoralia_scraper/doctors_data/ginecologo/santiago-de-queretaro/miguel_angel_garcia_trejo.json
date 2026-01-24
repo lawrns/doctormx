@@ -1,0 +1,38 @@
+{
+  "name": "MIGUEL ANGEL GARCIA TREJO",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 96,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d3d171/d3d171fce8dc21b81a2637b9eaf5f0e8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "PASEO CONSTITUYENTES 302, CONSULTORIO 519 TORRE 2, 4o PISO,"
+    },
+    {
+      "full": "PASEO CONSTITUYENTES 302, CONSULTORIO 519 TORRE 2, 4o PISO,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Toma de papanicolaou base liquida",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Ultrasonido avanzado del tercer trimestre (A partir de la semana 32)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-garcia-trejo-3/ginecologo/santiago-de-queretaro#address-id=609168&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:52:45.011Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/miguel_angel_garcia_trejo.webp"
+}

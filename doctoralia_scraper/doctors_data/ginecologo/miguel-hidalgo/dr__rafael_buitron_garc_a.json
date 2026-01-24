@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Rafael Buitron García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 24,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4bc390/4bc390f8c583f562978bfcb18f0edc63_220_square.jpg",
+  "about": "Especialista en Ginecología y Obstetricia Médico Especialista del Servicio de Ginecología y Obstetricia del Hospital General de México \"Dr. Eduardo Liceaga\" (1982-2022) Médico Asociado del Consejo Mexicano de Ginecología y Obstetricia Colegiado titular emérito del Colegio Mexicano de especialistas en Ginecología y Obstetricia Life Fellow American College of Obstetricians and Gynecologists Académico titular de la Academia Mexicana de Cirugía Profesor titular pregrado Ginecología y Obstetricia, Facultad de Medicina UNAM (1980-2022) Profesor titular post grado Ginecología y Obstetricia, Facultad de Medicina UNAM(2019-2022)",
+  "addresses": [
+    {
+      "full": "Sur 136, 116, Las Américas, Álvaro Obregón, Ciudad de México, CDMX,"
+    },
+    {
+      "full": "Sur 136, 116, Las Américas, Álvaro Obregón, Ciudad de México, CDMX,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rafael-buitron-garcia/ginecologo/alvaro-obregon#address-id=365590&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:04:33.810Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__rafael_buitron_garc_a.webp"
+}

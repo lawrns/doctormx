@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Olegario Rodríguez Morales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 392,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/989b81/989b814699a21fafa412dcb63c9c7006_220_square.jpg",
+  "about": "Amplia experiencia y actualización en la cirugía vaginal reconstructiva con aplicación de cinta para corrección de la incontinencia urinaria de esfuerzo.Integrante del grupo pionero en México de la histerectomía vaginal con electrocirugía bipolar.Jefe del Departamento de Ginecología y Obstetricia en ISSSTE.Experiencia en el manejo de la patología ginecológica y obstétrica de urgencia y programada. Profesor de la especialidad en la UNAM. Sinodal de exámenes profesionales de la carrera.",
+  "addresses": [
+    {
+      "full": "Doctor Vértiz 1238,"
+    },
+    {
+      "full": "Av. Álvaro Obregón 74 - 301,"
+    },
+    {
+      "full": "Doctor Vértiz 1238,"
+    },
+    {
+      "full": "Av. Álvaro Obregón 74 - 301,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $650"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $650"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/olegario-rodriguez-morales/ginecologo/benito-juarez#address-id=118388&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:09:37.071Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__olegario_rodr_guez_morales.webp"
+}

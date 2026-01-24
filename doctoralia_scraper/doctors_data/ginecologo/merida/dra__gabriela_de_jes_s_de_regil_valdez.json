@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Gabriela de Jesús de Regil Valdez",
+  "specialty": "Ginecólogo",
+  "rating": 1,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/05fa6f/05fa6fd3778283f0f3d419c30bdf6ffc_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 7 215A , (por 32 y 34),"
+    },
+    {
+      "full": "Calle 7 215A , (por 32 y 34),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriela-de-jesus-de-regil-valdez/ginecologo/merida#address-id=5355&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:51:48.124Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__gabriela_de_jes_s_de_regil_valdez.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Carlos Mijangos Patiño",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4e01bf/4e01bfdabe9caa51d17b3919da4d56c8_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "13 Poniente 2324 int. 101 esq. 25 Sur, La Paz,"
+    },
+    {
+      "full": "13 Poniente 2324 int. 101 esq. 25 Sur, La Paz,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-mijangos-patino-2/ginecologo/puebla#address-id=150924&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:12:51.368Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__carlos_mijangos_pati_o.webp"
+}

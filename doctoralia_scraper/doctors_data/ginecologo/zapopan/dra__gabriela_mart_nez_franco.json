@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Gabriela Martínez Franco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 106,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/87b57b9a/87b57b9a-a1b7-429e-91cc-03f099e96073_small_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Verona 7412,"
+    },
+    {
+      "full": "Av. Verona 7412,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": "• $6,000"
+    },
+    {
+      "name": "Blanqueamiento genital",
+      "price": "• Desde $7,000"
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": "• Desde $5,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriela-martinez-franco/ginecologo/zapopan#address-id=426351&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:16:46.084Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__gabriela_mart_nez_franco.webp"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Patricia Gasca Tejeda",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 704,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/c4e4c237/c4e4c237-77ce-4293-bae6-398c529eff2b_small_square.jpg",
+  "about": "Ginecóloga Colposcopista, experta en menopausia. Más de 25 años de experiencia resolviendode casos ginecológicos complejos me respaldan",
+  "addresses": [
+    {
+      "full": "Blvd Jurica la Campana 1057 Juriquilla,"
+    },
+    {
+      "full": "Blvd Jurica la Campana 1057 Juriquilla,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/patricia-gasca-tejeda/ginecologo/santiago-de-queretaro#address-id=589570&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:51:11.958Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__patricia_gasca_tejeda.webp"
+}

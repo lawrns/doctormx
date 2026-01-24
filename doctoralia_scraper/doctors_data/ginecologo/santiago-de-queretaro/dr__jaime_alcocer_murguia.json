@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jaime Alcocer Murguia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9786209f/9786209f-69f6-452d-b47c-acfcae292360_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Bernardino del Razo 21 - Fraccionamiento Ensueño (Consultorio 205A Torre Médica Ángeles),"
+    },
+    {
+      "full": "Bernardino del Razo 21 - Fraccionamiento Ensueño (Consultorio 205A Torre Médica Ángeles),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jaime-alcocer-murguia/ginecologo/santiago-de-queretaro#address-id=66892&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:55:31.885Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__jaime_alcocer_murguia.webp"
+}

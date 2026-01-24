@@ -1,0 +1,25 @@
+{
+  "name": "Jorge Lopez Fernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 216,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/fb78477a/fb78477a-abec-4d92-bfaa-edaea4ea77c3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "16 De Septiembre 4920,"
+    },
+    {
+      "full": "16 De Septiembre 4920,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-lopez-fernandez/ginecologo/puebla#address-id=162836&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:28:36.498Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/jorge_lopez_fernandez.webp"
+}

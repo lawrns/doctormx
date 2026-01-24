@@ -1,0 +1,66 @@
+{
+  "name": "Dra. María José Guerrero Cervantes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 59,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ec37d2/ec37d244fbb360821fc4c0610aabd239_220_square.jpg",
+  "about": "Soy la Dra. María José Guerrero Cervantes, especialista en Ginecología y Obstetricia, estoy aquí para ayudarte en cualquier etapa de tu vida reproductiva, desde la adolescencia hasta la edad adulta. Mi tarea es hacerte sentir cómoda y segura en tu consulta.",
+  "addresses": [
+    {
+      "full": "Blvd Aeropuerto 101,"
+    },
+    {
+      "full": "Guanajuato 53, Centro, Dolores Hidalgo, Guanajuato, Mexico,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": "• $800"
+    },
+    {
+      "name": "Aspiracion Manual Endouterina AMEU",
+      "price": ""
+    },
+    {
+      "name": "Aspiracion Manual Endouterina AMEU",
+      "price": ""
+    },
+    {
+      "name": "Aspiracion Manual Endouterina AMEU",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $2,500"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-jose-guerrero-cervantes/ginecologo/leon#address-id=548933&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:25:49.580Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__mar_a_jos__guerrero_cervantes.webp"
+}

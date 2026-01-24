@@ -1,0 +1,25 @@
+{
+  "name": "Mauricio Alfredo Almazan Diaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 80,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d098bb/d098bbcf82d05444b8b05ddd09e17be5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Palmas #745 Cons. 904,"
+    },
+    {
+      "full": "Av. Palmas #745 Cons. 904,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mauricio-alfredo-almazan-diaz/ginecologo/miguel-hidalgo#address-id=87067&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:55:14.702Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/mauricio_alfredo_almazan_diaz.webp"
+}

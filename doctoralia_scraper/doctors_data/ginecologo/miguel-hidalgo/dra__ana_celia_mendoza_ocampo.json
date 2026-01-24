@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ana Celia Mendoza Ocampo",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 14,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/c2569c02/c2569c02-4716-4a4c-bbd7-2b5baa991497_small_square.jpg",
+  "about": "Hola Bienvenido a mi perfil Soy la doctora Ana Mendoza para mi tu eres mi prioridad. Te cuento sobre mi experiencia.Soy ginecóloga egresada del Hospital de Ginecologia y Obstetricia N4. Con alta especialidad en Biología de la Reproduccion. Con más de 5 años de experiencia en la materia.Me actualizo constantemente acudiendo a congresos nacionales e internacionales para poder brindarte la mejor atención.",
+  "addresses": [
+    {
+      "full": "Insurgentes sur 601 Col Napoles,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Aspiracion Manual Endouterina AMEU",
+      "price": ""
+    },
+    {
+      "name": "Biología de la reproducción",
+      "price": ""
+    },
+    {
+      "name": "Coito Programado",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-celia-mendoza-ocampo/dentista-odontologo/benito-juarez#address-id=582285&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:58:53.562Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__ana_celia_mendoza_ocampo.webp"
+}

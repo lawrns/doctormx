@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Raúl Rodríguez Zozoaga",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 428,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ead66b/ead66bdd9f3363529792bd671c9c68a8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "13 Sur #1907 Int 103 Col. Santiago,"
+    },
+    {
+      "full": "13 Sur #1907 Int 103 Col. Santiago,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-rodriguez-zozoaga-2/ginecologo/puebla#address-id=93248&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:19:37.824Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__ra_l_rodr_guez_zozoaga.webp"
+}

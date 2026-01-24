@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Guillermo Gomez Partida",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 118,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/38870de9/38870de9-581d-4888-8169-e780041a216e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Manuel M Dieguez 126 -,"
+    },
+    {
+      "full": "Manuel M Dieguez 126 -,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-gomez-partida/ginecologo/guadalajara#address-id=97401&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:35:12.102Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__guillermo_gomez_partida.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Alberto Garcia Hinojosa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 115,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6d656d/6d656df253952cbb01e8d68cda0688cc_220_square.jpg",
+  "about": "Hola! Mucho gusto. Mi nombre es Alberto Garcia Hinojosa. Cursé la especialidad de Ginecología y Obstetricia en el ISSSTE - Hospital Regional Valentin Gomez Farías, avalado por la Universidad de Guadalajara y posteriormente realicé la subespecialidad en Medicina Materno Fetal en el Hospital Civil Juan I. Menchaca de Guadalajara, Jalisco Cursé un Posgrado de Cardiología Fetal, con enfoque a la detección, diagnóstico oportuno y asesoramiento, avalado por la Universidad de Barcelona.",
+  "addresses": [
+    {
+      "full": "Calle 20 de Enero 506,"
+    },
+    {
+      "full": "Calle 20 de Enero 506,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "ADN fetal libre (NIPT)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alberto-garcia-hinojosa/ginecologo/leon#address-id=450429&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:27:22.792Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__alberto_garcia_hinojosa.webp"
+}

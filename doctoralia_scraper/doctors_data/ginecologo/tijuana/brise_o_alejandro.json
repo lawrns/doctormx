@@ -1,0 +1,25 @@
+{
+  "name": "Briseño Alejandro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 71,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0189cb/0189cb14e8b9f0113924a8f062eec942_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Antonio Caso 2055, suite 605, Zona Urbana Rio Tijuana, Plaza Financiera,"
+    },
+    {
+      "full": "Antonio Caso 2055, suite 605, Zona Urbana Rio Tijuana, Plaza Financiera,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/briseno-alejandro/ginecologo/tijuana#address-id=123445&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:48:04.184Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/brise_o_alejandro.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Guzmán Norma",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 648,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5baec5/5baec591d9371143109ce625c6cd4226_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "José Gorostiza 1169 Col. Zona Urbana Río Tijuana ,"
+    },
+    {
+      "full": "José Gorostiza 1169 Col. Zona Urbana Río Tijuana ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guzman-norma/ginecologo/tijuana#address-id=359073&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:23:57.762Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/guzm_n_norma.webp"
+}

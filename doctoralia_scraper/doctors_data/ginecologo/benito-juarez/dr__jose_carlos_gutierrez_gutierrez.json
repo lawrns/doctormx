@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Jose Carlos Gutierrez Gutierrez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 79,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d2adda/d2adda6d939ae52dc720174553f4e323_220_square.jpg",
+  "about": "Egresado como médico cirujano por la Universidad Justo Sierra, obteniendo el segundo lugar de la licenciatura. Realizo sus estudios de postgrado en El Hospital de la Mujer SSA, obteniendo el título de especialista en Ginecología y Obstetricia y posteriormente la subespecialidad en Medicina Materno Fetal en el Instituto Nacional de Perinatología. Certificado por el Colegio Mexicano de Ginecología y Obstetricia, así como en The Fetal Medicine Fundación en Londres Inglaterra. Especialista en el manejo del embarazo de alto riesgo, diagnóstico prenatal de malformaciones congénitas y cromosomopatías; así como el diagnóstico y tratamiento de las patologías propias del embarazo. Ha realizado investigación sobre malformaciones fetales y continuado su preparación con diversos cursos nacionales e internacionales Actualmente es profesor adjunto a la especialidad de Ginecología y Obstetricia en el Hospital Regional Adolfo López Mateos ISSSTE. FORMACION ACADEMICA Médico Cirujano, Facultad de Medicina Universidad Justo Sierra. Ced. Prof. 6918857 Ginecología & Obstetricia en el Hospital de la Mujer SSA Ciudad de Mexico, UNAM 2011 – 2015. Ced. Prof. 9610912 Medicina Materno Fetal en el Instituto Nacional de Perinatología “Isidro Espinosa de los Reyes”, INPER 2015 – 2017. Ced. Prof. 10703426 Fellow en Ecocardiografia Fetal Avanzada por la Fundacion Internacional de Medicina Materno Fetal Bogotá Colombia Maestría en Administración de Instituciones de Salud en el Instituto de Estudios Universitarios Puebla CERTIFICACIONES • Certificado por el Consejo Mexicano de Medicina Materno Fetal. • Certificado por el Consejo Mexicano de Ginecología y Obstetricia. • Certificado por la Fetal Medicine Foundation (Londres, Reino Unido) en Ecografía del Primer Trimestre (11+0-13+6 weeks scan): Translucencia nucal, hueso nasal, regurgitación tricuspídea, ductus venoso, ángulo facial (2016). • Certificado por la Fetal Medicine Foundation (Londres, Reino Unido) en Doppler Fetal (2016). • Certificado por la Fetal Medicine Foundation (Londres, Reino Unido) en Ecografía de Cérvix para la detección de Parto Pretérmino (2016). • Certificado por la Fetal Medicine Foundation (Londres, Reino Unido) en Ecografía de Doppler de Arterias Uterinas de Primer Trimestre para la detección de Preeclampsia (2016). • Certificado de Competencia por la Fetal Medicine Foundation (Londres, Reino Unido) en Ecografía de anomalías (18-23 weeks scan) (2014). • Certificado de Competencia por la Fetal Medicine Foundation (Londres, Reino Unido) en el estudio ecográfico del corazón fetal (Fetal Cardiología) (2014).",
+  "addresses": [
+    {
+      "full": "Avenida Universidad 1080,"
+    },
+    {
+      "full": "Av. Universidad 1080,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido estructural del segundo trimestre",
+      "price": "• Desde $2,300"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vellosidades coriales",
+      "price": ""
+    },
+    {
+      "name": "Cesárea humanizada",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-carlos-gutierrez-gutierrez/ginecologo/benito-juarez#address-id=211740&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:04:57.919Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__jose_carlos_gutierrez_gutierrez.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Raúl Rivera Villalobos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 611,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/89e0f2/89e0f2495c8db4b21a1c52efb73f3e5b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Miguel Topete 3824,"
+    },
+    {
+      "full": "Calle 56 (miguel Topete) 3824, López Portillo, 44960 Guadalajara, Jal., Mexico,"
+    },
+    {
+      "full": "Miguel Topete 3824,"
+    },
+    {
+      "full": "Calle 56 (miguel Topete) 3824, López Portillo, 44960 Guadalajara, Jal., Mexico,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-rivera-villalobos-2/ginecologo/guadalajara#address-id=153331&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:36:23.855Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__ra_l_rivera_villalobos.webp"
+}

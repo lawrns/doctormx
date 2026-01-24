@@ -1,0 +1,25 @@
+{
+  "name": "Jorge Islas Fuentes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 33,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4e21de/4e21de39108d02642a877fce18a71716_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Gelati 33,"
+    },
+    {
+      "full": "Gelati 33,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-islas-fuentes/ginecologo/miguel-hidalgo#address-id=161409&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:49:10.759Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/jorge_islas_fuentes.webp"
+}

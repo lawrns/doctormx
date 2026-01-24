@@ -1,0 +1,66 @@
+{
+  "name": "Dr. German Octavio Vilchis Galindo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 422,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6834e8/6834e8afac2b89bfaabf6f2009d286cc_220_square.jpg",
+  "about": "Soy especialista en Ginecología y Obstetricia (enfermedades propias de la mujer y embarazo). Ejerciendo mi especialidad con una orientación a la práctica privada. ​Estoy comprometido a proporcionar mis servicios en un ambiente cálido y humano. Mi objetivo principal es el de tratar cada paciente de una manera individual y personalizada, para lograr exitosamente un desenlace eficaz en su cuidado.",
+  "addresses": [
+    {
+      "full": "Plaza San isidro, Av. las Palmas 4864, Las Palmas,"
+    },
+    {
+      "full": "Avenida 5 de mayo # 992, zona centro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Biopsia de cérvix",
+      "price": "• $4,300"
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": "• $5,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/german-octavio-vilchis-galindo-2/ginecologo/tijuana#address-id=336903&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:41:03.885Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__german_octavio_vilchis_galindo.webp"
+}

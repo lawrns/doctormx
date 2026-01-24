@@ -1,0 +1,27 @@
+{
+  "name": "Dra. Magaly Sánchez Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 80,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/840e4f/840e4f25c4e17e09849f2f27bf90199e_220_square.jpg",
+  "about": "Decidí realizar la residencia en ginecología y obstetricia por qué la primera vez que vi un parto solo podía pensar que el momento en que llega una nueva vida al mundo es mágico. Estoy convencida que los mejores resultados se logran equipo, es por eso que tú como paciente y yo como médico podremos lograr el mejor tratamiento. He tenido la oportunidad de hacer cursos de especialización fuera del país con la sociedad británica de fertilidad así como prácticas en el hospital de la mujer en Liverpool Reino Unido. Como médico nuestra tarea es continuar capacitándonos y estar al día con los últimos tratamientos, las últimas técnicas para brindar a nuestros pacientes el mejor tratamiento posible con el menor riesgo.",
+  "addresses": [
+    {
+      "full": "Calle 12A 310,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/magaly-sanchez-gonzalez/ginecologo/yucatan#address-id=607622&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:32:03.701Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__magaly_s_nchez_gonzalez.webp"
+}

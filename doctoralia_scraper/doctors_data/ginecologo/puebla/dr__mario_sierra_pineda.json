@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Mario Sierra Pineda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 553,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e99282/e99282544c0d3ba78bef348138b92a69_220_square.jpg",
+  "about": "\"La responsabilidad por mantener la Salud de mis pacientes, es la motivación sustancial para ofrecer los resultados que buscan; el profesionalismo en cada consulta, en cada cirugía, en cada interacción, es un compromiso constante que gratamente alimenta el éxito en los diagnósticos certeros y así, el mejor tratamiento posible\"",
+  "addresses": [
+    {
+      "full": "Avenida Teziutlan Norte No. 2, Local 107, La Paz, Puebla, Puebla, México,"
+    },
+    {
+      "full": "Guerrero No. 7. Plaza \"Los Cedros\" Interior 18 Segundo piso,"
+    },
+    {
+      "full": "Avenida Teziutlan Norte No. 2, Local 107, La Paz, Puebla, Puebla, México,"
+    },
+    {
+      "full": "Guerrero No. 7. Plaza \"Los Cedros\" Interior 18 Segundo piso,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $650"
+    },
+    {
+      "name": "Histeroscopia diagnóstica con biopsia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Biopsia de cérvix",
+      "price": "• $450"
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mario-sierra-pineda/ginecologo/puebla#address-id=253686&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:11:19.550Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__mario_sierra_pineda.webp"
+}

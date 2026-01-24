@@ -1,0 +1,63 @@
+{
+  "name": "Dra. Veronica Saishio Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 632,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/785e33/785e33670a9e3351172ae99e689e4872_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "HOSPITAL STAR MEDICA. Consultorio 608. Av. Bernardo Quintana No. 4060. Col. San Pablo.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Colocación de  DIU Kyleena",
+      "price": ""
+    },
+    {
+      "name": "Colocación de cerclaje de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/veronica-saishio-garcia/ginecologo/santiago-de-queretaro#address-id=426704&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:46:26.605Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__veronica_saishio_garcia.webp"
+}

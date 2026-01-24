@@ -1,0 +1,53 @@
+{
+  "name": "Liliana Espinosa Mendoza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 369,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7513a9/7513a94b595cf371af9c0ca543e8a989_220_square.jpg",
+  "about": "DIPLOMADA EN COLPOSCOPIA Y PATOLOGIA DEL TRACTO PERINEAL, VIRUS PAPILOMA HUMANO Diplomada en MENOPAUSIA, CLIMATERIO Y OSTEOPOROSIS",
+  "addresses": [
+    {
+      "full": "Prolongación Bernardo Quintana 2906,"
+    },
+    {
+      "full": "(HOSPITAL STAR MEDICA .) AV BERNARDO QUINTANA NUM 1201 CONSULTORIO 608. COL SAN PABLO QUERÉTARO,QRO.,"
+    },
+    {
+      "full": "Bernardo Quintana No. Ext.4060 No. Int.605. Col. San Pablo Ii. ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/liliana-espinosa-mendoza/ginecologo/santiago-de-queretaro#address-id=577705&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:48:05.853Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/liliana_espinosa_mendoza.webp"
+}

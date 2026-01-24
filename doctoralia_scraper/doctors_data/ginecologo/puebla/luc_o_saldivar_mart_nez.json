@@ -1,0 +1,25 @@
+{
+  "name": "Lucío Saldivar Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/fb78477a/fb78477a-abec-4d92-bfaa-edaea4ea77c3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 16 De Septiembre 5310 Col. Las Palmas ,"
+    },
+    {
+      "full": "Calle 16 De Septiembre 5310 Col. Las Palmas ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lucio-saldivar-martinez/ginecologo/puebla#address-id=358821&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:25:42.303Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/luc_o_saldivar_mart_nez.webp"
+}

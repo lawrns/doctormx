@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Maria Fernanda Castillo Plasencia",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/26387b/26387b7ee61c466f96265f577b0c6be9_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Luis Pérez Verdia #209,"
+    },
+    {
+      "full": "Luis Pérez Verdia #209,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-fernanda-castillo-plasencia/ginecologo/guadalajara#address-id=88892&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:30:02.854Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__maria_fernanda_castillo_plasencia.webp"
+}

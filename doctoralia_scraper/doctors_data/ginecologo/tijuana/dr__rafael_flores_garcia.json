@@ -1,0 +1,62 @@
+{
+  "name": "Dr. Rafael Flores Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 48,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/67dd3cf2/67dd3cf2-4696-40a6-b114-2c85666e979d_small_square.jpg",
+  "about": "Soy el Dr Rafael Flores Garcia realice mi formación como medico general en la Universidad Autónoma de Sinaloa, misma universidad que avala mi formación como medico especialista en Ginecología y Obstetricia en el Instituto Mexicano del Seguro Social; actualmente con certificación vigente por el Consejo Mexicano de Ginecología y Obstetricia, A. C. Ejerciendo actualmente con Ginecólogo en Tijuana. Actualmente mi enfoque profesional es realizar cirugías ginecológicas por medio de mínima invasión, como lo es la vía laparoscópica para cirugías como histerectomía, miomas (fibromas) uterinos y quiste de ovario. Esto con la finalidad de poder ofrecerte una recuperación menos dolorosa y de mayor seguridad. Mi objetivo es poder ofrecerte una atención de calidad y sobre todo brindarte en mi consulta un espacio seguro donde puedas resolver tus dudas en un ambiente de respeto y confianza.Tratamiento que ofrezco en mi consulta y quirófano:-Cirugía ginecológica por laparoscopia como son histerectomías, quistes de ovario, biomas uterinos. -Control de prenatal y partoDando seguimiento completo durante el embarazo, la atención del nacimiento por medio de parto humanizado o cesárea. -Detección oportuna de cáncer y enfermedades ginecológicas. -Endometriosis -Metodos anticonceptivos -Control y manejo de menopausia-Síndrome de ovario poliquístico -Miomatosis uterina En mi consulta contamos con un entorno moderno y accesible para brindarte una experiencia de atención medica excepcional. Mi compromiso con mis pacientes es seguir avanzada y preparándome integrándome a capacitación quirúrgica constante para brindarte un tratamiento adecuada, correcto y oportuno. Dr. Rafael Flores Garcia Ginecologo obstetra",
+  "addresses": [
+    {
+      "full": "Av bugambilias 4083,"
+    },
+    {
+      "full": "Blvd. Hermenegildo Galeana G 22412, Torres de Matamoro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $950"
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• $750"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": "• $1,150"
+    },
+    {
+      "name": "Revisión de embarazo (Primera vez)",
+      "price": "• $750"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rafael-flores-garcia/ginecologo/tijuana#address-id=542474&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:42:52.232Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__rafael_flores_garcia.webp"
+}

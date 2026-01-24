@@ -1,0 +1,25 @@
+{
+  "name": "Francisco Javie Rodriguez Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 160,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ba3765/ba3765979d0d7ea3b861d1fd02e3adeb_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle del angel no.60, San jose insurgentes,"
+    },
+    {
+      "full": "Calle del angel no.60, San jose insurgentes,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-javie-rodriguez-flores/ginecologo/benito-juarez#address-id=110769&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:18:51.780Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/francisco_javie_rodriguez_flores.webp"
+}

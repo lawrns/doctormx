@@ -1,0 +1,50 @@
+{
+  "name": "Dra. Nidia Grisel Mendoza Zepeda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 863,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/db8ebb/db8ebb6bb2d90f8ef70a9dbe7e4cab0b_220_square.jpg",
+  "about": "Mi prioridad siempre será el bienestar de mis pacientes, tratando de brindar un servicio integral de calidad y confianza.",
+  "addresses": [
+    {
+      "full": "Prol. Privada Ignacio Zaragoza 16-A,"
+    },
+    {
+      "full": "Av. de las Ciencias 2058, Juriquilla,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nidia-grisel-mendoza-zepeda/ginecologo/queretaro#address-id=415388&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:45:47.720Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__nidia_grisel_mendoza_zepeda.webp"
+}

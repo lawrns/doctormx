@@ -1,0 +1,31 @@
+{
+  "name": "Hector David Guillermo Brito",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/b3701c16/b3701c16-d79b-4766-8ecf-6bdf61b83352_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. 51 X 56 Y 58 391,"
+    },
+    {
+      "full": "22 22,"
+    },
+    {
+      "full": "Av. 51 X 56 Y 58 391,"
+    },
+    {
+      "full": "22 22,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-david-guillermo-brito/ginecologo/merida#address-id=222020&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:46:29.977Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/hector_david_guillermo_brito.webp"
+}

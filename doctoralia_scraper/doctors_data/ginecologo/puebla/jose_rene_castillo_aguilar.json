@@ -1,0 +1,31 @@
+{
+  "name": "Jose Rene Castillo Aguilar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 87,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a5f06534/a5f06534-28f6-456a-8268-6bd2e89e12cb_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "5 Nte. 1208,"
+    },
+    {
+      "full": "Priv. 28 Nte. 2015,"
+    },
+    {
+      "full": "5 Nte. 1208,"
+    },
+    {
+      "full": "Priv. 28 Nte. 2015,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-rene-castillo-aguilar/ginecologo/puebla#address-id=207928&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:26:03.082Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/jose_rene_castillo_aguilar.webp"
+}

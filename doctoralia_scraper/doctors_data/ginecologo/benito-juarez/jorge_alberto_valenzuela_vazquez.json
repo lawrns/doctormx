@@ -1,0 +1,25 @@
+{
+  "name": "Jorge Alberto Valenzuela Vazquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 59,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/101c38/101c3863b12bddd6f5b5b3c0edde25c1_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Patricio Sanz,211,Del Valle,,"
+    },
+    {
+      "full": "Patricio Sanz,211,Del Valle,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-alberto-valenzuela-vazquez/ginecologo/benito-juarez#address-id=357895&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:21:04.857Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/jorge_alberto_valenzuela_vazquez.webp"
+}

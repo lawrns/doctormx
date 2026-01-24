@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Nestor Medina Castro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f766c3/f766c36a538e7545b4a84040e71fae04_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Ejército Nacional 650 - 802,"
+    },
+    {
+      "full": "Av. Ejército Nacional 650 - 802,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Cariotipo en Líquido Amniotico",
+      "price": ""
+    },
+    {
+      "name": "Cirugía fetal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nestor-medina-castro/ginecologo/miguel-hidalgo#address-id=15807&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:06:24.814Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__nestor_medina_castro.webp"
+}

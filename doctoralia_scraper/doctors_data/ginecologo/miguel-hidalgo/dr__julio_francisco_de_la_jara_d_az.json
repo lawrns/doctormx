@@ -1,0 +1,36 @@
+{
+  "name": "Dr. Julio Francisco de la Jara Díaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3b176c/3b176c67042f77f281a5006fec5e649c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Ejército Nacional #678 1er piso Col. Polanco Reforma,"
+    },
+    {
+      "full": "PAFNUNCIO PADILLA 53-6B,"
+    },
+    {
+      "full": "Av. Ejército Nacional #678 1er piso Col. Polanco Reforma,"
+    },
+    {
+      "full": "PAFNUNCIO PADILLA 53-6B,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/julio-francisco-de-la-jara-diaz/ginecologo/naucalpan-de-juarez#address-id=337970&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:08:19.411Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__julio_francisco_de_la_jara_d_az.webp"
+}

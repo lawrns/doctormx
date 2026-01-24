@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Verónica Lara Vaca",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 447,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/14e60f56/14e60f56-c319-4ff7-ba17-825f1e01f341_small_square.jpg",
+  "about": "Soy la Dra. Verónica Lara Vaca, Especialista en Ginecología y Obstetricia, cuento con más de 25 años de experiencia. Lo que más disfruto dentro de mi especialidad es acompañar a mis pacientes durante sus procesos, en el caso de un embarazo, disfruto dar la buena noticia de la llegada de un nuevo ser, acompañar a mi paciente durante este periodo, ver el desarrollo del feto y culminar con un parto exitoso. Para los demás procedimientos me gusta hacer una buena investigación para realizar los diagnósticos acertados para su correcto tratamiento.",
+  "addresses": [
+    {
+      "full": "Agrarismo 208 Torre B Piso 8 Consultorio 853 1 Col. Escandon,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Embarazo de alto riesgo",
+      "price": ""
+    },
+    {
+      "name": "Endometriosis abdominal y pelvica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/veronica-lara-vaca/ginecologo/miguel-hidalgo",
+  "scrapedAt": "2026-01-22T01:57:22.269Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__ver_nica_lara_vaca.webp"
+}

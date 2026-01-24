@@ -1,0 +1,52 @@
+{
+  "name": "Dr. Roberto Mario Nava Bacca",
+  "specialty": "Ginecólogo",
+  "rating": 1,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bcbaed/bcbaed8921f55a43b7b7ca2dee32b770_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "EUCKEN 15 CONS. 301,"
+    },
+    {
+      "full": "Ejercito Nacional No. 613, Col. Granada,"
+    },
+    {
+      "full": "EUCKEN 15 CONS. 301,"
+    },
+    {
+      "full": "Ejercito Nacional No. 613, Col. Granada,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-mario-nava-bacca-2/ginecologo/ciudad-de-mexico#address-id=327671&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:22:59.237Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__roberto_mario_nava_bacca.webp"
+}

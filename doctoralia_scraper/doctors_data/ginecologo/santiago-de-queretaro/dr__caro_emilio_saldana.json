@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Caro Emilio Saldana",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 21,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8f8dc4/8f8dc49d8afc38697848e41b70032fb9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Privada Del Sol 7,"
+    },
+    {
+      "full": "Privada Del Sol 7,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/caro-emilio-saldana/ginecologo/santiago-de-queretaro#address-id=42794&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:00:03.997Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__caro_emilio_saldana.webp"
+}

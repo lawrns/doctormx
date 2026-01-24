@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Lindbergh De Jesús Mendoza Villalobos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 477,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5c8cc4/5c8cc4d7af8891c35d32e64650caf1bf_220_square.jpg",
+  "about": "Con la experiencia para tratar pacientes Embarazadas que cursan con embarazos de Alto Riesgo, utilizando las principales herramientas de la Subespecialidad como el US (primer trimestre, morfológico, crecimiento y desarrollo) y las Pruebas de Reserva Fetal de Oxígeno. Efectúo Pruebas de Diagnóstico Prenatal para corroborar o descartar Síndromes que complican el Embarazo como el de Down entre otros.",
+  "addresses": [
+    {
+      "full": "18 X 5 # 57,"
+    },
+    {
+      "full": "18 X 5 # 57,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Monitorización materno-fetal",
+      "price": "• $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lindbergh-de-jesus-mendoza-villalobos/ginecologo/yucatan#address-id=125984&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:33:02.312Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__lindbergh_de_jes_s_mendoza_villalobos.webp"
+}

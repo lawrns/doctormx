@@ -1,0 +1,25 @@
+{
+  "name": "Francisco Barba Espinosa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 87,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a5f06534/a5f06534-28f6-456a-8268-6bd2e89e12cb_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "13 Pte. 108,"
+    },
+    {
+      "full": "13 Pte. 108,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-barba-espinosa/ginecologo/puebla#address-id=159048&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:28:59.210Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/francisco_barba_espinosa.webp"
+}

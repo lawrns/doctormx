@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Hugo Briseño Hanon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/41281415/41281415-e4fb-4672-82a2-a0a71f55fe29_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Niño Obrero 846,"
+    },
+    {
+      "full": "Niño Obrero 846,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hugo-briseno-hanon/ginecologo/zapopan",
+  "scrapedAt": "2026-01-22T04:25:09.823Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__hugo_brise_o_hanon.webp"
+}

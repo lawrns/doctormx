@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Melanie Lizzeth Prado Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 298,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d79094/d790948afe542913f762fd6ea2072a5e_220_square.jpg",
+  "about": "Egresada de la Facultad de Medicina y Psicologìa de la Universidad Autònoma de Baja California. Realice la Especialidad de Ginecologìa y Obstetricia en la UMAE #4 DEL IMSS. Cuento con la Certificaciòn del Consejo Mexicano del Ginecología y Obstetricia. También cuento con la Certificación de Apoyo Vital Avanzado en Obstetricia. Mi Misión: Es a favor del Parto Humanizado y la Lactancia Materna, para que las mujeres bajacalifornianas tenga un trato digno y de calidad en el momento mas importante de su vida. Empoderar a las mujeres a través de conocimiento sobre su salud ginecológica en las distintas etapas de nuestra vida",
+  "addresses": [
+    {
+      "full": "Paseo del Centenario 9580 Torre NewCity Medical piso 6 consultorio 603,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Biopsia cervical",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Biopsia cervical",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/melanie-lizzeth-prado-hernandez/ginecologo/tijuana#address-id=461066&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:41:54.776Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__melanie_lizzeth_prado_hern_ndez.webp"
+}

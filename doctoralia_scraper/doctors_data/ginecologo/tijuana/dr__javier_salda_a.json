@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Javier Saldaña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 50,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8ffb2a/8ffb2ae2dfed41ebbb09999e8e7f5b67_220_square.jpg",
+  "about": "En 1996 ingresa a la Facultad de Medicina de la Universidad Autónoma de Baja California (UABC), fue Médico Interno de la clínica 20 del IMSS en Tijuana. Realiza su servicio social en el CUMAI, (UABC) y obtiene su título de Médico General en 2004. En 2005 se traslada a la ciudad de Mérida ,Yucatán donde realiza su Residencia Médica para la especialidad de Ginecología y Obstetricia (GyO) en el Hospital General Agustin O'Horan de la Secretaria de Salud, y en el 2009 obtiene su diploma como Médico especialista en Ginecología y Obstetricia. En 2009 regresa a Tijuana e ingresa a trabajar en el Hospital General de Tijuana (HGTj) en el servicio de GyO, es maestro Titular del curso de enseñanza para Residentes en GyO, y Tutor de Médicos Internos. En 2010 abandona el HGTj e ingresa a trabajar en el IMSS UMF/HGO No.7 en el servicio de GyO en donde actualmente radica, además de ser Maestro para área clínica para estudiantes de la facultad de Medicina de la Universidad Xochicalco. Es Médico Certificado por el Consejo Mexicano de Ginecología y Obstetricia y miembro activo de la Asociación de Ginecología y Obstetricia de Tijuana A.C. Desde 2009 ejerce su medicina privada en el Centro Medico de Tijuana.",
+  "addresses": [
+    {
+      "full": "Brasilia 1,"
+    },
+    {
+      "full": "Brasilia 1,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina por vía vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/javier-saldana/ginecologo/tijuana#address-id=87838&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:44:35.078Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__javier_salda_a.webp"
+}

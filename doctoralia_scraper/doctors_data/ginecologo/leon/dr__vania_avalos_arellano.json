@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Vania Avalos Arellano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 258,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/424a9d/424a9de91392232dec29ae737a4dc018_220_square.jpg",
+  "about": "Originaria de Guadalajara, Egresada Facultad de Medicina de la Universidad Autónoma de Guadalajara , Especialidad en Ginecología y Obstetricia avalada por la Universidad de Guanajuato. Certificada por el Consejo Mexicano de Ginecología y Obstetricia. Te acompaño en todas las etapas de la vida, desde la adolescencia , edad fértil, embarazo, climaterio y menopausia. Apasionada y enamorada del arte de nacer.",
+  "addresses": [
+    {
+      "full": "BLVD. TORRES LANDA ORIENTE #4108, COL. AZTECA,"
+    },
+    {
+      "full": "Blvd. Adolfo López Mateos 2980,"
+    },
+    {
+      "full": "BLVD. TORRES LANDA ORIENTE #4108, COL. AZTECA,"
+    },
+    {
+      "full": "Blvd. Adolfo López Mateos 2980,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $700"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $2,100"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/vania-avalos-arellano/ginecologo/leon#address-id=252929&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:27:27.592Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__vania_avalos_arellano.webp"
+}

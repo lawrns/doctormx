@@ -1,0 +1,25 @@
+{
+  "name": "Diana Belinda Baxter Aguirre",
+  "specialty": "Ginecólogo",
+  "rating": 1.5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/df46f79b/df46f79b-a4f5-4080-8361-586c764cfabf_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. 53 Pte. 909,"
+    },
+    {
+      "full": "Av. 53 Pte. 909,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diana-belinda-baxter-aguirre/ginecologo/puebla#address-id=235548&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:36:26.449Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/diana_belinda_baxter_aguirre.webp"
+}

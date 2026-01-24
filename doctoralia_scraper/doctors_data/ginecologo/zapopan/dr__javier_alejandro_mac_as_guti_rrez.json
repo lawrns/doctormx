@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Javier Alejandro Macías Gutiérrez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 22,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c410fc/c410fc94e5a8e47ba5228caf197583b8_220_square.jpg",
+  "about": "Soy un médico con una formación que integra al paciente de una forma ecológica, ¿qué quiere decir esto?, que la atención contempla, observa y atiende el entorno para lograr la recuperación de la persona desde diferentes perspectivas; la intención es, que como consultante, puedas observarte, conocerte, entenderte, amarte y disfrutar tus procesos, yo solo te acompaño en el camino y busco darte la mejor calidad en los manejos y tratamiento. Soy Ginecólogo Obstetra con formación en Salud Mental Perinatal, ¿y eso para qué es?: Desde la Ginecología: atiendo en conjunto todos los padecimientos de la mujer no embarazada Desde la Obstetricia: atiendo en conjunto todos los padecimientos de la mujer embarazada Desde la Salud Mental Perinatal: nos enfocamos en tu experiencia de embarazo, tu relación de pareja, la conformación y el adecuado desarrollo de tu bebé y tú como nueva mamá, la paternidad, el parto acompañado y respetuoso, la experiencia de nacimiento de tu bebé, el posparto, la lactancia, la crianza y el cómo integrar tu familia de una forma segura para el desarrollo humano de tus hijos. ¡Estoy para servirte y acompañarte!",
+  "addresses": [
+    {
+      "full": "Calle José María Heredia 2960,"
+    },
+    {
+      "full": "Calle Francisco Villa 1247,"
+    },
+    {
+      "full": "Calle José María Heredia 2960,"
+    },
+    {
+      "full": "Calle Francisco Villa 1247,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $3,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Consulta con ultrasonido",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $3,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $800"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Consulta con ultrasonido",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/javier-alejandro-macias-gutierrez/ginecologo/guadalajara#address-id=468037&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:16:45.417Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__javier_alejandro_mac_as_guti_rrez.webp"
+}

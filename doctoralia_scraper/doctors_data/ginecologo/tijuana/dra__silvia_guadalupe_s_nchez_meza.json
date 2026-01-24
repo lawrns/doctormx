@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Silvia Guadalupe Sánchez Meza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 707,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9cebff/9cebffe02a22d8d636b93d45890d82b6_220_square.jpg",
+  "about": "Soy médico especialista en Ginecología y Obstetricia. Realicé mi especialidad en el Hospital Materno Infantil del Estado de Sonora, dicho Postgrado avalado por la UNAM. Dentro de mi especialidad me encargo de llevar asesoría anticonceptiva, consulta prenatal, control del embarazo y resolución del mismo. Así mismo también trato toda patología propia de la mujer, desde irregularidades menstruales, infecciones, lesiones genitales hasta patología mamaria. Siempre con un enfoque claro y conciso, haciendo hincapié en las medidas preventivas para conservar tu salud.",
+  "addresses": [
+    {
+      "full": "Avenida Constitución No. 1235, Esquina con Calle Sexta. Edificio Santini-Brodway.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/silvia-guadalupe-sanchez-meza/ginecologo/tijuana#address-id=391882&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:40:45.040Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__silvia_guadalupe_s_nchez_meza.webp"
+}

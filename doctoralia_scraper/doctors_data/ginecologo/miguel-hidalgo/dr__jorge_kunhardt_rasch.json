@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Jorge Kunhardt Rasch",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/988d29/988d29a40436062cabae86781e9f56f3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Puente de Piedra No. 150, Col. Toriello Guerra,"
+    },
+    {
+      "full": "Acueducto Río Hondo 20 (entre Prado Sur y Aguiar y Seijas),"
+    },
+    {
+      "full": "Av. Puente de Piedra No. 150, Col. Toriello Guerra,"
+    },
+    {
+      "full": "Acueducto Río Hondo 20 (entre Prado Sur y Aguiar y Seijas),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-kunhardt-rasch/ginecologo/ciudad-de-mexico#address-id=10944&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:39:51.655Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__jorge_kunhardt_rasch.webp"
+}

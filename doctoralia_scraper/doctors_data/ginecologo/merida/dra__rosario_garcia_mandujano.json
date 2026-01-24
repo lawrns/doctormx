@@ -1,0 +1,58 @@
+{
+  "name": "Dra. Rosario Garcia Mandujano",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 248,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/fd36efc0/fd36efc0-961f-4c5d-81cb-ee4168ba5856_small_square.jpg",
+  "about": "Hola. soy Rosario García Mandujano, médico con especialidad y alta especialidad en salud femenina, apasionada en el cuidado de la salud de las mujeres embarazadas y sus hijos. Esto me ha hecho buscar la mejor preparación académica y científica, por lo que estudié primeramente Medicina General en la Universidad Juárez Autónoma de Tabasco, posteriormente hice la especialidad en Ginecología y Obstetricia en la Universidad del Ejército y Fuerza Aérea Mexicanos, y la Alta Especialidad en Medicina Fetal en King´s College Londres, University College Londres, a través de The Fetal Medicine Foundation.",
+  "addresses": [
+    {
+      "full": "Avenida Paseo Tabasco 1114 - 406,"
+    },
+    {
+      "full": "22 X 29 y 31 Número 238 interior 3, Colonia México Oriente,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colocación de cerclaje de cuello uterino",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Doble y triple marcador de embarazo",
+      "price": ""
+    },
+    {
+      "name": "Preeclampsia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Ultrasonido transvaginal",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosario-garcia-mandujano/ginecologo/tabasco#address-id=434967&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:32:52.722Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__rosario_garcia_mandujano.webp"
+}

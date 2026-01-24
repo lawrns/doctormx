@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Mónica Campos Sánchez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/35c7da/35c7daf960a51f6277fb50079e4282b4_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 60 338,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/monica-campos-sanchez/ginecologo/yucatan#address-id=617118&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:32:36.402Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__m_nica_campos_s_nchez.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Ramirez Graciela Murillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/052ea9/052ea99b3f72221611fcf1b9aab18d46_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "20 De Enero 333,"
+    },
+    {
+      "full": "20 De Enero 333,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ramirez-graciela-murillo/ginecologo/leon#address-id=46713&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:30:12.500Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__ramirez_graciela_murillo.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Ana Ceciliaechanove Cano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 229,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/316f35/316f358babc08f88eb2832c7e25b52d8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 15 B 373Fraccionamiento Paraíso Maya97130,"
+    },
+    {
+      "full": "Calle 15 B 373Fraccionamiento Paraíso Maya97130,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-ceciliaechanove-cano/ginecologo/merida#address-id=359169&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:48:16.431Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/ana_ceciliaechanove_cano.webp"
+}

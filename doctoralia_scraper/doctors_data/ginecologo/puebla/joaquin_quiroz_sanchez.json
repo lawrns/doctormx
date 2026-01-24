@@ -1,0 +1,25 @@
+{
+  "name": "Joaquin Quiroz Sanchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 107,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/df846a/df846a65cb508b535b2b845562658b34_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Kepler 2143,"
+    },
+    {
+      "full": "Av. Kepler 2143,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/joaquin-quiroz-sanchez/ginecologo/san-andres-cholula#address-id=215121&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:33:37.438Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/joaquin_quiroz_sanchez.webp"
+}

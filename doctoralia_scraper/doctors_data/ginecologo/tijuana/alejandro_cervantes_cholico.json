@@ -1,0 +1,37 @@
+{
+  "name": "Alejandro Cervantes Cholico",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 122,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/24029160/24029160-cd1f-4d08-9f13-c7b94f5dfbea_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Federico Benitez 10,"
+    },
+    {
+      "full": "Av. Principal 9749,"
+    },
+    {
+      "full": "Diaz Ordaz 3600,"
+    },
+    {
+      "full": "Blvd. Federico Benitez 10,"
+    },
+    {
+      "full": "Av. Principal 9749,"
+    },
+    {
+      "full": "Diaz Ordaz 3600,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-cervantes-cholico/ginecologo/tijuana#address-id=249897&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:50:15.859Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/alejandro_cervantes_cholico.webp"
+}

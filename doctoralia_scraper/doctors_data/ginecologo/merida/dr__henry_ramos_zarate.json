@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Henry Ramos Zarate",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 165,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/63b901/63b901529397ae4fdffba7438bbccde2_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Mérida ,"
+    },
+    {
+      "full": "Mérida ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/henry-ramos-zarate/ginecologo/yucatan#address-id=221248&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:42:45.911Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__henry_ramos_zarate.webp"
+}

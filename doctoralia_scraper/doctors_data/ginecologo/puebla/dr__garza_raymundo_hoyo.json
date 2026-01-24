@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Garza Raymundo Hoyo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 91,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/931537/93153717434e51567418c0bb48272b2c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "29 Norte 1017,"
+    },
+    {
+      "full": "29 Norte 1017,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/garza-raymundo-hoyo/ginecologo/puebla#address-id=53607&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:32:10.721Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__garza_raymundo_hoyo.webp"
+}

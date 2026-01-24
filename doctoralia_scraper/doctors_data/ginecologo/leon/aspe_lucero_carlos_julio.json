@@ -1,0 +1,25 @@
+{
+  "name": "Aspe Lucero Carlos Julio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 60,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1cf43d/1cf43d4542a5c484e0f57448aaeb3a49_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "De Las Residencias 328,"
+    },
+    {
+      "full": "De Las Residencias 328,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aspe-lucero-carlos-julio/ginecologo/leon#address-id=125331&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:35:32.654Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/aspe_lucero_carlos_julio.webp"
+}

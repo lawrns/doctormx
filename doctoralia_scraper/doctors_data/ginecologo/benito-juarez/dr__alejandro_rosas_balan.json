@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Alejandro Rosas Balan",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 65,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/16abd7/16abd774c5f474d9d8cd68f178d23966_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tehuantepec 251 consultorio 305 Colonia Roma Sur,"
+    },
+    {
+      "full": "Tehuantepec 251 consultorio 305 Colonia Roma Sur,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-rosas-balan/ginecologo/cuauhtemoc#address-id=113594&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:10:53.416Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__alejandro_rosas_balan.webp"
+}

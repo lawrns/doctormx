@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jesús Bernabé Bonilla",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/c16b5938/c16b5938-ddde-4177-9089-109d1dae1cc9_small_square.jpg",
+  "about": "Médico Cirujano y Partero egresado de la Escuela Superior de Medicina del Instituto Politécnico Nacional. Ginecólogo y Obstetra egresado del Instituto de Seguridad Social de los trabajadores del Estado y Municipios Issemym. Ingles como segunda lengua.",
+  "addresses": [
+    {
+      "full": "Ignacio Allende 113,"
+    },
+    {
+      "full": "Ignacio Allende 113,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-bernabe-bonilla/ginecologo/azcapotzalco#address-id=498941&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:04:51.211Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__jes_s_bernab__bonilla.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Rene Pablo Arguellez Guzman",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 392,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/edd0d5/edd0d5dea21b9786f22f4574a26a103f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "5 De Mayo 704,"
+    },
+    {
+      "full": "Blvd Agua Caliente 10610,"
+    },
+    {
+      "full": "5 De Mayo 704,"
+    },
+    {
+      "full": "Blvd Agua Caliente 10610,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rene-pablo-arguellez-guzman/ginecologo/tijuana#address-id=178700&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:05:52.310Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/rene_pablo_arguellez_guzman.webp"
+}

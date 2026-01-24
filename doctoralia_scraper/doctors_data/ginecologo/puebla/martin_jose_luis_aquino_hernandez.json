@@ -1,0 +1,31 @@
+{
+  "name": "Martin Jose Luis Aquino Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 23,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/be5304/be5304514c3625b72c93ce9c3314ee8a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 14A Pte. Sur 365,"
+    },
+    {
+      "full": "5 Pte. 138,"
+    },
+    {
+      "full": "C. 14A Pte. Sur 365,"
+    },
+    {
+      "full": "5 Pte. 138,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martin-jose-luis-aquino-hernandez/ginecologo/tuxtla-gutierrez#address-id=188374&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:26:59.149Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/martin_jose_luis_aquino_hernandez.webp"
+}

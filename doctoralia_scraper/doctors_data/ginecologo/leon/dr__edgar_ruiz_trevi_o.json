@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Edgar Ruiz Treviño",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 368,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5f0bce/5f0bce4fc831917fcf62b9b027071c16_220_square.jpg",
+  "about": "Hola soy el Dr. Edgar Ruiz Treviño. Soy un profesional de salud, apasionado por su trabajo. Trabajando siempre por el bien de mis pacientes otorgando un servicio con atención, profesionalismo y ética. Tengo una \"ALTA ESPECIALIDAD\" y formación en \"Cirugía avanzada de mínima invasión Ginecológica\".\"Fellow endometriosis\". Me enfoco en enfermedades ginecológicas como: - Endometriosis ( adenomiosis, quistes por endometriosis; endometriomas) - Miomas - Quistes en los ovarios. - Enfermedades causantes de sangrado anormal y infertilidad (pólipos, miomas, hiperplasia endometrial, malformación mulleriana) Realizo \"CIRUGIA CONSERVADORA\" en pacientes con deseo de embarazo y que desean conservar su utero o ovario por técnicas y manejo \"DE MINIMA INVASIÓN\"como: -Miomectomia via laparoscopica. -Cirugia de ovario via laparoscopica. -Histeroscopía diagnóstica-quirúrgica. -Cirugia de endometriosis via laparoscopica. Realizo cirugia definitiva \"DE MINIMA INVASIÓN\" con mayor recuperación, estetica y menor grado de complicación. -HISTERECTOMIA VIA LAPAROSCOPICA -Ligadura de trompas via laparoscopica.",
+  "addresses": [
+    {
+      "full": "Lunik 104,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edgar-ruiz-trevino/ginecologo/leon#address-id=386688&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:26:04.582Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__edgar_ruiz_trevi_o.webp"
+}

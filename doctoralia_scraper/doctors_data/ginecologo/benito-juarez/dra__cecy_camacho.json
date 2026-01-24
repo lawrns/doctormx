@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Cecy Camacho",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 24,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/91c5ea16/91c5ea16-5b1f-44ed-9350-f303131dbc5f_small_square.jpg",
+  "about": "Hola, soy la Dra. Cecilia Camacho, Ginecologa y Obstetra egresada de la Unidad Médica de Alta Especialidad #23, en la ciudad de Monterrey, Nuevo León, ademas realice una subespecialidad en Biología de la Reproducción Humana en la UMAE #3, Centro Médico Nacional \"La Raza\". Con capacitación en cirugía endoscópica ginecológica, todo esto con la intención de ofrecerte una atención ginecológica de alta calidad y de manera integral. El objetivo de mi trabajo es brindar una atención especializada a todas las mujeres que así lo requieran, de manera empática. Al contar con la subespecialidad en biología de la reproducción humana cuento con conocimiento para tratar, ademas de temas relacionados a ginecología y obstetricia, situaciones que se presentan desde la adolescencia, etapa reproductiva y menopausia. Permiteme ser parte de la atención que necesitas.",
+  "addresses": [
+    {
+      "full": "Avenida Cuauhtémoc 1040, consultorio 963,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• Desde $4,200"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": ""
+    },
+    {
+      "name": "Congelación de óvulos",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Infertilidad",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cecy-camacho/ginecologo/ciudad-de-mexico#address-id=608660&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:01:42.006Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__cecy_camacho.webp"
+}

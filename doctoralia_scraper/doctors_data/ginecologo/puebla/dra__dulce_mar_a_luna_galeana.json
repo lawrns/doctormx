@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Dulce María Luna Galeana",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 150,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f3e8b9/f3e8b92574ddf9b4ba9c3b9987369bec_220_square.jpg",
+  "about": "¡Hola! Soy la Dra. Dulce Galeana Egresada de UPAEP y certificada por el Consejo Mexicano de Ginecología y Obstetricia A. C. Soy una mujer libre, positiva y enamorada de la vida donde mi trabajo lo realizo con mucha pasión. He podido conocer bellas mujeres con historias increíbles donde damos paso a algo invaluable \"el cuidado de su salud\". Desde niña hasta la vida adulta, te acompañaré con la mejor atención, brindándote confianza y una empatía por entenderte, por eso me permito brindarte mis servicios en cada etapa de vida.",
+  "addresses": [
+    {
+      "full": "Maximino Ávila Camacho #804. Barrio San Antonio ,"
+    },
+    {
+      "full": "Maximino Ávila Camacho #804. Barrio San Antonio ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $400"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $400"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $400"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dulce-maria-luna-galeana/ginecologo/amozoc#address-id=399192&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:14:24.042Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__dulce_mar_a_luna_galeana.webp"
+}

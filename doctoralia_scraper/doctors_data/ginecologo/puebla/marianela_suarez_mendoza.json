@@ -1,0 +1,25 @@
+{
+  "name": "Marianela Suarez Mendoza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 305,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/15fb52/15fb52cad90c00c2dba98348957c49d1_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 17 216,"
+    },
+    {
+      "full": "C. 17 216,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marianela-suarez-mendoza/ginecologo/tlaxcala#address-id=190530&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:26:23.219Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/marianela_suarez_mendoza.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Juan Manuel De Dios Rivera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d9c0f633/d9c0f633-130b-4cf3-bf26-7a4056cb0a3f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Ing. Juan Ojeda Robles 14445,"
+    },
+    {
+      "full": "C. Ing. Juan Ojeda Robles 14445,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-manuel-de-dios-rivera/ginecologo/tijuana#address-id=205221&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:07:27.358Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/juan_manuel_de_dios_rivera.webp"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Arturo Santaella González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 450,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e53981/e539819af82c4952f0746ace37e60880_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Int. A,Francisco Javier Mina 9308 (Zona Urbana Rio Tijuana),"
+    },
+    {
+      "full": "Int. A,Francisco Javier Mina 9308 (Zona Urbana Rio Tijuana),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arturo-santaella-gonzalez/ginecologo/tijuana#address-id=767&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:46:49.779Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__arturo_santaella_gonz_lez.webp"
+}

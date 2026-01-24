@@ -1,0 +1,31 @@
+{
+  "name": "Carolina Santana Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 20,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a76fc0/a76fc0e926ca7ce91fcd7299f8e107d6_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Mexicaltzingo 2032,"
+    },
+    {
+      "full": "Rep.De Cuba 73,"
+    },
+    {
+      "full": "Mexicaltzingo 2032,"
+    },
+    {
+      "full": "Rep.De Cuba 73,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carolina-santana-perez/ginecologo/guadalajara#address-id=239448&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:40:42.547Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/carolina_santana_perez.webp"
+}

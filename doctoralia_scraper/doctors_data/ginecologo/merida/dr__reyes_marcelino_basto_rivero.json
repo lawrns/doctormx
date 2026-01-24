@@ -1,0 +1,54 @@
+{
+  "name": "Dr. Reyes Marcelino Basto Rivero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 165,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/65a0f7/65a0f7bfee93759c244b3c09955d1f34_220_square.jpg",
+  "about": "Experto en Colposcopia desde 1994. Presidente del Colegio de Colposcopia de Yucatán. Jefe de la División de Ginecología del Hospital O Horan Mérida Yucatán. Miembro Fundador de la Asociación Mexicana del Virus de Papiloma Humano.",
+  "addresses": [
+    {
+      "full": "Calle 16 X 25 Y 27 200,"
+    },
+    {
+      "full": "Av. Itzaes X Av. Jacinto Canek,"
+    },
+    {
+      "full": "C. 47 X 76 y 74A. #548,"
+    },
+    {
+      "full": "Calle 16 X 25 Y 27 200,"
+    },
+    {
+      "full": "Av. Itzaes X Av. Jacinto Canek,"
+    },
+    {
+      "full": "C. 47 X 76 y 74A. #548,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $2,500"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $700"
+    },
+    {
+      "name": "Detección oportuna de cáncer",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Segunda opinión médica",
+      "price": "• $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/reyes-marcelino-basto-rivero/ginecologo/yucatan#address-id=178559&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:37:39.829Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__reyes_marcelino_basto_rivero.webp"
+}

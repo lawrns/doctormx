@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Carlos Aaron Guarneros Cortes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 305,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/15fb52/15fb52cad90c00c2dba98348957c49d1_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Del Maestro 1904 6,"
+    },
+    {
+      "full": "Del Maestro 1904 6,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-aaron-guarneros-cortes-2/ginecologo-nefrologo/panotla#address-id=39856&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:32:09.271Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__carlos_aaron_guarneros_cortes.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Gerardo Dr Luna Acuña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 499,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2602c2/2602c22e4a6d532bf43241312f00c73a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd Adolfo Lopez Mateos 212 Pte No. 2 A Centro,"
+    },
+    {
+      "full": "Blvd Adolfo Lopez Mateos 212 Pte No. 2 A Centro,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gerardo-dr-luna-acuna/ginecologo/leon#address-id=125342&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:36:57.328Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/gerardo_dr_luna_acu_a.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Eduardo Rafael Ortiz Juárez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 58,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7d55b3/7d55b3c02933630ba3498c22a350d42f_220_square.jpg",
+  "about": "Soy médico especialista en Ginecología y Obstetricia, formado en el Hospital General Dr. Aurelio Valdivieso, con más de 12 años de experiencia en la atención de integral la salud de la mujer en Querétaro.Cuento con un Master en Colposcopía, así como diplomados en ultrasonido y en Láser vaginal, lo que me permite ofrecer diagnósticos precisos y tratamientos innovadores y seguros para distintas etapas y necesidades de la salud femenina.Mi practica abarca desde el control prenatal, atención de partos y cesáreas, hasta el manejo de patologías ginecológicas, climaterio, prevención del cáncer, rejuvenecimiento vaginal y planificación familiar. Atiendo en mi consultorio privado y en diversas clínicas de la ciudad para brindarte mas opciones de atención.Mi compromiso es ofrecerte una atención cálida, profesional y basada en evidencia, con respeto y empatía hacia cada paciente.",
+  "addresses": [
+    {
+      "full": "Avenida de las Ciencias 2058,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,000"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-rafael-ortiz-juarez/ginecologo/queretaro#address-id=517044&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:47:25.156Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__eduardo_rafael_ortiz_ju_rez.webp"
+}

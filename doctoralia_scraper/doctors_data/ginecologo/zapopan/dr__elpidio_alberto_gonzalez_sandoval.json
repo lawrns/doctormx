@@ -1,0 +1,39 @@
+{
+  "name": "Dr. Elpidio Alberto Gonzalez Sandoval",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1002,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "hospital versalles , av. alcalde 2170,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $900"
+    },
+    {
+      "name": "Cesárea",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elpidio-alberto-gonzalez-sandoval/ginecologo/guadalajara#address-id=43378&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:12:21.445Z",
+  "localPhotoPath": null
+}

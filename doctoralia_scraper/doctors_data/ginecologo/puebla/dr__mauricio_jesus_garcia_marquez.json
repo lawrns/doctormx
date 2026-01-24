@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Mauricio Jesus Garcia Marquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1052,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a972d3/a972d3d8dd27d69a009bed1a762aa6d9_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "35 Pte. 101,"
+    },
+    {
+      "full": "35 Pte. 101,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mauricio-jesus-garcia-marquez/ginecologo/puebla#address-id=188024&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:14:58.969Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__mauricio_jesus_garcia_marquez.webp"
+}

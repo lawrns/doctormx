@@ -1,0 +1,31 @@
+{
+  "name": "Cornelia Del Socorro Burgos Bastarrachea",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 325,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ec99d4/ec99d4859eefe7384f8e4db2ae78d2ed_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 35 526,"
+    },
+    {
+      "full": "C. 50 X 65 Y 67,"
+    },
+    {
+      "full": "C. 35 526,"
+    },
+    {
+      "full": "C. 50 X 65 Y 67,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cornelia-del-socorro-burgos-bastarrachea/ginecologo/merida#address-id=237498&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:51:11.979Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/cornelia_del_socorro_burgos_bastarrachea.webp"
+}

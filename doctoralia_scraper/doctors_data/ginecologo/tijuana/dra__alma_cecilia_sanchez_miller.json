@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Alma Cecilia Sanchez Miller",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 30,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/aaa002/aaa002ab73d2b22a98692a38215e66e3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Boulevard Casa Blanca 4480,"
+    },
+    {
+      "full": "Boulevard Casa Blanca 4480,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alma-cecilia-sanchez-miller/ginecologo/tijuana#address-id=58030&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:45:29.983Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__alma_cecilia_sanchez_miller.webp"
+}

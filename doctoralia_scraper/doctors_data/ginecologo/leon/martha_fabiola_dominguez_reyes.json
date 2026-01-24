@@ -1,0 +1,25 @@
+{
+  "name": "Martha Fabiola Dominguez Reyes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 499,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2602c2/2602c22e4a6d532bf43241312f00c73a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Chihuahua,318,Bellavista,,"
+    },
+    {
+      "full": "Chihuahua,318,Bellavista,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martha-fabiola-dominguez-reyes/ginecologo/leon#address-id=358036&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:36:10.555Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/martha_fabiola_dominguez_reyes.webp"
+}

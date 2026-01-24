@@ -1,0 +1,36 @@
+{
+  "name": "Dra. Myriam Ponce Ávila",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 82,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/914138e7/914138e7-dbda-43b5-82bf-1c1714b5e79b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "VIALIDAD DE LA BARRANCA D/N CONS.280,"
+    },
+    {
+      "full": "Ejercito Nacional No. 613, Col. Granada,"
+    },
+    {
+      "full": "VIALIDAD DE LA BARRANCA D/N CONS.280,"
+    },
+    {
+      "full": "Ejercito Nacional No. 613, Col. Granada,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/myriam-ponce-avila/ginecologo/ciudad-de-mexico#address-id=104950&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:41:14.890Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__myriam_ponce__vila.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jonathan Luna García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/04be8e/04be8ea33f671c78f47f3a7d2cc31664_220_square.jpg",
+  "about": "La especialidad en medicina materno fetal permite detectar estas alteraciones en el crecimiento o desarrollo y dar orientación necesaria dependiendo el caso. Es recomendable en todos los embarazos tener por lo menos tres ultrasonidos especializados: Tamizaje de primer trimestre: nos ayuda a saber el riesgo de síndrome de Down, restricción de crecimiento intrauterino, riesgo de parto pretérmino (principal causa de internamiento del recién nacido), riesgo de hipertensión durante el embarazo (principal causa de complicaciones maternas), este se realiza entre la semana 11-14 del embarazo. Ultrasonido anatómico: sirve para ver completamente la morfología fetal y malformaciones y establecer de nueva cuenta riesgo de parto pretérmino y preeclampsia, idealmente entre la semana 18-22.Tercer trimestre: ayuda a vigilar el adecuado desarrollo y crecimiento fetal y descartar insuficiencia placentaria y restricción de crecimiento intrauterino (principal causa de complicaciones fetales). La tranquilidad de saber que todo está bien con el bebé que está por nacer no tiene precio. Acércate y conoce a tu bebé desde el primer ultrasonido especializado.",
+  "addresses": [
+    {
+      "full": "Boulevard Bernardo Quintana #4060,"
+    },
+    {
+      "full": "Boulevard Bernardo Quintana #4060,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cariotipo en Líquido Amniotico",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jonathan-luna-garcia/ginecologo/santiago-de-queretaro#address-id=25715&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:50:34.042Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__jonathan_luna_garc_a.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. José Israel Zarco Benites",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 543,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/762074/76207454fd56e0570bd1ab802b0256ff_220_square.jpg",
+  "about": "-Médico Cirujano. Universidad Autónoma de Yucatán -Médico Ginecólogo y Obstetra. Egresado de la Universidad Autónoma de Yucatán. Hospital Dr. Agustín O'Horan -Colposcopía Diagnóstica y Terapeútica. Universidad Nacional Autónoma de México. Fundación Cruz Talonia -Histeroscopia Diagnóstica y Quirúrgica. Universidad Nacional Autónoma de México. Hospital Dr. Manuel Gea Gonzalez",
+  "addresses": [
+    {
+      "full": "Depto 101, Col, 3 y 3c, Avenida Tecnológico #338, Gonzalo Guerrero,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $2,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-israel-zarco-benites/ginecologo/yucatan#address-id=116453&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:29:07.497Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__jos__israel_zarco_benites.webp"
+}

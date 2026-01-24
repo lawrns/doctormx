@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ana Karen Castañeda Solis",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 37,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/79756b7e/79756b7e-c418-4cf9-b568-a06ff8407aa2_small_square.jpg",
+  "about": "Bienvenid@Soy Ginecóloga y Obstetra, tengo la fortuna de ser egresada del Hospital General de México. “Dr. Eduardo Liceaga” en donde hice la especialidad. Mi misión es cambiar la forma de ver las enfermedades, persuadiendo el interés en el cuidado preventivo, ya que muchas patologías gravemente expresadas en la mujeres podrían evitarse por tan sólo dedicarle 60 minutos de tu apretada agenda, de tu día a día, de tus días libres o de tus días complicados.Sólo intento sembrar una pequeña semilla de curiosidad en tu cuidado, que sepas que no estás sola y que allá afuera hay muchas personas pasando por lo mismo que tú.Lo importante es hacer diagnósticos oportunos para tener tratamientos efectivos. Al terminar la especialidad, realicé un diplomado de Colposcopía y enfermedades del tracto inferior en el Hospital General de México para detección y manejo oportuno de lesiones causadas por VPH (Virus de papiloma humano) con el fin de disminuir el riesgo de Cáncer cervicouterino. Posteriormente realicé algunos otros diplomados como es el manejo con láser de lesiones internas y externas causadas por VPH y un diplomado de Cirugía de mínima invasión y laparoscópica avalado por la UNAM Cuento con certificación activa por el Consejo Mexicano de Ginecología y obstetricia. Me mantengo en actualización continua con cursos avalados por la Universidad La Salle, COMEGO entre otros.",
+  "addresses": [
+    {
+      "full": "Xola 1011,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,399"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-karen-castaneda-solis/ginecologo/benito-juarez#address-id=585467&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:04:29.692Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__ana_karen_casta_eda_solis.webp"
+}

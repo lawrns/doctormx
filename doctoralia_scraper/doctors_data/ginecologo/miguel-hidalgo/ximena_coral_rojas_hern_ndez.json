@@ -1,0 +1,88 @@
+{
+  "name": "Ximena Coral Rojas Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 201,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/af9925/af992548412958423ec50da9c725f9f7_220_square.jpg",
+  "about": "Soy médico general especialista en Ginecología y Obstetricia tengo 9 años de experiencia he viajado por varias partes de la república, conozco el ámbito tanto público como privado. Conozco sobre problemas en la salud reproductiva de la mujer; yo soy una. Me gusta hablar con la verdad y ser clara en los momentos de angustia.",
+  "addresses": [
+    {
+      "full": "Avenida Cuitláhuac 2914,"
+    },
+    {
+      "full": "Centenario Himno Nacional,"
+    },
+    {
+      "full": "Avenida Cuitláhuac 2914,"
+    },
+    {
+      "full": "Centenario Himno Nacional,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $450"
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Rejuvenecimiento genital femenino",
+      "price": "• Desde $6,500"
+    },
+    {
+      "name": "TRATAMIENTO DE INCONTINENCIA URINARIA CON LASER CO2",
+      "price": "• Desde $6,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $450"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $450"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cérvix",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ximena-coral-rojas-hernandez/ginecologo/villa-nicolas-romero#address-id=386300&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:04:27.298Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/ximena_coral_rojas_hern_ndez.webp"
+}

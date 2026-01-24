@@ -1,0 +1,46 @@
+{
+  "name": "Dra. María Lourdes Hurtado Arias",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 33,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d8fdad/d8fdad3269daaddfe3cfe6e091708141_140_square.jpg",
+  "about": "La Dra María Lourdes Hurtado Arias es un médico profesional; egresada de la Universidad de Guadalajara. Especialidad en centro médico nacional del Bajio, Su enfoque sobre la salud de la mujer incluye campos como cuidado de la mujer, sexualidad, salud reproductiva, control prenatal, menopausia, planificación familiar. Busca la constante actualización en temas de novedad y actualización de diagnostico y alternativas de tratamiento para ofrecer el mejor servicio y cuidado a la salud de la mujer",
+  "addresses": [
+    {
+      "full": "Diego Rivera 2311 piso 10,"
+    },
+    {
+      "full": "Diego Rivera 2311 piso 10,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Parto humanizado",
+      "price": ""
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-lourdes-hurtado-arias/ginecologo/tijuana#address-id=334945&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:44:47.352Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__mar_a_lourdes_hurtado_arias.webp"
+}

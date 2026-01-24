@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Juan Carlos De la Cerda Ángeles",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 104,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ba92c248/ba92c248-322f-453f-813f-499bc67ea348_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Universidad 1093 despacho 102 ,"
+    },
+    {
+      "full": "Avenida Universidad 1093 despacho 102 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-de-la-cerda-angeles/ginecologo/benito-juarez#address-id=129365&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:12:28.300Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__juan_carlos_de_la_cerda__ngeles.webp"
+}

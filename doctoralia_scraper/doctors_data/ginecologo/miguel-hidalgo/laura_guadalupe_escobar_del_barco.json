@@ -1,0 +1,31 @@
+{
+  "name": "Laura Guadalupe Escobar Del Barco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 179,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e61fb5c9/e61fb5c9-eec7-4bcb-8370-bac144cff092_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Leibnitz 14,"
+    },
+    {
+      "full": "Montes Urales 800,"
+    },
+    {
+      "full": "Leibnitz 14,"
+    },
+    {
+      "full": "Montes Urales 800,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-guadalupe-escobar-del-barco/ginecologo/miguel-hidalgo#address-id=202467&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:53:42.628Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/laura_guadalupe_escobar_del_barco.webp"
+}

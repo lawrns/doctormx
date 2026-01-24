@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Wilberth R. Perez Canul",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 543,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/762074/76207454fd56e0570bd1ab802b0256ff_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 50 Nâ° 176,"
+    },
+    {
+      "full": "Calle 50 Nâ° 176,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/wilberth-r-perez-canul/ginecologo/merida#address-id=53562&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:47:38.260Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__wilberth_r__perez_canul.webp"
+}

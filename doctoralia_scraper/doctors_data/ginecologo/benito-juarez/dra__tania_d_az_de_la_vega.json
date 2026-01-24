@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Tania Díaz De La Vega",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 259,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/7ff9c3ad/7ff9c3ad-3d79-4ef5-95ca-263539e3dea2_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Torre de Espscialidades San Angel Inn, Acora del Valle, Consultorio 1158,"
+    },
+    {
+      "full": "Torre de Espscialidades San Angel Inn, Acora del Valle, Consultorio 1158,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tania-diaz-de-la-vega/ginecologo/ciudad-de-mexico#address-id=531902&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:12:09.792Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__tania_d_az_de_la_vega.webp"
+}

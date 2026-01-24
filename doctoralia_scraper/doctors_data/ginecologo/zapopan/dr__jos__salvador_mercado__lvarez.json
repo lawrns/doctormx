@@ -1,0 +1,25 @@
+{
+  "name": "Dr. José Salvador Mercado Álvarez",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 12,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0790dc/0790dc3c8bc7675d45a7893aeb2b58bd_220_square.jpg",
+  "about": "1. Egresado Centro Medico de Occidente 88-91 2. 10 años de experiencia en Terapia Intensiva en Ginecología MCMNO 3. Oncología Ginecologica MNO , HGO 1993 4. Ecosonografía Ginecobstetricia CMNO 5. Clinica de Dispasias HGZ 110 6. Fundador de clinica mama del HGZ 7. Subdirector retirado Medico del IMSS HGZ 110",
+  "addresses": [
+    {
+      "full": "José Luis Verdía 120 ,"
+    },
+    {
+      "full": "José Luis Verdía 120 ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-salvador-mercado-alvarez/ginecologo/guadalajara#address-id=122391&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:30:04.267Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jos__salvador_mercado__lvarez.webp"
+}

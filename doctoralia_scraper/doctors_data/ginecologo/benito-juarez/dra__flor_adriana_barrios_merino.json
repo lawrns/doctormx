@@ -1,0 +1,39 @@
+{
+  "name": "Dra. Flor Adriana Barrios Merino",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 95,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dee2e9/dee2e92bc3018549af89b72df14ced50_220_square.jpg",
+  "about": "El embarazo es una etapa maravillosa (y al mismo tiempo delicada), por ello se brinda atencion integral y de calidad para mantener un embarazo saludable y preveer complicaciones. Se favorece la atención de un PARTO HUMANIZADO dadas las importantes ventajas que representa para el recién nacido y para la madre. El virus de papiloma humano es el factor que principalmente se ha asociado al Cancer cérvicouterino; la prevención, detección y tratamiento oportuno de lesiones iniciales son la clave para evitar el Cancer del cuello del utero. El papanicolaou y la colposcopia permiten identificarlo, estos deben empezar a realizarse a partir del inicio de vida sexual.",
+  "addresses": [
+    {
+      "full": "Avenida Río Churubusco 601,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/flor-adriana-barrios-merino/ginecologo/benito-juarez#address-id=397493&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:05:17.108Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__flor_adriana_barrios_merino.webp"
+}

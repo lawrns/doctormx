@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Beatriz Pérez García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 200,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0cbc20/0cbc20b336b7a971d806a5e4de1c8e04_220_square.jpg",
+  "about": "Tengo amplia experiencia en atención integral de la mujer. Atención especializada en pacientes embarazadas de bajo y alto riesgo asi como ultrasonido con enfoque perinatal. De igual manera en el diagnostico y tratamiento de enfermedades por VPH, colposcopia HD, y demas enfermedades de transmisión sexual. Trato digno para todas las mujeres en sus diferentes etapas de la vida, así como trato inclusivo. Porque para mi, tu salud es primero.",
+  "addresses": [
+    {
+      "full": "Calle José María Heredia 2960, 7mo piso, consultorio 728,"
+    },
+    {
+      "full": "Calle José María Heredia 2960, 7mo piso, consultorio 728,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/beatriz-perez-garcia-2/ginecologo/guadalajara#address-id=388765&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:16:33.617Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__beatriz_p_rez_garc_a.webp"
+}

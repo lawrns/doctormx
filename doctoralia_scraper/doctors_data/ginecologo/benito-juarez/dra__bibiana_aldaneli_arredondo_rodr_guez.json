@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Bibiana Aldaneli Arredondo Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e30e5e/e30e5ebff61d1699f08951402229fdd2_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Universidad 1080,"
+    },
+    {
+      "full": "Av. Universidad 1080,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/bibiana-aldaneli-arredondo-rodriguez/ginecologo/benito-juarez#address-id=401416&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:08:43.662Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__bibiana_aldaneli_arredondo_rodr_guez.webp"
+}

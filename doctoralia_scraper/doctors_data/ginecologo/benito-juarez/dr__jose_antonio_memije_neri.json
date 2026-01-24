@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jose Antonio Memije Neri",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7486bf/7486bf984ee5b0b2b983446116eeb3f1_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Bajio 282 4,"
+    },
+    {
+      "full": "Calle Bajio 282 4,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-antonio-memije-neri/ginecologo/ciudad-de-mexico#address-id=46931&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:14:35.315Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__jose_antonio_memije_neri.webp"
+}

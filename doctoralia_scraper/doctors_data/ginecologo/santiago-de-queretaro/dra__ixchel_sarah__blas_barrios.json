@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Ixchel Sarahí Blas Barrios",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 74,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0cd817/0cd81710140daa5c5438f07ebdce347b_220_square.jpg",
+  "about": "Medico especialista en Ginecología y Obstetricia certificada por el Consejo Mexicano de Ginecología y Obstetricia. Con abordaje integral en enfermedades ginecológicas y obstétricas.",
+  "addresses": [
+    {
+      "full": "Avenida Constituyentes 302,"
+    },
+    {
+      "full": "Avenida de las Ciencias 2058, HOSPITAL MOSCATI,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ixchel-sarahi-blas-barrios/ginecologo/santiago-de-queretaro#address-id=618059&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:47:14.527Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__ixchel_sarah__blas_barrios.webp"
+}

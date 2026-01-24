@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Juan Carlos Mora Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 217,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/21897b/21897b5c8e30fc6eac7a40ba93d74366_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Juan Cano 926,"
+    },
+    {
+      "full": "Circunvalación División Del Nte. 29,"
+    },
+    {
+      "full": "C. Juan Cano 926,"
+    },
+    {
+      "full": "Circunvalación División Del Nte. 29,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-mora-hernandez/ginecologo/guadalajara#address-id=206298&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:36:37.890Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__juan_carlos_mora_hernandez.webp"
+}

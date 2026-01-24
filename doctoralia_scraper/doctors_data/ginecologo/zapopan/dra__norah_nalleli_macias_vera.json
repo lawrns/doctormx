@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Norah Nalleli Macias Vera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/da7ea7/da7ea73364b0b7844d5d75037799b40a_220_square.jpg",
+  "about": "EN UN AMBIENTE COMODO Y PRIVADO, LA CONSULTA INCLUIRÁ EL INTERROGATORIO SOBRE SUS ANTECEDENTES, EXPLORACION FISICA COMPLETA ( PESO, TALLA, PRESION ARTERIAL, REVISIÓN DE SENOS, REVISIÓN ABDOMINAL Y RASTREO ECOSONOGRÁFICO, EXPLORACIÓN DEL AREA GENITAL Y VISUALIZACIÓN DE LA MISMA EN PANTALLA). OPCIONALMENTE SE PUEDE REALIZAR EL PAPANICOLAU Y LA COLPOSCOPIA ES GRATIS ( SI SE REALIZA EL PAPANICOLAU). ADICIONAL A LA REVISIÓN GINECOLÓGICA Y OBSTETRICA, MI FORMACIÓN EN EL AREA DE UROLOGÍA GINECOLÓGICA ME PERMITE REALIZAR DIAGNÓSTICOS Y TRATAMIENTOS OPORTUNOS PARA PACIENTES QUE PRESENTAN INFECCIONES URINARIAS AGUDAS Y RECURRENTES, INCONTINENCIA URINARIA, PROLAPSO DE ORGANOS PÉLVICOS (VEJIGA CAIDA, UTERO CAIDO), CISTITIS Y OTRAS ENFERMEDADES, QUE POR SU NATURALEZA, DISMINUYEN LA CALIDAD DE VIDA DE LAS MUJERES.",
+  "addresses": [
+    {
+      "full": "Guadalupe 865 (a una cuadra de la glorieta chapalita, entre San Pablo y fray Juan de Zumarraga),"
+    },
+    {
+      "full": "Av. Jorge Alvarez del Castillo 1516,"
+    },
+    {
+      "full": "Guadalupe 865 (a una cuadra de la glorieta chapalita, entre San Pablo y fray Juan de Zumarraga),"
+    },
+    {
+      "full": "Av. Jorge Alvarez del Castillo 1516,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/norah-nalleli-macias-vera/ginecologo/zapopan#address-id=92766&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:22:05.774Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__norah_nalleli_macias_vera.webp"
+}

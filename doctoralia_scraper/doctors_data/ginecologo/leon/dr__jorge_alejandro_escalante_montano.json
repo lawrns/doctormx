@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jorge Alejandro Escalante Montano",
+  "specialty": "Ginecólogo",
+  "rating": 1,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d038a0/d038a04c97144742cd517e4ea7646142_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Manantial 106,"
+    },
+    {
+      "full": "Manantial 106,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de los quistes y de los tumores complejos",
+      "price": ""
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-alejandro-escalante-montano/ginecologo/leon#address-id=2564&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:30:02.003Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__jorge_alejandro_escalante_montano.webp"
+}

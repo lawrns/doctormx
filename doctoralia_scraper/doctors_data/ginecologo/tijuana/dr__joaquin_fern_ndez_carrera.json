@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Joaquin Fernández Carrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9cebff/9cebffe02a22d8d636b93d45890d82b6_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Miguel Negrete 1650 entre calle 8 y 9,"
+    },
+    {
+      "full": "Ave. Miguel Negrete 1650 entre calle 8 y 9,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/joaquin-fernandez-carrera/ginecologo/tijuana#address-id=63912&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:45:18.600Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__joaquin_fern_ndez_carrera.webp"
+}

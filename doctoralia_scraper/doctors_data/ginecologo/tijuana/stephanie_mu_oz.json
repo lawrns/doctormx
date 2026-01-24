@@ -1,0 +1,25 @@
+{
+  "name": "Stephanie Muñoz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 179,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e6df72/e6df72971c88a5440eb4a2b059669c0e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd.Padre Kino 10840, Plaza Medica Kino Local 6-Interior 4 Y 5, Zona Urbana Rio Tijuana,"
+    },
+    {
+      "full": "Blvd.Padre Kino 10840, Plaza Medica Kino Local 6-Interior 4 Y 5, Zona Urbana Rio Tijuana,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/stephanie-munoz/ginecologo/tijuana#address-id=528571&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:47:07.889Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/stephanie_mu_oz.webp"
+}

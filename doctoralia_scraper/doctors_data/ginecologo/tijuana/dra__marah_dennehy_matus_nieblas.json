@@ -1,0 +1,42 @@
+{
+  "name": "Dra. Marah Dennehy Matus Nieblas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b496b8/b496b85b9b772bdd4cebc0a1912dfd59_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Circuito Bursatil 9043 Zona del Rio, Int 601, Edificio Torre F,"
+    },
+    {
+      "full": "Circuito Bursatil 9043 Zona del Rio, Int 601, Edificio Torre F,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    },
+    {
+      "name": "Monitorización materno-fetal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marah-dennehy-matus-nieblas/ginecologo/tijuana#address-id=97701&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:44:40.837Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__marah_dennehy_matus_nieblas.webp"
+}

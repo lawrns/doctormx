@@ -1,0 +1,25 @@
+{
+  "name": "Alejandro David Crespo Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 59,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/101c38/101c3863b12bddd6f5b5b3c0edde25c1_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tejocotes 178 104, Col. Del Valle, ,"
+    },
+    {
+      "full": "Tejocotes 178 104, Col. Del Valle, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-david-crespo-lopez/ginecologo/benito-juarez#address-id=357264&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:19:32.858Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/alejandro_david_crespo_lopez.webp"
+}

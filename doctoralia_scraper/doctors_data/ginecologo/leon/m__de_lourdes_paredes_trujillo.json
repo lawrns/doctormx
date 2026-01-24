@@ -1,0 +1,60 @@
+{
+  "name": "M. de Lourdes Paredes Trujillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 503,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4b63b4/4b63b44e96576c2e9d025b5f31516593_220_square.jpg",
+  "about": "Como Médico especialista en Ginecología&Obstetricia, me complace ofrecer mis servicios a las mujeres que buscan atención médica integral y personalizada. Mi nombre es Dra. Lourdes Cecilia Paredes Trujillo, y mi principal objetivo es brindar un cuidado de calidad, basado en la confianza y la experiencia, así como empatía con mis pacientes. Con una amplia experiencia en el manejo de padecimientos Ginecológicos tales como: Menopausia y tratamiento con hormonas bioidénticas, alteraciones menstruales y síndrome de ovarios poliquísticos. Además de mi experiencia en Obstetricia control prenatal, embarazo de alto riesgo entre otros padecimientos. En mi consultorio, ubicado en la ciudad de León, Guanajuato encontrarás un ambiente cálido y acogedor, donde te sentirás en confianza para expresar cualquier preocupación o duda que tengas. Te invito a agendar una cita para que juntas trabajemos en mantener tu salud Ginecológica &Obstétrica en óptimas condiciones.",
+  "addresses": [
+    {
+      "full": "Centenario 407,"
+    },
+    {
+      "full": "Loma del Pirul 110,"
+    },
+    {
+      "full": "Centenario 407,"
+    },
+    {
+      "full": "Loma del Pirul 110,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Revisión e Interpretación de Estudios",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Visitas sucesivas ginecológicas",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/m-de-lourdes-paredes-trujillo/ginecologo/leon#address-id=353681&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:27:24.568Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/m__de_lourdes_paredes_trujillo.webp"
+}

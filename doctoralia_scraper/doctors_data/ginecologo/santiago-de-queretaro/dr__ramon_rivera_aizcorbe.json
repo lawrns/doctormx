@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Ramon Rivera Aizcorbe",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bcfece/bcfeceecacf7007cf6ea480593d7d7c5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Ignacio Allende 14,"
+    },
+    {
+      "full": "Calle Miguel Hgo 29 211,"
+    },
+    {
+      "full": "Calle Ignacio Allende 14,"
+    },
+    {
+      "full": "Calle Miguel Hgo 29 211,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ramon-rivera-aizcorbe/ginecologo/santiago-de-queretaro#address-id=50856&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:52:26.197Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__ramon_rivera_aizcorbe.webp"
+}

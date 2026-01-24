@@ -1,0 +1,25 @@
+{
+  "name": "Martin Alberto Macias Parra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 92,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/65e3e27f/65e3e27f-2153-49fe-ba09-1a14f524b84d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Diaz Ordaz 14901,"
+    },
+    {
+      "full": "Blvd. Diaz Ordaz 14901,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martin-alberto-macias-parra/ginecologo/tijuana#address-id=163859&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:06:04.041Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/martin_alberto_macias_parra.webp"
+}

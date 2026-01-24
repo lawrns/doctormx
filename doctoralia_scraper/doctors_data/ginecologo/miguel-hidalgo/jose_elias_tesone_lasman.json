@@ -1,0 +1,31 @@
+{
+  "name": "Jose Elias Tesone Lasman",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b826c8/b826c8cc26ea36cba8557deb6e7e409e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Vialidad De La Barranca S/N - 180,"
+    },
+    {
+      "full": "Ejercito Nacional No. 613, Col. Granada,"
+    },
+    {
+      "full": "Vialidad De La Barranca S/N - 180,"
+    },
+    {
+      "full": "Ejercito Nacional No. 613, Col. Granada,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-elias-tesone-lasman-2/ginecologo/ciudad-de-mexico#address-id=339440&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:46:55.255Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/jose_elias_tesone_lasman.webp"
+}

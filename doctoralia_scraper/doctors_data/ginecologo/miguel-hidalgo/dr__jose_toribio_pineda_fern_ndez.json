@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jose Toribio Pineda Fernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/413aa1/413aa14a11661720aa1711b5932a1ade_140_square.jpg",
+  "about": "Soy ginecólogo y obstetra con la Sub especialidad en Salud Materno Fetal.Basamos nuestra actuación en el dialogo e intercambio de información con nuestra paciente y en la explicación del proceso que motiva la consulta y las alternativas de manejo.",
+  "addresses": [
+    {
+      "full": "Agrarismo 208,"
+    },
+    {
+      "full": "Agrarismo 208,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-toribio-pineda-fernandez/ginecologo/miguel-hidalgo#address-id=70&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:05:02.914Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__jose_toribio_pineda_fern_ndez.webp"
+}

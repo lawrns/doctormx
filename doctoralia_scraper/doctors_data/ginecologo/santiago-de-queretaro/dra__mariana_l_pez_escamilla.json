@@ -1,0 +1,42 @@
+{
+  "name": "Dra. Mariana López Escamilla",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 465,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2d13cd/2d13cde62d104e033f72ab919ecceff9_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Bernardo Quintana Arrioja centro sur,"
+    },
+    {
+      "full": "Blvd. Bernardo Quintana Arrioja centro sur,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mariana-lopez-escamilla/ginecologo/santiago-de-queretaro#address-id=6044&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:47:42.619Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__mariana_l_pez_escamilla.webp"
+}

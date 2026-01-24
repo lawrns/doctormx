@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Luz Elizabeth Turrubiate Munguía",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/31565d/31565d5f033b33e8c19bb1f44a2e786f_220_square.jpg",
+  "about": "El objetivo de mi práctica privada es ofrecer una consulta de calidad, enfocada en la prevención, diagnóstico temprano y tratamiento oportuno, para mujeres de cualquier edad, comprometida con un trato amable y respetuoso y buscando siempre resolver las dudas de mis pacientes. Realicé mis estudios de Medicina, en la Facultad de Medicina de la UNAM, posteriormente realicé mi residencia médica en Ginecología y Obstetricia en el HGO3 La Raza del IMSS, con diplomado en Colposcopía en el Hospital Juárez de México. Actualmente con Certificación vigente por el Consejo Mexicano de Ginecología y Obstetricia. Te invito a reservar una cita conmigo, será un placer ser tu especialista.",
+  "addresses": [
+    {
+      "full": "Real Mayorazgo 130,"
+    },
+    {
+      "full": "Real Mayorazgo 130,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luz-elizabeth-turrubiate-munguia/ginecologo/benito-juarez#address-id=381364&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:07:19.761Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__luz_elizabeth_turrubiate_mungu_a.webp"
+}

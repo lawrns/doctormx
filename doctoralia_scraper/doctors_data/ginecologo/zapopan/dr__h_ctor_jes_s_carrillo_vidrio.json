@@ -1,0 +1,38 @@
+{
+  "name": "Dr. Héctor Jesús Carrillo Vidrio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6ece37/6ece374a9fa8dbdb4d2cde91075e16cc_220_square.jpg",
+  "about": "En mi practica medica llevo mas de 10 años de experiencia, brindando atención médica integral y personalizada a mujeres de todas las edades. Mi consulta tiene atención ginecológica y obstetrica con enfoque en medicina funcional de alta calidad, donde incluimos la atención preventiva, consejo nutricional y de suplementacion. Los problemas hormonales y tratamientos antienvejecimiento son un reto con grandes resultados que logramos en un ambiente cómodo y acogedor.",
+  "addresses": [
+    {
+      "full": "Avenida Salto del Agua 2130,"
+    },
+    {
+      "full": "Avenida Salto del Agua 2130,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-jesus-carrillo-vidrio/ginecologo/guadalajara#address-id=110643&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:22:49.146Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__h_ctor_jes_s_carrillo_vidrio.webp"
+}

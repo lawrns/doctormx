@@ -1,0 +1,25 @@
+{
+  "name": "Jose Antonio Crespo Pozuelo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 32,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e5b001/e5b001e69a30d17553f7998288ea25c9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ejercito Nacional (Hosp. Español), 617-1001,"
+    },
+    {
+      "full": "Ejercito Nacional (Hosp. Español), 617-1001,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-antonio-crespo-pozuelo/ginecologo/miguel-hidalgo#address-id=77240&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:44:58.179Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/jose_antonio_crespo_pozuelo.webp"
+}

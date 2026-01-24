@@ -1,0 +1,37 @@
+{
+  "name": "Maria Guadalupe Mejia Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 32,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4b10bf/4b10bf1617581cf8fa5ba3aadd6d9afc_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calz. De Tlalpan 1983,"
+    },
+    {
+      "full": "Sagredo 7,"
+    },
+    {
+      "full": "Sebastian Del Piombo 54,"
+    },
+    {
+      "full": "Calz. De Tlalpan 1983,"
+    },
+    {
+      "full": "Sagredo 7,"
+    },
+    {
+      "full": "Sebastian Del Piombo 54,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-guadalupe-mejia-perez/ginecologo/benito-juarez#address-id=192201&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:22:20.742Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/maria_guadalupe_mejia_perez.webp"
+}

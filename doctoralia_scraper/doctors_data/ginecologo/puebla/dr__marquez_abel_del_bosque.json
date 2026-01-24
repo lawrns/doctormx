@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Marquez Abel Del Bosque",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 13,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/fd04f87f/fd04f87f-5a55-4dfa-9ca2-4aa948c72d7d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Oriente 6 1888,"
+    },
+    {
+      "full": "Ave. Oriente 6 1888,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marquez-abel-del-bosque/ginecologo/orizaba#address-id=54220&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:24:21.783Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__marquez_abel_del_bosque.webp"
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Carlos Martinez ceja",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 27,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8b46c1/8b46c143e3aa73e28192f00afdda61c2_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Héroes De La Independencia 1913,"
+    },
+    {
+      "full": "BLVD. CAMPESTRE NO. 304-306,"
+    },
+    {
+      "full": "Héroes De La Independencia 1913,"
+    },
+    {
+      "full": "BLVD. CAMPESTRE NO. 304-306,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $500"
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido 4D",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $600"
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido 4D",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-martinez-ceja/ginecologo/leon#address-id=3862&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:28:15.863Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__carlos_martinez_ceja.webp"
+}

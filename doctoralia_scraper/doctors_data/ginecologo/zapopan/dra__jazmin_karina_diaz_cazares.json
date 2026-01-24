@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Jazmin Karina Diaz Cazares",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 152,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5ea3e4/5ea3e4ac1df0b7b452185cfe69186a7c_220_square.jpg",
+  "about": "\"Mereces Salud, Placer y Bienestar\" Soy la Dra. Jazmín Cázares ginecóloga y obstetra. Especialista en Salud y Sexualidad femenina.Así como en la atención del embarazo, nacimiento y parto humanizado. Estoy aquí para que juntas cuidemos de tu salud íntima y puedas disfrutar de tu vida y tu sexualidad satisfactoriamente. Te acompaño para que vivas la experiencia de tu gestación o embarazo de forma saludable y plena, haciendo del nacimiento sea parto o cesárea un evento emotivo, cálido y seguro. Si en este momento ya inicias una etapa de madurez en la vida por la llegada de la menopausia, te ayudo a sentirte sana, radiante y llena de energía. Te veo pronto en la consulta",
+  "addresses": [
+    {
+      "full": "Calle Gral. Eulogio Parra 2330-Planta Baja, Ladrón de Guevara, Ladron De Guevara,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $1,100"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jazmin-karina-diaz-cazares/ginecologo/guadalajara#address-id=535947&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:10:37.811Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__jazmin_karina_diaz_cazares.webp"
+}

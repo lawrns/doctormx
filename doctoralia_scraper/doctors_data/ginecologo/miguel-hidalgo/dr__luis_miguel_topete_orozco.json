@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Luis Miguel Topete Orozco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f2d61b/f2d61babe644a3eaabdca36d0b4b0ad5_220_square.jpg",
+  "about": "Médico Ginecoobstetra y en esterilidad hace 48 años. Consulta privada previa cita.",
+  "addresses": [
+    {
+      "full": "Agrarismo 208,"
+    },
+    {
+      "full": "Agrarismo 208 (Int 103, entre Viaducto y Martí),"
+    },
+    {
+      "full": "Agrarismo 208,"
+    },
+    {
+      "full": "Agrarismo 208 (Int 103, entre Viaducto y Martí),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Medicina General",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Medicina General",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-miguel-topete-orozco/ginecologo-medico-general/miguel-hidalgo#address-id=90&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:05:59.923Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__luis_miguel_topete_orozco.webp"
+}

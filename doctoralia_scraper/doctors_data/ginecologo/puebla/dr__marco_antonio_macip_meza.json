@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Marco Antonio Macip Meza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3e942c/3e942c72b8434be0cf130a903def89e9_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Priv de las Ramblas #4 Consultorio 1118 Torre Médica Hospital Puebla,"
+    },
+    {
+      "full": "Priv de las Ramblas #4 Consultorio 1118 Torre Médica Hospital Puebla,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marco-antonio-macip-meza/ginecologo/puebla#address-id=81180&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:14:08.733Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__marco_antonio_macip_meza.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Daniel Vega Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e0907d7e/e0907d7e-6e93-4ef6-a49d-0e6e1ccc51de_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ramón Rodríguez Familiar #36, Colonia Jardines de Querétaro,"
+    },
+    {
+      "full": "Ramón Rodríguez Familiar #36, Colonia Jardines de Querétaro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía total",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniel-vega-rodriguez/ginecologo/santiago-de-queretaro#address-id=71953&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:50:52.836Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__daniel_vega_rodr_guez.webp"
+}

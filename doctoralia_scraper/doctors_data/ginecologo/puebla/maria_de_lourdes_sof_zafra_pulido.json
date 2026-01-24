@@ -1,0 +1,25 @@
+{
+  "name": "Maria De Lourdes Sof Zafra Pulido",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 71,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/95b31e/95b31e2fa4f996455a3578c3464f1031_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Jose Maria Mata 307Col. Fracc Reforma,"
+    },
+    {
+      "full": "Jose Maria Mata 307Col. Fracc Reforma,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-de-lourdes-sof-zafra-pulido/ginecologo/tehuacan#address-id=357358&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:31:04.288Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/maria_de_lourdes_sof_zafra_pulido.webp"
+}

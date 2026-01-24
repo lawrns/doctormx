@@ -1,0 +1,52 @@
+{
+  "name": "Dr. Juan Antonio Lucero Aguirre",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 16,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e5efcf/e5efcf5b911c574403c39f04873f2dd5_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Jose Clemente Orozco 10122, 4to, Piso Oficina 404,"
+    },
+    {
+      "full": "José Clemente Orozco 10122,"
+    },
+    {
+      "full": "Jose Clemente Orozco 10122, 4to, Piso Oficina 404,"
+    },
+    {
+      "full": "José Clemente Orozco 10122,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-antonio-lucero-aguirre-2/ginecologo/tijuana#address-id=427516&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:44:22.381Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__juan_antonio_lucero_aguirre.webp"
+}

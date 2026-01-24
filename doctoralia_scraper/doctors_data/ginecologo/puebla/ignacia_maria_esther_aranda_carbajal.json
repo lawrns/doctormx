@@ -1,0 +1,25 @@
+{
+  "name": "Ignacia Maria Esther Aranda Carbajal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 13,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/fd04f87f/fd04f87f-5a55-4dfa-9ca2-4aa948c72d7d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Ote. 6 1888,"
+    },
+    {
+      "full": "Av. Ote. 6 1888,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ignacia-maria-esther-aranda-carbajal/ginecologo/orizaba#address-id=158629&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:35:29.750Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/ignacia_maria_esther_aranda_carbajal.webp"
+}

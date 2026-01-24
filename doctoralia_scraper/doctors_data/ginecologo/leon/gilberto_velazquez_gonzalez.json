@@ -1,0 +1,31 @@
+{
+  "name": "Gilberto Velazquez Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1001,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Zitacuaro 1001,"
+    },
+    {
+      "full": "Adelina Patti 102,"
+    },
+    {
+      "full": "Zitacuaro 1001,"
+    },
+    {
+      "full": "Adelina Patti 102,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gilberto-velazquez-gonzalez/ginecologo/leon#address-id=224277&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:37:22.481Z",
+  "localPhotoPath": null
+}

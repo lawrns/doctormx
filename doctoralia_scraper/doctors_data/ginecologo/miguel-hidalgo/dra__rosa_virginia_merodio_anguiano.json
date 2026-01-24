@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Rosa Virginia Merodio Anguiano",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 166,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2e9581/2e958176331062508341f22709bca42e.jpg",
+  "about": "¡Hola! Soy la Dra. Rosa Virginia Merodio Anguiano y me gustaría compartirte más información acerca de mi formación académica y actividad profesional: Egresada del Instituto Nacional de Perinatología / UNAM con estudios de Pregrado en Westküstenklinikum Heide, Alemania. Adiestramiento en cirugía pélvica reconstructiva en Cleveland Clinic, Florida y Hôpital Jeanne De Flandre en Lille, Francia. Especialista en Ginecoobstetricia con subespecialidad en Uroginecología donde se abordan alteraciones como: - Incontinencia urinaria y fecal - Prolapso vaginal - Dolor pélvico crónico - Disfunción sexual - Infecciones urinarias de repetición - Fístulas urinarias - Masas vaginales Cuento con Alta especialidad en Cirugía Ginecológica de mínima invasión para realizar cirugía laparoscópica (con cámaras) e histerosocopía y resolver problemas como miomas uterinos, engrosamiento de endometrio, pólipos, hemorragias vaginales. Actualmente soy adscrita al servicio de Ginecología del \"Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán\" en la Ciudad de México.",
+  "addresses": [
+    {
+      "full": "Av. Homero 655,"
+    },
+    {
+      "full": "Camino Santa Teresa 1055-S,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Incontinencia urinaria",
+      "price": ""
+    },
+    {
+      "name": "Primera visita a uroginecología",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Rehabilitación de piso pélvico",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Visita urología",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• Desde $2,500"
+    },
+    {
+      "name": "Primera visita a uroginecología",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita urología",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-virginia-merodio-anguiano/ginecologo/miguel-hidalgo#address-id=537428&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:58:44.141Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__rosa_virginia_merodio_anguiano.webp"
+}

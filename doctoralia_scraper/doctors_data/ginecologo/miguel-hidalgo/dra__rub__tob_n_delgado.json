@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Rubí Tobón Delgado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 41,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/aa8abf/aa8abf4b92acdbadaf49ba114c29bfa9_220_square.jpg",
+  "about": "Soy la Doctora Rubí Tobón, Médico Materno Fetal Realicé la carrera de Médico General en la Universidad Popular Autónoma del Estado de Puebla. Posteriormente hice mi Especialidad en Ginecología y Obstetricia en el Instituto Nacional de Perinatología, en la Ciudad de México. Al adentrarme en la especialidad descubrí mi pasión por el embarazo y todos sus cuidados además del diagnóstico fetal prenatal por lo que hice la subespecialidad en Medicina Materno Fetal en el mismo Instituto Nacional de Perinatología y estoy certificada por el Consejo Mexicano de Ginecología y Obstetricia así como instituciones internacionales como la Fetal Medicine Foundation. Soy una mujer profesional que atiende de manera humana y personalizada a sus pacientes en pro de un embarazo saludable y un cuidado ginecológico.",
+  "addresses": [
+    {
+      "full": "Avenida Insurgentes Sur 601,"
+    },
+    {
+      "full": "Avenida Insurgentes Sur 601,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $25"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rubi-tobon-delgado/ginecologo/ciudad-de-mexico#address-id=575051&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:02:53.713Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__rub__tob_n_delgado.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Carla Cosío Morán",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a4c453/a4c453952171ce74f3932e0c62ca3626_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Privada de las Ramblas 4,,"
+    },
+    {
+      "full": "Privada de las Ramblas 4,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carla-cosio-moran-2/ginecologo/-#address-id=340000&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:18:24.207Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__carla_cos_o_mor_n.webp"
+}

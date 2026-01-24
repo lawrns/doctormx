@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Hugo López Briones",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 104,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/37630f/37630fbb397dab7233ece34b03a33b0b_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Bernardo Quintana Arrioja 9670,"
+    },
+    {
+      "full": "Av. Montaña Monarca 331-Norte.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Medicina Materno-Fetal",
+      "price": ""
+    },
+    {
+      "name": "Medicina Materno-Fetal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hugo-lopez-briones/ginecologo/santiago-de-queretaro#address-id=439249&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:46:47.376Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__hugo_l_pez_briones.webp"
+}

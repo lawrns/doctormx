@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Luis Héctor Barajas Flores",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 138,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/02a9b4/02a9b4402b66ffca409c65cf9f9966dd_220_square.jpg",
+  "about": "Hola soy el Dr. Luis Héctor Barajas, ginecólogo oncólogo me gustaría que me dieras la oportunidad de brindarte el mejor trato y atención, en la prevención, diagnostico y tratamiento de las enfermedades ginecológicas entre ellas el cáncer. Cuento con certificación vigente por el Consejo mexicano de Ginecología y Obstetricia y por el Consejo mexicano de Oncología",
+  "addresses": [
+    {
+      "full": "Paseo del Centenario,"
+    },
+    {
+      "full": "Paseo del Centenario,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-hector-barajas-flores/ginecologo-oncologico-ginecologo/tijuana#address-id=390200&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:43:35.430Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__luis_h_ctor_barajas_flores.webp"
+}

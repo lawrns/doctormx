@@ -1,0 +1,25 @@
+{
+  "name": "Jose De Jesus Chavez Mejia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 71,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3831a8a8/3831a8a8-8c73-4cbd-b550-1ad5cb9cc143_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Plan De San Luis 1825,"
+    },
+    {
+      "full": "Plan De San Luis 1825,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-de-jesus-chavez-mejia/ginecologo/guadalajara#address-id=211497&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:40:13.870Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/jose_de_jesus_chavez_mejia.webp"
+}

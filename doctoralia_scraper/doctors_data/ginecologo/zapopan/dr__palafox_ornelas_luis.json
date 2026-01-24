@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Palafox Ornelas Luis",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 12,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3eabb798/3eabb798-dd47-45fa-a2a3-907c6cec93fa_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Esteban Loera 121,"
+    },
+    {
+      "full": "Calle Esteban Loera 121,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/palafox-ornelas-luis/ginecologo/guadalajara#address-id=54627&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:41:40.237Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__palafox_ornelas_luis.webp"
+}

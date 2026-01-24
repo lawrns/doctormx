@@ -1,0 +1,25 @@
+{
+  "name": "Arturo Hipolito Santaella Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 450,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e53981/e539819af82c4952f0746ace37e60880_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Guadalupe Victoria 9308,"
+    },
+    {
+      "full": "Guadalupe Victoria 9308,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arturo-hipolito-santaella-gonzalez/ginecologo/tijuana#address-id=244102&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:50:00.460Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/arturo_hipolito_santaella_gonzalez.webp"
+}

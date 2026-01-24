@@ -1,0 +1,25 @@
+{
+  "name": "Francisco Javier Hernandez Mora",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 35,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/92e6ec/92e6ecdb8c6381b4c8cc05a01c058c63_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Jesús García 2447,"
+    },
+    {
+      "full": "C. Jesús García 2447,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-javier-hernandez-mora/ginecologo/guadalajara#address-id=157779&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:43:26.103Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/francisco_javier_hernandez_mora.webp"
+}

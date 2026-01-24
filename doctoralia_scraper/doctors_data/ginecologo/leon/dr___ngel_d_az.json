@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Ángel Díaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 70,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/86554b/86554bf7c0dd9f54fa4b631d0abb924f_220_square.jpg",
+  "about": "Hola !! Soy el Doctor Ángel Díaz, Ginecólogo y obstetra por la UNAM, con más de 5 años de experiencia. Hice la especialidad en el Centro Médico Nacional “La Raza”, Certificado por el COMEGO. Especialista en parto humanizado. Mis pacientes siempre comentan la gran empatía, respeto y responsabilidad que tengo con ellas, si buscas alguien que te acompañe en todos los momentos de tu embarazo y tu proceso, no dudes en escribirme. Soy “El ginecólogo que siempre quisiste tener” SI BUSCAS TENER UN PARTO, YO SOY EL INDICADO. Puedes seguirme en mis redes Tiktok: Ginecologo_angel_diaz",
+  "addresses": [
+    {
+      "full": "Boulevard Campestre 304,"
+    },
+    {
+      "full": "Boulevard Campestre 304,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angel-diaz-2/ginecologo/leon#address-id=542322&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:27:48.835Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr___ngel_d_az.webp"
+}

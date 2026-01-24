@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Miguel Angel Zambada Ramos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5c648b/5c648bfeb9ddedc0866dc25907cfa553_220_square.jpg",
+  "about": "Especialista en Ginecología, cuidado de embarazo, cirugia de minima invasion (laparoscopia) y colposcopia.",
+  "addresses": [
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena, piso 7, consultorio 9b,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-zambada-ramos/ginecologo/zapopan",
+  "scrapedAt": "2026-01-22T04:07:08.891Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__miguel_angel_zambada_ramos.webp"
+}

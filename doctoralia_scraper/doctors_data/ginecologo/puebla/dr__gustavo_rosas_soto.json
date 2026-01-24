@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Gustavo Rosas Soto",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 14,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ff5d2b/ff5d2bbb15cb6b4c60aa14d285206a47_220_square.jpg",
+  "about": "Soy el Doctor Gustavo Rosas Soto. Ginecólogo, Obstetra y Colposcopista, cuento con mas de 30 años de experiencia desde 1989, soy egresado de la Benemérita Universidad Autónoma del Estado de Puebla (BUAP). Reseña de actividades profesionales: Médico de base en Ginecología del Hospital Universitario, Jefe de servicio de Ginecología y Obstetricia, Jefe del área de Enseñanza en el servicio de Ginecología y Obstetricia, Jefe de enseñanza de todo el Hospital Universitario de la ciudad de Puebla. Perteneciente al Colegio de Ginecólogos y Obstetras del Estado de Puebla, siendo en un periodo perteneciente a la mesa directiva, así como en otros periodos como tesorero del mismo colegio. Miembro fundador del Colegio de Colposcopia en el Estado de Puebla. Diferentes cursos de la especialidad y asistente a los congresos nacionales de la especialidad. Diplomados (relevantes) en Enseñanza y Dirección de Hospitales, liderazgo universitario, así como Colposcopista egresado de nuestra Benemérita Universidad Autónoma de Puebla. Actualmente propietario de la Clínica San Sebastián El Vergel de Ginecología. En la actividad profesional como Ginecólogo, obstetra y colposcopista, trabajo con aseguradoras de gastos médicos mayores como: GNP, Allianz, MetLife, etc. Laboramos y consultamos en la Clínica El Vergel, además, trabajamos como particular y por Seguros de Gastos Médicos Mayores en los diferentes hospitales de nuestra ciudad (Beneficencia Española de Puebla, Hospital Ángeles, Hospital Puebla, Hospital UPAEP, Central Gineco-Obstetrica de Puebla, etc)",
+  "addresses": [
+    {
+      "full": "PRIVADA 29 C SUR 3110-A.,"
+    },
+    {
+      "full": "PRIVADA 29 C SUR 3110-A.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $500"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gustavo-rosas-soto/ginecologo/puebla#address-id=86613&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:13:20.122Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__gustavo_rosas_soto.webp"
+}

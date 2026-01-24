@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Eika Antonia Ojeda Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 992,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ee9700/ee97002c2bd2e5d332e016395c6ee1e2.jpg",
+  "about": "Calidad y calidez humana a través de más de 35 años de experiencia como Ginecóloga. Siempre me esfuerzo por dar lo mejor para mis pacientes, resolver hasta la ultima duda para poder ayudarles en su día a día. Urgencias a mi celular, las 24 horas del día. Aceptamos transferencias bancarias como método de pago.",
+  "addresses": [
+    {
+      "full": "5 C Num. 211, por 32 A Pensiones Mérida, Yucatán, México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eika-antonia-ojeda-rodriguez/ginecologo/yucatan#address-id=233246&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:28:51.741Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__eika_antonia_ojeda_rodriguez.webp"
+}

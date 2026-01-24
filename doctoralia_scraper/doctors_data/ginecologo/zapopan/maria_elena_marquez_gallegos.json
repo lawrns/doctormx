@@ -1,0 +1,25 @@
+{
+  "name": "Maria Elena Marquez Gallegos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d8543a/d8543a019657b8b4563c3ed49f24d367_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Quebec 631,"
+    },
+    {
+      "full": "Quebec 631,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-elena-marquez-gallegos/ginecologo/guadalajara#address-id=71595&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:37:04.612Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/maria_elena_marquez_gallegos.webp"
+}

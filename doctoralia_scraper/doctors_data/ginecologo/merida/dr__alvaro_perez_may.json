@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Alvaro Perez May",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1a4efc/1a4efc551d37158d6fd65ac77fdfb143_220_square.jpg",
+  "about": "biologia de la reproduccion humana, ginecologia y obstetricia masde 25 años de experiencia, asi como tratamientos de fertilizacion in vitro y laparoscopia",
+  "addresses": [
+    {
+      "full": "Avenida Colón 204d,"
+    },
+    {
+      "full": "Avenida Colón 204d,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alvaro-perez-may/ginecologo/yucatan#address-id=349290&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:37:09.768Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__alvaro_perez_may.webp"
+}

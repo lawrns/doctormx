@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Sandra Luz Gonzalez Gallo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2f65a5/2f65a55913c3f17c0a14b6961c7edc7f_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Adolfo López Mateos Sur # 1401 (piso 10 consultorio 105),"
+    },
+    {
+      "full": "Rafael Sanzio 311,"
+    },
+    {
+      "full": "Av. Adolfo López Mateos Sur # 1401 (piso 10 consultorio 105),"
+    },
+    {
+      "full": "Rafael Sanzio 311,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sandra-luz-gonzalez-gallo/ginecologo/zapopan#address-id=88759&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:26:11.466Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__sandra_luz_gonzalez_gallo.webp"
+}

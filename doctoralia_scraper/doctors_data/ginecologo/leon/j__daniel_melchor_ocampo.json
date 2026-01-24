@@ -1,0 +1,25 @@
+{
+  "name": "J. Daniel Melchor Ocampo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 31,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/052ea9/052ea99b3f72221611fcf1b9aab18d46_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Melchor Ocampo 302, Obregon,"
+    },
+    {
+      "full": "Melchor Ocampo 302, Obregon,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/j-daniel-melchor-ocampo/ginecologo/leon#address-id=140489&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:35:36.841Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/j__daniel_melchor_ocampo.webp"
+}

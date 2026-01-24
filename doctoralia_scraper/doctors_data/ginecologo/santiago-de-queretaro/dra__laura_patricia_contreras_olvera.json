@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Laura Patricia Contreras Olvera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8f8dc4/8f8dc49d8afc38697848e41b70032fb9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ramón Rodríguez Familiar 36 (a media cuadra del Starbucks coffe los arcos, en laboratorio intermedic),"
+    },
+    {
+      "full": "Ramón Rodríguez Familiar 36 (a media cuadra del Starbucks coffe los arcos, en laboratorio intermedic),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    },
+    {
+      "name": "Legrado uterino ginecológico diagnóstico o terapéutico. Urgente o programado",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-patricia-contreras-olvera-2/ginecologo/santiago-de-queretaro#address-id=78974&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:50:51.658Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__laura_patricia_contreras_olvera.webp"
+}

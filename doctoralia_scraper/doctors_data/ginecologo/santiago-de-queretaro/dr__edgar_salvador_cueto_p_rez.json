@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Edgar Salvador Cueto Pérez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 148,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/14df24/14df24a0f301d5bedf80f029d28f45a6_220_square.jpg",
+  "about": "Soy médico Gineco-Obstetra, egresado de la Unidad Médica de Alta Especialidad del Centro Médico Nacional de Occidente, en Guadalajara, Jalisco. Me he formado pensando siempre en el bienestar de mis pacientes, realizado cursos de actualización médica continua de manera anual, en ultrasonido ginecológico, obstétrico, así como en Displasias/colposcopia, climaterio, entre otros. Fui jefe de servicio de Ginecología Y Obstetricia en hospital público en la ciudad de Querétaro, donde se implementaron muchos programas y facilidades para las pacientes.",
+  "addresses": [
+    {
+      "full": "Camino a los Olvera 680 Modulo C,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edgar-salvador-cueto-perez/ginecologo/queretaro",
+  "scrapedAt": "2026-01-22T03:41:39.445Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__edgar_salvador_cueto_p_rez.webp"
+}

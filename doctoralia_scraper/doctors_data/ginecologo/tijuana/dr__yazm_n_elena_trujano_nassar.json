@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Yazmín Elena Trujano Nassar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b4326a/b4326a17c1c472631b93b281a66e1f2e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle misión de santo Tomás 2932,"
+    },
+    {
+      "full": "Calle misión de santo Tomás 2932,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Medicina General",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yazmin-elena-trujano-nassar/ginecologo/tijuana#address-id=43773&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:46:35.599Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__yazm_n_elena_trujano_nassar.webp"
+}

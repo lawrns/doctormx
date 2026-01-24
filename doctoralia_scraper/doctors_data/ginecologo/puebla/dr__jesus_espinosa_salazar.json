@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jesus Espinosa Salazar",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e65d76/e65d7607296bb156698e8b3177fa975b_140_square.jpg",
+  "about": "Especialista en Ginecología SOY ESPECIALISTA EN GINECOLOGIA Y OBSTETRICIA DESDE HACE 42 AÑOS JUBILADO DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL DESDE HACE 14 AÑOS Y PERTENESCO A LA FEMECOG TAMBIEN DESDE HACE MAS DE 30 AÑOS CERTIFICADO Y RECERTIFICADO POR EL CONSEJO MEXICANO DE GINECOLOGIA Y OBSTETRICIA. DESDE EL INICIO DE LA ESPECIALIDAD CONSULTA PRIVADA HASTA EL MOMENTO..",
+  "addresses": [
+    {
+      "full": "Callejon de la Tehuacanera 128,"
+    },
+    {
+      "full": "Callejon de la Tehuacanera 128,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $750"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $750"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-espinosa-salazar-2/ginecologo/tehuacan#address-id=365177&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:14:13.986Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__jesus_espinosa_salazar.webp"
+}

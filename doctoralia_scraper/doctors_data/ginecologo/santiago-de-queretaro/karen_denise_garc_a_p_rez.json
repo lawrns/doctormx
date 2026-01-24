@@ -1,0 +1,46 @@
+{
+  "name": "Karen Denise García Pérez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/918f7b/918f7bd1b9383a26f3cb9412c1e78f4d_220_square.jpg",
+  "about": "Especialidad Médica en Ginecología y Obstetricia Subespecialidad Médica Cirugía Endoscópica Ginecológica Subespecialidad Médica Infertilidad y Reproducción Asistida",
+  "addresses": [
+    {
+      "full": "torre médica 3, piso 7, consultorio 709, Hospital H+, calle privada Ignacio Zaragoza 16, centro,"
+    },
+    {
+      "full": "torre médica 3, piso 7, consultorio 709, Hospital H+, calle privada Ignacio Zaragoza 16, centro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $750"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $750"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $750"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karen-denise-garcia-perez/ginecologo/santiago-de-queretaro#address-id=371724&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:50:23.509Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/karen_denise_garc_a_p_rez.webp"
+}

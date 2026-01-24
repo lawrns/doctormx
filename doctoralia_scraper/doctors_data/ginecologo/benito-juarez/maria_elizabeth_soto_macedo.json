@@ -1,0 +1,31 @@
+{
+  "name": "Maria Elizabeth Soto Macedo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/605c0c/605c0c5dab46267aab840a863dcf20e3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Rancho La Laguna 125,"
+    },
+    {
+      "full": "Calz. San Simón 94,"
+    },
+    {
+      "full": "Rancho La Laguna 125,"
+    },
+    {
+      "full": "Calz. San Simón 94,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-elizabeth-soto-macedo/ginecologo/benito-juarez#address-id=192873&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:15:29.263Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/maria_elizabeth_soto_macedo.webp"
+}

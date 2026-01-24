@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Torres Carlos Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f03c1679/f03c1679-faa4-48e0-8163-d3c2bea3eb10_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Agua Caliente 10535 206,"
+    },
+    {
+      "full": "Agua Caliente 10535 206,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/torres-carlos-gonzalez/ginecologo/tijuana#address-id=36466&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:48:24.638Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__torres_carlos_gonzalez.webp"
+}

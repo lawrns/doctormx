@@ -1,0 +1,25 @@
+{
+  "name": "Tomasa Gema Sombrerero Juárez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 375,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/171cc3/171cc3a56e96e37caf1a14274402dd28_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Privada 28 Norte 2015,"
+    },
+    {
+      "full": "Privada 28 Norte 2015,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tomasa-gema-sombrerero-juarez/ginecologo/puebla#address-id=3963&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:27:36.357Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/tomasa_gema_sombrerero_ju_rez.webp"
+}

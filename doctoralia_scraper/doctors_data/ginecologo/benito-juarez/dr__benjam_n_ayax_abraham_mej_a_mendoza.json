@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Benjamín Ayax Abraham Mejía Mendoza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/0f5767df/0f5767df-6509-41ff-afa0-0a6c396ba932_small_square.jpg",
+  "about": "Soy un medico con experiencia en diferentes áreas , tanto institucionales como privadas en ginecología y obstetricia, incluyendo ramas como: ginecología general, obstetricia, embarazo de alto riesgo, colposcopia y enfermedades del tracto genital inferior, endoscopia ginecológica y endocrinología ginecológica. Mi carrera me ha permitido resolver casos complejos y desafiantes, desarrollando habilidades en la resolución de problemas para beneficio de mis pacientes.",
+  "addresses": [
+    {
+      "full": "Av. Universidad 1080, Xoco, Benito Juárez,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/benjamin-ayax-abraham-mejia-mendoza/ginecologo/ciudad-de-mexico",
+  "scrapedAt": "2026-01-22T02:59:14.500Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__benjam_n_ayax_abraham_mej_a_mendoza.webp"
+}

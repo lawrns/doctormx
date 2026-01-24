@@ -1,0 +1,158 @@
+{
+  "name": "Dra. Adriana Mercedes Acuña Euán",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 895,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9a6ca5e6/9a6ca5e6-593e-46f3-bd84-9730fa635dca_small_square.jpg",
+  "about": "Soy Adriana M. Acuña Euán, Obstetra de corazón y Oncóloga por vocación; originaria de Campeche. Estudié en Villahermosa la residencia de Ginecología y Obstetricia en el Hospital de la mujer a cargo de la Universidad Juárez Autónoma de Tabasco (UJAT) y me aventuré a realizar Ginecología oncológica en la Ciudad de México en la Hospital General de México por la Universidad Autónoma de México. Realicé el diplomado de cirugía laparoscópica avanzada y, dentro de mi formación como oncóloga, el diplomado de colposcopia y patología del tracto genital inferior a cargo de la UNAM. Actualmente soy director médico en una clínica particular de displasias (colposcopia), y en mi consultorio particular aquí en la ciudad de México. Los sueños de regresar a mi tierra se mantienen. Amo mi profesión y la dualidad que me permite tener mis especialidades, en ambas veo mucha luz y esperanza: la ilusión de la espera de un bebé y por otro lado la resiliencia que se presenta en el camino de la lucha contra el Cáncer. Sin duda alguna hay muchos mitos por vencer dentro del camino a ser mamá y los cuidados que podemos tener en el pre, durante y posterior al proceso. Sin duda alguna la prevención salva VIDAS.",
+  "addresses": [
+    {
+      "full": "Sucursal Hospital Amerimed en Calle 149 C-149,"
+    },
+    {
+      "full": "Sucursal Caucel en Calle 31 645-A,"
+    },
+    {
+      "full": "Sucursal San Ángel Inn Acora del Valle en Av. Cuauhtémoc 1040, Narvarte Poniente,"
+    },
+    {
+      "full": "Sucursal Universidad Av. Universidad 1080,"
+    },
+    {
+      "full": "Sucursal San Angel Inn Patriotismo en Calle Patriotismo 67,"
+    },
+    {
+      "full": "Sucursal Samara Satélite en Circuito Centro Comercial 16,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Desde $2,500"
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": "• Desde $3,800"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Atención pacientes con cáncer",
+      "price": "• $1,100"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adriana-mercedes-acuna-euan/ginecologo-ginecologo-oncologico/yucatan#address-id=620154&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:30:02.564Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__adriana_mercedes_acu_a_eu_n.webp"
+}

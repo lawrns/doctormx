@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Castillo Warner Leal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/171cc3/171cc3a56e96e37caf1a14274402dd28_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Jose Ma La Fragua No 33,"
+    },
+    {
+      "full": "Jose Ma La Fragua No 33,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/castillo-warner-leal/ginecologo/puebla#address-id=42781&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:24:39.692Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__castillo_warner_leal.webp"
+}

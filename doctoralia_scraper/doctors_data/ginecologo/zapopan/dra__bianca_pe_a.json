@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Bianca Peña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6f8f72/6f8f724216ed6d3ef0302c114dae98f4_220_square.jpg",
+  "about": "Mi nombre es Bianca Peña. Soy Ginecóloga, obstetra. Con adiestramiento en colposcopia y patología de tracto genital inferior, detección y tratamiento de lesiones ocasionadas por virus de papiloma humano. Estoy para servirte!",
+  "addresses": [
+    {
+      "full": "C. José María Heredia 2960 Prados Providencia TORRE MEDICA SAN JAVIER,"
+    },
+    {
+      "full": "C. José María Heredia 2960 Prados Providencia TORRE MEDICA SAN JAVIER,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/bianca-pena/ginecologo/guadalajara#address-id=367534&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:22:13.351Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__bianca_pe_a.webp"
+}

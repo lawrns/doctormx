@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Héctor Jaime Juárez Santacruz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 251,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/29e2d0/29e2d05aeccdcb330ff503d2f5fe3ca6.jpg",
+  "about": "Hola soy médico especializado en todo tipo de problemática femenina ofreciendo darte un manejo a tus problemas de una manera profesional con una sensibilidad humana atiendo todo tipo de problemas ginecólogicos y control especializado de embarazo, además de estudios en Biología de la Reproducción para ayudarte a lograr el sueño de lograr ser padres desde técnicas sencillas y fisiológicas hasta lo más complejo en técnicas especializadas para lograr este sueño, además de inyervenciones en cirugía de mínima invasión mediante histeroscopia o cirugía laparoscopica ginecólogica",
+  "addresses": [
+    {
+      "full": "M. Hidalgo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Extracción cuerpo extraño por histeroscopia",
+      "price": ""
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-jaime-juarez-santacruz/ginecologo/leon#address-id=365576&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:25:31.915Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__h_ctor_jaime_ju_rez_santacruz.webp"
+}

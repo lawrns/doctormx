@@ -1,0 +1,18 @@
+{
+  "name": "Sandra Gabriela Rule Gomez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 274,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/988d29/988d29a40436062cabae86781e9f56f3_140_square.jpg",
+  "about": "Certificada por el Consejo Mexicano de Ginecología y Obstetricia Certificada en urología ginecológica Escuela Médico militar Escuela Militar de Graduados de Sanidad",
+  "addresses": [],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sandra-gabriela-rule-gomez/ginecologo/miguel-hidalgo#address-id=121736&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:40:47.058Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/sandra_gabriela_rule_gomez.webp"
+}

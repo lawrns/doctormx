@@ -1,0 +1,25 @@
+{
+  "name": "Adriana Flores Aboytes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 709,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/538013/538013562ccffa81143f15047b7faeb9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Lago El Colorado,104,Cumbres Del Lago,,"
+    },
+    {
+      "full": "Lago El Colorado,104,Cumbres Del Lago,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adriana-flores-aboytes/ginecologo/santiago-de-queretaro#address-id=358088&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:00:16.194Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/adriana_flores_aboytes.webp"
+}

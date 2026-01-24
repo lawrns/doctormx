@@ -1,0 +1,38 @@
+{
+  "name": "Dr. Jorge Peña Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a3c1b7/a3c1b741da28e3a1e0dda3d206c0dc93_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Boulevard Agua Caliente 9955,"
+    },
+    {
+      "full": "Boulevard Agua Caliente 9955,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Ultrasonido 4D",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-pena-sanchez/ginecologo/tijuana#address-id=439907&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:44:40.508Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__jorge_pe_a_s_nchez.webp"
+}

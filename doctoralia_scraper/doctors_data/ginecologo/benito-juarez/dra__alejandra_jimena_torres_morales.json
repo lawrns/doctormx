@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Alejandra Jimena Torres Morales",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 20,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ec63d09c/ec63d09c-a1cf-4b08-a538-79091b3fb826_small_square.jpg",
+  "about": "Sobre mí Hola! Soy la Dra. Jimena Torres, ginecoobstetra egresada de Hospital Central Norte de Pemex, me especializo en la salud femenina en todas sus etapas reproductivas incluyendo embarazo, he realizado diferentes diplomados entre los que se encuentran ultrasonido de mama, ultrasonido ginecológico y obstétrico, histeroscopia, cirugía de mínima invasión, entre otros. Elegí esta especialidad porque me apasiona todo la patología ginecológica y otra de mis pasiones es vigilancia y atención de embarazo, juntas podremos lograr un empoderamiento de tu salud física y sexual! ¿Por qué elegirme a mí? Te ofrezco una consulta de calidad, con resolución de problemas, incluyente (lengua de señas básico), juntas podemos apoyar el empoderamiento femenino y lograr un equilibrio en la vida sexual Principales áreas de tratamiento Tengo amplia experiencia en consulta sexual, enfermedades ginecológicas, manejo y vigilancia de vph, embarazo de bajo y alto riesgo y cirugía ginecológica de minima invasion Mi consulta y mi equipo Nos encontramos ubicados en colonia Granada en la Alcaldía MIGUEL HIDALGO, atrás de museo Soumaya y cerca de plaza Antara y Avenida Moliere, el consultorio se ubica en una torre medica la cual tiene equipo nuevo con otras especialidades en caso de ser necesario, contamos con laboratorio y estacionamiento Otros servicios Entre los servicios que ofrezco incluye consulta de ginecología y embarazo, métodos anticonceptivos, ultrasonido ginecológico, ultrasonido obstétrico, ultrasonido de mama, cirugía de mínima invasión, Histeroscopia, cesárea, atención de parto, estudio y tratamiento de vph Más sobre mí \"La salud es el regalo mas importante que puedes brindarte, cuidate y protegete\" <3",
+  "addresses": [
+    {
+      "full": "Cda. F.F.C.C. de Cuernavaca 780, 2o Piso,"
+    },
+    {
+      "full": "Félix Parra 153,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-jimena-torres-morales/ginecologo/miguel-hidalgo#address-id=569912&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:05:09.994Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__alejandra_jimena_torres_morales.webp"
+}

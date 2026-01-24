@@ -1,0 +1,60 @@
+{
+  "name": "Marisol Peraza Reyes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 482,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b1fc35/b1fc35904dd8142714a43b45da874da4_220_square.jpg",
+  "about": "Medico especialista en la atención de la mujer en todas sus etapas de la vida. Tratamiento de infecciones cervicovaginales, alteraciones del ciclo menstrual, dolor menstrual (dismenorrea), Tratamiento médico y quirúrgico del sangrado uterino anormal, miomatosis uterina (miomectomía, histerectomía), tumores de ovario (quistectomia, ooferectomia). Realizo biopsia endometrial en consultorio para estudiar las causas del sangrado anormal. Terapia de Reemplazo hormonal en la menopausia. Prevención del cáncer de mama y cáncer cérvicouterino (Realizando Colposcopía diagnóstica y terapéutica, con toma de Citología cervical convencional y en base líquida para la detección de Virus de alto riesgo, tratamiento de verrugas genitales). Asesoría de métodos de planificación familiar, brindando información y ayudando a elegir de forma individualizada. Colocación y retiro en consultorio del DIU (Dispositivo intrauterino), implante hormonal y hormonal inyectable. Aplicación de la vacuna del Virus del Papiloma Humano. Consejería a la adolescente sobre protección contra enfermedades de transmisión sexual y embarazo no deseado. Atención de las enfermedades ginecológicas en la infancia. Control del embarazo de bajo y alto riesgo, realizando ultrasonido obstétrico en cada visita. Atención del parto de forma humanizada y cesárea amigable. Apoyo a la Lactancia materna exclusiva. Mi principal interés es el bienestar de las pacientes, brindando una atención de calidad y un trato amable.",
+  "addresses": [
+    {
+      "full": "Calle 24 s/n x 7 y 7A Santa Gertrudis Copó.,"
+    },
+    {
+      "full": "Calle 40 & Calle 9,"
+    },
+    {
+      "full": "Calle 24 s/n x 7 y 7A Santa Gertrudis Copó.,"
+    },
+    {
+      "full": "Calle 40 & Calle 9,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marisol-peraza-reyes/ginecologo/yucatan#address-id=420913&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:34:44.421Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/marisol_peraza_reyes.webp"
+}

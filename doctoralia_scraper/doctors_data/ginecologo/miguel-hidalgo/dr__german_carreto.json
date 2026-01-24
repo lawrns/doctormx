@@ -1,0 +1,25 @@
+{
+  "name": "Dr. German Carreto",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 385,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/96c299/96c29965d0616b14dad30378edfddeb5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Consultorio 204, Calle Sur 132 No. 118, Las Americas,"
+    },
+    {
+      "full": "Consultorio 204, Calle Sur 132 No. 118, Las Americas,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/german-carreto/ginecologo/ciudad-de-mexico#address-id=154132&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:54:50.181Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__german_carreto.webp"
+}

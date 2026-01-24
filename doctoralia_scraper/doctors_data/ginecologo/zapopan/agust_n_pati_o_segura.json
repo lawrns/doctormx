@@ -1,0 +1,25 @@
+{
+  "name": "Agustín Patiño Segura",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 118,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/38870de9/38870de9-581d-4888-8169-e780041a216e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hospital #2438 Col Ladron De Guevara,"
+    },
+    {
+      "full": "Hospital #2438 Col Ladron De Guevara,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/agustin-patino-segura/ginecologo/guadalajara#address-id=148128&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:43:34.603Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/agust_n_pati_o_segura.webp"
+}

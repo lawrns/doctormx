@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Alejandra Alizbeth Gonzalez Carrillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1229,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/667f5a/667f5ae4015d4969f2fd045712355f6c_220_square.jpg",
+  "about": "Tu mejor opción!! con una atención integral especializada en la mujer en todas las etapas de su vida, con los mayores estándares de calidad y humanismo. Mi compromiso es brindarte un diagnóstico y tratamiento oportuno de forma accesible e integra, por lo que no tendrás que preocuparte por escoger otra vez quién será tu ginecóloga. ¡SALUD ENTRE MUJERES!",
+  "addresses": [
+    {
+      "full": "Blvd. Perdigón No 303, Col Brisas del Lago, León, Guanajuato (para cambios o cancelación de citas llamar al 3298165 fijo),"
+    },
+    {
+      "full": "Boulevard Perdigón 303,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $25"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-alizbeth-gonzalez-carrillo/ginecologo/leon#address-id=250441&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:27:03.474Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__alejandra_alizbeth_gonzalez_carrillo.webp"
+}

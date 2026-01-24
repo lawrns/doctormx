@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Cecilia Ochoa Ochoa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 81,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7486bf/7486bf984ee5b0b2b983446116eeb3f1_220_square.jpg",
+  "about": "Soy la Dra. Ceciila Ochoa Ochoa, médico especialista en Ginecología y Obstetricia, con alta especialidad en Colposcopía y patología del tracto genital inferior, será un placer para mí atenderte.",
+  "addresses": [
+    {
+      "full": "Calle Bajío 282,"
+    },
+    {
+      "full": "Avenida Estado de México 3913,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cecilia-ochoa-ochoa/ginecologo/metepec#address-id=542164&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:03:47.482Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__cecilia_ochoa_ochoa.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Alejandro Enrique Padilla Fitch",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 66,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/efc1f5c7/efc1f5c7-5cce-4b33-8301-cbacc4d40ef6_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Gobernador Lugo 3003,"
+    },
+    {
+      "full": "Manuel Doblado 402,"
+    },
+    {
+      "full": "Gobernador Lugo 3003,"
+    },
+    {
+      "full": "Manuel Doblado 402,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-enrique-padilla-fitch/ginecologo/tijuana#address-id=250094&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:50:18.048Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/alejandro_enrique_padilla_fitch.webp"
+}

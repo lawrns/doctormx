@@ -1,0 +1,42 @@
+{
+  "name": "Dra. Karla Ibarra Gordillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 106,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a7bd50/a7bd503d4654b3d406eff74f9996d6c8_220_square.jpg",
+  "about": "Especialista en Ginecología y Obstetricia certificada por el Colegio Mexicano de Ginecología y Obstetricia A.C. Diplomado en Bariatría y Colposcopia",
+  "addresses": [
+    {
+      "full": "Izúcar de Matamoros Centro, Puebla, Mexico,"
+    },
+    {
+      "full": "Izúcar de Matamoros Centro, Puebla, Mexico,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Segunda opinión médica",
+      "price": ""
+    },
+    {
+      "name": "Terapia de Reemplazo Hormonal (TRH)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-ibarra-gordillo/ginecologo/izucar-de-matamoros#address-id=516370&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:14:08.712Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__karla_ibarra_gordillo.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. José Alberto Díaz Anaya",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 181,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5ca6097a/5ca6097a-5e81-4c68-a194-cb2d6561d13b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 14 Sur 5101 Consultoruo 110, San Manue,"
+    },
+    {
+      "full": "Pino Suarez 25,"
+    },
+    {
+      "full": "14 Sur 5101,"
+    },
+    {
+      "full": "San Baltazar 1430,"
+    },
+    {
+      "full": "Calle 14 Sur 5101 Consultoruo 110, San Manue,"
+    },
+    {
+      "full": "Pino Suarez 25,"
+    },
+    {
+      "full": "14 Sur 5101,"
+    },
+    {
+      "full": "San Baltazar 1430,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-alberto-diaz-anaya/ginecologo/-#address-id=353175&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:16:33.211Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__jos__alberto_d_az_anaya.webp"
+}

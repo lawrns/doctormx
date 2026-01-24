@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Carolina Carrillo Quintero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 164,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/52bf88/52bf8866fd657155d5858a4a606ff407_220_square.jpg",
+  "about": "Especialidad en Ginecología y Obstetricia y Subespecialidad en Medicina Materno-Fetal Unidad Médica de Alta especialidad Gineco-obstetricia Centro Médico Nacional de Occidente IMSS Médico Certificado por el Consejo Mexicano de Ginecología y Obstetricia en ambas especialidades",
+  "addresses": [
+    {
+      "full": "C. Colomos 2110,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $750"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carolina-carrillo-quintero/ginecologo/guadalajara#address-id=423897&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:12:56.363Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__carolina_carrillo_quintero.webp"
+}

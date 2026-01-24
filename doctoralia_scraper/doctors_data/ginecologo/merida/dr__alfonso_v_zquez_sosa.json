@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Alfonso Vázquez Sosa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 787,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/249763/249763336bc99597ec5c1c403d00c61c_220_square.jpg",
+  "about": "Médico especialista en Ginecólogía y Obstetricia. Colposcopía y patología de tracto genital femenil. Certificado por el Consejo Mexicano de Ginecología y Obstetricia.",
+  "addresses": [
+    {
+      "full": "C.13 num 199G esquina con 20. Clinica Origen Primal. Col. García Ginerés.,"
+    },
+    {
+      "full": "C.13 num 199G esquina con 20. Clinica Origen Primal. Col. García Ginerés.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $7,700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfonso-vazquez-sosa/ginecologo/yucatan#address-id=471080&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:37:36.903Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__alfonso_v_zquez_sosa.webp"
+}

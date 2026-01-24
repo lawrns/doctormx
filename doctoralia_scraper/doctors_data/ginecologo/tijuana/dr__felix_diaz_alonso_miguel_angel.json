@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Felix Diaz Alonso Miguel Angel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 48,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/67dd3cf2/67dd3cf2-4696-40a6-b114-2c85666e979d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Cam Viejo A Tecate 16590,"
+    },
+    {
+      "full": "Calle Cam Viejo A Tecate 16590,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/felix-diaz-alonso-miguel-angel/ginecologo/tijuana#address-id=44925&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:47:37.883Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__felix_diaz_alonso_miguel_angel.webp"
+}

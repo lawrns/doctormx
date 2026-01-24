@@ -1,0 +1,64 @@
+{
+  "name": "Dr. Ruben Alonso Madera Rivas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 16,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/52b9bf/52b9bf50afcfdd17f000dfaf8bb5ae97_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "calle 76 Num 446 x 45 y 47 centro,"
+    },
+    {
+      "full": "Calle 76 446 (x45 y 47),"
+    },
+    {
+      "full": "calle 76 Num 446 x 45 y 47 centro,"
+    },
+    {
+      "full": "Calle 76 446 (x45 y 47),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía total",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía total",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ruben-alonso-madera-rivas/ginecologo/merida#address-id=13057&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:37:14.662Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__ruben_alonso_madera_rivas.webp"
+}

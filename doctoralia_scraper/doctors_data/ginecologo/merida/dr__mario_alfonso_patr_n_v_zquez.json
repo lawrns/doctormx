@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Mario Alfonso Patrón Vázquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 251,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/49ede3/49ede32b3bf219237d7edf70714e6407_220_square.jpg",
+  "about": "Soy el Dr. Mario Patrón, realicé mis estudios de especialista en Ginecología y Obstetricia en Mérida, Yuc., y posteriormente estudié la sub especialidad en Biología de la Reproducción Humana en el Instituto para el Estudio de la Concepción Humana (IECH) en Monterrey, NL., por un lapso de 2 años, tiempo durante el cual adquirí el conocimiento y adiestramiento para el diagnóstico de la pareja infértil así como el tratamiento, que abarca: inducciones de ovulación, inseminaciones intrauterinas, fertilización in vitro, laparoscopía e histeroscopía, entre otros.",
+  "addresses": [
+    {
+      "full": "Calle 24 S/N, Piso 7 Consultorio 701, Temozon Norte, Santa Gertrudis Copo,"
+    },
+    {
+      "full": "Calle 24 S/N, Piso 7 Consultorio 701, Temozon Norte, Santa Gertrudis Copo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mario-alfonso-patron-vazquez/ginecologo/yucatan#address-id=426856&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:34:49.759Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__mario_alfonso_patr_n_v_zquez.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. María José Díaz Huízar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b0e618/b0e61890d15f8fdd46399d83370440d9_220_square.jpg",
+  "about": "Majo siempre se preocupa porque las pacientes entiendan sus dudas. Estudió la carrera de Médica Cirujana en la Universidad Anáhuac y, posteriormente, realizó su especialidad en Métodos de Investigación Científica en la misma universidad. Además, egresó de la especialidad en Ginecología y Obstétrica en el Hospital Español de la Ciudad de México. Llegó a Plenna buscando un lugar donde lo más importante fuera la salud de las pacientes. Además de que le encanta su carrera, es una lectora empedernida y amante de las artes plásticas.",
+  "addresses": [
+    {
+      "full": "Plenna Polanco. Juan Vazquez de Mella 481, (Edificio Corporativo Mac Local PB3),"
+    },
+    {
+      "full": "Plenna Polanco. Juan Vazquez de Mella 481, (Edificio Corporativo Mac Local PB3),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Check up básico",
+      "price": "• $1,249"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,249"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,549"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $949"
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• $949"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-jose-diaz-huizar-2/ginecologo/miguel-hidalgo#address-id=507327&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:06:18.457Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__mar_a_jos__d_az_hu_zar.webp"
+}

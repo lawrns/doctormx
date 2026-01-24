@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Silvia Georgina Magaña Vega",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/60d915/60d91598819ff98d2c2d5115dac5bf30_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 26 199,"
+    },
+    {
+      "full": "Calle 26 199,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/silvia-georgina-magana-vega/ginecologo/merida#address-id=6975&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:44:33.929Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__silvia_georgina_maga_a_vega.webp"
+}

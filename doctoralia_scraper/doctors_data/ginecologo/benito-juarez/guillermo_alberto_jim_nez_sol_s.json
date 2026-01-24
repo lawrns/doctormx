@@ -1,0 +1,25 @@
+{
+  "name": "Guillermo Alberto Jiménez Solís",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 447,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/14e60f56/14e60f56-c319-4ff7-ba17-825f1e01f341_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Agrarismo No. 208, Col. Escandón,"
+    },
+    {
+      "full": "Agrarismo No. 208, Col. Escandón,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-alberto-jimenez-solis/ginecologo/ciudad-de-mexico#address-id=106741&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:16:35.730Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/guillermo_alberto_jim_nez_sol_s.webp"
+}

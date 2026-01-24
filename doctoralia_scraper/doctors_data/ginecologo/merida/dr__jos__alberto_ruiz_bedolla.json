@@ -1,0 +1,25 @@
+{
+  "name": "Dr. José Alberto Ruiz Bedolla",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 653,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5da054/5da0549cba8220ca64a7a47d330a668a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "13 A 712,"
+    },
+    {
+      "full": "13 A 712,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-alberto-ruiz-bedolla/ginecologo/merida#address-id=127950&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:43:57.091Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__jos__alberto_ruiz_bedolla.webp"
+}

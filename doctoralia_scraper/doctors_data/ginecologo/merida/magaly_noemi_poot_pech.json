@@ -1,0 +1,25 @@
+{
+  "name": "Magaly Noemi Poot Pech",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fb2cf6/fb2cf6af61faad9e0f1e1a6a48d8b5b5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "65,197,Cortes Sarmiento,,"
+    },
+    {
+      "full": "65,197,Cortes Sarmiento,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/magaly-noemi-poot-pech/ginecologo/merida#address-id=357842&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:49:09.721Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/magaly_noemi_poot_pech.webp"
+}

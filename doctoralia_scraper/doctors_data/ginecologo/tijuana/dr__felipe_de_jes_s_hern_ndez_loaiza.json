@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Felipe de Jesús Hernández Loaiza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 392,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/edd0d5/edd0d5dea21b9786f22f4574a26a103f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Villa De La Juventud 8800,"
+    },
+    {
+      "full": "Villa De La Juventud 8800,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/felipe-de-jesus-hernandez-loaiza/ginecologo/tijuana#address-id=3615&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:06:56.041Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__felipe_de_jes_s_hern_ndez_loaiza.webp"
+}

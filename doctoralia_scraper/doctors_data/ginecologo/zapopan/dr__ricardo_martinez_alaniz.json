@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Ricardo Martinez Alaniz",
+  "specialty": "Urología Ginecológica",
+  "rating": 5,
+  "reviewCount": 31,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/aa0de1d5/aa0de1d5-bfe1-49f9-a72e-3a6b66095b18_small_square.jpg",
+  "about": "¡Hola, bienvenida! Soy el Dr. Ricardo Martínez Alaniz. Mi misión es cuidar tu salud femenina con la más alta especialización y calidez humana en Guadalajara.Soy especialista en Ginecología y Obstetricia, con una subespecialidad en Urología Ginecológica (Uroginecología). Estoy certificado por el Consejo Mexicano de Ginecología y Obstetricia, lo que garantiza una atención ética y actualizada.Mi enfoque es ofrecerte un cuidado integral para que no tengas que acudir a distintos especialistas. Te acompaño en cada etapa:Como Ginecólogo: Realizo tu Check-up anual, Papanicolaou, detección y tratamiento de VPH (Virus del Papiloma Humano), ultrasonidos y control de miomas, quistes, endometriosis y menopausia.Como Obstetra: Brindo control prenatal experto para asegurar un embarazo saludable y un nacimiento seguro para ti y tu bebé.Como Uroginecólogo (Experto en Piso Pélvico): Resuelvo problemas que muchas veces se callan, como la incontinencia urinaria (pérdidas de orina), el prolapso (vejiga caída), infecciones urinarias recurrentes y dolor pélvico.En mi consultorio en Arcos Vallarta (zona Minerva) Guadalajara, contamos con tecnología de vanguardia como Láser CO2, ideal para el tensado vaginal y resequedad, así como técnicas de cirugía de mínima invasión y estética vaginal.Mi compromiso es escucharte con empatía, explicarte tus opciones con claridad y encontrar la mejor solución para que recuperes tu calidad de vida. ¡Agenda tu cita, estoy listo para ayudarte a sentirte plena nuevamente!",
+  "addresses": [
+    {
+      "full": "C. Duque de Rivas 119,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-martinez-alaniz/ginecologo/guadalajara#address-id=596933&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:10:39.827Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__ricardo_martinez_alaniz.webp"
+}

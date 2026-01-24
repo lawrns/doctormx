@@ -1,0 +1,25 @@
+{
+  "name": "Jose German Santillana Arandia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 213,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a806a8/a806a8ccd0e3d24562bee57d3374d7b1_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "39 Ote. 1213,"
+    },
+    {
+      "full": "39 Ote. 1213,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-german-santillana-arandia/ginecologo/puebla#address-id=210570&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:33:24.409Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/jose_german_santillana_arandia.webp"
+}

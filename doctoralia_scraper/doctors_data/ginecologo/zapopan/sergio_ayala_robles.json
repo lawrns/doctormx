@@ -1,0 +1,31 @@
+{
+  "name": "Sergio Ayala Robles",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 235,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/bad1dc4a/bad1dc4a-b1c2-4a14-a48c-b3d75af2383d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Isla Raza 2611A,"
+    },
+    {
+      "full": "Av. Washington 1988,"
+    },
+    {
+      "full": "Isla Raza 2611A,"
+    },
+    {
+      "full": "Av. Washington 1988,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-ayala-robles/ginecologo/guadalajara#address-id=172361&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:44:51.161Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/sergio_ayala_robles.webp"
+}

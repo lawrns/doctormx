@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Isabel Thalia Ballesteros González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 486,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/351208/351208dea4c727e6439e66f8d96f7e01.jpg",
+  "about": "Hola, soy la Dra. Thalía Ballesteros, medico cirujano y partero, especialista en Ginecología y Obstétricia, con formación complementaria en colposcopia y patología del tracto genital femenino así como ultrasonido obstétrico y ginecológico, con más de 7 años de experiencia en la materia y egresada de las mejores universidades públicas y privadas (UDG, UNAM y LaSalle). Inicio este proyecto de Atención integral de la mujer comprometida con la salud femenina, ahora en Guadalajara, la ciudad que me vio nacer como médico y que motivo mi preparación como especialista. La atención que brindo se orienta al cuidado y salud del aparato reproductor femenino en todas las etapas de la vida, así como a la reproducción, embarazo, atención de nacimiento y cuidados posnatales, de manera cálida y respetuosa, con el mayor entendimiento y empatía del proceso e historia natural de tu padecimiento, brindándote la satisfacción y la confianza de poner su salud en buenas manos.",
+  "addresses": [
+    {
+      "full": "Torre Médica Providencia. Avenida Pablo Neruda 3265 Interior 41 Col. Providencia 4ta sección,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/isabel-thalia-ballesteros-gonzalez/ginecologo/guadalajara#address-id=335131&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:08:38.279Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__isabel_thalia_ballesteros_gonz_lez.webp"
+}

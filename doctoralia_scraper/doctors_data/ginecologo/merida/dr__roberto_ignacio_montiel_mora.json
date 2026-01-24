@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Roberto Ignacio Montiel Mora",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 45,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/62d45a6f/62d45a6f-835b-4aa4-bdb0-7002ad63c649_small_square.jpg",
+  "about": "Soy un médico comprometido en la salud de mis pacientes, mejorando su calidad de vida, impactando en sus ámbitos afectivos, sociales y sexuales. Mi especialidad (Ginecología y Obstetricia) y mi subespecialidad (Urología Ginecológica) me permite ofrecer una gamma de servicios y soluciones a pacientes con incontinencia urinaria, incontinencia anal, prolapso de órganos pélvicos, dolor pélvico crónico entre otros. Estos padecimientos afectan a pacientes mayores de 50 años, en algunos casos a pacientes más jóvenes, disminuyendo la calidad de vida e impiden incluso actividades de la vida diaria. Soy pionero en el Hospital Adolfo López Mateos del ISSSTE y en el Hospital Agustin Horan en realizar cirugías anti-incontinencia y cirugías para prolapso, con excelentes resultados y poca morbilidad, esto ha brindado a mis pacientes soluciones reales y definitivas con una rápida incorporación a su vida cotidiana. Acude conmigo y juntos encontraremos una respuesta a tu problema de salud. ¡Te espero!",
+  "addresses": [
+    {
+      "full": "C. 15 501,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Histerectomía vaginal",
+      "price": "• Desde $45,000"
+    },
+    {
+      "name": "Primera visita a uroginecología",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-ignacio-montiel-mora/ginecologo/yucatan#address-id=572563&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:29:37.993Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__roberto_ignacio_montiel_mora.webp"
+}

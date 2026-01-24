@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Eustasio González y Moctezuma",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c66f70/c66f708e583901ef8818134e38d04883_220_square.jpg",
+  "about": "Soy el Dr Eustasio Gonzalez y Moctezuma, llevo casi 40 ejerciendo esta profesión que me apasiona. Actualmente estoy atendiendo generaciones a las cuales traje al mundo y el día de hoy me solicitan para poder traer a sus hijos. Me interesa tu salud física y emocional.",
+  "addresses": [
+    {
+      "full": "C. 12 A Sur 3518, Anzures, 72530 Puebla, Pue.,"
+    },
+    {
+      "full": "C. 12 A Sur 3518, Anzures, 72530 Puebla, Pue.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eustasio-gonzalez-y-moctezuma/ginecologo/puebla#address-id=413029&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:13:10.120Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__eustasio_gonz_lez_y_moctezuma.webp"
+}

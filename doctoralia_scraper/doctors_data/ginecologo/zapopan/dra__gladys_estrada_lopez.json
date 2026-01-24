@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Gladys Estrada Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 250,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d58d3f/d58d3f11071f5ea7cdb4c6426f89d68a_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911, Poniente, 45136 Zapopan, Jal.,"
+    },
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911, Poniente, 45136 Zapopan, Jal.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gladys-estrada-lopez/ginecologo/zapopan#address-id=415124&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:16:50.815Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__gladys_estrada_lopez.webp"
+}

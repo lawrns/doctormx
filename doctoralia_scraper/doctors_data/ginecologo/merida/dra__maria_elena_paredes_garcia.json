@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Maria Elena Paredes Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 454,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e9cc16/e9cc169169f0114b96510484d7a9ce37_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 33 a 469 a,"
+    },
+    {
+      "full": "Calle 33 a 469 a,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-elena-paredes-garcia/ginecologo/yucatan#address-id=515962&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:43:28.677Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__maria_elena_paredes_garcia.webp"
+}

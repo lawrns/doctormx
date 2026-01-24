@@ -1,0 +1,31 @@
+{
+  "name": "Ernesto Calderon Cisneros",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e540af/e540af94779fbf61006cbae8f70295e8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Durango 245,"
+    },
+    {
+      "full": "Av. Homero 1425,"
+    },
+    {
+      "full": "Durango 245,"
+    },
+    {
+      "full": "Av. Homero 1425,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ernesto-calderon-cisneros/ginecologo/ciudad-de-mexico#address-id=230627&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:43:45.129Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/ernesto_calderon_cisneros.webp"
+}

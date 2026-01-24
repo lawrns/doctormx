@@ -1,0 +1,69 @@
+{
+  "name": "Dra. Mariana Mendoza Buchelli",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1655,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fdeb08/fdeb08fa15af49ae9a407dd6dbe596ee_220_square.jpg",
+  "about": "Consulta de Ginecología, en un ambiente cálido y relajado, de total confianza y confidencialidad donde podremos resolver dudas sobre métodos anticonceptivos, aspectos del ámbito sexual, embarazo, lactancia, menopausia, así como otros síntomas. Ultrasonido 4D, ultrasonido pélvico, revisión mamaria, asesoría y colocación de métodos anticonceptivos como DIU o Implante subdérmico. ginecólogos Tlajomulco",
+  "addresses": [
+    {
+      "full": "Av. Adolfo López Mateos Sur 1401, La Tijera,"
+    },
+    {
+      "full": "Av. Adolfo López Mateos Sur 1401, La Tijera,,"
+    },
+    {
+      "full": "Av. Adolfo López Mateos Sur 1401, La Tijera,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mariana-mendoza-buchelli/ginecologo/tlajomulco-de-zuniga#address-id=108855&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:15:51.697Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__mariana_mendoza_buchelli.webp"
+}

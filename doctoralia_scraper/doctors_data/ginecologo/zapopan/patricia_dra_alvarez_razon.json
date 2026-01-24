@@ -1,0 +1,25 @@
+{
+  "name": "Patricia Dra Alvarez Razon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 304,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/22f5cb/22f5cb3a362b7b559300892c6ad03747_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Americas No. 137 No. 8 Ladron De Guevara,"
+    },
+    {
+      "full": "Americas No. 137 No. 8 Ladron De Guevara,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/patricia-dra-alvarez-razon/ginecologo/guadalajara#address-id=125315&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:43:11.955Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/patricia_dra_alvarez_razon.webp"
+}

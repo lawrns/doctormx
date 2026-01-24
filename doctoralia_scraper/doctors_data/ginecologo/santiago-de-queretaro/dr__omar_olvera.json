@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Omar Olvera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 253,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bffbe3/bffbe30cd6bd95f2b8d184d7b7474792_220_square.jpg",
+  "about": "Médico Ginecólogo Especialista en Reproducción Asistida con Subespecialidad en Biología de la Reproducción Humana. Dedicado exclusivamente a la Reproducción Asistida lo que me permite alcanzar un alto grado de desarrollo científico para aplicar la tecnología médica, quirúrgica (laparoscopia, histeroscopia) y de laboratorio disponible ofreciendo información clara y sincera sobre tu pronóstico reproductivo.",
+  "addresses": [
+    {
+      "full": "HOSPITAL ÁNGELES CENTRO SUR PISO 18 Boulevard Bernardo Quintana Arrioja #9670, Centro Sur.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/omar-olvera/ginecologo/santiago-de-queretaro",
+  "scrapedAt": "2026-01-22T03:41:38.845Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__omar_olvera.webp"
+}

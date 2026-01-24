@@ -1,0 +1,25 @@
+{
+  "name": "Felipe Repper Camacho",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 44,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c76093/c760938459a52717b489ef8730e1ea16_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Agrarismo (Hospital Angeles Mexico Torre A), 208, Cons. 901-A,"
+    },
+    {
+      "full": "Agrarismo (Hospital Angeles Mexico Torre A), 208, Cons. 901-A,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/felipe-repper-camacho/ginecologo/miguel-hidalgo#address-id=77241&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:55:20.658Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/felipe_repper_camacho.webp"
+}

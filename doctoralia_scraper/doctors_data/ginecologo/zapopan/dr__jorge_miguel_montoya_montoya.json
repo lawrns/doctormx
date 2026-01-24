@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jorge Miguel Montoya Montoya",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/aa0de1d5/aa0de1d5-bfe1-49f9-a72e-3a6b66095b18_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "vAve. La Paz 2758 Arcos Vallarta Guadalajara (Jalisco) 36301355, 36301362, 36301359 Teléfono : 33-3615-8584 ,"
+    },
+    {
+      "full": "vAve. La Paz 2758 Arcos Vallarta Guadalajara (Jalisco) 36301355, 36301362, 36301359 Teléfono : 33-3615-8584 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    },
+    {
+      "name": "Miomectomía por histeroscopia",
+      "price": ""
+    },
+    {
+      "name": "Quistectomía de ovario por laparoscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-miguel-montoya-montoya/ginecologo/guadalajara#address-id=64736&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:28:40.277Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jorge_miguel_montoya_montoya.webp"
+}

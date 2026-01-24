@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Luis Fernando Alvarez Valenzuela",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 49,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/288a81/288a817f3a75f186e6324a662f243a45_220_square.jpg",
+  "about": "Soy el Dr. Fernando Alvarez especialista en ginecología y obstetricia, dedicado al cuidado de la salud femenina en todas las etapas de la vida. Mi objetivo es brindar una atención personalizada, basada en la confianza, el respeto y la evidencia médica, acompañando a cada paciente con calidez y profesionalismo. Ofrezco un enfoque integral para el diagnóstico, tratamiento y prevención de enfermedades ginecológicas, así como un acompañamiento cercano y seguro durante el embarazo, parto y posparto. Mi compromiso es ayudarte a tomar decisiones informadas sobre tu salud, en un espacio de confianza y escucha. Áreas de atención: - Control prenatal y atención del embarazo - Planificación familiar y anticoncepción - Ginecología general (revisión anual, papanicolaou, infecciones) - Salud hormonal y climaterio - Detección temprana de cáncer cervicouterino y de mama - Cirugía ginecológica mínimamente invasiva - Hemorragia Uterina Anormal - Síndrome de Ovario Poliquístico Estoy aquí para apoyarte en cada etapa de tu vida. PERMITEME SER PARTE DE TU NUEVA ETAPA y da el paso hacia un cuidado profesional y humano.",
+  "addresses": [
+    {
+      "full": "Blvd. Bernardo Quintana 2906,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-fernando-alvarez-valenzuela/ginecologo/queretaro#address-id=502490&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:47:08.251Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__luis_fernando_alvarez_valenzuela.webp"
+}

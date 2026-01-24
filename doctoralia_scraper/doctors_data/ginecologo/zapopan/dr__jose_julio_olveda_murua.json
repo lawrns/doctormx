@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Jose Julio Olveda Murua",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f2072f/f2072fd48f6b1b626e72517a4114f5cc_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Nebulosa 2923,"
+    },
+    {
+      "full": "Nebulosa 2923,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-julio-olveda-murua/ginecologo/guadalajara#address-id=6256&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:30:20.519Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jose_julio_olveda_murua.webp"
+}

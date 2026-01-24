@@ -1,0 +1,31 @@
+{
+  "name": "Jose Luis Morales Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/76acd50f/76acd50f-f1e6-47cf-bb47-ff2f76bf2ba9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "LEIBNITZ 1 PISO 8,"
+    },
+    {
+      "full": "Ejercito Nacional No. 613, Col. Granada,"
+    },
+    {
+      "full": "LEIBNITZ 1 PISO 8,"
+    },
+    {
+      "full": "Ejercito Nacional No. 613, Col. Granada,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-luis-morales-gonzalez-2/ginecologo/ciudad-de-mexico#address-id=135730&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:55:29.410Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/jose_luis_morales_gonzalez.webp"
+}

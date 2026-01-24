@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Fausto Zarate",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 94,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/deb3cd/deb3cd3ed1cad291336aca57505be76a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Conj Rancho Alegre 302 20,"
+    },
+    {
+      "full": "Conj Rancho Alegre 302 20,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fausto-zarate/ginecologo/tijuana#address-id=42569&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:05:29.475Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__fausto_zarate.webp"
+}

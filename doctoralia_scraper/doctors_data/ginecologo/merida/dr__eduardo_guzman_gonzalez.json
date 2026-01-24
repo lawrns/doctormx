@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Eduardo Guzman Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 111,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4bc737/4bc737b6b92be6cfb355624dd8d7d7b2_220_square.jpg",
+  "about": "Ginecólogo con reconocida trayectoria en reproducción asistida humana y cirugía reproductiva en el sureste mexicano. Promotor de los derechos reproductivos y el ejercicio médico con valor en la atención de la salud de la mujer. Pionero en nuevos protocolos para el estudio y tratamiento del aborto recurrente, la infertilidad y los tratamientos de fertilización in vitro. Miembro de diversas asociaciones medicas. Autor y coautor de publicaciones en temas relacionados con la infertilidad y cirugia reproductiva.",
+  "addresses": [
+    {
+      "full": "Calle 24 s/n x 7 y 7A Santa Gertrudis Copo Merida Yucatan,"
+    },
+    {
+      "full": "Calle 24 s/n x 7 y 7A Santa Gertrudis Copo Merida Yucatan,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-guzman-gonzalez/ginecologo/yucatan#address-id=324528&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:34:38.469Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__eduardo_guzman_gonzalez.webp"
+}

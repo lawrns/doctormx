@@ -1,0 +1,30 @@
+{
+  "name": "Reyna Gamboa Leon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 203,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d6e347/d6e34701b35848fcc6d71fc9d6376173_220_square.jpg",
+  "about": "Médico especialista en Ginecologìa y Obstetricia egresada de la Universidad Autonoma de Yucatan con 20 años de experiencia, enfocada a mejorar la salud de mis pacientes en problemas ginecólogos. Lo que mas me gusta de mi especialidad es mejorar la calidad de vida de mis pacientes al resolver sus problemas médicos con excelencia.",
+  "addresses": [
+    {
+      "full": "C. 7 215-A, García Ginerés,"
+    },
+    {
+      "full": "C. 7 215-A, García Ginerés,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/reyna-gamboa-leon/ginecologo/yucatan#address-id=66848&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:34:53.859Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/reyna_gamboa_leon.webp"
+}

@@ -1,0 +1,56 @@
+{
+  "name": "Dra. Consuelo Hernandez Alvarez",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 6,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6a2abd/6a2abdf5798989a1be47c7bdc140a169_220_square.jpg",
+  "about": "Licenciatura Medico Cirujano Universidad Autónoma de Guadalajara Especialidad Ginecologia y Obstetricia Hospital Angeles Pedregal CDMX Especialidad en Gestión en la Salud y Bienestar Corporativo Universidad Anahuac Maestría Dirección y Gestión de Instituciones de Salud. Universidad Anahuac. Maestría Senología y Patología Mamaria Universidad de Barcelona Dirección e Investigación y Desarrollo de Protocolos de investigación en Medicina Regenerativa",
+  "addresses": [
+    {
+      "full": "Hombres Ilustres 20 Mexiquito San Agustin Tlaxiaca,"
+    },
+    {
+      "full": "Hegel 120,"
+    },
+    {
+      "full": "Hombres Ilustres 20 Mexiquito San Agustin Tlaxiaca,"
+    },
+    {
+      "full": "Hegel 120,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Medicina Regenerativa",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento para menopausia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/consuelo-hernandez-alvarez/ginecologo-medico-general/puebla#address-id=237531&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:04:04.079Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__consuelo_hernandez_alvarez.webp"
+}

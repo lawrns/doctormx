@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Héctor Blaz Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 291,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/225afd/225afdda85a2516dcd0fc461cad3c9ab_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Bugambilias 302,"
+    },
+    {
+      "full": "Emiliano Zapata 65,"
+    },
+    {
+      "full": "Puente De Alvarado 403,"
+    },
+    {
+      "full": "Bugambilias 302,"
+    },
+    {
+      "full": "Emiliano Zapata 65,"
+    },
+    {
+      "full": "Puente De Alvarado 403,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-blaz-rodriguez/ginecologo/santiago-de-queretaro#address-id=221599&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:53:54.650Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__h_ctor_blaz_rodr_guez.webp"
+}

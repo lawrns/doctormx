@@ -1,0 +1,25 @@
+{
+  "name": "Carlos Tomás Flores Uribe",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 677,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c0fa83/c0fa8332456d314c980e2d7ebf72856b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Ignacio Vallarta 6104,"
+    },
+    {
+      "full": "Avenida Ignacio Vallarta 6104,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-tomas-flores-uribe/ginecologo/chihuahua#address-id=100994&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:37:17.492Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/carlos_tom_s_flores_uribe.webp"
+}

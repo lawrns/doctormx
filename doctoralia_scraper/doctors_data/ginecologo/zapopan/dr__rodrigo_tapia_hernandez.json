@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Rodrigo Tapia Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 179,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7bb6d0/7bb6d0df0692de6ed6fcae6b1517b615_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Tepeyac 115,"
+    },
+    {
+      "full": "Av. Tepeyac 115,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rodrigo-tapia-hernandez/ginecologo/zapopan#address-id=95871&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:36:28.980Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__rodrigo_tapia_hernandez.webp"
+}

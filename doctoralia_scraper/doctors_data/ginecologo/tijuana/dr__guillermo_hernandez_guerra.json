@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Guillermo Hernandez Guerra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 418,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/aaa002/aaa002ab73d2b22a98692a38215e66e3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Zarco 3003,"
+    },
+    {
+      "full": "Perif. Ortiz Mena 3303,"
+    },
+    {
+      "full": "Av. Francisco Zarco 3003,"
+    },
+    {
+      "full": "Prol. Div. Del Nte.,"
+    },
+    {
+      "full": "Zarco 3003,"
+    },
+    {
+      "full": "Perif. Ortiz Mena 3303,"
+    },
+    {
+      "full": "Av. Francisco Zarco 3003,"
+    },
+    {
+      "full": "Prol. Div. Del Nte.,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-hernandez-guerra-2/ginecologo/tijuana#address-id=42578&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:45:35.589Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__guillermo_hernandez_guerra.webp"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Jose Luis Lepe Jimenez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 71,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0189cb/0189cb14e8b9f0113924a8f062eec942_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Sanchez Taboada 10102,"
+    },
+    {
+      "full": "Erasmo Castellanos 18,"
+    },
+    {
+      "full": "Erasmo Castellanos 1874,"
+    },
+    {
+      "full": "Blvd. Sanchez Taboada 10102,"
+    },
+    {
+      "full": "Erasmo Castellanos 18,"
+    },
+    {
+      "full": "Erasmo Castellanos 1874,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-luis-lepe-jimenez/ginecologo/tijuana#address-id=209334&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:07:27.582Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/jose_luis_lepe_jimenez.webp"
+}

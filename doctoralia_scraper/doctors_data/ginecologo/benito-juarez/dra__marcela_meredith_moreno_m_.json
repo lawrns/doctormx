@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Marcela Meredith Moreno M.",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 160,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ba3765/ba3765979d0d7ea3b861d1fd02e3adeb_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Saturnino Herrán 59 Col. San José Insurgentes ,"
+    },
+    {
+      "full": "Saturnino Herrán 59 Col. San José Insurgentes ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marcela-meredith-moreno-m/ginecologo/benito-juarez#address-id=358966&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:21:53.121Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__marcela_meredith_moreno_m_.webp"
+}

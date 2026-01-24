@@ -1,0 +1,35 @@
+{
+  "name": "Dr. Eduardo Apolicán Juárez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 160,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/4db0e02e/4db0e02e-0efb-4ef2-9058-9db012f24e4e_small_square.jpg",
+  "about": "Soy el Dr. Eduardo Apolicán especialista en Ginecología y Obstetricia por la Universidad Autónoma de Sinaloa. Estoy certificado por el Consejo Mexicano de Ginecología y Obstetricia. Como ginecólogo me dedico a acompañarte en el proyecto más grande de tu vida, llevando de la mano tu embarazo y creando juntos una hermosa experiencia de nacimiento. Trato problemas en la mujer en etapa reproductiva, climaterio y menopausia, desde el diagnostico, escuchando todas tus preocupaciones, hasta el tratamiento, brindando una adecuada atención para ayudarles a recuperar su salud. Cuento con Adiestramiento OSLS, adquiriendo las competencias técnicas y humanísticas para la atención quirúrgica especializada de la Hemorragia Obstétrica",
+  "addresses": [
+    {
+      "full": "Blvd. Aeropuerto 101,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Vacuna virus del papiloma humano",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-apolican-juarez/ginecologo/leon#address-id=456562&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:26:41.166Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__eduardo_apolic_n_ju_rez.webp"
+}

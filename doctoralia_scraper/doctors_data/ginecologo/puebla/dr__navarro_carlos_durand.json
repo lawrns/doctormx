@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Navarro Carlos Durand",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8ac007/8ac0077b0fc08bd4999b3f0107b862dc_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Diag Ignacio Zaragoza 5128 20,"
+    },
+    {
+      "full": "Diag Ignacio Zaragoza 5128 20,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/navarro-carlos-durand/ginecologo/puebla#address-id=37291&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:24:47.702Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__navarro_carlos_durand.webp"
+}

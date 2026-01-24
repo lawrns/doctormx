@@ -1,0 +1,31 @@
+{
+  "name": "Salvador Campos Campos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 432,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5aff7c/5aff7c93716e1f020e3198896b6e014f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Irapuato 713,"
+    },
+    {
+      "full": "C. México Insurgentes,"
+    },
+    {
+      "full": "Irapuato 713,"
+    },
+    {
+      "full": "C. México Insurgentes,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/salvador-campos-campos/ginecologo/leon#address-id=174150&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:35:25.781Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/salvador_campos_campos.webp"
+}

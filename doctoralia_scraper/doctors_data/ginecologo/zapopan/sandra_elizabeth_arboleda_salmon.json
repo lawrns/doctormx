@@ -1,0 +1,31 @@
+{
+  "name": "Sandra Elizabeth Arboleda Salmon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 63,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/632eb0/632eb03474de68f0eaf5a0ccb1aaf657_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Dr. Ángel Leaño 500,"
+    },
+    {
+      "full": "Av. Guadalupe 4064,"
+    },
+    {
+      "full": "Av. Dr. Ángel Leaño 500,"
+    },
+    {
+      "full": "Av. Guadalupe 4064,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sandra-elizabeth-arboleda-salmon/ginecologo/zapopan#address-id=173600&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:42:56.796Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/sandra_elizabeth_arboleda_salmon.webp"
+}

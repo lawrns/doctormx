@@ -1,0 +1,40 @@
+{
+  "name": "Dr. Cesar Ignacio Figueroa Cal y Mayor",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/1a8e4fbe/1a8e4fbe-d251-4521-99f7-05fd8688c70a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Gelati No. 29, Col. San Miguel Chapultepec,"
+    },
+    {
+      "full": "Gregorio V. Gelati 29,"
+    },
+    {
+      "full": "Gelati No. 29, Col. San Miguel Chapultepec,"
+    },
+    {
+      "full": "Gregorio V. Gelati 29,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cesar-ignacio-figueroa-cal-y-mayor/ginecologo/ciudad-de-mexico#address-id=104279&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:41:13.917Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__cesar_ignacio_figueroa_cal_y_mayor.webp"
+}

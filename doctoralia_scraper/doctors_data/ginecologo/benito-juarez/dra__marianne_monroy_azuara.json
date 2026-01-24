@@ -1,0 +1,34 @@
+{
+  "name": "Dra. Marianne Monroy Azuara",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/07c438e3/07c438e3-2998-4f72-a3f9-39d51e5d1085_large.jpg",
+  "about": "Soy ginecóloga y obstetra con un enfoque integral en la salud de la mujer, comprometida con brindar una atención cercana, profesional y actualizada en cada etapa de la vida. Me especializo en el cuidado del embarazo, control ginecológico, salud hormonal y prevención de enfermedades de transmisión sexual. Mi prioridad es crear un espacio de confianza donde cada paciente se sienta escuchada, comprendida y acompañada en sus decisiones de salud. Me actualizo constantemente para ofrecer tratamientos basados en evidencia, combinando tecnología médica con un trato humano y empático.",
+  "addresses": [
+    {
+      "full": "Avenida Universidad 1080,"
+    },
+    {
+      "full": "Avenida Universidad 1080,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta con ultrasonido",
+      "price": "• Desde $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marianne-monroy-azuara/ginecologo/ciudad-de-mexico#address-id=571274&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:06:10.376Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__marianne_monroy_azuara.webp"
+}

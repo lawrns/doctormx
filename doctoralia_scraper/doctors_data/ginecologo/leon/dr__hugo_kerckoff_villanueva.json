@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Hugo Kerckoff Villanueva",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/863a954e/863a954e-86b5-48c2-92ae-b143026041cf_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "PRIVADA APOLO XI 101 A (TORRE MEDICA CAMPESTRE II, SEGUNDO PISO CONSULTORIO 211),"
+    },
+    {
+      "full": "Manantial 106,"
+    },
+    {
+      "full": "PRIVADA APOLO XI 101 A (TORRE MEDICA CAMPESTRE II, SEGUNDO PISO CONSULTORIO 211),"
+    },
+    {
+      "full": "Manantial 106,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hugo-kerckoff-villanueva/ginecologo/leon#address-id=2630&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:29:15.030Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__hugo_kerckoff_villanueva.webp"
+}

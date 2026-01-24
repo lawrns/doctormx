@@ -1,0 +1,72 @@
+{
+  "name": "Lidia Patricia Díaz Cervantes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 614,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3686b7/3686b764da417d545782a52ccee05c1c.jpg",
+  "about": "Dra. Lidia Patricia Díaz Cervantes Médico Cirujano y Partero por la Universidad de Guadalajara Especialidad en Ginecología y Obstetricia por la Universidad Autónoma de Zacatecas Subespecialidad en Medicina Crítica en a Obstetricia por la Universidad Autónoma del Estado de México Diplomado en colposcopia 15 Años de experiencia",
+  "addresses": [
+    {
+      "full": "Privada David Rosales 33,"
+    },
+    {
+      "full": "Misión de Santo Tomás 810,"
+    },
+    {
+      "full": "Privada David Rosales 33,"
+    },
+    {
+      "full": "Misión de Santo Tomás 810,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta de urgencia o nocturna",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lidia-patricia-diaz-cervantes/ginecologo-cirujano-general/zapopan#address-id=404467&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:16:02.801Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/lidia_patricia_d_az_cervantes.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Marta Maria Madiedo Camargo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 30,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/992fe4e2/992fe4e2-3a73-4cae-a3e4-6658a08b10b0_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Paseo Pedregal 1063,"
+    },
+    {
+      "full": "Paseo Pedregal 1063,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marta-maria-madiedo-camargo/ginecologo/tijuana#address-id=189144&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:24:33.020Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/marta_maria_madiedo_camargo.webp"
+}

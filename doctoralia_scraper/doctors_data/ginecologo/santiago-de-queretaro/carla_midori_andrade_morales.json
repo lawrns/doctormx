@@ -1,0 +1,30 @@
+{
+  "name": "Carla Midori Andrade Morales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 109,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/af5cf0/af5cf0c95e55cbc5596a11d508fd6427_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. de las Ciencias 2058,"
+    },
+    {
+      "full": "Av. de las Ciencias 2058,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carla-midori-andrade-morales-2/ginecologo/queretaro#address-id=572838&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:54:01.338Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/carla_midori_andrade_morales.webp"
+}

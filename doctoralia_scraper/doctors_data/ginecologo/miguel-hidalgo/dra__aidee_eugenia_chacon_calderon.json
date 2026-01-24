@@ -1,0 +1,64 @@
+{
+  "name": "Dra. Aidee Eugenia Chacon Calderon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/2545435a/2545435a-d681-4453-8a2f-31881cb63591_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "RIO TIBER 21. (2ndo. PISO),"
+    },
+    {
+      "full": "Río Tiber 21,"
+    },
+    {
+      "full": "RIO TIBER 21. (2ndo. PISO),"
+    },
+    {
+      "full": "Río Tiber 21,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aidee-eugenia-chacon-calderon/ginecologo/cuauhtemoc#address-id=3741&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:22:24.555Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__aidee_eugenia_chacon_calderon.webp"
+}

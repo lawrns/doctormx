@@ -1,0 +1,25 @@
+{
+  "name": "Claudia Maria Martinez Anaya",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 135,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f281d4/f281d45d0cf147045af70d745cb6da40_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Grupo Amplio,108,Fracc Eyupol,,"
+    },
+    {
+      "full": "Grupo Amplio,108,Fracc Eyupol,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/claudia-maria-martinez-anaya/ginecologo/leon#address-id=358059&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:36:02.647Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/claudia_maria_martinez_anaya.webp"
+}

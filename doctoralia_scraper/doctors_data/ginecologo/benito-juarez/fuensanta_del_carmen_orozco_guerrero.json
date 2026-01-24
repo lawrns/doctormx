@@ -1,0 +1,25 @@
+{
+  "name": "Fuensanta Del Carmen Orozco Guerrero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 477,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4751aa/4751aaf67a5f3ab41bcec4e24734706f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Sur 73 136, Col. El Prado, ,"
+    },
+    {
+      "full": "Sur 73 136, Col. El Prado, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fuensanta-del-carmen-orozco-guerrero/ginecologo/iztapalapa#address-id=355707&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:20:15.497Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/fuensanta_del_carmen_orozco_guerrero.webp"
+}

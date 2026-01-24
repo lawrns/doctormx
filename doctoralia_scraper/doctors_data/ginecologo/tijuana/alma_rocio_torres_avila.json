@@ -1,0 +1,25 @@
+{
+  "name": "Alma Rocio Torres Avila",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 492,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ce2c81/ce2c81c207616c8fe4094982bdc8267b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Gobernador Lugo 3003,"
+    },
+    {
+      "full": "Gobernador Lugo 3003,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alma-rocio-torres-avila-2/ginecologo/tijuana#address-id=80373&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:05:35.530Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/alma_rocio_torres_avila.webp"
+}

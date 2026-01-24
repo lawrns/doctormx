@@ -1,0 +1,27 @@
+{
+  "name": "Dr. Paul Garcia Guerra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 385,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6d118e/6d118ef88a6350c52a65e40c8bdcdbe8_220_square.jpg",
+  "about": "Especialista en Naprotecnología/Fertilidad-Parto humanizado- Ginecología Funcional. La Naprotecnología (Tecnología de la Procreación Natural) es un enfoque médico avanzo para la salud reproductiva y la fertilidad, basado en el monitoreo detallado del ciclo menstrual y la corrección de desequilibrios hormonales y ginecológicos. A diferencia de los tratamientos convencionales de reproducción asistida, la Naprotecnología busca identificar y tratar las causas subyacentes de la infertilidad de manera personalizada, respetando la fisiología natural del cuerpo. Es ideal para parejas que buscan una alternativa ética y respetuosa con el cuerpo para lograr el embarazo, así como para mujeres que desean entender mejor su salud hormonal y menstrual. Originario de Guadalajara, Jalisco. Egresado de la Facultad de Medicina de la Universidad de Guadalajara. Realicé mis estudios de especialidad en Ginecología y Obstetricia, en el Centro Medico Nacional del Bajío IMSS- Universidad de Guanajuato. Mi compromiso es brindarte una excelente atención, con un trato humano y calidez personal, así como resolver las dudas que se te presente. Te acompañamos en los momentos más importantes de tu embarazo y parto, con la atención que necesitas en esos momentos más importantes de tu vida. Siempre te apoyaremos con nuestro grupo de expertos a que logres un parto exitoso. Así como asesorarte para una buena lactancia materna.",
+  "addresses": [
+    {
+      "full": "Calle Dique 409,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paul-garcia-guerra/ginecologo/leon#address-id=394729&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:25:39.148Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__paul_garcia_guerra.webp"
+}

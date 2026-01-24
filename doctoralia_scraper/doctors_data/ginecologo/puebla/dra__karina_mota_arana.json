@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Karina Mota Arana",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 163,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fd8613/fd86132fe279848e119f6a77ea4b8e64_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "EMILIANO ZAPATA NO 5 SAN RAFAEL TLANALAPAN,"
+    },
+    {
+      "full": "EMILIANO ZAPATA NO 5 SAN RAFAEL TLANALAPAN,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karina-mota-arana/ginecologo/san-martin-texmelucan#address-id=120370&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:17:17.374Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__karina_mota_arana.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Ana Leticia Mangas Sanchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 24,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e350bd3e/e350bd3e-7fa2-421e-8e5f-3b9ce2cfcf77_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Pampas,112,Moderna,,"
+    },
+    {
+      "full": "Pampas,112,Moderna,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-leticia-mangas-sanchez/ginecologo/benito-juarez#address-id=355538&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:18:11.253Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/ana_leticia_mangas_sanchez.webp"
+}

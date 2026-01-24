@@ -1,0 +1,43 @@
+{
+  "name": "Paola Veytia Trujillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 720,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9d62f1/9d62f187f58939fef2e89ee472b7ebcc_220_square.jpg",
+  "about": "Especialista en Ginecología y Obstetricia - BUAP Certificada por el Consejo Mexicano de Ginecología y Obstetricia- CMGO Diplomado en patología de tracto genital inferior y colposcopia- UNIVERSIDAD ANAHUAC MEXICO. Advanced life support in obstetrics Proveedor- AMERICAN ACADEMY OF FAMILY PHYSICIANS ALSO INTERNACIONAL. • Atención de calidad, con alto sentido humano y social; amplia experiencia clínica y científica, ofreciendo servicios accesibles de forma oportuna y orientada.",
+  "addresses": [
+    {
+      "full": "Calle 2 Sur 922, Col. Benito Juarez,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paola-veytia-trujillo/ginecologo/tehuacan#address-id=343789&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:11:02.710Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/paola_veytia_trujillo.webp"
+}

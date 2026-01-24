@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Cinthia Elizabeth López Ramírez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 142,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9e4b36/9e4b369aa093e4f5cbc3397fc7685401_220_square.jpg",
+  "about": "!Hola! Permítame presentarme. Soy médico especialista en Ginecologia y Obstetricia con Subespecialidad en Medicina Materno Fetal. Como profesional de la salud, estoy comprometida con el bienestar integral y la salud de la mujer en sus diferentes etapas de la vida, acompañándote de una forma respetuosa, consciente y actualizada. Mi objetivo principal es enfocarme al embarazo , sobre todo al embarazo de Alto Riesgo. !Estoy para ayudarte.!",
+  "addresses": [
+    {
+      "full": "Cuautitlan 462,"
+    },
+    {
+      "full": "Cuautitlan 462,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $400"
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• $800"
+    },
+    {
+      "name": "Ultrasonido avanzado de primer trimestre (semanas 11 a 14)",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Ultrasonido avanzado de segundo trimestre (semanas 18 a 24)",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cinthia-elizabeth-lopez-ramirez/ginecologo/zapopan#address-id=252815&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:24:03.074Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__cinthia_elizabeth_l_pez_ram_rez.webp"
+}

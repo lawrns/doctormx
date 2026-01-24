@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Carla Rangel",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 74,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/79803fa7/79803fa7-6baf-4a24-8052-c4cc43544515_small_square.jpg",
+  "about": "¡Hola! Soy la Dra. Carla Rangel, especialista en Ginecología y Obstetricia por la Universidad de Guanajuato. Estoy certificada por el Consejo Mexicano de Ginecología y Obstetricia, y mi prioridad es ayudarte a preservar o recuperar tu salud femenina en diversas etapas, desde la adolescencia, durante la vida reproductiva, climaterio y menopausia. Así como ser parte de uno de los proyectos de vida más importantes, como lo es tu embarazo, creando en conjunto una maravillosa experiencia, antes, durante y después del nacimiento de tu bebé. Estoy en pro de los nacimientos respetados y me gusta cuidar de cada embarazo meticulosamente con la finalidad de traer al mundo un bebé sano con mamá sana. El trato que brindo es personalizado, con empatía, profesionalismo y respeto, enfocándome en dar información clara y detallada. Siempre atenta de la evolución de mis pacientes, centrándome en escuchar sus preocupaciones y resolver dudas, proporcionando una atención cálida y de la más alta calidad, promoviendo la prevención y educación en pro de su bienestar. Como mujer entiendo la pena o el miedo que nos generan las visitas ginecológicas, es por ello que uno de mis objetivos es que mi consultorio sea un espacio de confianza, un lugar seguro y confidencial, donde te sientas lo más cómoda posible. Agenda una cita conmigo, con gusto te atenderé.",
+  "addresses": [
+    {
+      "full": "Boulevard Aeropuerto 101,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carla-rangel/ginecologo/leon#address-id=542748&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:26:04.337Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__carla_rangel.webp"
+}

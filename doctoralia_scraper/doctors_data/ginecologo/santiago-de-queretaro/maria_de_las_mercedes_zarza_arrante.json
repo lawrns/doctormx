@@ -1,0 +1,25 @@
+{
+  "name": "Maria De Las Mercedes Zarza Arrante",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 96,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d3d171/d3d171fce8dc21b81a2637b9eaf5f0e8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Hacienda El Jacal Plaza Del Sur Col. Centro ,"
+    },
+    {
+      "full": "Av. Hacienda El Jacal Plaza Del Sur Col. Centro ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-de-las-mercedes-zarza-arrante/ginecologo/santiago-de-queretaro#address-id=359355&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:59:14.111Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/maria_de_las_mercedes_zarza_arrante.webp"
+}

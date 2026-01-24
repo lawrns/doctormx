@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Ricardo Romero Ramos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5f0bce/5f0bce4fc831917fcf62b9b027071c16_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Manantial 114,"
+    },
+    {
+      "full": "Hidalgo 333,"
+    },
+    {
+      "full": "Manantial 114,"
+    },
+    {
+      "full": "Hidalgo 333,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-romero-ramos/ginecologo/leon#address-id=54431&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:30:36.933Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__ricardo_romero_ramos.webp"
+}

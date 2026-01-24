@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Alejandro Castillo Peláez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7728c3/7728c348b41da73e2fc601fb0be2e0e0_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Agrarismo 208 A,"
+    },
+    {
+      "full": "Av. de la Palma #8 P.B. San Fdo. la herradura/interlomas,"
+    },
+    {
+      "full": "Agrarismo 208 A,"
+    },
+    {
+      "full": "Av. de la Palma #8 P.B. San Fdo. la herradura/interlomas,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama por marcaje",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama por marcaje",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-castillo-pelaez/ginecologo/miguel-hidalgo#address-id=1272&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:06:45.212Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__alejandro_castillo_pel_ez.webp"
+}

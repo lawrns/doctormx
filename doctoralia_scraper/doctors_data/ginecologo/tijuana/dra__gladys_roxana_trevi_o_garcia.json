@@ -1,0 +1,52 @@
+{
+  "name": "Dra. Gladys Roxana Treviño Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/33a2ed/33a2ed79bebf480786c284ee956b6df3_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "150 Díaz Ordaz,"
+    },
+    {
+      "full": "Blvd. Diaz Ordaz 150,"
+    },
+    {
+      "full": "150 Díaz Ordaz,"
+    },
+    {
+      "full": "Blvd. Diaz Ordaz 150,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gladys-roxana-trevino-garcia/ginecologo/tijuana#address-id=432988&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:45:57.026Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__gladys_roxana_trevi_o_garcia.webp"
+}

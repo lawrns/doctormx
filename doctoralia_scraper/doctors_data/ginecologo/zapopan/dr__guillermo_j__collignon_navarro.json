@@ -1,0 +1,58 @@
+{
+  "name": "Dr. Guillermo J. Collignon Navarro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ac0bd4/ac0bd437d6ad25c955f33a0bbc9cb13e_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Manuel J. Clouthier 596,"
+    },
+    {
+      "full": "Calle Jose Enrique Rodo 2790,"
+    },
+    {
+      "full": "AV MANUEL J. CLOUTHIER 596,"
+    },
+    {
+      "full": "Manuel J. Clouthier 596,"
+    },
+    {
+      "full": "Calle Jose Enrique Rodo 2790,"
+    },
+    {
+      "full": "AV MANUEL J. CLOUTHIER 596,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-j-collignon-navarro/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:24:33.079Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__guillermo_j__collignon_navarro.webp"
+}

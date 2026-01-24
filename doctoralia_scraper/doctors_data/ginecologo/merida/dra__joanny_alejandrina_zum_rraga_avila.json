@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Joanny Alejandrina Zumárraga Avila",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/60d915/60d91598819ff98d2c2d5115dac5bf30_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 26 199,"
+    },
+    {
+      "full": "Calle 26 199,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/joanny-alejandrina-zumarraga-avila/ginecologo/merida#address-id=8083&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:46:38.789Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__joanny_alejandrina_zum_rraga_avila.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Diana Rosalia Tiro Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 65,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/99050a/99050a9db7f52093e84f3c64b33ac4a4_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tehuantepec 251,"
+    },
+    {
+      "full": "Tehuantepec 251,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diana-rosalia-tiro-hernandez/ginecologo/ciudad-de-mexico#address-id=235366&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:16:13.006Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/diana_rosalia_tiro_hernandez.webp"
+}

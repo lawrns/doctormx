@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Ricardo Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 219,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/643f7f/643f7f37a4db02924c513a28bade9bf0_220_square.jpg",
+  "about": "Ginecologo comprometido con ofrecer el manejo más actual y completo. Egresado con especialidad en ginecologia y obstetricia de la Uady.",
+  "addresses": [
+    {
+      "full": "Calle 68 534g centro,"
+    },
+    {
+      "full": "Calle 68 534g centro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-lopez-2/ginecologo/yucatan#address-id=417391&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:37:39.099Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__ricardo_lopez.webp"
+}

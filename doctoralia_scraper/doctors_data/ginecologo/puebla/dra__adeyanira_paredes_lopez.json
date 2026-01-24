@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Adeyanira Paredes Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/651610/651610d72d173b5861496a5797e31f03_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "20 Sur 705,"
+    },
+    {
+      "full": "14 sur No 4301 colonia Anzures ,"
+    },
+    {
+      "full": "20 Sur 705,"
+    },
+    {
+      "full": "14 sur No 4301 colonia Anzures ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adeyanira-paredes-lopez/ginecologo/puebla#address-id=252042&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:19:25.239Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__adeyanira_paredes_lopez.webp"
+}

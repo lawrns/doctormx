@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Jaime Raul Rivera Cordova",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 37,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/1c3ff6b6/1c3ff6b6-2ef0-4e9e-bc41-09dce398f8e5_large.jpg",
+  "about": "Hola soy el Dr. Rivera, originario de Ensenada Baja California, egresado del Centro Médico Nacional del Noroeste con la especialidad en Ginecologia y Obstetricia.",
+  "addresses": [
+    {
+      "full": "Boulevard Gustavo Díaz Ordaz 13529,"
+    },
+    {
+      "full": "Blvd. Gustavo Díaz Ordaz 15260,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Embarazo de alto riesgo",
+      "price": "• $800"
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": "• $800"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jaime-raul-rivera-cordova/ginecologo/tijuana#address-id=542548&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:40:13.586Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__jaime_raul_rivera_cordova.webp"
+}

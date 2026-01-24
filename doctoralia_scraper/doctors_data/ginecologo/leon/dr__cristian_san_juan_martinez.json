@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Cristian San Juan Martinez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 34,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c61099/c610995f2be0960c1d019ae8ca46903e_140_square.jpg",
+  "about": "medico ginecobstetra originario de Toluca estado de Mexico radicando en leon Guanajuato, comprometido con la salud femenina donde lo mas importante eres tu ponemos en cada visita la atención integral y humanizada para que tengas una experiencia de confianza, profesionalismo y respeto como principal objetivo",
+  "addresses": [
+    {
+      "full": "Boulevard Paseo de Jerez 405,"
+    },
+    {
+      "full": "Boulevard Paseo de Jerez 405,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cristian-san-juan-martinez/ginecologo/leon#address-id=83703&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:28:24.551Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__cristian_san_juan_martinez.webp"
+}

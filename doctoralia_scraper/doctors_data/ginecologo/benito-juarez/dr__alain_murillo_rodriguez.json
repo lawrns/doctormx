@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Alain Murillo Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 73,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b62f83/b62f8335b7d83921c0f06474ea6de243_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "TEJOCOTES 220,"
+    },
+    {
+      "full": "TEJOCOTES 220,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $300"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alain-murillo-rodriguez/ginecologo/benito-juarez#address-id=88058&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:10:08.924Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__alain_murillo_rodriguez.webp"
+}

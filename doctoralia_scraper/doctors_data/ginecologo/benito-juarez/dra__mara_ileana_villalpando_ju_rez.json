@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Mara Ileana Villalpando Juárez",
+  "specialty": "Ginecóloga",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/c2aee6bc/c2aee6bc-875f-4734-89f5-c2ba67fcd599_small_square.jpg",
+  "about": "Cuento con la Subespecialidad en Medicina Materno fetal, en el Instituto Nacional de Perinatología, con especialidad en Ginecología y Obstetricia",
+  "addresses": [
+    {
+      "full": "Avenida Revolución, 1225 COND, CMC 2, Consultorio 03N6, Col. Los Alpes,"
+    },
+    {
+      "full": "Calle Rio Bamba 804-int 8,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $2,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mara-ileana-villalpando-juarez/ginecologo/alvaro-obregon#address-id=618556&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:05:34.970Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__mara_ileana_villalpando_ju_rez.webp"
+}

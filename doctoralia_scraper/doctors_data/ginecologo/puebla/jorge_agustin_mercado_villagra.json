@@ -1,0 +1,25 @@
+{
+  "name": "Jorge Agustin Mercado Villagra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 717,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/37f5c0/37f5c042c879367a5227944bef5e6a8b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Priv. De Las Ramblas 4,"
+    },
+    {
+      "full": "Priv. De Las Ramblas 4,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-agustin-mercado-villagra/ginecologo/puebla#address-id=214807&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:33:34.093Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/jorge_agustin_mercado_villagra.webp"
+}

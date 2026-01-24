@@ -1,0 +1,89 @@
+{
+  "name": "Dr. Daniel Fabián Ramírez Moreno",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 81,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a25281/a25281e75ae93634166ba865a6192595.jpg",
+  "about": "Soy un Médico comprometido con mi profesión, por lo que la actualización constante, la ética en el ejercicio de la medicina, el seguimiento y la seguridad de mis pacientes es una de mis prioridades. A lo largo de mi Carrera como Médico he apoyado la enseñanza a través de cursos y talleres, me he desempeñado como Medico Especialista en Instituciones de Salud Pública, como Directivo de Instituciones y de Empresas de Dispositivos Médicos, he sido Responsable Sanitario, Ponente en Congresos de mi Especialidad, Evaluador de dispositivos y desarrollador de los mismos, he promovido el ingreso de tecnología en equipamiento médico en México, he colaborado como auditor en la Comisión de Arbitraje Médico. Todas estas actividades me han permitido ofrecer a mis pacientes experiencia y calidad.",
+  "addresses": [
+    {
+      "full": "Av. Universidad 1080,"
+    },
+    {
+      "full": "Calzada Acoxpa 430,"
+    },
+    {
+      "full": "Queretaro 144,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de fístula genitourinaria",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de prolapso uretral y carúncula uretral",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniel-fabian-ramirez-moreno/ginecologo/tlalpan#address-id=397873&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:02:07.845Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__daniel_fabi_n_ram_rez_moreno.webp"
+}

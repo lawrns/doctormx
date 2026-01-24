@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Gloria Ortiz Martinez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 23,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a9b734/a9b7344378c4dc8d1b51a7ec4d1317f8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Sierra Madre 471,"
+    },
+    {
+      "full": "Sierra Madre 471,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gloria-ortiz-martinez/ginecologo/guadalajara#address-id=223927&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:36:30.681Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__gloria_ortiz_martinez.webp"
+}

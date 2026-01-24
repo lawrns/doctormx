@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Ana Paola Santomé Olivares",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/4f4c937d/4f4c937d-b79a-419f-9469-9a349be475ad_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. 5 De Mayo 992,"
+    },
+    {
+      "full": "Blvd. Fundadores 2254,"
+    },
+    {
+      "full": "Av. 5 De Mayo 992,"
+    },
+    {
+      "full": "Blvd. Fundadores 2254,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-paola-santome-olivares/ginecologo/tijuana#address-id=246908&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:26:44.933Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__ana_paola_santom__olivares.webp"
+}

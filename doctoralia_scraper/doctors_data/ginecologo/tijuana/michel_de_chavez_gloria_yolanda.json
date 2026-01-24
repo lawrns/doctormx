@@ -1,0 +1,25 @@
+{
+  "name": "Michel De Chavez Gloria Yolanda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 62,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d8fdad/d8fdad3269daaddfe3cfe6e091708141_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Paseo De Los Héroes 109 Col. Zona Urbana Rio ,"
+    },
+    {
+      "full": "Paseo De Los Héroes 109 Col. Zona Urbana Rio ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/michel-de-chavez-gloria-yolanda/ginecologo/tijuana#address-id=358816&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:23:31.674Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/michel_de_chavez_gloria_yolanda.webp"
+}

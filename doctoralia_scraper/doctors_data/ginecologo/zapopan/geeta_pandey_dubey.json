@@ -1,0 +1,25 @@
+{
+  "name": "Geeta Pandey Dubey",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/297a98/297a98f64b22adab02c521f035ba1595_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Lopez Mateos 567,"
+    },
+    {
+      "full": "Av Lopez Mateos 567,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/geeta-pandey-dubey/ginecologo/guadalajara#address-id=225338&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:36:58.916Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/geeta_pandey_dubey.webp"
+}

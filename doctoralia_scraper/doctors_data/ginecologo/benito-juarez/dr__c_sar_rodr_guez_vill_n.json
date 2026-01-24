@@ -1,0 +1,64 @@
+{
+  "name": "Dr. César Rodríguez Villán",
+  "specialty": "Ginecólogo",
+  "rating": 3.5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9f144a/9f144a231ef3df106e812f9a0770425b_220_square.jpg",
+  "about": "Encargado del bienestar femenino, amplia experiencia y conocimientos. Dirigido con honestidad, servicio, vocación y profesionalismo",
+  "addresses": [
+    {
+      "full": "Av Teopanzolco 211,"
+    },
+    {
+      "full": "Rio churubusco 601,"
+    },
+    {
+      "full": "Av Teopanzolco 211,"
+    },
+    {
+      "full": "Rio churubusco 601,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $950"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $950"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cesar-rodriguez-villan/ginecologo/benito-juarez#address-id=470443&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:09:04.690Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__c_sar_rodr_guez_vill_n.webp"
+}

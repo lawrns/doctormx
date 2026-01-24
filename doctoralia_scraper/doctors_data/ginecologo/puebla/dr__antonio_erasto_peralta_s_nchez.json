@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Antonio Erasto Peralta Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/743b60/743b60d2fcee13b8aeb528d09cdb30d1_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "6 Oriente 331,"
+    },
+    {
+      "full": "6 Oriente 331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/antonio-erasto-peralta-sanchez/ginecologo/tehuacan#address-id=39838&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:12:58.333Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__antonio_erasto_peralta_s_nchez.webp"
+}

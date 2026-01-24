@@ -1,0 +1,31 @@
+{
+  "name": "Jose Efrain Vazquez Martinez De Velasco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/174f8c/174f8c1c4cd36c286a882e47389a4b23_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hegel 120,"
+    },
+    {
+      "full": "Av. Ejército Nacional 613,"
+    },
+    {
+      "full": "Hegel 120,"
+    },
+    {
+      "full": "Av. Ejército Nacional 613,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-efrain-vazquez-martinez-de-velasco/ginecologo/miguel-hidalgo#address-id=211149&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:53:30.090Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/jose_efrain_vazquez_martinez_de_velasco.webp"
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Luis Angel Palma Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 106,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/aaec038d/aaec038d-a97d-4183-93c2-2a2db4acec09_small_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calzada de la Viga 1174,"
+    },
+    {
+      "full": "Oaxaca 3110,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-angel-palma-flores/ginecologo/ciudad-de-mexico#address-id=409701&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:10:57.665Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__luis_angel_palma_flores.webp"
+}

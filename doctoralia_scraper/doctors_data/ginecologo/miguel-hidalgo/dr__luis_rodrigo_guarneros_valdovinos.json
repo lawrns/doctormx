@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Luis Rodrigo Guarneros Valdovinos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 274,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/988d29/988d29a40436062cabae86781e9f56f3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Montes Urales 800,"
+    },
+    {
+      "full": "Av. Vialidad De La Barranca S/N,"
+    },
+    {
+      "full": "Montes Urales 800,"
+    },
+    {
+      "full": "Av. Vialidad De La Barranca S/N,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-rodrigo-guarneros-valdovinos/ginecologo/miguel-hidalgo#address-id=198599&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:41:51.754Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__luis_rodrigo_guarneros_valdovinos.webp"
+}

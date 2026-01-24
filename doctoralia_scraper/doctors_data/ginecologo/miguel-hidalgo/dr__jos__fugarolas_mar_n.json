@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José Fugarolas Marín",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2bc026/2bc02663c7778efb3065760badfa7a56_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ejercito Nacional No. 613, Col. Granada,"
+    },
+    {
+      "full": "Tuxpan 10 Consultorio 704,"
+    },
+    {
+      "full": "Calle Tuxpan # 10. Consultorio 704,"
+    },
+    {
+      "full": "Ejercito Nacional No. 613, Col. Granada,"
+    },
+    {
+      "full": "Tuxpan 10 Consultorio 704,"
+    },
+    {
+      "full": "Calle Tuxpan # 10. Consultorio 704,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-fugarolas-marin-2/ginecologo/ciudad-de-mexico#address-id=327168&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:40:27.795Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__jos__fugarolas_mar_n.webp"
+}

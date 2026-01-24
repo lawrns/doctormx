@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Mariano Lopez Ramirez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 33,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/afed0a/afed0a7a3885c05becb3ea6fe45c0061_220_square.jpg",
+  "about": "Personal de salud dedicado al bienestar de la mujer en todas las etapas de la vida con más de 25 años de Experiencia Pública y Privada.",
+  "addresses": [
+    {
+      "full": "Paseo Playas De Tijuana 650,"
+    },
+    {
+      "full": "Paseo Playas De Tijuana 650,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mariano-lopez-ramirez/ginecologo/tijuana#address-id=50802&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:43:55.399Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__mariano_lopez_ramirez.webp"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Maria Fernanda Gutiérrez Ramírez",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 12,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3eabb798/3eabb798-dd47-45fa-a2a3-907c6cec93fa_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "guadalajara,"
+    },
+    {
+      "full": "guadalajara,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-fernanda-gutierrez-ramirez/ginecologo/guadalajara#address-id=561463&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:31:09.418Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__maria_fernanda_guti_rrez_ram_rez.webp"
+}

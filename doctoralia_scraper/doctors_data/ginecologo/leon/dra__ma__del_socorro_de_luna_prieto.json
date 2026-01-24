@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Ma. Del Socorro De Luna Prieto",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9ea7ee69/9ea7ee69-a988-450b-a02a-100008065cfe_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. León 428 Consultorio 211 Col. Jardines Del Moral ,"
+    },
+    {
+      "full": "Av. León 428 Consultorio 211 Col. Jardines Del Moral ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ma-del-socorro-de-luna-prieto-2/ginecologo/leon#address-id=359133&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:31:17.314Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__ma__del_socorro_de_luna_prieto.webp"
+}

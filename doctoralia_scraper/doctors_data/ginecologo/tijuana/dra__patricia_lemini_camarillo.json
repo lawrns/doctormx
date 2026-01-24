@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Patricia Lemini Camarillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 76,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/10539c/10539c7e0c472bdbb0f9ec2eea7f4521.jpg",
+  "about": "¡Hola! Soy la Dra. Patricia Lemini Camarillo, especializada en ginecología y obstetricia en la ciudad de Tijuana. Me enorgullece mi profesionalismo y atención detallada hacia mis pacientes. Siempre me esfuerzo por explicar los procedimientos y aclarar cualquier duda que puedan tener mis pacientes. Me complace que muchos de mis pacientes han expresado su satisfacción con mi atención y servicio, así como la comodidad de mi ubicación y estacionamiento seguro. Mi objetivo es brindar una experiencia de atención médica excepcional y hacer que todos mis pacientes se sientan cómodos y seguros en mi consultorio. ¡Será un placer atenderte!",
+  "addresses": [
+    {
+      "full": "Blvd. Agua Caliente 4558,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": ""
+    },
+    {
+      "name": "Terapia de Reemplazo Hormonal (TRH)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/patricia-lemini-camarillo/ginecologo/tijuana#address-id=121774&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:42:36.954Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__patricia_lemini_camarillo.webp"
+}

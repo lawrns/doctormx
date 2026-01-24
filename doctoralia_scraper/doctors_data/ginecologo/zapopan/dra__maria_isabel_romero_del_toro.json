@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Maria Isabel Romero del Toro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 677,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c0fa83/c0fa8332456d314c980e2d7ebf72856b_140_square.jpg",
+  "about": "Especialista en VPH, tratamiento con láser, papanicolaou, colposcopía. Control de embarazo.",
+  "addresses": [
+    {
+      "full": "Calzada Central 86,"
+    },
+    {
+      "full": "Calzada Central 86,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-isabel-romero-del-toro/ginecologo/zapopan#address-id=137260&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:28:28.260Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__maria_isabel_romero_del_toro.webp"
+}

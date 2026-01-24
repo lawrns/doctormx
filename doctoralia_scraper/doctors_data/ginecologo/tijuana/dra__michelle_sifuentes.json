@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Michelle Sifuentes",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 71,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0189cb/0189cb14e8b9f0113924a8f062eec942_220_square.jpg",
+  "about": "Mi compromiso es brindar atención especializada y de calidad, a mujeres que enfrentan enfermedades oncológicas.",
+  "addresses": [
+    {
+      "full": "Antonio Caso 2055,"
+    },
+    {
+      "full": "Av Adolfo López Mateos 2030,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Cirugía conservadora de glándula mamaria",
+      "price": ""
+    },
+    {
+      "name": "Cirugía por cáncer de endometrio",
+      "price": ""
+    },
+    {
+      "name": "Biopsia cervical",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Atención pacientes con cáncer",
+      "price": ""
+    },
+    {
+      "name": "Biopsia cervical",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/michelle-sifuentes/ginecologo-ginecologo-oncologico/tijuana#address-id=502696&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:40:39.796Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__michelle_sifuentes.webp"
+}

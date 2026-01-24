@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Guillermo Perez Ornelas",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 15,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e3021c/e3021c48188355f6336b22adb1e68e30_220_square.jpg",
+  "about": "Me llamo Guillermo Perez Ornelas y soy Licenciado en Medicina por la Universidad Autónoma de Guadalajara y especialista en Ginecología y Obstetricia por la Universidad de Guadalajara/Hospital General de Occidente. En mi consulta atiendo a pacientes adultos y niños mayores de 13 años, y me especializo en casos de miomas uterinos, menopausia y virus del papiloma humano (VPH). Mi enfoque de atención se basa en brindar seguridad y comodidad a mis pacientes, haciéndoles sentir tranquilos durante la revisión y explicándoles todas sus dudas. Me considero un profesional muy acertado y siempre trato a mis pacientes con educación, empatía y respeto. Además, mi consulta es un lugar bonito y limpio, lo que hace que mis pacientes se sientan a gusto. Como especialista en Ginecología y Obstetricia, me encanta mi trabajo y me siento muy comprometido con él. Siempre busco ofrecer un trato cercano y de calidad a mis pacientes, y estoy seguro de que mi enfoque profesional y mi experiencia pueden ayudar a mejorar su salud y bienestar.",
+  "addresses": [
+    {
+      "full": "Avenida Circunvalación Jorge Álvarez del Castillo 1161,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-perez-ornelas/ginecologo/guadalajara#address-id=431790&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:09:27.968Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__guillermo_perez_ornelas.webp"
+}

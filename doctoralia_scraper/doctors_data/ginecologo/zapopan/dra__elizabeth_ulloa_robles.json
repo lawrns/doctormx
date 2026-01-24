@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Elizabeth Ulloa Robles",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5a0b62/5a0b6293823d93fb85977347908cb373_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av.Naciones Unidas # 5522 Vallarta Universidad,"
+    },
+    {
+      "full": "Av.Naciones Unidas # 5522 Vallarta Universidad,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elizabeth-ulloa-robles/ginecologo/zapopan",
+  "scrapedAt": "2026-01-22T04:25:17.401Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__elizabeth_ulloa_robles.webp"
+}

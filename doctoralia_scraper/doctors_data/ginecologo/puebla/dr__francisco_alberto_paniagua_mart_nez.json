@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Francisco Alberto Paniagua Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/62ef29/62ef29026ff0b5b58a58c66f1e9e3666_220_square.jpg",
+  "about": "Licenciatura en Medicina General realizada en la Facultad de Medicina de la \"Universidad Veracruzana\" Campos Poza Rica - Tuxpan. Especilidad en Ginecología y Obstetricia realizada en el \"Hospital de la Mujer de Puebla\" Certificado por el \"Consejo Mexicano de Ginecología y Obstetricia\"",
+  "addresses": [
+    {
+      "full": "Calle Huejotzingo, No. 3, Colonia La Paz. Consultorio 210.,"
+    },
+    {
+      "full": "Calle Huejotzingo, No. 3, Colonia La Paz. Consultorio 210.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-alberto-paniagua-martinez/ginecologo/puebla#address-id=382069&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:16:38.814Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__francisco_alberto_paniagua_mart_nez.webp"
+}

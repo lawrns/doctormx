@@ -1,0 +1,25 @@
+{
+  "name": "Jesús Tapia Bonilla",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 438,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a4c453/a4c453952171ce74f3932e0c62ca3626_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Privada de las Ramblas 4,,"
+    },
+    {
+      "full": "Privada de las Ramblas 4,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-tapia-bonilla/ginecologo/puebla#address-id=6958&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:35:43.307Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/jes_s_tapia_bonilla.webp"
+}

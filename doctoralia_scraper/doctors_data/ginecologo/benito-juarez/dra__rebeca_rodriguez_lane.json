@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Rebeca Rodriguez Lane",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 23,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d908c9/d908c9bd0959a528d2a94571be796ee3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Vasco de Quiroga 4001,"
+    },
+    {
+      "full": "Montecito 38,"
+    },
+    {
+      "full": "Vasco de Quiroga 4001,"
+    },
+    {
+      "full": "Montecito 38,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rebeca-rodriguez-lane/ginecologo/benito-juarez#address-id=469374&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:08:18.910Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__rebeca_rodriguez_lane.webp"
+}

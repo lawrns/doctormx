@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Daniela Retolaza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 31,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/aa0de1d5/aa0de1d5-bfe1-49f9-a72e-3a6b66095b18_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "López Cotilla 2128 local 1,"
+    },
+    {
+      "full": "López Cotilla 2128 local 1,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniela-retolaza/ginecologo/guadalajara#address-id=549877&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:31:18.916Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__daniela_retolaza.webp"
+}

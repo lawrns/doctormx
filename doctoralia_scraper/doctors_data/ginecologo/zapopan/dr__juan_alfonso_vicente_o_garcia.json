@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Juan Alfonso Vicenteño Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/21897b/21897b5c8e30fc6eac7a40ba93d74366_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Normalistas 1291,"
+    },
+    {
+      "full": "Av. Normalistas 1291,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita domiciliaria Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-alfonso-vicenteno-garcia/ginecologo/guadalajara#address-id=80824&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:26:15.926Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__juan_alfonso_vicente_o_garcia.webp"
+}

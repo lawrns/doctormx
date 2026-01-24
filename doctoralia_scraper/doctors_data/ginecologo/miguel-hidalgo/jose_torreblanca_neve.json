@@ -1,0 +1,25 @@
+{
+  "name": "Jose Torreblanca Neve",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 14,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/c2569c02/c2569c02-4716-4a4c-bbd7-2b5baa991497_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Viaducto miguel aleman no. 228, Escandon,"
+    },
+    {
+      "full": "Viaducto miguel aleman no. 228, Escandon,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-torreblanca-neve/ginecologo/miguel-hidalgo#address-id=110980&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:51:28.043Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/jose_torreblanca_neve.webp"
+}

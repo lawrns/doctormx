@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Fernando Nieto Landeros",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 372,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/da6975/da69758e0adaaee176f57e1dc2ac7aea_220_square.jpg",
+  "about": "Licenciatura en Medicina. • Facultad de Medicina, Universidad Autónoma de Querétaro. (2002 – 2008).ESPECIALIDAD en Ginecología y Obstetricia. • Instituto Nacional de Perinatología (INPer). Universidad Nacional Autónoma de México. México, D. F. (2011 – 2015)“MENCIÓN HONORÍFICA” al desempeño académico durante la especialidad. • Certificado por el Consejo Mexicano de Ginecología y Obstetricia.SUBESPECIALIDAD en Medicina Materno Fetal. • Instituto Nacional de Perinatología (INPer). Universidad Nacional Autónoma de México. México, D. F. (2015 – 2017)Certificado por el Consejo Mexicano de Ginecología y Obstetricia / Medicina Materno Fetal.Médico Materno Fetal con más de 8 AÑOS DE EXPERIENCIA (público y privado). Coordinador de la clínica de embarazo gemelar en el Centro Estatal de Tamizaje Oportuno (CETO) de 2017 a 2024. Director del CETO desde 2024. PROFESOR: Profesor adjunto en subespecialidad de Medicina Materno Fetal (UNAM)Profesor universitario invitado en Facultad de Medicina de Universidad de Guanajuato. Profesor adjunto en Enseñanza y Entrenamiento Perinatal.",
+  "addresses": [
+    {
+      "full": "Avenida León 428,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Medicina Materno-Fetal",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Monitorización materno-fetal",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Ultrasonido 3D",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Ultrasonido avanzado de embarazo gemelar",
+      "price": "• $3,000"
+    },
+    {
+      "name": "Ultrasonido avanzado de primer trimestre (semanas 11 a 14)",
+      "price": "• $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-nieto-landeros/ginecologo/leon#address-id=351072&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:26:50.824Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__fernando_nieto_landeros.webp"
+}

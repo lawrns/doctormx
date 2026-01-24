@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José Nayib Perpuli Hallal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/734649/7346493a93622b15e47bae30e0da0fbe_220_square.jpg",
+  "about": "!Hola! Soy el Dr Nayib Perpuli, egresado de la carrera de Medicina por la Universidad Autónoma de Baja California, realicé mi especialidad en Ginecología y Obstetricia en el Centro Médico Nacional de Occidente con aval por la Universidad de Guadalajara, posteriormente realicé un Fellowship en Cirugía de Mínima Invasión en Ginecología. Actualmente laboro como médico adscrito al servicio de Ginecología y Obstetricia del Centro Médico Nacional de Occidente donde atiendo diversas patologías como: endometriosis, miomatosis uterina, lesiones por vph, control de embarazo de alto riesgo, patología mamaria. Estoy aquí para acompañarte durante tu embarazo o en tu proceso de enfermedad así como guiarte con los mejores consejos basados en evidencia.",
+  "addresses": [
+    {
+      "full": "Av Manuel J. Clouthier 526,"
+    },
+    {
+      "full": "Av Manuel J. Clouthier 526,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-nayib-perpuli-hallal/ginecologo-medico-general/zapopan#address-id=428007&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:16:21.372Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jos__nayib_perpuli_hallal.webp"
+}

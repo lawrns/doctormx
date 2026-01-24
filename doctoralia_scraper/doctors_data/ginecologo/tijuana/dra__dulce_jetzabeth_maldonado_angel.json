@@ -1,0 +1,69 @@
+{
+  "name": "Dra. Dulce Jetzabeth Maldonado Angel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 208,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/791d52/791d525aabcd989b23f77f161d916e22_220_square.jpg",
+  "about": "¡Hola! Soy la Dra. Dulce, Ginecóloga y Obstetra Certificada en Tijuana. Mi enfoque está en brindar atención cálida, personalizada y profesional para la salud integral de la mujer. Desde el inicio de mi carrera, he trabajado con pasión para ofrecer tratamientos de calidad, cuidando cada etapa de la vida de mis pacientes, desde el embarazo hasta la prevención de enfermedades ginecológicas. Cuento con amplia experiencia en la atención de embarazos, partos, cesáreas, manejo de infertilidad, planificación familiar y detección oportuna de cáncer ginecológico. Mi prioridad es que cada paciente se sienta acompañada, segura y bien cuidada en cada consulta. Principales áreas de tratamiento Control y seguimiento del embarazo - Brindo acompañamiento integral para embarazos de bajo y alto riesgo. - Realizo evaluaciones periódicas, ultrasonidos avanzados y asesoría nutricional para garantizar la salud del bebé y la mamá. Prevención y detección de cáncer ginecológico - Especializada en la detección oportuna de cáncer cervicouterino, endometrial y de mama. - Utilizo tecnologías avanzadas como colposcopía, Papanicolaou y biopsias. Planificación familiar y métodos anticonceptivos - Orientación sobre métodos anticonceptivos personalizados, incluyendo DIU, implantes hormonales y planificación natural. Manejo de la menopausia - Proporciono tratamientos personalizados para aliviar los síntomas asociados y mejorar la calidad de vida en esta etapa. Tratamiento de enfermedades ginecológicas - Abordo afecciones como endometriosis, miomas uterinos, ovarios poliquísticos e infecciones recurrentes. Otros servicios - Consultas ginecológicas de rutina. - Tratamientos para infertilidad. - Cirugía ginecológica mínimamente invasiva. - Control de miomas uterinos y quistes ováricos. - Diagnóstico y tratamiento de infecciones vaginales. - Detección y manejo del Virus del Papiloma Humano (VPH). - Ultrasonido ginecológico y obstétrico. ¿Por qué elegirme a mí? Lo que me diferencia es mi enfoque personalizado y mi compromiso con el bienestar integral de mis pacientes. Estoy certificada por el Consejo Mexicano de Ginecología y Obstetricia, y cuento con más de 10 años de experiencia en la atención de la salud femenina. Me mantengo en constante actualización participando en congresos y capacitaciones internacionales para asegurar que mis pacientes reciban tratamientos basados en las últimas innovaciones médicas. Mi prioridad es crear un ambiente de confianza y empatía en cada consulta, acompañando a las mujeres en cada etapa de su vida con calidez y profesionalismo. Mi consulta y equipo Mi consulta está diseñada para ofrecer un ambiente cómodo, seguro y moderno, equipado con tecnología avanzada como ultrasonido 4D para diagnósticos precisos. Estamos ubicados en Tijuana, con fácil acceso y estacionamiento disponible para mayor comodidad de mis pacientes. Cuento con un equipo de profesionales comprometidos con la atención de calidad, siempre enfocados en proporcionar el mejor cuidado en cada consulta y procedimiento. Más sobre mí Además de mi práctica médica, participó en actividades de concienciación y prevención de salud femenina, promoviendo la importancia de revisiones periódicas para garantizar un bienestar integral. Mi enfoque profesional se complementa con un trato humano y cálido, porque creo firmemente en la conexión médico-paciente como parte fundamental del proceso de cuidado. Cuando no estoy en consulta, disfruto dedicar tiempo a actividades que me permiten mantener un equilibrio entre mi vida profesional y personal, para seguir ofreciendo lo mejor a mis pacientes.",
+  "addresses": [
+    {
+      "full": "Antonio Caso 2055, Zona Urbana Rio Tijuana,"
+    },
+    {
+      "full": "Antonio Caso 2055, Zona Urbana Río Tijuana, 22010 Tijuana, BC ,"
+    },
+    {
+      "full": "José Clemente Orozco 2468,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dulce-jetzabeth-maldonado-angel/ginecologo/tijuana#address-id=137705&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:42:15.477Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__dulce_jetzabeth_maldonado_angel.webp"
+}

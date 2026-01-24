@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Rafael Chona",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 59,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/092fbb/092fbbf740eceb880402d649eb8d0b38_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Independencia 64 colonia el fortín ,"
+    },
+    {
+      "full": "Independencia 64 colonia el fortín ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rafael-chona/ginecologo/tecpan-de-galeana#address-id=407273&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:31:31.045Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__rafael_chona.webp"
+}

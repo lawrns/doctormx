@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jorge Andrés Siu Robles",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 611,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/89e0f2/89e0f2495c8db4b21a1c52efb73f3e5b_220_square.jpg",
+  "about": "Soy médico especialista en Ginecología y Obstetricia Re- Certificado por el Consejo Mexicano de la especialidad. Experto en prevención, diagnóstico y tratamiento de las enfermedades causadas por el Virus de Papiloma Humano (VPH). Tratamientos con LASER CO2. Cirugía de mínima invasión (Histeroscopía y Laparoscopía). Dedicado a la salud de la mujer en cualquier etapa de su vida. Experto también en métodos anticonceptivos. Ubicado al sur de la ciudad de Guadalajara, si necesitas una cita y no encuentras disponibilidad en el sistema, por favor llámanos y haremos lo posible por solucionarlo.",
+  "addresses": [
+    {
+      "full": "Av. López de Legazpi 2235,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-andres-siu-robles/ginecologo/guadalajara#address-id=32120&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:09:42.907Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jorge_andr_s_siu_robles.webp"
+}

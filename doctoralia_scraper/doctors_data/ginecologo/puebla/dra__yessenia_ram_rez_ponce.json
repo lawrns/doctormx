@@ -1,0 +1,34 @@
+{
+  "name": "Dra. Yessenia Ramírez Ponce",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 33,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/633997/633997b138e26f77aa6132449dbfb090_220_square.jpg",
+  "about": "Ginecólogo",
+  "addresses": [
+    {
+      "full": "11 Oriente 1817,"
+    },
+    {
+      "full": "11 Oriente 1817,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yessenia-ramirez-ponce/ginecologo/puebla#address-id=112545&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:12:27.182Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__yessenia_ram_rez_ponce.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Roberto Artur Zapata Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 393,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/24daae/24daae4c724d4a822a1cdd6fcf7cbef3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Chavez Carrillo 777,"
+    },
+    {
+      "full": "Chavez Carrillo 777,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-artur-zapata-hernandez/ginecologo/tijuana#address-id=54208&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:47:44.541Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__roberto_artur_zapata_hernandez.webp"
+}

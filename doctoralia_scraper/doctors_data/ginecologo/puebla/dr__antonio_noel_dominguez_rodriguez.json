@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Antonio Noel Dominguez Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/41955a/41955a1607a86e8c0c0f436f36e68558_220_square.jpg",
+  "about": "Soy el Dr. Antonio Noel Domínguez Rodríguez, médico ginecólogo y obstetra. Me especializo en acompañar a mujeres en todas las etapas de su vida, ayudándolas a alcanzar una mejor calidad de vida a través de una atención médica integral, personalizada y actualizada. Mi compromiso es ofrecer no solo soluciones médicas, sino también bienestar y confianza, diferenciándome por un enfoque humano y cercano en cada consulta.",
+  "addresses": [
+    {
+      "full": "Calle 6 Poniente 32,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $800"
+    },
+    {
+      "name": "Asesoría para pacientes embarazadas con riesgo alto de hemorragia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/antonio-noel-dominguez-rodriguez-3/medico-general/puebla#address-id=594563&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:11:31.392Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__antonio_noel_dominguez_rodriguez.webp"
+}

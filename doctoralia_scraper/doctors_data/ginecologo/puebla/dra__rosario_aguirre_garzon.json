@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Rosario Aguirre Garzon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6a61c4/6a61c48448c2ffa3453d183d29148462_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Kepler 2143,"
+    },
+    {
+      "full": "Privada de las Ramblas 4,,"
+    },
+    {
+      "full": "Av. Kepler 2143,"
+    },
+    {
+      "full": "Privada de las Ramblas 4,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosario-aguirre-garzon/ginecologo/puebla#address-id=6101&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:13:26.351Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__rosario_aguirre_garzon.webp"
+}

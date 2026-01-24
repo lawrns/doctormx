@@ -1,0 +1,25 @@
+{
+  "name": "Jesus Baeza Valenzuela Arturo De",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 81,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/15f596cf/15f596cf-7293-45ff-8d71-42045cc1949e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Kepler 2143 Cons. 750 A Col. Reserva Territorial Atlixcayotl, ,"
+    },
+    {
+      "full": "Av. Kepler 2143 Cons. 750 A Col. Reserva Territorial Atlixcayotl, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-baeza-valenzuela-arturo-de-2/ginecologo/puebla#address-id=359278&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:29:53.153Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/jesus_baeza_valenzuela_arturo_de.webp"
+}

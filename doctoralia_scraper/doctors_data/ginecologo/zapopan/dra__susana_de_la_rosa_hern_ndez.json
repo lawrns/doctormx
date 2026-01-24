@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Susana De la Rosa Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/064bc4/064bc44a5d6e4d97fa99fef823792fe7_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Jose Maria Vigil 2929 -,"
+    },
+    {
+      "full": "Jose Maria Vigil 2929 -,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/susana-de-la-rosa-hernandez/ginecologo/guadalajara#address-id=96852&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:32:14.381Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__susana_de_la_rosa_hern_ndez.webp"
+}

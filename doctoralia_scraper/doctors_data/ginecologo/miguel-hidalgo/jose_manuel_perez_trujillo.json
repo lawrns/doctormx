@@ -1,0 +1,25 @@
+{
+  "name": "Jose Manuel Perez Trujillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/1a8e4fbe/1a8e4fbe-d251-4521-99f7-05fd8688c70a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Gelati no. 29-1, S.miguel chapultepec,"
+    },
+    {
+      "full": "Gelati no. 29-1, S.miguel chapultepec,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-manuel-perez-trujillo/ginecologo/tlalpan#address-id=114475&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:54:26.765Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/jose_manuel_perez_trujillo.webp"
+}

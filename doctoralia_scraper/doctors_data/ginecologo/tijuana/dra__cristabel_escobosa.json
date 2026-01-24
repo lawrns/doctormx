@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Cristabel Escobosa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 65,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fd27fa/fd27fa92269ffdb81e060306f7f29209_220_square.jpg",
+  "about": "Especialista en reproducción humana y fertilidad con corrección de padecimientos ginecológicos por mínima invasión (laparoscopia, histeroscopia, cirugía robótica), así como diagnóstico y tratamiento de otros padecimientos que dificultan lograr un embarazo. Gran experiencia en técnicas avanzadas de fertilización. Formada en los programas de especialidad del ISSSTE con aval de la Universidad Nacional Autonoma de México (UNAM). Especialidad en Ginecología y Obstetricia en el Hospital Regional \"Lic. Adolfo López Mateos\", Subespecialidad en Biología de la Reproducción Humana en el Centro Médico Nacional \"20 de Noviembre\" y Alta Especialidad en Endoscopía Ginecológica, en el mismo. Entrenamiento certificado por el Consejo Mexicano de Ginecología y Obstetricia (COMEGO). Brinda atención integral, con calidez humana, y ademas de ser personalizada, brinda orientación para lograr su objetivo (prevención, embarazo o mejoría) con toda la información necesaria para que se tome la mejor decisión posible en la resolución del problema subyacente. Orientación para lograr embarazo de la manera natural, resolviendo problemas ginecológicos anatómicos y fisiológicos subyacentes. Experta en cirugías correctivas por mínima invasión y tratamientos avanzados de fertilidad, in vivo e in vitro.",
+  "addresses": [
+    {
+      "full": "Av. Bugambilias 4083 Consultorio 1703 Col El Prado,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Cirugia por cáncer de útero",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cristabel-escobosa/ginecologo/tijuana#address-id=446767&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:42:44.020Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__cristabel_escobosa.webp"
+}

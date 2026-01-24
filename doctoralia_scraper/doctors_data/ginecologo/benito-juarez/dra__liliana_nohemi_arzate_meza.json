@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Liliana Nohemi Arzate Meza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 83,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9dfda1d0/9dfda1d0-50c8-46ab-b79a-1e40bfaed70b_small_square.jpg",
+  "about": "Hola. Soy la Dra. Liliana Arzate, ginecóloga, obstetra y colposcopista avalada por el Consejo Mexicano de Ginecología y Obstetricia. Como mujer entiendo la importancia de sentir seguridad y confianza al momento de realizar una consulta ginecológica o de embarazo, te ofrezco un espacio tranquilo donde podrás aclarar todas tus dudas y tener un seguimiento adecuado con las mejores herramientas diagnósticas, siempre de manera profesional y actualizada para la mejor resolución de los padecimientos.",
+  "addresses": [
+    {
+      "full": "Av. Cuauhtémoc 1040, Narvarte Poniente,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cérvix",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,650"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/liliana-nohemi-arzate-meza/ginecologo/benito-juarez#address-id=445022&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:01:05.826Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__liliana_nohemi_arzate_meza.webp"
+}

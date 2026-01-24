@@ -1,0 +1,27 @@
+{
+  "name": "Dr. Agni Jaim Muñoz Granados",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 131,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c6a89a/c6a89ac1ea14cd4a9308b4582470d7d8_220_square.jpg",
+  "about": "Soy médico especialista en ginecología y obstetricia, además cuento con la sub-especialidad en ginecología oncológica. Nuestro enfoque de atención es amplio ya que incluye padecimientos ginecológicos benignos ( miomas, quistes de ovario, alteraciones menstruales, sangrados uterinos anormales, infecciones, atención de anticoncepción, endometriosis, condilomas o verrugas genitales, enfermedades de la mama, etc ) y también enfermedades malignas ( cáncer de mama, cáncer de endometrio, cáncer de ovario, cáncer del cuello uterino, cáncer de vulva y vagina ).",
+  "addresses": [
+    {
+      "full": "PRIV IGNACIO ZARAGOZA 16 INT TORRE III CONSULTORIO 606,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta Ginecología Oncológica",
+      "price": "• Desde $1,199"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/agni-jaim-munoz-granados-2/ginecologo-oncologico-ginecologo/santiago-de-queretaro",
+  "scrapedAt": "2026-01-22T03:41:53.001Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__agni_jaim_mu_oz_granados.webp"
+}

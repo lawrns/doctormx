@@ -1,0 +1,102 @@
+{
+  "name": "DoctorMX - Consulta médica con IA en México",
+  "short_name": "DoctorMX",
+  "description": "Consulta médica instantánea con inteligencia artificial. Encuentra médicos, agenda citas y recibe atención personalizada en México.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#10b981",
+  "icons": [
+    {
+      "src": "/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/maskable-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "orientation": "portrait",
+  "categories": ["health", "medical", "productivity"],
+  "lang": "es-MX",
+  "dir": "ltr",
+  "scope": "/",
+  "iarc_rating_id": "e87d2f36-b9ca-4f9c-9781-9a5e2c6d7e8a",
+  "screenshots": [
+    {
+      "src": "/screenshots/mobile-homepage.png",
+      "sizes": "640x1136",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Pantalla principal de DoctorMX"
+    },
+    {
+      "src": "/screenshots/mobile-chat.png",
+      "sizes": "640x1136",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Chat con Dr. Simeon"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Consulta con Dr. Simeon",
+      "short_name": "Consulta",
+      "description": "Inicia una consulta médica instantánea",
+      "url": "/consulta",
+      "icons": [{ "src": "/icons/icon-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Emergencia",
+      "short_name": "Emergencia",
+      "description": "Acceso rápido a servicios de emergencia",
+      "url": "/emergencia",
+      "icons": [{ "src": "/icons/icon-96x96.png", "sizes": "96x96" }]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://doctormx.com/manifest.json"
+    }
+  ],
+  "prefer_related_applications": false
+}

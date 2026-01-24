@@ -1,0 +1,37 @@
+{
+  "name": "Dra. Ana Isabel Osorio Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 251,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dcc13f/dcc13fb0a0af17659820d09cece757ff_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Plaza Las Americas 115,"
+    },
+    {
+      "full": "Paseo De La República 135,"
+    },
+    {
+      "full": "Av. Pie De La Cuesta 886,"
+    },
+    {
+      "full": "Plaza Las Americas 115,"
+    },
+    {
+      "full": "Paseo De La República 135,"
+    },
+    {
+      "full": "Av. Pie De La Cuesta 886,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-isabel-osorio-perez/ginecologo/leon#address-id=247364&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:54:39.382Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__ana_isabel_osorio_perez.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José Mauricio Freyre Santiago",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 71,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3c8297/3c8297a71f1558a433cd22e8c282ee17_220_square.jpg",
+  "about": "Nací en la.ciudad de Puebla, desde los.2 años he vivido en Tehuacan, Puebla. He tenido la gran oportunidad de recibir mi.formación y educación como médico en instituciones de gran reconocimiento nacional y regional. Cómo médico especialista en Ginecología y Obstetricia mis principales objetivos es brindar atención a las mujeres durante todas.las épocas de su.vida desde la.adolescencia hasta la postmenopausia con un enfoque integral que abarque todos los aspectos alrededor del estado de salud de las.mujeres siempre estando a la.vanguardia en conocimientos y tratamientos disponibles. Será un gusto atenderte,!!",
+  "addresses": [
+    {
+      "full": "MEDISAN. 1 Poniente #419, Colonia Centro. CP 75700. Junto a ERRCO,"
+    },
+    {
+      "full": "MEDISAN. 1 Poniente #419, Colonia Centro. CP 75700. Junto a ERRCO,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-mauricio-freyre-santiago/ginecologo-medico-general/cuauhtemoc2#address-id=166635&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:14:03.545Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__jos__mauricio_freyre_santiago.webp"
+}

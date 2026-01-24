@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Norma Adriana Reyes Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1097,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/50ac5f/50ac5fa82eaf632ebb73b14203f678c5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Irene Robledo García 791,"
+    },
+    {
+      "full": "C. Irene Robledo García 791,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/norma-adriana-reyes-lopez/ginecologo/guadalajara#address-id=165656&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:30:33.364Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__norma_adriana_reyes_lopez.webp"
+}

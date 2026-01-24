@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Elsa Elizabeth Ballesteros Cardoza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/795f2c/795f2c5255debf814bab64a425354ab9_220_square.jpg",
+  "about": "Ser Gineco-obstetra implica una gran responsabilidad con la humanidad, ya que cada mujer es muy importante , sin tomar en cuenta edad , nivel intelectual , forma de pensar o de vivir .Considero que ser mujer es una de las cualidades mas relevantes de la humanidad , es el elemento primordial, ya que permiten que la humanidad subsista , tanto como el agua , la tierra, el aire y el fuego . Acepté esa responsabilidad y me preparé con ahínco. Estudie en la Universidad Autónoma de Guadalajara, donde obtuve el Titulo de Medico Cirujano , así como también lo obtuve por parte de la UNAM .Gane una Beca, para la Caja Costarricence del Seguro Social en Costa Rica donde desarrolle mi habilidad quirurgica ; la Especialidad en Ginecología y Obstetricia en el Instituto de Seguridad y Servicios Sociales para los Trabajadores del Estado (ISSSTE) en el Hospital General Tacuba y el 20 de Noviembre; el Diplomado en Colposcopía en el ISSSTE ( 20 de Noviembre)y el Diplomado en Climaterio y Menopausia en Instituto Nacional de Perinatologia (InPer.). Fui Presidente y Fundadora de la primera Asociación de Climaterio y Menopausia del Estado de Morelos (ACLIMMOR). Formé el departamento de Climaterio y Menopausia del Hospital de la Mujer de Morelos y continué preparándome hasta hoy bajo un lema “Por las mujeres de hoy, para las mujeres del mañana”",
+  "addresses": [
+    {
+      "full": "Calle 20 Sur 3908,"
+    },
+    {
+      "full": "Calle 20 Sur 3908,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $700"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elsa-elizabeth-ballesteros-cardoza-2/ginecologo/puebla#address-id=411462&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:13:11.584Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__elsa_elizabeth_ballesteros_cardoza.webp"
+}

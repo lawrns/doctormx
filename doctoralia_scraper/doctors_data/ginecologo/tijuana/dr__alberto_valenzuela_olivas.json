@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Alberto Valenzuela Olivas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 89,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fdf1d6/fdf1d65e831269c394bcebbcb0967301_220_square.jpg",
+  "about": "20 años ayudando a lograr embarazos en pacientes con infertilidad, alto índice de reversión de salpingo con micrócirugia, inseminacion y invitro VIF",
+  "addresses": [
+    {
+      "full": "Rampa Aeropuerto 16000, La Pechuga, Otay,"
+    },
+    {
+      "full": "Rampa Aeropuerto 16000, La Pechuga, Otay,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta médica de acné",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alberto-valenzuela-olivas/ginecologo-medico-estetico/tijuana#address-id=95314&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:43:28.981Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__alberto_valenzuela_olivas.webp"
+}

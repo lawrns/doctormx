@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Sonia María Verdejo Ramírez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 469,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/413aa1/413aa14a11661720aa1711b5932a1ade_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Agrarismo 208,"
+    },
+    {
+      "full": "Agrarismo 208,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sonia-maria-verdejo-ramirez/ginecologo/miguel-hidalgo#address-id=180&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:09:31.400Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__sonia_mar_a_verdejo_ram_rez.webp"
+}

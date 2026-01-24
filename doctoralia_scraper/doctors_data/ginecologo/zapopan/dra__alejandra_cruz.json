@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Alejandra Cruz",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 76,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/46bca3/46bca3cb5e0cb3042954d72ac9868821_220_square.jpg",
+  "about": "Hola! Soy la Dra. Alejandra Cruz, ginecóloga y obstetra. Me especializo en ginecología láser, estética y funcional así como en medicina regenerativa y anti envejecimiento Mi objetivo es cuidar de la salud femenina en cada una de sus etapas y ayudar a la mujer en empoderarse aumentando su seguridad y autoestima.",
+  "addresses": [
+    {
+      "full": "Lacandones 306,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Aplicación de sueroterapia",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de sueroterapia",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-cruz-2/ginecologo/guadalajara#address-id=532898&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:13:23.551Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__alejandra_cruz.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Yunuen Partida",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/4f4c937d/4f4c937d-b79a-419f-9469-9a349be475ad_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Edificio Safire, C. Salvador Díaz Mirón 4Ta. 7357, Zona Centro,"
+    },
+    {
+      "full": "Edificio Safire, C. Salvador Díaz Mirón 4Ta. 7357, Zona Centro,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yunuen-partida/ginecologo/tijuana#address-id=528785&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:45:31.250Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/yunuen_partida.webp"
+}

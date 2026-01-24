@@ -1,0 +1,31 @@
+{
+  "name": "Javier Vicente Noyola Gomez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9633e68e/9633e68e-a345-4c52-980e-ed5d917cfb88_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Seris Y Zaachila S/N,"
+    },
+    {
+      "full": "Popocatepetl 8,"
+    },
+    {
+      "full": "Seris Y Zaachila S/N,"
+    },
+    {
+      "full": "Popocatepetl 8,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/javier-vicente-noyola-gomez/ginecologo/azcapotzalco#address-id=217198&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:15:12.094Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/javier_vicente_noyola_gomez.webp"
+}

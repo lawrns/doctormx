@@ -1,0 +1,46 @@
+{
+  "name": "Dra. María Vanic Ferrusquia Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 36,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/782b19/782b196d1b1ec1efe58c18ebce13f44e_220_square.jpg",
+  "about": "En el consultorio encontrarás un espacio agradable, seguro y confidencial. En todas las citas incluyo rastreo ultrasonográfico en embarazadas ó en no embarazadas de ser necesario y cuento con paquetes accesibles y cómodos para tu economía en las pruebas de tamizaje, tales como Papanicolaou, Colposcopía y por supuesto exploración mamaria. Actualmente, la mayoría de las mujeres tenemos miles de actividades en la semana, por lo que pongo a tu alcance TODOS LOS SÁBADOS, de 9 a 18 horas, una CAMPAÑA denominada \"MUJER SANA\", la cual incluye Papanicolaou, Colposcopía y Exploración mamaria, para que le des tiempo con amor a tu salud. Me interesa ayudarte o solucionar tu problema de salud, pues también soy mujer y mamá y entiendo lo abrumador que puede ser no estar al 100% en salud ginecológica. Por otro lado, me encantaría compartir contigo el proyecto y la ilusión de ver crecer y nacer un nuevo ser, con un adecuado y continuo control prenatal. Si deseas cita, conocer mis promociones o cuentas con alguna duda, no dudes en comunicarte.",
+  "addresses": [
+    {
+      "full": "Camino a los Olvera 680,"
+    },
+    {
+      "full": "Camino a los Olvera 680,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-vanic-ferrusquia-martinez/ginecologo/santiago-de-queretaro#address-id=21759&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:48:34.357Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__mar_a_vanic_ferrusquia_mart_nez.webp"
+}

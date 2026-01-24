@@ -1,0 +1,25 @@
+{
+  "name": "Enrique Cervantes Reyes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1052,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/59c358/59c3589fa0fc86c73d4ef8a620300e36_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 16 De Septiembre 3518 6 - El Carmen Huexotitla,"
+    },
+    {
+      "full": "Calle 16 De Septiembre 3518 6 - El Carmen Huexotitla,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/enrique-cervantes-reyes/ginecologo/puebla#address-id=119183&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:34:04.098Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/enrique_cervantes_reyes.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Paulina Solano",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ca055982/ca055982-eaa4-4efe-a95b-f7132cfaded1_small_square.jpg",
+  "about": "Hola, soy la dra Paulina Solano, médico ginecoobstetra y estoy a tus ordenes para ayudarte en el cuidado de tu salud.",
+  "addresses": [
+    {
+      "full": "Boulevard Campestre,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paulina-solano/ginecologo/leon#address-id=618100&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:25:10.486Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__paulina_solano.webp"
+}

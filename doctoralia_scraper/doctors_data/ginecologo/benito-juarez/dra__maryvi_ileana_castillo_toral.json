@@ -1,0 +1,82 @@
+{
+  "name": "Dra. Maryvi Ileana Castillo Toral",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 119,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9762cf/9762cfbf2d2bc3ab69b012516364efd4_220_square.jpg",
+  "about": "La salud sexual y reproductiva de la mujer es nuestra prioridad, manteniendo el bienestar físico y sexual de la mujer en todas sus etapas, con un enfoque de manejo integral, humano y especializado.",
+  "addresses": [
+    {
+      "full": "Carr. México-Toluca 5631, Cuajimalpa,"
+    },
+    {
+      "full": "Avenida Río Churubusco 601,"
+    },
+    {
+      "full": "Jesús Urquiaga,"
+    },
+    {
+      "full": "Carr. México-Toluca 5631, Cuajimalpa,"
+    },
+    {
+      "full": "Avenida Río Churubusco 601,"
+    },
+    {
+      "full": "Jesús Urquiaga,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maryvi-ileana-castillo-toral/ginecologo/ciudad-de-mexico#address-id=399811&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:06:39.493Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__maryvi_ileana_castillo_toral.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Juana Saucedo Romero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 182,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e773ad/e773adcdbf05bbe1a1c8e05bd1962b57_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C 5 Ote 202, Col. Tepatlaxco De Hidalgo, ,"
+    },
+    {
+      "full": "C 5 Ote 202, Col. Tepatlaxco De Hidalgo, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juana-saucedo-romero/ginecologo/puebla#address-id=357257&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:30:56.315Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/juana_saucedo_romero.webp"
+}

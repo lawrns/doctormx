@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Elizabeth Baranda Delgado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/769778/769778993d60aa713256eb6de6f88f08_220_square.jpg",
+  "about": "Médico Cirujano egresado del Instituto Politécnico Nacional ( Escuela superior de Medicina ) 2000-2006. Ginecologia y Obstetricia (UNAM) Hospital Ángeles México 2007-2011",
+  "addresses": [
+    {
+      "full": "Hospital Ángeles México,consultorio 651B,"
+    },
+    {
+      "full": "Hospital Ángeles México,consultorio 651B,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elizabeth-baranda-delgado/ginecologo/miguel-hidalgo#address-id=80976&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:05:38.570Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__elizabeth_baranda_delgado.webp"
+}

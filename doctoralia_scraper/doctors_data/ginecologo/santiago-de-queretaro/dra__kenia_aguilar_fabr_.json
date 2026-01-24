@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Kenia Aguilar Fabré",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 735,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e8eecf/e8eecf537124010ffa0019a3dcd286a6_220_square.jpg",
+  "about": "Diplomado en Oncología ginecológica, Instituto Nacional de Oncología y Radiobiología La habana Cuba, 2006 Máster en atención integral a la mujer, Universidad de La Habana Cuba, 2006 Certificación Consejo Mexicano de Gineco-Obstetricia, Consejo Mexicano Especialidad, 2017 Diplomado en colposcopía, Centro Colposcópico de Querétaro, 2018 Ginecología y Obstetricia, Universidad de Ciencias Medicas de La Habana, 2000",
+  "addresses": [
+    {
+      "full": "Loma Pinal de Amoles 320,Vista Dorada.Corporativo Tres 20 piso 2,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $950"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Citología y microtomía endometrial",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/kenia-aguilar-fabre/ginecologo/santiago-de-queretaro#address-id=119125&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:42:28.770Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__kenia_aguilar_fabr_.webp"
+}

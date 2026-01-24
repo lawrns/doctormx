@@ -1,0 +1,25 @@
+{
+  "name": "Oscar Guillermo Gutierrez Gomez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 292,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/98c94647/98c94647-aed8-481f-9446-6efa6400b06d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Arco De Tito 1069,"
+    },
+    {
+      "full": "Arco De Tito 1069,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/oscar-guillermo-gutierrez-gomez/ginecologo/zapopan#address-id=160895&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:43:47.118Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/oscar_guillermo_gutierrez_gomez.webp"
+}

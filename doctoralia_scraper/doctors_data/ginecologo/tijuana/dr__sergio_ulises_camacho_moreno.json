@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Sergio Ulises Camacho Moreno",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/4f4c937d/4f4c937d-b79a-419f-9469-9a349be475ad_small_square.jpg",
+  "about": "Soy especialista en Ginecología y Obstetricia (enfermedades propias de la mujer y embarazo). Ejerciendo mi especialidad con una orientación a la práctica privada. ​Estoy comprometido a proporcionar mis servicios en un ambiente cálido y humano. Mi objetivo principal es el de tratar cada paciente de una manera individual y personalizada, para lograr exitosamente un desenlace eficaz en su cuidado.l",
+  "addresses": [
+    {
+      "full": "Avenida 5 de mayo # 992, zona centro,"
+    },
+    {
+      "full": "Plaza San isidro, Av. las Palmas 4864, Las Palmas,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Biopsia de cérvix",
+      "price": "• $4,300"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Biopsia de cérvix",
+      "price": "• $4,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-ulises-camacho-moreno/medico-general/tijuana#address-id=617286&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:43:04.576Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__sergio_ulises_camacho_moreno.webp"
+}

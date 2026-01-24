@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Treicy Sandoval Mariscal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 126,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/242508/2425084ce386ec8c6bcb44aafa766607_220_square.jpg",
+  "about": "Me gradué de la carrera de medicina por la universidad Guadalajara Lamar. realicé mi especialidad en el Hospital General de Occidente Zoquipan con título en Ginecología y Obstetricia por la Universidad de Guadalajara. Realicé un Diplomado en Climaterio Menopausia y Osteoporosis avalado por la Universidad de Sinaloa y posteriormente realicé una alta especialidad en Urología Ginecológica en el Hospital Civil Fray Antonio Alcalde. Actualmente me desempaño como profesor adjunto de la sub especialidad de Uroginecología en el Hospital Civil de Guadalajara y realizo consulta privada en la ciudad de Guadalajara. Entre los padecimientos que atiendo día a día son: revisión de rutina ginecológica exploración de mamas pelvis vagina. Ultrasonido abdominal y vaginal. Realizo toma de papaniocolaou biopsia cervical y endometrial. Control del embarazo y consultorio en pareja o individualizada, atención de partos y cesáreas. Atención de problemas por incontinencia urinaria prolapsos de órganos pélvicos o bien conocidas como vejiga caída o matriz caída y su resolución quirúrgica. Es parte de mi conocimiento atender a mujeres con infecciones recurrentes vaginales y de orina. Dolor pélvico, dolor en momento de relaciones seuales, sequedad vaginal, disfunción sexual. Revisión, detección y tratamiento en pacientes en climaterio menopausia y osteoporosis.",
+  "addresses": [
+    {
+      "full": "Calle José María Heredia 2960,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• Desde $2,500"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de los quistes y de los tumores complejos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/treicy-sandoval-mariscal/ginecologo/guadalajara#address-id=461152&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:09:18.862Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__treicy_sandoval_mariscal.webp"
+}

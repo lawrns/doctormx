@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Raúl E. Domínguez Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f53c54/f53c54db770fddb9206accdd380e9840_220_square.jpg",
+  "about": "Soy el Dr. Raúl Domínguez, especialista en Ginecología y Obstetricia, en mí encontrarás un médico con una formación integral, además de tener empatía y continua actualización médica. Estoy para servirte. Ginecologia avanzada",
+  "addresses": [
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911, Col. Residencial Poniente,"
+    },
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911, Col. Residencial Poniente,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-e-dominguez-martinez/ginecologo/zapopan#address-id=469796&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:24:19.867Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__ra_l_e__dom_nguez_mart_nez.webp"
+}

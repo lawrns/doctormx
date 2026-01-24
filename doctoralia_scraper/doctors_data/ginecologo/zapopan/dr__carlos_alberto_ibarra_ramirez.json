@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Carlos Alberto Ibarra Ramirez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 126,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c75239/c7523937d0a7398d4526c623b6ef2991_220_square.jpg",
+  "about": "Dr. Carlos Alberto Ibarra Ramírez Gineco Obstetra, egresado de la Universidad de Guadalajara Residencia en la Unidad Medica de Alta Especialidad, Hospital de Ginecología y Obstetricia del Centro Médico Nacional de Occidente. Con actividad médico privada y a nivel institucional, desempeñándose como Jefe de Servicio Ginecología y Obstetricia. Mi filosofía estriba en proporcionar Salud Integral a la Mujer; bajo tal supuesto, mi prioridad es abordar de manera global e integral la problemática de salud de mis pacientes, incidiendo de manera preponderante en aspectos preventivos y de promoción a la salud. La experiencia acuñada con años de práctica profesional privada e institucional, no solo me ha permitido adquirir conocimiento y habilidades, misma que ha fortalecido el alto sentido de responsabilidad y respeto que profeso hacia mis pacientes.",
+  "addresses": [
+    {
+      "full": "Av Tepeyac 1287 (Col Chapalita esquina con Niño Obrero, Nucleo Medico Especialidades Chapalita Consultorio 103),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-alberto-ibarra-ramirez/ginecologo/guadalajara#address-id=68052&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:11:03.800Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__carlos_alberto_ibarra_ramirez.webp"
+}

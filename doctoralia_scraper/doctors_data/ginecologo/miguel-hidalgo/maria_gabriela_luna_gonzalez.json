@@ -1,0 +1,37 @@
+{
+  "name": "Maria Gabriela Luna Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5ce709/5ce7095c643407e5a878aa92a0ee5f55_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Ejercito Nacional 617,"
+    },
+    {
+      "full": "Cecilio Robelo S/N,"
+    },
+    {
+      "full": "Fuerza Aérea Mexicana 198,"
+    },
+    {
+      "full": "Av. Ejercito Nacional 617,"
+    },
+    {
+      "full": "Cecilio Robelo S/N,"
+    },
+    {
+      "full": "Fuerza Aérea Mexicana 198,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-gabriela-luna-gonzalez/ginecologo/miguel-hidalgo#address-id=192490&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:47:19.953Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/maria_gabriela_luna_gonzalez.webp"
+}

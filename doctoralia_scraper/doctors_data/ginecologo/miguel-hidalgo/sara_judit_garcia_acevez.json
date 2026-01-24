@@ -1,0 +1,31 @@
+{
+  "name": "Sara Judit Garcia Acevez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 403,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/43fa95f0/43fa95f0-3eea-4cd2-b2fd-cc0a326ec9f9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tlaxcala 177,"
+    },
+    {
+      "full": "Gelati 29,"
+    },
+    {
+      "full": "Tlaxcala 177,"
+    },
+    {
+      "full": "Gelati 29,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sara-judit-garcia-acevez/ginecologo/ciudad-de-mexico#address-id=173127&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:48:59.608Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/sara_judit_garcia_acevez.webp"
+}

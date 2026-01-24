@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Guzman Tomas Romero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b28acd/b28acd5421821c25d69e8d90efe67e79_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Emiliano Zapata 5109,"
+    },
+    {
+      "full": "Emiliano Zapata 5109,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guzman-tomas-romero/ginecologo/puebla#address-id=62292&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:35:17.036Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__guzman_tomas_romero.webp"
+}

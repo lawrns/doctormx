@@ -1,0 +1,25 @@
+{
+  "name": "Jorge Garza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2a621b/2a621b62b230b0dcbbe20b18eff656cf_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tepeyac 30, Tepeyac, 72210 Puebla, Pue., Mexico,"
+    },
+    {
+      "full": "Tepeyac 30, Tepeyac, 72210 Puebla, Pue., Mexico,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-garza/ginecologo/puebla#address-id=152534&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:29:13.882Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/jorge_garza.webp"
+}

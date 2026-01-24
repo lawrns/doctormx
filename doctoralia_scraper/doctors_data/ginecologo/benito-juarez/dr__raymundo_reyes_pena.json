@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Raymundo Reyes Pena",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/045935fe/045935fe-5b66-45af-8a2d-f6e70ce07650_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Insurgentes sur no. 1660, Florida,"
+    },
+    {
+      "full": "Insurgentes sur no. 1660, Florida,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raymundo-reyes-pena/ginecologo/alvaro-obregon#address-id=111797&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:12:54.339Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__raymundo_reyes_pena.webp"
+}

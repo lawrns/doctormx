@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Sergio Elpidio Aponte Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/15fb52/15fb52cad90c00c2dba98348957c49d1_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hidalgo 21,"
+    },
+    {
+      "full": "Hidalgo 21,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-elpidio-aponte-perez/ginecologo/tlaxcala#address-id=158557&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:19:11.474Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__sergio_elpidio_aponte_perez.webp"
+}

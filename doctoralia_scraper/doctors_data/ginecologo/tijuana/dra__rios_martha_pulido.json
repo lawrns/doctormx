@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Rios Martha Pulido",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/4f4c937d/4f4c937d-b79a-419f-9469-9a349be475ad_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. G 836,"
+    },
+    {
+      "full": "Ave. G 836,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rios-martha-pulido/ginecologo/tijuana#address-id=58425&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:48:44.307Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__rios_martha_pulido.webp"
+}

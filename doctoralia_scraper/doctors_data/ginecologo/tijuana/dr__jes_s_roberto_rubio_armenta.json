@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Jesús Roberto Rubio Armenta",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 129,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/378003/3780038bd16426604acf807fb7d3006b.jpg",
+  "about": "GINECÓLOGO ESPECIALISTA EN CIRUGÍA DE MÍNIMA INVASIÓN ( LAPAROSCOPÍA GINECOLÓGICA AVANZADA ), CON MAS DE 22 AÑOS DE EXPERIENCIA, INTRODUJO A TIJUANA LA TÉCNICA DE HISTERECTOMÍA LAPAROSCÓPICA TOTAL, GINECÓLOGO CERTIFICADO PARA REALIZAR CIRUGÍA ROBÓTICA GINECOLÓGICA SIENDO EL PRIMER GINECÓLOGO EN CERTIFICARSE DEL NOROESTE, ESPECIALISTA EN DIFERENTES TÉCNICAS EN MÍNIMA INVASIÓN COMO LAPAROSCOPÍA, ROBÓTICA, CIRUGÍA DE PUERTO ÚNICO, CIRUGÍA DE V NOTES ( CIRUGÍA LAPAROSCÓPICA VÍA VAGINAL ), ESPECIALISTA DE CASOS DIFÍCILES GINECOLÓGICOS PARA RESOLVERLOS POR VÍA LAPAROSCÓPICA.",
+  "addresses": [
+    {
+      "full": "Avenida Colima 2225-1, Colonia Madero,cacho, Tijuana, Baja California, Mexico,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-roberto-rubio-armenta/ginecologo/tijuana#address-id=36417&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:40:57.981Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__jes_s_roberto_rubio_armenta.webp"
+}

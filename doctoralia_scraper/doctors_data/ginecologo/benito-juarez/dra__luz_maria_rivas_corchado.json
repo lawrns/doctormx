@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Luz Maria Rivas Corchado",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 243,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5f0caf/5f0caf630f5497ead31d54f9349f82c6.jpg",
+  "about": "La Dra. Luz María Rivas Corchado es especialista en ginecología, gineco-oncólogia, colposcopia y laparoscopia, le brinda atención profesional personalizada y de vanguardia, respaldada por su profesionalismo y amplio conocimiento en estas áreas de la medicina. Tiene amplia experiencia en el área de detección, diagnóstico oportuno y tratamiento tanto de afecciones ginecológicas como de tumores benignos y malignos (cáncer) de los órganos femeninos. Le indicara el mejor tratamiento médico para padecimiento ginecológico, como pueden ser anormalidades menstruales, miomatosis, Infertilidad, planificación familiar, menopausia, infecciones de trasmisión sexual, infecciones vaginales, endometriosis entre otros. Si su padecimiento amerita tratamiento quirúrgico le ofrecerá la mejor alternativa, ya sea por incisión tradicional o por vía laparoscópica. Así mismo realiza tratamiento de tumores del área ginecológica ya sean benignos o malignos (cáncer), como son tumores mamarios, útero, ovario, vulva a base de cirugía por incisión tradicional o por laparoscopia. Cuenta además con un equipo de expertos en el área de Quimioterapia y Radioterapia en caso de requerirse.",
+  "addresses": [
+    {
+      "full": "Dirección: Tehuantepec 251, Roma Sur, Cuauhtémoc, 06760 Ciudad de México, CDMX,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luz-maria-rivas-corchado/ginecologo-oncologico-ginecologo/cuauhtemoc2#address-id=124885&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:02:39.790Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__luz_maria_rivas_corchado.webp"
+}

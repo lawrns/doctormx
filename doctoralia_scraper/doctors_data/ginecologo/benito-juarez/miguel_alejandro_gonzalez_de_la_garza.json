@@ -1,0 +1,25 @@
+{
+  "name": "Miguel Alejandro Gonzalez De La Garza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 288,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/4ea7f139/4ea7f139-e784-44c0-b576-a7b55884cd61_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Río Churubusco 601 Col. Xoco ,"
+    },
+    {
+      "full": "Av. Río Churubusco 601 Col. Xoco ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-alejandro-gonzalez-de-la-garza/ginecologo/benito-juarez#address-id=358861&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:18:58.186Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/miguel_alejandro_gonzalez_de_la_garza.webp"
+}

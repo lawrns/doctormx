@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Maria Elena Bohorquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 923,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2cb5e2/2cb5e2fd991f36f6bdd674329a375648_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Insurgentes Sur 1883-301 ,"
+    },
+    {
+      "full": "Av Insurgentes Sur 1883-301 ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-elena-bohorquez/ginecologo/alvaro-obregon#address-id=30953&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:21:38.725Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__maria_elena_bohorquez.webp"
+}

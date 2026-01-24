@@ -1,0 +1,31 @@
+{
+  "name": "Teresa Lopez Alluci",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 175,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c61099/c610995f2be0960c1d019ae8ca46903e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd San Pedro 426,"
+    },
+    {
+      "full": "Miguel De Cervantes Saavedra 7309,"
+    },
+    {
+      "full": "Blvd San Pedro 426,"
+    },
+    {
+      "full": "Miguel De Cervantes Saavedra 7309,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/teresa-lopez-alluci/ginecologo/leon#address-id=170554&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:38:14.282Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/teresa_lopez_alluci.webp"
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Dra. Dinora Robledo Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/50ea7b/50ea7b5fa383b2b1f5b11b2279b5a2ff_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Hidalgo 3249,"
+    },
+    {
+      "full": "Av. Chapalita 1300,"
+    },
+    {
+      "full": "Av Hidalgo 3249,"
+    },
+    {
+      "full": "Av. Chapalita 1300,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dinora-robledo-gonzalez-2/ginecologo/guadalajara#address-id=339251&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:28:00.858Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__dinora_robledo_gonzalez.webp"
+}

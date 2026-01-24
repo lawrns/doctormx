@@ -1,0 +1,25 @@
+{
+  "name": "Javier Gonzalez Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 259,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/7ff9c3ad/7ff9c3ad-3d79-4ef5-95ca-263539e3dea2_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Angel Urraza 1131, Col. Del Valle, ,"
+    },
+    {
+      "full": "Angel Urraza 1131, Col. Del Valle, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/javier-gonzalez-rodriguez/ginecologo/benito-juarez#address-id=357371&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:19:35.150Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/javier_gonzalez_rodriguez.webp"
+}

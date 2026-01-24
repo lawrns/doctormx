@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Miguel Ángel García Trejo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 262,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2ce9c9/2ce9c9e8444c18ac53b52ab060257c05_140_square.jpg",
+  "about": "Médico Especialista en Ginecoobstetricia más de 28 años de experiencia en la especialidad tanto Institucional, como en consultorio privado en Hospital San José de Querétaro, hospital de gran prestigio y excelente servicio",
+  "addresses": [
+    {
+      "full": "Prolongación Constituyentes 302,"
+    },
+    {
+      "full": "Prolongación Constituyentes 302,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-garcia-trejo/ginecologo/santiago-de-queretaro#address-id=5167&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:51:31.913Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__miguel__ngel_garc_a_trejo.webp"
+}

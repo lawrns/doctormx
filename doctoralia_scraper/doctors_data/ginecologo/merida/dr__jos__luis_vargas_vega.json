@@ -1,0 +1,43 @@
+{
+  "name": "Dr. José Luis Vargas Vega",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 544,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/8044e8a9/8044e8a9-d9e0-40e7-bdd2-d541cc9d8009_small_square.jpg",
+  "about": "Soy Médico Militar Ginecó Obstetra Colposcopista con más de 30 años de experiencia mi objetivo es darle la mejor atención medica con la calidad,calidez y honestidad que usted merece quedo a sus órdenes en el Hospital Star Medica Mérida Consultorio 531. Merida Yucatan. Telefonos 9435377 y 9434352 Urgencias llamar directamente: Trato enfermedades sobre la Salud femenina tales como Infecciones por Virus del Papiloma Humano,Trastornos Menstruales,Miomatosis Uterina,Quistes de Ovario,Quiste de Senos,Climaterio y Menopausia; asi como el Control del Embarazo desde su inicio hasta su feliz termino.",
+  "addresses": [
+    {
+      "full": "Calle 26 No. 199 por 15 y 7 Col. Altabrisa,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-luis-vargas-vega/ginecologo/yucatan#address-id=352584&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:29:13.212Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__jos__luis_vargas_vega.webp"
+}

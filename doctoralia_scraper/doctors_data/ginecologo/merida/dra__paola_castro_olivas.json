@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Paola Castro Olivas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/b3701c16/b3701c16-d79b-4766-8ecf-6bdf61b83352_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 50 206 (por 47 y 45),"
+    },
+    {
+      "full": "Calle 50 206 (por 47 y 45),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paola-castro-olivas/ginecologo/merida#address-id=27024&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:43:04.616Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__paola_castro_olivas.webp"
+}

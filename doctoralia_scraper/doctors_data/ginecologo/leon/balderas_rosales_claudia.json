@@ -1,0 +1,25 @@
+{
+  "name": "Balderas Rosales Claudia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9ea7ee69/9ea7ee69-a988-450b-a02a-100008065cfe_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. León 428 Col.Jardines Del Moral ,"
+    },
+    {
+      "full": "Av. León 428 Col.Jardines Del Moral ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/balderas-rosales-claudia/ginecologo/leon#address-id=359130&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:35:52.186Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/balderas_rosales_claudia.webp"
+}

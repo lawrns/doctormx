@@ -1,0 +1,37 @@
+{
+  "name": "Dr. Francisco Javier Molina Meza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1d981f/1d981f9351502c404cf5c03400b382e2_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hidalgo 329,"
+    },
+    {
+      "full": "Hidalgo 333,"
+    },
+    {
+      "full": "60 329 B,"
+    },
+    {
+      "full": "Hidalgo 329,"
+    },
+    {
+      "full": "Hidalgo 333,"
+    },
+    {
+      "full": "60 329 B,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-javier-molina-meza-2/ginecologo-urologo/leon#address-id=69471&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:32:25.931Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__francisco_javier_molina_meza.webp"
+}

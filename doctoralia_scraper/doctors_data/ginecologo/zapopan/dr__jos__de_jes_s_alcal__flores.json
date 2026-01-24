@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José de Jesús Alcalá Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 181,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fd64de/fd64dee88f2b83ed45411d1b8dd3baf1_220_square.jpg",
+  "about": "Examen ginecológico, es la forma en la que podemos detectar en forma oportuna enfermedades propias del aparato reproductor femenino por lo que se incluye en este estudio; Toma de Papanicolaou Colposcopia Ultrasonido pélvico (De útero y ovarios) Ultrasonido de mamas en pacientes menores de 40 años Mamografía y ultrasonido de mamas en pacientes de 40 o más años",
+  "addresses": [
+    {
+      "full": "Avenida Niño Obrero 476,"
+    },
+    {
+      "full": "Avenida Niño Obrero 476,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-de-jesus-alcala-flores/ginecologo/zapopan#address-id=348270&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:21:12.817Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jos__de_jes_s_alcal__flores.webp"
+}

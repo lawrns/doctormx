@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Alberto Ramos Balcázar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 175,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8206c7/8206c740c97fff7ce2a412a2e49d3900_220_square.jpg",
+  "about": "Medico Gineco-Obstetra con Subespecialidad en Biología de la Reproducción Humana. Endoscopia Ginecológica de alta especialidad. *Certificado en Ginecología y Obstetricia, además certificado en Biología de la Reproducción Humana por el Consejo Mexicano de Ginecología y Obstetricia.",
+  "addresses": [
+    {
+      "full": "Boulevard San Pedro 105 Col San Isidro ,"
+    },
+    {
+      "full": "Boulevard San Pedro 105 Col San Isidro ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Colocación de cerclaje de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alberto-ramos-balcazar/ginecologo/leon#address-id=149201&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:29:24.834Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__alberto_ramos_balc_zar.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Patricia Ines Velazquez Castellanos",
+  "specialty": "Urólogo",
+  "rating": 5,
+  "reviewCount": 284,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c649f7/c649f7312105e1c9e27bcecf28013148_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Quebec 631,"
+    },
+    {
+      "full": "Coronel Calderon 777,"
+    },
+    {
+      "full": "Quebec 631,"
+    },
+    {
+      "full": "Coronel Calderon 777,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/patricia-ines-velazquez-castellanos/urologo-ginecologo/guadalajara#address-id=182053&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:42:00.231Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/patricia_ines_velazquez_castellanos.webp"
+}

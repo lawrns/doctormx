@@ -1,0 +1,25 @@
+{
+  "name": "Ernesto Cruz Jorge",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 16,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/90450f/90450fa760344270a1d7533da97a7989_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "9 128, Col. Comerciantes, ,"
+    },
+    {
+      "full": "9 128, Col. Comerciantes, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ernesto-cruz-jorge/ginecologo/santiago-de-queretaro#address-id=357107&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:55:17.023Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/ernesto_cruz_jorge.webp"
+}

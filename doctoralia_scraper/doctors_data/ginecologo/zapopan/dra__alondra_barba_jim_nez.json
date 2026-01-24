@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Alondra Barba Jiménez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5bb329/5bb32985189b66375f13ca669e3985d7_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Niño obrero 650d, entre Tepeyac y sacromonte ,"
+    },
+    {
+      "full": "Niño obrero 650d, entre Tepeyac y sacromonte ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alondra-barba-jimenez/ginecologo/zapopan#address-id=134098&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:21:25.056Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__alondra_barba_jim_nez.webp"
+}

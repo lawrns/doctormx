@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Rosa Vargas García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 34,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dfc3c5/dfc3c5e1683d428483a71d04c46cc174_220_square.jpg",
+  "about": "Mi compromiso como profesional de la Salud y Mujer es acompañarte y trabajar a tu lado en todas las etapas de tu vida para que las vivas a plenitud.",
+  "addresses": [
+    {
+      "full": "Calle Manantial número 103 Consultorio 205-A Col. Futurama Monterrey.,"
+    },
+    {
+      "full": "Calle Manantial número 103 Consultorio 205-A Col. Futurama Monterrey.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-vargas-garcia/ginecologo/leon#address-id=423511&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:27:55.970Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__rosa_vargas_garc_a.webp"
+}

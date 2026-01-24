@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Hilda Ivonne Núñez Pérez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 20,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/039840/03984062c1912a5b9fe549efa5fab4ef_220_square.jpg",
+  "about": "Ginecóloga comprometida con el cuidado integral de la salud de la mujer. Formación académica. Lic. Medico Cirujano. Faculta de Medicina de la Universidad de Guanajuato (2000 - 2006). Esp. Ginecología y Obstetricia. Hospital General de León. Universidad de Guanajuato (2007 - 2011). Diplomado en ultrasonido diagnóstico. Adiestramiento en Medina Materno-Fetal. Certificada en manejo obstétrico de emergencia y trauma (MOET). Certificada por el Consejo Mexicano de Ginecología y Obstetricia.",
+  "addresses": [
+    {
+      "full": "Av. León #428, jardines del Moral,"
+    },
+    {
+      "full": "Av. León #428, jardines del Moral,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hilda-ivonne-nunez-perez/ginecologo/leon#address-id=402594&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:28:09.708Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__hilda_ivonne_n__ez_p_rez.webp"
+}

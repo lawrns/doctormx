@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Eduardo Maxemin Lugo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/34fbf0/34fbf0dcdc2ed42b19ea7bcf2e58b2d5_220_square.jpg",
+  "about": "Hola, soy Medico Ginecólogo, egresado de Medico General en la Universidad Autónoma de Guadalajara, Posteriormente realice la especialidad de Ginecología y Obstetricia por la Universidad de Guadalajara con la sede en el Hospital General de Occidente, posteriormente realice el Diplomado de Endoscopia Ginecológica en el mismo hospital y Actualmente ofrezco mis servicios en el hospital Comunitario de Jocotepec los fines de semana.",
+  "addresses": [
+    {
+      "full": "Golfo de Cortes# 3000,"
+    },
+    {
+      "full": "Golfo de Cortes# 3000,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-maxemin-lugo/ginecologo/guadalajara#address-id=91422&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:20:52.672Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__eduardo_maxemin_lugo.webp"
+}

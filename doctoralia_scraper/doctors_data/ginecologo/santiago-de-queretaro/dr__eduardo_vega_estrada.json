@@ -1,0 +1,35 @@
+{
+  "name": "Dr. Eduardo Vega Estrada",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 239,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3302eb/3302eb43b2acbadf166f97ccbdfab1b7_220_square.jpg",
+  "about": "Soy el Dr Eduardo Vega Estrada soy médico gineco obstetra con alta especialidad en cirugía endoscopica ginecologica avanzada con aval de la máxima casa de estudios UNAM, poniendo a sus órdenes mis conocimientos y experiencia para ofrecerte diagnósticos oportunos y tratamientos de vanguardia. La cirugía de mínima invasión en ginecología ofrece mejores resultados en general, posicionando las cirugias laparoscópicas como tratamientos innovadores y eficaces. La histerocopía consiste en el estudio en tiempo real, del interior de la cavidad del útero.",
+  "addresses": [
+    {
+      "full": "Boulevard Bernardo Quintana #4060,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Histeroscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-vega-estrada/ginecologo/santiago-de-queretaro#address-id=25707&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:44:03.189Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__eduardo_vega_estrada.webp"
+}

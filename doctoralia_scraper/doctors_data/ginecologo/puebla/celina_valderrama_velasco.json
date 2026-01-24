@@ -1,0 +1,25 @@
+{
+  "name": "Celina Valderrama Velasco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 492,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/df46f79b/df46f79b-a4f5-4080-8361-586c764cfabf_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 5 Sur 5305,"
+    },
+    {
+      "full": "Calle 5 Sur 5305,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/celina-valderrama-velasco/ginecologo/puebla#address-id=17350&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:30:19.644Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/celina_valderrama_velasco.webp"
+}

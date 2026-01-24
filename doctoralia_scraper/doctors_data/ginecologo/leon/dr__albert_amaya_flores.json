@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Albert Amaya Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a25c9012/a25c9012-3cf3-4a72-a427-ca84fb0db570_small_square.jpg",
+  "about": "Medico especialista en Ginecologia dedicado al cuidado integral de la mujer en sus diferentes etapas de la vida, con un manejo completo desde medidas físicas, dietéticas y medicamentos, para tener una calidad de vida optima.HORARIOS ESPECIALES O CITA EN SABADOS mandar mensaje por WhatsApp",
+  "addresses": [
+    {
+      "full": "Avenida Roma 1001,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• $700"
+    },
+    {
+      "name": "Control hormonal",
+      "price": "• $700"
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• $700"
+    },
+    {
+      "name": "Síndrome de Ovario Poliquístico ( SOP )",
+      "price": "• $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/albert-amaya-flores/ginecologo/leon#address-id=609700&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:27:16.783Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__albert_amaya_flores.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Waldemar Jesús Solís Romero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 358,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f1bf29/f1bf29f480d4ba6bc63851bb3c135efa_220_square.jpg",
+  "about": "Parte de la medicina que se ocupa del aparato genital femenino y sus enfermedades, incluidas las glándulas mamarias, Reproducción, Control de Embarazo, Embarazo de alto Riesgo, Colposcopia, Detección de cancer Mamario y Cervico Uterino.",
+  "addresses": [
+    {
+      "full": "Hospital Star Médica Mérida, Calle 26 199 Cons. 910 Piso 9.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/waldemar-jesus-solis-romero/ginecologo/yucatan#address-id=6998&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:29:35.505Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__waldemar_jes_s_sol_s_romero.webp"
+}

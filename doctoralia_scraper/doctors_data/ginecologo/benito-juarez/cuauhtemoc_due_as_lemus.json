@@ -1,0 +1,25 @@
+{
+  "name": "Cuauhtemoc Dueñas Lemus",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 82,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/236680/236680b4c24e5ac09baff845333e65c0_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Circuitode La Costa Mz01 L 10Col. Sm 318,"
+    },
+    {
+      "full": "Circuitode La Costa Mz01 L 10Col. Sm 318,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cuauhtemoc-duenas-lemus/ginecologo/benito-juarez#address-id=356591&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:20:08.802Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/cuauhtemoc_due_as_lemus.webp"
+}

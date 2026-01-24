@@ -1,0 +1,25 @@
+{
+  "name": "Velvl Shor Pinsker",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 14,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/cc3849ec/cc3849ec-fab9-484f-98f9-263360bcc9f7_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Fuente De Medusa 8,"
+    },
+    {
+      "full": "Fuente De Medusa 8,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/velvl-shor-pinsker/ginecologo/huixquilucan#address-id=128564&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:51:44.478Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/velvl_shor_pinsker.webp"
+}

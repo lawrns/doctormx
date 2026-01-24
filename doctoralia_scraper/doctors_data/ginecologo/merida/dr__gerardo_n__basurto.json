@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Gerardo N. Basurto",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f14221/f14221dc755129beecf010a23a4e4537_220_square.jpg",
+  "about": "Dr. Gerardo, Especialista en Ginecología y Obstetricia. Con una sólida formación en Endocrinología Ginecológica y actualmente cursando un Diplomado en Nutrición Clínica en Infertilidad y Salud Hormonal, le ofrezco un enfoque integral para el cuidado de su salud ginecológica. Mi objetivo es brindarle las mejores opciones terapéuticas basadas en los últimos avances científicos, para que usted se sienta segura y empoderada en cada etapa de su vida.",
+  "addresses": [
+    {
+      "full": "Calle 149,"
+    },
+    {
+      "full": "Calle 149,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gerardo-n-basurto/ginecologo/yucatan#address-id=448567&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:37:20.733Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__gerardo_n__basurto.webp"
+}

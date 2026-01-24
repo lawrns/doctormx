@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Cervon Armando Carrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5a0fb1bb/5a0fb1bb-ea56-4f51-a436-d13df01a431b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hidalgo Sur 905 A,"
+    },
+    {
+      "full": "Av. Hidalgo No.210,"
+    },
+    {
+      "full": "Hidalgo Sur 905 A,"
+    },
+    {
+      "full": "Av. Hidalgo No.210,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cervon-armando-carrera/ginecologo/apizaco#address-id=9324&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:21:42.077Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__cervon_armando_carrera.webp"
+}

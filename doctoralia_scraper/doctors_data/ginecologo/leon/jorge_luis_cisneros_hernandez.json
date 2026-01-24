@@ -1,0 +1,25 @@
+{
+  "name": "Jorge Luis Cisneros Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 60,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1cf43d/1cf43d4542a5c484e0f57448aaeb3a49_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Jardines Del Campestre,405,Jardines Del Campestre,,"
+    },
+    {
+      "full": "Jardines Del Campestre,405,Jardines Del Campestre,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-luis-cisneros-hernandez/ginecologo/leon#address-id=358071&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:36:13.897Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/jorge_luis_cisneros_hernandez.webp"
+}

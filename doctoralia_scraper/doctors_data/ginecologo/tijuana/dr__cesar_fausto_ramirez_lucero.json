@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Cesar Fausto Ramirez Lucero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 62,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d8fdad/d8fdad3269daaddfe3cfe6e091708141_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. José Clemente Orozco 10122,"
+    },
+    {
+      "full": "Av. José Clemente Orozco 10122,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cesar-fausto-ramirez-lucero/ginecologo/tijuana#address-id=165735&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:46:55.419Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__cesar_fausto_ramirez_lucero.webp"
+}

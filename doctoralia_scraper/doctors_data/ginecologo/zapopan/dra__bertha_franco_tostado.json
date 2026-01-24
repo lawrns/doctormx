@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Bertha Franco Tostado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 149,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/130631/13063129460d77edc2a879f1a1db7f29_220_square.jpg",
+  "about": "Médico especializado en Ginecología y Obstetricia, y en Biología de la Reproducción Humana, con más de 20 años de experiencia dentro de la profesión. Siempre motivada por mantenerme actualizada para beneficio de mis pacientes. Durante mis años de actividad profesional he desarrollado una actitud metódica y una escucha activa, ayudando a resolver los problemas de los pacientes de manera eficiente.",
+  "addresses": [
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911, Poniente, 45136 Zapopan, Jal.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/bertha-franco-tostado/ginecologo/zapopan#address-id=410940&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:10:11.877Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__bertha_franco_tostado.webp"
+}

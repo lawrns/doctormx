@@ -1,0 +1,46 @@
+{
+  "name": "Dra. María Fernanda Bueno Núñez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 30,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/407d59/407d594789eebc0ee07f33b2438e8b99_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Paseo Ensenada 830,"
+    },
+    {
+      "full": "Paseo Ensenada 830,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-fernanda-bueno-nunez/ginecologo/tijuana#address-id=110665&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:45:50.055Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__mar_a_fernanda_bueno_n__ez.webp"
+}

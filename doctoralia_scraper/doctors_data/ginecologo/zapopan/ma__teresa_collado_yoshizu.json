@@ -1,0 +1,31 @@
+{
+  "name": "Ma. Teresa Collado Yoshizu",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1069,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a85aea/a85aeac97ca9cd88628ab40c489202d8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Manuel Acuña 2844,"
+    },
+    {
+      "full": "Av. Terranova 676,"
+    },
+    {
+      "full": "Av. Manuel Acuña 2844,"
+    },
+    {
+      "full": "Av. Terranova 676,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ma-teresa-collado-yoshizu/ginecologo/guadalajara#address-id=197280&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:42:09.466Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/ma__teresa_collado_yoshizu.webp"
+}

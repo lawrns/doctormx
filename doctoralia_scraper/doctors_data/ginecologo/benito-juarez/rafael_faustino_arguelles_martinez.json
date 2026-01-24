@@ -1,0 +1,25 @@
+{
+  "name": "Rafael Faustino Arguelles Martinez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 262,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/00cb8448/00cb8448-4bf9-4009-ab88-c92e33df007a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Jose Enrique Pestalozzi 1204,"
+    },
+    {
+      "full": "Jose Enrique Pestalozzi 1204,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rafael-faustino-arguelles-martinez/ginecologo/benito-juarez#address-id=158647&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:17:49.929Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/rafael_faustino_arguelles_martinez.webp"
+}

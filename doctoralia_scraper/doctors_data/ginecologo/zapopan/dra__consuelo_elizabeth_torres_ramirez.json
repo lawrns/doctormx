@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Consuelo Elizabeth Torres Ramirez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 181,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c6a7f5/c6a7f5921ba65641f55699ef24d53b43.jpg",
+  "about": "Egresada de la Universidad de Guadalajara, especialista en Ginecología y Obstetricia por Centro Médico Nacional de Occidente, con estudios complementarios en Menopausia, climaterio, terapia de reemplazo hormonal, osteoporosis, colposcopia y ultrasonografía diagnostica. Accesible y con habilidades médico - quirúrgicas para ayudarte a prevenir, detectar y tratar las enfermedades a las que, como mujeres nos enfrentamos a lo largo de nuestra vida. Resolver tus dudas y tener un entorno de confianza es la meta de nuestra consulta. A lo largo de estos años, me he desempeñado como médico especialista en diversos Hospitales, sin dejar de lado mi educación médica continua, lo que me brinda la experiencia y conocimientos actualizados para ofrecerte una atención Humana y de Calidad. Ya sea cuidar de ti y tu bebé, seleccionar los mejores métodos de planificación, ayudarte a evitar los síntomas de la menopausia, brindar tratamiento oportuno a tu osteoporosis o realizar intervenciones frente al virus de papiloma humano, en cualquier etapa de la vida: estoy ahí para apoyarte.",
+  "addresses": [
+    {
+      "full": "Av. Circunvalación 70,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/consuelo-elizabeth-torres-ramirez/ginecologo/guadalajara#address-id=434212&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:12:34.970Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__consuelo_elizabeth_torres_ramirez.webp"
+}

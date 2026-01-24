@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Patricia Janeth Pablo Jiménez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9adaf4/9adaf4460042ece403486f1413610a64_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Antonio Caso 2055, Zona Urbana Río Tijuana, 22010 Tijuana, BC ,"
+    },
+    {
+      "full": "Antonio Caso 2055, Zona Urbana Río Tijuana, 22010 Tijuana, BC ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/patricia-janeth-pablo-jimenez/ginecologo/tijuana#address-id=20086&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:45:19.038Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__patricia_janeth_pablo_jim_nez.webp"
+}

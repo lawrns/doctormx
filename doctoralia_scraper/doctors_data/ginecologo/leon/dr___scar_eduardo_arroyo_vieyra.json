@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Óscar Eduardo Arroyo Vieyra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 275,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0744bd/0744bd4ac5c6d38b7dc6ff1391083d69_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Cerro Gordo 311,"
+    },
+    {
+      "full": "Av. Cerro Gordo 311,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/oscar-eduardo-arroyo-vieyra/ginecologo/leon#address-id=3403&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:31:21.352Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr___scar_eduardo_arroyo_vieyra.webp"
+}

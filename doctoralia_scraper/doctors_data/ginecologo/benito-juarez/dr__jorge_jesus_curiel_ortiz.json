@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jorge Jesus Curiel Ortiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 243,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9329f2/9329f22fce296bd63c74e075e8005e07_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tehuantepec 251 cónsul 201 Col. Roma Sur Mexico DF,"
+    },
+    {
+      "full": "Tehuantepec 251 cónsul 201 Col. Roma Sur Mexico DF,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-jesus-curiel-ortiz/ginecologo/cuauhtemoc#address-id=94077&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:11:08.845Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__jorge_jesus_curiel_ortiz.webp"
+}

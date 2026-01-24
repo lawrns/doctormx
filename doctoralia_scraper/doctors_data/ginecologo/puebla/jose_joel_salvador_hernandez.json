@@ -1,0 +1,25 @@
+{
+  "name": "Jose Joel Salvador Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 27,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d3c592/d3c592003b6aff770f863a0b69801841_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "55 Sur 1716 Acol. Reforma Sur Amp,"
+    },
+    {
+      "full": "55 Sur 1716 Acol. Reforma Sur Amp,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-joel-salvador-hernandez/ginecologo/puebla#address-id=357356&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:30:59.961Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/jose_joel_salvador_hernandez.webp"
+}

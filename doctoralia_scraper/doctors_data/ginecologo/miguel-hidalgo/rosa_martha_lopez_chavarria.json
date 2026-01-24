@@ -1,0 +1,25 @@
+{
+  "name": "Rosa Martha Lopez Chavarria",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e7688714/e7688714-be11-4371-b89d-0670778519a4_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Agrarismo (Hosp. de Mexico), 208 - 5 A,"
+    },
+    {
+      "full": "Agrarismo (Hosp. de Mexico), 208 - 5 A,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-martha-lopez-chavarria/ginecologo/miguel-hidalgo#address-id=76948&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:52:27.711Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/rosa_martha_lopez_chavarria.webp"
+}

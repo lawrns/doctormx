@@ -1,0 +1,39 @@
+{
+  "name": "Dr. César Raúl Ramírez Ley",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 54,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/701426/701426eac7ea3ba491602261861d77be_220_square.jpg",
+  "about": "El Dr. César Raùl Ramìrez Ley cuenta con mas de doce años de experiencia en el medio privado e institucional, tiene a su cargo la primera unidad en el estado de Baja California de URODINAMIA y ULTRASONIDO dedicada al estudio de la incontinencia urinaria, disfunciòn del suelo pèlvico en la mujer (vejiga o matriz caida), infecciones urinarias entre otras enfermedades urològicas femeninas, es ademàs ginecòlogo por lo que està capacitado para tratar las enfermedades que en general aquejan a las mujeres. En su unidad se estudian y tratan ademas padecimientos que deben ser resueltos o diagnòsticados con tècnicas quirùrgicas de mìnima invasiòn, siendo la laparoscopia, histeroscopia y la cistoscopia las tècnicas màs comúnmente empleadas.",
+  "addresses": [],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Cirugía conservadora parcial de prolapso uterino",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina por vía vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cesar-raul-ramirez-ley/ginecologo/tijuana#address-id=77108&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:42:48.702Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__c_sar_ra_l_ram_rez_ley.webp"
+}

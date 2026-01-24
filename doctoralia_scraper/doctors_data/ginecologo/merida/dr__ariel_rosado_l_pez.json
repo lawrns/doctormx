@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Ariel Rosado López",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 610,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dfb1df/dfb1dff98c57f00de9bcd71ee43e0bc4_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 7 215A , (por 32 y 34),"
+    },
+    {
+      "full": "Calle 7 215A , (por 32 y 34),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ariel-rosado-lopez/ginecologo/merida#address-id=5369&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:46:47.322Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__ariel_rosado_l_pez.webp"
+}

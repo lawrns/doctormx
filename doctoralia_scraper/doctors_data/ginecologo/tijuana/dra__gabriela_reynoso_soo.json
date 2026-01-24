@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Gabriela Reynoso Soo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/964fd4/964fd45559280f6ae6a215f5be5e38b1_220_square.jpg",
+  "about": "Posterior a realizar mi especialidad en Ginecologìa y Obstetricia, me intereso el capacitarme para brindar de manera integral atención a aquellas pacientes con alguna alteración-patología en la Glándula Mamaria, por lo cual realice un Adiestramiento de Alta Especialidad en Clínica de Mama",
+  "addresses": [
+    {
+      "full": "Blvd Diaz Ordaz Centro Comercial Plaza Patria 3er nivel Of 9,"
+    },
+    {
+      "full": "Blvd Diaz Ordaz Centro Comercial Plaza Patria 3er nivel Of 9,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriela-reynoso-soo/ginecologo/tijuana#address-id=135558&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:43:22.822Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__gabriela_reynoso_soo.webp"
+}

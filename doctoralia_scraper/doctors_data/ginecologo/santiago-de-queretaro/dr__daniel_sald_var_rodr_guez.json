@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Daniel Saldívar Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/68715c/68715cf4a51862e51d87571e47ad4f08_220_square.jpg",
+  "about": "Estudié medicina en la Universidad Autónoma de Querétaro. Posteriormente realice estudios de especialidad y subespecialidad en La Unidad Medica de Alta Especialidad 23 en Monterrey. Cursé una estancia formativa en el Children´s Hospital Los Angeles en el área de cardiología fetal . Soy un medico convencido de que la vida fetal determina en gran parte el bienestar en la infancia e incluso en la vida adulta. Estoy certificado por la Fetal Medicine Foundation de Londres para la realización del tamizaje completo en primer trimestre. Ademas estoy certificado por el Consejo Mexicano de Ginecología y Obstetricia para la practica de la ginecología y la subepecialidad en Medicina Materno Fetal. Seguimos los lineamientos internacionales mas estrictos en la realización de cualquier estudio y procedimiento y contamos con equipo medico de la mas alta tecnología para la realización de los mismos.",
+  "addresses": [
+    {
+      "full": "Avenida Prolongacion Constituyentes 302 (Hospital San José 7mo piso consultorio 705),"
+    },
+    {
+      "full": "Avenida Prolongacion Constituyentes 302 (Hospital San José 7mo piso consultorio 705),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amnioscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniel-saldivar-rodriguez/ginecologo/santiago-de-queretaro#address-id=108925&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:49:13.807Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__daniel_sald_var_rodr_guez.webp"
+}

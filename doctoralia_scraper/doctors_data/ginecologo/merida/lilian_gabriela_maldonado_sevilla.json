@@ -1,0 +1,31 @@
+{
+  "name": "Lilian Gabriela Maldonado Sevilla",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 219,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/544bdd/544bdda72c4c590c2e4bd7f432e7edac_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 50 X 65 Y 67,"
+    },
+    {
+      "full": "C. 31 X 20 181-C,"
+    },
+    {
+      "full": "C. 50 X 65 Y 67,"
+    },
+    {
+      "full": "C. 31 X 20 181-C,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lilian-gabriela-maldonado-sevilla/ginecologo/merida#address-id=201109&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:51:04.575Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/lilian_gabriela_maldonado_sevilla.webp"
+}

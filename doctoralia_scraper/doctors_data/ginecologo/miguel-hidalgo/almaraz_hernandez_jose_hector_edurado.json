@@ -1,0 +1,25 @@
+{
+  "name": "Almaraz Hernandez Jose Hector Edurado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 347,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8337eb/8337ebc743c06625726788955c51095b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ejército Nacional 613 Sala 4 Cons. 9 Col. Granada ,"
+    },
+    {
+      "full": "Ejército Nacional 613 Sala 4 Cons. 9 Col. Granada ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/almaraz-hernandez-jose-hector-edurado/ginecologo/miguel-hidalgo#address-id=358875&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:49:59.159Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/almaraz_hernandez_jose_hector_edurado.webp"
+}

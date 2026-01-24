@@ -1,0 +1,42 @@
+{
+  "name": "Dra. Jessica Susana Macías Rodríguez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 432,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/49fa7151/49fa7151-4a0e-4981-a7a6-4304d0b278c9_small_square.jpg",
+  "about": "Hola! Soy la Dra Jessica, creadora de \"Giné\"-Ginecología Integral, un espacio seguro y confiable dedicado al cuidado de la salud femenina en todas sus etapas. Ofrecemos atención personalizada en control prenatal, asesoría preconcepcional, nacimiento humanizado y respetado, métodos anticonceptivos, patología ginecológica, menopausia, ultrasonido 3D y 4D, gineco estética, medicina bioregenerativa y funcional.",
+  "addresses": [
+    {
+      "full": "Aurelio Luis gallardo 403,"
+    },
+    {
+      "full": "Aurelio Luis gallardo 403,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• $850"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $800"
+    },
+    {
+      "name": "Ultrasonido 4D",
+      "price": "• $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jessica-susana-macias-rodriguez/ginecologo/leon#address-id=589980&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:29:12.271Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__jessica_susana_mac_as_rodr_guez.webp"
+}

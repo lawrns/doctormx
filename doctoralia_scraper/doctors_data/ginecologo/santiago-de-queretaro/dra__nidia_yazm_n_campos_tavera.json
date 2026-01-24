@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Nidia Yazmín Campos Tavera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 428,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/015b5d90/015b5d90-bf87-4379-9b4b-f9c59e3fbaa3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Privada Ignacio Zaragoza No.16, Col Centro , Hospital H +, Torre 3, piso 4, consultorio 409,"
+    },
+    {
+      "full": "Privada Ignacio Zaragoza No.16, Col Centro , Hospital H +, Torre 3, piso 4, consultorio 409,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nidia-yazmin-campos-tavera/ginecologo/santiago-de-queretaro#address-id=325064&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:52:31.394Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__nidia_yazm_n_campos_tavera.webp"
+}

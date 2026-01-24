@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Sandra Itzel Montiel Padilla",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/721d19/721d19deb8a98cb2457a77e4644cfd08_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Uruguay 1420,"
+    },
+    {
+      "full": "Uruguay 1420,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sandra-itzel-montiel-padilla/ginecologo/puebla#address-id=115714&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:18:05.022Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__sandra_itzel_montiel_padilla.webp"
+}

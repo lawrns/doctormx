@@ -1,0 +1,74 @@
+{
+  "name": "Dr. Fernando Díaz Medina.",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f98911/f98911fa0c1d0ad81dba1cffe74b6b19_220_square.jpg",
+  "about": "Soy el Dr. Fernando Díaz Medina, especialista en Ginecología Oncológica. Mi atención se enfoca en mujeres niñas y adolescentes a partir de 9 años, y en particular, en pacientes con embarazo de alto riesgo, enfermedades de la mujer, y detección y tratamiento de cáncer ginecológico.Soy un médico comprometido con el bienestar de mis pacientes, y siempre busco responder todas sus dudas de manera amable y detallada. Me enorgullece ser reconocido por mi profesionalismo y excelencia en la atención que brindo a mis pacientes. Siempre trabajo con los métodos de tratamiento más avanzados y efectivos, y mi objetivo es lograr la salud y el bienestar de mis pacientes.",
+  "addresses": [
+    {
+      "full": "Piso 12. Consultorio 1218. Periférico Ecológico 3505, 72821 San Andrés Cholula, Puebla,"
+    },
+    {
+      "full": "4 poniente 117, colonia centro, CP. 75700, Tehuacan, Puebla,"
+    },
+    {
+      "full": "Calle 2 Nte.,"
+    },
+    {
+      "full": "Piso 12. Consultorio 1218. Periférico Ecológico 3505, 72821 San Andrés Cholula, Puebla,"
+    },
+    {
+      "full": "4 poniente 117, colonia centro, CP. 75700, Tehuacan, Puebla,"
+    },
+    {
+      "full": "Calle 2 Nte.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta Ginecología Oncológica",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta oncología",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Biopsia con marcaje con arpón",
+      "price": ""
+    },
+    {
+      "name": "Biopsia trucut de mama",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora de glándula mamaria",
+      "price": ""
+    },
+    {
+      "name": "Cirugía ginecológica y obstetrica de alta complejidad",
+      "price": ""
+    },
+    {
+      "name": "Consulta de ginecólogo oncológico",
+      "price": "• Desde $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-diaz-medina/ginecologo-oncologico-ginecologo/puebla#address-id=478622&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:12:56.224Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__fernando_d_az_medina_.webp"
+}

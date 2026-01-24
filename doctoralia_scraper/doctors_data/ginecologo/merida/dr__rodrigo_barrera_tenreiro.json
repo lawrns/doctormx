@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Rodrigo Barrera Tenreiro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 544,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/58e4f1/58e4f19704cc7d2e080a37e2780a796a_220_square.jpg",
+  "about": "Medico con especialidad en ginecología y subespecialidad en biología de la reproducción humana otorgada por la Universidad autónoma de México (UNAM) con mención Honorífica. Egresado de medicina por parte de la UADY. Certificado por el consejo mexicano de ginecología y obstetricia y el consejo de biología de la reproducción. Con la especialidad de biología de la reproducción, trato los diferentes aspectos como la endocrinología, la infertilidad y mecanismos de acción hormonal. Cuento con reconocimientos, diplomados y certificaciones internacionales, para otorgarte la mejor atención, diagnósticos y tratamientos certeros y actuales.",
+  "addresses": [
+    {
+      "full": "Calle 54 365, Zona Paseo Montejo, Centro,,"
+    },
+    {
+      "full": "Calle 26 199, Colonia Altabrisa,"
+    },
+    {
+      "full": "Calle 54 365, Zona Paseo Montejo, Centro,,"
+    },
+    {
+      "full": "Calle 26 199, Colonia Altabrisa,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $950"
+    },
+    {
+      "name": "Colocación de implante subdérmico",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Colocación de implante subdérmico",
+      "price": ""
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rodrigo-barrera-tenreiro/ginecologo/yucatan#address-id=404402&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:34:13.860Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__rodrigo_barrera_tenreiro.webp"
+}

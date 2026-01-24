@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Francisco Bravo Torres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 903,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/37a076/37a076a6b6a1a81890a7cfe7c3fe6e89.jpg",
+  "about": "Soy médico ginecólogo, mis prioridades son servir a Dios a través de mi trabajo (católico), dar atención basado en conocimientos al límite del avance científico, siempre me pongo en el lugar de los pacientes, me considero un médico muy respetuoso y que siempre da mucha información a los pacientes acerca del porqué de su condición o síntoma motivo de la consulta. Un principio básico de la consulta es no juzgar, no discriminar, ayudar y servir. No realizo interrupciones de embarazos viables. La mayor parte de las cirugías las realizo en Hospital MAC, Médica Campestre, Hospital Siena, Hospital Aranda de la Parra y Hospital Ramirez Guadiana. Acepto todas las aseguradoras menos Met Life.",
+  "addresses": [
+    {
+      "full": "Blvd. Aeropuerto 101,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-bravo-torres-2/ginecologo/leon#address-id=499619&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:25:34.001Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__francisco_bravo_torres.webp"
+}

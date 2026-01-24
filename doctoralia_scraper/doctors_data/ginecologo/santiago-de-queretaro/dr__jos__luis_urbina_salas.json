@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José Luis Urbina Salas",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d33adf/d33adf29d6a7ce4a2c476187a5572e92_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Corregidora 1310,"
+    },
+    {
+      "full": "Corregidora 1310,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-luis-urbina-salas/ginecologo/monclova#address-id=18271&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:51:51.343Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__jos__luis_urbina_salas.webp"
+}

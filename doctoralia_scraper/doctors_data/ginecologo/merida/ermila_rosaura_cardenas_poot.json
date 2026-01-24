@@ -1,0 +1,25 @@
+{
+  "name": "Ermila Rosaura Cardenas Poot",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 895,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9a6ca5e6/9a6ca5e6-593e-46f3-bd84-9730fa635dca_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "55 X 106,826,Centenario De Caucel,,"
+    },
+    {
+      "full": "55 X 106,826,Centenario De Caucel,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ermila-rosaura-cardenas-poot/ginecologo/merida#address-id=355494&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:48:03.221Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/ermila_rosaura_cardenas_poot.webp"
+}

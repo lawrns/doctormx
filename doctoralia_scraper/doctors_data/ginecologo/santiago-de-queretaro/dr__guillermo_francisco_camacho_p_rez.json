@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Guillermo Francisco Camacho Pérez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 46,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/c6ff8401/c6ff8401-a94e-4b12-b512-0c494216402a_small_square.jpg",
+  "about": "Hola, que tal Yo Soy el Dr. Guillermo Fco. Camacho Pérez, Ginecólogo con sub especialidad en Medicina Perinatal, formado en la Universidad Autónoma de San Luis Potosí con Sub Especialidad en Medicina Perinatal. Crecí en un núcleo familiar donde el Matriarcado era ejercido con cortesía y empatía por igual, de ahí me surgen los valores con que atiendo profesionalmente. Tengo un lema personal y este deriva de la convivencia familiar: VEN...YO TE ESCUCHO, y esto lo ves reflejado en mi atención. Tengo una experiencia de 34 años atendiendo con Dedicación, Honestidad, Respeto y en la Verdad. estoy para Servirte.",
+  "addresses": [
+    {
+      "full": "Calle Melchor Ocampo 45,"
+    },
+    {
+      "full": "Calle Privada Ignacio Zaragoza 16,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-francisco-camacho-perez/ginecologo/santiago-de-queretaro#address-id=564035&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:44:39.692Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__guillermo_francisco_camacho_p_rez.webp"
+}

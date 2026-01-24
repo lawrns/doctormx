@@ -1,0 +1,25 @@
+{
+  "name": "Maria Del Socorro Ramos Palma",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 107,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/df846a/df846a65cb508b535b2b845562658b34_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Kepler 2143,"
+    },
+    {
+      "full": "Av. Kepler 2143,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-del-socorro-ramos-palma/ginecologo/san-andres-cholula#address-id=193238&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:35:19.986Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/maria_del_socorro_ramos_palma.webp"
+}

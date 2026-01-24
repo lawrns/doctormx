@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Luis Carlos Uribe Ramirez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ae9a4a/ae9a4aec2511d730aaa8a6e5f65413ad_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tarascos 3469 (Condominio Profesional el Carmen, consultorio 107),"
+    },
+    {
+      "full": "Tarascos 3469 (Condominio Profesional el Carmen, consultorio 107),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-carlos-uribe-ramirez/ginecologo/guadalajara#address-id=66398&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:28:13.468Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__luis_carlos_uribe_ramirez.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Margarita Flores Zaleta",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/403687/40368767cc3dc3914af6c3143b5fec1d_220_square.jpg",
+  "about": "Soy la Dra. Margarita Flores, Especialista en Ginecología y Obstetricia. Cuento con más de 9 años de experiencia. Lo que más alegría me da ejercer mi especialidad es traer nuevas vidas al mundo, ayudar a concebir un nuevo ser, acompañar durante su desarrollo y finalmente ayudarlo a nacer.",
+  "addresses": [
+    {
+      "full": "HOSPITAL ANGELES MEXICO. Agrarismo 208 Torre B consultorio 651 Colonia Escandon,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/margarita-flores-zaleta/ginecologo/miguel-hidalgo#address-id=80463&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:02:39.433Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__margarita_flores_zaleta.webp"
+}

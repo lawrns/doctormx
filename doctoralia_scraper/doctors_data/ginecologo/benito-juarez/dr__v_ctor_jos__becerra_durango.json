@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Víctor José Becerra Durango",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f5afdc33/f5afdc33-0332-47bd-8722-a89983d9f5a4_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Rio Churubusco 601 - 713,"
+    },
+    {
+      "full": "Av. Rio Churubusco 601 - 713,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victor-jose-becerra-durango/ginecologo/benito-juarez#address-id=106780&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:11:53.366Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__v_ctor_jos__becerra_durango.webp"
+}

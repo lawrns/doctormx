@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Estefani Salgado Benítez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 256,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/32a02b/32a02b91fd4ad6f6418eebf49f15df1c.jpg",
+  "about": "HOLA SOY LA DRA. ESTEFANI SALGADO CON ESPECIALIDAD EN GINECOLOGIA Y OBSTETRICIA BRINDANDO ATENCIÓN A TODAS LAS MUJERES DESDE EL INICIO DE LA PUBERTAD HASTA LA MENOPAUSIA, ACOMPAÑANDOTE EN TODAS LAS ETAPAS QUE EXPERIMENTAMOS A LO LARGO DE LA VIDA; INICIO DE LA PRIMERA MENSTRUACIÓN, ENFERMEDADES DE TRANSMISIÓN SEXUAL, PREVENCIÓN DE ENFERMEDADES A TRAVES DEL USO DE CITOLOGIA CERVICAL, COLPOSCOPIA, ULTRASONIDO, EXPLORACIÓM MAMARIA, CONTROL PRENATAL DONDE DESEO VIVAS UNA GRAN EXPERIENCIA EN ESTA ETAPA TAN IMPORTANTE QUE ES EL EMBARAZO, AÚN SIENDO UN EMBARAZO DE ALTO RIESGO, Y FINALMENTE DURANTE LA MENOPAUSIA DONDE SURGEN CAMBIOS QUE ES IMPORTANTE TRATAR PARA TENER UNA VIDA DE CALIDAD. MI FORMACION EN DIFERENTES HOSPITALES DE GRAN AFLUENCIA DE PACIENTES ME HAN OTORGADO LOS CONOCIMIENTOS NECESARIOS PARA HACER DE TU CONSULTA UNA GRAN EXPERIENCIA, PERO SOBRE TODO CON GRAN HUMANISMO Y PROFESIONALIDAD.",
+  "addresses": [
+    {
+      "full": "Blvd. Bernardo Quintana 4060, San Pablo, Santiago de Querétaro, Qro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/estefani-salgado-benitez/ginecologo/santiago-de-queretaro#address-id=416649&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:44:58.865Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__estefani_salgado_ben_tez.webp"
+}

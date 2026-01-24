@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Fernando C. Paredes Chávez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 110,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/18ce10c8/18ce10c8-141b-4035-a6c8-7e719cf16b2b_small_square.jpg",
+  "about": "NO SE ATIENDEN MUJERES EMBARAZADAS SOLO PROBLEMAS GINECOLOGICOS ESPECIALIZACION EN CIRUGIA LAPARAROSCOPIA AVANZADA PARA EL TRATAMIENTO DE ENDOMETRIOSIS PELVICA Y PATOLOGIA BENIGNA (HISTERECTOMIA LAPAROSCOPICA, MIOMECTOMIA LAPAROSCOPICA, RESECCION DE QUISTES Y TUMORES OVARICOS Y DE SALPINGES POR LAPAROSCOPIA) ENTRENAMIENTO NACIONAL E INTERNACIONAL PROFESOR DE LA ESCUELA INTERNACIONAL DE ANATOMIA QUIRURGICA, NEGRAR VERONA ITALIA",
+  "addresses": [
+    {
+      "full": "AVENIDA DE LAS CIENCIAS 2058, JURIQUILLA,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Extirpación de la glándula de Bartholin",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-c-paredes-chavez/ginecologo/santiago-de-queretaro#address-id=4778&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:47:48.200Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__fernando_c__paredes_ch_vez.webp"
+}

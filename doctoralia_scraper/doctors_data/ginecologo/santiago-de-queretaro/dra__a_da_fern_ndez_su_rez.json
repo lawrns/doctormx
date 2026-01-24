@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Aída Fernández Suárez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 787,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6ce3b2/6ce3b20cc9962d465e111ad65df0d2e7.jpg",
+  "about": "Soy un médico especialista en el cuidado de la salud y tratamiento de enfermedades de la mujer que se presentan a través de las diferentes etapas de la vida desde la pubertad hasta la tercera edad. Experiencia en el manejo y control del embarazo, atención de parto o cesárea. Experiencia en cirugía ginecológica, colposcopia, consejería sobre métodos de planificación familiar. Tratamiento de sangrados anormales, control del climaterio y menopausia, atención de enfermedades de transmisión sexual así como la detección oportuna de lesiones pre cancerígenas. Usted recibirá una atención respetuosa, profesional y humana.",
+  "addresses": [
+    {
+      "full": "Avenida Constituyentes 302, colonica el Jacal, Hospital San jose Torre 1,4TO piso, consultorio 406,"
+    },
+    {
+      "full": "Avenida Constituyentes 302, colonica el Jacal, Hospital San jose Torre 1, segundo piso, consultorio 205,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aida-fernandez-suarez/ginecologo/santiago-de-queretaro#address-id=134932&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:44:32.008Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__a_da_fern_ndez_su_rez.webp"
+}

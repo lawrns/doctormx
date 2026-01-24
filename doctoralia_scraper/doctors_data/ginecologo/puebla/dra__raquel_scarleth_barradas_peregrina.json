@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Raquel Scarleth Barradas Peregrina",
+  "specialty": "Ginecólogo",
+  "rating": 3.5,
+  "reviewCount": 4,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6c65f1/6c65f15215a55c9748ad0cca2e5bce05_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "4 Poniente, 2515 B,"
+    },
+    {
+      "full": "4 Poniente, 2515 B,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raquel-scarleth-barradas-peregrina/ginecologo/puebla#address-id=132659&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:19:16.415Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__raquel_scarleth_barradas_peregrina.webp"
+}

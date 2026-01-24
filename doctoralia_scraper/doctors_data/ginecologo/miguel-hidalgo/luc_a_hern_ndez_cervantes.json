@@ -1,0 +1,25 @@
+{
+  "name": "Lucía Hernández Cervantes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 267,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f766c3/f766c36a538e7545b4a84040e71fae04_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Ejército Naciona #678,"
+    },
+    {
+      "full": "Av. Ejército Naciona #678,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lucia-hernandez-cervantes/ginecologo/ciudad-de-mexico#address-id=148181&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:49:35.191Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/luc_a_hern_ndez_cervantes.webp"
+}

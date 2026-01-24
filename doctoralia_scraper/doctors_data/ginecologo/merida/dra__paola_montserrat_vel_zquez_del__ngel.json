@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Paola Montserrat Velázquez del Ángel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5da054/5da0549cba8220ca64a7a47d330a668a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 50 No.366 por 13 y 13-A Residencial Pensiones,"
+    },
+    {
+      "full": "Calle 50 No.366 por 13 y 13-A Residencial Pensiones,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paola-montserrat-velazquez-del-angel/ginecologo/merida#address-id=25295&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:44:40.145Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__paola_montserrat_vel_zquez_del__ngel.webp"
+}

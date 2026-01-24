@@ -1,0 +1,34 @@
+{
+  "name": "Dra. Ana Elizabeth Medrano Ureña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 104,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2f326e/2f326eb5beecf4c53eafeee6c0e381fa.jpg",
+  "about": "Soy un medico con mas de 28 Años de experiencia en diagnostico y tratamiento de Virus papiloma humano , tratamiento de lesiones en vagina cervix, vulva asi como de cáncer inicial en cervix , vagina , vulva, con las alternativas como cauterizacion ,electrocirugia , crioterapia y LASER . Vacuna ,25 Años como responsable y fundadora de la Clínica de displasia del hospital general de Tijuana. Diplomada en medicina funcional Diplomada en ginecologia estetica Tratamiento de resequedad vagina e incontinencia urinaria de esfuerzo con laser Diplomado en Menopausia. Tratamiento y seguimiento en Síndrome climaterio y menopausia, indicando diferetenes alternativas de tratamiento para aliviar la sintomatologia por esta etapas que permiten una vida , con calidad y retraso en los cambios por envejecimiento",
+  "addresses": [
+    {
+      "full": "Calle Diego Rivera 2351 Zona Rio Tijuana, Consultorio 510,"
+    },
+    {
+      "full": "Paseo de los Heroes,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-elizabeth-medrano-urena/ginecologo/tijuana#address-id=339380&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:43:16.660Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__ana_elizabeth_medrano_ure_a.webp"
+}

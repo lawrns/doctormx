@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Dante Flores Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 648,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d4cfba/d4cfba3fc3e58ec28939810218182f70.jpg",
+  "about": "Sobre mí Soy el Dr. Dante Flores Hernández, ginecólogo certificado con más de 10 años de experiencia en la atención integral de la salud femenina. Originario de la Ciudad de México y residente en Tijuana desde 2017, me formé como médico cirujano en la Facultad de Estudios Superiores Iztacala de la UNAM. Posteriormente obtuve la especialidad en Ginecología y Obstetricia en la Secretaría de Salud del estado de Puebla (2012–2015). Mi formación medica incluye: * Médico colposcopista por la BUAP. * Alta especialidad en cirugía endoscópica ginecológica en el Hospital Español. * Capacitación constante en ginecología estética, regenerativa y funcional desde 2022. Mi enfoque profesional combina la medicina tradicional con técnicas avanzadas como la endoscopia y cirugía ginecológica con láser CO₂. Estoy comprometido con brindar atención personalizada, utilizando tecnología de vanguardia y materiales desechables para garantizar la seguridad y comodidad de mis pacientes. Mi objetivo es ofrecer un espacio de confianza y privacidad, donde cada paciente reciba una valoración integral y efectiva para mejorar su calidad de vida. ¿Por qué elegirme a mí? - Especialista con certificación vigente - Instalaciones amplias y cómodas - Materiales desechables - Equipos necesarios en consultorio - Paquetes ginecológicos accesibles - Cirugias en los mejores hospitales Principales áreas de tratamiento - Tumores ginecológicos (útero, ovarios y de mama). - Alteraciones estéticas del área genital (hipertrofia de labios menores, mayores y clítoris, hiperlaxitud vaginal, prolapso de órganos pélvicos). - Infección por Virus de Papiloma Humano (lesiones precancerosas de cérvix y verrugas genitales). Mi consulta y mi equipo Están son mis dos ubicaciones: - Femme Salud. Zona este de Tijuana, dentro de plaza Los Girasoles. En la clínica también encontraras los servicios de psicología y nutrición. - Femme Health. Zona Rio, dentro de Hospital Blue & Medical Tower. Ambos consultorios estas diseñados para brindarte un espacio de confort y privacidad. Cuentan con sala de espera, sanitario externo, área de entrevista, área de exploración y sanitario adjunto. Los consultorios están equipados con ultrasonido, colposcopio, equipos de electrocirugía y láser CO2, pantallas HD donde podrás ver paso a paso tu proceso de exploración. Siempre utilizamos materiales desechables para tu exploración (batas, espejo vaginal y papel para mesade exploración). Otros servicios - Histeroscopia de consultorio - Láser CO2 - HIFU",
+  "addresses": [
+    {
+      "full": "Vía Oriente 9750,"
+    },
+    {
+      "full": "Camino Guadalupe Victoria 22327,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía vaginal y reconstructiva",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dante-flores-hernandez/ginecologo/tijuana#address-id=447103&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:41:47.333Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__dante_flores_hern_ndez.webp"
+}

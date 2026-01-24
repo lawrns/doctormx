@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Livier Padilla Ortiz",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 118,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/38870de9/38870de9-581d-4888-8169-e780041a216e_small_square.jpg",
+  "about": "Soy la dra Livier Padilla, soy médico general por Universidad del Valle de México donde obtuve el primer promedio de mi generación, cuento con la especialidad en Ginecología y Obstetricia por la Universidad de Guanajuato. Mi enfoque es personalizado, centrado en la prevención y la educación.Creo firmemente que la salud de la mujer es fundamental para el bienestar de la sociedad, y me esfuerzo por brindar atención médica de alta calidad, con respeto, empatía y comprensión. Mi formación académica y profesional me ha permitido desarrollar habilidades quirúrgicas y de manejo de emergencias, así como una profunda compresión de la salud reproductiva y las enfermedades ginecológicas. Mi objetivo es brindar atención médica de la más alta calidad, promoviendo la prevención, la educación el bienestar de mis pacientes.",
+  "addresses": [
+    {
+      "full": "Calle Justo Sierra 2076,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $850"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $850"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $850"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/livier-padilla-ortiz/ginecologo/guadalajara#address-id=530868&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:14:44.987Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__livier_padilla_ortiz.webp"
+}

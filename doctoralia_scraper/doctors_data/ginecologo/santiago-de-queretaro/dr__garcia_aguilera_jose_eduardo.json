@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Garcia Aguilera Jose Eduardo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 806,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/8b89c0d8/8b89c0d8-87e1-4d51-b3d1-a9906438e0f8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cll Fray Junipero Serra 67, Cimatario, Queretaro,"
+    },
+    {
+      "full": "Cll Fray Junipero Serra 67, Cimatario, Queretaro,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/garcia-aguilera-jose-eduardo/ginecologo/santiago-de-queretaro#address-id=106033&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:00:00.531Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__garcia_aguilera_jose_eduardo.webp"
+}

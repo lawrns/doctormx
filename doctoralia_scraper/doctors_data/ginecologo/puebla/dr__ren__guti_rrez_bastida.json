@@ -1,0 +1,46 @@
+{
+  "name": "Dr. René Gutiérrez Bastida",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 115,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f13034/f13034bc1768687bc5d6fdbaee403c74_220_square.jpg",
+  "about": "Soy un Gineco Obstetra Medico Militar con 40 años de experiencia en la especialidad, he trabajo con técnicas quirúrgicas como: microcirugía, cirugía de invasión mínima, aplicación de implantes hormonales con hormonas bioidenticas y todas las cirugías de la especialidad; Inseminación artificial con capacitación espermática. Estoy certificado y recertificado por el Consejo Mexicano de la Especialidad y soy miembro activo del Colegio Americano de Ginecólogos y Obstetras.",
+  "addresses": [
+    {
+      "full": "Av Libertad 302,"
+    },
+    {
+      "full": "Av Libertad 302,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rene-gutierrez-bastida/ginecologo/apizaco#address-id=324965&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:12:11.027Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__ren__guti_rrez_bastida.webp"
+}

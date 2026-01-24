@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Rosa Estela Paz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 34,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5c29792e/5c29792e-5ad0-4cdb-bbc4-9d266c11e5fe_small_square.jpg",
+  "about": "¡Hola! Soy la Dra. Rosy Paz, especialista en Ginecología y Obstetricia. Cursé mis estudios en la Universidad Nacional Autónoma de México, siendo egresada como medico cirujano y posteriomente, como especialista en Ginecología y Obstetricia de la UMAE Hospital Gineco-Obtetricia No.3 CMN La Raza. Realicé un Diplomado en Colposcopia y Patología Vulvovaginal, avalado por la Universidad Autónoma de Querétaro y actualmente me encuentro Certificada por el Consejo Mexicano de Ginecología y Obstetricia, A.C.; así mismo, soy Miembro Federado del Colegio de Médicos Especialistas en Ginecología y Obstetricia de Querétaro, A.C. Mi compromiso es brindarte la mejor atención, ayudándote a cuidar tu salud desde la prevención hasta el restablecimiento de la misma, siempre con empatía y profesionalismo.",
+  "addresses": [
+    {
+      "full": "Av. de las Ciencias 2058,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-estela-paz/ginecologo/queretaro#address-id=562950&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:46:20.563Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__rosa_estela_paz.webp"
+}

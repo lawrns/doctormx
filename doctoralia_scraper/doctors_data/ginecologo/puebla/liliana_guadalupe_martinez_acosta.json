@@ -1,0 +1,25 @@
+{
+  "name": "Liliana Guadalupe Martinez Acosta",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 562,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7e31c7/7e31c7208bb83de8b6d281ca374cd55f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Kepler 2143 Cons. 985 Reserva Territorial Colony Atlixcayotl,"
+    },
+    {
+      "full": "Av. Kepler 2143 Cons. 985 Reserva Territorial Colony Atlixcayotl,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/liliana-guadalupe-martinez-acosta/ginecologo/puebla#address-id=124756&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:24:28.113Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/liliana_guadalupe_martinez_acosta.webp"
+}

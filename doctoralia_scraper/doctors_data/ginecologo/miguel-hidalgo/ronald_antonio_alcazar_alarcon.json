@@ -1,0 +1,31 @@
+{
+  "name": "Ronald Antonio Alcazar Alarcon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bcbaed/bcbaed8921f55a43b7b7ca2dee32b770_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Homero, 136, Int. 303, 3er. Piso,"
+    },
+    {
+      "full": "Durango 64,"
+    },
+    {
+      "full": "Homero, 136, Int. 303, 3er. Piso,"
+    },
+    {
+      "full": "Durango 64,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ronald-antonio-alcazar-alarcon-2/ginecologo/miguel-hidalgo#address-id=77295&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:45:24.328Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/ronald_antonio_alcazar_alarcon.webp"
+}

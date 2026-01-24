@@ -1,0 +1,25 @@
+{
+  "name": "Aldo Alejandro Concha Carrillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 172,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/84dd6c/84dd6c8fed360b560b815f21f01612ba_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "14 Por 17 Y 19,99,Chuminopolis,,"
+    },
+    {
+      "full": "14 Por 17 Y 19,99,Chuminopolis,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aldo-alejandro-concha-carrillo/ginecologo/merida#address-id=357887&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:48:39.654Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/aldo_alejandro_concha_carrillo.webp"
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Dr. Jorge Alberto Campos Cañas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 127,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3aa983/3aa983f32477d9435dd2ce17c5fb810f_220_square.jpg",
+  "about": "Soy especialista en Ginecología y Obstetricia, con una subespecialidad en Biología de la Reproducción Humana, ambas realizadas en el Instituto Nacional de Perinatología. Actualmente me desempeño como Coordinador de Reproducción Asistida en dicha institución. Atendemos toda la gama de trastornos ginecológicos y obstétricos, así como cuestiones relativas a infertilidad y procedimientos de Reproducción Asistida de baja y alta complejidad. Así mismo llevo a cabo cirugía de mínima invasión para trastornos ginecológicos. Mi principal función como tu médico, será, en el caso de fertilidad, ayudarlos a encontrar el mejor método para lograr cumplir su deseo: un niño sano en casa En cuanto a la atención obstétrica, nos enfocamos en entregar un Recién Nacido sano, pudiendo esto realizarse por parto o cesárea de acuerdo a las necesidades y deseos de cada pareja, siempre buscando un abordaje humanizado, en un ambiente de confianza para este gran festejo que es el nacimiento de un hijo.",
+  "addresses": [
+    {
+      "full": "Avenida Cuauhtémoc 1040,"
+    },
+    {
+      "full": "Calzada Acoxpa 430,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-alberto-campos-canas/ginecologo/benito-juarez#address-id=471355&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:00:42.640Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__jorge_alberto_campos_ca_as.webp"
+}

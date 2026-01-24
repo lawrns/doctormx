@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Marisol Chavarin",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 144,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f86b93/f86b93c9eb475a16722757b0f46314e2_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hospital H+ Torre I - 508 | Calle Privada Ignacio Zaragoza 16-B Col. Centro 76158 Querétaro,"
+    },
+    {
+      "full": "Hospital H+ Torre I - 508 | Calle Privada Ignacio Zaragoza 16-B Col. Centro 76158 Querétaro,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marisol-chavarin/ginecologo/santiago-de-queretaro#address-id=363617&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:53:32.693Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__marisol_chavarin.webp"
+}

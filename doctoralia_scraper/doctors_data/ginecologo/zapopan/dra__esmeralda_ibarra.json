@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Esmeralda Ibarra",
+  "specialty": "Ginecóloga Oncóloga",
+  "rating": 5,
+  "reviewCount": 24,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cf9a66/cf9a664d2be0109d869507c6af4df41c.jpg",
+  "about": "MI PRIORIDAD ES LA SALUD DE MIS PACIENTES",
+  "addresses": [
+    {
+      "full": "Avenida Circunvalación Jorge Álvarez del Castillo 1525,"
+    },
+    {
+      "full": "Calle Tonalá 319,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Atención del cáncer en la mujer",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Atención pacientes con cáncer",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Check up",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Atención del cáncer en la mujer",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Atención pacientes con cáncer",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Check up",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Cirugía conservadora de glándula mamaria",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/esmeralda-ibarra/ginecologo-ginecologo-oncologico/san-pedro-tlaquepaque",
+  "scrapedAt": "2026-01-22T04:07:07.565Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__esmeralda_ibarra.webp"
+}

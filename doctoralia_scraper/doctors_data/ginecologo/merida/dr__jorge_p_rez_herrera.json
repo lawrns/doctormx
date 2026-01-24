@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jorge Pérez Herrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fb2cf6/fb2cf6af61faad9e0f1e1a6a48d8b5b5_220_square.jpg",
+  "about": "Hola, soy el Dr. Jorge y estoy a su disposición para acompañarle en el cuidado integral de su salud femenina.",
+  "addresses": [
+    {
+      "full": "calle 65 251,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $700"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $750"
+    },
+    {
+      "name": "Sangrado menstrual abundante",
+      "price": "• Desde $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-perez-herrera/ginecologo/yucatan#address-id=595072&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:32:56.614Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__jorge_p_rez_herrera.webp"
+}

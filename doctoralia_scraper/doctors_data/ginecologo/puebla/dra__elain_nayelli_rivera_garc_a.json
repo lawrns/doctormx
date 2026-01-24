@@ -1,0 +1,42 @@
+{
+  "name": "Dra. Elain Nayelli Rivera García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 41,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/590687/5906870b932dbdb5cc57d86d7323ffde_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Priv. de las Ramblas,"
+    },
+    {
+      "full": "Priv. de las Ramblas,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Revisión Ginecológica anual",
+      "price": "• Desde $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elain-nayelli-rivera-garcia/ginecologo/puebla#address-id=446895&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:12:46.463Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__elain_nayelli_rivera_garc_a.webp"
+}

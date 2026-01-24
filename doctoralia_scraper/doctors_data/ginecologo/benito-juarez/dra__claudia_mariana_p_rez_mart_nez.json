@@ -1,0 +1,50 @@
+{
+  "name": "Dra. Claudia Mariana Pérez Martínez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 27,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/03a02d/03a02de38c0d9f46c5a674808e35a39e_220_square.jpg",
+  "about": "Soy la Dra. Claudia Pérez Martínez, ginecóloga y obstetra, con especial interés en colposcopía y cirugía de mínima invasión. Durante mi trayectoria he acompañado a cientos de mujeres en procesos tan importantes como el embarazo, la prevención del cáncer ginecológico y el diagnóstico y tratamiento de diversas condiciones de salud femenina.Mi enfoque combina experiencia clínica, actualización continua y trato humano que prioriza la información clara, la toma de decisiones compartida y el bienestar físico y emocional de cada paciente. Creo que una atención ginecológica de calidad debe ser integral, empática y basada en evidencia, para que cada mujer se sienta acompañada, respetada y segura.",
+  "addresses": [
+    {
+      "full": "Avenida 608 281,"
+    },
+    {
+      "full": "Calle Nueva York,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/claudia-mariana-perez-martinez/medico-general/gustavo-a-madero#address-id=614000&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:05:27.523Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__claudia_mariana_p_rez_mart_nez.webp"
+}

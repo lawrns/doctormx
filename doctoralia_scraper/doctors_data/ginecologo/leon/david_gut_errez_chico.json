@@ -1,0 +1,25 @@
+{
+  "name": "David Gutíerrez Chico",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 251,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dcc13f/dcc13fb0a0af17659820d09cece757ff_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Roma 1001,"
+    },
+    {
+      "full": "Av. Roma 1001,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/david-gutierrez-chico/ginecologo/leon#address-id=13786&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:36:41.451Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/david_gut_errez_chico.webp"
+}

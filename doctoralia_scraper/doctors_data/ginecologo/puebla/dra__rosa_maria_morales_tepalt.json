@@ -1,0 +1,48 @@
+{
+  "name": "Dra. Rosa Maria Morales Tepalt",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/aaec038d/aaec038d-a97d-4183-93c2-2a2db4acec09_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "4A. Nte. Y 10 Ote. 26,"
+    },
+    {
+      "full": "Av. 25 Pte. 1112,"
+    },
+    {
+      "full": "4A. Nte. Y 10 Ote. 26,"
+    },
+    {
+      "full": "Av. 25 Pte. 1112,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-maria-morales-tepalt/ginecologo/puebla#address-id=175512&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:14:47.565Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__rosa_maria_morales_tepalt.webp"
+}

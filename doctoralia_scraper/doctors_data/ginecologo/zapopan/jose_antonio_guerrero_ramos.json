@@ -1,0 +1,25 @@
+{
+  "name": "Jose Antonio Guerrero Ramos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 286,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/620b70c2/620b70c2-e604-4ebe-941c-e294f231753c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Tamaulipas 1184,"
+    },
+    {
+      "full": "C. Tamaulipas 1184,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-antonio-guerrero-ramos/ginecologo/guadalajara#address-id=212291&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:40:14.071Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/jose_antonio_guerrero_ramos.webp"
+}

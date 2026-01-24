@@ -1,0 +1,25 @@
+{
+  "name": "Alejandra Vega Vega",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 459,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/abfe3a/abfe3a6094a61cfee9a9f5276c728165_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Universidad 1134,"
+    },
+    {
+      "full": "Av. Universidad 1134,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-vega-vega/ginecologo/benito-juarez#address-id=250177&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:16:24.217Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/alejandra_vega_vega.webp"
+}

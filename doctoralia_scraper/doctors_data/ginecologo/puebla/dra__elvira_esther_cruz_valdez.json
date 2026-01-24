@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Elvira Esther Cruz Valdez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 27,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/1d432ee9/1d432ee9-6ee4-4279-8fce-d0fda41f9e56_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Gabino Barreda 909,"
+    },
+    {
+      "full": "Calle Gabino Barreda 909,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elvira-esther-cruz-valdez-2/ginecologo/puebla#address-id=339841&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:22:00.484Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__elvira_esther_cruz_valdez.webp"
+}

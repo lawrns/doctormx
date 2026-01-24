@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Angel Alfonso Cardenas Ramos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/465f0e/465f0e3d06cd0e8b50805209a83f1778_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Manuel J Clouthier 505,"
+    },
+    {
+      "full": "Manuel J Clouthier 505,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angel-alfonso-cardenas-ramos/ginecologo/zapopan#address-id=3180&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:18:38.025Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__angel_alfonso_cardenas_ramos.webp"
+}

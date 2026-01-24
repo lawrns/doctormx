@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Esteban Durán Boullosa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ec6556/ec6556f425718ecb2297d5b4c19af81f_220_square.jpg",
+  "about": "Ginecólogo con más de 8 años de experiencia especializado en Esterilidad y Reproducción Asistida, Fertilidad, Ginecología Endocrina. Mi número de colegiado: 5738490 - .",
+  "addresses": [
+    {
+      "full": "Av. Ejército Nacional #678 1er piso Col. Polanco Reforma,"
+    },
+    {
+      "full": "Av. Ejército Nacional #678 1er piso Col. Polanco Reforma,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/esteban-duran-boullosa/ginecologo/miguel-hidalgo#address-id=27778&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:05:46.309Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__esteban_dur_n_boullosa.webp"
+}

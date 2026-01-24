@@ -1,0 +1,25 @@
+{
+  "name": "Luis Almazan Cruz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 623,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/982e08/982e08e226ef2766243c6e458486bd67_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Puente De La Morena 9 3, Col. Tacubaya, ,"
+    },
+    {
+      "full": "Puente De La Morena 9 3, Col. Tacubaya, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-almazan-cruz/ginecologo/miguel-hidalgo#address-id=357213&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:19:29.108Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/luis_almazan_cruz.webp"
+}

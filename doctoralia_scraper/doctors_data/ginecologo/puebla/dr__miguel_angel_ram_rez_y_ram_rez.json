@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Miguel Angel Ramírez y Ramírez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 156,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/47d8b7/47d8b7fbf9381c2c4c9c4e0b0e37c458_220_square.jpg",
+  "about": "RECERTIFICADO POR EL CONSEJO MEXICANO DE GINECOLOGIA Y OBSTETRICIA (2019-2024) MIEMBRO DEL AMERICAN COLLEGE OF OBSTETRICIANS AND GYNECOLOGIST USA. MIEMBRO DEL AMERICAN INSTITUTE OF ULTRASOUND IN MEDICINE. MIEMBRO DE INTERNATIONAL MENOPAUSE SOCIETY MIMEBRO DE LA SOCIEDAD MEDICA DEL HOSPITAL ANGELES DE PUEBLA A.C MIEMBRO DE NORTH AMERICAN MENOPAUSE SOCIETY MIEMBRO DE LA ASOCIACION MEXICANA PARA EL ESTUDIO DEL CLIMATERIO MIEMBRO DEL COLEGIO POBLANO DE GINECOLOGIA Y OBSTETRICIA",
+  "addresses": [
+    {
+      "full": "AVENIDA KEPLER 2143. (HOSPITAL ANGELES DE PUEBLA Piso 7, Consultorio 770),"
+    },
+    {
+      "full": "AVENIDA KEPLER 2143. (HOSPITAL ANGELES DE PUEBLA Piso 7, Consultorio 770),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-ramirez-y-ramirez/ginecologo/puebla#address-id=62303&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:11:43.626Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__miguel_angel_ram_rez_y_ram_rez.webp"
+}

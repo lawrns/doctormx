@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Daniel Ramírez Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 804,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8b0314/8b0314b7655c5e8abe84c0f9920aef91_220_square.jpg",
+  "about": "Ginecología Funcional, Estética y Colposcopía. Diagnostico y tratamiento láser de Vph (Virus del Papiloma Humano) Abordaje integral y tratamiento de Desbalances hormonales asociados a SOP y Síndrome Climatérico (Menopausia)",
+  "addresses": [
+    {
+      "full": "Av Pablo Neruda 3265,"
+    },
+    {
+      "full": "Av Pablo Neruda 3265,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniel-ramirez-sanchez/ginecologo/guadalajara#address-id=111672&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:17:54.346Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__daniel_ram_rez_s_nchez.webp"
+}

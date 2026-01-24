@@ -1,0 +1,25 @@
+{
+  "name": "A. Enrique Carrera C",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 216,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/fb78477a/fb78477a-abec-4d92-bfaa-edaea4ea77c3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Hidalgo 905, Centro,"
+    },
+    {
+      "full": "Av Hidalgo 905, Centro,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/a-enrique-carrera-c/ginecologo/apizaco#address-id=140688&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:29:25.988Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/a__enrique_carrera_c.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Cynthia Karina Van Pratt Robledo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2cc2f7/2cc2f7ea676669b9090d679d54a6ee83_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "German Gedovius 10431,"
+    },
+    {
+      "full": "German Gedovius 10431,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cynthia-karina-van-pratt-robledo/ginecologo/tijuana#address-id=79685&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:45:24.600Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__cynthia_karina_van_pratt_robledo.webp"
+}

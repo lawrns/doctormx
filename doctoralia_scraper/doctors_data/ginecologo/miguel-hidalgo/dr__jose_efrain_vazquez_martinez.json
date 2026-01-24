@@ -1,0 +1,38 @@
+{
+  "name": "Dr. Jose Efrain Vazquez Martinez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7e3a16/7e3a16116361c84f3b2f37ababcf517c_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "HEGEL 120 403,"
+    },
+    {
+      "full": "HEGEL 120 403,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-efrain-vazquez-martinez/ginecologo/ciudad-de-mexico#address-id=127278&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:22:51.713Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__jose_efrain_vazquez_martinez.webp"
+}

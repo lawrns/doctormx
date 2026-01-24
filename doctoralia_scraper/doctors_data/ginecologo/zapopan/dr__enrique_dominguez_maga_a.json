@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Enrique Dominguez Magaña",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 22,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/700124/7001243ad6773f2926f2b18f2b13cc7b_220_square.jpg",
+  "about": "Hola! Soy el Dr. Enrique Domínguez Magaña y quiero compartir con ustedes un poco sobre mi trayectoria y pasión por la medicina. Soy especialista en Ginecología y Obstetricia, y además tengo una subespecialidad en Ginecología Oncológica. Mi compromiso es brindar la mejor atención a cada una de mis pacientes, acompañándolas en cada etapa de sus vidas con profesionalismo y empatía. Estoy aquí para apoyarlas y ofrecerles los tratamientos más avanzados y personalizados. ¡Gracias por permitirme ser parte de su salud y bienestar!",
+  "addresses": [
+    {
+      "full": "Av Moctezuma 4529,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/enrique-dominguez-magana/ginecologo-oncologico-ginecologo/zapopan#address-id=503250&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:15:12.217Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__enrique_dominguez_maga_a.webp"
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Dra. Monica Lizbeth Estrada Jara",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 422,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6834e8/6834e8afac2b89bfaabf6f2009d286cc_140_square.jpg",
+  "about": "Medico Cirujano, Facultad de Medicina , UABC GINECOLOGIA YNOBSTETRICIA. HOSPITAL GENERAL DE TIJUANA CERTIFICADA POR CONSEJO MEXICANO DE GINECOLOGIA Y OBSTETRICIA",
+  "addresses": [
+    {
+      "full": "Paseo de los Héroes.. En plaza financiera,"
+    },
+    {
+      "full": "Paseo de los Héroes.. En plaza financiera,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/monica-lizbeth-estrada-jara/ginecologo/tijuana#address-id=100719&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:45:49.789Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__monica_lizbeth_estrada_jara.webp"
+}

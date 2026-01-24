@@ -1,0 +1,42 @@
+{
+  "name": "Dra. Blanca Azucena Vargas Ventura",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5aff7c/5aff7c93716e1f020e3198896b6e014f_140_square.jpg",
+  "about": "REALICÉ MIS ESTUDIOS COMO MÉDICO GENERAL EN LA FACULTAD DE MEDICINA DE LEÓN DE LA UNIVERSIDAD DE GUANAJUATO, ESPECIALIDAD REALIZADA EN INSTITUTO MEXICANO DEL SEGURO SOCIAL HGP 48 AVALADA POR UNIVERSIDAD DE GUANAJUATO. CERTFICADA POR CONSEJO MEXICANO DE GINECOLOGIA Y OBSTETRICIA A.C. DESDE 2017 LA CONSULTA PARA CONTROL PRENATAL INCLUYE UNA HISTORIA CLÍNICA COMPLETA ASÍ COMO EXPLORACIÓN, VALORAR FACTORES DE RIESGOS Y ULTRASONIDO OBSTÉTRICO. LA CONSULTA DE GINECOLOGÍA INCLUYE INTERROGATORIO Y EXPLORACIÓN COMPLETA Y ULTRASONIDO GINECOLÓGICO EN CASO NECESARIO TOMA DE PAPANOCOLAOU, COLPOSCOPIA, O BIOPSIA PREVIA EXPLICACIÓN DEL PORQUÉ Y COSTO EXTRA Agenda tu cita para Control prenatal, atención de climaterio y menopausia, métodos de planificación, colocación y retiro de DIU, sangrado uterino anormal, quistes en ovarios, atención de partos y cesáreas.",
+  "addresses": [
+    {
+      "full": "Calle niebla 207 (Consultorio 15, Clínica Niebla) ,"
+    },
+    {
+      "full": "Calle niebla 207 (Consultorio 15, Clínica Niebla) ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": "• $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/blanca-azucena-vargas-ventura/ginecologo/leon#address-id=121900&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:28:49.674Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__blanca_azucena_vargas_ventura.webp"
+}

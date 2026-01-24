@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Juan Ramon Valle Torres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 375,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/171cc3/171cc3a56e96e37caf1a14274402dd28_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "11 Ote #1817 Cons. 204,"
+    },
+    {
+      "full": "Calle 28 Oriente, xonaca, Puebla,"
+    },
+    {
+      "full": "11 Ote #1817 Cons. 204,"
+    },
+    {
+      "full": "Calle 28 Oriente, xonaca, Puebla,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-ramon-valle-torres/ginecologo/puebla#address-id=10876&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:33:02.476Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__juan_ramon_valle_torres.webp"
+}

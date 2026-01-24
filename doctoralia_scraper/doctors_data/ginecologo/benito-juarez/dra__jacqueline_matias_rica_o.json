@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Jacqueline Matias Ricaño",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f65b22/f65b22a584055b801e7acc446395ef94_220_square.jpg",
+  "about": "Soy ginecóloga y obstetra, comprometida con ofrecer atención integral a las mujeres en todas las etapas de la vida, brindando siempre un acompañamiento cercano y profesional.",
+  "addresses": [
+    {
+      "full": "Santa Margarita 108.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $999"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Check up básico",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jacqueline-matias-ricano/medico-general/benito-juarez#address-id=607913&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:00:15.776Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__jacqueline_matias_rica_o.webp"
+}

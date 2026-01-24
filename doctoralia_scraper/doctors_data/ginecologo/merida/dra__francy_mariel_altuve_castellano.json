@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Francy Mariel Altuve Castellano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b2bb53/b2bb532adc7a36d554d7f2b71314be9a_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. 7 #215 A x 32 y 34 Interior del estacionamiento Pensiones Col, García Ginerés.,"
+    },
+    {
+      "full": "Av. 7 #215 A x 32 y 34 Interior del estacionamiento Pensiones Col, García Ginerés.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francy-mariel-altuve-castellano/ginecologo/yucatan#address-id=346164&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:37:28.374Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__francy_mariel_altuve_castellano.webp"
+}

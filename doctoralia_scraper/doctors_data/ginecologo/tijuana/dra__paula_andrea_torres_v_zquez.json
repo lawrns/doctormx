@@ -1,0 +1,39 @@
+{
+  "name": "Dra. Paula Andrea Torres Vázquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 55,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/1f55ce9c/1f55ce9c-6417-4687-8171-17db4a8b6838_small_square.jpg",
+  "about": "Médico Ginecólogo. Endoscopia Ginecológica. Laparoscopía avanzada. Colposcopía. Comprometida con el diagnóstico certero en pocos pasos, cirugía mínimamente invasiva, busco los mejores resultados estéticos posibles. Control prenatal y atención ginecológica integral. Gynecologist Endoscopy Laparoscopy Colposcopy Committed to accurate diagnosis in a few steps, minimally invasive surgery, I seek the best possible aesthetic results. Prenatal control and comprehensive gynecological care.",
+  "addresses": [
+    {
+      "full": "Paseo del Centenario 9580 piso 25, Zona Urbana Rio Tijuana, Tijuana,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paula-andrea-torres-vazquez/ginecologo/tijuana#address-id=575113&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:41:25.720Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__paula_andrea_torres_v_zquez.webp"
+}

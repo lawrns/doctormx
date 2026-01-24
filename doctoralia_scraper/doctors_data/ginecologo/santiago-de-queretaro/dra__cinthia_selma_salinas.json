@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Cinthia Selma Salinas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 89,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bc0182/bc0182c1d6d6a93040afbcc81c93e673.jpg",
+  "about": "CURSOS: • Curso “Primeros Auxilios Básico I” Instituto Mexicano del Seguro Social, Hospital de Traumatología y Ortopedia “Lomas Verdes” Noviembre 2020, Naucalpan de Juárez, Estado de México. • Curso de Modificación de la actitud ante la prevención de la Muerte Materna, Instituto de Salud del Estado de México, Escuela Normal de Jilotepec, 23,24,25 Septiembre 2021, Estado de México. • Diplomado de Urgencias Médico Quirúrgicas, Colegio Mexicano de Medicina de Emergencia y Reanimación Avanzada A. C. Universidad Autónoma de México, Hospital General Regional 1 “Carlos Mc Gregor IMSS” Inicio 28 de Noviembre 2018 actualmente en curso. • Diplomado de Colposcopia y Patología Vulvovaginal. Universidad Autónoma por el colegio médico de Querétaro. Tercera Generación 2021.",
+  "addresses": [
+    {
+      "full": "Calle Privada Ignacio Zaragoza 16-B,"
+    },
+    {
+      "full": "Avenida de las Ciencias 2058,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Endocrinología Ginecológica",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cinthia-selma-salinas/ginecologo/queretaro#address-id=470364&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:45:49.255Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__cinthia_selma_salinas.webp"
+}

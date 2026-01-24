@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jose Luis Hernandez Avalos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 66,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/efc1f5c7/efc1f5c7-5cce-4b33-8301-cbacc4d40ef6_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Agua Caliente 4558 C2 Local 4 Y 5,"
+    },
+    {
+      "full": "Agua Caliente 4558 C2 Local 4 Y 5,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-luis-hernandez-avalos-2/ginecologo/tijuana#address-id=39710&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:24:57.386Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__jose_luis_hernandez_avalos.webp"
+}

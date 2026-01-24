@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Wynter Gonzalez Juan E",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d3c592/d3c592003b6aff770f863a0b69801841_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "7 Poniente 2118,"
+    },
+    {
+      "full": "7 Poniente 2118,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/wynter-gonzalez-juan-e/ginecologo/puebla#address-id=57959&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:25:28.400Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__wynter_gonzalez_juan_e.webp"
+}

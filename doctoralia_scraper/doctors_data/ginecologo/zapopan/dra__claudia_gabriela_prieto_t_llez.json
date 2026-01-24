@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Claudia Gabriela Prieto Téllez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 552,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3559bc27/3559bc27-81c4-41ac-a261-b90db2cf0a75_small_square.jpg",
+  "about": "Mi profesión consiste en la prevención, diagnóstico y tratamiento de todos los padecimientos que involucran a la mujer, en sus diferentes etapas de la vida. Como mujer y ginecóloga me siento identificada con cada una de mis pacientes, me gusta que se sientan en confianza y que sepan que me encuentro con toda la disposición para poder resolver sus problemas de salud. Me especializo en colposcopia y enfermedades del tracto genital, y lo relacionado al virus del papiloma humano. Cualquiera que sea tu padecimiento, siente la tranquilidad de saber que estas acudiendo con una persona a la que le interesa tu bienestar.",
+  "addresses": [
+    {
+      "full": "Texcoco 238,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/claudia-gabriela-prieto-tellez/ginecologo/zapopan#address-id=399391&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:10:32.416Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__claudia_gabriela_prieto_t_llez.webp"
+}

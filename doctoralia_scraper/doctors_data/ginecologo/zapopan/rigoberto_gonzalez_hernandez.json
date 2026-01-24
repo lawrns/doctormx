@@ -1,0 +1,37 @@
+{
+  "name": "Rigoberto Gonzalez Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1527,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dbe816/dbe81661aa30bd9bc70f97f26e2700ed_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Industria 1415,"
+    },
+    {
+      "full": "Rogelio Bacon 1294,"
+    },
+    {
+      "full": "Av. Belisario Domínguez 1000,"
+    },
+    {
+      "full": "Industria 1415,"
+    },
+    {
+      "full": "Rogelio Bacon 1294,"
+    },
+    {
+      "full": "Av. Belisario Domínguez 1000,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rigoberto-gonzalez-hernandez/ginecologo/guadalajara#address-id=177732&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:42:16.995Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/rigoberto_gonzalez_hernandez.webp"
+}

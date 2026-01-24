@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Bolanos Rodolfo Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 44,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a3eea2/a3eea2aa1974a7bf8d1ba52adf79dd9f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 7 N° 215 A X 32 Y 34,"
+    },
+    {
+      "full": "C. 7 N° 215 A X 32 Y 34,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/bolanos-rodolfo-lopez/ginecologo/merida#address-id=58444&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:45:39.962Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__bolanos_rodolfo_lopez.webp"
+}

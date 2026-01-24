@@ -1,0 +1,25 @@
+{
+  "name": "Irma Espinoza Moreno",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 266,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a5c504/a5c5044044642c0892115816f1f7e38d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Uranga 28 Edif 1 G Dpto 301, Col. Fracc Villas Alcanfores, ,"
+    },
+    {
+      "full": "Uranga 28 Edif 1 G Dpto 301, Col. Fracc Villas Alcanfores, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/irma-espinoza-moreno/ginecologo/cuautlancingo#address-id=356649&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:31:59.284Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/irma_espinoza_moreno.webp"
+}

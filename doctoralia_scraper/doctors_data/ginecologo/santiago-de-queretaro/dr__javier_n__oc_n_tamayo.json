@@ -1,0 +1,52 @@
+{
+  "name": "Dr. Javier N. Ocón Tamayo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cd5e0a/cd5e0afb2a9a27114e520a3170a5e91c_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Luis Romero Soto # 20 ,"
+    },
+    {
+      "full": "Mirador De Queretaro 12-01, 29 Oriente Vizcaya Fraccionamiento El Mirador El Marques,,"
+    },
+    {
+      "full": "Luis Romero Soto # 20 ,"
+    },
+    {
+      "full": "Mirador De Queretaro 12-01, 29 Oriente Vizcaya Fraccionamiento El Mirador El Marques,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/javier-n-ocon-tamayo/ginecologo/san-juan-del-rio#address-id=352697&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:50:03.922Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__javier_n__oc_n_tamayo.webp"
+}

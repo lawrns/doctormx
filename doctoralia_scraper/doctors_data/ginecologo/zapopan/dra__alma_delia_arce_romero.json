@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Alma Delia Arce Romero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 85,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/44b0c3f5/44b0c3f5-62b0-4a4e-a2d7-b48847247e5d_small_square.jpg",
+  "about": "Soy Alma Delia Arce Romero, especializada en Ginecología en Guadalajara. Médico Cirujano y Partero, graduada de la Universidad de Guadalajara en 1987, y he obtenido capacitación en Colposcopia en el Centro Médico de Occidente. Además, me he especializado en Medicina Materno Fetal y Embarazo de alto riesgo. Atiendo a adultas y niñas de cualquier edad. Doy seguimiento a los casos de las pacientes, busco resolver sus dudas, y decisiones. Me gusta entregar resultados de sus exámenes, en cuanto me llegan con explicaciones detalladas y tratamiento mas indicado. Mis pacientes han dejado sus comentarios que hablan de los tratamientos y mi atención. Me encanta mi especialidad, he tratado muchas familias y quiero seguir ayudando a mas pacientes.",
+  "addresses": [
+    {
+      "full": "Avenida Niños Héroes 2716 INT 107,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alma-delia-arce-romero/ginecologo/guadalajara#address-id=94999&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:14:49.619Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__alma_delia_arce_romero.webp"
+}

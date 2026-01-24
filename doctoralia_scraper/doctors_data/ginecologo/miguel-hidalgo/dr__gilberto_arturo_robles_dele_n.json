@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Gilberto Arturo Robles Deleón",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b1b9c7/b1b9c7eea07683f997605d749b3502b7_220_square.jpg",
+  "about": "Soy el Doctor Gilberto Arturo Robles Deleón; cuento con más de 10 años de experiencia. Soy egresado de la faculta de medicina Humana de Chiapas UNACH. Realicé la especialidad de Ginecología y Obstetricia en el Instituto Nacional de Perinatología. La subespecialidad de Biología de la Reproducción durante dos años en el Hospital Ángeles Pedregal. Certificado por el Consejo Mexicano de Ginecología y Obstetricia para la especialidad y en proceso de certificación para la subespecialidad. En experiencia laboral he tenido la oportunidad de trabajar como médico ginecólogo y obstetra, así como biólogo de la reproducción con diversos hospitales e institutos. Lo que más disfruto de mi especialidad es cuando la prueba de embarazo posterior al tratamiento es positiva.",
+  "addresses": [
+    {
+      "full": "Nueva York 7, consultorio 407, Colonia Nápoles,"
+    },
+    {
+      "full": "Nueva York 7, consultorio 407, Colonia Nápoles,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Colocación de cerclaje de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gilberto-arturo-robles-deleon/ginecologo/benito-juarez#address-id=149341&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:05:04.291Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__gilberto_arturo_robles_dele_n.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Sandra Yadira Orendain Talavera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a34684/a346848392fbd523748ab9514eecce77_220_square.jpg",
+  "about": "Nuestro compromiso es el bienestar de la mujer realizando revisiones ginecológicas y control prenatal. En la pareja con problemas de fertilidad es el estudio integral de ambos con la finalidad de ayudar a lograr el sueño de ser Padres.",
+  "addresses": [
+    {
+      "full": "Calle Luis Cabrera #2071 interior 301 Zona Urbana Rio, Tijuana. B.C.,"
+    },
+    {
+      "full": "Calle Luis Cabrera #2071 interior 301 Zona Urbana Rio, Tijuana. B.C.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sandra-yadira-orendain-talavera/ginecologo/tijuana#address-id=89462&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:44:16.239Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__sandra_yadira_orendain_talavera.webp"
+}

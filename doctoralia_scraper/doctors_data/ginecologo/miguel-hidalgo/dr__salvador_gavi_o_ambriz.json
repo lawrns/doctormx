@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Salvador Gaviño Ambriz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e56185/e56185080570ca13bc10420aa27f1957_220_square.jpg",
+  "about": "Tras años de experiencia en el área clínica he dirigido mi enfoque de atención partiendo de un trato cálido, humano y directo; buscando primordialmente la prevención de enfermedades en las paciente, así como el tratamiento adecuado para la resolución de enfermedades que perjudican la salud y la calidad de vida. Es fundamental desde el primer encuentro establecer un trato de respeto y confianza para poder generar un historial médico verbal, confirmado por la exploración física y reafirmado en caso de ser necesario por estudios de gabinete y laboratorio, donde algunos se realizan desde la primera cita. En caso de requerir una intervención quirúrgica se buscará realizar un procedimiento de invasión mínima y preferentemente ambulatorios, si las circunstancias lo permiten se realizan en consultorio. Tanto antes como después del procedimiento se lleva un seguimiento cercano y claro tanto para la paciente y familiares",
+  "addresses": [
+    {
+      "full": "Calle Agrarismo 208 A,"
+    },
+    {
+      "full": "Calle Agrarismo 208 A,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/salvador-gavino-ambriz-2/ginecologo/alvaro-obregon#address-id=327546&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:06:18.390Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__salvador_gavi_o_ambriz.webp"
+}

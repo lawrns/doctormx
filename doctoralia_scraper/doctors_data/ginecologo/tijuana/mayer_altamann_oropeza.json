@@ -1,0 +1,25 @@
+{
+  "name": "Mayer Altamann Oropeza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 62,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d8fdad/d8fdad3269daaddfe3cfe6e091708141_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Jose Clemente Orozco 1407,"
+    },
+    {
+      "full": "Jose Clemente Orozco 1407,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mayer-altamann-oropeza/ginecologo/tijuana#address-id=158390&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:06:16.978Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/mayer_altamann_oropeza.webp"
+}

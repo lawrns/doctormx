@@ -1,0 +1,25 @@
+{
+  "name": "Nabile Montserrat Nieto Anaya",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 262,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2ce9c9/2ce9c9e8444c18ac53b52ab060257c05_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Paseo Monte Miranda #5 Piso 9 Col. Distrito Piamonte,"
+    },
+    {
+      "full": "Av Paseo Monte Miranda #5 Piso 9 Col. Distrito Piamonte,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nabile-montserrat-nieto-anaya/ginecologo/el-marques#address-id=148105&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:56:39.786Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/nabile_montserrat_nieto_anaya.webp"
+}

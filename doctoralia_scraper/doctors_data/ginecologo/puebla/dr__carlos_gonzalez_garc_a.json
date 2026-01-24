@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Carlos Gonzalez García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 24,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0ca0a7/0ca0a7af051ca1fd581b5782d5a29c84_220_square.jpg",
+  "about": "Realice la carrera de Medicina General en la Universidad Popular Autónoma del Estado de Puebla, continuando mi preparación como Gineco-obstetra en el Hospital de la Mujer de Puebla, con diplomado en colposcopia y patología del tracto genital inferior impartido por el colegio de colposcopia del estado de Puebla, no caracterizamos por un trato amable y siempre guardando políticas de privacidad de nuestras pacientes, disponible las 24 horas con linea directa con el especialista y atención las 24 horas de urgencias.",
+  "addresses": [
+    {
+      "full": "Priv. de las Ramblas,"
+    },
+    {
+      "full": "Priv. de las Ramblas,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-gonzalez-garcia-3/ginecologo/puebla#address-id=349358&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:12:47.905Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__carlos_gonzalez_garc_a.webp"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Karla Patricia Soriano Ortega",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 80,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d098bb/d098bbcf82d05444b8b05ddd09e17be5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "PALMAS 745 CONS. 803,"
+    },
+    {
+      "full": "PALMAS 745 CONS. 803,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-patricia-soriano-ortega/ginecologo/ciudad-de-mexico#address-id=125171&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:08:18.618Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__karla_patricia_soriano_ortega.webp"
+}

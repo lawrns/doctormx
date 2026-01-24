@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Claudia Marcela Flores Orozco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 341,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d6652f/d6652f96af0dd3de5d02bedb7e532b13_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Jorge Santayana 4987,"
+    },
+    {
+      "full": "Jorge Santayana 4987,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/claudia-marcela-flores-orozco/ginecologo/zapopan#address-id=238009&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:34:18.960Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__claudia_marcela_flores_orozco.webp"
+}

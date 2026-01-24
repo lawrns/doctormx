@@ -1,0 +1,40 @@
+{
+  "name": "Lucero Sarahí Vaca Peña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 235,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/bad1dc4a/bad1dc4a-b1c2-4a14-a48c-b3d75af2383d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle quebrada 2741 planta alta,"
+    },
+    {
+      "full": "Quebrada 2741 planta alta,"
+    },
+    {
+      "full": "Calle quebrada 2741 planta alta,"
+    },
+    {
+      "full": "Quebrada 2741 planta alta,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lucero-sarahi-vaca-pena/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:33:28.205Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/lucero_sarah__vaca_pe_a.webp"
+}

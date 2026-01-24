@@ -1,0 +1,72 @@
+{
+  "name": "Dr. José Germán Santillana Arce",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 25,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a809a8/a809a83e722eae5bac56bca6c70c8950_220_square.jpg",
+  "about": "Tengo la experiencia de 3 Generaciones de Gineco-Obstetras, desde mi Abuelo en los años 1940's, mi Padre y ahora un servidor, con la calidad y la calidez que nos distingue. Siempre interesado por tu salud y la de tu bebé. Mi formación ha sido de excelencia en el Instituto Mexicano del Seguro Social y un Fellow en Emergencias Obstetricas por la Universidad de Tampa, Florida.",
+  "addresses": [
+    {
+      "full": "5 Poniente 715 cons 20 HOSPITAL UPAEP,"
+    },
+    {
+      "full": "Periférico Ecológico 3507 Torre 1 Consultorio 1121,"
+    },
+    {
+      "full": "5 Poniente 715 cons 20 HOSPITAL UPAEP,"
+    },
+    {
+      "full": "Periférico Ecológico 3507 Torre 1 Consultorio 1121,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    },
+    {
+      "name": "Laparascopia diagnóstica con biopsia",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-german-santillana-arce/ginecologo/san-andres-cholula#address-id=426863&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:13:01.190Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__jos__germ_n_santillana_arce.webp"
+}

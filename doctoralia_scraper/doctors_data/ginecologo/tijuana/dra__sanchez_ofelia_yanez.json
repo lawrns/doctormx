@@ -1,0 +1,37 @@
+{
+  "name": "Dra. Sanchez Ofelia Yanez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b4326a/b4326a17c1c472631b93b281a66e1f2e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "San Juan Capistrano 9203 No. D14,"
+    },
+    {
+      "full": "Paseo De Los Heores 10999,"
+    },
+    {
+      "full": "Paseo De Los Heroes 10999,"
+    },
+    {
+      "full": "San Juan Capistrano 9203 No. D14,"
+    },
+    {
+      "full": "Paseo De Los Heores 10999,"
+    },
+    {
+      "full": "Paseo De Los Heroes 10999,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sanchez-ofelia-yanez/ginecologo/tijuana#address-id=44751&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:48:46.420Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__sanchez_ofelia_yanez.webp"
+}

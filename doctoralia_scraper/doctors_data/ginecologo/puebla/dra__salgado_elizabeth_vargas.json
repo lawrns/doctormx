@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Salgado Elizabeth Vargas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/40f6a6/40f6a63de95b52445301b115a701e642_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Gustavo Diaz Ordaz 4355 301,"
+    },
+    {
+      "full": "bldv diaz ordaz 4355 interior 104,"
+    },
+    {
+      "full": "Blvd. 2 De Octubre 4355,"
+    },
+    {
+      "full": "Av. Universidad,"
+    },
+    {
+      "full": "Gustavo Diaz Ordaz 4355 301,"
+    },
+    {
+      "full": "bldv diaz ordaz 4355 interior 104,"
+    },
+    {
+      "full": "Blvd. 2 De Octubre 4355,"
+    },
+    {
+      "full": "Av. Universidad,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/salgado-elizabeth-vargas/ginecologo/puebla#address-id=405697&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:13:39.454Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__salgado_elizabeth_vargas.webp"
+}

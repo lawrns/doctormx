@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José Alfredo David Espinosa Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0948d9/0948d969cfb6d51a0ad7abfdcd1f1f49_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "19 Norte 1001,"
+    },
+    {
+      "full": "19 Norte 1001,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-alfredo-david-espinosa-rodriguez/ginecologo/puebla#address-id=4073&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:12:36.660Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__jos__alfredo_david_espinosa_rodr_guez.webp"
+}

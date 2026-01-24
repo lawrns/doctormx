@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Ricardo Rosas Nic",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 232,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7c8077/7c8077d28c03f79826986e41ea729828_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 7 #188 Garcia Gineres,"
+    },
+    {
+      "full": "Calle 7 #188 Garcia Gineres,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-rosas-nic/ginecologo/merida#address-id=106660&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:45:03.554Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__ricardo_rosas_nic.webp"
+}

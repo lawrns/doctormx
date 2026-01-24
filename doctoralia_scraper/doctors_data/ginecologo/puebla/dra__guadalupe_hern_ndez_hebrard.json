@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Guadalupe Hernández Hebrard",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 17,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/8f9430a4/8f9430a4-8e1f-4055-9c6f-d960baf6fd7e_small_square.jpg",
+  "about": "Mi formación en medicina la realice en la Facultad de Medicina de la Universidad Veracruzana, posteriormente realice mi residencia médica en Ginecología y Obstetricia en el Hospital General Fernando Quiroz Gutiérrez del ISSSTE en CDMX, teniendo una formación con enfoque en la atención integral tanto de la paciente obstétrica como en pacientes ginecológicas, así como el parto humanizado. Posteriormente realicé mi subespecialidad en Biología de la reproducción Humana en el Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán en la CDMX, donde además del manejo de la infertilidad se me enseñó el manejo de anticoncepción en pacientes de alto riesgo reproductivo, manejo de endocrinología ginecológica (desde trastornos en la pubertad hasta climaterio). Cuento con certificación vigente ante el Consejo Mexicano de Ginecología y Obstetricia, así como en Biología de la Reproducción Humana. TU SALUD ES MI PRIORIDAD.",
+  "addresses": [
+    {
+      "full": "Av. Juárez, C. 23 Sur 2301, Zona Esmeralda, 72090 Puebla, Pue.,"
+    },
+    {
+      "full": "Instituto Vida Mérida Calle 21 204-D, Av. Colón,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Tratamientos de Reproducción Asistida e Infertilidad",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guadalupe-hernandez-hebrard/ginecologo/puebla#address-id=590216&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:11:07.779Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__guadalupe_hern_ndez_hebrard.webp"
+}

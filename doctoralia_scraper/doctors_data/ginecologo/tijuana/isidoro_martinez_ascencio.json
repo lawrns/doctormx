@@ -1,0 +1,25 @@
+{
+  "name": "Isidoro Martinez Ascencio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 134,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/86be9f/86be9f978b6b75a932a05d3b7c5c901f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Paseo de los Heroes 2507,"
+    },
+    {
+      "full": "Av. Paseo de los Heroes 2507,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/isidoro-martinez-ascencio/ginecologo/tijuana#address-id=31773&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:07:19.734Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/isidoro_martinez_ascencio.webp"
+}

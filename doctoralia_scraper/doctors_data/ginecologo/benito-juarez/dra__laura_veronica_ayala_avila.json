@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Laura Veronica Ayala Avila",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/af7f40/af7f402f549c39322e6abcbcd3953cec_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Coyoacan 1878,"
+    },
+    {
+      "full": "Av. Coyoacan 1878,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-veronica-ayala-avila/ginecologo/benito-juarez#address-id=202280&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:11:26.804Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__laura_veronica_ayala_avila.webp"
+}

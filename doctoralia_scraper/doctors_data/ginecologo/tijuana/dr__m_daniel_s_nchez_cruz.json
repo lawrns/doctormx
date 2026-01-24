@@ -1,0 +1,30 @@
+{
+  "name": "Dr. M.Daniel Sánchez Cruz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 76,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/501fee/501feef9813757cf9e0099a3d7b22c3a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd Agua Caliente 4558,"
+    },
+    {
+      "full": "Blvd Agua Caliente 4558,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/m-daniel-sanchez-cruz/ginecologo/tijuana#address-id=126325&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:46:49.340Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__m_daniel_s_nchez_cruz.webp"
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Dra. María Elena Carranza González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a82be9/a82be99e464eaeafe284de60f267dc7b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Lacandones 306,"
+    },
+    {
+      "full": "Lacandones 306,"
+    },
+    {
+      "full": "Xola 535,"
+    },
+    {
+      "full": "Calle Lacandones 306,"
+    },
+    {
+      "full": "Lacandones 306,"
+    },
+    {
+      "full": "Xola 535,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-elena-carranza-gonzalez/ginecologo/guadalajara#address-id=62227&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:29:50.471Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__mar_a_elena_carranza_gonz_lez.webp"
+}

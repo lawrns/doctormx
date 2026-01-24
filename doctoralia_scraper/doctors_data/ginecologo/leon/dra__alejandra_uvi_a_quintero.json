@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Alejandra Uviña Quintero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e6c064/e6c0642f2704616712033a038bc1cac1_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. 5 De Febrero 724,"
+    },
+    {
+      "full": "Av. 5 De Febrero 724,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-uvina-quintero/ginecologo/leon#address-id=4500&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:28:00.917Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__alejandra_uvi_a_quintero.webp"
+}

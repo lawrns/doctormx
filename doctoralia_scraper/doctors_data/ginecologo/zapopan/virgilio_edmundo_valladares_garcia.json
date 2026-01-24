@@ -1,0 +1,31 @@
+{
+  "name": "Virgilio Edmundo Valladares Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 244,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/c97ed796/c97ed796-55c6-4f5c-ae4a-293d57063b88_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C.Hospital 278,"
+    },
+    {
+      "full": "C. Tarascos 3469,"
+    },
+    {
+      "full": "C.Hospital 278,"
+    },
+    {
+      "full": "C. Tarascos 3469,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/virgilio-edmundo-valladares-garcia/ginecologo/guadalajara#address-id=168275&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:44:46.299Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/virgilio_edmundo_valladares_garcia.webp"
+}

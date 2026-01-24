@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Omar Garcia Estudillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 235,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/bad1dc4a/bad1dc4a-b1c2-4a14-a48c-b3d75af2383d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Isla Raza 2628. Col. Jardines Del Sur. ,"
+    },
+    {
+      "full": "Isla Raza 2628. Col. Jardines Del Sur. ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/omar-garcia-estudillo/ginecologo/guadalajara#address-id=358985&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:38:20.101Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__omar_garcia_estudillo.webp"
+}

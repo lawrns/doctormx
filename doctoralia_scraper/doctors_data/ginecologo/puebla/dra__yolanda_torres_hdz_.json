@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Yolanda Torres Hdz.",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 375,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/171cc3/171cc3a56e96e37caf1a14274402dd28_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av 18 Ote 205-Interior 24, Edificio, San José, Centro Histórico De Puebla,"
+    },
+    {
+      "full": "Av 18 Ote 205-Interior 24, Edificio, San José, Centro Histórico De Puebla,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yolanda-torres-hdz/ginecologo/puebla#address-id=491028&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:20:26.555Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__yolanda_torres_hdz_.webp"
+}

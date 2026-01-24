@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Lisette López Pérez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 16,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/90450f/90450fa760344270a1d7533da97a7989_220_square.jpg",
+  "about": "Medico cirujano, UABJOEspecialidad en Ginecologia y Obstetricia, BUAPDiplomado en Colposcopia y Patología del tracto genital inferiorDiplomado en ultrasonido ginecoobstetricoDiplomado en Ginecología láser, funcional y regenerativaCertificada por el Colegio mexicano de ginecoostetricia Mi prioridad, dar un trato respetuoso, empatico y de calidad.",
+  "addresses": [
+    {
+      "full": "Av Fray Luis de León 7072,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lisette-lopez-perez/ginecologo/santiago-de-queretaro#address-id=582567&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:46:56.784Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__lisette_l_pez_p_rez.webp"
+}

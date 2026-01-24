@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Oscar Valle Virgen",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 427,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/41dc34/41dc346417066f7011d865862d109b61_220_square.jpg",
+  "about": "Director médico de Concibo Reproductive Clinic, médico general de la universidad Autónoma de Guadalajara, especialidad en Ginecóloga y Obstetricia, Especialidad en Reproducción Humana por el Instituto Valenciano de Fertilidad (IVI) Madrid, España. Diplomado en Genética. Ex-profesor titular del curso Laparoscopia básico y avanzado en la unidad medica Especializada del sector salud Tijuana. Profesor externo de Endocrinología en la especialidad de Ginecología y Obstetricia del Hospital General de Tijuana. Certificado en la Red Latinoamericana de Fertilidad como: * Director Médico en Reproducción Asistida * Médico en Reproducción Asistida. Pertenece a Asociaciones como: Colegio Mexicano de Ginecología y Obstetricia, Federación Mexicana de Colegios de Ginecología y Obstetricia, Federación Latinoamericana de sociedades de Ginecología y Obstetricia (FLASOG) Federación internacional de Ginecología y Obstetricia (FIGO), Sociedad Europea de Reproducción humana (ESHRE), Colegio de Ginecología y Obstetricia de Tijuana. Colegio de Endoscopia y Medicina de la Reproducción de Tijuana.",
+  "addresses": [
+    {
+      "full": "José Maria Velazco 2524 zona río tijuana,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": ""
+    },
+    {
+      "name": "Inseminación artificial",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/oscar-valle-virgen/ginecologo/tijuana#address-id=22167&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:42:28.205Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__oscar_valle_virgen.webp"
+}

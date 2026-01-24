@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Lorena Terrazas Rios",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 320,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/adda4ec3/adda4ec3-6cb0-4ca7-97cb-424ccd8b4c1d_large.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Camino a los Olvera 680, Colinas del Bosque, Filosofal, 76904 Los Olvera, Querétaro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lorena-terrazas-rios/ginecologo/queretaro#address-id=378020&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:45:25.527Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__lorena_terrazas_rios.webp"
+}

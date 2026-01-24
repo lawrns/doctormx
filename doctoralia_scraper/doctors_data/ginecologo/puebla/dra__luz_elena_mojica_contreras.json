@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Luz Elena Mojica Contreras",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 91,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/931537/93153717434e51567418c0bb48272b2c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "19 Norte 1001,"
+    },
+    {
+      "full": "19 Norte 1001,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luz-elena-mojica-contreras/ginecologo/puebla#address-id=4168&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:16:20.957Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__luz_elena_mojica_contreras.webp"
+}

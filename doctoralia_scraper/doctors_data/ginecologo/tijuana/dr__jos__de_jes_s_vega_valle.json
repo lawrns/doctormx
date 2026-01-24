@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José de Jesús Vega Valle",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e35b5d/e35b5d85107070143e71dcb908700d29_220_square.jpg",
+  "about": "Visitanos en el portal de Facebook: Dr. José Vega tenemos temas de interés de salud femenina y resolución de tus dudas en cuanto a tu salud.",
+  "addresses": [
+    {
+      "full": "Misión de San Diego 1527,"
+    },
+    {
+      "full": "Misión de San Diego 1527,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-de-jesus-vega-valle/ginecologo/tijuana#address-id=34522&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:44:28.803Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__jos__de_jes_s_vega_valle.webp"
+}

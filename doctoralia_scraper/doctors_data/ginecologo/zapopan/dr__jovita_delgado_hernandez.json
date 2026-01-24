@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Jovita Delgado Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 23,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a9b734/a9b7344378c4dc8d1b51a7ec4d1317f8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Belisario Dominguez 771,"
+    },
+    {
+      "full": "Juan Escutia 1785,"
+    },
+    {
+      "full": "Av. Belisario Dominguez 771,"
+    },
+    {
+      "full": "Juan Escutia 1785,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jovita-delgado-hernandez/ginecologo/guadalajara#address-id=206912&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:36:14.849Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jovita_delgado_hernandez.webp"
+}

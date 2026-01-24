@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Fluor Daniel Ica",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 34,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Mineria 145,"
+    },
+    {
+      "full": "Calle Mineria 145,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fluor-daniel-ica/ginecologo/ciudad-de-mexico#address-id=58610&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:52:28.832Z",
+  "localPhotoPath": null
+}

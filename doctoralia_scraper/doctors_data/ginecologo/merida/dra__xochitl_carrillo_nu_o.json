@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Xochitl Carrillo Nuño",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 90,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0d32bf/0d32bf399b355c81e5aa2446d01ec5b6_220_square.jpg",
+  "about": "SOY MEDICO ESPECIALISTA EN GINECOLOGIA Y OBSTETRICIA, GRADUADA EN EL HOSPITAL REGIONAL \"DR. VALENTIN GOMEZ FARIAS\" DEL ISSSTE. ASI COMO CON LA ALTA ESPECIALIDAD EN CIRUGIA LAPAROSCOPICA GINECOLOGICA E HISTEROSCOPIA AVALADOS POR LA UNIVERSIDAD AUTONOMA DE SINALOA. ESTOY PARA SERVIRTE",
+  "addresses": [
+    {
+      "full": "Av. Correa Rachó 104,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/xochitl-carrillo-nuno/ginecologo/yucatan#address-id=421993&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:29:19.775Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__xochitl_carrillo_nu_o.webp"
+}

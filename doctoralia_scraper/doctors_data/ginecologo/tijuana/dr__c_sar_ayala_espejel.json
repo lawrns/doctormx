@@ -1,0 +1,46 @@
+{
+  "name": "Dr. César Ayala Espejel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 94,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/692d8b/692d8b8c92ee9d14dc24aa8b5657e80c_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Grand Medical Clínica de Especialidades, Calle Sánchez Taboada 9408 (Colonia Sánchez Taboada 9408) ,"
+    },
+    {
+      "full": "Grand Medical Clínica de Especialidades, Calle Sánchez Taboada 9408 (Colonia Sánchez Taboada 9408) ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cesar-ayala-espejel/ginecologo/tijuana#address-id=122318&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:45:25.754Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__c_sar_ayala_espejel.webp"
+}

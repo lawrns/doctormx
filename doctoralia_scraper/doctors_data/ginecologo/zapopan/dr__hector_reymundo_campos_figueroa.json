@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Hector Reymundo Campos Figueroa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0e797d/0e797dcd873cdcfa1ef979182f8c58fc_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Copernico #4044 Cons. 7,"
+    },
+    {
+      "full": "Av. Copernico #4044 Cons. 7,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-reymundo-campos-figueroa/ginecologo/zapopan#address-id=84352&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:25:58.677Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__hector_reymundo_campos_figueroa.webp"
+}

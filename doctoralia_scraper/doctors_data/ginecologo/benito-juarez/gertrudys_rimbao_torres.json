@@ -1,0 +1,43 @@
+{
+  "name": "Gertrudys Rimbao Torres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 280,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ac8754/ac87540824d226a0bac4d105f3ec7e64_220_square.jpg",
+  "about": "Hola mis saludos, soy la Dra Gertrudys Rimbao Torres. Medico Especialista.Graduada en el Instituto Superior de Ciencias Medica. La Habana .Cuba. Mi objetivo como especialista es ayudarlo en su problema de salud ,desde nuestra primera cita, aclarándole cada duda y procedimiento . Soy un medico comprometido con mi profesión.",
+  "addresses": [
+    {
+      "full": "AVENIDA RIO MIXCOAC 44, CONSULTORIO 5 TERCER PISO. SAN JOSE INSURGENTES.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• $800"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gertrudys-rimbao-torres/ginecologo/benito-juarez#address-id=386774&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:05:57.141Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/gertrudys_rimbao_torres.webp"
+}

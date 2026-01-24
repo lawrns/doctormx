@@ -1,0 +1,25 @@
+{
+  "name": "Felipe De Jesus Sanchez Ancira",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 168,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5f2e78/5f2e7840c4a12eba2e1fadb732b6c93e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Sur 5 398,"
+    },
+    {
+      "full": "Sur 5 398,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/felipe-de-jesus-sanchez-ancira/ginecologo/orizaba#address-id=229015&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:27:49.478Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/felipe_de_jesus_sanchez_ancira.webp"
+}

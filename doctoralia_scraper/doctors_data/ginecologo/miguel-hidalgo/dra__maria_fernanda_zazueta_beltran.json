@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Maria Fernanda Zazueta Beltran",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 16,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/4e7fd1e2/4e7fd1e2-184f-416e-957a-6c75cc3fb22e_small_square.jpg",
+  "about": "!Hola!Soy la Dra. María Fernanda Zazueta Beltrán, te cuento sobre mi formación:-Licenciatura en Medicina General, en la Facultad de Medicina de la Universidad Autónoma de Sinaloa.-Especialidad en Ginecología y Obstetricia, en el Hospital Civil de Culiacán, avalada por la Universidad Autónoma de Sinaloa.-Alta especialidad en Cirugía Endoscopia Ginecológica, en CMN ISSSTE 20 de Noviembre, avalada por la Universidad Nacional Autónoma de México.Mi formación me permite acompañarte en cada etapa de tu vida, brindando una atención médica de calidad, empática y actualizada.Me enfoco en realizar cirugía de mínima invasión ginecológica, permíteme ayudarte a resolver tus dudas, será un gusto atenderte.",
+  "addresses": [
+    {
+      "full": "Agrarismo 208,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-fernanda-zazueta-beltran/ginecologo/miguel-hidalgo#address-id=581938&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:59:57.121Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__maria_fernanda_zazueta_beltran.webp"
+}

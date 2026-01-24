@@ -1,0 +1,25 @@
+{
+  "name": "Maria Esther Rodriguez Campos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 188,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1ac333/1ac3331eb5345d7794edc9ba49ad97dc_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "19 Sur 4302 Casa 3 Col. Reforma Agua Azul, Cp: 72430,"
+    },
+    {
+      "full": "19 Sur 4302 Casa 3 Col. Reforma Agua Azul, Cp: 72430,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-esther-rodriguez-campos/ginecologo/puebla#address-id=359277&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:29:49.503Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/maria_esther_rodriguez_campos.webp"
+}

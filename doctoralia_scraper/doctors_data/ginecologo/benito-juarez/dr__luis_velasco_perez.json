@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Luis Velasco Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/413aa1/413aa14a11661720aa1711b5932a1ade_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Agrarismo 208,"
+    },
+    {
+      "full": "Calle Agrarismo 208 (Hospital Angeles México, Torre A, Cons. 501),"
+    },
+    {
+      "full": "Agrarismo 208,"
+    },
+    {
+      "full": "Calle Agrarismo 208 (Hospital Angeles México, Torre A, Cons. 501),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-velasco-perez/ginecologo/ciudad-de-mexico#address-id=60879&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:14:40.321Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__luis_velasco_perez.webp"
+}

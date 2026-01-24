@@ -1,0 +1,39 @@
+{
+  "name": "María José Cuevas Partida",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 451,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/007998/00799822831b7a0ad959faa1534a74c0.jpg",
+  "about": "¡Hola! Soy la Dra. María José, ginecólogo obstétra. Mi prioridad es tu salud y tu comodidad, por eso nos enfocamos a que todos los procedimientos sean humanizados y sensibles a la comodidad de nuestras pacientes. Dentro de las cosas en las que te puedo apoyar están: ° Control Prenatal, ° Check up ginecológico, ° Métodos anticonceptivos, ° Consulta ginecológica. ° Partos y cesáreas humanizadas, ° Cirugías ginecológicas La edad ideal para ir al ginecólogo es durante el desarrollo de los órganos sexuales, preferentemente antes de la primera menstruación, entre los 11 y 15 años. Haz tu cita al número de contacto registrado.",
+  "addresses": [
+    {
+      "full": "Calle José María Heredia 2960,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-jose-cuevas-partida/ginecologo/guadalajara#address-id=395880&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:11:47.468Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/mar_a_jos__cuevas_partida.webp"
+}

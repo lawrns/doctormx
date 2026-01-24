@@ -1,0 +1,31 @@
+{
+  "name": "Jesus Alberto Felix Atondo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/00bdf3d0/00bdf3d0-4fb8-412d-96d7-243ecb4a80ac_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Pta. De Hierro 5150,"
+    },
+    {
+      "full": "Av. Tulum Mz. 1 Lt. 3,"
+    },
+    {
+      "full": "Blvd. Pta. De Hierro 5150,"
+    },
+    {
+      "full": "Av. Tulum Mz. 1 Lt. 3,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-alberto-felix-atondo/ginecologo/zapopan#address-id=216573&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:40:02.920Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/jesus_alberto_felix_atondo.webp"
+}

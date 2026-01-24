@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Linda Benites Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 385,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/96c299/96c29965d0616b14dad30378edfddeb5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Sur 136 No.116,"
+    },
+    {
+      "full": "Sur 136 No.116,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/linda-benites-flores/ginecologo/alvaro-obregon#address-id=115797&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:51:06.220Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__linda_benites_flores.webp"
+}

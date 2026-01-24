@@ -1,0 +1,52 @@
+{
+  "name": "Dr. Diego García Avendaño",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 58,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e33963/e33963a0214e5c368113382c0ccff27d_220_square.jpg",
+  "about": "Soy egresado de la Benemérita Universidad Autónoma Puebla. Realice mi especialidad en el IMSS con la Universisdad Veracruzana. Tengo mas de 15 años de experiencia.",
+  "addresses": [
+    {
+      "full": "Blvc. Beatriz Paredes Rangel 36, col del Valle, San Gabriel Cuautla,"
+    },
+    {
+      "full": "Privada Guillermo Valle 18,"
+    },
+    {
+      "full": "Blvc. Beatriz Paredes Rangel 36, col del Valle, San Gabriel Cuautla,"
+    },
+    {
+      "full": "Privada Guillermo Valle 18,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Control prenatal",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diego-garcia-avendano/ginecologo/tlaxcala#address-id=166462&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:11:55.693Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__diego_garc_a_avenda_o.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. David Escalona Sosa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/47f085/47f085617f8585f566dbb076090618d2_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Mayorazgo 509-A Colonia Patrimonio,"
+    },
+    {
+      "full": "Calle Mayorazgo 509-A Colonia Patrimonio,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/david-escalona-sosa/ginecologo/puebla#address-id=91302&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:13:39.477Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__david_escalona_sosa.webp"
+}

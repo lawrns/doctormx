@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Maria Fernanda Guerra Ruelas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 404,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/75c110/75c11060f388babca07b9e33fbdf88ae.jpg",
+  "about": "Soy la Dra. María Fernanda Guerra Ruelas Gineco-obstetra Te contaré un poco a cerca de mi Soy originaria y crecí en la ciudad de Guadalajara, Jalisco. Actualmente vivo y ejerzo en la ciudad de León, Guanajuato. Soy orgullosamente egresada de la Universidad de Guadalajara de dónde me gradué de médico cirujano y partero obteniendo mi título por excelencia académica Realice mi especialidad en ginecología y obstetricia en el Hospital De Ginecopediatria #48 del IMSS en la ciudad de León. Otorgando mi diploma de especialidad la Universidad de Guanajuato. Estoy certificada por el Consejo Mexicano de Ginecología y Obstetricia. Me encanta lo que hago! Soy muy feliz ayudando a traer vida nueva a este mundo. Espero jamás dejar de sorprenderme por el milagro de la vida del cual soy testigo todos los días! Me encantaría poder acompañarte a lo largo de tu vida y ser participe de tus proyectos más bonitos!",
+  "addresses": [
+    {
+      "full": "Av. Cerro Gordo 311 B, Lomas del Campestre,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Cesárea humanizada",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-fernanda-guerra-ruelas/ginecologo/leon#address-id=388909&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:26:26.760Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__maria_fernanda_guerra_ruelas.webp"
+}

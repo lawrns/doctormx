@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Miguel Ángel Robles Carmona",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 327,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/63c125/63c125dd1239d96e118b48042dc6753e_220_square.jpg",
+  "about": "Especialista en Ginecología y Obstetricia Certificado. • Subespecialidad en Biología de Reproducción Humana por el Instituto Nacional de Ciencias Médicas y Nutrición Nutrición Salvador Zubirán La actualización es una constante, por lo que para brindar una atención de calidad y vanguardia me encuentro en continua formación tomando e impartiendo cursos y diplomados nacionales e internacionales, esenciales de mi parte para poder prevenir, diagnosticar y tratar los padecimientos que afectan a la mujer en cualquier etapa de su vida. Dentro de mi formación cuento con: Obstetric Surgical Life Support (OSLS), Colposcopia y Patología de Tracto Genital Inferior, Cirugía Endoscópica El enfoque al paciente durante la consulta es Endocrinología, Salud Sexual y Reproductiva, así como abordaje integral de la Pareja Infértil. Dentro del consultorio ten la confianza que se emplean herramientas diagnósticas y de tratamiento como ultrasonido, colposcopia, electrocirugía, entre otros. La atención que se le brindará, es en hospitales certificados, que cuentan con las herramientas e insumos necesarios para brindar una atención de calidad y respuesta oportuna ante cualquier eventualidad durante el embarazo o cirugía ginecológica que se pudiera presentar. El trato al paciente siempre parte de la información que se brinda y mi compromiso es explicar de manera clara, concisa y con base en la evidencia científica actual para que usted pueda tomar la mejor decisión para su problema. La comunicación es vital con usted y con cada paciente por lo que se cuentan con distintos medios para mantener un monitoreo y trato personalizado, ya sea por correo electrónico, teléfono, WhatsApp y redes sociales. Mi objetivo es brindarle la atención médica que se merece con empatía y calidez.",
+  "addresses": [
+    {
+      "full": "C. Agrarismo 208,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-robles-carmona-2/ginecologo/miguel-hidalgo#address-id=398840&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:00:38.464Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__miguel__ngel_robles_carmona.webp"
+}

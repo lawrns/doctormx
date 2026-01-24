@@ -1,0 +1,31 @@
+{
+  "name": "Jose Julio Avila Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 318,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/62235d/62235de25382b194c0198a22aa87329b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cto. Del Sol Sur 2913,"
+    },
+    {
+      "full": "Av. Venustiano Carranza 810,"
+    },
+    {
+      "full": "Cto. Del Sol Sur 2913,"
+    },
+    {
+      "full": "Av. Venustiano Carranza 810,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-julio-avila-perez/ginecologo/puebla#address-id=209909&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:26:03.559Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/jose_julio_avila_perez.webp"
+}

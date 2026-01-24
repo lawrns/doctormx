@@ -1,0 +1,25 @@
+{
+  "name": "Carlos Alberto Tapia Becerra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 180,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/4f720619/4f720619-1431-4956-9f99-1020753ce81f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "16 X 13 Y 15 153, Col. Prado Norte, ,"
+    },
+    {
+      "full": "16 X 13 Y 15 153, Col. Prado Norte, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-alberto-tapia-becerra/ginecologo/merida#address-id=357296&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:50:21.627Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/carlos_alberto_tapia_becerra.webp"
+}

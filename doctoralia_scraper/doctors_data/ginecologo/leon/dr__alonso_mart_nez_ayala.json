@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Alonso Martínez Ayala",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 251,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6c0ab5/6c0ab59fcf10c45885f887b7fff21447_220_square.jpg",
+  "about": "Soy Médico Especialista en Ginecología encargado de atender los problemas de salud en la mujer. Mi objetivo principal es brindas una atención de calidad hacia mis pacientes.",
+  "addresses": [
+    {
+      "full": "Av. 5 De Febrero 724,"
+    },
+    {
+      "full": "Av. 5 De Febrero 724,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alonso-martinez-ayala/ginecologo/leon#address-id=4583&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:28:59.024Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__alonso_mart_nez_ayala.webp"
+}

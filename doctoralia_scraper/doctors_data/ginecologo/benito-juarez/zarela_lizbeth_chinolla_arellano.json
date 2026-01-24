@@ -1,0 +1,31 @@
+{
+  "name": "Zarela Lizbeth Chinolla Arellano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 42,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4ddb31/4ddb314e5011f06c7685f15ca0d3cd35_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tuxpan 25,"
+    },
+    {
+      "full": "Tehuantepec 251,"
+    },
+    {
+      "full": "Tuxpan 25,"
+    },
+    {
+      "full": "Tehuantepec 251,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/zarela-lizbeth-chinolla-arellano-2/ginecologo/ciudad-de-mexico#address-id=167147&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:17:30.841Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/zarela_lizbeth_chinolla_arellano.webp"
+}

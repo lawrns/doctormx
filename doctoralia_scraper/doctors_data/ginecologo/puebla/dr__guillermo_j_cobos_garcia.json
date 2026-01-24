@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Guillermo J Cobos Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 717,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/38803f/38803f2d2e6f38ec495fbd8fda8ac147_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "7 Sur 3916,"
+    },
+    {
+      "full": "Diag Ignacio Zaragoza 5128 Interior 306,72530 Anzures,"
+    },
+    {
+      "full": "7 Sur 3916,"
+    },
+    {
+      "full": "Diag Ignacio Zaragoza 5128 Interior 306,72530 Anzures,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-j-cobos-garcia/ginecologo/puebla#address-id=570202&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:21:23.864Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__guillermo_j_cobos_garcia.webp"
+}

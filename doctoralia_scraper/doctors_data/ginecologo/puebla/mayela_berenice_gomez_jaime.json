@@ -1,0 +1,25 @@
+{
+  "name": "Mayela Berenice Gomez Jaime",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 267,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/60fd2c46/60fd2c46-d3e2-4d16-9287-74b3bd18b023_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Atlixcayotl 3248,"
+    },
+    {
+      "full": "Av. Atlixcayotl 3248,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mayela-berenice-gomez-jaime/ginecologo/san-andres-cholula#address-id=187836&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:36:03.929Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/mayela_berenice_gomez_jaime.webp"
+}

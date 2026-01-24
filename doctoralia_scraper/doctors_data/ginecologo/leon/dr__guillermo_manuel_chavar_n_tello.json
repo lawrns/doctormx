@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Guillermo Manuel Chavarín Tello",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 33,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a5f699/a5f6997f98dbeed94000eaf3f5e98633_220_square.jpg",
+  "about": "Médico especializado en problemas de salud de la mujer y control durante el embarazo, ofreciendo atención eficaz, oportuna, agradable, personalizada. Juntos resolveremos cualquier afección o preocupación que tenga, ademas de consejerías para prevenir futuras enfermedades. A sus ordenes.",
+  "addresses": [
+    {
+      "full": "Aquiles Serdan #401,"
+    },
+    {
+      "full": "Aquiles Serdan #401,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Control prenatal",
+      "price": ""
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": ""
+    },
+    {
+      "name": "Remoción de verrugas por VPH",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-manuel-chavarin-tello/ginecologo/leon#address-id=256707&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:28:02.797Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__guillermo_manuel_chavar_n_tello.webp"
+}

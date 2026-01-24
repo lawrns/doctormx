@@ -1,0 +1,25 @@
+{
+  "name": "Lizandro Gomez Ponce",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 47,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e133cac3/e133cac3-cbdb-459c-8967-a1b0a427bf7a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Montecitos no. 11-1er. piso, Napoles,"
+    },
+    {
+      "full": "Montecitos no. 11-1er. piso, Napoles,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lizandro-gomez-ponce/ginecologo/benito-juarez#address-id=110255&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:22:08.662Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/lizandro_gomez_ponce.webp"
+}

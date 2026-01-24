@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Donaji Luna Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/2545435a/2545435a-d681-4453-8a2f-31881cb63591_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Río Tiber 21,"
+    },
+    {
+      "full": "Río Tiber 21,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/donaji-luna-hernandez/ginecologo/cuauhtemoc#address-id=3747&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:22:25.105Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__donaji_luna_hernandez.webp"
+}

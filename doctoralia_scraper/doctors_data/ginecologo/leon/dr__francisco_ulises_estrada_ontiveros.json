@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Francisco Ulises Estrada Ontiveros",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2acd54/2acd541db6020eaa29253c3aa5b1efe9_220_square.jpg",
+  "about": "Egresado de la Facultad de Medicina de Leon, Universidad de Guanajuato como Medico Cirujano. Especialidad en Ginecologia y Obstetricia en el Hospital General Regional de Leon, Universidad de Guanajuato. Postgrado Master en Reproduccion Humana IVI Valencia(España)Hospital La Fe, por la Universidad de Valencia. Postgrado Master en Endoscopia Ginecologica EGES Valencia(España)Hospital Arnau de Villanova, por la Universidad Católica de Valencia.",
+  "addresses": [
+    {
+      "full": "Hospital Ángeles en Av. Cerro Gordo 311. Torre 1 de Especialidades Piso 4 Consultorio 460,"
+    },
+    {
+      "full": "Hospital Ángeles en Av. Cerro Gordo 311. Torre 1 de Especialidades Piso 4 Consultorio 460,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-ulises-estrada-ontiveros/ginecologo/leon#address-id=3638&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:29:00.812Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__francisco_ulises_estrada_ontiveros.webp"
+}

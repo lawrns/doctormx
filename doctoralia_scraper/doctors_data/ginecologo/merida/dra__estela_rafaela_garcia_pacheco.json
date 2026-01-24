@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Estela Rafaela Garcia Pacheco",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 71,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ec2d4ad6/ec2d4ad6-0b63-42ba-9a78-2cad53be97b0_small_square.jpg",
+  "about": "La Dra. Estela García Pacheco es una ginecóloga con 23 años de experiencia atendiendo a las mujeres de Mérida, Yucatán con responsabilidad y amplia ética profesional. Se distingue por ser creadora de una consulta diferente, la cual brinda con gran calidez.Es médico especialista en ginecología, obstetricia y colposcopía, por lo que es la indicada para ayudarte a prevenir y tratar de manera integral múltiples padecimientos propios de la mujer. Ofrece excelente atención y asesoría a sus pacientes.También posee un diplomado en colposcopía y está certificada por el Consejo Mexicano de Ginecología, siendo egresada del Centro Médico Nacional Ignacio García Téllez. Conócela, acepta seguro de gastos médicos mayores de GNP e Inbursa para tu mayor comodidad.",
+  "addresses": [
+    {
+      "full": "Calle 26 199,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/estela-rafaela-garcia-pacheco-2/ginecologo/yucatan#address-id=581302&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:32:05.414Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__estela_rafaela_garcia_pacheco.webp"
+}

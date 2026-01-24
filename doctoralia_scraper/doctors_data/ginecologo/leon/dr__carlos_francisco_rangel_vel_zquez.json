@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Carlos Francisco Rangel Velázquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2602c2/2602c22e4a6d532bf43241312f00c73a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hidalgo #327 Int. 203,"
+    },
+    {
+      "full": "Hidalgo #327 Int. 203,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-francisco-rangel-velazquez/ginecologo/leon#address-id=84340&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:30:20.080Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__carlos_francisco_rangel_vel_zquez.webp"
+}

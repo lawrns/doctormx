@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Ma. de la Luz Bermudez Rojas",
+  "specialty": "Ginecólogo",
+  "rating": 3,
+  "reviewCount": 5,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0744bd/0744bd4ac5c6d38b7dc6ff1391083d69_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Cerro Gordo 311, Lomas del Campestre,"
+    },
+    {
+      "full": "Av. Cerro Gordo 311, Lomas del Campestre,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ma-de-la-luz-bermudez-rojas/ginecologo/leon#address-id=138310&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:30:18.257Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__ma__de_la_luz_bermudez_rojas.webp"
+}

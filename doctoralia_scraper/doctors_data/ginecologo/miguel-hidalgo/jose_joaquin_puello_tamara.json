@@ -1,0 +1,31 @@
+{
+  "name": "Jose Joaquin Puello Tamara",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 143,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5beae2/5beae25a4fe41341746e1df83d4c05c8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calz. San Juan De Aragon 285,"
+    },
+    {
+      "full": "Janssen Janssen 213,"
+    },
+    {
+      "full": "Calz. San Juan De Aragon 285,"
+    },
+    {
+      "full": "Janssen Janssen 213,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-joaquin-puello-tamara/ginecologo/ciudad-de-mexico#address-id=210053&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:53:29.442Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/jose_joaquin_puello_tamara.webp"
+}

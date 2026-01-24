@@ -1,0 +1,25 @@
+{
+  "name": "Luis Daniel Serrano Chavolla",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1052,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/59c358/59c3589fa0fc86c73d4ef8a620300e36_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Priv. Sinaloa 412 A,"
+    },
+    {
+      "full": "Priv. Sinaloa 412 A,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-daniel-serrano-chavolla-2/ginecologo/puebla#address-id=199486&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:26:38.031Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/luis_daniel_serrano_chavolla.webp"
+}

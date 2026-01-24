@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Yessica Selene Ortiz Saavedra",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 230,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/77b89c/77b89cfed57330e6b4dc023896d5e800_220_square.jpg",
+  "about": "Especialista en ginecología y obstetricia. Diplomado en colposcopía diagnostica y terapéutica. Diplomado en ultrasonido obstétrico y ginecológico. Atención médica especializada dirigida a mujeres de todas las edades que requieran servicios de salud de calidad y con profesionalismo. Durante su visita resolveré sus dudas a cerca de diferentes temas que preocupan en nuestros días como son, la elección y uso de métodos anticonceptivos, cuidados prenatales, seguimiento del embarazo, trastornos de la menstruación, climaterio y menopausia. Dentro de los servicios que ofrezco estan la detección y tratamiento de infecciones causadas por virus del papiloma humano, así como lesiones precursoras de cáncer cervicouterino. Atención del parto, cesarea y cirugía ginecológica, entre otros.",
+  "addresses": [
+    {
+      "full": "Avenida Hilario Frias y Soto 19,"
+    },
+    {
+      "full": "Avenida Hilario Frias y Soto 19,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $600"
+    },
+    {
+      "name": "Electrocoagulación (crioterapia de verrugas)",
+      "price": "• Desde $3,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yessica-selene-ortiz-saavedra/ginecologo/santiago-de-queretaro#address-id=117145&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:48:43.772Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__yessica_selene_ortiz_saavedra.webp"
+}

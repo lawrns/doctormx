@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Marcelo Gonzalez Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/adaeb8/adaeb8a012a5f213da4f6bb36f91030d_220_square.jpg",
+  "about": "Control de embarazo y atención del parto o Cesárea en los Hospitales de Mérida. Diagnóstico prenatal con la mejor tecnología única en Mérida HD Live.",
+  "addresses": [
+    {
+      "full": "Calle 15 x 22 #491 Local 5B2 Col. Altabrisa,"
+    },
+    {
+      "full": "Calle 15 x 22 #491 Local 5B2 Col. Altabrisa,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marcelo-gonzalez-rodriguez/ginecologo/merida#address-id=69932&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:37:22.907Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__marcelo_gonzalez_rodriguez.webp"
+}

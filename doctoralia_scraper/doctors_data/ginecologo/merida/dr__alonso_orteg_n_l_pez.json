@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Alonso Ortegón López",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 563,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/60d915/60d91598819ff98d2c2d5115dac5bf30_220_square.jpg",
+  "about": "El Dr. Alonso Ortegón, es médico especialista en Ginecología y Obstetricia (título emitido por la Universidad Autónoma de Yucatán) con la sub especialidad en Medicina Materno Fetal (perinatología) realizada en el Instituto Nacional de Perinatología (título emitido por la Universidad Nacional Autónoma de México). Certificado por el Consejo Mexicano de Ginecología y Obstetricia, A.C. Experto en la atención de la mujer y el embarazo de forma integral, con especial énfasis en la atención de la mujer embarazada de alto riesgo, así como en la atención fetal. Con la visión del feto y madre como pacientes individuales y en su conjunto como binomio Maternofetal.. We also offer our service to women who don't speak spanish, as tourists or new residents of the city of Mérida Yucatán.",
+  "addresses": [
+    {
+      "full": "Calle 26 199,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $400"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido 4D",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido avanzado de primer trimestre (semanas 11 a 14)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alonso-ortegon-lopez/ginecologo/yucatan#address-id=335207&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:30:20.489Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__alonso_orteg_n_l_pez.webp"
+}

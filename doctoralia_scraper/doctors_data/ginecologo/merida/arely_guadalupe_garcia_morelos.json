@@ -1,0 +1,25 @@
+{
+  "name": "Arely Guadalupe Garcia Morelos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 165,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/63b901/63b901529397ae4fdffba7438bbccde2_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Itzaes X Av. Jacinto Canek,"
+    },
+    {
+      "full": "Av. Itzaes X Av. Jacinto Canek,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arely-guadalupe-garcia-morelos/ginecologo/merida#address-id=244964&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:51:36.379Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/arely_guadalupe_garcia_morelos.webp"
+}

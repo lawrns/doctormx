@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jesus Manuel Rodriguez Rojas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 48,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/67dd3cf2/67dd3cf2-4696-40a6-b114-2c85666e979d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Nicolás Bravo 617,"
+    },
+    {
+      "full": "Nicolás Bravo 617,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-manuel-rodriguez-rojas/ginecologo/tijuana#address-id=94342&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:06:49.505Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__jesus_manuel_rodriguez_rojas.webp"
+}

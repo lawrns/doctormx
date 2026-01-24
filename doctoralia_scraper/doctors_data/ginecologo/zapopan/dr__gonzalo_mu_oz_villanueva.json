@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Gonzalo Muñoz Villanueva",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 34,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4556d1/4556d103262dede19c7dbfc2fd1dbc77_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Herrera Y Cairo 1795,"
+    },
+    {
+      "full": "Calle Herrera Y Cairo 1795,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gonzalo-munoz-villanueva-2/ginecologo/guadalajara#address-id=50807&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:35:35.030Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__gonzalo_mu_oz_villanueva.webp"
+}

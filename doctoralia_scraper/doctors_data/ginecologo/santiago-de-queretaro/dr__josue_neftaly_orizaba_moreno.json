@@ -1,0 +1,58 @@
+{
+  "name": "Dr. Josue Neftaly Orizaba Moreno",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 23,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f88ebd/f88ebd05d76c1b12ed037e00fe089f73_220_square.jpg",
+  "about": "Soy el Dr. Josue Orizaba, medico especialista en Ginecología y ObstetriciaMi compromiso contigo es ofrecerte una atención personalizada, cálida y ética, basada en evidencia científica y comunicación efectiva con cada una de mis pacientesCuento con formación y actualización continua en embarazo de alto riesgo, colposcopia, ultrasonido gineco- obstétrico y planificación familiar, lo cual me permite ofrecerte servicios seguros y de alta calidad, con el objetivo de acompañarte con respeto, empatía y profesionalismo, garantizando un entorno de confianza y cuidado durante todas las etapas de su vida reproductiva.Principales áreas de atenciónCheck-up ginecologicoControl prenatal y atención del embarazo (bajo y alto riesgo)Ultrasonido ginecológico y obstétricoParto y cesáreaAMEU / LegradoHisterectomia / MiomectomiaSalud reproductiva y anticoncepciónTrastornos menstrualesSíndrome de ovario poliquísticoClimaterio y menopausiaHisteroscopia diagnostica y terapeuticaCitología cervical (Papanicolaou)ColposcopiaInfecciones de transmisión sexual Vacunas contra VPH Biopsia endometrial, biopsia cervical",
+  "addresses": [
+    {
+      "full": "Avenida Paseo Constituyentes 302. El Jacal,,"
+    },
+    {
+      "full": "Av. Constituyentes 302,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/josue-neftaly-orizaba-moreno/ginecologo/queretaro",
+  "scrapedAt": "2026-01-22T03:41:46.230Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__josue_neftaly_orizaba_moreno.webp"
+}

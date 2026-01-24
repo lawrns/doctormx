@@ -1,0 +1,25 @@
+{
+  "name": "Maria Antonieta Abri Rivera Cañas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 262,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/00cb8448/00cb8448-4bf9-4009-ab88-c92e33df007a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Gaudi Mza 73 Lt,28,Supmza 325 Villas Del Arte,,"
+    },
+    {
+      "full": "Gaudi Mza 73 Lt,28,Supmza 325 Villas Del Arte,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-antonieta-abri-rivera-canas/ginecologo/benito-juarez#address-id=357827&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:20:51.350Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/maria_antonieta_abri_rivera_ca_as.webp"
+}

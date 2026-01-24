@@ -1,0 +1,31 @@
+{
+  "name": "Moises Udinsky Kably",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 47,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/df74a3/df74a328a4253c45daa4eb427f27a12f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "VIALIDAD DE LA BARRANCA,"
+    },
+    {
+      "full": "Ejercito Nacional No. 613, Col. Granada,"
+    },
+    {
+      "full": "VIALIDAD DE LA BARRANCA,"
+    },
+    {
+      "full": "Ejercito Nacional No. 613, Col. Granada,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/moises-udinsky-kably-2/ginecologo/ciudad-de-mexico#address-id=339433&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:52:35.901Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/moises_udinsky_kably.webp"
+}

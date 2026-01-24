@@ -1,0 +1,31 @@
+{
+  "name": "Felix Santiesteban Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 312,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/661983/66198388b6dcff1aefc44fb57fd0d332_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cuahutemoc Sur 3311,"
+    },
+    {
+      "full": "C. Benito Juárez 2Da 1413,"
+    },
+    {
+      "full": "Cuahutemoc Sur 3311,"
+    },
+    {
+      "full": "C. Benito Juárez 2Da 1413,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/felix-santiesteban-rodriguez/ginecologo/tijuana#address-id=228742&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:48:17.242Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/felix_santiesteban_rodriguez.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Maria Del Rosario Madrazo Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hidalgo 113,"
+    },
+    {
+      "full": "Hidalgo 113,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-del-rosario-madrazo-perez/ginecologo/centro#address-id=163473&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:34:21.162Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Martha Gertrudis Perez Ramirez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 82,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2ee6b6/2ee6b61ca86015d69b7b5c62f1bd246d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Ruiz Cortinez 214,"
+    },
+    {
+      "full": "Av. Patriotismo 671,"
+    },
+    {
+      "full": "Av. Ruiz Cortinez 214,"
+    },
+    {
+      "full": "Av. Patriotismo 671,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martha-gertrudis-perez-ramirez/ginecologo/benito-juarez#address-id=188876&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:15:56.793Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/martha_gertrudis_perez_ramirez.webp"
+}

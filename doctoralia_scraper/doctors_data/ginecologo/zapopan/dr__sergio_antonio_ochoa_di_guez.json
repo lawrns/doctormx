@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Sergio Antonio Ochoa Diéguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 631,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b1f1a7/b1f1a7edf2e81bc6d51999c405601c42_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "JUAN KEPLER 3243 (Frente Soriana Av López Mateos y Av Copernico) ,"
+    },
+    {
+      "full": "JUAN KEPLER 3243 (Frente Soriana Av López Mateos y Av Copernico) ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Laparascopia diagnóstica con biopsia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-antonio-ochoa-dieguez/ginecologo/zapopan#address-id=66570&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:28:46.757Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__sergio_antonio_ochoa_di_guez.webp"
+}

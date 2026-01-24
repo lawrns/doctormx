@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Ma. Guadalupe Reyes Ruiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 32,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dc9991/dc9991fa8ac2f042b66e5cfe15814b2c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Mar De Cortez S/n,"
+    },
+    {
+      "full": "Mar De Cortez S/n,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ma-guadalupe-reyes-ruiz/ginecologo/guadalajara#address-id=53863&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:43:15.514Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__ma__guadalupe_reyes_ruiz.webp"
+}

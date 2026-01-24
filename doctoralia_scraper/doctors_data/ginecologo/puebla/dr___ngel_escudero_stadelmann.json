@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Ángel Escudero Stadelmann",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5f2e78/5f2e7840c4a12eba2e1fadb732b6c93e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Pte 7 N° 905,"
+    },
+    {
+      "full": "Av.Poniente 7 905,"
+    },
+    {
+      "full": "Pte 7 N° 905,"
+    },
+    {
+      "full": "Av.Poniente 7 905,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angel-escudero-stadelmann/ginecologo/orizaba#address-id=70650&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:18:12.237Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr___ngel_escudero_stadelmann.webp"
+}

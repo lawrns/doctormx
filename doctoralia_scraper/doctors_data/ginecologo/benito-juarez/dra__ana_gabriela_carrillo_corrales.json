@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ana Gabriela Carrillo Corrales",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 426,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/611652/611652a705847a5ceacc9ff1d223adb5.jpg",
+  "about": "Soy Ginecóloga y Obstetra, con subespecialidad en Biología de la Reproducción Humana, mi principal objetivo es el bienestar de mis pacientes y que se sientan cómodas durante sus visitas, en un entorno seguro y agradable. Soy una profesional capacitada para el manejo de parejas con infertilidad (femenina y masculina), así como para atención preconcepcional, control prenatal y atención de parto o cesárea. También estoy capacitada para la atención de trastornos ginecológicos y problemas hormonales durante la adolescencia y el climaterio. Con amplia experiencia en planificación familiar y uso de anticonceptivos. Egresada como Médico Cirujano en la Facultad de Medicina de la Universidad Nacional Autónoma de México. Cuento con Especialidad en Ginecología y Obstetricia, realizada en el Hospital General Dr. Manuel Gea González, avalado por la UNAM y certificación por el Consejo Mexicano de Ginecología y Obstetricia. También cuento con Subespecialidad en Biología de la Reproducción Humana, realizada en el Instituto Nacional de Perinatología (INPer), avalado por la UNAM y certificación por el Consejo Mexicano de Ginecología y Obstetricia.",
+  "addresses": [
+    {
+      "full": "Hera 66,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-gabriela-carrillo-corrales/ginecologo/benito-juarez#address-id=401653&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:00:12.892Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__ana_gabriela_carrillo_corrales.webp"
+}

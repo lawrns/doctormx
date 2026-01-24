@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Heredia Raul Paz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ec99d4/ec99d4859eefe7384f8e4db2ae78d2ed_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Cupules N° 75 B X 6,"
+    },
+    {
+      "full": "Ave. Cupules N° 75 B X 6,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/heredia-raul-paz/ginecologo/merida#address-id=6375&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:46:17.372Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__heredia_raul_paz.webp"
+}

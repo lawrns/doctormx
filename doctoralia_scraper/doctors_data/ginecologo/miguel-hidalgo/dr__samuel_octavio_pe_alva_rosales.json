@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Samuel Octavio Peñalva Rosales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 37,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/64f913/64f913e5d6473617ed8a2ce97f19c317_220_square.jpg",
+  "about": "Hola, Mi carrera la cursé en la Escuela Superior de Medicina del Instituto Politécnico Nacional graduándome como Médico Cirujano y Partero, ahora, como pueden ver, soy Ginecólogo y Obstetra egresado del Hospital de Gineco-Obstetricia No. 3 del IMSS en el Centro Médico la Raza, donde también ejercí mi especialidad por 30 años, rotando por diferentes servicios como Urgencias, Perinatología, Ginecología y Biología de la Reproducción. Tuve la fortuna de ser Jefe de Servicio de Ginecología por 5 años y en mi último año Jefe de la Unidad Tocoquirúrgica el turno vespertino. El desarrollo de mi ejercicio me hizo tener una amplia experiencia en el manejo de Infertilidad, Cirugía Laparoscópica y trastornos Gineco-Endocrinos como el Síndrome de Ovarios Poliquísticos, del cuál me he concentrado en su Diagnóstico y manejo en forma muy directa, dada la importancia que representa no solo a nivel ginecológico sino también en el aspecto metabólico. También tengo experiencia en Colposcopia y el manejo de la Infección por Virus Papiloma Humano, y en el manejo del Climaterio, que es otra etapa de suma importancia en la vida de nuestras pacientes",
+  "addresses": [
+    {
+      "full": "Calle Rio Bamba 639,"
+    },
+    {
+      "full": "Avenida Ejército Nacional 613,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/samuel-octavio-penalva-rosales/ginecologo/ciudad-de-mexico",
+  "scrapedAt": "2026-01-22T01:56:41.038Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__samuel_octavio_pe_alva_rosales.webp"
+}

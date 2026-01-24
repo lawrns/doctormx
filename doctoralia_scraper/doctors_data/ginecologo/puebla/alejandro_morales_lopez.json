@@ -1,0 +1,31 @@
+{
+  "name": "Alejandro Morales Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 428,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ead66b/ead66bdd9f3363529792bd671c9c68a8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "27 Pte. 528,"
+    },
+    {
+      "full": "Av. 25 Pte. 1301,"
+    },
+    {
+      "full": "27 Pte. 528,"
+    },
+    {
+      "full": "Av. 25 Pte. 1301,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-morales-lopez/ginecologo/puebla#address-id=249603&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:35:46.878Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/alejandro_morales_lopez.webp"
+}

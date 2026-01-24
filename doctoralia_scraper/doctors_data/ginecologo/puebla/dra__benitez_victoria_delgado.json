@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Benitez Victoria Delgado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/17aad8b6/17aad8b6-d8f7-44cf-bb29-e75a69882987_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Colon 1039,"
+    },
+    {
+      "full": "Colon 1039,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/benitez-victoria-delgado/ginecologo/orizaba#address-id=60837&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:25:10.631Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__benitez_victoria_delgado.webp"
+}

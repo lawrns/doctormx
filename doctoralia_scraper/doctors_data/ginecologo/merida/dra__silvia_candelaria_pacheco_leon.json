@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Silvia Candelaria Pacheco Leon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 53,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/80d989/80d989b339476328718cf5a3a7051ad3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Colon 204,"
+    },
+    {
+      "full": "C. 15 X 22 491,"
+    },
+    {
+      "full": "Av. Colon 204,"
+    },
+    {
+      "full": "C. 15 X 22 491,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/silvia-candelaria-pacheco-leon/ginecologo/merida#address-id=171859&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:43:41.413Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__silvia_candelaria_pacheco_leon.webp"
+}

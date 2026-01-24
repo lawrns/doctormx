@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jesús Salvador Rodriguez Cardenas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e9e616/e9e616856ae06470540ce31c96314b50_220_square.jpg",
+  "about": "Soy el Dr. Jesús Salvador Rodríguez Cárdenas. Médico Cirujano y Partero egresado por la Universidad Autónoma de Guadalajara. Especialista en Ginecología y Obstetricia egresado del Hospital Civil de Guadalajara Dr Juan I Menchaca. Sub Especialidad en Medicina Materno Fetal en la Unidad de Medicina Materno Fetal del Hospital Civil de Guadalajara Dr Juan I Menchaca.",
+  "addresses": [
+    {
+      "full": "Avenida Niño Obrero 476,"
+    },
+    {
+      "full": "Avenida Niño Obrero 476,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-salvador-rodriguez-cardenas/ginecologo/guadalajara#address-id=418753&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:21:16.006Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jes_s_salvador_rodriguez_cardenas.webp"
+}

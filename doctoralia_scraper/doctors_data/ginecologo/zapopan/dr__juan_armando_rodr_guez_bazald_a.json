@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Juan Armando Rodríguez Bazaldúa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 15,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c49fab/c49fab224eb45f854f4be1fa52b28cf0_220_square.jpg",
+  "about": "Egresado como Médico General de la Universidad Autónoma de Guadalajara, curso mis estudios como especialista en el Hospital General de Occidente con aval de la Universidad de Guadalajara. Cuento con adiestramiento en Fisiología Obstétrica, ultrasonido de embarazo y ginecológico, realizado en el Hospital Civil Fray Antonio Alcalde, además soy especialista en Colposcopía y patología del tracto genital inferior, con diploma avalado por la Universidad del Valle de México. Certificado por The Fetal Medicine Foundation de Londres en Ultrasonido Genético del Primer Trimestre, así como en Ultrasonido Doppler fetal, prevención de Preeclampsia y Parto Prematuro. (FMF ID 155991)",
+  "addresses": [
+    {
+      "full": "Rio Verde Núm. 955-A,"
+    },
+    {
+      "full": "Rio Verde Núm. 955-A,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-armando-rodriguez-bazaldua/ginecologo/zapopan#address-id=92046&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:17:40.543Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__juan_armando_rodr_guez_bazald_a.webp"
+}

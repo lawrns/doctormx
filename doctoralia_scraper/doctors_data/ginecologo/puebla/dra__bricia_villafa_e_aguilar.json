@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Bricia Villafañe Aguilar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 25,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f2830b/f2830b0732f5c3f2d1fe90305ce533bf_220_square.jpg",
+  "about": "SOY EGRESADA DEL CENTRO MEDICO NACIONAL DE MERIDA YUCATAN, CUENTO CON VARIOS DIPLOMADOS EN: PATOLOGIA DEL TRACTO GENITAL INFERIOR, COLPOSCOPIA Y ULTRASONOGRAFIA. ME ENCUENTRO CERTIFICADA POR EL CONSEJO MEXICANO DE GINECOLOGIA Y OBSTETRICIA. SOY MIEMBRO FEDERADO DEL COLEGIO DE GINECOLOGOS Y OBSTETRAS DEL ESTADO DE PUEBLA ACTUALIZANDOME SIEMPRE Y A LA VANGUARDIA PARA EL MEJOR CUIDADO DE LA MUJER Y SI ES SU SITUACION EN EL DE SU BEBE Y USTED. ESTAMOS PARA SERVIRLE, CON EXCELENTE CALIDAD HUMANA Y PROFESIONAL, NO DUDE EN CONTACTARSE CONMIGO",
+  "addresses": [
+    {
+      "full": "16 de septiembre 5315 (esquina con circuito Juan Pablo II),"
+    },
+    {
+      "full": "16 de septiembre 5315 (esquina con circuito Juan Pablo II),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/bricia-villafane-aguilar/ginecologo/puebla#address-id=166801&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:12:41.402Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__bricia_villafa_e_aguilar.webp"
+}

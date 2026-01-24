@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Francisco Hernandez Salazar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 201,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f0f3d4/f0f3d41aa29a30a2fa2b64407e362451_220_square.jpg",
+  "about": "actualmente soy un medico especializado en GINECOLOGIA Y OBSTETRICIA, MASTER EN REPRODUCCION HUMANA Y TÉCNICAS DE REPRODUCCIÓN ASISTIDA, ESPECIALIZADO EN CIRUGÍA LÁSER, LAPAROSCOPIA E HISTEROSCOPIA Y MULTIPLES DIPLOMADOS EN ULTRASONIDO OBSTETRICIA Y GINECOLOGICO, atencion personalizada de todas las pacientes y sus parejas.",
+  "addresses": [
+    {
+      "full": "Blvd. Del Campestre 306, Int. 108 Col. Jardines del Moral,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-hernandez-salazar/ginecologo/leon#address-id=226473&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:25:25.296Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__francisco_hernandez_salazar.webp"
+}

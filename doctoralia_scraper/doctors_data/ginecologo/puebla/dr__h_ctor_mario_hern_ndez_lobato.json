@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Héctor Mario Hernández Lobato",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/373cfc6a/373cfc6a-0e42-4407-8f46-35e57c35ff0c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Kepler 2143,"
+    },
+    {
+      "full": "Av. Kepler 2143,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-mario-hernandez-lobato/ginecologo/puebla#address-id=5511&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:18:11.112Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__h_ctor_mario_hern_ndez_lobato.webp"
+}

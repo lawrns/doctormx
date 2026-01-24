@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Gabriel Ricardo Robles Ortíz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 116,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2b7404/2b74048a923f7b64937611660d5fba37_220_square.jpg",
+  "about": "Soy el doctor Gabriel Robles, ginecologo y obstetra egresado de la Universidad de Guanajuato.",
+  "addresses": [
+    {
+      "full": "Manantial 607,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriel-ricardo-robles-ortiz/ginecologo/leon#address-id=433716&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:26:37.025Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__gabriel_ricardo_robles_ort_z.webp"
+}

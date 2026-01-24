@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Jose Antonio Rivas Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/42dae3/42dae33487593dbe7e2d5b0f0d395db1_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Ejercito Nal 617 (int 604),"
+    },
+    {
+      "full": "Ejército Nacional Mexicano 613,"
+    },
+    {
+      "full": "Ave. Ejercito Nal 617 (int 604),"
+    },
+    {
+      "full": "Ejército Nacional Mexicano 613,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-antonio-rivas-garcia/ginecologo/ciudad-de-mexico#address-id=18721&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:39:50.322Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__jose_antonio_rivas_garcia.webp"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Dr. Librado Cordero Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 30,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/65cf83/65cf83992d18b49f26d8677b9c9db7dc_220_square.jpg",
+  "about": "Los objetivos trazados en esta loable profesión de medico, poco a poco fueron cumpliéndose, esto a través de los valores y disciplina que el Ejercito transmite a aquellos que formamos parte de las Fuerzas Armadas, logrando así completar la Especialidad de Ginecología y Obstetricia en la Escuela Militar de Graduados de Sanidad y además brindándome la oportunidad de Subespecializarme en Biología de la Reproducción humana en el Instituto Nacional de Perinatología, de realizar el curso de Colposcopia en el Instituto Nacional de Cancerología, y la Maestría en Ciencias de la Salud en el Instituto Politécnico Nacional lo cual me ha permitido abordar a mis pacientes con un sentido integral y con el compromiso fiel de brindarles atención medica y tratamientos basados en las mejores evidencias científicas acompañado de un amplio sentido de responsabilidad, ética y humanismo.",
+  "addresses": [
+    {
+      "full": "Av. Pdte. Masaryk 134 Consultorio 203,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/librado-cordero-hernandez/ginecologo/miguel-hidalgo#address-id=27714&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:02:21.338Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__librado_cordero_hernandez.webp"
+}

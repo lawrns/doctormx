@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Oscar de Jesus Diaz Saucedo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 62,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/744145/7441452bf67f68839205dcf8fc77f287_220_square.jpg",
+  "about": "Soy un ginecoobstetra dedicado enteramente a mi profesión, siempre actualizado, me apasiona brindar la mejor atención medica. Mi misión es ayudarle a recuperar su salud, brindando siempre una atención personalizada, con la mas alta calidad y calidez humana para sus necesidades. Estoy especializado para brindar atención ginecoobstétrica desde la etapa de adolescencia, edad reproductiva, atención al embarazo y nacimiento, problemas relacionados con trastornos menstruales, de los ovarios, de las mamas, así como atención de menopausia. La consulta medica es acorde a las necesidades de cada paciente. Espero me brinde la oportunidad de conocerla en mi consultorio, atenderle, escucharla, otorgarle mis mejores consejos y ser su ginecólogo de cabecera para lograr juntos el regreso de su bienestar. ¡Sea una mujer a la vanguardia de su salud!",
+  "addresses": [
+    {
+      "full": "Calle 34 Interior,"
+    },
+    {
+      "full": "Calle 34 Interior,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/oscar-de-jesus-diaz-saucedo/ginecologo/yucatan#address-id=118603&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:34:26.181Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__oscar_de_jesus_diaz_saucedo.webp"
+}

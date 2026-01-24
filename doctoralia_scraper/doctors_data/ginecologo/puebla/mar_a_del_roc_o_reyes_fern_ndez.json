@@ -1,0 +1,25 @@
+{
+  "name": "María del Rocío Reyes Fernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 121,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fbea1c/fbea1cdd1c22258c203a5d16b4f6df63_220_square.jpg",
+  "about": "Médico Gineco-Obstetra Certificada por Colegio Mexicano de Ginecología y Obstetricia A.C. Diplomado en Colposcopia y patología vulvar.",
+  "addresses": [
+    {
+      "full": "Calle 7 Oriente 1206 San José Tecamachalco, Puebla,"
+    },
+    {
+      "full": "Calle 7 Oriente 1206 San José Tecamachalco, Puebla,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-del-rocio-reyes-fernandez/ginecologo/puebla#address-id=418085&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:17:58.711Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/mar_a_del_roc_o_reyes_fern_ndez.webp"
+}

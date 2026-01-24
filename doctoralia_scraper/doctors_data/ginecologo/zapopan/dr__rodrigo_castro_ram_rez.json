@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Rodrigo Castro Ramírez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 46,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d5fe68/d5fe68e6727e25eef28efd2bbe8eef2f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Manuel Acuña 2942,"
+    },
+    {
+      "full": "Av Manuel Acuña 2942,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rodrigo-castro-ramirez-2/ginecologo/guadalajara#address-id=339935&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:31:37.166Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__rodrigo_castro_ram_rez.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Arturo Jiménez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 24,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e350bd3e/e350bd3e-7fa2-421e-8e5f-3b9ce2cfcf77_140_square.jpg",
+  "about": "Ginecología y medicina en general toma de Papanicolaou colocación de diu fertilidad esterilidad amenaza de aborto y Ile de emergencia urgencia control de peso regulador dehormonas",
+  "addresses": [
+    {
+      "full": "Sucre100,"
+    },
+    {
+      "full": "Sucre100,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $150"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $150"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $350"
+    },
+    {
+      "name": "Visita Medicina General",
+      "price": "• Desde $150"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arturo-jimenez-2/ginecologo-medico-general/ciudad-de-mexico#address-id=426765&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:09:57.813Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__arturo_jim_nez.webp"
+}

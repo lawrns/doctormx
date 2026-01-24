@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Laura Alicia Quezada",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 518,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1d139d/1d139d6b744d5cd30734782435889da9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Jose Maria Robles 830,"
+    },
+    {
+      "full": "Av. Washington 1988,"
+    },
+    {
+      "full": "Jose Maria Robles 830,"
+    },
+    {
+      "full": "Av. Washington 1988,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-alicia-quezada/ginecologo/zapopan#address-id=202675&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:35:19.330Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__laura_alicia_quezada.webp"
+}

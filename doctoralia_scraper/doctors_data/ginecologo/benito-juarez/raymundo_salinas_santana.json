@@ -1,0 +1,25 @@
+{
+  "name": "Raymundo Salinas Santana",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 20,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/eddbb776/eddbb776-be49-4e6f-a2bb-6b6b790515bd_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Chilpancingo 116,"
+    },
+    {
+      "full": "Chilpancingo 116,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raymundo-salinas-santana/ginecologo/ciudad-de-mexico#address-id=178939&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:13:58.271Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/raymundo_salinas_santana.webp"
+}

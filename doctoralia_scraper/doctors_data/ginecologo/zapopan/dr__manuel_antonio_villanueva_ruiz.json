@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Manuel Antonio Villanueva Ruiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7763a0/7763a0c21676853cc6e284716e5c52ec_220_square.jpg",
+  "about": "Formación Medico Cirujano y Partero Escuela Superior de Medicina del Instituto Politécnico Nacional (IPN), Mexico, DF. Ginecologia y Obstetricia, Universidad de Guadalajara, Hospital de Gineco-Obstetricia del CMNO, IMSS. Medicina Materno Fetal, Universidad de Guadalajara,Hospital de Gineco-Obstetricia de CMNO, IMSS. Certificado por el Consejo Mexicano de Ginecología y Obstetricia (COMEGO / FEMECOG)",
+  "addresses": [
+    {
+      "full": "Av. Miguel Angel 189,"
+    },
+    {
+      "full": "Av. Miguel Angel 189,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $750"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cariotipo en Líquido Amniotico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuel-antonio-villanueva-ruiz/ginecologo/zapopan#address-id=98738&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:18:51.875Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__manuel_antonio_villanueva_ruiz.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Eduardo Hernandez Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 59,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/092fbb/092fbbf740eceb880402d649eb8d0b38_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Guadalupe,3667 B,Miramar,,"
+    },
+    {
+      "full": "Guadalupe,3667 B,Miramar,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-hernandez-garcia/ginecologo/zapopan#address-id=355529&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:44:14.139Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/eduardo_hernandez_garcia.webp"
+}

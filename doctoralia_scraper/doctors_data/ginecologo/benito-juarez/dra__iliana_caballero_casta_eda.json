@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Iliana Caballero Castañeda",
+  "specialty": "Ginecólogo",
+  "rating": 3.5,
+  "reviewCount": 14,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/edf6c1/edf6c1ea63e8200339df6cb76cf5269f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Chapultepec #489,"
+    },
+    {
+      "full": "Patriotismo 67,"
+    },
+    {
+      "full": "Av. Chapultepec #489,"
+    },
+    {
+      "full": "Patriotismo 67,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Coito Programado",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Coito Programado",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/iliana-caballero-castaneda/ginecologo/ciudad-de-mexico#address-id=29974&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:10:25.058Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__iliana_caballero_casta_eda.webp"
+}

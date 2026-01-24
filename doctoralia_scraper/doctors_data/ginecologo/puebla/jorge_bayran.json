@@ -1,0 +1,30 @@
+{
+  "name": "Jorge Bayran",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 106,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/aaec038d/aaec038d-a97d-4183-93c2-2a2db4acec09_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida volcanes 2909 , colonia el popo,"
+    },
+    {
+      "full": "Avenida volcanes 2909 , colonia el popo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-bayran/ginecologo/atlixco#address-id=617244&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:20:13.532Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/jorge_bayran.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Virginia Espinosa Delgado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f65b22/f65b22a584055b801e7acc446395ef94_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Insurgentes Sur 953,"
+    },
+    {
+      "full": "Insurgentes Sur 953,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/virginia-espinosa-delgado/ginecologo/ciudad-de-mexico#address-id=148056&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:15:39.591Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/virginia_espinosa_delgado.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Cindy Maritza Juárez Leaños",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3f5f1d/3f5f1d066ada48f7dcb97016f66beffb_220_square.jpg",
+  "about": "Ginecóloga Obstetra, egresada del Hospital General de Occidente con una Subespecialidad en Medicina Materno Fetal egresada del Hospital Civil de Guadalajara Dr. Juan I. Menchaca. Caracterizada por un trato agradable y de mucha confianza y compromiso hacia sus pacientes.",
+  "addresses": [
+    {
+      "full": "Av. Unión #163 Oficina 607 Col.Americana,"
+    },
+    {
+      "full": "Av. Unión #163 Oficina 607 Col.Americana,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cindy-maritza-juarez-leanos/ginecologo/guadalajara#address-id=258528&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:23:57.120Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__cindy_maritza_ju_rez_lea_os.webp"
+}

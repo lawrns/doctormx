@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Carlos Edel Norzagaray Barreras",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 164,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/52bf88/52bf8866fd657155d5858a4a606ff407_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hospital Mexico Americano, C. Colomos 2110-Piso 1, Consultorio 117, Ayuntamiento,"
+    },
+    {
+      "full": "Hospital Mexico Americano, C. Colomos 2110-Piso 1, Consultorio 117, Ayuntamiento,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-edel-norzagaray-barreras/ginecologo/guadalajara#address-id=498451&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:32:53.281Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__carlos_edel_norzagaray_barreras.webp"
+}

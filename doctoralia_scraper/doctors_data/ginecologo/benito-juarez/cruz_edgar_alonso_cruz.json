@@ -1,0 +1,25 @@
+{
+  "name": "Cruz Edgar Alonso Cruz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 124,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f5afdc33/f5afdc33-0332-47bd-8722-a89983d9f5a4_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Universidad 1134 Col. Xoco Delegación Benito Juárez ,Ciudad de México piso 1 Tel 0445515070347,"
+    },
+    {
+      "full": "Avenida Universidad 1134 Col. Xoco Delegación Benito Juárez ,Ciudad de México piso 1 Tel 0445515070347,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cruz-edgar-alonso-cruz/ginecologo/benito-juarez#address-id=16172&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:14:05.537Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/cruz_edgar_alonso_cruz.webp"
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Roberto Reséndiz Tolentino",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 709,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e69535/e69535bd43a7c108b772da4393bc60c5_220_square.jpg",
+  "about": "Medico Ginecólogo especialista en Reproducción Humana con mas de 3 años de experiencia, egresado de Universidad Nacional Autónoma de México, realizando la especialidad en Ginecóloga en UMAE Gineco 4 del IMSS y la Sub Especialidad de Biología de la Reproducción Humana en el Centro Medico Nacional 20 de Noviembre. Me especializo en la atención a parejas con infertilidad ofreciendo los últimos avances en medicina reproductiva a pacientes con mal pronóstico ( mínima estimulación, ciclo natural modificado) que son esquemas de estimulación que requieren el mínimo de medicamentos a un costo accesible y poder ayudar a las parejas a lograr formar una familia de una forma sana y segura. Así mismo ofrezco atención a padecimientos ginecológicos comunes como trastornos menstruales, dolor pélvico crónico, planificación familiar, menopausia, trastornos hormonales y control de embarazo de alto riesgo siempre con un trato amable y dispuesto a resolver todas las dudas de tu padecimiento.",
+  "addresses": [
+    {
+      "full": "Coyoacán 733,"
+    },
+    {
+      "full": "Coyoacán 733,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Tratamientos de Reproducción Asistida e Infertilidad",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-resendiz-tolentino/ginecologo/benito-juarez#address-id=155879&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:09:24.009Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__roberto_res_ndiz_tolentino.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Fanny Graciela Zamora Graniel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e8a1fb/e8a1fbf62ace57f5ee1122b3374ba9ba_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 50 Avenida Alfredo Barrera Número 332 Colonia San Damián - Consultorio 5,"
+    },
+    {
+      "full": "Calle 50 Avenida Alfredo Barrera Número 332 Colonia San Damián - Consultorio 5,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fanny-graciela-zamora-graniel/ginecologo-medico-general/yucatan#address-id=118389&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:42:00.253Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__fanny_graciela_zamora_graniel.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Oscar Augusto Trejo Solorzano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 109,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/af7f40/af7f402f549c39322e6abcbcd3953cec_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Universidad 1321,"
+    },
+    {
+      "full": "Miramontes 2769-202,"
+    },
+    {
+      "full": "Av. Universidad 1321,"
+    },
+    {
+      "full": "Miramontes 2769-202,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/oscar-augusto-trejo-solorzano/ginecologo/ciudad-de-mexico#address-id=183107&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:17:36.390Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/oscar_augusto_trejo_solorzano.webp"
+}

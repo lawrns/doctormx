@@ -1,0 +1,25 @@
+{
+  "name": "Luis Ernesto Millan Melesio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 175,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c61099/c610995f2be0960c1d019ae8ca46903e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Paseo De Las Golondrinas,222 305, Col. San Isidro, ,"
+    },
+    {
+      "full": "Paseo De Las Golondrinas,222 305, Col. San Isidro, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-ernesto-millan-melesio/ginecologo/leon#address-id=355334&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:35:38.283Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/luis_ernesto_millan_melesio.webp"
+}

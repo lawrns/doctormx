@@ -1,0 +1,25 @@
+{
+  "name": "Julio Zepeda Fernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/60729037/60729037-4ea8-413f-a08e-481f1d9c098e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Americas 580 1. Col. Altamira. 45160,"
+    },
+    {
+      "full": "Av Americas 580 1. Col. Altamira. 45160,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/julio-zepeda-fernandez/ginecologo/zapopan#address-id=358970&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:44:24.061Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/julio_zepeda_fernandez.webp"
+}

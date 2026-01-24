@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Olyver Cardiel Rivera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 354,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8cac32/8cac32c29308f05f8c6b0be81d1fce74.jpg",
+  "about": "Mi consulta y mi equipo CUENTO CON UN EQUIPO DE MUY ALTA RESOLUCION, EN LA CIUDAD SOLO 3 DE ELLOS, ESTO CON LA FINALIDAD DE INCREMENTAR LAS EVALUACIONES DEL FETO Y DE LAS ENFERMEDADES DEL UTERO Y OVARIOS, TECNOLOGIA HD LIVE, 5TA DIMENSION, ETC",
+  "addresses": [
+    {
+      "full": "Héroes De La Independencia No. 1913 -A 3ER PISO 307, LEON, GTO,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $750"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/olyver-cardiel-rivera/ginecologo/leon#address-id=86385&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:25:30.532Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__olyver_cardiel_rivera.webp"
+}

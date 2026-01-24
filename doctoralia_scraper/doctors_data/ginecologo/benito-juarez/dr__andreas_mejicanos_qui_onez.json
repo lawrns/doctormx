@@ -1,0 +1,89 @@
+{
+  "name": "Dr. Andreas Mejicanos Quiñonez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 73,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4e1a8b/4e1a8bdf72b75d788e42a250e1169fdd_220_square.jpg",
+  "about": "Dr. Juan Andreas Mejicanos Quiñonez Especialista en Ginecología y Obstetricia | Reproducción Humana UNAM | Alta especialidad en Cirugía Laparoscópica Me dedico con pasión a acompañar a mujeres y parejas en su camino hacia la maternidad, brindando atención médica integral, actualizada y empática. Soy especialista en técnicas de reproducción asistida como FIV/ICSI, gestación subrogada, co-parenting, entre otras, ayudando a crear familias con base en la ciencia y el compromiso humano. ¿En qué te puedo ayudar? -Diagnóstico y control del embarazo - Alteraciones del ciclo menstrual y hormonales - Sangrados vaginales anormales -Infecciones vaginales y cuidados ginecológicos -Enfermedades ováricas y del aparato reproductor -Cirugía ginecológica de mínima invasión (laparoscopía) Con una formación sólida y años de experiencia, he tenido el privilegio de ayudar a muchas personas a cumplir su sueño de ser madres y padres. Mi enfoque es personalizado y compasivo, combinando la mejor tecnología médica con una atención cercana y humana. Si buscas un especialista en quien confiar plenamente, estoy aquí para escucharte, orientarte y ofrecerte el mejor cuidado posible. Tu bienestar y salud femenina son mi prioridad. Estoy para acompañarte en cada paso de este importante camino.",
+  "addresses": [
+    {
+      "full": "Santander 15,"
+    },
+    {
+      "full": "Bradley 52,"
+    },
+    {
+      "full": "Av. Vialidad de la Barranca, S/N,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Tratamientos de Reproducción Asistida e Infertilidad",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/andreas-mejicanos-quinonez/ginecologo/ciudad-de-mexico#address-id=500388&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:00:34.676Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__andreas_mejicanos_qui_onez.webp"
+}

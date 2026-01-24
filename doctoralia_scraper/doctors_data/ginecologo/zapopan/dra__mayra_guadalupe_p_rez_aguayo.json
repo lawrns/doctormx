@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Mayra Guadalupe Pérez Aguayo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6a9c65/6a9c6531c39789596190999eade28154_220_square.jpg",
+  "about": "Soy Ginecóloga-Obstetra especializada en el área de la Medicina Materna Fetal dedicándome al estudio y manejo de las patologías que complican el embarazo y el feto. Altamente capacitada en la utilización de herramientas de diagnostico prenatal como ultrasonido de alta definición, protocolos de tamizaje, de patologías fetales como anomalías genéticas, defectos congénitos, alteraciones de crecimiento así mismo herramientas de detección de patologías maternas como hipertensión,preeclampsia, riesgo de parto prematuro. Ofrezco un control prenatal de acuerdo al riesgo de cada paciente. Al ser Ginecóloga me encuentro capacitada para atender problemas de salud femenina tales como hemorragias anormales, ciclos irregulares, dolor pelvico crónico, orientación sobre métodos anticonceptivos, dolor mamario, entre muchas otras. Ademas del cuidado preventivo para detección de posibles padecimientos de la mujer que son la realización de Papanicolaou, colposcopia, exploración mamaria, ultrasonido de útero y ovarios, los cuales son importantes realizarlos al menos una vez al año.",
+  "addresses": [
+    {
+      "full": "Eulogio Parra 2979 (Consultorio 3),"
+    },
+    {
+      "full": "Eulogio Parra 2979 (Consultorio 3),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mayra-guadalupe-perez-aguayo/ginecologo/zapopan#address-id=93127&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:22:24.647Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__mayra_guadalupe_p_rez_aguayo.webp"
+}

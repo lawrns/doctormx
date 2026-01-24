@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Adriana Lizette Madrigal Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 599,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0fca4c/0fca4c7a9cceb4e1ee22987895c9f4dc_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Empresarios 150, torre elite piso 11 consultorio 3, puerta de hierro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,000"
+    },
+    {
+      "name": "Biopsia de cérvix",
+      "price": "• Desde $2,500"
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": "• Desde $2,500"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• Desde $7,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adriana-lizette-madrigal-rodriguez-2/ginecologo/zapopan#address-id=408145&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:13:43.000Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__adriana_lizette_madrigal_rodriguez.webp"
+}

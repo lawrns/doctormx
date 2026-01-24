@@ -1,0 +1,92 @@
+{
+  "name": "Dra. Karelia Mendoza Baranda",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 59,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/101c38/101c3863b12bddd6f5b5b3c0edde25c1_220_square.jpg",
+  "about": "Especialista en Ginecología y obstetricia así como en Biología de la Reproducción, con curso de alta especialidad en Cirugía Endoscópica Ginecológica lo que me permite tener un enfoque integral para el tratamiento de mis pacientes. Mi visión es aplicar el conocimiento adquirido en cada caso con la intención de mejorar e individualizar cada tratamiento sin perder de vista la empatía hacia cada paciente.",
+  "addresses": [
+    {
+      "full": "Avenida Insurgentes Sur 601,"
+    },
+    {
+      "full": "Calle Rio Bamba 639,"
+    },
+    {
+      "full": "Av. Carlos Hank González,"
+    },
+    {
+      "full": "Avenida Sor Juana Inés de La Cruz,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,350"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,350"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,350"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,350"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,350"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,350"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,350"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,350"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,350"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $1,350"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karelia-mendoza-baranda-2/ginecologo/tlalnepantla-de-baz2#address-id=521379&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:58:38.989Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__karelia_mendoza_baranda.webp"
+}

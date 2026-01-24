@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Brenda Graciela Trujillo Valle",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/622262cb/622262cb-c064-4ce5-8084-ee4c0361e7e9_small_square.jpg",
+  "about": "Soy una médicA comprometida con brindar un enfoque feminista que respeta la diversidad y la autonomía de cada persona. Estoy convencida de que el abordaje integral y entendiendo tu contexto personal, me permitirá acompañarte de una manera acertada con calidad y calidez a través de los procesos de tu vida.",
+  "addresses": [
+    {
+      "full": "Manantial 506 villas del Moral ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Detección oportuna de cáncer",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/brenda-graciela-trujillo-valle/ginecologo/leon#address-id=595282&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:26:55.753Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__brenda_graciela_trujillo_valle.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Aruazi Pina",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bcbaed/bcbaed8921f55a43b7b7ca2dee32b770_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Mariano Escobedo 192, 1Er Piso. Col. Anahuac. ,"
+    },
+    {
+      "full": "Mariano Escobedo 192, 1Er Piso. Col. Anahuac. ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aruazi-pina/ginecologo/magdalena-contreras#address-id=358959&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:50:15.760Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/aruazi_pina.webp"
+}

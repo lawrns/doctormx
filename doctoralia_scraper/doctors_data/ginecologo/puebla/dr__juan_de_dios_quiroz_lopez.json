@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Juan De Dios Quiroz Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 163,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "CLINICA PARA LA MUJER Somos un equipo de salud en cual ofrecemos servicios de ginecológica y obstetricia, medicina general y cirugía especializada. el Dr. Juan de Dios es el primer Gineco - Obstetra establecido en la ciudad San Martin Texmelucan, Puebla con mas de 43 años de experiencia; atendiendo familias por 3 generaciones consecutivas. desde el año 2000 realizamos año con año las Campañas de Diagnostico y Prevención con el objetivo de realizarse un chequeo General para conocer su estado de salud actual y la detección oportuna permitiendo el inicio de un tratamiento que ponen en riesgo tu vida ¡tu estas segura de tu salud!",
+  "addresses": [
+    {
+      "full": "Parque Hidalgo no. 4 Colonia Centro ,"
+    },
+    {
+      "full": "Parque Hidalgo no. 4 Colonia Centro ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-de-dios-quiroz-lopez/ginecologo/san-martin-texmelucan#address-id=162197&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:13:26.751Z",
+  "localPhotoPath": null
+}

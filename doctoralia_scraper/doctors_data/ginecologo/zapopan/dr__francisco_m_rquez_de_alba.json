@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Francisco Márquez de Alba",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 58,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/72e69f/72e69fbd11fcc0230c28b37ce609c8b7_220_square.jpg",
+  "about": "Soy Especialista en Ginecología y Obstetricia, acompañando a la mujer desde su infancia, su vida reproductiva (Embarazos) y posterior a esta (Menopausia y Postmenopausia). Con amplia experiencia en alteraciones de la mama y del aparato reproductor femenino (vagina, cérvix, útero, y ovarios) Soy Subespecialista en Medicina Materno Fetal, llevando acabo los estudios mas modernos tanto Fetales y Maternos, para descartar o detectar alteraciones propias del embarazo, lo que nos permite realizar un tratamiento oportuno en muchos de los casos, mejorando el pronostico de ambos. Contando con la mas alta tecnología Ecográfica 3D y 4D. Con gran experiencia en embarazos de alto riesgo, amenazas de aborto, cesáreas, partos y partos prematuros. Tanto la Especialidad de Ginecología y Obstetricia, asi como Medicina Materno Fetal, los obtuve en el mejor hospital de Alta Especialidad del Occidente del país, Hospital Civil Nuevo Dr. Juan I. Menchaca, cede de la Universidad de Guadalajara.",
+  "addresses": [
+    {
+      "full": "Av Manuel J. Clouthier 669, Jardines de Guadalupe, Piso 3, Consultorio 5D,"
+    },
+    {
+      "full": "Av Manuel J. Clouthier 669, Jardines de Guadalupe, Piso 3, Consultorio 5D,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-marquez-de-alba/ginecologo/zapopan#address-id=118687&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:22:57.228Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__francisco_m_rquez_de_alba.webp"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Flavio Gerardo Alvarado Hernàndez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/297a98/297a98f64b22adab02c521f035ba1595_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "manuel acuña 2493,"
+    },
+    {
+      "full": "manuel acuña 2493,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/flavio-gerardo-alvarado-hernandez/ginecologo/guadalajara#address-id=16434&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:31:44.957Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/flavio_gerardo_alvarado_hern_ndez.webp"
+}

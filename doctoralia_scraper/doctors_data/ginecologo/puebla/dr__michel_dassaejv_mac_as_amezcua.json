@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Michel Dassaejv Macías Amezcua",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 318,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/62235d/62235de25382b194c0198a22aa87329b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Kepler,"
+    },
+    {
+      "full": "Av. Kepler,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Colocación de cerclaje de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/michel-dassaejv-macias-amezcua/ginecologo/puebla#address-id=148033&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:17:09.368Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__michel_dassaejv_mac_as_amezcua.webp"
+}

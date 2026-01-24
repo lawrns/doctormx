@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Marsella Franco Jaramillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 473,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/8c937ced/8c937ced-b3e8-4a57-81a9-57c4a46a9827_small_square.jpg",
+  "about": "Soy la Doctora Marsella, médico especialista en Ginecología y Obstetricia con sub especialidad en Urología Ginecológica por la Universidad Nacional Autónoma de México con certificación por el Consejo Mexicano de Ginecología y Obstetricia/Urología Ginecológica. Dedicada a la atención de la mujer en todas las etapas de su vida y las afecciones que se presentan en el transcurso de ésta, con énfasis en prevención y atención de trastornos del piso pélvico (incontinencia urinaria y/o anal, infecciones de vías urinarias, prolapso de órganos pélvicos, dolor pélvico crónico, entre otros).",
+  "addresses": [
+    {
+      "full": "Av. Cerro Gordo 311 Cons. 755 Col. Lomas Del Campestr,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina",
+      "price": ""
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento para cistitis",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marsella-franco-jaramillo-2/ginecologo/leon#address-id=337101&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:26:43.405Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__marsella_franco_jaramillo.webp"
+}

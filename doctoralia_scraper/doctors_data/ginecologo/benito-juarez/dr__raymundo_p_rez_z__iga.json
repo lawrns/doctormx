@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Raymundo Pérez Zúñiga",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 191,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/38c7e1/38c7e1a4639511588b02d305cd251571_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calzada De Las Bombas 411, Los Girasoles,"
+    },
+    {
+      "full": "Avenida Universidad 1321, Florida,"
+    },
+    {
+      "full": "Calzada De Las Bombas 411, Los Girasoles,"
+    },
+    {
+      "full": "Avenida Universidad 1321, Florida,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raymundo-perez-zuniga/ginecologo/coyoacan#address-id=332603&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:12:47.177Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__raymundo_p_rez_z__iga.webp"
+}

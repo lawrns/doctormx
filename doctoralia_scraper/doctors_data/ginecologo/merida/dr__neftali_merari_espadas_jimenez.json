@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Neftali Merari Espadas Jimenez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/40cc37/40cc373bc4af1a909cef00d5e88383b4_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 7 No 453 x 48 y 50 Residencial Pensiones III Enfrente UMA IMSS,"
+    },
+    {
+      "full": "Calle 7 No 453 x 48 y 50 Residencial Pensiones III Enfrente UMA IMSS,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $450"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Cesárea",
+      "price": "• Desde $16,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/neftali-merari-espadas-jimenez/ginecologo/merida#address-id=83179&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:34:38.580Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__neftali_merari_espadas_jimenez.webp"
+}

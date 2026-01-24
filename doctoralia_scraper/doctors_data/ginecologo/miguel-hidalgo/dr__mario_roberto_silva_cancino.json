@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Mario Roberto Silva Cancino",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 37,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/64f913/64f913e5d6473617ed8a2ce97f19c317_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "CHIMALPOPOCA 13 COL SAN FRANCISCO NAUCALPAN,"
+    },
+    {
+      "full": "CHIMALPOPOCA 13 COL SAN FRANCISCO NAUCALPAN,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mario-roberto-silva-cancino/ginecologo/naucalpan-de-juarez#address-id=87624&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:41:19.490Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__mario_roberto_silva_cancino.webp"
+}

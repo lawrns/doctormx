@@ -1,0 +1,37 @@
+{
+  "name": "Roberto Ortega Castillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 72,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d52d2e/d52d2ef542f1e9e8ce2c0903e987a6b8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. 20 De Noviembre Km 2.5,"
+    },
+    {
+      "full": "Fco. I Madero 1417,"
+    },
+    {
+      "full": "Carr. San Andres Ahuajuastepec,"
+    },
+    {
+      "full": "Av. 20 De Noviembre Km 2.5,"
+    },
+    {
+      "full": "Fco. I Madero 1417,"
+    },
+    {
+      "full": "Carr. San Andres Ahuajuastepec,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-ortega-castillo/ginecologo/apetatitlan#address-id=177129&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:28:04.349Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/roberto_ortega_castillo.webp"
+}

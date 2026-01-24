@@ -1,0 +1,40 @@
+{
+  "name": "Dr. Tomás G. Herrera Gómez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b54944/b54944e047b155ea31a7fcbe9c7ad6db_140_square.jpg",
+  "about": "se puede agregar que tengo certificación vigente hasta 2025, número 3171 del Consejo de Ginecología y Obstetricia",
+  "addresses": [
+    {
+      "full": "Prolg. Constituyentes 302,"
+    },
+    {
+      "full": "Mariano de las Casas 34 Cimatario,"
+    },
+    {
+      "full": "Prolg. Constituyentes 302,"
+    },
+    {
+      "full": "Mariano de las Casas 34 Cimatario,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tomas-g-herrera-gomez/ginecologo/santiago-de-queretaro#address-id=130917&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:51:42.136Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__tom_s_g__herrera_g_mez.webp"
+}

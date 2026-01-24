@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Jorge Ivan Gomez Espinosa",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/701979/7019799ee73cefc037b4a14d9ff59bfc_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Paseo del Centenario 9580,"
+    },
+    {
+      "full": "Paseo del Centenario 9580,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Histeroscopia Diagnostica",
+      "price": ""
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": ""
+    },
+    {
+      "name": "Toma de papanicolaou base liquida",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-ivan-gomez-espinosa/ginecologo/tijuana#address-id=494911&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:45:07.310Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__jorge_ivan_gomez_espinosa.webp"
+}

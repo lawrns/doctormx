@@ -1,0 +1,38 @@
+{
+  "name": "Dra. Danis Josefina Bravo Rondon",
+  "specialty": "Ginecólogo",
+  "rating": 1.5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/843a0f/843a0ff03866b33ee0ce01f097d85e37_220_square.jpg",
+  "about": "Soy Ginecóloga especialista en Salud Materno Fetal",
+  "addresses": [
+    {
+      "full": "Madero N. 112,"
+    },
+    {
+      "full": "Madero N. 112,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Terapia de Reemplazo Hormonal (TRH)",
+      "price": "• $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/danis-josefina-bravo-rondon/ginecologo/leon#address-id=141437&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:29:06.425Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__danis_josefina_bravo_rondon.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Margarita Camacho Diaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1661,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2d52cf/2d52cf887d8e82084595321a22e6e1bc_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Jose Maria Vertiz, 1048-12,"
+    },
+    {
+      "full": "Av. Jose Maria Vertiz, 1048-12,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/margarita-camacho-diaz/ginecologo/benito-juarez#address-id=75499&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:18:49.458Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/margarita_camacho_diaz.webp"
+}

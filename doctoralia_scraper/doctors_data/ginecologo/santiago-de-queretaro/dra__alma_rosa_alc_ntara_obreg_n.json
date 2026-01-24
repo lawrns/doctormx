@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Alma Rosa Alcántara Obregón",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 505,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/c6f5e596/c6f5e596-c958-43f3-95df-04b6aab95ba7_large.jpg",
+  "about": "Soy la Dra. Alma Rosa Alcántara, ginecóloga y obstetra certificada, con amplia experiencia en salud femenina.Brindo atención integral desde la adolescencia hasta la menopausia, enfocada en el bienestar, la prevención y el acompañamiento respetuoso.Mi compromiso es ofrecer un trato profesional, cercano y de confianza para mejorar tu calidad de vida.",
+  "addresses": [
+    {
+      "full": "PRIVADA IGNACIO ZARAGOZA 16 A,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alma-rosa-alcantara-obregon/ginecologo/queretaro#address-id=386627&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:42:51.405Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__alma_rosa_alc_ntara_obreg_n.webp"
+}

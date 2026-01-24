@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Miguel Cruz Gomez",
+  "specialty": "Médico general",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6209ca/6209ca9742bd5a32140d8920befb6ca2_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Del Trabajo 25,"
+    },
+    {
+      "full": "Del Trabajo 25,72450 San Jose Mayorazgo,"
+    },
+    {
+      "full": "Ave. Del Trabajo 25,"
+    },
+    {
+      "full": "Del Trabajo 25,72450 San Jose Mayorazgo,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-cruz-gomez/medico-general/puebla#address-id=66914&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:17:38.802Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__miguel_cruz_gomez.webp"
+}

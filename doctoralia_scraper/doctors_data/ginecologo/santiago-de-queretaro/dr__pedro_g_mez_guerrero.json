@@ -1,0 +1,57 @@
+{
+  "name": "Dr. Pedro Gámez Guerrero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 358,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/42d421/42d421a10a53691b8e715b1f1d54bd3e_220_square.jpg",
+  "about": "Soy un médico comprometido con la salud de las pacientes, entrenado en las mejores instituciones del país y el extranjero, con el fin último de estar lo mejor preparado y actualizado para enfrentar los problemas que afectan a las mujeres en estos tiempos. Con la especialidad de Ginecología y Obstetricia cubrimos la mayoría de las patologías desde irregularidades menstruales, sangrados uterinos, miomatosis, chequeos de rutina y por supuesto a la paciente embarazada. La subespecialidad en Urología ginecológica y piso pélvico, me permite además abordar problemáticas que afectan la calidad de vida, como: la incontinencia urinaria, el descenso o caída de útero o vejiga; para poder darle una solución estética y principalmente funcional. Acércate con nosotros!",
+  "addresses": [
+    {
+      "full": "Hospital H+ / Tec 100 Prol Privada Ignacio Pérez 16-A, Centro,"
+    },
+    {
+      "full": "BOULEVARD BERNARDO QUINTANA ARRIOJA 9670, Blvd. Centro Sur 9800,"
+    },
+    {
+      "full": "Av. de las Ciencias 2058,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita a uroginecología",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": "• $400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pedro-gamez-guerrero/ginecologo/queretaro#address-id=460349&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:46:04.198Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__pedro_g_mez_guerrero.webp"
+}

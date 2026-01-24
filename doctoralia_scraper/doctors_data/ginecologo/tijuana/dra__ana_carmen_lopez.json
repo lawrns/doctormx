@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Ana Carmen Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4f7764/4f77645b0c437c9e4fcb84cf9d119aa5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Diego Rivera 10209,"
+    },
+    {
+      "full": "Diego Rivera 10209,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-carmen-lopez/ginecologo/tijuana#address-id=66961&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:45:24.113Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__ana_carmen_lopez.webp"
+}

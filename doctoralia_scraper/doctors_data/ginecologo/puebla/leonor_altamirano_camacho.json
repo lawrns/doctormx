@@ -1,0 +1,25 @@
+{
+  "name": "Leonor Altamirano Camacho",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 27,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/1d432ee9/1d432ee9-6ee4-4279-8fce-d0fda41f9e56_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 9 Nte 127,"
+    },
+    {
+      "full": "C. 9 Nte 127,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/leonor-altamirano-camacho/ginecologo/tehuacan#address-id=201755&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:35:40.075Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/leonor_altamirano_camacho.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Asuncion Del Carmen Chanona Aquino",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 165,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/63b901/63b901529397ae4fdffba7438bbccde2_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "13 Poniente Sur,217,Borges,,"
+    },
+    {
+      "full": "13 Poniente Sur,217,Borges,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/asuncion-del-carmen-chanona-aquino/ginecologo/merida#address-id=355510&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:48:09.956Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/asuncion_del_carmen_chanona_aquino.webp"
+}

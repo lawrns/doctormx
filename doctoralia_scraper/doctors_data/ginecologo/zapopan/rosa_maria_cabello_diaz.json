@@ -1,0 +1,25 @@
+{
+  "name": "Rosa Maria Cabello Diaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1308,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a4156638/a4156638-04c1-40ce-8495-27d0597940a9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. La Ley 2647,"
+    },
+    {
+      "full": "C. La Ley 2647,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-maria-cabello-diaz/ginecologo/guadalajara#address-id=161696&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:43:57.276Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/rosa_maria_cabello_diaz.webp"
+}

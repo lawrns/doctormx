@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Brianda Leon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 213,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/744feaa8/744feaa8-5605-40ee-b9a2-c8e1a3e1a8fe_small_square.jpg",
+  "about": "Sobre mí Hola soy la Dra Brianda Leon egresada de la Universidad Autonoma de Sinaloa, especialista en ginecologia y obstetricia, certificada por el CONACEM, miembro asociado de la Sociedad Mexicana de Ginecologia Estetica Regenerativa y funcional. Principales áreas de tratamiento Control prenatal Consulta ginecológica Colposcopia , vaginoscopia y vulvoscopia Laser genital Terapia de reemplazo hormonal Toma de Papanicolaou Método anticonceptivos Mi consulta y mi equipo Somos un consultorio ubicado en C. Rufino Tamayo 9910 Col. Zona Urbana Rio Tijuana 22010, contamos con equipos nuevo innovando tenicas para una mejor atencion para nuestras pacientes, buscamos dar el mejor servicio en todo momento. Otros servicios - Ginecologìa Estètica - Làser Co2 En Ginecologìa - Vacunas",
+  "addresses": [
+    {
+      "full": "Rufino Tamayo 9910,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Check up",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Check up",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/brianda-leon/ginecologo/tijuana#address-id=537042&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:40:41.707Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__brianda_leon.webp"
+}

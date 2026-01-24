@@ -1,0 +1,25 @@
+{
+  "name": "Cinthia Areli Medina Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 895,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9a6ca5e6/9a6ca5e6-593e-46f3-bd84-9730fa635dca_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "35 Por 48 Y 50,419,Pacabtun,,"
+    },
+    {
+      "full": "35 Por 48 Y 50,419,Pacabtun,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cinthia-areli-medina-gonzalez/ginecologo/merida#address-id=357865&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:49:23.524Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/cinthia_areli_medina_gonzalez.webp"
+}

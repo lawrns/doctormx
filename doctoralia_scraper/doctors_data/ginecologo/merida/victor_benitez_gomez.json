@@ -1,0 +1,25 @@
+{
+  "name": "Victor Benitez Gomez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 172,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/84dd6c/84dd6c8fed360b560b815f21f01612ba_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 14 X 5 Y 7 C. Col. San Antonio Cinta. ,"
+    },
+    {
+      "full": "Calle 14 X 5 Y 7 C. Col. San Antonio Cinta. ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victor-benitez-gomez/ginecologo/merida#address-id=359175&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:45:21.395Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/victor_benitez_gomez.webp"
+}

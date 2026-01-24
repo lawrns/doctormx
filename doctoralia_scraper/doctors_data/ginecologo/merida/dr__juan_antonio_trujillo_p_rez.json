@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Juan Antonio Trujillo Pérez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 208,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/feb266/feb26616ad200557e5236d4b692d8043_220_square.jpg",
+  "about": "Soy Médico Cirujano, especialista en Ginecología y obstetricia. Egresado de la Unidad Médica de Alta Especialidad, Hospital de Gineco Obstetricia No. 4, \"Luis Castelazo Ayala\" del IMSS, en la Ciudad de México, considerado el mejor y más grande hospital especializado en ginecología y obstetricia del IMSS en México. Con más de 20 años de práctica médica pública y privada y más de 15 años dedicado solo a la atención de enfermedades de la mujer y el embarazo. Experto en la atención de Parto humanizado, parto gentil o parto amigable, así como parto en agua, dando prioridad a los deseos de la madre para uno de los días más importantes de su vida. Manejando un Plan de parto donde la mamá plasma los deseos para el dia del parto. Todo dentro de una atención profesional y basada en evidencias científicas. También tengo amplia trayectoria como profesor, ayudando en la formacion de Medicos y especialistas. Ponente en múltiples foros nacionales, en temas de salud de la mujer y mayormente sobre la atención de parto amigable o humanizado. Ofrezco atención basada en amplia experiencia con calidez y trato humano. Pro lactancia, no es necesario suspender la lactancia en la mayoría de los padecimientos médicos, ya que hay varias opciones de tratamiento.",
+  "addresses": [
+    {
+      "full": "Calle 28, 218. Montes de Amé,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-antonio-trujillo-perez-2/ginecologo/yucatan#address-id=373994&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:29:47.932Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__juan_antonio_trujillo_p_rez.webp"
+}

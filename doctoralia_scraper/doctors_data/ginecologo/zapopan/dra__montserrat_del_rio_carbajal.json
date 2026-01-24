@@ -1,0 +1,98 @@
+{
+  "name": "Dra. Montserrat Del Rio Carbajal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 157,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bf70dd/bf70ddf58f1935541568b6965571b612_220_square.jpg",
+  "about": "\"Un HIJO crece dentro del vientre de MAMÁ y del corazón de PAPÁ\" Permíteme acompañarte durante todo tu proceso de maternidad, haciendo que cada ultrasonido sea especial, conociendo juntos a su bebé con el eco 4D HDlive en cada consulta (4D disponible sólo en Hospital México Americano) y revisando cada detalle con ultrasonidos avanzados. Como Materno Fetal, mi prioridad es cuidar el bienestar de ambos hasta su nacimiento",
+  "addresses": [
+    {
+      "full": "Colomos 2110,"
+    },
+    {
+      "full": "Calle Independencia 58,"
+    },
+    {
+      "full": "Guadalupe Victoria 302,"
+    },
+    {
+      "full": "Colomos 2110,"
+    },
+    {
+      "full": "Calle Independencia 58,"
+    },
+    {
+      "full": "Guadalupe Victoria 302,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": "• $600"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Cesárea",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Colocación de implante subdérmico",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Colocación de implante subdérmico",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/montserrat-del-rio-carbajal/ginecologo/ixtlahuacan-del-rio#address-id=429320&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:16:34.163Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__montserrat_del_rio_carbajal.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José Alejandro López Bastida",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/59ebd5/59ebd5bf1cda202540c5ae5517c0fa35_220_square.jpg",
+  "about": "Ginocologo desde hace 20 años",
+  "addresses": [
+    {
+      "full": "Avenida Ejército Nacional 505,"
+    },
+    {
+      "full": "Avenida Ejército Nacional 505,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta con ultrasonido",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Criocirugía",
+      "price": "• $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-alejandro-lopez-bastida/ginecologo/miguel-hidalgo#address-id=338524&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:05:13.371Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__jos__alejandro_l_pez_bastida.webp"
+}

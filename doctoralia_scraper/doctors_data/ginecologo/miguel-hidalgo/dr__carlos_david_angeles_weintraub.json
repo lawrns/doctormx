@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Carlos David Angeles Weintraub",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4e21de/4e21de39108d02642a877fce18a71716_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Gelati, 33-105,"
+    },
+    {
+      "full": "Gelati, 33-105,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-david-angeles-weintraub/ginecologo/miguel-hidalgo#address-id=77443&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:08:24.933Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__carlos_david_angeles_weintraub.webp"
+}

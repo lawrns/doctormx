@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Dayana Gabriela Limón Rivera",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 24,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/7db31787/7db31787-d58b-4c41-ac5f-8765effde788_small_square.jpg",
+  "about": "Soy Medico Cirujano por la UNAM y Especialista en Ginecóloga y Obstetricia con formación en el Instituto Materno Infantil del Estado de México. Certificada por el Consejo Mexicano de Ginecologia y Obstetricia. Me interesa en el ejercicio de mi profesión; no solo que confíes en mi, sino otorgarte información y herramientas útiles para tomar decisiones responsables y precisas que impacten primero en tu salud y secundariamente en otros aspectos de tu vida. En resumen; pretendo empoderar mujeres en salud para hoy y para su futuro. En la consulta, ninguna pregunta está de más y ningun tema que te preocupe me es indiferente; así que expresa tus miedos y preocupaciones sin temor. Tengo amplia experiencia en atención integral de la mujer; amo la consulta y el quirófano, lo diverso que es ejercer esta especialidad y sera un placer acompañarte en el camino hacia tu bienestar.",
+  "addresses": [
+    {
+      "full": "Avenida Cuauhtémoc 1040,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dayana-gabriela-limon-rivera/ginecologo/benito-juarez#address-id=541005&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:01:29.527Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__dayana_gabriela_lim_n_rivera.webp"
+}

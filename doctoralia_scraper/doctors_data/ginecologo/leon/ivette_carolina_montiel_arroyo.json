@@ -1,0 +1,25 @@
+{
+  "name": "Ivette Carolina Montiel Arroyo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 499,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2602c2/2602c22e4a6d532bf43241312f00c73a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Nicaragua 402, A Arbide,"
+    },
+    {
+      "full": "Nicaragua 402, A Arbide,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ivette-carolina-montiel-arroyo/ginecologo/leon#address-id=125347&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:32:54.571Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/ivette_carolina_montiel_arroyo.webp"
+}

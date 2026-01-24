@@ -1,0 +1,30 @@
+{
+  "name": "ANA RUBI TELOXA CURIEL",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 67,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/24a50e05/24a50e05-692a-4898-8c20-e0d1b2ad93c2_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Lago Constanza 200,"
+    },
+    {
+      "full": "Lago Constanza 200,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-rubi-teloxa-curiel/ginecologo/ciudad-de-mexico#address-id=617324&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:41:34.290Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/ana_rubi_teloxa_curiel.webp"
+}

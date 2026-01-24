@@ -1,0 +1,31 @@
+{
+  "name": "Ricardo Monterrubio Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 189,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c709d1/c709d1410f6d2e58b864772c8f7b3899_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Chiclayo 660,"
+    },
+    {
+      "full": "Temistocles 210,"
+    },
+    {
+      "full": "Chiclayo 660,"
+    },
+    {
+      "full": "Temistocles 210,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-monterrubio-rodriguez/ginecologo/ciudad-de-mexico#address-id=177953&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:48:16.835Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/ricardo_monterrubio_rodriguez.webp"
+}

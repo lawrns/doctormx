@@ -1,0 +1,25 @@
+{
+  "name": "Rubi Del Carmen Medina Pech",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 643,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f28913/f28913695a15042c63d4e99b97e20003_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 7 215 A,"
+    },
+    {
+      "full": "C. 7 215 A,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rubi-del-carmen-medina-pech/ginecologo/merida#address-id=174522&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:51:17.454Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/rubi_del_carmen_medina_pech.webp"
+}

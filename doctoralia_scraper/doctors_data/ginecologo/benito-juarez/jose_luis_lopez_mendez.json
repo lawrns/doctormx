@@ -1,0 +1,25 @@
+{
+  "name": "Jose Luis Lopez Mendez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 337,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ce3ce6/ce3ce6cd60ff9e25f76c18fe49e270e6_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "5 De Febrero 755,2, Col. Alamos, ,"
+    },
+    {
+      "full": "5 De Febrero 755,2, Col. Alamos, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-luis-lopez-mendez/ginecologo/benito-juarez#address-id=357039&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:19:15.541Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/jose_luis_lopez_mendez.webp"
+}

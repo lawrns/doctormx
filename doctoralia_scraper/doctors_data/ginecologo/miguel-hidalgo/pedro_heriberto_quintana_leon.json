@@ -1,0 +1,25 @@
+{
+  "name": "Pedro Heriberto Quintana Leon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 62,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2285b9/2285b907f7d347c1c2949a9b0dbe9a5f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "11550 De, Prolongacion Moliere 127, Polanco, Miguel Hidalgo,"
+    },
+    {
+      "full": "11550 De, Prolongacion Moliere 127, Polanco, Miguel Hidalgo,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pedro-heriberto-quintana-leon-2/ginecologo/ciudad-de-mexico#address-id=546788&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:43:27.987Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/pedro_heriberto_quintana_leon.webp"
+}

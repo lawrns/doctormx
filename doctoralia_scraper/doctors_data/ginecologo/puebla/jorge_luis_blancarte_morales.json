@@ -1,0 +1,25 @@
+{
+  "name": "Jorge Luis Blancarte Morales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 27,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d3c592/d3c592003b6aff770f863a0b69801841_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cll 53 Sur,1305,Reforma Ampliacion,,"
+    },
+    {
+      "full": "Cll 53 Sur,1305,Reforma Ampliacion,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-luis-blancarte-morales/ginecologo/puebla#address-id=358395&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:31:52.807Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/jorge_luis_blancarte_morales.webp"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Maria Antonieta Lanuza Morales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d07bd9/d07bd9a2cb62a3c3585da78b37a87f12_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Hidalgo 930,"
+    },
+    {
+      "full": "Avenida Hidalgo 930,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-antonieta-lanuza-morales/ginecologo/guanajuato#address-id=259188&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:30:06.316Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__maria_antonieta_lanuza_morales.webp"
+}

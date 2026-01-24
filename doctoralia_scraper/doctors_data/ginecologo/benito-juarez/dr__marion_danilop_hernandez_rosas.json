@@ -1,0 +1,60 @@
+{
+  "name": "Dr. Marion Danilop Hernandez Rosas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 16,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/df7123/df71239bda95c57522443029b80a7baf_220_square.jpg",
+  "about": "Te invito a conocer el servicio y a poder aclarar todas tus dudas de una manera sencilla, ya que en tu primera consulta abordaremos desde otra perspectiva clínica clara y puntual los principales hallazgos de laboratorio y gabinete que poseas así como también se realizará un ultrasonido en donde se te explicará tu estado actual. Se cuenta con la experiencia clínica en base a resultados de pacientes atendidas tanto en el ámbito clínico como en el quirúrgico ya que se cuenta con la tecnología para el tratamiento de múltiples patologías de la mujer que van desde la infertilidad, el embarazo , la planificación familiar, menopausia y climaterio, así como el manejo de tumores de útero, ovario, detección y tratamiento de infecciones del tracto genital. Contamos con actualización médica constante y participación en congresos y publicaciones de artículos médicos y en constante desarrollo de técnicas quirúrgicas de mínima invasión para una mejora de los resultados en cuanto a recuperación y estética de los pacientes.",
+  "addresses": [
+    {
+      "full": "Av. Cuauhtémoc 954 Colonia Narvarte Poniente Alcaldia Benito Juarez,"
+    },
+    {
+      "full": "Gustavo Gómez Azcárate 204, Lomas de la Selva,"
+    },
+    {
+      "full": "Av. Cuauhtémoc 954 Colonia Narvarte Poniente Alcaldia Benito Juarez,"
+    },
+    {
+      "full": "Gustavo Gómez Azcárate 204, Lomas de la Selva,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Endoscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marion-danilop-hernandez-rosas/ginecologo/ciudad-de-mexico#address-id=452218&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:07:41.737Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__marion_danilop_hernandez_rosas.webp"
+}

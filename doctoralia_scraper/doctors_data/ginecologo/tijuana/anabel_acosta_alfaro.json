@@ -1,0 +1,35 @@
+{
+  "name": "Anabel Acosta Alfaro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 362,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "17 años de experiencia Institucional y 13 años en medicina privada. 7 años como catedrática en UABC Diplomado en colposcopía Diplomado en ultrasonido de primer nivel Diplomado en patología mamaria benigna Entrenamiento y cursos de climaterio/ menopausia Manejo de hormonas bioidénticas Cursos de medicina integrativa capacitacionn en rejuvenecimiento vaginal",
+  "addresses": [
+    {
+      "full": "Fray Servando Teresa de Mier 1351-410, Zona Urbana Rio Tijuana,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Colocación de pellets",
+      "price": "• Desde $8,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/anabel-acosta-alfaro/ginecologo/tijuana#address-id=148222&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:42:22.612Z",
+  "localPhotoPath": null
+}

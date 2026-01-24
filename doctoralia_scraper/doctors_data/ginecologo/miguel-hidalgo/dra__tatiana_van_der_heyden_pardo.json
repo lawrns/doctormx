@@ -1,0 +1,27 @@
+{
+  "name": "Dra. Tatiana Van Der Heyden Pardo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/174f8c/174f8c1c4cd36c286a882e47389a4b23_220_square.jpg",
+  "about": "Hola! Soy la Dra. Tatiana Van Der Heyden. Cuento con 12 años de experiencia. He trabajado en hospitales públicos y privados. Además, me he desempeñado en varios puestos directivos como Coordinadora de Ginecoobstetricia. Somos Especialistas en mejorar la estética y Función Genital, tanto de hombres como de mujeres. Rejuvenecimiento vaginal, tonificación de piso pélvico, Depilación, estrechamiento vaginal, mejora tú lubricación y función, previene el envejecimiento y en general renueva 10 años tú área íntima. Engrosamiento de pene, mejora tu función, controla la eyaculación, más tiempo y más firme. Especialistas en Estética facial y corporal, Botox, Rellenos, bioestimuladores, lipo sin cirugía, células madre, fibroblastos, sueroterapia, entre muchos otros",
+  "addresses": [
+    {
+      "full": "Avenida Homero 404,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tatiana-van-der-heyden-pardo/ginecologo/miguel-hidalgo#address-id=536716&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:02:42.069Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__tatiana_van_der_heyden_pardo.webp"
+}

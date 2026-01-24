@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Brenda Dzul García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 110,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e3a259/e3a259ac91ac71e0246463916b8bb563_220_square.jpg",
+  "about": "Hola soy la Dra. Brenda Dzul, especialista en Ginecología y Obstetricia, cuento con una subespecialidad en Medicina Materno Fetal, por lo que te brindaré el cuidado y atención que necesites a lo largo de cada etapa de tu embarazo, soy experta en el embarazo de bajo y alto riesgo, enfocada en detectar de forma oportuna cualquier enfermedad que pudieras presentar tú o tu bebé, así mismo, cuidaré de tu embarazo si se ha complicado con cualquier patología como Diabetes, Hipertensión, enfermedades reumatológicas, epilepsia entre otras. Soy experta en la realización de tamizajes para tu bebé, es decir, por medio de ultrasonidos altamente especializados podre detectar alteraciones genéticas, estructurales y de crecimiento a lo largo de tu embarazo: Ultrasonido genético o cromosómico de la semana 11-13.6 en el cual detectaremos el riesgo de tu bebé para padecer síndrome de Down, trisomía 13 y trisomía 18, así como riesgo para preeclampsia y parto prematuro Ultrasonido estructural de la semana 18 a 24 en el cual valoraremos toda la anatomía del bebé para detectar malformaciones importantes así como tu riesgo de padecer preeclampsia y parto prematuro Ultrasonido de crecimiento y doppler en donde valoraremos el crecimiento y desarrollo correcto de tu bebé, su líquido, su placenta y su circulación Contamos además con pruebas más complejas para el diagnóstico prenatal como DNA fetal, amniocentesis, biopsia de vellosidades coriales, entre otros. Te acompañare en todas las inquietudes que presentes a lo largo de tu embarazo y si me lo permites en el nacimiento de tu nuevo bebé.",
+  "addresses": [
+    {
+      "full": "TORRE DE ESPECIALIDADES SAN ANGEL INN ACORA DEL VALLE Av. Cuauhtémoc 1040 CONSULTORIO 1151-3,"
+    },
+    {
+      "full": "CEDPRE LINDAVISTA Avenida Montevideo 303, consultorio 511,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• $3,500"
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• $2,400"
+    },
+    {
+      "name": "Ultrasonido 3D",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ultrasonido doppler bienestar fetal",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ultrasonido estructural",
+      "price": "• $2,400"
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• $3,500"
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• $2,400"
+    },
+    {
+      "name": "Ultrasonido 3D",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ultrasonido doppler bienestar fetal",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ultrasonido estructural",
+      "price": "• $2,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/brenda-dzul-garcia/ginecologo/miguel-hidalgo#address-id=481399&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:04:36.687Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__brenda_dzul_garc_a.webp"
+}

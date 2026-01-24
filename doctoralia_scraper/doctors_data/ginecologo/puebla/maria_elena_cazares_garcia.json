@@ -1,0 +1,25 @@
+{
+  "name": "Maria Elena Cazares Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 106,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/aaec038d/aaec038d-a97d-4183-93c2-2a2db4acec09_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Nino Perdido 20,"
+    },
+    {
+      "full": "Nino Perdido 20,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-elena-cazares-garcia/ginecologo/izucar-de-matamoros#address-id=193070&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:33:57.513Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/maria_elena_cazares_garcia.webp"
+}

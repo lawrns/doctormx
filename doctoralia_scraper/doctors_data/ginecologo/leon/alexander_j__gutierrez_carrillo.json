@@ -1,0 +1,25 @@
+{
+  "name": "Alexander J. Gutierrez Carrillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1001,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 16 De Septiembre 304, Centro,"
+    },
+    {
+      "full": "C. 16 De Septiembre 304, Centro,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alexander-j-gutierrez-carrillo/ginecologo/guanajuato#address-id=554415&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:31:32.968Z",
+  "localPhotoPath": null
+}

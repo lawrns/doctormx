@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Ignacio Javier González Jiménez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 174,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/41a65d73/41a65d73-4e43-4cfc-8f01-b126a6a98527_small_square.jpg",
+  "about": "Hola, soy el Dr. Ignacio Javier González Jiménez, Ginecólogo y Obstetra egresado de la Universidad Autónoma de Guadalajara, donde también realicé mi especialidad. A lo largo de mi carrera he tenido el privilegio de acompañar a muchas mujeres en momentos clave de su vida, siempre con compromiso, respeto y cercanía. Siempre trato que mis pacientes embarazadas se alivien de forma natural porque existe menor riesgo de complicaciones postoperatorias y una recuperación más rápida.Actualmente soy Director Médico del Centro de Especialidades Médicas Guadalupe, y estoy certificado por el Consejo Mexicano de Ginecología y Obstetricia. Mi prioridad es que te sientas escuchada, segura y bien atendida.",
+  "addresses": [
+    {
+      "full": "Avenida Avenida Guadalupe, 865, Colonia Chapalita. Zapopan,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Ablación cervical",
+      "price": "• $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $800"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $800"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ignacio-javier-gonzalez-jimenez/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:07:42.722Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__ignacio_javier_gonz_lez_jim_nez.webp"
+}

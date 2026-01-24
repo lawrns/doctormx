@@ -1,0 +1,25 @@
+{
+  "name": "Eduardo Herrera Lara",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 80,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/840e4f/840e4f25c4e17e09849f2f27bf90199e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C 12 X 17 No 300A,300 A,Fracc Montebello,,"
+    },
+    {
+      "full": "C 12 X 17 No 300A,300 A,Fracc Montebello,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-herrera-lara/ginecologo/merida#address-id=357883&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:45:28.049Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/eduardo_herrera_lara.webp"
+}

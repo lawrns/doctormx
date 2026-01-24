@@ -1,0 +1,37 @@
+{
+  "name": "Dra. Brenda Elizabeth Barragan Ruiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 101,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/6d37cccd/6d37cccd-cb64-43fc-a997-169c70885fab_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av.Cruz Del Sur No.2612-102,"
+    },
+    {
+      "full": "Calz. Lázaro Cárdenas 2063,"
+    },
+    {
+      "full": "Isla Antillas 2220,"
+    },
+    {
+      "full": "Av.Cruz Del Sur No.2612-102,"
+    },
+    {
+      "full": "Calz. Lázaro Cárdenas 2063,"
+    },
+    {
+      "full": "Isla Antillas 2220,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/brenda-elizabeth-barragan-ruiz/ginecologo/guadalajara#address-id=241944&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:34:12.971Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__brenda_elizabeth_barragan_ruiz.webp"
+}

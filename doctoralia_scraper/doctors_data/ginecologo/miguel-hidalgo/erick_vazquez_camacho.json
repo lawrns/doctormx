@@ -1,0 +1,25 @@
+{
+  "name": "Erick Vazquez Camacho",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 447,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/14e60f56/14e60f56-c319-4ff7-ba17-825f1e01f341_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "AGRARISMO 208 TORRE A 801,"
+    },
+    {
+      "full": "AGRARISMO 208 TORRE A 801,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/erick-vazquez-camacho/ginecologo/ciudad-de-mexico#address-id=122570&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:52:43.247Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/erick_vazquez_camacho.webp"
+}

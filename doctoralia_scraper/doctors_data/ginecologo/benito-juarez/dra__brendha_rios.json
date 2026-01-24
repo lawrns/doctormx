@@ -1,0 +1,42 @@
+{
+  "name": "Dra. Brendha Rios",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 230,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/93384f/93384f9f7cbeb23e34c664fa2825b435_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. 1Ro. De Mayo Mz. 34-C 34,"
+    },
+    {
+      "full": "Av. De Las Naciones 1,"
+    },
+    {
+      "full": "Av. 1ro. de Mayo, Lote 34, Mz. C-34-C,"
+    },
+    {
+      "full": "Av. 1Ro. De Mayo Mz. 34-C 34,"
+    },
+    {
+      "full": "Av. De Las Naciones 1,"
+    },
+    {
+      "full": "Av. 1ro. de Mayo, Lote 34, Mz. C-34-C,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/brendha-rios/ginecologo/cuautitlan-izcalli#address-id=352551&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:11:54.695Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__brendha_rios.webp"
+}

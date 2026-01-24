@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Marisela Adriana Nuñez Rodriguez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 266,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a5c504/a5c5044044642c0892115816f1f7e38d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. lat. recta a cholula nte 13, Bello horizonte,"
+    },
+    {
+      "full": "Av. lat. recta a cholula nte 13, Bello horizonte,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marisela-adriana-nunez-rodriguez/ginecologo/puebla#address-id=588107&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:16:55.605Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__marisela_adriana_nu_ez_rodriguez.webp"
+}

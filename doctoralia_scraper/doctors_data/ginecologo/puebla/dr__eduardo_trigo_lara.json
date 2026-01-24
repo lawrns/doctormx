@@ -1,0 +1,104 @@
+{
+  "name": "Dr. Eduardo Trigo Lara",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 13,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/c628c101/c628c101-4446-48cf-af82-e1f1128bb96b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hospital Puebla, Consultorio 930. Av. Las Ramblas no 4,"
+    },
+    {
+      "full": "17 Oriente 211-2 Col. El Carmen,"
+    },
+    {
+      "full": "17 Oriente 211,"
+    },
+    {
+      "full": "Privada de las Ramblas 4,,"
+    },
+    {
+      "full": "Hospital Puebla, Consultorio 930. Av. Las Ramblas no 4,"
+    },
+    {
+      "full": "17 Oriente 211-2 Col. El Carmen,"
+    },
+    {
+      "full": "17 Oriente 211,"
+    },
+    {
+      "full": "Privada de las Ramblas 4,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía total",
+      "price": ""
+    },
+    {
+      "name": "Quistectomía de ovario por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía total",
+      "price": ""
+    },
+    {
+      "name": "Quistectomía de ovario por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía total",
+      "price": ""
+    },
+    {
+      "name": "Quistectomía de ovario por laparoscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-trigo-lara/ginecologo/puebla#address-id=6399&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:14:18.845Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__eduardo_trigo_lara.webp"
+}

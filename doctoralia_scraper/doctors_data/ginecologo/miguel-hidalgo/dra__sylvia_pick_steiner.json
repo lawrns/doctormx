@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Sylvia Pick Steiner",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 90,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/56465e/56465ed55d8747efef4dfede14dca9e7_220_square.jpg",
+  "about": "Ginecóloga y Obstetra con más de 33 años de experiencia viendo de manera integral con mucha paciencia y humanismo a mis pacientes. Mi trato es muy calido y amable, tratando siempre de ser puntual. Intento siempre realizar un buen diagnostico para que el tratamiento sea el optimo, dando todas las explicaciones y opciones de manera muy prudente. ------------------------------------------------------------------------------------------------ Medico Cirujano Universidad La Salle (1978) Medico Gineco Obstetra Instituto Nacional de Perinatologia (1985) Certificada por el \"Consejo Mexicano de Ginecología y Obstetricia\" (COMEGO) (1994) con correspondientes recertificaciones) - Socio titular del \"Colegio Mexicano de Ginecología y Obstetricia\" - Socio titular de la \"Asociación Mexicana de la Medicina de Reproducción\" - Socio de la \"Asociación Mexicana de Estudio del Climaterio\" - Socio del \"American College of Gynecologists and Obstetricians\" - Participación en multiples cursos y congresos - Publicación de varios artículos de la especialidad - Actividad docente en la Universidad La Salle",
+  "addresses": [
+    {
+      "full": "Ejercito Nacional 613-903 Col. Polanco Torre de consultorios Hospital Español,"
+    },
+    {
+      "full": "Ejercito Nacional 613-903 Col. Polanco Torre de consultorios Hospital Español,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sylvia-pick-steiner/ginecologo/ciudad-de-mexico#address-id=62639&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:04:20.219Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__sylvia_pick_steiner.webp"
+}

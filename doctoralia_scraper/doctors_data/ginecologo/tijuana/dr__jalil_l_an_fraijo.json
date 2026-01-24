@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jalil Lían Fraijo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 62,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d8fdad/d8fdad3269daaddfe3cfe6e091708141_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "José Clemente Orozco 2340 205,"
+    },
+    {
+      "full": "José Clemente Orozco 2340 205,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jalil-lian-fraijo/ginecologo/tijuana#address-id=107323&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:05:35.472Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__jalil_l_an_fraijo.webp"
+}

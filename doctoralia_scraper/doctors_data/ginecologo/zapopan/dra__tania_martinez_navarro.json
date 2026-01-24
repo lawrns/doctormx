@@ -1,0 +1,18 @@
+{
+  "name": "Dra. Tania Martinez Navarro",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 12,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3eabb798/3eabb798-dd47-45fa-a2a3-907c6cec93fa_140_square.jpg",
+  "about": "",
+  "addresses": [],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tania-martinez-navarro/ginecologo/guadalajara#address-id=374819&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:35:27.152Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__tania_martinez_navarro.webp"
+}

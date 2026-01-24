@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jose Maria Torres Rincon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 33,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e852f018/e852f018-2c48-4c8f-a341-9485a3bdf9f1_small_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "c. gobernador gregorio v. gelati 33, san miguel chapultepec i secc, miguel hidalgo,"
+    },
+    {
+      "full": "c. gobernador gregorio v. gelati 33, san miguel chapultepec i secc, miguel hidalgo,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-maria-torres-rincon-2/ginecologo/ciudad-de-mexico#address-id=538281&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:40:29.184Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__jose_maria_torres_rincon.webp"
+}

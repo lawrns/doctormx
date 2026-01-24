@@ -1,0 +1,31 @@
+{
+  "name": "Rosa Cecilia Contreras Bermudez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 20,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9fdc2359/9fdc2359-ab8b-4a7f-9360-8590426b0047_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Revolucion 1182,"
+    },
+    {
+      "full": "C. Begonias 157,"
+    },
+    {
+      "full": "Av. Revolucion 1182,"
+    },
+    {
+      "full": "C. Begonias 157,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-cecilia-contreras-bermudez/ginecologo/azcapotzalco#address-id=175800&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:17:22.663Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/rosa_cecilia_contreras_bermudez.webp"
+}

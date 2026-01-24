@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Heidi Rodriguez Alfaro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 165,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a92e93/a92e9382a63f4f0582bca5b22891d7b3_220_square.jpg",
+  "about": "Soy la Dra. Heidi Rodriguez Alfaro, especialista en ginecología en la ciudad de León. Me gradué de la Universidad Nacional Autónoma de Zacatecas y he estado ejerciendo como médico por más de 4 años. Me apasiona ayudar a las mujeres en todas las etapas de su vida, desde la adolescencia hasta la menopausia. Me dedico a brindar atención médica de calidad y personalizada a cada paciente, abordando sus necesidades específicas y preocupaciones de manera comprensiva. Me encanta educar a mis pacientes sobre su salud y bienestar, y estoy comprometida a mantenerme actualizada con los últimos avances en medicina y tecnología. Fuera de mi práctica, disfruto de la música y el arte, y paso tiempo con mi familia y amigos",
+  "addresses": [
+    {
+      "full": "Boulevard Aeropuerto,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/heidi-rodriguez-alfaro/ginecologo/leon#address-id=456619&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:25:55.908Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__heidi_rodriguez_alfaro.webp"
+}

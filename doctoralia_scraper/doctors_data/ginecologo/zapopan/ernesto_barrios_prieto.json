@@ -1,0 +1,25 @@
+{
+  "name": "Ernesto Barrios Prieto",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0c7067/0c706791358757d48d254000f7b19987_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Eulogio Para 2975. Colonia Prados De Providencia,"
+    },
+    {
+      "full": "Eulogio Para 2975. Colonia Prados De Providencia,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ernesto-barrios-prieto/ginecologo/guadalajara#address-id=148062&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:39:40.186Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/ernesto_barrios_prieto.webp"
+}

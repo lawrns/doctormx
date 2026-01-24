@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Diana Gutiérrez Alfaro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 22,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c870d4/c870d417abb1a83bf3709f0e619bdaab_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Carnero 5385,"
+    },
+    {
+      "full": "Carnero 5385,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diana-gutierrez-alfaro/ginecologo/zapopan",
+  "scrapedAt": "2026-01-22T04:27:12.385Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__diana_guti_rrez_alfaro.webp"
+}

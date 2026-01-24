@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Alicia Jáuregui Meléndrez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 444,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/2cb6fabe/2cb6fabe-c6c6-49bd-ac0b-f382fa361a71_large.jpg",
+  "about": "Ginecóloga, emprendedora y valiosa trayectoria en cirugía ginecológica de mínima invasión en el sureste mexicano; laparoscopia, histeroscopia y cirugía vaginal. Obstetricia con enfoque en el embarazo de alto riesgo, el parto y cesárea humanizada. Especialista en perimenopausia y menopausia. Dedicada a la paciente en tratamiento de terapia de reemplazo hormonal sustitutiva. Promotora y ejecutora de cirugía de mínima invasión especializada en laparoscopia e histeroscopia con fines reproductivos y para el diagnóstico y resolución de múltiples patologías ginecológicas como endometriosis, Miomas uterinos, masas anexiales, tumores de ovario, quistes de ovario, enfermedades del útero mediante el abordaje de mínima invasión como laparoscopia y/o cirugía vaginal. Cirugia del piso pélvico, histerectomías vaginales. Colposcopista para la detección de las lesiones por virus del papiloma humano, lesiones en cervix, vagina y vulva. Dedicada al estudio, investigación y manejo de la menopausia, la paciente adolescente y la pareja infértil. Especializada en histeroscopia de consultorio para la detección y tratamiento quirúrgico de lesiones dentro del útero. Atención de la salud de la mujer en todas las etapas de su vida. Medicina con Valor. Profesional de inteligencia integral aplicada, con enfoque ginecológico y evolutivo del bienestar femenino.",
+  "addresses": [
+    {
+      "full": "Calle 24 S/N x7 y 7A Santa Getrudis Copo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alicia-jauregui-melendrez/ginecologo/yucatan#address-id=324552&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:29:20.367Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__alicia_j_uregui_mel_ndrez.webp"
+}

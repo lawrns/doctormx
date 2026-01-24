@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Miguel Angel Lozano Acosta",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2837,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d07bd9/d07bd9a2cb62a3c3585da78b37a87f12_140_square.jpg",
+  "about": "Egresado de la carrera de Medico Cirujano y Partero de la Universidad de Guadalajara, con especialidad en Ginecologia y Obstetricia en el Hospital Civil de Guadalajara Dr. Juan I. Menchaca, certificado por la Universidad de Guadalajara con diploma de Colposcopia y Enfermedades del Tracto Inferior Reproductivo Femenino y certificado por el Consejo Mexicano de Ginecologia y Obstetricia, Labora en el Centro Medico Nacional de Occidente del IMSS.",
+  "addresses": [
+    {
+      "full": "HOSPITAL SANTISIMA TRINIDAD Miguel Blanco #1225,"
+    },
+    {
+      "full": "HOSPITAL SANTISIMA TRINIDAD Miguel Blanco #1225,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $450"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Valoración ginecologica y/o obstétrica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-lozano-acosta/ginecologo/guadalajara#address-id=87903&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:29:48.549Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__miguel_angel_lozano_acosta.webp"
+}

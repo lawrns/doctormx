@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Ana Rosa Rios Ballesteros",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 32,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dd2007/dd2007175c7bec4c4a1ddff36ff92d5e_220_square.jpg",
+  "about": "Como Ginecoobstetra y Andróloga atiendo indistintamente problemas de tipo sexuales y reproductivos de hombre y de mujeres. La atención simultanea a la pareja representa una ventaja en la resolución de patologias compartidas. Atiendo pacientes femeninas que desean cuidar su salud, mediante controles programados periódicamente de Papanicolaou, revisión de sus glándulas mamarias, atención al embarazo, parto y puerperio, vigilancia perimenopausica, brindo la atención integral a pacientes con embarazo de alto riesgo, en los hombres, realizo estudios de diagnostico y preventivos respecto a su salud sexual y reproductiva, brindo atención a la pareja con problemas de sexualidad, de esterilidad o infertilidad, de enfermedades de transmisión sexual, realizó vasectomía y esterilización femenina. Por mi formación en biología molecular realizó diagnostico molecular y genético de múltiples patologias estableciendo diagnosticos certeros y ofreciendo los tratamientos mas vanguardistas y conservadores en todas las áreas de mi especialidad por ejemplo confirmación de la presencia del virus del papiloma humano que lo infecta, el tipo genómico del mismo y la cantidad de partículas virales que se observan a fin de tratar de forma particular a cada paciente con base en su proceso infeccioso específico.",
+  "addresses": [
+    {
+      "full": "Av. Circurnvalación 487-A,"
+    },
+    {
+      "full": "Av. Circurnvalación 487-A,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-rosa-rios-ballesteros/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:25:08.971Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__ana_rosa_rios_ballesteros.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Araceli Matias Olvera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 274,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/988d29/988d29a40436062cabae86781e9f56f3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Volcan, 215,"
+    },
+    {
+      "full": "Calle Volcan, 215,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/araceli-matias-olvera/ginecologo/miguel-hidalgo#address-id=111185&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:51:07.804Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/araceli_matias_olvera.webp"
+}

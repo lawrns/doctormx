@@ -1,0 +1,25 @@
+{
+  "name": "Luis Rey Luna Reyes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f65b22/f65b22a584055b801e7acc446395ef94_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Eugenia,9, Col. Del Valle, ,"
+    },
+    {
+      "full": "Eugenia,9, Col. Del Valle, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-rey-luna-reyes/ginecologo/benito-juarez#address-id=355381&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:18:08.757Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/luis_rey_luna_reyes.webp"
+}

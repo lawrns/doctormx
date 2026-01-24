@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Renata Madrid Zavala",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 522,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/577264/5772642fa1c5e0fb24aa17e317a0fab2_220_square.jpg",
+  "about": "Ginecologa y Obstetra, especialista en Biología de la Reproducción Humana Especialista en: 1. Alteraciones del desarrollo de la mujer, pubertad, adolescencia, embarazo, climatérico y menopausia 2. Trastornos menstruales, ovario poliquistico, endometriosis, miomatosis uterina, falla ovárica prematura 3. Sindrome Climaterico y Menopausia 4. Osteoporosis 5. Perdida recurrente del embarazo 6. Infertilidad 7. Embarazo de bajo riesgo 8. Atención de parto y cesárea 9. Cirugía ginecológica: miomectomia, histerectomia, oforectomia, cistectomia, salpingectomia, histeroscopia, polipectomia, laparoscopia. 10. Chek up paciente sana: papanicolau, exploración mamaria. 11. Pubertad precoz, pubertad tardía. 12. Hemorragia uterina anormal y disfuncional.",
+  "addresses": [
+    {
+      "full": "Av. Universidad 1080, Cons. 5061, Colonia Xoco,"
+    },
+    {
+      "full": "Av. Cuauhtémoc 1040,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/renata-madrid-zavala/ginecologo/ciudad-de-mexico#address-id=354777&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:04:05.767Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__renata_madrid_zavala.webp"
+}

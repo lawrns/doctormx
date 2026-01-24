@@ -1,0 +1,89 @@
+{
+  "name": "Brenda Anaid Torres Ugalde",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 165,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e1892a/e1892a0ddad5ca0648399a21cf31e95d_220_square.jpg",
+  "about": "Soy Gineco-obstetra de formación troncal, realice mi preparación en el Instituto de Salud del Estado de México, el cual me dio la posibilidad de entrenarme ampliamente tanto en la teoría como en la práctica. Sin embargo el trato y el cuidado de las mujeres tanto embarazadas como ginecológicas, las posibles complicaciones que se pueden derivar de cualquier procedimiento o asociados a una enfermedad pre-existente y con la finalidad de ofrecer una atención integral y con la máxima calidad me llevaron a buscar un complemento por lo cual realice la Sub-especialidad en Ginecología OncólogIca en el Hospital General de México un centro de excelencia en el tratamiento multidisciplinario del Cáncer y a su vez dándonos un complemento para la realización de cirugías de alta complejidad con los mejores resultados. Siempre con la inquietud de seguir aprendiendo y de mantenernos siempre a la vanguardia en los tratamientos realice diplomados complementarios en Colposcopia, Laparoscopia e Histeroscopia Diagnostico y Quirurgica los cuales complementarían de manera perfecta mi formación para poder ofrecer los mejores tratamientos disponibles y de calidad. Actualmente certificada por el consejo Mexicano Ginecología y Obstetricia y el consejo Mexicano de Oncologia",
+  "addresses": [
+    {
+      "full": "Avenida Progreso 231,"
+    },
+    {
+      "full": "Avenida Progreso 231,"
+    },
+    {
+      "full": "Agrarismo 208,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/brenda-anaid-torres-ugalde/ginecologo-ginecologo-oncologico/ciudad-de-mexico#address-id=355265&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:00:43.609Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/brenda_anaid_torres_ugalde.webp"
+}

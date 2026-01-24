@@ -1,0 +1,25 @@
+{
+  "name": "Aiana Villalobos Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 122,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/24029160/24029160-cd1f-4d08-9f13-c7b94f5dfbea_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Paseo del Rí­o 16220, Rí­o Tijuana 3a. Etapa, Rio Tijuana 3ra Etapa, 22226 Tijuana, B.C., Mexico,"
+    },
+    {
+      "full": "Paseo del Rí­o 16220, Rí­o Tijuana 3a. Etapa, Rio Tijuana 3ra Etapa, 22226 Tijuana, B.C., Mexico,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aiana-villalobos-garcia/ginecologo/ciudad-de-mexico#address-id=151440&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:06:10.766Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/aiana_villalobos_garcia.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Gabriel E Garcia Noriega",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a4fa1f7a/a4fa1f7a-68af-46ca-b1e6-0b21bdc19a1b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Erasmo Castellanos 1874 110,"
+    },
+    {
+      "full": "Erasmo Castellano 1874 110,"
+    },
+    {
+      "full": "Calle Erasmo Castellanos 1874 110,"
+    },
+    {
+      "full": "Erasmo Castellano 1874 110,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriel-e-garcia-noriega/ginecologo-medico-general/tijuana#address-id=35850&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:48:31.795Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__gabriel_e_garcia_noriega.webp"
+}

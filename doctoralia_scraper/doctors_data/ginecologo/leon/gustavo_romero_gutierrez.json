@@ -1,0 +1,25 @@
+{
+  "name": "Gustavo Romero Gutierrez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 50,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/60a870c2/60a870c2-599c-47fb-b440-f7d539003908_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Fuego 216,"
+    },
+    {
+      "full": "Fuego 216,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gustavo-romero-gutierrez/ginecologo/leon#address-id=222310&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:35:10.479Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/gustavo_romero_gutierrez.webp"
+}

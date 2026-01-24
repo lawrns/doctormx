@@ -1,0 +1,37 @@
+{
+  "name": "Juan Jose Diaz Ramirez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 340,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/05f035/05f035c345dc4a6e087437c2aa2ce5a0_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Mexico 32,"
+    },
+    {
+      "full": "Mariano Escobedo 665,"
+    },
+    {
+      "full": "Av. Industria Militar 1057,"
+    },
+    {
+      "full": "Av. Mexico 32,"
+    },
+    {
+      "full": "Mariano Escobedo 665,"
+    },
+    {
+      "full": "Av. Industria Militar 1057,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-jose-diaz-ramirez/ginecologo/cuajimalpa-de-morelos#address-id=205538&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:53:43.783Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/juan_jose_diaz_ramirez.webp"
+}

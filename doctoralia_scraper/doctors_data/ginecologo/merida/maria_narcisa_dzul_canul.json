@@ -1,0 +1,31 @@
+{
+  "name": "Maria Narcisa Dzul Canul",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fb2cf6/fb2cf6af61faad9e0f1e1a6a48d8b5b5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 50 X 67 Y 65 S/N,"
+    },
+    {
+      "full": "C. 35 526 D,"
+    },
+    {
+      "full": "C. 50 X 67 Y 65 S/N,"
+    },
+    {
+      "full": "C. 35 526 D,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-narcisa-dzul-canul/ginecologo/merida#address-id=191325&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:47:11.264Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/maria_narcisa_dzul_canul.webp"
+}

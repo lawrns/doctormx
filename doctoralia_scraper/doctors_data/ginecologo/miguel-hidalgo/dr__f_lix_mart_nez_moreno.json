@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Félix Martínez Moreno",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/340c6d/340c6d13fd00d6f47dd4c3354ce5cf7b_220_square.jpg",
+  "about": "Realicé mi especialidad de Ginecologìa y Obstetricia en el Instituto Nacional de Perinatología, al finalizar decidí realizar una subespeciliadad médica en Urología Ginecológica en el mismo Instituto Nacional de Perinatología; desde que finalice continuo preparandome en cursos para continuar vigente en conocimienos y mejorar habiidades quirúrgicas en Cirugía de mínima invasión (Laparoscopia) para el manejo de diversas enfermedades que afetan la pelvis femenina. Todo con el fin de cuidad la salud de la mujer en sus diferentes etapas de vida, desde la adolescencia con todos sus cambios físicos - emocionales por los cambios hormonales, en su etapa reproductiva orientando en planificación familiar, así como en la vigilancia y cuidados de una de las mejores etapas en la vida de la mujer, la formación de la familia a través del embarazo. Siendo especialista en la reconstrucción del piso pélvico ayudo en la etapa de vida de la menopausia - climaterior tanto en la calidad de vida por los cambios hormonales propios de esta etapa, como en los impacos del piso pelvico conscuencia mucho de ellos de la etapa reproductiva, tales como Incontinencia Urinaria, Incontinencia Fecal y Disfunción Sexual. Al final te puedo comentar que toda mi formación a sido para ofrecer las mejores alternativas en el cuidado de la salud de mis pacientes, pero siempre teniendo en mente en primer lugar al ser humano, en la relaciòn médico - paciente, la empatia y el respeto absoluto.",
+  "addresses": [
+    {
+      "full": "Enrique Sada Muguerza 16, Primer Piso, Circuito Centro Comercial Ciudad Satélite,"
+    },
+    {
+      "full": "Av Ejército Nacional 613, Complejo Médico Antonino Fernández, Consultorio 701- 705,"
+    },
+    {
+      "full": "Enrique Sada Muguerza 16, Primer Piso, Circuito Centro Comercial Ciudad Satélite,"
+    },
+    {
+      "full": "Av Ejército Nacional 613, Complejo Médico Antonino Fernández, Consultorio 701- 705,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/felix-martinez-moreno/ginecologo/naucalpan#address-id=386825&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:05:39.643Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__f_lix_mart_nez_moreno.webp"
+}

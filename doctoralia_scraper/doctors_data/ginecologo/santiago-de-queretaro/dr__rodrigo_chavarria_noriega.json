@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Rodrigo Chavarria Noriega",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 190,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7f3249/7f324976e0dc9624b50cbf15ebc8fb33_220_square.jpg",
+  "about": "Calidad, experiencia y accesibilidad en el manejo de parejas infértiles. La Reproducción Asistida es el resultado de constantes estudios e implementación de las mejores técnicas, permitiéndonos dar lugar a una nueva vida, sustituyendo aquellos procesos que el organismo no es capaz de realizar por si solo. Gracias al entrenamiento específico para tratar los problemas de fertilidad, puedo diagnosticar tanto al hombre como a la mujer cuando existe alguna dificultad o problema de infertilidad. Normalmente las parejas acuden a un Especialista en Reproducción Asistida cuando quieren tener un bebé y no tienen éxito , antecedentes de abortos, cirugías en los ovarios o útero que pudieran afectar la fertilidad. Además de realizar un diagnóstico, podemos crear un plan individualizado para cada paciente, dependiendo de su evaluación médica y sus necesidades. Como especialista en Infertilidad, sé que el ser papás representa uno de los logros más importantes en la vida y aunque algunas veces esto puede complicarse por diversos motivos, quiero ayudarte a cumplir ese gran sueño.",
+  "addresses": [
+    {
+      "full": "Av. Bernardo Quintana 4060, Hospital Star Médica,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rodrigo-chavarria-noriega/ginecologo/queretaro#address-id=416520&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:44:20.619Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__rodrigo_chavarria_noriega.webp"
+}

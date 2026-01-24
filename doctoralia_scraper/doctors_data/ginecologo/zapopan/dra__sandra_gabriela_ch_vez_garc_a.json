@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Sandra Gabriela Chávez García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 85,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/062818/06281835eb40da57fe8164c7bf283b08_220_square.jpg",
+  "about": "Médico Gineco Obstetra , egresada de la Universidad de Guadalajara, instructora ALSO( Advance Life Support in obstetric). Proveedor curso Tequiav (técnica quirugica avanzada para el control de Hemorragia Obstétrica),diplomado en colposcopia y enfermedades del tracto genital inferior, diplomado en fertilidad, diplomado en ultrasonido con enfoque perinatal, diplomado en ginecocosmetica ,Diplomado en Ginecología laser y bioregenerativa, Diplomando en Hormonas Bioidenticas y Medicina Funcional, Master en hormonas nutrición y bienestar, durante el periodo 2010 - 2012 ocupe el puesto de jefe de servicio del área de Ginecología y obstetricia del Hospital Regional de Puerto Vallarta, dic2017-dic 2018 me desempeñe en la Jefatura de enseñanza capacitación e investigación en el Hospital Materno Infantil Esperanza López Mateos en la ciudad de Guadalajara , Jalisco. Certificada por el consejo de Ginecología y Obstetricia.",
+  "addresses": [
+    {
+      "full": "Av General Eulogio parrra 2796,"
+    },
+    {
+      "full": "Av General Eulogio parrra 2796,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sandra-gabriela-chavez-garcia/ginecologo/guadalajara#address-id=117353&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:17:27.653Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__sandra_gabriela_ch_vez_garc_a.webp"
+}

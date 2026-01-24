@@ -1,0 +1,37 @@
+{
+  "name": "Dr. Alejandro Vallejo Mass",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 29,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a4c453/a4c453952171ce74f3932e0c62ca3626_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "11 Oriente 1828 603,"
+    },
+    {
+      "full": "Privada de las Ramblas 4,,"
+    },
+    {
+      "full": "Av. 11 Oriente 1828,"
+    },
+    {
+      "full": "11 Oriente 1828 603,"
+    },
+    {
+      "full": "Privada de las Ramblas 4,,"
+    },
+    {
+      "full": "Av. 11 Oriente 1828,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-vallejo-mass-2/ginecologo/puebla#address-id=6060&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:17:45.833Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__alejandro_vallejo_mass.webp"
+}

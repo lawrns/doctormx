@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Addanari Locascio Gutiérrez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 206,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/272fd3/272fd3237eb9daf0a4bfa692586636bb.jpg",
+  "about": "Soy la Dra. Adda con especialidad en Ginecología y Obstetricia soy médico egresada de la Universidad Autónoma de Guadalajara, realicé mi especialidad en la División de Ginecología y Obstetricia en el Hospital General de Occidente avalado por la Universidad de Guadalajara, me gusta brindar la mejor atención y responder todas tus dudas, siempre buscaré tu bienestar.",
+  "addresses": [
+    {
+      "full": "C. Justo Sierra 2821,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/addanari-locascio-gutierrez/ginecologo/guadalajara#address-id=399011&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:12:14.938Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__addanari_locascio_guti_rrez.webp"
+}

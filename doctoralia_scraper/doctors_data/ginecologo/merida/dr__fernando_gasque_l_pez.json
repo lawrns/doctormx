@@ -1,0 +1,40 @@
+{
+  "name": "Dr. Fernando Gasque López",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2cd01a/2cd01a52fb2946f36f08a6e729b9fe63_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C.54 No 365,"
+    },
+    {
+      "full": "Calle 54 365,"
+    },
+    {
+      "full": "C.54 No 365,"
+    },
+    {
+      "full": "Calle 54 365,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-gasque-lopez/ginecologo/merida#address-id=6741&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:42:31.736Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__fernando_gasque_l_pez.webp"
+}

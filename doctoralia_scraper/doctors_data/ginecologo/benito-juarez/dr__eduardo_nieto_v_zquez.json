@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Eduardo Nieto Vázquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 109,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5a7cf1/5a7cf18111d5d7b71cdf115c53adb462_220_square.jpg",
+  "about": "Cada año que he pasado como médico me ha enseñado que mi gusto por la medicina se centra en el paciente. No hay paciente más indefenso y que requiera más ayuda que el bebé que está en el vientre. Entender lo que nos dice en cada ultrasonido me convierte en el primer puente de comunicación de las nuevas familias que veo nacer.",
+  "addresses": [
+    {
+      "full": "Av. Universidad 1080,"
+    },
+    {
+      "full": "Av. Universidad 1080,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Revisión Ginecológica anual",
+      "price": "• $1,900"
+    },
+    {
+      "name": "Ultrasonido estructural",
+      "price": "• Desde $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-nieto-vazquez-2/ginecologo/coyoacan#address-id=451691&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:06:17.160Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__eduardo_nieto_v_zquez.webp"
+}

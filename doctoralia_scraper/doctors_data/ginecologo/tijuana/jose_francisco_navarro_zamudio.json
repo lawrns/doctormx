@@ -1,0 +1,31 @@
+{
+  "name": "Jose Francisco Navarro Zamudio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 498,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/eafd54/eafd54ed2de294117a93a95ee8b08310_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd Agua Caliente No 4558 Nivel,"
+    },
+    {
+      "full": "Jose Maria Velasco 2631,"
+    },
+    {
+      "full": "Blvd Agua Caliente No 4558 Nivel,"
+    },
+    {
+      "full": "Jose Maria Velasco 2631,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-francisco-navarro-zamudio/ginecologo/tijuana#address-id=210719&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:48:11.019Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/jose_francisco_navarro_zamudio.webp"
+}

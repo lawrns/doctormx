@@ -1,0 +1,30 @@
+{
+  "name": "Dr. José Rodolfo Cortéz Badillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/171cc3/171cc3a56e96e37caf1a14274402dd28_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 3 Norte 1010 Centro,"
+    },
+    {
+      "full": "Calle 3 Norte 1010 Centro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-rodolfo-cortez-badillo/ginecologo/puebla#address-id=107949&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:19:25.880Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__jos__rodolfo_cort_z_badillo.webp"
+}

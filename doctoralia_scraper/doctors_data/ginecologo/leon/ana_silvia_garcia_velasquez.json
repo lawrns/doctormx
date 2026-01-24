@@ -1,0 +1,25 @@
+{
+  "name": "Ana Silvia Garcia Velasquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 175,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c61099/c610995f2be0960c1d019ae8ca46903e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cda Santo Domingo 1642, Col. Fracc Rdcial Villa Santo Domingo, ,"
+    },
+    {
+      "full": "Cda Santo Domingo 1642, Col. Fracc Rdcial Villa Santo Domingo, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-silvia-garcia-velasquez/ginecologo/victoria#address-id=356671&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:36:32.228Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/ana_silvia_garcia_velasquez.webp"
+}

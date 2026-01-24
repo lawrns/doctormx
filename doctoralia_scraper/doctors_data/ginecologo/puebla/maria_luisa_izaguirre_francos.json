@@ -1,0 +1,25 @@
+{
+  "name": "Maria Luisa Izaguirre Francos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 27,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d3c592/d3c592003b6aff770f863a0b69801841_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "De San Francisco,326,Fracc San Jose Del Puente,,"
+    },
+    {
+      "full": "De San Francisco,326,Fracc San Jose Del Puente,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-luisa-izaguirre-francos/ginecologo/puebla#address-id=355528&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:29:31.589Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/maria_luisa_izaguirre_francos.webp"
+}

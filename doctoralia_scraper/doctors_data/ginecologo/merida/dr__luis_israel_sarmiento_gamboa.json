@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Luis Israel Sarmiento Gamboa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 325,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ec99d4/ec99d4859eefe7384f8e4db2ae78d2ed_220_square.jpg",
+  "about": "Soy egresado como Médico Cirujano de la Universidad Autónoma de Yucatán, egresado de la misma universidad como Ginecólogo Obstetra. Egresado en Oncología Ginecológica avalado por la Universidad Nacional Autónoma de México. Diplomado en laparoscopia avalado por la facultad de ciencias de la salud de la Universidad Anahuac.",
+  "addresses": [
+    {
+      "full": "CALLE ANTIGUA A CHINA ENTRE AZUCENAS Y ALMENDROS,"
+    },
+    {
+      "full": "Avenida Cupules 105,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-israel-sarmiento-gamboa/ginecologo-ginecologo-oncologico/yucatan#address-id=421716&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:30:11.548Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__luis_israel_sarmiento_gamboa.webp"
+}

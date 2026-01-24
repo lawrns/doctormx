@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jorge Echeverria Luna",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/41281415/41281415-e4fb-4672-82a2-a0a71f55fe29_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Nino Obrero 846,"
+    },
+    {
+      "full": "Ave. Nino Obrero 846,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-echeverria-luna/ginecologo/guadalajara#address-id=45108&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:28:06.723Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jorge_echeverria_luna.webp"
+}

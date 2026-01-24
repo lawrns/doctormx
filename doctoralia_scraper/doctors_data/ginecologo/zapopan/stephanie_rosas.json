@@ -1,0 +1,25 @@
+{
+  "name": "Stephanie Rosas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 677,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c0fa83/c0fa8332456d314c980e2d7ebf72856b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Rafael Sanzio 495, La Estancia,"
+    },
+    {
+      "full": "Av Rafael Sanzio 495, La Estancia,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/stephanie-rosas/ginecologo/zapopan#address-id=498819&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:34:25.661Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/stephanie_rosas.webp"
+}

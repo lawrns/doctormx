@@ -1,0 +1,25 @@
+{
+  "name": "Ramon Javier Romero Iniguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 489,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/6ebd85e5/6ebd85e5-8272-4137-82f5-a22f370c5f9c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Union 163,"
+    },
+    {
+      "full": "Av Union 163,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ramon-javier-romero-iniguez/ginecologo/guadalajara#address-id=127155&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:41:34.541Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/ramon_javier_romero_iniguez.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Carlos Guillermo Torres Arriaga",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 548,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/71f95b/71f95bcc773e01508161d978e39096f6_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Jesus Garcia 1920,"
+    },
+    {
+      "full": "Jesus Garcia 1920,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-guillermo-torres-arriaga/ginecologo/guadalajara#address-id=240853&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:40:49.004Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/carlos_guillermo_torres_arriaga.webp"
+}

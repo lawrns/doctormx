@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Arturo Rosas Prianti",
+  "specialty": "Cirujano general",
+  "rating": 5,
+  "reviewCount": 111,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/009f34/009f34359541ae3c9d0c32ab06575f23_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Bugambilias, 50,"
+    },
+    {
+      "full": "Calle Bugambilias, 50,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arturo-rosas-prianti/cirujano-general-ginecologo/tijuana#address-id=13575&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:49:37.757Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__arturo_rosas_prianti.webp"
+}

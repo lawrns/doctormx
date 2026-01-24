@@ -1,0 +1,35 @@
+{
+  "name": "Dr. Alejandro Martínez Tejeda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 393,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8a848d/8a848d8031cfbf44b3cac9d8b07ba84a.jpg",
+  "about": "Atención a Enfermedades de la mujer. Detección del Virus del Papiloma humano, Vacuna VPH, Colposcopia, Esterilidad, Ultrasonido, Control de embarazo.",
+  "addresses": [
+    {
+      "full": "Blvd. Gustavo Díaz Ordaz 15034-35,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-martinez-tejeda/ginecologo/tijuana#address-id=85440&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:40:24.548Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__alejandro_mart_nez_tejeda.webp"
+}

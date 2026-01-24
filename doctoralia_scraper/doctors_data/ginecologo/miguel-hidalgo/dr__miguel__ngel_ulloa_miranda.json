@@ -1,0 +1,84 @@
+{
+  "name": "Dr. Miguel Ángel Ulloa Miranda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 276,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/b63f5823/b63f5823-ba1f-40eb-8916-b4575513ff0a_large.jpg",
+  "about": "¡Hola! Soy el Dr. Miguel Angel Ulloa, Médico Cirujano con especialidad en Ginecología y Obstetricia y Alta especialidad en Infertilidad y Reproducción asistida. Mi experiencia me permite dar atención integral a mis pacientes ayudándoles con diagnósticos y tratamientos acertados, acompañándolas durante todo el proceso y encontrando la mejor opción para recuperar su salud, siempre brindando un trato empático y amable. Puedes sentir la tranquilidad de que tu salud estará en manos expertas. ¡Será un gusto atenderte!",
+  "addresses": [
+    {
+      "full": "Real Mayorazgo 130,"
+    },
+    {
+      "full": "Canal de Miramontes 2755 Interior 102,"
+    },
+    {
+      "full": "Avenida Ejercito Nacional Mexicano 678 Quinto piso,"
+    },
+    {
+      "full": "Real Mayorazgo 601,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Checkup completo",
+      "price": "• $2,800"
+    },
+    {
+      "name": "Vacuna virus del papiloma humano",
+      "price": "• $4,100"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Checkup completo",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-ulloa-miranda/ginecologo/ciudad-de-mexico#address-id=429103&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:01:31.845Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__miguel__ngel_ulloa_miranda.webp"
+}

@@ -1,0 +1,60 @@
+{
+  "name": "Giovanna Di Bella",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 30,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/04b7c4/04b7c401a0efa07cffa0ada7e6ef86ad_220_square.jpg",
+  "about": "Soy una Médico especialista egresada de Instituciones con gran prestigio a nivel nacional e internacional, con actitud humanitaria y de servicio, que ama su trabajo y desea que las mujeres contemos con médicos de calidad para brindarles la mejor atención posible. Además de Ginecología y Obstetricia realicé otra especialidad: Medicina Materno Fetal, por lo que me dedico al manejo integral del embarazo de alto riesgo y diagnóstico prenatal, es decir, mediante ultrasonidos especializados podemos realizar evaluaciones del feto como paciente y poder establecer riesgos, por ejemplo de que nuestro bebé tenga algún defecto o la probablidad que tienen nuestras pacientes de padecer preeclampsia, parto pretérmino o restricción del crecimiento y poder prevenirlos o evitar que sean muy graves.",
+  "addresses": [
+    {
+      "full": "Prol. Privada Ignacio Zaragoza 16-A,"
+    },
+    {
+      "full": "Avenida de las Ciencias,"
+    },
+    {
+      "full": "Prol. Privada Ignacio Zaragoza 16-A,"
+    },
+    {
+      "full": "Avenida de las Ciencias,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $300"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/giovanna-di-bella/ginecologo/santiago-de-queretaro#address-id=26516&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:47:52.823Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/giovanna_di_bella.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Lilia Dra. Caballero A Martha",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 118,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/38870de9/38870de9-581d-4888-8169-e780041a216e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Justo Sierra No. 1940 Int. 2 Americana,"
+    },
+    {
+      "full": "Justo Sierra No. 1940 Int. 2 Americana,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lilia-dra-caballero-a-martha/ginecologo/guadalajara#address-id=128520&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:44:45.762Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__lilia_dra__caballero_a_martha.webp"
+}

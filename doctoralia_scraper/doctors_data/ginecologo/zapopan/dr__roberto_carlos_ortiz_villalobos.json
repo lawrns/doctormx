@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Roberto Carlos Ortiz Villalobos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 88,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/494aa8/494aa83ba82bde9c7f7e46fa4bf0f733_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Periférico Norte 4067,"
+    },
+    {
+      "full": "Periférico Norte 4067,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-carlos-ortiz-villalobos/ginecologo/zapopan#address-id=28684&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:33:52.161Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__roberto_carlos_ortiz_villalobos.webp"
+}

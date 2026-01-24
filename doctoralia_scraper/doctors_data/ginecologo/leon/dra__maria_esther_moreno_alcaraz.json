@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Maria Esther Moreno Alcaraz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 251,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dcc13f/dcc13fb0a0af17659820d09cece757ff_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Pedro Moreno 417 B,"
+    },
+    {
+      "full": "Pedro Moreno 417 B,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-esther-moreno-alcaraz/ginecologo/leon#address-id=192725&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:31:44.472Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__maria_esther_moreno_alcaraz.webp"
+}

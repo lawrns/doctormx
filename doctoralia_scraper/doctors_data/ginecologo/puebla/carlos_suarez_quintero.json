@@ -1,0 +1,37 @@
+{
+  "name": "Carlos Suarez Quintero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 22,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/651610/651610d72d173b5861496a5797e31f03_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "20 Sur 705,"
+    },
+    {
+      "full": "11 Oriente 1817-705,"
+    },
+    {
+      "full": "Ant. Cam. A Guadalupe Hidalgo 11350,"
+    },
+    {
+      "full": "20 Sur 705,"
+    },
+    {
+      "full": "11 Oriente 1817-705,"
+    },
+    {
+      "full": "Ant. Cam. A Guadalupe Hidalgo 11350,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-suarez-quintero/ginecologo/puebla#address-id=239812&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:35:56.354Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/carlos_suarez_quintero.webp"
+}

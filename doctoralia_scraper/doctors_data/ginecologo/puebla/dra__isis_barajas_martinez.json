@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Isis Barajas Martinez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 163,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Hola, Soy la Dra Isis es un gusto atenderlas. Soy Nacida de la ciudad de Salina Cruz Oaxaca, donde hice parte de mi formación académica. La especialidad la realice en el mejor hospital para la atención de la mujer en Puebla, el Hospital de la Mujer Especialista en Ginecología y Obstetricia Diplomado en Colposcopía y lesiones del tracto genital inferior Diplomado en Láser- Ginecología Estética y Funcional Entre los servicios que te ofrezco: control prenatal consulta ginecologica virus del papiloma humano labioplastia histeroscopia histerectomia laparoscopia quistes de ovario SOP infección vaginal verrugas genitales aborto metodos anticonceptivos colocación de diu colocación de implante",
+  "addresses": [
+    {
+      "full": "Francisco I. Madero Norte 100,"
+    },
+    {
+      "full": "Francisco I. Madero Norte 100,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• $500"
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/isis-barajas-martinez-2/ginecologo/san-martin-texmelucan#address-id=568053&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:14:14.098Z",
+  "localPhotoPath": null
+}

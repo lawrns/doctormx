@@ -1,0 +1,25 @@
+{
+  "name": "Aristeo Wesley Mendez Padilla",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 87,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a5f06534/a5f06534-28f6-456a-8268-6bd2e89e12cb_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Diaz Ordaz 3314,"
+    },
+    {
+      "full": "Blvd. Diaz Ordaz 3314,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aristeo-wesley-mendez-padilla/ginecologo/puebla#address-id=163382&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:22:52.584Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/aristeo_wesley_mendez_padilla.webp"
+}

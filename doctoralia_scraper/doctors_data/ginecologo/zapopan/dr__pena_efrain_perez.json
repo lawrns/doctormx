@@ -1,0 +1,40 @@
+{
+  "name": "Dr. Pena Efrain Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3f029b6c/3f029b6c-b6a7-49bf-afa0-24fa8ff9bf34_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Domingo Sarmiento 2837 C,"
+    },
+    {
+      "full": "Av. empresarios 150 (PB 6),"
+    },
+    {
+      "full": "Calle Domingo Sarmiento 2837 C,"
+    },
+    {
+      "full": "Av. empresarios 150 (PB 6),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pena-efrain-perez/ginecologo/guadalajara#address-id=22354&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:30:15.271Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__pena_efrain_perez.webp"
+}

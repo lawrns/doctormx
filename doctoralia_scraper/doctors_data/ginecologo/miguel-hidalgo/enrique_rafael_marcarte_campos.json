@@ -1,0 +1,25 @@
+{
+  "name": "Enrique Rafael Marcarte Campos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/2545435a/2545435a-d681-4453-8a2f-31881cb63591_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Juan Ruiz De Alarcon 20 -,"
+    },
+    {
+      "full": "Juan Ruiz De Alarcon 20 -,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/enrique-rafael-marcarte-campos/ginecologo/guadalajara#address-id=96063&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:45:24.773Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/enrique_rafael_marcarte_campos.webp"
+}

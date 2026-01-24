@@ -1,0 +1,25 @@
+{
+  "name": "Dorothy Naomi Torres Martin",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 543,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/762074/76207454fd56e0570bd1ab802b0256ff_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "3 Por 22B Y 24 394, Col. Bugambilias De Chuburna, ,"
+    },
+    {
+      "full": "3 Por 22B Y 24 394, Col. Bugambilias De Chuburna, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dorothy-naomi-torres-martin/ginecologo/merida#address-id=357005&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:51:41.539Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dorothy_naomi_torres_martin.webp"
+}

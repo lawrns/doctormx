@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Gloria Esmeralda Gijon Heredia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 65,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/315a72/315a72665ab46a74fc7f7ad856090726_220_square.jpg",
+  "about": ".La Dra. Gloria Esmeralda Gijon Heredia es una apasionada guardiana del bienestar fetal. A través de la ecocardiografía fetal, esta destacada especialista en ginecología y obstetricia se asoma al misterioso mundo del vientre materno para velar por la salud de los corazones más pequeños. Con cada ultrasonido que realiza, la Dra. Gijon Heredia no solo observa el desarrollo de un bebé, sino que escudriña con precisión cada detalle de su anatomía, buscando asegurar que cada pequeño corazón lata con fuerza y ritmo perfecto. Su camino en la medicina ha sido guiado por una profunda vocación de servicio. Desde su formación en la Universidad Autónoma de Guadalajara hasta su especialización en el Hospital General de México \"Dr. Eduardo Liceaga\", la Dra. Gijon Heredia ha construido una carrera cimentada en la excelencia que la ha llevado a llevado a países como Dubai. Su compromiso con la medicina materno-fetal la ha llevado a convertirse en una experta en el diagnóstico prenatal. Con habilidad y precisión, identifica posibles malformaciones que pudiera llegar a tener el bebé. Esto brindando a las familias la oportunidad de prepararse y recibir a sus bebés con el amor y la atención que necesitan. La Dra. Gijon Heredia es un faro de esperanza para las futuras madres, una guía que las acompaña en el viaje de la gestación, brindándoles tranquilidad y confianza en cada latido.",
+  "addresses": [
+    {
+      "full": "Paseo del Centenario 9580 Torre NewCity Medical piso 6 consultorio 603,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Medicina materno fetal",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Medicina materno fetal",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Medicina Materno-Fetal",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Perfil Biofísico",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Ultrasonido anatómico",
+      "price": "• $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gloria-esmeralda-gijon-heredia/ginecologo/tijuana",
+  "scrapedAt": "2026-01-22T00:39:40.309Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__gloria_esmeralda_gijon_heredia.webp"
+}

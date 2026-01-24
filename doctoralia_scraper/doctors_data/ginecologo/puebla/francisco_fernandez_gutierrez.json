@@ -1,0 +1,25 @@
+{
+  "name": "Francisco Fernandez Gutierrez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 46,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/fe3fb476/fe3fb476-210b-4d82-8af8-b1a176f05ca7_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. 11 Poniente 1311-6 Col. Santiago ,"
+    },
+    {
+      "full": "Av. 11 Poniente 1311-6 Col. Santiago ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-fernandez-gutierrez/ginecologo/puebla#address-id=359273&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:23:53.375Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/francisco_fernandez_gutierrez.webp"
+}

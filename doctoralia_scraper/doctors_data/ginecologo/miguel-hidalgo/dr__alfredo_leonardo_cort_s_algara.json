@@ -1,0 +1,50 @@
+{
+  "name": "Dr. Alfredo Leonardo Cortés Algara",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 342,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/37643c51/37643c51-cb74-4b25-b667-5885e7f93c07_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave Chapultepec 489,"
+    },
+    {
+      "full": "Gelati no. 29 desp-403, San miguel chapultepec,"
+    },
+    {
+      "full": "Queretaro 154,"
+    },
+    {
+      "full": "Ave Chapultepec 489,"
+    },
+    {
+      "full": "Gelati no. 29 desp-403, San miguel chapultepec,"
+    },
+    {
+      "full": "Queretaro 154,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfredo-leonardo-cortes-algara/ginecologo/colima#address-id=133710&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:41:15.394Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__alfredo_leonardo_cort_s_algara.webp"
+}

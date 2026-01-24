@@ -1,0 +1,60 @@
+{
+  "name": "Dra. Ana Karen Machorro Medina",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/25a78bf5/25a78bf5-6f76-4216-bb56-45538db5ae77_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Boulevard Cuauhtémoc 1705,"
+    },
+    {
+      "full": "Av. Adolfo López Mateos 3, Santiago Tenango,"
+    },
+    {
+      "full": "Boulevard Cuauhtémoc 1705,"
+    },
+    {
+      "full": "Av. Adolfo López Mateos 3, Santiago Tenango,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• $600"
+    },
+    {
+      "name": "Control prenatal de embarazo múltiple",
+      "price": "• $600"
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": "• $500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $500"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-karen-machorro-medina/ginecologo/general-felipe-angeles#address-id=502120&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:14:53.795Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__ana_karen_machorro_medina.webp"
+}

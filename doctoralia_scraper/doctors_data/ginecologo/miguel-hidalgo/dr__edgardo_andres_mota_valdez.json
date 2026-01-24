@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Edgardo Andres Mota Valdez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bcbaed/bcbaed8921f55a43b7b7ca2dee32b770_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cta. No.266,"
+    },
+    {
+      "full": "Cta. No.266,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edgardo-andres-mota-valdez/ginecologo/azcapotzalco#address-id=112064&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:52:20.928Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__edgardo_andres_mota_valdez.webp"
+}

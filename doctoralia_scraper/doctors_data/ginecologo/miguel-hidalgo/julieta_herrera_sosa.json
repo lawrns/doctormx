@@ -1,0 +1,25 @@
+{
+  "name": "Julieta Herrera Sosa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/76acd50f/76acd50f-f1e6-47cf-bb47-ff2f76bf2ba9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Melchor Ocampo 3214,"
+    },
+    {
+      "full": "Avenida Melchor Ocampo 3214,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/julieta-herrera-sosa/ginecologo/chihuahua#address-id=101509&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:52:07.014Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/julieta_herrera_sosa.webp"
+}

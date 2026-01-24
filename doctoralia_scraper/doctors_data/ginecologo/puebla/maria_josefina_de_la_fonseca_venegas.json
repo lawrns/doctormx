@@ -1,0 +1,25 @@
+{
+  "name": "Maria Josefina De La Fonseca Venegas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 266,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a5c504/a5c5044044642c0892115816f1f7e38d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Claz Del Cedro 0.416666666666667, Col. Fracc Fundadores De Zavaleta, ,"
+    },
+    {
+      "full": "Claz Del Cedro 0.416666666666667, Col. Fracc Fundadores De Zavaleta, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-josefina-de-la-fonseca-venegas/ginecologo/puebla#address-id=356650&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:24:06.296Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/maria_josefina_de_la_fonseca_venegas.webp"
+}

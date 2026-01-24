@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Patricia María Jiménez Alvarado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d3463a/d3463a19611ce8613d2d8d6eeb0d04ab_220_square.jpg",
+  "about": "Atendemos integralmente a la mujer , detección oportuna de Cáncer , colposcopia , exploración de mamas , ultrasonido pélvico. Consulta Ginecológica y Obstétrica. Anticoncepción, aplicación de dispositivos intrauterinos de larga duración ( Jaydess y Mirena ). Embarazo normoevolutivos y de alto riesgo. Transtornos del piso pélvico. Transtornos Hormonales. Perimenopausia. Climaterio. Enfermedades de Transmisión sexual.",
+  "addresses": [
+    {
+      "full": "Justo Sierra 2372, esquina Luis Pérez Verdia, Colonia Ladrón de Guevara,"
+    },
+    {
+      "full": "Justo Sierra 2372, esquina Luis Pérez Verdia, Colonia Ladrón de Guevara,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $6,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/patricia-maria-jimenez-alvarado/ginecologo/guadalajara#address-id=19219&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:18:00.719Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__patricia_mar_a_jim_nez_alvarado.webp"
+}

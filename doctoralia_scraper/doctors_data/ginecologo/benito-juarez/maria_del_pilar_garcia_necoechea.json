@@ -1,0 +1,25 @@
+{
+  "name": "Maria Del Pilar Garcia Necoechea",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 66,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/973a35df/973a35df-7a27-4a9c-84fa-3ffe0b951c01_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Cincinnati 40 203,"
+    },
+    {
+      "full": "Calle Cincinnati 40 203,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-del-pilar-garcia-necoechea/ginecologo/benito-juarez#address-id=101421&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:16:45.053Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/maria_del_pilar_garcia_necoechea.webp"
+}

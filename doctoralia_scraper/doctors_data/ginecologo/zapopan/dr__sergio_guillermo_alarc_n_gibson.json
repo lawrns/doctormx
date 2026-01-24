@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Sergio Guillermo Alarcón Gibson",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 631,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/69df83bb/69df83bb-1401-4704-9559-5eef4ba64a93_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "mexicaltzingo 2353,"
+    },
+    {
+      "full": "mexicaltzingo 2353,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-guillermo-alarcon-gibson/ginecologo/guadalajara#address-id=113156&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:23:40.493Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__sergio_guillermo_alarc_n_gibson.webp"
+}

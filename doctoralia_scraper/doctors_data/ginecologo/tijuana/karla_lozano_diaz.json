@@ -1,0 +1,25 @@
+{
+  "name": "Karla Lozano Diaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 92,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/65e3e27f/65e3e27f-2153-49fe-ba09-1a14f524b84d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Las Palmas 4864,"
+    },
+    {
+      "full": "Av. Las Palmas 4864,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-lozano-diaz/ginecologo/tijuana#address-id=202886&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:07:34.861Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/karla_lozano_diaz.webp"
+}

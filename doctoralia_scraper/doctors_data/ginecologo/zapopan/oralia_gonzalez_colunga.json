@@ -1,0 +1,31 @@
+{
+  "name": "Oralia Gonzalez Colunga",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1002,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Mezquitan 2111,"
+    },
+    {
+      "full": "Marsella 408-A,"
+    },
+    {
+      "full": "Mezquitan 2111,"
+    },
+    {
+      "full": "Marsella 408-A,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/oralia-gonzalez-colunga/ginecologo-medico-general/guadalajara#address-id=183223&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:42:03.753Z",
+  "localPhotoPath": null
+}

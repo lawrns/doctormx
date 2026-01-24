@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Ruth Pacheco Pineda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ba92c248/ba92c248-322f-453f-813f-499bc67ea348_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "San Francisco Esq. Rodriguez Saro, 1902-302, 3er Piso,"
+    },
+    {
+      "full": "San Francisco Esq. Rodriguez Saro, 1902-302, 3er Piso,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ruth-pacheco-pineda/ginecologo/benito-juarez#address-id=77622&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:10:11.797Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__ruth_pacheco_pineda.webp"
+}

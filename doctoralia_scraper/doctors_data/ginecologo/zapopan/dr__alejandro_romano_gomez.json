@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Alejandro Romano Gomez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/00bdf3d0/00bdf3d0-4fb8-412d-96d7-243ecb4a80ac_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ramon Corona 500,"
+    },
+    {
+      "full": "Av. Enrique Díaz De León Sur 238,"
+    },
+    {
+      "full": "Ramon Corona 500,"
+    },
+    {
+      "full": "Av. Enrique Díaz De León Sur 238,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-romano-gomez/ginecologo/zapopan#address-id=249502&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:27:58.179Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__alejandro_romano_gomez.webp"
+}

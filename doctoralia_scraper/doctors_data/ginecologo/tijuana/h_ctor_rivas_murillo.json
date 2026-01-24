@@ -1,0 +1,25 @@
+{
+  "name": "Héctor Rivas Murillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 134,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/86be9f/86be9f978b6b75a932a05d3b7c5c901f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Bugambilias 50 Col. El Prado ,"
+    },
+    {
+      "full": "Bugambilias 50 Col. El Prado ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-rivas-murillo/ginecologo/tijuana#address-id=358796&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:23:29.941Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/h_ctor_rivas_murillo.webp"
+}

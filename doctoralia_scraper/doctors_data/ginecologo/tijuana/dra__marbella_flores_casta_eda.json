@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Marbella Flores Castañeda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 168,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/697e5e18/697e5e18-c980-4c16-87e0-ebd4e6493085_small_square.jpg",
+  "about": "Soy la Dra. Marbella Flores Castañeda, ginecóloga y obstetra con especialidad en colposcopia, certificada por el Consejo Mexicano de Ginecología y Obstetricia. Mi formación incluye la licenciatura en Médico Cirujano por la Universidad Nacional Autónoma de México (UNAM) y la especialidad en Ginecología y Obstetricia por la Universidad Autónoma de Tamaulipas (UAT). Mi compromiso es brindar atención médica de calidad con calidez humana. Para ello, cuento con un consultorio equipado con tecnología moderna y un ambiente cómodo y seguro, donde me esfuerzo por proporcionar información clara y veraz a cada paciente. Además, soy miembro activo de diversas instituciones profesionales, como el Colegio Mexicano de Ginecología y Obstetricia, el Colegio Mexicano de Colposcopistas A.C., el Colegio Mexicano de Docencia e Investigación de Colposcopia A.C. y la Asociación Mexicana de Mastología. Mi enfoque profesional se centra en la prevención, diagnóstico y tratamiento de enfermedades ginecológicas, con especial interés en la colposcopia, una herramienta esencial para la detección temprana de alteraciones cervicales. Mi objetivo es acompañar a cada paciente en su salud reproductiva, ofreciendo un trato respetuoso y personalizado en cada etapa de su vida.",
+  "addresses": [
+    {
+      "full": "Sierra Leona 497,"
+    },
+    {
+      "full": "Av. Diego Rivera #9 interior E, Zona Río, Tijuana,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $800"
+    },
+    {
+      "name": "Cirugía ginecológica estética y funcional",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marbella-flores-castaneda/ginecologo/san-luis-potosi#address-id=531273&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:43:48.391Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__marbella_flores_casta_eda.webp"
+}

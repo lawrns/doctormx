@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Dulce Maria Reyes Jimenez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 132,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5fb420/5fb420141ac6399cbad25e4ca0bcea88_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Juárez 803 2Do Piso, Col. La Villita,"
+    },
+    {
+      "full": "Avenida Juárez 803 2Do Piso, Col. La Villita,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dulce-maria-reyes-jimenez/ginecologo/pachuca#address-id=124525&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:16:15.560Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__dulce_maria_reyes_jimenez.webp"
+}

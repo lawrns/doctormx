@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Jossie Xiomara Rivero Barceló",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dfb1df/dfb1dff98c57f00de9bcd71ee43e0bc4_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 7 (Alfredo Barrera), #215, Int. 110, Colonia Pensiones,,"
+    },
+    {
+      "full": "Calle 7 (Alfredo Barrera), #215, Int. 110, Colonia Pensiones,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jossie-xiomara-rivero-barcelo-2/ginecologo/yucatan#address-id=137690&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:42:38.656Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__jossie_xiomara_rivero_barcel_.webp"
+}

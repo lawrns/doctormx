@@ -1,0 +1,85 @@
+{
+  "name": "Dr. Demetrio E. Zertuche Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 143,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3d4c4f/3d4c4f23f76864627eb591f254f4311c_220_square.jpg",
+  "about": "Soy Ginecologo con Subespecialidad en Biología de la Reproducción Humana por la UNAM y Maestría en Dirección y Gestión de Instituciones de Salud por la Universidad Anáhuac. Cuento con adiestramiento en cirugía endoscópica ginecológica, laparoscopia e histeroscopia. Mi práctica se enfoca principalmente en: Reproducción asistida: evaluación y tratamiento integral de la pareja infértil, fertilización in vitro (FIV), ICSI y preservación de fertilidad. Cirugía ginecológica mínimamente invasiva: laparoscopía, histeroscopía, recanalización tubaria, manejo de miomas, quistes y endometriosis. Atención ginecológica y obstétrica: control de embarazo, alteraciones hormonales, trastornos menstruales, menopausia y prevención y detección del cáncer ginecológico. Brindo una atención cálida, ética y personalizada, con el compromiso de acompañar a cada paciente en su camino hacia el bienestar y la maternidad.",
+  "addresses": [
+    {
+      "full": "Av. Santa María 2750, Calete, 22044 Tijuana, B.C.,"
+    },
+    {
+      "full": "Avenida Bugambilias 50,"
+    },
+    {
+      "full": "Avenida Bugambilias 50,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Consulta Obstétrica",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": ""
+    },
+    {
+      "name": "Inseminación artificial",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/demetrio-e-zertuche-gonzalez/ginecologo/tijuana#address-id=235695&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:41:55.146Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__demetrio_e__zertuche_gonzalez.webp"
+}

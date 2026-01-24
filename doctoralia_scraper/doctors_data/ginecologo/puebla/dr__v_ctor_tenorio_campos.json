@@ -1,0 +1,38 @@
+{
+  "name": "Dr. Víctor Tenorio Campos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 22,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/343491/343491b4ebd46d3b32ddf1da69734290_220_square.jpg",
+  "about": "---RECERTIFICADO POR EL COLEGIO MEXICANO DE GINECOLOGIA Y OBSTETRICIA --- MIEMBRO ACTIVO DEL COLEGIO DE GINECOLOGOS DEL ESTADO DE PUEBLA. --- MIEMBRO ACTIVO DEL COLEGIO DE COLPOSCOPIA Y PATOLOGIA DEL TRACTO GENITAL INFERIOR DEL ESTADO DE PUEBLA. --- MIEMBRO ACTIVO DEL LA ASOCIACION POBLANA PARA EL ESTUDIO DEL CLIMATERIO. --- RECONOCIMIENTO POR 30 AÑOS DE TRAYECTORIA EN EL HOSPITAL GENERAL DE CHOLULA PUE.",
+  "addresses": [
+    {
+      "full": "Blvd. Esteban de Antuñano 1393 Fraccionamiento Patriotismo,"
+    },
+    {
+      "full": "Blvd. Esteban de Antuñano 1393 Fraccionamiento Patriotismo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victor-tenorio-campos/ginecologo/puebla#address-id=412749&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:12:33.044Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__v_ctor_tenorio_campos.webp"
+}

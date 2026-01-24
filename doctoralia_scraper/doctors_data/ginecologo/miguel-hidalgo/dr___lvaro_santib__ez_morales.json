@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Álvaro Santibáñez Morales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f766c3/f766c36a538e7545b4a84040e71fae04_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Ejército Nacional #678 1er piso Col. Polanco Reforma,"
+    },
+    {
+      "full": "Av. Ejército Nacional #678 1er piso Col. Polanco Reforma,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alvaro-santibanez-morales/ginecologo/ciudad-de-mexico#address-id=27805&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:06:20.830Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr___lvaro_santib__ez_morales.webp"
+}

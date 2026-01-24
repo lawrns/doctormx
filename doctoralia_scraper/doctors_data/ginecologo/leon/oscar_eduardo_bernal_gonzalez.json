@@ -1,0 +1,31 @@
+{
+  "name": "Oscar Eduardo Bernal Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/136e37/136e37bb5811d7b6b996f7296cc859c1_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Valentin Amador Esq De La Flor S/N,"
+    },
+    {
+      "full": "Blvd. Antonio Madrazo 1102B,"
+    },
+    {
+      "full": "Valentin Amador Esq De La Flor S/N,"
+    },
+    {
+      "full": "Blvd. Antonio Madrazo 1102B,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/oscar-eduardo-bernal-gonzalez/ginecologo/soledad-de-graciano-sanchez#address-id=183087&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:33:57.955Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/oscar_eduardo_bernal_gonzalez.webp"
+}

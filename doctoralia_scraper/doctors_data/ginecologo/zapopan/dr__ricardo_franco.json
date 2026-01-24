@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Ricardo Franco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 156,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/368852/36885210989690de138049c84cdc178c_220_square.jpg",
+  "about": "Me considero ser un médico comprometido con mis pacientes, me gusta mantener una relación y comunicacion estrecha con la finalidad de resolver en todo momento dudas sobre diagnóstico, tratamiento e indicaciones médicas. En la consulta me gusta fomentar un ambiente cálido, de confianza y de apertura para poder llegar a un diagnóstico correcto y poderte brindar el mejor tratamiento para tu problema.",
+  "addresses": [
+    {
+      "full": "Calle Tarascos 3384-A,"
+    },
+    {
+      "full": "Calle Tarascos 3384-A,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-franco-2/ginecologo/guadalajara#address-id=421895&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:17:28.200Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__ricardo_franco.webp"
+}

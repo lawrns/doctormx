@@ -1,0 +1,25 @@
+{
+  "name": "Javier Castillo Enriquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 17,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/781155c5/781155c5-19fa-4a67-bb43-62f653491d9b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cedro 246-A,"
+    },
+    {
+      "full": "Cedro 246-A,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/javier-castillo-enriquez/ginecologo/ciudad-de-mexico#address-id=217134&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:54:10.437Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/javier_castillo_enriquez.webp"
+}

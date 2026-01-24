@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Alberto Guillermo Hernández Campos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 195,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b1a0bd/b1a0bd541a76213db77c4e9c42bb9d93_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911 colonia Poniente,"
+    },
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911 colonia Poniente,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alberto-guillermo-hernandez-campos/ginecologo/zapopan#address-id=410308&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:18:20.120Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__alberto_guillermo_hern_ndez_campos.webp"
+}

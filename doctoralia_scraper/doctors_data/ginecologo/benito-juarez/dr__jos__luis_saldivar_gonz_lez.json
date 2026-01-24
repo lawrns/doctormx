@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José Luis Saldivar González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 39,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/952456/9524562eac37ee1fd23190f4c26988c0_220_square.jpg",
+  "about": "Mi formación como Médico Cirujano la realice en la Universidad Nacional Autónoma de México, realicé mis estudios de especilidad médica en Ginecología y Obstetricia en la Benemérita Universidad Autónoma de Puebla. Realicé un diplomado en colposcopia y Patologia del tracto genital inferior avalado por la universidad La Salle. Realicé un diplomado en ginecología estética láser y medicina regenerativa funcional avalado por el COMEGICO y la universidad autónoma de Zacatecas. Actualmente médico especialista certificado. Mi objetivo es ofrecerte atención médica especializada de calidad y con calidez en ginecológica y obstetricia, servicios de detección oportuna de cáncer cervicouterino, a demás de tratamientos innovadores en ginecología, también tu seguimiento de control de embarazo de alto y bajo riesgo y por supuesto culquier cirugía Obstétrica y ginecológica compleja. Para mi lo más importante es tu confianza.",
+  "addresses": [
+    {
+      "full": "Avenida Río Churubusco 318,"
+    },
+    {
+      "full": "Avenida Río Churubusco 318,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $750"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $750"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-luis-saldivar-gonzalez/ginecologo/coyoacan#address-id=443420&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:07:19.679Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__jos__luis_saldivar_gonz_lez.webp"
+}

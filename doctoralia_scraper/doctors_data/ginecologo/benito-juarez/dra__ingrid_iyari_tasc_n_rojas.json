@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ingrid Iyari Tascón Rojas",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 155,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1a0965/1a0965e1fcbf1440b612469909aed826_220_square.jpg",
+  "about": "Realicé la carrera de Médico Cirujano en la Facultad de Medicina de la UNAM, posteriormente ingresé a la residencia médica de Ginecología y Obstetricia en la Secretaría de Salud de la Ciudad de México, avalada de igual forma por la UNAM. Cuento con la certificación por parte del Colegio Mexicano de Ginecología y Obstetricia. Además de contar con el aval por parte de la Universidad La Salle para la realización de Colposcopía. Cuento con aval por parte de Universidad La Salle para la realización de ultrasonido ginecológico y obstétrico. Certificada por ALSO para las emergencias obstétricas. COFEPRIS 2309142002A00087",
+  "addresses": [
+    {
+      "full": "Moras 409,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $2,800"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $3,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ingrid-iyari-tascon-rojas/ginecologo/ciudad-de-mexico#address-id=433256&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:00:02.639Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__ingrid_iyari_tasc_n_rojas.webp"
+}

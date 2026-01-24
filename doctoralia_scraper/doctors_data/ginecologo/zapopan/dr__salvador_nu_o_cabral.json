@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Salvador Nuño Cabral",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 398,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/921309/921309582ea844c9f587e3e20c42ccc1_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Unión #163 (Torre Unión) Oficina 607,"
+    },
+    {
+      "full": "Av. Unión #163 (Torre Unión) Oficina 607,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/salvador-nuno-cabral/ginecologo/guadalajara#address-id=15931&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:28:46.778Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__salvador_nu_o_cabral.webp"
+}

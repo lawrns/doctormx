@@ -1,0 +1,25 @@
+{
+  "name": "Humberto Espinosa García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 25,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3fcdd4c0/3fcdd4c0-55b5-4d67-b493-0a13a15ecaff_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "16 Sur 1314 307 Col. Villa Florencia ,"
+    },
+    {
+      "full": "16 Sur 1314 307 Col. Villa Florencia ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/humberto-espinosa-garcia/ginecologo/puebla#address-id=358673&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:30:27.720Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/humberto_espinosa_garc_a.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Jesús Guillermo Pérez Fonseca",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/03a02d/03a02de38c0d9f46c5a674808e35a39e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Patriotismo N. 67, Consultorio 703 Col. San Juan,"
+    },
+    {
+      "full": "Av. Patriotismo N. 67, Consultorio 703 Col. San Juan,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-guillermo-perez-fonseca/ginecologo/ciudad-de-mexico#address-id=148117&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:15:10.611Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/jes_s_guillermo_p_rez_fonseca.webp"
+}

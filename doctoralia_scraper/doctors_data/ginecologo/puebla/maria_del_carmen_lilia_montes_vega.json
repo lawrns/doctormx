@@ -1,0 +1,25 @@
+{
+  "name": "Maria Del Carmen Lilia Montes Vega",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e65d76/e65d7607296bb156698e8b3177fa975b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Reforma Nte. 207,"
+    },
+    {
+      "full": "Reforma Nte. 207,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-del-carmen-lilia-montes-vega/ginecologo/tehuacan#address-id=164323&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:28:43.122Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/maria_del_carmen_lilia_montes_vega.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Silvia Felipa Gomez Delgado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 610,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dfb1df/dfb1dff98c57f00de9bcd71ee43e0bc4_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "7 215-A,"
+    },
+    {
+      "full": "Calle 7 215A , (por 32 y 34),"
+    },
+    {
+      "full": "7 215-A,"
+    },
+    {
+      "full": "Calle 7 215A , (por 32 y 34),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/silvia-felipa-gomez-delgado/ginecologo/merida#address-id=5370&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:46:44.860Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/silvia_felipa_gomez_delgado.webp"
+}

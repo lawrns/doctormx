@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jose Alfonso Martin De Alba",
+  "specialty": "Ginecólogo",
+  "rating": 3.5,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bbe69d/bbe69d3724cc5642c222d672c10dd706_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av.Pablo Neruda N° 2520,"
+    },
+    {
+      "full": "Av.Pablo Neruda N° 2520,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-alfonso-martin-de-alba/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:27:06.877Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jose_alfonso_martin_de_alba.webp"
+}

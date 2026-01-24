@@ -1,0 +1,30 @@
+{
+  "name": "hector arturo velazquez maldonado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 159,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/89bb79/89bb79d8e84a23609080a1c17323a5fd_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "homero 70,"
+    },
+    {
+      "full": "homero 70,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-arturo-velazquez-maldonado-3/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:33:27.524Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/hector_arturo_velazquez_maldonado.webp"
+}

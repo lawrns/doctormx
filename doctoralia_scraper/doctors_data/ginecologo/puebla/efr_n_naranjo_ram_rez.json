@@ -1,0 +1,25 @@
+{
+  "name": "Efrén Naranjo Ramírez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5a0fb1bb/5a0fb1bb-ea56-4f51-a436-d13df01a431b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Benito Juarez 615,"
+    },
+    {
+      "full": "Benito Juarez 615,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/efren-naranjo-ramirez/ginecologo/atotonilco-el-grande#address-id=125443&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:30:18.491Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/efr_n_naranjo_ram_rez.webp"
+}

@@ -1,0 +1,52 @@
+{
+  "name": "Alma Irene Mijangos Patiño",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 318,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/36f5ce/36f5ced39410cc4d776ce2868f657487_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "31 Sur #3110,"
+    },
+    {
+      "full": "31 SUR 3110 ALTOS,"
+    },
+    {
+      "full": "31 Sur #3110,"
+    },
+    {
+      "full": "31 SUR 3110 ALTOS,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alma-irene-mijangos-patino/ginecologo/puebla#address-id=378560&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:16:44.492Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/alma_irene_mijangos_pati_o.webp"
+}

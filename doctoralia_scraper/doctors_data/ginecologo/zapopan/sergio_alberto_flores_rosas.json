@@ -1,0 +1,25 @@
+{
+  "name": "Sergio Alberto Flores Rosas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1002,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Alcalde 2173,"
+    },
+    {
+      "full": "Av. Alcalde 2173,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-alberto-flores-rosas/ginecologo/guadalajara#address-id=159883&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:43:42.104Z",
+  "localPhotoPath": null
+}

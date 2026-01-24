@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jonathan Valenzuela Zazueta",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fec6dd/fec6dd820fb9e097596d3dbe90e071ad_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Pedro Buzeta 870-A,"
+    },
+    {
+      "full": "Pedro Buzeta 870-A,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": ""
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jonathan-valenzuela-zazueta/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:25:27.219Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jonathan_valenzuela_zazueta.webp"
+}

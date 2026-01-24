@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Jonathan Del Ángel Zarazua",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 14,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1a2a82/1a2a82fa1c2bc27a44e732c31fd1ef66_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Fray Luis de León,"
+    },
+    {
+      "full": "Avenida Fray Luis de León,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jonathan-del-angel-zarazua/ginecologo/queretaro#address-id=460003&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:50:18.111Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__jonathan_del__ngel_zarazua.webp"
+}

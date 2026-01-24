@@ -1,0 +1,42 @@
+{
+  "name": "Dr. José Ramón Rivera Ruiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c896f3/c896f33710c0a8aa07e9879c1403cfe9_220_square.jpg",
+  "about": "EDUCACIÓN 1999-2004 Facultad de Medicina en Universidad Autónoma de Querétaro; Qro. México. 2004-2005 Internado de Pregrado en el del Instituto Mexicano del Seguro Social Hospital General Regional No. 1 Querétaro, Qro. 2005-2006 Servicio Social en la Secretaria de Salud del Estado de Querétaro. 2007-2008 1er año de Especialidad en el Instituto Mexicano del Seguro Social (IMSS) Hospital General de Zona No. 1 Aguascalientes, Ags. Mexico. Universidad Autónoma de Aguascalientes. 2008-2011 2º, 3er y 4º año de Especialidad en el Instituto Mexicano del Seguro Social (IMSS) Unidad Médica de Alta Especialidad Hospital de Gineco-Obstetricia No. 4 Luis Castelazo Ayala, Universidad Nacional Autónoma de México 2010 Servicio Social de la Especialidad en el Instituto Mexicano del Seguro Social, IMSS-Oportunidades Unidad Médica Rural; Venustiano Carranza, Chiapas. 2011-2013 1er y 2o año de Sub-Especialidad en Urología Ginecológica; Hospital Civil de Guadalajara “Fray Antonio Alcalde”, Guadalajara, Jalisco. 2012 Certificado por el Consejo Mexicano de Ginecología y Obstetricia (No. 6170) CONACEM 2013 Certificado por el Consejo Mexicano de Ginecología y Obstetricia en Sub-especialidad de Urología Ginecológica (en trámite) INVESTIGACIÓN Y PARTICIPACIÓN ACADÉMICA 2002 XVIII Congreso Internacional de Medicina en ITESM; Monterrey, NL. Mexico. 2002 XXVI Congreso Nacional de Cirugía; Asociación Mexicana de Cirugía; Acapulco, Gro. 2003 XXIV Curso de actualización de Cirugía; Queretaro, Qro. 2004 ATLS Certificación por el Colegio Americano de Cirugía. 2006 Investigación Clínica “Estado nutricionaL de niños menores de 12 años de edad en la comunidad de San Miguel Galindo, San Juan del Río, Querétaro”. Número de registro en SESEQ, Mexico No. 06-SS-237 2006 XX Curso de Actualización para el ENARM, Universidad Autónoma de Queretaro 2006 Curso de Preparación para el ENARM, Universidad Autónoma de San Luis Potosi 2006 Curso de Preparación para el USMLE; Dallas, Texas. 2007 58 Congreso de Ginecología y Obstetricia; Monterrey, NL. FEMEGO, COMEGO 2009 60 Congreso de Ginecología y Obstetricia; Cancun. FEMEGO, COMEGO 2010 Abstract en la 13ª Jornada Médica Bienal de Ginecología y Obstetricia; HGO No. 4 IMSS 2010 Abstract en el XVI Congreso Regional de Ginecología y Obstetricia; COMEGO, FEMEGO. (5o Lugar) 2010 Abstract en el XXI Congreso de la Sociedad Mexicana de Urología Ginecológica, Monterrey NL. FEMEGO 2010 Abstract en la Joint Annual Meeting de la International Urogynecology Association e International Continence Society; Toronto, Canada. 2011 Abstract, Videos y Trabajos Libres en el XXII Congreso de la Sociedad Mexicana de Urología Ginecológica, Tijuana, BC (1o, 2o y 3o lugares) 2011 Abstract en la Joint Annual Meeting de la International Urogynecology Association; Lisboa, Portugal. 2011 Abstract en el 62 Congreso de Ginecología y Obstetricia; Boca del Río, Veracruz. FEMEGO, COMEGO, 2012 Abstract y Conferencia en XIX Ciclo de Conferencias Médicas Hospitales Civiles; Guadalajara, Jal. 2012 Abstract, Videos y Trabajos Libres en el XXIII Congreso de la Sociedad Mexicana de Urología Ginecológica, Guadalajara, Jal. 2012 63 Congreso de Ginecología y Obstetricia; Guadalajara, Jal. FEMEGO, COMEGO",
+  "addresses": [
+    {
+      "full": "Virrey de Valladolid # 208,"
+    },
+    {
+      "full": "Virrey de Valladolid # 208,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina por vía vaginal",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-ramon-rivera-ruiz/ginecologo/santiago-de-queretaro#address-id=85148&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:49:38.386Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__jos__ram_n_rivera_ruiz.webp"
+}

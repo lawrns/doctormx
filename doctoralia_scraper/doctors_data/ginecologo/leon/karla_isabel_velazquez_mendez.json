@@ -1,0 +1,25 @@
+{
+  "name": "Karla Isabel Velazquez Mendez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 130,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/77ff45/77ff4594ff58b9d6a4253ff5d3a102bb_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Santander 1313,"
+    },
+    {
+      "full": "Santander 1313,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-isabel-velazquez-mendez/ginecologo/leon#address-id=203039&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:38:53.706Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/karla_isabel_velazquez_mendez.webp"
+}

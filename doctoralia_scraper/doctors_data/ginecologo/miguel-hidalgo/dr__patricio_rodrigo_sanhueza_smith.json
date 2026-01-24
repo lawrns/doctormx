@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Patricio Rodrigo Sanhueza Smith",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5266b5ef/5266b5ef-3757-4b92-ba01-bdf1c346fdf9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "TEMISTOCLES 219 B,"
+    },
+    {
+      "full": "TEMISTOCLES 219 B,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/patricio-rodrigo-sanhueza-smith/ginecologo/ciudad-de-mexico#address-id=126541&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:39:37.804Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__patricio_rodrigo_sanhueza_smith.webp"
+}

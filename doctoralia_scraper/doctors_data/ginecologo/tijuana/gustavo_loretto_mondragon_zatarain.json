@@ -1,0 +1,25 @@
+{
+  "name": "Gustavo Loretto Mondragon Zatarain",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 648,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5baec5/5baec591d9371143109ce625c6cd4226_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Eucalipto,2304, Col. Praderas De La Mesa, ,"
+    },
+    {
+      "full": "Eucalipto,2304, Col. Praderas De La Mesa, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gustavo-loretto-mondragon-zatarain/ginecologo/tijuana#address-id=355425&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:06:33.203Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/gustavo_loretto_mondragon_zatarain.webp"
+}

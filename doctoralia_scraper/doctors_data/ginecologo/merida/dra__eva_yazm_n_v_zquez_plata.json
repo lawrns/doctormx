@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Eva Yazmín Vázquez Plata",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 873,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dd3f26/dd3f26f1613709432b1ec1d6e4e28f74_220_square.jpg",
+  "about": "Soy especialista en Ginecología y Obstetricia, egresada del Instituto Mexicano del Seguro Social. Cuento con Diplomado en Colposcopía Básica y Patología del Tracto Genital Inferior, avalado por la Universidad Nacional Autónoma de México, Diplomado en Ginecología Estética, Funcional, Anatómica y Sexológica, avalado por CCME, ISIENA, ICAM USA Academy y el World Society of Cosmetic Gynecology, así como un Diplomado de Climaterio, avalado por FLASOG (Federación Latinoamericana de Sociedades de Obstetricia y Ginecología). Con fines de brindar una atención completa a mis pacientes, cuento con un Diplomado de Ultrasonido en Ginecología y Obstetricia avanzado, avalado por Secretaría de Educación Pública y Universidad Autónoma de Guerrero. Como ginecóloga, mi compromiso es brindar una atención médica de calidad, con actualización médica continua, resaltando una atención ética, respetuosa y con trato empático hacia mis pacientes.",
+  "addresses": [
+    {
+      "full": "CALLE 15 NUMERO 501,"
+    },
+    {
+      "full": "CALLE 15 NUMERO 501,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $900"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eva-yazmin-vazquez-plata/ginecologo/yucatan#address-id=364903&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:32:03.492Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__eva_yazm_n_v_zquez_plata.webp"
+}

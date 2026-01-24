@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Flor Martinez Galicia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/529ef2fc/529ef2fc-ed98-46a0-824d-aca57ec8470b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "MORAS 1260 ESQUINA FRANCIA Y MINERVA,"
+    },
+    {
+      "full": "MORAS 1260 ESQUINA FRANCIA Y MINERVA,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/flor-martinez-galicia/ginecologo/ciudad-de-mexico#address-id=138764&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:10:37.272Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__flor_martinez_galicia.webp"
+}

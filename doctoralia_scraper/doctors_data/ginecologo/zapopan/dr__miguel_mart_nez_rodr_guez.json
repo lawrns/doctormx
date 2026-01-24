@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Miguel Martínez Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 179,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ae164c/ae164c853f32c5badfed5ab14956c51d_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "San Gabriel 333, Colonia Chapalita ,"
+    },
+    {
+      "full": "San Gabriel 333, Colonia Chapalita ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-martinez-rodriguez-2/ginecologo/guadalajara#address-id=414299&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:30:21.644Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__miguel_mart_nez_rodr_guez.webp"
+}

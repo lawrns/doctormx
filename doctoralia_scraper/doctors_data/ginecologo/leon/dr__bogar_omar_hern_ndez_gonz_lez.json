@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Bogar Omar Hernández González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a49f20/a49f20884d4ea2e3b5ea959d4f40cad7_220_square.jpg",
+  "about": "ESPECIALIDAD DE GINECOLOGIA Y OBSTETRICIA UNIVERSIDAD DE GUANAJUATO MEDICINA MATERNO FETAL EN UNIDAD MEDICA DE ALTA ESPECIALIDAD IMSS 48 CURSO EN PREVENCION Y TRATAMIENTO DE HEMORRAGIA OBSTETRICA GRAVE IMSS 2013",
+  "addresses": [
+    {
+      "full": "AVENIDA ROMA 1001 CONSULTORIO 11,"
+    },
+    {
+      "full": "Av. Roma 1001,"
+    },
+    {
+      "full": "AVENIDA ROMA 1001 CONSULTORIO 11,"
+    },
+    {
+      "full": "Av. Roma 1001,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Colocación de cerclaje de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Colocación de cerclaje de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/bogar-omar-hernandez-gonzalez/ginecologo/leon#address-id=13860&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:28:48.294Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__bogar_omar_hern_ndez_gonz_lez.webp"
+}

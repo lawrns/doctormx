@@ -1,0 +1,38 @@
+{
+  "name": "Dra. Ana Cristina Moreno Chávez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/0462b238/0462b238-820d-467d-b239-fdaf994d19dd_small_square.jpg",
+  "about": "Ginecologa y Obstetra Especialista en salud integral de la mujer en sus diferentes etapas desde la pubertad, adolescencia, etapa reproductiva, climaterio y menopausia, salud y bienestar en la mujer de edad avanzada.",
+  "addresses": [
+    {
+      "full": "Av Cerro Gordo,"
+    },
+    {
+      "full": "Av Cerro Gordo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta ginecológica",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-cristina-moreno-chavez/ginecologo/leon#address-id=387263&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:27:18.671Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__ana_cristina_moreno_ch_vez.webp"
+}

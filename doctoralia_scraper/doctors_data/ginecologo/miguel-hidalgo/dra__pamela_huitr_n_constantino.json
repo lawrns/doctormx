@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Pamela Huitrón Constantino",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/75eb80/75eb80d7c116b1a021d6f86999faf4c5_220_square.jpg",
+  "about": "Soy sub especialista en Médico Materno Fetal egresada del Hospital General de México, especialista en Ginecología y Obstetricia de la misma sede, certificada en ambas especialidades por el Consejo Mexicano de Ginecología y Obstetricia.",
+  "addresses": [
+    {
+      "full": "Patriotismo 671,"
+    },
+    {
+      "full": "Patriotismo 671,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pamela-huitron-constantino/ginecologo/miguel-hidalgo#address-id=137201&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:04:49.322Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__pamela_huitr_n_constantino.webp"
+}

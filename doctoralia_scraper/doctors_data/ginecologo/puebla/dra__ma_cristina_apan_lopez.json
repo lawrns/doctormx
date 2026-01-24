@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Ma Cristina Apan Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2a621b/2a621b62b230b0dcbbe20b18eff656cf_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "30 Poniente 1308,"
+    },
+    {
+      "full": "30 Poniente 1308,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ma-cristina-apan-lopez/ginecologo/puebla#address-id=66833&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:18:55.060Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__ma_cristina_apan_lopez.webp"
+}

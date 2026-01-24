@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Ramiro Gonzalez Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/297a98/297a98f64b22adab02c521f035ba1595_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ruben Dario 420,"
+    },
+    {
+      "full": "Ruben Dario 420,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ramiro-gonzalez-rodriguez/ginecologo/guadalajara#address-id=70164&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:32:25.938Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__ramiro_gonzalez_rodriguez.webp"
+}

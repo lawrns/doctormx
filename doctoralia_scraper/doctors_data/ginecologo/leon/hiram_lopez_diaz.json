@@ -1,0 +1,31 @@
+{
+  "name": "Hiram Lopez Diaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 432,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5aff7c/5aff7c93716e1f020e3198896b6e014f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Francia 701,"
+    },
+    {
+      "full": "Paseo De Los Insurgentes Sn,"
+    },
+    {
+      "full": "Francia 701,"
+    },
+    {
+      "full": "Paseo De Los Insurgentes Sn,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hiram-lopez-diaz-2/ginecologo/leon#address-id=220823&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:37:31.106Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/hiram_lopez_diaz.webp"
+}

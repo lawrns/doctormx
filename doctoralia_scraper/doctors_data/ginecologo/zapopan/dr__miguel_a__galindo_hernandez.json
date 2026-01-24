@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Miguel A. Galindo Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9d00c52a/9d00c52a-0e82-48b9-8744-0b6cc2d48dca_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Nelson 218,"
+    },
+    {
+      "full": "Calle Nelson 218,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-a-galindo-hernandez/ginecologo/guadalajara#address-id=137031&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:29:46.249Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__miguel_a__galindo_hernandez.webp"
+}

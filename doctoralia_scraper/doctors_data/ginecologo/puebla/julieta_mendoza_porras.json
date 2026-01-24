@@ -1,0 +1,46 @@
+{
+  "name": "Julieta Mendoza Porras",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 725,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8791f9/8791f9f0c72a91b4bc3863e1f0dca83d_220_square.jpg",
+  "about": "soy Julieta Mendoza Porras, he trabajado a lo largo de mi trayectoria tanto en institución, como en consulta privada. Me licencie en medicina en la Benemérita Universidad Autónoma de Puebla con la especialidad en Ginecología y Obstetricia en el Centro Médico de alta especialidad ¨La Raza ¨. Me apasiona la ginecología y obstetricia desde la perspectiva integral de la mujer, la relación de los padecimientos físicos con las emociones, la importancia de la bioneuroemoción de la mujer embarazada en la psique del recién nacido , así como la detección precoz de enfermedades psicosomáticas que se relacionan con el aparato reproductor femenino. Creo que el enfoque de un ginecólogo en el manejo integral de la mujer, debe abarcar la perspectiva bio psico sociocultural que vive la paciente, para poder individualizar su manejo . Tengo formación en colposcopía y patología del tracto genital inferior, histeroscopía diagnóstica, técnicas quirúrgicas avanzadas para el control de la hemorragia en ginecología y obstetricia, lactancia materna y apego , así como estrategias de regulación emocional durante el embarazo, parto y puerperio, así como en la etapa de climaterio y menopausia .... y trato de combinar estas herramientas en el manejo individualizado de mis pacientes con muy buenos resultados.",
+  "addresses": [
+    {
+      "full": "Av. Kepler 2143,"
+    },
+    {
+      "full": "Av. Kepler 2143,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Control prenatal",
+      "price": ""
+    },
+    {
+      "name": "Parto humanizado",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/julieta-mendoza-porras/ginecologo/puebla#address-id=116047&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:11:38.128Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/julieta_mendoza_porras.webp"
+}

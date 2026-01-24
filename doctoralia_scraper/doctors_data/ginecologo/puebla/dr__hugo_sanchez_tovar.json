@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Hugo Sanchez Tovar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/47a7a0/47a7a0693177c150bd5e9c2b635c704c_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Consultorio - 622,"
+    },
+    {
+      "full": "Consultorio - 622,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hugo-sanchez-tovar/ginecologo/puebla#address-id=54387&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:13:04.778Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__hugo_sanchez_tovar.webp"
+}

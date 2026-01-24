@@ -1,0 +1,25 @@
+{
+  "name": "Ileana Noemi Hay Alcocer",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 53,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/b3701c16/b3701c16-d79b-4766-8ecf-6bdf61b83352_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "49 F Por 46 Y 48,273,Fracc Francisco De Montejo,,"
+    },
+    {
+      "full": "49 F Por 46 Y 48,273,Fracc Francisco De Montejo,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ileana-noemi-hay-alcocer/ginecologo/merida#address-id=357824&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:49:08.828Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/ileana_noemi_hay_alcocer.webp"
+}

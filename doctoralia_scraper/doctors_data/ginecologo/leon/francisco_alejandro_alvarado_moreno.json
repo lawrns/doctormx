@@ -1,0 +1,25 @@
+{
+  "name": "Francisco Alejandro Alvarado Moreno",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 430,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c6eef1/c6eef17ef3e1d0c7ba0108d92b820c8b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "De Amaris 124Col. Fuentes Del Valle,"
+    },
+    {
+      "full": "De Amaris 124Col. Fuentes Del Valle,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-alejandro-alvarado-moreno/ginecologo/leon#address-id=356535&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:36:30.916Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/francisco_alejandro_alvarado_moreno.webp"
+}

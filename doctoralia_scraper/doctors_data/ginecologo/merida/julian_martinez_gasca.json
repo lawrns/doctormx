@@ -1,0 +1,25 @@
+{
+  "name": "Julian Martinez Gasca",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 631,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6ce73c/6ce73cc0801040c5d06e52235743b805_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "81 D Por 104 Y 106 820, Col. Fracc Renacimiento, ,"
+    },
+    {
+      "full": "81 D Por 104 Y 106 820, Col. Fracc Renacimiento, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/julian-martinez-gasca/ginecologo/merida#address-id=355678&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:50:10.128Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/julian_martinez_gasca.webp"
+}

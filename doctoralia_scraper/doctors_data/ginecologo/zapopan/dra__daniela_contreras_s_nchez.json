@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Daniela Contreras Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d542f5/d542f5e471725ed622f5dd0fc352524a_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Luis Pérez Verdia 270,"
+    },
+    {
+      "full": "Luis Pérez Verdia 270,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniela-contreras-sanchez/ginecologo/guadalajara#address-id=368812&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:21:53.794Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__daniela_contreras_s_nchez.webp"
+}

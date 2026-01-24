@@ -1,0 +1,43 @@
+{
+  "name": "Dr. David Colmenero Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1069,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3e3cbf/3e3cbf941283cbb9c89038e4f078c234.jpg",
+  "about": "Soy un médico certificado en la especialidad de Ginecología-Obstetricia y con Sub-Especialidad en Medicina Materno Fetal. *En el área de la Obstetricia y Medicina Materno Fetal: Cuento con la experiencia y especialización necesarias para que mis pacientes se sientan tranquilas de que su embarazo va por buen camino, ofreciendo detección oportuna de enfermedades que pueden complicar su embarazo, además de una evaluación fetal avanzada orientada a la edad gestacional en la que se encuentre la paciente, realización de técnicas diagnósticas fetales avanzadas para demostrar el bienestar fetal y el equipo tecnológico necesario para realizar estas técnicas diagnosticas, previniendo que las complicaciones derivadas del embarazo se tornen graves \"Siempre con un enfoque que beneficie a la madre y su bebé\". *En el área de Ginecología: Derivado de mi Especialidad cuento con el conocimiento y experiencia necesarios para tratar las alteraciones ginecológicas que más comúnmente afectan a las mujeres mexicanas, ofreciendo tratamientos actualizados y enfocados en la actualidad que viven las mujeres profesionistas y trabajadoras. Egresado de la Universidad Autónoma de Guadalajara, como médico General. Especialidad de Ginecología y Obstetricia en la UMAE-CMNNO con mención honorífica. Sub-Especialidad en Medicina Materno Fetal en la UMAE-CMNO con mención honorífica. Acreditado y recertificado por la Fetal Medicine Foundation, FMF ID 129184. Certificado y recertificado por la Fetal Medicine Foundation en exploración fetal de las 11 - 13.6 semanas (desde el 2014). Socio fundador núcleo médico GineLife (2015). Médico adscrito al servicio de Medicina Materno Fetal del CMNO (2016) Certificado por el consejo de ginecología y obstetricia de México (2017) Miembro activo de la sociedad de Medicina Materno Fetal del estado de Jalisco a.c. (desde 2017) Certificado por la Fetal Medicine Foundation en la medición de longitud cervical transvaginal para predicción de parto prematuro (2017) Profesor adjunto de la sub-especialidad de medicina materno fetal de la unidad medica de alta especialidad HGO - Guadalajara (Desde 2017) Ponente, tema; Evaluación ecográfica de la falla cardíaca fetal. Unidad medica de alta especialidad - Hospital de Ginecoobstetricia (2018) Reconocimiento en el fomento a la educación en la especialidad de Medicina Materno Fetal, Generación UMAE - HGO - CMNO 2016 - 2018 (2018)",
+  "addresses": [
+    {
+      "full": "Eulogio Parra 2969 (Unidad médica San Pablo), Consultorio 10,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Cariotipo en Líquido Amniotico",
+      "price": "• Desde $18,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,600"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/david-colmenero-sanchez/ginecologo/zapopan",
+  "scrapedAt": "2026-01-22T04:24:32.589Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__david_colmenero_s_nchez.webp"
+}

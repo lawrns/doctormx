@@ -1,0 +1,43 @@
+{
+  "name": "Dra. María Teresa Flores Molina",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 94,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9504f30a/9504f30a-d64b-4bc6-afdd-f599525f2f96_small_square.jpg",
+  "about": "Hola soy la Doctora Tere flores Ginecóloga y obstetra, egresada de Centro Médico Nacional La Raza y Médico materno-fetal , egresada del Instituto Nacional de Perinatologia, me encantaria conocerlas y ser parte de su embarazo! Para mis pacientitas no embarazadas tengo amplia experiencia en tratamiento para VPH y en tratamiento a ginecologicos",
+  "addresses": [
+    {
+      "full": "Av. La Herradura MZA 030,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,550"
+    },
+    {
+      "name": "Ultrasonido avanzado de primer trimestre (semanas 11 a 14)",
+      "price": "• Desde $2,200"
+    },
+    {
+      "name": "Ultrasonido avanzado de segundo trimestre (semanas 18 a 24)",
+      "price": "• Desde $2,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-teresa-flores-molina/ginecologo/tlalnepantla-de-baz2",
+  "scrapedAt": "2026-01-22T01:56:58.618Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__mar_a_teresa_flores_molina.webp"
+}

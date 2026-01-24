@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Ernesto Vladimir Marin Mosquera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dc2e60/dc2e6054dcadd2af3bfd68015c11c107_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "MORELOS 1835,"
+    },
+    {
+      "full": "MORELOS 1835,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ernesto-vladimir-marin-mosquera/ginecologo/guadalajara#address-id=63384&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:22:09.665Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__ernesto_vladimir_marin_mosquera.webp"
+}

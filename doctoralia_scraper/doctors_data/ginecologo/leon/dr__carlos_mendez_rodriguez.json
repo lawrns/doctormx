@@ -1,0 +1,37 @@
+{
+  "name": "Dr. Carlos Mendez Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 3.5,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c6eef1/c6eef17ef3e1d0c7ba0108d92b820c8b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "La Luz 5235,"
+    },
+    {
+      "full": "Blvd. Jose Maria Morelos 152,"
+    },
+    {
+      "full": "C. Morelos 132,"
+    },
+    {
+      "full": "La Luz 5235,"
+    },
+    {
+      "full": "Blvd. Jose Maria Morelos 152,"
+    },
+    {
+      "full": "C. Morelos 132,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-mendez-rodriguez/ginecologo/leon#address-id=239998&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:30:51.391Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__carlos_mendez_rodriguez.webp"
+}

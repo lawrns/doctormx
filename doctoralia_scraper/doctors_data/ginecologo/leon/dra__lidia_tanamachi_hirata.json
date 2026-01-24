@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Lidia Tanamachi Hirata",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7c3995/7c3995dde52f2d5b70c7684629b05da8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Juan Bautista La Salle 307,"
+    },
+    {
+      "full": "Juan Bautista La Salle 307,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lidia-tanamachi-hirata/ginecologo/leon#address-id=44768&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:30:34.523Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__lidia_tanamachi_hirata.webp"
+}

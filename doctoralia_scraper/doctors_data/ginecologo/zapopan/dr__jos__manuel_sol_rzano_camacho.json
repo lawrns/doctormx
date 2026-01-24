@@ -1,0 +1,43 @@
+{
+  "name": "Dr. José Manuel Solórzano Camacho",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 292,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/98c94647/98c94647-aed8-481f-9446-6efa6400b06d_small_square.jpg",
+  "about": "La mujer es el pilar y soporte de una familia, por lo que es de suma importancia procurar por su salud. Mi compromiso es brindarle una atención médica integral de todos sus problemas gineco obstetricos, desde la edad reproductiva (embarazo) hasta el climaterio y menopausia, siempre y por encima de todo, con ética, profesionalismo y el debido respeto.",
+  "addresses": [
+    {
+      "full": "Av. la Cima 757,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $25,500"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-manuel-solorzano-camacho/ginecologo/zapopan#address-id=101458&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:08:29.444Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jos__manuel_sol_rzano_camacho.webp"
+}

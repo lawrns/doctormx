@@ -1,0 +1,40 @@
+{
+  "name": "Dr. Gabriel Alfredo Sandoval Huerta",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5ef1bd/5ef1bd990de03ef933071253e007f115_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Paseo de los almendros 2310,"
+    },
+    {
+      "full": "Paseo de los almendros 2310 fraccionamiento Tabachines, Zapopan, Jalisco, México,"
+    },
+    {
+      "full": "Paseo de los almendros 2310,"
+    },
+    {
+      "full": "Paseo de los almendros 2310 fraccionamiento Tabachines, Zapopan, Jalisco, México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriel-alfredo-sandoval-huerta/ginecologo/zapopan#address-id=25297&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:28:54.043Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__gabriel_alfredo_sandoval_huerta.webp"
+}

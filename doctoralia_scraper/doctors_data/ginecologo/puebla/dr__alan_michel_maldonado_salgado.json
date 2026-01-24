@@ -1,0 +1,98 @@
+{
+  "name": "Dr. Alan Michel Maldonado Salgado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8e8b17/8e8b17fab7c11d206e1f564b2b05357a_220_square.jpg",
+  "about": "Médico-Cirujano egresado de la Universidad Popular Autónoma del Estado de Puebla Especialista en Ginecología y Obstetricia en el Instituto Nacional de Perinatología (INPer) Subespecialidad en Técnicas Auxiliares de Reproducción Humana (Nascere/UNAM)",
+  "addresses": [
+    {
+      "full": "Avenida Reforma Sur 3101 Colonia La Paz (Médica Fem),"
+    },
+    {
+      "full": "Reforma Sur 3101, Colonia La Paz. Puebla, Puebla.,"
+    },
+    {
+      "full": "19 Norte 1001,"
+    },
+    {
+      "full": "Avenida Reforma Sur 3101 Colonia La Paz (Médica Fem),"
+    },
+    {
+      "full": "Reforma Sur 3101, Colonia La Paz. Puebla, Puebla.,"
+    },
+    {
+      "full": "19 Norte 1001,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alan-michel-maldonado-salgado/ginecologo/puebla#address-id=4146&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:11:49.757Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__alan_michel_maldonado_salgado.webp"
+}

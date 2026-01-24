@@ -1,0 +1,31 @@
+{
+  "name": "Montserrat Magali Aldrete Cebreros",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1527,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dbe816/dbe81661aa30bd9bc70f97f26e2700ed_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Juan De Dios Robledo No. 686-A,"
+    },
+    {
+      "full": "Justo Sierra 2620,"
+    },
+    {
+      "full": "Juan De Dios Robledo No. 686-A,"
+    },
+    {
+      "full": "Justo Sierra 2620,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/montserrat-magali-aldrete-cebreros/ginecologo/guadalajara#address-id=185458&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:42:28.030Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/montserrat_magali_aldrete_cebreros.webp"
+}

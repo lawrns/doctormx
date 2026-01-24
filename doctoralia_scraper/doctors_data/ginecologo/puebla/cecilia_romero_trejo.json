@@ -1,0 +1,25 @@
+{
+  "name": "Cecilia Romero Trejo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 513,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8cd02c/8cd02cc06741e9e42403e5d833c2b841_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Priv. De Las Ramblas №4,"
+    },
+    {
+      "full": "Priv. De Las Ramblas №4,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cecilia-romero-trejo-2/ginecologo/puebla#address-id=148346&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:29:16.509Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/cecilia_romero_trejo.webp"
+}

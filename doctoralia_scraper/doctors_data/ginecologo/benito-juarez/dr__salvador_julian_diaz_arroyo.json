@@ -1,0 +1,58 @@
+{
+  "name": "Dr. Salvador Julian Diaz Arroyo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 20,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9fdc2359/9fdc2359-ab8b-4a7f-9360-8590426b0047_small_square.jpg",
+  "about": "Soy el Dr. Julián Diaz Arroyo egresado de la Universidad Autónoma de México, realice mi especialidad en Centro Médico Nacional la Raza.Actualmente soy el Jefe de Servicio de Ginecología del Hospital Regional de Zona No.72 del IMSS.He trabajado en equipo con la Dra. Laura Romina Carpio Martínez desde hace 10 años y juntos nuestra misión es brindarte un servicio de calidad para que puedas entender cómo mejorar tu salud en cada etapa de la vida desde la pubertad hasta la vejez.",
+  "addresses": [
+    {
+      "full": "Avenida Revolución, 1225 COND, CMC 2, Consultorio 03N6, Col. Los Alpes,"
+    },
+    {
+      "full": "Calle Rio Bamba 804-int 8,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/salvador-julian-diaz-arroyo/ginecologo/alvaro-obregon#address-id=613408&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:02:56.994Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__salvador_julian_diaz_arroyo.webp"
+}

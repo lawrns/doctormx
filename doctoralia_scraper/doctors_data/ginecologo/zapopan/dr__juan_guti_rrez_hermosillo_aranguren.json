@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Juan Gutiérrez Hermosillo Aranguren",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7f6820/7f6820eaeebd646ca998cd9e82be5031_220_square.jpg",
+  "about": "Dr. Juan Gutiérrez Hermosillo ArangurenMédico Cirujano por la Universidad Autónoma de GuadalajaraEspecialista en Ginecología y Obstetricia por la Universidad de GuadalajaraMáster en Nutrición y Salud Hormonal en la Mujer por la Universidad Católica de San Antonio de MurciaReproducción Humana por la Universidad Complutense de MadridEspecialista en ginecología, endocrinología reproductiva y trastornos metabólicos de la mujer. Enfocado en diagnóstico y tratamiento integral de problemas reproductivos, hormonales y de fertilidad.",
+  "addresses": [
+    {
+      "full": "Calle Quebec #631,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-gutierrez-hermosillo-aranguren/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:06:59.095Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__juan_guti_rrez_hermosillo_aranguren.webp"
+}

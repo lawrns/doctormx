@@ -1,0 +1,31 @@
+{
+  "name": "Karim Chalita Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/4f4c937d/4f4c937d-b79a-419f-9469-9a349be475ad_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Gonzalez Ortega 876,"
+    },
+    {
+      "full": "C. 3A. Carrillo Puerto 1830,"
+    },
+    {
+      "full": "Av. Gonzalez Ortega 876,"
+    },
+    {
+      "full": "C. 3A. Carrillo Puerto 1830,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karim-chalita-rodriguez/ginecologo/tijuana#address-id=203242&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:24:26.457Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/karim_chalita_rodriguez.webp"
+}

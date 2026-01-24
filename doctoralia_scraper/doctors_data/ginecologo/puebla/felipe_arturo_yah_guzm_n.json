@@ -1,0 +1,25 @@
+{
+  "name": "Felipe Arturo Yah Guzmán",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 305,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/15fb52/15fb52cad90c00c2dba98348957c49d1_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Muñoz Camargo 49 B,"
+    },
+    {
+      "full": "Muñoz Camargo 49 B,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/felipe-arturo-yah-guzman/ginecologo/tlaxcala#address-id=131788&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:32:33.824Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/felipe_arturo_yah_guzm_n.webp"
+}

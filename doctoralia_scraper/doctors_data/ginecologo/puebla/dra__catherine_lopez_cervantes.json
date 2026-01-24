@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Catherine Lopez Cervantes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4e3d74/4e3d7479247a3fd67d10f81083ca0ab7_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. 11 Ote 1826,"
+    },
+    {
+      "full": "Las Ramblas Vía Atlixcayotl 5130 (Hospital Puebla 2do piso),"
+    },
+    {
+      "full": "Av. 11 Ote 1826,"
+    },
+    {
+      "full": "Las Ramblas Vía Atlixcayotl 5130 (Hospital Puebla 2do piso),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/catherine-lopez-cervantes/ginecologo/puebla#address-id=12906&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:13:45.942Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__catherine_lopez_cervantes.webp"
+}

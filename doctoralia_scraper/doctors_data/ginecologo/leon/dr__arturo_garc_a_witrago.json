@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Arturo García Witrago",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 251,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b74ad7/b74ad760e5707523a67e5fd913b0ab41_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. 5 De Febrero 724,"
+    },
+    {
+      "full": "Av. 5 De Febrero 724,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arturo-garcia-witrago/ginecologo/leon#address-id=4538&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:30:08.309Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__arturo_garc_a_witrago.webp"
+}

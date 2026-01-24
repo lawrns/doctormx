@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Luis Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 121,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/778dffe7/778dffe7-7451-4c20-bba8-aaa631b16c3d_140_square.jpg",
+  "about": "Hola, soy el Dr. Luis García como médico gineco-obstetra entiendo lo importante que es tu salud íntima, por eso te ofrezco un servicio de Calidad en todo momento, puedes estar segura que desde el momento de la primer consulta haré todo lo necesario para recuperar su salud. La honestidad en mis servicios es una premisa en la atención, mi lealtad hacia ti, incluyen ofrecerte siempre un servicio con Calidez y una satisfacción total.",
+  "addresses": [
+    {
+      "full": "AVENIDA LOMAS VERDES 2165, LOS ALAMOS,"
+    },
+    {
+      "full": "AVENIDA LOMAS VERDES 2165, LOS ALAMOS,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": "• $4,500"
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": "• $4,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-garcia-2/ginecologo/naucalpan-de-juarez#address-id=413770&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:34:32.892Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__luis_garcia.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Federico Marin Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 143,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cb7387/cb7387d3e3a9832474a1df6227741c06_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Adolfo Prieto No.812,"
+    },
+    {
+      "full": "Adolfo Prieto No.812,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/federico-marin-garcia/ginecologo/benito-juarez#address-id=116006&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:17:16.663Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__federico_marin_garcia.webp"
+}

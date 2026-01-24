@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Aldo Loza Mapomé",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/369b29/369b296fb1f79bd5d937487741b72f3a_220_square.jpg",
+  "about": "Hola soy originario de los Altos de Jalisco, egresado de la Universidad Autónoma de Guadalajara, me especialice en Ginecología en Mérida, Yucatán. Actualmente me encuentro realizando una subespecialidad en Biología de la Reproducción Humana. Cuento con la especialización en reproducción asistida por el Instituto Valenciano de Infertilidad de Madrid, España.",
+  "addresses": [
+    {
+      "full": "Boulevard Puerta de hierro 5150,"
+    },
+    {
+      "full": "Boulevard Puerta de hierro 5150,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aldo-loza-mapome/ginecologo/zapopan",
+  "scrapedAt": "2026-01-22T04:27:23.003Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__aldo_loza_mapom_.webp"
+}

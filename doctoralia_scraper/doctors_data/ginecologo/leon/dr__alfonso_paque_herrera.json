@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Alfonso Paque Herrera",
+  "specialty": "Ginecólogo",
+  "rating": 3.5,
+  "reviewCount": 3,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d1660f9d/d1660f9d-426a-48c6-a172-202919fcbd37_small_square.jpg",
+  "about": "En mi consultorio se encuentra equipo especializado para atender cualquier tipo de padecimientos ginecológicos y de diagnostico como: Ultrasonido, asa diatérmica, toma de biopsias, entre otros.",
+  "addresses": [
+    {
+      "full": "Boulevard Vicente Valtierra 2702,"
+    },
+    {
+      "full": "Boulevard Vicente Valtierra 2702,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfonso-paque-herrera/ginecologo/leon#address-id=536515&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:28:46.797Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__alfonso_paque_herrera.webp"
+}

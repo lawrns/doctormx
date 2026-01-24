@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Edgar Noe Vázquez Canizales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 20,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3fc0fc18/3fc0fc18-4414-4fa2-81c0-94c53e5c1a52_small_square.jpg",
+  "about": "Dr. Edgar Noé Vázquez CanizalesGinecólogo – Obstetra – Colposcopista – Cirujano de Mínima InvasiónCreo que la ginecología y la obstetricia van más allá de la medicina: son una forma de acompañar, de cuidar y de estar presente en los momentos más importantes de la vida de una mujer.Soy especialista en Ginecología y Obstetricia, con formación en Colposcopia, Patología del Tracto Genital e Infecciones de Transmisión Sexual, así como en Cirugía Laparoscópica de Mínima Invasión.Mi práctica se enfoca en la prevención, diagnóstico y tratamiento integral de la salud femenina, ofreciendo atención profesional y cálida en:Control prenatal y embarazo de alto riesgoAtención y resolución del embarazo por parto o cesáreaColposcopia, papanicolaou y vacunación contra VPHTratamientos de infecciones de transmisión sexualCirugías ginecológicas laparoscópicasCuento con dos espacios diseñados para cuidar tu salud y brindarte confianza:Hospital Ángeles Centro Sur, reconocido por su excelencia médica.Consultorio en Colonia Fundadores (Av. de la Luz), accesible y con atención cercana.En cada consulta busco crear un ambiente donde la mujer se sienta escuchada, segura y acompañada.",
+  "addresses": [
+    {
+      "full": "Avenida de las Fuentes 2200,"
+    },
+    {
+      "full": "Boulevard Bernardo Quintana Arrioja 9670,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edgar-noe-vazquez-canizales/ginecologo/santiago-de-queretaro#address-id=613785&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:43:53.247Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__edgar_noe_v_zquez_canizales.webp"
+}

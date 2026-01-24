@@ -1,0 +1,43 @@
+{
+  "name": "Dulce Jasmin Verde Ceja",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 80,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/339c09/339c093c06bc3741bb3b4a2262a27d35_220_square.jpg",
+  "about": "Realicé la Licenciatura de Medico en la Universidad Autónoma de Baja California en Tijuana, Me traslade a la Ciudad de San Luis Potosí, en donde curse mi primer año de residencia de la especialidad, y posteriormente en Monterrey, Nuevo León, en donde complete mis 4 años de la Especialidad de Ginecología y Obstetricia. Durante estos 4 años, logré adquirir los conocimientos y destrezas tanto médicas y quirúrgicas necesarias para un manejo integral de la paciente ginecológica y obstétrica. Cuento con un Diplomado en Ultrasonido Obstétrico y otro más de Doppler Fetal para una atención más completa a mis pacientes embarazadas. Mi misión es siempre mantenerte informada sobre tu diagnóstico y los diferentes tratamientos disponibles, para que podamos escoger el que sea más adecuado a ti y a tu estilo de vida, siempre dándote la información más actualizada hasta el momento.",
+  "addresses": [
+    {
+      "full": "Luis Cabrera 1509, Zona Rio,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dulce-jasmin-verde-ceja/ginecologo/tijuana#address-id=419437&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:42:23.394Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dulce_jasmin_verde_ceja.webp"
+}

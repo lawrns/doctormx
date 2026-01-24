@@ -1,0 +1,25 @@
+{
+  "name": "Ana Karinne Sanchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/8b89c0d8/8b89c0d8-87e1-4d51-b3d1-a9906438e0f8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Eusebio Francisco Kino 66,"
+    },
+    {
+      "full": "C. Eusebio Francisco Kino 66,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-karinne-sanchez/ginecologo/santiago-de-queretaro#address-id=247312&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:56:00.156Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/ana_karinne_sanchez.webp"
+}

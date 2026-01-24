@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Edgar Adrián Cobos Robles",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 45,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/96f9b9/96f9b931d0aac1dd8289b5a1dcc6988d_220_square.jpg",
+  "about": "La razón por la que me especialicé en Ginecología y Obstetricia es para brindarte a ti como Mujer la Mejor Atención Médica que requieres en cada una de las etapas de tu vida , Desde el inicio de tu menarca, durante tu embarazo y perimenopausia; Asi como tratar enfermedades propias de la Mujer. Mi objetivo es proporcionarte una atención médica de calidad en un ambiente de confianza, me encuentro en capacitacion constante por lo que estoy Certificado por el Consejo Mexicano de Ginecologia y Obstetricia. Estoy para servirte.",
+  "addresses": [
+    {
+      "full": "Avenida Constituyentes 302,"
+    },
+    {
+      "full": "Venustiano Carranza #142 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edgar-adrian-cobos-robles/ginecologo/ezequiel-montes#address-id=470430&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:43:32.640Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__edgar_adri_n_cobos_robles.webp"
+}

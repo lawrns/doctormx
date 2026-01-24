@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Berenice Pérez Elizalde",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 98,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7aeecc/7aeecc2abec6a63c4b1dca11118b90fe_220_square.jpg",
+  "about": "Soy Ginecóloga, Obstetra y Colposcopista comprometida con el cuidado de la mujer en cada una de sus etapas como adolescencia, embarazo, salud reproductiva, climaterio y menopausia, acompañandote para que juntas logremos alcanzar la plenitud y equilibrio si como una adecuada salud, ya que es mi principal motivo al servicio de mis pacientes. Estoy comprometida al 100% en concientizar sobre el cuidado y prevención de las enfermedades de la mujer.",
+  "addresses": [
+    {
+      "full": "Av. de las Ciencias 2058,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colocación de implante subdérmico",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/berenice-perez-elizalde/ginecologo/queretaro#address-id=438610&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:44:15.885Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__berenice_p_rez_elizalde.webp"
+}

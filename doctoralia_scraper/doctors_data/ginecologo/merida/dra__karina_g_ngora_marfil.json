@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Karina Góngora Marfil",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 200,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b765de/b765de313597258c780dd037074bf2f9_220_square.jpg",
+  "about": "Médica con perspectiva de género, la cual cuenta con 20 años de experiencia, atendiendo desde niñas hasta mujeres adultas pos menopaúsicas...así como atención a las parejas de pacientes en edad reproductiva...para mejorar su bienestar sexual",
+  "addresses": [
+    {
+      "full": "AVENIDA ITZAES NUMERO 489 X 49 y avenida jacinto canek COLONIA CENTRO,"
+    },
+    {
+      "full": "AVENIDA ITZAES NUMERO 489 X 49 y avenida jacinto canek COLONIA CENTRO,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $850"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karina-gongora-marfil/ginecologo/yucatan#address-id=396578&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:34:19.680Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__karina_g_ngora_marfil.webp"
+}

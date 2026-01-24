@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Jazmín Leticia Rejón Barrancos",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 123,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d76940/d7694034218ce031c92d7bdf995fa71c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 26 199,"
+    },
+    {
+      "full": "Calle 26 199,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jazmin-leticia-rejon-barrancos/ginecologo/merida#address-id=8273&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:51:30.692Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__jazm_n_leticia_rej_n_barrancos.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Miguel Ricardo Sotelo Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 150,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/17aad8b6/17aad8b6-d8f7-44cf-bb29-e75a69882987_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ote. 11 240,"
+    },
+    {
+      "full": "Ote. 11 240,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-ricardo-sotelo-garcia/ginecologo/orizaba#address-id=186592&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:22:37.506Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/miguel_ricardo_sotelo_garcia.webp"
+}

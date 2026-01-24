@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ariadna María Gutiérrez Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 135,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f281d4/f281d45d0cf147045af70d745cb6da40_220_square.jpg",
+  "about": "Estoy dedicada a la atención de la mujer de manera integral durante diferentes etapas de la vida. Realice mi especialidad en la ciudad de Monterrey, Nuevo León. en uno de los hospitales más grandes del país por lo que considero me ha brindado experiencia en la toma de decisiones, además considero que visualizo de una manera integral e individualizada a cada paciente y su padecimiento. Mi atención está enfocada a la prevención de enfermedades, asesoría y aplicación de métodos de planificación familiar así como diagnóstico y tratamiento de padecimientos reproductivos, obstétricos y climatéricos.",
+  "addresses": [
+    {
+      "full": "Boulevard Aeropuerto 101,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ariadna-maria-gutierrez-flores/ginecologo/leon#address-id=505868&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:26:22.473Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__ariadna_mar_a_guti_rrez_flores.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Blanca Yamili Padilla García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2602c2/2602c22e4a6d532bf43241312f00c73a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hidalgo 329,"
+    },
+    {
+      "full": "Hidalgo 329,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/blanca-yamili-padilla-garcia/ginecologo/leon#address-id=13799&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:31:02.456Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__blanca_yamili_padilla_garc_a.webp"
+}

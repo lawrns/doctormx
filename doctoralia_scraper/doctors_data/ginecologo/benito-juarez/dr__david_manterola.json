@@ -1,0 +1,46 @@
+{
+  "name": "Dr. David Manterola",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3fed78/3fed7851a52528db5d80363997bfa51c_220_square.jpg",
+  "about": "El Dr. David Manterola Alvarez es especialista en Ginecología y Obstetricia egresado de la Universidad Nacional Autónoma de México. Posteriormente se especializó en Biología de la Reproducción Humana y en Cirugía Endoscópica Ginecológica de la misma institución. Atiende a sus pacientes en su consultorio privado, así como en cualquiera de los hospitales como son Hospital Médica Sur, Centro Médico Dalinde, Hospitales San Angel Inn, Hospital Tehuantepec, entre muchos otros, de acuerdo a las necesidades y tratamientos de cada una de sus pacientes.",
+  "addresses": [
+    {
+      "full": "Tuxpan 63, Roma Sur Consultorio 101,"
+    },
+    {
+      "full": "Tuxpan 63, Roma Sur Consultorio 101,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/david-manterola/ginecologo/cuauhtemoc2#address-id=429777&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:06:31.569Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__david_manterola.webp"
+}

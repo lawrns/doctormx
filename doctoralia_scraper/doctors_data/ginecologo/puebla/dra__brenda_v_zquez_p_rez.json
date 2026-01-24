@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Brenda Vázquez Pérez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 156,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/743b60/743b60d2fcee13b8aeb528d09cdb30d1_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "9na. Oriente 21-D, entre 3ra. Y 5ta. Norte, Colonia Centro,"
+    },
+    {
+      "full": "9na. Oriente 21-D, entre 3ra. Y 5ta. Norte, Colonia Centro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/brenda-vazquez-perez/ginecologo/tapachula#address-id=18982&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:18:51.442Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__brenda_v_zquez_p_rez.webp"
+}

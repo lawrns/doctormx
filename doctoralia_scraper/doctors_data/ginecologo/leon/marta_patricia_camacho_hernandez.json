@@ -1,0 +1,31 @@
+{
+  "name": "Marta Patricia Camacho Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 130,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/77ff45/77ff4594ff58b9d6a4253ff5d3a102bb_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Miguel De Cervantes Saavedra Nte. 1702,"
+    },
+    {
+      "full": "Blvd. Torres Landa Pte. 809 Pte.,"
+    },
+    {
+      "full": "Miguel De Cervantes Saavedra Nte. 1702,"
+    },
+    {
+      "full": "Blvd. Torres Landa Pte. 809 Pte.,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marta-patricia-camacho-hernandez/ginecologo/leon#address-id=189142&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:38:34.733Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/marta_patricia_camacho_hernandez.webp"
+}

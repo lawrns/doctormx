@@ -1,0 +1,25 @@
+{
+  "name": "Gómez José Armando Duarte",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 146,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6a1939/6a1939cd2a5a4ab665a689ff785bded1_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Patriotismo 579. Col. Noche Buena. ,"
+    },
+    {
+      "full": "Av. Patriotismo 579. Col. Noche Buena. ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gomez-jose-armando-duarte/ginecologo/benito-juarez#address-id=358945&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:18:33.213Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/g_mez_jos__armando_duarte.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Héctor Eduardo Gutiérrez Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/74d86f/74d86f4183f8d3594671dd51ffe82136_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Privada Ignacio Zaragoza 16-A Col. Centro ,"
+    },
+    {
+      "full": "Privada Ignacio Zaragoza 16-A Col. Centro ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-eduardo-gutierrez-hernandez/ginecologo/santiago-de-queretaro#address-id=359316&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:00:54.333Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/h_ctor_eduardo_guti_rrez_hern_ndez.webp"
+}

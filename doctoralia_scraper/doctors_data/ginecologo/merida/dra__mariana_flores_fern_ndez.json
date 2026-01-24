@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Mariana Flores Fernández",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 77,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/46c36e69/46c36e69-ebac-4708-b318-433c8c0479ca_small_square.jpg",
+  "about": "Soy la Dra. Mariana Flores, médica cirujana por la UNAM y especialista en Ginecología y Obstetricia, formada en el Instituto Nacional de Perinatología en CDMX.Además de atender embarazos y patología ginecológica (sangrados irregulares, quistes, miomas, etc), cuento con una subespecialidad en Uroginecología para el manejo de incontinencia urinaria, vejiga hiperactiva, cistitis intersticial, infecciones urinarias recurrentes y prolapso de órganos pélvicos.Mi objetivo es ofrecerte una atención cálida, integral y basada en evidencia para mejorar tu salud y calidad de vida.Si notas cambios en tu salud o tienes dudas, agenda tu consulta. ¡Será un placer acompañarte en tu cuidado!",
+  "addresses": [
+    {
+      "full": "Calle 15 501,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Urología Ginecológica",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Aplicación de pesarios",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mariana-flores-fernandez/ginecologo/yucatan#address-id=567273&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:32:43.465Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__mariana_flores_fern_ndez.webp"
+}

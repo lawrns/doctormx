@@ -1,0 +1,30 @@
+{
+  "name": "Dra. María Guadalupe Pío Villaseñor",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f24cc2/f24cc20c27f44d190cbad093d2d00efb_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ignacio Comonfort 9278 - 102,"
+    },
+    {
+      "full": "Ignacio Comonfort 9278 - 102,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-guadalupe-pio-villasenor/ginecologo/tijuana#address-id=104474&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:46:30.068Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__mar_a_guadalupe_p_o_villase_or.webp"
+}

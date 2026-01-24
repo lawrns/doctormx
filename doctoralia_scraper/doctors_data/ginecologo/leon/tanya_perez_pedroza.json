@@ -1,0 +1,31 @@
+{
+  "name": "Tanya Perez Pedroza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 31,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/052ea9/052ea99b3f72221611fcf1b9aab18d46_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "20 De Enero 407,"
+    },
+    {
+      "full": "Lunik 216,"
+    },
+    {
+      "full": "20 De Enero 407,"
+    },
+    {
+      "full": "Lunik 216,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tanya-perez-pedroza/ginecologo/leon#address-id=170730&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:38:21.051Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/tanya_perez_pedroza.webp"
+}

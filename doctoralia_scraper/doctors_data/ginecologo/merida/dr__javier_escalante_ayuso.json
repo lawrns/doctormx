@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Javier Escalante Ayuso",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 141,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6ad91d/6ad91d0bc94ce88c893ee8be29791143_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 31 no. 645,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $450"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": ""
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": "• $350"
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/javier-escalante-ayuso/ginecologo/yucatan#address-id=433278&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:29:56.685Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__javier_escalante_ayuso.webp"
+}

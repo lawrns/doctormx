@@ -1,0 +1,25 @@
+{
+  "name": "Borbolla Garcia Manuel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 188,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/7ac904d3/7ac904d3-ee1c-46da-ac7a-51aa0314c3b3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Esequiel Montes 34. Col. Centro. ,"
+    },
+    {
+      "full": "Esequiel Montes 34. Col. Centro. ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/borbolla-garcia-manuel/ginecologo/santiago-de-queretaro#address-id=359320&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:57:59.428Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/borbolla_garcia_manuel.webp"
+}

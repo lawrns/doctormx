@@ -1,0 +1,52 @@
+{
+  "name": "Dr. Rafael Montes Johnson",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a0923c/a0923cca7c281a1c173c6eef851c1a6d_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Rufino Tamayo 4 (C),"
+    },
+    {
+      "full": "Ezequiel Montes 32 sur primer piso,"
+    },
+    {
+      "full": "Calle Rufino Tamayo 4 (C),"
+    },
+    {
+      "full": "Ezequiel Montes 32 sur primer piso,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido 4D",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rafael-montes-johnson/ginecologo/santiago-de-queretaro#address-id=99987&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:50:29.062Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__rafael_montes_johnson.webp"
+}

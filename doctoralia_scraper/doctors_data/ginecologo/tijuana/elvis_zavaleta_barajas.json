@@ -1,0 +1,25 @@
+{
+  "name": "Elvis Zavaleta Barajas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 418,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/aaa002/aaa002ab73d2b22a98692a38215e66e3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "1 De Mayo,23518, Col. Mariano Matamoros Norte, ,"
+    },
+    {
+      "full": "1 De Mayo,23518, Col. Mariano Matamoros Norte, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elvis-zavaleta-barajas/ginecologo/tijuana#address-id=355436&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:06:36.505Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/elvis_zavaleta_barajas.webp"
+}

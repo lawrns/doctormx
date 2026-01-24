@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Karla Guadalupe Lozano Díaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 92,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/65e3e27f/65e3e27f-2153-49fe-ba09-1a14f524b84d_small_square.jpg",
+  "about": "Soy especialista en Ginecología y Obstetricia (enfermedades propias de la mujer y embarazo). Ejerciendo mi especialidad con una orientación a la práctica privada. ​Estoy comprometida a proporcionar mis servicios en un ambiente cálido y humano. Mi objetivo principal es el de tratar cada paciente de una manera individual y personalizada, para lograr exitosamente un desenlace eficaz en su cuidado.",
+  "addresses": [
+    {
+      "full": "Plaza San isidro, Av. las Palmas 4864, Las Palmas,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-guadalupe-lozano-diaz/ginecologo/tijuana",
+  "scrapedAt": "2026-01-22T00:40:00.999Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__karla_guadalupe_lozano_d_az.webp"
+}

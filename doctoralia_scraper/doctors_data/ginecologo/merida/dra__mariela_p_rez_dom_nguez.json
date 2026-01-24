@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Mariela Pérez Domínguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/ed08d3d5/ed08d3d5-c15a-46a5-8dd2-495651284d86_large.jpg",
+  "about": "Sobre mí Soy Médico Militar, me formé como Médico Cirujano Militar en la Escuela Médico Militar, realicé la Especialidad de Ginecología y Obstetricia en la Escuela Militar de Graduados de Sanidad, cuento con Especialidad en Biología de la Reproducción Humana realizada en Hospital Ángeles Pedregal y UNAM, cuento con Alta Especialidad en Cirugía Endoscópica Ginecológica realizada en Hospital Ángeles Pedregal y UNAM. Soy una Doctora a la vanguardia, donde la Salud de mis pacientes es prioridad, y siempre con el profesionalismo, ética, calidad en la atención y empatía que merecen. ¿Por qué elegirme a mí? Soy una Doctora a la vanguardia, profesional, empática, donde lo más importante eres tú como paciente. Principales áreas de tratamiento ***Ginecologia y Obstetricia (Todo sobre la atención de salud de la mujer, aplicando técnicas clínico-quirúrgicas en padecimientos del aparato reproductor femenino (útero, ovarios, trompas de Falopio, cérvix o cuello uterino, vagina, etc) , Atención y asesoramiento de Métodos de planificación familiar (Anticonceptivos), Atención en Pacientes Embarazadas, Patologías como Miomatosis uterina, Endometriosis, Quistes de ovario, Adenomiosis, Pólipos endometriales, Infecciones cervico-vaginales, Infección por Virus de Papiloma Humano, Prevención de enfermedades infecto-contagiosas de transmisión sexual, así como Prevención de Virus de Papiloma Humano, etc. ***Biología de la Reproducción Humana (Todo sobre el área de Infertilidad en la mujer, Abordaje de la pareja que no ha logrado concebir un embarazo) ***Cirugía Endoscópica Ginecológica (Todo sobre Procedimientos de Histeroscopía, Cirugia Laparoscópica)",
+  "addresses": [
+    {
+      "full": "Calle 26 199,"
+    },
+    {
+      "full": "Av. Palo Solo 100,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ablación endometrial",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mariela-perez-dominguez/ginecologo-medico-general/yucatan#address-id=413229&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:32:10.436Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__mariela_p_rez_dom_nguez.webp"
+}

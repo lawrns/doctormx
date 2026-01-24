@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Alberto Farca Belsaguri",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 37,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/64f913/64f913e5d6473617ed8a2ce97f19c317_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ejercito Nacional No.615,"
+    },
+    {
+      "full": "Ejercito Nacional No.615,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alberto-farca-belsaguri/ginecologo/miguel-hidalgo#address-id=110912&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:51:00.384Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__alberto_farca_belsaguri.webp"
+}

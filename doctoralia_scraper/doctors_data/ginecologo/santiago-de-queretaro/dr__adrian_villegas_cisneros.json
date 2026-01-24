@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Adrian Villegas Cisneros",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 144,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6718e3/6718e33c5cb68bee9c9dedf476ecd63e_220_square.jpg",
+  "about": "Excelente Relación Médico - Paciente. Etica, Compromiso, Seguridad, Responsabilidad, Transparencia . Control Prenatal de Embarazo de Alto Riesgo. Experto en Control y Resolución de Embarazos con alteraciones en la placentación. Acretismo Placentario - Placenta Previa Cirugía de Preservación Uterina Obstetrica y Ginecologica por Miomatosis Uterina. Cirugía Pélvica de alta complejidad. Cirugía Endoscopica Ginecologica",
+  "addresses": [
+    {
+      "full": "HOSPITAL H+ QRO. Privada Ignacio Zaragoza no. 16 (TORRE 3, PISO 6, CONSULTORIO 612),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Atención de parto",
+      "price": "• $900"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adrian-villegas-cisneros/ginecologo/santiago-de-queretaro#address-id=366472&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:44:33.761Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__adrian_villegas_cisneros.webp"
+}

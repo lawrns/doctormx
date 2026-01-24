@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Alejandra Robledo Torres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 22,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/41825c/41825ca10fc7e8ba73019d41735062a7_220_square.jpg",
+  "about": "Hola! Soy la Dra. Alejandra Robledo, estoy para acompañarte en la prevención y detección oportuna de las enfermedades que nos aquejan como mujeres. Siempre en un ambiente seguro y cómodo, cuidando de ti. Les comparto un poco de mi formación académica: -Médico cirujano formado en Facultad de medicina de la Universidad Nacional Autonoma de México . -Especialidad en Ginecología y Obstetricia en el Hospital General de Mexico “Dr Eduardo Liceaga”. UNAM - Subespecialidad en Urología Ginecólogica en el CMN 20 de Noviembre y Hospital Universitario Dr. José Eleuterio González UANL. - Certificaciones vigentes por el Consejo Mexicano de Ginecología y Obstetricia, así como de Urología Ginecológica - Diplomado en Colposcopia y lesiones del tracto urinario inferior. Me pongo a tus órdenes para acompañarte en cada proceso, resolver cada una de las dudas que tengas y te surgan durante o posterior a la consulta, de antemano te agradezco la confianza depositada.",
+  "addresses": [
+    {
+      "full": "Av Universidad 1080,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-robledo-torres/ginecologo/ciudad-de-mexico#address-id=516626&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:04:52.233Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__alejandra_robledo_torres.webp"
+}

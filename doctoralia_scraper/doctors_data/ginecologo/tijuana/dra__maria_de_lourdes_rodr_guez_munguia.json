@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Maria De Lourdes Rodríguez Munguia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/59d023c6/59d023c6-8aaf-4215-b734-6a46707f8ff3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Clle. Mision De San Diego #1527, Centro,"
+    },
+    {
+      "full": "Clle. Mision De San Diego #1527, Centro,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-de-lourdes-rodriguez-munguia-2/ginecologo/-#address-id=339930&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:47:13.626Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__maria_de_lourdes_rodr_guez_munguia.webp"
+}

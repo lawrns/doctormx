@@ -1,0 +1,25 @@
+{
+  "name": "Grosso Espinoza Juan Manuel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 68,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b4326a/b4326a17c1c472631b93b281a66e1f2e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Paseo De Los Héroes 10999 Cons. 605. Col. Zona Río. ,"
+    },
+    {
+      "full": "Av. Paseo De Los Héroes 10999 Cons. 605. Col. Zona Río. ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/grosso-espinoza-juan-manuel/ginecologo/tijuana#address-id=359067&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:47:51.242Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/grosso_espinoza_juan_manuel.webp"
+}

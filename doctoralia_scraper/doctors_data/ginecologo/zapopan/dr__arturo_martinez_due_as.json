@@ -1,0 +1,38 @@
+{
+  "name": "Dr. Arturo Martinez Dueñas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 24,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/11a360dc/11a360dc-a7f9-4907-8084-90d696e9867a_small_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Circunvalación Jorge Álvarez del Castillo 1525,"
+    },
+    {
+      "full": "Avenida Circunvalación Jorge Álvarez del Castillo 1525,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Ablación cervical",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arturo-martinez-duenas-3/ginecologo/guadalajara#address-id=37310&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:20:33.552Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__arturo_martinez_due_as.webp"
+}

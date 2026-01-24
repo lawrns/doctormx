@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Alma Torres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 134,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/86be9f/86be9f978b6b75a932a05d3b7c5c901f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Ing. Juan Ojeda Robles, Buena Vista, 22415 Tijuana, B.C.,"
+    },
+    {
+      "full": "Calle Ing. Juan Ojeda Robles, Buena Vista, 22415 Tijuana, B.C.,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alma-torres/ginecologo/tijuana#address-id=255085&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:47:24.482Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__alma_torres.webp"
+}

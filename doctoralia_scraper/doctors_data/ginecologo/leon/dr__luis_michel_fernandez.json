@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Luis Michel Fernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 175,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/d7689375/d7689375-ad0f-43f2-b1a1-393f3c311209_large.jpg",
+  "about": "Como médico gineco-obstetra, me dedico a brindar una atención personalizada y de calidad a la salud de la mujer. Ofrecemos servicios especializados en ginecología, obstetricia, ultrasonografía y colposcopia. Estoy certificado por el Consejo Mexicano de Ginecología y Obstetricia, y mi formación en la Universidad Autónoma de Guadalajara y el Centro Médico de Occidente de la Universidad de Guadalajara avala mi compromiso con la excelencia. Ya sea que necesites atención durante el embarazo, tratamiento para miomas uterinos o manejo de un embarazo de alto riesgo, estoy aquí para acompañarte en cada paso de tu camino hacia la salud.",
+  "addresses": [
+    {
+      "full": "Boulevard Torres Landa, #4108,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": "• $850"
+    },
+    {
+      "name": "Ultrasonido 3D",
+      "price": "• $600"
+    },
+    {
+      "name": "Ultrasonido 4D",
+      "price": "• $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-michel-fernandez/ginecologo/leon#address-id=354119&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:25:00.037Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__luis_michel_fernandez.webp"
+}

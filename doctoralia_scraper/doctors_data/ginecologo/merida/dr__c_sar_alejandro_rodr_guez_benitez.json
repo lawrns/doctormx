@@ -1,0 +1,43 @@
+{
+  "name": "Dr. César Alejandro Rodríguez Benitez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 138,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c5654f/c5654fcf01766458413de534672ccb6d_220_square.jpg",
+  "about": "Soy médico Cirujano y Partero egresado de la Escuela Superior de Medicina del Instituto Politécnico Nacional, con especialidad de Ginecología y Obstetricia, egresado de la Facultad Mexicana de Medicina de la Universidad LA SALLE, quien brinda desde hace 11 años atención de la más alta calidad. Te invito a conocer mis servicios y agendar tu cita.",
+  "addresses": [
+    {
+      "full": "Calle 26,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $800"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cesar-alejandro-rodriguez-benitez/ginecologo/yucatan#address-id=22416&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:32:57.540Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__c_sar_alejandro_rodr_guez_benitez.webp"
+}

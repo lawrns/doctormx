@@ -1,0 +1,25 @@
+{
+  "name": "Belen Ramos Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 30,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/992fe4e2/992fe4e2-3a73-4cae-a3e4-6658a08b10b0_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Monte Sorata Norte Mz 97,6232 Lt, Col. Las Cumbres, ,"
+    },
+    {
+      "full": "Monte Sorata Norte Mz 97,6232 Lt, Col. Las Cumbres, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/belen-ramos-lopez/ginecologo/tijuana#address-id=355446&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:06:41.912Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/belen_ramos_lopez.webp"
+}

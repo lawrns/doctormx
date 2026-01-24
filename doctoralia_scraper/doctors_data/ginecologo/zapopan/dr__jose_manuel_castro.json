@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jose Manuel Castro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 166,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0e797d/0e797dcd873cdcfa1ef979182f8c58fc_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Nicolas Copernico 3875,"
+    },
+    {
+      "full": "Av. Nicolas Copernico 3875,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-manuel-castro-2/ginecologo/zapopan#address-id=208646&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:33:45.569Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jose_manuel_castro.webp"
+}

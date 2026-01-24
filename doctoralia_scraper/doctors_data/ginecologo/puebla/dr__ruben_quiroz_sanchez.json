@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Ruben Quiroz Sanchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b27bbd/b27bbdca396754873b3e87484630f73d_220_square.jpg",
+  "about": "Rejuvenecimiento genital con LASSER y ultrasonido HI FU. Tratamiento de incontinencia urinaria sin hospitalizacion. Manejo de virus del papiloma con LASSER de ÚLTIMA GENERACIÓN",
+  "addresses": [
+    {
+      "full": "Privada de las Ramblas 4 consultorio 804.HOSPITAL PUEBLA,"
+    },
+    {
+      "full": "Privada de las Ramblas 4 consultorio 804.HOSPITAL PUEBLA,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": ""
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ruben-quiroz-sanchez/ginecologo/puebla#address-id=112498&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:13:15.293Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__ruben_quiroz_sanchez.webp"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Silvia Rodríguez Guerrero",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 2,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/bad1dc4a/bad1dc4a-b1c2-4a14-a48c-b3d75af2383d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Isla Raza 2623 A,"
+    },
+    {
+      "full": "Isla Raza 2623 A,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/silvia-rodriguez-guerrero/ginecologo/guadalajara#address-id=53881&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:29:53.651Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__silvia_rodr_guez_guerrero.webp"
+}

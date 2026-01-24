@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Bryan Armenta Guzman",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 35,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9cbae1/9cbae18dc173acc185bea7841cf75979_220_square.jpg",
+  "about": "Soy Bryan A. Guzmán, medico gineco obstetra y medico materno fetal, me prepare durante 13 años, en las mejores sedes nacionales de donde egresan los mejores especialistas, obtuve 2 menciones honorificas y promedios destacados en toda mi formación académica, soy autor del libro de ginecología y obstetricia y coautor de otros libros, he publicado artículos y carteles a nivel nacional e internacional con obtención de varios reconocimientos de estos trabajos, me dedico al cuidado integral de la mujer en todas las etapas de la vida, con dedicación, cariño y entrega a mi profesión.",
+  "addresses": [
+    {
+      "full": "Viaducto Río Becerra 97,"
+    },
+    {
+      "full": "Viaducto Río Becerra 97,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido avanzado de primer trimestre (semanas 11 a 14)",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido avanzado de segundo trimestre (semanas 18 a 24)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/bryan-armenta-guzman/ginecologo/ciudad-de-mexico#address-id=400860&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:04:38.886Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__bryan_armenta_guzman.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Rosalia Juarez Rosete",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d88a95/d88a9523218b1a372bf6f6c91da9c5cf_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Privada de las Ramblas 4,,"
+    },
+    {
+      "full": "Privada de las Ramblas 4,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $750"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosalia-juarez-rosete/ginecologo/puebla#address-id=6442&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:12:21.788Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__rosalia_juarez_rosete.webp"
+}

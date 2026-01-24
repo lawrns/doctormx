@@ -1,0 +1,56 @@
+{
+  "name": "Dr. Ernesto Galeana Corrales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/753205/753205c7cd0f6668e88c434ede081615_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Narciso Mendoza 9,,"
+    },
+    {
+      "full": "Narciso Mendoza (Centro médico hipódromo),"
+    },
+    {
+      "full": "Av Narciso Mendoza 9,,"
+    },
+    {
+      "full": "Narciso Mendoza (Centro médico hipódromo),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $750"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $750"
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ernesto-galeana-corrales/ginecologo/naucalpan-de-juarez#address-id=29032&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:04:44.285Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__ernesto_galeana_corrales.webp"
+}

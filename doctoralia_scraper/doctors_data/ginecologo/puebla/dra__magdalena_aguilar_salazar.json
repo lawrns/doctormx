@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Magdalena Aguilar Salazar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Morelos 103 A,"
+    },
+    {
+      "full": "Morelos 103 A,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/magdalena-aguilar-salazar/ginecologo/san-martin-texmelucan#address-id=197179&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:19:39.639Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Iala Viñals",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 82,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/236680/236680b4c24e5ac09baff845333e65c0_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "WTC,"
+    },
+    {
+      "full": "WTC,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $499"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $850"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/iala-vinals/ginecologo/tlalpan#address-id=507211&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:12:08.274Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__iala_vi_als.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Jonattan Fernando Florez Erazo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 262,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/00cb8448/00cb8448-4bf9-4009-ab88-c92e33df007a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "20Denoviembre Mza10 Lt10 B 28, Col. Supmza 222 Fracc Los Heroes, ,"
+    },
+    {
+      "full": "20Denoviembre Mza10 Lt10 B 28, Col. Supmza 222 Fracc Los Heroes, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jonattan-fernando-florez-erazo/ginecologo/benito-juarez#address-id=357405&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:19:38.577Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/jonattan_fernando_florez_erazo.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Leticia Giono Castillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 121,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/25a78bf5/25a78bf5-6f76-4216-bb56-45538db5ae77_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "16 Sur 152,"
+    },
+    {
+      "full": "16 Sur 152,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/leticia-giono-castillo/ginecologo/tecamachalco#address-id=201482&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:26:30.133Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/leticia_giono_castillo.webp"
+}

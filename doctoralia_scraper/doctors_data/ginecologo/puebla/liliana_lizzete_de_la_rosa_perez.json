@@ -1,0 +1,25 @@
+{
+  "name": "Liliana Lizzete De La Rosa Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 163,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hidalgo 103,"
+    },
+    {
+      "full": "Hidalgo 103,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/liliana-lizzete-de-la-rosa-perez/ginecologo/san-martin-texmelucan#address-id=201060&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:35:26.124Z",
+  "localPhotoPath": null
+}

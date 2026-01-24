@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Gilberto García García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 357,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7835f6/7835f6603967a7448eeb595b563d94c9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Privada 35 Ote 1614, Ignacio Zaragoza,"
+    },
+    {
+      "full": "Privada 35 Ote 1614, Ignacio Zaragoza,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gilberto-garcia-garcia-2/ginecologo/puebla#address-id=148245&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:16:10.113Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__gilberto_garc_a_garc_a.webp"
+}

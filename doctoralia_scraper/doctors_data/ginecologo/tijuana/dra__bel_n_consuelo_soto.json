@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Belén Consuelo Soto",
+  "specialty": "Ginecóloga",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "CALLE A,"
+    },
+    {
+      "full": "CALLE A,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/belen-consuelo-soto/ginecologo/tijuana#address-id=616983&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:43:34.981Z",
+  "localPhotoPath": null
+}

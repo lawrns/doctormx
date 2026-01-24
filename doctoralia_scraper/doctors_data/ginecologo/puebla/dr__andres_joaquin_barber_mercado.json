@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Andres Joaquin Barber Mercado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a5f06534/a5f06534-28f6-456a-8268-6bd2e89e12cb_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cam. Real A San Jeronimo 1004,"
+    },
+    {
+      "full": "2A. De Mariano Echeverra Y Veytia,"
+    },
+    {
+      "full": "Cam. Real A San Jeronimo 1004,"
+    },
+    {
+      "full": "2A. De Mariano Echeverra Y Veytia,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/andres-joaquin-barber-mercado/ginecologo/puebla#address-id=246554&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:19:51.582Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__andres_joaquin_barber_mercado.webp"
+}

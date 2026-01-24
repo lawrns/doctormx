@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Socorro Isabel Hernandez Berrelleza",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6834e8/6834e8afac2b89bfaabf6f2009d286cc_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida las Palmas 4864 (Plaza San isidro),"
+    },
+    {
+      "full": "Avenida las Palmas 4864 (Plaza San isidro),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/socorro-isabel-hernandez-berrelleza/ginecologo/tijuana#address-id=29475&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:49:00.771Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__socorro_isabel_hernandez_berrelleza.webp"
+}

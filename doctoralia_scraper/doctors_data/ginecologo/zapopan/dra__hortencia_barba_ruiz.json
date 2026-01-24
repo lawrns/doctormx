@@ -1,0 +1,58 @@
+{
+  "name": "Dra. Hortencia Barba Ruiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 127,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bfa25c/bfa25cde31fe04ef0d9cbadf78932a6f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Circ. Alvarez Del Castillo,"
+    },
+    {
+      "full": "Gral Eulogio Parra 2796,"
+    },
+    {
+      "full": "jose maria heredia 2960,"
+    },
+    {
+      "full": "Circ. Alvarez Del Castillo,"
+    },
+    {
+      "full": "Gral Eulogio Parra 2796,"
+    },
+    {
+      "full": "jose maria heredia 2960,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hortencia-barba-ruiz/ginecologo/guadalajara#address-id=220685&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:32:38.641Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__hortencia_barba_ruiz.webp"
+}

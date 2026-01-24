@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Cutberto Torres Torres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 547,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/289dec/289decfde412a20691fbb50e268b08df_220_square.jpg",
+  "about": "Soy el Dr. Cutberto Torres Torres, especialista en Ginecología y Obstetricia, egresado del Hospital General de León, Guanajuato, uno de los mejores hospitales en la formación de médicos. Estoy certificado por el Consejo Mexicano de Ginecología y obstetricia, además de contar con una subespecialidad en Medicina Materno Fetal avalada por la UNAM y el Instituto Nacional de Perinatología “Isidro Espinosa de los Reyes”. Mí formación me permite ayudar a mis pacientes en el diagnóstico y tratamiento de enfermedades maternas y fetales que puedan complicar el embarazo, por ejemplo: la diabetes, hipertensión, lupus, preeclampsia, embarazos gemelares, desnutrición fetal, malformaciones fetales, parto prematuro, etc. Brindando una atención de calidad, actualizada y con la mejor tecnología en equipo de ultrasonido.",
+  "addresses": [
+    {
+      "full": "Manantial No.103 Torre III Int. 402, Col Futurama Monterrey,"
+    },
+    {
+      "full": "Manantial No.103 Torre III Int. 402, Col Futurama Monterrey,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Terapia de Reemplazo Hormonal (TRH)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cutberto-torres-torres-2/ginecologo/leon#address-id=257977&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:27:42.509Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__cutberto_torres_torres.webp"
+}

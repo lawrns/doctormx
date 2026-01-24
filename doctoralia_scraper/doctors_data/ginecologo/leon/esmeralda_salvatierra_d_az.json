@@ -1,0 +1,46 @@
+{
+  "name": "Esmeralda Salvatierra Díaz",
+  "specialty": "Ginecólogo",
+  "rating": 3.5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ed47fe/ed47fed4329654d3d23cf0f8812b14ff_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "PATIÑA 102,"
+    },
+    {
+      "full": "PATIÑA 102,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/esmeralda-salvatierra-diaz/ginecologo/leon#address-id=34382&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:29:18.039Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/esmeralda_salvatierra_d_az.webp"
+}

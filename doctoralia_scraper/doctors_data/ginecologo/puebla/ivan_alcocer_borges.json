@@ -1,0 +1,25 @@
+{
+  "name": "Ivan Alcocer Borges",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 375,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/171cc3/171cc3a56e96e37caf1a14274402dd28_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida 5 De Mayo 1613,"
+    },
+    {
+      "full": "Avenida 5 De Mayo 1613,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ivan-alcocer-borges/ginecologo/san-juan-bautista-tuxtepec#address-id=133141&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:27:07.550Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/ivan_alcocer_borges.webp"
+}

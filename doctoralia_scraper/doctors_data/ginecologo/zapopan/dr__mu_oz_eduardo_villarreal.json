@@ -1,0 +1,38 @@
+{
+  "name": "Dr. Muñoz Eduardo Villarreal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c20880/c20880339753f6a27867d0339f20a326_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Antonio Flores 34,"
+    },
+    {
+      "full": "Antonio Flores 34,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/munoz-eduardo-villarreal/ginecologo/zapopan",
+  "scrapedAt": "2026-01-22T04:26:28.660Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__mu_oz_eduardo_villarreal.webp"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "Dr. Juan Domínguez Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 59,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7030fe/7030fed6a65ab3a3801facfc906121a4_220_square.jpg",
+  "about": "Especialista Gineco Obstetra con 38 años de experiencia. Laboré durante 28 años en el IMSS me desempeñé en los últimos 5 años como Jefe de Tococirugía y 18 años en el ISSTE de los cuales durante los últimos 5 años ejercí el cargo de Jefe del Servicio Ginecología y Obstetricia y desde el principio a la actualidad he continuado activo en el campo de la medicina privada...considero que dentro del cuidado de la familia he buscado la satisfacción de cada una de las pacientes que he atendido dirigiendo mi atención y servicio tanto al binomio madre-hijo como a toda aquella mujer con algún padecimiento ginecológico o que solicite un Método de Planificación Familiar",
+  "addresses": [
+    {
+      "full": "José Clemente Orozco 2340-506,"
+    },
+    {
+      "full": "José Clemente Orozco 2340-506,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $850"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-dominguez-hernandez-2/ginecologo/tijuana#address-id=406237&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:43:48.083Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__juan_dom_nguez_hern_ndez.webp"
+}

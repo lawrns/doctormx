@@ -1,0 +1,37 @@
+{
+  "name": "Francisco Javier Alvarado Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 169,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/27dc4e/27dc4e2fcca475a6aeab822ea3beb26f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Universidad 1969,"
+    },
+    {
+      "full": "Cuauhtemoc 1240,"
+    },
+    {
+      "full": "Av. Nichupte Mz 21 101,"
+    },
+    {
+      "full": "Av. Universidad 1969,"
+    },
+    {
+      "full": "Cuauhtemoc 1240,"
+    },
+    {
+      "full": "Av. Nichupte Mz 21 101,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-javier-alvarado-flores/ginecologo/benito-juarez#address-id=227363&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:13:57.904Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/francisco_javier_alvarado_flores.webp"
+}

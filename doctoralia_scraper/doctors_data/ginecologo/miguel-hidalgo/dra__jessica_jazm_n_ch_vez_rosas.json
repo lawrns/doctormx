@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Jessica Jazmín Chávez Rosas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 54,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/59f7cd/59f7cd9710919d64c398f84180167761_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Agrarismo 208,"
+    },
+    {
+      "full": "Agrarismo 208,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jessica-jazmin-chavez-rosas-2/ginecologo/miguel-hidalgo#address-id=164&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:05:12.112Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__jessica_jazm_n_ch_vez_rosas.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Marco Antonio Castro Millan",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ce833c/ce833cc2a0eea085633a5666f467f699_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Venecia 22520 16 Fracc. Villa Fontana,"
+    },
+    {
+      "full": "Ave. Venecia 22520 16 Fracc. Villa Fontana,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marco-antonio-castro-millan/ginecologo/tijuana#address-id=37035&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:43:23.526Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__marco_antonio_castro_millan.webp"
+}

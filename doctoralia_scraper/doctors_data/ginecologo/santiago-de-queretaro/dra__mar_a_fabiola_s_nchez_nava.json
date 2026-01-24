@@ -1,0 +1,31 @@
+{
+  "name": "Dra. María Fabiola Sánchez Nava",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 53,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8408de/8408de4836033c56b3aab3b90662b10b_220_square.jpg",
+  "about": "Atención médica de alta especialidad, pero sobre todo; con una gran calidad humana. La visita médica es individualizada y se dedica el tiempo necesario para resolver cualquier situación médica. Así mismo el abordaje es integral, conocer los antecedentes de importancia que aporten información relevante para un entendimiento que se logra gracias a un correcto interrogatorio y diagnóstico a través de una entrevista y orientación medica, con la disposición a escuchar y dar un tratamiento especifico y oportuno. Considero la salud es un estado de completo bienestar, físico, mental y social por lo que dar resolución a la brevedad del motivo de consulta, es mi prioridad.",
+  "addresses": [
+    {
+      "full": "Calle Ignacio Zaragoza 16,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-fabiola-sanchez-nava/ginecologo/santiago-de-queretaro#address-id=88751&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:47:01.445Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__mar_a_fabiola_s_nchez_nava.webp"
+}

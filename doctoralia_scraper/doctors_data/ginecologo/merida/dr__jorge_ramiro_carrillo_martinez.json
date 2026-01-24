@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Jorge Ramiro Carrillo Martinez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 53,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/80d989/80d989b339476328718cf5a3a7051ad3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Itzaes 242,"
+    },
+    {
+      "full": "Ave. Itzaes 242,"
+    },
+    {
+      "full": "Av. Itzaes 242,"
+    },
+    {
+      "full": "Ave. Itzaes 242,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-ramiro-carrillo-martinez-2/ginecologo/merida#address-id=46691&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:45:15.395Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__jorge_ramiro_carrillo_martinez.webp"
+}

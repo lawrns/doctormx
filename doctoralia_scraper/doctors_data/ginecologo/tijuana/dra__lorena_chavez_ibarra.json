@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Lorena Chavez Ibarra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 78,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/c506ae8b/c506ae8b-4394-4638-b6a8-6654d0c52298_small_square.jpg",
+  "about": "Medico certificado con 18 años de experiencia en institución y medicina privada",
+  "addresses": [
+    {
+      "full": "Blvd. Agua Caliente 1844,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lorena-chavez-ibarra/ginecologo/tijuana#address-id=81744&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:41:00.768Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__lorena_chavez_ibarra.webp"
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Dra. Mariela Caballero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 187,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e67e5f/e67e5f7accc2c5621d12e2bfa8e7dd31_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Valle de Los Encinos 2796,"
+    },
+    {
+      "full": "Valle de Los Encinos 2796,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mariela-caballero/ginecologo/zapopan#address-id=456832&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:16:52.525Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__mariela_caballero.webp"
+}

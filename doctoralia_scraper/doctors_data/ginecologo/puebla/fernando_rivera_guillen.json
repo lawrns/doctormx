@@ -1,0 +1,25 @@
+{
+  "name": "Fernando Rivera Guillen",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 121,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f960a6/f960a6e1661311354a39174f811bac0e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Diag. Reforma Nte. 4306,"
+    },
+    {
+      "full": "Diag. Reforma Nte. 4306,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-rivera-guillen/ginecologo/puebla#address-id=228098&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:22:39.107Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/fernando_rivera_guillen.webp"
+}

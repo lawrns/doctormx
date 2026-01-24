@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Liliana Rodriguez Magaña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 62,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7bd20a/7bd20a38e9933a6b261905facecdc368_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Copernico 3817,"
+    },
+    {
+      "full": "Av Copernico 3817,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/liliana-rodriguez-magana/ginecologo/zapopan#address-id=200971&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:36:05.048Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__liliana_rodriguez_maga_a.webp"
+}

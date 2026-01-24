@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Leopoldo Pedro Aurioles Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 73,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4e1a8b/4e1a8bdf72b75d788e42a250e1169fdd_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Eucken 15 - 301,"
+    },
+    {
+      "full": "Eucken 15 - 301,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/leopoldo-pedro-aurioles-sanchez/ginecologo/miguel-hidalgo#address-id=95911&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:41:24.082Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__leopoldo_pedro_aurioles_s_nchez.webp"
+}

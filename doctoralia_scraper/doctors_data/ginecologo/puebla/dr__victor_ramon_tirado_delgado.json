@@ -1,0 +1,58 @@
+{
+  "name": "Dr. Victor Ramon Tirado Delgado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 428,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9e4d64/9e4d6482316d684ed58d7e6d1ecd14f3_220_square.jpg",
+  "about": "30 años de experiencia. Postgrado en deteccion de cancer cervicouterino colposcopia en Havana Cuba. Certificado Consejo de GinecoObstetricia.",
+  "addresses": [
+    {
+      "full": "Av. 29 Pte. 513,"
+    },
+    {
+      "full": "Av. 25 Pte. 1721,"
+    },
+    {
+      "full": "25 poniente 1721,"
+    },
+    {
+      "full": "Av. 29 Pte. 513,"
+    },
+    {
+      "full": "Av. 25 Pte. 1721,"
+    },
+    {
+      "full": "25 poniente 1721,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victor-ramon-tirado-delgado/ginecologo/puebla#address-id=168548&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:14:47.758Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__victor_ramon_tirado_delgado.webp"
+}

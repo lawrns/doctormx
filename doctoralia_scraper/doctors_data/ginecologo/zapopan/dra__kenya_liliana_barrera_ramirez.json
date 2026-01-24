@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Kenya Liliana Barrera Ramirez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 59,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/092fbb/092fbbf740eceb880402d649eb8d0b38_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Guardia Nacional 2895, Mision La Floresta,"
+    },
+    {
+      "full": "Guardia Nacional 2895, Mision La Floresta,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/kenya-liliana-barrera-ramirez/ginecologo/zapopan#address-id=498818&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:34:25.167Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__kenya_liliana_barrera_ramirez.webp"
+}

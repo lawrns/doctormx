@@ -1,0 +1,25 @@
+{
+  "name": "Joaquin Hernandez Cabrera",
+  "specialty": "Oncólogo médico",
+  "rating": 5,
+  "reviewCount": 135,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/420f6d/420f6d6a191e3f370d4f15914f254542_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hegel 228,"
+    },
+    {
+      "full": "Hegel 228,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/joaquin-hernandez-cabrera/oncologo-ginecologo/miguel-hidalgo#address-id=157670&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:44:13.188Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/joaquin_hernandez_cabrera.webp"
+}

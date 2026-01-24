@@ -1,0 +1,25 @@
+{
+  "name": "Emilio Javier Saldaña Caro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 51,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cdc9be/cdc9be9ef84f74cd441fd95019de2e2a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Alcatraz 38,"
+    },
+    {
+      "full": "C. Alcatraz 38,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/emilio-javier-saldana-caro/ginecologo/santiago-de-queretaro#address-id=232008&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:56:17.471Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/emilio_javier_salda_a_caro.webp"
+}

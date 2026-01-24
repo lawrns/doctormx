@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jose Jorge Meneses Salado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/fb78477a/fb78477a-abec-4d92-bfaa-edaea4ea77c3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Centenario 405,"
+    },
+    {
+      "full": "Calle Centenario 405,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-jorge-meneses-salado/ginecologo/apizaco#address-id=58493&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:17:49.690Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__jose_jorge_meneses_salado.webp"
+}

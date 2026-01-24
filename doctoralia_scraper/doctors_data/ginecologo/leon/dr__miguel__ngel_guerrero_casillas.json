@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Miguel Ángel Guerrero Casillas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 15,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/863a954e/863a954e-86b5-48c2-92ae-b143026041cf_small_square.jpg",
+  "about": "Soy el Dr. Guerrero Médico Materno Fetal con 15 años de experiencia en el ámbito institucional y particular, Ginecólogo y Obstetra con 20 años de trayectoria, comprometido siempre con brindar un servicio de la más alta calidad y con calidez humana.Dedicado a brindar atención especializada y avanzada para el cuidado integral de la mujer y el embarazo (tanto fetal como materno).",
+  "addresses": [
+    {
+      "full": "Apolo XI 101,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Medicina Materno-Fetal",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Ultrasonido avanzado de primer trimestre (semanas 11 a 14)",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Ultrasonido avanzado de segundo trimestre (semanas 18 a 24)",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Ultrasonido avanzado del tercer trimestre (A partir de la semana 32)",
+      "price": "• $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-guerrero-casillas-2/ginecologo/leon#address-id=616365&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:26:33.331Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__miguel__ngel_guerrero_casillas.webp"
+}

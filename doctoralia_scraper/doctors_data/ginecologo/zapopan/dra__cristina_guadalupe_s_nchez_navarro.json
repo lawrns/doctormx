@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Cristina Guadalupe Sánchez Navarro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 92,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d318fb/d318fb4a4a85a7d35dbb0a218ea0b4d8_220_square.jpg",
+  "about": "Soy la Dra. Cristina Guadalupe Sánchez Navarro, especialista en ginecología y medicina fetal. Me he dedicado a brindar atención médica, enfocándome principalmente en la atención ginecológica en problemas como: ausencia de menstruación, ciclos menstruales irregulares, quistes ováricos, miomas, infecciones vaginales, revisiones ginecológicas preventivas así como de embarazos de alto y bajo riesgo, y a la realización de ultrasonidos especializados durante la gestación (ultrasonido genético, estructural y Doppler ) A lo largo de mi carrera, he participado en diversos cursos y capacitaciones para mantenerme actualizada en las últimas técnicas y avances médicos. Mi objetivo es ofrecer un trato humano y personalizado a mis pacientes, brindando la información necesaria para que puedan tomar las mejores decisiones en relación a su salud. Me preocupo por el bienestar integral de cada uno de ellos, cuidando siempre su privacidad y confidencialidad. Me considero una persona comprometida con mi trabajo y con la sociedad, por lo que siempre estoy dispuesta a ayudar en lo que sea necesario.",
+  "addresses": [
+    {
+      "full": "Andrés Cavo 452,"
+    },
+    {
+      "full": "Andrés Cavo 452,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cristina-guadalupe-sanchez-navarro/ginecologo/ameca#address-id=495843&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:16:39.611Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__cristina_guadalupe_s_nchez_navarro.webp"
+}

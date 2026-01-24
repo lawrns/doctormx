@@ -1,0 +1,25 @@
+{
+  "name": "Claudia Evangelista Nava",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c61099/c610995f2be0960c1d019ae8ca46903e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Paseo Del Jerez 405,"
+    },
+    {
+      "full": "Blvd. Paseo Del Jerez 405,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/claudia-evangelista-nava/ginecologo/leon#address-id=237831&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:34:16.503Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/claudia_evangelista_nava.webp"
+}

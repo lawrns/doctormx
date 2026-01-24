@@ -1,0 +1,31 @@
+{
+  "name": "Lenny Patricia Carrillo Vivas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 53,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/b3701c16/b3701c16-d79b-4766-8ecf-6bdf61b83352_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 48 287,"
+    },
+    {
+      "full": "C 48 213,"
+    },
+    {
+      "full": "C. 48 287,"
+    },
+    {
+      "full": "C 48 213,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lenny-patricia-carrillo-vivas/ginecologo/merida#address-id=201980&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:47:23.852Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/lenny_patricia_carrillo_vivas.webp"
+}

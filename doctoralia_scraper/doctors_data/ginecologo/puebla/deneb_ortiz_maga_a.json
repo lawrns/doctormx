@@ -1,0 +1,25 @@
+{
+  "name": "Deneb Ortiz Magaña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 574,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/2081530c/2081530c-d90d-4c02-b616-39d324dd3bed_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. San Salvador 558, Fraccionamiento,"
+    },
+    {
+      "full": "Av. San Salvador 558, Fraccionamiento,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/deneb-ortiz-magana/ginecologo/orizaba#address-id=148155&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:29:06.278Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/deneb_ortiz_maga_a.webp"
+}

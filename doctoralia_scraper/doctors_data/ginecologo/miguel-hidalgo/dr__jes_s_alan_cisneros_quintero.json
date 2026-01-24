@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Jesús Alan Cisneros Quintero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 136,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2cbd8a/2cbd8ad6af26641901e4d297cd4538d6_220_square.jpg",
+  "about": "Soy un médico especialista enfocado en embarazo de alto riesgo incluyendo enfermedades como hipertensión, diabetes, hipotiroidismo, hipertiroidismo, síndrome antifosfolípidos, epilepsia. Ademas del enfoque fetal incluyendo: detección de alteraciones en el número de cromosomas (la más frecuente síndrome de down), detección oportuna de malformaciones congénitas, detección de alteraciones en el crecimiento fetal y alteraciones placentarias. La finalidad es crear un vínculo paciente-médico adecuado para llevar un control prenatal óptimo guiándome en los principios científicos y éticos que he adquirido en mi experiencia para que tengas tú mejor experiencia durante tu embarazo. Licenciatura en medicina: Facultad mexicana de medicina de la Universidad la Salle Especialidad en Ginecología y Obstetricia: UMAE Hospital de Gineco Obstetricia No 3 del IMSS del Centro Médico Nacional “La Raza”. Subespecialidad en Medicina Materno Fetal: UMAE Hospital de Gineco Obstetricia No 4 del IMSS “Luis Castelazo Ayala” Fetal medicine ID: 150827 Certificado por el consejo mexicano de ginecología y obstetricia.",
+  "addresses": [
+    {
+      "full": "Calle Nueva York 15, colonia Nápoles, Benito Juárez,"
+    },
+    {
+      "full": "Frontera 74,"
+    },
+    {
+      "full": "Calle Nueva York 15, colonia Nápoles, Benito Juárez,"
+    },
+    {
+      "full": "Frontera 74,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": "• Desde $18,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-alan-cisneros-quintero/ginecologo/ciudad-de-mexico#address-id=349864&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:03:33.181Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__jes_s_alan_cisneros_quintero.webp"
+}

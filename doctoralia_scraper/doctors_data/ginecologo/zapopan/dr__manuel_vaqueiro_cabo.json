@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Manuel Vaqueiro Cabo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 385,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/028f5b/028f5b3fd2f33c2266265a0d8fe134c1_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Quebec 631, int. 631,"
+    },
+    {
+      "full": "Quebec 631, int. 631,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuel-vaqueiro-cabo/ginecologo/guadalajara#address-id=106245&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:33:58.998Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__manuel_vaqueiro_cabo.webp"
+}

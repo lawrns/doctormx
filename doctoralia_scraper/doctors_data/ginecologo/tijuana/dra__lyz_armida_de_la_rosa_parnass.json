@@ -1,0 +1,52 @@
+{
+  "name": "Dra. Lyz Armida De La Rosa Parnass",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 363,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Paseo Centenario 10310,"
+    },
+    {
+      "full": "Torre Trez Consultorio 206, Calle David Alfaro Siqueiros 2643, Zona rio,"
+    },
+    {
+      "full": "Av. Paseo Centenario 10310,"
+    },
+    {
+      "full": "Torre Trez Consultorio 206, Calle David Alfaro Siqueiros 2643, Zona rio,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lyz-armida-de-la-rosa-parnass/ginecologo/tijuana#address-id=197931&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:46:24.197Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Gabriel Sánchez Buenfil",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d76940/d7694034218ce031c92d7bdf995fa71c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 26 199,"
+    },
+    {
+      "full": "Calle 60 X 35 Y Av. Colon 329,"
+    },
+    {
+      "full": "Calle 26 199,"
+    },
+    {
+      "full": "Calle 60 X 35 Y Av. Colon 329,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriel-sanchez-buenfil-2/ginecologo/merida#address-id=8332&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:43:37.335Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__gabriel_s_nchez_buenfil.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Cecilia Raya Lois",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4638cc/4638ccce7155e9bf584d58a80a7bf5a8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tarascos 3469 consultorio 113,"
+    },
+    {
+      "full": "Tarascos 3469 consultorio 113,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cecilia-raya-lois/ginecologo/guadalajara#address-id=65430&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:28:40.048Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__cecilia_raya_lois.webp"
+}

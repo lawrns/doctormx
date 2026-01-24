@@ -1,0 +1,25 @@
+{
+  "name": "Manuel Palafox Dorantes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 216,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/fb78477a/fb78477a-abec-4d92-bfaa-edaea4ea77c3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 1Ra Lt. 6,"
+    },
+    {
+      "full": "C. 1Ra Lt. 6,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuel-palafox-dorantes/ginecologo/apizaco#address-id=196539&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:35:32.905Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/manuel_palafox_dorantes.webp"
+}

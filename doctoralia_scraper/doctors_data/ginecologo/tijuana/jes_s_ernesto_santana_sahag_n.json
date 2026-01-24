@@ -1,0 +1,25 @@
+{
+  "name": "Jesús Ernesto Santana Sahagún",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 62,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d8fdad/d8fdad3269daaddfe3cfe6e091708141_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "José Clemente Orozco 2340,"
+    },
+    {
+      "full": "José Clemente Orozco 2340,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-ernesto-santana-sahagun/ginecologo/tijuana#address-id=127586&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:06:55.038Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/jes_s_ernesto_santana_sahag_n.webp"
+}

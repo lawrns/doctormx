@@ -1,0 +1,25 @@
+{
+  "name": "Adriana Velazquillo Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 773,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/82730e/82730e29de2edebe77c7378f48b30b6c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Playa Azul 419,"
+    },
+    {
+      "full": "Playa Azul 419,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adriana-velazquillo-hernandez/ginecologo/iztacalco#address-id=251510&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:16:25.791Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/adriana_velazquillo_hernandez.webp"
+}

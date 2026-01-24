@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Bolio Luis Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/80d989/80d989b339476328718cf5a3a7051ad3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Itzaes 242,"
+    },
+    {
+      "full": "Av. Itzaes 242,"
+    },
+    {
+      "full": "Ave. Itzaes 242,"
+    },
+    {
+      "full": "Av. Itzaes 242,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/bolio-luis-rodriguez/ginecologo/merida#address-id=72039&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:44:42.011Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__bolio_luis_rodriguez.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Silvia Lilia Vergara Vidaña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 428,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ead66b/ead66bdd9f3363529792bd671c9c68a8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "13 Sur 1903 A, Santiago,"
+    },
+    {
+      "full": "13 Sur 1903 A, Santiago,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/silvia-lilia-vergara-vidana/ginecologo/puebla#address-id=127962&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:24:32.856Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/silvia_lilia_vergara_vida_a.webp"
+}

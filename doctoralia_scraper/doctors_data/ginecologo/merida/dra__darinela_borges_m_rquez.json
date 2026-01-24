@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Darinela Borges Márquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dfb1df/dfb1dff98c57f00de9bcd71ee43e0bc4_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 7 215A , (por 32 y 34),"
+    },
+    {
+      "full": "Calle 7 215A , (por 32 y 34),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/darinela-borges-marquez/ginecologo/merida#address-id=5562&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:42:32.444Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__darinela_borges_m_rquez.webp"
+}

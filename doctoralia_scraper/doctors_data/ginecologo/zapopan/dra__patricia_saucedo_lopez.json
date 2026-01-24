@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Patricia Saucedo Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 168,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a82be9/a82be99e464eaeafe284de60f267dc7b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tarascos No. 3363,"
+    },
+    {
+      "full": "Tarascos No. 3363,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/patricia-saucedo-lopez/ginecologo/guadalajara#address-id=87409&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:36:31.939Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__patricia_saucedo_lopez.webp"
+}

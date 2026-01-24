@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Salvador Gerardo Arrieta Abes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 267,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/297a98/297a98f64b22adab02c521f035ba1595_140_square.jpg",
+  "about": "Medico especialista con 30 años de experiencia en el manejo integral de atencion a la mujer,en sus diferentes etapas,con un enfoque humano,y tratamientos de vanguardia.",
+  "addresses": [
+    {
+      "full": "Av. Lopez Mateos Nte. 624,"
+    },
+    {
+      "full": "Av. Lopez Mateos Nte. 624,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/salvador-gerardo-arrieta-abes/ginecologo/guadalajara#address-id=96102&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:29:52.114Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__salvador_gerardo_arrieta_abes.webp"
+}

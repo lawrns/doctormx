@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Elsy Cardeña Colli",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/544bdd/544bdda72c4c590c2e4bd7f432e7edac_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 69 430 (x 46 y 48),"
+    },
+    {
+      "full": "Calle 69 430 (x 46 y 48),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elsy-cardena-colli/ginecologo/merida#address-id=6260&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:46:21.968Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__elsy_carde_a_colli.webp"
+}

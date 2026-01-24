@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Salgado Cesar Dominguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 94,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/742430/7424302d10c173f6166a5817b3f72a50_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Capulin 46 203,"
+    },
+    {
+      "full": "Calle Capulin 46 203,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/salgado-cesar-dominguez/ginecologo/ciudad-de-mexico#address-id=36538&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:10:31.279Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__salgado_cesar_dominguez.webp"
+}

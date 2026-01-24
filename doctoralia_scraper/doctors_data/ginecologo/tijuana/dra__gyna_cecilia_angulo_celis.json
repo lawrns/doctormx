@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Gyna Cecilia Angulo Celis",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 334,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e7e7e8/e7e7e8d23235a48d75ff3cfafa3d5aa0.jpg",
+  "about": "En nuestro consultorio, entendemos lo importante que es la salud femenina y estamos aquí para ayudarte a cuidarte. Sabemos que puede ser difícil hablar sobre temas íntimos, pero queremos asegurarte que estamos aquí para escuchar y ayudarte en todo lo que necesites. Nuestros servicios ginecológicos incluyen exámenes de rutina, pruebas de Papanicolaou, pruebas de enfermedades de transmisión sexual, asesoramiento sobre anticoncepción y control prenatal. También brindamos servicios para el tratamiento de afecciones ginecológicas como infecciones vaginales, dolor menstrual, endometriosis, embarazo de alto riesgo, entre otros. Nuestro equipo de profesionales altamente capacitados está aquí para responder a todas tus preguntas y preocupaciones, y para ayudarte a tomar decisiones informadas sobre tu salud. Sabemos que cada paciente es único y por eso ofrecemos un enfoque personalizado para cada persona que visita nuestro consultorio. Nos enorgullece brindar un ambiente seguro y cómodo en nuestro consultorio, para que te sientas relajada y en confianza durante tu visita. No dudes en programar una cita con nosotros para hablar sobre cualquier problema de salud ginecológica que tengas, estaremos encantados de ayudarte en todo lo que necesites. ¡Esperamos verte pronto!",
+  "addresses": [
+    {
+      "full": "Paseo Playas de Tijuana 650,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    },
+    {
+      "name": "Colocación de implante subdérmico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gyna-cecilia-angulo-celis/ginecologo/tijuana#address-id=449962&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:41:39.935Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__gyna_cecilia_angulo_celis.webp"
+}

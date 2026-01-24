@@ -1,0 +1,25 @@
+{
+  "name": "Karla Margarita Ruz Herrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 232,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7c8077/7c8077d28c03f79826986e41ea729828_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Star Médica Piso 8 Cons 802,"
+    },
+    {
+      "full": "Star Médica Piso 8 Cons 802,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-margarita-ruz-herrera/ginecologo/merida#address-id=148150&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:48:02.735Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/karla_margarita_ruz_herrera.webp"
+}

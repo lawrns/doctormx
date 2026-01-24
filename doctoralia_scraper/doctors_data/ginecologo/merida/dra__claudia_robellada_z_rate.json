@@ -1,0 +1,35 @@
+{
+  "name": "Dra. Claudia Robellada Zárate",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 56,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9cbcd67b/9cbcd67b-8e20-424b-ab00-7498a90a2a6d_small_square.jpg",
+  "about": "¡Hola! Soy la Dra. Claudia Robellada, ginecóloga y obstetra con especialidad en Biología de la Reproducción. Me formé en el Instituto Nacional de Perinatología en la Ciudad de México y estoy para ayudar con temas de salud hormonal, fertilidad, anticoncepción y sexualidad femenina. Mi compromiso es acompañar a las mujeres en cada etapa de su vida, brindando atención empática, basada en evidencia y centrada en su bienestar físico y emocional.",
+  "addresses": [
+    {
+      "full": "Calle 12A 310,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Tratamientos de Reproducción Asistida e Infertilidad",
+      "price": "• Desde $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/claudia-robellada-zarate/ginecologo/yucatan#address-id=567742&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:32:49.736Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__claudia_robellada_z_rate.webp"
+}

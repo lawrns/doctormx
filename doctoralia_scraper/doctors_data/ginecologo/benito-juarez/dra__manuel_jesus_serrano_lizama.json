@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Manuel Jesus Serrano Lizama",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 262,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/00cb8448/00cb8448-4bf9-4009-ab88-c92e33df007a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 103 Mz. 12 Lt. 1 , Region 94,"
+    },
+    {
+      "full": "Av. Lopez Portillo Y Prol. Kabah S/N , Region 92,"
+    },
+    {
+      "full": "Calle 103 Mz. 12 Lt. 1 , Region 94,"
+    },
+    {
+      "full": "Av. Lopez Portillo Y Prol. Kabah S/N , Region 92,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuel-jesus-serrano-lizama/ginecologo/benito-juarez#address-id=332963&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:12:47.194Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__manuel_jesus_serrano_lizama.webp"
+}

@@ -1,0 +1,77 @@
+{
+  "name": "Dr. Miguel Antonio Uribe Uribe",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 359,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f2dd9d/f2dd9db9d82c23488b1bcff05864f056_220_square.jpg",
+  "about": "Soy el Dr. Miguel Antonio Uribe Uribe, Subespecialista en Ginecología Oncológica y Enfermedades de la Mama por la UNAM (Hospital General de México), Especialista en Ginecología y Obstetricia por la UAEMex y Cirugía de Mínima Invasión (Laparoscopía por la Universidad Anáhuac México e Histeroscopia Universidad de Ciencias Médicas en San José, Costa Rica), Colposcopía y Virus de Papiloma Humano (UNAM, Hospital General de México) Como persona y especialista, me enfoco en acompañar en todo momento y de manera muy estrecha a la paciente, tanto en enfermedades cancerosas como no cancerosas, escucho todas tus preocupaciones desde la primer consulta y que continúa haciéndolo durante el tratamiento y seguimiento, que siempre busca la manera de poderte ayudar a restablecer tu estado de salud y para ello te ofrezco lo más actualizado en el diagnóstico Cuento con equipo conformado por otros Ginecólogos Oncólogos, Anestesiólogos Certificados, Oncólogos-Médicos, Radio-Oncólogos, Radiólogos con alta especialidad en mama, Psicólogos Oncólogos, Rehabilitación Física especializada en Cáncer y Nutriólogos, todo esto con la finalidad de otorgar un tratamiento integral y que tú como mujer nunca se sienta sola ante cualquier enfermedad.",
+  "addresses": [
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911,"
+    },
+    {
+      "full": "Blvd. Puerta de Hierro 5150,"
+    },
+    {
+      "full": "Blvd. Miguel Alemán 57,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Aplicación de Laparascopia diagnóstica con biopsia",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,100"
+    },
+    {
+      "name": "Atención del cáncer en la mujer",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Atención pacientes con cáncer",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $900"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,100"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": ""
+    },
+    {
+      "name": "Biopsia trucut de mama",
+      "price": "• $4,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-antonio-uribe-uribe-2/ginecologo-oncologico-ginecologo/guadalajara#address-id=436630&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:13:52.130Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__miguel_antonio_uribe_uribe.webp"
+}

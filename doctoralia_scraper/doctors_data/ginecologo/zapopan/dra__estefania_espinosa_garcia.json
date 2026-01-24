@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Estefania Espinosa Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a12c56/a12c56261be8bb8eb30e6ad3daa02ace_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Agrónomos 5474,"
+    },
+    {
+      "full": "Calle Agrónomos 5474,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $550"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $550"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cesárea con histerectomia postparto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/estefania-espinosa-garcia/ginecologo/zapopan#address-id=21893&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:24:25.825Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__estefania_espinosa_garcia.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Laura Estrada Maldonado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 75,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ff25fc51/ff25fc51-df7a-4175-8128-129625c7a0e7_small_square.jpg",
+  "about": "!Hola! Soy la Dra Laura Estrada Maldonado, Ginecóloga en Tijuana, certificada por el Consejo Mexicano de Ginecología y Obstetricia, A. C. Te platico un poco más sobre mí, realicé mi formación como médico general en la Universidad Autónoma de Baja California, al concluirla decidí continuar mi preparación como médico realizando mi especialidad en ginecología y obstetricia en el Instituto Mexicano del Seguro Social, avalada por la Universidad Autónoma de Sinaloa. Mi principal objetivo es brindarte la certeza que al acudir a mi consulta encuentres un espacio cómodo, donde te sientas segura de poder expresar todas tus dudas, te sientas escuchada en un ambiente de respeto y sobre todo de empatía donde todas las dudas e inquietudes que puedas presentar en consulta, será de suma importancia para mí que puedan ser resueltas. Sobre todo poder explicarte de forma clara y sencilla tus padecimientos de una forma que puedas entender lo que esta sucediendo en tu cuerpo y encontrarle un sentido a los tratamientos propuestos. Dentro de los servicios que ofrecemos en mi consulta son: -Asesoría y tratamiento de infecciones vaginales -Manejo de ciclos menstruales irregulares -Sangrado uterino anormal -Toma de citología cervical (papanicolau) -Colposcopia -Ultrasonido ginecológico y obstétrico -Detección temprana de Virus de Papiloma Humano -Atención de síndrome de ovario poliquístico -Asesoría sobre métodos anticonceptivos -Control prenatal Como ginecóloga y obstetra nuestra formación no solo se limita al área clínica también ofrecemos servicios quirúrgicos como: -Histerectomías -Tratamiento quirúrgico de miomas -Cirugía quistes de ovario -Cesárea humanizada -Aborto legal y seguro Mi objetivo es continuar avanzando y mejorando para poder ofrecer un servicio de calidad competitivo, dedicado totalmente a mis pacientes, que al elegirme para atender su problemas de salud, ponen su confianza en mis manos.",
+  "addresses": [
+    {
+      "full": "DEL PRADO MEDICAL TOWER 4083,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-estrada-maldonado/ginecologo/tijuana#address-id=494579&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:42:09.584Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__laura_estrada_maldonado.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Cristina Alejandra Perez Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 237,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/89cdbb/89cdbb9843fa058e80034aa828ace9ed_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Priv Tabachin Del Carmen,103,Fracc Hdas Del Carmen Ii,,"
+    },
+    {
+      "full": "Priv Tabachin Del Carmen,103,Fracc Hdas Del Carmen Ii,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cristina-alejandra-perez-hernandez/ginecologo/leon#address-id=358090&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:36:07.170Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/cristina_alejandra_perez_hernandez.webp"
+}

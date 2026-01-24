@@ -1,0 +1,25 @@
+{
+  "name": "Fabiola Guadalupe Soto Ramos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 477,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4751aa/4751aaf67a5f3ab41bcec4e24734706f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Áuriga No. 8 Planta Baja Local 3 (Plaza Monarca),"
+    },
+    {
+      "full": "Áuriga No. 8 Planta Baja Local 3 (Plaza Monarca),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fabiola-guadalupe-soto-ramos/ginecologo/ciudad-de-mexico#address-id=148224&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:22:00.826Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/fabiola_guadalupe_soto_ramos.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Susana Del Carmen Haquet Santana",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 95,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dee2e9/dee2e92bc3018549af89b72df14ced50_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Rio Churubusco 601,"
+    },
+    {
+      "full": "Av. Rio Churubusco 601,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/susana-del-carmen-haquet-santana/ginecologo/benito-juarez#address-id=171033&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:17:37.233Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/susana_del_carmen_haquet_santana.webp"
+}

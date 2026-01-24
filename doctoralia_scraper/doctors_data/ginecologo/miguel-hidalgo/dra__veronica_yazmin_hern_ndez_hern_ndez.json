@@ -1,0 +1,54 @@
+{
+  "name": "Dra. Veronica Yazmin Hernández Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 30,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9b9b24/9b9b24d6d68506e081bc8f294f8b2813_220_square.jpg",
+  "about": "Soy la Dra Veronica Hernández, ginecóloga con alta especialidad en menopausia, cuento con adiestramientos en colposcopia, ultrasonido y endoscopia ginecológica (realizo cirugía ginecológica de mínima invasión como histeroscopias y laparoscopias). Soy egresada de médico cirujano y partero del Instituto Politécnico Nacional; de la especialidad de ginecología y obstetricia del Hospital de la mujer de la CdMx; alta especialidad de perimenopausia del Hospital 1ro de Octubre ISSSTE y curso de endoscopía ginecológica en Hospital general de México. Me gusta actualizarme para brindar la mejor de la atención para mis pacientes.",
+  "addresses": [
+    {
+      "full": "Tuxpan 6,"
+    },
+    {
+      "full": "Gelati 33,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/veronica-yazmin-hernandez-hernandez/ginecologo/miguel-hidalgo-mexico#address-id=533063&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:03:22.920Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__veronica_yazmin_hern_ndez_hern_ndez.webp"
+}

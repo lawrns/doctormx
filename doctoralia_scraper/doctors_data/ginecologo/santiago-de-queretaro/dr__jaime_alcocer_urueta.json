@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jaime Alcocer Urueta",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 82,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/6daeb22b/6daeb22b-7463-4604-a04d-b88df21565a1_small_square.jpg",
+  "about": "Medicina General:Facultad de Medicina Universidad Autonoma de Queretaro. Ginecologia y Obstetricia: Instituto Nacional de Perinatologia UNAM Endoscopia Ginecologica: Institiuto Nacional de Perinatologia UNAM Minimal Invasive Surgery Fellowship: IRCAD Francia Histeroscopia: Hospital Policlinico Bari Italia Maestria Investigacion Medica y Salud Publica. Facultad de Medicina UAQ",
+  "addresses": [
+    {
+      "full": "Blvd. Centro sur 9800,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jaime-alcocer-urueta/ginecologo/queretaro#address-id=5318&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:44:00.120Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__jaime_alcocer_urueta.webp"
+}

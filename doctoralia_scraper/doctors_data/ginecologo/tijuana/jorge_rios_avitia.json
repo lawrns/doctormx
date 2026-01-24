@@ -1,0 +1,37 @@
+{
+  "name": "Jorge Rios Avitia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 393,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/24daae/24daae4c724d4a822a1cdd6fcf7cbef3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Diaz Ordaz 125,"
+    },
+    {
+      "full": "Blvd. Cucapah 19724,"
+    },
+    {
+      "full": "Blvd. Diaz Ordaz 3200,"
+    },
+    {
+      "full": "Blvd. Diaz Ordaz 125,"
+    },
+    {
+      "full": "Blvd. Cucapah 19724,"
+    },
+    {
+      "full": "Blvd. Diaz Ordaz 3200,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-rios-avitia/ginecologo/tijuana#address-id=213183&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:07:34.847Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/jorge_rios_avitia.webp"
+}

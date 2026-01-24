@@ -1,0 +1,25 @@
+{
+  "name": "Alberto Quiroz De La Torre",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 39,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/51038f/51038fb14b1fb9a42ee674799b659b7b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Brasilia 1. Fracc. El Paraiso. ,"
+    },
+    {
+      "full": "Brasilia 1. Fracc. El Paraiso. ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alberto-quiroz-de-la-torre/ginecologo/tijuana#address-id=359059&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:23:46.100Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/alberto_quiroz_de_la_torre.webp"
+}

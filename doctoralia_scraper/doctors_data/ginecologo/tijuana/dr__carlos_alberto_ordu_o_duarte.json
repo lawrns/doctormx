@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Carlos Alberto Orduño Duarte",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 156,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2bbe56/2bbe561af8116c803615f3710732c10e_220_square.jpg",
+  "about": "ESPECIALISTA EN GINECOLOGIA Y OBSTETRICIA AVALADO POR LA UNAM, Y HIES, CERTIFICADO POR EL CONSEJO MEXICANO DE GINECOLOGIA Y OBSTETRICIA A.C. DESDE EL 2009 A LA FECHA, ASI COMO MIEMBRO ACTIVO DE ASOCIACION DE GINECOLOGIA Y OBSTETRICIA DE TIJUANA A. C., DIPLOMADO EN NUTRICION BASICA OTORGADO POR CETYS UNIVERSIDAD, CUENTO CON AMPLIA EXPERIENCIA EN MEDIO PRIVADO ASI COMO INSTITUCIONAL. OFRECIENDOLE UNA ATENCION DE CALIDAD Y CALIDEZ, DONDE SE INCLUYE EN SU CONSULTA LA REALIZACION D ULTRASONIDO ASI COMO OTROS METODOS PARA LLEGAR A UN DIAGNOSTICO PRECISO DE SU ENFERMEDAD. TAMBIEN OFREZCO EL SERVICIO DE APLICACION DE PLASMA RICO EN PLAQUETAS PARA REJUVENECIMIENTO FACIAL.",
+  "addresses": [
+    {
+      "full": "Ferrocarril 413 , Col. Cuauhtémoc,"
+    },
+    {
+      "full": "Ferrocarril 413 , Col. Cuauhtémoc,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-alberto-orduno-duarte/ginecologo/tijuana#address-id=72732&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:43:41.267Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__carlos_alberto_ordu_o_duarte.webp"
+}

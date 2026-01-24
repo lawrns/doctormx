@@ -1,0 +1,31 @@
+{
+  "name": "Maria Isabel Lobaton Paredes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 440,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4734c5/4734c5db37e257e3aa1b70197cd52aa1_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Antigua Carr. Ocotlan 5,"
+    },
+    {
+      "full": "C. 5 Nte. 1001,"
+    },
+    {
+      "full": "Antigua Carr. Ocotlan 5,"
+    },
+    {
+      "full": "C. 5 Nte. 1001,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-isabel-lobaton-paredes/ginecologo/panuco-de-coronado#address-id=191951&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:35:39.909Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/maria_isabel_lobaton_paredes.webp"
+}

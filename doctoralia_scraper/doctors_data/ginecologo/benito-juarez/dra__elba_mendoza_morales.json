@@ -1,0 +1,73 @@
+{
+  "name": "Dra. Elba Mendoza Morales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1147,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/09b3dc/09b3dc2d4d005684722cf14678427b70_220_square.jpg",
+  "about": "La Dra. Elba Mendoza Morales es especialista en Ginecología y Obstetricia, sus estudios los realizó en el Hospital General de México (avalados por la UNAM), siendo éste actualmente, el centro de referencia en nuestro país, así como de donde surgieron las especialidades médicas en México, ya que se tratan los casos de la más alta complejidad, especialmente en el área de Ginecología y Obstetricia. La Dra. Mendoza también cuenta con una Alta Especialidad en Infertilidad y Reproducción Asistida realizada en la clínica IVI-México y en el IVI-Sevilla España. El grupo IVI es reconocido como la red de clínicas de infertilidad más importantes a nivel mundial, adquiriendo el conocimiento de los tratamientos más nuevos y de vanguardia de la medicina reproductiva. Además realizó una especialización en el área de Colposcopía y Patología del Tracto Genital Inferior de la Mujer, siendo experta en diagnóstico y tratamiento de lesiones producidas por el Virus del Papiloma Humano, el cual como sabemos es el principal factor de riesgo de cáncer cervicouterino. La Dra. se caracteriza por su trato humano, respetuoso y amable con sus pacientes, como parte de su actualización diaria es miembro y está certificada por diferentes asociaciones médicas: · Consejo Mexicano de Especialistas en Ginecología y Obstetricia (COMEGO). · Federación Mexicana de Colegios de Obstetricia y Ginecología (FEMECOG). · Certificada por el Consejo Mexicano de Ginecología y Obstetricia. Su formación y actualización amplia en el área de Ginecología y Obstetricia, Infertilidad y Reproducción y Colposcopía, le han dado las herramientas necesarias para una atención integral a la mujer en sus diferentes etapas de desarrollo, así como su compromiso y profesionalismo con sus pacientes se traduce con la mejor calidad y calidez de atención en cada consulta.",
+  "addresses": [
+    {
+      "full": "Cto Centro Comercial 20Cd. Satélite, Naucalpan de Juárez, Méx,"
+    },
+    {
+      "full": "Av. Universidad 1080,"
+    },
+    {
+      "full": "Enrique Sada Muguerza 13,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Revisión de embarazo (Primera vez)",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Revisión de embarazo (Primera vez)",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elba-mendoza-morales/ginecologo/naucalpan-de-juarez2#address-id=445334&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:03:18.864Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__elba_mendoza_morales.webp"
+}

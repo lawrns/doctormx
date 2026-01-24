@@ -1,0 +1,31 @@
+{
+  "name": "Francisco Javier Cedillo Diaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1a0965/1a0965e1fcbf1440b612469909aed826_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Félix Cuevas 540,"
+    },
+    {
+      "full": "Pachicalco 4,"
+    },
+    {
+      "full": "Félix Cuevas 540,"
+    },
+    {
+      "full": "Pachicalco 4,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-javier-cedillo-diaz/ginecologo/iztapalapa#address-id=227297&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:15:26.407Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/francisco_javier_cedillo_diaz.webp"
+}

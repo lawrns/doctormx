@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Felix Pestana Cortazar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/928a8b/928a8b6ce6fb8e556e3cd694fa44a5bd_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Universidad 1134,"
+    },
+    {
+      "full": "Ave. Universidad 1134,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/felix-pestana-cortazar/ginecologo/ciudad-de-mexico#address-id=39056&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:14:46.482Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__felix_pestana_cortazar.webp"
+}

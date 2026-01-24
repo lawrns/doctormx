@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Carlos Augusto Gutierrez Santiago",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4b6745/4b6745aad8eff6b26f7d0af75b861122_220_square.jpg",
+  "about": "Mi experiencia como medico Ginecologo-obstetra es de varios años, soy profesor del curso de Ginecologia y Obstetricia, me gusta actualizarme constantemente, uno de mis principios basicos es la honestidad con mis diagnosticos y los tratamientos que otorgo. Todas las pacientes que he tratado son casos de exitos, me gustaria que me dieras la oportunidad de ser otro caso de exito",
+  "addresses": [
+    {
+      "full": "Anillo Periférico Ecológico 3505, Reserva Territorial Atlixcáyotl, San Andrés Cholula, Pue, México,"
+    },
+    {
+      "full": "Anillo Periférico Ecológico 3505, Reserva Territorial Atlixcáyotl, San Andrés Cholula, Pue, México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $700"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Cesárea",
+      "price": "• $700"
+    },
+    {
+      "name": "Cirugía conservadora parcial de prolapso uterino",
+      "price": "• $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-augusto-gutierrez-santiago/ginecologo/puebla#address-id=94485&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:12:37.666Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__carlos_augusto_gutierrez_santiago.webp"
+}

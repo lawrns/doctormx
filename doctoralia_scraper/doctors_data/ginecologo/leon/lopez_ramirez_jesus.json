@@ -1,0 +1,25 @@
+{
+  "name": "Lopez Ramirez Jesus",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 92,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4e7df5/4e7df5ca666d59761514c9bab580fd21_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Circuito Mina Calderones 205. Col. Real. ,"
+    },
+    {
+      "full": "Circuito Mina Calderones 205. Col. Real. ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lopez-ramirez-jesus/ginecologo/guanajuato#address-id=359135&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:35:59.048Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/lopez_ramirez_jesus.webp"
+}

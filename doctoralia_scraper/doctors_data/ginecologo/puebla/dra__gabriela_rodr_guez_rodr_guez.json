@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Gabriela Rodríguez Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 145,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bb7f72/bb7f72ae0781e9f4f64bf5d875abe1e7_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Chipilo 135 (esquina con Av. 3 poniente),"
+    },
+    {
+      "full": "Calle Chipilo 135 (esquina con Av. 3 poniente),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriela-rodriguez-rodriguez/ginecologo/puebla#address-id=33140&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:16:55.232Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__gabriela_rodr_guez_rodr_guez.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Mariana Morales Bargas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fb23ed/fb23ed54c1fa2d9cff265e49e8b801ce_140_square.jpg",
+  "about": "Soy egresada del Hospital O'Horan, avalada por UADY, certificada por el Consejo Mexicano de Ginecología y Obstetricia. Especialista en salud femenina, seguimiento desde la consulta preconcepcional hasta el nacimiento y puerperio",
+  "addresses": [
+    {
+      "full": "Calle 26 num 199 col. Altabrisa Hospital Starmédica Mérida,"
+    },
+    {
+      "full": "Calle 26 num 199 col. Altabrisa Hospital Starmédica Mérida,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mariana-morales-bargas/ginecologo/yucatan#address-id=382353&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:42:19.502Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__mariana_morales_bargas.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jesús Alejandro García Bautista",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/78a82010/78a82010-4240-4e2e-9be5-22d2b04add58_large.jpg",
+  "about": "Sobre mí Soy Médico especialista en Ginecología y Obstetricia, con subespecialidad en Biología de la Reproducción y Cirugía de mínima Invasión Ginecológica, comprometido en ayudar a las parejas a cumplir su sueño de ser padres. A través de tratamientos innovadores y un acompañamiento personalizado, brindo soluciones eficaces para superar los desafíos reproductivos. ¿Por qué elegirme a mí? Mi enfoque combina la ciencia y la tecnología así como la empatía y la honestidad para ofrecer resultados exitosos y experiencias positivas en cada paso del camino, siendo siempre sincero en los diagnósticos y tratamientos. Principales áreas de tratamiento Biología de la Reproducción: encaminado en la atención integral de la infertilidad, estableciendo diagnósticos oportunos y brindando una atención personalizada desde tratamientos simples hasta técnicas de reproducción asistida. Cirugia de minima invasion ginecologica: Son procedimientos quirúrgicos que consisten en realizar la intervención a través de pequeños orificios, acortando el tiempo de estancia intrahospitalaria y con la finalidad de obtener mejores resultados quirúrgicos con la disminución de sangrados, adherencias y dolor. (Histeroscopía / Laparoscopía) Endocrinología Ginecológica: Enfocado en el estudio hormonal y su impacto en el bienestar y salud reproductiva de las mujeres desde la adolescencia hasta la menopausia Mi consulta y mi equipo Estoy a la vanguardia de tecnología para una atención de calidad, utilizando equipos de última generación para diagnósticos certeros y precisos. Permitiendo de esta manera maximizar las posibilidades de éxito y reducción de riesgos, asegurado que cada pareja reciba el tratamiento más adecuado para su situación específica. Otros servicios Reproducción asistida: son procedimientos que se utilizan en parejas con problemas de fertilidad y no han logrado concebir un hijo (inseminación artificial, fertilización in vitro). Climaterio y Menopausia: Son dos etapas cruciales en la vida de la mujer, caracterizada por cambios fisiológicos y hormonales que impactan en diversos aspectos de su salud, bienestar y calidad de vida. Genética Reproductiva: Se centra en identificar, estudiar y tratar las causas genéticas que puedan impedir la concepción o llevar a complicaciones durante el embarazo",
+  "addresses": [
+    {
+      "full": "Boulevard Padre Kino 10014,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-alejandro-garcia-bautista/ginecologo/tijuana#address-id=569105&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:41:32.096Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__jes_s_alejandro_garc_a_bautista.webp"
+}

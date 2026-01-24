@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Paulina Carrillo",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 25,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/122996db/122996db-afa8-4251-8ad5-8504619a6ec9_small_square.jpg",
+  "about": "Médico ginecólogo con formación internacional en cirugía de mínima invasión, especializada en el diagnóstico y tratamiento integral de endometriosis, dolor pélvico crónico y adenomiosis.Acompaño a mujeres con dolor, síntomas complejos o sospecha de endometriosis, ofreciendo una evaluación completa y tratamientos basados en evidencia.Cuento con entrenamiento avanzado en histeroscopia y laparoscopia de alta precisión, realizado en Europa y Estados Unidos, trabajando con equipos multidisciplinarios expertos en endometriosis, dolor pélvico e infertilidad asociada.Mi práctica combina un enfoque cercano, humano y multidisciplinario, siempre orientada a mejorar la calidad de vida de mis pacientes, especialmente aquellas que han pasado años buscando respuestas.Brindo diagnóstico integral de infertilidad relacionada con endometriosis, adenomiosis y otras causas ginecológicas. (En caso de requerir técnicas de reproducción asistida, cuento con centros aliados para referencia).",
+  "addresses": [
+    {
+      "full": "Avenida Ejército Nacional Mexicano 613,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de ginecología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• Desde $2,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paulina-carrillo-2/ginecologo/ciudad-de-mexico#address-id=616956&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:01:17.729Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__paulina_carrillo.webp"
+}

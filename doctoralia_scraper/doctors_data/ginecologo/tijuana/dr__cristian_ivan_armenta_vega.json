@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Cristian Ivan Armenta Vega",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 63,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0cf080/0cf080d1d1aae59a10f9bc01f1a3533d_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvrd Gral Rodolfo Sánchez Taboada 9589,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Ginecología estética",
+      "price": ""
+    },
+    {
+      "name": "Legrado uterino ginecológico diagnóstico o terapéutico. Urgente o programado",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cristian-ivan-armenta-vega/ginecologo-oncologico-ginecologo/tijuana",
+  "scrapedAt": "2026-01-22T00:39:33.683Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__cristian_ivan_armenta_vega.webp"
+}

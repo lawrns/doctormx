@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Gustavo Alonso Gamboa Lozano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d74320/d7432053d92e4cfcfa8e730bffb806bb_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Periférico Ecológico 3507,"
+    },
+    {
+      "full": "Periférico Ecológico 3507,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gustavo-alonso-gamboa-lozano/ginecologo/puebla#address-id=31600&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:17:45.906Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__gustavo_alonso_gamboa_lozano.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Aura Meztli Gómez Sánchez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 157,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ac98a6b7/ac98a6b7-c99d-46b8-baa4-1b61e9949fa8_small_square.jpg",
+  "about": "¡Hola! Soy la Dra. Aura Meztli Gómez Sánchez, Ginecóloga y Obstetra, con Cédula Profesional 5433685 y Cédula de Especialista 7730157, egresada de la Universidad Nacional Autónoma de México (UNAM) con residencia médica realizada en el Hospital de Gineco-Obstetricia No. 4 “Luis Castelazo Ayala” del IMSS.Cuento además con la subespecialidad en Biología de la Reproducción Humana (UNAM, 2013-2015, con mención honorífica), lo que me ha permitido dedicarme al diagnóstico y tratamiento integral de la infertilidad femenina y masculina, así como al acompañamiento de parejas que buscan lograr un embarazo mediante procedimientos como inseminación intrauterina (IIU) y fecundación in vitro (FIV).Mi prioridad es brindar una atención cálida, personalizada y basada en evidencia científica, acompañando a cada paciente desde la valoración inicial hasta el seguimiento de su salud reproductiva. Me apasiona escuchar, orientar y ofrecer soluciones efectivas, adaptadas a las necesidades de cada mujer y pareja.Actualmente atiendo en mi consultorio privado en Playas de Tijuana, donde combino la experiencia clínica con tecnología avanzada y un trato humano, cercano y respetuoso.Será un gusto acompañarte en tu camino hacia una vida saludable y plena.",
+  "addresses": [
+    {
+      "full": "PASEO DEL PEDREGAL LOCAL 208 PLAZA MORESA 410,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aura-meztli-gomez-sanchez/ginecologo/tijuana#address-id=581367&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:40:09.833Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__aura_meztli_g_mez_s_nchez.webp"
+}

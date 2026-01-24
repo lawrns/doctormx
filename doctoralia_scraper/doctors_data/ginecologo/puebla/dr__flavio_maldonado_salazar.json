@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Flavio Maldonado Salazar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/cfa212b6/cfa212b6-9fea-4cb3-bedc-68093dc3dd0f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Reforma Sur 3101,"
+    },
+    {
+      "full": "Ave. Reforma Sur 3101,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/flavio-maldonado-salazar/ginecologo/puebla#address-id=43424&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:16:50.162Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__flavio_maldonado_salazar.webp"
+}

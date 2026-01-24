@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Liz Angélica Badillo Jiménez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/461c1d9d/461c1d9d-4393-4085-ae56-0c904ed7d59a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Carlos G. Villaseñor 21,"
+    },
+    {
+      "full": "Carlos G. Villaseñor 21,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $400"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/liz-angelica-badillo-jimenez/ginecologo/guadalajara#address-id=83849&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:31:46.938Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__liz_ang_lica_badillo_jim_nez.webp"
+}

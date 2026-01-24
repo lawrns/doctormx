@@ -1,0 +1,25 @@
+{
+  "name": "Jesus Vazquez Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9cf9b1/9cf9b1b05e5e7ee5749271f59e37fbdd_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Priv. Ignacio Zaragoza 16 B,"
+    },
+    {
+      "full": "Priv. Ignacio Zaragoza 16 B,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-vazquez-perez/ginecologo/santiago-de-queretaro#address-id=215290&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:55:55.052Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/jesus_vazquez_perez.webp"
+}

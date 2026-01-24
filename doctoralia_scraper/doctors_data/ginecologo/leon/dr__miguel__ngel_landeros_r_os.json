@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Miguel Ángel Landeros Ríos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c61099/c610995f2be0960c1d019ae8ca46903e_140_square.jpg",
+  "about": "Me recibí como médico en la Universidad Autónoma de Nuevo León, posteriormente finalicé mis estudios como médico familiar en IMSS HGZ 1 en Mexicali, Baja California, después me completé la especialidad en Ginecología y Obstetricia en el Hospital General de la Secretaría de Salud en Durango, Durango. Por último completé un diplomado en Colposcopía con reconocimiento por la Universidad de Guanajuato, además de un curso de adiestramiento en servicio en Medicina Interna Obstétrica. Médico adscrito al Hospital de Gineco-Pediatría 48 del IMSS durante 21 años. Cuento con 29 de experiencia en el área de Ginecología y Obstetricia.",
+  "addresses": [
+    {
+      "full": "Blvd. San Pedro 105,"
+    },
+    {
+      "full": "Blvd. San Pedro 105,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina por vía vaginal",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-landeros-rios/ginecologo/leon#address-id=98512&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:28:52.375Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__miguel__ngel_landeros_r_os.webp"
+}

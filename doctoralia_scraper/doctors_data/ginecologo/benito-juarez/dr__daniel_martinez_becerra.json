@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Daniel Martinez Becerra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e6039c/e6039c4fde48f0380a9b78407624046c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Camino A Santa Teresa (Hosp. Angeles del Pedregal), 1055,"
+    },
+    {
+      "full": "Montecito ( Junto Al World Trade Center), 11, 6to Piso, Desp. 603,"
+    },
+    {
+      "full": "Camino A Santa Teresa (Hosp. Angeles del Pedregal), 1055,"
+    },
+    {
+      "full": "Montecito ( Junto Al World Trade Center), 11, 6to Piso, Desp. 603,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniel-martinez-becerra/ginecologo/magdalena-contreras#address-id=78059&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:12:15.227Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__daniel_martinez_becerra.webp"
+}

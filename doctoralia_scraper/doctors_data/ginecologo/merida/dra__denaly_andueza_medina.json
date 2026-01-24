@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Denaly Andueza Medina",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 347,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e6f69e/e6f69e1bb320b1caa6b3eb63cfaacf6e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "15 Edificio 1000Enium 491 2O. Piso Consultorio 205,"
+    },
+    {
+      "full": "15 Edificio 1000Enium 491 2O. Piso Consultorio 205,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/denaly-andueza-medina/ginecologo/merida#address-id=135751&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:43:34.341Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__denaly_andueza_medina.webp"
+}

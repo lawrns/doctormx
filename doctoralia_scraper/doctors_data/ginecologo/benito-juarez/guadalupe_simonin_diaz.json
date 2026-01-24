@@ -1,0 +1,25 @@
+{
+  "name": "Guadalupe Simonin Diaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 231,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0c824e/0c824eb46f03175cbf8d26bb5644c28a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Georgina no. 130, Napoles,"
+    },
+    {
+      "full": "Georgina no. 130, Napoles,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guadalupe-simonin-diaz/ginecologo/benito-juarez#address-id=110713&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:20:21.439Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/guadalupe_simonin_diaz.webp"
+}

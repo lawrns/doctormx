@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Alan Navarro Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 304,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/22f5cb/22f5cb3a362b7b559300892c6ad03747_220_square.jpg",
+  "about": "Ginecología y Obstetricia, UMAE 48 IMSS, León Guanajuato, 2011-2015 Urología Ginecológica, Hospital Civil, Fray Antonio Alcalde, Guadalajara, Jalisco, 2015-2017 Curso rotación en Hospital Privado, Cordoba Argentina 2015 Curso rotación en Clinique de L´Europe, Rouen Francia, 2016 Ganador 3er lugar XXVI Congreso Internacional Urología Ginecológica, Puerto Vallarta Jalisco 2015, Concurso carteles Título Fistula Sigmoideo Vesical Ganador 2do lugar XXVII Congreso Internacional Urología Ginecológica, León Guanajuato 2016, Concurso Trabajo libre Título Experiencia en Fijación de Cúpula al Ligamento Sacroespinoso para el manejo del Prolapso de Órganos Pélvicos",
+  "addresses": [
+    {
+      "full": "(FEMEGIN) (Dr. Alan Navarro/ Dra Reyna García) Aurelio L Gallardo 114 int 7,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alan-navarro-sanchez/ginecologo/guadalajara#address-id=88667&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:12:46.753Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__alan_navarro_s_nchez.webp"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "María José López Guerrero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/88383f/88383f3c5273f8e1722143ca1bd7276a_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Aeropuerto#101 villas Santa Julia,"
+    },
+    {
+      "full": "Blvd. Aeropuerto#101 villas Santa Julia,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-jose-lopez-guerrero/ginecologo/leon#address-id=388203&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:28:34.663Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/mar_a_jos__l_pez_guerrero.webp"
+}

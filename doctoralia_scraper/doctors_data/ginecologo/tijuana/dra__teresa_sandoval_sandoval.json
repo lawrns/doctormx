@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Teresa Sandoval Sandoval",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/86be9f/86be9f978b6b75a932a05d3b7c5c901f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Insurgentes 1311 5,"
+    },
+    {
+      "full": "Insurgentes 1311 5,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/teresa-sandoval-sandoval/ginecologo/tijuana#address-id=66838&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:44:34.473Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__teresa_sandoval_sandoval.webp"
+}

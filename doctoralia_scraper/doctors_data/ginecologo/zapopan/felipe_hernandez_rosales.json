@@ -1,0 +1,25 @@
+{
+  "name": "Felipe Hernandez Rosales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 267,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/297a98/297a98f64b22adab02c521f035ba1595_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Manuel Acuna 2647 -,"
+    },
+    {
+      "full": "Manuel Acuna 2647 -,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/felipe-hernandez-rosales/ginecologo/guadalajara#address-id=96065&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:44:45.389Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/felipe_hernandez_rosales.webp"
+}

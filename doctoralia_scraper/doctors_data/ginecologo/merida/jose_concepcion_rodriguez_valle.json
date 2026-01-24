@@ -1,0 +1,31 @@
+{
+  "name": "Jose Concepcion Rodriguez Valle",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 180,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/4f720619/4f720619-1431-4956-9f99-1020753ce81f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 19 170,"
+    },
+    {
+      "full": "C. 13 X 18 Y 20 99 F,"
+    },
+    {
+      "full": "C. 19 170,"
+    },
+    {
+      "full": "C. 13 X 18 Y 20 99 F,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-concepcion-rodriguez-valle/ginecologo/merida#address-id=211668&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:47:04.370Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/jose_concepcion_rodriguez_valle.webp"
+}

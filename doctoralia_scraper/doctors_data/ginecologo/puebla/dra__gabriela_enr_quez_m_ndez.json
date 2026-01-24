@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Gabriela Enríquez Méndez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 733,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/43509a/43509a1dc302ea25ceed16731eaeadd8_220_square.jpg",
+  "about": "LA MEDICINA MATERNO FETAL (PERINATOLOGÍA) ES LA SUBESPECIALIDAD DIRIGIDA AL DIAGNÓSTICO PRENATAL, PUDIENDO DETECTAR Y HACER PREDICCIONES DE EVENTOS ADVERSOS DURANTE EL EMBARAZO (PREECLAMPSIA (HIPERTENSIÓN EN EL EMBARAZO), PARTO PRETERMINO, CROMOSOMOPATIAS: SÍNDROME DE DOWN), MEDIANTE LA EVALUACIÓN DE \"MARCADORES ECOGRÁFICOS\" QUE SE REALIZAN POR ULTRASONIDO DE ALTA DEFINICIÓN, ADEMÁS DE DETECTAR MALFORMACIONES FÍSICAS MAYORES TAN TEMPRANO COMO ENTRE LAS 11 Y 14 SEMANAS DE EMBARAZO. Y ADEMÁS EXPERTOS EN MANEJO DE EMBARAZOS CON RIESGOS ELEVADOS, COMO SON MAMAS DIABETICAS, HIPERTENSAS, CON ENFERMEDADES TIROIDEAS, EPILEPSIA, ETC.",
+  "addresses": [
+    {
+      "full": "Privada 14 A Sur,"
+    },
+    {
+      "full": "Privada 14 A Sur,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cariotipo en Líquido Amniotico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriela-enriquez-mendez/ginecologo/puebla#address-id=88101&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:12:01.665Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__gabriela_enr_quez_m_ndez.webp"
+}

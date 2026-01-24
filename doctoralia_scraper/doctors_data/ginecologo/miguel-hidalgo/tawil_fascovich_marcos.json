@@ -1,0 +1,25 @@
+{
+  "name": "Tawil Fascovich Marcos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 274,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/988d29/988d29a40436062cabae86781e9f56f3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Acueducto Río Hondo 28, Lomas - Virreyes, Lomas De Chapultepec Iv Secc,"
+    },
+    {
+      "full": "Acueducto Río Hondo 28, Lomas - Virreyes, Lomas De Chapultepec Iv Secc,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tawil-fascovich-marcos/ginecologo/ciudad-de-mexico#address-id=139609&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:49:40.630Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/tawil_fascovich_marcos.webp"
+}

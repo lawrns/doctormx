@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Óscar Javier León Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 145,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/330275/33027559a8ffc8a4bc8fb07081fb43dd_220_square.jpg",
+  "about": "El Dr. Oscar Javier León Martínez es Ginecólogo y Obstetra, y ofrece citas en su consultorio médico privado, ubicado en New City Medical Plaza. Trayectoria Académica Estudió la Licenciatura como Médico General en la Universidad Autónoma de Baja California (UABC), posteriormente culminó la Especialidad en Ginecología y Obstetricia en la Universidad Nacional Autónoma de México (UNAM) y en el Consejo Mexicano de Ginecología y Obstetricia. Desde entonces es experto en diferentes tratamientos y enfermedades como: - Ginecología General - Enfermedades de Mama - Infecciones Genitales o Vaginales - Biología Reproductiva - Estudio de la Pareja Infértil - Congelamiento de Óvulos, Espermatozoides y Embriones - Embarazo sin Pareja Masculina - Inyección Intracitoplasmática (ICSI) - Recanalización de Trompas - Microcirugía Testicular para Obtener Esperma",
+  "addresses": [
+    {
+      "full": "P.º del Centenario 9580,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de ginecología",
+      "price": ""
+    },
+    {
+      "name": "Tratamientos de Reproducción Asistida e Infertilidad",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/oscar-javier-leon-martinez/ginecologo/tijuana",
+  "scrapedAt": "2026-01-22T00:39:37.046Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr___scar_javier_le_n_mart_nez.webp"
+}

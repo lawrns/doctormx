@@ -1,0 +1,39 @@
+{
+  "name": "Dra. Karla Alvarez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 275,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f9c72c/f9c72c2b10f16e7043958f20f77f919c_220_square.jpg",
+  "about": "Soy médico cirujano egresado de la Universidad Juárez de estado de Durango con cedula profesional 7068152. Especialidad de Ginecología y Obstetricia en Monterrey Nuevo León, en Instituto Mexicano de Seguro Social, avalada por la universidad de monterrey, con cédula profesional 10997979. Subespecialidad en Urología Ginecológica en la misma institución, avalada por Universidad Nacional Autónoma de México, con titulo y cédula en trámite por contingencia de salud actual. Me dedico a la salud de la mujer ginecológica, con mayor especialización en la mujer independientemente de la edad, con problemas de piso pélvico, en tema de incontinencia urinaria y prolapso de órganos pélvicos, así como problemas funcionales de la vejiga.",
+  "addresses": [
+    {
+      "full": "BLVD AGUACALIENTE 4558 INTERIOR T-02, COLONIA AVIACIÓN,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Incontinencia urinaria",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": "• $300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-alvarez-4/ginecologo/tijuana#address-id=383773&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:42:00.555Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__karla_alvarez.webp"
+}

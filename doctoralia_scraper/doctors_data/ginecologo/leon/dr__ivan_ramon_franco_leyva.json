@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Ivan Ramon Franco Leyva",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8b46c1/8b46c143e3aa73e28192f00afdda61c2_140_square.jpg",
+  "about": "Facultad de medicina en universidad autonoma de San Luis Potosí especialidad en ginecologia y obstetricia en UMAE 48 del Imss leon gto",
+  "addresses": [
+    {
+      "full": "Hospital la luz Avenida heroes de la independencia 1913 interior 409,"
+    },
+    {
+      "full": "Hospital la luz Avenida heroes de la independencia 1913 interior 409,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ivan-ramon-franco-leyva/ginecologo/leon#address-id=88977&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:28:38.358Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__ivan_ramon_franco_leyva.webp"
+}

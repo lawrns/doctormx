@@ -1,0 +1,25 @@
+{
+  "name": "Aida Madrid Morales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 274,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/988d29/988d29a40436062cabae86781e9f56f3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Janssen Janssen 213,"
+    },
+    {
+      "full": "Janssen Janssen 213,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aida-madrid-morales/ginecologo/miguel-hidalgo#address-id=251132&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:54:13.572Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/aida_madrid_morales.webp"
+}

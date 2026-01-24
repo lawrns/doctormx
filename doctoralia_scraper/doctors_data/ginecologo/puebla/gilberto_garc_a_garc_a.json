@@ -1,0 +1,25 @@
+{
+  "name": "Gilberto García García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 357,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7835f6/7835f6603967a7448eeb595b563d94c9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Centro Medico Anzures, Calle 12 A Sur 3518, Anzures,"
+    },
+    {
+      "full": "Centro Medico Anzures, Calle 12 A Sur 3518, Anzures,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gilberto-garcia-garcia/ginecologo/puebla#address-id=140587&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:24:34.136Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/gilberto_garc_a_garc_a.webp"
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Dra. Erika Valencia Mejía",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 80,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fd1c01/fd1c016645e4e562abe5fb8c7d33c351_220_square.jpg",
+  "about": "Médico Especialista en Ginecología y Obstetricia. Certificada por el Consejo Mexicano de Ginecología y Obstetricia.",
+  "addresses": [
+    {
+      "full": "Av. Carlos Fernández Graef 154,"
+    },
+    {
+      "full": "Av. Río Churubusco 601,"
+    },
+    {
+      "full": "Av. Carlos Fernández Graef 154,"
+    },
+    {
+      "full": "Av. Río Churubusco 601,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/erika-valencia-mejia/ginecologo/benito-juarez#address-id=470314&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:07:49.193Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__erika_valencia_mej_a.webp"
+}

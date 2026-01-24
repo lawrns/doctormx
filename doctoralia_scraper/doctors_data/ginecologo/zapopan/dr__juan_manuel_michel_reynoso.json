@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Juan Manuel Michel Reynoso",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 267,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/297a98/297a98f64b22adab02c521f035ba1595_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Pablo Villaseñor 377 ,"
+    },
+    {
+      "full": "Pablo Villaseñor 377 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-manuel-michel-reynoso/ginecologo/guadalajara#address-id=119479&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:32:18.808Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__juan_manuel_michel_reynoso.webp"
+}

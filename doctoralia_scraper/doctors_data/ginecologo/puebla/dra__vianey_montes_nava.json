@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Vianey Montes Nava",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 216,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/fb78477a/fb78477a-abec-4d92-bfaa-edaea4ea77c3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Del Maestro #13 (Antes 2107), La Loma Xicohténcatl,"
+    },
+    {
+      "full": "Blvd. Del Maestro #13 (Antes 2107), La Loma Xicohténcatl,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/vianey-montes-nava/ginecologo/tlaxcala#address-id=148195&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:16:33.399Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__vianey_montes_nava.webp"
+}

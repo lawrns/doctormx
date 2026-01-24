@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Alfredo Colón Lucach",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a4fa1f7a/a4fa1f7a-68af-46ca-b1e6-0b21bdc19a1b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Antonio Caso 2055, Zona Urbana Río Tijuana, 22010 Tijuana, BC ,"
+    },
+    {
+      "full": "Antonio Caso 2055, Zona Urbana Río Tijuana, 22010 Tijuana, BC ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Ecocardiograma fetal",
+      "price": ""
+    },
+    {
+      "name": "Electrocauterización",
+      "price": ""
+    },
+    {
+      "name": "Electrocoagulación (crioterapia de verrugas)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfredo-colon-lucach/ginecologo/tijuana#address-id=20081&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:43:55.240Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__alfredo_col_n_lucach.webp"
+}

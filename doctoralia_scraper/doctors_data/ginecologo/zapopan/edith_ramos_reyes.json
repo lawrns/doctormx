@@ -1,0 +1,46 @@
+{
+  "name": "Edith Ramos Reyes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/42b4cb/42b4cb6928caf5792dc58a81e1719419_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911,"
+    },
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edith-ramos-reyes/ginecologo/guadalajara#address-id=111356&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:17:16.049Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/edith_ramos_reyes.webp"
+}

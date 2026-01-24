@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jorge Luis Santibáñez Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 74,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/34a7ba/34a7ba28cb892064245a92e2073e3b67_220_square.jpg",
+  "about": "¡Hola! Soy el Dr. Jorge Luis Santibáñez Flores, especialista en Ginecología-Obstetricia por la UAEM con subespecialidad en Biología de la Reproducción por el INPer y Alta especialidad en Cirugía Endoscópica Ginecológica en CMN 20 de Noviembre. Mi sólida formación y experiencia de más de 10 años me permiten brindar atención especializada a mujeres con infertilidad y pacientes con patologías ginecológicas como miomas uterinos, dolor pélvico crónico, endometriosis a través de mínima invasión, infección por VPH, además de control de embarazo. climaterio y menopausia. Mi objetivo es ofrecer diagnósticos y tratamientos precisos, con atención médica de la más alta calidad, siempre priorizando la comodidad y bienestar de mis pacientes. Puedes confiar en que tu salud estará en manos expertas. ¡Será un placer atenderte!",
+  "addresses": [
+    {
+      "full": "Calle Agrarismo 208,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Cirugía Laparoscópica",
+      "price": ""
+    },
+    {
+      "name": "Climaterio y menopausia",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-luis-santibanez-flores/ginecologo/miguel-hidalgo#address-id=443015&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:01:15.313Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__jorge_luis_santib__ez_flores.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Nestor Mauricio Terrazas Arias",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 291,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/225afd/225afdda85a2516dcd0fc461cad3c9ab_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "De La Amargura 961,7,Lomas De San Pedrito Peñuelas,,"
+    },
+    {
+      "full": "De La Amargura 961,7,Lomas De San Pedrito Peñuelas,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nestor-mauricio-terrazas-arias/ginecologo/santiago-de-queretaro#address-id=358051&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:00:10.234Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/nestor_mauricio_terrazas_arias.webp"
+}

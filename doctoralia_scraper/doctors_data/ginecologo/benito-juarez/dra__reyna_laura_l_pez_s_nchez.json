@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Reyna Laura López Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/361001/3610016aef598ab768312934fbe6262a_220_square.jpg",
+  "about": "Reyna Laura Lopez Sanchez Ginecologia y Obstetricia/Cirugía Ginecológica Endoscópica /Colposcopia y Tracto Genital Inferior.",
+  "addresses": [
+    {
+      "full": "Avenida Universidad 1080,"
+    },
+    {
+      "full": "Avenida Universidad 1080,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/reyna-laura-lopez-sanchez/ginecologo/ciudad-de-mexico#address-id=571520&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:13:22.773Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__reyna_laura_l_pez_s_nchez.webp"
+}

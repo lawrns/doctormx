@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Juan Ignacio Martínez Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 36,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3f029b6c/3f029b6c-b6a7-49bf-afa0-24fa8ff9bf34_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Empresarios 150,"
+    },
+    {
+      "full": "Av. Empresarios 150,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-ignacio-martinez-hernandez/ginecologo/zapopan",
+  "scrapedAt": "2026-01-22T04:27:01.168Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__juan_ignacio_mart_nez_hern_ndez.webp"
+}

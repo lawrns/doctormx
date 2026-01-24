@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Eric Arreola Conde",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e5b001/e5b001e69a30d17553f7998288ea25c9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Ejército Nacional 617,"
+    },
+    {
+      "full": "Avenida Ejército Nacional 617,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eric-arreola-conde/ginecologo/miguel-hidalgo#address-id=477678&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:22:36.074Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__eric_arreola_conde.webp"
+}

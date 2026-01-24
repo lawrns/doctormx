@@ -1,0 +1,25 @@
+{
+  "name": "Alejandro Oscar Mancera Pantoja",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 66,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/973a35df/973a35df-7a27-4a9c-84fa-3ffe0b951c01_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Indiana 260,"
+    },
+    {
+      "full": "C. Indiana 260,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-oscar-mancera-pantoja/ginecologo/benito-juarez#address-id=163447&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:17:44.323Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/alejandro_oscar_mancera_pantoja.webp"
+}

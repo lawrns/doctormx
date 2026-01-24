@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Montserrat García Polo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 168,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ce315d/ce315dccd98fae064c6fe72938e61710_220_square.jpg",
+  "about": "Soy una ginecóloga muy humana, empatica con mis pacientes, mi misión acompañarlas en todos sus procesos y otorgarles el mejor servicio, ya que continuamente me encuentro en actualizaciones médicas, las espero en mi consultorio para tratarlas y ofrecerles la mejor opción a su padecimiento",
+  "addresses": [
+    {
+      "full": "Avenida gales número 19 esquina oriente 18 ,"
+    },
+    {
+      "full": "Avenida gales número 19 esquina oriente 18 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/montserrat-garcia-polo/ginecologo/veracruz#address-id=524132&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:14:29.760Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__montserrat_garc_a_polo.webp"
+}

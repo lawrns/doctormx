@@ -1,0 +1,25 @@
+{
+  "name": "Felipe Farro Serrano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 318,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/62235d/62235de25382b194c0198a22aa87329b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida 29 Poniente 2901,"
+    },
+    {
+      "full": "Avenida 29 Poniente 2901,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/felipe-farro-serrano/ginecologo/puebla#address-id=101776&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:27:23.256Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/felipe_farro_serrano.webp"
+}

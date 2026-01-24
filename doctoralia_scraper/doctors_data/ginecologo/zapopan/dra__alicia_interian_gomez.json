@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Alicia Interian Gomez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 411,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/edfd19/edfd19bd74aa1c7a365bbd1c6c9bbe31_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Independencia 105,"
+    },
+    {
+      "full": "Independencia 105,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alicia-interian-gomez/ginecologo/zapopan#address-id=248554&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:34:25.092Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__alicia_interian_gomez.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Francisco Javier Gamboa Canton",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fb2cf6/fb2cf6af61faad9e0f1e1a6a48d8b5b5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C 28 X 79 Y 81 332, Col. Morelos Oriente, ,"
+    },
+    {
+      "full": "C 28 X 79 Y 81 332, Col. Morelos Oriente, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-javier-gamboa-canton/ginecologo/merida#address-id=357000&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:50:35.105Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/francisco_javier_gamboa_canton.webp"
+}

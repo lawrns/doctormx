@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Mayra J. Carrillo Iñiguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 63,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/632eb0/632eb03474de68f0eaf5a0ccb1aaf657_220_square.jpg",
+  "about": "Soy especialista en Ginecóloga desde el año 2006, Curse el diplomado en Colposcopía y Enfermedades del Tracto Genital Inferior en 2009, Colposcopía Avanzada y Manejo Láser en 2010. Curse el adiestramiento en Ultrasonido Ginecológico y Fisiología Obstétrica en 2019 Doy atención a problemas de menstruación, menopausia,quistes de ovario, miomas uterinos, metodos de planificación familiar, toma de papanicolaou, quistes de mama Ultrasonido Ginecologico (Utero y Ovarios) Vacuna contra VPH, Manejo de Verrugas genitales, Tratamiento de lesiones vaginales por VPH Control de Embarazo, Ultrasonido de Embarazo Realizo Cirugía Ginecológica ( Utero, Ovarios y Mama) y Cirugia Obstetrica (Cesareas y Legrados)",
+  "addresses": [
+    {
+      "full": "Av. la Cima 757,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $950"
+    },
+    {
+      "name": "Displasia cervical",
+      "price": "• Desde $950"
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": "• Desde $950"
+    },
+    {
+      "name": "Vacunas virus del papiloma humano",
+      "price": "• Desde $4,500"
+    },
+    {
+      "name": "Visita Ginecología",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mayra-j-carrillo-iniguez/ginecologo/zapopan#address-id=447760&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:09:10.726Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__mayra_j__carrillo_i_iguez.webp"
+}

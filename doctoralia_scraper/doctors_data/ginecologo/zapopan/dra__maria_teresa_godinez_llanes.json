@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Maria Teresa Godinez Llanes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 82,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/63b088/63b088f8506ecdaf2d31768d3bab9a77_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Justo Sierra 2438,"
+    },
+    {
+      "full": "Justo Sierra 2438,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-teresa-godinez-llanes/ginecologo/guadalajara#address-id=160643&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:36:05.561Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__maria_teresa_godinez_llanes.webp"
+}

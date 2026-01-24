@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Raymundo López Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/55565a/55565a9a5fbcf87d81bcd1e5f5c70aae_220_square.jpg",
+  "about": "Soy el Dr. Ray, ginecólogo y obstetra, especialidad encargada tanto de llevar el control de la mujer embarazada, así como de los padecimientos propios de la mujer como quistes de ovario, tumores del útero, patología mamaria, alteraciones menstruales, climaterio y menopausia, anti concepción, entre otros. Tengo formación en Endoscopía-ginecológica, que son procedimientos quirúrgicos de de mínima invasión .",
+  "addresses": [
+    {
+      "full": "Manantial 103,"
+    },
+    {
+      "full": "Manantial 103,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raymundo-lopez-martinez/ginecologo/leon#address-id=450093&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:28:22.958Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__raymundo_l_pez_mart_nez.webp"
+}

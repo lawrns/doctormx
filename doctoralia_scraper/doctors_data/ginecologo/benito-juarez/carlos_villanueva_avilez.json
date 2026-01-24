@@ -1,0 +1,25 @@
+{
+  "name": "Carlos Villanueva Avilez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 44,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e540af/e540af94779fbf61006cbae8f70295e8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Del Sarto,30, Col. Mixcoac, ,"
+    },
+    {
+      "full": "Del Sarto,30, Col. Mixcoac, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-villanueva-avilez/ginecologo/benito-juarez#address-id=357467&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:19:41.438Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/carlos_villanueva_avilez.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "E. Oropeza Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 375,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/171cc3/171cc3a56e96e37caf1a14274402dd28_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av 3 Poniente 108 A Int 4,"
+    },
+    {
+      "full": "Av 3 Poniente 108 A Int 4,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/e-oropeza-lopez/ginecologo/puebla#address-id=128925&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:34:57.352Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/e__oropeza_lopez.webp"
+}

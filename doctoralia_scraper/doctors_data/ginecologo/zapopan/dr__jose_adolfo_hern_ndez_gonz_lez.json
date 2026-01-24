@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jose Adolfo Hernández González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/187be6/187be68812cb88af809151d220e21ab5_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "av. sebastian bach 4927,"
+    },
+    {
+      "full": "av. sebastian bach 4927,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": "• $800"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-adolfo-hernandez-gonzalez/ginecologo/zapopan#address-id=118276&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:20:40.570Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jose_adolfo_hern_ndez_gonz_lez.webp"
+}

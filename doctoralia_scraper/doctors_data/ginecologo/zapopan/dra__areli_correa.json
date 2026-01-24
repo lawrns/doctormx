@@ -1,0 +1,76 @@
+{
+  "name": "Dra. Areli Correa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 57,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/517dac/517dac6483e751e6d25a3338b0689b6a_220_square.jpg",
+  "about": "Hola como estas?, te invito a conocerme, soy la Dra. Areli Correa, Médica Cirujana y Partera, con la especialidad de Ginecología y Obstetricia, Médico en entrenamiento en el instituto de las Américas, Universidad de la Jolla California. Mi pasión es la Medicina, desde que recuerdo mis primeros años, quise ser médico para ayudar lo más posible a las personas en sus enfermedades, durante el proceso me di cuenta que mi objetivo es ayudar en la prevención de la enfermedad, así como lograr un estilo de vida saludable desde la planificación de un embarazo, por lo cual me especialicé en el área de Ginecología y Obstetricia, realicé como trabajo de investigación y tesis \"Porcentaje de neoplasia maligna en pacientes con clasificación BIRADS 4a, 4b, 4c y 5 durante el periodo comprendido entre el 01 de junio de 2015 al 31 de mayo de 2017 en el OPD Hospital Civil de Guadalajara, \"Dr. Juan I MENCHACA\". Por lo tanto conozco los factores de riesgo principales que intervienen en las patologías mamarias y cómo podemos prevenirlo, actualmente el cáncer mamario es el número 1 a nivel mundial en el género femenino, por lo cual es de vital importancia conocer este tema y saber cómo prevenirlo. No dudes en contactarme si tienes alguna duda al respecto. Te cuento también que creé un espacio informativo llamado Dac Fem Health, cuya misión esta encaminada en brindar de la manera más eficaz la información para lograr un estilo de vida saludable de forma general y enfocado en las principales patologías ginecológicas y Obstétricas, brindando también los mejores tips de salud en esta área. Me gustaría ser parte de tu crecimiento y no solamente ser un médico más, desde la primer consulta me enfoco en cambiar tus hábitos de salud, lo cual es la clave de prevención de cualquier enfermedad. Ahora sabes un poco de mi no dudes en contactarme.",
+  "addresses": [
+    {
+      "full": "De Las Artes 7,"
+    },
+    {
+      "full": "Cascada 38,"
+    },
+    {
+      "full": "Calle Rosales 34,"
+    },
+    {
+      "full": "Av Guadalupe 284,"
+    },
+    {
+      "full": "De Las Artes 7,"
+    },
+    {
+      "full": "Cascada 38,"
+    },
+    {
+      "full": "Calle Rosales 34,"
+    },
+    {
+      "full": "Av Guadalupe 284,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/areli-correa/ginecologo/zacatecas#address-id=363521&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:17:47.938Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__areli_correa.webp"
+}

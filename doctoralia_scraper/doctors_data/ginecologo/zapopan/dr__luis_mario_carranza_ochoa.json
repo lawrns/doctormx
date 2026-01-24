@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Luis Mario Carranza Ochoa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/726431/726431f10e35b6dd87b17316d095259f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calz. Lazaro Cardenas 4149 - Piso 4,"
+    },
+    {
+      "full": "CALZADA LAZARO CARDENAS 4149 PISO 4,"
+    },
+    {
+      "full": "Calz. Lazaro Cardenas 4149 - Piso 4,"
+    },
+    {
+      "full": "CALZADA LAZARO CARDENAS 4149 PISO 4,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-mario-carranza-ochoa-2/ginecologo/guadalajara#address-id=46803&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:29:24.253Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__luis_mario_carranza_ochoa.webp"
+}

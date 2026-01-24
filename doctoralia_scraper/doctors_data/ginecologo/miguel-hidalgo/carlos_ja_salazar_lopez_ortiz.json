@@ -1,0 +1,25 @@
+{
+  "name": "Carlos Ja Salazar Lopez Ortiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5ce709/5ce7095c643407e5a878aa92a0ee5f55_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ejercito Nacional No. 617 Piso 10,,"
+    },
+    {
+      "full": "Ejercito Nacional No. 617 Piso 10,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-ja-salazar-lopez-ortiz/ginecologo/miguel-hidalgo#address-id=76125&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:54:37.862Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/carlos_ja_salazar_lopez_ortiz.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Luisa María Haro González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 411,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/69cadc/69cadc0137298e464a2e335beda46ce9.jpg",
+  "about": "Especialista en enfermedades de la mujer y control del embarazo de más de 15 años de experiencia. Certificada por el Consejo Mexicano de Ginecología y Obstetricia. Afiliada al Colegio de Médicos Gineco-Obstetras del Estado de Jalisco A.C.",
+  "addresses": [
+    {
+      "full": "Avenida Aviación 4075,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luisa-maria-haro-gonzalez-2/ginecologo/zapopan",
+  "scrapedAt": "2026-01-22T04:26:17.653Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__luisa_mar_a_haro_gonz_lez.webp"
+}

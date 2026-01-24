@@ -1,0 +1,43 @@
+{
+  "name": "Dra. María Fernanda Pérez Lizardi",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 269,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/8ee4f8b6/8ee4f8b6-6dbc-41a9-a9be-d565b3471833_small_square.jpg",
+  "about": "Que tal ! Soy la Dra. María Fernanda Pérez Lizardi, Originaria de la Ciudad de Tijuana. Egresada del Hospital Infantil del Estado de Sonora en donde realicé mi residencia médica en Ginecología y Obstetricia durante 4 años, titulada por la Universidad Autónoma de México y avalada por el Consejo Mexicano de Ginecología y Obstetricia. Posteriormente realicé un diplomado en Colposcopia avalado por la Universidad de Puebla. Actualmente radicó aquí en la ciudad. Mediante esta plataforma me gustaría que conozcas sobre nuestro servicio , y así brindarte información sobre nuestra especialidad. Puedes agendar una cita directamente en esta página o a los números que aparecen en el contacto así como consultas Online. Estoy para servirte !! Gracias",
+  "addresses": [
+    {
+      "full": "Boulevard Salinas 11170 COL,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-fernanda-perez-lizardi-3/ginecologo/tijuana",
+  "scrapedAt": "2026-01-22T00:39:21.162Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__mar_a_fernanda_p_rez_lizardi.webp"
+}

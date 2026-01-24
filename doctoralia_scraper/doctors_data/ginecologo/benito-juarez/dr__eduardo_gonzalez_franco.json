@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Eduardo Gonzalez Franco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 146,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e7f662/e7f6627a25d1e6774e66b572484ef51e_220_square.jpg",
+  "about": "• Ginecología y Obstetricia • Colposcopia y patología genital inferior • Peri y post menopausia • Biología de la Reproducción",
+  "addresses": [
+    {
+      "full": "Av. Patriotismo 671,"
+    },
+    {
+      "full": "Av. Patriotismo 671,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-gonzalez-franco/ginecologo/ciudad-de-mexico#address-id=449573&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:09:28.612Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__eduardo_gonzalez_franco.webp"
+}

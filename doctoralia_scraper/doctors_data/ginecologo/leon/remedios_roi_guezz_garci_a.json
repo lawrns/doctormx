@@ -1,0 +1,25 @@
+{
+  "name": "Remedios Roi­Guezz Garci­A",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 251,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dcc13f/dcc13fb0a0af17659820d09cece757ff_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Israel 503, Leon Moderno, 37480 Leon, Gto., Mexico,"
+    },
+    {
+      "full": "Israel 503, Leon Moderno, 37480 Leon, Gto., Mexico,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/remedios-roiguezz-garcia/ginecologo/leon#address-id=255020&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:34:35.872Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/remedios_roi_guezz_garci_a.webp"
+}

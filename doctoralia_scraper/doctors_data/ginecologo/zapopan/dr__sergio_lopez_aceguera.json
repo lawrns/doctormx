@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Sergio Lopez Aceguera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 71,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3831a8a8/3831a8a8-8c73-4cbd-b550-1ad5cb9cc143_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Plan De S/n Luis 1761,"
+    },
+    {
+      "full": "Calle Plan De S/n Luis 1761,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-lopez-aceguera-2/ginecologo/guadalajara#address-id=46241&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:31:14.829Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__sergio_lopez_aceguera.webp"
+}

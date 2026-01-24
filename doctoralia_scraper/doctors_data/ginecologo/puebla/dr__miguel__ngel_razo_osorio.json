@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Miguel Ángel Razo Osorio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 217,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0ef048/0ef04892167a18a1a82fe4d67b1bca88_220_square.jpg",
+  "about": "Soy egresado de la Facultad de Medicina de la Benemérita Universidad Autónoma de Puebla; inicié mi especialidad en el Hospital Regional de Ciudad Madero de PEMEX, obteniendo mi título como Ginecoobstetra en el año 2017. Posteriormente trabajé dos años alternando en el estado de Puebla y de Hidalgo en ambas secretarías de salud, dentro del IMSS en Hidalgo, como médico especialista subrogado para PEMEX en Puebla, y como médico particular en la ciudad de Puebla y en Tulancingo. En base a lo que pude observar de la atención de la salud Ginecológica tanto a nivel institucional como particular creo firmemente que la atención quirúrgica de las mujeres en lo referente a padecimientos ginecológicos como son: quistes de ovario, miomas, histerectomía, oclusión tubaria, endometriosis, sangrado uterino anormal, pólipos endometriales, etc., necesita ofrecer a la mujer mayores opciones además de la cirugía abierta tradicional; por esta razón es que decidí realizar un Curso de Posgrado de Alta Especialidad en Endoscopía Ginecológica en la Ciudad de México en el Hospital Central Sur de Alta Especialidad de PEMEX durante el año 2019 en donde me entrené para llevar a cabo procedimientos ginecológicos de mínima invasión tanto en Laparoscopía como en Histeroscopía.",
+  "addresses": [
+    {
+      "full": "Prolongación Hidalgo S/N esquina con Felipe Ángeles,"
+    },
+    {
+      "full": "Prolongación Hidalgo S/N esquina con Felipe Ángeles,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $25"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ablación endometrial",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-razo-osorio/ginecologo/tulancingo#address-id=372159&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:11:25.188Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__miguel__ngel_razo_osorio.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Carlos Alejandro Garibay Zavala",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/084d24/084d24f004fc43e4c66769a156b8bbf1_220_square.jpg",
+  "about": "Medico Gineco-Obstetra con adiestramiento en Medicina Materno-Fetal, Embarazo de Alto riesgo, experto en la aplicación de tecnología de vanguardia con ultrasonido doppler color , flujometría de las arterias fetales principales, estudios morfológicos y translucencia nucal, PSS o prueba sin estrés para valorar la salud fetal, Instructor y pionero en los cursos de Obstetricia crítica así como de control y contención de la hemorragia Obstétrica. La atención de nuestras pacientes con calidad humana y científica con los estándares internacionales para tener los mejores resultados. Nos encontramos dando servicio en el Hospital siena del Moral y Hospital Medica Brisas para mejor atención de nuestras pacientes. La atención integral de la mujer requiere la capacitación continua en temas de infertilidad , esterilidad y reproducción asistida de baja complejidad (inseminación uterina, recanalizacion tubaria),Menopausia y terapia de hormonas bioidénticas. Soy un ser humano dedicado a su familia y trabajo con alto sentido del trato digno y humanitario los esperamos en cualquiera de nuestros centros de diagnóstico.",
+  "addresses": [
+    {
+      "full": "Carr Leon Duarte 5231 P 1 Cons 1,"
+    },
+    {
+      "full": "Carr Leon Duarte 5231 P 1 Cons 1,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-alejandro-garibay-zavala-2/ginecologo/leon#address-id=327442&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:28:27.486Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__carlos_alejandro_garibay_zavala.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Margarita Elodia Baez Arellano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 375,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/171cc3/171cc3a56e96e37caf1a14274402dd28_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Diag Def.De La Republica 581-1,"
+    },
+    {
+      "full": "Diag Def.De La Republica 581-1,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/margarita-elodia-baez-arellano/ginecologo/puebla#address-id=158966&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:29:01.752Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/margarita_elodia_baez_arellano.webp"
+}

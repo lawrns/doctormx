@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Teresita Gallegos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 291,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/85812d/85812d85d1185c83cc40624f18212656_220_square.jpg",
+  "about": "Estoy comprometida con la salud de la mujer , en todas sus etapas. Mi objetivo es brindarte una atención de calidad con calidez humana, atendiendo todas tus dudas e inquietudes para juntas obtener el mejor resultado",
+  "addresses": [
+    {
+      "full": "VIRREY DE VALLADOLID 208 ,"
+    },
+    {
+      "full": "VIRREY DE VALLADOLID 208 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/teresita-gallegos/ginecologo/santiago-de-queretaro#address-id=128946&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:50:34.967Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__teresita_gallegos.webp"
+}

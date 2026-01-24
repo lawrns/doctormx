@@ -1,0 +1,49 @@
+{
+  "name": "Dr. Carlos Francisco Verdugo Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/4f4c937d/4f4c937d-b79a-419f-9469-9a349be475ad_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Benito Juárez 2Da. 1350,"
+    },
+    {
+      "full": "Av. 5 De Mayo 806,"
+    },
+    {
+      "full": "Canadá 16801,"
+    },
+    {
+      "full": "Segunda 1350,"
+    },
+    {
+      "full": "Blvd. Santa Fe #10050 ,"
+    },
+    {
+      "full": "C. Benito Juárez 2Da. 1350,"
+    },
+    {
+      "full": "Av. 5 De Mayo 806,"
+    },
+    {
+      "full": "Canadá 16801,"
+    },
+    {
+      "full": "Segunda 1350,"
+    },
+    {
+      "full": "Blvd. Santa Fe #10050 ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-francisco-verdugo-flores/ginecologo/tijuana#address-id=240923&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:44:58.855Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__carlos_francisco_verdugo_flores.webp"
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Dra. Mónica Cruz Lemini",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 632,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bf51c2/bf51c28d8e1cd438d00a0cbd7dd8c9ec_220_square.jpg",
+  "about": "Desde que me das oportunidad de conocer a tu bebé, lo que más me interesa es su bienestar. Si acudes a los ultrasonidos de rutina, revisaremos que tu bebé se encuentre sano, con riesgo bajo para enfermedades genéticas y síndromes, y con baja posibilidad en tu embarazo para preeclampsia (presión alta) y parto prematuro, haciendo 3 visitas: entre las semanas 11-14, 20-24 y después de la semana 32 de gestación. Si acudes porque a tu bebé le sospechan un problema en alguno de sus órganos, buscaremos revisarlo de manera completa, para poder darte toda la información de un modo claro, y el apoyo que necesites para obtener el mejor resultado posible. Soy especialista en Medicina y Cardiología Fetal, miembro de Medicina Fetal México. Realicé mis especialidades de Ginecobstetricia y Medicina Materno-Fetal, en el Instituto Nacional de Perinatología; después una Maestría y Doctorado en Barcelona, España, con un total de 6 años de preparación en Cardiología Fetal. Soy ponente en cursos, conferencias y congresos nacionales e internacionales como experta en Medicina y Cardiología Fetal, con más de 40 publicaciones en revistas internacionales y capítulos en libros de la subespecialidad.",
+  "addresses": [
+    {
+      "full": "Hospital Star Médica Querétaro, Blvd. Bernardo Quintana 4060, Consultorios 701-702,"
+    },
+    {
+      "full": "Hospital Star Médica Querétaro, Blvd. Bernardo Quintana 4060, Consultorios 701-702,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vellosidades coriales",
+      "price": ""
+    },
+    {
+      "name": "Ecocardiografia fetal avanzada",
+      "price": "• $3,000"
+    },
+    {
+      "name": "Ecocardiograma fetal",
+      "price": "• $3,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/monica-cruz-lemini/ginecologo/santiago-de-queretaro#address-id=139184&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:50:50.228Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__m_nica_cruz_lemini.webp"
+}

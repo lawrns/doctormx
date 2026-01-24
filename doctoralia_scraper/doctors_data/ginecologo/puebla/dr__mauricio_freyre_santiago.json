@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Mauricio Freyre Santiago",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 71,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/95b31e/95b31e2fa4f996455a3578c3464f1031_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Reforma Sur 302,"
+    },
+    {
+      "full": "Reforma Sur 302,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mauricio-freyre-santiago/ginecologo/tehuacan#address-id=14333&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:24:07.664Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__mauricio_freyre_santiago.webp"
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Dra. Esther Tellez Giron",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 21,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/07a1ba/07a1bac3f2c9ff808627ce4f00e664bf_220_square.jpg",
+  "about": "Cuento con más de 10 años de experiencia, con alta especialidad en cirugía Ginecológica, así como control prenatal de embarazos de alto riesgo. Con experiencia en dos grandes instituciones de Salud públicas como médico de Base.",
+  "addresses": [
+    {
+      "full": "Sacramento 526, Col. Insurgentes San Borja,"
+    },
+    {
+      "full": "Sacramento 526, Col. Insurgentes San Borja,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Segunda opinión médica",
+      "price": ""
+    },
+    {
+      "name": "Terapia de Reemplazo Hormonal (TRH)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/esther-tellez-giron/ginecologo/ciudad-de-mexico#address-id=390936&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:08:26.538Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__esther_tellez_giron.webp"
+}

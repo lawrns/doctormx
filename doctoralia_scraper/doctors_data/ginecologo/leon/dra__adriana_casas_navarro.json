@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Adriana Casas Navarro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 190,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b6ebb5/b6ebb5261c05a5dc771df04292504950_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Manantial 106,"
+    },
+    {
+      "full": "Manantial 106,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adriana-casas-navarro/ginecologo/leon#address-id=2819&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:31:27.964Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__adriana_casas_navarro.webp"
+}

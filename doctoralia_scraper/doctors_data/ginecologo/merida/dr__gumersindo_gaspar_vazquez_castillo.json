@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Gumersindo Gaspar Vazquez Castillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 419,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/092154/0921540941a339f273b358a11e5da184_220_square.jpg",
+  "about": "Especialista con 30 años de experiencia, particularmente en la Ginecología Endocrina, trastornos menstruales, menopausia y esterilidad",
+  "addresses": [
+    {
+      "full": "Hospital Star Médica, Calle 26 #199 x15 y 7 Fracc Altabrisa, Consultorio 910, Piso 9,"
+    },
+    {
+      "full": "26 199 X 15 y 7, Fraccionamiento Alta Brisa, 97133 Merida, Yucatan, Mexico,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": "• Desde $150"
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gumersindo-gaspar-vazquez-castillo/ginecologo/yucatan#address-id=351309&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:33:02.396Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__gumersindo_gaspar_vazquez_castillo.webp"
+}

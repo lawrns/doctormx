@@ -1,0 +1,25 @@
+{
+  "name": "Flores Susana Gamez",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/934a64/934a6492caab84d3b552f1d384fe8001_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av.Pablo Neruda 3265,"
+    },
+    {
+      "full": "Av.Pablo Neruda 3265,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/flores-susana-gamez/ginecologo/guadalajara#address-id=72319&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:39:29.231Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/flores_susana_gamez.webp"
+}

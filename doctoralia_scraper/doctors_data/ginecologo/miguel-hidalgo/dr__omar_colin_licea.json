@@ -1,0 +1,52 @@
+{
+  "name": "Dr. Omar Colin Licea",
+  "specialty": "Ginecólogo",
+  "rating": 1.5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f766c3/f766c36a538e7545b4a84040e71fae04_140_square.jpg",
+  "about": "PROFESOR TITULAR TECNOLOGICO DE MONTERREY PROFESOR Y SINODAL EXAMEN PROFESIONAL UNIVERSIDAD ANAHUAC PRESIDENTE DE LA ASOCIACION MEDICA HOSPITAL ESCANDON SOCIO ACTIVO ASOCIACION MEXICANA MEDICINA DE LA REPRODUCCION (AMMR) SOCIO ACTIVO ASOCIACION AMERICANA DE MEDICINA DE LA REPRODUCCION (ASRM) AUTOR Y CO AUTOR DE PUBLICACIONES EN REVISTAS INDEXADAS",
+  "addresses": [
+    {
+      "full": "Ejercito Nacional No. 613, Col. Granada,"
+    },
+    {
+      "full": "Av. Ejército Nacional #678 1er piso Col. Polanco Reforma,"
+    },
+    {
+      "full": "Ejercito Nacional No. 613, Col. Granada,"
+    },
+    {
+      "full": "Av. Ejército Nacional #678 1er piso Col. Polanco Reforma,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/omar-colin-licea/ginecologo/ciudad-de-mexico#address-id=27804&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:09:10.046Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__omar_colin_licea.webp"
+}

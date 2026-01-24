@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Mayra Elizabeth Tejeda Ceja",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 109,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/af5cf0/af5cf0c95e55cbc5596a11d508fd6427_220_square.jpg",
+  "about": "Soy médico egresado de la UABC Mexicali. Curse 4 años de especialidad en Ginecologia y Obstetricia en el Hospital Universitario de Puebla. Realice un Diplomado en patología de tracto genital inferior, lo cual me capacita en detección oportuna de cáncer cervicouterino a través de la realización de colposcopias. Actualmente estoy laborando en el Instituto Mexicano del Seguro Social en turno vespertino. Me encuentro comprometida con la atención integral de la mujer en todas las etapas de su vida, brindando atención personalizada y especializada bajo los lineamientos más actuales, siempre dispuesta a resolver sus dudas y hablar con honestidad sobre los padecimientos y opciones de tratamiento disponibles. Te invito a agendar una cita para que disfrutes de la experiencia.",
+  "addresses": [
+    {
+      "full": "Av. de las Ciencias 2058,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mayra-elizabeth-tejeda-ceja/ginecologo/queretaro#address-id=372667&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:45:34.618Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__mayra_elizabeth_tejeda_ceja.webp"
+}

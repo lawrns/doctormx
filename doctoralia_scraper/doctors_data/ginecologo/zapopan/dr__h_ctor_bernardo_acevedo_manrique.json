@@ -1,0 +1,112 @@
+{
+  "name": "Dr. Héctor Bernardo Acevedo Manrique",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1527,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dbe816/dbe81661aa30bd9bc70f97f26e2700ed_220_square.jpg",
+  "about": "Pionero del ultrasonido diagnóstico en 3d desde 1997. Primer médico mexicano en poner al alcance del público en general ésta tecnología. 30 años de experiencia en ultrasonografía general. Mas de 25 años realizando estudios doppler y morfológicos.",
+  "addresses": [
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena No. 911 piso 8, consultorio A-4.1,"
+    },
+    {
+      "full": "Calle Juan de Dios Robledo 678,"
+    },
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena No. 911 piso 8, consultorio A-4.2,"
+    },
+    {
+      "full": "Juan De Dios Robledo 694,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": "• $350"
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Blanqueamiento genital",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Labioplastia",
+      "price": "• Desde $15,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": "• $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-bernardo-acevedo-manrique/ginecologo/zapopan#address-id=402473&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:09:41.992Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__h_ctor_bernardo_acevedo_manrique.webp"
+}

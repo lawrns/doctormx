@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Ariadne Coutiño",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 29,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fc9b19/fc9b19686c1879c2f5f599cbd60e0b0f_220_square.jpg",
+  "about": "Soy la Dra Ary Coutiño ginecológa con más de 7 años de experiencia. Como parte de mi formación cuento con una alta especialidad en cirugía laparoscópica para manejo de miomas, tumores benignos de ovario, histerectomía, embarazo ectópico, endometriosis y más; así como un master avalado por la universidad de Valencia, España en cirugía endouterina e histeroscopía para tratamiento de pólipos endometriales, malformaciones uterinas como tabiques, entre otros. Además realice un diplomado en manejo de lesiones provocadas por virus del papiloma humano en el Instituto Nacional de Cancerología CDMX. Todo con la finalidad de brindar la mejor atención para ti en todas las etapas de tu vida. ¡Nos vemos en consulta!",
+  "addresses": [
+    {
+      "full": "Hospital Real San José Valle Real,"
+    },
+    {
+      "full": "Hospital Real San José Valle Real,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": "• Desde $50,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Histerectomía",
+      "price": "• $50,000"
+    },
+    {
+      "name": "Laparascopia diagnóstica con biopsia",
+      "price": "• $47,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ariadne-coutino/ginecologo/zapopan#address-id=446624&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:18:26.365Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__ariadne_couti_o.webp"
+}

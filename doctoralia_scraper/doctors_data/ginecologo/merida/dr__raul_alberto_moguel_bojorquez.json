@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Raul Alberto Moguel Bojorquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 219,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/544bdd/544bdda72c4c590c2e4bd7f432e7edac_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 68 534K,"
+    },
+    {
+      "full": "Calle 68 534K,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-alberto-moguel-bojorquez/ginecologo/merida#address-id=108330&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:45:17.306Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__raul_alberto_moguel_bojorquez.webp"
+}

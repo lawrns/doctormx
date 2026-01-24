@@ -1,0 +1,25 @@
+{
+  "name": "Conrado Pulido Gallardo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 94,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/deb3cd/deb3cd3ed1cad291336aca57505be76a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Juan De Dios Peza,675,Lazaro Cardenas,,"
+    },
+    {
+      "full": "Juan De Dios Peza,675,Lazaro Cardenas,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/conrado-pulido-gallardo/ginecologo/tijuana#address-id=358336&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:22:57.510Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/conrado_pulido_gallardo.webp"
+}

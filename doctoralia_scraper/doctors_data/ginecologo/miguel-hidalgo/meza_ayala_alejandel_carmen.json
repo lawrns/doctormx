@@ -1,0 +1,25 @@
+{
+  "name": "Meza Ayala Alejandel Carmen",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 495,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2b58e0/2b58e09c1d8ccd3cb2de2399a3521fa4_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Ejército Nacional 613 Sala 4 Consultorio 9 Col. Granada ,"
+    },
+    {
+      "full": "Av. Ejército Nacional 613 Sala 4 Consultorio 9 Col. Granada ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/meza-ayala-alejandel-carmen/ginecologo/miguel-hidalgo#address-id=358922&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:50:08.325Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/meza_ayala_alejandel_carmen.webp"
+}

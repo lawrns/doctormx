@@ -1,0 +1,56 @@
+{
+  "name": "Dra. Angelica Flores Martinez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/1a8e4fbe/1a8e4fbe-d251-4521-99f7-05fd8688c70a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Mar Tirreno 96,"
+    },
+    {
+      "full": "Calle de Durango 64,"
+    },
+    {
+      "full": "Mar Tirreno 96,"
+    },
+    {
+      "full": "Calle de Durango 64,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angelica-flores-martinez/ginecologo/cuauhtemoc2#address-id=246029&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:40:48.430Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__angelica_flores_martinez.webp"
+}

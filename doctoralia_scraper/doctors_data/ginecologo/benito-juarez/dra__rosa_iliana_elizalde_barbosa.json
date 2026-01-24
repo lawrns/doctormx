@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Rosa Iliana Elizalde Barbosa",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 302,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/9fa2f48b/9fa2f48b-9ae1-45f3-b9db-6be022a17a01_large.jpg",
+  "about": "Será un gusto recibirte :)",
+  "addresses": [
+    {
+      "full": "Tehuantepec 251 Col. Roma Sur, Delegación Cuauhtémoc,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $950"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $950"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-iliana-elizalde-barbosa-2/ginecologo/ciudad-de-mexico#address-id=395978&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:02:09.541Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__rosa_iliana_elizalde_barbosa.webp"
+}

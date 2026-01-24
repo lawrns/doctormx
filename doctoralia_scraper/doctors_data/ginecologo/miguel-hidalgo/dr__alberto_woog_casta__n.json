@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Alberto Woog Castañón",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 56,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cdeafd/cdeafd7514ea67af38ca1a7794d33b74_220_square.jpg",
+  "about": "Soy Alberto Woog Castañón, tengo 31 años nací en la Ciudad de México y vivo en Huixquilucan Estado de México. Estudié la carrera de Medicina en la Universidad Anáhuac México Norte, y fue en el penúltimo año que descubrí mi pasión por la Ginecología y Obstetricia. Estudie la especialidad en en la Ciudad de México, en un hospital que tiene orientación sobre la atención obstetrica humanizada, avalado por la Universidad La Salle",
+  "addresses": [
+    {
+      "full": "Acueducto Río Hondo 28,"
+    },
+    {
+      "full": "Acueducto Río Hondo 28,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,350"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,350"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $650"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,350"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,350"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alberto-woog-castanon/ginecologo/ciudad-de-mexico#address-id=404973&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:04:42.931Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__alberto_woog_casta__n.webp"
+}

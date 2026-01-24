@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Juan Jose Carreño Cuecuecha",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 122,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bb2a6d/bb2a6da572b323b7612ef36a1758c4d0_220_square.jpg",
+  "about": "Sera un placer atenderte, el ofrecerte una atención de calidad y calidez es la manera de darte la confianza necesaria durante tu consulta y tu seguimiento",
+  "addresses": [
+    {
+      "full": "Periférico Ecológico,"
+    },
+    {
+      "full": "Periférico Ecológico,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-jose-carreno-cuecuecha/ginecologo/puebla#address-id=379370&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:11:42.539Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__juan_jose_carre_o_cuecuecha.webp"
+}

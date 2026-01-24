@@ -1,0 +1,25 @@
+{
+  "name": "Mónica Edith Flores Torres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 631,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6ce73c/6ce73cc0801040c5d06e52235743b805_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 31 (Avenida Francisco I. Madero) No 185C Por 20 Y 22 Col. Francisco I. Madero,"
+    },
+    {
+      "full": "Calle 31 (Avenida Francisco I. Madero) No 185C Por 20 Y 22 Col. Francisco I. Madero,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/monica-edith-flores-torres/ginecologo/merida#address-id=127129&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:51:42.045Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/m_nica_edith_flores_torres.webp"
+}

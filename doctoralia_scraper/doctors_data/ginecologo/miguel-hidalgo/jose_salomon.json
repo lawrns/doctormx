@@ -1,0 +1,25 @@
+{
+  "name": "Jose Salomon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 286,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7d3b12/7d3b12d3d66d87eb8af4d4a1f339e419_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Horacio 1719-101 Col. Polanco ,"
+    },
+    {
+      "full": "Horacio 1719-101 Col. Polanco ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-salomon/ginecologo/miguel-hidalgo#address-id=358902&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:50:04.596Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/jose_salomon.webp"
+}

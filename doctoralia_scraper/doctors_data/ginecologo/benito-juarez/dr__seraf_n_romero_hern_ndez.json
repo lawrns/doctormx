@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Serafín Romero Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fcb503/fcb5038256e3d2485f88305162225f88_220_square.jpg",
+  "about": "¡Hola! Soy Serafín Romero. Ginecólogo y Obstetra (certificado por el CMGO, México), Cirujano de mínima invasión y Cirujano robótico (certificado por Intuitive, Estados Unidos). Certificado por la SOCIEDAD EUROPEA DE GINECOLOGIA ROBOTICA (SERGS), Experto en Patologia del Tracto genital inferior y colposcopia ( VHP; Displasias; ) Te interesa saber sobre las Hormonas bioidénticas y su papel en la longevidad saludable?, REJUVENECIMIENTO VAGINAL, LASER... Agenda una cita Oriento, diagnostico y preservo la salud de las pacientes con un enfoque de vanguardia, tecnología y humanismo. Atiendo en el consultorio 932 del Hospital San Ángel Inn Universidad. Torre Mitikah; Para agendar una cita solo necesitas llamar a alguno de los números de teléfono, puedes llamar de 10 am a 7 pm de lunes a sábado.",
+  "addresses": [
+    {
+      "full": "Hospital San Ángel Inn Universidad | consultorio 605,"
+    },
+    {
+      "full": "Hospital San Ángel Inn Universidad | consultorio 605,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/serafin-romero-hernandez/ginecologo/ciudad-de-mexico#address-id=148035&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:06:38.985Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__seraf_n_romero_hern_ndez.webp"
+}

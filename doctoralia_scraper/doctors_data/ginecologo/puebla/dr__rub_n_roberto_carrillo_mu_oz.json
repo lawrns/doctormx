@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Rubén Roberto Carrillo Muñoz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/931537/93153717434e51567418c0bb48272b2c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "19 Norte 1001,"
+    },
+    {
+      "full": "19 Norte 1001,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ruben-roberto-carrillo-munoz/ginecologo/puebla#address-id=4150&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:24:54.088Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__rub_n_roberto_carrillo_mu_oz.webp"
+}

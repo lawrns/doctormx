@@ -1,0 +1,56 @@
+{
+  "name": "Dr. Max David Velasco Blake",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8bd071/8bd07139758ef30d007a193e65f3da2c_220_square.jpg",
+  "about": "Soy el Dr. Max Velasco Blake, ginecólogo obstetra certificado, actualmente ejerciendo en Hospital Insurgentes Rio y en mi clínica particular en Zona Rio Tijuana. ​ Experiencia en rejuvenecimiento vaginal, medicina preventiva, opciones anticonceptivas actualizadas, control hormonal con terapia de hormonas bioidénticas, cirugía laparoscópica, y atención obstétrica óptima para embarazos de bajo y alto riesgo.",
+  "addresses": [
+    {
+      "full": "Blvd. Insurgentes, Río Tijuana 3a. Etapa, Rio Tijuana 3ra Etapa, 22226 Tijuana, B.C.,"
+    },
+    {
+      "full": "Misión de Santo Tomas 1507,"
+    },
+    {
+      "full": "Blvd. Insurgentes, Río Tijuana 3a. Etapa, Rio Tijuana 3ra Etapa, 22226 Tijuana, B.C.,"
+    },
+    {
+      "full": "Misión de Santo Tomas 1507,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/max-david-velasco-blake/ginecologo/tijuana#address-id=187881&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:44:40.936Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__max_david_velasco_blake.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jorge Galvez Muñoz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 133,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fab53b/fab53b5effc32f80a2cb76261ca0b9e5_220_square.jpg",
+  "about": "Mi intención es que recibas un trato cálido y un diagnóstico certero para que podamos resolver juntos el problema que te ha traído a mi consulta.",
+  "addresses": [
+    {
+      "full": "Av. Ejercito Nacional 613 (Hospital Español, Nueva Torre de Consultorios Cons 903),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    },
+    {
+      "name": "Terapia hormonal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-galvez-munoz/ginecologo/miguel-hidalgo",
+  "scrapedAt": "2026-01-22T01:56:50.028Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__jorge_galvez_mu_oz.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jesús Eduardo Ledesma Villicaña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1097,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/50ac5f/50ac5fa82eaf632ebb73b14203f678c5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Alcalde #2170,"
+    },
+    {
+      "full": "Av. Alcalde #2170,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-eduardo-ledesma-villicana/ginecologo/guadalajara#address-id=24645&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:27:54.020Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jes_s_eduardo_ledesma_villica_a.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Ana Laura Juarez Palacios",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 31,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/052ea9/052ea99b3f72221611fcf1b9aab18d46_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 20 De Enero 506,"
+    },
+    {
+      "full": "Aurelio Luis Gallardo 403,"
+    },
+    {
+      "full": "C. 20 De Enero 506,"
+    },
+    {
+      "full": "Aurelio Luis Gallardo 403,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-laura-juarez-palacios/ginecologo/leon#address-id=247282&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:31:42.991Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__ana_laura_juarez_palacios.webp"
+}

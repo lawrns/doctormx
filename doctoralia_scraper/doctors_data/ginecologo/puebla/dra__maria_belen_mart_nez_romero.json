@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Maria Belen Martínez Romero",
+  "specialty": "Ginecólogo",
+  "rating": 3.5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1b0cf9/1b0cf91d8e63539b6691f1363a2aacc4_220_square.jpg",
+  "about": "Tengo una especialidad en Ginrcología y Obstetricia con una sub - especialidad para el cuidado de tu piso pélvico en Urología Ginecológica",
+  "addresses": [
+    {
+      "full": "Anillo periférico ecológico 3507,"
+    },
+    {
+      "full": "Anillo periférico ecológico 3507,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-belen-martinez-romero/ginecologo/san-andres-cholula#address-id=444875&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:15:10.465Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__maria_belen_mart_nez_romero.webp"
+}

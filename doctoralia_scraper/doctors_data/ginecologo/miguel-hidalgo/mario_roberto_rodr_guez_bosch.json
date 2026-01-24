@@ -1,0 +1,25 @@
+{
+  "name": "Mario Roberto Rodríguez Bosch",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7d3b12/7d3b12d3d66d87eb8af4d4a1f339e419_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Homero 1804 - 503 - A,"
+    },
+    {
+      "full": "Homero 1804 - 503 - A,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mario-roberto-rodriguez-bosch/ginecologo/miguel-hidalgo#address-id=109271&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:47:08.090Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/mario_roberto_rodr_guez_bosch.webp"
+}

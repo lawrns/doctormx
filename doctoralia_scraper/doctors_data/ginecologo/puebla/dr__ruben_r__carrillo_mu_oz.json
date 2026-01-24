@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Ruben R. Carrillo Muñoz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d1bda5/d1bda505aac8c85782067610980b9542_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "29 Sur 116 (entre 3 Poniente y Reforma Sur),"
+    },
+    {
+      "full": "29 Sur 116 (entre 3 Poniente y Reforma Sur),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Medicina Estética",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ruben-r-carrillo-munoz/ginecologo-medico-estetico/puebla#address-id=39794&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:16:44.320Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__ruben_r__carrillo_mu_oz.webp"
+}

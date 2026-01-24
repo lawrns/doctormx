@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Sergio A Ruiz Aguilar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/403687/40368767cc3dc3914af6c3143b5fec1d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Agrarismo 208,"
+    },
+    {
+      "full": "Agrarismo 208,"
+    },
+    {
+      "full": "Calle Agrarismo 208,"
+    },
+    {
+      "full": "Agrarismo 208,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-a-ruiz-aguilar/ginecologo/ciudad-de-mexico#address-id=39732&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:16:51.393Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__sergio_a_ruiz_aguilar.webp"
+}

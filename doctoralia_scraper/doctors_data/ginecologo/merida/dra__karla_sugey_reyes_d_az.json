@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Karla Sugey Reyes Díaz",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 123,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d76940/d7694034218ce031c92d7bdf995fa71c_220_square.jpg",
+  "about": "SOY LA DRA. KARLA SUGEY REYES DIAZ, GINECOLOGIA Y OBSTETRA SOY EGRESADA DE LA UADY, ACTUALMENTE TRABAJO EN EL HOSPITAL STAR MEDICA MERIDA Y EL FARO DEL MAYAB. MI OBJETIVO ES CONVERTIRME EN TU GINECOLOGA DE CONFIANZA. TE INVITO AGENDAR UNA CITA CONMIGO EN LA PLATAFORMA Y TE ESTARE DANDOTE SEGUIMIENTO.",
+  "addresses": [
+    {
+      "full": "CALLE 24 280 TEMOZON NORTE,"
+    },
+    {
+      "full": "Calle 26 199,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-sugey-reyes-diaz/ginecologo/yucatan#address-id=359768&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:28:53.841Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__karla_sugey_reyes_d_az.webp"
+}

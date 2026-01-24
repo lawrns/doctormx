@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Fernando Javier Madrigal Tejeda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 126,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2c59d4/2c59d4f4e0a5454d0169686323801323_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Administradores #5468,"
+    },
+    {
+      "full": "Administradores #5468,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido transvaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-javier-madrigal-tejeda/ginecologo/zapopan#address-id=76008&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:29:18.109Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__fernando_javier_madrigal_tejeda.webp"
+}

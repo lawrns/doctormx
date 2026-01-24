@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Luis Enrique Amezquita Vizcarra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 498,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/edee0f/edee0fc2f9709604da4c6c1540f26428.jpg",
+  "about": "Especialista en Ginecologia y Obstetricia Subespecialista en Biologia de la Reproducción Humana Infertilidad Diplomado en Cirugia Laparoscopica Avanzada",
+  "addresses": [
+    {
+      "full": "Blvd Aguacaliente 4558 interior T-02, Colonia Aviación, Tijuana. México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-enrique-amezquita-vizcarra/ginecologo/tijuana#address-id=148127&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:40:27.411Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__luis_enrique_amezquita_vizcarra.webp"
+}

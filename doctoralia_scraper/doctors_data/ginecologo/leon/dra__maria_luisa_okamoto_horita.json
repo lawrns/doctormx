@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Maria Luisa Okamoto Horita",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/052ea9/052ea99b3f72221611fcf1b9aab18d46_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Lerdo De Tejada 207,"
+    },
+    {
+      "full": "Lerdo De Tejada 207,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-luisa-okamoto-horita/ginecologo/leon#address-id=66797&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:29:20.355Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__maria_luisa_okamoto_horita.webp"
+}

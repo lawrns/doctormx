@@ -1,0 +1,43 @@
+{
+  "name": "Dra. María Fernanda Sarabia Takashima",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 208,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4584d1/4584d17316e8d2e7cb349e87ef2b592d.jpg",
+  "about": "Siempre comprometida con el cuidado de la salud de las mujeres, durante mi formación en el Hospital General de México \"Dr. Eduardo Licéaga\" comprendí la importancia de la empatía con las pacientes, ya que durante este periodo tuve la oportunidad de tratar con muchísimas mujeres de todas las edades y en diferentes situaciones, comprendiendo que aparte de mis conocimientos y habilidades entender el sentir de mis pacientes complementa el trato digno que deben recibir todas y cada una de ellas.",
+  "addresses": [
+    {
+      "full": "Fray antonio monroy e Hijar 51, Col. Jurica,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-fernanda-sarabia-takashima/ginecologo/juriquilla#address-id=505318&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:46:05.671Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__mar_a_fernanda_sarabia_takashima.webp"
+}

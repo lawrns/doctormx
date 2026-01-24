@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Fernando Daniel Salazar Carbajal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 292,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/98c94647/98c94647-aed8-481f-9446-6efa6400b06d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. la Cima 757,"
+    },
+    {
+      "full": "Av. la Cima 757,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-daniel-salazar-carbajal/ginecologo/zapopan#address-id=449642&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:34:31.542Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__fernando_daniel_salazar_carbajal.webp"
+}

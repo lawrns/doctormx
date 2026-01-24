@@ -1,0 +1,66 @@
+{
+  "name": "Cristina Leyva Gómez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 190,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4c7799/4c77994380e92411dae8119b7e1fd8ae.jpg",
+  "about": "Me formé como médico general en la Universidad Nacional Autónoma de México en la Facultad de Medicina de Ciudad Universitaria. Realicé mi servicio social en el Instituto Nacional de Cancerología en un laboratorio de virus y cáncer adquiriendo experiencia desde la Parte molecular hasta la parte clínica del Virus del Papiloma Humano. La especialidad en Ginecología y Obstetricia la realicé en el Instituto Nacional de Perinatología, institución que me permitió una formación muy amplia en el manejo de embarazo de alto riesgo, atendiendo pacientes con patologías metabólicas, hematológicas, cardiopatías y nefropatías en el embarazo. Así mismo en el área de ginecología adquirí experiencia en el manejo de pacientes con endometriosis, histeroscopia, cirugía ginecológica y cirugía de mínima invasión. En 2020 realicé el Diplomado en Colposcopía y Patología del tracto genital inferior. Por lo que me encuentro capacitada para el diagnóstico y tratamiento con electrocirugía de lesiones premalignas y malignas asociadas a infección por VPH. El control prenatal es una de las áreas que más disfruto, teniendo una perspectiva pro parto, parto y cesárea respetados, apego temprano del recién nacido y pinzamiento tardío del cordón umbilical. Trabajo en conjunto con neonatólogos y anestesiólogos que comparten la misma visión y me permiten dar una atención más amigable a la paciente en trabajo de parto e incluso en aquellas que requieren manejo con cesárea. Me apasiona el trato con mujeres, es un privilegio poder compartir desde la adolescencia hasta la menopausia, a través de todas las etapas que vivimos. Mi objetivo siempre será atenderte como me gustaría que atendieran a un miembro de mi familia y aclarar ampliamente todas las dudas que puedan surgir.",
+  "addresses": [
+    {
+      "full": "Blvd. Bernardo Quintana,"
+    },
+    {
+      "full": "Boulevard Bernardo Quintana 4060, Colonia San Pablo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cristina-leyva-gomez/ginecologo/queretaro#address-id=368867&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:46:48.199Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/cristina_leyva_g_mez.webp"
+}

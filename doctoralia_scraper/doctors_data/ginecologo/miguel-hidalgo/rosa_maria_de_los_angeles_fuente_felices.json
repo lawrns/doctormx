@@ -1,0 +1,31 @@
+{
+  "name": "Rosa Maria De Los Angeles Fuente Felices",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 73,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4e1a8b/4e1a8bdf72b75d788e42a250e1169fdd_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Vialidad De La Barranca S/N,"
+    },
+    {
+      "full": "Av. Ejército Nacional 613,"
+    },
+    {
+      "full": "Av. Vialidad De La Barranca S/N,"
+    },
+    {
+      "full": "Av. Ejército Nacional 613,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-maria-de-los-angeles-fuente-felices/ginecologo/huixquilucan#address-id=175624&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:48:24.216Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/rosa_maria_de_los_angeles_fuente_felices.webp"
+}

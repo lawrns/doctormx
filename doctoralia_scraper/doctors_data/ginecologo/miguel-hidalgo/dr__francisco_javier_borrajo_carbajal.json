@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Francisco Javier Borrajo Carbajal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 44,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c76093/c760938459a52717b489ef8730e1ea16_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hospital Angeles Mexico, Agrarismo, 208, Torre A, Cons. 505,"
+    },
+    {
+      "full": "Hospital Angeles Mexico, Agrarismo, 208, Torre A, Cons. 505,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-javier-borrajo-carbajal/ginecologo/miguel-hidalgo#address-id=77412&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:43:21.050Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__francisco_javier_borrajo_carbajal.webp"
+}

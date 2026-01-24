@@ -1,0 +1,25 @@
+{
+  "name": "Marcelo Fidias Noguera Sanchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 201,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/01cf98/01cf98011fc60380e75b7061da191c65_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Reforma 610 Altos,"
+    },
+    {
+      "full": "Reforma 610 Altos,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marcelo-fidias-noguera-sanchez/ginecologo/oaxaca-de-juarez#address-id=123523&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:44:43.628Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/marcelo_fidias_noguera_sanchez.webp"
+}

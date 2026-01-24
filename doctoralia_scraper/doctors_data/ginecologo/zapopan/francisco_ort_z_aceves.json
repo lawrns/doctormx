@@ -1,0 +1,25 @@
+{
+  "name": "Francisco Ortíz Aceves",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 217,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/21897b/21897b5c8e30fc6eac7a40ba93d74366_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Lázaro Cárdenas 4149 Col. Jardines de San Ignacio,"
+    },
+    {
+      "full": "Av. Lázaro Cárdenas 4149 Col. Jardines de San Ignacio,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-ortiz-aceves/ginecologo/zapopan#address-id=130571&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:43:58.577Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/francisco_ort_z_aceves.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Jesus Lopez Bravo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 428,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ead66b/ead66bdd9f3363529792bd671c9c68a8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "5 Sur 2509,"
+    },
+    {
+      "full": "5 Sur 2509,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-lopez-bravo/ginecologo/puebla#address-id=162850&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:28:36.984Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/jesus_lopez_bravo.webp"
+}

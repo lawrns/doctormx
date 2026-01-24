@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Berenice Rentería Conseción",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/7c93174d/7c93174d-6b0e-478e-bfb6-5c11b8f774db_small_square.jpg",
+  "about": "Hola. Soy la Dra. Berenice Rentería médico con sub especialidad en Urología Ginecológica por la Universidad de Guadalajara y especialidad en Ginecología y Obstetricia por la Universidad de Guanajuato; cuento también con un Diplomado en Histeroscopía diagnóstica y quirúrgica avalado por la Universidad de Guanajuato. Nos dedicamos al cuidado de la mujer enfocado en patologías de piso pélvico como incontinencia urinaria, prolapso de órganos pélvicos, quistes suburetrales, bartolinitis e infecciones de vías urinarias. De igual forma tratamos patología uterina como sangrados uterinos anormales, pólipos endometriales y miomatosis uterina. También realizamos procedimientos estéticos como labioplastias y rejuvenecimiento vaginal.",
+  "addresses": [
+    {
+      "full": "Av. Cerro Gordo #311,"
+    },
+    {
+      "full": "Av. Cerro Gordo 311 Cons. 430 Col. Lomas Del Campestre,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/berenice-renteria-consecion-2/ginecologo/leon#address-id=576423&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:27:34.618Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__berenice_renter_a_conseci_n.webp"
+}

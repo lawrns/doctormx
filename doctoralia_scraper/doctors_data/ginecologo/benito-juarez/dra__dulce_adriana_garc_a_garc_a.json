@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Dulce Adriana García García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 509,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/928a8b/928a8b6ce6fb8e556e3cd694fa44a5bd_140_square.jpg",
+  "about": "Licenciatura como médico cirujano UNAM 2008 Especialidad en Ginecología y Obstetricia UNAM 2012 Diplomado en Patología del tracto genital inferior y colposcopia UNAM 2014 Diplomado en Ginecología Infantojuvenil FLASOG 2021",
+  "addresses": [
+    {
+      "full": "Av. Rio Churubusco No. 601 Torre 1 Consultorio 818 8vo. Piso Colonia Xoco Alcaldía Benito Juárez C.P. 03330 Hospital San Ángel Inn Universidad,"
+    },
+    {
+      "full": "Av. Rio Churubusco No. 601 Torre 1 Consultorio 818 8vo. Piso Colonia Xoco Alcaldía Benito Juárez C.P. 03330 Hospital San Ángel Inn Universidad,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dulce-adriana-garcia-garcia/ginecologo/ciudad-de-mexico#address-id=416143&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:09:58.001Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__dulce_adriana_garc_a_garc_a.webp"
+}

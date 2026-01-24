@@ -1,0 +1,39 @@
+{
+  "name": "Dr. Carlos Penagos Chanona",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 589,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/e70ca122/e70ca122-5c78-40be-9921-f2f6029b3820_large.jpg",
+  "about": "Cursé la especialidad de Ginecología y Obstetricia en el Centro Médico Nacional La Raza, un hospital de tercer nivel encaminado al manejo de pacientes de alto riesgo, avalando la formación académica por la Universidad Nacional Autónoma de México, actualmente miembro activo del Consejo Mexicano de Ginecología y Obstetricia. Tengo preparación en Docencia Universitaria y patología genital inferior. Mi objetivo es brindar atención médica de calidad y calidez, formar un ambiente de confianza para lograr los mejores resultados de una vigilancia obstétrica y/o ginecológica. Tengo los conocimientos y la capacidad para lograr un diagnóstico adecuado y el mejor cuidado de tu salud. ¡ Te espero para tu atención !",
+  "addresses": [
+    {
+      "full": "Vid 153,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Check up premium",
+      "price": "• Desde $3,700"
+    },
+    {
+      "name": "Retiro de implante subdérmico",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-penagos-chanona/ginecologo/azcapotzalco",
+  "scrapedAt": "2026-01-22T01:56:57.633Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__carlos_penagos_chanona.webp"
+}

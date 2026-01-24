@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Mayra Alejandra Rodriguez Rodriguez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/51799f9c/51799f9c-87ed-4997-b7ea-a4b93e010412_small_square.jpg",
+  "about": "¡Hola! - Bienvenida a mi espacio profesional, un lugar dedicado a la salud integral de la mujer.Soy la Dra. Mayra Rodríguez, te cuento un poco sobre mi; soy originaria de Tijuana, Baja California; cursé medicina en UABC Valle de Las Palmas, posteriormente, al enamorarme de la Obstetricia como estudiante y médico interno de pregrado , decidí entrar a la especialidad de Ginecología y Obstetricia, realizada en Ciudad Obregón Sonora, en el HGR1 del IMSS, avalada por la Universidad Autónoma de Baja California; con subespecialidad en Urología Ginecológica en Ciudad de México, en el hospital de La Raza del IMSS, avalada por la Universidad Nacional Autónoma de México . Tengo también diplomado en colposcopia, avalado por la universidad La Salle y diplomado en Ginecología Endocrinológica.Mi misión es poder acompañarte y ayudarte en cada etapa de tu vida como mujer, siempre comprometida con brindar atención médica de alta calidad en un entorno cálido, empático y confidencial. Abordando tanto los aspectos ginecológicos habituales como las condiciones urológicas que afectan de manera particular a las mujeres, como incontinencia urinaria, prolapso de órganos pélvicos, infecciones urinarias recurrentes.Aquí encontrarás información clara, tratamientos personalizados y un enfoque centrado en tu bienestar y calidad de vida. Estoy aquí para escucharte, orientarte y ayudarte a recuperar tu salud y confianza.",
+  "addresses": [
+    {
+      "full": "Paseo del Centenario 9580,"
+    },
+    {
+      "full": "Blvd. del Lago Victoria 755,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Prolapso de organos pélvicos",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento para virus del Papiloma Humano (VPH)",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": ""
+    },
+    {
+      "name": "Consulta por incontinencia urinaria",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mayra-alejandra-rodriguez-rodriguez/ginecologo/ensenada#address-id=568382&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:43:17.569Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__mayra_alejandra_rodriguez_rodriguez.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Gasparuso Vera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 691,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fbc7f1/fbc7f18e27f9200dcab466b9758ecf95_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Homero 1425 1 P4,"
+    },
+    {
+      "full": "Ave. Homero 1425 1 P4,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gasparuso-vera/ginecologo/ciudad-de-mexico#address-id=37263&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:44:06.402Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__gasparuso_vera.webp"
+}

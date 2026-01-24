@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Hilda Lizeth Pérez Flores",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 35,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ba224491/ba224491-f31f-48b4-9dce-6d79f95b3e6c_small_square.jpg",
+  "about": "Mi principal interés siempre será la paciente, acompañar a la mujer de forma integral en sus diferentes etapas, que te sientas cómoda, en un lugar seguro, con empatía y confianza es mi principal objetivo Realicé mi especialidad en la Unidad Medica de Alta Especialidad numero 48, en la ciudad de León, Guanajuato. Enfocada en Ginecología y Obstetricia. Con enfoque en pacientes de alto riesgo. La atención que recibirás será de forma integral e individualizada. Con la asesoría y explicación necesaria para que estés completamente informada de tu estado de salud",
+  "addresses": [
+    {
+      "full": "Blvd. Aeropuerto 101. Hospital MAC. Consultorio 415,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hilda-lizeth-perez-flores/ginecologo/leon#address-id=549898&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:27:05.464Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__hilda_lizeth_p_rez_flores.webp"
+}

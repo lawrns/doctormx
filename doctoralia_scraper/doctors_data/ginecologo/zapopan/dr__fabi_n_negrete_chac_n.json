@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Fabián Negrete Chacón",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 46,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b3adfa/b3adfab6783d98dd8146d381bb31ff22.jpg",
+  "about": "Es un Gineco-Obstetra experto que se enfoca en manejar los problemas de salud de la madre y el feto antes, durante y después del embarazo. Se especializan en el diagnóstico y tratamiento de mujeres con complicaciones durante el embarazo, con condiciones médicas ya existentes que podrían ser afectadas por el embarazo y condiciones médicas que afectarían el embarazo en sí. Otorgar una atención médica integral, con alta calidad académica y humana; usando tecnología de última generación. Siempre en un ambiente de confianza y respeto.",
+  "addresses": [
+    {
+      "full": "Eulogio Parra 2979 int. 3,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fabian-negrete-chacon/ginecologo/zapopan#address-id=324863&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:07:50.762Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__fabi_n_negrete_chac_n.webp"
+}

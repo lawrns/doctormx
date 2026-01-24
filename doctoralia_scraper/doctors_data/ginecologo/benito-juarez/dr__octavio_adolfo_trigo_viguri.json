@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Octavio Adolfo Trigo Viguri",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 84,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6398bd/6398bd70a97414f94297c20368a6fa96_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Sur 69-A #303, Banjidal, Ciudad de México,"
+    },
+    {
+      "full": "Sur 69-A #303, Banjidal, Ciudad de México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cirugía del tracto genital",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/octavio-adolfo-trigo-viguri-2/ginecologo/iztapalapa#address-id=351486&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:06:23.917Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__octavio_adolfo_trigo_viguri.webp"
+}

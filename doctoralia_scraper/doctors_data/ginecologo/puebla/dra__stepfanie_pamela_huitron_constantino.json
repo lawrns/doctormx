@@ -1,0 +1,35 @@
+{
+  "name": "Dra. Stepfanie Pamela Huitron Constantino",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 24,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/050ff849/050ff849-c6ae-40e0-9acb-28f773836e3d_small_square.jpg",
+  "about": "Somos una red de clínicas para la mujer con presencia en el Estado de México y Ciudad de México. Nuestro modelo de atención está centrado en el paciente y le brinda todo lo que necesita desde un solo lugar.",
+  "addresses": [
+    {
+      "full": "Av. Juárez, C. 23 Sur 2301, Zona Esmeralda, 72090 Puebla, Pue.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• Desde $2,200"
+    },
+    {
+      "name": "Ultrasonido estructural",
+      "price": "• Desde $2,200"
+    },
+    {
+      "name": "Visita de Medicina Materno Fetal",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/stepfanie-pamela-huitron-constantino/ginecologo/puebla#address-id=542307&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:10:45.398Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__stepfanie_pamela_huitron_constantino.webp"
+}

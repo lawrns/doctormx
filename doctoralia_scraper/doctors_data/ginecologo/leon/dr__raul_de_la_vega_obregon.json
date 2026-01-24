@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Raul De La Vega Obregon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8b46c1/8b46c143e3aa73e28192f00afdda61c2_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Héroes De La Independencia 1913,"
+    },
+    {
+      "full": "Héroes De La Independencia 1913,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-de-la-vega-obregon/ginecologo/leon#address-id=3907&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:30:15.507Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__raul_de_la_vega_obregon.webp"
+}

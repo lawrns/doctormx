@@ -1,0 +1,89 @@
+{
+  "name": "Dr. Daniel Fernando Sánchez Rodríguez",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 100,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8207b1/8207b1c5664fe6c44427bfbd1143cf65.jpg",
+  "about": "Hola soy el Dr. Daniel Fernando Sánchez Rodríguez con la especialidad de ginecología y obstetricia, posteriormente realicé la sub especialidad en ginecología oncológica. Nos enfocamos en la prevención, detección oportuna y tratamiento de las enfermedades ginecológicas y cáncer ginecológico. Tratamiento quirúrgico mínimamente invasivo Tratamiento Oncoplástico en el cáncer de mama Colposcopia y patología del tracto genital inferior Como oncólogo ginecólogo, mi enfoque se centra en crear conexiones significativas con la paciente. Comprendo la importancia de brindar un espacio donde se sientan escuchadas y apoyadas en cada paso de su viaje de salud. Mi objetivo es no sólo proporcionar atención médica de alta calidad, sino también construir relaciones basadas en la confianza mutua. Estoy comprometido a brindarle su bienestar, ofreciendo orientación educación y apoyo emocional en todo momento",
+  "addresses": [
+    {
+      "full": "Blvd. Padre Kino 10014,"
+    },
+    {
+      "full": "Av bugambilias 4083, el prado, consultorio 1703,"
+    },
+    {
+      "full": "Av. Juárez 1949,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $3,000"
+    },
+    {
+      "name": "Aplicación de Laparascopia diagnóstica con biopsia",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de Laparascopia diagnóstica con biopsia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Atención del cáncer en la mujer",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniel-fernando-sanchez-rodriguez/ginecologo-oncologico-ginecologo/ensenada#address-id=609890&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:41:15.751Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__daniel_fernando_s_nchez_rodr_guez.webp"
+}

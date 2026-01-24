@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Roberto Heredia Pineda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1f8fda/1f8fda146568a09e588b348bb39910f9_220_square.jpg",
+  "about": "Egresado de la ENEP Iztacala UNAM, Especialidad en Ginecología y Obstetricia en el Hospital del a Mujer S.S.A. Profesor titular de Ginecología y Obstetricia de los alumnos de Medicina de la UNAM Profesor Titular de Ginecología y Obstetricia del Instituto Politécnico Nacional Médico Especialista en Ginecología y Obstetricia en el Hospital de la Mujer. Medico Especialista en Ginecología y Obstetricia en el Hospital Nicolás M Cedillo del GDF Amplia experiencia en operación cesárea Atención especializada en el trabajo de parto con trato amable y respetuoso con orientación psicoprofiláctica Atención de emergencias obstétricas Honorarios médicos de una cesárea Cirujano Ayudante y Anestesiólogo 22 000.00 pesos , más honorarios del Hospital de su preferencia.",
+  "addresses": [
+    {
+      "full": "Tebas 168 Col. Clavería ,"
+    },
+    {
+      "full": "Tebas 168 Col. Clavería ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-heredia-pineda/ginecologo/azcapotzalco#address-id=118335&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:04:24.900Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__roberto_heredia_pineda.webp"
+}

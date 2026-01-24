@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Linda Vargas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 788,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4843a5/4843a5ea3359a8b0da082cff4afcc169.jpg",
+  "about": "¡Hola! Soy médico con especialidad en Ginecología y Obstetricia, con Subespecialidad en Urología Ginecológica y una Alta Especialidad en Cirugía Endoscópica Ginecológica. ¿Qué atiende un uro-ginecólogo? Entre las cuestiones principales y más frecuentes tratamos la “VEJIGA CAÍDA”, la PÉRDIDA INVOLUNTARIA DE PIPÍ, infecciones urinarias, dolor al orinar, urgencia para hacer pipí, RESEQUEDAD Y ARDOR VAGINAL, laxitud de vagina, INCOMODIDAD EN LOS LABIOS VAGINALES y/o vulva, entre otras. Esto debido a que somos especialistas en Ginecología y Obstetricia con una especialización extra en lo referente a la disfunción del piso pélvico, incontinencia urinaria, atrofia y resequedad vaginal, dolor vaginal, así como en tratar y corregir los padecimientos vulvo-vaginales (desde malformaciones müllerianas hasta cuestiones estéticas de vulva y vagina). Respecto a la Cirugía endoscópica Ginecológica Esto quiere decir que hice una alta especialidad en LAPAROSCOPÍA (operar por “hoyitos y con cámaras), HISTEROSCOPÍA y un enfoque más profundo de los padecimientos ginecológicos como son los MIOMAS, SANGRADOS anormales, etc. Espero te sea de utilidad esta descripción respecto a mi profesión.",
+  "addresses": [
+    {
+      "full": "Joaquin Clausel 10343,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/linda-vargas/ginecologo/tijuana#address-id=389435&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:42:36.444Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__linda_vargas.webp"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Mayella Fernandez del Campo Audelo",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 25,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/122996db/122996db-afa8-4251-8ad5-8504619a6ec9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Ejército Nacional Mexicano 613, Granada, Miguel Hidalgo,"
+    },
+    {
+      "full": "Av. Ejército Nacional Mexicano 613, Granada, Miguel Hidalgo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mayella-fernandez-del-campo-audelo/ginecologo/ciudad-de-mexico#address-id=583164&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:22:17.647Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__mayella_fernandez_del_campo_audelo.webp"
+}

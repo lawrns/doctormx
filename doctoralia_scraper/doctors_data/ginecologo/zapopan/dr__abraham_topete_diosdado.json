@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Abraham Topete Diosdado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/de7e64/de7e648aba644d79f5710aef11857dbb_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Mundo Físico en Av. San Francisco 3676 interior 9 ,"
+    },
+    {
+      "full": "Mundo Físico en Av. San Francisco 3676 interior 9 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": "• Desde $30,000"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $18,000"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Desde $2,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/abraham-topete-diosdado/ginecologo/zapopan#address-id=95048&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:24:09.014Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__abraham_topete_diosdado.webp"
+}

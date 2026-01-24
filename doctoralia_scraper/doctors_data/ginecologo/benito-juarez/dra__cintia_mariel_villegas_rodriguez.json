@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Cintia Mariel Villegas Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/80b665/80b665efa9c3ec8d4f673a0dff470ad2_220_square.jpg",
+  "about": "Dra. Ginecóloga y subespecialista en Bióloga de la reproducción humana. Boliviana, graduada con honores de la Universidad Autónoma de México y el Hospital Juárez de México, con un interés real en endocrinología ginecológica, infertilidad y reproducción asistida. Certificada por el Colegio de Médicos de Bolivia y el Colegio Mexicano de Especialistas en Ginecología y Obstetricia. Después de una carrera académica sobresaliente, actualmente disfruto de brindar asistencia integral a las mujeres en todas las etapas de la vida.",
+  "addresses": [
+    {
+      "full": "Calle Cruz del Sur 94, Prado Churubusco,"
+    },
+    {
+      "full": "Calle Cruz del Sur 94, Prado Churubusco,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cintia-mariel-villegas-rodriguez/ginecologo/coyoacan#address-id=427413&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:07:34.809Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__cintia_mariel_villegas_rodriguez.webp"
+}

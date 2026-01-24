@@ -1,0 +1,31 @@
+{
+  "name": "Maria Del Rosario Aida Arroniz Jauregui",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 319,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/4e07cd22/4e07cd22-d84f-4b03-a562-ba8c1cee5eac_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Vidrio 1684,"
+    },
+    {
+      "full": "Av. Zoquipan 1050,"
+    },
+    {
+      "full": "Vidrio 1684,"
+    },
+    {
+      "full": "Av. Zoquipan 1050,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-del-rosario-aida-arroniz-jauregui/ginecologo/guadalajara#address-id=193438&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:40:19.543Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/maria_del_rosario_aida_arroniz_jauregui.webp"
+}

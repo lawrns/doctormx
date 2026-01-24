@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Miriam Esther Ruelas Diaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a85369/a85369cbd1a1a545f3c988831088a571_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "David Alfarero Siqueiros 2788 9,"
+    },
+    {
+      "full": "David Alfaro Siqueiros 2788 9,"
+    },
+    {
+      "full": "David Alfarero Siqueiros 2788 9,"
+    },
+    {
+      "full": "David Alfaro Siqueiros 2788 9,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miriam-esther-ruelas-diaz/ginecologo/tijuana#address-id=46716&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:46:17.932Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__miriam_esther_ruelas_diaz.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. César Alberto García Alanís",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 447,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/032e72/032e72701aa4e9da1fc015c9f45e9f98.jpg",
+  "about": "Soy el Dr. César A. Garcia Alanis medico Ginecólogo y Obstetra, realice la licenciatura de medico cirujano en la Universidad Autónoma Benito Juarez (2010) , posterior realice la especialidad en el Hospital de Alta Especialidad de Veracruz (2019).",
+  "addresses": [
+    {
+      "full": "Plaza Peninsula - Hospital MAC Consultorio 18,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Cirugía Laparoscópica",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía abdominal",
+      "price": ""
+    },
+    {
+      "name": "Histeroscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cesar-alberto-garcia-alanis/ginecologo/tijuana#address-id=396062&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:40:55.880Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__c_sar_alberto_garc_a_alan_s.webp"
+}

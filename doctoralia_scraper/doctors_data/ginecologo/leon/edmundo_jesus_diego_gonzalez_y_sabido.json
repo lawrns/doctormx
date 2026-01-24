@@ -1,0 +1,25 @@
+{
+  "name": "Edmundo Jesus Diego Gonzalez Y Sabido",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 354,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8b46c1/8b46c143e3aa73e28192f00afdda61c2_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hilario Medina 5009,"
+    },
+    {
+      "full": "Hilario Medina 5009,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edmundo-jesus-diego-gonzalez-y-sabido/ginecologo/leon#address-id=234217&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:34:48.215Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/edmundo_jesus_diego_gonzalez_y_sabido.webp"
+}

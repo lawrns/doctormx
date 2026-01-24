@@ -1,0 +1,56 @@
+{
+  "name": "Dra. Tania Margarita Hernández García",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 148,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fa6378/fa6378dcf98b9823cfc1b39b47e09630_220_square.jpg",
+  "about": "Formación de especialidad en Ginecología y Obstetricia, posteriormente una sub especialidad en Ginecología Oncológica en Centro Médico Nacional La Raza , IMSS., Tengo Experiencia en atención de enfermedades Oncológicas y Ginecológicas.",
+  "addresses": [
+    {
+      "full": "PRIVADA IGNACIO ZARAGOZA 16 A,"
+    },
+    {
+      "full": "Calle Privada Ignacio Zaragoza 16g,"
+    },
+    {
+      "full": "PRIVADA IGNACIO ZARAGOZA 16 A,"
+    },
+    {
+      "full": "Calle Privada Ignacio Zaragoza 16g,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Atención pacientes con cáncer",
+      "price": ""
+    },
+    {
+      "name": "Biopsia con marcaje con arpón",
+      "price": ""
+    },
+    {
+      "name": "Biopsia trucut de mama",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tania-margarita-hernandez-garcia-2/ginecologo-oncologico-ginecologo/santiago-de-queretaro#address-id=469854&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:47:30.247Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__tania_margarita_hern_ndez_garc_a.webp"
+}

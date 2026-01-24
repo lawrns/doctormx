@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Fabiola Monroy Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ae9a4a/ae9a4aec2511d730aaa8a6e5f65413ad_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tarrascos 3469 -,"
+    },
+    {
+      "full": "Tarrascos 3469 -,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fabiola-monroy-rodriguez/ginecologo/guadalajara#address-id=96254&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:30:48.819Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__fabiola_monroy_rodriguez.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Irene Vazquez Lozano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/db5550/db55507e77e146246d4f40919ff6d1e8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Adolfo Lopez Mateos Sur 1401,"
+    },
+    {
+      "full": "Av. Adolfo Lopez Mateos Sur 1401,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/irene-vazquez-lozano/ginecologo/tlajomulco-de-zuniga#address-id=219556&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:39:40.318Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/irene_vazquez_lozano.webp"
+}

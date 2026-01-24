@@ -1,0 +1,31 @@
+{
+  "name": "Wilebaldo Badillo Jimenez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f9f447/f9f447a119c109bca9996a576d2b70ad_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Circunvalación División Del Nte. 135,"
+    },
+    {
+      "full": "Salvador Quevedo Y Zubieta 750,"
+    },
+    {
+      "full": "Circunvalación División Del Nte. 135,"
+    },
+    {
+      "full": "Salvador Quevedo Y Zubieta 750,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/wilebaldo-badillo-jimenez/ginecologo/guadalajara#address-id=167962&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:39:52.157Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/wilebaldo_badillo_jimenez.webp"
+}

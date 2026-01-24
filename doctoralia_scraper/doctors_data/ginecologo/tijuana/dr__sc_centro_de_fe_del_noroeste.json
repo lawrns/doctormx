@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Sc Centro De Fe Del Noroeste",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 418,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/aaa002/aaa002ab73d2b22a98692a38215e66e3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Sonora 101,"
+    },
+    {
+      "full": "Sonora 101,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sc-centro-de-fe-del-noroeste/ginecologo/tijuana#address-id=96&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:07:01.653Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__sc_centro_de_fe_del_noroeste.webp"
+}

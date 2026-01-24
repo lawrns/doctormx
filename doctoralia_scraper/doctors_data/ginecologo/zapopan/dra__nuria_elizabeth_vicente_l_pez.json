@@ -1,0 +1,108 @@
+{
+  "name": "Dra. Nuria Elizabeth Vicente López",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 172,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/84dd6c/84dd6c8fed360b560b815f21f01612ba_220_square.jpg",
+  "about": "¡Hola!, Soy la Dra. Nuria Vicente, soy médico especialista en Ginecología y Obstetricia, con subespecialidad en Urología Ginecológica, además cuento con un diplomado en Terapia hormonal, Menopausia y Osteoporosis.",
+  "addresses": [
+    {
+      "full": "Calle 20 & Avenida Jose Diaz Bolio,"
+    },
+    {
+      "full": "Calle 24,"
+    },
+    {
+      "full": "Av. Empresarios 150,"
+    },
+    {
+      "full": "Calle 33 320,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $650"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita a uroginecología",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nuria-elizabeth-vicente-lopez/ginecologo/yucatan#address-id=520597&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:13:28.870Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__nuria_elizabeth_vicente_l_pez.webp"
+}

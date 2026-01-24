@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Miguel Angel Rocha Doguim",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 735,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e8eecf/e8eecf537124010ffa0019a3dcd286a6_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Boulevard Bernardo Quintana 305,"
+    },
+    {
+      "full": "Boulevard Bernardo Quintana 305,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-rocha-doguim/ginecologo/santiago-de-queretaro#address-id=66757&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:54:13.975Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__miguel_angel_rocha_doguim.webp"
+}

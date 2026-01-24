@@ -1,0 +1,37 @@
+{
+  "name": "Javier Ignacio Avila Alvarez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1ac333/1ac3331eb5345d7794edc9ba49ad97dc_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "19 Sur 4302,"
+    },
+    {
+      "full": "Perif. Arco Sur S/N,"
+    },
+    {
+      "full": "Av. 12 Pte. 505 E,"
+    },
+    {
+      "full": "19 Sur 4302,"
+    },
+    {
+      "full": "Perif. Arco Sur S/N,"
+    },
+    {
+      "full": "Av. 12 Pte. 505 E,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/javier-ignacio-avila-alvarez/ginecologo/puebla#address-id=217248&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:22:23.007Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/javier_ignacio_avila_alvarez.webp"
+}

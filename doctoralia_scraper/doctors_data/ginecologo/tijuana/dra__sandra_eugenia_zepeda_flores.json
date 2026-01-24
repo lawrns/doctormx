@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Sandra Eugenia Zepeda Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 492,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d45cea/d45cea0878c006af81fcd82570298354.jpg",
+  "about": "Soy Ginecóloga y Obstetra, tengo fellow en cirugía laparoscopia y de mínima invasión, así como histeroscopia. Estoy para ayudarte en cualquier etapa de tu vida como mujer, ya que todas somos diferentes y ninguna se siente como tú te sientes en este momento. Te espero muy pronto en consulta!",
+  "addresses": [
+    {
+      "full": "Calle Gobernador Lugo 3003.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": "• $4,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sandra-eugenia-zepeda-flores/ginecologo/tijuana#address-id=392376&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:41:43.363Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__sandra_eugenia_zepeda_flores.webp"
+}

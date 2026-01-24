@@ -1,0 +1,50 @@
+{
+  "name": "Dr. José Fidencio Pastelín Vázquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/403687/40368767cc3dc3914af6c3143b5fec1d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Agrarismo 208 408 P4 408 P4,"
+    },
+    {
+      "full": "Agrarismo (Hosp. Angeles Mexico), 208, Torre A, Cons. 408,"
+    },
+    {
+      "full": "Calle Artemio Del Valle Arizpe 19 Cons 4,"
+    },
+    {
+      "full": "Calle Agrarismo 208 408 P4 408 P4,"
+    },
+    {
+      "full": "Agrarismo (Hosp. Angeles Mexico), 208, Torre A, Cons. 408,"
+    },
+    {
+      "full": "Calle Artemio Del Valle Arizpe 19 Cons 4,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-fidencio-pastelin-vazquez/ginecologo/ciudad-de-mexico#address-id=50742&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:06:06.502Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__jos__fidencio_pastel_n_v_zquez.webp"
+}

@@ -1,0 +1,98 @@
+{
+  "name": "Dr. Octavio Herrera Osorio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 71,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b8ee4a/b8ee4a8b22437191aafe339af3ed9d2e_220_square.jpg",
+  "about": "Ginecólogo, Obstetra, Perinatologo con alta especialidad en embarazo de alto riesgo, cirugía de mínima invasión y reproducción asistida. Durante mi estancia en el Instituto Nacional de Perinatologia estuve a cargo de la formación de residentes en ginecologia, ademas de lograr un alto grado de especialización en embarazo de alto riesgo, atención ginecológica en todas las etapas de la vida y cirugía de mínima invasión en procedimientos ginecológicos por laparoscopía e histeroscopía. Posteriormente fui seleccionado para realizar la subespecialidad en reproducción asistida en el Hospital Clinic de Barcelona considerado el mejor de España y con nivel mundial en tratamiento de infertilidad, ciclos naturales, preservacion de la fertilidad e incluso transplante de tejido ovárico, siendo de los pocos centros acreditados por la ESHRE. Eh participado en diversas publicaciones nacionales e internacionales así como actividades en foros internacionales en temas de embarazo de alto riesgo, cirugía de mínima invasión e infertilidad tambien soy autor de distintos capítulos de libro de procedimientos en obstetricia del Instituto Nacional de Perinatología En mi actividad profesional esta formación me permite realizar con tiempo explicaciones claras a las pacientes acompañado de un trato amable digno comfortable, intentando en todo momento resolver con la calidad de primer mundo cada una de sus patologías de manera sincera y objetiva para lograr excelentes resultados",
+  "addresses": [
+    {
+      "full": "Circuto Guadalupe Nte 9 (Anexo Hospital Los Pilares),"
+    },
+    {
+      "full": "Boulevard Atlixcayotl No 1499-A int 13 2o piso (Edificio Valcob Angelopolis),"
+    },
+    {
+      "full": "Calle 24 Sur 4312,"
+    },
+    {
+      "full": "Circuto Guadalupe Nte 9 (Anexo Hospital Los Pilares),"
+    },
+    {
+      "full": "Boulevard Atlixcayotl No 1499-A int 13 2o piso (Edificio Valcob Angelopolis),"
+    },
+    {
+      "full": "Calle 24 Sur 4312,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/octavio-herrera-osorio/ginecologo/puebla#address-id=15384&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:11:30.116Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__octavio_herrera_osorio.webp"
+}

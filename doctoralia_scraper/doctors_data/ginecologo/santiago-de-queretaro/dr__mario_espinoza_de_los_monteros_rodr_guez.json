@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Mario Espinoza de los Monteros Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 28,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0d25d5/0d25d56e32a3de2ae4c25ca6b9445d03_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Camino a los Olvera No.680,"
+    },
+    {
+      "full": "Camino a los Olvera No.680,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mario-espinoza-de-los-monteros-rodriguez/ginecologo/santiago-de-queretaro#address-id=148251&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:49:08.291Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__mario_espinoza_de_los_monteros_rodr_guez.webp"
+}

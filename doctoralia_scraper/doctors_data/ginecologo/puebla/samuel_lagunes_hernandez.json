@@ -1,0 +1,25 @@
+{
+  "name": "Samuel Lagunes Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 121,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/25a78bf5/25a78bf5-6f76-4216-bb56-45538db5ae77_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "2 Sur 721,"
+    },
+    {
+      "full": "2 Sur 721,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/samuel-lagunes-hernandez/ginecologo/tehuacan#address-id=162691&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:28:33.645Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/samuel_lagunes_hernandez.webp"
+}

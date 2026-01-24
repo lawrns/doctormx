@@ -1,0 +1,43 @@
+{
+  "name": "Dra. María José Chiriboga Zambrano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 536,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1cf6f5/1cf6f5b162de40921072d628f28eb61f.jpg",
+  "about": "*Certificada por el Consejo Mexicano de Ginecología y Obstetricia 2021-2025 *Miembro del American College of Obstetricians and Gynecologists (ACOG) desde 2008 *Miembro de la American Society for Colposcopy and Cervical Pathology desde 2009 *Amplia experiencia en el diagnóstico, tratamiento y seguimiento de las infecciones por Virus del Papiloma Humano (VPH) en mujeres y hombres (colposcopía, androscopia ,anosccopia de alta resolución) *Diplomado en Medicina Regenerativa, Anti-envejecimiento Estética *Diplomado Ginecología Regenerativa Estética y Funcional *Entrenamiento en tratamiento con LASER CO2 / HIFU *Adiestramiento en Terapia Hormonal BIOIDENTICA FORMAS DE PAGO: EFECTIVO, TRANSFERENCIA O TARJETAS DE DEBITO",
+  "addresses": [
+    {
+      "full": "Star Médica Mérida 6to piso consultorio 613,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Conización de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Histeroscopia diagnóstica con biopsia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-jose-chiriboga-zambrano/ginecologo/yucatan#address-id=129068&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:28:40.687Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__mar_a_jos__chiriboga_zambrano.webp"
+}

@@ -1,0 +1,77 @@
+{
+  "name": "Dr. Fernando José Cruz Lastra",
+  "specialty": "Ginecólogo",
+  "rating": 1,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/c9a3cd80/c9a3cd80-422f-4654-939e-b11d495eab33_small_square.jpg",
+  "about": "¡Hola! Soy el Dr. Fernando Cruz, ginecólogo–obstetra.Estudié la carrera de Médico Cirujano en la UPAEP y realicé la especialidad en Ginecología y Obstetricia en el Instituto Nacional de Perinatología, y la subespecialidad de Urología ginecologica en el mismo instituto, avalado por la UNAM, en la Ciudad de México.Soy un médico entrenado en salud femenina (ginecología general), obstetricia (control prenatal y atención del embarazo) y cuento con una subespecialidad en Urología Ginecológica y Cirugía Reconstructiva de Piso Pélvico.Estoy a tus órdenes para cuidar tu salud ginecológica y también para acompañarte antes, durante y después de tu embarazo.",
+  "addresses": [
+    {
+      "full": "Avenida Insurgentes Sur 601,"
+    },
+    {
+      "full": "Avenida G. Méndez 707,"
+    },
+    {
+      "full": "Cuauhtémoc 1040,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Urología Ginecológica",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Valoración ginecologica y/o obstétrica",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": ""
+    },
+    {
+      "name": "Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Urología Ginecológica",
+      "price": "• $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-jose-cruz-lastra/ginecologo/tabasco#address-id=618583&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:02:57.650Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__fernando_jos__cruz_lastra.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ireri Avila Resendiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 51,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/feb4f9/feb4f91eba268a4476daaaba401c4ca0_220_square.jpg",
+  "about": "Soy Dra. Ireri Ávila Reséndiz, especializada en ginecología con base en la ciudad de Querétaro. Me gradué en la Universidad Autónoma del Estado de Hidalgo y atiendo a pacientes adultos y niños a partir de 16 años. Mis áreas de enfoque incluyen el tratamiento del sangrado uterino anormal, trastornos de la menstruación y diabetes gestacional. Me enorgullece ofrecer un enfoque personalizado y profesional a cada uno de mis pacientes, y me esfuerzo por proporcionar una explicación detallada y clara de cualquier procedimiento o diagnóstico. Me alegra que mis pacientes estén satisfechos con mis servicios, y estoy agradecida por sus comentarios positivos. GINECOLOGIA Y OBSTETRICIA - CONTROL PRENATAL -RESOLUCION DEL EMBARAZO -MEDOTOS DE PLANIFICACION FAMILIAR : COLOCACION DE DIU ASI COMO RETIRO , COLOCACION DE IMPLANTE Y RETIRO . -TOMA DE PAP- - VACUNACION Contacto, en el número de teléfono registrado.",
+  "addresses": [
+    {
+      "full": "Calle Ignacio Zaragoza 16, Hospital h mas, torre 2 piso 8, consultorio 801,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $750"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ireri-avila-resendiz/ginecologo/queretaro#address-id=461117&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:45:09.675Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__ireri_avila_resendiz.webp"
+}

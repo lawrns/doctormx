@@ -1,0 +1,70 @@
+{
+  "name": "Dr. Carlos Alberto Albert Bracamontes",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/48d138/48d1381282c9ef6850d3ae2463d254fb_220_square.jpg",
+  "about": "Ginecólogo y Obstetra, formado en el Hospital Civil Antiguo Fray Antonio Alcalde, comprometido de forma integral con la salud de la Mujer. En un ambiente de respeto y confianza entre medico y paciente. Tienes alguna duda acerca de algo agenda una cita y con gusto te la explico.",
+  "addresses": [
+    {
+      "full": "Pedro Moreno 934,"
+    },
+    {
+      "full": "Donato Guerra 619 col. centro Guadalajara, Jalisco,"
+    },
+    {
+      "full": "Hidalgo 149 (esquina Pino Suarez),"
+    },
+    {
+      "full": "Hidalgo 149 (esquina Pino Suarez) Tesistan,"
+    },
+    {
+      "full": "Seda 2640,"
+    },
+    {
+      "full": "Pedro Moreno 934,"
+    },
+    {
+      "full": "Donato Guerra 619 col. centro Guadalajara, Jalisco,"
+    },
+    {
+      "full": "Hidalgo 149 (esquina Pino Suarez),"
+    },
+    {
+      "full": "Hidalgo 149 (esquina Pino Suarez) Tesistan,"
+    },
+    {
+      "full": "Seda 2640,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $400"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $400"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $400"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $400"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-alberto-albert-bracamontes-2/ginecologo/zapopan#address-id=389159&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:23:51.223Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__carlos_alberto_albert_bracamontes.webp"
+}

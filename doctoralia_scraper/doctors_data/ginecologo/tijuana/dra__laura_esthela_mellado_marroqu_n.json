@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Laura Esthela Mellado Marroquín",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 134,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/86be9f/86be9f978b6b75a932a05d3b7c5c901f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Bugambilias 50, El Prado,"
+    },
+    {
+      "full": "Av Bugambilias 50, El Prado,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-esthela-mellado-marroquin/ginecologo/tijuana#address-id=128271&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:47:13.862Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__laura_esthela_mellado_marroqu_n.webp"
+}

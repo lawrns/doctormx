@@ -1,0 +1,25 @@
+{
+  "name": "Ileana Maria Perez Villanueva",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 219,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/544bdd/544bdda72c4c590c2e4bd7f432e7edac_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 68 532,"
+    },
+    {
+      "full": "C. 68 532,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ileana-maria-perez-villanueva/ginecologo/merida#address-id=219848&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:45:00.043Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/ileana_maria_perez_villanueva.webp"
+}

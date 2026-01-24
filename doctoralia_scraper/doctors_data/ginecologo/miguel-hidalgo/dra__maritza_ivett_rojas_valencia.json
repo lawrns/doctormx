@@ -1,0 +1,89 @@
+{
+  "name": "Dra. Maritza Ivett Rojas Valencia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 346,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/1257de31/1257de31-72c6-4e1f-9b05-92263fa52008_large.jpg",
+  "about": "Soy la Dra. Maritza Ivett Rojas Valencia, médico especialista en Ginecología y Obstetricia con subespecialidad en Reproducción Asistida e Infertilidad. Inicié mis estudios en la Facultad de Medicina de la Universidad Nacional Autónoma de México, al concluir la formación como médico me di cuenta de la vital importancia de brindar atención médica integral a las mujeres, por lo que continué mi trayectoria, ingresando a la especialidad de Ginecología y Obstetricia en el Instituto Nacional de Perinatología, en donde adquirí bastos conocimientos y habilidades para un adecuado manejo y atención de las mujeres en las diferentes etapas de la vida, con un enfoque importante en el embarazo de alto riesgo. Posteriormente realicé la subespecialidad en Biología de la Reproducción Humana en el mismo Instituto Nacional de Perinatología, con la finalidad de poder ayudar a las parejas que desean tener un hijo y por alguna causa no lo han logrado. En la actualidad me enfoco en brindar atención médica integral a mujeres en cualquier etapa de su vida, con la mayor calidez humana y empatía, siendo su salud mi prioridad. De igual forma me especializo en lograr un embarazo en aquellas parejas que requieren asistencia médica, siendo mi principal satisfacción el que tengan un bebé con ellos. Estoy convencida que mi actuar médico debe regirse por los conceptos de \"ética, humanismo y conocimiento\" para así otorgar la mejor atención a mis pacientes.",
+  "addresses": [
+    {
+      "full": "Avenida Baja California 261,"
+    },
+    {
+      "full": "Temístocles 314,"
+    },
+    {
+      "full": "Avenida 499 102,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,600"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": ""
+    },
+    {
+      "name": "Infertilidad",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maritza-ivett-rojas-valencia/ginecologo/miguel-hidalgo#address-id=421205&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:57:51.755Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__maritza_ivett_rojas_valencia.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Manuel Garcia Romero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 492,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/df46f79b/df46f79b-a4f5-4080-8361-586c764cfabf_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Priv. 9-A Sur 5322,"
+    },
+    {
+      "full": "Priv. 9-A Sur 5322,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuel-garcia-romero-2/ginecologo/puebla#address-id=354608&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:22:06.896Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__manuel_garcia_romero.webp"
+}

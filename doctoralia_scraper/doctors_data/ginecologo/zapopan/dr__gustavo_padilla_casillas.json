@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Gustavo Padilla Casillas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2837,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d07bd9/d07bd9a2cb62a3c3585da78b37a87f12_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Niños héroes 907,"
+    },
+    {
+      "full": "Niños héroes 907,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gustavo-padilla-casillas/ginecologo/guadalajara#address-id=84666&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:29:32.083Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__gustavo_padilla_casillas.webp"
+}

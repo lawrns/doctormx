@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Simon Montoya Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 255,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2cd01a/2cd01a52fb2946f36f08a6e729b9fe63_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 47 479,"
+    },
+    {
+      "full": "C. 7 X 32 Y 34 215 A,"
+    },
+    {
+      "full": "C. 47 479,"
+    },
+    {
+      "full": "C. 7 X 32 Y 34 215 A,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/simon-montoya-lopez/ginecologo/merida#address-id=171473&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:42:18.172Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__simon_montoya_lopez.webp"
+}

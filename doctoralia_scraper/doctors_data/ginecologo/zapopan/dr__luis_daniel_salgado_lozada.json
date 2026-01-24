@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Luis Daniel Salgado Lozada",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 24,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/8a393b2e/8a393b2e-fc4a-4da3-a9e3-3978fa13dfad_small_square.jpg",
+  "about": "Soy el Dr. Luis Daniel Salgado Lozada, especialista en Ginecología y Obstetricia. Estoy enfocado en urología ginecológica, rehabilitación de piso pélvico, así como en el cuidado integral durante el climaterio y la menopausia, siempre con un trato empático, cercano y humano, para mejorar tu bienestar y calidad de vida. Cuento con amplia experiencia en el manejo de patologías de piso pélvico, brindando atención especializada a la incontinencia urinaria, el prolapso de órganos pélvicos y enfermedades de la vía urinaria en la mujer.",
+  "addresses": [
+    {
+      "full": "Calle Efraín González luna 2523, Colonia Americana, Americana, Guadalajara, Jal., México,"
+    },
+    {
+      "full": "Dr Tomás Zavala 47, Burocrata,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Urología Ginecológica",
+      "price": ""
+    },
+    {
+      "name": "Aclaramiento genital",
+      "price": ""
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Blanqueamiento genital",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita a uroginecología",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina",
+      "price": ""
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-daniel-salgado-lozada/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:07:33.924Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__luis_daniel_salgado_lozada.webp"
+}

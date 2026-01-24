@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Cristhian Sotomayor Yanez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 93,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/52c0aa3b/52c0aa3b-b199-45e7-9e10-d19ab48a349b_small_square.jpg",
+  "about": "Tengo mas de 13 años de experiencia tratando a pacientes. Soy Médico egresado de la Universidad Autónoma de San Luis Potosí con una especialidad en Ginecología y Obstetricia. Además, cuento con un Diplomado en Patología del Tracto Genital Inferior y en Colposcopía, lo que me ha permitido fortalecer mi enfoque integral en la atención de la salud femenina. Mi enfoque profesional se basa en la aplicación rigurosa de la evidencia médica, pero siempre considerando las necesidades y características individuales de cada mujer. Me distingo por proporcionar un ambiente cálido y profesional, buscando siempre el bienestar físico y emocional de mis pacientes. Areas de tratamiento Control de embarazo Papanicolaou y colposcopia por Virus de Papilooma Humano Tratamientos de miomatosis uterina Otros servicios Atiendo el embarazo de alto riesgo por edad materna mayor a 38 años. Se ofrece acompañamiento en embarazo y atención a urgencias del mismo. Histeroscopía por pólipos endometriales, sangrado anormal y dificultad de embarazo. Tratamiento de quistes y tumores de ovario. Alteraciones hormonales, ovario poliquístico, falta de menstruación y ciclos menstruales irregulares. ¿Porque elegirme a mi? Me preocupo por la comunicación y la comodidad de mis pacientes. Me caracterizo por ser paciente dedicándole tiempo a responden todas sus dudas. Mi objetivo es continuar brindando atención médica de excelencia, apoyando a las mujeres en todas las etapas de su vida y contribuyendo a su salud y calidad de vida con la calidez. Mi consulta y mi equipo Estamos ubicados en el Hospital Moscati, en el piso 18, consultorio 1815 y tenemos equipo para colposcopia, ultrasonido 3D y 4D. Se pueden hacer exámenes rápidos de orina, equipo para toma de biopsia. Contamos con todo el instrumental para la atención ginecológica y de embarazo.",
+  "addresses": [
+    {
+      "full": "Avenida de las Ciencias 2058,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $900"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": "• $1,100"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cristhian-sotomayor-yanez/ginecologo/juriquilla#address-id=421648&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:43:17.145Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__cristhian_sotomayor_yanez.webp"
+}

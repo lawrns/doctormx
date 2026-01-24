@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Ana Cristina Arteaga Gómez",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 3.5,
+  "reviewCount": 3,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3cd095e5/3cd095e5-4dac-46f3-89f5-e49d0f2101f4_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Acueducto Río Hondo 20 (entre Prado Sur y Aguiar y Seijas),"
+    },
+    {
+      "full": "Homero #655 Cons. 10,"
+    },
+    {
+      "full": "Acueducto Río Hondo 20 (entre Prado Sur y Aguiar y Seijas),"
+    },
+    {
+      "full": "Homero #655 Cons. 10,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-cristina-arteaga-gomez/ginecologo-oncologico/ciudad-de-mexico#address-id=139219&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:41:08.644Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__ana_cristina_arteaga_g_mez.webp"
+}

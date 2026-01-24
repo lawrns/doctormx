@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Arturo Adauco García Ocampo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1097,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/09a33709/09a33709-7e93-4e95-a2a5-411fb806ae96_large.jpg",
+  "about": "Dr. Arturo Adauco García Ocampo. Médico certificado en la especialidad de Ginecología y Obstetricia con más de 20 de años de práctica profesional. Con técnicas de ginecología bio regenerativa podemos mejor tu función sexual, tratar la atrofia genital principalmente durante el climaterio y menopausia. ¿Tu Papanicolaou está positivo para papiloma? ¿Tienes verrugas genitales? Puedo ayudarte, tengo amplia experiencia en el diagnóstico y tratamiento de lesiones genitales por virus del papiloma humano como verrugas y lesiones precancerosas del cuello uterino, vagina, vulva, pene y ano. Te orientaré para que recibas un manejo y tratamiento personalizado. También puedo ayudarte a elegir la mejor opción en anticoncepción femenina desde hormonales orales, parches, implante subdérmico y DIU.",
+  "addresses": [
+    {
+      "full": "Av. Alcalde #2170,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Check up avanzado",
+      "price": "• $2,500"
+    },
+    {
+      "name": "Check up básico",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Androscopia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arturo-adauco-garcia-ocampo/ginecologo/guadalajara#address-id=24609&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:08:37.812Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__arturo_adauco_garc_a_ocampo.webp"
+}

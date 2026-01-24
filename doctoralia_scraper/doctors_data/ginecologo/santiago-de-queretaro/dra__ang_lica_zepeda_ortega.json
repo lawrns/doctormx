@@ -1,0 +1,42 @@
+{
+  "name": "Dra. Angélica Zepeda Ortega",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 205,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f40e8a94/f40e8a94-440b-4da9-b197-ed0482eec8fd_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Felipe Ángeles # 174 Consultorio 4 y 5 segundo piso. Hospital Médica EBOR,"
+    },
+    {
+      "full": "Felipe Ángeles # 174 Consultorio 4 y 5 segundo piso. Hospital Médica EBOR,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angelica-zepeda-ortega/ginecologo/santiago-de-queretaro#address-id=74338&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:52:14.138Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__ang_lica_zepeda_ortega.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Gloria Eugenia Zepeda Herrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/93320a9a/93320a9a-36eb-4aac-b4d4-c7a606b58823_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Turmalina 3045,"
+    },
+    {
+      "full": "Turmalina 3045,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gloria-eugenia-zepeda-herrera/ginecologo/zapopan#address-id=224052&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:39:51.995Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/gloria_eugenia_zepeda_herrera.webp"
+}

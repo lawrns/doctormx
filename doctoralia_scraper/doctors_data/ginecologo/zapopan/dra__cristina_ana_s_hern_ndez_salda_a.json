@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Cristina Anaís Hernández Saldaña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 44,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c64aa4/c64aa46d1ffa659988a29b9251498c69_220_square.jpg",
+  "about": "Atención integral especializada de la mujer en todas las etapas de su vida, con los mayores estándares de calidad, tecnología y humanismo. “Mi compromiso es brindarte un diagnóstico y tratamiento oportuno de forma accesible e integral, por lo que no tendrás que preocuparte por escoger otra vez quién será tu ginecóloga”",
+  "addresses": [
+    {
+      "full": "Hospital San Miguel Country, Avenida Manuel Ávila Camacho 1643, Col. Mezquitan Country. Guadalajara,"
+    },
+    {
+      "full": "Hospital San Miguel Country, Avenida Manuel Ávila Camacho 1643, Col. Mezquitan Country. Guadalajara,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cristina-anais-hernandez-saldana/ginecologo/guadalajara#address-id=166854&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:20:49.214Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__cristina_ana_s_hern_ndez_salda_a.webp"
+}

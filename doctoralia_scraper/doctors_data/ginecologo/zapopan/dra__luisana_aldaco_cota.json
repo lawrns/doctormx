@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Luisana Aldaco Cota",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c20880/c20880339753f6a27867d0339f20a326_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "1,"
+    },
+    {
+      "full": "1,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luisana-aldaco-cota/ginecologo/guadalajara#address-id=581414&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:30:45.467Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__luisana_aldaco_cota.webp"
+}

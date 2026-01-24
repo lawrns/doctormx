@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Nijiko Yamasaki",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/265bf3/265bf36b297db37d7fca9ec37a688f99_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Cupules 105,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nijiko-yamasaki/ginecologo/yucatan#address-id=592095&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:32:35.477Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__nijiko_yamasaki.webp"
+}

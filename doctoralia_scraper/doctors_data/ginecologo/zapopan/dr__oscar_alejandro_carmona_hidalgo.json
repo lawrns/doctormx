@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Oscar Alejandro Carmona Hidalgo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/41281415/41281415-e4fb-4672-82a2-a0a71f55fe29_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Niño Obrero 1538,"
+    },
+    {
+      "full": "Av. Niño Obrero 1538,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/oscar-alejandro-carmona-hidalgo/ginecologo/zapopan#address-id=183144&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:32:19.588Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__oscar_alejandro_carmona_hidalgo.webp"
+}

@@ -1,0 +1,89 @@
+{
+  "name": "Dr. Aldo Isaac Meneses Rios",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 416,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/07250338/07250338-2430-4508-94fe-feb5b9eb573a_small_square.jpg",
+  "about": "Dr. Aldo Meneses: Especialista en Fertilidad Soy un médico apasionado por la medicina reproductiva, dedicado a ayudar a las parejas a cumplir su sueño de ser padres. Con más de 20 años de experiencia en el campo, he convertido mi prática clínica en un refugio de esperanza y apoyo. Mi enfoque empático y personalizado me distingue. Escucho atentamente a mis pacientes, comprendiendo sus inquietudes y brindando un espacio seguro para compartir sus emociones. Con un sólido conocimiento en técnicas avanzadas de fertilidad, como la inseminación artificial y la fecundación in vitro, así como el abordaje de la fertilidad masculina, muchas veces se deja aún lado, solo abordando y tratando a la mujer. Me mantengo actualizado siempre ofreciendo los últimos avances científicos para ofrecer las mejores opciones. Además de mi experiencia médica, mi calidez humana se refleja en cada consulta. Me tomo el tiempo necesario para explicar cada procedimiento, despejar dudas y acompañar a mis pacientes en cada etapa del tratamiento. Mi objetivo no solo es lograr un embarazo, sino también cuidar la salud emocional de las personas que atraviesan este proceso. Creo firmemente en el poder del acompañamiento y la educación. Organizo talleres y grupos de apoyo para compartir experiencias y brindar recursos, creando una comunidad donde nadie se sienta solo en su camino hacia la paternidad. Con una combinación de conocimiento, compasión y dedicación, quiero convertirme en un aliado indispensable para quienes buscan iniciar o ampliar su familia. Mi compromiso es claro: cada paciente es único y merece un enfoque adaptado a sus necesidades y sueños.",
+  "addresses": [
+    {
+      "full": "Sierra Mojada 340,"
+    },
+    {
+      "full": "HOSPITAL ANGELES ACOXPA,"
+    },
+    {
+      "full": "Av. Carlos Fernández Graef 154,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $20,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aldo-isaac-meneses-rios/ginecologo/ciudad-de-mexico#address-id=623578&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:00:50.525Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__aldo_isaac_meneses_rios.webp"
+}

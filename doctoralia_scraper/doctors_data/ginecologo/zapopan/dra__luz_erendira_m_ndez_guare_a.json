@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Luz Erendira Méndez Guareña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 217,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/21897b/21897b5c8e30fc6eac7a40ba93d74366_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Juan Cano 926,"
+    },
+    {
+      "full": "Juan Cano 926,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luz-erendira-mendez-guarena/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:33:09.807Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__luz_erendira_m_ndez_guare_a.webp"
+}

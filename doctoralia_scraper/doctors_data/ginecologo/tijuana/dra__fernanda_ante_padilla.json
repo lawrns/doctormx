@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Fernanda Ante Padilla",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/291985/291985dc368c54f180e4f058b97dce3b_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av ferrocarril 413,"
+    },
+    {
+      "full": "Av ferrocarril 413,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernanda-ante-padilla/ginecologo/tijuana#address-id=92063&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:45:46.011Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__fernanda_ante_padilla.webp"
+}

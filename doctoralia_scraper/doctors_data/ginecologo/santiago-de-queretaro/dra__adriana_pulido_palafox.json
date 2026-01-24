@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Adriana Pulido Palafox",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 49,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d421b4/d421b46e449161c8f33e617ab191cef4_220_square.jpg",
+  "about": "Egresada de la UNAM y con experiencia laboral en el Hospital Español de México y en el área privada desde el 2010, contando con las técnicas en medicina más actualizadas y eficaces para la atención en ginecología y obstetricia, actualizando mis conocimientos con cursos y platicas para ofrecer los más altos estándares de calidad y el mejor trato. En caso de cirugías o atención de parto puede elegir el Hospital que más le agrade o se adapte a su cobertura de aseguradora.",
+  "addresses": [
+    {
+      "full": "Boulevard de las Ciencias #2058, Piso 12 Consultorio 1216,"
+    },
+    {
+      "full": "Boulevard de las Ciencias #2058, Piso 12 Consultorio 1216,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $990"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $990"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $990"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $990"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $990"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adriana-pulido-palafox/ginecologo/juriquilla#address-id=347424&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:48:40.840Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__adriana_pulido_palafox.webp"
+}

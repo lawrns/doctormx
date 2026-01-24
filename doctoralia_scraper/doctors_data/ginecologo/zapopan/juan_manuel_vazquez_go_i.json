@@ -1,0 +1,25 @@
+{
+  "name": "Juan Manuel Vazquez Goñi",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 63,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/632eb0/632eb03474de68f0eaf5a0ccb1aaf657_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Villacañas 3016Col. Colinas Del Rey,"
+    },
+    {
+      "full": "Villacañas 3016Col. Colinas Del Rey,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-manuel-vazquez-goni/ginecologo/zapopan#address-id=357578&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:38:29.355Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/juan_manuel_vazquez_go_i.webp"
+}

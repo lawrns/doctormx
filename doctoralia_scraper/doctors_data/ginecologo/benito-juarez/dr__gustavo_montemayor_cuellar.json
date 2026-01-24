@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Gustavo Montemayor Cuellar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cc7bf1/cc7bf135c18b2f3ffbc46094274175ca_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Insurgentes Sur 1194 (Int 702),"
+    },
+    {
+      "full": "Ave. Insurgentes Sur 1194 (Int 702),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gustavo-montemayor-cuellar/ginecologo/ciudad-de-mexico#address-id=39792&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:13:49.474Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__gustavo_montemayor_cuellar.webp"
+}

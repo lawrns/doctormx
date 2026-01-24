@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Kristian Isela Corro Aguirre",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 94,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/742430/7424302d10c173f6166a5817b3f72a50_220_square.jpg",
+  "about": "Soy la Dra. Kristian Corro, tu ginecóloga de confianza en la Colonia del Valle, CDMX.Mi compromiso es ofrecerte una atención médica de calidad, basada en una formación sólida y actualizada con certificaciones profesionales.En cada consulta, me enfoco en escucharte, resolver todas tus dudas y explicarte cada paso del proceso con claridad.Quiero que te sientas tranquila, acompañada y con la confianza de estar en buenas manos.Mi enfoque es integral y se adapta a tus necesidades en cada etapa de tu vida.Estoy aquí para ser tu aliada en el cuidado de tu salud y bienestar ginecológico.¡Será un gusto acompañarte en este camino!",
+  "addresses": [
+    {
+      "full": "Calle Capulin 30, Colonia del Valle,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/kristian-isela-corro-aguirre/ginecologo/ciudad-de-mexico#address-id=429330&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:00:11.938Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__kristian_isela_corro_aguirre.webp"
+}

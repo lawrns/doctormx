@@ -1,0 +1,25 @@
+{
+  "name": "Fernando Lopez Mendez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 39,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/01ccf1/01ccf16ef5b237b611fda60186760f9b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Reforma 4112 4, Col. Santa Maria Tonantzintla, ,"
+    },
+    {
+      "full": "Reforma 4112 4, Col. Santa Maria Tonantzintla, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-lopez-mendez/ginecologo/san-andres-cholula#address-id=356282&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:24:00.743Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/fernando_lopez_mendez.webp"
+}

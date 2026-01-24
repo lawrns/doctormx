@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Juan Manuel Casillas Santana",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/34d3f5/34d3f53a989d90129691c238646104b5_220_square.jpg",
+  "about": "Soy egresado de la Universidad de Guadalajara como Médico Cirujano, posteriormente realice dos postgrados: el primero en Medicina Familiar y el segundo en Ginecologia y Obstetricia en el Centro Médico de Occidente del IMSS, años después realice mi subespecialidad en Reproducción Asistida en el Instituto de Medicina Reproductiva del Bajío. A lo largo de 30 años he ayudado a mis pacientes a cuidar su salud y a cumplir su sueño de convertirse en padres.",
+  "addresses": [
+    {
+      "full": "Av. Pablo Neruda # 3148,"
+    },
+    {
+      "full": "Av. Nicolas Coopernico #3817 int 12 ,"
+    },
+    {
+      "full": "Av. Pablo Neruda # 3148,"
+    },
+    {
+      "full": "Av. Nicolas Coopernico #3817 int 12 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Endoscopia ginecológica",
+      "price": ""
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": ""
+    },
+    {
+      "name": "Inseminación artificial",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Endoscopia ginecológica",
+      "price": ""
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": ""
+    },
+    {
+      "name": "Inseminación artificial",
+      "price": ""
+    },
+    {
+      "name": "Miomectomía",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-manuel-casillas-santana/ginecologo/guadalajara#address-id=31627&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:24:13.870Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__juan_manuel_casillas_santana.webp"
+}

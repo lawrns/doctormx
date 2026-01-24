@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Sahira Toledo Aviles",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 392,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/30cc32/30cc32e7dd6598f1fb6f1ab25183f509_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Privada Ignacio Zaragoza 16,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $800"
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": "• $4,000"
+    },
+    {
+      "name": "Colocación de implante subdérmico",
+      "price": "• $3,500"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sahira-toledo-aviles/ginecologo/santiago-de-queretaro#address-id=437669&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:44:09.660Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__sahira_toledo_aviles.webp"
+}

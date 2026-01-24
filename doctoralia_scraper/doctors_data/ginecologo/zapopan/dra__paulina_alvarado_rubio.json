@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Paulina Alvarado Rubio",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 127,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1f9281/1f92813611a36cf10c2246476c5f37f5_220_square.jpg",
+  "about": "Médico especialista en Ginecología y Obstetricia egresada de la Universidad de Guadalajara con Subespecialidad en Ginecología Oncológica",
+  "addresses": [
+    {
+      "full": "Calle Lacandones 318,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Check up ginecológico",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta Ginecología Oncológica",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": "• $500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paulina-alvarado-rubio/ginecologo-ginecologo-oncologo/guadalajara#address-id=417873&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:08:46.980Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__paulina_alvarado_rubio.webp"
+}

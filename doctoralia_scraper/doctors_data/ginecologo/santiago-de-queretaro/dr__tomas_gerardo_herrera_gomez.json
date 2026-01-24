@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Tomas Gerardo Herrera Gomez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 17,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9db32a68/9db32a68-0bd3-46b8-bc30-37e5744a416c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Prol. Constituyentes 302 Hospital San Jose, Torre III, PIeso 4 Consultorio 426,"
+    },
+    {
+      "full": "Prol. Constituyentes 302,"
+    },
+    {
+      "full": "Prol. Constituyentes 302 Hospital San Jose, Torre III, PIeso 4 Consultorio 426,"
+    },
+    {
+      "full": "Prol. Constituyentes 302,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tomas-gerardo-herrera-gomez/ginecologo/marquez#address-id=170360&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:52:44.710Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__tomas_gerardo_herrera_gomez.webp"
+}

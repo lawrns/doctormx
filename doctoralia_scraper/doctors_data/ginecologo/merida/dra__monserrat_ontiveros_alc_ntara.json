@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Monserrat Ontiveros Alcántara",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 347,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/079241/0792412e615799093cf8e9f1449cc492_220_square.jpg",
+  "about": "Mi nombre es Monserrat Ontiveros soy ginecoobstetra y colposcopista egresada del hospital de ginecología y Obstetricia no.4 Mi formación me dio la pauta para actualizarme en temas importantes en la vida de la mujer de manejar frecuente Te espero!!",
+  "addresses": [
+    {
+      "full": "Calle 26 star médica ,"
+    },
+    {
+      "full": "Calle 26 star médica ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/monserrat-ontiveros-alcantara/ginecologo/yucatan#address-id=432927&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:37:34.103Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__monserrat_ontiveros_alc_ntara.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Maria Dolores Juarez Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 337,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ce3ce6/ce3ce6cd60ff9e25f76c18fe49e270e6_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cervantes saavedra no. 39, Moderna,"
+    },
+    {
+      "full": "Cervantes saavedra no. 39, Moderna,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-dolores-juarez-perez/ginecologo/benito-juarez#address-id=113688&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:14:06.631Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/maria_dolores_juarez_perez.webp"
+}

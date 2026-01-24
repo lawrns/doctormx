@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Denisse Lorena Sepúlveda Mendoza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 277,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/547725/547725fc9494a01a8a74d302c30412f7_220_square.jpg",
+  "about": "Especialista en Ginecología y Obstetricia con adiestramiento en Laparoscopía y Cirugía de Mínima Invasión egresada del Programa Multicéntrico del Tecnológico de Monterrey. Atención competente, personalizada, integral y trato digno. La Cirugía de Mínima Invasión abarca los procedimientos realizados por laparoscopía, histeroscopía y vaginales. Mediante esta técnica se pueden realizar cirugías con la misma seguridad que la cirugía abierta, y además ofrece: Menor riesgo de sangrado Menor dolor postoperatorio Menor tiempo de recuperación Menos días de estancia hospitalaria Mejores resultados estéticos Estamos para servirte!",
+  "addresses": [
+    {
+      "full": "Bernardino Del Razo 21,"
+    },
+    {
+      "full": "Bernardino Del Razo 21,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/denisse-lorena-sepulveda-mendoza/ginecologo/santiago-de-queretaro#address-id=5549&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:48:22.745Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__denisse_lorena_sep_lveda_mendoza.webp"
+}

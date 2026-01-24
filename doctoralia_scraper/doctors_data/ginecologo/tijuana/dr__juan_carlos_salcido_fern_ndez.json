@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Juan Carlos Salcido Fernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 32,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a364e04a/a364e04a-1d71-461d-b3a3-3df2ec21f6ac_small_square.jpg",
+  "about": "Médico Ginecólogo-Obstetra con más de 25 años de experiencia en la salud de la mujer, en sector privado y público (actualmente jubilado). Especialidad en Fertilidad.",
+  "addresses": [
+    {
+      "full": "Blvd. Hermenegildo Galeana G 22412, Torres de Matamoro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $950"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-salcido-fernandez-2/ginecologo/tijuana#address-id=579363&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:41:51.261Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__juan_carlos_salcido_fern_ndez.webp"
+}

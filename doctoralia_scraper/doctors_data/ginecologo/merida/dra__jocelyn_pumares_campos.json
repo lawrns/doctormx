@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Jocelyn Pumares Campos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/762074/76207454fd56e0570bd1ab802b0256ff_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "CENTRO INTEGRAL PLENUS,"
+    },
+    {
+      "full": "CENTRO INTEGRAL PLENUS,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jocelyn-pumares-campos/ginecologo-ginecologo-oncologico/yucatan#address-id=449770&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:43:19.111Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__jocelyn_pumares_campos.webp"
+}

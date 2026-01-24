@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Enrique Martínez Villafaña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 267,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8675d9/8675d9055755c1d3f14282517197ae06_220_square.jpg",
+  "about": "Soy especialista en ginecología y obstetricia por parte de la UNAM. Me especialicé en el Hospital Ángeles Lomas, en donde se ofrece a las pacientes un experiencia positiva del embarazo y el parto, así como el manejo de las patologías ginecológicas con la más alta tecnología. Mi pasión por el estudio de la infertilidad y las alteraciones endocrinológicas me llevó a seguirme preparando en biología de la reproducción humana por el Instituto Nacional de Perinatología. Creo que la investigación clínica es parte fundamental de la práctica médica, complementando los conocimientos y aportando herramientas para una atención más integral. Por esa razón realicé una maestría en ciencias médicas en la Universidad Anáhuac México Campus Norte. Me interesa la investigación relacionada con el embarazo, las alteraciones endocrinológicas y la infertilidad. Un adecuado estado de salud comienza desde los hábitos en el estilo de vida. Encontrar la causa de la patología desde su raíz es necesario para tratarlo adecuadamente. Para eso es importante rodearse de un equipo multidisciplinario que puedan ofrecerle a las pacientes un manejo especializado. Busco otorgarles a mis pacientes una experiencia única en su embarazo, mejorar su calidad de vida y alcanzar sus objetivos reproductivos.",
+  "addresses": [
+    {
+      "full": "Av. Ejercito Nacional, #678, 5to piso, Col. Polanco Reforma, Miguel Hidalgo,"
+    },
+    {
+      "full": "Av. Ejercito Nacional, #678, 5to piso, Col. Polanco Reforma, Miguel Hidalgo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/enrique-martinez-villafana/ginecologo/ciudad-de-mexico#address-id=480705&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:07:26.327Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__enrique_mart_nez_villafa_a.webp"
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Jesus Fabian Walters Arballo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6ff675/6ff6750de75f2f08a9108c418987d757_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Paseo De Los Heroes 10999 911,"
+    },
+    {
+      "full": "PASEO DE LOS HEROES 10999 IN 911 ZONA RIO TIJUANA,"
+    },
+    {
+      "full": "Ave. Paseo De Los Heroes 10999 911,"
+    },
+    {
+      "full": "PASEO DE LOS HEROES 10999 IN 911 ZONA RIO TIJUANA,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cesárea con histerectomia postparto",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,110"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cesárea con histerectomia postparto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-fabian-walters-arballo/ginecologo/tijuana#address-id=15711&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:44:16.219Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__jesus_fabian_walters_arballo.webp"
+}

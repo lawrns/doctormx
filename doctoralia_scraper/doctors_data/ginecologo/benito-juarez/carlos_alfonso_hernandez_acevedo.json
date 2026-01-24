@@ -1,0 +1,31 @@
+{
+  "name": "Carlos Alfonso Hernandez Acevedo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 109,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/af7f40/af7f402f549c39322e6abcbcd3953cec_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Universidad 1321,"
+    },
+    {
+      "full": "Cda. San Antonio 81,"
+    },
+    {
+      "full": "Av. Universidad 1321,"
+    },
+    {
+      "full": "Cda. San Antonio 81,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-alfonso-hernandez-acevedo/ginecologo/ciudad-de-mexico#address-id=241356&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:16:18.578Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/carlos_alfonso_hernandez_acevedo.webp"
+}

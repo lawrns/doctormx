@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Roberto Romero Animas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/236680/236680b4c24e5ac09baff845333e65c0_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Montecito (Torre Wtc), 38, Piso 11, Ofna. 22,"
+    },
+    {
+      "full": "Montecito (Torre Wtc), 38, Piso 11, Ofna. 22,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-romero-animas-2/ginecologo/-#address-id=328514&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:14:52.363Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__roberto_romero_animas.webp"
+}

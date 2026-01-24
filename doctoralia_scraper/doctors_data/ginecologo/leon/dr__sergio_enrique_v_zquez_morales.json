@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Sergio Enrique Vázquez Morales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/eb238c/eb238c0e5c4f6a3c9435ae4f1bafdca7_220_square.jpg",
+  "about": "Soy egresado de la facultad de medicina de la Universidad autónoma de Nuevo León. La especialidad la realice en el Hospital de PEMEX en Salamanca, Gto. 17 años de experiencia medico-quirúrgica. Mi desempeño se basa en amor y respeto por la vida, con un enfoque ético para la atención y solución de las enfermedades de la mujer. Considero que la mujer es el ser mas inteligente, amoroso, humano y perfecto que podamos encontrar entre los humanos. Por tal motivo es sumamente importante que reciba atención con un enfoque, respetuoso, amoroso, con alta dosis de empatía y con gran ética. Tales características siempre recibirán como parte de mí consulta. Permíteme apoyarte en la búsqueda de resolver tus problemas de salud",
+  "addresses": [
+    {
+      "full": "Farallón 507,"
+    },
+    {
+      "full": "Farallón 507,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": ""
+    },
+    {
+      "name": "Atención del cáncer en la mujer",
+      "price": ""
+    },
+    {
+      "name": "Atención del cáncer en la mujer",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-enrique-vazquez-morales/ginecologo/leon#address-id=437516&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:27:40.152Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__sergio_enrique_v_zquez_morales.webp"
+}

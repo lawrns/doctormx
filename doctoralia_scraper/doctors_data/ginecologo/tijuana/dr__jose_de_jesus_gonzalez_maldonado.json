@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jose de Jesus Gonzalez Maldonado",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Lomas Verdes,"
+    },
+    {
+      "full": "Av. Lomas Verdes,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-de-jesus-gonzalez-maldonado-2/ginecologo/tijuana#address-id=536382&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:45:05.487Z",
+  "localPhotoPath": null
+}

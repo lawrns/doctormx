@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Alejandra Aguilar Ladriere",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 30,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/992fe4e2/992fe4e2-3a73-4cae-a3e4-6658a08b10b0_small_square.jpg",
+  "about": "Soy la Dra. Alejandra Aguilar Ladriere, especialista en ginecología y obstetricia en Tijuana. Obtuve mi Licenciatura en Medicina General en la Universidad Xochicalco Campus Tijuana, realize mi especialidad en el Hospital Ginecopediatrico Dr. Lucio Mayoral en Hermosillo Sonora. Mi principal objetivo es brindar un cuidado de calidad y personalizado a cada uno de mis pacientes, basándome en el respeto, la confidencialidad y la ética profesional. Me mantengo actualizada en las últimas técnicas y tecnologías en mi campo, y siempre estoy dispuesta a escuchar y responder a las inquietudes de mis pacientes. Como ginecóloga, estoy comprometida en ayudar a las mujeres a mantener su salud y bienestar en cada etapa de sus vidas.",
+  "addresses": [
+    {
+      "full": "Paseo Ensenada 830,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Atención de parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia cervical",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-aguilar-ladriere/ginecologo/tijuana#address-id=503414&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:42:31.240Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__alejandra_aguilar_ladriere.webp"
+}

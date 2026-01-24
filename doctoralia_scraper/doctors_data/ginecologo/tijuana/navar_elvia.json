@@ -1,0 +1,25 @@
+{
+  "name": "Navar Elvia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 393,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/24daae/24daae4c724d4a822a1cdd6fcf7cbef3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Local 10, Plaza BENTON, Blvd. Gustavo Diaz Ordaz 15260,"
+    },
+    {
+      "full": "Local 10, Plaza BENTON, Blvd. Gustavo Diaz Ordaz 15260,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/navar-elvia/ginecologo/tijuana#address-id=123749&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:06:59.774Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/navar_elvia.webp"
+}

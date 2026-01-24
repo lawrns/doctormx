@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Rosa Árias Loza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c30041/c300411ebb5637239df17632b03d330e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "General Cano, 94-302,"
+    },
+    {
+      "full": "General Cano, 94-302,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-arias-loza/ginecologo/miguel-hidalgo#address-id=77026&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:40:40.887Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__rosa__rias_loza.webp"
+}

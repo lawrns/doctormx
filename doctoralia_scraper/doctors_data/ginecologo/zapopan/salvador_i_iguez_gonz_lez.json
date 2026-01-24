@@ -1,0 +1,25 @@
+{
+  "name": "Salvador Iñiguez González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1097,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/50ac5f/50ac5fa82eaf632ebb73b14203f678c5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Alcalde #2170,"
+    },
+    {
+      "full": "Av. Alcalde #2170,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/salvador-iniguez-gonzalez/ginecologo/guadalajara#address-id=24569&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:43:56.996Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/salvador_i_iguez_gonz_lez.webp"
+}

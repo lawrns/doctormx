@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Adriana Sanchez Zepeda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 252,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/05bedf/05bedf4fa22577d3134e9ee038854144_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "AV GUADALUPE 4560. TORRE VITAL MEDICA . CONSULTORIO 19,"
+    },
+    {
+      "full": "Av Guadalupe 4560,"
+    },
+    {
+      "full": "AV GUADALUPE 4560. TORRE VITAL MEDICA . CONSULTORIO 19,"
+    },
+    {
+      "full": "Av Guadalupe 4560,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adriana-sanchez-zepeda/ginecologo/zapopan#address-id=111524&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:16:09.788Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__adriana_sanchez_zepeda.webp"
+}

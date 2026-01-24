@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Carmen Barriba Cazares",
+  "specialty": "Ginecólogo",
+  "rating": 3,
+  "reviewCount": 12,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ff943a/ff943af10b2521ec3bbed18dccb4c286_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Fco Javier Mina 1415 301,"
+    },
+    {
+      "full": "Fco Javier Mina 1415 301,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carmen-barriba-cazares/ginecologo/tijuana#address-id=58401&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:46:55.101Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__carmen_barriba_cazares.webp"
+}

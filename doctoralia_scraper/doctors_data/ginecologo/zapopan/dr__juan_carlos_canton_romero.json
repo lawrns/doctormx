@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Juan Carlos Canton Romero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/00bdf3d0/00bdf3d0-4fb8-412d-96d7-243ecb4a80ac_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Moctezuma 187,"
+    },
+    {
+      "full": "Moctezuma 187,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-canton-romero-2/ginecologo/zapopan",
+  "scrapedAt": "2026-01-22T04:24:38.596Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__juan_carlos_canton_romero.webp"
+}

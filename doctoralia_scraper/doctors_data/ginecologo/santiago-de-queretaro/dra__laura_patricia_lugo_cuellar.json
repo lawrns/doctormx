@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Laura Patricia Lugo Cuellar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cdc9be/cdc9be9ef84f74cd441fd95019de2e2a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Constituyentes 302,"
+    },
+    {
+      "full": "Constituyentes 302,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-patricia-lugo-cuellar-2/ginecologo/santiago-de-queretaro#address-id=72559&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:53:28.794Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__laura_patricia_lugo_cuellar.webp"
+}

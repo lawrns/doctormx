@@ -1,0 +1,40 @@
+{
+  "name": "Dr. Juan Carlos Santos Morales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 14,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/60d915/60d91598819ff98d2c2d5115dac5bf30_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 26 199,"
+    },
+    {
+      "full": "Calle 26 N° 199 Cons 708,"
+    },
+    {
+      "full": "Calle 26 199,"
+    },
+    {
+      "full": "Calle 26 N° 199 Cons 708,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-santos-morales/ginecologo/merida#address-id=6706&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:41:41.313Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__juan_carlos_santos_morales.webp"
+}

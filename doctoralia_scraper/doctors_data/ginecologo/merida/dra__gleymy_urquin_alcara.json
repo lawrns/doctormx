@@ -1,0 +1,50 @@
+{
+  "name": "Dra. Gleymy Urquin Alcara",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 117,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/2cb03c1f/2cb03c1f-45b8-4d28-914f-9e562f68331d_small_square.jpg",
+  "about": "Soy la Dra. Gleymy Urquín Alcara, Ginecóloga -Obstetra y Colposcopista, atención especializada con calidad y calidez. Puedo ayudarte en el control de tu embarazo y múltiples enfermedades ginecológicas.",
+  "addresses": [
+    {
+      "full": "Calle 136 553,"
+    },
+    {
+      "full": "Hospitalia/Amerimed consultorio 513, 5to piso, calle 149, ext tablaje catastral, entrada fracc. Los Heroes.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Biopsia cervical",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $800"
+    },
+    {
+      "name": "Vacunas virus del papiloma humano",
+      "price": "• $3,800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gleymy-urquin-alcara/ginecologo/yucatan#address-id=591723&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:32:49.500Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__gleymy_urquin_alcara.webp"
+}

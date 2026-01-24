@@ -1,0 +1,25 @@
+{
+  "name": "Luis Andres Alanis Monroy",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 120,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/758d666d/758d666d-8188-41cf-9586-e784e556ce13_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Ignacio Zaragoza 39 B,"
+    },
+    {
+      "full": "C. Ignacio Zaragoza 39 B,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-andres-alanis-monroy/ginecologo/santiago-de-queretaro#address-id=199806&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:56:06.280Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/luis_andres_alanis_monroy.webp"
+}

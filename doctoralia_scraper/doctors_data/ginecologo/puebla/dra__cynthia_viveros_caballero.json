@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Cynthia Viveros Caballero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 107,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/df846a/df846a65cb508b535b2b845562658b34_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Anillo periférico ecológico #3507,"
+    },
+    {
+      "full": "Anillo periférico ecológico #3507,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cynthia-viveros-caballero/ginecologo/puebla#address-id=563701&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:18:30.240Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__cynthia_viveros_caballero.webp"
+}

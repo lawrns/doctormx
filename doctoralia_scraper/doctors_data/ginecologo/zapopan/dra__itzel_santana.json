@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Itzel Santana",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 59,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/092fbb/092fbbf740eceb880402d649eb8d0b38_220_square.jpg",
+  "about": "Hola, soy la Dra Itzel Santana Ginecologa y obstetra. Me encantaría acompañarte en tu embarazo o cualquier enfermedad ginecólogica, ofrezco un trato cercano y sin juicios, además cuento con un Diplomado en Sexualidad y Pareja.",
+  "addresses": [
+    {
+      "full": "Avenida Moctezuma 6484,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/itzel-santana/medico-general/zapopan#address-id=573418&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:09:58.621Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__itzel_santana.webp"
+}

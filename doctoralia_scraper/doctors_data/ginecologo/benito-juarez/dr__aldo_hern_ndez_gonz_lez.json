@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Aldo Hernández González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c0482f/c0482f7eeb316aada25e999fae07ae18_220_square.jpg",
+  "about": "Tu salud es nuestro bienestar , siempre llevamos tus padecimientos con calidad y calidez. Nuestra amplia experiencia en el sector público y privado nos dan las herramientas para garantizarte los mejores resultados siempre !",
+  "addresses": [
+    {
+      "full": "Av. Universidad #37 col. Narvarte . Benito Juárez,"
+    },
+    {
+      "full": "Av. Universidad #37 col. Narvarte . Benito Juárez,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $750"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $650"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $19,000"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aldo-hernandez-gonzalez-2/ginecologo/ciudad-de-mexico#address-id=154654&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:07:19.711Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__aldo_hern_ndez_gonz_lez.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Rosela Magaña Manríquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 190,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/efbb37/efbb37709fc6774fb2a69b3db41ba9a4_220_square.jpg",
+  "about": "Dra.Rosela Magaña ginecóloga-obstetra, especialista en laparoscopia ginecológica e histeroscopia. Realice mi especialidad en Hospital General de Tijuana y endoscopia ginecológica en Hospital Civil de Guadalajara ¨Dr.Juan I. Menchaca¨, cuento con diplomado en ultrasonido obstétrico realizado en Leon, Guanajuato. Me especializo en cirugias laparoscopicas.",
+  "addresses": [
+    {
+      "full": "Avenida Correa Rachó 34,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta con ultrasonido",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosela-magana-manriquez/ginecologo/yucatan#address-id=480460&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:29:52.290Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__rosela_maga_a_manr_quez.webp"
+}

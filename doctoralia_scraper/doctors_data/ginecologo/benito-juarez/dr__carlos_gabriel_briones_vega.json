@@ -1,0 +1,52 @@
+{
+  "name": "Dr. Carlos Gabriel Briones Vega",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 35,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d55af0/d55af0ef0822471ee786be276eefde04.jpg",
+  "about": "Sobre mí Mucho gusto, gracias por darte el tiempo. Es un placer contarte un poco mas sobre mi desarrollo profesional. Yo me gradué de la carrera de medicina en la Universidad Anáhuac Norte entre 1996 y 2002 con grado de Mención Honorífica, cursando el año de servicio social como becario en investigación en el servicio de Genética Perinatal del Instituto Nacional de Perinatología (InPer) participando en investigación en pre-eclampsia. Durante el periodo de selección para el programa de especilidad inició mi camino en la docencia como maestro de anatomía, biología y educación para la salud en nivel preparatoria. La especilidad en Ginecología y Obstetricia la inicié en marzo 2003 en el Hospital para la Mujer del Instituto Materno Infantil del estado de México (IMIEM) graduándome en Marzo del 2007; con grado de Mención Honorífica por parte de la Universidad Autónoma del Estado de México (UAEM). Inmediatamente fui aceptado nuevamente en el InPer para el programa de sub-especilidad en Medicina Materno Fetal cursado entre 2007 y 2009. He participado desde mi etapa de estudiante en múltiples publicaciones y trabajos de investigación en salud perinatal. A partir de 2009 ingresé a un instituto de infertilidad en la ciudad de México, donde inicié desarrollé y dirigí la unidad de Medicina Materno Fetal atendiendo mas de 5000 embarazos y nacimientos alcanzados mediante tratamientos de reproducción asistida, lo que me ha dado la oportunidad de generar experiencia y cionocimiento en el manejo en embarazos de alto riesgo y sus graves complicaciones. Durante éste periodo también se logró Organizar y Registrar, ante la Comisión Nacional de Bioética, el comité de bioética de dicha institución siendo el primero en su tipo dentro de la cuidad de México. Como ginecólogo tengo gran experiencia en el manejo de condiciones y enfermedades propias de la salud reproductiva como endometriosis y sindrome de ovario poliquistico, miomatosis uterina, enfermedades quísticas del ovario, tamizaje, detección y prevención de cancer ginecológico, diagnóstico y tratamiento de enfermedades endometriales, sangrado anormal, dolor menstrual. Asesoria en métodos de planificación familiar en todas las etapas de la vida.",
+  "addresses": [
+    {
+      "full": "Calle Josefa Ortiz de Domínguez 302,"
+    },
+    {
+      "full": "EJERCITO NACIONAL 613 1005,"
+    },
+    {
+      "full": "Calle Josefa Ortiz de Domínguez 302,"
+    },
+    {
+      "full": "EJERCITO NACIONAL 613 1005,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-gabriel-briones-vega/ginecologo/metepec#address-id=486252&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:05:54.881Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__carlos_gabriel_briones_vega.webp"
+}

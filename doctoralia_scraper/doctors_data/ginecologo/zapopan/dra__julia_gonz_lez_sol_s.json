@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Julia González Solís",
+  "specialty": "Ginecólogo",
+  "rating": 1,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/06e0a58c/06e0a58c-50a2-4eb0-a86b-11105e4f8d5c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Justo Sierra #2520,"
+    },
+    {
+      "full": "Justo Sierra #2520,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/julia-gonzalez-solis/ginecologo/guadalajara#address-id=135292&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:28:39.911Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__julia_gonz_lez_sol_s.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Sinuhé Chávez Coss",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 251,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4b795e/4b795e078026c705927c48f2362fd264_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Hidalgo 321, Centro,"
+    },
+    {
+      "full": "Calle Hidalgo 321, Centro,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sinuhe-chavez-coss/ginecologo/leon#address-id=147120&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:38:03.538Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/sinuh__ch_vez_coss.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Julian Velazquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 34,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Agrarismo 208 (Hospital Angeles México, 1er Piso Torre A),"
+    },
+    {
+      "full": "Agrarismo 208 (Hospital Angeles México, 1er Piso Torre A),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/julian-velazquez/ginecologo/miguel-hidalgo#address-id=32386&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:44:38.549Z",
+  "localPhotoPath": null
+}

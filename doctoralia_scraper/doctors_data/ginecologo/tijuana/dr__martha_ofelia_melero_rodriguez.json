@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Martha Ofelia Melero Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 366,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5ccbee/5ccbee8819cfb1565bfca66b0d02fc9f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Juan Sarabia 0002212,"
+    },
+    {
+      "full": "Calle Juan Sarabia 0002212,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martha-ofelia-melero-rodriguez/ginecologo/tijuana#address-id=60947&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:25:03.388Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__martha_ofelia_melero_rodriguez.webp"
+}

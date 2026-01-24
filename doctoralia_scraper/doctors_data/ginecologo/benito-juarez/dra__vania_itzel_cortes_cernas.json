@@ -1,0 +1,89 @@
+{
+  "name": "Dra. Vania Itzel Cortes Cernas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 148,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/de6f49/de6f49bf0dffb640447c5a7ad06b31c3_220_square.jpg",
+  "about": "Hola, soy Vania Cortes, ginecóloga y obstetra con una subespecialidad en medicina materno-fetal. Mi pasión es cuidar la salud de las mujeres y sus bebés, brindandote una atención integral durante todas las etapas de tu vida, mediante la comunicación clara y empatíca, pilares fundamentales en mi consulta.Estoy aquí para escuchar, guiar y apoyar a cada una de ustedes en un ambiente cálido y acogedor con el máximo respeto y compromiso, y así garantizar que reciban la mejor atención posible, en un espacio donde se sientan cómodas para compartir sus preocupaciones y necesidades.Mi objetivo es no solo cuidar de tu salud, sino también empoderarlas a tomar decisiones informadas sobre su bienestar.",
+  "addresses": [
+    {
+      "full": "Avenida Insurgentes Centro 1457,"
+    },
+    {
+      "full": "Av. P.º de la Reforma 2654,"
+    },
+    {
+      "full": "Av Cuahutémoc #1040. Col. Narvarte Poniente,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "ADN fetal libre (NIPT)",
+      "price": "• Desde $10,500"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/vania-itzel-cortes-cernas/ginecologo/benito-juarez#address-id=548148&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:04:38.601Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__vania_itzel_cortes_cernas.webp"
+}

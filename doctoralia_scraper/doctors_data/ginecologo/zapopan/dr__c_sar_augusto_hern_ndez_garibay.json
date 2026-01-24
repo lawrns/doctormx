@@ -1,0 +1,46 @@
+{
+  "name": "Dr. César Augusto Hernández Garibay",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9c0aa3/9c0aa3e94bab49a1419baafcb8de21f7_220_square.jpg",
+  "about": "Médico especializado en Ginecología y Obstetricia en el Hospital General de Occidente en la ciudad de Zapopan Jalisco; certificado por el Consejo Mexicano de Ginecología y Obstetricia. Egresado de medicina por la Universidad Autónoma de Guadalajara. Con experiencia en el manejo de la obstetricia, tanto embarazo de alto riesgo como de bajo riesgo. Con conocimientos agregados en las enfermedades de la mama y tumoraciones benignas y malignas ginecológicas. Gracias a los principios propios así como los adquiridos en las instituciones de mi formación conozco la importancia de mantener la excelencia con conocimientos actualizados y precisos y llevarlos a la práctica en conjunto a un trato humano, amable y empático en búsqueda de la salud de las pacientes.",
+  "addresses": [
+    {
+      "full": "Victoriano Salado Alvárez 335,"
+    },
+    {
+      "full": "Victoriano Salado Alvárez 335,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cesar-augusto-hernandez-garibay/ginecologo/guadalajara#address-id=112766&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:24:08.887Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__c_sar_augusto_hern_ndez_garibay.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Karla Cecilia Vera Vega",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 269,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bdac58/bdac58437f952d709bb38ad871d4d682.jpg",
+  "about": "La carrera la realice en Universidad Autónoma de Baja California, la especialidad en ginecología y obstetricia en Hospital General Tijuana, ejerzo desde",
+  "addresses": [
+    {
+      "full": "Rufino Tamayo 9990,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $3,500"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Desde $3,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-cecilia-vera-vega/ginecologo/tijuana#address-id=423566&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:41:40.011Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__karla_cecilia_vera_vega.webp"
+}

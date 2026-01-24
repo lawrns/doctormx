@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Karla Fernanda Miranda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 15,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/057c96/057c968e54a3cefd7b0bede30b42ddd6_220_square.jpg",
+  "about": "Hola! Soy la Dra. Karla Fernanda Miranda Ginecóloga y Obstetra Egresada de la Universidad Autónoma de Baja California Atención de la mujer en todas las etapas de su vida Embarazo de alto riesgo Colposcopía y patología del tracto genital inferior Nutrición Hormonal Femenina Nutrición para la fertilidad Será un placer atenderte!",
+  "addresses": [
+    {
+      "full": "Montecito 38,"
+    },
+    {
+      "full": "Montecito 38,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-fernanda-miranda/ginecologo/ciudad-de-mexico#address-id=509386&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:06:31.692Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__karla_fernanda_miranda.webp"
+}

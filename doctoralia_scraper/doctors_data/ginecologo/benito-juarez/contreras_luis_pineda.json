@@ -1,0 +1,31 @@
+{
+  "name": "Contreras Luis Pineda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ba92c248/ba92c248-322f-453f-813f-499bc67ea348_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Insurgentes Sur, 1180, Desp. 704,"
+    },
+    {
+      "full": "Av. Insurgentes Sur 1180,"
+    },
+    {
+      "full": "Insurgentes Sur, 1180, Desp. 704,"
+    },
+    {
+      "full": "Av. Insurgentes Sur 1180,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/contreras-luis-pineda/ginecologo/benito-juarez#address-id=71830&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:15:01.495Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/contreras_luis_pineda.webp"
+}

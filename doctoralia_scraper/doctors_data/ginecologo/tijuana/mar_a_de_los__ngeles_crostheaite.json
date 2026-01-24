@@ -1,0 +1,25 @@
+{
+  "name": "María De Los Ángeles Crostheaite",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f03c1679/f03c1679-faa4-48e0-8163-d3c2bea3eb10_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "3Ra No. 7695 Col. Zona Centro ,"
+    },
+    {
+      "full": "3Ra No. 7695 Col. Zona Centro ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-de-los-angeles-crostheaite/ginecologo/tijuana#address-id=359056&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:23:32.443Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/mar_a_de_los__ngeles_crostheaite.webp"
+}

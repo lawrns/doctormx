@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Hugo González Trejo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2c509f/2c509ff035701f796fb008c1470daf7f_220_square.jpg",
+  "about": "Soy el Dr Hugo González Trejo Especialista en ginecologia-obstetricia y tumores mamarios Certificado por el consejo mexicano de ginecologia y obstetricia",
+  "addresses": [
+    {
+      "full": "Eulogio parra 2325 interior 1 colonia Ladrón de Guevara,"
+    },
+    {
+      "full": "Eulogio parra 2325 interior 1 colonia Ladrón de Guevara,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hugo-gonzalez-trejo-2/ginecologo/guadalajara#address-id=441171&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:24:14.892Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__hugo_gonz_lez_trejo.webp"
+}

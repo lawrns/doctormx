@@ -1,0 +1,25 @@
+{
+  "name": "Garcí­A Noriega Gabriel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 71,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0189cb/0189cb14e8b9f0113924a8f062eec942_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Erasmos Castellanos 1874, Zona Urbanarí­o Tijuana, 22010 Tijuana, B.C., Mexico,"
+    },
+    {
+      "full": "Erasmos Castellanos 1874, Zona Urbanarí­o Tijuana, 22010 Tijuana, B.C., Mexico,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/garcia-noriega-gabriel/ginecologo/ciudad-de-mexico#address-id=152231&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:06:26.169Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/garc__a_noriega_gabriel.webp"
+}

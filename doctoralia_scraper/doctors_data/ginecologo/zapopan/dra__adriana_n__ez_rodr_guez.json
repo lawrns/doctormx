@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Adriana Núñez Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1320,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/40dcda/40dcda0ca37784bbd858f92fea83543a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. San Francisco 3707,"
+    },
+    {
+      "full": "Av. San Francisco 3707,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adriana-nunez-rodriguez/ginecologo/zapopan#address-id=131394&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:39:01.910Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__adriana_n__ez_rodr_guez.webp"
+}

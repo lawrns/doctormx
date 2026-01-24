@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Carlos Briseño Villalvazo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 181,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f9f447/f9f447a119c109bca9996a576d2b70ad_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Circunvalación División del Norte 68,"
+    },
+    {
+      "full": "Av 5 de Febrero 1440, Olímpica,"
+    },
+    {
+      "full": "Avenida Circunvalación División del Norte 68,"
+    },
+    {
+      "full": "Av 5 de Febrero 1440, Olímpica,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-briseno-villalvazo/ginecologo/guadalajara#address-id=240304&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:32:37.847Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__carlos_brise_o_villalvazo.webp"
+}

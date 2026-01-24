@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Manuel Humberto Peralta Ramirez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 37,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/45397f06/45397f06-30e7-4ea3-928e-444ba7e60184_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd Diaz Ordaz 12694 4° Piso 12-13 Col.El Paraiso,"
+    },
+    {
+      "full": "Blvd Diaz Ordaz 12694 4° Piso 12-13 Col.El Paraiso,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuel-humberto-peralta-ramirez/ginecologo/tijuana#address-id=118822&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:47:07.438Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__manuel_humberto_peralta_ramirez.webp"
+}

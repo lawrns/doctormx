@@ -1,0 +1,25 @@
+{
+  "name": "Daniel Gutierrez Toca",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 709,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/962096/962096bd91a44f54f71800be57f0c140_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Martin Mendalde N 740, Col. Del Valle, ,"
+    },
+    {
+      "full": "Martin Mendalde N 740, Col. Del Valle, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniel-gutierrez-toca/ginecologo/benito-juarez#address-id=357093&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:19:20.951Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/daniel_gutierrez_toca.webp"
+}

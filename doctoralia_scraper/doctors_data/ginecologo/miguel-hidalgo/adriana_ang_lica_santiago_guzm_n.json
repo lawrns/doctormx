@@ -1,0 +1,31 @@
+{
+  "name": "Adriana Angélica Santiago Guzmán",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 135,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0e8def/0e8def89c9d8570b41d6ac5870f8e9e7_220_square.jpg",
+  "about": "Médico ginecóloga obstetra con enfoque en embarazo y parto humanizado. Consciente de la importancia de la empatía y la confianza, que se necesita en una especialidad tan íntima y personal. Actualizada, ofreciendo tratamientos basados en evidencia y actuales. Siempre ofreciendo confianza, discreción y amplia información sobre el padecimiento de mis pacientes.",
+  "addresses": [
+    {
+      "full": "Gelati 29 Colonia San Miguel Chapultepec,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adriana-angelica-santiago-guzman/ginecologo/miguel-hidalgo#address-id=392961&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:02:48.091Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/adriana_ang_lica_santiago_guzm_n.webp"
+}

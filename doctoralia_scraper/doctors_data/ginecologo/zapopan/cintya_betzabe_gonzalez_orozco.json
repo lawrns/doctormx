@@ -1,0 +1,25 @@
+{
+  "name": "Cintya Betzabe Gonzalez Orozco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 126,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c75239/c7523937d0a7398d4526c623b6ef2991_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tercera Norte,5311,Chapalita De Occidente,,"
+    },
+    {
+      "full": "Tercera Norte,5311,Chapalita De Occidente,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cintya-betzabe-gonzalez-orozco/ginecologo/zapopan#address-id=355542&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:44:18.871Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/cintya_betzabe_gonzalez_orozco.webp"
+}

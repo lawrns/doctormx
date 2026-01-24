@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Carlos Arpio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4713fe/4713fe73afffa1e005160189647526a5_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Domingo Sarmiento 2822, Prados providencia.,"
+    },
+    {
+      "full": "Domingo Sarmiento 2822, Prados providencia.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $25,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-arpio/ginecologo/zapopan#address-id=27894&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:18:31.384Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__carlos_arpio.webp"
+}

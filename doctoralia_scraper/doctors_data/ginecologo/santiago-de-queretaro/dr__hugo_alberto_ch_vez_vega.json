@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Hugo Alberto Chávez Vega",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 74,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5a50ce49/5a50ce49-380c-4cf2-8ffd-97163c6f3d82_small_square.jpg",
+  "about": "Soy médico cirujano egresado de la Universidad Autónoma de Guadalajara, con especialidad en Ginecologia y Obstetricia por el Hospital de Alta Especialidad Dr. Gustavo A. Rovirosa. Estudios posteriores en Laparoscopia Ginecologia en la Universidad Autónoma de Querétaro, Reproducción Humana y Técnicas de Reproducción Asistida en el Insituto de Ciencias en Reproducción Humana Vida, la Universidad de Guadalajara y un Master en Reproducción en la Universidad de Valencia, España y actualmente soy parte del equipo de CREA Ginecologia + Reproducción Asistida. La prioridad para mi y el equipo de CREA es que nuestras pacientes logren el tan anhelado sueño de ser padres siempre otorgando la mayor y la mejor información disponible, atendiendo sus dudas y acompañándolos en cada proceso con calidez hasta lograr nuestro objetivo mediante terapias de baja complejidad como coitos programados o Inseminación Intrauterina o de alta complejidad como Fertilización In Vitro. Logramos una atención integral desde antes del embarazo, diagnosticando y tratando condiciones ginecológicas y también, mediante un equipo multidisciplinario, cuidamos del embarazo en todas sus etapas para asegurarnos que tanto la mamá como el bebé, tengan el mejor cuidado. Nos enorgullece también contar con las mejores herramientas para tratar condiciones como Síndrome de Ovario Poliquístico, miomas, pólipos, hiperplasia endometrial, sangrado uterino anormal y demás patologías benignas en la mujer. Consideramos muy importante el aspecto preventivo en la salud de la mujer por lo que ofrecemos todos los métodos anticonceptivos evaluando el que mejor se adapte a nuestra paciente y tenemos disponibles estudios para detección y tipificación de Virus del Papiloma Humano (VPH) y la última generación de vacunas para la prevención contra serotipos de alto riesgo del VPH. Acércate con nosotros. Podemos ayudarte.",
+  "addresses": [
+    {
+      "full": "Avenida de las Ciencias 2058,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Captura Folicular",
+      "price": ""
+    },
+    {
+      "name": "Colocación de implante subdérmico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hugo-alberto-chavez-vega/ginecologo/juriquilla#address-id=593712&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:42:37.893Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__hugo_alberto_ch_vez_vega.webp"
+}

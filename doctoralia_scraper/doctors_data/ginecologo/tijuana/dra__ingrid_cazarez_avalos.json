@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ingrid Cazarez Avalos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 450,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e53981/e539819af82c4952f0746ace37e60880_220_square.jpg",
+  "about": "Hola, soy la Dra. Ingrid Cazarez --Ginecóloga especializada en Materno Fetal, mi compromiso es cuidar junto contigo, tanto tu salud como la de tu bebé. --Cursé la Licenciatura en Medicina en la Universidad Autónoma de Sinaloa, posteriormente realicé mi especialidad en IMSS Obregón Sonora, continuando con la subespecialidad de Medicina Materno Fetal en el Hospital LA RAZA en CDMX",
+  "addresses": [
+    {
+      "full": "Paseo de los héroes 9365, Zona Urbana Rio Tijuana, 22010 Tijuana, B.C.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Ecocardiografia fetal avanzada",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Embarazo de alto riesgo",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ingrid-cazarez-avalos/ginecologo/tijuana#address-id=418072&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:42:40.630Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__ingrid_cazarez_avalos.webp"
+}

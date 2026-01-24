@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Lluvia Rosas Tosca",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 151,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/703458/70345838c826d55cb04ddf56fd8982c9_220_square.jpg",
+  "about": "SOY GINECÓLOGA , CON EXPERIENCIA EN EMBARAZO DE ALTO RIESGO, COMPLICACIONES MATERNAS CON ENFOQUE PREVENTIVO. ENFERMEDADES DE LA MUJER EN SUS DIVERSAS ETAPAS, ENFERMEDADES DE TRANSMISIÓN SEXUAL, CLIMATERIO Y MENOPAUSIA. EN LA CONSULTA ESTOY ENFOCADA EN DETECTAR LOS FACTORES DE RIESGO ESPECÍFICOS DE CADA PACIENTE PARA PREVENCIÓN DE PATOLOGÍAS DE ALTO RIESGO ASÍ COMO UN ESTUDIO CLÍNICO INTEGRAL PARA PODER OFRECERTE LAS MEJORES RECOMENDACIONES ACTUALIZADAS A TI Y TU PAREJA. CON LA DISPOSICIÓN DE ACLARAR TODAS TUS DUDAS E INQUIETUDES. NO DUDES EN CONTACTARNOS",
+  "addresses": [
+    {
+      "full": "Calle 11 #309 & Calle 48, San Damián,"
+    },
+    {
+      "full": "Calle 11 #309 & Calle 48, San Damián,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $500"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $14,000"
+    },
+    {
+      "name": "Cesárea",
+      "price": "• $20,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lluvia-rosas-tosca/ginecologo/yucatan#address-id=325531&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:34:19.741Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__lluvia_rosas_tosca.webp"
+}

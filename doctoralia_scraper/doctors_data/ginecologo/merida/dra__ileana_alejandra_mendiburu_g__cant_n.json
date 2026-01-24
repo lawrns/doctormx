@@ -1,0 +1,39 @@
+{
+  "name": "Dra. Ileana Alejandra Mendiburu G. Cantón",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/31f8d7/31f8d78934468b028ac5e518cf124984_220_square.jpg",
+  "about": "",
+  "addresses": [],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ileana-alejandra-mendiburu-g-canton/ginecologo/yucatan#address-id=33984&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:44:35.503Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__ileana_alejandra_mendiburu_g__cant_n.webp"
+}

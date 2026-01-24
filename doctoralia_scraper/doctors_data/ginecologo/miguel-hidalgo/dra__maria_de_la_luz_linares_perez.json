@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Maria De La Luz Linares Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 509,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/928a8b/928a8b6ce6fb8e556e3cd694fa44a5bd_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Universidad 1134,"
+    },
+    {
+      "full": "C. Salvador Díaz Mirón 374,"
+    },
+    {
+      "full": "Av. Universidad 1134,"
+    },
+    {
+      "full": "C. Salvador Díaz Mirón 374,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-de-la-luz-linares-perez/ginecologo/benito-juarez#address-id=194492&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:41:54.986Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__maria_de_la_luz_linares_perez.webp"
+}

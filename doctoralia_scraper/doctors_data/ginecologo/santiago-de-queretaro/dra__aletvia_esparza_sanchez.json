@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Aletvia Esparza Sanchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 120,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/6261d449/6261d449-6f23-4247-9a2c-4a9bfd3b5c9d_large.jpg",
+  "about": "Sobre mí ¡Hola! Soy la Dra. Aletvia Esparza, especialista en Ginecología y Obstetricia. Egresada de la Universidad Autónoma de Aguascalientes como Médico Cirujano, y de la Unidad Médica de Alta Especialidad No. 48 de León, Guanajuato, como Gineco Obstetra. Certificada por el Consejo mexicano de Ginecología y Obstetricia. ¿Por qué elegirme a mí? Mi misión es acompañarte en cada etapa de tu vida. Siempre actualizándome y buscando las mejores opciones de tratamiento para ti. Me apasiona la salud femenina, y sería un honor poder ayudarte. ¡Nos vemos en la consulta! Principales áreas de tratamiento Control Prenatal Embarazo de Alto Riesgo Sangrado Uterino Anormal Enfermedades de Transmisión Sexual Salud Ginecológica Ovario Poliquístico Patología Mamaria Menopausia Otros servicios Citología Vaginal Ultrasonido Abdominal o Vaginal diagnóstico Parto y Cesárea Histerectomía Abdominal",
+  "addresses": [
+    {
+      "full": "Calle Privada Ignacio Zaragoza 200,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• $800"
+    },
+    {
+      "name": "Atención de parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": ""
+    },
+    {
+      "name": "Cesárea humanizada",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,100"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aletvia-esparza-sanchez/ginecologo/queretaro#address-id=551082&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:43:00.111Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__aletvia_esparza_sanchez.webp"
+}

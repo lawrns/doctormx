@@ -1,0 +1,27 @@
+{
+  "name": "Dra. María de la Merced (Marimer) Ayala Castellanos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 681,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/57d6bb/57d6bb9fa09fb1579964a2e181ca74ad.jpg",
+  "about": "LA CONSULTA GINECOLÓGICA INCLUYE EXPLORACIÓN DE MAMAS, ULTRASONIDO Y COLPOSCOPIA. SI SE REQUIERE, SE PRACTICA CITOLOGIA DE PAPANICOLAOU. LA CONSULTA OBSTÉTRICA INCLUYE EXPLORACIÓN GENERAL Y ULTRASONIDO OBSTÉTRICO",
+  "addresses": [
+    {
+      "full": "Calle General Coronado 24,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-de-la-merced-marimer-ayala-castellanos/ginecologo/guadalajara#address-id=194457&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:12:34.238Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__mar_a_de_la_merced__marimer__ayala_castellanos.webp"
+}

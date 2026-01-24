@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Hermisenda María Bermudez Tapia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/1a8e4fbe/1a8e4fbe-d251-4521-99f7-05fd8688c70a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Mar Mediterraneo 124,"
+    },
+    {
+      "full": "Calle Mar Mediterraneo 124,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hermisenda-maria-bermudez-tapia/ginecologo/miguel-hidalgo#address-id=101969&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:43:01.419Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__hermisenda_mar_a_bermudez_tapia.webp"
+}

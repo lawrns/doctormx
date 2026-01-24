@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Diana Luna Guerrero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 765,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/464f9d/464f9d63dde29f3260ad933402133dc6_220_square.jpg",
+  "about": "Dra. Diana Luna Guerrero a sus órdenes, médico especializado y certificado en Ginecología y Obstetricia con adiestramiento en Urología Ginecológica, entrenada en cirugía laparoscópica y Robótica. RECIENTEMENTE CERTIFICADA en Cirugía Robótica !!! Especialista en: - Manejo del síndrome genitourinario de la menopausia (con manejo médico plasma rico en plaquetas y laser vaginal) - Aclaramiento de genitales externos - Ginecología bioregenerativa - Urodinamia (para un mejor diagnóstico de la incontinencia urinaria) - Urología Ginecológica - Laparoscopia - Cirugía Ginecológica - Cirugía Laparoscópica - Cirugía Robótica Enfermedades tratadas: ° Prolapso uterino ° Infección urinaria recurrente ° Vaginitis atrófica ° Relajación pélvica ° EIP (infección genital femenina) ° Sangrado uterino anormal ° Candidiasis vaginal ° Miomas uterinos ° Incontinencia urinaria de esfuerzo ° Infección aguda de las vías urinarias (IVU aguda) ° Incontinencia de urgencia Te esperamos para tu oportuno tratamiento y seguimiento, ¡ Agenda tu cita por Doctoralia !",
+  "addresses": [
+    {
+      "full": "Joaquín Clausel 10343,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Urodinamia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora parcial de prolapso uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diana-luna-guerrero/ginecologo/tijuana#address-id=46855&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:40:07.174Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__diana_luna_guerrero.webp"
+}

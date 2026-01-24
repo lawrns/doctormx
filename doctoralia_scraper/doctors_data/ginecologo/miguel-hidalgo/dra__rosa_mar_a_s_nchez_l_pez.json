@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Rosa María Sánchez López",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 7,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/621c15/621c153905ee245cbe44da06dd455daf_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Homero #527-203,"
+    },
+    {
+      "full": "Homero #527-203,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-maria-sanchez-lopez/ginecologo/miguel-hidalgo#address-id=82288&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:22:30.358Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__rosa_mar_a_s_nchez_l_pez.webp"
+}

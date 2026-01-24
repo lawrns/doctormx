@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Alejandra Márquez Dávila",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 136,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a0fa32bb/a0fa32bb-e960-4d6b-884a-f1e83fd6ca6b_small_square.jpg",
+  "about": "Creo que cada mujer merece vivir su embarazo y su salud ginecológica con confianza, acompañamiento y la mejor atención médica. Soy especialista en Ginecología y Obstetricia con subespecialidad en Medicina y Cardiología Fetal, dedicada a cuidar de ti y de tu bebé desde la primera consulta hasta el nacimiento.En mi práctica combino tecnología de vanguardia con un trato cercano y humano, siempre escuchando tus inquietudes y resuelvo tus dudas. Mi misión es que te sientas acompañada en cada etapa y que tomes decisiones informadas para tu bienestar y el de tu familia.",
+  "addresses": [
+    {
+      "full": "Hospital Español Av. Ejército Nacional Mexicano 613, Torre Antonino Fernández, Piso 6 consultorio 605,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $2,200"
+    },
+    {
+      "name": "ADN fetal libre (NIPT)",
+      "price": "• $11,000"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vellosidades coriales",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-marquez-davila/ginecologo/zapopan#address-id=432268&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:01:27.205Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__alejandra_m_rquez_d_vila.webp"
+}

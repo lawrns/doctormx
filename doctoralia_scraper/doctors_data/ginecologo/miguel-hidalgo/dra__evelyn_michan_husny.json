@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Evelyn Michan Husny",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 457,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a2fc2b/a2fc2b24e86c44ff39027c98ae0585b3.jpg",
+  "about": "Actualmente soy un medico especializado en Ginecología y Obstetricia, encaminada a cuidar la salud de las mujeres en todas sus etapas, adolescencia, embarazo, infertilidad, colposcopia, menopausia. Vicepresidenta del Colegio de Ginecólogos y Obstetras del Hospital Español Laboro en el Hospital Ángeles Lomas y Hospital Español Idioma: Ingles y Hebreo.",
+  "addresses": [
+    {
+      "full": "Hospital Angeles Lomas Avenida vialidad de la barranca S/N Torre de especialidades, piso 11 consultorio 1160,"
+    },
+    {
+      "full": "Av Ejército Nacional 613, Granada, Miguel Hidalgo, piso 9 consul 903,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/evelyn-michan-husny/ginecologo/huixquilucan#address-id=346858&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:58:57.100Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__evelyn_michan_husny.webp"
+}

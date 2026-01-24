@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Rosario Gutierrez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d26122f0/d26122f0-753e-4968-9a66-333f32952f34_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "CALLE IGNACIO ALLENDE ,"
+    },
+    {
+      "full": "CALLE IGNACIO ALLENDE ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosario-gutierrez/ginecologo/azcapotzalco#address-id=129474&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:07:33.747Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__rosario_gutierrez.webp"
+}

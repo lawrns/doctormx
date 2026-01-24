@@ -1,0 +1,40 @@
+{
+  "name": "Dr. Luis Gerardo Orozco Ibarra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a82be9/a82be99e464eaeafe284de60f267dc7b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Homero 200,"
+    },
+    {
+      "full": "Homero 200,"
+    },
+    {
+      "full": "Homero 200,"
+    },
+    {
+      "full": "Homero 200,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-gerardo-orozco-ibarra/ginecologo/guadalajara#address-id=44890&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:26:04.922Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__luis_gerardo_orozco_ibarra.webp"
+}

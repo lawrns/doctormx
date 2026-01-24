@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Edgar García Escorcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 116,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/011b8877/011b8877-01cf-4bfb-a778-17798126da15_small_square.jpg",
+  "about": "Licenciatura Médico Cirujano. Universidad Popular Autonoma de Puebla Especialización Ginecología y Obstetricia. Hospital General Regional IMSS 36 “San Alejando” Especialización en Ginecología Oncológica CMN Siglo XXI, Hospital Oncología. Cirugía Laparoscopica Hospital Angeles Histeroscopia Diagnostica y Quirúrgica Miembro actual en: Sociedad Mexicana de Oncología Sociedad Mexicana de Ginecología Oncológica Sociedad Mexicana de Mastología",
+  "addresses": [
+    {
+      "full": "Torres Médicas Angelopolis II Consultorio 710,"
+    },
+    {
+      "full": "Torres Médicas Angelopolis II Consultorio 710,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Atención del cáncer en la mujer",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edgar-garcia-escorcia/ginecologo/puebla#address-id=487259&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:15:57.985Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__edgar_garc_a_escorcia.webp"
+}

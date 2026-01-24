@@ -1,0 +1,78 @@
+{
+  "name": "Dra. Barbara Rincon Alvarez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/537988/537988693636dc346f4f683801f33835_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Zaragoza 16,"
+    },
+    {
+      "full": "Avenida Constituyentes 302,"
+    },
+    {
+      "full": "universidad granjas banthi,"
+    },
+    {
+      "full": "Avenida Zaragoza 16,"
+    },
+    {
+      "full": "Avenida Constituyentes 302,"
+    },
+    {
+      "full": "universidad granjas banthi,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $800"
+    },
+    {
+      "name": "Ultrasonido avanzado de primer trimestre (semanas 11 a 14)",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/barbara-rincon-alvarez/ginecologo/queretaro#address-id=427296&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:54:45.319Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__barbara_rincon_alvarez.webp"
+}

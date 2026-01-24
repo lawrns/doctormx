@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Idun Berenice Villalobos Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9ea7ee69/9ea7ee69-a988-450b-a02a-100008065cfe_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. León #428, Jardines Del Moral,"
+    },
+    {
+      "full": "Av. León #428, Jardines Del Moral,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/idun-berenice-villalobos-hernandez/ginecologo/-#address-id=352855&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:29:37.848Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__idun_berenice_villalobos_hernandez.webp"
+}

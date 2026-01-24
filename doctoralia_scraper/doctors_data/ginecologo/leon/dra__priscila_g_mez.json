@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Priscila Gómez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 50,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/60a870c2/60a870c2-599c-47fb-b440-f7d539003908_small_square.jpg",
+  "about": "Estoy comprometida con una atención cálida y de calidad. Me encantaría que mi consultorio sea tu lugar seguro y encuentres un acompañamiento en tu embarazo o una solución a tu padecimiento.",
+  "addresses": [
+    {
+      "full": "Avenida León 115,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $800"
+    },
+    {
+      "name": "Atención de parto",
+      "price": "• Desde $23,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,900"
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": "• $350"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/priscila-gomez-3/ginecologo/leon#address-id=541172&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:26:33.820Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__priscila_g_mez.webp"
+}

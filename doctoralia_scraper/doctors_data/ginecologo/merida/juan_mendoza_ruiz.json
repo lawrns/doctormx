@@ -1,0 +1,25 @@
+{
+  "name": "Juan Mendoza Ruiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 53,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/b3701c16/b3701c16-d79b-4766-8ecf-6bdf61b83352_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 40. Col. Francisco De Montejo. ,"
+    },
+    {
+      "full": "Calle 40. Col. Francisco De Montejo. ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-mendoza-ruiz/ginecologo/merida#address-id=359177&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:48:22.110Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/juan_mendoza_ruiz.webp"
+}

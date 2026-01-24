@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jose Clemente Rueda Roldan",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 216,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/fb78477a/fb78477a-abec-4d92-bfaa-edaea4ea77c3_140_square.jpg",
+  "about": "Especialidad en Embarazo de Alto Riesgo y Colposcopia",
+  "addresses": [
+    {
+      "full": "Francisco Sarabia 102 1er Piso Arriba de Banco Azteca Atrás de la Terminal Atah,"
+    },
+    {
+      "full": "Francisco Sarabia 102 1er Piso Arriba de Banco Azteca Atrás de la Terminal Atah,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-clemente-rueda-roldan/ginecologo/apizaco#address-id=211682&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:16:39.214Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__jose_clemente_rueda_roldan.webp"
+}

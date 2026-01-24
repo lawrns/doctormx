@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Alicia Hernandez Pereyra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/af4265/af4265cd0367b74ed31dc7e2df31c2b6_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Acueducto 1290,"
+    },
+    {
+      "full": "Victoria 1531,"
+    },
+    {
+      "full": "Av. Acueducto 1290,"
+    },
+    {
+      "full": "Victoria 1531,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alicia-hernandez-pereyra/ginecologo/zapopan#address-id=248556&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:32:08.296Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__alicia_hernandez_pereyra.webp"
+}

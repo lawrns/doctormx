@@ -1,0 +1,46 @@
+{
+  "name": "Luz Alejandra Huseman Plascencia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/183043/183043878b64430f0e32cc10231b9ce2_220_square.jpg",
+  "about": "Subespecialidad en Medicina Materno Fetal. Es una rama de la obstetricia que se dedica al estudio de patologías que complican el embarazo y el feto. Se utilizan herramientas de diagnóstico prenatal como ultrasonido de alta definición, para diagnosticar patologías fetales como anomalías genéticas, defectos congénitos o alteraciones en el crecimiento fetal.",
+  "addresses": [
+    {
+      "full": "Calle Jesús García 3084,"
+    },
+    {
+      "full": "Calle Jesús García 3084,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luz-alejandra-huseman-plascencia/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:25:35.385Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/luz_alejandra_huseman_plascencia.webp"
+}

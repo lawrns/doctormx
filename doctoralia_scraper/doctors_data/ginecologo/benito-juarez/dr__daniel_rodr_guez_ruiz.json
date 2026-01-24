@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Daniel Rodríguez Ruiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 41,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/12c4d3/12c4d3107f45b56aeaa52e9d053a979b_220_square.jpg",
+  "about": "Hola soy el Dr Daniel Rodríguez Ruiz, Médico especializado en Ginecología y Obstetricia, egresado de Hospital Civil de Culiacán, y formación de Cirugía Endoscopica Ginecológica en Hospital General Manuel GEA Gonzalez de la Cdmx. Mi formación y experiencia me permiten ayudar a mis pacientes en el diagnostico y tratamiento acertado para resolver los problemas de la mujer en todas las etapas de la vida de manera integral, siempre ofreciendo un trato amable, profesional, humano y empático, priorizando el bienestar de ustedes, mis pacientes. Manos expertas cuidando de ti, será un gusto atenderte!",
+  "addresses": [
+    {
+      "full": "Av. Insurgentes Sur 1524, Cuauhtémoc, Benito,"
+    },
+    {
+      "full": "Av. Montevideo,"
+    },
+    {
+      "full": "Av. Insurgentes Sur 1524, Cuauhtémoc, Benito,"
+    },
+    {
+      "full": "Av. Montevideo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": ""
+    },
+    {
+      "name": "Cirugía Laparoscópica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniel-rodriguez-ruiz-2/ginecologo/cuauhtemoc2#address-id=460373&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:07:02.883Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__daniel_rodr_guez_ruiz.webp"
+}

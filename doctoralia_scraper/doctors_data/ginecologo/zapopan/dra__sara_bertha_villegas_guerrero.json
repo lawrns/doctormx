@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Sara Bertha Villegas Guerrero",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 267,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/297a98/297a98f64b22adab02c521f035ba1595_220_square.jpg",
+  "about": "Hola soy Dra. Sara Villegas Guerrero, especialista en Ginecologia y Obstetricia desde hace mas de 20 años, egresada de la Universidad de Guadalajara y realize mi especialidad en el Instituto Mexicano del Seguro Social en Guadalajara Jalisco, donde trabaje hasta mi jubilacion, actualmente solo laboro en el medio privado.",
+  "addresses": [
+    {
+      "full": "Av. López Mateos 567,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de sueroterapia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sara-bertha-villegas-guerrero/ginecologo/guadalajara#address-id=411321&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:08:14.547Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__sara_bertha_villegas_guerrero.webp"
+}

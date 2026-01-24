@@ -1,0 +1,37 @@
+{
+  "name": "Dra. Carmen Jacqueline Gonzalez Gomez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 486,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/934a64/934a6492caab84d3b552f1d384fe8001_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Pablo Neruda 3148,"
+    },
+    {
+      "full": "C. Tarascos 3473,"
+    },
+    {
+      "full": "Eulogio Parra 2979,"
+    },
+    {
+      "full": "Pablo Neruda 3148,"
+    },
+    {
+      "full": "C. Tarascos 3473,"
+    },
+    {
+      "full": "Eulogio Parra 2979,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carmen-jacqueline-gonzalez-gomez/ginecologo/guadalajara#address-id=239662&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:34:06.816Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__carmen_jacqueline_gonzalez_gomez.webp"
+}

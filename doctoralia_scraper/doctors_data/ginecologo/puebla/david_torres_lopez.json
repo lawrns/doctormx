@@ -1,0 +1,31 @@
+{
+  "name": "David Torres Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 150,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/40f6a6/40f6a63de95b52445301b115a701e642_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Xonocatepec 1855,"
+    },
+    {
+      "full": "Jardin De La Corregidora,"
+    },
+    {
+      "full": "Av. Xonocatepec 1855,"
+    },
+    {
+      "full": "Jardin De La Corregidora,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/david-torres-lopez/ginecologo/puebla#address-id=235874&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:26:58.960Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/david_torres_lopez.webp"
+}

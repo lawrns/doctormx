@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Laura Irene Riestra Cañedo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9d5c20/9d5c20b422694e11163a65188ca156c7_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "51 Entre 52 Y 54 315,"
+    },
+    {
+      "full": "51 Entre 52 Y 54 315,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-irene-riestra-canedo-2/ginecologo/merida#address-id=74373&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:41:41.312Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__laura_irene_riestra_ca_edo.webp"
+}

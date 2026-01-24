@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Maria Olimpia Nuño Donlucas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 36,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3f029b6c/3f029b6c-b6a7-49bf-afa0-24fa8ff9bf34_small_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Empresarios 150, piso 18 consultorio 1802, Colonia Puerta de Hierro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-olimpia-nuno-donlucas/ginecologo/guadalajara#address-id=60752&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:11:01.411Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__maria_olimpia_nu_o_donlucas.webp"
+}

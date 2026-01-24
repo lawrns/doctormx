@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Víctor Hugo Vidrio Torres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 385,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/96c299/96c29965d0616b14dad30378edfddeb5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Las Palmas 10 colonia florida,"
+    },
+    {
+      "full": "Las Palmas 10 colonia florida,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victor-hugo-vidrio-torres/ginecologo/ocotlan#address-id=117844&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:40:34.482Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__v_ctor_hugo_vidrio_torres.webp"
+}

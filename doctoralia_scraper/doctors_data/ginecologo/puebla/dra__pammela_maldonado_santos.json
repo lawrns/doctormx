@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Pammela Maldonado Santos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/eeee12/eeee12315742ecef267ac111b9a1b182_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Privada De Las Ramblas No. 4, Interior 1017 Col, Reserva Territorial Atlixcáyotl,"
+    },
+    {
+      "full": "Privada de las Ramblas 4,,"
+    },
+    {
+      "full": "Privada De Las Ramblas No. 4, Interior 1017 Col, Reserva Territorial Atlixcáyotl,"
+    },
+    {
+      "full": "Privada de las Ramblas 4,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pammela-maldonado-santos/ginecologo/-#address-id=339013&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:13:27.786Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__pammela_maldonado_santos.webp"
+}

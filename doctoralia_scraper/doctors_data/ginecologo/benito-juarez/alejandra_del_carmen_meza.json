@@ -1,0 +1,25 @@
+{
+  "name": "Alejandra Del Carmen Meza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 262,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/00cb8448/00cb8448-4bf9-4009-ab88-c92e33df007a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C Alcatraces Mz 10 Lt 38 C29, Col. Supmza22, ,"
+    },
+    {
+      "full": "C Alcatraces Mz 10 Lt 38 C29, Col. Supmza22, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-del-carmen-meza/ginecologo/benito-juarez#address-id=358570&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:20:43.000Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/alejandra_del_carmen_meza.webp"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Diana Mejia Romero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ce3ce6/ce3ce6cd60ff9e25f76c18fe49e270e6_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Castilla, 45,"
+    },
+    {
+      "full": "Castilla, 45,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diana-mejia-romero/ginecologo/benito-juarez#address-id=78560&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:11:43.036Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__diana_mejia_romero.webp"
+}

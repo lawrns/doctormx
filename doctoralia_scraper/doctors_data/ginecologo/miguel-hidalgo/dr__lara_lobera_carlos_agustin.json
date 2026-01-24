@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Lara Lobera Carlos Agustin",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 623,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/982e08/982e08e226ef2766243c6e458486bd67_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave 1 N0 18, San Pedro De Los Pinos, Mexico,"
+    },
+    {
+      "full": "Ave 1 N0 18, San Pedro De Los Pinos, Mexico,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lara-lobera-carlos-agustin/ginecologo/benito-juarez#address-id=106922&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:54:57.286Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__lara_lobera_carlos_agustin.webp"
+}

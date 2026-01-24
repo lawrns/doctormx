@@ -1,0 +1,39 @@
+{
+  "name": "Dra. Valeria Estrella Haro",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 34,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/634f40f0/634f40f0-ee79-489e-b5a2-3fcdb3655214_small_square.jpg",
+  "about": "Su labor es brindar atención integral con respeto, eficiencia, calidez, en un ambiente de confort para el diagnóstico y tratamiento de su enfermedad, con el compromiso de una actualización constante en conocimientos y habilidades.",
+  "addresses": [
+    {
+      "full": "Justo Sierra No. 2620,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    },
+    {
+      "name": "Medicina materno fetal",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Revisión de embarazo (Primera vez)",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido estructural del segundo trimestre",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/valeria-estrella-haro/ginecologo/guadalajara#address-id=564211&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:15:50.251Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__valeria_estrella_haro.webp"
+}

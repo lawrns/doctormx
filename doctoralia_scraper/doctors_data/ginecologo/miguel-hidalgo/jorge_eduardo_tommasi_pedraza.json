@@ -1,0 +1,25 @@
+{
+  "name": "Jorge Eduardo Tommasi Pedraza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c30041/c300411ebb5637239df17632b03d330e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Gob. Ignacio Esteva 107,"
+    },
+    {
+      "full": "Gob. Ignacio Esteva 107,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-eduardo-tommasi-pedraza/ginecologo/miguel-hidalgo#address-id=214256&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:53:36.519Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/jorge_eduardo_tommasi_pedraza.webp"
+}

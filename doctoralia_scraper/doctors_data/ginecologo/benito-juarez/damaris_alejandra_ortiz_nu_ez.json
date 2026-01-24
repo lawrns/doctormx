@@ -1,0 +1,31 @@
+{
+  "name": "Damaris Alejandra Ortiz Nuñez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 62,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bd35f8/bd35f8b5ddcc84033c3a9d8f9d995127_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Rio Bamba 639,"
+    },
+    {
+      "full": "La Carolina 64,"
+    },
+    {
+      "full": "Rio Bamba 639,"
+    },
+    {
+      "full": "La Carolina 64,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/damaris-alejandra-ortiz-nunez/ginecologo/ciudad-de-mexico#address-id=236951&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:16:12.006Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/damaris_alejandra_ortiz_nu_ez.webp"
+}

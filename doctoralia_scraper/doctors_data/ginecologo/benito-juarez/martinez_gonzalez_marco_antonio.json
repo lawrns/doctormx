@@ -1,0 +1,25 @@
+{
+  "name": "Martinez Gonzalez Marco Antonio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 82,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/236680/236680b4c24e5ac09baff845333e65c0_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Montecito 38 Col. Nápoles ,"
+    },
+    {
+      "full": "Montecito 38 Col. Nápoles ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martinez-gonzalez-marco-antonio/ginecologo/benito-juarez#address-id=358889&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:18:20.538Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/martinez_gonzalez_marco_antonio.webp"
+}

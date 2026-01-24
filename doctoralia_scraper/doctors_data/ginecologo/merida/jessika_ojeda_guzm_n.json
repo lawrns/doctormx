@@ -1,0 +1,43 @@
+{
+  "name": "Jessika Ojeda Guzmán",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 347,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e6f69e/e6f69e1bb320b1caa6b3eb63cfaacf6e_220_square.jpg",
+  "about": "Soy ginecologa y obstetra egresada de la universidad autonoma de yucatan. Especialista en embarazos de alto riesgo asi como en enfermedades de la mujer, colposcopia y manejo de hormonas bioidenticas. permite acompañarte en las mejores etapas de tu vida con calidad y calidez",
+  "addresses": [
+    {
+      "full": "Av. Correa Rachó 104,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jessika-ojeda-guzman/ginecologo/yucatan#address-id=421037&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:29:32.756Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/jessika_ojeda_guzm_n.webp"
+}

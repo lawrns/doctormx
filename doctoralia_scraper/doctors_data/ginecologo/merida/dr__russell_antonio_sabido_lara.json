@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Russell Antonio Sabido Lara",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 53,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/b3701c16/b3701c16-d79b-4766-8ecf-6bdf61b83352_small_square.jpg",
+  "about": "¡Hola! Soy médico especialista en Ginecología y Obstetricia, con formación sólida y experiencia en el cuidado de la salud femenina. Mi prioridad es brindar una atención médica respetuosa, actualizada y empática. Creo que una buena atención ginecológica comienza con la escucha activa, por lo que busco que cada paciente se sienta comprendida y acompañada en cada paso de su proceso. La confianza mutua y el respeto son la base de mi práctica¡Nos vemos en tu próxima cita!",
+  "addresses": [
+    {
+      "full": "C. 36 302 Fracc. La Castellana Francisco de Montejo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/russell-antonio-sabido-lara/ginecologo/yucatan#address-id=584881&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:29:00.461Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__russell_antonio_sabido_lara.webp"
+}

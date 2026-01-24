@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Homero Iván Jiménez Ramírez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 548,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/71f95b/71f95bcc773e01508161d978e39096f6_220_square.jpg",
+  "about": "Soy el Dr. Homero Iván Jiménez Ramírez, ginecólogo obstetra especialista en Urología Ginecológica , Cirugía Gineco-Cosmética y colposcopía avanzada . Como especialista en salud femenina, ofrezco ultrasonidos de alta resolución y colposcopía de alta especialidad, así como diagnóstico y tratamiento oportunos del virus del papiloma humano. Mes especializo en forma distintiva en el tratamiento de afecciones que afectan el piso pélvico como prolapso , vejiga caída , incontinencia urinaria y el tratamiento médico y quirúrgico de estos padecimientos. Mi enfoque se centra en la prevención, el diagnóstico temprano y el tratamiento efectivo de las afecciones ginecológicas y obstétricas. Me tomo el tiempo para escuchar tus preocupaciones, responder a tus preguntas y proporcionarte la información que necesitas para tomar decisiones informadas sobre tu salud. Cuidar de tu salud es un acto de amor propio y de responsabilidad. Por eso, te invito a agendar una cita conmigo te ayudare a cuidar de ti misma y a mejorar tu bienestar.",
+  "addresses": [
+    {
+      "full": "Calle Colomos #2110. Colonia Ayuntamiento,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Aplicación de Kyleena",
+      "price": "• $6,000"
+    },
+    {
+      "name": "Aplicación de pesarios",
+      "price": "• $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/homero-ivan-jimenez-ramirez/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:07:50.775Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__homero_iv_n_jim_nez_ram_rez.webp"
+}

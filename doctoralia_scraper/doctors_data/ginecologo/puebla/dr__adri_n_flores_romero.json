@@ -1,0 +1,60 @@
+{
+  "name": "Dr. Adrián Flores Romero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 15,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/674e37/674e37c57d052a402abf711a20f3faf7_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. 13 Ote. 1602, Zona Sin Asignación de Nombre de Col 39, Barrio de Analco, Puebla, Pue.,"
+    },
+    {
+      "full": "Periférico Ecológico 3507,"
+    },
+    {
+      "full": "Av. 13 Ote. 1602, Zona Sin Asignación de Nombre de Col 39, Barrio de Analco, Puebla, Pue.,"
+    },
+    {
+      "full": "Periférico Ecológico 3507,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Miomectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Quistectomía de ovario por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Tratamientos de Reproducción Asistida e Infertilidad",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Tratamientos de Reproducción Asistida e Infertilidad",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adrian-flores-romero/ginecologo/san-andres-cholula#address-id=423079&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:12:48.366Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__adri_n_flores_romero.webp"
+}

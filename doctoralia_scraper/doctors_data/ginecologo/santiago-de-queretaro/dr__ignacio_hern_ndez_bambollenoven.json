@@ -1,0 +1,58 @@
+{
+  "name": "Dr. Ignacio Hernández Bambollenoven",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 180,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3eec19/3eec19e5b9633259e34571e75d3498d3_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hospital Santo Tomás Boulevard Bernardo Quintana 2906 cerrito colorado,"
+    },
+    {
+      "full": "Av. paseo Constitutuyentes 15,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $750"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $750"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ignacio-hernandez-bambollenoven/ginecologo/queretaro#address-id=405236&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:46:29.784Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__ignacio_hern_ndez_bambollenoven.webp"
+}

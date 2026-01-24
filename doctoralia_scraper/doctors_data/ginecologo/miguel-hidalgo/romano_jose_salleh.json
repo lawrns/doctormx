@@ -1,0 +1,25 @@
+{
+  "name": "Romano Jose Salleh",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fbc7f1/fbc7f18e27f9200dcab466b9758ecf95_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "MOLIERE 39 PISO 8,"
+    },
+    {
+      "full": "MOLIERE 39 PISO 8,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/romano-jose-salleh/ginecologo/ciudad-de-mexico#address-id=128053&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:47:07.535Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/romano_jose_salleh.webp"
+}

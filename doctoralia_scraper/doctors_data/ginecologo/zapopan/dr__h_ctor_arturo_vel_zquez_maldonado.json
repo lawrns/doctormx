@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Héctor Arturo Velázquez Maldonado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7f7078/7f70788a7f35f0e3358cb4600c3b2e1a_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Nicolas Copernico Num Ext 4044 Num Int 7 Arboledas,"
+    },
+    {
+      "full": "Av Nicolas Copernico Num Ext 4044 Num Int 7 Arboledas,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-arturo-velazquez-maldonado/ginecologo/guadalajara#address-id=337931&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:26:12.129Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__h_ctor_arturo_vel_zquez_maldonado.webp"
+}

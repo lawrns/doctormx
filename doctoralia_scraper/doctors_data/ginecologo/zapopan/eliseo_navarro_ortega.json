@@ -1,0 +1,31 @@
+{
+  "name": "Eliseo Navarro Ortega",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 631,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/69df83bb/69df83bb-1401-4704-9559-5eef4ba64a93_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Fco. Javier Gamboa 136,"
+    },
+    {
+      "full": "Salvador Quevedo Y Zubieta 750,"
+    },
+    {
+      "full": "Fco. Javier Gamboa 136,"
+    },
+    {
+      "full": "Salvador Quevedo Y Zubieta 750,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eliseo-navarro-ortega/ginecologo/guadalajara#address-id=232800&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:40:30.690Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/eliseo_navarro_ortega.webp"
+}

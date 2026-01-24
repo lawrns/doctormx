@@ -1,0 +1,25 @@
+{
+  "name": "Magally Concepcion Farfan Cervantes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 992,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0f1f94/0f1f944553689fdadb359c63b07b5daf_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "19 Por 18 Y 20,40,Col Tanlum,,"
+    },
+    {
+      "full": "19 Por 18 Y 20,40,Col Tanlum,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/magally-concepcion-farfan-cervantes/ginecologo/merida#address-id=357838&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:48:27.863Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/magally_concepcion_farfan_cervantes.webp"
+}

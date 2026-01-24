@@ -1,0 +1,64 @@
+{
+  "name": "Dr. Rafael García Concha",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 91,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/06d1d4/06d1d4592c332afb37fce934e0d9fb7c_220_square.jpg",
+  "about": "Soy ginecólogo y obstetra egresado de la UNAM con subespecialidad en cirugía Endoscópica (laparoscopia e histeroscopia). Certificado vigente ante el consejo mexicano de ginecología y obstetricia y socio activo de la AAGL.",
+  "addresses": [
+    {
+      "full": "frente a hospital Betania, Av 11 Ote 1817,"
+    },
+    {
+      "full": "Av. Kepler 2143,"
+    },
+    {
+      "full": "frente a hospital Betania, Av 11 Ote 1817,"
+    },
+    {
+      "full": "Av. Kepler 2143,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rafael-garcia-concha/ginecologo/puebla#address-id=135915&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:12:09.360Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__rafael_garc_a_concha.webp"
+}

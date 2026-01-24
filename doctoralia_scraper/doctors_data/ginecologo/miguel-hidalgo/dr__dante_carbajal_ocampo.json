@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Dante Carbajal Ocampo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 457,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6e0b01/6e0b01d558953313e60a27c377081595_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Ejercito Nal 613 9,11520 Granada,"
+    },
+    {
+      "full": "Calle Ejercito Nal 613 9,11520 Granada,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dante-carbajal-ocampo-2/ginecologo/miguel-hidalgo#address-id=474218&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:42:52.945Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__dante_carbajal_ocampo.webp"
+}

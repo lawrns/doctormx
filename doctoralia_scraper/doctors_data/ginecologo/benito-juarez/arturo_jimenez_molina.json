@@ -1,0 +1,25 @@
+{
+  "name": "Arturo Jimenez Molina",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 477,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4751aa/4751aaf67a5f3ab41bcec4e24734706f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Rumania 909, Col. Portales Sur, ,"
+    },
+    {
+      "full": "Rumania 909, Col. Portales Sur, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arturo-jimenez-molina/ginecologo/benito-juarez#address-id=357177&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:19:22.891Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/arturo_jimenez_molina.webp"
+}

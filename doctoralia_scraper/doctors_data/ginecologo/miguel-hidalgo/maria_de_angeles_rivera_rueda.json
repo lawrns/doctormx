@@ -1,0 +1,31 @@
+{
+  "name": "Maria De Angeles Rivera Rueda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1386,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/8881a359/8881a359-3254-45de-8d8c-f98e2ae6ed44_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tlaxcala 159,"
+    },
+    {
+      "full": "Bosque De Capulines 16,"
+    },
+    {
+      "full": "Tlaxcala 159,"
+    },
+    {
+      "full": "Bosque De Capulines 16,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-de-angeles-rivera-rueda/ginecologo/ciudad-de-mexico#address-id=194688&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:47:20.232Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/maria_de_angeles_rivera_rueda.webp"
+}

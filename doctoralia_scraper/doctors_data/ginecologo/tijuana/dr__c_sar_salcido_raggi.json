@@ -1,0 +1,43 @@
+{
+  "name": "Dr. César Salcido Raggi",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 68,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b4326a/b4326a17c1c472631b93b281a66e1f2e_220_square.jpg",
+  "about": "Con más de tres décadas de experiencia en la especialidad de Ginecoobstetricia, me enorgullece haber dedicado mi carrera a brindar atención médica de excelencia a mis pacientes. Como Director del Hospital de Ginecoobstetricia #7 del IMSS desde 2015 hasta 2024, tuve el honor de liderar un equipo de profesionales comprometidos con la salud y el bienestar de las mujeres.Mi enfoque en la atención médica se centra en proporcionar un trato respetuoso y empático a cada paciente, asegurándome de que se sientan cómodas y seguras durante su consulta. Me tomo el tiempo necesario para responder a todas sus preguntas y dudas, garantizando que se vayan a casa con la tranquilidad de haber recibido una atención de alta calidad.Mi objetivo es brindar una atención personalizada y humanizada, priorizando la salud y el bienestar de mis pacientes en cada momento de su proceso de atención. Estoy comprometido con la excelencia en la práctica médica y me esfuerzo por mantenerme actualizado en los avances y mejores prácticas en mi especialidad.",
+  "addresses": [
+    {
+      "full": "Misión de Mulegé 3063,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta con ultrasonido",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta Obstétrica",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cesar-salcido-raggi/ginecologo/tijuana#address-id=581402&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:42:25.020Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__c_sar_salcido_raggi.webp"
+}

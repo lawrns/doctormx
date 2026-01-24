@@ -1,0 +1,25 @@
+{
+  "name": "Citlali Figueroa Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 438,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a4c453/a4c453952171ce74f3932e0c62ca3626_140_square.jpg",
+  "about": "Experta en embarazo de alto riesgo (Medicina Materno Fetal) Detección de enfermedades de forma prenatal Preparación para el embarazo Tratamiento y prevención de enfermedades propias de la mujer Planificación familiar Miembro de un equipo multidisciplinario en el control del embarazo y con equipo quirúrgico de excelente calidad humana y profesional, contando con todo lo necesario o para la atención integral de la mujer",
+  "addresses": [
+    {
+      "full": "Privada de las Ramblas 4,,"
+    },
+    {
+      "full": "Privada de las Ramblas 4,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/citlali-figueroa-garcia-2/ginecologo/puebla#address-id=6147&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:17:25.635Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/citlali_figueroa_garcia.webp"
+}

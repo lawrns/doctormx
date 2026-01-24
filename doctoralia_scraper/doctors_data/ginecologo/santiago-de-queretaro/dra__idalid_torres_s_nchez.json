@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Idalid Torres Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 317,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0505fe/0505fe07d02d71fceefe12f44b0901c6_220_square.jpg",
+  "about": "El Compromiso y la Integridad son mis dos valores supremos que dirigen mi vida personal y profesional. ¿Qué es la Ginecología Funcional? Mi práctica como especialista en Ginecología, es basada en la MEDICINA FUNCIONAL, identificando las CAUSAS FUNDAMENTALES de la enfermedad, determinando cómo y por qué se ha producido. Con un enfoque individualizado, basado en la ciencia médica, física, biológica, química y emocional de cada una de mis pacientes. ¿Cómo funciona? Se busca las causas, con un interrogatorio bastante detallado de la vida, padecimientos e historial de mi paciente, estudios ginecológicos y laboratorios especializados hormonales y metabólicos, y se inicia un plan de tratamiento. El estudio de cada una de mis pacientes está basado en la completa confianza, certeza y comunicación. Los tratamientos en GINECOLOGÍA FUNCIONAL son modelos médicos avanzados, planes personalizados para conducir a mejores resultados. ¿PRESENCIAL O EN LÍNEA? Afortunadamente el acercamiento de éste tipo de medicina, puede llegar a otros lugares. Usando las nuevas tecnologías, podemos iniciar un manejo, no es indispensable la forma presencial. Podemos platicarlo y adaptar lo necesario de acuerdo a dónde vives. ¿QUÉ SE NECESITA? El primer paso, es estar segura de querer un cambio. Antes que nada, debes ESTAR DISPUESTA A RENUNCIAR A AQUELLO QUE TE HA ENFERMADO. Más del 95% de las enfermedades actuales, son prevenibles. ¿CUÁLES SON LAS CAUSAS DE TU ENFERMEDAD? Agenda una cita y juntas lo descubriremos, trabajemos juntas en tu bienestar. ¡Ésta es mi pasión! La Medicina Funcional, es la medicina del futuro. \"NADIE NACE CON LA DEFICIENCIA DE UN FÁRMACO O MEDICAMENTO\"",
+  "addresses": [
+    {
+      "full": "Circuito Universidades 3500,"
+    },
+    {
+      "full": "Boulevard Bernardo Quintana #4060,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $2,500"
+    },
+    {
+      "name": "Cirugía láser para vph",
+      "price": ""
+    },
+    {
+      "name": "Colocación de DIU T de Plata",
+      "price": "• $4,800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Láser ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Manejo de atrofia genital con Laser Co2 Fraccionado",
+      "price": "• $7,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/idalid-torres-sanchez/ginecologo/queretaro#address-id=366611&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:46:13.313Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__idalid_torres_s_nchez.webp"
+}

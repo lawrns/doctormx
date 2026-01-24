@@ -1,0 +1,43 @@
+{
+  "name": "Alejandra S. Burciaga Sepulveda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 132,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/786602/78660278bba76256960035de27d85967_220_square.jpg",
+  "about": "Especialista en la detección oportuna y manejo de los cánceres de la mujer. Valoración integral y manejo de tumores benignos. Realización de colposcopia y revisiones de rutina. Manejo de cáncer de mama con cirugía conservadora y cirugía oncoplástica.",
+  "addresses": [
+    {
+      "full": "Frida Kahlo 10410-suite 210,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Atención pacientes con cáncer",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Atención pacientes con cáncer",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Biopsia con marcaje con arpón",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-s-burciaga-sepulveda/ginecologo-oncologico-ginecologo/tijuana#address-id=383971&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:40:53.141Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/alejandra_s__burciaga_sepulveda.webp"
+}

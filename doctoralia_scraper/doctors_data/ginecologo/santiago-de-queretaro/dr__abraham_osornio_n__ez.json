@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Abraham Osornio Núñez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/645d3860/645d3860-3934-49f3-998e-94ec93bf0c8c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Corregidora 274,"
+    },
+    {
+      "full": "Corregidora 274,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/abraham-osornio-nunez/ginecologo/santiago-de-queretaro#address-id=44861&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:49:11.039Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__abraham_osornio_n__ez.webp"
+}

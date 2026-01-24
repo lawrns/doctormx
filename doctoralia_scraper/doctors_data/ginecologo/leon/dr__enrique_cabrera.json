@@ -1,0 +1,50 @@
+{
+  "name": "Dr. Enrique Cabrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 190,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b6ebb5/b6ebb5261c05a5dc771df04292504950_220_square.jpg",
+  "about": "Soy el Dr. Enrique Cabrera, médico especialista en Ginecología y Obstetricia, certificado por el Consejo Mexicano de Ginecología y Obstetricia A.C, así como Diplomado en colposcopia y patología vulvovaginal. Algunos de los servicios que se re pueden ofrecer son: - Consulta ginecológica. - Colposcopia. - Control prenatal. -Toma de papanicolau. - Ultrasonido ginecológico y obstétrico. - Atención de parto y cesárea. - Asesoramiento y aplicación de métodos de planificación familiar. - Consulta de climaterio y menopausia. - Consulta de sangrado uterino anormal y ciclos menstruales anormales",
+  "addresses": [
+    {
+      "full": "La patina 102,"
+    },
+    {
+      "full": "Calle Aquiles Serdán 401,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/enrique-cabrera/ginecologo/leon#address-id=480358&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:26:15.081Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__enrique_cabrera.webp"
+}

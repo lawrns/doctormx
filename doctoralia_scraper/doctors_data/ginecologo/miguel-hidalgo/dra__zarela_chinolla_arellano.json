@@ -1,0 +1,52 @@
+{
+  "name": "Dra. Zarela Chinolla Arellano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 463,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d592c2/d592c2f1811478c07242e18b1e8576e9_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ejercito Nacional No. 613, Col. Granada,"
+    },
+    {
+      "full": "Tehuantepec 251 consultorio 205,"
+    },
+    {
+      "full": "Ejercito Nacional No. 613, Col. Granada,"
+    },
+    {
+      "full": "Tehuantepec 251 consultorio 205,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/zarela-chinolla-arellano/ginecologo/ciudad-de-mexico#address-id=150404&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:09:23.680Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__zarela_chinolla_arellano.webp"
+}

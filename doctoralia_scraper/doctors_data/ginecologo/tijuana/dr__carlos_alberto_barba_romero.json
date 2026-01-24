@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Carlos Alberto Barba Romero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 312,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e03b58/e03b582c2bb40bef0c50384b559ee4a8.jpg",
+  "about": "\"Siempre al cuidado de tú salud\", para mí como médico Gineco Obstetra lo principal es ofrecer a mis pacientes un ambiente de confianza, una atención ética y profesional, siempre brindándoles un diagnóstico y tratamiento de vanguardia y oportuno. Soy Ginecólogo y Obstetra Certificado por el Consejo Mexicano de Ginecología y Obstetricia, con -.Diplomado en Colposcopía y enfermedades del tracto genital inferior avalado por UVM, -.Alta Especialidad en Cirugía Laparoscópica y de mínima invasión así como histeroscopia avalado por el Hospital Civil de Guadalajara -.Diplomado en Terapia de Reemplazo Hormonal Bioidéntica avalado por UAZ Atención especializada para la mujer en todas las etapas de la vida, con la mejor calidad, amabilidad, profesionalismo y tecnología. ¡QUEDO A TUS ORDENES!",
+  "addresses": [
+    {
+      "full": "Gobernador Lugo 3003 interior 105,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-alberto-barba-romero/ginecologo/tijuana",
+  "scrapedAt": "2026-01-22T00:39:52.876Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__carlos_alberto_barba_romero.webp"
+}

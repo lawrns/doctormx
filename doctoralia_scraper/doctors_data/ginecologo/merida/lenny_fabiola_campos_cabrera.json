@@ -1,0 +1,25 @@
+{
+  "name": "Lenny Fabiola Campos Cabrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fb2cf6/fb2cf6af61faad9e0f1e1a6a48d8b5b5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "15B X 8B Y8C 198, Col. Vergel 65, ,"
+    },
+    {
+      "full": "15B X 8B Y8C 198, Col. Vergel 65, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lenny-fabiola-campos-cabrera/ginecologo/merida#address-id=356987&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:50:16.283Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/lenny_fabiola_campos_cabrera.webp"
+}

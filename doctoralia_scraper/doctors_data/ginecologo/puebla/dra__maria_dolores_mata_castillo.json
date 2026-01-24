@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Maria Dolores Mata Castillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/40f6a6/40f6a63de95b52445301b115a701e642_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "11 Oriente 1828,"
+    },
+    {
+      "full": "11 Oriente 1828,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-dolores-mata-castillo/ginecologo/puebla#address-id=70901&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:14:41.528Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__maria_dolores_mata_castillo.webp"
+}

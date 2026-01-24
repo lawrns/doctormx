@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Augusto Enrique Trujillo González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 17,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/83f9b4/83f9b43fec51a1c0653f48182767f3f1_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hospital San José Querétaro, Av. Constituyentes #302 (Torre 1, Consultorio 208),"
+    },
+    {
+      "full": "Hospital San José Querétaro, Av. Constituyentes #302 (Torre 1, Consultorio 208),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/augusto-enrique-trujillo-gonzalez/ginecologo/santiago-de-queretaro#address-id=119368&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:48:19.209Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__augusto_enrique_trujillo_gonz_lez.webp"
+}

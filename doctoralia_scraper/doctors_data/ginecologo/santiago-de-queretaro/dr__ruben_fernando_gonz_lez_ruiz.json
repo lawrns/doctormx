@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Ruben Fernando González Ruiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3c7e2d/3c7e2dd53d3e127ce86685e867709206_220_square.jpg",
+  "about": "Bienvenidos a mi espacio, donde la ciencia y la empatía se unen para ayudarte a cumplir tu sueño de formar una familia. Soy el Dr. Rubén González, ginecólogo-obstetra con subespecialidad en Biología de la Reproducción Humana, y mi pasión es acompañarte en cada paso del camino hacia la maternidad y la paternidad. Con mi experiencia en el diagnóstico y tratamiento de la infertilidad, me comprometo a brindarte una atención cercana, profesional y basada en la más avanzada tecnología en reproducción asistida. Sé que cada historia es única, por lo que mi enfoque es personalizado, buscando siempre las mejores soluciones para ti y tu pareja. Si has enfrentado dificultades para concebir, no estás sola o solo. Aquí encontrarás respuestas, apoyo y un equipo dedicado a convertir tu sueño en realidad. Agenda una cita y juntos exploraremos las opciones que mejor se adapten a ti. Consulta General • Primera consulta – $1200 (Check Up: valoración general + papanicolau + US transvaginal) • Consulta subsecuente – $900 Consulta de Reproducción Asistida • Primera consulta especializada – $1100 • Seguimiento de tratamiento – $900 Consulta de Andrología • Primera consulta – $1100 • Consulta subsecuente – $900 Control Prenatal • Primera consulta de control prenatal – $1100 • Consulta subsecuente – $900 • Paquete de control prenatal (4 consultas) – $3200 (ahorro de $400) Consulta de Ginecología Preventiva • Revisión anual (incluye Papanicolaou y ultrasonido) – $1000 • Vacuna Gardasil 9 – $3999 (por dosis) • Consulta para asesoría en anticoncepción – $1000 • Consulta de seguimiento de anticoncepción – $900 • Colocación de DIU – $1000 (más costo de DIU) • Retiro de DIU – $1000 • Implante anticonceptivo (incluye colocación) – $1000 (más costo de implante) Menopausia y Climaterio • Primera consulta – $1000 • Consulta subsecuente – $900 Endocrinología de la mujer • Primera consulta – $1000 • Consulta subsecuente – $900 Consulta de Urgencia • Consulta fuera de horario – $1400 Consulta en línea: • Consulta en línea: – $600",
+  "addresses": [
+    {
+      "full": "Lic. Manuel Gómez Morin 3870,"
+    },
+    {
+      "full": "Lic. Manuel Gómez Morin 3870,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,100"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ruben-fernando-gonzalez-ruiz/ginecologo/santiago-de-queretaro#address-id=566269&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:49:32.892Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__ruben_fernando_gonz_lez_ruiz.webp"
+}

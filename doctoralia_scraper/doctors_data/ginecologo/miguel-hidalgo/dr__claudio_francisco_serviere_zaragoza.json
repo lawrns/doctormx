@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Claudio Francisco Serviere Zaragoza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hospital Ángeles México,consultorio 651B,"
+    },
+    {
+      "full": "Agrarismo 208 (Hospital Angeles México, 1er Piso Torre A),"
+    },
+    {
+      "full": "Hospital Ángeles México,consultorio 651B,"
+    },
+    {
+      "full": "Agrarismo 208 (Hospital Angeles México, 1er Piso Torre A),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/claudio-francisco-serviere-zaragoza/ginecologo/miguel-hidalgo#address-id=32452&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:22:17.529Z",
+  "localPhotoPath": null
+}

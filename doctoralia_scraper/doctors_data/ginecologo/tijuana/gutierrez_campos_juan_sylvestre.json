@@ -1,0 +1,25 @@
+{
+  "name": "Gutierrez Campos Juan Sylvestre",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 68,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b4326a/b4326a17c1c472631b93b281a66e1f2e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Paseo De Los Héroes 10999 – 605. Col. Zona Río. ,"
+    },
+    {
+      "full": "Av. Paseo De Los Héroes 10999 – 605. Col. Zona Río. ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gutierrez-campos-juan-sylvestre/ginecologo/tijuana#address-id=359068&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:23:52.597Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/gutierrez_campos_juan_sylvestre.webp"
+}

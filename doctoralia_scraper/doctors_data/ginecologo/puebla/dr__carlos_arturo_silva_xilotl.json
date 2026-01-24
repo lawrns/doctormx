@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Carlos Arturo Silva Xilotl",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/aaec038d/aaec038d-a97d-4183-93c2-2a2db4acec09_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "9 Sur 107,"
+    },
+    {
+      "full": "9 Sur 107,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-arturo-silva-xilotl/ginecologo/atlixco#address-id=241228&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:19:34.228Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__carlos_arturo_silva_xilotl.webp"
+}

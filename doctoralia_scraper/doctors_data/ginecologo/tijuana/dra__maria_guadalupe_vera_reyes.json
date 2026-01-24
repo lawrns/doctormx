@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Maria Guadalupe Vera Reyes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d9c0f633/d9c0f633-130b-4cf3-bf26-7a4056cb0a3f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Licenciado Jose Lopez Portillo Oriente 144 4,"
+    },
+    {
+      "full": "Carr. Aeropuerto 1900,"
+    },
+    {
+      "full": "Ave. Licenciado Jose Lopez Portillo Oriente 144 4,"
+    },
+    {
+      "full": "Carr. Aeropuerto 1900,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-guadalupe-vera-reyes/ginecologo/tijuana#address-id=192062&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:46:24.088Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__maria_guadalupe_vera_reyes.webp"
+}

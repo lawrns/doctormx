@@ -1,0 +1,25 @@
+{
+  "name": "Raúl Carreón Bonilla",
+  "specialty": "Ginecólogo",
+  "rating": 1,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2602c2/2602c22e4a6d532bf43241312f00c73a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hidalgo 329,"
+    },
+    {
+      "full": "Hidalgo 329,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-carreon-bonilla/ginecologo/leon#address-id=13822&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:32:09.232Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/ra_l_carre_n_bonilla.webp"
+}

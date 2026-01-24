@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Leon Raul Rosano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b28acd/b28acd5421821c25d69e8d90efe67e79_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Prolongacion 43 Oriente 804 202 202,"
+    },
+    {
+      "full": "Prolongacion 43 Oriente 804 202 202,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/leon-raul-rosano/ginecologo/puebla#address-id=58539&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:25:22.445Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__leon_raul_rosano.webp"
+}

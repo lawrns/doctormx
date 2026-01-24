@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Cynthia Selene Lizarraga Mendez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 51,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fbbe32/fbbe32716b405d5dda60d0e6fd338daf_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Frida Kahlo 10410,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Retiro de dispositivo DIU",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Vacunas virus del papiloma humano",
+      "price": "• $4,900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cynthia-selene-lizarraga-mendez/ginecologo/tijuana#address-id=421874&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:42:49.936Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__cynthia_selene_lizarraga_mendez.webp"
+}

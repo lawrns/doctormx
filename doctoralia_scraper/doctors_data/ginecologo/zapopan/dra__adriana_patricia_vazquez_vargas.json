@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Adriana Patricia Vazquez Vargas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/06d60e/06d60e54010d65d5eb06a9657d73e02b_220_square.jpg",
+  "about": "Realicé la carrera de medicina en la universidad de Guadalajara de 1999 a 2005. Cursé la especialidad de Ginecología y Obstetricia de 2006 a 2010 en el Centro Médico Nacional de Cccidente UMAE Unidad Médica de Alta Especialidad de Ginecología del Instituto Mexicano del Seguro Social . Cursé el adiestramiento en Urologia Ginecológica de 2010 a 2011 en el Centro Médico Nacional de Occidente Unidad Médica de Alta Especialidad de Ginecología del Instituto Mexicano del Seguro Social. Trabajo actualmente en el Hospital General Regional # 46 del IMSS en Guadalajara, Jalisco. Dentro de mis principales actividades: - Control del embarazo normal y de alto riesgo - Chequeo ginecológico completo (revision mamaria, toma de Papanicolaou y ultrasonido ginecológico) - Prolapso de órganos pélvicos (cistocele, uterocele, rectocele) - Manejo y control de la incontinencia urinaria: de esfuerzo, de urgencia y mixta - Atención de parto - Cirugias (cesáreas, salpingoclasia (OTB), histerectomia abdominal, laparotomias exploradoras por tumor de ovario, plastias vaginales, histerectomia vaginal, suspensión de cúpula, colpectomias, reparación de fístulas rectovaginales, corrección de enterocele, marsupilización de glándulas de Bartholino, etc). Si tiene alguna duda sobre la realización de algún diagnóstico o tratamiento favor de comunicarse al tel. (33) 3822 0230 con la dra. Patricia Vázquez",
+  "addresses": [
+    {
+      "full": "López Mateos Sur 1401,"
+    },
+    {
+      "full": "lopez mateos sur #1401 Condominio médico del hospital Puerta de Hierro Sur,"
+    },
+    {
+      "full": "López Mateos Sur 1401,"
+    },
+    {
+      "full": "lopez mateos sur #1401 Condominio médico del hospital Puerta de Hierro Sur,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adriana-patricia-vazquez-vargas/ginecologo/tlajomulco-de-zuniga#address-id=7462&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:20:54.805Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__adriana_patricia_vazquez_vargas.webp"
+}

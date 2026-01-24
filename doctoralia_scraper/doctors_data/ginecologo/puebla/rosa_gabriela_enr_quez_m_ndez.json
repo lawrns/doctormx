@@ -1,0 +1,25 @@
+{
+  "name": "Rosa Gabriela Enríquez Méndez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 318,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/62235d/62235de25382b194c0198a22aa87329b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. 31 Poniente 3104-A,"
+    },
+    {
+      "full": "Av. 31 Poniente 3104-A,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-gabriela-enriquez-mendez/ginecologo/puebla#address-id=148233&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:22:59.056Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/rosa_gabriela_enr_quez_m_ndez.webp"
+}

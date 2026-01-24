@@ -1,0 +1,31 @@
+{
+  "name": "Ruben Julian Nacer",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e65d76/e65d7607296bb156698e8b3177fa975b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "2 Nte. 131,"
+    },
+    {
+      "full": "31 Pte. No. 1418,"
+    },
+    {
+      "full": "2 Nte. 131,"
+    },
+    {
+      "full": "31 Pte. No. 1418,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ruben-julian-nacer/ginecologo/tehuacan#address-id=174682&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:22:32.374Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/ruben_julian_nacer.webp"
+}

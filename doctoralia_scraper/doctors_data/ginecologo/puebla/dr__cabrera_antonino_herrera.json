@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Cabrera Antonino Herrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 357,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7835f6/7835f6603967a7448eeb595b563d94c9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "24 Sur 4312,"
+    },
+    {
+      "full": "24 Sur 4312,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cabrera-antonino-herrera/ginecologo/puebla#address-id=43461&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:34:12.686Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__cabrera_antonino_herrera.webp"
+}

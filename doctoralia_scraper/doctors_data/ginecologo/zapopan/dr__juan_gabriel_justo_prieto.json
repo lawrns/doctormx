@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Juan Gabriel Justo Prieto",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 168,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/75c0eb/75c0ebec8e4b1edebbd3df4bf05f27de.jpg",
+  "about": "Soy egresado de la Universidad de Guadalajara de donde me gradué de la especialidad en Ginecología y Obstetricia. Presto mis servicios tanto en hospitales privados como en instituciones del Sector Salud. Me he especializado en el tratamiento de la patología benigna y maligna de la mama. Doy seguimiento puntual a las mujeres en su periodo de gestación hasta el parto. En mi consultorio privado cuento con servicio de colposcopía y ecosonografía.",
+  "addresses": [
+    {
+      "full": "Lacandones 318,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-gabriel-justo-prieto-2/ginecologo/guadalajara#address-id=396816&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:15:09.261Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__juan_gabriel_justo_prieto.webp"
+}

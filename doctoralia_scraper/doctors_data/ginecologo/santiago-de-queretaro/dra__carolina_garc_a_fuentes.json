@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Carolina García Fuentes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 173,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a3aafc/a3aafc3263d57c34fd49d23e8dbcfeb8_220_square.jpg",
+  "about": "Soy tu Ginecóloga en Queretaro. Cuento con más de 10 años de experiencia en el manejo de padecimientos de Ginecologia y Obstetricia. Egresada de CMN La Raza y con múltiples diplomados en ultrasonido y colposcopia. Estoy para darte a ti la mejor de las atenciones posibles.",
+  "addresses": [
+    {
+      "full": "Avenida Constituyentes 302,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": ""
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carolina-garcia-fuentes/ginecologo/santiago-de-queretaro#address-id=444373&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:46:04.589Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__carolina_garc_a_fuentes.webp"
+}

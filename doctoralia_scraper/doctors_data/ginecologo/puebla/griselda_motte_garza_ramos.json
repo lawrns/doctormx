@@ -1,0 +1,25 @@
+{
+  "name": "Griselda Motte Garza Ramos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 81,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/15f596cf/15f596cf-7293-45ff-8d71-42045cc1949e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C Gladiolas,40 1,Las Bugambilias,,"
+    },
+    {
+      "full": "C Gladiolas,40 1,Las Bugambilias,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/griselda-motte-garza-ramos/ginecologo/puebla#address-id=358393&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:23:50.316Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/griselda_motte_garza_ramos.webp"
+}

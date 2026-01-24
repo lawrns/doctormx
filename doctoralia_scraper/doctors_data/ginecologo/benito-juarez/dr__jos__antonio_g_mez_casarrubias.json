@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José Antonio Gómez Casarrubias",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 928,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e52bc0/e52bc0335d94bdfe083dacea978805e1_220_square.jpg",
+  "about": "ESPECIALIDAD: GINECOLOGIA Y OBSTETRICIA DEL HOSPITAL JUAREZ DE MEXICO, SSA. SUBESPECIALIDAD: MEDICINA MATERNO FETAL DE CENTRO MEDICO NACIONAL \"20 DE NOVIEMBRE\", ISSSTE. DIPLOMADO: PATOLOGIAS DEL TRACTO GENITAL FEMENINO Y COLPOSCOPIA. EN EL HOSPITAL JUAREZ DE MEXICO.",
+  "addresses": [
+    {
+      "full": "Dr Vértiz 1048 entre eje 5 y eje 6,"
+    },
+    {
+      "full": "Dr Vértiz 1048 entre eje 5 y eje 6,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-antonio-gomez-casarrubias/ginecologo/benito-juarez#address-id=86481&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:10:11.795Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__jos__antonio_g_mez_casarrubias.webp"
+}

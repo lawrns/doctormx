@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Elias Charua Levy",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 14,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/40b78934/40b78934-4a72-4856-b49e-8db649800281_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "EJERCITO NACIONAL 613 CONS.601,"
+    },
+    {
+      "full": "EJERCITO NACIONAL 613 CONS.601,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elias-charua-levy/ginecologo/huixquilucan#address-id=257917&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:42:53.640Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__elias_charua_levy.webp"
+}

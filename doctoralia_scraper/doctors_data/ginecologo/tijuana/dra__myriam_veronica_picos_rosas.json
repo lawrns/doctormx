@@ -1,0 +1,37 @@
+{
+  "name": "Dra. Myriam Veronica Picos Rosas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 37,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/45397f06/45397f06-30e7-4ea3-928e-444ba7e60184_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Díaz Ordaz Km 14.5 1716,"
+    },
+    {
+      "full": "Blvd. Diaz Ordaz 125,"
+    },
+    {
+      "full": "Blvd. Cucapah 19724,"
+    },
+    {
+      "full": "Blvd. Díaz Ordaz Km 14.5 1716,"
+    },
+    {
+      "full": "Blvd. Diaz Ordaz 125,"
+    },
+    {
+      "full": "Blvd. Cucapah 19724,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/myriam-veronica-picos-rosas/ginecologo/tijuana#address-id=185431&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:47:24.235Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__myriam_veronica_picos_rosas.webp"
+}

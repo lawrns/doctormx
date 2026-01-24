@@ -1,0 +1,25 @@
+{
+  "name": "Santiago Garcia Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 435,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/679412/67941259f1e9a466b7f4694fb296946c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Arquímedes 130,"
+    },
+    {
+      "full": "C. Arquímedes 130,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/santiago-garcia-garcia/ginecologo/miguel-hidalgo#address-id=173245&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:49:03.760Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/santiago_garcia_garcia.webp"
+}

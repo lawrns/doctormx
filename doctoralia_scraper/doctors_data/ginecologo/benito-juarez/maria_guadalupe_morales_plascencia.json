@@ -1,0 +1,25 @@
+{
+  "name": "Maria Guadalupe Morales Plascencia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 65,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/99050a/99050a9db7f52093e84f3c64b33ac4a4_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tehuantepec 251,"
+    },
+    {
+      "full": "Tehuantepec 251,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-guadalupe-morales-plascencia/ginecologo/ciudad-de-mexico#address-id=192175&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:15:51.240Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/maria_guadalupe_morales_plascencia.webp"
+}

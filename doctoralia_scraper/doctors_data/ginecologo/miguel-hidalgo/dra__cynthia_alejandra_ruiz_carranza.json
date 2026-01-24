@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Cynthia Alejandra Ruiz Carranza",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 16,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ca67c8f6/ca67c8f6-4d35-4efe-b566-7293391853df_small_square.jpg",
+  "about": "Dra. Cynthia Ruiz – Ginecología, Adolescencia y Salud HormonalSoy la Dra. Cynthia Ruiz, ginecóloga con formación en Ginecología Pediátrica y de la Adolescencia y en Endocrinología Ginecológica.Mi misión es acompañar a niñas, adolescentes y mujeres jóvenes en cada etapa de su vida, ofreciendo una atención médica actual, empática y sin juicios.Me enfoco en resolver dudas sobre menstruación, desarrollo puberal, anticoncepción, acné, ovario poliquístico, alteraciones hormonales o fertilidad temprana, siempre con un enfoque integral que considera tanto el cuerpo como las emociones.Formación:Médico Cirujano – Tec de MonterreyEspecialidad en Ginecología y Obstetricia – Hospital Ángeles Lomas, UNAMSubespecialidad en Ginecología Pediátrica y de la Adolescencia – Hospital Infantil de México “Federico Gómez”, UNAM y FIGIJFormación en Endocrinología Ginecológica – AMEGIN y Universidad de las Américas Puebla (UDLAP)En mi consulta busco que cada paciente se sienta cómoda, escuchada y con la confianza de hablar libremente sobre su salud.",
+  "addresses": [
+    {
+      "full": "Cda. F.F.C.C. de Cuernavaca 780-2o,"
+    },
+    {
+      "full": "Avenida Insurgentes Sur 1160,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cynthia-alejandra-ruiz-carranza/ginecologo/miguel-hidalgo#address-id=560789&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:00:25.259Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__cynthia_alejandra_ruiz_carranza.webp"
+}

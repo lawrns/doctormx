@@ -1,0 +1,46 @@
+{
+  "name": "Jakeline Monreal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 34,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dac9aa/dac9aab65e514d4b13a51ec4548d56c2_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "El sol 2904 ,"
+    },
+    {
+      "full": "El sol 2904 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jakeline-monreal/ginecologo/guadalajara#address-id=414308&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:31:30.408Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/jakeline_monreal.webp"
+}

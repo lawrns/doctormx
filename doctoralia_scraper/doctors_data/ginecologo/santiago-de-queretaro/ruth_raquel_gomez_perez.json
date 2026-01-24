@@ -1,0 +1,25 @@
+{
+  "name": "Ruth Raquel Gomez Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 188,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/7ac904d3/7ac904d3-ee1c-46da-ac7a-51aa0314c3b3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Editar Zaragoza Pte 88, Santiago De Queretaro Centro,"
+    },
+    {
+      "full": "Editar Zaragoza Pte 88, Santiago De Queretaro Centro,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ruth-raquel-gomez-perez/ginecologo/santiago-de-queretaro#address-id=125997&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:00:04.278Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/ruth_raquel_gomez_perez.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Óscar Navarro Moncada",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d8ae897b/d8ae897b-be28-404f-97f2-eb061959e590_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ejército Nacional Mexicano 613,"
+    },
+    {
+      "full": "Circuito Misioneros 5,"
+    },
+    {
+      "full": "Ejército Nacional Mexicano 613,"
+    },
+    {
+      "full": "Circuito Misioneros 5,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/oscar-navarro-moncada/ginecologo/naucalpan-de-juarez#address-id=19378&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:07:09.410Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr___scar_navarro_moncada.webp"
+}

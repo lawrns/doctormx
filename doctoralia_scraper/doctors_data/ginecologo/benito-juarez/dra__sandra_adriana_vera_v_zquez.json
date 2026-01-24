@@ -1,0 +1,40 @@
+{
+  "name": "Dra. Sandra Adriana Vera Vázquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 94,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/742430/7424302d10c173f6166a5817b3f72a50_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Patricio Sanz 1307, Colonia Del Valle,"
+    },
+    {
+      "full": "Agrarismo 208,"
+    },
+    {
+      "full": "Patricio Sanz 1307, Colonia Del Valle,"
+    },
+    {
+      "full": "Agrarismo 208,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sandra-adriana-vera-vazquez/ginecologo/benito-juarez#address-id=34803&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:12:26.387Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__sandra_adriana_vera_v_zquez.webp"
+}

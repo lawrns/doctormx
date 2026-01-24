@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Genaro Vega Malagon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/821769/821769f3ce94b40691127d701cd1bbb1_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Paseo Constituyentes 302 ( Torre I, Consultorio 309, Piso 3) (Hospital San José),"
+    },
+    {
+      "full": "Paseo Constituyentes 302 ( Torre I, Consultorio 309, Piso 3) (Hospital San José),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/genaro-vega-malagon/ginecologo/santiago-de-queretaro#address-id=119882&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:50:43.353Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__genaro_vega_malagon.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Sergio Mariano Tinoco Cabrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 16,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/fda9bd4c/fda9bd4c-0375-4791-b738-2eee37c6b249_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "5 De Mayo 16,"
+    },
+    {
+      "full": "Diag. Zaragoza 5128,"
+    },
+    {
+      "full": "5 De Mayo 16,"
+    },
+    {
+      "full": "Diag. Zaragoza 5128,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-mariano-tinoco-cabrera/ginecologo/zacatlan#address-id=172486&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:28:24.153Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/sergio_mariano_tinoco_cabrera.webp"
+}

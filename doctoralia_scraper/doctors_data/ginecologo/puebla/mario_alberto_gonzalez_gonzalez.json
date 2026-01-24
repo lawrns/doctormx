@@ -1,0 +1,37 @@
+{
+  "name": "Mario Alberto Gonzalez Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fec6f1/fec6f1946d10f4e7ab52bdc997f9947a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Victoria 412,"
+    },
+    {
+      "full": "Blvd. Carlos Abedrop Davila S/N,"
+    },
+    {
+      "full": "Blvd. San Lázaro 15 B,"
+    },
+    {
+      "full": "Victoria 412,"
+    },
+    {
+      "full": "Blvd. Carlos Abedrop Davila S/N,"
+    },
+    {
+      "full": "Blvd. San Lázaro 15 B,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mario-alberto-gonzalez-gonzalez/ginecologo/saltillo#address-id=190112&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:25:52.486Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/mario_alberto_gonzalez_gonzalez.webp"
+}

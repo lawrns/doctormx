@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Rosa Martha Núñez Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/651610/651610d72d173b5861496a5797e31f03_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. 11 Ote 1826,"
+    },
+    {
+      "full": "Av. 11 Ote 1826,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-martha-nunez-rodriguez/ginecologo/puebla#address-id=12833&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:17:25.554Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__rosa_martha_n__ez_rodr_guez.webp"
+}

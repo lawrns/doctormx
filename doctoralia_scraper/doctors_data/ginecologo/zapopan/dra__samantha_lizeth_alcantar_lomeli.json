@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Samantha Lizeth Alcantar Lomeli",
+  "specialty": "Ginecólogo",
+  "rating": 3,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/494aa8/494aa83ba82bde9c7f7e46fa4bf0f733_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Ramón Corona 55,"
+    },
+    {
+      "full": "C. Ramón Corona 55,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/samantha-lizeth-alcantar-lomeli/ginecologo/zapopan#address-id=173817&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:40:08.632Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__samantha_lizeth_alcantar_lomeli.webp"
+}

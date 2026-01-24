@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Julio Cesar Perez Ruiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/174f8c/174f8c1c4cd36c286a882e47389a4b23_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "NEWTON 186-404,"
+    },
+    {
+      "full": "NEWTON 186-404,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama por marcaje",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/julio-cesar-perez-ruiz/ginecologo/ciudad-de-mexico#address-id=46883&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:08:12.133Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__julio_cesar_perez_ruiz.webp"
+}

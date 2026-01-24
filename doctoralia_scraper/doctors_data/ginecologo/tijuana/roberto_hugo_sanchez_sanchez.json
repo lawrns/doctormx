@@ -1,0 +1,31 @@
+{
+  "name": "Roberto Hugo Sanchez Sanchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 39,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/51038f/51038fb14b1fb9a42ee674799b659b7b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Las Palmas 4140,"
+    },
+    {
+      "full": "C. Ermita Sur 4626,"
+    },
+    {
+      "full": "Av. Las Palmas 4140,"
+    },
+    {
+      "full": "C. Ermita Sur 4626,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-hugo-sanchez-sanchez/ginecologo/tijuana#address-id=177525&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:05:46.526Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/roberto_hugo_sanchez_sanchez.webp"
+}

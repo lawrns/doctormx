@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Samuel Cons Ortiz Miranda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 37,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/45397f06/45397f06-30e7-4ea3-928e-444ba7e60184_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Carretera Via Rapida Oriente 8800,"
+    },
+    {
+      "full": "Carretera Via Rapida Oriente 8800,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/samuel-cons-ortiz-miranda/ginecologo/tijuana#address-id=60924&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:24:37.903Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__samuel_cons_ortiz_miranda.webp"
+}

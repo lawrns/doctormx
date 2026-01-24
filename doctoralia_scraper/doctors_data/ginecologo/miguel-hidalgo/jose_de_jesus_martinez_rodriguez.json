@@ -1,0 +1,25 @@
+{
+  "name": "Jose de Jesus Martinez Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/2545435a/2545435a-d681-4453-8a2f-31881cb63591_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Rio Tiber, 21,"
+    },
+    {
+      "full": "Rio Tiber, 21,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-de-jesus-martinez-rodriguez/ginecologo/cuauhtemoc#address-id=78105&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:49:52.319Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/jose_de_jesus_martinez_rodriguez.webp"
+}

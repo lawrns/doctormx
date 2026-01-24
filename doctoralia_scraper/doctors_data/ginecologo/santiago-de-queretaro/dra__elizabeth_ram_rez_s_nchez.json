@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Elizabeth Ramírez Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 291,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/225afd/225afdda85a2516dcd0fc461cad3c9ab_220_square.jpg",
+  "about": "Estimadas pacientes en mi encontraras honestidad y real interes por tu salud ginecologica, nunca te ofrecere algo que no necesites : Me mantengo en constante capacitacion y adiestramiento. Gracias",
+  "addresses": [
+    {
+      "full": "Calle Antonio Pérez Alcocer 63,"
+    },
+    {
+      "full": "Pie de la cuesta 898. Desarrollo San pablo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora de malformaciones uterinas",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elizabeth-ramirez-sanchez/ginecologo/santiago-de-queretaro#address-id=89510&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:47:04.363Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__elizabeth_ram_rez_s_nchez.webp"
+}

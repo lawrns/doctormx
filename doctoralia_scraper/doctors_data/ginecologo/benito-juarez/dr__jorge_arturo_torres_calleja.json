@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Jorge Arturo Torres Calleja",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/db5e6254/db5e6254-361e-448e-acb4-d4814262f1ea_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Colonia del Valle 311 (Eje 5 sur, a dos cuadras de Insurgentes Sur),"
+    },
+    {
+      "full": "Av. Colonia del Valle 311 (Eje 5 sur, a dos cuadras de Insurgentes Sur),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-arturo-torres-calleja/ginecologo/benito-juarez#address-id=82283&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:10:24.824Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__jorge_arturo_torres_calleja.webp"
+}

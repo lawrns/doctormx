@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Nydia Yalinska Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 169,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e68bee/e68bee67060a9552aa9d132281ac1b92_220_square.jpg",
+  "about": "Hola! Soy Ginecóloga Obstetra y Subespecialista en Biología de la Reproducción Humana. Permíteme acompañarte en el cuidado de tu salud ginecológica y reproductiva en todas sus etapas y cambios, siempre otorgando un espacio seguro y libre de prejuicios, en el que te sientas cómoda y libre de expresar todas tus inquietudes. Mi misión es brindar atención ginecológica integral y personalizada en todas las etapas de la vida reproductiva, combinando los últimos avances en ginecología, obstetricia y biología de la reproducción. Mi objetivo es ofrecer soluciones efectivas y compasivas para preservar y mejorar la salud reproductiva, acompañándote en cada paso del camino hacia la maternidad y el bienestar general.​",
+  "addresses": [
+    {
+      "full": "José María Velazco 2524 Int. 101,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nydia-yalinska-martinez/ginecologo/tijuana#address-id=481783&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:43:03.721Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__nydia_yalinska_mart_nez.webp"
+}

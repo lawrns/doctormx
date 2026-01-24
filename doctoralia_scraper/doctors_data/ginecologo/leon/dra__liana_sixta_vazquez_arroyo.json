@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Liana Sixta Vazquez Arroyo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 368,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5f0bce/5f0bce4fc831917fcf62b9b027071c16_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Manantial 114,"
+    },
+    {
+      "full": "Manantial 114,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/liana-sixta-vazquez-arroyo-2/ginecologo/leon#address-id=126907&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:31:38.632Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__liana_sixta_vazquez_arroyo.webp"
+}

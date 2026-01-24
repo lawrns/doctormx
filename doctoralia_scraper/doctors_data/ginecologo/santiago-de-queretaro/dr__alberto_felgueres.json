@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Alberto Felgueres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 131,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/30a047/30a0479900473bcc87cb0e60f38e598c_220_square.jpg",
+  "about": "Medico Cirujano y Partero: Universidad de Monterrey (UDEM). Especialidad en Ginecología y Obstetricia (UNAM): En The American British Cowdray - Centro Médico ABC, en la Ciudad de México, afiliado a The Methodist Hospital, reconocido como el mejor Hospital de Latinoamérica. Entrenamiento en fertilidad y reproducción asistida - Wijnland Fertility, Sudáfrica con el distinguido Dr. Johannes van Waart y en Clínica Nascere en la Ciudad de México. Experiencia: - Wijnland Fertility - Clínicas Nascere. Experto en cirugía de invasión mínima (laparoscopia e histeroscopia). Como tratamiento para: quistes ováricos, endometriosis, miomatosis uterina, resección de tabique uterino y pólipos endometriales por histeroscopia y más. Experiencia en el manejo del embarazo de alto riesgo, perdida gestacional recurrente e infecciones por virus de papiloma humano.",
+  "addresses": [
+    {
+      "full": "Blvd. Bernanrdo Quintanata Arrioja 9670,"
+    },
+    {
+      "full": "Blvd. Bernanrdo Quintanata Arrioja 9670,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alberto-felgueres/ginecologo/santiago-de-queretaro#address-id=148559&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:47:59.929Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__alberto_felgueres.webp"
+}

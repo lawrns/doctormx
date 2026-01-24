@@ -1,0 +1,25 @@
+{
+  "name": "Irma Araceli Zea Arenas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 281,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6e48c1/6e48c1b8550bfa8505b49d618d760b82_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cascada 413Col. Banjidal,"
+    },
+    {
+      "full": "Cascada 413Col. Banjidal,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/irma-araceli-zea-arenas/ginecologo/iztapalapa#address-id=356576&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:20:03.530Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/irma_araceli_zea_arenas.webp"
+}

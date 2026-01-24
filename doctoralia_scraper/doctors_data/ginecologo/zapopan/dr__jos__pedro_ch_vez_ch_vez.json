@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José Pedro Chávez Chávez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c9da4c/c9da4cc2836be15c8cb7312df643a30f_220_square.jpg",
+  "about": "20 AÑOS DE EXPERIENCIA EN EL MANEJO DE LESIONES PREMALIGNAS DEL CUELLO UTERINO, PROFESOR TITULAR DEL DIPLOMADO DE COLPOSCOPIA DEL TRACTO GENITAL INFERIOR POR LA U DE G, ESPECIALIDAD EN ENFERMEDADES BENIGNAS Y MALIGNAS DE LA GLANDULA MAMARIA, ME ENCUENTRO EN UNA EXCELENTE UBICACION",
+  "addresses": [
+    {
+      "full": "Av. La Paz 2475,"
+    },
+    {
+      "full": "Av. La Paz 2475,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-pedro-chavez-chavez/ginecologo/guadalajara#address-id=123812&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:22:21.120Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jos__pedro_ch_vez_ch_vez.webp"
+}

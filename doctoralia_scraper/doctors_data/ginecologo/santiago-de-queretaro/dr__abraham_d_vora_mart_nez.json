@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Abraham Dévora Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 160,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f7600e/f7600eea87d8e5e0ca35258701750e66_220_square.jpg",
+  "about": "Soy médico Ginecólogo con un Posgrado de Alta Especialidad en Peri y Post menopausia con 10 años de experiencia brindando consultas especificas a las necesidades de esta etapa de la vida, convencido de que esta es la mejor etapa de tu vida, tratando las limitaciones en la calidad de vida cuidando la salud de mis pacientes a lo largo de este tiempo. Basado en una atención ética, estandarizada y de alta especialidad, apegado a recomendaciones internacionales actuales, se brinda la mejor elección de tratamiento para las molestias físicas, bochornos, insomnio, fatiga, niebla mental, disfunción sexual, incontinencia urinaria, problemas metabólicos o sangrado anormal. Existen opciones hormonales, no hormonales y de origen natural disponible para usted, con el mejor resultado y menores efectos colaterales posibles. Siempre buscando como resultado a una MUJER EN PLENITUD.",
+  "addresses": [
+    {
+      "full": "Hospital Moscati,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/abraham-devora-martinez/ginecologo/santiago-de-queretaro#address-id=449109&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:43:38.920Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__abraham_d_vora_mart_nez.webp"
+}

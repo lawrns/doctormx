@@ -1,0 +1,25 @@
+{
+  "name": "Jair Hernandez Cruz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 266,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a5c504/a5c5044044642c0892115816f1f7e38d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Mineria 22, Col. Fracc La Herradura, ,"
+    },
+    {
+      "full": "Mineria 22, Col. Fracc La Herradura, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jair-hernandez-cruz/ginecologo/cuautlancingo#address-id=357162&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:30:45.264Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/jair_hernandez_cruz.webp"
+}

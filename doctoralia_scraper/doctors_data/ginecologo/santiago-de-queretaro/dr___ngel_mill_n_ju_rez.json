@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Ángel Millán Juárez",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 194,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/48d4013a/48d4013a-7719-4151-903a-f453945d5848_large.jpg",
+  "about": "Soy un médico militar que ha dedicado su vida al estudio de las enfermedades y tratamiento de patologías benignas y malignas en la mujer, además de los problemas en la atención del embarazo normal y de alto riesgo, así como de las lesiones precursoras del cáncer; cuento con la subespecialidad en ginecología oncológica y cirugía Robótica. Actualmente me desempeño como jefe del servicio de ginecología en el hospital militar de especialidades de la mujer y neonatología, Ciudad de México; siendo mi prioridad buscar el bienestar de mis pacientes, realizando un diagnóstico oportuno, óptimo con calidad y calidez.",
+  "addresses": [
+    {
+      "full": "Avenida Lomas Verdes 2165, Santiago Occipaco, Naucalpan de Juárez, Méx.,"
+    },
+    {
+      "full": "Boulevard Bernardo Quintana Arrioja 9670, Centro Sur 9800,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angel-millan-juarez/ginecologo-oncologico-ginecologo/santiago-de-queretaro#address-id=479461&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:47:11.737Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr___ngel_mill_n_ju_rez.webp"
+}

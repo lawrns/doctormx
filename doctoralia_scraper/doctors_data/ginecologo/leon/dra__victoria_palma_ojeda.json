@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Victoria Palma Ojeda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ab1ee6/ab1ee6e96c70a717fd6bf2cbc80d1777_220_square.jpg",
+  "about": "Soy la Dra. Palma, egresada en el año 2002 de la escuela Militar de graduados de sanidad, en la CDMX, me forme como colposcopista en el hospital civil antiguo de la cd de Gdl. en 2015, tengo la capacidad de atender a mujeres en estado critico, puedo prepararte en conjunto con tu pareja durante el embarazo para lograr un parto en agua, parto vaginal normal o una cesárea, realizo todos los procedimientos para que tu parto sea humanizado.",
+  "addresses": [
+    {
+      "full": "Blvd.Adolfo López Mateos #2980, Hacienda del Rosario,"
+    },
+    {
+      "full": "Blvd.Adolfo López Mateos #2980, Hacienda del Rosario,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victoria-palma-ojeda-2/ginecologo/zapopan#address-id=402019&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:29:48.693Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__victoria_palma_ojeda.webp"
+}

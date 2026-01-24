@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Mario Humberto Aguirre Bernal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 109,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5f5a37/5f5a37bf051144841d84f12f836b6e75_220_square.jpg",
+  "about": "Egresado de la Facultad de medicina de Guanajuato, Postgrado en Ginecología y Obstetricia en Hospital de Especialidades del Niño y la Mujer de Querétaro. 7 años de experiencia como médico Gineco obstetra, capacitado en tecnicas quirurgicas avanzadas para el control de la hemorragia obstétrica y ligadura de arterias hipogástricas. Actualmente subjefe del departamento de Ginecología y obstetrícia. Sera un verdadero placer contar con tu confianza. atención especializada con los mejores equipos y a costos accesibles.",
+  "addresses": [
+    {
+      "full": "Avenida de las Ciencias 2058,"
+    },
+    {
+      "full": "Avenida de las Ciencias 2058,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Urgencias",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mario-humberto-aguirre-bernal/ginecologo-medico-general/santa-rosa-de-jauregui#address-id=361007&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:51:14.130Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__mario_humberto_aguirre_bernal.webp"
+}

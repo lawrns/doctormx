@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Luis Enrique Nájar Fuentes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 82,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/63b088/63b088f8506ecdaf2d31768d3bab9a77_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Justo Sierra 2438.,"
+    },
+    {
+      "full": "Justo Sierra 2438.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": ""
+    },
+    {
+      "name": "Inseminación artificial",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-enrique-najar-fuentes/ginecologo/guadalajara#address-id=79302&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:30:09.848Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__luis_enrique_n_jar_fuentes.webp"
+}

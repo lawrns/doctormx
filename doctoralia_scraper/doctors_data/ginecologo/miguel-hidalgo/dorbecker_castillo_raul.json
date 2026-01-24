@@ -1,0 +1,25 @@
+{
+  "name": "Dorbecker Castillo Raul",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 447,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/14e60f56/14e60f56-c319-4ff7-ba17-825f1e01f341_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Agrarismo 208 407 Col. Escandón ,"
+    },
+    {
+      "full": "Agrarismo 208 407 Col. Escandón ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dorbecker-castillo-raul/ginecologo/miguel-hidalgo#address-id=358954&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:50:14.053Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dorbecker_castillo_raul.webp"
+}

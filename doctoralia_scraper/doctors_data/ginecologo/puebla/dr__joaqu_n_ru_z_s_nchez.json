@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Joaquín Ruíz Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 77,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e000b4/e000b41aecfec7e56002b85a424b1f66_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Kepler, 2143 Cons.115,"
+    },
+    {
+      "full": "Avenida Kepler, 2143 Cons.115,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/joaquin-ruiz-sanchez-2/ginecologo/-#address-id=340062&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:16:21.408Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__joaqu_n_ru_z_s_nchez.webp"
+}

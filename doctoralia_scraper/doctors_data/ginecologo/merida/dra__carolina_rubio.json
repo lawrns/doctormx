@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Carolina Rubio",
+  "specialty": "Ginecóloga",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/15fe84/15fe84380266ec4ba6497e8ac6efd516_220_square.jpg",
+  "about": "¡Hola! Soy la Dra. Carolina Rubio, médico ginecoobstetra.Estudié la carrera de Medicina en la Universidad Anáhuac Mayab en la ciudad de Mérida, Yucatán. Realicé la especialidad de Ginecología y Obstetricia en el Hospital Materno Perinatal \"Mónica Pretelini Saenz\" en la ciudad de Toluca, Estado de México.Estoy certificada por el Consejo Mexicano de Ginecología y Obstetricia.Tengo diplomado en Colposcopía y patología del tracto genital inferior avalado por la UADY y diplomado en Climaterio y Menopausia por parte de la FEMECOG.La mujer es un ser integral, que cambia, madura y evoluciona con el paso del tiempo, con diferentes necesidades desde que es una adolescente hasta convertirse en una mujer madura, cada mujer posee su propia historia de vida y como médico debemos ser sus confidentes y no solo aplicar nuestros conocimientos y experiencia para curar sino sobre todo para llevar de la mano a nuestras pacientes y se vuelvan conscientes de la importancia de amar y cuidar su cuerpo para una vida plena.Es por ello que mi compromiso es acompañarte en cada etapa de tu vida, con empatía, profesionalismo, calidad y calidez humana.",
+  "addresses": [
+    {
+      "full": "Calle 24,"
+    },
+    {
+      "full": "Calle 24,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Terapia de Reemplazo Hormonal (TRH)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carolina-rubio/ginecologo/yucatan#address-id=617416&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:34:13.723Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__carolina_rubio.webp"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Susana Ramirez Sarabia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/4f4c937d/4f4c937d-b79a-419f-9469-9a349be475ad_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "2A. Y Av. I 6973,"
+    },
+    {
+      "full": "Josefa Ortiz De Dominguez 1349,"
+    },
+    {
+      "full": "3A. 876,"
+    },
+    {
+      "full": "2A. Y Av. I 6973,"
+    },
+    {
+      "full": "Josefa Ortiz De Dominguez 1349,"
+    },
+    {
+      "full": "3A. 876,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/susana-ramirez-sarabia/ginecologo/tijuana#address-id=170926&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:06:03.628Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/susana_ramirez_sarabia.webp"
+}

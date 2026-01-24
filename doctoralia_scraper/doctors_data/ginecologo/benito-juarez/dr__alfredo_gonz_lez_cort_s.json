@@ -1,0 +1,112 @@
+{
+  "name": "Dr. Alfredo González Cortés",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 790,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/25a8c9ca/25a8c9ca-04e2-4455-8748-ffc841de76d8_small_square.jpg",
+  "about": "Soy el Dr. Alfredo González Cortés, especialista en Ginecología y Obstetricia egresado del Hospital General de México O.D. y tengo una sub especialidad en Medicina Materno Fetal egresado del Hospital Adolfo Lopez Mateos, I.S.S.S.T.E.. Como especialista me dedico a acompañar a las mujeres a lo largo de su embarazo, ya sea de alto o bajo riesgo, en diversas enfermedades ginecológicas como: ovario poliquistico, sangrados uterinos abundantes, check up ginecológicos, asesoría de anticonceptivos, desde el diagnóstico, tratamiento, los cuales en algunos casos son mediante cirugía.Tengo una formación en Alta especialidad en Cirugia Ginecológica Endoscopica, y gracias a eso podemos ofrecer tratamiento mediante cirugías minimamente invasivas, así como conservadoras de útero, brindándoles una atención adecuada para ayudarte a recuperar tu salud lo antes posible y con el menor dolor.",
+  "addresses": [
+    {
+      "full": "Avenida Universidad 1080,"
+    },
+    {
+      "full": "Av. Cuauhtémoc 1040 consultorio 1152,"
+    },
+    {
+      "full": "TORRE DE ESPECIALIDADES SAN ANGEL INN ACORA DEL VALLE Av. Cuauhtémoc 1040 CONSULTORIO 1151-3,"
+    },
+    {
+      "full": "CEDPRE LINDAVISTA Avenida Montevideo 303, consultorio 511,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Colocación de cerclaje de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": "• $15,000"
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• $3,500"
+    },
+    {
+      "name": "Ultrasonido 3D",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ultrasonido doppler bienestar fetal",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": "• $15,000"
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• $3,500"
+    },
+    {
+      "name": "Ultrasonido 3D",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ultrasonido doppler bienestar fetal",
+      "price": "• $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfredo-gonzalez-cortes/ginecologo/ciudad-de-mexico#address-id=439407&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:04:22.275Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__alfredo_gonz_lez_cort_s.webp"
+}

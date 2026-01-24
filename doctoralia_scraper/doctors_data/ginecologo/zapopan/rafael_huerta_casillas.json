@@ -1,0 +1,25 @@
+{
+  "name": "Rafael Huerta Casillas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 345,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2074a4/2074a4bbb23ec18ffaca4eb8ab7068c3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Sagitario 3725 -,"
+    },
+    {
+      "full": "Sagitario 3725 -,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rafael-huerta-casillas/ginecologo/zapopan#address-id=96110&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:41:38.215Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/rafael_huerta_casillas.webp"
+}

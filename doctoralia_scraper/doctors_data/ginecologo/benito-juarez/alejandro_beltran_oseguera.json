@@ -1,0 +1,25 @@
+{
+  "name": "Alejandro Beltran Oseguera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 27,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/03a02d/03a02de38c0d9f46c5a674808e35a39e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Viaducto Rio Becerra 332,"
+    },
+    {
+      "full": "Viaducto Rio Becerra 332,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-beltran-oseguera/ginecologo/benito-juarez#address-id=96993&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:14:28.069Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/alejandro_beltran_oseguera.webp"
+}

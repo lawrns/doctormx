@@ -1,0 +1,31 @@
+{
+  "name": "Jaime Corral Alvarez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 447,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/74f76b/74f76b8e3836b0dee51bec0b7e42c138_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Del Hospital S/ N,"
+    },
+    {
+      "full": "Maclovio Herrera 3495,"
+    },
+    {
+      "full": "C. Del Hospital S/ N,"
+    },
+    {
+      "full": "Maclovio Herrera 3495,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jaime-corral-alvarez/ginecologo/mexicali#address-id=217742&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:07:50.384Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/jaime_corral_alvarez.webp"
+}

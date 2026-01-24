@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ana Rosa Ruiz Guerrero",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d9c0f633/d9c0f633-130b-4cf3-bf26-7a4056cb0a3f_small_square.jpg",
+  "about": "Soy la Dra. Ana Rosa Ruiz Guerrero, ginecóloga dedicada a cuidar de la salud femenina con empatía y atención personalizada. Mi compromiso es brindarte un espacio donde puedas sentirte cómoda, escuchada y respetada en cada consulta. Estoy aquí para acompañarte en cada etapa de tu vida, ofreciéndote soluciones efectivas y un trato cercano para que te sientas segura y en buenas manos. ¡Tu bienestar es mi prioridad!",
+  "addresses": [
+    {
+      "full": "Vía Rápida Oriente. 15000, Chapultepec Alamar,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $25"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-rosa-ruiz-guerrero/ginecologo/tijuana#address-id=583506&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:42:58.098Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__ana_rosa_ruiz_guerrero.webp"
+}

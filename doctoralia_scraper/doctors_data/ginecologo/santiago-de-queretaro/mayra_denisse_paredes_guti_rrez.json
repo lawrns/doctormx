@@ -1,0 +1,66 @@
+{
+  "name": "Mayra Denisse Paredes Gutiérrez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 451,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/25a8d6/25a8d6522cf72ef96505dd2c8406448b_220_square.jpg",
+  "about": "Soy médico especialista en Ginecología y Obstetricia, con diplomados en gineco-cosmética y ozonoterapia; por lo que puedo ayudarte a tratar los problemas más comunes, y no tan comunes, que te afectan como mujer, con un plan de manejo ideal que se ajuste a todas tus necesidades. Durante tu consulta te sentirás cómoda y en confianza, con un trato amigable y honesto. Con mi experiencia, puedo ayudarte a resolver problemas que presentes en la menstruación, problemas en los ovarios o en las mamas, los que se presentan durante la menopausia y el climaterio, además de control prenatal y resolución del embarazo, métodos de planificación familiar, así como cirugía ginecológica, si así lo requieres. Porque tu salud y tu economía son importantes para mí. Será un placer atenderte.",
+  "addresses": [
+    {
+      "full": "Av. Constituyentes 302.Hospital San José de Querétaro, Torre 1, 2do piso, Consultorio 205,"
+    },
+    {
+      "full": "Avenida Constituyentes 302. Hospital San José de Querétaro, Torre 1, 4to piso, Consultorio 406,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mayra-denisse-paredes-gutierrez/ginecologo/santiago-de-queretaro#address-id=324671&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:44:40.776Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/mayra_denisse_paredes_guti_rrez.webp"
+}

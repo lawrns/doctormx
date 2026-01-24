@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Bertha Estela Davila Banuelos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 130,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/be884edf/be884edf-df0f-4558-8691-9af705d8d7f9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Rio Nazas 5117 A,"
+    },
+    {
+      "full": "Rio Nazas 5117 A,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/bertha-estela-davila-banuelos/ginecologo/puebla#address-id=44764&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:33:07.872Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__bertha_estela_davila_banuelos.webp"
+}

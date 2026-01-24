@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Alejandro Reyes Miranda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 31,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/052ea9/052ea99b3f72221611fcf1b9aab18d46_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "20 de Enero 510,"
+    },
+    {
+      "full": "20 de Enero 510,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-reyes-miranda/ginecologo/leon#address-id=607532&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:30:31.264Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__alejandro_reyes_miranda.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Gabriel Alejandro Gallo Olvera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 115,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cc7bf1/cc7bf135c18b2f3ffbc46094274175ca_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Manzanas, 8-401,"
+    },
+    {
+      "full": "Manzanas, 8-401,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriel-alejandro-gallo-olvera/ginecologo/benito-juarez#address-id=135756&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:21:46.414Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/gabriel_alejandro_gallo_olvera.webp"
+}

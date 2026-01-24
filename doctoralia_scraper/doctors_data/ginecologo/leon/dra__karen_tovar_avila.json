@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Karen Tovar Avila",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1001,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hidalgo #717, Colonia Obregón. Centro ,"
+    },
+    {
+      "full": "Hidalgo #717, Colonia Obregón. Centro ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karen-tovar-avila/ginecologo/leon#address-id=453444&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:30:26.724Z",
+  "localPhotoPath": null
+}

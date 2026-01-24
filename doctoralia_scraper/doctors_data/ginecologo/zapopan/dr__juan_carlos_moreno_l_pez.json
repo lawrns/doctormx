@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Juan Carlos Moreno López",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 25,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5b29b720/5b29b720-99ec-482c-96b3-cbb4aacf23f6_small_square.jpg",
+  "about": "Mi nombre es Juan Carlos Moreno López y soy ginecólogo, con subespecialidad en medicina materno fetal, especializado en la atención de la mujer, en el embarazo de alto y bajo riesgo. Me enorgullece brindar una atención profesional y detallada a mis pacientes, explicando cada paso del proceso y asegurándome de que comprendan todo lo relacionado con su salud. Como especialista, he llevado a cabo diversas operaciones y procedimientos, logrando excelentes resultados en cada caso. Además, me gusta ofrecer detalles específicos sobre el embarazo de mis pacientes, brindándoles la tranquilidad y seguridad que necesitan durante todo el proceso gestacional. Mi compromiso con la atención médica se extiende a asegurarme de estar a tiempo para cada cita y proporcionar un ambiente cómodo y seguro para todos mis pacientes. Me enorgullece haber recibido opiniones positivas y estar disponible para ayudar en futuras necesidades. ¡Espero poder brindarle la mejor atención médica posible en su embarazo y salud materno fetal!",
+  "addresses": [
+    {
+      "full": "Calzada Lázaro Cárdenas 2938,"
+    },
+    {
+      "full": "Av 8 de Julio,"
+    },
+    {
+      "full": "Calzada Lázaro Cárdenas 2938,"
+    },
+    {
+      "full": "Av 8 de Julio,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Atención de parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-moreno-lopez/ginecologo/guadalajara#address-id=514384&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:17:03.172Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__juan_carlos_moreno_l_pez.webp"
+}

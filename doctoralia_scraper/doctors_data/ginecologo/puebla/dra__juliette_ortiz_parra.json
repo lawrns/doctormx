@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Juliette Ortiz Parra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 211,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/6dd8f68c/6dd8f68c-cb46-473a-a7d6-474b0126535d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Periferico Ecologico #3507,"
+    },
+    {
+      "full": "Periferico Ecologico #3507,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juliette-ortiz-parra/ginecologo/puebla#address-id=127077&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:21:47.667Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__juliette_ortiz_parra.webp"
+}

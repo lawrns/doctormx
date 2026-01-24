@@ -1,0 +1,25 @@
+{
+  "name": "Lilia Graciela Alvarez Robles",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 46,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d5fe68/d5fe68e6727e25eef28efd2bbe8eef2f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Manuel Acuña 2755 - Piso 2,"
+    },
+    {
+      "full": "Av Manuel Acuña 2755 - Piso 2,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lilia-graciela-alvarez-robles/ginecologo/guadalajara#address-id=108412&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:38:49.277Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/lilia_graciela_alvarez_robles.webp"
+}

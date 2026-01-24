@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Alejo Herrera Daniel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2c5c95/2c5c957337567cf17ae724fe2a347b20_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Reforma Norte 115,"
+    },
+    {
+      "full": "Reforma Norte 115,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $400"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Cesárea",
+      "price": "• Desde $14,000"
+    },
+    {
+      "name": "Cesárea con histerectomia postparto",
+      "price": "• Desde $20,000"
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina por vía vaginal",
+      "price": "• Desde $18,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejo-herrera-daniel/ginecologo/huamantla#address-id=129452&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:15:22.570Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__alejo_herrera_daniel.webp"
+}

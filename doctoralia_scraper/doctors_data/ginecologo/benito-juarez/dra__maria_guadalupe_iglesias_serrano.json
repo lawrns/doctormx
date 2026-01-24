@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Maria Guadalupe Iglesias Serrano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 104,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f7efd2/f7efd21e6bdb410d07d89cd7f3a92846_220_square.jpg",
+  "about": "Hola soy la Dra. Guadalupe Iglesias, soy Gineco-Obstetra, y me gustaria que me visitaras para que sepas lo que es una revison ginecologica y explicarte tus dudas y compruebes que es lo más sencillo y bonito conocer tu cuerpo como mujer, y asi conocer más de ti. Atiendo dede pacientitas muy pequeñas hasta adultos mayores. Tu tratamiento es de acuerdo a tu padecimiento. Ven te espero pronto!!!",
+  "addresses": [
+    {
+      "full": "Av. Universidad 1134 (1er Piso),"
+    },
+    {
+      "full": "Av. Universidad 1134 (1er Piso),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amnioscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-guadalupe-iglesias-serrano/ginecologo/benito-juarez#address-id=70186&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:09:43.354Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__maria_guadalupe_iglesias_serrano.webp"
+}

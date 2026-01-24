@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Mez Guadalupe Luna Villag",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 106,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/aaec038d/aaec038d-a97d-4183-93c2-2a2db4acec09_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "5 Poniente 1101,"
+    },
+    {
+      "full": "5 Poniente 1101,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mez-guadalupe-luna-villag/ginecologo/atlixco#address-id=44866&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:27:37.956Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__mez_guadalupe_luna_villag.webp"
+}

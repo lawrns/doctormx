@@ -1,0 +1,54 @@
+{
+  "name": "Elizabeth Varela Mondragón",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 529,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e3d85d/e3d85db30222a025dba4c89680a568af.jpg",
+  "about": "Soy Médico Cirujano con posgrado en la especialidad de Ginecología y Obstetricia en la Universidad La Salle, con especialidad en Colposcopia avalada por la Benemérita Universidad de Puebla. Mi enfoque hacia las enfermedades que aquejan a la mujer es de la forma más conservadora posible y de mínima invasión. Soy experta en atención del parto basado en un modelo de atención humanizado, donde la mujer es la protagonista de ese proceso.",
+  "addresses": [
+    {
+      "full": "Calle de Durango 290,"
+    },
+    {
+      "full": "Avenida Cuauhtémoc # 1233,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Desde $2,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elizabeth-varela-mondragon/ginecologo/ciudad-de-mexico#address-id=597998&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:04:44.380Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/elizabeth_varela_mondrag_n.webp"
+}

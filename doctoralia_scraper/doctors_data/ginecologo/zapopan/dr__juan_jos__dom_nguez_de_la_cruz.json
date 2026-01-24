@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Juan José Domínguez de la Cruz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 411,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f99c60/f99c6007c0c0b2bf0a9eff59538571e1_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ambar #2721,"
+    },
+    {
+      "full": "Ambar #2721,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-jose-dominguez-de-la-cruz/ginecologo/guadalajara#address-id=433795&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:31:53.473Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__juan_jos__dom_nguez_de_la_cruz.webp"
+}

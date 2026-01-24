@@ -1,0 +1,66 @@
+{
+  "name": "Dra. María Fernanda Linares Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 235,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7e6b35/7e6b359e4b82e1732bd9fed664fa71dc_220_square.jpg",
+  "about": "Soy la Dra. Fernanda Linares, tu ginecóloga de confianza! Te platico un poco sobre mi formación. Soy médico formado en la Universidad de las Américas Puebla (UDLAP). Hice mi especialidad en el Hospital de Gineco Obstetricia No. 4 Luis Castelazo Ayala. Además de estar certificada en seguimiento de embarazos, soy especialista en cirugía de mínima invasión (laparoscopia e histeroscopia). Tengo un diplomado en Endocrinología Ginecológica por la UDLAP, así como en patología del tracto genital inferior y climaterio y menopausia. Estoy segura que juntas encontraremos la solución, espero verte pronto!",
+  "addresses": [
+    {
+      "full": "Sta. Margarita 108,"
+    },
+    {
+      "full": "Calle Rio Bamba 639,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Ablación endometrial",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Aspiracion Manual Endouterina AMEU",
+      "price": ""
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-fernanda-linares-rodriguez/ginecologo/benito-juarez#address-id=541206&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:59:58.461Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__mar_a_fernanda_linares_rodr_guez.webp"
+}

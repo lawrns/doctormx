@@ -1,0 +1,25 @@
+{
+  "name": "Lissie Georgina Camara Macias",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fb2cf6/fb2cf6af61faad9e0f1e1a6a48d8b5b5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "69A Por 122 Y 128,211,Fracc Yucalpeten,,"
+    },
+    {
+      "full": "69A Por 122 Y 128,211,Fracc Yucalpeten,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lissie-georgina-camara-macias/ginecologo/merida#address-id=357830&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:48:27.160Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/lissie_georgina_camara_macias.webp"
+}

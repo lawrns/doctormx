@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Lucero Gonzalez Pineda",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/461c1d9d/461c1d9d-4393-4085-ae56-0c904ed7d59a_small_square.jpg",
+  "about": "Especialista en Ginecología y obstetricia Alta especialidad en medicina materno fetal Certificada por el Consejo mexicano de ginecoobstetriciaComprometida con la atención integral de la mujer, con una visión humana, ética y basada en la evidencia científica. Me caracterizo por brindar un acompañamiento cercano y respetuoso en cada etapa de la vida femenina, con especial énfasis en el embarazo y la salud materno-fetal. Mi prioridad es ofrecer una atención médica de alta calidad, clara y empática, generando confianza y seguridad en cada paciente.",
+  "addresses": [
+    {
+      "full": "Avenida Miguel Hidalgo y Costilla 1966,"
+    },
+    {
+      "full": "Avenida Miguel Hidalgo y Costilla 1966,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lucero-gonzalez-pineda/ginecologo/guadalajara#address-id=623600&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:15:44.726Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__lucero_gonzalez_pineda.webp"
+}

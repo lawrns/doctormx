@@ -1,0 +1,37 @@
+{
+  "name": "Ernesto Cano Nuñez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 418,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/aaa002/aaa002ab73d2b22a98692a38215e66e3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Mariano Matamoros 10765,"
+    },
+    {
+      "full": "Av. Francisco Javier Mina 7535,"
+    },
+    {
+      "full": "Padre Hidalgo 224-3,"
+    },
+    {
+      "full": "Av. Mariano Matamoros 10765,"
+    },
+    {
+      "full": "Av. Francisco Javier Mina 7535,"
+    },
+    {
+      "full": "Padre Hidalgo 224-3,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ernesto-cano-nunez/ginecologo/tijuana#address-id=230620&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:26:44.739Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/ernesto_cano_nu_ez.webp"
+}

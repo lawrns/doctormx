@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Ma Del Carmen Hernandez Rivera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 20,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/81a951/81a9510f906d0cd780d2a95b8cc929f9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 1 N° 207 101 Edifi Ma Isab,"
+    },
+    {
+      "full": "Calle 1 N° 207 101 Edifi Ma Isab,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ma-del-carmen-hernandez-rivera/ginecologo/cordoba#address-id=57658&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:30:13.336Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__ma_del_carmen_hernandez_rivera.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Norma Regina Magaña Padilla",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c30041/c300411ebb5637239df17632b03d330e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ignacio Esteva No. 58-B,"
+    },
+    {
+      "full": "Ignacio Esteva No. 58-B,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/norma-regina-magana-padilla/ginecologo/miguel-hidalgo#address-id=184088&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:47:56.370Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/norma_regina_maga_a_padilla.webp"
+}

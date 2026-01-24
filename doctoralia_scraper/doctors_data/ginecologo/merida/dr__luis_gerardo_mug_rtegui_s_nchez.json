@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Luis Gerardo Mugártegui Sánchez",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 297,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/83a527/83a5271aa67d2e1f6c807324d5035992_220_square.jpg",
+  "about": "Me dedico a la valoracion integral de la mujer, tanto en la parte de obstetricia como control prenatal y atencion de partos o cesáreas, asi como en la parte de ginecología como es histerectomía (retiro de útero o matriz), control de menopausia y cualquier trastorno de la mujer. Como oncologo me dedico a tamizaje o detección de cualquier cáncer de la mujer como es cervicouterino, ovario, mama, endometrio, vulvar, etc. Teniendo amplia experiencia durante mi formacion con los mejores oncólogos del centro de la república y uno de los mejores en cirugía oncoplástica de mama (cirugía conservadora de mama) en España como es el Dr Benigno Acea Nebril. En la consulta de ginecología, obstetricia y oncología hacemos una valoración exhaustiva con rastreo por ultrasonido de ser necesario para poder llegar a un pronto y certero diagnostico, con el firme propósito que al final de la misma usted se pueda ir con todas sus dudas aclaradas.",
+  "addresses": [
+    {
+      "full": "C. 26 199,"
+    },
+    {
+      "full": "C. 26 199,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $500"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,000"
+    },
+    {
+      "name": "Consulta con ultrasonido",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-gerardo-mugartegui-sanchez/ginecologo-oncologico-ginecologo/yucatan#address-id=542234&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:34:42.925Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__luis_gerardo_mug_rtegui_s_nchez.webp"
+}

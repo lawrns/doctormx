@@ -1,0 +1,50 @@
+{
+  "name": "Dra. María de Lourdes Lima Báez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 79,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/23eb81/23eb81aa8c8220677315216375c84a6f_220_square.jpg",
+  "about": "Soy una especialista con más de 30 años de experiencia, buscando siempre darte la mejor atención y servicio. Me he desempeñado en la consulta pública y privada manteniendo siempre los más altos estándares de calidad.",
+  "addresses": [
+    {
+      "full": "Torres Médicas Angelópolis - Anillo Periférico Ecológico # 3507 - 5to Piso Consultorio 501,"
+    },
+    {
+      "full": "Torres Médicas Angelópolis - Anillo Periférico Ecológico # 3507 - 5to Piso Consultorio 501,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-de-lourdes-lima-baez-3/ginecologo/puebla#address-id=93567&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:11:48.149Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__mar_a_de_lourdes_lima_b_ez.webp"
+}

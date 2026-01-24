@@ -1,0 +1,52 @@
+{
+  "name": "Dr. Felipe De Jesús Compeán Báez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 44,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c9ab4b/c9ab4b9c3f7ea397138ede34d318678e_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Río mixcoac 274 PB,"
+    },
+    {
+      "full": "Torcuato Tasso 335, 5to piso,"
+    },
+    {
+      "full": "Av. Río mixcoac 274 PB,"
+    },
+    {
+      "full": "Torcuato Tasso 335, 5to piso,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/felipe-de-jesus-compean-baez/ginecologo/ciudad-de-mexico#address-id=148183&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:11:15.659Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__felipe_de_jes_s_compe_n_b_ez.webp"
+}

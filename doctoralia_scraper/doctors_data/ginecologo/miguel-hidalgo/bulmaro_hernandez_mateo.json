@@ -1,0 +1,25 @@
+{
+  "name": "Bulmaro Hernandez Mateo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 119,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d31e0b/d31e0bd65701043f7d592db0d90f390f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Heroico Colegio Militar 65,"
+    },
+    {
+      "full": "Heroico Colegio Militar 65,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/bulmaro-hernandez-mateo/ginecologo/chilpancingo#address-id=135305&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:48:35.943Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/bulmaro_hernandez_mateo.webp"
+}

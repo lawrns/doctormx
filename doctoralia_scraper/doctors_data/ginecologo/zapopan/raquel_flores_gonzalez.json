@@ -1,0 +1,25 @@
+{
+  "name": "Raquel Flores Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 88,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/494aa8/494aa83ba82bde9c7f7e46fa4bf0f733_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Club Oro 663,"
+    },
+    {
+      "full": "Club Oro 663,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raquel-flores-gonzalez/ginecologo/zapopan#address-id=179723&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:42:44.209Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/raquel_flores_gonzalez.webp"
+}

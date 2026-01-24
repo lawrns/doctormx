@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Juan Manuel Joachin Mallard",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/621c15/621c153905ee245cbe44da06dd455daf_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Homero 527,"
+    },
+    {
+      "full": "Ave. Homero 527,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-manuel-joachin-mallard/ginecologo/ciudad-de-mexico#address-id=55229&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:06:12.463Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__juan_manuel_joachin_mallard.webp"
+}

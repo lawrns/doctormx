@@ -1,0 +1,54 @@
+{
+  "name": "Dra. Ginamaria Barbieri",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 201,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/01cf98/01cf98011fc60380e75b7061da191c65_220_square.jpg",
+  "about": "Apasionada por la medicina, la tecnología y la salud de mis pacientes 24/7. Genero un impacto positivo en la salud femenina. Estudié medicina en Paraguay, cursé la especialidad de Ginecología y Obstetricia en el Hospital de la Mujer de la Ciudad de México, y sub especialidad en Biología de la Reproducción Humana en el CMN 20 de noviembre, con Mención Honorífica, ambos avalados por la UNAM Tengo un diplomado en colposcopia y tracto genital femenino avalado por la Universidad La Salle Además de cursos para tratamiento oportuno y hemorragia obstetrica Conferencista sobre el Manejo de la Infertilidad con técnicas de reproducción Asistida. Tengo 0 muertes: maternas / fetales ni perinatales, 0 demandas Confío en la relación médico paciente y genero empatía y confianza 100% con mis pacientes En mi consulta NO SE JUZGA! Te espero =)",
+  "addresses": [
+    {
+      "full": "Montes Stanovoi 205,"
+    },
+    {
+      "full": "Av. Ejército Nacional Mexicano 613,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de infertilidad",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta de infertilidad",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ginamaria-barbieri/ginecologo/miguel-hidalgo#address-id=437886&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:59:36.236Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__ginamaria_barbieri.webp"
+}

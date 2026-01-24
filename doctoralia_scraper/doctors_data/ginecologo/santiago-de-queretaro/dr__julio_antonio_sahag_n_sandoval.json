@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Julio Antonio Sahagún Sandoval",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 88,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bd0350/bd0350d3ca81a1636de83099b25daa39_220_square.jpg",
+  "about": "Egresado de la Universidad Autónoma de Guadalajara. Medico Cirujano. Especialista en Ginecología y Obstetricia en el Hospital Materno Infantil ISSEMyM por la Universidad Autónoma del Estado de México. Experiencia laboral en Hospital Materno Infantil de Ocotlan. Diplomado en patología genital inferior, colposcopia. 2019. Universidad Autónoma de Sinaloa. Terapia laser en Ginecología bio-regenerativa y funcional. 2019. Universidad Autónoma de Sinaloa. Diplomado en Medicina Fetal 2019- 2020. Universidad Autónoma de Querétaro. Fetal I + D Barcelona.",
+  "addresses": [
+    {
+      "full": "Prol. Bernardo Quintana 4060,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/julio-antonio-sahagun-sandoval-2/ginecologo/santiago-de-queretaro#address-id=416542&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:43:10.841Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__julio_antonio_sahag_n_sandoval.webp"
+}

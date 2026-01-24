@@ -1,0 +1,25 @@
+{
+  "name": "Karen Ivonne Gil Cortes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fb2cf6/fb2cf6af61faad9e0f1e1a6a48d8b5b5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "13 X 36 185, Col. Fracc Pablo Moreno, ,"
+    },
+    {
+      "full": "13 X 36 185, Col. Fracc Pablo Moreno, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karen-ivonne-gil-cortes/ginecologo/kanasin#address-id=357368&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:50:22.196Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/karen_ivonne_gil_cortes.webp"
+}

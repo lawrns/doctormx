@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Ricardo Andrés Solís García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 30,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1bc4ca/1bc4cada2bd3f3733a8f15262c89de40_220_square.jpg",
+  "about": "-Especialidad médica en Ginecología y Obstetricia realizada en la UMAE HGO-4 del IMSS, “Luis Castelazo Ayala”. – Subespecialidad médica en Medicina Materno Fetal realizada en el CMN 20 de Noviembre del ISSSTE, titulado con Mención Honorífica. – Certificado por el CMGO en Ginecología y Obstetricia y en Medicina Materno Fetal. – Certificado por el CMGO en Medicina Materno Fetal. – Curso de competencia en el tratamiento médico y quirúrgico de la hemorragia obstétrica, realizado en UMAE-HGO 4 del IMSS. – Miembro Activo de la Fundación Internacional de Medicina Materno Fetal – Curso certificado de Neurología Fetal y Neurosonografía Fetal Avanzada",
+  "addresses": [
+    {
+      "full": "Av. Río Churubusco número 601, Xoco. Alcaldía Benito Juárez, cp 03330,,"
+    },
+    {
+      "full": "Av. Río Churubusco número 601, Xoco. Alcaldía Benito Juárez, cp 03330,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $799"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-andres-solis-garcia/ginecologo/ciudad-de-mexico#address-id=410733&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:06:24.277Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__ricardo_andr_s_sol_s_garc_a.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Gustavo Cortez Vega",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 418,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/aaa002/aaa002ab73d2b22a98692a38215e66e3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ruta Independencia 5102 Int. 3,"
+    },
+    {
+      "full": "Ruta Independencia 5102 Int. 3,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gustavo-cortez-vega/ginecologo/tijuana#address-id=162284&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:06:03.569Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/gustavo_cortez_vega.webp"
+}

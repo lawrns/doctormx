@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Christina Lee",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 527,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bc135e/bc135ec09ad066500961be6513c423f9_220_square.jpg",
+  "about": "Hola soy la Dra. Christina Lee, especialista en Ginecología y Obstetricia. Certificada por el Consejo Mexicano de Ginecología y Obstetricia. Me he formado con el amor y la pasión hacia la salud femenina. Será un gusto poder orientarte y ayudar en tu travesía como mujer y todo lo que esto conlleva. Hello, I am Dr. Christina Lee, a specialist in Gynecology and Obstetrics.Certified by the Mexican Board of Gynecology and Obstetrics.I have been trained with love and passion for women’s health. It will be my pleasure to guide and support you in your journey as a woman and everything that it entails.",
+  "addresses": [
+    {
+      "full": "Avenida León 428,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/christina-lee/ginecologo/leon#address-id=396266&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:24:55.434Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__christina_lee.webp"
+}

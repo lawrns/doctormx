@@ -1,0 +1,52 @@
+{
+  "name": "Dr. Ruth González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 237,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1d030c/1d030c1e8ecbda69c7e5a57192268c36_220_square.jpg",
+  "about": "Soy una Ginecóloga comprometida con la actualización y vanguardia en tratamientos ginecológicos todo para brindar la mejor y más integral atención a las hermosas mujeres de mi entorno con toda mi atención personalizada y afectuosa ya que cada una de ellas es mi amiga hermana vecina conocida compañera de trabajo y hermosa mujer que requiere toda mi atención les ofrezco mi trayectoria y experiencia en el ámbito del embarazo principalmente siendo mi enfoque el alto riego y prevención de enfermedades que puedan agravar el embarazo y en caso de presentarlas intervenciones a tiempo y cirugías a tiempo todo para obtener bebés sanos y Mamás felices y sanas es mi misión y en el campo de la Ginecología lo más actualizado en cuanto a estética y salud Ginecológica Nutraceutica Nuticion y dieta estilo de vida sano prevención de enfermedades sistémicas cancer y otras y por supuesto tratamiento y prevención oportuna de cancer de cervix y mama Tratamientos Láser para Rejuvenecimiento vaginal Tratamientos antiedad Medicina Funcional Tratamientos Hormonales Terapia de reemplazo hormonal bioidentica de origen Natural para Menopausia Andropausia Fatiga Crónica",
+  "addresses": [
+    {
+      "full": "Calle Santa Rita 1031 Piso 1 - 104,"
+    },
+    {
+      "full": "Cruz Verde 73,"
+    },
+    {
+      "full": "Av. Miguel Hidalgo Y Costilla 930,"
+    },
+    {
+      "full": "Av. Niños Héroes 3060,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Check up avanzado",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ruth-gonzalez/ginecologo/zapopan#address-id=338986&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:15:46.474Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__ruth_gonz_lez.webp"
+}

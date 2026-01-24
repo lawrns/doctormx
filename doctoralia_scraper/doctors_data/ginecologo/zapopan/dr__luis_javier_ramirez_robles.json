@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Luis Javier Ramirez Robles",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 60,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/06e0a58c/06e0a58c-50a2-4eb0-a86b-11105e4f8d5c_140_square.jpg",
+  "about": "Adscrito 1983 - 2007 Fisiología Obstétrica y Medicina Materno Fetal, Titular Clínica Isoinmunización Materno-Fetal. Profesor Clínica de Perinatología y Clínica de Dismorfología . Centro Médico Nacional IMSS, Guadalajara Sociedad de Medicina Materno Fetal del Edo. de Jalisco Socio Fundador. Titular desde 1985 en Ecosonografía y Diagnóstico Integral, Guadalajara, Jal.: clínica de Interconsulta y evaluación en Ginecología y Medicina Fetal, técnicas intrauterinas.",
+  "addresses": [
+    {
+      "full": "Justo Sierra 2520,"
+    },
+    {
+      "full": "Justo Sierra 2520,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-javier-ramirez-robles/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:27:12.927Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__luis_javier_ramirez_robles.webp"
+}

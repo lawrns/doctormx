@@ -1,0 +1,43 @@
+{
+  "name": "Dra. María Isabel Pérez Ortega",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 136,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b40227/b40227dbb3793a3abc8a87af2e7606e4_220_square.jpg",
+  "about": "Soy médica cirujana egresada de la Facultad de Medicina de León, Universidad de Guanajuato, con especialidad en Ginecología y Obstetricia por la Universidad Nacional Autónoma de México. Certificada y recertificada por el Consejo Mexicano de Ginecología y Obstetricia. Desde hace 25 años ejerzo mi especialidad y me he dedicado principalmente a la atención privada de pacientes. Atiendo mujeres con problemas ginecológicos de todas las edades, embarazo normal y de alto riesgo, chequeos ginecológicos y de rutina. Cirugías ginecológicas y atención de embarazo, parto/cesárea y puerperio y sus complicaciones. Me dará mucho gusto hacer un equipo contigo y tu salud ginecológica.",
+  "addresses": [
+    {
+      "full": "Calle Agrarismo 208, torre B, consultorio 653, Escandón II, Miguel Hidalgo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-isabel-perez-ortega/ginecologo/ciudad-de-mexico#address-id=390004&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:58:39.744Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__mar_a_isabel_p_rez_ortega.webp"
+}

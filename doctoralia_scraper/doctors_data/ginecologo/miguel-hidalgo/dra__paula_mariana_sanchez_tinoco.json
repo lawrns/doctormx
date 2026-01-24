@@ -1,0 +1,50 @@
+{
+  "name": "Dra. Paula Mariana Sanchez Tinoco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 56,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e3b495/e3b4957b066ed33c1092c5130af7f2b6_220_square.jpg",
+  "about": "Soy la Dra. Paula Mariana Sánchez Tinoco soy Ginecóloga y Obstetra subespecialista en Medicina Materno-Fetal (Embarazo de alto riesgo y diagnóstico de patología fetal ). Realicé mis estudios en Medicina Fetal en el Nuevo Hospital Civil de Guadalajara Juan I. Menchaca que forma parte del top 10 de los mejores hospitales de México. Por otro lado aparte de diagnóstico prenatal, realicé un alta especialidad en climaterio, menopausia y osteoporosis, he participado en diferentes foros y charlas de calidad de vida en la menopausia, así como metabolismo óseo. Destacando diversas investigaciones en relación al tratamiento de los bochornos y síndrome urogenital de la menopausia. Mi objetivo principal es cuidar de tu bebé realizando ultrasonido para el diagnóstico de patologías complejas y seguimiento de tu embarazo, así como acompañarte en cualquier etapa de tu vida.",
+  "addresses": [
+    {
+      "full": "Viad. Río Becerra 97, Nápoles sexto piso Consultorio 601-607,"
+    },
+    {
+      "full": "Viad. Río Becerra 97, Nápoles sexto piso Consultorio 601-607,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Revisión de embarazo (Primera vez)",
+      "price": ""
+    },
+    {
+      "name": "Revisión Ginecológica anual",
+      "price": ""
+    },
+    {
+      "name": "Seguimiento clínico de la paciente embarazada",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paula-mariana-sanchez-tinoco/ginecologo/ciudad-de-mexico#address-id=505522&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:02:46.618Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__paula_mariana_sanchez_tinoco.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Jesus Hector Manuel Pena Navarro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1032,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f15dc2/f15dc27812dd7e30c0b7d082cc06a328_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Miguel Aleman 1078Col. Palmira,"
+    },
+    {
+      "full": "Miguel Aleman 1078Col. Palmira,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-hector-manuel-pena-navarro/ginecologo/zapopan#address-id=357634&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:45:23.965Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/jesus_hector_manuel_pena_navarro.webp"
+}

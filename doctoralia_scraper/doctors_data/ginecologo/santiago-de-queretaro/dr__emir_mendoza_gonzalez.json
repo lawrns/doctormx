@@ -1,0 +1,52 @@
+{
+  "name": "Dr. Emir Mendoza Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3713cc/3713cc9c8a5093ca247bd659171b4b7d_220_square.jpg",
+  "about": "Siéntete tranquila, puesto que el trato siempre será dentro de un ambiente amable y sobre todo de confianza. Cuentas con un especialista de la salud ampliamente calificado y certificado. Al igual que el resto de mis colegas. Sin embargo, al ser egresado de la máxima casa de estudios a nivel nacional (UNAM), y del Hospital General de México el cual es líder en formación docente y académica en la esfera nacional e internacional. No solo te garantizo experiencia y calidad, así como lo más novedoso en cuanto a diagnóstico y tratamiento. Cirugía de mínima invasión, cirugía obstétrica y sus complicaciones, trastornos hormonales, trastornos de piso pélvico, incontinencia urinaria, menopausia y climaterio, hemorragias uterinas, enfermedades de transmisión sexual, detección oportuna del cáncer cervicouterino, detección oportuna de cáncer mamario, detección oportuna del cáncer de ovario, verrugas genitales, síndrome de ovarios poliquísticos, infertilidad, infecciones vaginales, embarazo de alto y bajo riesgo, parto humanizado y parto vertical.",
+  "addresses": [
+    {
+      "full": "Boulevard Bernardo Quintana #4060,"
+    },
+    {
+      "full": "Ingeniero Rubén Galicia Medina, Chichimequillas.,"
+    },
+    {
+      "full": "Boulevard Bernardo Quintana #4060,"
+    },
+    {
+      "full": "Ingeniero Rubén Galicia Medina, Chichimequillas.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/emir-mendoza-gonzalez/ginecologo/queretaro#address-id=25711&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:49:44.482Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__emir_mendoza_gonzalez.webp"
+}

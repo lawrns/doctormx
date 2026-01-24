@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Federico Marín y García",
+  "specialty": "Cirujano general",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ca036fba/ca036fba-8b18-4a7c-be8f-a02f7cb0eab0_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Avda.Dyck, Manitoba Campo 22,"
+    },
+    {
+      "full": "Calle Avda.Dyck, Manitoba Campo 22,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/federico-marin-y-garcia/cirujano-general-ginecologo/ciudad-de-mexico#address-id=48814&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:13:29.141Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__federico_mar_n_y_garc_a.webp"
+}

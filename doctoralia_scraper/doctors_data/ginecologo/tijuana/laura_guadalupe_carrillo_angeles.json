@@ -1,0 +1,25 @@
+{
+  "name": "Laura Guadalupe Carrillo Angeles",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 648,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5baec5/5baec591d9371143109ce625c6cd4226_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cam. Guadalupe Victoria 22327,"
+    },
+    {
+      "full": "Cam. Guadalupe Victoria 22327,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-guadalupe-carrillo-angeles/ginecologo/tijuana#address-id=202469&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:24:26.806Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/laura_guadalupe_carrillo_angeles.webp"
+}

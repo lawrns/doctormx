@@ -1,0 +1,39 @@
+{
+  "name": "Dra. Nayely Cruz García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 423,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8be1ce/8be1ce35a7febd0237f39dbdb3a63f36_220_square.jpg",
+  "about": "Hola, soy la Dra Nayely Cruz, apasionada de mi profesión y del cuidado de las mujeres. Antes de ser médico, soy mujer, y como tal, entiendo perfectamente lo delicado e íntimo de la consulta ginecológica . Permíteme acompañarte, informarte y hacerte sentir en plena confianza.LISTA DE PRECIOS Y SERVICIOSConsulta básica ginecológica = $1000Control de embarazo 1ra vez = $1000Control de embarazo subsecuente = $900 (en todas se incluye revisión con ultrasonido)Consulta + Ultrasonido = $1,200Consulta + Papanicolaou = $1,200Consulta + Colposcopía = $1,200Consulta + Papanicolaou + Colposcopía = $1,400Consulta + Papanicolaou + Colposcopía + Ultrasonido = $1,500Consulta + Papanicolaou + Detección de VPH = $3,200Consulta + Detección de VPH y Panel de enfermedades de transmisión sexual = $4,800Otros servicios:- Asesoría y colocación de métodos anticonceptivos- Manejo de lesiones por VPH (elctrocirugía y láser)- Vacunación Vs Virus de Papiloma Humano (Gardasil 9)- Biopsia de cérvix- Biopsia de endometrio - Retiro de implantes y dispositivos intrauterinos- ADN fetal en sangre materna- Tensado vaginal láser- Manejo de incontinencia urinaria láser- Dispigmentación vulvar láser",
+  "addresses": [
+    {
+      "full": "Av. de las Ciencias 2058,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Control prenatal de embarazo múltiple",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita ginecológica",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nayely-cruz-garcia/ginecologo/juriquilla#address-id=401252&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:43:46.943Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__nayely_cruz_garc_a.webp"
+}

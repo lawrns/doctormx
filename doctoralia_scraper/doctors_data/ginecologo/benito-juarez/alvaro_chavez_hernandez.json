@@ -1,0 +1,31 @@
+{
+  "name": "Alvaro Chavez Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 1,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/605c0c/605c0c5dab46267aab840a863dcf20e3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Rancho Estrella 1,"
+    },
+    {
+      "full": "Félix Cuevas 540,"
+    },
+    {
+      "full": "Rancho Estrella 1,"
+    },
+    {
+      "full": "Félix Cuevas 540,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alvaro-chavez-hernandez/ginecologo/benito-juarez#address-id=247993&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:22:33.867Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/alvaro_chavez_hernandez.webp"
+}

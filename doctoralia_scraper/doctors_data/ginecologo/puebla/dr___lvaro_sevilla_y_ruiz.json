@@ -1,0 +1,38 @@
+{
+  "name": "Dr. Álvaro Sevilla y Ruiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8ac007/8ac0077b0fc08bd4999b3f0107b862dc_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Privada 8a Sur 2509,"
+    },
+    {
+      "full": "Privada 8a Sur 2509,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Crioterapia",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alvaro-sevilla-y-ruiz/ginecologo/puebla#address-id=1843&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:14:18.681Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr___lvaro_sevilla_y_ruiz.webp"
+}

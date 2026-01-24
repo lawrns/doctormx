@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Solis Silverio Acosta",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a806a8/a806a8ccd0e3d24562bee57d3374d7b1_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "39 Oriente 1213 101,"
+    },
+    {
+      "full": "39 Oriente 1213 101,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/solis-silverio-acosta/ginecologo/puebla#address-id=36558&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:24:54.684Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__solis_silverio_acosta.webp"
+}

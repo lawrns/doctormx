@@ -1,0 +1,37 @@
+{
+  "name": "Pedro Ariel Aragon Sulik",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 143,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5beae2/5beae25a4fe41341746e1df83d4c05c8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 310 S/N,"
+    },
+    {
+      "full": "Janssen Janssen 213,"
+    },
+    {
+      "full": "Av. 510 100,"
+    },
+    {
+      "full": "C. 310 S/N,"
+    },
+    {
+      "full": "Janssen Janssen 213,"
+    },
+    {
+      "full": "Av. 510 100,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pedro-ariel-aragon-sulik/ginecologo/ciudad-de-mexico#address-id=181495&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:48:16.692Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/pedro_ariel_aragon_sulik.webp"
+}

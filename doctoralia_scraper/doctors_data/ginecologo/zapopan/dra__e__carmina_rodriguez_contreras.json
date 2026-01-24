@@ -1,0 +1,43 @@
+{
+  "name": "Dra. E. Carmina Rodriguez Contreras",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 32,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dc9991/dc9991fa8ac2f042b66e5cfe15814b2c_220_square.jpg",
+  "about": "Soy un medico que le gusta su profesión comprometida con la ginecología y actualmente estudiando diplomados de medicinas alternativas como terapia molecular, terapia neural y próximamente medicina funcional. Imparto y disfruto compartiendo la materia de Fisiología Medica desde hace mas de 25 años en el CUCS - U de G.",
+  "addresses": [
+    {
+      "full": "Circunvalacion Division del Norte No. 513. SH,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": "• Desde $40,000"
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": "• $4,700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/e-carmina-rodriguez-contreras/ginecologo/guadalajara#address-id=64044&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:14:12.972Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__e__carmina_rodriguez_contreras.webp"
+}

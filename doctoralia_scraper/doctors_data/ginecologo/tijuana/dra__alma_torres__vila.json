@@ -1,0 +1,38 @@
+{
+  "name": "Dra. Alma Torres Ávila",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 94,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/deb3cd/deb3cd3ed1cad291336aca57505be76a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "20 de Noviembre,"
+    },
+    {
+      "full": "20 de Noviembre,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alma-torres-avila/ginecologo/tijuana#address-id=494017&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:48:24.639Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__alma_torres__vila.webp"
+}

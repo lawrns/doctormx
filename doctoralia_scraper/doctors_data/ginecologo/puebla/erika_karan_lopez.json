@@ -1,0 +1,25 @@
+{
+  "name": "Erika Karan Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 121,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/25a78bf5/25a78bf5-6f76-4216-bb56-45538db5ae77_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 11 Pte 102,"
+    },
+    {
+      "full": "C. 11 Pte 102,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/erika-karan-lopez/ginecologo/tehuacan#address-id=230791&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:27:56.932Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/erika_karan_lopez.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Angelica Vanessa Lamphar Lugo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 418,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/aaa002/aaa002ab73d2b22a98692a38215e66e3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Independencia 1323,"
+    },
+    {
+      "full": "C. Independencia 1323,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angelica-vanessa-lamphar-lugo/ginecologo/tijuana#address-id=246049&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:25:10.767Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/angelica_vanessa_lamphar_lugo.webp"
+}

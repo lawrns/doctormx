@@ -1,0 +1,18 @@
+{
+  "name": "Dr. Jose Guillermo Peralta Díaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 22,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0f6e92/0f6e9230d2e0d6c4e0345434a6af0769_220_square.jpg",
+  "about": "Soy médico especialista en Ginecología y Obstetricia, con subespecialidad en Medicina Materno Fetal. Principalmente enfocado en embarazos de alto riesgo, control prenatal, así como ultrasonidos especializados (genético, anatómico, Doppler) durante el embarazo.",
+  "addresses": [],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-guillermo-peralta-diaz-2/ginecologo/ciudad-benito-juarez#address-id=350906&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:43:17.041Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dr__jose_guillermo_peralta_d_az.webp"
+}

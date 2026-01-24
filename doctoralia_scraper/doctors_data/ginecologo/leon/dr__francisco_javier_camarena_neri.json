@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Francisco Javier Camarena Neri",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 48,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8f53cc/8f53cc0d7f0f104b0df71acbd96573d4_220_square.jpg",
+  "about": "soy el Dr. Javier Camarena Especialista en Ginecologia y Obstetricia, certificado por el Consejo Mexicano En Ginecología y Obstetricia A.C. Diplomado en ultrasonido Obstétrico, Ginecológico y Doppler. atiendo Embarazo Partos, Cesareas, Cirugía de útero, ovarios y vagina. Detección y tratamiento del virus de papiloma humano. realizo Rejuvenecimiento vaginal y cirugía estética de labios genitales.",
+  "addresses": [
+    {
+      "full": "Av. León 428 Consultorio 203 TORRE MEDICA SANTE 2° piso,"
+    },
+    {
+      "full": "Av. León 428 Consultorio 203 TORRE MEDICA SANTE 2° piso,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-javier-camarena-neri/ginecologo/leon#address-id=86473&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:27:56.897Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__francisco_javier_camarena_neri.webp"
+}

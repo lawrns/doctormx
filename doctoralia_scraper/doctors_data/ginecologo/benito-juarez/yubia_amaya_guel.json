@@ -1,0 +1,25 @@
+{
+  "name": "Yubia Amaya Guel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/99050a/99050a9db7f52093e84f3c64b33ac4a4_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Torre Ginecopediatrica Dalinde Tehuantepec 251 Consultorio 305,"
+    },
+    {
+      "full": "Torre Ginecopediatrica Dalinde Tehuantepec 251 Consultorio 305,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yubia-amaya-guel/ginecologo/ciudad-de-mexico#address-id=148087&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:13:35.527Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/yubia_amaya_guel.webp"
+}

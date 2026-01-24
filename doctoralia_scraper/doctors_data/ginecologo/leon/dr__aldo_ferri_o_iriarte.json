@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Aldo Ferriño Iriarte",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 60,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1cf43d/1cf43d4542a5c484e0f57448aaeb3a49_220_square.jpg",
+  "about": "Ginecólogo y Obstetra certificado por el consejo nacional de especialidades medicas. Nos especializamos en Infertilidad, Embarazo de alto riesgo, Control prenatal, Desordenes hormonales, Sangrado uterino disfuncional, Anticoncepción, Miomatosis uterina, Histeroscopia, Laparoscopia. En Instituto Vida nos especializamos en Biología de la Reproducción y Cirugía reproductiva avanzada. Podemos ayudarte a cumplir tu sueño de ser mama mediante técnicas de baja y alta complejidad para lograr el embarazo, tales como Coito Programado, Inseminación Artificial, Fertilización in Vitro, Método ROPA para parejas LGBT, Donación de óvulos, Banco de esperma y Estudio Genético Preimplantacional.",
+  "addresses": [
+    {
+      "full": "Blvrd Jose María Morelos #5675, Colonia San José de Piletas, León de los Aldama, Gto., México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aldo-ferrino-iriarte/ginecologo/leon#address-id=508158&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:25:20.721Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__aldo_ferri_o_iriarte.webp"
+}

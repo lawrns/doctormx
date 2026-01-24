@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jorge Alejandro Escalante Montaño",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dcc13f/dcc13fb0a0af17659820d09cece757ff_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "5 De Febrero 801,"
+    },
+    {
+      "full": "5 De Febrero 801,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-alejandro-escalante-montano-2/ginecologo/leon#address-id=73638&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:28:56.067Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__jorge_alejandro_escalante_monta_o.webp"
+}

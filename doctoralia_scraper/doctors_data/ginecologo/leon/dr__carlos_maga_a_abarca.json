@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Carlos Magaña Abarca",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 400,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dab946/dab946426a54d24fe58459e90a3fdc71_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cerro Gordo Avenue 311 260 Col. Lomas Del Campestre,"
+    },
+    {
+      "full": "Cerro Gordo Avenue 311 260 Col. Lomas Del Campestre,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-magana-abarca/ginecologo/leon#address-id=128498&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:31:24.051Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__carlos_maga_a_abarca.webp"
+}

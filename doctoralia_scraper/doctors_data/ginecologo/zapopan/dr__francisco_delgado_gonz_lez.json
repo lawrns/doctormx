@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Francisco Delgado González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3eabb798/3eabb798-dd47-45fa-a2a3-907c6cec93fa_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Betzayda 2432,"
+    },
+    {
+      "full": "Betzayda 2432,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-delgado-gonzalez/ginecologo/guadalajara#address-id=226572&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:32:01.962Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__francisco_delgado_gonz_lez.webp"
+}

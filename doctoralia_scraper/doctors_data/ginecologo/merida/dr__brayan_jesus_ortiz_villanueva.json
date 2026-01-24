@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Brayan Jesus Ortiz Villanueva",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 20,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/532b84ed/532b84ed-b7cb-4956-8aac-68cab8bda0dc_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 3 ,"
+    },
+    {
+      "full": "Calle 3 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/brayan-jesus-ortiz-villanueva/ginecologo/yucatan#address-id=616155&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:43:29.972Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__brayan_jesus_ortiz_villanueva.webp"
+}

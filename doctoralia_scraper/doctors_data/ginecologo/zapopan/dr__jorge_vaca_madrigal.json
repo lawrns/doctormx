@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Jorge Vaca Madrigal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/60729037/60729037-4ea8-413f-a08e-481f1d9c098e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Jesus Garcompania 2447 103,"
+    },
+    {
+      "full": "Jesus Garcompania 2447 103,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-vaca-madrigal/ginecologo/guadalajara#address-id=39795&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:26:06.029Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jorge_vaca_madrigal.webp"
+}

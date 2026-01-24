@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Sergio Villalobos Valencia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 347,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0974dd/0974dd44907e18f743fddf60546130d1_220_square.jpg",
+  "about": "PAP TEST, ULTRASONIDO GINECOLOGICO, DE EMBARAZO",
+  "addresses": [
+    {
+      "full": "Av. Ejército Nacional 613 Despacho 701,"
+    },
+    {
+      "full": "Av. Ejército Nacional 613 Despacho 701,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-villalobos-valencia/ginecologo/miguel-hidalgo#address-id=172039&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:07:12.399Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__sergio_villalobos_valencia.webp"
+}

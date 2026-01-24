@@ -1,0 +1,69 @@
+{
+  "name": "Emma Gabriela Portillo Osorio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 215,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a734fd/a734fd3c37f1a31f41f8e1ff26b75578_220_square.jpg",
+  "about": "Soy médico ginecóloga especialista en esterilidad y cirugía de mínima invasión como laparoscopia e histeroscopia. Cuento con la formación y entrenamiento en los mejores hospitales del país, en Monterrey y Ciudad de México. Así como, formación y rotaciones médicas en Estados Unidos, Francia, España y Serbia. Soy una persona altamente comprometida con sus pacientes, ofreciéndoles atención personalizada, cálida y con una alta preparación académica y de vanguardia. Cuento con la certificación vigente ante el Consejo Mexicano de Ginecología y Obstetricia, y actualmente soy miembro de la Asociación Jalisciense de Endoscopia Ginecológica. La atención médica va dirigida a pacientes ginecológicas, problemas de fertilidad y problemas de endometriosis.",
+  "addresses": [
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911, Puerta del Valle,"
+    },
+    {
+      "full": "TURIN 2926,"
+    },
+    {
+      "full": "Hidalgo/Carretera Oriente # 23.San Antonio Tlayacan,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Histeroscopia diagnóstica con biopsia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/emma-gabriela-portillo-osorio/ginecologo/zapopan#address-id=24198&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:13:10.194Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/emma_gabriela_portillo_osorio.webp"
+}

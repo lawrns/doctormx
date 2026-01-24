@@ -1,0 +1,89 @@
+{
+  "name": "Dra. Berenice Vázquez Gómez",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 489,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/6ebd85e5/6ebd85e5-8272-4137-82f5-a22f370c5f9c_small_square.jpg",
+  "about": "Soy la Dra. Berenice Vázquez, especialista en Ginecología Oncológica, con experiencia en Ginecología, Laparoscopia, Colposcopia Climaterio y Menopausia. Mi objetivo es ofrecerte una atención médica humana, personalizada y eficiente para el diagnóstico y tratamiento de tus padecimientos ginecológicos, incluyendo cáncer de endometrio, ovario y cuello uterino, tumores de mama, miomatosis y tumores de ovario. En mi consultorio encontrarás un ambiente amable y acogedor, en el que podrás sentirte cómoda y segura. Me preocupo por conocer a cada una de mis pacientes de manera personal y entender sus necesidades individuales para poder ofrecerles un plan de tratamiento adecuado y efectivo. Espero poder ser tu aliada en el cuidado de tu salud ginecológica. Mi consultorio se encuentra ubicado en Zapopan. No dudes en agendar una cita conmigo para atender cualquier inquietud o padecimiento relacionado con tu salud ginecológica.",
+  "addresses": [
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena no. 911 Piso 12 consultorio 7B,"
+    },
+    {
+      "full": "Avenida Unión 163 / Piso 2, consultorio 203,"
+    },
+    {
+      "full": "Av. Adolfo López Mateos Sur 1401,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta Ginecología Oncológica",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Atención del cáncer en la mujer",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/berenice-vazquez-gomez/ginecologo-oncologico-ginecologo/tlajomulco-de-zuniga#address-id=412708&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:14:15.649Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__berenice_v_zquez_g_mez.webp"
+}

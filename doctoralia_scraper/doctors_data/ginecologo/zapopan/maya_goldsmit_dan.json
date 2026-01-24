@@ -1,0 +1,25 @@
+{
+  "name": "Maya Goldsmit Dan",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 611,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/89e0f2/89e0f2495c8db4b21a1c52efb73f3e5b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "López De Legazpi 2235, Jardines De La Cruz, 44950 ,"
+    },
+    {
+      "full": "López De Legazpi 2235, Jardines De La Cruz, 44950 ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maya-goldsmit-dan/ginecologo/guadalajara#address-id=359014&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:38:26.299Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/maya_goldsmit_dan.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ana Cecilia Ayala Tejada",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 523,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d0d4f8/d0d4f84f7df5360f3ac10a8203501413_220_square.jpg",
+  "about": "GINECOLOGA CERTIFICADO POR EL CONSEJO MEXICANO DE GINECOLOGÍA Y OBSTETRICIA, EXPERTA EN DETECCIÓN DE CÁNCER CERVICO-UTERINO, SERVICIO DE PAPANICOLAO. DIPLOMADA EN COLPOSCOPÍA Y LÁSER. CON SERVICIO A LA VANGUARDIA Y ACTUALIZACIÓN CONSTANTE. EXPERTA EN CONDILOMAS VAGINALES Y VULVARES. CONTAMOS CON LO ULTIMO EN TECNOLOGÍA COMO ULTRASONIDO 4D, CONTROL PRENATAL, PARTO HUMANIZADO, CESAREA HUMANIZADA. TRATAMIENTO DE ENFERMEDADES COMO MIOMATOSIS UTERINA, HIPERPLASIA ENDOMETRIAL , POLIPOS ENDOMETRIALES ,POR CIRUGIA DE MINIMA INVASION /LAPAROCOPIA, BUSCAMOS EL TRATAMIENTO IDEAL PARA TI EN MENOPAUSIA Y CLIMATERIO, CONTROL CON HORMONAS BIOIDÉNTICAS. ASESORÍA Y ELECCIÓN DE MÉTODOS ANTICONCEPTIVOS, DETECCIÓN Y TRATAMIENTO DE ENFERMEDADES DE TRANSMISION SEXUAL, QUEMA DE VERRUGAS PORVPH CON LASER CO2 / CONO CERVICAL CON LASER CO2 .CONTROL Y TRATAMIENTO DE SINDROME DE OVARIO POLIQUISTICOS. REALIZAMOS PROCEDIMIENTOS ESTETICCOS Y REGENERATIVOS PARA TENSADO VAGINAL USANDO LA MAS ALTA TECNOLOGIA HIFU VAGINAL Y LASER CO2 , LABIOPLASTIAS , PLASMA RICO EN PLAQUETAS PARA REGENERAR VAGINA, TRATAMIENTOS EN CONSULTORIO PARA INCONTINENCIA URINARIA DE ESFUERZO . ES UN CONSULTORIO ATENDIDO POR MUJERES Y PARA MUJERES, PORQUE ENTRE NOSOTRAS NOS ENTENDEMOS MEJOR.",
+  "addresses": [
+    {
+      "full": "CAMINO A LOS OLVERA #680 COL LOS OLVERA,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-cecilia-ayala-tejada/ginecologo/queretaro#address-id=445729&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:45:41.713Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__ana_cecilia_ayala_tejada.webp"
+}

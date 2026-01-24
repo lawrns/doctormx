@@ -1,0 +1,25 @@
+{
+  "name": "Brenda Orozco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 67,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/24a50e05/24a50e05-692a-4898-8c20-e0d1b2ad93c2_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Ejercito Nacional 425 Piso 6 Col. Granada ,"
+    },
+    {
+      "full": "Av. Ejercito Nacional 425 Piso 6 Col. Granada ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/brenda-orozco/ginecologo/iztapalapa#address-id=358937&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:50:07.754Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/brenda_orozco.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Hugo Bernardo Sanchez Tovar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 717,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/37f5c0/37f5c042c879367a5227944bef5e6a8b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Priv. De Las Ramblas 4,"
+    },
+    {
+      "full": "Priv. De Las Ramblas 4,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hugo-bernardo-sanchez-tovar/ginecologo/puebla#address-id=220586&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:33:40.227Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/hugo_bernardo_sanchez_tovar.webp"
+}

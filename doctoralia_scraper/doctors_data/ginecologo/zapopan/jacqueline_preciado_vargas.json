@@ -1,0 +1,18 @@
+{
+  "name": "Jacqueline Preciado Vargas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 820,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6f65f8/6f65f8be4073ac875081131a43d9e8b0_140_square.jpg",
+  "about": "",
+  "addresses": [],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jacqueline-preciado-vargas/ginecologo/zapopan#address-id=148341&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:34:58.494Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/jacqueline_preciado_vargas.webp"
+}

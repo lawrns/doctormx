@@ -1,0 +1,25 @@
+{
+  "name": "Laura Mireya Araujo Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 393,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3ca6c0/3ca6c07f40392b2d625587c999498b0c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Uc Tronos 11, Col. Fracc Villas De Los Angeles, ,"
+    },
+    {
+      "full": "Uc Tronos 11, Col. Fracc Villas De Los Angeles, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-mireya-araujo-garcia/ginecologo/san-andres-cholula#address-id=355845&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:24:02.239Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/laura_mireya_araujo_garcia.webp"
+}

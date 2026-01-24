@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Omar Josue Sanchez Villalobos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 55,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1a79f6/1a79f60eabea397db41e2bf0984b7507_220_square.jpg",
+  "about": "Soy el doctor Omar Sánchez Villalobos, me forme en mi carrera de médico general en la UADY asi como en mi especialidad. Hice la especialidad en el Hospital General Agustín O´Horan, a parte de ser Ginecoobstetra tengo diplomado en colposcopia. Trato humano y cordial garantizado. Estoy para resolver todas tus dudas.",
+  "addresses": [
+    {
+      "full": "C. 20 221, entre Calle 25, Limones,,"
+    },
+    {
+      "full": "C. 20 221, entre Calle 25, Limones,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Remoción de verrugas por VPH",
+      "price": "• $600"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/omar-josue-sanchez-villalobos/ginecologo/yucatan#address-id=450292&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:34:26.156Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__omar_josue_sanchez_villalobos.webp"
+}

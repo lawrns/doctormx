@@ -1,0 +1,43 @@
+{
+  "name": "Dra. María Alejandra Rentería Ramírez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 35,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/af4265/af4265cd0367b74ed31dc7e2df31c2b6_220_square.jpg",
+  "about": "¡Hola!, Soy la Dra. Alejandra Renteria, te platico acerca de mi. Realice mi carrera de medicina general en la Universidad de Guadalajara; posteriormente curse 4 años de especialidad en Ginecología y Obstetricia. Tengo una subespecialidad en Urología Ginecológica. Diplomados en Colposcopia y Patología vulvovaginal, Hormonas Bioidenticas y Medicina ginecológica funcional.",
+  "addresses": [
+    {
+      "full": "Valle de Los Encinos 2796,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-alejandra-renteria-ramirez/ginecologo/zapopan#address-id=477727&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:14:59.663Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__mar_a_alejandra_renter_a_ram_rez.webp"
+}

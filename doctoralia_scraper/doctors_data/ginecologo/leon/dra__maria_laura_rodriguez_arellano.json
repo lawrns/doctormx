@@ -1,0 +1,35 @@
+{
+  "name": "Dra. Maria Laura Rodriguez Arellano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 557,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ffd9ebe8/ffd9ebe8-6cbe-48a4-a13f-4155e0e55754_small_square.jpg",
+  "about": "Estética vulvar y Rejuvenecimiento con LASER, incontinencia urinaria LASER TENSADO VAGINAL, método anticonceptivo que menos efectos secundarios tenga y se adapte mejor a cada paciente. Control de embarazo, parto humanizado o Cesárea. Asesoramiento Pro-lactancia. Enfermedades de transmisión Sexual. Colposcopia. Diagnostico de Infección por Virus Papiloma (vacunación contra virus papiloma) y otras infecciones genitales. Enfermedades Mamarias y prevención de Cáncer de Mama.",
+  "addresses": [
+    {
+      "full": "Blvd. Aeropuerto 101,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta con ultrasonido",
+      "price": ""
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-laura-rodriguez-arellano/ginecologo/leon#address-id=469069&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:26:18.563Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__maria_laura_rodriguez_arellano.webp"
+}

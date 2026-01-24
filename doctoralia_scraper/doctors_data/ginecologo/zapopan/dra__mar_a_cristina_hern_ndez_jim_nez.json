@@ -1,0 +1,66 @@
+{
+  "name": "Dra. María Cristina Hernández Jiménez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 20,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a76fc0/a76fc0e926ca7ce91fcd7299f8e107d6_220_square.jpg",
+  "about": "HOLA BUENAS TARDES, SOY LA DOCTORA CRISTINA HERNANDEZ, SOY MEDICO CON ESPECIALIDAD EN GINECOLOGIA Y OBSTRETRICIA, MI PRINCIPAL INTERÉS ES TRATAR A MIS PACIENTES CON EL RESPETO QUE SE MERECEN, DÁNDOLES LA CALIDEZ Y CONFIANZA PARA BRINDARLES UN SERVICIO PLENO, Y CON LA CONFIANZA DE QUE SIEMPRE LES BRINDARE EL MEJOR SERVICIO Y ATENCIÓN.",
+  "addresses": [
+    {
+      "full": "Calle José Guadalupe Montenegro 2179,"
+    },
+    {
+      "full": "Calle José Guadalupe Montenegro 2179,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $850"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-cristina-hernandez-jimenez/ginecologo/guadalajara#address-id=444662&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:15:25.696Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__mar_a_cristina_hern_ndez_jim_nez.webp"
+}

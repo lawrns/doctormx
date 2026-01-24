@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Edgar Martín Perez Aguiñaga",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 27,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0d0d1f/0d0d1f4073d2f5399685e2e0b1a0accc_220_square.jpg",
+  "about": "Mi consulta y mi equipo Cuento con un sistema de Ulltrasonido avanzado para la salud de la mujer con imagenes en 3D/4D para una atención de excelencia Otros servicios Ultrasonido de tamizaje de primer trimestre, segundo trimestre (morfológico o estructurtural), tercer trimestre (crecimiento) Control prenatal Control prenatal de embarazos de alto riesgo Atención diabetes gestacional Atención enfermedad tiroidea y embarazo Aborto de repetición Lúpus y embarazo Cancer y embarazo Edad materna avanzada y embarazo Acretismo placentario Crecimiento fetal Restricción de crecimiento fetal Cervix corto Preeclampsia Hipertensión arterial crónica y embarazo Consulta de climaterio/menopausia Enfermedad renal y embarazo Enfermedad cardiaca y embarazo Amniocentesis diagnóstica y terapeutica Endometriosis Síndrome de Ovarios Poliquísticos Evaluación de baja complejidad en infertilidad Endometriosis Enfermedad pelvica inflamatoria Trastorno de la menstruacion",
+  "addresses": [
+    {
+      "full": "Blvd Aeropuerto 101,"
+    },
+    {
+      "full": "Blvd Niños Héroes No 221 local 5,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $850"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $950"
+    },
+    {
+      "name": "Ultrasonido avanzado de embarazo gemelar",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edgar-martin-perez-aguinaga/ginecologo/guanajuato#address-id=531622&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:25:23.836Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__edgar_mart_n_perez_agui_aga.webp"
+}

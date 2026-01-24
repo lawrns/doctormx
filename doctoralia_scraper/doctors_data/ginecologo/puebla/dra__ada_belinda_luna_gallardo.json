@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Ada Belinda Luna Gallardo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 127,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3b0af1/3b0af17f8ca681c11c86fb99b97ab43b_220_square.jpg",
+  "about": "Me especialicé en ginecología para poder ayudar a otras mujeres, sé que muchas veces los problemas de esta área pueden llegar a asustar con facilidad pero estoy aquí para escucharte, resolver todas tus dudas, darte calma y encontrar la mejor solución para ti. También cuento con una subespecialidad en biología de la reproducción humana, esta me permite asistir a las mujeres que presentan problemas para embarazarse, si tu eres una de ellas, estoy para ayudarte. Estudiaré tu caso a fondo para darte el tratamiento más adecuado para ti. Mi prioridad es tu bienestar.",
+  "addresses": [
+    {
+      "full": "Av 15 Pte 3701,"
+    },
+    {
+      "full": "Av 15 Pte 3701,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ada-belinda-luna-gallardo/ginecologo/puebla#address-id=392968&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:12:04.248Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__ada_belinda_luna_gallardo.webp"
+}

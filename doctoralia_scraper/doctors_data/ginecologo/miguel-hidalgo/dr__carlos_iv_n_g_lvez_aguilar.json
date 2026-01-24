@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Carlos Iván Gálvez Aguilar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e133cac3/e133cac3-cbdb-459c-8967-a1b0a427bf7a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "MONTECITO 11 105,"
+    },
+    {
+      "full": "Galileo, 20-203,"
+    },
+    {
+      "full": "Canal de Miramontes, 2276,"
+    },
+    {
+      "full": "MONTECITO 11 105,"
+    },
+    {
+      "full": "Galileo, 20-203,"
+    },
+    {
+      "full": "Canal de Miramontes, 2276,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-ivan-galvez-aguilar/ginecologo/miguel-hidalgo#address-id=337906&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:22:38.804Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__carlos_iv_n_g_lvez_aguilar.webp"
+}

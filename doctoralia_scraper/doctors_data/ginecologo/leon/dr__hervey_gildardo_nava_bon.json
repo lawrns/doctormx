@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Hervey Gildardo Nava Bon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 16,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bb7dad/bb7dad4cc632cd605edf97a159d756ba_220_square.jpg",
+  "about": "Mi formación como médico cirujano en la universidad Autónoma de Guadalajara. Especialidad en Ginecología y obstetricia universidad de Guanajuato. Diplomado en ultrasonido obstétrico en UNIDIM Celaya GTO. Diplomado en Ginecología Estética Láser por el Colegio Mexicano de Gineco cosmetica. Diplomado en hormonas Bioidenticas por la universidad Innova y medicina regenerativa del sureste. Diplomado en ozonoterapia y medicina regenerativa y funcional avalado por el colegio internacional de ozonoterapia y medicina regenerativa y la universidad privada de Michoacán. Constancia de Endopeel ( Retensado facial no quirúrgico ) avalado por la CCME Y su mentor el Dr. Alain Tenenbaum ( cirujano plástico suizo ) Certificado en el programa de Gineco Cosmetica y Uro Ginecología/3D avalado por GyCO global. Constancia taller teórico practico de láser CO2 fraccionado y Diodo en Ginecología Cosmética avalado por el centro de docencia e investigación en patología del tracto genital SC. Médico del Colegio de Ginecología y Obstetricia de León Guanajuato .",
+  "addresses": [
+    {
+      "full": "fuego no.103 e insurgentes no. 504,"
+    },
+    {
+      "full": "fuego no.103 e insurgentes no. 504,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hervey-gildardo-nava-bon/ginecologo-medico-estetico/leon#address-id=350708&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:27:54.061Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__hervey_gildardo_nava_bon.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Sergio Antonio Moncayo Cuevas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/02394faf/02394faf-ef97-44fb-b8d2-44c8fa42dce6_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Sur 113-A 760,"
+    },
+    {
+      "full": "Av. Revolucion 1182,"
+    },
+    {
+      "full": "Sur 113-A 760,"
+    },
+    {
+      "full": "Av. Revolucion 1182,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-antonio-moncayo-cuevas/ginecologo-homeopata/benito-juarez#address-id=172717&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:12:08.362Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__sergio_antonio_moncayo_cuevas.webp"
+}

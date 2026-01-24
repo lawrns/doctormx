@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Rosalva Jímenez Barriga",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1205,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/43fe76/43fe76ee6f02812c0c82393392e9c6e7.jpg",
+  "about": "La primera visita incluye una historia clínica completa y una revisión ginecológica completa en cada visita siempre se incluye la Colposcopia Para mi es muy importante escuchar al paciente y tratar de resolver en forma clara sus dudas. Ganarme su confianza y sobre todo siempre actuar con honestidad",
+  "addresses": [
+    {
+      "full": "MISION DE MULEGE 3063,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosalva-jimenez-barriga/ginecologo/tijuana#address-id=54177&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:40:35.289Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__rosalva_j_menez_barriga.webp"
+}

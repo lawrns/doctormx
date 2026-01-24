@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Rebeca Estrada Delgado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 269,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8f2939/8f2939b43d02ededc87d58bdc497bf63_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Paseo de los Heroes,"
+    },
+    {
+      "full": "Paseo de los Heroes,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rebeca-estrada-delgado/ginecologo/tijuana#address-id=9074&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:48:46.694Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__rebeca_estrada_delgado.webp"
+}

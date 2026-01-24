@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Gabriel R. Bass Almaguer",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 12,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3eabb798/3eabb798-dd47-45fa-a2a3-907c6cec93fa_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Guadalajara,"
+    },
+    {
+      "full": "Guadalajara,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Cirugía ginecológica y obstetrica de alta complejidad",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta Ginecología Oncológica",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriel-r-bass-almaguer/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:33:26.484Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__gabriel_r__bass_almaguer.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Wendy Mercedes Hernández Guzmán",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0047c7/0047c752dde0a7edef516335db156230_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Poniente 7 número 905 segundo piso ,"
+    },
+    {
+      "full": "Poniente 7 número 905 segundo piso ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $350"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/wendy-mercedes-hernandez-guzman/ginecologo/veracruz#address-id=425408&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:17:10.763Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__wendy_mercedes_hern_ndez_guzm_n.webp"
+}

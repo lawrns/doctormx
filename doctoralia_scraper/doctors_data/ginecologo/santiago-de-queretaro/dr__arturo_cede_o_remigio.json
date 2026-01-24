@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Arturo Cedeño Remigio",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 8,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/66b238dc/66b238dc-2b0d-4d7e-9406-fa1e7ff839f2_small_square.jpg",
+  "about": "Me pueden encontrar en Centro Médio del Bajio donde nos dedicadamos a ofrecer servicios de alta calidad, con un enfoque humano.Nos distinguimos por brindar una atención integral, segura y confiable, respaldada por profesionales altamente capacitados y comprometidos con la excelencia médica.Nuestro objetivo es que cada paciente reciba una atención honesta y cercana, en instalaciones modernas y con procesos diseñados para su comodidad y tranquilidad. Nuestra MisiónBrindar atención médica de alta calidad a precios justos, contribuyendo al bienestar y la salud de nuestros pacientes a través de un servicio profesional, ético y humano. Contamos con paquetes quirúrgicos y atención integral en:Ginecología y ObstetriciaCirugía GeneralTraumatologíaUrología",
+  "addresses": [
+    {
+      "full": "Prolongación Josefa Ortiz de Domínguez 102,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": "• $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arturo-cedeno-remigio/ginecologo/queretaro#address-id=610407&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:47:14.904Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__arturo_cede_o_remigio.webp"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Amaranta Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 17,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Consulta ginecológica e Infertilidad",
+  "addresses": [
+    {
+      "full": "Calle reforma 3007,"
+    },
+    {
+      "full": "Calle reforma 3007,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/amaranta-martinez/ginecologo/guadalajara#address-id=414867&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:39:02.772Z",
+  "localPhotoPath": null
+}

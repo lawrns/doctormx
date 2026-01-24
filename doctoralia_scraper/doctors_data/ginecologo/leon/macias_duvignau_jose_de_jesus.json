@@ -1,0 +1,25 @@
+{
+  "name": "Macias Duvignau Jose De Jesus",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 400,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dab946/dab946426a54d24fe58459e90a3fdc71_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cerro Gordo No. Ext.311 No. Int.560 Col. Lomas Del Campestre Cp 37150,"
+    },
+    {
+      "full": "Cerro Gordo No. Ext.311 No. Int.560 Col. Lomas Del Campestre Cp 37150,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/macias-duvignau-jose-de-jesus/ginecologo/leon#address-id=359123&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:35:45.411Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/macias_duvignau_jose_de_jesus.webp"
+}

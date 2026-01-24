@@ -1,0 +1,43 @@
+{
+  "name": "Jos González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 301,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0b5fab/0b5fab7c7e838c89d2e88eba2cdb515c_220_square.jpg",
+  "about": "Hola soy la Dra. Jos González, mi objetivo es tu tranquilidad, lograr que tu consulta sea una experiencia de aprendizaje en el cuidado de tu salud y prevención, donde todas tus dudas sean resueltas y sientas la confianza de volver siempre que así se requiera. Visita todas mis redes para encontrar la información a preguntas que han tenido otras pacientes y su experiencia. Nos vemos en consulta.",
+  "addresses": [
+    {
+      "full": "Calle 24 S/N, Temozon Norte, Santa Gertrudis Copo, 97305 Mérida, Yuc,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": "• $4,800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Desde $4,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jos-gonzalez/ginecologo/yucatan#address-id=461443&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:32:43.551Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/jos_gonz_lez.webp"
+}

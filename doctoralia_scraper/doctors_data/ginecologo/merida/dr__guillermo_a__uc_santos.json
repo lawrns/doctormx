@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Guillermo A. Uc Santos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 112,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ef49f6/ef49f6626e25fffba79c2d63a37b471b_220_square.jpg",
+  "about": "Hola soy el Dr. Guillermo, soy médico cirujano egresado de la Universidad Autónoma de Yucatán y especialista en Ginecología y Obstetricia avalado por la misma universidad. Actualmente soy miembro del Colegio Mexicano de Ginecología y Obstetricia y me he desempeñado durante toda mi formación y actividad laboral con calidez, empatía, humanismo y profesionalismo. Mi objetivo es continuar brindando atención médica de alta calidad, abordando integralmente los padecimientos de mis pacientes para poder otorgar el mejor tratamiento acorde a las guías médicas actuales y aclarando siempre todas las dudas que pudieran surgir en la consulta médica. Permítame ayudarla y ser su Ginecólogo de confianza.",
+  "addresses": [
+    {
+      "full": "CALLE 60 NUM 329B ENTRE 35 Y, Av. Colón, Centro, 97000 Mérida, Yuc.,"
+    },
+    {
+      "full": "CALLE 60 NUM 329B ENTRE 35 Y, Av. Colón, Centro, 97000 Mérida, Yuc.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-a-uc-santos/ginecologo/yucatan#address-id=439811&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:34:44.114Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__guillermo_a__uc_santos.webp"
+}

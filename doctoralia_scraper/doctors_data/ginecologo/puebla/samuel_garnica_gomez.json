@@ -1,0 +1,31 @@
+{
+  "name": "Samuel Garnica Gomez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e73d7591/e73d7591-f182-4eba-a9d1-87aa0813ed99_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 8 955,"
+    },
+    {
+      "full": "Sur 5 115,"
+    },
+    {
+      "full": "C. 8 955,"
+    },
+    {
+      "full": "Sur 5 115,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/samuel-garnica-gomez/ginecologo/cordoba#address-id=173738&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:26:45.016Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/samuel_garnica_gomez.webp"
+}

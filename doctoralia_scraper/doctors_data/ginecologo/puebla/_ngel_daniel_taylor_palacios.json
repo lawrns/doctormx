@@ -1,0 +1,25 @@
+{
+  "name": "Ángel Daniel Taylor Palacios",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 492,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/df46f79b/df46f79b-a4f5-4080-8361-586c764cfabf_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 5 Sur 5305,"
+    },
+    {
+      "full": "Calle 5 Sur 5305,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angel-daniel-taylor-palacios/ginecologo/puebla#address-id=17429&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:32:16.935Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/_ngel_daniel_taylor_palacios.webp"
+}

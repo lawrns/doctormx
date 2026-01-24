@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Fernanda Elodia Altamira Muñoz",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 155,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b89282/b892825790ac2111ae8759367a10d422_220_square.jpg",
+  "about": "Dra. Fernanda Elodia Altamira Muñoz culminó su especialidad en Ginecología y Obstetricia con Mención Honorífica, desde entonces ha apoyado a futuras madres a vivir sus embarazos de la manera más segura posible, en su experiencia ha enfrentado retos que le han permitido crecer y saber tomar las mejores decisiones para las futuras madres que sólo desean traer con salud a sus hijos. Es muy empática con las pacientes cuando acuden a consulta ginecológica brindándoles un trato agradable, completo y profesional. Agenda tu cita.",
+  "addresses": [
+    {
+      "full": "Prolongación Constituyentes 302,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernanda-elodia-altamira-munoz/ginecologo/ezequiel-montes#address-id=4375&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:45:24.813Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__fernanda_elodia_altamira_mu_oz.webp"
+}

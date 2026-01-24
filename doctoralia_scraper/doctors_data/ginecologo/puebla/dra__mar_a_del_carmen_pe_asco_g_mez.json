@@ -1,0 +1,25 @@
+{
+  "name": "Dra. María del Carmen Peñasco Gómez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5fb420/5fb420141ac6399cbad25e4ca0bcea88_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 3 Pte. 1309 Santiago,"
+    },
+    {
+      "full": "Calle 3 Pte. 1309 Santiago,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-del-carmen-penasco-gomez/ginecologo/-#address-id=338817&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:19:13.718Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__mar_a_del_carmen_pe_asco_g_mez.webp"
+}

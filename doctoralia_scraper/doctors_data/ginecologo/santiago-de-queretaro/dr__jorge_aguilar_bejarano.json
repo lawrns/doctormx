@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jorge Aguilar Bejarano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 93,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8e3444/8e3444784beb27af0f8b297b153db86b_220_square.jpg",
+  "about": "CENTRO COLPOSCOPICO DE QUERETARO MAS DE 20 AÑOS DE EXPERIENCIA Y EL UNICO CENTRO DEL BAJIO ESPECIALIDADO EN LA DETECCION Y TRATAMIENTO DEL VIRUS DEL PAPILOMA HUMANO. CONTAMOS CON LA MAS ALTA TECNOLOGIA Y VANGUARDIA. GINECOLOGIA FUNCIONAL Y REGENERATIVA",
+  "addresses": [
+    {
+      "full": "Bolonia 108 Residencial Italia,"
+    },
+    {
+      "full": "Bolonia 108 Residencial Italia,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $850"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $850"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $850"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $850"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-aguilar-bejarano/ginecologo/queretaro#address-id=398791&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:48:25.171Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__jorge_aguilar_bejarano.webp"
+}

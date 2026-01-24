@@ -1,0 +1,31 @@
+{
+  "name": "Margarita Moulin Lemus",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 284,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/02394faf/02394faf-ef97-44fb-b8d2-44c8fa42dce6_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calz. de la Viga (Torre Medica Churubusco), 1756, Cons. 404,"
+    },
+    {
+      "full": "Diagonal San Antonio (Centro Medico Gartell), 1136,"
+    },
+    {
+      "full": "Calz. de la Viga (Torre Medica Churubusco), 1756, Cons. 404,"
+    },
+    {
+      "full": "Diagonal San Antonio (Centro Medico Gartell), 1136,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/margarita-moulin-lemus/ginecologo/iztapalapa#address-id=75780&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:18:35.265Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/margarita_moulin_lemus.webp"
+}

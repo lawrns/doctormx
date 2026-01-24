@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Ruvalcaba Carlos Gomez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 498,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/670f99/670f99fac540eac6e3e4508f3a344d34_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Del Fuego 501 103,"
+    },
+    {
+      "full": "Calle Del Fuego 501 103,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ruvalcaba-carlos-gomez/ginecologo/leon#address-id=57964&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:33:20.105Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__ruvalcaba_carlos_gomez.webp"
+}

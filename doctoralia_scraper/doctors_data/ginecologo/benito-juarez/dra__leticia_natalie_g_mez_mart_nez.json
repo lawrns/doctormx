@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Leticia Natalie Gómez Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 15,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/248fb1/248fb1f29c9c79a44a280dda523848b0_220_square.jpg",
+  "about": "Soy una ginecóloga que brinda atención profesional, especializada y sobre todo personalizada. Desde tu primera consulta encontraras orientación en un hambiente cálido y amigable, con lenguaje claro y resolviendo cada una de tus dudas. El tratamiento a tu padecimiento lo decidimos en forma conjunta y siempre tomando en cuenta tu opinión y la de tus familiares.",
+  "addresses": [
+    {
+      "full": "Av. Río Churubusco 601,"
+    },
+    {
+      "full": "Calle de Durango 296,"
+    },
+    {
+      "full": "Av. Río Churubusco 601,"
+    },
+    {
+      "full": "Calle de Durango 296,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Cesárea",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Cesárea",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/leticia-natalie-gomez-martinez/ginecologo/cuauhtemoc2#address-id=392212&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:08:03.351Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__leticia_natalie_g_mez_mart_nez.webp"
+}

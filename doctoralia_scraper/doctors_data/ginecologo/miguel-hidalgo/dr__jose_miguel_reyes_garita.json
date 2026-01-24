@@ -1,0 +1,69 @@
+{
+  "name": "Dr. Jose Miguel Reyes Garita",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/2545435a/2545435a-d681-4453-8a2f-31881cb63591_small_square.jpg",
+  "about": "El cáncer en la mujer es un problema cada vez más frecuente debido a múltiples factores asociados; esta enfermedad es curable si se detecta a tiempo, y a pesar de que se llegue a desarrollar, puede tener solución; algunas veces se necesita de un enfoque multidisciplinario, además le puedo ayudar en todo momento, prevención, tratamiento y seguimiento; soy el Dr. José Miguel Reyes Garita, especialista en Ginecología y obstetricia con subespecialidad en Ginecología Oncológica, estudié la carrera de Medicina en la Escuela Médico Militar, posteriormente realicé la especialidad de Ginecología y Obstetricia en el Hospital Militar de Especialidades de la Mujer y Neonatología, con subespecialidad en Ginecología Oncológica realizada en el Insituto Nacional de Cancerología. Trato de buscar la mejor forma de solucionar el problema a los pacientes, en todo sentido, lo que es mejor para usted o para cada caso en particular.",
+  "addresses": [
+    {
+      "full": "Calle Río Tiber 21,"
+    },
+    {
+      "full": "Circuito Centro Comercial no. 20,"
+    },
+    {
+      "full": "Avenida Lomas Verdes 2165,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Anticoncepción",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta Ginecología Oncológica",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta oncología",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta Ginecología Oncológica",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta oncología",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Test VPH (Virus Papiloma Humano)",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-miguel-reyes-garita/ginecologo-oncologico-ginecologo/naucalpan-de-juarez2#address-id=548865&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:59:50.323Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__jose_miguel_reyes_garita.webp"
+}

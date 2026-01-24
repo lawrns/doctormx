@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Barbar Armando Bejos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5ce709/5ce7095c643407e5a878aa92a0ee5f55_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Ejercito Nacional 617 15 16,"
+    },
+    {
+      "full": "Ave. Ejercito Nacional 617 15 16,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/barbar-armando-bejos/ginecologo/ciudad-de-mexico#address-id=39763&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:44:37.322Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__barbar_armando_bejos.webp"
+}

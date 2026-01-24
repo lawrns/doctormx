@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Ricardo Emanuel Vargas Arias",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 892,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/995b2b/995b2bde1eb9312874dc50faddfced4b_220_square.jpg",
+  "about": "El Dr. Ricardo Vargas Arias, cuenta con una formación solida e integral, siempre a la vanguardia de conocimientos actuales, brindando atención medica cálida y confiable. Cuenta con experiencia de grandes instituciones que lo formaron, siguiendo siempre estándares internacionales de calidad. Cursó la carrera de medico cirujano en la Universidad del Valle de México, campus Querétaro, Realizó la especialidad de Ginecología y obstetricia en CdMx , Hospital General de México “Dr. Eduardo Liceaga¨. Mejor conocido como “Centro medico nacional de la secretaria de salud¨, al ser Institución de referencia nacional, con decreto de cero rechazo y manejo de paciente critica. 2013-2017.Es miembro activo y cuenta con la Cerficiacion por el Consejo Mexicano de Ginecologia y Obstetricia COMEGO Ingresa al Hospital General Dr. Manuel Gea González¨, donde realiza alta especialidad en histeroscopia quirúrgica y cirugía laparoscópica ginecológica . 2017. Actualmente medico adscrito en Hospital General de San Miguel de Allende y consultorio particular",
+  "addresses": [
+    {
+      "full": "Boulevard Bernardo Quintana #4060,"
+    },
+    {
+      "full": "Calle Otoño num 2, esq con Guerrero , Colonia Centro , San José Iturbide, Guanajuato,"
+    },
+    {
+      "full": "Boulevard Bernardo Quintana #4060,"
+    },
+    {
+      "full": "Calle Otoño num 2, esq con Guerrero , Colonia Centro , San José Iturbide, Guanajuato,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de la enfermedad inflamatoria pélvica",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de los quistes y de los tumores complejos",
+      "price": ""
+    },
+    {
+      "name": "Cirugía del enterocele",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de la enfermedad inflamatoria pélvica",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de los quistes y de los tumores complejos",
+      "price": ""
+    },
+    {
+      "name": "Cirugía del enterocele",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-emanuel-vargas-arias/ginecologo/santiago-de-queretaro#address-id=25735&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:47:20.848Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__ricardo_emanuel_vargas_arias.webp"
+}

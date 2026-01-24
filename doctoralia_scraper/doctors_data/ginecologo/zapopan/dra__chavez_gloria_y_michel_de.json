@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Chavez Gloria Y Michel De",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 319,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/4e07cd22/4e07cd22-d84f-4b03-a562-ba8c1cee5eac_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Chapultepec Norte 140 102,"
+    },
+    {
+      "full": "Ave. Chapultepec Norte 140 102,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/chavez-gloria-y-michel-de/ginecologo/guadalajara#address-id=44847&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:37:41.388Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__chavez_gloria_y_michel_de.webp"
+}

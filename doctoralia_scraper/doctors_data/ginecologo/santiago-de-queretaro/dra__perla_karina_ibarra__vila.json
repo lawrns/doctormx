@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Perla Karina Ibarra Ávila",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 152,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5b3901/5b3901000c70bb99f48153e80416a905_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Constituyentes 302,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/perla-karina-ibarra-avila/ginecologo/queretaro#address-id=543157&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:45:17.138Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__perla_karina_ibarra__vila.webp"
+}

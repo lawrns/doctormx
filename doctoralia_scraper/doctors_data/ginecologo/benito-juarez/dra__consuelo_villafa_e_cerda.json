@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Consuelo Villafañe Cerda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 124,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b4bf9a/b4bf9a9303d73597798895b3740a8aa3_220_square.jpg",
+  "about": "Médica Cirujana con especialidad en Ginecología y Obstetricia y certificada por el COMEGO; con excelencia en diagnósticos de vanguardia y tratamientos para la prevención y tratamientos en la salud femenina. Especializada en la atención de Parto Humanizado y asesora de lactancia materna así como en educación menstrual.",
+  "addresses": [
+    {
+      "full": "Calle San Francisco 1626, Colonia del Valle Sur. Delegación Benito Juárez,"
+    },
+    {
+      "full": "Calle San Francisco 1626, Colonia del Valle Sur. Delegación Benito Juárez,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/consuelo-villafane-cerda/ginecologo/benito-juarez#address-id=512&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:06:24.106Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__consuelo_villafa_e_cerda.webp"
+}

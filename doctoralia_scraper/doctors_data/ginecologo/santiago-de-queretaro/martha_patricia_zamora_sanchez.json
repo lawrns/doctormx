@@ -1,0 +1,25 @@
+{
+  "name": "Martha Patricia Zamora Sanchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 48,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e0907d7e/e0907d7e-6e93-4ef6-a49d-0e6e1ccc51de_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Marques Villa Del Villar,138 6,Lomas Del Marques,,"
+    },
+    {
+      "full": "Marques Villa Del Villar,138 6,Lomas Del Marques,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martha-patricia-zamora-sanchez/ginecologo/santiago-de-queretaro#address-id=358095&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:00:22.431Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/martha_patricia_zamora_sanchez.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Lizette Padilla Miranda",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 66,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/973a35df/973a35df-7a27-4a9c-84fa-3ffe0b951c01_small_square.jpg",
+  "about": "Soy una ginecóloga apasionada y dedicada, comprometida con el bienestar integral de mis pacientes. Con una sólida formación médica y años de experiencia, me esfuerzo por proporcionar atención médica de la más alta calidad a cada mujer que confía en mí para su cuidado. Mi enfoque se centra en la empatía y la comunicación efectiva, creando un espacio seguro donde mis pacientes se sientan cómodas para discutir sus preocupaciones y necesidades de salud.",
+  "addresses": [
+    {
+      "full": "Sacramento 526,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lizette-padilla-miranda/ginecologo/tlaquepaque#address-id=502568&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:04:25.797Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__lizette_padilla_miranda.webp"
+}

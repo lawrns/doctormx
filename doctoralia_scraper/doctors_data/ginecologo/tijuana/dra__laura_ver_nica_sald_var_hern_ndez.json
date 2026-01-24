@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Laura Verónica Saldívar Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 80,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/54dea4/54dea456ec4599160082d76e4276169f_220_square.jpg",
+  "about": "Soy médico Ginecóloga Obstetra con una subespecialidad en Urología Ginecológica. Especializada en disfunciones de piso pélvico (prolapso de órganos pélvicos, incontinencia urinaria femenina), rehabilitación de piso pélvico, dolor pélvico y genital. Enfoque urológico femenino (fistulas urogenitales, incontinencia, infección de vías urinarias de repetición, retención urinaria, cirugía anti incontinencia, estudios urodinámicos) y ginecología (papanicolaou, sangrado uterino anormal, infecciones de trasmisión sexual, infecciones vaginales de repetición, menopausia, etc)",
+  "addresses": [
+    {
+      "full": "Rufino Tamayo 9990 Consultorio 705,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita a uroginecología",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,500"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-veronica-saldivar-hernandez/ginecologo/tijuana#address-id=494659&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:41:25.720Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__laura_ver_nica_sald_var_hern_ndez.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Mariano Baldivia Alvarado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 16,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ca67c8f6/ca67c8f6-4d35-4efe-b566-7293391853df_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Lago Caneguin,177 3,Argentina Antigua,,"
+    },
+    {
+      "full": "Lago Caneguin,177 3,Argentina Antigua,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mariano-baldivia-alvarado/ginecologo/miguel-hidalgo#address-id=358030&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:50:20.688Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/mariano_baldivia_alvarado.webp"
+}

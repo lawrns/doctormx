@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Javier Enrique Santos González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 469,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/413aa1/413aa14a11661720aa1711b5932a1ade_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Agrarismo 208,"
+    },
+    {
+      "full": "Agrarismo 208,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/javier-enrique-santos-gonzalez/ginecologo/miguel-hidalgo#address-id=36&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:39:43.956Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__javier_enrique_santos_gonz_lez.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Edson Moises Cortes Molina",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 32,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/96137bfe/96137bfe-ef1e-40e1-8980-8e2de36dcd80_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "1Ra B Juarez 12914, Col. Guadalupe Hidalgo, ,"
+    },
+    {
+      "full": "1Ra B Juarez 12914, Col. Guadalupe Hidalgo, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edson-moises-cortes-molina/ginecologo/puebla#address-id=357173&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:30:46.371Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/edson_moises_cortes_molina.webp"
+}

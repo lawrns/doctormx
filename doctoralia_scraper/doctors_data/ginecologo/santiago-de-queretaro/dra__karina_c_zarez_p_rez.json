@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Karina Cázarez Pérez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 49,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/81a66f/81a66f988beef35a66b709b487bba7e1_220_square.jpg",
+  "about": "EN CREA ANALIZAMOS TU FERTILIDAD, EVALUAMOS POSIBLES FACTORES DE RIESGO O ENFERMEDADES PREVIAS A LA GESTACION, ADEMAS TE ORIENTAMOS PARA LOGRAR UN EMBARAZO SANO Y EXITOSO",
+  "addresses": [
+    {
+      "full": "Avenida de las Ciencias 2058 Juriquilla Queretaro Mexico,"
+    },
+    {
+      "full": "Avenida de las Ciencias 2058 Juriquilla Queretaro Mexico,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Inseminación artificial",
+      "price": "• Desde $10,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karina-cazarez-perez/ginecologo/santiago-de-queretaro#address-id=148836&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:47:34.298Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__karina_c_zarez_p_rez.webp"
+}

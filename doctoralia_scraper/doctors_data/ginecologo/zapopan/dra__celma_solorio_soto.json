@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Celma Solorio Soto",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 385,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6205c9/6205c9af195c12b06918a9d7bd45e83e_220_square.jpg",
+  "about": "Soy la Dra. Celma Solorio Soto Ginecóloga Obstetra con formación en la Universidad de Guadalajara como médico general para posteriormente encontrar mi pasión y realizar mi especialidad en el Instituto Mexicano del Seguro Social sede Centro Médico Nacional de Occidente. Me encuentro bajo actualización médica continua para darte la mejor solución a tus problemas y enfermedades relacionadas con el aparato reproductor femenino, ofreciéndote los tratamientos más innovadores y a la vanguardia así como tu cuidado y atención durante el embarazo, parto y lactancia. Mi objetivo también está enfocado en la prevención y detección oportuna de enfermedades como cáncer de cérvix, ovario o mama que logramos con tu revisión anual de rutina. Quiero que te sientas cómoda, cuidada y protegida a través de un trato cálido, humano con alta calidad bajo ética medica y conocimientos médicos actualizados. Estoy a tus ordenes para atenderte y resolver tus dudas",
+  "addresses": [
+    {
+      "full": "Av. Cvln. División del Nte. 70,"
+    },
+    {
+      "full": "Av. Fray Antonio Alcalde 2170,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $700"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": "• $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/celma-solorio-soto/ginecologo/guadalajara#address-id=421980&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:13:25.385Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__celma_solorio_soto.webp"
+}

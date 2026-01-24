@@ -1,0 +1,25 @@
+{
+  "name": "Barragan Ignacio Alejandro Lara",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 536,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fb23ed/fb23ed54c1fa2d9cff265e49e8b801ce_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 26 199 Col.Altabrisas ,"
+    },
+    {
+      "full": "Calle 26 199 Col.Altabrisas ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/barragan-ignacio-alejandro-lara/ginecologo/merida#address-id=358653&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:48:59.673Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/barragan_ignacio_alejandro_lara.webp"
+}

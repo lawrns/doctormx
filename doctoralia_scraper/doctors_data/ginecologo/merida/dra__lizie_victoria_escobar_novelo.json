@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Lizie Victoria Escobar Novelo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 203,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/12ac59/12ac59639e1bf4f3378f94e9479526f0_220_square.jpg",
+  "about": "Hola! Soy la Dra. Lizie Escobar, Ginecóloga y Obstetra, mi enfoque durante la consulta es brindar una atención personalizada, en un ambiente cálido y de confianza, donde puedas sentirte cómoda para hablar de cualquier preocupación o duda sobre tu salud. Me gusta trabajar de la mano con mis pacientes para ofrecerles soluciones prácticas y efectivas, siempre respetando sus tiempos y decisiones. Mi objetivo es que cada mujer que pase por mi consulta se sienta respaldada y cuidada, porque entiendo que la salud femenina es un aspecto fundamental para el bienestar general. ¡Estoy aquí para ayudarte y guiarte en todo lo que necesites!",
+  "addresses": [
+    {
+      "full": "Calle 11ᴬ Lote Vasconcelos, entre calle 32 y Av. José Vasconcelos, Colonia Maya,"
+    },
+    {
+      "full": "Calle 26 #199,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lizie-victoria-escobar-novelo/ginecologo/yucatan#address-id=616039&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:32:33.062Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__lizie_victoria_escobar_novelo.webp"
+}

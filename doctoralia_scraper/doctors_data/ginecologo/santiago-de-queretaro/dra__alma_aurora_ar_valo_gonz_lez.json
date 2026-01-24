@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Alma Aurora Arévalo González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/67fc0a/67fc0a67cf70e2eb1dc8e00142344fc4_220_square.jpg",
+  "about": "Médico Cirujano y Partero UABC Mexicali B. C. Ginecología Y Obstetricia UNAM Hospital Gea González SSA ,México D.F. Biología de la Reproducción UNAM CMN 20 Noviembre ISSSTE Colposcopía Estado de México Universidad de Guerrero Colegio Mexicano de Ginecología y Obtetricia.",
+  "addresses": [
+    {
+      "full": "Paseo Jurica 106 local 16 plaza juro a fraccionamiento Jurica campestre,"
+    },
+    {
+      "full": "Paseo Jurica 106 local 16 plaza juro a fraccionamiento Jurica campestre,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alma-aurora-arevalo-gonzalez/ginecologo/santiago-de-queretaro#address-id=95282&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:49:58.373Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__alma_aurora_ar_valo_gonz_lez.webp"
+}

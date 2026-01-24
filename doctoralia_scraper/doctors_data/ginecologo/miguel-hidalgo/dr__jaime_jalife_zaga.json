@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jaime Jalife Zaga",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 127,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/916a70/916a70b97352d7562c83821db2ddb397_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Campos Eli­seos 188, Polanco, Polanco IV Secc,"
+    },
+    {
+      "full": "Campos Eli­seos 188, Polanco, Polanco IV Secc,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jaime-jalife-zaga/ginecologo/ciudad-de-mexico#address-id=154168&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:49:11.194Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__jaime_jalife_zaga.webp"
+}

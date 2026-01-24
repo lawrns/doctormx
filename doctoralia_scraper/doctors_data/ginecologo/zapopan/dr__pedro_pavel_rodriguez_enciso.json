@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Pedro Pavel Rodriguez Enciso",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 87,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/064bc4/064bc44a5d6e4d97fa99fef823792fe7_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "José María vigil 2889,"
+    },
+    {
+      "full": "José María vigil 2889,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pedro-pavel-rodriguez-enciso/ginecologo/guadalajara#address-id=154856&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:30:26.125Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__pedro_pavel_rodriguez_enciso.webp"
+}

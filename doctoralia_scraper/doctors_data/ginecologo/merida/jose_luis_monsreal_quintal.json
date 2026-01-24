@@ -1,0 +1,25 @@
+{
+  "name": "Jose Luis Monsreal Quintal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 141,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6ad91d/6ad91d0bc94ce88c893ee8be29791143_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 19 B 23-C,"
+    },
+    {
+      "full": "C. 19 B 23-C,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-luis-monsreal-quintal/ginecologo/merida#address-id=209226&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:49:45.141Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/jose_luis_monsreal_quintal.webp"
+}

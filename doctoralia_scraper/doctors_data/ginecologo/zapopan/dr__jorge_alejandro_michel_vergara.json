@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jorge Alejandro Michel Vergara",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 168,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a82be9/a82be99e464eaeafe284de60f267dc7b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tarascos Num Ext 3473 Num Int 210A Monraz,"
+    },
+    {
+      "full": "Tarascos Num Ext 3473 Num Int 210A Monraz,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-alejandro-michel-vergara/ginecologo/guadalajara#address-id=125330&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:34:52.556Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__jorge_alejandro_michel_vergara.webp"
+}

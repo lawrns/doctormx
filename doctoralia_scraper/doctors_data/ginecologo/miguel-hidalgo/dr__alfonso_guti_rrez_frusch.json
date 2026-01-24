@@ -1,0 +1,40 @@
+{
+  "name": "Dr. Alfonso Gutiérrez Frusch",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6f8cdc/6f8cdca37794161dc7253e117d1c2d90_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Camino a Santa Teresa 1055,"
+    },
+    {
+      "full": "Av. Carlos Fernández Graef 154,"
+    },
+    {
+      "full": "Camino a Santa Teresa 1055,"
+    },
+    {
+      "full": "Av. Carlos Fernández Graef 154,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfonso-gutierrez-frusch/ginecologo/ciudad-de-mexico#address-id=412321&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:06:45.132Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__alfonso_guti_rrez_frusch.webp"
+}

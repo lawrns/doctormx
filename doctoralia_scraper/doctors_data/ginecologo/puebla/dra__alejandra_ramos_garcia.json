@@ -1,0 +1,18 @@
+{
+  "name": "Dra. Alejandra Ramos Garcia",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 13,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/30aea1d2/30aea1d2-df80-467f-b4f0-b34a3f8506a8_small_square.jpg",
+  "about": "Egresada del Hospital de Alta Especialidad de Veracruz",
+  "addresses": [],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-ramos-garcia-2/ginecologo/orizaba#address-id=585658&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:12:42.661Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__alejandra_ramos_garcia.webp"
+}

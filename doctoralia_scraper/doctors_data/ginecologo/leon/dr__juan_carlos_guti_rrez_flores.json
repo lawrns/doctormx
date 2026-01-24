@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Juan Carlos Gutiérrez Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 29,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e2e409/e2e409d543df3f44d6302846a6ffb5ce_220_square.jpg",
+  "about": "Te atenderemos con la empatía y profesionalismo que mereces, la calidez que deseas y la experiencia que necesitas",
+  "addresses": [
+    {
+      "full": "Boulevard Aeropuerto 101 905,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-gutierrez-flores/ginecologo/leon#address-id=471519&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:25:11.501Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__juan_carlos_guti_rrez_flores.webp"
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Dra. Maria Cristina Lanuza Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 275,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0744bd/0744bd4ac5c6d38b7dc6ff1391083d69_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hospital Angeles Leon Torre 1 Consultorio 260,"
+    },
+    {
+      "full": "Hospital Angeles Leon Torre 1 Consultorio 260,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-cristina-lanuza-lopez/ginecologo/leon#address-id=478417&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:30:50.013Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__maria_cristina_lanuza_lopez.webp"
+}

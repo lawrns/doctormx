@@ -1,0 +1,52 @@
+{
+  "name": "Dr. Julio César González Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 168,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e27732/e2773298909f4141e751040c54ae5535_220_square.jpg",
+  "about": "Egresado del Instituto Nacional de Perinatología con enfoque en embarazo de alto riesgo, atención ginecológica en todas las etapas de la vida, con diplomado en Colposcopia y lesiones del tracto genital en el Instituto Nacional de Cancerología, actualmente continuando formación en cirugía de mínima invasión en el Hospital Juárez. En mi ejercicio médico busco brindar la mejor atención posible, con un enfoque de honestidad, ética y profesionalismo, tanto para tu cuidado como para tus seres queridos",
+  "addresses": [
+    {
+      "full": "Avenida Insurgentes Sur 601,"
+    },
+    {
+      "full": "Villa Dominico 18,"
+    },
+    {
+      "full": "Avenida Insurgentes Sur 601,"
+    },
+    {
+      "full": "Villa Dominico 18,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/julio-cesar-gonzalez-rodriguez/ginecologo/benito-juarez#address-id=340941&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:03:34.938Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__julio_c_sar_gonz_lez_rodr_guez.webp"
+}

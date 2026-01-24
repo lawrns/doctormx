@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Mario Borbolla Ramos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 93,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4dc05e/4dc05ede37abbfdb7c52dd01dcb8ed0d_220_square.jpg",
+  "about": "Atender un parto es una de las experiencias más grandes de la vida, llegar a estar en un momento tan intimo y hermoso nos vuelve más humanos.",
+  "addresses": [
+    {
+      "full": "Prolongación Constituyentes 302,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mario-borbolla-ramos/ginecologo/santiago-de-queretaro#address-id=335154&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:45:33.343Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__mario_borbolla_ramos.webp"
+}

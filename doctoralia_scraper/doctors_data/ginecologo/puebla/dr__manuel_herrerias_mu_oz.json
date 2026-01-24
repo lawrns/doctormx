@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Manuel Herrerias Muñoz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1184f0/1184f0ff6ffdacd6a626ea4844c4ba97_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "General Joaquín Colombres 93,"
+    },
+    {
+      "full": "General Joaquín Colombres 93,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuel-herrerias-munoz/ginecologo/puebla#address-id=141507&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:14:29.692Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__manuel_herrerias_mu_oz.webp"
+}

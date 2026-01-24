@@ -1,0 +1,52 @@
+{
+  "name": "Dra. Victoria Delgado Benitez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 150,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/17aad8b6/17aad8b6-d8f7-44cf-bb29-e75a69882987_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Colón Ote. 1039,"
+    },
+    {
+      "full": "Colon oriente Num 1039 entre Sur 19 y 23 Col.Centro,"
+    },
+    {
+      "full": "Colón Ote. 1039,"
+    },
+    {
+      "full": "Colon oriente Num 1039 entre Sur 19 y 23 Col.Centro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victoria-delgado-benitez/ginecologo/veracruz#address-id=168432&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:17:52.555Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__victoria_delgado_benitez.webp"
+}

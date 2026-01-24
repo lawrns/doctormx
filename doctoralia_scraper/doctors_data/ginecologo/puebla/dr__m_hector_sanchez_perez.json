@@ -1,0 +1,25 @@
+{
+  "name": "Dr. M Hector Sanchez Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e65d76/e65d7607296bb156698e8b3177fa975b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Fco I Madero No 2403,"
+    },
+    {
+      "full": "Fco I Madero No 2403,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/m-hector-sanchez-perez/ginecologo/tehuacan#address-id=62295&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:25:45.999Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__m_hector_sanchez_perez.webp"
+}

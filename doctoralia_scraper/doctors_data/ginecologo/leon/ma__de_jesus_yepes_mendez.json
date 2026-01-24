@@ -1,0 +1,25 @@
+{
+  "name": "Ma. De Jesus Yepes Mendez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 354,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8b46c1/8b46c143e3aa73e28192f00afdda61c2_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Heroes De La Independencia 1913,"
+    },
+    {
+      "full": "Heroes De La Independencia 1913,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ma-de-jesus-yepes-mendez/ginecologo/leon#address-id=197571&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:35:21.178Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/ma__de_jesus_yepes_mendez.webp"
+}

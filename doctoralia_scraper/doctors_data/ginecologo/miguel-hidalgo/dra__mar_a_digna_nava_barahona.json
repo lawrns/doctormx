@@ -1,0 +1,63 @@
+{
+  "name": "Dra. María Digna Nava Barahona",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 119,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b3c93e/b3c93eac7fe0c0f7d2eca20d5658cd57.jpg",
+  "about": "Soy la Dra. Maria Digna Nava Barahona, obtuve el título de medicina y cirugía en la Universidad Nacional Autonóma de Honduras. La especialidad de Ginecología y Obstetricia la realicé en el Instituto Nacional de Perinatología, Universidad Nacional Autonóma de México. Continué en el INPer mis estudios, donde realicé el Alta Especialidad en Cirugía Endoscópica Ginecológica que incluye la histeroscopia y laparoscopia. Mi objetivo es ofrecer una atención de calidad a las pacientes con humanismo y un enfoque integral de la salud, donde se desarrolle una relación médico-paciente que genere un alto nivel de satisfacción mutua. Brindó consulta en el Hospital Ángeles Santa Mónica donde realizo atención a pacientes en las distintas etapas de la vida (adolescente, edad reproductiva, menopausia), embarazos sanos/alto riesgo, patologías ginecológicas, histeroscopia y laparoscopia.",
+  "addresses": [
+    {
+      "full": "Temístocles 210,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Control prenatal",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-digna-nava-barahona/ginecologo/naucalpan-de-juarez2#address-id=411668&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:57:29.439Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__mar_a_digna_nava_barahona.webp"
+}

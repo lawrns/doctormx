@@ -1,0 +1,40 @@
+{
+  "name": "Dr. Fernando Carvajal Armora",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/373cfc6a/373cfc6a-0e42-4407-8f46-35e57c35ff0c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Tlaxco 717 201,"
+    },
+    {
+      "full": "Av. Kepler 2143,"
+    },
+    {
+      "full": "Calle Tlaxco 717 201,"
+    },
+    {
+      "full": "Av. Kepler 2143,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Inseminación artificial",
+      "price": ""
+    },
+    {
+      "name": "Inseminación artificial",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-carvajal-armora-2/ginecologo/puebla#address-id=5525&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:16:34.192Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__fernando_carvajal_armora.webp"
+}

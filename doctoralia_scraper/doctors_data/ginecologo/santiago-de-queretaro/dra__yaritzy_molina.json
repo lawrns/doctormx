@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Yaritzy Molina",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 95,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c76ecf/c76ecf63928562d07e29a0b7fb78961c_220_square.jpg",
+  "about": "Médico con especialidad en Ginecología y obstetricia, certificada por el Consejo Mexicano de Ginecología y obstetricia A. C., con diplomado en Patología en tracto genital y colposcopia. Mi compromiso es brindar atención integral a la mujer en todos sus ciclos de vida, promover la salud, prevenir riesgos y daños, proteger y recuperar la salud en lo que concierne a su ciclo reproductivo. Atender las enfermedades propias de los organos de reproducción de la mujer, en sus aspectos medico y quirúrgico.",
+  "addresses": [
+    {
+      "full": "Prol. Privada Ignacio Zaragoza 16-B,"
+    },
+    {
+      "full": "Prol. Privada Ignacio Zaragoza 16-B,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yaritzy-molina/ginecologo/santiago-de-queretaro#address-id=253913&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:48:23.980Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__yaritzy_molina.webp"
+}

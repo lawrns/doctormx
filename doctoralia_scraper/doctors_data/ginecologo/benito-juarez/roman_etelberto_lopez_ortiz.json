@@ -1,0 +1,25 @@
+{
+  "name": "Roman Etelberto Lopez Ortiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 764,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/48c011/48c011cc4efda28bc3451ae5a0afc12f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tuxpan 63,"
+    },
+    {
+      "full": "Tuxpan 63,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roman-etelberto-lopez-ortiz/ginecologo/ciudad-de-mexico#address-id=176019&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:16:06.036Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/roman_etelberto_lopez_ortiz.webp"
+}

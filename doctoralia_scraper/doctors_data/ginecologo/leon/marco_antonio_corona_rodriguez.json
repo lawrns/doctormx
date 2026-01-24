@@ -1,0 +1,25 @@
+{
+  "name": "Marco Antonio Corona Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1001,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Padre Hidalgo 255,"
+    },
+    {
+      "full": "Av Padre Hidalgo 255,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marco-antonio-corona-rodriguez/ginecologo/leon#address-id=196022&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:37:10.950Z",
+  "localPhotoPath": null
+}

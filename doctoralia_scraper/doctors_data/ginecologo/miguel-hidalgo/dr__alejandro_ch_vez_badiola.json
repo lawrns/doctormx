@@ -1,0 +1,78 @@
+{
+  "name": "Dr. Alejandro Chávez Badiola",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/bb65c5cd/bb65c5cd-de4a-4a79-8e23-2eedb52e0a7c_small_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Prado Norte 135,"
+    },
+    {
+      "full": "Av. Prado Norte 135,"
+    },
+    {
+      "full": "Calle Ottawa 1568 piso 6 Col. Providencia Estamos dentro de la plaza Fusión Galerías piso 6,"
+    },
+    {
+      "full": "Av. Prado Norte 135,"
+    },
+    {
+      "full": "Av. Prado Norte 135,"
+    },
+    {
+      "full": "Calle Ottawa 1568 piso 6 Col. Providencia Estamos dentro de la plaza Fusión Galerías piso 6,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Congelación de óvulos",
+      "price": ""
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Congelación de óvulos",
+      "price": ""
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-chavez-badiola/ginecologo/ciudad-de-mexico#address-id=32125&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:07:59.453Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__alejandro_ch_vez_badiola.webp"
+}

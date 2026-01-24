@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Delfina Ramirez Jiménez",
+  "specialty": "Ginecóloga Oncóloga",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a4fa1f7a/a4fa1f7a-68af-46ca-b1e6-0b21bdc19a1b_small_square.jpg",
+  "about": "Soy ginecóloga oncóloga.Soy mujer.Y me dedico a cuidar mujeres.Me especializo en salud femenina, con una mirada integral y humana.Brindo atención con respeto, calidez y claridad, porque sé que detrás de cada diagnóstico hay una mujer valiente, un proceso, una historia.Cada encuentro con una paciente es mucho más que una consulta médica.Es un espacio de confianza, donde se entrelazan la ciencia, la empatía y la fuerza de una mujer que decide cuidar de sí misma.",
+  "addresses": [
+    {
+      "full": "Antonio Caso 2055,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Atención del cáncer en la mujer",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/delfina-ramirez-jimenez/ginecologo-oncologo-ginecologo/tijuana#address-id=608390&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:42:56.788Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__delfina_ramirez_jim_nez.webp"
+}

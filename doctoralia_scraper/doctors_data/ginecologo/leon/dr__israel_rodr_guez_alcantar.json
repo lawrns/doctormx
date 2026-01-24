@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Israel Rodríguez Alcantar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 463,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c4f666/c4f6663abfd9c9df10a83c42dbde8ab4_220_square.jpg",
+  "about": "Lic. Medico Cirujano, en la Universidad Justo Sierra.Laparoscopia Ginecología en el Hospital Manuel Gea González.Especialidad: Ginecología y Obstetricia en el Hospital General de Toluca, avalado por Universidad Autónoma del Estado de MéxicoColposcopia y Patología del Tracto genital Inferior en el Hospital General de Toluca.Ultrasonido Doppler con Enfoque Obstétrico en la Universidad del Valle de Atemajac.Técnicas Quirúrgicas Avanzadas en Hemorragia Obstétrica, Secretaría de Salud Guanajuato.Miembro de Colegio de Ginecologia en León, Guanajuato.Profesor adjunto de internos y preinternos en el hospital materno infantil de León, avalado por la universidad de Guanajuato.Ha trabajado en en Hospitales de la Secretaria de Salud del Estado de México. En el estado de Jalisco, en el Hospital General de Zona No. 7 como Ginecólogo y Obstetra.Forma parte del equipo de respuesta inmediata ante cualquier emergencia obstétrica, HGZ #7, Lagos de Moreno, Jalisco.Investigación acerca de la incidendia de histerectomía total abdominal en Hospital General de Toluca",
+  "addresses": [
+    {
+      "full": "Blvd. Aeropuerto 101, Villas Santa Julia,,"
+    },
+    {
+      "full": "Blvd. Aeropuerto 101, Villas Santa Julia,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/israel-rodriguez-alcantar/ginecologo/leon#address-id=460605&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:27:29.129Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__israel_rodr_guez_alcantar.webp"
+}

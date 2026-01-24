@@ -1,0 +1,50 @@
+{
+  "name": "Dra. Sandra Rojas Peñaloza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1119,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6f8847/6f8847475ebd5d81bcaf3b3e8d236456.jpg",
+  "about": "Realicé la especialidad de Ginecología y Obstetricia en el hospital más importante de latinoamérica UMAE Gineco 4 ''Luis Castelazo Ayala'' en la Ciudad de México, avalado por la máxima casa de estudios la Universidad Nacional Autónoma de México. Posteriormente, realicé alta especialidad en Infertilidad y reproducción asistida con avala por la misma universidad. Continuo mi actualización para brindar la mejor atención a mis pacientes. Mi mayor capacidad es escuchar a mis pacientes y juntos encontrar una solución.",
+  "addresses": [
+    {
+      "full": "Calle Privada Ignacio Zaragoza 16, Centro.,"
+    },
+    {
+      "full": "Calle Privada Ignacio Zaragoza 16,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Colocación de implante subdérmico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sandra-rojas-penaloza/ginecologo/santiago-de-queretaro#address-id=487015&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:46:41.556Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__sandra_rojas_pe_aloza.webp"
+}

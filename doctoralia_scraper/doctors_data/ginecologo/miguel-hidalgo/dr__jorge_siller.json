@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Jorge Siller",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c30041/c300411ebb5637239df17632b03d330e_220_square.jpg",
+  "about": "Soy el Dr. Jorge Siller, un ginecólogo con una profunda pasión por el cuidado de la salud. Egresado de la UNAM, con más de 4 años de experiencia profesional. Me he especializado en varias áreas clave dentro de la Ginecología Oncológica , incluyendo: Cirugía de mama y cirugía laparoscópica. Además, trato una amplia gama de enfermedades relacionadas con la salud femenina, como: Miomatosis uterina, endometriosis, cáncer de endometrio, cáncer de mama y tumores de ovario. Mi enfoque es siempre centrado en la paciente, buscando no solo tratar las enfermedades sino también educar y empoderar, para que tomen decisiones informadas sobre su salud.",
+  "addresses": [
+    {
+      "full": "General Juan Cano 107,"
+    },
+    {
+      "full": "Cto Centro Comercial 20,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Atención prenatal",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Consulta con ultrasonido",
+      "price": ""
+    },
+    {
+      "name": "Atención prenatal",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Consulta con ultrasonido",
+      "price": ""
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-siller/ginecologo-ginecologo-oncologico/naucalpan-de-juarez2#address-id=487479&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:58:30.278Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__jorge_siller.webp"
+}

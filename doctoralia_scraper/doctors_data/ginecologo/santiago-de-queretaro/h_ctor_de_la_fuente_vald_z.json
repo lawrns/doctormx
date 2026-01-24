@@ -1,0 +1,25 @@
+{
+  "name": "Héctor De La Fuente Valdéz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 180,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3eec19/3eec19e5b9633259e34571e75d3498d3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Universidades I Col. El Colorado ,"
+    },
+    {
+      "full": "Universidades I Col. El Colorado ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-de-la-fuente-valdez-2/ginecologo/santiago-de-queretaro#address-id=359351&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:00:34.438Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/h_ctor_de_la_fuente_vald_z.webp"
+}

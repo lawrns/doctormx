@@ -1,0 +1,25 @@
+{
+  "name": "Orrego R Joaquín",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/df846a/df846a65cb508b535b2b845562658b34_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "CONSULTORIO 745, AV KEPLER 2143, Reserva Territorial Atlixcáyotl,"
+    },
+    {
+      "full": "CONSULTORIO 745, AV KEPLER 2143, Reserva Territorial Atlixcáyotl,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/orrego-r-joaquin/ginecologo/puebla#address-id=87667&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:25:16.741Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/orrego_r_joaqu_n.webp"
+}

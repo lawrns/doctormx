@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Liliana Flores Bello",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 318,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/62235d/62235de25382b194c0198a22aa87329b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "29 C Sur 3503. Col. El Vergel,"
+    },
+    {
+      "full": "29 C Sur 3503. Col. El Vergel,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/liliana-flores-bello/ginecologo/puebla#address-id=127002&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:21:54.137Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__liliana_flores_bello.webp"
+}

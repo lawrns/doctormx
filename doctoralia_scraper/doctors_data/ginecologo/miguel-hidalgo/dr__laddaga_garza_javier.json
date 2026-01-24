@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Laddaga Garza Javier",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/174f8c/174f8c1c4cd36c286a882e47389a4b23_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cll Hegel 120, Polanco V Seccion, Mexico,"
+    },
+    {
+      "full": "Cll Hegel 120, Polanco V Seccion, Mexico,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laddaga-garza-javier/ginecologo/miguel-hidalgo#address-id=106839&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:48:35.342Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__laddaga_garza_javier.webp"
+}

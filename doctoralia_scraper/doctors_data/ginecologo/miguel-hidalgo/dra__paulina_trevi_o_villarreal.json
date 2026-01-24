@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Paulina Treviño Villarreal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 64,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/fd76d702/fd76d702-69a4-43f6-9063-470aa9cd670d_small_square.jpg",
+  "about": "Soy la Dra. Paulina Treviño especialista en Ginecología y Obstetricia, con alta especialidad en Cirugía Oncológica de la Mama. El contar con doble certificación avala mi capacidad para el diagnóstico y tratamiento integral de patologías mamarias, tanto benignas como malignas, así como para brindar una atención especializada en salud femenina a lo largo de todas las etapas de la vida. Durante mis consultas se distingue el trato cálido, escucha empática y un enfoque centrado en la paciente, creando espacios de confianza y acompañamiento. Me encuentro comprometida con la actualización continua, participó activamente en congresos nacionales e internacionales, manteniéndome siempre actualizada en avances médicos y quirúrgicos. Mi objetivo es ofrecer a cada mujer un tratamiento individualizado, respaldado por evidencia científica, tecnología actual y un profundo respeto por sus decisiones y bienestar.",
+  "addresses": [
+    {
+      "full": "Cto Centro Comercial 20,"
+    },
+    {
+      "full": "Temístocles 210,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Atención de parto",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paulina-trevino-villarreal/ginecologo/naucalpan#address-id=569702&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:58:18.648Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dra__paulina_trevi_o_villarreal.webp"
+}

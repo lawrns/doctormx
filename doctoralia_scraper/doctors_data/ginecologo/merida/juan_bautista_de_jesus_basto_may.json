@@ -1,0 +1,37 @@
+{
+  "name": "Juan Bautista De Jesus Basto May",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 631,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6ce73c/6ce73cc0801040c5d06e52235743b805_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 58 X 73 587 A,"
+    },
+    {
+      "full": "Calle 76 X 45 Y 47 455,"
+    },
+    {
+      "full": "C. 41 X 34 439,"
+    },
+    {
+      "full": "Calle 58 X 73 587 A,"
+    },
+    {
+      "full": "Calle 76 X 45 Y 47 455,"
+    },
+    {
+      "full": "C. 41 X 34 439,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-bautista-de-jesus-basto-may/ginecologo/merida#address-id=206591&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:51:05.677Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/juan_bautista_de_jesus_basto_may.webp"
+}

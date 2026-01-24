@@ -1,0 +1,31 @@
+{
+  "name": "Luz Maria Sanchez Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 20,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3d6d47/3d6d47fa5e7c7dd735717180e97f8128_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Homero 655,"
+    },
+    {
+      "full": "Hidalgo 116,"
+    },
+    {
+      "full": "Av. Homero 655,"
+    },
+    {
+      "full": "Hidalgo 116,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luz-maria-sanchez-hernandez/ginecologo/iztapalapa#address-id=197993&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:47:25.767Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/luz_maria_sanchez_hernandez.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Carlos Aaron Guarneros Cortes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 104,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ba92c248/ba92c248-322f-453f-813f-499bc67ea348_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blv. Beatriz Paredes Num Ext 36 Col Del Valle,"
+    },
+    {
+      "full": "Blv. Beatriz Paredes Num Ext 36 Col Del Valle,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-aaron-guarneros-cortes/ginecologo/tlaxcala#address-id=118630&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:12:48.668Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__carlos_aaron_guarneros_cortes.webp"
+}

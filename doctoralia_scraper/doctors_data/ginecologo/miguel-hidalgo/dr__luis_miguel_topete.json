@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Luis Miguel Topete",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 395,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9276a84e/9276a84e-a530-47e4-ab4a-b8884b2df66a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Agrarismo 208 103 105,"
+    },
+    {
+      "full": "Calle Agrarismo 208 103 105,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-miguel-topete-2/ginecologo/ciudad-de-mexico#address-id=48836&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:51:21.391Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__luis_miguel_topete.webp"
+}

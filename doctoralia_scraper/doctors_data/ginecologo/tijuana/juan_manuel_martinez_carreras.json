@@ -1,0 +1,25 @@
+{
+  "name": "Juan Manuel Martinez Carreras",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 498,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/eafd54/eafd54ed2de294117a93a95ee8b08310_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Agua Caliente No. 4558 Piso 16, Suite 1604 Col. Aviación ,"
+    },
+    {
+      "full": "Blvd. Agua Caliente No. 4558 Piso 16, Suite 1604 Col. Aviación ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-manuel-martinez-carreras/ginecologo/tijuana#address-id=359070&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:23:53.438Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/juan_manuel_martinez_carreras.webp"
+}

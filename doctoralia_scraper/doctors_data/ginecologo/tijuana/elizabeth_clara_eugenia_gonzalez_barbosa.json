@@ -1,0 +1,25 @@
+{
+  "name": "Elizabeth Clara Eugenia Gonzalez Barbosa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 68,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b4326a/b4326a17c1c472631b93b281a66e1f2e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Paseo De Los Heroes 10999,"
+    },
+    {
+      "full": "Paseo De Los Heroes 10999,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elizabeth-clara-eugenia-gonzalez-barbosa/ginecologo/tijuana#address-id=161198&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:48:17.701Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/elizabeth_clara_eugenia_gonzalez_barbosa.webp"
+}

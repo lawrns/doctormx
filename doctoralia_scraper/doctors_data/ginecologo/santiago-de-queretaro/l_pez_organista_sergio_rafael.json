@@ -1,0 +1,25 @@
+{
+  "name": "López Organista Sergio Rafael",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 578,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a15552/a155528d87255a7e32839b970064237e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Camino A Los Olvera 680 Col. Los Olvera ,"
+    },
+    {
+      "full": "Camino A Los Olvera 680 Col. Los Olvera ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lopez-organista-sergio-rafael/ginecologo/santiago-de-queretaro#address-id=359346&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:59:00.963Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/l_pez_organista_sergio_rafael.webp"
+}

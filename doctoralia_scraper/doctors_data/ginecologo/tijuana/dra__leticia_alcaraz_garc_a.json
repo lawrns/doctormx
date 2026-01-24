@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Leticia Alcaraz García",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/59d023c6/59d023c6-8aaf-4215-b734-6a46707f8ff3_small_square.jpg",
+  "about": "Lo mas importante para mi, es tratar a mi paciente de una manera integral y darle la confianza para que se sienta comfortable.",
+  "addresses": [
+    {
+      "full": "Boulevard General Abelardo L. Rodríguez num 10,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/leticia-alcaraz-garcia-4/ginecologo/tijuana",
+  "scrapedAt": "2026-01-22T00:39:45.090Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__leticia_alcaraz_garc_a.webp"
+}

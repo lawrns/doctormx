@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Laura Darynkha Quiroz Jiménez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 251,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dcc13f/dcc13fb0a0af17659820d09cece757ff_220_square.jpg",
+  "about": "Hola, soy ginecóloga certificada, quien te ofrece un manejo a tus problemas de manera profesional, con sensibilidad humana atiendo todo tipo de problema ginecólogicos y control especializado de embarazo, te ayudo a encontrar un método de planificación familiar adecuado para ti, además brindo atención sobre menopausia y climaterio para que lleves esta etapa de tu vida de la mejor manera y juntas evitemos los riesgos que se presentan.",
+  "addresses": [
+    {
+      "full": "05 de febrero 724, Centro,"
+    },
+    {
+      "full": "Santos Degollado 14, COLONIA CENTRO, TABASCO, ZACATECAS,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-darynkha-quiroz-jimenez/ginecologo/zacatecas#address-id=460988&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:25:47.065Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__laura_darynkha_quiroz_jim_nez.webp"
+}

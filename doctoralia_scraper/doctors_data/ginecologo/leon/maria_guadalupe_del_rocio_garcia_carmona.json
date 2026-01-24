@@ -1,0 +1,31 @@
+{
+  "name": "Maria Guadalupe Del Rocio Garcia Carmona",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 164,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d4124a/d4124a4e95385876f762ae7231677017_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Leandro Rovirosa Wade 336,"
+    },
+    {
+      "full": "Tenochtitlan S/N,"
+    },
+    {
+      "full": "Blvd. Leandro Rovirosa Wade 336,"
+    },
+    {
+      "full": "Tenochtitlan S/N,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-guadalupe-del-rocio-garcia-carmona/ginecologo/comalcalco#address-id=192410&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:35:14.012Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/maria_guadalupe_del_rocio_garcia_carmona.webp"
+}

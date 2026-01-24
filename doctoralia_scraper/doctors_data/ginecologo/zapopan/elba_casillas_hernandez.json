@@ -1,0 +1,52 @@
+{
+  "name": "Elba Casillas Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1032,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f15dc2/f15dc27812dd7e30c0b7d082cc06a328_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Aviación 4075,"
+    },
+    {
+      "full": "Av. Alcalde #2170,"
+    },
+    {
+      "full": "Aviación 4075,"
+    },
+    {
+      "full": "Av. Alcalde #2170,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elba-casillas-hernandez/ginecologo/zapopan#address-id=338034&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:30:11.444Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/elba_casillas_hernandez.webp"
+}

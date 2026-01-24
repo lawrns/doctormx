@@ -1,0 +1,31 @@
+{
+  "name": "Juan Carlos Rodriguez Viquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c61099/c610995f2be0960c1d019ae8ca46903e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Gonzalez Bocanegra 4506 A,"
+    },
+    {
+      "full": "Av. Pradera 1101,"
+    },
+    {
+      "full": "Blvd. Gonzalez Bocanegra 4506 A,"
+    },
+    {
+      "full": "Av. Pradera 1101,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-rodriguez-viquez/ginecologo/leon#address-id=206214&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:34:09.825Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/juan_carlos_rodriguez_viquez.webp"
+}

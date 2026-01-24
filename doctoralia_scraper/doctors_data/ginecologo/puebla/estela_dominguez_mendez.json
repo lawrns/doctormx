@@ -1,0 +1,25 @@
+{
+  "name": "Estela Dominguez Mendez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 717,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/38803f/38803f2d2e6f38ec495fbd8fda8ac147_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Priv. 3-B Sur 3705,"
+    },
+    {
+      "full": "Priv. 3-B Sur 3705,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/estela-dominguez-mendez/ginecologo/puebla#address-id=230150&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:27:50.664Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/estela_dominguez_mendez.webp"
+}

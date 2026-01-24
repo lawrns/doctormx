@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Marielena Gutiérrez Marfil",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/1a1da62a/1a1da62a-a28b-4fbb-afc5-3688f9b53b8c_small_square.jpg",
+  "about": "Soy la Dra. Marielena Gutiérrez Marfil, ginecóloga, especializada en el cuidado integral de la salud femenina. Acompaño a mujeres en todas las etapas de su vida, ofreciendo una atención cercana, respetuosa y basada en la confianza.En consulta me gusta escuchar, explicar con claridad y crear un espacio donde cada paciente se sienta segura y comprendida. Mi objetivo es que te sientas tranquila, informada y acompañada en cada decisión sobre tu salud.”Ginecóloga y Obstetra, UADYAlta Especialidad en Cirugía Endoscópica Ginecológica (cirugía de mínima invasión), INPerEndometriosis MenopausiaColposcopía y Patología de Tracto Genital Inferior",
+  "addresses": [
+    {
+      "full": "C. 26 #199, Col. Altabrisa, 97130 Mérida, Yuc.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marielena-gutierrez-marfil/ginecologo/yucatan#address-id=623443&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:28:59.374Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dra__marielena_guti_rrez_marfil.webp"
+}

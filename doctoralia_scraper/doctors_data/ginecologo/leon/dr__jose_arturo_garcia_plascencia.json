@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jose Arturo Garcia Plascencia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 24,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0de3fb/0de3fb8350c606699736a9b0b7dc5740_220_square.jpg",
+  "about": "Egresado de la Escuela Medico Militar en 1998 y de la Escuela Militar de Graduados de Sanidad en el 2005. Especialista en Medicina Integral y De Urgencias, Especialista en Ginecología Y Obstetricia. Jefe del Servicio de Ginecología y Obstetricia en el Hospital Militar Regional de La Paz Baja California Sur del 2006-2011, Adscrito y Jefe del Servicio de Ginecología Y Obstetricia del Hospital Militar Regional de Guadalajara Jalisco del 2011-2018",
+  "addresses": [
+    {
+      "full": "Calle Madero No. 112, Int 203, Zona Centro, León, Guanajuato,"
+    },
+    {
+      "full": "Calle Madero No. 112, Int 203, Zona Centro, León, Guanajuato,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-arturo-garcia-plascencia/ginecologo-medico-general/leon#address-id=325685&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:28:21.820Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__jose_arturo_garcia_plascencia.webp"
+}

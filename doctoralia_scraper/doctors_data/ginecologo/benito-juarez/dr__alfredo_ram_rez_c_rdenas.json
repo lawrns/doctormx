@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Alfredo Ramírez Cárdenas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 928,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/63ec0d/63ec0d562c51ec9101b282ca28d54955_220_square.jpg",
+  "about": "Como Médico Materno-Fetal (MFM) soy expertos en embarazos de alto riesgo,asi como en las mujeres embarazadas con problemas de salud crónicos. También me especializo en mujeres que se enfrentan a problemas inesperados que desarrollan durante el embarazo, como el parto prematuro, sangrado o presión arterial alta. Así como en diagnosticar defectos de nacimiento o problemas de crecimiento, con la finalidad de comenzar el tratamiento antes del nacimiento, proporcionando monitoreo, para apoyar a los bebés con el mejor cuidado posible hasta que estén listos para llegar al mundo y sus mamas.",
+  "addresses": [
+    {
+      "full": "Dr Jose Maria Vertiz #995 Consultorio 309,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfredo-ramirez-cardenas/ginecologo/benito-juarez#address-id=90392&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:59:51.657Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__alfredo_ram_rez_c_rdenas.webp"
+}

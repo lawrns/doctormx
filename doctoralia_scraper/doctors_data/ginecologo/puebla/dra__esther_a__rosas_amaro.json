@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Esther A. Rosas Amaro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 72,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f17ad1/f17ad1d4f1814f382348ee593ba03123_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Union Sur #28 santa ana chiautempan,"
+    },
+    {
+      "full": "Union Sur #28 santa ana chiautempan,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/esther-a-rosas-amaro/ginecologo/chiautempan#address-id=79248&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:24:40.217Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__esther_a__rosas_amaro.webp"
+}

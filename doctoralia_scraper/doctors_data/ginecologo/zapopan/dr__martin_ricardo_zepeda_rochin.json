@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Martin Ricardo Zepeda Rochin",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1055,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7b44d1/7b44d1f14a07acd6c45b507411064354_220_square.jpg",
+  "about": "Médico especialista en Ginecología y obstetricia egresado del centro médico nacional de occidente",
+  "addresses": [
+    {
+      "full": "Calle de la Nebulosa #2916, colonia Jardines del Bosque,"
+    },
+    {
+      "full": "Calle de la Nebulosa #2916, colonia Jardines del Bosque,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martin-ricardo-zepeda-rochin/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:25:16.001Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__martin_ricardo_zepeda_rochin.webp"
+}

@@ -1,0 +1,98 @@
+{
+  "name": "Dr. José Antonio Moreno Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 74,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3d123c/3d123cf62a94ca5305496c20ee3354b4_220_square.jpg",
+  "about": "Médico Cirujano. Facultad de Medicina, UNAM Especialista en Ginecología y Obstetricia. Hospital General de México; SSA. Certificado vigente por el Consejo de la Especialidad (2022-2027) Diplomados en: 1) Patología del Tracto Genital Inferior y Colposcopia. 2) Cirugía Laparoscópica; 3) Administración de Hospitales; 4) Alta Dirección en Educación Médica; 5) Recursos Humanos. Maestrías en: 1) Bioética. 2) Administración Pública. Doctorado en: 1) Bioética y 2) Alta Dirección. Docente en diversas instituciones de Educación Médica desde 1976. Conferencista y profesor en Congresos y Foros académicos nacionales e internacionales. Reconocimiento como \"Maestro de la Colposcopía Latinoamericana\" FLPTGC. Past President. Federación Latinoamericana de Patología del Tracto Genital Inferior y Colposcopía.",
+  "addresses": [
+    {
+      "full": "Ave. La Huasteca 167, Col. Industrial,"
+    },
+    {
+      "full": "Viaducto Miguel Alemán 904 (101), Nápoles.,"
+    },
+    {
+      "full": "Agrarismo 208, Escandón II Secc, 11800; Torre B 954-4,"
+    },
+    {
+      "full": "Ave. La Huasteca 167, Col. Industrial,"
+    },
+    {
+      "full": "Viaducto Miguel Alemán 904 (101), Nápoles.,"
+    },
+    {
+      "full": "Agrarismo 208, Escandón II Secc, 11800; Torre B 954-4,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Segunda opinión médica",
+      "price": ""
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": "• $500"
+    },
+    {
+      "name": "Tratamiento de lesiones por el virus del papiloma humano",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Segunda opinión médica",
+      "price": ""
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": ""
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $25"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-antonio-moreno-sanchez/ginecologo/benito-juarez#address-id=578245&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:03:25.124Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__jos__antonio_moreno_s_nchez.webp"
+}

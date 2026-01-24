@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Diana Guadalupe Díaz Vargas",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 278,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1f71b8/1f71b8e626d378f42c34d36b165b3109.jpg",
+  "about": "Soy la Dra. Diana Díaz, especialista en Ginecología.Siempre busco brindar una atención de calidad a cada uno de mis pacientes. Me interesa que durante la consulta te sientas cómoda y en confianza para expresartus dudas e inquietudes, encontraras confidencialidad y atención de calidad.Ademas de ser laparoscopista y una de las únicas 8 ginecólogas en México querealiza Cirugía Robótica, cuidare de manera ética tu salud, sin llevarte a tratamientosinnecesarios, y en caso de ser necesario, se realizaran de la manera menos invasiva.",
+  "addresses": [
+    {
+      "full": "Calle Colomos 2110,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• Desde $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diana-guadalupe-diaz-vargas/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:07:43.404Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__diana_guadalupe_d_az_vargas.webp"
+}

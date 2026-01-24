@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Fabiola Huerta Cerón",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/cfa212b6/cfa212b6-9fea-4cb3-bedc-68093dc3dd0f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 4 Norte #410 entre 4 y 10 Oriente. Santa Cruz Temilco. Centro de T,"
+    },
+    {
+      "full": "Calle 4 Norte #410 entre 4 y 10 Oriente. Santa Cruz Temilco. Centro de T,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fabiola-huerta-ceron/ginecologo/puebla#address-id=18583&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:19:22.773Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__fabiola_huerta_cer_n.webp"
+}

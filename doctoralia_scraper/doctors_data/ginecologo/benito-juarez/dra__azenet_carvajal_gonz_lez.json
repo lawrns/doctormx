@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Azenet Carvajal González",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 422,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/68a801/68a801d2a5c8283aa2a71c0afc1096b5.jpg",
+  "about": "Médico Especialista en Ginecología y Obstetricia. Subespecialidad en Urología Ginecológica y Cirugía Laparoscópica en Ginecología. Mi objetivo es brindarte atención médica y servicios integrales de salud con calidad y calidez en el campo de la gineco-obstetricia, especialmente en el periodo del embarazo atención de parto y cesárea humanizados, en las disciplinas de laparoscopía e histeroscopía y todo procedimiento de mínima invasión en ginecología, incontinencia urinaria, prolapso genital , infecciones urinarias recurrentes y disfunción del piso pélvico. Dame la oportunidad de ofrecerte la respuesta a tus necesidades específicas en cada una de las etapas de tu vida, desde la adolescencia hasta la senectud, siempre apegada a las guías de práctica clínica y a los estándares universales de atención médica. Acércate a vivir la experiencia de una Atención Integral en Salud Femenina.",
+  "addresses": [
+    {
+      "full": "Avenida Cuauhtémoc 1040,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• Desde $3,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/azenet-carvajal-gonzalez/ginecologo/benito-juarez#address-id=24833&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:01:22.608Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__azenet_carvajal_gonz_lez.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Andrés Eduardo Pérez Huerta",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 428,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/cfb82c6e/cfb82c6e-9dc0-4113-9f24-a28c5385f670_small_square.jpg",
+  "about": "- Soy Médico, Cirujano y Partero por la Benemérita Universidad Autónoma de Puebla.- Especialista en Ginecología y Obstetricia por el Instituto Mexicano del Seguro Social avalado por la Benemérita Universidad Autónoma de Puebla.- Ginecólogo certificado por el Consejo Mexicano de Ginecología y Obstetricia.- Ginecólogo Diplomado en Colposcopia y Patología del Tracto Genital Inferior por el Colegio Médico de Colposcopia del Estado de Puebla.- Actualmente me encuentro en la Ciudad de Puebla otorgando consulta particular en CENTRAL GINECO + OBSTÉTRICA.Con mucho gusto estoy para servirte en la atención de tu salud ginecológica en las distintas etapas de la vida así como en la atención del embarazo y la resolución del mismo.",
+  "addresses": [
+    {
+      "full": "Calle 13 Sur 1905 Consultorio 7,"
+    },
+    {
+      "full": "Calle 13 Sur 1905 Consultorio 7,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": "• $25,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/andres-eduardo-perez-huerta/ginecologo/puebla#address-id=589256&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:14:13.993Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__andr_s_eduardo_p_rez_huerta.webp"
+}

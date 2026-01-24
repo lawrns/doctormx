@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Mauricio Rodríguez Amador",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 660,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f55e7d1c/f55e7d1c-bd1f-4f65-b495-2de7b6c19fd2_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Privada Ignacio Zaragoza 16 B Centro,"
+    },
+    {
+      "full": "Privada Ignacio Zaragoza 16 B Centro,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mauricio-rodriguez-amador/ginecologo/santiago-de-queretaro#address-id=96831&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:54:27.753Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__mauricio_rodr_guez_amador.webp"
+}

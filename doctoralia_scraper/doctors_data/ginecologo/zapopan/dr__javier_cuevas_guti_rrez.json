@@ -1,0 +1,39 @@
+{
+  "name": "Dr. Javier Cuevas Gutiérrez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 341,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d6652f/d6652f96af0dd3de5d02bedb7e532b13_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Patria Sur 138,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    },
+    {
+      "name": "Diagnóstico de fertilidad",
+      "price": ""
+    },
+    {
+      "name": "Revisión Ginecológica anual",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/javier-cuevas-gutierrez/ginecologo/zapopan#address-id=96137&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:13:09.918Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__javier_cuevas_guti_rrez.webp"
+}

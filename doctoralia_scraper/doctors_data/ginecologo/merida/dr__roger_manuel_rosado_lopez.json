@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Roger Manuel Rosado Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 255,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2cd01a/2cd01a52fb2946f36f08a6e729b9fe63_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 54 365,"
+    },
+    {
+      "full": "54 365,"
+    },
+    {
+      "full": "Calle 54 365,"
+    },
+    {
+      "full": "54 365,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roger-manuel-rosado-lopez/ginecologo/merida#address-id=6454&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:44:28.088Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__roger_manuel_rosado_lopez.webp"
+}

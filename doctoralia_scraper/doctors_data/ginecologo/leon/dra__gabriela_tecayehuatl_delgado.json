@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Gabriela Tecayehuatl Delgado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 499,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fa87a8/fa87a8bb9e6ee57cdc4c6d731a785fcf.jpg",
+  "about": "Hola, soy Dra. Gabriela Tecayehuatl Delgado , especialista en Ginecología y Obstetricia con una Subspecialidad en Medicina Materno Fetal desde el año 2016. El objetivo de ésta es el diagnóstico, vigilancia y tratamiento del feto como paciente, permitiendo identificar condiciones anormales así como factores de riesgo de forma individualizada. Cuento con una amplia experiencia en la realización de : Ultrasonido de primer trimestre, Ultrasonido Morfológico, Ultrasonido doppler, seguimiento de embarazo gemelar y todas las condiciones que pueden complicar el embarazo . Mi filosofía de trabajo es dedicar a cada paciente el tiempo necesario en cada visita para valorar su caso, explicar y aclarar todas las dudas que puedan surgir y buscar la solución más adecuada. Te invito a pedir una cita en mi consulta si estás buscando a un experto en Embarazo de alto riesgo.",
+  "addresses": [
+    {
+      "full": "Hidalgo 329,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Retiro de implante subdérmico",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriela-tecayehuatl-delgado/ginecologo/leon#address-id=340517&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:25:18.426Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__gabriela_tecayehuatl_delgado.webp"
+}

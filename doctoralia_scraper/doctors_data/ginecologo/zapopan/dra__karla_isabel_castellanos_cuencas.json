@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Karla Isabel Castellanos Cuencas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1215,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a00f2a/a00f2a89a6fcd51a2cf205eadf4c3086.jpg",
+  "about": "Soy una persona confiable y preparada en los mejores hospitales de la zona occidente de Guadalajara, que su principal objetivo es causar empatía con sus pacientes, confianza y calidez. Siempre obtendrás de mi una sonrisa y una solución a tu problema ginecologico y uroginecológico.",
+  "addresses": [
+    {
+      "full": "Calle Justo Sierra 2893,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina por vía vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-isabel-castellanos-cuencas/ginecologo/guadalajara#address-id=326786&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:12:23.821Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__karla_isabel_castellanos_cuencas.webp"
+}

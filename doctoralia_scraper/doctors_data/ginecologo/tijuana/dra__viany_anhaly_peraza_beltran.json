@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Viany Anhaly Peraza Beltran",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 43,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/bfd06416/bfd06416-737a-443c-9136-93f25bbaf41a_small_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Hermenegildo Galeana G 22412, Torres de Matamoro,"
+    },
+    {
+      "full": "Blvd. Hermenegildo Galeana G 22412, Torres de Matamoro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $750"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $750"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $750"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $950"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/viany-anhaly-peraza-beltran/ginecologo/tijuana#address-id=580010&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:43:10.670Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/dra__viany_anhaly_peraza_beltran.webp"
+}

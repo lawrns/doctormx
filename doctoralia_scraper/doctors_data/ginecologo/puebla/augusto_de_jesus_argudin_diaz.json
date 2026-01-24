@@ -1,0 +1,25 @@
+{
+  "name": "Augusto De Jesus Argudin Diaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 150,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/17aad8b6/17aad8b6-d8f7-44cf-bb29-e75a69882987_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle. Gardenias S/N Col. El Espinal,"
+    },
+    {
+      "full": "Calle. Gardenias S/N Col. El Espinal,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/augusto-de-jesus-argudin-diaz/ginecologo/orizaba#address-id=359481&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:32:34.976Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/augusto_de_jesus_argudin_diaz.webp"
+}

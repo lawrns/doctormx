@@ -1,0 +1,25 @@
+{
+  "name": "Areli Noceda Llamosas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f65b22/f65b22a584055b801e7acc446395ef94_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Augusto Rodin,43, Col. Napoles, ,"
+    },
+    {
+      "full": "Augusto Rodin,43, Col. Napoles, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/areli-noceda-llamosas/ginecologo/benito-juarez#address-id=355342&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:18:02.455Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/areli_noceda_llamosas.webp"
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Edgar Cuadros",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 886,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/55aaed61/55aaed61-af3b-4b98-91eb-acda91538bd8_small_square.jpg",
+  "about": "¿Quién es el Doctor Cuadros? Originario de la ciudad de Guadalajara y apasionado por Puerto Vallarta, Médico cirujano y partero por la Universidad de Guadalajara y egresado por desempeño académico sobresaliente. Aceptado para realizar la especialidad de Ginecología y Obstetricia en la Unidad Médica de Alta Especialidad del Centro Médico Nacional de Occidente, donde desarrolló trabajos de investigación, además de participar en cursos y congresos nacionales por parte del Colegio de Médicos Gineco-Obstetras del Estado de Jalisco. Su dedicación y entusiasmo le brindaron la oportunidad de capacitarse en el extranjero, logrando la acreditación del Advanced Health Professional Training Program in Obstetrics and Gynecology realizado por la University of South Florida, en Tampa, Florida, Estados Unidos de América; posteriormente concluyendo el Diplomado Health Leadership and Management por University of Berkeley California, el Diplomado en Ultrasonido Obstétrico por la Universidad Autónoma de Querétaro y Medicina Fetal México, además del Diplomado en Colposcopía Avanzada y Patología del Tracto Genital Inferior por Ginemed Academics y el Diploma en Ginecología Laparoscópica por la Universidad Nacional Autónoma de México. Al día de hoy se encuentra certificado por el Consejo Mexicano de Ginecología y Obstetricia y continúa esforzándose día a día en lograr la excelencia que las pacientes merecen.",
+  "addresses": [
+    {
+      "full": "Av. Central 911, Zapopan,"
+    },
+    {
+      "full": "Av. Los Tules 116, Puerto Vallarta,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edgar-cuadros/ginecologo/zapopan#address-id=547411&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:09:26.340Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__edgar_cuadros.webp"
+}

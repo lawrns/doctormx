@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Raul Alejandro Patlan Montalvo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 287,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f72d02/f72d02f8c97e960eab6f36e69feeee87.jpg",
+  "about": "Me especializo en dar la mejor atención a la paciente embarazada, que busca embarazo o que va a dar a luz. Experto en la atención del parto o cesárea. Siempre atento de explicar y detallar todas tus dudas sobre tu embarazo y/o puerperio, así como de todos los padecimientos ginecológicos, ejemplo ovario poliquístico, VPH, verrugas, sangrado anormal. Disponible para atender tus urgencias.",
+  "addresses": [
+    {
+      "full": "Blvd. Aeropuerto 101, Villas Santa Julia, 37530,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• Desde $4,000"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-alejandro-patlan-montalvo/ginecologo/leon#address-id=179662&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:25:40.226Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__raul_alejandro_patlan_montalvo.webp"
+}

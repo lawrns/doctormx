@@ -1,0 +1,25 @@
+{
+  "name": "Juana Dulce Ivone Cervantes Vega",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 291,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/225afd/225afdda85a2516dcd0fc461cad3c9ab_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Acceso 133 38, Col. Desarrollo San Pablo, ,"
+    },
+    {
+      "full": "Acceso 133 38, Col. Desarrollo San Pablo, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juana-dulce-ivone-cervantes-vega/ginecologo/santiago-de-queretaro#address-id=355786&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:58:42.309Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/juana_dulce_ivone_cervantes_vega.webp"
+}

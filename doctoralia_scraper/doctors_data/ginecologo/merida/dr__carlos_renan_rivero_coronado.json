@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Carlos Renan Rivero Coronado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 610,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dfb1df/dfb1dff98c57f00de9bcd71ee43e0bc4_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 7 215A , (por 32 y 34),"
+    },
+    {
+      "full": "Av. Barrera Vazquez Calle 7 N° 215 A,"
+    },
+    {
+      "full": "Calle 7 215A , (por 32 y 34),"
+    },
+    {
+      "full": "Av. Barrera Vazquez Calle 7 N° 215 A,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-renan-rivero-coronado/ginecologo/merida#address-id=5332&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:43:17.041Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__carlos_renan_rivero_coronado.webp"
+}

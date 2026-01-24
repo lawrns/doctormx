@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Jazmín Sánchez González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e7f2fa/e7f2fa2505c7d7861a7d3be3a5f2fc94_220_square.jpg",
+  "about": "Mi nombre es A. Jazmín Sánchez Glez Estudié la carrera de Médico cirujano y partero para posteriormente obtener el título de especialista en Ginecología y Obstetricia por la Universidad de Guadalajara. y Diplomado en Colposcopía y Manejo de la Patología del Tracto Inferior Mi profesión me ha enseñado a tener un alto respeto por la vida y saber que esta es aún más vulnerable cuando apenas comienza. El sano desarrollo de un ser humano comienza cuando propiciamos un acompañamiento sano, informado y respetuoso en el proceso de gestación y que se de continuidad de manera cabal con un plan que se adapte a las necesidades de cada caso particular. Estoy convencida de que el acompañamiento por parte de nosotros como obstetras, desde la decisión de concebir es de suma importancia para el óptimo desarrollo del ser humano. La inauguración de una una vida extrauterina con calidez y amor, un ambiente de asertividad, calma y armonía, donde los vínculos entre los padres y el bebé y quienes estamos a cargo de su seguridad e integridad física, es la mejor opción. Como hija, hermana y madre, estoy consciente de las necesidades afectivas que deben establecerse en un momento tan importante de la vida, el acercamiento de los miembros de la familia al proceso, así como el cuidado y el compromiso humano por parte del equipo ayudan a que el nuevo ser, y quienes lo esperan, perciban el cariño mutuo antes, durante y después del nacimiento, porque no solo nace un bebé, nace una madre, un padre y una familia. En cuanto a mujeres que buscan atención ginecológica, siéntanse con la tranquilidad de que seras atendida con la calidad, calidez y discreción que te mereces. Asi como con la confianza de preguntar tus dudas, y con la certeza de que me interesa tu bienestar por lo que aparte de resolver tu padecimientos trataremos de prevenir las enfermedades propias de la mujer.",
+  "addresses": [
+    {
+      "full": "Avenida La paz 1702 , esquina Venezuela, Col. Americana,"
+    },
+    {
+      "full": "Avenida La paz 1702 , esquina Venezuela, Col. Americana,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $650"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $550"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $550"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jazmin-sanchez-gonzalez-2/ginecologo/guadalajara#address-id=95273&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:21:09.854Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__jazm_n_s_nchez_gonz_lez.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Juan Manuel Marañon Barranco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/171cc3/171cc3a56e96e37caf1a14274402dd28_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Montes Urales 9045, Maravillas,"
+    },
+    {
+      "full": "Av. Montes Urales 9045, Maravillas,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-manuel-maranon-barranco/ginecologo/puebla#address-id=123977&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:25:27.917Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/juan_manuel_mara_on_barranco.webp"
+}

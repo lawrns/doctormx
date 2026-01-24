@@ -1,0 +1,52 @@
+{
+  "name": "Dra. Jamnia Contreras Alcántara",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 233,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0b4d22/0b4d229bf681ff43b393b619283b2e88_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. 18 Sur 5528, Jardines De San Manuel,"
+    },
+    {
+      "full": "Blvd. 18 Sur 5528, Jardines de San Manuel,"
+    },
+    {
+      "full": "Blvd. 18 Sur 5528, Jardines De San Manuel,"
+    },
+    {
+      "full": "Blvd. 18 Sur 5528, Jardines de San Manuel,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,450"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jamnia-contreras-alcantara/ginecologo/puebla#address-id=444577&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:11:49.614Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__jamnia_contreras_alc_ntara.webp"
+}

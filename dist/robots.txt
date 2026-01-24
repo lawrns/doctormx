@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Block admin areas
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /doctor-dashboard/
+
+# Sitemap
+Sitemap: https://doctor.mx/sitemap.xml

@@ -1,0 +1,25 @@
+{
+  "name": "Torres B. Adrian",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 334,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/75056334/75056334-55dc-43f3-809a-1aa7a7d62ccf_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle de la Nieve 203, Playas de Tijuana Sección Playas Coronado, Monumental,"
+    },
+    {
+      "full": "Calle de la Nieve 203, Playas de Tijuana Sección Playas Coronado, Monumental,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/torres-b-adrian/ginecologo/tijuana#address-id=122611&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:05:35.312Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/torres_b__adrian.webp"
+}

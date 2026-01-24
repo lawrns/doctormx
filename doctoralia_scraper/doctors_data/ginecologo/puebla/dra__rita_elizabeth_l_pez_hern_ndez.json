@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Rita Elizabeth López Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 375,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/171cc3/171cc3a56e96e37caf1a14274402dd28_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 12 Norte No 1805 Barrio Del Alto,"
+    },
+    {
+      "full": "Calle 12 Norte No 1805 Barrio Del Alto,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rita-elizabeth-lopez-hernandez/ginecologo/puebla#address-id=148052&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:20:38.976Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__rita_elizabeth_l_pez_hern_ndez.webp"
+}

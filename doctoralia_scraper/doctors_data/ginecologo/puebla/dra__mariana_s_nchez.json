@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Mariana Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 257,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8d5c1a/8d5c1a0f17c4e87571ac940c5b417da0_220_square.jpg",
+  "about": "Hola!! Soy Mariana sánchez, Ginecóloga y Obstetra que ama lo que hace! Soy jalisciense, egresada de la Universidad de Guadalajara, donde me formé como médico general. Realicé mi especialidad en el Hospital Universitario de Puebla, la cual es avalada por la BUAP, y cuento con certificación del Consejo Mexicano de Ginecología y Obstetricia. Ser ginecoobstetra es mi pasión, estoy comprometida en cuidar la salud femenina, como mujer conozco la importancia de brindar calidez, confianza y seguridad a mis pacientes, acompañándolas en las diferentes etapas de la vida, con ética y profesionalismo.",
+  "addresses": [
+    {
+      "full": "7 poniente #705, Consultorio 112, Puebla, Pue, México,"
+    },
+    {
+      "full": "7 poniente #705, Consultorio 112, Puebla, Pue, México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $850"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mariana-sanchez/ginecologo/puebla#address-id=414186&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:11:43.744Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__mariana_s_nchez.webp"
+}

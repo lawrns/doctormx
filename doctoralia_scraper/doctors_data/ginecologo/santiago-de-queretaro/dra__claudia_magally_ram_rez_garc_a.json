@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Claudia Magally Ramírez García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 205,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f40e8a94/f40e8a94-440b-4da9-b197-ed0482eec8fd_small_square.jpg",
+  "about": "Hola soy la Dra. Claudia Magally Ramírez García Me especializo en Ginecologia y obstetricia Cuento con diplomados en Menopausia y climaterio, Ginecología endocrinológica, así como en colposcopia y patología del tracto genital inferior. Me especializo en brindar atención ginecológica y obstétrica de alta calidad, centrada en el bienestar integral de la mujer en cada etapa de su vida. Contamos con tecnología de vanguardia y un enfoque humano que garantiza confianza, seguridad y acompañamiento en todo momento. Desde consultas de rutina, control prenatal y planificación familiar, control de menopausia y climaterio, hasta atención especializada en embarazos de alto riesgo y tratamientos ginecológicos avanzados, estamos comprometidos con tu salud y la de tu bebé. \"CONTIGO DESDE SU PRIMER LATIDO Y EN CADA PASO DE TU VIDA\"",
+  "addresses": [
+    {
+      "full": "Boulevard Bernardo Quintana Arrioja 4060,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/claudia-magally-ramirez-garcia/ginecologo/santiago-de-queretaro#address-id=567127&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:42:30.474Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__claudia_magally_ram_rez_garc_a.webp"
+}

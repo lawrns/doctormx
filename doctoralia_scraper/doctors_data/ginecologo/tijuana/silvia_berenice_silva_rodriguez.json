@@ -1,0 +1,31 @@
+{
+  "name": "Silvia Berenice Silva Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 25,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/385b082f/385b082f-e592-4e25-964e-1067d0fd75d7_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Benito Juárez 984,"
+    },
+    {
+      "full": "Av. Paseo Tijuana 406,"
+    },
+    {
+      "full": "Blvd. Benito Juárez 984,"
+    },
+    {
+      "full": "Av. Paseo Tijuana 406,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/silvia-berenice-silva-rodriguez/ginecologo/rosarito#address-id=171863&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:48:10.877Z",
+  "localPhotoPath": "doctors_data/ginecologo/tijuana/silvia_berenice_silva_rodriguez.webp"
+}

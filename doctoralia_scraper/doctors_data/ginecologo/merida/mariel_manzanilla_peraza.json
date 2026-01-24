@@ -1,0 +1,25 @@
+{
+  "name": "Mariel Manzanilla Peraza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 53,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/b3701c16/b3701c16-d79b-4766-8ecf-6bdf61b83352_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "57 C X 90 Y 94 758, Col. Las Americas, ,"
+    },
+    {
+      "full": "57 C X 90 Y 94 758, Col. Las Americas, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mariel-manzanilla-peraza/ginecologo/merida#address-id=356267&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:51:24.281Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/mariel_manzanilla_peraza.webp"
+}

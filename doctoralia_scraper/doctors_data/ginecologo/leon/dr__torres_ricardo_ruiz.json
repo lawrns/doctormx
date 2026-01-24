@@ -1,0 +1,40 @@
+{
+  "name": "Dr. Torres Ricardo Ruiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4e7df5/4e7df5ca666d59761514c9bab580fd21_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Cerro De Jerez 501,"
+    },
+    {
+      "full": "Av. Cerro Gordo 311,"
+    },
+    {
+      "full": "Calle Cerro De Jerez 501,"
+    },
+    {
+      "full": "Av. Cerro Gordo 311,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/torres-ricardo-ruiz/ginecologo/leon#address-id=42615&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:29:55.793Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__torres_ricardo_ruiz.webp"
+}

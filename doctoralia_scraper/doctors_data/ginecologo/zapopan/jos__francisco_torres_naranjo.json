@@ -1,0 +1,25 @@
+{
+  "name": "José Francisco Torres Naranjo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 60,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/06e0a58c/06e0a58c-50a2-4eb0-a86b-11105e4f8d5c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. México 2481 Col. Ladrón De Guevara,"
+    },
+    {
+      "full": "Av. México 2481 Col. Ladrón De Guevara,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-francisco-torres-naranjo/ginecologo/guadalajara#address-id=148162&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:43:35.056Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/jos__francisco_torres_naranjo.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Sergio Bernal Martinez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 244,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/c97ed796/c97ed796-55c6-4f5c-ae4a-293d57063b88_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C.Hospital 278,"
+    },
+    {
+      "full": "Herrera Y Cairo 2811,"
+    },
+    {
+      "full": "C.Hospital 278,"
+    },
+    {
+      "full": "Herrera Y Cairo 2811,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-bernal-martinez/ginecologo/guadalajara#address-id=172356&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:42:50.780Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/sergio_bernal_martinez.webp"
+}

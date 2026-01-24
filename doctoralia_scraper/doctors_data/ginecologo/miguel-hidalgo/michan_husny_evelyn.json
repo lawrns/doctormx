@@ -1,0 +1,25 @@
+{
+  "name": "Michan Husny Evelyn",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 333,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a9a406/a9a40672d15879a7ac1deff3260888bb_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Eugenio Sue 355 Cons 503 And 504,"
+    },
+    {
+      "full": "Eugenio Sue 355 Cons 503 And 504,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/michan-husny-evelyn/ginecologo/ciudad-de-mexico#address-id=122588&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:45:38.231Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/michan_husny_evelyn.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Martín Carlos Hernández Becerra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/91a847/91a8473b06253de2e011a8359931e21b_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Felipe Angeles 174,"
+    },
+    {
+      "full": "Felipe Angeles 174,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $850"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martin-carlos-hernandez-becerra/ginecologo/santiago-de-queretaro#address-id=6013&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:50:11.159Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__mart_n_carlos_hern_ndez_becerra.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Andrea Sanchez Rojas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 47,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/12747258/12747258-b963-4ebc-a7b7-29c3c14943ce_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Camino A Ranchos,7B,La Concepcion,,"
+    },
+    {
+      "full": "Camino A Ranchos,7B,La Concepcion,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/andrea-sanchez-rojas/ginecologo/puebla#address-id=358472&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:30:26.221Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/andrea_sanchez_rojas.webp"
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Rosa Maria Martinez Magdaleno",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8b9979/8b9979eca94314b3f9191d43c7e7c0d0_220_square.jpg",
+  "about": "Medico especialista en Ginecologia y Obstetricia Sub especilidad en Endoscopia Ginecologica, herramientas actuales como: Colposcopia: estudio del cuello de la matriz a travez de microscopio donde se pueden realizar diagnosticos e incluso tratamientos a base de electrocirugia y aplcacion de laser. Cirugia Laparoscopica Ginecologica: la forma de realizar cirugias es a travez de procedimeintos via laparoscopica corta estancia hospitalaria, minimo dolor y rapida recuperaciòn asi como un excelente impacto estetico Histeroscopia: Estudio del interior de la cavidad del utero con lente telescopico es diagnostico y terapeutico Ultrasonido de 4a dimencion Estudios de perfil biofisico para evaluar salud fetal",
+  "addresses": [
+    {
+      "full": "Torre Medica Campestre II, apolo XI numero 101 consultorio 104,"
+    },
+    {
+      "full": "Manantial 106,"
+    },
+    {
+      "full": "Torre Medica Campestre II, apolo XI numero 101 consultorio 104,"
+    },
+    {
+      "full": "Manantial 106,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora parcial de prolapso uterino",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de la enfermedad inflamatoria pélvica",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora parcial de prolapso uterino",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de la enfermedad inflamatoria pélvica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-maria-martinez-magdaleno/ginecologo/leon#address-id=80534&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:28:32.462Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dra__rosa_maria_martinez_magdaleno.webp"
+}

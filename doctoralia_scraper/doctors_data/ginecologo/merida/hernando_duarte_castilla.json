@@ -1,0 +1,31 @@
+{
+  "name": "Hernando Duarte Castilla",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/35c7da/35c7daf960a51f6277fb50079e4282b4_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "69 X 48 Y 46 435 B,"
+    },
+    {
+      "full": "C. 41 X 34 439,"
+    },
+    {
+      "full": "69 X 48 Y 46 435 B,"
+    },
+    {
+      "full": "C. 41 X 34 439,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hernando-duarte-castilla/ginecologo/merida#address-id=221050&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:44:57.774Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/hernando_duarte_castilla.webp"
+}

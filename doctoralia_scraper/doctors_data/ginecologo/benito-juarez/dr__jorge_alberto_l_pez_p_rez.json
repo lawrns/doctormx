@@ -1,0 +1,89 @@
+{
+  "name": "Dr. Jorge Alberto López Pérez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 113,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8438eb/8438eb8cb0a083a04ded12981918bec1_220_square.jpg",
+  "about": "Hola soy Jorge Alberto López especialista en Ginecología y Obstetricia y con formación en Enfermedades del tracto genital inferior y Colposcopia, experto en VPH asi como en Cirugía de mínima invasión (Laparoscopia e Histeroscocpia). Mi misión es atenderte de forma integral con la más alta calidad, calidez y humanismo. Para mí, es importante que te sientas en confianza y basándonos en ella poder atenderte de la mejor manera. Que tu cita con el ginecólogo no sea un temor, aquí trataremos de que te sientas segura y confiada, explicándote todo paso a paso. Es muy importante reconocer que nosotros como médicos y formadores debemos romper con estereotipos y tabúes para que con ello te otorguemos el mejor cuidado. Médico Cirujano, Universidad Anáhuac graduado con Mención Honorifica. 2010-2016 Ginecología y obstetricia UNAM Hospital de Gineco-Obstetricia No. 4 \"Luis Castelazo Ayala\" 2018-2022 IMSS. Rotación en Piso Pélvico, Hospital San José, Bogotá Colombia. 2021 Patología del tracto genital inferior y Colposcopia Hospital Regional “Lic. Adolfo López Mateo” ISSSTE 2022 Cirugía Mínima Invasión en Ginecología, UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO 2024",
+  "addresses": [
+    {
+      "full": "Circuito Interior Avenida Río Churubusco 318,"
+    },
+    {
+      "full": "Monterrey 70,"
+    },
+    {
+      "full": "Tuxpan 6,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-alberto-lopez-perez/ginecologo/coyoacan",
+  "scrapedAt": "2026-01-22T02:59:16.477Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dr__jorge_alberto_l_pez_p_rez.webp"
+}

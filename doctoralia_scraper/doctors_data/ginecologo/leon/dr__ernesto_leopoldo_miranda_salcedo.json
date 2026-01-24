@@ -1,0 +1,37 @@
+{
+  "name": "Dr. Ernesto Leopoldo Miranda Salcedo",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 15,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/78aa7b/78aa7bd3f41cd2f9c6bb614e5aeef167_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Torres Landa 328-A ,San Miguel,"
+    },
+    {
+      "full": "J.j. Torres Landa 328 A,"
+    },
+    {
+      "full": "Boulevard Torres Landa 328 a, San Miguel, 37390 Leon, Gto., Mexico,"
+    },
+    {
+      "full": "Blvd. Torres Landa 328-A ,San Miguel,"
+    },
+    {
+      "full": "J.j. Torres Landa 328 A,"
+    },
+    {
+      "full": "Boulevard Torres Landa 328 a, San Miguel, 37390 Leon, Gto., Mexico,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ernesto-leopoldo-miranda-salcedo/ginecologo/leon#address-id=230666&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:29:30.570Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__ernesto_leopoldo_miranda_salcedo.webp"
+}

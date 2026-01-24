@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Candelario Miguel Zapata Ávila",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 219,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/458c9f/458c9f2e87b6cf2474e0e950a7430350_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 57 x 52,"
+    },
+    {
+      "full": "Calle 57 x 52,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/candelario-miguel-zapata-avila/ginecologo/merida#address-id=20691&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T01:42:07.081Z",
+  "localPhotoPath": "doctors_data/ginecologo/merida/dr__candelario_miguel_zapata__vila.webp"
+}

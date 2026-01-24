@@ -1,0 +1,50 @@
+{
+  "name": "Dr. Salvador Gutiérrez Jaimes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 274,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/988d29/988d29a40436062cabae86781e9f56f3_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "A. Patriotismo núm. 67, col San Juan,"
+    },
+    {
+      "full": "Avenida Patriotismo 67,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/salvador-gutierrez-jaimes/ginecologo/miguel-hidalgo#address-id=117673&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:02:34.980Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/dr__salvador_guti_rrez_jaimes.webp"
+}

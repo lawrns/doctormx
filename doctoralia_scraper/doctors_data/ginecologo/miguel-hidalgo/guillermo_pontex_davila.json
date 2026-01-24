@@ -1,0 +1,25 @@
+{
+  "name": "Guillermo Pontex Davila",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/982e08/982e08e226ef2766243c6e458486bd67_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Revolucion (Sanatorio San Miguel), 343,"
+    },
+    {
+      "full": "Av. Revolucion (Sanatorio San Miguel), 343,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-pontex-davila/ginecologo/miguel-hidalgo#address-id=77408&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:46:24.054Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/guillermo_pontex_davila.webp"
+}

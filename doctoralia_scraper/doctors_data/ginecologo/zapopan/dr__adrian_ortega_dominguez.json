@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Adrian Ortega Dominguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3d5cfb/3d5cfb4a6b0527a12430ea585230dd22_220_square.jpg",
+  "about": "Soy médico gineco-obstetra con más de 10 años de experiencia en el manejo de pacientes embarazadas y con padecimientos propios de la mujer. Además tengo sub-especialidad en urología ginecologica, esto es, trato los problemas relacionados a incontinencia de orina y prolapsos genitales femeninos. Realizo cirugías tanto abdominales como vaginales para el tratamiento de estas enfermedades. Tengo, así mismo, un post-grado en genética médica, por lo cual también utlizo en mi práctica la medicina personalizada o de precisión, en donde con ayuda de un perfil genético muy completo, podemos detectar el riesgo para padecer 28 enfermedades de las más comunes en la población mundial (cáncer de mama, prostata, pulmón, gástrico, alzheimer, enfermedad coronaria, diabetes, etc.); nos informa ademas sobre el metabolismo individual de nutrientes, con lo cual se puede diseñar una dieta personalizada para bajar de peso, aumentar masa muscular, control de glucosa en pacientes diabeticos, etc. Y lo más importante, este perfil genético también nos da recomendaciones específicas, sobre que medicamentos tienen más riesgo de producir reacciones adversas. Son cerca de 700 farmacos en los cuales, el paciente y su médico pueden identificar el medicamento ideal con menos probabilidad de toxicidad. Integrando la medicina precisión a la ginecología también identificamos el metabolismo de las hormonas femeninas, con el fin de conocer cuales pacientes son candidatas a uso de estrogenos, tanto anticonceptivos, como terapia de reemplazo en pacientes menopausicas, con el fin de reducir el riesgo de cáncer de mama.",
+  "addresses": [
+    {
+      "full": "Victoriano Agueros 2188,"
+    },
+    {
+      "full": "Victoriano Agueros 2188,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adrian-ortega-dominguez/ginecologo/guadalajara#address-id=88684&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:20:49.672Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__adrian_ortega_dominguez.webp"
+}

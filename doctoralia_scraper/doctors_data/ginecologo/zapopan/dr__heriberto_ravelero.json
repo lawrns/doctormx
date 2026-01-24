@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Heriberto Ravelero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1002,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/36be10/36be10f0975615b145f5d193529ae7d0_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Fray Antonio Alcalde 2170, Santa Monica,"
+    },
+    {
+      "full": "Hospital Versalles, Fray Antonio Alcalde 2170, Santa Mónica,"
+    },
+    {
+      "full": "Fray Antonio Alcalde 2170, Santa Monica,"
+    },
+    {
+      "full": "Hospital Versalles, Fray Antonio Alcalde 2170, Santa Mónica,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/heriberto-ravelero/ginecologo-especialista-en-medicina-critica-y-terapia-intensiva/-#address-id=448317&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:32:26.536Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dr__heriberto_ravelero.webp"
+}

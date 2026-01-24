@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Eduardo Anguiano Franco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 130,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/77ff45/77ff4594ff58b9d6a4253ff5d3a102bb_220_square.jpg",
+  "about": "¡Hola! Soy el Dr. Eduardo Anguiano, ginecólogo y obstetra certificado por el COMEGO. Me especializo en infertilidad, embarazo de alto riesgo, control prenatal, desordenes hormonales, sangrado uterino disfuncional, selección de sexo, anticoncepción, miomatosis uterina, histeroscopia, laparoscopia. Puedo ayudarte a cumplir tu sueño de ser mama mediante técnicas de baja y alta complejidad para lograr el embarazo. El bienestar de mi paciente es mi prioridad, por ello para mi es importante acompañarte en cada paso en el proceso, desde el diagnóstico hasta lograr el objetivo. Puedes sentir la tranquilidad de que tu salud estará en manos expertas. ¡Será un gusto atenderte!",
+  "addresses": [
+    {
+      "full": "Blvd Jose María Morelos 5675, San Jose de Piletas,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Endometriosis abdominal y pelvica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-anguiano-franco/ginecologo/leon#address-id=487603&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:26:09.271Z",
+  "localPhotoPath": "doctors_data/ginecologo/leon/dr__eduardo_anguiano_franco.webp"
+}

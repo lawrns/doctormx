@@ -1,0 +1,46 @@
+{
+  "name": "Artemia Hernández Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 410,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/517956/5179562f96bf318f71d7e0ef7b77ee44_220_square.jpg",
+  "about": "Subespecialista en Medicina Materno Fetal: Centro Medico Nacional La Raza, Universidad Nacional Autónoma de México. Especialista en Ginecología y Obstetricia: CMN Manuel Ávila Camacho, Benemérita Universidad Autónoma de Puebla. Medico cirujano y Partero: licenciatura en Medicina, Benemérita Universidad Autónoma de Puebla.",
+  "addresses": [
+    {
+      "full": "Calle 29 C. Sur no. 3503,"
+    },
+    {
+      "full": "Calle 29 C. Sur no. 3503,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/artemia-hernandez-flores/ginecologo/puebla#address-id=327884&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:11:36.607Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/artemia_hern_ndez_flores.webp"
+}

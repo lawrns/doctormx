@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Olivia Manzano Reséndiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 88,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/494aa8/494aa83ba82bde9c7f7e46fa4bf0f733_220_square.jpg",
+  "about": "Soy especialista en Ginecologia y Obstetricia, ademas de hacer cirugia laparoscopica ginecologica y colposcopia para tratar problemas ocasionados por el papiloma, el causante del cancer. Soy profesional y etica en la primera consulta se realiza una historia clinica completa y espero encuentren conmigo la confianza para aclarar todas sus dudas.",
+  "addresses": [
+    {
+      "full": "Santander 2646,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/olivia-manzano-resendiz/ginecologo/guadalajara#address-id=115969&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:10:51.617Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__olivia_manzano_res_ndiz.webp"
+}

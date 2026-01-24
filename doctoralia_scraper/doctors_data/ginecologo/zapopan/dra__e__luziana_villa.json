@@ -1,0 +1,42 @@
+{
+  "name": "Dra. E. Luziana Villa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 559,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/517b47/517b47c040244a3434e531d49ceb3f1c_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tarascos 3426 int 203,"
+    },
+    {
+      "full": "Tarascos 3426 int 203,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $8,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $150"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/e-luziana-villa/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-22T04:27:32.371Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__e__luziana_villa.webp"
+}

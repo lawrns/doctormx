@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Octavio Ortega Venezuela",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 21,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8f8dc4/8f8dc49d8afc38697848e41b70032fb9_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave Hercules 231, Hercules, Queretaro,"
+    },
+    {
+      "full": "Ave Hercules 231, Hercules, Queretaro,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/octavio-ortega-venezuela/ginecologo/santiago-de-queretaro#address-id=106041&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:58:30.174Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dr__octavio_ortega_venezuela.webp"
+}

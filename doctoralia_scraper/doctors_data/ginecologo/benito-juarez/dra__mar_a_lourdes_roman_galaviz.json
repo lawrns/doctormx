@@ -1,0 +1,25 @@
+{
+  "name": "Dra. María Lourdes Roman Galaviz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 124,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f5afdc33/f5afdc33-0332-47bd-8722-a89983d9f5a4_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Sagredo 7 (consult. 110, esq. Rio Mixcoac),"
+    },
+    {
+      "full": "Sagredo 7 (consult. 110, esq. Rio Mixcoac),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-lourdes-roman-galaviz/ginecologo/benito-juarez#address-id=91561&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:22:31.576Z",
+  "localPhotoPath": "doctors_data/ginecologo/benito-juarez/dra__mar_a_lourdes_roman_galaviz.webp"
+}

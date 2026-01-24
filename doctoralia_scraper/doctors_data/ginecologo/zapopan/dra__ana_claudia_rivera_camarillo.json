@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Ana Claudia Rivera Camarillo",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 63,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/96bc20/96bc20e1db086395e2ef10fed6d2be1f_220_square.jpg",
+  "about": "¡Hola! Soy la Dra. Ana Claudia Rivera Camarillo, especialista en ginecología y obstetricia, certificada por la Universidad de Guadalajara y con una subespecialidad en biología de la reproducción humana reconocida por la UNAM. Desde el inicio de mi carrera, mi vocación ha sido cuidar la salud de las mujeres en todas las etapas de su vida. Me dedico a ofrecer atención personalizada y un enfoque integral, creando un espacio donde te sientas cómoda para hablar de tus preocupaciones y necesidades. Ya sea que estés buscando asesoría sobre salud reproductiva, embarazos, anticoncepción o cualquier otra inquietud, estoy aquí para acompañarte y brindarte el apoyo que necesitas. Mi objetivo es ayudarte a tomar decisiones informadas y cuidar de ti de manera integral.",
+  "addresses": [
+    {
+      "full": "Turquesa 3289,"
+    },
+    {
+      "full": "Av. Alvaro Obregon 740,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta de infertilidad",
+      "price": ""
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": ""
+    },
+    {
+      "name": "Infertilidad",
+      "price": ""
+    },
+    {
+      "name": "Tratamientos de Reproducción Asistida e Infertilidad",
+      "price": ""
+    },
+    {
+      "name": "Tratamientos de Reproducción Asistida e Infertilidad",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-claudia-rivera-camarillo/ginecologo/sonora#address-id=508991&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T04:08:22.289Z",
+  "localPhotoPath": "doctors_data/ginecologo/zapopan/dra__ana_claudia_rivera_camarillo.webp"
+}

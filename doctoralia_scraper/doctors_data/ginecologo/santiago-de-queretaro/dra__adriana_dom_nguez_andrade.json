@@ -1,0 +1,34 @@
+{
+  "name": "Dra. Adriana Domínguez Andrade",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 660,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f55e7d1c/f55e7d1c-bd1f-4f65-b495-2de7b6c19fd2_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Privada Ignacio Zaragoza 16 B Centro,"
+    },
+    {
+      "full": "Privada Ignacio Zaragoza 16 B Centro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Oncología",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adriana-dominguez-andrade/ginecologo-oncologo/santiago-de-queretaro#address-id=104143&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T03:53:49.548Z",
+  "localPhotoPath": "doctors_data/ginecologo/santiago-de-queretaro/dra__adriana_dom_nguez_andrade.webp"
+}

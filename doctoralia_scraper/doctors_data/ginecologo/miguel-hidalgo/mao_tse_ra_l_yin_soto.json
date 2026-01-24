@@ -1,0 +1,25 @@
+{
+  "name": "Mao Tse Raúl Yin Soto",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 179,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e61fb5c9/e61fb5c9-eec7-4bcb-8370-bac144cff092_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Escobedo 817Ote,"
+    },
+    {
+      "full": "Escobedo 817Ote,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mao-tse-raul-yin-soto/ginecologo/ciudad-de-mexico#address-id=148096&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T02:49:33.518Z",
+  "localPhotoPath": "doctors_data/ginecologo/miguel-hidalgo/mao_tse_ra_l_yin_soto.webp"
+}

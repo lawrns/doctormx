@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Catalina Gámez Guevara",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/12747258/12747258-b963-4ebc-a7b7-29c3c14943ce_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 12 Pte. 111,"
+    },
+    {
+      "full": "Calle 12 Pte. 111,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/catalina-gamez-guevara/ginecologo/san-andres-cholula#address-id=108333&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-22T00:18:44.218Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__catalina_g_mez_guevara.webp"
+}
