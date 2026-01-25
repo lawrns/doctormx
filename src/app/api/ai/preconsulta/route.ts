@@ -174,8 +174,31 @@ export async function POST(req: NextRequest) {
       });
     }
 
+    // Return user-friendly error messages
+    if (errorMessage.includes('Sin saldo') || errorMessage.includes('Insufficient balance')) {
+      return NextResponse.json(
+        {
+          error: 'service_unavailable',
+          message: 'El servicio de IA no está disponible temporalmente. Intenta más tarde.',
+          technical: errorMessage,
+        },
+        { status: 503 }
+      );
+    }
+
+    if (errorMessage.includes('No hay API key')) {
+      return NextResponse.json(
+        {
+          error: 'configuration_error',
+          message: 'El servicio de IA no está configurado correctamente.',
+          technical: errorMessage,
+        },
+        { status: 503 }
+      );
+    }
+
     return NextResponse.json(
-      { error: 'Error procesando consulta' },
+      { error: 'Error procesando consulta', technical: errorMessage },
       { status: 500 }
     );
   }

@@ -9,16 +9,17 @@
  */
 
 export const AI_CONFIG = {
-  // GLM - Primary AI Provider
+  // GLM - Primary AI Provider (z.ai)
+  // Docs: https://docs.z.ai/guides/overview/quick-start
   glm: {
     apiKey: process.env.GLM_API_KEY || '',
     baseURL: 'https://api.z.ai/api/paas/v4/',
     models: {
-      reasoning: 'glm-4.7',        // For complex medical reasoning
-      costEffective: 'glm-4.5-air', // For triage and general chat
-      vision: 'glm-4.5v',          // For medical image analysis
+      reasoning: 'glm-4.7',        // Latest flagship - complex medical reasoning & agentic coding
+      costEffective: 'glm-4.7',    // Use flagship for quality
+      vision: 'glm-4.6v',          // Multimodal with 128K context - medical image analysis
     },
-    defaultModel: 'glm-4.5-air',   // Default for most operations
+    defaultModel: 'glm-4.7',       // Latest flagship model for all operations
     temperature: 0.3,              // Less creative, more consistent
     maxTokens: 500,                // Concise responses
   },

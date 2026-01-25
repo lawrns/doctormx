@@ -79,7 +79,7 @@ async function getAIClient(): Promise<OpenAI> {
 
 
 /**
- * Chat completion con retry logic
+ * Chat completion con retry logic y fallback automático
  * Uses GLM as primary provider, OpenAI as fallback
  */
 export async function chatCompletion(params: {
@@ -92,15 +92,7 @@ export async function chatCompletion(params: {
   usage: { inputTokens: number; outputTokens: number; cost: number };
   provider: 'glm' | 'openai';
 }> {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const client = await getAIClient() as unknown as any;
-  const provider = getActiveProvider();
   const { messages, systemPrompt, maxTokens, temperature } = params;
-
-  // Select model based on provider
-  const model = provider === 'glm' ? AI_CONFIG.glm.defaultModel : AI_CONFIG.openai.model;
-  const configuredMaxTokens = provider === 'glm' ? AI_CONFIG.glm.maxTokens : AI_CONFIG.openai.maxTokens;
-  const configuredTemp = provider === 'glm' ? AI_CONFIG.glm.temperature : AI_CONFIG.openai.temperature;
 
   const apiMessages = [
     { role: 'system', content: systemPrompt },
@@ -110,53 +102,109 @@ export async function chatCompletion(params: {
     })),
   ];
 
-  try {
-    const completion = await client.chat.completions.create({
-      model,
-      messages: apiMessages,
-      max_tokens: maxTokens || configuredMaxTokens,
-      temperature: temperature ?? configuredTemp,
-    });
+  // Try GLM first if configured
+  const primaryProvider = getActiveProvider();
+  const providers: Array<'glm' | 'openai'> = primaryProvider === 'glm' && AI_CONFIG.glm.apiKey
+    ? ['glm', 'openai']
+    : ['openai'];
 
-    const usage = {
-      inputTokens: completion.usage?.prompt_tokens || 0,
-      outputTokens: completion.usage?.completion_tokens || 0,
-      cost: 0,
-    };
+  let lastError: unknown = null;
 
-    // Calculate cost based on provider
-    if (provider === 'glm') {
-      usage.cost =
-        (usage.inputTokens / 1_000_000) * AI_CONFIG.costs.glmInputPer1M +
-        (usage.outputTokens / 1_000_000) * AI_CONFIG.costs.glmOutputPer1M;
-    } else {
-      usage.cost =
-        (usage.inputTokens / 1_000_000) * AI_CONFIG.costs.gpt4oMiniInputPer1M +
-        (usage.outputTokens / 1_000_000) * AI_CONFIG.costs.gpt4oMiniOutputPer1M;
+  for (const provider of providers) {
+    // Skip if no API key for this provider
+    if (provider === 'glm' && !AI_CONFIG.glm.apiKey) continue;
+    if (provider === 'openai' && !AI_CONFIG.openai.apiKey) continue;
+
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const client = provider === 'glm' ? await getGLMClient() : await getOpenAIClient() as unknown as any;
+      const model = provider === 'glm' ? AI_CONFIG.glm.defaultModel : AI_CONFIG.openai.model;
+      const configuredMaxTokens = provider === 'glm' ? AI_CONFIG.glm.maxTokens : AI_CONFIG.openai.maxTokens;
+      const configuredTemp = provider === 'glm' ? AI_CONFIG.glm.temperature : AI_CONFIG.openai.temperature;
+
+      console.log(`[AI] Intentando con ${provider}...`);
+
+      const completion = await client.chat.completions.create({
+        model,
+        messages: apiMessages,
+        max_tokens: maxTokens || configuredMaxTokens,
+        temperature: temperature ?? configuredTemp,
+      });
+
+      const usage = {
+        inputTokens: completion.usage?.prompt_tokens || 0,
+        outputTokens: completion.usage?.completion_tokens || 0,
+        cost: 0,
+      };
+
+      // Calculate cost based on provider
+      if (provider === 'glm') {
+        usage.cost =
+          (usage.inputTokens / 1_000_000) * AI_CONFIG.costs.glmInputPer1M +
+          (usage.outputTokens / 1_000_000) * AI_CONFIG.costs.glmOutputPer1M;
+      } else {
+        usage.cost =
+          (usage.inputTokens / 1_000_000) * AI_CONFIG.costs.gpt4oMiniInputPer1M +
+          (usage.outputTokens / 1_000_000) * AI_CONFIG.costs.gpt4oMiniOutputPer1M;
+      }
+
+      console.log(`[AI] Éxito con ${provider}`);
+
+      return {
+        response: completion.choices[0]?.message?.content || '',
+        usage,
+        provider,
+      };
+    } catch (error: unknown) {
+      console.error(`[AI] Error con ${provider}:`, error);
+      lastError = error;
+
+      // Check for specific errors
+      const status = error && typeof error === 'object' && 'status' in error ? error.status : null;
+      const errorMessage = error && typeof error === 'object' && 'message' in error && typeof error.message === 'string'
+        ? error.message
+        : '';
+
+      // Check for insufficient balance (GLM specific)
+      if (status === 429 && errorMessage.includes('Insufficient balance')) {
+        console.warn(`[AI] ${provider} sin saldo - intentando fallback...`);
+        continue; // Try next provider
+      }
+
+      // Check for rate limit
+      if (status === 429) {
+        console.warn(`[AI] ${provider} rate limit - intentando fallback...`);
+        continue; // Try next provider
+      }
+
+      // Check for auth error
+      if (status === 401) {
+        console.warn(`[AI] ${provider} API key inválida - intentando fallback...`);
+        continue; // Try next provider
+      }
+
+      // For other errors, continue to fallback
+      continue;
     }
-
-    return {
-      response: completion.choices[0]?.message?.content || '',
-      usage,
-      provider,
-    };
-  } catch (error: unknown) {
-    console.error('Error en chat completion:', error);
-
-    // Retry logic para errores de rate limit
-    if (error && typeof error === 'object' && 'status' in error && error.status === 429) {
-      throw new Error('Rate limit excedido. Intenta en unos segundos.');
-    }
-
-    if (error && typeof error === 'object' && 'status' in error && error.status === 401) {
-      throw new Error('API key inválida. Verifica configuración.');
-    }
-
-    const message = error && typeof error === 'object' && 'message' in error && typeof error.message === 'string'
-      ? error.message
-      : 'Desconocido';
-    throw new Error(`Error de IA: ${message}`);
   }
+
+  // All providers failed
+  console.error('[AI] Todos los proveedores fallaron');
+
+  // Provide helpful error message
+  if (!AI_CONFIG.glm.apiKey && !AI_CONFIG.openai.apiKey) {
+    throw new Error('No hay API key configurada. Configura GLM_API_KEY o OPENAI_API_KEY.');
+  }
+
+  const errorMessage = lastError && typeof lastError === 'object' && 'message' in lastError && typeof lastError.message === 'string'
+    ? lastError.message
+    : 'Error desconocido';
+
+  if (errorMessage.includes('Insufficient balance')) {
+    throw new Error('Sin saldo en GLM. Recarga tu cuenta en z.ai o configura OPENAI_API_KEY como fallback.');
+  }
+
+  throw new Error(`Error de IA: ${errorMessage}`);
 }
 
 /**
@@ -217,40 +265,57 @@ export async function structuredAnalysis<T>(params: {
   userPrompt: string;
   schema?: string; // Descripción del schema esperado
 }): Promise<T> {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const client = await getAIClient() as unknown as any;
-  const provider = getActiveProvider();
   const { systemPrompt, userPrompt, schema } = params;
 
-  // Select model based on provider
-  const model = provider === 'glm' ? AI_CONFIG.glm.defaultModel : AI_CONFIG.openai.model;
+  let systemContent = systemPrompt;
+  if (schema) {
+    systemContent += `\n\nRespuesta DEBE ser JSON válido con este formato:\n${schema}`;
+  }
 
   const messages = [
-    { role: 'system', content: systemPrompt },
+    { role: 'system', content: systemContent },
     { role: 'user', content: userPrompt },
   ];
 
-  if (schema) {
-    messages[0].content += `\n\nRespuesta DEBE ser JSON válido con este formato:\n${schema}`;
+  // Try GLM first if configured
+  const primaryProvider = getActiveProvider();
+  const providers: Array<'glm' | 'openai'> = primaryProvider === 'glm' && AI_CONFIG.glm.apiKey
+    ? ['glm', 'openai']
+    : ['openai'];
+
+  let lastError: unknown = null;
+
+  for (const provider of providers) {
+    // Skip if no API key for this provider
+    if (provider === 'glm' && !AI_CONFIG.glm.apiKey) continue;
+    if (provider === 'openai' && !AI_CONFIG.openai.apiKey) continue;
+
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const client = provider === 'glm' ? await getGLMClient() : await getOpenAIClient() as unknown as any;
+      const model = provider === 'glm' ? AI_CONFIG.glm.defaultModel : AI_CONFIG.openai.model;
+
+      const completion = await client.chat.completions.create({
+        model,
+        messages,
+        response_format: { type: 'json_object' }, // Fuerza JSON
+        temperature: 0.2, // Más determinístico para análisis
+      });
+
+      const responseText = completion.choices[0]?.message?.content || '{}';
+      return JSON.parse(responseText) as T;
+    } catch (error: unknown) {
+      console.error(`[AI] Error análisis con ${provider}:`, error);
+      lastError = error;
+      continue; // Try next provider
+    }
   }
 
-  try {
-    const completion = await client.chat.completions.create({
-      model,
-      messages,
-      response_format: { type: 'json_object' }, // Fuerza JSON
-      temperature: 0.2, // Más determinístico para análisis
-    });
-
-    const responseText = completion.choices[0]?.message?.content || '{}';
-    return JSON.parse(responseText) as T;
-  } catch (error: unknown) {
-    console.error('Error en análisis estructurado:', error);
-    const message = error && typeof error === 'object' && 'message' in error && typeof error.message === 'string'
-      ? error.message
-      : 'Desconocido';
-    throw new Error(`Error de análisis: ${message}`);
-  }
+  // All providers failed
+  const errorMessage = lastError && typeof lastError === 'object' && 'message' in lastError && typeof lastError.message === 'string'
+    ? lastError.message
+    : 'Desconocido';
+  throw new Error(`Error de análisis: ${errorMessage}`);
 }
 
 /**
