@@ -15,11 +15,11 @@ export const AI_CONFIG = {
     apiKey: process.env.GLM_API_KEY || '',
     baseURL: 'https://api.z.ai/api/coding/paas/v4/', // GLM Coding Plan endpoint
     models: {
-      reasoning: 'glm-4.7',        // Latest flagship - complex medical reasoning & agentic coding
-      costEffective: 'glm-4.7',    // Use flagship for quality
+      reasoning: 'glm-4.7',        // Latest flagship - complex reasoning (returns reasoning_content only)
+      chat: 'glm-4.5-air',         // Fast chat model - returns proper content field
       vision: 'glm-4.6v',          // Multimodal with 128K context - medical image analysis
     },
-    defaultModel: 'glm-4.7',       // Latest flagship model for all operations
+    defaultModel: 'glm-4.5-air',   // Use air model for chat - returns clean responses
     temperature: 0.3,              // Less creative, more consistent
     maxTokens: 500,                // Concise responses
   },
