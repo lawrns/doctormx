@@ -10,7 +10,13 @@ import { Badge } from '@/components/Badge'
 
 export default function SubscriptionPage() {
     const router = useRouter()
-    const supabase = createClient()
+    const [supabase] = useState(() => {
+        try {
+            return createClient()
+        } catch {
+            return null
+        }
+    })
 
     const [subscription, setSubscription] = useState<{
         hasSubscription?: boolean
@@ -35,10 +41,16 @@ export default function SubscriptionPage() {
     const [processing, setProcessing] = useState(false)
 
     useEffect(() => {
+        if (!supabase) {
+            setLoading(false)
+            return
+        }
         loadSubscription()
-    }, [])
+    }, [supabase])
 
     async function loadSubscription() {
+        if (!supabase) return
+
         try {
             const { data: { user } } = await supabase.auth.getUser()
             if (!user) {
@@ -100,6 +112,11 @@ export default function SubscriptionPage() {
         setError(null)
 
         try {
+            if (!supabase) {
+                router.push('/auth/login')
+                return
+            }
+
             const { data: { user } } = await supabase.auth.getUser()
             if (!user) {
                 router.push('/auth/login')

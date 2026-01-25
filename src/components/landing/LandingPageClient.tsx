@@ -14,16 +14,17 @@ import { Stethoscope, Search, UserPlus, Sparkles } from 'lucide-react'
 export function LandingPageClient() {
   return (
     <main className="min-h-screen bg-[#fdfaf6] overflow-x-hidden">
-      {/* Announcement Bar - Doctronic style */}
+      {/* Announcement Bar - EMPHASIZE FREE */}
       <motion.div
         initial={{ y: -40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
-        className="bg-gradient-to-r from-primary-600 to-primary-700 text-white py-2.5 px-4 text-center text-sm font-medium"
+        className="bg-gradient-to-r from-emerald-500 to-green-600 text-white py-3 px-4 text-center"
       >
-        <span className="inline-flex items-center gap-2">
-          <Sparkles className="w-4 h-4" />
-          Atención médica 24/7 • Doctores certificados en México • Consulta gratis
+        <span className="inline-flex items-center gap-2 font-bold text-base">
+          <Sparkles className="w-5 h-5" fill="currentColor" />
+          5 CONSULTAS MÉDICAS GRATIS PARA TODOS LOS MEXICANOS
+          <Sparkles className="w-5 h-5" fill="currentColor" />
         </span>
       </motion.div>
 
@@ -51,8 +52,8 @@ export function LandingPageClient() {
 
             <nav className="hidden lg:flex items-center gap-1">
               {[
+                { href: '/app/second-opinion', label: '5 Consultas GRATIS', icon: Sparkles },
                 { href: '/doctors', label: 'Buscar doctores', icon: Search },
-                { href: '/app/second-opinion', label: 'Consulta IA', icon: Sparkles },
                 { href: '/for-doctors', label: 'Para doctores', icon: UserPlus },
               ].map((link) => (
                 <Link key={link.href} href={link.href}>
@@ -77,8 +78,8 @@ export function LandingPageClient() {
               </Link>
               <Link href="/auth/register">
                 <motion.div whileHover={{ scale: 1.04, y: -1 }} whileTap={{ scale: 0.98 }}>
-                  <Button className="bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-sm font-semibold shadow-lg shadow-primary-500/25 px-6 py-2.5">
-                    Registrarse gratis
+                  <Button className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-sm font-bold shadow-lg shadow-emerald-500/30 px-6 py-2.5">
+                    Empezar GRATIS →
                   </Button>
                 </motion.div>
               </Link>

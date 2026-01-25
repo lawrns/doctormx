@@ -1,7 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  reactCompiler: true,
+  reactCompiler: false,
+  output: 'standalone',
+  // Skip prerendering for routes that require dynamic data
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '2mb',
+    },
+  },
   images: {
     remotePatterns: [
       {

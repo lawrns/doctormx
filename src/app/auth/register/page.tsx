@@ -94,7 +94,13 @@ function RegisterContent() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const router = useRouter()
-  const supabase = createClient()
+  const [supabase] = useState(() => {
+    try {
+      return createClient()
+    } catch {
+      return null
+    }
+  })
 
   // Form state
   const [step1Data, setStep1Data] = useState<Step1Data>({ accountType: 'patient' })
@@ -174,6 +180,12 @@ function RegisterContent() {
 
     setLoading(true)
     setError('')
+
+    if (!supabase) {
+      setError('Authentication not available')
+      setLoading(false)
+      return
+    }
 
     try {
       const { data, error: signUpError } = await supabase.auth.signUp({

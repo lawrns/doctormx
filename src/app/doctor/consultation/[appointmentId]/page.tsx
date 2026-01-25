@@ -22,9 +22,20 @@ export default function DoctorConsultationPage({ params }: DoctorConsultationPag
     const [patientProfile, setPatientProfile] = useState<PatientProfile | null>(null)
     const [patientHistory, setPatientHistory] = useState<PatientMedicalHistory | null>(null)
     const [loading, setLoading] = useState(true)
-    const supabase = createClient()
+    const [supabase] = useState(() => {
+        try {
+            return createClient()
+        } catch {
+            return null
+        }
+    })
 
     useEffect(() => {
+        if (!supabase) {
+            setLoading(false)
+            return
+        }
+
         const init = async () => {
             const { data: apt } = await supabase
                 .from('appointments')

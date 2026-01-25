@@ -226,12 +226,20 @@ function TierComparison() {
 }
 
 export default function PremiumMarketplacePage() {
-  const supabase = createClient()
+  const [supabase] = useState(() => {
+    try {
+      return createClient()
+    } catch {
+      return null
+    }
+  })
   const [tier, setTier] = useState<SubscriptionTier>('starter')
   const [loading, setLoading] = useState(false)
   const [purchasingFeature, setPurchasingFeature] = useState<PremiumFeature | null>(null)
 
   useEffect(() => {
+    if (!supabase) return
+
     const fetchTier = async () => {
       const { data: { user } } = await supabase.auth.getUser()
       if (user) {

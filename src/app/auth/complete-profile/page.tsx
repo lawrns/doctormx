@@ -12,12 +12,24 @@ export default function CompleteProfilePage() {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState<string | null>(null)
     const router = useRouter()
-    const supabase = createClient()
+    const [supabase] = useState(() => {
+        try {
+            return createClient()
+        } catch {
+            return null
+        }
+    })
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         setLoading(true)
         setError(null)
+
+        if (!supabase) {
+            setError('Authentication not available')
+            setLoading(false)
+            return
+        }
 
         try {
             const { data: { user } } = await supabase.auth.getUser()

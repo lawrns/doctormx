@@ -2,9 +2,13 @@
 import * as Sentry from "@sentry/react";
 import { consoleLoggingIntegration } from "@sentry/react";
 
+// Get environment from process.env (Next.js standard)
+const environment = process.env.NODE_ENV || "production";
+const isDev = environment === "development";
+
 Sentry.init({
   dsn: "https://c7f3941c8e0b4b3717aa1b313e3da0d3@o4509302601220096.ingest.us.sentry.io/4510767422570496",
-  environment: import.meta.env.MODE || "production",
+  environment,
 
   // Enable logging
   enableLogs: true,
@@ -23,7 +27,7 @@ Sentry.init({
   ],
 
   // Set traces sample rate
-  tracesSampleRate: import.meta.env.MODE === "production" ? 0.1 : 1.0,
+  tracesSampleRate: isDev ? 1.0 : 0.1,
 
   // Session replay sampling
   replaysSessionSampleRate: 0.01, // 1% of normal sessions
@@ -32,7 +36,7 @@ Sentry.init({
   // Filter sensitive data and events
   beforeSend(event, hint) {
     // Don't send events in development
-    if (import.meta.env.MODE === "development") {
+    if (isDev) {
       return null;
     }
 
@@ -58,7 +62,7 @@ Sentry.init({
   // Before sending transaction (performance)
   beforeSendTransaction(event) {
     // Don't send transactions in development
-    if (import.meta.env.MODE === "development") {
+    if (isDev) {
       return null;
     }
     return event;
@@ -74,10 +78,10 @@ Sentry.init({
   },
 
   // Release version
-  release: import.meta.env.VITE_APP_VERSION || '0.1.0',
+  release: process.env.npm_package_version || '0.1.0',
 
   // Debug mode (development only)
-  debug: import.meta.env.MODE === "development",
+  debug: isDev,
 });
 
 // Export logger for structured logging

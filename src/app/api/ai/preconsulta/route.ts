@@ -25,9 +25,10 @@ export async function POST(req: NextRequest) {
   try {
     const { data: { user } } = await supabase.auth.getUser();
 
-    const { sessionId, messages } = await req.json() as {
+    const { sessionId, messages, anonymous } = await req.json() as {
       sessionId: string;
       messages: PreConsultaMessage[];
+      anonymous?: boolean;
     };
 
     if (!sessionId || !messages || messages.length === 0) {
@@ -35,6 +36,24 @@ export async function POST(req: NextRequest) {
         { error: 'Datos inválidos' },
         { status: 400 }
       );
+    }
+
+    // For anonymous users, check quota before proceeding
+    if (anonymous && !user) {
+      const { canAnonymousConsult, useAnonymousConsultation } = await import('@/lib/anonymous-quota')
+      const quotaCheck = await canAnonymousConsult(sessionId)
+
+      if (!quotaCheck.canConsult) {
+        return NextResponse.json(
+          {
+            error: 'quota_exceeded',
+            message: quotaCheck.message,
+            quota: quotaCheck.quota,
+            requireAuth: true,
+          },
+          { status: 403 }
+        )
+      }
     }
 
     // Chat completion
@@ -101,12 +120,18 @@ export async function POST(req: NextRequest) {
       });
     }
 
+    // Use anonymous quota if applicable
+    if (anonymous && !user && isComplete) {
+      const { useAnonymousConsultation } = await import('@/lib/anonymous-quota')
+      await useAnonymousConsultation(sessionId)
+    }
+
     // Auditoría
     await auditAIOperation({
       operation: 'pre-consulta',
       userId: user?.id || 'anonymous',
       userType: 'patient',
-      input: { sessionId, messageCount: messages.length },
+      input: { sessionId, messageCount: messages.length, anonymous },
       output: { response, summary, referralCount: referrals.length },
       tokens: usage.inputTokens + usage.outputTokens,
       cost: usage.cost,
@@ -114,11 +139,20 @@ export async function POST(req: NextRequest) {
       status: 'success',
     });
 
+    // Get updated quota for anonymous users
+    let quota = null
+    if (anonymous && !user) {
+      const { getAnonymousQuota } = await import('@/lib/anonymous-quota')
+      quota = await getAnonymousQuota(sessionId)
+    }
+
     return NextResponse.json({
       response,
       completed: isComplete,
       summary: isComplete ? summary : null,
-      referrals: referrals.slice(0, 3)
+      referrals: referrals.slice(0, 3),
+      anonymous,
+      quota,
     });
   } catch (error: unknown) {
     console.error('[PRE-CONSULTA ERROR]:', error);

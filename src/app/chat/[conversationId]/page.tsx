@@ -19,9 +19,17 @@ export default function ChatPage({ params }: ChatPageProps) {
   const [userId, setUserId] = useState<string>('')
   const [userRole, setUserRole] = useState<'patient' | 'doctor'>('patient')
   const messagesEndRef = useRef<HTMLDivElement>(null)
-  const supabase = createClient()
+  const [supabase] = useState(() => {
+    try {
+      return createClient()
+    } catch {
+      return null
+    }
+  })
 
   useEffect(() => {
+    if (!supabase) return
+
     const getUser = async () => {
       const { data: { user } } = await supabase.auth.getUser()
       if (user) {
@@ -35,10 +43,10 @@ export default function ChatPage({ params }: ChatPageProps) {
       }
     }
     getUser()
-  }, [])
+  }, [supabase])
 
   const fetchConversation = useCallback(async () => {
-    if (!conversationId) return
+    if (!conversationId || !supabase) return
     try {
       const { data } = await supabase
         .from('chat_conversations')
@@ -77,7 +85,7 @@ export default function ChatPage({ params }: ChatPageProps) {
         .order('created_at', { ascending: true })
 
       if (data) {
-        setMessages(data.map((msg) => ({
+        setMessages(data.map((msg: any) => ({
           ...msg,
           sender_name: msg.sender?.full_name,
           sender_photo_url: msg.sender?.photo_url,
@@ -129,7 +137,7 @@ export default function ChatPage({ params }: ChatPageProps) {
           table: 'chat_messages',
           filter: `conversation_id=eq.${conversationId}`,
         },
-        async (payload) => {
+        async (payload: any) => {
           const { data } = await supabase
             .from('chat_messages')
             .select(`

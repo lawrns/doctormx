@@ -111,7 +111,13 @@ function LoginContent() {
   const [passwordStrength, setPasswordStrength] = useState({ strength: 0, label: '', color: '' })
   const router = useRouter()
   const searchParams = useSearchParams()
-  const supabase = createClient()
+  const [supabase] = useState(() => {
+    try {
+      return createClient()
+    } catch {
+      return null
+    }
+  })
 
   const form = useForm<LoginFormValues>({
     resolver: zodResolver(loginSchema),
@@ -130,6 +136,12 @@ function LoginContent() {
 
   const onSubmit = async (data: LoginFormValues) => {
     setIsLoading(true)
+
+    if (!supabase) {
+      form.setError('root', { message: 'Authentication not available' })
+      setIsLoading(false)
+      return
+    }
 
     try {
       const { error: authError } = await supabase.auth.signInWithPassword({

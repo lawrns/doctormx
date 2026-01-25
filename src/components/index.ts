@@ -54,3 +54,9 @@ export { AnalyticsFilters, ExportButton } from './AnalyticsFilters'
 
 // Onboarding Components
 export { OnboardingChecklist, WelcomeBanner } from './OnboardingChecklist'
+
+// FREE Healthcare Components
+export { QuotaCounter, QuotaBanner } from './QuotaCounter'
+export { WhatsAppShare, WhatsAppShareCard, FloatingWhatsAppShare } from './WhatsAppShare'
+export { EmailCapture, EmailCaptureModal } from './EmailCapture'
+export { PremiumUpgradeModal, QuotaExceededBanner } from './PremiumUpgradeModal'
