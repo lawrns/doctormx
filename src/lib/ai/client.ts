@@ -150,8 +150,13 @@ export async function chatCompletion(params: {
 
       console.log(`[AI] Éxito con ${provider}`);
 
+      // GLM-4.7 returns reasoning_content instead of content
+      const message = completion.choices[0]?.message;
+      const responseContent = message?.content ||
+        (message as { reasoning_content?: string })?.reasoning_content || '';
+
       return {
-        response: completion.choices[0]?.message?.content || '',
+        response: responseContent,
         usage,
         provider,
       };
@@ -302,7 +307,10 @@ export async function structuredAnalysis<T>(params: {
         temperature: 0.2, // Más determinístico para análisis
       });
 
-      const responseText = completion.choices[0]?.message?.content || '{}';
+      // GLM-4.7 returns reasoning_content instead of content
+      const message = completion.choices[0]?.message;
+      const responseText = message?.content ||
+        (message as { reasoning_content?: string })?.reasoning_content || '{}';
       return JSON.parse(responseText) as T;
     } catch (error: unknown) {
       console.error(`[AI] Error análisis con ${provider}:`, error);
