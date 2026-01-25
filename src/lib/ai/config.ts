@@ -13,7 +13,7 @@ export const AI_CONFIG = {
   // Docs: https://docs.z.ai/guides/overview/quick-start
   glm: {
     apiKey: process.env.GLM_API_KEY || '',
-    baseURL: 'https://api.z.ai/api/paas/v4/',
+    baseURL: 'https://api.z.ai/api/coding/paas/v4/', // GLM Coding Plan endpoint
     models: {
       reasoning: 'glm-4.7',        // Latest flagship - complex medical reasoning & agentic coding
       costEffective: 'glm-4.7',    // Use flagship for quality
