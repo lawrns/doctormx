@@ -19,7 +19,7 @@ export function LandingPageClient() {
         initial={{ y: -40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
-        className="bg-gradient-to-r from-emerald-500 to-green-600 text-white py-3 px-4 text-center"
+        className="bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 px-4 text-center"
       >
         <span className="inline-flex items-center gap-2 font-bold text-base">
           <Sparkles className="w-5 h-5" fill="currentColor" />
@@ -78,7 +78,7 @@ export function LandingPageClient() {
               </Link>
               <Link href="/auth/register">
                 <motion.div whileHover={{ scale: 1.04, y: -1 }} whileTap={{ scale: 0.98 }}>
-                  <Button className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-sm font-bold shadow-lg shadow-emerald-500/30 px-6 py-2.5">
+                  <Button className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-sm font-bold shadow-lg shadow-blue-500/30 px-6 py-2.5">
                     Empezar GRATIS →
                   </Button>
                 </motion.div>

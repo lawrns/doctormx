@@ -69,7 +69,7 @@ export function PremiumUpgradeModal({ isOpen, onClose, consultationCount }: Prem
         className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
       >
         {/* Header */}
-        <div className="bg-gradient-to-r from-emerald-500 to-green-600 p-8 text-center relative overflow-hidden">
+        <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-8 text-center relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             {[...Array(20)].map((_, i) => (
               <Sparkles
@@ -90,7 +90,7 @@ export function PremiumUpgradeModal({ isOpen, onClose, consultationCount }: Prem
             <h2 className="text-3xl font-bold text-white mb-2">
               ¡Has usado tus 5 consultas gratis!
             </h2>
-            <p className="text-emerald-50 text-lg">
+            <p className="text-blue-50 text-lg">
               Actualiza a Premium para continuar accediendo a salud ilimitada
             </p>
           </div>
@@ -122,7 +122,7 @@ export function PremiumUpgradeModal({ isOpen, onClose, consultationCount }: Prem
                 },
               ].map((benefit, i) => (
                 <div key={i} className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl">
-                  <benefit.icon className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" />
+                  <benefit.icon className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">{benefit.title}</h4>
                     <p className="text-sm text-gray-600">{benefit.description}</p>
@@ -139,13 +139,13 @@ export function PremiumUpgradeModal({ isOpen, onClose, consultationCount }: Prem
                 key={i}
                 className={`relative rounded-2xl border-2 p-6 ${
                   plan.popular
-                    ? 'border-emerald-500 shadow-xl shadow-emerald-500/20'
+                    ? 'border-blue-500 shadow-xl shadow-blue-500/20'
                     : 'border-gray-200'
                 } ${plan.disabled ? 'opacity-60' : ''}`}
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-emerald-500 to-green-600 text-white text-xs font-bold px-4 py-1 rounded-full">
+                    <span className="bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs font-bold px-4 py-1 rounded-full">
                       MÁS POPULAR
                     </span>
                   </div>
@@ -162,7 +162,7 @@ export function PremiumUpgradeModal({ isOpen, onClose, consultationCount }: Prem
                 <ul className="space-y-3 mb-6">
                   {plan.features.map((feature, fi) => (
                     <li key={fi} className="flex items-center gap-2 text-sm">
-                      <Check className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+                      <Check className="w-4 h-4 text-blue-500 flex-shrink-0" />
                       <span className="text-gray-700">{feature}</span>
                     </li>
                   ))}
@@ -178,7 +178,7 @@ export function PremiumUpgradeModal({ isOpen, onClose, consultationCount }: Prem
                       plan.disabled
                         ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
                         : plan.color === 'emerald'
-                        ? 'bg-gradient-to-r from-emerald-500 to-green-600 text-white hover:from-emerald-600 hover:to-green-700 shadow-lg'
+                        ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 shadow-lg'
                         : plan.color === 'blue'
                         ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white hover:from-blue-600 hover:to-indigo-700'
                         : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
@@ -230,7 +230,7 @@ export function QuotaExceededBanner({ onUpgrade }: QuotaExceededBannerProps) {
         </div>
         <button
           onClick={onUpgrade}
-          className="px-6 py-3 bg-gradient-to-r from-emerald-500 to-green-600 text-white font-semibold rounded-xl hover:from-emerald-600 hover:to-green-700 shadow-lg transition-all flex items-center gap-2"
+          className="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-blue-700 shadow-lg transition-all flex items-center gap-2"
         >
           <Crown className="w-4 h-4" />
           Actualizar a Premium

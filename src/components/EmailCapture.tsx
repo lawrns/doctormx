@@ -255,7 +255,7 @@ export function EmailCaptureModal({ isOpen, onClose, consultationNumber }: Email
             <p className="text-gray-600 mb-6">Tu historial está seguro</p>
             <button
               onClick={onClose}
-              className="px-6 py-3 bg-gradient-to-r from-emerald-500 to-green-600 text-white font-semibold rounded-xl hover:from-emerald-600 hover:to-green-700 transition-all"
+              className="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all"
             >
               Continuar
             </button>

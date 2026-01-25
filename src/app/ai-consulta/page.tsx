@@ -126,12 +126,12 @@ export default function AnonymousConsultaPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-emerald-50 via-white to-green-50">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-blue-50">
       {/* Header */}
-      <header className="bg-white/80 backdrop-blur-md border-b border-emerald-100 sticky top-0 z-50">
+      <header className="bg-white/80 backdrop-blur-md border-b border-blue-100 sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
               <MessageCircle className="w-5 h-5 text-white" />
             </div>
             <div>
@@ -147,7 +147,7 @@ export default function AnonymousConsultaPage() {
                   <div
                     key={i}
                     className={`w-2 h-2 rounded-full ${
-                      i < quota.used ? 'bg-emerald-500' : 'bg-gray-200'
+                      i < quota.used ? 'bg-blue-500' : 'bg-gray-200'
                     }`}
                   />
                 ))}
@@ -163,14 +163,14 @@ export default function AnonymousConsultaPage() {
 
         {/* Chat Interface */}
         <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
-          <div className="bg-gradient-to-r from-emerald-500 to-green-600 px-6 py-4">
+          <div className="bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-4">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
                 <Sparkles className="w-6 h-6 text-white" />
               </div>
               <div className="text-white">
                 <h2 className="font-bold">Dr. Simeon</h2>
-                <p className="text-sm text-emerald-50">Asistente médico IA • En línea</p>
+                <p className="text-sm text-blue-50">Asistente médico IA • En línea</p>
               </div>
             </div>
           </div>
@@ -187,7 +187,7 @@ export default function AnonymousConsultaPage() {
                 <div
                   className={`max-w-[80%] rounded-2xl px-4 py-3 ${
                     msg.role === 'user'
-                      ? 'bg-gradient-to-r from-emerald-500 to-green-600 text-white'
+                      ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white'
                       : 'bg-gray-100 text-gray-800'
                   }`}
                 >
@@ -221,13 +221,13 @@ export default function AnonymousConsultaPage() {
                   onChange={(e) => setInput(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
                   placeholder="Describe tus síntomas..."
-                  className="flex-1 px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  className="flex-1 px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   disabled={isLoading}
                 />
                 <button
                   onClick={sendMessage}
                   disabled={isLoading || !input.trim()}
-                  className="px-6 py-3 bg-gradient-to-r from-emerald-500 to-green-600 text-white font-semibold rounded-xl hover:from-emerald-600 hover:to-green-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                  className="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                 >
                   Enviar
                 </button>
@@ -246,13 +246,13 @@ export default function AnonymousConsultaPage() {
             {/* Summary Card */}
             <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
               <div className="flex items-center gap-2 mb-4">
-                <Check className="w-5 h-5 text-emerald-500" />
+                <Check className="w-5 h-5 text-blue-500" />
                 <h3 className="font-bold text-gray-900">Evaluación Completada</h3>
               </div>
               <div className="space-y-3">
                 <div className="flex justify-between">
                   <span className="text-gray-600">Nivel de urgencia:</span>
-                  <span className="font-semibold text-emerald-600">{summary.urgency}</span>
+                  <span className="font-semibold text-blue-600">{summary.urgency}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Especialidad sugerida:</span>
@@ -279,7 +279,7 @@ export default function AnonymousConsultaPage() {
                       </div>
                       <a
                         href={`/doctors/${referral.doctorId}`}
-                        className="mt-3 inline-block px-4 py-2 bg-gradient-to-r from-emerald-500 to-green-600 text-white text-sm font-semibold rounded-lg hover:from-emerald-600 hover:to-green-700 transition-all"
+                        className="mt-3 inline-block px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-semibold rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all"
                       >
                         Agendar Cita
                       </a>

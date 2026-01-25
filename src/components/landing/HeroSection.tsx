@@ -84,7 +84,7 @@ export function HeroSection() {
               </div>
               {/* Online indicator */}
               <span
-                className="absolute bottom-1 right-1 w-5 h-5 bg-emerald-500 border-2 border-white rounded-full flex items-center justify-center"
+                className="absolute bottom-1 right-1 w-5 h-5 bg-green-500 border-2 border-white rounded-full flex items-center justify-center"
                 aria-label="En linea"
                 role="status"
               >
@@ -94,12 +94,12 @@ export function HeroSection() {
 
             {/* Live status badge */}
             <div className="text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 border border-emerald-200 rounded-full mb-1">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-50 border border-green-200 rounded-full mb-1">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
-                <span className="text-xs font-medium text-emerald-700">En línea ahora</span>
+                <span className="text-xs font-medium text-green-700">En línea ahora</span>
               </div>
               <p className="text-sm font-semibold text-text-primary">Dr. Simeon</p>
               <p className="text-xs text-text-muted">Asistente médico IA</p>
@@ -116,7 +116,7 @@ export function HeroSection() {
           5 Consultas Medicas
           <br />
           <span className="relative inline-block">
-            <span className="bg-gradient-to-r from-emerald-500 via-green-500 to-emerald-600 bg-clip-text text-transparent font-black">
+            <span className="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 bg-clip-text text-transparent font-black">
               100% GRATIS
             </span>
             {/* Animated underline */}
@@ -134,7 +134,7 @@ export function HeroSection() {
           variants={itemVariants}
           className="text-xl sm:text-2xl text-text-secondary max-w-3xl mx-auto mb-8 leading-relaxed"
         >
-          Salud accesible para todos. Consulta con IA médica las veces que necesites — <strong className="text-emerald-600">sin registrar, sin pagar</strong>. Cuando necesites un doctor real, te conectamos con especialistas verificados.
+          Salud accesible para todos. Consulta con IA médica las veces que necesites — <strong className="text-blue-600">sin registrar, sin pagar</strong>. Cuando necesites un doctor real, te conectamos con especialistas verificados.
         </motion.p>
 
         {/* Key Benefits - Lighter, Less Prominent - EMPHASIZE FREE */}
@@ -142,18 +142,18 @@ export function HeroSection() {
           variants={itemVariants}
           className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 mb-10 text-sm font-semibold"
         >
-          <span className="flex items-center gap-1.5 bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-full">
-            <Zap className="w-4 h-4 text-emerald-500" aria-hidden="true" />
+          <span className="flex items-center gap-1.5 bg-blue-50 text-blue-700 px-3 py-1.5 rounded-full">
+            <Zap className="w-4 h-4 text-blue-500" aria-hidden="true" />
             5 consultas GRATIS
           </span>
           <span className="text-neutral-300" aria-hidden="true">•</span>
           <span className="flex items-center gap-1.5">
-            <Shield className="w-4 h-4 text-emerald-500" aria-hidden="true" />
+            <Shield className="w-4 h-4 text-blue-500" aria-hidden="true" />
             Sin registro requerido
           </span>
           <span className="text-neutral-300" aria-hidden="true">•</span>
           <span className="flex items-center gap-1.5">
-            <Gift className="w-4 h-4 text-emerald-500" aria-hidden="true" />
+            <Gift className="w-4 h-4 text-blue-500" aria-hidden="true" />
             Para todos los mexicanos
           </span>
         </motion.div>
@@ -167,7 +167,7 @@ export function HeroSection() {
             <motion.button
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="group relative w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 min-h-[48px] bg-gradient-to-r from-emerald-500 to-green-600 text-white text-base sm:text-lg font-bold rounded-2xl shadow-xl shadow-emerald-500/30 hover:shadow-2xl hover:shadow-emerald-500/40 transition-all overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-emerald-600"
+              className="group relative w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 min-h-[48px] bg-gradient-to-r from-blue-500 to-blue-600 text-white text-base sm:text-lg font-bold rounded-2xl shadow-xl shadow-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/40 transition-all overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-blue-600"
               aria-label="Consultar gratis - Iniciar consulta médica gratuita con IA"
             >
               {/* Pulsing glow ring */}
@@ -258,8 +258,8 @@ export function HeroSection() {
             </div>
             <div>
               <p className="font-semibold text-sm text-text-primary">Dr. Simeon</p>
-              <p className="text-xs text-emerald-500 flex items-center gap-1">
-                <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+              <p className="text-xs text-green-500 flex items-center gap-1">
+                <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
                 En línea
               </p>
             </div>
