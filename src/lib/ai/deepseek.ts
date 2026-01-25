@@ -85,7 +85,7 @@ class DeepSeekClient {
       })
 
       if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}))
+        const errorData = await response.json().then(() => ({}), () => ({}))
         throw new Error(
           `DeepSeek API error: ${response.status} ${response.statusText}. ${JSON.stringify(errorData)}`
         )

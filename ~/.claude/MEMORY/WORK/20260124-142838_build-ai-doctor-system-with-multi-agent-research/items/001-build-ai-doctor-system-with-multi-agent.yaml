@@ -1,0 +1,11 @@
+id: "001"
+description: "use 20 specialized sub agents to investigate online and the codebase itself, then use notebookllm mcp to build the most comprehensive documentation and then tell me how we're going to build the most powerful AI doctor on a $100 a month budget for 1000 frequent users, with vision, whatsapp support etc"
+type: "work"
+effort: "THOROUGH"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-01-24T14:28:38-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

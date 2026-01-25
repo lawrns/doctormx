@@ -1,0 +1,12 @@
+id: "20260124-161314_hello"
+title: "hello"
+created_at: "2026-01-24T16:13:14-06:00"
+completed_at: null
+source: "SESSION"
+status: "ACTIVE"
+session_id: "de6305d4-b101-4064-8a81-8b9ffd15c917"
+lineage:
+  tools_used: []
+  files_changed: []
+  agents_spawned: []
+parent: null

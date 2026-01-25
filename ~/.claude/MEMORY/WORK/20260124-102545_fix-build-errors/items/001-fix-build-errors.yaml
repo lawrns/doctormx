@@ -1,0 +1,11 @@
+id: "001"
+description: "use sub agents to take out all build errors like this, then commit and push again - The build stops because Next.js’ type checker reports [line 155](#L155-L161) / [line 160](#L160-L163) “Function declarations are not allowed inside blocks in strict mode when targeting 'ES5'.” components/analytics/GoogleAnalytics.tsx declares function gtag(...) {} inside a block (likely inside if (window) or similar). When the compiler targets ES5 it forbids block-scoped function declarations, so the build exits "
+type: "work"
+effort: "STANDARD"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-01-24T10:25:45-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

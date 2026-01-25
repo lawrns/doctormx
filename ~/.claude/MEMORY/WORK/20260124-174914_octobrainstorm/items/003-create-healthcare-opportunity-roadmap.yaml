@@ -1,0 +1,11 @@
+id: "003"
+description: "Our goal is to create a highly effect free healthcare opportunity for Mexico, with 5 consultations free for all citizens, with referrals to real doctors that pay 499 MXN a month to be found. Meanwhile we want to make the AI angle as easy to use as possible. So, make your own roadmap to achieve this and refine what we already have as best as you can, then peer review your suggestions"
+type: "work"
+effort: "THORROUGH"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-01-24T17:52:49-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

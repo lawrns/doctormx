@@ -76,7 +76,9 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
       fetch(`/api/doctors/${doctor.id}/slots?date=${selectedDate}`)
         .then(res => res.json())
         .then(data => { setAvailableSlots(data.slots || []); setLoadingSlots(false) })
-        .catch(() => setLoadingSlots(false))
+        .catch(() => {
+          setLoadingSlots(false)
+        })
     }
   }, [selectedDate, doctor.id])
 

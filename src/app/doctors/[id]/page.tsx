@@ -24,7 +24,7 @@ export default async function DoctorProfilePage({
 
   const [reviews, ratingSummary] = await Promise.all([
     getDoctorReviews(id, { limit: 10 }),
-    getDoctorRatingSummary(id).catch(() => null),
+    getDoctorRatingSummary(id).then(result => result || null),
   ])
 
   const totalConsultations = ratingSummary?.rating_count || 0

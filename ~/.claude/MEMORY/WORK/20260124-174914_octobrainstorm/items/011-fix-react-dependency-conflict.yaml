@@ -1,0 +1,20 @@
+id: "011"
+description: "Diagnosis
+
+The build fails during dependency installation because npm cannot resolve a peer dependency conflict between React and @tanstack/react-query.
+@tanstack/react-query@5.28.4 declares a peer dependency on react@\"^18.0.0\" while the project currently installs react@19.2.3 lines 32-59.
+This version mismatch causes npm to abort with ERESOLVE, stopping the build lines 32-70.
+Solution
+
+Align the React version with the peer requirement from TanStack React Query:
+
+Update package.json so that bo"
+type: "work"
+effort: "QUICK"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-01-24T19:31:45-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

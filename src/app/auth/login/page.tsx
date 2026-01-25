@@ -95,12 +95,12 @@ const getPasswordStrength = (password: string): { strength: number; label: strin
   }
 }
 
-// Zod validation schema
+// Zod validation schema (Zod v3 compatible)
 const loginSchema = z.object({
   email: z.string().email('Correo electrónico inválido'),
   password: z.string().min(6, 'La contraseña debe tener al menos 6 caracteres'),
-  rememberMe: z.boolean().catch(false),
-  userType: z.enum(['patient', 'doctor']).catch('patient'),
+  rememberMe: z.boolean().optional(),
+  userType: z.enum(['patient', 'doctor']).optional(),
 })
 
 type LoginFormValues = z.infer<typeof loginSchema>
