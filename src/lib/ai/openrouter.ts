@@ -172,7 +172,7 @@ class OpenRouterClient {
     })
 
     if (!response.ok) {
-      const errorData = await response.json().then(() => ({}), () => ({}))
+      const errorData = await response.json().catch(() => ({}))
       throw new Error(
         `OpenRouter API error: ${response.status} ${response.statusText}. ${JSON.stringify(errorData)}`
       )

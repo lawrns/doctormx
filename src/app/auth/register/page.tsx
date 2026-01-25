@@ -47,7 +47,7 @@ function calculatePasswordStrength(password: string): { strength: number; label:
 
 // Validation schemas for each step
 const step1Schema = z.object({
-  accountType: z.enum(['patient', 'doctor']).default('patient'),
+  accountType: z.enum(['patient', 'doctor']),
 })
 
 const step2Schema = z.object({

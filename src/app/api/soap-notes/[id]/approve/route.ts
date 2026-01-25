@@ -40,7 +40,7 @@ export async function POST(request: NextRequest, { params }: RouteParams) {
     }
     
     // Parse body for edits
-    const body = await request.json().then(() => ({}), () => ({}))
+    const body = await request.json().catch(() => ({}))
     const { edits } = body
     
     // Approve with optional edits
