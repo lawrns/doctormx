@@ -48,3 +48,6 @@ doctoralia_scraper/*.html
 doctoralia_scraper/page-source.html
 doctoralia_scraper/real-page-source.html
 doctoralia_scraper/test-page-source.html
+
+# Sentry - Don't commit auth tokens
+.sentryclirc

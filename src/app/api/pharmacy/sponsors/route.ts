@@ -33,11 +33,13 @@ export async function POST(request: NextRequest) {
         .eq('id', appointmentId)
         .single()
 
-      const patient = Array.isArray(appointment?.patient) ? appointment.patient[0] : appointment?.patient
-      if (patient?.city) {
-        patientLocation = {
-          city: patient.city,
-          neighborhood: patient.neighborhood || undefined,
+      if (appointment) {
+        const patient = Array.isArray(appointment.patient) ? appointment.patient[0] : appointment.patient
+        if (patient?.city) {
+          patientLocation = {
+            city: patient.city,
+            neighborhood: patient.neighborhood || undefined,
+          }
         }
       }
     }

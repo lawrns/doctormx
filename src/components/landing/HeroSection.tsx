@@ -84,7 +84,7 @@ export function HeroSection() {
               </div>
               {/* Online indicator */}
               <span
-                className="absolute bottom-1 right-1 w-5 h-5 bg-teal-500 border-2 border-white rounded-full flex items-center justify-center"
+                className="absolute bottom-1 right-1 w-5 h-5 bg-emerald-500 border-2 border-white rounded-full flex items-center justify-center"
                 aria-label="En linea"
                 role="status"
               >
@@ -94,12 +94,12 @@ export function HeroSection() {
 
             {/* Live status badge */}
             <div className="text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-teal-50 border border-teal-200 rounded-full mb-1">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 border border-emerald-200 rounded-full mb-1">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </span>
-                <span className="text-xs font-medium text-teal-700">En línea ahora</span>
+                <span className="text-xs font-medium text-emerald-700">En línea ahora</span>
               </div>
               <p className="text-sm font-semibold text-text-primary">Dr. Simeon</p>
               <p className="text-xs text-text-muted">Asistente médico IA</p>
@@ -107,17 +107,17 @@ export function HeroSection() {
           </div>
         </motion.div>
 
-        {/* Main Headline - HUGE, Doctronic style */}
+        {/* Main Headline - HUGE, Doctronic style - EMPHASIZE FREE */}
         <motion.h1
           variants={itemVariants}
           className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-text-primary mb-6 leading-[1.1] tracking-tight"
           style={{ fontFamily: 'var(--font-serif)' }}
         >
-          Atencion medica de confianza
+          5 Consultas Medicas
           <br />
           <span className="relative inline-block">
-            <span className="bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600 bg-clip-text text-transparent">
-              en minutos, no en dias
+            <span className="bg-gradient-to-r from-emerald-500 via-green-500 to-emerald-600 bg-clip-text text-transparent font-black">
+              100% GRATIS
             </span>
             {/* Animated underline */}
             <motion.span
@@ -129,32 +129,32 @@ export function HeroSection() {
           </span>
         </motion.h1>
 
-        {/* Subheadline - Conversational */}
+        {/* Subheadline - Conversational - EMPHASIZE FREE */}
         <motion.p
           variants={itemVariants}
           className="text-xl sm:text-2xl text-text-secondary max-w-3xl mx-auto mb-8 leading-relaxed"
         >
-          Conecta con mas de 500 doctores verificados. Describe tus sintomas a Dr. Simeon y recibe orientacion medica inmediata — o agenda una videoconsulta con un especialista certificado.
+          Salud accesible para todos. Consulta con IA médica las veces que necesites — <strong className="text-emerald-600">sin registrar, sin pagar</strong>. Cuando necesites un doctor real, te conectamos con especialistas verificados.
         </motion.p>
 
-        {/* Key Benefits - Lighter, Less Prominent (Fixed per analysis) */}
+        {/* Key Benefits - Lighter, Less Prominent - EMPHASIZE FREE */}
         <motion.div
           variants={itemVariants}
-          className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 mb-10 text-sm text-text-muted"
+          className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 mb-10 text-sm font-semibold"
         >
-          <span className="flex items-center gap-1.5">
-            <Zap className="w-4 h-4 text-amber-500" aria-hidden="true" />
-            Orientacion medica en segundos
+          <span className="flex items-center gap-1.5 bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-full">
+            <Zap className="w-4 h-4 text-emerald-500" aria-hidden="true" />
+            5 consultas GRATIS
           </span>
           <span className="text-neutral-300" aria-hidden="true">•</span>
           <span className="flex items-center gap-1.5">
-            <Shield className="w-4 h-4 text-blue-600" aria-hidden="true" />
-            Datos 100% protegidos
+            <Shield className="w-4 h-4 text-emerald-500" aria-hidden="true" />
+            Sin registro requerido
           </span>
           <span className="text-neutral-300" aria-hidden="true">•</span>
           <span className="flex items-center gap-1.5">
-            <Gift className="w-4 h-4 text-primary-500" aria-hidden="true" />
-            Primera consulta sin costo
+            <Gift className="w-4 h-4 text-emerald-500" aria-hidden="true" />
+            Para todos los mexicanos
           </span>
         </motion.div>
 
@@ -163,18 +163,18 @@ export function HeroSection() {
           variants={itemVariants}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 w-full"
         >
-          <Link href="/app/second-opinion" className="w-full sm:w-auto">
+          <Link href="/ai-consulta" className="w-full sm:w-auto">
             <motion.button
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="group relative w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 min-h-[48px] bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-base sm:text-lg font-semibold rounded-2xl shadow-xl shadow-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/40 transition-all overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-blue-600"
-              aria-label="Hablar con Dr. Simeon gratis - Iniciar consulta de orientacion medica"
+              className="group relative w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 min-h-[48px] bg-gradient-to-r from-emerald-500 to-green-600 text-white text-base sm:text-lg font-bold rounded-2xl shadow-xl shadow-emerald-500/30 hover:shadow-2xl hover:shadow-emerald-500/40 transition-all overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-emerald-600"
+              aria-label="Consultar gratis - Iniciar consulta médica gratuita con IA"
             >
               {/* Pulsing glow ring */}
               <span className="absolute inset-0 rounded-2xl animate-pulse-ring" />
 
               <span className="relative z-10 flex items-center justify-center gap-3">
-                Hablar con Dr. Simeon — Gratis
+                CONSULTAR AHORA — GRATIS
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </span>
               {/* Shimmer Effect - subtle, respects reduced motion */}
@@ -258,8 +258,8 @@ export function HeroSection() {
             </div>
             <div>
               <p className="font-semibold text-sm text-text-primary">Dr. Simeon</p>
-              <p className="text-xs text-teal-600 flex items-center gap-1">
-                <span className="w-1.5 h-1.5 bg-teal-500 rounded-full"></span>
+              <p className="text-xs text-emerald-500 flex items-center gap-1">
+                <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
                 En línea
               </p>
             </div>

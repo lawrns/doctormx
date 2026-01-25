@@ -1,5 +1,8 @@
 'use client'
 
+// Force dynamic rendering to prevent build-time Supabase client creation
+export const dynamic = 'force-dynamic'
+
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
@@ -90,7 +93,13 @@ const FAQS = [
 
 export default function PricingPage() {
     const router = useRouter()
-    const supabase = createClient()
+    const [supabase] = useState(() => {
+        try {
+            return createClient()
+        } catch {
+            return null
+        }
+    })
 
     const [subscription, setSubscription] = useState<{
         hasSubscription: boolean
@@ -104,10 +113,17 @@ export default function PricingPage() {
     const [processing, setProcessing] = useState<string | null>(null)
 
     useEffect(() => {
+        if (!supabase) {
+            setLoading(false)
+            setSubscription({ hasSubscription: false, isActive: false, subscription: null })
+            return
+        }
         loadSubscription()
-    }, [])
+    }, [supabase])
 
     async function loadSubscription() {
+        if (!supabase) return
+
         try {
             const { data: { user } } = await supabase.auth.getUser()
             if (!user) {
@@ -122,7 +138,7 @@ export default function PricingPage() {
                 .eq('doctor_id', user.id)
                 .eq('status', 'active')
                 .single()
-            
+
             if (sub) {
                 const plan = SUBSCRIPTION_PLANS[sub.tier as SubscriptionTier]
                 setSubscription({
@@ -147,6 +163,11 @@ export default function PricingPage() {
         setProcessing(planId)
 
         try {
+            if (!supabase) {
+                router.push('/auth/login')
+                return
+            }
+
             const { data: { user } } = await supabase.auth.getUser()
             if (!user) {
                 router.push('/auth/login')

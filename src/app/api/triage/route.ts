@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
       : null
 
     // Log triage result to database (async, don't block response)
-    logTriageResult(message, intake, triageResult, sessionId).catch(console.error)
+    logTriageResult(message, intake, triageResult, sessionId).then(null, console.error)
 
     return NextResponse.json({
       success: true,

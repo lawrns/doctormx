@@ -1,0 +1,11 @@
+id: "006"
+description: "Proceed with all you suggested"
+type: "work"
+effort: "QUICK"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-01-24T18:10:16-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

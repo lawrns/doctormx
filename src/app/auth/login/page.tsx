@@ -95,12 +95,12 @@ const getPasswordStrength = (password: string): { strength: number; label: strin
   }
 }
 
-// Zod validation schema
+// Zod validation schema (Zod v3 compatible)
 const loginSchema = z.object({
   email: z.string().email('Correo electrónico inválido'),
   password: z.string().min(6, 'La contraseña debe tener al menos 6 caracteres'),
-  rememberMe: z.boolean().catch(false),
-  userType: z.enum(['patient', 'doctor']).catch('patient'),
+  rememberMe: z.boolean().optional(),
+  userType: z.enum(['patient', 'doctor']).optional(),
 })
 
 type LoginFormValues = z.infer<typeof loginSchema>
@@ -111,7 +111,13 @@ function LoginContent() {
   const [passwordStrength, setPasswordStrength] = useState({ strength: 0, label: '', color: '' })
   const router = useRouter()
   const searchParams = useSearchParams()
-  const supabase = createClient()
+  const [supabase] = useState(() => {
+    try {
+      return createClient()
+    } catch {
+      return null
+    }
+  })
 
   const form = useForm<LoginFormValues>({
     resolver: zodResolver(loginSchema),
@@ -130,6 +136,12 @@ function LoginContent() {
 
   const onSubmit = async (data: LoginFormValues) => {
     setIsLoading(true)
+
+    if (!supabase) {
+      form.setError('root', { message: 'Authentication not available' })
+      setIsLoading(false)
+      return
+    }
 
     try {
       const { error: authError } = await supabase.auth.signInWithPassword({

@@ -1,0 +1,11 @@
+id: "005"
+description: "this is the auth token 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"
+type: "conversational"
+effort: "TRIVIAL"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-01-24T14:55:45-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

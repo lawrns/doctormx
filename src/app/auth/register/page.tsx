@@ -47,7 +47,7 @@ function calculatePasswordStrength(password: string): { strength: number; label:
 
 // Validation schemas for each step
 const step1Schema = z.object({
-  accountType: z.enum(['patient', 'doctor']).catch('patient'),
+  accountType: z.enum(['patient', 'doctor']),
 })
 
 const step2Schema = z.object({
@@ -94,7 +94,13 @@ function RegisterContent() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const router = useRouter()
-  const supabase = createClient()
+  const [supabase] = useState(() => {
+    try {
+      return createClient()
+    } catch {
+      return null
+    }
+  })
 
   // Form state
   const [step1Data, setStep1Data] = useState<Step1Data>({ accountType: 'patient' })
@@ -174,6 +180,12 @@ function RegisterContent() {
 
     setLoading(true)
     setError('')
+
+    if (!supabase) {
+      setError('Authentication not available')
+      setLoading(false)
+      return
+    }
 
     try {
       const { data, error: signUpError } = await supabase.auth.signUp({

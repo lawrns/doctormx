@@ -27,7 +27,9 @@ function PaymentSuccessContent() {
           setAppointment(data.appointment)
           setLoading(false)
         })
-        .catch(() => setLoading(false))
+  .catch(() => {
+          setLoading(false)
+        })
     }
   }, [appointmentId, paymentIntent])
 

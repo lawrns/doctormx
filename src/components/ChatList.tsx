@@ -29,7 +29,7 @@ export function ChatList({ initialConversations, userRole }: ChatListProps) {
           .order('last_message_at', { ascending: false })
 
         if (data) {
-          const conversationsWithDetails = data.map((conv) => ({
+          const conversationsWithDetails = data.map((conv: any) => ({
             ...conv,
             patient_name: conv.patient?.full_name,
             patient_photo_url: conv.patient?.photo_url,
@@ -56,7 +56,7 @@ export function ChatList({ initialConversations, userRole }: ChatListProps) {
           schema: 'public',
           table: 'chat_conversations',
         },
-        (payload) => {
+        (payload: any) => {
           if (payload.eventType === 'INSERT' || payload.eventType === 'UPDATE') {
             fetchConversations()
           }

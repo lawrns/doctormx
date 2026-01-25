@@ -1,0 +1,12 @@
+id: "20260124-143124_we-were-here-continue"
+title: "we were here continue"
+created_at: "2026-01-24T14:31:24-06:00"
+completed_at: null
+source: "SESSION"
+status: "ACTIVE"
+session_id: "674daae6-2de8-4747-9b10-e63781444c66"
+lineage:
+  tools_used: []
+  files_changed: []
+  agents_spawned: []
+parent: null
