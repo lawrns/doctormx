@@ -1,10 +1,11 @@
 // Clinical Copilot - AI-Assisted Clinical Decision Support
 
-import { openai } from '@/lib/openai'
+import { getAIClient, glm } from '@/lib/openai'
 import { router } from './router'
 import { createServiceClient } from '@/lib/supabase/server'
 import { retrieveMedicalContext, generateAugmentedPrompt } from './knowledge'
 import { logger } from '@/lib/observability/logger'
+import { GLM_CONFIG, isGLMConfigured } from './glm'
 
 export type SOAPNote = {
     subjective: string
@@ -345,8 +346,12 @@ export async function generateConsultationSummary(
     transcription: string
 ): Promise<ConsultationSummary> {
     try {
-        const response = await openai.chat.completions.create({
-            model: 'gpt-4-turbo',
+        // Use GLM as primary provider for consultation summaries
+        const client = isGLMConfigured() ? glm : getAIClient()
+        const model = isGLMConfigured() ? GLM_CONFIG.models.reasoning : 'gpt-4-turbo'
+
+        const response = await client.chat.completions.create({
+            model,
             messages: [
                 {
                     role: 'system',
@@ -377,6 +382,11 @@ Responde en JSON valido con esta estructura:
         } catch {
             summaryData = {}
         }
+
+        logger.info('[COPILOT] Consultation summary generated', {
+            provider: isGLMConfigured() ? 'glm' : 'openai',
+            model,
+        })
 
         return {
             chiefComplaint: summaryData.chiefComplaint || '',
@@ -411,8 +421,12 @@ export async function suggestICDCodes(
         }
 
         if (suggestedCodes.length === 0) {
-            const response = await openai.chat.completions.create({
-                model: 'gpt-4-turbo',
+            // Use GLM as primary provider for ICD code suggestions
+            const client = isGLMConfigured() ? glm : getAIClient()
+            const model = isGLMConfigured() ? GLM_CONFIG.models.costEffective : 'gpt-4-turbo'
+
+            const response = await client.chat.completions.create({
+                model,
                 messages: [
                     { role: 'system', content: 'Eres un coder medico especializado en ICD-10. Sugiere los codigos mas apropiados.' },
                     { role: 'user', content: `Sintomas: ${symptoms.join(', ')}\nDiagnostico: ${diagnosis || 'No especificado'}\nSugiere hasta 3 codigos ICD-10 relevantes. Responde en JSON: { "codes": [{ "code": "X00.0", "description": "descripcion", "category": "categoria" }] }` },
@@ -448,8 +462,12 @@ export async function prefillPrescription(
     }
 ): Promise<PrescriptionTemplate> {
     try {
-        const response = await openai.chat.completions.create({
-            model: 'gpt-4-turbo',
+        // Use GLM as primary provider for prescriptions
+        const client = isGLMConfigured() ? glm : getAIClient()
+        const model = isGLMConfigured() ? GLM_CONFIG.models.reasoning : 'gpt-4-turbo'
+
+        const response = await client.chat.completions.create({
+            model,
             messages: [
                 {
                     role: 'system',
@@ -491,6 +509,11 @@ Genera una plantilla de prescripcion apropiada para este caso.`,
             prescriptionData = {}
         }
 
+        logger.info('[COPILOT] Prescription prefilled', {
+            provider: isGLMConfigured() ? 'glm' : 'openai',
+            model,
+        })
+
         return {
             medications: prescriptionData.medications || [],
             recommendations: prescriptionData.recommendations || [],
@@ -531,8 +554,12 @@ Responde en JSON con esta estructura:
             medicalContext
         )
 
-        const response = await openai.chat.completions.create({
-            model: 'gpt-4-turbo',
+        // Use GLM as primary provider for SOAP notes
+        const client = isGLMConfigured() ? glm : getAIClient()
+        const model = isGLMConfigured() ? GLM_CONFIG.models.reasoning : 'gpt-4-turbo'
+
+        const response = await client.chat.completions.create({
+            model,
             messages: [
                 ...conversationHistory,
                 { role: 'user', content: soapPrompt },
@@ -548,6 +575,11 @@ Responde en JSON con esta estructura:
         } catch {
             soapData = {}
         }
+
+        logger.info('[COPILOT] SOAP note generated', {
+            provider: isGLMConfigured() ? 'glm' : 'openai',
+            model,
+        })
 
         return {
             subjective: soapData.subjective || '',
@@ -604,8 +636,12 @@ Importante:
             medicalContext
         )
 
-        const response = await openai.chat.completions.create({
-            model: 'gpt-4-turbo',
+        // Use GLM as primary provider for differential diagnoses
+        const client = isGLMConfigured() ? glm : getAIClient()
+        const model = isGLMConfigured() ? GLM_CONFIG.models.reasoning : 'gpt-4-turbo'
+
+        const response = await client.chat.completions.create({
+            model,
             messages: [
                 ...conversationHistory,
                 { role: 'user', content: diagnosisPrompt },
@@ -621,6 +657,11 @@ Importante:
         } catch {
             diagnosisData = { diagnoses: [] }
         }
+
+        logger.info('[COPILOT] Differential diagnoses generated', {
+            provider: isGLMConfigured() ? 'glm' : 'openai',
+            model,
+        })
 
         return (diagnosisData.diagnoses || []).map((d: { diagnosis?: string; probability?: number; reasoning?: string }) => ({
             diagnosis: d.diagnosis || '',
@@ -650,8 +691,12 @@ Responde en JSON con esta estructura:
   "replies": ["respuesta 1", "respuesta 2", "respuesta 3"]
 }`
 
-        const response = await openai.chat.completions.create({
-            model: 'gpt-4-turbo',
+        // Use GLM as primary provider for quick replies (cost effective)
+        const client = isGLMConfigured() ? glm : getAIClient()
+        const model = isGLMConfigured() ? GLM_CONFIG.models.costEffective : 'gpt-4-turbo'
+
+        const response = await client.chat.completions.create({
+            model,
             messages: [
                 ...conversationHistory,
                 { role: 'user', content: quickReplyPrompt },
@@ -700,8 +745,12 @@ Responde en JSON con esta estructura:
   "steps": ["paso 1", "paso 2", "paso 3"]
 }`
 
-        const response = await openai.chat.completions.create({
-            model: 'gpt-4-turbo',
+        // Use GLM as primary provider for next steps (cost effective)
+        const client = isGLMConfigured() ? glm : getAIClient()
+        const model = isGLMConfigured() ? GLM_CONFIG.models.costEffective : 'gpt-4-turbo'
+
+        const response = await client.chat.completions.create({
+            model,
             messages: [
                 { role: 'user', content: nextStepsPrompt },
             ],

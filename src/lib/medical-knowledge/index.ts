@@ -1,14 +1,16 @@
 /**
  * Medical Knowledge Base (RAG) for Doctor.mx
  * Provides context-augmented responses using Mexican medical guidelines
+ *
+ * NOTE: Embeddings still use OpenAI (text-embedding-3-small)
+ * This is because embedding migration is a separate task requiring
+ * re-indexing of all documents.
  */
 
 import { createClient } from '@/lib/supabase/server'
-import OpenAI from 'openai'
+import { openai } from '@/lib/openai'
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-})
+// Embeddings use OpenAI (embedding migration is a separate task)
 
 export interface MedicalDocument {
   id: string;

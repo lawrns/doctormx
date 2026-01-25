@@ -3,8 +3,9 @@
 // Process: Generate safe OTC recommendations
 // Output: Medications with dosage and warnings
 
-import { openai } from '@/lib/openai'
+import { getAIClient, glm } from '@/lib/openai'
 import { createServiceClient } from '@/lib/supabase/server'
+import { GLM_CONFIG, isGLMConfigured } from './glm'
 
 export type OTCCategory =
     | 'analgesic'
@@ -101,9 +102,12 @@ Reglas:
 - Respeta alergias y medicamentos actuales
 - Sé conservador con dosis`
 
-        // Generate recommendations
-        const response = await openai.chat.completions.create({
-            model: 'gpt-4-turbo',
+        // Generate recommendations using GLM as primary provider
+        const client = isGLMConfigured() ? glm : getAIClient()
+        const model = isGLMConfigured() ? GLM_CONFIG.models.reasoning : 'gpt-4-turbo'
+
+        const response = await client.chat.completions.create({
+            model,
             messages: [
                 {
                     role: 'user',
@@ -302,9 +306,12 @@ Responde en JSON con esta estructura:
   ]
 }`
 
-        // Check interactions
-        const response = await openai.chat.completions.create({
-            model: 'gpt-4-turbo',
+        // Check interactions using GLM as primary provider
+        const client = isGLMConfigured() ? glm : getAIClient()
+        const model = isGLMConfigured() ? GLM_CONFIG.models.reasoning : 'gpt-4-turbo'
+
+        const response = await client.chat.completions.create({
+            model,
             messages: [
                 {
                     role: 'user',
@@ -350,9 +357,12 @@ Responde en JSON con esta estructura:
   "alternatives": ["alternativa 1", "alternativa 2"]
 }`
 
-        // Get alternatives
-        const response = await openai.chat.completions.create({
-            model: 'gpt-4-turbo',
+        // Get alternatives using GLM as primary provider
+        const client = isGLMConfigured() ? glm : getAIClient()
+        const model = isGLMConfigured() ? GLM_CONFIG.models.costEffective : 'gpt-4-turbo'
+
+        const response = await client.chat.completions.create({
+            model,
             messages: [
                 {
                     role: 'user',

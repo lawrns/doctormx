@@ -1,9 +1,12 @@
 /**
- * Cliente OpenAI para operaciones de IA
+ * Cliente de IA para operaciones de AI
  * Wrapper centralizado con error handling, retry logic, y auditoría
+ *
+ * GLM z.ai es el proveedor principal para Doctor.mx
+ * OpenAI se usa como fallback y para transcripción con Whisper
  */
 
-import { AI_CONFIG } from './config';
+import { AI_CONFIG, getActiveProvider } from './config';
 import { createClient } from '@/lib/supabase/server';
 import type {
   PreConsultaMessage,
@@ -12,12 +15,35 @@ import type {
 } from './types';
 
 /**
- * Cliente OpenAI singleton
+ * Cliente de IA singleton
  * Lazy-loaded para evitar errores en build
+ * Usa GLM como proveedor principal, OpenAI como fallback
  */
 import type OpenAI from "openai";
 
+let glmClient: OpenAI | null = null;
 let openaiClient: OpenAI | null = null;
+
+async function getGLMClient(): Promise<OpenAI> {
+  if (!glmClient && typeof window === "undefined") {
+    try {
+      const { default: OpenAI } = (await import("openai")) as typeof import("openai");
+      glmClient = new OpenAI({
+        apiKey: AI_CONFIG.glm.apiKey,
+        baseURL: AI_CONFIG.glm.baseURL,
+      });
+    } catch (error) {
+      console.error("Error al inicializar GLM client:", error);
+      throw new Error("GLM client no disponible");
+    }
+  }
+
+  if (!glmClient) {
+    throw new Error("GLM client no inicializado");
+  }
+
+  return glmClient;
+}
 
 async function getOpenAIClient(): Promise<OpenAI> {
   if (!openaiClient && typeof window === "undefined") {
@@ -39,9 +65,22 @@ async function getOpenAIClient(): Promise<OpenAI> {
   return openaiClient;
 }
 
+/**
+ * Get the appropriate AI client based on configuration
+ * Uses GLM if configured, otherwise falls back to OpenAI
+ */
+async function getAIClient(): Promise<OpenAI> {
+  const provider = getActiveProvider();
+  if (provider === 'glm' && AI_CONFIG.glm.apiKey) {
+    return getGLMClient();
+  }
+  return getOpenAIClient();
+}
+
 
 /**
  * Chat completion con retry logic
+ * Uses GLM as primary provider, OpenAI as fallback
  */
 export async function chatCompletion(params: {
   messages: PreConsultaMessage[];
@@ -51,10 +90,17 @@ export async function chatCompletion(params: {
 }): Promise<{
   response: string;
   usage: { inputTokens: number; outputTokens: number; cost: number };
+  provider: 'glm' | 'openai';
 }> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const client = await getOpenAIClient() as unknown as any;
+  const client = await getAIClient() as unknown as any;
+  const provider = getActiveProvider();
   const { messages, systemPrompt, maxTokens, temperature } = params;
+
+  // Select model based on provider
+  const model = provider === 'glm' ? AI_CONFIG.glm.defaultModel : AI_CONFIG.openai.model;
+  const configuredMaxTokens = provider === 'glm' ? AI_CONFIG.glm.maxTokens : AI_CONFIG.openai.maxTokens;
+  const configuredTemp = provider === 'glm' ? AI_CONFIG.glm.temperature : AI_CONFIG.openai.temperature;
 
   const apiMessages = [
     { role: 'system', content: systemPrompt },
@@ -66,10 +112,10 @@ export async function chatCompletion(params: {
 
   try {
     const completion = await client.chat.completions.create({
-      model: AI_CONFIG.openai.model,
+      model,
       messages: apiMessages,
-      max_tokens: maxTokens || AI_CONFIG.openai.maxTokens,
-      temperature: temperature ?? AI_CONFIG.openai.temperature,
+      max_tokens: maxTokens || configuredMaxTokens,
+      temperature: temperature ?? configuredTemp,
     });
 
     const usage = {
@@ -78,14 +124,21 @@ export async function chatCompletion(params: {
       cost: 0,
     };
 
-    // Calcular costo
-    usage.cost =
-      (usage.inputTokens / 1_000_000) * AI_CONFIG.costs.gpt4oMiniInputPer1M +
-      (usage.outputTokens / 1_000_000) * AI_CONFIG.costs.gpt4oMiniOutputPer1M;
+    // Calculate cost based on provider
+    if (provider === 'glm') {
+      usage.cost =
+        (usage.inputTokens / 1_000_000) * AI_CONFIG.costs.glmInputPer1M +
+        (usage.outputTokens / 1_000_000) * AI_CONFIG.costs.glmOutputPer1M;
+    } else {
+      usage.cost =
+        (usage.inputTokens / 1_000_000) * AI_CONFIG.costs.gpt4oMiniInputPer1M +
+        (usage.outputTokens / 1_000_000) * AI_CONFIG.costs.gpt4oMiniOutputPer1M;
+    }
 
     return {
       response: completion.choices[0]?.message?.content || '',
       usage,
+      provider,
     };
   } catch (error: unknown) {
     console.error('Error en chat completion:', error);
@@ -157,6 +210,7 @@ export async function transcribeAudio(params: {
 
 /**
  * Análisis estructurado con JSON mode
+ * Uses GLM as primary provider, OpenAI as fallback
  */
 export async function structuredAnalysis<T>(params: {
   systemPrompt: string;
@@ -164,8 +218,12 @@ export async function structuredAnalysis<T>(params: {
   schema?: string; // Descripción del schema esperado
 }): Promise<T> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const client = await getOpenAIClient() as unknown as any;
+  const client = await getAIClient() as unknown as any;
+  const provider = getActiveProvider();
   const { systemPrompt, userPrompt, schema } = params;
+
+  // Select model based on provider
+  const model = provider === 'glm' ? AI_CONFIG.glm.defaultModel : AI_CONFIG.openai.model;
 
   const messages = [
     { role: 'system', content: systemPrompt },
@@ -178,7 +236,7 @@ export async function structuredAnalysis<T>(params: {
 
   try {
     const completion = await client.chat.completions.create({
-      model: AI_CONFIG.openai.model,
+      model,
       messages,
       response_format: { type: 'json_object' }, // Fuerza JSON
       temperature: 0.2, // Más determinístico para análisis
@@ -237,8 +295,11 @@ export async function auditAIOperation(params: {
   latencyMs: number;
   status: 'success' | 'error';
   error?: string;
+  provider?: 'glm' | 'openai';
 }): Promise<void> {
   const supabase = await createClient();
+  const provider = params.provider || getActiveProvider();
+  const model = provider === 'glm' ? AI_CONFIG.glm.defaultModel : AI_CONFIG.openai.model;
 
   try {
     await supabase.from('ai_audit_logs').insert({
@@ -247,7 +308,7 @@ export async function auditAIOperation(params: {
       user_type: params.userType,
       input: params.input,
       output: params.output,
-      model: AI_CONFIG.openai.model,
+      model: model,
       tokens: params.tokens,
       cost: params.cost,
       latency_ms: params.latencyMs,

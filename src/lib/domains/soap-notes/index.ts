@@ -4,7 +4,8 @@
 // Output: Approved structured SOAP note
 
 import { createServiceClient } from '@/lib/supabase/server'
-import OpenAI from 'openai'
+import { getAIClient, glm } from '@/lib/openai'
+import { GLM_CONFIG, isGLMConfigured } from '@/lib/ai/glm'
 
 export const SOAP_NOTES_CONFIG = {
   MAX_AUDIO_DURATION_SECONDS: 3600,
@@ -102,15 +103,16 @@ export async function generateSoapNote(
   }
   
   try {
-    // Call OpenAI
-    const openai = new OpenAI()
-    
+    // Use GLM as primary provider for SOAP note generation
+    const client = isGLMConfigured() ? glm : getAIClient()
+    const model = isGLMConfigured() ? GLM_CONFIG.models.reasoning : SOAP_NOTES_CONFIG.AI_MODEL
+
     const contextStr = input.patient_context
       ? `\nContexto del paciente: ${JSON.stringify(input.patient_context)}`
       : ''
-    
-    const completion = await openai.chat.completions.create({
-      model: SOAP_NOTES_CONFIG.AI_MODEL,
+
+    const completion = await client.chat.completions.create({
+      model,
       messages: [
         { role: 'system', content: SOAP_PROMPT },
         { role: 'user', content: `Transcripción de consulta:${contextStr}\n\n${input.transcript}` },
@@ -135,7 +137,7 @@ export async function generateSoapNote(
         soap_assessment: soapData.assessment,
         soap_plan: soapData.plan,
         soap_json: soapData,
-        ai_model: SOAP_NOTES_CONFIG.AI_MODEL,
+        ai_model: model,
         ai_generated_at: new Date().toISOString(),
         ai_tokens_used: completion.usage?.total_tokens,
         status: 'pending_review',

@@ -102,9 +102,9 @@ export default function PharmacyEarningsWidget() {
           <p className="text-sm text-ink-muted">Pendientes</p>
           <p className="text-xl font-bold text-yellow-600">{earnings.pendingReferrals}</p>
         </div>
-        <div className="bg-green-50 rounded-xl p-4">
+        <div className="bg-teal-50 rounded-xl p-4">
           <p className="text-sm text-ink-muted">Tarifa Fija (50 MXN)</p>
-          <p className="text-xl font-bold text-green-600">{earnings.totalReferralFees / 50}</p>
+          <p className="text-xl font-bold text-teal-600">{earnings.totalReferralFees / 50}</p>
         </div>
       </div>
 
@@ -135,7 +135,7 @@ export default function PharmacyEarningsWidget() {
                 <div className="flex items-center gap-2">
                   <span className={`px-2 py-0.5 text-xs rounded-full ${
                     referral.status === 'redeemed'
-                      ? 'bg-green-100 text-green-700'
+                      ? 'bg-teal-50 text-teal-700'
                       : referral.status === 'sent'
                       ? 'bg-yellow-100 text-yellow-700'
                       : 'bg-gray-100 text-gray-700'

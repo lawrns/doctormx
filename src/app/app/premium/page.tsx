@@ -54,7 +54,7 @@ function PremiumFeatureCard({ feature, tier, onPurchase, loading }: PremiumFeatu
             <FeatureIcon category={featureConfig.category} />
           </div>
           {isIncluded ? (
-            <span className="px-3 py-1 bg-green-100 text-green-700 text-xs font-medium rounded-full">
+            <span className="px-3 py-1 bg-teal-50 text-teal-700 text-xs font-medium rounded-full">
               Incluido
             </span>
           ) : (
@@ -70,7 +70,7 @@ function PremiumFeatureCard({ feature, tier, onPurchase, loading }: PremiumFeatu
         ) : isIncluded ? (
           <div className="mb-4">
             {isUnlimited ? (
-              <div className="flex items-center gap-2 text-green-600">
+              <div className="flex items-center gap-2 text-teal-600">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
@@ -116,7 +116,7 @@ function PremiumFeatureCard({ feature, tier, onPurchase, loading }: PremiumFeatu
         {isIncluded ? (
           <button
             disabled
-            className="w-full py-2 px-4 bg-green-100 text-green-700 font-medium rounded-lg cursor-not-allowed"
+            className="w-full py-2 px-4 bg-teal-50 text-teal-700 font-medium rounded-lg cursor-not-allowed"
           >
             Activado
           </button>
@@ -201,7 +201,7 @@ function TierComparison() {
                     <td key={tier} className="text-center py-3 px-4">
                       {access.included ? (
                         access.limit === -1 ? (
-                          <span className="inline-flex items-center gap-1 text-green-600">
+                          <span className="inline-flex items-center gap-1 text-teal-600">
                             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                             </svg>

@@ -2,10 +2,16 @@
 // Input: Query text
 // Process: Generate embedding → Semantic search → Retrieve context
 // Output: Relevant medical guidelines with sources
+//
+// NOTE: Embeddings still use OpenAI (text-embedding-3-small)
+// This is because embedding migration is a separate task.
 
 import { createServiceClient } from '@/lib/supabase/server'
 import { openai } from '@/lib/openai'
 import { logger } from '@/lib/observability/logger'
+
+// NOTE: Embeddings continue using OpenAI's text-embedding-3-small
+// GLM is used for chat/reasoning, but embedding migration is separate
 
 /**
  * Generate embedding for text using OpenAI

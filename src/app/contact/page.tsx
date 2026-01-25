@@ -81,8 +81,8 @@ export default function ContactPage() {
               
               <Card className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-green-600" />
+                  <div className="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-6 h-6 text-teal-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Teléfono</h3>
@@ -131,8 +131,8 @@ export default function ContactPage() {
                     animate={{ opacity: 1, scale: 1 }}
                     className="text-center py-12"
                   >
-                    <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <CheckCircle className="w-10 h-10 text-green-600" />
+                    <div className="w-20 h-20 bg-teal-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <CheckCircle className="w-10 h-10 text-teal-600" />
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">
                       ¡Mensaje enviado!

@@ -140,7 +140,7 @@ export default function UploadImagePage() {
                       fullAnalysis.urgencyLevel === 'emergency' ? 'bg-red-100 text-red-800' :
                       fullAnalysis.urgencyLevel === 'high' ? 'bg-orange-100 text-orange-800' :
                       fullAnalysis.urgencyLevel === 'medium' ? 'bg-yellow-100 text-yellow-800' :
-                      'bg-green-100 text-green-800'
+                      'bg-teal-50 text-teal-800'
                     }`}>
                       {getUrgencyLabel(fullAnalysis.urgencyLevel as UrgencyLevel)}
                     </div>
@@ -228,8 +228,8 @@ export default function UploadImagePage() {
 
         <div className="mt-8 grid md:grid-cols-3 gap-4">
           <div className="bg-white rounded-xl p-4 border border-gray-200">
-            <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mb-3">
-              <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="w-10 h-10 bg-teal-50 rounded-lg flex items-center justify-center mb-3">
+              <svg className="w-5 h-5 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>

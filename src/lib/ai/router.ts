@@ -1,15 +1,19 @@
 /**
  * AI Provider Router
- * Intelligent routing between OpenAI, OpenRouter, and DeepSeek
+ * Intelligent routing between GLM (primary), OpenAI, OpenRouter, and DeepSeek
  * Optimizes for cost, latency, and accuracy based on use case
+ *
+ * GLM z.ai is now the primary provider for Doctor.mx
  */
 
 import { openai } from '@/lib/openai'
 import { openrouter } from './openrouter'
 import { deepseek, type DeepSeekMessage } from './deepseek'
+import { glm as glmClient, GLM_CONFIG, isGLMConfigured, calculateGLMCost } from './glm'
+import { AI_CONFIG } from './config'
 import { logger } from '@/lib/observability/logger'
 
-export type AIProvider = 'openai' | 'openrouter' | 'deepseek'
+export type AIProvider = 'glm' | 'openai' | 'openrouter' | 'deepseek'
 
 export type UseCase =
   | 'vision-analysis'      // Medical image analysis
@@ -38,35 +42,36 @@ export interface RouterResponse {
 
 /**
  * Default routing strategy based on use case
+ * GLM is now the primary provider for most use cases
  */
 const USE_CASE_ROUTING: Record<UseCase, { primary: AIProvider; fallbacks: AIProvider[] }> = {
   'vision-analysis': {
-    primary: 'openrouter',  // 90% cost savings
-    fallbacks: ['openai'],
+    primary: 'glm',         // GLM-4.5v for medical images (cost effective)
+    fallbacks: ['openrouter', 'openai'],
   },
   'differential-diagnosis': {
-    primary: 'deepseek',    // Superior medical reasoning
-    fallbacks: ['openai'],
+    primary: 'glm',         // GLM-4.7 for complex reasoning
+    fallbacks: ['deepseek', 'openai'],
   },
   'triage': {
-    primary: 'deepseek',    // Better at symptom analysis
-    fallbacks: ['openai'],
+    primary: 'glm',         // GLM-4.5-air for fast triage
+    fallbacks: ['deepseek', 'openai'],
   },
   'prescription': {
-    primary: 'deepseek',    // Evidence-based recommendations
-    fallbacks: ['openai'],
+    primary: 'glm',         // GLM for evidence-based recommendations
+    fallbacks: ['deepseek', 'openai'],
   },
   'transcription': {
-    primary: 'openai',      // Whisper is still best
+    primary: 'openai',      // Whisper is still best for transcription
     fallbacks: [],
   },
   'general-chat': {
-    primary: 'openai',      // Fastest response
-    fallbacks: ['deepseek'],
+    primary: 'glm',         // GLM-4.5-air for fast, cost-effective chat
+    fallbacks: ['openai', 'deepseek'],
   },
   'soap-notes': {
-    primary: 'deepseek',    // Better structured output
-    fallbacks: ['openai'],
+    primary: 'glm',         // GLM-4.7 for structured output
+    fallbacks: ['deepseek', 'openai'],
   },
 }
 
@@ -86,8 +91,53 @@ class AIRouter {
     const provider = config.preferredProvider || routing.primary
 
     try {
-      // Try OpenRouter first (90% cheaper)
-      if (provider === 'openrouter' && openrouter.isConfigured()) {
+      // Try GLM first (primary provider, cost effective)
+      if (provider === 'glm' && isGLMConfigured()) {
+        logger.info('[ROUTER] Routing vision to GLM')
+
+        const response = await glmClient.chat.completions.create({
+          model: GLM_CONFIG.models.vision,
+          messages: [
+            {
+              role: 'system',
+              content: systemPrompt,
+            },
+            {
+              role: 'user',
+              content: [
+                {
+                  type: 'image_url',
+                  image_url: {
+                    url: imageUrl,
+                    detail: 'high',
+                  },
+                },
+                {
+                  type: 'text',
+                  text: prompt,
+                },
+              ],
+            },
+          ],
+          max_tokens: 1500,
+          temperature: 0.2,
+        })
+
+        const content = response.choices[0]?.message?.content || ''
+        const usage = response.usage || { prompt_tokens: 0, completion_tokens: 0 }
+        const costUSD = calculateGLMCost(usage.prompt_tokens, usage.completion_tokens)
+
+        return {
+          content,
+          provider: 'glm',
+          model: GLM_CONFIG.models.vision,
+          costUSD,
+          latencyMs: Date.now() - startTime,
+        }
+      }
+
+      // Try OpenRouter as fallback (90% cheaper than OpenAI)
+      if ((provider === 'openrouter' || (provider === 'glm' && !isGLMConfigured())) && openrouter.isConfigured()) {
         logger.info('[ROUTER] Routing vision to OpenRouter')
 
         const response = await openrouter.analyzeImage(
@@ -176,8 +226,32 @@ class AIRouter {
     const provider = config.preferredProvider || routing.primary
 
     try {
-      // Try DeepSeek first (98% cheaper, better reasoning)
-      if (provider === 'deepseek' && deepseek.isConfigured()) {
+      // Try GLM first (primary provider for reasoning)
+      if (provider === 'glm' && isGLMConfigured()) {
+        logger.info('[ROUTER] Routing reasoning to GLM')
+
+        const response = await glmClient.chat.completions.create({
+          model: GLM_CONFIG.models.reasoning,
+          messages,
+          temperature: 0.3,
+          max_tokens: 2000,
+        })
+
+        const content = response.choices[0]?.message?.content || ''
+        const usage = response.usage || { prompt_tokens: 0, completion_tokens: 0 }
+        const costUSD = calculateGLMCost(usage.prompt_tokens, usage.completion_tokens)
+
+        return {
+          content,
+          provider: 'glm',
+          model: GLM_CONFIG.models.reasoning,
+          costUSD,
+          latencyMs: Date.now() - startTime,
+        }
+      }
+
+      // Try DeepSeek as fallback (98% cheaper than GPT-4, better reasoning)
+      if ((provider === 'deepseek' || (provider === 'glm' && !isGLMConfigured())) && deepseek.isConfigured()) {
         logger.info('[ROUTER] Routing reasoning to DeepSeek')
 
         const response = await deepseek.chatCompletion(
@@ -242,8 +316,32 @@ class AIRouter {
     const provider = config.preferredProvider || routing.primary
 
     try {
-      // OpenAI is fastest for general chat
-      if (provider === 'openai') {
+      // GLM is primary for general chat (cost effective)
+      if (provider === 'glm' && isGLMConfigured()) {
+        logger.info('[ROUTER] Routing chat to GLM')
+
+        const response = await glmClient.chat.completions.create({
+          model: GLM_CONFIG.models.costEffective,
+          messages,
+          temperature: 0.7,
+          max_tokens: 500,
+        })
+
+        const content = response.choices[0]?.message?.content || ''
+        const usage = response.usage || { prompt_tokens: 0, completion_tokens: 0 }
+        const costUSD = calculateGLMCost(usage.prompt_tokens, usage.completion_tokens)
+
+        return {
+          content,
+          provider: 'glm',
+          model: GLM_CONFIG.models.costEffective,
+          costUSD,
+          latencyMs: Date.now() - startTime,
+        }
+      }
+
+      // OpenAI as fallback for general chat
+      if (provider === 'openai' || (provider === 'glm' && !isGLMConfigured())) {
         logger.info('[ROUTER] Routing chat to OpenAI')
 
         const response = await openai.chat.completions.create({
@@ -270,7 +368,7 @@ class AIRouter {
         }
       }
 
-      // Fallback to DeepSeek if specified
+      // DeepSeek as another fallback option
       if (provider === 'deepseek' && deepseek.isConfigured()) {
         logger.info('[ROUTER] Routing chat to DeepSeek')
 
@@ -306,6 +404,7 @@ class AIRouter {
     estimatedTokens: { input: number; output: number }
   ): Promise<Record<AIProvider, number>> {
     return {
+      glm: (estimatedTokens.input / 1_000_000) * GLM_CONFIG.pricing.input + (estimatedTokens.output / 1_000_000) * GLM_CONFIG.pricing.output,
       openai: (estimatedTokens.input / 1_000_000) * 10.0 + (estimatedTokens.output / 1_000_000) * 30.0,
       deepseek: (estimatedTokens.input / 1_000_000) * 0.14 + (estimatedTokens.output / 1_000_000) * 0.28,
       openrouter: (estimatedTokens.input / 1_000_000) * 0.125 + (estimatedTokens.output / 1_000_000) * 0.375,
@@ -317,10 +416,24 @@ class AIRouter {
    */
   getProviderStatus(): Record<AIProvider, boolean> {
     return {
+      glm: isGLMConfigured(),
       openai: !!process.env.OPENAI_API_KEY,
       openrouter: openrouter.isConfigured(),
       deepseek: deepseek.isConfigured(),
     }
+  }
+
+  /**
+   * Get the primary provider based on configuration
+   */
+  getPrimaryProvider(): AIProvider {
+    if (AI_CONFIG.features.useGLM && isGLMConfigured()) {
+      return 'glm'
+    }
+    if (deepseek.isConfigured()) {
+      return 'deepseek'
+    }
+    return 'openai'
   }
 }
 

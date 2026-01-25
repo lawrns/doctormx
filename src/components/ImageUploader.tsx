@@ -440,20 +440,20 @@ export function ImageUploader({
         </>
       ) : (
         <div className="space-y-6">
-          <div className="bg-green-50 border border-green-200 rounded-2xl p-6">
+          <div className="bg-teal-50 border border-teal-200 rounded-2xl p-6">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="w-10 h-10 bg-teal-50 rounded-full flex items-center justify-center">
+                <svg className="w-5 h-5 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
               <div>
-                <h3 className="font-semibold text-green-900">Imagen analizada exitosamente</h3>
-                <p className="text-sm text-green-700">El análisis de IA está listo para revisión</p>
+                <h3 className="font-semibold text-teal-900">Imagen analizada exitosamente</h3>
+                <p className="text-sm text-teal-700">El análisis de IA está listo para revisión</p>
               </div>
             </div>
             
-            <div className="text-sm text-green-800 space-y-1">
+            <div className="text-sm text-teal-800 space-y-1">
               <p><strong>Archivo:</strong> {result.fileName}</p>
               <p><strong>Tamaño:</strong> {formatFileSize(result.fileSize)}</p>
             </div>

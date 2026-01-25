@@ -20,6 +20,38 @@ vi.mock('../deepseek', () => ({
   },
 }))
 
+vi.mock('../glm', () => ({
+  glm: {
+    chat: {
+      completions: {
+        create: vi.fn(),
+      },
+    },
+  },
+  isGLMConfigured: vi.fn(() => false), // Default to false so tests fall through to other providers
+  calculateGLMCost: vi.fn((input, output) => (input / 1_000_000) * 0.60 + (output / 1_000_000) * 2.20),
+  GLM_CONFIG: {
+    models: {
+      reasoning: 'glm-4.7',
+      costEffective: 'glm-4.5-air',
+      vision: 'glm-4.5v',
+    },
+    pricing: {
+      input: 0.60,
+      output: 2.20,
+      cached: 0.11,
+    },
+  },
+}))
+
+vi.mock('../config', () => ({
+  AI_CONFIG: {
+    features: {
+      useGLM: true,
+    },
+  },
+}))
+
 vi.mock('@/lib/openai', () => ({
   openai: {
     chat: {
@@ -43,7 +75,8 @@ describe('AI Router', () => {
   })
 
   describe('routeVision', () => {
-    it('should route to OpenRouter when configured', async () => {
+    it('should route to OpenRouter when GLM not configured and OpenRouter is available', async () => {
+      // GLM is mocked as not configured (default), so falls through to OpenRouter
       const mockResponse = {
         content: 'Analysis result',
         model: 'google/gemini-pro-vision',
@@ -66,7 +99,7 @@ describe('AI Router', () => {
       expect(openrouter.analyzeImage).toHaveBeenCalled()
     })
 
-    it('should fallback to OpenAI when OpenRouter fails', async () => {
+    it('should fallback to OpenAI when GLM and OpenRouter not available', async () => {
       vi.mocked(openrouter.isConfigured).mockReturnValue(false)
       vi.mocked(openai.chat.completions.create).mockResolvedValue({
         choices: [{ message: { content: 'OpenAI result' } }],
@@ -109,7 +142,8 @@ describe('AI Router', () => {
   })
 
   describe('routeReasoning', () => {
-    it('should route to DeepSeek for differential diagnosis', async () => {
+    it('should route to DeepSeek when GLM not configured', async () => {
+      // GLM is mocked as not configured (default), so falls through to DeepSeek
       const mockResponse = {
         content: 'Diagnosis result',
         usage: { promptTokens: 200, completionTokens: 100, totalTokens: 300 },
@@ -134,7 +168,7 @@ describe('AI Router', () => {
       expect(deepseek.chatCompletion).toHaveBeenCalled()
     })
 
-    it('should fallback to OpenAI when DeepSeek unavailable', async () => {
+    it('should fallback to OpenAI when GLM and DeepSeek unavailable', async () => {
       vi.mocked(deepseek.isConfigured).mockReturnValue(false)
       vi.mocked(openai.chat.completions.create).mockResolvedValue({
         choices: [{ message: { content: 'OpenAI reasoning' } }],
@@ -153,7 +187,8 @@ describe('AI Router', () => {
   })
 
   describe('routeChat', () => {
-    it('should use OpenAI for general chat', async () => {
+    it('should use OpenAI for general chat when GLM not configured', async () => {
+      // GLM is mocked as not configured (default), so falls through to OpenAI
       vi.mocked(openai.chat.completions.create).mockResolvedValue({
         choices: [{ message: { content: 'Chat response' } }],
         usage: { prompt_tokens: 50, completion_tokens: 30 },
@@ -193,11 +228,14 @@ describe('AI Router', () => {
   })
 
   describe('getCostComparison', () => {
-    it('should calculate cost comparison across providers', async () => {
+    it('should calculate cost comparison across providers including GLM', async () => {
       const costs = await router.getCostComparison({
         input: 1_000_000,
         output: 1_000_000,
       })
+
+      // GLM: 0.60 * 1 + 2.20 * 1 = $2.80
+      expect(costs.glm).toBeCloseTo(2.80, 2)
 
       // OpenAI: 10 * 1 + 30 * 1 = $40
       expect(costs.openai).toBeCloseTo(40, 2)
@@ -209,24 +247,31 @@ describe('AI Router', () => {
       expect(costs.openrouter).toBeCloseTo(0.5, 2)
     })
 
-    it('should show DeepSeek as cheapest', async () => {
+    it('should show DeepSeek as cheapest, GLM as good value', async () => {
       const costs = await router.getCostComparison({
         input: 1_000_000,
         output: 1_000_000,
       })
 
+      // DeepSeek is cheapest
       expect(costs.deepseek).toBeLessThan(costs.openrouter)
+      expect(costs.deepseek).toBeLessThan(costs.glm)
       expect(costs.deepseek).toBeLessThan(costs.openai)
+
+      // GLM is cheaper than OpenAI
+      expect(costs.glm).toBeLessThan(costs.openai)
     })
   })
 
   describe('getProviderStatus', () => {
-    it('should return status of all providers', () => {
+    it('should return status of all providers including GLM', () => {
       const status = router.getProviderStatus()
 
+      expect(status).toHaveProperty('glm')
       expect(status).toHaveProperty('openai')
       expect(status).toHaveProperty('openrouter')
       expect(status).toHaveProperty('deepseek')
+      expect(typeof status.glm).toBe('boolean')
       expect(typeof status.openai).toBe('boolean')
       expect(typeof status.openrouter).toBe('boolean')
       expect(typeof status.deepseek).toBe('boolean')

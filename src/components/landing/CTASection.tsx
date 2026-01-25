@@ -58,8 +58,8 @@ export function CTASection() {
               className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/20 rounded-full text-white text-sm mb-6"
             >
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-400"></span>
               </span>
               Mas de 100 especialistas en linea ahora
             </motion.div>

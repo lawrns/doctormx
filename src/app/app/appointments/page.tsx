@@ -68,7 +68,7 @@ function formatPrice(cents: number, currency: string): string {
 function getStatusInfo(status: string): { label: string; variant: 'success' | 'warning' | 'error' | 'info' | 'neutral'; colorClass: string } {
   const statusMap: Record<string, { label: string; variant: 'success' | 'warning' | 'error' | 'info' | 'neutral'; colorClass: string }> = {
     pending_payment: { label: 'Pago pendiente', variant: 'warning', colorClass: 'bg-yellow-100 text-yellow-800' },
-    confirmed: { label: 'Confirmada', variant: 'success', colorClass: 'bg-green-100 text-green-800' },
+    confirmed: { label: 'Confirmada', variant: 'success', colorClass: 'bg-teal-50 text-teal-800' },
     completed: { label: 'Completada', variant: 'info', colorClass: 'bg-blue-100 text-blue-800' },
     cancelled: { label: 'Cancelada', variant: 'error', colorClass: 'bg-red-100 text-red-800' },
     refunded: { label: 'Reembolsada', variant: 'neutral', colorClass: 'bg-gray-100 text-gray-800' },
@@ -155,7 +155,7 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
                 {canJoin && (
                   <Link
                     href={`/consultation/${appointment.id}`}
-                    className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-white bg-green-600 hover:bg-green-700 rounded-md transition-colors"
+                    className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors"
                   >
                     <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />

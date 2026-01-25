@@ -67,14 +67,14 @@ const specialties = [
     bg: 'bg-pink-50/50',
     borderColor: 'group-hover:border-pink-200'
   },
-  { 
-    name: 'Medicina General', 
-    icon: Stethoscope, 
-    description: 'Atención primaria', 
-    doctors: 89, 
-    color: 'text-emerald-500', 
-    bg: 'bg-emerald-50/50',
-    borderColor: 'group-hover:border-emerald-200'
+  {
+    name: 'Medicina General',
+    icon: Stethoscope,
+    description: 'Atención primaria',
+    doctors: 89,
+    color: 'text-blue-600',
+    bg: 'bg-blue-50/50',
+    borderColor: 'group-hover:border-blue-200'
   },
   { 
     name: 'Dermatología', 

@@ -10,8 +10,8 @@ const features = [
     icon: BadgeCheck,
     title: 'Doctores con cédula verificada',
     description: 'Cada especialista está validado con su cédula profesional ante la SEP. Consulta perfiles completos antes de agendar.',
-    color: 'text-emerald-500',
-    bgColor: 'bg-emerald-50',
+    color: 'text-blue-600',
+    bgColor: 'bg-blue-50',
     featured: false,
   },
   {
@@ -50,8 +50,8 @@ const features = [
     icon: MessageSquare,
     title: 'Seguimiento continuo',
     description: 'Mensajea a tu doctor antes y después de la consulta. Tu historial médico siempre accesible.',
-    color: 'text-cyan-500',
-    bgColor: 'bg-cyan-50',
+    color: 'text-teal-600',
+    bgColor: 'bg-teal-50',
     featured: false,
   },
 ]

@@ -39,7 +39,7 @@ export default async function PharmacyAffiliateDashboard() {
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-4">
               <h1 className="text-2xl font-bold text-gray-900">Doctor.mx</h1>
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-teal-50 text-teal-800">
                 🏥 Farmacia Asociada
               </span>
             </div>
@@ -99,10 +99,10 @@ export default async function PharmacyAffiliateDashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600">Canjeados</p>
-                <p className="text-2xl font-bold text-green-600">{stats.redeemedReferrals}</p>
+                <p className="text-2xl font-bold text-teal-600">{stats.redeemedReferrals}</p>
               </div>
-              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                <svg className="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="w-12 h-12 bg-teal-50 rounded-lg flex items-center justify-center">
+                <svg className="w-6 h-6 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
@@ -146,7 +146,7 @@ export default async function PharmacyAffiliateDashboard() {
                 <p className="text-sm text-gray-600">Tarifa de Comisión: {pharmacy.commission_rate}%</p>
                 <p className="text-sm text-gray-600">Tarifa Fija por Referido: {formatCurrency(pharmacy.fixed_fee_cents)}</p>
                 <p className="text-sm text-gray-600 mt-2">
-                  Estado: <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                  Estado: <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-teal-50 text-teal-800">
                     {pharmacy.status === 'approved' ? 'Aprobado' : pharmacy.status}
                   </span>
                 </p>
@@ -197,7 +197,7 @@ export default async function PharmacyAffiliateDashboard() {
                       <td className="px-6 py-4">
                         <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
                           referral.status === 'redeemed'
-                            ? 'bg-green-100 text-green-800'
+                            ? 'bg-teal-50 text-teal-800'
                             : referral.status === 'sent'
                             ? 'bg-yellow-100 text-yellow-800'
                             : 'bg-gray-100 text-gray-800'

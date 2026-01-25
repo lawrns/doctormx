@@ -234,8 +234,8 @@ export default function SecondOpinionDetailPage() {
 
           {/* Doctor Opinion (if completed) */}
           {request.status === 'completed' && request.doctor_opinion && (
-            <Card className="border-green-200 bg-green-50">
-              <h2 className="mb-4 text-lg font-semibold text-green-800">
+            <Card className="border-teal-200 bg-teal-50">
+              <h2 className="mb-4 text-lg font-semibold text-teal-800">
                 Opinión del Médico
               </h2>
               <div className="space-y-4">
@@ -243,7 +243,7 @@ export default function SecondOpinionDetailPage() {
                 
                 {request.doctor_recommendations && (
                   <div>
-                    <label className="text-sm font-medium text-green-700">
+                    <label className="text-sm font-medium text-teal-700">
                       Recomendaciones
                     </label>
                     <p className="mt-1 text-gray-900">{request.doctor_recommendations}</p>

@@ -41,6 +41,7 @@ function DrSimeonAvatar({ size = 'default' }: { size?: 'default' | 'large' }) {
           src="/images/simeon.png"
           alt="Dr. Simeon"
           fill
+          sizes="(max-width: 768px) 40px, 56px"
           className="object-cover"
         />
       </motion.div>
@@ -354,7 +355,7 @@ export default function DrSimeonShowcase() {
                   transition={{ delay: index * 0.1 }}
                   className="flex items-center gap-3 text-gray-700"
                 >
-                  <feature.icon className="h-5 w-5 shrink-0 text-emerald-500" />
+                  <feature.icon className="h-5 w-5 shrink-0 text-blue-600" />
                   {feature.text}
                 </motion.li>
               ))}
@@ -392,7 +393,7 @@ export default function DrSimeonShowcase() {
                 <div className="flex-1">
                   <h3 className="font-semibold text-gray-900">Dr. Simeon</h3>
                   <div className="flex items-center gap-1.5">
-                    <span className="h-2 w-2 rounded-full bg-green-500"></span>
+                    <span className="h-2 w-2 rounded-full bg-teal-500"></span>
                     <span className="text-xs text-gray-500">En línea</span>
                   </div>
                 </div>

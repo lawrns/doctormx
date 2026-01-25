@@ -1,66 +1,118 @@
 /**
  * Configuración central para servicios de IA
- * OpenAI, Whisper, y otros modelos
+ * GLM (Primary), OpenAI (Fallback), Whisper, y otros modelos
+ *
+ * GLM z.ai is the primary provider for Doctor.mx
+ * - Cost effective: 90% cheaper than GPT-4
+ * - Better multilingual support (Spanish)
+ * - OpenAI SDK compatible
  */
 
 export const AI_CONFIG = {
-  openai: {
-    apiKey: process.env.OPENAI_API_KEY || '',
-    model: 'gpt-4o-mini', // Más económico para triaje
-    temperature: 0.3, // Menos creativo, más consistente
-    maxTokens: 500, // Respuestas concisas
+  // GLM - Primary AI Provider
+  glm: {
+    apiKey: process.env.GLM_API_KEY || '',
+    baseURL: 'https://api.z.ai/api/paas/v4/',
+    models: {
+      reasoning: 'glm-4.7',        // For complex medical reasoning
+      costEffective: 'glm-4.5-air', // For triage and general chat
+      vision: 'glm-4.5v',          // For medical image analysis
+    },
+    defaultModel: 'glm-4.5-air',   // Default for most operations
+    temperature: 0.3,              // Less creative, more consistent
+    maxTokens: 500,                // Concise responses
   },
 
+  // OpenAI - Fallback provider
+  openai: {
+    apiKey: process.env.OPENAI_API_KEY || '',
+    model: 'gpt-4o-mini', // Fallback model
+    temperature: 0.3,
+    maxTokens: 500,
+  },
+
+  // Whisper - Audio transcription (still uses OpenAI)
   whisper: {
-    apiKey: process.env.OPENAI_API_KEY || '', // Mismo key que OpenAI
+    apiKey: process.env.OPENAI_API_KEY || '', // Whisper requires OpenAI key
     model: 'whisper-1',
-    language: 'es', // Español por defecto
+    language: 'es', // Spanish default
     responseFormat: 'json' as const,
   },
 
-  // Límites y quotas
+  // Limits and quotas
   limits: {
-    maxMessagesPerSession: 20, // Pre-consulta no debe ser interminable
-    maxAudioMinutes: 60, // Consulta típica 20-40min
+    maxMessagesPerSession: 20, // Pre-consultation limits
+    maxAudioMinutes: 60,       // Typical consultation 20-40min
     maxRetries: 3,
-    timeoutMs: 30000, // 30 segundos
+    timeoutMs: 30000,          // 30 seconds
   },
 
-  // Costos estimados (para tracking)
+  // Cost tracking (per 1M tokens)
   costs: {
-    gpt4oMiniInputPer1M: 0.15, // USD por 1M tokens
+    // GLM pricing
+    glmInputPer1M: 0.60,
+    glmOutputPer1M: 2.20,
+    glmCachedPer1M: 0.11,
+    // OpenAI pricing (fallback)
+    gpt4oMiniInputPer1M: 0.15,
     gpt4oMiniOutputPer1M: 0.60,
-    whisperPerMinute: 0.006, // USD por minuto
+    // Whisper
+    whisperPerMinute: 0.006,
   },
 
-  // Features flags (enable/disable por feature)
+  // Feature flags
   features: {
     preConsulta: process.env.NEXT_PUBLIC_AI_PRECONSULTA === 'true' || true,
     transcription: process.env.NEXT_PUBLIC_AI_TRANSCRIPTION === 'true' || true,
     followUp: process.env.NEXT_PUBLIC_AI_FOLLOWUP === 'true' || true,
-    prescriptionAssist: false, // Fase 2
-    smartMatching: false, // Fase 2
+    prescriptionAssist: false, // Phase 2
+    smartMatching: false,      // Phase 2
+    useGLM: true,              // Use GLM as primary provider
+  },
+
+  // Provider priority
+  providers: {
+    primary: 'glm' as const,
+    fallback: 'openai' as const,
   },
 } as const;
 
 /**
  * Valida que las API keys estén configuradas
  */
-export function validateAIConfig(): { valid: boolean; errors: string[] } {
+export function validateAIConfig(): { valid: boolean; errors: string[]; warnings: string[] } {
   const errors: string[] = [];
+  const warnings: string[] = [];
 
-  if (!AI_CONFIG.openai.apiKey && AI_CONFIG.features.preConsulta) {
-    errors.push('OPENAI_API_KEY no configurada pero preConsulta está habilitada');
+  // Check GLM (primary provider)
+  if (!AI_CONFIG.glm.apiKey && AI_CONFIG.features.useGLM && AI_CONFIG.features.preConsulta) {
+    if (!AI_CONFIG.openai.apiKey) {
+      errors.push('GLM_API_KEY no configurada y no hay fallback OpenAI disponible');
+    } else {
+      warnings.push('GLM_API_KEY no configurada - usando OpenAI como fallback');
+    }
   }
 
+  // Check OpenAI (fallback and Whisper)
   if (!AI_CONFIG.whisper.apiKey && AI_CONFIG.features.transcription) {
-    errors.push('OPENAI_API_KEY no configurada pero transcription está habilitada');
+    errors.push('OPENAI_API_KEY requerida para transcripción con Whisper');
   }
 
   return {
     valid: errors.length === 0,
     errors,
+    warnings,
   };
+}
+
+/**
+ * Get the active AI provider based on configuration
+ */
+export function getActiveProvider(): 'glm' | 'openai' {
+  if (AI_CONFIG.features.useGLM && AI_CONFIG.glm.apiKey) {
+    return 'glm';
+  }
+  return 'openai';
 }
 
 /**
@@ -71,11 +123,19 @@ export function estimateCost(operation: {
   inputTokens?: number;
   outputTokens?: number;
   audioMinutes?: number;
+  provider?: 'glm' | 'openai';
 }): number {
   if (operation.type === 'chat') {
-    const inputCost = ((operation.inputTokens || 0) / 1_000_000) * AI_CONFIG.costs.gpt4oMiniInputPer1M;
-    const outputCost = ((operation.outputTokens || 0) / 1_000_000) * AI_CONFIG.costs.gpt4oMiniOutputPer1M;
-    return inputCost + outputCost;
+    const provider = operation.provider || getActiveProvider();
+    if (provider === 'glm') {
+      const inputCost = ((operation.inputTokens || 0) / 1_000_000) * AI_CONFIG.costs.glmInputPer1M;
+      const outputCost = ((operation.outputTokens || 0) / 1_000_000) * AI_CONFIG.costs.glmOutputPer1M;
+      return inputCost + outputCost;
+    } else {
+      const inputCost = ((operation.inputTokens || 0) / 1_000_000) * AI_CONFIG.costs.gpt4oMiniInputPer1M;
+      const outputCost = ((operation.outputTokens || 0) / 1_000_000) * AI_CONFIG.costs.gpt4oMiniOutputPer1M;
+      return inputCost + outputCost;
+    }
   }
 
   if (operation.type === 'transcription') {

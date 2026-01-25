@@ -31,7 +31,7 @@ const testimonials = [
     role: 'Paciente verificada',
     location: 'Monterrey, N.L.',
     initials: 'AR',
-    gradient: 'from-emerald-400 to-teal-500',
+    gradient: 'from-teal-400 to-cyan-500',
     content: 'Usé Dr. Simeon para entender mis síntomas antes de mi consulta. Me ayudó a preparar las preguntas correctas. La segunda opinión que obtuve me dio tranquilidad antes de decidir mi tratamiento.',
     rating: 5,
     verified: true,

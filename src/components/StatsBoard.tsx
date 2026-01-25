@@ -11,8 +11,8 @@ export default function StatsBoard() {
         <p className="text-accent-100 text-sm font-medium">Doctores activos</p>
         <p className="text-3xl font-bold">200+</p>
       </div>
-      <div className="bg-gradient-to-br from-green-400 to-green-600 rounded-2xl p-6 text-white">
-        <p className="text-green-100 text-sm font-medium">Satisfacción</p>
+      <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-6 text-white">
+        <p className="text-blue-100 text-sm font-medium">Satisfacción</p>
         <p className="text-3xl font-bold">4.8</p>
       </div>
       <div className="bg-gradient-to-br from-warning-400 to-warning-600 rounded-2xl p-6 text-white">

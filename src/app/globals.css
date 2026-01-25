@@ -14,35 +14,43 @@
        Less variation, more consistency
        ============================================ */
 
-  /* Primary (Doctronic Blue) - Healthcare professional blue with gradient support */
-  --color-primary-50: #f0f4ff;
-  --color-primary-100: #e0eaff;
-  --color-primary-200: #c7d7fe;
-  --color-primary-300: #a4bcfd;
-  --color-primary-400: #8098f9;
-  --color-primary-500: #6366f1;
-  --color-primary-600: #4f46e5;
-  --color-primary-700: #4338ca;
-  --color-primary-800: #3730a3;
-  --color-primary-900: #312e81;
-  
+  /* Primary (Medical Blue) - Healthcare professional blue with gradient support */
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+
   /* Gradient variants for buttons */
-  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
-  --gradient-primary-hover: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+  --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  --gradient-primary-hover: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
 
-  /* Accent (Cyan/Teal) - Complementary healthcare accent */
-  --color-accent-50: #ecfeff;
-  --color-accent-500: #00B4A3;
-  --color-accent-600: #0891b2;
+  /* Accent (Teal) - Complementary healthcare accent */
+  --color-accent-50: #f0fdfa;
+  --color-accent-500: #14b8a6;
+  --color-accent-600: #0d9488;
 
-  /* Info (Healing Teal) - Secondary healthcare accent */
-  --color-info-500: #00B4A3;
-  --color-info-600: #0891b2;
+  /* Info (Medical Teal) - Secondary healthcare accent */
+  --color-info-500: #14b8a6;
+  --color-info-600: #0d9488;
 
-  /* Semantic colors - Doctronic palette */
-  --color-success-500: #00eca1;
-  --color-warning-500: #ff9900;
-  --color-error-500: #ff4444;
+  /* Medical-specific blue tokens */
+  --medical-blue-50: #eff6ff;
+  --medical-blue-100: #dbeafe;
+  --medical-blue-200: #bfdbfe;
+  --medical-blue-500: #3b82f6;
+  --medical-blue-600: #2563eb;
+  --medical-blue-900: #1e3a8a;
+
+  /* Semantic colors - Medical palette */
+  --color-success-500: #10b981;
+  --color-warning-500: #f59e0b;
+  --color-error-500: #ef4444;
 
   /* Neutrals - Warm Doctronic palette (NOT pure white) */
   --color-neutral-0: #fdfaf6;
@@ -155,8 +163,8 @@
   --shadow-card-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.06);
   
   /* Colored shadows for buttons */
-  --shadow-primary: 0 4px 14px 0 rgba(99, 102, 241, 0.25);
-  --shadow-primary-hover: 0 8px 25px 0 rgba(99, 102, 241, 0.35);
+  --shadow-primary: 0 4px 14px 0 rgba(59, 130, 246, 0.25);
+  --shadow-primary-hover: 0 8px 25px 0 rgba(59, 130, 246, 0.35);
 
   /* ============================================
        BORDER RADIUS
@@ -299,10 +307,10 @@ body {
 /* Pulsing glow ring for primary CTA buttons */
 @keyframes pulse-ring {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.4);
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
   }
   50% {
-    box-shadow: 0 0 0 8px rgba(79, 70, 229, 0);
+    box-shadow: 0 0 0 8px rgba(37, 99, 235, 0);
   }
 }
 
@@ -316,7 +324,7 @@ body {
 
 .focus-ring:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
 }
 
 /* ============================================
@@ -482,10 +490,10 @@ a > img {
 
 @keyframes pulseGlow {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(85, 136, 255, 0.7);
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
   }
   50% {
-    box-shadow: 0 0 0 10px rgba(85, 136, 255, 0);
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
   }
 }
 

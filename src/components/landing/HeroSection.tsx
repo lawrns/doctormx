@@ -84,7 +84,7 @@ export function HeroSection() {
               </div>
               {/* Online indicator */}
               <span
-                className="absolute bottom-1 right-1 w-5 h-5 bg-emerald-500 border-2 border-white rounded-full flex items-center justify-center"
+                className="absolute bottom-1 right-1 w-5 h-5 bg-teal-500 border-2 border-white rounded-full flex items-center justify-center"
                 aria-label="En linea"
                 role="status"
               >
@@ -94,12 +94,12 @@ export function HeroSection() {
 
             {/* Live status badge */}
             <div className="text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 border border-emerald-200 rounded-full mb-1">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-teal-50 border border-teal-200 rounded-full mb-1">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
                 </span>
-                <span className="text-xs font-medium text-emerald-700">En línea ahora</span>
+                <span className="text-xs font-medium text-teal-700">En línea ahora</span>
               </div>
               <p className="text-sm font-semibold text-text-primary">Dr. Simeon</p>
               <p className="text-xs text-text-muted">Asistente médico IA</p>
@@ -148,7 +148,7 @@ export function HeroSection() {
           </span>
           <span className="text-neutral-300" aria-hidden="true">•</span>
           <span className="flex items-center gap-1.5">
-            <Shield className="w-4 h-4 text-emerald-500" aria-hidden="true" />
+            <Shield className="w-4 h-4 text-blue-600" aria-hidden="true" />
             Datos 100% protegidos
           </span>
           <span className="text-neutral-300" aria-hidden="true">•</span>
@@ -258,8 +258,8 @@ export function HeroSection() {
             </div>
             <div>
               <p className="font-semibold text-sm text-text-primary">Dr. Simeon</p>
-              <p className="text-xs text-emerald-500 flex items-center gap-1">
-                <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+              <p className="text-xs text-teal-600 flex items-center gap-1">
+                <span className="w-1.5 h-1.5 bg-teal-500 rounded-full"></span>
                 En línea
               </p>
             </div>

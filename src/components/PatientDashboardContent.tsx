@@ -156,8 +156,8 @@ export function QuickStats({ appointments }: { appointments: Appointment[] }) {
 
   return (
     <div className="grid grid-cols-2 gap-4 mb-8">
-      <div className="bg-gradient-to-br from-green-400 to-green-600 rounded-2xl p-4 text-white">
-        <p className="text-green-100 text-sm font-medium">Consultas completadas</p>
+      <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-4 text-white">
+        <p className="text-blue-100 text-sm font-medium">Consultas completadas</p>
         <p className="text-3xl font-bold">{completed}</p>
       </div>
       <div className="bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl p-4 text-white">

@@ -24,7 +24,7 @@ export default async function PatientDashboard() {
   const getStatusBadge = (status: string) => {
     const styles: Record<string, string> = {
       pending_payment: 'bg-yellow-50 text-yellow-700 border-yellow-200',
-      confirmed: 'bg-green-50 text-green-700 border-green-200',
+      confirmed: 'bg-teal-50 text-teal-700 border-teal-200',
       completed: 'bg-blue-50 text-primary-500 border-blue-200',
       cancelled: 'bg-red-50 text-red-700 border-red-200',
       no_show: 'bg-gray-50 text-gray-600 border-gray-200',

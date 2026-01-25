@@ -1,5 +1,7 @@
 /**
  * Exporta todos los módulos de IA
+ *
+ * GLM z.ai is the primary provider for Doctor.mx
  */
 
 export * from './config';
@@ -7,10 +9,21 @@ export * from './types';
 export * from './prompts';
 export * from './client';
 export * from './vision';
+export * from './glm';
 
 // Re-exportar constantes útiles
-export { AI_CONFIG, validateAIConfig, estimateCost } from './config';
+export { AI_CONFIG, validateAIConfig, estimateCost, getActiveProvider } from './config';
 export { chatCompletion, transcribeAudio, structuredAnalysis, safetyCheck, auditAIOperation } from './client';
+export {
+  glm,
+  GLM_CONFIG,
+  isGLMConfigured,
+  calculateGLMCost,
+  getGLMModel,
+  glmChatCompletion,
+  glmStreamingCompletion,
+  glmVisionAnalysis
+} from './glm';
 export {
   PRECONSULTA_SYSTEM_PROMPT,
   PRECONSULTA_URGENCY_PROMPT,
