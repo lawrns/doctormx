@@ -85,32 +85,20 @@ const ConsultRequestSchema = z.object({
 
 // Using buildPatientDataPrompt from @/lib/soap/prompts for sanitized input
 
-// Specialist prompts optimized for GLM - MUST output JSON ONLY (no reasoning text)
-// GLM tends to add reasoning before JSON, so we're very explicit about format
+// Specialist prompts - using simple extraction pattern since GLM ignores JSON mode
+// We'll extract the diagnosis from natural language instead
 const SPECIALIST_PROMPTS: Record<SpecialistRole, string> = {
-  'general-practitioner': `Tu rol: Médico general. Evalúa los síntomas y da tu impresión clínica.
+  'general-practitioner': `Eres Dr. García, médico general. Analiza estos síntomas y da tu diagnóstico en UNA oración.
+Formato: DIAGNÓSTICO: [tu diagnóstico] | URGENCIA: [baja/media/alta/emergencia] | CONFIANZA: [0-100]%`,
 
-IMPORTANTE: Responde SOLO con el JSON abajo, sin explicaciones ni razonamiento.
+  'dermatologist': `Eres Dra. Rodríguez, dermatóloga. ¿Hay componente cutáneo en estos síntomas? Responde en UNA oración.
+Formato: DIAGNÓSTICO: [tu evaluación] | URGENCIA: [baja/media/alta/emergencia] | CONFIANZA: [0-100]%`,
 
-{"clinicalImpression":"[tu diagnóstico en 1-2 oraciones]","urgencyLevel":"moderate","redFlags":[],"recommendedTests":[],"confidence":0.7}`,
+  'internist': `Eres Dr. Martínez, internista. ¿Hay afectación sistémica en estos síntomas? Responde en UNA oración.
+Formato: DIAGNÓSTICO: [tu evaluación] | URGENCIA: [baja/media/alta/emergencia] | CONFIANZA: [0-100]%`,
 
-  'dermatologist': `Tu rol: Dermatóloga. Evalúa si hay componente cutáneo.
-
-IMPORTANTE: Responde SOLO con el JSON abajo, sin explicaciones ni razonamiento.
-
-{"clinicalImpression":"[tu evaluación dermatológica]","urgencyLevel":"moderate","redFlags":[],"recommendedTests":[],"confidence":0.7}`,
-
-  'internist': `Tu rol: Internista. Evalúa enfermedades sistémicas.
-
-IMPORTANTE: Responde SOLO con el JSON abajo, sin explicaciones ni razonamiento.
-
-{"clinicalImpression":"[tu evaluación de medicina interna]","urgencyLevel":"moderate","redFlags":[],"recommendedTests":[],"confidence":0.7}`,
-
-  'psychiatrist': `Tu rol: Psiquiatra. Evalúa componente emocional/psicológico.
-
-IMPORTANTE: Responde SOLO con el JSON abajo, sin explicaciones ni razonamiento.
-
-{"clinicalImpression":"[tu evaluación psiquiátrica]","urgencyLevel":"moderate","redFlags":[],"recommendedTests":[],"confidence":0.7}`
+  'psychiatrist': `Eres Dra. López, psiquiatra. ¿Hay componente emocional/psicológico? Responde en UNA oración.
+Formato: DIAGNÓSTICO: [tu evaluación] | URGENCIA: [baja/media/alta/emergencia] | CONFIANZA: [0-100]%`
 }
 
 /**
@@ -130,9 +118,9 @@ async function consultSpecialist(
       { role: 'user', content: patientData },
     ],
     model: GLM_CONFIG.models.costEffective,
-    jsonMode: true,
+    jsonMode: false, // GLM ignores JSON mode, so we parse natural language instead
     temperature: 0.3,
-    maxTokens: 500, // Balanced for quality and speed
+    maxTokens: 300, // Shorter since we only need 1 sentence
   })
 
   // Retry once if we get an empty response (GLM rate limiting issue)
@@ -142,126 +130,67 @@ async function consultSpecialist(
     return consultSpecialist(role, patientData, retryCount + 1)
   }
 
-  // Try to extract JSON from response (may be wrapped in markdown or have reasoning text)
-  let parsed: Record<string, unknown> | null = null
   const content = response.content
 
   // Debug: log what GLM returned
   logger.info('[SOAP Specialist] GLM response', {
     role,
     contentLength: content.length,
-    contentPreview: content.slice(0, 300),
-    contentEnd: content.slice(-300), // Also log the END where JSON is likely to be
+    content: content.slice(0, 500),
   })
 
-  try {
-    // First, try direct JSON parse
-    parsed = JSON.parse(content)
-  } catch {
-    // GLM reasoning models output thinking THEN JSON - look for the LAST complete JSON object
-    // Strategy: find all JSON-like patterns and try parsing from the most complete one
+  // Parse natural language format: DIAGNÓSTICO: ... | URGENCIA: ... | CONFIANZA: ...
+  // Also handle if GLM outputs in a different format
+  let diagnosis = 'Evaluación completada'
+  let urgency: UrgencyLevel = 'moderate'
+  let confidence = 0.7
 
-    // Try to find JSON in markdown code blocks first
-    const codeBlockMatch = content.match(/```(?:json)?\s*([\s\S]*?)```/)
-    if (codeBlockMatch) {
-      try {
-        parsed = JSON.parse(codeBlockMatch[1].trim())
-      } catch { /* continue */ }
-    }
+  // Try to extract structured fields
+  const diagMatch = content.match(/DIAGN[ÓO]STICO:\s*([^|]+)/i)
+  const urgencyMatch = content.match(/URGENCIA:\s*([^|]+)/i)
+  const confMatch = content.match(/CONFIANZA:\s*(\d+)/i)
 
-    // If not in code block, find the last JSON object (reasoning models put it at the end)
-    if (!parsed) {
-      // Find the last opening brace and extract from there
-      const lastBraceIndex = content.lastIndexOf('{')
-      if (lastBraceIndex !== -1) {
-        const jsonCandidate = content.slice(lastBraceIndex)
-        // Try to find matching closing brace
-        let braceCount = 0
-        let endIndex = 0
-        for (let i = 0; i < jsonCandidate.length; i++) {
-          if (jsonCandidate[i] === '{') braceCount++
-          if (jsonCandidate[i] === '}') {
-            braceCount--
-            if (braceCount === 0) {
-              endIndex = i + 1
-              break
-            }
-          }
-        }
-        if (endIndex > 0) {
-          try {
-            parsed = JSON.parse(jsonCandidate.slice(0, endIndex))
-          } catch { /* continue */ }
-        }
-      }
-    }
-
-    // Fallback: try the first JSON object
-    if (!parsed) {
-      const jsonMatch = content.match(/\{[\s\S]*\}/)
-      if (jsonMatch) {
-        try {
-          parsed = JSON.parse(jsonMatch[0])
-        } catch {
-          logger.warn('[SOAP Specialist] All JSON extraction failed', {
-            role,
-            contentLength: content.length,
-          })
-        }
+  if (diagMatch) {
+    diagnosis = diagMatch[1].trim()
+  } else {
+    // If no structured format, use the first meaningful sentence
+    const sentences = content.split(/[.!?]/).filter(s => s.trim().length > 20)
+    if (sentences.length > 0) {
+      // Skip reasoning sentences like "Let me analyze" or "Vamos a analizar"
+      const meaningfulSentence = sentences.find(s =>
+        !s.match(/let me|vamos a|desde la perspectiva|from.*perspective/i)
+      )
+      if (meaningfulSentence) {
+        diagnosis = meaningfulSentence.trim().slice(0, 200)
       }
     }
   }
 
-  // Accept multiple possible field names for diagnosis
-  const diagnosisField = parsed?.clinicalImpression
-    || parsed?.clinical_impression
-    || parsed?.diagnosis
-    || parsed?.impression
-    || parsed?.assessment
-    || (parsed?.differentialDiagnoses as unknown[])?.[0]
-    || null
-
-  if (parsed && diagnosisField) {
-    const diagnosisText = typeof diagnosisField === 'string'
-      ? diagnosisField
-      : typeof diagnosisField === 'object' && diagnosisField !== null
-        ? (diagnosisField as Record<string, unknown>).name as string || JSON.stringify(diagnosisField)
-        : String(diagnosisField)
-
-    return {
-      role,
-      diagnosis: diagnosisText,
-      confidence: Number(parsed.confidence || parsed.confidenceScore) || 0.7,
-      urgency: (parsed.urgencyLevel || parsed.urgency || 'moderate') as UrgencyLevel,
-      redFlags: Array.isArray(parsed.redFlags)
-        ? parsed.redFlags as string[]
-        : Array.isArray(parsed.red_flags)
-          ? parsed.red_flags as string[]
-          : [],
-      recommendations: Array.isArray(parsed.recommendedTests)
-        ? parsed.recommendedTests as string[]
-        : Array.isArray(parsed.recommendations)
-          ? parsed.recommendations as string[]
-          : Array.isArray(parsed.recommended_tests)
-            ? parsed.recommended_tests as string[]
-            : [],
-      tokensUsed: response.usage.totalTokens,
-      costUSD: response.costUSD,
-      _rawContent: content.slice(0, 300), // Debug
+  if (urgencyMatch) {
+    const urg = urgencyMatch[1].trim().toLowerCase()
+    if (urg.includes('emergencia') || urg.includes('alta') || urg.includes('emergency')) {
+      urgency = 'emergency'
+    } else if (urg.includes('urgent') || urg.includes('media')) {
+      urgency = 'moderate'
+    } else if (urg.includes('baja') || urg.includes('low') || urg.includes('routine')) {
+      urgency = 'routine'
     }
   }
 
-  // Fallback: include raw content for debugging
+  if (confMatch) {
+    confidence = parseInt(confMatch[1], 10) / 100
+  }
+
   return {
     role,
-    diagnosis: 'Evaluación pendiente',
-    confidence: 0.5,
-    urgency: 'moderate' as UrgencyLevel,
+    diagnosis,
+    confidence,
+    urgency,
     redFlags: [],
-    recommendations: ['Consultar con un médico para evaluación completa'],
+    recommendations: [],
     tokensUsed: response.usage.totalTokens,
     costUSD: response.costUSD,
-    _rawContent: content.slice(0, 500), // Debug: see what GLM actually returned
+    _rawContent: content.slice(0, 300),
   }
 }
 
