@@ -117,7 +117,12 @@ export async function glmChatCompletion(params: {
       ...(jsonMode && { response_format: { type: 'json_object' } }),
     })
 
-    const content = response.choices[0]?.message?.content || ''
+    // GLM may return content in different fields depending on model
+    const message = response.choices[0]?.message
+    // Check for reasoning_content (GLM-4.7 thinking models) or regular content
+    const content = message?.content
+      || (message as unknown as { reasoning_content?: string })?.reasoning_content
+      || ''
     const usage = {
       inputTokens: response.usage?.prompt_tokens || 0,
       outputTokens: response.usage?.completion_tokens || 0,
