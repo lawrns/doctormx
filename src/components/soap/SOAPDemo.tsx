@@ -25,12 +25,29 @@ export function SOAPDemo() {
   // Fix hydration mismatch: use stable timestamp from useState initializer
   // This ensures server and client render the same value
   const [demoTimestamp] = useState(() => Date.now());
+
+  // Helper to create emoji doctor avatar SVG
+  const createDoctorAvatar = (emoji: string, bgColor: string): string => {
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="${bgColor}"/><circle cx="50" cy="35" r="18" fill="#fff"/><path d="M25 85 Q50 65 75 85" fill="#fff"/><text x="50" y="52" font-family="Arial" font-size="28" text-anchor="middle" fill="#334155">${emoji}</text></svg>`;
+    return `data:image/svg+xml,${svg}`;
+  };
+
+  // Avatar colors and emojis by specialty
+  const specialtyAvatars: Record<string, string> = {
+    cardiology: createDoctorAvatar('❤️', '#ef4444'),
+    general: createDoctorAvatar('🩺', '#3b82f6'),
+    neurology: createDoctorAvatar('🧠', '#f59e0b'),
+    psychology: createDoctorAvatar('💭', '#ec4899'),
+    dermatology: createDoctorAvatar('🧴', '#a855f7'),
+  };
+
   // Example data for specialists
   const specialists: SpecialistAgent[] = [
     {
       id: '1',
       name: 'Dr. María González',
       specialty: 'cardiology',
+      avatar: specialtyAvatars.cardiology,
       confidence: 87,
       assessment:
         'Los síntomas sugieren posible taquicardia paroxística. Se recomienda realizar ECG y monitoreo Holter de 24 horas para confirmar el diagnóstico.',
@@ -40,6 +57,7 @@ export function SOAPDemo() {
       id: '2',
       name: 'Dr. Carlos Mendoza',
       specialty: 'general',
+      avatar: specialtyAvatars.general,
       confidence: 92,
       assessment:
         'Presentación clásica de arritmia benigna. Antecedentes del paciente y examen físico son consistentes con episodios de palpitaciones no graves.',
@@ -49,6 +67,7 @@ export function SOAPDemo() {
       id: '3',
       name: 'Dra. Ana Martínez',
       specialty: 'neurology',
+      avatar: specialtyAvatars.neurology,
       confidence: 78,
       assessment:
         'Importante descartar causas neurológicas. Los episodios de mareo asociados requieren evaluación complementaria para excluir componente vestibular.',
@@ -58,6 +77,7 @@ export function SOAPDemo() {
       id: '4',
       name: 'Dr. Roberto Silva',
       specialty: 'psychology',
+      avatar: specialtyAvatars.psychology,
       confidence: 0,
       assessment: '',
       status: 'pending',

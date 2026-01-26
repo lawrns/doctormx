@@ -185,12 +185,34 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
       medicalHistory: formData.medicalHistory || undefined,
     };
 
+    // Helper to create emoji avatar SVG data URL
+    const createDoctorAvatar = (emoji: string, bgColor: string): string => {
+      const svg = encodeURIComponent(`
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="50" fill="${bgColor}"/>
+          <circle cx="50" cy="35" r="18" fill="#fff"/>
+          <path d="M25 85 Q50 65 75 85" fill="#fff"/>
+          <text x="50" y="52" font-family="Arial" font-size="28" text-anchor="middle" fill="#334155">${emoji}</text>
+        </svg>
+      `).replace(/%20/g, '').replace(/%2C/g, ',').replace(/%3A/g, ':').replace(/%3B/g, ';').replace(/%3D/g, '=').replace(/%3C/g, '<').replace(/%3E/g, '>').replace(/%22/g, '"').replace(/%2F/g, '/');
+      return `data:image/svg+xml,${svg}`;
+    };
+
+    // Specialist avatars with emoji and color
+    const specialistAvatars: Record<string, string> = {
+      gp: createDoctorAvatar('🩺', '#3b82f6'),      // blue - general
+      derm: createDoctorAvatar('🧴', '#a855f7'),    // purple - dermatology
+      int: createDoctorAvatar('🧠', '#f59e0b'),     // amber - internal/neurology
+      psych: createDoctorAvatar('💭', '#ec4899'),   // pink - psychology
+    };
+
     // Initialize specialists in thinking state
     const initialSpecialists: SpecialistAgent[] = [
       {
         id: 'gp',
         name: 'Dr. Garcia',
         specialty: 'general',
+        avatar: specialistAvatars.gp,
         confidence: 0,
         assessment: '',
         status: 'thinking',
@@ -199,6 +221,7 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
         id: 'derm',
         name: 'Dra. Rodriguez',
         specialty: 'dermatology',
+        avatar: specialistAvatars.derm,
         confidence: 0,
         assessment: '',
         status: 'thinking',
@@ -207,6 +230,7 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
         id: 'int',
         name: 'Dr. Martinez',
         specialty: 'neurology',
+        avatar: specialistAvatars.int,
         confidence: 0,
         assessment: '',
         status: 'thinking',
@@ -215,6 +239,7 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
         id: 'psych',
         name: 'Dra. Lopez',
         specialty: 'psychology',
+        avatar: specialistAvatars.psych,
         confidence: 0,
         assessment: '',
         status: 'thinking',

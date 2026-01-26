@@ -138,13 +138,22 @@ function SpecialistCard({ agent }: SpecialistCardProps) {
         <div className="flex items-start gap-4">
           <Avatar
             className={cn(
-              'h-12 w-12 ring-2 ring-offset-2',
-              specialtyColors[agent.specialty] || 'bg-gray-500'
+              'h-14 w-14 ring-2 ring-offset-2 shadow-sm',
+              specialtyColors[agent.specialty]?.replace('bg-', 'ring-') || 'ring-gray-500'
             )}
             aria-label={`Avatar de ${agent.name}`}
           >
-            <AvatarImage src={agent.avatar} alt={agent.name} />
-            <AvatarFallback className="bg-transparent text-white text-sm font-semibold">
+            <AvatarImage
+              src={agent.avatar}
+              alt={agent.name}
+              className="object-cover"
+            />
+            <AvatarFallback
+              className={cn(
+                'text-white text-base font-semibold',
+                specialtyColors[agent.specialty] || 'bg-gray-500'
+              )}
+            >
               {getSpecialistInitials(agent.name)}
             </AvatarFallback>
           </Avatar>

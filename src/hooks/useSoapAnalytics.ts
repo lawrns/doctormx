@@ -129,17 +129,17 @@ export function useSoapAnalytics(userId: string, abTestVariant: string) {
     const timeOnStep = Date.now() - stepStart.current;
 
     // Update step metrics
-    const metrics = stepMetrics.current.get(step);
-    if (metrics) {
-      metrics.completedAt = Date.now();
-      metrics.autocompleteUsed = usedAutocomplete;
+    const stepMetric = stepMetrics.current.get(step);
+    if (stepMetric) {
+      stepMetric.completedAt = Date.now();
+      stepMetric.autocompleteUsed = usedAutocomplete;
     }
 
     metrics.increment('soap_step_completed', 1, {
       user_id: userId,
       step,
       time_on_step_ms: String(timeOnStep),
-      interactions: String(metrics?.interactions || 0),
+      interactions: String(stepMetric?.interactions || 0),
       used_autocomplete: String(usedAutocomplete),
       ab_test_variant: abTestVariant,
     });
@@ -264,10 +264,10 @@ export function useSoapAnalytics(userId: string, abTestVariant: string) {
    */
   const trackAutocompleteOpened = useCallback((queryLength: number) => {
     autocompleteUsed.current = true;
-    const metrics = stepMetrics.current.get(currentStep.current);
-    if (metrics) {
-      metrics.autocompleteUsed = true;
-      metrics.interactions++;
+    const stepMetric = stepMetrics.current.get(currentStep.current);
+    if (stepMetric) {
+      stepMetric.autocompleteUsed = true;
+      stepMetric.interactions++;
     }
 
     metrics.increment('soap_autocomplete_opened', 1, {
@@ -304,10 +304,10 @@ export function useSoapAnalytics(userId: string, abTestVariant: string) {
     toValue: number
   ) => {
     severityAdjustments.current++;
-    const metrics = stepMetrics.current.get(currentStep.current);
-    if (metrics) {
-      metrics.severityAdjustments++;
-      metrics.interactions++;
+    const stepMetric = stepMetrics.current.get(currentStep.current);
+    if (stepMetric) {
+      stepMetric.severityAdjustments++;
+      stepMetric.interactions++;
     }
 
     metrics.increment('soap_severity_slider_moved', 1, {
