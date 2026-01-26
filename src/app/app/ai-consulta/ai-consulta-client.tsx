@@ -237,7 +237,8 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
         throw new Error(errorText || 'Error en la consulta');
       }
 
-      // Process SSE stream
+      // Process SSE stream with named events
+      // SSE format: "event: eventName\ndata: {...}\n\n"
       const reader = response.body?.getReader();
       if (!reader) throw new Error('No stream available');
 
@@ -253,21 +254,38 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
         if (done) break;
 
         buffer += decoder.decode(value, { stream: true });
-        const lines = buffer.split('\n');
-        buffer = lines.pop() || '';
 
-        for (const line of lines) {
-          if (!line.startsWith('data: ')) continue;
-          const data = line.slice(6).trim();
-          if (!data || data === '[DONE]') continue;
+        // Split by double newline (SSE event separator)
+        const events = buffer.split('\n\n');
+        buffer = events.pop() || ''; // Keep incomplete event in buffer
+
+        for (const eventBlock of events) {
+          if (!eventBlock.trim()) continue;
+
+          // Parse SSE event format: "event: name\ndata: {...}"
+          const lines = eventBlock.split('\n');
+          let eventName = '';
+          let eventData: any = null;
+
+          for (const line of lines) {
+            if (line.startsWith('event: ')) {
+              eventName = line.slice(7).trim();
+            } else if (line.startsWith('data: ')) {
+              try {
+                eventData = JSON.parse(line.slice(6).trim());
+              } catch {
+                // Non-JSON data, skip
+              }
+            }
+          }
+
+          if (!eventData) continue;
 
           try {
-            const event = JSON.parse(data);
-
-            switch (event.type) {
-              case 'specialist':
+            switch (eventName) {
+              case 'specialist_done':
                 // Update specialist with real assessment
-                const specialistId = mapRoleToId(event.data.role);
+                const specialistId = mapRoleToId(eventData.specialist);
                 completedSpecialistIds.push(specialistId);
 
                 setSpecialists((prev) =>
@@ -275,8 +293,8 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
                     s.id === specialistId
                       ? {
                           ...s,
-                          confidence: Math.round(event.data.confidence * 100),
-                          assessment: event.data.diagnosis,
+                          confidence: Math.round((eventData.confidence || 0.7) * 100),
+                          assessment: eventData.diagnosis || 'Evaluación completada',
                           status: 'completed' as const,
                         }
                       : s
@@ -297,7 +315,7 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
                 );
                 break;
 
-              case 'consensus':
+              case 'consensus_done':
                 setPhases((prev) =>
                   prev.map((p) =>
                     p.phase === 'assessment'
@@ -306,18 +324,17 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
                   )
                 );
 
-                const consensusData = event.data;
                 setConsensus({
-                  score: Math.round(consensusData.confidenceScore * 100),
-                  level: mapAgreementLevel(consensusData.agreementLevel),
-                  primaryDiagnosis: consensusData.primaryDiagnosis || '',
+                  score: Math.round((eventData.confidence || 0.7) * 100),
+                  level: mapAgreementLevel(eventData.agreementLevel || 'moderate'),
+                  primaryDiagnosis: eventData.primaryDiagnosis || '',
                   differentialDiagnoses: [],
-                  clinicalReasoning: `Urgencia: ${consensusData.urgencyLevel}`,
-                  agreementPercentage: Math.round(consensusData.confidenceScore * 100),
+                  clinicalReasoning: `Urgencia: ${eventData.urgencyLevel || 'moderate'}`,
+                  agreementPercentage: Math.round((eventData.confidence || 0.7) * 100),
                 });
                 break;
 
-              case 'plan':
+              case 'plan_done':
                 setPhases((prev) =>
                   prev.map((p) =>
                     p.phase === 'plan'
@@ -328,15 +345,37 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
                 break;
 
               case 'complete':
-                finalConsultation = event.data;
+                // Build consultation object from the complete event data
+                finalConsultation = {
+                  id: eventData.consultationId,
+                  patientId: userId,
+                  createdAt: new Date(),
+                  completedAt: new Date(),
+                  status: 'complete',
+                  subjective: subjectiveData,
+                  objective: {},
+                  assessment: {
+                    specialists: eventData.specialists || [],
+                    consensus: eventData.consensus || null,
+                  },
+                  plan: eventData.plan || null,
+                  metadata: {
+                    totalTokens: 0,
+                    totalCostUSD: 0,
+                    totalLatencyMs: 0,
+                    aiModel: 'glm-4-plus',
+                  },
+                } as SOAPConsultation;
                 break;
 
               case 'error':
-                throw new Error(event.message || 'Error en consulta');
+                throw new Error(eventData.error || 'Error en consulta');
             }
-          } catch (parseErr) {
-            // Skip invalid JSON lines
-            console.warn('Failed to parse SSE data:', data);
+          } catch (err) {
+            if (err instanceof Error && err.message.includes('Error')) {
+              throw err;
+            }
+            console.warn('Failed to process SSE event:', eventName, eventData);
           }
         }
       }
