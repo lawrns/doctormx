@@ -38,6 +38,7 @@ interface StreamingAssessment {
   recommendations: string[]
   tokensUsed: number
   costUSD: number
+  _rawContent?: string // Debug: raw GLM response
 }
 
 interface StreamingConsensus {
@@ -217,26 +218,21 @@ async function consultSpecialist(
             : [],
       tokensUsed: response.usage.totalTokens,
       costUSD: response.costUSD,
+      _rawContent: content.slice(0, 300), // Debug
     }
   }
 
-  // Fallback: use the raw content as the diagnosis if it looks like medical text
-  // Remove any JSON-like artifacts and use the meaningful part
-  const cleanContent = content
-    .replace(/```json?\n?/g, '')
-    .replace(/```/g, '')
-    .replace(/^\s*\{[\s\S]*\}\s*$/g, '') // Remove failed JSON
-    .trim()
-
+  // Fallback: include raw content for debugging
   return {
     role,
-    diagnosis: cleanContent.slice(0, 300) || 'Evaluación pendiente',
+    diagnosis: 'Evaluación pendiente',
     confidence: 0.5,
     urgency: 'moderate' as UrgencyLevel,
     redFlags: [],
     recommendations: ['Consultar con un médico para evaluación completa'],
     tokensUsed: response.usage.totalTokens,
     costUSD: response.costUSD,
+    _rawContent: content.slice(0, 500), // Debug: see what GLM actually returned
   }
 }
 
@@ -420,8 +416,9 @@ export async function POST(request: NextRequest) {
               confidence: assessment.confidence,
               urgency: assessment.urgency,
               redFlags: assessment.redFlags.slice(0, 3),
-              // Debug: include raw diagnosis length to see if we got real content
-              _diagLen: assessment.diagnosis.length,
+              // Debug: show what GLM actually returned
+              _rawContent: assessment._rawContent?.slice(0, 200),
+              _tokens: assessment.tokensUsed,
             })
             return assessment
           })
