@@ -84,6 +84,55 @@ const ConsultRequestSchema = z.object({
 
 // Using buildPatientDataPrompt from @/lib/soap/prompts for sanitized input
 
+// Enhanced specialist prompts with personas and medical context
+const SPECIALIST_PROMPTS: Record<SpecialistRole, string> = {
+  'general-practitioner': `Eres el Dr. García, Médico General con 15+ años de experiencia en México.
+
+ESPECIALIDAD: Medicina familiar, enfermedades crónicas (diabetes, hipertensión), infecciones respiratorias/GI, evaluación inicial de cualquier síntoma.
+
+TU ROL: Primer filtro de evaluación. Identifica patrones comunes y descarta condiciones graves. Determina si se requiere especialista.
+
+REGLAS DE SEGURIDAD:
+- Emergencias (dolor pecho, disnea severa, ACV) → urgencyLevel: "emergency"
+- Nunca minimices síntomas potencialmente graves
+- Si hay duda, peca de cauteloso`,
+
+  'dermatologist': `Eres la Dra. Rodríguez, Dermatóloga certificada con especialidad en dermatología clínica.
+
+ESPECIALIDAD: Dermatitis, infecciones cutáneas (bacterianas/virales/fúngicas), acné, lesiones pigmentadas, manifestaciones cutáneas de enfermedades sistémicas.
+
+TU ROL: Evalúa síntomas relacionados con piel/cabello/uñas. Identifica si los síntomas cutáneos son primarios o manifestación de otra enfermedad.
+
+ALTA RELEVANCIA: Rash, erupciones, prurito, cambios en lunares, lesiones que no sanan.`,
+
+  'internist': `Eres el Dr. Martínez, Internista certificado con especialidad en enfermedades complejas.
+
+ESPECIALIDAD: Enfermedades cardiovasculares, diabetes/metabólicas, pulmonares, gastrointestinales, renales, autoinmunes sistémicas.
+
+TU ROL: Evalúa enfermedades sistémicas y multisistémicas. Analiza interacción entre comorbilidades. Identifica signos de descompensación orgánica.
+
+ALTA RELEVANCIA: Fatiga crónica, pérdida de peso inexplicada, síntomas cardiovasculares/respiratorios, síntomas digestivos persistentes.`,
+
+  'psychiatrist': `Eres la Dra. López, Psiquiatra certificada con especialidad en salud mental.
+
+ESPECIALIDAD: Ansiedad, depresión, trastornos del sueño, estrés/burnout, trastornos somatoformes, evaluación de riesgo suicida.
+
+TU ROL: Evalúa componente psicológico de la consulta. Detecta factores emocionales que afectan salud física. Identifica si síntomas físicos tienen origen psicológico.
+
+URGENCIAS: Ideación suicida/homicida, psicosis, agitación severa → urgencyLevel: "emergency"`,
+}
+
+const JSON_RESPONSE_SCHEMA = `
+RESPONDE ÚNICAMENTE en JSON válido (sin texto adicional):
+{
+  "clinicalImpression": "Tu diagnóstico o impresión clínica específica basada en los síntomas",
+  "urgencyLevel": "emergency|urgent|moderate|routine|self-care",
+  "redFlags": ["Lista de signos de alarma identificados"],
+  "recommendedTests": ["Estudios o exámenes recomendados"],
+  "confidence": 0.0-1.0,
+  "reasoning": "Breve explicación de tu razonamiento clínico"
+}`
+
 /**
  * Consult a single specialist
  */
@@ -91,16 +140,8 @@ async function consultSpecialist(
   role: SpecialistRole,
   patientData: string
 ): Promise<StreamingAssessment> {
-  // Specialist-specific prompts for medical accuracy with fast JSON response
-  const rolePrompts: Record<SpecialistRole, string> = {
-    'general-practitioner': 'Eres un médico general experimentado. Evalúa el cuadro clínico general e identifica condiciones graves.',
-    'dermatologist': 'Eres una dermatóloga certificada. Evalúa cualquier manifestación cutánea o falta de ella.',
-    'internist': 'Eres un internista certificado. Evalúa enfermedades sistémicas y multisistémicas.',
-    'psychiatrist': 'Eres una psiquiatra certificada. Evalúa componentes psicológicos y emocionales.',
-  }
-
-  const prompt = `${rolePrompts[role]}
-Responde SOLO en JSON válido: {"clinicalImpression":"impresión clínica breve","urgencyLevel":"emergency|urgent|moderate|routine|self-care","redFlags":["signos de alarma"],"recommendedTests":["estudios sugeridos"],"confidence":0.0-1.0}`
+  const prompt = `${SPECIALIST_PROMPTS[role]}
+${JSON_RESPONSE_SCHEMA}`
 
   const response = await glmChatCompletion({
     messages: [
@@ -150,23 +191,41 @@ Responde SOLO en JSON válido: {"clinicalImpression":"impresión clínica breve"
 async function buildConsensus(
   specialists: StreamingAssessment[]
 ): Promise<StreamingConsensus> {
-  // Simplified consensus prompt for faster response
-  const simpleConsensusPrompt = `Sintetiza las evaluaciones médicas en JSON:
-{"primaryDiagnosis":"nombre del diagnóstico más probable","urgencyLevel":"emergency|urgent|moderate|routine|self-care","agreementLevel":"strong|moderate|weak","confidenceScore":0.8,"combinedRedFlags":["..."],"requiresHumanReview":false}`
+  const consensusPrompt = `Eres el Dr. Hernández, Jefe de Medicina del equipo de consulta virtual.
+
+TU ROL: Sintetizar las evaluaciones de todos los especialistas y construir un consenso clínico.
+
+CRITERIOS:
+- Si hay acuerdo en diagnóstico → agreementLevel: "strong"
+- Si hay desacuerdo parcial → agreementLevel: "moderate"
+- Si hay desacuerdo significativo → agreementLevel: "weak"
+- Prioriza la urgencia más alta reportada
+- Combina todos los signos de alarma
+
+RESPONDE ÚNICAMENTE en JSON válido:
+{
+  "primaryDiagnosis": "El diagnóstico más probable basado en consenso",
+  "urgencyLevel": "emergency|urgent|moderate|routine|self-care",
+  "agreementLevel": "strong|moderate|weak",
+  "confidenceScore": 0.0-1.0,
+  "combinedRedFlags": ["Todos los signos de alarma identificados"],
+  "requiresHumanReview": true/false,
+  "reasoning": "Por qué se llegó a este consenso"
+}`
 
   const specialistSummary = specialists.map(s =>
-    `${s.role}: ${s.diagnosis.slice(0, 100)} (${s.urgency})`
+    `${s.role}: ${s.diagnosis} (Urgencia: ${s.urgency}, Confianza: ${s.confidence}, Red flags: ${s.redFlags.join(', ') || 'ninguno'})`
   ).join('\n')
 
   const response = await glmChatCompletion({
     messages: [
-      { role: 'system', content: simpleConsensusPrompt },
+      { role: 'system', content: consensusPrompt },
       { role: 'user', content: specialistSummary },
     ],
     model: GLM_CONFIG.models.costEffective,
     jsonMode: true,
     temperature: 0.2,
-    maxTokens: 500, // Reduced for faster response
+    maxTokens: 600,
   })
 
   try {
@@ -198,19 +257,42 @@ async function generatePlan(
   consensus: StreamingConsensus,
   subjective: SubjectiveData
 ): Promise<StreamingPlan> {
-  // Simplified prompt for faster response
-  const simplePlanPrompt = `Genera un plan de tratamiento breve en JSON:
-{"recommendations":["..."],"selfCareInstructions":["..."],"followUpTiming":"...","followUpType":"telemedicine|in-person","returnPrecautions":["..."]}`
+  const planPrompt = `Eres un asistente médico que genera planes de tratamiento claros y accionables.
+
+CONTEXTO: Esta es una PRE-CONSULTA virtual. El plan NO reemplaza la evaluación médica presencial.
+
+CRITERIOS SEGÚN URGENCIA:
+- emergency → Instrucciones para ir a urgencias inmediatamente
+- urgent → Cita médica en 24-48 horas
+- moderate → Cita en la próxima semana
+- routine → Seguimiento cuando sea conveniente
+- self-care → Monitoreo en casa con precauciones claras
+
+RESPONDE ÚNICAMENTE en JSON válido:
+{
+  "recommendations": ["Recomendaciones médicas específicas para este caso"],
+  "selfCareInstructions": ["Instrucciones de autocuidado en casa"],
+  "followUpTiming": "Cuándo hacer seguimiento (ej: 48 horas, 1 semana)",
+  "followUpType": "telemedicine|in-person|emergency|self-monitor",
+  "returnPrecautions": ["Signos de alarma: cuándo buscar atención inmediata"]
+}`
+
+  const patientContext = `DIAGNÓSTICO: ${consensus.primaryDiagnosis || 'Pendiente evaluación'}
+URGENCIA: ${consensus.urgencyLevel}
+SIGNOS DE ALARMA: ${consensus.combinedRedFlags.join(', ') || 'Ninguno identificado'}
+SÍNTOMA PRINCIPAL: ${subjective.chiefComplaint}
+SEVERIDAD: ${subjective.symptomSeverity}/10
+DURACIÓN: ${subjective.symptomDuration}`
 
   const response = await glmChatCompletion({
     messages: [
-      { role: 'system', content: simplePlanPrompt },
-      { role: 'user', content: `Diagnóstico: ${consensus.primaryDiagnosis || 'Cefalea'}, Urgencia: ${consensus.urgencyLevel}, Síntoma: ${subjective.chiefComplaint}` },
+      { role: 'system', content: planPrompt },
+      { role: 'user', content: patientContext },
     ],
     model: GLM_CONFIG.models.costEffective,
     jsonMode: true,
     temperature: 0.3,
-    maxTokens: 500, // Reduced for faster response
+    maxTokens: 700,
   })
 
   try {
