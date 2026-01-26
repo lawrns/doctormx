@@ -181,8 +181,8 @@ async function consultSpecialist(
       /Impresi[óo]n diagn[óo]stica:\s*([^\n]+)/i,
       /Evaluaci[óo]n sistem[áa]tica:\s*([^\n]+)/i,
       /Evaluaci[óo]n psicol[óo]gica:\s*([^\n]+)/i,
-      /\?Hay componente cut[áa]neo\?:\s*([^\n]+)/i,
-      /componente cut[áa]neo:\s*([^\n]+)/i,
+      /\?Hay componente cut[áa]neo\?:\s*(No[^\n]*|S[íi][^\n]*)/i,
+      /componente cut[áa]neo[?:]?\s*(No[^\n]*|S[íi][^\n]*)/i,
     ]
     for (const pattern of diagPatterns) {
       const match = content.match(pattern)
@@ -261,66 +261,56 @@ async function consultSpecialist(
 
 /**
  * Build consensus from specialist assessments
+ * Uses local logic instead of another GLM call to save time
  */
-async function buildConsensus(
+function buildConsensus(
   specialists: StreamingAssessment[]
-): Promise<StreamingConsensus> {
-  const consensusPrompt = `Eres el Dr. Hernández, Jefe de Medicina del equipo de consulta virtual.
+): StreamingConsensus {
+  // Extract diagnoses that aren't fallbacks
+  const validDiagnoses = specialists
+    .map(s => s.diagnosis)
+    .filter(d => d && !d.includes('Evaluación') && !d.includes('pendiente') && d.length > 10)
 
-TU ROL: Sintetizar las evaluaciones de todos los especialistas y construir un consenso clínico.
+  // Find most common diagnosis pattern (migraña, cefalea, etc.)
+  const diagnosisKeywords = ['migraña', 'cefalea', 'tensional', 'vascular']
+  let primaryDiagnosis: string | null = null
 
-CRITERIOS:
-- Si hay acuerdo en diagnóstico → agreementLevel: "strong"
-- Si hay desacuerdo parcial → agreementLevel: "moderate"
-- Si hay desacuerdo significativo → agreementLevel: "weak"
-- Prioriza la urgencia más alta reportada
-- Combina todos los signos de alarma
-
-RESPONDE ÚNICAMENTE en JSON válido:
-{
-  "primaryDiagnosis": "El diagnóstico más probable basado en consenso",
-  "urgencyLevel": "emergency|urgent|moderate|routine|self-care",
-  "agreementLevel": "strong|moderate|weak",
-  "confidenceScore": 0.0-1.0,
-  "combinedRedFlags": ["Todos los signos de alarma identificados"],
-  "requiresHumanReview": true/false,
-  "reasoning": "Por qué se llegó a este consenso"
-}`
-
-  const specialistSummary = specialists.map(s =>
-    `${s.role}: ${s.diagnosis} (Urgencia: ${s.urgency}, Confianza: ${s.confidence}, Red flags: ${s.redFlags.join(', ') || 'ninguno'})`
-  ).join('\n')
-
-  const response = await glmChatCompletion({
-    messages: [
-      { role: 'system', content: consensusPrompt },
-      { role: 'user', content: specialistSummary },
-    ],
-    model: GLM_CONFIG.models.costEffective,
-    jsonMode: true,
-    temperature: 0.2,
-    maxTokens: 600,
-  })
-
-  try {
-    const parsed = JSON.parse(response.content)
-    return {
-      primaryDiagnosis: parsed.primaryDiagnosis?.name || parsed.primaryDiagnosis || null,
-      urgencyLevel: parsed.urgencyLevel || 'moderate',
-      agreementLevel: parsed.agreementLevel || 'moderate',
-      confidenceScore: parsed.confidenceScore || 0.5,
-      combinedRedFlags: parsed.combinedRedFlags || [],
-      requiresHumanReview: parsed.requiresHumanReview || false,
+  for (const keyword of diagnosisKeywords) {
+    const matchingDiag = validDiagnoses.find(d => d.toLowerCase().includes(keyword))
+    if (matchingDiag) {
+      primaryDiagnosis = matchingDiag
+      break
     }
-  } catch {
-    return {
-      primaryDiagnosis: null,
-      urgencyLevel: 'moderate',
-      agreementLevel: 'weak',
-      confidenceScore: 0,
-      combinedRedFlags: [],
-      requiresHumanReview: true,
-    }
+  }
+
+  // If no keyword match, use first valid diagnosis
+  if (!primaryDiagnosis && validDiagnoses.length > 0) {
+    primaryDiagnosis = validDiagnoses[0]
+  }
+
+  // Calculate agreement based on how many specialists had valid diagnoses
+  const agreementRatio = validDiagnoses.length / specialists.length
+  const agreementLevel = agreementRatio >= 0.75 ? 'strong' :
+                         agreementRatio >= 0.5 ? 'moderate' : 'weak'
+
+  // Use highest urgency from specialists
+  const urgencyOrder = ['emergency', 'urgent', 'moderate', 'routine', 'self-care']
+  const urgencies = specialists.map(s => s.urgency)
+  const highestUrgency = urgencyOrder.find(u => urgencies.includes(u as UrgencyLevel)) || 'moderate'
+
+  // Average confidence
+  const avgConfidence = specialists.reduce((sum, s) => sum + s.confidence, 0) / specialists.length
+
+  // Combine red flags
+  const allRedFlags = [...new Set(specialists.flatMap(s => s.redFlags))]
+
+  return {
+    primaryDiagnosis,
+    urgencyLevel: highestUrgency as UrgencyLevel,
+    agreementLevel: agreementLevel as 'strong' | 'moderate' | 'weak',
+    confidenceScore: avgConfidence,
+    combinedRedFlags: allRedFlags,
+    requiresHumanReview: agreementLevel === 'weak' || highestUrgency === 'emergency',
   }
 }
 
@@ -452,7 +442,7 @@ export async function POST(request: NextRequest) {
 
         // Build consensus
         sendEvent('consensus_start', {})
-        const consensus = await buildConsensus(specialists)
+        const consensus = buildConsensus(specialists)
         sendEvent('consensus_done', {
           primaryDiagnosis: consensus.primaryDiagnosis,
           urgencyLevel: consensus.urgencyLevel,
