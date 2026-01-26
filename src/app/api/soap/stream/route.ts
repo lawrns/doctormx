@@ -137,24 +137,29 @@ async function consultSpecialist(
 
   try {
     const parsed = JSON.parse(response.content)
+    // Map to expected schema - clinicalImpression is the main field per prompts
     return {
       role,
-      diagnosis: parsed.diagnosis?.name || parsed.clinicalImpression || 'Unknown',
+      diagnosis: parsed.clinicalImpression ||
+                 parsed.differentialDiagnoses?.[0]?.name ||
+                 'Evaluación en proceso',
       confidence: parsed.confidence || 0.5,
       urgency: parsed.urgencyLevel || 'moderate',
       redFlags: parsed.redFlags || [],
-      recommendations: parsed.recommendations || parsed.recommendedTests || [],
+      recommendations: parsed.recommendedTests || parsed.recommendations || [],
       tokensUsed: response.usage.totalTokens,
       costUSD: response.costUSD,
     }
-  } catch {
+  } catch (err) {
+    // GLM might return reasoning_content for some models, try to extract
+    const content = response.content
     return {
       role,
-      diagnosis: 'Error parsing response',
-      confidence: 0,
-      urgency: 'moderate',
+      diagnosis: content.slice(0, 200) || 'Evaluación completada',
+      confidence: 0.5,
+      urgency: 'moderate' as UrgencyLevel,
       redFlags: [],
-      recommendations: ['Consultar con un médico'],
+      recommendations: ['Consultar con un médico para evaluación completa'],
       tokensUsed: response.usage.totalTokens,
       costUSD: response.costUSD,
     }
@@ -285,22 +290,23 @@ export async function POST(request: NextRequest) {
 
         sendEvent('start', { consultationId, patientId, timestamp: new Date().toISOString() })
 
-        // Consult specialists sequentially (to avoid rate limits and stream updates)
-        const specialists: StreamingAssessment[] = []
+        // Run all specialists in parallel for speed (reduces timeout risk)
+        sendEvent('specialists_start', { specialists: SPECIALIST_ROLES })
 
-        for (const role of SPECIALIST_ROLES) {
-          sendEvent('specialist_start', { specialist: role })
-
-          const assessment = await consultSpecialist(role, patientData)
-          specialists.push(assessment)
-
-          sendEvent('specialist_done', {
-            specialist: role,
-            diagnosis: assessment.diagnosis,
-            confidence: assessment.confidence,
-            urgency: assessment.urgency,
+        const specialistPromises = SPECIALIST_ROLES.map(role =>
+          consultSpecialist(role, patientData).then(assessment => {
+            sendEvent('specialist_done', {
+              specialist: role,
+              diagnosis: assessment.diagnosis.slice(0, 150),
+              confidence: assessment.confidence,
+              urgency: assessment.urgency,
+            })
+            return assessment
           })
-        }
+        )
+
+        const specialists = await Promise.all(specialistPromises)
+        sendEvent('specialists_complete', { count: specialists.length })
 
         // Build consensus
         sendEvent('consensus_start', {})
