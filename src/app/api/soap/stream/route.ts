@@ -32,12 +32,11 @@ const SPECIALIST_PROMPTS: Record<SpecialistRole, string> = {
   'psychiatrist': PSYCHIATRIST_SYSTEM_PROMPT,
 }
 
-// Specialist roles in consultation order
+// Specialist roles - reduced to 2 for faster streaming (avoids timeout)
+// Full 4-specialist consultation available via /api/soap/consult
 const SPECIALIST_ROLES: SpecialistRole[] = [
   'general-practitioner',
-  'dermatologist',
   'internist',
-  'psychiatrist'
 ]
 
 // Simplified streaming types (full types stored in DB)
@@ -122,17 +121,19 @@ async function consultSpecialist(
   role: SpecialistRole,
   patientData: string
 ): Promise<StreamingAssessment> {
-  const prompt = SPECIALIST_PROMPTS[role]
+  // Simplified prompt for faster streaming response
+  const quickPrompt = `Eres un ${role === 'general-practitioner' ? 'médico general' : 'internista'} evaluando un paciente.
+Responde en JSON: {"clinicalImpression":"diagnóstico breve","urgencyLevel":"emergency|urgent|moderate|routine","redFlags":["..."],"confidence":0.8}`
 
   const response = await glmChatCompletion({
     messages: [
-      { role: 'system', content: prompt },
+      { role: 'system', content: quickPrompt },
       { role: 'user', content: patientData },
     ],
     model: GLM_CONFIG.models.costEffective,
     jsonMode: true,
     temperature: 0.3,
-    maxTokens: 1500,
+    maxTokens: 300, // Reduced for speed
   })
 
   try {
