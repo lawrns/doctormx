@@ -85,20 +85,36 @@ const ConsultRequestSchema = z.object({
 
 // Using buildPatientDataPrompt from @/lib/soap/prompts for sanitized input
 
-// Specialist prompts - using simple extraction pattern since GLM ignores JSON mode
-// We'll extract the diagnosis from natural language instead
+// Specialist prompts - structured format that GLM follows consistently
+// Using DIAGNÓSTICO: | URGENCIA: | CONFIANZA: format that works well
 const SPECIALIST_PROMPTS: Record<SpecialistRole, string> = {
-  'general-practitioner': `Eres Dr. García, médico general. Analiza estos síntomas y da tu diagnóstico en UNA oración.
-Formato: DIAGNÓSTICO: [tu diagnóstico] | URGENCIA: [baja/media/alta/emergencia] | CONFIANZA: [0-100]%`,
+  'general-practitioner': `Eres Dr. García, médico general. Da tu impresión diagnóstica en UNA oración clara.
 
-  'dermatologist': `Eres Dra. Rodríguez, dermatóloga. ¿Hay componente cutáneo en estos síntomas? Responde en UNA oración.
-Formato: DIAGNÓSTICO: [tu evaluación] | URGENCIA: [baja/media/alta/emergencia] | CONFIANZA: [0-100]%`,
+RESPONDE EXACTAMENTE en este formato:
+DIAGNÓSTICO: [descripción del cuadro clínico y diagnóstico probable] | URGENCIA: baja/media/alta/emergencia | CONFIANZA: [0-100]%
 
-  'internist': `Eres Dr. Martínez, internista. ¿Hay afectación sistémica en estos síntomas? Responde en UNA oración.
-Formato: DIAGNÓSTICO: [tu evaluación] | URGENCIA: [baja/media/alta/emergencia] | CONFIANZA: [0-100]%`,
+Ejemplo: DIAGNÓSTICO: Cuadro compatible con migraña clásica por dolor pulsátil, fotofobia y náuseas | URGENCIA: media | CONFIANZA: 85%`,
 
-  'psychiatrist': `Eres Dra. López, psiquiatra. ¿Hay componente emocional/psicológico? Responde en UNA oración.
-Formato: DIAGNÓSTICO: [tu evaluación] | URGENCIA: [baja/media/alta/emergencia] | CONFIANZA: [0-100]%`
+  'dermatologist': `Eres Dra. Rodríguez, dermatóloga. Evalúa si hay manifestaciones cutáneas.
+
+RESPONDE EXACTAMENTE en este formato:
+DIAGNÓSTICO: [tu evaluación dermatológica] | URGENCIA: baja/media/alta/emergencia | CONFIANZA: [0-100]%
+
+Ejemplo: DIAGNÓSTICO: No se identifican manifestaciones cutáneas; síntomas sugieren migraña | URGENCIA: media | CONFIANZA: 90%`,
+
+  'internist': `Eres Dr. Martínez, internista. Evalúa posible afectación de órganos internos.
+
+RESPONDE EXACTAMENTE en este formato:
+DIAGNÓSTICO: [tu evaluación sistémica] | URGENCIA: baja/media/alta/emergencia | CONFIANZA: [0-100]%
+
+Ejemplo: DIAGNÓSTICO: Cefalea primaria tipo migraña; sin datos de enfermedad sistémica | URGENCIA: baja | CONFIANZA: 80%`,
+
+  'psychiatrist': `Eres Dra. López, psiquiatra. Evalúa factores emocionales o psicológicos.
+
+RESPONDE EXACTAMENTE en este formato:
+DIAGNÓSTICO: [tu evaluación psiquiátrica] | URGENCIA: baja/media/alta/emergencia | CONFIANZA: [0-100]%
+
+Ejemplo: DIAGNÓSTICO: Estrés y privación de sueño como factores contribuyentes; sin trastorno psiquiátrico evidente | URGENCIA: baja | CONFIANZA: 75%`
 }
 
 /**
@@ -144,8 +160,8 @@ async function consultSpecialist(
   let urgency: UrgencyLevel = 'moderate'
   let confidence = 0.7
 
-  // STRATEGY 1: Try to extract JSON clinicalImpression (GLM sometimes returns JSON)
-  const jsonMatch = content.match(/\{[^{}]*"clinicalImpression"\s*:\s*"([^"]+)"/)
+  // STRATEGY 1: Try to extract JSON clinicalImpression or diagnostico (GLM sometimes returns JSON)
+  const jsonMatch = content.match(/\{[^{}]*"(?:clinicalImpression|diagnostico|diagnosis)"\s*:\s*"([^"]+)"/)
   if (jsonMatch) {
     diagnosis = jsonMatch[1].trim()
   }
