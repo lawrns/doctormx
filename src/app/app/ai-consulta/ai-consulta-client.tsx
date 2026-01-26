@@ -18,6 +18,15 @@ import {
   ConsensusMatrix,
   SOAPTimeline,
   ConsultationProgress,
+  ConversationalWelcome,
+  EnhancedSeveritySlider,
+  SymptomAutocomplete,
+  QuestionCard,
+  QuestionTitle,
+  QuestionDescription,
+  QuestionCardNavigation,
+  ProgressStepper,
+  useProgressSteps,
 } from '@/components/soap';
 import type {
   SpecialistAgent,
@@ -622,75 +631,7 @@ function WelcomeStep({
 }: {
   onNext: () => void;
 }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      className="text-center space-y-6"
-    >
-      <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mx-auto shadow-lg">
-        <Users className="w-10 h-10 text-white" />
-      </div>
-
-      <div className="space-y-2">
-        <h2 className="text-3xl font-bold text-gray-900">
-          Consulta Multi-Especialista
-        </h2>
-        <p className="text-gray-600">
-          4 especialistas médicos analizarán tu caso con IA
-        </p>
-      </div>
-
-      <Card className="p-6 bg-blue-50 border-blue-100">
-        <div className="space-y-4 text-left">
-          <div className="flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-            <div>
-              <p className="font-semibold text-gray-900">Análisis simultáneo</p>
-              <p className="text-sm text-gray-600">
-                Varios especialistas evalúan tu caso al mismo tiempo
-              </p>
-            </div>
-          </div>
-          <div className="flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-            <div>
-              <p className="font-semibold text-gray-900">Consenso médico</p>
-              <p className="text-sm text-gray-600">
-                Los especialistas reachan un diagnóstico conjunto
-              </p>
-            </div>
-          </div>
-          <div className="flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-            <div>
-              <p className="font-semibold text-gray-900">Recomendaciones claras</p>
-              <p className="text-sm text-gray-600">
-                Plan de acción con próximos pasos específicos
-              </p>
-            </div>
-          </div>
-        </div>
-      </Card>
-
-      <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-left">
-        <p className="text-sm text-amber-800">
-          <strong>Importante:</strong> Esta es una herramienta de orientación.
-          En caso de emergencia, llama al 911.
-        </p>
-      </div>
-
-      <Button
-        onClick={onNext}
-        size="lg"
-        className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700"
-      >
-        Comenzar Consulta
-        <ArrowRight className="w-4 h-4 ml-2" />
-      </Button>
-    </motion.div>
-  );
+  return <ConversationalWelcome onStart={onNext} />;
 }
 
 function ChiefComplaintStep({
@@ -716,48 +657,45 @@ function ChiefComplaintStep({
   ];
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -100 }}
-      className="space-y-6"
-    >
-      <div className="text-center">
-        <h3 className="text-2xl font-bold text-gray-900 mb-2">
-          ¿Cuál es tu motivo principal?
-        </h3>
-        <p className="text-gray-600">Describe brevemente qué te molesta</p>
-      </div>
+    <QuestionCard step={1} totalSteps={9}>
+      <QuestionTitle>¿Cuál es tu motivo principal?</QuestionTitle>
+      <QuestionDescription>
+        Describe brevemente qué te molesta
+      </QuestionDescription>
 
-      <Card className="p-6">
+      <div className="space-y-4">
         <input
           type="text"
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder="Ej: Dolor de cabeza fuerte..."
-          className="w-full px-4 py-4 text-lg border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-4 py-4 text-lg border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
           autoFocus
           onKeyDown={(e) => e.key === 'Enter' && value.trim() && onNext()}
         />
 
-        <div className="mt-4">
-          <p className="text-sm text-gray-500 mb-2">Sugerencias:</p>
+        <div>
+          <p className="text-sm text-gray-500 mb-3 font-medium">Sugerencias:</p>
           <div className="flex flex-wrap gap-2">
             {suggestions.map((suggestion) => (
               <button
                 key={suggestion}
                 onClick={() => onChange(suggestion)}
-                className="px-3 py-1.5 text-sm bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+                className="px-3 py-1.5 text-sm bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors hover:shadow-sm"
               >
                 {suggestion}
               </button>
             ))}
           </div>
         </div>
-      </Card>
+      </div>
 
-      <StepNavigation onPrev={onPrev} onNext={onNext} canNext={value.trim().length > 0} />
-    </motion.div>
+      <QuestionCardNavigation
+        onPrev={onPrev}
+        onNext={onNext}
+        canNext={value.trim().length > 0}
+      />
+    </QuestionCard>
   );
 }
 
@@ -773,34 +711,31 @@ function SymptomsStep({
   onPrev: () => void;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -100 }}
-      className="space-y-6"
-    >
-      <div className="text-center">
-        <h3 className="text-2xl font-bold text-gray-900 mb-2">
-          Cuéntame más sobre tus síntomas
-        </h3>
-        <p className="text-gray-600">Describe con detalle lo que sientes</p>
-      </div>
+    <QuestionCard step={2} totalSteps={9}>
+      <QuestionTitle>Cuéntame más sobre tus síntomas</QuestionTitle>
+      <QuestionDescription>
+        Describe con detalle lo que sientes
+      </QuestionDescription>
 
-      <Card className="p-6">
+      <div className="space-y-4">
         <textarea
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder="Describe tus síntomas en detalle: ubicación, intensidad, tipo de dolor o molestia, qué sientes exactamente..."
           rows={6}
-          className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+          className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none transition-all"
         />
-        <p className="text-sm text-gray-500 mt-2">
+        <p className="text-sm text-gray-500">
           {value.length} caracteres (mínimo 10)
         </p>
-      </Card>
+      </div>
 
-      <StepNavigation onPrev={onPrev} onNext={onNext} canNext={value.trim().length >= 10} />
-    </motion.div>
+      <QuestionCardNavigation
+        onPrev={onPrev}
+        onNext={onNext}
+        canNext={value.trim().length >= 10}
+      />
+    </QuestionCard>
   );
 }
 
@@ -826,38 +761,34 @@ function DurationStep({
   ];
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -100 }}
-      className="space-y-6"
-    >
-      <div className="text-center">
-        <h3 className="text-2xl font-bold text-gray-900 mb-2">
-          ¿Cuánto tiempo tienes con estos síntomas?
-        </h3>
+    <QuestionCard step={3} totalSteps={9}>
+      <QuestionTitle>¿Cuánto tiempo tienes con estos síntomas?</QuestionTitle>
+      <QuestionDescription>
+        Selecciona la opción que mejor describa tu situación
+      </QuestionDescription>
+
+      <div className="grid grid-cols-2 gap-3">
+        {options.map((option) => (
+          <button
+            key={option}
+            onClick={() => onChange(option)}
+            className={`p-4 rounded-xl border-2 text-left transition-all ${
+              value === option
+                ? 'border-blue-500 bg-blue-50 text-blue-700 shadow-md'
+                : 'border-gray-200 hover:border-gray-300 hover:shadow-sm'
+            }`}
+          >
+            {option}
+          </button>
+        ))}
       </div>
 
-      <Card className="p-6">
-        <div className="grid grid-cols-2 gap-3">
-          {options.map((option) => (
-            <button
-              key={option}
-              onClick={() => onChange(option)}
-              className={`p-4 rounded-xl border-2 transition-all ${
-                value === option
-                  ? 'border-blue-500 bg-blue-50 text-blue-700'
-                  : 'border-gray-200 hover:border-gray-300'
-              }`}
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-      </Card>
-
-      <StepNavigation onPrev={onPrev} onNext={onNext} canNext={value.length > 0} />
-    </motion.div>
+      <QuestionCardNavigation
+        onPrev={onPrev}
+        onNext={onNext}
+        canNext={value.length > 0}
+      />
+    </QuestionCard>
   );
 }
 
@@ -872,47 +803,26 @@ function SeverityStep({
   onNext: () => void;
   onPrev: () => void;
 }) {
-  const labels = ['Muy leve', 'Leve', 'Moderado', 'Intenso', 'Muy intenso', 'Insoportable'];
-
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -100 }}
-      className="space-y-6"
-    >
-      <div className="text-center">
-        <h3 className="text-2xl font-bold text-gray-900 mb-2">
-          ¿Qué tan intenso es tu malestar?
-        </h3>
-        <p className="text-gray-600">Del 1 (muy leve) al 10 (insoportable)</p>
-      </div>
+    <QuestionCard step={5} totalSteps={9}>
+      <QuestionTitle>¿Qué tan intenso es tu malestar?</QuestionTitle>
+      <QuestionDescription>
+        Del 1 (muy leve) al 10 (insoportable)
+      </QuestionDescription>
 
-      <Card className="p-8">
-        <div className="space-y-4">
-          <input
-            type="range"
-            min="1"
-            max="10"
-            value={value}
-            onChange={(e) => onChange(Number(e.target.value))}
-            className="w-full"
-          />
-          <div className="flex justify-between text-xs text-gray-500">
-            <span>1</span>
-            <span>5</span>
-            <span>10</span>
-          </div>
-          <div className="text-center">
-            <span className="text-5xl font-bold text-blue-600">{value}</span>
-            <span className="text-xl text-gray-500">/10</span>
-          </div>
-          <p className="text-center text-lg text-gray-700">{labels[value - 1] || ''}</p>
-        </div>
-      </Card>
+      <EnhancedSeveritySlider
+        value={value}
+        onChange={onChange}
+        min={1}
+        max={10}
+      />
 
-      <StepNavigation onPrev={onPrev} onNext={onNext} canNext={true} />
-    </motion.div>
+      <QuestionCardNavigation
+        onPrev={onPrev}
+        onNext={onNext}
+        canNext={true}
+      />
+    </QuestionCard>
   );
 }
 
@@ -928,24 +838,18 @@ function OnsetStep({
   onPrev: () => void;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -100 }}
-      className="space-y-6"
-    >
-      <div className="text-center">
-        <h3 className="text-2xl font-bold text-gray-900 mb-2">
-          ¿Cómo empezaron tus síntomas?
-        </h3>
-      </div>
+    <QuestionCard step={6} totalSteps={9}>
+      <QuestionTitle>¿Cómo empezaron tus síntomas?</QuestionTitle>
+      <QuestionDescription>
+        Esto ayuda a entender el posible origen
+      </QuestionDescription>
 
       <div className="grid grid-cols-2 gap-4">
         <Card
           className={`p-6 cursor-pointer transition-all ${
             value === 'sudden'
-              ? 'border-blue-500 bg-blue-50 ring-2 ring-blue-500'
-              : 'border-gray-200 hover:border-gray-300'
+              ? 'border-blue-500 bg-blue-50 ring-2 ring-blue-500 shadow-lg'
+              : 'border-gray-200 hover:border-gray-300 hover:shadow-md'
           }`}
           onClick={() => onChange('sudden')}
         >
@@ -961,8 +865,8 @@ function OnsetStep({
         <Card
           className={`p-6 cursor-pointer transition-all ${
             value === 'gradual'
-              ? 'border-blue-500 bg-blue-50 ring-2 ring-blue-500'
-              : 'border-gray-200 hover:border-gray-300'
+              ? 'border-blue-500 bg-blue-50 ring-2 ring-blue-500 shadow-lg'
+              : 'border-gray-200 hover:border-gray-300 hover:shadow-md'
           }`}
           onClick={() => onChange('gradual')}
         >
@@ -976,8 +880,12 @@ function OnsetStep({
         </Card>
       </div>
 
-      <StepNavigation onPrev={onPrev} onNext={onNext} canNext={value !== null} />
-    </motion.div>
+      <QuestionCardNavigation
+        onPrev={onPrev}
+        onNext={onNext}
+        canNext={value !== null}
+      />
+    </QuestionCard>
   );
 }
 
@@ -992,65 +900,39 @@ function AssociatedSymptomsStep({
   onNext: () => void;
   onPrev: () => void;
 }) {
-  const suggestions = [
-    'Fiebre',
-    'Escalofríos',
-    'Náuseas',
-    'Vómitos',
-    'Mareos',
-    'Cansancio',
-    'Pérdida de apetito',
-    'Dolor muscular',
-  ];
-
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -100 }}
-      className="space-y-6"
-    >
-      <div className="text-center">
-        <h3 className="text-2xl font-bold text-gray-900 mb-2">
-          ¿Tienes otros síntomas?
-        </h3>
-        <p className="text-gray-600">Selecciona los que apliquen (opcional)</p>
-      </div>
+    <QuestionCard step={7} totalSteps={9}>
+      <QuestionTitle>¿Tienes otros síntomas?</QuestionTitle>
+      <QuestionDescription>
+        Selecciona los que apliquen (opcional)
+      </QuestionDescription>
 
-      <Card className="p-6">
-        <div className="flex flex-wrap gap-2 mb-4">
-          {suggestions.map((suggestion) => (
-            <button
-              key={suggestion}
-              onClick={() => {
-                const current = value ? value.split(',').map((s) => s.trim()) : [];
-                if (current.includes(suggestion)) {
-                  onChange(current.filter((s) => s !== suggestion).join(', '));
-                } else {
-                  onChange([...current, suggestion].join(', '));
-                }
-              }}
-              className={`px-3 py-1.5 rounded-lg transition-colors ${
-                value.includes(suggestion)
-                  ? 'bg-blue-500 text-white'
-                  : 'bg-gray-100 hover:bg-gray-200'
-              }`}
-            >
-              {suggestion}
-            </button>
-          ))}
-        </div>
-        <input
-          type="text"
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          placeholder="O escribe otros síntomas separados por coma..."
-          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-      </Card>
+      <SymptomAutocomplete
+        value={value}
+        onChange={onChange}
+        placeholder="Escribe o selecciona síntomas adicionales..."
+        suggestions={[
+          'Fiebre',
+          'Escalofríos',
+          'Náuseas',
+          'Vómitos',
+          'Mareos',
+          'Cansancio',
+          'Pérdida de apetito',
+          'Dolor muscular',
+          'Dolor articular',
+          'Erupción cutánea',
+          'Tos seca',
+          'Congestión nasal',
+        ]}
+      />
 
-      <StepNavigation onPrev={onPrev} onNext={onNext} canNext={true} />
-    </motion.div>
+      <QuestionCardNavigation
+        onPrev={onPrev}
+        onNext={onNext}
+        canNext={true}
+      />
+    </QuestionCard>
   );
 }
 
@@ -1070,50 +952,45 @@ function FactorsStep({
   onPrev: () => void;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -100 }}
-      className="space-y-6"
-    >
-      <div className="text-center">
-        <h3 className="text-2xl font-bold text-gray-900 mb-2">
-          ¿Qué afecta tus síntomas?
-        </h3>
-        <p className="text-gray-600">Esto ayuda a los especialistas a entenderte mejor</p>
+    <QuestionCard step={8} totalSteps={9}>
+      <QuestionTitle>¿Qué afecta tus síntomas?</QuestionTitle>
+      <QuestionDescription>
+        Esto ayuda a los especialistas a entenderte mejor
+      </QuestionDescription>
+
+      <div className="space-y-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            ¿Qué lo empeora? (opcional)
+          </label>
+          <input
+            type="text"
+            value={aggravating}
+            onChange={(e) => onAggravatingChange(e.target.value)}
+            placeholder="Ej: movimiento, comida, estrés..."
+            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            ¿Qué lo alivia? (opcional)
+          </label>
+          <input
+            type="text"
+            value={relieving}
+            onChange={(e) => onRelievingChange(e.target.value)}
+            placeholder="Ej: descanso, medicamentos, comida..."
+            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+          />
+        </div>
       </div>
 
-      <Card className="p-6">
-        <div className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              ¿Qué lo empeora? (opcional)
-            </label>
-            <input
-              type="text"
-              value={aggravating}
-              onChange={(e) => onAggravatingChange(e.target.value)}
-              placeholder="Ej: movimiento, comida, estrés..."
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              ¿Qué lo alivia? (opcional)
-            </label>
-            <input
-              type="text"
-              value={relieving}
-              onChange={(e) => onRelievingChange(e.target.value)}
-              placeholder="Ej: descanso, medicamentos, comida..."
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-        </div>
-      </Card>
-
-      <StepNavigation onPrev={onPrev} onNext={onNext} canNext={true} />
-    </motion.div>
+      <QuestionCardNavigation
+        onPrev={onPrev}
+        onNext={onNext}
+        canNext={true}
+      />
+    </QuestionCard>
   );
 }
 
@@ -1131,58 +1008,34 @@ function HistoryStep({
   isSubmitting: boolean;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -100 }}
-      className="space-y-6"
-    >
-      <div className="text-center">
-        <h3 className="text-2xl font-bold text-gray-900 mb-2">
-          Antecedentes médicos (opcional)
-        </h3>
-        <p className="text-gray-600">
-          Información que pueda ayudar al diagnóstico
-        </p>
-      </div>
+    <QuestionCard step={9} totalSteps={9}>
+      <QuestionTitle>Antecedentes médicos (opcional)</QuestionTitle>
+      <QuestionDescription>
+        Información que pueda ayudar al diagnóstico
+      </QuestionDescription>
 
-      <Card className="p-6">
+      <div className="space-y-4">
         <textarea
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder="Ej: Tengo hipertensión, tomo medicación para la tiroides, tuve apendicitis hace 5 años..."
           rows={5}
-          className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+          className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none transition-all"
         />
-      </Card>
-
-      <div className="flex gap-3">
-        <Button variant="outline" onClick={onPrev} className="flex-1">
-          Atrás
-        </Button>
-        <Button
-          onClick={onNext}
-          disabled={isSubmitting}
-          className="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700"
-        >
-          {isSubmitting ? (
-            <>
-              <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-              Consultando...
-            </>
-          ) : (
-            <>
-              <Send className="w-4 h-4 mr-2" />
-              Iniciar Consulta
-            </>
-          )}
-        </Button>
       </div>
 
-      <p className="text-center text-xs text-gray-500">
+      <QuestionCardNavigation
+        onPrev={onPrev}
+        onNext={onNext}
+        canNext={true}
+        nextLabel="Iniciar Consulta"
+        isSubmitting={isSubmitting}
+      />
+
+      <p className="text-center text-xs text-gray-500 mt-2">
         Los especialistas analizarán tu información en aproximadamente 60 segundos
       </p>
-    </motion.div>
+    </QuestionCard>
   );
 }
 
@@ -1384,28 +1237,3 @@ function ResultsStep({
   );
 }
 
-function StepNavigation({
-  onPrev,
-  onNext,
-  canNext,
-}: {
-  onPrev: () => void;
-  onNext: () => void;
-  canNext: boolean;
-}) {
-  return (
-    <div className="flex gap-3">
-      <Button variant="outline" onClick={onPrev} className="flex-1">
-        Atrás
-      </Button>
-      <Button
-        onClick={onNext}
-        disabled={!canNext}
-        className="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700"
-      >
-        Continuar
-        <ArrowRight className="w-4 h-4 ml-2" />
-      </Button>
-    </div>
-  );
-}
