@@ -85,51 +85,32 @@ const ConsultRequestSchema = z.object({
 
 // Using buildPatientDataPrompt from @/lib/soap/prompts for sanitized input
 
-// Streamlined specialist prompts optimized for JSON output (matching plan prompt style)
+// Specialist prompts optimized for GLM - MUST output JSON ONLY (no reasoning text)
+// GLM tends to add reasoning before JSON, so we're very explicit about format
 const SPECIALIST_PROMPTS: Record<SpecialistRole, string> = {
-  'general-practitioner': `Eres un médico general evaluando síntomas del paciente.
+  'general-practitioner': `Tu rol: Médico general. Evalúa los síntomas y da tu impresión clínica.
 
-Responde ÚNICAMENTE con JSON válido:
-{
-  "clinicalImpression": "Tu impresión diagnóstica específica",
-  "urgencyLevel": "emergency|urgent|moderate|routine|self-care",
-  "redFlags": ["Signos de alarma identificados"],
-  "recommendedTests": ["Estudios recomendados"],
-  "confidence": 0.8
-}`,
+IMPORTANTE: Responde SOLO con el JSON abajo, sin explicaciones ni razonamiento.
 
-  'dermatologist': `Eres una dermatóloga evaluando si hay componente cutáneo en los síntomas.
+{"clinicalImpression":"[tu diagnóstico en 1-2 oraciones]","urgencyLevel":"moderate","redFlags":[],"recommendedTests":[],"confidence":0.7}`,
 
-Responde ÚNICAMENTE con JSON válido:
-{
-  "clinicalImpression": "Tu impresión sobre manifestaciones cutáneas o ausencia de ellas",
-  "urgencyLevel": "emergency|urgent|moderate|routine|self-care",
-  "redFlags": ["Signos de alarma dermatológicos"],
-  "recommendedTests": ["Estudios dermatológicos si aplica"],
-  "confidence": 0.8
-}`,
+  'dermatologist': `Tu rol: Dermatóloga. Evalúa si hay componente cutáneo.
 
-  'internist': `Eres un internista evaluando enfermedades sistémicas.
+IMPORTANTE: Responde SOLO con el JSON abajo, sin explicaciones ni razonamiento.
 
-Responde ÚNICAMENTE con JSON válido:
-{
-  "clinicalImpression": "Tu impresión sobre afectación de órganos internos",
-  "urgencyLevel": "emergency|urgent|moderate|routine|self-care",
-  "redFlags": ["Signos de alarma sistémicos"],
-  "recommendedTests": ["Estudios de laboratorio o imagen recomendados"],
-  "confidence": 0.8
-}`,
+{"clinicalImpression":"[tu evaluación dermatológica]","urgencyLevel":"moderate","redFlags":[],"recommendedTests":[],"confidence":0.7}`,
 
-  'psychiatrist': `Eres una psiquiatra evaluando el componente emocional/psicológico.
+  'internist': `Tu rol: Internista. Evalúa enfermedades sistémicas.
 
-Responde ÚNICAMENTE con JSON válido:
-{
-  "clinicalImpression": "Tu impresión sobre factores psicológicos o emocionales",
-  "urgencyLevel": "emergency|urgent|moderate|routine|self-care",
-  "redFlags": ["Signos de alarma psiquiátricos como ideación suicida"],
-  "recommendedTests": ["Evaluaciones psicológicas si aplica"],
-  "confidence": 0.8
-}`
+IMPORTANTE: Responde SOLO con el JSON abajo, sin explicaciones ni razonamiento.
+
+{"clinicalImpression":"[tu evaluación de medicina interna]","urgencyLevel":"moderate","redFlags":[],"recommendedTests":[],"confidence":0.7}`,
+
+  'psychiatrist': `Tu rol: Psiquiatra. Evalúa componente emocional/psicológico.
+
+IMPORTANTE: Responde SOLO con el JSON abajo, sin explicaciones ni razonamiento.
+
+{"clinicalImpression":"[tu evaluación psiquiátrica]","urgencyLevel":"moderate","redFlags":[],"recommendedTests":[],"confidence":0.7}`
 }
 
 /**
@@ -161,7 +142,7 @@ async function consultSpecialist(
     return consultSpecialist(role, patientData, retryCount + 1)
   }
 
-  // Try to extract JSON from response (may be wrapped in markdown or have extra text)
+  // Try to extract JSON from response (may be wrapped in markdown or have reasoning text)
   let parsed: Record<string, unknown> | null = null
   const content = response.content
 
@@ -169,24 +150,64 @@ async function consultSpecialist(
   logger.info('[SOAP Specialist] GLM response', {
     role,
     contentLength: content.length,
-    contentPreview: content.slice(0, 500),
+    contentPreview: content.slice(0, 300),
+    contentEnd: content.slice(-300), // Also log the END where JSON is likely to be
   })
 
   try {
     // First, try direct JSON parse
     parsed = JSON.parse(content)
   } catch {
-    // Try to extract JSON from markdown code blocks or surrounding text
-    const jsonMatch = content.match(/\{[\s\S]*\}/)
-    if (jsonMatch) {
+    // GLM reasoning models output thinking THEN JSON - look for the LAST complete JSON object
+    // Strategy: find all JSON-like patterns and try parsing from the most complete one
+
+    // Try to find JSON in markdown code blocks first
+    const codeBlockMatch = content.match(/```(?:json)?\s*([\s\S]*?)```/)
+    if (codeBlockMatch) {
       try {
-        parsed = JSON.parse(jsonMatch[0])
-      } catch {
-        // Still failed, will use fallback
-        logger.warn('[SOAP Specialist] JSON extraction failed', {
-          role,
-          extractedJson: jsonMatch[0].slice(0, 200),
-        })
+        parsed = JSON.parse(codeBlockMatch[1].trim())
+      } catch { /* continue */ }
+    }
+
+    // If not in code block, find the last JSON object (reasoning models put it at the end)
+    if (!parsed) {
+      // Find the last opening brace and extract from there
+      const lastBraceIndex = content.lastIndexOf('{')
+      if (lastBraceIndex !== -1) {
+        const jsonCandidate = content.slice(lastBraceIndex)
+        // Try to find matching closing brace
+        let braceCount = 0
+        let endIndex = 0
+        for (let i = 0; i < jsonCandidate.length; i++) {
+          if (jsonCandidate[i] === '{') braceCount++
+          if (jsonCandidate[i] === '}') {
+            braceCount--
+            if (braceCount === 0) {
+              endIndex = i + 1
+              break
+            }
+          }
+        }
+        if (endIndex > 0) {
+          try {
+            parsed = JSON.parse(jsonCandidate.slice(0, endIndex))
+          } catch { /* continue */ }
+        }
+      }
+    }
+
+    // Fallback: try the first JSON object
+    if (!parsed) {
+      const jsonMatch = content.match(/\{[\s\S]*\}/)
+      if (jsonMatch) {
+        try {
+          parsed = JSON.parse(jsonMatch[0])
+        } catch {
+          logger.warn('[SOAP Specialist] All JSON extraction failed', {
+            role,
+            contentLength: content.length,
+          })
+        }
       }
     }
   }
