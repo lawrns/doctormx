@@ -172,19 +172,23 @@ async function consultSpecialist(
 async function buildConsensus(
   specialists: StreamingAssessment[]
 ): Promise<StreamingConsensus> {
+  // Simplified consensus prompt for faster response
+  const simpleConsensusPrompt = `Sintetiza las evaluaciones médicas en JSON:
+{"primaryDiagnosis":"nombre del diagnóstico más probable","urgencyLevel":"emergency|urgent|moderate|routine|self-care","agreementLevel":"strong|moderate|weak","confidenceScore":0.8,"combinedRedFlags":["..."],"requiresHumanReview":false}`
+
   const specialistSummary = specialists.map(s =>
-    `${s.role}: ${s.diagnosis} (confianza: ${s.confidence}, urgencia: ${s.urgency})`
+    `${s.role}: ${s.diagnosis.slice(0, 100)} (${s.urgency})`
   ).join('\n')
 
   const response = await glmChatCompletion({
     messages: [
-      { role: 'system', content: SUPERVISOR_SYSTEM_PROMPT },
-      { role: 'user', content: `EVALUACIONES DE ESPECIALISTAS:\n${specialistSummary}` },
+      { role: 'system', content: simpleConsensusPrompt },
+      { role: 'user', content: specialistSummary },
     ],
     model: GLM_CONFIG.models.costEffective,
     jsonMode: true,
     temperature: 0.2,
-    maxTokens: 1500,
+    maxTokens: 500, // Reduced for faster response
   })
 
   try {
@@ -216,20 +220,19 @@ async function generatePlan(
   consensus: StreamingConsensus,
   subjective: SubjectiveData
 ): Promise<StreamingPlan> {
+  // Simplified prompt for faster response
+  const simplePlanPrompt = `Genera un plan de tratamiento breve en JSON:
+{"recommendations":["..."],"selfCareInstructions":["..."],"followUpTiming":"...","followUpType":"telemedicine|in-person","returnPrecautions":["..."]}`
+
   const response = await glmChatCompletion({
     messages: [
-      { role: 'system', content: PLAN_GENERATOR_PROMPT },
-      { role: 'user', content: `
-DIAGNÓSTICO: ${consensus.primaryDiagnosis || 'Pendiente evaluación'}
-URGENCIA: ${consensus.urgencyLevel}
-MOTIVO CONSULTA: ${subjective.chiefComplaint}
-BANDERAS ROJAS: ${consensus.combinedRedFlags.join(', ') || 'ninguna'}
-      `.trim() },
+      { role: 'system', content: simplePlanPrompt },
+      { role: 'user', content: `Diagnóstico: ${consensus.primaryDiagnosis || 'Cefalea'}, Urgencia: ${consensus.urgencyLevel}, Síntoma: ${subjective.chiefComplaint}` },
     ],
     model: GLM_CONFIG.models.costEffective,
     jsonMode: true,
     temperature: 0.3,
-    maxTokens: 1500,
+    maxTokens: 500, // Reduced for faster response
   })
 
   try {
