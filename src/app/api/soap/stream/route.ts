@@ -137,7 +137,8 @@ Responde ÚNICAMENTE con JSON válido:
  */
 async function consultSpecialist(
   role: SpecialistRole,
-  patientData: string
+  patientData: string,
+  retryCount = 0
 ): Promise<StreamingAssessment> {
   // Use the streamlined prompt directly (already includes JSON schema)
   const prompt = SPECIALIST_PROMPTS[role]
@@ -152,6 +153,13 @@ async function consultSpecialist(
     temperature: 0.3,
     maxTokens: 500, // Balanced for quality and speed
   })
+
+  // Retry once if we get an empty response (GLM rate limiting issue)
+  if (!response.content && retryCount < 1) {
+    logger.warn('[SOAP Specialist] Empty response, retrying...', { role, retryCount })
+    await new Promise(resolve => setTimeout(resolve, 500)) // Small delay before retry
+    return consultSpecialist(role, patientData, retryCount + 1)
+  }
 
   // Try to extract JSON from response (may be wrapped in markdown or have extra text)
   let parsed: Record<string, unknown> | null = null
