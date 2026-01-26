@@ -185,25 +185,12 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
       medicalHistory: formData.medicalHistory || undefined,
     };
 
-    // Helper to create emoji avatar SVG data URL
-    const createDoctorAvatar = (emoji: string, bgColor: string): string => {
-      const svg = encodeURIComponent(`
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="50" fill="${bgColor}"/>
-          <circle cx="50" cy="35" r="18" fill="#fff"/>
-          <path d="M25 85 Q50 65 75 85" fill="#fff"/>
-          <text x="50" y="52" font-family="Arial" font-size="28" text-anchor="middle" fill="#334155">${emoji}</text>
-        </svg>
-      `).replace(/%20/g, '').replace(/%2C/g, ',').replace(/%3A/g, ':').replace(/%3B/g, ';').replace(/%3D/g, '=').replace(/%3C/g, '<').replace(/%3E/g, '>').replace(/%22/g, '"').replace(/%2F/g, '/');
-      return `data:image/svg+xml,${svg}`;
-    };
-
-    // Specialist avatars with emoji and color
+    // Specialist avatars with real doctor photos from Unsplash
     const specialistAvatars: Record<string, string> = {
-      gp: createDoctorAvatar('🩺', '#3b82f6'),      // blue - general
-      derm: createDoctorAvatar('🧴', '#a855f7'),    // purple - dermatology
-      int: createDoctorAvatar('🧠', '#f59e0b'),     // amber - internal/neurology
-      psych: createDoctorAvatar('💭', '#ec4899'),   // pink - psychology
+      gp: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&h=200&fit=crop&crop=face',      // male doctor
+      derm: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&h=200&fit=crop&crop=face',    // female doctor
+      int: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=200&h=200&fit=crop&crop=face',   // male doctor
+      psych: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=200&h=200&fit=crop&crop=face', // female doctor
     };
 
     // Initialize specialists in thinking state

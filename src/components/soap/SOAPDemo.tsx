@@ -26,19 +26,13 @@ export function SOAPDemo() {
   // This ensures server and client render the same value
   const [demoTimestamp] = useState(() => Date.now());
 
-  // Helper to create emoji doctor avatar SVG
-  const createDoctorAvatar = (emoji: string, bgColor: string): string => {
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="${bgColor}"/><circle cx="50" cy="35" r="18" fill="#fff"/><path d="M25 85 Q50 65 75 85" fill="#fff"/><text x="50" y="52" font-family="Arial" font-size="28" text-anchor="middle" fill="#334155">${emoji}</text></svg>`;
-    return `data:image/svg+xml,${svg}`;
-  };
-
-  // Avatar colors and emojis by specialty
+  // Real doctor photos from Unsplash
   const specialtyAvatars: Record<string, string> = {
-    cardiology: createDoctorAvatar('❤️', '#ef4444'),
-    general: createDoctorAvatar('🩺', '#3b82f6'),
-    neurology: createDoctorAvatar('🧠', '#f59e0b'),
-    psychology: createDoctorAvatar('💭', '#ec4899'),
-    dermatology: createDoctorAvatar('🧴', '#a855f7'),
+    cardiology: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&h=200&fit=crop&crop=face',
+    general: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&h=200&fit=crop&crop=face',
+    neurology: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=200&h=200&fit=crop&crop=face',
+    psychology: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=200&h=200&fit=crop&crop=face',
+    dermatology: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=200&h=200&fit=crop&crop=face',
   };
 
   // Example data for specialists
