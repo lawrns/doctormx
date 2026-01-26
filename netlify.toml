@@ -8,3 +8,7 @@
 # Next.js requires the Next.js runtime plugin
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+# Extended function timeout for AI-heavy endpoints (SOAP multi-agent consultation)
+[functions]
+  node_bundler = "esbuild"

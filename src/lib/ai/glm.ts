@@ -18,9 +18,10 @@ import { logger } from '@/lib/observability/logger'
 import { AI_CONFIG } from './config'
 
 // GLM Client - OpenAI SDK compatible with timeout configuration
+// Uses GLM Coding Plan endpoint (different from standard API)
 export const glm = new OpenAI({
   apiKey: process.env.GLM_API_KEY || '',
-  baseURL: 'https://api.z.ai/api/paas/v4/',
+  baseURL: AI_CONFIG.glm.baseURL, // GLM Coding Plan endpoint from config
   timeout: AI_CONFIG.limits.timeoutMs, // 30 second timeout from config
   maxRetries: AI_CONFIG.limits.maxRetries, // 3 retries from config
 })

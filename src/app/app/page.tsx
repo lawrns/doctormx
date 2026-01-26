@@ -1,11 +1,12 @@
-import { 
-  Search, 
-  Calendar, 
-  MessageCircle, 
-  User, 
-  ClipboardList, 
-  Image as ImageIcon, 
-  Sparkles 
+import {
+  Search,
+  Calendar,
+  MessageCircle,
+  User,
+  ClipboardList,
+  Image as ImageIcon,
+  Sparkles,
+  Users,
 } from 'lucide-react'
 import { requireRole } from '@/lib/auth'
 import { getPatientAppointments } from '@/lib/appointments'
@@ -80,6 +81,27 @@ export default async function PatientDashboard() {
 
         {/* Quick Actions */}
         <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <Link href="/app/ai-consulta">
+            <Card className="group p-6 border-gradient-to-r from-blue-200 to-cyan-200 bg-gradient-to-br from-blue-50 to-cyan-50 hover:shadow-xl hover:border-blue-400 transition-all h-full relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full blur-3xl"></div>
+              <div className="relative">
+                <div className="flex items-center gap-2 mb-2">
+                  <Sparkles className="w-4 h-4 text-blue-600" />
+                  <span className="text-xs font-semibold text-blue-600 uppercase tracking-wide">Nuevo</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                    <Users className="w-7 h-7 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 text-lg group-hover:text-blue-600 transition-colors">Consulta Multi-Especialista</h3>
+                    <p className="text-sm text-gray-500">4 especialistas • Consenso IA</p>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </Link>
+
           <Link href="/doctors">
             <Card className="group p-6 border-gray-200 hover:shadow-lg hover:border-gray-300 transition-all h-full">
               <div className="flex items-center gap-4">

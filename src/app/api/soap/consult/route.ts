@@ -6,6 +6,10 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server'
+
+// Extended timeout for multi-agent AI consultation (requires Vercel/Netlify Pro)
+// SOAP runs 4 specialist consultations + consensus + plan = ~6 GLM API calls
+export const maxDuration = 60 // 60 seconds max
 import { createClient } from '@/lib/supabase/server'
 import { runSOAPConsultation } from '@/lib/soap/agents'
 import { logger } from '@/lib/observability/logger'
