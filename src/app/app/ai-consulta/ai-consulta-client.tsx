@@ -222,7 +222,8 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
     });
 
     try {
-      const response = await fetch('/api/soap/consult', {
+      // Use SSE streaming endpoint to avoid Vercel timeout
+      const response = await fetch('/api/soap/stream', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -232,11 +233,113 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
       });
 
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Error en la consulta');
+        const errorText = await response.text();
+        throw new Error(errorText || 'Error en la consulta');
       }
 
-      const data = await response.json();
+      // Process SSE stream
+      const reader = response.body?.getReader();
+      if (!reader) throw new Error('No stream available');
+
+      const decoder = new TextDecoder();
+      let buffer = '';
+      let finalConsultation: SOAPConsultation | null = null;
+
+      // Track completed specialists for progress
+      const completedSpecialistIds: string[] = [];
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n');
+        buffer = lines.pop() || '';
+
+        for (const line of lines) {
+          if (!line.startsWith('data: ')) continue;
+          const data = line.slice(6).trim();
+          if (!data || data === '[DONE]') continue;
+
+          try {
+            const event = JSON.parse(data);
+
+            switch (event.type) {
+              case 'specialist':
+                // Update specialist with real assessment
+                const specialistId = mapRoleToId(event.data.role);
+                completedSpecialistIds.push(specialistId);
+
+                setSpecialists((prev) =>
+                  prev.map((s) =>
+                    s.id === specialistId
+                      ? {
+                          ...s,
+                          confidence: Math.round(event.data.confidence * 100),
+                          assessment: event.data.diagnosis,
+                          status: 'completed' as const,
+                        }
+                      : s
+                  )
+                );
+
+                // Update progress
+                setProgress((prev) =>
+                  prev
+                    ? {
+                        ...prev,
+                        completedAgents: [...completedSpecialistIds],
+                        activeAgents: prev.activeAgents.filter(
+                          (id) => !completedSpecialistIds.includes(id)
+                        ),
+                      }
+                    : null
+                );
+                break;
+
+              case 'consensus':
+                setPhases((prev) =>
+                  prev.map((p) =>
+                    p.phase === 'assessment'
+                      ? { ...p, status: 'completed', timestamp: new Date() }
+                      : p
+                  )
+                );
+
+                const consensusData = event.data;
+                setConsensus({
+                  score: Math.round(consensusData.confidenceScore * 100),
+                  level: mapAgreementLevel(consensusData.agreementLevel),
+                  primaryDiagnosis: consensusData.primaryDiagnosis || '',
+                  differentialDiagnoses: [],
+                  clinicalReasoning: `Urgencia: ${consensusData.urgencyLevel}`,
+                  agreementPercentage: Math.round(consensusData.confidenceScore * 100),
+                });
+                break;
+
+              case 'plan':
+                setPhases((prev) =>
+                  prev.map((p) =>
+                    p.phase === 'plan'
+                      ? { ...p, status: 'completed', timestamp: new Date() }
+                      : p
+                  )
+                );
+                break;
+
+              case 'complete':
+                finalConsultation = event.data;
+                break;
+
+              case 'error':
+                throw new Error(event.message || 'Error en consulta');
+            }
+          } catch (parseErr) {
+            // Skip invalid JSON lines
+            console.warn('Failed to parse SSE data:', data);
+          }
+        }
+      }
 
       // Update phases
       setPhases([
@@ -246,38 +349,12 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
         { phase: 'plan', status: 'completed', timestamp: new Date() },
       ]);
 
-      // Process specialists from API
-      const apiSpecialists: SpecialistAgent[] =
-        data.consultation.assessment?.specialists.map((spec: any) => ({
-          id: spec.specialistId,
-          name: spec.specialist.name,
-          specialty: mapSpecialtyRoleToType(spec.specialistId),
-          confidence: Math.round(spec.confidence * 100),
-          assessment: spec.clinicalImpression,
-          status: 'completed' as const,
-        })) || [];
-
-      setSpecialists(apiSpecialists);
-
-      // Process consensus
-      const apiConsensus = data.consultation.assessment?.consensus;
-      if (apiConsensus) {
-        const consensusResult: ConsensusResult = {
-          score: Math.round(apiConsensus.kendallW * 100),
-          level: mapAgreementLevel(apiConsensus.agreementLevel),
-          primaryDiagnosis: apiConsensus.primaryDiagnosis?.name || '',
-          differentialDiagnoses:
-            apiConsensus.differentialDiagnoses?.map((d: any) => d.name) || [],
-          clinicalReasoning: apiConsensus.supervisorSummary || '',
-          agreementPercentage: Math.round(apiConsensus.kendallW * 100),
-        };
-        setConsensus(consensusResult);
+      if (finalConsultation) {
+        setConsultation(finalConsultation);
       }
 
-      setConsultation(data.consultation);
       setProgress(null);
       setCurrentStep('results');
-
     } catch (err) {
       console.error('Consultation error:', err);
       setError(err instanceof Error ? err.message : 'Error al procesar la consulta');
@@ -305,6 +382,16 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
       'psychiatrist': 'psychology',
     };
     return mapping[role] || 'general';
+  };
+
+  const mapRoleToId = (role: string): string => {
+    const mapping: Record<string, string> = {
+      'general-practitioner': 'gp',
+      'dermatologist': 'derm',
+      'internist': 'int',
+      'psychiatrist': 'psych',
+    };
+    return mapping[role] || role;
   };
 
   const mapAgreementLevel = (level: string): ConsensusResult['level'] => {
