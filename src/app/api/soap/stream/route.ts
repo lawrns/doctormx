@@ -10,33 +10,22 @@ import { createClient } from '@/lib/supabase/server'
 import { logger } from '@/lib/observability/logger'
 import { rateLimit } from '@/lib/cache'
 import { glmChatCompletion, GLM_CONFIG } from '@/lib/ai/glm'
-import {
-  GP_SYSTEM_PROMPT,
-  DERMATOLOGIST_SYSTEM_PROMPT,
-  INTERNIST_SYSTEM_PROMPT,
-  PSYCHIATRIST_SYSTEM_PROMPT,
-  SUPERVISOR_SYSTEM_PROMPT,
-  PLAN_GENERATOR_PROMPT,
-} from '@/lib/soap/prompts'
+import { buildPatientDataPrompt } from '@/lib/soap/prompts'
 import type { SubjectiveData, ObjectiveData, SpecialistRole, UrgencyLevel } from '@/lib/soap/types'
 import { z } from 'zod'
 
 // Extended timeout for streaming
 export const maxDuration = 60
 
-// Map specialist roles to prompts
-const SPECIALIST_PROMPTS: Record<SpecialistRole, string> = {
-  'general-practitioner': GP_SYSTEM_PROMPT,
-  'dermatologist': DERMATOLOGIST_SYSTEM_PROMPT,
-  'internist': INTERNIST_SYSTEM_PROMPT,
-  'psychiatrist': PSYCHIATRIST_SYSTEM_PROMPT,
-}
+// Specialist prompts are defined inline in consultSpecialist() for faster streaming
 
-// Specialist roles - reduced to 2 for faster streaming (avoids timeout)
-// Full 4-specialist consultation available via /api/soap/consult
+// All 4 specialists for comprehensive assessment
+// Running in parallel completes within ~30-45s with GLM
 const SPECIALIST_ROLES: SpecialistRole[] = [
   'general-practitioner',
+  'dermatologist',
   'internist',
+  'psychiatrist',
 ]
 
 // Simplified streaming types (full types stored in DB)
@@ -93,26 +82,7 @@ const ConsultRequestSchema = z.object({
   }).optional(),
 })
 
-/**
- * Format patient data for prompts
- */
-function formatPatientData(subjective: SubjectiveData, objective?: ObjectiveData): string {
-  return `
-DATOS DEL PACIENTE:
-- Motivo de consulta: ${subjective.chiefComplaint}
-- Descripción: ${subjective.symptomsDescription}
-- Duración: ${subjective.symptomDuration}
-- Severidad: ${subjective.symptomSeverity}/10
-- Inicio: ${subjective.onsetType === 'sudden' ? 'súbito' : 'gradual'}
-- Síntomas asociados: ${subjective.associatedSymptoms?.join(', ') || 'ninguno'}
-- Factores agravantes: ${subjective.aggravatingFactors?.join(', ') || 'ninguno'}
-- Factores aliviantes: ${subjective.relievingFactors?.join(', ') || 'ninguno'}
-- Tratamientos previos: ${subjective.previousTreatments?.join(', ') || 'ninguno'}
-${subjective.medicalHistory ? `- Historia médica: ${subjective.medicalHistory}` : ''}
-${objective?.patientAge ? `- Edad: ${objective.patientAge} años` : ''}
-${objective?.patientGender ? `- Género: ${objective.patientGender}` : ''}
-  `.trim()
-}
+// Using buildPatientDataPrompt from @/lib/soap/prompts for sanitized input
 
 /**
  * Consult a single specialist
@@ -121,19 +91,26 @@ async function consultSpecialist(
   role: SpecialistRole,
   patientData: string
 ): Promise<StreamingAssessment> {
-  // Simplified prompt for faster streaming response
-  const quickPrompt = `Eres un ${role === 'general-practitioner' ? 'médico general' : 'internista'} evaluando un paciente.
-Responde en JSON: {"clinicalImpression":"diagnóstico breve","urgencyLevel":"emergency|urgent|moderate|routine","redFlags":["..."],"confidence":0.8}`
+  // Specialist-specific prompts for medical accuracy with fast JSON response
+  const rolePrompts: Record<SpecialistRole, string> = {
+    'general-practitioner': 'Eres un médico general experimentado. Evalúa el cuadro clínico general e identifica condiciones graves.',
+    'dermatologist': 'Eres una dermatóloga certificada. Evalúa cualquier manifestación cutánea o falta de ella.',
+    'internist': 'Eres un internista certificado. Evalúa enfermedades sistémicas y multisistémicas.',
+    'psychiatrist': 'Eres una psiquiatra certificada. Evalúa componentes psicológicos y emocionales.',
+  }
+
+  const prompt = `${rolePrompts[role]}
+Responde SOLO en JSON válido: {"clinicalImpression":"impresión clínica breve","urgencyLevel":"emergency|urgent|moderate|routine|self-care","redFlags":["signos de alarma"],"recommendedTests":["estudios sugeridos"],"confidence":0.0-1.0}`
 
   const response = await glmChatCompletion({
     messages: [
-      { role: 'system', content: quickPrompt },
+      { role: 'system', content: prompt },
       { role: 'user', content: patientData },
     ],
     model: GLM_CONFIG.models.costEffective,
     jsonMode: true,
     temperature: 0.3,
-    maxTokens: 300, // Reduced for speed
+    maxTokens: 500, // Balanced for quality and speed
   })
 
   try {
@@ -290,7 +267,8 @@ export async function POST(request: NextRequest) {
 
         const { patientId, subjective, objective } = validation.data
         const consultationId = `soap-stream-${Date.now()}`
-        const patientData = formatPatientData(subjective as SubjectiveData, objective as ObjectiveData)
+        // Use sanitized prompt builder to prevent injection attacks
+        const patientData = buildPatientDataPrompt(subjective as SubjectiveData, objective as ObjectiveData)
 
         sendEvent('start', { consultationId, patientId, timestamp: new Date().toISOString() })
 
