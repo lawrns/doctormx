@@ -120,7 +120,7 @@ async function consultSpecialist(
     model: GLM_CONFIG.models.costEffective,
     jsonMode: false, // GLM ignores JSON mode, so we parse natural language instead
     temperature: 0.3,
-    maxTokens: 300, // Shorter since we only need 1 sentence
+    maxTokens: 500, // Need enough tokens for full response
   })
 
   // Retry once if we get an empty response (GLM rate limiting issue)
@@ -139,46 +139,76 @@ async function consultSpecialist(
     content: content.slice(0, 500),
   })
 
-  // Parse natural language format: DIAGNÓSTICO: ... | URGENCIA: ... | CONFIANZA: ...
-  // Also handle if GLM outputs in a different format
+  // Parse response - GLM sometimes returns JSON, sometimes natural language
   let diagnosis = 'Evaluación completada'
   let urgency: UrgencyLevel = 'moderate'
   let confidence = 0.7
 
-  // Try to extract structured fields
-  const diagMatch = content.match(/DIAGN[ÓO]STICO:\s*([^|]+)/i)
-  const urgencyMatch = content.match(/URGENCIA:\s*([^|]+)/i)
-  const confMatch = content.match(/CONFIANZA:\s*(\d+)/i)
+  // STRATEGY 1: Try to extract JSON clinicalImpression (GLM sometimes returns JSON)
+  const jsonMatch = content.match(/\{[^{}]*"clinicalImpression"\s*:\s*"([^"]+)"/)
+  if (jsonMatch) {
+    diagnosis = jsonMatch[1].trim()
+  }
 
-  if (diagMatch) {
-    diagnosis = diagMatch[1].trim()
-  } else {
-    // If no structured format, use the first meaningful sentence
-    const sentences = content.split(/[.!?]/).filter(s => s.trim().length > 20)
-    if (sentences.length > 0) {
-      // Skip reasoning sentences like "Let me analyze" or "Vamos a analizar"
-      const meaningfulSentence = sentences.find(s =>
-        !s.match(/let me|vamos a|desde la perspectiva|from.*perspective/i)
-      )
-      if (meaningfulSentence) {
-        diagnosis = meaningfulSentence.trim().slice(0, 200)
+  // STRATEGY 2: Try structured format DIAGNÓSTICO: ...
+  if (diagnosis === 'Evaluación completada') {
+    const diagMatch = content.match(/DIAGN[ÓO]STICO:\s*([^|]+)/i)
+    if (diagMatch) {
+      diagnosis = diagMatch[1].trim()
+    }
+  }
+
+  // STRATEGY 3: Look for diagnostic statements in natural language
+  if (diagnosis === 'Evaluación completada') {
+    // Patterns that indicate a diagnostic statement
+    const diagnosticPatterns = [
+      /(?:sugestivo|sugestivos|sugerente|compatible|compatibles) de\s+([^.]+)/i,
+      /(?:diagnóstico|impresión)(?:\s+clínica)?:\s*([^.]+)/i,
+      /presenta\s+síntomas\s+(?:de|compatibles con)\s+([^.]+)/i,
+      /(?:cuadro|hallazgos?) (?:clínico|sugestivo) (?:de|compatible con)\s+([^.]+)/i,
+      /no (?:hay|veo|encuentro|presenta)\s+(?:evidencia de\s+)?(?:componente|afectación|manifestación)\s+([^.]+)/i,
+      /(?:migraña|cefalea|jaqueca|dolor de cabeza)[^.]{0,50}/i,
+    ]
+
+    for (const pattern of diagnosticPatterns) {
+      const match = content.match(pattern)
+      if (match) {
+        diagnosis = match[0].trim().slice(0, 200)
+        break
       }
     }
   }
 
+  // STRATEGY 4: Find any sentence mentioning specific conditions
+  if (diagnosis === 'Evaluación completada') {
+    const conditionKeywords = ['migraña', 'cefalea', 'tensional', 'vascular', 'neurológic', 'cutáne', 'dermatológic', 'psicológic', 'emocional', 'ansiedad', 'estrés']
+    const sentences = content.split(/[.!?]/).filter(s => s.trim().length > 15)
+    for (const sentence of sentences) {
+      const hasCondition = conditionKeywords.some(kw => sentence.toLowerCase().includes(kw))
+      const isNotMeta = !sentence.match(/let me|vamos a|analizar|evaluar|perspectiva|perspective|formato|json/i)
+      if (hasCondition && isNotMeta) {
+        diagnosis = sentence.trim().slice(0, 200)
+        break
+      }
+    }
+  }
+
+  // Extract urgency if present
+  const urgencyMatch = content.match(/URGENCIA:\s*([^|]+)/i) || content.match(/urgency[^:]*:\s*"?(\w+)/i)
   if (urgencyMatch) {
     const urg = urgencyMatch[1].trim().toLowerCase()
     if (urg.includes('emergencia') || urg.includes('alta') || urg.includes('emergency')) {
       urgency = 'emergency'
-    } else if (urg.includes('urgent') || urg.includes('media')) {
-      urgency = 'moderate'
-    } else if (urg.includes('baja') || urg.includes('low') || urg.includes('routine')) {
+    } else if (urg.includes('baja') || urg.includes('low') || urg.includes('routine') || urg.includes('self')) {
       urgency = 'routine'
     }
   }
 
+  // Extract confidence if present
+  const confMatch = content.match(/CONFIANZA:\s*(\d+)/i) || content.match(/confidence[^:]*:\s*"?(\d*\.?\d+)/i)
   if (confMatch) {
-    confidence = parseInt(confMatch[1], 10) / 100
+    const conf = parseFloat(confMatch[1])
+    confidence = conf > 1 ? conf / 100 : conf
   }
 
   return {
