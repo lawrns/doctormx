@@ -85,36 +85,44 @@ const ConsultRequestSchema = z.object({
 
 // Using buildPatientDataPrompt from @/lib/soap/prompts for sanitized input
 
-// Specialist prompts - structured format that GLM follows consistently
-// Using DIAGNÓSTICO: | URGENCIA: | CONFIANZA: format that works well
+// Specialist prompts - "complete the form" approach to force structured output
+// GLM ignores instructions to use a format, so we give it a form to complete
 const SPECIALIST_PROMPTS: Record<SpecialistRole, string> = {
-  'general-practitioner': `Eres Dr. García, médico general. Da tu impresión diagnóstica en UNA oración clara.
+  'general-practitioner': `Completa este formulario médico como Dr. García (médico general).
 
-RESPONDE EXACTAMENTE en este formato:
-DIAGNÓSTICO: [descripción del cuadro clínico y diagnóstico probable] | URGENCIA: baja/media/alta/emergencia | CONFIANZA: [0-100]%
+FORMULARIO - SOLO COMPLETA LOS ESPACIOS:
+Impresión diagnóstica: _______________
+Nivel de urgencia: _____ (baja/media/alta/emergencia)
+Confianza: _____%
 
-Ejemplo: DIAGNÓSTICO: Cuadro compatible con migraña clásica por dolor pulsátil, fotofobia y náuseas | URGENCIA: media | CONFIANZA: 85%`,
+Escribe SOLO las respuestas, sin explicaciones.`,
 
-  'dermatologist': `Eres Dra. Rodríguez, dermatóloga. Evalúa si hay manifestaciones cutáneas.
+  'dermatologist': `Completa este formulario como Dra. Rodríguez (dermatóloga).
 
-RESPONDE EXACTAMENTE en este formato:
-DIAGNÓSTICO: [tu evaluación dermatológica] | URGENCIA: baja/media/alta/emergencia | CONFIANZA: [0-100]%
+FORMULARIO - SOLO COMPLETA LOS ESPACIOS:
+¿Hay componente cutáneo?: _______________
+Nivel de urgencia: _____ (baja/media/alta/emergencia)
+Confianza: _____%
 
-Ejemplo: DIAGNÓSTICO: No se identifican manifestaciones cutáneas; síntomas sugieren migraña | URGENCIA: media | CONFIANZA: 90%`,
+Escribe SOLO las respuestas, sin explicaciones.`,
 
-  'internist': `Eres Dr. Martínez, internista. Evalúa posible afectación de órganos internos.
+  'internist': `Completa este formulario como Dr. Martínez (internista).
 
-RESPONDE EXACTAMENTE en este formato:
-DIAGNÓSTICO: [tu evaluación sistémica] | URGENCIA: baja/media/alta/emergencia | CONFIANZA: [0-100]%
+FORMULARIO - SOLO COMPLETA LOS ESPACIOS:
+Evaluación sistémica: _______________
+Nivel de urgencia: _____ (baja/media/alta/emergencia)
+Confianza: _____%
 
-Ejemplo: DIAGNÓSTICO: Cefalea primaria tipo migraña; sin datos de enfermedad sistémica | URGENCIA: baja | CONFIANZA: 80%`,
+Escribe SOLO las respuestas, sin explicaciones.`,
 
-  'psychiatrist': `Eres Dra. López, psiquiatra. Evalúa factores emocionales o psicológicos.
+  'psychiatrist': `Completa este formulario como Dra. López (psiquiatra).
 
-RESPONDE EXACTAMENTE en este formato:
-DIAGNÓSTICO: [tu evaluación psiquiátrica] | URGENCIA: baja/media/alta/emergencia | CONFIANZA: [0-100]%
+FORMULARIO - SOLO COMPLETA LOS ESPACIOS:
+Evaluación psicológica: _______________
+Nivel de urgencia: _____ (baja/media/alta/emergencia)
+Confianza: _____%
 
-Ejemplo: DIAGNÓSTICO: Estrés y privación de sueño como factores contribuyentes; sin trastorno psiquiátrico evidente | URGENCIA: baja | CONFIANZA: 75%`
+Escribe SOLO las respuestas, sin explicaciones.`
 }
 
 /**
@@ -166,11 +174,22 @@ async function consultSpecialist(
     diagnosis = jsonMatch[1].trim()
   }
 
-  // STRATEGY 2: Try structured format DIAGNÓSTICO: ...
+  // STRATEGY 2: Try structured formats (various field names)
   if (diagnosis === 'Evaluación completada') {
-    const diagMatch = content.match(/DIAGN[ÓO]STICO:\s*([^|]+)/i)
-    if (diagMatch) {
-      diagnosis = diagMatch[1].trim()
+    const diagPatterns = [
+      /DIAGN[ÓO]STICO:\s*([^|\n]+)/i,
+      /Impresi[óo]n diagn[óo]stica:\s*([^\n]+)/i,
+      /Evaluaci[óo]n sistem[áa]tica:\s*([^\n]+)/i,
+      /Evaluaci[óo]n psicol[óo]gica:\s*([^\n]+)/i,
+      /\?Hay componente cut[áa]neo\?:\s*([^\n]+)/i,
+      /componente cut[áa]neo:\s*([^\n]+)/i,
+    ]
+    for (const pattern of diagPatterns) {
+      const match = content.match(pattern)
+      if (match && match[1].trim().length > 5) {
+        diagnosis = match[1].trim().slice(0, 200)
+        break
+      }
     }
   }
 
