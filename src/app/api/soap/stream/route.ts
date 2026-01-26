@@ -154,34 +154,59 @@ ${JSON_RESPONSE_SCHEMA}`
     maxTokens: 500, // Balanced for quality and speed
   })
 
+  // Try to extract JSON from response (may be wrapped in markdown or have extra text)
+  let parsed: Record<string, unknown> | null = null
+  const content = response.content
+
   try {
-    const parsed = JSON.parse(response.content)
-    // Map to expected schema - clinicalImpression is the main field per prompts
+    // First, try direct JSON parse
+    parsed = JSON.parse(content)
+  } catch {
+    // Try to extract JSON from markdown code blocks or surrounding text
+    const jsonMatch = content.match(/\{[\s\S]*\}/)
+    if (jsonMatch) {
+      try {
+        parsed = JSON.parse(jsonMatch[0])
+      } catch {
+        // Still failed, will use fallback
+      }
+    }
+  }
+
+  if (parsed && parsed.clinicalImpression) {
     return {
       role,
-      diagnosis: parsed.clinicalImpression ||
-                 parsed.differentialDiagnoses?.[0]?.name ||
-                 'Evaluación en proceso',
-      confidence: parsed.confidence || 0.5,
-      urgency: parsed.urgencyLevel || 'moderate',
-      redFlags: parsed.redFlags || [],
-      recommendations: parsed.recommendedTests || parsed.recommendations || [],
+      diagnosis: String(parsed.clinicalImpression),
+      confidence: Number(parsed.confidence) || 0.7,
+      urgency: (parsed.urgencyLevel as UrgencyLevel) || 'moderate',
+      redFlags: Array.isArray(parsed.redFlags) ? parsed.redFlags as string[] : [],
+      recommendations: Array.isArray(parsed.recommendedTests)
+        ? parsed.recommendedTests as string[]
+        : Array.isArray(parsed.recommendations)
+          ? parsed.recommendations as string[]
+          : [],
       tokensUsed: response.usage.totalTokens,
       costUSD: response.costUSD,
     }
-  } catch (err) {
-    // GLM might return reasoning_content for some models, try to extract
-    const content = response.content
-    return {
-      role,
-      diagnosis: content.slice(0, 200) || 'Evaluación completada',
-      confidence: 0.5,
-      urgency: 'moderate' as UrgencyLevel,
-      redFlags: [],
-      recommendations: ['Consultar con un médico para evaluación completa'],
-      tokensUsed: response.usage.totalTokens,
-      costUSD: response.costUSD,
-    }
+  }
+
+  // Fallback: use the raw content as the diagnosis if it looks like medical text
+  // Remove any JSON-like artifacts and use the meaningful part
+  const cleanContent = content
+    .replace(/```json?\n?/g, '')
+    .replace(/```/g, '')
+    .replace(/^\s*\{[\s\S]*\}\s*$/g, '') // Remove failed JSON
+    .trim()
+
+  return {
+    role,
+    diagnosis: cleanContent.slice(0, 300) || 'Evaluación pendiente',
+    confidence: 0.5,
+    urgency: 'moderate' as UrgencyLevel,
+    redFlags: [],
+    recommendations: ['Consultar con un médico para evaluación completa'],
+    tokensUsed: response.usage.totalTokens,
+    costUSD: response.costUSD,
   }
 }
 
