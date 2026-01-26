@@ -158,6 +158,13 @@ ${JSON_RESPONSE_SCHEMA}`
   let parsed: Record<string, unknown> | null = null
   const content = response.content
 
+  // Debug: log what GLM returned
+  logger.info('[SOAP Specialist] GLM response', {
+    role,
+    contentLength: content.length,
+    contentPreview: content.slice(0, 500),
+  })
+
   try {
     // First, try direct JSON parse
     parsed = JSON.parse(content)
@@ -169,22 +176,47 @@ ${JSON_RESPONSE_SCHEMA}`
         parsed = JSON.parse(jsonMatch[0])
       } catch {
         // Still failed, will use fallback
+        logger.warn('[SOAP Specialist] JSON extraction failed', {
+          role,
+          extractedJson: jsonMatch[0].slice(0, 200),
+        })
       }
     }
   }
 
-  if (parsed && parsed.clinicalImpression) {
+  // Accept multiple possible field names for diagnosis
+  const diagnosisField = parsed?.clinicalImpression
+    || parsed?.clinical_impression
+    || parsed?.diagnosis
+    || parsed?.impression
+    || parsed?.assessment
+    || (parsed?.differentialDiagnoses as unknown[])?.[0]
+    || null
+
+  if (parsed && diagnosisField) {
+    const diagnosisText = typeof diagnosisField === 'string'
+      ? diagnosisField
+      : typeof diagnosisField === 'object' && diagnosisField !== null
+        ? (diagnosisField as Record<string, unknown>).name as string || JSON.stringify(diagnosisField)
+        : String(diagnosisField)
+
     return {
       role,
-      diagnosis: String(parsed.clinicalImpression),
-      confidence: Number(parsed.confidence) || 0.7,
-      urgency: (parsed.urgencyLevel as UrgencyLevel) || 'moderate',
-      redFlags: Array.isArray(parsed.redFlags) ? parsed.redFlags as string[] : [],
+      diagnosis: diagnosisText,
+      confidence: Number(parsed.confidence || parsed.confidenceScore) || 0.7,
+      urgency: (parsed.urgencyLevel || parsed.urgency || 'moderate') as UrgencyLevel,
+      redFlags: Array.isArray(parsed.redFlags)
+        ? parsed.redFlags as string[]
+        : Array.isArray(parsed.red_flags)
+          ? parsed.red_flags as string[]
+          : [],
       recommendations: Array.isArray(parsed.recommendedTests)
         ? parsed.recommendedTests as string[]
         : Array.isArray(parsed.recommendations)
           ? parsed.recommendations as string[]
-          : [],
+          : Array.isArray(parsed.recommended_tests)
+            ? parsed.recommended_tests as string[]
+            : [],
       tokensUsed: response.usage.totalTokens,
       costUSD: response.costUSD,
     }
@@ -389,6 +421,9 @@ export async function POST(request: NextRequest) {
               diagnosis: assessment.diagnosis.slice(0, 150),
               confidence: assessment.confidence,
               urgency: assessment.urgency,
+              redFlags: assessment.redFlags.slice(0, 3),
+              // Debug: include raw diagnosis length to see if we got real content
+              _diagLen: assessment.diagnosis.length,
             })
             return assessment
           })
