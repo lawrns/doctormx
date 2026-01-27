@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Sparkles,
@@ -38,6 +38,9 @@ import type { SubjectiveData, SOAPConsultation } from '@/lib/soap/types';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { EmergencyAlert, EmergencyModal } from '@/components/EmergencyAlert';
+import { detectRedFlagsEnhanced, type RedFlagResult } from '@/lib/ai/red-flags-enhanced';
+import { RecommendedDoctors } from '@/components/soap/RecommendedDoctors';
 
 // ============================================================================
 // TYPES
@@ -106,10 +109,48 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
   const [phases, setPhases] = useState<SOAPPhaseStatus[]>([]);
   const [progress, setProgress] = useState<ConsultationProgressType | null>(null);
 
+  // Emergency detection state
+  const [emergencyDetected, setEmergencyDetected] = useState<RedFlagResult | null>(null);
+  const [showEmergencyModal, setShowEmergencyModal] = useState(false);
+
   const updateFormData = (field: keyof FormData, value: string | number) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
     setError(null);
+
+    // Check for emergency symptoms in real-time
+    if (field === 'chiefComplaint' || field === 'symptomsDescription' || field === 'associatedSymptoms') {
+      checkForEmergencies();
+    }
   };
+
+  const checkForEmergencies = () => {
+    // Combine all symptom text for comprehensive checking
+    const combinedText = [
+      formData.chiefComplaint,
+      formData.symptomsDescription,
+      formData.associatedSymptoms,
+    ].join(' ');
+
+    if (combinedText.trim().length < 5) return; // Too short to analyze
+
+    const result = detectRedFlagsEnhanced(combinedText);
+
+    if (result.hasRedFlags) {
+      setEmergencyDetected(result);
+
+      // Show modal for critical emergencies
+      if (result.requiresImmediate911) {
+        setShowEmergencyModal(true);
+      }
+    } else {
+      setEmergencyDetected(null);
+    }
+  };
+
+  // Re-check on form data changes
+  useEffect(() => {
+    checkForEmergencies();
+  }, [formData.chiefComplaint, formData.symptomsDescription, formData.associatedSymptoms]);
 
   const nextStep = () => {
     const steps: IntakeStep[] = [
@@ -152,8 +193,26 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
   };
 
   const submitConsultation = async () => {
+    // Final emergency check before submission
+    checkForEmergencies();
+
+    // Block submission if critical emergency detected
+    if (emergencyDetected?.requiresImmediate911) {
+      setShowEmergencyModal(true);
+      return;
+    }
+
     setIsSubmitting(true);
     setError(null);
+
+    // Log red flags if detected (for medical review)
+    if (emergencyDetected && emergencyDetected.hasRedFlags) {
+      console.warn('[RED FLAG] Consultation submitted with detected red flags:', {
+        flags: emergencyDetected.detectedFlags,
+        severity: emergencyDetected.highestSeverity,
+        text: [formData.chiefComplaint, formData.symptomsDescription].join(' '),
+      });
+    }
 
     // Initialize phases
     setPhases([
@@ -492,6 +551,18 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
       </header>
 
       <main className="max-w-2xl mx-auto px-4 py-8">
+        {/* Emergency Alert Banner (non-critical) */}
+        {emergencyDetected && emergencyDetected.hasRedFlags && !emergencyDetected.requiresImmediate911 && (
+          <div className="mb-6">
+            <EmergencyAlert
+              message={emergencyDetected.detectedFlags[0].message}
+              symptoms={emergencyDetected.detectedFlags.map((f) => f.category)}
+              severity="high"
+              onDismiss={() => setEmergencyDetected(null)}
+            />
+          </div>
+        )}
+
         <AnimatePresence mode="wait">
           {/* Welcome Step */}
           {currentStep === 'welcome' && (
@@ -630,6 +701,15 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
           </motion.div>
         )}
       </main>
+
+      {/* Emergency Modal (blocks all interaction) */}
+      {showEmergencyModal && emergencyDetected && emergencyDetected.requiresImmediate911 && (
+        <EmergencyModal
+          message={emergencyDetected.detectedFlags[0].message}
+          symptoms={emergencyDetected.detectedFlags.map((f) => f.category)}
+          severity="critical"
+        />
+      )}
     </div>
   );
 }
@@ -1207,20 +1287,30 @@ function ResultsStep({
         </Card>
       )}
 
-      {/* Book Appointment CTA */}
-      {consultation.plan?.referralNeeded && (
-        <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl p-8 text-white text-center">
-          <h3 className="text-2xl font-bold mb-2">¿Necesitas ver a un especialista?</h3>
-          <p className="text-blue-50 mb-6">
-            Agenda una cita con un especialista certificado
+      {/* Warm Introduction - Recommended Doctors */}
+      {consultation.plan?.referralNeeded && consultation.assessment?.consensus && (
+        <RecommendedDoctors
+          consultationId={consultation.id}
+          consensus={consultation.assessment.consensus}
+          patientHistory={{
+            chiefComplaint: consultation.subjective.chiefComplaint,
+            symptomsDescription: consultation.subjective.symptomsDescription,
+            medicalHistory: consultation.subjective.medicalHistory,
+          }}
+          onSelectDoctor={(doctorId) => {
+            // Navigate to booking with consultation ID
+            window.location.href = `/book/${doctorId}?consultationId=${consultation.id}`;
+          }}
+        />
+      )}
+
+      {/* Generic CTA if no referral needed */}
+      {!consultation.plan?.referralNeeded && (
+        <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl p-8 text-white text-center">
+          <h3 className="text-2xl font-bold mb-2">Todo listo</h3>
+          <p className="text-green-50 mb-6">
+            Sigue las recomendaciones y cuídate bien
           </p>
-          <Link
-            href="/doctors"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:bg-gray-50 transition-all"
-          >
-            <span>Buscar Especialista</span>
-            <ArrowRight className="w-5 h-5" />
-          </Link>
         </div>
       )}
 

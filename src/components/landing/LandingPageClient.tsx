@@ -9,6 +9,7 @@ import { StatsSection } from './StatsSection'
 import { FeaturesSection } from './FeaturesSection'
 import { TestimonialsSection } from './TestimonialsSection'
 import { CTASection } from './CTASection'
+import { TrustFooter } from '@/components/TrustSignals'
 import { Stethoscope, Search, UserPlus, Sparkles } from 'lucide-react'
 
 export function LandingPageClient() {
@@ -95,6 +96,9 @@ export function LandingPageClient() {
       <FeaturesSection />
       <TestimonialsSection />
       <CTASection />
+
+      {/* Trust & Credibility Signals */}
+      <TrustFooter />
 
       {/* Footer */}
       <footer className="bg-neutral-900 text-white py-16">

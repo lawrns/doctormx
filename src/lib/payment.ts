@@ -28,7 +28,7 @@ export async function initializePayment(
   // Paso 1: Obtener información de la cita
   const appointmentData = await getAppointmentPaymentData(request.appointmentId, request.userId)
 
-  // Paso 2: Crear payment intent en Stripe
+  // Paso 2: Crear payment intent en Stripe with Mexican payment methods
   const paymentIntent = await stripe.paymentIntents.create({
     amount: appointmentData.amount,
     currency: appointmentData.currency.toLowerCase(),
@@ -37,8 +37,19 @@ export async function initializePayment(
       doctorId: appointmentData.doctorId,
       patientId: request.userId,
     },
-    automatic_payment_methods: {
-      enabled: true,
+    // Enable Mexican payment methods: Cards, OXXO, and SPEI
+    payment_method_types: ['card', 'oxxo', 'customer_balance'],
+    // For OXXO: payment confirmation can take up to 3 days
+    payment_method_options: {
+      oxxo: {
+        expires_after_days: 3, // OXXO voucher expires in 3 days
+      },
+      customer_balance: {
+        funding_type: 'bank_transfer', // SPEI bank transfers
+        bank_transfer: {
+          type: 'mx_bank_transfer', // Specifically Mexican SPEI
+        },
+      },
     },
   })
 

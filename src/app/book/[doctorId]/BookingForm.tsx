@@ -62,12 +62,15 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
     urgencyLevel: string
     suggestedSpecialty: string
   } | null>(null)
+  const [consultationId, setConsultationId] = useState<string | null>(null)
 
   useEffect(() => {
     const dateParam = searchParams.get('date')
     const timeParam = searchParams.get('time')
+    const consultationIdParam = searchParams.get('consultationId')
     if (dateParam) setSelectedDate(dateParam)
     if (timeParam) setSelectedTime(timeParam)
+    if (consultationIdParam) setConsultationId(consultationIdParam)
   }, [searchParams])
 
   useEffect(() => {
@@ -95,7 +98,13 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
       const res = await fetch('/api/appointments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ doctorId: doctor.id, date: selectedDate, time: selectedTime, preConsultaSummary }),
+        body: JSON.stringify({
+          doctorId: doctor.id,
+          date: selectedDate,
+          time: selectedTime,
+          preConsultaSummary,
+          consultationId: consultationId || undefined // Pass AI consultation ID if available
+        }),
       })
       const data = await res.json()
       if (res.ok) router.push(`/checkout/${data.appointmentId}`)
@@ -172,6 +181,16 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                 </div>
               )}
               {preConsultaCompleted && <div className="bg-success-50 border border-success-200 rounded-xl p-4"><p className="text-sm text-success-700 font-medium">✓ Pre-consulta completada con Dr. Simeon IA</p></div>}
+              {consultationId && (
+                <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                  <p className="text-sm text-blue-700 font-medium">
+                    ✨ Referido desde tu consulta de IA multi-especialista
+                  </p>
+                  <p className="text-xs text-blue-600 mt-1">
+                    Tu expediente médico será compartido con el doctor para continuidad de atención
+                  </p>
+                </div>
+              )}
               {selectedDate && selectedTime && (
                 <button type="submit" disabled={submitting} className="w-full py-4 bg-primary-500 text-white rounded-xl hover:bg-primary-600 font-semibold text-lg disabled:opacity-50">
                   {submitting ? 'Creando cita...' : currentUser ? (AI_CONFIG.features.preConsulta && !preConsultaCompleted ? 'Iniciar pre-consulta con IA' : 'Continuar al pago →') : 'Iniciar sesión y continuar'}

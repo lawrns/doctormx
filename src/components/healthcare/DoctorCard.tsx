@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
+import { VerificationBadge } from '@/components/TrustSignals'
 
 interface DoctorCardProps {
   id: string
@@ -17,6 +18,8 @@ interface DoctorCardProps {
   location?: string
   availability?: string
   verified?: boolean
+  cedula?: string // Professional license number (cédula profesional)
+  verifiedDate?: Date // When doctor verification was completed
   price?: number
   videoConsultation?: boolean
   className?: string
@@ -32,6 +35,8 @@ export function DoctorCard({
   location,
   availability,
   verified = false,
+  cedula,
+  verifiedDate,
   price,
   videoConsultation = false,
   className,
@@ -70,7 +75,14 @@ export function DoctorCard({
 
             {/* Badges */}
             <div className="flex flex-wrap gap-1.5 mt-2">
-              {verified && (
+              {verified && cedula && verifiedDate ? (
+                <VerificationBadge
+                  doctorId={id}
+                  cedula={cedula}
+                  verifiedDate={verifiedDate}
+                  showDetails={true}
+                />
+              ) : verified ? (
                 <Badge
                   variant="secondary"
                   className="bg-teal-50 text-teal-700 border-teal-200 text-xs px-2 py-0.5"
@@ -88,7 +100,7 @@ export function DoctorCard({
                   </svg>
                   Verificado
                 </Badge>
-              )}
+              ) : null}
               {videoConsultation && (
                 <Badge
                   variant="secondary"

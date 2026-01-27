@@ -4,6 +4,7 @@ import * as React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { Card } from '@/components/ui/card';
+import { useButtonState } from '@/hooks/useButtonState';
 
 interface QuestionCardProps {
   children: React.ReactNode;
@@ -153,13 +154,30 @@ export function QuestionCardNavigation({
   isSubmitting = false,
   className,
 }: QuestionCardNavigationProps) {
+  const nextButton = useButtonState(300); // 300ms debounce
+  const prevButton = useButtonState(300);
+
+  const handleNext = async () => {
+    await nextButton.execute(async () => {
+      onNext();
+    });
+  };
+
+  const handlePrev = async () => {
+    await prevButton.execute(async () => {
+      onPrev?.();
+    });
+  };
+
+  const isButtonLoading = nextButton.isLoading || prevButton.isLoading || isSubmitting;
+
   return (
     <div className={cn('flex gap-3 w-full', className)}>
       {onPrev && (
         <button
           type="button"
-          onClick={onPrev}
-          disabled={isSubmitting}
+          onClick={handlePrev}
+          disabled={prevButton.isLoading || isSubmitting}
           className={cn(
             'flex-1 px-6 py-3 rounded-xl font-semibold text-sm',
             'border-2 border-neutral-300 text-neutral-700',
@@ -169,14 +187,14 @@ export function QuestionCardNavigation({
             'focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2'
           )}
         >
-          {prevLabel}
+          {prevButton.isLoading ? 'Cargando...' : prevLabel}
         </button>
       )}
 
       <button
         type="button"
-        onClick={onNext}
-        disabled={!canNext || isSubmitting}
+        onClick={handleNext}
+        disabled={!canNext || isButtonLoading}
         className={cn(
           'flex-1 px-6 py-3 rounded-xl font-semibold text-sm',
           'bg-gradient-to-r from-blue-500 to-blue-600 text-white',
@@ -188,7 +206,7 @@ export function QuestionCardNavigation({
           'disabled:hover:shadow-md'
         )}
       >
-        {isSubmitting ? (
+        {isButtonLoading ? (
           <span className="flex items-center justify-center gap-2">
             <motion.span
               animate={{ rotate: 360 }}
