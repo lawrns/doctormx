@@ -329,48 +329,155 @@ function DoctorCard({
 
 /**
  * Map AI diagnosis to doctor specialty
- * This should be enhanced with a comprehensive mapping database
+ * Comprehensive mapping with extensive pattern matching for Mexican healthcare
  */
 function mapDiagnosisToSpecialty(diagnosis: string): string {
   const lowerDiagnosis = diagnosis.toLowerCase();
 
-  // Cardiovascular
+  // Cardiology - Heart & Cardiovascular
   if (
-    /hipertension|presion.*alta|cardiaco|corazon/i.test(lowerDiagnosis)
+    /hipertension|presion.*alta|cardiaco|corazon|arritmia|infarto|angina|palpitacion|taquicardia|bradicardia|valvular|insuficiencia.*cardiaca|soplo|colesterol.*alto/i.test(
+      lowerDiagnosis
+    )
   ) {
     return 'Cardiología';
   }
 
-  // Dermatology
-  if (/piel|dermatitis|acne|erupcion|rash/i.test(lowerDiagnosis)) {
+  // Dermatology - Skin, Hair, Nails
+  if (
+    /piel|dermatitis|acne|erupcion|rash|sarpullido|urticaria|eczema|psoriasis|melasma|vitiligo|verruga|lunar|manchas.*piel|hongo|micosis|sarna|alopecia|caida.*cabello|uña|caspa|rosácea/i.test(
+      lowerDiagnosis
+    )
+  ) {
     return 'Dermatología';
   }
 
-  // Gastroenterology
-  if (/gastro|estomago|intestino|digestion/i.test(lowerDiagnosis)) {
+  // Gastroenterology - Digestive System
+  if (
+    /gastro|estomago|intestino|digestion|reflujo|gastritis|ulcera|colon|colitis|diarrea|estreñimiento|hemorroides|higado|hepat|vesicula|pancreat|nausea|vomito|acidez|dispepsia|abdomen|intestinal|ibs|crohn/i.test(
+      lowerDiagnosis
+    )
+  ) {
     return 'Gastroenterología';
   }
 
-  // Neurology
-  if (/neurologico|cerebro|nervioso|migraña/i.test(lowerDiagnosis)) {
+  // Neurology - Brain & Nervous System
+  if (
+    /neurologico|cerebro|nervioso|migraña|jaqueca|cefalea|dolor.*cabeza|mareo|vertigo|convulsion|epilepsia|temblor|parkinson|esclerosis|neuropatia|paralisis|tic|neuralgia/i.test(
+      lowerDiagnosis
+    )
+  ) {
     return 'Neurología';
   }
 
-  // Psychiatry
-  if (/ansiedad|depresion|psiquiatrico|mental/i.test(lowerDiagnosis)) {
+  // Psychiatry / Psychology - Mental Health
+  if (
+    /ansiedad|depresion|psiquiatrico|mental|estres|panico|fobia|bipolar|esquizofrenia|insomnio|trastorno.*sueño|adiccion|tdah|deficit.*atencion|toc|obsesivo|compulsivo/i.test(
+      lowerDiagnosis
+    )
+  ) {
     return 'Psiquiatría';
   }
 
-  // Gynecology
-  if (/ginecologico|menstrual|embarazo/i.test(lowerDiagnosis)) {
+  // Gynecology / Obstetrics
+  if (
+    /ginecologico|menstrual|embarazo|ovario|utero|vaginal|menopaus|endometriosis|quiste.*ovario|mioma|anticonceptiv|pap|amenorrea|dismenorrea|sangrado.*vaginal/i.test(
+      lowerDiagnosis
+    )
+  ) {
     return 'Ginecología';
   }
 
   // Pediatrics
-  if (/pediatrico|niño|infantil/i.test(lowerDiagnosis)) {
+  if (
+    /pediatrico|niño|niña|infantil|bebe|lactante|neonato|sarampion|varicela|paperas/i.test(
+      lowerDiagnosis
+    )
+  ) {
     return 'Pediatría';
   }
 
-  // Default to general medicine
+  // Orthopedics / Traumatology - Bones, Joints, Spine
+  if (
+    /ortope|traumato|fractura|hueso|articulacion|rodilla|hombro|cadera|espalda|columna|lumbar|cervical|hernia.*disco|escoliosis|osteo|tendon|ligamento|esguince|luxacion|menisco|artritis|artrosis|gota/i.test(
+      lowerDiagnosis
+    )
+  ) {
+    return 'Ortopedia';
+  }
+
+  // Pulmonology - Respiratory
+  if (
+    /pulmon|respiratorio|asma|bronquitis|neumon|epoc|tos|disnea|ahogo|tuberculosis|enfisema|fibrosis.*pulmonar|apnea.*sueño/i.test(
+      lowerDiagnosis
+    )
+  ) {
+    return 'Neumología';
+  }
+
+  // Endocrinology - Hormones & Metabolism
+  if (
+    /endocrino|diabetes|tiro|hipotiro|hipertiro|obesidad|metabol|hormona|suprarrenal|colesterol|triglicerido|glucosa/i.test(
+      lowerDiagnosis
+    )
+  ) {
+    return 'Endocrinología';
+  }
+
+  // Urology - Urinary & Male Reproductive
+  if (
+    /urolog|renal|riñon|vejiga|prostata|incontinencia|cistitis|infeccion.*urinaria|calculo.*renal|piedra.*riñon|hematuria/i.test(
+      lowerDiagnosis
+    )
+  ) {
+    return 'Urología';
+  }
+
+  // Ophthalmology - Eyes
+  if (
+    /oftalmolog|ojo|vista|vision|catarata|glaucoma|conjuntivitis|retina|cornea|miopia|astigmatismo|presbicia|estrabismo/i.test(
+      lowerDiagnosis
+    )
+  ) {
+    return 'Oftalmología';
+  }
+
+  // Otorhinolaryngology (ENT) - Ear, Nose, Throat
+  if (
+    /otorrino|oido|nariz|garganta|sinusitis|otitis|faringitis|amigdalitis|laringitis|rinitis|alergica|sordera|tinnitus|adenoides|ronquido/i.test(
+      lowerDiagnosis
+    )
+  ) {
+    return 'Otorrinolaringología';
+  }
+
+  // Rheumatology - Autoimmune & Joint Diseases
+  if (
+    /reumatolog|artritis.*reumatoide|lupus|fibromialgia|vasculitis|espondilitis|sjogren|dolor.*articular.*cronico/i.test(
+      lowerDiagnosis
+    )
+  ) {
+    return 'Reumatología';
+  }
+
+  // Oncology - Cancer
+  if (
+    /cancer|oncolog|tumor|maligno|leucemia|linfoma|neoplasia|quimioterapia|metastasis|carcinoma/i.test(
+      lowerDiagnosis
+    )
+  ) {
+    return 'Oncología';
+  }
+
+  // Allergology / Immunology
+  if (
+    /alergia|alergico|inmunolog|urticaria|anafilaxia|alergia.*alimentaria|rinitis.*alergica|asma.*alergica|dermatitis.*atopica/i.test(
+      lowerDiagnosis
+    )
+  ) {
+    return 'Alergología';
+  }
+
+  // Default to general medicine for common/minor conditions
   return 'Medicina General';
 }

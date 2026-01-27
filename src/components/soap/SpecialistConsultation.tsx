@@ -95,6 +95,14 @@ interface SpecialistCardProps {
 function SpecialistCard({ agent }: SpecialistCardProps) {
   const shouldReduceMotion = useReducedMotion();
   const [displayedConfidence, setDisplayedConfidence] = React.useState(0);
+  const [isExpanded, setIsExpanded] = React.useState(false);
+
+  // Check if assessment is long enough to need truncation
+  const TRUNCATE_LENGTH = 150;
+  const needsTruncation = agent.assessment && agent.assessment.length > TRUNCATE_LENGTH;
+  const displayedText = isExpanded || !needsTruncation
+    ? agent.assessment
+    : `${agent.assessment.slice(0, TRUNCATE_LENGTH)}...`;
 
   // Animate confidence from 0 to actual value with proper cleanup
   React.useEffect(() => {
@@ -218,9 +226,21 @@ function SpecialistCard({ agent }: SpecialistCardProps) {
             className="space-y-2"
           >
             <h4 className="text-sm font-medium">Evaluación</h4>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              {agent.assessment}
-            </p>
+            <div className="space-y-2">
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {displayedText}
+              </p>
+              {needsTruncation && (
+                <button
+                  onClick={() => setIsExpanded(!isExpanded)}
+                  className="text-sm font-medium text-blue-600 hover:text-blue-700 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded px-1"
+                  aria-expanded={isExpanded}
+                  aria-label={isExpanded ? 'Mostrar menos' : 'Mostrar más'}
+                >
+                  {isExpanded ? '← Mostrar menos' : 'Mostrar más →'}
+                </button>
+              )}
+            </div>
           </motion.div>
         )}
 

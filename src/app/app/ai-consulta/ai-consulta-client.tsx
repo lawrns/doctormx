@@ -41,6 +41,7 @@ import { Badge } from '@/components/ui/badge';
 import { EmergencyAlert, EmergencyModal } from '@/components/EmergencyAlert';
 import { detectRedFlagsEnhanced, type RedFlagResult } from '@/lib/ai/red-flags-enhanced';
 import { RecommendedDoctors } from '@/components/soap/RecommendedDoctors';
+import { TreatmentPlanDisplay } from '@/components/soap/TreatmentPlanDisplay';
 
 // ============================================================================
 // TYPES
@@ -1245,46 +1246,7 @@ function ResultsStep({
 
       {/* Treatment Plan */}
       {consultation.plan && (
-        <Card className="p-6">
-          <h3 className="font-bold text-gray-900 mb-4">Plan Recomendado</h3>
-          <div className="space-y-4">
-            <div>
-              <h4 className="font-semibold text-gray-700 mb-2">Recomendaciones</h4>
-              <ul className="space-y-2">
-                {consultation.plan.recommendations.map((rec, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm">
-                    <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span>{rec}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold text-gray-700 mb-2">Autocuidado</h4>
-              <ul className="space-y-2">
-                {consultation.plan.selfCareInstructions.map((inst, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm">
-                    <span className="text-blue-500">•</span>
-                    <span>{inst}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="pt-4 border-t">
-              <p className="text-sm text-gray-600">
-                <strong>Seguimiento:</strong> {consultation.plan.followUpTiming} (
-                {consultation.plan.followUpType === 'in-person'
-                  ? 'presencial'
-                  : consultation.plan.followUpType === 'telemedicine'
-                  ? 'telemedicina'
-                  : 'a determinar'}
-                )
-              </p>
-            </div>
-          </div>
-        </Card>
+        <TreatmentPlanDisplay plan={consultation.plan} />
       )}
 
       {/* Warm Introduction - Recommended Doctors */}
