@@ -93,11 +93,21 @@ export async function POST(req: NextRequest) {
         // Fetch next available slot
         const nextAvailable = await getNextAvailableSlot(doc.id);
 
+        // Handle profiles - may be array or single object depending on Supabase join
+        const profile = Array.isArray(doc.profiles) ? doc.profiles[0] : doc.profiles;
+
+        // Handle specialties - extract name safely
+        const doctorSpecialty = doc.doctor_specialties?.[0];
+        const specialtyData = doctorSpecialty?.specialties as any;
+        const specialtyName = Array.isArray(specialtyData)
+          ? specialtyData[0]?.name_es
+          : specialtyData?.name_es;
+
         return {
           id: doc.id,
-          name: doc.profiles.full_name,
-          specialty: doc.doctor_specialties[0]?.specialties?.name_es || specialty,
-          photo: doc.profiles.photo_url,
+          name: profile?.full_name || 'Doctor',
+          specialty: specialtyName || specialty,
+          photo: profile?.photo_url || null,
           rating: doc.rating_avg || 0,
           reviewCount: doc.rating_count || 0,
           yearsExperience: doc.years_experience || 0,

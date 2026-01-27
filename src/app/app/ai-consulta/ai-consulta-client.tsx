@@ -135,11 +135,11 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
 
     const result = detectRedFlagsEnhanced(combinedText);
 
-    if (result.hasRedFlags) {
+    if (result.detected) {
       setEmergencyDetected(result);
 
       // Show modal for critical emergencies
-      if (result.requiresImmediate911) {
+      if (result.requiresEmergencyEscalation) {
         setShowEmergencyModal(true);
       }
     } else {
@@ -197,7 +197,7 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
     checkForEmergencies();
 
     // Block submission if critical emergency detected
-    if (emergencyDetected?.requiresImmediate911) {
+    if (emergencyDetected?.requiresEmergencyEscalation) {
       setShowEmergencyModal(true);
       return;
     }
@@ -206,9 +206,9 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
     setError(null);
 
     // Log red flags if detected (for medical review)
-    if (emergencyDetected && emergencyDetected.hasRedFlags) {
+    if (emergencyDetected && emergencyDetected.detected) {
       console.warn('[RED FLAG] Consultation submitted with detected red flags:', {
-        flags: emergencyDetected.detectedFlags,
+        flags: emergencyDetected.flags,
         severity: emergencyDetected.highestSeverity,
         text: [formData.chiefComplaint, formData.symptomsDescription].join(' '),
       });
@@ -552,11 +552,11 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
 
       <main className="max-w-2xl mx-auto px-4 py-8">
         {/* Emergency Alert Banner (non-critical) */}
-        {emergencyDetected && emergencyDetected.hasRedFlags && !emergencyDetected.requiresImmediate911 && (
+        {emergencyDetected && emergencyDetected.detected && !emergencyDetected.requiresEmergencyEscalation && (
           <div className="mb-6">
             <EmergencyAlert
-              message={emergencyDetected.detectedFlags[0].message}
-              symptoms={emergencyDetected.detectedFlags.map((f) => f.category)}
+              message={emergencyDetected.flags[0].message}
+              symptoms={emergencyDetected.flags.map((f) => f.category)}
               severity="high"
               onDismiss={() => setEmergencyDetected(null)}
             />
@@ -703,10 +703,10 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
       </main>
 
       {/* Emergency Modal (blocks all interaction) */}
-      {showEmergencyModal && emergencyDetected && emergencyDetected.requiresImmediate911 && (
+      {showEmergencyModal && emergencyDetected && emergencyDetected.requiresEmergencyEscalation && (
         <EmergencyModal
-          message={emergencyDetected.detectedFlags[0].message}
-          symptoms={emergencyDetected.detectedFlags.map((f) => f.category)}
+          message={emergencyDetected.flags[0].message}
+          symptoms={emergencyDetected.flags.map((f) => f.category)}
           severity="critical"
         />
       )}

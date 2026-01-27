@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import type { ConsensusResult } from '@/types/soap';
+import type { ConsensusResult } from '@/lib/soap/types';
 
 interface Doctor {
   id: string;
@@ -24,7 +24,7 @@ interface Doctor {
   rating: number;
   reviewCount: number;
   yearsExperience: number;
-  priceC ents: number;
+  priceCents: number;
   city: string;
   state: string;
   nextAvailable: string | null; // "Tomorrow 3PM", "Today 6PM", etc.
@@ -49,6 +49,10 @@ export function RecommendedDoctors({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  // Extract diagnosis name for use throughout component
+  const primaryDiagnosisName = consensus.primaryDiagnosis?.name || 'general';
+  const specialty = mapDiagnosisToSpecialty(primaryDiagnosisName);
+
   useEffect(() => {
     fetchRecommendedDoctors();
   }, [consensus.primaryDiagnosis]);
@@ -62,8 +66,8 @@ export function RecommendedDoctors({
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          specialty: mapDiagnosisToSpecialty(consensus.primaryDiagnosis),
-          urgencyLevel: consensus.urgencyLevel,
+          specialty,
+          urgencyLevel: (consensus as any).urgencyLevel || 'routine',
           consultationId,
           limit: 3,
         }),
@@ -135,7 +139,7 @@ export function RecommendedDoctors({
             <p className="text-gray-700">
               Basado en tu diagnóstico de{' '}
               <span className="font-semibold text-blue-700">
-                {consensus.primaryDiagnosis}
+                {primaryDiagnosisName}
               </span>
               , estos médicos verificados pueden ayudarte:
             </p>
@@ -171,10 +175,10 @@ export function RecommendedDoctors({
       {/* See more link */}
       <div className="text-center">
         <Link
-          href={`/doctors?specialty=${mapDiagnosisToSpecialty(consensus.primaryDiagnosis)}`}
+          href={`/doctors?specialty=${specialty}`}
           className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold"
         >
-          Ver más especialistas en {mapDiagnosisToSpecialty(consensus.primaryDiagnosis)}
+          Ver más especialistas en {specialty}
           <ArrowRight className="w-4 h-4" />
         </Link>
       </div>

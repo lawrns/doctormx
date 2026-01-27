@@ -4,8 +4,6 @@
  * to determine appropriate care level
  */
 
-import fs from 'fs';
-import path from 'path';
 import yaml from 'yaml';
 
 export type CareLevel = 'ER' | 'URGENT' | 'PRIMARY' | 'SELFCARE';
@@ -129,30 +127,12 @@ function evalNode(
 }
 
 /**
- * Load rules from YAML file
+ * Load rules - uses embedded critical rules
+ * Note: YAML file loading removed to avoid Turbopack bundling issues
+ * All rules are now embedded in the code for reliable build performance
  */
 function loadRules(): Rule[] {
-  try {
-    // Try multiple paths for the rules file
-    const possiblePaths = [
-      path.join(process.cwd(), 'src/lib/triage/redflags.yaml'),
-      path.join(__dirname, 'redflags.yaml'),
-    ];
-    
-    for (const filePath of possiblePaths) {
-      if (fs.existsSync(filePath)) {
-        const content = fs.readFileSync(filePath, 'utf8');
-        const parsed = yaml.parse(content);
-        return (parsed?.rules || []) as Rule[];
-      }
-    }
-    
-    // Fallback to embedded critical rules if file not found
-    return getEmbeddedCriticalRules();
-  } catch (error) {
-    console.error('Error loading triage rules:', error);
-    return getEmbeddedCriticalRules();
-  }
+  return getEmbeddedCriticalRules();
 }
 
 /**
