@@ -50,6 +50,20 @@ function getSpecialistInitials(name: string): string {
     .slice(0, 2);
 }
 
+// Function to count words in a text
+function countWords(text: string): number {
+  if (!text) return 0;
+  return text.trim().split(/\s+/).filter(word => word.length > 0).length;
+}
+
+// Function to truncate text to a specific number of words
+function truncateToWords(text: string, maxWords: number): string {
+  if (!text) return '';
+  const words = text.trim().split(/\s+/).filter(word => word.length > 0);
+  if (words.length <= maxWords) return text;
+  return words.slice(0, maxWords).join(' ') + '...';
+}
+
 export function SpecialistConsultation({
   agents,
   className,
@@ -97,12 +111,13 @@ function SpecialistCard({ agent }: SpecialistCardProps) {
   const [displayedConfidence, setDisplayedConfidence] = React.useState(0);
   const [isExpanded, setIsExpanded] = React.useState(false);
 
-  // Check if assessment is long enough to need truncation
-  const TRUNCATE_LENGTH = 150;
-  const needsTruncation = agent.assessment && agent.assessment.length > TRUNCATE_LENGTH;
+  // Word-based truncation instead of character-based
+  const WORD_LIMIT = 100;
+  const totalWordCount = countWords(agent.assessment || '');
+  const needsTruncation = totalWordCount > WORD_LIMIT;
   const displayedText = isExpanded || !needsTruncation
     ? agent.assessment
-    : `${agent.assessment.slice(0, TRUNCATE_LENGTH)}...`;
+    : truncateToWords(agent.assessment || '', WORD_LIMIT);
 
   // Animate confidence from 0 to actual value with proper cleanup
   React.useEffect(() => {
@@ -228,7 +243,9 @@ function SpecialistCard({ agent }: SpecialistCardProps) {
             <h4 className="text-sm font-medium">Evaluación</h4>
             <div className="space-y-2">
               <p className="text-sm text-muted-foreground leading-relaxed">
-                {displayedText}
+                {displayedText} {needsTruncation && !isExpanded && (
+                  <span className="text-xs text-gray-500">({totalWordCount} palabras)</span>
+                )}
               </p>
               {needsTruncation && (
                 <button
