@@ -1,10 +1,11 @@
-// WhatsApp Notification Service via Twilio
+// WhatsApp Notification Service via Meta Business API
 // Input: Notification data (appointment, patient, template type)
 // Process: Format template → Send via Twilio WhatsApp API → Log delivery
 // Output: Success/failure with message SID
 
 import { createServiceClient } from '@/lib/supabase/server'
 import { formatCurrency } from '@/lib/utils'
+import { sendWhatsAppMessage, sendTemplateMessage } from './whatsapp-business-api'
 
 const TWILIO_ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID!
 const TWILIO_AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN!
@@ -188,6 +189,7 @@ ${ctx.bookingLink || 'https://doctory.mx/doctors'}
   }
 }
 
+// LEGACY: Twilio implementation - kept for fallback
 async function sendTwilioWhatsApp(
   to: string,
   body: string
@@ -223,6 +225,30 @@ async function sendTwilioWhatsApp(
   }
 }
 
+async function sendBusinessAPIWhatsApp(
+  to: string,
+  body: string
+): Promise<{ messageId?: string; error?: string }> {
+  const { sendWhatsAppMessage } = await import('./whatsapp-business-api')
+  const { success, messageId, error } = await sendWhatsAppMessage(to, body)
+  if (!success) {
+    return { error: error || 'Unknown error' }
+  }
+  return { messageId }
+}
+
+
+async function sendBusinessAPIWhatsApp(
+  to: string,
+  body: string
+): Promise<{ messageId?: string; error?: string }> {
+  const { success, messageId, error } = await sendWhatsAppMessage(to, body)
+  if (!success) {
+    return { error: error || "Unknown error" }
+  }
+  return { messageId }
+}
+
 export async function sendWhatsAppNotification(
   phone: string,
   template: NotificationTemplate,
@@ -232,14 +258,14 @@ export async function sendWhatsAppNotification(
 
   try {
     const messageBody = formatTemplate(template, context)
-    const twilioMessage = await sendTwilioWhatsApp(phone, messageBody)
+    const businessResult = await sendBusinessAPIWhatsApp(phone, messageBody)
 
-    if (!twilioMessage) {
+    if (!businessResult.messageId) {
       await supabase.from('notification_logs').insert({
         phone_number: phone,
         template,
         status: 'failed',
-        error: 'Twilio API returned null',
+        error: businessResult.error || 'Business API failed',
         context: context as Record<string, unknown>,
       })
       return { success: false, error: 'Failed to send message' }
@@ -249,12 +275,12 @@ export async function sendWhatsAppNotification(
       phone_number: phone,
       template,
       status: 'sent',
-      twilio_sid: twilioMessage.sid,
+      whatsapp_message_id: businessResult.messageId,
       message_body: messageBody,
       context: context as Record<string, unknown>,
     })
 
-    return { success: true, messageSid: twilioMessage.sid }
+    return { success: true, messageSid: businessResult.messageId }
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : 'Unknown error'
     console.error('Error sending notification:', error)

@@ -1,0 +1,88 @@
+{
+  "templates": [
+    {
+      "name": "appointment_confirmation",
+      "language": "es_MX",
+      "category": "UTILITY",
+      "components": [
+        {
+          "type": "HEADER",
+          "format": "TEXT",
+          "text": "✅ Cita Confirmada - Doctor.mx"
+        },
+        {
+          "type": "BODY",
+          "text": "Hola {{1}}, tu cita con el Dr. {{2}} está confirmada para el {{3}} a las {{4}}.\n\n📍 Modalidad: {{5}}\n💳 Total pagado: ${{6}} MXN"
+        },
+        {
+          "type": "FOOTER",
+          "text": "Responde CANCELAR para cancelar tu cita."
+        }
+      ]
+    },
+    {
+      "name": "consultation_reminder",
+      "language": "es_MX",
+      "category": "UTILITY",
+      "components": [
+        {
+          "type": "HEADER",
+          "format": "TEXT",
+          "text": "⏰ Recordatorio de Consulta"
+        },
+        {
+          "type": "BODY",
+          "text": "Tu consulta con {{1}} comienza en {{2}} minutos.\n\nÚnete aquí: {{3}}"
+        }
+      ]
+    },
+    {
+      "name": "payment_receipt",
+      "language": "es_MX",
+      "category": "UTILITY",
+      "components": [
+        {
+          "type": "HEADER",
+          "format": "TEXT",
+          "text": "🧾 Comprobante de Pago"
+        },
+        {
+          "type": "BODY",
+          "text": "Pago confirmado: ${{1}} MXN\nConcepto: {{2}}\nFecha: {{3}}\n\nGracias por usar Doctor.mx"
+        }
+      ]
+    },
+    {
+      "name": "prescription_ready",
+      "language": "es_MX",
+      "category": "UTILITY",
+      "components": [
+        {
+          "type": "HEADER",
+          "format": "TEXT",
+          "text": "💊 Receta Lista"
+        },
+        {
+          "type": "BODY",
+          "text": "Hola {{1}}, tu receta está lista.\n\nPuedes descargarla aquí: {{2}}\n\nFarmacias cercanas: {{3}}"
+        }
+      ]
+    },
+    {
+      "name": "follow_up_24h",
+      "language": "es_MX",
+      "category": "UTILITY",
+      "components": [
+        {
+          "type": "HEADER",
+          "format": "TEXT",
+          "text": "❓ Seguimiento de Consulta"
+        },
+        {
+          "type": "BODY",
+          "text": "Hola {{1}}, ¿cómo te sientes después de tu consulta de ayer?\n\nResponde ESTABLE o LLAMAR si necesitas ayuda."
+        }
+      ]
+    }
+  ]
+}
