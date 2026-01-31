@@ -237,18 +237,6 @@ async function sendBusinessAPIWhatsApp(
   return { messageId }
 }
 
-
-async function sendBusinessAPIWhatsApp(
-  to: string,
-  body: string
-): Promise<{ messageId?: string; error?: string }> {
-  const { success, messageId, error } = await sendWhatsAppMessage(to, body)
-  if (!success) {
-    return { error: error || "Unknown error" }
-  }
-  return { messageId }
-}
-
 export async function sendWhatsAppNotification(
   phone: string,
   template: NotificationTemplate,
