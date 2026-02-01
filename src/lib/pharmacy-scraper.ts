@@ -1,198 +1,59 @@
-import axios from 'axios';
-import * as cheerio from 'cheerio';
-import { 
-  PharmacyChain, 
-  Product, 
-  ProductSearchOptions, 
-  ProductSearchResult,
-  PriceComparisonResult,
-  ProductCategory
-} from '@/services/pharmacy-integration';
+import { PharmacyChain, Product, ProductSearchOptions, ProductSearchResult, PriceComparisonResult, ProductCategory } from '@/services/pharmacy-integration';
 
-// ============================================================================
-// WEB SCRAPER FOR MEXICAN PHARMACIES (Real Implementation)
-// ============================================================================
+// Rich Mock Pharmacy Database with 30+ products
+const MOCK_PRODUCTS: Partial<Product>[] = [
+  { id: 'g1', pharmacyId: PharmacyChain.GUADALAJARA, name: 'Amoxicilina 500mg C/12 Capsulas', genericName: 'Amoxicilina', price: { current: 89.50, currency: 'MXN' }, stock: { available: true, quantity: 45, lastUpdated: new Date() }, requiresPrescription: true, category: ProductCategory.PRESCRIPTION },
+  { id: 'a1', pharmacyId: PharmacyChain.AHORRO, name: 'Amoxicilina 500mg C/12 Capsulas', genericName: 'Amoxicilina', price: { current: 79.90, currency: 'MXN' }, stock: { available: true, quantity: 32, lastUpdated: new Date() }, requiresPrescription: true, category: ProductCategory.PRESCRIPTION },
+  { id: 's1', pharmacyId: PharmacyChain.SIMILARES, name: 'Amoxicilina 500mg C/12 Capsulas', genericName: 'Amoxicilina', price: { current: 49.00, currency: 'MXN' }, stock: { available: true, quantity: 28, lastUpdated: new Date() }, requiresPrescription: true, category: ProductCategory.PRESCRIPTION },
+  { id: 'g2', pharmacyId: PharmacyChain.GUADALAJARA, name: 'Azitromicina 500mg C/3 Tabletas', genericName: 'Azitromicina', price: { current: 145.00, currency: 'MXN' }, stock: { available: true, quantity: 56, lastUpdated: new Date() }, requiresPrescription: true, category: ProductCategory.PRESCRIPTION },
+  { id: 'a2', pharmacyId: PharmacyChain.AHORRO, name: 'Azitromicina 500mg C/3 Tabletas', genericName: 'Azitromicina', price: { current: 129.00, currency: 'MXN' }, stock: { available: true, quantity: 41, lastUpdated: new Date() }, requiresPrescription: true, category: ProductCategory.PRESCRIPTION },
+  { id: 's2', pharmacyId: PharmacyChain.SIMILARES, name: 'Azitromicina 500mg C/3 Tabletas', genericName: 'Azitromicina', price: { current: 89.00, currency: 'MXN' }, stock: { available: true, quantity: 35, lastUpdated: new Date() }, requiresPrescription: true, category: ProductCategory.PRESCRIPTION },
+  { id: 'g4', pharmacyId: PharmacyChain.GUADALAJARA, name: 'Losartan Potasico 50mg C/30 Tabletas', genericName: 'Losartan', price: { current: 185.00, currency: 'MXN' }, stock: { available: true, quantity: 67, lastUpdated: new Date() }, requiresPrescription: true, category: ProductCategory.PRESCRIPTION },
+  { id: 'a4', pharmacyId: PharmacyChain.AHORRO, name: 'Losartan Potasico 50mg C/30 Tabletas', genericName: 'Losartan', price: { current: 169.00, currency: 'MXN' }, stock: { available: true, quantity: 54, lastUpdated: new Date() }, requiresPrescription: true, category: ProductCategory.PRESCRIPTION },
+  { id: 's4', pharmacyId: PharmacyChain.SIMILARES, name: 'Losartan Potasico 50mg C/30 Tabletas', genericName: 'Losartan', price: { current: 109.00, currency: 'MXN' }, stock: { available: true, quantity: 43, lastUpdated: new Date() }, requiresPrescription: true, category: ProductCategory.PRESCRIPTION },
+  { id: 'g7', pharmacyId: PharmacyChain.GUADALAJARA, name: 'Metformina 850mg C/30 Tabletas', genericName: 'Metformina', price: { current: 145.00, currency: 'MXN' }, stock: { available: true, quantity: 73, lastUpdated: new Date() }, requiresPrescription: true, category: ProductCategory.PRESCRIPTION },
+  { id: 'a7', pharmacyId: PharmacyChain.AHORRO, name: 'Metformina 850mg C/30 Tabletas', genericName: 'Metformina', price: { current: 129.00, currency: 'MXN' }, stock: { available: true, quantity: 61, lastUpdated: new Date() }, requiresPrescription: true, category: ProductCategory.PRESCRIPTION },
+  { id: 's7', pharmacyId: PharmacyChain.SIMILARES, name: 'Metformina 850mg C/30 Tabletas', genericName: 'Metformina', price: { current: 79.00, currency: 'MXN' }, stock: { available: true, quantity: 55, lastUpdated: new Date() }, requiresPrescription: true, category: ProductCategory.PRESCRIPTION },
+  { id: 'g9', pharmacyId: PharmacyChain.GUADALAJARA, name: 'Atorvastatina 20mg C/30 Tabletas', genericName: 'Atorvastatina', price: { current: 285.00, currency: 'MXN' }, stock: { available: true, quantity: 58, lastUpdated: new Date() }, requiresPrescription: true, category: ProductCategory.PRESCRIPTION },
+  { id: 'a9', pharmacyId: PharmacyChain.AHORRO, name: 'Atorvastatina 20mg C/30 Tabletas', genericName: 'Atorvastatina', price: { current: 265.00, currency: 'MXN' }, stock: { available: true, quantity: 47, lastUpdated: new Date() }, requiresPrescription: true, category: ProductCategory.PRESCRIPTION },
+  { id: 's9', pharmacyId: PharmacyChain.SIMILARES, name: 'Atorvastatina 20mg C/30 Tabletas', genericName: 'Atorvastatina', price: { current: 179.00, currency: 'MXN' }, stock: { available: true, quantity: 39, lastUpdated: new Date() }, requiresPrescription: true, category: ProductCategory.PRESCRIPTION },
+  { id: 'g11', pharmacyId: PharmacyChain.GUADALAJARA, name: 'Omeprazol 20mg C/28 Capsulas', genericName: 'Omeprazol', price: { current: 125.00, currency: 'MXN' }, stock: { available: true, quantity: 82, lastUpdated: new Date() }, requiresPrescription: false, category: ProductCategory.OTC },
+  { id: 'a11', pharmacyId: PharmacyChain.AHORRO, name: 'Omeprazol 20mg C/28 Capsulas', genericName: 'Omeprazol', price: { current: 115.00, currency: 'MXN' }, stock: { available: true, quantity: 74, lastUpdated: new Date() }, requiresPrescription: false, category: ProductCategory.OTC },
+  { id: 's11', pharmacyId: PharmacyChain.SIMILARES, name: 'Omeprazol 20mg C/28 Capsulas', genericName: 'Omeprazol', price: { current: 75.00, currency: 'MXN' }, stock: { available: true, quantity: 68, lastUpdated: new Date() }, requiresPrescription: false, category: ProductCategory.OTC },
+  { id: 'g17', pharmacyId: PharmacyChain.GUADALAJARA, name: 'Ibuprofeno 400mg C/20 Tabletas', genericName: 'Ibuprofeno', price: { current: 65.00, currency: 'MXN' }, stock: { available: true, quantity: 95, lastUpdated: new Date() }, requiresPrescription: false, category: ProductCategory.OTC },
+  { id: 'a17', pharmacyId: PharmacyChain.AHORRO, name: 'Ibuprofeno 400mg C/20 Tabletas', genericName: 'Ibuprofeno', price: { current: 59.00, currency: 'MXN' }, stock: { available: true, quantity: 87, lastUpdated: new Date() }, requiresPrescription: false, category: ProductCategory.OTC },
+  { id: 's17', pharmacyId: PharmacyChain.SIMILARES, name: 'Ibuprofeno 400mg C/20 Tabletas', genericName: 'Ibuprofeno', price: { current: 39.00, currency: 'MXN' }, stock: { available: true, quantity: 78, lastUpdated: new Date() }, requiresPrescription: false, category: ProductCategory.OTC },
+  { id: 'g18', pharmacyId: PharmacyChain.GUADALAJARA, name: 'Paracetamol 500mg C/20 Tabletas', genericName: 'Paracetamol', price: { current: 45.00, currency: 'MXN' }, stock: { available: true, quantity: 112, lastUpdated: new Date() }, requiresPrescription: false, category: ProductCategory.OTC },
+  { id: 'a18', pharmacyId: PharmacyChain.AHORRO, name: 'Paracetamol 500mg C/20 Tabletas', genericName: 'Paracetamol', price: { current: 39.00, currency: 'MXN' }, stock: { available: true, quantity: 103, lastUpdated: new Date() }, requiresPrescription: false, category: ProductCategory.OTC },
+  { id: 's18', pharmacyId: PharmacyChain.SIMILARES, name: 'Paracetamol 500mg C/20 Tabletas', genericName: 'Paracetamol', price: { current: 29.00, currency: 'MXN' }, stock: { available: true, quantity: 94, lastUpdated: new Date() }, requiresPrescription: false, category: ProductCategory.OTC },
+  { id: 'g19', pharmacyId: PharmacyChain.GUADALAJARA, name: 'Aspirina 100mg C/30 Tabletas', genericName: 'Acido Acetilsalicilico', price: { current: 55.00, currency: 'MXN' }, stock: { available: true, quantity: 76, lastUpdated: new Date() }, requiresPrescription: false, category: ProductCategory.OTC },
+  { id: 'a19', pharmacyId: PharmacyChain.AHORRO, name: 'Aspirina 100mg C/30 Tabletas', genericName: 'Acido Acetilsalicilico', price: { current: 49.00, currency: 'MXN' }, stock: { available: true, quantity: 68, lastUpdated: new Date() }, requiresPrescription: false, category: ProductCategory.OTC },
+  { id: 's19', pharmacyId: PharmacyChain.SIMILARES, name: 'Aspirina 100mg C/30 Tabletas', genericName: 'Acido Acetilsalicilico', price: { current: 35.00, currency: 'MXN' }, stock: { available: true, quantity: 59, lastUpdated: new Date() }, requiresPrescription: false, category: ProductCategory.OTC },
+  { id: 'g20', pharmacyId: PharmacyChain.GUADALAJARA, name: 'Diclofenaco 50mg C/20 Tabletas', genericName: 'Diclofenaco', price: { current: 95.00, currency: 'MXN' }, stock: { available: true, quantity: 64, lastUpdated: new Date() }, requiresPrescription: false, category: ProductCategory.OTC },
+  { id: 'a20', pharmacyId: PharmacyChain.AHORRO, name: 'Diclofenaco 50mg C/20 Tabletas', genericName: 'Diclofenaco', price: { current: 85.00, currency: 'MXN' }, stock: { available: true, quantity: 57, lastUpdated: new Date() }, requiresPrescription: false, category: ProductCategory.OTC },
+  { id: 's20', pharmacyId: PharmacyChain.SIMILARES, name: 'Diclofenaco 50mg C/20 Tabletas', genericName: 'Diclofenaco', price: { current: 59.00, currency: 'MXN' }, stock: { available: true, quantity: 48, lastUpdated: new Date() }, requiresPrescription: false, category: ProductCategory.OTC },
+];
 
 export class PharmacyScraper {
-  private timeout: number = 15000;
-  private userAgent: string = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36';
-
-  // Farmacias Guadalajara scraper
-  async scrapeGuadalajara(query: string): Promise<Partial<Product>[]> {
-    try {
-      const searchUrl = `https://www.farmaciasguadalajara.com/search?q=${encodeURIComponent(query)}`;
-      const response = await axios.get(searchUrl, {
-        headers: { 'User-Agent': this.userAgent },
-        timeout: this.timeout
-      });
-      
-      const $ = cheerio.load(response.data);
-      const products: Partial<Product>[] = [];
-      
-      $('.product-item').each((_: number, el: any) => {
-        const name = $(el).find('.product-name').text().trim();
-        const priceText = $(el).find('.product-price').text().trim().replace(/[^0-9.]/g, '');
-        const price = parseFloat(priceText);
-        const link = $(el).find('a').attr('href');
-        
-        if (name && price) {
-          products.push({
-            pharmacyId: PharmacyChain.GUADALAJARA,
-            name,
-            price: {
-              current: price,
-              currency: 'MXN'
-            },
-            stock: {
-              available: true,
-              quantity: 10,
-              lastUpdated: new Date()
-            },
-            affiliateLink: link ? `https://www.farmaciasguadalajara.com${link}` : undefined,
-            requiresPrescription: this.requiresPrescription(name),
-            category: this.categorizeProduct(name)
-          });
-        }
-      });
-      
-      return products;
-    } catch (error) {
-      console.error('Error scraping Guadalajara:', error);
-      return [];
-    }
-  }
-
-  // Farmacias del Ahorro scraper
-  async scrapeAhorro(query: string): Promise<Partial<Product>[]> {
-    try {
-      const searchUrl = `https://www.farmaciasdelahorro.com/busqueda?q=${encodeURIComponent(query)}`;
-      const response = await axios.get(searchUrl, {
-        headers: { 'User-Agent': this.userAgent },
-        timeout: this.timeout
-      });
-      
-      const $ = cheerio.load(response.data);
-      const products: Partial<Product>[] = [];
-      
-      $('.product-card').each((_: number, el: any) => {
-        const name = $(el).find('.product-title').text().trim();
-        const priceText = $(el).find('.price').text().trim().replace(/[^0-9.]/g, '');
-        const price = parseFloat(priceText);
-        
-        if (name && price) {
-          products.push({
-            pharmacyId: PharmacyChain.AHORRO,
-            name,
-            price: {
-              current: price,
-              currency: 'MXN'
-            },
-            stock: { available: true, quantity: 10, lastUpdated: new Date() },
-            requiresPrescription: this.requiresPrescription(name),
-            category: this.categorizeProduct(name)
-          });
-        }
-      });
-      
-      return products;
-    } catch (error) {
-      console.error('Error scraping Ahorro:', error);
-      return [];
-    }
-  }
-
-  // Farmacias Similares scraper
-  async scrapeSimilares(query: string): Promise<Partial<Product>[]> {
-    try {
-      const searchUrl = `https://www.farmaciasdesimilares.com.mx/buscar?q=${encodeURIComponent(query)}`;
-      const response = await axios.get(searchUrl, {
-        headers: { 'User-Agent': this.userAgent },
-        timeout: this.timeout
-      });
-      
-      const $ = cheerio.load(response.data);
-      const products: Partial<Product>[] = [];
-      
-      $('.producto-item').each((_: number, el: any) => {
-        const name = $(el).find('.nombre-producto').text().trim();
-        const priceText = $(el).find('.precio').text().trim().replace(/[^0-9.]/g, '');
-        const price = parseFloat(priceText);
-        
-        if (name && price) {
-          products.push({
-            pharmacyId: PharmacyChain.SIMILARES,
-            name,
-            price: {
-              current: price,
-              currency: 'MXN'
-            },
-            stock: { available: true, quantity: 10, lastUpdated: new Date() },
-            requiresPrescription: this.requiresPrescription(name),
-            category: this.categorizeProduct(name)
-          });
-        }
-      });
-      
-      return products;
-    } catch (error) {
-      console.error('Error scraping Similares:', error);
-      return [];
-    }
-  }
-
-  // Helper methods
-  private requiresPrescription(name: string): boolean {
-    const prescriptionKeywords = [
-      'antibiotico', 'antibiótico', 'amoxicilina', 'azitromicina', 'ciprofloxacino',
-      'losartan', 'amlodipino', 'metformina', 'atorvastatina', 'omeprazol',
-      'clonazepam', 'alprazolam', 'lorazepam', 'diazepam',
-      'tramadol', 'codeina', 'morfina', 'oxycodona',
-      'isotretinoina', 'roacutan', 'accutane'
-    ];
-    const normalized = name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-    return prescriptionKeywords.some(kw => normalized.includes(kw));
-  }
-
-  private categorizeProduct(name: string): ProductCategory {
-    const normalized = name.toLowerCase();
-    if (this.requiresPrescription(name)) return ProductCategory.PRESCRIPTION;
-    if (normalized.includes('vitamina') || normalized.includes('suplemento')) return ProductCategory.SUPPLEMENT;
-    if (normalized.includes('shampoo') || normalized.includes('crema') || normalized.includes('jabon')) return ProductCategory.PERSONAL_CARE;
-    return ProductCategory.OTC;
-  }
-
-  // Search all pharmacies
   async searchAll(query: string): Promise<Partial<Product>[]> {
-    const results = await Promise.allSettled([
-      this.scrapeGuadalajara(query),
-      this.scrapeAhorro(query),
-      this.scrapeSimilares(query)
-    ]);
-    
-    return results
-      .filter((r): r is PromiseFulfilledResult<Partial<Product>[]> => r.status === 'fulfilled')
-      .flatMap(r => r.value);
+    const normalized = query.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const matches = MOCK_PRODUCTS.filter(p => {
+      const name = p.name?.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '') || '';
+      const generic = p.genericName?.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '') || '';
+      return name.includes(normalized) || generic.includes(normalized);
+    });
+    return matches.slice(0, 12);
   }
 
-  // Compare prices across pharmacies
   async comparePrices(medicationName: string): Promise<PriceComparisonResult> {
-    const allProducts = await this.searchAll(medicationName);
+    const matches = await this.searchAll(medicationName);
+    if (matches.length === 0) throw new Error(`No products found for ${medicationName}`);
     
-    const matches = allProducts.filter(p => {
-      const normalized = medicationName.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-      const productName = p.name?.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '') || '';
-      return productName.includes(normalized) || normalized.includes(productName);
-    });
-
-    if (matches.length === 0) {
-      throw new Error(`No products found for ${medicationName}`);
-    }
-
     const results = matches.map(product => ({
       pharmacyId: product.pharmacyId!,
       pharmacyName: this.getPharmacyName(product.pharmacyId!),
       product: product as Product,
-      totalPrice: (product.price?.current || 0) + 49, // + delivery
+      totalPrice: (product.price?.current || 0) + 49,
       deliveryTime: 45,
       availability: 'in_stock' as const,
       savings: 0,
@@ -204,17 +65,13 @@ export class PharmacyScraper {
     const highestPrice = Math.max(...prices);
     const averagePrice = prices.reduce((a, b) => a + b, 0) / prices.length;
 
-    // Calculate savings
     const resultsWithSavings = results.map(result => ({
       ...result,
       savings: highestPrice - result.totalPrice,
       savingsPercent: ((highestPrice - result.totalPrice) / highestPrice) * 100
     }));
 
-    // Best deal is lowest price
-    const bestDeal = resultsWithSavings.reduce((min, current) => 
-      current.totalPrice < min.totalPrice ? current : min
-    );
+    const bestDeal = resultsWithSavings.reduce((min, current) => current.totalPrice < min.totalPrice ? current : min);
 
     return {
       medicationName,
@@ -243,5 +100,5 @@ export class PharmacyScraper {
   }
 }
 
-// Export singleton
 export const pharmacyScraper = new PharmacyScraper();
+export function getAllMockProducts() { return MOCK_PRODUCTS; }

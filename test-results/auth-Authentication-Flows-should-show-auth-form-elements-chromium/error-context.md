@@ -1,0 +1,54 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - link "Doctor.mx" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img [ref=e7]
+        - generic [ref=e9]: Doctor.mx
+    - main [ref=e10]:
+      - generic [ref=e11]:
+        - generic [ref=e12]:
+          - generic [ref=e13]:
+            - generic [ref=e14]:
+              - generic [ref=e15]: Paso 1 de 3
+              - generic [ref=e16]: 33%
+            - progressbar [ref=e17]
+            - generic [ref=e19]:
+              - img [ref=e21]
+              - heading "Selecciona tu cuenta" [level=1] [ref=e23]
+              - paragraph [ref=e24]: ¿Eres paciente o médico?
+          - radiogroup [ref=e26]:
+            - generic [ref=e27]:
+              - radio "Soy paciente Busco atención médica" [checked] [ref=e28] [cursor=pointer]:
+                - img [ref=e29]
+              - generic [ref=e31] [cursor=pointer]:
+                - img [ref=e33]
+                - generic [ref=e36]:
+                  - generic [ref=e37]: Soy paciente
+                  - generic [ref=e38]: Busco atención médica
+                - img [ref=e40]
+            - generic [ref=e42]:
+              - radio "Soy médico Ofreceré servicios médicos" [ref=e43] [cursor=pointer]
+              - generic [ref=e44] [cursor=pointer]:
+                - img [ref=e46]
+                - generic [ref=e50]:
+                  - generic [ref=e51]: Soy médico
+                  - generic [ref=e52]: Ofreceré servicios médicos
+          - button "Siguiente" [ref=e54] [cursor=pointer]:
+            - text: Siguiente
+            - img
+          - paragraph [ref=e56]:
+            - text: ¿Ya tienes cuenta?
+            - link "Inicia sesión" [ref=e57] [cursor=pointer]:
+              - /url: /auth/login
+        - link "Volver al inicio" [ref=e59] [cursor=pointer]:
+          - /url: /
+          - img [ref=e60]
+          - text: Volver al inicio
+  - button "Open Next.js Dev Tools" [ref=e67] [cursor=pointer]:
+    - img [ref=e68]
+  - alert [ref=e71]
+```
