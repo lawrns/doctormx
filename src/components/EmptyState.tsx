@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
-import { LucideIcon, Sparkles, ArrowRight, Calendar, ClipboardList, FileText, Clock, User, Search, MessageSquare } from 'lucide-react'
+import { LucideIcon, Sparkles, ArrowRight, Calendar, ClipboardList, FileText, Clock, User, Search, MessageSquare, Wallet } from 'lucide-react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
@@ -14,6 +14,7 @@ const iconMap: Record<string, LucideIcon> = {
   user: User,
   search: Search,
   message: MessageSquare,
+  wallet: Wallet,
 }
 
 interface EmptyStateProps {

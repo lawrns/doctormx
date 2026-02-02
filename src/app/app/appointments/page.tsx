@@ -388,7 +388,7 @@ function AppointmentsPageContent() {
           </div>
         ) : appointments.length === 0 ? (
           <EmptyState
-            icon={Calendar}
+            iconName="calendar"
             title={
               activeTab === 'all'
                 ? 'No tienes citas programadas'

@@ -221,7 +221,7 @@ export default async function DoctorFinancesPage() {
                 <EmptyState
                   title="No hay transacciones"
                   description="Las transacciones aparecerán aquí cuando recibas pagos por tus consultas."
-                  icon={Wallet}
+                  iconName="wallet"
                 />
               )}
             </div>

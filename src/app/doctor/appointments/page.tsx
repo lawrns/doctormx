@@ -144,7 +144,7 @@ export default async function DoctorAppointmentsPage({
               <EmptyState
                 title="No hay consultas"
                 description="No se encontraron citas con los filtros seleccionados."
-                icon={Calendar}
+                iconName="calendar"
               />
             )}
           </div>
