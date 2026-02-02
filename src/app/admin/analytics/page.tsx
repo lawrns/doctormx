@@ -69,7 +69,7 @@ async function AdminAnalyticsContent() {
             type="area"
             xKey="month"
             yKeys={['revenue']}
-            formatY={currencyFormat}
+            formatY="currency"
             height={300}
             colors={['#6366f1']}
           />
@@ -95,7 +95,7 @@ async function AdminAnalyticsContent() {
               type="bar"
               xKey="specialty"
               yKeys={['revenue']}
-              formatY={currencyFormat}
+              formatY="currency"
               height={300}
               colors={['#22c55e']}
             />
@@ -114,7 +114,7 @@ async function AdminAnalyticsContent() {
               type="pie"
               xKey="city"
               yKeys={['revenue']}
-              formatY={currencyFormat}
+              formatY="currency"
               height={300}
               colors={['#6366f1', '#22c55e', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899', '#14b8a6', '#f97316']}
             />
