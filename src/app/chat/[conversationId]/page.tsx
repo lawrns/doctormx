@@ -48,23 +48,44 @@ export default function ChatPage({ params }: ChatPageProps) {
   const fetchConversation = useCallback(async () => {
     if (!conversationId || !supabase) return
     try {
-      const { data } = await supabase
+      // Fetch conversation separately to avoid complex join issues
+      const { data: convData } = await supabase
         .from('chat_conversations')
-        .select(`
-          *,
-          patient:profiles!chat_conversations_patient_id_fkey(id, full_name, photo_url),
-          doctor:doctors!chat_conversations_doctor_id_fkey(id, profile:profiles(id, full_name, photo_url))
-        `)
+        .select('*')
         .eq('id', conversationId)
         .single()
 
-      if (data) {
+      if (convData) {
+        // Fetch patient profile
+        const { data: patientProfile } = await supabase
+          .from('profiles')
+          .select('full_name, photo_url')
+          .eq('id', convData.patient_id)
+          .single()
+
+        // Fetch doctor data and profile
+        const { data: doctorData } = await supabase
+          .from('doctors')
+          .select('user_id')
+          .eq('id', convData.doctor_id)
+          .single()
+
+        let doctorProfile = null
+        if (doctorData?.user_id) {
+          const { data: profile } = await supabase
+            .from('profiles')
+            .select('full_name, photo_url')
+            .eq('id', doctorData.user_id)
+            .single()
+          doctorProfile = profile
+        }
+
         setConversation({
-          ...data,
-          patient_name: data.patient?.full_name,
-          patient_photo_url: data.patient?.photo_url,
-          doctor_name: data.doctor?.profile?.full_name,
-          doctor_photo_url: data.doctor?.profile?.photo_url,
+          ...convData,
+          patient_name: patientProfile?.full_name,
+          patient_photo_url: patientProfile?.photo_url,
+          doctor_name: doctorProfile?.full_name,
+          doctor_photo_url: doctorProfile?.photo_url,
         })
       }
     } catch (error) {
@@ -75,21 +96,35 @@ export default function ChatPage({ params }: ChatPageProps) {
   const fetchMessages = useCallback(async () => {
     if (!conversationId) return
     try {
-      const { data } = await supabase
+      // Fetch messages separately to avoid complex join issues
+      const { data: messagesData } = await supabase
         .from('chat_messages')
-        .select(`
-          *,
-          sender:profiles!chat_messages_sender_id_fkey(full_name, photo_url)
-        `)
+        .select('*')
         .eq('conversation_id', conversationId)
         .order('created_at', { ascending: true })
 
-      if (data) {
-        setMessages(data.map((msg: any) => ({
-          ...msg,
-          sender_name: msg.sender?.full_name,
-          sender_photo_url: msg.sender?.photo_url,
-        })))
+      if (messagesData && messagesData.length > 0) {
+        // Get unique sender IDs
+        const senderIds = [...new Set(messagesData.map((m: { sender_id: string }) => m.sender_id))]
+
+        // Fetch sender profiles
+        const { data: senderProfiles } = await supabase
+          .from('profiles')
+          .select('id, full_name, photo_url')
+          .in('id', senderIds)
+
+        const senderMap = new Map<string, { id: string; full_name?: string; photo_url?: string }>(senderProfiles?.map((p: { id: string; full_name?: string; photo_url?: string }) => [p.id, p]) || [])
+
+        setMessages(messagesData.map((msg: any) => {
+          const sender = senderMap.get(msg.sender_id)
+          return {
+            ...msg,
+            sender_name: sender?.full_name,
+            sender_photo_url: sender?.photo_url,
+          }
+        }))
+      } else {
+        setMessages([])
       }
     } catch (error) {
       console.error('Error fetching messages:', error)
@@ -138,20 +173,25 @@ export default function ChatPage({ params }: ChatPageProps) {
           filter: `conversation_id=eq.${conversationId}`,
         },
         async (payload: any) => {
-          const { data } = await supabase
+          // Fetch new message separately to avoid complex join issues
+          const { data: msgData } = await supabase
             .from('chat_messages')
-            .select(`
-              *,
-              sender:profiles!chat_messages_sender_id_fkey(full_name, photo_url)
-            `)
+            .select('*')
             .eq('id', payload.new.id)
             .single()
 
-          if (data) {
+          if (msgData) {
+            // Fetch sender profile
+            const { data: senderProfile } = await supabase
+              .from('profiles')
+              .select('full_name, photo_url')
+              .eq('id', msgData.sender_id)
+              .single()
+
             const newMessage = {
-              ...data,
-              sender_name: data.sender?.full_name,
-              sender_photo_url: data.sender?.photo_url,
+              ...msgData,
+              sender_name: senderProfile?.full_name,
+              sender_photo_url: senderProfile?.photo_url,
             }
             setMessages((prev) => [...prev, newMessage])
           }

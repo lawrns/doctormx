@@ -17,25 +17,83 @@ const includedFeatures: Record<string, string[]> = {
 
 export async function GET(request: NextRequest) {
   try {
-    const { user, supabase } = await requireRole('doctor')
+    // Check if user has doctor role - if not, return free tier response
+    let userId: string
+    let supabaseClient: any
+    
+    try {
+      const { user, supabase } = await requireRole('doctor')
+      userId = user.id
+      supabaseClient = supabase
+    } catch {
+      // User is not a doctor - return default free tier response
+      const { searchParams } = new URL(request.url)
+      const featureParam = searchParams.get('feature')
+
+      if (featureParam && Object.keys(limitMap).includes(featureParam)) {
+        const featureKey = featureParam as PremiumFeature
+        return NextResponse.json({
+          feature: featureKey,
+          hasAccess: false,
+          tier: 'starter',
+          tierName: 'Starter',
+          used: 0,
+          limit: 0,
+          remaining: 0,
+          needsUpgrade: true,
+          upgradeTo: 'pro',
+          pricePerUse: null,
+          isIncluded: false,
+        })
+      }
+
+      // Return default status for all features
+      const featureStatus: Record<string, {
+        hasAccess: boolean
+        used: number
+        limit: number | null
+        remaining: number
+        isIncluded: boolean
+      }> = {}
+
+      for (const key of Object.keys(limitMap)) {
+        featureStatus[key] = {
+          hasAccess: false,
+          used: 0,
+          limit: 0,
+          remaining: 0,
+          isIncluded: false,
+        }
+      }
+
+      return NextResponse.json({
+        tier: 'starter',
+        tierName: 'Starter',
+        hasSubscription: false,
+        featureStatus,
+        includedFeatures: [],
+      })
+    }
+
+    // Doctor flow - get subscription info
     const { searchParams } = new URL(request.url)
     const featureParam = searchParams.get('feature')
 
-    const { data: subscription } = await supabase
+    const { data: subscription } = await supabaseClient
       .from('doctor_subscriptions')
       .select('plan_id, status, current_period_start, current_period_end')
-      .eq('doctor_id', user.id)
+      .eq('doctor_id', userId)
       .eq('status', 'active')
       .single()
 
     const tier = subscription ? getTierFromPlanId(subscription.plan_id) : 'starter'
     const tierName = tier.charAt(0).toUpperCase() + tier.slice(1)
 
-    const { data: usageRecords } = await supabase
+    const { data: usageRecords } = await supabaseClient
       .from('premium_feature_usage')
       .select('feature_key, usage_count')
-      .eq('doctor_id', user.id)
-      .eq('period_start', subscription?.current_period_start || new Date().toISOString())
+      .eq('doctor_id', userId)
+      .eq('period_start', subscription?.current_period_start || new Date().toISOString()) as { data: Array<{ feature_key: string; usage_count: number }> | null }
 
     if (featureParam && Object.keys(limitMap).includes(featureParam)) {
       const featureKey = featureParam as PremiumFeature

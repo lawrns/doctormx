@@ -83,27 +83,48 @@ export async function getConversation(
 ): Promise<ConversationWithDetails | null> {
   const supabase = await createClient()
 
-  const { data, error } = await supabase
+  // Fetch conversation data separately to avoid complex join issues
+  const { data: conversation, error: convError } = await supabase
     .from('chat_conversations')
-    .select(`
-      *,
-      patient:profiles!chat_conversations_patient_id_fkey(full_name, photo_url),
-      doctor:doctors!chat_conversations_doctor_id_fkey(profile:profiles(full_name, photo_url))
-    `)
+    .select('*')
     .eq('id', conversationId)
     .single()
 
-  if (error) {
-    logger.error('Error getting conversation:', { error })
+  if (convError || !conversation) {
+    logger.error('Error getting conversation:', { error: convError })
     return null
   }
 
+  // Fetch patient profile
+  const { data: patientProfile } = await supabase
+    .from('profiles')
+    .select('full_name, photo_url')
+    .eq('id', conversation.patient_id)
+    .single()
+
+  // Fetch doctor data and profile
+  const { data: doctorData } = await supabase
+    .from('doctors')
+    .select('user_id')
+    .eq('id', conversation.doctor_id)
+    .single()
+
+  let doctorProfile = null
+  if (doctorData?.user_id) {
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('full_name, photo_url')
+      .eq('id', doctorData.user_id)
+      .single()
+    doctorProfile = profile
+  }
+
   return {
-    ...data,
-    patient_name: data.patient?.full_name,
-    patient_photo_url: data.patient?.photo_url,
-    doctor_name: data.doctor?.profile?.full_name,
-    doctor_photo_url: data.doctor?.profile?.photo_url,
+    ...conversation,
+    patient_name: patientProfile?.full_name,
+    patient_photo_url: patientProfile?.photo_url,
+    doctor_name: doctorProfile?.full_name,
+    doctor_photo_url: doctorProfile?.photo_url,
   }
 }
 
@@ -283,12 +304,10 @@ export async function getMessages(
 ): Promise<MessageWithSender[]> {
   const supabase = await createClient()
 
-  const { data, error } = await supabase
+  // Fetch messages separately to avoid complex join issues
+  const { data: messages, error } = await supabase
     .from('chat_messages')
-    .select(`
-      *,
-      sender:profiles!chat_messages_sender_id_fkey(full_name, photo_url)
-    `)
+    .select('*')
     .eq('conversation_id', conversationId)
     .order('created_at', { ascending: false })
     .range(offset, offset + limit - 1)
@@ -298,11 +317,29 @@ export async function getMessages(
     throw error
   }
 
-  return (data || []).reverse().map((msg) => ({
-    ...msg,
-    sender_name: msg.sender?.full_name,
-    sender_photo_url: msg.sender?.photo_url,
-  }))
+  if (!messages || messages.length === 0) {
+    return []
+  }
+
+  // Get unique sender IDs
+  const senderIds = [...new Set(messages.map(m => m.sender_id))]
+
+  // Fetch sender profiles separately
+  const { data: senderProfiles } = await supabase
+    .from('profiles')
+    .select('id, full_name, photo_url')
+    .in('id', senderIds)
+
+  const senderMap = new Map(senderProfiles?.map(p => [p.id, p]) || [])
+
+  return messages.reverse().map((msg) => {
+    const sender = senderMap.get(msg.sender_id)
+    return {
+      ...msg,
+      sender_name: sender?.full_name,
+      sender_photo_url: sender?.photo_url,
+    }
+  })
 }
 
 export async function markAsRead(
