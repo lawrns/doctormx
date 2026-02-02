@@ -4,12 +4,12 @@ import { StatCard, MetricCard, Chart } from '@/components'
 import { DollarSign, Users, Star, Calendar, TrendingUp, Clock, Activity, Award } from 'lucide-react'
 import { Suspense } from 'react'
 
+const formatCurrency = (value: number) =>
+  new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', minimumFractionDigits: 0 }).format(value)
+
 async function DoctorAnalyticsContent() {
   const { user } = await requireRole('doctor')
   const metrics = await getDoctorMetrics(user.id)
-
-  const currencyFormat = (value: number) => 
-    new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', minimumFractionDigits: 0 }).format(value)
 
   const appointmentsByStatus = Object.entries(metrics.appointments.byStatus).map(([status, count]) => ({
     status: status.replace(/_/g, ' '),
@@ -63,7 +63,7 @@ async function DoctorAnalyticsContent() {
             type="area"
             xKey="month"
             yKeys={['revenue']}
-            formatY={currencyFormat}
+            formatY="currency"
             height={300}
             colors={['#22c55e']}
           />
@@ -107,7 +107,7 @@ async function DoctorAnalyticsContent() {
             </div>
             <h3 className="font-semibold text-gray-900">Ingresos Totales</h3>
           </div>
-          <p className="text-3xl font-bold text-gray-900">{currencyFormat(metrics.revenue.gross)}</p>
+          <p className="text-3xl font-bold text-gray-900">{formatCurrency(metrics.revenue.gross)}</p>
           <p className="text-sm text-gray-500 mt-1">Bruto</p>
         </div>
 
@@ -153,8 +153,8 @@ async function DoctorAnalyticsContent() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="text-center p-6 bg-gray-50 rounded-lg">
             <p className="text-sm text-gray-600 mb-2">Ingresos Netos ( después de fees )</p>
-            <p className="text-3xl font-bold text-green-600">{currencyFormat(metrics.revenue.net)}</p>
-            <p className="text-xs text-gray-500 mt-1">Fee de plataforma: {currencyFormat(metrics.revenue.platformFee)}</p>
+            <p className="text-3xl font-bold text-green-600">{formatCurrency(metrics.revenue.net)}</p>
+            <p className="text-xs text-gray-500 mt-1">Fee de plataforma: {formatCurrency(metrics.revenue.platformFee)}</p>
           </div>
           <div className="text-center p-6 bg-gray-50 rounded-lg">
             <p className="text-sm text-gray-600 mb-2">Pacientes Únicos</p>

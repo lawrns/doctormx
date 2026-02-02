@@ -7,6 +7,7 @@ import { SUBSCRIPTION_PLANS, type SubscriptionTier } from '@/lib/subscription-ty
 import { Card } from '@/components/Card'
 import { LoadingButton } from '@/components/LoadingButton'
 import { Badge } from '@/components/Badge'
+import DoctorLayout from '@/components/DoctorLayout'
 
 export default function SubscriptionPage() {
     const router = useRouter()
@@ -36,6 +37,8 @@ export default function SubscriptionPage() {
             imageAnalysis?: { used: number; limit: number; percentage: number; remaining: number }
         }
     } | null>(null)
+    const [profile, setProfile] = useState<{ full_name: string } | null>(null)
+    const [isPending, setIsPending] = useState(false)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState<string | null>(null)
     const [processing, setProcessing] = useState(false)
@@ -57,6 +60,24 @@ export default function SubscriptionPage() {
                 router.push('/auth/login')
                 return
             }
+
+            // Fetch profile and doctor status
+            const { data: profileData } = await supabase
+                .from('profiles')
+                .select('full_name')
+                .eq('id', user.id)
+                .single()
+
+            const { data: doctorData } = await supabase
+                .from('doctors')
+                .select('status')
+                .eq('id', user.id)
+                .single()
+
+            if (profileData) {
+                setProfile(profileData)
+            }
+            setIsPending(!doctorData || doctorData.status !== 'approved')
 
             // Fetch subscription status directly from database
             const { data: sub } = await supabase
@@ -158,8 +179,8 @@ export default function SubscriptionPage() {
     const currentPlan = subscription?.subscription?.plan_id as keyof typeof SUBSCRIPTION_PLANS | undefined
 
     return (
-        <div className="min-h-screen bg-gray-50 py-12 px-4">
-            <div className="max-w-6xl mx-auto">
+        <DoctorLayout profile={profile || { full_name: 'Doctor' }} isPending={isPending} currentPath="/doctor/subscription">
+            <div className="max-w-6xl mx-auto py-8 px-4">
                 <div className="mb-8">
                     <h1 className="text-3xl font-bold text-gray-900 mb-2">
                         Mi Suscripción
@@ -426,6 +447,6 @@ export default function SubscriptionPage() {
                     </p>
                 </div>
             </div>
-        </div>
+        </DoctorLayout>
     )
 }

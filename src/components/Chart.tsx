@@ -33,7 +33,7 @@ interface ChartProps {
   showGrid?: boolean
   showLegend?: boolean
   showTooltip?: boolean
-  formatY?: (value: number) => string
+  formatY?: 'currency' | 'number' | 'percentage'
   stacked?: boolean
   title?: string
 }
@@ -66,6 +66,18 @@ export function Chart({
     })
   }, [data, xKey, yKeys])
 
+  const formatValue = (value: number): string => {
+    switch (formatY) {
+      case 'currency':
+        return new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', minimumFractionDigits: 0 }).format(value)
+      case 'percentage':
+        return `${value}%`
+      case 'number':
+      default:
+        return new Intl.NumberFormat('es-MX').format(value)
+    }
+  }
+
   const renderChart = () => {
     const grid = showGrid ? <CartesianGrid strokeDasharray="3 3" className="stroke-gray-200" /> : null
     const tooltip = showTooltip ? (
@@ -76,7 +88,7 @@ export function Chart({
           borderRadius: '8px',
           boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
         }}
-        formatter={(value: number) => [formatY ? formatY(value) : new Intl.NumberFormat('es-MX').format(value), '']}
+        formatter={(value: number) => [formatValue(value), '']}
       />
     ) : null
     const legend = showLegend ? (
@@ -103,7 +115,7 @@ export function Chart({
                 axisLine={false}
                 tickLine={false}
                 tick={{ fontSize: 12, fill: '#6b7280' }}
-                tickFormatter={formatY}
+                tickFormatter={formatValue}
                 dx={-10}
               />
               {tooltip}
@@ -139,7 +151,7 @@ export function Chart({
                 axisLine={false}
                 tickLine={false}
                 tick={{ fontSize: 12, fill: '#6b7280' }}
-                tickFormatter={formatY}
+                tickFormatter={formatValue}
                 dx={-10}
               />
               {tooltip}
@@ -175,7 +187,7 @@ export function Chart({
                 axisLine={false}
                 tickLine={false}
                 tick={{ fontSize: 12, fill: '#6b7280' }}
-                tickFormatter={formatY}
+                tickFormatter={formatValue}
                 dx={-10}
               />
               {tooltip}
