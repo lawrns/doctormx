@@ -108,41 +108,16 @@ export default function SecondOpinionPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="bg-white border-b border-primary-100 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <Link href="/app" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 bg-primary-500 rounded-xl flex items-center justify-center shadow-sm">
-              <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-              </svg>
-            </div>
-            <span className="text-xl font-bold text-gray-900">Doctor.mx</span>
-          </Link>
-          <Link href="/app" className="text-sm text-gray-600 hover:text-gray-900">
-            Volver
-          </Link>
-        </div>
-      </header>
-
-      <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="p-6 lg:p-8">
+      <div className="max-w-4xl mx-auto">
         {/* Title Section */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-3">
-            <Badge className="bg-primary-50 text-primary-600 border-primary-200">
-              ✓ GRATIS
-            </Badge>
-            <Badge className="bg-success-500 bg-opacity-10 text-success-500 border-success-500 border-opacity-30">
-              Powered by AI
-            </Badge>
+            <Badge className="bg-blue-50 text-blue-600 border-blue-200">✓ GRATIS</Badge>
+            <Badge className="bg-green-50 text-green-600 border-green-200">Powered by AI</Badge>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-3">
-            Segunda Opinión con IA
-          </h1>
-          <p className="text-lg text-gray-600">
-            Obtén una segunda opinión profesional impulsada por IA. Completamente gratis para todos en México.
-          </p>
+          <h1 className="text-4xl font-bold text-gray-900 mb-3">Segunda Opinión con IA</h1>
+          <p className="text-lg text-gray-600">Obtén una segunda opinión profesional impulsada por IA. Completamente gratis para todos en México.</p>
         </div>
 
         {/* Chat Container */}

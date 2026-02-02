@@ -7,18 +7,18 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url)
     const status = searchParams.get('status')
     
+    // Simpler query to avoid potential join issues
     let query = supabase
       .from('appointments')
       .select(`
         *,
-        doctor:doctors (
-          *,
-          profile:profiles (full_name, photo_url, email)
-        ),
-        payment:payments (
-          amount_cents,
+        doctor:doctor_id(
+          id,
+          specialty,
+          price_cents,
           currency,
-          status
+          rating,
+          profiles:profile_id(full_name, photo_url)
         )
       `)
       .eq('patient_id', user.id)
@@ -43,19 +43,28 @@ export async function GET(request: Request) {
     
     if (error) {
       console.error('Error fetching appointments:', error)
-      return new Response(JSON.stringify({ error: 'Failed to fetch appointments' }), {
+      return new Response(JSON.stringify({ error: 'Failed to fetch appointments', details: error.message }), {
         status: 500,
         headers: { 'Content-Type': 'application/json' }
       })
     }
     
-    return new Response(JSON.stringify({ appointments: data || [] }), {
+    // Transform data to match expected format
+    const appointments = (data || []).map((apt: any) => ({
+      ...apt,
+      doctor: apt.doctor ? {
+        ...apt.doctor,
+        profile: apt.doctor.profiles
+      } : null
+    }))
+    
+    return new Response(JSON.stringify({ appointments }), {
       status: 200,
       headers: { 'Content-Type': 'application/json' }
     })
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error in GET /api/patient/appointments:', error)
-    return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+    return new Response(JSON.stringify({ error: 'Unauthorized', details: error.message }), {
       status: 401,
       headers: { 'Content-Type': 'application/json' }
     })

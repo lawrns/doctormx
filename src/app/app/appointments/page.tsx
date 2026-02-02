@@ -333,23 +333,12 @@ function AppointmentsPageContent() {
   }
   
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white border-b">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/app" className="flex items-center gap-2 text-gray-600 hover:text-gray-900">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-              Volver
-            </Link>
-            <h1 className="text-xl font-semibold text-gray-900">Mis Citas</h1>
-            <div className="w-20" />
-          </div>
+    <div className="p-6 lg:p-8">
+      <div className="max-w-5xl mx-auto">
+        <div className="mb-6">
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">Mis Citas</h1>
+          <p className="text-gray-600">Gestiona tus consultas médicas</p>
         </div>
-      </header>
-      
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="mb-6">
           <div className="border-b border-gray-200">
             <nav className="flex gap-4">
@@ -430,7 +419,7 @@ function AppointmentsPageContent() {
             ))}
           </div>
         )}
-      </main>
+      </div>
     </div>
   )
 }
