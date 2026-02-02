@@ -8,13 +8,7 @@ import { Badge } from '@/components/ui/badge'
 import { EmptyState } from '@/components/EmptyState'
 import { Input } from '@/components/ui/input'
 import { User, LogOut } from 'lucide-react'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
+import { SortSelect } from '@/components/SortSelect'
 
 export default async function DoctorsPage({
   searchParams,
@@ -160,22 +154,14 @@ export default async function DoctorsPage({
 
             {/* Sort Dropdown */}
             <div className="flex gap-2">
-              <Select
+              <SortSelect
                 defaultValue={params.sortBy || 'rating'}
-                onValueChange={(value) => {
-                  const url = `/doctors${buildQueryString({ sortBy: value })}`
-                  window.location.href = url
+                currentParams={{
+                  specialty: params.specialty,
+                  search: params.search,
+                  sortOrder: params.sortOrder
                 }}
-              >
-                <SelectTrigger className="w-[160px]">
-                  <SelectValue placeholder="Ordenar por" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="rating">Calificación</SelectItem>
-                  <SelectItem value="price">Precio</SelectItem>
-                  <SelectItem value="experience">Experiencia</SelectItem>
-                </SelectContent>
-              </Select>
+              />
 
               <Link
                 href={`/doctors${buildQueryString({ sortOrder: params.sortOrder === 'asc' ? undefined : 'asc' })}`}

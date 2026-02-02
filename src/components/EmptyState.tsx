@@ -2,12 +2,22 @@
 
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
-import { LucideIcon, Sparkles, ArrowRight } from 'lucide-react'
+import { LucideIcon, Sparkles, ArrowRight, Calendar, ClipboardList, FileText, Clock, User, Search, MessageSquare } from 'lucide-react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
+const iconMap: Record<string, LucideIcon> = {
+  calendar: Calendar,
+  clipboard: ClipboardList,
+  file: FileText,
+  clock: Clock,
+  user: User,
+  search: Search,
+  message: MessageSquare,
+}
+
 interface EmptyStateProps {
-  icon?: LucideIcon
+  iconName?: string
   title: string
   description: string
   action?: {
@@ -25,7 +35,7 @@ interface EmptyStateProps {
 }
 
 export function EmptyState({
-  icon: Icon,
+  iconName,
   title,
   description,
   action,
@@ -34,6 +44,7 @@ export function EmptyState({
   variant = 'default',
 }: EmptyStateProps) {
   const isAI = variant === 'ai'
+  const Icon = iconName ? iconMap[iconName] : null
 
   return (
     <div className={cn(

@@ -287,7 +287,7 @@ export default async function DoctorDashboard() {
               <EmptyState
                 title="No tienes consultas programadas"
                 description="Las citas aparecerán aquí cuando los pacientes reserven contigo."
-                icon={Calendar}
+                iconName="calendar"
               />
             )}
           </div>
