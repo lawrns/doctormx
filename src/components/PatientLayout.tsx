@@ -39,7 +39,13 @@ export function PatientLayout({ children }: PatientLayoutProps) {
     { href: '/app/profile', icon: User, label: 'Mi Perfil' },
   ]
 
-  const isActive = (href: string) => pathname === href || pathname?.startsWith(href + '/')
+  const isActive = (href: string) => {
+    // For root paths like /app, only match exactly (not /app/something)
+    if (href === '/app') {
+      return pathname === href
+    }
+    return pathname === href || pathname?.startsWith(href + '/')
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 flex">
@@ -56,10 +62,10 @@ export function PatientLayout({ children }: PatientLayoutProps) {
         </div>
         <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${item.highlight ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg' : isActive(item.href) ? 'bg-gray-100 text-gray-900 font-medium' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}`}>
+            <Link key={item.href} href={item.href} className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${item.highlight && isActive(item.href) ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg' : isActive(item.href) ? 'bg-gray-100 text-gray-900 font-medium' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}`}>
               <item.icon className="w-5 h-5" />
               <span>{item.label}</span>
-              {item.highlight && <Sparkles className="w-4 h-4 ml-auto" />}
+              {item.highlight && isActive(item.href) && <Sparkles className="w-4 h-4 ml-auto" />}
             </Link>
           ))}
         </nav>

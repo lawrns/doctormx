@@ -286,22 +286,8 @@ export default function PremiumMarketplacePage() {
   const features = Object.keys(INDIVIDUAL_PREMIUM_FEATURES) as PremiumFeature[]
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <h1 className="text-xl font-bold text-gray-900">Doctor.mx</h1>
-            <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
-              Premium
-            </span>
-          </div>
-          <div className="flex items-center gap-4">
-            <PricingBadge tier={tier} />
-          </div>
-        </div>
-      </header>
-
-      <main className="max-w-7xl mx-auto px-4 py-8">
+    <div className="p-6 lg:p-8">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-3xl font-bold text-gray-900 mb-4">
             Funcionalidades Premium de IA
@@ -358,7 +344,7 @@ export default function PremiumMarketplacePage() {
             </a>
           </p>
         </div>
-      </main>
+      </div>
     </div>
   )
 }

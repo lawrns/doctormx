@@ -31,3 +31,64 @@ export function formatTime(date: Date | string): string {
     minute: '2-digit',
   }).format(d)
 }
+
+export function formatDoctorName(name: string | null | undefined): string {
+  if (!name) return 'Doctor'
+  const cleanName = name.trim()
+  if (cleanName.toLowerCase().startsWith('dr.') || cleanName.toLowerCase().startsWith('dra.')) {
+    return cleanName
+  }
+  if (cleanName.toLowerCase().startsWith('doctor') || cleanName.toLowerCase().startsWith('doctora')) {
+    return cleanName
+  }
+  return `Dr. ${cleanName}`
+}
+
+/**
+ * Format Mexican phone number
+ * Supports formats: +52 1 XXX XXX XXXX or (XXX) XXX-XXXX
+ */
+export function formatPhoneNumber(phone: string | null | undefined): string {
+  if (!phone) return ''
+  
+  // Remove all non-digit characters
+  const digits = phone.replace(/\D/g, '')
+  
+  // Mexican mobile numbers: 11 digits starting with 52
+  if (digits.length === 11 && digits.startsWith('52')) {
+    return `+52 1 ${digits.slice(2, 5)} ${digits.slice(5, 8)} ${digits.slice(8)}`
+  }
+  
+  // Mexican mobile numbers: 10 digits (add country code)
+  if (digits.length === 10) {
+    return `+52 1 ${digits.slice(0, 3)} ${digits.slice(3, 6)} ${digits.slice(6)}`
+  }
+  
+  // If already has country code but no formatting
+  if (digits.length === 12 && digits.startsWith('521')) {
+    return `+52 1 ${digits.slice(3, 6)} ${digits.slice(6, 9)} ${digits.slice(9)}`
+  }
+  
+  // Return original if doesn't match expected patterns
+  return phone
+}
+
+/**
+ * Language code to display name mapper
+ */
+export function formatLanguageName(code: string): string {
+  const languageMap: Record<string, string> = {
+    'es': 'Español',
+    'en': 'Inglés',
+    'fr': 'Francés',
+    'de': 'Alemán',
+    'it': 'Italiano',
+    'pt': 'Portugués',
+    'zh': 'Chino',
+    'ja': 'Japonés',
+    'ko': 'Coreano',
+    'ar': 'Árabe',
+    'ru': 'Ruso',
+  }
+  return languageMap[code] || code
+}

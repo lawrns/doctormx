@@ -12,6 +12,7 @@ import {
   ModalFooter,
 } from '@/components'
 import { Calendar } from 'lucide-react'
+import { formatDoctorName } from '@/lib/utils'
 
 interface DoctorInfo {
   id: string
@@ -118,7 +119,7 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
             <div className="flex items-start justify-between gap-2">
               <div>
                 <Link href={`/doctors/${doctorId}`} className="font-medium text-gray-900 hover:text-blue-600 transition-colors">
-                  Dr. {doctorName}
+                  {formatDoctorName(doctorName)}
                 </Link>
                 <p className="text-sm text-gray-500">{specialty}</p>
               </div>

@@ -13,6 +13,9 @@ export type DiscoveryFilters = {
   state?: string
   maxPrice?: number
   minRating?: number
+  searchQuery?: string
+  sortBy?: 'rating' | 'price' | 'experience'
+  sortOrder?: 'asc' | 'desc'
 }
 
 // Type for the raw doctor data from Supabase
@@ -132,6 +135,31 @@ async function fetchDoctors(filters?: DiscoveryFilters) {
 
     if (filters?.minRating !== undefined) {
       filtered = filtered.filter(doctor => (doctor.rating_avg || 0) >= filters.minRating!)
+    }
+
+    // Filter by search query (name search)
+    if (filters?.searchQuery) {
+      const query = filters.searchQuery.toLowerCase().trim()
+      filtered = filtered.filter(doctor => 
+        doctor.profiles?.full_name?.toLowerCase().includes(query)
+      )
+    }
+
+    // Sort results
+    if (filters?.sortBy) {
+      const sortOrder = filters.sortOrder === 'asc' ? 1 : -1
+      filtered = filtered.sort((a, b) => {
+        switch (filters.sortBy) {
+          case 'rating':
+            return ((a.rating_avg || 0) - (b.rating_avg || 0)) * sortOrder
+          case 'price':
+            return (a.price_cents - b.price_cents) * sortOrder
+          case 'experience':
+            return ((a.years_experience || 0) - (b.years_experience || 0)) * sortOrder
+          default:
+            return 0
+        }
+      })
     }
 
     // Transform data

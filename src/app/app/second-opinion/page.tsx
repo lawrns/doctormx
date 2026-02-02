@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
+import { LoadingButton } from '@/components/LoadingButton'
 import { Input } from '@/components/ui/input'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -189,13 +189,14 @@ export default function SecondOpinionPage() {
                 disabled={isLoading}
                 className="flex-1 border-primary-200 focus:border-primary-500 focus:ring-primary-500"
               />
-              <Button
+              <LoadingButton
                 onClick={sendMessage}
-                disabled={isLoading || !input.trim()}
-                className="bg-primary-500 hover:bg-primary-600 text-white"
+                isLoading={isLoading}
+                disabled={!input.trim()}
+                variant="primary"
               >
-                {isLoading ? '...' : 'Enviar'}
-              </Button>
+                Enviar
+              </LoadingButton>
             </div>
             <p className="text-xs text-gray-500 mt-2">
               💡 Comparte tu historial médico, síntomas y preguntas específicas para una mejor segunda opinión.

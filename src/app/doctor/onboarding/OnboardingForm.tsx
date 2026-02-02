@@ -280,7 +280,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                           setVerificationStatus(null)
                         }}
                         required
-                        placeholder="ej: 12345678"
+                        placeholder="Ej: 12345678"
                         className={`flex-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 text-gray-900 ${
                           verificationStatus?.verified 
                             ? 'border-green-500 bg-green-50' 
@@ -355,7 +355,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                       rows={3}
                       required
                       maxLength={500}
-                      placeholder="describe tu experiencia y enfoque profesional..."
+                      placeholder="Describe tu experiencia y enfoque profesional..."
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-gray-900"
                     />
                     <p className="text-xs text-gray-500 mt-1">{bio.length}/500</p>

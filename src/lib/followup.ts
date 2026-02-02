@@ -393,15 +393,23 @@ async function sendCustomWhatsAppNotification(
 }
 
 export async function getPatientFollowUps(patientId: string): Promise<FollowUp[]> {
-  const supabase = await createClient()
-  const { data, error } = await supabase
-    .from('followups')
-    .select('*')
-    .eq('patient_id', patientId)
-    .order('scheduled_at', { ascending: false })
+  try {
+    const supabase = await createClient()
+    const { data, error } = await supabase
+      .from('followups')
+      .select('*')
+      .eq('patient_id', patientId)
+      .order('scheduled_at', { ascending: false })
 
-  if (error) throw error
-  return data || []
+    if (error) {
+      console.error('Error fetching patient follow-ups:', error)
+      return []
+    }
+    return data || []
+  } catch (error) {
+    console.error('Exception fetching patient follow-ups:', error)
+    return []
+  }
 }
 
 export async function getDoctorFollowUpResponses(doctorId: string): Promise<{

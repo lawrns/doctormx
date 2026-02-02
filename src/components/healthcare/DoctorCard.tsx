@@ -4,7 +4,7 @@ import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
-import { cn } from '@/lib/utils'
+import { cn, formatDoctorName } from '@/lib/utils'
 import Link from 'next/link'
 import { VerificationBadge } from '@/components/TrustSignals'
 
@@ -69,7 +69,7 @@ export function DoctorCard({
 
           <div className="flex-1 min-w-0">
             <h3 className="font-semibold text-gray-900 truncate text-base">
-              Dr. {name}
+              {formatDoctorName(name)}
             </h3>
             <p className="text-sm text-gray-500 truncate">{specialty}</p>
 

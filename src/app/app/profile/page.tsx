@@ -9,6 +9,7 @@ import { Select } from '@/components/Select'
 import { LoadingButton } from '@/components/LoadingButton'
 import { Card, CardHeader, CardBody, CardFooter } from '@/components/Card'
 import { useToast } from '@/components/Toast'
+import { formatPhoneNumber } from '@/lib/utils'
 
 const profileSchema = z.object({
   full_name: z.string().min(2, 'El nombre debe tener al menos 2 caracteres'),
@@ -87,6 +88,7 @@ interface PatientProfileData {
 }
 
 const genderOptions = [
+  { value: '', label: 'Seleccionar género' },
   { value: 'male', label: 'Masculino' },
   { value: 'female', label: 'Femenino' },
   { value: 'other', label: 'Otro' },
@@ -132,6 +134,7 @@ export default function PatientProfilePage() {
   const [savingProfile, setSavingProfile] = useState(false)
   const [savingHistory, setSavingHistory] = useState(false)
   const [activeTab, setActiveTab] = useState<'personal' | 'medical' | 'insurance' | 'emergency' | 'notifications'>('personal')
+  const [profileData, setProfileData] = useState<PatientProfileData | null>(null)
 
   const profileForm = useForm<ProfileFormData>({
     resolver: zodResolver(profileSchema),
@@ -192,6 +195,7 @@ export default function PatientProfilePage() {
       const response = await fetch('/api/patient/profile')
       if (response.ok) {
         const data: PatientProfileData = await response.json()
+        setProfileData(data)
         profileForm.reset({
           full_name: data.profile.full_name,
           phone: data.profile.phone || '',
@@ -397,6 +401,14 @@ export default function PatientProfilePage() {
                         required
                       />
                       <Input
+                        label="Correo electrónico"
+                        type="email"
+                        value={profileData?.profile?.email || ''}
+                        disabled
+                        className="bg-gray-50"
+                        title="El correo no se puede modificar"
+                      />
+                      <Input
                         label="Teléfono"
                         type="tel"
                         {...profileForm.register('phone')}
@@ -495,15 +507,15 @@ export default function PatientProfilePage() {
                         <div key={field.id} className="flex gap-4 items-start">
                           <div className="grid grid-cols-3 gap-4 flex-1">
                             <Input
-                              placeholder="Nombre del medicamento"
+                              placeholder="Ej: Paracetamol, Metformina..."
                               {...historyForm.register(`current_medications.${index}.name`)}
                             />
                             <Input
-                              placeholder="Dosis"
+                              placeholder="Ej: 500mg, 10ml..."
                               {...historyForm.register(`current_medications.${index}.dosage`)}
                             />
                             <Input
-                              placeholder="Frecuencia"
+                              placeholder="Ej: Cada 8 horas, 2 veces al día..."
                               {...historyForm.register(`current_medications.${index}.frequency`)}
                             />
                           </div>
@@ -530,7 +542,7 @@ export default function PatientProfilePage() {
                 </Card>
 
                 <Card className="animate-fade-in-up mb-6">
-                  <CardHeader title="Condiciones Crónicas" subtitle="Enfermedades crónicas diagnosticadas" />
+                  <CardHeader title="Condiciones Crónicas" subtitle="Enfermedades crónicas diagnosticadas (EPOC = Enfermedad Pulmonar Obstructiva Crónica)" />
                   <CardBody>
                     <div className="space-y-2">
                       <Select
@@ -570,16 +582,16 @@ export default function PatientProfilePage() {
                         <div key={field.id} className="flex gap-4 items-start">
                           <div className="grid grid-cols-3 gap-4 flex-1">
                             <Input
-                              placeholder="Procedimiento"
+                              placeholder="Ej: Apendicectomía, Cirugía de rodilla..."
                               {...historyForm.register(`past_surgeries.${index}.procedure`)}
                             />
                             <Input
                               type="number"
-                              placeholder="Año"
+                              placeholder="Ej: 2020"
                               {...historyForm.register(`past_surgeries.${index}.year`, { valueAsNumber: true })}
                             />
                             <Input
-                              placeholder="Notas adicionales"
+                              placeholder="Ej: Sin complicaciones..."
                               {...historyForm.register(`past_surgeries.${index}.notes`)}
                             />
                           </div>
@@ -613,7 +625,7 @@ export default function PatientProfilePage() {
                         <div key={field.id} className="flex gap-4 items-start">
                           <div className="grid grid-cols-3 gap-4 flex-1">
                             <Input
-                              placeholder="Condición"
+                              placeholder="Ej: Diabetes, Cáncer, Hipertensión..."
                               {...historyForm.register(`family_history.${index}.condition`)}
                             />
                             <Select
@@ -622,7 +634,7 @@ export default function PatientProfilePage() {
                               placeholder="Parentesco"
                             />
                             <Input
-                              placeholder="Notas"
+                              placeholder="Ej: Tipo 2, diagnosticado en 2018..."
                               {...historyForm.register(`family_history.${index}.notes`)}
                             />
                           </div>
@@ -683,7 +695,7 @@ export default function PatientProfilePage() {
                         label="Número de póliza"
                         {...profileForm.register('insurance_policy_number')}
                         error={profileForm.formState.errors.insurance_policy_number?.message}
-                        placeholder="Número de póliza"
+                        placeholder="Ej: 123456789"
                       />
                       <Input
                         label="Número de grupo"
@@ -718,7 +730,7 @@ export default function PatientProfilePage() {
                         label="Nombre completo"
                         {...profileForm.register('emergency_contact_name')}
                         error={profileForm.formState.errors.emergency_contact_name?.message}
-                        placeholder="Nombre del contacto"
+                        placeholder="Ej: María García"
                       />
                       <Input
                         label="Teléfono"

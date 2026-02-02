@@ -1,10 +1,18 @@
 import { requireRole } from '@/lib/auth'
-import { getConversations } from '@/lib/chat'
+import { getConversations, ConversationWithDetails } from '@/lib/chat'
 import { ChatList } from '@/components/ChatList'
+import { logger } from '@/lib/observability/logger'
 
 export default async function PatientChatPage() {
-  const { user } = await requireRole('patient')
-  const conversations = await getConversations(user.id, 'patient')
+  let conversations: ConversationWithDetails[] = []
+  
+  try {
+    const { user } = await requireRole('patient')
+    conversations = await getConversations(user.id, 'patient')
+  } catch (err) {
+    logger.error('Error loading chat page:', { error: err })
+    // Return empty state - component will handle gracefully
+  }
 
   return (
     <div className="p-6 lg:p-8">

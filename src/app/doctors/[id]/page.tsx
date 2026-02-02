@@ -1,6 +1,6 @@
 import { getDoctorProfile } from '@/lib/discovery'
 import { getDoctorReviews, getDoctorRatingSummary } from '@/lib/reviews'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, formatDoctorName, formatLanguageName } from '@/lib/utils'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -90,7 +90,7 @@ export default async function DoctorProfilePage({
 
                 <div className="flex-1">
                   <h1 className="text-3xl font-bold text-ink-primary mb-3">
-                    Dr. {doc.profile?.full_name}
+                    {formatDoctorName(doc.profile?.full_name)}
                   </h1>
 
                   {/* Badges */}
@@ -171,7 +171,7 @@ export default async function DoctorProfilePage({
                       key={lang}
                       className="bg-secondary-100 text-ink-secondary px-4 py-2 rounded-xl text-sm font-medium"
                     >
-                      {lang}
+                      {formatLanguageName(lang)}
                     </span>
                   ))}
                 </div>

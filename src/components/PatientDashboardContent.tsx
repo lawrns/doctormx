@@ -94,7 +94,7 @@ export function HealthTips() {
     {
       icon: Droplets,
       title: 'Mantente hidratado',
-      description: 'Bebe al menos 8 vasos de agua al día para mantener tu cuerpo funcionando optimally.',
+      description: 'Bebe al menos 8 vasos de agua al día para mantener tu cuerpo funcionando de manera óptima.',
       color: 'text-blue-600',
       bgColor: 'bg-blue-50'
     },
@@ -108,7 +108,7 @@ export function HealthTips() {
     {
       icon: Activity,
       title: 'Movimiento diario',
-      description: '30 minutos de actividad física moderaday mejoran tu salud cardiovascular.',
+      description: '30 minutos de actividad física moderada mejoran tu salud cardiovascular.',
       color: 'text-emerald-600',
       bgColor: 'bg-emerald-50'
     },

@@ -49,23 +49,8 @@ export default function UploadImagePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white border-b border-gray-200">
-        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <a href="/app" className="flex items-center gap-2 text-gray-600 hover:text-gray-900">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-              </svg>
-              <span>Volver</span>
-            </a>
-            <div className="h-6 w-px bg-gray-300" />
-            <h1 className="text-xl font-semibold text-gray-900">Análisis de Imágenes Médicas</h1>
-          </div>
-        </div>
-      </header>
-
-      <main className="max-w-4xl mx-auto px-4 py-8">
+    <div className="p-6 lg:p-8">
+      <div className="max-w-4xl mx-auto">
         <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 mb-6">
           <div className="flex items-start gap-4 mb-4">
             <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center">
@@ -257,7 +242,7 @@ export default function UploadImagePage() {
             <p className="text-sm text-gray-600 mt-1">Un médico revisará tu análisis</p>
           </div>
         </div>
-      </main>
+      </div>
     </div>
   )
 }

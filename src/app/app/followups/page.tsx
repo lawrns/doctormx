@@ -4,7 +4,13 @@ import Link from 'next/link'
 
 export default async function PatientFollowUpsPage() {
   const { user } = await requireRole('patient')
-  const followUps = await getPatientFollowUps(user.id)
+  let followUps: Awaited<ReturnType<typeof getPatientFollowUps>> = []
+  try {
+    followUps = await getPatientFollowUps(user.id)
+  } catch (error) {
+    console.error('Error loading follow-ups:', error)
+    followUps = []
+  }
 
   const getStatusBadge = (status: string) => {
     const styles: Record<string, string> = {

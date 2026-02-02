@@ -111,45 +111,78 @@ export async function getConversations(
   userId: string,
   role: UserRole
 ): Promise<ConversationWithDetails[]> {
-  const supabase = await createClient()
+  try {
+    const supabase = await createClient()
 
-  let query = supabase
-    .from('chat_conversations')
-    .select(`
-      *,
-      patient:profiles!chat_conversations_patient_id_fkey(id, full_name, photo_url),
-      doctor:doctors!chat_conversations_doctor_id_fkey(id, profile:profiles(id, full_name, photo_url))
-    `)
-    .order('last_message_at', { ascending: false })
+    let query = supabase
+      .from('chat_conversations')
+      .select('*')
+      .order('last_message_at', { ascending: false })
 
-  if (role === 'patient') {
-    query = query.eq('patient_id', userId)
-  } else if (role === 'doctor') {
-    query = query.eq('doctor_id', userId)
+    if (role === 'patient') {
+      query = query.eq('patient_id', userId)
+    } else if (role === 'doctor') {
+      query = query.eq('doctor_id', userId)
+    }
+
+    const { data, error } = await query
+
+    if (error) {
+      logger.error('Error getting conversations:', { error })
+      return []
+    }
+
+    // Fetch profiles separately to avoid complex join issues
+    const conversations = data || []
+    const patientIds = [...new Set(conversations.map(c => c.patient_id))]
+    const doctorIds = [...new Set(conversations.map(c => c.doctor_id))]
+
+    // Get patient profiles
+    const { data: patientProfiles } = await supabase
+      .from('profiles')
+      .select('id, full_name, photo_url')
+      .in('id', patientIds)
+
+    // Get doctor data with user_id (profile_id)
+    const { data: doctorsData } = await supabase
+      .from('doctors')
+      .select('id, user_id')
+      .in('id', doctorIds)
+
+    // Get doctor profiles using their user_id
+    const doctorUserIds = doctorsData?.map(d => d.user_id) || []
+    const { data: doctorProfiles } = await supabase
+      .from('profiles')
+      .select('id, full_name, photo_url')
+      .in('id', doctorUserIds)
+
+    const patientMap = new Map(patientProfiles?.map(p => [p.id, p]) || [])
+    const doctorToUserMap = new Map(doctorsData?.map(d => [d.id, d.user_id]) || [])
+    const doctorProfileMap = new Map(doctorProfiles?.map(p => [p.id, p]) || [])
+
+    const conversationsWithDetails = await Promise.all(
+      conversations.map(async (conv) => {
+        const patient = patientMap.get(conv.patient_id)
+        const doctorUserId = doctorToUserMap.get(conv.doctor_id)
+        const doctorProfile = doctorUserId ? doctorProfileMap.get(doctorUserId) : undefined
+        const unreadCount = await getUnreadCount(conv.id, userId)
+        
+        return {
+          ...conv,
+          patient_name: patient?.full_name,
+          patient_photo_url: patient?.photo_url,
+          doctor_name: doctorProfile?.full_name,
+          doctor_photo_url: doctorProfile?.photo_url,
+          unread_count: unreadCount,
+        }
+      })
+    )
+
+    return conversationsWithDetails
+  } catch (err) {
+    logger.error('Unexpected error in getConversations:', { error: err })
+    return []
   }
-
-  const { data, error } = await query
-
-  if (error) {
-    logger.error('Error getting conversations:', { error })
-    throw error
-  }
-
-  const conversationsWithUnread = await Promise.all(
-    (data || []).map(async (conv) => {
-      const unreadCount = await getUnreadCount(conv.id, userId)
-      return {
-        ...conv,
-        patient_name: conv.patient?.full_name,
-        patient_photo_url: conv.patient?.photo_url,
-        doctor_name: conv.doctor?.profile?.full_name,
-        doctor_photo_url: conv.doctor?.profile?.photo_url,
-        unread_count: unreadCount,
-      }
-    })
-  )
-
-  return conversationsWithUnread
 }
 
 export async function getOrCreateConversation(

@@ -1,24 +1,70 @@
 import { discoverDoctors, getAvailableSpecialties } from '@/lib/discovery'
+import { createClient } from '@/lib/supabase/server'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { EmptyState } from '@/components/EmptyState'
+import { Input } from '@/components/ui/input'
+import { User, LogOut } from 'lucide-react'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 
 export default async function DoctorsPage({
   searchParams,
 }: {
-  searchParams: Promise<{ specialty?: string }>
+  searchParams: Promise<{
+    specialty?: string
+    search?: string
+    sortBy?: 'rating' | 'price' | 'experience'
+    sortOrder?: 'asc' | 'desc'
+  }>
 }) {
   const params = await searchParams
+
+  // Check if user is authenticated
+  const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+  let profile = null
+  if (user) {
+    const { data } = await supabase.from('profiles').select('full_name').eq('id', user.id).single()
+    profile = data
+  }
 
   const [doctors, specialties] = await Promise.all([
     discoverDoctors({
       specialtySlug: params.specialty,
+      searchQuery: params.search,
+      sortBy: params.sortBy,
+      sortOrder: params.sortOrder,
     }),
     getAvailableSpecialties(),
   ])
+
+  const buildQueryString = (newParams: Record<string, string | undefined>) => {
+    const searchParams = new URLSearchParams()
+    if (params.specialty) searchParams.set('specialty', params.specialty)
+    if (params.search) searchParams.set('search', params.search)
+    if (params.sortBy) searchParams.set('sortBy', params.sortBy)
+    if (params.sortOrder) searchParams.set('sortOrder', params.sortOrder)
+
+    Object.entries(newParams).forEach(([key, value]) => {
+      if (value) {
+        searchParams.set(key, value)
+      } else {
+        searchParams.delete(key)
+      }
+    })
+
+    const queryString = searchParams.toString()
+    return queryString ? `?${queryString}` : ''
+  }
 
   return (
     <div className="min-h-screen bg-neutral-50">
@@ -34,16 +80,35 @@ export default async function DoctorsPage({
             <span className="text-xl font-bold text-neutral-900">Doctor.mx</span>
           </Link>
           <div className="flex items-center gap-3">
-            <Link href="/auth/login">
-              <Button variant="ghost" className="text-neutral-600 hover:text-neutral-900">
-                Iniciar sesión
-              </Button>
-            </Link>
-            <Link href="/auth/register">
-              <Button>
-                Registrarse
-              </Button>
-            </Link>
+            {user ? (
+              <>
+                <Link href="/app">
+                  <Button variant="ghost" className="text-neutral-600 hover:text-neutral-900 flex items-center gap-2">
+                    <User className="w-4 h-4" />
+                    Mi cuenta
+                  </Button>
+                </Link>
+                <form action="/auth/signout" method="post">
+                  <Button type="submit" variant="outline" className="flex items-center gap-2">
+                    <LogOut className="w-4 h-4" />
+                    Cerrar sesión
+                  </Button>
+                </form>
+              </>
+            ) : (
+              <>
+                <Link href="/auth/login">
+                  <Button variant="ghost" className="text-neutral-600 hover:text-neutral-900">
+                    Iniciar sesión
+                  </Button>
+                </Link>
+                <Link href="/auth/register">
+                  <Button>
+                    Registrarse
+                  </Button>
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </header>
@@ -62,6 +127,81 @@ export default async function DoctorsPage({
 
         {/* Filters */}
         <Card className="p-6 mb-8 border-neutral-200">
+          {/* Search and Sort Row */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-6">
+            {/* Search Input */}
+            <form className="flex-1" action="/doctors" method="GET">
+              <div className="relative">
+                <svg
+                  className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+                <Input
+                  type="search"
+                  name="search"
+                  placeholder="Buscar por nombre del doctor..."
+                  defaultValue={params.search}
+                  className="pl-10 w-full"
+                />
+              </div>
+              {params.specialty && <input type="hidden" name="specialty" value={params.specialty} />}
+              {params.sortBy && <input type="hidden" name="sortBy" value={params.sortBy} />}
+              {params.sortOrder && <input type="hidden" name="sortOrder" value={params.sortOrder} />}
+            </form>
+
+            {/* Sort Dropdown */}
+            <div className="flex gap-2">
+              <Select
+                defaultValue={params.sortBy || 'rating'}
+                onValueChange={(value) => {
+                  const url = `/doctors${buildQueryString({ sortBy: value })}`
+                  window.location.href = url
+                }}
+              >
+                <SelectTrigger className="w-[160px]">
+                  <SelectValue placeholder="Ordenar por" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="rating">Calificación</SelectItem>
+                  <SelectItem value="price">Precio</SelectItem>
+                  <SelectItem value="experience">Experiencia</SelectItem>
+                </SelectContent>
+              </Select>
+
+              <Link
+                href={`/doctors${buildQueryString({ sortOrder: params.sortOrder === 'asc' ? undefined : 'asc' })}`}
+                className="inline-flex"
+              >
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className={params.sortOrder === 'asc' ? 'bg-primary-50' : ''}
+                  title={params.sortOrder === 'asc' ? 'Orden descendente' : 'Orden ascendente'}
+                >
+                  {params.sortOrder === 'asc' ? (
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" />
+                    </svg>
+                  ) : (
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4h13M3 8h9m-9 4h9m5-4v12m0 0l-4-4m4 4l4-4" />
+                    </svg>
+                  )}
+                </Button>
+              </Link>
+            </div>
+          </div>
+
+          {/* Specialty Filter */}
           <h3 className="font-semibold text-neutral-900 mb-4 flex items-center gap-2">
             <svg className="w-5 h-5 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
@@ -69,8 +209,8 @@ export default async function DoctorsPage({
             Filtrar por especialidad
           </h3>
           <div className="flex flex-wrap gap-2">
-            <Link href="/doctors">
-              <Badge 
+            <Link href={`/doctors${buildQueryString({ specialty: undefined })}`}>
+              <Badge
                 variant={!params.specialty ? "default" : "outline"}
                 className={`px-4 py-2 text-sm cursor-pointer ${!params.specialty ? 'bg-primary-500 hover:bg-primary-600' : 'hover:bg-neutral-100'}`}
               >
@@ -78,8 +218,8 @@ export default async function DoctorsPage({
               </Badge>
             </Link>
             {specialties.map((specialty: { id: string; slug: string; name: string }) => (
-              <Link key={specialty.id} href={`/doctors?specialty=${specialty.slug}`}>
-                <Badge 
+              <Link key={specialty.id} href={`/doctors${buildQueryString({ specialty: specialty.slug })}`}>
+                <Badge
                   variant={params.specialty === specialty.slug ? "default" : "outline"}
                   className={`px-4 py-2 text-sm cursor-pointer ${params.specialty === specialty.slug ? 'bg-primary-500 hover:bg-primary-600' : 'hover:bg-neutral-100'}`}
                 >
@@ -89,6 +229,11 @@ export default async function DoctorsPage({
             ))}
           </div>
         </Card>
+
+        {/* Results Count */}
+        <div className="mb-4 text-neutral-600">
+          <span className="font-medium text-neutral-900">{(doctors as typeof doctors[]).length}</span> doctor{(doctors as typeof doctors[]).length !== 1 ? 'es' : ''} encontrado{(doctors as typeof doctors[]).length !== 1 ? 's' : ''}
+        </div>
 
         {/* Doctors Grid */}
         {(doctors as typeof doctors[]).length === 0 ? (
@@ -100,7 +245,7 @@ export default async function DoctorsPage({
             </div>
             <h3 className="text-xl font-semibold text-neutral-900 mb-2">No encontramos doctores</h3>
             <p className="text-neutral-500 max-w-sm mx-auto mb-6">
-              Intenta con otra especialidad o ubicación. También puedes consultar con Dr. Simeon mientras tanto.
+              Intenta con otra especialidad o término de búsqueda. También puedes consultar con Dr. Simeon mientras tanto.
             </p>
             <Link href="/app/second-opinion">
               <Button variant="outline" className="border-blue-200 text-blue-600 hover:bg-blue-50">
