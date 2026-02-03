@@ -2,7 +2,8 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Send, Sparkles, User, Bot, Loader2, AlertCircle, ChevronRight } from 'lucide-react'
+import { Send, Sparkles, User, Bot, Loader2, AlertCircle, ChevronRight, Home } from 'lucide-react'
+import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { ScrollArea } from '@/components/ui/scroll-area'
@@ -152,9 +153,20 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
   }
 
   return (
-    <div className="flex flex-col h-[calc(100vh-120px)] max-w-3xl mx-auto">
-      <Card className="flex-1 flex flex-col overflow-hidden">
-        <div className="p-4 border-b bg-gradient-to-r from-blue-50 to-cyan-50">
+    <div className="flex flex-col h-[calc(100vh-80px)] max-w-3xl mx-auto">
+      {/* Logo Header */}
+      <div className="py-3 flex-shrink-0">
+        <Link href="/" className="flex items-center gap-2.5">
+          <div className="w-9 h-9 bg-blue-500 rounded-xl flex items-center justify-center shadow-sm">
+            <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+          <span className="text-xl font-bold text-gray-900">Doctor.mx</span>
+        </Link>
+      </div>
+      <Card className="flex-1 flex flex-col min-h-0 overflow-hidden">
+        <div className="p-4 border-b bg-gradient-to-r from-blue-50 to-cyan-50 flex-shrink-0">
           <div className="flex items-center gap-2">
             <Sparkles className="w-5 h-5 text-blue-600" />
             <h2 className="font-semibold">Consulta IA Multi-Especialista</h2>
@@ -164,8 +176,8 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
           </p>
         </div>
 
-        <ScrollArea ref={scrollRef} className="flex-1 p-4">
-          <div className="space-y-4">
+        <div className="flex-1 overflow-y-auto p-4" ref={scrollRef}>
+          <div className="space-y-4 min-h-0">
             {messages.map((message) => (
               <MessageBubble key={message.id} message={message} />
             ))}
@@ -176,9 +188,9 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
               </div>
             )}
           </div>
-        </ScrollArea>
+        </div>
 
-        <div className="p-4 border-t">
+        <div className="p-4 border-t flex-shrink-0 bg-white">
           <div className="flex gap-2">
             <input
               type="text"
@@ -247,15 +259,34 @@ function ResultsView({
 }) {
   return (
     <div className="max-w-4xl mx-auto space-y-6">
+      {/* Logo Header */}
+      <div className="py-4">
+        <Link href="/" className="flex items-center gap-2.5">
+          <div className="w-9 h-9 bg-blue-500 rounded-xl flex items-center justify-center shadow-sm">
+            <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+          <span className="text-xl font-bold text-gray-900">Doctor.mx</span>
+        </Link>
+      </div>
       <Card className="p-6">
         <div className="flex items-center justify-between mb-4">
           <div>
             <h2 className="text-2xl font-bold">Resultado de tu Consulta</h2>
             <p className="text-gray-500">Análisis multi-especialista completado</p>
           </div>
-          <Button variant="outline" onClick={onNewConsultation}>
-            Nueva Consulta
-          </Button>
+          <div className="flex gap-3">
+            <Link href="/app">
+              <Button variant="ghost" className="flex items-center gap-2">
+                <Home className="w-4 h-4" />
+                Volver al Dashboard
+              </Button>
+            </Link>
+            <Button variant="outline" onClick={onNewConsultation}>
+              Nueva Consulta
+            </Button>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-4 mb-6">

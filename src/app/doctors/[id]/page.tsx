@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import { DoctorReviews } from '@/components/DoctorReviews'
+import { ArrowLeft } from 'lucide-react'
 
 export default async function DoctorProfilePage({
   params,
@@ -35,23 +36,20 @@ export default async function DoctorProfilePage({
       {/* Header */}
       <header className="bg-white/95 backdrop-blur-md border-b border-neutral-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 bg-primary-500 rounded-xl flex items-center justify-center shadow-sm">
-              <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-              </svg>
-            </div>
-            <span className="text-xl font-bold text-neutral-900">Doctor.mx</span>
-          </Link>
-          <Link
-            href="/doctors"
-            className="text-neutral-600 hover:text-primary-500 font-medium transition-colors flex items-center gap-1.5"
-          >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-            Volver al directorio
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link href="/ai-consulta" className="flex items-center gap-1.5 text-neutral-600 hover:text-primary-500 transition-colors">
+              <ArrowLeft className="w-5 h-5" />
+              <span className="font-medium hidden sm:inline">Volver</span>
+            </Link>
+            <Link href="/" className="flex items-center gap-2.5">
+              <div className="w-9 h-9 bg-primary-500 rounded-xl flex items-center justify-center shadow-sm">
+                <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <span className="text-xl font-bold text-neutral-900">Doctor.mx</span>
+            </Link>
+          </div>
         </div>
       </header>
 

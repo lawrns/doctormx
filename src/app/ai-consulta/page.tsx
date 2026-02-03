@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { MessageCircle, Sparkles, AlertCircle, Check } from 'lucide-react'
+import { MessageCircle, Sparkles, AlertCircle, Check, Home } from 'lucide-react'
+import Link from 'next/link'
 import { QuotaBanner } from '@/components/QuotaCounter'
 import { WhatsAppShareCard } from '@/components/WhatsAppShare'
 import { EmailCapture, EmailCaptureModal } from '@/components/EmailCapture'
@@ -130,30 +131,35 @@ export default function AnonymousConsultaPage() {
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-md border-b border-blue-100 sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2.5">
+            <div className="w-9 h-9 bg-blue-500 rounded-xl flex items-center justify-center shadow-sm">
+              <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </div>
+            <span className="text-xl font-bold text-gray-900">Doctor.mx</span>
+          </Link>
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
-              <MessageCircle className="w-5 h-5 text-white" />
-            </div>
-            <div>
-              <h1 className="font-bold text-gray-900">Consulta Médica Gratis</h1>
-              <p className="text-xs text-gray-500">IA • Confidencial • Sin registro</p>
-            </div>
-          </div>
-          {quota && (
-            <div className="text-right">
-              <p className="text-sm font-medium text-gray-700">{quota.remaining} consultas gratis</p>
-              <div className="flex gap-1 mt-1">
-                {Array.from({ length: quota.limit }).map((_, i) => (
-                  <div
-                    key={i}
-                    className={`w-2 h-2 rounded-full ${
-                      i < quota.used ? 'bg-blue-500' : 'bg-gray-200'
-                    }`}
-                  />
-                ))}
+            <Link href="/" className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors">
+              <Home className="w-4 h-4" />
+              <span className="text-sm font-medium">Inicio</span>
+            </Link>
+            {quota && (
+              <div className="text-right">
+                <p className="text-sm font-medium text-gray-700">{quota.remaining} consultas gratis</p>
+                <div className="flex gap-1 mt-1">
+                  {Array.from({ length: quota.limit }).map((_, i) => (
+                    <div
+                      key={i}
+                      className={`w-2 h-2 rounded-full ${
+                        i < quota.used ? 'bg-blue-500' : 'bg-gray-200'
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </header>
 

@@ -53,7 +53,7 @@ export function LandingPageClient() {
 
             <nav className="hidden lg:flex items-center gap-1">
               {[
-                { href: '/app/second-opinion', label: '5 Consultas GRATIS', icon: Sparkles },
+                { href: '/ai-consulta', label: '5 Consultas GRATIS', icon: Sparkles },
                 { href: '/doctors', label: 'Buscar doctores', icon: Search },
                 { href: '/for-doctors', label: 'Para doctores', icon: UserPlus },
               ].map((link) => (
