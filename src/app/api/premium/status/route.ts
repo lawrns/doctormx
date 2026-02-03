@@ -17,37 +17,111 @@ const includedFeatures: Record<string, string[]> = {
 
 export async function GET(request: NextRequest) {
   try {
-    // Check if user has doctor role - if not, return free tier response
+    // Check user role and return appropriate response
     let userId: string
     let supabaseClient: any
-    
+    let userRole: 'doctor' | 'patient' | null = null
+
+    // Try to get doctor role
     try {
       const { user, supabase } = await requireRole('doctor')
       userId = user.id
       supabaseClient = supabase
+      userRole = 'doctor'
     } catch {
-      // User is not a doctor - return default free tier response
-      const { searchParams } = new URL(request.url)
-      const featureParam = searchParams.get('feature')
+      // Not a doctor - check if patient
+      try {
+        const { user, supabase } = await requireRole('patient')
+        userId = user.id
+        supabaseClient = supabase
+        userRole = 'patient'
+      } catch {
+        // Not authenticated or no role
+        const { searchParams } = new URL(request.url)
+        const featureParam = searchParams.get('feature')
 
-      if (featureParam && Object.keys(limitMap).includes(featureParam)) {
-        const featureKey = featureParam as PremiumFeature
+        if (featureParam && Object.keys(limitMap).includes(featureParam)) {
+          return NextResponse.json({
+            feature: featureParam,
+            hasAccess: false,
+            tier: 'starter',
+            tierName: 'Starter',
+            used: 0,
+            limit: 0,
+            remaining: 0,
+            needsUpgrade: true,
+            upgradeTo: 'pro',
+            pricePerUse: null,
+            isIncluded: false,
+          })
+        }
+
         return NextResponse.json({
-          feature: featureKey,
-          hasAccess: false,
           tier: 'starter',
           tierName: 'Starter',
-          used: 0,
-          limit: 0,
-          remaining: 0,
-          needsUpgrade: true,
-          upgradeTo: 'pro',
+          hasSubscription: false,
+          featureStatus: {},
+          includedFeatures: [],
+        })
+      }
+    }
+
+    const { searchParams } = new URL(request.url)
+    const featureParam = searchParams.get('feature')
+
+    // Patient flow - give 3 free image analyses per month
+    if (userRole === 'patient') {
+      if (featureParam === 'image_analysis') {
+        // Get patient's usage this month
+        const now = new Date()
+        const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString()
+
+        const { data: patientUsage } = await supabaseClient
+          .from('medical_image_analyses')
+          .select('id')
+          .eq('patient_id', userId)
+          .gte('created_at', monthStart)
+
+        const used = patientUsage?.length || 0
+        const limit = 3
+        const remaining = Math.max(0, limit - used)
+        const hasAccess = used < limit
+
+        return NextResponse.json({
+          feature: 'image_analysis',
+          hasAccess,
+          tier: 'patient',
+          tierName: 'Paciente',
+          used,
+          limit,
+          remaining,
+          needsUpgrade: !hasAccess,
+          upgradeTo: 'premium',
           pricePerUse: null,
-          isIncluded: false,
+          isIncluded: true,
+          userRole: 'patient',
         })
       }
 
-      // Return default status for all features
+      // For other features, patients don't have access
+      if (featureParam && Object.keys(limitMap).includes(featureParam)) {
+        return NextResponse.json({
+          feature: featureParam,
+          hasAccess: false,
+          tier: 'patient',
+          tierName: 'Paciente',
+          used: 0,
+          limit: 0,
+          remaining: 0,
+          needsUpgrade: false,
+          upgradeTo: null,
+          pricePerUse: null,
+          isIncluded: false,
+          userRole: 'patient',
+        })
+      }
+
+      // Return all feature status for patients
       const featureStatus: Record<string, {
         hasAccess: boolean
         used: number
@@ -57,21 +131,40 @@ export async function GET(request: NextRequest) {
       }> = {}
 
       for (const key of Object.keys(limitMap)) {
-        featureStatus[key] = {
-          hasAccess: false,
-          used: 0,
-          limit: 0,
-          remaining: 0,
-          isIncluded: false,
+        if (key === 'image_analysis') {
+          const monthStart = new Date(new Date().getFullYear(), new Date().getMonth(), 1).toISOString()
+          const { data: patientUsage } = await supabaseClient
+            .from('medical_image_analyses')
+            .select('id')
+            .eq('patient_id', userId)
+            .gte('created_at', monthStart)
+
+          const used = patientUsage?.length || 0
+          featureStatus[key] = {
+            hasAccess: used < 3,
+            used,
+            limit: 3,
+            remaining: Math.max(0, 3 - used),
+            isIncluded: true,
+          }
+        } else {
+          featureStatus[key] = {
+            hasAccess: false,
+            used: 0,
+            limit: 0,
+            remaining: 0,
+            isIncluded: false,
+          }
         }
       }
 
       return NextResponse.json({
-        tier: 'starter',
-        tierName: 'Starter',
+        tier: 'patient',
+        tierName: 'Paciente',
         hasSubscription: false,
         featureStatus,
-        includedFeatures: [],
+        includedFeatures: ['image_analysis'],
+        userRole: 'patient',
       })
     }
 

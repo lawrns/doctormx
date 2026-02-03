@@ -37,6 +37,10 @@ interface Appointment {
   start_ts: string
   end_ts: string
   status: string
+  appointment_type?: 'in_person' | 'video'
+  video_status?: 'pending' | 'ready' | 'in_progress' | 'completed' | 'missed'
+  video_room_url?: string | null
+  video_started_at?: string | null
   doctor?: DoctorInfo
   payment?: PaymentInfo | null
 }
@@ -81,7 +85,24 @@ function getStatusInfo(status: string): { label: string; variant: 'success' | 'w
 function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; onCancel: (id: string) => void }) {
   const [showCancelModal, setShowCancelModal] = useState(false)
   const [isCancelling, setIsCancelling] = useState(false)
-  
+  const [callDuration, setCallDuration] = useState<number | null>(null)
+
+  // Update call duration for in-progress video calls
+  useEffect(() => {
+    if (appointment.video_status === 'in_progress' && appointment.video_started_at) {
+      const startTime = new Date(appointment.video_started_at)
+      setCallDuration(Math.floor((Date.now() - startTime.getTime()) / (1000 * 60)))
+
+      const interval = setInterval(() => {
+        const now = Date.now()
+        const duration = Math.floor((now - startTime.getTime()) / (1000 * 60))
+        setCallDuration(duration)
+      }, 60000) // Update every minute
+
+      return () => clearInterval(interval)
+    }
+  }, [appointment.video_status, appointment.video_started_at])
+
   const { date, time, weekday } = formatDateTime(appointment.start_ts)
   const statusInfo = getStatusInfo(appointment.status)
   const doctorName = appointment.doctor?.profile?.full_name || 'Doctor'
@@ -89,12 +110,22 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
   const price = appointment.doctor?.price_cents || 0
   const currency = appointment.doctor?.currency || 'MXN'
   const doctorId = appointment.doctor?.id || ''
-  
-  const isUpcoming = new Date(appointment.start_ts) > new Date()
+
+  const isVideo = appointment.appointment_type === 'video'
+  const now = new Date()
+  const startTime = new Date(appointment.start_ts)
+  const endTime = new Date(appointment.end_ts)
+  const fifteenMinutesBefore = new Date(startTime.getTime() - 15 * 60 * 1000)
+
+  // Video call states
+  const isUpcoming = startTime > now && now < fifteenMinutesBefore
+  const isInLobby = isVideo && startTime > now && now >= fifteenMinutesBefore
+  const isInProgress = appointment.video_status === 'in_progress' || (isVideo && now >= startTime && now < endTime && appointment.video_status === 'ready')
+  const isCompleted = appointment.status === 'completed'
+
   const canCancel = isUpcoming && ['pending_payment', 'confirmed'].includes(appointment.status)
-  const canJoin = isUpcoming && appointment.status === 'confirmed'
-  const canRebook = appointment.status === 'completed' || appointment.status === 'cancelled'
-  
+  const canRebook = isCompleted || appointment.status === 'cancelled'
+
   const handleCancel = async () => {
     setIsCancelling(true)
     try {
@@ -104,17 +135,47 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
       setIsCancelling(false)
     }
   }
-  
+
+  // Get video status badge
+  const getVideoStatusBadge = () => {
+    if (!isVideo) return null
+
+    if (isInProgress) {
+      return (
+        <Badge className="bg-red-100 text-red-800 border-red-200">
+          <span className="relative flex h-2 w-2 mr-1">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+          </span>
+          En curso {callDuration !== null && `(${callDuration} min)`}
+        </Badge>
+      )
+    }
+
+    if (isInLobby || appointment.video_status === 'ready') {
+      return (
+        <Badge className="bg-green-100 text-green-800 border-green-200">
+          <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+          </svg>
+          Lista para unirse
+        </Badge>
+      )
+    }
+
+    return null
+  }
+
   return (
     <>
-      <div className="bg-white rounded-lg border hover:shadow-md transition-shadow p-4">
+      <div className={`bg-white rounded-lg border hover:shadow-md transition-shadow p-4 ${isInProgress ? 'border-l-4 border-l-red-500' : isInLobby ? 'border-l-4 border-l-green-500' : ''}`}>
         <div className="flex items-start gap-4">
           <Avatar
             name={doctorName}
             src={appointment.doctor?.profile?.photo_url}
             size="lg"
           />
-          
+
           <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between gap-2">
               <div>
@@ -123,9 +184,12 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
                 </Link>
                 <p className="text-sm text-gray-500">{specialty}</p>
               </div>
-              <Badge variant={statusInfo.variant}>{statusInfo.label}</Badge>
+              <div className="flex items-center gap-2">
+                {getVideoStatusBadge()}
+                <Badge variant={statusInfo.variant}>{statusInfo.label}</Badge>
+              </div>
             </div>
-            
+
             <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-gray-600">
               <span className="flex items-center gap-1">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -139,56 +203,94 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
                 </svg>
                 {time}
               </span>
-              <span className="flex items-center gap-1">
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                </svg>
-                Video
-              </span>
+              {isVideo ? (
+                <span className="flex items-center gap-1 text-blue-600">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  Videoconsulta
+                </span>
+              ) : (
+                <span className="flex items-center gap-1">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  Presencial
+                </span>
+              )}
             </div>
-            
-            <div className="mt-2 flex items-center justify-between">
+
+            <div className="mt-3 flex items-center justify-between">
               <span className="text-sm font-medium text-gray-900">
                 {formatPrice(price, currency)}
               </span>
-              
-              <div className="flex gap-2 mt-2">
-                {canJoin && (
+
+              <div className="flex gap-2 flex-wrap">
+                {/* Video call states */}
+                {isVideo && isInProgress && (
                   <Link
-                    href={`/consultation/${appointment.id}`}
-                    className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors"
+                    href={`/app/appointments/${appointment.id}/video`}
+                    className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-md transition-colors"
                   >
                     <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    Volver a llamada
+                  </Link>
+                )}
+
+                {isVideo && isInLobby && (
+                  <Link
+                    href={`/app/appointments/${appointment.id}/video`}
+                    className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-white bg-green-600 hover:bg-green-700 rounded-md transition-colors"
+                  >
+                    <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     Unirse
                   </Link>
                 )}
-                
-                {canRebook && (
+
+                {/* Completed state actions */}
+                {isCompleted && (
+                  <>
+                    <Link
+                      href={`/app/appointments/${appointment.id}`}
+                      className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-gray-600 hover:text-gray-700 hover:bg-gray-100 rounded-md transition-colors"
+                    >
+                      <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      Ver resumen
+                    </Link>
+                    <Link
+                      href={`/doctors/${doctorId}`}
+                      className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded-md transition-colors"
+                    >
+                      <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                      </svg>
+                      Agendar seguimiento
+                    </Link>
+                  </>
+                )}
+
+                {/* Rebook button */}
+                {canRebook && !isCompleted && (
                   <Link
-                    href={`/book/${doctorId}?rebook=true&appointmentId=${appointment.id}`}
+                    href={`/doctors/${doctorId}`}
                     className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded-md transition-colors"
                   >
                     <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                     </svg>
-                    Reservar de nuevo
+                    Nueva cita
                   </Link>
                 )}
-                
-                {appointment.status === 'completed' && (
-                  <Link
-                    href={`/app/appointments/${appointment.id}/review`}
-                    className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-gray-600 hover:text-gray-700 hover:bg-gray-100 rounded-md transition-colors"
-                  >
-                    <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                    </svg>
-                    Dejar reseña
-                  </Link>
-                )}
-                
+
+                {/* Cancel button */}
                 {canCancel && (
                   <button
                     onClick={() => setShowCancelModal(true)}
@@ -200,7 +302,8 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
                     Cancelar
                   </button>
                 )}
-                
+
+                {/* Details button */}
                 <Link
                   href={`/app/appointments/${appointment.id}`}
                   className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-gray-600 hover:text-gray-700 hover:bg-gray-100 rounded-md transition-colors"
@@ -216,7 +319,7 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
           </div>
         </div>
       </div>
-      
+
       <Modal
         isOpen={showCancelModal}
         onClose={() => setShowCancelModal(false)}
@@ -249,12 +352,12 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
 function AppointmentsPageContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
-  
+
   const [activeTab, setActiveTab] = useState<TabType>('all')
   const [appointments, setAppointments] = useState<Appointment[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
-  
+
   const fetchAppointments = useCallback(async (status: TabType) => {
     setIsLoading(true)
     setErrorMessage(null)
@@ -263,10 +366,10 @@ function AppointmentsPageContent() {
       if (status !== 'all') {
         params.set('status', status)
       }
-      
+
       const response = await fetch(`/api/patient/appointments?${params.toString()}`)
       const data = await response.json()
-      
+
       if (response.ok) {
         setAppointments(data.appointments || [])
       } else {
@@ -279,18 +382,18 @@ function AppointmentsPageContent() {
       setIsLoading(false)
     }
   }, [])
-  
+
   useEffect(() => {
     const tabParam = searchParams.get('tab') as TabType
     if (tabParam && tabs.some(t => t.key === tabParam)) {
       setActiveTab(tabParam)
     }
   }, [searchParams])
-  
+
   useEffect(() => {
     fetchAppointments(activeTab)
   }, [activeTab, fetchAppointments])
-  
+
   const handleCancel = async (appointmentId: string) => {
     try {
       const response = await fetch(`/api/appointments/${appointmentId}/cancel`, {
@@ -298,9 +401,9 @@ function AppointmentsPageContent() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ reason: 'Cancelled by patient' }),
       })
-      
+
       const data = await response.json()
-      
+
       if (response.ok) {
         window.location.reload()
       } else {
@@ -311,14 +414,14 @@ function AppointmentsPageContent() {
       setErrorMessage('Error al cancelar cita')
     }
   }
-  
+
   const handleTabChange = (tab: TabType) => {
     setActiveTab(tab)
     const params = new URLSearchParams(searchParams.toString())
     params.set('tab', tab)
     router.push(`/app/appointments?${params.toString()}`)
   }
-  
+
   const getFilteredCount = (status: TabType): number => {
     if (status === 'all') return appointments.length
     if (status === 'upcoming') {
@@ -332,7 +435,7 @@ function AppointmentsPageContent() {
     }
     return 0
   }
-  
+
   return (
     <div className="p-6 lg:p-8">
       <div className="max-w-5xl mx-auto">
@@ -364,13 +467,13 @@ function AppointmentsPageContent() {
             </nav>
           </div>
         </div>
-        
+
         {errorMessage && (
           <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
             {errorMessage}
           </div>
         )}
-        
+
         {isLoading ? (
           <div className="space-y-4">
             {[1, 2, 3].map(i => (

@@ -11,9 +11,21 @@ interface PatientLayoutProps {
   children: React.ReactNode
 }
 
+interface NavItem {
+  href: string
+  icon: any
+  label: string
+  highlight?: boolean
+  badge?: { count?: number; dot?: boolean; color?: string }
+}
+
 export function PatientLayout({ children }: PatientLayoutProps) {
   const pathname = usePathname()
   const [profile, setProfile] = useState<any>(null)
+  const [badges, setBadges] = useState({
+    messages: 0,
+    appointmentsJoinable: false,
+  })
 
   useEffect(() => {
     async function loadProfile() {
@@ -27,13 +39,66 @@ export function PatientLayout({ children }: PatientLayoutProps) {
     loadProfile()
   }, [])
 
-  const navItems = [
+  // Check for joinable video appointments (within 15 minutes)
+  useEffect(() => {
+    async function checkBadges() {
+      const supabase = createClient()
+      const { data: { user } } = await supabase.auth.getUser()
+
+      if (user) {
+        // Check for messages
+        const { count: messagesCount } = await supabase
+          .from('messages')
+          .select('*', { count: 'exact', head: true })
+          .eq('receiver_id', user.id)
+          .is('read_at', null)
+
+        // Check for joinable appointments (within 15 minutes, have video_room_url, and are video type)
+        const fifteenMinutesFromNow = new Date(Date.now() + 15 * 60 * 1000).toISOString()
+        const { data: appointments } = await supabase
+          .from('appointments')
+          .select('id, start_ts, video_room_url, video_status, appointment_type')
+          .eq('patient_id', user.id)
+          .in('status', ['confirmed', 'pending_payment'])
+          .eq('appointment_type', 'video')
+          .in('video_status', ['pending', 'ready'])
+          .lte('start_ts', fifteenMinutesFromNow)
+          .order('start_ts', { ascending: true })
+
+        const joinableAppointment = appointments?.some(apt =>
+          apt.video_room_url && new Date(apt.start_ts) <= new Date(Date.now() + 15 * 60 * 1000)
+        ) || false
+
+        setBadges({
+          messages: messagesCount || 0,
+          appointmentsJoinable: joinableAppointment,
+        })
+      }
+    }
+
+    checkBadges()
+    // Refresh badges every 30 seconds
+    const interval = setInterval(checkBadges, 30000)
+    return () => clearInterval(interval)
+  }, [])
+
+  const navItems: NavItem[] = [
     { href: '/app', icon: LayoutDashboard, label: 'Dashboard' },
     { href: '/app/ai-consulta', icon: Bot, label: 'Consulta IA', highlight: true },
     { href: '/app/second-opinion', icon: Users, label: 'IA Multi-Especialista' },
     { href: '/doctors', icon: Stethoscope, label: 'Buscar Doctor' },
-    { href: '/app/appointments', icon: Calendar, label: 'Mis Citas' },
-    { href: '/app/chat', icon: MessageCircle, label: 'Mensajes' },
+    {
+      href: '/app/appointments',
+      icon: Calendar,
+      label: 'Mis Citas',
+      badge: { dot: badges.appointmentsJoinable, color: 'bg-green-500' }
+    },
+    {
+      href: '/app/chat',
+      icon: MessageCircle,
+      label: 'Mensajes',
+      badge: badges.messages > 0 ? { count: badges.messages, color: 'bg-red-500' } : undefined
+    },
     { href: '/app/followups', icon: ClipboardList, label: 'Seguimientos' },
     { href: '/app/upload-image', icon: ImageIcon, label: 'Análisis Imagen' },
     { href: '/app/profile', icon: User, label: 'Mi Perfil' },
@@ -64,7 +129,15 @@ export function PatientLayout({ children }: PatientLayoutProps) {
           {navItems.map((item) => (
             <Link key={item.href} href={item.href} className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${item.highlight && isActive(item.href) ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg' : isActive(item.href) ? 'bg-gray-100 text-gray-900 font-medium' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}`}>
               <item.icon className="w-5 h-5" />
-              <span>{item.label}</span>
+              <span className="flex-1">{item.label}</span>
+              {item.badge?.dot && (
+                <span className={`w-2 h-2 rounded-full ${item.badge.color || 'bg-red-500'}`} />
+              )}
+              {item.badge?.count && item.badge.count > 0 && (
+                <span className={`min-w-[1.25rem] h-5 px-1.5 rounded-full text-xs font-bold text-white ${item.badge.color || 'bg-red-500'} flex items-center justify-center`}>
+                  {item.badge.count > 99 ? '99+' : item.badge.count}
+                </span>
+              )}
               {item.highlight && isActive(item.href) && <Sparkles className="w-4 h-4 ml-auto" />}
             </Link>
           ))}

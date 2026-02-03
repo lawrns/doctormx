@@ -16,6 +16,7 @@ export type DiscoveryFilters = {
   searchQuery?: string
   sortBy?: 'rating' | 'price' | 'experience'
   sortOrder?: 'asc' | 'desc'
+  appointmentType?: 'all' | 'video' | 'in_person'
 }
 
 // Type for the raw doctor data from Supabase
@@ -78,6 +79,7 @@ async function fetchDoctors(filters?: DiscoveryFilters) {
         years_experience,
         languages,
         status,
+        video_enabled,
         doctor_specialties (
           specialty_id,
           specialty:specialties (
@@ -140,9 +142,22 @@ async function fetchDoctors(filters?: DiscoveryFilters) {
     // Filter by search query (name search)
     if (filters?.searchQuery) {
       const query = filters.searchQuery.toLowerCase().trim()
-      filtered = filtered.filter(doctor => 
+      filtered = filtered.filter(doctor =>
         doctor.profiles?.full_name?.toLowerCase().includes(query)
       )
+    }
+
+    // Filter by appointment type (video/in_person)
+    if (filters?.appointmentType && filters.appointmentType !== 'all') {
+      filtered = filtered.filter(doctor => {
+        if (filters.appointmentType === 'video') {
+          return doctor.video_enabled === true
+        }
+        if (filters.appointmentType === 'in_person') {
+          return true // Show all doctors for in_person filter (everyone can do in-person)
+        }
+        return true
+      })
     }
 
     // Sort results

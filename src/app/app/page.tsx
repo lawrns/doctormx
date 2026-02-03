@@ -1,4 +1,5 @@
 import { Search, Calendar, MessageCircle, User, ClipboardList, Sparkles, Users, ChevronRight, Bot } from 'lucide-react'
+import { formatDoctorName } from '@/lib/utils'
 import { requireRole } from '@/lib/auth'
 import { getPatientAppointments } from '@/lib/appointments'
 import { PatientDashboardContent, HealthTips, QuickStats } from '@/components/PatientDashboardContent'
@@ -12,6 +13,11 @@ import { Badge } from '@/components/ui/badge'
 export default async function PatientDashboard() {
   const { user, profile } = await requireRole('patient')
   const appointments = await getPatientAppointments(user.id)
+
+  // Get upcoming appointments
+  const upcomingAppointments = (appointments as Appointment[]).filter(apt =>
+    ['confirmed', 'pending_payment'].includes(apt.status) && new Date(apt.start_ts) > new Date()
+  )
 
   const getStatusBadge = (status: string) => {
     const styles: Record<string, string> = {
@@ -28,37 +34,44 @@ export default async function PatientDashboard() {
   return (
     <div className="p-6 lg:p-8">
       <div className="max-w-7xl mx-auto">
-        <Link href="/app/ai-consulta">
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 p-8 text-white shadow-2xl mb-8">
-            <div className="flex flex-col md:flex-row items-center gap-6">
-              <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center">
-                <Bot className="w-10 h-10" />
-              </div>
-              <div className="flex-1 text-center md:text-left">
-                <div className="flex items-center gap-2 mb-2">
-                  <Sparkles className="w-5 h-5" />
-                  <span className="text-sm font-semibold uppercase">Nuevo</span>
+        <WelcomeBanner patientName={profile?.full_name?.split(' ')[0] || 'Usuario'} />
+
+        {upcomingAppointments.length > 0 && (
+          <Card className="mb-8 border-l-4 border-l-blue-500">
+            <div className="p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <Badge className="mb-2 bg-blue-100 text-blue-700">Próxima consulta</Badge>
+                  <h3 className="text-xl font-bold">{formatDoctorName(upcomingAppointments[0].doctor?.profile?.full_name)}</h3>
+                  <p className="text-gray-600">{new Date(upcomingAppointments[0].start_ts).toLocaleString('es-MX', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                  })}</p>
+                  <Badge variant={upcomingAppointments[0].video_room_url ? 'success' : 'info'} className="mt-2">
+                    {upcomingAppointments[0].video_room_url ? 'Videoconsulta' : 'Presencial'}
+                  </Badge>
                 </div>
-                <h1 className="text-3xl md:text-4xl font-bold mb-2">Consulta con Dr. Simeon</h1>
-                <p className="text-lg text-blue-100 mb-4">Tu asistente médico virtual • IA personalizada</p>
-                <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50">
-                  Iniciar Consulta IA<ChevronRight className="w-5 h-5 ml-2" />
-                </Button>
+                <Link href="/app/appointments">
+                  <Button>Ver detalles</Button>
+                </Link>
               </div>
             </div>
-          </div>
-        </Link>
+          </Card>
+        )}
 
-        <WelcomeBanner patientName={profile?.full_name?.split(' ')[0] || 'Usuario'} />
         <PatientDashboardContent appointments={appointments as Array<Appointment & { doctor: Doctor }>} />
         <QuickStats appointments={appointments as Appointment[]} />
         <HealthTips />
 
         <div className="grid md:grid-cols-3 gap-6 mb-8">
-          {[ 
-            { href: '/app/ai-consulta', icon: Users, title: 'Consulta con Dr. Simeon', desc: 'Tu asistente médico IA' },
-            { href: '/doctors', icon: Search, title: 'Buscar Doctor', desc: 'Especialistas' },
-            { href: '/app/appointments', icon: Calendar, title: 'Mis Consultas', desc: 'Historial' }
+          {[
+            { href: '/app/ai-consulta', icon: Bot, title: 'Consulta IA', desc: 'Dr. Simeon - Asistente médico virtual' },
+            { href: '/doctors', icon: Search, title: 'Buscar Doctor', desc: 'Especialistas verificados' },
+            { href: '/app/upload-image', icon: ClipboardList, title: 'Analizar Imagen', desc: 'Análisis médico con IA' }
           ].map((item) => (
             <Link key={item.href} href={item.href}>
               <Card className="group p-6 hover:shadow-lg transition-all">
@@ -98,7 +111,7 @@ export default async function PatientDashboard() {
                       <div className="flex items-center gap-4">
                         <User className="w-6 h-6 text-blue-500" />
                         <div>
-                          <p className="font-semibold">Dr. {apt.doctor?.profile?.full_name || 'Doctor'}</p>
+                          <p className="font-semibold">{formatDoctorName(apt.doctor?.profile?.full_name)}</p>
                           <p className="text-sm text-gray-500">{new Date(apt.start_ts).toLocaleString('es-MX')}</p>
                         </div>
                       </div>

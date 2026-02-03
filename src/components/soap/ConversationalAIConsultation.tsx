@@ -154,17 +154,6 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
 
   return (
     <div className="flex flex-col h-[calc(100vh-80px)] max-w-3xl mx-auto">
-      {/* Logo Header */}
-      <div className="py-3 flex-shrink-0">
-        <Link href="/" className="flex items-center gap-2.5">
-          <div className="w-9 h-9 bg-blue-500 rounded-xl flex items-center justify-center shadow-sm">
-            <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-            </svg>
-          </div>
-          <span className="text-xl font-bold text-gray-900">Doctor.mx</span>
-        </Link>
-      </div>
       <Card className="flex-1 flex flex-col min-h-0 overflow-hidden">
         <div className="p-4 border-b bg-gradient-to-r from-blue-50 to-cyan-50 flex-shrink-0">
           <div className="flex items-center gap-2">
@@ -259,17 +248,6 @@ function ResultsView({
 }) {
   return (
     <div className="max-w-4xl mx-auto space-y-6">
-      {/* Logo Header */}
-      <div className="py-4">
-        <Link href="/" className="flex items-center gap-2.5">
-          <div className="w-9 h-9 bg-blue-500 rounded-xl flex items-center justify-center shadow-sm">
-            <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-            </svg>
-          </div>
-          <span className="text-xl font-bold text-gray-900">Doctor.mx</span>
-        </Link>
-      </div>
       <Card className="p-6">
         <div className="flex items-center justify-between mb-4">
           <div>

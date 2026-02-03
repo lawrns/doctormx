@@ -221,16 +221,16 @@ export function ImageUploader({
     <div className="space-y-6">
       {status === 'locked' ? (
         <div className="bg-gray-50 rounded-2xl p-8 text-center">
-          <div className="w-16 h-16 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
             <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
             </svg>
           </div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">Análisis de Imágenes Premium</h3>
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">Límite de análisis alcanzado</h3>
           <p className="text-gray-600 mb-4">
             {loadingUsage
               ? 'Verificando acceso...'
-              : `Has alcanzado tu límite de ${usage.limit} análisis este mes.`
+              : `Has usado tus ${usage.limit} análisis gratuitos este mes.`
             }
           </p>
           {usage.limit > 0 && (
@@ -241,7 +241,7 @@ export function ImageUploader({
               </div>
               <div className="w-full bg-gray-200 rounded-full h-2">
                 <div
-                  className="bg-amber-500 h-2 rounded-full"
+                  className="bg-blue-500 h-2 rounded-full"
                   style={{ width: `${Math.min(100, (usage.used / usage.limit) * 100)}%` }}
                 />
               </div>
@@ -250,22 +250,22 @@ export function ImageUploader({
           <div className="flex gap-3 justify-center">
             <button
               onClick={() => setShowPaywall(true)}
-              className="px-6 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-medium rounded-lg hover:from-amber-600 hover:to-orange-600 transition-colors"
+              className="px-6 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-medium rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-colors"
             >
-              Ver Planes o Comprar
+              Obtener más análisis
             </button>
           </div>
 
           <Modal
             isOpen={showPaywall}
             onClose={() => setShowPaywall(false)}
-            title="Desbloquear Análisis de Imágenes"
+            title="Límite de análisis alcanzado"
             size="md"
           >
             <div className="space-y-6">
               <div className="text-center">
                 <p className="text-gray-600">
-                  Compra análisis adicionales o upgrade tu plan
+                  Has usado tus 3 análisis gratuitos este mes. Obtén más análisis actualizando a Premium.
                 </p>
               </div>
 
@@ -284,10 +284,10 @@ export function ImageUploader({
                     Comprar Ahora
                   </button>
                 </div>
-                <div className="p-4 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-lg">
+                <div className="p-4 bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200 rounded-lg">
                   <div className="flex items-center gap-2 mb-2">
                     <h4 className="font-medium text-gray-900">Pack de 10</h4>
-                    <span className="px-2 py-0.5 bg-amber-500 text-white text-xs font-bold rounded-full">-20%</span>
+                    <span className="px-2 py-0.5 bg-blue-500 text-white text-xs font-bold rounded-full">-20%</span>
                   </div>
                   <p className="text-2xl font-bold text-gray-900">$400 MXN</p>
                   <p className="text-sm text-gray-500">$40 por análisis</p>
@@ -296,7 +296,7 @@ export function ImageUploader({
                       setShowPaywall(false)
                       window.location.href = '/app/premium?purchase=image_analysis&type=bundle'
                     }}
-                    className="mt-3 w-full py-2 px-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-lg hover:from-amber-600 hover:to-orange-600 transition-colors text-sm"
+                    className="mt-3 w-full py-2 px-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-colors text-sm"
                   >
                     Comprar Pack
                   </button>
@@ -316,6 +316,26 @@ export function ImageUploader({
         </div>
       ) : !result ? (
         <>
+          {usage.limit > 0 && (
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-4">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-blue-900">
+                      {usage.limit - usage.used} análisis gratis restantes este mes
+                    </p>
+                    <p className="text-xs text-blue-700">Límite mensual: {usage.limit} análisis</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
           <div
             ref={dropZoneRef}
             onDrop={handleDrop}
@@ -325,8 +345,8 @@ export function ImageUploader({
             className={`
               border-2 border-dashed rounded-2xl p-8 text-center cursor-pointer
               transition-all duration-200
-              ${selectedFile 
-                ? 'border-primary-300 bg-primary-50' 
+              ${selectedFile
+                ? 'border-primary-300 bg-primary-50'
                 : 'border-gray-300 hover:border-primary-400 hover:bg-gray-50'
               }
               ${status === 'uploading' || status === 'analyzing' ? 'pointer-events-none opacity-50' : ''}

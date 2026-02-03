@@ -1,14 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
+import { getProfile } from '@/lib/auth'
 import { analyzeMedicalImage, saveAnalysis, ImageType } from '@/lib/ai/vision'
 
 export async function POST(req: NextRequest) {
   const startTime = Date.now()
-  
+
   try {
     const supabase = await createClient()
     const { data: { user } } = await supabase.auth.getUser()
-    
+
     if (!user) {
       return NextResponse.json(
         { error: 'No autenticado' },
@@ -43,71 +44,121 @@ export async function POST(req: NextRequest) {
       )
     }
 
-    const { data: subscription } = await supabase
-      .from('doctor_subscriptions')
-      .select('plan_id, status, current_period_start, current_period_end')
-      .eq('doctor_id', user.id)
-      .eq('status', 'active')
-      .single()
-
-    if (!subscription) {
+    // Get user profile to check role
+    const profile = await getProfile(user.id)
+    if (!profile) {
       return NextResponse.json(
-        {
-          error: 'Esta funcionalidad requiere un plan Pro o Elite',
-          requiresUpgrade: true,
-          upgradeTo: 'pro',
-          currentTier: 'none',
-          message: 'Upgrade a Pro para acceder al análisis de imágenes con IA'
-        },
-        { status: 403 }
-      )
-    }
-    
-    const tier = subscription.plan_id || 'starter'
-    
-    const tierLimits: Record<string, number> = {
-      none: 0,
-      starter: 0,
-      pro: 5,
-      elite: 10,
-    }
-    
-    const limit = tierLimits[tier] || 0
-
-    if (tier !== 'pro' && tier !== 'elite') {
-      return NextResponse.json(
-        { 
-          error: 'Esta funcionalidad requiere un plan Pro o Elite',
-          requiresUpgrade: true,
-          upgradeTo: 'pro',
-          currentTier: tier,
-          message: 'Upgrade a Pro para acceder al análisis de imágenes con IA'
-        },
-        { status: 403 }
+        { error: 'Perfil no encontrado' },
+        { status: 400 }
       )
     }
 
-    const { data: usageRecord } = await supabase
-      .from('premium_feature_usage')
-      .select('id, usage_count')
-      .eq('doctor_id', user.id)
-      .eq('feature_key', 'image_analysis')
-      .eq('period_start', subscription.current_period_start)
-      .single()
+    let limit = 0
+    let currentUsage = 0
+    let tier = 'starter'
 
-    const currentUsage = usageRecord?.usage_count || 0
-    
-    if (currentUsage >= limit && limit > 0) {
+    // Patient flow: 3 free analyses per month
+    if (profile.role === 'patient') {
+      const now = new Date()
+      const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString()
+
+      const { data: patientAnalyses } = await supabase
+        .from('medical_image_analyses')
+        .select('id')
+        .eq('patient_id', user.id)
+        .gte('created_at', monthStart)
+
+      currentUsage = patientAnalyses?.length || 0
+      limit = 3
+      tier = 'patient'
+
+      if (currentUsage >= limit) {
+        return NextResponse.json(
+          {
+            error: 'Has alcanzado tu límite de 3 análisis gratis este mes',
+            requiresUpgrade: true,
+            upgradeTo: 'premium',
+            currentTier: tier,
+            currentUsage,
+            limit,
+            message: 'Has usado tus 3 análisis gratuitos este mes. Actualiza a Premium para continuar.'
+          },
+          { status: 403 }
+        )
+      }
+    } else if (profile.role === 'doctor') {
+      // Doctor flow: check subscription
+      const { data: subscription } = await supabase
+        .from('doctor_subscriptions')
+        .select('plan_id, status, current_period_start, current_period_end')
+        .eq('doctor_id', user.id)
+        .eq('status', 'active')
+        .single()
+
+      if (!subscription) {
+        return NextResponse.json(
+          {
+            error: 'Esta funcionalidad requiere un plan Pro o Elite',
+            requiresUpgrade: true,
+            upgradeTo: 'pro',
+            currentTier: 'none',
+            message: 'Upgrade a Pro para acceder al análisis de imágenes con IA'
+          },
+          { status: 403 }
+        )
+      }
+
+      tier = subscription.plan_id || 'starter'
+
+      const tierLimits: Record<string, number> = {
+        none: 0,
+        starter: 0,
+        pro: 5,
+        elite: 10,
+      }
+
+      limit = tierLimits[tier] || 0
+
+      if (tier !== 'pro' && tier !== 'elite') {
+        return NextResponse.json(
+          {
+            error: 'Esta funcionalidad requiere un plan Pro o Elite',
+            requiresUpgrade: true,
+            upgradeTo: 'pro',
+            currentTier: tier,
+            message: 'Upgrade a Pro para acceder al análisis de imágenes con IA'
+          },
+          { status: 403 }
+        )
+      }
+
+      const { data: usageRecord } = await supabase
+        .from('premium_feature_usage')
+        .select('id, usage_count')
+        .eq('doctor_id', user.id)
+        .eq('feature_key', 'image_analysis')
+        .eq('period_start', subscription.current_period_start)
+        .single()
+
+      currentUsage = usageRecord?.usage_count || 0
+
+      if (currentUsage >= limit && limit > 0) {
+        return NextResponse.json(
+          {
+            error: 'Límite de análisis alcanzado',
+            requiresUpgrade: true,
+            upgradeTo: 'elite',
+            currentTier: tier,
+            currentUsage,
+            limit,
+            message: `Has usado ${currentUsage} de ${limit} análisis este mes. Upgrade a Elite para más análisis.`
+          },
+          { status: 403 }
+        )
+      }
+    } else {
       return NextResponse.json(
-        {
-          error: 'Límite de análisis alcanzado',
-          requiresUpgrade: true,
-          upgradeTo: 'elite',
-          currentTier: tier,
-          currentUsage,
-          limit,
-          message: `Has usado ${currentUsage} de ${limit} análisis este mes. Upgrade a Elite para más análisis.`
-        },
+        { error: 'Rol no autorizado' },
         { status: 403 }
       )
     }
@@ -154,24 +205,45 @@ export async function POST(req: NextRequest) {
       analysisResult
     )
 
-    if (usageRecord) {
-      await supabase
-        .from('premium_feature_usage')
-        .update({
-          usage_count: currentUsage + 1,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', usageRecord.id)
-    } else {
-      await supabase
-        .from('premium_feature_usage')
-        .insert({
-          doctor_id: user.id,
-          feature_key: 'image_analysis',
-          usage_count: 1,
-          period_start: subscription.current_period_start,
-          period_end: subscription.current_period_end
-        })
+    // Update usage tracking for doctors only
+    // Patients don't need premium_feature_usage tracking - they get 3 free per month
+    if (profile.role === 'doctor') {
+      const { data: subscription } = await supabase
+        .from('doctor_subscriptions')
+        .select('current_period_start, current_period_end')
+        .eq('doctor_id', user.id)
+        .eq('status', 'active')
+        .single()
+
+      if (subscription) {
+        const { data: usageRecord } = await supabase
+          .from('premium_feature_usage')
+          .select('id')
+          .eq('doctor_id', user.id)
+          .eq('feature_key', 'image_analysis')
+          .eq('period_start', subscription.current_period_start)
+          .single()
+
+        if (usageRecord) {
+          await supabase
+            .from('premium_feature_usage')
+            .update({
+              usage_count: currentUsage + 1,
+              updated_at: new Date().toISOString()
+            })
+            .eq('id', usageRecord.id)
+        } else {
+          await supabase
+            .from('premium_feature_usage')
+            .insert({
+              doctor_id: user.id,
+              feature_key: 'image_analysis',
+              usage_count: 1,
+              period_start: subscription.current_period_start,
+              period_end: subscription.current_period_end
+            })
+        }
+      }
     }
 
     console.log('[VISION] Analysis complete', {

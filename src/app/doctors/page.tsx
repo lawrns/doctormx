@@ -1,4 +1,5 @@
 import { discoverDoctors, getAvailableSpecialties } from '@/lib/discovery'
+import { formatDoctorName } from '@/lib/utils'
 import { createClient } from '@/lib/supabase/server'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -18,6 +19,7 @@ export default async function DoctorsPage({
     search?: string
     sortBy?: 'rating' | 'price' | 'experience'
     sortOrder?: 'asc' | 'desc'
+    appointmentType?: 'all' | 'video' | 'in_person'
   }>
 }) {
   const params = await searchParams
@@ -37,6 +39,7 @@ export default async function DoctorsPage({
       searchQuery: params.search,
       sortBy: params.sortBy,
       sortOrder: params.sortOrder,
+      appointmentType: params.appointmentType as any,
     }),
     getAvailableSpecialties(),
   ])
@@ -47,6 +50,7 @@ export default async function DoctorsPage({
     if (params.search) searchParams.set('search', params.search)
     if (params.sortBy) searchParams.set('sortBy', params.sortBy)
     if (params.sortOrder) searchParams.set('sortOrder', params.sortOrder)
+    if (params.appointmentType) searchParams.set('appointmentType', params.appointmentType)
 
     Object.entries(newParams).forEach(([key, value]) => {
       if (value) {
@@ -62,57 +66,6 @@ export default async function DoctorsPage({
 
   return (
     <div className="min-h-screen bg-neutral-50">
-      {/* Header */}
-      <header className="bg-white/95 backdrop-blur-md border-b border-neutral-100 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-4">
-            <Link href="/ai-consulta" className="flex items-center gap-1.5 text-neutral-600 hover:text-primary-500 transition-colors">
-              <ArrowLeft className="w-5 h-5" />
-              <span className="font-medium hidden sm:inline">Volver</span>
-            </Link>
-            <Link href="/" className="flex items-center gap-2.5">
-              <div className="w-9 h-9 bg-primary-500 rounded-xl flex items-center justify-center shadow-sm">
-                <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              </div>
-              <span className="text-xl font-bold text-neutral-900">Doctor.mx</span>
-            </Link>
-          </div>
-          <div className="flex items-center gap-3">
-            {user ? (
-              <>
-                <Link href="/app">
-                  <Button variant="ghost" className="text-neutral-600 hover:text-neutral-900 flex items-center gap-2">
-                    <User className="w-4 h-4" />
-                    Mi cuenta
-                  </Button>
-                </Link>
-                <form action="/auth/signout" method="post">
-                  <Button type="submit" variant="outline" className="flex items-center gap-2">
-                    <LogOut className="w-4 h-4" />
-                    Cerrar sesión
-                  </Button>
-                </form>
-              </>
-            ) : (
-              <>
-                <Link href="/auth/login">
-                  <Button variant="ghost" className="text-neutral-600 hover:text-neutral-900">
-                    Iniciar sesión
-                  </Button>
-                </Link>
-                <Link href="/auth/register">
-                  <Button>
-                    Registrarse
-                  </Button>
-                </Link>
-              </>
-            )}
-          </div>
-        </div>
-      </header>
-
       {/* Main */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Page Header */}
@@ -191,6 +144,34 @@ export default async function DoctorsPage({
                 </Button>
               </Link>
             </div>
+          </div>
+
+          {/* Appointment Type Filter */}
+          <div className="flex flex-wrap gap-2 mb-6">
+            <Link href={`/doctors${buildQueryString({ appointmentType: undefined })}`}>
+              <Badge
+                variant={!params.appointmentType || params.appointmentType === 'all' ? "default" : "outline"}
+                className={`px-4 py-2 text-sm cursor-pointer ${!params.appointmentType || params.appointmentType === 'all' ? 'bg-primary-500 hover:bg-primary-600' : 'hover:bg-neutral-100'}`}
+              >
+                Todas
+              </Badge>
+            </Link>
+            <Link href={`/doctors${buildQueryString({ appointmentType: 'video' })}`}>
+              <Badge
+                variant={params.appointmentType === 'video' ? "default" : "outline"}
+                className={`px-4 py-2 text-sm cursor-pointer ${params.appointmentType === 'video' ? 'bg-primary-500 hover:bg-primary-600' : 'hover:bg-neutral-100'}`}
+              >
+                Videoconsulta disponible
+              </Badge>
+            </Link>
+            <Link href={`/doctors${buildQueryString({ appointmentType: 'in_person' })}`}>
+              <Badge
+                variant={params.appointmentType === 'in_person' ? "default" : "outline"}
+                className={`px-4 py-2 text-sm cursor-pointer ${params.appointmentType === 'in_person' ? 'bg-primary-500 hover:bg-primary-600' : 'hover:bg-neutral-100'}`}
+              >
+                Consulta presencial
+              </Badge>
+            </Link>
           </div>
 
           {/* Specialty Filter */}
@@ -284,7 +265,7 @@ export default async function DoctorsPage({
                     </div>
                     <div className="flex-1 min-w-0">
                       <h3 className="font-semibold text-neutral-900 text-lg truncate group-hover:text-primary-500 transition-colors">
-                        Dr. {doctor.profile?.full_name}
+                        {formatDoctorName(doctor.profile?.full_name)}
                       </h3>
                       <Badge className="bg-green-50 text-green-700 border-green-200 text-xs mt-1">
                         <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">

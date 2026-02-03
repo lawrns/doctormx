@@ -8,6 +8,10 @@ export type AppointmentStatus =
   | 'no_show'
   | 'refunded'
 
+export type AppointmentType = 'in_person' | 'video'
+
+export type VideoStatus = 'pending' | 'ready' | 'in_progress' | 'completed' | 'missed'
+
 export type DoctorStatus =
   | 'pending'    // No verificado - puede configurar todo
   | 'approved'   // Verificado - visible en catálogo
@@ -61,9 +65,17 @@ export interface Appointment {
   start_ts: string
   end_ts: string
   status: AppointmentStatus
+  appointment_type?: AppointmentType
+  video_status?: VideoStatus
+  video_room_url?: string | null
+  video_room_id?: string | null
+  video_started_at?: string | null
+  video_ended_at?: string | null
+  consultation_notes?: string | null
   cancellation_reason: string | null
   cancelled_by: string | null
   created_at: string
+  doctor?: Doctor
 }
 
 export interface Payment {

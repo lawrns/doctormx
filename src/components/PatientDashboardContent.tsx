@@ -156,14 +156,22 @@ export function QuickStats({ appointments }: { appointments: Appointment[] }) {
 
   return (
     <div className="grid grid-cols-2 gap-4 mb-8">
-      <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-4 text-white">
-        <p className="text-blue-100 text-sm font-medium">Consultas completadas</p>
-        <p className="text-3xl font-bold">{completed}</p>
-      </div>
-      <div className="bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl p-4 text-white">
-        <p className="text-blue-100 text-sm font-medium">Próximas consultas</p>
-        <p className="text-3xl font-bold">{upcoming}</p>
-      </div>
+      <Link href="/doctors" className="block">
+        <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-4 text-white hover:shadow-lg transition-shadow">
+          <p className="text-blue-100 text-sm font-medium">
+            {completed > 0 ? 'Consultas completadas' : 'Agenda tu primera consulta →'}
+          </p>
+          <p className="text-3xl font-bold">{completed || '→'}</p>
+        </div>
+      </Link>
+      <Link href="/doctors" className="block">
+        <div className="bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl p-4 text-white hover:shadow-lg transition-shadow">
+          <p className="text-blue-100 text-sm font-medium">
+            {upcoming > 0 ? 'Próximas consultas' : 'No tienes citas próximas'}
+          </p>
+          <p className="text-3xl font-bold">{upcoming || 'Buscar'}</p>
+        </div>
+      </Link>
     </div>
   )
 }
