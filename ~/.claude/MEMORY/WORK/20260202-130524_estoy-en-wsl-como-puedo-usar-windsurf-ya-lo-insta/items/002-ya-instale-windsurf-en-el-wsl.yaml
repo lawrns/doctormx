@@ -1,0 +1,11 @@
+id: "002"
+description: "ya instale windsurf en el wsl y dice que no tnego qu einstalarlo solo lo tengo que tener instalado en mi pc "
+type: "conversational"
+effort: "TRIVIAL"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-02T13:06:25-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

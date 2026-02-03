@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Card } from '@/components/Card'
-import { Button } from '@/components/Button'
+import { Button } from '@/components/ui/button'
 import { searchDirectory, getDirectorySpecialties, getDirectoryCities } from '@/lib/domains/directory'
 
 interface PageProps {

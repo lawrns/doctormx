@@ -281,6 +281,7 @@ function AppointmentsPageContent() {
   }, [])
   
   useEffect(() => {
+    if (!searchParams) return
     const tabParam = searchParams.get('tab') as TabType
     if (tabParam && tabs.some(t => t.key === tabParam)) {
       setActiveTab(tabParam)
@@ -314,7 +315,7 @@ function AppointmentsPageContent() {
   
   const handleTabChange = (tab: TabType) => {
     setActiveTab(tab)
-    const params = new URLSearchParams(searchParams.toString())
+    const params = new URLSearchParams(searchParams?.toString() || '')
     params.set('tab', tab)
     router.push(`/app/appointments?${params.toString()}`)
   }

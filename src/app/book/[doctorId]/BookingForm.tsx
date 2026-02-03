@@ -71,6 +71,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
   const [consultationId, setConsultationId] = useState<string | null>(null)
 
   useEffect(() => {
+    if (!searchParams) return
     const dateParam = searchParams.get('date')
     const timeParam = searchParams.get('time')
     const consultationIdParam = searchParams.get('consultationId')

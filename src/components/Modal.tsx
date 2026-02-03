@@ -1,105 +1,83 @@
-'use client'
-
-import { ReactNode, useEffect, useCallback } from 'react'
+import { ReactNode } from 'react'
+import { cn } from '@/lib/utils'
+import { X } from 'lucide-react'
 
 interface ModalProps {
   isOpen: boolean
   onClose: () => void
-  title?: string
   children: ReactNode
+  title?: string
   size?: 'sm' | 'md' | 'lg' | 'xl'
   showCloseButton?: boolean
+  className?: string
 }
 
 const sizeClasses = {
-  sm: 'max-w-md',
-  md: 'max-w-lg',
-  lg: 'max-w-xl',
-  xl: 'max-w-2xl',
+  sm: 'max-w-sm',
+  md: 'max-w-md',
+  lg: 'max-w-lg',
+  xl: 'max-w-xl',
 }
 
 export function Modal({
   isOpen,
   onClose,
-  title,
   children,
+  title,
   size = 'md',
   showCloseButton = true,
+  className = '',
 }: ModalProps) {
-  const handleEscape = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      onClose()
-    }
-  }, [onClose])
-
-  useEffect(() => {
-    if (isOpen) {
-      document.addEventListener('keydown', handleEscape)
-      document.body.style.overflow = 'hidden'
-    }
-
-    return () => {
-      document.removeEventListener('keydown', handleEscape)
-      document.body.style.overflow = 'unset'
-    }
-  }, [isOpen, handleEscape])
-
   if (!isOpen) return null
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      {/* Backdrop with blur */}
+      {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-[rgba(15,23,42,0.2)] backdrop-blur-sm animate-fade-in"
+        className="absolute inset-0 bg-black/50"
         onClick={onClose}
       />
-
+      
       {/* Modal */}
       <div
-        className={`
-          relative w-full ${sizeClasses[size]}
-          bg-[var(--color-surface)] rounded-lg shadow-xl interactive
-          animate-fade-in-up
-        `}
-        onClick={(e) => e.stopPropagation()}
+        className={cn(
+          'relative bg-white rounded-lg shadow-xl w-full',
+          sizeClasses[size],
+          className
+        )}
       >
         {/* Header */}
         {(title || showCloseButton) && (
-          <div className="flex items-center justify-between px-6 py-4 border-b border-[var(--border-default)]">
+          <div className="flex items-center justify-between p-4 border-b border-gray-200">
             {title && (
-              <h3 className="text-lg font-semibold text-[var(--color-text-primary)] display-text">
-                {title}
-              </h3>
+              <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
             )}
             {showCloseButton && (
               <button
                 onClick={onClose}
-                className="p-2 rounded-md text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-neutral-100)] interactive"
-                aria-label="Cerrar"
+                className="ml-auto text-gray-400 hover:text-gray-600 transition-colors"
               >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    fillRule="evenodd"
-                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                <X className="w-5 h-5" />
               </button>
             )}
           </div>
         )}
-
+        
         {/* Content */}
-        <div className="px-6 py-6">{children}</div>
+        <div className="p-4">{children}</div>
       </div>
     </div>
   )
 }
 
-// Modal Footer helper for consistent button layouts
-export function ModalFooter({ children }: { children: ReactNode }) {
+interface ModalFooterProps {
+  children: ReactNode
+  className?: string
+}
+
+export function ModalFooter({ children, className = '' }: ModalFooterProps) {
   return (
-    <div className="flex flex-col-reverse sm:flex-row sm:justify-end gap-3 sm:gap-4 mt-4 pt-4 border-t border-[var(--border-default)]">
+    <div className={cn('mt-4 pt-4 border-t border-gray-200 flex justify-end gap-2', className)}>
       {children}
     </div>
   )

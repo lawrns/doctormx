@@ -1,0 +1,12 @@
+id: "004"
+description: "laurence@USER-NPOU66G5M9:~/felipe/doctormx$ wf
+/mnt/c/Users/isaac/AppData/Local/Programs/Windsurf/Windsurf.exe: Invalid argument"
+type: "question"
+effort: "TRIVIAL"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-02T13:15:05-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

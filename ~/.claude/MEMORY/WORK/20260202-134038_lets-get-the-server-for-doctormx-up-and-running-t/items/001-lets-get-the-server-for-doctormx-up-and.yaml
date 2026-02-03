@@ -1,0 +1,11 @@
+id: "001"
+description: "let's get the server for doctormx up and running to test it in localhost:3000"
+type: "work"
+effort: "QUICK"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-02T13:40:38-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

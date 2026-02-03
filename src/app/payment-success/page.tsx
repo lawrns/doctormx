@@ -11,8 +11,8 @@ function PaymentSuccessContent() {
   const [loading, setLoading] = useState(true)
   const [appointment, setAppointment] = useState<Appointment & { doctor: Doctor } | null>(null)
 
-  const appointmentId = searchParams.get('appointmentId')
-  const paymentIntent = searchParams.get('payment_intent')
+  const appointmentId = searchParams?.get('appointmentId')
+  const paymentIntent = searchParams?.get('payment_intent')
 
   useEffect(() => {
     if (appointmentId && paymentIntent) {

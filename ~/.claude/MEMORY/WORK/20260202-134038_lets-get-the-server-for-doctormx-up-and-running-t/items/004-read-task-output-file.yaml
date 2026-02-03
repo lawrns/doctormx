@@ -1,0 +1,17 @@
+id: "004"
+description: "<task-notification>
+<task-id>b494e38</task-id>
+<output-file>/tmp/claude-1001/-home-laurence-felipe-doctormx/tasks/b494e38.output</output-file>
+<status>failed</status>
+<summary>Background command \"Kill all Next.js processes and restart\" failed with exit code 144</summary>
+</task-notification>
+Read the output file to retrieve the result: /tmp/claude-1001/-home-laurence-felipe-doctormx/tasks/b494e38.output"
+type: "work"
+effort: "TRIVIAL"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-02T13:43:38-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

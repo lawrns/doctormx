@@ -1,278 +1,134 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Zap, Shield, Gift, ArrowRight, BadgeCheck, Clock, Users, Lock } from 'lucide-react'
-import { useReducedMotion } from '@/hooks/useReducedMotion'
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.1,
-    },
-  },
-}
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: 'easeOut' as const },
-  },
-}
-
-const floatVariants = {
-  initial: { opacity: 0, y: 20 },
-  animate: {
-    opacity: 1,
-    y: [-8, 8, -8],
-    transition: {
-      opacity: { duration: 0.6, delay: 1.2 },
-      y: { duration: 6, repeat: Infinity, ease: 'easeInOut' as const, delay: 1.8 },
-    },
-  },
-}
+import { ArrowRight, BadgeCheck, Clock, Shield, Users } from 'lucide-react'
 
 export function HeroSection() {
-  const prefersReducedMotion = useReducedMotion()
-
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 pb-16">
-      {/* Warm Doctronic Background */}
-      <div className="absolute inset-0 -z-10 bg-[#fdfaf6]">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#fdfaf6] via-[#fdfaf6] to-[#f4f1ed]" />
+    <section className="relative min-h-[90vh] flex items-center bg-white pt-20 pb-16">
+      {/* Subtle background pattern */}
+      <div 
+        className="absolute inset-0 opacity-[0.015]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }}
+      />
 
-        {/* Animated gradient orbs - respect reduced motion */}
-        <motion.div
-          className="absolute top-[10%] left-[5%] w-[600px] h-[600px] bg-gradient-to-br from-primary-200/40 to-primary-100/20 rounded-full blur-3xl"
-          animate={prefersReducedMotion ? {} : { scale: [1, 1.15, 1], x: [0, 40, 0], y: [0, -30, 0] }}
-          transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
-        />
-        <motion.div
-          className="absolute bottom-[5%] right-[10%] w-[500px] h-[500px] bg-gradient-to-br from-accent-50/40 to-primary-50/30 rounded-full blur-3xl"
-          animate={prefersReducedMotion ? {} : { scale: [1, 1.2, 1], x: [0, -30, 0], y: [0, 20, 0] }}
-          transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
-        />
-      </div>
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left Content */}
+          <div className="text-center lg:text-left">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-100 mb-6">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+              </span>
+              <span className="text-sm font-medium text-blue-700">
+                5 consultas GRATIS disponibles
+              </span>
+            </div>
 
-      {/* Content Container */}
-      <motion.div
-        className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {/* Dr. Simeon Avatar + Live Badge - Main Trust Signal */}
-        <motion.div variants={itemVariants} className="flex justify-center mb-8">
-          <div className="flex items-center gap-4">
-            {/* Dr. Simeon Photo */}
+            {/* Heading */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight leading-tight">
+              Consulta médica
+              <br />
+              <span className="text-blue-600">100% gratuita</span>
+            </h1>
+
+            {/* Subheading */}
+            <p className="mt-6 text-lg sm:text-xl text-gray-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+              Salud accesible para todos. Consulta con IA médica las veces que necesites — 
+              <span className="text-gray-900 font-medium"> sin registrar, sin pagar</span>.
+              Cuando necesites un doctor real, te conectamos con especialistas verificados.
+            </p>
+
+            {/* Benefits */}
+            <div className="mt-8 flex flex-wrap justify-center lg:justify-start gap-4 text-sm text-gray-600">
+              <div className="flex items-center gap-1.5">
+                <Shield className="w-4 h-4 text-blue-500" />
+                <span>Sin registro</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <BadgeCheck className="w-4 h-4 text-blue-500" />
+                <span>Doctores verificados</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Clock className="w-4 h-4 text-blue-500" />
+                <span>24/7 disponible</span>
+              </div>
+            </div>
+
+            {/* CTAs */}
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <Link
+                href="/ai-consulta"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors w-full sm:w-auto"
+              >
+                Consultar ahora — Gratis
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+              <Link
+                href="/doctors"
+                className="inline-flex items-center justify-center px-8 py-4 text-gray-700 font-medium rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors w-full sm:w-auto"
+              >
+                Buscar especialista
+              </Link>
+            </div>
+
+            {/* Trust indicators */}
+            <div className="mt-10 flex items-center justify-center lg:justify-start gap-6 text-sm text-gray-500">
+              <div className="flex items-center gap-2">
+                <Users className="w-4 h-4" />
+                <span><strong className="text-gray-900">10,000+</strong> consultas</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <BadgeCheck className="w-4 h-4" />
+                <span><strong className="text-gray-900">500+</strong> doctores</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Content - Image/Illustration */}
+          <div className="hidden lg:block">
             <div className="relative">
-              <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-xl">
+              {/* Main image container */}
+              <div className="relative rounded-2xl overflow-hidden bg-gray-100 aspect-[4/3]">
                 <Image
                   src="/images/simeon.png"
-                  alt="Dr. Simeon - Tu asistente médico IA"
-                  width={80}
-                  height={80}
-                  className="w-full h-full object-cover"
+                  alt="Dr. Simeon - Asistente médico IA"
+                  fill
+                  className="object-cover"
                   priority
                 />
               </div>
-              {/* Online indicator */}
-              <span
-                className="absolute bottom-1 right-1 w-5 h-5 bg-green-500 border-2 border-white rounded-full flex items-center justify-center"
-                aria-label="En linea"
-                role="status"
-              >
-                <span className="w-2 h-2 bg-white rounded-full animate-pulse" aria-hidden="true" />
-              </span>
-            </div>
 
-            {/* Live status badge */}
-            <div className="text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-50 border border-green-200 rounded-full mb-1">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                </span>
-                <span className="text-xs font-medium text-green-700">En línea ahora</span>
+              {/* Floating stats card */}
+              <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg border border-gray-100 p-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                    <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-gray-900">Dr. Simeon</p>
+                    <p className="text-xs text-green-600 flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+                      En línea ahora
+                    </p>
+                  </div>
+                </div>
               </div>
-              <p className="text-sm font-semibold text-text-primary">Dr. Simeon</p>
-              <p className="text-xs text-text-muted">Asistente médico IA</p>
+
+              {/* Response time card */}
+              <div className="absolute -top-4 -right-4 bg-white rounded-xl shadow-lg border border-gray-100 p-4">
+                <p className="text-xs text-gray-500 uppercase tracking-wide">Tiempo de respuesta</p>
+                <p className="text-2xl font-bold text-gray-900">&lt; 1 min</p>
+              </div>
             </div>
-          </div>
-        </motion.div>
-
-        {/* Main Headline - HUGE, Doctronic style - EMPHASIZE FREE */}
-        <motion.h1
-          variants={itemVariants}
-          className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-text-primary mb-6 leading-[1.1] tracking-tight"
-          style={{ fontFamily: 'var(--font-serif)' }}
-        >
-          5 Consultas Medicas
-          <br />
-          <span className="relative inline-block">
-            <span className="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 bg-clip-text text-transparent font-black">
-              100% GRATIS
-            </span>
-            {/* Animated underline */}
-            <motion.span
-              className="absolute -bottom-2 left-0 h-1.5 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full"
-              initial={{ width: 0 }}
-              animate={{ width: '100%' }}
-              transition={{ delay: 0.8, duration: 0.6, ease: 'easeOut' }}
-            />
-          </span>
-        </motion.h1>
-
-        {/* Subheadline - Conversational - EMPHASIZE FREE */}
-        <motion.p
-          variants={itemVariants}
-          className="text-xl sm:text-2xl text-text-secondary max-w-3xl mx-auto mb-8 leading-relaxed"
-        >
-          Salud accesible para todos. Consulta con IA médica las veces que necesites — <strong className="text-blue-600">sin registrar, sin pagar</strong>. Cuando necesites un doctor real, te conectamos con especialistas verificados.
-        </motion.p>
-
-        {/* Key Benefits - Lighter, Less Prominent - EMPHASIZE FREE */}
-        <motion.div
-          variants={itemVariants}
-          className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 mb-10 text-sm font-semibold"
-        >
-          <span className="flex items-center gap-1.5 bg-blue-50 text-blue-700 px-3 py-1.5 rounded-full">
-            <Zap className="w-4 h-4 text-blue-500" aria-hidden="true" />
-            5 consultas GRATIS
-          </span>
-          <span className="text-neutral-300" aria-hidden="true">•</span>
-          <span className="flex items-center gap-1.5">
-            <Shield className="w-4 h-4 text-blue-500" aria-hidden="true" />
-            Sin registro requerido
-          </span>
-          <span className="text-neutral-300" aria-hidden="true">•</span>
-          <span className="flex items-center gap-1.5">
-            <Gift className="w-4 h-4 text-blue-500" aria-hidden="true" />
-            Para todos los mexicanos
-          </span>
-        </motion.div>
-
-        {/* CTA Buttons - Single Dominant Action with Pulsing Glow */}
-        <motion.div
-          variants={itemVariants}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 w-full"
-        >
-          <Link href="/ai-consulta" className="w-full sm:w-auto">
-            <motion.button
-              whileHover={{ scale: 1.03, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className="group relative w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 min-h-[48px] bg-gradient-to-r from-blue-500 to-blue-600 text-white text-base sm:text-lg font-bold rounded-2xl shadow-xl shadow-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/40 transition-all overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-blue-600"
-              aria-label="Consultar gratis - Iniciar consulta médica gratuita con IA"
-            >
-              {/* Pulsing glow ring */}
-              <span className="absolute inset-0 rounded-2xl animate-pulse-ring" />
-
-              <span className="relative z-10 flex items-center justify-center gap-3">
-                CONSULTAR AHORA — GRATIS
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-              </span>
-              {/* Shimmer Effect - subtle, respects reduced motion */}
-              {!prefersReducedMotion && (
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
-                  animate={{ x: ['-100%', '100%'] }}
-                  transition={{ duration: 2.5, repeat: Infinity, ease: 'linear' }}
-                />
-              )}
-            </motion.button>
-          </Link>
-
-          {/* Secondary CTA - Much more subtle (Fixed per analysis) */}
-          <Link href="/doctors" className="w-full sm:w-auto">
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full sm:w-auto px-6 py-3 min-h-[44px] text-text-secondary hover:text-text-primary font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded-lg"
-            >
-              Buscar un Especialista
-            </motion.button>
-          </Link>
-        </motion.div>
-
-        {/* Tertiary CTA for Doctors */}
-        <motion.div variants={itemVariants} className="mb-12">
-          <Link
-            href="/for-doctors"
-            className="text-sm text-text-muted hover:text-primary-600 transition-colors"
-          >
-            Eres doctor? Unete a la red
-          </Link>
-        </motion.div>
-
-        {/* Trust Indicators - Visual Grouping with Container */}
-        <motion.div
-          variants={itemVariants}
-          className="inline-flex flex-wrap items-center justify-center gap-4 sm:gap-6 px-4 sm:px-6 py-3 bg-white/60 backdrop-blur-sm rounded-full border border-neutral-200/50 shadow-sm"
-        >
-          {[
-            { icon: BadgeCheck, text: 'Doctores con cedula verificada', value: '500+' },
-            { icon: Users, text: 'Consultas realizadas', value: '10,000+' },
-            { icon: Clock, text: 'Disponible', value: '24/7' },
-          ].map((item, i) => (
-            <div key={i} className="flex items-center gap-2 text-text-secondary text-sm">
-              {i > 0 && <div className="hidden sm:block w-px h-6 bg-neutral-300/50 -ml-2 mr-2" />}
-              <item.icon className="w-5 h-5 text-primary-500 flex-shrink-0" aria-hidden="true" />
-              <span className="font-semibold text-text-primary">{item.value}</span>
-              <span className="hidden sm:inline whitespace-nowrap">{item.text}</span>
-            </div>
-          ))}
-        </motion.div>
-
-        {/* Compliance Note */}
-        <motion.p
-          variants={itemVariants}
-          className="text-xs text-text-muted max-w-md mx-auto mt-4"
-        >
-          Servicio de orientacion medica. No sustituye la consulta presencial.
-        </motion.p>
-      </motion.div>
-
-      {/* Floating Chat Card with Dr. Simeon Face */}
-      <motion.div
-        className="absolute top-32 right-12 hidden lg:block"
-        variants={prefersReducedMotion ? undefined : floatVariants}
-        initial={prefersReducedMotion ? { opacity: 1 } : 'initial'}
-        animate={prefersReducedMotion ? { opacity: 1 } : 'animate'}
-      >
-        <div className="bg-white rounded-2xl p-4 shadow-2xl border border-neutral-100 w-72">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary-100">
-              <Image
-                src="/images/simeon.png"
-                alt="Dr. Simeon"
-                width={48}
-                height={48}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div>
-              <p className="font-semibold text-sm text-text-primary">Dr. Simeon</p>
-              <p className="text-xs text-green-500 flex items-center gap-1">
-                <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
-                En línea
-              </p>
-            </div>
-          </div>
-          <div className="bg-neutral-50 rounded-xl p-3 mb-2">
-            <p className="text-sm text-text-secondary">¡Hola! Soy tu asistente médico. ¿En qué puedo ayudarte hoy?</p>
-          </div>
-          <div className="flex items-center gap-2 text-xs text-text-muted">
-            <Lock className="w-3 h-3" aria-hidden="true" />
-            <span>Conversacion privada y segura</span>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   )
 }

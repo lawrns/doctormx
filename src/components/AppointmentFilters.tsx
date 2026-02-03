@@ -28,9 +28,9 @@ export function AppointmentFilters() {
   const router = useRouter()
   const searchParams = useSearchParams()
 
-  const currentStatus = searchParams.get('status') || 'all'
-  const currentTime = searchParams.get('time') || 'upcoming'
-  const currentSearch = searchParams.get('search') || ''
+  const currentStatus = searchParams?.get('status') || 'all'
+  const currentTime = searchParams?.get('time') || 'upcoming'
+  const currentSearch = searchParams?.get('search') || ''
 
   const [searchInput, setSearchInput] = useState(currentSearch)
 
@@ -40,7 +40,7 @@ export function AppointmentFilters() {
   }, [currentSearch])
 
   const updateFilter = useCallback((key: string, value: string) => {
-    const params = new URLSearchParams(searchParams.toString())
+    const params = new URLSearchParams(searchParams?.toString() || '')
     if (value === '' || (key === 'status' && value === 'all') || (key === 'time' && value === 'upcoming')) {
       params.delete(key)
     } else {

@@ -1,79 +1,58 @@
-// Skeleton loader components for loading states
+import { cn } from '@/lib/utils'
 
-type SkeletonProps = {
+interface SkeletonProps {
   className?: string
 }
 
 export function Skeleton({ className = '' }: SkeletonProps) {
   return (
-    <div className={`skeleton-shimmer rounded ${className}`} />
+    <div
+      className={cn(
+        'animate-pulse rounded-md bg-gray-200',
+        className
+      )}
+    />
   )
 }
 
-export function SkeletonCard() {
+export function SkeletonCard({ className = '' }: SkeletonProps) {
   return (
-    <div className="bg-[var(--color-surface)] p-6 rounded-lg border border-[var(--border-default)]">
-      <Skeleton className="h-4 w-24 mb-2" />
-      <Skeleton className="h-8 w-full mb-4" />
-      <Skeleton className="h-4 w-3/4" />
+    <div className={cn('rounded-lg border border-gray-200 p-4', className)}>
+      <Skeleton className="h-4 w-1/3 mb-4" />
+      <Skeleton className="h-20 w-full mb-4" />
+      <Skeleton className="h-4 w-2/3" />
     </div>
   )
 }
 
-export function SkeletonStatCards({ count = 4 }: { count?: number }) {
+export function SkeletonStatCards() {
   return (
-    <div className="grid md:grid-cols-4 gap-6">
-      {Array.from({ length: count }).map((_, i) => (
-        <SkeletonCard key={i} />
-      ))}
-    </div>
-  )
-}
-
-export function SkeletonDoctorCard() {
-  return (
-    <div className="bg-[var(--color-surface)] p-6 rounded-lg border border-[var(--border-default)]">
-      <div className="flex items-start gap-4 mb-4">
-        <Skeleton className="h-12 w-12 rounded-full flex-shrink-0" />
-        <div className="flex-1">
-          <Skeleton className="h-5 w-48 mb-2" />
-          <Skeleton className="h-4 w-32" />
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      {[...Array(4)].map((_, i) => (
+        <div key={i} className="rounded-lg border border-gray-200 p-6">
+          <Skeleton className="h-4 w-24 mb-2" />
+          <Skeleton className="h-8 w-16" />
         </div>
-      </div>
-      <Skeleton className="h-24 w-full mb-4" />
-      <div className="flex gap-2">
-        <Skeleton className="h-8 w-20 flex-1" />
-        <Skeleton className="h-8 w-20 flex-1" />
-      </div>
-    </div>
-  )
-}
-
-export function SkeletonDoctorList({ count = 4 }: { count?: number }) {
-  return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {Array.from({ length: count }).map((_, i) => (
-        <SkeletonDoctorCard key={i} />
       ))}
     </div>
   )
 }
 
-export function SkeletonAppointmentList({ count = 3 }: { count?: number }) {
+interface SkeletonAppointmentListProps {
+  count?: number
+}
+
+export function SkeletonAppointmentList({ count = 5 }: SkeletonAppointmentListProps) {
   return (
     <div className="space-y-4">
-      {Array.from({ length: count }).map((_, i) => (
-        <div key={i} className="bg-[var(--color-surface)] p-4 rounded-lg border border-[var(--border-default)]">
-          <div className="flex items-start gap-4 mb-3">
-            <Skeleton className="h-10 w-10 rounded-full flex-shrink-0" />
+      {[...Array(count)].map((_, i) => (
+        <div key={i} className="rounded-lg border border-gray-200 p-4">
+          <div className="flex items-center gap-4">
+            <Skeleton className="h-12 w-12 rounded-full" />
             <div className="flex-1">
-              <Skeleton className="h-5 w-48 mb-2" />
-              <Skeleton className="h-4 w-64" />
+              <Skeleton className="h-4 w-32 mb-2" />
+              <Skeleton className="h-3 w-48" />
             </div>
-          </div>
-          <div className="flex items-center justify-between pt-3 border-t border-[var(--border-default)]">
-            <Skeleton className="h-8 w-24" />
-            <Skeleton className="h-8 w-20" />
           </div>
         </div>
       ))}
@@ -81,21 +60,24 @@ export function SkeletonAppointmentList({ count = 3 }: { count?: number }) {
   )
 }
 
-export function SkeletonTable({ rows = 5, cols = 4 }: { rows?: number; cols?: number }) {
+interface SkeletonTableProps {
+  rows?: number
+  cols?: number
+}
+
+export function SkeletonTable({ rows = 5, cols = 4 }: SkeletonTableProps) {
   return (
-    <div className="overflow-hidden">
-      <div className="border-b border-[var(--border-default)] pb-3 mb-3">
-        <div className="flex gap-4">
-          {Array.from({ length: cols }).map((_, i) => (
-            <Skeleton key={i} className="h-4 flex-1" />
-          ))}
-        </div>
+    <div className="rounded-lg border border-gray-200">
+      <div className="p-4 border-b border-gray-200">
+        <Skeleton className="h-4 w-full" />
       </div>
-      {Array.from({ length: rows }).map((_, rowIndex) => (
-        <div key={rowIndex} className="flex gap-4 py-3 border-b border-[var(--border-default)]">
-          {Array.from({ length: cols }).map((_, colIndex) => (
-            <Skeleton key={colIndex} className="h-4 flex-1" />
-          ))}
+      {[...Array(rows)].map((_, i) => (
+        <div key={i} className="p-4 border-b border-gray-200 last:border-0">
+          <div className="flex gap-4">
+            {[...Array(cols)].map((_, j) => (
+              <Skeleton key={j} className="h-4 w-1/4" />
+            ))}
+          </div>
         </div>
       ))}
     </div>

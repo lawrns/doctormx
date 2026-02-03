@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useParams, useRouter } from 'next/navigation'
-import { Button } from '@/components/Button'
+import { Button } from '@/components/ui/button'
 import { Card } from '@/components/Card'
 import { Badge } from '@/components/Badge'
 import { 
@@ -31,7 +31,7 @@ const STATUS_LABELS: Record<string, { label: string; color: BadgeVariant }> = {
 export default function SecondOpinionDetailPage() {
   const params = useParams()
   const router = useRouter()
-  const id = params.id as string
+  const id = params?.id as string
   
   const [request, setRequest] = useState<RequestWithDocuments | null>(null)
   const [loading, setLoading] = useState(true)

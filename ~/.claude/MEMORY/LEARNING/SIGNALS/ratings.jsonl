@@ -27,3 +27,16 @@
 {"timestamp":"2026-01-24T19:31:46-06:00","rating":5,"session_id":"14f921d9-0386-43e9-bd8c-2798206f62fe","source":"implicit","sentiment_summary":"Technical diagnosis, no emotional content","confidence":0.95}
 {"timestamp":"2026-01-24T19:54:01-06:00","rating":5,"session_id":"14f921d9-0386-43e9-bd8c-2798206f62fe","source":"implicit","sentiment_summary":"Neutral verification request","confidence":0.92}
 {"timestamp":"2026-01-24T20:52:25-06:00","rating":4,"session_id":"14f921d9-0386-43e9-bd8c-2798206f62fe","source":"implicit","sentiment_summary":"Frustrated by incomplete deployment verification","confidence":0.85}
+{"timestamp":"2026-02-02T13:03:25-06:00","rating":5,"session_id":"01077b34-5b1a-49c8-b700-6ebcfce57372","source":"implicit","sentiment_summary":"Neutral command to uninstall software","confidence":0.95}
+{"timestamp":"2026-02-02T13:05:27-06:00","rating":5,"session_id":"847a70d0-add1-4467-803d-6d9aa6850e7e","source":"implicit","sentiment_summary":"Neutral technical question about WSL integration","confidence":0.9}
+{"timestamp":"2026-02-02T13:06:26-06:00","rating":5,"session_id":"847a70d0-add1-4467-803d-6d9aa6850e7e","source":"implicit","sentiment_summary":"Clarifying Windsurf installation situation","confidence":0.7}
+{"timestamp":"2026-02-02T13:07:38-06:00","rating":3,"session_id":"847a70d0-add1-4467-803d-6d9aa6850e7e","source":"implicit","sentiment_summary":"Frustrated that solution doesn't work","confidence":0.85}
+{"timestamp":"2026-02-02T13:15:09-06:00","rating":3,"session_id":"847a70d0-add1-4467-803d-6d9aa6850e7e","source":"implicit","sentiment_summary":"Error running Windsurf via wf alias","confidence":0.85}
+{"timestamp":"2026-02-02T13:18:00-06:00","rating":5,"session_id":"2e6f9a77-f6a0-4192-9eb5-1ea78ddfd1dc","source":"implicit","sentiment_summary":"Neutral command to pull GitHub changes","confidence":0.95}
+{"timestamp":"2026-02-02T13:21:10-06:00","rating":2,"session_id":"847a70d0-add1-4467-803d-6d9aa6850e7e","source":"implicit","sentiment_summary":"Frustrated by incorrect Windsurf solution","confidence":0.95}
+{"timestamp":"2026-02-02T13:40:30-06:00","rating":5,"session_id":"513947e3-5044-4ca3-a80a-4a20f3afda94","source":"implicit","sentiment_summary":"Neutral command to start server","confidence":0.95}
+{"timestamp":"2026-02-02T13:43:10-06:00","rating":3,"session_id":"513947e3-5044-4ca3-a80a-4a20f3afda94","source":"implicit","sentiment_summary":"Frustrated by repeated dev server startup failures","confidence":0.85}
+{"timestamp":"2026-02-02T13:43:23-06:00","rating":2,"session_id":"513947e3-5044-4ca3-a80a-4a20f3afda94","source":"implicit","sentiment_summary":"Frustrated by repeated server restart failures","confidence":0.85}
+{"timestamp":"2026-02-02T13:43:43-06:00","rating":2,"session_id":"513947e3-5044-4ca3-a80a-4a20f3afda94","source":"implicit","sentiment_summary":"Three failed background tasks in a row","confidence":0.85}
+{"timestamp":"2026-02-02T13:43:55-06:00","rating":8,"session_id":"513947e3-5044-4ca3-a80a-4a20f3afda94","source":"implicit","sentiment_summary":"Successful server start brings relief","confidence":0.95}
+{"timestamp":"2026-02-02T16:49:13-06:00","rating":5,"session_id":"513947e3-5044-4ca3-a80a-4a20f3afda94","source":"implicit","sentiment_summary":"Neutral task notification, no sentiment","confidence":0.95}

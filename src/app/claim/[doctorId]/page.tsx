@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useParams, useRouter } from 'next/navigation'
-import { Button } from '@/components/Button'
+import { Button } from '@/components/ui/button'
 import { Card } from '@/components/Card'
 import { Input } from '@/components/Input'
 import { Badge } from '@/components/Badge'
@@ -29,7 +29,7 @@ interface ClaimData {
 export default function ClaimProfilePage() {
   const params = useParams()
   const router = useRouter()
-  const doctorId = params.doctorId as string
+  const doctorId = params?.doctorId as string
   
   const [profile, setProfile] = useState<UnclaimedProfile | null>(null)
   const [claim, setClaim] = useState<ClaimData | null>(null)

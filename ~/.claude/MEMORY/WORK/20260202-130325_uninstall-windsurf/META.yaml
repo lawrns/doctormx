@@ -1,0 +1,12 @@
+id: "20260202-130325_uninstall-windsurf"
+title: "Uninstall windsurf"
+created_at: "2026-02-02T13:03:25-06:00"
+completed_at: null
+source: "SESSION"
+status: "ACTIVE"
+session_id: "01077b34-5b1a-49c8-b700-6ebcfce57372"
+lineage:
+  tools_used: []
+  files_changed: []
+  agents_spawned: []
+parent: null

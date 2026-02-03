@@ -1,14 +1,12 @@
-'use client'
-
-/* eslint-disable @next/next/no-img-element */
+import React from 'react'
+import { cn } from '@/lib/utils'
 
 interface AvatarProps {
-  name?: string | null
   src?: string | null
+  alt?: string
+  name?: string
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
   className?: string
-  showStatus?: boolean
-  status?: 'online' | 'offline' | 'busy'
 }
 
 const sizeClasses = {
@@ -19,119 +17,60 @@ const sizeClasses = {
   xl: 'w-16 h-16 text-xl',
 }
 
-const statusSizeClasses = {
-  xs: 'w-1.5 h-1.5',
-  sm: 'w-2 h-2',
-  md: 'w-2.5 h-2.5',
-  lg: 'w-3 h-3',
-  xl: 'w-4 h-4',
-}
+export function Avatar({ src, alt, name, size = 'md', className = '' }: AvatarProps) {
+  const initials = name
+    ? name
+        .split(' ')
+        .map((n) => n[0])
+        .join('')
+        .toUpperCase()
+        .slice(0, 2)
+    : ''
 
-const statusColors = {
-  online: 'bg-green-500',
-  offline: 'bg-gray-400',
-  busy: 'bg-red-500',
-}
-
-function getInitials(name: string): string {
-  const parts = name.trim().split(/\s+/)
-  if (parts.length === 1) {
-    return parts[0].substring(0, 2).toUpperCase()
+  if (src) {
+    return (
+      <img
+        src={src}
+        alt={alt || name || 'Avatar'}
+        className={cn(
+          'rounded-full object-cover',
+          sizeClasses[size],
+          className
+        )}
+      />
+    )
   }
-  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase()
-}
-
-function getColorFromName(name: string): string {
-  const colors = [
-    'bg-blue-500',
-    'bg-green-500',
-    'bg-yellow-500',
-    'bg-purple-500',
-    'bg-pink-500',
-    'bg-indigo-500',
-    'bg-teal-500',
-    'bg-orange-500',
-    'bg-cyan-500',
-    'bg-rose-500',
-  ]
-
-  let hash = 0
-  for (let i = 0; i < name.length; i++) {
-    hash = name.charCodeAt(i) + ((hash << 5) - hash)
-  }
-
-  return colors[Math.abs(hash) % colors.length]
-}
-
-export function Avatar({
-  name,
-  src,
-  size = 'md',
-  className = '',
-  showStatus = false,
-  status = 'offline',
-}: AvatarProps) {
-  const displayName = name || 'Usuario'
-  const initials = getInitials(displayName)
-  const bgColor = getColorFromName(displayName)
 
   return (
-    <div className={`relative inline-flex ${className}`}>
-      {src ? (
-        <img
-          src={src}
-          alt={displayName}
-          className={`${sizeClasses[size]} rounded-full object-cover ring-2 ring-white`}
-        />
-      ) : (
-        <div
-          className={`${sizeClasses[size]} ${bgColor} rounded-full flex items-center justify-center text-white font-medium ring-2 ring-white`}
-        >
-          {initials}
-        </div>
+    <div
+      className={cn(
+        'rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-semibold',
+        sizeClasses[size],
+        className
       )}
-
-      {showStatus && (
-        <span
-          className={`absolute bottom-0 right-0 block ${statusSizeClasses[size]} ${statusColors[status]} rounded-full ring-2 ring-white`}
-        />
-      )}
+    >
+      {initials}
     </div>
   )
 }
 
-// Avatar group for showing multiple avatars
 interface AvatarGroupProps {
-  avatars: Array<{ name?: string | null; src?: string | null }>
+  children: React.ReactNode
   max?: number
-  size?: 'xs' | 'sm' | 'md' | 'lg'
   className?: string
 }
 
-export function AvatarGroup({
-  avatars,
-  max = 4,
-  size = 'sm',
-  className = '',
-}: AvatarGroupProps) {
-  const displayAvatars = avatars.slice(0, max)
-  const remaining = avatars.length - max
+export function AvatarGroup({ children, max, className = '' }: AvatarGroupProps) {
+  const childrenArray = React.Children.toArray(children)
+  const displayChildren = max ? childrenArray.slice(0, max) : childrenArray
+  const remainingCount = max ? childrenArray.length - max : 0
 
   return (
-    <div className={`flex -space-x-2 ${className}`}>
-      {displayAvatars.map((avatar, index) => (
-        <Avatar
-          key={index}
-          name={avatar.name}
-          src={avatar.src}
-          size={size}
-        />
-      ))}
-      {remaining > 0 && (
-        <div
-          className={`${sizeClasses[size]} bg-gray-200 rounded-full flex items-center justify-center text-gray-600 font-medium ring-2 ring-white`}
-        >
-          +{remaining}
+    <div className={cn('flex -space-x-2', className)}>
+      {displayChildren}
+      {remainingCount > 0 && (
+        <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 text-sm font-medium border-2 border-white">
+          +{remainingCount}
         </div>
       )}
     </div>
