@@ -30,11 +30,11 @@ export function PatientLayout({ children }: PatientLayoutProps) {
   const navItems = [
     { href: '/app', icon: LayoutDashboard, label: 'Dashboard' },
     { href: '/app/ai-consulta', icon: Bot, label: 'Consulta IA', highlight: true },
+    { href: '/app/second-opinion', icon: Users, label: 'IA Multi-Especialista' },
     { href: '/doctors', icon: Stethoscope, label: 'Buscar Doctor' },
     { href: '/app/appointments', icon: Calendar, label: 'Mis Citas' },
     { href: '/app/chat', icon: MessageCircle, label: 'Mensajes' },
     { href: '/app/followups', icon: ClipboardList, label: 'Seguimientos' },
-    { href: '/app/second-opinion', icon: Users, label: 'Segunda Opinión' },
     { href: '/app/upload-image', icon: ImageIcon, label: 'Análisis Imagen' },
     { href: '/app/profile', icon: User, label: 'Mi Perfil' },
   ]

@@ -169,10 +169,10 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
         <div className="p-4 border-b bg-gradient-to-r from-blue-50 to-cyan-50 flex-shrink-0">
           <div className="flex items-center gap-2">
             <Sparkles className="w-5 h-5 text-blue-600" />
-            <h2 className="font-semibold">Consulta IA Multi-Especialista</h2>
+            <h2 className="font-semibold">Consulta con Dr. Simeon</h2>
           </div>
           <p className="text-sm text-gray-500 mt-1">
-            Describe tus síntomas de forma natural. Te haré preguntas para entender mejor.
+            Describe tus síntomas de forma natural. Te ayudaré a entender qué podría estar pasando.
           </p>
         </div>
 

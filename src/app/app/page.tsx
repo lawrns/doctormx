@@ -39,8 +39,8 @@ export default async function PatientDashboard() {
                   <Sparkles className="w-5 h-5" />
                   <span className="text-sm font-semibold uppercase">Nuevo</span>
                 </div>
-                <h1 className="text-3xl md:text-4xl font-bold mb-2">Consulta IA Multi-Especialista</h1>
-                <p className="text-lg text-blue-100 mb-4">4 especialistas virtuales • Consenso IA</p>
+                <h1 className="text-3xl md:text-4xl font-bold mb-2">Consulta con Dr. Simeon</h1>
+                <p className="text-lg text-blue-100 mb-4">Tu asistente médico virtual • IA personalizada</p>
                 <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50">
                   Iniciar Consulta IA<ChevronRight className="w-5 h-5 ml-2" />
                 </Button>
@@ -56,7 +56,7 @@ export default async function PatientDashboard() {
 
         <div className="grid md:grid-cols-3 gap-6 mb-8">
           {[ 
-            { href: '/app/ai-consulta', icon: Users, title: 'Consulta Multi-Especialista', desc: '4 especialistas • IA' },
+            { href: '/app/ai-consulta', icon: Users, title: 'Consulta con Dr. Simeon', desc: 'Tu asistente médico IA' },
             { href: '/doctors', icon: Search, title: 'Buscar Doctor', desc: 'Especialistas' },
             { href: '/app/appointments', icon: Calendar, title: 'Mis Consultas', desc: 'Historial' }
           ].map((item) => (
