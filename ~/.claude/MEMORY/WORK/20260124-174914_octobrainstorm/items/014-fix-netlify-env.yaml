@@ -1,0 +1,11 @@
+id: "014"
+description: "use netlify cli to fix the netlify env "
+type: "work"
+effort: "QUICK"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-01-24T21:40:22-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

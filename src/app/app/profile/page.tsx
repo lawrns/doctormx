@@ -10,6 +10,7 @@ import { LoadingButton } from '@/components/LoadingButton'
 import { Card, CardHeader, CardBody, CardFooter } from '@/components/Card'
 import { useToast } from '@/components/Toast'
 import { formatPhoneNumber } from '@/lib/utils'
+import { AvatarUpload } from '@/components/AvatarUpload'
 
 const profileSchema = z.object({
   full_name: z.string().min(2, 'El nombre debe tener al menos 2 caracteres'),
@@ -60,6 +61,7 @@ interface PatientProfileData {
     id: string
     full_name: string
     email?: string
+    photo_url: string | null
     phone: string | null
     date_of_birth: string | null
     gender: 'male' | 'female' | 'other' | 'prefer_not_to_say' | null
@@ -135,6 +137,7 @@ export default function PatientProfilePage() {
   const [savingHistory, setSavingHistory] = useState(false)
   const [activeTab, setActiveTab] = useState<'personal' | 'medical' | 'insurance' | 'emergency' | 'notifications'>('personal')
   const [profileData, setProfileData] = useState<PatientProfileData | null>(null)
+  const [photoUrl, setPhotoUrl] = useState<string | null>(null)
 
   const profileForm = useForm<ProfileFormData>({
     resolver: zodResolver(profileSchema),
@@ -196,6 +199,7 @@ export default function PatientProfilePage() {
       if (response.ok) {
         const data: PatientProfileData = await response.json()
         setProfileData(data)
+        setPhotoUrl(data.profile.photo_url)
         profileForm.reset({
           full_name: data.profile.full_name,
           phone: data.profile.phone || '',
@@ -393,6 +397,16 @@ export default function PatientProfilePage() {
                 <CardHeader title="Información Personal" subtitle="Actualiza tus datos personales" />
                 <form onSubmit={profileForm.handleSubmit(onSubmitProfile)}>
                   <CardBody className="space-y-6">
+                    {/* Avatar Upload Section */}
+                    <div className="flex flex-col items-center pb-6 border-b border-gray-100">
+                      <AvatarUpload
+                        userId={profileData?.profile.id || ''}
+                        currentPhotoUrl={photoUrl}
+                        name={profileData?.profile.full_name}
+                        size="lg"
+                        onUploadComplete={(url) => setPhotoUrl(url || null)}
+                      />
+                    </div>
                     <div className="grid md:grid-cols-2 gap-6">
                       <Input
                         label="Nombre completo"

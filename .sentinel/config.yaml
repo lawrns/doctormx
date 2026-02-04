@@ -1,0 +1,54 @@
+# Sentinel Configuration
+# 
+# SAFETY NOTICE: This is an ADVISOR system. It never auto-commits or auto-pushes.
+# All git operations are read-only by default. Modify safety.git settings with caution.
+
+# Repository configuration
+repo:
+  name: "doctormx"
+  type: "other"  # nextjs-app | react-library | api-service | other
+
+# Intelligence and autonomy configuration
+intelligence:
+  # Active intelligence modules
+  modules:
+    - product-analyst
+    - code-archaeologist
+    - growth-strategist
+  
+  # Autonomy settings
+  autonomy:
+    # level: suggest-only | semi-autonomous
+    # SAFETY: Default is 'suggest-only' - never modifies without approval
+    level: "suggest-only"
+    autoApprove:
+      patches: false
+      minor: false
+      major: false
+  
+  # Schedule configuration (cron expressions)
+  schedule:
+    selfAssessment: "0 2 * * *"  # Daily at 2am
+    autoUpgrade: "0 3 * * 0"        # Weekly on Sunday at 3am
+
+# Network and hub connectivity
+network:
+  enabled: false
+  hubUrl: "https://hub.sentinel.dev"
+  share:
+    patterns: true
+    lessons: true
+    experiments: false
+    metrics: true
+
+# SAFETY CONFIGURATION
+# CRITICAL: These defaults ensure read-only operation
+safety:
+  defaultAutonomy: "suggest-only"
+  git:
+    # Install safety hooks
+    installHooks: true
+    # CRITICAL SAFETY FLAGS - Set to false to allow git operations
+    # WARNING: Only disable if you fully understand the implications
+    blockCommits: true  # NEVER auto-commit
+    blockPushes: true    # NEVER auto-push
