@@ -50,7 +50,7 @@ export function Card({
 
 // Card Header
 interface CardHeaderProps {
-  title: string
+  title: ReactNode
   subtitle?: string
   action?: ReactNode
   className?: string

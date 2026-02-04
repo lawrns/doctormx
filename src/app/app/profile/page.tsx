@@ -246,16 +246,8 @@ function CollapsibleCard({
             </div>
           }
           subtitle={subtitle}
-        >
-          <div className="flex items-center justify-between w-full">
-            {subtitle && <p className="text-sm text-gray-500">{subtitle}</p>}
-            {isOpen ? (
-              <ChevronUp className="w-5 h-5 text-gray-400" />
-            ) : (
-              <ChevronDown className="w-5 h-5 text-gray-400" />
-            )}
-          </div>
-        </CardHeader>
+          action={isOpen ? <ChevronUp className="w-5 h-5 text-gray-400" /> : <ChevronDown className="w-5 h-5 text-gray-400" />}
+        />
       </button>
       {isOpen && <CardBody>{children}</CardBody>}
     </Card>
