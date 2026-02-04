@@ -66,7 +66,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
           .lte('start_ts', fifteenMinutesFromNow)
           .order('start_ts', { ascending: true })
 
-        const joinableAppointment = appointments?.some(apt =>
+        const joinableAppointment = appointments?.some((apt: { video_room_url: string | null; start_ts: string }) =>
           apt.video_room_url && new Date(apt.start_ts) <= new Date(Date.now() + 15 * 60 * 1000)
         ) || false
 

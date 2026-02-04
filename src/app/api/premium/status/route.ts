@@ -169,9 +169,7 @@ export async function GET(request: NextRequest) {
     }
 
     // Doctor flow - get subscription info
-    const { searchParams } = new URL(request.url)
-    const featureParam = searchParams.get('feature')
-
+    // searchParams and featureParam already declared above
     const { data: subscription } = await supabaseClient
       .from('doctor_subscriptions')
       .select('plan_id, status, current_period_start, current_period_end')

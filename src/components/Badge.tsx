@@ -5,6 +5,7 @@ type BadgeProps = {
   children: React.ReactNode
   variant?: BadgeVariant
   size?: 'sm' | 'md'
+  className?: string
 }
 
 const variantStyles: Record<BadgeVariant, string> = {
@@ -15,11 +16,11 @@ const variantStyles: Record<BadgeVariant, string> = {
   neutral: 'bg-gray-100 text-gray-800',
 }
 
-export function Badge({ children, variant = 'neutral', size = 'sm' }: BadgeProps) {
+export function Badge({ children, variant = 'neutral', size = 'sm', className }: BadgeProps) {
   const sizeStyles = size === 'sm' ? 'px-2 py-0.5 text-xs' : 'px-3 py-1 text-sm'
 
   return (
-    <span className={`inline-flex items-center rounded-full font-medium ${variantStyles[variant]} ${sizeStyles}`}>
+    <span className={`inline-flex items-center rounded-full font-medium ${variantStyles[variant]} ${sizeStyles} ${className || ''}`}>
       {children}
     </span>
   )

@@ -31,6 +31,7 @@ type RawDoctor = {
   years_experience: number | null
   languages: string[] | null
   status: string
+  video_enabled: boolean | null
   doctor_specialties: Array<{
     specialty_id: string
     specialties: {
