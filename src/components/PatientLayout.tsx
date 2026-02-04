@@ -1,6 +1,6 @@
 'use client'
 
-import { Calendar, MessageCircle, User, ClipboardList, Image as ImageIcon, Sparkles, Users, Home, Stethoscope, LogOut, Bot, LayoutDashboard } from 'lucide-react'
+import { Calendar, MessageCircle, User, ClipboardList, Image as ImageIcon, Sparkles, Users, Home, Stethoscope, LogOut, Bot, LayoutDashboard, Menu, X } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Button } from '@/components/ui/button'
@@ -22,6 +22,7 @@ interface NavItem {
 export function PatientLayout({ children }: PatientLayoutProps) {
   const pathname = usePathname()
   const [profile, setProfile] = useState<any>(null)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [badges, setBadges] = useState({
     messages: 0,
     appointmentsJoinable: false,
@@ -114,6 +115,44 @@ export function PatientLayout({ children }: PatientLayoutProps) {
 
   return (
     <div className="min-h-screen bg-gray-50 flex">
+      {/* Mobile overlay */}
+      {mobileMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          onClick={() => setMobileMenuOpen(false)}
+        />
+      )}
+
+      {/* Mobile Header */}
+      <header className="lg:hidden fixed top-0 left-0 right-0 bg-white border-b border-gray-200 z-30">
+        <div className="flex items-center justify-between px-4 py-3">
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => setMobileMenuOpen(true)}
+              className="p-2 -ml-2 rounded-md text-gray-600 hover:bg-gray-100"
+              aria-label="Abrir menú"
+            >
+              <Menu className="w-6 h-6" />
+            </button>
+            <Link href="/" className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <span className="text-lg font-bold text-gray-900">Doctor.mx</span>
+            </Link>
+          </div>
+          <Link href="/app/ai-consulta">
+            <Button size="sm" className="bg-blue-500 hover:bg-blue-600">
+              <Bot className="w-4 h-4 mr-1" />
+              Consulta
+            </Button>
+          </Link>
+        </div>
+      </header>
+
+      {/* Sidebar - Desktop (always visible) */}
       <aside className="hidden lg:flex flex-col w-64 bg-white border-r border-gray-200 h-screen sticky top-0">
         <div className="p-6 border-b border-gray-100">
           <Link href="/" className="flex items-center gap-2.5">
@@ -160,7 +199,76 @@ export function PatientLayout({ children }: PatientLayoutProps) {
           </form>
         </div>
       </aside>
-      <main className="flex-1 flex flex-col min-w-0">
+
+      {/* Mobile Sidebar (slides in) */}
+      <aside
+        className={`
+          fixed lg:hidden inset-y-0 left-0 z-50 w-72 bg-white border-r transform transition-transform duration-200 ease-in-out
+          ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}
+        `}
+      >
+        {/* Mobile sidebar header */}
+        <div className="flex items-center justify-between p-4 border-b">
+          <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
+            <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+              <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </div>
+            <span className="text-lg font-bold text-gray-900">Doctor.mx</span>
+          </Link>
+          <button
+            onClick={() => setMobileMenuOpen(false)}
+            className="p-2 rounded-md text-gray-600 hover:bg-gray-100"
+            aria-label="Cerrar menú"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
+
+        <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
+          {navItems.map((item) => (
+            <Link 
+              key={item.href} 
+              href={item.href} 
+              onClick={() => setMobileMenuOpen(false)}
+              className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${item.highlight && isActive(item.href) ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg' : isActive(item.href) ? 'bg-gray-100 text-gray-900 font-medium' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}`}
+            >
+              <item.icon className="w-5 h-5" />
+              <span className="flex-1">{item.label}</span>
+              {item.badge?.dot && (
+                <span className={`w-2 h-2 rounded-full ${item.badge.color || 'bg-red-500'}`} />
+              )}
+              {item.badge?.count && item.badge.count > 0 && (
+                <span className={`min-w-[1.25rem] h-5 px-1.5 rounded-full text-xs font-bold text-white ${item.badge.color || 'bg-red-500'} flex items-center justify-center`}>
+                  {item.badge.count > 99 ? '99+' : item.badge.count}
+                </span>
+              )}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="p-4 border-t border-gray-100">
+          <div className="flex items-center gap-3 px-4 py-3 mb-2">
+            <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+              <User className="w-5 h-5 text-blue-600" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="font-medium text-gray-900 truncate">{profile?.full_name || 'Usuario'}</p>
+              <p className="text-xs text-gray-500">Paciente</p>
+            </div>
+          </div>
+          <form action="/auth/signout" method="post">
+            <Button variant="ghost" type="submit" className="w-full justify-start text-red-600 hover:text-red-700 hover:bg-red-50">
+              <LogOut className="w-5 h-5 mr-2" />
+              Cerrar sesión
+            </Button>
+          </form>
+        </div>
+      </aside>
+
+      {/* Main content */}
+      <main className="flex-1 flex flex-col min-w-0 pt-14 lg:pt-0">
         {children}
       </main>
     </div>

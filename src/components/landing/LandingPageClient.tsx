@@ -10,23 +10,30 @@ import { FeaturesSection } from './FeaturesSection'
 import { TestimonialsSection } from './TestimonialsSection'
 import { CTASection } from './CTASection'
 import { TrustFooter } from '@/components/TrustSignals'
-import { Stethoscope, Search, UserPlus, Sparkles } from 'lucide-react'
+import { Stethoscope, Search, UserPlus, Sparkles, ShieldCheck } from 'lucide-react'
 
 export function LandingPageClient() {
   return (
     <main className="min-h-screen bg-[#fdfaf6] overflow-x-hidden">
-      {/* Announcement Bar - EMPHASIZE FREE */}
+      {/* Announcement Bar - EMPHASIZE FREE + COFEPRIS Trust */}
       <motion.div
         initial={{ y: -40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
         className="bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 px-4 text-center"
       >
-        <span className="inline-flex items-center gap-2 font-bold text-base">
-          <Sparkles className="w-5 h-5" fill="currentColor" />
-          5 CONSULTAS MÉDICAS GRATIS PARA TODOS LOS MEXICANOS
-          <Sparkles className="w-5 h-5" fill="currentColor" />
-        </span>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+          <span className="inline-flex items-center gap-2 font-bold text-base">
+            <Sparkles className="w-5 h-5" fill="currentColor" />
+            5 CONSULTAS MÉDICAS GRATIS PARA TODOS LOS MEXICANOS
+            <Sparkles className="w-5 h-5" fill="currentColor" />
+          </span>
+          <span className="hidden sm:inline text-blue-200">|</span>
+          <span className="inline-flex items-center gap-1.5 text-sm text-blue-100 bg-blue-700/30 px-3 py-1 rounded-full">
+            <ShieldCheck className="w-4 h-4" />
+            Verificado por COFEPRIS
+          </span>
+        </div>
       </motion.div>
 
       {/* Animated Header */}

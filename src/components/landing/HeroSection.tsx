@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Zap, Shield, Gift, ArrowRight, BadgeCheck, Clock, Users, Lock } from 'lucide-react'
+import { Zap, Shield, Gift, ArrowRight, BadgeCheck, Clock, Users, Lock, ShieldCheck } from 'lucide-react'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 
 const containerVariants = {
@@ -216,13 +216,14 @@ export function HeroSection() {
           className="inline-flex flex-wrap items-center justify-center gap-4 sm:gap-6 px-4 sm:px-6 py-3 bg-white/60 backdrop-blur-sm rounded-full border border-neutral-200/50 shadow-sm"
         >
           {[
-            { icon: BadgeCheck, text: 'Doctores con cedula verificada', value: '500+' },
+            { icon: ShieldCheck, text: 'COFEPRIS', value: 'Verificado' },
+            { icon: BadgeCheck, text: 'Doctores con cédula SEP', value: '500+' },
             { icon: Users, text: 'Consultas realizadas', value: '10,000+' },
             { icon: Clock, text: 'Disponible', value: '24/7' },
           ].map((item, i) => (
             <div key={i} className="flex items-center gap-2 text-text-secondary text-sm">
               {i > 0 && <div className="hidden sm:block w-px h-6 bg-neutral-300/50 -ml-2 mr-2" />}
-              <item.icon className="w-5 h-5 text-primary-500 flex-shrink-0" aria-hidden="true" />
+              <item.icon className={`w-5 h-5 flex-shrink-0 ${i === 0 ? 'text-green-500' : 'text-primary-500'}`} aria-hidden="true" />
               <span className="font-semibold text-text-primary">{item.value}</span>
               <span className="hidden sm:inline whitespace-nowrap">{item.text}</span>
             </div>

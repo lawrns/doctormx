@@ -3,7 +3,7 @@ import { redirect } from 'next/navigation'
 import DoctorLayout from '@/components/DoctorLayout'
 import { AppointmentCardCompact, EmptyState } from '@/components'
 import Link from 'next/link'
-import { Calendar } from 'lucide-react'
+import { Calendar, CheckCircle, Clock, Video, FileText, HelpCircle } from 'lucide-react'
 
 export default async function DoctorDashboard() {
   const { user, profile, supabase } = await requireRole('doctor')
@@ -35,6 +35,25 @@ export default async function DoctorDashboard() {
     status: string
     service_name: string | null
   }> = []
+
+  // Fetch pending doctors count for queue position (if pending)
+  let queuePosition = 0
+  let totalPending = 0
+  if (isPending) {
+    const { count } = await supabase
+      .from('doctors')
+      .select('*', { count: 'exact', head: true })
+      .eq('status', 'pending')
+      .lte('created_at', doctor?.created_at || new Date().toISOString())
+    
+    const { count: totalCount } = await supabase
+      .from('doctors')
+      .select('*', { count: 'exact', head: true })
+      .eq('status', 'pending')
+    
+    queuePosition = count || 0
+    totalPending = totalCount || 0
+  }
 
   if (!isPending) {
     const now = new Date()
@@ -123,8 +142,8 @@ export default async function DoctorDashboard() {
   return (
     <DoctorLayout profile={profile!} isPending={isPending} currentPath="/doctor" pendingAppointments={pendingPaymentCount}>
       {isPending ? (
-        /* Vista para doctores pendientes */
-        <div className="max-w-4xl">
+        /* Vista mejorada para doctores pendientes */
+        <div className="max-w-4xl mx-auto">
           {doctor?.status === 'rejected' ? (
             <div className="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-lg mb-8">
               <div className="flex items-start">
@@ -143,15 +162,33 @@ export default async function DoctorDashboard() {
           ) : (
             <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg mb-8">
               <div className="flex items-start">
-                <svg className="w-6 h-6 text-yellow-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                </svg>
-                <div className="ml-4">
+                <Clock className="w-6 h-6 text-yellow-600 mt-0.5" />
+                <div className="ml-4 flex-1">
                   <h3 className="text-lg font-semibold text-yellow-900">Tu perfil está en revisión</h3>
                   <p className="text-yellow-700 mt-1">
-                    Estamos verificando tu información profesional. Este proceso toma entre 24 y 48 horas hábiles.
-                    Recibirás un correo electrónico cuando tu perfil sea aprobado.
+                    Estamos verificando tu información profesional con la SEP.
                   </p>
+                  
+                  {/* Queue position indicator */}
+                  {totalPending > 0 && (
+                    <div className="mt-4 bg-white rounded-lg p-4 border border-yellow-200">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-sm font-medium text-gray-700">Tu posición en la fila:</span>
+                        <span className="text-lg font-bold text-yellow-700">
+                          #{queuePosition} de {totalPending}
+                        </span>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-2">
+                        <div 
+                          className="bg-yellow-500 h-2 rounded-full transition-all"
+                          style={{ width: `${Math.max(5, ((totalPending - queuePosition) / totalPending) * 100)}%` }}
+                        />
+                      </div>
+                      <p className="text-xs text-gray-500 mt-2">
+                        Tiempo estimado: ~{Math.max(1, Math.round(queuePosition * 2))} horas hábiles
+                      </p>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -159,6 +196,45 @@ export default async function DoctorDashboard() {
 
           <h2 className="text-2xl font-bold text-neutral-900 mb-6">Mientras esperas</h2>
 
+          {/* Progress checklist */}
+          <div className="bg-white rounded-lg shadow border p-6 mb-6">
+            <h3 className="text-lg font-semibold text-neutral-900 mb-4">Lista de verificación</h3>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 text-green-700">
+                <CheckCircle className="w-5 h-5" />
+                <span className="flex-1">Perfil completado</span>
+                <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Completado</span>
+              </div>
+              <div className="flex items-center gap-3 text-green-700">
+                <CheckCircle className="w-5 h-5" />
+                <span className="flex-1">Disponibilidad configurada</span>
+                <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Completado</span>
+              </div>
+              <div className="flex items-center gap-3 text-yellow-700">
+                <Clock className="w-5 h-5" />
+                <span className="flex-1">Verificación de cédula SEP</span>
+                <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded">En proceso</span>
+              </div>
+              <Link 
+                href="/doctor/availability" 
+                className="flex items-center gap-3 text-neutral-600 hover:text-blue-600 p-2 rounded-lg hover:bg-blue-50 transition-colors"
+              >
+                <Video className="w-5 h-5" />
+                <span className="flex-1">Prueba tu cámara y micrófono</span>
+                <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">Recomendado</span>
+              </Link>
+              <Link 
+                href="/help" 
+                className="flex items-center gap-3 text-neutral-600 hover:text-blue-600 p-2 rounded-lg hover:bg-blue-50 transition-colors"
+              >
+                <FileText className="w-5 h-5" />
+                <span className="flex-1">Lee la guía de primera consulta</span>
+                <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Opcional</span>
+              </Link>
+            </div>
+          </div>
+
+          {/* Quick actions */}
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-white p-6 rounded-lg shadow border">
               <div className="flex items-center gap-3 mb-3">
@@ -169,7 +245,7 @@ export default async function DoctorDashboard() {
                 Asegúrate de que toda tu información esté actualizada y completa.
               </p>
               <Link
-                href="/doctor/profile"
+                href="/doctor/onboarding"
                 className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium"
               >
                 Editar perfil
@@ -199,26 +275,21 @@ export default async function DoctorDashboard() {
             </div>
           </div>
 
-          <div className="mt-8 bg-primary-50 p-6 rounded-lg border border-primary-100">
-            <h3 className="text-lg font-semibold text-primary-900 mb-2">Estado de verificación</h3>
-            <div className="space-y-2">
-              <div className="flex items-center gap-2 text-green-700">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span>Perfil completado</span>
-              </div>
-              <div className="flex items-center gap-2 text-green-700">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span>Disponibilidad configurada</span>
-              </div>
-              <div className="flex items-center gap-2 text-yellow-700">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                </svg>
-                <span>Verificación pendiente</span>
+          {/* Help section */}
+          <div className="mt-8 bg-blue-50 p-6 rounded-lg border border-blue-100">
+            <div className="flex items-start gap-3">
+              <HelpCircle className="w-5 h-5 text-blue-600 mt-0.5" />
+              <div>
+                <h4 className="font-medium text-blue-900">¿Tienes preguntas?</h4>
+                <p className="text-sm text-blue-700 mt-1">
+                  Si tienes alguna duda sobre el proceso de verificación, contacta a nuestro equipo de soporte.
+                </p>
+                <a 
+                  href="mailto:soporte@doctor.mx?subject=Pregunta sobre verificación de perfil" 
+                  className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 font-medium mt-2"
+                >
+                  Contactar soporte →
+                </a>
               </div>
             </div>
           </div>
@@ -286,8 +357,12 @@ export default async function DoctorDashboard() {
             ) : (
               <EmptyState
                 title="No tienes consultas programadas"
-                description="Las citas aparecerán aquí cuando los pacientes reserven contigo."
+                description="Las citas aparecerán aquí cuando los pacientes reserven contigo. Comparte tu perfil para empezar a recibir pacientes."
                 iconName="calendar"
+                action={{
+                  label: "Ver mi perfil público",
+                  href: `/doctors/${user.id}`
+                }}
               />
             )}
           </div>
