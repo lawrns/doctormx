@@ -327,3 +327,79 @@ ON CONFLICT (id) DO UPDATE SET
     icon = EXCLUDED.icon;
 
 SELECT 'Database fixed successfully!';
+
+
+-- =====================================================
+-- FIX 7: Update doctor_subscriptions and create usage table
+-- Issue: Code expects fields not present in original schema
+-- =====================================================
+
+-- Add missing columns for Stripe integration and usage tracking
+DO $$
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM information_schema.columns 
+        WHERE table_name = 'doctor_subscriptions' 
+        AND column_name = 'stripe_subscription_id'
+    ) THEN
+        ALTER TABLE doctor_subscriptions 
+        ADD COLUMN stripe_subscription_id TEXT,
+        ADD COLUMN stripe_customer_id TEXT,
+        ADD COLUMN plan_id TEXT,
+        ADD COLUMN plan_currency TEXT DEFAULT 'MXN',
+        ADD COLUMN whatsapp_messages_used INTEGER DEFAULT 0,
+        ADD COLUMN whatsapp_messages_limit INTEGER DEFAULT 0,
+        ADD COLUMN ai_copilot_used INTEGER DEFAULT 0,
+        ADD COLUMN ai_copilot_limit INTEGER DEFAULT 0,
+        ADD COLUMN image_analysis_used INTEGER DEFAULT 0,
+        ADD COLUMN image_analysis_limit INTEGER DEFAULT 0;
+        
+        RAISE NOTICE 'Added Stripe and usage tracking columns to doctor_subscriptions';
+    END IF;
+END $$;
+
+-- Create doctor_subscription_usage table
+CREATE TABLE IF NOT EXISTS doctor_subscription_usage (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    doctor_id UUID NOT NULL REFERENCES doctors(id) ON DELETE CASCADE,
+    
+    whatsapp_messages_used INTEGER DEFAULT 0,
+    whatsapp_messages_limit INTEGER DEFAULT 0,
+    ai_copilot_used INTEGER DEFAULT 0,
+    ai_copilot_limit INTEGER DEFAULT 0,
+    image_analysis_used INTEGER DEFAULT 0,
+    image_analysis_limit INTEGER DEFAULT 0,
+    
+    period_start TIMESTAMPTZ NOT NULL,
+    period_end TIMESTAMPTZ NOT NULL,
+    
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    
+    UNIQUE(doctor_id, period_start)
+);
+
+-- Enable RLS
+ALTER TABLE doctor_subscription_usage ENABLE ROW LEVEL SECURITY;
+
+-- RLS Policies
+CREATE POLICY IF NOT EXISTS "Doctors can view their own usage"
+    ON doctor_subscription_usage FOR SELECT
+    USING (auth.uid() = doctor_id);
+
+CREATE POLICY IF NOT EXISTS "Service role can manage usage"
+    ON doctor_subscription_usage FOR ALL
+    USING (true)
+    WITH CHECK (true);
+
+-- Indexes
+CREATE INDEX IF NOT EXISTS idx_doctor_subscription_usage_doctor_id 
+    ON doctor_subscription_usage(doctor_id);
+CREATE INDEX IF NOT EXISTS idx_doctor_subscription_usage_period 
+    ON doctor_subscription_usage(period_start, period_end);
+
+-- Add indexes to doctor_subscriptions if missing
+CREATE INDEX IF NOT EXISTS idx_doctor_subscriptions_stripe_sub_id 
+    ON doctor_subscriptions(stripe_subscription_id);
+CREATE INDEX IF NOT EXISTS idx_doctor_subscriptions_plan_id 
+    ON doctor_subscriptions(plan_id);
