@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { createClient } from '@/lib/supabase/client'
 import { useEffect, useState } from 'react'
+import { Logo } from '@/components/Logo'
 
 interface PatientLayoutProps {
   children: React.ReactNode
@@ -52,16 +53,15 @@ export function PatientLayout({ children }: PatientLayoutProps) {
         let messagesCount = 0
         let joinableAppointment = false
 
-        // Check for messages - wrap in try/catch as table may not exist
+        // Check for unread messages - wrap in try/catch as table may not exist
+        // Note: chat_messages doesn't have read_at column. Read receipts are tracked in chat_message_receipts table.
+        // For now, we'll skip the unread count until the chat feature is fully implemented.
         try {
-          const { count } = await supabase
-            .from('chat_messages')
-            .select('*', { count: 'exact', head: true })
-            .eq('receiver_id', user.id)
-            .is('read_at', null)
-          messagesCount = count || 0
+          // This query needs to be updated to properly check chat_message_receipts
+          // For now, we set messagesCount to 0 to avoid the 400 error
+          messagesCount = 0
         } catch (e) {
-          // chat_messages table may not exist yet
+          // chat_messages check failed
           console.log('chat_messages check failed:', e)
         }
 
@@ -150,14 +150,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
             >
               <Menu className="w-6 h-6" />
             </button>
-            <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-                <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              </div>
-              <span className="text-lg font-bold text-gray-900">Doctor.mx</span>
-            </Link>
+            <Logo size="sm" />
           </div>
           <Link href="/app/ai-consulta">
             <Button size="sm" className="bg-blue-500 hover:bg-blue-600">
@@ -171,14 +164,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
       {/* Sidebar - Desktop (always visible) */}
       <aside className="hidden lg:flex flex-col w-64 bg-white border-r border-gray-200 h-screen sticky top-0">
         <div className="p-6 border-b border-gray-100">
-          <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center shadow-sm">
-              <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-              </svg>
-            </div>
-            <span className="text-xl font-bold text-gray-900">Doctor.mx</span>
-          </Link>
+          <Logo size="lg" />
         </div>
         <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
           {navItems.map((item) => (
@@ -225,14 +211,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
       >
         {/* Mobile sidebar header */}
         <div className="flex items-center justify-between p-4 border-b">
-          <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
-            <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-              <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-              </svg>
-            </div>
-            <span className="text-lg font-bold text-gray-900">Doctor.mx</span>
-          </Link>
+          <Logo size="sm" />
           <button
             onClick={() => setMobileMenuOpen(false)}
             className="p-2 rounded-md text-gray-600 hover:bg-gray-100"

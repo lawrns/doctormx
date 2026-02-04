@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback, useMemo } from 'react'
 import { useForm, useFieldArray, SubmitHandler } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -11,6 +11,33 @@ import { Card, CardHeader, CardBody, CardFooter } from '@/components/Card'
 import { useToast } from '@/components/Toast'
 import { formatPhoneNumber } from '@/lib/utils'
 import { AvatarUpload } from '@/components/AvatarUpload'
+import { Switch } from '@/components/ui/switch'
+import {
+  User,
+  HeartPulse,
+  Shield,
+  Phone,
+  Bell,
+  Check,
+  ChevronDown,
+  ChevronUp,
+  Plus,
+  Lock,
+  Calendar,
+  Scale,
+  Ruler,
+  Info,
+  AlertCircle,
+  Camera,
+  X,
+  Mail,
+  MessageCircle,
+  LogOut
+} from 'lucide-react'
+
+// ========================================
+// SCHEMAS
+// ========================================
 
 const profileSchema = z.object({
   full_name: z.string().min(2, 'El nombre debe tener al menos 2 caracteres'),
@@ -21,12 +48,19 @@ const profileSchema = z.object({
   insurance_policy_number: z.string().optional().nullable(),
   insurance_group_number: z.string().optional().nullable(),
   insurance_coverage_type: z.string().optional().nullable(),
-  emergency_contact_name: z.string().optional().nullable(),
-  emergency_contact_phone: z.string().optional().nullable(),
-  emergency_contact_relationship: z.string().optional().nullable(),
-  notifications_email: z.boolean(),
-  notifications_sms: z.boolean(),
-  notifications_whatsapp: z.boolean(),
+  insurance_expires_at: z.string().optional().nullable(),
+  emergency_contacts: z.array(z.object({
+    name: z.string().optional(),
+    phone: z.string().optional(),
+    relationship: z.string().optional(),
+    secondary_phone: z.string().optional(),
+  })).min(1, 'Al menos un contacto de emergencia es requerido').max(3, 'Máximo 3 contactos'),
+  notifications_appointments: z.boolean(),
+  notifications_results: z.boolean(),
+  notifications_promotions: z.boolean(),
+  notifications_email_enabled: z.boolean(),
+  notifications_sms_enabled: z.boolean(),
+  notifications_whatsapp_enabled: z.boolean(),
 })
 
 const medicalHistorySchema = z.object({
@@ -56,6 +90,10 @@ const medicalHistorySchema = z.object({
 type ProfileFormData = z.infer<typeof profileSchema>
 type MedicalHistoryFormData = z.infer<typeof medicalHistorySchema>
 
+// ========================================
+// TYPES
+// ========================================
+
 interface PatientProfileData {
   profile: {
     id: string
@@ -69,12 +107,17 @@ interface PatientProfileData {
     insurance_policy_number: string | null
     insurance_group_number: string | null
     insurance_coverage_type: string | null
+    insurance_expires_at: string | null
     emergency_contact_name: string | null
     emergency_contact_phone: string | null
     emergency_contact_relationship: string | null
+    emergency_contact_secondary_phone: string | null
     notifications_email: boolean | null
     notifications_sms: boolean | null
     notifications_whatsapp: boolean | null
+    notifications_appointments: boolean | null
+    notifications_results: boolean | null
+    notifications_promotions: boolean | null
   }
   medicalHistory: {
     allergies: string[]
@@ -88,6 +131,10 @@ interface PatientProfileData {
     weight_kg: number | null
   } | null
 }
+
+// ========================================
+// OPTIONS
+// ========================================
 
 const genderOptions = [
   { value: '', label: 'Seleccionar género' },
@@ -127,8 +174,137 @@ const conditionOptions = [
   { value: 'arthritis', label: 'Artritis' },
   { value: 'depression', label: 'Depresión' },
   { value: 'anxiety', label: 'Ansiedad' },
+  { value: 'kidney_disease', label: 'Enfermedad renal' },
   { value: 'other', label: 'Otro' },
 ]
+
+// ========================================
+// COMPONENTS
+// ========================================
+
+// Progress Bar Component
+function ProfileProgressBar({ completion }: { completion: number }) {
+  const getColor = (pct: number) => {
+    if (pct >= 80) return 'bg-green-500'
+    if (pct >= 50) return 'bg-yellow-500'
+    return 'bg-blue-500'
+  }
+
+  return (
+    <div className="mb-6 animate-fade-in">
+      <div className="flex items-center justify-between mb-2">
+        <span className="text-sm font-medium text-gray-700">Completitud del perfil</span>
+        <span className="text-sm font-bold text-gray-900">{completion}%</span>
+      </div>
+      <div className="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
+        <div
+          className={`h-full ${getColor(completion)} transition-all duration-500 ease-out`}
+          style={{ width: `${completion}%` }}
+        />
+      </div>
+      <p className="text-xs text-gray-500 mt-1">
+        {completion < 50 && 'Completa tu perfil para una mejor experiencia'}
+        {completion >= 50 && completion < 80 && '¡Buen progreso! Completa más secciones'}
+        {completion >= 80 && '¡Excelente! Tu perfil está casi completo'}
+      </p>
+    </div>
+  )
+}
+
+// Collapsible Card Component
+function CollapsibleCard({
+  title,
+  subtitle,
+  defaultOpen = true,
+  completed = false,
+  children,
+}: {
+  title: string
+  subtitle?: string
+  defaultOpen?: boolean
+  completed?: boolean
+  children: React.ReactNode
+}) {
+  const [isOpen, setIsOpen] = useState(defaultOpen)
+
+  return (
+    <Card className="mb-4 transition-all duration-200 hover:shadow-md">
+      <button
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full text-left"
+      >
+        <CardHeader
+          title={
+            <div className="flex items-center gap-3">
+              <span className="font-semibold">{title}</span>
+              {completed && (
+                <span className="flex-shrink-0">
+                  <Check className="w-5 h-5 text-green-500" />
+                </span>
+              )}
+            </div>
+          }
+          subtitle={subtitle}
+        >
+          <div className="flex items-center justify-between w-full">
+            {subtitle && <p className="text-sm text-gray-500">{subtitle}</p>}
+            {isOpen ? (
+              <ChevronUp className="w-5 h-5 text-gray-400" />
+            ) : (
+              <ChevronDown className="w-5 h-5 text-gray-400" />
+            )}
+          </div>
+        </CardHeader>
+      </button>
+      {isOpen && <CardBody>{children}</CardBody>}
+    </Card>
+  )
+}
+
+// BMI Display Component
+function BMIDisplay({
+  heightCm,
+  weightKg,
+}: {
+  heightCm: number | null | undefined
+  weightKg: number | null | undefined
+}) {
+  const bmi = useMemo(() => {
+    if (!heightCm || !weightKg) return null
+    const heightM = heightCm / 100
+    return weightKg / (heightM * heightM)
+  }, [heightCm, weightKg])
+
+  const getBMICategory = (bmi: number) => {
+    if (bmi < 18.5) return { label: 'Bajo peso', color: 'text-blue-600', bg: 'bg-blue-50' }
+    if (bmi < 25) return { label: 'Peso normal', color: 'text-green-600', bg: 'bg-green-50' }
+    if (bmi < 30) return { label: 'Sobrepeso', color: 'text-yellow-600', bg: 'bg-yellow-50' }
+    return { label: 'Obesidad', color: 'text-red-600', bg: 'bg-red-50' }
+  }
+
+  if (!bmi) return null
+
+  const category = getBMICategory(bmi)
+
+  return (
+    <div className={`mt-4 p-4 rounded-xl ${category.bg} border border-gray-200`}>
+      <div className="flex items-center justify-between">
+        <div>
+          <p className="text-sm text-gray-600">Tu Índice de Masa Corporal (IMC)</p>
+          <p className="text-2xl font-bold text-gray-900">{bmi.toFixed(1)}</p>
+        </div>
+        <div className={`px-3 py-1 rounded-full ${category.bg} ${category.color} font-medium text-sm`}>
+          {category.label}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// ========================================
+// MAIN PAGE
+// ========================================
 
 export default function PatientProfilePage() {
   const { addToast } = useToast()
@@ -138,6 +314,44 @@ export default function PatientProfilePage() {
   const [activeTab, setActiveTab] = useState<'personal' | 'medical' | 'insurance' | 'emergency' | 'notifications'>('personal')
   const [profileData, setProfileData] = useState<PatientProfileData | null>(null)
   const [photoUrl, setPhotoUrl] = useState<string | null>(null)
+  const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false)
+
+  // Calculate profile completion
+  const profileCompletion = useMemo(() => {
+    if (!profileData) return 0
+    let completed = 0
+    let total = 0
+
+    // Profile fields
+    const profileFields = [
+      profileData.profile.full_name,
+      profileData.profile.phone,
+      profileData.profile.date_of_birth,
+      profileData.profile.gender,
+      profileData.profile.insurance_provider,
+      profileData.profile.emergency_contact_name,
+    ]
+    total += profileFields.length
+    completed += profileFields.filter(f => f && f !== '').length
+
+    // Medical history
+    if (profileData.medicalHistory) {
+      const mh = profileData.medicalHistory
+      total += 4
+      completed += (mh.blood_type ? 1 : 0) + (mh.height_cm ? 1 : 0) + (mh.weight_kg ? 1 : 0) + (mh.allergies?.length > 0 || mh.chronic_conditions?.length > 0 ? 1 : 0)
+    }
+
+    return Math.round((completed / total) * 100)
+  }, [profileData])
+
+  // Tab completion status
+  const tabCompletion = useMemo(() => ({
+    personal: !!profileData?.profile.full_name && !!profileData?.profile.phone,
+    medical: !!profileData?.medicalHistory?.blood_type,
+    insurance: !!profileData?.profile.insurance_provider,
+    emergency: !!profileData?.profile.emergency_contact_name,
+    notifications: true,
+  }), [profileData])
 
   const profileForm = useForm<ProfileFormData>({
     resolver: zodResolver(profileSchema),
@@ -150,12 +364,14 @@ export default function PatientProfilePage() {
       insurance_policy_number: '',
       insurance_group_number: '',
       insurance_coverage_type: '',
-      emergency_contact_name: '',
-      emergency_contact_phone: '',
-      emergency_contact_relationship: '',
-      notifications_email: true,
-      notifications_sms: true,
-      notifications_whatsapp: true,
+      insurance_expires_at: '',
+      emergency_contacts: [{ name: '', phone: '', relationship: '', secondary_phone: '' }],
+      notifications_appointments: true,
+      notifications_results: true,
+      notifications_promotions: false,
+      notifications_email_enabled: true,
+      notifications_sms_enabled: true,
+      notifications_whatsapp_enabled: true,
     },
   })
 
@@ -189,6 +405,36 @@ export default function PatientProfilePage() {
     name: 'family_history',
   })
 
+  const { fields: emergencyFields, append: appendEmergency, remove: removeEmergency } = useFieldArray({
+    control: profileForm.control,
+    name: 'emergency_contacts',
+  })
+
+  // Store initial values for comparison
+  const [initialProfileValues, setInitialProfileValues] = useState<ProfileFormData | null>(null)
+  const [initialHistoryValues, setInitialHistoryValues] = useState<MedicalHistoryFormData | null>(null)
+
+  // Watch for changes - only set true if values actually differ
+  useEffect(() => {
+    if (!initialProfileValues) return
+
+    const subscription = profileForm.watch((value) => {
+      const hasChanges = JSON.stringify(value) !== JSON.stringify(initialProfileValues)
+      setHasUnsavedChanges(hasChanges)
+    })
+    return () => subscription.unsubscribe()
+  }, [profileForm, initialProfileValues])
+
+  useEffect(() => {
+    if (!initialHistoryValues) return
+
+    const subscription = historyForm.watch((value) => {
+      const hasChanges = JSON.stringify(value) !== JSON.stringify(initialHistoryValues)
+      setHasUnsavedChanges(prev => prev || hasChanges)
+    })
+    return () => subscription.unsubscribe()
+  }, [historyForm, initialHistoryValues])
+
   useEffect(() => {
     fetchProfile()
   }, [])
@@ -200,7 +446,18 @@ export default function PatientProfilePage() {
         const data: PatientProfileData = await response.json()
         setProfileData(data)
         setPhotoUrl(data.profile.photo_url)
-        profileForm.reset({
+
+        // Map emergency contact to array
+        const emergencyContacts = [
+          {
+            name: data.profile.emergency_contact_name || '',
+            phone: data.profile.emergency_contact_phone || '',
+            relationship: data.profile.emergency_contact_relationship || '',
+            secondary_phone: data.profile.emergency_contact_secondary_phone || '',
+          }
+        ]
+
+        const profileValues = {
           full_name: data.profile.full_name,
           phone: data.profile.phone || '',
           date_of_birth: data.profile.date_of_birth || '',
@@ -209,16 +466,22 @@ export default function PatientProfilePage() {
           insurance_policy_number: data.profile.insurance_policy_number || '',
           insurance_group_number: data.profile.insurance_group_number || '',
           insurance_coverage_type: data.profile.insurance_coverage_type || '',
-          emergency_contact_name: data.profile.emergency_contact_name || '',
-          emergency_contact_phone: data.profile.emergency_contact_phone || '',
-          emergency_contact_relationship: data.profile.emergency_contact_relationship || '',
-          notifications_email: data.profile.notifications_email ?? true,
-          notifications_sms: data.profile.notifications_sms ?? true,
-          notifications_whatsapp: data.profile.notifications_whatsapp ?? true,
-        })
+          insurance_expires_at: data.profile.insurance_expires_at || '',
+          emergency_contacts: emergencyContacts,
+          notifications_appointments: data.profile.notifications_appointments ?? true,
+          notifications_results: data.profile.notifications_results ?? true,
+          notifications_promotions: data.profile.notifications_promotions ?? false,
+          notifications_email_enabled: data.profile.notifications_email ?? true,
+          notifications_sms_enabled: data.profile.notifications_sms ?? true,
+          notifications_whatsapp_enabled: data.profile.notifications_whatsapp ?? true,
+        }
 
+        profileForm.reset(profileValues)
+        setInitialProfileValues(profileValues)
+
+        let historyValues = null
         if (data.medicalHistory) {
-          historyForm.reset({
+          historyValues = {
             allergies: data.medicalHistory.allergies || [],
             current_medications: data.medicalHistory.current_medications || [],
             chronic_conditions: data.medicalHistory.chronic_conditions || [],
@@ -228,8 +491,12 @@ export default function PatientProfilePage() {
             blood_type: data.medicalHistory.blood_type || '',
             height_cm: data.medicalHistory.height_cm || undefined,
             weight_kg: data.medicalHistory.weight_kg || undefined,
-          })
+          }
+          historyForm.reset(historyValues)
+          setInitialHistoryValues(historyValues)
         }
+
+        setHasUnsavedChanges(false)
       }
     } catch (error) {
       console.error('Error fetching profile:', error)
@@ -242,14 +509,42 @@ export default function PatientProfilePage() {
   const onSubmitProfile: SubmitHandler<ProfileFormData> = async (data) => {
     setSavingProfile(true)
     try {
+      // Map emergency contacts array back to single fields for API
+      const primaryContact = data.emergency_contacts[0]
+      const apiData = {
+        // Only send valid database columns
+        full_name: data.full_name,
+        phone: data.phone || null,
+        date_of_birth: data.date_of_birth || null,
+        gender: data.gender || null,
+        insurance_provider: data.insurance_provider || null,
+        insurance_policy_number: data.insurance_policy_number || null,
+        insurance_group_number: data.insurance_group_number || null,
+        insurance_coverage_type: data.insurance_coverage_type || null,
+        insurance_expires_at: data.insurance_expires_at || null,
+        emergency_contact_name: primaryContact?.name || null,
+        emergency_contact_phone: primaryContact?.phone || null,
+        emergency_contact_relationship: primaryContact?.relationship || null,
+        emergency_contact_secondary_phone: primaryContact?.secondary_phone || null,
+        // Map notification preferences back (using correct DB column names)
+        notifications_email: data.notifications_email_enabled,
+        notifications_sms: data.notifications_sms_enabled,
+        notifications_whatsapp: data.notifications_whatsapp_enabled,
+        notifications_appointments: data.notifications_appointments,
+        notifications_results: data.notifications_results,
+        notifications_promotions: data.notifications_promotions,
+      }
+
       const response = await fetch('/api/patient/profile', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify(apiData),
       })
 
       if (response.ok) {
         addToast('Perfil actualizado exitosamente', 'success')
+        setInitialProfileValues(data)
+        setHasUnsavedChanges(false)
       } else {
         throw new Error('Failed to update profile')
       }
@@ -272,6 +567,8 @@ export default function PatientProfilePage() {
 
       if (response.ok) {
         addToast('Historial médico actualizado exitosamente', 'success')
+        setInitialHistoryValues(data)
+        setHasUnsavedChanges(false)
       } else {
         throw new Error('Failed to update medical history')
       }
@@ -296,30 +593,32 @@ export default function PatientProfilePage() {
 
   const removeAllergy = (index: number) => {
     const currentAllergies = historyForm.getValues('allergies') || []
-    historyForm.setValue(
-      'allergies',
-      currentAllergies.filter((_, i) => i !== index)
-    )
+    historyForm.setValue('allergies', currentAllergies.filter((_, i) => i !== index))
   }
 
-  const handleAddCondition = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const value = e.target.value
+  const handleAddCondition = (value: string) => {
     if (value) {
       const currentConditions = historyForm.getValues('chronic_conditions') || []
       if (!currentConditions.includes(value)) {
         historyForm.setValue('chronic_conditions', [...currentConditions, value])
       }
-      e.target.value = ''
     }
   }
 
   const removeCondition = (index: number) => {
     const currentConditions = historyForm.getValues('chronic_conditions') || []
-    historyForm.setValue(
-      'chronic_conditions',
-      currentConditions.filter((_, i) => i !== index)
-    )
+    historyForm.setValue('chronic_conditions', currentConditions.filter((_, i) => i !== index))
   }
+
+  // Format phone for display with Mexico mask
+  const formatPhoneForDisplay = useCallback((phone: string | null | undefined) => {
+    if (!phone) return ''
+    const digits = phone.replace(/\D/g, '')
+    if (digits.length === 10) {
+      return `+52 (${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`
+    }
+    return phone
+  }, [])
 
   if (loading) {
     return (
@@ -332,81 +631,106 @@ export default function PatientProfilePage() {
     )
   }
 
+  const tabs = [
+    { id: 'personal' as const, label: 'Información Personal', icon: User },
+    { id: 'medical' as const, label: 'Historial Médico', icon: HeartPulse },
+    { id: 'insurance' as const, label: 'Seguro Médico', icon: Shield },
+    { id: 'emergency' as const, label: 'Contacto de Emergencia', icon: Phone },
+    { id: 'notifications' as const, label: 'Notificaciones', icon: Bell },
+  ]
+
   return (
     <div className="min-h-screen bg-gradient-hero">
-      <header className="glass-nav sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center">
-              <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-              </svg>
-            </div>
-            <span className="text-2xl font-bold text-ink-primary">Doctor.mx</span>
-          </div>
-          <a href="/app" className="text-primary-600 hover:text-primary-700 font-medium transition-colors">
-            ← Volver al inicio
-          </a>
-        </div>
-      </header>
-
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="mb-8 animate-fade-in-up">
-          <h1 className="text-3xl sm:text-4xl font-bold text-ink-primary mb-2">
+        {/* Header */}
+        <div className="mb-8 animate-fade-in">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
             Mi Perfil
           </h1>
-          <p className="text-lg text-ink-secondary">
-            Gestiona tu información personal y historial médico
+          <p className="text-lg text-gray-600">
+            Gestiona tu información personal y configuración médica
           </p>
         </div>
 
+        {/* Progress Bar */}
+        <ProfileProgressBar completion={profileCompletion} />
+
         <div className="flex flex-col lg:flex-row gap-8">
-          <aside className="lg:w-64 flex-shrink-0">
-            <nav className="bg-white rounded-2xl shadow-card border border-border p-4 sticky top-24">
-              <ul className="space-y-2">
-                {[
-                  { id: 'personal', label: 'Información Personal', icon: 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z' },
-                  { id: 'medical', label: 'Historial Médico', icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' },
-                  { id: 'insurance', label: 'Seguro Médico', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
-                  { id: 'emergency', label: 'Contacto de Emergencia', icon: 'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z' },
-                  { id: 'notifications', label: 'Notificaciones', icon: 'M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9' },
-                ].map((tab) => (
-                  <li key={tab.id}>
-                    <button
-                      onClick={() => setActiveTab(tab.id as typeof activeTab)}
-                      className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${
-                        activeTab === tab.id
-                          ? 'bg-primary-100 text-primary-700 font-medium'
-                          : 'text-ink-secondary hover:bg-secondary-50'
-                      }`}
-                    >
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={tab.icon} />
-                      </svg>
-                      {tab.label}
-                    </button>
-                  </li>
-                ))}
+          {/* Sidebar Navigation */}
+          <aside className="lg:w-72 flex-shrink-0">
+            <nav className="bg-white rounded-2xl shadow-sm border border-gray-200 p-3 lg:sticky lg:top-24">
+              <ul className="space-y-1">
+                {tabs.map((tab) => {
+                  const Icon = tab.icon
+                  const isCompleted = tabCompletion[tab.id]
+                  return (
+                    <li key={tab.id}>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          if (hasUnsavedChanges) {
+                            if (confirm('Tienes cambios sin guardar. ¿Deseas continuar?')) {
+                              setHasUnsavedChanges(false)
+                              setActiveTab(tab.id)
+                            }
+                          } else {
+                            setActiveTab(tab.id)
+                          }
+                        }}
+                        className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${
+                          activeTab === tab.id
+                            ? 'bg-blue-50 text-blue-700 font-medium shadow-sm'
+                            : 'text-gray-600 hover:bg-gray-50'
+                        }`}
+                      >
+                        <Icon className="w-5 h-5 flex-shrink-0" />
+                        <span className="flex-1 text-left">{tab.label}</span>
+                        {isCompleted && (
+                          <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
+                        )}
+                      </button>
+                    </li>
+                  )
+                })}
               </ul>
+
+              {hasUnsavedChanges && (
+                <div className="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded-xl">
+                  <div className="flex items-start gap-2">
+                    <AlertCircle className="w-4 h-4 text-yellow-600 mt-0.5 flex-shrink-0" />
+                    <p className="text-xs text-yellow-800">
+                      Tienes cambios sin guardar
+                    </p>
+                  </div>
+                </div>
+              )}
             </nav>
           </aside>
 
+          {/* Main Content */}
           <div className="flex-1">
+            {/* ========================================
+                PERSONAL INFO TAB
+            ======================================== */}
             {activeTab === 'personal' && (
               <Card className="animate-fade-in-up">
                 <CardHeader title="Información Personal" subtitle="Actualiza tus datos personales" />
                 <form onSubmit={profileForm.handleSubmit(onSubmitProfile)}>
                   <CardBody className="space-y-6">
                     {/* Avatar Upload Section */}
-                    <div className="flex flex-col items-center pb-6 border-b border-gray-100">
+                    <div className="flex flex-col items-center pb-8 border-b border-gray-200">
                       <AvatarUpload
                         userId={profileData?.profile.id || ''}
                         currentPhotoUrl={photoUrl}
                         name={profileData?.profile.full_name}
-                        size="lg"
+                        size="xl"
                         onUploadComplete={(url) => setPhotoUrl(url || null)}
                       />
+                      <p className="text-sm text-gray-500 mt-3 text-center max-w-xs">
+                        Foto de perfil profesional para mejor identificación médica
+                      </p>
                     </div>
+
                     <div className="grid md:grid-cols-2 gap-6">
                       <Input
                         label="Nombre completo"
@@ -414,64 +738,142 @@ export default function PatientProfilePage() {
                         error={profileForm.formState.errors.full_name?.message}
                         required
                       />
-                      <Input
-                        label="Correo electrónico"
-                        type="email"
-                        value={profileData?.profile?.email || ''}
-                        disabled
-                        className="bg-gray-50"
-                        title="El correo no se puede modificar"
-                      />
-                      <Input
-                        label="Teléfono"
-                        type="tel"
-                        {...profileForm.register('phone')}
-                        error={profileForm.formState.errors.phone?.message}
-                        placeholder="+52 55 1234 5678"
-                      />
-                      <Input
-                        label="Fecha de nacimiento"
-                        type="date"
-                        {...profileForm.register('date_of_birth')}
-                        error={profileForm.formState.errors.date_of_birth?.message}
-                      />
+
+                      {/* Email - Disabled with lock icon */}
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                          Correo electrónico
+                        </label>
+                        <div className="relative">
+                          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <Mail className="h-5 w-5 text-gray-400" />
+                          </div>
+                          <input
+                            type="email"
+                            value={profileData?.profile?.email || ''}
+                            disabled
+                            className="block w-full pl-10 pr-10 py-2.5 bg-gray-100 border border-gray-300 rounded-lg text-gray-500 cursor-not-allowed"
+                          />
+                          <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                            <Lock className="h-4 w-4 text-gray-400" />
+                          </div>
+                        </div>
+                        <p className="mt-1 text-xs text-gray-500">
+                          No se puede modificar por seguridad
+                        </p>
+                      </div>
+
+                      {/* Phone with Mexico format */}
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                          Teléfono
+                        </label>
+                        <div className="relative">
+                          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <Phone className="h-5 w-5 text-gray-400" />
+                          </div>
+                          <input
+                            {...profileForm.register('phone')}
+                            type="tel"
+                            placeholder="+52 (555) 123-4567"
+                            className="block w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            onChange={(e) => {
+                              const formatted = formatPhoneForDisplay(e.target.value)
+                              if (formatted !== e.target.value) {
+                                e.target.value = formatted
+                              }
+                            }}
+                          />
+                        </div>
+                        {profileForm.formState.errors.phone && (
+                          <p className="mt-1 text-sm text-red-600">
+                            {profileForm.formState.errors.phone.message}
+                          </p>
+                        )}
+                      </div>
+
+                      {/* Date of Birth with better UX */}
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                          Fecha de nacimiento
+                        </label>
+                        <div className="relative">
+                          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <Calendar className="h-5 w-5 text-gray-400" />
+                          </div>
+                          <input
+                            {...profileForm.register('date_of_birth')}
+                            type="date"
+                            max={new Date().toISOString().split('T')[0]}
+                            className="block w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                          />
+                        </div>
+                        {profileForm.formState.errors.date_of_birth && (
+                          <p className="mt-1 text-sm text-red-600">
+                            {profileForm.formState.errors.date_of_birth.message}
+                          </p>
+                        )}
+                      </div>
+
                       <Select
                         label="Género"
                         {...profileForm.register('gender')}
-                        options={genderOptions}
+                        options={genderOptions.slice(1)} // Skip the duplicate placeholder
                         placeholder="Seleccionar género"
                       />
                     </div>
                   </CardBody>
                   <CardFooter>
-                    <LoadingButton type="submit" isLoading={savingProfile}>
-                      Guardar cambios
+                    <LoadingButton
+                      type="submit"
+                      isLoading={savingProfile}
+                      className="min-w-[160px]"
+                    >
+                      {savingProfile ? 'Guardando...' : 'Guardar cambios'}
                     </LoadingButton>
                   </CardFooter>
                 </form>
               </Card>
             )}
 
+            {/* ========================================
+                MEDICAL HISTORY TAB
+            ======================================== */}
             {activeTab === 'medical' && (
               <form onSubmit={historyForm.handleSubmit(onSubmitMedicalHistory)}>
-                <Card className="animate-fade-in-up mb-6">
-                  <CardHeader title="Datos Físicos" subtitle="Información básica para cálculo de IMC" />
+                {/* Physical Data with BMI */}
+                <Card className="mb-4">
+                  <CardHeader title="Datos Físicos" subtitle="Información para cálculo de IMC" />
                   <CardBody>
                     <div className="grid md:grid-cols-3 gap-6">
-                      <Input
-                        label="Altura (cm)"
-                        type="number"
-                        {...historyForm.register('height_cm', { valueAsNumber: true })}
-                        error={historyForm.formState.errors.height_cm?.message}
-                        placeholder="170"
-                      />
-                      <Input
-                        label="Peso (kg)"
-                        type="number"
-                        {...historyForm.register('weight_kg', { valueAsNumber: true })}
-                        error={historyForm.formState.errors.weight_kg?.message}
-                        placeholder="70"
-                      />
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                          <div className="flex items-center gap-2">
+                            <Ruler className="w-4 h-4 text-gray-400" />
+                            Altura (cm)
+                          </div>
+                        </label>
+                        <Input
+                          type="number"
+                          {...historyForm.register('height_cm', { valueAsNumber: true })}
+                          error={historyForm.formState.errors.height_cm?.message}
+                          placeholder="170"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                          <div className="flex items-center gap-2">
+                            <Scale className="w-4 h-4 text-gray-400" />
+                            Peso (kg)
+                          </div>
+                        </label>
+                        <Input
+                          type="number"
+                          {...historyForm.register('weight_kg', { valueAsNumber: true })}
+                          error={historyForm.formState.errors.weight_kg?.message}
+                          placeholder="70"
+                        />
+                      </div>
                       <Select
                         label="Tipo de sangre"
                         {...historyForm.register('blood_type')}
@@ -479,213 +881,241 @@ export default function PatientProfilePage() {
                         placeholder="Seleccionar"
                       />
                     </div>
+                    <BMIDisplay
+                      heightCm={historyForm.watch('height_cm')}
+                      weightKg={historyForm.watch('weight_kg')}
+                    />
                   </CardBody>
                 </Card>
 
-                <Card className="animate-fade-in-up mb-6">
-                  <CardHeader title="Alergias" subtitle="Lista de alergias conocidas (presiona Enter para agregar)" />
-                  <CardBody>
-                    <div className="space-y-2">
-                      <Input
-                        placeholder="Ej: Penicilina, Nueces, Polen..."
-                        onKeyDown={handleAddAllergy}
-                      />
-                      <div className="flex flex-wrap gap-2 mt-3">
-                        {(historyForm.watch('allergies') || []).map((allergy, index) => (
-                          <span
-                            key={index}
-                            className="inline-flex items-center gap-1 px-3 py-1 bg-error-100 text-error-700 rounded-full text-sm"
-                          >
-                            {allergy}
-                            <button
-                              type="button"
-                              onClick={() => removeAllergy(index)}
-                              className="hover:text-error-900"
-                            >
-                              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                              </svg>
-                            </button>
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </CardBody>
-                </Card>
-
-                <Card className="animate-fade-in-up mb-6">
-                  <CardHeader title="Medicamentos Actuales" subtitle="Medicamentos que tomas actualmente" />
-                  <CardBody>
-                    <div className="space-y-4">
-                      {medicationFields.map((field, index) => (
-                        <div key={field.id} className="flex gap-4 items-start">
-                          <div className="grid grid-cols-3 gap-4 flex-1">
-                            <Input
-                              placeholder="Ej: Paracetamol, Metformina..."
-                              {...historyForm.register(`current_medications.${index}.name`)}
-                            />
-                            <Input
-                              placeholder="Ej: 500mg, 10ml..."
-                              {...historyForm.register(`current_medications.${index}.dosage`)}
-                            />
-                            <Input
-                              placeholder="Ej: Cada 8 horas, 2 veces al día..."
-                              {...historyForm.register(`current_medications.${index}.frequency`)}
-                            />
-                          </div>
+                {/* Allergies */}
+                <CollapsibleCard
+                  title="Alergias"
+                  subtitle="Presiona Enter para agregar cada alergia"
+                  completed={(historyForm.watch('allergies') || []).length > 0}
+                >
+                  <div className="space-y-3">
+                    <Input
+                      placeholder="Ej: Penicilina, Nueces, Polen..."
+                      onKeyDown={handleAddAllergy}
+                    />
+                    <div className="flex flex-wrap gap-2">
+                      {(historyForm.watch('allergies') || []).map((allergy, index) => (
+                        <span
+                          key={index}
+                          className="inline-flex items-center gap-1 px-3 py-1 bg-red-50 text-red-700 rounded-full text-sm border border-red-200"
+                        >
+                          {allergy}
                           <button
                             type="button"
-                            onClick={() => removeMedication(index)}
-                            className="p-2 text-error-600 hover:text-error-700"
+                            onClick={() => removeAllergy(index)}
+                            className="hover:text-red-900 transition-colors"
                           >
-                            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                            </svg>
+                            <X className="w-3 h-3" />
                           </button>
-                        </div>
+                        </span>
                       ))}
-                      <button
-                        type="button"
-                        onClick={() => appendMedication({ name: '', dosage: '', frequency: '' })}
-                        className="text-primary-600 hover:text-primary-700 font-medium text-sm"
-                      >
-                        + Agregar medicamento
-                      </button>
                     </div>
-                  </CardBody>
-                </Card>
+                  </div>
+                </CollapsibleCard>
 
-                <Card className="animate-fade-in-up mb-6">
-                  <CardHeader title="Condiciones Crónicas" subtitle="Enfermedades crónicas diagnosticadas (EPOC = Enfermedad Pulmonar Obstructiva Crónica)" />
-                  <CardBody>
-                    <div className="space-y-2">
-                      <Select
-                        label=""
-                        options={conditionOptions}
-                        placeholder="Seleccionar condición"
-                        onChange={(e) => handleAddCondition(e)}
-                      />
-                      <div className="flex flex-wrap gap-2 mt-3">
-                        {(historyForm.watch('chronic_conditions') || []).map((condition, index) => (
+                {/* Current Medications */}
+                <CollapsibleCard
+                  title="Medicamentos Actuales"
+                  subtitle="Medicamentos que tomas actualmente"
+                  completed={(historyForm.watch('current_medications') || []).length > 0}
+                >
+                  <div className="space-y-4">
+                    {medicationFields.map((field, index) => (
+                      <div key={field.id} className="flex gap-4 items-start p-4 bg-gray-50 rounded-xl">
+                        <div className="grid grid-cols-3 gap-4 flex-1">
+                          <Input
+                            placeholder="Nombre"
+                            {...historyForm.register(`current_medications.${index}.name`)}
+                          />
+                          <Input
+                            placeholder="Dosis"
+                            {...historyForm.register(`current_medications.${index}.dosage`)}
+                          />
+                          <Input
+                            placeholder="Frecuencia"
+                            {...historyForm.register(`current_medications.${index}.frequency`)}
+                          />
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => removeMedication(index)}
+                          className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                        >
+                          <X className="w-5 h-5" />
+                        </button>
+                      </div>
+                    ))}
+                    <button
+                      type="button"
+                      onClick={() => appendMedication({ name: '', dosage: '', frequency: '' })}
+                      className="w-full flex items-center justify-center gap-2 px-4 py-2 border-2 border-dashed border-gray-300 rounded-xl text-gray-600 hover:border-blue-500 hover:text-blue-600 transition-colors"
+                    >
+                      <Plus className="w-4 h-4" />
+                      Agregar medicamento
+                    </button>
+                  </div>
+                </CollapsibleCard>
+
+                {/* Chronic Conditions with Multi-Select */}
+                <CollapsibleCard
+                  title="Condiciones Crónicas"
+                  subtitle="Enfermedades crónicas diagnosticadas"
+                  completed={(historyForm.watch('chronic_conditions') || []).length > 0}
+                >
+                  <div className="space-y-4">
+                    <div className="flex flex-wrap gap-2">
+                      {conditionOptions.slice(1).map((option) => {
+                        const isSelected = (historyForm.watch('chronic_conditions') || []).includes(option.value)
+                        return (
+                          <button
+                            key={option.value}
+                            type="button"
+                            onClick={() => !isSelected && handleAddCondition(option.value)}
+                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                              isSelected
+                                ? 'bg-yellow-100 text-yellow-800 border-2 border-yellow-400'
+                                : 'bg-gray-100 text-gray-700 border-2 border-transparent hover:bg-gray-200'
+                            }`}
+                          >
+                            {option.label}
+                            {isSelected && <Check className="w-3 h-3 inline ml-1" />}
+                          </button>
+                        )
+                      })}
+                    </div>
+                    <div className="flex flex-wrap gap-2 p-4 bg-gray-50 rounded-xl min-h-[60px]">
+                      {(historyForm.watch('chronic_conditions') || []).length === 0 ? (
+                        <p className="text-sm text-gray-400">No hay condiciones seleccionadas</p>
+                      ) : (
+                        (historyForm.watch('chronic_conditions') || []).map((condition, index) => (
                           <span
                             key={index}
-                            className="inline-flex items-center gap-1 px-3 py-1 bg-warning-100 text-warning-700 rounded-full text-sm"
+                            className="inline-flex items-center gap-1 px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm border border-yellow-300"
                           >
                             {conditionOptions.find(o => o.value === condition)?.label || condition}
                             <button
                               type="button"
                               onClick={() => removeCondition(index)}
-                              className="hover:text-warning-900"
+                              className="hover:text-yellow-900 transition-colors"
                             >
-                              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                              </svg>
+                              <X className="w-3 h-3" />
                             </button>
                           </span>
-                        ))}
+                        ))
+                      )}
+                    </div>
+                  </div>
+                </CollapsibleCard>
+
+                {/* Past Surgeries */}
+                <CollapsibleCard
+                  title="Cirugías Anteriores"
+                  subtitle="Historial de cirugías"
+                  completed={(historyForm.watch('past_surgeries') || []).length > 0}
+                >
+                  <div className="space-y-4">
+                    {surgeryFields.map((field, index) => (
+                      <div key={field.id} className="flex gap-4 items-start p-4 bg-gray-50 rounded-xl">
+                        <div className="grid grid-cols-3 gap-4 flex-1">
+                          <Input
+                            placeholder="Procedimiento"
+                            {...historyForm.register(`past_surgeries.${index}.procedure`)}
+                          />
+                          <Input
+                            type="number"
+                            placeholder="Año"
+                            {...historyForm.register(`past_surgeries.${index}.year`, { valueAsNumber: true })}
+                          />
+                          <Input
+                            placeholder="Notas"
+                            {...historyForm.register(`past_surgeries.${index}.notes`)}
+                          />
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => removeSurgery(index)}
+                          className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                        >
+                          <X className="w-5 h-5" />
+                        </button>
                       </div>
-                    </div>
-                  </CardBody>
-                </Card>
+                    ))}
+                    <button
+                      type="button"
+                      onClick={() => appendSurgery({ procedure: '', year: null, notes: '' })}
+                      className="w-full flex items-center justify-center gap-2 px-4 py-2 border-2 border-dashed border-gray-300 rounded-xl text-gray-600 hover:border-blue-500 hover:text-blue-600 transition-colors"
+                    >
+                      <Plus className="w-4 h-4" />
+                      Agregar cirugía
+                    </button>
+                  </div>
+                </CollapsibleCard>
 
-                <Card className="animate-fade-in-up mb-6">
-                  <CardHeader title="Cirugías Anteriores" subtitle="Historial de cirugías" />
-                  <CardBody>
-                    <div className="space-y-4">
-                      {surgeryFields.map((field, index) => (
-                        <div key={field.id} className="flex gap-4 items-start">
-                          <div className="grid grid-cols-3 gap-4 flex-1">
-                            <Input
-                              placeholder="Ej: Apendicectomía, Cirugía de rodilla..."
-                              {...historyForm.register(`past_surgeries.${index}.procedure`)}
-                            />
-                            <Input
-                              type="number"
-                              placeholder="Ej: 2020"
-                              {...historyForm.register(`past_surgeries.${index}.year`, { valueAsNumber: true })}
-                            />
-                            <Input
-                              placeholder="Ej: Sin complicaciones..."
-                              {...historyForm.register(`past_surgeries.${index}.notes`)}
-                            />
-                          </div>
-                          <button
-                            type="button"
-                            onClick={() => removeSurgery(index)}
-                            className="p-2 text-error-600 hover:text-error-700"
-                          >
-                            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                            </svg>
-                          </button>
+                {/* Family History */}
+                <CollapsibleCard
+                  title="Antecedentes Familiares"
+                  subtitle="Enfermedades en la familia"
+                  completed={(historyForm.watch('family_history') || []).length > 0}
+                >
+                  <div className="space-y-4">
+                    {familyFields.map((field, index) => (
+                      <div key={field.id} className="flex gap-4 items-start p-4 bg-gray-50 rounded-xl">
+                        <div className="grid grid-cols-3 gap-4 flex-1">
+                          <Input
+                            placeholder="Condición"
+                            {...historyForm.register(`family_history.${index}.condition`)}
+                          />
+                          <Select
+                            {...historyForm.register(`family_history.${index}.relationship`)}
+                            options={relationshipOptions}
+                            placeholder="Parentesco"
+                          />
+                          <Input
+                            placeholder="Notas"
+                            {...historyForm.register(`family_history.${index}.notes`)}
+                          />
                         </div>
-                      ))}
-                      <button
-                        type="button"
-                        onClick={() => appendSurgery({ procedure: '', year: null, notes: '' })}
-                        className="text-primary-600 hover:text-primary-700 font-medium text-sm"
-                      >
-                        + Agregar cirugía
-                      </button>
-                    </div>
-                  </CardBody>
-                </Card>
+                        <button
+                          type="button"
+                          onClick={() => removeFamily(index)}
+                          className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                        >
+                          <X className="w-5 h-5" />
+                        </button>
+                      </div>
+                    ))}
+                    <button
+                      type="button"
+                      onClick={() => appendFamily({ condition: '', relationship: '', notes: '' })}
+                      className="w-full flex items-center justify-center gap-2 px-4 py-2 border-2 border-dashed border-gray-300 rounded-xl text-gray-600 hover:border-blue-500 hover:text-blue-600 transition-colors"
+                    >
+                      <Plus className="w-4 h-4" />
+                      Agregar antecedente
+                    </button>
+                  </div>
+                </CollapsibleCard>
 
-                <Card className="animate-fade-in-up mb-6">
-                  <CardHeader title="Antecedentes Familiares" subtitle="Enfermedades en la familia" />
-                  <CardBody>
-                    <div className="space-y-4">
-                      {familyFields.map((field, index) => (
-                        <div key={field.id} className="flex gap-4 items-start">
-                          <div className="grid grid-cols-3 gap-4 flex-1">
-                            <Input
-                              placeholder="Ej: Diabetes, Cáncer, Hipertensión..."
-                              {...historyForm.register(`family_history.${index}.condition`)}
-                            />
-                            <Select
-                              {...historyForm.register(`family_history.${index}.relationship`)}
-                              options={relationshipOptions}
-                              placeholder="Parentesco"
-                            />
-                            <Input
-                              placeholder="Ej: Tipo 2, diagnosticado en 2018..."
-                              {...historyForm.register(`family_history.${index}.notes`)}
-                            />
-                          </div>
-                          <button
-                            type="button"
-                            onClick={() => removeFamily(index)}
-                            className="p-2 text-error-600 hover:text-error-700"
-                          >
-                            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                            </svg>
-                          </button>
-                        </div>
-                      ))}
-                      <button
-                        type="button"
-                        onClick={() => appendFamily({ condition: '', relationship: '', notes: '' })}
-                        className="text-primary-600 hover:text-primary-700 font-medium text-sm"
-                      >
-                        + Agregar antecedente
-                      </button>
-                    </div>
-                  </CardBody>
-                </Card>
+                {/* Additional Notes */}
+                <CollapsibleCard
+                  title="Notas Adicionales"
+                  subtitle="Información médica relevante"
+                  completed={!!historyForm.watch('medical_notes')}
+                >
+                  <Textarea
+                    {...historyForm.register('medical_notes')}
+                    placeholder="Escribe aquí cualquier información adicional importante..."
+                    rows={3}
+                    className="resize-none"
+                  />
+                </CollapsibleCard>
 
-                <Card className="animate-fade-in-up mb-6">
-                  <CardHeader title="Notas Adicionales" subtitle="Cualquier información médica adicional relevante" />
-                  <CardBody>
-                    <Textarea
-                      {...historyForm.register('medical_notes')}
-                      placeholder="Escribe aquí cualquier información adicional que consideres importante..."
-                      rows={4}
-                    />
-                  </CardBody>
-                </Card>
-
-                <div className="flex justify-end">
+                <div className="flex justify-end pt-4">
                   <LoadingButton type="submit" isLoading={savingHistory}>
                     Guardar historial médico
                   </LoadingButton>
@@ -693,11 +1123,52 @@ export default function PatientProfilePage() {
               </form>
             )}
 
+            {/* ========================================
+                INSURANCE TAB
+            ======================================== */}
             {activeTab === 'insurance' && (
               <Card className="animate-fade-in-up">
-                <CardHeader title="Información del Seguro Médico" subtitle="Datos de tu seguro de gastos médicos" />
+                <CardHeader
+                  title="Información del Seguro Médico"
+                  subtitle="Datos de tu seguro de gastos médicos"
+                />
                 <form onSubmit={profileForm.handleSubmit(onSubmitProfile)}>
                   <CardBody className="space-y-6">
+                    {/* Insurance Verification Status */}
+                    <div className={`p-4 rounded-xl border ${
+                      profileData?.profile.insurance_provider
+                        ? 'bg-green-50 border-green-200'
+                        : 'bg-yellow-50 border-yellow-200'
+                    }`}>
+                      <div className="flex items-center gap-3">
+                        <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
+                          profileData?.profile.insurance_provider
+                            ? 'bg-green-100'
+                            : 'bg-yellow-100'
+                        }`}>
+                          <Shield className={`w-5 h-5 ${
+                            profileData?.profile.insurance_provider
+                              ? 'text-green-600'
+                              : 'text-yellow-600'
+                          }`} />
+                        </div>
+                        <div>
+                          <p className="font-medium text-gray-900">
+                            {profileData?.profile.insurance_provider
+                              ? 'Seguro registrado'
+                              : 'Seguro pendiente de verificación'
+                            }
+                          </p>
+                          <p className="text-sm text-gray-600">
+                            {profileData?.profile.insurance_provider
+                              ? 'Tu información de seguro está guardada'
+                              : 'Agrega tu seguro para acceso rápido'
+                            }
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
                     <div className="grid md:grid-cols-2 gap-6">
                       <Input
                         label="Proveedor de seguro"
@@ -723,103 +1194,264 @@ export default function PatientProfilePage() {
                         error={profileForm.formState.errors.insurance_coverage_type?.message}
                         placeholder="Ej: Básica, Premium..."
                       />
+                      <div className="md:col-span-2">
+                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                          Vigencia del seguro
+                        </label>
+                        <div className="relative">
+                          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <Calendar className="h-5 w-5 text-gray-400" />
+                          </div>
+                          <input
+                            {...profileForm.register('insurance_expires_at')}
+                            type="month"
+                            className="block w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                          />
+                        </div>
+                        {profileForm.formState.errors.insurance_expires_at && (
+                          <p className="mt-1 text-sm text-red-600">
+                            {profileForm.formState.errors.insurance_expires_at.message}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Insurance Card Upload Section */}
+                    <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:border-blue-400 transition-colors">
+                      <Camera className="w-10 h-10 text-gray-400 mx-auto mb-2" />
+                      <p className="text-sm font-medium text-gray-700 mb-1">
+                        Foto de la tarjeta del seguro
+                      </p>
+                      <p className="text-xs text-gray-500 mb-3">
+                        Sube una foto clara de tu tarjeta de seguro (Próximamente)
+                      </p>
+                      <button
+                        type="button"
+                        disabled
+                        className="px-4 py-2 bg-gray-100 text-gray-400 rounded-lg text-sm cursor-not-allowed"
+                      >
+                        Próximamente
+                      </button>
                     </div>
                   </CardBody>
                   <CardFooter>
                     <LoadingButton type="submit" isLoading={savingProfile}>
-                      Guardar cambios
+                      Guardar seguro
                     </LoadingButton>
                   </CardFooter>
                 </form>
               </Card>
             )}
 
+            {/* ========================================
+                EMERGENCY CONTACT TAB
+            ======================================== */}
             {activeTab === 'emergency' && (
               <Card className="animate-fade-in-up">
-                <CardHeader title="Contacto de Emergencia" subtitle="Persona a contactar en caso de emergencia" />
+                <CardHeader
+                  title="Contactos de Emergencia"
+                  subtitle="Personas a contactar en caso de emergencia (mínimo 1, máximo 3)"
+                />
                 <form onSubmit={profileForm.handleSubmit(onSubmitProfile)}>
                   <CardBody className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <Input
-                        label="Nombre completo"
-                        {...profileForm.register('emergency_contact_name')}
-                        error={profileForm.formState.errors.emergency_contact_name?.message}
-                        placeholder="Ej: María García"
-                      />
-                      <Input
-                        label="Teléfono"
-                        type="tel"
-                        {...profileForm.register('emergency_contact_phone')}
-                        error={profileForm.formState.errors.emergency_contact_phone?.message}
-                        placeholder="+52 55 1234 5678"
-                      />
-                      <Select
-                        label="Parentesco"
-                        {...profileForm.register('emergency_contact_relationship')}
-                        options={relationshipOptions}
-                        placeholder="Seleccionar parentesco"
-                      />
+                    {emergencyFields.map((field, index) => (
+                      <div key={field.id} className="p-6 bg-gray-50 rounded-xl border border-gray-200">
+                        <div className="flex items-center justify-between mb-4">
+                          <h4 className="font-medium text-gray-900">
+                            Contacto {index + 1}
+                          </h4>
+                          {index > 0 && (
+                            <button
+                              type="button"
+                              onClick={() => removeEmergency(index)}
+                              className="text-sm text-red-600 hover:text-red-700 flex items-center gap-1"
+                            >
+                              <X className="w-4 h-4" />
+                              Eliminar
+                            </button>
+                          )}
+                        </div>
+                        <div className="grid md:grid-cols-2 gap-4">
+                          <Input
+                            label="Nombre completo"
+                            {...profileForm.register(`emergency_contacts.${index}.name`)}
+                            error={profileForm.formState.errors.emergency_contacts?.[index]?.name?.message}
+                            placeholder="Ej: María García"
+                          />
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">
+                              Teléfono principal
+                            </label>
+                            <div className="relative">
+                              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <Phone className="h-5 w-5 text-gray-400" />
+                              </div>
+                              <input
+                                {...profileForm.register(`emergency_contacts.${index}.phone`)}
+                                type="tel"
+                                placeholder="+52 (555) 123-4567"
+                                className="block w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                onChange={(e) => {
+                                  const formatted = formatPhoneForDisplay(e.target.value)
+                                  if (formatted !== e.target.value) {
+                                    e.target.value = formatted
+                                  }
+                                }}
+                              />
+                            </div>
+                            {profileForm.formState.errors.emergency_contacts?.[index]?.phone && (
+                              <p className="mt-1 text-sm text-red-600">
+                                {profileForm.formState.errors.emergency_contacts[index]?.phone?.message}
+                              </p>
+                            )}
+                          </div>
+                          <div className="md:col-span-2">
+                            <Select
+                              label="Parentesco"
+                              {...profileForm.register(`emergency_contacts.${index}.relationship`)}
+                              options={relationshipOptions}
+                              placeholder="Seleccionar parentesco"
+                            />
+                          </div>
+                          <div className="md:col-span-2">
+                            <label className="block text-sm font-medium text-gray-700 mb-1">
+                              Teléfono secundario (opcional)
+                            </label>
+                            <div className="relative">
+                              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <Phone className="h-4 w-4 text-gray-400" />
+                              </div>
+                              <input
+                                {...profileForm.register(`emergency_contacts.${index}.secondary_phone`)}
+                                type="tel"
+                                placeholder="+52 (555) 987-6543"
+                                className="block w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                onChange={(e) => {
+                                  const formatted = formatPhoneForDisplay(e.target.value)
+                                  if (formatted !== e.target.value) {
+                                    e.target.value = formatted
+                                  }
+                                }}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+
+                    {emergencyFields.length < 3 && (
+                      <button
+                        type="button"
+                        onClick={() => appendEmergency({ name: '', phone: '', relationship: '', secondary_phone: '' })}
+                        className="w-full flex items-center justify-center gap-2 px-4 py-3 border-2 border-dashed border-gray-300 rounded-xl text-gray-600 hover:border-blue-500 hover:text-blue-600 hover:bg-blue-50 transition-all"
+                      >
+                        <Plus className="w-5 h-5" />
+                        Agregar otro contacto de emergencia
+                      </button>
+                    )}
+
+                    <div className="flex items-start gap-2 p-4 bg-blue-50 rounded-xl border border-blue-200">
+                      <Info className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                      <p className="text-sm text-blue-800">
+                        Recomendamos tener al menos 2 contactos de emergencia. Se contactarán en orden si no pueden ubicar al primero.
+                      </p>
                     </div>
                   </CardBody>
                   <CardFooter>
                     <LoadingButton type="submit" isLoading={savingProfile}>
-                      Guardar cambios
+                      Guardar contactos
                     </LoadingButton>
                   </CardFooter>
                 </form>
               </Card>
             )}
 
+            {/* ========================================
+                NOTIFICATIONS TAB
+            ======================================== */}
             {activeTab === 'notifications' && (
               <Card className="animate-fade-in-up">
-                <CardHeader title="Preferencias de Notificaciones" subtitle="Elige cómo quieres recibir notificaciones" />
+                <CardHeader
+                  title="Preferencias de Notificaciones"
+                  subtitle="Elige cómo y qué quieres recibir"
+                />
                 <form onSubmit={profileForm.handleSubmit(onSubmitProfile)}>
-                  <CardBody className="space-y-6">
-                    <div className="space-y-4">
-                      <label className="flex items-center gap-4 p-4 border border-border rounded-xl cursor-pointer hover:bg-secondary-50 transition-colors">
-                        <input
-                          type="checkbox"
-                          {...profileForm.register('notifications_email')}
-                          className="w-5 h-5 text-primary-600 rounded focus:ring-primary-500"
+                  <CardBody className="space-y-8">
+                    {/* Channels */}
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-4">Canales de comunicación</h3>
+                      <div className="space-y-4">
+                        <Switch
+                          id="notif-email"
+                          label="Notificaciones por Email"
+                          description="Recibe confirmaciones y recordatorios por correo electrónico"
+                          checked={profileForm.watch('notifications_email_enabled')}
+                          {...profileForm.register('notifications_email_enabled')}
+                          containerClassName="p-4 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors"
                         />
-                        <div className="flex-1">
-                          <p className="font-medium text-ink-primary">Notificaciones por Email</p>
-                          <p className="text-sm text-ink-secondary">Recibe confirmaciones y recordatorios por correo electrónico</p>
-                        </div>
-                        <svg className="w-6 h-6 text-ink-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                      </label>
+                        <Switch
+                          id="notif-sms"
+                          label="Notificaciones por SMS"
+                          description="Recibe recordatorios importantes por mensaje de texto"
+                          checked={profileForm.watch('notifications_sms_enabled')}
+                          {...profileForm.register('notifications_sms_enabled')}
+                          containerClassName="p-4 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors"
+                        />
+                        <Switch
+                          id="notif-whatsapp"
+                          label="Notificaciones por WhatsApp"
+                          description="Recibe recordatorios y actualizaciones por WhatsApp"
+                          checked={profileForm.watch('notifications_whatsapp_enabled')}
+                          {...profileForm.register('notifications_whatsapp_enabled')}
+                          containerClassName="p-4 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors"
+                        />
+                      </div>
+                    </div>
 
-                      <label className="flex items-center gap-4 p-4 border border-border rounded-xl cursor-pointer hover:bg-secondary-50 transition-colors">
-                        <input
-                          type="checkbox"
-                          {...profileForm.register('notifications_sms')}
-                          className="w-5 h-5 text-primary-600 rounded focus:ring-primary-500"
-                        />
-                        <div className="flex-1">
-                          <p className="font-medium text-ink-primary">Notificaciones por SMS</p>
-                          <p className="text-sm text-ink-secondary">Recibe recordatorios por mensaje de texto</p>
-                        </div>
-                        <svg className="w-6 h-6 text-ink-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                        </svg>
-                      </label>
+                    <hr className="border-gray-200" />
 
-                      <label className="flex items-center gap-4 p-4 border border-border rounded-xl cursor-pointer hover:bg-secondary-50 transition-colors">
-                        <input
-                          type="checkbox"
-                          {...profileForm.register('notifications_whatsapp')}
-                          className="w-5 h-5 text-primary-600 rounded focus:ring-primary-500"
+                    {/* Categories */}
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-4">Categorías de notificaciones</h3>
+                      <div className="space-y-4">
+                        <Switch
+                          id="notif-appointments"
+                          label="Citas y recordatorios"
+                          description="Recordatorios de citas próximas, confirmaciones y recordatorios de pago"
+                          checked={profileForm.watch('notifications_appointments')}
+                          {...profileForm.register('notifications_appointments')}
+                          containerClassName="p-4 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors"
                         />
-                        <div className="flex-1">
-                          <p className="font-medium text-ink-primary">Notificaciones por WhatsApp</p>
-                          <p className="text-sm text-ink-secondary">Recibe recordatorios y actualizaciones por WhatsApp</p>
-                        </div>
-                        <svg className="w-6 h-6 text-ink-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                        </svg>
-                      </label>
+                        <Switch
+                          id="notif-results"
+                          label="Resultados médicos"
+                          description="Notificaciones cuando tus resultados estén disponibles"
+                          checked={profileForm.watch('notifications_results')}
+                          {...profileForm.register('notifications_results')}
+                          containerClassName="p-4 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors"
+                        />
+                        <Switch
+                          id="notif-promotions"
+                          label="Promociones y novedades"
+                          description="Recibe ofertas especiales y nuevas funcionalidades"
+                          checked={profileForm.watch('notifications_promotions')}
+                          {...profileForm.register('notifications_promotions')}
+                          containerClassName="p-4 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Frequency Info */}
+                    <div className="flex items-start gap-2 p-4 bg-gray-50 rounded-xl border border-gray-200">
+                      <Info className="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
+                      <div className="text-sm text-gray-700">
+                        <p className="font-medium mb-1">Frecuencia de notificaciones</p>
+                        <ul className="list-disc list-inside space-y-1 text-gray-600">
+                          <li>Recordatorios de citas: 24 horas antes y 1 hora antes</li>
+                          <li>Resultados médicos: Cuando estén disponibles</li>
+                          <li>Promociones: Máximo 2 por semana</li>
+                        </ul>
+                      </div>
                     </div>
                   </CardBody>
                   <CardFooter>

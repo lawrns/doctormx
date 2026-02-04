@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { useState, useEffect } from 'react'
+import { Logo } from '@/components/Logo'
 
 interface HeaderProps {
   variant?: 'default' | 'transparent'
@@ -34,26 +35,7 @@ export function Header({ variant = 'default', showAuth = true }: HeaderProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
-              <svg
-                className="w-5 h-5 text-white"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                />
-              </svg>
-            </div>
-            <span className="text-xl font-bold text-gray-900">
-              Doctor.mx
-            </span>
-          </Link>
+          <Logo size="md" />
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center gap-8">

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoctorMX Logo Design System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #ffffff;
+            color: #2D2D2D;
+            padding: 60px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            margin-bottom: 50px;
+            border-bottom: 2px solid #0D7377;
+            padding-bottom: 20px;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0D7377;
+            letter-spacing: -0.5px;
+        }
+        
+        .header p {
+            font-size: 16px;
+            color: #666;
+            margin-top: 8px;
+        }
+        
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .logo-section h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+            margin-bottom: 30px;
+        }
+        
+        .primary-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            background: #f8f9fa;
+            border-radius: 16px;
+            margin-bottom: 30px;
+        }
+        
+        .logo-mark {
+            width: 180px;
+            height: 180px;
+            margin-bottom: 30px;
+        }
+        
+        .logo-mark svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .wordmark {
+            font-size: 48px;
+            font-weight: 500;
+            letter-spacing: -1px;
+        }
+        
+        .wordmark .doctor {
+            color: #2D2D2D;
+        }
+        
+        .wordmark .mx {
+            color: #0D7377;
+            font-weight: 700;
+        }
+        
+        .color-palette {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .color-swatch {
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .color-swatch.primary {
+            background: #0D7377;
+            color: white;
+        }
+        
+        .color-swatch.accent {
+            background: #FF6B6B;
+            color: white;
+        }
+        
+        .color-swatch.neutral {
+            background: #2D2D2D;
+            color: white;
+        }
+        
+        .color-swatch.white {
+            background: #ffffff;
+            border: 2px solid #e0e0e0;
+            color: #2D2D2D;
+        }
+        
+        .color-name {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+        
+        .color-hex {
+            font-size: 18px;
+            font-family: 'SF Mono', Monaco, monospace;
+            opacity: 0.9;
+        }
+        
+        .variations-section {
+            margin-top: 60px;
+        }
+        
+        .variations-section h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+            margin-bottom: 30px;
+        }
+        
+        .variations-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .variation-card {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 16px;
+        }
+        
+        .variation-card.dark {
+            background: #0D7377;
+        }
+        
+        .variation-card .icon-container {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .variation-card.dark .icon-container svg path {
+            fill: #ffffff;
+        }
+        
+        .variation-card.dark .variation-label {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .variation-label {
+            font-size: 13px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .favicon-demo {
+            width: 32px;
+            height: 32px;
+        }
+        
+        .app-icon-demo {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .concept-note {
+            margin-top: 60px;
+            padding: 30px;
+            background: linear-gradient(135deg, #0D7377 0%, #0a5a5d 100%);
+            border-radius: 16px;
+            color: white;
+        }
+        
+        .concept-note h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .concept-note p {
+            font-size: 15px;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+        
+        .concept-note strong {
+            color: #FF6B6B;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>DoctorMX Logo System</h1>
+            <p>Healthcare platform brand identity — Modern • Trustworthy • Distinctive</p>
+        </div>
+        
+        <div class="main-grid">
+            <div class="logo-section">
+                <h2>Primary Mark</h2>
+                <div class="primary-logo">
+                    <!-- Geometric M with stethoscope negative space -->
+                    <div class="logo-mark">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Outer M shape in teal -->
+                            <path d="M10 85 L10 25 Q10 10 25 10 Q40 10 40 25 L40 50 Q40 55 45 55 L55 55 Q60 55 60 50 L60 25 Q60 10 75 10 Q90 10 90 25 L90 85 L75 85 L75 30 Q75 25 70 25 Q65 25 65 30 L65 55 Q65 70 50 70 Q35 70 35 55 L35 30 Q35 25 30 25 Q25 25 25 30 L25 85 Z" 
+                                  fill="#0D7377"/>
+                            <!-- Stethoscope visualization in negative space -->
+                            <circle cx="25" cy="22" r="6" fill="white"/>
+                            <circle cx="75" cy="22" r="6" fill="white"/>
+                            <path d="M25 28 L25 45 Q25 55 35 55 L40 55" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+                            <path d="M75 28 L75 45 Q75 55 65 55 L60 55" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+                            <!-- Center connector suggesting stethoscope chest piece -->
+                            <circle cx="50" cy="62" r="8" fill="#FF6B6B"/>
+                        </svg>
+                    </div>
+                    <div class="wordmark">
+                        <span class="doctor">doctor</span><span class="mx">.mx</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="logo-section">
+                <h2>Color Palette</h2>
+                <div class="color-palette">
+                    <div class="color-swatch primary">
+                        <div class="color-name">Deep Teal</div>
+                        <div class="color-hex">#0D7377</div>
+                    </div>
+                    <div class="color-swatch accent">
+                        <div class="color-name">Warm Coral</div>
+                        <div class="color-hex">#FF6B6B</div>
+                    </div>
+                    <div class="color-swatch neutral">
+                        <div class="color-name">Charcoal</div>
+                        <div class="color-hex">#2D2D2D</div>
+                    </div>
+                    <div class="color-swatch white">
+                        <div class="color-name">Clean White</div>
+                        <div class="color-hex">#FFFFFF</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="variations-section">
+            <h2>Usage Variations</h2>
+            <div class="variations-grid">
+                <div class="variation-card">
+                    <div class="icon-container">
+                        <!-- Favicon size -->
+                        <svg class="favicon-demo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 85 L10 25 Q10 10 25 10 Q40 10 40 25 L40 50 Q40 55 45 55 L55 55 Q60 55 60 50 L60 25 Q60 10 75 10 Q90 10 90 25 L90 85 L75 85 L75 30 Q75 25 70 25 Q65 25 65 30 L65 55 Q65 70 50 70 Q35 70 35 55 L35 30 Q35 25 30 25 Q25 25 25 30 L25 85 Z" fill="#0D7377"/>
+                            <circle cx="50" cy="62" r="8" fill="#FF6B6B"/>
+                        </svg>
+                    </div>
+                    <div class="variation-label">Favicon</div>
+                </div>
+                
+                <div class="variation-card">
+                    <div class="icon-container">
+                        <div class="app-icon-demo">
+                            <svg width="40" height="40" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 85 L10 25 Q10 10 25 10 Q40 10 40 25 L40 50 Q40 55 45 55 L55 55 Q60 55 60 50 L60 25 Q60 10 75 10 Q90 10 90 25 L90 85 L75 85 L75 30 Q75 25 70 25 Q65 25 65 30 L65 55 Q65 70 50 70 Q35 70 35 55 L35 30 Q35 25 30 25 Q25 25 25 30 L25 85 Z" fill="#0D7377"/>
+                                <circle cx="50" cy="62" r="8" fill="#FF6B6B"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="variation-label">App Icon</div>
+                </div>
+                
+                <div class="variation-card dark">
+                    <div class="icon-container">
+                        <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 85 L10 25 Q10 10 25 10 Q40 10 40 25 L40 50 Q40 55 45 55 L55 55 Q60 55 60 50 L60 25 Q60 10 75 10 Q90 10 90 25 L90 85 L75 85 L75 30 Q75 25 70 25 Q65 25 65 30 L65 55 Q65 70 50 70 Q35 70 35 55 L35 30 Q35 25 30 25 Q25 25 25 30 L25 85 Z" fill="#ffffff"/>
+                            <circle cx="50" cy="62" r="8" fill="#FF6B6B"/>
+                        </svg>
+                    </div>
+                    <div class="variation-label">Dark Mode</div>
+                </div>
+                
+                <div class="variation-card">
+                    <div class="icon-container">
+                        <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 85 L10 25 Q10 10 25 10 Q40 10 40 25 L40 50 Q40 55 45 55 L55 55 Q60 55 60 50 L60 25 Q60 10 75 10 Q90 10 90 25 L90 85 L75 85 L75 30 Q75 25 70 25 Q65 25 65 30 L65 55 Q65 70 50 70 Q35 70 35 55 L35 30 Q35 25 30 25 Q25 25 25 30 L25 85 Z" fill="#2D2D2D"/>
+                            <circle cx="50" cy="62" r="8" fill="#666"/>
+                        </svg>
+                    </div>
+                    <div class="variation-label">Monochrome</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="concept-note">
+            <h3>Design Concept: The Council's Synthesis</h3>
+            <p>The <strong>geometric "M" lettermark</strong> incorporates subtle <strong>stethoscope negative space</strong>—honoring medical tradition while signaling modern innovation. The teal conveys trust and clinical precision; the coral adds warmth and human connection. This mark works at 16px (favicon) and billboard scale, solving the current inconsistency between stethoscope and heart icons. <strong>DoctorMX: Doctoralia, but better.</strong></p>
+        </div>
+    </div>
+</body>
+</html>

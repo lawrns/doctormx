@@ -10,7 +10,8 @@ import { FeaturesSection } from './FeaturesSection'
 import { TestimonialsSection } from './TestimonialsSection'
 import { CTASection } from './CTASection'
 import { TrustFooter } from '@/components/TrustSignals'
-import { Stethoscope, Search, UserPlus, Sparkles, ShieldCheck } from 'lucide-react'
+import { Logo } from '@/components/Logo'
+import { Search, UserPlus, Sparkles, ShieldCheck } from 'lucide-react'
 
 export function LandingPageClient() {
   return (
@@ -45,18 +46,9 @@ export function LandingPageClient() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-18">
-            <Link href="/" className="flex items-center gap-2.5 group">
-              <motion.div
-                whileHover={{ scale: 1.05, rotate: 5 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/25"
-              >
-                <Stethoscope className="w-5 h-5 text-white" />
-              </motion.div>
-              <span className="text-xl font-bold text-text-primary tracking-tight">
-                Doctor.mx
-              </span>
-            </Link>
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Logo size="md" />
+            </motion.div>
 
             <nav className="hidden lg:flex items-center gap-1">
               {[
@@ -112,12 +104,9 @@ export function LandingPageClient() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
             <div className="col-span-2 md:col-span-1">
-              <Link href="/" className="flex items-center gap-2.5 mb-4">
-                <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center">
-                  <Stethoscope className="w-5 h-5 text-white" />
-                </div>
-                <span className="text-xl font-bold">Doctor.mx</span>
-              </Link>
+              <div className="mb-4">
+                <Logo size="md" variant="light" />
+              </div>
               <p className="text-neutral-400 text-sm leading-relaxed">
                 La plataforma de salud digital más confiable de México. Conectamos pacientes con los mejores especialistas certificados.
               </p>

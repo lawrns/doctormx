@@ -61,12 +61,17 @@ export interface UpdateProfileData {
   insurance_policy_number?: string | null
   insurance_group_number?: string | null
   insurance_coverage_type?: string | null
+  insurance_expires_at?: string | null
   emergency_contact_name?: string | null
   emergency_contact_phone?: string | null
   emergency_contact_relationship?: string | null
+  emergency_contact_secondary_phone?: string | null
   notifications_email?: boolean
   notifications_sms?: boolean
   notifications_whatsapp?: boolean
+  notifications_appointments?: boolean
+  notifications_results?: boolean
+  notifications_promotions?: boolean
 }
 
 export interface UpdateMedicalHistoryData {
