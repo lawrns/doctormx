@@ -161,7 +161,7 @@ interface AvatarStatusProps extends VariantProps<typeof statusVariants> {
 }
 
 function AvatarStatus({ status, size, className }: AvatarStatusProps) {
-  if (!status || status === "none") return null
+  if (!status) return null
 
   return (
     <span
