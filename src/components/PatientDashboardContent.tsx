@@ -3,12 +3,14 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { ReviewTrigger } from '@/components/ReviewTrigger'
-import { 
-  Droplets, 
-  Moon, 
-  Activity, 
+import {
+  Droplets,
+  Moon,
+  Activity,
   Apple,
-  Lightbulb
+  Lightbulb,
+  Users,
+  Calendar
 } from 'lucide-react'
 
 interface Appointment {
@@ -31,7 +33,7 @@ export function PatientDashboardContent({ appointments }: PatientDashboardConten
   const [shown, setShown] = useState(false)
 
   const completedAppointments = appointments.filter(apt => apt.status === 'completed')
-  
+
   const reviewableAppointments = completedAppointments
     .filter(apt => {
       const date = new Date(apt.start_ts)
@@ -40,7 +42,7 @@ export function PatientDashboardContent({ appointments }: PatientDashboardConten
     })
     .slice(0, 3)
 
-  const upcomingAppointments = appointments.filter(apt => 
+  const upcomingAppointments = appointments.filter(apt =>
     ['confirmed', 'pending_payment'].includes(apt.status) && new Date(apt.start_ts) > new Date()
   )
 
@@ -56,9 +58,9 @@ export function PatientDashboardContent({ appointments }: PatientDashboardConten
             <div>
               <h2 className="text-lg font-semibold mb-1">Tienes consultas próximas</h2>
               <p className="text-primary-100 text-sm">
-                Tu próxima consulta es el {new Date(upcomingAppointments[0].start_ts).toLocaleDateString('es-MX', { 
-                  weekday: 'long', 
-                  month: 'long', 
+                Tu próxima consulta es el {new Date(upcomingAppointments[0].start_ts).toLocaleDateString('es-MX', {
+                  weekday: 'long',
+                  month: 'long',
                   day: 'numeric',
                   hour: '2-digit',
                   minute: '2-digit'
@@ -88,34 +90,34 @@ export function PatientDashboardContent({ appointments }: PatientDashboardConten
   )
 }
 
-// Health Tips Component for patient dashboard
+// Health Tips Component - Horizontal Scrollable Carousel
 export function HealthTips() {
   const tips = [
     {
       icon: Droplets,
       title: 'Mantente hidratado',
-      description: 'Bebe al menos 8 vasos de agua al día para mantener tu cuerpo funcionando de manera óptima.',
+      description: 'Bebe al menos 8 vasos de agua al día.',
       color: 'text-blue-600',
       bgColor: 'bg-blue-50'
     },
     {
       icon: Moon,
       title: 'Duerme bien',
-      description: '7-9 horas de sueño nocturno ayudan a tu sistema inmune y bienestar mental.',
+      description: '7-9 horas de sueño nocturno.',
       color: 'text-indigo-600',
       bgColor: 'bg-indigo-50'
     },
     {
       icon: Activity,
       title: 'Movimiento diario',
-      description: '30 minutos de actividad física moderada mejoran tu salud cardiovascular.',
+      description: '30 minutos de actividad física.',
       color: 'text-emerald-600',
       bgColor: 'bg-emerald-50'
     },
     {
       icon: Apple,
       title: 'Alimentación balanceada',
-      description: 'Incluye frutas, verduras y proteínas en cada comida.',
+      description: 'Frutas, verduras y proteínas.',
       color: 'text-rose-600',
       bgColor: 'bg-rose-50'
     },
@@ -123,7 +125,7 @@ export function HealthTips() {
 
   return (
     <div className="bg-white rounded-2xl shadow-card border border-border p-6 mb-8">
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between mb-4">
         <h2 className="text-lg font-bold text-gray-900 flex items-center gap-2">
           <Lightbulb className="w-5 h-5 text-amber-500" />
           Tips de Salud
@@ -132,16 +134,18 @@ export function HealthTips() {
           Ver más →
         </Link>
       </div>
-      <div className="grid sm:grid-cols-2 gap-4">
+      {/* Horizontal Scrollable Carousel */}
+      <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide -mx-2 px-2">
         {tips.map((tip, index) => (
-          <div key={index} className="flex items-start gap-4 p-4 rounded-xl bg-gray-50/50 hover:bg-gray-100/50 transition-colors border border-transparent hover:border-gray-100">
-            <div className={`w-12 h-12 rounded-xl ${tip.bgColor} flex items-center justify-center flex-shrink-0`}>
-              <tip.icon className={`w-6 h-6 ${tip.color}`} />
+          <div
+            key={index}
+            className="flex-shrink-0 w-64 p-4 rounded-xl bg-gray-50/50 hover:bg-gray-100/50 transition-colors border border-transparent hover:border-gray-100"
+          >
+            <div className={`w-10 h-10 rounded-lg ${tip.bgColor} flex items-center justify-center mb-3`}>
+              <tip.icon className={`w-5 h-5 ${tip.color}`} />
             </div>
-            <div>
-              <p className="font-semibold text-gray-900">{tip.title}</p>
-              <p className="text-sm text-gray-600 leading-relaxed">{tip.description}</p>
-            </div>
+            <p className="font-semibold text-gray-900 text-sm">{tip.title}</p>
+            <p className="text-xs text-gray-600 mt-1 leading-relaxed">{tip.description}</p>
           </div>
         ))}
       </div>
@@ -149,29 +153,58 @@ export function HealthTips() {
   )
 }
 
-// Quick Stats Component
+// Quick Stats Component - Redesigned as "Agenda tu primera consulta" CTA
 export function QuickStats({ appointments }: { appointments: Appointment[] }) {
   const completed = appointments.filter(a => a.status === 'completed').length
   const upcoming = appointments.filter(a => ['confirmed', 'pending_payment'].includes(a.status) && new Date(a.start_ts) > new Date()).length
 
+  // If user has appointments, don't show the CTA
+  if (completed > 0 || upcoming > 0) {
+    return null
+  }
+
   return (
-    <div className="grid grid-cols-2 gap-4 mb-8">
-      <Link href="/doctors" className="block">
-        <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-4 text-white hover:shadow-lg transition-shadow">
-          <p className="text-blue-100 text-sm font-medium">
-            {completed > 0 ? 'Consultas completadas' : 'Agenda tu primera consulta →'}
-          </p>
-          <p className="text-3xl font-bold">{completed || '→'}</p>
+    <Link href="/doctors" className="block mb-8 group">
+      <div className="bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl p-6 text-white shadow-sm hover:shadow-md transition-all">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            {/* Doctor avatar cluster */}
+            <div className="flex -space-x-3">
+              {[1, 2, 3].map((i) => (
+                <div
+                  key={i}
+                  className="w-12 h-12 rounded-full bg-white/20 border-2 border-primary-500 flex items-center justify-center text-white font-semibold"
+                  style={{ zIndex: 3 - i }}
+                >
+                  Dr{i}
+                </div>
+              ))}
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-1">Agenda tu primera consulta</h3>
+              <p className="text-primary-100 text-sm">Doctores verificados disponibles hoy</p>
+            </div>
+          </div>
+          <div className="bg-white text-primary-600 px-5 py-3 rounded-xl font-semibold group-hover:bg-primary-50 transition-colors">
+            Buscar doctor →
+          </div>
         </div>
-      </Link>
-      <Link href="/doctors" className="block">
-        <div className="bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl p-4 text-white hover:shadow-lg transition-shadow">
-          <p className="text-blue-100 text-sm font-medium">
-            {upcoming > 0 ? 'Próximas consultas' : 'No tienes citas próximas'}
-          </p>
-          <p className="text-3xl font-bold">{upcoming || 'Buscar'}</p>
-        </div>
-      </Link>
+      </div>
+    </Link>
+  )
+}
+
+// Recent Consultations Empty State
+export function RecentConsultationsEmpty() {
+  return (
+    <div className="text-center py-12">
+      <div className="w-16 h-16 bg-primary-50 rounded-full flex items-center justify-center mx-auto mb-4">
+        <Calendar className="w-8 h-8 text-primary-400" />
+      </div>
+      <p className="text-gray-900 font-medium mb-2">Aún no tienes consultas</p>
+      <p className="text-gray-500 text-sm max-w-sm mx-auto">
+        Tu historial de consultas aparecerá aquí después de tu primera cita.
+      </p>
     </div>
   )
 }

@@ -145,66 +145,50 @@ export function WelcomeBanner({ patientName }: { patientName: string }) {
   if (!show) return null
 
   return (
-    <div className="bg-gradient-to-r from-primary-500 via-primary-600 to-primary-700 rounded-2xl p-6 mb-8 text-white relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
-      <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2" />
-      
-      <div className="relative">
-        <div className="flex items-start justify-between">
-          <div>
-            <h1 className="text-2xl font-bold mb-2">
-              Bienvenido a Doctor.mx, {patientName}
-            </h1>
-            <p className="text-primary-100 mb-4 max-w-lg">
-              Tu plataforma de telemedicina de confianza. Encuentra doctores verificados, 
-              consulta desde casa y cuida tu salud de manera fácil y segura.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link
-                href="/doctors"
-                className="bg-white text-primary-600 px-4 py-2 rounded-lg font-medium hover:bg-primary-50 transition-colors"
-              >
-                Buscar un doctor
-              </Link>
-              <Link
-                href="/app/profile"
-                className="bg-white/20 text-white px-4 py-2 rounded-lg font-medium hover:bg-white/30 transition-colors"
-              >
-                Completar mi perfil
-              </Link>
-            </div>
-          </div>
-          <button
-            onClick={() => setShow(false)}
-            className="text-white/60 hover:text-white"
+    <div className="bg-white rounded-xl border border-gray-200 p-4 mb-6">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <span className="text-gray-900">
+            Hola, <span className="font-semibold">{patientName}</span> 👋
+          </span>
+          <Link
+            href="/app/profile"
+            className="text-xs px-2 py-1 bg-primary-50 text-primary-600 rounded-full font-medium hover:bg-primary-100 transition-colors"
           >
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
+            Completar perfil
+          </Link>
         </div>
-
-        {/* Features highlights */}
-        <div className="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-white/20">
-          <div className="flex items-center gap-2">
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-            </svg>
-            <span className="text-sm">Doctores verificados</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-            </svg>
-            <span className="text-sm">Videoconsultas</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-            <span className="text-sm">Recetas digitales</span>
-          </div>
-        </div>
+        <button
+          onClick={() => setShow(false)}
+          className="text-gray-400 hover:text-gray-500"
+        >
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      {/* Trust badges - inline and compact */}
+      <div className="flex items-center gap-4 mt-3 text-xs text-gray-500">
+        <span className="flex items-center gap-1">
+          <svg className="w-3.5 h-3.5 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+          Doctores verificados
+        </span>
+        <span>•</span>
+        <span className="flex items-center gap-1">
+          <svg className="w-3.5 h-3.5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+          </svg>
+          Videoconsultas
+        </span>
+        <span>•</span>
+        <span className="flex items-center gap-1">
+          <svg className="w-3.5 h-3.5 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          Recetas digitales
+        </span>
       </div>
     </div>
   )

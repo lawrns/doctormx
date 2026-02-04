@@ -446,24 +446,30 @@ function AppointmentsPageContent() {
         <div className="mb-6">
           <div className="border-b border-gray-200">
             <nav className="flex gap-4">
-              {tabs.map(tab => (
-                <button
-                  key={tab.key}
-                  onClick={() => handleTabChange(tab.key)}
-                  className={`pb-3 px-1 text-sm font-medium border-b-2 transition-colors ${
-                    activeTab === tab.key
-                      ? 'border-blue-600 text-blue-600'
-                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                  }`}
-                >
-                  {tab.label}
-                  <span className={`ml-2 px-2 py-0.5 rounded-full text-xs ${
-                    activeTab === tab.key ? 'bg-blue-100 text-blue-600' : 'bg-gray-100 text-gray-600'
-                  }`}>
-                    {getFilteredCount(tab.key)}
-                  </span>
-                </button>
-              ))}
+              {tabs.map(tab => {
+                const count = getFilteredCount(tab.key)
+                return (
+                  <button
+                    key={tab.key}
+                    onClick={() => handleTabChange(tab.key)}
+                    className={`pb-3 px-1 text-sm font-medium border-b-2 transition-colors ${
+                      activeTab === tab.key
+                        ? 'border-blue-600 text-blue-600'
+                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                    }`}
+                  >
+                    {tab.label}
+                    {/* Only show count badge when count > 0 */}
+                    {count > 0 && (
+                      <span className={`ml-2 px-2 py-0.5 rounded-full text-xs ${
+                        activeTab === tab.key ? 'bg-blue-100 text-blue-600' : 'bg-gray-100 text-gray-600'
+                      }`}>
+                        {count}
+                      </span>
+                    )}
+                  </button>
+                )
+              })}
             </nav>
           </div>
         </div>
@@ -490,28 +496,40 @@ function AppointmentsPageContent() {
             ))}
           </div>
         ) : appointments.length === 0 ? (
-          <EmptyState
-            iconName="calendar"
-            title={
-              activeTab === 'all'
+          <div className="bg-white rounded-2xl shadow-card border border-border p-12 text-center">
+            {/* Larger colored illustration/icon */}
+            <div className="w-24 h-24 bg-gradient-to-br from-primary-100 to-primary-200 rounded-3xl flex items-center justify-center mx-auto mb-6">
+              <Calendar className="w-12 h-12 text-primary-500" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-3">
+              {activeTab === 'all'
                 ? 'No tienes citas programadas'
                 : activeTab === 'upcoming'
                 ? 'No tienes citas próximas'
                 : activeTab === 'completed'
                 ? 'No tienes citas completadas'
-                : 'No tienes citas canceladas'
-            }
-            description={
-              activeTab === 'all'
-                ? 'Cuando reserves una cita con un doctor, aparecerá aquí.'
-                : 'No se encontraron citas en esta categoría.'
-            }
-            action={
-              activeTab === 'all' || activeTab === 'upcoming'
-                ? { label: 'Buscar un doctor', href: '/doctors' }
-                : undefined
-            }
-          />
+                : 'No tienes citas canceladas'}
+            </h3>
+            <p className="text-gray-600 mb-6 max-w-sm mx-auto">
+              {activeTab === 'all' || activeTab === 'upcoming'
+                ? 'Consulta con doctores verificados desde la comodidad de tu hogar'
+                : 'No se encontraron citas en esta categoría.'}
+            </p>
+            {(activeTab === 'all' || activeTab === 'upcoming') && (
+              <>
+                <Link
+                  href="/doctors"
+                  className="inline-flex items-center gap-2 bg-primary-500 text-white px-6 py-3 rounded-xl font-medium hover:bg-primary-600 transition-colors mb-4"
+                >
+                  Buscar un doctor
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </Link>
+                <p className="text-sm text-gray-500">Primera consulta desde $299 MXN</p>
+              </>
+            )}
+          </div>
         ) : (
           <div className="space-y-4">
             {appointments.map(appointment => (

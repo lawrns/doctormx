@@ -29,14 +29,15 @@ export default function UploadImagePage() {
   const [uploadData, setUploadData] = useState<UploadData | null>(null)
   const [fullAnalysis, setFullAnalysis] = useState<FullAnalysis | null>(null)
   const [loading, setLoading] = useState(false)
+  const [showDisclaimer, setShowDisclaimer] = useState(false)
 
   const handleUploadComplete = async (data: UploadData) => {
     setUploadData(data)
     setLoading(true)
-    
+
     try {
       const response = await fetch(`/api/ai/vision/result/${data.analysisId}`)
-      
+
       if (response.ok) {
         const result = await response.json()
         setFullAnalysis(result.analysis)
@@ -51,66 +52,38 @@ export default function UploadImagePage() {
   return (
     <div className="p-6 lg:p-8">
       <div className="max-w-4xl mx-auto">
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 mb-6">
-          <div className="flex items-start gap-4 mb-4">
-            <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center">
-              <svg className="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <div>
-              <h2 className="text-lg font-semibold text-gray-900">Sube tu imagen médica</h2>
-              <p className="text-gray-600 mt-1">
-                Nuestra IA analizará tu imagen y te proporcionará una segunda opinión preliminar.
-                El análisis será revisado por un médico.
-              </p>
-            </div>
-          </div>
+        {/* Compact Header */}
+        <div className="mb-6">
+          <h1 className="text-2xl font-bold text-gray-900">Análisis de Imagen con IA</h1>
+          <p className="text-gray-500 text-sm mt-1">Sube una imagen médica para obtener una segunda opinión preliminar</p>
+        </div>
 
-          <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-6">
-            <div className="flex gap-3">
-              <svg className="w-5 h-5 text-yellow-600 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-              </svg>
-              <div className="text-sm text-yellow-800">
-                <p className="font-medium">Disclaimer médico</p>
-                <p className="mt-1">
-                  Este análisis es generado por IA y NO sustituye la evaluación de un médico certificado.
-                  Siempre consulta con un profesional de la salud para diagnóstico y tratamiento.
-                </p>
-              </div>
-            </div>
-          </div>
+        {/* Upload Area - First thing users see */}
+        {!uploadData && (
+          <div className="mb-6">
+            <ImageUploader onUploadComplete={handleUploadComplete} />
 
-          <div className="bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200 rounded-xl p-4 mb-6">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full flex items-center justify-center">
-                <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            {/* Usage Counter - Subtle pill style */}
+            <div className="mt-4 flex items-center justify-center gap-4 text-sm text-gray-500">
+              <span className="flex items-center gap-1.5">
+                <svg className="w-4 h-4 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-              </div>
-              <div className="flex-1">
-                <p className="font-medium text-blue-800">3 análisis gratis al mes</p>
-                <p className="text-sm text-blue-700">
-                  Obtén 3 análisis de imagen gratuitos cada mes. ¿Necesitas más? Actualiza a Premium.
-                </p>
-              </div>
-              <Link
-                href="/app/premium"
-                className="px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-medium rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-all"
-              >
-                Ver Premium
+                3 análisis gratis restantes este mes
+              </span>
+              <span>•</span>
+              <Link href="/app/premium" className="text-primary-600 hover:text-primary-700">
+                ¿Necesitas más análisis? Ver Premium →
               </Link>
             </div>
           </div>
+        )}
 
-          {!uploadData && <ImageUploader onUploadComplete={handleUploadComplete} />}
-        </div>
-
+        {/* Upload Card with Analysis Result */}
         {(uploadData || loading) && (
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 mb-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Resultado del Análisis</h3>
-            
+
             {loading ? (
               <div className="flex items-center justify-center py-12">
                 <div className="w-8 h-8 border-4 border-primary-500 border-t-transparent rounded-full animate-spin" />
@@ -211,37 +184,58 @@ export default function UploadImagePage() {
           </div>
         )}
 
-        <div className="mt-8 grid md:grid-cols-3 gap-4">
-          <div className="bg-white rounded-xl p-4 border border-gray-200">
-            <div className="w-10 h-10 bg-teal-50 rounded-lg flex items-center justify-center mb-3">
+        {/* Trust Badges - Single Row */}
+        <div className="grid grid-cols-3 gap-4 mb-6">
+          <div className="bg-white rounded-xl p-4 border border-gray-200 text-center">
+            <div className="w-10 h-10 bg-teal-50 rounded-lg flex items-center justify-center mx-auto mb-2">
               <svg className="w-5 h-5 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h4 className="font-medium text-gray-900">Rápido</h4>
-            <p className="text-sm text-gray-600 mt-1">Análisis en segundos con GPT-4 Vision</p>
+            <h4 className="font-medium text-gray-900 text-sm">Rápido</h4>
+            <p className="text-xs text-gray-500 mt-1">Análisis en segundos</p>
           </div>
-          
-          <div className="bg-white rounded-xl p-4 border border-gray-200">
-            <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
+
+          <div className="bg-white rounded-xl p-4 border border-gray-200 text-center">
+            <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-2">
               <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
             </div>
-            <h4 className="font-medium text-gray-900">Seguro</h4>
-            <p className="text-sm text-gray-600 mt-1">Tus imágenes son privadas y protegidas</p>
+            <h4 className="font-medium text-gray-900 text-sm">Seguro</h4>
+            <p className="text-xs text-gray-500 mt-1">Imágenes privadas</p>
           </div>
-          
-          <div className="bg-white rounded-xl p-4 border border-gray-200">
-            <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-3">
+
+          <div className="bg-white rounded-xl p-4 border border-gray-200 text-center">
+            <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-2">
               <svg className="w-5 h-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
               </svg>
             </div>
-            <h4 className="font-medium text-gray-900">Revisado</h4>
-            <p className="text-sm text-gray-600 mt-1">Un médico revisará tu análisis</p>
+            <h4 className="font-medium text-gray-900 text-sm">Revisado</h4>
+            <p className="text-xs text-gray-500 mt-1">Un médico revisará</p>
           </div>
         </div>
+
+        {/* Medical Disclaimer - Collapsible */}
+        <button
+          onClick={() => setShowDisclaimer(!showDisclaimer)}
+          className="w-full text-left text-gray-400 hover:text-gray-500 text-sm flex items-center gap-1"
+        >
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>Disclaimer médico</span>
+          <svg className={`w-3 h-3 transition-transform ${showDisclaimer ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        {showDisclaimer && (
+          <div className="mt-2 p-3 bg-gray-50 rounded-lg text-xs text-gray-500">
+            Este análisis es generado por IA y <strong>NO sustituye</strong> la evaluación de un médico certificado.
+            Siempre consulta con un profesional de la salud para diagnóstico y tratamiento.
+          </div>
+        )}
       </div>
     </div>
   )
