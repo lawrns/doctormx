@@ -277,7 +277,7 @@ export async function upgradeSubscription(
             .select('*')
             .eq('doctor_id', doctorId)
             .eq('status', 'active')
-            .single()
+            .maybeSingle() // Use maybeSingle instead of single to avoid 406
 
         if (subError || !currentSub) {
             throw new Error('No active subscription found')
@@ -356,7 +356,7 @@ export async function cancelSubscription(
             .select('*')
             .eq('doctor_id', doctorId)
             .eq('status', 'active')
-            .single()
+            .maybeSingle() // Use maybeSingle instead of single
 
         if (getError || !subscription) {
             throw new Error('No active subscription found')
@@ -402,9 +402,10 @@ export async function checkSubscriptionStatus(doctorId: string) {
             .eq('doctor_id', doctorId)
             .order('created_at', { ascending: false })
             .limit(1)
-            .single()
+            .maybeSingle() // Use maybeSingle to avoid 406 errors
 
         if (error) {
+            console.error('Subscription check error:', error)
             return {
                 hasSubscription: false,
                 isActive: false,
@@ -437,6 +438,7 @@ export async function checkSubscriptionStatus(doctorId: string) {
         }
     } catch (error) {
         logger.error('Error checking subscription status:', { error })
+        // Return safe defaults instead of throwing
         return {
             hasSubscription: false,
             isActive: false,
@@ -459,7 +461,7 @@ export async function getSubscriptionDetails(doctorId: string) {
             .eq('doctor_id', doctorId)
             .order('created_at', { ascending: false })
             .limit(1)
-            .single()
+            .maybeSingle() // Use maybeSingle
 
         if (error || !subscription) {
             return null
@@ -492,7 +494,7 @@ export async function updateSubscriptionStatus(
             })
             .eq('stripe_subscription_id', stripeSubscriptionId)
             .select()
-            .single()
+            .maybeSingle()
 
         if (error) {
             throw new Error(`Failed to update subscription: ${error.message}`)
@@ -517,7 +519,7 @@ export async function hasActiveSubscription(doctorId: string): Promise<boolean> 
             .select('status, current_period_end')
             .eq('doctor_id', doctorId)
             .eq('status', 'active')
-            .single()
+            .maybeSingle() // Use maybeSingle
 
         if (error || !subscription) {
             return false
@@ -542,7 +544,7 @@ export async function trackWhatsAppUsage(doctorId: string, increment: number = 1
             .select('whatsapp_messages_used, whatsapp_messages_limit')
             .eq('doctor_id', doctorId)
             .eq('status', 'active')
-            .single()
+            .maybeSingle()
 
         if (fetchError || !subscription) {
             throw new Error('No active subscription found')
@@ -584,7 +586,7 @@ export async function trackAiCopilotUsage(doctorId: string, increment: number = 
             .select('ai_copilot_used, ai_copilot_limit')
             .eq('doctor_id', doctorId)
             .eq('status', 'active')
-            .single()
+            .maybeSingle()
 
         if (fetchError || !subscription) {
             throw new Error('No active subscription found')
@@ -626,7 +628,7 @@ export async function trackImageAnalysisUsage(doctorId: string, increment: numbe
             .select('image_analysis_used, image_analysis_limit')
             .eq('doctor_id', doctorId)
             .eq('status', 'active')
-            .single()
+            .maybeSingle()
 
         if (fetchError || !subscription) {
             throw new Error('No active subscription found')
@@ -678,7 +680,7 @@ export async function getUsageStats(doctorId: string) {
             )
             .eq('doctor_id', doctorId)
             .eq('status', 'active')
-            .single()
+            .maybeSingle()
 
         if (error || !subscription) {
             return null
@@ -750,7 +752,7 @@ export async function checkFeatureAccess(
             )
             .eq('doctor_id', doctorId)
             .eq('status', 'active')
-            .single()
+            .maybeSingle()
 
         if (error || !subscription) {
             return { allowed: false, reason: 'No active subscription' }
