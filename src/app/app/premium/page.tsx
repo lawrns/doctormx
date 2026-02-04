@@ -15,12 +15,22 @@ interface PremiumFeatureCardProps {
 
 function PremiumFeatureCard({ feature, tier, onPurchase, loading }: PremiumFeatureCardProps) {
   const featureConfig = INDIVIDUAL_PREMIUM_FEATURES[feature]
-  const tierAccess = featureConfig.tierAccess[tier]
+  const tierAccess = featureConfig?.tierAccess?.[tier]
+  
+  // Defensive checks - handle undefined tierAccess
+  if (!tierAccess) {
+    return (
+      <div className="bg-white rounded-xl border border-gray-200 p-6">
+        <p className="text-gray-500">Feature configuration not available</p>
+      </div>
+    )
+  }
+  
   const isIncluded = tierAccess.included
   const isUnlimited = tierAccess.limit === -1
   const canPurchase = !isIncluded && tier !== 'starter'
 
-  const [usage, setUsage] = useState({ used: 0, limit: tierAccess.limit })
+  const [usage, setUsage] = useState({ used: 0, limit: tierAccess.limit || 0 })
   const [loadingUsage, setLoadingUsage] = useState(true)
 
   useEffect(() => {

@@ -43,37 +43,53 @@ export function PatientLayout({ children }: PatientLayoutProps) {
   // Check for joinable video appointments (within 15 minutes)
   useEffect(() => {
     async function checkBadges() {
-      const supabase = createClient()
-      const { data: { user } } = await supabase.auth.getUser()
+      try {
+        const supabase = createClient()
+        const { data: { user } } = await supabase.auth.getUser()
 
-      if (user) {
-        // Check for messages
-        const { count: messagesCount } = await supabase
-          .from('messages')
-          .select('*', { count: 'exact', head: true })
-          .eq('receiver_id', user.id)
-          .is('read_at', null)
+        if (!user) return
+
+        let messagesCount = 0
+        let joinableAppointment = false
+
+        // Check for messages - wrap in try/catch as table may not exist
+        try {
+          const { count } = await supabase
+            .from('chat_messages')
+            .select('*', { count: 'exact', head: true })
+            .eq('receiver_id', user.id)
+            .is('read_at', null)
+          messagesCount = count || 0
+        } catch (e) {
+          // chat_messages table may not exist yet
+          console.log('chat_messages check failed:', e)
+        }
 
         // Check for joinable appointments (within 15 minutes, have video_room_url, and are video type)
-        const fifteenMinutesFromNow = new Date(Date.now() + 15 * 60 * 1000).toISOString()
-        const { data: appointments } = await supabase
-          .from('appointments')
-          .select('id, start_ts, video_room_url, video_status, appointment_type')
-          .eq('patient_id', user.id)
-          .in('status', ['confirmed', 'pending_payment'])
-          .eq('appointment_type', 'video')
-          .in('video_status', ['pending', 'ready'])
-          .lte('start_ts', fifteenMinutesFromNow)
-          .order('start_ts', { ascending: true })
+        try {
+          const fifteenMinutesFromNow = new Date(Date.now() + 15 * 60 * 1000).toISOString()
+          const { data: appointments } = await supabase
+            .from('appointments')
+            .select('id, start_ts, video_room_url')
+            .eq('patient_id', user.id)
+            .in('status', ['confirmed', 'pending_payment'])
+            .lte('start_ts', fifteenMinutesFromNow)
+            .order('start_ts', { ascending: true })
 
-        const joinableAppointment = appointments?.some((apt: { video_room_url: string | null; start_ts: string }) =>
-          apt.video_room_url && new Date(apt.start_ts) <= new Date(Date.now() + 15 * 60 * 1000)
-        ) || false
+          joinableAppointment = appointments?.some((apt: { video_room_url: string | null; start_ts: string }) =>
+            apt.video_room_url && new Date(apt.start_ts) <= new Date(Date.now() + 15 * 60 * 1000)
+          ) || false
+        } catch (e) {
+          // Appointments query may fail due to schema issues
+          console.log('Appointments check failed:', e)
+        }
 
         setBadges({
-          messages: messagesCount || 0,
+          messages: messagesCount,
           appointmentsJoinable: joinableAppointment,
         })
+      } catch (error) {
+        console.error('Error checking badges:', error)
       }
     }
 
