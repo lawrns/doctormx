@@ -239,7 +239,7 @@ export function TreatmentPlanDisplay({
                     {med.warnings && med.warnings.length > 0 && (
                       <div className="mt-3 p-2 bg-yellow-50 rounded border border-yellow-200">
                         <p className="text-xs font-semibold text-yellow-900 mb-1">
-                          ⚠️ Advertencias:
+                          Advertencias:
                         </p>
                         <ul className="text-xs text-yellow-800 space-y-1">
                           {med.warnings.map((warning, j) => (
@@ -366,7 +366,7 @@ export function TreatmentPlanDisplay({
                 <AlertTriangle className="w-5 h-5 text-white" />
               </div>
               <h3 className="font-bold text-lg text-gray-900">
-                🚨 Signos de Alarma - Busca atención inmediata si:
+                Signos de Alarma - Busca atención inmediata si:
               </h3>
             </div>
             <ul className="space-y-3">

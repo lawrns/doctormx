@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { APPOINTMENT_CONFIG } from '@/config/constants'
 import PreConsultaChat from '@/components/PreConsultaChat'
 import { AI_CONFIG } from '@/lib/ai/config'
+import { User } from 'lucide-react'
 
 type DoctorProfile = {
   id: string
@@ -273,7 +274,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                 {doctor.profile?.photo_url ? (
                   <Image src={doctor.profile.photo_url} alt={doctor.profile.full_name} width={64} height={64} className="object-cover w-full h-full" />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center text-2xl">👨‍⚕️</div>
+                  <div className="w-full h-full flex items-center justify-center"><User className="w-8 h-8 text-gray-400" /></div>
                 )}
               </div>
               <div className="flex-1">
@@ -408,7 +409,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                       {nextAvailableDates.length > 0 && (
                         <div className="bg-primary-50 p-4 rounded-xl border border-primary-200">
                           <p className="text-sm font-medium text-primary-800 mb-3">
-                            📅 Próximas fechas con disponibilidad:
+                            Próximas fechas con disponibilidad:
                           </p>
                           <div className="flex flex-wrap gap-2">
                             {nextAvailableDates.map(date => (
@@ -456,7 +457,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
               {preConsultaCompleted && (
                 <div className="bg-success-50 border border-success-200 rounded-xl p-4">
                   <p className="text-sm text-success-700 font-medium">
-                    ✓ Pre-consulta completada con Dr. Simeon IA
+                    Pre-consulta completada con Dr. Simeon IA
                   </p>
                 </div>
               )}

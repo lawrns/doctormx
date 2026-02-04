@@ -268,9 +268,9 @@ export function AdaptiveQuestionnaire({
           {state && (
             <div className="flex items-center gap-3">
               <div className={cn('px-3 py-1 rounded-full text-xs font-medium', getUrgencyColor(state.urgencyLevel))}>
-                {state.urgencyLevel === 'emergency' ? '🚨 Emergencia' : 
-                 state.urgencyLevel === 'high' ? '⚠️ Urgente' :
-                 state.urgencyLevel === 'medium' ? '📋 Moderado' : '✓ Estable'}
+                {state.urgencyLevel === 'emergency' ? 'Emergencia' :
+                 state.urgencyLevel === 'high' ? 'Urgente' :
+                 state.urgencyLevel === 'medium' ? 'Moderado' : 'Estable'}
               </div>
             </div>
           )}

@@ -95,7 +95,7 @@ export function EmergencyAlert({
               <div className="flex-1 space-y-3">
                 {/* Title */}
                 <h3 className="text-xl font-bold text-gray-900">
-                  {isCritical ? '⚠️ EMERGENCIA MÉDICA' : '⚠️ ATENCIÓN URGENTE REQUERIDA'}
+                  {isCritical ? 'EMERGENCIA MÉDICA' : 'ATENCIÓN URGENTE REQUERIDA'}
                 </h3>
 
                 {/* Message */}

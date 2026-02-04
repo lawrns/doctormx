@@ -102,11 +102,11 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
 
             {isPending ? (
               <span className="inline-flex items-center px-2 lg:px-3 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-                <span className="hidden sm:inline">⏳ </span>En revisión
+                <span className="hidden sm:inline"></span>En revisión
               </span>
             ) : (
               <span className="inline-flex items-center px-2 lg:px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                <span className="hidden sm:inline">✓ </span>Verificado
+                <span className="hidden sm:inline"></span>Verificado
               </span>
             )}
             <span className="hidden md:inline text-sm text-gray-600">{profile.full_name}</span>

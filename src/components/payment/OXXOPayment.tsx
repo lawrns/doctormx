@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Download, Printer, Copy, Check, MapPin } from 'lucide-react';
+import { Download, Printer, Copy, Check, MapPin, AlertTriangle } from 'lucide-react';
 import Image from 'next/image';
 
 interface OXXOPaymentProps {
@@ -149,7 +149,7 @@ export function OXXOPayment({
           {/* Important Notes */}
           <div className="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-4">
             <h4 className="font-bold text-yellow-900 mb-2 flex items-center gap-2">
-              <span className="text-xl">⚠️</span>
+              <AlertTriangle className="w-5 h-5 text-yellow-700" />
               Importante:
             </h4>
             <ul className="text-sm text-yellow-800 space-y-1 ml-6 list-disc">
@@ -330,7 +330,7 @@ export function SPEIPayment({
 
           <div className="bg-green-50 border-2 border-green-200 rounded-xl p-4">
             <p className="text-sm text-green-800">
-              ✓ La confirmación es automática e inmediata (1-3 minutos)
+              <Check className="w-4 h-4 inline mr-1" />La confirmación es automática e inmediata (1-3 minutos)
             </p>
           </div>
         </div>

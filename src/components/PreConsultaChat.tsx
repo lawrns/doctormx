@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import { Stethoscope } from 'lucide-react';
 import type { PreConsultaMessage } from '@/lib/ai/types';
 import type { DoctorMatch } from '@/lib/ai/referral';
 
@@ -173,7 +174,7 @@ export default function PreConsultaChat({ isOpen, onCloseAction, onCompleteActio
                   <div key={match.doctorId} className="bg-blue-50 border border-blue-100 rounded-xl p-4 flex items-center justify-between gap-4">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-blue-200">
-                        <span className="text-lg">👨‍⚕️</span>
+                        <Stethoscope className="w-5 h-5 text-blue-600" />
                       </div>
                       <div>
                         <p className="text-sm font-bold text-gray-900">{match.doctor?.profile?.full_name || 'Especialista'}</p>

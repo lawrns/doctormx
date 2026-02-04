@@ -3,6 +3,7 @@ import { format } from 'date-fns'
 import { es } from 'date-fns/locale'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { Building2 } from 'lucide-react'
 
 interface PageProps {
   params: Promise<{ pharmacyId: string }>
@@ -74,7 +75,7 @@ export default async function PharmacyAffiliatePage({ params, searchParams }: Pa
             Doctor.mx
           </Link>
           <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-teal-50 text-teal-800">
-            🏥 Farmacia Asociada
+            <Building2 className="w-4 h-4 mr-1 inline" />Farmacia Asociada
           </span>
         </div>
       </header>

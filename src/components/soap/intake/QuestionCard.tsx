@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { Card } from '@/components/ui/card';
 import { useButtonState } from '@/hooks/useButtonState';
+import { Loader2 } from 'lucide-react';
 
 interface QuestionCardProps {
   children: React.ReactNode;
@@ -208,13 +209,7 @@ export function QuestionCardNavigation({
       >
         {isButtonLoading ? (
           <span className="flex items-center justify-center gap-2">
-            <motion.span
-              animate={{ rotate: 360 }}
-              transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-              aria-hidden="true"
-            >
-              ⏳
-            </motion.span>
+            <Loader2 className="w-4 h-4 animate-spin" />
             Procesando...
           </span>
         ) : (

@@ -147,7 +147,7 @@ const conversationScript: Omit<Message, 'id'>[] = [
   {
     role: 'ai',
     content:
-      '📋 Resumen: Dolor de cabeza súbito e intenso con rigidez de nuca.\n\n⚠️ Recomendación: Busca atención médica urgente. Te conectaré con un neurólogo disponible ahora.',
+      'Resumen: Dolor de cabeza súbito e intenso con rigidez de nuca.\n\nRecomendación: Busca atención médica urgente. Te conectaré con un neurólogo disponible ahora.',
     timestamp: '10:38',
   },
 ]

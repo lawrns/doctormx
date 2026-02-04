@@ -189,12 +189,12 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
             <span className="text-sm text-gray-600">Dr. {profile?.full_name}</span>
             {isVerified && (
               <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-medium">
-                ✓ Verificado
+                Verificado
               </span>
             )}
             {!isVerified && isComplete && (
               <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-medium">
-                ⏳ En revisión
+                En revisión
               </span>
             )}
             <form action="/auth/signout" method="post">
@@ -331,7 +331,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                           )}
                           <div>
                             <p className="font-medium">
-                              {verificationStatus.verified ? '✓ Cédula verificada' : 'Verificación pendiente'}
+                              {verificationStatus.verified ? 'Cédula verificada' : 'Verificación pendiente'}
                             </p>
                             <p className="text-xs mt-0.5 opacity-90">{verificationStatus.message}</p>
                             {verificationStatus.confidence && (
@@ -525,12 +525,12 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                 {!isComplete && <span>* Completa todos los campos requeridos</span>}
                 {isComplete && !isVerified && (
                   <span className="text-yellow-700">
-                    ⏳ Tu perfil está en revisión. Serás notificado cuando sea verificado.
+                    Tu perfil está en revisión. Serás notificado cuando sea verificado.
                   </span>
                 )}
                 {isVerified && (
                   <span className="text-green-700">
-                    ✓ Perfil verificado y publicado
+                    Perfil verificado y publicado
                   </span>
                 )}
               </div>

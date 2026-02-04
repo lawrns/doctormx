@@ -6,6 +6,7 @@ import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Input } from '@/components/Input'
 import { Badge } from '@/components/Badge'
+import { Clock } from 'lucide-react'
 
 interface UnclaimedProfile {
   id: string
@@ -311,7 +312,7 @@ export default function ClaimProfilePage() {
         {step === 'pending' && (
           <Card className="text-center">
             <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-yellow-100">
-              <span className="text-2xl">⏳</span>
+              <Clock className="w-8 h-8 text-yellow-600" />
             </div>
             <h2 className="mb-2 text-lg font-semibold">Verificación en Proceso</h2>
             <Badge variant="warning">Pendiente de revisión</Badge>

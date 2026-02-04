@@ -257,7 +257,7 @@ export default async function DoctorDashboard() {
 
             <div className="bg-white p-6 rounded-lg shadow border">
               <div className="flex items-center gap-3 mb-3">
-                <span className="text-2xl">📅</span>
+                <Calendar className="w-6 h-6 text-blue-500" />
                 <h3 className="text-lg font-semibold text-neutral-900">Configura tu disponibilidad</h3>
               </div>
               <p className="text-neutral-600 mb-4">

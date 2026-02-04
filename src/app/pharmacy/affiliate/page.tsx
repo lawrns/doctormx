@@ -4,6 +4,7 @@ import { formatCurrency } from '@/lib/utils'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale'
 import Link from 'next/link'
+import { Building2 } from 'lucide-react'
 
 export default async function PharmacyAffiliateDashboard() {
   const { user } = await requireRole('doctor')
@@ -40,7 +41,7 @@ export default async function PharmacyAffiliateDashboard() {
             <div className="flex items-center gap-4">
               <h1 className="text-2xl font-bold text-gray-900">Doctor.mx</h1>
               <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-teal-50 text-teal-800">
-                🏥 Farmacia Asociada
+                <Building2 className="w-4 h-4 mr-1 inline" />Farmacia Asociada
               </span>
             </div>
             <div className="flex items-center gap-4">

@@ -253,7 +253,7 @@ export default function SecondOpinionDetailPage() {
                 {request.doctor_follow_up_needed && (
                   <div className="rounded-lg bg-yellow-100 p-3">
                     <p className="text-sm font-medium text-yellow-800">
-                      ⚠️ El médico recomienda seguimiento
+                      El médico recomienda seguimiento
                     </p>
                   </div>
                 )}

@@ -301,7 +301,7 @@ export default function PricingPage() {
                                                 const value = feature[tier === 'starter' ? 'starter' : tier === 'pro' ? 'pro' : 'elite']
                                                 const isTrue = value === true
                                                 const isFalse = value === false
-                                                const displayValue = typeof value === 'boolean' ? (isTrue ? '✓' : '✗') : value
+                                                const displayValue = typeof value === 'boolean' ? '' : value
 
                                                 return (
                                                     <li key={idx} className="flex items-start gap-3">

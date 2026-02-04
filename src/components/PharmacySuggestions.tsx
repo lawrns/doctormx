@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { MapPin, DollarSign, Send } from 'lucide-react'
+import { MapPin, DollarSign, Send, Star, Check } from 'lucide-react'
 
 interface Pharmacy {
   pharmacyId: string
@@ -150,7 +150,7 @@ export default function PharmacySuggestions({
                   <h4 className="font-medium text-gray-900">{pharmacy.pharmacyName}</h4>
                   {pharmacy.matchScore >= 70 && (
                     <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">
-                      ⭐ Mejor opción
+                      <Star className="w-3 h-3 inline mr-1" />Mejor opción
                     </span>
                   )}
                 </div>
@@ -185,7 +185,7 @@ export default function PharmacySuggestions({
                     disabled
                     className="px-4 py-2 bg-green-100 text-green-700 rounded-lg text-sm font-medium cursor-default"
                   >
-                    ✓ Enviado
+                    <Check className="w-4 h-4 inline mr-1" />Enviado
                   </button>
                 ) : (
                   <button

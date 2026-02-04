@@ -1,6 +1,7 @@
 import { requireRole } from '@/lib/auth'
 import Link from 'next/link'
 import type { Doctor } from '@/types'
+import { Check } from 'lucide-react'
 
 export default async function AdminVerificationPage() {
   const { supabase } = await requireRole('admin')
@@ -102,7 +103,7 @@ export default async function AdminVerificationPage() {
                       type="submit"
                       className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 font-medium"
                     >
-                      ✓ Aprobar
+                      <Check className="w-4 h-4 inline mr-1" />Aprobar
                     </button>
                   </form>
 

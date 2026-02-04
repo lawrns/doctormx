@@ -8,6 +8,7 @@ import { Card } from '@/components/Card'
 import { LoadingButton } from '@/components/LoadingButton'
 import { Badge } from '@/components/Badge'
 import DoctorLayout from '@/components/DoctorLayout'
+import { Check } from 'lucide-react'
 
 export default function SubscriptionPage() {
     const router = useRouter()
@@ -195,7 +196,7 @@ export default function SubscriptionPage() {
                         <div className="flex items-start justify-between">
                             <div>
                                 <h3 className="text-lg font-semibold text-green-900 mb-2">
-                                    ✓ Suscripción Activa
+                                    Suscripción Activa
                                 </h3>
                                 <p className="text-green-700 mb-4">
                                     Plan: {subscription.subscription?.plan_name}
@@ -253,42 +254,42 @@ export default function SubscriptionPage() {
                                     <h4 className="font-semibold text-gray-900 mb-3">Incluye:</h4>
                                     <ul className="space-y-2">
                                         <li className="flex items-center gap-2 text-gray-700">
-                                            <span className="text-green-600">✓</span>
+                                            <Check className="w-4 h-4 text-green-600 flex-shrink-0" />
                                             Perfil público visible
                                         </li>
                                         <li className="flex items-center gap-2 text-gray-700">
-                                            <span className="text-green-600">✓</span>
+                                            <Check className="w-4 h-4 text-green-600 flex-shrink-0" />
                                             {plan.limits.whatsapp_patients === -1 
                                                 ? 'WhatsApp ilimitado' 
                                                 : `${plan.limits.whatsapp_patients} pacientes WhatsApp/mes`}
                                         </li>
                                         {plan.features.priority_search_ranking && (
                                             <li className="flex items-center gap-2 text-gray-700">
-                                                <span className="text-green-600">✓</span>
+                                                <Check className="w-4 h-4 text-green-600 flex-shrink-0" />
                                                 Búsqueda prioritaria (+20%)
                                             </li>
                                         )}
                                         {plan.features.featured_listing && (
                                             <li className="flex items-center gap-2 text-gray-700">
-                                                <span className="text-green-600">✓</span>
+                                                <Check className="w-4 h-4 text-green-600 flex-shrink-0" />
                                                 Destacado en homepage
                                             </li>
                                         )}
                                         {plan.features.ai_copilot && (
                                             <li className="flex items-center gap-2 text-gray-700">
-                                                <span className="text-green-600">✓</span>
+                                                <Check className="w-4 h-4 text-green-600 flex-shrink-0" />
                                                 Clinical Copilot
                                             </li>
                                         )}
                                         {plan.features.image_analysis && (
                                             <li className="flex items-center gap-2 text-gray-700">
-                                                <span className="text-green-600">✓</span>
+                                                <Check className="w-4 h-4 text-green-600 flex-shrink-0" />
                                                 Análisis de imágenes ({plan.limits.image_analysis}/mes)
                                             </li>
                                         )}
                                         {plan.features.api_access && (
                                             <li className="flex items-center gap-2 text-gray-700">
-                                                <span className="text-green-600">✓</span>
+                                                <Check className="w-4 h-4 text-green-600 flex-shrink-0" />
                                                 Acceso API
                                             </li>
                                         )}
