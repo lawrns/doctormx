@@ -179,10 +179,10 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
           <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between gap-2">
               <div>
-                <Link href={`/doctors/${doctorId}`} className="font-medium text-gray-900 hover:text-blue-600 transition-colors">
+                <Link href={`/doctors/${doctorId}`} className="font-medium text-text-primary hover:text-primary transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md">
                   {formatDoctorName(doctorName)}
                 </Link>
-                <p className="text-sm text-gray-500">{specialty}</p>
+                <p className="text-sm text-text-muted">{specialty}</p>
               </div>
               <div className="flex items-center gap-2">
                 {getVideoStatusBadge()}
@@ -190,7 +190,7 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
               </div>
             </div>
 
-            <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-gray-600">
+            <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-text-muted">
               <span className="flex items-center gap-1">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -204,7 +204,7 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
                 {time}
               </span>
               {isVideo ? (
-                <span className="flex items-center gap-1 text-blue-600">
+                <span className="flex items-center gap-1 text-primary">
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
@@ -222,7 +222,7 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
             </div>
 
             <div className="mt-3 flex items-center justify-between">
-              <span className="text-sm font-medium text-gray-900">
+              <span className="text-sm font-medium text-text-primary">
                 {formatPrice(price, currency)}
               </span>
 
@@ -231,7 +231,7 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
                 {isVideo && isInProgress && (
                   <Link
                     href={`/app/appointments/${appointment.id}/video`}
-                    className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-md transition-colors"
+                    className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-md transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   >
                     <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -243,7 +243,7 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
                 {isVideo && isInLobby && (
                   <Link
                     href={`/app/appointments/${appointment.id}/video`}
-                    className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-white bg-green-600 hover:bg-green-700 rounded-md transition-colors"
+                    className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-white bg-green-600 hover:bg-green-700 rounded-md transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   >
                     <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
@@ -258,7 +258,7 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
                   <>
                     <Link
                       href={`/app/appointments/${appointment.id}`}
-                      className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-gray-600 hover:text-gray-700 hover:bg-gray-100 rounded-md transition-colors"
+                      className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-text-muted hover:text-text-primary hover:bg-muted rounded-md transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                     >
                       <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -267,7 +267,7 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
                     </Link>
                     <Link
                       href={`/doctors/${doctorId}`}
-                      className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded-md transition-colors"
+                      className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-primary hover:text-primary/80 hover:bg-primary/10 rounded-md transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                     >
                       <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -294,7 +294,7 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
                 {canCancel && (
                   <button
                     onClick={() => setShowCancelModal(true)}
-                    className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-red-600 hover:text-red-700 hover:bg-red-50 rounded-md transition-colors"
+                    className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-error hover:text-error/80 hover:bg-error/10 rounded-md transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   >
                     <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -326,13 +326,13 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
         title="Cancelar Cita"
         size="sm"
       >
-        <p className="text-gray-600">
+        <p className="text-text-muted">
           ¿Estás seguro de que deseas cancelar esta cita? Esta acción no se puede deshacer.
         </p>
         <ModalFooter>
           <button
             onClick={() => setShowCancelModal(false)}
-            className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-700 hover:bg-gray-100 rounded-md transition-colors"
+            className="px-4 py-2 text-sm font-medium text-text-muted hover:text-text-primary hover:bg-muted rounded-md transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           >
             Mantener cita
           </button>
@@ -440,29 +440,29 @@ function AppointmentsPageContent() {
     <div className="p-6 lg:p-8">
       <div className="max-w-5xl mx-auto">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">Mis Citas</h1>
-          <p className="text-gray-600">Gestiona tus consultas médicas</p>
+          <h1 className="text-2xl font-bold text-text-primary mb-2">Mis Citas</h1>
+          <p className="text-text-muted">Gestiona tus consultas médicas</p>
         </div>
         <div className="mb-6">
-          <div className="border-b border-gray-200">
-            <nav className="flex gap-4">
+          <div className="border-b border-border">
+            <nav className="flex gap-4" role="tablist" aria-label="Filtros de citas">
               {tabs.map(tab => {
                 const count = getFilteredCount(tab.key)
                 return (
                   <button
                     key={tab.key}
                     onClick={() => handleTabChange(tab.key)}
-                    className={`pb-3 px-1 text-sm font-medium border-b-2 transition-colors ${
+                    className={`pb-3 px-1 text-sm font-medium border-b-2 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-t-sm ${
                       activeTab === tab.key
-                        ? 'border-blue-600 text-blue-600'
-                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                        ? 'border-primary text-primary'
+                        : 'border-transparent text-text-muted hover:text-text-primary hover:border-border'
                     }`}
                   >
                     {tab.label}
                     {/* Only show count badge when count > 0 */}
                     {count > 0 && (
                       <span className={`ml-2 px-2 py-0.5 rounded-full text-xs ${
-                        activeTab === tab.key ? 'bg-blue-100 text-blue-600' : 'bg-gray-100 text-gray-600'
+                        activeTab === tab.key ? 'bg-primary/10 text-primary' : 'bg-muted text-text-muted'
                       }`}>
                         {count}
                       </span>
@@ -475,7 +475,7 @@ function AppointmentsPageContent() {
         </div>
 
         {errorMessage && (
-          <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
+          <div className="mb-4 p-4 bg-error/10 border border-error/20 rounded-lg text-error" role="alert" aria-live="polite">
             {errorMessage}
           </div>
         )}
@@ -483,13 +483,13 @@ function AppointmentsPageContent() {
         {isLoading ? (
           <div className="space-y-4">
             {[1, 2, 3].map(i => (
-              <div key={i} className="bg-white rounded-lg border p-4 animate-pulse">
+              <div key={i} className="bg-background rounded-lg border p-4 animate-pulse">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gray-200 rounded-full" />
+                  <div className="w-12 h-12 bg-muted rounded-full" />
                   <div className="flex-1 space-y-2">
-                    <div className="h-4 bg-gray-200 rounded w-1/3" />
-                    <div className="h-3 bg-gray-200 rounded w-1/4" />
-                    <div className="h-3 bg-gray-200 rounded w-1/2" />
+                    <div className="h-4 bg-muted rounded w-1/3" />
+                    <div className="h-3 bg-muted rounded w-1/4" />
+                    <div className="h-3 bg-muted rounded w-1/2" />
                   </div>
                 </div>
               </div>
@@ -501,7 +501,7 @@ function AppointmentsPageContent() {
             <div className="w-24 h-24 bg-gradient-to-br from-primary-100 to-primary-200 rounded-3xl flex items-center justify-center mx-auto mb-6">
               <Calendar className="w-12 h-12 text-primary-500" />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3">
+            <h3 className="text-xl font-bold text-text-primary mb-3">
               {activeTab === 'all'
                 ? 'No tienes citas programadas'
                 : activeTab === 'upcoming'
@@ -510,7 +510,7 @@ function AppointmentsPageContent() {
                 ? 'No tienes citas completadas'
                 : 'No tienes citas canceladas'}
             </h3>
-            <p className="text-gray-600 mb-6 max-w-sm mx-auto">
+            <p className="text-text-muted mb-6 max-w-sm mx-auto">
               {activeTab === 'all' || activeTab === 'upcoming'
                 ? 'Consulta con doctores verificados desde la comodidad de tu hogar'
                 : 'No se encontraron citas en esta categoría.'}
@@ -519,14 +519,14 @@ function AppointmentsPageContent() {
               <>
                 <Link
                   href="/doctors"
-                  className="inline-flex items-center gap-2 bg-primary-500 text-white px-6 py-3 rounded-xl font-medium hover:bg-primary-600 transition-colors mb-4"
+                  className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-xl font-medium hover:bg-primary/90 transition-colors duration-200 mb-4 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
                   Buscar un doctor
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </Link>
-                <p className="text-sm text-gray-500">Primera consulta desde $299 MXN</p>
+                <p className="text-sm text-text-muted">Primera consulta desde $299 MXN</p>
               </>
             )}
           </div>
@@ -548,7 +548,7 @@ function AppointmentsPageContent() {
 
 export default function AppointmentsPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-gray-50 flex items-center justify-center"><div className="text-gray-500">Cargando...</div></div>}>
+    <Suspense fallback={<div className="min-h-screen bg-muted flex items-center justify-center" aria-live="polite"><div className="text-text-muted">Cargando...</div></div>}>
       <AppointmentsPageContent />
     </Suspense>
   )

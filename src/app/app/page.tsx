@@ -44,15 +44,15 @@ export default async function PatientDashboard() {
             { href: '/doctors', icon: Search, title: 'Buscar Doctor', desc: 'Especialistas verificados' },
             { href: '/app/upload-image', icon: ClipboardList, title: 'Analizar Imagen', desc: 'Análisis médico con IA' }
           ].map((item) => (
-            <Link key={item.href} href={item.href}>
+            <Link key={item.href} href={item.href} className="focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-xl">
               <Card className="group p-6 shadow-sm hover:shadow-md transition-all duration-200 hover:scale-[1.02]">
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <item.icon className="w-7 h-7 text-blue-600" />
+                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <item.icon className="w-7 h-7 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 text-lg group-hover:text-blue-600 transition-colors">{item.title}</h3>
-                    <p className="text-sm text-gray-500">{item.desc}</p>
+                    <h3 className="font-bold text-text-primary text-lg group-hover:text-primary transition-colors">{item.title}</h3>
+                    <p className="text-sm text-text-muted">{item.desc}</p>
                   </div>
                 </div>
               </Card>
@@ -71,11 +71,11 @@ export default async function PatientDashboard() {
 
         {/* Recent Consultations */}
         <Card className="overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-          <div className="px-6 py-5 border-b border-gray-100 flex items-center justify-between">
-            <h2 className="text-xl font-bold text-gray-900 flex items-center gap-2">
-              <Calendar className="w-6 h-6 text-blue-500" /> Consultas Recientes
+          <div className="px-6 py-5 border-b border-border flex items-center justify-between">
+            <h2 className="text-xl font-bold text-text-primary flex items-center gap-2">
+              <Calendar className="w-6 h-6 text-primary" /> Consultas Recientes
             </h2>
-            <Link href="/app/appointments" className="text-sm text-blue-500 hover:text-blue-600">Ver todas</Link>
+            <Link href="/app/appointments" className="text-sm text-primary hover:text-primary/80 transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md">Ver todas</Link>
           </div>
           <div className="p-6">
             {!appointments?.length ? (
@@ -83,13 +83,13 @@ export default async function PatientDashboard() {
             ) : (
               <div className="space-y-4">
                 {appointments.slice(0, 5).map((apt: any) => (
-                  <div key={apt.id} className="border rounded-xl p-4 hover:bg-gray-50 transition-colors">
+                  <div key={apt.id} className="border rounded-xl p-4 hover:bg-muted transition-colors duration-200">
                     <div className="flex justify-between items-center">
                       <div className="flex items-center gap-4">
-                        <User className="w-6 h-6 text-blue-500" />
+                        <User className="w-6 h-6 text-primary" />
                         <div>
-                          <p className="font-semibold">{formatDoctorName(apt.doctor?.profile?.full_name)}</p>
-                          <p className="text-sm text-gray-500">{new Date(apt.start_ts).toLocaleString('es-MX')}</p>
+                          <p className="font-semibold text-text-primary">{formatDoctorName(apt.doctor?.profile?.full_name)}</p>
+                          <p className="text-sm text-text-muted">{new Date(apt.start_ts).toLocaleString('es-MX')}</p>
                         </div>
                       </div>
                       <Badge className={getStatusBadge(apt.status)}>{apt.status}</Badge>

@@ -134,12 +134,12 @@ export default async function DoctorFinancesPage() {
   return (
     <DoctorLayout profile={profile!} isPending={isPending} currentPath="/doctor/finances">
       <div className="max-w-6xl">
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">Finanzas</h2>
-        <p className="text-gray-600 mb-8">Gestiona tus pagos y transacciones</p>
+        <h2 className="text-3xl font-bold text-text-primary mb-2">Finanzas</h2>
+        <p className="text-text-muted mb-8">Gestiona tus pagos y transacciones</p>
 
         {isPending ? (
-          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
-            <p className="text-yellow-900">
+          <div className="bg-warning-50 border border-warning-200 rounded-lg p-6" role="alert" aria-live="polite">
+            <p className="text-warning-900">
               Esta sección estará disponible una vez que tu perfil sea aprobado.
             </p>
           </div>
@@ -147,53 +147,53 @@ export default async function DoctorFinancesPage() {
           <div className="space-y-6">
             {/* Resumen financiero */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-              <div className="bg-white p-4 md:p-6 rounded-lg shadow border">
-                <p className="text-sm text-gray-600 mb-1">Ingresos este mes</p>
-                <p className="text-2xl md:text-3xl font-bold text-green-600">
+              <div className="bg-card p-4 md:p-6 rounded-lg shadow-card border border-border">
+                <p className="text-sm text-text-muted mb-1">Ingresos este mes</p>
+                <p className="text-2xl md:text-3xl font-bold text-success-600">
                   {formatCurrency(monthlyIncome, currency)}
                 </p>
               </div>
-              <div className="bg-white p-4 md:p-6 rounded-lg shadow border">
-                <p className="text-sm text-gray-600 mb-1">Pendiente de cobro</p>
-                <p className="text-2xl md:text-3xl font-bold text-yellow-600">
+              <div className="bg-card p-4 md:p-6 rounded-lg shadow-card border border-border">
+                <p className="text-sm text-text-muted mb-1">Pendiente de cobro</p>
+                <p className="text-2xl md:text-3xl font-bold text-warning-600">
                   {formatCurrency(pendingAmount, currency)}
                 </p>
               </div>
-              <div className="bg-white p-4 md:p-6 rounded-lg shadow border">
-                <p className="text-sm text-gray-600 mb-1">Total cobrado</p>
-                <p className="text-2xl md:text-3xl font-bold text-gray-900">
+              <div className="bg-card p-4 md:p-6 rounded-lg shadow-card border border-border">
+                <p className="text-sm text-text-muted mb-1">Total cobrado</p>
+                <p className="text-2xl md:text-3xl font-bold text-text-primary">
                   {formatCurrency(totalPaid, currency)}
                 </p>
               </div>
             </div>
 
             {/* Transacciones */}
-            <div className="bg-white rounded-lg shadow border p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Transacciones recientes</h3>
+            <div className="bg-card rounded-lg shadow-card border border-border p-6">
+              <h3 className="text-xl font-semibold text-text-primary mb-4">Transacciones recientes</h3>
 
               {ledgerEntries.length > 0 ? (
                 <div className="overflow-x-auto">
-                  <table className="min-w-full divide-y divide-gray-200">
+                  <table className="min-w-full divide-y divide-border">
                     <thead>
                       <tr>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th className="px-4 py-3 text-left text-xs font-medium text-text-muted uppercase tracking-wider">
                           Fecha
                         </th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th className="px-4 py-3 text-left text-xs font-medium text-text-muted uppercase tracking-wider">
                           Tipo
                         </th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th className="px-4 py-3 text-left text-xs font-medium text-text-muted uppercase tracking-wider">
                           Descripción
                         </th>
-                        <th className="px-4 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th className="px-4 py-3 text-right text-xs font-medium text-text-muted uppercase tracking-wider">
                           Monto
                         </th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-gray-100">
+                    <tbody className="divide-y divide-border/50">
                       {ledgerEntries.map((entry) => (
-                        <tr key={entry.id} className="hover:bg-gray-50">
-                          <td className="px-4 py-3 text-sm text-gray-600 whitespace-nowrap">
+                        <tr key={entry.id} className="hover:bg-muted transition-colors duration-150">
+                          <td className="px-4 py-3 text-sm text-text-muted whitespace-nowrap">
                             {formatDate(entry.created_at)}
                           </td>
                           <td className="px-4 py-3 whitespace-nowrap">
@@ -201,13 +201,13 @@ export default async function DoctorFinancesPage() {
                               {getLedgerTypeLabel(entry.type)}
                             </Badge>
                           </td>
-                          <td className="px-4 py-3 text-sm text-gray-900">
+                          <td className="px-4 py-3 text-sm text-text-primary">
                             {entry.description || '—'}
                           </td>
                           <td className={`px-4 py-3 text-sm font-medium text-right whitespace-nowrap ${
-                            entry.type === 'charge' ? 'text-green-600' :
-                            entry.type === 'refund' || entry.type === 'fee' ? 'text-red-600' :
-                            'text-gray-900'
+                            entry.type === 'charge' ? 'text-success-600' :
+                            entry.type === 'refund' || entry.type === 'fee' ? 'text-destructive' :
+                            'text-text-primary'
                           }`}>
                             {entry.type === 'fee' || entry.type === 'refund' ? '-' : '+'}
                             {formatCurrency(Math.abs(entry.amount_cents), currency)}

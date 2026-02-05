@@ -193,16 +193,16 @@ function ProfileProgressBar({ completion }: { completion: number }) {
   return (
     <div className="mb-6 animate-fade-in">
       <div className="flex items-center justify-between mb-2">
-        <span className="text-sm font-medium text-gray-700">Completitud del perfil</span>
-        <span className="text-sm font-bold text-gray-900">{completion}%</span>
+        <span className="text-sm font-medium text-text-primary">Completitud del perfil</span>
+        <span className="text-sm font-bold text-text-primary">{completion}%</span>
       </div>
-      <div className="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
+      <div className="w-full bg-muted rounded-full h-2.5 overflow-hidden">
         <div
           className={`h-full ${getColor(completion)} transition-all duration-500 ease-out`}
           style={{ width: `${completion}%` }}
         />
       </div>
-      <p className="text-xs text-gray-500 mt-1">
+      <p className="text-xs text-text-muted mt-1">
         {completion < 50 && 'Completa tu perfil para una mejor experiencia'}
         {completion >= 50 && completion < 80 && '¡Buen progreso! Completa más secciones'}
         {completion >= 80 && '¡Excelente! Tu perfil está casi completo'}
@@ -280,11 +280,11 @@ function BMIDisplay({
   const category = getBMICategory(bmi)
 
   return (
-    <div className={`mt-4 p-4 rounded-xl ${category.bg} border border-gray-200`}>
+    <div className={`mt-4 p-4 rounded-xl ${category.bg} border border-border`}>
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-sm text-gray-600">Tu Índice de Masa Corporal (IMC)</p>
-          <p className="text-2xl font-bold text-gray-900">{bmi.toFixed(1)}</p>
+          <p className="text-sm text-text-muted">Tu Índice de Masa Corporal (IMC)</p>
+          <p className="text-2xl font-bold text-text-primary">{bmi.toFixed(1)}</p>
         </div>
         <div className={`px-3 py-1 rounded-full ${category.bg} ${category.color} font-medium text-sm`}>
           {category.label}
@@ -636,10 +636,10 @@ export default function PatientProfilePage() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8 animate-fade-in">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
+          <h1 className="text-3xl sm:text-4xl font-bold text-text-primary mb-2">
             Mi Perfil
           </h1>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-text-muted">
             Gestiona tu información personal y configuración médica
           </p>
         </div>
@@ -650,7 +650,7 @@ export default function PatientProfilePage() {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar Navigation */}
           <aside className="lg:w-72 flex-shrink-0">
-            <nav className="bg-white rounded-2xl shadow-sm border border-gray-200 p-3 lg:sticky lg:top-24">
+            <nav className="bg-background rounded-2xl shadow-sm border border-border p-3 lg:sticky lg:top-24" aria-label="Navegación del perfil">
               <ul className="space-y-1">
                 {tabs.map((tab) => {
                   const Icon = tab.icon
@@ -669,10 +669,10 @@ export default function PatientProfilePage() {
                             setActiveTab(tab.id)
                           }
                         }}
-                        className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${
+                        className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
                           activeTab === tab.id
-                            ? 'bg-blue-50 text-blue-700 font-medium shadow-sm'
-                            : 'text-gray-600 hover:bg-gray-50'
+                            ? 'bg-primary/10 text-primary font-medium shadow-sm'
+                            : 'text-text-muted hover:bg-muted'
                         }`}
                       >
                         <Icon className="w-5 h-5 flex-shrink-0" />
@@ -687,10 +687,10 @@ export default function PatientProfilePage() {
               </ul>
 
               {hasUnsavedChanges && (
-                <div className="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded-xl">
+                <div className="mt-4 p-3 bg-warning/10 border border-warning/20 rounded-xl" role="alert" aria-live="polite">
                   <div className="flex items-start gap-2">
-                    <AlertCircle className="w-4 h-4 text-yellow-600 mt-0.5 flex-shrink-0" />
-                    <p className="text-xs text-yellow-800">
+                    <AlertCircle className="w-4 h-4 text-warning mt-0.5 flex-shrink-0" />
+                    <p className="text-xs text-warning-800">
                       Tienes cambios sin guardar
                     </p>
                   </div>
@@ -710,7 +710,7 @@ export default function PatientProfilePage() {
                 <form onSubmit={profileForm.handleSubmit(onSubmitProfile)}>
                   <CardBody className="space-y-6">
                     {/* Avatar Upload Section */}
-                    <div className="flex flex-col items-center pb-8 border-b border-gray-200">
+                    <div className="flex flex-col items-center pb-8 border-b border-border">
                       <AvatarUpload
                         userId={profileData?.profile.id || ''}
                         currentPhotoUrl={photoUrl}
@@ -718,7 +718,7 @@ export default function PatientProfilePage() {
                         size="xl"
                         onUploadComplete={(url) => setPhotoUrl(url || null)}
                       />
-                      <p className="text-sm text-gray-500 mt-3 text-center max-w-xs">
+                      <p className="text-sm text-text-muted mt-3 text-center max-w-xs">
                         Foto de perfil profesional para mejor identificación médica
                       </p>
                     </div>
@@ -733,42 +733,45 @@ export default function PatientProfilePage() {
 
                       {/* Email - Disabled with lock icon */}
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                        <label className="block text-sm font-medium text-text-primary mb-1" htmlFor="email">
                           Correo electrónico
                         </label>
                         <div className="relative">
                           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <Mail className="h-5 w-5 text-gray-400" />
+                            <Mail className="h-5 w-5 text-text-muted" />
                           </div>
                           <input
+                            id="email"
                             type="email"
                             value={profileData?.profile?.email || ''}
                             disabled
-                            className="block w-full pl-10 pr-10 py-2.5 bg-gray-100 border border-gray-300 rounded-lg text-gray-500 cursor-not-allowed"
+                            className="block w-full pl-10 pr-10 py-2.5 bg-muted border border-border rounded-lg text-text-muted cursor-not-allowed"
+                            aria-describedby="email-hint"
                           />
                           <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                            <Lock className="h-4 w-4 text-gray-400" />
+                            <Lock className="h-4 w-4 text-text-muted" />
                           </div>
                         </div>
-                        <p className="mt-1 text-xs text-gray-500">
+                        <p id="email-hint" className="mt-1 text-xs text-text-muted">
                           No se puede modificar por seguridad
                         </p>
                       </div>
 
                       {/* Phone with Mexico format */}
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                        <label className="block text-sm font-medium text-text-primary mb-1" htmlFor="phone">
                           Teléfono
                         </label>
                         <div className="relative">
                           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <Phone className="h-5 w-5 text-gray-400" />
+                            <Phone className="h-5 w-5 text-text-muted" />
                           </div>
                           <input
+                            id="phone"
                             {...profileForm.register('phone')}
                             type="tel"
                             placeholder="+52 (555) 123-4567"
-                            className="block w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            className="block w-full pl-10 pr-4 py-2.5 border border-border rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition-all duration-200"
                             onChange={(e) => {
                               const formatted = formatPhoneForDisplay(e.target.value)
                               if (formatted !== e.target.value) {
@@ -778,7 +781,7 @@ export default function PatientProfilePage() {
                           />
                         </div>
                         {profileForm.formState.errors.phone && (
-                          <p className="mt-1 text-sm text-red-600">
+                          <p className="mt-1 text-sm text-error" role="alert">
                             {profileForm.formState.errors.phone.message}
                           </p>
                         )}
@@ -786,22 +789,23 @@ export default function PatientProfilePage() {
 
                       {/* Date of Birth with better UX */}
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                        <label className="block text-sm font-medium text-text-primary mb-1" htmlFor="date_of_birth">
                           Fecha de nacimiento
                         </label>
                         <div className="relative">
                           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <Calendar className="h-5 w-5 text-gray-400" />
+                            <Calendar className="h-5 w-5 text-text-muted" />
                           </div>
                           <input
+                            id="date_of_birth"
                             {...profileForm.register('date_of_birth')}
                             type="date"
                             max={new Date().toISOString().split('T')[0]}
-                            className="block w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            className="block w-full pl-10 pr-4 py-2.5 border border-border rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition-all duration-200"
                           />
                         </div>
                         {profileForm.formState.errors.date_of_birth && (
-                          <p className="mt-1 text-sm text-red-600">
+                          <p className="mt-1 text-sm text-error" role="alert">
                             {profileForm.formState.errors.date_of_birth.message}
                           </p>
                         )}
@@ -839,9 +843,9 @@ export default function PatientProfilePage() {
                   <CardBody>
                     <div className="grid md:grid-cols-3 gap-6">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                        <label className="block text-sm font-medium text-text-primary mb-1">
                           <div className="flex items-center gap-2">
-                            <Ruler className="w-4 h-4 text-gray-400" />
+                            <Ruler className="w-4 h-4 text-text-muted" />
                             Altura (cm)
                           </div>
                         </label>
@@ -853,9 +857,9 @@ export default function PatientProfilePage() {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                        <label className="block text-sm font-medium text-text-primary mb-1">
                           <div className="flex items-center gap-2">
-                            <Scale className="w-4 h-4 text-gray-400" />
+                            <Scale className="w-4 h-4 text-text-muted" />
                             Peso (kg)
                           </div>
                         </label>
@@ -895,13 +899,14 @@ export default function PatientProfilePage() {
                       {(historyForm.watch('allergies') || []).map((allergy, index) => (
                         <span
                           key={index}
-                          className="inline-flex items-center gap-1 px-3 py-1 bg-red-50 text-red-700 rounded-full text-sm border border-red-200"
+                          className="inline-flex items-center gap-1 px-3 py-1 bg-error/10 text-error rounded-full text-sm border border-error/20"
                         >
                           {allergy}
                           <button
                             type="button"
                             onClick={() => removeAllergy(index)}
-                            className="hover:text-red-900 transition-colors"
+                            className="hover:text-error/80 transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 rounded-full"
+                            aria-label={`Eliminar ${allergy}`}
                           >
                             <X className="w-3 h-3" />
                           </button>
@@ -919,7 +924,7 @@ export default function PatientProfilePage() {
                 >
                   <div className="space-y-4">
                     {medicationFields.map((field, index) => (
-                      <div key={field.id} className="flex gap-4 items-start p-4 bg-gray-50 rounded-xl">
+                      <div key={field.id} className="flex gap-4 items-start p-4 bg-muted rounded-xl">
                         <div className="grid grid-cols-3 gap-4 flex-1">
                           <Input
                             placeholder="Nombre"
@@ -937,7 +942,8 @@ export default function PatientProfilePage() {
                         <button
                           type="button"
                           onClick={() => removeMedication(index)}
-                          className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                          className="p-2 text-text-muted hover:text-error hover:bg-error/10 rounded-lg transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-ring"
+                          aria-label="Eliminar medicamento"
                         >
                           <X className="w-5 h-5" />
                         </button>
@@ -946,7 +952,7 @@ export default function PatientProfilePage() {
                     <button
                       type="button"
                       onClick={() => appendMedication({ name: '', dosage: '', frequency: '' })}
-                      className="w-full flex items-center justify-center gap-2 px-4 py-2 border-2 border-dashed border-gray-300 rounded-xl text-gray-600 hover:border-blue-500 hover:text-blue-600 transition-colors"
+                      className="w-full flex items-center justify-center gap-2 px-4 py-2 border-2 border-dashed border-border rounded-xl text-text-muted hover:border-primary hover:text-primary hover:bg-primary/5 transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-ring"
                     >
                       <Plus className="w-4 h-4" />
                       Agregar medicamento
@@ -1013,7 +1019,7 @@ export default function PatientProfilePage() {
                 >
                   <div className="space-y-4">
                     {surgeryFields.map((field, index) => (
-                      <div key={field.id} className="flex gap-4 items-start p-4 bg-gray-50 rounded-xl">
+                      <div key={field.id} className="flex gap-4 items-start p-4 bg-muted rounded-xl">
                         <div className="grid grid-cols-3 gap-4 flex-1">
                           <Input
                             placeholder="Procedimiento"
@@ -1032,7 +1038,8 @@ export default function PatientProfilePage() {
                         <button
                           type="button"
                           onClick={() => removeSurgery(index)}
-                          className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                          className="p-2 text-text-muted hover:text-error hover:bg-error/10 rounded-lg transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-ring"
+                          aria-label="Eliminar cirugía"
                         >
                           <X className="w-5 h-5" />
                         </button>
@@ -1041,7 +1048,7 @@ export default function PatientProfilePage() {
                     <button
                       type="button"
                       onClick={() => appendSurgery({ procedure: '', year: null, notes: '' })}
-                      className="w-full flex items-center justify-center gap-2 px-4 py-2 border-2 border-dashed border-gray-300 rounded-xl text-gray-600 hover:border-blue-500 hover:text-blue-600 transition-colors"
+                      className="w-full flex items-center justify-center gap-2 px-4 py-2 border-2 border-dashed border-border rounded-xl text-text-muted hover:border-primary hover:text-primary hover:bg-primary/5 transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-ring"
                     >
                       <Plus className="w-4 h-4" />
                       Agregar cirugía
@@ -1057,7 +1064,7 @@ export default function PatientProfilePage() {
                 >
                   <div className="space-y-4">
                     {familyFields.map((field, index) => (
-                      <div key={field.id} className="flex gap-4 items-start p-4 bg-gray-50 rounded-xl">
+                      <div key={field.id} className="flex gap-4 items-start p-4 bg-muted rounded-xl">
                         <div className="grid grid-cols-3 gap-4 flex-1">
                           <Input
                             placeholder="Condición"
@@ -1076,7 +1083,8 @@ export default function PatientProfilePage() {
                         <button
                           type="button"
                           onClick={() => removeFamily(index)}
-                          className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                          className="p-2 text-text-muted hover:text-error hover:bg-error/10 rounded-lg transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-ring"
+                          aria-label="Eliminar antecedente familiar"
                         >
                           <X className="w-5 h-5" />
                         </button>
@@ -1085,7 +1093,7 @@ export default function PatientProfilePage() {
                     <button
                       type="button"
                       onClick={() => appendFamily({ condition: '', relationship: '', notes: '' })}
-                      className="w-full flex items-center justify-center gap-2 px-4 py-2 border-2 border-dashed border-gray-300 rounded-xl text-gray-600 hover:border-blue-500 hover:text-blue-600 transition-colors"
+                      className="w-full flex items-center justify-center gap-2 px-4 py-2 border-2 border-dashed border-border rounded-xl text-text-muted hover:border-primary hover:text-primary hover:bg-primary/5 transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-ring"
                     >
                       <Plus className="w-4 h-4" />
                       Agregar antecedente
@@ -1247,16 +1255,17 @@ export default function PatientProfilePage() {
                 <form onSubmit={profileForm.handleSubmit(onSubmitProfile)}>
                   <CardBody className="space-y-6">
                     {emergencyFields.map((field, index) => (
-                      <div key={field.id} className="p-6 bg-gray-50 rounded-xl border border-gray-200">
+                      <div key={field.id} className="p-6 bg-muted rounded-xl border border-border">
                         <div className="flex items-center justify-between mb-4">
-                          <h4 className="font-medium text-gray-900">
+                          <h4 className="font-medium text-text-primary">
                             Contacto {index + 1}
                           </h4>
                           {index > 0 && (
                             <button
                               type="button"
                               onClick={() => removeEmergency(index)}
-                              className="text-sm text-red-600 hover:text-red-700 flex items-center gap-1"
+                              className="text-sm text-error hover:text-error/80 flex items-center gap-1 transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-ring rounded-md px-2 py-1"
+                              aria-label={`Eliminar contacto ${index + 1}`}
                             >
                               <X className="w-4 h-4" />
                               Eliminar
@@ -1271,7 +1280,7 @@ export default function PatientProfilePage() {
                             placeholder="Ej: María García"
                           />
                           <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">
+                            <label className="block text-sm font-medium text-text-primary mb-1" htmlFor={`emergency-phone-${index}`}>
                               Teléfono principal
                             </label>
                             <div className="relative">
@@ -1279,10 +1288,11 @@ export default function PatientProfilePage() {
                                 <Phone className="h-5 w-5 text-gray-400" />
                               </div>
                               <input
+                                id={`emergency-phone-${index}`}
                                 {...profileForm.register(`emergency_contacts.${index}.phone`)}
                                 type="tel"
                                 placeholder="+52 (555) 123-4567"
-                                className="block w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                className="block w-full pl-10 pr-4 py-2.5 border border-border rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition-all duration-200"
                                 onChange={(e) => {
                                   const formatted = formatPhoneForDisplay(e.target.value)
                                   if (formatted !== e.target.value) {
@@ -1292,7 +1302,7 @@ export default function PatientProfilePage() {
                               />
                             </div>
                             {profileForm.formState.errors.emergency_contacts?.[index]?.phone && (
-                              <p className="mt-1 text-sm text-red-600">
+                              <p className="mt-1 text-sm text-error" role="alert">
                                 {profileForm.formState.errors.emergency_contacts[index]?.phone?.message}
                               </p>
                             )}
@@ -1306,7 +1316,7 @@ export default function PatientProfilePage() {
                             />
                           </div>
                           <div className="md:col-span-2">
-                            <label className="block text-sm font-medium text-gray-700 mb-1">
+                            <label className="block text-sm font-medium text-text-primary mb-1" htmlFor={`emergency-phone2-${index}`}>
                               Teléfono secundario (opcional)
                             </label>
                             <div className="relative">
@@ -1314,10 +1324,11 @@ export default function PatientProfilePage() {
                                 <Phone className="h-4 w-4 text-gray-400" />
                               </div>
                               <input
+                                id={`emergency-phone2-${index}`}
                                 {...profileForm.register(`emergency_contacts.${index}.secondary_phone`)}
                                 type="tel"
                                 placeholder="+52 (555) 987-6543"
-                                className="block w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                className="block w-full pl-10 pr-4 py-2.5 border border-border rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition-all duration-200"
                                 onChange={(e) => {
                                   const formatted = formatPhoneForDisplay(e.target.value)
                                   if (formatted !== e.target.value) {
@@ -1412,7 +1423,7 @@ export default function PatientProfilePage() {
                           description="Recordatorios de citas próximas, confirmaciones y recordatorios de pago"
                           checked={profileForm.watch('notifications_appointments')}
                           {...profileForm.register('notifications_appointments')}
-                          containerClassName="p-4 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors"
+                          containerClassName="p-4 border border-border rounded-xl hover:bg-muted transition-colors duration-200"
                         />
                         <Switch
                           id="notif-results"
@@ -1420,7 +1431,7 @@ export default function PatientProfilePage() {
                           description="Notificaciones cuando tus resultados estén disponibles"
                           checked={profileForm.watch('notifications_results')}
                           {...profileForm.register('notifications_results')}
-                          containerClassName="p-4 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors"
+                          containerClassName="p-4 border border-border rounded-xl hover:bg-muted transition-colors duration-200"
                         />
                         <Switch
                           id="notif-promotions"
@@ -1428,17 +1439,17 @@ export default function PatientProfilePage() {
                           description="Recibe ofertas especiales y nuevas funcionalidades"
                           checked={profileForm.watch('notifications_promotions')}
                           {...profileForm.register('notifications_promotions')}
-                          containerClassName="p-4 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors"
+                          containerClassName="p-4 border border-border rounded-xl hover:bg-muted transition-colors duration-200"
                         />
                       </div>
                     </div>
 
                     {/* Frequency Info */}
-                    <div className="flex items-start gap-2 p-4 bg-gray-50 rounded-xl border border-gray-200">
-                      <Info className="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
-                      <div className="text-sm text-gray-700">
+                    <div className="flex items-start gap-2 p-4 bg-muted rounded-xl border border-border">
+                      <Info className="w-5 h-5 text-text-muted mt-0.5 flex-shrink-0" />
+                      <div className="text-sm text-text-primary">
                         <p className="font-medium mb-1">Frecuencia de notificaciones</p>
-                        <ul className="list-disc list-inside space-y-1 text-gray-600">
+                        <ul className="list-disc list-inside space-y-1 text-text-muted">
                           <li>Recordatorios de citas: 24 horas antes y 1 hora antes</li>
                           <li>Resultados médicos: Cuando estén disponibles</li>
                           <li>Promociones: Máximo 2 por semana</li>

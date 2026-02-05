@@ -23,8 +23,8 @@ export default async function DoctorChatPage() {
     >
       <div className="max-w-2xl">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-gray-900 mb-1">Mensajes</h1>
-          <p className="text-gray-600">Chatea con tus pacientes</p>
+          <h1 className="text-2xl font-bold text-text-primary mb-1">Mensajes</h1>
+          <p className="text-text-muted">Chatea con tus pacientes</p>
         </div>
 
         <ChatList

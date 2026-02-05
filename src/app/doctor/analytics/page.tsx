@@ -30,11 +30,11 @@ async function DoctorAnalyticsContent() {
       <div className="max-w-6xl mx-auto py-8 px-4">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">Mis Analytics</h1>
-            <p className="text-gray-600 mt-1">Tu rendimiento y métricas personales</p>
+            <h1 className="text-2xl font-bold text-text-primary">Mis Analytics</h1>
+            <p className="text-text-muted mt-1">Tu rendimiento y métricas personales</p>
           </div>
           <div className="flex items-center gap-3">
-            <select className="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500">
+            <select className="px-3 py-2 border border-border rounded-lg text-sm focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 transition-all duration-200 bg-card">
               <option>Este mes</option>
               <option>Últimos 3 meses</option>
               <option>Últimos 6 meses</option>
@@ -42,7 +42,8 @@ async function DoctorAnalyticsContent() {
             </select>
             <a
               href="/api/analytics/export?type=doctor&format=csv"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600 text-white rounded-lg text-sm font-medium hover:bg-primary-700"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-primary/90 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              aria-label="Exportar analytics a CSV"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -116,56 +117,56 @@ async function DoctorAnalyticsContent() {
                 />
               ) : (
                 <div className="flex flex-col items-center justify-center py-12 text-center">
-                  <Activity className="w-16 h-16 text-gray-400 mb-4" />
-                  <p className="text-gray-500">No hay citas aún</p>
+                  <Activity className="w-16 h-16 text-text-muted mb-4" />
+                  <p className="text-text-muted">No hay citas aún</p>
                 </div>
               )}
             </MetricCard>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-xl border border-gray-200 p-6">
+            <div className="bg-card rounded-xl border border-border p-6">
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-blue-100 rounded-lg">
-                  <TrendingUp className="w-5 h-5 text-blue-600" />
+                <div className="p-2 bg-primary-100 rounded-lg">
+                  <TrendingUp className="w-5 h-5 text-primary-600" />
                 </div>
-                <h3 className="font-semibold text-gray-900">Consultas Totales</h3>
+                <h3 className="font-semibold text-text-primary">Consultas Totales</h3>
               </div>
-              <p className="text-3xl font-bold text-gray-900">{metrics.consultations.total}</p>
-              <p className="text-sm text-gray-500 mt-1">Histórico</p>
+              <p className="text-3xl font-bold text-text-primary">{metrics.consultations.total}</p>
+              <p className="text-sm text-text-muted mt-1">Histórico</p>
             </div>
 
-            <div className="bg-white rounded-xl border border-gray-200 p-6">
+            <div className="bg-card rounded-xl border border-border p-6">
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-green-100 rounded-lg">
-                  <DollarSign className="w-5 h-5 text-green-600" />
+                <div className="p-2 bg-success-100 rounded-lg">
+                  <DollarSign className="w-5 h-5 text-success-600" />
                 </div>
-                <h3 className="font-semibold text-gray-900">Ingresos Totales</h3>
+                <h3 className="font-semibold text-text-primary">Ingresos Totales</h3>
               </div>
-              <p className="text-3xl font-bold text-gray-900">{formatCurrency(metrics.revenue.gross)}</p>
-              <p className="text-sm text-gray-500 mt-1">Bruto</p>
+              <p className="text-3xl font-bold text-text-primary">{formatCurrency(metrics.revenue.gross)}</p>
+              <p className="text-sm text-text-muted mt-1">Bruto</p>
             </div>
 
-            <div className="bg-white rounded-xl border border-gray-200 p-6">
+            <div className="bg-card rounded-xl border border-border p-6">
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-purple-100 rounded-lg">
-                  <Award className="w-5 h-5 text-purple-600" />
+                <div className="p-2 bg-accent-100 rounded-lg">
+                  <Award className="w-5 h-5 text-accent-600" />
                 </div>
-                <h3 className="font-semibold text-gray-900">Reviews</h3>
+                <h3 className="font-semibold text-text-primary">Reviews</h3>
               </div>
-              <p className="text-3xl font-bold text-gray-900">{metrics.rating.totalReviews}</p>
-              <p className="text-sm text-gray-500 mt-1">Recibidos</p>
+              <p className="text-3xl font-bold text-text-primary">{metrics.rating.totalReviews}</p>
+              <p className="text-sm text-text-muted mt-1">Recibidos</p>
             </div>
 
-            <div className="bg-white rounded-xl border border-gray-200 p-6">
+            <div className="bg-card rounded-xl border border-border p-6">
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-orange-100 rounded-lg">
-                  <Clock className="w-5 h-5 text-orange-600" />
+                <div className="p-2 bg-warning-100 rounded-lg">
+                  <Clock className="w-5 h-5 text-warning-600" />
                 </div>
-                <h3 className="font-semibold text-gray-900">Duración Promedio</h3>
+                <h3 className="font-semibold text-text-primary">Duración Promedio</h3>
               </div>
-              <p className="text-3xl font-bold text-gray-900">{metrics.appointments.avgDuration}min</p>
-              <p className="text-sm text-gray-500 mt-1">Por consulta</p>
+              <p className="text-3xl font-bold text-text-primary">{metrics.appointments.avgDuration}min</p>
+              <p className="text-sm text-text-muted mt-1">Por consulta</p>
             </div>
           </div>
 
@@ -173,11 +174,11 @@ async function DoctorAnalyticsContent() {
             <MetricCard title="Horarios Pico">
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                 {metrics.peakHours.slice(0, 6).map((peak) => (
-                  <div key={peak.hour} className="bg-gray-50 rounded-lg p-4 text-center">
-                    <p className="text-lg font-semibold text-gray-900">
+                  <div key={peak.hour} className="bg-muted rounded-lg p-4 text-center">
+                    <p className="text-lg font-semibold text-text-primary">
                       {peak.hour}:00
                     </p>
-                    <p className="text-sm text-gray-500">{peak.count} citas</p>
+                    <p className="text-sm text-text-muted">{peak.count} citas</p>
                   </div>
                 ))}
               </div>
@@ -186,20 +187,20 @@ async function DoctorAnalyticsContent() {
 
           <MetricCard title="Resumen de Rendimiento">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center p-6 bg-gray-50 rounded-lg">
-                <p className="text-sm text-gray-600 mb-2">Ingresos Netos ( después de fees )</p>
-                <p className="text-3xl font-bold text-green-600">{formatCurrency(metrics.revenue.net)}</p>
-                <p className="text-xs text-gray-500 mt-1">Fee de plataforma: {formatCurrency(metrics.revenue.platformFee)}</p>
+              <div className="text-center p-6 bg-muted rounded-lg">
+                <p className="text-sm text-text-muted mb-2">Ingresos Netos ( después de fees )</p>
+                <p className="text-3xl font-bold text-success-600">{formatCurrency(metrics.revenue.net)}</p>
+                <p className="text-xs text-text-muted mt-1">Fee de plataforma: {formatCurrency(metrics.revenue.platformFee)}</p>
               </div>
-              <div className="text-center p-6 bg-gray-50 rounded-lg">
-                <p className="text-sm text-gray-600 mb-2">Pacientes Únicos</p>
-                <p className="text-3xl font-bold text-blue-600">{metrics.patients.unique}</p>
-                <p className="text-xs text-gray-500 mt-1">Pacientes que te han visitado</p>
+              <div className="text-center p-6 bg-muted rounded-lg">
+                <p className="text-sm text-text-muted mb-2">Pacientes Únicos</p>
+                <p className="text-3xl font-bold text-primary-600">{metrics.patients.unique}</p>
+                <p className="text-xs text-text-muted mt-1">Pacientes que te han visitado</p>
               </div>
-              <div className="text-center p-6 bg-gray-50 rounded-lg">
-                <p className="text-sm text-gray-600 mb-2">Retención de Pacientes</p>
-                <p className="text-3xl font-bold text-purple-600">{metrics.patients.retentionRate.toFixed(1)}%</p>
-                <p className="text-xs text-gray-500 mt-1">Pacientes que regresan</p>
+              <div className="text-center p-6 bg-muted rounded-lg">
+                <p className="text-sm text-text-muted mb-2">Retención de Pacientes</p>
+                <p className="text-3xl font-bold text-accent-600">{metrics.patients.retentionRate.toFixed(1)}%</p>
+                <p className="text-xs text-text-muted mt-1">Pacientes que regresan</p>
               </div>
             </div>
           </MetricCard>
@@ -214,9 +215,9 @@ function LoadingSkeleton() {
     <div className="space-y-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {[1, 2, 3, 4].map(i => (
-          <div key={i} className="bg-white rounded-xl border border-gray-200 p-6 animate-pulse">
-            <div className="h-4 bg-gray-200 rounded w-24 mb-4"></div>
-            <div className="h-8 bg-gray-200 rounded w-32"></div>
+          <div key={i} className="bg-card rounded-xl border border-border p-6 animate-pulse">
+            <div className="h-4 bg-muted rounded w-24 mb-4"></div>
+            <div className="h-8 bg-muted rounded w-32"></div>
           </div>
         ))}
       </div>
