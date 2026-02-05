@@ -3,7 +3,10 @@ import { redirect } from 'next/navigation'
 import DoctorLayout from '@/components/DoctorLayout'
 import { AppointmentCardCompact, EmptyState } from '@/components'
 import Link from 'next/link'
-import { Calendar, CheckCircle, Clock, Video, FileText, HelpCircle, ClipboardEdit, Calendar as CalendarIcon, Link2, UserCircle, X, Plus } from 'lucide-react'
+import { Calendar, CheckCircle, Clock, Video, FileText, HelpCircle, ClipboardEdit, Calendar as CalendarIcon, UserCircle } from 'lucide-react'
+import OnboardingChecklist from './OnboardingChecklist'
+import ImprovedEmptyState from './ImprovedEmptyState'
+import ShareProfileButton from './ShareProfileButton'
 
 export default async function DoctorDashboard() {
   const { user, profile, supabase } = await requireRole('doctor')
@@ -417,18 +420,7 @@ export default async function DoctorDashboard() {
               </div>
               <span className="text-sm font-medium text-gray-700">Mi disponibilidad</span>
             </Link>
-            <button
-              onClick={() => {
-                navigator.clipboard.writeText(`https://doctor.mx/doctors/${user.id}`)
-                // Could add toast notification here
-              }}
-              className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-100 transition-all flex items-center gap-3 group"
-            >
-              <div className="w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center group-hover:bg-purple-100 transition-colors">
-                <Link2 className="w-5 h-5 text-purple-600" />
-              </div>
-              <span className="text-sm font-medium text-gray-700">Compartir perfil</span>
-            </button>
+            <ShareProfileButton doctorId={user.id} />
           </div>
 
           {/* Próximas consultas */}
@@ -459,123 +451,5 @@ export default async function DoctorDashboard() {
         </div>
       )}
     </DoctorLayout>
-  )
-}
-
-// Onboarding Checklist Component (client-side for dismiss functionality)
-function OnboardingChecklist({ completeness, doctorId, doctor }: {
-  completeness: { completed: number; total: number; missing: string[] }
-  doctorId: string
-  doctor: any
-}) {
-  // This will be a client component for localStorage persistence
-  return (
-    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-xl p-6 mb-8 relative">
-      <button
-        onClick={() => {
-          // In real implementation, save to localStorage
-          localStorage.setItem('doctor-onboarding-dismissed', 'true')
-        }}
-        className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
-      >
-        <X className="w-5 h-5" />
-      </button>
-
-      <div className="flex items-center justify-between mb-4">
-        <div>
-          <h3 className="text-lg font-semibold text-gray-900">Configura tu perfil para recibir pacientes</h3>
-          <p className="text-sm text-gray-600 mt-1">{completeness.completed} de {completeness.total} pasos completados</p>
-        </div>
-        <div className="text-right">
-          <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-1">
-            <span className="text-2xl font-bold text-blue-600">{Math.round((completeness.completed / completeness.total) * 100)}%</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Progress bar */}
-      <div className="w-full bg-gray-200 rounded-full h-2 mb-4">
-        <div
-          className="bg-blue-500 h-2 rounded-full transition-all"
-          style={{ width: `${(completeness.completed / completeness.total) * 100}%` }}
-        />
-      </div>
-
-      {/* Checklist items */}
-      <div className="space-y-2">
-        <div className="flex items-center gap-3 text-green-700">
-          <CheckCircle className="w-5 h-5" />
-          <span className="text-sm">Crear cuenta</span>
-          <span className="ml-auto text-xs bg-green-100 text-green-800 px-2 py-1 rounded">✓</span>
-        </div>
-        <div className="flex items-center gap-3 text-green-700">
-          <CheckCircle className="w-5 h-5" />
-          <span className="text-sm">Verificar cédula profesional</span>
-          <span className="ml-auto text-xs bg-green-100 text-green-800 px-2 py-1 rounded">✓</span>
-        </div>
-
-        {completeness.missing.includes('biografía detallada') && (
-          <Link href="/doctor/profile" className="flex items-center gap-3 text-gray-600 hover:text-blue-600 p-2 rounded-lg hover:bg-white transition-colors">
-            <div className="w-5 h-5 border-2 border-gray-300 rounded-full" />
-            <span className="text-sm flex-1">Completar perfil</span>
-            <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded ml-auto">Pendiente</span>
-          </Link>
-        )}
-
-        {completeness.missing.includes('disponibilidad') && (
-          <Link href="/doctor/availability" className="flex items-center gap-3 text-gray-600 hover:text-blue-600 p-2 rounded-lg hover:bg-white transition-colors">
-            <div className="w-5 h-5 border-2 border-gray-300 rounded-full" />
-            <span className="text-sm flex-1">Configurar disponibilidad</span>
-            <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded ml-auto">Pendiente</span>
-          </Link>
-        )}
-
-        {(completeness.missing.includes('cédula') || completeness.missing.includes('nombre') || completeness.missing.includes('precio de consulta')) && (
-          <Link href="/doctor/onboarding" className="flex items-center gap-3 text-gray-600 hover:text-blue-600 p-2 rounded-lg hover:bg-white transition-colors">
-            <div className="w-5 h-5 border-2 border-gray-300 rounded-full" />
-            <span className="text-sm flex-1">Completar información requerida</span>
-            <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded ml-auto">Pendiente</span>
-          </Link>
-        )}
-      </div>
-    </div>
-  )
-}
-
-// Improved Empty State Component
-function ImprovedEmptyState({ doctorId, doctor }: { doctorId: string; doctor: any }) {
-  const handleCopyProfileLink = () => {
-    navigator.clipboard.writeText(`https://doctor.mx/doctors/${doctorId}`)
-    // Could add toast notification here
-  }
-
-  return (
-    <div className="text-center py-12">
-      <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4 relative">
-        <Calendar className="w-10 h-10 text-blue-400" />
-        <Plus className="w-6 h-6 text-blue-300 absolute -bottom-1 -right-1" />
-      </div>
-      <h4 className="text-lg font-semibold text-gray-800 mb-2">No tienes consultas programadas</h4>
-      <p className="text-sm text-gray-500 mb-6 max-w-sm mx-auto">
-        Completa tu perfil y comparte tu enlace para que los pacientes te encuentren
-      </p>
-      <div className="flex items-center justify-center gap-3">
-        <Link
-          href="/doctor/profile"
-          className="inline-flex items-center px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded-lg hover:bg-blue-600 transition-colors"
-        >
-          Completar mi perfil →
-        </Link>
-        <button
-          onClick={handleCopyProfileLink}
-          className="inline-flex items-center px-4 py-2 border border-gray-300 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-50 transition-colors"
-        >
-          Copiar enlace de mi perfil
-        </button>
-      </div>
-      <p className="text-xs text-gray-400 mt-4">
-        💡 Consejo: Comparte tu enlace en WhatsApp y redes sociales para recibir tus primeros pacientes
-      </p>
-    </div>
   )
 }
