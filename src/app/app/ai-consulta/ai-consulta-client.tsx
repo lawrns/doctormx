@@ -375,7 +375,7 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
                       ? {
                           ...s,
                           confidence: Math.round((eventData.confidence || 0.7) * 100),
-                          assessment: eventData.diagnosis || 'Evaluación completada',
+                          assessment: eventData.clinicalImpression || 'Evaluación completada',
                           status: 'completed' as const,
                         }
                       : s
@@ -408,7 +408,7 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
                 setConsensus({
                   score: Math.round((eventData.confidence || 0.7) * 100),
                   level: mapAgreementLevel(eventData.agreementLevel || 'moderate'),
-                  primaryDiagnosis: eventData.primaryDiagnosis || '',
+                  primaryDiagnosis: eventData.primaryFocus || '',
                   differentialDiagnoses: [],
                   clinicalReasoning: `Urgencia: ${eventData.urgencyLevel || 'moderate'}`,
                   agreementPercentage: Math.round((eventData.confidence || 0.7) * 100),
@@ -1104,7 +1104,7 @@ function HistoryStep({
     <QuestionCard step={9} totalSteps={9}>
       <QuestionTitle>Antecedentes médicos (opcional)</QuestionTitle>
       <QuestionDescription>
-        Información que pueda ayudar al diagnóstico
+        Información que pueda ayudar a comprender mejor tu situación
       </QuestionDescription>
 
       <div className="space-y-4">
@@ -1279,8 +1279,8 @@ function ResultsStep({
       {/* Disclaimer */}
       <Card className="p-4 bg-amber-50 border-amber-200">
         <p className="text-sm text-amber-800 text-center">
-          <strong>Aviso:</strong> Esta consulta es una orientación médica basada en IA.
-          No sustituye la consulta presencial con un médico licenciado.
+          <strong>Aviso importante:</strong> Esta herramienta proporciona orientación informativa únicamente.
+          No es un diagnóstico médico. Siempre consulta con un profesional de salud calificado.
           En caso de emergencia, llama al 911.
         </p>
       </Card>

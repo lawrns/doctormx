@@ -32,8 +32,8 @@ const features = [
   },
   {
     icon: FileText,
-    title: 'Dr. Simeon: tu copiloto de salud',
-    description: 'Nuestro asistente con IA te ayuda a entender síntomas y preparar preguntas para tu doctor. No diagnostica, orienta.',
+    title: 'Simeon: tu copiloto de salud',
+    description: 'Nuestro asistente con IA te ayuda a entender síntomas y preparar preguntas para tu doctor. Es orientación, no diagnóstico.',
     color: 'text-white',
     bgColor: 'bg-white/20',
     featured: true,

@@ -44,7 +44,7 @@ export default function PreConsultaChat({ isOpen, onCloseAction, onCompleteActio
         {
           id: crypto.randomUUID(),
           role: 'assistant',
-          content: '¡Hola! 👋 Soy tu asistente médico virtual. Antes de agendar tu consulta, déjame hacerte algunas preguntas para entender mejor tu situación.\n\n¿Cuál es el motivo principal de tu consulta?',
+          content: '¡Hola! 👋 Soy tu asistente de orientación de salud. Antes de agendar tu consulta, déjame hacerte algunas preguntas para ayudarte a organizar tu información.\n\n¿Cuál es el motivo principal de tu consulta?',
           timestamp: new Date(),
         },
       ]);

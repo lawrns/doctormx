@@ -76,7 +76,7 @@ const FAQS = [
     },
     {
         question: '¿Cómo funciona el Clinical Copilot?',
-        answer: 'El Clinical Copilot es tu asistente médico con IA. Te ayuda con diagnósticos diferenciales, búsqueda de literatura médica, y análisis de imágenes clínicas según tu plan.'
+        answer: 'El Clinical Copilot es tu asistente de información clínica. Te ayuda a organizar información de pacientes, buscar literatura médica, y preparar documentación según tu plan.'
     },
     {
         question: '¿Qué incluye el análisis de imágenes?',

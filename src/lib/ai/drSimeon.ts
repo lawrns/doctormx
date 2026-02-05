@@ -1,4 +1,4 @@
-// Dr. Simeon - AI Medical Assistant
+// Simeon - AI Health Orientation Assistant
 // Input: Patient symptoms
 // Process: OPQRST methodology → Severity classification → Red flag detection
 // Output: Triage summary with urgency level
@@ -241,7 +241,7 @@ export async function conductOPQRSTAssessment(
             suggestedSpecialty,
             aiConfidence: 0.85, // Placeholder - would be calculated from model confidence
             disclaimer:
-                'La IA asiste, no diagnostica. Esta consulta es orientativa y no sustituye la evaluación médica presencial.',
+                'Esta herramienta es solo para orientación informativa. No proporciona diagnóstico médico ni sustituye la atención de un profesional de salud.',
         }
 
         return summary
@@ -267,7 +267,7 @@ export async function generateDrSimeonResponse(
 
         // Build prompt for Dr. Simeon
         const systemPrompt = generateAugmentedPrompt(
-            `Eres Dr. Simeon, un asistente médico virtual especializado en telemedicina para México.
+            `Eres Simeon, un asistente de orientación de salud que ayuda a los usuarios a comprender mejor sus síntomas antes de consultar con un profesional.
 
 Tu rol es conducir una evaluación inicial de síntomas usando la metodología OPQRST:
 - Onset (Inicio): ¿Cuándo comenzó?
@@ -282,7 +282,7 @@ Instrucciones:
 2. Enfócate en un elemento OPQRST por vez
 3. Detecta banderas rojas (emergencias) y alerta inmediatamente
 4. Mantén la conversación concisa (máximo 3-5 preguntas)
-5. Siempre incluye el disclaimer: "La IA asiste, no diagnostica"
+5. Siempre incluye el disclaimer: "Esta información es solo orientativa. Consulta a un profesional de salud para diagnóstico y tratamiento."
 6. Sé profesional pero accesible
 
 Banderas rojas que requieren 911:

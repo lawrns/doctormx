@@ -375,7 +375,7 @@ export default function DrSimeonShowcase() {
             </div>
 
             <p className="text-sm text-gray-500">
-              La IA asiste, no diagnostica. Respaldo médico certificado.
+              Orientación informativa. Consulta siempre con un profesional de salud.
             </p>
           </motion.div>
 

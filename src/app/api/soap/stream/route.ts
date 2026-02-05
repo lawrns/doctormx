@@ -321,7 +321,7 @@ async function generatePlan(
   consensus: StreamingConsensus,
   subjective: SubjectiveData
 ): Promise<StreamingPlan> {
-  const planPrompt = `Eres un asistente médico que genera planes de tratamiento claros y accionables.
+  const planPrompt = `Eres un asistente que sugiere opciones de autocuidado e información educativa.
 
 CONTEXTO: Esta es una PRE-CONSULTA virtual. El plan NO reemplaza la evaluación médica presencial.
 

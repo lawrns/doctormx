@@ -206,7 +206,7 @@ export async function glmVisionAnalysis(params: {
   const {
     imageUrl,
     prompt,
-    systemPrompt = 'Eres un asistente medico especializado en analisis de imagenes medicas.',
+    systemPrompt = 'Eres un asistente que describe características visibles en imágenes médicas.',
     detail = 'high',
   } = params
 

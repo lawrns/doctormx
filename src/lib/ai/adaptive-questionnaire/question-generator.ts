@@ -53,7 +53,7 @@ export class QuestionGenerator {
     if (questionCount === 0) {
       return {
         id: 'opening_question',
-        text: 'Hola, soy tu asistente médico de DoctorMx. ¿Qué te trae aquí hoy? Cuéntame qué te preocupa.',
+        text: 'Hola, soy tu asistente de orientación de salud de DoctorMx. ¿Qué te trae aquí hoy? Cuéntame qué te preocupa.',
         type: 'open',
         category: 'symptom',
         priority: 10,

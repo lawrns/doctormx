@@ -128,7 +128,7 @@ function LoginContent() {
         <div className="relative z-20">
           <blockquote className="space-y-2">
             <p className="text-lg leading-relaxed">
-              &ldquo;Doctor.mx ha transformado la forma en que atiendo a mis pacientes. La plataforma es intuitiva y el sistema de IA me ayuda a dar mejores diagnósticos.&rdquo;
+              &ldquo;Doctor.mx ha transformado la forma en que atiendo a mis pacientes. La plataforma es intuitiva y me ayuda a organizar mejor la información de consulta.&rdquo;
             </p>
             <footer className="text-sm text-zinc-300">
               Dra. María García &mdash; Medicina General, CDMX

@@ -25,7 +25,7 @@ interface Message {
 
 interface ConsultationResult {
   id: string
-  primaryDiagnosis: string
+  primaryFocus: string
   confidence: number
   specialists: Array<{
     id: string
@@ -34,7 +34,7 @@ interface ConsultationResult {
     assessment: string
     confidence: number
   }>
-  differentialDiagnoses: string[]
+  alternativeConsiderations: string[]
   urgency: 'emergency' | 'urgent' | 'moderate' | 'routine' | 'self-care'
   recommendations: string[]
   nextSteps: string[]
@@ -46,7 +46,7 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
     {
       id: 'welcome',
       role: 'assistant',
-      content: 'Hola, soy tu asistente médico de Doctor.mx. ¿Qué te está molestando hoy? Describe tus síntomas de forma natural y te ayudaré a entender qué podría estar pasando.',
+      content: 'Hola, soy tu asistente de orientación de salud de Doctor.mx. ¿Qué te está molestando hoy? Describe tus síntomas de forma natural y te ayudaré a organizar tu información antes de tu consulta.',
     },
   ])
   const [input, setInput] = useState('')
@@ -269,8 +269,8 @@ function ResultsView({
 
         <div className="grid md:grid-cols-2 gap-4 mb-6">
           <div className="bg-blue-50 rounded-xl p-4">
-            <p className="text-sm text-blue-600 font-medium">Diagnóstico Principal</p>
-            <p className="text-lg font-semibold text-gray-900">{result.primaryDiagnosis}</p>
+            <p className="text-sm text-blue-600 font-medium">Información Principal</p>
+            <p className="text-lg font-semibold text-gray-900">{result.primaryFocus}</p>
             <p className="text-sm text-gray-500">Confianza: {Math.round(result.confidence * 100)}%</p>
           </div>
           <div className="bg-amber-50 rounded-xl p-4">

@@ -40,7 +40,7 @@ export default async function PatientDashboard() {
         {/* Quick Action Cards - Now at the TOP */}
         <div className="grid md:grid-cols-3 gap-6 mb-8">
           {[
-            { href: '/app/ai-consulta', icon: Bot, title: 'Consulta IA', desc: 'Dr. Simeon - Asistente médico virtual' },
+            { href: '/app/ai-consulta', icon: Bot, title: 'Consulta IA', desc: 'Simeon - Asistente de orientación de salud' },
             { href: '/doctors', icon: Search, title: 'Buscar Doctor', desc: 'Especialistas verificados' },
             { href: '/app/upload-image', icon: ClipboardList, title: 'Analizar Imagen', desc: 'Análisis médico con IA' }
           ].map((item) => (

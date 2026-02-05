@@ -75,7 +75,7 @@ export function HeroSection() {
               <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-xl">
                 <Image
                   src="/images/simeon.png"
-                  alt="Dr. Simeon - Tu asistente médico IA"
+                  alt="Simeon - Tu asistente de orientación de salud"
                   width={80}
                   height={80}
                   className="w-full h-full object-cover"
@@ -102,7 +102,7 @@ export function HeroSection() {
                 <span className="text-xs font-medium text-green-700">En línea ahora</span>
               </div>
               <p className="text-sm font-semibold text-text-primary">Dr. Simeon</p>
-              <p className="text-xs text-text-muted">Asistente médico IA</p>
+              <p className="text-xs text-text-muted">Asistente de orientación</p>
             </div>
           </div>
         </motion.div>
@@ -266,7 +266,7 @@ export function HeroSection() {
             </div>
           </div>
           <div className="bg-neutral-50 rounded-xl p-3 mb-2">
-            <p className="text-sm text-text-secondary">¡Hola! Soy tu asistente médico. ¿En qué puedo ayudarte hoy?</p>
+            <p className="text-sm text-text-secondary">¡Hola! Soy tu asistente de orientación. ¿En qué puedo ayudarte hoy?</p>
           </div>
           <div className="flex items-center gap-2 text-xs text-text-muted">
             <Lock className="w-3 h-3" aria-hidden="true" />

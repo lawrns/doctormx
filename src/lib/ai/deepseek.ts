@@ -164,7 +164,7 @@ class DeepSeekClient {
     const messages: DeepSeekMessage[] = [
       {
         role: 'system',
-        content: `Eres un médico especialista generando un plan de tratamiento basado en evidencia.
+        content: `Eres un asistente que sugiere información educativa sobre salud.
 
 Considera:
 - Guías clínicas internacionales

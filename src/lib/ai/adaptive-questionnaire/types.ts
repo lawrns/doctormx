@@ -19,8 +19,8 @@ export type Symptom = {
   associated_symptoms?: string[]
 }
 
-export type DiagnosticHypothesis = {
-  diagnosis: string
+export type HealthPossibility = {
+  condition: string
   probability: number // 0-100
   reasoning: string
   supporting_evidence: string[]
@@ -46,7 +46,7 @@ export type ConversationState = {
     current_medications?: string[]
     allergies?: string[]
   }
-  diagnostic_hypotheses: DiagnosticHypothesis[]
+  health_possibilities: HealthPossibility[]
   knowledge_gaps: string[]
   urgency_level: UrgencyLevel
   red_flags: RedFlag[]

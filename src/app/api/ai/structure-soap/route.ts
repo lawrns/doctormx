@@ -56,7 +56,7 @@ async function structureWithAI(rawText: string, currentSOAP: Partial<SOAPNote>):
         messages: [
           {
             role: 'system',
-            content: `Eres un asistente médico experto en estructurar notas SOAP a partir de dictados de voz.
+            content: `Eres un asistente experto en organizar notas de consulta a partir de dictados de voz.
             
 Analiza el texto médico dictado y clasifícalo en las 4 secciones SOAP:
 - **Subjetivo (S)**: Síntomas reportados por el paciente, dolor, historia

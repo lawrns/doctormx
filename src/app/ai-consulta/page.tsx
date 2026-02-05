@@ -41,7 +41,7 @@ export default function AnonymousConsultaPage() {
     setMessages([
       {
         role: 'assistant',
-        content: '¡Hola! Soy tu asistente médico IA. ¿Qué síntomas o preocupación de salud tienes hoy?',
+        content: '¡Hola! Soy tu asistente de orientación de salud. ¿Qué síntomas o preocupación de salud tienes hoy?',
       },
     ])
   }, [])
@@ -176,7 +176,7 @@ export default function AnonymousConsultaPage() {
               </div>
               <div className="text-white">
                 <h2 className="font-bold">Dr. Simeon</h2>
-                <p className="text-sm text-blue-50">Asistente médico IA • En línea</p>
+                <p className="text-sm text-blue-50">Asistente de orientación • En línea</p>
               </div>
             </div>
           </div>

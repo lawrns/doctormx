@@ -295,7 +295,7 @@ export async function suggestDifferentialDiagnosis(
             [
                 {
                     role: 'system',
-                    content: `Eres un medico internista experimentado. Basandote en los sintomas proporcionados, genera diagnosticos diferenciales probabilisticos.
+                    content: `Eres un asistente clinico que sugiere informacion para revision medica. Basandote en los sintomas proporcionados, lista posibilidades para considerar.
 Responde en JSON valido con esta estructura:
 {
   "diagnoses": [
@@ -355,7 +355,7 @@ export async function generateConsultationSummary(
             messages: [
                 {
                     role: 'system',
-                    content: `Eres un medico generando notas clinicas. Genera un resumen estructurado de la consulta medica.
+                    content: `Eres un asistente organizando notas de consulta. Genera un resumen estructurado de la informacion compartida.
 Responde en JSON valido con esta estructura:
 {
   "chiefComplaint": "motivo principal de consulta",
@@ -471,7 +471,7 @@ export async function prefillPrescription(
             messages: [
                 {
                     role: 'system',
-                    content: `Eres un medico generando una receta medica. Genera una plantilla de prescripcion apropiada.
+                    content: `Eres un asistente preparando un borrador de documentacion. Genera una plantilla para revision del medico.
 Responde en JSON valido con esta estructura:
 {
   "medications": [

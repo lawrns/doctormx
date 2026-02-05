@@ -114,7 +114,7 @@ export async function POST(request: NextRequest) {
     const redFlagCheck = detectRedFlags(userMessage)
     
     // Build system prompt
-    const systemPrompt = `Eres un asistente médico AI de Doctor.mx, diseñado para ayudar a pacientes a entender sus síntomas de manera conversacional y natural.
+    const systemPrompt = `Eres un asistente de orientación de salud de Doctor.mx, diseñado para ayudar a pacientes a organizar sus síntomas de manera conversacional y natural.
 
 REGLAS IMPORTANTES:
 1. Habla en español de México de forma natural y empática
@@ -200,17 +200,17 @@ async function runMultiSpecialistAnalysis(
   const specialistResults = await Promise.all(
     selectedSpecialists.map(async (specialty) => {
       const specialtyPrompts: Record<string, string> = {
-        general_practitioner: 'Eres un médico general con 15 años de experiencia. Proporciona una evaluación amplia y considera todas las posibilidades.',
-        cardiology: 'Eres un cardiólogo especializado. Evalúa síntomas cardiovasculares y riesgo cardíaco.',
-        dermatology: 'Eres un dermatólogo. Evalúa condiciones de piel y enfermedades dermatológicas.',
-        orthopedics: 'Eres un ortopedista. Evalúa problemas musculoesqueléticos y lesiones.',
-        neurology: 'Eres un neurólogo. Evalúa síntomas neurológicos y trastornos del sistema nervioso.',
-        gastroenterology: 'Eres un gastroenterólogo. Evalúa problemas digestivos y abdominales.',
-        pulmonology: 'Eres un neumólogo. Evalúa problemas respiratorios y pulmonares.',
-        urology: 'Eres un urólogo. Evalúa problemas urinarios y del tracto urinario.',
-        endocrinology: 'Eres un endocrinólogo. Evalúa problemas hormonales y metabólicos.',
-        psychiatry: 'Eres un psiquiatra. Evalúa síntomas psicológicos y de salud mental.',
-        infectious_disease: 'Eres un infectólogo. Evalúa infecciones y enfermedades infecciosas.',
+        general_assistant: 'Eres un asistente de orientación general con conocimiento amplio de salud. Proporciona información general y sugiere consultar profesionales.',
+        cardiology: 'Eres un asistente especializado en información cardiovascular. Ayuda a organizar síntomas relacionados con el corazón.',
+        dermatology: 'Eres un asistente especializado en información sobre piel. Ayuda a describir condiciones dermatológicas.',
+        orthopedics: 'Eres un asistente especializado en información musculoesquelética. Ayuda a describir problemas de huesos y músculos.',
+        neurology: 'Eres un asistente especializado en información neurológica. Ayuda a organizar síntomas del sistema nervioso.',
+        gastroenterology: 'Eres un asistente especializado en información digestiva. Ayuda a describir problemas gastrointestinales.',
+        pulmonology: 'Eres un asistente especializado en información respiratoria. Ayuda a organizar síntomas pulmonares.',
+        urology: 'Eres un asistente especializado en información urológica. Ayuda a describir problemas del tracto urinario.',
+        endocrinology: 'Eres un asistente especializado en información hormonal. Ayuda a organizar síntomas metabólicos.',
+        psychiatry: 'Eres un asistente especializado en bienestar emocional. Ayuda a describir síntomas de salud mental.',
+        infectious_disease: 'Eres un asistente especializado en información sobre infecciones. Ayuda a organizar síntomas infecciosos.',
       }
 
       const response = await aiChatCompletion({

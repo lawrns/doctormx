@@ -58,7 +58,7 @@ export class AdaptiveQuestionnaireService {
         phase: 'history_taking',
         collected_symptoms: [],
         patient_info: {},
-        diagnostic_hypotheses: [],
+        health_possibilities: [],
         knowledge_gaps: [],
         urgency_level: 'low',
         red_flags: [],
@@ -277,7 +277,7 @@ export class AdaptiveQuestionnaireService {
           })
 
           if (diagnosisResult.success && diagnosisResult.data) {
-            currentState.diagnostic_hypotheses = diagnosisResult.data as any[]
+            currentState.health_possibilities = diagnosisResult.data as any[]
           }
         }
       }
@@ -322,7 +322,7 @@ export class AdaptiveQuestionnaireService {
           phase: updatedState.phase,
           state: updatedState,
           symptoms: updatedState.collected_symptoms,
-          diagnoses: updatedState.diagnostic_hypotheses,
+          diagnoses: updatedState.health_possibilities,
           urgency_level: updatedState.urgency_level,
           red_flags: updatedState.red_flags,
           updated_at: new Date().toISOString()
@@ -453,7 +453,7 @@ export class AdaptiveQuestionnaireService {
       symptoms: state.collected_symptoms.map(s => s.name),
       urgencyLevel: state.urgency_level,
       redFlags: state.red_flags,
-      differentialDiagnoses: state.diagnostic_hypotheses,
+      differentialDiagnoses: state.health_possibilities,
       recommendedAction: triageResult?.message || 'Consulta médica recomendada',
       recommendedSpecialty: triageResult?.specialty || 'Medicina General',
       estimatedWaitTime: triageResult?.timeframe || '24-48 horas'

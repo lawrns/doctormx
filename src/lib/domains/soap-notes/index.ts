@@ -57,7 +57,7 @@ export interface GenerateSoapInput {
   appointment_id?: string
 }
 
-const SOAP_PROMPT = `Eres un asistente médico experto que genera notas SOAP estructuradas en español mexicano.
+const SOAP_PROMPT = `Eres un asistente experto que organiza notas de consulta estructuradas en español mexicano.
 
 Basándote en la transcripción de la consulta médica, genera una nota SOAP completa con las siguientes secciones:
 

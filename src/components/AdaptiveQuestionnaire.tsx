@@ -238,7 +238,7 @@ export function AdaptiveQuestionnaire({
     switch (phase) {
       case 'history_taking': return 'Recopilando información'
       case 'focused_inquiry': return 'Evaluación detallada'
-      case 'synthesis': return 'Generando diagnóstico'
+      case 'synthesis': return 'Organizando información'
       default: return 'Procesando'
     }
   }

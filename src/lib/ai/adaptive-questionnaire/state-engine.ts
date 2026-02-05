@@ -8,7 +8,7 @@ import {
   ConversationPhase,
   UrgencyLevel,
   Symptom,
-  DiagnosticHypothesis,
+  HealthPossibility,
   RedFlag,
   ConversationContext,
   RED_FLAG_PATTERNS
@@ -20,7 +20,7 @@ export class StateTransitionEngine {
    * Evaluate if we should transition to a new phase based on current state
    */
   evaluatePhaseTransition(state: ConversationState): ConversationPhase {
-    const { phase, collected_symptoms, diagnostic_hypotheses, question_count, red_flags } = state
+    const { phase, collected_symptoms, health_possibilities, question_count, red_flags } = state
     
     // Emergency override - if critical red flags detected, move to synthesis immediately
     const hasCriticalRedFlags = red_flags.some(rf => rf.severity === 'critical')
@@ -61,7 +61,7 @@ export class StateTransitionEngine {
   
   private evaluateFocusedInquiryTransition(state: ConversationState): ConversationPhase {
     const { 
-      diagnostic_hypotheses, 
+      health_possibilities, 
       question_count, 
       knowledge_gaps,
       collected_symptoms 
@@ -73,7 +73,7 @@ export class StateTransitionEngine {
     }
     
     // If we have confident diagnoses and few knowledge gaps, synthesize
-    const hasConfidentDiagnoses = diagnostic_hypotheses.some(h => h.confidence > 0.7)
+    const hasConfidentDiagnoses = health_possibilities.some(h => h.confidence > 0.7)
     const minimalKnowledgeGaps = knowledge_gaps.length <= 2
     const hasDetailedSymptoms = collected_symptoms.every(s => 
       s.severity !== undefined && s.duration !== undefined && s.location !== undefined
@@ -95,7 +95,7 @@ export class StateTransitionEngine {
    * Calculate urgency level based on symptoms and red flags
    */
   calculateUrgencyLevel(state: ConversationState): UrgencyLevel {
-    const { red_flags, collected_symptoms, diagnostic_hypotheses } = state
+    const { red_flags, collected_symptoms, health_possibilities } = state
     
     // Critical red flags = emergency
     const hasCriticalRedFlags = red_flags.some(rf => rf.severity === 'critical')
@@ -121,9 +121,9 @@ export class StateTransitionEngine {
     const urgentConditions = ['infarto', 'accidente cerebrovascular', 'apendicitis', 
       'peritonitis', 'neumonía', 'sepsis', 'embolia']
     
-    const hasUrgentDiagnosis = diagnostic_hypotheses.some(h => 
+    const hasUrgentDiagnosis = health_possibilities.some(h => 
       urgentConditions.some(condition => 
-        h.diagnosis.toLowerCase().includes(condition)
+        h.condition.toLowerCase().includes(condition)
       ) && h.confidence > 0.5
     )
     
@@ -174,7 +174,7 @@ export class StateTransitionEngine {
    */
   identifyKnowledgeGaps(state: ConversationState): string[] {
     const gaps: string[] = []
-    const { collected_symptoms, patient_info, diagnostic_hypotheses } = state
+    const { collected_symptoms, patient_info, health_possibilities } = state
     
     // Check symptom details
     for (const symptom of collected_symptoms) {
@@ -195,12 +195,12 @@ export class StateTransitionEngine {
     if (!patient_info.medical_history) gaps.push('patient:medical_history')
     
     // Check diagnostic confidence
-    if (diagnostic_hypotheses.length === 0) {
+    if (health_possibilities.length === 0) {
       gaps.push('diagnosis:hypotheses_needed')
     } else {
-      const lowConfidenceDiagnoses = diagnostic_hypotheses.filter(h => h.confidence < 0.5)
+      const lowConfidenceDiagnoses = health_possibilities.filter(h => h.confidence < 0.5)
       for (const diagnosis of lowConfidenceDiagnoses) {
-        gaps.push(`diagnosis:confidence:${diagnosis.diagnosis}`)
+        gaps.push(`possibility:confidence:${diagnosis.condition}`)
       }
     }
     

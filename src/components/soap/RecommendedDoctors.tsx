@@ -49,13 +49,13 @@ export function RecommendedDoctors({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Extract diagnosis name for use throughout component
-  const primaryDiagnosisName = consensus.primaryDiagnosis?.name || 'general';
-  const specialty = mapDiagnosisToSpecialty(primaryDiagnosisName);
+  // Extract health focus name for use throughout component
+  const primaryFocusName = consensus.primaryDiagnosis?.name || 'general';
+  const specialty = mapFocusToSpecialty(primaryFocusName);
 
   useEffect(() => {
     fetchRecommendedDoctors();
-  }, [consensus.primaryDiagnosis]);
+  }, [consensus.primaryDiagnosis]); // primaryDiagnosis is internal field name
 
   const fetchRecommendedDoctors = async () => {
     try {
@@ -139,7 +139,7 @@ export function RecommendedDoctors({
             <p className="text-gray-700">
               Basado en tu diagnóstico de{' '}
               <span className="font-semibold text-blue-700">
-                {primaryDiagnosisName}
+                {primaryFocusName}
               </span>
               , estos médicos verificados pueden ayudarte:
             </p>
@@ -328,16 +328,16 @@ function DoctorCard({
 }
 
 /**
- * Map AI diagnosis to doctor specialty
+ * Map health focus to doctor specialty
  * Comprehensive mapping with extensive pattern matching for Mexican healthcare
  */
-function mapDiagnosisToSpecialty(diagnosis: string): string {
-  const lowerDiagnosis = diagnosis.toLowerCase();
+function mapFocusToSpecialty(focus: string): string {
+  const lowerFocus = focus.toLowerCase();
 
   // Cardiology - Heart & Cardiovascular
   if (
     /hipertension|presion.*alta|cardiaco|corazon|arritmia|infarto|angina|palpitacion|taquicardia|bradicardia|valvular|insuficiencia.*cardiaca|soplo|colesterol.*alto/i.test(
-      lowerDiagnosis
+      lowerFocus
     )
   ) {
     return 'Cardiología';
@@ -346,7 +346,7 @@ function mapDiagnosisToSpecialty(diagnosis: string): string {
   // Dermatology - Skin, Hair, Nails
   if (
     /piel|dermatitis|acne|erupcion|rash|sarpullido|urticaria|eczema|psoriasis|melasma|vitiligo|verruga|lunar|manchas.*piel|hongo|micosis|sarna|alopecia|caida.*cabello|uña|caspa|rosácea/i.test(
-      lowerDiagnosis
+      lowerFocus
     )
   ) {
     return 'Dermatología';
@@ -355,7 +355,7 @@ function mapDiagnosisToSpecialty(diagnosis: string): string {
   // Gastroenterology - Digestive System
   if (
     /gastro|estomago|intestino|digestion|reflujo|gastritis|ulcera|colon|colitis|diarrea|estreñimiento|hemorroides|higado|hepat|vesicula|pancreat|nausea|vomito|acidez|dispepsia|abdomen|intestinal|ibs|crohn/i.test(
-      lowerDiagnosis
+      lowerFocus
     )
   ) {
     return 'Gastroenterología';
@@ -364,7 +364,7 @@ function mapDiagnosisToSpecialty(diagnosis: string): string {
   // Neurology - Brain & Nervous System
   if (
     /neurologico|cerebro|nervioso|migraña|jaqueca|cefalea|dolor.*cabeza|mareo|vertigo|convulsion|epilepsia|temblor|parkinson|esclerosis|neuropatia|paralisis|tic|neuralgia/i.test(
-      lowerDiagnosis
+      lowerFocus
     )
   ) {
     return 'Neurología';
@@ -373,7 +373,7 @@ function mapDiagnosisToSpecialty(diagnosis: string): string {
   // Psychiatry / Psychology - Mental Health
   if (
     /ansiedad|depresion|psiquiatrico|mental|estres|panico|fobia|bipolar|esquizofrenia|insomnio|trastorno.*sueño|adiccion|tdah|deficit.*atencion|toc|obsesivo|compulsivo/i.test(
-      lowerDiagnosis
+      lowerFocus
     )
   ) {
     return 'Psiquiatría';
@@ -382,7 +382,7 @@ function mapDiagnosisToSpecialty(diagnosis: string): string {
   // Gynecology / Obstetrics
   if (
     /ginecologico|menstrual|embarazo|ovario|utero|vaginal|menopaus|endometriosis|quiste.*ovario|mioma|anticonceptiv|pap|amenorrea|dismenorrea|sangrado.*vaginal/i.test(
-      lowerDiagnosis
+      lowerFocus
     )
   ) {
     return 'Ginecología';
@@ -391,7 +391,7 @@ function mapDiagnosisToSpecialty(diagnosis: string): string {
   // Pediatrics
   if (
     /pediatrico|niño|niña|infantil|bebe|lactante|neonato|sarampion|varicela|paperas/i.test(
-      lowerDiagnosis
+      lowerFocus
     )
   ) {
     return 'Pediatría';
@@ -400,7 +400,7 @@ function mapDiagnosisToSpecialty(diagnosis: string): string {
   // Orthopedics / Traumatology - Bones, Joints, Spine
   if (
     /ortope|traumato|fractura|hueso|articulacion|rodilla|hombro|cadera|espalda|columna|lumbar|cervical|hernia.*disco|escoliosis|osteo|tendon|ligamento|esguince|luxacion|menisco|artritis|artrosis|gota/i.test(
-      lowerDiagnosis
+      lowerFocus
     )
   ) {
     return 'Ortopedia';
@@ -409,7 +409,7 @@ function mapDiagnosisToSpecialty(diagnosis: string): string {
   // Pulmonology - Respiratory
   if (
     /pulmon|respiratorio|asma|bronquitis|neumon|epoc|tos|disnea|ahogo|tuberculosis|enfisema|fibrosis.*pulmonar|apnea.*sueño/i.test(
-      lowerDiagnosis
+      lowerFocus
     )
   ) {
     return 'Neumología';
@@ -418,7 +418,7 @@ function mapDiagnosisToSpecialty(diagnosis: string): string {
   // Endocrinology - Hormones & Metabolism
   if (
     /endocrino|diabetes|tiro|hipotiro|hipertiro|obesidad|metabol|hormona|suprarrenal|colesterol|triglicerido|glucosa/i.test(
-      lowerDiagnosis
+      lowerFocus
     )
   ) {
     return 'Endocrinología';
@@ -427,7 +427,7 @@ function mapDiagnosisToSpecialty(diagnosis: string): string {
   // Urology - Urinary & Male Reproductive
   if (
     /urolog|renal|riñon|vejiga|prostata|incontinencia|cistitis|infeccion.*urinaria|calculo.*renal|piedra.*riñon|hematuria/i.test(
-      lowerDiagnosis
+      lowerFocus
     )
   ) {
     return 'Urología';
@@ -436,7 +436,7 @@ function mapDiagnosisToSpecialty(diagnosis: string): string {
   // Ophthalmology - Eyes
   if (
     /oftalmolog|ojo|vista|vision|catarata|glaucoma|conjuntivitis|retina|cornea|miopia|astigmatismo|presbicia|estrabismo/i.test(
-      lowerDiagnosis
+      lowerFocus
     )
   ) {
     return 'Oftalmología';
@@ -445,7 +445,7 @@ function mapDiagnosisToSpecialty(diagnosis: string): string {
   // Otorhinolaryngology (ENT) - Ear, Nose, Throat
   if (
     /otorrino|oido|nariz|garganta|sinusitis|otitis|faringitis|amigdalitis|laringitis|rinitis|alergica|sordera|tinnitus|adenoides|ronquido/i.test(
-      lowerDiagnosis
+      lowerFocus
     )
   ) {
     return 'Otorrinolaringología';
@@ -454,7 +454,7 @@ function mapDiagnosisToSpecialty(diagnosis: string): string {
   // Rheumatology - Autoimmune & Joint Diseases
   if (
     /reumatolog|artritis.*reumatoide|lupus|fibromialgia|vasculitis|espondilitis|sjogren|dolor.*articular.*cronico/i.test(
-      lowerDiagnosis
+      lowerFocus
     )
   ) {
     return 'Reumatología';
@@ -463,7 +463,7 @@ function mapDiagnosisToSpecialty(diagnosis: string): string {
   // Oncology - Cancer
   if (
     /cancer|oncolog|tumor|maligno|leucemia|linfoma|neoplasia|quimioterapia|metastasis|carcinoma/i.test(
-      lowerDiagnosis
+      lowerFocus
     )
   ) {
     return 'Oncología';
@@ -472,7 +472,7 @@ function mapDiagnosisToSpecialty(diagnosis: string): string {
   // Allergology / Immunology
   if (
     /alergia|alergico|inmunolog|urticaria|anafilaxia|alergia.*alimentaria|rinitis.*alergica|asma.*alergica|dermatitis.*atopica/i.test(
-      lowerDiagnosis
+      lowerFocus
     )
   ) {
     return 'Alergología';

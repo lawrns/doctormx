@@ -78,7 +78,7 @@ export function ConsensusMatrix({ consensus, className }: ConsensusMatrixProps) 
       <CardHeader>
         <div className="flex items-start justify-between gap-4">
           <div className="flex-1 space-y-1.5">
-            <CardTitle>Consenso Diagnóstico</CardTitle>
+            <CardTitle>Resumen de Información</CardTitle>
             <CardDescription>
               Evaluación multi-especialista con análisis de concordancia
             </CardDescription>
@@ -171,7 +171,7 @@ export function ConsensusMatrix({ consensus, className }: ConsensusMatrixProps) 
           className="space-y-2"
         >
           <h3 className="text-sm font-medium text-muted-foreground">
-            Diagnóstico Principal
+            Información Principal
           </h3>
           <p className="text-lg font-semibold leading-tight">
             {consensus.primaryDiagnosis}
@@ -204,10 +204,10 @@ export function ConsensusMatrix({ consensus, className }: ConsensusMatrixProps) 
             className="space-y-3"
           >
             <h3 className="text-sm font-medium text-muted-foreground">
-              Diagnósticos Diferenciales
+              Posibilidades a Considerar
             </h3>
             <ul className="space-y-2" role="list">
-              {consensus.differentialDiagnoses.map((diagnosis, index) => (
+              {consensus.differentialDiagnoses.map((possibility, index) => (
                 <motion.li
                   key={index}
                   initial={{ opacity: 0, x: shouldReduceMotion ? 0 : -10 }}
@@ -222,7 +222,7 @@ export function ConsensusMatrix({ consensus, className }: ConsensusMatrixProps) 
                     className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
                     aria-hidden="true"
                   />
-                  <span className="leading-relaxed">{diagnosis}</span>
+                  <span className="leading-relaxed">{possibility}</span>
                 </motion.li>
               ))}
             </ul>

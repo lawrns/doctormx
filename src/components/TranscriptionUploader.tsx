@@ -134,7 +134,7 @@ export default function TranscriptionUploader({ appointmentId, onCompleteAction 
           </svg>
           <div className="text-sm text-blue-800">
             <p className="font-medium">Transcripción automática</p>
-            <p className="mt-1">La IA transcribirá el audio y generará un resumen estructurado con diagnóstico, síntomas y plan de tratamiento.</p>
+            <p className="mt-1">La IA transcribirá el audio y generará un resumen estructurado con síntomas, información compartida y notas de la consulta.</p>
           </div>
         </div>
       </div>

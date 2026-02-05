@@ -89,7 +89,7 @@ export function SOAPDemo() {
       'Ansiedad con somatización cardiovascular',
     ],
     clinicalReasoning:
-      'Basado en el consenso de múltiples especialistas, los síntomas de palpitaciones súbitas con duración limitada, acompañadas de mareo ocasional y sin pérdida de conciencia, son altamente sugestivos de TPSV. La edad del paciente y la ausencia de antecedentes cardíacos significativos apoyan este diagnóstico. Se recomienda confirmación mediante estudios electrofisiológicos.',
+      'Basado en la información compartida, los síntomas de palpitaciones súbitas con duración limitada, acompañadas de mareo ocasional y sin pérdida de conciencia, sugieren explorar TPSV como posibilidad. La edad del paciente y la ausencia de antecedentes cardíacos significativos apoyan esta consideración. Se recomienda confirmación mediante estudios electrofisiológicos con un especialista.',
     agreementPercentage: 85,
   };
 

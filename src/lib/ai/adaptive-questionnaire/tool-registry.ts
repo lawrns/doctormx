@@ -4,7 +4,7 @@
  */
 
 import { z } from 'zod'
-import { Tool, ToolResult, ConversationContext, Symptom, DiagnosticHypothesis } from './types'
+import { Tool, ToolResult, ConversationContext, Symptom, HealthPossibility } from './types'
 import { stateTransitionEngine } from './state-engine'
 
 // Schema definitions for tool parameters
@@ -391,17 +391,17 @@ export class ToolRegistry {
   private async generateAIDifferentialDiagnoses(
     symptoms: string[],
     patient_info?: { age?: number; gender?: string; medical_history?: string[] }
-  ): Promise<DiagnosticHypothesis[]> {
+  ): Promise<HealthPossibility[]> {
     // This will be enhanced with actual AI integration
     // For now, return mock data structure
-    const mockDiagnoses: DiagnosticHypothesis[] = [
+    const mockDiagnoses: HealthPossibility[] = [
       {
-        diagnosis: 'Evaluación con médico necesaria',
+        condition: 'Evaluación con médico necesaria',
         probability: 50,
+        confidence: 0.5,
         reasoning: 'Síntomas no específicos, requiere evaluación clínica',
         supporting_evidence: symptoms,
-        contradicting_evidence: [],
-        confidence: 0.6
+        contradicting_evidence: []
       }
     ]
 
@@ -640,7 +640,7 @@ export class ToolRegistry {
       symptoms: state.collected_symptoms,
       urgency_level: state.urgency_level,
       red_flags: state.red_flags,
-      diagnostic_hypotheses: state.diagnostic_hypotheses,
+      health_possibilities: state.health_possibilities,
       question_count: state.question_count,
       duration_minutes: this.calculateDuration(state.start_time),
       conversation_phase: state.phase,

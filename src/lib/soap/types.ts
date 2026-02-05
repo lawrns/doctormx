@@ -87,13 +87,17 @@ export interface SpecialistAssessment {
   latencyMs: number
 }
 
-export interface DiagnosisCandidate {
+export interface HealthConsideration {
   name: string
   icd10Code?: string
   probability: number    // 0-1
   supportingEvidence: string[]
   refutingEvidence: string[]
 }
+
+// Backwards compatibility alias - DiagnosisCandidate was renamed to HealthConsideration
+// for regulatory compliance (avoiding SaMD classification)
+export type DiagnosisCandidate = HealthConsideration
 
 export type UrgencyLevel =
   | 'emergency'   // Requiere atencion inmediata (ER)
@@ -111,9 +115,9 @@ export interface ConsensusResult {
   kendallW: number           // 0-1, Kendall's coefficient of concordance
   agreementLevel: AgreementLevel
 
-  // Combined diagnosis
-  primaryDiagnosis: DiagnosisCandidate | null
-  differentialDiagnoses: DiagnosisCandidate[]
+  // Combined health information (not a diagnosis)
+  primaryDiagnosis: HealthConsideration | null  // Renamed from DiagnosisCandidate for clarity
+  differentialDiagnoses: HealthConsideration[]  // These are possibilities to discuss with a doctor
   consensusCategory: ConsensusCategory
 
   // Combined recommendations

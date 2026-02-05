@@ -27,9 +27,9 @@ export interface SpecialistAgent {
 export interface ConsensusResult {
   score: number; // Kendall's W * 100 (0-100)
   level: 'high' | 'moderate' | 'low';
-  primaryDiagnosis: string;
-  differentialDiagnoses: string[];
-  clinicalReasoning: string;
+  primaryDiagnosis: string; // Internal field - displayed as "Información Principal" in UI
+  differentialDiagnoses: string[]; // Internal field - displayed as "Posibilidades" in UI
+  clinicalReasoning: string; // Internal field - displayed as "Resumen" in UI
   agreementPercentage: number;
 }
 

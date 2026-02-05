@@ -167,7 +167,7 @@ export function PatientTestimonials() {
       name: 'Carlos Ramírez',
       city: 'Monterrey',
       rating: 5,
-      text: 'Muy conveniente y profesional. Ahorré tiempo y dinero. El diagnóstico de IA me ayudó a entender mejor mis síntomas antes de la consulta.',
+      text: 'Muy conveniente y profesional. Ahorré tiempo y dinero. La orientación de IA me ayudó a prepararme mejor para mi consulta.',
       date: '2026-01-10',
       verified: true,
     },

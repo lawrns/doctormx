@@ -66,8 +66,8 @@ export const INDIVIDUAL_PREMIUM_FEATURES: Record<PremiumFeature, IndividualFeatu
     key: 'clinical_copilot',
     name: 'Clinical Copilot Session',
     nameEs: 'Sesión de Clinical Copilot',
-    description: 'AI clinical assistant for diagnoses and consultation summaries',
-    descriptionEs: 'Asistente clínico de IA para diagnósticos y resúmenes de consulta',
+    description: 'AI assistant for organizing clinical information and consultation summaries',
+    descriptionEs: 'Asistente clínico de IA para organizar información y resúmenes de consulta',
     singlePurchase: {
       priceCents: 3000,
       priceMXN: 30,

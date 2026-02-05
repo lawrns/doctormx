@@ -77,7 +77,7 @@ export async function POST(req: NextRequest) {
       followUpInstructions: string;
       nextSteps: string[];
     }>({
-      systemPrompt: 'Eres un asistente médico experto en resumir consultas.',
+      systemPrompt: 'Eres un asistente experto en organizar notas de consulta.',
       userPrompt: TRANSCRIPTION_SUMMARY_PROMPT.replace('{transcript}', fullText),
     });
 
