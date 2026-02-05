@@ -32,7 +32,7 @@ export function LandingPageClient() {
           <span className="hidden sm:inline text-blue-200">|</span>
           <span className="inline-flex items-center gap-1.5 text-sm text-blue-100 bg-blue-700/30 px-3 py-1 rounded-full">
             <ShieldCheck className="w-4 h-4" />
-            Plataforma Mexicana de Salud Digital
+            Doctores verificados por COFEPRIS
           </span>
         </div>
       </motion.div>
