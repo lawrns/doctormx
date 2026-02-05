@@ -201,7 +201,7 @@ export default function SpecialtiesPage() {
                 className="px-10 py-5 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-500 transition-all flex items-center gap-3 mx-auto shadow-xl shadow-blue-600/20"
               >
                 <Sparkles className="w-5 h-5" />
-                Iniciar Consulta IA Gratis
+                Iniciar Orientación IA Gratis
               </motion.button>
             </Link>
           </motion.div>

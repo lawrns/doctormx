@@ -111,7 +111,7 @@ export function CTASection() {
 
         {/* Additional trust text */}
         <p className="text-center text-white/50 text-sm mt-8">
-          Primera consulta gratis - Sin compromiso - Cancela cuando quieras
+          Primera orientación gratis - Sin compromiso - Cancela cuando quieras
         </p>
       </div>
     </section>

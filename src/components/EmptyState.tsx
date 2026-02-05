@@ -184,7 +184,7 @@ export function NoAppointmentsEmpty({ type = 'patient' }: { type?: 'patient' | '
       iconName="calendar"
       title="No tienes consultas programadas"
       description="Tu primera consulta está a un clic. ¿Prefieres hablar con nuestro asistente IA primero?"
-      action={{ label: "Consulta IA Gratis", href: "/app/ai-consulta" }}
+      action={{ label: "Orientación IA Gratis", href: "/app/ai-consulta" }}
       secondaryAction={{ label: "Buscar doctor", href: "/doctors" }}
     />
   )

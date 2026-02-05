@@ -113,7 +113,7 @@ export function HeroSection() {
           className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-text-primary mb-6 leading-[1.1] tracking-tight"
           style={{ fontFamily: 'var(--font-serif)' }}
         >
-          5 Consultas Medicas
+          5 Orientaciones de Salud
           <br />
           <span className="relative inline-block">
             <span className="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 bg-clip-text text-transparent font-black">
@@ -134,7 +134,7 @@ export function HeroSection() {
           variants={itemVariants}
           className="text-xl sm:text-2xl text-text-secondary max-w-3xl mx-auto mb-8 leading-relaxed"
         >
-          Salud accesible para todos. Consulta con IA médica las veces que necesites — <strong className="text-blue-600">sin registrar, sin pagar</strong>. Cuando necesites un doctor real, te conectamos con especialistas verificados.
+          Salud accesible para todos. Evaluación con asistente de salud las veces que necesites — <strong className="text-blue-600">sin registrar, sin pagar</strong>. Cuando necesites un doctor real, te conectamos con especialistas verificados.
         </motion.p>
 
         {/* Key Benefits - Lighter, Less Prominent - EMPHASIZE FREE */}
@@ -144,7 +144,7 @@ export function HeroSection() {
         >
           <span className="flex items-center gap-1.5 bg-blue-50 text-blue-700 px-3 py-1.5 rounded-full">
             <Zap className="w-4 h-4 text-blue-500" aria-hidden="true" />
-            5 consultas GRATIS
+            5 orientaciones GRATIS
           </span>
           <span className="text-neutral-300" aria-hidden="true">•</span>
           <span className="flex items-center gap-1.5">
@@ -168,7 +168,7 @@ export function HeroSection() {
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.98 }}
               className="group relative w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 min-h-[48px] bg-gradient-to-r from-blue-500 to-blue-600 text-white text-base sm:text-lg font-bold rounded-2xl shadow-xl shadow-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/40 transition-all overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-blue-600"
-              aria-label="Consultar gratis - Iniciar consulta médica gratuita con IA"
+              aria-label="Consultar gratis - Iniciar evaluación de orientación gratuita"
             >
               {/* Pulsing glow ring */}
               <span className="absolute inset-0 rounded-2xl animate-pulse-ring" />

@@ -80,14 +80,14 @@ export async function canAnonymousConsult(sessionId?: string): Promise<{
     return {
       canConsult: false,
       quota,
-      message: 'Has usado tus 5 consultas gratis. Regístrate o actualiza a Premium para continuar.',
+      message: 'Has usado tus 5 orientaciones gratis. Regístrate o actualiza a Premium para continuar.',
     }
   }
 
   return {
     canConsult: true,
     quota,
-    message: `${quota.remaining} consultas gratis restantes.`,
+    message: `${quota.remaining} orientaciones gratis restantes.`,
   }
 }
 

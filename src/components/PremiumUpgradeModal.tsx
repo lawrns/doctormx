@@ -20,7 +20,7 @@ export function PremiumUpgradeModal({ isOpen, onClose, consultationCount }: Prem
       price: 'Gratis',
       period: '',
       features: [
-        '5 consultas mensuales',
+        '5 orientaciones mensuales',
         'Historial guardado',
         'Recomendaciones de doctores',
       ],
@@ -88,7 +88,7 @@ export function PremiumUpgradeModal({ isOpen, onClose, consultationCount }: Prem
               <Crown className="w-8 h-8 text-white" />
             </div>
             <h2 className="text-3xl font-bold text-white mb-2">
-              ¡Has usado tus 5 consultas gratis!
+              ¡Has usado tus 5 orientaciones gratis!
             </h2>
             <p className="text-blue-50 text-lg">
               Actualiza a Premium para continuar accediendo a salud ilimitada

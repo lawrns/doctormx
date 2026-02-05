@@ -82,10 +82,10 @@ export function QuotaBanner({ used, limit, showUpgrade = true }: QuotaBannerProp
         <QuotaCounter used={used} limit={limit} size="sm" />
         <span className="text-sm font-medium">
           {remaining === limit
-            ? `${limit} consultas gratis disponibles`
+            ? `${limit} orientaciones gratis disponibles`
             : remaining === 0
-            ? 'Has usado tus consultas gratis'
-            : `${remaining} de ${limit} consultas gratis restantes`}
+            ? 'Has usado tus orientaciones gratis'
+            : `${remaining} de ${limit} orientaciones gratis restantes`}
         </span>
       </div>
       {showUpgrade && remaining === 0 && (

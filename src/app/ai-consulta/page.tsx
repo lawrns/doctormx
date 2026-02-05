@@ -88,7 +88,7 @@ export default function AnonymousConsultaPage() {
           ...prev,
           {
             role: 'assistant',
-            content: 'Has usado tus 5 consultas gratis. Regístrate para obtener más consultas o actualiza a Premium para consultas ilimitadas.',
+            content: 'Has usado tus 5 orientaciones gratis. Regístrate para obtener más evaluaciones o actualiza a Premium para uso ilimitado.',
           },
         ])
         setIsComplete(true)
@@ -146,7 +146,7 @@ export default function AnonymousConsultaPage() {
             </Link>
             {quota && (
               <div className="text-right">
-                <p className="text-sm font-medium text-gray-700">{quota.remaining} consultas gratis</p>
+                <p className="text-sm font-medium text-gray-700">{quota.remaining} orientaciones gratis</p>
                 <div className="flex gap-1 mt-1">
                   {Array.from({ length: quota.limit }).map((_, i) => (
                     <div

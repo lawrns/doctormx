@@ -26,13 +26,13 @@ export function LandingPageClient() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
           <span className="inline-flex items-center gap-2 font-bold text-base">
             <Sparkles className="w-5 h-5" fill="currentColor" />
-            5 CONSULTAS MÉDICAS GRATIS PARA TODOS LOS MEXICANOS
+            5 ORIENTACIONES DE SALUD GRATIS PARA TODOS LOS MEXICANOS
             <Sparkles className="w-5 h-5" fill="currentColor" />
           </span>
           <span className="hidden sm:inline text-blue-200">|</span>
           <span className="inline-flex items-center gap-1.5 text-sm text-blue-100 bg-blue-700/30 px-3 py-1 rounded-full">
             <ShieldCheck className="w-4 h-4" />
-            Verificado por COFEPRIS
+            Plataforma Mexicana de Salud Digital
           </span>
         </div>
       </motion.div>
@@ -52,7 +52,7 @@ export function LandingPageClient() {
 
             <nav className="hidden lg:flex items-center gap-1">
               {[
-                { href: '/ai-consulta', label: '5 Consultas GRATIS', icon: Sparkles },
+                { href: '/ai-consulta', label: '5 Orientaciones GRATIS', icon: Sparkles },
                 { href: '/doctors', label: 'Buscar doctores', icon: Search },
                 { href: '/for-doctors', label: 'Para doctores', icon: UserPlus },
               ].map((link) => (

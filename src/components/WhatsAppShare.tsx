@@ -14,7 +14,7 @@ interface WhatsAppShareProps {
 
 export function WhatsAppShare({
   title = 'Compartir en WhatsApp',
-  message = '¡Hola! Te recomiendo Doctor.mx - 5 consultas médicas gratis con IA. Es genial: ',
+  message = '¡Hola! Te recomiendo Doctor.mx - 5 orientaciones de salud gratis con IA. Es genial: ',
   url = 'https://doctor.mx',
   onShare,
 }: WhatsAppShareProps) {
@@ -92,7 +92,7 @@ export function WhatsAppShareCard({
 }: WhatsAppShareCardProps) {
   const [shared, setShared] = useState(false)
 
-  const defaultText = `¡Hola! ${patientName} usó Doctor.mx para evaluar ${symptoms}. La IA recomendó ${aiRecommendation}. ¡Tienes 5 consultas gratis!`
+  const defaultText = `¡Hola! ${patientName} usó Doctor.mx para evaluar ${symptoms}. El asistente recomendó ${aiRecommendation}. ¡Tienes 5 orientaciones gratis!`
 
   return (
     <div className="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-2xl p-6">

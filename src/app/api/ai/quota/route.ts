@@ -58,7 +58,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({
         success: true,
         quota,
-        message: `Consulta registrada. Te quedan ${quota.remaining} gratis.`,
+        message: `Evaluación registrada. Te quedan ${quota.remaining} gratis.`,
       })
     }
 

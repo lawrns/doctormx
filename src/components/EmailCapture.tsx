@@ -70,7 +70,7 @@ export function EmailCapture({ consultationNumber, onEmailProvided, onDismiss }:
         {!submitted ? (
           <form onSubmit={handleSubmit} className="space-y-4">
             <p className="text-sm text-gray-700">
-              Te quedan {5 - consultationNumber} consultas gratis. Regístrate para guardar tu historial.
+              Te quedan {5 - consultationNumber} orientaciones gratis. Regístrate para guardar tu historial.
             </p>
             <div className="flex gap-3">
               <input
@@ -190,7 +190,7 @@ export function EmailCaptureModal({ isOpen, onClose, consultationNumber }: Email
 
             <div className="space-y-4 mb-6">
               <p className="text-gray-700">
-                Te quedan <strong>{5 - consultationNumber} consultas gratis</strong>.
+                Te quedan <strong>{5 - consultationNumber} orientaciones gratis</strong>.
                 Regístrate para guardar tu historial y acceder desde cualquier dispositivo.
               </p>
 
