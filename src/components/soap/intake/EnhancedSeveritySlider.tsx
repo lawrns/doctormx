@@ -56,31 +56,18 @@ export function EnhancedSeveritySlider({
   return (
     <div className={cn('space-y-6', className)}>
       {/* Large Value Display with Animation */}
-      <motion.div
-        key={value}
-        initial={{ scale: shouldReduceMotion ? 1 : 0.8, opacity: shouldReduceMotion ? 1 : 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{
-          type: 'spring',
-          stiffness: 200,
-          damping: 15,
-        }}
-        className="text-center"
-      >
+      <div className="text-center">
+        <motion.div
+          key={value}
+          initial={{ scale: shouldReduceMotion ? 1 : 0.8, opacity: shouldReduceMotion ? 1 : 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{
+            type: 'spring',
+            stiffness: 200,
+            damping: 15,
+          }}
+        >
         <div className="relative inline-flex items-center justify-center">
-          <motion.div
-            className="absolute inset-0 rounded-full opacity-20"
-            style={{ backgroundColor: currentConfig.color }}
-            animate={
-              !shouldReduceMotion
-                ? {
-                    scale: [1, 1.2, 1],
-                    opacity: [0.2, 0.1, 0.2],
-                  }
-                : {}
-            }
-            transition={{ duration: 2, repeat: Infinity }}
-          />
           <div
             className="relative w-32 h-32 rounded-full flex items-center justify-center border-4 shadow-lg"
             style={{ backgroundColor: `${currentConfig.color}10`, borderColor: currentConfig.color }}
@@ -93,17 +80,19 @@ export function EnhancedSeveritySlider({
             </div>
           </div>
         </div>
+        </motion.div>
+      </div>
 
-        <div className="mt-4 space-y-2">
-          <motion.div
-            key={`label-${value}`}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex items-center justify-center gap-2"
-          >
+      <motion.div
+        key={`label-${value}`}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="mt-4 space-y-2"
+      >
+          <div className="flex items-center justify-center gap-2">
             <Icon className="w-5 h-5" style={{ color: currentConfig.color }} />
             <span className="text-xl font-semibold text-gray-900">{currentConfig.label}</span>
-          </motion.div>
+          </div>
 
           <Badge
             variant="outline"
@@ -112,8 +101,7 @@ export function EnhancedSeveritySlider({
           >
             Nivel {value} de {max}
           </Badge>
-        </div>
-      </motion.div>
+        </motion.div>
 
       {/* Enhanced Slider */}
       <div className="space-y-4 px-4">
@@ -154,23 +142,15 @@ export function EnhancedSeveritySlider({
           />
 
           {/* Visual Thumb */}
-          <motion.div
-            className="absolute top-1/2 -translate-y-1/2 w-8 h-8 rounded-full shadow-lg border-3 border-white flex items-center justify-center cursor-pointer"
+          <div
+            className="absolute top-1/2 -translate-y-1/2 w-8 h-8 rounded-full shadow-lg border-3 border-white flex items-center justify-center pointer-events-none"
             style={{
               left: `calc(${((value - min) / (max - min)) * 100}% - 16px)`,
               backgroundColor: currentConfig.color,
             }}
-            animate={{
-              scale: [1, 1.1, 1],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
           >
             <span className="text-white text-xs font-bold">{currentConfig.emoji}</span>
-          </motion.div>
+          </div>
         </div>
 
         {/* Scale Labels */}
