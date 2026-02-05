@@ -195,9 +195,9 @@ export function NoDoctorsOnlineEmpty() {
     <EmptyState
       iconName="doctor"
       title="No hay doctores disponibles ahora"
-      description="3 médicos regresan a las 8 PM. ¿Mientras tanto, puedo ayudarte con el Dr. Simeon?"
+      description="3 médicos regresan a las 8 PM. ¿Mientras tanto, puedo ayudarte con Simeon?"
       variant="ai"
-      action={{ label: "Chat con Dr. Simeon", href: "/app/ai-consulta" }}
+      action={{ label: "Chat con Simeon", href: "/app/ai-consulta" }}
       secondaryAction={{ label: "Programar para mañana", href: "/doctors" }}
     />
   )
@@ -208,7 +208,7 @@ export function LowConfidenceAIEmpty() {
     <EmptyState
       iconName="alert"
       title="Necesito un doctor humano"
-      description="El Dr. Simeon está aprendiendo sobre estos síntomas. Te conecto con un doctor humano certificado."
+      description="Simeon está aprendiendo sobre estos síntomas. Te conecto con un doctor humano certificado."
       variant="urgent"
       action={{ label: "Ver doctores disponibles", href: "/doctors" }}
       secondaryAction={{ label: "Continuar con IA", href: "/app/ai-consulta" }}

@@ -1,0 +1,13 @@
+id: "002"
+description: "remove the extra \"Dashboard
+/
+Mi Perfil\" that's on mi perfil"
+type: "work"
+effort: "QUICK"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-04T14:21:39-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

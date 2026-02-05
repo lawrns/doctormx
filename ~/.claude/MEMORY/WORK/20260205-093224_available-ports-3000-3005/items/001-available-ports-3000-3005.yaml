@@ -1,0 +1,11 @@
+id: "001"
+description: "which ports are available from 3000 - 3005 to setup a localhost with doctormx, don't do it yet just tell me which ones"
+type: "question"
+effort: "TRIVIAL"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-05T09:32:24-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

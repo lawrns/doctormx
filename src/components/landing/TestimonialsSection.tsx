@@ -32,7 +32,7 @@ const testimonials = [
     location: 'Monterrey, N.L.',
     initials: 'AR',
     gradient: 'from-teal-400 to-cyan-500',
-    content: 'Usé Dr. Simeon para entender mis síntomas antes de mi consulta. Me ayudó a preparar las preguntas correctas. La segunda opinión que obtuve me dio tranquilidad antes de decidir mi tratamiento.',
+    content: 'Usé Simeon para organizar mis síntomas antes de mi consulta. Me ayudó a preparar las preguntas correctas. La información que obtuve me dio tranquilidad antes de decidir mi tratamiento.',
     rating: 5,
     verified: true,
   },

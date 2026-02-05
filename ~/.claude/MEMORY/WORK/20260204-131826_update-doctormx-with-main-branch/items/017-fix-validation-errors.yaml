@@ -1,0 +1,11 @@
+id: "017"
+description: "Errores: {\"emergency_contacts\":[{\"name\":{\"message\":\"El nombre es requerido\",\"type\":\"too_small\"},\"phone\":{\"message\":\"Teléfono inválido\",\"type\":\"too_small\"},\"relationship\":{\"message\":\"Parentesco es requerido\",\"type\":\"too_small\"}}]}"
+type: "work"
+effort: "QUICK"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-04T13:56:27-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

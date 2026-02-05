@@ -1,0 +1,25 @@
+id: "002"
+description: "we are gonna go ahead and implement these changes suggested by claude, i gave him some screenshots of the patient dashboard but he still missed some context to i removed some points from the PRD.
+
+# Doctor.mx Patient Dashboard — Product Requirements Document
+
+**Version:** 1.0
+**Date:** February 3, 2026
+**Target:** Implementation by coding agent (Claude Code / Kimi CLI)
+**Project path:** `/Documents/GitHub/doctormx/`
+**Stack:** React, Supabase, TailwindCSS
+
+---
+
+## Executive Summary
+
+This PRD def"
+type: "work"
+effort: "THOROUGH"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-03T15:47:14-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

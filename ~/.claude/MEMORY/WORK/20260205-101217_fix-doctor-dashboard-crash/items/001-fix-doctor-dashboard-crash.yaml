@@ -1,0 +1,17 @@
+id: "001"
+description: "there should be a server for doctormx running on port 3005, i went a head and logged in as a doctor and it seems the dashboard is crashing for doctors.
+
+Event handlers cannot be passed to Client Component props. <button onClick={function onClick} className=... children=...> ^^^^^^^^^^^^^^^^^^ If you need interactivity, consider converting part of this to a Client Component.
+
+Browser console errors:
+error-boundary-callbacks.ts:90 Error: Event handlers cannot be passed to Client Component props.
+ "
+type: "work"
+effort: "STANDARD"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-05T10:12:17-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

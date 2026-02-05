@@ -1,0 +1,11 @@
+id: "001"
+description: "update our local doctormx project with the new ones from the main branch in github"
+type: "work"
+effort: "STANDARD"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-04T13:18:26-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

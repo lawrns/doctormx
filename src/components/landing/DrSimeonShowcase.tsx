@@ -7,8 +7,8 @@ import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { CheckCircle, Clock, AlertTriangle, Stethoscope } from 'lucide-react'
 
-// Dr. Simeon Avatar Component - Now with real face and gradient ring!
-function DrSimeonAvatar({ size = 'default' }: { size?: 'default' | 'large' }) {
+// Simeon Avatar Component - Now with real face and gradient ring!
+function SimeonAvatar({ size = 'default' }: { size?: 'default' | 'large' }) {
   const sizeClasses = size === 'large' ? 'h-14 w-14' : 'h-10 w-10'
   const ringSize = size === 'large' ? 'h-[60px] w-[60px]' : 'h-[44px] w-[44px]'
 
@@ -39,7 +39,7 @@ function DrSimeonAvatar({ size = 'default' }: { size?: 'default' | 'large' }) {
       >
         <Image
           src="/images/simeon.png"
-          alt="Dr. Simeon"
+          alt="Simeon"
           fill
           sizes="(max-width: 768px) 40px, 56px"
           className="object-cover"
@@ -196,7 +196,7 @@ function AnimatedMessage({
       }}
       className={`flex items-end gap-2 ${isPatient ? 'flex-row-reverse' : 'flex-row'}`}
     >
-      {!isPatient && <DrSimeonAvatar />}
+      {!isPatient && <SimeonAvatar />}
 
       <div
         className={`flex max-w-[75%] flex-col ${isPatient ? 'items-end' : 'items-start'}`}
@@ -324,11 +324,11 @@ export default function DrSimeonShowcase() {
             className="space-y-6"
           >
             <div className="inline-block rounded-full bg-blue-100 px-4 py-1.5 text-sm font-medium text-blue-700">
-              Asistente IA Médico
+              Asistente de Orientación
             </div>
 
             <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-              Dr. Simeon AI
+              Simeon - Asistente de Orientación
               <span className="block text-blue-600">
                 Tu Evaluación Inicial Inteligente
               </span>
@@ -389,9 +389,9 @@ export default function DrSimeonShowcase() {
             <Card className="relative mx-auto max-w-md overflow-hidden bg-white shadow-2xl">
               {/* Chat Header */}
               <div className="flex items-center gap-3 border-b border-gray-200 bg-gradient-to-r from-blue-50 to-indigo-50 px-6 py-4">
-                <DrSimeonAvatar />
+                <SimeonAvatar />
                 <div className="flex-1">
-                  <h3 className="font-semibold text-gray-900">Dr. Simeon</h3>
+                  <h3 className="font-semibold text-gray-900">Simeon</h3>
                   <div className="flex items-center gap-1.5">
                     <span className="h-2 w-2 rounded-full bg-teal-500"></span>
                     <span className="text-xs text-gray-500">En línea</span>
@@ -431,7 +431,7 @@ export default function DrSimeonShowcase() {
 
                   {isShowingTyping && (
                     <div className="flex items-end gap-2">
-                      <DrSimeonAvatar />
+                      <SimeonAvatar />
                       <div className="rounded-2xl border border-gray-200 bg-white shadow-sm">
                         <TypingIndicator />
                       </div>

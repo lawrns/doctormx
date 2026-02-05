@@ -1,0 +1,11 @@
+id: "012"
+description: "i keep getting the \"Tienes cambios sin guardar\" popup but the thing is i haven't edited nothing, and even if i press the \"Guardar cambios\" button, when i try to switch tabs i still get the popup."
+type: "work"
+effort: "STANDARD"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-04T13:45:01-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

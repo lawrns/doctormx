@@ -48,7 +48,7 @@ const FEATURES = [
     { name: 'Notificaciones WhatsApp/mes', starter: '30', pro: '100', elite: 'Ilimitado' },
     { name: 'Posición en búsquedas', starter: 'Estándar', pro: '+20% visibilidad', elite: '+50% visibilidad' },
     { name: 'Recordatorios SMS', starter: false, pro: true, elite: true },
-    { name: 'Dr. Simeon Copilot (IA)', starter: false, pro: true, elite: true },
+    { name: 'Simeon Copilot (IA)', starter: false, pro: true, elite: true },
     { name: 'Consultas con IA/mes', starter: '0', pro: '50', elite: 'Ilimitado' },
     { name: 'Análisis de imágenes médicas/mes', starter: '0', pro: '0', elite: '10' },
     { name: 'Perfil destacado en inicio', starter: false, pro: false, elite: true },

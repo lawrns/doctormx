@@ -248,7 +248,7 @@ export default async function DoctorProfilePage({
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-ink-primary">Pre-consulta con IA</p>
-                    <p className="text-xs text-ink-muted">Dr. Simeon prepara tu caso</p>
+                    <p className="text-xs text-ink-muted">Simeon prepara tu caso</p>
                   </div>
                 </div>
               </div>

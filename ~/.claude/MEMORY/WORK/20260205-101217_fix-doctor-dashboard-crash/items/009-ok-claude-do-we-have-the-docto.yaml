@@ -1,0 +1,11 @@
+id: "009"
+description: "ok claude do we have the doctormx server on any port?"
+type: "question"
+effort: "TRIVIAL"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-05T12:42:17-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

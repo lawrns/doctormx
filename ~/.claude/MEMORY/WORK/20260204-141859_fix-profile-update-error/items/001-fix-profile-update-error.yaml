@@ -1,0 +1,28 @@
+id: "001"
+description: "i'm on the app/profile and just tried to edit my gender and dateofbirth but when i click the guardar cambios button i get this error.
+Console Error
+
+
+
+Failed to update profile
+src/app/app/profile/page.tsx (537:15) @ onSubmitProfile
+
+
+  535 |         setHasUnsavedChanges(false)
+  536 |       } else {
+> 537 |         throw new Error('Failed to update profile')
+      |               ^
+  538 |       }
+  539 |     } catch (error) {
+  540 |       console.error('Error updating profile:', error)
+
+here's"
+type: "work"
+effort: "STANDARD"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-04T14:18:59-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

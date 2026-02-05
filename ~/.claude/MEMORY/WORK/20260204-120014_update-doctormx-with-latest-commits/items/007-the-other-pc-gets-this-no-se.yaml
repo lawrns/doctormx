@@ -1,0 +1,19 @@
+id: "007"
+description: "the other pc get's this:
+No se puede acceder a este sitio web
+192.168.1.68 ha tardado demasiado tiempo en responder.
+Prueba a:
+
+Comprobar la conexión
+Comprobar el proxy y el cortafuegos
+Ejecutar Diagnósticos de red de Windows
+ERR_CONNECTION_TIMED_OUT"
+type: "question"
+effort: "STANDARD"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-04T12:09:53-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

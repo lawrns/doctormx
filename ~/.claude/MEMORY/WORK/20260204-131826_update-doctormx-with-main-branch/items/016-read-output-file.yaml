@@ -1,0 +1,17 @@
+id: "016"
+description: "<task-notification>
+<task-id>ba4aebe</task-id>
+<output-file>/tmp/claude-1001/-home-laurence-felipe-doctormx/tasks/ba4aebe.output</output-file>
+<status>failed</status>
+<summary>Background command \"Restart dev server on port 3001\" failed with exit code 1</summary>
+</task-notification>
+Read the output file to retrieve the result: /tmp/claude-1001/-home-laurence-felipe-doctormx/tasks/ba4aebe.output"
+type: "work"
+effort: "TRIVIAL"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-04T13:54:25-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

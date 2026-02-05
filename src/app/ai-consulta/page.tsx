@@ -175,7 +175,7 @@ export default function AnonymousConsultaPage() {
                 <Sparkles className="w-6 h-6 text-white" />
               </div>
               <div className="text-white">
-                <h2 className="font-bold">Dr. Simeon</h2>
+                <h2 className="font-bold">Simeon</h2>
                 <p className="text-sm text-blue-50">Asistente de orientación • En línea</p>
               </div>
             </div>

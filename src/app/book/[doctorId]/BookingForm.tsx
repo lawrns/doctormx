@@ -457,7 +457,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
               {preConsultaCompleted && (
                 <div className="bg-success-50 border border-success-200 rounded-xl p-4">
                   <p className="text-sm text-success-700 font-medium">
-                    Pre-consulta completada con Dr. Simeon IA
+                    Pre-consulta completada con Simeon
                   </p>
                 </div>
               )}

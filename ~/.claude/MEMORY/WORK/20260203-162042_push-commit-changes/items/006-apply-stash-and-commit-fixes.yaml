@@ -1,0 +1,12 @@
+id: "006"
+description: "apply the stash and commit the fixes.
+then explain to me what should i tell you in order to avoid commiting only one part of the changes"
+type: "work"
+effort: "STANDARD"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-03T16:41:33-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

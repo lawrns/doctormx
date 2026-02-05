@@ -1,0 +1,18 @@
+id: "001"
+description: "trying to build a netlify for doctormx
+The Netlify deploy errored, with the following guidance provided:
+
+Diagnosis  
+[lines 85-96](#L85-L96) show TypeScript failing in `src/app/app/profile/page.tsx` because the `title` prop passed to `CardHeader` is a JSX element, but the prop is typed as `string`. That mismatch stops the Next.js build.
+
+Solution  
+Update the `CardHeader` typings (likely in `src/components/ui/card.tsx` or wherever `CardHeader` is declared) so that `title` accepts a `ReactNode`,"
+type: "work"
+effort: "QUICK"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-04T15:20:36-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

@@ -23,9 +23,9 @@ const hedvigLettersSerif = Hedvig_Letters_Serif({
 export const metadata: Metadata = {
   title: "Doctor.mx | Telemedicina y Doctores Verificados en México | 24/7",
   description:
-    "Consulta médica en línea con doctores verificados en México. Telemedicina segura, videoconsultas HD, y Dr. Simeon - tu asistente de salud con IA. Más de 500 especialistas disponibles 24/7.",
+    "Consulta médica en línea con doctores verificados en México. Telemedicina segura, videoconsultas HD, y Simeon - tu asistente de orientación de salud. Más de 500 especialistas disponibles 24/7.",
   keywords:
-    "telemedicina México, doctores en línea, consulta médica virtual, doctores verificados México, videoconsulta médica, Dr Simeon, salud digital México, cita médica en línea, especialistas certificados, segunda opinión médica",
+    "telemedicina México, doctores en línea, consulta médica virtual, doctores verificados México, videoconsulta médica, Simeon, salud digital México, cita médica en línea, especialistas certificados, segunda opinión médica",
   authors: [{ name: "Doctor.mx" }],
   creator: "Doctor.mx",
   publisher: "Doctor.mx",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Doctor.mx | Telemedicina y Doctores Verificados en México | 24/7",
     description:
-      "Consulta médica en línea con doctores verificados en México. Telemedicina segura, videoconsultas HD, y Dr. Simeon - tu asistente de salud con IA. Más de 500 especialistas disponibles 24/7.",
+      "Consulta médica en línea con doctores verificados en México. Telemedicina segura, videoconsultas HD, y Simeon - tu asistente de orientación de salud. Más de 500 especialistas disponibles 24/7.",
     type: "website",
     locale: "es_MX",
     url: "https://doctor.mx",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Doctor.mx | Telemedicina y Doctores Verificados en México | 24/7",
     description:
-      "Consulta médica en línea con doctores verificados en México. Telemedicina segura, videoconsultas HD, y Dr. Simeon - tu asistente de salud con IA.",
+      "Consulta médica en línea con doctores verificados en México. Telemedicina segura, videoconsultas HD, y Simeon - tu asistente de orientación de salud.",
     images: ["/og-image.png"],
     creator: "@doctormx",
     site: "@doctormx",

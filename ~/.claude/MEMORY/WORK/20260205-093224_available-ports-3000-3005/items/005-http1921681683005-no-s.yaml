@@ -1,0 +1,19 @@
+id: "005"
+description: "http://192.168.1.68:3005/
+No se puede acceder a este sitio web
+Se ha restablecido la conexión.
+Prueba a:
+
+Comprobar la conexión
+Comprobar el proxy y el cortafuegos
+Ejecutar Diagnósticos de red de Windows
+ERR_CONNECTION_RESET"
+type: "question"
+effort: "TRIVIAL"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-05T09:47:22-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

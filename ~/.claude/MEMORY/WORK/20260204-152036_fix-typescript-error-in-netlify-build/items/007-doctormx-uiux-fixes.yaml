@@ -1,0 +1,20 @@
+id: "007"
+description: "going back to the doctormx project
+# Doctor.mx — Doctor Panel UI/UX Fix Prompt
+## For Claude Code / Coding Agent
+
+---
+
+## Context
+You are working on the **doctor-facing side** of Doctor.mx — a telemedicine platform for Mexico. The app uses React + Supabase + TailwindCSS. The doctor panel has a left sidebar navigation (Inicio, Mi perfil, Consultas, Disponibilidad, Analytics, Farmacia, Seguimientos, Suscripción, Precios, Finanzas) which is already working well — do NOT change the sidebar.
+
+We need"
+type: "work"
+effort: "THOROUGH"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-04T16:28:02-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

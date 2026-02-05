@@ -243,11 +243,11 @@ export default async function DoctorsPage({
             </div>
             <h3 className="text-xl font-semibold text-[hsl(var(--text-primary))] mb-2">No encontramos doctores</h3>
             <p className="text-[hsl(var(--text-muted))] max-w-sm mx-auto mb-6">
-              Intenta con otra especialidad o término de búsqueda. También puedes consultar con Dr. Simeon mientras tanto.
+              Intenta con otra especialidad o término de búsqueda. También puedes consultar con Simeon mientras tanto.
             </p>
             <Link href="/app/second-opinion">
               <Button variant="outline" className="border-[hsl(var(--primary))]/30 text-primary hover:bg-[hsl(var(--primary))]/10 transition-all duration-200">
-                Consultar con Dr. Simeon IA
+                Consultar con Simeon
               </Button>
             </Link>
           </Card>

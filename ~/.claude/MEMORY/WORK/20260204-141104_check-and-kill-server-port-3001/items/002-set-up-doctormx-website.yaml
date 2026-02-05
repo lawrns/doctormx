@@ -1,0 +1,11 @@
+id: "002"
+description: "ok then let's get the doctormx website working on port 3001"
+type: "work"
+effort: "STANDARD"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-04T14:11:40-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

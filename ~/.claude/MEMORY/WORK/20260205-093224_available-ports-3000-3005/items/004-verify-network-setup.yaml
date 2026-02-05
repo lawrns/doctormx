@@ -1,0 +1,20 @@
+id: "004"
+description: "we ran these and got this
+PS C:\WINDOWS\system32> netsh interface portproxy add v4tov4 listenport=3005 listenaddress=0.0.0.0 connectport=3005 connectaddress=10.255.255.254
+
+PS C:\WINDOWS\system32> New-NetFirewallRule -DisplayName \"Node.js Port 3005\" -Direction Inbound -LocalPort 3005 -Protocol TCP -Action Allow
+
+
+Name                          : {0235fff2-1842-4598-a730-463d028ea931}
+DisplayName                   : Node.js Port 3005
+Description                   :
+DisplayGroup                  "
+type: "work"
+effort: "QUICK"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-05T09:46:19-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

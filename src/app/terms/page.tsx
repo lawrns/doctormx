@@ -51,7 +51,7 @@ export default function TermsPage() {
               <li>Plataforma para conectar pacientes con médicos certificados</li>
               <li>Servicios de videoconsulta y chat médico</li>
               <li>Sistema de gestión de citas</li>
-              <li>Asistente de IA para orientación médica (Dr. Simeon)</li>
+              <li>Asistente de IA para orientación médica (Simeon)</li>
               <li>Recetas digitales y seguimiento de tratamientos</li>
             </ul>
 
@@ -65,13 +65,13 @@ export default function TermsPage() {
               <li>Residir en México o tener acceso legal a servicios de salud mexicanos</li>
             </ul>
 
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">4. Uso del Servicio de IA (Dr. Simeon)</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">4. Uso del Servicio de IA (Simeon)</h2>
             <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-6">
               <div className="flex items-start gap-4">
                 <CheckCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
                 <div>
                   <p className="text-gray-600 text-sm">
-                    Dr. Simeon es un asistente de inteligencia artificial diseñado para proporcionar 
+                    Simeon es un asistente de inteligencia artificial diseñado para proporcionar 
                     orientación médica general. <strong>No es un sustituto de la consulta médica profesional.</strong> 
                     Siempre verifica cualquier recomendación con un médico certificado.
                   </p>

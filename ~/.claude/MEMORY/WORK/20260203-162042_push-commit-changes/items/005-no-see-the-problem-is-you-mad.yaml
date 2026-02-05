@@ -1,0 +1,20 @@
+id: "005"
+description: "no, see the problem is you made a whole lot of changes including the video infrastructure and then i told you to commit (this is where we might've messed up) and give me a list of changes for kimi to debug, this is the list you gave me:
+
+  📖 COMPLETE CHANGE LIST FOR KIMI TO DEBUG
+
+  Phase 1: Critical Fixes (P0)
+
+  1. Dr. Dr. Double Name Bug ✅
+  - File: /src/app/doctors/page.tsx:287
+  - Change: Added import { formatDoctorName } from '@/lib/utils' and replaced Dr. {doctor.profile?.full_name}
+  wi"
+type: "conversational"
+effort: "TRIVIAL"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-03T16:39:17-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

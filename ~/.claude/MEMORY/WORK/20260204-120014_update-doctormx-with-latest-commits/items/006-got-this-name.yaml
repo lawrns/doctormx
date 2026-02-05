@@ -1,0 +1,24 @@
+id: "006"
+description: "got this:
+Name                          : {520510d8-e88d-465f-b783-4d69eb2e8e29}
+DisplayName                   : WSL2 Node
+Description                   :
+DisplayGroup                  :
+Group                         :
+Enabled                       : True
+Profile                       : Any
+Platform                      : {}
+Direction                     : Inbound
+Action                        : Allow
+EdgeTraversalPolicy           : Block
+LooseSourceMapping            : False
+LocalOnlyMapping   "
+type: "question"
+effort: "TRIVIAL"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-04T12:08:30-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

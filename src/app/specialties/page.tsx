@@ -192,7 +192,7 @@ export default function SpecialtiesPage() {
               ¿No sabes qué especialista necesitas?
             </h2>
             <p className="text-neutral-400 text-lg mb-10 max-w-2xl mx-auto">
-              Dr. Simeon IA puede analizar tus síntomas y recomendarte al especialista adecuado en segundos.
+              Simeon puede analizar tus síntomas y recomendarte al especialista adecuado en segundos.
             </p>
             <Link href="/app/second-opinion">
               <motion.button

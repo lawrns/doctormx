@@ -1,0 +1,11 @@
+id: "002"
+description: "start on port 3005 and give me instructions on how to connect to the localhost:3005 from the browser of another computer"
+type: "work"
+effort: "TRIVIAL"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-05T09:34:09-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

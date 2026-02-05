@@ -1,0 +1,14 @@
+id: "003"
+description: "alright the project's been handed to us last thing they told me was to fix this error so let's go ahead and find out where it's coming from and how to fix it:
+lockdown-install.js:1 SES Removing unpermitted intrinsics
+oxlbametpfubwnrmrbsv.supabase.co/rest/v1/chat_messages?select=*&receiver_id=eq.8bf33250-e197-4919-8a45-f6daca20ca95&read_at=is.null:1  Failed to load resource: the server responded with a status of 400 ()
+oxlbametpfubwnrmrbsv.supabase.co/rest/v1/chat_messages?select=*&receiver_id=eq"
+type: "work"
+effort: "STANDARD"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-04T13:25:20-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

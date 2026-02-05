@@ -1,0 +1,12 @@
+id: "20260203-154537_check-doctormx-folder-status"
+title: "Check doctormx folder status"
+created_at: "2026-02-03T15:45:37-06:00"
+completed_at: null
+source: "SESSION"
+status: "ACTIVE"
+session_id: "75516747-27e7-406c-aef0-0eb0752c209b"
+lineage:
+  tools_used: []
+  files_changed: []
+  agents_spawned: []
+parent: null

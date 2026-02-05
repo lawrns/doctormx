@@ -1,0 +1,11 @@
+id: "011"
+description: "it didn't, is there different ips for tailscale in wsl environment and windows?"
+type: "question"
+effort: "TRIVIAL"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-05T09:55:31-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

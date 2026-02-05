@@ -67,10 +67,10 @@ export function HeroSection() {
         initial="hidden"
         animate="visible"
       >
-        {/* Dr. Simeon Avatar + Live Badge - Main Trust Signal */}
+        {/* Simeon Avatar + Live Badge - Main Trust Signal */}
         <motion.div variants={itemVariants} className="flex justify-center mb-8">
           <div className="flex items-center gap-4">
-            {/* Dr. Simeon Photo */}
+            {/* Simeon Photo */}
             <div className="relative">
               <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-xl">
                 <Image
@@ -101,7 +101,7 @@ export function HeroSection() {
                 </span>
                 <span className="text-xs font-medium text-green-700">En línea ahora</span>
               </div>
-              <p className="text-sm font-semibold text-text-primary">Dr. Simeon</p>
+              <p className="text-sm font-semibold text-text-primary">Simeon</p>
               <p className="text-xs text-text-muted">Asistente de orientación</p>
             </div>
           </div>
@@ -239,7 +239,7 @@ export function HeroSection() {
         </motion.p>
       </motion.div>
 
-      {/* Floating Chat Card with Dr. Simeon Face */}
+      {/* Floating Chat Card with Simeon Face */}
       <motion.div
         className="absolute top-32 right-12 hidden lg:block"
         variants={prefersReducedMotion ? undefined : floatVariants}
@@ -251,14 +251,14 @@ export function HeroSection() {
             <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary-100">
               <Image
                 src="/images/simeon.png"
-                alt="Dr. Simeon"
+                alt="Simeon"
                 width={48}
                 height={48}
                 className="w-full h-full object-cover"
               />
             </div>
             <div>
-              <p className="font-semibold text-sm text-text-primary">Dr. Simeon</p>
+              <p className="font-semibold text-sm text-text-primary">Simeon</p>
               <p className="text-xs text-green-500 flex items-center gap-1">
                 <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
                 En línea

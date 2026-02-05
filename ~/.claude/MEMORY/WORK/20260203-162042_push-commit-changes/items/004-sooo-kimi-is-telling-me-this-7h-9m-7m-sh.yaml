@@ -1,0 +1,37 @@
+id: "004"
+description: "sooo kimi is telling me this
+
+7h
+9m
+7m
+Show More
+PatientLayout.tsx
++1
+-1
+ConversationalAIConsultation.tsx
++2
+-2
+page.tsx
++3
+-3
+Done. Updated text across 3 files:
+
+PatientLayout.tsx
+
+\"Segunda Opinión\" → \"IA Multi-Especialista\"
+ConversationalAIConsultation.tsx (single doctor AI chat)
+
+Header: \"Consulta IA Multi-Especialista\" → \"Consulta con Dr. Simeon\"
+Subtext: \"Te haré preguntas...\" → \"Te ayudaré a entender qué podría estar pasando\"
+app/page.tsx (dashboard CTA)
+
+Hero title: \"Consulta"
+type: "work"
+effort: "QUICK"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-03T16:35:34-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

@@ -1,0 +1,16 @@
+id: "010"
+description: "Eres un experto en UX/UI para aplicaciones de salud digital (telemedicina). Necesito que revises y optimices la página \"Mi Perfil\" de Doctor.mx (/app/profile). Esta página usa Next.js, Tailwind CSS y está construida con componentes React. A continuación te doy el análisis completo del estado actual y los problemas detectados. Aplica TODAS las mejoras directamente en el código.
+
+## ARQUITECTURA ACTUAL DE LA PÁGINA
+
+La página \"Mi Perfil\" tiene un layout de 2 columnas:
+- **Columna izquierda:** "
+type: "work"
+effort: "THOROUGH"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-04T13:37:22-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

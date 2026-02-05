@@ -1,0 +1,12 @@
+id: "20260205-101217_fix-doctor-dashboard-crash"
+title: "Fix doctor dashboard crash"
+created_at: "2026-02-05T10:12:17-06:00"
+completed_at: null
+source: "SESSION"
+status: "ACTIVE"
+session_id: "20e8688a-81a6-4e75-a07e-1222679044f4"
+lineage:
+  tools_used: []
+  files_changed: []
+  agents_spawned: []
+parent: null

@@ -1,0 +1,11 @@
+id: "001"
+description: "continue with phase 2"
+type: "work"
+effort: "STANDARD"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-03T16:00:39-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"
