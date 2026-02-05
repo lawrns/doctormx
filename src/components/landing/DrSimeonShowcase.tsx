@@ -335,9 +335,9 @@ export default function DrSimeonShowcase() {
             </h2>
 
             <p className="text-lg leading-relaxed text-gray-600">
-              Nuestro asistente con IA médica realiza una evaluación completa
-              de tus síntomas usando metodología OPQRST, detecta señales de
-              alerta y te conecta con el especialista adecuado en minutos.
+              Nuestro asistente de orientación te ayuda a organizar y describir
+              tus síntomas antes de tu consulta, identifica situaciones que
+              requieren atención prioritaria y te conecta con el especialista adecuado.
             </p>
 
             <ul className="space-y-3">
