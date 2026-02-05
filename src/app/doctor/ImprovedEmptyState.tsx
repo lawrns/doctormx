@@ -1,39 +1,62 @@
 'use client'
 
 import Link from 'next/link'
-import { Calendar, Plus } from 'lucide-react'
+import { Calendar, Plus, Check } from 'lucide-react'
+import { useState } from 'react'
 
 export default function ImprovedEmptyState({ doctorId, doctor }: { doctorId: string; doctor: any }) {
-  const handleCopyProfileLink = () => {
-    navigator.clipboard.writeText(`https://doctor.mx/doctors/${doctorId}`)
-    // Could add toast notification here
+  const [copyState, setCopyState] = useState<'idle' | 'copied' | 'error'>('idle')
+
+  const handleCopyProfileLink = async () => {
+    try {
+      await navigator.clipboard.writeText(`https://doctor.mx/doctors/${doctorId}`)
+      setCopyState('copied')
+      setTimeout(() => setCopyState('idle'), 3000)
+    } catch {
+      setCopyState('error')
+      setTimeout(() => setCopyState('idle'), 3000)
+    }
   }
 
   return (
     <div className="text-center py-12">
-      <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4 relative">
-        <Calendar className="w-10 h-10 text-blue-400" />
-        <Plus className="w-6 h-6 text-blue-300 absolute -bottom-1 -right-1" />
+      <div className="w-20 h-20 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-4 relative border border-primary/10">
+        <Calendar className="w-10 h-10 text-primary/40" aria-hidden="true" />
+        <Plus className="w-6 h-6 text-primary/30 absolute -bottom-1 -right-1" aria-hidden="true" />
       </div>
-      <h4 className="text-lg font-semibold text-gray-800 mb-2">No tienes consultas programadas</h4>
-      <p className="text-sm text-gray-500 mb-6 max-w-sm mx-auto">
+      <h4 className="text-lg font-semibold text-text-primary mb-2">No tienes consultas programadas</h4>
+      <p className="text-sm text-text-muted mb-6 max-w-sm mx-auto">
         Completa tu perfil y comparte tu enlace para que los pacientes te encuentren
       </p>
-      <div className="flex items-center justify-center gap-3">
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
         <Link
           href="/doctor/profile"
-          className="inline-flex items-center px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded-lg hover:bg-blue-600 transition-colors"
+          className="inline-flex items-center justify-center px-4 py-2.5 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 min-h-[44px]"
         >
           Completar mi perfil →
         </Link>
         <button
           onClick={handleCopyProfileLink}
-          className="inline-flex items-center px-4 py-2 border border-gray-300 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-50 transition-colors"
+          disabled={copyState !== 'idle'}
+          className="inline-flex items-center justify-center gap-2 px-4 py-2.5 border border-border text-text-primary text-sm font-medium rounded-lg hover:bg-accent hover:text-accent-foreground transition-all duration-150 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 min-h-[44px] disabled:opacity-50 disabled:cursor-not-allowed"
+          aria-live="polite"
+          aria-label={copyState === 'copied' ? 'Enlace copiado al portapapeles' : 'Copiar enlace de perfil'}
         >
-          Copiar enlace de mi perfil
+          {copyState === 'copied' ? (
+            <>
+              <Check className="w-4 h-4 text-success" aria-hidden="true" />
+              <span>¡Copiado!</span>
+            </>
+          ) : copyState === 'error' ? (
+            <>
+              <span>Error al copiar</span>
+            </>
+          ) : (
+            <>Copiar enlace de mi perfil</>
+          )}
         </button>
       </div>
-      <p className="text-xs text-gray-400 mt-4">
+      <p className="text-xs text-text-muted mt-6 bg-accent/30 inline-block px-3 py-1.5 rounded-full">
         💡 Consejo: Comparte tu enlace en WhatsApp y redes sociales para recibir tus primeros pacientes
       </p>
     </div>

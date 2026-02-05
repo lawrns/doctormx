@@ -172,16 +172,16 @@ export default async function DoctorDashboard() {
     <DoctorLayout profile={profile!} isPending={isPending} currentPath="/doctor" pendingAppointments={pendingPaymentCount}>
       {isPending ? (
         /* Vista mejorada para doctores pendientes */
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto px-1">
           {doctor?.status === 'rejected' ? (
-            <div className="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-lg mb-8">
+            <div className="bg-destructive/10 border-l-4 border-destructive p-6 rounded-r-lg mb-8" role="alert">
               <div className="flex items-start">
-                <svg className="w-6 h-6 text-red-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-6 h-6 text-destructive mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
                 </svg>
                 <div className="ml-4">
-                  <h3 className="text-lg font-semibold text-red-900">Tu perfil fue rechazado</h3>
-                  <p className="text-red-700 mt-1">
+                  <h3 className="text-lg font-semibold text-destructive-foreground">Tu perfil fue rechazado</h3>
+                  <p className="text-destructive-foreground/80 mt-1">
                     Por favor revisa tu información y vuelve a enviarla para verificación.
                     Puedes editar tu perfil usando el botón de abajo.
                   </p>
@@ -189,31 +189,31 @@ export default async function DoctorDashboard() {
               </div>
             </div>
           ) : (
-            <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg mb-8">
+            <div className="bg-amber-50 border-l-4 border-amber-400 p-6 rounded-r-lg mb-8" role="status">
               <div className="flex items-start">
-                <Clock className="w-6 h-6 text-yellow-600 mt-0.5" />
+                <Clock className="w-6 h-6 text-amber-600 mt-0.5 shrink-0" aria-hidden="true" />
                 <div className="ml-4 flex-1">
-                  <h3 className="text-lg font-semibold text-yellow-900">Tu perfil está en revisión</h3>
-                  <p className="text-yellow-700 mt-1">
+                  <h3 className="text-lg font-semibold text-amber-900">Tu perfil está en revisión</h3>
+                  <p className="text-amber-700 mt-1">
                     Estamos verificando tu información profesional con la SEP.
                   </p>
 
                   {/* Queue position indicator */}
                   {totalPending > 0 && (
-                    <div className="mt-4 bg-white rounded-lg p-4 border border-yellow-200">
+                    <div className="mt-4 bg-background rounded-lg p-4 border border-amber-200">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm font-medium text-gray-700">Tu posición en la fila:</span>
-                        <span className="text-lg font-bold text-yellow-700">
+                        <span className="text-sm font-medium text-text-primary">Tu posición en la fila:</span>
+                        <span className="text-lg font-bold text-amber-700">
                           #{queuePosition} de {totalPending}
                         </span>
                       </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div className="w-full bg-muted rounded-full h-2" role="progressbar" aria-valuenow={Math.round(((totalPending - queuePosition) / totalPending) * 100)} aria-valuemin={0} aria-valuemax={100}>
                         <div
-                          className="bg-yellow-500 h-2 rounded-full transition-all"
+                          className="bg-amber-500 h-2 rounded-full transition-all duration-300 ease-out"
                           style={{ width: `${Math.max(5, ((totalPending - queuePosition) / totalPending) * 100)}%` }}
                         />
                       </div>
-                      <p className="text-xs text-gray-500 mt-2">
+                      <p className="text-xs text-text-muted mt-2">
                         Tiempo estimado: ~{Math.max(1, Math.round(queuePosition * 2))} horas hábiles
                       </p>
                     </div>
@@ -223,7 +223,7 @@ export default async function DoctorDashboard() {
             </div>
           )}
 
-          <h2 className="text-2xl font-bold text-neutral-900 mb-6">Mientras esperas</h2>
+          <h2 className="text-2xl font-bold text-text-primary mb-6">Mientras esperas</h2>
 
           {/* Progress checklist */}
           <div className="bg-white rounded-lg shadow border p-6 mb-6">
@@ -325,8 +325,8 @@ export default async function DoctorDashboard() {
         </div>
       ) : (
         /* Vista para doctores aprobados */
-        <div className="max-w-6xl">
-          <h2 className="text-3xl font-bold text-neutral-900 mb-2">Panel del doctor</h2>
+        <div className="max-w-6xl px-1">
+          <h1 className="text-3xl font-bold text-neutral-900 mb-2">Panel del doctor</h1>
           <p className="text-neutral-600 mb-8">Gestiona tus consultas y disponibilidad</p>
 
           {/* Onboarding Checklist for New Doctors */}
@@ -340,27 +340,27 @@ export default async function DoctorDashboard() {
 
           {/* Stats */}
           <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6 mb-8">
-            <div className="bg-white p-4 lg:p-6 rounded-lg shadow border">
-              <p className="text-sm text-neutral-600 mb-1">Hoy</p>
-              <p className="text-2xl lg:text-3xl font-bold text-neutral-900">
+            <div className="bg-white p-4 lg:p-6 rounded-lg shadow border border-border">
+              <p className="text-sm text-text-muted mb-1">Hoy</p>
+              <p className="text-2xl lg:text-3xl font-bold text-text-primary">
                 {todayCount > 0 ? todayCount : '—'}
               </p>
               {todayCount === 0 && (
-                <p className="text-xs text-gray-400 mt-1">Las citas aparecerán aquí</p>
+                <p className="text-xs text-text-muted mt-1">Las citas aparecerán aquí</p>
               )}
             </div>
-            <div className="bg-white p-4 lg:p-6 rounded-lg shadow border">
-              <p className="text-sm text-neutral-600 mb-1">Esta semana</p>
-              <p className="text-2xl lg:text-3xl font-bold text-neutral-900">
+            <div className="bg-white p-4 lg:p-6 rounded-lg shadow border border-border">
+              <p className="text-sm text-text-muted mb-1">Esta semana</p>
+              <p className="text-2xl lg:text-3xl font-bold text-text-primary">
                 {weekCount > 0 ? weekCount : '—'}
               </p>
               {weekCount === 0 && (
-                <p className="text-xs text-gray-400 mt-1">Tu semana está empezando</p>
+                <p className="text-xs text-text-muted mt-1">Tu semana está empezando</p>
               )}
             </div>
-            <div className="bg-white p-4 lg:p-6 rounded-lg shadow border">
-              <p className="text-sm text-neutral-600 mb-1">Calificación</p>
-              <p className="text-2xl lg:text-3xl font-bold text-neutral-900">
+            <div className="bg-white p-4 lg:p-6 rounded-lg shadow border border-border">
+              <p className="text-sm text-text-muted mb-1">Calificación</p>
+              <p className="text-2xl lg:text-3xl font-bold text-text-primary">
                 {doctor?.rating_avg ? (
                   <span className="flex items-center gap-1">
                     ⭐ {doctor.rating_avg.toFixed(1)}
@@ -370,66 +370,67 @@ export default async function DoctorDashboard() {
                 )}
               </p>
               {!doctor?.rating_avg && (
-                <p className="text-xs text-gray-400 mt-1">Después de tu primera consulta</p>
+                <p className="text-xs text-text-muted mt-1">Después de tu primera consulta</p>
               )}
             </div>
-            <div className="bg-white p-4 lg:p-6 rounded-lg shadow border">
-              <p className="text-sm text-neutral-600 mb-1">Pacientes</p>
-              <p className="text-2xl lg:text-3xl font-bold text-neutral-900">
+            <div className="bg-white p-4 lg:p-6 rounded-lg shadow border border-border">
+              <p className="text-sm text-text-muted mb-1">Pacientes</p>
+              <p className="text-2xl lg:text-3xl font-bold text-text-primary">
                 {totalPatients > 0 ? totalPatients : '0'}
               </p>
               {totalPatients === 0 && (
-                <p className="text-xs text-gray-400 mt-1">Comparte tu perfil para empezar</p>
+                <p className="text-xs text-text-muted mt-1">Comparte tu perfil para empezar</p>
               )}
             </div>
             <Link
               href="/doctor/chat"
-              className="bg-white p-4 lg:p-6 rounded-lg shadow border hover:shadow-md hover:border-primary-200 transition-all group"
+              className="bg-white p-4 lg:p-6 rounded-lg shadow border border-border hover:shadow-md hover:border-primary-300 transition-all duration-200 group focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <svg className="w-5 h-5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
+                  <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm text-neutral-600">Mensajes</p>
-                  <p className="text-lg font-bold text-neutral-900">Ver chats</p>
+                  <p className="text-sm text-text-muted">Mensajes</p>
+                  <p className="text-lg font-bold text-text-primary">Ver chats</p>
                 </div>
               </div>
             </Link>
           </div>
 
           {/* Acciones rápidas */}
-          <div className="grid grid-cols-3 gap-4 mb-8">
+          <h3 className="text-lg font-semibold text-text-primary mb-4">Acciones rápidas</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
             <Link
               href="/doctor/profile"
-              className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-100 transition-all flex items-center gap-3 group"
+              className="bg-white p-4 rounded-lg shadow-sm border border-border hover:shadow-md hover:border-primary-200 transition-all duration-200 flex items-center gap-3 group focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-lg"
             >
-              <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center group-hover:bg-blue-100 transition-colors">
-                <ClipboardEdit className="w-5 h-5 text-blue-600" />
+              <div className="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center group-hover:bg-primary-100 transition-colors duration-200">
+                <ClipboardEdit className="w-5 h-5 text-primary" />
               </div>
-              <span className="text-sm font-medium text-gray-700">Editar perfil</span>
+              <span className="text-sm font-medium text-text-primary">Editar perfil</span>
             </Link>
             <Link
               href="/doctor/availability"
-              className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-100 transition-all flex items-center gap-3 group"
+              className="bg-white p-4 rounded-lg shadow-sm border border-border hover:shadow-md hover:border-primary-200 transition-all duration-200 flex items-center gap-3 group focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-lg"
             >
-              <div className="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center group-hover:bg-green-100 transition-colors">
-                <CalendarIcon className="w-5 h-5 text-green-600" />
+              <div className="w-10 h-10 bg-accent/50 rounded-lg flex items-center justify-center group-hover:bg-accent transition-colors duration-200">
+                <CalendarIcon className="w-5 h-5 text-accent-foreground" />
               </div>
-              <span className="text-sm font-medium text-gray-700">Mi disponibilidad</span>
+              <span className="text-sm font-medium text-text-primary">Mi disponibilidad</span>
             </Link>
             <ShareProfileButton doctorId={user.id} />
           </div>
 
           {/* Próximas consultas */}
-          <div className="bg-white rounded-lg shadow border p-6">
+          <div className="bg-white rounded-lg shadow border border-border p-6">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-xl font-semibold text-neutral-900">Próximas consultas</h3>
+              <h3 className="text-xl font-semibold text-text-primary">Próximas consultas</h3>
               <Link
                 href="/doctor/appointments"
-                className="text-sm text-primary-600 hover:text-primary-700 font-medium"
+                className="text-sm text-primary hover:text-primary/80 font-medium transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
               >
                 Ver todas
               </Link>
