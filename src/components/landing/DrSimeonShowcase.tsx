@@ -342,8 +342,8 @@ export default function DrSimeonShowcase() {
 
             <ul className="space-y-3">
               {[
-                { text: 'Evaluación de síntomas en 5 minutos', icon: Clock },
-                { text: 'Detección de emergencias médicas', icon: AlertTriangle },
+                { text: 'Organización de síntomas en 5 minutos', icon: Clock },
+                { text: 'Identificación de situaciones prioritarias', icon: AlertTriangle },
                 { text: 'Recomendación de especialista ideal', icon: Stethoscope },
                 { text: 'Disponible 24/7, siempre contigo', icon: CheckCircle },
               ].map((feature, index) => (
