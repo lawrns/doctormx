@@ -54,6 +54,12 @@ export function SymptomAutocomplete({
   const [selectedTags, setSelectedTags] = React.useState<string[]>([]);
   const inputRef = React.useRef<HTMLInputElement>(null);
   const containerRef = React.useRef<HTMLDivElement>(null);
+  const onChangeRef = React.useRef(onChange);
+
+  // Keep callback ref up to date
+  React.useEffect(() => {
+    onChangeRef.current = onChange;
+  }, [onChange]);
 
   // Filter suggestions based on input
   const filteredSuggestions = React.useMemo(() => {
@@ -69,8 +75,8 @@ export function SymptomAutocomplete({
   // Update parent value when tags or input change
   React.useEffect(() => {
     const fullValue = [...selectedTags, inputValue.trim()].filter(Boolean).join(', ');
-    onChange(fullValue);
-  }, [selectedTags, inputValue, onChange]);
+    onChangeRef.current(fullValue);
+  }, [selectedTags, inputValue]);
 
   // Close suggestions when clicking outside
   React.useEffect(() => {

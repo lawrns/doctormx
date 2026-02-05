@@ -9,7 +9,7 @@ const routeLabels: Record<string, string> = {
   'appointments': 'Mis Citas',
   'chat': 'Mensajes',
   'profile': 'Mi Perfil',
-  'ai-consulta': 'Consulta IA',
+  'orientacion': 'Orientación IA',
   'followups': 'Seguimientos',
   'second-opinion': 'Segunda Opinión',
   'upload-image': 'Análisis de Imagen',

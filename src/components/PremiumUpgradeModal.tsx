@@ -107,8 +107,8 @@ export function PremiumUpgradeModal({ isOpen, onClose, consultationCount }: Prem
               {[
                 {
                   icon: Zap,
-                  title: 'Consultas Ilimitadas',
-                  description: 'Sin límite de consultas con IA médica',
+                  title: 'Orientaciones Ilimitadas',
+                  description: 'Sin límite de orientaciones con asistente IA',
                 },
                 {
                   icon: Shield,

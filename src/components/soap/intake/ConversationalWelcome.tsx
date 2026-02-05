@@ -74,7 +74,7 @@ export function ConversationalWelcome({
             {userName ? `¡Hola, ${userName}!` : '¡Hola!'}
           </h1>
           <p className="text-xl text-gray-600">
-            Soy tu asistente de consulta médica. Estoy aquí para ayudarte.
+            Soy tu asistente de orientación de salud. Estoy aquí para ayudarte.
           </p>
         </motion.div>
       </div>

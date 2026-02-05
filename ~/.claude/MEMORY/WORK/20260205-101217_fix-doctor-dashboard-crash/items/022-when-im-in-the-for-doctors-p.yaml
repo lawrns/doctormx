@@ -1,0 +1,11 @@
+id: "022"
+description: "when i'm in the /for-doctors page and i click \"Ver planes y precios\" it should not take me to /doctors/pricing just to /pricing, why am i seeing the dashboard if i'm not logged in?"
+type: "question"
+effort: "TRIVIAL"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-05T14:56:03-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

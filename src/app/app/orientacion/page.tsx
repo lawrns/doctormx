@@ -7,7 +7,7 @@ export default async function AIConsultaPage() {
   const { data: { user } } = await supabase.auth.getUser()
 
   if (!user) {
-    redirect('/auth/login?redirect=/app/ai-consulta')
+    redirect('/auth/login?redirect=/app/orientacion')
   }
 
   return <ConversationalAIConsultation userId={user.id} />

@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { CheckCircle, Clock, AlertTriangle, Stethoscope } from 'lucide-react'
@@ -362,16 +363,20 @@ export default function DrSimeonShowcase() {
             </ul>
 
             <div className="flex flex-col gap-3 pt-4 sm:flex-row">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-                Agendar Consulta
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-blue-200 hover:bg-blue-50"
-              >
-                Probar IA Ahora
-              </Button>
+              <Link href="/doctors">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 w-full">
+                  Agendar Consulta
+                </Button>
+              </Link>
+              <Link href="/orientacion">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-blue-200 hover:bg-blue-50 w-full"
+                >
+                  Probar IA Ahora
+                </Button>
+              </Link>
             </div>
 
             <p className="text-sm text-gray-500">

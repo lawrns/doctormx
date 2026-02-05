@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Sparkles,
@@ -149,9 +149,7 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
   };
 
   // Re-check on form data changes
-  useEffect(() => {
-    checkForEmergencies();
-  }, [formData.chiefComplaint, formData.symptomsDescription, formData.associatedSymptoms]);
+  // Emergency check is now handled in updateFormData to avoid infinite loops
 
   const nextStep = () => {
     const steps: IntakeStep[] = [
@@ -307,6 +305,7 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
       const response = await fetch('/api/soap/stream', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        credentials: 'same-origin', // Include cookies for authentication
         body: JSON.stringify({
           patientId: userId,
           subjective: subjectiveData,
@@ -538,8 +537,8 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
               <Users className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h1 className="font-bold text-gray-900">Consulta Multi-Especialista</h1>
-              <p className="text-xs text-gray-500">4 especialistas • Consenso médico IA</p>
+              <h1 className="font-bold text-gray-900">Orientación Multi-Especialista</h1>
+              <p className="text-xs text-gray-500">4 especialistas • Resumen de orientación</p>
             </div>
           </div>
           <Link
@@ -1121,7 +1120,7 @@ function HistoryStep({
         onPrev={onPrev}
         onNext={onNext}
         canNext={true}
-        nextLabel="Iniciar Consulta"
+        nextLabel="Iniciar Orientación"
         isSubmitting={isSubmitting}
       />
 
@@ -1235,7 +1234,7 @@ function ResultsStep({
         </Badge>
       </div>
 
-      <ConsensusMatrix consensus={consensus} />
+      {consensus?.score !== undefined && <ConsensusMatrix consensus={consensus} />}
 
       <div>
         <h3 className="text-xl font-bold text-gray-900 mb-4">

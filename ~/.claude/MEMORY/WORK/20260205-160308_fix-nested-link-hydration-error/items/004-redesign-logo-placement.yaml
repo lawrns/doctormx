@@ -1,0 +1,12 @@
+id: "004"
+description: "logo should not be on a navigation bar, get rid of the white top bar and place the logo over the blue banner that says \"Planes para médicos mexicanos
+Elige el plan ideal para tu práctica. Sin contratos a largo plazo.\""
+type: "work"
+effort: "STANDARD"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-05T16:14:50-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

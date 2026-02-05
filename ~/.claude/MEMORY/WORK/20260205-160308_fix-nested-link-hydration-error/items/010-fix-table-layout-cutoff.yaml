@@ -1,0 +1,11 @@
+id: "010"
+description: "i can only see half of the \"más popular\" tag, top half get's cutoff because the table layout is in ends"
+type: "work"
+effort: "QUICK"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-05T16:21:30-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

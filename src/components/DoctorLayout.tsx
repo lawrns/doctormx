@@ -24,7 +24,6 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
     { name: 'Farmacia', href: '/doctor/pharmacy', iconType: 'pill', enabled: !isPending },
     { name: 'Seguimientos', href: '/doctor/followups', iconType: 'phone', enabled: !isPending },
     { name: 'Suscripción', href: '/doctor/subscription', iconType: 'star', enabled: !isPending },
-    { name: 'Precios', href: '/doctor/pricing', iconType: 'currency', enabled: !isPending },
     { name: 'Finanzas', href: '/doctor/finances', iconType: 'wallet', enabled: !isPending },
   ]
 

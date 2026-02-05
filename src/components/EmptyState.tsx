@@ -183,8 +183,8 @@ export function NoAppointmentsEmpty({ type = 'patient' }: { type?: 'patient' | '
     <EmptyState
       iconName="calendar"
       title="No tienes consultas programadas"
-      description="Tu primera consulta está a un clic. ¿Prefieres hablar con nuestro asistente IA primero?"
-      action={{ label: "Orientación IA Gratis", href: "/app/ai-consulta" }}
+      description="Tu primera orientación está a un clic. ¿Prefieres hablar con nuestro asistente primero?"
+      action={{ label: "Orientación IA Gratis", href: "/app/orientacion" }}
       secondaryAction={{ label: "Buscar doctor", href: "/doctors" }}
     />
   )
@@ -197,7 +197,7 @@ export function NoDoctorsOnlineEmpty() {
       title="No hay doctores disponibles ahora"
       description="3 médicos regresan a las 8 PM. ¿Mientras tanto, puedo ayudarte con Simeon?"
       variant="ai"
-      action={{ label: "Chat con Simeon", href: "/app/ai-consulta" }}
+      action={{ label: "Chat con Simeon", href: "/app/orientacion" }}
       secondaryAction={{ label: "Programar para mañana", href: "/doctors" }}
     />
   )
@@ -211,7 +211,7 @@ export function LowConfidenceAIEmpty() {
       description="Simeon está aprendiendo sobre estos síntomas. Te conecto con un doctor humano certificado."
       variant="urgent"
       action={{ label: "Ver doctores disponibles", href: "/doctors" }}
-      secondaryAction={{ label: "Continuar con IA", href: "/app/ai-consulta" }}
+      secondaryAction={{ label: "Continuar con IA", href: "/app/orientacion" }}
     />
   )
 }
@@ -223,7 +223,7 @@ export function NoSearchResultsEmpty({ searchTerm }: { searchTerm?: string }) {
       title={searchTerm ? `No encontramos "${searchTerm}"` : "No encontramos resultados"}
       description="Ningún doctor con esa especialidad está disponible ahora. ¿Quieres que te sugiera especialistas similares?"
       action={{ label: "Ver especialidades", href: "/specialties" }}
-      secondaryAction={{ label: "Consulta con IA", href: "/app/ai-consulta" }}
+      secondaryAction={{ label: "Consulta con IA", href: "/app/orientacion" }}
     />
   )
 }

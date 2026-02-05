@@ -52,7 +52,7 @@ export function LandingPageClient() {
 
             <nav className="hidden lg:flex items-center gap-1">
               {[
-                { href: '/ai-consulta', label: '5 Orientaciones GRATIS', icon: Sparkles },
+                { href: '/orientacion', label: '5 Orientaciones GRATIS', icon: Sparkles },
                 { href: '/doctors', label: 'Buscar doctores', icon: Search },
                 { href: '/for-doctors', label: 'Para doctores', icon: UserPlus },
               ].map((link) => (

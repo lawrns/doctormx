@@ -1,0 +1,11 @@
+id: "002"
+description: "woop looks like the server went down, can't access http://192.168.1.68:3005/ remember we need port 3005"
+type: "work"
+effort: "QUICK"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-05T16:05:21-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

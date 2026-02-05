@@ -163,7 +163,7 @@ export function HeroSection() {
           variants={itemVariants}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 w-full"
         >
-          <Link href="/ai-consulta" className="w-full sm:w-auto">
+          <Link href="/orientacion" className="w-full sm:w-auto">
             <motion.button
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.98 }}
@@ -174,7 +174,7 @@ export function HeroSection() {
               <span className="absolute inset-0 rounded-2xl animate-pulse-ring" />
 
               <span className="relative z-10 flex items-center justify-center gap-3">
-                CONSULTAR AHORA — GRATIS
+                COMENZAR AHORA - GRATIS
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </span>
               {/* Shimmer Effect - subtle, respects reduced motion */}

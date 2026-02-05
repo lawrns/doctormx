@@ -1,0 +1,11 @@
+id: "028"
+description: "i can't get out of the pricing page! there's no logo to click on that would bring me back to home page"
+type: "question"
+effort: "TRIVIAL"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-05T15:52:10-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

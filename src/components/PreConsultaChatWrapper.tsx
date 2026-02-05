@@ -38,7 +38,7 @@ export default function PreConsultaChatWrapper() {
               </svg>
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-2">¿Tienes síntomas o preguntas?</h3>
-            <p className="text-gray-600 mb-6">Habla con nuestro asistente médico IA antes de tu consulta</p>
+            <p className="text-gray-600 mb-6">Habla con nuestro asistente de orientación antes de tu consulta</p>
             <button
               onClick={() => setIsOpen(true)}
               className="px-6 py-3 bg-primary-500 text-white font-semibold rounded-xl hover:bg-primary-600 transition-colors"

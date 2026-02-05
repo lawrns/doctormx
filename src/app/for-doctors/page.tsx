@@ -110,7 +110,7 @@ export default function ForDoctorsPage() {
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </Link>
-                <Link href="/doctor/pricing">
+                <Link href="/pricing">
                   <Button size="lg" variant="outline" className="text-lg px-8 py-6">
                     Ver planes y precios
                   </Button>

@@ -1,0 +1,11 @@
+id: "016"
+description: "los botones \"Agendar Consulta\" y \"Probar IA Ahora\" no funcionan, el primero deberia llevarte a la pagina de seleccionar doctores y el segundo a la orientacion gratuita"
+type: "work"
+effort: "QUICK"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-05T14:05:06-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

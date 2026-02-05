@@ -88,7 +88,7 @@ interface WhatsAppShareCardProps {
 export function WhatsAppShareCard({
   patientName = 'Un paciente',
   symptoms = 'síntomas',
-  aiRecommendation = 'consulta médica',
+  aiRecommendation = 'orientación de salud',
 }: WhatsAppShareCardProps) {
   const [shared, setShared] = useState(false)
 

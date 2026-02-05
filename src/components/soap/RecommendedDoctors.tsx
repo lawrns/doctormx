@@ -50,12 +50,17 @@ export function RecommendedDoctors({
   const [error, setError] = useState<string | null>(null);
 
   // Extract health focus name for use throughout component
-  const primaryFocusName = consensus.primaryDiagnosis?.name || 'general';
+  // Handle both formats: object with name property (lib/soap/types) or string (types/soap.ts)
+  const primaryDiagnosis = consensus.primaryDiagnosis;
+  const primaryFocusName = typeof primaryDiagnosis === 'string' 
+    ? primaryDiagnosis 
+    : primaryDiagnosis?.name || 'general';
   const specialty = mapFocusToSpecialty(primaryFocusName);
 
   useEffect(() => {
     fetchRecommendedDoctors();
-  }, [consensus.primaryDiagnosis]); // primaryDiagnosis is internal field name
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [primaryFocusName]); // Use the extracted string value to avoid object comparison issues
 
   const fetchRecommendedDoctors = async () => {
     try {

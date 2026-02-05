@@ -37,7 +37,7 @@ export default async function DoctorProfilePage({
       <header className="bg-white/95 backdrop-blur-md border-b border-neutral-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <div className="flex items-center gap-4">
-            <Link href="/ai-consulta" className="flex items-center gap-1.5 text-neutral-600 hover:text-primary-500 transition-colors">
+            <Link href="/orientacion" className="flex items-center gap-1.5 text-neutral-600 hover:text-primary-500 transition-colors">
               <ArrowLeft className="w-5 h-5" />
               <span className="font-medium hidden sm:inline">Volver</span>
             </Link>

@@ -116,14 +116,14 @@ function LoginContent() {
         />
         <div className="absolute inset-0 bg-zinc-900/70" />
 
-        <div className="relative z-20 flex items-center gap-2.5">
+        <Link href="/" className="relative z-20 flex items-center gap-2.5 hover:opacity-80 transition-opacity">
           <div className="w-9 h-9 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/20">
             <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
             </svg>
           </div>
           <span className="text-lg font-semibold">Doctor.mx</span>
-        </div>
+        </Link>
 
         <div className="relative z-20">
           <blockquote className="space-y-2">
@@ -140,14 +140,14 @@ function LoginContent() {
       {/* Right Panel - Login Form */}
       <div className="flex flex-col">
         {/* Mobile logo */}
-        <div className="lg:hidden flex items-center gap-2.5 p-6 border-b">
+        <Link href="/" className="lg:hidden flex items-center gap-2.5 p-6 border-b hover:opacity-80 transition-opacity">
           <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
             <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
             </svg>
           </div>
           <span className="text-lg font-bold text-neutral-900">Doctor.mx</span>
-        </div>
+        </Link>
 
         <div className="flex-1 flex items-center justify-center p-6 sm:p-8">
           <div className="w-full max-w-[350px] space-y-6">

@@ -1,0 +1,26 @@
+id: "007"
+description: "# Doctor.mx — Pricing Page UI Fix Prompt
+## For Claude Code / Coding Agent
+
+---
+
+## Context
+You are fixing the **pricing page** at `/pricing` on Doctor.mx — a telemedicine platform for Mexico. The app uses React + Supabase + TailwindCSS.
+
+The codebase is at `/Documents/GitHub/doctormx/`. The pricing page component is likely at `src/pages/Pricing.jsx` or `src/components/SubscriptionPlans.jsx` or similar.
+
+---
+
+## THE PROBLEM
+
+The pricing cards have **severe alignment issues**:
+1. Feature rows are"
+type: "work"
+effort: "STANDARD"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-05T16:18:11-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

@@ -1,0 +1,11 @@
+id: "027"
+description: "/delight and /animate and /polish and finally /critique the /pricing page"
+type: "work"
+effort: "QUICK"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-05T15:42:07-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

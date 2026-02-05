@@ -1,0 +1,14 @@
+id: "014"
+description: "don't do commits. the button on main page that says \"
+CONSULTAR AHORA — GRATIS\"
+
+change it to \"COMENZAR AHORA - GRATIS\""
+type: "work"
+effort: "QUICK"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-05T14:00:32-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

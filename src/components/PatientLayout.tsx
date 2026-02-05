@@ -101,8 +101,8 @@ export function PatientLayout({ children }: PatientLayoutProps) {
 
   const navItems: NavItem[] = [
     { href: '/app', icon: LayoutDashboard, label: 'Dashboard' },
-    { href: '/app/ai-consulta', icon: Bot, label: 'Consulta IA', highlight: true },
-    { href: '/app/second-opinion', icon: Users, label: 'IA Multi-Especialista' },
+    { href: '/app/orientacion', icon: Bot, label: 'Orientación IA', highlight: true },
+    { href: '/app/second-opinion', icon: Users, label: 'Asistencia Múltiple IA' },
     { href: '/doctors', icon: Stethoscope, label: 'Buscar Doctor' },
     {
       href: '/app/appointments',
@@ -152,10 +152,10 @@ export function PatientLayout({ children }: PatientLayoutProps) {
             </button>
             <Logo size="sm" />
           </div>
-          <Link href="/app/ai-consulta">
+          <Link href="/app/orientacion">
             <Button size="sm" className="bg-blue-500 hover:bg-blue-600">
               <Bot className="w-4 h-4 mr-1" />
-              Consulta
+              Orientación
             </Button>
           </Link>
         </div>

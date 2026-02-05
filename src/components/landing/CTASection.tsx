@@ -79,9 +79,9 @@ export function CTASection() {
                 whileHover={prefersReducedMotion ? {} : { scale: 1.02 }}
                 whileTap={prefersReducedMotion ? {} : { scale: 0.98 }}
                 className="w-full sm:w-auto px-8 sm:px-10 py-4 min-h-[48px] bg-white text-blue-600 font-bold rounded-xl shadow-xl hover:shadow-2xl hover:shadow-white/20 transition-all flex items-center justify-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-blue-600"
-                aria-label="Comenzar consulta gratuita - Registrate ahora"
+                aria-label="Registrarme ahora - Crear cuenta gratuita"
               >
-                Comenzar consulta gratuita
+                Registrarme ahora
                 <ArrowRight className="w-5 h-5" aria-hidden="true" />
               </motion.button>
             </Link>

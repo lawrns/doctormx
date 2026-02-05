@@ -1,0 +1,11 @@
+id: "024"
+description: "great now let's delete the /doctor/pricing page"
+type: "work"
+effort: "STANDARD"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-05T15:10:04-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

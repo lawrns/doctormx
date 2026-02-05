@@ -1,0 +1,12 @@
+id: "025"
+description: "great now let's fix the pricing, it got messed up in /pricing
+did we used to pull the prices from DB? if not let's just fix them, starter tier was 499, pro 999, elite 1999."
+type: "work"
+effort: "QUICK"
+source: "USER_PROMPT"
+status: "ACTIVE"
+created_at: "2026-02-05T15:15:20-06:00"
+completed_at: null
+response_summary: null
+lineage:
+  created_by: "user_request"

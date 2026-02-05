@@ -260,7 +260,7 @@ export function AdaptiveQuestionnaire({
               />
             </div>
             <div>
-              <h2 className="font-semibold">Asistente Médico IA</h2>
+              <h2 className="font-semibold">Asistente de Orientación</h2>
               <p className="text-xs text-white/70">DoctorMx</p>
             </div>
           </div>
