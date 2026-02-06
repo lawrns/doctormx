@@ -1,4 +1,4 @@
-import { Search, Calendar, MessageCircle, User, ClipboardList, Sparkles, Users, ChevronRight, Bot } from 'lucide-react'
+import { Calendar, MessageCircle, User, ClipboardList, Sparkles, Users, ChevronRight, Bot } from 'lucide-react'
 import { formatDoctorName } from '@/lib/utils'
 import { requireRole } from '@/lib/auth'
 import { getPatientAppointments } from '@/lib/appointments'
@@ -38,10 +38,9 @@ export default async function PatientDashboard() {
         <WelcomeBanner patientName={profile?.full_name?.split(' ')[0] || 'Usuario'} />
 
         {/* Quick Action Cards - Now at the TOP */}
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
+        <div className="grid md:grid-cols-2 gap-6 mb-8">
           {[
             { href: '/app/orientacion', icon: Bot, title: 'Orientación IA', desc: 'Simeon - Asistente de orientación de salud' },
-            { href: '/doctors', icon: Search, title: 'Buscar Doctor', desc: 'Especialistas verificados' },
             { href: '/app/upload-image', icon: ClipboardList, title: 'Analizar Imagen', desc: 'Análisis de imagen con IA' }
           ].map((item) => (
             <Link key={item.href} href={item.href} className="focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-xl">

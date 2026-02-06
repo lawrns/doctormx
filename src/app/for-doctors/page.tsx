@@ -4,8 +4,8 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { Logo } from '@/components/Logo'
 import {
   CheckCircle,
   Users,
@@ -15,7 +15,10 @@ import {
   TrendingUp,
   Shield,
   Star,
-  ArrowRight
+  ArrowRight,
+  Sparkles,
+  ShieldCheck,
+  Search
 } from 'lucide-react'
 
 const benefits = [
@@ -78,8 +81,78 @@ const testimonials = [
 export default function ForDoctorsPage() {
   return (
     <main className="min-h-screen bg-white">
-      <Header />
-      
+      {/* Announcement Bar - EMPHASIZE FREE + COFEPRIS Trust */}
+      <motion.div
+        initial={{ y: -40, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+        className="bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 px-4 text-center"
+      >
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+          <span className="inline-flex items-center gap-2 font-bold text-base">
+            <Sparkles className="w-5 h-5" fill="currentColor" />
+            5 ORIENTACIONES DE SALUD GRATIS PARA TODOS LOS MEXICANOS
+            <Sparkles className="w-5 h-5" fill="currentColor" />
+          </span>
+          <span className="hidden sm:inline text-blue-200">|</span>
+          <span className="inline-flex items-center gap-1.5 text-sm text-blue-100 bg-blue-700/30 px-3 py-1 rounded-full">
+            <ShieldCheck className="w-4 h-4" />
+            Doctores verificados por COFEPRIS
+          </span>
+        </div>
+      </motion.div>
+
+      {/* Animated Header */}
+      <motion.header
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
+        className="sticky top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-neutral-200/50 shadow-sm"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 lg:h-18">
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Logo size="md" />
+            </motion.div>
+
+            <nav className="hidden lg:flex items-center gap-1">
+              {[
+                { href: '/orientacion', label: '5 Orientaciones GRATIS', icon: Sparkles },
+                { href: '/doctors', label: 'Buscar doctores', icon: Search },
+                { href: '/for-doctors', label: 'Para doctores', icon: Users },
+              ].map((link) => (
+                <Link key={link.href} href={link.href}>
+                  <motion.span
+                    whileHover={{ backgroundColor: 'rgba(99, 102, 241, 0.08)' }}
+                    className={`text-sm font-medium hover:text-primary-600 transition-colors px-4 py-2 rounded-lg inline-flex items-center gap-2 ${link.href === '/for-doctors' ? 'text-primary-600 bg-primary/5' : 'text-text-secondary'}`}
+                  >
+                    <link.icon className="w-4 h-4" />
+                    {link.label}
+                  </motion.span>
+                </Link>
+              ))}
+            </nav>
+
+            <div className="flex items-center gap-3">
+              <Link href="/auth/login">
+                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                  <Button variant="ghost" className="text-sm font-medium text-text-secondary hover:text-primary-600 hidden sm:flex">
+                    Iniciar sesión
+                  </Button>
+                </motion.div>
+              </Link>
+              <Link href="/auth/register?role=doctor">
+                <motion.div whileHover={{ scale: 1.04, y: -1 }} whileTap={{ scale: 0.98 }}>
+                  <Button className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-sm font-bold shadow-lg shadow-blue-500/30 px-6 py-2.5">
+                    Empezar GRATIS →
+                  </Button>
+                </motion.div>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </motion.header>
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-b from-blue-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

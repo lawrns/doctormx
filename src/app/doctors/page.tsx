@@ -10,6 +10,7 @@ import { EmptyState } from '@/components/EmptyState'
 import { Input } from '@/components/ui/input'
 import { User, LogOut, ArrowLeft } from 'lucide-react'
 import { SortSelect } from '@/components/SortSelect'
+import { Logo } from '@/components/Logo'
 
 export default async function DoctorsPage({
   searchParams,
@@ -66,6 +67,13 @@ export default async function DoctorsPage({
 
   return (
     <div className="min-h-screen bg-[hsl(var(--muted))]">
+      {/* Header with Logo */}
+      <header className="bg-white border-b border-[hsl(var(--border))] sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <Logo size="lg" />
+        </div>
+      </header>
+
       {/* Main */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Page Header */}
