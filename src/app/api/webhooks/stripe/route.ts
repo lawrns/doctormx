@@ -79,6 +79,31 @@ export async function POST(request: Request) {
         await handleChargeFailed(event.data.object as Stripe.Charge)
         break
 
+      // Subscription billing events
+      case 'checkout.session.completed':
+        await handleCheckoutSessionCompleted(event.data.object as Stripe.Checkout.Session)
+        break
+
+      case 'customer.subscription.created':
+        await handleSubscriptionCreated(event.data.object as Stripe.Subscription)
+        break
+
+      case 'customer.subscription.updated':
+        await handleSubscriptionUpdated(event.data.object as Stripe.Subscription)
+        break
+
+      case 'customer.subscription.deleted':
+        await handleSubscriptionDeleted(event.data.object as Stripe.Subscription)
+        break
+
+      case 'invoice.payment_succeeded':
+        await handleInvoicePaymentSucceeded(event.data.object as Stripe.Invoice)
+        break
+
+      case 'invoice.payment_failed':
+        await handleInvoicePaymentFailed(event.data.object as Stripe.Invoice)
+        break
+
       default:
         logger.info(`Unhandled Stripe event type: ${event.type}`)
     }
@@ -611,6 +636,480 @@ async function sendPaymentFailureNotifications(appointment: any, reason: string 
 }
 
 /**
+ * Handle checkout.session.completed for subscription purchases
+ * Creates or updates doctor subscription record
+ */
+async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session) {
+  const supabase = await createClient()
+  const doctorId = session.metadata?.doctor_id
+  const targetTier = session.metadata?.target_tier
+
+  if (!doctorId || !targetTier) {
+    logger.warn('Checkout session completed missing metadata', { sessionId: session.id })
+    return
+  }
+
+  // Check for idempotency
+  const { data: existingEvent } = await supabase
+    .from('webhook_events')
+    .select('id')
+    .eq('stripe_event_id', session.id)
+    .eq('event_type', 'checkout.session.completed')
+    .single()
+
+  if (existingEvent) {
+    logger.info(`Checkout session ${session.id} already processed, skipping`)
+    return
+  }
+
+  // Get subscription ID from session
+  const subscriptionId = session.subscription as string
+  if (!subscriptionId) {
+    logger.warn('Checkout session completed without subscription', { sessionId: session.id })
+    return
+  }
+
+  // Retrieve subscription details from Stripe
+  const stripeSubscription = await stripe.subscriptions.retrieve(subscriptionId) as Stripe.Subscription
+  const priceId = stripeSubscription.items.data[0]?.price?.id
+
+  // Get plan details
+  const { data: plan } = await supabase
+    .from('subscription_plans')
+    .select('*')
+    .eq('stripe_price_id', priceId)
+    .single()
+
+  if (!plan) {
+    logger.error('Plan not found for Stripe price', { priceId })
+    return
+  }
+
+  // Map price to tier
+  const priceToTier: Record<string, 'pro' | 'elite'> = {
+    [process.env.STRIPE_PRICE_PRO!]: 'pro',
+    [process.env.STRIPE_PRICE_ELITE!]: 'elite',
+  }
+  const tier = priceToTier[priceId] || targetTier as 'pro' | 'elite'
+
+  // Create or update subscription record
+  const { error: subError } = await supabase
+    .from('doctor_subscriptions')
+    .upsert({
+      doctor_id: doctorId,
+      plan_id: plan.id,
+      tier: tier,
+      status: 'active',
+      stripe_customer_id: session.customer as string,
+      stripe_subscription_id: subscriptionId,
+      current_period_start: new Date((stripeSubscription as any).current_period_start * 1000).toISOString(),
+      current_period_end: new Date((stripeSubscription as any).current_period_end * 1000).toISOString(),
+      cancel_at_period_end: stripeSubscription.cancel_at_period_end,
+    })
+
+  if (subError) {
+    logger.error('Failed to upsert subscription', { error: subError, doctorId })
+    throw subError
+  }
+
+  // Create usage record
+  const { data: existingUsage } = await supabase
+    .from('doctor_subscription_usage')
+    .select('doctor_id')
+    .eq('doctor_id', doctorId)
+    .single()
+
+  if (!existingUsage) {
+    await supabase.from('doctor_subscription_usage').insert({
+      doctor_id: doctorId,
+      whatsapp_patients_used: 0,
+      ai_copilot_used: 0,
+      image_analysis_used: 0,
+      whatsapp_patients_limit: plan.limits?.whatsapp_patients || 30,
+      ai_copilot_limit: plan.limits?.ai_copilot || 0,
+      image_analysis_limit: plan.limits?.image_analysis || 0,
+    })
+  }
+
+  logger.info(`Doctor subscription created/updated`, { doctorId, tier, subscriptionId })
+
+  // Send welcome notification
+  await sendSubscriptionWelcomeNotification(doctorId, tier)
+}
+
+/**
+ * Handle subscription created event
+ * Fallback handler for when checkout.session.completed is missed
+ */
+async function handleSubscriptionCreated(subscription: Stripe.Subscription) {
+  const supabase = await createClient()
+
+  // Get doctor ID from subscription metadata
+  const doctorId = (subscription as any).metadata?.doctor_id
+  if (!doctorId) {
+    logger.warn('Subscription created without doctor_id in metadata', { subscriptionId: subscription.id })
+    return
+  }
+
+  logger.info(`Subscription created (backup handler)`, { subscriptionId: subscription.id, doctorId })
+}
+
+/**
+ * Handle subscription updated event
+ * Updates subscription status and period info
+ */
+async function handleSubscriptionUpdated(subscription: Stripe.Subscription) {
+  const supabase = await createClient()
+
+  // Find subscription by stripe_subscription_id
+  const { data: existingSub } = await supabase
+    .from('doctor_subscriptions')
+    .select('doctor_id, tier')
+    .eq('stripe_subscription_id', subscription.id)
+    .single()
+
+  if (!existingSub) {
+    logger.warn('Subscription updated but not found in database', { subscriptionId: subscription.id })
+    return
+  }
+
+  const newStatus = subscription.status === 'active' || subscription.status === 'trialing'
+    ? 'active'
+    : subscription.status === 'canceled' || subscription.status === 'incomplete_expired'
+      ? 'canceled'
+      : subscription.status === 'past_due' || subscription.status === 'unpaid'
+        ? 'past_due'
+        : 'incomplete'
+
+  // Update subscription record
+  const { error } = await supabase
+    .from('doctor_subscriptions')
+    .update({
+      status: newStatus,
+      current_period_start: new Date((subscription as any).current_period_start * 1000).toISOString(),
+      current_period_end: new Date((subscription as any).current_period_end * 1000).toISOString(),
+      cancel_at_period_end: subscription.cancel_at_period_end,
+      updated_at: new Date().toISOString(),
+    })
+    .eq('stripe_subscription_id', subscription.id)
+
+  if (error) {
+    logger.error('Failed to update subscription', { error, subscriptionId: subscription.id })
+    throw error
+  }
+
+  logger.info(`Subscription updated`, {
+    subscriptionId: subscription.id,
+    doctorId: existingSub.doctor_id,
+    newStatus,
+  })
+}
+
+/**
+ * Handle subscription deleted/canceled event
+ * Marks subscription as canceled and resets usage
+ */
+async function handleSubscriptionDeleted(subscription: Stripe.Subscription) {
+  const supabase = await createClient()
+
+  // Find subscription by stripe_subscription_id
+  const { data: existingSub } = await supabase
+    .from('doctor_subscriptions')
+    .select('doctor_id, tier')
+    .eq('stripe_subscription_id', subscription.id)
+    .single()
+
+  if (!existingSub) {
+    logger.warn('Subscription deleted but not found in database', { subscriptionId: subscription.id })
+    return
+  }
+
+  // Update subscription status
+  const { error } = await supabase
+    .from('doctor_subscriptions')
+    .update({
+      status: 'canceled',
+      canceled_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    })
+    .eq('stripe_subscription_id', subscription.id)
+
+  if (error) {
+    logger.error('Failed to cancel subscription', { error, subscriptionId: subscription.id })
+    throw error
+  }
+
+  // Reset usage counters to free tier limits
+  await supabase
+    .from('doctor_subscription_usage')
+    .update({
+      whatsapp_patients_used: 0,
+      ai_copilot_used: 0,
+      image_analysis_used: 0,
+      whatsapp_patients_limit: 30,
+      ai_copilot_limit: 0,
+      image_analysis_limit: 0,
+    })
+    .eq('doctor_id', existingSub.doctor_id)
+
+  logger.info(`Subscription canceled`, {
+    subscriptionId: subscription.id,
+    doctorId: existingSub.doctor_id,
+  })
+
+  // Send cancellation notification
+  await sendSubscriptionCanceledNotification(existingSub.doctor_id)
+}
+
+/**
+ * Handle successful invoice payment (subscription renewal)
+ * Resets usage counters for new billing period
+ */
+async function handleInvoicePaymentSucceeded(invoice: Stripe.Invoice) {
+  const supabase = await createClient()
+
+  const invoiceSubscriptionId = (invoice as any).subscription as string | null
+  if (!invoiceSubscriptionId) {
+    return
+  }
+
+  // Find subscription by stripe_subscription_id
+  const { data: existingSub } = await supabase
+    .from('doctor_subscriptions')
+    .select('doctor_id')
+    .eq('stripe_subscription_id', invoiceSubscriptionId)
+    .single()
+
+  if (!existingSub) {
+    logger.warn('Invoice succeeded but subscription not found', { subscriptionId: invoiceSubscriptionId })
+    return
+  }
+
+  // Reset usage counters for new period
+  await supabase
+    .from('doctor_subscription_usage')
+    .update({
+      whatsapp_patients_used: 0,
+      ai_copilot_used: 0,
+      image_analysis_used: 0,
+    })
+    .eq('doctor_id', existingSub.doctor_id)
+
+  logger.info(`Usage counters reset for new billing period`, {
+    doctorId: existingSub.doctor_id,
+    invoiceId: invoice.id,
+  })
+}
+
+/**
+ * Handle failed invoice payment (subscription payment failed)
+ * Marks subscription as past_due and sends notification
+ */
+async function handleInvoicePaymentFailed(invoice: Stripe.Invoice) {
+  const supabase = await createClient()
+
+  const invoiceSubscriptionId = (invoice as any).subscription as string | null
+  if (!invoiceSubscriptionId) {
+    return
+  }
+
+  // Find subscription by stripe_subscription_id
+  const { data: existingSub } = await supabase
+    .from('doctor_subscriptions')
+    .select('doctor_id, tier')
+    .eq('stripe_subscription_id', invoiceSubscriptionId)
+    .single()
+
+  if (!existingSub) {
+    logger.warn('Invoice failed but subscription not found', { subscriptionId: invoiceSubscriptionId })
+    return
+  }
+
+  // Update subscription status
+  await supabase
+    .from('doctor_subscriptions')
+    .update({
+      status: 'past_due',
+      updated_at: new Date().toISOString(),
+    })
+    .eq('stripe_subscription_id', invoiceSubscriptionId)
+
+  logger.warn(`Subscription payment failed`, {
+    subscriptionId: invoiceSubscriptionId,
+    doctorId: existingSub.doctor_id,
+    amount: invoice.amount_due,
+  })
+
+  // Send payment failure notification
+  await sendSubscriptionPaymentFailedNotification(existingSub.doctor_id, existingSub.tier)
+}
+
+/**
+ * Send welcome notification for new subscription
+ */
+async function sendSubscriptionWelcomeNotification(doctorId: string, tier: string) {
+  const supabase = await createClient()
+
+  const { data: profile } = await supabase
+    .from('profiles')
+    .select('email, full_name')
+    .eq('id', doctorId)
+    .single()
+
+  if (!profile?.email) {
+    return
+  }
+
+  try {
+    const { sendEmail, getEmailTemplate } = await import('@/lib/notifications')
+
+    const tierNames = {
+      pro: 'Profesional',
+      elite: 'Élite',
+    }
+
+    const content = `
+<p style="margin: 0 0 20px 0; color: #1f2937; font-size: 16px; line-height: 1.5;">
+  ¡Bienvenido a Doctor.mx ${tierNames[tier as keyof typeof tierNames]}!
+</p>
+<table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 20px; background-color: #ecfdf5; border-radius: 6px; border-left: 4px solid #10b981;">
+  <tr>
+    <td style="padding: 16px;">
+      <p style="margin: 0; color: #065f46; font-size: 14px; line-height: 1.6;">
+        Tu suscripción ha sido activada exitosamente. Ya tienes acceso a todas las funcionalidades de tu plan.
+      </p>
+    </td>
+  </tr>
+</table>
+<p style="margin: 0 0 20px 0; color: #1f2937; font-size: 16px; line-height: 1.5;">
+  Si tienes alguna pregunta, no dudes en contactarnos.
+</p>
+`
+    const html = getEmailTemplate(content, profile.full_name || 'Doctor')
+
+    await sendEmail({
+      to: profile.email,
+      subject: `¡Bienvenido a Doctor.mx ${tierNames[tier as keyof typeof tierNames]}!`,
+      html,
+      tags: [
+        { name: 'type', value: 'subscription_welcome' },
+        { name: 'tier', value: tier },
+      ],
+    })
+
+    logger.info(`Subscription welcome email sent`, { doctorId, tier })
+  } catch (error) {
+    logger.error('Failed to send subscription welcome email', { error, doctorId })
+  }
+}
+
+/**
+ * Send notification when subscription is canceled
+ */
+async function sendSubscriptionCanceledNotification(doctorId: string) {
+  const supabase = await createClient()
+
+  const { data: profile } = await supabase
+    .from('profiles')
+    .select('email, full_name')
+    .eq('id', doctorId)
+    .single()
+
+  if (!profile?.email) {
+    return
+  }
+
+  try {
+    const { sendEmail, getEmailTemplate } = await import('@/lib/notifications')
+
+    const content = `
+<p style="margin: 0 0 20px 0; color: #1f2937; font-size: 16px; line-height: 1.5;">
+  Tu suscripción a Doctor.mx ha sido cancelada.
+</p>
+<table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 20px; background-color: #fef2f2; border-radius: 6px; border-left: 4px solid #dc2626;">
+  <tr>
+    <td style="padding: 16px;">
+      <p style="margin: 0; color: #991b1b; font-size: 14px; line-height: 1.6;">
+        Tu suscripción ha finalizado. Si deseas reactivarla, puedes hacerlo desde tu panel de control.
+      </p>
+    </td>
+  </tr>
+</table>
+<p style="margin: 0 0 20px 0; color: #1f2937; font-size: 16px; line-height: 1.5;">
+  Esperamos verte de nuevo pronto.
+</p>
+`
+    const html = getEmailTemplate(content, profile.full_name || 'Doctor')
+
+    await sendEmail({
+      to: profile.email,
+      subject: 'Tu suscripción a Doctor.mx ha sido cancelada',
+      html,
+      tags: [
+        { name: 'type', value: 'subscription_canceled' },
+      ],
+    })
+
+    logger.info(`Subscription canceled email sent`, { doctorId })
+  } catch (error) {
+    logger.error('Failed to send subscription canceled email', { error, doctorId })
+  }
+}
+
+/**
+ * Send notification when subscription payment fails
+ */
+async function sendSubscriptionPaymentFailedNotification(doctorId: string, tier: string) {
+  const supabase = await createClient()
+
+  const { data: profile } = await supabase
+    .from('profiles')
+    .select('email, full_name')
+    .eq('id', doctorId)
+    .single()
+
+  if (!profile?.email) {
+    return
+  }
+
+  try {
+    const { sendEmail, getEmailTemplate } = await import('@/lib/notifications')
+
+    const content = `
+<p style="margin: 0 0 20px 0; color: #1f2937; font-size: 16px; line-height: 1.5;">
+  No pudimos procesar tu pago de suscripción a Doctor.mx.
+</p>
+<table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 20px; background-color: #fef2f2; border-radius: 6px; border-left: 4px solid #dc2626;">
+  <tr>
+    <td style="padding: 16px;">
+      <p style="margin: 0; color: #991b1b; font-size: 14px; line-height: 1.6;">
+        El pago de tu suscripción falló. Por favor actualiza tu método de pago para evitar interrupciones en el servicio.
+      </p>
+    </td>
+  </tr>
+</table>
+<p style="margin: 0 0 20px 0; color: #1f2937; font-size: 16px; line-height: 1.5;">
+  Puedes actualizar tu método de pago desde tu panel de control.
+</p>
+`
+    const html = getEmailTemplate(content, profile.full_name || 'Doctor')
+
+    await sendEmail({
+      to: profile.email,
+      subject: 'Pago de suscripción falló - Doctor.mx',
+      html,
+      tags: [
+        { name: 'type', value: 'subscription_payment_failed' },
+      ],
+    })
+
+    logger.info(`Subscription payment failed email sent`, { doctorId })
+  } catch (error) {
+    logger.error('Failed to send subscription payment failed email', { error, doctorId })
+  }
+}
+
+/**
  * Log webhook event for audit purposes
  */
 async function logWebhookEvent(event: Stripe.Event, status: 'processed' | 'failed', errorMessage?: string) {
@@ -643,6 +1142,13 @@ export async function GET() {
       'payment_intent.canceled',
       'charge.succeeded',
       'charge.failed',
+      // Subscription events
+      'checkout.session.completed',
+      'customer.subscription.created',
+      'customer.subscription.updated',
+      'customer.subscription.deleted',
+      'invoice.payment_succeeded',
+      'invoice.payment_failed',
     ],
   })
 }
