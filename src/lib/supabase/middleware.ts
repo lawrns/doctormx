@@ -4,14 +4,15 @@ import { NextResponse, type NextRequest } from 'next/server'
 // Configuración de rutas protegidas - Sistema centralizado
 const ROUTES = {
   public: [
-    '/auth/login', 
-    '/auth/register', 
-    '/auth/complete-profile', 
-    '/', 
-    '/doctors', 
+    '/auth/login',
+    '/auth/register',
+    '/auth/complete-profile',
+    '/',
+    '/doctors',
     '/specialties',
     '/for-doctors',
-    '/doctor/pricing'
+    '/doctor/pricing',
+    '/unauthorized',
   ],
   requiresAuth: ['/book', '/checkout'],  // Requieren login pero cualquier rol
   patient: ['/app'],
@@ -19,11 +20,47 @@ const ROUTES = {
   admin: ['/admin'],
 } as const
 
+// Type for route roles
+type RouteRole = 'patient' | 'doctor' | 'admin'
+
 const DASHBOARDS = {
   patient: '/app',
   doctor: '/doctor',
   admin: '/admin',
 } as const
+
+/**
+ * Determine which role is required for a given path
+ * Returns undefined if path doesn't require a specific role
+ */
+function getRequiredRole(path: string): RouteRole | undefined {
+  // Check each role's routes
+  for (const [role, routes] of Object.entries(ROUTES)) {
+    if (role === 'public' || role === 'requiresAuth') continue
+
+    const typedRole = role as RouteRole
+    for (const route of routes) {
+      if (path.startsWith(route)) {
+        return typedRole
+      }
+    }
+  }
+  return undefined
+}
+
+/**
+ * Check if path is public
+ */
+function isPublicPath(path: string): boolean {
+  return ROUTES.public.some(route => path === route || path.startsWith(route))
+}
+
+/**
+ * Check if path requires authentication but no specific role
+ */
+function requiresAuthOnly(path: string): boolean {
+  return ROUTES.requiresAuth.some(route => path.startsWith(route))
+}
 
 // Proceso claro: 1) Autenticar, 2) Verificar acceso, 3) Redirigir si es necesario
 export async function updateSession(request: NextRequest) {
@@ -62,62 +99,57 @@ export async function updateSession(request: NextRequest) {
   const { data: { user } } = await supabase.auth.getUser()
   const path = request.nextUrl.pathname
 
-  // Rutas públicas - permitir acceso
-  if (ROUTES.public.some(route => path === route || path.startsWith(route))) {
+  // 1. Rutas públicas - permitir acceso sin autenticación
+  if (isPublicPath(path)) {
     return supabaseResponse
   }
 
-  // Rutas que requieren autenticación (cualquier rol)
-  const requiresAuth = ROUTES.requiresAuth.some(route => path.startsWith(route))
+  // 2. Verificar si la ruta requiere autenticación
+  const authRequired = requiresAuthOnly(path) || getRequiredRole(path) !== undefined
 
-  // Rutas protegidas por rol específico
-  const protectedRoutes = [
-    ...ROUTES.patient,
-    ...ROUTES.doctor,
-    ...ROUTES.admin,
-  ]
+  if (authRequired && !user) {
+    // No autenticado - redirigir a login
+    const url = request.nextUrl.clone()
+    url.pathname = '/auth/login'
+    url.searchParams.set('redirect', path)
+    return NextResponse.redirect(url)
+  }
 
-  const isProtected = protectedRoutes.some(route => path.startsWith(route))
+  // 3. Si solo requiere auth (sin rol específico), permitir
+  if (requiresAuthOnly(path) && user) {
+    return supabaseResponse
+  }
 
-  // Si requiere auth o es protegida, verificar usuario
-  if (requiresAuth || isProtected) {
-    // Sin usuario - redirigir a login
-    if (!user) {
+  // 4. Verificar roles para rutas protegidas
+  const requiredRole = getRequiredRole(path)
+  if (requiredRole && user) {
+    // Obtener perfil del usuario con su rol
+    const { data: userProfile, error: profileError } = await supabase
+      .from('profiles')
+      .select('role')
+      .eq('id', user.id)
+      .single()
+
+    // Si hay error o no hay perfil, redirigir a completar perfil
+    if (profileError || !userProfile) {
       const url = request.nextUrl.clone()
-      url.pathname = '/auth/login'
-      url.searchParams.set('redirect', path)
+      url.pathname = '/auth/complete-profile'
       return NextResponse.redirect(url)
     }
-  }
 
-  // Si solo requiere auth (no rol específico), permitir
-  if (requiresAuth && !isProtected) {
-    return supabaseResponse
-  }
-
-  // Si no es protegida, permitir
-  if (!isProtected) {
-    return supabaseResponse
-  }
-
-  // Usuario debe existir aquí (verificado arriba)
-  if (!user) return supabaseResponse
-
-  // Verificar rol del usuario
-  const { data: userProfile } = await supabase
-    .from('profiles')
-    .select('role')
-    .eq('id', user.id)
-    .single()
-
-  if (!userProfile) return supabaseResponse
-
-  // Redirigir al dashboard correcto si está en la ruta incorrecta
-  const correctDashboard = DASHBOARDS[userProfile.role as keyof typeof DASHBOARDS]
-  if (correctDashboard && !path.startsWith(correctDashboard)) {
-    const url = request.nextUrl.clone()
-    url.pathname = correctDashboard
-    return NextResponse.redirect(url)
+    // Verificar si el usuario tiene el rol requerido
+    if (userProfile.role !== requiredRole) {
+      // Usuario autenticado pero sin el rol correcto - redirigir a unauthorized
+      // O redirigir a su dashboard correcto
+      const userDashboard = DASHBOARDS[userProfile.role as keyof typeof DASHBOARDS]
+      if (userDashboard) {
+        const url = request.nextUrl.clone()
+        url.pathname = userDashboard
+        return NextResponse.redirect(url)
+      }
+      // Fallback a página de unauthorized si no hay dashboard
+      return NextResponse.redirect(new URL('/unauthorized', request.url))
+    }
   }
 
   return supabaseResponse
