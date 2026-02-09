@@ -3,8 +3,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { matchDoctorsForReferral } from '@/lib/ai/referral'
-import { redis } from '@/lib/redis'
-import { RATE_LIMITS } from '@/lib/rate-limit'
+import { redis } from '@/lib/cache'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -41,8 +40,8 @@ export async function POST(request: NextRequest) {
 
     // Rate limiting
     const rateLimitKey = `${RATE_LIMIT_KEY}${body.sessionId}`
-    const current = await redis.get(rateLimitKey)
-    const count = current ? parseInt(current, 10) : 0
+    const current = redis ? await redis.get(rateLimitKey) : null
+    const count = current ? parseInt(String(current), 10) : 0
 
     if (count >= RATE_LIMIT_MAX) {
       return NextResponse.json(
@@ -51,10 +50,10 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Increment rate limit counter
-    await redis.set(rateLimitKey, (count + 1).toString(), {
-      ex: RATE_LIMIT_WINDOW
-    })
+    // Increment rate limit counter (using setex for expiration)
+    if (redis) {
+      await redis.setex(rateLimitKey, RATE_LIMIT_WINDOW, (count + 1).toString())
+    }
 
     // Generate doctor recommendations using existing logic
     const recommendations = await matchDoctorsForReferral({

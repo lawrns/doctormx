@@ -29,3 +29,6 @@ export {
 } from './intake/ProgressiveDisclosure';
 export { ProgressStepper, useProgressSteps } from './intake/ProgressStepper';
 export type { ProgressStep } from './intake/ProgressStepper';
+
+// SOAP Notes Review Component
+export { SOAPNotesReview } from './SOAPNotesReview';

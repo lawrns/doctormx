@@ -3,11 +3,15 @@
 import { useState, useEffect, use } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { ClinicalCopilot } from '@/components/ClinicalCopilot'
+import { SOAPNotesReview } from '@/components/soap'
 import type { PatientMedicalHistory, PatientProfile } from '@/lib/patient-types'
+import type { SoapNote } from '@/lib/domains/soap-notes'
 
 interface DoctorConsultationPageProps {
     params: Promise<{ appointmentId: string }>
 }
+
+type ConsultationStep = 'active' | 'soap-notes' | 'completed'
 
 export default function DoctorConsultationPage({ params }: DoctorConsultationPageProps) {
     const resolvedParams = use(params)
@@ -22,6 +26,16 @@ export default function DoctorConsultationPage({ params }: DoctorConsultationPag
     const [patientProfile, setPatientProfile] = useState<PatientProfile | null>(null)
     const [patientHistory, setPatientHistory] = useState<PatientMedicalHistory | null>(null)
     const [loading, setLoading] = useState(true)
+    const [consultationStep, setConsultationStep] = useState<ConsultationStep>('active')
+    const [consultationNotes, setConsultationNotes] = useState('')
+    const [soapNoteId, setSoapNoteId] = useState<string | undefined>()
+    const [soapData, setSoapData] = useState<{
+        subjective: string
+        objective: string
+        assessment: string
+        plan: string
+        json?: Record<string, unknown>
+    } | undefined>()
     const [supabase] = useState(() => {
         try {
             return createClient()
@@ -112,6 +126,82 @@ export default function DoctorConsultationPage({ params }: DoctorConsultationPag
         return age
     }
 
+    const handleGenerateSOAP = async (notes: string) => {
+        if (!appointment) {
+            throw new Error('No hay cita activa')
+        }
+
+        const patientContext = patientProfile ? {
+            name: appointment.patient?.full_name,
+            age: patientProfile.date_of_birth ? calculateAge(patientProfile.date_of_birth) : undefined,
+            gender: patientProfile.gender || undefined,
+        } : undefined
+
+        const response = await fetch('/api/soap-notes/from-consultation', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                consultation: {
+                    consultation_id: appointmentId,
+                    appointment_id: appointmentId,
+                    patient_id: appointment.patient_id,
+                    chief_complaint: 'Consulta médica',
+                    symptoms: [],
+                    notes: notes,
+                },
+                patient: patientContext,
+            }),
+        })
+
+        if (!response.ok) {
+            const error = await response.json()
+            throw new Error(error.error || 'Error al generar nota SOAP')
+        }
+
+        return response.json()
+    }
+
+    const handleApproveSOAP = async (noteId: string, edits?: Partial<{
+        subjective: string
+        objective: string
+        assessment: string
+        plan: string
+    }>) => {
+        const response = await fetch(`/api/soap-notes/${noteId}/approve`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ edits }),
+        })
+
+        if (!response.ok) {
+            const error = await response.json()
+            throw new Error(error.error || 'Error al aprobar nota SOAP')
+        }
+
+        return response.json()
+    }
+
+    const handleEndConsultation = () => {
+        if (!consultationNotes.trim()) {
+            setConsultationStep('soap-notes')
+        } else {
+            setConsultationStep('soap-notes')
+        }
+    }
+
+    const handleSOAPDiscard = () => {
+        setConsultationStep('completed')
+    }
+
+    const handleSOAPComplete = () => {
+        setConsultationStep('completed')
+    }
+
+    const handleExportPDF = async () => {
+        // TODO: Implement PDF export
+        console.log('Export to PDF not implemented yet')
+    }
+
     if (loading) {
         return (
             <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -199,7 +289,10 @@ export default function DoctorConsultationPage({ params }: DoctorConsultationPag
 
                         <div className="p-6 border-t bg-gray-50">
                             <div className="flex gap-4">
-                                <button className="flex-1 py-3 px-4 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-medium">
+                                <button
+                                    onClick={handleEndConsultation}
+                                    className="flex-1 py-3 px-4 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-medium"
+                                >
                                     Finalizar Consulta
                                 </button>
                                 <button className="flex-1 py-3 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium">
@@ -212,6 +305,8 @@ export default function DoctorConsultationPage({ params }: DoctorConsultationPag
                     <div className="mt-6 bg-white rounded-xl shadow-sm p-6">
                         <h3 className="font-semibold text-gray-900 mb-4">Notas de la consulta</h3>
                         <textarea
+                            value={consultationNotes}
+                            onChange={(e) => setConsultationNotes(e.target.value)}
                             className="w-full h-40 p-4 border border-gray-200 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                             placeholder="Escribe tus notas aqui..."
                         />
@@ -295,6 +390,57 @@ export default function DoctorConsultationPage({ params }: DoctorConsultationPag
                     currentMedications: patientHistory.current_medications as any,
                 } : undefined}
             />
+
+            {/* SOAP Notes Modal */}
+            {consultationStep === 'soap-notes' && appointment && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+                    <div className="w-full max-w-4xl max-h-[90vh] overflow-y-auto">
+                        <SOAPNotesReview
+                            noteId={soapNoteId}
+                            consultationNotes={consultationNotes}
+                            patientContext={{
+                                name: appointment.patient?.full_name,
+                                age: patientProfile?.date_of_birth ? calculateAge(patientProfile.date_of_birth) : undefined,
+                                gender: patientProfile?.gender || undefined,
+                            }}
+                            patientName={appointment.patient?.full_name}
+                            onGenerate={async (notes) => {
+                                const result = await handleGenerateSOAP(notes)
+                                setSoapNoteId(result.id)
+                                setSoapData(result.soap_note)
+                                return result
+                            }}
+                            onApprove={async (noteId, edits) => {
+                                await handleApproveSOAP(noteId, edits)
+                                handleSOAPComplete()
+                            }}
+                            onDiscard={handleSOAPDiscard}
+                            onExport={handleExportPDF}
+                        />
+                    </div>
+                </div>
+            )}
+
+            {/* Consultation Completed */}
+            {consultationStep === 'completed' && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+                    <div className="bg-white rounded-xl shadow-xl p-8 max-w-md w-full text-center">
+                        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg className="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <h3 className="text-xl font-semibold text-gray-900 mb-2">Consulta Finalizada</h3>
+                        <p className="text-gray-600 mb-6">La consulta ha sido completada exitosamente.</p>
+                        <button
+                            onClick={() => window.location.href = '/doctor/appointments'}
+                            className="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
+                        >
+                            Volver a citas
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
