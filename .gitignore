@@ -51,3 +51,24 @@ doctoralia_scraper/test-page-source.html
 
 # Sentry - Don't commit auth tokens
 .sentryclirc
+
+# E2E test artifacts (regenerable)
+/playwright-report/
+/test-results/
+dev.log
+
+# Git worktrees (duplicates repo)
+/worktrees/
+
+# Home directory (security risk - never track ~/)
+~/
+
+# Large/archive files that shouldn't be tracked
+*.zip
+
+# AI agent memory/logs (may contain sensitive data)
+.claude/MEMORY/
+
+# Untracked project documentation drafts
+*_DRAFT.md
+*_BACKUP.md
