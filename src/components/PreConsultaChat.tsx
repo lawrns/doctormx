@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { Stethoscope } from 'lucide-react';
 import type { PreConsultaMessage } from '@/lib/ai/types';
+import { RecommendedDoctorsCard } from './RecommendedDoctorsCard';
 import type { DoctorMatch } from '@/lib/ai/referral';
 
 type PreConsultaChatProps = {
@@ -167,30 +167,14 @@ export default function PreConsultaChat({ isOpen, onCloseAction, onCompleteActio
 
           {/* Recommended Doctors */}
           {referrals.length > 0 && (
-            <div className="space-y-3 animate-fade-in">
-              <h3 className="text-sm font-semibold text-gray-900 px-2">Especialistas recomendados:</h3>
-              <div className="grid gap-3">
-                {referrals.map((match) => (
-                  <div key={match.doctorId} className="bg-blue-50 border border-blue-100 rounded-xl p-4 flex items-center justify-between gap-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-blue-200">
-                        <Stethoscope className="w-5 h-5 text-blue-600" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-bold text-gray-900">{match.doctor?.profile?.full_name || 'Especialista'}</p>
-                        <p className="text-xs text-blue-600">{match.reasons[0]}</p>
-                      </div>
-                    </div>
-                    <button
-                      onClick={() => window.location.href = `/book/${match.doctorId}`}
-                      className="bg-blue-600 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-                    >
-                      Agendar
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <RecommendedDoctorsCard
+              recommendations={referrals}
+              consultationType="Pre-consulta"
+              onViewAllDoctors={() => window.location.href = '/doctors'}
+              onBookDoctor={(doctorId) => {
+                window.location.href = `/book/${doctorId}`;
+              }}
+            />
           )}
 
           {isLoading && (
