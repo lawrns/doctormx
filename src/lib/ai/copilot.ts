@@ -3,7 +3,7 @@
 import { getAIClient, glm } from '@/lib/openai'
 import { router } from './router'
 import { createServiceClient } from '@/lib/supabase/server'
-import { retrieveMedicalContext, generateAugmentedPrompt } from './knowledge'
+import { retrieveMedicalContext, generateAugmentedPrompt } from '@/lib/medical-knowledge'
 import { logger } from '@/lib/observability/logger'
 import { GLM_CONFIG, isGLMConfigured } from './glm'
 

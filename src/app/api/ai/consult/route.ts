@@ -9,6 +9,11 @@ import { createClient } from '@/lib/supabase/server'
 import { z } from 'zod'
 import { aiChatCompletion } from '@/lib/ai/openai'
 import type { ConsensusResult } from '@/lib/soap/types'
+import {
+  retrieveMedicalContext,
+  generateAugmentedPrompt,
+  getMedicalKnowledgeStats
+} from '@/lib/medical-knowledge'
 
 const consultRequestSchema = z.object({
   messages: z.array(z.object({
@@ -112,9 +117,40 @@ export async function POST(request: NextRequest) {
     // Extract symptoms and select specialists
     const specialists = selectSpecialists(userMessage)
     const redFlagCheck = detectRedFlags(userMessage)
-    
-    // Build system prompt
-    const systemPrompt = `Eres un asistente médico AI de Doctor.mx, diseñado para ayudar a pacientes a entender sus síntomas de manera conversacional y natural.
+
+    // RAG: Retrieve relevant medical context from knowledge base
+    let ragContext: Awaited<ReturnType<typeof retrieveMedicalContext>> | null = null
+    let augmentedSystemPrompt = ''
+    try {
+      // Map specialty names to Spanish specialty names for knowledge base
+      const specialtyMap: Record<string, string> = {
+        'cardiology': 'Cardiología',
+        'neurology': 'Neurología',
+        'gastroenterology': 'Gastroenterología',
+        'pulmonology': 'Neumología',
+        'endocrinology': 'Endocrinología',
+        'dermatology': 'Dermatología',
+        'psychiatry': 'Psiquiatría',
+        'infectious_disease': 'Infectología',
+        'orthopedics': 'Traumatología',
+        'urology': 'Urología',
+        'general_practitioner': 'General',
+      }
+
+      // Get relevant specialty for RAG filter
+      const relevantSpecialty = specialists.find(s => specialtyMap[s]) || 'general_practitioner'
+      const specialtyFilter = specialtyMap[relevantSpecialty]
+
+      ragContext = await retrieveMedicalContext(userMessage, {
+        specialty: specialtyFilter,
+        limit: 3,
+      })
+    } catch (ragError) {
+      console.warn('[AI Consult] RAG retrieval failed, continuing without medical context:', ragError)
+    }
+
+    // Build base system prompt
+    const baseSystemPrompt = `Eres un asistente médico AI de Doctor.mx, diseñado para ayudar a pacientes a entender sus síntomas de manera conversacional y natural.
 
 REGLAS IMPORTANTES:
 1. Habla en español de México de forma natural y empática
@@ -134,6 +170,11 @@ INSTRUCCIONES DE FLUJO:
 Cuando tengas suficiente información para un análisis completo, incluye al final de tu respuesta:
 [READY_FOR_ANALYSIS: true]`
 
+    // Apply RAG augmentation if medical context was retrieved
+    const systemPrompt = (ragContext && ragContext.documents.length > 0)
+      ? generateAugmentedPrompt(baseSystemPrompt, ragContext)
+      : baseSystemPrompt
+
     // Call OpenAI for conversation
     const response = await aiChatCompletion({
       messages: messages.map(m => ({ role: m.role as 'user' | 'assistant' | 'system', content: m.content })),
@@ -149,12 +190,18 @@ Cuando tengas suficiente información para un análisis completo, incluye al fin
     // If ready for analysis, run multi-specialist consultation
     if (isReadyForAnalysis && conversationLength >= 3) {
       const analysisResult = await runMultiSpecialistAnalysis(messages, specialists, user.id)
-      
+
       return NextResponse.json({
         message: `${cleanedContent}\n\nHe completado el análisis con nuestro panel de especialistas. Aquí están los resultados:`,
         complete: true,
         result: analysisResult,
         specialists,
+        citations: ragContext?.documents.map(doc => ({
+          title: doc.metadata?.title || doc.source,
+          source: doc.source,
+          year: doc.metadata?.year,
+          type: doc.metadata?.type,
+        })) || [],
         meta: {
           latencyMs: Date.now() - startTime,
           provider: response.provider,
@@ -169,6 +216,12 @@ Cuando tengas suficiente información para un análisis completo, incluye al fin
       message: cleanedContent,
       complete: false,
       specialists,
+      citations: ragContext?.documents.map(doc => ({
+        title: doc.metadata?.title || doc.source,
+        source: doc.source,
+        year: doc.metadata?.year,
+        type: doc.metadata?.type,
+      })) || [],
       meta: {
         latencyMs: Date.now() - startTime,
         provider: response.provider,
