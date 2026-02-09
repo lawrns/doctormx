@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServiceClient } from '@/lib/supabase/server'
 import { requireAuth } from '@/lib/auth'
+import { validateFile, createValidationErrorResponse } from '@/lib/file-security'
 
 // Allowed image types
 const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'image/gif']
@@ -36,20 +37,15 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Validate file type
-    if (!ALLOWED_TYPES.includes(file.type)) {
-      return NextResponse.json(
-        { error: 'Invalid file type. Allowed: JPEG, PNG, WebP, GIF' },
-        { status: 400 }
-      )
-    }
+    // Use enhanced file validation
+    const fileValidation = await validateFile(file, {
+      maxSize: MAX_SIZE,
+      allowedExtensions: ['.jpg', '.jpeg', '.png', '.webp'],
+      validateMagicNumbers: true
+    })
 
-    // Validate file size
-    if (file.size > MAX_SIZE) {
-      return NextResponse.json(
-        { error: 'File too large. Max: 5MB' },
-        { status: 400 }
-      )
+    if (!fileValidation.isValid) {
+      return createValidationErrorResponse(fileValidation)
     }
 
     const supabase = createServiceClient()

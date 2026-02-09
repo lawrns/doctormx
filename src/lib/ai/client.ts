@@ -11,7 +11,15 @@ import { createClient } from '@/lib/supabase/server';
 import type {
   PreConsultaMessage,
   TranscriptionSegment,
-  AIAuditLog
+  AIAuditLog,
+  ChatCompletionRequest,
+  ChatCompletionResponse,
+  ChatCompletionResponseFormatted,
+  TranscriptionRequest,
+  TranscriptionResponse,
+  StructuredAnalysisRequest,
+  StructuredAnalysisResponse,
+  AIProvider
 } from './types';
 
 /**
@@ -94,10 +102,10 @@ export async function chatCompletion(params: {
 }> {
   const { messages, systemPrompt, maxTokens, temperature } = params;
 
-  const apiMessages = [
+  const apiMessages: OpenAI.ChatCompletionMessageParam[] = [
     { role: 'system', content: systemPrompt },
     ...messages.map((m) => ({
-      role: m.role === 'system' ? 'system' : m.role === 'user' ? 'user' : 'assistant',
+      role: (m.role === 'system' ? 'system' : m.role === 'user' ? 'user' : 'assistant') as 'system' | 'user' | 'assistant',
       content: m.content,
     })),
   ];
@@ -116,8 +124,7 @@ export async function chatCompletion(params: {
     if (provider === 'openai' && !AI_CONFIG.openai.apiKey) continue;
 
     try {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const client = provider === 'glm' ? await getGLMClient() : await getOpenAIClient() as unknown as any;
+      const client = provider === 'glm' ? await getGLMClient() : await getOpenAIClient();
       const model = provider === 'glm' ? AI_CONFIG.glm.defaultModel : AI_CONFIG.openai.model;
       const configuredMaxTokens = provider === 'glm' ? AI_CONFIG.glm.maxTokens : AI_CONFIG.openai.maxTokens;
       const configuredTemp = provider === 'glm' ? AI_CONFIG.glm.temperature : AI_CONFIG.openai.temperature;
@@ -224,13 +231,20 @@ export async function transcribeAudio(params: {
   duration: number;
   cost: number;
 }> {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const client = await getOpenAIClient() as unknown as any;
+  const client = await getOpenAIClient();
   const { audioFile, language } = params;
 
   try {
+    // Convert Buffer to Blob for OpenAI SDK
+    let uploadable: File | Blob;
+    if (audioFile instanceof Buffer) {
+      uploadable = new Blob([audioFile]);
+    } else {
+      uploadable = audioFile;
+    }
+
     const transcription = await client.audio.transcriptions.create({
-      file: audioFile,
+      file: uploadable,
       model: AI_CONFIG.whisper.model,
       language: language || AI_CONFIG.whisper.language,
       response_format: 'verbose_json', // Incluye timestamps
@@ -277,7 +291,7 @@ export async function structuredAnalysis<T>(params: {
     systemContent += `\n\nRespuesta DEBE ser JSON válido con este formato:\n${schema}`;
   }
 
-  const messages = [
+  const messages: OpenAI.ChatCompletionMessageParam[] = [
     { role: 'system', content: systemContent },
     { role: 'user', content: userPrompt },
   ];
@@ -296,8 +310,7 @@ export async function structuredAnalysis<T>(params: {
     if (provider === 'openai' && !AI_CONFIG.openai.apiKey) continue;
 
     try {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const client = provider === 'glm' ? await getGLMClient() : await getOpenAIClient() as unknown as any;
+      const client = provider === 'glm' ? await getGLMClient() : await getOpenAIClient();
       const model = provider === 'glm' ? AI_CONFIG.glm.defaultModel : AI_CONFIG.openai.model;
 
       const completion = await client.chat.completions.create({

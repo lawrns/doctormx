@@ -4,6 +4,20 @@ import { notFound } from 'next/navigation'
 import { Card } from '@/components/Card'
 import { Button } from '@/components/Button'
 import { searchDirectory, getDirectorySpecialties, getDirectoryCities } from '@/lib/domains/directory'
+import createDOMPurify from 'dompurify'
+
+// Server-side DOMPurify configuration
+let purify: ReturnType<typeof createDOMPurify>
+
+if (typeof window === 'undefined') {
+  // Server-side: use JSDOM
+  const { JSDOM } = require('jsdom')
+  const window = new JSDOM('').window
+  purify = createDOMPurify(window)
+} else {
+  // Client-side: use browser window
+  purify = createDOMPurify()
+}
 
 interface PageProps {
   params: Promise<{ specialty: string }>
@@ -194,8 +208,8 @@ export default async function SpecialtyPage({ params }: PageProps) {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'MedicalSpecialty',
-            name: capitalizeWords(specialtyName),
-            description: `Directorio de especialistas en ${specialtyName} en México`,
+            name: capitalizeWords(purify.sanitize(specialtyName)),
+            description: `Directorio de especialistas en ${purify.sanitize(specialtyName)} en México`,
           }),
         }}
       />

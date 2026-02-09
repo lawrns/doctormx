@@ -5,6 +5,20 @@ import { Card } from '@/components/Card'
 import { Badge } from '@/components/Badge'
 import { Button } from '@/components/Button'
 import { searchDirectory, getDirectorySpecialties, getDirectoryCities } from '@/lib/domains/directory'
+import createDOMPurify from 'dompurify'
+
+// Server-side DOMPurify configuration
+let purify: ReturnType<typeof createDOMPurify>
+
+if (typeof window === 'undefined') {
+  // Server-side: use JSDOM
+  const { JSDOM } = require('jsdom')
+  const window = new JSDOM('').window
+  purify = createDOMPurify(window)
+} else {
+  // Client-side: use browser window
+  purify = createDOMPurify()
+}
 
 interface PageProps {
   params: Promise<{ specialty: string; city: string }>
@@ -226,16 +240,16 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'MedicalBusiness',
-            name: `${capitalizeWords(specialtyName)} en ${capitalizeWords(cityName)}`,
-            description: `Directorio de especialistas en ${specialtyName} en ${cityName}`,
+            name: `${capitalizeWords(purify.sanitize(specialtyName))} en ${capitalizeWords(purify.sanitize(cityName))}`,
+            description: `Directorio de especialistas en ${purify.sanitize(specialtyName)} en ${purify.sanitize(cityName)}`,
             address: {
               '@type': 'PostalAddress',
-              addressLocality: cityName,
+              addressLocality: purify.sanitize(cityName),
               addressCountry: 'MX',
             },
             areaServed: {
               '@type': 'City',
-              name: cityName,
+              name: purify.sanitize(cityName),
             },
           }),
         }}

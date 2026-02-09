@@ -1,9 +1,22 @@
+import { createClient } from '@/lib/supabase/server';
+
 /**
  * Video Service - Daily.co Integration
  *
  * This service handles video room creation, token generation, and status updates
  * for video consultations using Daily.co as the video provider.
  */
+
+// Type for Supabase client
+type SupabaseClient = Awaited<ReturnType<typeof createClient>>;
+
+// Type for video status update data
+interface VideoStatusUpdateData {
+  video_status: string;
+  video_started_at?: string;
+  video_ended_at?: string;
+  consultation_notes?: string;
+}
 
 export interface VideoRoom {
   roomId: string
@@ -177,7 +190,7 @@ export async function getJoinToken(
  * @param status - New video status
  */
 export async function updateVideoStatus(
-  supabase: any,
+  supabase: SupabaseClient,
   appointmentId: string,
   status: 'pending' | 'ready' | 'in_progress' | 'completed' | 'missed',
   additionalData?: {
@@ -186,7 +199,7 @@ export async function updateVideoStatus(
     consultationNotes?: string
   }
 ): Promise<void> {
-  const updateData: any = {
+  const updateData: VideoStatusUpdateData = {
     video_status: status,
   }
 

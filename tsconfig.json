@@ -38,7 +38,8 @@
     "src/App.tsx",
     "src/contexts",
     "vitest.config.ts",
-    "playwright.config.ts"
+    "playwright.config.ts",
+    "worktrees"
   ]
 }
 

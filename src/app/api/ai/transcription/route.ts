@@ -7,6 +7,7 @@ import {
   TRANSCRIPTION_SUMMARY_PROMPT,
   AI_CONFIG
 } from '@/lib/ai';
+import { validateFile, createValidationErrorResponse } from '@/lib/file-security';
 
 export async function POST(req: NextRequest) {
   if (!AI_CONFIG.features.transcription) {
@@ -45,6 +46,29 @@ export async function POST(req: NextRequest) {
         { error: 'Faltan datos requeridos' },
         { status: 400 }
       );
+    }
+
+    // Validate audio file
+    const audioValidation = await validateFile(audioFile, {
+      maxSize: 50 * 1024 * 1024, // 50MB for audio
+      allowedExtensions: ['.mp3', '.wav', '.m4a', '.ogg'],
+      validateMagicNumbers: false // Audio files have different magic numbers
+    })
+
+    if (!audioValidation.isValid) {
+      // For audio files, provide more specific error messages
+      if (audioFile.size > 50 * 1024 * 1024) {
+        return NextResponse.json(
+          { error: 'El archivo de audio es demasiado grande. Tamaño máximo: 50MB' },
+          { status: 400 }
+        )
+      }
+
+      const allowedExtensionsStr = ['.mp3', '.wav', '.m4a', '.ogg'].join(', ')
+      return NextResponse.json(
+        { error: `Formato de audio no permitido. Formatos válidos: ${allowedExtensionsStr}` },
+        { status: 400 }
+      )
     }
 
     // Verificar que la cita existe y pertenece al doctor

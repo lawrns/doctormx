@@ -3,6 +3,83 @@
  */
 
 // ============================================
+// AI PROVIDER INTERFACES
+// ============================================
+
+export type AIProvider = 'openai' | 'glm' | 'anthropic' | 'deepseek';
+
+export type AIProviderConfig = {
+  apiKey: string;
+  baseURL?: string;
+  model: string;
+  maxTokens: number;
+  temperature: number;
+};
+
+export type AIProviderSettings = {
+  openai: AIProviderConfig;
+  glm: AIProviderConfig;
+  anthropic?: AIProviderConfig;
+  deepseek?: AIProviderConfig;
+};
+
+// ============================================
+// AI CLIENT INTERFACES
+// ============================================
+
+export type ChatCompletionMessage = {
+  role: 'system' | 'user' | 'assistant';
+  content: string;
+  reasoning_content?: string; // GLM specific
+};
+
+export type ChatCompletionRequest = {
+  messages: ChatCompletionMessage[];
+  model: string;
+  max_tokens?: number;
+  temperature?: number;
+  response_format?: { type: 'json_object' };
+};
+
+export type ChatCompletionResponse = {
+  id: string;
+  object: string;
+  created: number;
+  model: string;
+  choices: Array<{
+    index: number;
+    message: {
+      role: 'assistant';
+      content?: string;
+      reasoning_content?: string;
+    };
+    finish_reason: string;
+  }>;
+  usage?: {
+    prompt_tokens: number;
+    completion_tokens: number;
+    total_tokens: number;
+  };
+};
+
+export type TranscriptionRequest = {
+  file: File | Buffer;
+  model: string;
+  language?: string;
+  response_format: 'verbose_json';
+};
+
+export type TranscriptionResponse = {
+  text: string;
+  segments?: Array<{
+    text: string;
+    start: number;
+    confidence?: number;
+  }>;
+  duration?: number;
+};
+
+// ============================================
 // PRE-CONSULTA INTELIGENTE
 // ============================================
 
@@ -176,4 +253,72 @@ export type SafetyCheck = {
     severity: 'low' | 'medium' | 'high' | 'critical';
     message: string;
   }[];
+};
+
+// ============================================
+// TOOL RESULT INTERFACES
+// ============================================
+
+export type TriageToolResult = {
+  level: string;
+  action: string;
+  message: string;
+  timeframe: string;
+  specialty: string;
+};
+
+export type ToolResultData = {
+  success: boolean;
+  data?: unknown;
+  error?: string;
+  confidence?: number;
+};
+
+export type ToolResponse<T = unknown> = {
+  success: boolean;
+  data?: T;
+  error?: string;
+  confidence?: number;
+};
+
+// ============================================
+// STRUCTURED ANALYSIS INTERFACES
+// ============================================
+
+export type StructuredAnalysisRequest<T = unknown> = {
+  systemPrompt: string;
+  userPrompt: string;
+  schema?: string;
+};
+
+export type StructuredAnalysisResponse<T = unknown> = T;
+
+export type ChatCompletionResponseFormatted = {
+  response: string;
+  usage: {
+    inputTokens: number;
+    outputTokens: number;
+    cost: number;
+  };
+  provider: 'glm' | 'openai';
+};
+
+export type TranscriptionResponseFormatted = {
+  segments: TranscriptionSegment[];
+  fullText: string;
+  duration: number;
+  cost: number;
+};
+
+// ============================================
+// DIFFERENTIAL DIAGNOSIS INTERFACE
+// ============================================
+
+export type DifferentialDiagnosis = {
+  diagnosis: string;
+  probability: number; // 0-100
+  reasoning: string;
+  supporting_evidence: string[];
+  contradicting_evidence: string[];
+  confidence: number; // 0-1
 };

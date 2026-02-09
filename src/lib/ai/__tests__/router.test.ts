@@ -3,6 +3,7 @@ import { router } from '../router'
 import { openrouter } from '../openrouter'
 import { deepseek } from '../deepseek'
 import { openai } from '@/lib/openai'
+import type { ChatCompletionResponse } from '../types'
 
 // Mock dependencies
 vi.mock('../openrouter', () => ({
@@ -104,9 +105,7 @@ describe('AI Router', () => {
       vi.mocked(openai.chat.completions.create).mockResolvedValue({
         choices: [{ message: { content: 'OpenAI result' } }],
         usage: { prompt_tokens: 100, completion_tokens: 50 },
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      } as any)
+            } as ChatCompletionResponse)
 
       const result = await router.routeVision(
         'https://example.com/image.jpg',
@@ -125,8 +124,7 @@ describe('AI Router', () => {
       vi.mocked(openai.chat.completions.create).mockResolvedValue({
         choices: [{ message: { content: 'Result' } }],
         usage: { prompt_tokens: 1000, completion_tokens: 500 },
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      } as any)
+      } as ChatCompletionResponse)
 
       const result = await router.routeVision(
         'https://example.com/image.jpg',
@@ -173,8 +171,7 @@ describe('AI Router', () => {
       vi.mocked(openai.chat.completions.create).mockResolvedValue({
         choices: [{ message: { content: 'OpenAI reasoning' } }],
         usage: { prompt_tokens: 200, completion_tokens: 100 },
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      } as any)
+      } as ChatCompletionResponse)
 
       const result = await router.routeReasoning(
         [{ role: 'user', content: 'Test' }],
@@ -192,8 +189,7 @@ describe('AI Router', () => {
       vi.mocked(openai.chat.completions.create).mockResolvedValue({
         choices: [{ message: { content: 'Chat response' } }],
         usage: { prompt_tokens: 50, completion_tokens: 30 },
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      } as any)
+      } as ChatCompletionResponse)
 
       const result = await router.routeChat(
         [{ role: 'user', content: 'Hello' }],

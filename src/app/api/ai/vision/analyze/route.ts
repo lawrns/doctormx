@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { getProfile } from '@/lib/auth'
 import { analyzeMedicalImage, saveAnalysis, ImageType } from '@/lib/ai/vision'
+import { validateFile, createValidationErrorResponse } from '@/lib/file-security'
 
 export async function POST(req: NextRequest) {
   const startTime = Date.now()
@@ -162,10 +163,21 @@ export async function POST(req: NextRequest) {
         { status: 403 }
       )
     }
-    
+
+    // Validate file upload
+    const fileValidation = await validateFile(file, {
+      maxSize: 5 * 1024 * 1024, // 5MB
+      allowedExtensions: ['.jpg', '.jpeg', '.png', '.webp'],
+      validateMagicNumbers: true
+    })
+
+    if (!fileValidation.isValid) {
+      return createValidationErrorResponse(fileValidation)
+    }
+
     const fileBuffer = await file.arrayBuffer()
     const fileName = `${user.id}/${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`
-    
+
     const { error: uploadError } = await supabase
       .storage
       .from('medical-images')

@@ -15,6 +15,15 @@ interface WhatsAppResponse {
   error?: string;
 }
 
+// Type for WhatsApp components (parameter type)
+interface WhatsAppComponent {
+  type: string;
+  parameters?: Array<{
+    type: string;
+    text?: string;
+  }>;
+}
+
 /**
  * Send a text message via WhatsApp Business API
  */
@@ -70,7 +79,7 @@ export async function sendTemplateMessage(
   to: string,
   templateName: string,
   languageCode: string = 'es_MX',
-  components?: any[]
+  components?: WhatsAppComponent[]
 ): Promise<WhatsAppResponse> {
   const phoneId = process.env.WHATSAPP_PHONE_NUMBER_ID;
   const token = process.env.WHATSAPP_ACCESS_TOKEN;

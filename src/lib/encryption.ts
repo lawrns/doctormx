@@ -13,7 +13,7 @@
  * - Supabase integration helpers
  */
 
-import { createCipheriv, createDecipheriv, randomBytes, scryptSync, timingSafeEqual, createHmac, hkdfSync } from 'crypto';
+import { createCipheriv, createDecipheriv, randomBytes, scryptSync, timingSafeEqual, createHmac, hkdfSync, Cipher, Decipher } from 'crypto';
 
 // ============================================================================
 // Types & Interfaces
@@ -244,14 +244,17 @@ export class EncryptionService {
       let aadBuffer: Buffer | undefined;
       if (associatedData) {
         aadBuffer = Buffer.from(associatedData, 'utf8');
-        (cipher as any).setAAD(aadBuffer);
+        (cipher as Cipher & { setAAD?: (buffer: Buffer) => void }).setAAD?.(aadBuffer);
       }
 
       // Encrypt the plaintext
       const encrypted = Buffer.concat([cipher.update(plaintext, 'utf8'), cipher.final()]);
-      
-      // Get authentication tag
-      const tag = (cipher as any).getAuthTag();
+
+      // Get authentication tag (required for GCM mode)
+      const tag = (cipher as Cipher & { getAuthTag?: () => Buffer }).getAuthTag?.();
+      if (!tag) {
+        throw new EncryptionError('Failed to get authentication tag', 'ENCRYPTION_FAILED');
+      }
 
       return {
         ciphertext: encrypted.toString('base64'),
@@ -301,12 +304,12 @@ export class EncryptionService {
 
       // Create decipher
       const decipher = createDecipheriv(this.algorithm, key, iv);
-      (decipher as any).setAuthTag(tag);
+      (decipher as Decipher & { setAuthTag?: (tag: Buffer) => void }).setAuthTag?.(tag);
 
       // Set associated data if present
       if (encrypted.aad) {
         const aad = Buffer.from(encrypted.aad, 'base64');
-        (decipher as any).setAAD(aad);
+        (decipher as Decipher & { setAAD?: (buffer: Buffer) => void }).setAAD?.(aad);
       }
 
       // Decrypt

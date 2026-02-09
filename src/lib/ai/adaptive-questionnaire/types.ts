@@ -28,6 +28,17 @@ export type DiagnosticHypothesis = {
   confidence: number // 0-1
 }
 
+// Alias for compatibility with DifferentialDiagnosis from main types
+export type DifferentialDiagnosis = DiagnosticHypothesis
+
+export type TriageToolResult = {
+  level: string
+  action: string
+  message: string
+  timeframe: string
+  specialty: string
+}
+
 export type RedFlag = {
   symptom: string
   severity: 'high' | 'critical'

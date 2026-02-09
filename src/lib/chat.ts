@@ -83,48 +83,59 @@ export async function getConversation(
 ): Promise<ConversationWithDetails | null> {
   const supabase = await createClient()
 
-  // Fetch conversation data separately to avoid complex join issues
-  const { data: conversation, error: convError } = await supabase
+  const { data, error } = await supabase
     .from('chat_conversations')
-    .select('*')
+    .select(`
+      *,
+      patient:profiles!chat_conversations_patient_id_fkey(
+        full_name,
+        photo_url
+      ),
+      doctor:doctors!chat_conversations_doctor_id_fkey(
+        user_id,
+        user:profiles!doctors_user_id_fkey(
+          full_name,
+          photo_url
+        )
+      )
+    `)
     .eq('id', conversationId)
     .single()
 
-  if (convError || !conversation) {
-    logger.error('Error getting conversation:', { error: convError })
+  if (error || !data) {
+    logger.error('Error getting conversation:', { error })
     return null
   }
 
-  // Fetch patient profile
-  const { data: patientProfile } = await supabase
-    .from('profiles')
-    .select('full_name, photo_url')
-    .eq('id', conversation.patient_id)
-    .single()
-
-  // Fetch doctor data and profile
-  const { data: doctorData } = await supabase
-    .from('doctors')
-    .select('user_id')
-    .eq('id', conversation.doctor_id)
-    .single()
-
-  let doctorProfile = null
-  if (doctorData?.user_id) {
-    const { data: profile } = await supabase
-      .from('profiles')
-      .select('full_name, photo_url')
-      .eq('id', doctorData.user_id)
-      .single()
-    doctorProfile = profile
+  // Type assertion for nested Supabase relations
+  const conv = data as unknown as {
+    id: string
+    patient_id: string
+    doctor_id: string
+    appointment_id: string | null
+    last_message_preview: string | null
+    last_message_at: string | null
+    is_archived: boolean
+    created_at: string
+    updated_at: string
+    patient: { full_name?: string; photo_url?: string } | null
+    doctor: { user_id?: string; user?: { full_name?: string; photo_url?: string } } | null
   }
 
   return {
-    ...conversation,
-    patient_name: patientProfile?.full_name,
-    patient_photo_url: patientProfile?.photo_url,
-    doctor_name: doctorProfile?.full_name,
-    doctor_photo_url: doctorProfile?.photo_url,
+    id: conv.id,
+    patient_id: conv.patient_id,
+    doctor_id: conv.doctor_id,
+    appointment_id: conv.appointment_id,
+    last_message_preview: conv.last_message_preview,
+    last_message_at: conv.last_message_at,
+    is_archived: conv.is_archived,
+    created_at: conv.created_at,
+    updated_at: conv.updated_at,
+    patient_name: conv.patient?.full_name,
+    patient_photo_url: conv.patient?.photo_url,
+    doctor_name: conv.doctor?.user?.full_name,
+    doctor_photo_url: conv.doctor?.user?.photo_url,
   }
 }
 
@@ -137,7 +148,20 @@ export async function getConversations(
 
     let query = supabase
       .from('chat_conversations')
-      .select('*')
+      .select(`
+        *,
+        patient:profiles!chat_conversations_patient_id_fkey(
+          full_name,
+          photo_url
+        ),
+        doctor:doctors!chat_conversations_doctor_id_fkey(
+          user_id
+        ),
+        doctor:user:profiles!doctors_user_id_fkey(
+          full_name,
+          photo_url
+        )
+      `)
       .order('last_message_at', { ascending: false })
 
     if (role === 'patient') {
@@ -153,53 +177,57 @@ export async function getConversations(
       return []
     }
 
-    // Fetch profiles separately to avoid complex join issues
-    const conversations = data || []
-    const patientIds = [...new Set(conversations.map(c => c.patient_id))]
-    const doctorIds = [...new Set(conversations.map(c => c.doctor_id))]
+    // Type assertion for nested Supabase relations
+    const conversations = (data || []) as unknown as Array<{
+      id: string
+      patient_id: string
+      doctor_id: string
+      appointment_id: string | null
+      last_message_preview: string | null
+      last_message_at: string | null
+      is_archived: boolean
+      created_at: string
+      updated_at: string
+      patient: { full_name?: string; photo_url?: string } | null
+      doctor: { user_id?: string; user?: { full_name?: string; photo_url?: string } } | null
+    }>
 
-    // Get patient profiles
-    const { data: patientProfiles } = await supabase
-      .from('profiles')
-      .select('id, full_name, photo_url')
-      .in('id', patientIds)
+    const conversationIds = conversations.map(c => c.id)
 
-    // Get doctor data with user_id (profile_id)
-    const { data: doctorsData } = await supabase
-      .from('doctors')
-      .select('id, user_id')
-      .in('id', doctorIds)
+    // Get unread counts for all conversations in a single query
+    const { data: unreadCounts } = await supabase
+      .from('chat_messages')
+      .select('conversation_id')
+      .not('id', 'in', (
+        supabase
+          .from('chat_message_receipts')
+          .select('message_id')
+          .eq('user_id', userId)
+      ))
+      .in('conversation_id', conversationIds)
+      .neq('sender_id', userId)
 
-    // Get doctor profiles using their user_id
-    const doctorUserIds = doctorsData?.map(d => d.user_id) || []
-    const { data: doctorProfiles } = await supabase
-      .from('profiles')
-      .select('id, full_name, photo_url')
-      .in('id', doctorUserIds)
+    const unreadCountsByConversation = unreadCounts?.reduce((acc, msg) => {
+      acc[msg.conversation_id] = (acc[msg.conversation_id] || 0) + 1
+      return acc
+    }, {} as Record<string, number>) || {}
 
-    const patientMap = new Map(patientProfiles?.map(p => [p.id, p]) || [])
-    const doctorToUserMap = new Map(doctorsData?.map(d => [d.id, d.user_id]) || [])
-    const doctorProfileMap = new Map(doctorProfiles?.map(p => [p.id, p]) || [])
-
-    const conversationsWithDetails = await Promise.all(
-      conversations.map(async (conv) => {
-        const patient = patientMap.get(conv.patient_id)
-        const doctorUserId = doctorToUserMap.get(conv.doctor_id)
-        const doctorProfile = doctorUserId ? doctorProfileMap.get(doctorUserId) : undefined
-        const unreadCount = await getUnreadCount(conv.id, userId)
-        
-        return {
-          ...conv,
-          patient_name: patient?.full_name,
-          patient_photo_url: patient?.photo_url,
-          doctor_name: doctorProfile?.full_name,
-          doctor_photo_url: doctorProfile?.photo_url,
-          unread_count: unreadCount,
-        }
-      })
-    )
-
-    return conversationsWithDetails
+    return conversations.map((conv) => ({
+      id: conv.id,
+      patient_id: conv.patient_id,
+      doctor_id: conv.doctor_id,
+      appointment_id: conv.appointment_id,
+      last_message_preview: conv.last_message_preview,
+      last_message_at: conv.last_message_at,
+      is_archived: conv.is_archived,
+      created_at: conv.created_at,
+      updated_at: conv.updated_at,
+      patient_name: conv.patient?.full_name,
+      patient_photo_url: conv.patient?.photo_url,
+      doctor_name: conv.doctor?.user?.full_name,
+      doctor_photo_url: conv.doctor?.user?.photo_url,
+      unread_count: unreadCountsByConversation[conv.id] || 0,
+    }))
   } catch (err) {
     logger.error('Unexpected error in getConversations:', { error: err })
     return []
@@ -304,10 +332,16 @@ export async function getMessages(
 ): Promise<MessageWithSender[]> {
   const supabase = await createClient()
 
-  // Fetch messages separately to avoid complex join issues
-  const { data: messages, error } = await supabase
+  // Fetch messages with sender profiles in a single join query
+  const { data, error } = await supabase
     .from('chat_messages')
-    .select('*')
+    .select(`
+      *,
+      sender:profiles!chat_messages_sender_id_fkey(
+        full_name,
+        photo_url
+      )
+    `)
     .eq('conversation_id', conversationId)
     .order('created_at', { ascending: false })
     .range(offset, offset + limit - 1)
@@ -317,29 +351,15 @@ export async function getMessages(
     throw error
   }
 
-  if (!messages || messages.length === 0) {
+  if (!data || data.length === 0) {
     return []
   }
 
-  // Get unique sender IDs
-  const senderIds = [...new Set(messages.map(m => m.sender_id))]
-
-  // Fetch sender profiles separately
-  const { data: senderProfiles } = await supabase
-    .from('profiles')
-    .select('id, full_name, photo_url')
-    .in('id', senderIds)
-
-  const senderMap = new Map(senderProfiles?.map(p => [p.id, p]) || [])
-
-  return messages.reverse().map((msg) => {
-    const sender = senderMap.get(msg.sender_id)
-    return {
-      ...msg,
-      sender_name: sender?.full_name,
-      sender_photo_url: sender?.photo_url,
-    }
-  })
+  return data.reverse().map((msg) => ({
+    ...msg,
+    sender_name: msg.sender?.full_name,
+    sender_photo_url: msg.sender?.photo_url,
+  }))
 }
 
 export async function markAsRead(
@@ -348,23 +368,36 @@ export async function markAsRead(
 ): Promise<void> {
   const supabase = await createClient()
 
-  const { data: messages } = await supabase
+  // Get unread message IDs
+  const { data: unreadMessages } = await supabase
     .from('chat_messages')
     .select('id')
     .eq('conversation_id', conversationId)
     .neq('sender_id', userId)
+    .not('id', 'in', (
+      supabase
+        .from('chat_message_receipts')
+        .select('message_id')
+        .eq('user_id', userId)
+    ))
 
-  if (!messages || messages.length === 0) {
+  if (!unreadMessages || unreadMessages.length === 0) {
     return
   }
 
-  for (const msg of messages) {
-    await supabase
-      .from('chat_message_receipts')
-      .upsert(
-        { message_id: msg.id, user_id: userId, read_at: new Date().toISOString() },
-        { onConflict: 'message_id, user_id' }
-      )
+  // Bulk insert/update receipts
+  const receipts = unreadMessages.map(msg => ({
+    message_id: msg.id,
+    user_id: userId,
+    read_at: new Date().toISOString(),
+  }))
+
+  const { error } = await supabase
+    .from('chat_message_receipts')
+    .upsert(receipts, { onConflict: 'message_id, user_id' })
+
+  if (error) {
+    logger.error('Error marking messages as read:', { error })
   }
 }
 
@@ -394,6 +427,7 @@ async function getUnreadCount(conversationId: string, userId: string): Promise<n
 export async function getTotalUnreadCount(userId: string): Promise<number> {
   const supabase = await createClient()
 
+  // Get all conversation IDs where the user is a participant
   const { data: conversations } = await supabase
     .from('chat_conversations')
     .select('id')
@@ -403,13 +437,27 @@ export async function getTotalUnreadCount(userId: string): Promise<number> {
     return 0
   }
 
-  let totalUnread = 0
+  const conversationIds = conversations.map(c => c.id)
 
-  for (const conv of conversations) {
-    totalUnread += await getUnreadCount(conv.id, userId)
+  // Count all unread messages in a single query
+  const { count, error } = await supabase
+    .from('chat_messages')
+    .select('*', { count: 'exact', head: true })
+    .in('conversation_id', conversationIds)
+    .neq('sender_id', userId)
+    .not('id', 'in', (
+      supabase
+        .from('chat_message_receipts')
+        .select('message_id')
+        .eq('user_id', userId)
+    ))
+
+  if (error) {
+    logger.error('Error getting total unread count:', { error })
+    return 0
   }
 
-  return totalUnread
+  return count || 0
 }
 
 export async function updatePresence(

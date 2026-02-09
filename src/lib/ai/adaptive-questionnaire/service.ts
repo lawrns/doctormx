@@ -1,9 +1,12 @@
 /**
  * Adaptive Questionnaire Service
  * Main service that coordinates all components for the adaptive questionnaire system
+ *
+ * SECURITY UPDATE: This service now uses the server-side API route instead of
+ * direct database access with service role key. The service role key is only
+ * used server-side with proper authentication and authorization.
  */
 
-import { createClient as createSupabaseClient } from '@supabase/supabase-js'
 import {
   ConversationState,
   ConversationTurn,
@@ -13,120 +16,53 @@ import {
   AdaptiveQuestionnaireConfig,
   DEFAULT_CONFIG,
   UrgencyLevel,
-  RedFlag
+  RedFlag,
+  DifferentialDiagnosis,
+  TriageToolResult
 } from './types'
 import { stateTransitionEngine } from './state-engine'
 import { toolRegistry } from './tool-registry'
 import { questionGenerator } from './question-generator'
 import { logger } from '@/lib/observability/logger'
 
-// Create Supabase client for this service
-function getSupabaseClient() {
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.VITE_SUPABASE_URL
-  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY
-  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.VITE_SUPABASE_ANON_KEY
+/**
+ * API client for the questionnaire service
+ * Calls the server-side API route which handles authentication and authorization
+ */
+class QuestionnaireApiClient {
+  private baseUrl: string
 
-  if (!supabaseUrl) {
-    throw new Error('Supabase URL not configured')
-  }
-
-  // Try service role key first, fallback to anon key
-  const key = serviceRoleKey || anonKey
-  if (!key) {
-    throw new Error('No Supabase key available')
-  }
-
-  return createSupabaseClient(supabaseUrl, key)
-}
-
-export class AdaptiveQuestionnaireService {
-  private config: AdaptiveQuestionnaireConfig
-
-  constructor(config: Partial<AdaptiveQuestionnaireConfig> = {}) {
-    this.config = { ...DEFAULT_CONFIG, ...config }
+  constructor() {
+    // Use relative URL for same-origin requests (includes auth cookies)
+    this.baseUrl = '/api/ai/questionnaire'
   }
 
   /**
-   * Start a new conversation
+   * Start a new conversation via the API
    */
   async startConversation(patientId?: string): Promise<{ conversationId: string; firstQuestion: Question }> {
-    const supabase = getSupabaseClient()
-    
-    try {
-      // Create initial state
-      const initialState: ConversationState = {
-        phase: 'history_taking',
-        collected_symptoms: [],
-        patient_info: {},
-        diagnostic_hypotheses: [],
-        knowledge_gaps: [],
-        urgency_level: 'low',
-        red_flags: [],
-        questions_asked: [],
-        question_count: 0,
-        start_time: new Date().toISOString(),
-        last_update: new Date().toISOString(),
-        completed: false
-      }
-
-      // Insert conversation into database
-      const { data: conversation, error } = await supabase
-        .from('adaptive_conversations')
-        .insert({
-          patient_id: patientId,
-          phase: initialState.phase,
-          state: initialState,
-          symptoms: [],
-          diagnoses: [],
-          urgency_level: initialState.urgency_level,
-          red_flags: []
-        })
-        .select()
-        .single()
-
-      if (error) {
-        throw new Error(`Failed to create conversation: ${error.message}`)
-      }
-
-      // Generate first question
-      const context: ConversationContext = {
-        state: initialState,
-        history: [],
-        patient_id: patientId
-      }
-
-      const firstQuestion = await questionGenerator.generateNextQuestion(context)
-
-      // Store first question as system message
-      await this.addTurn(conversation.id, 'assistant', firstQuestion.text, {
-        question_id: firstQuestion.id,
-        question_type: firstQuestion.type
-      })
-
-      logger.info('[AdaptiveQuestionnaire] Conversation started', {
-        conversationId: conversation.id,
+    const response = await fetch(this.baseUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include', // Include cookies for session auth
+      body: JSON.stringify({
+        action: 'start',
         patientId,
-        questionType: firstQuestion.type
-      })
+      }),
+    })
 
-      return {
-        conversationId: conversation.id,
-        firstQuestion
-      }
-    } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : String(error)
-      const errorStack = error instanceof Error ? error.stack : undefined
-      logger.error('[AdaptiveQuestionnaire] Failed to start conversation', { 
-        error: errorMessage,
-        stack: errorStack,
-        patientId 
-      })
-      throw new Error(`Failed to start conversation: ${errorMessage}`)
+    if (!response.ok) {
+      const error = await response.json().catch(() => ({ error: 'Unknown error' }))
+      throw new Error(error.error || `API error: ${response.status}`)
     }
+
+    return response.json()
   }
 
   /**
-   * Process patient response and generate next question
+   * Process patient response via the API
    */
   async processResponse(
     conversationId: string,
@@ -138,219 +74,111 @@ export class AdaptiveQuestionnaireService {
     toolsExecuted: ToolResult[]
     redFlags?: RedFlag[]
   }> {
-    const supabase = getSupabaseClient()
-
-    try {
-      // Fetch conversation
-      const { data: conversation, error: convError } = await supabase
-        .from('adaptive_conversations')
-        .select('*')
-        .eq('id', conversationId)
-        .single()
-
-      if (convError || !conversation) {
-        throw new Error(`Conversation not found: ${conversationId}`)
-      }
-
-      const currentState = conversation.state as ConversationState
-
-      // Fetch conversation history
-      const { data: turns, error: turnsError } = await supabase
-        .from('conversation_turns')
-        .select('*')
-        .eq('conversation_id', conversationId)
-        .order('turn_number', { ascending: true })
-
-      if (turnsError) {
-        throw new Error(`Failed to fetch conversation history: ${turnsError.message}`)
-      }
-
-      // Create context
-      type TurnRecord = { id: string; turn_number: number; role: string; content: string; tools_called: unknown; metadata: unknown; created_at: string }
-      const context: ConversationContext = {
-        state: currentState,
-        history: turns?.map((t: TurnRecord) => ({
-          id: t.id,
-          turn_number: t.turn_number,
-          role: t.role as 'user' | 'assistant' | 'system',
-          content: t.content,
-          tools_called: t.tools_called as ConversationTurn['tools_called'],
-          metadata: t.metadata as Record<string, unknown>,
-          created_at: t.created_at
-        })) || [],
-        patient_id: conversation.patient_id || undefined
-      }
-
-      // Add patient response to history
-      await this.addTurn(conversationId, 'user', patientResponse, metadata)
-
-      // Execute tools based on context
-      const toolsExecuted: ToolResult[] = []
-      const toolsCalled = []
-
-      // 1. Detect red flags
-      const redFlagTool = toolRegistry.get('detectRedFlags')
-      if (redFlagTool) {
-        const redFlagResult = await redFlagTool.execute({ text: patientResponse }, context)
-        toolsExecuted.push(redFlagResult)
-        toolsCalled.push({
-          tool_name: 'detectRedFlags',
-          parameters: { text: patientResponse },
-          result: redFlagResult,
-          executed_at: new Date().toISOString()
-        })
-
-        // Update red flags in state
-        if (redFlagResult.success && redFlagResult.data) {
-          const { red_flags, has_critical } = redFlagResult.data as { red_flags: RedFlag[]; has_critical: boolean }
-          currentState.red_flags = [...currentState.red_flags, ...red_flags]
-          
-          if (has_critical && this.config.red_flag_escalation) {
-            currentState.urgency_level = 'emergency'
-          }
-        }
-      }
-
-      // 2. Analyze symptom if present
-      const symptomTool = toolRegistry.get('analyzeSymptom')
-      if (symptomTool) {
-        const symptomResult = await symptomTool.execute({
-          symptom_name: 'detected_symptom',
-          description: patientResponse,
-          patient_text: patientResponse
-        }, context)
-        toolsExecuted.push(symptomResult)
-        toolsCalled.push({
-          tool_name: 'analyzeSymptom',
-          parameters: { symptom_name: 'detected_symptom', description: patientResponse, patient_text: patientResponse },
-          result: symptomResult,
-          executed_at: new Date().toISOString()
-        })
-
-        if (symptomResult.success && symptomResult.data) {
-          const symptom = symptomResult.data as { name: string; severity?: number; duration?: string; location?: string }
-          const existingSymptom = currentState.collected_symptoms.find(s => s.name === symptom.name)
-          
-          if (!existingSymptom) {
-            currentState.collected_symptoms.push(symptom)
-          }
-        }
-      }
-
-      // 3. Assess urgency if we have symptoms
-      if (currentState.collected_symptoms.length > 0) {
-        const urgencyTool = toolRegistry.get('assessUrgency')
-        if (urgencyTool) {
-          const urgencyResult = await urgencyTool.execute({
-            symptoms: currentState.collected_symptoms.map(s => s.name),
-            patient_text: patientResponse
-          }, context)
-          toolsExecuted.push(urgencyResult)
-          toolsCalled.push({
-            tool_name: 'assessUrgency',
-            parameters: { symptoms: currentState.collected_symptoms.map(s => s.name) },
-            result: urgencyResult,
-            executed_at: new Date().toISOString()
-          })
-
-          if (urgencyResult.success && urgencyResult.data) {
-            const { urgency_level } = urgencyResult.data as { urgency_level: UrgencyLevel }
-            currentState.urgency_level = urgency_level
-          }
-        }
-      }
-
-      // 4. Generate differential diagnosis if in focused inquiry or synthesis
-      if (currentState.phase === 'focused_inquiry' && currentState.collected_symptoms.length >= 2) {
-        const diagnosisTool = toolRegistry.get('generateDifferentialDiagnosis')
-        if (diagnosisTool) {
-          const diagnosisResult = await diagnosisTool.execute({
-            symptoms: currentState.collected_symptoms.map(s => s.name),
-            patient_info: currentState.patient_info
-          }, context)
-          toolsExecuted.push(diagnosisResult)
-          toolsCalled.push({
-            tool_name: 'generateDifferentialDiagnosis',
-            parameters: { symptoms: currentState.collected_symptoms.map(s => s.name) },
-            result: diagnosisResult,
-            executed_at: new Date().toISOString()
-          })
-
-          if (diagnosisResult.success && diagnosisResult.data) {
-            currentState.diagnostic_hypotheses = diagnosisResult.data as any[]
-          }
-        }
-      }
-
-      // Update state
-      currentState.question_count++
-      currentState.last_update = new Date().toISOString()
-
-      // Re-evaluate phase and update state
-      const updatedState = stateTransitionEngine.updateState(currentState, {
-        phase: stateTransitionEngine.evaluatePhaseTransition(currentState),
-        urgency_level: stateTransitionEngine.calculateUrgencyLevel(currentState),
-        knowledge_gaps: stateTransitionEngine.identifyKnowledgeGaps(currentState)
-      })
-
-      // Check if conversation is complete
-      if (stateTransitionEngine.isConversationComplete(updatedState)) {
-        updatedState.completed = true
-      }
-
-      // Generate next question
-      const nextQuestion = await questionGenerator.generateNextQuestion({
-        state: updatedState,
-        history: context.history,
-        patient_id: context.patient_id
-      })
-
-      // Add question to asked list
-      updatedState.questions_asked.push(nextQuestion.id)
-
-      // Store assistant response with tools used
-      await this.addTurn(conversationId, 'assistant', nextQuestion.text, {
-        question_id: nextQuestion.id,
-        question_type: nextQuestion.type,
-        tools_called: toolsCalled
-      })
-
-      // Update conversation in database
-      await supabase
-        .from('adaptive_conversations')
-        .update({
-          phase: updatedState.phase,
-          state: updatedState,
-          symptoms: updatedState.collected_symptoms,
-          diagnoses: updatedState.diagnostic_hypotheses,
-          urgency_level: updatedState.urgency_level,
-          red_flags: updatedState.red_flags,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', conversationId)
-
-      logger.info('[AdaptiveQuestionnaire] Response processed', {
+    const response = await fetch(this.baseUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify({
+        action: 'process',
         conversationId,
-        phase: updatedState.phase,
-        questionCount: updatedState.question_count,
-        urgencyLevel: updatedState.urgency_level,
-        redFlagsCount: updatedState.red_flags.length
+        patientResponse,
+        metadata,
+      }),
+    })
+
+    if (!response.ok) {
+      const error = await response.json().catch(() => ({ error: 'Unknown error' }))
+      throw new Error(error.error || `API error: ${response.status}`)
+    }
+
+    return response.json()
+  }
+}
+
+// Create singleton API client
+const apiClient = new QuestionnaireApiClient()
+
+export class AdaptiveQuestionnaireService {
+  private config: AdaptiveQuestionnaireConfig
+
+  constructor(config: Partial<AdaptiveQuestionnaireConfig> = {}) {
+    this.config = { ...DEFAULT_CONFIG, ...config }
+  }
+
+  /**
+   * Start a new conversation
+   * Uses the secure API route instead of direct database access
+   */
+  async startConversation(patientId?: string): Promise<{ conversationId: string; firstQuestion: Question }> {
+    try {
+      logger.info('[AdaptiveQuestionnaire] Starting conversation', { patientId })
+
+      // Use the secure API route
+      const result = await apiClient.startConversation(patientId)
+
+      logger.info('[AdaptiveQuestionnaire] Conversation started successfully', {
+        conversationId: result.conversationId,
+        patientId,
       })
 
-      return {
-        nextQuestion,
-        state: updatedState,
-        toolsExecuted,
-        redFlags: updatedState.red_flags.length > 0 ? updatedState.red_flags : undefined
-      }
+      return result
     } catch (error) {
-      logger.error('[AdaptiveQuestionnaire] Failed to process response', { error, conversationId })
-      throw error
+      const errorMessage = error instanceof Error ? error.message : String(error)
+      const errorStack = error instanceof Error ? error.stack : undefined
+      logger.error('[AdaptiveQuestionnaire] Failed to start conversation', {
+        error: errorMessage,
+        stack: errorStack,
+        patientId
+      })
+      throw new Error(`Failed to start conversation: ${errorMessage}`)
+    }
+  }
+
+  /**
+   * Process patient response and generate next question
+   * Uses the secure API route instead of direct database access
+   */
+  async processResponse(
+    conversationId: string,
+    patientResponse: string,
+    metadata?: { imageUrl?: string; audioUrl?: string }
+  ): Promise<{
+    nextQuestion: Question
+    state: ConversationState
+    toolsExecuted: ToolResult[]
+    redFlags?: RedFlag[]
+  }> {
+    try {
+      logger.info('[AdaptiveQuestionnaire] Processing response', {
+        conversationId,
+        responseLength: patientResponse.length,
+      })
+
+      // Use the secure API route
+      const result = await apiClient.processResponse(conversationId, patientResponse, metadata)
+
+      logger.info('[AdaptiveQuestionnaire] Response processed successfully', {
+        conversationId,
+        questionType: result.nextQuestion.type,
+      })
+
+      return result
+    } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : String(error)
+      logger.error('[AdaptiveQuestionnaire] Failed to process response', {
+        error: errorMessage,
+        conversationId,
+      })
+      throw new Error(`Failed to process response: ${errorMessage}`)
     }
   }
 
   /**
    * Get conversation state and summary
+   * NOTE: This method will be migrated to use the API route in a follow-up task
+   * For now, it uses a direct client (which respects RLS)
    */
   async getConversationState(conversationId: string): Promise<{
     state: ConversationState
@@ -362,7 +190,15 @@ export class AdaptiveQuestionnaireService {
       phase: string
     }
   }> {
-    const supabase = getSupabaseClient()
+    const { createClient } = await import('@supabase/supabase-js')
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.VITE_SUPABASE_URL
+    const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.VITE_SUPABASE_ANON_KEY
+
+    if (!supabaseUrl || !anonKey) {
+      throw new Error('Supabase not configured')
+    }
+
+    const supabase = createClient(supabaseUrl, anonKey)
 
     try {
       // Fetch conversation
@@ -424,7 +260,7 @@ export class AdaptiveQuestionnaireService {
       symptoms: string[]
       urgencyLevel: UrgencyLevel
       redFlags: RedFlag[]
-      differentialDiagnoses: any[]
+      differentialDiagnoses: DifferentialDiagnosis[]
       recommendedAction: string
       recommendedSpecialty: string
       estimatedWaitTime: string
@@ -444,7 +280,7 @@ export class AdaptiveQuestionnaireService {
       }, { state, history })
 
       if (result.success && result.data) {
-        triageResult = result.data as any
+        triageResult = result.data as TriageToolResult
       }
     }
 
@@ -474,7 +310,15 @@ export class AdaptiveQuestionnaireService {
     content: string,
     metadata?: Record<string, unknown>
   ): Promise<void> {
-    const supabase = getSupabaseClient()
+    const { createClient } = await import('@supabase/supabase-js')
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.VITE_SUPABASE_URL
+    const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.VITE_SUPABASE_ANON_KEY
+
+    if (!supabaseUrl || !anonKey) {
+      throw new Error('Supabase not configured')
+    }
+
+    const supabase = createClient(supabaseUrl, anonKey)
 
     // Get current turn count
     const { count, error: countError } = await supabase

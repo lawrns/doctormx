@@ -6,6 +6,7 @@ export default defineConfig({
     globals: true,
     environment: 'node',
     include: ['**/*.test.ts', '**/*.property.test.ts'],
+    exclude: ['node_modules/**', '.next/**', 'worktrees/**', 'dist/**'],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
@@ -18,6 +19,8 @@ export default defineConfig({
       exclude: [
         'node_modules/',
         '.next/',
+        'worktrees/',
+        'dist/',
         '**/*.test.ts',
         '**/*.property.test.ts',
         '**/mocks.ts',

@@ -42,7 +42,7 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
 
   // Stroke (ACV) - FAST Protocol
   {
-    pattern: /paralisis|debilidad.*extremo|cara.*colgada|cara.*caida|brazo.*no.*puede.*levantar|cara.*torcida/i,
+    pattern: /paralisis|debilidad.*extremo|cara.*colgada|cara.*caida|brazo.*no.*puede.*levantar|cara.*torcida|slurred.*speech|cant.*speak|speech.*difficulty|face.*drooping|arm.*weakness/i,
     message: 'Posible accidente cerebrovascular (ACV) - EMERGENCIA',
     severity: 'critical',
     category: 'Neurological',
@@ -50,7 +50,7 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
     requiresImmediate911: true,
   },
   {
-    pattern: /dificultad.*hablar|no.*puede.*hablar|palabras.*enredadas|lengua.*trabada/i,
+    pattern: /dificultad.*hablar|no.*puede.*hablar|palabras.*enredadas|lengua.*trabada|slurred.*speech|cant.*speak|speech.*difficulty|words.*jumbled|trouble.*speaking/i,
     message: 'Trastorno del habla súbito - Posible ACV',
     severity: 'critical',
     category: 'Neurological',
@@ -60,7 +60,7 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
 
   // Cardiac Emergency
   {
-    pattern: /dolor.*pecho.*opresivo|dolor.*pecho.*brazo|angina|siento.*que.*me.*muero|dolor.*pecho.*mandibula/i,
+    pattern: /dolor.*pecho.*opresivo|dolor.*pecho.*brazo|angina|siento.*que.*me.*muero|dolor.*pecho.*mandibula|chest.*pain|pressure.*chest|squeezing.*chest|crushing.*chest|heart.*attack|pain.*radiate.*arm/i,
     message: 'Dolor torácico con características cardíacas - EMERGENCIA',
     severity: 'critical',
     category: 'Cardiac',
@@ -68,7 +68,7 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
     requiresImmediate911: true,
   },
   {
-    pattern: /dolor.*pecho|dolor.*toracico/i,
+    pattern: /dolor.*pecho|dolor.*toracico|chest.*pain|tightness.*chest|discomfort.*chest/i,
     message: 'Dolor torácico - Requiere evaluación urgente',
     severity: 'high',
     category: 'Cardiac',
@@ -78,7 +78,7 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
 
   // Severe Respiratory
   {
-    pattern: /no.*puedo.*respirar|ahogo.*severo|labios.*azules|cara.*azul|cianosis/i,
+    pattern: /no.*puedo.*respirar|ahogo.*severo|labios.*azules|cara.*azul|cianosis|difficulty.*breathing|cant.*breathe|trouble.*breathing|shortness.*breath|not.*able.*breathe|wheezing.*severe|blue.*lips|cyanosis/i,
     message: 'Insuficiencia respiratoria severa - EMERGENCIA',
     severity: 'critical',
     category: 'Respiratory',
@@ -96,7 +96,7 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
     requiresImmediate911: true,
   },
   {
-    pattern: /dolor.*cabeza.*peor.*vida|cefalea.*thunderclap|dolor.*cabeza.*explosivo|dolor.*cabeza.*intenso.*subito/i,
+    pattern: /dolor.*cabeza.*peor.*vida|cefalea.*thunderclap|dolor.*cabeza.*explosivo|dolor.*cabeza.*intenso.*subito|sudden.*severe.*headache|worst.*headache.*life|thunderclap.*headache|explosive.*headache|sudden.*intense.*headache/i,
     message: 'Cefalea thunderclap - Posible hemorragia subaracnoidea',
     severity: 'critical',
     category: 'Neurological',
@@ -124,7 +124,7 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
 
   // Severe Bleeding
   {
-    pattern: /hemorragia.*no.*para|sangrado.*mucho|sangrado.*profuso|desangrando/i,
+    pattern: /hemorragia.*no.*para|sangrado.*mucho|sangrado.*profuso|desangrando|severe.*bleeding|heavy.*bleeding|bleeding.*stop|uncontrolled.*bleeding|losing.*blood|gushing.*blood/i,
     message: 'Hemorragia incontrolable - EMERGENCIA',
     severity: 'critical',
     category: 'Trauma',
@@ -164,6 +164,16 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
     category: 'Infectious',
     recommendation: 'Acuda a urgencias inmediatamente. Riesgo de infección grave',
     requiresImmediate911: false,
+  },
+
+  // Loss of Consciousness
+  {
+    pattern: /perdida.*conciencia|inconsciente|desmayo|desmayarse|faint|unconscious|passed.*out|knocked.*out|lose.*consciousness|blackout/i,
+    message: 'Pérdida de conciencia - EMERGENCIA',
+    severity: 'critical',
+    category: 'Neurological',
+    recommendation: 'Llame al 911 INMEDIATAMENTE. Requiere evaluación médica urgente',
+    requiresImmediate911: true,
   },
 
   // Altered Mental Status
