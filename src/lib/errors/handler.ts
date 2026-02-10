@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server';
 import type { AppError } from './AppError';
+import type { EmergencyDetectedError } from './AppError';
 import {
   getPatientMessage,
   getDeveloperMessage,
   isEmergencyError,
-  type EmergencyDetectedError
 } from './messages';
 
 /**
@@ -126,7 +126,15 @@ function determineSeverity(error: AppError): ErrorSeverity {
   // Emergency errors are always critical
   if (error.name === 'EmergencyDetectedError') {
     const emergencyError = error as EmergencyDetectedError;
-    return emergencyError.severity || ErrorSeverity.CRITICAL;
+    const severity = emergencyError.severity || 'critical';
+    // Convert lowercase severity to enum
+    const severityMap: Record<string, ErrorSeverity> = {
+      'low': ErrorSeverity.LOW,
+      'medium': ErrorSeverity.MEDIUM,
+      'high': ErrorSeverity.HIGH,
+      'critical': ErrorSeverity.CRITICAL,
+    };
+    return severityMap[severity] || ErrorSeverity.CRITICAL;
   }
 
   // Red flag detection is high severity

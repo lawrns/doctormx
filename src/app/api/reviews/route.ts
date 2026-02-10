@@ -19,22 +19,19 @@ export async function GET(request: NextRequest) {
     const reviewable = searchParams.get('reviewable')
 
     if (doctorId) {
-      // Use cursor-based pagination
-      const { cursor, limit, direction } = parsePaginationParams(searchParams)
+      // Parse pagination parameters
+      const { limit } = parsePaginationParams(searchParams)
 
-      const reviews = await getDoctorReviews(doctorId, { limit, cursor, direction })
+      const reviews = await getDoctorReviews(doctorId, { limit })
 
-      // Build paginated response
-      const result: PaginatedResult<any> = buildPaginatedResponse({
-        data: reviews,
-        limit,
-        getNextCursor: (review: any) =>
-          review ? encodeCursor({ id: review.id, created_at: review.created_at }) : null,
-        getPrevCursor: (review: any) =>
-          review ? encodeCursor({ id: review.id, created_at: review.created_at }) : null,
+      // Return simple response
+      return NextResponse.json({
+        reviews,
+        pagination: {
+          limit,
+          count: reviews.length,
+        }
       })
-
-      return NextResponse.json(result)
     }
 
     if (reviewable === 'true' && patientId === user.id) {

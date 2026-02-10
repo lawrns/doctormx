@@ -9,6 +9,7 @@
  */
 
 import { createClient } from '@/lib/supabase/server'
+import { logger } from '@/lib/observability/logger'
 import type {
   ArcoRequestRow,
   EscalationLevel,
@@ -225,7 +226,7 @@ export async function escalateRequest(
   if (config.requires_manager_approval) {
     // TODO: Implement manager approval workflow
     // For now, just log that approval would be required
-    console.warn(`Escalation to ${nextLevel} requires manager approval`)
+    logger.warn(`Escalation to ${nextLevel} requires manager approval`)
   }
 
   // Update request
@@ -582,9 +583,10 @@ async function sendEscalationNotification(
 
   // TODO: Implement actual notification sending
   // This would integrate with your notification system
-  console.log(`[ARCO Escalation] Request ${request.id} escalated from ${previousLevel} to ${newLevel}`)
-  console.log(`Team: ${config.responsible_team}`)
-  console.log(`Channels: ${config.notification_channels.join(', ')}`)
+  logger.info(`[ARCO Escalation] Request ${request.id} escalated from ${previousLevel} to ${newLevel}`, {
+    team: config.responsible_team,
+    channels: config.notification_channels.join(', ')
+  })
 
   // Store notification record
   const supabase = await createClient()

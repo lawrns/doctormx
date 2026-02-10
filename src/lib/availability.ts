@@ -76,11 +76,11 @@ export function generateTimeSlots(startTime: string, endTime: string) {
 
 // Helper: Obtener slots disponibles para una fecha específica
 export async function getAvailableSlots(doctorId: string, date: string) {
-  const cached = await cache.getAvailability(doctorId, date)
-  if (cached.length > 0) return cached
+  const cached = await cache.getAppointmentAvailability(doctorId, date)
+  if (cached && cached.length > 0) return cached
 
   const slots = await fetchAvailableSlots(doctorId, date)
-  await cache.setAvailability(doctorId, date, slots)
+  await cache.setAppointmentAvailability(doctorId, date, slots)
   return slots
 }
 

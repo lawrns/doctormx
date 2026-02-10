@@ -9,9 +9,9 @@ import type {
   Order,
   OrderItem,
   OrderRequest,
-  OrderStatus,
   PharmacyChain,
 } from './types';
+import { OrderStatus, DeliveryType } from './types';
 import { PharmacyIntegrationError, ProductNotFoundError, PrescriptionRequiredError } from './errors';
 import { PHARMACY_CONFIGS } from './config';
 import { CatalogService } from './catalog';
@@ -176,14 +176,14 @@ export class PrescriptionService {
     const order: Order = {
       id: orderId,
       userId: orderRequest.userId,
-      status: 'pending' as OrderStatus,
+      status: OrderStatus.PENDING,
       items: orderRequest.items,
       pharmacyId,
       delivery: {
         type: orderRequest.deliveryType,
         address: orderRequest.deliveryAddress,
         estimatedTime: config?.deliveryConfig.baseDeliveryTime || 60,
-        trackingNumber: orderRequest.deliveryType === 'home_delivery'
+        trackingNumber: orderRequest.deliveryType === DeliveryType.HOME_DELIVERY
           ? `TRK-${Math.random().toString(36).substr(2, 10).toUpperCase()}`
           : undefined,
       },
@@ -198,7 +198,7 @@ export class PrescriptionService {
       },
       timeline: [
         {
-          status: 'pending' as OrderStatus,
+          status: OrderStatus.PENDING,
           timestamp: now,
           description: 'Orden recibida y en proceso de confirmación',
         },
@@ -221,10 +221,10 @@ export class PrescriptionService {
    */
   private simulateOrderProgression(orderId: string): void {
     const stages: { status: OrderStatus; delay: number; description: string }[] = [
-      { status: 'confirmed', delay: 5000, description: 'Orden confirmada' },
-      { status: 'preparing', delay: 15000, description: 'Preparando su pedido' },
-      { status: 'out_for_delivery', delay: 30000, description: 'En camino' },
-      { status: 'delivered', delay: 60000, description: 'Entregado' },
+      { status: OrderStatus.CONFIRMED, delay: 5000, description: 'Orden confirmada' },
+      { status: OrderStatus.PREPARING, delay: 15000, description: 'Preparando su pedido' },
+      { status: OrderStatus.OUT_FOR_DELIVERY, delay: 30000, description: 'En camino' },
+      { status: OrderStatus.DELIVERED, delay: 60000, description: 'Entregado' },
     ];
 
     let cumulativeDelay = 0;
@@ -296,9 +296,9 @@ export class PrescriptionService {
         );
       }
 
-      order.status = 'cancelled';
+      order.status = OrderStatus.CANCELLED;
       order.timeline.push({
-        status: 'cancelled',
+        status: OrderStatus.CANCELLED,
         timestamp: new Date(),
         description: reason || 'Orden cancelada por el usuario',
       });

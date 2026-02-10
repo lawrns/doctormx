@@ -7,6 +7,7 @@ import {
   encodeCursor,
 } from '@/lib/pagination'
 import type { PaginatedResult } from '@/lib/pagination'
+import { logger } from '@/lib/observability/logger'
 
 /**
  * GET /api/patient/appointments
@@ -28,10 +29,25 @@ export async function GET(request: Request) {
     // Parse pagination parameters
     const { cursor, limit, direction } = parsePaginationParams(searchParams)
 
-    // Build base query for appointments only (no joins to avoid syntax issues)
+    // Build base query with JOIN to get doctor and profile data in ONE query
+    // This eliminates N+1 query problem
     let query = supabase
       .from('appointments')
-      .select('*')
+      .select(`
+        *,
+        doctors!inner(
+          id,
+          specialty,
+          price_cents,
+          currency,
+          rating,
+          profiles!inner(
+            id,
+            full_name,
+            photo_url
+          )
+        )
+      `)
       .eq('patient_id', user.id)
 
     // Apply cursor filtering for forward pagination
@@ -77,7 +93,7 @@ export async function GET(request: Request) {
     const { data: appointmentsData, error: appointmentsError } = await query
 
     if (appointmentsError) {
-      console.error('Error fetching appointments:', appointmentsError)
+      logger.error('Error fetching appointments', { error: appointmentsError })
       return new Response(JSON.stringify({ error: 'Failed to fetch appointments', details: appointmentsError.message }), {
         status: 500,
         headers: { 'Content-Type': 'application/json' }
@@ -85,48 +101,16 @@ export async function GET(request: Request) {
     }
 
     // Check if there are more results
-    const rawAppointments = (appointmentsData || []) as AppointmentRecord[]
+    const rawAppointments = (appointmentsData || []) as Array<any>
     const hasMore = rawAppointments.length > limit
     const paginatedAppointments = hasMore ? rawAppointments.slice(0, limit) : rawAppointments
 
-    // Get unique doctor IDs from appointments
-    const doctorIds = [...new Set(paginatedAppointments.map(apt => apt.doctor_id).filter(Boolean))]
-
-    // Fetch doctor data separately
-    let doctorsData: DoctorRecord[] = []
-    let profilesData: Array<{ id: string; full_name: string; photo_url: string | null }> = []
-
-    if (doctorIds.length > 0) {
-      // Fetch doctors
-      const { data: doctors } = await supabase
-        .from('doctors')
-        .select('id, specialty, price_cents, currency, rating')
-        .in('id', doctorIds)
-      doctorsData = (doctors || []) as DoctorRecord[]
-
-      // Fetch profiles - doctors.id = profiles.id
-      if (doctorsData.length > 0) {
-        const { data: profiles } = await supabase
-          .from('profiles')
-          .select('id, full_name, photo_url')
-          .in('id', doctorsData.map(d => d.id))
-        profilesData = (profiles || []) as Array<{ id: string; full_name: string; photo_url: string | null }>
-      }
-    }
-
-    // Combine data
-    const appointments = (paginatedAppointments || []).map((apt: AppointmentRecord) => {
-      const doctor = doctorsData.find(d => d.id === apt.doctor_id)
-      const profile = doctor ? profilesData.find(p => p.id === doctor.id) : null
-
-      return {
-        ...apt,
-        doctor: doctor ? {
-          ...doctor,
-          profile: profile || null
-        } : null
-      }
-    })
+    // Map results to enriched appointments format
+    // The join query returns data with nested structure: { doctors: { profiles: {...} } }
+    const appointments = paginatedAppointments.map((apt: any) => ({
+      ...apt,
+      doctor: apt.doctors || null
+    }))
 
     // Build pagination response
     const result: PaginatedResult<EnrichedAppointment> = buildPaginatedResponse({
@@ -143,7 +127,7 @@ export async function GET(request: Request) {
       headers: { 'Content-Type': 'application/json' }
     })
   } catch (error: unknown) {
-    console.error('Error in GET /api/patient/appointments:', error)
+    logger.error('Error in GET /api/patient/appointments', { error })
     const errorMessage = error instanceof Error ? error.message : 'Unknown error'
     return new Response(JSON.stringify({ error: 'Unauthorized', details: errorMessage }), {
       status: 401,

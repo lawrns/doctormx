@@ -8,6 +8,7 @@
 
 import { AI_CONFIG, getActiveProvider } from './config';
 import { createClient } from '@/lib/supabase/server';
+import { logger } from '@/lib/observability/logger';
 import type {
   PreConsultaMessage,
   TranscriptionSegment,
@@ -41,7 +42,7 @@ async function getGLMClient(): Promise<OpenAI> {
         baseURL: AI_CONFIG.glm.baseURL,
       });
     } catch (error) {
-      console.error("Error al inicializar GLM client:", error);
+      logger.error("Error al inicializar GLM client", { error });
       throw new Error("GLM client no disponible");
     }
   }
@@ -61,7 +62,7 @@ async function getOpenAIClient(): Promise<OpenAI> {
         apiKey: AI_CONFIG.openai.apiKey,
       });
     } catch (error) {
-      console.error("Error al inicializar OpenAI client:", error);
+      logger.error("Error al inicializar OpenAI client", { error });
       throw new Error("OpenAI client no disponible");
     }
   }
@@ -129,7 +130,7 @@ export async function chatCompletion(params: {
       const configuredMaxTokens = provider === 'glm' ? AI_CONFIG.glm.maxTokens : AI_CONFIG.openai.maxTokens;
       const configuredTemp = provider === 'glm' ? AI_CONFIG.glm.temperature : AI_CONFIG.openai.temperature;
 
-      console.log(`[AI] Intentando con ${provider}...`);
+      logger.debug(`[AI] Intentando con ${provider}...`);
 
       const completion = await client.chat.completions.create({
         model,
@@ -155,7 +156,7 @@ export async function chatCompletion(params: {
           (usage.outputTokens / 1_000_000) * AI_CONFIG.costs.gpt4oMiniOutputPer1M;
       }
 
-      console.log(`[AI] Éxito con ${provider}`);
+      logger.info(`[AI] Éxito con ${provider}`);
 
       // GLM-4.7 returns reasoning_content instead of content
       const message = completion.choices[0]?.message;
@@ -168,7 +169,7 @@ export async function chatCompletion(params: {
         provider,
       };
     } catch (error: unknown) {
-      console.error(`[AI] Error con ${provider}:`, error);
+      logger.error(`[AI] Error con ${provider}`, { error });
       lastError = error;
 
       // Check for specific errors
@@ -179,19 +180,19 @@ export async function chatCompletion(params: {
 
       // Check for insufficient balance (GLM specific)
       if (status === 429 && errorMessage.includes('Insufficient balance')) {
-        console.warn(`[AI] ${provider} sin saldo - intentando fallback...`);
+        logger.warn(`[AI] ${provider} sin saldo - intentando fallback...`);
         continue; // Try next provider
       }
 
       // Check for rate limit
       if (status === 429) {
-        console.warn(`[AI] ${provider} rate limit - intentando fallback...`);
+        logger.warn(`[AI] ${provider} rate limit - intentando fallback...`);
         continue; // Try next provider
       }
 
       // Check for auth error
       if (status === 401) {
-        console.warn(`[AI] ${provider} API key inválida - intentando fallback...`);
+        logger.warn(`[AI] ${provider} API key inválida - intentando fallback...`);
         continue; // Try next provider
       }
 
@@ -201,7 +202,7 @@ export async function chatCompletion(params: {
   }
 
   // All providers failed
-  console.error('[AI] Todos los proveedores fallaron');
+  logger.error('[AI] Todos los proveedores fallaron');
 
   // Provide helpful error message
   if (!AI_CONFIG.glm.apiKey && !AI_CONFIG.openai.apiKey) {
@@ -267,7 +268,7 @@ export async function transcribeAudio(params: {
       cost,
     };
   } catch (error: unknown) {
-    console.error('Error en transcripción:', error);
+    logger.error('Error en transcripción', { error });
     const message = error && typeof error === 'object' && 'message' in error && typeof error.message === 'string'
       ? error.message
       : 'Desconocido';
@@ -326,7 +327,7 @@ export async function structuredAnalysis<T>(params: {
         (message as { reasoning_content?: string })?.reasoning_content || '{}';
       return JSON.parse(responseText) as T;
     } catch (error: unknown) {
-      console.error(`[AI] Error análisis con ${provider}:`, error);
+      logger.error(`[AI] Error análisis con ${provider}`, { error });
       lastError = error;
       continue; // Try next provider
     }
@@ -402,6 +403,6 @@ export async function auditAIOperation(params: {
       error: params.error,
     });
   } catch (error) {
-    console.error('Error logging AI operation to DB:', error);
+    logger.error('Error logging AI operation to DB', { error });
   }
 }

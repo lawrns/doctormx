@@ -1,24 +1,26 @@
 /**
  * AI Confidence Scoring System for Medical Diagnoses
- * 
+ *
  * This module provides a comprehensive confidence scoring system for telemedicine
  * diagnoses, incorporating demographic factors, comorbidities, symptom duration,
  * and evidence-based medical knowledge.
- * 
+ *
  * @example
  * ```typescript
  * import { confidenceCalculator, enhanceWithConfidence } from '@/lib/ai/confidence';
- * 
+ *
  * // Calculate confidence for a diagnosis
  * const result = confidenceCalculator.calculateBaseConfidence(
  *   [{ condition: 'Influenza', confidence: 75 }],
  *   ['fever', 'cough', 'fatigue']
  * );
- * 
+ *
  * // Enhance AI response with confidence scoring
  * const enhancedResponse = enhanceWithConfidence(aiResponse, patientContext);
  * ```
  */
+
+import { logger } from '@/lib/observability/logger'
 
 // ============================================================================
 // TYPES AND INTERFACES
@@ -1339,20 +1341,20 @@ export function exampleUsage(): void {
   const result = confidenceCalculator.analyzeConfidence(aiDiagnoses, patientContext);
 
   // 4. Display results
-  console.log('Primary Diagnosis:', result.primaryDiagnosis.condition);
-  console.log('Confidence:', formatConfidenceRange(result.confidenceInterval));
-  console.log('Confidence Level:', result.confidenceLevel);
-  console.log('Recommend Doctor:', result.recommendDoctor);
-  console.log('Risk Factors:', result.riskFactors);
+  logger.debug('Primary Diagnosis', { condition: result.primaryDiagnosis.condition })
+  logger.debug('Confidence', { range: formatConfidenceRange(result.confidenceInterval) })
+  logger.debug('Confidence Level', { level: result.confidenceLevel })
+  logger.debug('Recommend Doctor', { recommend: result.recommendDoctor })
+  logger.debug('Risk Factors', { factors: result.riskFactors })
 
   // 5. Get UI colors
-  const colors = getConfidenceColor(result.primaryDiagnosis.confidence);
-  console.log('UI Colors:', colors);
+  const colors = getConfidenceColor(result.primaryDiagnosis.confidence)
+  logger.debug('UI Colors', { colors })
 
   // 6. Enhance raw AI response
   const rawAIResponse = "Based on symptoms, most likely influenza (75% confidence). Common cold is also possible.";
   const enhanced = enhanceWithConfidence(rawAIResponse, patientContext);
-  console.log('Enhanced Response:', enhanced);
+  logger.debug('Enhanced Response', { enhanced })
 }
 
 // Default export

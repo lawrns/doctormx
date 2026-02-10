@@ -402,7 +402,15 @@ export async function cancelSubscription(
 /**
  * Check subscription status
  */
-export async function checkSubscriptionStatus(doctorId: string) {
+interface SubscriptionStatusResult {
+    hasSubscription: boolean
+    isActive: boolean
+    subscription: any | null
+    daysUntilRenewal?: number
+    error?: string
+}
+
+export async function checkSubscriptionStatus(doctorId: string): Promise<SubscriptionStatusResult> {
     // Try cache first
     const cached = await cache.getSubscriptionStatus(doctorId)
     if (cached) {

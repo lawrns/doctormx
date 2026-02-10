@@ -7,7 +7,7 @@
  * @deprecated Use the new cache module from '@/lib/cache' instead
  */
 
-// Re-export everything from the new cache module
+// Re-export everything from the new cache module's index
 export {
   cache,
   getCacheClient,
@@ -17,7 +17,7 @@ export {
   type CacheResult,
   type CacheSetOptions,
   type CacheStats,
-} from './cache'
+} from './cache/index'
 
 // Re-export Redis for backward compatibility
 export { redis } from './cache/client'
@@ -25,7 +25,7 @@ export { redis } from './cache/client'
 // Re-export rate limiters for backward compatibility
 import { Ratelimit } from '@upstash/ratelimit'
 import { logger } from '@/lib/observability/logger'
-import { getCacheClient } from './cache/client'
+import { getCacheClient as getClient } from './cache/client'
 
 // No-op rate limiter for when Redis is not configured
 type RateLimitResult = { success: boolean; limit: number; remaining: number; reset: number }
@@ -35,7 +35,7 @@ const noopRateLimiter = {
 
 // Create rate limiters only when Redis is available
 function createRateLimiter(windowSize: number, windowDuration: string, prefix: string) {
-  const client = getCacheClient()
+  const client = getClient()
 
   // Check if we're using Redis (has required methods)
   if ('ping' in client && typeof client.ping === 'function') {
@@ -64,23 +64,3 @@ export const rateLimit = {
   write: createRateLimiter(30, '1 m', 'ratelimit:write'),
   read: createRateLimiter(100, '1 m', 'ratelimit:read'),
 }
-
-// Add backward compatibility methods that were in the old cache object
-const legacyCache = {
-  async getAvailability(doctorId: string, date: string): Promise<string[]> {
-    const { cache } = await import('./cache')
-    return cache.getAppointmentAvailability(doctorId, date)
-  },
-
-  async setAvailability(doctorId: string, date: string, slots: string[]): Promise<boolean> {
-    const { cache } = await import('./cache')
-    return cache.setAppointmentAvailability(doctorId, date, slots)
-  },
-}
-
-// Merge legacy methods with new cache export
-export { cache }
-
-// Add legacy methods to cache object for backward compatibility
-;(cache as any).getAvailability = legacyCache.getAvailability
-;(cache as any).setAvailability = legacyCache.setAvailability

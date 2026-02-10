@@ -13,6 +13,7 @@ import {
   ValidationError,
   AuthenticationError,
   RateLimitError,
+  ExternalServiceError,
   handleError,
   createRouteHandler,
   ERROR_CODES,
@@ -39,7 +40,7 @@ export async function aiConsultationRoute(request: NextRequest) {
     const { symptoms, userId } = body;
 
     // Check for emergency symptoms
-    const emergencySymptoms = checkForEmergencySymptoms(symptoms);
+    const emergencySymptoms = await checkForEmergencySymptoms(symptoms);
     if (emergencySymptoms.detected) {
       throw new EmergencyDetectedError(
         ERROR_CODES.EMERGENCY_DETECTED,
@@ -132,10 +133,11 @@ export async function prescriptionRoute(request: NextRequest) {
 export async function appointmentBookingRoute(request: NextRequest) {
   const handler = createRouteHandler('/api/appointments/book', 'POST');
 
-  return handler(async () => {
-    const body = await request.json();
-    const { doctorId, timeSlot, patientId } = body;
+  // Get body first in outer scope
+  const body = await request.json();
+  const { doctorId, timeSlot, patientId } = body;
 
+  return handler(async () => {
     // Check availability
     const availability = await checkDoctorAvailability(doctorId, timeSlot);
 
@@ -168,7 +170,7 @@ export async function appointmentBookingRoute(request: NextRequest) {
 
     return NextResponse.json({ success: true, data: appointment });
 
-  }, { userId: body.patientId });
+  }, { userId: patientId });
 }
 
 // ============================================
@@ -177,57 +179,59 @@ export async function appointmentBookingRoute(request: NextRequest) {
 
 /**
  * Example: React Component Error Handling
+ * Note: This example has been commented out as it requires JSX (.tsx file).
+ * To use, move this code to a .tsx file.
  */
-'use client';
-
-import { useState } from 'react';
-import { handleClientError, createToastError } from '@/lib/errors';
-import { toast } from 'sonner';
-
-export function ConsultationForm() {
-  const [symptoms, setSymptoms] = useState('');
-
-  const handleSubmit = async () => {
-    try {
-      const response = await fetch('/api/ai/consult', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ symptoms })
-      });
-
-      if (!response.ok) {
-        const error = await response.json();
-        throw new Error(error.error?.message || 'Consultation failed');
-      }
-
-      const result = await response.json();
-      toast.success('Consulta completada');
-
-    } catch (error) {
-      const toastError = createToastError(error);
-
-      if (toastError.variant === 'destructive') {
-        toast.error(toastError.title, {
-          description: toastError.description,
-          action: {
-            label: 'Llamar 911',
-            onClick: () => window.location.href = 'tel:911'
-          }
-        });
-      } else {
-        toast.warning(toastError.title, {
-          description: toastError.description
-        });
-      }
-    }
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      {/* Form fields */}
-    </form>
-  );
-}
+// 'use client';
+//
+// import { useState } from 'react';
+// import { handleClientError, createToastError } from '@/lib/errors';
+// import { toast } from 'sonner';
+//
+// export function ConsultationForm() {
+//   const [symptoms, setSymptoms] = useState('');
+//
+//   const handleSubmit = async () => {
+//     try {
+//       const response = await fetch('/api/ai/consult', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify({ symptoms })
+//       });
+//
+//       if (!response.ok) {
+//         const error = await response.json();
+//         throw new Error(error.error?.message || 'Consultation failed');
+//       }
+//
+//       const result = await response.json();
+//       toast.success('Consulta completada');
+//
+//     } catch (error) {
+//       const toastError = createToastError(error);
+//
+//       if (toastError.variant === 'destructive') {
+//         toast.error(toastError.title, {
+//           description: toastError.description,
+//           action: {
+//             label: 'Llamar 911',
+//             onClick: () => window.location.href = 'tel:911'
+//           }
+//         });
+//       } else {
+//         toast.warning(toastError.title, {
+//           description: toastError.description
+//         });
+//       }
+//     }
+//   };
+//
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       {/* Form fields */}
+//     </form>
+//   );
+// }
 
 // ============================================
 // MIDDLEWARE EXAMPLES
@@ -344,73 +348,75 @@ async function incrementRateLimit(identifier: string): Promise<void> {
 
 /**
  * Example: Error Boundary Component
+ * Note: This example has been commented out as it requires JSX (.tsx file).
+ * To use, move this code to a .tsx file.
  */
-'use client';
-
-import { Component, ReactNode } from 'react';
-import { getErrorInfo } from '@/lib/errors';
-
-interface Props {
-  children: ReactNode;
-  fallback?: ReactNode;
-}
-
-interface State {
-  hasError: boolean;
-  error?: Error;
-}
-
-export class MedicalErrorBoundary extends Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = { hasError: false };
-  }
-
-  static getDerivedStateFromError(error: Error): State {
-    return { hasError: true, error };
-  }
-
-  componentDidCatch(error: Error, errorInfo: any) {
-    const info = getErrorInfo(error);
-
-    // Log the error
-    logError(error, {
-      componentStack: errorInfo.componentStack,
-      timestamp: new Date().toISOString()
-    });
-
-    // If it's an emergency, show special UI
-    if (info.title.includes('Emergency')) {
-      // Navigate to emergency page
-      window.location.href = '/emergencia';
-    }
-  }
-
-  render() {
-    if (this.state.hasError) {
-      const info = getErrorInfo(this.state.error!);
-
-      return this.props.fallback || (
-        <div className="error-container">
-          <h2>{info.title}</h2>
-          <p>{info.message}</p>
-          {info.showRetry && (
-            <button onClick={() => window.location.reload()}>
-              Intentar nuevamente
-            </button>
-          )}
-          {info.showHome && (
-            <button onClick={() => window.location.href = '/'}>
-              Ir al inicio
-            </button>
-          )}
-        </div>
-      );
-    }
-
-    return this.props.children;
-  }
-}
+// 'use client';
+//
+// import { Component, ReactNode } from 'react';
+// import { getErrorInfo } from '@/lib/errors';
+//
+// interface Props {
+//   children: ReactNode;
+//   fallback?: ReactNode;
+// }
+//
+// interface State {
+//   hasError: boolean;
+//   error?: Error;
+// }
+//
+// export class MedicalErrorBoundary extends Component<Props, State> {
+//   constructor(props: Props) {
+//     super(props);
+//     this.state = { hasError: false };
+//   }
+//
+//   static getDerivedStateFromError(error: Error): State {
+//     return { hasError: true, error };
+//   }
+//
+//   componentDidCatch(error: Error, errorInfo: any) {
+//     const info = getErrorInfo(error);
+//
+//     // Log the error
+//     logError(error, {
+//       componentStack: errorInfo.componentStack,
+//       timestamp: new Date().toISOString()
+//     });
+//
+//     // If it's an emergency, show special UI
+//     if (info.title.includes('Emergency')) {
+//       // Navigate to emergency page
+//       window.location.href = '/emergencia';
+//     }
+//   }
+//
+//   render() {
+//     if (this.state.hasError) {
+//       const info = getErrorInfo(this.state.error!);
+//
+//       return this.props.fallback || (
+//         <div className="error-container">
+//           <h2>{info.title}</h2>
+//           <p>{info.message}</p>
+//           {info.showRetry && (
+//             <button onClick={() => window.location.reload()}>
+//               Intentar nuevamente
+//             </button>
+//           )}
+//           {info.showHome && (
+//             <button onClick={() => window.location.href = '/'}>
+//               Ir al inicio
+//             </button>
+//           )}
+//         </div>
+//       );
+//     }
+//
+//     return this.props.children;
+//   }
+// }
 
 // ============================================
 // SERVICE LAYER EXAMPLES

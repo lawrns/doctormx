@@ -56,10 +56,10 @@ import type {
   DeliveryEstimate,
   Coordinates,
   Address,
-  DeliveryType,
   PharmacyChain,
   StockCheckResult,
 } from './types';
+import { DeliveryType } from './types';
 
 import {
   PharmacyIntegrationError,
@@ -301,7 +301,7 @@ export class PharmacyAPIIntegration {
    */
   async getDeliveryEstimates(
     coordinates: Coordinates,
-    deliveryType: DeliveryType = 'home_delivery'
+    deliveryType: DeliveryType = DeliveryType.HOME_DELIVERY
   ): Promise<DeliveryEstimate[]> {
     return this.delivery.getDeliveryEstimates(coordinates, deliveryType);
   }
@@ -319,7 +319,7 @@ export class PharmacyAPIIntegration {
   /**
    * Get delivery cost for a pharmacy and order total
    */
-  getDeliveryCost(pharmacyId: PharmacyChain, orderTotal: number, deliveryType: DeliveryType = 'home_delivery'): number {
+  getDeliveryCost(pharmacyId: PharmacyChain, orderTotal: number, deliveryType: DeliveryType = DeliveryType.HOME_DELIVERY): number {
     return this.delivery.getDeliveryCost(pharmacyId, orderTotal, deliveryType);
   }
 
@@ -328,7 +328,7 @@ export class PharmacyAPIIntegration {
    */
   getEstimatedDeliveryTime(
     pharmacyId: PharmacyChain,
-    deliveryType: DeliveryType = 'home_delivery',
+    deliveryType: DeliveryType = DeliveryType.HOME_DELIVERY,
     distanceKm?: number
   ): number {
     return this.delivery.getEstimatedDeliveryTime(pharmacyId, deliveryType, distanceKm);
@@ -346,7 +346,7 @@ export class PharmacyAPIIntegration {
    */
   async getBestDeliveryOption(
     address: Address,
-    deliveryType: DeliveryType = 'home_delivery'
+    deliveryType: DeliveryType = DeliveryType.HOME_DELIVERY
   ): Promise<DeliveryEstimate | null> {
     return this.delivery.getBestDeliveryOption(address, deliveryType);
   }

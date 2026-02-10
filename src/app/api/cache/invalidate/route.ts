@@ -48,14 +48,17 @@ export async function POST(request: NextRequest) {
       if (doctorId) {
         success = await cache.invalidateDoctor(doctorId)
       } else {
-        success = await cache.invalidate('doctor:*')
-        success = await cache.invalidate('doctors:list:*') && success
+        const result1 = await cache.invalidate('doctor:*')
+        const result2 = await cache.invalidate('doctors:list:*')
+        success = result1 > 0 || result2 > 0
       }
     } else if (type === 'availability') {
       const { doctorId } = body
-      success = await cache.invalidateAvailability(doctorId)
+      const result = await cache.invalidateAppointmentAvailability(doctorId)
+      success = result
     } else if (pattern) {
-      success = await cache.invalidate(pattern)
+      const result = await cache.invalidate(pattern)
+      success = result > 0
     }
 
     return NextResponse.json({

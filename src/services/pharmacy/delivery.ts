@@ -9,9 +9,9 @@ import type {
   Address,
   Coordinates,
   DeliveryEstimate,
-  DeliveryType,
   PharmacyChain,
 } from './types';
+import { DeliveryType } from './types';
 import { DeliveryNotAvailableError } from './errors';
 import { PHARMACY_CONFIGS, MOCK_PHARMACY_LOCATIONS } from './config';
 
@@ -121,7 +121,7 @@ export class DeliveryService {
       }
 
       // Calculate estimated time based on distance
-      const baseTime = deliveryType === 'express' && config.features.expressDelivery
+      const baseTime = deliveryType === DeliveryType.EXPRESS && config.features.expressDelivery
         ? config.deliveryConfig.expressDeliveryTime
         : config.deliveryConfig.baseDeliveryTime;
 
@@ -130,7 +130,7 @@ export class DeliveryService {
       const estimatedMinutes = baseTime + distanceTime;
 
       // Calculate cost
-      const baseCost = deliveryType === 'express' && config.features.expressDelivery
+      const baseCost = deliveryType === DeliveryType.EXPRESS && config.features.expressDelivery
         ? config.deliveryConfig.expressCost
         : config.deliveryConfig.baseCost;
 
@@ -171,7 +171,7 @@ export class DeliveryService {
 
     const estimates = await this.getDeliveryEstimates(
       address.coordinates,
-      'home_delivery'
+      DeliveryType.HOME_DELIVERY
     );
 
     const availablePharmacies = estimates
@@ -203,7 +203,7 @@ export class DeliveryService {
   /**
    * Get delivery cost for a pharmacy and order total
    */
-  getDeliveryCost(pharmacyId: PharmacyChain, orderTotal: number, deliveryType: DeliveryType = 'home_delivery'): number {
+  getDeliveryCost(pharmacyId: PharmacyChain, orderTotal: number, deliveryType: DeliveryType = DeliveryType.HOME_DELIVERY): number {
     const config = PHARMACY_CONFIGS[pharmacyId];
 
     if (!config) return 0;
@@ -213,7 +213,7 @@ export class DeliveryService {
       return 0;
     }
 
-    return deliveryType === 'express' && config.features.expressDelivery
+    return deliveryType === DeliveryType.EXPRESS && config.features.expressDelivery
       ? config.deliveryConfig.expressCost
       : config.deliveryConfig.baseCost;
   }
@@ -223,14 +223,14 @@ export class DeliveryService {
    */
   getEstimatedDeliveryTime(
     pharmacyId: PharmacyChain,
-    deliveryType: DeliveryType = 'home_delivery',
+    deliveryType: DeliveryType = DeliveryType.HOME_DELIVERY,
     distanceKm?: number
   ): number {
     const config = PHARMACY_CONFIGS[pharmacyId];
 
     if (!config) return 60;
 
-    const baseTime = deliveryType === 'express' && config.features.expressDelivery
+    const baseTime = deliveryType === DeliveryType.EXPRESS && config.features.expressDelivery
       ? config.deliveryConfig.expressDeliveryTime
       : config.deliveryConfig.baseDeliveryTime;
 
@@ -279,7 +279,7 @@ export class DeliveryService {
    */
   async getBestDeliveryOption(
     address: Address,
-    deliveryType: DeliveryType = 'home_delivery'
+    deliveryType: DeliveryType = DeliveryType.HOME_DELIVERY
   ): Promise<DeliveryEstimate | null> {
     if (!address.coordinates) {
       return null;
@@ -374,11 +374,11 @@ export class DeliveryService {
 
     // Standard home delivery
     if (config.features.homeDelivery) {
-      const cost = this.getDeliveryCost(pharmacyId, orderTotal, 'home_delivery');
+      const cost = this.getDeliveryCost(pharmacyId, orderTotal, DeliveryType.HOME_DELIVERY);
       const time = config.deliveryConfig.baseDeliveryTime;
 
       options.push({
-        type: 'home_delivery',
+        type: DeliveryType.HOME_DELIVERY,
         available: true,
         estimatedTime: time,
         cost,
@@ -390,11 +390,11 @@ export class DeliveryService {
 
     // Express delivery
     if (config.features.expressDelivery) {
-      const cost = this.getDeliveryCost(pharmacyId, orderTotal, 'express');
+      const cost = this.getDeliveryCost(pharmacyId, orderTotal, DeliveryType.EXPRESS);
       const time = config.deliveryConfig.expressDeliveryTime;
 
       options.push({
-        type: 'express',
+        type: DeliveryType.EXPRESS,
         available: true,
         estimatedTime: time,
         cost,
@@ -404,7 +404,7 @@ export class DeliveryService {
 
     // Pickup
     options.push({
-      type: 'pickup',
+      type: DeliveryType.PICKUP,
       available: true,
       estimatedTime: 30,
       cost: 0,

@@ -17,7 +17,8 @@
  */
 
 // Core cache operations
-export { cache, getCacheClient } from './cache'
+export { cache } from './cache'
+export { getCacheClient } from './client'
 
 // Re-export core types
 export type { CacheResult, CacheSetOptions, CacheStats } from './cache'
@@ -148,6 +149,10 @@ export const TTL = {
 // ============================================================================
 // Default Export
 // ============================================================================
+
+import { cache } from './cache'
+import { getCacheClient, getCacheHealth } from './client'
+import { CacheTags } from './keys'
 
 export default {
   cache,

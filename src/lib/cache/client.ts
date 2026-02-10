@@ -381,11 +381,10 @@ class UpstashClient implements CacheClient {
 
   async mset(...items: Array<{ key: string; value: string }>): Promise<boolean> {
     try {
-      const keyValuePairs: string[] = []
+      // Set each key-value pair individually
       for (const item of items) {
-        keyValuePairs.push(item.key, item.value)
+        await this.client.set(item.key, item.value)
       }
-      await this.client.mset(...keyValuePairs)
       return true
     } catch (error) {
       logger.error('Redis mset error', { error })
@@ -395,7 +394,7 @@ class UpstashClient implements CacheClient {
 
   async sadd(key: string, ...members: string[]): Promise<number> {
     try {
-      return await this.client.sadd(key, ...members)
+      return await this.client.sadd(key, members)
     } catch (error) {
       logger.error('Redis sadd error', { key, error })
       return 0
@@ -404,7 +403,7 @@ class UpstashClient implements CacheClient {
 
   async srem(key: string, ...members: string[]): Promise<number> {
     try {
-      return await this.client.srem(key, ...members)
+      return await this.client.srem(key, members)
     } catch (error) {
       logger.error('Redis srem error', { key, error })
       return 0

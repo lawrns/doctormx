@@ -4,6 +4,7 @@
 import { Resend } from 'resend'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale'
+import { logger } from '@/lib/observability/logger'
 
 const FROM_EMAIL = 'Doctor.mx <noreply@doctory.com.mx>'
 const SUPPORT_EMAIL = 'soporte@doctory.com.mx'
@@ -16,7 +17,7 @@ function getResendClient(): Resend | null {
   
   const apiKey = process.env.RESEND_API_KEY
   if (!apiKey) {
-    console.warn('Resend API key is missing; email notifications will be skipped.')
+    logger.warn('Resend API key is missing; email notifications will be skipped')
     return null
   }
   
@@ -99,7 +100,7 @@ export async function sendEmail({
   const client = getResendClient()
   
   if (!client) {
-    console.warn(`Email skipped (no Resend API key): ${subject} to ${to}`)
+    logger.warn(`Email skipped (no Resend API key): ${subject} to ${to}`)
     return { success: true, data: null }
   }
   
@@ -111,10 +112,10 @@ export async function sendEmail({
       html,
       tags,
     })
-    console.log(`Email sent successfully: ${result.data?.id}`)
+    logger.info(`Email sent successfully: ${result.data?.id}`)
     return { success: true, data: result.data }
   } catch (error) {
-    console.error('Error sending email:', error)
+    logger.error('Error sending email', { error })
     return { success: false, error }
   }
 }
