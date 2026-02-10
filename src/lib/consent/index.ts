@@ -32,13 +32,12 @@ import type {
   UpdateConsentInput,
   UserConsentSummary,
   ConsentComplianceReport,
-  ConsentError,
-  ConsentErrorCode,
   ConsentFilter,
   ConsentSortOption,
   BulkConsentOperation,
   BulkConsentOperationResult,
 } from './types'
+import { ConsentError, ConsentErrorCode } from './types'
 
 // Re-export all types
 export * from './types'
@@ -563,7 +562,7 @@ export async function updateConsent(
   }
 
   // Track modification in history
-  await trackConsentModified(input.consent_record_id, consent.user_id, input)
+  await trackConsentModified(input.consent_record_id, consent.user_id, input as unknown as Record<string, unknown>)
 
   return consent
 }

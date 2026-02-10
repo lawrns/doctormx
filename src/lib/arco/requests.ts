@@ -16,7 +16,7 @@ import type {
   ArcoRequestStatus,
 } from '@/types/arco'
 import { ArcoError, ArcoErrorCode } from '@/types/arco'
-import { addBusinessDays, canSubmitArcoRequest } from './index'
+import { addBusinessDays, calculateBusinessDays, canSubmitArcoRequest } from './index'
 
 const DEFAULT_REQUESTS_PER_PAGE = 20
 
@@ -206,10 +206,10 @@ export async function getArcoRequest(
   // Calculate business days
   const businessDaysElapsed = calculateBusinessDays(
     request.created_at,
-    new Date().toISOString()
+    new Date()
   )
   const businessDaysRemaining = calculateBusinessDays(
-    new Date().toISOString(),
+    new Date(),
     request.due_date
   )
 
@@ -621,28 +621,3 @@ export async function getPendingRequests(): Promise<ArcoRequestRow[]> {
 // ================================================
 // UTILITY FUNCTIONS
 // ================================================
-
-/**
- * Calculate business days between two dates
- */
-function calculateBusinessDays(startDate: string, endDate: Date): number {
-  const start = new Date(startDate)
-  const end = endDate
-  let businessDays = 0
-  let current = new Date(start)
-
-  const holidays = ['01-01', '02-05', '03-21', '05-01', '09-16', '11-20', '12-25']
-
-  while (current <= end) {
-    const dayOfWeek = current.getDay()
-    const dateString = current.toISOString().slice(5, 10)
-
-    if (dayOfWeek !== 0 && dayOfWeek !== 6 && !holidays.includes(dateString)) {
-      businessDays++
-    }
-
-    current.setDate(current.getDate() + 1)
-  }
-
-  return businessDays
-}

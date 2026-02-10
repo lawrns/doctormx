@@ -47,8 +47,8 @@ export async function getCurrentSession(): Promise<SessionInfo | null> {
 
     return {
       userId: user.id,
-      createdAt: new Date(session.created_at),
-      lastActivity: new Date(session.updated_at || session.created_at),
+      createdAt: new Date(user.created_at),
+      lastActivity: new Date(user.last_sign_in_at || user.created_at),
       ipAddress,
       userAgent
     }

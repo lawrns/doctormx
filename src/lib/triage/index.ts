@@ -2,9 +2,12 @@
  * Red Flags Triage System for Doctor.mx
  * Evaluates patient symptoms against medical red flag rules
  * to determine appropriate care level
+ *
+ * Performance Target: <100ms p99 for emergency detection
  */
 
 import yaml from 'yaml';
+import { measureEmergencyDetection } from '@/lib/performance';
 
 export type CareLevel = 'ER' | 'URGENT' | 'PRIMARY' | 'SELFCARE';
 
@@ -176,59 +179,71 @@ function getEmbeddedCriticalRules(): Rule[] {
 /**
  * Main triage evaluation function
  * Evaluates a message against red flag rules
+ *
+ * Performance: Automatically tracks emergency detection time
+ * Target: <100ms p99
  */
-export function evaluateRedFlags(input: { 
-  message: string; 
-  intake?: TriageIntake 
+export function evaluateRedFlags(input: {
+  message: string;
+  intake?: TriageIntake
 }): TriageResult {
-  const rules = loadRules();
-  const intake = input.intake || {};
-  
-  // Prepare symptoms array
-  const symptoms = intake.symptoms?.length 
-    ? intake.symptoms 
-    : [input.message].filter(Boolean);
-  
-  // Build evaluation context
-  const ctx = {
-    symptomsLow: symptoms.map(s => s.toLowerCase()),
-    textLow: (input.message || '').toLowerCase(),
-    intake
-  };
-  
-  // Track results
-  let worstAction: CareLevel | undefined;
-  const triggeredIds: string[] = [];
-  const reasons: string[] = [];
-  
-  // Evaluate each rule
-  for (const rule of rules) {
-    if (evalNode(rule.when, ctx)) {
-      triggeredIds.push(rule.id);
-      reasons.push(rule.reason);
-      
-      // Update worst action if this is more severe
-      if (!worstAction || 
-          CARE_LEVEL_PRIORITY.indexOf(rule.action) > CARE_LEVEL_PRIORITY.indexOf(worstAction)) {
-        worstAction = rule.action;
+  return measureEmergencyDetection(
+    () => {
+      const rules = loadRules();
+      const intake = input.intake || {};
+
+      // Prepare symptoms array
+      const symptoms = intake.symptoms?.length
+        ? intake.symptoms
+        : [input.message].filter(Boolean);
+
+      // Build evaluation context
+      const ctx = {
+        symptomsLow: symptoms.map(s => s.toLowerCase()),
+        textLow: (input.message || '').toLowerCase(),
+        intake
+      };
+
+      // Track results
+      let worstAction: CareLevel | undefined;
+      const triggeredIds: string[] = [];
+      const reasons: string[] = [];
+
+      // Evaluate each rule
+      for (const rule of rules) {
+        if (evalNode(rule.when, ctx)) {
+          triggeredIds.push(rule.id);
+          reasons.push(rule.reason);
+
+          // Update worst action if this is more severe
+          if (!worstAction ||
+              CARE_LEVEL_PRIORITY.indexOf(rule.action) > CARE_LEVEL_PRIORITY.indexOf(worstAction)) {
+            worstAction = rule.action;
+          }
+        }
       }
+
+      // Calculate severity score
+      const severity = worstAction ? SEVERITY_SCORES[worstAction] : 0;
+
+      // Generate recommendations based on care level
+      const recommendations = generateRecommendations(worstAction, triggeredIds);
+
+      return {
+        triggered: triggeredIds.length > 0,
+        action: worstAction,
+        ruleIds: triggeredIds,
+        reasons,
+        severity,
+        recommendations
+      };
+    },
+    {
+      operation: 'red_flags_evaluation',
+      message_length: String(input.message?.length || 0),
+      has_intake: String(Boolean(input.intake)),
     }
-  }
-  
-  // Calculate severity score
-  const severity = worstAction ? SEVERITY_SCORES[worstAction] : 0;
-  
-  // Generate recommendations based on care level
-  const recommendations = generateRecommendations(worstAction, triggeredIds);
-  
-  return {
-    triggered: triggeredIds.length > 0,
-    action: worstAction,
-    ruleIds: triggeredIds,
-    reasons,
-    severity,
-    recommendations
-  };
+  ).result;
 }
 
 /**

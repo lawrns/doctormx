@@ -145,7 +145,7 @@ export async function trackSlaCompliance(): Promise<{
   const { data: completedRequests } = await supabase
     .from('arco_requests')
     .select('*')
-    .in('status', '("completed","denied")')
+    .in('status', ['completed', 'denied'])
     .gte('created_at', getDateMonthsAgo(6)) // Last 6 months
     .order('created_at', { ascending: false })
 

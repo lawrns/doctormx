@@ -378,7 +378,7 @@ export async function compareConsentVersions(
     has_major_changes: hasMajorChanges,
     has_minor_changes: hasMinorChanges,
     changes,
-    requires_re_conent: newVersion.requires_re_consent || hasMajorChanges,
+    requires_re_consent: newVersion.requires_re_consent || hasMajorChanges,
   }
 }
 
@@ -426,7 +426,7 @@ export async function checkIfReConsentRequired(
       currentVersion.id,
       latestVersion.id
     )
-    return comparison.requires_re_conent || latestVersion.requires_re_consent
+    return comparison.requires_re_consent || latestVersion.requires_re_consent
   }
 
   // Check if current consent has expired

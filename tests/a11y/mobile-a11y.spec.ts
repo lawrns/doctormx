@@ -632,9 +632,11 @@ test.describe('Mobile Accessibility', () => {
 
       for (const checkbox of checkboxes) {
         const id = await checkbox.getAttribute('id');
-        const label = id ? page.locator(`label[for="${id}"]`) : checkbox.locator('..').closest('label');
+        const isInLabel = await checkbox.evaluate(el => el.closest('label') !== null);
+        const labelSelector = id ? `label[for="${id}"]` : null;
+        const label = (labelSelector || isInLabel) ? page.locator(labelSelector || 'label').first() : null;
 
-        if (await label.count() > 0) {
+        if (label && await label.count() > 0) {
           const size = await getTouchTargetSize(page, label.first());
 
           // Label touch target should be at least 44px high

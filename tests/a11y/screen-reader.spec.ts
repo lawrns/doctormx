@@ -466,10 +466,10 @@ test.describe('Screen Reader Compatibility', () => {
       const breadcrumb = page.locator('nav[aria-label*="breadcrumb" i], [role="navigation"] [aria-label*="breadcrumb" i], ol[class*="breadcrumb"]').first();
 
       if (await breadcrumb.isVisible()) {
-        // Check for proper ARIA
-        const nav = breadcrumb.locator('..').closest('nav');
-        if (await nav.count() > 0) {
-          const ariaLabel = await nav.first().getAttribute('aria-label');
+        // Check for proper ARIA - breadcrumb itself might be the nav or contain nav
+        const isBreadcrumbNav = await breadcrumb.evaluate(el => el.tagName === 'NAV');
+        if (isBreadcrumbNav) {
+          const ariaLabel = await breadcrumb.getAttribute('aria-label');
           expect(ariaLabel?.toLowerCase()).toContain('breadcrumb');
         }
 

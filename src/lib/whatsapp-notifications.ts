@@ -7,12 +7,17 @@ import { createServiceClient } from '@/lib/supabase/server'
 import { formatCurrency } from '@/lib/utils'
 import { sendWhatsAppMessage, sendTemplateMessage } from './whatsapp-business-api'
 
-const TWILIO_ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID
-const TWILIO_AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN
-const TWILIO_WHATSAPP_NUMBER = process.env.TWILIO_WHATSAPP_NUMBER || 'whatsapp:+14155238886'
+// Lazy initialization - only check when actually used
+function getTwilioConfig() {
+  const TWILIO_ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID
+  const TWILIO_AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN
+  const TWILIO_WHATSAPP_NUMBER = process.env.TWILIO_WHATSAPP_NUMBER || 'whatsapp:+14155238886'
 
-if (!TWILIO_ACCOUNT_SID || !TWILIO_AUTH_TOKEN) {
-  throw new Error('Missing required Twilio environment variables: TWILIO_ACCOUNT_SID and TWILIO_AUTH_TOKEN')
+  if (!TWILIO_ACCOUNT_SID || !TWILIO_AUTH_TOKEN) {
+    throw new Error('Missing required Twilio environment variables: TWILIO_ACCOUNT_SID and TWILIO_AUTH_TOKEN')
+  }
+
+  return { TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_WHATSAPP_NUMBER }
 }
 
 export type NotificationTemplate =
@@ -198,6 +203,7 @@ async function sendTwilioWhatsApp(
   to: string,
   body: string
 ): Promise<TwilioMessage | null> {
+  const { TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_WHATSAPP_NUMBER } = getTwilioConfig()
   const url = `https://api.twilio.com/2010-04-01/Accounts/${TWILIO_ACCOUNT_SID}/Messages.json`
 
   const auth = Buffer.from(`${TWILIO_ACCOUNT_SID}:${TWILIO_AUTH_TOKEN}`).toString('base64')

@@ -181,7 +181,11 @@ export function getRateLimiter(tier: RateLimitTier, identifier: string): RateLim
 
   // Return cached limiter if available
   if (rateLimiterCache.has(cacheKey)) {
-    return rateLimiterCache.get(cacheKey)!
+    const cachedLimiter = rateLimiterCache.get(cacheKey)
+    if (!cachedLimiter) {
+      throw new Error(`Rate limiter not found in cache for key: ${cacheKey}`)
+    }
+    return cachedLimiter
   }
 
   // Create new limiter

@@ -454,10 +454,7 @@ export function createFileUploadError(
  */
 export function handleError(error: AppError): never {
   // Log the error for debugging
-  console.error(`[${error.type}] ${error.message}`, {
-    timestamp: error.timestamp,
-    ...error,
-  })
+  console.error(`[${error.type}] ${error.message}`, error)
 
   // In a real application, you might want to:
   // - Send errors to a monitoring service (e.g., Sentry)

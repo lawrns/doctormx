@@ -65,7 +65,7 @@ export async function trackConsentGranted(
   await createAuditLog({
     event_type: 'consent_granted',
     user_id: userId,
-    consent_type: 'unknown', // Will be updated by trigger
+    consent_type: 'unknown' as any, // Will be updated by trigger
     consent_record_id: consentRecordId,
     consent_request_id: null,
     action: 'grant',
@@ -239,8 +239,8 @@ export async function trackConsentModified(
     request_id: null,
     correlation_id: null,
     before_state: currentConsent,
-    after_state: metadata,
-    data_changes: metadata as Record<string, { old: unknown; new: unknown }>,
+    after_state: metadata || null,
+    data_changes: (metadata || {}) as Record<string, { old: unknown; new: unknown }>,
     occurred_at: new Date().toISOString(),
   })
 
@@ -623,7 +623,7 @@ export async function getAuditLogStatistics(
     total_events: logs.length,
     events_by_type: eventsByType,
     events_by_date: eventsByDate,
-    most_active_users,
+    most_active_users: mostActiveUsers,
   }
 }
 
@@ -686,7 +686,7 @@ export async function trackBatchConsentOperations(
     await createAuditLog({
       event_type: eventType,
       user_id: userId,
-      consent_type: operation.consent_type || 'unknown',
+      consent_type: (operation.consent_type || 'unknown') as any,
       consent_record_id: operation.consent_record_id || null,
       consent_request_id: null,
       action: operation.action,
@@ -699,8 +699,8 @@ export async function trackBatchConsentOperations(
       session_id: null,
       request_id: null,
       correlation_id: correlationId,
-      before_state: operation.before_state,
-      after_state: operation.after_state,
+      before_state: operation.before_state || null,
+      after_state: operation.after_state || null,
       data_changes: operation.before_state && operation.after_state ? {
         // Generate diff
       } : null,

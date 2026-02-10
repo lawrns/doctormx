@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase, getCurrentUser, signOutUser } from '../lib/supabase.js';
+import { logger } from '@/lib/observability/logger';
 
 const AuthContext = createContext({});
 

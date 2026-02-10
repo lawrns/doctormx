@@ -52,6 +52,32 @@ type RawDoctor = {
   }> | null
 }
 
+// Type for transformed doctor data returned to clients
+export type Doctor = {
+  id: string
+  status: string
+  bio: string | null
+  languages: string[] | null
+  years_experience: number | null
+  city: string | null
+  state: string | null
+  country: string
+  price_cents: number
+  currency: string
+  rating_avg: number
+  rating_count: number
+  profile: {
+    id: string
+    full_name: string
+    photo_url: string | null
+  } | null
+  specialties: Array<{
+    id: string
+    name: string | null | undefined
+    slug: string | null | undefined
+  }>
+}
+
 // Sistema completo: buscar doctores con filtros
 export async function discoverDoctors(filters?: DiscoveryFilters): Promise<Doctor[]> {
   const cacheKey = `discover:${JSON.stringify(filters || {})}`
@@ -133,11 +159,11 @@ async function fetchDoctors(filters?: DiscoveryFilters): Promise<Doctor[]> {
     }
 
     if (filters?.maxPrice !== undefined) {
-      filtered = filtered.filter(doctor => doctor.price_cents <= filters.maxPrice)
+      filtered = filtered.filter(doctor => doctor.price_cents <= filters.maxPrice!)
     }
 
     if (filters?.minRating !== undefined) {
-      filtered = filtered.filter(doctor => (doctor.rating_avg || 0) >= filters.minRating)
+      filtered = filtered.filter(doctor => (doctor.rating_avg || 0) >= filters.minRating!)
     }
 
     // Filter by search query (name search)

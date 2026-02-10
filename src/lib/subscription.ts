@@ -6,6 +6,7 @@
 import { createServiceClient } from '@/lib/supabase/server'
 import { stripe } from '@/lib/stripe'
 import { logger } from '@/lib/observability/logger'
+import { cache } from '@/lib/cache'
 
 export type SubscriptionTier = 'starter' | 'pro' | 'elite'
 
@@ -246,6 +247,9 @@ export async function createSubscription(
             throw new Error(`Failed to store subscription: ${dbError.message}`)
         }
 
+        // Invalidate subscription cache for this doctor
+        await cache.invalidateSubscription(doctorId)
+
         return {
             success: true,
             subscription: dbSubscription,
@@ -330,6 +334,9 @@ export async function upgradeSubscription(
             throw new Error(`Failed to update subscription: ${updateError.message}`)
         }
 
+        // Invalidate subscription cache for this doctor
+        await cache.invalidateSubscription(doctorId)
+
         return {
             success: true,
             subscription: updated,
@@ -379,6 +386,9 @@ export async function cancelSubscription(
             throw new Error(`Failed to update subscription: ${updateError.message}`)
         }
 
+        // Invalidate subscription cache for this doctor
+        await cache.invalidateSubscription(doctorId)
+
         return {
             success: true,
             subscription: updated,
@@ -393,6 +403,12 @@ export async function cancelSubscription(
  * Check subscription status
  */
 export async function checkSubscriptionStatus(doctorId: string) {
+    // Try cache first
+    const cached = await cache.getSubscriptionStatus(doctorId)
+    if (cached) {
+        return cached as Awaited<ReturnType<typeof checkSubscriptionStatus>>
+    }
+
     const supabase = createServiceClient()
 
     try {
@@ -425,7 +441,7 @@ export async function checkSubscriptionStatus(doctorId: string) {
             subscription.status === 'active' &&
             new Date(subscription.current_period_end) > new Date()
 
-        return {
+        const result = {
             hasSubscription: true,
             isActive,
             subscription,
@@ -436,6 +452,11 @@ export async function checkSubscriptionStatus(doctorId: string) {
                 )
                 : 0,
         }
+
+        // Cache the result
+        await cache.setSubscriptionStatus(doctorId, result)
+
+        return result
     } catch (error) {
         logger.error('Error checking subscription status:', { error })
         // Return safe defaults instead of throwing
@@ -498,6 +519,11 @@ export async function updateSubscriptionStatus(
 
         if (error) {
             throw new Error(`Failed to update subscription: ${error.message}`)
+        }
+
+        // Invalidate subscription cache for this doctor
+        if (subscription?.doctor_id) {
+            await cache.invalidateSubscription(subscription.doctor_id)
         }
 
         return subscription

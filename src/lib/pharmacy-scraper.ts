@@ -1,4 +1,11 @@
-import { PharmacyChain, Product, ProductSearchOptions, ProductSearchResult, PriceComparisonResult, ProductCategory } from '@/services/pharmacy-integration';
+import {
+  PharmacyChain,
+  Product,
+  ProductSearchOptions,
+  ProductSearchResult,
+  PriceComparisonResult,
+  ProductCategory
+} from '@/services/pharmacy';
 
 // Rich Mock Pharmacy Database with 30+ products
 const MOCK_PRODUCTS: Partial<Product>[] = [

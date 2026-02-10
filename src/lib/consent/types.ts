@@ -416,6 +416,8 @@ export interface CreateConsentVersionInput {
   legal_text: string
   category: ConsentCategory
   effective_date: string
+  privacy_policy_reference?: string
+  terms_of_service_reference?: string
   required_for_new_users?: boolean
   requires_re_consent?: boolean
   data_retention_period?: string

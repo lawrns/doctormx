@@ -42,12 +42,11 @@ async function fetchApprovedDoctors() {
 
 // Filtro simple por especialidad
 export async function getDoctorsBySpecialty(specialtySlug: string) {
-  const cacheKey = `doctors:specialty:${specialtySlug}`
-  const cached = await cache.get(cacheKey)
-  if (cached) return cached
+  const cached = await cache.getDoctorsBySpecialty(specialtySlug)
+  if (cached.length > 0) return cached
 
   const doctors = await fetchDoctorsBySpecialty(specialtySlug)
-  await cache.set(cacheKey, doctors, 300)
+  await cache.setDoctorsBySpecialty(specialtySlug, doctors)
   return doctors
 }
 
@@ -82,16 +81,21 @@ async function fetchDoctorsBySpecialty(specialtySlug: string) {
 
 // Obtener todas las especialidades
 export async function getSpecialties() {
+  const cached = await cache.getSpecialtiesList()
+  if (cached.length > 0) return cached
+
   const supabase = await createClient()
-  
+
   const { data: specialties, error } = await supabase
     .from('specialties')
     .select('*')
     .order('name', { ascending: true })
-  
+
   if (error) throw error
-  
-  return specialties || []
+
+  const result = specialties || []
+  await cache.setSpecialtiesList(result)
+  return result
 }
 
 // Obtener doctor por ID con toda su info

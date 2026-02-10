@@ -3,18 +3,25 @@ import { format } from 'date-fns'
 import { es } from 'date-fns/locale'
 import { logger } from '@/lib/observability/logger'
 
-const TWILIO_ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID
-const TWILIO_AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN
-const TWILIO_WHATSAPP_NUMBER = process.env.TWILIO_WHATSAPP_NUMBER || 'whatsapp:+14155238886'
+// Lazy initialization - only check Twilio config when actually used
+function getTwilioConfig() {
+  const TWILIO_ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID
+  const TWILIO_AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN
+  const TWILIO_WHATSAPP_NUMBER = process.env.TWILIO_WHATSAPP_NUMBER || 'whatsapp:+14155238886'
 
-if (!TWILIO_ACCOUNT_SID || !TWILIO_AUTH_TOKEN) {
-  throw new Error('Missing required Twilio environment variables: TWILIO_ACCOUNT_SID and TWILIO_AUTH_TOKEN')
+  if (!TWILIO_ACCOUNT_SID || !TWILIO_AUTH_TOKEN) {
+    throw new Error('Missing required Twilio environment variables: TWILIO_ACCOUNT_SID and TWILIO_AUTH_TOKEN')
+  }
+
+  return { TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_WHATSAPP_NUMBER }
 }
 
 async function sendPharmacyReferralWhatsApp(
   phone: string,
   body: string
 ): Promise<{ success: boolean; messageSid?: string; error?: string }> {
+  const { TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_WHATSAPP_NUMBER } = getTwilioConfig()
+
   const getWhatsAppPhone = (phone: string): string => {
     const cleaned = phone.replace(/\D/g, '')
     if (cleaned.startsWith('52') && cleaned.length === 12) return `whatsapp:+${cleaned}`

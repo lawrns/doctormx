@@ -151,7 +151,10 @@ export async function GET(request: NextRequest) {
         if (!providerMap.has(provider)) {
           providerMap.set(provider, { requests: 0, cost: 0, latency: 0, count: 0 })
         }
-        const stats = providerMap.get(provider)!
+        const stats = providerMap.get(provider)
+        if (!stats) {
+          throw new Error(`Provider stats not found for: ${provider}`)
+        }
         stats.requests++
         stats.cost += log.cost_usd || 0
         stats.latency += log.latency_ms || 0
@@ -173,7 +176,10 @@ export async function GET(request: NextRequest) {
         if (!endpointMap.has(endpoint)) {
           endpointMap.set(endpoint, { requests: 0, cost: 0, latency: 0, count: 0 })
         }
-        const stats = endpointMap.get(endpoint)!
+        const stats = endpointMap.get(endpoint)
+        if (!stats) {
+          throw new Error(`Endpoint stats not found for: ${endpoint}`)
+        }
         stats.requests++
         stats.cost += log.cost_usd || 0
         stats.latency += log.latency_ms || 0
@@ -195,7 +201,10 @@ export async function GET(request: NextRequest) {
         if (!dayMap.has(day)) {
           dayMap.set(day, { requests: 0, cost: 0 })
         }
-        const stats = dayMap.get(day)!
+        const stats = dayMap.get(day)
+        if (!stats) {
+          throw new Error(`Day stats not found for: ${day}`)
+        }
         stats.requests++
         stats.cost += log.cost_usd || 0
       }

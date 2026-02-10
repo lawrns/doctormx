@@ -205,11 +205,11 @@ export default async function DoctorsPage({
 
         {/* Results Count */}
         <div className="mb-4 text-neutral-600">
-          <span className="font-medium text-neutral-900">{(doctors as typeof doctors[]).length}</span> doctor{(doctors as typeof doctors[]).length !== 1 ? 'es' : ''} encontrado{(doctors as typeof doctors[]).length !== 1 ? 's' : ''}
+          <span className="font-medium text-neutral-900">{doctors.length}</span> doctor{doctors.length !== 1 ? 'es' : ''} encontrado{doctors.length !== 1 ? 's' : ''}
         </div>
 
         {/* Doctors Grid */}
-        {(doctors as typeof doctors[]).length === 0 ? (
+        {doctors.length === 0 ? (
           <Card className="text-center py-16 border-neutral-200">
             <div className="w-20 h-20 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <svg className="w-10 h-10 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -279,7 +279,7 @@ export default async function DoctorsPage({
                   {doctor.specialties && doctor.specialties.length > 0 && (
                     <div className="mb-4">
                       <p className="text-primary-500 font-medium">
-                        {doctor.specialties.map((s: { id: string; name: string }) => s.name).join(', ')}
+                        {doctor.specialties.map(s => s.name).filter(Boolean).join(', ')}
                       </p>
                     </div>
                   )}
@@ -303,12 +303,12 @@ export default async function DoctorsPage({
                         {doctor.years_experience} años de experiencia
                       </p>
                     )}
-                    {doctor.rating_avg > 0 && (
+                    {(doctor.rating_avg || 0) > 0 && (
                       <p className="flex items-center gap-2">
                         <svg className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                         </svg>
-                        <span className="font-medium text-neutral-900">{doctor.rating_avg.toFixed(1)}</span>
+                        <span className="font-medium text-neutral-900">{(doctor.rating_avg || 0).toFixed(1)}</span>
                         <span className="text-neutral-400">({doctor.rating_count} reseñas)</span>
                       </p>
                     )}
@@ -319,7 +319,7 @@ export default async function DoctorsPage({
                     <div className="flex items-end justify-between">
                       <div>
                         <p className="text-2xl font-bold text-neutral-900">
-                          ${(doctor.price_cents / 100).toLocaleString('es-MX')} <span className="text-sm font-normal text-neutral-500">{doctor.currency}</span>
+                          ${(doctor.price_cents / 100).toLocaleString('es-MX')} <span className="text-sm font-normal text-neutral-500">MXN</span>
                         </p>
                         <p className="text-sm text-neutral-400">por consulta</p>
                       </div>

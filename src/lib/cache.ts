@@ -1,153 +1,31 @@
-import { Redis } from '@upstash/redis'
+/**
+ * Legacy Cache Interface (Deprecated)
+ *
+ * This file now re-exports from the new modular cache structure.
+ * For new code, import from '@/lib/cache' instead.
+ *
+ * @deprecated Use the new cache module from '@/lib/cache' instead
+ */
+
+// Re-export everything from the new cache module
+export {
+  cache,
+  getCacheClient,
+  getCacheHealth,
+  TTL,
+  CacheTags,
+  type CacheResult,
+  type CacheSetOptions,
+  type CacheStats,
+} from './cache'
+
+// Re-export Redis for backward compatibility
+export { redis } from './cache/client'
+
+// Re-export rate limiters for backward compatibility
 import { Ratelimit } from '@upstash/ratelimit'
 import { logger } from '@/lib/observability/logger'
-
-// Check if Redis is properly configured
-const REDIS_URL = process.env.UPSTASH_REDIS_REST_URL
-const REDIS_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN
-const isRedisConfigured = Boolean(REDIS_URL && REDIS_TOKEN)
-
-// In-memory cache fallback for development/missing Redis
-const memoryCache = new Map<string, { value: string; expires: number }>()
-
-// Only create Redis client if credentials are available
-const redis = isRedisConfigured && REDIS_URL && REDIS_TOKEN
-  ? new Redis({ url: REDIS_URL, token: REDIS_TOKEN })
-  : null
-
-// Log once at startup if Redis is not configured
-if (!isRedisConfigured) {
-  logger.warn('Redis not configured - using in-memory cache fallback', {
-    hint: 'Set UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN for production',
-  })
-}
-
-export const cache = {
-  async get<T>(key: string): Promise<T | null> {
-    try {
-      // Use Redis if available
-      if (redis) {
-        const value = await redis.get(key)
-        if (!value) return null
-        // Handle both string and object responses from Redis
-        if (typeof value === 'string') {
-          return JSON.parse(value) as T
-        }
-        return value as T
-      }
-
-      // Fallback to memory cache
-      const cached = memoryCache.get(key)
-      if (!cached) return null
-      if (Date.now() > cached.expires) {
-        memoryCache.delete(key)
-        return null
-      }
-      return JSON.parse(cached.value) as T
-    } catch (error) {
-      logger.debug('Cache get miss', { key, error: error instanceof Error ? error.message : 'unknown' })
-      return null
-    }
-  },
-
-  async set<T>(key: string, value: T, ttlSeconds: number): Promise<boolean> {
-    try {
-      const serialized = JSON.stringify(value)
-
-      // Use Redis if available
-      if (redis) {
-        await redis.setex(key, ttlSeconds, serialized)
-        return true
-      }
-
-      // Fallback to memory cache
-      memoryCache.set(key, {
-        value: serialized,
-        expires: Date.now() + ttlSeconds * 1000,
-      })
-      return true
-    } catch (error) {
-      logger.debug('Cache set failed', { key, error: error instanceof Error ? error.message : 'unknown' })
-      return false
-    }
-  },
-
-  async del(key: string): Promise<boolean> {
-    try {
-      if (redis) {
-        await redis.del(key)
-      } else {
-        memoryCache.delete(key)
-      }
-      return true
-    } catch (error) {
-      logger.debug('Cache del failed', { key, error: error instanceof Error ? error.message : 'unknown' })
-      return false
-    }
-  },
-
-  async invalidate(pattern: string): Promise<boolean> {
-    try {
-      if (redis) {
-        const keys = await redis.keys(pattern)
-        if (keys.length > 0) {
-          await redis.del(...keys)
-        }
-      } else {
-        // Memory cache pattern matching
-        const regex = new RegExp('^' + pattern.replace(/\*/g, '.*') + '$')
-        for (const key of memoryCache.keys()) {
-          if (regex.test(key)) {
-            memoryCache.delete(key)
-          }
-        }
-      }
-      return true
-    } catch (error) {
-      logger.debug('Cache invalidate failed', { pattern, error: error instanceof Error ? error.message : 'unknown' })
-      return false
-    }
-  },
-
-  async getDoctorList(filters?: Record<string, unknown>): Promise<unknown[]> {
-    const key = `doctors:list:${JSON.stringify(filters || {})}`
-    const result = await this.get<unknown[]>(key)
-    return result || []
-  },
-
-  async setDoctorList(doctors: unknown[], filters?: Record<string, unknown>): Promise<boolean> {
-    const key = `doctors:list:${JSON.stringify(filters || {})}`
-    return this.set(key, doctors, 300)
-  },
-
-  async getDoctorProfile(doctorId: string): Promise<unknown> {
-    return this.get(`doctor:${doctorId}`)
-  },
-
-  async setDoctorProfile(doctorId: string, profile: unknown): Promise<boolean> {
-    return this.set(`doctor:${doctorId}`, profile, 600)
-  },
-
-  async getAvailability(doctorId: string, date: string): Promise<string[]> {
-    const result = await this.get<string[]>(`availability:${doctorId}:${date}`)
-    return result || []
-  },
-
-  async setAvailability(doctorId: string, date: string, slots: string[]): Promise<boolean> {
-    return this.set(`availability:${doctorId}:${date}`, slots, 120)
-  },
-
-  async invalidateDoctor(doctorId: string): Promise<boolean> {
-    await this.del(`doctor:${doctorId}`)
-    await this.invalidate('doctors:list:*')
-    return true
-  },
-
-  async invalidateAvailability(doctorId: string): Promise<boolean> {
-    await this.invalidate(`availability:${doctorId}:*`)
-    return true
-  },
-}
+import { getCacheClient } from './cache/client'
 
 // No-op rate limiter for when Redis is not configured
 type RateLimitResult = { success: boolean; limit: number; remaining: number; reset: number }
@@ -157,13 +35,24 @@ const noopRateLimiter = {
 
 // Create rate limiters only when Redis is available
 function createRateLimiter(windowSize: number, windowDuration: string, prefix: string) {
-  if (!redis) return noopRateLimiter
-  return new Ratelimit({
-    redis,
-    limiter: Ratelimit.slidingWindow(windowSize, windowDuration as Parameters<typeof Ratelimit.slidingWindow>[1]),
-    analytics: true,
-    prefix,
-  })
+  const client = getCacheClient()
+
+  // Check if we're using Redis (has required methods)
+  if ('ping' in client && typeof client.ping === 'function') {
+    try {
+      return new Ratelimit({
+        redis: client as any, // Type assertion for Upstash compatibility
+        limiter: Ratelimit.slidingWindow(windowSize, windowDuration as Parameters<typeof Ratelimit.slidingWindow>[1]),
+        analytics: true,
+        prefix,
+      })
+    } catch (error) {
+      logger.warn('Failed to create rate limiter, using noop', { prefix, error })
+      return noopRateLimiter
+    }
+  }
+
+  return noopRateLimiter
 }
 
 export const rateLimit = {
@@ -176,4 +65,22 @@ export const rateLimit = {
   read: createRateLimiter(100, '1 m', 'ratelimit:read'),
 }
 
-export { redis }
+// Add backward compatibility methods that were in the old cache object
+const legacyCache = {
+  async getAvailability(doctorId: string, date: string): Promise<string[]> {
+    const { cache } = await import('./cache')
+    return cache.getAppointmentAvailability(doctorId, date)
+  },
+
+  async setAvailability(doctorId: string, date: string, slots: string[]): Promise<boolean> {
+    const { cache } = await import('./cache')
+    return cache.setAppointmentAvailability(doctorId, date, slots)
+  },
+}
+
+// Merge legacy methods with new cache export
+export { cache }
+
+// Add legacy methods to cache object for backward compatibility
+;(cache as any).getAvailability = legacyCache.getAvailability
+;(cache as any).setAvailability = legacyCache.setAvailability

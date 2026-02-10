@@ -1,6 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { requireAuth } from '@/lib/auth'
 import { createReview, getDoctorReviews, canPatientReview, hasPatientReviewedAppointment, getPatientReviewableAppointments } from '@/lib/reviews'
+import {
+  parsePaginationParams,
+  buildPaginatedResponse,
+  decodeCursor,
+  encodeCursor,
+} from '@/lib/pagination'
+import type { PaginatedResult } from '@/lib/pagination'
 
 export async function GET(request: NextRequest) {
   try {
@@ -12,19 +19,22 @@ export async function GET(request: NextRequest) {
     const reviewable = searchParams.get('reviewable')
 
     if (doctorId) {
-      const limit = parseInt(searchParams.get('limit') || '20')
-      const offset = parseInt(searchParams.get('offset') || '0')
+      // Use cursor-based pagination
+      const { cursor, limit, direction } = parsePaginationParams(searchParams)
 
-      const reviews = await getDoctorReviews(doctorId, { limit, offset })
+      const reviews = await getDoctorReviews(doctorId, { limit, cursor, direction })
 
-      return NextResponse.json({
-        reviews,
-        pagination: {
-          limit,
-          offset,
-          hasMore: reviews.length === limit,
-        },
+      // Build paginated response
+      const result: PaginatedResult<any> = buildPaginatedResponse({
+        data: reviews,
+        limit,
+        getNextCursor: (review: any) =>
+          review ? encodeCursor({ id: review.id, created_at: review.created_at }) : null,
+        getPrevCursor: (review: any) =>
+          review ? encodeCursor({ id: review.id, created_at: review.created_at }) : null,
       })
+
+      return NextResponse.json(result)
     }
 
     if (reviewable === 'true' && patientId === user.id) {
