@@ -534,7 +534,7 @@ export async function generateSOAPNote(
             .map(m => m.content)
             .join(' ')
 
-        const medicalContext = await retrieveMedicalContext(userMessages, 3)
+        const medicalContext = await retrieveMedicalContext(userMessages, { limit: 3 })
 
         const soapPrompt = generateAugmentedPrompt(
             `Analiza la siguiente consulta medica y extrae los elementos SOAP:
@@ -607,7 +607,7 @@ export async function generateDifferentialDiagnoses(
             .map(m => m.content)
             .join(' ')
 
-        const medicalContext = await retrieveMedicalContext(userMessages, 5)
+        const medicalContext = await retrieveMedicalContext(userMessages, { limit: 5 })
 
         const patientContext = patientInfo
             ? `Informacion del paciente: Edad ${patientInfo.age}, ${patientInfo.gender}, Antecedentes: ${patientInfo.medicalHistory?.join(', ')}`

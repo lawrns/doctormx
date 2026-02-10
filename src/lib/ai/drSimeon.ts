@@ -5,7 +5,7 @@
 
 import { router } from './router'
 import { createServiceClient } from '@/lib/supabase/server'
-import { retrieveMedicalContext, generateAugmentedPrompt } from './knowledge'
+import { retrieveMedicalContext, generateAugmentedPrompt } from '@/lib/medical-knowledge'
 
 export type SeverityLevel = 'green' | 'yellow' | 'orange' | 'red'
 
@@ -164,7 +164,7 @@ export async function conductOPQRSTAssessment(
             .map(m => m.content)
             .join(' ')
 
-        const medicalContext = await retrieveMedicalContext(userMessages, 3)
+        const medicalContext = await retrieveMedicalContext(userMessages, { limit: 3 })
 
         // Build OPQRST extraction prompt
         const extractionPrompt = generateAugmentedPrompt(
@@ -263,7 +263,7 @@ export async function generateDrSimeonResponse(
 ): Promise<string> {
     try {
         // Retrieve medical context
-        const medicalContext = await retrieveMedicalContext(userMessage, 3)
+        const medicalContext = await retrieveMedicalContext(userMessage, { limit: 3 })
 
         // Build prompt for Dr. Simeon
         const systemPrompt = generateAugmentedPrompt(

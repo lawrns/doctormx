@@ -432,7 +432,7 @@ export function getStatusColor(status: ArcoRequestStatus): string {
  * @returns CSS color class
  */
 export function getPriorityColor(priority: string): string {
-  const colors = {
+  const colors: Record<string, string> = {
     low: 'bg-gray-100 text-gray-800',
     normal: 'bg-blue-100 text-blue-800',
     high: 'bg-orange-100 text-orange-800',

@@ -366,7 +366,7 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
             switch (eventName) {
               case 'specialist_done':
                 // Update specialist with real assessment
-                const specialistId = mapRoleToId(eventData.specialist);
+                const specialistId = mapRoleToId(eventData.specialist as string);
                 completedSpecialistIds.push(specialistId);
 
                 setSpecialists((prev) =>
@@ -374,8 +374,8 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
                     s.id === specialistId
                       ? {
                           ...s,
-                          confidence: Math.round((eventData.confidence || 0.7) * 100),
-                          assessment: eventData.diagnosis || 'Evaluación completada',
+                          confidence: Math.round(((eventData!.confidence as number) || 0.7) * 100),
+                          assessment: (eventData!.diagnosis as string) || 'Evaluación completada',
                           status: 'completed' as const,
                         }
                       : s
@@ -406,12 +406,12 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
                 );
 
                 setConsensus({
-                  score: Math.round((eventData.confidence || 0.7) * 100),
-                  level: mapAgreementLevel(eventData.agreementLevel || 'moderate'),
-                  primaryDiagnosis: eventData.primaryDiagnosis || '',
+                  score: Math.round(((eventData!.confidence as number) || 0.7) * 100),
+                  level: mapAgreementLevel((eventData!.agreementLevel as string) || 'moderate'),
+                  primaryDiagnosis: (eventData!.primaryDiagnosis as string) || '',
                   differentialDiagnoses: [],
-                  clinicalReasoning: `Urgencia: ${eventData.urgencyLevel || 'moderate'}`,
-                  agreementPercentage: Math.round((eventData.confidence || 0.7) * 100),
+                  clinicalReasoning: `Urgencia: ${(eventData!.urgencyLevel as string) || 'moderate'}`,
+                  agreementPercentage: Math.round(((eventData!.confidence as number) || 0.7) * 100),
                 });
                 break;
 
@@ -450,7 +450,7 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
                 break;
 
               case 'error':
-                throw new Error(eventData.error || 'Error en consulta');
+                throw new Error((eventData!.error as string) || 'Error en consulta');
             }
           } catch (err) {
             if (err instanceof Error && err.message.includes('Error')) {

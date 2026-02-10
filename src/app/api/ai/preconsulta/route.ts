@@ -86,9 +86,9 @@ export async function POST(req: NextRequest) {
       // Match real doctors
       try {
         const matchedDoctors = await matchDoctorsForReferral({
-          symptoms: summary.redFlags || [],
-          urgency: summary.urgency,
-          specialty: summary.specialty,
+          symptoms: summary?.redFlags || [],
+          urgency: summary?.urgency || 'low',
+          specialty: summary?.specialty || 'general',
           sessionId,
           patientId: user?.id || 'anonymous'
         });
@@ -97,7 +97,7 @@ export async function POST(req: NextRequest) {
         referrals = matchedDoctors.map((m) => ({
           id: m.doctor.id,
           name: m.doctor.profile?.full_name || 'Doctor',
-          specialty: summary.specialty,
+          specialty: summary?.specialty || 'general',
           availability: 'available',
           nextAvailable: 'Consultar disponibilidad'
         })) as PreConsultaReferral[];
@@ -111,13 +111,13 @@ export async function POST(req: NextRequest) {
         patient_id: user?.id || null,
         messages: messages,
         summary: {
-          chiefComplaint: summary.specialty,
+          chiefComplaint: summary?.specialty || 'general',
           symptoms: [],
-          urgencyLevel: summary.urgency,
-          suggestedSpecialty: summary.specialty,
-          aiConfidence: summary.confidence,
+          urgencyLevel: summary?.urgency || 'low',
+          suggestedSpecialty: summary?.specialty || 'general',
+          aiConfidence: summary?.confidence || 0.5,
         },
-        status: summary.urgency === 'emergency' ? 'redirected-to-emergency' : 'completed',
+        status: summary?.urgency === 'emergency' ? 'redirected-to-emergency' : 'completed',
         completed_at: new Date().toISOString(),
       });
     } else {

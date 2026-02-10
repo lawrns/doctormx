@@ -257,17 +257,25 @@ export async function getDoctorMetrics(doctorId: string): Promise<DoctorMetrics>
     .gte('start_ts', lastMonthStart.toISOString())
     .lt('start_ts', lastMonthEnd.toISOString())
 
+  // Get all appointments for this doctor first to join with payments
+  const { data: doctorAppointments } = await supabase
+    .from('appointments')
+    .select('id')
+    .eq('doctor_id', doctorId)
+
+  const appointmentIds = doctorAppointments?.map(a => a.id) || []
+
   const { data: payments } = await supabase
     .from('payments')
     .select('amount_cents, fee_cents, created_at')
     .eq('status', 'paid')
-    .eq('appointment_id', doctorId)
+    .in('appointment_id', appointmentIds)
 
   const { data: paymentsThisMonth } = await supabase
     .from('payments')
     .select('amount_cents, fee_cents')
     .eq('status', 'paid')
-    .eq('appointment_id', doctorId)
+    .in('appointment_id', appointmentIds)
     .gte('created_at', monthStart.toISOString())
     .lt('created_at', monthEnd.toISOString())
 
@@ -275,7 +283,7 @@ export async function getDoctorMetrics(doctorId: string): Promise<DoctorMetrics>
     .from('payments')
     .select('amount_cents, fee_cents')
     .eq('status', 'paid')
-    .eq('appointment_id', doctorId)
+    .in('appointment_id', appointmentIds)
     .gte('created_at', lastMonthStart.toISOString())
     .lt('created_at', lastMonthEnd.toISOString())
 
@@ -362,28 +370,46 @@ export async function getRevenueMetrics(): Promise<RevenueMetrics> {
   const now = new Date()
   const twelveMonthsAgo = startOfMonth(subMonths(now, 11))
 
-  const { data: payments } = await supabase
+  // Single query with JOINs to get payment data with doctor info
+  const { data: paymentsWithDoctors } = await supabase
     .from('payments')
-    .select('amount_cents, created_at')
+    .select(`
+      amount_cents,
+      created_at,
+      appointment:appointments!payments_appointment_id_fkey (
+        doctor_id,
+        doctor:doctors!appointments_doctor_id_fkey (
+          specialty,
+          city
+        )
+      )
+    `)
     .eq('status', 'paid')
     .gte('created_at', twelveMonthsAgo.toISOString())
 
-  const { data: appointments } = await supabase
-    .from('appointments')
-    .select('id, doctor_id, start_ts')
+  // Type for nested join data
+  type PaymentWithDoctor = {
+    amount_cents: number
+    created_at: string
+    appointment: {
+      doctor_id: string
+      doctor: {
+        specialty: string | null
+        city: string | null
+      } | null
+    } | null
+  }
 
-  const { data: doctorData } = await supabase
-    .from('doctors')
-    .select('id, specialty, city')
+  const payments = (paymentsWithDoctors || []) as unknown as PaymentWithDoctor[]
 
-  const total = payments?.reduce((sum, p) => sum + (p.amount_cents || 0), 0) || 0
+  const total = payments.reduce((sum, p) => sum + (p.amount_cents || 0), 0)
 
   const byMonth = eachMonthOfInterval({ start: twelveMonthsAgo, end: now }).map(month => {
     const monthStartStr = startOfMonth(month).toISOString()
     const monthEndStr = endOfMonth(month).toISOString()
-    const monthPayments = payments?.filter(p => 
+    const monthPayments = payments.filter(p =>
       p.created_at >= monthStartStr && p.created_at < monthEndStr
-    ) || []
+    )
     return {
       month: format(month, 'MMM yyyy', { locale: es }),
       amount: monthPayments.reduce((sum, p) => sum + (p.amount_cents || 0), 0) / 100,
@@ -391,35 +417,49 @@ export async function getRevenueMetrics(): Promise<RevenueMetrics> {
     }
   })
 
+  // Aggregate revenue by doctor directly from joined data
   const doctorRevenue = new Map<string, number>()
-  appointments?.forEach(apt => {
-    const payment = payments?.find(p => p.created_at >= apt.start_ts)
-    if (payment) {
-      const current = doctorRevenue.get(apt.doctor_id) || 0
-      doctorRevenue.set(apt.doctor_id, current + (payment.amount_cents || 0) / 100)
+  const doctorSpecialtyMap = new Map<string, string>()
+  const doctorCityMap = new Map<string, string>()
+
+  payments.forEach(p => {
+    const doctorId = p.appointment?.doctor_id
+    if (doctorId) {
+      const current = doctorRevenue.get(doctorId) || 0
+      doctorRevenue.set(doctorId, current + (p.amount_cents || 0))
+
+      // Cache specialty and city for this doctor
+      if (p.appointment?.doctor) {
+        if (!doctorSpecialtyMap.has(doctorId)) {
+          doctorSpecialtyMap.set(doctorId, p.appointment.doctor.specialty || 'General')
+        }
+        if (!doctorCityMap.has(doctorId)) {
+          doctorCityMap.set(doctorId, p.appointment.doctor.city || 'Unknown')
+        }
+      }
     }
   })
 
+  // Aggregate by specialty
   const specialtyRevenue = new Map<string, number>()
-  doctorData?.forEach(doc => {
-    const revenue = doctorRevenue.get(doc.id) || 0
-    const specialty = doc.specialty || 'General'
+  doctorRevenue.forEach((revenue, doctorId) => {
+    const specialty = doctorSpecialtyMap.get(doctorId) || 'General'
     specialtyRevenue.set(specialty, (specialtyRevenue.get(specialty) || 0) + revenue)
   })
 
   const bySpecialty = Array.from(specialtyRevenue.entries())
-    .map(([specialty, revenue]) => ({ specialty, revenue, percentage: total > 0 ? (revenue / (total / 100)) : 0 }))
+    .map(([specialty, revenue]) => ({ specialty, revenue, percentage: total > 0 ? (revenue / (total / 100)) * 100 : 0 }))
     .sort((a, b) => b.revenue - a.revenue)
 
+  // Aggregate by city
   const cityRevenue = new Map<string, number>()
-  doctorData?.forEach(doc => {
-    const revenue = doctorRevenue.get(doc.id) || 0
-    const city = doc.city || 'Unknown'
+  doctorRevenue.forEach((revenue, doctorId) => {
+    const city = doctorCityMap.get(doctorId) || 'Unknown'
     cityRevenue.set(city, (cityRevenue.get(city) || 0) + revenue)
   })
 
   const byCity = Array.from(cityRevenue.entries())
-    .map(([city, revenue]) => ({ city, revenue, percentage: total > 0 ? (revenue / (total / 100)) : 0 }))
+    .map(([city, revenue]) => ({ city, revenue, percentage: total > 0 ? (revenue / (total / 100)) * 100 : 0 }))
     .sort((a, b) => b.revenue - a.revenue)
     .slice(0, 10)
 
@@ -428,7 +468,7 @@ export async function getRevenueMetrics(): Promise<RevenueMetrics> {
     byMonth,
     bySpecialty,
     byCity,
-    averageTransaction: payments?.length ? (total / payments.length) / 100 : 0,
+    averageTransaction: payments.length ? (total / payments.length) / 100 : 0,
   }
 }
 
@@ -484,23 +524,41 @@ export async function getAppointmentMetrics(): Promise<AppointmentMetrics> {
   const now = new Date()
   const thirtyDaysAgo = subDays(now, 30)
 
+  // Single query with JOIN to get appointments with doctor data
   const { data: appointments } = await supabase
     .from('appointments')
-    .select('id, status, start_ts, doctor_id')
+    .select(`
+      id,
+      status,
+      start_ts,
+      doctor:doctors!appointments_doctor_id_fkey (
+        specialty,
+        city
+      )
+    `)
     .gte('start_ts', thirtyDaysAgo.toISOString())
     .lte('start_ts', now.toISOString())
 
-  const { data: doctorData } = await supabase
-    .from('doctors')
-    .select('id, specialty, city')
+  // Type for nested join data
+  type AppointmentWithDoctor = {
+    id: string
+    status: string
+    start_ts: string
+    doctor: {
+      specialty: string | null
+      city: string | null
+    } | null
+  }
+
+  const aptData = (appointments || []) as unknown as AppointmentWithDoctor[]
 
   const trends = Array.from({ length: 30 }, (_, i) => {
     const date = subDays(now, 29 - i)
     const dayStart = startOfDay(date)
     const dayEnd = endOfDay(date)
-    const dayAppointments = appointments?.filter(a => 
+    const dayAppointments = aptData.filter(a =>
       a.start_ts >= dayStart.toISOString() && a.start_ts <= dayEnd.toISOString()
-    ) || []
+    )
     return {
       date: format(date, 'dd MMM', { locale: es }),
       appointments: dayAppointments.length,
@@ -512,17 +570,16 @@ export async function getAppointmentMetrics(): Promise<AppointmentMetrics> {
   const specialtyCount = new Map<string, number>()
   const cityCount = new Map<string, number>()
 
-  appointments?.forEach(apt => {
-    const doctor = doctorData?.find(d => d.id === apt.doctor_id)
-    if (doctor) {
-      const specialty = doctor.specialty || 'General'
+  aptData.forEach(apt => {
+    if (apt.doctor) {
+      const specialty = apt.doctor.specialty || 'General'
       specialtyCount.set(specialty, (specialtyCount.get(specialty) || 0) + 1)
-      const city = doctor.city || 'Unknown'
+      const city = apt.doctor.city || 'Unknown'
       cityCount.set(city, (cityCount.get(city) || 0) + 1)
     }
   })
 
-  const total = appointments?.length || 1
+  const total = aptData.length || 1
 
   const bySpecialty = Array.from(specialtyCount.entries())
     .map(([specialty, count]) => ({ specialty, count, percentage: (count / total) * 100 }))

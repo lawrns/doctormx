@@ -1,0 +1,19 @@
+# K6 Test Results
+*.json
+results/
+output/
+
+# K6 Cloud
+.k6-cloud-state.json
+
+# Test Artifacts
+*.html
+*.tar
+
+# Logs
+*.log
+k6-logs/
+
+# Temporary Files
+*.tmp
+temp/

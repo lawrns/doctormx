@@ -53,9 +53,9 @@ type RawDoctor = {
 }
 
 // Sistema completo: buscar doctores con filtros
-export async function discoverDoctors(filters?: DiscoveryFilters) {
+export async function discoverDoctors(filters?: DiscoveryFilters): Promise<Doctor[]> {
   const cacheKey = `discover:${JSON.stringify(filters || {})}`
-  const cached = await cache.get(cacheKey)
+  const cached = await cache.get<Doctor[]>(cacheKey)
   if (cached) return cached
 
   const doctors = await fetchDoctors(filters)
@@ -63,7 +63,7 @@ export async function discoverDoctors(filters?: DiscoveryFilters) {
   return doctors
 }
 
-async function fetchDoctors(filters?: DiscoveryFilters) {
+async function fetchDoctors(filters?: DiscoveryFilters): Promise<Doctor[]> {
   const supabase = createServiceClient()
 
   try {

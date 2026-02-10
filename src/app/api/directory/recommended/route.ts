@@ -99,10 +99,10 @@ export async function POST(req: NextRequest) {
 
         // Handle specialties - extract name safely
         const doctorSpecialty = doc.doctor_specialties?.[0];
-        const specialtyData = doctorSpecialty?.specialties;
+        const specialtyData = doctorSpecialty?.specialties as any;
         const specialtyName = Array.isArray(specialtyData)
           ? specialtyData[0]?.name_es
-          : specialtyData?.name_es;
+          : (specialtyData?.name_es as string | undefined);
 
         return {
           id: doc.id,

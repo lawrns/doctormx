@@ -180,6 +180,7 @@ export async function getPatientReviewableAppointments(patientId: string): Promi
     } | null
   }
 
+  // Single query with LEFT JOIN to exclude appointments that already have reviews
   const { data: appointments, error } = await supabase
     .from('appointments')
     .select(`
@@ -190,7 +191,8 @@ export async function getPatientReviewableAppointments(patientId: string): Promi
         profile:profiles!doctors_id_fkey (
           full_name
         )
-      )
+      ),
+      reviews:reviews(id)
     `)
     .eq('patient_id', patientId)
     .eq('status', 'completed')
@@ -201,24 +203,15 @@ export async function getPatientReviewableAppointments(patientId: string): Promi
     throw error
   }
 
-  const reviewableAppointments = []
-
-  for (const apt of (appointments || []) as AppointmentWithDoctor[]) {
-    const { data: existingReview } = await supabase
-      .from('reviews')
-      .select('id')
-      .eq('appointment_id', apt.id)
-      .single()
-
-    if (!existingReview) {
-      reviewableAppointments.push({
-        id: apt.id,
-        doctor_id: apt.doctor_id,
-        doctor_name: apt.doctor?.profile?.full_name || 'Doctor',
-        appointment_date: apt.start_ts,
-      })
-    }
-  }
+  // Filter out appointments that already have reviews (done in-memory after single query)
+  const reviewableAppointments = ((appointments || []) as Array<AppointmentWithDoctor & { reviews?: Array<{ id: string }> | null }>)
+    .filter(apt => !apt.reviews || apt.reviews.length === 0)
+    .map(apt => ({
+      id: apt.id,
+      doctor_id: apt.doctor_id,
+      doctor_name: apt.doctor?.profile?.full_name || 'Doctor',
+      appointment_date: apt.start_ts,
+    }))
 
   return reviewableAppointments
 }

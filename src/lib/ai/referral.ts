@@ -45,6 +45,7 @@ export type DoctorMatch = {
       slug: string | undefined;
     }>;
     rating_avg: number;
+    rating_count: number;
     price_cents: number;
     city: string | null;
   };
@@ -170,6 +171,7 @@ export async function matchDoctorsForReferral(params: {
       profile: m.doctor.profile,
       specialties: m.doctor.specialties,
       rating_avg: m.doctor.rating_avg,
+      rating_count: m.doctor.rating_count,
       price_cents: m.doctor.price_cents,
       city: m.doctor.city,
     },

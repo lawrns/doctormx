@@ -54,6 +54,9 @@ interface QuestionnaireSummary {
   questionCount: number
   redFlags: RedFlag[]
   estimatedSpecialty?: string
+  recommendedSpecialty?: string
+  chiefComplaint?: string
+  recommendedAction?: string
   recommendations?: string[]
 }
 

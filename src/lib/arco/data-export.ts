@@ -296,7 +296,7 @@ export async function exportUserDataToText(
       lines.push(`Pago ${index + 1}:`)
       lines.push(`  - ID: ${payment.id}`)
       lines.push(`  - Fecha: ${payment.created_at}`)
-      lines.push(`  - Monto: ${payment.amount_cents / 100} ${payment.currency}`)
+      lines.push(`  - Monto: ${(payment.amount_cents as number) / 100} ${payment.currency}`)
       lines.push(`  - Estado: ${payment.status}`)
       lines.push('')
     })
@@ -378,7 +378,7 @@ export async function createDataExportAttachment(
 
   const scope = request.data_scope as DataTableScope[]
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-')
-  const filename = `datos_arco_${userId}_${timestamp}`
+  let filename = `datos_arco_${userId}_${timestamp}`
 
   let content: string | Buffer
   let mime_type: string

@@ -1,8 +1,24 @@
 import { requireAuth } from '@/lib/auth'
-import { getConversations, createConversation } from '@/lib/chat'
+import { getConversations, createConversation, type ConversationWithDetails } from '@/lib/chat'
 import { NextResponse } from 'next/server'
+import {
+  parsePaginationParams,
+  buildPaginatedResponse,
+  decodeCursor,
+  encodeCursor,
+} from '@/lib/pagination'
+import type { PaginatedResult } from '@/lib/pagination'
 
-export async function GET() {
+/**
+ * GET /api/chat/conversations
+ *
+ * Get paginated list of conversations for the authenticated user
+ *
+ * Query params:
+ * - cursor: string | null - pagination cursor
+ * - limit: number (default: 20, max: 100)
+ */
+export async function GET(request: Request) {
   try {
     const { user, supabase } = await requireAuth()
 
@@ -17,9 +33,127 @@ export async function GET() {
       return NextResponse.json({ error: 'Invalid role' }, { status: 400 })
     }
 
-    const conversations = await getConversations(user.id, role)
+    const { searchParams } = new URL(request.url)
 
-    return NextResponse.json({ conversations })
+    // Parse pagination parameters
+    const { cursor, limit, direction } = parsePaginationParams(searchParams)
+
+    // Build query with cursor support
+    let query = supabase
+      .from('chat_conversations')
+      .select(`
+        *,
+        patient:profiles!chat_conversations_patient_id_fkey(
+          full_name,
+          photo_url
+        ),
+        doctor:doctors!chat_conversations_doctor_id_fkey(
+          user_id
+        ),
+        doctor_user:profiles!doctors_user_id_fkey(
+          full_name,
+          photo_url
+        )
+      `)
+
+    // Apply role filter
+    if (role === 'patient') {
+      query = query.eq('patient_id', user.id)
+    } else if (role === 'doctor') {
+      query = query.eq('doctor_id', user.id)
+    }
+
+    // Apply cursor filtering for forward pagination
+    if (cursor && direction === 'forward') {
+      try {
+        const cursorData = decodeCursor(cursor)
+        query = query.lt('last_message_at', cursorData.last_message_at || cursor)
+      } catch {
+        // Invalid cursor, ignore
+      }
+    }
+
+    // Apply cursor filtering for backward pagination
+    if (cursor && direction === 'backward') {
+      try {
+        const cursorData = decodeCursor(cursor)
+        query = query.gt('last_message_at', cursorData.last_message_at || cursor)
+      } catch {
+        // Invalid cursor, ignore
+      }
+    }
+
+    // Order by last_message_at descending (most recent first)
+    query = query.order('last_message_at', { ascending: false, nullsFirst: false })
+    query = query.order('id', { ascending: true })
+
+    // Apply limit + 1 to check if there are more results
+    query = query.limit(limit + 1)
+
+    const { data: rawConversations, error } = await query
+
+    if (error) {
+      console.error('Error getting conversations:', { error })
+      return NextResponse.json(
+        { error: 'Failed to get conversations' },
+        { status: 500 }
+      )
+    }
+
+    // Check if there are more results
+    const conversations = (rawConversations || []) as any[]
+    const hasMore = conversations.length > limit
+    const paginatedConversations = hasMore ? conversations.slice(0, limit) : conversations
+
+    const conversationIds = paginatedConversations.map(c => c.id)
+
+    // Get unread counts for all conversations in a single query
+    const { data: unreadCounts } = await supabase
+      .from('chat_messages')
+      .select('conversation_id')
+      .not('id', 'in', (
+        supabase
+          .from('chat_message_receipts')
+          .select('message_id')
+          .eq('user_id', user.id)
+      ))
+      .in('conversation_id', conversationIds)
+      .neq('sender_id', user.id)
+
+    const unreadCountsByConversation = unreadCounts?.reduce((acc, msg) => {
+      acc[msg.conversation_id] = (acc[msg.conversation_id] || 0) + 1
+      return acc
+    }, {} as Record<string, number>) || {}
+
+    // Transform conversations
+    const enrichedConversations = paginatedConversations.map((conv: any) => ({
+      id: conv.id,
+      patient_id: conv.patient_id,
+      doctor_id: conv.doctor_id,
+      appointment_id: conv.appointment_id,
+      last_message_preview: conv.last_message_preview,
+      last_message_at: conv.last_message_at,
+      is_archived: conv.is_archived,
+      created_at: conv.created_at,
+      updated_at: conv.updated_at,
+      patient_name: conv.patient?.full_name,
+      patient_photo_url: conv.patient?.photo_url,
+      doctor_name: conv.doctor_user?.full_name,
+      doctor_photo_url: conv.doctor_user?.photo_url,
+      unread_count: unreadCountsByConversation[conv.id] || 0,
+    }))
+
+    // Build pagination response
+    const result: PaginatedResult<ConversationWithDetails> = buildPaginatedResponse({
+      data: enrichedConversations,
+      limit,
+      getNextCursor: (conv: any) =>
+        conv ? encodeCursor({ id: conv.id, last_message_at: conv.last_message_at }) : null,
+      getPrevCursor: (conv: any) =>
+        conv ? encodeCursor({ id: conv.id, last_message_at: conv.last_message_at }) : null,
+    })
+
+    return NextResponse.json(result)
   } catch (error) {
     console.error('Error getting conversations:', error)
     return NextResponse.json(
@@ -29,6 +163,11 @@ export async function GET() {
   }
 }
 
+/**
+ * POST /api/chat/conversations
+ *
+ * Create a new conversation
+ */
 export async function POST(request: Request) {
   try {
     const { user, supabase } = await requireAuth()

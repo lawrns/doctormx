@@ -15,7 +15,7 @@ import type {
   ArcoRequestStatus,
 } from '@/types/arco'
 import { ArcoError, ArcoErrorCode } from '@/types/arco'
-import { calculateBusinessDays, checkSlaCompliance } from './sla-tracker'
+import { calculateBusinessDays, checkSlaCompliance } from './index'
 
 // ================================================
 // ESCALATION CONFIGURATION
@@ -627,7 +627,7 @@ export async function getEscalationStats(): Promise<{
   const reasonCounts: Record<string, number> = {}
 
   for (const request of requests || []) {
-    byLevel[request.escalation_level]++
+    byLevel[request.escalation_level as EscalationLevel]++
 
     if (request.metadata?.escalation_reason) {
       const reason = String(request.metadata.escalation_reason)

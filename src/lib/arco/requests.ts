@@ -206,10 +206,10 @@ export async function getArcoRequest(
   // Calculate business days
   const businessDaysElapsed = calculateBusinessDays(
     request.created_at,
-    new Date()
+    new Date().toISOString()
   )
   const businessDaysRemaining = calculateBusinessDays(
-    new Date(),
+    new Date().toISOString(),
     request.due_date
   )
 

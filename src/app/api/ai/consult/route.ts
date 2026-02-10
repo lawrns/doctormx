@@ -360,16 +360,32 @@ Proporciona tu evaluación en formato JSON:
   const avgConfidence = confidences.reduce((a, b) => a + b, 0) / confidences.length
 
   // Build consensus result
-  const consensus = {
+  const agreementLevel = avgConfidence >= 0.8 ? 'strong' : avgConfidence >= 0.6 ? 'moderate' : avgConfidence >= 0.4 ? 'weak' : 'disagreement'
+  const consensusCategory = avgConfidence >= 0.6 ? 'consistent' : 'conflict'
+
+  const consensus: {
+    kendallW: number
+    agreementLevel: 'strong' | 'moderate' | 'weak' | 'disagreement'
+    primaryDiagnosis: string | null
+    differentialDiagnoses: string[]
+    consensusCategory: 'consistent' | 'conflict'
+    urgencyLevel: 'emergency' | 'urgent' | 'moderate' | 'routine' | 'self-care'
+    combinedRedFlags: string[]
+    recommendedSpecialty: string | null
+    recommendedTests: string[]
+    supervisorSummary: string
+    confidenceScore: number
+    requiresHumanReview: boolean
+  } = {
     kendallW: avgConfidence,
-    agreementLevel: avgConfidence >= 0.8 ? 'strong' : avgConfidence >= 0.6 ? 'moderate' : avgConfidence >= 0.4 ? 'weak' : 'disagreement',
+    agreementLevel,
     primaryDiagnosis: null,
-    differentialDiagnoses: [] as string[],
-    consensusCategory: avgConfidence >= 0.6 ? 'consistent' : 'conflict',
+    differentialDiagnoses: [],
+    consensusCategory,
     urgencyLevel: finalUrgency,
-    combinedRedFlags: [] as string[],
+    combinedRedFlags: [],
     recommendedSpecialty: null,
-    recommendedTests: [] as string[],
+    recommendedTests: [],
     supervisorSummary: 'Análisis multi-especialista completado',
     confidenceScore: avgConfidence,
     requiresHumanReview: finalUrgency === 'emergency' || finalUrgency === 'urgent',

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { pharmacyScraper } from '@/lib/pharmacy-scraper';
 import { createClient } from '@supabase/supabase-js';
 import type { CachedResult, PharmacySearchResult } from '@/lib/types/api';
+import type { PharmacyChain, PriceComparisonResult } from '@/services/pharmacy-integration';
 
 function getSupabaseClient() {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -17,7 +18,7 @@ function getSupabaseClient() {
 // Cache duration: 5 minutes
 const CACHE_DURATION_MS = 5 * 60 * 1000;
 
-const cache = new Map<string, CachedResult<PharmacySearchResult>>();
+const cache = new Map<string, CachedResult<PharmacySearchResult | PriceComparisonResult>>();
 
 /**
  * GET /api/pharmacy/search?q={query}
@@ -68,7 +69,7 @@ export async function GET(request: NextRequest) {
       results,
       total: results.length,
       searchTimeMs: searchTime,
-      pharmacies: [...new Set(results.map(r => r.pharmacyId))],
+      pharmacies: [...new Set(results.map(r => r.pharmacyId).filter((id): id is PharmacyChain => !!id))],
     };
 
     // Cache the result

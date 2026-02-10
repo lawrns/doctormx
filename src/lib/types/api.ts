@@ -109,7 +109,7 @@ export interface EnrichedAppointment {
   start_ts: string;
   status: string;
   price_cents: number | null;
-  currency: number | null;
+  currency: string | null;
   doctor: {
     id: string;
     specialty: string | null;
