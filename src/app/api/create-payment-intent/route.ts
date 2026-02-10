@@ -1,37 +1,40 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { initializePayment } from '@/lib/payment'
+import { withRateLimit } from '@/lib/rate-limit/middleware'
 
 export async function POST(request: NextRequest) {
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
+  return withRateLimit(request, async (req) => {
+    const supabase = await createClient()
+    const { data: { user } } = await supabase.auth.getUser()
 
-  if (!user) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  }
+    if (!user) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
 
-  const { appointmentId } = await request.json()
+    const { appointmentId } = await req.json()
 
-  if (!appointmentId) {
-    return NextResponse.json(
-      { error: 'appointmentId required' },
-      { status: 400 }
-    )
-  }
+    if (!appointmentId) {
+      return NextResponse.json(
+        { error: 'appointmentId required' },
+        { status: 400 }
+      )
+    }
 
-  try {
-    // Sistema de pago maneja todo: validación + stripe + registro
-    const result = await initializePayment({
-      appointmentId,
-      userId: user.id,
-    })
+    try {
+      // Sistema de pago maneja todo: validación + stripe + registro
+      const result = await initializePayment({
+        appointmentId,
+        userId: user.id,
+      })
 
-    return NextResponse.json(result)
-  } catch (error) {
-    console.error('Error creating payment intent:', error)
-    return NextResponse.json(
-      { error: 'Failed to create payment' },
-      { status: 500 }
-    )
-  }
+      return NextResponse.json(result)
+    } catch (error) {
+      console.error('Error creating payment intent:', error)
+      return NextResponse.json(
+        { error: 'Failed to create payment' },
+        { status: 500 }
+      )
+    }
+  })
 }

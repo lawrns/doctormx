@@ -39,7 +39,7 @@ export default async function DoctorsPage({
       searchQuery: params.search,
       sortBy: params.sortBy,
       sortOrder: params.sortOrder,
-      appointmentType: params.appointmentType as any,
+      appointmentType: params.appointmentType as 'all' | 'video' | 'in_person' | undefined,
     }),
     getAvailableSpecialties(),
   ])
@@ -228,8 +228,7 @@ export default async function DoctorsPage({
           </Card>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-            {(doctors as any[]).map((doctor: any) => (
+            {doctors.map((doctor) => (
               <Link
                 key={doctor.id}
                 href={`/doctors/${doctor.id}`}

@@ -92,7 +92,7 @@ export default function VideoCallPage() {
         endCall()
       })
 
-      callFrame.on('error', (e: any) => {
+      callFrame.on('error', (e: Error & { errorMsg?: string; error?: string }) => {
         console.error('Video call error:', e)
         setError('Error en la llamada')
         setCallState('ended')

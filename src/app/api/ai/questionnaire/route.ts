@@ -12,6 +12,7 @@ import { createClient as createSupabaseClient } from '@supabase/supabase-js'
 import { createClient as createBrowserClient } from '@supabase/supabase-js'
 import { NextRequest, NextResponse } from 'next/server'
 import { logger } from '@/lib/observability/logger'
+import type { SupabaseClientType } from '@/lib/types/api'
 
 // Types matching the adaptive questionnaire service
 interface StartConversationRequest {
@@ -113,7 +114,7 @@ export async function POST(request: NextRequest) {
  * Handle conversation start
  */
 async function handleStartConversation(
-  supabase: any,
+  supabase: SupabaseClientType,
   userId: string,
   patientId?: string
 ) {
@@ -195,7 +196,7 @@ async function handleStartConversation(
  * Handle patient response processing
  */
 async function handleProcessResponse(
-  supabase: any,
+  supabase: SupabaseClientType,
   userId: string,
   request: ProcessResponseRequest
 ) {

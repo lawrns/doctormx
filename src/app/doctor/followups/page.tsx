@@ -2,9 +2,14 @@ import { requireRole } from '@/lib/auth'
 import DoctorLayout from '@/components/DoctorLayout'
 import { getDoctorFollowUpResponses } from '@/lib/followup'
 import Link from 'next/link'
+import { redirect } from 'next/navigation'
 
 export default async function DoctorFollowUpsPage() {
   const { user, profile, supabase } = await requireRole('doctor')
+
+  if (!profile) {
+    redirect('/auth/complete-profile')
+  }
 
   const { responses } = await getDoctorFollowUpResponses(user.id)
 
@@ -31,7 +36,7 @@ export default async function DoctorFollowUpsPage() {
 
   if (isPending) {
     return (
-      <DoctorLayout profile={profile!} isPending={true} currentPath="/doctor/followups" pendingAppointments={0}>
+      <DoctorLayout profile={profile} isPending={true} currentPath="/doctor/followups" pendingAppointments={0}>
         <div className="max-w-4xl">
           <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg mb-8">
             <div className="flex items-start">
@@ -52,7 +57,7 @@ export default async function DoctorFollowUpsPage() {
   }
 
   return (
-    <DoctorLayout profile={profile!} isPending={false} currentPath="/doctor/followups" pendingAppointments={0}>
+    <DoctorLayout profile={profile} isPending={false} currentPath="/doctor/followups" pendingAppointments={0}>
       <div className="max-w-6xl">
         <div className="flex items-center justify-between mb-8">
           <div>

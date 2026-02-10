@@ -8,6 +8,10 @@ import { Calendar, CheckCircle, Clock, Video, FileText, HelpCircle } from 'lucid
 export default async function DoctorDashboard() {
   const { user, profile, supabase } = await requireRole('doctor')
 
+  if (!profile) {
+    redirect('/auth/complete-profile')
+  }
+
   const { data: doctor } = await supabase
     .from('doctors')
     .select('*')
@@ -140,7 +144,7 @@ export default async function DoctorDashboard() {
   }
 
   return (
-    <DoctorLayout profile={profile!} isPending={isPending} currentPath="/doctor" pendingAppointments={pendingPaymentCount}>
+    <DoctorLayout profile={profile} isPending={isPending} currentPath="/doctor" pendingAppointments={pendingPaymentCount}>
       {isPending ? (
         /* Vista mejorada para doctores pendientes */
         <div className="max-w-4xl mx-auto">

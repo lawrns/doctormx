@@ -2,6 +2,23 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { requireRole } from '@/lib/auth'
 
+interface AIDoctorReferral {
+  id: string
+  doctor_id: string
+  patient_id: string
+  status: 'pending' | 'accepted' | 'declined' | 'booked'
+  referral_context?: {
+    specialty?: string
+    [key: string]: unknown
+  }
+  created_at: string
+}
+
+interface WeeklyTrendData {
+  week: string
+  referrals: number
+}
+
 /**
  * GET /api/doctor/analytics/ai-referrals
  * Get AI referral metrics for doctor dashboard
@@ -60,7 +77,7 @@ export async function GET(request: NextRequest) {
 
     // Calculate conversion rate
     const totalReferrals = referrals?.length || 0
-    const convertedReferrals = referrals?.filter((r: any) => r.status === 'booked').length || 0
+    const convertedReferrals = referrals?.filter((r: AIDoctorReferral) => r.status === 'booked').length || 0
     const conversionRate = totalReferrals > 0 ? (convertedReferrals / totalReferrals) * 100 : 0
 
     // Get previous period for comparison
@@ -75,7 +92,7 @@ export async function GET(request: NextRequest) {
     const lastMonth = previousReferrals?.length || 0
 
     // Aggregate by specialty
-    const specialtyCounts = referrals?.reduce((acc: any, r: any) => {
+    const specialtyCounts = referrals?.reduce((acc: Record<string, number>, r: AIDoctorReferral) => {
       const specialty = r.referral_context?.specialty || 'Otro'
       acc[specialty] = (acc[specialty] || 0) + 1
       return acc
@@ -104,7 +121,7 @@ export async function GET(request: NextRequest) {
   }
 }
 
-function calculateWeeklyTrend(referrals: any[], startDate: Date, endDate: Date) {
+function calculateWeeklyTrend(referrals: AIDoctorReferral[], startDate: Date, endDate: Date): WeeklyTrendData[] {
   const weeks = []
   const currentWeek = new Date(startDate)
 

@@ -5,6 +5,15 @@ import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import type { ConversationWithDetails } from '@/lib/chat'
 
+interface ChatConversationRow {
+  id: string
+  patient_id: string
+  doctor_id: string
+  last_message_at: string
+  created_at: string
+  status?: string
+}
+
 interface ChatListProps {
   initialConversations: ConversationWithDetails[]
   userRole: 'patient' | 'doctor'
@@ -53,7 +62,7 @@ export function ChatList({ initialConversations, userRole }: ChatListProps) {
           const doctorToUserMap = new Map<string, string>(doctorsData?.map((d: { id: string; user_id: string }) => [d.id, d.user_id]) || [])
           const doctorProfileMap = new Map<string, { id: string; full_name?: string; photo_url?: string }>(doctorProfiles?.map((p: { id: string; full_name?: string; photo_url?: string }) => [p.id, p]) || [])
 
-          const conversationsWithDetails = conversationsData.map((conv: any) => {
+          const conversationsWithDetails = conversationsData.map((conv: ChatConversationRow) => {
             const patient = patientMap.get(conv.patient_id)
             const doctorUserId = doctorToUserMap.get(conv.doctor_id)
             const doctorProfile = doctorUserId ? doctorProfileMap.get(doctorUserId) : undefined
@@ -85,7 +94,7 @@ export function ChatList({ initialConversations, userRole }: ChatListProps) {
           schema: 'public',
           table: 'chat_conversations',
         },
-        (payload: any) => {
+        (payload: { eventType: string; new?: ChatConversationRow }) => {
           if (payload.eventType === 'INSERT' || payload.eventType === 'UPDATE') {
             fetchConversations()
           }

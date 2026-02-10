@@ -5,9 +5,9 @@ import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import type { UserRole } from '@/types'
 import type { User } from '@supabase/supabase-js'
-import type { Database } from '@/types/supabase'
+import type { ProfileRow } from '@/types'
 
-type SupabaseProfile = Database['public']['Tables']['profiles']['Row']
+type SupabaseProfile = ProfileRow
 
 /**
  * Authentication context containing user, session, and profile information
@@ -106,8 +106,8 @@ export async function requireAuth(allowedRoles?: UserRole[]): Promise<AuthContex
     session: {
       access_token: session.access_token,
       refresh_token: session.refresh_token,
-      expires_at: session.expires_at,
-      expires_in: session.expires_in,
+      expires_at: session.expires_at ?? null,
+      expires_in: session.expires_in ?? null,
       token_type: session.token_type,
     }
   }

@@ -42,29 +42,56 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 31536000,
   },
   async headers() {
+    const ContentSecurityPolicy = `
+      default-src 'self';
+      script-src 'self' 'unsafe-eval' 'unsafe-inline' *.stripe.com *.stripe.network js.stripe.com api.stripe.com hooks.stripe.com cdn.jsdelivr.net;
+      style-src 'self' 'unsafe-inline' *.googleapis.com *.gstatic.com;
+      img-src 'self' data: blob: *.stripe.com *.googleusercontent.com images.unsplash.com avatars.githubusercontent.com res.cloudinary.com i.pravatar.cc;
+      font-src 'self' *.googleapis.com *.gstatic.com;
+      connect-src 'self' *.supabase.co *.stripe.com api.stripe.com js.stripe.com hooks.stripe.com *.daily.co meet.jit.si;
+      frame-src 'self' *.stripe.com *.stripe.network js.stripe.com hooks.stripe.com meet.jit.si *.daily.co;
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self';
+      frame-ancestors 'self';
+      upgrade-insecure-requests;
+    `.replace(/\s{2,}/g, ' ').trim();
+
     return [
       {
         source: '/:path*',
         headers: [
           {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on',
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload',
+          },
+          {
             key: 'X-Frame-Options',
-            value: 'DENY',
+            value: 'SAMEORIGIN',
           },
           {
             key: 'X-Content-Type-Options',
             value: 'nosniff',
           },
           {
-            key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin',
-          },
-          {
             key: 'X-XSS-Protection',
             value: '1; mode=block',
           },
           {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin',
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: ContentSecurityPolicy,
+          },
+          {
             key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=()',
+            value: 'camera=(self), microphone=(self), geolocation=(self)',
           },
         ],
       },

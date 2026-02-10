@@ -14,6 +14,7 @@ import {
   generateAugmentedPrompt,
   getMedicalKnowledgeStats
 } from '@/lib/medical-knowledge'
+import { withRateLimit } from '@/lib/rate-limit/middleware'
 
 const consultRequestSchema = z.object({
   messages: z.array(z.object({
@@ -85,16 +86,17 @@ function detectRedFlags(symptoms: string): { hasRedFlag: boolean; urgency: strin
 }
 
 export async function POST(request: NextRequest) {
-  const startTime = Date.now()
-  
-  try {
-    // Authenticate user
-    const supabase = await createClient()
-    const { data: { user } } = await supabase.auth.getUser()
-    
-    if (!user) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-    }
+  return withRateLimit(request, async (req) => {
+    const startTime = Date.now()
+
+    try {
+      // Authenticate user
+      const supabase = await createClient()
+      const { data: { user } } = await supabase.auth.getUser()
+
+      if (!user) {
+        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+      }
 
     // Parse and validate request
     const body = await request.json()
@@ -230,12 +232,48 @@ Cuando tengas suficiente información para un análisis completo, incluye al fin
       },
     })
 
-  } catch (error) {
-    console.error('[AI Consult] Error:', error)
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    )
+    } catch (error) {
+      console.error('[AI Consult] Error:', error)
+      return NextResponse.json(
+        { error: 'Internal server error' },
+        { status: 500 }
+      )
+    }
+  })
+}
+
+interface SpecialistAnalysisResult {
+  id: string
+  primaryDiagnosis: string
+  confidence: number
+  specialists: Array<{
+    id: string
+    name: string
+    specialty: string
+    primaryDiagnosis: string
+    confidence: number
+    assessment: string
+    differentialDiagnoses: string[]
+    recommendations: string[]
+    urgency: string
+  }>
+  differentialDiagnoses: string[]
+  urgency: string
+  recommendations: string[]
+  nextSteps: string[]
+  consensus: {
+    kendallW: number
+    agreementLevel: string
+    primaryDiagnosis: string | null
+    differentialDiagnoses: string[]
+    consensusCategory: string
+    urgencyLevel: string
+    combinedRedFlags: string[]
+    recommendedSpecialty: string | null
+    recommendedTests: string[]
+    supervisorSummary: string
+    confidenceScore: number
+    requiresHumanReview: boolean
   }
 }
 
@@ -243,7 +281,7 @@ async function runMultiSpecialistAnalysis(
   messages: Array<{ role: string; content: string }>,
   selectedSpecialists: string[],
   patientId: string
-): Promise<any> {
+): Promise<SpecialistAnalysisResult> {
   const caseSummary = messages
     .filter(m => m.role !== 'system')
     .map(m => `${m.role === 'user' ? 'Paciente' : 'Asistente'}: ${m.content}`)
@@ -310,28 +348,28 @@ Proporciona tu evaluación en formato JSON:
   )
 
   // Build consensus
-  const diagnoses = specialistResults.map(s => s.primaryDiagnosis)
-  const urgencies = specialistResults.map(s => s.urgency)
+  const diagnoses = specialistResults.map(s => s.primaryDiagnosis as string)
+  const urgencies = specialistResults.map(s => s.urgency as string)
   const confidences = specialistResults.map(s => s.confidence)
   
   // Determine final urgency (highest concern wins)
-  const urgencyPriority = ['emergency', 'urgent', 'moderate', 'routine', 'self-care']
-  const finalUrgency = urgencyPriority.find(u => urgencies.includes(u)) || 'moderate'
+  const urgencyPriority: Array<'emergency' | 'urgent' | 'moderate' | 'routine' | 'self-care'> = ['emergency', 'urgent', 'moderate', 'routine', 'self-care']
+  const finalUrgency: 'emergency' | 'urgent' | 'moderate' | 'routine' | 'self-care' = urgencyPriority.find(u => urgencies.includes(u)) || 'moderate'
   
   // Calculate average confidence
   const avgConfidence = confidences.reduce((a, b) => a + b, 0) / confidences.length
 
   // Build consensus result
-  const consensus: ConsensusResult = {
+  const consensus = {
     kendallW: avgConfidence,
     agreementLevel: avgConfidence >= 0.8 ? 'strong' : avgConfidence >= 0.6 ? 'moderate' : avgConfidence >= 0.4 ? 'weak' : 'disagreement',
     primaryDiagnosis: null,
-    differentialDiagnoses: [],
+    differentialDiagnoses: [] as string[],
     consensusCategory: avgConfidence >= 0.6 ? 'consistent' : 'conflict',
-    urgencyLevel: finalUrgency as any,
-    combinedRedFlags: [],
+    urgencyLevel: finalUrgency,
+    combinedRedFlags: [] as string[],
     recommendedSpecialty: null,
-    recommendedTests: [],
+    recommendedTests: [] as string[],
     supervisorSummary: 'Análisis multi-especialista completado',
     confidenceScore: avgConfidence,
     requiresHumanReview: finalUrgency === 'emergency' || finalUrgency === 'urgent',

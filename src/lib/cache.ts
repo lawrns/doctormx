@@ -11,8 +11,8 @@ const isRedisConfigured = Boolean(REDIS_URL && REDIS_TOKEN)
 const memoryCache = new Map<string, { value: string; expires: number }>()
 
 // Only create Redis client if credentials are available
-const redis = isRedisConfigured
-  ? new Redis({ url: REDIS_URL!, token: REDIS_TOKEN! })
+const redis = isRedisConfigured && REDIS_URL && REDIS_TOKEN
+  ? new Redis({ url: REDIS_URL, token: REDIS_TOKEN })
   : null
 
 // Log once at startup if Redis is not configured

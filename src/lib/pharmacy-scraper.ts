@@ -48,17 +48,23 @@ export class PharmacyScraper {
   async comparePrices(medicationName: string): Promise<PriceComparisonResult> {
     const matches = await this.searchAll(medicationName);
     if (matches.length === 0) throw new Error(`No products found for ${medicationName}`);
-    
-    const results = matches.map(product => ({
-      pharmacyId: product.pharmacyId!,
-      pharmacyName: this.getPharmacyName(product.pharmacyId!),
-      product: product as Product,
-      totalPrice: (product.price?.current || 0) + 49,
-      deliveryTime: 45,
-      availability: 'in_stock' as const,
-      savings: 0,
-      savingsPercent: 0
-    }));
+
+    const results = matches.map(product => {
+      const pharmacyId = product.pharmacyId;
+      if (!pharmacyId) {
+        throw new Error(`Product missing pharmacy ID: ${product.name}`);
+      }
+      return {
+        pharmacyId,
+        pharmacyName: this.getPharmacyName(pharmacyId),
+        product: product as Product,
+        totalPrice: (product.price?.current || 0) + 49,
+        deliveryTime: 45,
+        availability: 'in_stock' as const,
+        savings: 0,
+        savingsPercent: 0
+      };
+    });
 
     const prices = results.map(r => r.totalPrice);
     const lowestPrice = Math.min(...prices);

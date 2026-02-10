@@ -7,6 +7,10 @@ import { es } from 'date-fns/locale'
 export default async function DoctorPharmacyPage() {
   const { user, profile, supabase } = await requireRole('doctor')
 
+  if (!profile) {
+    redirect('/auth/complete-profile')
+  }
+
   const { data: doctor } = await supabase
     .from('doctors')
     .select('id, status')
@@ -67,7 +71,7 @@ export default async function DoctorPharmacyPage() {
   }
 
   return (
-    <DoctorLayout profile={profile!} isPending={isPending} currentPath="/doctor/pharmacy">
+    <DoctorLayout profile={profile} isPending={isPending} currentPath="/doctor/pharmacy">
       <div className="max-w-6xl">
         <div className="mb-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-2">Farmacias & Ganancias</h2>

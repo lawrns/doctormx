@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServiceClient } from '@/lib/supabase/server';
 import { logger } from '@/lib/observability/logger';
+import type { RecommendedDoctor } from '@/lib/types/api';
 
 interface RequestBody {
   specialty: string;
@@ -98,7 +99,7 @@ export async function POST(req: NextRequest) {
 
         // Handle specialties - extract name safely
         const doctorSpecialty = doc.doctor_specialties?.[0];
-        const specialtyData = doctorSpecialty?.specialties as any;
+        const specialtyData = doctorSpecialty?.specialties;
         const specialtyName = Array.isArray(specialtyData)
           ? specialtyData[0]?.name_es
           : specialtyData?.name_es;
@@ -237,9 +238,9 @@ async function getNextAvailableSlot(doctorId: string): Promise<string | null> {
  * Sort doctors by priority based on urgency level
  */
 function sortByPriority(
-  doctors: any[],
+  doctors: RecommendedDoctor[],
   urgencyLevel: string
-): any[] {
+): RecommendedDoctor[] {
   return doctors.sort((a, b) => {
     // For urgent cases, prioritize by availability
     if (urgencyLevel === 'urgent' || urgencyLevel === 'emergency') {

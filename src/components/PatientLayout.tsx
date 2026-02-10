@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { createClient } from '@/lib/supabase/client'
 import { useEffect, useState } from 'react'
+import { LucideIcon } from 'lucide-react'
 
 interface PatientLayoutProps {
   children: React.ReactNode
@@ -13,15 +14,20 @@ interface PatientLayoutProps {
 
 interface NavItem {
   href: string
-  icon: any
+  icon: LucideIcon
   label: string
   highlight?: boolean
   badge?: { count?: number; dot?: boolean; color?: string }
 }
 
+interface Profile {
+  full_name?: string
+  [key: string]: unknown
+}
+
 export function PatientLayout({ children }: PatientLayoutProps) {
   const pathname = usePathname()
-  const [profile, setProfile] = useState<any>(null)
+  const [profile, setProfile] = useState<Profile | null>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [badges, setBadges] = useState({
     messages: 0,

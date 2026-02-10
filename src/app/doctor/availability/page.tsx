@@ -15,6 +15,11 @@ const DAYS = [
 
 export default async function DoctorAvailabilityPage() {
   const { user, profile, supabase } = await requireRole('doctor')
+
+  if (!profile) {
+    redirect('/auth/complete-profile')
+  }
+
   const availability = await getDoctorAvailability(user.id)
 
   const { data: doctor } = await supabase
@@ -31,7 +36,7 @@ export default async function DoctorAvailabilityPage() {
   const isPending = doctor?.status === 'pending' || doctor?.status === 'rejected'
 
   return (
-    <DoctorLayout profile={profile!} isPending={isPending} currentPath="/doctor/availability">
+    <DoctorLayout profile={profile} isPending={isPending} currentPath="/doctor/availability">
       <div className="max-w-4xl">
         <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Disponibilidad</h2>
         <p className="text-gray-600 mb-6 lg:mb-8">Configura tus horarios de atención</p>

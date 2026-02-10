@@ -101,7 +101,7 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
             role: 'assistant',
             content: data.message,
             metadata: {
-              specialists: data.result.specialists.map((s: any) => s.name),
+              specialists: data.result.specialists.map((s: { name: string }) => s.name),
               confidence: data.result.confidence,
               urgency: data.result.urgency,
             },

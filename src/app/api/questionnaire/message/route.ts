@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { adaptiveQuestionnaireService } from '@/lib/ai/adaptive-questionnaire/service'
 import { logger } from '@/lib/observability/logger'
+import type { QuestionnaireRequestBody } from '@/lib/types/api'
 
 export async function POST(request: NextRequest) {
-  let body: { conversationId?: string; message?: string; metadata?: any } = {}
-  
+  let body: QuestionnaireRequestBody = {}
+
   try {
     body = await request.json()
     const { conversationId, message, metadata } = body

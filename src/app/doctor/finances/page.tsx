@@ -131,8 +131,12 @@ export default async function DoctorFinancesPage() {
 
   const currency = doctor?.currency || 'MXN'
 
+  if (!profile) {
+    redirect('/auth/complete-profile')
+  }
+
   return (
-    <DoctorLayout profile={profile!} isPending={isPending} currentPath="/doctor/finances">
+    <DoctorLayout profile={profile} isPending={isPending} currentPath="/doctor/finances">
       <div className="max-w-6xl">
         <h2 className="text-3xl font-bold text-gray-900 mb-2">Finanzas</h2>
         <p className="text-gray-600 mb-8">Gestiona tus pagos y transacciones</p>

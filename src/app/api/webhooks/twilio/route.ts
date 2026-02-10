@@ -7,6 +7,8 @@ import {
     type TriageSummary,
 } from '@/lib/whatsapp'
 import { generateDrSimeonResponse, isTriageComplete } from '@/lib/ai/drSimeon'
+import { verifyTwilioWebhook } from '@/lib/webhooks'
+import { logger } from '@/lib/observability/logger'
 
 /**
  * POST /api/webhooks/twilio
@@ -14,7 +16,46 @@ import { generateDrSimeonResponse, isTriageComplete } from '@/lib/ai/drSimeon'
  */
 export async function POST(request: NextRequest) {
     try {
-        const formData = await request.formData()
+        // Verify Twilio webhook signature
+        const twilioAuthToken = process.env.TWILIO_AUTH_TOKEN
+
+        if (!twilioAuthToken) {
+            logger.error('TWILIO_AUTH_TOKEN not configured', { provider: 'twilio' })
+            return new NextResponse('Server configuration error', { status: 500 })
+        }
+
+        const signature = request.headers.get('X-Twilio-Signature')
+
+        if (!signature) {
+            logger.warn('Twilio webhook received without signature', { provider: 'twilio' })
+            return new NextResponse('Unauthorized', { status: 401 })
+        }
+
+        // Get the raw body for signature verification
+        const rawBody = await request.text()
+
+        // Verify signature
+        const isValidSignature = verifyTwilioWebhook(
+            request.url,
+            rawBody,
+            signature,
+            twilioAuthToken
+        )
+
+        if (!isValidSignature) {
+            logger.warn('Twilio webhook signature verification failed', {
+                provider: 'twilio',
+                url: request.url,
+            })
+            return new NextResponse('Unauthorized', { status: 401 })
+        }
+
+        // Parse the form data after successful verification
+        const formData = new FormData()
+        const params = new URLSearchParams(rawBody)
+        for (const [key, value] of params.entries()) {
+            formData.append(key, value)
+        }
         const phoneNumber = formData.get('From') as string
         const messageBody = formData.get('Body') as string
         const mediaUrl = formData.get('MediaUrl0') as string | null
@@ -160,7 +201,10 @@ export async function POST(request: NextRequest) {
             },
         })
     } catch (error) {
-        console.error('Error processing WhatsApp message:', error)
+        logger.error('Error processing Twilio WhatsApp message', {
+            provider: 'twilio',
+            error: error instanceof Error ? error.message : 'Unknown error',
+        })
 
         const errorResponse = `<?xml version="1.0" encoding="UTF-8"?>
 <Response>

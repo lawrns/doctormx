@@ -61,9 +61,19 @@ export async function initializePayment(
     currency: appointmentData.currency,
   })
 
+  const clientSecret = paymentIntent.client_secret;
+  if (!clientSecret) {
+    throw new Error('Payment intent missing client secret');
+  }
+
+  const publishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
+  if (!publishableKey) {
+    throw new Error('Missing STRIPE_PUBLISHABLE_KEY environment variable');
+  }
+
   return {
-    clientSecret: paymentIntent.client_secret!,
-    publishableKey: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!,
+    clientSecret,
+    publishableKey,
     amount: appointmentData.amount,
     currency: appointmentData.currency,
   }

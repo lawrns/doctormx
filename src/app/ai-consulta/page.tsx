@@ -9,6 +9,24 @@ import { WhatsAppShareCard } from '@/components/WhatsAppShare'
 import { EmailCapture, EmailCaptureModal } from '@/components/EmailCapture'
 import { PremiumUpgradeModal, QuotaExceededBanner } from '@/components/PremiumUpgradeModal'
 
+interface ConsultationSummary {
+  urgency: string
+  specialty: string
+  confidence: number
+  diagnosis?: string
+}
+
+interface DoctorReferral {
+  doctorId: string
+  doctor: {
+    profile: {
+      full_name: string
+    }
+    specialties: Array<{ name: string }>
+    rating_avg?: number
+  }
+}
+
 export default function AnonymousConsultaPage() {
   const [sessionId, setSessionId] = useState<string>('')
   const [quota, setQuota] = useState<{ used: number; limit: number; remaining: number } | null>(null)
@@ -16,8 +34,8 @@ export default function AnonymousConsultaPage() {
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [isComplete, setIsComplete] = useState(false)
-  const [summary, setSummary] = useState<any>(null)
-  const [referrals, setReferrals] = useState<any[]>([])
+  const [summary, setSummary] = useState<ConsultationSummary | null>(null)
+  const [referrals, setReferrals] = useState<DoctorReferral[]>([])
 
   // New states
   const [showEmailCapture, setShowEmailCapture] = useState(false)
@@ -272,7 +290,7 @@ export default function AnonymousConsultaPage() {
               <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
                 <h3 className="font-bold text-gray-900 mb-4">Doctores Recomendados</h3>
                 <div className="space-y-4">
-                  {referrals.map((referral: any) => (
+                  {referrals.map((referral: DoctorReferral) => (
                     <div
                       key={referral.doctorId}
                       className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all"

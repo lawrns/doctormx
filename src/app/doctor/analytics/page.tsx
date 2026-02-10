@@ -4,12 +4,18 @@ import { StatCard, MetricCard, Chart } from '@/components'
 import DoctorLayout from '@/components/DoctorLayout'
 import { DollarSign, Users, Star, Calendar, TrendingUp, Clock, Activity, Award } from 'lucide-react'
 import { Suspense } from 'react'
+import { redirect } from 'next/navigation'
 
 const formatCurrency = (value: number) =>
   new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', minimumFractionDigits: 0 }).format(value)
 
 async function DoctorAnalyticsContent() {
   const { user, profile, supabase } = await requireRole('doctor')
+
+  if (!profile) {
+    redirect('/auth/complete-profile')
+  }
+
   const metrics = await getDoctorMetrics(user.id)
 
   const { data: doctor } = await supabase
@@ -26,7 +32,7 @@ async function DoctorAnalyticsContent() {
   }))
 
   return (
-    <DoctorLayout profile={profile!} isPending={isPending} currentPath="/doctor/analytics">
+    <DoctorLayout profile={profile} isPending={isPending} currentPath="/doctor/analytics">
       <div className="max-w-6xl mx-auto py-8 px-4">
         <div className="flex items-center justify-between mb-8">
           <div>

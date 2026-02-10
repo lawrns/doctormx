@@ -45,7 +45,7 @@ export function setUser(user: {
   id: string;
   email?: string;
   username?: string;
-  [key: string]: any;
+  [key: string]: string | number | boolean | undefined | null;
 }) {
   Sentry.setUser({
     id: user.id,
@@ -92,13 +92,13 @@ export const logger = {
   warn: (message: string, context?: Record<string, any>) => {
     Sentry.logger?.warn(message, context);
   },
-  error: (message: string, context?: Record<string, any>) => {
+  error: (message: string, context?: Record<string, unknown>) => {
     Sentry.logger?.error(message, context);
   },
-  fatal: (message: string, context?: Record<string, any>) => {
+  fatal: (message: string, context?: Record<string, unknown>) => {
     Sentry.logger?.fatal(message, context);
   },
-  fmt: (strings: TemplateStringsArray, ...values: any[]) => {
+  fmt: (strings: TemplateStringsArray, ...values: unknown[]) => {
     return Sentry.logger?.fmt?.(strings, ...values);
   },
 };

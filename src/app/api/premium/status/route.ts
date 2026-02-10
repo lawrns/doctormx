@@ -19,7 +19,7 @@ export async function GET(request: NextRequest) {
   try {
     // Check user role and return appropriate response
     let userId: string
-    let supabaseClient: any
+    let supabaseClient: Awaited<ReturnType<typeof import('@/lib/supabase/server').createClient>>
     let userRole: 'doctor' | 'patient' | null = null
 
     // Try to get doctor role

@@ -3,6 +3,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { createServiceClient } from '@/lib/supabase/server'
+import type { AIReferralAnalytics, AnalyticsStats } from '@/lib/types/api'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -40,17 +41,17 @@ export async function GET(request: NextRequest) {
     }
 
     // Calculate aggregate stats
-    const stats = {
+    const stats: AnalyticsStats = {
       total: analytics?.length || 0,
-      avgScore: analytics?.reduce((sum: number, a: any) => sum + (a.avg_score || 0), 0) / (analytics?.length || 1) || 0,
-      avgDoctorsAvailable: analytics?.reduce((sum: number, a: any) => sum + (a.doctors_available || 0), 0) / (analytics?.length || 1) || 0,
-      avgDoctorsMatched: analytics?.reduce((sum: number, a: any) => sum + (a.doctors_matched || 0), 0) / (analytics?.length || 1) || 0,
-      bySpecialty: {} as Record<string, { count: number; avgScore: number }>,
-      byUrgency: {} as Record<string, { count: number; avgScore: number }>,
+      avgScore: analytics?.reduce((sum: number, a: AIReferralAnalytics) => sum + (a.avg_score || 0), 0) / (analytics?.length || 1) || 0,
+      avgDoctorsAvailable: analytics?.reduce((sum: number, a: AIReferralAnalytics) => sum + (a.doctors_available || 0), 0) / (analytics?.length || 1) || 0,
+      avgDoctorsMatched: analytics?.reduce((sum: number, a: AIReferralAnalytics) => sum + (a.doctors_matched || 0), 0) / (analytics?.length || 1) || 0,
+      bySpecialty: {},
+      byUrgency: {},
     }
 
     // Group by specialty
-    analytics?.forEach((a: any) => {
+    analytics?.forEach((a: AIReferralAnalytics) => {
       const specialty = a.specialty || 'unknown'
       if (!stats.bySpecialty[specialty]) {
         stats.bySpecialty[specialty] = { count: 0, avgScore: 0 }
@@ -65,7 +66,17 @@ export async function GET(request: NextRequest) {
     })
 
     // Group by urgency
-    analytics?.forEach((a: any) => {
+    analytics?.forEach((a: AIReferralAnalytics) => {
+      const urgency = a.urgency || 'unknown'
+      if (!stats.byUrgency[urgency]) {
+        stats.byUrgency[urgency] = { count: 0, avgScore: 0 }
+      }
+      stats.byUrgency[urgency].count++
+      stats.byUrgency[urgency].avgScore += a.avg_score || 0
+    })
+
+    // Group by urgency
+    analytics?.forEach((a: AIReferralAnalytics) => {
       const urgency = a.urgency || 'unknown'
       if (!stats.byUrgency[urgency]) {
         stats.byUrgency[urgency] = { count: 0, avgScore: 0 }

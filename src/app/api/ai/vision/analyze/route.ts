@@ -3,22 +3,24 @@ import { createClient } from '@/lib/supabase/server'
 import { getProfile } from '@/lib/auth'
 import { analyzeMedicalImage, saveAnalysis, ImageType } from '@/lib/ai/vision'
 import { validateFile, createValidationErrorResponse } from '@/lib/file-security'
+import { withRateLimit } from '@/lib/rate-limit/middleware'
 
 export async function POST(req: NextRequest) {
-  const startTime = Date.now()
+  return withRateLimit(req, async (request) => {
+    const startTime = Date.now()
 
-  try {
-    const supabase = await createClient()
-    const { data: { user } } = await supabase.auth.getUser()
+    try {
+      const supabase = await createClient()
+      const { data: { user } } = await supabase.auth.getUser()
 
-    if (!user) {
-      return NextResponse.json(
-        { error: 'No autenticado' },
-        { status: 401 }
-      )
-    }
+      if (!user) {
+        return NextResponse.json(
+          { error: 'No autenticado' },
+          { status: 401 }
+        )
+      }
 
-    const formData = await req.formData()
+    const formData = await request.formData()
     const file = formData.get('file') as File | null
     const imageType = formData.get('imageType') as string | null
     const patientNotes = formData.get('patientNotes') as string | null
@@ -282,16 +284,17 @@ export async function POST(req: NextRequest) {
         remaining: limit - currentUsage - 1
       }
     })
-  } catch (error) {
-    console.error('[VISION] Error in analyze route:', error)
-    
-    const errorMessage = error instanceof Error ? error.message : 'Error desconocido'
-    
-    return NextResponse.json(
-      { error: `Error analizando imagen: ${errorMessage}` },
-      { status: 500 }
-    )
-  }
+    } catch (error) {
+      console.error('[VISION] Error in analyze route:', error)
+
+      const errorMessage = error instanceof Error ? error.message : 'Error desconocido'
+
+      return NextResponse.json(
+        { error: `Error analizando imagen: ${errorMessage}` },
+        { status: 500 }
+      )
+    }
+  })
 }
 
 export async function GET(req: NextRequest) {

@@ -2,9 +2,14 @@ import { requireRole } from '@/lib/auth'
 import { getConversations } from '@/lib/chat'
 import { ChatList } from '@/components/ChatList'
 import DoctorLayout from '@/components/DoctorLayout'
+import { redirect } from 'next/navigation'
 
 export default async function DoctorChatPage() {
   const { user, profile, supabase } = await requireRole('doctor')
+
+  if (!profile) {
+    redirect('/auth/complete-profile')
+  }
 
   const { data: doctor } = await supabase
     .from('doctors')
@@ -16,7 +21,7 @@ export default async function DoctorChatPage() {
 
   return (
     <DoctorLayout
-      profile={profile!}
+      profile={profile}
       isPending={doctor?.status === 'pending' || doctor?.status === 'rejected'}
       currentPath="/doctor/chat"
       pendingAppointments={0}

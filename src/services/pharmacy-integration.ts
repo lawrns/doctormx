@@ -1702,12 +1702,20 @@ export class PharmacyAPIIntegration {
       ? total * config.affiliateProgram.commissionRate
       : undefined;
 
+    if (!pharmacyId) {
+      throw new PharmacyIntegrationError(
+        'Pharmacy ID is required for all items',
+        'PHARMACY_ID_REQUIRED',
+        { retryable: false }
+      );
+    }
+
     const order: Order = {
       id: orderId,
       userId: orderRequest.userId,
       status: OrderStatus.PENDING,
       items: orderRequest.items,
-      pharmacyId: pharmacyId!,
+      pharmacyId,
       delivery: {
         type: orderRequest.deliveryType,
         address: orderRequest.deliveryAddress,

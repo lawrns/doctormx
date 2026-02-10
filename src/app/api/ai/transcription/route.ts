@@ -8,23 +8,25 @@ import {
   AI_CONFIG
 } from '@/lib/ai';
 import { validateFile, createValidationErrorResponse } from '@/lib/file-security';
+import { withRateLimit } from '@/lib/rate-limit/middleware';
 
 export async function POST(req: NextRequest) {
-  if (!AI_CONFIG.features.transcription) {
-    return NextResponse.json(
-      { error: 'Feature no habilitada' },
-      { status: 403 }
-    );
-  }
-
-  const startTime = Date.now();
-  const supabase = await createClient();
-
-  try {
-    const { data: { user } } = await supabase.auth.getUser();
-    if (!user) {
-      return NextResponse.json({ error: 'No autenticado' }, { status: 401 });
+  return withRateLimit(req, async (request) => {
+    if (!AI_CONFIG.features.transcription) {
+      return NextResponse.json(
+        { error: 'Feature no habilitada' },
+        { status: 403 }
+      );
     }
+
+    const startTime = Date.now();
+    const supabase = await createClient();
+
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) {
+        return NextResponse.json({ error: 'No autenticado' }, { status: 401 });
+      }
 
     // Verificar que es un doctor
     const { data: profile } = await supabase
@@ -37,7 +39,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Solo doctores' }, { status: 403 });
     }
 
-    const formData = await req.formData();
+    const formData = await request.formData();
     const appointmentId = formData.get('appointmentId') as string;
     const audioFile = formData.get('audio') as File;
 
@@ -175,5 +177,6 @@ export async function POST(req: NextRequest) {
       { error: 'Error procesando transcripción' },
       { status: 500 }
     );
-  }
+    }
+  })
 }

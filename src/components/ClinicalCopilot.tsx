@@ -69,7 +69,7 @@ export function ClinicalCopilot({
                 .eq('appointment_id', appointmentId)
                 .order('created_at', { ascending: true })
 
-            const conversationText = messages?.map((m: any) => m.content).join(' ') || ''
+            const conversationText = messages?.map((m: { content: string }) => m.content).join(' ') || ''
             setTranscription(conversationText)
 
             const extractedSymptoms = extractSymptoms(conversationText)

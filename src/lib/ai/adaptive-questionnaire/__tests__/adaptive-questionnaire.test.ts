@@ -300,6 +300,11 @@ describe('ToolRegistry', () => {
   describe('tool execution', () => {
     it('should execute detectRedFlags tool', async () => {
       const tool = registry.get('detectRedFlags')
+      expect(tool).toBeDefined()
+      if (!tool) {
+        throw new Error('detectRedFlags tool not found in registry')
+      }
+
       const context: ConversationContext = {
         state: {
           phase: 'history_taking',
@@ -318,7 +323,7 @@ describe('ToolRegistry', () => {
         history: []
       }
 
-      const result = await tool!.execute({ text: 'dolor de pecho intenso' }, context)
+      const result = await tool.execute({ text: 'dolor de pecho intenso' }, context)
       expect(result.success).toBe(true)
       expect(result.data).toHaveProperty('red_flags')
       expect(result.data).toHaveProperty('has_critical')
@@ -326,6 +331,11 @@ describe('ToolRegistry', () => {
 
     it('should execute assessUrgency tool', async () => {
       const tool = registry.get('assessUrgency')
+      expect(tool).toBeDefined()
+      if (!tool) {
+        throw new Error('assessUrgency tool not found in registry')
+      }
+
       const context: ConversationContext = {
         state: {
           phase: 'history_taking',
@@ -344,7 +354,7 @@ describe('ToolRegistry', () => {
         history: []
       }
 
-      const result = await tool!.execute({
+      const result = await tool.execute({
         symptoms: ['dolor de cabeza', 'fiebre'],
         patient_text: 'me duele la cabeza y tengo fiebre'
       }, context)
@@ -355,6 +365,11 @@ describe('ToolRegistry', () => {
 
     it('should execute triagePatient tool', async () => {
       const tool = registry.get('triagePatient')
+      expect(tool).toBeDefined()
+      if (!tool) {
+        throw new Error('triagePatient tool not found in registry')
+      }
+
       const context: ConversationContext = {
         state: {
           phase: 'synthesis',
@@ -373,7 +388,7 @@ describe('ToolRegistry', () => {
         history: []
       }
 
-      const result = await tool!.execute({
+      const result = await tool.execute({
         symptoms: ['dolor abdominal', 'fiebre'],
         urgency_level: 'high',
         red_flags: []

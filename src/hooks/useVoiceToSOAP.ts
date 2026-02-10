@@ -310,24 +310,37 @@ interface SpeechRecognitionEvent extends Event {
 
 interface SpeechRecognition extends EventTarget {
   continuous: boolean;
-  grammars: any;
+  grammars: SpeechGrammarList | null;
   interimResults: boolean;
   lang: string;
   maxAlternatives: number;
-  onaudioend: ((this: SpeechRecognition, ev: Event) => any) | null;
-  onaudiostart: ((this: SpeechRecognition, ev: Event) => any) | null;
-  onend: ((this: SpeechRecognition, ev: Event) => any) | null;
-  onerror: ((this: SpeechRecognition, ev: SpeechRecognitionErrorEvent) => any) | null;
-  onnomatch: ((this: SpeechRecognition, ev: Event) => any) | null;
-  onresult: ((this: SpeechRecognition, ev: SpeechRecognitionEvent) => any) | null;
-  onsoundend: ((this: SpeechRecognition, ev: Event) => any) | null;
-  onsoundstart: ((this: SpeechRecognition, ev: Event) => any) | null;
-  onspeechend: ((this: SpeechRecognition, ev: Event) => any) | null;
-  onspeechstart: ((this: SpeechRecognition, ev: Event) => any) | null;
-  onstart: ((this: SpeechRecognition, ev: Event) => any) | null;
+  onaudioend: ((this: SpeechRecognition, ev: Event) => unknown) | null;
+  onaudiostart: ((this: SpeechRecognition, ev: Event) => unknown) | null;
+  onend: ((this: SpeechRecognition, ev: Event) => unknown) | null;
+  onerror: ((this: SpeechRecognition, ev: SpeechRecognitionErrorEvent) => unknown) | null;
+  onnomatch: ((this: SpeechRecognition, ev: Event) => unknown) | null;
+  onresult: ((this: SpeechRecognition, ev: SpeechRecognitionEvent) => unknown) | null;
+  onsoundend: ((this: SpeechRecognition, ev: Event) => unknown) | null;
+  onsoundstart: ((this: SpeechRecognition, ev: Event) => unknown) | null;
+  onspeechend: ((this: SpeechRecognition, ev: Event) => unknown) | null;
+  onspeechstart: ((this: SpeechRecognition, ev: Event) => unknown) | null;
+  onstart: ((this: SpeechRecognition, ev: Event) => unknown) | null;
   start(): void;
   stop(): void;
   abort(): void;
+}
+
+interface SpeechGrammarList {
+  length: number;
+  addFromString: (string: string, weight?: number) => void;
+  addFromURI: (src: string, weight?: number) => void;
+  item(index: number): SpeechGrammar | null;
+  [index: number]: SpeechGrammar;
+}
+
+interface SpeechGrammar {
+  src: string;
+  weight: number;
 }
 
 declare global {

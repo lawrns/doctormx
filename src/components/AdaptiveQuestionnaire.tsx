@@ -47,9 +47,19 @@ type ConversationState = {
   progress: number
 }
 
+interface QuestionnaireSummary {
+  phase: string
+  urgencyLevel: string
+  symptoms: Symptom[]
+  questionCount: number
+  redFlags: RedFlag[]
+  estimatedSpecialty?: string
+  recommendations?: string[]
+}
+
 interface AdaptiveQuestionnaireProps {
   patientId?: string
-  onComplete?: (summary: any) => void
+  onComplete?: (summary: QuestionnaireSummary) => void
   onEmergency?: (redFlags: RedFlag[]) => void
   className?: string
 }
@@ -70,7 +80,7 @@ export function AdaptiveQuestionnaire({
   const [redFlags, setRedFlags] = useState<RedFlag[]>([])
   const [scaleValue, setScaleValue] = useState(5)
   const [isComplete, setIsComplete] = useState(false)
-  const [summary, setSummary] = useState<any>(null)
+  const [summary, setSummary] = useState<QuestionnaireSummary | null>(null)
   
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)

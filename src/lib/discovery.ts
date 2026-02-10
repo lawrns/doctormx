@@ -133,11 +133,11 @@ async function fetchDoctors(filters?: DiscoveryFilters) {
     }
 
     if (filters?.maxPrice !== undefined) {
-      filtered = filtered.filter(doctor => doctor.price_cents <= filters.maxPrice!)
+      filtered = filtered.filter(doctor => doctor.price_cents <= filters.maxPrice)
     }
 
     if (filters?.minRating !== undefined) {
-      filtered = filtered.filter(doctor => (doctor.rating_avg || 0) >= filters.minRating!)
+      filtered = filtered.filter(doctor => (doctor.rating_avg || 0) >= filters.minRating)
     }
 
     // Filter by search query (name search)

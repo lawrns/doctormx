@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServiceClient } from '@/lib/supabase/server';
 import { createSession, addMessage, conductTriage, routeHandoff } from '@/lib/whatsapp';
 import { sendWhatsAppMessage } from '@/lib/whatsapp-business-api';
+import { verifyWhatsAppWebhook } from '@/lib/webhooks';
+import { logger } from '@/lib/observability/logger';
+import type { WhatsAppMessage, WhatsAppStatusUpdate } from '@/lib/types/api';
 
 const VERIFY_TOKEN = process.env.WHATSAPP_WEBHOOK_VERIFY_TOKEN;
 
@@ -22,7 +25,40 @@ export async function GET(request: NextRequest) {
 // POST: Handle incoming messages
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
+    // Verify WhatsApp webhook signature
+    const appSecret = process.env.WHATSAPP_APP_SECRET;
+
+    if (!appSecret) {
+      logger.error('WHATSAPP_APP_SECRET not configured', { provider: 'whatsapp' });
+      return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
+    }
+
+    const signature = request.headers.get('X-Hub-Signature-256');
+
+    if (!signature) {
+      logger.warn('WhatsApp webhook received without signature', { provider: 'whatsapp' });
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    // Get the raw body for signature verification
+    const rawBody = await request.text();
+
+    // Verify signature
+    const isValidSignature = verifyWhatsAppWebhook(
+      rawBody,
+      signature,
+      appSecret
+    );
+
+    if (!isValidSignature) {
+      logger.warn('WhatsApp webhook signature verification failed', {
+        provider: 'whatsapp',
+      });
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    // Parse the JSON body after successful verification
+    const body = JSON.parse(rawBody);
 
     for (const entry of body.entry || []) {
       for (const change of entry.changes || []) {
@@ -42,12 +78,15 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ status: 'ok' });
   } catch (error) {
-    console.error('Webhook error:', error);
+    logger.error('WhatsApp webhook processing error', {
+      provider: 'whatsapp',
+      error: error instanceof Error ? error.message : 'Unknown error',
+    });
     return NextResponse.json({ status: 'error' }, { status: 500 });
   }
 }
 
-async function processMessage(message: any) {
+async function processMessage(message: WhatsAppMessage) {
   const phone = message.from;
   const messageId = message.id;
 
@@ -138,7 +177,7 @@ async function processMessage(message: any) {
   }
 }
 
-async function processStatusUpdate(status: any) {
+async function processStatusUpdate(status: WhatsAppStatusUpdate) {
   const supabase = createServiceClient();
   
   await supabase.from('notification_logs').insert({

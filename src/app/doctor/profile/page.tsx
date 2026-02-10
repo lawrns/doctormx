@@ -6,6 +6,10 @@ import DoctorLayout from '@/components/DoctorLayout'
 export default async function DoctorProfilePage() {
   const { user, profile, supabase } = await requireRole('doctor')
 
+  if (!profile) {
+    redirect('/auth/complete-profile')
+  }
+
   const { data: doctor } = await supabase
     .from('doctors')
     .select('*')
@@ -31,7 +35,7 @@ export default async function DoctorProfilePage() {
   }
 
   return (
-    <DoctorLayout profile={profile!} isPending={isPending} currentPath="/doctor/profile">
+    <DoctorLayout profile={profile} isPending={isPending} currentPath="/doctor/profile">
       <div className="max-w-4xl">
         <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Mi perfil</h2>
         <p className="text-gray-600 mb-6 lg:mb-8">Información profesional y datos de contacto</p>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { TrendingUp, Users, Calendar, Clock, Activity, ArrowUp, ArrowDown } from 'lucide-react'
+import { TrendingUp, Users, Calendar, Clock, Activity, ArrowUp, ArrowDown, LucideIcon } from 'lucide-react'
 
 interface AIMetrics {
   totalReferrals: number
@@ -191,7 +191,7 @@ interface KPICardProps {
   title: string
   value: number | string
   change: number
-  icon: any
+  icon: LucideIcon
   color: string
   isPercentage?: boolean
 }

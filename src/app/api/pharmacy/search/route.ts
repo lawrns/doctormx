@@ -1,23 +1,23 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { pharmacyScraper } from '@/lib/pharmacy-scraper';
 import { createClient } from '@supabase/supabase-js';
+import type { CachedResult, PharmacySearchResult } from '@/lib/types/api';
 
 function getSupabaseClient() {
-  return createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
-  );
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+  if (!supabaseUrl || !supabaseKey) {
+    throw new Error('Missing required Supabase environment variables');
+  }
+
+  return createClient(supabaseUrl, supabaseKey);
 }
 
 // Cache duration: 5 minutes
 const CACHE_DURATION_MS = 5 * 60 * 1000;
 
-interface CachedResult {
-  data: any;
-  timestamp: number;
-}
-
-const cache = new Map<string, CachedResult>();
+const cache = new Map<string, CachedResult<PharmacySearchResult>>();
 
 /**
  * GET /api/pharmacy/search?q={query}

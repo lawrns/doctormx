@@ -3,6 +3,7 @@ import { createClient } from '@/lib/supabase/server'
 import { headers } from 'next/headers'
 import { NextResponse } from 'next/server'
 import { logger } from '@/lib/observability/logger'
+import { verifyStripeWebhook } from '@/lib/webhooks'
 import Stripe from 'stripe'
 
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || ''
@@ -20,18 +21,33 @@ export async function POST(request: Request) {
   const signature = headersList.get('stripe-signature')
 
   if (!signature) {
-    logger.warn('Stripe webhook received without signature')
+    logger.warn('Stripe webhook received without signature', { provider: 'stripe' })
     return NextResponse.json(
       { error: 'Missing stripe-signature header' },
-      { status: 400 }
+      { status: 401 }
     )
   }
 
   if (!webhookSecret) {
-    logger.error('STRIPE_WEBHOOK_SECRET not configured')
+    logger.error('STRIPE_WEBHOOK_SECRET not configured', { provider: 'stripe' })
     return NextResponse.json(
       { error: 'Webhook secret not configured' },
       { status: 500 }
+    )
+  }
+
+  // Verify signature using our secure verification function
+  const isValidSignature = verifyStripeWebhook(body, signature, webhookSecret)
+
+  if (!isValidSignature) {
+    logger.warn('Stripe webhook signature verification failed - invalid or expired signature', {
+      provider: 'stripe',
+      hasSignature: !!signature,
+      signaturePrefix: signature.substring(0, 10),
+    })
+    return NextResponse.json(
+      { error: 'Invalid signature' },
+      { status: 401 }
     )
   }
 
@@ -41,9 +57,12 @@ export async function POST(request: Request) {
     event = stripe.webhooks.constructEvent(body, signature, webhookSecret)
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : 'Unknown error'
-    logger.error('Webhook signature verification failed:', { error: errorMessage })
+    logger.error('Webhook event construction failed after signature verification:', {
+      provider: 'stripe',
+      error: errorMessage,
+    })
     return NextResponse.json(
-      { error: 'Invalid signature', details: errorMessage },
+      { error: 'Invalid payload', details: errorMessage },
       { status: 400 }
     )
   }
@@ -513,7 +532,20 @@ async function handleChargeFailed(charge: Stripe.Charge) {
 /**
  * Send payment success notifications (email and WhatsApp)
  */
-async function sendPaymentNotifications(appointment: any, method: 'card' | 'oxxo' | 'spei') {
+interface Appointment {
+  id: string
+  doctor_id: string
+  start_ts: string
+  price_cents?: number
+  currency?: string
+  patient?: {
+    email?: string
+    phone?: string
+    full_name?: string
+  }
+}
+
+async function sendPaymentNotifications(appointment: Appointment, method: 'card' | 'oxxo' | 'spei') {
   const methodNames = {
     card: 'tarjeta',
     oxxo: 'OXXO',
@@ -565,7 +597,7 @@ async function sendPaymentNotifications(appointment: any, method: 'card' | 'oxxo
 /**
  * Send payment failure notifications
  */
-async function sendPaymentFailureNotifications(appointment: any, reason: string = 'payment_failed') {
+async function sendPaymentFailureNotifications(appointment: Appointment, reason: string = 'payment_failed') {
   // Send email notification
   if (appointment.patient?.email) {
     try {
@@ -673,6 +705,11 @@ async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session) 
   const stripeSubscription = await stripe.subscriptions.retrieve(subscriptionId) as Stripe.Subscription
   const priceId = stripeSubscription.items.data[0]?.price?.id
 
+  if (!priceId) {
+    logger.error('No price ID found in subscription', { subscriptionId })
+    return
+  }
+
   // Get plan details
   const { data: plan } = await supabase
     .from('subscription_plans')
@@ -686,10 +723,13 @@ async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session) 
   }
 
   // Map price to tier
-  const priceToTier: Record<string, 'pro' | 'elite'> = {
-    [process.env.STRIPE_PRICE_PRO!]: 'pro',
-    [process.env.STRIPE_PRICE_ELITE!]: 'elite',
-  }
+  const stripePricePro = process.env.STRIPE_PRICE_PRO
+  const stripePriceElite = process.env.STRIPE_PRICE_ELITE
+
+  const priceToTier: Record<string, 'pro' | 'elite'> = {}
+  if (stripePricePro) priceToTier[stripePricePro] = 'pro'
+  if (stripePriceElite) priceToTier[stripePriceElite] = 'elite'
+
   const tier = priceToTier[priceId] || targetTier as 'pro' | 'elite'
 
   // Create or update subscription record

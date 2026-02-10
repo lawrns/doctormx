@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback, use } from 'react'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import { ChatInput } from '@/components/ChatInput'
-import type { ChatMessage, ConversationWithDetails } from '@/lib/chat'
+import type { ChatMessage, ConversationWithDetails, MessageWithSender } from '@/lib/chat'
 
 interface ChatPageProps {
   params: Promise<{ conversationId: string }>
@@ -115,7 +115,7 @@ export default function ChatPage({ params }: ChatPageProps) {
 
         const senderMap = new Map<string, { id: string; full_name?: string; photo_url?: string }>(senderProfiles?.map((p: { id: string; full_name?: string; photo_url?: string }) => [p.id, p]) || [])
 
-        setMessages(messagesData.map((msg: any) => {
+        setMessages(messagesData.map((msg: ChatMessage): MessageWithSender => {
           const sender = senderMap.get(msg.sender_id)
           return {
             ...msg,
@@ -172,7 +172,7 @@ export default function ChatPage({ params }: ChatPageProps) {
           table: 'chat_messages',
           filter: `conversation_id=eq.${conversationId}`,
         },
-        async (payload: any) => {
+        async (payload: { new: ChatMessage }) => {
           // Fetch new message separately to avoid complex join issues
           const { data: msgData } = await supabase
             .from('chat_messages')

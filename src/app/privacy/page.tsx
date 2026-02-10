@@ -96,7 +96,7 @@ export default function PrivacyPage() {
             <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">6. Contacto</h2>
             <p className="text-gray-600 mb-6">
               Para ejercer tus derechos o consultas sobre privacidad, contacta a nuestro 
-              Oficial de Protección de Datos en: <a href="mailto:privacidad@doctor.mx" className="text-blue-600 hover:underline">privacidad@doctor.mx</a>
+              Oficial de Protección de Datos en: <a href="mailto:privacidad@doctormx.com" className="text-blue-600 hover:underline">privacidad@doctormx.com</a>
             </p>
 
             <div className="bg-gray-50 rounded-xl p-6 mt-8">

@@ -207,10 +207,15 @@ export const consultationMachine = createMachine({
           invoke: {
             id: 'consultSpecialists',
             src: consultSpecialistsActor,
-            input: ({ context }) => ({
-              subjective: context.subjective!,
-              objective: context.objective,
-            }),
+            input: ({ context }) => {
+              if (!context.subjective) {
+                throw new Error('Subjective data is required for specialist consultation');
+              }
+              return {
+                subjective: context.subjective,
+                objective: context.objective,
+              };
+            },
             onDone: {
               target: 'buildingConsensus',
               actions: assign({
@@ -269,10 +274,18 @@ export const consultationMachine = createMachine({
           invoke: {
             id: 'generatePlan',
             src: generatePlanActor,
-            input: ({ context }) => ({
-              consensus: context.consensus!,
-              subjective: context.subjective!,
-            }),
+            input: ({ context }) => {
+              if (!context.consensus) {
+                throw new Error('Consensus data is required for plan generation');
+              }
+              if (!context.subjective) {
+                throw new Error('Subjective data is required for plan generation');
+              }
+              return {
+                consensus: context.consensus,
+                subjective: context.subjective,
+              };
+            },
             onDone: {
               target: '#soapConsultation.review',
               actions: assign({

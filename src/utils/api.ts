@@ -77,7 +77,7 @@ export async function fetchAICompletion(message: string, history?: string[]) {
 /**
  * Doctor symptoms analysis with tracing
  */
-export async function analyzeSymptoms(symptoms: string, context?: any) {
+export async function analyzeSymptoms(symptoms: string, context?: { instructions?: string }) {
   return Sentry.startSpan(
     {
       op: "doctor.analysis",

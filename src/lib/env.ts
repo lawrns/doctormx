@@ -287,7 +287,9 @@ export function validateEnv(strict: boolean = true): EnvValidationResult {
     if (!result.valid) {
       if (isRequired(def, ENVIRONMENT)) {
         missing.push(def.name);
-        errors.push(result.error!);
+        if (result.error) {
+          errors.push(result.error);
+        }
       } else {
         warnings.push(`Optional variable ${def.name} is not set`);
       }

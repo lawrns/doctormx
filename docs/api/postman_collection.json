@@ -1,0 +1,917 @@
+{
+  "info": {
+    "name": "Doctor.mx API",
+    "description": "API REST completa para la plataforma de telemedicina Doctor.mx",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "version": "1.0.0"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://doctormx.com/api",
+      "type": "string"
+    },
+    {
+      "key": "accessToken",
+      "value": "",
+      "type": "string",
+      "disabled": true
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "value",
+        "value": "{{accessToken}}",
+        "type": "string"
+      },
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      }
+    ]
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"password\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"password\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/register",
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "register"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Appointments",
+      "item": [
+        {
+          "name": "Create Appointment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"doctorId\": \"550e8400-e29b-41d4-a716-446655440000\",\n  \"date\": \"2026-03-15\",\n  \"time\": \"14:30\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/appointments",
+              "host": ["{{baseUrl}}"],
+              "path": ["appointments"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cancel Appointment",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/appointments/:id/cancel",
+              "host": ["{{baseUrl}}"],
+              "path": ["appointments", ":id", "cancel"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "appointment-id"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Video URL",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/appointments/:id/video",
+              "host": ["{{baseUrl}}"],
+              "path": ["appointments", ":id", "video"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "appointment-id"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "AI Consultation",
+      "item": [
+        {
+          "name": "AI Consult",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Tengo dolor de cabeza desde hace 3 días\"\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ai/consult",
+              "host": ["{{baseUrl}}"],
+              "path": ["ai", "consult"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SOAP Stream",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"patientId\": \"user-uuid\",\n  \"subjective\": {\n    \"chiefComplaint\": \"Dolor de cabeza\",\n    \"symptomsDescription\": \"Dolor pulsátil en lado derecho...\",\n    \"symptomDuration\": \"3 días\",\n    \"symptomSeverity\": 7,\n    \"onsetType\": \"gradual\"\n  },\n  \"objective\": {\n    \"patientAge\": 35,\n    \"patientGender\": \"female\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/soap/stream",
+              "host": ["{{baseUrl}}"],
+              "path": ["soap", "stream"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Analyze Image",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": []
+                },
+                {
+                  "key": "type",
+                  "value": "skin",
+                  "type": "text"
+                },
+                {
+                  "key": "context",
+                  "value": "Lesión en antebrazo",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ai/vision/analyze",
+              "host": ["{{baseUrl}}"],
+              "path": ["ai", "vision", "analyze"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Transcribe Audio",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "audio",
+                  "type": "file",
+                  "src": []
+                },
+                {
+                  "key": "language",
+                  "value": "es",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ai/transcription",
+              "host": ["{{baseUrl}}"],
+              "path": ["ai", "transcription"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "AI Copilot",
+      "item": [
+        {
+          "name": "Get Diagnosis Suggestions",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"symptoms\": \"Dolor de cabeza, náuseas, sensibilidad a la luz\",\n  \"patientInfo\": {\n    \"age\": 35,\n    \"gender\": \"female\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ai/copilot/diagnosis",
+              "host": ["{{baseUrl}}"],
+              "path": ["ai", "copilot", "diagnosis"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Treatment Suggestions",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"diagnosis\": \"Migraña sin aura\",\n  \"patientContext\": {\n    \"age\": 35,\n    \"gender\": \"female\",\n    \"medicalHistory\": []\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ai/copilot/suggestions",
+              "host": ["{{baseUrl}}"],
+              "path": ["ai", "copilot", "suggestions"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Generate Summary",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"consultationId\": \"consultation-uuid\",\n  \"includeNotes\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ai/copilot/summary",
+              "host": ["{{baseUrl}}"],
+              "path": ["ai", "copilot", "summary"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Prescriptions",
+      "item": [
+        {
+          "name": "Create Prescription",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "appointmentId",
+                  "value": "appointment-uuid",
+                  "type": "text"
+                },
+                {
+                  "key": "diagnosis",
+                  "value": "Migraña sin aura",
+                  "type": "text"
+                },
+                {
+                  "key": "medications",
+                  "value": "Sumatriptan 50mg",
+                  "type": "text"
+                },
+                {
+                  "key": "instructions",
+                  "value": "Tomar 1 tableta al inicio del ataque de migraña",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/prescriptions",
+              "host": ["{{baseUrl}}"],
+              "path": ["prescriptions"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Download PDF",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/prescriptions/:id/pdf",
+              "host": ["{{baseUrl}}"],
+              "path": ["prescriptions", ":id", "pdf"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "prescription-id"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Send to Patient",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"method\": \"both\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/prescriptions/:id/send",
+              "host": ["{{baseUrl}}"],
+              "path": ["prescriptions", ":id", "send"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "prescription-id"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Patient",
+      "item": [
+        {
+          "name": "Get Profile",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/patient/profile",
+              "host": ["{{baseUrl}}"],
+              "path": ["patient", "profile"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Profile",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fullName\": \"Juan Pérez\",\n  \"phone\": \"+525512345678\",\n  \"dateOfBirth\": \"1990-01-01\",\n  \"gender\": \"male\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/patient/profile",
+              "host": ["{{baseUrl}}"],
+              "path": ["patient", "profile"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Medical History",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/patient/medical-history",
+              "host": ["{{baseUrl}}"],
+              "path": ["patient", "medical-history"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Appointments",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/patient/appointments?status=upcoming&limit=10",
+              "host": ["{{baseUrl}}"],
+              "path": ["patient", "appointments"],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "upcoming"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Doctor",
+      "item": [
+        {
+          "name": "Set Availability",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "availability[0][day_of_week]",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "availability[0][start_time]",
+                  "value": "09:00",
+                  "type": "text"
+                },
+                {
+                  "key": "availability[0][end_time]",
+                  "value": "17:00",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/doctor/availability",
+              "host": ["{{baseUrl}}"],
+              "path": ["doctor", "availability"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Complete Onboarding",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"yearsExperience\": 10,\n  \"bio\": \"Médico especialista en...\",\n  \"licenseNumber\": \"12345678\",\n  \"priceCents\": 50000\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/doctor/onboarding",
+              "host": ["{{baseUrl}}"],
+              "path": ["doctor", "onboarding"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Badges",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/doctor/badges",
+              "host": ["{{baseUrl}}"],
+              "path": ["doctor", "badges"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Directory",
+      "item": [
+        {
+          "name": "Get Doctor Profile",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/doctors/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["doctors", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "doctor-id"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Available Dates",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/doctors/:id/available-dates?startDate=2026-03-01&endDate=2026-03-31",
+              "host": ["{{baseUrl}}"],
+              "path": ["doctors", ":id", "available-dates"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "doctor-id"
+                }
+              ],
+              "query": [
+                {
+                  "key": "startDate",
+                  "value": "2026-03-01"
+                },
+                {
+                  "key": "endDate",
+                  "value": "2026-03-31"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Time Slots",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/doctors/:id/slots?date=2026-03-15",
+              "host": ["{{baseUrl}}"],
+              "path": ["doctors", ":id", "slots"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "doctor-id"
+                }
+              ],
+              "query": [
+                {
+                  "key": "date",
+                  "value": "2026-03-15"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Recommended Doctors",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/directory/recommended?specialty=Cardiología&location=Ciudad%20de%20México&limit=10",
+              "host": ["{{baseUrl}}"],
+              "path": ["directory", "recommended"],
+              "query": [
+                {
+                  "key": "specialty",
+                  "value": "Cardiología"
+                },
+                {
+                  "key": "location",
+                  "value": "Ciudad de México"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Questionnaire",
+      "item": [
+        {
+          "name": "Start Questionnaire",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"patientId\": \"user-uuid\",\n  \"specialty\": \"dermatology\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/questionnaire/start",
+              "host": ["{{baseUrl}}"],
+              "path": ["questionnaire", "start"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Send Answer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"conversationId\": \"conv-uuid\",\n  \"answer\": \"Erupción en la piel\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/questionnaire/message",
+              "host": ["{{baseUrl}}"],
+              "path": ["questionnaire", "message"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Complete Questionnaire",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/questionnaire/:id/complete",
+              "host": ["{{baseUrl}}"],
+              "path": ["questionnaire", ":id", "complete"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "questionnaire-id"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Payments",
+      "item": [
+        {
+          "name": "Get Plans",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/subscriptions/plans",
+              "host": ["{{baseUrl}}"],
+              "path": ["subscriptions", "plans"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Subscription",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/subscriptions",
+              "host": ["{{baseUrl}}"],
+              "path": ["subscriptions"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Analytics",
+      "item": [
+        {
+          "name": "Admin Analytics",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/analytics/admin?startDate=2026-01-01&endDate=2026-12-31",
+              "host": ["{{baseUrl}}"],
+              "path": ["analytics", "admin"],
+              "query": [
+                {
+                  "key": "startDate",
+                  "value": "2026-01-01"
+                },
+                {
+                  "key": "endDate",
+                  "value": "2026-12-31"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Doctor Analytics",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/analytics/doctor?period=month",
+              "host": ["{{baseUrl}}"],
+              "path": ["analytics", "doctor"],
+              "query": [
+                {
+                  "key": "period",
+                  "value": "month"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Chat",
+      "item": [
+        {
+          "name": "List Conversations",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/chat/conversations",
+              "host": ["{{baseUrl}}"],
+              "path": ["chat", "conversations"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Conversation",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"participantId\": \"user-uuid\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/chat/conversations",
+              "host": ["{{baseUrl}}"],
+              "path": ["chat", "conversations"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Send Message",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"conversationId\": \"conv-uuid\",\n  \"content\": \"Hola\",\n  \"type\": \"text\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/chat/messages",
+              "host": ["{{baseUrl}}"],
+              "path": ["chat", "messages"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "System",
+      "item": [
+        {
+          "name": "Get Cache Stats",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/cache/stats",
+              "host": ["{{baseUrl}}"],
+              "path": ["cache", "stats"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Invalidate Cache",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pattern\": \"doctors:*\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/cache/invalidate",
+              "host": ["{{baseUrl}}"],
+              "path": ["cache", "invalidate"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

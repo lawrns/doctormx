@@ -86,7 +86,7 @@ const emergencySymptomsSpanish = [
 ];
 
 describe('Emergency AI Triage', () => {
-  let supabaseClient: any;
+  let supabaseClient: Awaited<ReturnType<typeof createClient>>;
   const mockUser = { id: 'test-user-123', email: 'test@example.com' };
 
   beforeAll(async () => {

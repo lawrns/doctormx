@@ -18,6 +18,10 @@ export default async function DoctorAppointmentsPage({
   const { user, profile, supabase } = await requireRole('doctor')
   const params = await searchParams
 
+  if (!profile) {
+    redirect('/auth/complete-profile')
+  }
+
   const { data: doctor } = await supabase
     .from('doctors')
     .select('status')
@@ -111,7 +115,7 @@ export default async function DoctorAppointmentsPage({
   }
 
   return (
-    <DoctorLayout profile={profile!} isPending={isPending} currentPath="/doctor/appointments">
+    <DoctorLayout profile={profile} isPending={isPending} currentPath="/doctor/appointments">
       <div className="max-w-6xl">
         <h2 className="text-3xl font-bold text-gray-900 mb-2">Consultas</h2>
         <p className="text-gray-600 mb-8">Gestiona tus citas médicas</p>

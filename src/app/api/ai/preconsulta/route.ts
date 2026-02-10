@@ -10,6 +10,7 @@ import {
 } from '@/lib/ai';
 import { matchDoctorsForReferral } from '@/lib/ai/referral';
 import type { PreConsultaMessage, TriageResult } from '@/lib/ai/types';
+import type { PreConsultaReferral } from '@/lib/types/api';
 
 export async function POST(req: NextRequest) {
   if (!AI_CONFIG.features.preConsulta) {
@@ -69,7 +70,7 @@ export async function POST(req: NextRequest) {
     const isComplete = userMessages.length >= 3;
 
     let summary: TriageResult | null = null;
-    let referrals: any[] = [];
+    let referrals: PreConsultaReferral[] = [];
 
     if (isComplete) {
       // Análisis final de urgencia
@@ -84,13 +85,22 @@ export async function POST(req: NextRequest) {
 
       // Match real doctors
       try {
-        referrals = await matchDoctorsForReferral({
+        const matchedDoctors = await matchDoctorsForReferral({
           symptoms: summary.redFlags || [],
           urgency: summary.urgency,
           specialty: summary.specialty,
           sessionId,
           patientId: user?.id || 'anonymous'
         });
+
+        // Transform to PreConsultaReferral format
+        referrals = matchedDoctors.map((m) => ({
+          id: m.doctor.id,
+          name: m.doctor.profile?.full_name || 'Doctor',
+          specialty: summary.specialty,
+          availability: 'available',
+          nextAvailable: 'Consultar disponibilidad'
+        })) as PreConsultaReferral[];
       } catch (err) {
         console.error('[REFERRAL ERROR]:', err);
       }

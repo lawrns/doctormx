@@ -346,7 +346,7 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
           // Parse SSE event format: "event: name\ndata: {...}"
           const lines = eventBlock.split('\n');
           let eventName = '';
-          let eventData: any = null;
+          let eventData: Record<string, unknown> | null = null;
 
           for (const line of lines) {
             if (line.startsWith('event: ')) {

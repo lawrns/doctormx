@@ -50,7 +50,7 @@ Sentry.init({
     // Sanitize user data
     if (event.user) {
       // Keep only id and email for PII compliance
-      const safeUser: any = {};
+      const safeUser: { id?: string; email?: string } = {};
       if (event.user.id) safeUser.id = event.user.id;
       if (event.user.email) safeUser.email = event.user.email;
       event.user = safeUser;
