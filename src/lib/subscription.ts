@@ -854,3 +854,4 @@ export async function checkFeatureAccess(
         return { allowed: false, reason: 'Error checking access' }
     }
 }
+

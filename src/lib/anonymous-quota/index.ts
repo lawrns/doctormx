@@ -119,3 +119,4 @@ export async function useAnonymousConsultation(sessionId?: string): Promise<Anon
     remaining: Math.max(0, ANONYMOUS_QUOTA_LIMIT - used),
   }
 }
+

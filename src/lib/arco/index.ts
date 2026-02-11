@@ -516,3 +516,4 @@ export async function initializeUserPrivacyPreferences(
     last_consent_update: new Date().toISOString(),
   })
 }
+

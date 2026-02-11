@@ -388,3 +388,4 @@ async function sendReceiptWhatsApp(patientId: string, appointment: { id: string;
     `${process.env.NEXT_PUBLIC_APP_URL || 'https://doctory.mx'}/consultation/${appointment.id}`
   )
 }
+

@@ -1359,3 +1359,4 @@ export function exampleUsage(): void {
 
 // Default export
 export default confidenceCalculator;
+

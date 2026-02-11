@@ -164,3 +164,4 @@ export const generateTimeSlots = (): string[] => {
   }
   return slots
 }
+

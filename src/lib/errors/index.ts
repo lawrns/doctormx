@@ -78,3 +78,4 @@ export {
 // Re-export types for convenience
 export type { AppError as AppErrorType } from './AppError';
 export type { ErrorContext } from './handler';
+

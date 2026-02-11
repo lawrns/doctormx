@@ -23,7 +23,7 @@ import type {
   UserConsentRecord,
   ConsentVersion,
 } from './types'
-import { logger } from '@/lib/logger'
+import { logger } from '@/lib/observability/logger'
 
 // ================================================
 // AUDIT LOGGING FUNCTIONS
@@ -113,7 +113,7 @@ export async function createConsentAuditLog(params: {
   const { error } = await supabase.from('audit_logs').insert(auditLog)
 
   if (error) {
-    logger.error({ err: error }, 'Error creating consent audit log')
+    logger.error('', undefined,  as Error)
     // Don't throw - audit logging failures shouldn't break the main flow
   }
 
@@ -141,7 +141,7 @@ export async function createConsentAuditLog(params: {
   })
 
   if (consentError) {
-    logger.error({ err: consentError }, 'Error creating consent-specific audit log')
+    logger.error('', undefined,  as Error)
   }
 }
 
@@ -537,7 +537,7 @@ export async function getConsentAuditLogsForUser(
   const { data, error } = await query.order('occurred_at', { ascending: false })
 
   if (error) {
-    logger.error({ err: error }, 'Error getting consent audit logs')
+    logger.error('', undefined,  as Error)
     return []
   }
 
@@ -601,3 +601,4 @@ export async function exportConsentAuditLogs(
 
   return csvContent
 }
+

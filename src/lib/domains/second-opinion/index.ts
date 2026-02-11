@@ -279,3 +279,4 @@ export async function getSecondOpinionDocuments(
   
   return data as SecondOpinionDocument[]
 }
+

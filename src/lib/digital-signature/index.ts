@@ -296,3 +296,4 @@ export function getDocumentTypeName(type: string): string {
   }
   return names[type] || type
 }
+

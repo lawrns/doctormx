@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { AppError } from './AppError';
 import type { EmergencyDetectedError } from './AppError';
-import { logger } from '@/lib/logger';
+import { logger } from '@/lib/observability/logger';
 import {
   getPatientMessage,
   getDeveloperMessage,
@@ -426,3 +426,4 @@ export async function throwOnError<T>(
     throw appError;
   }
 }
+

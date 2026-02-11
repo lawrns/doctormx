@@ -392,3 +392,4 @@ export async function withdrawUserConsent(
   const manager = new ConsentManager({ userId })
   return manager.withdrawConsent(consentType, reason)
 }
+

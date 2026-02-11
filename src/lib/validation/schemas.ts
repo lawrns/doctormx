@@ -99,3 +99,4 @@ export type PaymentIntentInput = z.infer<typeof paymentIntentSchema>
 export type ProfileUpdateInput = z.infer<typeof profileUpdateSchema>
 export type SecondOpinionInput = z.infer<typeof secondOpinionSchema>
 export type ChatMessageInput = z.infer<typeof chatMessageSchema>
+

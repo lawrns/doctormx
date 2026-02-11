@@ -261,3 +261,4 @@ describe('consultationMachine', () => {
     expect(getConsultationStatus('error')).toBe('error')
   })
 })
+

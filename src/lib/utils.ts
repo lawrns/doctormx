@@ -92,3 +92,4 @@ export function formatLanguageName(code: string): string {
   }
   return languageMap[code] || code
 }
+

@@ -555,3 +555,4 @@ Genera un plan de tratamiento basado en el consenso.
 El plan debe ser claro, accionable y comprensible para el paciente.
 Responde en formato JSON.`
 }
+

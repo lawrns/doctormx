@@ -90,3 +90,4 @@ describe('Enhanced Red Flag Detection - English Keywords', () => {
     expect(result.highestSeverity).toBe(null);
   });
 });
+

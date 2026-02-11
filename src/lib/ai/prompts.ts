@@ -236,3 +236,4 @@ export function extractTemplateVariables(template: string): string[] {
   const matches = template.match(/\{\{(\w+)\}\}/g) || [];
   return matches.map((m) => m.replace(/\{\{|\}\}/g, ''));
 }
+

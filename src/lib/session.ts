@@ -2,7 +2,7 @@
 // Handles session tracking, invalidation, and security event recording
 
 import { createClient, createServiceClient } from '@/lib/supabase/server'
-import { logger } from '@/lib/logger'
+import { logger } from '@/lib/observability/logger'
 import { cookies } from 'next/headers'
 
 /**
@@ -55,7 +55,7 @@ export async function getCurrentSession(): Promise<SessionInfo | null> {
     }
   } catch (error) {
     // Log error but don't throw - return null on failure
-    logger.error({ err: error }, 'Error getting current session')
+    logger.error('', undefined,  as Error)
     return null
   }
 }
@@ -76,7 +76,7 @@ export async function invalidateAllUserSessions(userId: string): Promise<void> {
       throw new Error(`Failed to invalidate sessions for user ${userId}: ${error.message}`)
     }
   } catch (error) {
-    logger.error({ err: error }, 'Error invalidating user sessions')
+    logger.error('', undefined,  as Error)
     throw error
   }
 }
@@ -94,7 +94,7 @@ export async function invalidateCurrentSession(): Promise<void> {
       throw new Error(`Failed to invalidate current session: ${error.message}`)
     }
   } catch (error) {
-    logger.error({ err: error }, 'Error invalidating current session')
+    logger.error('', undefined,  as Error)
     throw error
   }
 }
@@ -116,7 +116,7 @@ export async function refreshSession(): Promise<void> {
       throw new Error('No session to refresh')
     }
   } catch (error) {
-    logger.error({ err: error }, 'Error refreshing session')
+    logger.error('', undefined,  as Error)
     throw error
   }
 }
@@ -164,7 +164,7 @@ export async function recordSecurityEvent(
       await invalidateAllUserSessions(userId)
     }
   } catch (error) {
-    logger.error({ err: error }, 'Error recording security event')
+    logger.error('', undefined,  as Error)
     throw error
   }
 }
@@ -197,7 +197,7 @@ export async function getUserSecurityEvents(
 
     return data || []
   } catch (error) {
-    logger.error({ err: error }, 'Error getting user security events')
+    logger.error('', undefined,  as Error)
     throw error
   }
 }
@@ -214,3 +214,4 @@ export interface SecurityEvent {
   metadata: Record<string, unknown> | null
   created_at: string
 }
+

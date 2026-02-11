@@ -50,3 +50,4 @@ export async function verifyPayment(paymentIntentId: string) {
   const paymentIntent = await stripe.paymentIntents.retrieve(paymentIntentId)
   return paymentIntent.status === 'succeeded'
 }
+

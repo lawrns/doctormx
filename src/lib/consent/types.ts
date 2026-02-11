@@ -635,3 +635,4 @@ export interface BulkConsentOperationResult {
   errors: Array<{ user_id: string; error: string }>
   completed_at: string
 }
+

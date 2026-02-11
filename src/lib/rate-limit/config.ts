@@ -208,3 +208,4 @@ export function getRateLimitTierId(
 
   return method === 'GET' ? 'api:read' : 'api:write'
 }
+

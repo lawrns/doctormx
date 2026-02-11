@@ -495,7 +495,7 @@ if (typeof window === 'undefined' && ENVIRONMENT !== 'test') {
   try {
     validateEnv(false); // Non-strict validation for development
   } catch (error) {
-    logger.error({ err: error }, '[ENV] Failed to validate environment');
+    logger.error('', undefined,  as Error);
   }
 }
 
@@ -516,3 +516,4 @@ export default {
   getCurrentEnvironment,
   ENVIRONMENT,
 };
+

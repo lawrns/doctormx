@@ -438,3 +438,4 @@ export async function getDoctorName(doctorId: string): Promise<string | null> {
 
   return data.full_name
 }
+

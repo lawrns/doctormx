@@ -322,3 +322,4 @@ export type DifferentialDiagnosis = {
   contradicting_evidence: string[];
   confidence: number; // 0-1
 };
+

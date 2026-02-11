@@ -35,3 +35,4 @@ export const TIME = {
 } as const
 
 export type TimeKey = keyof typeof TIME
+

@@ -213,3 +213,4 @@ describe('Triage System', () => {
     });
   });
 });
+

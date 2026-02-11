@@ -115,3 +115,4 @@ export class PharmacyScraper {
 
 export const pharmacyScraper = new PharmacyScraper();
 export function getAllMockProducts() { return MOCK_PRODUCTS; }
+

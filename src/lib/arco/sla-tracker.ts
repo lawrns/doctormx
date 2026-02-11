@@ -676,3 +676,4 @@ export async function getSlaRiskLevel(request: ArcoRequestRow): Promise<{
     description: 'Dentro de los límites SLA',
   }
 }
+

@@ -245,3 +245,4 @@ export async function getReferralStats(doctorId: string): Promise<{
     total_fees_earned: data?.total_referral_fees_earned_cents || 0,
   }
 }
+

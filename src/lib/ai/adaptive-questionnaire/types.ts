@@ -358,3 +358,4 @@ export const SYMPTOM_QUESTION_TEMPLATES: Record<string, Question[]> = {
     }
   ]
 }
+

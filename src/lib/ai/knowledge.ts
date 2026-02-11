@@ -49,7 +49,7 @@ export async function retrieveMedicalContext(patientId: string): Promise<string>
 
     return context
   } catch (error) {
-    logger.error({ err: error }, 'Error retrieving medical context')
+    logger.error('', undefined,  as Error)
     return 'Contexto médico no disponible'
   }
 }
@@ -82,3 +82,4 @@ export async function generateAugmentedPrompt(
 
   return prompt
 }
+

@@ -77,3 +77,4 @@ export const FEATURE_FLAGS: Record<FeatureFlagKey, FeatureFlag> = {
 }
 
 export const DEFAULT_FLAGS = FEATURE_FLAGS
+

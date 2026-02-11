@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { logger } from '@/lib/logger'
+import { logger } from '@/lib/observability/logger'
 
 interface ValidationResult {
   isValid: boolean
@@ -79,7 +79,7 @@ export async function validateMagicNumbersFromFile(file: File): Promise<Validati
       error: 'El archivo no contiene el formato de imagen esperado (JPEG o PNG)'
     }
   } catch (error) {
-    logger.error({ err: error }, 'Error validating magic numbers')
+    logger.error('', undefined,  as Error)
     return {
       isValid: false,
       error: 'Error al validar el archivo'
@@ -93,3 +93,4 @@ export function createValidationErrorResponse(validationResult: ValidationResult
     { status: 400 }
   )
 }
+

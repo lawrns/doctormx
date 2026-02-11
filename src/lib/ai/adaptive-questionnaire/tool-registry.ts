@@ -660,3 +660,4 @@ export class ToolRegistry {
 }
 
 export const toolRegistry = new ToolRegistry()
+

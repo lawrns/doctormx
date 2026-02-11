@@ -662,3 +662,4 @@ export async function getEscalationStats(): Promise<{
     most_common_reasons: mostCommonReasons,
   }
 }
+

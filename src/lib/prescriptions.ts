@@ -1,5 +1,5 @@
 import { createClient, createServiceClient } from '@/lib/supabase/server'
-import { logger } from '@/lib/logger'
+import { logger } from '@/lib/observability/logger'
 import { generatePrescriptionPDF, buildPrescriptionData } from './prescriptions-pdf'
 import { scheduleFollowUp } from './followup'
 import { addDays } from 'date-fns'
@@ -92,7 +92,7 @@ async function scheduleMedicationReminders(prescriptionId: string, appointmentId
       scheduledAt: addDays(new Date(), 25),
     })
   } catch (error) {
-    logger.error({ err: error }, 'Error scheduling medication reminders')
+    logger.error('', undefined,  as Error)
   }
 }
 
@@ -231,3 +231,4 @@ export async function markAsSent(prescriptionId: string): Promise<void> {
   
   if (error) throw error
 }
+

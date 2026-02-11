@@ -47,3 +47,4 @@ export const PRICING = {
 } as const
 
 export type PricingKey = keyof typeof PRICING
+

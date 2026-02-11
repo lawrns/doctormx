@@ -104,3 +104,4 @@ export async function requireRole(role: UserRole) {
 
   return { user, profile, supabase }
 }
+

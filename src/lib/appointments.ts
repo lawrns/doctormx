@@ -137,3 +137,4 @@ export async function completeAppointment(appointmentId: string) {
 
   return data
 }
+

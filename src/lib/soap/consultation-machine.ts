@@ -448,3 +448,4 @@ export function getConsultationProgress(context: ConsultationContext): {
 // ============================================
 
 export type ConsultationMachine = typeof consultationMachine
+

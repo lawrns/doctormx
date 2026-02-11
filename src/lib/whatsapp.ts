@@ -4,7 +4,7 @@
 // Output: Session with routing decision
 
 import { createServiceClient } from '@/lib/supabase/server'
-import { logger } from '@/lib/logger'
+import { logger } from '@/lib/observability/logger'
 
 export type TriageOutcome = 'book_consultation' | 'refer_pharmacy' | 'emergency_redirect'
 
@@ -46,7 +46,7 @@ export async function createSession(phoneNumber: string) {
             session,
         }
     } catch (error) {
-        logger.error({ err: error }, 'Error creating WhatsApp session')
+        logger.error('', undefined,  as Error)
         throw error
     }
 }
@@ -92,7 +92,7 @@ export async function addMessage(
             message,
         }
     } catch (error) {
-        logger.error({ err: error }, 'Error adding WhatsApp message')
+        logger.error('', undefined,  as Error)
         throw error
     }
 }
@@ -182,7 +182,7 @@ export async function conductTriage(
             summary,
         }
     } catch (error) {
-        logger.error({ err: error }, 'Error conducting triage')
+        logger.error('', undefined,  as Error)
         return {
             success: false,
             aiResponse: 'Lo siento, hubo un error. Por favor intenta de nuevo.',
@@ -310,7 +310,7 @@ export async function routeHandoff(
             bookingLink,
         }
     } catch (error) {
-        logger.error({ err: error }, 'Error routing handoff')
+        logger.error('', undefined,  as Error)
         return {
             success: false,
             error: error instanceof Error ? error.message : 'Unknown error',
@@ -349,7 +349,7 @@ export async function linkSessionToPatient(
             session,
         }
     } catch (error) {
-        logger.error({ err: error }, 'Error linking session to patient')
+        logger.error('', undefined,  as Error)
         throw error
     }
 }
@@ -389,7 +389,7 @@ export async function getSessionDetails(sessionId: string) {
             messages: messages || [],
         }
     } catch (error) {
-        logger.error({ err: error }, 'Error getting session details')
+        logger.error('', undefined,  as Error)
         return null
     }
 }
@@ -426,7 +426,8 @@ export async function completeSession(
             session,
         }
     } catch (error) {
-        logger.error({ err: error }, 'Error completing session')
+        logger.error('', undefined,  as Error)
         throw error
     }
 }
+

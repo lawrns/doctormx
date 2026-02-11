@@ -9,7 +9,7 @@
 
 import { createClient } from '@/lib/supabase/server'
 import { openai } from '@/lib/openai'
-import { logger } from '@/lib/logger'
+import { logger } from '@/lib/observability/logger'
 
 // Embeddings use OpenAI (embedding migration is a separate task)
 
@@ -634,7 +634,7 @@ export async function generateEmbedding(text: string): Promise<number[]> {
     });
     return response.data[0].embedding;
   } catch (error) {
-    logger.error({ err: error }, 'Error generating embedding');
+    logger.error('', undefined,  as Error);
     throw error;
   }
 }
@@ -712,7 +712,7 @@ export async function retrieveMedicalContext(
     
     if (error) {
       // Fallback to keyword search if vector search fails
-      logger.warn({ err: error }, 'Vector search failed, falling back to keyword search');
+      logger.warn('', undefined,  as Error);
       return keywordSearch(supabase, query, options);
     }
     
@@ -735,7 +735,7 @@ export async function retrieveMedicalContext(
       query,
     };
   } catch (error) {
-    logger.error({ err: error }, 'Error retrieving medical context');
+    logger.error('', undefined,  as Error);
     return keywordSearch(supabase, query, options);
   }
 }
@@ -862,3 +862,4 @@ export async function getMedicalKnowledgeStats(): Promise<{
     last_updated: lastUpdated,
   };
 }
+

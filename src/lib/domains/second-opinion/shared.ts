@@ -78,3 +78,4 @@ export interface SecondOpinionDocument {
   ai_analysis?: string
   created_at: string
 }
+

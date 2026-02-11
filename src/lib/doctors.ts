@@ -146,3 +146,4 @@ async function fetchDoctorById(id: string) {
   
   return doctor
 }
+

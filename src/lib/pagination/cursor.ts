@@ -78,3 +78,4 @@ export function extractCursorId(cursor: string): string | null {
     return null
   }
 }
+

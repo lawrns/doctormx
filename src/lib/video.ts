@@ -66,3 +66,4 @@ export async function getOrCreateVideoRoom(appointmentId: string) {
     provider: 'jitsi',
   }
 }
+

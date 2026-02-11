@@ -517,3 +517,4 @@ export async function getParticipants(conversationId: string): Promise<{
     doctorId: data.doctor_id,
   }
 }
+

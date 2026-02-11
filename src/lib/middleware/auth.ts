@@ -224,3 +224,4 @@ export async function checkAuthForMiddleware(
     return { authenticated: false, authorized: false }
   }
 }
+

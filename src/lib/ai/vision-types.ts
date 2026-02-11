@@ -79,3 +79,4 @@ export function getUrgencyColor(urgency: UrgencyLevel | null): string {
   }
   return urgency ? colors[urgency] : 'bg-gray-100 text-gray-800'
 }
+

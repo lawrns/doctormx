@@ -312,3 +312,4 @@ export function isEmergencyError(error: AppError | string): boolean {
   const code = typeof error === 'string' ? error : error.code;
   return getEmergencyErrorCodes().includes(code);
 }
+

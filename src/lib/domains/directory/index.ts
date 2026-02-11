@@ -238,3 +238,4 @@ export async function getDirectorySpecialties(): Promise<{ specialty: string; co
   
   return (data || []).map(s => ({ specialty: s.name, count: 0 }))
 }
+

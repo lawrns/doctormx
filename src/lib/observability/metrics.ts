@@ -2,7 +2,7 @@
 // Track counters, gauges, and histograms for monitoring
 
 import { createServiceClient } from '@/lib/supabase/server'
-import { logger } from '@/lib/logger'
+import { logger } from '@/lib/observability/logger'
 
 export type MetricType = 'counter' | 'gauge' | 'histogram'
 
@@ -42,7 +42,7 @@ async function flushMetrics() {
       }))
     )
   } catch (error) {
-    logger.error({ err: error }, '[Metrics] Flush error')
+    logger.error('', undefined,  as Error)
     // Re-add failed metrics to buffer (up to limit)
     metricsBuffer.push(...metrics.slice(0, BUFFER_SIZE - metricsBuffer.length))
   }
@@ -138,3 +138,4 @@ export const metrics = {
 }
 
 export default metrics
+

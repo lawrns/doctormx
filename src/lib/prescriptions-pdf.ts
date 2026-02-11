@@ -2,7 +2,7 @@ import PDFDocument from 'pdfkit'
 import QRCode from 'qrcode'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale'
-import { logger } from '@/lib/logger'
+import { logger } from '@/lib/observability/logger'
 
 export interface Medication {
   name: string
@@ -51,7 +51,7 @@ async function generateQRCode(data: string): Promise<string> {
       },
     })
   } catch (error) {
-    logger.error({ err: error }, 'Error generating QR code')
+    logger.error('', undefined,  as Error)
     throw new Error('Failed to generate QR code')
   }
 }
@@ -249,3 +249,4 @@ export function buildPrescriptionData(
     verificationUrl,
   }
 }
+

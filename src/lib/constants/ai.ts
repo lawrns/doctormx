@@ -100,3 +100,4 @@ export const AI = {
 } as const
 
 export type AIKey = keyof typeof AI
+

@@ -405,3 +405,4 @@ export function getImageTypeLabel(type: ImageType): string {
   }
   return labels[type]
 }
+

@@ -851,3 +851,4 @@ export async function getCopilotSession(appointmentId: string) {
         return null
     }
 }
+

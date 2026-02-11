@@ -525,3 +525,4 @@ export async function getPendingFollowUps(): Promise<FollowUp[]> {
 export async function markAppointmentCompleted(appointmentId: string): Promise<void> {
   await scheduleFollowUp({ appointmentId, type: 'follow_up_24h' })
 }
+

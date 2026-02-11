@@ -15,7 +15,7 @@ import type {
   ConsentChange,
 } from './types'
 import { logConsentVersionUpdated } from './consent-audit'
-import { logger } from '@/lib/logger'
+import { logger } from '@/lib/observability/logger'
 
 // ================================================
 // CONSENT VERSION FUNCTIONS
@@ -119,7 +119,7 @@ export async function getLatestConsentVersion(
     .maybeSingle()
 
   if (error) {
-    logger.error({ err: error }, 'Error getting latest consent version')
+    logger.error('', undefined,  as Error)
     return null
   }
 
@@ -144,7 +144,7 @@ export async function getConsentVersion(
     .maybeSingle()
 
   if (error) {
-    logger.error({ err: error }, 'Error getting consent version')
+    logger.error('', undefined,  as Error)
     return null
   }
 
@@ -172,7 +172,7 @@ export async function getConsentVersionByNumber(
     .maybeSingle()
 
   if (error) {
-    logger.error({ err: error }, 'Error getting consent version by number')
+    logger.error('', undefined,  as Error)
     return null
   }
 
@@ -205,7 +205,7 @@ export async function getActiveConsentVersions(
   const { data, error } = await query
 
   if (error) {
-    logger.error({ err: error }, 'Error getting active consent versions')
+    logger.error('', undefined,  as Error)
     return []
   }
 
@@ -236,7 +236,7 @@ export async function getAllConsentVersions(
   const { data, error } = await query
 
   if (error) {
-    logger.error({ err: error }, 'Error getting all consent versions')
+    logger.error('', undefined,  as Error)
     return []
   }
 
@@ -588,7 +588,7 @@ export async function getConsentVersionHistory(
     .order('created_at', { ascending: false })
 
   if (error) {
-    logger.error({ err: error }, 'Error getting consent version history')
+    logger.error('', undefined,  as Error)
     return []
   }
 
@@ -655,7 +655,7 @@ export async function getScheduledConsentVersions(): Promise<ConsentVersion[]> {
     .order('effective_date', { ascending: true })
 
   if (error) {
-    logger.error({ err: error }, 'Error getting scheduled consent versions')
+    logger.error('', undefined,  as Error)
     return []
   }
 
@@ -834,3 +834,4 @@ export async function getNextVersionNumber(
 
   return versionParts.join('.')
 }
+

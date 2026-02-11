@@ -1,5 +1,5 @@
 import { createClient, createServiceClient } from '@/lib/supabase/server'
-import { logger } from '@/lib/logger'
+import { logger } from '@/lib/observability/logger'
 
 export interface Review {
   id: string
@@ -50,7 +50,7 @@ export async function createReview(data: {
     .single()
 
   if (error) {
-    logger.error({ err: error }, 'Error creating review')
+    logger.error('', undefined,  as Error)
     throw error
   }
 
@@ -81,7 +81,7 @@ export async function getDoctorReviews(doctorId: string, options?: {
     .range(offset, offset + limit - 1)
 
   if (error) {
-    logger.error({ err: error }, 'Error fetching reviews')
+    logger.error('', undefined,  as Error)
     throw error
   }
 
@@ -97,7 +97,7 @@ export async function getDoctorRatingSummary(doctorId: string): Promise<DoctorRa
     .eq('doctor_id', doctorId)
 
   if (error) {
-    logger.error({ err: error }, 'Error fetching rating summary')
+    logger.error('', undefined,  as Error)
     throw error
   }
 
@@ -200,7 +200,7 @@ export async function getPatientReviewableAppointments(patientId: string): Promi
     .order('start_ts', { ascending: false })
 
   if (error) {
-    logger.error({ err: error }, 'Error fetching appointments')
+    logger.error('', undefined,  as Error)
     throw error
   }
 
@@ -237,7 +237,7 @@ export async function deleteReview(reviewId: string, userId: string): Promise<vo
     .eq('id', reviewId)
 
   if (error) {
-    logger.error({ err: error }, 'Error deleting review')
+    logger.error('', undefined,  as Error)
     throw error
   }
 
@@ -273,7 +273,7 @@ export async function updateReview(reviewId: string, userId: string, data: {
     .single()
 
   if (error) {
-    logger.error({ err: error }, 'Error updating review')
+    logger.error('', undefined,  as Error)
     throw error
   }
 
@@ -326,3 +326,4 @@ export async function getReviewByAppointment(appointmentId: string): Promise<Rev
 
   return review
 }
+

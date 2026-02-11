@@ -128,3 +128,4 @@ describe('Method-Based CSRF Requirements', () => {
     expect(uniqueMethods.size).toBe(allMethods.length)
   })
 })
+

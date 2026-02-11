@@ -147,7 +147,7 @@ Reglas:
             purpose: rec.purpose || '',
         }))
     } catch (error) {
-        logger.error({ err: error }, 'Error generating OTC recommendations')
+        logger.error('', undefined,  as Error)
         return []
     }
 }
@@ -194,7 +194,7 @@ export async function saveOTCRecommendation(
             record,
         }
     } catch (error) {
-        logger.error({ err: error }, 'Error saving OTC recommendation')
+        logger.error('', undefined,  as Error)
         throw error
     }
 }
@@ -221,7 +221,7 @@ export async function getOTCRecommendations(patientId: string) {
 
         return recommendations || []
     } catch (error) {
-        logger.error({ err: error }, 'Error getting OTC recommendations')
+        logger.error('', undefined,  as Error)
         return []
     }
 }
@@ -248,7 +248,7 @@ export async function getAppointmentOTCRecommendations(appointmentId: string) {
 
         return recommendations || []
     } catch (error) {
-        logger.error({ err: error }, 'Error getting appointment OTC recommendations')
+        logger.error('', undefined,  as Error)
         return []
     }
 }
@@ -275,7 +275,7 @@ export async function getRecommendationsByCategory(category: OTCCategory) {
 
         return recommendations || []
     } catch (error) {
-        logger.error({ err: error }, 'Error getting recommendations by category')
+        logger.error('', undefined,  as Error)
         return []
     }
 }
@@ -333,7 +333,7 @@ Responde en JSON con esta estructura:
 
         return interactionData.interactions || []
     } catch (error) {
-        logger.error({ err: error }, 'Error checking drug interactions')
+        logger.error('', undefined,  as Error)
         return []
     }
 }
@@ -384,7 +384,8 @@ Responde en JSON con esta estructura:
 
         return alternativeData.alternatives || []
     } catch (error) {
-        logger.error({ err: error }, 'Error getting safe alternatives')
+        logger.error('', undefined,  as Error)
         return []
     }
 }
+

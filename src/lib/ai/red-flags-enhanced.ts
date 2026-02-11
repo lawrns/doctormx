@@ -873,3 +873,4 @@ export function getUrgencyDescription(score: number): {
     color: 'green',
   };
 }
+

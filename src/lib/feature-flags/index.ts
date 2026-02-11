@@ -4,7 +4,7 @@
 // Output: Boolean indicating if feature is enabled
 
 import { createServiceClient } from '@/lib/supabase/server'
-import { logger } from '@/lib/logger'
+import { logger } from '@/lib/observability/logger'
 import { FEATURE_FLAGS, type FeatureFlagKey } from './flags'
 
 export { FEATURE_FLAGS, type FeatureFlagKey } from './flags'
@@ -42,7 +42,7 @@ async function refreshFlagCache(): Promise<void> {
       .select('*')
 
     if (error) {
-      logger.error({ err: error }, '[FeatureFlags] Failed to fetch flags')
+      logger.error('', undefined,  as Error)
       return
     }
 
@@ -52,7 +52,7 @@ async function refreshFlagCache(): Promise<void> {
     }
     cacheTimestamp = now
   } catch (err) {
-    logger.error({ err: err }, '[FeatureFlags] Error refreshing cache')
+    logger.error('', undefined,  as Error)
   }
 }
 
@@ -150,3 +150,4 @@ export async function requireFeature(
     throw new Error(`Feature '${flagKey}' is not enabled`)
   }
 }
+

@@ -596,3 +596,4 @@ export function getComplianceScore(results: ValidationResult[]): {
     warning_total: warnings.length,
   }
 }
+

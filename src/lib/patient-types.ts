@@ -40,3 +40,4 @@ export interface PatientMedicalHistory {
 export interface PatientWithMedicalHistory extends PatientProfile {
   medical_history?: PatientMedicalHistory | null
 }
+

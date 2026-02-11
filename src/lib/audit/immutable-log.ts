@@ -10,7 +10,7 @@
 
 import crypto from 'crypto'
 import { createClient } from '@/lib/supabase/server'
-import { logger } from '@/lib/logger'
+import { logger } from '@/lib/observability/logger'
 import type {
   AuditCategory,
   AuditEventType,
@@ -237,7 +237,7 @@ export async function createAuditLogBatch(
       await createAuditLog(entry)
       created++
     } catch (error) {
-      logger.error({ err: error, entryId: entry.id }, 'Failed to create audit log')
+      logger.error('', undefined,  as Error)
     }
   }
 
@@ -606,3 +606,4 @@ export function isAuditLogIntact(log: ImmutableAuditLog): boolean {
   const expectedHash = generateHash(hashData)
   return log.hash === expectedHash
 }
+

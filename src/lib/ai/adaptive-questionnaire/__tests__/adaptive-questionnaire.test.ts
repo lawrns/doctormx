@@ -535,3 +535,4 @@ describe('RED_FLAG_PATTERNS', () => {
     expect(strokePattern?.pattern.test('parálisis en el brazo')).toBe(true)
   })
 })
+

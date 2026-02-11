@@ -406,3 +406,4 @@ export async function auditAIOperation(params: {
     logger.error('Error logging AI operation to DB', { error });
   }
 }
+

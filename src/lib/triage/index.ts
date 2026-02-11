@@ -363,3 +363,4 @@ export function getMentalHealthResources(): string[] {
     'No estás solo/a. Hay ayuda disponible.'
   ];
 }
+

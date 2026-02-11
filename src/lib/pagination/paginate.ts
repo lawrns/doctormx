@@ -121,3 +121,4 @@ export function calculateOffset(page: number, limit: number): number {
   const pageNumber = Math.max(1, page)
   return (pageNumber - 1) * limit
 }
+

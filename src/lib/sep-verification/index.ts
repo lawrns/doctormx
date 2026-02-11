@@ -4,7 +4,7 @@
  */
 
 import { createClient } from '@/lib/supabase/server'
-import { logger } from '@/lib/logger'
+import { logger } from '@/lib/observability/logger'
 
 export interface CedulaSearchResult {
   found: boolean;
@@ -305,7 +305,7 @@ export async function storeVerificationResult(
     });
   
   if (error) {
-    logger.error({ err: error }, 'Error storing verification result');
+    logger.error('', undefined,  as Error);
     throw error;
   }
   
@@ -361,3 +361,4 @@ export function mapTitleToSpecialty(title: string): string {
   }
   return 'Medicina General';
 }
+

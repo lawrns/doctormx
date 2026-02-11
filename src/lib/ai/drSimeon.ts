@@ -247,7 +247,7 @@ export async function conductOPQRSTAssessment(
 
         return summary
     } catch (error) {
-        logger.error({ err: error }, 'Error conducting OPQRST assessment')
+        logger.error('', undefined,  as Error)
         throw error
     }
 }
@@ -313,7 +313,7 @@ Banderas rojas que requieren 911:
             'Lo siento, no pude procesar tu mensaje. Por favor intenta de nuevo.'
         )
     } catch (error) {
-        logger.error({ err: error }, 'Error generating Dr. Simeon response')
+        logger.error('', undefined,  as Error)
         throw error
     }
 }
@@ -386,9 +386,10 @@ export async function logAIOperation(
             })
 
         if (logError) {
-            logger.error({ err: logError }, 'Error logging AI operation')
+            logger.error('', undefined,  as Error)
         }
     } catch (error) {
-        logger.error({ err: error }, 'Error logging AI operation')
+        logger.error('', undefined,  as Error)
     }
 }
+

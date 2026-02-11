@@ -205,3 +205,4 @@ export const getPatientFullData = cache(async (userId: string) => {
     medicalHistory,
   }
 })
+

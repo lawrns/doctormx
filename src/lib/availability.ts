@@ -131,3 +131,4 @@ export async function getOccupiedSlots(doctorId: string, date: string) {
     end: apt.end_ts.substring(11, 16),
   }))
 }
+

@@ -302,3 +302,4 @@ export default {
   createPerformanceMiddleware,
   HEALTHCARE_PERFORMANCE_TARGETS,
 }
+

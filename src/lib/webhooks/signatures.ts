@@ -635,3 +635,4 @@ export function generateTestTwilioSignature(
 
   return createHmac('sha1', authToken).update(dataToSign).digest('base64')
 }
+

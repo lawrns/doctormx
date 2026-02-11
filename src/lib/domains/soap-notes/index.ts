@@ -246,3 +246,4 @@ export async function listSoapNotes(
   
   return data as SoapNote[]
 }
+

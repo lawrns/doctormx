@@ -1,5 +1,5 @@
 import { createClient } from '@/lib/supabase/server'
-import { logger } from '@/lib/logger'
+import { logger } from '@/lib/observability/logger'
 import type { AppointmentStatus } from '@/types'
 
 export interface PatientAppointment {
@@ -71,7 +71,7 @@ export async function getPatientAppointments(
   const { data, error } = await query
   
   if (error) {
-    logger.error({ err: error }, 'Error fetching patient appointments')
+    logger.error('', undefined,  as Error)
     throw error
   }
   
@@ -117,7 +117,7 @@ export async function cancelAppointment(
     .single()
   
   if (updateError) {
-    logger.error({ err: updateError }, 'Error cancelling appointment')
+    logger.error('', undefined,  as Error)
     throw updateError
   }
   
@@ -152,7 +152,7 @@ export async function getAppointmentDetails(
     .single()
   
   if (error) {
-    logger.error({ err: error }, 'Error fetching appointment details')
+    logger.error('', undefined,  as Error)
     return null
   }
   
@@ -234,3 +234,4 @@ export function getAppointmentStatusInfo(status: string): {
     colorClass: 'bg-gray-100 text-gray-800',
   }
 }
+

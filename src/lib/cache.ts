@@ -64,3 +64,4 @@ export const rateLimit = {
   write: createRateLimiter(30, '1 m', 'ratelimit:write'),
   read: createRateLimiter(100, '1 m', 'ratelimit:read'),
 }
+
