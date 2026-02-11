@@ -97,7 +97,7 @@
 | **Flow 3.1 - Documentación** | 🟡 75% | README, clinical docs completos. **⚠️ OPENAPI truncado** |
 | **Flow 3.2 - Compliance Features** | 🟡 43% | Core implementado, **⚠️ falta API/UI/integración** |
 | **Flow 3.3 - Testing** | 🔴 35% | 542 tests, **⚠️ 182 fallando, desincronizados** |
-| **Flow 3.4 - UX/DX** | 🟢 84% | Loading, error states, a11y implementados |
+| **Flow 3.4 - UX/DX** | ✅ 100% | Loading, error states, a11y, Spanish completados |
 
 ### ❌ PENDIENTE / 🚨 BLOQUEANTES
 
