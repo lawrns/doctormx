@@ -9,6 +9,7 @@ import {
 } from '@/lib/pagination'
 import type { PaginatedResult } from '@/lib/pagination'
 import { logger } from '@/lib/observability/logger'
+import { HTTP_STATUS } from '@/lib/constants'
 
 export async function GET(request: NextRequest) {
   try {
@@ -40,12 +41,12 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ appointments })
     }
 
-    return NextResponse.json({ error: 'Parámetros inválidos' }, { status: 400 })
+    return NextResponse.json({ error: 'Parámetros inválidos' }, { status: HTTP_STATUS.BAD_REQUEST })
   } catch (error) {
     logger.error('Error fetching reviews:', { err: error })
     return NextResponse.json(
       { error: 'Error al obtener reseñas' },
-      { status: 500 }
+      { status: HTTP_STATUS.INTERNAL_SERVER_ERROR }
     )
   }
 }
@@ -60,14 +61,14 @@ export async function POST(request: NextRequest) {
     if (!appointmentId || !doctorId || !rating) {
       return NextResponse.json(
         { error: 'Faltan campos requeridos: appointmentId, doctorId, rating' },
-        { status: 400 }
+        { status: HTTP_STATUS.BAD_REQUEST }
       )
     }
 
     if (rating < 1 || rating > 5) {
       return NextResponse.json(
         { error: 'La calificación debe estar entre 1 y 5' },
-        { status: 400 }
+        { status: HTTP_STATUS.BAD_REQUEST }
       )
     }
 
@@ -77,12 +78,12 @@ export async function POST(request: NextRequest) {
       if (alreadyReviewed) {
         return NextResponse.json(
           { error: 'Ya has reseñado esta consulta' },
-          { status: 400 }
+          { status: HTTP_STATUS.BAD_REQUEST }
         )
       }
       return NextResponse.json(
         { error: 'Solo puedes reseñar consultas completadas' },
-        { status: 400 }
+        { status: HTTP_STATUS.BAD_REQUEST }
       )
     }
 
@@ -94,12 +95,12 @@ export async function POST(request: NextRequest) {
       comment,
     })
 
-    return NextResponse.json(review, { status: 201 })
+    return NextResponse.json(review, { status: HTTP_STATUS.CREATED })
   } catch (error) {
     logger.error('Error creating review:', { err: error })
     return NextResponse.json(
       { error: 'Error al crear reseña' },
-      { status: 500 }
+      { status: HTTP_STATUS.INTERNAL_SERVER_ERROR }
     )
   }
 }

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getDoctorById } from '@/lib/doctors'
 import { checkSubscriptionStatus } from '@/lib/subscription'
+import { HTTP_STATUS } from '@/lib/constants'
 
 export async function GET(
   request: NextRequest,
@@ -14,7 +15,7 @@ export async function GET(
     if (!doctor) {
       return NextResponse.json(
         { error: 'Doctor not found' },
-        { status: 404 }
+        { status: HTTP_STATUS.NOT_FOUND }
       )
     }
 
@@ -32,7 +33,7 @@ export async function GET(
   } catch {
     return NextResponse.json(
       { error: 'Doctor not found' },
-      { status: 404 }
+      { status: HTTP_STATUS.NOT_FOUND }
     )
   }
 }

@@ -4,6 +4,7 @@ import { headers } from 'next/headers'
 import { NextResponse } from 'next/server'
 import { logger } from '@/lib/observability/logger'
 import { verifyStripeWebhook } from '@/lib/webhooks'
+import { HTTP_STATUS } from '@/lib/constants'
 import Stripe from 'stripe'
 
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || ''
@@ -24,7 +25,7 @@ export async function POST(request: Request) {
     logger.warn('Stripe webhook received without signature', { provider: 'stripe' })
     return NextResponse.json(
       { error: 'Missing stripe-signature header' },
-      { status: 401 }
+      { status: HTTP_STATUS.UNAUTHORIZED }
     )
   }
 
@@ -32,7 +33,7 @@ export async function POST(request: Request) {
     logger.error('STRIPE_WEBHOOK_SECRET not configured', { provider: 'stripe' })
     return NextResponse.json(
       { error: 'Webhook secret not configured' },
-      { status: 500 }
+      { status: HTTP_STATUS.INTERNAL_SERVER_ERROR }
     )
   }
 
@@ -47,7 +48,7 @@ export async function POST(request: Request) {
     })
     return NextResponse.json(
       { error: 'Invalid signature' },
-      { status: 401 }
+      { status: HTTP_STATUS.UNAUTHORIZED }
     )
   }
 
@@ -63,7 +64,7 @@ export async function POST(request: Request) {
     })
     return NextResponse.json(
       { error: 'Invalid payload', details: errorMessage },
-      { status: 400 }
+      { status: HTTP_STATUS.BAD_REQUEST }
     )
   }
 
@@ -144,7 +145,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json(
       { error: 'Webhook processing failed', details: errorMessage },
-      { status: 500 }
+      { status: HTTP_STATUS.INTERNAL_SERVER_ERROR }
     )
   }
 }

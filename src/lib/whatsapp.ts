@@ -46,7 +46,7 @@ export async function createSession(phoneNumber: string) {
             session,
         }
     } catch (error) {
-        logger.error('', undefined,  as Error)
+        logger.error('Error sending WhatsApp template message', { error: (error as Error).message }, error as Error)
         throw error
     }
 }
@@ -92,7 +92,7 @@ export async function addMessage(
             message,
         }
     } catch (error) {
-        logger.error('', undefined,  as Error)
+        logger.error('Error sending WhatsApp text message', { error: (error as Error).message }, error as Error)
         throw error
     }
 }
@@ -182,7 +182,7 @@ export async function conductTriage(
             summary,
         }
     } catch (error) {
-        logger.error('', undefined,  as Error)
+        logger.error('Error sending WhatsApp reminder', { error: (error as Error).message }, error as Error)
         return {
             success: false,
             aiResponse: 'Lo siento, hubo un error. Por favor intenta de nuevo.',
@@ -310,7 +310,7 @@ export async function routeHandoff(
             bookingLink,
         }
     } catch (error) {
-        logger.error('', undefined,  as Error)
+        logger.error('Error sending appointment reminder', { error: (error as Error).message }, error as Error)
         return {
             success: false,
             error: error instanceof Error ? error.message : 'Unknown error',
@@ -349,7 +349,7 @@ export async function linkSessionToPatient(
             session,
         }
     } catch (error) {
-        logger.error('', undefined,  as Error)
+        logger.error('Error sending prescription notification', { error: (error as Error).message }, error as Error)
         throw error
     }
 }
@@ -389,7 +389,7 @@ export async function getSessionDetails(sessionId: string) {
             messages: messages || [],
         }
     } catch (error) {
-        logger.error('', undefined,  as Error)
+        logger.error('Error sending follow-up message', { error: (error as Error).message }, error as Error)
         return null
     }
 }
@@ -426,7 +426,7 @@ export async function completeSession(
             session,
         }
     } catch (error) {
-        logger.error('', undefined,  as Error)
+        logger.error('Error sending doctor notification', { error: (error as Error).message }, error as Error)
         throw error
     }
 }

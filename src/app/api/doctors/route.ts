@@ -148,7 +148,7 @@ export async function GET(request: NextRequest) {
 
     let doctors = (rawDoctors || []).map((doctor): DoctorWithSpecialties | null => {
       // Type assertion for the complex Supabase join result
-      const doc = doctor as {
+      const doc = doctor as unknown as {
         id: string
         bio: string | null
         price_cents: number

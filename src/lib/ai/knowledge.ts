@@ -49,7 +49,7 @@ export async function retrieveMedicalContext(patientId: string): Promise<string>
 
     return context
   } catch (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error building medical context', { error: (error as Error).message }, error as Error)
     return 'Contexto médico no disponible'
   }
 }

@@ -175,7 +175,7 @@ export default function PricingPage() {
                 setSubscription({ hasSubscription: false, isActive: false, subscription: null })
             }
         } catch (error) {
-            logger.error('Error loading subscription', undefined, error as Error)
+            logger.error('Error loading subscription', { error: (error as Error).message })
         } finally {
             setLoading(false)
         }

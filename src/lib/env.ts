@@ -325,7 +325,7 @@ export function validateEnv(strict: boolean = true): EnvValidationResult {
   
   // Log warnings in non-test environments
   if (warnings.length > 0 && ENVIRONMENT !== 'test') {
-    logger.warn({ warnings }, '[ENV] Configuration warnings');
+    logger.warn('[ENV] Configuration warnings', { warnings });
   }
   
   return result;
@@ -495,7 +495,7 @@ if (typeof window === 'undefined' && ENVIRONMENT !== 'test') {
   try {
     validateEnv(false); // Non-strict validation for development
   } catch (error) {
-    logger.error('', undefined,  as Error);
+    logger.error('Environment validation failed', { error: (error as Error).message }, error as Error);
   }
 }
 

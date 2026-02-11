@@ -113,7 +113,7 @@ export async function createConsentAuditLog(params: {
   const { error } = await supabase.from('audit_logs').insert(auditLog)
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error inserting audit log', { error: (error as Error).message }, error as Error)
     // Don't throw - audit logging failures shouldn't break the main flow
   }
 
@@ -141,7 +141,7 @@ export async function createConsentAuditLog(params: {
   })
 
   if (consentError) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error inserting consent audit log', { error: (consentError as Error).message }, consentError as Error)
   }
 }
 
@@ -537,7 +537,7 @@ export async function getConsentAuditLogsForUser(
   const { data, error } = await query.order('occurred_at', { ascending: false })
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error querying consent audit logs', { error: (error as Error).message }, error as Error)
     return []
   }
 

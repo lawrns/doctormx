@@ -8,6 +8,7 @@
 
 import { logger } from '@/lib/observability/logger'
 import { metrics } from '@/lib/observability/metrics'
+import { LIMITS } from '@/lib/constants'
 
 export type PerformanceOperation =
   | 'api_request'
@@ -54,10 +55,10 @@ export const HEALTHCARE_PERFORMANCE_TARGETS: Record<string, PerformanceConfig> =
   },
   // API responses should be under 500ms
   api_request: {
-    p95ThresholdMs: 300,
-    p99ThresholdMs: 500,
+    p95ThresholdMs: LIMITS.PERFORMANCE_P95_THRESHOLD_MS,
+    p99ThresholdMs: LIMITS.PERFORMANCE_P99_THRESHOLD_MS,
     logSlowRequests: true,
-    slowRequestThresholdMs: 500,
+    slowRequestThresholdMs: LIMITS.PERFORMANCE_SLOW_REQUEST_THRESHOLD_MS,
   },
   // AI operations can be slower but should be monitored
   ai_consult: {
@@ -89,9 +90,9 @@ export const HEALTHCARE_PERFORMANCE_TARGETS: Record<string, PerformanceConfig> =
   // Chat messages
   chat_message: {
     p95ThresholdMs: 200,
-    p99ThresholdMs: 500,
+    p99ThresholdMs: LIMITS.PERFORMANCE_P99_THRESHOLD_MS,
     logSlowRequests: true,
-    slowRequestThresholdMs: 500,
+    slowRequestThresholdMs: LIMITS.PERFORMANCE_SLOW_REQUEST_THRESHOLD_MS,
   },
 }
 

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { logger } from '@/lib/observability/logger'
+import { HTTP_STATUS } from '@/lib/constants'
 
 export const dynamic = 'force-dynamic'
 
@@ -9,7 +10,7 @@ export async function POST(request: NextRequest) {
   const { data: { user } } = await supabase.auth.getUser()
 
   if (!user) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    return NextResponse.json({ error: 'Unauthorized' }, { status: HTTP_STATUS.UNAUTHORIZED })
   }
 
   // Verificar que el usuario es admin
@@ -20,7 +21,7 @@ export async function POST(request: NextRequest) {
     .single()
 
   if (profile?.role !== 'admin') {
-    return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+    return NextResponse.json({ error: 'Forbidden' }, { status: HTTP_STATUS.FORBIDDEN })
   }
 
   const formData = await request.formData()
@@ -30,7 +31,7 @@ export async function POST(request: NextRequest) {
   if (!doctorId || !action) {
     return NextResponse.json(
       { error: 'Missing required fields' },
-      { status: 400 }
+      { status: HTTP_STATUS.BAD_REQUEST }
     )
   }
 
@@ -58,7 +59,7 @@ export async function POST(request: NextRequest) {
     logger.error('Error verifying doctor:', { err: error })
     return NextResponse.json(
       { error: 'Failed to verify doctor' },
-      { status: 500 }
+      { status: HTTP_STATUS.INTERNAL_SERVER_ERROR }
     )
   }
 }

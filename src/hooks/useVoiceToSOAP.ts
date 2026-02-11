@@ -4,6 +4,7 @@
  */
 
 import { useState, useCallback, useRef, useEffect } from 'react';
+import { logger } from '@/lib/observability/logger';
 
 // ============================================================================
 // TYPES
@@ -199,7 +200,7 @@ export function useVoiceToSOAP() {
         }));
       }
     } catch (error) {
-      console.error('AI structuring failed:', error);
+      logger.error('AI structuring failed', { error });
     }
   }, [state.transcript, state.soapNote]);
 

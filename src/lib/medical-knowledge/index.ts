@@ -634,7 +634,7 @@ export async function generateEmbedding(text: string): Promise<number[]> {
     });
     return response.data[0].embedding;
   } catch (error) {
-    logger.error('', undefined,  as Error);
+    logger.error('Error in semantic search', { error: (error as Error).message }, error as Error);
     throw error;
   }
 }
@@ -712,7 +712,7 @@ export async function retrieveMedicalContext(
     
     if (error) {
       // Fallback to keyword search if vector search fails
-      logger.warn('', undefined,  as Error);
+      logger.warn('Vector search failed, falling back to keyword search', { error: (error as Error).message });
       return keywordSearch(supabase, query, options);
     }
     
@@ -735,7 +735,7 @@ export async function retrieveMedicalContext(
       query,
     };
   } catch (error) {
-    logger.error('', undefined,  as Error);
+    logger.error('Error getting personalized recommendations', { error: (error as Error).message }, error as Error);
     return keywordSearch(supabase, query, options);
   }
 }

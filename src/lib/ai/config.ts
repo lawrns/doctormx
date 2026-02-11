@@ -8,6 +8,8 @@
  * - OpenAI SDK compatible
  */
 
+import { AI, TIME, LIMITS } from '@/lib/constants';
+
 export const AI_CONFIG = {
   // GLM - Primary AI Provider (z.ai)
   // Docs: https://docs.z.ai/guides/overview/quick-start
@@ -21,7 +23,7 @@ export const AI_CONFIG = {
     },
     defaultModel: 'glm-4.5-air',   // Use air model for chat - returns clean responses
     temperature: 0.3,              // Less creative, more consistent
-    maxTokens: 500,                // Concise responses
+    maxTokens: AI.MAX_TOKENS_DEFAULT, // Concise responses
   },
 
   // OpenAI - Fallback provider
@@ -29,7 +31,7 @@ export const AI_CONFIG = {
     apiKey: process.env.OPENAI_API_KEY || '',
     model: 'gpt-4o-mini', // Fallback model
     temperature: 0.3,
-    maxTokens: 500,
+    maxTokens: AI.MAX_TOKENS_DEFAULT,
   },
 
   // Whisper - Audio transcription (still uses OpenAI)
@@ -42,23 +44,23 @@ export const AI_CONFIG = {
 
   // Limits and quotas
   limits: {
-    maxMessagesPerSession: 20, // Pre-consultation limits
-    maxAudioMinutes: 60,       // Typical consultation 20-40min
-    maxRetries: 3,
-    timeoutMs: 30000,          // 30 seconds
+    maxMessagesPerSession: TIME.MAX_MESSAGES_PER_SESSION, // Pre-consultation limits
+    maxAudioMinutes: TIME.MAX_AUDIO_MINUTES, // Typical consultation 20-40min
+    maxRetries: LIMITS.MAX_RETRIES,
+    timeoutMs: TIME.AI_REQUEST_TIMEOUT_MS, // 30 seconds
   },
 
   // Cost tracking (per 1M tokens)
   costs: {
     // GLM pricing
-    glmInputPer1M: 0.60,
-    glmOutputPer1M: 2.20,
-    glmCachedPer1M: 0.11,
+    glmInputPer1M: AI.COSTS.GLM_INPUT_PER_1M,
+    glmOutputPer1M: AI.COSTS.GLM_OUTPUT_PER_1M,
+    glmCachedPer1M: AI.COSTS.GLM_CACHED_PER_1M,
     // OpenAI pricing (fallback)
-    gpt4oMiniInputPer1M: 0.15,
-    gpt4oMiniOutputPer1M: 0.60,
+    gpt4oMiniInputPer1M: AI.COSTS.GPT4O_MINI_INPUT_PER_1M,
+    gpt4oMiniOutputPer1M: AI.COSTS.GPT4O_MINI_OUTPUT_PER_1M,
     // Whisper
-    whisperPerMinute: 0.006,
+    whisperPerMinute: AI.COSTS.WHISPER_PER_MINUTE,
   },
 
   // Feature flags

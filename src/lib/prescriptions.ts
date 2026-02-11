@@ -92,7 +92,7 @@ async function scheduleMedicationReminders(prescriptionId: string, appointmentId
       scheduledAt: addDays(new Date(), 25),
     })
   } catch (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error creating prescription', { error: (error as Error).message }, error as Error)
   }
 }
 

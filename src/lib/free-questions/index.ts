@@ -93,7 +93,7 @@ export async function getUserQuota(userId: string): Promise<FreeQuestionsQuota> 
       .single();
     
     if (insertError) {
-      logger.error('', undefined,  as Error);
+      logger.error('Error creating free question quota', { error: (insertError as Error).message }, insertError as Error);
       // Return default quota
       return {
         user_id: userId,
@@ -213,7 +213,7 @@ export async function useQuestion(userId: string): Promise<{
     .eq('user_id', userId);
   
   if (error) {
-    logger.error('', undefined,  as Error);
+    logger.error('Error getting or creating quota', { error: (error as Error).message }, error as Error);
     return {
       success: false,
       quota: quotaCheck,

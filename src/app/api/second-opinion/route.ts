@@ -12,6 +12,7 @@ import {
 } from '@/lib/domains/second-opinion'
 import { isFeatureEnabled } from '@/lib/feature-flags'
 import { logger } from '@/lib/observability/logger'
+import { HTTP_STATUS } from '@/lib/constants'
 
 export async function POST(request: NextRequest) {
   try {
@@ -20,7 +21,7 @@ export async function POST(request: NextRequest) {
     // Check auth
     const { data: { user }, error: authError } = await supabase.auth.getUser()
     if (authError || !user) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+      return NextResponse.json({ error: 'Unauthorized' }, { status: HTTP_STATUS.UNAUTHORIZED })
     }
     
     // Check feature flag
@@ -28,7 +29,7 @@ export async function POST(request: NextRequest) {
     if (!enabled) {
       return NextResponse.json(
         { error: 'Second opinion feature is not available' },
-        { status: 403 }
+        { status: HTTP_STATUS.FORBIDDEN }
       )
     }
     
@@ -40,7 +41,7 @@ export async function POST(request: NextRequest) {
     if (!chief_complaint || typeof chief_complaint !== 'string' || chief_complaint.length < 10) {
       return NextResponse.json(
         { error: 'Chief complaint is required (minimum 10 characters)' },
-        { status: 400 }
+        { status: HTTP_STATUS.BAD_REQUEST }
       )
     }
     
@@ -49,7 +50,7 @@ export async function POST(request: NextRequest) {
     if (!validTypes.includes(type)) {
       return NextResponse.json(
         { error: 'Invalid request type. Must be basic, specialist, or panel' },
-        { status: 400 }
+        { status: HTTP_STATUS.BAD_REQUEST }
       )
     }
     
@@ -72,13 +73,13 @@ export async function POST(request: NextRequest) {
       id: result.id,
       price_cents: SECOND_OPINION_CONFIG.PRICES[type as SecondOpinionType],
       currency: 'MXN',
-    }, { status: 201 })
+    }, { status: HTTP_STATUS.CREATED })
     
   } catch (error) {
     logger.error('[SecondOpinion] Create error:', { err: error })
     return NextResponse.json(
       { error: 'Failed to create second opinion request' },
-      { status: 500 }
+      { status: HTTP_STATUS.INTERNAL_SERVER_ERROR }
     )
   }
 }
@@ -90,7 +91,7 @@ export async function GET(request: NextRequest) {
     // Check auth
     const { data: { user }, error: authError } = await supabase.auth.getUser()
     if (authError || !user) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+      return NextResponse.json({ error: 'Unauthorized' }, { status: HTTP_STATUS.UNAUTHORIZED })
     }
     
     // Get query params
@@ -128,7 +129,7 @@ export async function GET(request: NextRequest) {
     logger.error('[SecondOpinion] List error:', { err: error })
     return NextResponse.json(
       { error: 'Failed to list second opinion requests' },
-      { status: 500 }
+      { status: HTTP_STATUS.INTERNAL_SERVER_ERROR }
     )
   }
 }

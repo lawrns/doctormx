@@ -42,7 +42,7 @@ async function flushMetrics() {
       }))
     )
   } catch (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error recording metric', { error: (error as Error).message }, error as Error)
     // Re-add failed metrics to buffer (up to limit)
     metricsBuffer.push(...metrics.slice(0, BUFFER_SIZE - metricsBuffer.length))
   }

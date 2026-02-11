@@ -6,6 +6,7 @@ import { Select } from './Select'
 import { Textarea } from './Input'
 import { Modal } from './Modal'
 import { logger } from '@/lib/observability/logger'
+import { LiveRegion } from '@/components/ui/accessibility'
 
 export interface ImageUploaderProps {
   onUploadComplete?: (data: UploadResult & { analysisId: string; urgency: string; confidence: number }) => void
@@ -53,7 +54,8 @@ export function ImageUploader({
   const [showPaywall, setShowPaywall] = useState(false)
   const [usage, setUsage] = useState({ used: 0, limit: 0 })
   const [loadingUsage, setLoadingUsage] = useState(true)
-  
+  const [announcement, setAnnouncement] = useState('')
+
   const fileInputRef = useRef<HTMLInputElement>(null)
   const dropZoneRef = useRef<HTMLDivElement>(null)
 
@@ -83,10 +85,12 @@ export function ImageUploader({
 
   const handleFileSelect = useCallback((file: File) => {
     setErrorMessage(null)
-    
+    setAnnouncement('')
+
     if (!SUPPORTED_TYPES.includes(file.type)) {
       const error = 'Formato no soportado. Por favor, sube un archivo JPG, PNG o DICOM.'
       setErrorMessage(error)
+      setAnnouncement(error)
       onError?.(error)
       return
     }
@@ -95,12 +99,14 @@ export function ImageUploader({
     if (file.size > maxSizeBytes) {
       const error = `El archivo es muy grande. Máximo ${maxFileSizeMB}MB.`
       setErrorMessage(error)
+      setAnnouncement(error)
       onError?.(error)
       return
     }
 
     setSelectedFile(file)
-    
+    setAnnouncement('Archivo seleccionado. Por favor selecciona el tipo de imagen.')
+
     const objectUrl = URL.createObjectURL(file)
     setPreviewUrl(objectUrl)
   }, [maxFileSizeMB, onError])
@@ -139,13 +145,16 @@ export function ImageUploader({
 
   const handleUpload = async () => {
     if (!selectedFile || !imageType) {
-      setErrorMessage('Por favor selecciona un tipo de imagen')
+      const error = 'Por favor selecciona un tipo de imagen'
+      setErrorMessage(error)
+      setAnnouncement(error)
       return
     }
 
     setStatus('uploading')
     setUploadProgress(0)
     setErrorMessage(null)
+    setAnnouncement('Subiendo imagen...')
 
     try {
       const formData = new FormData()
@@ -167,9 +176,10 @@ export function ImageUploader({
 
       setUploadProgress(100)
       setStatus('analyzing')
+      setAnnouncement('Analizando imagen con inteligencia artificial...')
 
       const data = await response.json()
-      
+
       setResult({
         url: data.imageUrl,
         fileName: selectedFile.name,
@@ -181,6 +191,7 @@ export function ImageUploader({
       })
 
       setStatus('success')
+      setAnnouncement('Imagen analizada exitosamente.')
       onUploadComplete?.({
         url: data.imageUrl,
         fileName: selectedFile.name,
@@ -193,6 +204,7 @@ export function ImageUploader({
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Error desconocido'
       setErrorMessage(message)
+      setAnnouncement(`Error: ${message}`)
       setStatus('error')
       onError?.(message)
     }
@@ -207,6 +219,7 @@ export function ImageUploader({
     setUploadProgress(0)
     setErrorMessage(null)
     setResult(null)
+    setAnnouncement('Subidor de imágenes reiniciado.')
     if (fileInputRef.current) {
       fileInputRef.current.value = ''
     }
@@ -219,10 +232,11 @@ export function ImageUploader({
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6" role="region" aria-label="Subidor de imágenes médicas">
+      <LiveRegion message={announcement} role="status" />
       {status === 'locked' ? (
-        <div className="bg-gray-50 rounded-2xl p-8 text-center">
-          <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
+        <div className="bg-gray-50 rounded-2xl p-8 text-center" role="alert" aria-live="assertive">
+          <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4" aria-hidden="true">
             <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
             </svg>
@@ -238,12 +252,13 @@ export function ImageUploader({
             <div className="mb-4">
               <div className="flex justify-between text-sm text-gray-600 mb-1">
                 <span>Usado</span>
-                <span>{usage.used} / {usage.limit}</span>
+                <span>{usage.used} de {usage.limit}</span>
               </div>
-              <div className="w-full bg-gray-200 rounded-full h-2">
+              <div className="w-full bg-gray-200 rounded-full h-2" role="progressbar" aria-valuenow={usage.used} aria-valuemin={0} aria-valuemax={usage.limit} aria-label={`Uso del límite mensual: ${usage.used} de ${usage.limit} análisis usados`}>
                 <div
                   className="bg-blue-500 h-2 rounded-full"
                   style={{ width: `${Math.min(100, (usage.used / usage.limit) * 100)}%` }}
+                  aria-hidden="true"
                 />
               </div>
             </div>
@@ -251,7 +266,8 @@ export function ImageUploader({
           <div className="flex gap-3 justify-center">
             <button
               onClick={() => setShowPaywall(true)}
-              className="px-6 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-medium rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-colors"
+              className="px-6 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-medium rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              aria-label="Ver opciones para obtener más análisis de imágenes"
             >
               Obtener más análisis
             </button>
@@ -270,8 +286,8 @@ export function ImageUploader({
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 bg-gray-50 rounded-lg">
+              <div className="grid grid-cols-2 gap-4" role="list" aria-label="Opciones de compra de análisis de imágenes">
+                <article className="p-4 bg-gray-50 rounded-lg" role="listitem">
                   <h4 className="font-medium text-gray-900 mb-2">Análisis Individual</h4>
                   <p className="text-2xl font-bold text-gray-900">$50 MXN</p>
                   <p className="text-sm text-gray-500">Por análisis</p>
@@ -280,12 +296,13 @@ export function ImageUploader({
                       setShowPaywall(false)
                       window.location.href = '/app/premium?purchase=image_analysis&type=single'
                     }}
-                    className="mt-3 w-full py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
+                    className="mt-3 w-full py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    aria-label="Comprar análisis individual por 50 pesos mexicanos"
                   >
                     Comprar Ahora
                   </button>
-                </div>
-                <div className="p-4 bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200 rounded-lg">
+                </article>
+                <article className="p-4 bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200 rounded-lg" role="listitem">
                   <div className="flex items-center gap-2 mb-2">
                     <h4 className="font-medium text-gray-900">Pack de 10</h4>
                     <span className="px-2 py-0.5 bg-blue-500 text-white text-xs font-bold rounded-full">-20%</span>
@@ -297,17 +314,18 @@ export function ImageUploader({
                       setShowPaywall(false)
                       window.location.href = '/app/premium?purchase=image_analysis&type=bundle'
                     }}
-                    className="mt-3 w-full py-2 px-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-colors text-sm"
+                    className="mt-3 w-full py-2 px-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    aria-label="Comprar pack de 10 análisis por 400 pesos mexicanos"
                   >
                     Comprar Pack
                   </button>
-                </div>
+                </article>
               </div>
 
               <div className="text-center">
                 <a
                   href="/app/premium"
-                  className="text-blue-600 hover:underline text-sm"
+                  className="text-blue-600 hover:underline text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
                 >
                   Ver todos los planes premium
                 </a>
@@ -318,10 +336,10 @@ export function ImageUploader({
       ) : !result ? (
         <>
           {usage.limit > 0 && (
-            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-4">
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-4" role="status" aria-live="polite">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center" aria-hidden="true">
                     <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
@@ -353,21 +371,32 @@ export function ImageUploader({
               ${status === 'uploading' || status === 'analyzing' ? 'pointer-events-none opacity-50' : ''}
             `}
             onClick={() => fileInputRef.current?.click()}
+            role="button"
+            tabIndex={0}
+            aria-label={selectedFile ? `Imagen seleccionada: ${selectedFile.name}` : 'Subir imagen médica. Arrastra el archivo aquí o haz clic para seleccionar.'}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault()
+                fileInputRef.current?.click()
+              }
+            }}
           >
             <input
               ref={fileInputRef}
+              id="image-upload-input"
               type="file"
               accept=".jpg,.jpeg,.png,.dicom"
               onChange={handleInputChange}
               className="hidden"
               disabled={status === 'uploading' || status === 'analyzing'}
+              aria-describedby="image-upload-help"
             />
 
             {previewUrl ? (
               <div className="space-y-4">
-                /* eslint-disable-next-line @next/next/no-img-element */ <img
+                <img
                   src={previewUrl}
-                  alt="Vista previa"
+                  alt={`Vista previa: ${selectedFile?.name || 'Imagen médica'}`}
                   className="max-h-64 mx-auto rounded-lg object-contain"
                 />
                 <div className="text-sm text-gray-600">
@@ -380,14 +409,15 @@ export function ImageUploader({
                     e.stopPropagation()
                     handleReset()
                   }}
-                  className="text-sm text-red-600 hover:text-red-700 font-medium"
+                  className="text-sm text-red-600 hover:text-red-700 font-medium focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded px-2 py-1"
+                  aria-label="Eliminar imagen seleccionada y elegir otra"
                 >
                   Eliminar y seleccionar otra
                 </button>
               </div>
             ) : (
               <div className="space-y-4">
-                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto">
+                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto" aria-hidden="true">
                   <svg className="w-8 h-8 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
@@ -400,7 +430,7 @@ export function ImageUploader({
                     o haz clic para seleccionar
                   </p>
                 </div>
-                <p className="text-xs text-gray-400">
+                <p id="image-upload-help" className="text-xs text-gray-400">
                   Formatos soportados: JPG, PNG, DICOM • Máximo {maxFileSizeMB}MB
                 </p>
               </div>
@@ -416,6 +446,7 @@ export function ImageUploader({
                 value={imageType}
                 onChange={(e) => setImageType(e.target.value)}
                 required
+                aria-describedby="image-type-help"
               />
 
               <Textarea
@@ -424,10 +455,14 @@ export function ImageUploader({
                 value={patientNotes}
                 onChange={(e) => setPatientNotes(e.target.value)}
                 rows={3}
+                aria-describedby="patient-notes-help"
               />
+              <p id="patient-notes-help" className="text-xs text-gray-500">
+                Describe síntomas, duración, antecedentes relevantes...
+              </p>
 
               {errorMessage && (
-                <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                <div className="p-4 bg-red-50 border border-red-200 rounded-lg" role="alert" aria-live="assertive">
                   <p className="text-sm text-red-600">{errorMessage}</p>
                 </div>
               )}
@@ -438,6 +473,7 @@ export function ImageUploader({
                 disabled={!imageType || status === 'uploading' || status === 'analyzing'}
                 loadingText={status === 'uploading' ? 'Subiendo...' : 'Analizando con IA...'}
                 className="w-full"
+                aria-describedby={status === 'uploading' || status === 'analyzing' ? 'upload-status' : undefined}
               >
                 {status === 'uploading' ? 'Subiendo imagen...' : 'Analizar imagen'}
               </LoadingButton>
@@ -445,13 +481,14 @@ export function ImageUploader({
               {status === 'uploading' && (
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm text-gray-600">
-                    <span>Progreso</span>
-                    <span>{uploadProgress}%</span>
+                    <span id="upload-status">Progreso de subida</span>
+                    <span aria-label={`${uploadProgress} por ciento completado`}>{uploadProgress}%</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div className="w-full bg-gray-200 rounded-full h-2" role="progressbar" aria-valuenow={uploadProgress} aria-valuemin={0} aria-valuemax={100}>
                     <div
                       className="bg-primary-500 h-2 rounded-full transition-all duration-300"
                       style={{ width: `${uploadProgress}%` }}
+                      aria-hidden="true"
                     />
                   </div>
                 </div>
@@ -461,9 +498,9 @@ export function ImageUploader({
         </>
       ) : (
         <div className="space-y-6">
-          <div className="bg-teal-50 border border-teal-200 rounded-2xl p-6">
+          <div className="bg-teal-50 border border-teal-200 rounded-2xl p-6" role="status" aria-live="polite">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-teal-50 rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-teal-50 rounded-full flex items-center justify-center" aria-hidden="true">
                 <svg className="w-5 h-5 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
@@ -473,23 +510,31 @@ export function ImageUploader({
                 <p className="text-sm text-teal-700">El análisis de IA está listo para revisión</p>
               </div>
             </div>
-            
-            <div className="text-sm text-teal-800 space-y-1">
-              <p><strong>Archivo:</strong> {result.fileName}</p>
-              <p><strong>Tamaño:</strong> {formatFileSize(result.fileSize)}</p>
-            </div>
+
+            <dl className="text-sm text-teal-800 space-y-1">
+              <div className="flex gap-2">
+                <dt className="font-semibold">Archivo:</dt>
+                <dd>{result.fileName}</dd>
+              </div>
+              <div className="flex gap-2">
+                <dt className="font-semibold">Tamaño:</dt>
+                <dd>{formatFileSize(result.fileSize)}</dd>
+              </div>
+            </dl>
           </div>
 
           <div className="flex gap-4">
             <button
               onClick={handleReset}
-              className="flex-1 px-4 py-3 border border-gray-300 rounded-xl text-gray-700 font-medium hover:bg-gray-50 transition-colors"
+              className="flex-1 px-4 py-3 border border-gray-300 rounded-xl text-gray-700 font-medium hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              aria-label="Subir otra imagen médica"
             >
               Subir otra imagen
             </button>
             <a
               href={`/app/upload-image/result/${result.url.split('/').pop()}`}
-              className="flex-1 px-4 py-3 bg-primary-500 text-white rounded-xl font-medium hover:bg-primary-600 transition-colors text-center"
+              className="flex-1 px-4 py-3 bg-primary-500 text-white rounded-xl font-medium hover:bg-primary-600 transition-colors text-center focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              aria-label="Ver resultado completo del análisis de imagen"
             >
               Ver resultado completo
             </a>

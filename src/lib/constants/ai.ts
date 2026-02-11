@@ -9,7 +9,11 @@ export const AI = {
   TEMPERATURE_DETERMINISTIC: 0.2, // For structured analysis
 
   // Max tokens
+  MAX_TOKENS_MINIMAL: 300,
+  MAX_TOKENS_SHORT: 400,
   MAX_TOKENS_DEFAULT: 500,
+  MAX_TOKENS_MEDIUM: 1000,
+  MAX_TOKENS_LARGE: 1024,
 
   // Feature flags
   PRECONSULTA_ENABLED: true,

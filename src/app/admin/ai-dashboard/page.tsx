@@ -105,7 +105,7 @@ export default function AIDashboardPage() {
       a.download = `ai-metrics-${new Date().toISOString().split('T')[0]}.csv`
       a.click()
     } catch (err) {
-      logger.error('Export error', undefined, err as Error)
+      logger.error('Export error', { error: (err as Error).message })
     }
   }
 

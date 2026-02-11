@@ -5,6 +5,7 @@ import type { PreConsultaMessage } from '@/lib/ai/types';
 import { RecommendedDoctorsCard } from './RecommendedDoctorsCard';
 import type { DoctorMatch } from '@/lib/ai/referral';
 import { logger } from '@/lib/observability/logger';
+import { LiveRegion, useFocusTrap } from '@/components/ui/accessibility';
 
 type PreConsultaChatProps = {
   isOpen: boolean;
@@ -22,7 +23,18 @@ export default function PreConsultaChat({ isOpen, onCloseAction, onCompleteActio
   const [isLoading, setIsLoading] = useState(false);
   const [sessionId] = useState(() => crypto.randomUUID());
   const [referrals, setReferrals] = useState<DoctorMatch[]>([]);
+  const [announcement, setAnnouncement] = useState('');
+  const [previousMessageCount, setPreviousMessageCount] = useState(0);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement | null>(null);
+
+  // Focus trap for modal
+  useFocusTrap({
+    containerRef: modalRef,
+    isActive: isOpen,
+    onEscape: onCloseAction,
+  });
 
   // Auto-scroll al final
   useEffect(() => {
@@ -41,16 +53,29 @@ export default function PreConsultaChat({ isOpen, onCloseAction, onCompleteActio
   // Mensaje inicial
   useEffect(() => {
     if (isOpen && messages.length === 0) {
-      setMessages([
-        {
-          id: crypto.randomUUID(),
-          role: 'assistant',
-          content: '¡Hola! 👋 Soy tu asistente médico virtual. Antes de agendar tu consulta, déjame hacerte algunas preguntas para entender mejor tu situación.\n\n¿Cuál es el motivo principal de tu consulta?',
-          timestamp: new Date(),
-        },
-      ]);
+      const initialMessage = {
+        id: crypto.randomUUID(),
+        role: 'assistant' as const,
+        content: '¡Hola! Soy tu asistente médico virtual. Antes de agendar tu consulta, déjame hacerte algunas preguntas para entender mejor tu situación.\n\n¿Cuál es el motivo principal de tu consulta?',
+        timestamp: new Date(),
+      };
+      setMessages([initialMessage]);
+      setAnnouncement('Chat de pre-consulta abierto. El asistente médico te está esperando.');
     }
   }, [isOpen, messages.length]);
+
+  // Announce new messages
+  useEffect(() => {
+    if (messages.length > previousMessageCount && messages.length > 1) {
+      const lastMessage = messages[messages.length - 1];
+      setAnnouncement(
+        lastMessage.role === 'user'
+          ? 'Mensaje enviado. Esperando respuesta...'
+          : 'Tienes una nueva respuesta del asistente médico.'
+      );
+      setPreviousMessageCount(messages.length);
+    }
+  }, [messages.length, previousMessageCount]);
 
   const sendMessage = async () => {
     if (!input.trim() || isLoading) return;
@@ -113,41 +138,71 @@ export default function PreConsultaChat({ isOpen, onCloseAction, onCompleteActio
     }
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       sendMessage();
     }
   };
 
+  // Store trigger element reference when opening
+  useEffect(() => {
+    if (isOpen) {
+      triggerRef.current = document.activeElement as HTMLButtonElement;
+    }
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-      <div className="relative w-full max-w-2xl h-[600px] bg-white rounded-lg shadow-2xl flex flex-col mx-4">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="preconsulta-title"
+      aria-describedby="precura-description"
+    >
+      <LiveRegion message={announcement} role="status" />
+      <div
+        ref={modalRef}
+        className="relative w-full max-w-2xl h-[600px] bg-white rounded-lg shadow-2xl flex flex-col mx-4"
+        role="document"
+      >
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b">
+        <header className="flex items-center justify-between p-4 border-b">
           <div>
-            <h2 className="text-lg font-semibold text-gray-900">Pre-consulta inteligente</h2>
-            <p className="text-sm text-gray-500">Ayúdanos a entender tu situación</p>
+            <h2 id="preconsulta-title" className="text-lg font-semibold text-gray-900">
+              Pre-consulta inteligente
+            </h2>
+            <p id="precura-description" className="text-sm text-gray-500">
+              Ayúdanos a entender tu situación
+            </p>
           </div>
           <button
             onClick={onCloseAction}
-            className="text-gray-400 hover:text-gray-600 transition-colors"
-            aria-label="Cerrar"
+            className="text-gray-400 hover:text-gray-600 transition-colors p-2 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            aria-label="Cerrar chat de pre-consulta"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
-        </div>
+        </header>
 
         {/* Messages */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4">
+        <div
+          className="flex-1 overflow-y-auto p-4 space-y-4"
+          role="log"
+          aria-live="polite"
+          aria-atomic="false"
+          aria-label="Historial de conversación"
+        >
           {messages.map((message) => (
             <div
               key={message.id}
               className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
+              role="article"
+              aria-label={message.role === 'user' ? 'Tu mensaje' : 'Respuesta del asistente médico'}
             >
               <div
                 className={`max-w-[80%] rounded-lg px-4 py-2 ${message.role === 'user'
@@ -156,12 +211,15 @@ export default function PreConsultaChat({ isOpen, onCloseAction, onCompleteActio
                   }`}
               >
                 <p className="text-sm whitespace-pre-wrap">{message.content}</p>
-                <span className="text-xs opacity-70 mt-1 block">
+                <time
+                  className="text-xs opacity-70 mt-1 block"
+                  dateTime={message.timestamp.toISOString()}
+                >
                   {message.timestamp.toLocaleTimeString('es-MX', {
                     hour: '2-digit',
                     minute: '2-digit',
                   })}
-                </span>
+                </time>
               </div>
             </div>
           ))}
@@ -179,43 +237,54 @@ export default function PreConsultaChat({ isOpen, onCloseAction, onCompleteActio
           )}
 
           {isLoading && (
-            <div className="flex justify-start">
+            <div className="flex justify-start" role="status" aria-live="polite" aria-label="El asistente médico está escribiendo">
               <div className="bg-gray-100 rounded-lg px-4 py-2">
-                <div className="flex space-x-2">
+                <div className="flex space-x-2" aria-hidden="true">
                   <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
                   <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
                   <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
                 </div>
+                <span className="sr-only">El asistente médico está escribiendo...</span>
               </div>
             </div>
           )}
-          <div ref={messagesEndRef} />
+          <div ref={messagesEndRef} tabIndex={-1} aria-hidden="true" />
         </div>
 
         {/* Input */}
-        <div className="p-4 border-t">
-          <div className="flex space-x-2">
+        <footer className="p-4 border-t">
+          <form onSubmit={(e) => { e.preventDefault(); sendMessage(); }} className="flex space-x-2">
+            <label htmlFor="preconsulta-input" className="sr-only">
+              Escribe tu respuesta para la pre-consulta
+            </label>
             <textarea
+              id="preconsulta-input"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              onKeyPress={handleKeyPress}
+              onKeyDown={handleKeyPress}
               placeholder="Escribe tu respuesta..."
-              className="flex-1 resize-none rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="flex-1 resize-none rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
               rows={2}
               disabled={isLoading}
+              aria-describedby="preconsulta-input-help"
             />
+            <span id="preconsulta-input-help" className="sr-only">
+              Presiona Enter para enviar, Shift + Enter para nueva línea
+            </span>
             <button
+              type="button"
               onClick={sendMessage}
               disabled={!input.trim() || isLoading}
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              aria-label={isLoading ? 'Enviando mensaje...' : 'Enviar respuesta'}
             >
               Enviar
             </button>
-          </div>
-          <p className="text-xs text-gray-500 mt-2">
-            💡 Esta conversación es solo informativa. Un médico revisará tu caso.
+          </form>
+          <p className="text-xs text-gray-500 mt-2" role="note">
+            Esta conversación es solo informativa. Un médico revisará tu caso.
           </p>
-        </div>
+        </footer>
       </div>
     </div>
   );

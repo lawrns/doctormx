@@ -305,7 +305,7 @@ export async function storeVerificationResult(
     });
   
   if (error) {
-    logger.error('', undefined,  as Error);
+    logger.error('Error verifying SEP credentials', { error: (error as Error).message }, error as Error);
     throw error;
   }
   

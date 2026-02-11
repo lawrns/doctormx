@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { getDirectorySpecialties, getDirectoryCities } from '@/lib/domains/directory'
+import { logger } from '@/lib/observability/logger'
 
 const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://doctory.mx'
 
@@ -52,7 +53,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
     
   } catch (error) {
-    console.error('[Sitemap] Error generating dynamic entries:', error)
+    logger.error('[Sitemap] Error generating dynamic entries:', { error })
   }
   
   return entries

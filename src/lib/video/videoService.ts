@@ -132,7 +132,7 @@ export async function createVideoRoom(options: CreateRoomOptions): Promise<Video
       expiresAt: new Date(scheduledFor.getTime() + 2 * 60 * 60 * 1000),
     }
   } catch (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error getting video call token', { error: (error as Error).message }, error as Error)
     throw error
   }
 }
@@ -222,7 +222,7 @@ export async function updateVideoStatus(
     .eq('id', appointmentId)
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error creating video call room', { error: (error as Error).message }, error as Error)
     throw new Error(`Failed to update video status: ${error.message}`)
   }
 }

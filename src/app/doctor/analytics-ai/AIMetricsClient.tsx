@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { logger } from '@/lib/observability/logger'
 import { TrendingUp, Users, Calendar, Clock, Activity, ArrowUp, ArrowDown, LucideIcon } from 'lucide-react'
 
 interface AIMetrics {
@@ -29,7 +30,7 @@ export function AIMetricsClient() {
       const data = await res.json()
       setMetrics(data)
     } catch (error) {
-      console.error('Error fetching AI metrics:', error)
+      logger.error('Error fetching AI metrics', { error })
     } finally {
       setLoading(false)
     }

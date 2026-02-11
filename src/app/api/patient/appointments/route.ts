@@ -144,7 +144,11 @@ export async function GET(request: Request) {
         price_cents: apt.doctors.price_cents,
         currency: apt.doctors.currency,
         rating: apt.doctors.rating,
-        profile: apt.doctors.profiles,
+        profile: apt.doctors.profiles ? {
+          id: apt.doctors.profiles.id,
+          full_name: apt.doctors.profiles.full_name || 'Desconocido',
+          photo_url: apt.doctors.profiles.photo_url,
+        } : null,
       }
     }))
 

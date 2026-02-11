@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useForm, useFieldArray } from 'react-hook-form'
+import { logger } from '@/lib/observability/logger'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import Link from 'next/link'
@@ -126,7 +127,7 @@ export default function PrescriptionPageClient({
       setCurrentMedications(data.medications)
       window.location.href = '/doctor'
     } catch (error) {
-      console.error('Error saving prescription:', error)
+      logger.error('Error saving prescription', { error })
       alert('Error al guardar la receta. Por favor intente de nuevo.')
     }
   }
@@ -159,7 +160,7 @@ export default function PrescriptionPageClient({
       setPdfPreviewUrl(url)
       setShowPreview(true)
     } catch (error) {
-      console.error('Error generating preview:', error)
+      logger.error('Error generating preview', { error })
       alert('Error al generar previsualización')
     } finally {
       setIsGenerating(false)
@@ -205,7 +206,7 @@ export default function PrescriptionPageClient({
 
       alert('Receta enviada exitosamente al paciente')
     } catch (error) {
-      console.error('Error sending prescription:', error)
+      logger.error('Error sending prescription', { error })
       alert('Error al enviar la receta. Por favor intente de nuevo.')
     } finally {
       setIsSending(false)

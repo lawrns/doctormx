@@ -1,10 +1,11 @@
 import { useState, useCallback, useRef } from 'react';
+import { LIMITS } from '@/lib/constants';
 
 /**
  * Enhanced button state management hook
  * Prevents double-clicks, manages loading states, provides debouncing
  */
-export function useButtonState(debounceMs: number = 500) {
+export function useButtonState(debounceMs: number = LIMITS.DEBOUNCE_BUTTON_MS) {
   const [isLoading, setIsLoading] = useState(false);
   const [lastClickTime, setLastClickTime] = useState(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -27,7 +28,7 @@ export function useButtonState(debounceMs: number = 500) {
         // Keep loading state for minimum time to show feedback
         timeoutRef.current = setTimeout(() => {
           setIsLoading(false);
-        }, 200);
+        }, LIMITS.DEBOUNCE_BUTTON_MS / 2); // 250ms minimum feedback time
       }
     },
     [lastClickTime, debounceMs]

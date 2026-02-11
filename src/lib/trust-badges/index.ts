@@ -187,7 +187,7 @@ export async function calculateDoctorBadges(doctorId: string): Promise<Badge[]> 
     .single();
   
   if (doctorError || !doctor) {
-    logger.error('', undefined,  as Error);
+    logger.error('Error getting trust badge status', { error: (error as Error).message }, error as Error);
     return [];
   }
   
@@ -281,7 +281,7 @@ export async function updateDoctorBadges(doctorId: string): Promise<Badge[]> {
       });
     
     if (error) {
-      logger.error('', undefined,  as Error);
+      logger.error('Error checking trust badge status', { error: (error as Error).message }, error as Error);
     }
   }
   
@@ -310,7 +310,7 @@ export async function getDoctorBadges(doctorId: string): Promise<Badge[]> {
     .order('display_order');
   
   if (error) {
-    logger.error('', undefined,  as Error);
+    logger.error('Error getting user trust badges', { error: (error as Error).message }, error as Error);
     return [];
   }
   
@@ -329,7 +329,7 @@ export async function getBadgeCategories(): Promise<BadgeCategory[]> {
     .order('display_order');
   
   if (error) {
-    logger.error('', undefined,  as Error);
+    logger.error('Error getting trust badge details', { error: (error as Error).message }, error as Error);
     return [];
   }
   

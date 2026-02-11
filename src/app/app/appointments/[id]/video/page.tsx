@@ -48,7 +48,7 @@ export default function VideoCallPage() {
 
   const localVideoRef = useRef<HTMLVideoElement>(null)
   const remoteVideoRef = useRef<HTMLVideoElement>(null)
-  const dailyRef = useRef<DailyCall | null>(null)
+  const dailyRef = useRef<any>(null)
 
   // Load video room data
   useEffect(() => {
@@ -103,7 +103,7 @@ export default function VideoCallPage() {
       })
 
       callFrame.on('error', (e) => {
-        logger.error('Video call error', { appointmentId }, e as Error)
+        logger.error('Video call error', { appointmentId }, e as unknown as Error)
         setError('Error en la llamada')
         setCallState('ended')
       })

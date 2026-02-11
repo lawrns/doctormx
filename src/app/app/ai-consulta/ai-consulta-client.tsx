@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { logger } from '@/lib/observability/logger';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Sparkles,
@@ -208,7 +209,7 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
 
     // Log red flags if detected (for medical review)
     if (emergencyDetected && emergencyDetected.detected) {
-      console.warn('[RED FLAG] Consultation submitted with detected red flags:', {
+      logger.warn('[RED FLAG] Consultation submitted with detected red flags', {
         flags: emergencyDetected.flags,
         severity: emergencyDetected.highestSeverity,
         text: [formData.chiefComplaint, formData.symptomsDescription].join(' '),
@@ -456,7 +457,7 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
             if (err instanceof Error && err.message.includes('Error')) {
               throw err;
             }
-            console.warn('Failed to process SSE event:', eventName, eventData);
+            logger.warn('Failed to process SSE event', { eventName, eventData });
           }
         }
       }
@@ -476,7 +477,7 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
       setProgress(null);
       setCurrentStep('results');
     } catch (err) {
-      console.error('Consultation error:', err);
+      logger.error('Consultation error', { error: err });
       setError(err instanceof Error ? err.message : 'Error al procesar la consulta');
 
       // Reset to form

@@ -1,3 +1,5 @@
+import { logger } from '@/lib/observability/logger'
+
 /**
  * Discriminated Union Types for Error Handling
  *
@@ -454,7 +456,7 @@ export function createFileUploadError(
  */
 export function handleError(error: AppError): never {
   // Log the error for debugging
-  console.error(`[${error.type}] ${error.message}`, error)
+  logger.error(`[${error.type}] ${error.message}`, { type: error.type }, error)
 
   // In a real application, you might want to:
   // - Send errors to a monitoring service (e.g., Sentry)

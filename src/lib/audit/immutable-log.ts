@@ -237,7 +237,7 @@ export async function createAuditLogBatch(
       await createAuditLog(entry)
       created++
     } catch (error) {
-      logger.error('', undefined,  as Error)
+      logger.error('Error creating audit log batch entry', { error: (error as Error).message }, error as Error)
     }
   }
 

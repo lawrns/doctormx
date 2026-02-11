@@ -71,7 +71,7 @@ export async function getPatientAppointments(
   const { data, error } = await query
   
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error getting patient appointments', { error: (error as Error).message }, error as Error)
     throw error
   }
   
@@ -117,7 +117,7 @@ export async function cancelAppointment(
     .single()
   
   if (updateError) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error cancelling appointment', { error: (error as Error).message }, error as Error)
     throw updateError
   }
   
@@ -152,7 +152,7 @@ export async function getAppointmentDetails(
     .single()
   
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error getting upcoming appointments', { error: (error as Error).message }, error as Error)
     return null
   }
   

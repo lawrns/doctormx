@@ -3,17 +3,18 @@ import { createServiceClient } from '@/lib/supabase/server'
 import { requireAuth } from '@/lib/auth'
 import { validateFile, createValidationErrorResponse } from '@/lib/file-security'
 import { logger } from '@/lib/observability/logger'
+import { HTTP_STATUS, LIMITS } from '@/lib/constants'
 
 // Allowed image types
 const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'image/gif']
-const MAX_SIZE = 5 * 1024 * 1024 // 5MB
+const MAX_SIZE = LIMITS.FILE_SIZE_AVATAR_MAX
 
 export async function POST(request: NextRequest) {
   try {
     // Check authentication
     const { user } = await requireAuth()
     if (!user) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+      return NextResponse.json({ error: 'Unauthorized' }, { status: HTTP_STATUS.UNAUTHORIZED })
     }
 
     // Parse form data
@@ -27,14 +28,14 @@ export async function POST(request: NextRequest) {
     if (userId !== user.id) {
       return NextResponse.json(
         { error: 'Can only upload your own avatar' },
-        { status: 403 }
+        { status: HTTP_STATUS.FORBIDDEN }
       )
     }
 
     if (!file) {
       return NextResponse.json(
         { error: 'No file provided' },
-        { status: 400 }
+        { status: HTTP_STATUS.BAD_REQUEST }
       )
     }
 

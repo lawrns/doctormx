@@ -377,7 +377,7 @@ function AppointmentsPageContent() {
         setErrorMessage(data.error || 'Error al cargar citas')
       }
     } catch (error) {
-      logger.error('Error fetching appointments', undefined, error as Error)
+      logger.error('Error fetching appointments', { error: (error as Error).message })
       setErrorMessage('Error al cargar citas')
     } finally {
       setIsLoading(false)

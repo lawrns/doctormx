@@ -51,7 +51,7 @@ async function generateQRCode(data: string): Promise<string> {
       },
     })
   } catch (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error generating prescription PDF', { error: (error as Error).message }, error as Error)
     throw new Error('Failed to generate QR code')
   }
 }

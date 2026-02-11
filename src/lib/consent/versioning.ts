@@ -119,7 +119,7 @@ export async function getLatestConsentVersion(
     .maybeSingle()
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error getting current consent version', { error: (error as Error).message }, error as Error)
     return null
   }
 
@@ -144,7 +144,7 @@ export async function getConsentVersion(
     .maybeSingle()
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error getting consent version by ID', { error: (error as Error).message }, error as Error)
     return null
   }
 
@@ -172,7 +172,7 @@ export async function getConsentVersionByNumber(
     .maybeSingle()
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error getting consent version by type and version', { error: (error as Error).message }, error as Error)
     return null
   }
 
@@ -205,7 +205,7 @@ export async function getActiveConsentVersions(
   const { data, error } = await query
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error getting active consent versions', { error: (error as Error).message }, error as Error)
     return []
   }
 
@@ -236,7 +236,7 @@ export async function getAllConsentVersions(
   const { data, error } = await query
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error getting all consent versions', { error: (error as Error).message }, error as Error)
     return []
   }
 
@@ -588,7 +588,7 @@ export async function getConsentVersionHistory(
     .order('created_at', { ascending: false })
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error getting consent version history', { error: (error as Error).message }, error as Error)
     return []
   }
 
@@ -655,7 +655,7 @@ export async function getScheduledConsentVersions(): Promise<ConsentVersion[]> {
     .order('effective_date', { ascending: true })
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error getting upcoming consent versions', { error: (error as Error).message }, error as Error)
     return []
   }
 

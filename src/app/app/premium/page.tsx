@@ -261,7 +261,7 @@ export default function PremiumMarketplacePage() {
             setTier(data.tier)
           }
         } catch (error) {
-          logger.error('Error fetching tier', undefined, error as Error)
+          logger.error('Error fetching tier', { error: (error as Error).message })
         }
       }
     }

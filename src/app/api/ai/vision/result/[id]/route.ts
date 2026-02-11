@@ -90,7 +90,7 @@ export async function PATCH(
   try {
     const supabase = await createClient()
     const { data: { user } } = await supabase.auth.getUser()
-    
+
     if (!user) {
       return NextResponse.json(
         { error: 'No autenticado' },
@@ -162,7 +162,13 @@ export async function PATCH(
       message: 'Análisis actualizado correctamente'
     })
   } catch (error) {
-    logger.error('[VISION] Error updating analysis:', { context: { analysisId: id, error } })
+    const params = req.url.split('/').pop()
+    logger.error('[VISION] Error updating analysis:', {
+      context: {
+        analysisId: params,
+        error: error instanceof Error ? error.message : String(error)
+      }
+    })
     return NextResponse.json(
       { error: 'Error interno del servidor' },
       { status: 500 }

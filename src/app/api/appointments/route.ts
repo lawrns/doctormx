@@ -11,6 +11,7 @@ import {
 } from '@/lib/pagination'
 import type { PaginatedResult } from '@/lib/pagination'
 import { logger } from '@/lib/observability/logger'
+import { HTTP_STATUS } from '@/lib/constants'
 
 /**
  * POST /api/appointments
@@ -25,7 +26,7 @@ export async function POST(request: NextRequest) {
   if (!user) {
     return NextResponse.json(
       { error: 'Unauthorized', redirect: '/auth/login' },
-      { status: 401 }
+      { status: HTTP_STATUS.UNAUTHORIZED }
     )
   }
 
@@ -42,7 +43,7 @@ export async function POST(request: NextRequest) {
   if (!doctorId || !date || !time) {
     return NextResponse.json(
       { error: 'Missing required fields' },
-      { status: 400 }
+      { status: HTTP_STATUS.BAD_REQUEST }
     )
   }
 
@@ -59,14 +60,14 @@ export async function POST(request: NextRequest) {
     if (!result.success) {
       return NextResponse.json(
         { error: result.error },
-        { status: 400 }
+        { status: HTTP_STATUS.BAD_REQUEST }
       )
     }
 
     if (!result.appointment) {
       return NextResponse.json(
         { error: 'Failed to create appointment' },
-        { status: 500 }
+        { status: HTTP_STATUS.INTERNAL_SERVER_ERROR }
       )
     }
 
@@ -78,7 +79,7 @@ export async function POST(request: NextRequest) {
     logger.error('Error creating appointment:', { err: error })
     return NextResponse.json(
       { error: 'Failed to create appointment' },
-      { status: 500 }
+      { status: HTTP_STATUS.INTERNAL_SERVER_ERROR }
     )
   }
 }
@@ -156,7 +157,7 @@ export async function GET(request: Request) {
     if (appointmentsError) {
       logger.error('Error fetching appointments:', { err: appointmentsError })
       return new Response(JSON.stringify({ error: 'Failed to fetch appointments', details: appointmentsError.message }), {
-        status: 500,
+        status: HTTP_STATUS.INTERNAL_SERVER_ERROR,
         headers: { 'Content-Type': 'application/json' }
       })
     }
@@ -216,14 +217,14 @@ export async function GET(request: Request) {
     })
 
     return new Response(JSON.stringify(result), {
-      status: 200,
+      status: HTTP_STATUS.OK,
       headers: { 'Content-Type': 'application/json' }
     })
   } catch (error: unknown) {
     logger.error('Error in GET /api/appointments:', { err: error })
     const errorMessage = error instanceof Error ? error.message : 'Unknown error'
     return new Response(JSON.stringify({ error: 'Unauthorized', details: errorMessage }), {
-      status: 401,
+      status: HTTP_STATUS.UNAUTHORIZED,
       headers: { 'Content-Type': 'application/json' }
     })
   }

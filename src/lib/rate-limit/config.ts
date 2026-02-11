@@ -5,6 +5,8 @@
  * Each tier specifies the number of requests allowed within a time window.
  */
 
+import { TIME } from '@/lib/constants'
+
 export interface RateLimitTier {
   /** Maximum number of requests allowed */
   requests: number
@@ -26,79 +28,79 @@ export const RATE_LIMIT_TIERS: Record<string, RateLimitTier> = {
   // Authentication endpoints - strict limits to prevent brute force
   'auth:login': {
     requests: 5,
-    window: 300, // 5 minutes
+    window: TIME.RATE_LIMIT_WINDOW_MEDIUM, // 5 minutes
   },
   'auth:register': {
     requests: 3,
-    window: 300, // 5 minutes
+    window: TIME.RATE_LIMIT_WINDOW_MEDIUM, // 5 minutes
   },
   'auth:reset-password': {
     requests: 3,
-    window: 3600, // 1 hour
+    window: TIME.RATE_LIMIT_WINDOW_LONG, // 1 hour
   },
   'auth:verify': {
     requests: 10,
-    window: 300, // 5 minutes
+    window: TIME.RATE_LIMIT_WINDOW_MEDIUM, // 5 minutes
   },
 
   // Payment endpoints - moderate limits to prevent abuse
   'payment:create': {
     requests: 10,
-    window: 60, // 1 minute
+    window: TIME.RATE_LIMIT_WINDOW_SHORT, // 1 minute
   },
   'payment:webhook': {
     requests: 100,
-    window: 60, // 1 minute
+    window: TIME.RATE_LIMIT_WINDOW_SHORT, // 1 minute
   },
 
   // AI endpoints - balanced limits for cost management
   'ai:consult': {
     requests: 20,
-    window: 60, // 1 minute
+    window: TIME.RATE_LIMIT_WINDOW_SHORT, // 1 minute
   },
   'ai:vision': {
     requests: 15,
-    window: 60, // 1 minute
+    window: TIME.RATE_LIMIT_WINDOW_SHORT, // 1 minute
   },
   'ai:transcription': {
     requests: 10,
-    window: 60, // 1 minute
+    window: TIME.RATE_LIMIT_WINDOW_SHORT, // 1 minute
   },
   'ai:copilot': {
     requests: 30,
-    window: 60, // 1 minute
+    window: TIME.RATE_LIMIT_WINDOW_SHORT, // 1 minute
   },
   'ai:general': {
     requests: 20,
-    window: 60, // 1 minute
+    window: TIME.RATE_LIMIT_WINDOW_SHORT, // 1 minute
   },
 
   // General API endpoints
   'api:general': {
     requests: 100,
-    window: 60, // 1 minute
+    window: TIME.RATE_LIMIT_WINDOW_SHORT, // 1 minute
   },
   'api:read': {
     requests: 200,
-    window: 60, // 1 minute
+    window: TIME.RATE_LIMIT_WINDOW_SHORT, // 1 minute
   },
   'api:write': {
     requests: 50,
-    window: 60, // 1 minute
+    window: TIME.RATE_LIMIT_WINDOW_SHORT, // 1 minute
   },
 
   // Premium user tiers - higher limits for premium users
   'premium:general': {
     requests: 500,
-    window: 60, // 1 minute
+    window: TIME.RATE_LIMIT_WINDOW_SHORT, // 1 minute
   },
   'premium:ai': {
     requests: 100,
-    window: 60, // 1 minute
+    window: TIME.RATE_LIMIT_WINDOW_SHORT, // 1 minute
   },
   'premium:consult': {
     requests: 50,
-    window: 60, // 1 minute
+    window: TIME.RATE_LIMIT_WINDOW_SHORT, // 1 minute
   },
 }
 

@@ -72,7 +72,7 @@ export async function trackConsentGranted(
     .single()
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error recording consent granted', { error: (error as Error).message }, error as Error)
     throw error
   }
 
@@ -139,7 +139,7 @@ export async function trackConsentWithdrawn(
     .single()
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error recording consent withdrawn', { error: (error as Error).message }, error as Error)
     throw error
   }
 
@@ -223,7 +223,7 @@ export async function trackConsentModified(
     .single()
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error recording consent modified', { error: (error as Error).message }, error as Error)
     throw error
   }
 
@@ -284,7 +284,7 @@ export async function trackConsentExpired(
     .single()
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error recording consent expired', { error: (error as Error).message }, error as Error)
     throw error
   }
 
@@ -332,7 +332,7 @@ export async function getConsentHistory(
     .order('created_at', { ascending: false })
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error getting consent history', { error: (error as Error).message }, error as Error)
     return []
   }
 
@@ -378,7 +378,7 @@ export async function getConsentHistoryForUser(
   const { data, error } = await query.order('created_at', { ascending: false })
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error getting consent history for user', { error: (error as Error).message }, error as Error)
     return []
   }
 
@@ -426,7 +426,7 @@ export async function getConsentHistoryForUsers(
   const { data, error } = await query.order('created_at', { ascending: false })
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error getting consent history by type', { error: (error as Error).message }, error as Error)
     return []
   }
 
@@ -465,7 +465,7 @@ export async function createAuditLog(
     .single()
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error creating audit log entry', { error: (error as Error).message }, error as Error)
     throw error
   }
 
@@ -514,7 +514,7 @@ export async function getAuditLogsForUser(
   const { data, error } = await query.order('occurred_at', { ascending: false })
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error getting audit logs for user', { error: (error as Error).message }, error as Error)
     return []
   }
 
@@ -561,7 +561,7 @@ export async function getAllAuditLogs(options?: {
   const { data, error } = await query.order('occurred_at', { ascending: false })
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error getting all audit logs', { error: (error as Error).message }, error as Error)
     return []
   }
 
@@ -634,7 +634,7 @@ export async function getAuditLogsByCorrelationId(
     .order('occurred_at', { ascending: true })
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error getting audit logs by correlation ID', { error: (error as Error).message }, error as Error)
     return []
   }
 

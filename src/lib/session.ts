@@ -55,7 +55,7 @@ export async function getCurrentSession(): Promise<SessionInfo | null> {
     }
   } catch (error) {
     // Log error but don't throw - return null on failure
-    logger.error('', undefined,  as Error)
+    logger.error('Error getting session', { error: (error as Error).message }, error as Error)
     return null
   }
 }
@@ -76,7 +76,7 @@ export async function invalidateAllUserSessions(userId: string): Promise<void> {
       throw new Error(`Failed to invalidate sessions for user ${userId}: ${error.message}`)
     }
   } catch (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error refreshing session', { error: (error as Error).message }, error as Error)
     throw error
   }
 }
@@ -94,7 +94,7 @@ export async function invalidateCurrentSession(): Promise<void> {
       throw new Error(`Failed to invalidate current session: ${error.message}`)
     }
   } catch (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error getting user', { error: (error as Error).message }, error as Error)
     throw error
   }
 }
@@ -116,7 +116,7 @@ export async function refreshSession(): Promise<void> {
       throw new Error('No session to refresh')
     }
   } catch (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error signing out', { error: (error as Error).message }, error as Error)
     throw error
   }
 }
@@ -164,7 +164,7 @@ export async function recordSecurityEvent(
       await invalidateAllUserSessions(userId)
     }
   } catch (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error requiring auth', { error: (error as Error).message }, error as Error)
     throw error
   }
 }
@@ -197,7 +197,7 @@ export async function getUserSecurityEvents(
 
     return data || []
   } catch (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error requiring role', { error: (error as Error).message }, error as Error)
     throw error
   }
 }

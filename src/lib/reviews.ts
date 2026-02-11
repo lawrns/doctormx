@@ -50,7 +50,7 @@ export async function createReview(data: {
     .single()
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error creating review', { error: (error as Error).message }, error as Error)
     throw error
   }
 
@@ -81,7 +81,7 @@ export async function getDoctorReviews(doctorId: string, options?: {
     .range(offset, offset + limit - 1)
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error getting doctor reviews', { error: (error as Error).message }, error as Error)
     throw error
   }
 
@@ -97,7 +97,7 @@ export async function getDoctorRatingSummary(doctorId: string): Promise<DoctorRa
     .eq('doctor_id', doctorId)
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error getting patient reviews', { error: (error as Error).message }, error as Error)
     throw error
   }
 
@@ -200,7 +200,7 @@ export async function getPatientReviewableAppointments(patientId: string): Promi
     .order('start_ts', { ascending: false })
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error getting review by ID', { error: (error as Error).message }, error as Error)
     throw error
   }
 
@@ -237,7 +237,7 @@ export async function deleteReview(reviewId: string, userId: string): Promise<vo
     .eq('id', reviewId)
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error updating review', { error: (error as Error).message }, error as Error)
     throw error
   }
 
@@ -273,7 +273,7 @@ export async function updateReview(reviewId: string, userId: string, data: {
     .single()
 
   if (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error deleting review', { error: (error as Error).message }, error as Error)
     throw error
   }
 

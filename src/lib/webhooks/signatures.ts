@@ -59,11 +59,13 @@ interface VerificationConfig {
 // Constants
 // ============================================================================
 
+import { LIMITS } from '@/lib/constants'
+
 /**
  * Maximum allowed timestamp difference for webhook verification (in seconds)
  * Used to prevent replay attacks
  */
-const MAX_TIMESTAMP_DIFFERENCE = 300 // 5 minutes
+const MAX_TIMESTAMP_DIFFERENCE = LIMITS.WEBHOOK_TIMESTAMP_TOLERANCE_SECONDS // 5 minutes
 
 /**
  * Stripe signature header format

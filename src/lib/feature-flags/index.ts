@@ -42,7 +42,7 @@ async function refreshFlagCache(): Promise<void> {
       .select('*')
 
     if (error) {
-      logger.error('', undefined,  as Error)
+      logger.error('Error loading feature flags from database', { error: (error as Error).message }, error as Error)
       return
     }
 
@@ -52,7 +52,7 @@ async function refreshFlagCache(): Promise<void> {
     }
     cacheTimestamp = now
   } catch (err) {
-    logger.error('', undefined,  as Error)
+    logger.error('Unexpected error loading feature flags', { error: (err as Error).message }, err as Error)
   }
 }
 

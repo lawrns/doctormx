@@ -99,18 +99,19 @@ export function logError(error: unknown, context: ErrorContext = {}): void {
   }
 
   // Log to console with appropriate level
-  const logString = JSON.stringify(logEntry, null, 2);
+  const { severity, ...logContext } = logEntry;
+  const message = `[ERROR] ${logEntry.error.message}`;
 
   switch (logEntry.severity) {
     case ErrorSeverity.CRITICAL:
     case ErrorSeverity.HIGH:
-      logger.error(logEntry, '[ERROR]');
+      logger.error(message, logContext);
       break;
     case ErrorSeverity.MEDIUM:
-      logger.warn(logEntry, '[WARN]');
+      logger.warn(message, logContext);
       break;
     case ErrorSeverity.LOW:
-      logger.info(logEntry, '[INFO]');
+      logger.info(message, logContext);
       break;
   }
 

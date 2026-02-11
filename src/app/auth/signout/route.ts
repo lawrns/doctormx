@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { invalidateCurrentSession } from '@/lib/session'
+import { logger } from '@/lib/observability/logger'
 
 /**
  * POST /auth/signout
@@ -17,7 +18,7 @@ export async function POST(request: NextRequest) {
     const origin = request.nextUrl.origin
     return NextResponse.redirect(new URL('/auth/login', origin))
   } catch (error) {
-    console.error('Sign out error:', error)
+    logger.error('Sign out error:', { error })
 
     // Return error response but still redirect to login
     // This ensures the user is not stuck even if signout fails

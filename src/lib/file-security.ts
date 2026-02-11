@@ -79,7 +79,7 @@ export async function validateMagicNumbersFromFile(file: File): Promise<Validati
       error: 'El archivo no contiene el formato de imagen esperado (JPEG o PNG)'
     }
   } catch (error) {
-    logger.error('', undefined,  as Error)
+    logger.error('Error validating file signature', { error: (error as Error).message }, error as Error)
     return {
       isValid: false,
       error: 'Error al validar el archivo'

@@ -233,7 +233,7 @@ export default function PatientProfilePage() {
         }
       }
     } catch (error) {
-      logger.error('Error fetching profile', undefined, error as Error)
+      logger.error('Error fetching profile', { error: (error as Error).message })
       addToast('Error al cargar el perfil', 'error')
     } finally {
       setLoading(false)
@@ -255,7 +255,7 @@ export default function PatientProfilePage() {
         throw new Error('Failed to update profile')
       }
     } catch (error) {
-      logger.error('Error updating profile', undefined, error as Error)
+      logger.error('Error updating profile', { error: (error as Error).message })
       addToast('Error al actualizar el perfil', 'error')
     } finally {
       setSavingProfile(false)
@@ -277,7 +277,7 @@ export default function PatientProfilePage() {
         throw new Error('Failed to update medical history')
       }
     } catch (error) {
-      logger.error('Error updating medical history', undefined, error as Error)
+      logger.error('Error updating medical history', { error: (error as Error).message })
       addToast('Error al actualizar el historial médico', 'error')
     } finally {
       setSavingHistory(false)
