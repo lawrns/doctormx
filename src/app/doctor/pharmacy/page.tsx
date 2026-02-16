@@ -12,7 +12,7 @@ export default async function DoctorPharmacyPage() {
   }
 
   const { data: doctor } = await supabase
-    .from('doctors')
+    .from('doctores')
     .select('id, status')
     .eq('id', user.id)
     .single()

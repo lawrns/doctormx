@@ -286,6 +286,11 @@ export function ApiError({
 }
 
 /**
+ * ErrorStateProps - Export type for external use
+ */
+export type { ErrorStateProps }
+
+/**
  * EmptyState - Not exactly an error, but related (no data state)
  */
 export function EmptyState({

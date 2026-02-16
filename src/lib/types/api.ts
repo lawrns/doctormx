@@ -134,8 +134,8 @@ export interface AIReferralAnalytics {
   specialty: string;
   urgency: string;
   avg_score: number;
-  doctors_available: number;
-  doctors_matched: number;
+  doctores_available: number;
+  doctores_matched: number;
   timestamp: string;
 }
 

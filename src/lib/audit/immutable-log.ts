@@ -86,7 +86,7 @@ export interface ComplianceStatus {
   retention_compliant: boolean
 
   /** Logs approaching retention limit (within 6 months) */
-  approaching_limit: number
+  approachingLimit: number
 
   /** Logs ready for archival (older than 5 years) */
   ready_for_archival: number
@@ -295,7 +295,7 @@ export async function getAuditLogs(
   const { offset = 0, limit = 100, order_by = 'occurred_at', order_direction = 'DESC' } = pagination ?? {}
 
   let query = supabase
-    .from<'audit_logs', ImmutableAuditLog>('audit_logs')
+    .from('audit_logs')
     .select('*', { count: 'exact' })
 
   // Apply filters
@@ -457,7 +457,7 @@ export async function getComplianceStatus(): Promise<ComplianceStatus> {
       oldest_log_date: null,
       newest_log_date: null,
       retention_compliant: true,
-      approaching_limit: 0,
+      approachingLimit: 0,
       ready_for_archival: 0,
     }
   }
@@ -511,7 +511,7 @@ export async function getComplianceStatus(): Promise<ComplianceStatus> {
     oldest_log_date: oldestDate,
     newest_log_date: newestDate,
     retention_compliant: true, // Assuming compliance if logs exist
-    approaching_limit,
+    approachingLimit,
     ready_for_archival: readyCount ?? 0,
   }
 }

@@ -22,36 +22,36 @@ import {
 describe('CURP Validator', () => {
   describe('valid CURPs', () => {
     test('should accept CURP with valid format', () => {
-      const result = validateCURP('BADD110313HDFRRN00')
+      const result = validateCURP('BADD110313HDFRRN09')
       expect(result.isValid).toBe(true)
       expect(result.error).toBeUndefined()
-      expect(result.normalized).toBe('BADD110313HDFRRN00')
+      expect(result.normalized).toBe('BADD110313HDFRRN09')
     })
 
     test('should normalize lowercase input', () => {
-      const result = validateCURP('badd110313hdfrrn00')
+      const result = validateCURP('badd110313hdfrrn09')
       expect(result.isValid).toBe(true)
-      expect(result.normalized).toBe('BADD110313HDFRRN00')
+      expect(result.normalized).toBe('BADD110313HDFRRN09')
     })
 
     test('should normalize input with spaces', () => {
-      const result = validateCURP('BADD110313 HDFRRN 00')
+      const result = validateCURP('BADD110313 HDFRRN 09')
       expect(result.isValid).toBe(true)
-      expect(result.normalized).toBe('BADD110313HDFRRN00')
+      expect(result.normalized).toBe('BADD110313HDFRRN09')
     })
 
     test('should accept CURP with gender H (male)', () => {
-      const result = validateCURP('BADD110313HDFRRN00')
+      const result = validateCURP('BADD110313HDFRRN09')
       expect(result.isValid).toBe(true)
     })
 
     test('should accept CURP with gender M (female)', () => {
-      const result = validateCURP('BADD110313MDFRRN00')
+      const result = validateCURP('BADD110313MDFRRN09')
       expect(result.isValid).toBe(true)
     })
 
     test('should accept CURP with NE state code (foreign-born)', () => {
-      const result = validateCURP('BADD110313HNERNN00')
+      const result = validateCURP('BADD110313HNERNN09')
       expect(result.isValid).toBe(true)
     })
   })
@@ -65,7 +65,7 @@ describe('CURP Validator', () => {
     })
 
     test('should reject CURP with more than 18 characters', () => {
-      const result = validateCURP('BADD110313HDFRRN001')
+      const result = validateCURP('BADD110313HDFRRN0901')
       expect(result.isValid).toBe(false)
       expect(result.error).toContain('18 caracteres')
     })
@@ -93,7 +93,7 @@ describe('CURP Validator', () => {
 
   describe('invalid CURPs - state code', () => {
     test('should reject CURP with invalid state code', () => {
-      const result = validateCURP('BADD110313HZZRRN00')
+      const result = validateCURP('BADD110313HZZRRN09')
       expect(result.isValid).toBe(false)
       expect(result.error).toContain('Código de estado inválido')
       expect(result.error).toContain('ZZ')
@@ -102,7 +102,7 @@ describe('CURP Validator', () => {
 
   describe('invalid CURPs - gender', () => {
     test('should reject CURP with invalid gender code', () => {
-      const result = validateCURP('BADD110313XDFRRN00')
+      const result = validateCURP('BADD110313XDFRRN09')
       expect(result.isValid).toBe(false)
       expect(result.error).toContain('Género inválido')
       expect(result.error).toContain('X')
@@ -113,27 +113,27 @@ describe('CURP Validator', () => {
 
   describe('invalid CURPs - date', () => {
     test('should reject CURP with invalid month (13)', () => {
-      const result = validateCURP('BADD131313HDFRRN00')
+      const result = validateCURP('BADD131313HDFRRN09')
       expect(result.isValid).toBe(false)
       expect(result.error).toContain('Mes de nacimiento inválido')
       expect(result.error).toContain('13')
     })
 
     test('should reject CURP with invalid day (32)', () => {
-      const result = validateCURP('BADD110332HDFRRN00')
+      const result = validateCURP('BADD110332HDFRRN09')
       expect(result.isValid).toBe(false)
       expect(result.error).toContain('Día de nacimiento inválido')
       expect(result.error).toContain('32')
     })
 
     test('should reject CURP with month 00', () => {
-      const result = validateCURP('BADD100313HDFRRN00')
+      const result = validateCURP('BADD110013HDFRRN09')
       expect(result.isValid).toBe(false)
       expect(result.error).toContain('Mes de nacimiento inválido')
     })
 
     test('should reject CURP with day 00', () => {
-      const result = validateCURP('BADD110300HDFRRN00')
+      const result = validateCURP('BADD110300HDFRRN09')
       expect(result.isValid).toBe(false)
       expect(result.error).toContain('Día de nacimiento inválido')
     })
@@ -200,7 +200,7 @@ describe('RFC Validator', () => {
     })
 
     test('should reject RFC with special characters', () => {
-      const result = validateRFC('BAD-110313-HDF')
+      const result = validateRFC('BAD&110313HDF')
       expect(result.isValid).toBe(false)
       expect(result.error).toContain('formato del RFC es inválido')
     })
@@ -215,7 +215,7 @@ describe('RFC Validator', () => {
     })
 
     test('should reject RFC with invalid day', () => {
-      const result = validateRFC('BADD113213HDF')
+      const result = validateRFC('BADD110332HDF')
       expect(result.isValid).toBe(false)
       expect(result.error).toContain('Día inválido')
       expect(result.error).toContain('32')
@@ -556,7 +556,7 @@ describe('Phone Number Validator', () => {
 describe('validateMexicanIdentifiers', () => {
   test('should validate multiple identifiers at once', () => {
     const result = validateMexicanIdentifiers({
-      curp: 'BADD110313HDFRRN00',
+      curp: 'BADD110313HDFRRN09',
       rfc: 'BADD110313HDF',
       phoneNumber: '+52 55 1234 5678',
     })
@@ -601,7 +601,7 @@ describe('validateMexicanIdentifiers', () => {
 
 describe('Validation Result Type', () => {
   test('should return correct type for valid results', () => {
-    const result: ValidationResult = validateCURP('BADD110313HDFRRN00')
+    const result: ValidationResult = validateCURP('BADD110313HDFRRN09')
 
     expect(result.isValid).toBe(true)
     expect(result.normalized).toBeDefined()
@@ -619,7 +619,7 @@ describe('Validation Result Type', () => {
 
 describe('Pure Function Tests', () => {
   test('validateCURP should be pure (no side effects)', () => {
-    const input = 'BADD110313HDFRRN00'
+    const input = 'BADD110313HDFRRN09'
     const result1 = validateCURP(input)
     const result2 = validateCURP(input)
 

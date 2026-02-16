@@ -1,0 +1,679 @@
+
+> doctormx@0.1.0 build
+> next build
+
+▲ Next.js 16.1.6 (Turbopack)
+- Environments: .env
+- Experiments (use with caution):
+  · serverActions
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed with 38 errors:
+./src/app/app/appointments/page.tsx:94:5
+Parsing ecmascript source code failed
+[0m [90m 92 |[39m       logger[33m.[39merror([32m'Error fetching appointments'[39m[33m,[39m { error })
+ [90m 93 |[39m     }
+[31m[1m>[22m[39m[90m 94 |[39m   } [36mfinally[39m {
+ [90m    |[39m     [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 95 |[39m     setIsLoading([36mfalse[39m)
+ [90m 96 |[39m     }
+ [90m 97 |[39m   }[33m,[39m [activeTab[33m,[39m fetchAppointments])[0m
+
+Expected ',', got 'finally'
+
+
+./src/app/app/profile/page.tsx:825:16
+Parsing ecmascript source code failed
+[0m [90m 823 |[39m             [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 824 |[39m           [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+[31m[1m>[22m[39m[90m 825 |[39m         [33m<[39m[33m/[39m[33mmain[39m[33m>[39m
+ [90m     |[39m                [31m[1m^[22m[39m
+[31m[1m>[22m[39m[90m 826 |[39m       [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 827 |[39m     [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 828 |[39m   )
+ [90m 829 |[39m }[0m
+
+Expected '</', got 'jsx text'
+
+
+./src/app/app/upload-image/page.tsx:217:10
+Parsing ecmascript source code failed
+[0m [90m 215 |[39m             )}
+ [90m 216 |[39m           [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+[31m[1m>[22m[39m[90m 217 |[39m         [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m     |[39m          [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 218 |[39m
+ [90m 219 |[39m         [33m<[39m[33mdiv[39m className[33m=[39m[32m"mt-8 grid md:grid-cols-3 gap-4"[39m[33m>[39m
+ [90m 220 |[39m           [33m<[39m[33mdiv[39m className[33m=[39m[32m"bg-white p-4 border border-gray-200 rounded-xl"[39m[33m>[39m[0m
+
+Unterminated regexp literal
+
+
+./src/app/auth/login/page.tsx:187:20
+Parsing ecmascript source code failed
+[0m [90m 185 |[39m                 [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 186 |[39m               [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+[31m[1m>[22m[39m[90m 187 |[39m             [33m<[39m[33m/[39m[33mmain[39m[33m>[39m
+ [90m     |[39m                    [31m[1m^[22m[39m
+[31m[1m>[22m[39m[90m 188 |[39m
+ [90m     |[39m [31m[1m^[22m[39m
+[31m[1m>[22m[39m[90m 189 |[39m             {[90m/* Bottom section - Testimonial & Terms */[39m}
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 190 |[39m             [33m<[39m[33mdiv[39m className[33m=[39m[32m"bg-gray-50 p-6 lg:mt-8 lg:hidden"[39m[33m>[39m
+ [90m 191 |[39m               {[90m/* Desktop testimonial */[39m}
+ [90m 192 |[39m               [33m<[39m[33mblockquote[39m className[33m=[39m[32m"hidden lg:block text-center space-y-2"[39m[33m>[39m[0m
+
+Expected '</', got 'jsx text'
+
+
+./src/app/chat/[conversationId]/page.tsx:69:17
+Parsing ecmascript source code failed
+[0m [90m 67 |[39m         [90m// Fetch doctor data and profile[39m
+ [90m 68 |[39m         [36mconst[39m { data[33m:[39m doctorData } [33m=[39m [36mawait[39m supabase
+[31m[1m>[22m[39m[90m 69 |[39m           [33m.[39m[36mfrom[39m([33m.[39mdoctores[32m')[39m
+ [90m    |[39m                 [31m[1m^[22m[39m
+ [90m 70 |[39m           [33m.[39mselect([32m'user_id'[39m)
+ [90m 71 |[39m           [33m.[39meq([32m'id'[39m[33m,[39m convData[33m.[39mdoctor_id)
+ [90m 72 |[39m           [33m.[39msingle()[0m
+
+Expression expected
+
+
+./src/app/claim/[doctorId]/page.tsx:326:52
+Parsing ecmascript source code failed
+[0m [90m 324 |[39m [32m              variant="secondary"[39m
+ [90m 325 |[39m [32m              className="mt-6"[39m
+[31m[1m>[22m[39m[90m 326 |[39m [32m              onClick={() => router.push(`[39m[33m/[39mdoctores[32m')}[39m
+ [90m     |[39m                                                    [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 327 |[39m             [33m>[39m
+ [90m 328 |[39m               [33mVolver[39m al directorio
+ [90m 329 |[39m             [33m<[39m[33m/[39m[33mButton[39m[33m>[39m[0m
+
+Unterminated string constant
+
+
+./src/app/doctor/[specialty]/[city]/page.tsx:88:8
+Parsing ecmascript source code failed
+[0m [90m 86 |[39m   }
+ [90m 87 |[39m   
+[31m[1m>[22m[39m[90m 88 |[39m   [36mconst[39m[33m.[39mdoctores [33m=[39m result[33m.[39mdoctores
+ [90m    |[39m        [31m[1m^[22m[39m
+ [90m 89 |[39m   
+ [90m 90 |[39m   [36mreturn[39m (
+ [90m 91 |[39m     [33m<[39m[33mdiv[39m className[33m=[39m[32m"min-h-screen bg-gray-50"[39m[33m>[39m[0m
+
+Unexpected token `.`. Expected yield, an identifier, [ or {
+
+
+./src/app/doctor/[specialty]/page.tsx:70:8
+Parsing ecmascript source code failed
+[0m [90m 68 |[39m   }
+ [90m 69 |[39m   
+[31m[1m>[22m[39m[90m 70 |[39m   [36mconst[39m[33m.[39mdoctores [33m=[39m result[33m.[39mdoctores
+ [90m    |[39m        [31m[1m^[22m[39m
+ [90m 71 |[39m   [36mconst[39m topCities [33m=[39m cities[33m.[39mslice([35m0[39m[33m,[39m [35m20[39m)
+ [90m 72 |[39m   
+ [90m 73 |[39m   [36mreturn[39m ([0m
+
+Unexpected token `.`. Expected yield, an identifier, [ or {
+
+
+./src/app/doctor/analytics/page.tsx:22:11
+Parsing ecmascript source code failed
+[0m [90m 20 |[39m
+ [90m 21 |[39m   [36mconst[39m { data[33m:[39m doctor } [33m=[39m [36mawait[39m supabase
+[31m[1m>[22m[39m[90m 22 |[39m     [33m.[39m[36mfrom[39m([33m.[39mdoctores[32m')[39m
+ [90m    |[39m           [31m[1m^[22m[39m
+ [90m 23 |[39m     [33m.[39mselect([32m'status'[39m)
+ [90m 24 |[39m     [33m.[39meq([32m'id'[39m[33m,[39m user[33m.[39mid)
+ [90m 25 |[39m     [33m.[39msingle()[0m
+
+Expression expected
+
+
+./src/app/doctor/appointments/page.tsx:26:11
+Parsing ecmascript source code failed
+[0m [90m 24 |[39m
+ [90m 25 |[39m   [36mconst[39m { data[33m:[39m doctor } [33m=[39m [36mawait[39m supabase
+[31m[1m>[22m[39m[90m 26 |[39m     [33m.[39m[36mfrom[39m([33m.[39mdoctores[32m')[39m
+ [90m    |[39m           [31m[1m^[22m[39m
+ [90m 27 |[39m     [33m.[39mselect([32m'status'[39m)
+ [90m 28 |[39m     [33m.[39meq([32m'id'[39m[33m,[39m user[33m.[39mid)
+ [90m 29 |[39m     [33m.[39msingle()[0m
+
+Expression expected
+
+
+./src/app/doctor/availability/page.tsx:26:11
+Parsing ecmascript source code failed
+[0m [90m 24 |[39m
+ [90m 25 |[39m   [36mconst[39m { data[33m:[39m doctor } [33m=[39m [36mawait[39m supabase
+[31m[1m>[22m[39m[90m 26 |[39m     [33m.[39m[36mfrom[39m([33m.[39mdoctores[32m')[39m
+ [90m    |[39m           [31m[1m^[22m[39m
+ [90m 27 |[39m     [33m.[39mselect([32m'status'[39m)
+ [90m 28 |[39m     [33m.[39meq([32m'id'[39m[33m,[39m user[33m.[39mid)
+ [90m 29 |[39m     [33m.[39msingle()[0m
+
+Expression expected
+
+
+./src/app/doctor/chat/page.tsx:15:11
+Parsing ecmascript source code failed
+[0m [90m 13 |[39m
+ [90m 14 |[39m   [36mconst[39m { data[33m:[39m doctor } [33m=[39m [36mawait[39m supabase
+[31m[1m>[22m[39m[90m 15 |[39m     [33m.[39m[36mfrom[39m([33m.[39mdoctores[32m')[39m
+ [90m    |[39m           [31m[1m^[22m[39m
+ [90m 16 |[39m     [33m.[39mselect([32m'*'[39m)
+ [90m 17 |[39m     [33m.[39meq([32m'id'[39m[33m,[39m user[33m.[39mid)
+ [90m 18 |[39m     [33m.[39msingle()[0m
+
+Expression expected
+
+
+./src/app/doctor/finances/page.tsx:48:11
+Parsing ecmascript source code failed
+[0m [90m 46 |[39m
+ [90m 47 |[39m   [36mconst[39m { data[33m:[39m doctor } [33m=[39m [36mawait[39m supabase
+[31m[1m>[22m[39m[90m 48 |[39m     [33m.[39m[36mfrom[39m([33m.[39mdoctores[32m')[39m
+ [90m    |[39m           [31m[1m^[22m[39m
+ [90m 49 |[39m     [33m.[39mselect([32m'status, currency'[39m)
+ [90m 50 |[39m     [33m.[39meq([32m'id'[39m[33m,[39m user[33m.[39mid)
+ [90m 51 |[39m     [33m.[39msingle()[0m
+
+Expression expected
+
+
+./src/app/doctor/followups/page.tsx:17:11
+Parsing ecmascript source code failed
+[0m [90m 15 |[39m
+ [90m 16 |[39m   [36mconst[39m { data[33m:[39m doctor } [33m=[39m [36mawait[39m supabase
+[31m[1m>[22m[39m[90m 17 |[39m     [33m.[39m[36mfrom[39m([33m.[39mdoctores[32m')[39m
+ [90m    |[39m           [31m[1m^[22m[39m
+ [90m 18 |[39m     [33m.[39mselect([32m'*'[39m)
+ [90m 19 |[39m     [33m.[39meq([32m'id'[39m[33m,[39m user[33m.[39mid)
+ [90m 20 |[39m     [33m.[39msingle()[0m
+
+Expression expected
+
+
+./src/app/doctor/images/[analysisId]/page.tsx:14:11
+Parsing ecmascript source code failed
+[0m [90m 12 |[39m   
+ [90m 13 |[39m   [36mconst[39m { data[33m:[39m doctor } [33m=[39m [36mawait[39m supabase
+[31m[1m>[22m[39m[90m 14 |[39m     [33m.[39m[36mfrom[39m([33m.[39mdoctores[32m')[39m
+ [90m    |[39m           [31m[1m^[22m[39m
+ [90m 15 |[39m     [33m.[39mselect([32m'status'[39m)
+ [90m 16 |[39m     [33m.[39meq([32m'id'[39m[33m,[39m user[33m.[39mid)
+ [90m 17 |[39m     [33m.[39msingle()[0m
+
+Expression expected
+
+
+./src/app/doctor/onboarding/page.tsx:10:11
+Parsing ecmascript source code failed
+[0m [90m  8 |[39m
+ [90m  9 |[39m   [36mconst[39m { data[33m:[39m doctor } [33m=[39m [36mawait[39m supabase
+[31m[1m>[22m[39m[90m 10 |[39m     [33m.[39m[36mfrom[39m([33m.[39mdoctores[32m')[39m
+ [90m    |[39m           [31m[1m^[22m[39m
+ [90m 11 |[39m     [33m.[39mselect([32m'*'[39m)
+ [90m 12 |[39m     [33m.[39meq([32m'id'[39m[33m,[39m user[33m.[39mid)
+ [90m 13 |[39m     [33m.[39msingle()[0m
+
+Expression expected
+
+
+./src/app/doctor/page.tsx:16:11
+Parsing ecmascript source code failed
+[0m [90m 14 |[39m
+ [90m 15 |[39m   [36mconst[39m { data[33m:[39m doctor } [33m=[39m [36mawait[39m supabase
+[31m[1m>[22m[39m[90m 16 |[39m     [33m.[39m[36mfrom[39m([33m.[39mdoctores[32m')[39m
+ [90m    |[39m           [31m[1m^[22m[39m
+ [90m 17 |[39m     [33m.[39mselect([32m'*'[39m)
+ [90m 18 |[39m     [33m.[39meq([32m'id'[39m[33m,[39m user[33m.[39mid)
+ [90m 19 |[39m     [33m.[39msingle()[0m
+
+Expression expected
+
+
+./src/app/doctor/pharmacy/page.tsx:15:11
+Parsing ecmascript source code failed
+[0m [90m 13 |[39m
+ [90m 14 |[39m   [36mconst[39m { data[33m:[39m doctor } [33m=[39m [36mawait[39m supabase
+[31m[1m>[22m[39m[90m 15 |[39m     [33m.[39m[36mfrom[39m([33m.[39mdoctores[32m')[39m
+ [90m    |[39m           [31m[1m^[22m[39m
+ [90m 16 |[39m     [33m.[39mselect([32m'id, status'[39m)
+ [90m 17 |[39m     [33m.[39meq([32m'id'[39m[33m,[39m user[33m.[39mid)
+ [90m 18 |[39m     [33m.[39msingle()[0m
+
+Expression expected
+
+
+./src/app/doctor/pricing/page.tsx:146:23
+Parsing ecmascript source code failed
+[0m [90m 144 |[39m
+ [90m 145 |[39m             [36mconst[39m { data[33m:[39m doctorData } [33m=[39m [36mawait[39m supabase
+[31m[1m>[22m[39m[90m 146 |[39m                 [33m.[39m[36mfrom[39m([33m.[39mdoctores[32m')[39m
+ [90m     |[39m                       [31m[1m^[22m[39m
+ [90m 147 |[39m                 [33m.[39mselect([32m'status'[39m)
+ [90m 148 |[39m                 [33m.[39meq([32m'id'[39m[33m,[39m user[33m.[39mid)
+ [90m 149 |[39m                 [33m.[39msingle()[0m
+
+Expression expected
+
+
+./src/app/doctor/profile/page.tsx:14:11
+Parsing ecmascript source code failed
+[0m [90m 12 |[39m
+ [90m 13 |[39m   [36mconst[39m { data[33m:[39m doctor } [33m=[39m [36mawait[39m supabase
+[31m[1m>[22m[39m[90m 14 |[39m     [33m.[39m[36mfrom[39m([33m.[39mdoctores[32m')[39m
+ [90m    |[39m           [31m[1m^[22m[39m
+ [90m 15 |[39m     [33m.[39mselect([32m'*'[39m)
+ [90m 16 |[39m     [33m.[39meq([32m'id'[39m[33m,[39m user[33m.[39mid)
+ [90m 17 |[39m     [33m.[39msingle()[0m
+
+Expression expected
+
+
+./src/app/doctor/subscription/page.tsx:73:23
+Parsing ecmascript source code failed
+[0m [90m 71 |[39m
+ [90m 72 |[39m             [36mconst[39m { data[33m:[39m doctorData } [33m=[39m [36mawait[39m supabase
+[31m[1m>[22m[39m[90m 73 |[39m                 [33m.[39m[36mfrom[39m([33m.[39mdoctores[32m')[39m
+ [90m    |[39m                       [31m[1m^[22m[39m
+ [90m 74 |[39m                 [33m.[39mselect([32m'status'[39m)
+ [90m 75 |[39m                 [33m.[39meq([32m'id'[39m[33m,[39m user[33m.[39mid)
+ [90m 76 |[39m                 [33m.[39msingle()[0m
+
+Expression expected
+
+
+./src/app/specialties/page.tsx:29:4
+Parsing ecmascript source code failed
+[0m [90m 27 |[39m     icon[33m:[39m [33mHeart[39m[33m,[39m 
+ [90m 28 |[39m     description[33m:[39m [32m'Corazón y sistema cardiovascular'[39m[33m,[39m 
+[31m[1m>[22m[39m[90m 29 |[39m    [33m.[39mdoctores[33m:[39m [35m45[39m[33m,[39m 
+ [90m    |[39m    [31m[1m^[22m[39m
+ [90m 30 |[39m     color[33m:[39m [32m'text-rose-500'[39m[33m,[39m 
+ [90m 31 |[39m     bg[33m:[39m [32m'bg-rose-50/50'[39m[33m,[39m
+ [90m 32 |[39m     borderColor[33m:[39m [32m'group-hover:border-rose-200'[39m[0m
+
+Unexpected token `.`. Expected identifier, string literal, numeric literal or [ for the computed key
+
+
+./src/components/ChatList.tsx:50:24
+Parsing ecmascript source code failed
+[0m [90m 48 |[39m
+ [90m 49 |[39m           [90m// Fetch doctor data with user_id[39m
+[31m[1m>[22m[39m[90m 50 |[39m           [36mconst[39m { data[33m:[39m[33m.[39mdoctoresData } [33m=[39m [36mawait[39m supabase
+ [90m    |[39m                        [31m[1m^[22m[39m
+ [90m 51 |[39m             [33m.[39m[36mfrom[39m([33m.[39mdoctores[32m')[39m
+ [90m 52 |[39m             [33m.[39mselect([32m'id, user_id'[39m)
+ [90m 53 |[39m             [33m.[39m[36min[39m([32m'id'[39m[33m,[39m doctorIds)[0m
+
+Unexpected token `.`. Expected yield, an identifier, [ or {
+
+Import traces:
+  Server Component:
+    ./src/components/ChatList.tsx
+    ./src/app/app/chat/page.tsx
+
+  Client Component Browser:
+    ./src/components/ChatList.tsx [Client Component Browser]
+    ./src/components/index.ts [Client Component Browser]
+    ./src/app/doctor/prescription/[appointmentId]/prescription-form.tsx [Client Component Browser]
+    ./src/app/doctor/prescription/[appointmentId]/prescription-form.tsx [Server Component]
+    ./src/app/doctor/prescription/[appointmentId]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ChatList.tsx [Client Component SSR]
+    ./src/components/index.ts [Client Component SSR]
+    ./src/app/doctor/prescription/[appointmentId]/prescription-form.tsx [Client Component SSR]
+    ./src/app/doctor/prescription/[appointmentId]/prescription-form.tsx [Server Component]
+    ./src/app/doctor/prescription/[appointmentId]/page.tsx [Server Component]
+
+
+./src/components/landing/StatsSection.tsx:52:82
+Parsing ecmascript source code failed
+[0m [90m 50 |[39m
+ [90m 51 |[39m [36mconst[39m stats [33m=[39m [
+[31m[1m>[22m[39m[90m 52 |[39m   { value[33m:[39m [35m500[39m[33m,[39m suffix[33m:[39m [32m'+'[39m[33m,[39m label[33m:[39m [32m'Doctores con cédula verificada'[39m[33m,[39m iconType[33m:[39m [33m.[39mdoctores[32m' },[39m
+ [90m    |[39m                                                                                  [31m[1m^[22m[39m
+ [90m 53 |[39m   { value[33m:[39m [35m10000[39m[33m,[39m suffix[33m:[39m [32m'+'[39m[33m,[39m label[33m:[39m [32m'Consultas realizadas'[39m[33m,[39m iconType[33m:[39m [32m'consultations'[39m }[33m,[39m
+ [90m 54 |[39m   { value[33m:[39m [35m50[39m[33m,[39m suffix[33m:[39m [32m'+'[39m[33m,[39m label[33m:[39m [32m'Especialidades médicas'[39m[33m,[39m iconType[33m:[39m [32m'specialties'[39m }[33m,[39m
+ [90m 55 |[39m   { value[33m:[39m [35m98[39m[33m,[39m suffix[33m:[39m [32m'%'[39m[33m,[39m label[33m:[39m [32m'Satisfacción de pacientes'[39m[33m,[39m iconType[33m:[39m [32m'satisfaction'[39m }[33m,[39m[0m
+
+Expression expected
+
+Import traces:
+  Server Component:
+    ./src/components/landing/StatsSection.tsx
+    ./src/components/landing/index.ts
+    ./src/app/page.tsx
+
+  Client Component Browser:
+    ./src/components/landing/StatsSection.tsx [Client Component Browser]
+    ./src/components/landing/LandingPageClient.tsx [Client Component Browser]
+    ./src/components/landing/LandingPageClient.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/landing/StatsSection.tsx [Client Component SSR]
+    ./src/components/landing/LandingPageClient.tsx [Client Component SSR]
+    ./src/components/landing/LandingPageClient.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+
+./src/components/soap/RecommendedDoctors.tsx:49:9
+Parsing ecmascript source code failed
+[0m [90m 47 |[39m   onSelectDoctor[33m,[39m
+ [90m 48 |[39m }[33m:[39m [33mRecommendedDoctorsProps[39m) {
+[31m[1m>[22m[39m[90m 49 |[39m   [36mconst[39m [33m.[39mdoctores[33m,[39m setDoctors] [33m=[39m useState[33m<[39m[33mDoctor[39m[][33m>[39m([])[33m;[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 50 |[39m   [36mconst[39m [loading[33m,[39m setLoading] [33m=[39m useState([36mtrue[39m)[33m;[39m
+ [90m 51 |[39m   [36mconst[39m [error[33m,[39m setError] [33m=[39m useState[33m<[39m[33mstring[39m [33m|[39m [36mnull[39m[33m>[39m([36mnull[39m)[33m;[39m
+ [90m 52 |[39m[0m
+
+Unexpected token `.`. Expected yield, an identifier, [ or {
+
+Import traces:
+  Client Component Browser:
+    ./src/components/soap/RecommendedDoctors.tsx [Client Component Browser]
+    ./src/components/soap/ConversationalAIConsultation.tsx [Client Component Browser]
+    ./src/components/soap/ConversationalAIConsultation.tsx [Server Component]
+    ./src/app/app/ai-consulta/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/soap/RecommendedDoctors.tsx [Client Component SSR]
+    ./src/components/soap/ConversationalAIConsultation.tsx [Client Component SSR]
+    ./src/components/soap/ConversationalAIConsultation.tsx [Server Component]
+    ./src/app/app/ai-consulta/page.tsx [Server Component]
+
+
+./src/lib/ai/referral.ts:67:8
+Parsing ecmascript source code failed
+[0m [90m 65 |[39m
+ [90m 66 |[39m   [90m// 1. Enhanced doctor discovery with multiple filters[39m
+[31m[1m>[22m[39m[90m 67 |[39m   [36mconst[39m[33m.[39mdoctoresData [33m=[39m [36mawait[39m discoverDoctors({
+ [90m    |[39m        [31m[1m^[22m[39m
+ [90m 68 |[39m     specialtySlug[33m:[39m params[33m.[39mspecialty[33m.[39mtoLowerCase()[33m.[39mreplace([35m/\s+/g[39m[33m,[39m [32m'-'[39m)[33m,[39m
+ [90m 69 |[39m     city[33m:[39m params[33m.[39mlocation [33m||[39m undefined[33m,[39m
+ [90m 70 |[39m     minRating[33m:[39m [35m4.0[39m[33m,[39m [90m// Only show quality.doctores[39m[0m
+
+Unexpected token `.`. Expected yield, an identifier, [ or {
+
+Import trace:
+  App Route:
+    ./src/lib/ai/referral.ts
+    ./src/app/api/ai/preconsulta/route.ts
+
+
+./src/lib/analytics.ts:6:8
+Parsing ecmascript source code failed
+[0m [90m 4 |[39m [36mimport[39m { es } [36mfrom[39m [32m'date-fns/locale'[39m
+ [90m 5 |[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mexport[39m [36minterface[39m [33mAdminMetrics[39m {
+ [90m   |[39m        [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m   revenue[33m:[39m {
+ [90m 8 |[39m     mrr[33m:[39m number
+ [90m 9 |[39m     arr[33m:[39m number[0m
+
+Expected '{', got 'interface'
+
+Import traces:
+  App Route:
+    ./src/lib/analytics.ts
+    ./src/app/api/analytics/admin/route.ts
+
+  Server Component:
+    ./src/lib/analytics.ts
+    ./src/app/admin/analytics/page.tsx
+
+
+./src/lib/arco/escalation.ts:567:11
+Parsing ecmascript source code failed
+[0m [90m 565 |[39m   [90m// 4. Priority support contract flags[39m
+ [90m 566 |[39m   [36mconst[39m { data[33m:[39m doctor } [33m=[39m [36mawait[39m supabase
+[31m[1m>[22m[39m[90m 567 |[39m     [33m.[39m[36mfrom[39m([33m.[39mdoctores[32m')[39m
+ [90m     |[39m           [31m[1m^[22m[39m
+ [90m 568 |[39m     [33m.[39mselect([32m'rating_count'[39m)
+ [90m 569 |[39m     [33m.[39meq([32m'id'[39m[33m,[39m userId)
+ [90m 570 |[39m     [33m.[39msingle()[0m
+
+Expression expected
+
+Import trace:
+  App Route:
+    ./src/lib/arco/escalation.ts
+    ./src/app/api/arco/stats/route.ts
+
+
+./src/lib/arco/export/portability.ts:107:11
+Parsing ecmascript source code failed
+[0m [90m 105 |[39m   end_ts[33m:[39m string [33m|[39m [36mnull[39m
+ [90m 106 |[39m   status[33m:[39m string
+[31m[1m>[22m[39m[90m 107 |[39m  [33m.[39mdoctores[33m?[39m[33m:[39m {
+ [90m     |[39m           [31m[1m^[22m[39m
+ [90m 108 |[39m     profile[33m?[39m[33m:[39m { full_name[33m:[39m string [33m|[39m [36mnull[39m } [33m|[39m [36mnull[39m
+ [90m 109 |[39m   } [33m|[39m [36mnull[39m
+ [90m 110 |[39m }[0m
+
+Expected ';', got '?'
+
+Import trace:
+  App Route:
+    ./src/lib/arco/export/portability.ts
+    ./src/lib/arco/export/index.ts
+    ./src/lib/arco/index.ts
+    ./src/app/api/arco/rectify/route.ts
+
+
+./src/lib/cache/cache.ts:336:2
+Parsing ecmascript source code failed
+[0m [90m 334 |[39m [90m */[39m
+ [90m 335 |[39m [36mexport[39m [36masync[39m [36mfunction[39m setDoctorList(
+[31m[1m>[22m[39m[90m 336 |[39m  [33m.[39mdoctores[33m:[39m unknown[][33m,[39m
+ [90m     |[39m  [31m[1m^[22m[39m
+ [90m 337 |[39m   filters[33m:[39m [33mRecord[39m[33m<[39m[33mstring[39m[33m,[39m unknown[33m>[39m [33m=[39m {}
+ [90m 338 |[39m )[33m:[39m [33mPromise[39m[33m<[39m[33mboolean[39m[33m>[39m {
+ [90m 339 |[39m   [36mconst[39m key [33m=[39m doctorListKey(filters)[0m
+
+Unexpected token `.`. Expected yield, an identifier, [ or {
+
+Import traces:
+  App Route:
+    ./src/lib/cache/cache.ts
+    ./src/app/api/cache/invalidate/route.ts
+
+  Server Component:
+    ./src/lib/cache/cache.ts
+    ./src/lib/availability.ts
+    ./src/lib/appointments.ts
+    ./src/app/app/page.tsx
+
+
+./src/lib/discovery.ts:114:8
+Parsing ecmascript source code failed
+[0m [90m 112 |[39m   [36mif[39m (cached) [36mreturn[39m cached
+ [90m 113 |[39m
+[31m[1m>[22m[39m[90m 114 |[39m   [36mconst[39m[33m.[39mdoctores [33m=[39m [36mawait[39m fetchDoctors(filters)
+ [90m     |[39m        [31m[1m^[22m[39m
+ [90m 115 |[39m   [36mawait[39m cache[33m.[39m[36mset[39m(cacheKey[33m,[39m[33m.[39mdoctores[33m,[39m [35m300[39m)
+ [90m 116 |[39m   [36mreturn[39m[33m.[39mdoctores
+ [90m 117 |[39m }[0m
+
+Unexpected token `.`. Expected yield, an identifier, [ or {
+
+Import trace:
+  Server Component:
+    ./src/lib/discovery.ts
+    ./src/app/book/[doctorId]/page.tsx
+
+
+./src/lib/domains/referrals/index.ts:196:11
+Parsing ecmascript source code failed
+[0m [90m 194 |[39m   
+ [90m 195 |[39m   [36mlet[39m query [33m=[39m supabase
+[31m[1m>[22m[39m[90m 196 |[39m     [33m.[39m[36mfrom[39m([33m.[39mdoctores[32m')[39m
+ [90m     |[39m           [31m[1m^[22m[39m
+ [90m 197 |[39m     [33m.[39mselect([32m'*'[39m)
+ [90m 198 |[39m     [33m.[39meq([32m'license_status'[39m[33m,[39m [32m'verified'[39m)
+ [90m 199 |[39m     [33m.[39mcontains([32m'specialties'[39m[33m,[39m [params[33m.[39mspecialty])[0m
+
+Expression expected
+
+Import trace:
+  App Route:
+    ./src/lib/domains/referrals/index.ts
+    ./src/app/api/referrals/route.ts
+
+
+./src/lib/reviews.ts:300:11
+Parsing ecmascript source code failed
+[0m [90m 298 |[39m
+ [90m 299 |[39m   [36mawait[39m supabase
+[31m[1m>[22m[39m[90m 300 |[39m     [33m.[39m[36mfrom[39m([33m.[39mdoctores[32m')[39m
+ [90m     |[39m           [31m[1m^[22m[39m
+ [90m 301 |[39m     [33m.[39mupdate({
+ [90m 302 |[39m       rating_avg[33m:[39m [33mMath[39m[33m.[39mround(averageRating [33m*[39m [35m10[39m) [33m/[39m [35m10[39m[33m,[39m
+ [90m 303 |[39m       rating_count[33m:[39m totalReviews[33m,[39m[0m
+
+Expression expected
+
+Import traces:
+  App Route:
+    ./src/lib/reviews.ts
+    ./src/app/api/reviews/route.ts
+
+  Server Component:
+    ./src/lib/reviews.ts
+    ./src/app/doctores/[id]/page.tsx
+
+
+./src/lib/sep-verification/index.ts:315:13
+Parsing ecmascript source code failed
+[0m [90m 313 |[39m   [36mif[39m (result[33m.[39mverified) {
+ [90m 314 |[39m     [36mawait[39m supabase
+[31m[1m>[22m[39m[90m 315 |[39m       [33m.[39m[36mfrom[39m([33m.[39mdoctores[32m')[39m
+ [90m     |[39m             [31m[1m^[22m[39m
+ [90m 316 |[39m       [33m.[39mupdate({
+ [90m 317 |[39m         license_number[33m:[39m cedula[33m,[39m
+ [90m 318 |[39m         updated_at[33m:[39m [36mnew[39m [33mDate[39m()[33m.[39mtoISOString()[33m,[39m[0m
+
+Expression expected
+
+Import trace:
+  App Route:
+    ./src/lib/sep-verification/index.ts
+    ./src/app/api/doctor/verify-cedula/route.ts
+
+
+./src/lib/subscription.ts:192:19
+Parsing ecmascript source code failed
+[0m [90m 190 |[39m     [36mtry[39m {
+ [90m 191 |[39m         [36mconst[39m { data[33m:[39m profile[33m,[39m error[33m:[39m profileError } [33m=[39m [36mawait[39m supabase
+[31m[1m>[22m[39m[90m 192 |[39m             [33m.[39m[36mfrom[39m([33m.[39mdoctores[32m')[39m
+ [90m     |[39m                   [31m[1m^[22m[39m
+ [90m 193 |[39m             [33m.[39mselect([32m'full_name, email'[39m)
+ [90m 194 |[39m             [33m.[39meq([32m'id'[39m[33m,[39m doctorId)
+ [90m 195 |[39m             [33m.[39msingle()[0m
+
+Expression expected
+
+Import trace:
+  App Route:
+    ./src/lib/subscription.ts
+    ./src/app/api/doctores/[id]/route.ts
+
+
+./src/lib/trust-badges/index.ts:184:11
+Parsing ecmascript source code failed
+[0m [90m 182 |[39m   [90m// Fetch doctor data[39m
+ [90m 183 |[39m   [36mconst[39m { data[33m:[39m doctor[33m,[39m error[33m:[39m doctorError } [33m=[39m [36mawait[39m supabase
+[31m[1m>[22m[39m[90m 184 |[39m     [33m.[39m[36mfrom[39m([33m.[39mdoctores[32m')[39m
+ [90m     |[39m           [31m[1m^[22m[39m
+ [90m 185 |[39m     [33m.[39mselect([32m'*, profiles!inner(full_name)'[39m)
+ [90m 186 |[39m     [33m.[39meq([32m'id'[39m[33m,[39m doctorId)
+ [90m 187 |[39m     [33m.[39msingle()[33m;[39m[0m
+
+Expression expected
+
+Import trace:
+  App Route:
+    ./src/lib/trust-badges/index.ts
+    ./src/app/api/doctor/badges/route.ts
+
+
+./src/lib/whatsapp.ts:39:1
+Parsing ecmascript source code failed
+[0m [90m 37 |[39m   }
+ [90m 38 |[39m }
+[31m[1m>[22m[39m[90m 39 |[39m }
+ [90m    |[39m [31m[1m^[22m[39m
+ [90m 40 |[39m[0m
+
+Expression expected
+
+Import trace:
+  App Route:
+    ./src/lib/whatsapp.ts
+    ./src/app/api/webhooks/twilio/route.ts
+
+
+./src/app/api/doctores/[id]/route.ts:2:1
+Module not found: Can't resolve '@/lib.doctores'
+[0m [90m 1 |[39m [36mimport[39m { [33mNextRequest[39m[33m,[39m [33mNextResponse[39m } [36mfrom[39m [32m'next/server'[39m
+[31m[1m>[22m[39m[90m 2 |[39m [36mimport[39m { getDoctorById } [36mfrom[39m [32m'@/lib.doctores'[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 3 |[39m [36mimport[39m { checkSubscriptionStatus } [36mfrom[39m [32m'@/lib/subscription'[39m
+ [90m 4 |[39m [36mimport[39m { [33mHTTP_STATUS[39m } [36mfrom[39m [32m'@/lib/constants'[39m
+ [90m 5 |[39m[0m
+
+Import map: aliased to relative './src/lib.doctores' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (./src/app/app/appointments/page.tsx:94:5)
+    at <unknown> (./src/app/app/profile/page.tsx:825:16)
+    at <unknown> (./src/app/app/upload-image/page.tsx:217:10)
+    at <unknown> (./src/app/auth/login/page.tsx:187:20)
+    at <unknown> (./src/app/chat/[conversationId]/page.tsx:69:17)
+    at <unknown> (./src/app/claim/[doctorId]/page.tsx:326:52)
+    at <unknown> (./src/app/doctor/[specialty]/[city]/page.tsx:88:8)
+    at <unknown> (./src/app/doctor/[specialty]/page.tsx:70:8)
+    at <unknown> (./src/app/doctor/analytics/page.tsx:22:11)
+    at <unknown> (./src/app/doctor/appointments/page.tsx:26:11)
+    at <unknown> (./src/app/doctor/availability/page.tsx:26:11)
+    at <unknown> (./src/app/doctor/chat/page.tsx:15:11)
+    at <unknown> (./src/app/doctor/finances/page.tsx:48:11)
+    at <unknown> (./src/app/doctor/followups/page.tsx:17:11)
+    at <unknown> (./src/app/doctor/images/[analysisId]/page.tsx:14:11)
+    at <unknown> (./src/app/doctor/onboarding/page.tsx:10:11)
+    at <unknown> (./src/app/doctor/page.tsx:16:11)
+    at <unknown> (./src/app/doctor/pharmacy/page.tsx:15:11)
+    at <unknown> (./src/app/doctor/pricing/page.tsx:146:23)
+    at <unknown> (./src/app/doctor/profile/page.tsx:14:11)
+    at <unknown> (./src/app/doctor/subscription/page.tsx:73:23)
+    at <unknown> (./src/app/specialties/page.tsx:29:4)
+    at <unknown> (./src/components/ChatList.tsx:50:24)
+    at <unknown> (./src/components/landing/StatsSection.tsx:52:82)
+    at <unknown> (./src/components/soap/RecommendedDoctors.tsx:49:9)
+    at <unknown> (./src/lib/ai/referral.ts:67:8)
+    at <unknown> (./src/lib/analytics.ts:6:8)
+    at <unknown> (./src/lib/arco/escalation.ts:567:11)
+    at <unknown> (./src/lib/arco/export/portability.ts:107:11)
+    at <unknown> (./src/lib/cache/cache.ts:336:2)
+    at <unknown> (./src/lib/discovery.ts:114:8)
+    at <unknown> (./src/lib/domains/referrals/index.ts:196:11)
+    at <unknown> (./src/lib/reviews.ts:300:11)
+    at <unknown> (./src/lib/sep-verification/index.ts:315:13)
+    at <unknown> (./src/lib/subscription.ts:192:19)
+    at <unknown> (./src/lib/trust-badges/index.ts:184:11)
+    at <unknown> (./src/lib/whatsapp.ts:39:1)
+    at <unknown> (./src/app/api/doctores/[id]/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)

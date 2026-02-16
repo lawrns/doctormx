@@ -23,7 +23,8 @@ export class InventoryService {
   /**
    * Check stock availability for products
    *
-   * TODO: Replace with actual API calls
+   * MOCK_IMPLEMENTATION: Returns stock availability from local mock product data.
+   * To be replaced with real pharmacy API stock checking endpoints.
    */
   async checkStockAvailability(
     items: Array<{ productId: string; pharmacyId: PharmacyChain; quantity: number }>

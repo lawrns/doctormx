@@ -9,7 +9,7 @@ import PreConsultaChat from '@/components/PreConsultaChat'
 import { AI_CONFIG } from '@/lib/ai/config'
 import { User } from 'lucide-react'
 
-type DoctorProfile = {
+export type DoctorProfile = {
   id: string
   status: string
   bio: string | null
@@ -90,7 +90,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
       
       try {
         const res = await fetch(
-          `/api/doctors/${doctor.id}/available-dates?start=${today.toISOString().split('T')[0]}&end=${maxDate.toISOString().split('T')[0]}`
+          `/api/doctores/${doctor.id}/available-dates?start=${today.toISOString().split('T')[0]}&end=${maxDate.toISOString().split('T')[0]}`
         )
         const data = await res.json()
         setAvailableDates(data.dates || [])
@@ -108,7 +108,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
     if (selectedDate) {
       setLoadingSlots(true)
       setSelectedTime('')
-      fetch(`/api/doctors/${doctor.id}/slots?date=${selectedDate}`)
+      fetch(`/api/doctores/${doctor.id}/slots?date=${selectedDate}`)
         .then(res => res.json())
         .then(data => { setAvailableSlots(data.slots || []); setLoadingSlots(false) })
         .catch(() => {
@@ -259,10 +259,10 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
             </div>
             <span className="text-2xl font-bold text-ink-primary">Doctor.mx</span>
           </Link>
-          <Link href={`/doctors/${doctor.id}`} className="text-ink-secondary hover:text-primary-600 font-medium">← Volver al perfil</Link>
+          <Link href={`/doctores/${doctor.id}`} className="text-ink-secondary hover:text-primary-600 font-medium">← Volver al perfil</Link>
         </div>
       </header>
-      <main className="max-w-2xl mx-auto px-4 py-8">
+      <main id="main-content" className="max-w-2xl mx-auto px-4 py-8">
         <div className="bg-white rounded-2xl shadow-xl border border-border overflow-hidden">
           <div className="bg-gradient-to-r from-primary-500 to-accent-500 p-6 text-white">
             <h1 className="text-2xl font-bold">Agendar Consulta</h1>

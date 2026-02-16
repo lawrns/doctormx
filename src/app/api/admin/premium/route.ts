@@ -26,9 +26,9 @@ export async function GET(request: NextRequest) {
       .gte('created_at', new Date(new Date().getFullYear(), new Date().getMonth(), 1).toISOString())
 
     const tierMap: Record<string, string> = {
-      basic_499: 'starter',
-      pro_499: 'pro',
-      elite_999: 'elite',
+      'basic_499': 'starter',
+      'pro_499': 'pro',
+      'elite_999': 'elite',
     }
 
     const doctorsByTier: Record<string, Array<{

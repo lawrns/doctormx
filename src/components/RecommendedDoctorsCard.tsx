@@ -176,7 +176,7 @@ export function RecommendedDoctorsCard({
                   </button>
                 )}
                 <a
-                  href={`/doctors/${match.doctorId}`}
+                  href={`/doctores/${match.doctorId}`}
                   className="text-xs text-gray-600 hover:text-gray-900 text-center underline"
                 >
                   Ver perfil

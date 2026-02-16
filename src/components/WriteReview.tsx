@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { RatingInput } from './StarRating'
 import { LoadingButton } from './LoadingButton'
 import { Modal, ModalFooter } from './Modal'
-import { Textarea } from './Input'
+import { FormTextarea } from '@/components/ui/form-input'
 import type { Review } from '@/lib/reviews'
 
 interface WriteReviewProps {
@@ -113,7 +113,7 @@ export function WriteReview({
               required={true}
             />
 
-            <Textarea
+            <FormTextarea
               label="Comentario (opcional)"
               value={comment}
               onChange={(e) => setComment(e.target.value)}

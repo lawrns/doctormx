@@ -57,7 +57,7 @@ export default async function PharmacyAffiliateDashboard() {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8">
+      <main id="main-content" className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-2">
             Panel de Farmacia Asociada

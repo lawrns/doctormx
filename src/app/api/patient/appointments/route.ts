@@ -112,7 +112,7 @@ export async function GET(request: Request) {
       notes: string | null
       created_at: string
       updated_at: string
-      doctors: {
+      doctores: {
         id: string
         specialty: string | null
         price_cents: number
@@ -129,7 +129,7 @@ export async function GET(request: Request) {
     const paginatedAppointments = hasMore ? rawAppointments.slice(0, limit) : rawAppointments
 
     // Map results to enriched appointments format
-    // The join query returns data with nested structure: { doctors: { profiles: {...} } }
+    // The join query returns data with nested structure: {doctors: { profiles: {...} } }
     const appointments = paginatedAppointments.map((apt) => ({
       id: apt.id,
       doctor_id: apt.doctor_id,

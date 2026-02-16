@@ -32,7 +32,7 @@ export default function AppointmentsLoading() {
         </aside>
 
         {/* Main content skeleton */}
-        <main className="flex-1 p-4 lg:p-8">
+        <main id="main-content" className="flex-1 p-4 lg:p-8">
           <div className="max-w-6xl">
             <Skeleton className="h-9 w-36 lg:w-48 mb-2" />
             <Skeleton className="h-5 w-48 lg:w-64 mb-8" />

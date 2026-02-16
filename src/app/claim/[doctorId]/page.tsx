@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from 'react'
 import { useParams, useRouter } from 'next/navigation'
-import { Button } from '@/components/Button'
-import { Card } from '@/components/Card'
-import { Input } from '@/components/Input'
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
+import { FormInput } from '@/components/ui/form-input'
 import { Badge } from '@/components/Badge'
 import { Clock } from 'lucide-react'
 
@@ -165,7 +165,7 @@ export default function ClaimProfilePage() {
       <div className="flex min-h-screen items-center justify-center bg-gray-50">
         <Card className="max-w-md p-6 text-center">
           <p className="text-red-600">{error}</p>
-          <Button className="mt-4" onClick={() => router.push('/doctors')}>
+          <Button className="mt-4" onClick={() => router.push('/doctores')}>
             Volver al directorio
           </Button>
         </Card>
@@ -208,7 +208,7 @@ export default function ClaimProfilePage() {
               <label className="mb-1 block text-sm font-medium text-gray-700">
                 Cédula Profesional
               </label>
-              <Input
+              <FormInput
                 placeholder="Ej: 12345678"
                 value={cedula}
                 onChange={(e) => setCedula(e.target.value)}
@@ -323,7 +323,7 @@ export default function ClaimProfilePage() {
             <Button 
               variant="secondary"
               className="mt-6"
-              onClick={() => router.push('/doctors')}
+              onClick={() => router.push(`/doctores')}
             >
               Volver al directorio
             </Button>

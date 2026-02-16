@@ -1,19 +1,20 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { mockSupabaseClient, mockStripePaymentIntent, mockStripePaymentIntentSucceeded, mockStripeRefund, createMockAppointment, createMockPayment } from '@/lib/__tests__/mocks'
 
+// Mock hoisted al top del archivo - una sola vez
 vi.mock('@/lib/supabase/server', () => ({
-  createClient: vi.fn().mockResolvedValue(mockSupabaseClient),
-  createServiceClient: vi.fn().mockResolvedValue(mockSupabaseClient),
+  createClient: vi.fn(),
+  createServiceClient: vi.fn(),
 }))
 
-vi.mock('stripe', () => ({
+vi.mock('@/lib/stripe', () => ({
   stripe: {
     paymentIntents: {
-      create: vi.fn().mockResolvedValue(mockStripePaymentIntent),
-      retrieve: vi.fn().mockResolvedValue(mockStripePaymentIntentSucceeded),
+      create: vi.fn(),
+      retrieve: vi.fn(),
     },
     refunds: {
-      create: vi.fn().mockResolvedValue(mockStripeRefund),
+      create: vi.fn(),
     },
   },
 }))
@@ -24,7 +25,13 @@ vi.mock('@/lib/notifications', () => ({
 
 vi.mock('@/lib/whatsapp-notifications', () => ({
   sendPaymentReceipt: vi.fn().mockResolvedValue({ success: true }),
+  getPatientPhone: vi.fn().mockResolvedValue('+5215551234567'),
+  getDoctorName: vi.fn().mockResolvedValue('Dr. Test'),
 }))
+
+// Importar después de los mocks
+import { createClient } from '@/lib/supabase/server'
+import { stripe } from '@/lib/stripe'
 
 describe('Payment Flow Integration', () => {
   beforeEach(() => {
@@ -40,56 +47,69 @@ describe('Payment Flow Integration', () => {
       const mockPayment = createMockPayment()
       const mockAppointment = createMockAppointment({ status: 'confirmed' })
 
-      const mockClient = {
-        ...mockSupabaseClient,
-        from: vi.fn().mockImplementation((table) => {
-          if (table === 'appointments') {
-            return {
-              select: vi.fn().mockReturnValue({
-                eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ 
-                    data: { 
-                      ...mockAppointment, 
-                      doctor: { price_cents: 50000, currency: 'MXN' }
-                    }, 
-                    error: null 
-                  }),
-                }),
-              }),
-              update: vi.fn().mockReturnValue({
-                select: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: mockAppointment, error: null }),
-                }),
-              }),
-            }
-          }
-          if (table === 'payments') {
-            return {
-              insert: vi.fn().mockReturnValue({
-                select: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: mockPayment, error: null }),
-                }),
-              }),
-              update: vi.fn().mockReturnValue({
-                eq: vi.fn().mockResolvedValue({ error: null }),
-              }),
-              select: vi.fn().mockReturnValue({
-                eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: mockPayment, error: null }),
-                }),
-              }),
-            }
-          }
-          return mockSupabaseClient.from(table)
-        }),
+      // Helper para crear el mock de eq encadenable
+      const createChainableEq = (singleResult: unknown) => {
+        const eqMock = vi.fn()
+        const chain = {
+          eq: eqMock,
+          single: vi.fn().mockResolvedValue(singleResult),
+        }
+        eqMock.mockReturnValue(chain)
+        return chain
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      const mockFrom = vi.fn().mockImplementation((table: string) => {
+        if (table === 'appointments') {
+          return {
+            select: vi.fn().mockReturnValue(
+              createChainableEq({ 
+                data: { 
+                  id: 'appointment-1',
+                  doctor_id: 'doctor-1',
+                  patient_id: 'patient-1',
+                  doctor: { price_cents: 50000, currency: 'MXN' }
+                }, 
+                error: null 
+              })
+            ),
+            update: vi.fn().mockReturnValue({
+              select: vi.fn().mockReturnValue({
+                single: vi.fn().mockResolvedValue({ data: mockAppointment, error: null }),
+              }),
+              eq: vi.fn().mockResolvedValue({ error: null }),
+            }),
+          }
+        }
+        if (table === 'payments') {
+          return {
+            insert: vi.fn().mockReturnValue({
+              select: vi.fn().mockReturnValue({
+                single: vi.fn().mockResolvedValue({ data: mockPayment, error: null }),
+              }),
+            }),
+            update: vi.fn().mockReturnValue({
+              eq: vi.fn().mockResolvedValue({ error: null }),
+            }),
+            select: vi.fn().mockReturnValue(
+              createChainableEq({ data: mockPayment, error: null })
+            ),
+          }
+        }
+        return mockSupabaseClient.from(table)
+      })
 
-      const { initializePayment } = await import('@/lib/payment')
-      const { confirmSuccessfulPayment } = await import('@/lib/payment')
+      const mockedCreateClient = vi.mocked(createClient)
+      mockedCreateClient.mockResolvedValue({
+        ...mockSupabaseClient,
+        from: mockFrom,
+      } as unknown as ReturnType<typeof createClient> extends Promise<infer T> ? T : never)
+
+      // Mock stripe payment intent
+      const mockedStripe = vi.mocked(stripe)
+      mockedStripe.paymentIntents.create = vi.fn().mockResolvedValue(mockStripePaymentIntent)
+      mockedStripe.paymentIntents.retrieve = vi.fn().mockResolvedValue(mockStripePaymentIntentSucceeded)
+
+      const { initializePayment, confirmSuccessfulPayment } = await import('@/lib/payment')
 
       const step1Result = await initializePayment({
         appointmentId: 'appointment-1',
@@ -110,50 +130,53 @@ describe('Payment Flow Integration', () => {
     })
 
     it('should handle payment failure scenario', async () => {
-      const mockAppointment = createMockAppointment({ status: 'cancelled' })
+      const mockAppointment = createMockAppointment({ status: 'cancelled', doctor_id: 'doctor-1', start_ts: new Date().toISOString(), end_ts: new Date(Date.now() + 3600000).toISOString() })
       const mockPayment = createMockPayment({ status: 'failed' })
 
-      const mockClient = {
-        ...mockSupabaseClient,
-        from: vi.fn().mockImplementation((table) => {
-          if (table === 'appointments') {
-            return {
-              select: vi.fn().mockReturnValue({
-                eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: mockAppointment, error: null }),
+      const mockFrom = vi.fn().mockImplementation((table: string) => {
+        if (table === 'appointments') {
+          return {
+            select: vi.fn().mockReturnValue({
+              eq: vi.fn().mockReturnValue({
+                single: vi.fn().mockResolvedValue({ data: mockAppointment, error: null }),
+              }),
+            }),
+            update: vi.fn().mockReturnValue({
+              eq: vi.fn().mockResolvedValue({ error: null }),
+            }),
+          }
+        }
+        if (table === 'payments') {
+          return {
+            select: vi.fn().mockReturnValue({
+              eq: vi.fn().mockReturnValue({
+                single: vi.fn().mockResolvedValue({ data: mockPayment, error: null }),
+              }),
+            }),
+            update: vi.fn().mockReturnValue({
+              eq: vi.fn().mockResolvedValue({ error: null }),
+            }),
+          }
+        }
+        if (table === 'slot_locks') {
+          return {
+            delete: vi.fn().mockReturnValue({
+              eq: vi.fn().mockReturnValue({
+                gte: vi.fn().mockReturnValue({
+                  lte: vi.fn().mockResolvedValue({ error: null }),
                 }),
               }),
-              update: vi.fn().mockReturnValue({
-                eq: vi.fn().mockResolvedValue({ error: null }),
-              }),
-            }
+            }),
           }
-          if (table === 'payments') {
-            return {
-              select: vi.fn().mockReturnValue({
-                eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: mockPayment, error: null }),
-                }),
-              }),
-              update: vi.fn().mockReturnValue({
-                eq: vi.fn().mockResolvedValue({ error: null }),
-              }),
-            }
-          }
-          if (table === 'slot_locks') {
-            return {
-              delete: vi.fn().mockReturnValue({
-                eq: vi.fn().mockResolvedValue({ error: null }),
-              }),
-            }
-          }
-          return mockSupabaseClient.from(table)
-        }),
-      }
+        }
+        return mockSupabaseClient.from(table)
+      })
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      const mockedCreateClient = vi.mocked(createClient)
+      mockedCreateClient.mockResolvedValue({
+        ...mockSupabaseClient,
+        from: mockFrom,
+      } as unknown as ReturnType<typeof createClient> extends Promise<infer T> ? T : never)
 
       const { handlePaymentFailure } = await import('@/lib/payment')
 
@@ -165,37 +188,48 @@ describe('Payment Flow Integration', () => {
 
   describe('Refund Flow', () => {
     it('should process full refund', async () => {
-      const mockClient = {
-        ...mockSupabaseClient,
-        from: vi.fn().mockImplementation((table) => {
-          if (table === 'payments') {
-            return {
-              select: vi.fn().mockReturnValue({
-                eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: createMockPayment(), error: null }),
-                }),
-              }),
-              update: vi.fn().mockReturnValue({
-                eq: vi.fn().mockResolvedValue({ error: null }),
-              }),
-            }
-          }
-          if (table === 'refunds') {
-            return {
-              insert: vi.fn().mockReturnValue({
-                select: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: { id: 'refund-1' }, error: null }),
-                }),
-              }),
-            }
-          }
-          return mockSupabaseClient.from(table)
-        }),
+      // Helper para crear el mock de eq encadenable con doble eq
+      const createDoubleEqChain = (singleResult: unknown) => {
+        const secondEqMock = vi.fn().mockReturnValue({
+          single: vi.fn().mockResolvedValue(singleResult),
+        })
+        const firstEqMock = vi.fn().mockReturnValue({
+          eq: secondEqMock,
+        })
+        return { eq: firstEqMock }
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      const mockFrom = vi.fn().mockImplementation((table: string) => {
+        if (table === 'payments') {
+          return {
+            select: vi.fn().mockReturnValue(
+              createDoubleEqChain({ data: createMockPayment({ status: 'paid', provider_ref: 'pi_test123', amount_cents: 50000 }), error: null })
+            ),
+            update: vi.fn().mockReturnValue({
+              eq: vi.fn().mockResolvedValue({ error: null }),
+            }),
+          }
+        }
+        if (table === 'refunds') {
+          return {
+            insert: vi.fn().mockReturnValue({
+              select: vi.fn().mockReturnValue({
+                single: vi.fn().mockResolvedValue({ data: { id: 'refund-1', payment_id: 'test-payment-id', amount_cents: 50000, status: 'processing', provider_ref: 're_test123', reason: 'Patient requested refund' }, error: null }),
+              }),
+            }),
+          }
+        }
+        return mockSupabaseClient.from(table)
+      })
+
+      const mockedCreateClient = vi.mocked(createClient)
+      mockedCreateClient.mockResolvedValue({
+        ...mockSupabaseClient,
+        from: mockFrom,
+      } as unknown as ReturnType<typeof createClient> extends Promise<infer T> ? T : never)
+
+      const mockedStripe = vi.mocked(stripe)
+      mockedStripe.refunds.create = vi.fn().mockResolvedValue(mockStripeRefund)
 
       const { processRefund } = await import('@/lib/payment')
 
@@ -206,25 +240,33 @@ describe('Payment Flow Integration', () => {
     })
 
     it('should reject refund for unpaid appointment', async () => {
-      const mockClient = {
-        ...mockSupabaseClient,
-        from: vi.fn().mockImplementation((table) => {
-          if (table === 'payments') {
-            return {
-              select: vi.fn().mockReturnValue({
-                eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: null, error: { message: 'Not found' } }),
-                }),
-              }),
-            }
-          }
-          return mockSupabaseClient.from(table)
-        }),
+      // Helper para crear el mock de eq encadenable con doble eq
+      const createDoubleEqChain = (singleResult: unknown) => {
+        const secondEqMock = vi.fn().mockReturnValue({
+          single: vi.fn().mockResolvedValue(singleResult),
+        })
+        const firstEqMock = vi.fn().mockReturnValue({
+          eq: secondEqMock,
+        })
+        return { eq: firstEqMock }
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      const mockFrom = vi.fn().mockImplementation((table: string) => {
+        if (table === 'payments') {
+          return {
+            select: vi.fn().mockReturnValue(
+              createDoubleEqChain({ data: null, error: { message: 'Not found' } })
+            ),
+          }
+        }
+        return mockSupabaseClient.from(table)
+      })
+
+      const mockedCreateClient = vi.mocked(createClient)
+      mockedCreateClient.mockResolvedValue({
+        ...mockSupabaseClient,
+        from: mockFrom,
+      } as unknown as ReturnType<typeof createClient> extends Promise<infer T> ? T : never)
 
       const { processRefund } = await import('@/lib/payment')
 
@@ -234,32 +276,36 @@ describe('Payment Flow Integration', () => {
 
   describe('Payment Status Transitions', () => {
     it('should transition from pending to paid', async () => {
-      const mockClient = {
-        ...mockSupabaseClient,
-        from: vi.fn().mockImplementation((table) => {
-          if (table === 'payments') {
-            return {
-              update: vi.fn().mockReturnValue({
-                eq: vi.fn().mockResolvedValue({ error: null }),
-              }),
-            }
+      const mockFrom = vi.fn().mockImplementation((table: string) => {
+        if (table === 'payments') {
+          return {
+            update: vi.fn().mockReturnValue({
+              eq: vi.fn().mockResolvedValue({ error: null }),
+            }),
           }
-          if (table === 'appointments') {
-            return {
-              update: vi.fn().mockReturnValue({
+        }
+        if (table === 'appointments') {
+          return {
+            update: vi.fn().mockReturnValue({
+              eq: vi.fn().mockReturnValue({
                 select: vi.fn().mockReturnValue({
                   single: vi.fn().mockResolvedValue({ data: createMockAppointment({ status: 'confirmed' }), error: null }),
                 }),
               }),
-            }
+            }),
           }
-          return mockSupabaseClient.from(table)
-        }),
-      }
+        }
+        return mockSupabaseClient.from(table)
+      })
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      const mockedCreateClient = vi.mocked(createClient)
+      mockedCreateClient.mockResolvedValue({
+        ...mockSupabaseClient,
+        from: mockFrom,
+      } as unknown as ReturnType<typeof createClient> extends Promise<infer T> ? T : never)
+
+      const mockedStripe = vi.mocked(stripe)
+      mockedStripe.paymentIntents.retrieve = vi.fn().mockResolvedValue(mockStripePaymentIntentSucceeded)
 
       const { confirmSuccessfulPayment } = await import('@/lib/payment')
 
@@ -269,37 +315,48 @@ describe('Payment Flow Integration', () => {
     })
 
     it('should transition from paid to refunded', async () => {
-      const mockClient = {
-        ...mockSupabaseClient,
-        from: vi.fn().mockImplementation((table) => {
-          if (table === 'payments') {
-            return {
-              select: vi.fn().mockReturnValue({
-                eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: createMockPayment({ status: 'paid' }), error: null }),
-                }),
-              }),
-              update: vi.fn().mockReturnValue({
-                eq: vi.fn().mockResolvedValue({ error: null }),
-              }),
-            }
-          }
-          if (table === 'refunds') {
-            return {
-              insert: vi.fn().mockReturnValue({
-                select: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: { id: 'refund-1' }, error: null }),
-                }),
-              }),
-            }
-          }
-          return mockSupabaseClient.from(table)
-        }),
+      // Helper para crear el mock de eq encadenable con doble eq
+      const createDoubleEqChain = (singleResult: unknown) => {
+        const secondEqMock = vi.fn().mockReturnValue({
+          single: vi.fn().mockResolvedValue(singleResult),
+        })
+        const firstEqMock = vi.fn().mockReturnValue({
+          eq: secondEqMock,
+        })
+        return { eq: firstEqMock }
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      const mockFrom = vi.fn().mockImplementation((table: string) => {
+        if (table === 'payments') {
+          return {
+            select: vi.fn().mockReturnValue(
+              createDoubleEqChain({ data: createMockPayment({ status: 'paid', provider_ref: 'pi_test123', amount_cents: 50000 }), error: null })
+            ),
+            update: vi.fn().mockReturnValue({
+              eq: vi.fn().mockResolvedValue({ error: null }),
+            }),
+          }
+        }
+        if (table === 'refunds') {
+          return {
+            insert: vi.fn().mockReturnValue({
+              select: vi.fn().mockReturnValue({
+                single: vi.fn().mockResolvedValue({ data: { id: 'refund-1', payment_id: 'test-payment-id', amount_cents: 50000, status: 'processing', provider_ref: 're_test123', reason: 'Customer request' }, error: null }),
+              }),
+            }),
+          }
+        }
+        return mockSupabaseClient.from(table)
+      })
+
+      const mockedCreateClient = vi.mocked(createClient)
+      mockedCreateClient.mockResolvedValue({
+        ...mockSupabaseClient,
+        from: mockFrom,
+      } as unknown as ReturnType<typeof createClient> extends Promise<infer T> ? T : never)
+
+      const mockedStripe = vi.mocked(stripe)
+      mockedStripe.refunds.create = vi.fn().mockResolvedValue(mockStripeRefund)
 
       const { processRefund } = await import('@/lib/payment')
 
@@ -311,39 +368,53 @@ describe('Payment Flow Integration', () => {
 
   describe('Multi-currency Support', () => {
     it('should handle MXN currency', async () => {
-      const mockClient = {
-        ...mockSupabaseClient,
-        from: vi.fn().mockImplementation((table) => {
-          if (table === 'appointments') {
-            return {
-              select: vi.fn().mockReturnValue({
-                eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ 
-                    data: { 
-                      doctor: { price_cents: 50000, currency: 'MXN' }
-                    }, 
-                    error: null 
-                  }),
-                }),
-              }),
-            }
-          }
-          if (table === 'payments') {
-            return {
-              insert: vi.fn().mockReturnValue({
-                select: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: { id: 'payment-1' }, error: null }),
-                }),
-              }),
-            }
-          }
-          return mockSupabaseClient.from(table)
-        }),
+      // Helper para crear el mock de eq encadenable
+      const createChainableEq = (singleResult: unknown) => {
+        const eqMock = vi.fn()
+        const chain = {
+          eq: eqMock,
+          single: vi.fn().mockResolvedValue(singleResult),
+        }
+        eqMock.mockReturnValue(chain)
+        return chain
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      const mockFrom = vi.fn().mockImplementation((table: string) => {
+        if (table === 'appointments') {
+          return {
+            select: vi.fn().mockReturnValue(
+              createChainableEq({ 
+                data: { 
+                  id: 'appointment-1',
+                  doctor_id: 'doctor-1',
+                  patient_id: 'patient-1',
+                  doctor: { price_cents: 50000, currency: 'MXN' }
+                }, 
+                error: null 
+              })
+            ),
+          }
+        }
+        if (table === 'payments') {
+          return {
+            insert: vi.fn().mockReturnValue({
+              select: vi.fn().mockReturnValue({
+                single: vi.fn().mockResolvedValue({ data: { id: 'payment-1' }, error: null }),
+              }),
+            }),
+          }
+        }
+        return mockSupabaseClient.from(table)
+      })
+
+      const mockedCreateClient = vi.mocked(createClient)
+      mockedCreateClient.mockResolvedValue({
+        ...mockSupabaseClient,
+        from: mockFrom,
+      } as unknown as ReturnType<typeof createClient> extends Promise<infer T> ? T : never)
+
+      const mockedStripe = vi.mocked(stripe)
+      mockedStripe.paymentIntents.create = vi.fn().mockResolvedValue(mockStripePaymentIntent)
 
       const { initializePayment } = await import('@/lib/payment')
 
@@ -356,39 +427,54 @@ describe('Payment Flow Integration', () => {
     })
 
     it('should handle USD currency', async () => {
-      const mockClient = {
-        ...mockSupabaseClient,
-        from: vi.fn().mockImplementation((table) => {
-          if (table === 'appointments') {
-            return {
-              select: vi.fn().mockReturnValue({
-                eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ 
-                    data: { 
-                      doctor: { price_cents: 2500, currency: 'USD' }
-                    }, 
-                    error: null 
-                  }),
-                }),
-              }),
-            }
-          }
-          if (table === 'payments') {
-            return {
-              insert: vi.fn().mockReturnValue({
-                select: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: { id: 'payment-1' }, error: null }),
-                }),
-              }),
-            }
-          }
-          return mockSupabaseClient.from(table)
-        }),
+      // Helper para crear el mock de eq encadenable
+      const createChainableEq = (singleResult: unknown) => {
+        const eqMock = vi.fn()
+        const chain = {
+          eq: eqMock,
+          single: vi.fn().mockResolvedValue(singleResult),
+        }
+        eqMock.mockReturnValue(chain)
+        return chain
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      const mockFrom = vi.fn().mockImplementation((table: string) => {
+        if (table === 'appointments') {
+          return {
+            select: vi.fn().mockReturnValue(
+              createChainableEq({ 
+                data: { 
+                  id: 'appointment-1',
+                  doctor_id: 'doctor-1',
+                  patient_id: 'patient-1',
+                  doctor: { price_cents: 2500, currency: 'USD' }
+                }, 
+                error: null 
+              })
+            ),
+          }
+        }
+        if (table === 'payments') {
+          return {
+            insert: vi.fn().mockReturnValue({
+              select: vi.fn().mockReturnValue({
+                single: vi.fn().mockResolvedValue({ data: { id: 'payment-1' }, error: null }),
+              }),
+            }),
+          }
+        }
+        return mockSupabaseClient.from(table)
+      })
+
+      const mockedCreateClient = vi.mocked(createClient)
+      mockedCreateClient.mockResolvedValue({
+        ...mockSupabaseClient,
+        from: mockFrom,
+      } as unknown as ReturnType<typeof createClient> extends Promise<infer T> ? T : never)
+
+      const mockUsdPaymentIntent = { ...mockStripePaymentIntent, currency: 'usd' }
+      const mockedStripe = vi.mocked(stripe)
+      mockedStripe.paymentIntents.create = vi.fn().mockResolvedValue(mockUsdPaymentIntent)
 
       const { initializePayment } = await import('@/lib/payment')
 

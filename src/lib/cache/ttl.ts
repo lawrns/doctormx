@@ -58,7 +58,7 @@ export const TTL_DOCTOR_PROFILE = TTL_LONG // 1 hour
 
 /**
  * Doctor list TTL
- * Lists of doctors (by specialty, location, etc.)
+ * Lists of doctores (by specialty, location, etc.)
  * Invalidated when any doctor profile changes
  */
 export const TTL_DOCTOR_LIST = TTL_MEDIUM // 15 minutes

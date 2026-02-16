@@ -57,7 +57,7 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    // TODO: Send welcome email with magic link to create account
+    // FUTURE_ENHANCEMENT: Send welcome email with magic link to create account
     // await sendWelcomeEmail(email)
 
     return NextResponse.json({

@@ -70,7 +70,7 @@ export function doctorListKey(filters: Record<string, unknown> = {}): string {
 }
 
 /**
- * Generate key for doctors by specialty
+ * Generate key for doctores by specialty
  * @param specialtySlug - Specialty URL slug
  * @param city - Optional city filter
  */

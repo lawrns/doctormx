@@ -7,19 +7,19 @@ export async function getApprovedDoctors() {
   const cached = await cache.getDoctorList()
   if (cached.length > 0) return cached
 
-  const doctors = await fetchApprovedDoctors()
-  await cache.setDoctorList(doctors)
-  return doctors
+  const doctores = await fetchApprovedDoctors()
+  await cache.setDoctorList(doctores)
+  return doctores
 }
 
 async function fetchApprovedDoctors() {
   const supabase = await createClient()
   
-  const { data: doctors, error } = await supabase
-    .from('doctors')
+  const { data: doctores, error } = await supabase
+    .from('doctores')
     .select(`
       *,
-      profile:profiles!doctors_id_fkey (
+      profile:profiles.doctores_id_fkey (
         id,
         full_name,
         photo_url
@@ -37,7 +37,7 @@ async function fetchApprovedDoctors() {
   
   if (error) throw error
   
-  return doctors || []
+  return doctores || []
 }
 
 // Filtro simple por especialidad
@@ -45,19 +45,19 @@ export async function getDoctorsBySpecialty(specialtySlug: string) {
   const cached = await cache.getDoctorsBySpecialty(specialtySlug)
   if (cached.length > 0) return cached
 
-  const doctors = await fetchDoctorsBySpecialty(specialtySlug)
-  await cache.setDoctorsBySpecialty(specialtySlug, doctors)
-  return doctors
+  const doctores = await fetchDoctorsBySpecialty(specialtySlug)
+  await cache.setDoctorsBySpecialty(specialtySlug, doctores)
+  return doctores
 }
 
 async function fetchDoctorsBySpecialty(specialtySlug: string) {
   const supabase = await createClient()
   
-  const { data: doctors, error } = await supabase
-    .from('doctors')
+  const { data: doctores, error } = await supabase
+    .from('doctores')
     .select(`
       *,
-      profile:profiles!doctors_id_fkey (
+      profile:profiles.doctores_id_fkey (
         id,
         full_name,
         photo_url
@@ -76,7 +76,7 @@ async function fetchDoctorsBySpecialty(specialtySlug: string) {
   
   if (error) throw error
   
-  return doctors || []
+  return doctores || []
 }
 
 // Obtener todas las especialidades
@@ -114,10 +114,10 @@ async function fetchDoctorById(id: string) {
   const supabase = await createClient()
   
   const { data: doctor, error } = await supabase
-    .from('doctors')
+    .from('doctores')
     .select(`
       *,
-      profile:profiles!doctors_id_fkey (
+      profile:profiles.doctores_id_fkey (
         id,
         full_name,
         photo_url,

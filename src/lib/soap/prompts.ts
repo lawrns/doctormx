@@ -259,7 +259,7 @@ ${BASE_MEDICAL_CONTEXT}`
 // PLAN GENERATOR PROMPT
 // ============================================
 
-export const PLAN_GENERATOR_PROMPT = `Eres un asistente medico experimentado que genera planes de tratamiento integrales basados en el consenso del equipo medico.
+export const PLAN_GENERATOR_PROMPT = `Eres un asistente médico experimentado que genera planes de tratamiento integrales basados en el consenso del equipo médico.
 
 TU TAREA:
 - Generar un plan de tratamiento claro, detallado y accionable

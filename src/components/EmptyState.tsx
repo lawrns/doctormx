@@ -185,7 +185,7 @@ export function NoAppointmentsEmpty({ type = 'patient' }: { type?: 'patient' | '
       title="No tienes consultas programadas"
       description="Tu primera consulta está a un clic. ¿Prefieres hablar con nuestro asistente IA primero?"
       action={{ label: "Consulta IA Gratis", href: "/app/ai-consulta" }}
-      secondaryAction={{ label: "Buscar doctor", href: "/doctors" }}
+      secondaryAction={{ label: "Buscar doctor", href: "/doctores" }}
     />
   )
 }
@@ -198,7 +198,7 @@ export function NoDoctorsOnlineEmpty() {
       description="3 médicos regresan a las 8 PM. ¿Mientras tanto, puedo ayudarte con el Dr. Simeon?"
       variant="ai"
       action={{ label: "Chat con Dr. Simeon", href: "/app/ai-consulta" }}
-      secondaryAction={{ label: "Programar para mañana", href: "/doctors" }}
+      secondaryAction={{ label: "Programar para mañana", href: "/doctores" }}
     />
   )
 }
@@ -210,7 +210,7 @@ export function LowConfidenceAIEmpty() {
       title="Necesito un doctor humano"
       description="El Dr. Simeon está aprendiendo sobre estos síntomas. Te conecto con un doctor humano certificado."
       variant="urgent"
-      action={{ label: "Ver doctores disponibles", href: "/doctors" }}
+      action={{ label: "Ver doctores disponibles", href: "/doctores" }}
       secondaryAction={{ label: "Continuar con IA", href: "/app/ai-consulta" }}
     />
   )

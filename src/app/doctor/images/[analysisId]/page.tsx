@@ -11,7 +11,7 @@ export default async function DoctorImageReviewPage({ params }: PageProps) {
   const { user, profile, supabase } = await requireRole('doctor')
   
   const { data: doctor } = await supabase
-    .from('doctors')
+    .from('doctores')
     .select('status')
     .eq('id', user.id)
     .single()

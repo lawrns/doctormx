@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { SUBSCRIPTION_PLANS, type SubscriptionTier } from '@/lib/subscription-types'
-import { Card } from '@/components/Card'
+import { Card } from '@/components/ui/card'
 import { LoadingButton } from '@/components/LoadingButton'
 import { Badge } from '@/components/Badge'
 import DoctorLayout from '@/components/DoctorLayout'
@@ -70,7 +70,7 @@ export default function SubscriptionPage() {
                 .single()
 
             const { data: doctorData } = await supabase
-                .from('doctors')
+                .from('doctores')
                 .select('status')
                 .eq('id', user.id)
                 .single()

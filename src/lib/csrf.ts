@@ -256,7 +256,28 @@ export function setCSRFCookie(response: NextResponse, token: string): void {
  * ```
  */
 export function getCSRFCookie(request: NextRequest): string | undefined {
-  return request.cookies.get(CSRF_COOKIE_NAME)?.value
+  // Try NextRequest cookies API first
+  const cookieValue = request.cookies.get(CSRF_COOKIE_NAME)?.value
+  if (cookieValue) {
+    return cookieValue
+  }
+
+  // Fallback: parse Cookie header manually (needed for tests and some edge cases)
+  const cookieHeader = request.headers.get('cookie') || request.headers.get('Cookie')
+  if (!cookieHeader) {
+    return undefined
+  }
+
+  // Parse cookie string: "name1=value1; name2=value2"
+  const cookies = cookieHeader.split(';')
+  for (const cookie of cookies) {
+    const [name, ...valueParts] = cookie.trim().split('=')
+    if (name === CSRF_COOKIE_NAME) {
+      return valueParts.join('=') // Handle values that might contain '='
+    }
+  }
+
+  return undefined
 }
 
 /**

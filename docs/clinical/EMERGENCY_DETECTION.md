@@ -137,7 +137,7 @@ function evaluateEmergency(patientInput: PatientInput): TriageResult {
 - "Feeling like I'm going to die"
 - "Chest pain with shortness of breath"
 
-**Patrón RegExp:** `/dolor.*pecho.*opresivo|dolor.*pecho.*brazo|angina|siento.*que.*me.*muero|chest.*pain|pressure.*chest|heart.*attack/i`
+**Patrón RegExp:** `/dolor.*pecho.*opresivo|dolor.*pecho.*brazo|dolor de pecho|presión en el pecho|presión pecho|angina|siento.*que.*me.*muero|chest.*pain|pressure.*chest|heart.*attack/i`
 
 #### Neurológicos (ACV/Stroke) / Neurological (Stroke)
 
@@ -189,6 +189,73 @@ function evaluateEmergency(patientInput: PatientInput): TriageResult {
 
 **Acción inmediata:** Mostrar recursos de línea de crisis (Línea de la Vida: 800 911 2000)
 
+#### Anafilaxia / Anaphylaxis
+
+**Español:**
+- "Garganta cerrándose" o "sensación de ahogo"
+- "Hinchazón de lengua o labios"
+- "Dificultad para tragar"
+- "Ronchas por todo el cuerpo"
+- "Sensación de muerte inminente"
+
+**English:**
+- "Throat closing" or "can't breathe"
+- "Tongue swelling" or "lip swelling"
+- "Difficulty swallowing"
+- "Hives all over"
+- "Feeling of impending doom"
+
+**Patrón RegExp:** `/garganta.*cerr|hinchazón.*lengua|hinchazon.*lengua|dificultad.*tragar|ronchas.*todo|cuerpo.*ronchas|sensación.*muerte|throat.*closing|tongue.*swelling|difficulty.*swallowing|hives.*all.*over/i`
+
+**YAML:**
+```yaml
+anaphylaxis_emergency:
+  patterns:
+    - 'garganta cerrándose'
+    - 'hinchazón lengua'
+    - 'dificultad para tragar'
+    - 'ronchas por todo el cuerpo'
+    - 'sensación de muerte inminente'
+    - 'throat closing'
+    - 'tongue swelling'
+    - 'difficulty swallowing'
+    - 'hives all over'
+```
+
+#### Hipoglucemia Severa / Severe Hypoglycemia
+
+**Español:**
+- "Azúcar baja" o "glucosa baja"
+- "Me desmayo de la diabetes"
+- "Sudoración extrema con diabetes"
+- "Temblor por diabetes"
+- "Confusión por azúcar baja"
+
+**English:**
+- "Low blood sugar"
+- "Sugar is low"
+- "Diabetic passing out"
+- "Severe shaking diabetes"
+- "Confusion from low sugar"
+
+**Patrón RegExp:** `/azúcar.*baja|glucosa.*baja|desmayo.*diabetes|sudoración.*extrema.*diabetes|temblor.*diabetes|confusión.*azúcar|low blood sugar|sugar is low|diabetic passing out|severe shaking diabetes/i`
+
+**YAML:**
+```yaml
+severe_hypoglycemia:
+  patterns:
+    - 'azúcar baja'
+    - 'glucosa baja'
+    - 'me desmayo de la diabetes'
+    - 'sudoración extrema diabetes'
+    - 'temblor diabetes'
+    - 'confusión azúcar'
+    - 'low blood sugar'
+    - 'sugar is low'
+    - 'diabetic passing out'
+    - 'severe shaking diabetes'
+```
+
 ### Patrones de Alta Urgencia
 
 #### Fiebre Alta / High Fever
@@ -210,6 +277,7 @@ function evaluateEmergency(patientInput: PatientInput): TriageResult {
 | SpO2 | 90-92% | Urgencias 2-4 horas |
 | Presión Arterial | ≥180/120 mmHg | Crisis hipertensiva - Urgencias |
 | Frecuencia Cardíaca | >120 lpm | Taquicardia - Evaluación urgente |
+| Frecuencia Cardíaca | <50 lpm CON síntomas | Bradicardia sintomática - URGENTE |
 | Temperatura | ≥40°C | Hipertermia - Urgencias |
 
 ### Patrones Moderados
@@ -247,6 +315,12 @@ function evaluateEmergency(patientInput: PatientInput): TriageResult {
 - Llama al 911 o acude a urgencias
 - No conduzcas tú mismo si es posible
 - Si hay signos de infarto: mastica una aspirina mientras esperas ayuda
+
+⚠️ **Importante:** Solo toma aspirina si NO tienes:
+- Alergia a aspirina o antiinflamatorios
+- Sangrado activo o úlcera gástrica
+- Antecedente de hemorragia cerebral
+- Instrucciones médicas de NO tomar aspirina
 ```
 
 #### 2. URGENTE

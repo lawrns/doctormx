@@ -91,9 +91,9 @@ export async function getConversation(
         full_name,
         photo_url
       ),
-      doctor:doctors!chat_conversations_doctor_id_fkey(
+      doctor.doctores!chat_conversations_doctor_id_fkey(
         user_id,
-        user:profiles!doctors_user_id_fkey(
+        user:profiles.doctores_user_id_fkey(
           full_name,
           photo_url
         )
@@ -154,10 +154,10 @@ export async function getConversations(
           full_name,
           photo_url
         ),
-        doctor:doctors!chat_conversations_doctor_id_fkey(
+        doctor.doctores!chat_conversations_doctor_id_fkey(
           user_id
         ),
-        doctor:user:profiles!doctors_user_id_fkey(
+        doctor:user:profiles.doctores_user_id_fkey(
           full_name,
           photo_url
         )

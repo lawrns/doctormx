@@ -192,7 +192,7 @@ async function processPayment() {
 async function getDoctorWithProfile(
   doctorId: DoctorId
 ): Promise<DoctorWithRelations | null> {
-  // In a real implementation, this would join the doctors and profiles tables
+  // In a real implementation, this would join the doctores and profiles tables
   console.log('Fetching doctor with profile for:', doctorId)
 
   // Example of what the joined data might look like

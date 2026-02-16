@@ -44,7 +44,7 @@ export default async function AdminDashboard() {
           <h1 className="text-2xl font-bold text-gray-900">Doctor.mx Admin</h1>
           <div className="flex items-center gap-4">
             <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
-              👑 Admin
+              Admin
             </span>
             <span className="text-sm text-gray-600">{profile?.full_name}</span>
             <form action="/auth/signout" method="post">
@@ -52,7 +52,7 @@ export default async function AdminDashboard() {
                 type="submit"
                 className="text-sm text-red-600 hover:text-red-700"
               >
-                Cerrar Sesión
+                Cerrar Sesin
               </button>
             </form>
           </div>
@@ -63,7 +63,7 @@ export default async function AdminDashboard() {
       <main className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-2">
-            Panel de Administración
+            Panel de Administracin
           </h2>
           <p className="text-gray-600">
             Gestiona doctores, usuarios y contenido de la plataforma
@@ -160,7 +160,7 @@ export default async function AdminDashboard() {
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900">Especialidades</h3>
-                <p className="text-sm text-gray-600">Gestionar catálogo</p>
+                <p className="text-sm text-gray-600">Gestionar catgo</p>
               </div>
             </div>
           </Link>
@@ -177,7 +177,7 @@ export default async function AdminDashboard() {
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900">Analytics</h3>
-                <p className="text-sm text-gray-600">Reportes y métricas</p>
+                <p className="text-sm text-gray-600">Reportes y tricas</p>
               </div>
             </div>
           </Link>
@@ -194,7 +194,7 @@ export default async function AdminDashboard() {
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900">AI Dashboard</h3>
-                <p className="text-sm text-gray-600">Métricas de IA y RAG</p>
+                <p className="text-sm text-gray-600">tricas de IA y RAG</p>
               </div>
             </div>
           </Link>
@@ -204,7 +204,7 @@ export default async function AdminDashboard() {
         <div className="bg-white rounded-lg shadow">
           <div className="px-6 py-4 border-b flex justify-between items-center">
             <h3 className="text-lg font-semibold text-gray-900">
-              Doctores Pendientes de Verificación
+              Doctores Pendientes de Verificacin
             </h3>
             <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
               {pendingDoctors?.length || 0} pendientes
@@ -216,7 +216,7 @@ export default async function AdminDashboard() {
                 <svg className="w-16 h-16 mx-auto mb-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <p>No hay doctores pendientes de verificación</p>
+                <p>No hay doctores pendientes de verificacin</p>
               </div>
             ) : (
               <div className="space-y-4">

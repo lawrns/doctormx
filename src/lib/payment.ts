@@ -33,9 +33,9 @@ export async function initializePayment(
     amount: appointmentData.amount,
     currency: appointmentData.currency.toLowerCase(),
     metadata: {
-      appointmentId: request.appointmentId,
-      doctorId: appointmentData.doctorId,
-      patientId: request.userId,
+      appointment_id: request.appointmentId,
+      doctor_id: appointmentData.doctorId,
+      patient_id: request.userId,
     },
     // Enable Mexican payment methods: Cards, OXXO, and SPEI
     payment_method_types: ['card', 'oxxo', 'customer_balance'],
@@ -89,7 +89,7 @@ async function getAppointmentPaymentData(appointmentId: string, userId: string) 
       id,
       doctor_id,
       patient_id,
-      doctor:doctors (
+      doctor.doctores (
         price_cents,
         currency
       )
@@ -124,6 +124,7 @@ async function recordPaymentAttempt(data: {
     appointment_id: data.appointmentId,
     provider: 'stripe',
     provider_ref: data.providerRef,
+    stripe_payment_intent_id: data.providerRef,
     amount_cents: data.amount,
     currency: data.currency,
     status: 'pending',
@@ -293,7 +294,7 @@ export async function processRefund(
       payment_intent: payment.provider_ref,
       reason: 'requested_by_customer',
       metadata: {
-        appointmentId,
+        appointment_id: appointmentId,
         reason,
       },
     })
@@ -357,13 +358,13 @@ async function sendReceiptWhatsApp(patientId: string, appointment: { id: string;
 
   const phone = await getPatientPhone(patientId)
   if (!phone) {
-    logger.warn('No phone found for patient:', { patientId })
+    logger.warn('No phone found for patient:', { patient_id: patientId })
     return
   }
 
   const doctorName = await getDoctorName(appointment.doctor_id)
   if (!doctorName) {
-    logger.warn('No doctor found:', { doctorId: appointment.doctor_id })
+    logger.warn('No doctor found:', { doctor_id: appointment.doctor_id })
     return
   }
 

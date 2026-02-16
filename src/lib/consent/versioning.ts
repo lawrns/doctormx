@@ -14,7 +14,7 @@ import type {
   VersionComparison,
   ConsentChange,
 } from './types'
-import { logConsentVersionUpdated } from './consent-audit'
+import { logConsentVersionUpdated } from './audit'
 import { logger } from '@/lib/observability/logger'
 
 // ================================================

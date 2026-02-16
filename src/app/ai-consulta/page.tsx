@@ -182,7 +182,7 @@ export default function AnonymousConsultaPage() {
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto px-4 py-8">
+      <main id="main-content" className="max-w-4xl mx-auto px-4 py-8">
         {/* Quota Banner */}
         {quota && <QuotaBanner used={quota.used} limit={quota.limit} />}
 
@@ -303,7 +303,7 @@ export default function AnonymousConsultaPage() {
                         <span className="text-sm text-gray-700">{referral.doctor?.rating_avg}</span>
                       </div>
                       <a
-                        href={`/doctors/${referral.doctorId}`}
+                        href={`/doctores/${referral.doctorId}`}
                         className="mt-3 inline-block px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-semibold rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all"
                       >
                         Agendar Cita

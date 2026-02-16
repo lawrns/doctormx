@@ -45,8 +45,8 @@ export async function GET(request: NextRequest) {
     const stats: AnalyticsStats = {
       total: analytics?.length || 0,
       avgScore: analytics?.reduce((sum: number, a: AIReferralAnalytics) => sum + (a.avg_score || 0), 0) / (analytics?.length || 1) || 0,
-      avgDoctorsAvailable: analytics?.reduce((sum: number, a: AIReferralAnalytics) => sum + (a.doctors_available || 0), 0) / (analytics?.length || 1) || 0,
-      avgDoctorsMatched: analytics?.reduce((sum: number, a: AIReferralAnalytics) => sum + (a.doctors_matched || 0), 0) / (analytics?.length || 1) || 0,
+      avgDoctorsAvailable: analytics?.reduce((sum: number, a: AIReferralAnalytics) => sum + (a.doctores_available || 0), 0) / (analytics?.length || 1) || 0,
+      avgDoctorsMatched: analytics?.reduce((sum: number, a: AIReferralAnalytics) => sum + (a.doctores_matched || 0), 0) / (analytics?.length || 1) || 0,
       bySpecialty: {},
       byUrgency: {},
     }

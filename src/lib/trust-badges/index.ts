@@ -181,13 +181,13 @@ export async function calculateDoctorBadges(doctorId: string): Promise<Badge[]> 
   
   // Fetch doctor data
   const { data: doctor, error: doctorError } = await supabase
-    .from('doctors')
+    .from('doctores')
     .select('*, profiles!inner(full_name)')
     .eq('id', doctorId)
     .single();
   
   if (doctorError || !doctor) {
-    logger.error('Error getting trust badge status', { error: (error as Error).message }, error as Error);
+    logger.error('Error getting trust badge status', { error: (doctorError as Error).message }, doctorError as Error);
     return [];
   }
   

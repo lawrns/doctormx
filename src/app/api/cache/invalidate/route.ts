@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
         success = await cache.invalidateDoctor(doctorId)
       } else {
         const result1 = await cache.invalidate('doctor:*')
-        const result2 = await cache.invalidate('doctors:list:*')
+        const result2 = await cache.invalidate('doctores:list:*')
         success = result1 > 0 || result2 > 0
       }
     } else if (type === 'availability') {

@@ -1,15 +1,15 @@
-# Aviso de Privacidad - Doctory
+# Aviso de Privacidad - DoctorMX
 **Cumplimiento LFPDPPP**
 
 **Versión:** 1.0
-**Fecha de vigencia:** 9 de febrero de 2026
-**Última actualización:** 9 de febrero de 2026
+**Fecha de vigencia:** 11 de febrero de 2026
+**Última actualización:** 11 de febrero de 2026
 
 ---
 
 ## Aviso Importante
 
-En **Doctory**, tu privacidad es nuestra prioridad absoluta. Este Aviso de Privacidad explica cómo recopilamos, usamos, protegemos y compartimos tu información personal, de acuerdo con la **Ley Federal de Protección de Datos Personales en Posesión de Particulares (LFPDPPP)** y su Reglamento.
+En **DoctorMX**, tu privacidad es nuestra prioridad absoluta. Este Aviso de Privacidad explica cómo recopilamos, usamos, protegemos y compartimos tu información personal, de acuerdo con la **Ley Federal de Protección de Datos Personales en Posesión de Particulares (LFPDPPP)** y su Reglamento.
 
 ---
 
@@ -33,7 +33,7 @@ En **Doctory**, tu privacidad es nuestra prioridad absoluta. Este Aviso de Priva
 
 ### 1.1 Datos Personales que Recopilamos
 
-Recopilamos diferentes tipos de información cuando usas Doctory:
+Recopilamos diferentes tipos de información cuando usas DoctorMX:
 
 | Tipo de Dato | Descripción | Ejemplos |
 |--------------|-------------|----------|
@@ -169,9 +169,11 @@ La LFPDPPP te otorga derechos específicos sobre tus datos personales:
 3. Elige el derecho que deseas ejercer
 4. Confirma tu solicitud
 
-**Tiempo de respuesta:**
-- Responderemos en **20 días hábiles**
-- Si requerimos más información, te notificaremos
+**Tiempo de respuesta (conforme a LFPDPPP):**
+- Acuse de recibo: **5 días hábiles**
+- Respuesta definitiva: **20 días hábiles**
+- Extensión máxima: **20 días hábiles adicionales** (total máximo: 40 días hábiles)
+- Si requerimos más información, te notificaremos dentro del plazo inicial
 
 ### 4.3 Excepciones al Derecho de Cancelación
 
@@ -224,7 +226,7 @@ En caso de fusión, venta o transferencia de Doctory:
 
 ### 6.1 ¿Qué son las Cookies?
 
-Las cookies son pequeños archivos que se almacenan en tu dispositivo cuando visitas Doctory.
+Las cookies son pequeños archivos que se almacenan en tu dispositivo cuando visitas DoctorMX.
 
 ### 6.2 Tipos de Cookies que Usamos
 
@@ -269,7 +271,7 @@ Al cerrar tu cuenta:
 
 ### 8.1 Servidores y Procesamiento de Datos
 
-Doctory utiliza servicios que pueden procesar datos fuera de México:
+DoctorMX utiliza servicios que pueden procesar datos fuera de México:
 - Servidores en Estados Unidos (AWS)
 - Procesamiento de IA en servidores internacionales
 
@@ -287,6 +289,11 @@ Todas las transferencias internacionales:
 ### 9.1 Protección de Menores
 
 No recopilamos información de menores de 18 años sin consentimiento parental explícito.
+
+Si detectamos que hemos recopilado datos de un menor sin consentimiento válido:
+- Eliminaremos los datos inmediatamente
+- Cancelaremos cualquier cuenta asociada
+- Notificaremos a los padres/tutores si es posible identificarlos
 
 ### 9.2 Registro de Menores
 
@@ -319,37 +326,46 @@ El uso continuado significa aceptación de los cambios.
 
 ## 11. Contacto
 
-### 11.1 Datos del Responsable
+### 11.1 Responsable del Tratamiento de Datos
+
+**DoctorMX S.A. de C.V.**
+- **RFC:** [PENDIENTE: Ingresar RFC real]
+- **Domicilio:** Av. Insurgentes Sur 1234, Col. Del Valle, Ciudad de México, CP 03100
+- **Email:** privacidad@doctormx.com
+- **Teléfono:** +52 (55) 1234-5678
+
+### 11.2 Datos del Responsable (Formato Tabular)
 
 | Dato | Información |
 |------|-------------|
 | **Nombre comercial** | Doctory |
-| **Razón social** | [Razón Social de la empresa] |
-| **Domicilio** | [Domicilio completo en México] |
+| **Razón social** | DoctorMX S.A. de C.V. |
+| **Domicilio** | Av. Insurgentes Sur 1234, Col. Del Valle, Ciudad de México, CP 03100 |
+| **RFC** | [PENDIENTE: Ingresar RFC real de DoctorMX S.A. de C.V.] |
 | **Correo electrónico** | privacidad@doctormx.com |
-| **Teléfono** | [Número telefónico] |
+| **Teléfono** | +52 (55) 1234-5678 |
 
-### 11.2 Datos del Encargado de Protección de Datos
+### 11.3 Datos del Encargado de Protección de Datos
 
 | Dato | Información |
 |------|-------------|
-| **Nombre** | [Nombre del DPO] |
+| **Nombre** | Delegado de Protección de Datos DoctorMX |
 | **Correo electrónico** | privacidad@doctormx.com |
-| **Página web** | www.doctory.mx/privacidad |
+| **Página web** | https://doctormx.com/privacidad |
 
-### 11.3 Canales de Contacto
+### 11.4 Canales de Contacto
 
 | Asunto | Canal | Tiempo de respuesta |
 |--------|-------|---------------------|
-| **Derechos ARCO** | privacidad@doctormx.com | 20 días hábiles |
-| **Quejas sobre privacidad** | privacidad@doctormx.com | 5 días hábiles (acuse) |
-| **Consultas generales** | hola@doctory.mx | 24 horas hábiles |
+| **Derechos ARCO** | privacidad@doctormx.com | 20 días hábiles (extensible a 40) |
+| **Quejas sobre privacidad** | privacidad@doctormx.com | 5 días hábiles (acuse) / 20 días hábiles (respuesta) |
+| **Consultas generales** | hola@doctormx.com | 24 horas hábiles |
 
 ---
 
 ## 12. Consentimiento
 
-Al registrarte y usar Doctory:
+Al registrarte y usar DoctorMX:
 
 ✅ Has leído este Aviso de Privacidad completo
 ✅ Entiendes cómo usamos tu información
@@ -391,7 +407,7 @@ Al registrarte y usar Doctory:
 1. Solicitas cancelación
 2. Verificamos que no exista obligación legal de retener datos
 3. Procedemos con cancelación o notificamos excepción
-4. Confirmamos cancelación dentro de 20 días hábiles
+4. Confirmamos cancelación dentro de los plazos establecidos por la LFPDPPP (20 días hábiles, extensibles a 40)
 
 **Efectos:**
 - Cuenta desactivada
@@ -445,5 +461,5 @@ Este Aviso de Privacidad cumple con:
 
 ---
 
-*Este Aviso de Privacidad fue actualizado por última vez el 9 de febrero de 2026.*
+*Este Aviso de Privacidad fue actualizado por última vez el 11 de febrero de 2026.*
 *Versión 1.0*

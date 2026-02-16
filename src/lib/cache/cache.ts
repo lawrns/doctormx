@@ -333,18 +333,18 @@ export async function getDoctorList(
  * Set doctor list in cache
  */
 export async function setDoctorList(
-  doctors: unknown[],
+  doctores: unknown[],
   filters: Record<string, unknown> = {}
 ): Promise<boolean> {
   const key = doctorListKey(filters)
-  return setInCache(key, doctors, {
+  return setInCache(key, doctores, {
     ttl: TTL_DOCTOR_LIST,
     tags: [CacheTags.DOCTOR_LIST],
   })
 }
 
 /**
- * Get doctors by specialty from cache
+ * Get doctores by specialty from cache
  */
 export async function getDoctorsBySpecialty(
   specialtySlug: string,
@@ -365,15 +365,15 @@ export async function getDoctorsBySpecialty(
 }
 
 /**
- * Set doctors by specialty in cache
+ * Set doctores by specialty in cache
  */
 export async function setDoctorsBySpecialty(
   specialtySlug: string,
-  doctors: unknown[],
+  doctores: unknown[],
   city?: string
 ): Promise<boolean> {
   const key = doctorBySpecialtyKey(specialtySlug, city)
-  return setInCache(key, doctors, {
+  return setInCache(key, doctores, {
     ttl: TTL_DOCTOR_LIST,
     tags: [CacheTags.DOCTOR_LIST],
   })
@@ -806,6 +806,7 @@ export const cache = {
   set,
   del,
   invalidate,
+  invalidateTag,
 
   // Doctor operations
   getDoctorProfile,

@@ -380,6 +380,64 @@ export interface DataExportPackage {
 }
 
 /**
+ * Portability data format - standardized machine-readable format
+ * for easy data transfer between services (GDPR Article 20, CCPA, LFPDPPP)
+ */
+export interface PortabilityDataExport {
+  format_version: string
+  export_date: string
+  exporting_service: {
+    name: string
+    contact_email: string
+    privacy_policy_url: string
+  }
+  user: {
+    id: string
+    email: string | null
+    full_name: string | null
+    phone: string | null
+    account_created: string
+    account_modified: string
+  }
+  data_categories: {
+    appointments: Array<{
+      id: string
+      start_time: string
+      end_time: string | null
+      status: string
+      doctor_name: string | null
+      specialty: string | null
+    }>
+    medical_records: Array<{
+      id: string
+      type: string
+      date: string
+      chief_complaint: string | null
+      diagnosis: string | null
+      treatment: string | null
+    }>
+    prescriptions: Array<{
+      id: string
+      date: string
+      medications: string | null
+      instructions: string | null
+    }>
+    payments: Array<{
+      id: string
+      date: string
+      amount: number
+      currency: string
+      status: string
+    }>
+  }
+  metadata: {
+    total_records: number
+    data_types: string[]
+    retention_policy_url: string
+  }
+}
+
+/**
  * SLA compliance metrics
  */
 export interface SlaComplianceMetrics {

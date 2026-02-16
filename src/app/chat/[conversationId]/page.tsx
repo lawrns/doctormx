@@ -66,7 +66,7 @@ export default function ChatPage({ params }: ChatPageProps) {
 
         // Fetch doctor data and profile
         const { data: doctorData } = await supabase
-          .from('doctors')
+          .from('doctores')
           .select('user_id')
           .eq('id', convData.doctor_id)
           .single()

@@ -1,23 +1,10 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Card } from '@/components/Card'
-import { Button } from '@/components/Button'
+import { Card } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
 import { searchDirectory, getDirectorySpecialties, getDirectoryCities } from '@/lib/domains/directory'
-import createDOMPurify from 'dompurify'
-
-// Server-side DOMPurify configuration
-let purify: ReturnType<typeof createDOMPurify>
-
-if (typeof window === 'undefined') {
-  // Server-side: use JSDOM
-  const { JSDOM } = require('jsdom')
-  const window = new JSDOM('').window
-  purify = createDOMPurify(window)
-} else {
-  // Client-side: use browser window
-  purify = createDOMPurify()
-}
+import { purify } from '@/lib/utils/dompurify'
 
 interface PageProps {
   params: Promise<{ specialty: string }>
@@ -80,7 +67,7 @@ export default async function SpecialtyPage({ params }: PageProps) {
     notFound()
   }
   
-  const doctors = result.doctors
+  const doctores = result.doctores
   const topCities = cities.slice(0, 20)
   
   return (
@@ -89,7 +76,7 @@ export default async function SpecialtyPage({ params }: PageProps) {
       <div className="bg-blue-600 py-12 text-white">
         <div className="mx-auto max-w-6xl px-4">
           <nav className="mb-4 text-sm text-blue-200">
-            <Link href="/doctors" className="hover:text-white">Directorio</Link>
+            <Link href="/doctores" className="hover:text-white">Directorio</Link>
             {' / '}
             <span>{capitalizeWords(specialtyName)}</span>
           </nav>
@@ -128,7 +115,7 @@ export default async function SpecialtyPage({ params }: PageProps) {
           Especialistas destacados
         </h2>
         
-        {doctors.length === 0 ? (
+        {doctores.length === 0 ? (
           <Card className="p-8 text-center">
             <p className="text-gray-600">
               No encontramos especialistas en esta categoría.
@@ -136,8 +123,8 @@ export default async function SpecialtyPage({ params }: PageProps) {
           </Card>
         ) : (
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {doctors.map((doctor) => (
-              <Card key={doctor.id} hover className="flex flex-col">
+            {doctores.map((doctor) => (
+              <Card key={doctor.id} className="flex flex-col">
                 <div className="flex items-start gap-4">
                   <div className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-100 text-lg font-bold text-blue-600">
                     {doctor.full_name.charAt(0)}
@@ -152,7 +139,7 @@ export default async function SpecialtyPage({ params }: PageProps) {
                   </div>
                 </div>
                 <div className="mt-4 flex justify-end">
-                  <Link href={`/doctors/${doctor.id}`}>
+                  <Link href={`/doctores/${doctor.id}`}>
                     <Button size="sm">Ver perfil</Button>
                   </Link>
                 </div>
@@ -163,7 +150,7 @@ export default async function SpecialtyPage({ params }: PageProps) {
         
         {result.total > 12 && (
           <div className="mt-6 text-center">
-            <Link href={`/doctors?specialty=${encodeURIComponent(specialtyName)}`}>
+            <Link href={`/doctores?specialty=${encodeURIComponent(specialtyName)}`}>
               <Button variant="secondary">Ver todos los {result.total} especialistas</Button>
             </Link>
           </div>

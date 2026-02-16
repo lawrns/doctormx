@@ -431,12 +431,13 @@ export class AIService {
       const analysis = await this.callAIAPI(symptoms);
 
       // Check for red flags
-      if (analysis.redFlags?.length > 0) {
+      const redFlags = analysis.redFlags as string[] | undefined
+      if (Array.isArray(redFlags) && redFlags.length > 0) {
         throw new EmergencyDetectedError(
           ERROR_CODES.RED_FLAG_DETECTED,
           'Potential emergency symptoms detected',
           'high',
-          analysis.redFlags
+          redFlags
         );
       }
 

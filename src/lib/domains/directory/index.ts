@@ -68,7 +68,7 @@ export interface DirectorySearchParams {
 }
 
 export interface DirectorySearchResult {
-  doctors: DirectoryDoctor[]
+  doctores: DirectoryDoctor[]
   total: number
   page: number
   pages: number
@@ -87,9 +87,9 @@ export async function searchDirectory(
   const limit = Math.min(params.limit || DIRECTORY_CONFIG.DEFAULT_PAGE_SIZE, DIRECTORY_CONFIG.MAX_PAGE_SIZE)
   const offset = (page - 1) * limit
   
-  // Build query for verified doctors
+  // Build query for verified doctores
   let query = supabase
-    .from('doctors')
+    .from('doctores')
     .select('*', { count: 'exact' })
     .eq('license_status', 'verified')
   
@@ -127,7 +127,7 @@ export async function searchDirectory(
   }
   
   return {
-    doctors: (data || []) as unknown as DirectoryDoctor[],
+    doctores: (data || []) as unknown as DirectoryDoctor[],
     total: count || 0,
     page,
     pages: Math.ceil((count || 0) / limit),
@@ -198,7 +198,7 @@ export async function getDirectoryCities(): Promise<{ city: string; state: strin
   if (error) {
     // Fallback if RPC doesn't exist
     const { data: fallback } = await supabase
-      .from('doctors')
+      .from('doctores')
       .select('city, state')
       .eq('license_status', 'verified')
       .not('city', 'is', null)

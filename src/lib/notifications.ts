@@ -131,7 +131,7 @@ export async function sendAppointmentConfirmation(
     .from('appointments')
     .select(`
       *,
-      doctor:doctors (
+      doctor.doctores (
         *,
         profile:profiles (full_name, photo_url)
       )
@@ -202,7 +202,7 @@ export async function sendPaymentReceipt(
     .from('appointments')
     .select(`
       *,
-      doctor:doctors (
+      doctor.doctores (
         *,
         profile:profiles (full_name)
       )
@@ -293,7 +293,7 @@ export async function sendConsultationReminder(
     .from('appointments')
     .select(`
       *,
-      doctor:doctors (
+      doctor.doctores (
         *,
         profile:profiles (full_name)
       )
@@ -371,7 +371,7 @@ export async function sendFollowUp(
     .from('appointments')
     .select(`
       *,
-      doctor:doctors (
+      doctor.doctores (
         *,
         profile:profiles (full_name)
       )
@@ -407,7 +407,7 @@ ${followUpNotes ? `
 <table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
   <tr>
     <td align="center" style="padding: 8px;">
-      <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://doctory.com.mx'}/doctors" style="display: inline-block; padding: 10px 20px; background-color: #0066cc; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 500; font-size: 14px;">Agendar Nueva Cita</a>
+      <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://doctory.com.mx'}/doctores" style="display: inline-block; padding: 10px 20px; background-color: #0066cc; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 500; font-size: 14px;">Agendar Nueva Cita</a>
     </td>
   </tr>
 </table>

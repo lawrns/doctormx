@@ -10,8 +10,32 @@
  * - Response time must be < 2 minutes for emergency routing
  */
 
-import { describe, it, expect, beforeAll, afterAll } from 'vitest';
-import { POST } from '../ai/consult/route';
+import { describe, it, expect, beforeAll, afterAll, vi } from 'vitest';
+
+// Mock next/headers before importing routes that depend on it
+vi.mock('next/headers', () => ({
+  headers: vi.fn().mockResolvedValue({
+    get: vi.fn().mockReturnValue(null),
+  }),
+  cookies: vi.fn().mockResolvedValue({
+    getAll: vi.fn().mockReturnValue([]),
+    set: vi.fn(),
+    get: vi.fn().mockReturnValue(null),
+  }),
+}))
+
+// Mock next/server
+vi.mock('next/server', () => ({
+  NextResponse: {
+    json: vi.fn((data: any, init?: { status?: number }) => ({
+      status: init?.status || 200,
+      json: () => Promise.resolve(data),
+      headers: new Headers(),
+    })),
+  },
+}))
+
+import { POST } from '../../ai/consult/route';
 import { createClient } from '@/lib/supabase/server';
 
 // Mock aiChatCompletion to avoid actual API calls during testing

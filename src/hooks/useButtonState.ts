@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import { LIMITS } from '@/lib/constants';
 
 /**
@@ -9,6 +9,15 @@ export function useButtonState(debounceMs: number = LIMITS.DEBOUNCE_BUTTON_MS) {
   const [isLoading, setIsLoading] = useState(false);
   const [lastClickTime, setLastClickTime] = useState(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   const executeAction = useCallback(
     async (action: () => Promise<void> | void) => {
@@ -26,8 +35,13 @@ export function useButtonState(debounceMs: number = LIMITS.DEBOUNCE_BUTTON_MS) {
         await action();
       } finally {
         // Keep loading state for minimum time to show feedback
+        // Clear any existing timeout first
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current);
+        }
         timeoutRef.current = setTimeout(() => {
           setIsLoading(false);
+          timeoutRef.current = null;
         }, LIMITS.DEBOUNCE_BUTTON_MS / 2); // 250ms minimum feedback time
       }
     },
@@ -37,6 +51,7 @@ export function useButtonState(debounceMs: number = LIMITS.DEBOUNCE_BUTTON_MS) {
   const reset = useCallback(() => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
     }
     setIsLoading(false);
     setLastClickTime(0);

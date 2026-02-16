@@ -395,6 +395,79 @@ webServer: {
 - [Doctor.mx Requirements](../../.kiro/specs/doctory-telemedicine-platform/requirements.md)
 - [Doctor.mx Design](../../.kiro/specs/doctory-telemedicine-platform/design.md)
 
+## 🚀 Critical Patient Journey Tests
+
+### Flujo E2E Completo
+
+Los tests del flujo crítico cubren todo el viaje del paciente:
+
+**`patient-journey.spec.ts`** - Tests del flujo crítico:
+
+1. **Registro de Paciente** 
+   - Selección de tipo de cuenta
+   - Formulario de información personal
+   - Verificación de email (mock)
+   - Login automático
+
+2. **Booking de Cita**
+   - Búsqueda de doctores por especialidad
+   - Filtrado y selección
+   - Calendario de disponibilidad
+   - Selección de slot
+
+3. **Procesamiento de Pago**
+   - Stripe test cards
+   - Pago con tarjeta
+   - Pago OXXO
+   - Manejo de errores
+
+4. **Consulta de Videollamada**
+   - Acceso a sala
+   - Permisos de cámara/micrófono
+   - Controles de llamada
+   - Calificación post-consulta
+
+### Ejecución del Flujo Crítico
+
+```bash
+# Ejecutar todos los tests del flujo crítico
+npx playwright test tests/e2e/patient-journey.spec.ts
+
+# Ejecutar flujo completo en secuencia
+npx playwright test --grep "Complete Journey"
+
+# Ejecutar por pasos individuales
+npx playwright test --grep "Step 1"  # Registro
+npx playwright test --grep "Step 2"  # Booking
+npx playwright test --grep "Step 3"  # Pago
+npx playwright test --grep "Step 4"  # Consulta
+```
+
+### Nuevos Helpers
+
+**`payment.helper.ts`** - Funciones para pruebas de pago:
+- `stripeTestCards` - Tarjetas de test de Stripe
+- `fillStripeCardForm()` - Llenar formulario de Stripe
+- `completeOXXOPayment()` - Flujo de pago OXXO
+- `waitForPaymentConfirmation()` - Esperar confirmación
+
+**`consultation.helper.ts`** - Funciones para videollamadas:
+- `joinConsultationRoom()` - Unirse a sala
+- `grantMediaPermissions()` - Permisos de cámara/micrófono
+- `toggleCamera()` / `toggleMicrophone()` - Controles
+- `endConsultation()` - Finalizar consulta
+- `submitConsultationRating()` - Calificación
+
+### Tarjetas de Test de Stripe
+
+| Tarjeta | Número | Resultado |
+|---------|--------|-----------|
+| Visa (éxito) | `4242424242424242` | Pago exitoso |
+| Declinada | `4000000000000002` | Pago rechazado |
+| Expirada | `4000000000000069` | Error de expiración |
+
+Ver documentación completa: [SETUP.md](./SETUP.md)
+
 ## Support
 
 For issues with E2E tests:
@@ -404,3 +477,4 @@ For issues with E2E tests:
 3. Use trace files for detailed debugging
 4. Check application logs for errors
 5. Verify test data and environment setup
+6. For critical flow tests, see [CRITICAL_FLOW_TEST_RESULTS.md](./CRITICAL_FLOW_TEST_RESULTS.md)

@@ -46,7 +46,7 @@ export function RecommendedDoctors({
   patientHistory,
   onSelectDoctor,
 }: RecommendedDoctorsProps) {
-  const [doctors, setDoctors] = useState<Doctor[]>([]);
+  const [doctores, setDoctors] = useState<Doctor[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -62,7 +62,7 @@ export function RecommendedDoctors({
     try {
       setLoading(true);
 
-      // Call API to get doctors matching AI recommendation
+      // Call API to get doctores matching AI recommendation
       const response = await fetch('/api/directory/recommended', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -75,13 +75,13 @@ export function RecommendedDoctors({
       });
 
       if (!response.ok) {
-        throw new Error('Failed to fetch recommended doctors');
+        throw new Error('Failed to fetch recommended doctores');
       }
 
       const data = await response.json();
       setDoctors(data.doctors || []);
     } catch (err) {
-      logger.error('Error fetching recommended doctors', { error: err instanceof Error ? err.message : String(err) });
+      logger.error('Error fetching recommended doctores', { error: err instanceof Error ? err.message : String(err) });
       setError('No pudimos cargar las recomendaciones de médicos');
     } finally {
       setLoading(false);
@@ -104,14 +104,14 @@ export function RecommendedDoctors({
     );
   }
 
-  if (error || doctors.length === 0) {
+  if (error || doctores.length === 0) {
     return (
       <div className="bg-blue-50 border-2 border-blue-200 rounded-2xl p-6">
         <h3 className="text-xl font-bold text-gray-900 mb-3">
           {error || 'No hay especialistas disponibles en este momento'}
         </h3>
         <Link
-          href="/doctors"
+          href="/doctores"
           className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold"
         >
           Ver todos los médicos
@@ -156,7 +156,7 @@ export function RecommendedDoctors({
 
       {/* Doctor Cards */}
       <div className="grid gap-4">
-        {doctors.map((doctor, index) => (
+        {doctores.map((doctor, index) => (
           <motion.div
             key={doctor.id}
             initial={{ opacity: 0, y: 20 }}
@@ -176,7 +176,7 @@ export function RecommendedDoctors({
       {/* See more link */}
       <div className="text-center">
         <Link
-          href={`/doctors?specialty=${specialty}`}
+          href={`/doctores?specialty=${specialty}`}
           className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold"
         >
           Ver más especialistas en {specialty}

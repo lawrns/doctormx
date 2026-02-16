@@ -23,6 +23,10 @@ const metricsBuffer: MetricData[] = []
 const BUFFER_SIZE = 100
 const FLUSH_INTERVAL_MS = 10000
 
+// Interval tracking for cleanup
+let flushIntervalId: NodeJS.Timeout | null = null
+let isInitialized = false
+
 // Flush metrics to database
 async function flushMetrics() {
   if (metricsBuffer.length === 0) return
@@ -48,9 +52,58 @@ async function flushMetrics() {
   }
 }
 
-// Periodic flush
-if (typeof setInterval !== 'undefined') {
-  setInterval(flushMetrics, FLUSH_INTERVAL_MS)
+/**
+ * Start the metrics flush interval
+ * Safe to call multiple times - will only start once
+ */
+export function startMetricsFlush(): void {
+  if (typeof setInterval === 'undefined') return
+  if (isInitialized) return
+  
+  isInitialized = true
+  flushIntervalId = setInterval(flushMetrics, FLUSH_INTERVAL_MS)
+  
+  // Also flush on page hide/unload
+  if (typeof document !== 'undefined') {
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+    window.addEventListener('beforeunload', handleBeforeUnload)
+  }
+}
+
+/**
+ * Stop the metrics flush interval and cleanup
+ */
+export function stopMetricsFlush(): void {
+  if (flushIntervalId) {
+    clearInterval(flushIntervalId)
+    flushIntervalId = null
+  }
+  isInitialized = false
+  
+  // Remove event listeners
+  if (typeof document !== 'undefined') {
+    document.removeEventListener('visibilitychange', handleVisibilityChange)
+    window.removeEventListener('beforeunload', handleBeforeUnload)
+  }
+  
+  // Final flush
+  flushMetrics()
+}
+
+/**
+ * Flush metrics when page becomes hidden
+ */
+function handleVisibilityChange(): void {
+  if (document.visibilityState === 'hidden') {
+    flushMetrics()
+  }
+}
+
+/**
+ * Flush metrics before page unload
+ */
+function handleBeforeUnload(): void {
+  flushMetrics()
 }
 
 function recordMetric(data: MetricData) {
@@ -137,5 +190,10 @@ export const metrics = {
   flush: flushMetrics,
 }
 
-export default metrics
+// Auto-start in browser environment (for backwards compatibility)
+// But with proper cleanup handlers
+if (typeof setInterval !== 'undefined') {
+  startMetricsFlush()
+}
 
+export default metrics

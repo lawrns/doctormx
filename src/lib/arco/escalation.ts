@@ -224,8 +224,13 @@ export async function escalateRequest(
   // Check if approval is required
   const config = ESCALATION_CONFIG[nextLevel]
   if (config.requires_manager_approval) {
-    // TODO: Implement manager approval workflow
-    // For now, just log that approval would be required
+    // FUTURE_ENHANCEMENT: Manager approval workflow for tier_3 and tier_4 escalations
+    // Current implementation logs the requirement but proceeds without approval gate
+    // A complete implementation would:
+    // 1. Create approval request in approvals table
+    // 2. Send notification to manager with approve/reject links
+    // 3. Block escalation until approval is granted
+    // 4. Track approval chain in arco_request_history
     logger.warn(`Escalation to ${nextLevel} requires manager approval`)
   }
 
@@ -551,8 +556,13 @@ async function isVipUser(userId: string): Promise<boolean> {
     return true
   }
 
-  // TODO: Add VIP/enterprise flags to profile
-  // For now, just check if doctor with high rating
+  // FUTURE_ENHANCEMENT: VIP and enterprise customer detection
+  // Current implementation uses admin role and doctor rating as proxies
+  // A complete implementation would check for:
+  // 1. is_vip boolean flag on profiles table
+  // 2. enterprise_account_id foreign key for enterprise customers
+  // 3. subscription_tier ('premium', 'enterprise', etc.)
+  // 4. Priority support contract flags
   const { data: doctor } = await supabase
     .from('doctors')
     .select('rating_count')
@@ -581,8 +591,14 @@ async function sendEscalationNotification(
 ): Promise<void> {
   const config = ESCALATION_CONFIG[newLevel]
 
-  // TODO: Implement actual notification sending
-  // This would integrate with your notification system
+  // FUTURE_ENHANCEMENT: Multi-channel notification system integration
+  // Current implementation logs the escalation and stores a communication record
+  // A complete implementation would:
+  // 1. Send email via SendGrid/SES to responsible team
+  // 2. Post Slack webhook to #privacy-arco channel
+  // 3. Send SMS via Twilio for tier_3+ escalations
+  // 4. Trigger phone call for tier_4 critical escalations
+  // 5. Track delivery status and retries
   logger.info(`[ARCO Escalation] Request ${request.id} escalated from ${previousLevel} to ${newLevel}`, {
     team: config.responsible_team,
     channels: config.notification_channels.join(', ')

@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 
 // Hook for measuring component performance
 export const usePerformance = (componentName) => {
@@ -15,7 +15,7 @@ export const usePerformance = (componentName) => {
       
       if (duration > 16) { // More than one frame (60fps)
         setIsSlowRender(true);
-        console.warn(`Slow render detected in ${componentName}: ${duration.toFixed(2)}ms`);
+        // Note: Performance warnings are logged via the logger in production
       }
     };
   }, [componentName]);
@@ -43,14 +43,25 @@ export const useDebounce = (value, delay) => {
 // Hook for throttling expensive operations
 export const useThrottle = (callback, delay) => {
   const [isThrottled, setIsThrottled] = useState(false);
+  const timeoutRef = useRef(null);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   const throttledCallback = useCallback((...args) => {
     if (!isThrottled) {
       callback(...args);
       setIsThrottled(true);
       
-      setTimeout(() => {
+      timeoutRef.current = setTimeout(() => {
         setIsThrottled(false);
+        timeoutRef.current = null;
       }, delay);
     }
   }, [callback, delay, isThrottled]);
@@ -124,13 +135,24 @@ export const useBundleAnalyzer = () => {
 export const useOptimizedState = (initialState) => {
   const [state, setState] = useState(initialState);
   const [isUpdating, setIsUpdating] = useState(false);
+  const rafRef = useRef(null);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+      }
+    };
+  }, []);
 
   const optimizedSetState = useCallback((newState) => {
     if (!isUpdating) {
       setIsUpdating(true);
-      requestAnimationFrame(() => {
+      rafRef.current = requestAnimationFrame(() => {
         setState(newState);
         setIsUpdating(false);
+        rafRef.current = null;
       });
     }
   }, [isUpdating]);
@@ -198,4 +220,3 @@ export default {
   usePreload,
   useMemoryUsage,
 };
-

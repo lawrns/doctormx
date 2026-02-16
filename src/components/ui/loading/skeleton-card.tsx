@@ -90,7 +90,7 @@ export function SkeletonCard({
             <div className="h-10 w-10 rounded-full bg-muted animate-pulse" />
           )}
           <div className="space-y-2 flex-1">
-            <div className={cn('bg-muted rounded animate-pulse', sizeClasses[size]} style={{ width: '40%' }} />
+            <div className={cn('bg-muted rounded animate-pulse', sizeClasses[size])} style={{ width: '40%' }} />
             <div className={cn('bg-muted rounded animate-pulse', sizeClasses.sm)} style={{ width: '60%' }} />
           </div>
         </div>

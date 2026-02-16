@@ -14,7 +14,7 @@ export default async function DoctorFollowUpsPage() {
   const { responses } = await getDoctorFollowUpResponses(user.id)
 
   const { data: doctor } = await supabase
-    .from('doctors')
+    .from('doctores')
     .select('*')
     .eq('id', user.id)
     .single()

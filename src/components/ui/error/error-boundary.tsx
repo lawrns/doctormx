@@ -1,8 +1,12 @@
 'use client'
 
 import React from 'react'
-import { ErrorBoundary as ReactErrorBoundary } from 'react-error-boundary'
-import { ErrorState } from './error-state'
+import {
+  ErrorBoundaryAdapter,
+  FallbackRenderProps,
+  ErrorState,
+} from './ErrorBoundaryAdapter'
+import { logger } from '@/lib/observability/logger'
 
 /**
  * Enhanced Error Boundary Component - WCAG 2.1 AA Compliant
@@ -23,24 +27,25 @@ import { ErrorState } from './error-state'
  * </ErrorBoundary>
  *
  * <ErrorBoundary
- *   fallback={({ error }) => <CustomFallback error={error} />}
+ *   fallback={({ error, resetErrorBoundary }) => <CustomFallback error={error} onRetry={resetErrorBoundary} />}
  * >
  *   <YourComponent />
  * </ErrorBoundary>
  * ```
  */
 
-interface ErrorBoundaryProps {
+export interface ErrorBoundaryProps {
   /**
    * Fallback component to render on error
    */
-  fallback?: React.ComponentType<FallbackProps>
-  fallbackRender?: (props: FallbackProps) => React.ReactNode
+  fallback?: React.ComponentType<FallbackRenderProps>
+  fallbackRender?: (props: FallbackRenderProps) => React.ReactNode
 
   /**
    * Callback when error is caught
+   * error is unknown (as per library v5.x)
    */
-  onError?: (error: Error, errorInfo: React.ErrorInfo) => void
+  onError?: (error: unknown, errorInfo: React.ErrorInfo) => void
 
   /**
    * Callback for recovery
@@ -58,23 +63,23 @@ interface ErrorBoundaryProps {
   children: React.ReactNode
 }
 
-export interface FallbackProps {
-  error: Error
-  resetErrorBoundary: () => void
-  attemptNumber: number
-}
+const defaultFallback = ({ error, resetErrorBoundary }: FallbackRenderProps) => {
+  // Narrow error from unknown to Error for display
+  const errorObj = error instanceof Error ? error : new Error(String(error))
 
-const defaultFallback = ({ error, resetErrorBoundary }: FallbackProps) => (
-  <div className="flex items-center justify-center min-h-[400px] p-4">
-    <ErrorState
-      title="Algo inesperado ocurrió"
-      message="Lo sentimos, hubo un error. Si continúa, contacta a soporte."
-      onRetry={resetErrorBoundary}
-      retryText="Recargar página"
-      errorCode={process.env.NODE_ENV === 'development' ? error.name : undefined}
-    />
-  </div>
-)
+  return (
+    <div className="flex items-center justify-center min-h-[400px] p-4">
+      <ErrorState
+        title="Algo inesperado ocurrió"
+        message="Lo sentimos, hubo un error. Si continúa, contacta a soporte."
+        onRetry={resetErrorBoundary}
+        retryText="Recargar página"
+        type="generic"
+        errorCode={process.env.NODE_ENV === 'development' ? errorObj.name : undefined}
+      />
+    </div>
+  )
+}
 
 export function ErrorBoundary({
   fallback = defaultFallback,
@@ -83,43 +88,21 @@ export function ErrorBoundary({
   resetKeys = [],
   children,
 }: ErrorBoundaryProps) {
-  const handleError = (error: Error, errorInfo: React.ErrorInfo) => {
-    // Log to console in development
-    if (process.env.NODE_ENV === 'development') {
-      console.error('Error caught by ErrorBoundary:', error, errorInfo)
-    }
-
-    // Log to observability platform
-    if (typeof window !== 'undefined' && (window as any).logger) {
-      ;(window as any).logger.error('[ErrorBoundary]', {
-        error: error.message,
-        stack: error.stack,
-        componentStack: errorInfo.componentStack,
-      })
-    }
-
-    // Call custom error handler
-    onError?.(error, errorInfo)
-  }
-
-  const handleReset = () => {
-    onReset?.()
-  }
-
   return (
-    <ReactErrorBoundary
-      FallbackComponent={fallback as React.ComponentType<FallbackProps>}
-      onError={handleError}
-      onReset={handleReset}
+    <ErrorBoundaryAdapter
+      fallback={fallback}
+      fallbackRender={undefined}
+      onError={onError}
+      onReset={onReset}
       resetKeys={resetKeys}
     >
       {children}
-    </ReactErrorBoundary>
+    </ErrorBoundaryAdapter>
   )
 }
 
 /**
- * WithErrorBoundary HOC
+ * withErrorBoundary HOC
  * Wraps a component with error boundary
  */
 export function withErrorBoundary<P extends object>(
@@ -160,12 +143,12 @@ interface AsyncErrorBoundaryState {
 
 export class AsyncErrorBoundary extends React.Component<
   {
-    fallback?: React.ComponentType<FallbackProps>
+    fallback?: React.ComponentType<FallbackRenderProps>
     children: React.ReactNode
   },
   AsyncErrorBoundaryState
 > {
-  constructor(props: { fallback?: React.ComponentType<FallbackProps>; children: React.ReactNode }) {
+  constructor(props: { fallback?: React.ComponentType<FallbackRenderProps>; children: React.ReactNode }) {
     super(props)
     this.state = { error: null }
   }
@@ -176,7 +159,7 @@ export class AsyncErrorBoundary extends React.Component<
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     if (process.env.NODE_ENV === 'development') {
-      console.error('AsyncErrorBoundary:', error, errorInfo)
+      logger.error('AsyncErrorBoundary:', error, errorInfo)
     }
   }
 
@@ -187,7 +170,6 @@ export class AsyncErrorBoundary extends React.Component<
         <Fallback
           error={this.state.error}
           resetErrorBoundary={() => this.setState({ error: null })}
-          attemptNumber={1}
         />
       )
     }
@@ -207,7 +189,11 @@ export function MedicalErrorBoundary({
   children: React.ReactNode
   onReset?: () => void
 }) {
-  const medicalFallback = ({ error, resetErrorBoundary }: FallbackProps) => (
+  const medicalFallback = ({ error, resetErrorBoundary }: FallbackRenderProps) => {
+    // Narrow error from unknown to Error for display
+    const errorObj = error instanceof Error ? error : new Error(String(error))
+
+    return (
     <div className="flex items-center justify-center min-h-[400px] p-4">
       <div
         className="max-w-md w-full p-6 rounded-lg border border-red-200 bg-red-50 dark:border-red-900 dark:bg-red-950"
@@ -268,18 +254,19 @@ export function MedicalErrorBoundary({
                 Detalles técnicos
               </summary>
               <pre className="mt-2 text-xs bg-gray-100 dark:bg-gray-800 p-2 rounded overflow-auto max-h-32">
-                {error.stack}
+                {errorObj.stack}
               </pre>
             </details>
           )}
         </div>
       </div>
     </div>
-  )
+    )
+  }
 
   return (
     <ErrorBoundary
-      fallback={medicalFallback as React.ComponentType<FallbackProps>}
+      fallback={medicalFallback}
       resetKeys={[]}
     >
       {children}
@@ -309,3 +296,9 @@ export function GlobalErrorBoundary({
     </ErrorBoundary>
   )
 }
+
+/**
+ * Re-export types for convenience
+ */
+export type { FallbackRenderProps }
+export { ErrorBoundaryAdapter }

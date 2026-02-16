@@ -13,7 +13,7 @@ import { logger } from '@/lib/observability/logger'
 /**
  * GET /api/chat/conversations
  *
- * Get paginated list of conversations for the authenticated user
+ * Get paginated list of conversations for authenticated user
  *
  * Query params:
  * - cursor: string | null - pagination cursor

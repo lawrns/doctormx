@@ -206,3 +206,8 @@ export const getPatientFullData = cache(async (userId: string) => {
   }
 })
 
+// Extended interface for patient with medical history
+export interface PatientWithMedicalHistory extends PatientProfile {
+  medical_history?: PatientMedicalHistory | null
+}
+

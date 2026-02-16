@@ -35,15 +35,84 @@ import { ArcoError, ArcoErrorCode } from '@/types/arco'
 export * from '@/types/arco'
 
 // Re-export sub-modules
-export { createArcoRequest, getArcoRequest, getUserArcoRequests } from './requests'
-export { trackSlaCompliance, checkSlaCompliance, getSlaMetrics } from './sla-tracker'
+export { createArcoRequest, getArcoRequest, getUserArcoRequests, getAllArcoRequests, updateArcoRequest } from './requests'
+export { trackSlaCompliance, checkSlaCompliance, getSlaMetrics, generateSlaReport } from './sla-tracker'
 export {
   shouldEscalate,
   escalateRequest,
   getEscalationLevel,
   updateEscalationLevel,
+  getEscalationStats,
+  autoEscalateRequests,
 } from './escalation'
-export { getUserDataExport, exportUserDataToJson, exportUserDataToPdf, exportUserDataForPortability, exportPortabilityJson, createPortabilityAttachment } from './data-export'
+export {
+  // Core exports
+  getUserDataExport,
+  estimateExportSize,
+  sanitizeProfile,
+  // JSON exports
+  exportUserDataToJson,
+  exportTableToJson,
+  exportTablesToJson,
+  parseJsonExport,
+  isValidExportFormat,
+  getExportStats,
+  // Text exports
+  exportUserDataToText,
+  // PDF exports (uses Server Actions - NO pdfkit in client)
+  exportUserDataToPdf,
+  // Portability exports
+  exportUserDataForPortability,
+  exportPortabilityJson,
+  createPortabilityAttachment,
+  // Anonymization exports
+  generateAnonymousId,
+  generateAnonymousEmail,
+  generateAnonymousName,
+  createAnonymizedProfile,
+  anonymizeUserProfile,
+  anonymizeAppointments,
+  anonymizeChatHistory,
+  deletePrivacyPreferences,
+  anonymizeUserData,
+  isDataAnonymized,
+  validateAnonymizationRequirements,
+  type AnonymizationResult,
+  // Attachments exports
+  createDataExportAttachment,
+  createMultiFormatAttachments,
+  type ExportFormat,
+  type AttachmentResult,
+  // Deletion exports
+  planDataDeletion,
+  executeDataDeletion,
+  getDeletionStatus,
+  type DeletionPlan,
+  // Amendments exports
+  recordDataAmendment,
+  applyDataAmendment,
+  getRequestAmendments,
+  areAllAmendmentsApplied,
+  getPendingAmendmentsCount,
+  type AmendmentRecord,
+} from './export'
+
+// Re-export utility functions
+export {
+  calculateBusinessDays,
+  addBusinessDays,
+  isDateBusinessDay,
+  getNextBusinessDay,
+  calculateArcoDueDate,
+  calculateSlaRiskLevel,
+  formatDateSpanish,
+  formatDateTimeSpanish,
+  isValidArcoDate,
+  isValidRfc,
+  isValidEmail,
+  isValidMexicanPhone,
+  formatArcoError,
+} from './utils'
 
 // ================================================
 // CONSTANTS
@@ -307,84 +376,8 @@ export async function hasUserConsent(
 // ================================================
 // UTILITY FUNCTIONS
 // ================================================
-
-/**
- * Calculate business days between two dates
- * Excludes weekends and Mexican holidays
- *
- * @param startDate - Start date
- * @param endDate - End date
- * @returns Number of business days
- */
-export function calculateBusinessDays(
-  startDate: Date | string,
-  endDate: Date | string
-): number {
-  const start = new Date(startDate)
-  const end = new Date(endDate)
-  let businessDays = 0
-  let current = new Date(start)
-
-  // Mexican holidays (simplified - should use a proper holiday calendar)
-  const holidays = [
-    '01-01', // New Year's Day
-    '02-05', // Constitution Day
-    '03-21', // Benito Juárez's Birthday
-    '05-01', // Labor Day
-    '09-16', // Independence Day
-    '11-20', // Revolution Day
-    '12-25', // Christmas Day
-  ]
-
-  while (current <= end) {
-    const dayOfWeek = current.getDay()
-    const dateString = current.toISOString().slice(5, 10)
-
-    // Count if it's a weekday (not Saturday=6 or Sunday=0)
-    // and not a holiday
-    if (dayOfWeek !== 0 && dayOfWeek !== 6 && !holidays.includes(dateString)) {
-      businessDays++
-    }
-
-    current.setDate(current.getDate() + 1)
-  }
-
-  return businessDays
-}
-
-/**
- * Add business days to a date
- *
- * @param startDate - Starting date
- * @param businessDays - Number of business days to add
- * @returns Resulting date
- */
-export function addBusinessDays(
-  startDate: Date | string,
-  businessDays: number
-): Date {
-  const result = new Date(startDate)
-  let daysAdded = 0
-  let remainingDays = businessDays
-
-  // Mexican holidays
-  const holidays = [
-    '01-01', '02-05', '03-21', '05-01', '09-16', '11-20', '12-25',
-  ]
-
-  while (remainingDays > 0) {
-    result.setDate(result.getDate() + 1)
-    const dayOfWeek = result.getDay()
-    const dateString = result.toISOString().slice(5, 10)
-
-    if (dayOfWeek !== 0 && dayOfWeek !== 6 && !holidays.includes(dateString)) {
-      remainingDays--
-    }
-    daysAdded++
-  }
-
-  return result
-}
+// Note: Business day functions (calculateBusinessDays, addBusinessDays) are now in utils.ts
+// to avoid code duplication. They are re-exported from this module.
 
 /**
  * Check if a request is overdue based on SLA

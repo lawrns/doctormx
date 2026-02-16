@@ -27,14 +27,14 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
       .from('doctor_referrals')
       .select(`
         *,
-        referring_doctor:doctors!doctor_referrals_referring_doctor_id_fkey(
+        referring_doctor.doctores!doctor_referrals_referring_doctor_id_fkey(
           user_id,
           full_name,
           specialties,
           city,
           state
         ),
-        receiving_doctor:doctors!doctor_referrals_receiving_doctor_id_fkey(
+        receiving_doctor.doctores!doctor_referrals_receiving_doctor_id_fkey(
           user_id,
           full_name,
           specialties,

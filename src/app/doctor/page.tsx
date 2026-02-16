@@ -13,7 +13,7 @@ export default async function DoctorDashboard() {
   }
 
   const { data: doctor } = await supabase
-    .from('doctors')
+    .from('doctores')
     .select('*')
     .eq('id', user.id)
     .single()
@@ -26,7 +26,7 @@ export default async function DoctorDashboard() {
   // Si doctor es null (cache issue), mostrar dashboard con valores por defecto
   const isPending = doctor?.status === 'pending' || doctor?.status === 'rejected'
 
-  // Fetch stats and appointments only for approved doctors
+  // Fetch stats and appointments only for approved doctores
   let todayCount = 0
   let weekCount = 0
   let totalPatients = 0
@@ -40,18 +40,18 @@ export default async function DoctorDashboard() {
     service_name: string | null
   }> = []
 
-  // Fetch pending doctors count for queue position (if pending)
+  // Fetch pending doctores count for queue position (if pending)
   let queuePosition = 0
   let totalPending = 0
   if (isPending) {
     const { count } = await supabase
-      .from('doctors')
+      .from('doctores')
       .select('*', { count: 'exact', head: true })
       .eq('status', 'pending')
       .lte('created_at', doctor?.created_at || new Date().toISOString())
     
     const { count: totalCount } = await supabase
-      .from('doctors')
+      .from('doctores')
       .select('*', { count: 'exact', head: true })
       .eq('status', 'pending')
     
@@ -365,7 +365,7 @@ export default async function DoctorDashboard() {
                 iconName="calendar"
                 action={{
                   label: "Ver mi perfil público",
-                  href: `/doctors/${user.id}`
+                  href: `/doctores/${user.id}`
                 }}
               />
             )}

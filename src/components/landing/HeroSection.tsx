@@ -189,7 +189,7 @@ export function HeroSection() {
           </Link>
 
           {/* Secondary CTA - Much more subtle (Fixed per analysis) */}
-          <Link href="/doctors" className="w-full sm:w-auto">
+          <Link href="/doctores" className="w-full sm:w-auto">
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}

@@ -70,7 +70,7 @@ export async function getPatientAppointments(patientId: string) {
     .from('appointments')
     .select(`
       *,
-      doctor:doctors (
+      doctor.doctores (
         *,
         profile:profiles (full_name, photo_url)
       )

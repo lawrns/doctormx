@@ -97,7 +97,7 @@ describe('Phase 1: Unit Tests', () => {
     vi.clearAllMocks()
   })
 
-  it('should return doctors list', async () => {
+  it('should return doctores list', async () => {
     const { createServiceClient } = await import('@/lib/supabase/server')
     const { discoverDoctors } = await import('@/lib/discovery')
     
@@ -112,8 +112,8 @@ describe('Phase 1: Unit Tests', () => {
       auth: { getUser: vi.fn() }
     } as never)
 
-    const doctors = await discoverDoctors()
-    expect(Array.isArray(doctors)).toBe(true)
+    const doctores = await discoverDoctors()
+    expect(Array.isArray(doctores)).toBe(true)
   })
 
   it('should handle payment failure', async () => {

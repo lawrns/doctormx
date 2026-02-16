@@ -26,7 +26,7 @@ const specialties = [
     name: 'Cardiología', 
     icon: Heart, 
     description: 'Corazón y sistema cardiovascular', 
-    doctors: 45, 
+   doctores: 45, 
     color: 'text-rose-500', 
     bg: 'bg-rose-50/50',
     borderColor: 'group-hover:border-rose-200'
@@ -35,7 +35,7 @@ const specialties = [
     name: 'Neurología', 
     icon: Brain, 
     description: 'Cerebro y sistema nervioso', 
-    doctors: 32, 
+   doctores: 32, 
     color: 'text-indigo-500', 
     bg: 'bg-indigo-50/50',
     borderColor: 'group-hover:border-indigo-200'
@@ -44,7 +44,7 @@ const specialties = [
     name: 'Oftalmología', 
     icon: Eye, 
     description: 'Ojos y visión', 
-    doctors: 28, 
+   doctores: 28, 
     color: 'text-blue-500', 
     bg: 'bg-blue-50/50',
     borderColor: 'group-hover:border-blue-200'
@@ -53,7 +53,7 @@ const specialties = [
     name: 'Traumatología', 
     icon: Bone, 
     description: 'Huesos y articulaciones', 
-    doctors: 38, 
+   doctores: 38, 
     color: 'text-amber-500', 
     bg: 'bg-amber-50/50',
     borderColor: 'group-hover:border-amber-200'
@@ -62,7 +62,7 @@ const specialties = [
     name: 'Pediatría', 
     icon: Baby, 
     description: 'Salud infantil', 
-    doctors: 52, 
+   doctores: 52, 
     color: 'text-pink-500', 
     bg: 'bg-pink-50/50',
     borderColor: 'group-hover:border-pink-200'
@@ -71,7 +71,7 @@ const specialties = [
     name: 'Medicina General',
     icon: Stethoscope,
     description: 'Atención primaria',
-    doctors: 89,
+   doctores: 89,
     color: 'text-blue-600',
     bg: 'bg-blue-50/50',
     borderColor: 'group-hover:border-blue-200'
@@ -80,7 +80,7 @@ const specialties = [
     name: 'Dermatología', 
     icon: Shield, 
     description: 'Piel, cabello y uñas', 
-    doctors: 41, 
+   doctores: 41, 
     color: 'text-orange-500', 
     bg: 'bg-orange-50/50',
     borderColor: 'group-hover:border-orange-200'
@@ -89,7 +89,7 @@ const specialties = [
     name: 'Ginecología', 
     icon: Users, 
     description: 'Salud femenina', 
-    doctors: 47, 
+   doctores: 47, 
     color: 'text-rose-400', 
     bg: 'bg-rose-50/50',
     borderColor: 'group-hover:border-rose-100'
@@ -98,7 +98,7 @@ const specialties = [
 
 export default function SpecialtiesPage() {
   return (
-    <main className="min-h-screen bg-[#FDFCFB]">
+    <main id="main-content" className="min-h-screen bg-[#FDFCFB]">
       <Header />
       
       {/* Hero Section with Ambient Glow */}
@@ -145,7 +145,7 @@ export default function SpecialtiesPage() {
                   ease: [0.16, 1, 0.3, 1]
                 }}
               >
-                <Link href={`/doctors?specialty=${encodeURIComponent(specialty.name)}`} className="group block h-full">
+                <Link href={`/doctores?specialty=${encodeURIComponent(specialty.name)}`} className="group block h-full">
                   <Card className={`relative p-8 h-full bg-white/70 backdrop-blur-sm border-neutral-100 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.08)] transition-all duration-500 ${specialty.borderColor} group-hover:-translate-y-1`}>
                     <div className={`w-14 h-14 ${specialty.bg} rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500`}>
                       <specialty.icon className={`w-7 h-7 ${specialty.color}`} />
@@ -161,7 +161,7 @@ export default function SpecialtiesPage() {
                       
                       <div className="pt-6 flex items-center justify-between border-t border-neutral-50">
                         <span className="text-sm font-medium text-neutral-400">
-                          {specialty.doctors} doctores disponibles
+                          {specialty.doctores} doctores disponibles
                         </span>
                         <div className="w-8 h-8 rounded-full bg-neutral-50 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                           <ArrowRight className="w-4 h-4" />

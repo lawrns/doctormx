@@ -20,6 +20,13 @@ function getSupabaseAnonKey(): string {
   return key
 }
 
+/**
+ * Create a Supabase client for server-side operations.
+ * Uses cookies() for authentication in App Router.
+ *
+ * Note: For Next.js 15+ App Router, we use createServerClient which
+ * automatically handles cookies through the Request object.
+ */
 export async function createClient() {
   const cookieStore = await cookies()
   const supabaseUrl = getSupabaseUrl()
@@ -29,22 +36,22 @@ export async function createClient() {
     supabaseUrl,
     supabaseAnonKey,
     {
+      auth: {
+        flowType: 'pkce', // Recommended for server-side
+        debug: process.env.NODE_ENV === 'development',
+      },
       cookies: {
         getAll() {
           return cookieStore.getAll()
         },
         setAll(cookiesToSet) {
           try {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, {
-                ...options,
-                sameSite: 'lax',
-                secure: process.env.NODE_ENV === 'production',
-                httpOnly: true,
-              })
-            )
+            cookiesToSet.forEach(({ name, value, options }) => {
+              cookieStore.set(name, value, options)
+            })
           } catch {
-            // Called from a Server Component - ignore
+            // The `set` method was called from a Server Component.
+            // This can be ignored if you have middleware refreshing sessions.
           }
         },
       },
@@ -52,15 +59,16 @@ export async function createClient() {
   )
 }
 
-// Service role client for server-side operations that bypass RLS
+/**
+ * Service role client for server-side operations that bypass RLS
+ */
 export function createServiceClient() {
   const supabaseUrl = getSupabaseUrl()
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY
-  
+
   if (!serviceRoleKey) {
     throw new Error('SUPABASE_SERVICE_ROLE_KEY must be set')
   }
-  
+
   return createSupabaseClient(supabaseUrl, serviceRoleKey)
 }
-

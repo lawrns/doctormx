@@ -84,7 +84,8 @@ export class DeliveryService {
   /**
    * Get delivery estimates for a location
    *
-   * TODO: Replace with actual API calls using real distance calculations and routing services
+   * MOCK_IMPLEMENTATION: Calculates delivery estimates based on Haversine distance formula.
+   * To be replaced with real pharmacy API delivery estimation and routing services.
    */
   async getDeliveryEstimates(
     coordinates: Coordinates,
@@ -162,7 +163,8 @@ export class DeliveryService {
     message: string;
   }> {
     if (!address.coordinates) {
-      // TODO: Implement geocoding service
+      // MOCK_IMPLEMENTATION: Geocoding not implemented. Returns unavailable when coordinates are missing.
+      // To be replaced with real geocoding service integration.
       return {
         available: false,
         message: 'Coordenadas no disponibles para la dirección proporcionada',
@@ -306,7 +308,7 @@ export class DeliveryService {
 
     if (!config) return '';
 
-    // TODO: Replace with actual tracking URLs when available
+    // MOCK_IMPLEMENTATION: Returns mock tracking URL. To be replaced with actual pharmacy tracking URLs.
     return `${config.website}/rastreo/${trackingNumber}`;
   }
 

@@ -110,7 +110,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
     { href: '/app', icon: LayoutDashboard, label: 'Dashboard' },
     { href: '/app/ai-consulta', icon: Bot, label: 'Consulta IA', highlight: true },
     { href: '/app/second-opinion', icon: Users, label: 'IA Multi-Especialista' },
-    { href: '/doctors', icon: Stethoscope, label: 'Buscar Doctor' },
+    { href: '/doctores', icon: Stethoscope, label: 'Buscar Doctor' },
     {
       href: '/app/appointments',
       icon: Calendar,

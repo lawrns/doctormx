@@ -229,7 +229,7 @@ export default function PreConsultaChat({ isOpen, onCloseAction, onCompleteActio
             <RecommendedDoctorsCard
               recommendations={referrals}
               consultationType="Pre-consulta"
-              onViewAllDoctors={() => window.location.href = '/doctors'}
+              onViewAllDoctors={() => window.location.href = "/doctores"}
               onBookDoctor={(doctorId) => {
                 window.location.href = `/book/${doctorId}`;
               }}

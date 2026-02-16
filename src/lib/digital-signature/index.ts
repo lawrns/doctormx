@@ -297,3 +297,29 @@ export function getDocumentTypeName(type: string): string {
   return names[type] || type
 }
 
+// ============================================================================
+// SIMPLE SIGNATURE EXPORTS
+// ============================================================================>
+
+/**
+ * Re-export simple signature functions for consent documents
+ * Provides lightweight digital signature without full certificate infrastructure
+ */
+export {
+  createSignatureRequest,
+  signDocument,
+  signDocumentBatch,
+  verifySignature,
+  verifySignatureBatch,
+  storeSignature,
+  getSignatureByDocument,
+  getUserSignatures,
+  generateSignatureProof,
+  exportSignatureData,
+  signConsentDocument,
+  verifyConsentSignature,
+  type SimpleDigitalSignature,
+  type SimpleSignatureRequest,
+  type SignatureVerificationResult,
+} from './simple-signature'
+

@@ -153,6 +153,128 @@ export type {
 export { TABLES } from './database'
 
 // ================================================
+// GLOBAL TYPES - Unified SSOT types
+// ================================================
+
+// Utility types (replacements for `any`)
+export type {
+  JsonPrimitive,
+  JsonValue,
+  JsonObject,
+  JsonArray,
+  UnknownRecord,
+  OptionalRecord,
+  DatabaseTable,
+  TableReference,
+} from './global'
+
+// API response types
+export type {
+  ApiResponse,
+  ApiError,
+  ApiMetadata,
+  PaginatedResponse,
+  ApiRequestContext,
+} from './global'
+
+// Pharmacy types (unified)
+export {
+  PharmacyChain,
+  PharmacyOrderStatus,
+  PharmacyDeliveryType,
+  PharmacyPaymentMethod,
+  PharmacyProductCategory,
+} from './global'
+
+export type {
+  GeoCoordinates,
+  PharmacyAddress,
+  PharmacySponsor,
+  PharmacyReferral,
+  PharmacyCommission,
+  PharmacyRecommendation,
+  PharmacyMatch,
+  PharmacyLocationFilter,
+  PatientLocation,
+  PharmacyProduct,
+  PharmacyIntegrationConfig,
+  PharmacyErrorMetadata,
+} from './global'
+
+// Consent types (unified)
+export {
+  ConsentErrorCode,
+} from './global'
+
+export type {
+  ConsentType,
+  ConsentStatus,
+  ConsentDeliveryMethod,
+  ConsentCategory,
+  AgeVerificationStatus,
+  GuardianRelationship,
+  ConsentVersion,
+  ConsentRecord,
+  GuardianConsentRecord,
+  ConsentHistoryEntry,
+  ConsentRequest,
+  ConsentTemplate,
+  ConsentAuditEventType,
+  ConsentAuditLog,
+  ConsentVersionChange,
+  ConsentVersionComparison,
+  UserConsentSummary,
+  ConsentFilter,
+} from './global'
+
+// Appointment types (unified) - NOTA: Algunos tipos ya existen en database.ts
+// Se exportan con alias para evitar conflictos o se usan directamente desde global.ts
+export type {
+  AppointmentDeliveryType,
+  VideoCallStatus,
+  // AppointmentStatus ya existe en database.ts
+  Appointment,
+  AppointmentWithDoctor,
+  AppointmentWithPatient,
+  // AppointmentWithRelations ya existe en database.ts
+  AppointmentSlot,
+  AppointmentMetrics,
+} from './global'
+
+// User & profile types - NOTA: UserRole ya existe en database.ts
+export type {
+  // UserRole ya existe en database.ts
+  UserProfile,
+} from './global'
+
+// Payment types - NOTA: PaymentStatus ya existe en database.ts
+export type {
+  // PaymentStatus ya existe en database.ts
+  PaymentProvider,
+  // Payment ya existe arriba (Application Types)
+} from './global'
+
+// Prescription types
+export type {
+  PrescriptionMedication,
+  Prescription,
+} from './global'
+
+// Notification types
+export type {
+  NotificationChannel,
+  NotificationStatus,
+  NotificationLog,
+} from './global'
+
+// Stripe types
+export type {
+  StripeSubscriptionMetadata,
+  StripeSubscription,
+  StripeInvoice,
+} from './global'
+
+// ================================================
 // LEGACY ENUM TYPES (kept for backward compatibility)
 // ================================================
 export type AppointmentType = 'in_person' | 'video'
@@ -206,51 +328,6 @@ export interface Specialty {
 }
 
 /**
- * Appointment - Patient appointment with a doctor
- */
-export interface Appointment {
-  id: string
-  patient_id: string
-  doctor_id: string
-  service_id: string | null
-  start_ts: string
-  end_ts: string
-  status:
-    | 'pending_payment'
-    | 'confirmed'
-    | 'cancelled'
-    | 'completed'
-    | 'no_show'
-    | 'refunded'
-  appointment_type?: AppointmentType
-  video_status?: 'pending' | 'ready' | 'in_progress' | 'completed' | 'missed'
-  video_room_url?: string | null
-  video_room_id?: string | null
-  video_started_at?: string | null
-  video_ended_at?: string | null
-  consultation_notes?: string | null
-  cancellation_reason: string | null
-  cancelled_by: string | null
-  created_at: string
-  doctor?: Doctor
-}
-
-/**
- * Payment - Payment for an appointment
- */
-export interface Payment {
-  id: string
-  appointment_id: string
-  provider: 'stripe' | 'openpay' | 'mercadopago'
-  provider_ref: string
-  amount_cents: number
-  currency: string
-  status: 'requires_action' | 'pending' | 'paid' | 'failed' | 'refunded'
-  fee_cents: number
-  net_cents: number
-}
-
-/**
  * ChatConversation - Chat conversation between patient and doctor
  */
 export interface ChatConversation {
@@ -294,3 +371,6 @@ export interface ChatUserPresence {
   created_at: string
   updated_at: string
 }
+
+// NOTA: Los tipos Appointment, Payment y Prescription se exportan desde global.ts
+// en las secciones correspondientes arriba para evitar duplicaciones

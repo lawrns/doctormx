@@ -15,6 +15,8 @@ import {
   Star,
 } from 'lucide-react'
 import { logger } from '@/lib/observability/logger'
+import { Header } from '@/components/layout/Header'
+import { Footer } from '@/components/layout/Footer'
 
 interface PricingPlan {
   id: string
@@ -303,7 +305,9 @@ export default function PricingPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
+    <main id="main-content" className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
+      <Header />
+
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -560,6 +564,8 @@ export default function PricingPage() {
           </div>
         </div>
       </div>
-    </div>
+
+      <Footer />
+    </main>
   )
 }

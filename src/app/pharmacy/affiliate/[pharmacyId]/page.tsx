@@ -80,7 +80,7 @@ export default async function PharmacyAffiliatePage({ params, searchParams }: Pa
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto px-4 py-8">
+      <main id="main-content" className="max-w-4xl mx-auto px-4 py-8">
         {referral ? (
           <div className="space-y-6">
             <div className="bg-white rounded-2xl shadow-card border border-border overflow-hidden">

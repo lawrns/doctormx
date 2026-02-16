@@ -86,7 +86,7 @@ export async function sendFollowUp24hNotification(
     .select(
       `id, patient_id, doctor_id, start_ts,
       patient:profiles!appointments_patient_id_fkey(full_name, phone),
-      doctor:doctors!appointments_doctor_id_fkey(profile:profiles!doctors_id_fkey(full_name))`
+      doctor.doctores!appointments_doctor_id_fkey(profile:profiles.doctores_id_fkey(full_name))`
     )
     .eq('id', appointmentId)
     .single()
@@ -112,7 +112,7 @@ export async function sendFollowUp24hNotification(
   const result = await sendWhatsAppNotification(patient.phone, 'follow_up_24h', {
     patientName: patient.full_name,
     doctorName: doctorProfile?.full_name || 'tu médico',
-    bookingLink: `${process.env.NEXT_PUBLIC_APP_URL || 'https://doctory.mx'}/doctors`,
+    bookingLink: `${process.env.NEXT_PUBLIC_APP_URL || 'https://doctory.mx'}/doctores`,
   })
 
   if (result.success) {
@@ -162,7 +162,7 @@ export async function sendFollowUp7dNotification(
 
   const result = await sendWhatsAppNotification(patient.phone, 'follow_up_7d', {
     patientName: patient.full_name,
-    bookingLink: `${process.env.NEXT_PUBLIC_APP_URL || 'https://doctory.mx'}/doctors`,
+    bookingLink: `${process.env.NEXT_PUBLIC_APP_URL || 'https://doctory.mx'}/doctores`,
   })
 
   if (result.success) {
@@ -483,7 +483,7 @@ export async function processFollowUpResponse(
     actionMessage = '¿Por qué no lo has tomado? Responde con más detalles si necesitas ayuda.'
   } else if (normalizedResponse.includes('renovar')) {
     action = 'prescription_renewal'
-    actionMessage = 'Entendido. Puedes agendar tu cita de renovación aquí: https://doctory.mx/doctors'
+    actionMessage = 'Entendido. Puedes agendar tu cita de renovación aquí: https://doctory.mx/doctores'
   }
 
   await supabase

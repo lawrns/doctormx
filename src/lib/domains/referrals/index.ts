@@ -193,7 +193,7 @@ export async function findSpecialistsForReferral(
   const supabase = await createServiceClient()
   
   let query = supabase
-    .from('doctors')
+    .from('doctores')
     .select('*')
     .eq('license_status', 'verified')
     .contains('specialties', [params.specialty])

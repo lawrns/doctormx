@@ -11,7 +11,7 @@ export default async function DoctorProfilePage() {
   }
 
   const { data: doctor } = await supabase
-    .from('doctors')
+    .from('doctores')
     .select('*')
     .eq('id', user.id)
     .single()

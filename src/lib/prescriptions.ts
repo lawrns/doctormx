@@ -130,9 +130,9 @@ export async function generateAndStorePDF(prescriptionId: string): Promise<{ pdf
     .select(`
       *,
       patient:profiles!appointments_patient_id_fkey (full_name, date_of_birth),
-      doctor:doctors!appointments_doctor_id_fkey (
+      doctor.doctores!appointments_doctor_id_fkey (
         *,
-        profile:profiles!doctors_id_fkey (full_name)
+        profile:profiles.doctores_id_fkey (full_name)
       )
     `)
     .eq('id', prescription.appointment_id)

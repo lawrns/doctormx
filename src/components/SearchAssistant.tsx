@@ -97,7 +97,7 @@ export function SearchAssistant() {
       if (newAnswers.when === 'today') {
         params.set('availability', 'today')
       }
-      router.push(`/doctors?${params.toString()}`)
+      router.push(`/doctores?${params.toString()}`)
     }
   }
 

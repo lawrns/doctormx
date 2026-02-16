@@ -61,16 +61,16 @@ export function CTASection() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-400"></span>
               </span>
-              Mas de 100 especialistas en linea ahora
+              Más de 100 especialistas en línea ahora
             </motion.div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
               Tu salud merece
-              <span className="block text-blue-200">atencion inmediata</span>
+              <span className="block text-blue-200">atención inmediata</span>
             </h2>
 
             <p className="text-white/80 text-lg mb-8">
-              Mas de 10,000 consultas realizadas. Unete a los mexicanos que ya cuidan su salud con Doctor.mx.
+              Más de 10,000 consultas realizadas. Únete a los mexicanos que ya cuidan su salud con Doctor.mx.
             </p>
 
             {/* Single dominant CTA */}
@@ -86,12 +86,12 @@ export function CTASection() {
               </motion.button>
             </Link>
 
-            {/* Secondary link for doctors */}
+            {/* Secondary link for doctores */}
             <Link
               href="/for-doctors"
               className="block mt-4 text-white/80 hover:text-white text-sm underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-indigo-700 rounded py-2 min-h-[44px] flex items-center justify-center sm:inline-block sm:min-h-0 sm:py-0"
             >
-              Eres medico? Conoce como crecer tu practica
+              ¿Eres médico? Conoce como crecer tu práctica
             </Link>
 
             {/* Trust badges */}

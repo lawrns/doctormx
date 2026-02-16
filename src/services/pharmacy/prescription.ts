@@ -67,6 +67,7 @@ async function withRetry<T>(
 export class PrescriptionService {
   private catalogService: CatalogService;
   private orders: Map<string, Order>;
+  private mockTimeouts: Set<NodeJS.Timeout> = new Set();
 
   constructor(catalogService?: CatalogService) {
     this.catalogService = catalogService || new CatalogService();
@@ -74,9 +75,21 @@ export class PrescriptionService {
   }
 
   /**
+   * Clean up any pending mock timeouts
+   * Call this when the instance is no longer needed
+   */
+  destroy(): void {
+    this.mockTimeouts.forEach(timeoutId => {
+      clearTimeout(timeoutId);
+    });
+    this.mockTimeouts.clear();
+  }
+
+  /**
    * Place an order with a pharmacy
    *
-   * TODO: Replace with actual API integration:
+   * MOCK_IMPLEMENTATION: This is a mock implementation that simulates order placement.
+   * To be replaced with actual pharmacy API integrations:
    *
    * Farmacias Guadalajara:
    * POST https://api.farmaciasguadalajara.com/v1/orders
@@ -230,7 +243,8 @@ export class PrescriptionService {
     let cumulativeDelay = 0;
     stages.forEach(stage => {
       cumulativeDelay += stage.delay;
-      setTimeout(() => {
+      const timeoutId = setTimeout(() => {
+        this.mockTimeouts.delete(timeoutId);
         const order = this.orders.get(orderId);
         if (order) {
           order.status = stage.status;
@@ -243,13 +257,15 @@ export class PrescriptionService {
           this.orders.set(orderId, order);
         }
       }, cumulativeDelay);
+      this.mockTimeouts.add(timeoutId);
     });
   }
 
   /**
    * Get order status
    *
-   * TODO: Replace with actual API calls
+   * MOCK_IMPLEMENTATION: Returns order status from in-memory storage.
+   * To be replaced with real pharmacy API status endpoint calls.
    */
   async getOrderStatus(orderId: string): Promise<Order> {
     return withRetry(async () => {
@@ -275,7 +291,8 @@ export class PrescriptionService {
   /**
    * Cancel an order
    *
-   * TODO: Replace with actual API integration
+   * MOCK_IMPLEMENTATION: Cancels orders in in-memory storage.
+   * To be replaced with real pharmacy API cancellation calls.
    */
   async cancelOrder(orderId: string, reason?: string): Promise<Order> {
     return withRetry(async () => {

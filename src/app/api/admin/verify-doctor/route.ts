@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
   try {
     if (action === 'approve') {
       await supabase
-        .from('doctors')
+        .from('doctores')
         .update({
           status: 'approved',
           updated_at: new Date().toISOString(),
@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
         .eq('id', doctorId)
     } else if (action === 'reject') {
       await supabase
-        .from('doctors')
+        .from('doctores')
         .update({
           status: 'rejected',
           updated_at: new Date().toISOString(),

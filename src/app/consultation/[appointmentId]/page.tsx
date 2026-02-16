@@ -17,7 +17,7 @@ export default async function ConsultationRoomPage({
     .from('appointments')
     .select(`
       *,
-      doctor:doctors (
+      doctor.doctores (
         *,
         profile:profiles (full_name)
       )
@@ -43,7 +43,7 @@ export default async function ConsultationRoomPage({
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8 max-w-4xl">
+      <main id="main-content" className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="bg-white rounded-lg shadow p-8">
           <h1 className="text-3xl font-bold text-neutral-900 mb-6">
             Sala de Consulta

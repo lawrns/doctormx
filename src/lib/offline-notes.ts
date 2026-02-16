@@ -1,7 +1,17 @@
 /**
  * Offline Consultation Notes System
  * Stores consultation notes locally when offline, syncs when connection returns
+ *
+ * CLIENT-SIDE ONLY - This module uses browser localStorage and navigator APIs
+ * Must only be imported from 'use client' components or client-only files
+ *
+ * @module lib/offline-notes
+ * @client-only
  */
+
+'use client'
+
+import { logger } from './observability/logger'
 
 interface OfflineNote {
   id: string;
@@ -30,7 +40,17 @@ class OfflineConsultationNotes {
   getNotes(): OfflineNote[] {
     if (typeof window === 'undefined') return [];
     const stored = localStorage.getItem(this.STORAGE_KEY);
-    return stored ? JSON.parse(stored) : [];
+    if (!stored) return [];
+    
+    try {
+      const parsed = JSON.parse(stored) as OfflineNote[];
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (error) {
+      logger.error('[OfflineNotes] Error parsing stored notes', { error: error instanceof Error ? error.message : String(error) });
+      // Clear corrupted data to prevent further errors
+      localStorage.removeItem(this.STORAGE_KEY);
+      return [];
+    }
   }
 
   // Save a note for later sync
@@ -105,7 +125,20 @@ class OfflineConsultationNotes {
     }
     
     const stored = localStorage.getItem(this.SYNC_STATUS_KEY);
-    const status: Partial<SyncStatus> = stored ? JSON.parse(stored) : {};
+    let status: Partial<SyncStatus> = {};
+    
+    if (stored) {
+      try {
+        const parsed = JSON.parse(stored) as Partial<SyncStatus>;
+        status = parsed || {};
+      } catch (error) {
+        logger.error('[OfflineNotes] Error parsing sync status', { error: error instanceof Error ? error.message : String(error) });
+        // Clear corrupted sync status
+        localStorage.removeItem(this.SYNC_STATUS_KEY);
+        status = {};
+      }
+    }
+    
     const pendingNotes = this.getPendingNotes();
     
     return {
@@ -236,4 +269,3 @@ export function useOfflineNotes() {
     isOnline: offlineNotes.isOnline.bind(offlineNotes)
   };
 }
-

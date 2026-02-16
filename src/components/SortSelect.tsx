@@ -36,7 +36,7 @@ export function SortSelect({ defaultValue, currentParams }: SortSelectProps) {
     <Select
       defaultValue={defaultValue}
       onValueChange={(value: SortBy) => {
-        const url = `/doctors${buildQueryString({ sortBy: value })}`
+        const url = `/doctores${buildQueryString({ sortBy: value })}`
         window.location.href = url
       }}
     >

@@ -157,7 +157,7 @@ Responde:
 • 👎 Sin mejoría
 • 👎 Peor
 
-*Recuerda agendar tu próxima cita si es necesario: ${ctx.bookingLink || 'doctory.mx/doctors'}*
+*Recuerda agendar tu próxima cita si es necesario: ${ctx.bookingLink || 'doctory.mx/doctores'}*
 
 — *Doctor.mx: Tu salud, simplificada*`
 
@@ -188,7 +188,7 @@ ${ctx.doctorName} ya está atendiendo consultas.
 📋 *Especialidad:* ${ctx.specialty || 'Medicina General'}
 
 📅 *Agenda ahora:*
-${ctx.bookingLink || 'https://doctory.mx/doctors'}
+${ctx.bookingLink || 'https://doctory.mx/doctores'}
 
 * Cupo limitado - Reserva tu espacio*
 

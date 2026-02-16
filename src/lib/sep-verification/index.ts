@@ -312,7 +312,7 @@ export async function storeVerificationResult(
   // Update doctor record with verification status
   if (result.verified) {
     await supabase
-      .from('doctors')
+      .from('doctores')
       .update({
         license_number: cedula,
         updated_at: new Date().toISOString(),

@@ -14,7 +14,7 @@ import { logger } from '@/lib/observability/logger'
  * GET /api/patients
  *
  * Get paginated list of patients for a doctor
- * Only accessible by doctors - returns patients who have appointments with this doctor
+ * Only accessible by doctores - returns patients who have appointments with this doctor
  *
  * Query params:
  * - cursor: string | null - pagination cursor
@@ -27,7 +27,7 @@ export async function GET(request: NextRequest) {
 
     // Verify the user is a registered doctor
     const { data: doctor } = await supabase
-      .from('doctors')
+      .from('doctores')
       .select('id')
       .eq('id', user.id)
       .single()

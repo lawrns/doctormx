@@ -14,9 +14,11 @@ import {
   hasUserConsent,
   getUserConsents,
   getUserConsentSummary,
+} from './core'
+import {
   getLatestConsentVersion,
   checkIfReConsentRequired,
-} from './index'
+} from './versioning'
 
 // ================================================
 // CONSENT MANAGER INTERFACE

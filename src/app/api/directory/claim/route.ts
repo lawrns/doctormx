@@ -9,13 +9,13 @@ import { logger } from '@/lib/observability/logger'
 export async function POST(request: NextRequest) {
   try {
     const supabase = await createClient()
-    
+
     // Check auth
     const { data: { user }, error: authError } = await supabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
-    
+
     // Check feature flag
     const enabled = await isFeatureEnabled('directory_claim_flow_enabled', { userId: user.id })
     if (!enabled) {
@@ -24,39 +24,39 @@ export async function POST(request: NextRequest) {
         { status: 403 }
       )
     }
-    
+
     // Parse body
     const body = await request.json()
     const { profile_id, cedula_profesional } = body
-    
+
     if (!profile_id) {
       return NextResponse.json(
         { error: 'Profile ID is required' },
         { status: 400 }
       )
     }
-    
+
     // Check if profile exists and is unclaimed
     const { data: profile, error: profileError } = await supabase
       .from('unclaimed_doctor_profiles')
       .select('*')
       .eq('id', profile_id)
       .single()
-    
+
     if (profileError || !profile) {
       return NextResponse.json(
         { error: 'Profile not found' },
         { status: 404 }
       )
     }
-    
+
     if (profile.claim_status !== 'unclaimed') {
       return NextResponse.json(
         { error: 'Profile has already been claimed or is pending claim' },
         { status: 400 }
       )
     }
-    
+
     // Check if user already has a pending claim
     const { data: existingClaim } = await supabase
       .from('profile_claims')
@@ -65,28 +65,28 @@ export async function POST(request: NextRequest) {
       .eq('doctor_profile_id', profile_id)
       .in('status', ['claim_pending', 'verification_required'])
       .single()
-    
+
     if (existingClaim) {
       return NextResponse.json(
         { error: 'You already have a pending claim for this profile', claim_id: existingClaim.id },
         { status: 400 }
       )
     }
-    
+
     // Check if user already has a doctor profile
     const { data: existingDoctor } = await supabase
-      .from('doctors')
+      .from('doctores')
       .select('user_id')
       .eq('user_id', user.id)
       .single()
-    
+
     if (existingDoctor) {
       return NextResponse.json(
         { error: 'You already have a doctor profile' },
         { status: 400 }
       )
     }
-    
+
     // Create claim
     const { data: claim, error: claimError } = await supabase
       .from('profile_claims')
@@ -98,28 +98,28 @@ export async function POST(request: NextRequest) {
       })
       .select()
       .single()
-    
+
     if (claimError) {
       logger.error('[DirectoryClaim] Create error:', { err: claimError })
       throw claimError
     }
-    
+
     // Update profile status
     await supabase
       .from('unclaimed_doctor_profiles')
-      .update({ 
+      .update({
         claim_status: 'claim_pending',
         claim_id: claim.id,
       })
       .eq('id', profile_id)
-    
+
     return NextResponse.json({
       claim_id: claim.id,
       status: claim.status,
       next_step: 'verification_required',
       message: 'Claim initiated. Please complete verification.',
     }, { status: 201 })
-    
+
   } catch (error) {
     logger.error('[DirectoryClaim] Error:', { err: error })
     return NextResponse.json(
@@ -129,6 +129,9 @@ export async function POST(request: NextRequest) {
   }
 }
 
+/**
+ * GET: Get user's claims
+ */
 export async function GET() {
   try {
     const supabase = await createClient()
@@ -138,7 +141,7 @@ export async function GET() {
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
-    
+
     // Get user's claims
     const { data: claims, error } = await supabase
       .from('profile_claims')
@@ -154,13 +157,13 @@ export async function GET() {
       `)
       .eq('claimant_user_id', user.id)
       .order('created_at', { ascending: false })
-    
+
     if (error) {
       throw error
     }
-    
+
     return NextResponse.json({ claims })
-    
+
   } catch (error) {
     logger.error('[DirectoryClaim] List error:', { err: error })
     return NextResponse.json(

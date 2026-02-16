@@ -82,7 +82,7 @@ export default function CompleteProfilePage() {
                 try {
                     // Check if doctor record already exists
                     const { data: existingDoctor } = await supabase
-                        .from('doctors')
+                        .from('doctores')
                         .select('id')
                         .eq('id', user.id)
                         .single()
@@ -91,7 +91,7 @@ export default function CompleteProfilePage() {
                         // Doctor doesn't exist, create new record with defaults
                         // The id references profiles.id directly
                         const { error: doctorError } = await supabase
-                            .from('doctors')
+                            .from('doctores')
                             .insert({
                                 id: user.id,
                                 price_cents: 50000, // Default $500 MXN
@@ -228,8 +228,26 @@ export default function CompleteProfilePage() {
                         >
                             {loading ? 'Guardando...' : 'Continuar'}
                         </button>
+
+                        {/* Cancel / Back Button */}
+                        <Link
+                            href="/"
+                            className="w-full py-3 px-4 border border-border text-ink-secondary rounded-xl font-medium hover:bg-gray-50 hover:text-ink-primary transition-all text-center block"
+                        >
+                            Cancelar
+                        </Link>
                     </form>
                 </div>
+
+                {/* Sign Out Link */}
+                <p className="text-center text-sm text-ink-secondary mt-4">
+                    ¿No quieres continuar ahora?{' '}
+                    <form action="/auth/signout" method="post" className="inline">
+                        <button type="submit" className="text-primary-600 hover:text-primary-700 font-medium underline">
+                            Cerrar sesión
+                        </button>
+                    </form>
+                </p>
             </div>
         </div>
     )

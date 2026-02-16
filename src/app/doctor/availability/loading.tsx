@@ -32,7 +32,7 @@ export default function AvailabilityLoading() {
         </aside>
 
         {/* Main content skeleton */}
-        <main className="flex-1 p-4 lg:p-8">
+        <main id="main-content" className="flex-1 p-4 lg:p-8">
           <div className="max-w-4xl">
             <Skeleton className="h-9 w-40 lg:w-52 mb-2" />
             <Skeleton className="h-5 w-56 lg:w-72 mb-8" />

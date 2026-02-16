@@ -84,7 +84,7 @@ export async function POST(req: NextRequest) {
         userPrompt: PRECONSULTA_URGENCY_PROMPT.replace('{conversation}', conversationText),
       });
 
-      // Match real doctors
+      // Match real doctores
       try {
         const matchedDoctors = await matchDoctorsForReferral({
           symptoms: summary?.redFlags || [],

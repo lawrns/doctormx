@@ -1,24 +1,11 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Card } from '@/components/Card'
+import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/Badge'
-import { Button } from '@/components/Button'
+import { Button } from '@/components/ui/button'
 import { searchDirectory, getDirectorySpecialties, getDirectoryCities } from '@/lib/domains/directory'
-import createDOMPurify from 'dompurify'
-
-// Server-side DOMPurify configuration
-let purify: ReturnType<typeof createDOMPurify>
-
-if (typeof window === 'undefined') {
-  // Server-side: use JSDOM
-  const { JSDOM } = require('jsdom')
-  const window = new JSDOM('').window
-  purify = createDOMPurify(window)
-} else {
-  // Client-side: use browser window
-  purify = createDOMPurify()
-}
+import { purify } from '@/lib/utils/dompurify'
 
 interface PageProps {
   params: Promise<{ specialty: string; city: string }>
@@ -86,7 +73,7 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
   const specialtyName = decodeURIComponent(specialty).replace(/-/g, ' ')
   const cityName = decodeURIComponent(city).replace(/-/g, ' ')
   
-  // Fetch doctors for this specialty and city
+  // Fetch doctores for this specialty and city
   let result
   try {
     result = await searchDirectory({
@@ -98,7 +85,7 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
     notFound()
   }
   
-  const doctors = result.doctors
+  const doctores = result.doctores
   
   return (
     <div className="min-h-screen bg-gray-50">
@@ -106,7 +93,7 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
       <div className="bg-blue-600 py-12 text-white">
         <div className="mx-auto max-w-6xl px-4">
           <nav className="mb-4 text-sm text-blue-200">
-            <Link href="/doctors" className="hover:text-white">Directorio</Link>
+            <Link href="/doctores" className="hover:text-white">Directorio</Link>
             {' / '}
             <Link href={`/doctor/${specialty}`} className="hover:text-white">
               {capitalizeWords(specialtyName)}
@@ -125,7 +112,7 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
       
       {/* Results */}
       <div className="mx-auto max-w-6xl px-4 py-8">
-        {doctors.length === 0 ? (
+        {doctores.length === 0 ? (
           <Card className="p-8 text-center">
             <h2 className="text-lg font-semibold text-gray-900">
               No encontramos especialistas en esta área
@@ -133,14 +120,14 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
             <p className="mt-2 text-gray-600">
               Intenta buscar en ciudades cercanas o amplía tu búsqueda.
             </p>
-            <Link href="/doctors">
+            <Link href="/doctores">
               <Button className="mt-4">Ver todos los doctores</Button>
             </Link>
           </Card>
         ) : (
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {doctors.map((doctor) => (
-              <Card key={doctor.id} hover className="flex flex-col">
+            {doctores.map((doctor) => (
+              <Card key={doctor.id} className="flex flex-col">
                 <div className="flex items-start gap-4">
                   <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 text-xl font-bold text-blue-600">
                     {doctor.full_name.charAt(0)}
@@ -161,7 +148,7 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
                   <div className="text-sm text-gray-600">
                     {doctor.city}, {doctor.state}
                   </div>
-                  <Link href={`/doctors/${doctor.id}`}>
+                  <Link href={`/doctores/${doctor.id}`}>
                     <Button size="sm">Ver perfil</Button>
                   </Link>
                 </div>

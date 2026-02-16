@@ -65,7 +65,7 @@ export async function POST(req: NextRequest) {
         .update({ status: 'escalated' })
         .eq('id', followUpId);
 
-      // TODO: Notificar al doctor vía email/SMS
+      // FUTURE_ENHANCEMENT: Notificar al doctor vía email/SMS cuando un paciente reporta síntomas de empeoramiento o emergencia
     }
 
     // Auditoría

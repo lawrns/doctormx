@@ -2,7 +2,7 @@ import { SOAPDemo } from '@/components/soap/SOAPDemo';
 
 export default function SOAPDemoPage() {
   return (
-    <main className="min-h-screen bg-background">
+    <main id="main-content" className="min-h-screen bg-background">
       <SOAPDemo />
     </main>
   );

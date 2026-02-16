@@ -37,10 +37,10 @@ async function AdminAnalyticsContent() {
         />
         <StatCard
           title="Doctores Activos"
-          value={adminMetrics.doctors.total}
-          change={adminMetrics.doctors.newThisMonth}
+          value={adminMetrics.doctores.total}
+          change={adminMetrics.doctores.newThisMonth}
           changeLabel="nuevos este mes"
-          trend={adminMetrics.doctors.newThisMonth > 0 ? 'up' : 'neutral'}
+          trend={adminMetrics.doctores.newThisMonth > 0 ? 'up' : 'neutral'}
           icon={<Users className="w-6 h-6 text-blue-600" />}
         />
         <StatCard
@@ -233,7 +233,7 @@ export default function AdminAnalyticsPage() {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8">
+      <main id="main-content" className="container mx-auto px-4 py-8">
         <Suspense fallback={<LoadingSkeleton />}>
           <AdminAnalyticsContent />
         </Suspense>

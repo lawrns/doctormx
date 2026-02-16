@@ -86,3 +86,171 @@ sarif-reports/
 
 # Temporary secret storage (for testing)
 .secrets-test/
+
+# =============================================================================
+# Build & Test Artifacts (Root Level)
+# =============================================================================
+
+# Log files
+*.log
+test-output.log
+build-error.log
+dev.log
+
+# Build outputs (beyond standard Next.js)
+build/
+dist/
+.turbo/
+
+# Dependency analysis
+dependency_tree.json
+dependency-tree.json
+
+# Backup files
+*.backup
+*.bak
+package.json.backup
+package-lock.json.backup
+
+# =============================================================================
+# Configuration Files (Optional - Can be committed if desired)
+# =============================================================================
+
+# Docker (can be committed, but often environment-specific)
+# .dockerignore
+# Dockerfile
+
+# Linting/Formatting config (usually should be committed)
+# .lintstagedrc.json
+# .prettierrc.json
+# .eslintrc.json
+# commitlint.config.js
+
+# =============================================================================
+# Temporary & Cache Directories
+# =============================================================================
+
+# Temp directories
+temp*/
+tmp*/
+temp_*/
+tmp_*/
+temp_kimi_extract/
+
+# Cache directories
+.cache/
+.parcel-cache/
+.vite/
+
+# =============================================================================
+# Analysis & Documentation Reports (Auto-generated/Intermediate)
+# =============================================================================
+
+# Analysis and progress reports (temporary development artifacts)
+*_ANALYSIS_REPORT.md
+*_COMPLETION*.md
+*_FIX*.md
+*_SUMMARY.md
+*_STATUS*.md
+*_REPORT.md
+*_PLAN*.md
+*_RESOLUTION.md
+*_VERIFICATION*.md
+*_PROGRESO*.md
+*_INFORME*.md
+
+# Specific report patterns (can be kept or removed as needed)
+# API_TESTS_FIX_SUMMARY.md
+# ARCHITECTURE_ANALYSIS_REPORT.md
+# BUGS_AND_ERRORS_REPORT.md
+# BUILD_STATUS.md
+# CHECKPOINT_*.md
+# COUNCIL_*.md
+# DEPENDENCY_ANALYSIS_REPORT.md
+# DOCTORMX_COMPLETENESS_*.md
+# ESCAPE_ROUTES_*.md
+# FLOW_*_*.md
+# I18N_ANALYSIS_REPORT.md
+# MEMORY_LEAKS_*.md
+# PERFORMANCE_ANALYSIS_REPORT.md
+# PHASE_*_*.md
+# PROGRESO_*.md
+# RESUMEN_*.md
+# TECHNICAL_DEBT_REPORT.md
+# UI_UX_*.md
+# WEB_VITALS_*.md
+
+# =============================================================================
+# IDE & Editor Files
+# =============================================================================
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Vim
+*.swp
+*.swo
+*.swn
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# =============================================================================
+# Environment & Secrets
+# =============================================================================
+
+# All environment files (except .env.example)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Secrets and keys
+*.pem
+*.key
+.secrets/
+secrets/
+
+# =============================================================================
+# Testing & Coverage
+# =============================================================================
+
+# Coverage reports
+coverage/
+*.lcov
+
+# Test artifacts (beyond playwright)
+playwright-report/
+test-results/
+.nyc_output/
+
+# =============================================================================
+# OS Generated Files
+# =============================================================================
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# =============================================================================
+# Miscellaneous
+# =============================================================================
+
+# npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Local development files
+*.local
+.eslintcache

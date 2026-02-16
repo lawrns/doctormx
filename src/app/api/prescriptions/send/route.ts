@@ -38,9 +38,9 @@ export async function POST(request: NextRequest) {
       .select(`
         *,
         patient:profiles!appointments_patient_id_fkey (full_name, date_of_birth, email),
-        doctor:doctors!appointments_doctor_id_fkey (
+        doctor.doctores!appointments_doctor_id_fkey (
           *,
-          profile:profiles!doctors_id_fkey (full_name)
+          profile:profiles.doctores_id_fkey (full_name)
         )
       `)
       .eq('id', appointmentId)

@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { LoadingButton } from '@/components/LoadingButton'
-import { Textarea } from '@/components/Input'
+import { FormTextarea } from '@/components/ui/form-input'
 import Link from 'next/link'
 
 interface AnalysisData {
@@ -104,7 +104,7 @@ export default function DoctorImageReviewClient({
           </div>
         </header>
 
-        <main className="max-w-2xl mx-auto px-4 py-12">
+        <main id="main-content" className="max-w-2xl mx-auto px-4 py-12">
           <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 text-center">
             <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <svg className="w-10 h-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -163,7 +163,7 @@ export default function DoctorImageReviewClient({
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 py-8">
+      <main id="main-content" className="max-w-7xl mx-auto px-4 py-8">
         <div className="grid lg:grid-cols-2 gap-8">
           <div className="space-y-6">
             <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
@@ -277,7 +277,7 @@ export default function DoctorImageReviewClient({
             <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
               <h3 className="font-semibold text-gray-900 mb-4">Tu Revisión</h3>
 
-              <Textarea
+              <FormTextarea
                 label="Notas del doctor"
                 placeholder="Agrega tus observaciones, correcciones o comentarios..."
                 value={doctorNotes}

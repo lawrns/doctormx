@@ -4,7 +4,7 @@ export function StructuredData() {
     "@type": "MedicalBusiness",
     name: "Doctor.mx",
     description:
-      "Plataforma de telemedicina y consultas medicas en linea con doctores verificados en Mexico",
+      "Plataforma de telemedicina y consultas médicas en línea con doctores verificados en México",
     url: "https://doctor.mx",
     logo: "https://doctor.mx/logo.png",
     address: {
@@ -13,7 +13,7 @@ export function StructuredData() {
     },
     areaServed: {
       "@type": "Country",
-      name: "Mexico",
+      name: "México",
     },
     priceRange: "$-$$",
     medicalSpecialty: [
@@ -25,7 +25,7 @@ export function StructuredData() {
     ],
     availableService: {
       "@type": "MedicalService",
-      name: "Consulta medica en linea",
+      name: "Consulta médica en línea",
       availableChannel: {
         "@type": "ServiceChannel",
         serviceType: "OnlineService",
@@ -40,7 +40,7 @@ export function StructuredData() {
     url: "https://doctor.mx",
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://doctor.mx/doctors?search={search_term_string}",
+      target: "https://doctor.mx/doctores?search={search_term_string}",
       "query-input": "required name=search_term_string",
     },
   };

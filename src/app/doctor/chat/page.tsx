@@ -12,7 +12,7 @@ export default async function DoctorChatPage() {
   }
 
   const { data: doctor } = await supabase
-    .from('doctors')
+    .from('doctores')
     .select('*')
     .eq('id', user.id)
     .single()

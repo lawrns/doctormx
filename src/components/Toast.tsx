@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useContext, useState, useCallback, ReactNode } from 'react'
+import { createContext, useContext, useState, useCallback, ReactNode, useEffect, useRef } from 'react'
 
 type ToastType = 'success' | 'error' | 'warning' | 'info'
 
@@ -97,6 +97,29 @@ function ToastItem({ toast, onRemove }: { toast: Toast; onRemove: () => void }) 
 
 export function ToastProvider({ children }: { children: ReactNode }) {
   const [toasts, setToasts] = useState<Toast[]>([])
+  // Track timeout IDs for cleanup
+  const timeoutsRef = useRef<Map<string, NodeJS.Timeout>>(new Map())
+
+  // Cleanup all timeouts on unmount
+  useEffect(() => {
+    return () => {
+      // Clear all pending timeouts
+      timeoutsRef.current.forEach((timeoutId) => {
+        clearTimeout(timeoutId)
+      })
+      timeoutsRef.current.clear()
+    }
+  }, [])
+
+  const removeToast = useCallback((id: string) => {
+    // Clear timeout for this toast if it exists
+    const timeoutId = timeoutsRef.current.get(id)
+    if (timeoutId) {
+      clearTimeout(timeoutId)
+      timeoutsRef.current.delete(id)
+    }
+    setToasts((prev) => prev.filter((t) => t.id !== id))
+  }, [])
 
   const addToast = useCallback((message: string, type: ToastType = 'info', duration = 5000) => {
     const id = Math.random().toString(36).substring(2, 9)
@@ -105,15 +128,12 @@ export function ToastProvider({ children }: { children: ReactNode }) {
     setToasts((prev) => [...prev, newToast])
 
     if (duration > 0) {
-      setTimeout(() => {
-        setToasts((prev) => prev.filter((t) => t.id !== id))
+      const timeoutId = setTimeout(() => {
+        removeToast(id)
       }, duration)
+      timeoutsRef.current.set(id, timeoutId)
     }
-  }, [])
-
-  const removeToast = useCallback((id: string) => {
-    setToasts((prev) => prev.filter((t) => t.id !== id))
-  }, [])
+  }, [removeToast])
 
   return (
     <ToastContext.Provider value={{ toasts, addToast, removeToast }}>
@@ -131,4 +151,3 @@ export function ToastProvider({ children }: { children: ReactNode }) {
     </ToastContext.Provider>
   )
 }
-

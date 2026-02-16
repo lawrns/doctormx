@@ -78,23 +78,50 @@ export type Doctor = {
   }>
 }
 
+// Type for doctor profile with phone (from getDoctorProfile)
+export type DoctorProfile = {
+  id: string
+  status: string
+  bio: string | null
+  languages: string[]
+  years_experience: number | null
+  city: string | null
+  state: string | null
+  country: string
+  price_cents: number
+  currency: string
+  rating_avg: number
+  rating_count: number
+  profile: {
+    id: string
+    full_name: string
+    photo_url: string | null
+    phone: string | null
+  } | null
+  specialties: Array<{
+    id: string
+    name: string | null | undefined
+    slug: string | null | undefined
+  }>
+}
+
 // Sistema completo: buscar doctores con filtros
 export async function discoverDoctors(filters?: DiscoveryFilters): Promise<Doctor[]> {
   const cacheKey = `discover:${JSON.stringify(filters || {})}`
   const cached = await cache.get<Doctor[]>(cacheKey)
   if (cached) return cached
 
-  const doctors = await fetchDoctors(filters)
-  await cache.set(cacheKey, doctors, 300)
-  return doctors
+  const doctores = await fetchDoctors(filters)
+  await cache.set(cacheKey, doctores, 300)
+  return doctores
 }
 
 async function fetchDoctors(filters?: DiscoveryFilters): Promise<Doctor[]> {
   const supabase = createServiceClient()
 
   try {
-    const { data: doctors, error } = await supabase
-      .from('doctors')
+    const { data: doctores, error } = await supabase
+      .from('doctores')
       .select(`
         id,
         bio,
@@ -115,7 +142,7 @@ async function fetchDoctors(filters?: DiscoveryFilters): Promise<Doctor[]> {
             slug
           )
         ),
-        profiles!doctors_id_fkey (
+        profiles.doctores_id_fkey (
           id,
           full_name,
           photo_url
@@ -135,7 +162,7 @@ async function fetchDoctors(filters?: DiscoveryFilters): Promise<Doctor[]> {
       return []
     }
 
-    let filtered = (doctors || []) as unknown as RawDoctor[]
+    let filtered = (doctores || []) as unknown as RawDoctor[]
 
     filtered = filtered.filter(doctor => {
       const hasActiveSubscription = doctor.doctor_subscriptions?.some(
@@ -181,7 +208,7 @@ async function fetchDoctors(filters?: DiscoveryFilters): Promise<Doctor[]> {
           return doctor.video_enabled === true
         }
         if (filters.appointmentType === 'in_person') {
-          return true // Show all doctors for in_person filter (everyone can do in-person)
+          return true // Show all doctores for in_person filter (everyone can do in-person)
         }
         return true
       })
@@ -259,9 +286,9 @@ export async function getAvailableSpecialties() {
 }
 
 // Bloque: Obtener perfil completo del doctor
-export async function getDoctorProfile(doctorId: string) {
+export async function getDoctorProfile(doctorId: string): Promise<DoctorProfile | null> {
   const cached = await cache.getDoctorProfile(doctorId)
-  if (cached) return cached
+  if (cached) return cached as DoctorProfile
 
   const profile = await fetchDoctorProfile(doctorId)
   if (profile) {
@@ -270,12 +297,12 @@ export async function getDoctorProfile(doctorId: string) {
   return profile
 }
 
-async function fetchDoctorProfile(doctorId: string) {
+async function fetchDoctorProfile(doctorId: string): Promise<DoctorProfile | null> {
   const supabase = createServiceClient()
 
   try {
     const { data: doctor, error } = await supabase
-      .from('doctors')
+      .from('doctores')
       .select(`
         id,
         bio,
@@ -295,7 +322,7 @@ async function fetchDoctorProfile(doctorId: string) {
             slug
           )
         ),
-        profiles!doctors_id_fkey (
+        profiles.doctores_id_fkey (
           id,
           full_name,
           photo_url,

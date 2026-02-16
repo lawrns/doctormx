@@ -29,14 +29,14 @@ export async function POST(request: NextRequest) {
     
     // Verify user is a doctor
     const { data: doctor } = await supabase
-      .from('doctors')
+      .from('doctores')
       .select('user_id, subscription_tier')
       .eq('user_id', user.id)
       .single()
     
     if (!doctor) {
       return NextResponse.json(
-        { error: 'Only doctors can create referrals' },
+        { error: 'Only doctores can create referrals' },
         { status: 403 }
       )
     }
@@ -132,12 +132,12 @@ export async function GET(request: NextRequest) {
       .from('doctor_referrals')
       .select(`
         *,
-        referring_doctor:doctors!doctor_referrals_referring_doctor_id_fkey(
+        referring_doctor.doctores!doctor_referrals_referring_doctor_id_fkey(
           user_id,
           full_name,
           specialties
         ),
-        receiving_doctor:doctors!doctor_referrals_receiving_doctor_id_fkey(
+        receiving_doctor.doctores!doctor_referrals_receiving_doctor_id_fkey(
           user_id,
           full_name,
           specialties

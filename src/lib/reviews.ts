@@ -188,8 +188,8 @@ export async function getPatientReviewableAppointments(patientId: string): Promi
       id,
       doctor_id,
       start_ts,
-      doctor:doctors!appointments_doctor_id_fkey (
-        profile:profiles!doctors_id_fkey (
+      doctor.doctores!appointments_doctor_id_fkey (
+        profile:profiles.doctores_id_fkey (
           full_name
         )
       ),
@@ -297,7 +297,7 @@ async function updateDoctorRating(doctorId: string): Promise<void> {
     : 0
 
   await supabase
-    .from('doctors')
+    .from('doctores')
     .update({
       rating_avg: Math.round(averageRating * 10) / 10,
       rating_count: totalReviews,

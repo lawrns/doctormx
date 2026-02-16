@@ -456,7 +456,12 @@ export function createFileUploadError(
  */
 export function handleError(error: AppError): never {
   // Log the error for debugging
-  logger.error(`[${error.type}] ${error.message}`, { type: error.type }, error)
+  const errorObj: Error = {
+    name: error.type,
+    message: error.message,
+    stack: (error as any).stack,
+  } as Error
+  logger.error(`[${error.type}] ${error.message}`, { type: error.type }, errorObj)
 
   // In a real application, you might want to:
   // - Send errors to a monitoring service (e.g., Sentry)

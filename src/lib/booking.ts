@@ -102,7 +102,7 @@ export async function getAppointmentForBooking(appointmentId: string) {
     .from('appointments')
     .select(`
       *,
-      doctor:doctors (
+      doctor.doctores (
         *,
         profile:profiles (full_name, photo_url)
       )
@@ -149,7 +149,7 @@ async function sendWhatsAppNotification(patientId: string, appointmentId: string
     .from('appointments')
     .select(`
       *,
-      doctor:doctors (
+      doctor.doctores (
         profile:profiles (full_name)
       )
     `)

@@ -19,7 +19,7 @@ import {
   logConsentModified,
   logConsentViewed,
   createConsentAuditLog,
-} from './consent-audit'
+} from './audit'
 import { logger } from '@/lib/observability/logger'
 
 // ================================================
@@ -150,7 +150,7 @@ export async function trackConsentWithdrawn(
       metadata?.reason || 'Usuario retiró consentimiento',
       {
         user_id: userId,
-        role: metadata?.withdrawn_by || 'user',
+        role: (metadata?.withdrawn_by === 'guardian' ? 'admin' : metadata?.withdrawn_by) || 'user',
       }
     )
   }

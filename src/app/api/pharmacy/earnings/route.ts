@@ -8,7 +8,7 @@ export async function GET() {
     const { user, supabase } = await requireRole('doctor')
 
     const { data: doctor } = await supabase
-      .from('doctors')
+      .from('doctores')
       .select('id')
       .eq('id', user.id)
       .single()

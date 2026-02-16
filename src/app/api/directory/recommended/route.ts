@@ -195,7 +195,7 @@ async function getNextAvailableSlot(doctorId: string): Promise<string | null> {
         const [hours, minutes] = slot.start_time.split(':');
         slotTime.setHours(parseInt(hours), parseInt(minutes), 0, 0);
 
-        // Skip if in the past
+        // Skip if in past
         if (slotTime < new Date()) continue;
 
         // Skip if booked

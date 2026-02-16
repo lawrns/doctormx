@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
         const { user, error } = await getCurrentUser();
         if (error) {
           if (error.message !== 'Auth session missing!' && error.name !== 'AuthSessionMissingError') {
-            console.error('Error obteniendo usuario:', error);
+            logger.error('Error obteniendo usuario:', error);
           }
           setUser(null);
         } else {
@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => {
         }
       } catch (error) {
         if (error.message !== 'Auth session missing!' && error.name !== 'AuthSessionMissingError') {
-          console.error('Error inesperado obteniendo usuario:', error);
+          logger.error('Error inesperado obteniendo usuario:', error);
         }
         setUser(null);
       } finally {
@@ -72,14 +72,14 @@ export const AuthProvider = ({ children }) => {
     try {
       const { error } = await signOutUser();
       if (error) {
-        console.error('Error cerrando sesión:', error);
+        logger.error('Error cerrando sesión:', error);
         throw error;
       }
       setUser(null);
       // Redirigir a la landing page después del logout
       navigate('/');
     } catch (error) {
-      console.error('Error inesperado cerrando sesión:', error);
+      logger.error('Error inesperado cerrando sesión:', error);
       throw error;
     } finally {
       setIsLoggingOut(false);

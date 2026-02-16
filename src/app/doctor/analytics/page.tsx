@@ -19,7 +19,7 @@ async function DoctorAnalyticsContent() {
   const metrics = await getDoctorMetrics(user.id)
 
   const { data: doctor } = await supabase
-    .from('doctors')
+    .from('doctores')
     .select('status')
     .eq('id', user.id)
     .single()

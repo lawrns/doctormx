@@ -8,7 +8,7 @@ import { Sparkles } from 'lucide-react'
 
 export default function AssistantPage() {
   return (
-    <main className="min-h-screen bg-[#FDFCFB]">
+    <main id="main-content" className="min-h-screen bg-[#FDFCFB]">
       <Header />
       
       <div className="pt-32 pb-20 relative overflow-hidden">

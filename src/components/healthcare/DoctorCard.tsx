@@ -209,7 +209,7 @@ export function DoctorCard({
               <span className="text-sm text-gray-500 ml-1">MXN</span>
             </div>
           )}
-          <Link href={`/doctors/${id}`} className="ml-auto">
+          <Link href={`/doctores/${id}`} className="ml-auto">
             <Button size="sm" className="bg-primary-500 hover:bg-primary-600">
               Ver perfil
             </Button>

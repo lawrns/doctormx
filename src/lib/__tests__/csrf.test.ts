@@ -267,46 +267,62 @@ describe('CSRF Protection', () => {
 
   describe('getCSRFCookie', () => {
     it('should return token from cookie', () => {
-      const request = new NextRequest(
-        new Request('https://example.com'),
-        {
-          headers: {
-            Cookie: 'csrf_token=test-token-value',
+      // Create a mock request with cookie header
+      const mockRequest = {
+        headers: {
+          get: (name: string) => {
+            if (name.toLowerCase() === 'cookie') {
+              return 'csrf_token=test-token-value'
+            }
+            return null
           },
-        }
-      )
+        },
+        cookies: {
+          get: () => undefined,
+        },
+      } as unknown as NextRequest
 
-      const token = getCSRFCookie(request)
+      const token = getCSRFCookie(mockRequest)
 
       expect(token).toBe('test-token-value')
     })
 
     it('should return undefined when cookie is missing', () => {
-      const request = new NextRequest(
-        new Request('https://example.com'),
-        {
-          headers: {
-            Cookie: 'other_cookie=value',
+      const mockRequest = {
+        headers: {
+          get: (name: string) => {
+            if (name.toLowerCase() === 'cookie') {
+              return 'other_cookie=value'
+            }
+            return null
           },
-        }
-      )
+        },
+        cookies: {
+          get: () => undefined,
+        },
+      } as unknown as NextRequest
 
-      const token = getCSRFCookie(request)
+      const token = getCSRFCookie(mockRequest)
 
       expect(token).toBeUndefined()
     })
 
     it('should handle multiple cookies', () => {
-      const request = new NextRequest(
-        new Request('https://example.com'),
-        {
-          headers: {
-            Cookie: 'other=value; csrf_token=my-token; another=value',
+      const mockRequest = {
+        headers: {
+          get: (name: string) => {
+            if (name.toLowerCase() === 'cookie') {
+              return 'other=value; csrf_token=my-token; another=value'
+            }
+            return null
           },
-        }
-      )
+        },
+        cookies: {
+          get: () => undefined,
+        },
+      } as unknown as NextRequest
 
-      const token = getCSRFCookie(request)
+      const token = getCSRFCookie(mockRequest)
 
       expect(token).toBe('my-token')
     })
@@ -369,22 +385,29 @@ describe('CSRF Protection', () => {
       const response = NextResponse.json({ success: true })
       setCSRFCookie(response, csrf.token)
 
-      // Step 3: Get cookie from request
-      const request = new NextRequest(
-        new Request('https://example.com/api/test'),
-        {
-          headers: {
-            Cookie: `csrf_token=${csrf.token}`,
-            [csrf.header]: csrf.token,
+      // Step 3: Get cookie from request using mock
+      const mockRequest = {
+        headers: {
+          get: (name: string) => {
+            if (name.toLowerCase() === 'cookie') {
+              return `csrf_token=${csrf.token}`
+            }
+            if (name.toLowerCase() === csrf.header.toLowerCase()) {
+              return csrf.token
+            }
+            return null
           },
-        }
-      )
+        },
+        cookies: {
+          get: () => undefined,
+        },
+      } as unknown as NextRequest
 
-      const cookieToken = getCSRFCookie(request)
+      const cookieToken = getCSRFCookie(mockRequest)
       expect(cookieToken).toBe(csrf.token)
 
       // Step 4: Validate token
-      const isValid = validateCSRFToken(request, cookieToken || '')
+      const isValid = validateCSRFToken(mockRequest, cookieToken || '')
       expect(isValid).toBe(true)
     })
 

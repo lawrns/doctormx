@@ -18,11 +18,11 @@ describe('Doctor Discovery System', () => {
   })
 
   describe('Doctor Search', () => {
-    it('should return empty array when no doctors found', async () => {
+    it('should return empty array when no doctores found', async () => {
       const mockClient = {
         ...mockSupabaseClient,
         from: vi.fn().mockImplementation((table) => {
-          if (table === 'doctors') {
+          if (table === 'doctores') {
             return {
               select: vi.fn().mockReturnValue({
                 eq: vi.fn().mockReturnValue({
@@ -45,11 +45,11 @@ describe('Doctor Discovery System', () => {
       expect(result).toEqual([])
     })
 
-    it('should return doctors when available', async () => {
+    it('should return doctores when available', async () => {
       const mockClient = {
         ...mockSupabaseClient,
         from: vi.fn().mockImplementation((table) => {
-          if (table === 'doctors') {
+          if (table === 'doctores') {
             return {
               select: vi.fn().mockReturnValue({
                 eq: vi.fn().mockReturnValue({
@@ -82,11 +82,11 @@ describe('Doctor Discovery System', () => {
   })
 
   describe('Specialty Filters', () => {
-    it('should filter doctors by specialty slug', async () => {
+    it('should filter doctores by specialty slug', async () => {
       const mockClient = {
         ...mockSupabaseClient,
         from: vi.fn().mockImplementation((table) => {
-          if (table === 'doctors') {
+          if (table === 'doctores') {
             return {
               select: vi.fn().mockReturnValue({
                 eq: vi.fn().mockReturnValue({
@@ -126,7 +126,7 @@ describe('Doctor Discovery System', () => {
       const mockClient = {
         ...mockSupabaseClient,
         from: vi.fn().mockImplementation((table) => {
-          if (table === 'doctors') {
+          if (table === 'doctores') {
             return {
               select: vi.fn().mockReturnValue({
                 eq: vi.fn().mockReturnValue({
@@ -151,7 +151,7 @@ describe('Doctor Discovery System', () => {
       const mockClient = {
         ...mockSupabaseClient,
         from: vi.fn().mockImplementation((table) => {
-          if (table === 'doctors') {
+          if (table === 'doctores') {
             return {
               select: vi.fn().mockReturnValue({
                 eq: vi.fn().mockReturnValue({

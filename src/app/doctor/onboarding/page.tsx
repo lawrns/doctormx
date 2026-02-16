@@ -7,7 +7,7 @@ export default async function DoctorOnboarding() {
   const { user, profile, supabase } = await requireRole('doctor')
 
   const { data: doctor } = await supabase
-    .from('doctors')
+    .from('doctores')
     .select('*')
     .eq('id', user.id)
     .single()

@@ -10,7 +10,7 @@ export interface AdminMetrics {
     mrrGrowth: number
     monthlyRevenue: Array<{ month: string; revenue: number }>
   }
-  doctors: {
+  doctores: {
     total: number
     newThisMonth: number
     churnRate: number
@@ -118,7 +118,7 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
   const lastMonthEnd = endOfMonth(subMonths(now, 1))
 
   const [doctorResult, patientResult, appointmentResult] = await Promise.all([
-    supabase.from('doctors').select('id, created_at', { count: 'exact', head: true }).eq('status', 'approved'),
+    supabase.from('doctores').select('id, created_at', { count: 'exact', head: true }).eq('status', 'approved'),
     supabase.from('profiles').select('id, created_at', { count: 'exact', head: true }).eq('role', 'patient'),
     supabase.from('appointments').select('id, status, created_at', { count: 'exact', head: true }),
   ])
@@ -150,7 +150,7 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
     .lt('created_at', lastMonthEnd.toISOString())
 
   const { count: newDoctorsThisMonth } = await supabase
-    .from('doctors')
+    .from('doctores')
     .select('id', { count: 'exact', head: true })
     .eq('status', 'approved')
     .gte('created_at', monthStart.toISOString())
@@ -199,7 +199,7 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
       mrrGrowth,
       monthlyRevenue,
     },
-    doctors: {
+    doctores: {
       total: totalDoctors,
       newThisMonth: newDoctorsThisMonth || 0,
       churnRate: 0,
@@ -378,7 +378,7 @@ export async function getRevenueMetrics(): Promise<RevenueMetrics> {
       created_at,
       appointment:appointments!payments_appointment_id_fkey (
         doctor_id,
-        doctor:doctors!appointments_doctor_id_fkey (
+        doctor.doctores!appointments_doctor_id_fkey (
           specialty,
           city
         )
@@ -531,7 +531,7 @@ export async function getAppointmentMetrics(): Promise<AppointmentMetrics> {
       id,
       status,
       start_ts,
-      doctor:doctors!appointments_doctor_id_fkey (
+      doctor.doctores!appointments_doctor_id_fkey (
         specialty,
         city
       )

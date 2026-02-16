@@ -1,0 +1,86 @@
+{
+  "description": "Categorías de reglas para el sistema de triage",
+  "critical_rules": {
+    "description": "Reglas críticas que SIEMPRE se evalúan incluso en consultas informativas",
+    "rule_ids": [
+      "suicidal_ideation",
+      "pregnancy_emergency_context",
+      "pregnancy_emergency_text",
+      "stroke_signs_facial",
+      "stroke_signs_arm",
+      "stroke_signs_speech",
+      "stroke_direct_terms",
+      "chest_pain_emergency",
+      "severe_bleeding",
+      "anaphylaxis",
+      "anaphylaxis_emergency"
+    ],
+    "categories": [
+      "suicidal",
+      "pregnancy",
+      "stroke",
+      "chest_pain",
+      "severe_bleeding",
+      "anaphylaxis"
+    ]
+  },
+  "care_levels": {
+    "ER": {
+      "label": "Emergencia",
+      "color": "#DC2626",
+      "icon": "🚨",
+      "description": "Requiere atención médica inmediata",
+      "severity_score": 100
+    },
+    "URGENT": {
+      "label": "Urgente",
+      "color": "#F59E0B",
+      "icon": "⚠️",
+      "description": "Consulta médica en 24 horas",
+      "severity_score": 60
+    },
+    "PRIMARY": {
+      "label": "Consulta Regular",
+      "color": "#3B82F6",
+      "icon": "📋",
+      "description": "Agenda una cita médica",
+      "severity_score": 30
+    },
+    "SELFCARE": {
+      "label": "Autocuidado",
+      "color": "#10B981",
+      "icon": "🏠",
+      "description": "Puede manejarse en casa",
+      "severity_score": 10
+    }
+  },
+  "priority_order": [
+    "SELFCARE",
+    "PRIMARY",
+    "URGENT",
+    "ER"
+  ],
+  "mental_health_resources": {
+    "description": "Recursos de salud mental en México",
+    "resources": [
+      {
+        "name": "Línea de la Vida",
+        "phone": "800 911 2000",
+        "availability": "24/7",
+        "cost": "gratuita"
+      },
+      {
+        "name": "SAPTEL",
+        "phone": "55 5259 8121",
+        "availability": "24/7",
+        "cost": "gratuita"
+      },
+      {
+        "name": "Línea de Crisis",
+        "phone": "800 290 0024",
+        "availability": "24/7",
+        "cost": "gratuita"
+      }
+    ]
+  }
+}

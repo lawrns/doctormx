@@ -1,7 +1,8 @@
 'use client'
 
+import { useState } from 'react'
 import { cn } from '@/lib/utils'
-import { Spinner } from '@/components/Spinner'
+import { Spinner } from '@/components/ui/spinner'
 
 /**
  * LoadingOverlay Component - WCAG 2.1 AA Compliant
@@ -123,7 +124,7 @@ export function LoadingOverlay({
               id="loading-overlay-desc"
               className="text-sm text-muted-foreground"
             >
-              {Math.round(displayProgress)}% completado
+              {Math.round(displayProgress ?? 0)}% completado
               {estimatedTime && ` • ~${estimatedTime} seg restantes`}
             </p>
           )}

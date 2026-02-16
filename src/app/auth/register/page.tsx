@@ -28,6 +28,7 @@ import {
   Shield,
   AlertCircle,
   Loader2,
+  Search,
 } from 'lucide-react'
 import { logger } from '@/lib/observability/logger'
 
@@ -215,7 +216,7 @@ function RegisterContent() {
         }
 
         if (step1Data.accountType === 'doctor') {
-          const { error: doctorError } = await supabase.from('doctors').insert({
+          const { error: doctorError } = await supabase.from('doctores').insert({
             id: data.user.id,
             price_cents: 50000,
             status: 'draft',
@@ -694,6 +695,14 @@ function RegisterContent() {
 
             {/* Navigation */}
             <div className="flex gap-3">
+              <Link
+                href="/doctores"
+                className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
+              >
+                <Search className="w-4 h-4" />
+                <span className="hidden sm:inline">Buscar doctores</span>
+                <span className="sm:hidden">Doctores</span>
+              </Link>
               {currentStep > 1 && (
                 <Button
                   type="button"

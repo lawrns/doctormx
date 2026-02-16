@@ -51,7 +51,7 @@ function PaymentSuccessContent() {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8 max-w-2xl">
+      <main id="main-content" className="container mx-auto px-4 py-8 max-w-2xl">
         <div className="bg-white rounded-lg shadow p-8 text-center">
           <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <svg className="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -99,7 +99,7 @@ function PaymentSuccessContent() {
               Ir a Mis Consultas
             </Link>
             <Link
-              href="/doctors"
+              href="/doctores"
               className="block w-full border border-neutral-300 text-neutral-700 py-3 rounded-lg hover:bg-neutral-50 font-medium"
             >
               Buscar Otro Doctor

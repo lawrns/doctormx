@@ -47,7 +47,7 @@ export default async function AdminPharmacyPage() {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 py-8">
+      <main id="main-content" className="max-w-7xl mx-auto px-4 py-8">
         <div className="mb-8">
           <Link href="/admin" className="text-sm text-blue-600 hover:text-blue-700 mb-4 inline-block">
             ← Volver al Panel de Administración

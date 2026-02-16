@@ -167,7 +167,7 @@ export default function AIDashboardPage() {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8">
+      <main id="main-content" className="container mx-auto px-4 py-8">
         {/* Overview Stats */}
         <div className="grid md:grid-cols-4 gap-6 mb-8">
           <StatCard

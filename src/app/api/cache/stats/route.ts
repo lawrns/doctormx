@@ -65,13 +65,13 @@ export async function GET(request: NextRequest) {
     if (redis) {
       doctorCacheKeys = await redis.keys('doctor:*')
       availabilityCacheKeys = await redis.keys('availability:*')
-      listCacheKeys = await redis.keys('doctors:list:*')
+      listCacheKeys = await redis.keys('doctores:list:*')
     }
 
     return NextResponse.json({
       status: stats,
       cacheKeys: {
-        doctors: doctorCacheKeys.length,
+        doctores: doctorCacheKeys.length,
         availability: availabilityCacheKeys.length,
         lists: listCacheKeys.length,
         total: stats.keyCount,

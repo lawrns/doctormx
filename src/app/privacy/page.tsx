@@ -6,7 +6,7 @@ import { Shield, Lock, FileText } from 'lucide-react'
 
 export default function PrivacyPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main id="main-content" className="min-h-screen bg-white">
       <Header />
       
       <section className="pt-24 pb-16">

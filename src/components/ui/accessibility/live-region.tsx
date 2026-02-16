@@ -67,7 +67,7 @@ interface LiveRegionProps {
    */
   ariaLive?: 'polite' | 'assertive'
   ariaAtomic?: boolean
-  ariaRelevant?: string
+  ariaRelevant?: 'additions' | 'removals' | 'additions text' | 'additions removals' | 'text additions' | 'text removals' | 'all'
 }
 
 /**

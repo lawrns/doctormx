@@ -71,8 +71,8 @@ export function validateCURP(curp: string): ValidationResult {
     }
   }
 
-  // Check pattern: 4 letters + 6 digits + 1 letter + 2 letters + 3 letters + 1 digit
-  const pattern = /^[A-Z]{4}\d{6}[A-Z]{6}\d$/
+  // Check pattern: 4 letters + 6 digits + 1 letter (gender) + 2 letters (state) + 3 letters + 1 char (homoclave) + 1 digit (check)
+  const pattern = /^[A-Z]{4}\d{6}[A-Z]{1}[A-Z]{2}[A-Z]{3}[A-Z0-9]{1}\d$/
   if (!pattern.test(normalized)) {
     return {
       isValid: false,

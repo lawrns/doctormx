@@ -87,7 +87,7 @@ export async function POST(request: NextRequest) {
 /**
  * GET /api/appointments
  *
- * Get paginated list of appointments for the authenticated user
+ * Get paginated list of appointments for authenticated user
  *
  * Query params:
  * - cursor: string | null - pagination cursor
@@ -171,8 +171,8 @@ export async function GET(request: Request) {
     const doctorIds = [...new Set(paginatedAppointments.map(apt => apt.doctor_id).filter(Boolean))]
 
     // Fetch doctor data separately
-    let doctorsData: DoctorRecord[] = []
-    let profilesData: Array<{ id: string; full_name: string; photo_url: string | null }> = []
+    let doctorsData: DoctorRecord[] = [];
+    let profilesData: Array<{ id: string; full_name: string; photo_url: string | null }> = [];
 
     if (doctorIds.length > 0) {
       // Fetch doctors

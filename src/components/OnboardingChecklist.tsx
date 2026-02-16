@@ -161,7 +161,7 @@ export function WelcomeBanner({ patientName }: { patientName: string }) {
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
-                href="/doctors"
+                href="/doctores"
                 className="bg-white text-primary-600 px-4 py-2 rounded-lg font-medium hover:bg-primary-50 transition-colors"
               >
                 Buscar un doctor

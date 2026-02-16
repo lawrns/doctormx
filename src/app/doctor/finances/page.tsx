@@ -45,7 +45,7 @@ export default async function DoctorFinancesPage() {
   const { user, profile, supabase } = await requireRole('doctor')
 
   const { data: doctor } = await supabase
-    .from('doctors')
+    .from('doctores')
     .select('status, currency')
     .eq('id', user.id)
     .single()

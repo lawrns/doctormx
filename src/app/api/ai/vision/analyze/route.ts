@@ -220,7 +220,7 @@ export async function POST(req: NextRequest) {
       analysisResult
     )
 
-    // Update usage tracking for doctors only
+    // Update usage tracking for doctores only
     // Patients don't need premium_feature_usage tracking - they get 3 free per month
     if (profile.role === 'doctor') {
       const { data: subscription } = await supabase

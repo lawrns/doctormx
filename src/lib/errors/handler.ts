@@ -1,3 +1,20 @@
+/**
+ * Server-Side Error Handler
+ *
+ * SERVER-ONLY: This module uses NextResponse which is only available on the server.
+ * Do not import this file in client components ('use client').
+ *
+ * For client-side error handling, use '@/lib/errors/client-handler' instead.
+ *
+ * Usage in API routes:
+ * ```ts
+ * import { handleError, withErrorHandling } from '@/lib/errors/handler'
+ * ```
+ *
+ * @module lib/errors/handler
+ * @server-only
+ */
+
 import { NextResponse } from 'next/server';
 import type { AppError } from './AppError';
 import type { EmergencyDetectedError } from './AppError';
@@ -19,7 +36,7 @@ export enum ErrorSeverity {
 }
 
 /**
- * Error context for logging
+ * Error context for logging (server-side includes IP)
  */
 export interface ErrorContext {
   userId?: string;
@@ -100,7 +117,7 @@ export function logError(error: unknown, context: ErrorContext = {}): void {
 
   // Log to console with appropriate level
   const { severity, ...logContext } = logEntry;
-  const message = `[ERROR] ${logEntry.error.message}`;
+  const message = `[ERROR] ${logEntry.message}`;
 
   switch (logEntry.severity) {
     case ErrorSeverity.CRITICAL:
@@ -115,10 +132,8 @@ export function logError(error: unknown, context: ErrorContext = {}): void {
       break;
   }
 
-  // TODO: Send to external logging service (Sentry, DataDog, etc.)
-  // if (typeof window === 'undefined') {
-  //   Sentry.captureException(error, { extra: context });
-  // }
+  // FUTURE_ENHANCEMENT: Send to external logging service (Sentry, DataDog, etc.)
+  // Sentry.captureException(error, { extra: context });
 }
 
 /**

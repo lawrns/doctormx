@@ -197,7 +197,7 @@ PACIENTE:
 - Preferencias: {preferences}
 
 DOCTORES DISPONIBLES:
-{doctors}
+doctores}
 
 EVALÚA:
 1. Especialidad match (más importante)

@@ -206,7 +206,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8">
+      <main id="main-content" className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           <div className="mb-6">
             <h1 className="text-2xl font-bold text-gray-900">

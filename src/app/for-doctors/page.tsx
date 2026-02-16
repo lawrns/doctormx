@@ -77,7 +77,7 @@ const testimonials = [
 
 export default function ForDoctorsPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main id="main-content" className="min-h-screen bg-white">
       <Header />
       
       {/* Hero Section */}
@@ -91,16 +91,16 @@ export default function ForDoctorsPage() {
             >
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-6">
                 <Star className="w-4 h-4 fill-blue-500" />
-                Mas de 500 medicos ya crecen con nosotros
+                Más de 500 médicos ya crecen con nosotros
               </span>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Mas pacientes. Menos administracion.{' '}
+                Más pacientes. Menos administración.{' '}
                 <span className="text-blue-600">Crece con Doctor.mx</span>
               </h1>
 
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                La plataforma de telemedicina #1 en Mexico. Conecta con pacientes de todo el pais, gestiona citas automaticamente, y recibe pagos seguros — sin complicaciones tecnicas.
+                La plataforma de telemedicina #1 en México. Conecta con pacientes de todo el país, gestiona citas automáticamente, y recibe pagos seguros — sin complicaciones técnicas.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">

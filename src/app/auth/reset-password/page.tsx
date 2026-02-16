@@ -212,7 +212,7 @@ function ResetPasswordContent() {
               </Link>
             </div>
           </header>
-          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12 flex items-center justify-center min-h-[calc(100vh-80px)]">
+          <main id="main-content" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12 flex items-center justify-center min-h-[calc(100vh-80px)]">
             <Card className="shadow-xl border-neutral-200/50 backdrop-blur-sm bg-white/90 max-w-md w-full">
               <CardHeader className="space-y-1 pb-6 text-center">
                 <motion.div
@@ -266,7 +266,7 @@ function ResetPasswordContent() {
         </header>
 
         {/* Main Content */}
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12 flex items-center justify-center min-h-[calc(100vh-80px)]">
+        <main id="main-content" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12 flex items-center justify-center min-h-[calc(100vh-80px)]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

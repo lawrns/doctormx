@@ -3,7 +3,7 @@
 import { useState, useCallback, useRef, useEffect } from 'react'
 import { LoadingButton } from './LoadingButton'
 import { Select } from './Select'
-import { Textarea } from './Input'
+import { FormTextarea } from '@/components/ui/form-input'
 import { Modal } from './Modal'
 import { logger } from '@/lib/observability/logger'
 import { LiveRegion } from '@/components/ui/accessibility'
@@ -449,7 +449,7 @@ export function ImageUploader({
                 aria-describedby="image-type-help"
               />
 
-              <Textarea
+              <FormTextarea
                 label="Notas adicionales (opcional)"
                 placeholder="Describe síntomas, duración, antecedentes relevantes..."
                 value={patientNotes}

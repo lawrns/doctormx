@@ -1,7 +1,7 @@
 # Términos y Condiciones de Doctory
 **Versión:** 1.0
-**Fecha de vigencia:** 9 de febrero de 2026
-**Última actualización:** 9 de febrero de 2026
+**Fecha de vigencia:** 11 de febrero de 2026
+**Última actualización:** 11 de febrero de 2026
 
 ---
 
@@ -211,8 +211,10 @@ De acuerdo con la **Ley Federal de Protección al Consumidor**, tienes derechos:
 
 **Para quejas o controversias:**
 1. **Primero:** Contacta a nuestro equipo de soporte en soporte@doctormx.com
-2. **Tiempo de respuesta:** 5 días hábiles para acuse de recibo
-3. **Resolución:** Buscamos resolver directamente en 15 días hábiles
+2. **Tiempo de respuesta:**
+   - Acuse de recibo: **5 días hábiles**
+   - Respuesta definitiva: **20 días hábiles**
+   - Extensión máxima: **20 días hábiles adicionales** (total máximo: 40 días hábiles)
 
 **Si no resolvemos tu queja:**
 Puedes acudir a la **Procuraduría Federal del Consumidor (PROFECO):**
@@ -317,6 +319,21 @@ Podemos suspender o terminar tu cuenta si:
 - Segunda vez: suspensión temporal
 - Tercera vez: terminación permanente
 
+### 11.3 Proceso de Apelación
+
+Si consideras que tu suspensión fue injusta, puedes apelar:
+
+1. **Solicitud de apelación:** Envía un correo a legal@doctormx.com con asunto "Apelación de Suspensión - [Tu Nombre]"
+2. **Plazo:** Tienes 15 días hábiles desde la notificación de suspensión para apelar
+3. **Información requerida:**
+   - Nombre completo y correo de la cuenta
+   - Fecha de la suspensión
+   - Argumentos que sustenten tu apelación
+   - Evidencia de respaldo (si aplica)
+4. **Revisión:** Nuestro equipo legal revisará tu caso en un plazo de 10 días hábiles
+5. **Decisión:** Te notificaremos la decisión por correo electrónico
+6. **Decisión final:** La determinación del equipo legal será definitiva
+
 ---
 
 ## 12. Resolución de Conflictos
@@ -331,7 +348,7 @@ Si tienes una queja sobre una consulta:
 ### 12.2 Disputas de Pago
 
 Las disputas de pago se manejan caso por caso. Contacta a:
-- **soporte@doctory.mx** para asistencia
+- **soporte@doctormx.com** para asistencia
 
 ### 12.3 Jurisdicción
 
@@ -360,10 +377,10 @@ Estos términos se rigen por las leyes de los **Estados Unidos Mexicanos**. Cual
 
 | Tipo de consulta | Contacto |
 |------------------|----------|
-| **General** | hola@doctory.mx |
-| **Soporte técnico** | soporte@doctory.mx |
-| **Legal** | legal@doctory.mx |
-| **Privacidad (Derechos ARCO)** | privacidad@doctory.mx |
+| **General** | hola@doctormx.com |
+| **Soporte técnico** | soporte@doctormx.com |
+| **Legal** | legal@doctormx.com |
+| **Privacidad (Derechos ARCO)** | privacidad@doctormx.com |
 
 ### 14.2 Horario de Atención
 
@@ -373,21 +390,76 @@ Estos términos se rigen por las leyes de los **Estados Unidos Mexicanos**. Cual
 
 ---
 
-## 15. Disposiciones Generales
+## 15. Datos de la Empresa
 
-### 15.1 Acuerdo Completo
+### 15.1 Responsable del Tratamiento de Datos
+
+Para efectos legales y de contacto, los datos de **DoctorMX S.A. de C.V.** son:
+
+- **RFC:** [PENDIENTE: Ingresar RFC real]
+- **Domicilio:** Av. Insurgentes Sur 1234, Col. Del Valle, Ciudad de México, CP 03100
+- **Email:** legal@doctormx.com
+- **Teléfono:** +52 (55) 1234-5678
+
+### 15.2 Datos de la Empresa (Formato Tabular)
+
+| Dato | Información |
+|------|-------------|
+| **Nombre comercial** | Doctory |
+| **Razón social** | DoctorMX S.A. de C.V. |
+| **Domicilio** | Av. Insurgentes Sur 1234, Col. Del Valle, Ciudad de México, CP 03100 |
+| **RFC** | [PENDIENTE: Ingresar RFC real de DoctorMX S.A. de C.V.] |
+| **Correo electrónico** | legal@doctormx.com |
+| **Teléfono** | +52 (55) 1234-5678 |
+| **Sitio web** | https://doctormx.com |
+
+---
+
+## 16. Fuerza Mayor
+
+### 16.1 Caso de Fuerza Mayor
+
+No seremos responsables por el incumplimiento de nuestras obligaciones cuando dicho incumplimiento sea causado por circunstancias fuera de nuestro control razonable (**"Fuerza Mayor"**).
+
+### 16.2 Eventos de Fuerza Mayor
+
+Incluyen, pero no se limitan a:
+- Desastres naturales (terremotos, inundaciones, huracanes)
+- Pandemias o epidemias declaradas por autoridades sanitarias
+- Huelgas, disturbios o conflictos laborales
+- Fallas en servicios de telecomunicaciones o internet
+- Acciones gubernamentales o restricciones legales
+- Fallas en servicios de terceros críticos (procesadores de pago, servidores)
+
+### 16.3 Durante Fuerza Mayor
+
+En caso de Fuerza Mayor:
+- Suspenderemos temporalmente los servicios afectados
+- Notificaremos a los usuarios a través de los canales disponibles
+- Implementaremos planes de contingencia cuando sea posible
+- Las obligaciones quedarán suspendidas mientras persista la causa
+
+### 16.4 Terminación por Fuerza Mayor
+
+Si la Fuerza Mayor persiste por más de 30 días consecutivos, cualquiera de las partes podrá terminar los servicios sin penalización.
+
+---
+
+## 17. Disposiciones Generales
+
+### 17.1 Acuerdo Completo
 
 Estos Términos y Condiciones constituyen el acuerdo completo entre tú y Doctory. Reemplazan cualquier acuerdo anterior.
 
-### 15.2 Separabilidad
+### 16.2 Separabilidad
 
 Si alguna parte de estos términos es declarada inválida, las demás partes permanecen vigentes.
 
-### 15.3 Renuncia
+### 16.3 Renuncia
 
 El hecho de que no exijamos el cumplimiento de alguna parte no significa que renunciamos a ese derecho.
 
-### 15.4 Idioma
+### 16.4 Idioma
 
 Estos términos están disponibles principalmente en español. En caso de discrepancia entre versiones, prevalece la versión en español.
 
@@ -411,5 +483,5 @@ Al registrarte y usar Doctory, confirmas que:
 
 ---
 
-*Este documento fue actualizado por última vez el 9 de febrero de 2026.*
+*Este documento fue actualizado por última vez el 11 de febrero de 2026.*
 *Versión 1.0*

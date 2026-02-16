@@ -84,7 +84,7 @@ export async function GET(request: NextRequest) {
 
   let query = supabase
     .from('followups')
-    .select(`*, appointment:appointments(doctor:doctors(profile:profiles(full_name)))`)
+    .select(`*, appointment:appointments(doctor.doctores(profile:profiles(full_name)))`)
     .eq('patient_id', user.id)
 
   if (status) {

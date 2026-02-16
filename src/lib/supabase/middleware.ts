@@ -8,7 +8,7 @@ const ROUTES = {
     '/auth/register',
     '/auth/complete-profile',
     '/',
-    '/doctors',
+    '/doctores',
     '/specialties',
     '/for-doctors',
     '/doctor/pricing',

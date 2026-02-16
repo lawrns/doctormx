@@ -74,9 +74,19 @@ interface RetryButtonProps {
   className?: string
 
   /**
+   * Current attempt number (for display)
+   */
+  attempt?: number
+
+  /**
    * Whether button is disabled
    */
   disabled?: boolean
+
+  /**
+   * Whether currently retrying
+   */
+  isRetrying?: boolean
 }
 
 export function RetryButton({

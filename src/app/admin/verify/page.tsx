@@ -8,7 +8,7 @@ export default async function AdminVerificationPage() {
 
   // Obtener doctores pendientes con sus documentos
   const { data: pendingDoctors } = await supabase
-    .from('doctors')
+    .from('doctores')
     .select(`
       *,
       profile:profiles (id, full_name, email, phone)
@@ -26,19 +26,19 @@ export default async function AdminVerificationPage() {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8">
+      <main id="main-content" className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Verificación de doctores
+            Verificacin de doctores
           </h1>
           <p className="text-gray-600">
-            Revisa y aprueba doctores pendientes de verificación
+            Revisa y aprueba doctores pendientes de verificacin
           </p>
         </div>
 
         {!pendingDoctors || pendingDoctors.length === 0 ? (
           <div className="bg-white rounded-lg shadow p-12 text-center">
-            <p className="text-gray-500">No hay doctores pendientes de verificación</p>
+            <p className="text-gray-500">No hay doctores pendientes de verificacin</p>
           </div>
         ) : (
           <div className="space-y-4">
@@ -61,7 +61,7 @@ export default async function AdminVerificationPage() {
 
                 <div className="grid md:grid-cols-2 gap-4 mb-6">
                   <div>
-                    <p className="text-sm text-gray-600">Cédula profesional</p>
+                    <p className="text-sm text-gray-600">dula profesional</p>
                     <p className="font-medium text-gray-900">
                       {doctor.license_number || 'No proporcionada'}
                     </p>
@@ -69,11 +69,11 @@ export default async function AdminVerificationPage() {
                   <div>
                     <p className="text-sm text-gray-600">Experiencia</p>
                     <p className="font-medium text-gray-900">
-                      {doctor.years_experience ? `${doctor.years_experience} años` : 'No especificada'}
+                      {doctor.years_experience ? `${doctor.years_experience} aos` : 'No especificada'}
                     </p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600">Ubicación</p>
+                    <p className="text-sm text-gray-600">Ubicacin</p>
                     <p className="font-medium text-gray-900">
                       {doctor.city && doctor.state
                         ? `${doctor.city}, ${doctor.state}`
@@ -90,7 +90,7 @@ export default async function AdminVerificationPage() {
 
                 {doctor.bio && (
                   <div className="mb-6">
-                    <p className="text-sm text-gray-600 mb-1">Biografía</p>
+                    <p className="text-sm text-gray-600 mb-1">Biograf</p>
                     <p className="text-gray-700">{doctor.bio}</p>
                   </div>
                 )}
@@ -121,7 +121,7 @@ export default async function AdminVerificationPage() {
                       type="submit"
                       className="w-full border border-red-600 text-red-600 py-2 rounded-lg hover:bg-red-50 font-medium"
                     >
-                      ✗ Rechazar
+                      Rechazar
                     </button>
                   </form>
                 </div>

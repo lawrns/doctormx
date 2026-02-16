@@ -295,7 +295,7 @@ export async function suggestDifferentialDiagnosis(
             [
                 {
                     role: 'system',
-                    content: `Eres un medico internista experimentado. Basandote en los sintomas proporcionados, genera diagnosticos diferenciales probabilisticos.
+                    content: `Eres un médico internista experimentado. Basándote en los síntomas proporcionados, genera diagnósticos diferenciales probabilísticos.
 Responde en JSON valido con esta estructura:
 {
   "diagnoses": [
@@ -309,7 +309,7 @@ Responde en JSON valido con esta estructura:
                 },
                 {
                     role: 'user',
-                    content: `Sintomas del paciente:\n- ${symptomsText}\n\n${contextText}\n\nGenera los 3-5 diagnosticos diferenciales mas probables. Considera prevalencia, epidemiologia y factores de riesgo.`,
+                    content: `Síntomas del paciente:\n- ${symptomsText}\n\n${contextText}\n\nGenera los 3-5 diagnósticos diferenciales más probables. Considera prevalencia, epidemiología y factores de riesgo.`,
                 },
             ],
             'differential-diagnosis'
@@ -355,7 +355,7 @@ export async function generateConsultationSummary(
             messages: [
                 {
                     role: 'system',
-                    content: `Eres un medico generando notas clinicas. Genera un resumen estructurado de la consulta medica.
+                    content: `Eres un médico generando notas clínicas. Genera un resumen estructurado de la consulta médica.
 Responde en JSON valido con esta estructura:
 {
   "chiefComplaint": "motivo principal de consulta",
@@ -428,7 +428,7 @@ export async function suggestICDCodes(
             const response = await client.chat.completions.create({
                 model,
                 messages: [
-                    { role: 'system', content: 'Eres un coder medico especializado en ICD-10. Sugiere los codigos mas apropiados.' },
+                    { role: 'system', content: 'Eres un coder médico especializado en ICD-10. Sugiere los códigos más apropiados.' },
                     { role: 'user', content: `Sintomas: ${symptoms.join(', ')}\nDiagnostico: ${diagnosis || 'No especificado'}\nSugiere hasta 3 codigos ICD-10 relevantes. Responde en JSON: { "codes": [{ "code": "X00.0", "description": "descripcion", "category": "categoria" }] }` },
                 ],
                 temperature: 0.2,
@@ -471,7 +471,7 @@ export async function prefillPrescription(
             messages: [
                 {
                     role: 'system',
-                    content: `Eres un medico generando una receta medica. Genera una plantilla de prescripcion apropiada.
+                    content: `Eres un médico generando una receta médica. Genera una plantilla de prescripción apropiada.
 Responde en JSON valido con esta estructura:
 {
   "medications": [
@@ -616,23 +616,23 @@ export async function generateDifferentialDiagnoses(
         const diagnosisPrompt = generateAugmentedPrompt(
             `${patientContext}
 
-Basandote en la consulta medica, genera los 3 diagnosticos diferenciales mas probables.
+Basándote en la consulta médica, genera los 3 diagnósticos diferenciales más probables.
 
 Responde en JSON con esta estructura:
 {
   "diagnoses": [
     {
-      "diagnosis": "nombre del diagnostico",
-      "probability": numero entre 0 y 100,
-      "reasoning": "explicacion breve"
+      "diagnosis": "nombre del diagnóstico",
+      "probability": número entre 0 y 100,
+      "reasoning": "explicación breve"
     }
   ]
 }
 
 Importante:
 - Las probabilidades deben sumar aproximadamente 100
-- Incluye solo diagnosticos clinicamente relevantes
-- Proporciona razonamiento basado en los sintomas`,
+- Incluye solo diagnósticos clínicamente relevantes
+- Proporciona razonamiento basado en los síntomas`,
             medicalContext
         )
 
@@ -678,11 +678,11 @@ export async function generateQuickReplies(
     conversationHistory: Array<{ role: 'user' | 'assistant'; content: string }>
 ): Promise<string[]> {
     try {
-        const quickReplyPrompt = `Basandote en la consulta medica, genera 3-4 respuestas rapidas que el doctor podria usar.
+        const quickReplyPrompt = `Basándote en la consulta médica, genera 3-4 respuestas rápidas que el doctor podría usar.
 
 Las respuestas deben ser:
-- Profesionales pero empaticas
-- Breves (maximo 1-2 lineas)
+- Profesionales pero empáticas
+- Breves (máximo 1-2 líneas)
 - En español
 - Contextualmente relevantes
 
@@ -729,15 +729,15 @@ export async function generateNextSteps(
             .map(d => `${d.diagnosis} (${d.probability}%)`)
             .join(', ')
 
-        const nextStepsPrompt = `Basandote en el diagnostico y plan de tratamiento, genera 3-5 pasos siguientes para el doctor.
+        const nextStepsPrompt = `Basándote en el diagnóstico y plan de tratamiento, genera 3-5 pasos siguientes para el doctor.
 
-Diagnosticos: ${diagnosisText}
+Diagnósticos: ${diagnosisText}
 Plan: ${soapNote.plan}
 
 Los pasos deben ser:
-- Especificos y accionables
+- Específicos y accionables
 - Ordenados por prioridad
-- Clinicamente relevantes
+- Clínicamente relevantes
 - En español
 
 Responde en JSON con esta estructura:

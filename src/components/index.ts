@@ -29,9 +29,13 @@ export type { BreadcrumbItem } from './Breadcrumbs'
 export { AppBreadcrumbs } from './AppBreadcrumbs'
 export { Avatar, AvatarGroup } from './Avatar'
 export { Pagination, PaginationInfo } from './Pagination'
-export { Input, Textarea } from './Input'
 export { Select } from './Select'
-export { Card, CardHeader, CardBody, CardFooter, StatCard as StatCardNew } from './Card'
+
+// UI Components from shadcn
+export { Button, buttonVariants } from '@/components/ui/button'
+export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
+export { Input } from '@/components/ui/input'
+export { FormInput, FormTextarea } from '@/components/ui/form-input'
 
 // Review Components
 export { StarRating, RatingInput } from './StarRating'

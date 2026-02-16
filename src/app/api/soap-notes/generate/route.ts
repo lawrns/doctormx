@@ -28,14 +28,14 @@ export async function POST(request: NextRequest) {
     
     // Verify user is a doctor
     const { data: doctor } = await supabase
-      .from('doctors')
+      .from('doctores')
       .select('user_id, subscription_tier')
       .eq('user_id', user.id)
       .single()
     
     if (!doctor) {
       return NextResponse.json(
-        { error: 'Only doctors can generate SOAP notes' },
+        { error: 'Only doctores can generate SOAP notes' },
         { status: 403 }
       )
     }

@@ -4,7 +4,7 @@ import { useState, useEffect, use } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { ClinicalCopilot } from '@/components/ClinicalCopilot'
 import { SOAPNotesReview } from '@/components/soap'
-import type { PatientMedicalHistory, PatientProfile } from '@/lib/patient-types'
+import type { PatientMedicalHistory, PatientProfile } from '@/lib/patient'
 import type { SoapNote } from '@/lib/domains/soap-notes'
 import { logger } from '@/lib/observability/logger'
 
@@ -199,7 +199,7 @@ export default function DoctorConsultationPage({ params }: DoctorConsultationPag
     }
 
     const handleExportPDF = async () => {
-        // TODO: Implement PDF export
+        // PDF export feature pending (Ticket: TODO-002)
         logger.info('Export to PDF not implemented yet', { appointmentId })
     }
 
@@ -241,7 +241,7 @@ export default function DoctorConsultationPage({ params }: DoctorConsultationPag
             </header>
 
             <div className="flex">
-                <main className="flex-1 p-6">
+                <main id="main-content" className="flex-1 p-6">
                     <div className="bg-white rounded-xl shadow-sm overflow-hidden">
                         <div className="p-6 border-b">
                             <div className="flex items-center gap-4">
@@ -352,7 +352,7 @@ export default function DoctorConsultationPage({ params }: DoctorConsultationPag
                                     <ul className="text-sm text-gray-600 space-y-1">
                                         {patientHistory.past_surgeries.map((surgery, i) => (
                                             <li key={i}>
-                                                {typeof surgery === 'string' ? surgery : `${(surgery as { procedure?: string; year?: string }).procedure} ${(surgery as { procedure?: string; year?: string }).year ? `(${(surgery as { procedure?: string; year?: string }).year})` : ''}`}
+                                                {typeof surgery === 'string' ? surgery : `${(surgery as { procedure?: string; year?: number | null }).procedure} ${(surgery as { procedure?: string; year?: number | null }).year ? `(${(surgery as { procedure?: string; year?: number | null }).year})` : ''}`}
                                             </li>
                                         ))}
                                     </ul>
@@ -373,7 +373,7 @@ export default function DoctorConsultationPage({ params }: DoctorConsultationPag
                             )}
                         </div>
                     ) : (
-                        <p className="text-gray-500 text-sm">No hay historial medico disponible</p>
+                        <p className="text-gray-500 text-sm">No hay historial médico disponible</p>
                     )}
                 </aside>
             </div>

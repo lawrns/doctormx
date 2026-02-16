@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Hedvig_Letters_Serif } from "next/font/google";
 import "./globals.css";
 import { ToastProvider } from "@/components/Toast";
 import { StructuredData } from "@/components/StructuredData";
+import { WebVitalsProvider } from "@/components/performance/WebVitalsProvider";
+import { SkipLink } from "@/components/ui/accessibility";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,6 +23,7 @@ const hedvigLettersSerif = Hedvig_Letters_Serif({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://doctor.mx'),
   title: "Doctor.mx | Telemedicina y Doctores Verificados en México | 24/7",
   description:
     "Consulta médica en línea con doctores verificados en México. Telemedicina segura, videoconsultas HD, y Dr. Simeon - tu asistente de salud con IA. Más de 500 especialistas disponibles 24/7.",
@@ -81,10 +84,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${hedvigLettersSerif.variable}`}>
+    <html lang="es" className={`${hedvigLettersSerif.variable}`} data-scroll-behavior="smooth">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <WebVitalsProvider />
+        <SkipLink targetId="main-content" />
         <ToastProvider>
           {children}
         </ToastProvider>

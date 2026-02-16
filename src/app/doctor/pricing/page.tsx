@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { SUBSCRIPTION_PLANS, SUBSCRIPTION_TIERS, type SubscriptionTier } from '@/lib/subscription-types'
-import { Card } from '@/components/Card'
+import { Card } from '@/components/ui/card'
 import { LoadingButton } from '@/components/LoadingButton'
 import { Badge } from '@/components/Badge'
 import DoctorLayout from '@/components/DoctorLayout'
@@ -143,7 +143,7 @@ export default function PricingPage() {
                 .single()
 
             const { data: doctorData } = await supabase
-                .from('doctors')
+                .from('doctores')
                 .select('status')
                 .eq('id', user.id)
                 .single()

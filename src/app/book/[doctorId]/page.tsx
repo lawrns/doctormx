@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation'
 import { getDoctorProfile } from '@/lib/discovery'
-import BookingForm from './BookingForm'
+import BookingForm, { type DoctorProfile } from './BookingForm'
 import { createClient } from '@/lib/supabase/server'
 
 export default async function BookAppointmentPage({
@@ -34,7 +34,7 @@ export default async function BookAppointmentPage({
   const doctorProfile = await getDoctorProfile(doctorId)
 
   if (!doctorProfile || typeof doctorProfile !== 'object' || !('id' in doctorProfile)) {
-    redirect('/doctors')
+    redirect('/doctores')
   }
 
   // Get current user profile
@@ -44,6 +44,7 @@ export default async function BookAppointmentPage({
     .eq('id', user.id)
     .single()
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return <BookingForm doctor={doctorProfile as any} currentUser={profile || undefined} />
+  // Type assertion is safe here because we validated doctorProfile above
+  // The validation ensures it's an object with an 'id' property
+  return <BookingForm doctor={doctorProfile as DoctorProfile} currentUser={profile || undefined} />
 }

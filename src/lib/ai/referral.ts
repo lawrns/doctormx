@@ -64,20 +64,20 @@ export async function matchDoctorsForReferral(params: {
   const supabase = await createServiceClient();
 
   // 1. Enhanced doctor discovery with multiple filters
-  const doctorsData = await discoverDoctors({
+  const doctoresData = await discoverDoctors({
     specialtySlug: params.specialty.toLowerCase().replace(/\s+/g, '-'),
     city: params.location || undefined,
-    minRating: 4.0, // Only show quality doctors
+    minRating: 4.0, // Only show quality doctores
   });
 
-  const doctors = (Array.isArray(doctorsData) ? doctorsData : []) as unknown as DiscoveryDoctor[];
+  const doctores = (Array.isArray(doctoresData) ? doctoresData : []) as unknown as DiscoveryDoctor[];
 
-  if (doctors.length === 0) {
+  if (doctores.length === 0) {
     return [];
   }
 
   // 2. Enhanced scoring algorithm
-  const scoredDoctors = doctors.map((doctor) => {
+  const scoredDoctors = doctores.map((doctor) => {
     let score = 0;
     const reasons: string[] = [];
 
@@ -106,7 +106,7 @@ export async function matchDoctorsForReferral(params: {
     }
 
     // Price-value score (15%)
-    const avgPrice = doctors.reduce((sum, d) => sum + (d.price_cents / 100), 0) / doctors.length;
+    const avgPrice = doctores.reduce((sum, d) => sum + (d.price_cents / 100), 0) / doctores.length;
     if (doctor.price_cents / 100 <= avgPrice * 0.8) {
       score += 15;
       reasons.push('Precio competitivo');
@@ -155,8 +155,8 @@ export async function matchDoctorsForReferral(params: {
       session_id: params.sessionId,
       specialty: params.specialty,
       urgency: params.urgency,
-      doctors_available: doctors.length,
-      doctors_matched: topMatches.length,
+         doctores_available: doctores.length,
+      doctores_matched: topMatches.length,
       avg_score: topMatches.reduce((sum, m) => sum + m.score, 0) / topMatches.length,
       timestamp: new Date().toISOString(),
     });
