@@ -84,8 +84,7 @@ export async function POST(request: NextRequest) {
             sessionId = existingSession.id
         } else {
             // Create new session
-            const newSession = await createSession(phoneNumber)
-            sessionId = newSession.sessionId
+            sessionId = await createSession(phoneNumber)
         }
 
         // Store incoming message
@@ -143,6 +142,11 @@ export async function POST(request: NextRequest) {
                 const drSimeonSummary = await conductOPQRSTAssessment(conversationHistory)
 
                 // Convert drSimeon summary to whatsapp TriageSummary
+                const urgencyToSeverity: Record<string, 'low' | 'medium' | 'high' | 'critical'> = {
+                    'green': 'low',
+                    'yellow': 'medium',
+                    'red': 'critical'
+                }
                 triageSummary = {
                     chiefComplaint: drSimeonSummary.chiefComplaint,
                     symptoms: drSimeonSummary.symptoms,
@@ -150,11 +154,14 @@ export async function POST(request: NextRequest) {
                     suggestedSpecialty: drSimeonSummary.suggestedSpecialty,
                     recommendedAction: drSimeonSummary.urgencyLevel === 'red' ? 'emergency_redirect' : 'book_consultation',
                     aiConfidence: drSimeonSummary.aiConfidence,
+                    severity: urgencyToSeverity[drSimeonSummary.urgencyLevel] || 'medium',
+                    completed: true
                 }
 
                 // Route to doctor if appropriate
                 if (triageSummary.urgencyLevel !== 'red') {
-                    const handoff = await routeHandoff(sessionId, triageSummary)
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    const handoff = await routeHandoff(sessionId, triageSummary.suggestedSpecialty || 'general') as any
                     if (handoff.success) {
                         responseMessage = `Perfecto. Te conectaremos con un médico especialista. Aquí está el enlace para agendar: ${handoff.bookingLink}\n\nRecuerda: La IA asiste, no diagnostica.`
                     }

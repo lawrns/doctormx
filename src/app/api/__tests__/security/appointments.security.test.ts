@@ -200,6 +200,7 @@ describe('SECURITY: /api/appointments', () => {
     })
 
     it('rejects appointment cancellation without CSRF token', async () => {
+      setCsrfValid(false) // Make CSRF validation fail
       setMockUser(mockUsers.patient)
       setMockSession({ access_token: 'test', refresh_token: 'test' })
       
@@ -207,13 +208,13 @@ describe('SECURITY: /api/appointments', () => {
         method: 'POST',
         body: { reason: 'Test cancellation' },
         cookies: { 'sb-access-token': 'test' },
-        // No CSRF token
+        // No CSRF token header
       })
       
       const response = await cancelAppointment(request, { params: Promise.resolve({ id: 'apt-123' }) })
       
-      // Should be blocked
-      expect(response.status).not.toBe(200)
+      // Should be blocked (403 for CSRF failure)
+      expect(response.status).toBe(403)
     })
 
     it('accepts appointment cancellation with valid CSRF token', async () => {

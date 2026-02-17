@@ -1,58 +1,55 @@
-import { Skeleton, SkeletonCard, SkeletonTable } from '@/components'
+import { Skeleton } from '@/components/ui/skeleton'
 
 export default function FinancesLoading() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header skeleton */}
-      <header className="bg-white shadow-sm border-b sticky top-0 z-30">
-        <div className="px-4 lg:px-6 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <Skeleton className="w-6 h-6 lg:hidden" />
-            <Skeleton className="h-8 w-28 lg:w-32" />
-          </div>
-          <div className="flex items-center gap-2 lg:gap-4">
-            <Skeleton className="h-6 w-20 lg:w-24 rounded-full" />
-            <Skeleton className="hidden md:block h-4 w-32" />
-            <Skeleton className="h-4 w-20 lg:w-24" />
+    <div className="min-h-screen bg-gray-50 p-8">
+      <div className="max-w-7xl mx-auto space-y-6">
+        {/* Header */}
+        <div className="flex items-center justify-between">
+          <Skeleton className="h-8 w-48" />
+          <div className="flex gap-2">
+            <Skeleton className="h-10 w-24" />
+            <Skeleton className="h-10 w-32" />
           </div>
         </div>
-      </header>
-
-      <div className="flex">
-        {/* Sidebar skeleton - hidden on mobile */}
-        <aside className="hidden lg:block w-64 bg-white border-r min-h-[calc(100vh-73px)]">
-          <nav className="p-4 space-y-2">
+        
+        {/* Stats Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {Array.from({ length: 3 }).map((_, i) => (
+            <div key={i} className="bg-white p-6 rounded-lg border space-y-3">
+              <Skeleton className="h-4 w-32" />
+              <Skeleton className="h-10 w-24" />
+              <Skeleton className="h-3 w-20" />
+            </div>
+          ))}
+        </div>
+        
+        {/* Chart Area */}
+        <div className="bg-white p-6 rounded-lg border space-y-4">
+          <Skeleton className="h-6 w-32" />
+          <Skeleton className="h-64 w-full" />
+        </div>
+        
+        {/* Transactions Table */}
+        <div className="bg-white rounded-lg border">
+          <div className="p-4 border-b">
+            <Skeleton className="h-6 w-40" />
+          </div>
+          <div className="p-4 space-y-3">
             {Array.from({ length: 5 }).map((_, i) => (
-              <div key={i} className="flex items-center gap-3 px-4 py-3">
-                <Skeleton className="w-6 h-6 rounded" />
-                <Skeleton className="h-4 w-24" />
+              <div key={i} className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <Skeleton className="h-8 w-8 rounded" />
+                  <div className="space-y-1">
+                    <Skeleton className="h-4 w-32" />
+                    <Skeleton className="h-3 w-24" />
+                  </div>
+                </div>
+                <Skeleton className="h-4 w-20" />
               </div>
             ))}
-          </nav>
-        </aside>
-
-        {/* Main content skeleton */}
-        <main id="main-content" className="flex-1 p-4 lg:p-8">
-          <div className="max-w-6xl">
-            <Skeleton className="h-9 w-32 lg:w-40 mb-2" />
-            <Skeleton className="h-5 w-56 lg:w-72 mb-8" />
-
-            <div className="space-y-6">
-              {/* Stats skeleton */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                {Array.from({ length: 3 }).map((_, i) => (
-                  <SkeletonCard key={i} />
-                ))}
-              </div>
-
-              {/* Transactions skeleton */}
-              <div className="bg-white rounded-lg shadow border p-6">
-                <Skeleton className="h-6 w-48 lg:w-56 mb-4" />
-                <SkeletonTable rows={5} cols={4} />
-              </div>
-            </div>
           </div>
-        </main>
+        </div>
       </div>
     </div>
   )

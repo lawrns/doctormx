@@ -98,7 +98,7 @@ export function ErrorBoundaryAdapter({
 
     // Log to console in development
     if (process.env.NODE_ENV === 'development') {
-      logger.error('[ErrorBoundaryAdapter] Error caught:', errorObj, errorInfo)
+      logger.error('[ErrorBoundaryAdapter] Error caught:', { error: errorObj.message, errorInfo })
     }
 
     // Log to observability platform if available

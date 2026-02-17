@@ -102,12 +102,14 @@ async function getAppointmentPaymentData(appointmentId: string, userId: string) 
     throw new Error('Cita no encontrada o no autorizada')
   }
 
-  const doctor = Array.isArray(appointment.doctor) ? appointment.doctor[0] : appointment.doctor
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const apt = appointment as any
+  const doctor = Array.isArray(apt.doctor) ? apt.doctor[0] : apt.doctor
 
   return {
-    amount: doctor.price_cents,
-    currency: doctor.currency,
-    doctorId: appointment.doctor_id,
+    amount: doctor?.price_cents,
+    currency: doctor?.currency,
+    doctorId: apt.doctor_id,
   }
 }
 

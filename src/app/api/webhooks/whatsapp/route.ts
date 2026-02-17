@@ -129,8 +129,7 @@ async function processMessage(message: WhatsAppMessage) {
   let sessionId: string;
 
   if (!existingSession || existingSession.state === 'completed') {
-    const result = await createSession(phone);
-    sessionId = result.sessionId;
+    sessionId = await createSession(phone);
   } else {
     sessionId = existingSession.id;
   }
@@ -139,11 +138,11 @@ async function processMessage(message: WhatsAppMessage) {
   await addMessage(sessionId, content, 'inbound', 'patient', undefined, mediaId || undefined, mediaType || undefined);
 
   // Conduct AI triage
-  const triageResult = await conductTriage(sessionId, content);
+  const triageResult = await conductTriage(sessionId, [content]);
 
   if (triageResult.success) {
     // Send AI response
-    await sendWhatsAppMessage(phone, triageResult.aiResponse);
+    await sendWhatsAppMessage(phone, triageResult.aiResponse!);
 
     // If triage is complete, route to doctor
     if (triageResult.triageComplete && triageResult.summary) {
@@ -157,7 +156,8 @@ async function processMessage(message: WhatsAppMessage) {
           'Doctor.mx no reemplaza la atención de emergencia.'
         );
       } else {
-        const handoff = await routeHandoff(sessionId, triageResult.summary);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const handoff = await routeHandoff(sessionId, triageResult.summary?.recommendedAction || 'general') as any;
         if (handoff.success) {
           await sendWhatsAppMessage(phone,
             '✅ *Triage completado*\n\n' +

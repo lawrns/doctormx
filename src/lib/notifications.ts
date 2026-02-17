@@ -143,10 +143,12 @@ export async function sendAppointmentConfirmation(
     return { success: false, error: 'Appointment not found' }
   }
 
-  const doctor = Array.isArray(appointment.doctor) ? appointment.doctor[0] : appointment.doctor
-  const doctorProfile = Array.isArray(doctor.profile) ? doctor.profile[0] : doctor.profile
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const apt = appointment as any
+  const doctor = Array.isArray(apt.doctor) ? apt.doctor[0] : apt.doctor
+  const doctorProfile = doctor ? (Array.isArray(doctor.profile) ? doctor.profile[0] : doctor.profile) : null
   const doctorName = doctorProfile?.full_name || 'Doctor'
-  const specialty = doctor.specialty || 'Especialidad'
+  const specialty = doctor?.specialty || 'Especialidad'
 
   const content = `
 <p style="margin: 0 0 20px 0; color: #1f2937; font-size: 16px; line-height: 1.5;">
@@ -163,7 +165,7 @@ export async function sendAppointmentConfirmation(
   <tr>
     <td style="padding: 12px; background-color: #f9fafb; border-radius: 6px; border-left: 4px solid #0066cc; vertical-align: top;">
       <p style="margin: 0 0 8px 0; color: #6b7280; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Fecha y Hora</p>
-      <p style="margin: 0; color: #1f2937; font-size: 16px; font-weight: 600;">${formatMexicanDateTime(appointment.start_ts)}</p>
+      <p style="margin: 0; color: #1f2937; font-size: 16px; font-weight: 600;">${formatMexicanDateTime(apt.start_ts)}</p>
       <p style="margin: 4px 0 0 0; color: #6b7280; font-size: 14px;">Hora del centro de México (GMT-6)</p>
     </td>
   </tr>
@@ -225,8 +227,10 @@ export async function sendPaymentReceipt(
     return { success: false, error: 'Payment not found' }
   }
 
-  const doctor = Array.isArray(appointment.doctor) ? appointment.doctor[0] : appointment.doctor
-  const doctorProfile = Array.isArray(doctor.profile) ? doctor.profile[0] : doctor.profile
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const apt = appointment as any
+  const doctor = Array.isArray(apt.doctor) ? apt.doctor[0] : apt.doctor
+  const doctorProfile = doctor ? (Array.isArray(doctor.profile) ? doctor.profile[0] : doctor.profile) : null
   const doctorName = doctorProfile?.full_name || 'Doctor'
 
   const receiptNumber = `REC-${payment.id.slice(0, 8).toUpperCase()}`
@@ -305,13 +309,15 @@ export async function sendConsultationReminder(
     return { success: false, error: 'Appointment not found' }
   }
 
-  const doctor = Array.isArray(appointment.doctor) ? appointment.doctor[0] : appointment.doctor
-  const doctorProfile = Array.isArray(doctor.profile) ? doctor.profile[0] : doctor.profile
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const apt = appointment as any
+  const doctor = Array.isArray(apt.doctor) ? apt.doctor[0] : apt.doctor
+  const doctorProfile = doctor ? (Array.isArray(doctor.profile) ? doctor.profile[0] : doctor.profile) : null
   const doctorName = doctorProfile?.full_name || 'Doctor'
 
   const videoLink = getVideoConsultationLink(appointmentId)
 
-  const appointmentDate = formatMexicanDateTime(appointment.start_ts)
+  const appointmentDate = formatMexicanDateTime(apt.start_ts)
 
   const content = `
 <p style="margin: 0 0 20px 0; color: #1f2937; font-size: 16px; line-height: 1.5;">
@@ -383,8 +389,10 @@ export async function sendFollowUp(
     return { success: false, error: 'Appointment not found' }
   }
 
-  const doctor = Array.isArray(appointment.doctor) ? appointment.doctor[0] : appointment.doctor
-  const doctorProfile = Array.isArray(doctor.profile) ? doctor.profile[0] : doctor.profile
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const apt = appointment as any
+  const doctor = Array.isArray(apt.doctor) ? apt.doctor[0] : apt.doctor
+  const doctorProfile = doctor ? (Array.isArray(doctor.profile) ? doctor.profile[0] : doctor.profile) : null
   const doctorName = doctorProfile?.full_name || 'Doctor'
 
   const content = `

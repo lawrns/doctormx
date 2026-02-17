@@ -160,8 +160,10 @@ async function sendWhatsAppNotification(patientId: string, appointmentId: string
     return
   }
 
-  const doctorName = appointment.doctor?.profile?.full_name || 'tu médico'
-  const startTs = new Date(appointment.start_ts)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const apt = appointment as any
+  const doctorName = apt.doctor?.profile?.full_name || 'tu médico'
+  const startTs = new Date(apt.start_ts)
   const dateStr = startTs.toLocaleDateString('es-MX', { weekday: 'long', month: 'long', day: 'numeric' })
   const timeStr = startTs.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' })
 
@@ -178,8 +180,8 @@ async function sendWhatsAppNotification(patientId: string, appointmentId: string
     'Medicina General',
     dateStr,
     timeStr,
-    appointment.price_cents || 0,
-    appointment.currency || 'MXN',
+    apt.price_cents || 0,
+    apt.currency || 'MXN',
     `${process.env.NEXT_PUBLIC_APP_URL || 'https://doctory.mx'}/checkout/${appointmentId}`
   )
 }

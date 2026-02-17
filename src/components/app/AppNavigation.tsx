@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 
 interface NavItem {
   href: string
-  icon: React.ElementType<typeof Home | typeof Calendar | typeof User | typeof MessageCircle | typeof Settings | typeof LogOut>
+  icon: React.ElementType
   label: string
   badge?: number
 }

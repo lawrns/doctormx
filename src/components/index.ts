@@ -10,7 +10,8 @@ export { default as ImageUploader, type ImageUploaderProps, type UploadResult } 
 // New components
 export { Badge, getAppointmentBadgeVariant, getAppointmentStatusLabel } from './Badge'
 export { EmptyState } from './EmptyState'
-export { Skeleton, SkeletonCard, SkeletonStatCards, SkeletonAppointmentList, SkeletonTable } from './Skeleton'
+export { Skeleton } from '@/components/ui/skeleton'
+export { SkeletonCard } from '@/components/ui/loading/skeleton-card'
 export { AppointmentCard, AppointmentCardCompact } from './AppointmentCard'
 export { AppointmentFilters } from './AppointmentFilters'
 export type { AppointmentData } from './AppointmentCard'

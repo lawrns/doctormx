@@ -144,7 +144,7 @@ async function sendToEndpoint(metric: WebVitalsMetric, config: WebVitalsConfig):
   } catch (error) {
     // Silently fail - don't impact user experience
     if (config.debug) {
-      logger.warn('[Web Vitals] Failed to send metric:', error)
+      logger.warn('[Web Vitals] Failed to send metric:', undefined, error as Error)
     }
   }
 }
@@ -203,9 +203,7 @@ function reportMetric(metric: Metric): void {
   if (currentConfig.debug) {
     const emoji = webVitalMetric.rating === 'good' ? '✅' : webVitalMetric.rating === 'poor' ? '❌' : '⚠️'
     logger.info(
-      `[Web Vitals] ${emoji} ${webVitalMetric.name}:`,
-      Math.round(webVitalMetric.value * 1000) / 1000,
-      `(${webVitalMetric.rating})`
+      `[Web Vitals] ${emoji} ${webVitalMetric.name}: ${Math.round(webVitalMetric.value * 1000) / 1000} (${webVitalMetric.rating})`
     )
   }
 
@@ -281,7 +279,7 @@ export function initWebVitals(config?: Partial<WebVitalsConfig>): () => void {
   onINP(reportMetric)
 
   if (currentConfig.debug) {
-    logger.info('[Web Vitals] Initialized with config:', currentConfig)
+    logger.info('[Web Vitals] Initialized with config:', { config: JSON.stringify(currentConfig) })
   }
 
   // Return cleanup function

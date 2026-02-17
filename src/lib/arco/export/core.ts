@@ -96,7 +96,7 @@ async function fetchAppointments(userId: string): Promise<Array<Record<string, u
     .eq('patient_id', userId)
     .order('created_at', { ascending: false })
 
-  return (appointments || []).map(apt => ({
+  return (appointments || []).map((apt: any) => ({
     ...apt,
     doctor: apt.doctor ? {
       id: apt.doctor.id,

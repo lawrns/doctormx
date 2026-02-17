@@ -95,12 +95,14 @@ export async function sendFollowUp24hNotification(
     return { success: false, error: 'Appointment not found' }
   }
 
-  const patient = Array.isArray(appointment.patient)
-    ? appointment.patient[0]
-    : appointment.patient
-  const doctor = Array.isArray(appointment.doctor)
-    ? appointment.doctor[0]
-    : appointment.doctor
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const apt = appointment as any
+  const patient = Array.isArray(apt.patient)
+    ? apt.patient[0]
+    : apt.patient
+  const doctor = Array.isArray(apt.doctor)
+    ? apt.doctor[0]
+    : apt.doctor
   const doctorProfile = Array.isArray(doctor?.profile)
     ? doctor.profile[0]
     : doctor?.profile

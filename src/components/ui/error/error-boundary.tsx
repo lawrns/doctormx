@@ -159,7 +159,7 @@ export class AsyncErrorBoundary extends React.Component<
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     if (process.env.NODE_ENV === 'development') {
-      logger.error('AsyncErrorBoundary:', error, errorInfo)
+      logger.error('AsyncErrorBoundary:', { error: error.message, errorInfo })
     }
   }
 

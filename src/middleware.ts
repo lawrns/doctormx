@@ -140,7 +140,7 @@ async function logSecurityEvent(
     logger.info(`[Security] ${event}`, {
       path: request.nextUrl.pathname,
       method: request.method,
-      ip: request.ip || request.headers.get('x-forwarded-for'),
+      ip: (request as any).ip || request.headers.get('x-forwarded-for'),
       userAgent: request.headers.get('user-agent'),
       ...details
     })

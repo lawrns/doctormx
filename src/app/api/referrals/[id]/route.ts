@@ -50,10 +50,12 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     }
     
     // Check access
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const ref = referral as any
     if (
-      referral.referring_doctor_id !== user.id &&
-      referral.receiving_doctor_id !== user.id &&
-      referral.patient_id !== user.id
+      ref.referring_doctor_id !== user.id &&
+      ref.receiving_doctor_id !== user.id &&
+      ref.patient_id !== user.id
     ) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
     }

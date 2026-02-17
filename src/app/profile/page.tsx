@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import { User, Mail, Phone, Calendar, MapPin, Shield, Settings, LogOut, Camera } from 'lucide-react'
 import { logger } from '@/lib/observability/logger'
 import AppNavigation from '@/components/app/AppNavigation'
@@ -80,7 +81,7 @@ export default function ProfilePage() {
       })
 
       if (response.ok) {
-        setProfile((prev) => ({ ...prev, ...formData }))
+        setProfile((prev: any) => ({ ...prev, ...formData }))
         setEditing(false)
       } else {
         const data = await response.json()
@@ -396,7 +397,6 @@ export default function ProfilePage() {
 
           <a
             href="/auth/signout"
-            method="post"
             className="flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow"
           >
             <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">

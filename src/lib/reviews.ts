@@ -205,7 +205,8 @@ export async function getPatientReviewableAppointments(patientId: string): Promi
   }
 
   // Filter out appointments that already have reviews (done in-memory after single query)
-  const reviewableAppointments = ((appointments || []) as Array<AppointmentWithDoctor & { reviews?: Array<{ id: string }> | null }>)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const reviewableAppointments = ((appointments || []) as any as Array<AppointmentWithDoctor & { reviews?: Array<{ id: string }> | null }>)
     .filter(apt => !apt.reviews || apt.reviews.length === 0)
     .map(apt => ({
       id: apt.id,
