@@ -90,8 +90,9 @@ export function AppointmentFilters() {
               type="button"
               onClick={clearSearch}
               className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
+              aria-label="Limpiar búsqueda"
             >
-              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </button>
@@ -144,8 +145,8 @@ export function AppointmentFilters() {
           {currentSearch && (
             <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-800">
               Búsqueda: {currentSearch}
-              <button onClick={clearSearch} className="hover:text-blue-600">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <button onClick={clearSearch} className="hover:text-blue-600" aria-label="Eliminar filtro de búsqueda">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
               </button>
@@ -154,8 +155,8 @@ export function AppointmentFilters() {
           {currentStatus !== 'all' && (
             <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm bg-gray-100 text-gray-800">
               {statusOptions.find(o => o.value === currentStatus)?.label}
-              <button onClick={() => updateFilter('status', 'all')} className="hover:text-gray-600">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <button onClick={() => updateFilter('status', 'all')} className="hover:text-gray-600" aria-label="Eliminar filtro de estado">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
               </button>
@@ -164,8 +165,8 @@ export function AppointmentFilters() {
           {currentTime !== 'upcoming' && (
             <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm bg-gray-100 text-gray-800">
               {timeOptions.find(o => o.value === currentTime)?.label}
-              <button onClick={() => updateFilter('time', 'upcoming')} className="hover:text-gray-600">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <button onClick={() => updateFilter('time', 'upcoming')} className="hover:text-gray-600" aria-label="Eliminar filtro de período">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
               </button>
@@ -178,6 +179,7 @@ export function AppointmentFilters() {
               updateFilter('time', 'upcoming')
             }}
             className="text-sm text-blue-600 hover:text-blue-800 font-medium"
+            aria-label="Limpiar todos los filtros"
           >
             Limpiar filtros
           </button>

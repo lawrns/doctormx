@@ -138,22 +138,24 @@ export function SearchAssistant() {
             </p>
           </div>
 
-          <div className="grid gap-4">
+          <div className="grid gap-4" role="radiogroup" aria-label={currentQuestion.title}>
             {currentQuestion.options.map((option) => (
               <button
                 key={option.id}
                 onClick={() => handleOptionSelect(currentQuestion.id, option.value)}
                 className="group relative flex items-center p-6 bg-white border-2 border-neutral-100 rounded-2xl hover:border-blue-600 hover:shadow-xl hover:shadow-blue-600/5 transition-all duration-300 text-left"
+                role="radio"
+                aria-label={option.label}
               >
                 <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mr-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                  <option.icon className="w-6 h-6" />
+                  <option.icon className="w-6 h-6" aria-hidden="true" />
                 </div>
                 <div className="flex-1">
                   <span className="text-lg font-semibold text-neutral-900 group-hover:text-blue-600 transition-colors">
                     {option.label}
                   </span>
                 </div>
-                <div className="w-8 h-8 rounded-full bg-neutral-50 flex items-center justify-center group-hover:bg-blue-50 group-hover:text-blue-600 transition-all">
+                <div className="w-8 h-8 rounded-full bg-neutral-50 flex items-center justify-center group-hover:bg-blue-50 group-hover:text-blue-600 transition-all" aria-hidden="true">
                   <ArrowRight className="w-4 h-4" />
                 </div>
               </button>
@@ -164,6 +166,7 @@ export function SearchAssistant() {
             <button
               onClick={() => setCurrentStep(currentStep - 1)}
               className="mt-8 text-neutral-400 hover:text-neutral-600 font-medium flex items-center justify-center w-full transition-colors"
+              aria-label="Volver al paso anterior"
             >
               Volver al paso anterior
             </button>

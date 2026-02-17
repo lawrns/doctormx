@@ -73,8 +73,11 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
             <button
               onClick={() => setSidebarOpen(true)}
               className="lg:hidden p-2 -ml-2 rounded-md text-gray-600 hover:bg-gray-100"
+              aria-label="Abrir menú de navegación"
+              aria-expanded={sidebarOpen}
+              aria-controls="doctor-sidebar"
             >
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
@@ -99,13 +102,13 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
               <Link
                 href="/doctor/appointments?status=pending_payment"
                 className="relative p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
-                title="Citas pendientes"
+                aria-label={pendingAppointments > 0 ? `Citas pendientes: ${pendingAppointments}` : "Citas pendientes"}
               >
-                <svg className="w-5 h-5 lg:w-6 lg:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-5 h-5 lg:w-6 lg:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                 </svg>
                 {pendingAppointments > 0 && (
-                  <span className="absolute -top-1 -right-1 flex items-center justify-center min-w-[18px] h-[18px] px-1 text-xs font-bold text-white bg-red-500 rounded-full">
+                  <span className="absolute -top-1 -right-1 flex items-center justify-center min-w-[18px] h-[18px] px-1 text-xs font-bold text-white bg-red-500 rounded-full" aria-hidden="true">
                     {pendingAppointments > 99 ? '99+' : pendingAppointments}
                   </span>
                 )}
@@ -123,9 +126,9 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
             )}
             <span className="hidden md:inline text-sm text-gray-600">{profile.full_name}</span>
             <form action="/auth/signout" method="post">
-              <button type="submit" className="text-sm text-red-600 hover:text-red-700">
+              <button type="submit" className="text-sm text-red-600 hover:text-red-700" aria-label="Cerrar sesión">
                 <span className="hidden sm:inline">Cerrar sesión</span>
-                <svg className="w-5 h-5 sm:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-5 h-5 sm:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                 </svg>
               </button>
@@ -137,11 +140,13 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
       <div className="flex">
         {/* Sidebar - Mobile (slides in) */}
         <aside
+          id="doctor-sidebar"
           className={`
             fixed lg:static inset-y-0 left-0 z-50 w-64 bg-white border-r transform transition-transform duration-200 ease-in-out
             lg:transform-none lg:min-h-[calc(100vh-73px)]
             ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
           `}
+          aria-label="Navegación del doctor"
         >
           {/* Mobile sidebar header */}
           <div className="lg:hidden flex items-center justify-between p-4 border-b">
@@ -198,7 +203,7 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
           <div className="p-4 mt-8 border-t">
             <p className="text-xs font-medium text-gray-500 mb-2">¿Necesitas ayuda?</p>
             <a
-              href="mailto:soporte@doctory.com"
+              href="mailto:soporte@doctormx.com"
               className="flex items-center gap-2 text-sm text-blue-600 hover:text-blue-700"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

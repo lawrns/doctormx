@@ -273,8 +273,8 @@ export function MedicalDisclaimer({
           </p>
           <p>
             Si tiene preguntas sobre este aviso, contacte a{' '}
-            <a href="mailto:legal@doctor.mx" className="text-blue-600 hover:underline">
-              legal@doctor.mx
+            <a href="mailto:legal@doctormx.com" className="text-blue-600 hover:underline">
+              legal@doctormx.com
             </a>
           </p>
         </div>

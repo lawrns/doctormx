@@ -48,6 +48,8 @@ function SheetContent({
   className,
   children,
   side = "right",
+  onOpenAutoFocus,
+  onCloseAutoFocus,
   ...props
 }: React.ComponentProps<typeof SheetPrimitive.Content> & {
   side?: "top" | "right" | "bottom" | "left"
@@ -59,6 +61,7 @@ function SheetContent({
         data-slot="sheet-content"
         className={cn(
           "bg-background data-[state=open]:animate-in data-[state=closed]:animate-out fixed z-50 flex flex-col gap-4 shadow-lg transition ease-in-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
+          "focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background outline-none",
           side === "right" &&
             "data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right inset-y-0 right-0 h-full w-3/4 border-l sm:max-w-sm",
           side === "left" &&
@@ -69,10 +72,15 @@ function SheetContent({
             "data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom inset-x-0 bottom-0 h-auto border-t",
           className
         )}
+        onOpenAutoFocus={onOpenAutoFocus}
+        onCloseAutoFocus={onCloseAutoFocus}
         {...props}
       >
         {children}
-        <SheetPrimitive.Close className="ring-offset-background focus:ring-ring data-[state=open]:bg-secondary absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none">
+        <SheetPrimitive.Close 
+          className="ring-offset-background focus:ring-ring data-[state=open]:bg-secondary absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none"
+          aria-label="Cerrar panel"
+        >
           <XIcon className="size-4" />
           <span className="sr-only">Close</span>
         </SheetPrimitive.Close>

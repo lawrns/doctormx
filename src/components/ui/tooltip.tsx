@@ -29,9 +29,19 @@ function Tooltip({
 }
 
 function TooltipTrigger({
+  className,
   ...props
 }: React.ComponentProps<typeof TooltipPrimitive.Trigger>) {
-  return <TooltipPrimitive.Trigger data-slot="tooltip-trigger" {...props} />
+  return (
+    <TooltipPrimitive.Trigger 
+      data-slot="tooltip-trigger" 
+      className={cn(
+        "focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background outline-none",
+        className
+      )}
+      {...props} 
+    />
+  )
 }
 
 function TooltipContent({

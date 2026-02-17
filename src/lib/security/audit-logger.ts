@@ -209,7 +209,7 @@ export async function logClientSecurityEvent(
       })
   } catch (err) {
     // Client-side failures should not break the UI
-    console.error('Failed to log client security event:', err)
+    logger.error('Failed to log client security event', { error: err instanceof Error ? err.message : String(err) })
   }
 }
 

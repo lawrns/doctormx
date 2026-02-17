@@ -289,7 +289,7 @@ export default async function DoctorDashboard() {
                   Si tienes alguna duda sobre el proceso de verificación, contacta a nuestro equipo de soporte.
                 </p>
                 <a 
-                  href="mailto:soporte@doctor.mx?subject=Pregunta sobre verificación de perfil" 
+                  href="mailto:soporte@doctormx.com?subject=Pregunta sobre verificación de perfil" 
                   className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 font-medium mt-2"
                 >
                   Contactar soporte →

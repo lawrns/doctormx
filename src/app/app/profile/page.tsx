@@ -13,6 +13,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 // import { useToast } from '@/hooks/use-toast' - TODO: Implement toast hook
 import { Loader2, User, Phone, Calendar, Shield, Bell } from 'lucide-react'
 import AppNavigation from '@/components/app/AppNavigation'
+import { logger } from '@/lib/observability/logger'
 
 const profileSchema = z.object({
   full_name: z.string().min(2, 'El nombre debe tener al menos 2 caracteres'),
@@ -29,7 +30,7 @@ export default function ProfilePage() {
   const [saving, setSaving] = useState(false)
   // const { toast } = useToast()
   const toast = ({ title, description, variant }: { title: string, description?: string, variant?: string }) => {
-    console.log(`[Toast ${variant || 'info'}]: ${title} - ${description}`)
+    logger.info(`[Toast ${variant || 'info'}]: ${title} - ${description}`)
     alert(`${title}\n${description}`)
   }
   
@@ -51,7 +52,7 @@ export default function ProfilePage() {
           reset(data.profile)
         }
       } catch (error) {
-        console.error('Error loading profile:', error)
+        logger.error('Error loading profile', { error: error instanceof Error ? error.message : String(error) })
       } finally {
         setLoading(false)
       }

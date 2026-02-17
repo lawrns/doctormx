@@ -71,6 +71,7 @@ export function EmptyState({
           isUrgent ? "bg-red-100 text-red-500" :
           "bg-primary-50 text-primary-500"
         )}
+        aria-hidden="true"
       >
         {Icon ? <Icon className="w-8 h-8 sm:w-10 sm:h-10" /> : <Sparkles className="w-8 h-8 sm:w-10 sm:h-10" />}
       </motion.div>
@@ -109,14 +110,17 @@ export function EmptyState({
         {action && (
           action.href ? (
             <Link href={action.href}>
-              <Button className={cn(
-                "h-12 px-6 sm:px-8 rounded-xl font-semibold flex items-center gap-2 transition-all w-full sm:w-auto",
-                isAI ? "bg-blue-600 hover:bg-blue-500 text-white shadow-xl shadow-blue-600/20" : 
-                isUrgent ? "bg-red-600 hover:bg-red-500 text-white" :
-                "bg-primary-600 hover:bg-primary-700 text-white"
-              )}>
+              <Button 
+                className={cn(
+                  "h-12 px-6 sm:px-8 rounded-xl font-semibold flex items-center gap-2 transition-all w-full sm:w-auto",
+                  isAI ? "bg-blue-600 hover:bg-blue-500 text-white shadow-xl shadow-blue-600/20" : 
+                  isUrgent ? "bg-red-600 hover:bg-red-500 text-white" :
+                  "bg-primary-600 hover:bg-primary-700 text-white"
+                )}
+                aria-label={action.label}
+              >
                 {action.label}
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Button>
             </Link>
           ) : (
@@ -128,9 +132,10 @@ export function EmptyState({
                 isUrgent ? "bg-red-600 hover:bg-red-500 text-white" :
                 "bg-primary-600 hover:bg-primary-700 text-white"
               )}
+              aria-label={action.label}
             >
               {action.label}
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Button>
           )
         )}
@@ -138,11 +143,15 @@ export function EmptyState({
         {secondaryAction && (
           secondaryAction.href ? (
             <Link href={secondaryAction.href}>
-              <Button variant="outline" className={cn(
-                "h-12 px-6 sm:px-8 rounded-xl font-semibold border-neutral-200 hover:bg-neutral-50 transition-all w-full sm:w-auto",
-                isAI ? "border-white/10 text-white hover:bg-white/5" : "",
-                isUrgent ? "border-red-200 text-red-700 hover:bg-red-50" : ""
-              )}>
+              <Button 
+                variant="outline" 
+                className={cn(
+                  "h-12 px-6 sm:px-8 rounded-xl font-semibold border-neutral-200 hover:bg-neutral-50 transition-all w-full sm:w-auto",
+                  isAI ? "border-white/10 text-white hover:bg-white/5" : "",
+                  isUrgent ? "border-red-200 text-red-700 hover:bg-red-50" : ""
+                )}
+                aria-label={secondaryAction.label}
+              >
                 {secondaryAction.label}
               </Button>
             </Link>
@@ -155,6 +164,7 @@ export function EmptyState({
                 isAI ? "border-white/10 text-white hover:bg-white/5" : "",
                 isUrgent ? "border-red-200 text-red-700 hover:bg-red-50" : ""
               )}
+              aria-label={secondaryAction.label}
             >
               {secondaryAction.label}
             </Button>

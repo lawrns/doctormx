@@ -1,13 +1,84 @@
 import type { NextConfig } from "next";
 
+// Bundle analyzer - only enabled when ANALYZE=true
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
+
 const nextConfig: NextConfig = {
-  reactCompiler: false,
+  reactCompiler: true,
   output: 'standalone',
+  // Bundle optimization settings
+  webpack: (config, { isServer }) => {
+    // Optimize chunk splitting for client bundles
+    if (!isServer) {
+      config.optimization = {
+        ...config.optimization,
+        splitChunks: {
+          chunks: 'all',
+          cacheGroups: {
+            // Vendor chunk for node_modules
+            vendor: {
+              test: /[\\/]node_modules[\\/]/,
+              name: 'vendors',
+              chunks: 'all',
+              priority: 10,
+            },
+            // Separate chunk for heavy animation libraries
+            framerMotion: {
+              test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
+              name: 'framer-motion',
+              chunks: 'all',
+              priority: 20,
+            },
+            // Separate chunk for chart libraries
+            recharts: {
+              test: /[\\/]node_modules[\\/]recharts[\\/]/,
+              name: 'recharts',
+              chunks: 'all',
+              priority: 20,
+            },
+            // Separate chunk for PDF libraries (client-side only)
+            pdfkit: {
+              test: /[\\/]node_modules[\\/]pdfkit[\\/]/,
+              name: 'pdfkit',
+              chunks: 'all',
+              priority: 20,
+            },
+            // Separate chunk for AI/ML libraries
+            ai: {
+              test: /[\\/]node_modules[\\/](@anthropic-ai|openai|@xstate)[\\/]/,
+              name: 'ai-libraries',
+              chunks: 'all',
+              priority: 15,
+            },
+            // Common UI components
+            ui: {
+              test: /[\\/]src[\\/]components[\\/]ui[\\/]/,
+              name: 'ui-components',
+              chunks: 'all',
+              priority: 5,
+            },
+          },
+        },
+      };
+    }
+    return config;
+  },
+  // Turbopack configuration
+  turbopack: {},
   // Skip prerendering for routes that require dynamic data
   experimental: {
     serverActions: {
       bodySizeLimit: '2mb',
     },
+    // Optimize package imports for common libraries
+    optimizePackageImports: [
+      'lucide-react',
+      'framer-motion',
+      'recharts',
+      '@radix-ui/react-icons',
+    ],
   },
   images: {
     remotePatterns: [
@@ -99,4 +170,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withBundleAnalyzer(nextConfig);

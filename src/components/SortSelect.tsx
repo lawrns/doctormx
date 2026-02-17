@@ -39,8 +39,9 @@ export function SortSelect({ defaultValue, currentParams }: SortSelectProps) {
         const url = `/doctores${buildQueryString({ sortBy: value })}`
         window.location.href = url
       }}
+      aria-label="Ordenar resultados por"
     >
-      <SelectTrigger className="w-[160px]">
+      <SelectTrigger className="w-[160px]" aria-label="Seleccionar criterio de ordenamiento">
         <SelectValue placeholder="Ordenar por" />
       </SelectTrigger>
       <SelectContent>

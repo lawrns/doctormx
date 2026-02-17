@@ -36,6 +36,7 @@ export function WhatsAppShare({
       <Button
         onClick={handleShare}
         className="group relative bg-green-500 hover:bg-green-600 text-white font-medium shadow-lg shadow-green-500/30 transition-all"
+        aria-label={copied ? "¡Compartido!" : title}
       >
         <AnimatePresence mode="wait">
           {copied ? (
@@ -46,7 +47,7 @@ export function WhatsAppShare({
               exit={{ opacity: 0, scale: 0.8 }}
               className="flex items-center gap-2"
             >
-              <Check className="w-4 h-4" />
+              <Check className="w-4 h-4" aria-hidden="true" />
               ¡Compartido!
             </motion.div>
           ) : (
@@ -57,7 +58,7 @@ export function WhatsAppShare({
               exit={{ opacity: 0, scale: 0.8 }}
               className="flex items-center gap-2"
             >
-              <MessageCircle className="w-4 h-4" />
+              <MessageCircle className="w-4 h-4" aria-hidden="true" />
               {title}
             </motion.div>
           )}
@@ -105,7 +106,7 @@ export function WhatsAppShareCard({
             Comparte tu resultado con familiares o amigos en WhatsApp
           </p>
         </div>
-        <Share2 className="w-8 h-8 text-green-500" />
+        <Share2 className="w-8 h-8 text-green-500" aria-hidden="true" />
       </div>
 
       <div className="bg-white rounded-xl p-4 mb-4 border border-green-100">

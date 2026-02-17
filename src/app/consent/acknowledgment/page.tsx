@@ -11,6 +11,7 @@
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import { MedicalDisclaimer } from '@/components/legal/MedicalDisclaimer'
+import { logger } from '@/lib/observability/logger'
 
 /**
  * Check if user has already acknowledged the medical disclaimer
@@ -27,7 +28,7 @@ async function hasAcknowledgedDisclaimer(userId: string): Promise<boolean> {
     .maybeSingle()
 
   if (error) {
-    console.error('Error checking disclaimer acknowledgment:', error)
+    logger.error('Error checking disclaimer acknowledgment', { error: error.message })
     return false
   }
 
@@ -51,7 +52,7 @@ async function getLatestAIConsentVersion(): Promise<string | null> {
     .maybeSingle()
 
   if (error) {
-    console.error('Error fetching consent version:', error)
+    logger.error('Error fetching consent version', { error: error.message })
     return null
   }
 
@@ -82,7 +83,7 @@ async function createDefaultAIConsentVersion(adminId: string): Promise<string | 
     .single()
 
   if (error) {
-    console.error('Error creating consent version:', error)
+    logger.error('Error creating consent version', { error: error.message })
     return null
   }
 
@@ -152,7 +153,7 @@ async function storeAcknowledgment(
         .eq('id', existingRecord.id)
 
       if (error) {
-        console.error('Error updating acknowledgment:', error)
+        logger.error('Error updating acknowledgment', { error: error.message })
         return { success: false, error: error.message }
       }
     } else {
@@ -176,7 +177,7 @@ async function storeAcknowledgment(
         })
 
       if (error) {
-        console.error('Error storing acknowledgment:', error)
+        logger.error('Error storing acknowledgment', { error: error.message })
         return { success: false, error: error.message }
       }
     }
@@ -204,16 +205,17 @@ async function storeAcknowledgment(
       })
 
     if (auditError) {
-      console.error('Error logging to audit:', auditError)
+      logger.error('Error logging to audit', { error: auditError.message })
       // Don't fail the operation if audit logging fails
     }
 
     return { success: true }
   } catch (error) {
-    console.error('Unexpected error storing acknowledgment:', error)
+    const errorMessage = error instanceof Error ? error.message : 'Error desconocido'
+    logger.error('Unexpected error storing acknowledgment', { error: errorMessage })
     return { 
       success: false, 
-      error: error instanceof Error ? error.message : 'Error desconocido' 
+      error: errorMessage 
     }
   }
 }

@@ -44,14 +44,16 @@ export function CookieConsent() {
             <button
               onClick={handleReject}
               className="flex-1 sm:flex-none px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+              aria-label="Aceptar solo cookies esenciales"
             >
               Solo esenciales
             </button>
             <button
               onClick={handleAccept}
               className="flex-1 sm:flex-none px-4 py-2 text-sm bg-blue-600 text-white hover:bg-blue-700 rounded-lg flex items-center justify-center gap-2 transition-colors"
+              aria-label="Aceptar todas las cookies"
             >
-              <Shield className="w-4 h-4" />
+              <Shield className="w-4 h-4" aria-hidden="true" />
               Aceptar todas
             </button>
           </div>

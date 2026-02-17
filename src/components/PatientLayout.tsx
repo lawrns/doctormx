@@ -176,7 +176,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
       </header>
 
       {/* Sidebar - Desktop (always visible) */}
-      <aside className="hidden lg:flex flex-col w-64 bg-white border-r border-gray-200 h-screen sticky top-0">
+      <aside className="hidden lg:flex flex-col w-64 bg-white border-r border-gray-200 h-screen sticky top-0" aria-label="Navegación del paciente">
         <div className="p-6 border-b border-gray-100">
           <Link href="/" className="flex items-center gap-2.5">
             <div className="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center shadow-sm">
@@ -187,10 +187,15 @@ export function PatientLayout({ children }: PatientLayoutProps) {
             <span className="text-xl font-bold text-gray-900">Doctor.mx</span>
           </Link>
         </div>
-        <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
+        <nav className="flex-1 p-4 space-y-1 overflow-y-auto" aria-label="Menú principal">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${item.highlight && isActive(item.href) ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg' : isActive(item.href) ? 'bg-gray-100 text-gray-900 font-medium' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}`}>
-              <item.icon className="w-5 h-5" />
+            <Link 
+              key={item.href} 
+              href={item.href} 
+              className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${item.highlight && isActive(item.href) ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg' : isActive(item.href) ? 'bg-gray-100 text-gray-900 font-medium' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}`}
+              aria-current={isActive(item.href) ? 'page' : undefined}
+            >
+              <item.icon className="w-5 h-5" aria-hidden="true" />
               <span className="flex-1">{item.label}</span>
               {item.badge?.dot && (
                 <span className={`w-2 h-2 rounded-full ${item.badge.color || 'bg-red-500'}`} />
@@ -225,10 +230,12 @@ export function PatientLayout({ children }: PatientLayoutProps) {
 
       {/* Mobile Sidebar (slides in) */}
       <aside
+        id="patient-sidebar"
         className={`
           fixed lg:hidden inset-y-0 left-0 z-50 w-72 bg-white border-r transform transition-transform duration-200 ease-in-out
           ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}
         `}
+        aria-label="Navegación del paciente"
       >
         {/* Mobile sidebar header */}
         <div className="flex items-center justify-between p-4 border-b">
@@ -249,15 +256,16 @@ export function PatientLayout({ children }: PatientLayoutProps) {
           </button>
         </div>
 
-        <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
+        <nav className="flex-1 p-4 space-y-1 overflow-y-auto" aria-label="Menú principal">
           {navItems.map((item) => (
             <Link 
               key={item.href} 
               href={item.href} 
               onClick={() => setMobileMenuOpen(false)}
               className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${item.highlight && isActive(item.href) ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg' : isActive(item.href) ? 'bg-gray-100 text-gray-900 font-medium' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}`}
+              aria-current={isActive(item.href) ? 'page' : undefined}
             >
-              <item.icon className="w-5 h-5" />
+              <item.icon className="w-5 h-5" aria-hidden="true" />
               <span className="flex-1">{item.label}</span>
               {item.badge?.dot && (
                 <span className={`w-2 h-2 rounded-full ${item.badge.color || 'bg-red-500'}`} />

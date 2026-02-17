@@ -162,11 +162,12 @@ export function AvatarUpload({
           className={`absolute bottom-0 right-0 ${buttonSizeClasses[size]} rounded-full shadow-md hover:shadow-lg transition-shadow`}
           onClick={triggerFileInput}
           disabled={isUploading}
+          aria-label={isUploading ? "Subiendo foto de perfil..." : "Cambiar foto de perfil"}
         >
           {isUploading ? (
-            <Loader2 className={`${iconSizeClasses[size]} animate-spin`} />
+            <Loader2 className={`${iconSizeClasses[size]} animate-spin`} aria-hidden="true" />
           ) : (
-            <Camera className={iconSizeClasses[size]} />
+            <Camera className={iconSizeClasses[size]} aria-hidden="true" />
           )}
         </Button>
 
@@ -178,8 +179,9 @@ export function AvatarUpload({
             size="icon"
             className={`absolute top-0 right-0 ${buttonSizeClasses[size]} rounded-full shadow-md opacity-0 hover:opacity-100 focus:opacity-100 transition-opacity group-hover:opacity-100`}
             onClick={handleRemove}
+            aria-label="Eliminar foto de perfil"
           >
-            <X className={iconSizeClasses[size]} />
+            <X className={iconSizeClasses[size]} aria-hidden="true" />
           </Button>
         )}
       </div>
@@ -191,6 +193,7 @@ export function AvatarUpload({
         accept="image/*"
         onChange={handleFileSelect}
         className="hidden"
+        aria-label="Seleccionar archivo de imagen"
       />
 
       {/* Helper text */}

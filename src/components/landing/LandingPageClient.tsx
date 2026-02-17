@@ -2,15 +2,38 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import dynamic from 'next/dynamic'
 import { Button } from '@/components/ui/button'
 import { HeroSection } from './HeroSection'
-import DrSimeonShowcase from './DrSimeonShowcase'
-import { StatsSection } from './StatsSection'
 import { FeaturesSection } from './FeaturesSection'
-import { TestimonialsSection } from './TestimonialsSection'
 import { CTASection } from './CTASection'
 import { TrustFooter } from '@/components/TrustSignals'
 import { Stethoscope, Search, UserPlus, Sparkles, ShieldCheck } from 'lucide-react'
+import { Suspense } from 'react'
+
+// Dynamically import heavy sections that use framer-motion extensively
+// This splits the landing page bundle and improves initial load time
+const DrSimeonShowcase = dynamic(() => import('./DrSimeonShowcase'), {
+  ssr: false,
+  loading: () => (
+    <div className="h-[600px] bg-gradient-to-b from-[#fdfaf6] to-[#f9f7f4] animate-pulse flex items-center justify-center">
+      <div className="text-center">
+        <div className="w-16 h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mx-auto mb-4" />
+        <p className="text-gray-500">Cargando demo interactivo...</p>
+      </div>
+    </div>
+  ),
+})
+
+const StatsSection = dynamic(() => import('./StatsSection').then(mod => ({ default: mod.StatsSection })), {
+  ssr: false,
+  loading: () => <div className="h-96 bg-gradient-to-b from-neutral-0 to-neutral-50 animate-pulse" />,
+})
+
+const TestimonialsSection = dynamic(() => import('./TestimonialsSection').then(mod => ({ default: mod.TestimonialsSection })), {
+  ssr: false,
+  loading: () => <div className="h-96 bg-gradient-to-b from-neutral-50 to-neutral-0 animate-pulse" />,
+})
 
 export function LandingPageClient() {
   return (
@@ -96,12 +119,30 @@ export function LandingPageClient() {
         </div>
       </motion.header>
 
-      {/* Page Sections */}
+      {/* Page Sections - Critical sections loaded immediately */}
       <HeroSection />
-      <DrSimeonShowcase />
-      <StatsSection />
+      
+      {/* Heavy sections loaded dynamically */}
+      <Suspense fallback={
+        <div className="h-[600px] bg-gradient-to-b from-[#fdfaf6] to-[#f9f7f4] animate-pulse" />
+      }>
+        <DrSimeonShowcase />
+      </Suspense>
+      
+      <Suspense fallback={
+        <div className="h-96 bg-gradient-to-b from-neutral-0 to-neutral-50 animate-pulse" />
+      }>
+        <StatsSection />
+      </Suspense>
+      
       <FeaturesSection />
-      <TestimonialsSection />
+      
+      <Suspense fallback={
+        <div className="h-96 bg-gradient-to-b from-neutral-50 to-neutral-0 animate-pulse" />
+      }>
+        <TestimonialsSection />
+      </Suspense>
+      
       <CTASection />
 
       {/* Trust & Credibility Signals */}

@@ -428,7 +428,7 @@ export default function PricingPage() {
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <a
-                                href="mailto:doctores@doctor.mx"
+                                href="mailto:contacto@doctormx.com"
                                 className="flex items-center gap-2 bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition"
                             >
                                 <PhoneIcon />

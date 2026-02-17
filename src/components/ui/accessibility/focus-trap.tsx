@@ -28,7 +28,7 @@ import { logger } from '@/lib/observability/logger'
 
 export type FocusableElement = HTMLElement | SVGElement
 
-interface FocusTrapOptions {
+export interface FocusTrapOptions {
   /**
    * Ref to the container element
    */

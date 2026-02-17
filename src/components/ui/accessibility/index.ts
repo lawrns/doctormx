@@ -10,7 +10,7 @@
  */
 
 export { SkipLink, MainContent, SkipLinks } from './skip-link'
-export { useFocusTrap, FocusTrap, useStackableFocusTrap } from './focus-trap'
+export { useFocusTrap, FocusTrap, useStackableFocusTrap, type FocusableElement, type FocusTrapOptions } from './focus-trap'
 export {
   LiveRegion,
   useLiveRegion,
@@ -20,3 +20,6 @@ export {
   useGlobalLiveRegion,
   type LiveRegionRole,
 } from './live-region'
+
+// Re-export for convenience
+export { useReducedMotion, useMotionVariants } from '@/hooks/useReducedMotion'

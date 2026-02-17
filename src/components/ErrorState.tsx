@@ -34,6 +34,7 @@ export function ErrorState({
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         className="w-20 h-20 bg-rose-50 rounded-full flex items-center justify-center mb-6 text-rose-500"
+        aria-hidden="true"
       >
         <Icon className="w-10 h-10" />
       </motion.div>
@@ -72,8 +73,8 @@ export function ErrorState({
         {action && (
           action.href ? (
             <Link href={action.href}>
-              <Button className="bg-primary-600 hover:bg-primary-700 text-white min-w-[160px] h-12 rounded-xl flex items-center gap-2">
-                <RefreshCw className="w-4 h-4" />
+              <Button className="bg-primary-600 hover:bg-primary-700 text-white min-w-[160px] h-12 rounded-xl flex items-center gap-2" aria-label={action.label}>
+                <RefreshCw className="w-4 h-4" aria-hidden="true" />
                 {action.label}
               </Button>
             </Link>
@@ -81,8 +82,9 @@ export function ErrorState({
             <Button
               onClick={action.onClick}
               className="bg-primary-600 hover:bg-primary-700 text-white min-w-[160px] h-12 rounded-xl flex items-center gap-2"
+              aria-label={action.label}
             >
-              <RefreshCw className="w-4 h-4" />
+              <RefreshCw className="w-4 h-4" aria-hidden="true" />
               {action.label}
             </Button>
           )
@@ -90,8 +92,8 @@ export function ErrorState({
 
         {showHome && (
           <Link href="/">
-            <Button variant="outline" className="min-w-[160px] h-12 rounded-xl flex items-center gap-2 border-neutral-200 hover:bg-neutral-50">
-              <Home className="w-4 h-4" />
+            <Button variant="outline" className="min-w-[160px] h-12 rounded-xl flex items-center gap-2 border-neutral-200 hover:bg-neutral-50" aria-label="Ir al inicio">
+              <Home className="w-4 h-4" aria-hidden="true" />
               Ir al inicio
             </Button>
           </Link>

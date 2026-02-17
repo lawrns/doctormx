@@ -5,6 +5,9 @@
  * 1. Branded types for entity IDs
  * 2. Discriminated union error handling
  * 3. Database types with proper relations
+ * 
+ * NOTE: This is example/demonstration code. Console statements are intentional
+ * for educational purposes and should not be used in production code.
  */
 
 import {

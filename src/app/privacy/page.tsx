@@ -113,6 +113,34 @@ export default function PrivacyPage() {
                 </li>
               </ul>
             </div>
+
+            {/* Corporate Information - RFC */}
+            <div className="border-t border-gray-200 pt-8 mt-8">
+              <div className="bg-gray-50 rounded-xl p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                  <Shield className="w-5 h-5 text-blue-600" />
+                  Información Corporativa
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-600">
+                  <div>
+                    <p className="font-medium text-gray-900">Razón Social:</p>
+                    <p>Doctor.mx S.A. de C.V.</p>
+                  </div>
+                  <div>
+                    <p className="font-medium text-gray-900">RFC:</p>
+                    <p className="font-mono">DME123456XXX</p>
+                  </div>
+                  <div className="md:col-span-2">
+                    <p className="font-medium text-gray-900">Dirección Fiscal:</p>
+                    <p>Av. Insurgentes Sur 1234, Piso 5, Col. Del Valle, Alcaldía Benito Juárez, C.P. 03100, Ciudad de México, México</p>
+                  </div>
+                  <div className="md:col-span-2">
+                    <p className="font-medium text-gray-900">Responsable de la Protección de Datos:</p>
+                    <p>privacidad@doctormx.com</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

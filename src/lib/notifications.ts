@@ -6,8 +6,8 @@ import { format } from 'date-fns'
 import { es } from 'date-fns/locale'
 import { logger } from '@/lib/observability/logger'
 
-const FROM_EMAIL = 'Doctor.mx <noreply@doctory.com.mx>'
-const SUPPORT_EMAIL = 'soporte@doctory.com.mx'
+const FROM_EMAIL = 'Doctor.mx <noreply@doctormx.com>'
+const SUPPORT_EMAIL = 'soporte@doctormx.com'
 
 // Lazy initialization of Resend client
 let resend: Resend | null = null

@@ -76,13 +76,16 @@ export default function AppNavigation({ currentPage = '/' }: AppNavigationProps)
                 </div>
               </div>
 
-              <button className="relative p-2 rounded-full hover:bg-gray-100 transition-colors">
+              <button 
+                className="relative p-2 rounded-full hover:bg-gray-100 transition-colors"
+                aria-label="Configuración"
+              >
                 {userData.unreadCount > 0 && (
-                  <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-xs font-bold text-white">
+                  <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-xs font-bold text-white" aria-hidden="true">
                     {userData.unreadCount}
                   </span>
                 )}
-                <Settings className="w-5 h-5 text-gray-600" />
+                <Settings className="w-5 h-5 text-gray-600" aria-hidden="true" />
               </button>
             </div>
           ) : (
@@ -98,7 +101,7 @@ export default function AppNavigation({ currentPage = '/' }: AppNavigationProps)
         </div>
 
         {/* Navegación principal - links principales */}
-        <div className="hidden md:flex items-center gap-6 lg:gap-8">
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8" aria-label="Navegación principal">
           {mainNav.map((item) => (
             <Link
               key={item.href}
@@ -108,17 +111,18 @@ export default function AppNavigation({ currentPage = '/' }: AppNavigationProps)
                   ? 'bg-primary-50 text-primary-700 border-primary-500'
                   : 'text-gray-700 hover:bg-gray-50 border-transparent'
               }`}
+              aria-current={currentPage === item.href ? 'page' : undefined}
             >
-              <item.icon className="w-5 h-5" />
+              <item.icon className="w-5 h-5" aria-hidden="true" />
               <span>{item.label}</span>
               {item.badge && (
-                <span className="ml-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs font-bold text-white">
+                <span className="ml-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs font-bold text-white" aria-hidden="true">
                   {item.badge}
                 </span>
               )}
             </Link>
           ))}
-        </div>
+        </nav>
 
         {/* Acciones rápidas */}
         <div className="flex items-center gap-3">
@@ -140,9 +144,11 @@ export default function AppNavigation({ currentPage = '/' }: AppNavigationProps)
         {/* Menú móvil - hamburguesa */}
         <button
           className="md:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100"
-          aria-label="Abrir menú"
+          aria-label="Abrir menú de navegación"
+          aria-expanded="false"
+          aria-controls="mobile-navigation-menu"
         >
-          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>

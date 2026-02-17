@@ -109,12 +109,14 @@ export function Header({ variant = 'default', showAuth = true }: HeaderProps) {
             <SheetTrigger asChild>
               <button 
                 className="md:hidden p-2 text-gray-600 hover:text-gray-900"
-                aria-label="Abrir menú"
+                aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+                aria-expanded={mobileMenuOpen}
+                aria-controls="mobile-menu"
               >
-                <Menu className="w-6 h-6" />
+                <Menu className="w-6 h-6" aria-hidden="true" />
               </button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[350px]">
+            <SheetContent side="right" className="w-[300px] sm:w-[350px]" id="mobile-menu">
               <SheetHeader>
                 <SheetTitle className="flex items-center gap-2">
                   <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">

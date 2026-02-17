@@ -73,11 +73,13 @@ export function AnalyticsFilters({
     <div className={clsx('bg-white rounded-xl border border-gray-200 p-4', className)}>
       <div className="flex flex-wrap items-center gap-4">
         <div className="flex items-center gap-2">
-          <span className="text-sm font-medium text-gray-700">Período:</span>
+          <label htmlFor="period-select" className="text-sm font-medium text-gray-700">Período:</label>
           <select
+            id="period-select"
             value={selectedPreset}
             onChange={(e) => handlePresetChange(e.target.value)}
             className="px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+            aria-label="Seleccionar período"
           >
             {PRESETS.map(preset => (
               <option key={preset.value} value={preset.value}>
@@ -89,22 +91,29 @@ export function AnalyticsFilters({
 
         {(selectedPreset === 'custom' || PRESETS.find(p => p.value === selectedPreset)?.days === 0) && (
           <div className="flex items-center gap-2">
+            <label htmlFor="custom-start" className="sr-only">Fecha de inicio</label>
             <input
+              id="custom-start"
               type="date"
               value={customStart}
               onChange={(e) => setCustomStart(e.target.value)}
               className="px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              aria-label="Fecha de inicio"
             />
             <span className="text-gray-500">a</span>
+            <label htmlFor="custom-end" className="sr-only">Fecha de fin</label>
             <input
+              id="custom-end"
               type="date"
               value={customEnd}
               onChange={(e) => setCustomEnd(e.target.value)}
               className="px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              aria-label="Fecha de fin"
             />
             <button
               onClick={handleCustomRange}
               className="px-3 py-2 text-sm bg-primary-600 text-white rounded-lg hover:bg-primary-700"
+              aria-label="Aplicar rango de fechas personalizado"
             >
               Aplicar
             </button>
@@ -113,14 +122,16 @@ export function AnalyticsFilters({
 
         {specialties.length > 0 && (
           <div className="flex items-center gap-2">
-            <span className="text-sm font-medium text-gray-700">Especialidad:</span>
+            <label htmlFor="specialty-select" className="text-sm font-medium text-gray-700">Especialidad:</label>
             <select
+              id="specialty-select"
               value={selectedSpecialty}
               onChange={(e) => {
                 setSelectedSpecialty(e.target.value)
                 onSpecialtyChange?.(e.target.value)
               }}
               className="px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              aria-label="Filtrar por especialidad"
             >
               <option value="">Todas</option>
               {specialties.map(specialty => (
@@ -134,14 +145,16 @@ export function AnalyticsFilters({
 
         {cities.length > 0 && (
           <div className="flex items-center gap-2">
-            <span className="text-sm font-medium text-gray-700">Ciudad:</span>
+            <label htmlFor="city-select" className="text-sm font-medium text-gray-700">Ciudad:</label>
             <select
+              id="city-select"
               value={selectedCity}
               onChange={(e) => {
                 setSelectedCity(e.target.value)
                 onCityChange?.(e.target.value)
               }}
               className="px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              aria-label="Filtrar por ciudad"
             >
               <option value="">Todas</option>
               {cities.map(city => (
@@ -162,8 +175,9 @@ export function ExportButton({ onExport }: { onExport: () => void }) {
     <button
       onClick={onExport}
       className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50"
+      aria-label="Exportar datos"
     >
-      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
       </svg>
       Exportar

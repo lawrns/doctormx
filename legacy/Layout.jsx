@@ -423,7 +423,7 @@ export default function Layout({ children, variant = 'app' }) {
                   </Link>
                 </li>
                 <li>
-                  <a href="mailto:doctors@doctor.mx" className="text-neutral-400 hover:text-white transition-colors">
+                  <a href="mailto:contacto@doctormx.com" className="text-neutral-400 hover:text-white transition-colors">
                     Contactar
                   </a>
                 </li>
@@ -445,7 +445,7 @@ export default function Layout({ children, variant = 'app' }) {
                   </Link>
                 </li>
                 <li>
-                  <a href="mailto:support@doctor.mx" className="text-neutral-400 hover:text-white transition-colors">
+                  <a href="mailto:soporte@doctormx.com" className="text-neutral-400 hover:text-white transition-colors">
                     Soporte
                   </a>
                 </li>

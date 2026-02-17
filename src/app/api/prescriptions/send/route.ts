@@ -142,7 +142,7 @@ export async function POST(request: NextRequest) {
                       Guarda este documento en un lugar seguro. Si tienes alguna pregunta sobre tu tratamiento, no dudes en contactar a tu médico.
                     </p>
                     <p style="margin: 0; color: #6b7280; font-size: 14px; line-height: 1.5;">
-                      ¿Tienes preguntas? Contáctanos en <a href="mailto:soporte@doctory.com.mx" style="color: #0066cc; text-decoration: none;">soporte@doctory.com.mx</a>
+                      ¿Tienes preguntas? Contáctanos en <a href="mailto:soporte@doctormx.com" style="color: #0066cc; text-decoration: none;">soporte@doctormx.com</a>
                     </p>
                   </td>
                 </tr>
@@ -169,7 +169,7 @@ export async function POST(request: NextRequest) {
       // Continue without sending email
     } else {
       const emailResult = await client.emails.send({
-        from: 'Doctor.mx <noreply@doctory.com.mx>',
+        from: 'Doctor.mx <noreply@doctormx.com>',
         to: [patientEmail],
         subject: 'Tu Receta Médica - Doctor.mx',
         html: emailHtml,

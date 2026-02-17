@@ -73,7 +73,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                    <p className="text-gray-600">soporte@doctor.mx</p>
+                    <p className="text-gray-600">soporte@doctormx.com</p>
                     <p className="text-sm text-gray-400 mt-1">Respuesta en 24 horas</p>
                   </div>
                 </div>

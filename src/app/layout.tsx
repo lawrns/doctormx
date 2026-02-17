@@ -4,7 +4,7 @@ import "./globals.css";
 import { ToastProvider } from "@/components/Toast";
 import { StructuredData } from "@/components/StructuredData";
 import { WebVitalsProvider } from "@/components/performance/WebVitalsProvider";
-import { SkipLink } from "@/components/ui/accessibility";
+import { SkipLink } from "@/components/ui/skip-link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
