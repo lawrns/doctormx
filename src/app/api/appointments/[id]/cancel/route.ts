@@ -1,12 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { requireRole } from '@/lib/auth'
 import { logger } from '@/lib/observability/logger'
+import { validateCSRFToken, getCSRFCookie, createCSRFErrorResponse } from '@/lib/csrf'
 
 export async function POST(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    // Validate CSRF token
+    const csrfToken = getCSRFCookie(request)
+    const csrfResult = validateCSRFToken(request, csrfToken || '', true)
+    if (typeof csrfResult === 'object' && !csrfResult.valid) {
+      return createCSRFErrorResponse(csrfResult)
+    }
+    
     const { user, supabase } = await requireRole('patient')
     const { id: appointmentId } = await params
     
