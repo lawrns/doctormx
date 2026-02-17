@@ -485,15 +485,30 @@ export function createMockRequest(
   
   // Create headers
   const requestHeaders = new Headers(headers)
-  if (body && !requestHeaders.has('content-type')) {
-    requestHeaders.set('content-type', 'application/json')
+  
+  // Handle body based on type
+  let requestBody: BodyInit | undefined
+  if (body) {
+    // Check if body is FormData (using constructor name for cross-environment compatibility)
+    const isFormData = body && typeof body === 'object' && 
+      (body instanceof FormData || body.constructor?.name === 'FormData' || typeof (body as FormData).append === 'function')
+    
+    if (isFormData) {
+      // FormData is handled directly, don't set content-type (browser sets it with boundary)
+      requestBody = body as FormData
+    } else if (!requestHeaders.has('content-type')) {
+      requestHeaders.set('content-type', 'application/json')
+      requestBody = JSON.stringify(body)
+    } else {
+      requestBody = JSON.stringify(body)
+    }
   }
   
   // Create request
   const request = new NextRequest(new URL(url, 'http://localhost'), {
     method,
     headers: requestHeaders,
-    body: body ? JSON.stringify(body) : undefined,
+    body: requestBody,
   })
   
   // Mock cookies

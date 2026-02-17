@@ -36,6 +36,14 @@ vi.mock('@/lib/observability/logger', () => ({
 const { POST: verifyDoctor } = await import('@/app/api/admin/verify-doctor/route')
 const { GET: aiMetrics } = await import('@/app/api/admin/ai/metrics/route')
 
+// Helper to create FormData body for verify-doctor requests
+function createVerifyDoctorBody(doctorId: string, action: string): FormData {
+  const formData = new FormData()
+  formData.append('doctorId', doctorId)
+  formData.append('action', action)
+  return formData
+}
+
 describe('SECURITY: /api/admin/*', () => {
   beforeEach(() => {
     resetMocks()
@@ -53,7 +61,7 @@ describe('SECURITY: /api/admin/*', () => {
       
       const request = createMockRequest('http://localhost/api/admin/verify-doctor', {
         method: 'POST',
-        body: { doctorId: 'doc-123', action: 'approve' },
+        body: createVerifyDoctorBody('doc-123', 'approve'),
       })
       
       const response = await verifyDoctor(request)
@@ -92,7 +100,7 @@ describe('SECURITY: /api/admin/*', () => {
     it('returns 403 when patient tries to access admin endpoint', async () => {
       const { request } = createAuthenticatedRequest('http://localhost/api/admin/verify-doctor', {
         method: 'POST',
-        body: { doctorId: 'doc-123', action: 'approve' },
+        body: createVerifyDoctorBody('doc-123', 'approve'),
         user: mockUsers.patient,
       })
       
@@ -106,7 +114,7 @@ describe('SECURITY: /api/admin/*', () => {
     it('returns 403 when doctor tries to access admin endpoint', async () => {
       const { request } = createAuthenticatedRequest('http://localhost/api/admin/verify-doctor', {
         method: 'POST',
-        body: { doctorId: 'doc-123', action: 'approve' },
+        body: createVerifyDoctorBody('doc-123', 'approve'),
         user: mockUsers.doctor,
       })
       
@@ -120,7 +128,7 @@ describe('SECURITY: /api/admin/*', () => {
     it('returns 200 when admin accesses admin endpoint', async () => {
       const { request } = createAuthenticatedRequest('http://localhost/api/admin/verify-doctor', {
         method: 'POST',
-        body: { doctorId: 'doc-123', action: 'approve' },
+        body: createVerifyDoctorBody('doc-123', 'approve'),
         user: mockUsers.admin,
       })
       
@@ -174,7 +182,7 @@ describe('SECURITY: /api/admin/*', () => {
       
       const request = createMockRequest('http://localhost/api/admin/verify-doctor', {
         method: 'POST',
-        body: { doctorId: 'doc-123', action: 'approve' },
+        body: createVerifyDoctorBody('doc-123', 'approve'),
         cookies: { 'sb-access-token': 'test' },
         // No CSRF token
       })
@@ -193,7 +201,7 @@ describe('SECURITY: /api/admin/*', () => {
     it('accepts POST with valid CSRF token', async () => {
       const { request } = createAuthenticatedRequest('http://localhost/api/admin/verify-doctor', {
         method: 'POST',
-        body: { doctorId: 'doc-123', action: 'approve' },
+        body: createVerifyDoctorBody('doc-123', 'approve'),
         user: mockUsers.admin,
         includeCsrf: true,
       })
@@ -212,7 +220,7 @@ describe('SECURITY: /api/admin/*', () => {
     it('rejects with 403 when CSRF token is invalid', async () => {
       const { request } = createAuthenticatedRequest('http://localhost/api/admin/verify-doctor', {
         method: 'POST',
-        body: { doctorId: 'doc-123', action: 'approve' },
+        body: createVerifyDoctorBody('doc-123', 'approve'),
         user: mockUsers.admin,
         includeCsrf: true,
       })
@@ -235,7 +243,7 @@ describe('SECURITY: /api/admin/*', () => {
       // Admin endpoints should have stricter rate limits
       const { request } = createAuthenticatedRequest('http://localhost/api/admin/verify-doctor', {
         method: 'POST',
-        body: { doctorId: 'doc-123', action: 'approve' },
+        body: createVerifyDoctorBody('doc-123', 'approve'),
         user: mockUsers.admin,
       })
       
@@ -248,7 +256,7 @@ describe('SECURITY: /api/admin/*', () => {
       
       const { request } = createAuthenticatedRequest('http://localhost/api/admin/verify-doctor', {
         method: 'POST',
-        body: { doctorId: 'doc-123', action: 'approve' },
+        body: createVerifyDoctorBody('doc-123', 'approve'),
         user: mockUsers.admin,
       })
       
@@ -262,9 +270,11 @@ describe('SECURITY: /api/admin/*', () => {
 
   describe('Input Validation', () => {
     it('returns 400 when doctorId is missing', async () => {
+      const formData = new FormData()
+      formData.append('action', 'approve') // Missing doctorId
       const { request } = createAuthenticatedRequest('http://localhost/api/admin/verify-doctor', {
         method: 'POST',
-        body: { action: 'approve' }, // Missing doctorId
+        body: formData,
         user: mockUsers.admin,
       })
       
@@ -276,9 +286,11 @@ describe('SECURITY: /api/admin/*', () => {
     })
 
     it('returns 400 when action is missing', async () => {
+      const formData = new FormData()
+      formData.append('doctorId', 'doc-123') // Missing action
       const { request } = createAuthenticatedRequest('http://localhost/api/admin/verify-doctor', {
         method: 'POST',
-        body: { doctorId: 'doc-123' }, // Missing action
+        body: formData,
         user: mockUsers.admin,
       })
       
@@ -292,7 +304,7 @@ describe('SECURITY: /api/admin/*', () => {
     it('returns 400 with invalid action value', async () => {
       const { request } = createAuthenticatedRequest('http://localhost/api/admin/verify-doctor', {
         method: 'POST',
-        body: { doctorId: 'doc-123', action: 'invalid-action' },
+        body: createVerifyDoctorBody('doc-123', 'invalid-action'),
         user: mockUsers.admin,
       })
       
@@ -308,10 +320,7 @@ describe('SECURITY: /api/admin/*', () => {
     it('sanitizes doctorId to prevent injection attacks', async () => {
       const { request } = createAuthenticatedRequest('http://localhost/api/admin/verify-doctor', {
         method: 'POST',
-        body: { 
-          doctorId: "'; DROP TABLE doctores; --", 
-          action: 'approve' 
-        },
+        body: createVerifyDoctorBody("'; DROP TABLE doctores; --", 'approve'),
         user: mockUsers.admin,
       })
       
@@ -324,10 +333,7 @@ describe('SECURITY: /api/admin/*', () => {
     it('sanitizes XSS attempts in doctorId', async () => {
       const { request } = createAuthenticatedRequest('http://localhost/api/admin/verify-doctor', {
         method: 'POST',
-        body: { 
-          doctorId: '<script>alert("xss")</script>', 
-          action: 'approve' 
-        },
+        body: createVerifyDoctorBody('<script>alert("xss")</script>', 'approve'),
         user: mockUsers.admin,
       })
       
@@ -343,10 +349,7 @@ describe('SECURITY: /api/admin/*', () => {
     it('validates doctorId format (UUID)', async () => {
       const { request } = createAuthenticatedRequest('http://localhost/api/admin/verify-doctor', {
         method: 'POST',
-        body: { 
-          doctorId: 'not-a-valid-uuid', 
-          action: 'approve' 
-        },
+        body: createVerifyDoctorBody('not-a-valid-uuid', 'approve'),
         user: mockUsers.admin,
       })
       
@@ -366,13 +369,11 @@ describe('SECURITY: /api/admin/*', () => {
 
   describe('Privilege Escalation Prevention', () => {
     it('prevents role manipulation through request body', async () => {
+      const formData = createVerifyDoctorBody('doc-123', 'approve')
+      formData.append('role', 'admin') // Attempt to escalate privileges
       const { request } = createAuthenticatedRequest('http://localhost/api/admin/verify-doctor', {
         method: 'POST',
-        body: { 
-          doctorId: 'doc-123', 
-          action: 'approve',
-          role: 'admin', // Attempt to escalate privileges
-        },
+        body: formData,
         user: mockUsers.admin,
       })
       
@@ -383,13 +384,11 @@ describe('SECURITY: /api/admin/*', () => {
     })
 
     it('prevents userId spoofing in request body', async () => {
+      const formData = createVerifyDoctorBody('doc-123', 'approve')
+      formData.append('userId', 'different-user-id') // Attempt to spoof user
       const { request } = createAuthenticatedRequest('http://localhost/api/admin/verify-doctor', {
         method: 'POST',
-        body: { 
-          doctorId: 'doc-123', 
-          action: 'approve',
-          userId: 'different-user-id', // Attempt to spoof user
-        },
+        body: formData,
         user: mockUsers.admin,
       })
       
@@ -406,9 +405,17 @@ describe('SECURITY: /api/admin/*', () => {
 
   describe('Audit Logging', () => {
     it('logs admin actions for security auditing', async () => {
+      // Create FormData for the request
+      const formData = new FormData()
+      formData.append('doctorId', 'doc-123')
+      formData.append('action', 'approve')
+      
       const { request } = createAuthenticatedRequest('http://localhost/api/admin/verify-doctor', {
         method: 'POST',
-        body: { doctorId: 'doc-123', action: 'approve' },
+        body: formData,
+        headers: {
+          'content-type': 'multipart/form-data',
+        },
         user: mockUsers.admin,
       })
       
@@ -419,3 +426,4 @@ describe('SECURITY: /api/admin/*', () => {
     })
   })
 })
+
