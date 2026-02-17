@@ -6,7 +6,7 @@
  * - API responses <500ms p95
  */
 
-import { describe, it, expect, beforeAll } from '@jest/globals'
+import { describe, it, expect, beforeAll } from 'vitest'
 import { evaluateRedFlags } from '@/lib/triage'
 import { measureEmergencyDetection, measurePerformance } from '@/lib/performance'
 

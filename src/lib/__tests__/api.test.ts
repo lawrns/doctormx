@@ -101,6 +101,7 @@ describe('Client-side API Request Handler', () => {
     })
 
     it('should stringify object bodies', async () => {
+      document.cookie = 'csrf_token=test-token'
       mockFetch.mockResolvedValueOnce({
         ok: true,
         status: 201,
@@ -118,6 +119,7 @@ describe('Client-side API Request Handler', () => {
     })
 
     it('should handle FormData bodies', async () => {
+      document.cookie = 'csrf_token=test-token'
       const formData = new FormData()
       formData.append('file', 'test')
 
@@ -185,12 +187,10 @@ describe('Client-side API Request Handler', () => {
     })
 
     it('should handle timeout errors', async () => {
-      mockFetch.mockImplementationOnce(() =>
-        new Promise((_, reject) => {
-          setTimeout(() => reject(new Error('AbortError')), 31000)
-        })
-      )
+      // Mock fetch to reject with AbortError (simulating what happens when timeout fires)
+      mockFetch.mockRejectedValueOnce(Object.assign(new Error('The operation was aborted'), { name: 'AbortError' }))
 
+      // The request should throw 'Request timeout' when AbortError is received
       await expect(apiRequest('/api/test')).rejects.toThrow('Request timeout')
     })
 

@@ -1,10 +1,10 @@
 /**
  * Type Safety Tests for Branded Types
  *
- * These tests verify that branded types work correctly at compile time.
- * Some tests are designed to cause type errors if commented in.
+ * These tests verify that branded types work correctly at compile time and runtime.
  */
 
+import { describe, it, expect } from 'vitest'
 import {
   toUserId,
   toDoctorId,
@@ -45,81 +45,145 @@ import {
   type SubscriptionId,
 } from '../branded-types'
 
-// Test 1: Branded types should work correctly
-function processUserId(id: UserId): string {
-  return id
-}
+describe('Branded Types', () => {
+  // Helper functions for type testing
+  function processUserId(id: UserId): string {
+    return id
+  }
 
-function processDoctorId(id: DoctorId): string {
-  return id
-}
+  function processDoctorId(id: DoctorId): string {
+    return id
+  }
 
-// This should compile
-const userId = toUserId('user-123')
-const doctorId = toDoctorId('doctor-456')
-const patientId = toPatientId('patient-789')
+  describe('ID Creation', () => {
+    it('should create UserId correctly', () => {
+      const userId = toUserId('user-123')
+      expect(userId).toBe('user-123')
+      expect(processUserId(userId)).toBe('user-123')
+    })
 
-console.log(processUserId(userId))
-console.log(processDoctorId(doctorId))
-// console.log(processUserId(patientId)) // This would cause a type error - PatientId is not UserId
+    it('should create DoctorId correctly', () => {
+      const doctorId = toDoctorId('doctor-456')
+      expect(doctorId).toBe('doctor-456')
+      expect(processDoctorId(doctorId)).toBe('doctor-456')
+    })
 
-// Test 2: Type safety - this SHOULD cause a type error if uncommented
-// Uncomment to verify TypeScript prevents mixing ID types:
-// processUserId(doctorId) // ❌ Type error: DoctorId is not assignable to UserId
-// processDoctorId(userId) // ❌ Type error: UserId is not assignable to DoctorId
+    it('should create PatientId correctly', () => {
+      const patientId = toPatientId('patient-789')
+      expect(patientId).toBe('patient-789')
+    })
 
-// Test 3: UUID validation
-const validUUID = '550e8400-e29b-41d4-a716-446655440000'
-const invalidUUID = 'not-a-uuid'
+    it('should create all ID types successfully', () => {
+      const appointmentId = toAppointmentId('appointment-123')
+      const paymentId = toPaymentId('payment-123')
+      const prescriptionId = toPrescriptionId('prescription-123')
+      const specialtyId = toSpecialtyId('specialty-123')
+      const conversationId = toConversationId('conversation-123')
+      const messageId = toMessageId('message-123')
+      const availabilityRuleId = toAvailabilityRuleId('availability-rule-123')
+      const followUpId = toFollowUpId('followup-123')
+      const subscriptionId = toSubscriptionId('subscription-123')
 
-console.log('Valid UUID test:', isValidUUID(validUUID)) // Should be true
-console.log('Invalid UUID test:', isValidUUID(invalidUUID)) // Should be false
+      expect(appointmentId).toBe('appointment-123')
+      expect(paymentId).toBe('payment-123')
+      expect(prescriptionId).toBe('prescription-123')
+      expect(specialtyId).toBe('specialty-123')
+      expect(conversationId).toBe('conversation-123')
+      expect(messageId).toBe('message-123')
+      expect(availabilityRuleId).toBe('availability-rule-123')
+      expect(followUpId).toBe('followup-123')
+      expect(subscriptionId).toBe('subscription-123')
+    })
+  })
 
-// Test 4: Safe conversion functions
-const safeUserId = toUserIdSafe(validUUID)
-const invalidUserId = toUserIdSafe(invalidUUID)
+  describe('UUID Validation', () => {
+    it('should validate correct UUID format', () => {
+      const validUUID = '550e8400-e29b-41d4-a716-446655440000'
+      expect(isValidUUID(validUUID)).toBe(true)
+    })
 
-if (safeUserId) {
-  console.log('Safe conversion worked:', safeUserId)
-}
+    it('should reject invalid UUID format', () => {
+      const invalidUUID = 'not-a-uuid'
+      expect(isValidUUID(invalidUUID)).toBe(false)
+    })
 
-if (invalidUserId === null) {
-  console.log('Safe conversion correctly returned null for invalid UUID')
-}
+    it('should reject empty string', () => {
+      expect(isValidUUID('')).toBe(false)
+    })
+  })
 
-// Test 5: All ID types can be created
-const appointmentId = toAppointmentId('appointment-123')
-const paymentId = toPaymentId('payment-123')
-const prescriptionId = toPrescriptionId('prescription-123')
-const specialtyId = toSpecialtyId('specialty-123')
-const conversationId = toConversationId('conversation-123')
-const messageId = toMessageId('message-123')
-const availabilityRuleId = toAvailabilityRuleId('availability-rule-123')
-const followUpId = toFollowUpId('followup-123')
-const subscriptionId = toSubscriptionId('subscription-123')
+  describe('Safe Conversion Functions', () => {
+    const validUUID = '550e8400-e29b-41d4-a716-446655440000'
+    const invalidUUID = 'not-a-uuid'
 
-console.log('All ID types created successfully')
+    it('should convert valid UUID to UserId', () => {
+      const safeUserId = toUserIdSafe(validUUID)
+      expect(safeUserId).toBe(validUUID)
+    })
 
-// Test 6: Safe conversion for all types
-const safeAppointmentId = toAppointmentIdSafe(validUUID)
-const safePaymentId = toPaymentIdSafe(validUUID)
-const safePrescriptionId = toPrescriptionIdSafe(validUUID)
-const safeSpecialtyId = toSpecialtyIdSafe(validUUID)
-const safeConversationId = toConversationIdSafe(validUUID)
-const safeMessageId = toMessageIdSafe(validUUID)
-const safeAvailabilityRuleId = toAvailabilityRuleIdSafe(validUUID)
-const safeFollowUpId = toFollowUpIdSafe(validUUID)
-const safeSubscriptionId = toSubscriptionIdSafe(validUUID)
+    it('should return null for invalid UUID to UserId', () => {
+      const invalidUserId = toUserIdSafe(invalidUUID)
+      expect(invalidUserId).toBeNull()
+    })
 
-console.log('All safe conversions completed')
+    it('should convert valid UUID to all ID types safely', () => {
+      expect(toDoctorIdSafe(validUUID)).toBe(validUUID)
+      expect(toPatientIdSafe(validUUID)).toBe(validUUID)
+      expect(toAppointmentIdSafe(validUUID)).toBe(validUUID)
+      expect(toPaymentIdSafe(validUUID)).toBe(validUUID)
+      expect(toPrescriptionIdSafe(validUUID)).toBe(validUUID)
+      expect(toSpecialtyIdSafe(validUUID)).toBe(validUUID)
+      expect(toConversationIdSafe(validUUID)).toBe(validUUID)
+      expect(toMessageIdSafe(validUUID)).toBe(validUUID)
+      expect(toAvailabilityRuleIdSafe(validUUID)).toBe(validUUID)
+      expect(toFollowUpIdSafe(validUUID)).toBe(validUUID)
+      expect(toSubscriptionIdSafe(validUUID)).toBe(validUUID)
+    })
 
-// Test 7: Branded types are assignable to string
-function acceptsString(s: string): void {
-  console.log('Received string:', s)
-}
+    it('should return null for invalid UUID to all ID types', () => {
+      expect(toDoctorIdSafe(invalidUUID)).toBeNull()
+      expect(toPatientIdSafe(invalidUUID)).toBeNull()
+      expect(toAppointmentIdSafe(invalidUUID)).toBeNull()
+      expect(toPaymentIdSafe(invalidUUID)).toBeNull()
+      expect(toPrescriptionIdSafe(invalidUUID)).toBeNull()
+      expect(toSpecialtyIdSafe(invalidUUID)).toBeNull()
+      expect(toConversationIdSafe(invalidUUID)).toBeNull()
+      expect(toMessageIdSafe(invalidUUID)).toBeNull()
+      expect(toAvailabilityRuleIdSafe(invalidUUID)).toBeNull()
+      expect(toFollowUpIdSafe(invalidUUID)).toBeNull()
+      expect(toSubscriptionIdSafe(invalidUUID)).toBeNull()
+    })
+  })
 
-acceptsString(userId) // Should work
-acceptsString(doctorId) // Should work
-acceptsString(patientId) // Should work
+  describe('Type Assignability', () => {
+    it('should allow branded types to be assigned to string', () => {
+      function acceptsString(s: string): string {
+        return s
+      }
 
-console.log('All branded type tests passed!')
+      const userId = toUserId('user-123')
+      const doctorId = toDoctorId('doctor-456')
+      const patientId = toPatientId('patient-789')
+
+      expect(acceptsString(userId)).toBe('user-123')
+      expect(acceptsString(doctorId)).toBe('doctor-456')
+      expect(acceptsString(patientId)).toBe('patient-789')
+    })
+  })
+
+  describe('Type Safety', () => {
+    it('should maintain separate types for different IDs', () => {
+      // This test verifies at runtime that the values are correct
+      // TypeScript compilation ensures type safety at compile time
+      const userId = toUserId('user-123')
+      const doctorId = toDoctorId('doctor-456')
+      
+      // Values should be the strings passed in
+      expect(userId).toBe('user-123')
+      expect(doctorId).toBe('doctor-456')
+      
+      // Values should be different
+      expect(userId).not.toBe(doctorId)
+    })
+  })
+})

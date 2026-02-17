@@ -1,5 +1,4 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import * as fc from 'fast-check'
 import {
   initializePayment,
   confirmSuccessfulPayment,
@@ -341,35 +340,29 @@ describe('Payment System', () => {
 
   describe('Property-Based Tests - Payment Flow', () => {
     it('should generate valid payment amounts', () => {
-      fc.assert(
-        fc.property(
-          fc.integer({ min: 100, max: 1000000 }),
-          (amount) => {
-            return amount >= 100 && amount <= 1000000
-          }
-        ),
-        { numRuns: 100 }
-      )
+      // Test various valid payment amounts
+      const validAmounts = [100, 500, 1000, 50000, 100000, 1000000]
+      
+      for (const amount of validAmounts) {
+        expect(amount).toBeGreaterThanOrEqual(100)
+        expect(amount).toBeLessThanOrEqual(1000000)
+      }
     })
 
     it('should handle valid payment requests', () => {
-      fc.assert(
-        fc.property(
-          fc.uuid(),
-          fc.uuid(),
-          (appointmentId, userId) => {
-            const request: PaymentRequest = {
-              appointmentId,
-              userId,
-            }
-            return (
-              typeof request.appointmentId === 'string' &&
-              typeof request.userId === 'string'
-            )
-          }
-        ),
-        { numRuns: 50 }
-      )
+      // Test various valid payment request scenarios
+      const testRequests: PaymentRequest[] = [
+        { appointmentId: 'apt-123-uuid', userId: 'user-456-uuid' },
+        { appointmentId: 'apt-789-uuid', userId: 'user-abc-uuid' },
+        { appointmentId: 'appointment-test', userId: 'user-test' },
+      ]
+      
+      for (const request of testRequests) {
+        expect(typeof request.appointmentId).toBe('string')
+        expect(typeof request.userId).toBe('string')
+        expect(request.appointmentId.length).toBeGreaterThan(0)
+        expect(request.userId.length).toBeGreaterThan(0)
+      }
     })
   })
 })

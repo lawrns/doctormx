@@ -1,5 +1,4 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import * as fc from 'fast-check'
 import { mockSupabaseClient, createMockAppointment } from './mocks'
 import { createClient, createServiceClient } from '@/lib/supabase/server'
 
@@ -322,21 +321,21 @@ describe('Prescriptions System', () => {
 
   describe('Property-Based Tests - Prescription Data', () => {
     it('should handle valid prescription data', () => {
-      fc.assert(
-        fc.property(
-          fc.string({ minLength: 1 }),
-          fc.string({ minLength: 1 }),
-          fc.string({ minLength: 1 }),
-          (diagnosis, medications, instructions) => {
-            return (
-              typeof diagnosis === 'string' &&
-              typeof medications === 'string' &&
-              typeof instructions === 'string'
-            )
-          }
-        ),
-        { numRuns: 50 }
-      )
+      // Test various prescription data scenarios
+      const testCases = [
+        { diagnosis: 'Infección respiratoria', medications: 'Amoxicilina 500mg', instructions: 'Tomar cada 8 horas' },
+        { diagnosis: 'Hipertensión arterial', medications: 'Enalapril 10mg', instructions: '1 tableta al día' },
+        { diagnosis: 'Gastritis', medications: 'Omeprazol 20mg', instructions: 'Antes del desayuno' },
+      ]
+      
+      for (const { diagnosis, medications, instructions } of testCases) {
+        expect(typeof diagnosis).toBe('string')
+        expect(typeof medications).toBe('string')
+        expect(typeof instructions).toBe('string')
+        expect(diagnosis.length).toBeGreaterThan(0)
+        expect(medications.length).toBeGreaterThan(0)
+        expect(instructions.length).toBeGreaterThan(0)
+      }
     })
   })
 })

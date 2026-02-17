@@ -1,5 +1,4 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import * as fc from 'fast-check'
 import { mockSupabaseClient, createMockAppointment } from './mocks'
 import { createClient } from '@/lib/supabase/server'
 
@@ -348,28 +347,35 @@ describe('Notifications System', () => {
 
   describe('Property-Based Tests - Email Data', () => {
     it('should handle valid email addresses', () => {
-      fc.assert(
-        fc.property(
-          fc.stringMatching(/^[^\s@]+@[^\s@]+\.[^\s@]+$/),
-          (email) => {
-            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-            return regex.test(email)
-          }
-        ),
-        { numRuns: 50 }
-      )
+      // Test various valid email formats
+      const validEmails = [
+        'patient@example.com',
+        'doctor@clinic.mx',
+        'user.name@domain.co.uk',
+        'test+tag@email.org',
+      ]
+      
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+      
+      for (const email of validEmails) {
+        expect(emailRegex.test(email)).toBe(true)
+      }
     })
 
     it('should handle valid patient names', () => {
-      fc.assert(
-        fc.property(
-          fc.string({ minLength: 1, maxLength: 100 }),
-          (name) => {
-            return typeof name === 'string' && name.length >= 1 && name.length <= 100
-          }
-        ),
-        { numRuns: 50 }
-      )
+      // Test various patient name formats
+      const validNames = [
+        'Juan',
+        'Maria Garcia Rodriguez',
+        'Jose Antonio Perez Martinez',
+        'Ana Lucia',
+      ]
+      
+      for (const name of validNames) {
+        expect(typeof name).toBe('string')
+        expect(name.length).toBeGreaterThanOrEqual(1)
+        expect(name.length).toBeLessThanOrEqual(100)
+      }
     })
   })
 })

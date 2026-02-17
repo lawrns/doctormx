@@ -6,6 +6,80 @@
 
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
+
+// Mock UI components
+vi.mock('@/components/ui/card', () => ({
+  Card: ({ children, className }: { children: React.ReactNode; className?: string }) => (
+    <div data-testid="card" className={className}>{children}</div>
+  ),
+  CardHeader: ({ children, className }: { children: React.ReactNode; className?: string }) => (
+    <div data-testid="card-header" className={className}>{children}</div>
+  ),
+  CardTitle: ({ children, className }: { children: React.ReactNode; className?: string }) => (
+    <div data-testid="card-title" className={className}>{children}</div>
+  ),
+  CardDescription: ({ children, className }: { children: React.ReactNode; className?: string }) => (
+    <div data-testid="card-description" className={className}>{children}</div>
+  ),
+  CardContent: ({ children, className }: { children: React.ReactNode; className?: string }) => (
+    <div data-testid="card-content" className={className}>{children}</div>
+  ),
+  CardFooter: ({ children, className }: { children: React.ReactNode; className?: string }) => (
+    <div data-testid="card-footer" className={className}>{children}</div>
+  ),
+}))
+
+vi.mock('@/components/ui/checkbox', () => ({
+  Checkbox: ({ checked, onCheckedChange, id, className }: { 
+    checked?: boolean; 
+    onCheckedChange?: (checked: boolean) => void;
+    id?: string;
+    className?: string;
+  }) => (
+    <input
+      data-testid="checkbox"
+      type="checkbox"
+      id={id}
+      className={className}
+      checked={checked}
+      onChange={(e) => onCheckedChange?.(e.target.checked)}
+    />
+  ),
+}))
+
+vi.mock('@/components/ui/button', () => ({
+  Button: ({ children, onClick, disabled, loading, className }: { 
+    children: React.ReactNode; 
+    onClick?: () => void;
+    disabled?: boolean;
+    loading?: boolean;
+    className?: string;
+  }) => (
+    <button
+      data-testid="button"
+      onClick={onClick}
+      disabled={disabled || loading}
+      className={className}
+    >
+      {loading && <span data-testid="loading-spinner">Loading...</span>}
+      {children}
+    </button>
+  ),
+}))
+
+vi.mock('@/components/ui/alert', () => ({
+  Alert: ({ children, className }: { children: React.ReactNode; className?: string }) => (
+    <div data-testid="alert" role="alert" className={className}>{children}</div>
+  ),
+  AlertTitle: ({ children, className }: { children: React.ReactNode; className?: string }) => (
+    <div data-testid="alert-title" className={className}>{children}</div>
+  ),
+  AlertDescription: ({ children, className }: { children: React.ReactNode; className?: string }) => (
+    <div data-testid="alert-description" className={className}>{children}</div>
+  ),
+}))
+
+// Import the component after mocks
 import { MedicalDisclaimer, CompactMedicalDisclaimer } from '../MedicalDisclaimer'
 
 describe('MedicalDisclaimer', () => {
@@ -27,7 +101,8 @@ describe('MedicalDisclaimer', () => {
     it('should display the required Spanish disclaimer text', () => {
       render(<MedicalDisclaimer onAcknowledge={mockOnAcknowledge} />)
       
-      expect(screen.getByText(/NO proporciona diagnóstico médico/i)).toBeInTheDocument()
+      // Use getAllByText since text appears in multiple places
+      expect(screen.getAllByText(/NO proporciona diagnóstico médico/i).length).toBeGreaterThan(0)
       expect(screen.getByText(/llame al 911/i)).toBeInTheDocument()
       expect(screen.getByText(/vaya a urgencias inmediatamente/i)).toBeInTheDocument()
     })
@@ -51,7 +126,8 @@ describe('MedicalDisclaimer', () => {
       render(<MedicalDisclaimer onAcknowledge={mockOnAcknowledge} showEmergencyInfo={true} />)
       
       expect(screen.getByText(/En caso de emergencia/i)).toBeInTheDocument()
-      expect(screen.getByText(/911/)).toBeInTheDocument()
+      // Use getByRole to specifically target the emergency phone link
+      expect(screen.getByRole('link', { name: /911/i })).toBeInTheDocument()
     })
 
     it('should not render emergency information when showEmergencyInfo is false', () => {
@@ -166,7 +242,8 @@ describe('MedicalDisclaimer', () => {
     it('should display privacy notice', () => {
       render(<MedicalDisclaimer onAcknowledge={mockOnAcknowledge} />)
       
-      expect(screen.getByText(/Protección de Datos/i)).toBeInTheDocument()
+      // Use heading role to specifically target the section heading
+      expect(screen.getByRole('heading', { name: /Protección de Datos/i })).toBeInTheDocument()
       expect(screen.getByText(/Ley Federal de Protección de Datos/i)).toBeInTheDocument()
     })
 

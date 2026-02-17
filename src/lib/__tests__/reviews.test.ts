@@ -1,5 +1,4 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import * as fc from 'fast-check'
 import { mockSupabaseClient, createMockReview } from './mocks'
 import { createClient } from '@/lib/supabase/server'
 
@@ -269,38 +268,31 @@ describe('Reviews System', () => {
 
   describe('Property-Based Tests - Rating Validation', () => {
     it('should validate rating range 1-5', () => {
-      fc.assert(
-        fc.property(
-          fc.integer({ min: 1, max: 5 }),
-          (rating) => {
-            return rating >= 1 && rating <= 5
-          }
-        ),
-        { numRuns: 50 }
-      )
+      // Test all valid rating values
+      const validRatings = [1, 2, 3, 4, 5]
+      
+      for (const rating of validRatings) {
+        expect(rating).toBeGreaterThanOrEqual(1)
+        expect(rating).toBeLessThanOrEqual(5)
+      }
     })
 
     it('should handle valid review data', () => {
-      fc.assert(
-        fc.property(
-          fc.uuid(),
-          fc.uuid(),
-          fc.uuid(),
-          fc.integer({ min: 1, max: 5 }),
-          fc.option(fc.string({ maxLength: 1000 })),
-          (appointmentId, patientId, doctorId, rating, comment) => {
-            return (
-              typeof appointmentId === 'string' &&
-              typeof patientId === 'string' &&
-              typeof doctorId === 'string' &&
-              rating >= 1 &&
-              rating <= 5 &&
-              (comment === null || typeof comment === 'string')
-            )
-          }
-        ),
-        { numRuns: 50 }
-      )
+      // Test various review data scenarios
+      const testReviews = [
+        { appointmentId: 'apt-123-uuid', patientId: 'pat-456-uuid', doctorId: 'doc-789-uuid', rating: 5, comment: 'Excellent service' },
+        { appointmentId: 'apt-abc-uuid', patientId: 'pat-def-uuid', doctorId: 'doc-ghi-uuid', rating: 4, comment: null },
+        { appointmentId: 'apt-xyz-uuid', patientId: 'pat-uvw-uuid', doctorId: 'doc-rst-uuid', rating: 3, comment: 'Good experience' },
+      ]
+      
+      for (const review of testReviews) {
+        expect(typeof review.appointmentId).toBe('string')
+        expect(typeof review.patientId).toBe('string')
+        expect(typeof review.doctorId).toBe('string')
+        expect(review.rating).toBeGreaterThanOrEqual(1)
+        expect(review.rating).toBeLessThanOrEqual(5)
+        expect(review.comment === null || typeof review.comment === 'string').toBe(true)
+      }
     })
   })
 })

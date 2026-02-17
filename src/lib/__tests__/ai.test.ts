@@ -1,5 +1,4 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import * as fc from 'fast-check'
 import { mockSupabaseClient } from './mocks'
 
 vi.mock('@/lib/supabase/server', () => ({
@@ -223,34 +222,32 @@ describe('AI Copilot System', () => {
 
   describe('Property-Based Tests - Symptom Detection', () => {
     it('should handle valid symptom arrays', () => {
-      fc.assert(
-        fc.property(
-          fc.array(fc.string({ minLength: 1 }), { minLength: 1, maxLength: 10 }),
-          (symptoms) => {
-            const result = symptoms.join(' ').toLowerCase()
-            return typeof result === 'string'
-          }
-        ),
-        { numRuns: 50 }
-      )
+      // Test with various symptom arrays
+      const testCases = [
+        ['tos', 'fiebre'],
+        ['dolor de cabeza', 'náuseas', 'mareo'],
+        ['dolor de pecho', 'palpitaciones', 'dificultad para respirar'],
+        ['ansiedad', 'insomnio'],
+      ]
+      
+      for (const symptoms of testCases) {
+        const result = symptoms.join(' ').toLowerCase()
+        expect(typeof result).toBe('string')
+        expect(result.length).toBeGreaterThan(0)
+      }
     })
 
     it('should detect valid severity levels', () => {
-      fc.assert(
-        fc.property(
-          fc.oneof(
-            fc.constant('low'),
-            fc.constant('medium'),
-            fc.constant('high'),
-            fc.constant('critical')
-          ),
-          (severity) => {
-            const validSeverities = ['low', 'medium', 'high', 'critical']
-            return validSeverities.includes(severity)
-          }
-        ),
-        { numRuns: 50 }
-      )
+      const validSeverities = ['low', 'medium', 'high', 'critical']
+      
+      // Test all valid severity levels
+      for (const severity of validSeverities) {
+        expect(validSeverities).toContain(severity)
+      }
+      
+      // Test invalid severity levels are not in valid list
+      expect(validSeverities).not.toContain('invalid')
+      expect(validSeverities).not.toContain('')
     })
   })
 

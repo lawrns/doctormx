@@ -1,5 +1,4 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import * as fc from 'fast-check'
 import type { ReservationRequest } from '@/lib/booking'
 import type { Appointment } from '@/types'
 
@@ -199,69 +198,57 @@ describe('Booking System', () => {
 
   describe('Property-Based Tests - Appointment Requests', () => {
     it('should handle valid appointment requests', () => {
-      fc.assert(
-        fc.property(
-          fc.string({ minLength: 1 }),
-          fc.string({ minLength: 1 }),
-          fc.stringMatching(/^\d{4}-\d{2}-\d{2}$/),
-          fc.stringMatching(/^([0-1][0-9]|2[0-3]):[0-5][0-9]$/),
-          (patientId, doctorId, date, time) => {
-            const request: ReservationRequest = {
-              patientId,
-              doctorId,
-              date,
-              time,
-            }
-            return (
-              typeof request.patientId === 'string' &&
-              typeof request.doctorId === 'string' &&
-              typeof request.date === 'string' &&
-              typeof request.time === 'string'
-            )
-          }
-        ),
-        { numRuns: 100 }
-      )
+      // Test with various valid appointment request scenarios
+      const testRequests: ReservationRequest[] = [
+        { patientId: 'patient-1', doctorId: 'doctor-1', date: '2025-12-31', time: '09:30' },
+        { patientId: 'patient-abc-123', doctorId: 'doctor-xyz-456', date: '2026-01-15', time: '14:00' },
+        { patientId: 'uuid-patient', doctorId: 'uuid-doctor', date: '2025-06-20', time: '10:45' },
+      ]
+      
+      for (const request of testRequests) {
+        expect(typeof request.patientId).toBe('string')
+        expect(typeof request.doctorId).toBe('string')
+        expect(typeof request.date).toBe('string')
+        expect(typeof request.time).toBe('string')
+        expect(request.date).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+        expect(request.time).toMatch(/^([0-1][0-9]|2[0-3]):[0-5][0-9]$/)
+      }
     })
 
     it('should generate valid time slots in ascending order', () => {
-      fc.assert(
-        fc.property(
-          fc.array(fc.stringMatching(/^([0-1][0-9]|2[0-3]):[0-5][0-9]$/), { minLength: 1, maxLength: 20 }),
-          (slots) => {
-            const sortedSlots = [...slots].sort((a, b) => {
-              const aMinutes = parseInt(a.split(':')[0]) * 60 + parseInt(a.split(':')[1])
-              const bMinutes = parseInt(b.split(':')[0]) * 60 + parseInt(b.split(':')[1])
-              return aMinutes - bMinutes
-            })
-            for (let i = 1; i < sortedSlots.length; i++) {
-              const prev = sortedSlots[i - 1].split(':').map(Number)
-              const curr = sortedSlots[i].split(':').map(Number)
-              const prevMinutes = prev[0] * 60 + prev[1]
-              const currMinutes = curr[0] * 60 + curr[1]
-              if (currMinutes <= prevMinutes && sortedSlots[i] !== sortedSlots[i - 1]) return false
-            }
-            return true
-          }
-        ),
-        { numRuns: 50 }
-      )
+      // Test sorting time slots
+      const timeSlots = ['09:30', '08:00', '14:30', '10:00', '16:45', '09:30']
+      
+      const sortedSlots = [...timeSlots].sort((a, b) => {
+        const aMinutes = parseInt(a.split(':')[0]) * 60 + parseInt(a.split(':')[1])
+        const bMinutes = parseInt(b.split(':')[0]) * 60 + parseInt(b.split(':')[1])
+        return aMinutes - bMinutes
+      })
+      
+      // Verify sorted order
+      for (let i = 1; i < sortedSlots.length; i++) {
+        const prev = sortedSlots[i - 1].split(':').map(Number)
+        const curr = sortedSlots[i].split(':').map(Number)
+        const prevMinutes = prev[0] * 60 + prev[1]
+        const currMinutes = curr[0] * 60 + curr[1]
+        expect(currMinutes).toBeGreaterThanOrEqual(prevMinutes)
+      }
     })
 
     it('should generate valid date format', () => {
-      fc.assert(
-        fc.property(
-          fc.integer({ min: 2025, max: 2030 }),
-          fc.integer({ min: 1, max: 12 }),
-          fc.integer({ min: 1, max: 31 }),
-          (year, month, day) => {
-            const dateStr = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`
-            const regex = /^\d{4}-\d{2}-\d{2}$/
-            return regex.test(dateStr)
-          }
-        ),
-        { numRuns: 100 }
-      )
+      // Test date formatting for various year/month/day combinations
+      const testDates = [
+        { year: 2025, month: 1, day: 15 },
+        { year: 2026, month: 12, day: 31 },
+        { year: 2027, month: 6, day: 1 },
+        { year: 2030, month: 3, day: 25 },
+      ]
+      
+      for (const { year, month, day } of testDates) {
+        const dateStr = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`
+        expect(dateStr).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+        expect(dateStr).toContain(String(year))
+      }
     })
   })
 

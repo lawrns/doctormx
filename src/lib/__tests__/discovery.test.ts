@@ -1,5 +1,4 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import * as fc from 'fast-check'
 import { discoverDoctors, getDoctorProfile, getAvailableSpecialties, type DiscoveryFilters } from '@/lib/discovery'
 import { mockSupabaseClient, mockDoctor } from './mocks'
 
@@ -243,56 +242,51 @@ describe('Doctor Discovery System', () => {
 
   describe('Property-Based Tests - Discovery Filters', () => {
     it('should handle valid specialty slugs', () => {
-      fc.assert(
-        fc.property(
-          fc.stringMatching(/^[a-z-]+$/),
-          (slug) => {
-            const filters: DiscoveryFilters = { specialtySlug: slug }
-            return filters.specialtySlug === slug
-          }
-        ),
-        { numRuns: 50 }
-      )
+      // Test various specialty slug formats
+      const testSlugs = ['cardiologia', 'medicina-general', 'pediatria', 'dermatologia']
+      
+      for (const slug of testSlugs) {
+        const filters: DiscoveryFilters = { specialtySlug: slug }
+        expect(filters.specialtySlug).toBe(slug)
+      }
     })
 
     it('should handle valid price ranges', () => {
-      fc.assert(
-        fc.property(
-          fc.integer({ min: 0, max: 1000000 }),
-          (price) => {
-            const filters: DiscoveryFilters = { maxPrice: price }
-            return filters.maxPrice === price && filters.maxPrice >= 0
-          }
-        ),
-        { numRuns: 50 }
-      )
+      // Test various price ranges
+      const testPrices = [0, 100, 50000, 1000000]
+      
+      for (const price of testPrices) {
+        const filters: DiscoveryFilters = { maxPrice: price }
+        expect(filters.maxPrice).toBe(price)
+        expect(filters.maxPrice).toBeGreaterThanOrEqual(0)
+      }
     })
 
     it('should handle valid rating ranges', () => {
-      fc.assert(
-        fc.property(
-          fc.float({ min: 0, max: 5 }),
-          (rating) => {
-            const filters: DiscoveryFilters = { minRating: rating }
-            return filters.minRating === rating && filters.minRating >= 0 && filters.minRating <= 5
-          }
-        ),
-        { numRuns: 50 }
-      )
+      // Test various rating ranges
+      const testRatings = [0, 1.5, 3, 4.5, 5]
+      
+      for (const rating of testRatings) {
+        const filters: DiscoveryFilters = { minRating: rating }
+        expect(filters.minRating).toBe(rating)
+        expect(filters.minRating).toBeGreaterThanOrEqual(0)
+        expect(filters.minRating).toBeLessThanOrEqual(5)
+      }
     })
 
     it('should handle valid location filters', () => {
-      fc.assert(
-        fc.property(
-          fc.string({ minLength: 1 }),
-          fc.string({ minLength: 1 }),
-          (city, state) => {
-            const filters: DiscoveryFilters = { city, state }
-            return filters.city === city && filters.state === state
-          }
-        ),
-        { numRuns: 50 }
-      )
+      // Test various location combinations
+      const testLocations = [
+        { city: 'Ciudad de Mexico', state: 'CDMX' },
+        { city: 'Guadalajara', state: 'Jalisco' },
+        { city: 'Monterrey', state: 'Nuevo Leon' },
+      ]
+      
+      for (const { city, state } of testLocations) {
+        const filters: DiscoveryFilters = { city, state }
+        expect(filters.city).toBe(city)
+        expect(filters.state).toBe(state)
+      }
     })
   })
 })

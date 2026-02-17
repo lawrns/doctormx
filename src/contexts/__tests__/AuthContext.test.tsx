@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import { render, screen, waitFor, act } from '@testing-library/react'
-import { useContext, createContext, ReactNode } from 'react'
+import { render, screen, waitFor, act, fireEvent } from '@testing-library/react'
+import React, { useContext } from 'react'
 
 // Mock de react-router-dom
 const mockNavigate = vi.fn()
@@ -16,7 +16,7 @@ vi.mock('@/lib/observability/logger', () => ({
   },
 }))
 
-// Mock de Supabase
+// Mock de Supabase - hoisted al top
 const mockOnAuthStateChange = vi.fn()
 const mockUnsubscribe = vi.fn()
 const mockGetCurrentUser = vi.fn()
@@ -43,9 +43,9 @@ vi.mock('../lib/supabase.js', () => ({
 // Importar después de los mocks
 import { AuthProvider, useAuth, AuthContext } from '../AuthContext'
 
-// Componente de prueba
+// Componente de prueba - usa useAuth hook en lugar de useContext
 const TestComponent = () => {
-  const auth = useContext(AuthContext)
+  const auth = useAuth()
   return (
     <div>
       <div data-testid="user">{auth?.user ? 'logged-in' : 'logged-out'}</div>
@@ -114,9 +114,6 @@ describe('AuthContext', () => {
 
   describe('useAuth hook', () => {
     it('lanza error cuando se usa fuera del provider', () => {
-      // Resetear el mock para este test específico
-      const OriginalAuthContext = AuthContext
-      
       // Crear un componente que use useAuth
       const ComponentWithoutProvider = () => {
         try {
@@ -438,7 +435,7 @@ describe('AuthContext', () => {
 
       // Componente que verifica isEmailVerified
       const EmailVerificationComponent = () => {
-        const auth = useContext(AuthContext)
+        const auth = useAuth()
         const user = auth?.user as any
         return (
           <div data-testid="email-verified">
@@ -470,7 +467,7 @@ describe('AuthContext', () => {
 
       // Componente que verifica isEmailVerified
       const EmailVerificationComponent = () => {
-        const auth = useContext(AuthContext)
+        const auth = useAuth()
         const user = auth?.user as any
         return (
           <div data-testid="email-verified">
@@ -503,7 +500,7 @@ describe('AuthContext', () => {
 
       // Componente que verifica isLoggingOut
       const LogoutStateComponent = () => {
-        const auth = useContext(AuthContext)
+        const auth = useAuth()
         return (
           <div>
             <div data-testid="logging-out">{auth?.isLoggingOut ? 'logging-out' : 'not-logging-out'}</div>
@@ -541,7 +538,7 @@ describe('AuthContext', () => {
 
       // Componente que verifica isLoggingOut
       const LogoutStateComponent = () => {
-        const auth = useContext(AuthContext)
+        const auth = useAuth()
         return (
           <div>
             <div data-testid="logging-out">{auth?.isLoggingOut ? 'logging-out' : 'not-logging-out'}</div>
