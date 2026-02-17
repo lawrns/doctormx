@@ -106,6 +106,8 @@ export default defineConfig({
     // Environment variables for tests
     env: {
       NODE_ENV: 'test',
+      NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: 'pk_test_1234567890',
+      STRIPE_SECRET_KEY: 'sk_test_1234567890',
     },
     // Reporter configuration
     reporters: ['verbose'],

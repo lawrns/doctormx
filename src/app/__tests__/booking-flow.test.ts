@@ -34,6 +34,8 @@ vi.mock('@/lib/cache', () => ({
     set: vi.fn().mockResolvedValue(undefined),
     getDoctorProfile: vi.fn().mockResolvedValue(null),
     setDoctorProfile: vi.fn().mockResolvedValue(undefined),
+    getAppointmentAvailability: vi.fn().mockResolvedValue(null),
+    setAppointmentAvailability: vi.fn().mockResolvedValue(undefined),
   },
 }))
 
@@ -66,6 +68,20 @@ describe('Booking Flow Integration', () => {
       }
 
       const mockFrom = vi.fn().mockImplementation((table: string) => {
+        if (table === 'availability_rules') {
+          return {
+            select: vi.fn().mockReturnValue({
+              eq: vi.fn().mockReturnValue({
+                order: vi.fn().mockResolvedValue({ 
+                  data: [
+                    { id: 'rule-1', doctor_id: 'doctor-1', day_of_week: 3, start_time: '09:00', end_time: '17:00' }
+                  ], 
+                  error: null 
+                }),
+              }),
+            }),
+          }
+        }
         if (table === 'doctores') {
           return {
             select: vi.fn().mockReturnValue({
@@ -189,6 +205,20 @@ describe('Booking Flow Integration', () => {
 
     it('should handle booking failure gracefully', async () => {
       const mockFrom = vi.fn().mockImplementation((table: string) => {
+        if (table === 'availability_rules') {
+          return {
+            select: vi.fn().mockReturnValue({
+              eq: vi.fn().mockReturnValue({
+                order: vi.fn().mockResolvedValue({ 
+                  data: [
+                    { id: 'rule-1', doctor_id: 'doctor-1', day_of_week: 3, start_time: '09:00', end_time: '17:00' }
+                  ], 
+                  error: null 
+                }),
+              }),
+            }),
+          }
+        }
         if (table === 'appointments') {
           return {
             insert: vi.fn().mockReturnValue({

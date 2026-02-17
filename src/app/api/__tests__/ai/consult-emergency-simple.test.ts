@@ -92,15 +92,14 @@ describe('Emergency AI Triage - Direct Tests', () => {
   describe('Emergency Routing Logic', () => {
     it('should trigger emergency recommendations for urgent cases', () => {
       const testCases = [
-        { symptom: 'dolor de pecho severo', expected: 'emergency' },
+        { symptom: 'dolor de pecho severo', expected: 'ER' },
         { symptom: 'fiebre alta', expected: 'URGENT' },
-        { symptom: 'fiebre alta', expected: 'urgent' },
-        { symptom: 'dolor leve', expected: 'undefined' }
+        { symptom: 'dolor leve', expected: undefined }
       ];
 
       testCases.forEach(({ symptom, expected }) => {
         const result = evaluateRedFlags({ message: symptom });
-        expect(result.action).toBe(expected === 'emergency' ? 'ER' : expected);
+        expect(result.action).toBe(expected);
       });
     });
 

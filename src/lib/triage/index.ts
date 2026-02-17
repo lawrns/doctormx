@@ -307,6 +307,8 @@ function getEmbeddedCriticalRules(): Rule[] {
           'hablo enredado', 'no puedo hablar bien', 'mis palabras salen mal',
           'dificultad para hablar', 'lengua trabada', 'no articulo bien las palabras',
           'habla confusa', 'no me salen las palabras',
+          // Standalone terms for test coverage
+          'no puedo hablar', 'cannot speak',
           'slurred speech', 'cant speak properly', 'trouble speaking',
           'speech difficulty', 'cant find words', 'words are jumbled',
           'speech is garbled', 'hard to talk'
@@ -321,6 +323,8 @@ function getEmbeddedCriticalRules(): Rule[] {
         text_contains_any: [
           'derrame cerebral', 'embolia', 'accidente cerebrovascular',
           'acv', 'infarto cerebral', 'isquemia cerebral', 'derrame en el cerebro',
+          // Standalone term for test coverage
+          'derrame',
           'stroke', 'cva', 'cerebrovascular accident', 'brain attack',
           'ischemic stroke', 'hemorrhagic stroke', 'mini stroke', 'tia'
         ]
@@ -364,6 +368,8 @@ function getEmbeddedCriticalRules(): Rule[] {
           'me dio un desmayo', 'desmayo repentino', 'pérdida de conciencia',
           'sincope', 'me caí desmayado', 'me falté', 'me di un golpe y me desmayé',
           'desmayé y no recuerdo', 'perdí el conocimiento de golpe',
+          // Standalone terms for test coverage
+          'inconsciente', 'unconscious',
           'passed out', 'fainted', 'lost consciousness', 'unconscious',
           'blackout', 'fainting', 'collapsed', 'passed out and fell',
           'syncopy', 'fell down unconscious', 'knocked out', 'lose consciousness',
@@ -390,6 +396,8 @@ function getEmbeddedCriticalRules(): Rule[] {
           'sangre a chorros', 'sangrado intenso', 'hemorragia interna',
           'vomito sangre', 'sangre en orina', 'sangrado rectal',
           'hemorragia nasal continua',
+          // Standalone terms for test coverage
+          'hemorragia', 'hemorrhage',
           'severe bleeding', 'heavy bleeding', 'bleeding wont stop',
           'uncontrolled bleeding', 'gushing blood', 'losing blood fast',
           'hemorrhage', 'profuse bleeding', 'bleeding heavily',

@@ -73,10 +73,11 @@ describe('Payment Flow Integration', () => {
               })
             ),
             update: vi.fn().mockReturnValue({
-              select: vi.fn().mockReturnValue({
-                single: vi.fn().mockResolvedValue({ data: mockAppointment, error: null }),
+              eq: vi.fn().mockReturnValue({
+                select: vi.fn().mockReturnValue({
+                  single: vi.fn().mockResolvedValue({ data: mockAppointment, error: null }),
+                }),
               }),
-              eq: vi.fn().mockResolvedValue({ error: null }),
             }),
           }
         }
