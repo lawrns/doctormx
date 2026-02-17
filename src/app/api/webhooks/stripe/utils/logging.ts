@@ -32,10 +32,13 @@ export async function logWebhookEvent(
  * Log incoming webhook event
  */
 export function logIncomingEvent(event: Stripe.Event): void {
+  const createdDate = event.created && !isNaN(event.created) 
+    ? new Date(event.created * 1000).toISOString() 
+    : new Date().toISOString()
   logger.info(`Stripe webhook received: ${event.type}`, {
     eventId: event.id,
     eventType: event.type,
-    created: new Date(event.created * 1000).toISOString(),
+    created: createdDate,
   })
 }
 
