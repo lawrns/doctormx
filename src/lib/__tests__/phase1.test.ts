@@ -128,6 +128,7 @@ describe('Phase 1: Unit Tests', () => {
       .mockReturnValueOnce(createMockQuery())
       .mockReturnValueOnce(createMockQuery(payData))
       .mockReturnValueOnce(createMockQuery())
+      .mockReturnValueOnce(createMockQuery())
 
     vi.mocked(createClient).mockResolvedValue({
       from: mockFrom,

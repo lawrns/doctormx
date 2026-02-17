@@ -1,10 +1,25 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { discoverDoctors, getDoctorProfile, getAvailableSpecialties, type DiscoveryFilters } from '@/lib/discovery'
 import { mockSupabaseClient, mockDoctor } from './mocks'
+import { createServiceClient } from '@/lib/supabase/server'
 
-vi.mock('@/lib/supabase/server', () => ({
-  createClient: vi.fn().mockResolvedValue(mockSupabaseClient),
-  createServiceClient: vi.fn().mockResolvedValue(mockSupabaseClient),
+// Mock the cache module to avoid Redis connections during tests
+vi.mock('@/lib/cache', () => ({
+  cache: {
+    get: vi.fn().mockResolvedValue(null),
+    set: vi.fn().mockResolvedValue(undefined),
+    getDoctorProfile: vi.fn().mockResolvedValue(null),
+    setDoctorProfile: vi.fn().mockResolvedValue(undefined),
+  }
+}))
+
+// Mock the logger to avoid unnecessary output during tests
+vi.mock('@/lib/observability/logger', () => ({
+  logger: {
+    error: vi.fn(),
+    info: vi.fn(),
+    warn: vi.fn(),
+  }
 }))
 
 describe('Doctor Discovery System', () => {
@@ -36,15 +51,33 @@ describe('Doctor Discovery System', () => {
         }),
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createServiceClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      vi.mocked(createServiceClient).mockReturnValue(mockClient as never)
 
       const result = await discoverDoctors()
       expect(result).toEqual([])
     })
 
     it('should return doctores when available', async () => {
+      // Use a future date so the subscription is considered active
+      const futureDate = '2099-12-31'
+      
+      const mockDoctorData = {
+        id: 'test-doctor-id',
+        bio: 'Test bio',
+        price_cents: 50000,
+        rating_avg: 4.5,
+        rating_count: 10,
+        city: 'Mexico City',
+        state: 'CDMX',
+        years_experience: 10,
+        languages: ['es'],
+        status: 'approved',
+        video_enabled: true,
+        doctor_specialties: [],
+        profiles: { id: 'profile-id', full_name: 'Dr. Test', photo_url: null },
+        doctor_subscriptions: [{ id: 'sub-1', status: 'active', current_period_end: futureDate }],
+      }
+
       const mockClient = {
         ...mockSupabaseClient,
         from: vi.fn().mockImplementation((table) => {
@@ -54,12 +87,7 @@ describe('Doctor Discovery System', () => {
                 eq: vi.fn().mockReturnValue({
                   order: vi.fn().mockReturnValue({
                     limit: vi.fn().mockResolvedValue({ 
-                      data: [{
-                        ...mockDoctor,
-                        doctor_specialties: [],
-                        profiles: mockDoctor.profile,
-                        doctor_subscriptions: [{ status: 'active', current_period_end: '2026-01-01' }],
-                      }], 
+                      data: [mockDoctorData], 
                       error: null 
                     }),
                   }),
@@ -71,17 +99,19 @@ describe('Doctor Discovery System', () => {
         }),
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createServiceClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      vi.mocked(createServiceClient).mockReturnValue(mockClient as never)
 
       const result = await discoverDoctors()
       expect(Array.isArray(result)).toBe(true)
+      expect(result.length).toBeGreaterThan(0)
+      expect(result[0].id).toBe('test-doctor-id')
     })
   })
 
   describe('Specialty Filters', () => {
     it('should filter doctores by specialty slug', async () => {
+      const futureDate = '2099-12-31'
+      
       const mockClient = {
         ...mockSupabaseClient,
         from: vi.fn().mockImplementation((table) => {
@@ -92,13 +122,23 @@ describe('Doctor Discovery System', () => {
                   order: vi.fn().mockReturnValue({
                     limit: vi.fn().mockResolvedValue({ 
                       data: [{
-                        ...mockDoctor,
+                        id: 'test-doctor-id',
+                        bio: 'Test bio',
+                        price_cents: 50000,
+                        rating_avg: 4.5,
+                        rating_count: 10,
+                        city: 'Mexico City',
+                        state: 'CDMX',
+                        years_experience: 10,
+                        languages: ['es'],
+                        status: 'approved',
+                        video_enabled: true,
                         doctor_specialties: [{ 
                           specialty_id: '1', 
                           specialties: { id: '1', name: 'Cardiología', slug: 'cardiologia' } 
                         }],
-                        profiles: mockDoctor.profile,
-                        doctor_subscriptions: [{ status: 'active', current_period_end: '2026-01-01' }],
+                        profiles: { id: 'profile-id', full_name: 'Dr. Test', photo_url: null },
+                        doctor_subscriptions: [{ id: 'sub-1', status: 'active', current_period_end: futureDate }],
                       }], 
                       error: null 
                     }),
@@ -111,12 +151,11 @@ describe('Doctor Discovery System', () => {
         }),
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createServiceClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      vi.mocked(createServiceClient).mockReturnValue(mockClient as never)
 
-      const result = await discoverDoctors()
-      expect(Array.isArray(result) ? result.length : 0).toBeLessThanOrEqual(50)
+      const result = await discoverDoctors({ specialtySlug: 'cardiologia' })
+      expect(Array.isArray(result)).toBe(true)
+      expect(result.length).toBeLessThanOrEqual(50)
     })
   })
 
@@ -138,32 +177,48 @@ describe('Doctor Discovery System', () => {
         }),
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createServiceClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      vi.mocked(createServiceClient).mockReturnValue(mockClient as never)
 
       const result = await getDoctorProfile('non-existent-id')
       expect(result).toBeNull()
     })
 
     it('should return doctor profile when exists', async () => {
+      const mockDoctorData = {
+        id: 'test-doctor-id',
+        bio: 'Test bio',
+        price_cents: 50000,
+        rating_avg: 4.5,
+        rating_count: 10,
+        city: 'Mexico City',
+        state: 'CDMX',
+        years_experience: 10,
+        languages: ['es'],
+        status: 'approved',
+        doctor_specialties: [],
+        profiles: { id: 'profile-id', full_name: 'Dr. Test', photo_url: null, phone: '+5215551234567' },
+        doctor_subscriptions: [{ id: 'sub-1', status: 'active', current_period_end: '2099-12-31' }],
+      }
+
+      // Create a mock that supports .eq().eq().single() chain
+      // The second .eq() needs to return an object with .single()
+      const mockFinalEqResult = {
+        single: vi.fn().mockResolvedValue({ data: mockDoctorData, error: null }),
+      }
+      
+      // The first .eq() needs to return an object with both .eq() and .single()
+      const mockFirstEqResult = {
+        eq: vi.fn().mockReturnValue(mockFinalEqResult),
+        single: vi.fn().mockResolvedValue({ data: mockDoctorData, error: null }),
+      }
+      
       const mockClient = {
         ...mockSupabaseClient,
         from: vi.fn().mockImplementation((table) => {
           if (table === 'doctores') {
             return {
               select: vi.fn().mockReturnValue({
-                eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ 
-                    data: {
-                      ...mockDoctor,
-                      doctor_specialties: [],
-                      profiles: mockDoctor.profile,
-                      doctor_subscriptions: [{ status: 'active', current_period_end: '2026-01-01' }],
-                    }, 
-                    error: null 
-                  }),
-                }),
+                eq: vi.fn().mockReturnValue(mockFirstEqResult),
               }),
             }
           }
@@ -171,18 +226,14 @@ describe('Doctor Discovery System', () => {
         }),
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createServiceClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      vi.mocked(createServiceClient).mockReturnValue(mockClient as never)
 
       const result = await getDoctorProfile('test-doctor-id')
       
       expect(result).not.toBeNull()
-      if (result && typeof result === 'object' && result !== null) {
-        const doctorResult = result as { id?: string; profile?: unknown }
-        expect(doctorResult.id).toBe('test-doctor-id')
-        expect(doctorResult.profile).toBeDefined()
-      }
+      expect(result?.id).toBe('test-doctor-id')
+      expect(result?.profile).toBeDefined()
+      expect(result?.profile?.full_name).toBe('Dr. Test')
     })
   })
 
@@ -202,9 +253,7 @@ describe('Doctor Discovery System', () => {
         }),
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createServiceClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      vi.mocked(createServiceClient).mockReturnValue(mockClient as never)
 
       const result = await getAvailableSpecialties()
       expect(result).toEqual([])
@@ -230,13 +279,12 @@ describe('Doctor Discovery System', () => {
         }),
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createServiceClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      vi.mocked(createServiceClient).mockReturnValue(mockClient as never)
 
       const result = await getAvailableSpecialties()
       expect(Array.isArray(result)).toBe(true)
       expect(result.length).toBeGreaterThan(0)
+      expect(result).toEqual(mockSpecialties)
     })
   })
 
@@ -290,4 +338,3 @@ describe('Doctor Discovery System', () => {
     })
   })
 })
-

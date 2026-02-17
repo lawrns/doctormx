@@ -1,6 +1,6 @@
 {
   "description": "Palabras clave que indican consultas puramente educativas (no emergencias de terceros)",
-  "note": "Más estricto que informational - aplica incluso a reglas críticas",
+  "note": "Más estricto que informational - aplica incluso a reglas críticas. También incluye consultas administrativas que no son médicas.",
   "keywords": [
     "explain ",
     "explícame ",
@@ -33,6 +33,21 @@
     " tenía ",
     " had ",
     " have had ",
-    " has had "
+    " has had ",
+    "horario",
+    "hours",
+    "costo",
+    "cuesta",
+    "precio",
+    "price",
+    "consulta",
+    "appointment",
+    "agendar",
+    "schedule",
+    "cuánto cuesta",
+    "how much",
+    "what are your hours",
+    "horarios",
+    "schedule"
   ]
 }

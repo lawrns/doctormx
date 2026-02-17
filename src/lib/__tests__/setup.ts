@@ -1,5 +1,9 @@
 import { vi, beforeEach, afterEach } from 'vitest'
 import '@testing-library/jest-dom'
+import { config } from 'dotenv'
+
+// Load environment variables from .env file
+config({ path: '.env' })
 
 // Mock next/headers to avoid "headers was called outside a request scope" errors
 // These mocks are essential for testing API routes that use headers() or cookies()

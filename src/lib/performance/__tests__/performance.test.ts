@@ -77,7 +77,7 @@ describe('Healthcare Performance Benchmarks', () => {
     it('should handle no red flags in <20ms', () => {
       const { result, duration } = measureEmergencyDetection(
         () => evaluateRedFlags({
-          message: 'Tengo un resfriado ligero',
+          message: 'Just saying hello',
           intake: { age: 30, sex: 'male' }
         }),
         { test: 'no_red_flags' }

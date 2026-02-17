@@ -16,39 +16,86 @@ const createMockAppointment = (overrides: Partial<Appointment> = {}): Appointmen
   ...overrides,
 })
 
-const mockSupabaseClient = {
-  from: vi.fn().mockReturnValue({
-    select: vi.fn().mockReturnValue({
-      eq: vi.fn().mockReturnValue({
-        single: vi.fn().mockResolvedValue({ data: null, error: null }),
-        order: vi.fn().mockResolvedValue({ data: [], error: null }),
-        range: vi.fn().mockResolvedValue({ data: [], error: null }),
+// Helper to create a mock Supabase client with customizable table responses
+const createMockSupabaseClient = (tableOverrides: Record<string, unknown> = {}) => {
+  const defaultResponses: Record<string, unknown> = {
+    availability_rules: {
+      select: vi.fn().mockReturnValue({
+        eq: vi.fn().mockReturnValue({
+          order: vi.fn().mockResolvedValue({ 
+            data: [{ day_of_week: 3, start_time: '09:00', end_time: '18:00' }], 
+            error: null 
+          }),
+        }),
+      }),
+    },
+    appointments: {
+      select: vi.fn().mockReturnValue({
+        eq: vi.fn().mockReturnValue({
+          gte: vi.fn().mockReturnValue({
+            lte: vi.fn().mockReturnValue({
+              in: vi.fn().mockResolvedValue({ data: [], error: null }),
+            }),
+          }),
+          order: vi.fn().mockResolvedValue({ data: [], error: null }),
+          range: vi.fn().mockResolvedValue({ data: [], error: null }),
+        }),
+        insert: vi.fn().mockReturnValue({
+          select: vi.fn().mockReturnValue({
+            single: vi.fn().mockResolvedValue({ data: {}, error: null }),
+          }),
+        }),
+        update: vi.fn().mockReturnValue({
+          eq: vi.fn().mockReturnValue({
+            select: vi.fn().mockReturnValue({
+              single: vi.fn().mockResolvedValue({ data: {}, error: null }),
+            }),
+          }),
+        }),
+        delete: vi.fn().mockReturnValue({
+          eq: vi.fn().mockResolvedValue({ error: null }),
+        }),
       }),
       insert: vi.fn().mockReturnValue({
         select: vi.fn().mockReturnValue({
           single: vi.fn().mockResolvedValue({ data: {}, error: null }),
         }),
       }),
-      update: vi.fn().mockReturnValue({
+    },
+    profiles: {
+      select: vi.fn().mockReturnValue({
         eq: vi.fn().mockReturnValue({
-          select: vi.fn().mockReturnValue({
-            single: vi.fn().mockResolvedValue({ data: {}, error: null }),
+          single: vi.fn().mockResolvedValue({ 
+            data: { email: 'test@example.com', full_name: 'Test Patient' }, 
+            error: null 
           }),
         }),
       }),
-      delete: vi.fn().mockReturnValue({
-        eq: vi.fn().mockResolvedValue({ error: null }),
+    },
+    ...tableOverrides,
+  }
+
+  return {
+    from: vi.fn().mockImplementation((table: string) => {
+      return defaultResponses[table] || {
+        select: vi.fn().mockReturnValue({
+          eq: vi.fn().mockReturnValue({
+            single: vi.fn().mockResolvedValue({ data: null, error: null }),
+          }),
+        }),
+      }
+    }),
+    storage: {
+      from: vi.fn().mockReturnValue({
+        upload: vi.fn().mockResolvedValue({ error: null }),
+        download: vi.fn().mockResolvedValue({ data: new ArrayBuffer(1), error: null }),
+        getPublicUrl: vi.fn().mockReturnValue({ publicUrl: 'https://test.com/file.pdf' }),
       }),
-    }),
-  }),
-  storage: {
-    from: vi.fn().mockReturnValue({
-      upload: vi.fn().mockResolvedValue({ error: null }),
-      download: vi.fn().mockResolvedValue({ data: new ArrayBuffer(1), error: null }),
-      getPublicUrl: vi.fn().mockReturnValue({ publicUrl: 'https://test.com/file.pdf' }),
-    }),
-  },
+    },
+  }
 }
+
+
 
 vi.mock('@/lib/supabase/server', () => ({
   createClient: vi.fn(),
@@ -73,6 +120,28 @@ vi.mock('@/lib/notifications', () => ({
 
 vi.mock('@/lib/whatsapp-notifications', () => ({
   sendAppointmentConfirmation: vi.fn(),
+  getPatientPhone: vi.fn().mockResolvedValue(null),
+}))
+
+// Mock the availability module to control slot availability
+vi.mock('@/lib/availability', () => ({
+  getAvailableSlots: vi.fn(),
+  getDoctorAvailability: vi.fn(),
+  generateTimeSlots: vi.fn((start: string, end: string) => {
+    // Simple implementation for generating time slots
+    const slots: string[] = []
+    const [startHour, startMin] = start.split(':').map(Number)
+    const [endHour, endMin] = end.split(':').map(Number)
+    let currentMinutes = startHour * 60 + startMin
+    const endMinutes = endHour * 60 + endMin
+    while (currentMinutes + 30 <= endMinutes) {
+      const hours = Math.floor(currentMinutes / 60)
+      const mins = currentMinutes % 60
+      slots.push(`${hours.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}`)
+      currentMinutes += 30
+    }
+    return slots
+  }),
 }))
 
 describe('Booking System', () => {
@@ -87,21 +156,30 @@ describe('Booking System', () => {
   describe('Appointment Reservation', () => {
     it('should create appointment successfully with valid request', async () => {
       const mockAppointment = createMockAppointment()
-      const mockClient = {
-        ...mockSupabaseClient,
-        from: vi.fn().mockImplementation((table: string) => {
-          if (table === 'appointments') {
-            return {
-              insert: vi.fn().mockReturnValue({
-                select: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: mockAppointment, error: null }),
-                }),
+      
+      // Mock getAvailableSlots to return the requested time slot as available
+      const { getAvailableSlots } = await import('@/lib/availability')
+      vi.mocked(getAvailableSlots).mockResolvedValue(['09:00', '09:30', '10:00', '10:30', '11:00', '11:30'])
+      
+      const mockClient = createMockSupabaseClient({
+        appointments: {
+          insert: vi.fn().mockReturnValue({
+            select: vi.fn().mockReturnValue({
+              single: vi.fn().mockResolvedValue({ data: mockAppointment, error: null }),
+            }),
+          }),
+        },
+        profiles: {
+          select: vi.fn().mockReturnValue({
+            eq: vi.fn().mockReturnValue({
+              single: vi.fn().mockResolvedValue({ 
+                data: { email: 'test@example.com', full_name: 'Test Patient' }, 
+                error: null 
               }),
-            }
-          }
-          return mockSupabaseClient.from(table)
-        }),
-      }
+            }),
+          }),
+        },
+      })
 
       const { createClient } = await import('@/lib/supabase/server')
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -121,25 +199,12 @@ describe('Booking System', () => {
     })
 
     it('should fail when slot is unavailable', async () => {
-      const mockClient = {
-        ...mockSupabaseClient,
-        from: vi.fn().mockImplementation((table: string) => {
-          if (table === 'appointments') {
-            return {
-              insert: vi.fn().mockReturnValue({
-                select: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: null, error: { message: 'Slot unavailable' } }),
-                }),
-              }),
-            }
-          }
-          return mockSupabaseClient.from(table)
-        }),
-      }
+      // Mock getAvailableSlots to return slots that DON'T include the requested time
+      const { getAvailableSlots } = await import('@/lib/availability')
+      vi.mocked(getAvailableSlots).mockResolvedValue(['09:00', '09:30', '10:00', '10:30'])
 
       const { createClient } = await import('@/lib/supabase/server')
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      vi.mocked(createClient).mockResolvedValue(mockClient as any)
+      vi.mocked(createClient).mockResolvedValue(createMockSupabaseClient() as never)
 
       const { reserveAppointmentSlot } = await import('@/lib/booking')
       
@@ -147,7 +212,7 @@ describe('Booking System', () => {
         patientId: 'patient-1',
         doctorId: 'doctor-1',
         date: '2025-12-31',
-        time: '09:30',
+        time: '11:00',
       }
 
       const result = await reserveAppointmentSlot(request)

@@ -367,10 +367,11 @@ describe('Triage Accuracy Tests', () => {
         );
 
         return {
-          actual: !testCase.isEmergency,
-          predicted: !result.detected ||
-            (result.highestSeverity === 'moderate' && testCase.expectedAction === 'PRIMARY'),
+          actual: testCase.isEmergency,
+          predicted: result.detected &&
+            !(result.highestSeverity === 'moderate' && testCase.expectedAction === 'PRIMARY'),
           testCase,
+          result,
         };
       });
 
@@ -378,11 +379,13 @@ describe('Triage Accuracy Tests', () => {
       const metrics = calculateMetrics(matrix);
 
       // Log false positives for review
-      const falsePositives = results.filter(r => r.actual && !r.predicted);
+      const falsePositives = results.filter(r => !r.actual && r.predicted);
       if (falsePositives.length > 0) {
         console.warn('False Positives (over-triage):', falsePositives.map(f => ({
           input: f.testCase.input,
           category: f.testCase.category,
+          detected: f.result.detected,
+          severity: f.result.highestSeverity,
         })));
       }
 

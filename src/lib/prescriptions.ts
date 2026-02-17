@@ -164,7 +164,7 @@ export async function generateAndStorePDF(prescriptionId: string): Promise<{ pdf
   
   const pdfBuffer = await generatePrescriptionPDF(prescriptionData)
   
-  const storageClient = createServiceClient()
+  const storageClient = await createServiceClient()
   const fileName = `prescriptions/${prescriptionId}.pdf`
   
   const { error: uploadError } = await storageClient

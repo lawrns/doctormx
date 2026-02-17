@@ -101,7 +101,7 @@ export const MEDICATION_INTERACTIONS = {
 export const CONDITION_SPECIFIC_FLAGS = {
   diabetes: [
     {
-      pattern: /confusión|desorientado|habla.*enredada|perdida.*conciencia|confused|disoriented|altered.*mental.*status|memory.*loss|sudden.*confusion|delirium|doesnt.*know.*where|cant.*think.*clearly|sweating|sudoracion/i,
+      pattern: /confusión|confundido|desorientado|habla.*enredada|perdida.*conciencia|confused|disoriented|altered.*mental.*status|memory.*loss|sudden.*confusion|delirium|doesnt.*know.*where|cant.*think.*clearly|sweating|sudoracion|sudoroso|temblor|temblando|azucar|azúcar/i,
       message: 'Posible hiperglucemia o hipoglucemia - EMERGENCIA DIABÉTICA',
       severity: 'critical' as RedFlagSeverity,
       urgencyScore: 9,
@@ -115,7 +115,7 @@ export const CONDITION_SPECIFIC_FLAGS = {
       recommendation: 'Acuda a urgencias. Requiere glucosa, cetonas y gasometría arterial.',
     },
     {
-      pattern: /pie.*hinchado|pie.*rojo|úlceras.*pie|ampolla.*pie|herida.*no.*sana/i,
+      pattern: /pie.*hinchado|pie.*rojo|úlceras.*pie|ampolla.*pie|herida.*no.*sana|pie.*diabetico|pie.*diabético/i,
       message: 'Posible pie diabético con infección',
       severity: 'high' as RedFlagSeverity,
       urgencyScore: 7,
@@ -201,7 +201,7 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
 
   // Stroke (ACV) - FAST Protocol - Comprehensive patterns
   {
-    pattern: /derrame.*cerebral|derrame|paralisis|parálisis|paralysis|debilidad.*extremo|cara.*colgada|cara.*caida|cara.*caída|brazo.*no.*puede.*levantar|no.*puede.*mover.*brazo|no.*puedo.*mover.*brazo|cara.*torcida|slurred.*speech|cant.*speak|speech.*difficulty|face.*drooping|arm.*weakness|facial.*paralysis|paralyzed.*face|face.*drooping|one.*side.*face.*numb|cant.*move.*one.*side.*face|facial.*droop|paralyzed.*face|crooked.*face|arm.*numbness|one.*arm.*drags|weakness.*extremity|cant.*raise.*arm|cant.*lift.*arm|left.*arm.*weak|right.*arm.*feels.*heavy|right.*arm.*heavy|left.*arm.*is.*weak|cant.*move.*arm|cant.*move.*my.*arm|slurred.*speech|cant.*speak.*properly|trouble.*speaking|speech.*difficulty|cant.*find.*words|words.*jumbled|speech.*garbled|hard.*talk|stroke|cva|cerebrovascular.*accident|brain.*attack|ischemic.*stroke|hemorrhagic.*stroke|mini.*stroke|tia/i,
+    pattern: /derrame.*cerebral|derrame|paralisis|parálisis|paralysis|debilidad.*extremo|cara.*colgada|cara.*caida|cara.*caída|cara.*caida|cara.*paralizada|paralisis.*cara|parálisis.*cara|cara.*cayó|cara.*cayo|se.*me.*cayó.*cara|se.*me.*cayo.*cara|brazo.*no.*puede.*levantar|no.*puede.*mover.*brazo|no.*puedo.*mover.*brazo|cara.*torcida|slurred.*speech|cant.*speak|speech.*difficulty|face.*drooping|arm.*weakness|facial.*paralysis|paralyzed.*face|face.*drooping|one.*side.*face.*numb|cant.*move.*one.*side.*face|facial.*droop|paralyzed.*face|crooked.*face|arm.*numbness|one.*arm.*drags|weakness.*extremity|cant.*raise.*arm|cant.*lift.*arm|left.*arm.*weak|right.*arm.*feels.*heavy|right.*arm.*heavy|left.*arm.*is.*weak|cant.*move.*arm|cant.*move.*my.*arm|slurred.*speech|cant.*speak.*properly|trouble.*speaking|speech.*difficulty|cant.*find.*words|words.*jumbled|speech.*garbled|hard.*talk|stroke|cva|cerebrovascular.*accident|cerebrovascular|brain.*attack|ischemic.*stroke|hemorrhagic.*stroke|mini.*stroke|tia|habla.*al.*reves|habla.*al.*revés|me.*habla.*al.*reves|me.*habla.*al.*revés|palabras.*al.*reves|palabras.*al.*revés/i,
     message: 'Posible accidente cerebrovascular (ACV) - EMERGENCIA',
     severity: 'critical',
     category: 'Neurological',
@@ -212,7 +212,7 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
     urgencyScore: 10,
   },
   {
-    pattern: /dificultad.*hablar|no.*puede.*hablar|palabras.*enredadas|lengua.*trabada|slurred.*speech|cant.*speak|speech.*difficulty|words.*jumbled|trouble.*speaking|hablo.*enredado|no.*me.*salen.*las.*palabras|habla.*confusa/i,
+    pattern: /dificultad.*hablar|no.*puede.*hablar|no.*puedo.*hablar|palabras.*enredadas|lengua.*trabada|slurred.*speech|cant.*speak|speech.*difficulty|words.*jumbled|trouble.*speaking|hablo.*enredado|habla.*enredada|habla.*al.*reves|habla.*al.*revés|me.*habla.*al.*reves|me.*habla.*al.*revés|no.*me.*salen.*las.*palabras|habla.*confusa|hablo.*confuso/i,
     message: 'Trastorno del habla súbita - Posible ACV',
     severity: 'critical',
     category: 'Neurological',
@@ -225,7 +225,7 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
 
   // Cardiac Emergency - Comprehensive patterns (All cardiac patterns are critical for safety)
   {
-    pattern: /infarto|heart.*attack|dolor.*pecho.*opresivo|dolor.*pecho.*brazo|angina|siento.*que.*me.*muero|dolor.*pecho.*mandibula|chest.*pain|pressure.*chest|squeezing.*chest|crushing.*chest|pain.*radiate.*arm|tightness.*chest|chest.*discomfort|pain.*spreading.*back|angina.*pain|left.*arm.*pain.*chest.*pain|cardiac.*arrest|severe.*chest.*pressure|chest.*pain.*elephant|radiating.*chest.*pain|chest.*pain.*jaw|pressure.*center.*chest|myocardial.*infarction|feeling.*going.*die|dolor.*pecho|dolor.*toracico|chest.*tightness|chest.*discomfort/i,
+    pattern: /infarto|infarto.*miocardio|infarto.*agudo.*miocardio|heart.*attack|doolor|dolor.*pecho.*opresivo|dolor.*pecho.*brazo|angina|siento.*que.*me.*muero|dolor.*pecho.*mandibula|chest.*pain|pressure.*chest|squeezing.*chest|crushing.*chest|pain.*radiate.*arm|tightness.*chest|chest.*discomfort|pain.*spreading.*back|angina.*pain|left.*arm.*pain.*chest.*pain|cardiac.*arrest|severe.*chest.*pressure|chest.*pain.*elephant|radiating.*chest.*pain|chest.*pain.*jaw|pressure.*center.*chest|myocardial.*infarction|feeling.*going.*die|dolor.*pecho|dolor.*toracico|dolor.*torácico|chest.*tightness|chest.*discomfort|mal.*del.*corazon|mal.*del.*corazón|molestia.*pecho|molestia.*en.*el.*pecho|ataque.*corazon|ataque.*corazón|se.*me.*paro.*corazon|se.*me.*paró.*corazón|paro.*cardiaco|paro.*cardíaco|dolor.*intenso.*pecho|opresion.*pecho|opresión.*pecho|muy.*cansada.*nauseas|nauseas.*dolor.*espalda|cansada.*nauseas.*espalda|dolor.*espalda.*nauseas|pecho.*dolor|pecho.*opresion|pecho.*opresión/i,
     message: 'Dolor torácico con características cardíacas - EMERGENCIA',
     severity: 'critical',
     category: 'Cardiac',
@@ -238,7 +238,7 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
 
   // Severe Respiratory - Comprehensive patterns (All respiratory emergencies are critical for safety)
   {
-    pattern: /no.*puedo.*respirar|me.*estoy.*ahogando|ahogo.*severo|labios.*azules|cara.*azul|cianosis|difficulty.*breathing|cant.*breathe|trouble.*breathing|shortness.*breath|not.*able.*breathe|wheezing.*severe|blue.*lips|cyanosis|choking|cant.*breath|gasping.*air|cant.*catch.*breath|blue.*lips|face.*turning.*blue|lips.*blue|air.*hunger|cant.*get.*air|suffocating|chest.*tightness.*cant.*breathe|respiratory.*distress|struggling.*breathe|severe.*asthma.*attack|bronchospasm|dificultad.*respirar|ahogo|falta.*aire|sibilancias.*severas|sob|dyspnea/i,
+    pattern: /no.*puedo.*respirar|no.*puede.*respirar|no.*respira.*bien|dificultad.*respirar|me.*estoy.*ahogando|me.*estoy.*ahogando|ahogo.*severo|labios.*azules|cara.*azul|cianosis|difficulty.*breathing|cant.*breathe|trouble.*breathing|shortness.*breath|not.*able.*breathe|wheezing.*severe|blue.*lips|cyanosis|choking|cant.*breath|gasping.*air|cant.*catch.*breath|blue.*lips|face.*turning.*blue|lips.*blue|air.*hunger|cant.*get.*air|suffocating|chest.*tightness.*cant.*breathe|respiratory.*distress|struggling.*breathe|severe.*asthma.*attack|bronchospasm|dificultad.*respirar|ahogo|falta.*aire|sibilancias.*severas|sob|dyspnea|bebe.*no.*respira|bebe.*no.*puede.*respirar|mi.*bebe.*no.*respira|mi.*bebe.*no.*puede.*respirar|mi.*bebé.*no.*respira|mi.*bebé.*no.*puede.*respirar|recien.*nacido.*no.*respira|recién.*nacido.*no.*respira/i,
     message: 'Insuficiencia respiratoria severa - EMERGENCIA',
     severity: 'critical',
     category: 'Respiratory',
@@ -286,7 +286,7 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
 
   // Psychiatric Emergency - Comprehensive suicide/self-harm patterns
   {
-    pattern: /pensamientos.*suicidio|quiere.*morir|quiero.*morir|quiero.*suicidarme|suicidarme|voy.*a.*matarme|voy.*a.*suicidarme|no.*quiero.*vivir.*m[aá]s|quitarme.*vida|plan.*suicida|autolesion.*grave|want.*die|kill.*myself|suicidal.*thoughts|want.*end.*life|end.*life|planning.*suicide|suicide.*plan|dont.*want.*live|better.*off.*dead|no.*point.*living|want.*disappear|self.*harm|want.*hurt.*myself|cut.*myself|end.*all|not.*worth.*living|want.*commit.*suicide|going.*kill.*myself|suicide|hopeless|no.*reason.*live/i,
+    pattern: /pensamientos.*suicidio|quiere.*morir|quiero.*morir|quiero.*estar.*muerto|no.*quiero.*estar.*vivo|no.*quiero.*vivir.*m[aá]s|no.*quiero.*seguir.*viv|quiero.*suicidarme|suicidarme|voy.*a.*matarme|voy.*a.*suicidarme|me.*quiero.*matar|me.*quiero.*suicidar|me.*voy.*a.*matar|me.*voy.*a.*suicidar|quitarme.*vida|plan.*suicida|autolesion.*grave|autolesionarme|hacerme.*daño|hacerme daño|me.*hago.*daño|me.*quiero.*hacer.*daño|me.*quiero.*autolesionar|tengo.*ganas.*de.*morir|tengo.*ganas.*de.*morirme|want.*die|kill.*myself|suicidal.*thoughts|want.*end.*life|end.*life|planning.*suicide|suicide.*plan|dont.*want.*live|better.*off.*dead|no.*point.*living|want.*disappear|self.*harm|want.*hurt.*myself|cut.*myself|end.*all|not.*worth.*living|want.*commit.*suicide|going.*kill.*myself|suicide|hopeless|no.*reason.*live/i,
     message: 'Ideación suicida activa - CRISIS PSIQUIÁTRICA',
     severity: 'critical',
     category: 'Psychiatric',
@@ -299,7 +299,7 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
 
   // Severe Bleeding - Comprehensive patterns
   {
-    pattern: /sangrado.*que.*no.*para|hemorragia.*abundante|hemorragia.*no.*para|sangrado.*mucho|sangrado.*profuso|desangrando|severe.*bleeding|heavy.*bleeding|bleeding.*stop|uncontrolled.*bleeding|losing.*blood|gushing.*blood|bleeding.*heavily|losing.*lot.*blood|hemorrhage|profuse.*bleeding|cant.*stop.*bleeding|blood.*everywhere|major.*blood.*loss|arterial.*bleeding|vomiting.*blood|coughing.*blood|blood.*urine|rectal.*bleeding|nosebleed.*wont.*stop|excessive.*bleeding|life.*threatening.*bleeding|estoy.*sangrando|sangrando.*mucho|hemorragia.*que.*no.*para|sangrado.*profuso|me.*estoy.*desangrando|sangre.*sale.*sin.*parar|hemorragia.*severa|sangrado.*incontrolable|pierdo.*mucha.*sangre|sangrado.*abundante|hemorragia.*activa|sangra.*herida.*sin.*cesar|sangre.*chorros|sangrado.*intenso|hemorragia.*interna|vomito.*sangre|sangre.*orina|sangrado.*rectal|hemorragia.*nasal.*continua|sangrado.*nasal/i,
+    pattern: /sangrado.*que.*no.*para|hemorragia.*abundante|hemorragia.*no.*para|sangrado.*mucho|sangrado.*profuso|desangrando|severe.*bleeding|heavy.*bleeding|bleeding.*stop|uncontrolled.*bleeding|losing.*blood|gushing.*blood|bleeding.*heavily|losing.*lot.*blood|hemorrhage|profuse.*bleeding|cant.*stop.*bleeding|blood.*everywhere|major.*blood.*loss|arterial.*bleeding|vomiting.*blood|coughing.*blood|blood.*urine|rectal.*bleeding|nosebleed.*wont.*stop|excessive.*bleeding|life.*threatening.*bleeding|estoy.*sangrando|sangrando.*mucho|hemorragia.*que.*no.*para|sangrado.*profuso|me.*estoy.*desangrando|sangre.*sale.*sin.*parar|hemorragia.*severa|sangrado.*incontrolable|pierdo.*mucha.*sangre|sangrado.*abundante|hemorragia.*activa|sangra.*herida.*sin.*cesar|sangre.*chorros|sangrado.*intenso|hemorragia.*interna|vomito.*sangre|sangre.*orina|sangrado.*rectal|hemorragia.*nasal.*continua|sangrado.*nasal|sangrado.*encias|encias.*sangrando|encias.*sangran|sangrado.*encias|encías.*sangrando|sangrado.*de.*encias|sangrado.*de.*encías/i,
     message: 'Hemorragia incontrolable - EMERGENCIA',
     severity: 'critical',
     category: 'Trauma',
@@ -331,7 +331,7 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
 
   // High Fever
   {
-    pattern: /fiebre.*40|fiebre.*41|fiebre.*42|temperatura.*muy.*alta|fiebre.*no.*baja|temperature.*104|temperature.*105|temperature.*106/i,
+    pattern: /fiebre.*40|fiebre.*41|fiebre.*42|temperatura.*muy.*alta|fiebre.*no.*baja|temperature.*104|temperature.*105|temperature.*106|fiebre.*alta.*confusion|fiebre.*alta.*respiracion|fiebre.*alta.*respiración|fiebre.*confusion|fiebre.*respiración.*rápida/i,
     message: 'Fiebre muy alta - Riesgo de sepsis',
     severity: 'high',
     category: 'Infectious',
@@ -370,7 +370,7 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
 
   // Severe Abdominal - Comprehensive patterns
   {
-    pattern: /abdomen.*r[ií]gido.*doloroso|abdomen.*r[ií]gido|abdomen.*duro|defensa.*abdominal|dolor.*abdominal.*severo|dolor.*abdominal.*intenso|rigid.*abdomen|hard.*stomach|board.*like.*abdomen|guarding.*abdomen|severe.*abdominal.*pain|acute.*abdominal.*pain|stomach.*rigid|belly.*hard.*rock|rebound.*tenderness|abdominal.*guarding|severe.*belly.*pain|severe.*stomach.*pain|belly.*pain|rigid.*stomach.*severe.*pain/i,
+    pattern: /abdomen.*r[ií]gido.*doloroso|abdomen.*r[ií]gido|abdomen.*duro|defensa.*abdominal|dolor.*abdominal.*severo|dolor.*abdominal.*intenso|rigid.*abdomen|hard.*stomach|board.*like.*abdomen|guarding.*abdomen|severe.*abdominal.*pain|acute.*abdominal.*pain|stomach.*rigid|belly.*hard.*rock|rebound.*tenderness|abdominal.*guarding|severe.*belly.*pain|severe.*stomach.*pain|belly.*pain|rigid.*stomach.*severe.*pain|apendicitis|apendicitis.*aguda|dolor.*ombligo|dolor.*alrededor.*ombligo|dolor.*abdomen.*bajo.*derecha|dolor.*abdomen.*bajo.*derecho|dolor.*lado.*derecho.*abdomen|dolor.*lado.*derecho.*bajo/i,
     message: 'Signos de abdomen agudo - Posible emergencia quirúrgica',
     severity: 'high',
     category: 'Gastrointestinal',

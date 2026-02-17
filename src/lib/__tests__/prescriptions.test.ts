@@ -1,20 +1,16 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { mockSupabaseClient, createMockAppointment } from './mocks'
 import { createClient, createServiceClient } from '@/lib/supabase/server'
+import { generatePrescriptionPDF, buildPrescriptionData } from '@/lib/prescriptions-pdf'
 
 vi.mock('@/lib/supabase/server', () => ({
   createClient: vi.fn(),
-  createServiceClient: vi.fn().mockResolvedValue(mockSupabaseClient),
+  createServiceClient: vi.fn(),
 }))
 
 vi.mock('@/lib/prescriptions-pdf', () => ({
-  generatePrescriptionPDF: vi.fn().mockResolvedValue(Buffer.from('test pdf')),
-  buildPrescriptionData: vi.fn().mockReturnValue({
-    patient: { full_name: 'Test Patient', date_of_birth: '1990-01-01' },
-    doctor: { full_name: 'Dr. Test', license_number: '12345', specialty: 'General' },
-    prescription: { id: 'test', diagnosis: 'Test', medications: 'Test', instructions: 'Test' },
-    date: new Date(),
-  }),
+  generatePrescriptionPDF: vi.fn(),
+  buildPrescriptionData: vi.fn(),
 }))
 
 vi.mock('@/lib/followup', () => ({
@@ -80,6 +76,9 @@ describe('Prescriptions System', () => {
                 eq: vi.fn().mockReturnValue({
                   single: vi.fn().mockResolvedValue({ data: mockPrescription, error: null }),
                 }),
+              }),
+              update: vi.fn().mockReturnValue({
+                eq: vi.fn().mockResolvedValue({ error: null }),
               }),
             }
           }
@@ -259,6 +258,9 @@ describe('Prescriptions System', () => {
                   single: vi.fn().mockResolvedValue({ data: mockPrescription, error: null }),
                 }),
               }),
+              update: vi.fn().mockReturnValue({
+                eq: vi.fn().mockResolvedValue({ error: null }),
+              }),
             }
           }
           if (table === 'appointments') {
@@ -266,7 +268,15 @@ describe('Prescriptions System', () => {
               select: vi.fn().mockReturnValue({
                 eq: vi.fn().mockReturnValue({
                   single: vi.fn().mockResolvedValue({ 
-                    data: createMockAppointment(), 
+                    data: {
+                      ...createMockAppointment(),
+                      patient: { full_name: 'Test Patient', date_of_birth: '1990-01-01' },
+                      doctor: {
+                        license_number: '12345',
+                        specialty: 'Medicina General',
+                        profile: { full_name: 'Dr. Test' }
+                      }
+                    }, 
                     error: null 
                   }),
                 }),
@@ -278,13 +288,20 @@ describe('Prescriptions System', () => {
         storage: {
           from: vi.fn().mockReturnValue({
             upload: vi.fn().mockResolvedValue({ error: null }),
-            getPublicUrl: vi.fn().mockReturnValue({ publicUrl: 'https://test.com/prescription.pdf' }),
+            getPublicUrl: vi.fn().mockReturnValue({ data: { publicUrl: 'https://test.com/prescription.pdf' } }),
           }),
         },
       }
 
       vi.mocked(createClient).mockResolvedValue(mockClient as never)
       vi.mocked(createServiceClient).mockResolvedValue(mockClient as never)
+      vi.mocked(generatePrescriptionPDF).mockResolvedValue(Buffer.from('test pdf'))
+      vi.mocked(buildPrescriptionData).mockReturnValue({
+        patient: { full_name: 'Test Patient', date_of_birth: '1990-01-01' },
+        doctor: { full_name: 'Dr. Test', license_number: '12345', specialty: 'General' },
+        prescription: { id: 'test', diagnosis: 'Test', medications: 'Test', instructions: 'Test' },
+        date: new Date(),
+      })
 
       const { generateAndStorePDF } = await import('@/lib/prescriptions')
       

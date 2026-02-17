@@ -234,11 +234,9 @@ export async function verifyAgeAndConsentRequirements(
   const version = await getLatestConsentVersion(consentType)
 
   let minAge = LEGAL_AGE_MEXICO
-  let requiresGuardian = false
 
   if (version?.age_restriction) {
     minAge = version.age_restriction.min_age || LEGAL_AGE_MEXICO
-    requiresGuardian = version.age_restriction.requires_guardian || false
   }
 
   // If no DOB provided, check if user has one
@@ -268,7 +266,7 @@ export async function verifyAgeAndConsentRequirements(
 
   return {
     status: isAdult ? 'verified_adult' : 'verified_minor',
-    requires_guardian: !isAdult || requiresGuardian,
+    requires_guardian: !isAdult,
     age,
     legal_age: minAge,
   }

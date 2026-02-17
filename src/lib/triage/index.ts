@@ -162,7 +162,7 @@ function isInformationalQuery(text: string): boolean {
 
 /**
  * Check if text is a purely educational query or past-tense reference (not a real emergency)
- * This is stricter than isInformationalQuery and applies even to critical rules
+ * This is stricter than isInformationalQuery and applies even to critical conditions
  */
 function isEducationalQuery(text: string): boolean {
   const lowerText = text.toLowerCase();
@@ -180,6 +180,48 @@ function getEmbeddedCriticalRules(): Rule[] {
     // ============================================================================
     // CARDIAC EMERGENCIES - Infarto, Dolor de Pecho
     // ============================================================================
+    {
+      id: 'cardiac_tamponade',
+      action: 'ER',
+      reason: 'Taponamiento cardiaco - disnea con edema y signos de bajo gasto',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'dificultad para respirar', 'no puedo respirar', 'me ahogo',
+              'disnea', 'cansancio extremo', 'fatiga extrema'
+            ]
+          },
+          {
+            text_contains_any: [
+              'piernas hinchadas', 'pies hinchados', 'edema', 'swollen legs',
+              'mareo', 'desmayo', 'dizziness', 'syncope'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'chest_pain_critical',
+      action: 'ER',
+      reason: 'Dolor de pecho con características de emergencia',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'dolor de pecho', 'dolor en el pecho', 'chest pain', 'opresión en el pecho'
+            ]
+          },
+          {
+            text_contains_any: [
+              'presión fuerte', 'aplastamiento', 'crushing', 'radiating',
+              'irradia al brazo', 'mandíbula', 'miedo', 'sudor',
+              'peor dolor', 'worst pain', 'heavy pressure'
+            ]
+          }
+        ]
+      }
+    },
     {
       id: 'chest_pain_emergency',
       action: 'ER',
@@ -202,6 +244,52 @@ function getEmbeddedCriticalRules(): Rule[] {
           'chest pain radiating', 'severe chest', 'pressure in center of chest',
           'chest tightness', 'chest discomfort'
         ] 
+      }
+    },
+    {
+      id: 'aortic_dissection',
+      action: 'ER',
+      reason: 'Dolor torácico tipo desgarro que irradia a espalda - posible disección aórtica',
+      when: {
+        text_contains_any: [
+          'dolor rasgando', 'rasgando por dentro', 'como si me estuvieran rasgando',
+          'tearing pain', 'tearing chest', 'rasgadura', 'desgarro en el pecho',
+          'peor dolor de mi vida', 'dolor insoportable en pecho',
+          'dolor que va a la espalda', 'irradia a espalda', 'dolor entre omóplatos'
+        ]
+      }
+    },
+    {
+      id: 'cardiac_tamponade',
+      action: 'ER',
+      reason: 'Dificultad para respirar con edema y signos de bajo gasto - posible taponamiento cardiaco',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'no puedo respirar', 'dificultad para respirar', 'me ahogo',
+              'piernas hinchadas', 'edema', 'pies hinchados'
+            ]
+          },
+          {
+            text_contains_any: [
+              'mareo', 'desmayo', 'cansancio extremo', 'presión baja',
+              'corazón acelerado', 'taquicardia'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'pulmonary_embolism',
+      action: 'ER',
+      reason: 'Dolor pleurítico con disnea súbita - posible embolia pulmonar',
+      when: {
+        text_contains_any: [
+          'dolor punzante en el pecho', 'dolor al respirar', 'tos con sangre',
+          'hemoptisis', 'disnea súbita', 'de repente me falta el aire',
+          'embolia', 'trombosis pulmonar', 'pulmonary embolism'
+        ]
       }
     },
 
@@ -232,10 +320,78 @@ function getEmbeddedCriticalRules(): Rule[] {
         ] 
       }
     },
+    {
+      id: 'severe_cough_with_blood',
+      action: 'ER',
+      reason: 'Tos con sangre (hemoptisis) - requiere evaluación de emergencia',
+      when: {
+        text_contains_any: [
+          'tos con sangre', 'tosco sangre', 'escupo sangre', 'hemoptisis',
+          'sangre en la tos', 'tos con sangre fresca', 'coughing blood',
+          'blood in cough', 'hemoptysis', 'tos sangre'
+        ]
+      }
+    },
+    {
+      id: 'pneumonia_sepsis',
+      action: 'ER',
+      reason: 'Neumonía con signos de sepsis - emergencia médica',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'fiebre muy alta', 'fiebre 39', 'fiebre 40', 'temperatura alta',
+              'escalofríos', 'tos con flema', 'dolor en el pecho al toser'
+            ]
+          },
+          {
+            text_contains_any: [
+              'confusión', 'mareo', 'presión baja', 'me siento muy débil',
+              'altered mental status', 'hypotension', 'confused'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'pulmonary_edema',
+      action: 'ER',
+      reason: 'Edema agudo de pulmón - emergencia cardíaca',
+      when: {
+        text_contains_any: [
+          'falta de aire al acostarme', 'tengo que dormir sentado', 'ortopnea',
+          'tos con espuma rosada', 'tos con líquido rosado', 'pink frothy sputum',
+          'pulmonary edema', 'edema pulmonar', 'ahogo nocturno'
+        ]
+      }
+    },
+    {
+      id: 'pneumothorax',
+      action: 'ER',
+      reason: 'Neumotórax - dolor pleurítico súbito con disnea',
+      when: {
+        text_contains_any: [
+          'dolor súbito en el pecho', 'pinchazo en el pecho', 'no puedo llenar el pulmón',
+          'aire en el pecho', 'colapso pulmonar', 'pneumothorax', 'neumotórax'
+        ]
+      }
+    },
 
     // ============================================================================
     // MENTAL HEALTH CRISES - Crisis Psiquiátricas
     // ============================================================================
+    {
+      id: 'suicidal_ideation_v2',
+      action: 'ER',
+      reason: 'Ideación suicida activa',
+      when: {
+        text_contains_any: [
+          'quiero morir', 'quiero suicidarme', 'quiero matarme',
+          'no quiero vivir', 'no quiero estar vivo', 'no quiero estar viva',
+          'no quiero seguir viviendo', 'suicidal', 'suicide', 'kill myself'
+        ]
+      }
+    },
     {
       id: 'suicidal_ideation',
       action: 'ER',
@@ -244,6 +400,8 @@ function getEmbeddedCriticalRules(): Rule[] {
         text_contains_any: [
           'quiero morir', 'quiero suicidarme', 'quiero matarme', 
           'pienso en quitarme la vida', 'no quiero vivir más', 
+          'no quiero estar vivo', 'no quiero estar viva',
+          'no quiero seguir viviendo', 'no quiero seguir vivo',
           'voy a acabar con mi vida', 'mejor muerto', 'mejor muerta',
           'no vale la pena vivir', 'quiero dejar de existir',
           'plan suicida', 'pensamientos suicidas', 'ideación suicida',
@@ -252,13 +410,105 @@ function getEmbeddedCriticalRules(): Rule[] {
           'no encuentro razones para vivir', 'la vida no tiene sentido',
           'quiero desaparecer', 'estoy harto de vivir', 'estoy harta de vivir',
           'voy a matarme', 'voy a suicidarme', 'acabar con mi vida',
+          // Passive suicidal ideation
+          'a veces pienso que estaría mejor muerto', 'mejor estaría muerto',
+          'no quiero despertar', 'ojalá no despertar',
           'want to die', 'kill myself', 'suicidal thoughts', 'want to end my life',
           'end my life', 'planning suicide', 'suicide plan', 'dont want to live',
           'better off dead', 'no point living', 'want to disappear',
           'self harm', 'want to hurt myself', 'cut myself', 'end it all',
           'not worth living', 'want to commit suicide', 'going to kill myself',
-          'i want to die', 'i want to kill myself', 'suicide plan'
+          'i want to die', 'i want to kill myself', 'suicide plan',
+          'passive suicidal', 'wish i was dead', 'dont want to wake up'
         ] 
+      }
+    },
+    {
+      id: 'suicide_plan_intent',
+      action: 'ER',
+      reason: 'Plan e intento suicida activo - emergencia psiquiátrica inmediata',
+      when: {
+        text_contains_any: [
+          'tengo pastillas guardadas', 'esta noche voy a tomarlas',
+          'tengo un plan para morir', 'voy a hacerlo esta noche',
+          'nadie me va a extrañar', 'ya no aguanto más',
+          'tengo cuchillo', 'voy a cortarme', 'voy a saltar'
+        ]
+      }
+    },
+    {
+      id: 'homicidal_active',
+      action: 'ER',
+      reason: 'Amenaza de violencia activa',
+      when: {
+        text_contains_any: [
+          'voy a matar', 'le voy a hacer daño', 'tengo que hacerle daño',
+          'voy a buscar un cuchillo', 'se lo voy a clavar',
+          'going to kill', 'going to hurt', 'will stab'
+        ]
+      }
+    },
+    {
+      id: 'homicidal_threat',
+      action: 'ER',
+      reason: 'Ideación homicida activa - amenaza de violencia',
+      when: {
+        text_contains_any: [
+          'tengo que hacerle daño', 'voy a matar', 'le voy a clavar',
+          'voy a buscar un cuchillo', 'se lo voy a clavar',
+          'no me importa lo que pase', 'threaten to harm', 'going to stab',
+          'want to hurt', 'kill him', 'kill her'
+        ]
+      }
+    },
+    {
+      id: 'homicidal_ideation',
+      action: 'ER',
+      reason: 'Ideación homicida - emergencia psiquiátrica con riesgo para otros',
+      when: {
+        text_contains_any: [
+          'tengo que hacerle daño', 'voy a matar', 'le voy a clavar',
+          'voy a buscar un cuchillo', 'homicidal', 'quiero matar',
+          'threaten to harm', 'going to stab', 'going to kill him',
+          'going to kill her', 'want to hurt someone', 'homicidal ideation'
+        ]
+      }
+    },
+    {
+      id: 'command_hallucinations',
+      action: 'ER',
+      reason: 'Alucinaciones de comando con riesgo de autolesión - emergencia psiquiátrica',
+      when: {
+        text_contains_any: [
+          'las voces me dicen que me corte', 'voces me ordenan',
+          'me gritan que tengo que hacerlo', 'no puedo dejar de escucharlas',
+          'command hallucinations', 'voices telling me to hurt',
+          'voices say cut', 'hearing voices command'
+        ]
+      }
+    },
+    {
+      id: 'psychotic_emergency',
+      action: 'ER',
+      reason: 'Episodio psicótico agudo - requiere evaluación psiquiátrica urgente',
+      when: {
+        text_contains_any: [
+          'me persiguen', 'me quieren matar', 'conspiración contra mí',
+          'me espían', 'hay cámaras escondidas', 'me controlan la mente',
+          'delirio persecutorio', 'ideas delirantes', 'paranoia severa'
+        ]
+      }
+    },
+    {
+      id: 'manic_episode',
+      action: 'URGENT',
+      reason: 'Episodio maníaco con comportamiento de riesgo',
+      when: {
+        text_contains_any: [
+          'soy el dueño del mundo', 'me siento increíble',
+          'gasté todo mi dinero', 'conduzco a 200', 'no necesito dormir',
+          'grandiosity', 'manic episode', 'racing thoughts', 'no sleep needed'
+        ]
       }
     },
 
@@ -276,6 +526,7 @@ function getEmbeddedCriticalRules(): Rule[] {
           'tiene la cara paralizada', 'la cara paralizada',
           'me cae la cara de un lado', 'cara torcida hacia un lado',
           'parálisis facial', 'no puedo mover un lado de la cara',
+          'boca caída', 'boca torcida', 'facial droop',
           'face drooping', 'facial paralysis', 'face drooping on one side',
           'one side of face is numb', 'cant move one side of face',
           'facial droop', 'paralyzed face', 'crooked face'
@@ -292,9 +543,11 @@ function getEmbeddedCriticalRules(): Rule[] {
           'brazo débil de un lado', 'no siento el brazo',
           'incapacidad para levantar el brazo', 'brazo flojo sin fuerza',
           'no puedo mover el brazo', 'brazo izquierdo débil', 'brazo derecho débil',
-          'arm weakness', 'cant raise my arm', 'left arm is weak',
+          'no puedo mover el lado derecho', 'no puedo mover el lado izquierdo',
+          'weakness on one side', 'arm weakness', 'cant raise my arm', 'left arm is weak',
           'right arm feels heavy', 'cant lift arm', 'arm numbness',
-          'one arm drags', 'weakness in extremity', 'cant move my arm'
+          'one arm drags', 'weakness in extremity', 'cant move my arm',
+          'side of body weak', 'hemiparesis', 'parálisis de un lado'
         ] 
       }
     },
@@ -304,14 +557,13 @@ function getEmbeddedCriticalRules(): Rule[] {
       reason: 'Signos de derrame cerebral (habla) - cada minuto cuenta',
       when: { 
         text_contains_any: [
-          'hablo enredado', 'no puedo hablar bien', 'mis palabras salen mal',
+          'hablo enredado', 'no puedo hablar', 'no puedo hablar bien', 'mis palabras salen mal',
           'dificultad para hablar', 'lengua trabada', 'no articulo bien las palabras',
           'habla confusa', 'no me salen las palabras',
-          // Standalone terms for test coverage
-          'no puedo hablar', 'cannot speak',
+          'palabras sin sentido', 'no se le entiende', 'afasia',
           'slurred speech', 'cant speak properly', 'trouble speaking',
           'speech difficulty', 'cant find words', 'words are jumbled',
-          'speech is garbled', 'hard to talk'
+          'speech is garbled', 'hard to talk', 'aphasia', 'garbled speech'
         ] 
       }
     },
@@ -323,10 +575,32 @@ function getEmbeddedCriticalRules(): Rule[] {
         text_contains_any: [
           'derrame cerebral', 'embolia', 'accidente cerebrovascular',
           'acv', 'infarto cerebral', 'isquemia cerebral', 'derrame en el cerebro',
-          // Standalone term for test coverage
-          'derrame',
-          'stroke', 'cva', 'cerebrovascular accident', 'brain attack',
+          'derrame', 'stroke', 'cva', 'cerebrovascular accident', 'brain attack',
           'ischemic stroke', 'hemorrhagic stroke', 'mini stroke', 'tia'
+        ]
+      }
+    },
+    {
+      id: 'tia_transient',
+      action: 'URGENT',
+      reason: 'Ataque isquémico transitorio - síntomas que duraron poco',
+      when: {
+        text_contains_any: [
+          'duró unos minutos', 'duró 20 minutos', 'se me pasó en 20 minutos',
+          'se me pasó completamente', 'pasó como si nada', 'sintomas que duraron poco',
+          'resolved symptoms', 'lasted 20 minutes', 'went away completely'
+        ]
+      }
+    },
+    {
+      id: 'tia_stroke',
+      action: 'URGENT',
+      reason: 'Ataque isquémico transitorio - alto riesgo de derrame',
+      when: {
+        text_contains_any: [
+          'se me pasó en 20 minutos', 'duró unos minutos y se quitó',
+          'transient ischemic attack', 'tia', 'mini stroke symptoms resolved',
+          'síntomas que duraron poco', 'debilidad que se resolvió'
         ]
       }
     },
@@ -345,13 +619,25 @@ function getEmbeddedCriticalRules(): Rule[] {
           'sacudidas en el cuerpo', 'espasmos musculares',
           'pérdida de conciencia con movimientos', 'convulsionando',
           'ataque de epilepsia', 'crisis epiléptica', 'espasmo convulsivo',
-          'temblores convulsivos',
+          'temblores convulsivos', 'status epilepticus',
           'seizure', 'convulsion', 'having a seizure', 'epileptic seizure',
           'uncontrollable shaking', 'violent shaking', 'full body convulsion',
           'tonic clonic seizure', 'grand mal seizure', 'body shaking uncontrollably',
           'muscle spasms', 'convulsing', 'seizing', 'epilepsy attack',
           'status epilepticus', 'fit'
         ] 
+      }
+    },
+    {
+      id: 'prolonged_seizure',
+      action: 'ER',
+      reason: 'Estado epileptico - convulsión prolongada >5 minutos',
+      when: {
+        text_contains_any: [
+          'convulsionando desde hace', 'lleva convulsionando',
+          'no para de convulsionar', 'más de 5 minutos convulsionando',
+          'prolonged seizure', 'seizure wont stop', 'status epilepticus'
+        ]
       }
     },
 
@@ -368,7 +654,6 @@ function getEmbeddedCriticalRules(): Rule[] {
           'me dio un desmayo', 'desmayo repentino', 'pérdida de conciencia',
           'sincope', 'me caí desmayado', 'me falté', 'me di un golpe y me desmayé',
           'desmayé y no recuerdo', 'perdí el conocimiento de golpe',
-          // Standalone terms for test coverage
           'inconsciente', 'unconscious',
           'passed out', 'fainted', 'lost consciousness', 'unconscious',
           'blackout', 'fainting', 'collapsed', 'passed out and fell',
@@ -376,6 +661,47 @@ function getEmbeddedCriticalRules(): Rule[] {
           'fainting spell', 'dropped unconscious', 'passed out suddenly',
           'went unconscious'
         ] 
+      }
+    },
+    {
+      id: 'syncope_vasovagal_clear',
+      action: 'PRIMARY',
+      reason: 'Síncope vasovagal con desencadenante claro',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'me desmayé', 'desmayo', 'sincope', 'fainted', 'syncope'
+            ]
+          },
+          {
+            text_contains_any: [
+              'sacar sangre', 'agujas', 'phlebotomy', 'blood draw',
+              'recuperé rápido', 'recovered quickly', 'segundos'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'syncope_vasovagal',
+      action: 'PRIMARY',
+      reason: 'Síncope vasovagal con desencadenante claro y recuperación rápida',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'me desmayé', 'desmayo', 'sincope', 'syncope', 'fainted'
+            ]
+          },
+          {
+            text_contains_any: [
+              'cuando me sacaron sangre', 'ver sangre', 'agujas', 'phobia',
+              'recuperé en segundos', 'recuperé rápido', 'duró poco',
+              'clear trigger', 'recovered quickly'
+            ]
+          }
+        ]
       }
     },
 
@@ -396,7 +722,6 @@ function getEmbeddedCriticalRules(): Rule[] {
           'sangre a chorros', 'sangrado intenso', 'hemorragia interna',
           'vomito sangre', 'sangre en orina', 'sangrado rectal',
           'hemorragia nasal continua',
-          // Standalone terms for test coverage
           'hemorragia', 'hemorrhage',
           'severe bleeding', 'heavy bleeding', 'bleeding wont stop',
           'uncontrolled bleeding', 'gushing blood', 'losing blood fast',
@@ -440,13 +765,11 @@ function getEmbeddedCriticalRules(): Rule[] {
       reason: 'Anafilaxia - reacción alérgica severa que compromete vía aérea',
       when: {
         text_contains_any: [
-          // Español
           'garganta cerrándose', 'garganta se cierra', 'cierro la garganta',
           'hinchazón lengua', 'lengua hinchada', 'lengua se hincha',
           'dificultad para tragar', 'no puedo tragar',
           'ronchas por todo el cuerpo', 'urticaria generalizada',
           'sensación de muerte inminente alérgica', 'shock alérgico',
-          // English
           'throat closing', 'throat is closing', 'closing throat',
           'tongue swelling', 'swollen tongue', 'tongue is swollen',
           'difficulty swallowing', 'cant swallow',
@@ -479,6 +802,103 @@ function getEmbeddedCriticalRules(): Rule[] {
     },
 
     // ============================================================================
+    // MENINGITIS - Meningitis
+    // ============================================================================
+    {
+      id: 'meningitis_signs',
+      action: 'ER',
+      reason: 'Rigidez de nuca con fiebre - posible meningitis',
+      when: { 
+        text_contains_any: [
+          'cuello rígido con fiebre', 'rigidez de nuca con fiebre', 'meningitis',
+          'cuello rígido fiebre alta', 'rigidez nuca fiebre',
+          'no puedo mover el cuello', 'cuello muy rígido', 'nuca rígida',
+          'fotofobia', 'luz me molesta mucho', 'manchas rojas en la piel',
+          'petechial rash', 'neck stiffness', 'meningeal signs',
+          'kernig sign', 'brudzinski', 'photophobia'
+        ] 
+      }
+    },
+
+    // ============================================================================
+    // ENCEPHALITIS - Encefalitis
+    // ============================================================================
+    {
+      id: 'encephalitis_er',
+      action: 'ER',
+      reason: 'Encefalitis - confusión con fiebre',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'confundido', 'confused', 'no reconoce', 'delirio', 'delirium'
+            ]
+          },
+          {
+            text_contains_any: [
+              'fiebre', 'fever', 'convulsiones', 'seizures', 'temperatura alta'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'encephalitis_emergency',
+      action: 'ER',
+      reason: 'Encefalitis - confusión aguda con fiebre y convulsiones',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'confundido', 'confusión', 'no reconoce', 'habla sin sentido',
+              'delirio', 'altered mental status', 'confused'
+            ]
+          },
+          {
+            text_contains_any: [
+              'fiebre', 'temperatura alta', 'convulsiones', 'fever', 'seizure'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'encephalitis',
+      action: 'ER',
+      reason: 'Confusión aguda con fiebre y convulsiones - posible encefalitis',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'confusión', 'no reconoce', 'habla cosas sin sentido',
+              'desorientado', 'altered mental status', 'confused'
+            ]
+          },
+          {
+            text_contains_any: [
+              'fiebre', 'temperatura alta', 'convulsiones', 'fever', 'seizure'
+            ]
+          }
+        ]
+      }
+    },
+
+    // ============================================================================
+    // GUILLAIN-BARRE - Síndrome de Guillain-Barré
+    // ============================================================================
+    {
+      id: 'guillain_barre',
+      action: 'ER',
+      reason: 'Parálisis ascendente - posible síndrome de Guillain-Barré',
+      when: {
+        text_contains_any: [
+          'debilidad subió', 'parálisis subiendo', 'empezó en los pies y subió',
+          'ascending paralysis', 'guillain barre', 'debilidad ascendente'
+        ]
+      }
+    },
+
+    // ============================================================================
     // PREGNANCY EMERGENCIES - Complicaciones Obstétricas
     // ============================================================================
     {
@@ -504,59 +924,86 @@ function getEmbeddedCriticalRules(): Rule[] {
       }
     },
     {
+      id: 'placental_abruption',
+      action: 'ER',
+      reason: 'Desprendimiento de placenta - emergencia obstétrica',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'embarazada', 'embarazo', 'embarazada de', 'pregnant'
+            ]
+          },
+          {
+            text_contains_any: [
+              'sangrado mucho', 'sangrado vaginal intenso', 'bebe no se mueve',
+              'dolor muy fuerte en el vientre', 'heavy bleeding', 'baby not moving'
+            ]
+          }
+        ]
+      }
+    },
+    {
       id: 'pregnancy_emergency_text',
       action: 'ER',
       reason: 'Complicación del embarazo - acuda a urgencias obstétricas inmediatamente',
       when: { 
         text_contains_any: [
-          // Sangrado durante embarazo
           'embarazada y tengo sangrado', 'sangrado vaginal durante embarazo',
           'sangrado durante el embarazo', 'embarazada y sangrado', 
           'embarazada sangrado', 'embarazo sangrado', 'estando embarazada',
-          // Dolor abdominal/intenso
           'embarazada dolor intenso', 'dolor abdominal intenso embarazada',
           'embarazada dolor abdominal', 'dolor abdominal intenso estando embarazada',
-          // Pérdida de líquido
           'pierdo liquido embarazada', 'pierdo líquido embarazada', 
           'embarazada pierdo liquido', 'pierdo líquido', 'pierdo liquido',
           'pierdo líquido vaginal', 'pierdo liquido vaginal', 'perdida de liquido',
           'pérdida de líquido', 'pérdida de líquido amniótico', 'perdida de liquido amniotico',
-          // Contracciones
           'contracciones', 'contracciones prematuras', 'contracciones antes de tiempo',
           'contracciones antes de tiempo', 'parto prematuro', 'parto pretermino',
-          // Falta de movimientos del bebé
           'no siento movimientos del bebe', 'no siento movimientos del bebé',
           'no siento al bebe', 'no siento al bebé', 'falta de movimientos',
           'no siento movimientos', 'no siento movimientos bebé',
-          // Dolor de cabeza severo / Preeclampsia
           'embarazada dolor cabeza intenso', 'dolor de cabeza severo en el embarazo',
           'dolor de cabeza severo embarazo', 'dolor cabeza severo embarazada',
-          // Visión borrosa
           'embarazada vision borrosa', 'embarazo vision borrosa', 
           'vision borrosa estando embarazada', 'visión borrosa estando embarazada',
           'vision borrosa en embarazo', 'visión borrosa en embarazo',
-          // Hinchazón
           'embarazada hinchazon', 'embarazada hinchazón',
           'hinchazón en cara y manos', 'hinchazon en cara y manos',
           'hinchazón cara manos embarazada', 'hinchazón en cara y manos embarazada',
-          // Preeclampsia
           'preeclampsia', 'posible preeclampsia', 'preclampsia', 'eclampsia',
-          // Sangrado uterino / Dolor pélvico
           'sangrado uterino', 'dolor pélvico severo', 'dolor pelvico severo',
-          // Parto / Placenta
           'parto pretérmino', 'parto pretermino', 'desprendimiento de placenta',
-          // Fiebre durante embarazo
           'fiebre alta durante el embarazo', 'fiebre embarazo', 'fiebre durante embarazo',
-          // Golpe / Caída durante embarazo
           'golpe durante el embarazo', 'caida durante el embarazo',
           'caída durante el embarazo', 'golpe embarazo', 'caida embarazo', 'caída embarazo',
           'golpe durante', 'caida durante', 'caída durante',
-          // English patterns
           'pregnant and bleeding', 'vaginal bleeding during pregnancy',
           'pregnant bleeding', 'bleeding while pregnant', 'severe abdominal pain pregnant',
           'severe headache pregnant', 'water broke', 'leaking fluid pregnant',
           'pregnant and leaking', 'preterm labor', 'placental abruption',
           'pregnancy complications', 'miscarriage bleeding'
+        ]
+      }
+    },
+    {
+      id: 'ectopic_pregnancy',
+      action: 'ER',
+      reason: 'Embarazo ectópico - emergencia obstétrica potencialmente mortal',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'embarazada', 'embarazo', 'pregnant', 'pregnancy'
+            ]
+          },
+          {
+            text_contains_any: [
+              'dolor abdominal bajo', 'dolor en el lado', 'dolor intenso',
+              'sangrado', 'sangrando', 'bleeding', 'spotting',
+              'mareo severo', 'voy a desmayarme', 'dizzy'
+            ]
+          }
         ]
       }
     },
@@ -596,6 +1043,93 @@ function getEmbeddedCriticalRules(): Rule[] {
         ] 
       }
     },
+    {
+      id: 'appendicitis_er',
+      action: 'ER',
+      reason: 'Apendicitis - abdomen agudo',
+      when: {
+        text_contains_any: [
+          'apendicitis', 'apéndice', 'appendicitis', 'appendix',
+          'fosa iliaca derecha', 'right lower quadrant',
+          'dolor en el costado derecho', 'migró desde el ombligo'
+        ]
+      }
+    },
+    {
+      id: 'appendicitis_rlq',
+      action: 'ER',
+      reason: 'Apendicitis - dolor en fosa iliaca derecha con migra',
+      when: {
+        text_contains_any: [
+          'apendicitis', 'apéndice', 'dolor en el lado derecho bajo',
+          'fosa iliaca derecha', 'migró hacia fosa iliaca', 'right lower quadrant',
+          'dolor en el costado derecho', 'punto doloroso McBurney'
+        ]
+      }
+    },
+    {
+      id: 'appendicitis',
+      action: 'ER',
+      reason: 'Apendicitis - dolor en fosa iliaca derecha con fiebre',
+      when: {
+        text_contains_any: [
+          'apendicitis', 'apéndice', 'dolor en el lado derecho bajo',
+          'fosa iliaca derecha', 'dolor migra hacia fosa iliaca',
+          'appendicitis', 'appendix', 'right lower quadrant pain'
+        ]
+      }
+    },
+    {
+      id: 'peritonitis_emergency',
+      action: 'ER',
+      reason: 'Peritonitis - abdomen rígido con fiebre y vómitos',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'abdomen rígido', 'abdomen duro', 'peritoneal', 'defensa',
+              'rigid abdomen', 'hard stomach', 'rebound'
+            ]
+          },
+          {
+            text_contains_any: [
+              'fiebre', 'vómitos', 'temperatura alta', 'fever', 'vomiting'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'peritonitis',
+      action: 'ER',
+      reason: 'Peritonitis - abdomen rígido con fiebre y vómitos',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'abdomen rígido', 'abdomen duro', 'peritoneal', 'peritonitis'
+            ]
+          },
+          {
+            text_contains_any: [
+              'fiebre', 'vómitos', 'vomiting', 'fever', 'nausea'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'pancreatitis',
+      action: 'URGENT',
+      reason: 'Pancreatitis aguda - dolor epigástrico severo',
+      when: {
+        text_contains_any: [
+          'pancreatitis', 'dolor epigástrico', 'epigastric pain',
+          'dolor en la boca del estómago', 'dolor alto del abdomen',
+          'dolor que irradia a la espalda', 'pain radiating to back'
+        ]
+      }
+    },
 
     // ============================================================================
     // VISION EMERGENCIES - Emergencias Oftalmológicas
@@ -614,6 +1148,59 @@ function getEmbeddedCriticalRules(): Rule[] {
         ] 
       }
     },
+    {
+      id: 'acute_glaucoma_er',
+      action: 'ER',
+      reason: 'Glaucoma agudo - emergencia oftalmológica',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'dolor de ojo severo', 'severe eye pain', 'dolor intenso en el ojo',
+              'ojo muy rojo', 'eye very red'
+            ]
+          },
+          {
+            text_contains_any: [
+              'halos', 'halos around lights', 'náuseas', 'nausea',
+              'dolor de cabeza', 'headache', 'ver halos'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'acute_angle_closure_glaucoma',
+      action: 'ER',
+      reason: 'Glaucoma agudo - dolor ocular severo con halos y náuseas',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'dolor de ojo', 'ojo muy rojo', 'eye pain', 'red eye', 'severe eye pain'
+            ]
+          },
+          {
+            text_contains_any: [
+              'halos alrededor de luces', 'veo halos', 'halo vision', 'halos',
+              'náuseas', 'dolor de cabeza', 'nausea', 'headache'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'acute_glaucoma',
+      action: 'ER',
+      reason: 'Glaucoma agudo de ángulo cerrado - emergencia oftalmológica',
+      when: {
+        text_contains_any: [
+          'dolor de ojo severo', 'dolor intenso en el ojo', 'ojo muy rojo',
+          'halos alrededor de luces', 'halo vision', 'náuseas con dolor de ojo',
+          'acute glaucoma', 'angle closure', 'severe eye pain', 'halos around lights'
+        ]
+      }
+    },
 
     // ============================================================================
     // DVT - Trombosis Venosa Profunda
@@ -629,21 +1216,6 @@ function getEmbeddedCriticalRules(): Rule[] {
           'pain in calf', 'red hot leg', 'one leg bigger than other',
           'calf pain and swelling', 'leg pain and redness', 'swollen leg',
           'calf tenderness', 'deep vein thrombosis'
-        ] 
-      }
-    },
-
-    // ============================================================================
-    // MENINGITIS - Meningitis
-    // ============================================================================
-    {
-      id: 'meningitis_signs',
-      action: 'ER',
-      reason: 'Rigidez de nuca con fiebre - posible meningitis',
-      when: { 
-        text_contains_any: [
-          'cuello rígido con fiebre', 'rigidez de nuca con fiebre', 'meningitis',
-          'cuello rígido fiebre alta', 'rigidez nuca fiebre'
         ] 
       }
     },
@@ -668,6 +1240,17 @@ function getEmbeddedCriticalRules(): Rule[] {
           'fiebre de 40', 'fiebre de 41', 'fiebre de 42',
           'fiebre alta', 'fiebre muy alta', 'también fiebre', 'y tambien fiebre'
         ] 
+      }
+    },
+    {
+      id: 'hyperthermia',
+      action: 'ER',
+      reason: 'Hipertermia severa - temperatura >40°C',
+      when: {
+        text_contains_any: [
+          'fiebre 40.5', 'fiebre 41', 'temperatura 40', 'hipertermia',
+          'temperature 105', '106 fever', 'hyperthermia'
+        ]
       }
     },
 
@@ -709,10 +1292,71 @@ function getEmbeddedCriticalRules(): Rule[] {
         ]
       }
     },
+    {
+      id: 'endocarditis_fever',
+      action: 'URGENT',
+      reason: 'Endocarditis - fiebre con soplo cardiaco',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'fiebre', 'fiebre alta', 'temperatura alta', 'fever'
+            ]
+          },
+          {
+            text_contains_any: [
+              'soplo en el corazón', 'soplo cardiaco', 'escucha un raro',
+              'heart murmur', 'murmur'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'endocarditis',
+      action: 'URGENT',
+      reason: 'Endocarditis - fiebre con soplo cardiaco',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'fiebre', 'fiebre prolongada', 'temperatura alta', 'fever'
+            ]
+          },
+          {
+            text_contains_any: [
+              'soplo en el corazón', 'soplo cardiaco', 'heart murmur',
+              'escucha un raro en el corazón', 'valvular'
+            ]
+          }
+        ]
+      }
+    },
 
     // ============================================================================
-    // SEVERE HYPOGLYCEMIA - Hipoglucemia Severa
+    // DIABETIC EMERGENCIES - Emergencias Diabéticas
     // ============================================================================
+    {
+      id: 'diabetic_ketoacidosis',
+      action: 'ER',
+      reason: 'Cetoacidosis diabética - emergencia metabólica',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'diabetes tipo 1', 'insulina', 'diabético', 'type 1 diabetes'
+            ]
+          },
+          {
+            text_contains_any: [
+              'sed excesiva', 'mucho sed', 'orino mucho', 'poliuria',
+              'aliento huele raro', 'fruity breath', 'náuseas', 'vómitos',
+              'respiración rápida', 'kusmaul', 'confusión', 'desorientación'
+            ]
+          }
+        ]
+      }
+    },
     {
       id: 'severe_hypoglycemia',
       action: 'ER',
@@ -736,29 +1380,815 @@ function getEmbeddedCriticalRules(): Rule[] {
         ]
       }
     },
+    {
+      id: 'thyroid_storm',
+      action: 'ER',
+      reason: 'Tormenta tiroidea - emergencia endocrinológica',
+      when: {
+        text_contains_any: [
+          'fiebre muy alta', 'corazón a mil', 'taquicardia extrema',
+          'hipertiroidismo', 'graves disease', 'thyroid storm',
+          'temblor severo', 'diarrea', 'agitación extrema'
+        ]
+      }
+    },
 
     // ============================================================================
-    // SYMPTOMATIC BRADYCARDIA - Bradicardia Sintomática
+    // CARDIAC ARRHYTHMIAS - Arritmias Cardíacas
     // ============================================================================
     {
-      id: 'symptomatic_bradycardia',
+      id: 'bradycardia_symptomatic',
       action: 'URGENT',
-      reason: 'Bradicardia sintomática - frecuencia cardíaca baja con síntomas',
+      reason: 'Bradicardia sintomática - corazón lento con mareo o desmayo',
       when: {
         all: [
           {
             text_contains_any: [
-              'latido lento', 'corazón lento', 'pulso bajo',
-              'frecuencia cardíaca baja', 'heart rate low', 'slow heart',
-              'bradicardia'
+              'corazón lento', 'latido lento', 'pulso bajo', 'heart rate low',
+              'bradicardia', 'latía muy lento', 'beat very slow'
             ]
           },
           {
             text_contains_any: [
-              'mareo', 'desmayo', 'fatiga extrema', 'dizziness',
-              'fainting', 'extreme fatigue', 'lightheaded'
+              'mareo', 'desmayo', 'me voy a desmayar', 'débil', 'weak',
+              'fatiga', 'cansancio extremo', 'dizziness', 'syncope'
             ]
           }
+        ]
+      }
+    },
+    {
+      id: 'heart_failure_decomp',
+      action: 'URGENT',
+      reason: 'Descompensación de insuficiencia cardiaca',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'insuficiencia cardiaca', 'heart failure', 'falla cardiaca'
+            ]
+          },
+          {
+            text_contains_any: [
+              'dificultad para respirar', 'me cuesta respirar', 'disnea',
+              'ortopnea', 'tengo que dormir con almohadas', 'piernas hinchadas',
+              'edema', 'shortness of breath', 'swollen legs'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'heart_failure_exacerbation',
+      action: 'ER',
+      reason: 'Descompensación de insuficiencia cardiaca',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'insuficiencia cardiaca', 'heart failure', 'cardiaco crónico'
+            ]
+          },
+          {
+            text_contains_any: [
+              'dificultad para respirar', 'ortopnea', 'me ahogo al acostarme',
+              'edema', 'piernas hinchadas', 'no puedo dormir',
+              'tengo que dormir sentado', 'shortness of breath'
+            ]
+          }
+        ]
+      }
+    },
+
+    // ============================================================================
+    // UROLOGICAL EMERGENCIES - Emergencias Urológicas
+    // ============================================================================
+    {
+      id: 'testicular_torsion_er',
+      action: 'ER',
+      reason: 'Torsión testicular - emergencia quirúrgica',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'dolor testicular', 'dolor en el testículo', 'testicular pain',
+              'escroto', 'scrotal', 'testicle pain'
+            ]
+          },
+          {
+            text_contains_any: [
+              'empezó de repente', 'súbito', 'sudden onset', 'horrible pain',
+              'muy hinchado', 'very swollen', 'testículo alto', 'high riding'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'testicular_torsion_acute',
+      action: 'ER',
+      reason: 'Torsión testicular - dolor testicular súbito con náuseas',
+      when: {
+        text_contains_any: [
+          'dolor testicular', 'dolor en el testículo', 'testículo hinchado',
+          'testículo muy alto', 'escroto', 'dolor escrotal', 'testicular pain',
+          'swollen testicle', 'testicular torsion', 'scrotal pain'
+        ]
+      }
+    },
+    {
+      id: 'testicular_torsion',
+      action: 'ER',
+      reason: 'Torsión testicular - emergencia quirúrgica (tiempo crítico)',
+      when: {
+        text_contains_any: [
+          'dolor testicular súbito', 'testículo hinchado', 'dolor en los testículos',
+          'testículo muy alto', 'dolor escrotal', 'testicular torsion',
+          'twisted testicle', 'severe testicular pain', 'scrotal pain'
+        ]
+      }
+    },
+    {
+      id: 'kidney_stone_severe',
+      action: 'URGENT',
+      reason: 'Cálculo renal con dolor severo',
+      when: {
+        text_contains_any: [
+          'cálculo renal', 'piedra en el riñón', 'dolor renal severo',
+          'colico nefritico', 'kidney stone', 'renal colic'
+        ]
+      }
+    },
+
+    // ============================================================================
+    // HEADACHE DISORDERS - Cefaleas
+    // ============================================================================
+    {
+      id: 'tension_headache_primary',
+      action: 'PRIMARY',
+      reason: 'Cefalea tensional bilateral leve',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'dolor de cabeza bilateral', 'como una presión', 'band around head',
+              'cefalea tensional', 'tension headache'
+            ]
+          },
+          {
+            text_contains_any: [
+              'dolor leve', 'mild pain', '3 días', 'several days',
+              'no es severo', 'not severe'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'tension_headache_bilateral',
+      action: 'PRIMARY',
+      reason: 'Cefalea tensional bilateral sin signos de alarma',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'dolor de cabeza bilateral', 'como una presión', 'cinturón en la cabeza',
+              'bilateral headache', 'pressure headache', 'band around head'
+            ]
+          },
+          {
+            text_contains_any: [
+              'dolor leve', 'dolor moderado', 'no es severo', 'sin náuseas',
+              'mild headache', 'not severe', 'stress related'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'migraine_aura_primary',
+      action: 'PRIMARY',
+      reason: 'Migraña con aura - manejo ambulatorio',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'migraña', 'migraine', 'dolor de cabeza de un lado'
+            ]
+          },
+          {
+            text_contains_any: [
+              'veo luces', 'manchas en la visión', 'aura visual', 'visual aura',
+              'luces destellando', 'flashing lights', 'spots in vision'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'migraine_primary',
+      action: 'PRIMARY',
+      reason: 'Migraña con aura - manejo ambulatorio',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'migraña', 'dolor de cabeza de un lado', 'migraine',
+              'unilateral headache', 'dolor de cabeza unilateral'
+            ]
+          },
+          {
+            text_contains_any: [
+              'veo luces', 'manchas en la visión', 'aura visual', 'fotofobia',
+              'visual aura', 'light sensitivity', 'seeing spots'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'migraine',
+      action: 'PRIMARY',
+      reason: 'Migraña - dolor de cabeza unilateral con fotofobia',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'dolor de cabeza unilateral', 'dolor de cabeza de un lado',
+              'migraña', 'migraine', 'unilateral headache'
+            ]
+          },
+          {
+            text_contains_any: [
+              'luz me molesta', 'fotofobia', 'fotofobia', 'nausea',
+              'light sensitivity', 'photophobia', 'aura', 'visual disturbance'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'tension_headache',
+      action: 'PRIMARY',
+      reason: 'Cefalea tensional - dolor bilateral tipo presión',
+      when: {
+        text_contains_any: [
+          'dolor de cabeza bilateral', 'como una presión', 'cinturón en la cabeza',
+          'dolor de cabeza leve', 'dolor de cabeza de 3 días',
+          'tension headache', 'bilateral headache', 'pressure headache',
+          'band around head', 'stress headache'
+        ]
+      }
+    },
+
+    // ============================================================================
+    // FACIAL PARALYSIS - Parálisis Facial
+    // ============================================================================
+    {
+      id: 'bells_palsy_primary',
+      action: 'PRIMARY',
+      reason: 'Parálisis de Bell - no dolorosa',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'no puedo mover la cara', 'facial paralysis', 'cara caída',
+              'boca caída', 'boca torcida'
+            ]
+          },
+          {
+            text_contains_any: [
+              'sin dolor', 'no me duele', 'painless', 'no pain'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'bells_palsy_facial',
+      action: 'PRIMARY',
+      reason: 'Parálisis de Bell - parálisis facial unilateral sin dolor',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'no puedo mover la cara', 'mitad de la cara paralizada',
+              'cara paralizada de un lado', 'facial paralysis'
+            ]
+          },
+          {
+            text_contains_any: [
+              'sin dolor', 'no me duele', 'painless', 'no pain'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'bells_palsy',
+      action: 'PRIMARY',
+      reason: 'Parálisis de Bell - parálisis facial unilateral sin otros síntomas',
+      when: {
+        text_contains_any: [
+          'no puedo mover la mitad de la cara', 'parálisis facial de un lado',
+          'cara paralizada de un lado sin dolor', 'bells palsy',
+          'facial paralysis painless', 'unilateral facial weakness'
+        ]
+      }
+    },
+
+    // ============================================================================
+    // RESPIRATORY NON-URGENT - Respiratorio No Urgente
+    // ============================================================================
+    {
+      id: 'panic_anxiety_disorder',
+      action: 'PRIMARY',
+      reason: 'Ataque de pánico en paciente con trastorno de ansiedad conocido',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'ataque de pánico', 'crisis de ansiedad', 'me tiemblan las manos',
+              'corazón me late muy fuerte', 'siento que me voy a morir'
+            ]
+          },
+          {
+            text_contains_any: [
+              'trastorno de ansiedad', 'ansiedad conocida', 'panic disorder',
+              'anxiety disorder', 'tengo ansiedad diagnosticada'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'common_cold',
+      action: 'SELFCARE',
+      reason: 'Resfriado común - puede manejarse con autocuidado en casa',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'resfriado', 'gripa leve', 'gripe leve', 'nariz tapada',
+              'congestión nasal leve', 'estornudos', 'estornudo', 'mocos',
+              'secreción nasal', 'catarro', 'dolor de garganta leve', 'tos leve',
+              'malestar general leve', 'gripe común', 'resfrío', 'constipado',
+              'moqueo', 'está congestionado', 'me congestioné', 'me dio gripe',
+              'me dio resfriado', 'síntomas de gripe leves', 'síntomas de resfriado',
+              'tengo un catarro', 'cold symptoms', 'common cold', 'stuffy nose'
+            ]
+          },
+          {
+            text_contains_any: [
+              'no fiebre', 'sin fiebre', 'afebril', 'no tengo fiebre',
+              'puedo hacer actividades', 'sintomas leves', 'mild symptoms'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'allergic_rhinitis_primary',
+      action: 'PRIMARY',
+      reason: 'Rinitis alérgica estacional',
+      when: {
+        text_contains_any: [
+          'estornudo mucho', 'picazón en la nariz', 'estornudos constantes',
+          'moqueo claro', 'rinitis alérgica', 'alergia estacional',
+          'sneezing a lot', 'itchy nose', 'clear runny nose', 'seasonal allergies'
+        ]
+      }
+    },
+    {
+      id: 'allergic_rhinitis',
+      action: 'PRIMARY',
+      reason: 'Rinitis alérgica - manejo con antihistamínicos',
+      when: {
+        text_contains_any: [
+          'estornudo mucho', 'picazón en la nariz', 'picazón en los ojos',
+          'moqueo claro', 'rinitis alérgica', 'alergia estacional',
+          'estornudos constantes', 'alergia en esta época',
+          'sneezing a lot', 'itchy nose', 'itchy eyes', 'clear runny nose',
+          'seasonal allergies', 'allergic rhinitis'
+        ]
+      }
+    },
+    {
+      id: 'acute_bronchitis_primary',
+      action: 'PRIMARY',
+      reason: 'Bronquitis aguda sin fiebre',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'tos', 'cough', 'bronquitis', 'bronchitis'
+            ]
+          },
+          {
+            text_contains_any: [
+              'flema', 'phlegm', 'mucus', 'sin fiebre', 'no fever',
+              'una semana', 'one week'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'acute_bronchitis',
+      action: 'PRIMARY',
+      reason: 'Bronquitis aguda - manejo sintomático',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'tos', 'cough', 'bronquitis', 'bronchitis'
+            ]
+          },
+          {
+            text_contains_any: [
+              'flema', 'mucus', 'phlegm', 'sin fiebre', 'no fiebre',
+              'tos desde hace una semana', 'cough for a week'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'common_cold_primary',
+      action: 'PRIMARY',
+      reason: 'Resfriado común - no fiebre',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'moqueo', 'congestión nasal', 'estornudos', 'runny nose',
+              'congestion', 'sneezing', 'tos leve', 'mild cough'
+            ]
+          },
+          {
+            text_contains_any: [
+              'no fiebre', 'sin fiebre', 'no tengo fiebre', 'no fever',
+              'puedo hacer actividades', 'activities normal'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'upper_respiratory_infection',
+      action: 'PRIMARY',
+      reason: 'Infección respiratoria superior - manejo ambulatorio',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'moqueo', 'estornudos', 'dolor de garganta', 'congestión nasal',
+              'runny nose', 'sneezing', 'sore throat', 'nasal congestion'
+            ]
+          },
+          {
+            text_contains_any: [
+              'no fiebre', 'sin fiebre', 'puedo hacer mis actividades',
+              'sintomas leves', 'no fever', 'mild symptoms'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'hemoptysis_smoker',
+      action: 'URGENT',
+      reason: 'Hemoptisis en fumador - evaluación urgente para cáncer',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'tos con sangre', 'escupo sangre', 'sangre en la tos',
+              'hemoptisis', 'coughing blood', 'blood in sputum'
+            ]
+          },
+          {
+            text_contains_any: [
+              'perdida de peso', 'pérdida de peso', 'weight loss',
+              'fumador', 'smoker', 'años fumando', 'pack years'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'lung_cancer_concern',
+      action: 'URGENT',
+      reason: 'Tos con sangre y pérdida de peso - requiere evaluación urgente',
+      when: {
+        text_contains_any: [
+          'tos con sangre', 'tos sangre', 'hemoptisis', 'coughing blood',
+          'perdida de peso', 'pérdida de peso', 'weight loss',
+          'fumador de muchos años', 'heavy smoker', 'smoking history'
+        ]
+      }
+    },
+
+    // ============================================================================
+    // MENTAL HEALTH NON-URGENT - Salud Mental No Urgente
+    // ============================================================================
+    {
+      id: 'panic_attack_primary',
+      action: 'PRIMARY',
+      reason: 'Ataque de pánico - manejo ambulatorio sin riesgo vital',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'ataque de pánico', 'crisis de ansiedad', 'me siento ansioso',
+              'me tiemblan las manos', 'palpitaciones', 'panic attack'
+            ]
+          },
+          {
+            text_contains_any: [
+              'no me voy a morir', 'no es emergencia', 'ansiedad conocida',
+              'trastorno de ansiedad', 'anxiety disorder', 'creo que'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'panic_attack_anxiety',
+      action: 'PRIMARY',
+      reason: 'Ataque de pánico en paciente con historial',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'me tiemblan las manos', 'palpitaciones', 'me falta el aire',
+              'siento que me voy a morir', 'shaking hands', 'heart racing'
+            ]
+          },
+          {
+            text_contains_any: [
+              'ansiedad', 'anxiety', 'pánico', 'panic', 'ataque de pánico'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'panic_attack',
+      action: 'PRIMARY',
+      reason: 'Ataque de pánico - manejo ambulatorio',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'ataque de pánico', 'panic attack', 'ansiedad severa', 'severe anxiety'
+            ]
+          },
+          {
+            text_contains_any: [
+              'me tiemblan las manos', 'me falta el aire', 'palpitaciones',
+              'creo que me voy a morir', 'siento que me voy a volver loco',
+              'hands shaking', 'heart racing', 'feel like dying'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'adjustment_situational_primary',
+      action: 'PRIMARY',
+      reason: 'Trastorno adaptativo situacional',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'perdí mi trabajo', 'lost my job', 'divorcio', 'divorce',
+              'problema familiar', 'family problem'
+            ]
+          },
+          {
+            text_contains_any: [
+              'no pienso hacerme daño', 'no suicidal', 'situational',
+              'pasando por un momento', 'going through', 'difficult time'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'adjustment_disorder_situational',
+      action: 'PRIMARY',
+      reason: 'Trastorno de adaptación por situación estresante',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'perdí mi trabajo', 'divorcio', 'separación', 'problema familiar',
+              'lost my job', 'divorce', 'separation', 'family issues'
+            ]
+          },
+          {
+            text_contains_any: [
+              'no pienso en hacerme daño', 'no quiero morir', 'solo estoy triste',
+              'pasando por un momento', 'no suicidal', 'just sad', 'going through'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'adjustment_disorder',
+      action: 'PRIMARY',
+      reason: 'Trastorno de adaptación - manejo ambulatorio con psicoterapia',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'perdí mi trabajo', 'problemas familiares', 'divorcio', 'separación',
+              'lost my job', 'family issues', 'divorce', 'separation',
+              'mudanza', 'cambio de ciudad', 'enfermedad de un familiar'
+            ]
+          },
+          {
+            text_contains_any: [
+              'no puedo dormir bien', 'dificultad para conciliar el sueño',
+              'insomnio por el estrés', 'no pienso en hacerme daño', 
+              'no quiero morir', 'no es para tanto',
+              'cant sleep well', 'insomnia from stress', 'no suicidal'
+            ]
+          }
+        ]
+      }
+    },
+
+    // ============================================================================
+    // CHEST WALL PAIN - Dolor Torácico No Cardíaco
+    // ============================================================================
+    {
+      id: 'costochondritis_primary',
+      action: 'PRIMARY',
+      reason: 'Costocondritis - dolor reproducible al tacto',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'dolor en el pecho', 'chest pain', 'dolor torácico'
+            ]
+          },
+          {
+            text_contains_any: [
+              'al tocar', 'tender to touch', 'reproducible', 'pressing',
+              'toca la zona', 'tender chest', 'pain when pressed'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'costochondritis_palpation',
+      action: 'PRIMARY',
+      reason: 'Costocondritis - dolor reproducible al tacto',
+      when: {
+        text_contains_any: [
+          'dolor en el pecho al tocar', 'dolor aumenta al tocar',
+          'dolor torácico reproducible', 'chest pain reproducible',
+          'reproducible tenderness', 'tender to touch', 'pain when pressing'
+        ]
+      }
+    },
+    {
+      id: 'costochondritis',
+      action: 'PRIMARY',
+      reason: 'Costocondritis - dolor torácico musculoesquelético',
+      when: {
+        text_contains_any: [
+          'dolor en el pecho que aumenta al tocar', 'dolor torácico al presionar',
+          'dolor en las costillas', 'costochondritis', 'chest wall pain',
+          'reproducible chest pain', 'tender chest wall'
+        ]
+      }
+    },
+    {
+      id: 'pericarditis_primary',
+      action: 'PRIMARY',
+      reason: 'Pericarditis posicional',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'dolor en el pecho', 'chest pain', 'dolor torácico'
+            ]
+          },
+          {
+            text_contains_any: [
+              'mejor inclinándome', 'peor al acostarme', 'mejora inclinado',
+              'better leaning', 'worse lying down', 'positional'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'pericarditis_positional',
+      action: 'PRIMARY',
+      reason: 'Pericarditis - dolor peor al acostarse, mejor inclinado',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'dolor en el pecho', 'dolor torácico', 'chest pain'
+            ]
+          },
+          {
+            text_contains_any: [
+              'mejor inclinándome', 'mejor sentado', 'peor al acostarme',
+              'empeora al acostarse', 'mejora inclinado', 'better leaning forward',
+              'worse lying down', 'positional pain'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'pericarditis',
+      action: 'PRIMARY',
+      reason: 'Pericarditis - dolor pleurítico posicional',
+      when: {
+        text_contains_any: [
+          'dolor en el pecho punzante', 'dolor peor al acostarme',
+          'mejor inclinándome hacia adelante', 'dolor pleurítico',
+          'pericarditis', 'sharp chest pain', 'worse lying down',
+          'better leaning forward', 'pleuritic pain'
+        ]
+      }
+    },
+
+    // ============================================================================
+    // TRAUMA EMERGENCIES - Trauma
+    // ============================================================================
+    {
+      id: 'multiple_trauma',
+      action: 'ER',
+      reason: 'Trauma múltiple - evaluación de emergencia',
+      when: {
+        text_contains_any: [
+          'accidente de coche', 'choque', 'accidente automovilístico',
+          'caída de altura', 'golpe en la cabeza', 'pérdida de consciencia',
+          'car accident', 'motor vehicle accident', 'mva', 'crash',
+          'multiple trauma', 'fall from height', 'head injury'
+        ]
+      }
+    },
+    {
+      id: 'head_injury',
+      action: 'ER',
+      reason: 'Trauma craneoencefálico - evaluación urgente',
+      when: {
+        text_contains_any: [
+          'golpe en la cabeza', 'trauma craneal', 'perdí el conocimiento',
+          'desmayo tras golpe', 'head injury', 'head trauma',
+          'concussion', 'conmoción cerebral', 'golpe fuerte en la cabeza'
+        ]
+      }
+    },
+
+    // ============================================================================
+    // PEDIATRIC EMERGENCIES - Emergencias Pediátricas
+    // ============================================================================
+    {
+      id: 'pediatric_respiratory_distress',
+      action: 'ER',
+      reason: 'Dificultad respiratoria pediátrica - emergencia',
+      when: {
+        text_contains_any: [
+          'bebe no respira bien', 'mi bebé tiene dificultad para respirar',
+          'hunden las costillas', 'tiraje', 'ruido al respirar',
+          'estridor', 'bebe cianotico', 'baby not breathing',
+          'retractions', 'grunting', 'stridor'
+        ]
+      }
+    },
+    {
+      id: 'bronchiolitis_infant',
+      action: 'URGENT',
+      reason: 'Bronquiolitis en lactante - evaluación pediátrica urgente',
+      when: {
+        text_contains_any: [
+          'bebe', 'bebé', 'lactante', 'infant', '6 meses', '6 meses',
+          'bronquiolitis', 'bronchiolitis', 'dificultad para respirar bebe',
+          'tiraje', 'hunden las costillas', 'ruido al respirar'
+        ]
+      }
+    },
+    {
+      id: 'bronchiolitis',
+      action: 'URGENT',
+      reason: 'Bronquiolitis - evaluación pediátrica urgente',
+      when: {
+        text_contains_any: [
+          'bebe con tos', 'bebe congestionado', 'bronquiolitis',
+          'dificultad para respirar en bebe', 'prematuro con gripe',
+          'bronchiolitis', 'baby wheezing', 'infant respiratory'
         ]
       }
     },
@@ -785,6 +2215,68 @@ function getEmbeddedCriticalRules(): Rule[] {
       }
     },
     {
+      id: 'angina_exertion_primary',
+      action: 'PRIMARY',
+      reason: 'Angina estable con esfuerzo',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'dolor de pecho', 'chest pain', 'opresión', 'pressure'
+            ]
+          },
+          {
+            text_contains_any: [
+              'cuando camino', 'subo escaleras', 'walking', 'stairs',
+              'esfuerzo', 'exertion', 'desaparece al descansar', 'rest relieves'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'stable_angina_exertion',
+      action: 'PRIMARY',
+      reason: 'Angina estable - dolor con esfuerzo que cesa con reposo',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'dolor de pecho', 'chest pain', 'opresión en el pecho'
+            ]
+          },
+          {
+            text_contains_any: [
+              'cuando camino', 'al subir escaleras', 'con el esfuerzo',
+              'desaparece al descansar', 'se quita con el reposo',
+              'when walking', 'going upstairs', 'with exertion', 'rest relieves'
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'stable_angina',
+      action: 'PRIMARY',
+      reason: 'Angina estable - dolor de pecho con esfuerzo que cesa con reposo',
+      when: {
+        all: [
+          {
+            text_contains_any: [
+              'dolor de pecho al caminar', 'dolor de pecho al subir escaleras',
+              'opresión con el esfuerzo', 'chest pain with exertion'
+            ]
+          },
+          {
+            text_contains_any: [
+              'se quita con descanso', 'desaparece al descansar',
+              'lleva varias semanas', 'crónico', 'chronic'
+            ]
+          }
+        ]
+      }
+    },
+    {
       id: 'skin_issues',
       action: 'PRIMARY',
       reason: 'Problemas dermatológicos no urgentes - consulta con médico general o dermatólogo',
@@ -805,7 +2297,7 @@ function getEmbeddedCriticalRules(): Rule[] {
     // SELF CARE - Condiciones Leves (Autocuidado)
     // ============================================================================
     {
-      id: 'common_cold',
+      id: 'common_cold_simple',
       action: 'SELFCARE',
       reason: 'Resfriado común - puede manejarse con autocuidado en casa',
       when: {
@@ -888,16 +2380,17 @@ export function evaluateRedFlags(input: {
       for (const rule of rules) {
         // Skip emergency rules for informational queries (except critical conditions - always check)
         // Critical conditions: mental health, pregnancy, stroke, cardiac, severe bleeding, anaphylaxis
-        const isCriticalRule = criticalCategories.some(id => rule.id.includes(id));
+        const isCriticalRule = rule.id && criticalCategories.some(id => rule.id.includes(id));
         
         // Skip non-critical ER rules for informational queries
         if (isInfoQuery && rule.action === 'ER' && !isCriticalRule) {
           continue;
         }
         
-        // Skip ALL ER rules for purely educational queries (even critical ones)
-        // Educational queries like "Explain stroke to me" are not real emergencies
-        if (isEducational && rule.action === 'ER') {
+        // Skip ALL rules for purely educational queries
+        // Educational queries like "Explain stroke to me" or "What are your hours?" 
+        // are not real medical concerns
+        if (isEducational) {
           continue;
         }
         
@@ -950,7 +2443,9 @@ function generateRecommendations(
   
   switch (careLevel) {
     case 'ER':
-      const isMentalHealthEmergency = ruleIds.includes('suicidal_ideation');
+      const isMentalHealthEmergency = ruleIds.includes('suicidal_ideation') || 
+                                       ruleIds.includes('suicide_plan_intent') ||
+                                       ruleIds.includes('command_hallucinations');
       return [
         '🚨 EMERGENCIA: Busca atención médica inmediata',
         'Llama al 911 o acude a urgencias',
@@ -1020,16 +2515,21 @@ export function isMentalHealthCrisis(message: string): boolean {
     // Spanish patterns
     'quiero morir', 'quiero suicidarme', 'quiero matarme', 
     'pienso en quitarme la vida', 'no quiero vivir más', 
+    'no quiero estar vivo', 'no quiero estar viva',
+    'no quiero seguir viviendo', 'no quiero seguir vivo',
     'voy a acabar con mi vida', 'mejor muerto', 'mejor muerta',
     'no vale la pena vivir', 'quiero dejar de existir',
     'plan suicida', 'pensamientos suicidas', 'ideación suicida',
-    'autolesionarse', 'quiero hacerme daño', 'quiero cortarme',
+    'autolesionarse', 'me quiero autolesionar', 'quiero autolesionarme', 'autolesionarme',
+    'quiero hacerme daño', 'quiero cortarme',
     'voy a tirarme de un edificio', 'voy a tomar pastillas para morir',
     'no encuentro razones para vivir', 'la vida no tiene sentido',
     'quiero desaparecer', 'estoy harto de vivir', 'estoy harta de vivir',
     'no quiero vivir', 'acabar con mi vida', 'no vale la pena',
     'mejor si no existiera', 'autolesión', 'cortarme', 'hacerme daño',
     'suicidarme', 'suicidio', 'quitarme la vida',
+    'me voy a matar', 'me voy a suicidar', 'me quiero matar',
+    'tengo ganas de morir', 'tengo ganas de morirme',
     
     // English patterns
     'want to die', 'kill myself', 'suicidal thoughts', 'want to end my life',

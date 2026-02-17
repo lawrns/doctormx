@@ -7,7 +7,7 @@ const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
 
 describe('Profile Creation Flow', () => {
-  it('should create user record in users table', async () => {
+  it('should create profile record in profiles table', async () => {
     const testEmail = `profile-test-${Date.now()}@test.com`
     const testPassword = 'TestPass123!'
 
@@ -22,12 +22,11 @@ describe('Profile Creation Flow', () => {
 
     const userId = signUpData.user!.id
 
-    // Simulate profile completion by inserting user record
+    // Simulate profile completion by inserting profile record
     const { error: insertError } = await supabase
-      .from('users')
+      .from('profiles')
       .insert({
         id: userId,
-        email: testEmail,
         full_name: 'Test User',
         phone: '+525512345678',
         role: 'patient',
@@ -35,20 +34,20 @@ describe('Profile Creation Flow', () => {
 
     expect(insertError).toBeNull()
 
-    // Verify user record was created
-    const { data: userData, error: selectError } = await supabase
-      .from('users')
+    // Verify profile record was created
+    const { data: profileData, error: selectError } = await supabase
+      .from('profiles')
       .select('*')
       .eq('id', userId)
       .single()
 
     expect(selectError).toBeNull()
-    expect(userData).toBeDefined()
-    expect(userData?.full_name).toBe('Test User')
-    expect(userData?.role).toBe('patient')
+    expect(profileData).toBeDefined()
+    expect(profileData?.full_name).toBe('Test User')
+    expect(profileData?.role).toBe('patient')
   })
 
-  it('should update user record if it already exists', async () => {
+  it('should update profile record if it already exists', async () => {
     const testEmail = `profile-update-${Date.now()}@test.com`
     const testPassword = 'TestPass123!'
 
@@ -62,12 +61,11 @@ describe('Profile Creation Flow', () => {
 
     const userId = signUpData.user!.id
 
-    // Insert initial user record
+    // Insert initial profile record
     const { error: firstInsertError } = await supabase
-      .from('users')
+      .from('profiles')
       .insert({
         id: userId,
-        email: testEmail,
         full_name: 'Initial Name',
         role: 'patient',
       })
@@ -76,10 +74,9 @@ describe('Profile Creation Flow', () => {
 
     // Try to insert again (should fail with duplicate key)
     const { error: duplicateError } = await supabase
-      .from('users')
+      .from('profiles')
       .insert({
         id: userId,
-        email: testEmail,
         full_name: 'Updated Name',
         role: 'doctor',
       })
@@ -89,7 +86,7 @@ describe('Profile Creation Flow', () => {
 
     // Update the record instead
     const { error: updateError } = await supabase
-      .from('users')
+      .from('profiles')
       .update({
         full_name: 'Updated Name',
         role: 'doctor',
@@ -99,14 +96,14 @@ describe('Profile Creation Flow', () => {
     expect(updateError).toBeNull()
 
     // Verify update worked
-    const { data: userData } = await supabase
-      .from('users')
+    const { data: profileData } = await supabase
+      .from('profiles')
       .select('*')
       .eq('id', userId)
       .single()
 
-    expect(userData?.full_name).toBe('Updated Name')
-    expect(userData?.role).toBe('doctor')
+    expect(profileData?.full_name).toBe('Updated Name')
+    expect(profileData?.role).toBe('doctor')
   })
 
   it('should create doctor record when role is doctor', async () => {
@@ -121,26 +118,25 @@ describe('Profile Creation Flow', () => {
 
     const userId = signUpData.user!.id
 
-    // Create user record
-    const { error: userError } = await supabase
-      .from('users')
+    // Create profile record with doctor role
+    const { error: profileError } = await supabase
+      .from('profiles')
       .insert({
         id: userId,
-        email: testEmail,
         full_name: 'Dr. Test Doctor',
         role: 'doctor',
       })
 
-    expect(userError).toBeNull()
+    expect(profileError).toBeNull()
 
-    // Create doctor record
+    // Create doctor record - id references profiles(id)
     const { error: doctorError } = await supabase
       .from('doctors')
       .insert({
-        user_id: userId,
-        full_name: 'Dr. Test Doctor',
-        verified: false,
-        verification_status: 'pending',
+        id: userId,
+        bio: 'Test doctor bio',
+        price_cents: 50000,
+        status: 'pending',
       })
 
     expect(doctorError).toBeNull()
@@ -149,12 +145,11 @@ describe('Profile Creation Flow', () => {
     const { data: doctorData } = await supabase
       .from('doctors')
       .select('*')
-      .eq('user_id', userId)
+      .eq('id', userId)
       .single()
 
     expect(doctorData).toBeDefined()
-    expect(doctorData?.verification_status).toBe('pending')
-    expect(doctorData?.verified).toBe(false)
+    expect(doctorData?.status).toBe('pending')
   })
 
   it('should handle missing required fields', async () => {
@@ -171,10 +166,9 @@ describe('Profile Creation Flow', () => {
 
     // Try to insert without full_name (required field)
     const { error } = await supabase
-      .from('users')
+      .from('profiles')
       .insert({
         id: userId,
-        email: testEmail,
         // full_name is missing
         role: 'patient',
       })

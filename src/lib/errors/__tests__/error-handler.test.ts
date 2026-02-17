@@ -4,7 +4,30 @@
  * Demonstrates usage of the global error handling system
  */
 
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { logger } from '@/lib/observability/logger';
+
+// Mock the logger to suppress console output during tests
+vi.mock('@/lib/observability/logger', () => ({
+  logger: {
+    debug: vi.fn(),
+    info: vi.fn(),
+    warn: vi.fn(),
+    error: vi.fn(),
+    child: vi.fn(() => ({
+      debug: vi.fn(),
+      info: vi.fn(),
+      warn: vi.fn(),
+      error: vi.fn(),
+    })),
+    time: vi.fn((name, fn) => fn()),
+  },
+}));
+
+// Reset mocks before each test
+beforeEach(() => {
+  vi.clearAllMocks();
+});
 import {
   AppError,
   EmergencyDetectedError,
@@ -142,8 +165,7 @@ describe('Error Messages', () => {
 });
 
 describe('Error Handler', () => {
-  it('should log error to console', () => {
-    const consoleSpy = vi.spyOn(console, 'error');
+  it('should log error via logger', () => {
     const error = new EmergencyDetectedError(
       'EMG_001',
       'Test emergency',
@@ -152,8 +174,7 @@ describe('Error Handler', () => {
 
     logError(error, { userId: 'test-user', route: '/test' });
 
-    expect(consoleSpy).toHaveBeenCalled();
-    consoleSpy.mockRestore();
+    expect(logger.error).toHaveBeenCalled();
   });
 
   it('should return NextResponse for AppError', async () => {

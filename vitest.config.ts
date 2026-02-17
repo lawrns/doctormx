@@ -108,6 +108,8 @@ export default defineConfig({
       NODE_ENV: 'test',
       NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: 'pk_test_1234567890',
       STRIPE_SECRET_KEY: 'sk_test_1234567890',
+      NEXT_PUBLIC_SUPABASE_URL: 'https://oxlbametpfubwnrmrbsv.supabase.co',
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im94bGJhbWV0cGZ1Ynducm1yYnN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA2MjAxNjQsImV4cCI6MjA1NjE5NjE2NH0.H2_4ueekh5HVvdXBw7OX_EKWEO26kehXBRfd5HJvjgA',
     },
     // Reporter configuration
     reporters: ['verbose'],

@@ -1,10 +1,10 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { mockSupabaseClient, createMockReview } from './mocks'
-import { createClient } from '@/lib/supabase/server'
+import { createClient, createServiceClient } from '@/lib/supabase/server'
 
 vi.mock('@/lib/supabase/server', () => ({
   createClient: vi.fn(),
-  createServiceClient: vi.fn().mockResolvedValue(mockSupabaseClient),
+  createServiceClient: vi.fn(),
 }))
 
 describe('Reviews System', () => {
@@ -30,6 +30,31 @@ describe('Reviews System', () => {
                   single: vi.fn().mockResolvedValue({ data: mockReview, error: null }),
                 }),
               }),
+              select: vi.fn().mockReturnValue({
+                eq: vi.fn().mockResolvedValue({ data: [], error: null }),
+              }),
+            }
+          }
+          return mockSupabaseClient.from(table)
+        }),
+      }
+
+      // Mock for createServiceClient used in updateDoctorRating
+      const mockServiceClient = {
+        ...mockSupabaseClient,
+        from: vi.fn().mockImplementation((table) => {
+          if (table === 'reviews') {
+            return {
+              select: vi.fn().mockReturnValue({
+                eq: vi.fn().mockResolvedValue({ data: [{ rating: 5 }], error: null }),
+              }),
+            }
+          }
+          if (table === 'doctores') {
+            return {
+              update: vi.fn().mockReturnValue({
+                eq: vi.fn().mockResolvedValue({ error: null }),
+              }),
             }
           }
           return mockSupabaseClient.from(table)
@@ -37,6 +62,7 @@ describe('Reviews System', () => {
       }
 
       vi.mocked(createClient).mockResolvedValue(mockClient as never)
+      vi.mocked(createServiceClient).mockReturnValue(mockServiceClient as never)
 
       const { createReview } = await import('@/lib/reviews')
       
@@ -49,7 +75,7 @@ describe('Reviews System', () => {
       })
 
       expect(result.rating).toBe(5)
-      expect(result.comment).toBe('Great doctor!')
+      expect(result.comment).toBe('Great consultation!')
     })
 
     it('should throw error when appointment not found', async () => {
@@ -156,7 +182,9 @@ describe('Reviews System', () => {
             return {
               select: vi.fn().mockReturnValue({
                 eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: { id: 'existing-review' }, error: null }),
+                  eq: vi.fn().mockReturnValue({
+                    single: vi.fn().mockResolvedValue({ data: { id: 'existing-review' }, error: null }),
+                  }),
                 }),
               }),
             }
@@ -181,7 +209,9 @@ describe('Reviews System', () => {
             return {
               select: vi.fn().mockReturnValue({
                 eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: null, error: { code: 'PGRST116' } }),
+                  eq: vi.fn().mockReturnValue({
+                    single: vi.fn().mockResolvedValue({ data: null, error: { code: 'PGRST116' } }),
+                  }),
                 }),
               }),
             }
@@ -208,9 +238,11 @@ describe('Reviews System', () => {
             return {
               select: vi.fn().mockReturnValue({
                 eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ 
-                    data: { id: 'appointment-1', status: 'completed' }, 
-                    error: null 
+                  eq: vi.fn().mockReturnValue({
+                    single: vi.fn().mockResolvedValue({ 
+                      data: { id: 'appointment-1', status: 'completed' }, 
+                      error: null 
+                    }),
                   }),
                 }),
               }),
@@ -245,9 +277,11 @@ describe('Reviews System', () => {
             return {
               select: vi.fn().mockReturnValue({
                 eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ 
-                    data: { id: 'appointment-1', status: 'pending_payment' }, 
-                    error: null 
+                  eq: vi.fn().mockReturnValue({
+                    single: vi.fn().mockResolvedValue({ 
+                      data: { id: 'appointment-1', status: 'pending_payment' }, 
+                      error: null 
+                    }),
                   }),
                 }),
               }),
@@ -296,4 +330,3 @@ describe('Reviews System', () => {
     })
   })
 })
-

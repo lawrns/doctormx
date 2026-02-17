@@ -1,6 +1,6 @@
 {
   "description": "Palabras clave que indican consultas informativas/en tiempo pasado (no emergencias actuales)",
-  "note": "Usar límites de palabras o frases completas para evitar falsos positivos",
+  "note": "Usar límites de palabras o frases completas para evitar falsos positivos. Incluye consultas administrativas.",
   "keywords": [
     "síntomas de",
     "symptoms of",
@@ -50,6 +50,21 @@
     "explain ",
     "explícame ",
     " explain ",
-    " explícame "
+    " explícame ",
+    "horario",
+    "hours",
+    "costo",
+    "cuesta",
+    "precio",
+    "price",
+    "consulta",
+    "appointment",
+    "agendar",
+    "schedule",
+    "cuánto cuesta",
+    "how much",
+    "what are your hours",
+    "horarios",
+    "scheduling"
   ]
 }
