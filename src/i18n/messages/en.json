@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "title": "Doctor.mx - Online Medical Consultations",
+    "description": "Connect with certified doctors in Mexico. Online consultations 24/7, digital prescriptions and medical follow-up."
+  },
+  "navigation": {
+    "home": "Home",
+    "doctors": "Doctors",
+    "appointments": "Appointments",
+    "consultation": "Consultation",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout": "Log out",
+    "login": "Log in",
+    "register": "Sign up",
+    "changeLanguage": "Change language",
+    "selectLanguage": "Select language"
+  },
+  "auth": {
+    "loginTitle": "Log in",
+    "loginSubtitle": "Access your Doctor.mx account",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "you@email.com",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "••••••••",
+    "forgotPassword": "Forgot your password?",
+    "loginButton": "Log in",
+    "noAccount": "Don't have an account?",
+    "registerLink": "Sign up here",
+    "registerTitle": "Create account",
+    "registerSubtitle": "Join Doctor.mx",
+    "fullNameLabel": "Full name",
+    "fullNamePlaceholder": "John Smith",
+    "confirmPasswordLabel": "Confirm password",
+    "acceptTerms": "I accept the terms and conditions",
+    "registerButton": "Create account",
+    "hasAccount": "Already have an account?",
+    "loginLink": "Log in here"
+  },
+  "common": {
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "continue": "Continue",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "error": "Error",
+    "success": "Success",
+    "warning": "Warning",
+    "info": "Information",
+    "yes": "Yes",
+    "no": "No",
+    "optional": "Optional",
+    "required": "Required"
+  },
+  "appointments": {
+    "title": "My appointments",
+    "upcoming": "Upcoming appointments",
+    "past": "Past appointments",
+    "noAppointments": "You have no scheduled appointments",
+    "scheduleAppointment": "Schedule appointment",
+    "appointmentDetails": "Appointment details",
+    "dateLabel": "Date",
+    "timeLabel": "Time",
+    "doctorLabel": "Doctor",
+    "specialtyLabel": "Specialty",
+    "typeLabel": "Consultation type",
+    "videoCall": "Video call",
+    "inPerson": "In person",
+    "status": {
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "completed": "Completed",
+      "cancelled": "Cancelled",
+      "noShow": "No show"
+    },
+    "actions": {
+      "joinVideo": "Join video call",
+      "reschedule": "Reschedule",
+      "cancel": "Cancel appointment",
+      "viewDetails": "View details"
+    }
+  },
+  "consultation": {
+    "title": "New consultation",
+    "startConsultation": "Start consultation",
+    "selectSymptoms": "Select your symptoms",
+    "describeSymptoms": "Describe your symptoms",
+    "symptomsPlaceholder": "Ex: I have had a headache for 2 days...",
+    "selectDoctor": "Select doctor",
+    "selectSpecialty": "Select specialty",
+    "urgency": {
+      "label": "Urgency level",
+      "low": "Low - Can wait",
+      "medium": "Medium - Within 24h",
+      "high": "High - As soon as possible"
+    },
+    "startButton": "Start medical consultation",
+    "disclaimer": "This consultation does not replace an emergency visit. If this is an emergency, call 911."
+  },
+  "doctor": {
+    "searchPlaceholder": "Search by name or specialty...",
+    "specialties": {
+      "general": "General Medicine",
+      "cardiology": "Cardiology",
+      "dermatology": "Dermatology",
+      "pediatrics": "Pediatrics",
+      "gynecology": "Gynecology",
+      "orthopedics": "Orthopedics",
+      "psychology": "Psychology",
+      "nutrition": "Nutrition"
+    },
+    "bookAppointment": "Book appointment",
+    "viewProfile": "View profile",
+    "reviews": "Reviews",
+    "yearsExperience": "{years} years of experience",
+    "patientsSeen": "{count} patients treated",
+    "rating": "Rating: {rating}/5"
+  },
+  "errors": {
+    "generic": "An error has occurred. Please try again.",
+    "network": "Connection error. Check your internet.",
+    "unauthorized": "You don't have permission to perform this action.",
+    "notFound": "The requested resource was not found.",
+    "validation": "Please verify the entered data.",
+    "server": "Server error. Please try again later."
+  },
+  "validation": {
+    "required": "This field is required",
+    "email": "Enter a valid email address",
+    "minLength": "Must be at least {min} characters",
+    "maxLength": "Must be at most {max} characters",
+    "passwordMatch": "Passwords do not match",
+    "invalidDate": "Invalid date",
+    "invalidPhone": "Invalid phone number"
+  },
+  "time": {
+    "today": "Today",
+    "tomorrow": "Tomorrow",
+    "yesterday": "Yesterday",
+    "justNow": "Just now",
+    "minutesAgo": "{count} minutes ago",
+    "hoursAgo": "{count} hours ago",
+    "daysAgo": "{count} days ago"
+  }
+}

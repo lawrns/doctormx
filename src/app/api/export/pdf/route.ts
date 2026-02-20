@@ -12,7 +12,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 import { logger } from '@/lib/observability/logger'
 import { requireAuth, AuthError } from '@/lib/auth'
-import { checkRateLimit, getRateLimitIdentifier } from '@/lib/rate-limit'
+import { checkRateLimit } from '@/lib/rate-limit/index'
 import { logSecurityEvent } from '@/lib/security/audit-logger'
 
 // Validation schema for PDF export requests
@@ -32,13 +32,9 @@ export async function POST(request: NextRequest) {
     const { user } = await requireAuth()
 
     // 2. Rate limiting - 10 PDF exports per minute per user
-    const ipAddress = request.ip ?? request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown'
-    const rateLimitId = getRateLimitIdentifier(user.id, ipAddress)
-    const rateLimitResult = await checkRateLimit(
-      rateLimitId,
-      { requests: 10, window: 60 },
-      'pdf:export'
-    )
+    const ipAddress = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown'
+    const rateLimitId = `pdf:${user.id}:${ipAddress}`
+    const rateLimitResult = await checkRateLimit(rateLimitId, { requests: 10, window: 60 }, 'pdf_export')
 
     if (!rateLimitResult.success) {
       await logSecurityEvent({
@@ -47,16 +43,15 @@ export async function POST(request: NextRequest) {
         userId: user.id,
         description: 'PDF export rate limit exceeded',
         ipAddress,
-        details: { remaining: rateLimitResult.remaining, resetIn: rateLimitResult.resetInSeconds }
       })
       return NextResponse.json(
         { success: false, error: 'Rate limit exceeded. Try again later.' },
         { 
           status: 429,
           headers: {
-            'X-RateLimit-Limit': rateLimitResult.limit.toString(),
-            'X-RateLimit-Remaining': rateLimitResult.remaining.toString(),
-            'X-RateLimit-Reset': rateLimitResult.reset.toString(),
+            'X-RateLimit-Limit': '10',
+            'X-RateLimit-Remaining': '0',
+            'X-RateLimit-Reset': String(rateLimitResult.reset),
           }
         }
       )

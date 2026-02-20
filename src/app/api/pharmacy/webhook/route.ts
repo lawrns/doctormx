@@ -209,7 +209,7 @@ async function recordWebhookEvent(
 /**
  * Simple hash function for payload deduplication
  */
-async function hashPayload(payload: string): string {
+async function hashPayload(payload: string): Promise<string> {
   // Use Web Crypto API for hashing
   const encoder = new TextEncoder()
   const data = encoder.encode(payload)

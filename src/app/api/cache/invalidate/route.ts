@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from 'next/server'
 import { cache } from '@/lib/cache'
 import { createClient } from '@/lib/supabase/server'
 import { checkRateLimit } from '@/lib/rate-limit'
-import { logger } from '@/lib/observability/logger'
 
 export async function POST(request: NextRequest) {
   try {
@@ -23,7 +22,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
     }
 
-    const ip = request.headers.get('x-forwarded-for') ?? 'unknown'
+    const ip = request.headers.get('x-forwarded-for') || 'unknown'
     const rateLimitResult = await checkRateLimit(ip, '/api/cache/invalidate')
     if (!rateLimitResult.success) {
       return NextResponse.json(
@@ -49,17 +48,14 @@ export async function POST(request: NextRequest) {
       if (doctorId) {
         success = await cache.invalidateDoctor(doctorId)
       } else {
-        const result1 = await cache.invalidate('doctor:*')
-        const result2 = await cache.invalidate('doctores:list:*')
-        success = result1 > 0 || result2 > 0
+        success = await cache.invalidate('doctor:*')
+        success = await cache.invalidate('doctors:list:*') && success
       }
     } else if (type === 'availability') {
       const { doctorId } = body
-      const result = await cache.invalidateAppointmentAvailability(doctorId)
-      success = result
+      success = await cache.invalidateAvailability(doctorId)
     } else if (pattern) {
-      const result = await cache.invalidate(pattern)
-      success = result > 0
+      success = await cache.invalidate(pattern)
     }
 
     return NextResponse.json({
@@ -67,7 +63,7 @@ export async function POST(request: NextRequest) {
       message: success ? 'Cache invalidated' : 'Invalidation failed',
     })
   } catch (error) {
-    logger.error('Cache invalidation error:', { err: error })
+    console.error('Cache invalidation error:', error)
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

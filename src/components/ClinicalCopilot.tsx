@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { Modal } from '@/components/Modal'
 import { logger } from '@/lib/observability/logger'
+import { usePremiumAccess } from '@/hooks'
 
 interface ClinicalCopilotProps {
     appointmentId: string
@@ -34,8 +35,6 @@ export function ClinicalCopilot({
     medicalHistory,
 }: ClinicalCopilotProps) {
     const [isOpen, setIsOpen] = useState(false)
-    const [showPaywall, setShowPaywall] = useState(false)
-    const [hasAccess, setHasAccess] = useState(false)
     const [activeTab, setActiveTab] = useState<'suggestions' | 'diagnosis' | 'summary' | 'prescription'>('suggestions')
     const [suggestions, setSuggestions] = useState<Suggestion[]>([])
     const [transcription, setTranscription] = useState('')
@@ -43,23 +42,12 @@ export function ClinicalCopilot({
     const [symptoms, setSymptoms] = useState<string[]>([])
     const supabase = createClient()
 
-    useEffect(() => {
-        const checkAccess = async () => {
-            try {
-                const response = await fetch('/api/premium/status?feature=clinical_copilot')
-                if (response.ok) {
-                    const data = await response.json()
-                    setHasAccess(data.hasAccess)
-                    if (!data.hasAccess && data.needsUpgrade) {
-                        setShowPaywall(true)
-                    }
-                }
-            } catch (error) {
-                logger.error('Error checking premium access', { error: error instanceof Error ? error.message : String(error) })
-            }
-        }
-        checkAccess()
-    }, [])
+    // Use centralized premium access hook
+    const { hasAccess, showPaywall: showPaywallFromHook } = usePremiumAccess('clinical_copilot')
+    
+    // Local state for paywall modal (can be controlled independently)
+    const [paywallOpen, setPaywallOpen] = useState(false)
+    const showPaywall = paywallOpen || showPaywallFromHook
 
     const loadSuggestions = useCallback(async () => {
         setLoading(true)
@@ -239,7 +227,7 @@ export function ClinicalCopilot({
                         if (hasAccess) {
                             setIsOpen(true)
                         } else {
-                            setShowPaywall(true)
+                            setPaywallOpen(true)
                         }
                     }}
                     className={`fixed bottom-4 right-4 w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-colors z-50 ${
@@ -263,7 +251,7 @@ export function ClinicalCopilot({
 
                 <Modal
                     isOpen={showPaywall}
-                    onClose={() => setShowPaywall(false)}
+                    onClose={() => setPaywallOpen(false)}
                     title="Desbloquear Clinical Copilot"
                     size="md"
                 >
@@ -312,7 +300,7 @@ export function ClinicalCopilot({
 
                         <div className="flex gap-3">
                             <button
-                                onClick={() => setShowPaywall(false)}
+                                onClick={() => setPaywallOpen(false)}
                                 className="flex-1 py-3 px-4 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium"
                             >
                                 Ahora no

@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { LucideIcon, Sparkles, ArrowRight, Calendar, ClipboardList, FileText, Clock, User, Search, MessageSquare, Wallet, Stethoscope, Bot, ImageIcon, AlertCircle } from 'lucide-react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
+import { useTranslations } from 'next-intl'
 
 const iconMap: Record<string, LucideIcon> = {
   calendar: Calendar,
@@ -177,11 +178,13 @@ export function EmptyState({
 
 // Pre-configured empty states for common scenarios
 export function NoAppointmentsEmpty({ type = 'patient' }: { type?: 'patient' | 'doctor' }) {
+  const t = useTranslations('appointments')
+  
   if (type === 'doctor') {
     return (
       <EmptyState
         iconName="calendar"
-        title="No tienes consultas programadas"
+        title={t('noAppointments')}
         description="Las citas aparecerán aquí cuando los pacientes reserven contigo. Comparte tu perfil para empezar a recibir pacientes."
         action={{ label: "Ver mi perfil público", href: "#" }}
         secondaryAction={{ label: "Configurar disponibilidad", href: "/doctor/availability" }}
@@ -192,7 +195,7 @@ export function NoAppointmentsEmpty({ type = 'patient' }: { type?: 'patient' | '
   return (
     <EmptyState
       iconName="calendar"
-      title="No tienes consultas programadas"
+      title={t('noAppointments')}
       description="Tu primera consulta está a un clic. ¿Prefieres hablar con nuestro asistente IA primero?"
       action={{ label: "Consulta IA Gratis", href: "/app/ai-consulta" }}
       secondaryAction={{ label: "Buscar doctor", href: "/doctores" }}

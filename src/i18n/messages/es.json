@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "title": "Doctor.mx - Consultas Médicas en Línea",
+    "description": "Conecta con médicos certificados en México. Consultas en línea 24/7, recetas digitales y seguimiento médico."
+  },
+  "navigation": {
+    "home": "Inicio",
+    "doctors": "Médicos",
+    "appointments": "Citas",
+    "consultation": "Consulta",
+    "profile": "Perfil",
+    "settings": "Configuración",
+    "logout": "Cerrar sesión",
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "changeLanguage": "Cambiar idioma",
+    "selectLanguage": "Seleccionar idioma"
+  },
+  "auth": {
+    "loginTitle": "Iniciar sesión",
+    "loginSubtitle": "Accede a tu cuenta de Doctor.mx",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "tu@email.com",
+    "passwordLabel": "Contraseña",
+    "passwordPlaceholder": "••••••••",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "loginButton": "Iniciar sesión",
+    "noAccount": "¿No tienes cuenta?",
+    "registerLink": "Regístrate aquí",
+    "registerTitle": "Crear cuenta",
+    "registerSubtitle": "Únete a Doctor.mx",
+    "fullNameLabel": "Nombre completo",
+    "fullNamePlaceholder": "Juan Pérez García",
+    "confirmPasswordLabel": "Confirmar contraseña",
+    "acceptTerms": "Acepto los términos y condiciones",
+    "registerButton": "Crear cuenta",
+    "hasAccount": "¿Ya tienes cuenta?",
+    "loginLink": "Inicia sesión aquí"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "confirm": "Confirmar",
+    "close": "Cerrar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "continue": "Continuar",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "error": "Error",
+    "success": "Éxito",
+    "warning": "Advertencia",
+    "info": "Información",
+    "yes": "Sí",
+    "no": "No",
+    "optional": "Opcional",
+    "required": "Requerido"
+  },
+  "appointments": {
+    "title": "Mis citas",
+    "upcoming": "Próximas citas",
+    "past": "Citas pasadas",
+    "noAppointments": "No tienes citas programadas",
+    "scheduleAppointment": "Agendar cita",
+    "appointmentDetails": "Detalles de la cita",
+    "dateLabel": "Fecha",
+    "timeLabel": "Hora",
+    "doctorLabel": "Médico",
+    "specialtyLabel": "Especialidad",
+    "typeLabel": "Tipo de consulta",
+    "videoCall": "Videollamada",
+    "inPerson": "Presencial",
+    "status": {
+      "pending": "Pendiente",
+      "confirmed": "Confirmada",
+      "completed": "Completada",
+      "cancelled": "Cancelada",
+      "noShow": "No asistió"
+    },
+    "actions": {
+      "joinVideo": "Unirse a videollamada",
+      "reschedule": "Reagendar",
+      "cancel": "Cancelar cita",
+      "viewDetails": "Ver detalles"
+    }
+  },
+  "consultation": {
+    "title": "Nueva consulta",
+    "startConsultation": "Iniciar consulta",
+    "selectSymptoms": "Selecciona tus síntomas",
+    "describeSymptoms": "Describe tus síntomas",
+    "symptomsPlaceholder": "Ej: Tengo dolor de cabeza desde hace 2 días...",
+    "selectDoctor": "Seleccionar médico",
+    "selectSpecialty": "Seleccionar especialidad",
+    "urgency": {
+      "label": "Nivel de urgencia",
+      "low": "Bajo - Puede esperar",
+      "medium": "Medio - Dentro de 24h",
+      "high": "Alto - Lo antes posible"
+    },
+    "startButton": "Iniciar consulta médica",
+    "disclaimer": "Esta consulta no reemplaza una visita de emergencia. Si es una emergencia, llama al 911."
+  },
+  "doctor": {
+    "searchPlaceholder": "Buscar por nombre o especialidad...",
+    "specialties": {
+      "general": "Medicina General",
+      "cardiology": "Cardiología",
+      "dermatology": "Dermatología",
+      "pediatrics": "Pediatría",
+      "gynecology": "Ginecología",
+      "orthopedics": "Ortopedia",
+      "psychology": "Psicología",
+      "nutrition": "Nutrición"
+    },
+    "bookAppointment": "Agendar cita",
+    "viewProfile": "Ver perfil",
+    "reviews": "Reseñas",
+    "yearsExperience": "{years} años de experiencia",
+    "patientsSeen": "{count} pacientes atendidos",
+    "rating": "Calificación: {rating}/5"
+  },
+  "errors": {
+    "generic": "Ha ocurrido un error. Por favor, intenta de nuevo.",
+    "network": "Error de conexión. Verifica tu internet.",
+    "unauthorized": "No tienes permiso para realizar esta acción.",
+    "notFound": "No se encontró el recurso solicitado.",
+    "validation": "Por favor, verifica los datos ingresados.",
+    "server": "Error del servidor. Por favor, intenta más tarde."
+  },
+  "validation": {
+    "required": "Este campo es requerido",
+    "email": "Ingresa un correo electrónico válido",
+    "minLength": "Debe tener al menos {min} caracteres",
+    "maxLength": "Debe tener máximo {max} caracteres",
+    "passwordMatch": "Las contraseñas no coinciden",
+    "invalidDate": "Fecha inválida",
+    "invalidPhone": "Número de teléfono inválido"
+  },
+  "time": {
+    "today": "Hoy",
+    "tomorrow": "Mañana",
+    "yesterday": "Ayer",
+    "justNow": "Justo ahora",
+    "minutesAgo": "Hace {count} minutos",
+    "hoursAgo": "Hace {count} horas",
+    "daysAgo": "Hace {count} días"
+  }
+}
