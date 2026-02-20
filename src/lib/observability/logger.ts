@@ -87,6 +87,7 @@ function log(level: LogLevel, message: string, context?: LogContext, error?: Err
   
   const formatted = formatEntry(entry)
   
+  /* eslint-disable no-console */
   switch (level) {
     case 'error':
       console.error(formatted)
@@ -97,6 +98,7 @@ function log(level: LogLevel, message: string, context?: LogContext, error?: Err
     default:
       console.log(formatted)
   }
+  /* eslint-enable no-console */
 }
 
 export const logger = {

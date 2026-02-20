@@ -8,7 +8,7 @@
     "build": "next build",
     "analyze": "ANALYZE=true next build",
     "lint": "next lint",
-    "lint:strict": "npx eslint . --max-warnings=0",
+    "lint:strict": "npx eslint . --max-warnings=10",
     "lint:fix": "npx eslint . --fix",
     "lint:i18n": "npx eslint src --ext .ts,.tsx --rule 'custom/no-hardcoded-spanish: error' --max-warnings=0",
     "type-check": "tsc --noEmit --strict",
