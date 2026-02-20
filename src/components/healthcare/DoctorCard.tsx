@@ -148,7 +148,7 @@ export function DoctorCard({
                 ))}
               </div>
               <span className="font-medium text-gray-900">{rating.toFixed(1)}</span>
-              <span className="text-gray-400">({reviewCount} opiniones)</span>
+              <span className="text-gray-500">({reviewCount} opiniones)</span>
             </div>
           )}
 

@@ -39,7 +39,8 @@ const geistMono = Geist_Mono({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#ffffff",
+  themeColor: "#0EA5E9",
+  viewportFit: "cover",
 };
 
 // I18N-007: Base metadata configuration with hreflang support
@@ -124,6 +125,29 @@ export default async function RootLayout({
   return (
     <html lang={locale} dir={dir} data-scroll-behavior="smooth" data-rtl={rtl}>
       <head>
+        {/* PWA: Web App Manifest */}
+        <link rel="manifest" href="/manifest.json" />
+        
+        {/* PWA: Theme Color for browsers */}
+        <meta name="theme-color" content="#0EA5E9" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#0C4A6E" media="(prefers-color-scheme: dark)" />
+        
+        {/* PWA: Apple Touch Icon */}
+        <link rel="apple-touch-icon" href="/icons/icon-192x192.svg" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-192x192.svg" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-192x192.svg" />
+        <link rel="apple-touch-icon" sizes="167x167" href="/icons/icon-192x192.svg" />
+        
+        {/* PWA: Apple Mobile Web App */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Doctor.mx" />
+        
+        {/* PWA: Microsoft Tiles */}
+        <meta name="msapplication-TileColor" content="#0EA5E9" />
+        <meta name="msapplication-TileImage" content="/icons/icon-192x192.svg" />
+        <meta name="msapplication-config" content="none" />
+        
         {/* PERF-005: Preconnect and DNS Prefetch for External Domains */}
         {/* Preconnect to critical third-party origins for performance */}
         <link

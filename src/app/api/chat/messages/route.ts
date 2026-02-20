@@ -1,4 +1,4 @@
-import { requireAuth } from '@/lib/auth'
+import { requireAuth, AuthError } from '@/lib/auth'
 import { sendMessage } from '@/lib/chat'
 import { NextResponse } from 'next/server'
 import { evaluateRedFlags, getCareLevelInfo, isMentalHealthCrisis, getMentalHealthResources } from '@/lib/triage'
@@ -62,6 +62,12 @@ export async function POST(request: Request) {
       triageAlert, // Include triage alert if detected
     })
   } catch (error) {
+    if (error instanceof AuthError || (error instanceof Error && error.name === 'AuthError')) {
+      return NextResponse.json(
+        { error: 'Unauthorized' },
+        { status: 401 }
+      )
+    }
     logger.error('Error sending message:', { err: error })
     return NextResponse.json(
       { error: 'Failed to send message' },

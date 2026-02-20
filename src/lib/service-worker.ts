@@ -8,6 +8,8 @@
  * @see https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
  */
 
+import { logger } from '@/lib/observability/logger'
+
 /**
  * Service worker configuration
  */
@@ -61,7 +63,7 @@ export async function registerServiceWorker(
 
   if (!isServiceWorkerSupported()) {
     if (finalConfig.debug) {
-      console.warn('[SW] Service workers not supported');
+      logger.warn('[SW] Service workers not supported');
     }
     return null;
   }
@@ -77,7 +79,7 @@ export async function registerServiceWorker(
     state.isRegistered = true;
 
     if (finalConfig.debug) {
-      console.log('[SW] Registered successfully:', registration.scope);
+      logger.info('[SW] Registered successfully', { scope: registration.scope });
     }
 
     // Handle updates
@@ -85,7 +87,7 @@ export async function registerServiceWorker(
 
     return registration;
   } catch (error) {
-    console.error('[SW] Registration failed:', error);
+    logger.error('[SW] Registration failed', { error: error instanceof Error ? error.message : String(error) });
     return null;
   }
 }
@@ -101,7 +103,9 @@ function handleUpdates(
   if (config.updateInterval && config.updateInterval > 0) {
     setInterval(
       () => {
-        registration.update().catch(console.error);
+        registration.update().catch((err) => {
+          logger.error('[SW] Update failed', { error: err instanceof Error ? err.message : String(err) });
+        });
       },
       config.updateInterval * 60 * 60 * 1000
     );
@@ -117,7 +121,7 @@ function handleUpdates(
       if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
         // New version available
         if (config.debug) {
-          console.log('[SW] New version available');
+          logger.info('[SW] New version available');
         }
 
         // Dispatch custom event
@@ -133,7 +137,7 @@ function handleUpdates(
   // Listen for messages from service worker
   navigator.serviceWorker.addEventListener('message', (event) => {
     if (config.debug) {
-      console.log('[SW] Message received:', event.data);
+      logger.info('[SW] Message received', { data: event.data });
     }
 
     handleServiceWorkerMessage(event.data);
@@ -189,7 +193,7 @@ export async function unregisterServiceWorker(): Promise<boolean> {
     state.registration = null;
     return result;
   } catch (error) {
-    console.error('[SW] Unregister failed:', error);
+    logger.error('[SW] Unregister failed', { error: error instanceof Error ? error.message : String(error) });
     return false;
   }
 }
@@ -201,7 +205,7 @@ export async function subscribeToPush(
   applicationServerKey: string
 ): Promise<PushSubscription | null> {
   if (!state.registration) {
-    console.error('[SW] No service worker registered');
+    logger.error('[SW] No service worker registered');
     return null;
   }
 
@@ -213,7 +217,7 @@ export async function subscribeToPush(
 
     return subscription;
   } catch (error) {
-    console.error('[SW] Push subscription failed:', error);
+    logger.error('[SW] Push subscription failed', { error: error instanceof Error ? error.message : String(error) });
     return null;
   }
 }
@@ -231,7 +235,7 @@ export async function unsubscribeFromPush(): Promise<boolean> {
     }
     return true;
   } catch (error) {
-    console.error('[SW] Push unsubscription failed:', error);
+    logger.error('[SW] Push unsubscription failed', { error: error instanceof Error ? error.message : String(error) });
     return false;
   }
 }
@@ -241,13 +245,13 @@ export async function unsubscribeFromPush(): Promise<boolean> {
  */
 export async function registerBackgroundSync(tag: string): Promise<boolean> {
   if (!state.registration) {
-    console.error('[SW] No service worker registered');
+    logger.error('[SW] No service worker registered');
     return false;
   }
 
   // Check for sync support
   if (!('sync' in state.registration)) {
-    console.warn('[SW] Background sync not supported');
+    logger.warn('[SW] Background sync not supported');
     return false;
   }
 
@@ -257,7 +261,7 @@ export async function registerBackgroundSync(tag: string): Promise<boolean> {
     }).sync.register(tag);
     return true;
   } catch (error) {
-    console.error('[SW] Background sync registration failed:', error);
+    logger.error('[SW] Background sync registration failed', { error: error instanceof Error ? error.message : String(error) });
     return false;
   }
 }
@@ -292,7 +296,7 @@ export async function showNotification(
   options?: NotificationOptions
 ): Promise<void> {
   if (getNotificationPermission() !== 'granted') {
-    console.warn('[SW] Notification permission not granted');
+    logger.warn('[SW] Notification permission not granted');
     return;
   }
 

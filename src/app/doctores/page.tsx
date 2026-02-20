@@ -155,6 +155,7 @@ export default async function DoctorsPage({
                   size="icon"
                   className={params.sortOrder === 'asc' ? 'bg-primary-50' : ''}
                   title={params.sortOrder === 'asc' ? 'Orden descendente' : 'Orden ascendente'}
+                  aria-label={params.sortOrder === 'asc' ? 'Ordenar de forma descendente' : 'Ordenar de forma ascendente'}
                 >
                   {params.sortOrder === 'asc' ? (
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

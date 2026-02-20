@@ -55,7 +55,6 @@ export async function POST(request: NextRequest) {
       patient?: Array<{ full_name: string; email: string | null }> | { full_name: string; email: string | null } | undefined
     }
     const patient = Array.isArray(apt.patient) ? apt.patient[0] : apt.patient
-    // const doctor = Array.isArray(appointment.doctor) ? appointment.doctor[0] : appointment.doctor
 
     const patientEmail = patient?.email
     const patientName = patient?.full_name

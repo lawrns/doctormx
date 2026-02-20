@@ -28,7 +28,8 @@
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "language": "Language",
-    "switchLanguage": "Switch language"
+    "switchLanguage": "Switch language",
+    "currentLanguage": "Current language"
   },
   "common": {
     "loading": "Loading...",
@@ -487,6 +488,42 @@
         "instagram": "Instagram",
         "twitter": "Twitter"
       }
+    },
+    "stats": {
+      "title": "Numbers that support our mission",
+      "subtitle": "Updated data • January 2025",
+      "doctors": "Doctors with verified license",
+      "consultations": "Consultations performed",
+      "specialties": "Medical specialties",
+      "satisfaction": "Patient satisfaction",
+      "footnote": "Statistics based on Doctor.mx internal data. Satisfaction measured by post-consultation surveys."
+    },
+    "simeon": {
+      "badge": "AI Medical Assistant",
+      "title": "Dr. Simeon AI",
+      "titleHighlight": "Your Smart Initial Assessment",
+      "description": "Our AI medical assistant performs a complete evaluation of your symptoms using OPQRST methodology, detects warning signs, and connects you with the right specialist in minutes.",
+      "features": {
+        "symptomEvaluation": "Symptom evaluation in 5 minutes",
+        "emergencyDetection": "Medical emergency detection",
+        "specialistRecommendation": "Ideal specialist recommendation",
+        "available24_7": "Available 24/7, always with you"
+      },
+      "buttons": {
+        "bookConsultation": "Book Consultation",
+        "tryAI": "Try AI Now"
+      },
+      "disclaimer": "AI assists, does not diagnose. Certified medical backing.",
+      "chat": {
+        "online": "Online",
+        "restart": "Restart conversation",
+        "placeholder": "Type your message..."
+      }
+    },
+    "press": {
+      "recognizedIn": "Recognized in Mexico",
+      "asSeenIn": "As seen in:",
+      "differentiators": "Over 500 verified doctors • 10,000+ consultations • 98% satisfaction • 24/7 service"
     }
   },
   "emergency": {

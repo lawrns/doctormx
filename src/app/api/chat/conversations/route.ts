@@ -1,4 +1,4 @@
-import { requireAuth } from '@/lib/auth'
+import { requireAuth, AuthError } from '@/lib/auth'
 import { getConversations, createConversation, type ConversationWithDetails } from '@/lib/chat'
 import { NextResponse } from 'next/server'
 import {
@@ -19,7 +19,7 @@ import { logger } from '@/lib/observability/logger'
  * - cursor: string | null - pagination cursor
  * - limit: number (default: 20, max: 100)
  */
-export async function GET(request: Request) {
+export async function GET(request?: Request) {
   try {
     const { user, supabase } = await requireAuth()
 
@@ -29,12 +29,16 @@ export async function GET(request: Request) {
       .eq('id', user.id)
       .single()
 
-    const role = profile?.role as 'patient' | 'doctor'
-    if (!role || (role !== 'patient' && role !== 'doctor')) {
+    const role = profile?.role as 'patient' | 'doctor' | 'admin'
+    if (!role || (role !== 'patient' && role !== 'doctor' && role !== 'admin')) {
       return NextResponse.json({ error: 'Invalid role' }, { status: 400 })
     }
+    
+    // Admin can access all conversations (for moderation/support)
+    // For chat purposes, admin is treated like a patient
+    const effectiveRole = role === 'admin' ? 'patient' : role
 
-    const { searchParams } = new URL(request.url)
+    const { searchParams } = new URL(request?.url || 'http://localhost/api/chat/conversations')
 
     // Parse pagination parameters
     const { cursor, limit, direction } = parsePaginationParams(searchParams)
@@ -58,9 +62,9 @@ export async function GET(request: Request) {
       `)
 
     // Apply role filter
-    if (role === 'patient') {
+    if (effectiveRole === 'patient') {
       query = query.eq('patient_id', user.id)
-    } else if (role === 'doctor') {
+    } else if (effectiveRole === 'doctor') {
       query = query.eq('doctor_id', user.id)
     }
 
@@ -169,6 +173,12 @@ export async function GET(request: Request) {
 
     return NextResponse.json(result)
   } catch (error) {
+    if (error instanceof AuthError || (error instanceof Error && error.name === 'AuthError')) {
+      return NextResponse.json(
+        { error: 'Unauthorized' },
+        { status: 401 }
+      )
+    }
     logger.error('Error getting conversations:', { err: error })
     return NextResponse.json(
       { error: 'Failed to get conversations' },
@@ -237,6 +247,12 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ conversation })
   } catch (error) {
+    if (error instanceof AuthError || (error instanceof Error && error.name === 'AuthError')) {
+      return NextResponse.json(
+        { error: 'Unauthorized' },
+        { status: 401 }
+      )
+    }
     logger.error('Error creating conversation:', { err: error })
     return NextResponse.json(
       { error: 'Failed to create conversation' },

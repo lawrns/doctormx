@@ -28,7 +28,8 @@
     "openMenu": "Abrir menú",
     "closeMenu": "Cerrar menú",
     "language": "Idioma",
-    "switchLanguage": "Cambiar idioma"
+    "switchLanguage": "Cambiar idioma",
+    "currentLanguage": "Idioma actual"
   },
   "common": {
     "loading": "Cargando...",
@@ -487,6 +488,42 @@
         "instagram": "Instagram",
         "twitter": "Twitter"
       }
+    },
+    "stats": {
+      "title": "Números que respaldan nuestra misión",
+      "subtitle": "Datos actualizados • Enero 2025",
+      "doctors": "Doctores con cédula verificada",
+      "consultations": "Consultas realizadas",
+      "specialties": "Especialidades médicas",
+      "satisfaction": "Satisfacción de pacientes",
+      "footnote": "Estadísticas basadas en datos internos de Doctor.mx. Satisfacción medida por encuestas post-consulta."
+    },
+    "simeon": {
+      "badge": "Asistente IA Médico",
+      "title": "Dr. Simeon AI",
+      "titleHighlight": "Tu Evaluación Inicial Inteligente",
+      "description": "Nuestro asistente con IA médica realiza una evaluación completa de tus síntomas usando metodología OPQRST, detecta señales de alerta y te conecta con el especialista adecuado en minutos.",
+      "features": {
+        "symptomEvaluation": "Evaluación de síntomas en 5 minutos",
+        "emergencyDetection": "Detección de emergencias médicas",
+        "specialistRecommendation": "Recomendación de especialista ideal",
+        "available24_7": "Disponible 24/7, siempre contigo"
+      },
+      "buttons": {
+        "bookConsultation": "Agendar Consulta",
+        "tryAI": "Probar IA Ahora"
+      },
+      "disclaimer": "La IA asiste, no diagnostica. Respaldo médico certificado.",
+      "chat": {
+        "online": "En línea",
+        "restart": "Reiniciar conversación",
+        "placeholder": "Escribe tu mensaje..."
+      }
+    },
+    "press": {
+      "recognizedIn": "Reconocido en México",
+      "asSeenIn": "Como visto en:",
+      "differentiators": "Más de 500 doctores verificados • 10,000+ consultas • 98% satisfacción • Servicio 24/7"
     }
   },
   "emergency": {

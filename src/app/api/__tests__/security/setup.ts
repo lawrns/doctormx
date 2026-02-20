@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Security Test Setup - Shared utilities for API security testing
  * Doctor.mx - Critical Security Test Infrastructure
  */
@@ -195,77 +195,280 @@ export function setMockSession(session: { access_token: string; refresh_token: s
   mockSession = session
 }
 
-// Create chainable mock for Supabase queries
-export function createMockChain(): {
-  select: ReturnType<typeof vi.fn>;
-  eq: ReturnType<typeof vi.fn>;
-  neq: ReturnType<typeof vi.fn>;
-  single: ReturnType<typeof vi.fn>;
-  order: ReturnType<typeof vi.fn>;
-  insert: ReturnType<typeof vi.fn>;
-  update: ReturnType<typeof vi.fn>;
-  delete: ReturnType<typeof vi.fn>;
-} {
-  const chain = {
-    select: vi.fn((...args: string[]) => {
-      mockCalls.select.push(args)
-      return chain
-    }),
-    eq: vi.fn((column: string, value: string) => {
-      mockCalls.eq.push({ column, value })
-      return chain
-    }),
-    neq: vi.fn(() => chain),
-    gt: vi.fn(() => chain),
-    lt: vi.fn(() => chain),
-    gte: vi.fn(() => chain),
-    lte: vi.fn(() => chain),
-    in: vi.fn(() => chain),
-    order: vi.fn(() => chain),
-    limit: vi.fn(() => chain),
-    single: vi.fn(() => {
-      mockCalls.single++
-      // Return data based on context
-      // For appointments table queries, return a valid appointment
-      if (currentUser) {
+// Create chainable mock for Supabase queries with table context
+export function createMockChain(tableName: string): Record<string, ReturnType<typeof vi.fn>> {
+  const filters: { column: string; value: string }[] = []
+  
+  // Helper to get response for single()
+  const getSingleResponse = function(this: typeof chain) {
+    mockCalls.single++
+    
+    // If this is after an insert, return the inserted data
+    const insertData = (this as any)._insertData
+    if (insertData) {
+      return Promise.resolve({ data: insertData, error: null })
+    }
+    
+    // If this is after an update, return the updated data
+    const updateData = (this as any)._updateData
+    if (updateData) {
+      return Promise.resolve({ data: { id: 'pres-123', ...updateData }, error: null })
+    }
+    
+    if (!currentUser) {
+      return Promise.resolve({ data: null, error: { code: 'PGRST116', message: 'Not found' } })
+    }
+    
+    // For profiles table
+    if (tableName === 'profiles') {
+      return Promise.resolve({
+        data: {
+          id: currentUser.id,
+          email: currentUser.email,
+          role: currentUser.role,
+          full_name: currentUser.full_name,
+          subscription_tier: currentUser.subscription_tier,
+        },
+        error: null,
+      })
+    }
+    
+    // For doctors table
+    if (tableName === 'doctors') {
+      if (currentUser.role === 'doctor') {
         return Promise.resolve({
-          data: {
-            id: currentUser.id,
-            email: currentUser.email,
-            role: currentUser.role,
-            full_name: currentUser.full_name,
-            subscription_tier: currentUser.subscription_tier,
-            // Appointment fields
-            doctor_id: currentUser.id,
-            patient_id: 'patient-123',
-          },
+          data: { id: currentUser.id, user_id: currentUser.id },
           error: null,
         })
       }
       return Promise.resolve({ data: null, error: { code: 'PGRST116', message: 'Not found' } })
-    }),
-    update: vi.fn((data: Record<string, unknown>) => {
-      mockCalls.update.push(data)
-      return chain
-    }),
-    insert: vi.fn((data: Record<string, unknown>) => {
-      mockCalls.insert.push(data)
-      return Promise.resolve({ error: null })
-    }),
-    upsert: vi.fn((data: Record<string, unknown>) => {
-      mockCalls.insert.push(data)
-      return Promise.resolve({ error: null })
-    }),
-    delete: vi.fn(() => chain),
-    match: vi.fn(() => chain),
-    contains: vi.fn(() => chain),
-    or: vi.fn(() => chain),
-    and: vi.fn(() => chain),
+    }
+    
+    // For chat_conversations table
+    if (tableName === 'chat_conversations') {
+      // Check if this is an IDOR test case - look for specific conversation ID filters
+      const idFilter = filters.find(f => f.column === 'id')
+      const convId = idFilter?.value
+      
+      // For IDOR tests (conv-other or conv-different-user), return conversation owned by different user
+      if (convId === 'conv-other' || convId === 'other-user-conv' || convId?.includes('other')) {
+        return Promise.resolve({
+          data: {
+            id: convId,
+            patient_id: 'different-user-id', // Not the current user
+            doctor_id: 'another-doctor-id',
+            appointment_id: null,
+            last_message_preview: null,
+            last_message_at: null,
+            is_archived: false,
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString(),
+          },
+          error: null,
+        })
+      }
+      
+      return Promise.resolve({
+        data: {
+          id: convId || 'conv-123',
+          patient_id: currentUser.id,
+          doctor_id: 'doctor-456',
+          appointment_id: null,
+          last_message_preview: null,
+          last_message_at: null,
+          is_archived: false,
+          created_at: new Date().toISOString(),
+          updated_at: new Date().toISOString(),
+        },
+        error: null,
+      })
+    }
+    
+    // For appointments table
+    if (tableName === 'appointments') {
+      const now = new Date().toISOString()
+      if (currentUser.role === 'patient') {
+        return Promise.resolve({
+          data: { id: 'appt-123', doctor_id: 'doctor-456', patient_id: currentUser.id, start_ts: now },
+          error: null,
+        })
+      }
+      return Promise.resolve({
+        data: { id: 'appt-123', doctor_id: currentUser.id, patient_id: 'patient-123', start_ts: now },
+        error: null,
+      })
+    }
+    
+    // For prescriptions table
+    if (tableName === 'prescriptions') {
+      const idFilter = filters.find(f => f.column === 'id')
+      const appointmentIdFilter = filters.find(f => f.column === 'appointment_id')
+      
+      if (idFilter?.value?.includes('<')) {
+        return Promise.resolve({ data: null, error: { code: 'PGRST116', message: 'Not found' } })
+      }
+      const requestedId = idFilter?.value || 'pres-123'
+      const requestedAppointmentId = appointmentIdFilter?.value || 'appt-123'
+      
+      // For pres-456, return a prescription that belongs to a different patient
+      // This is used to test "prevents patient from viewing other patients prescriptions"
+      if (requestedId === 'pres-456') {
+        return Promise.resolve({
+          data: {
+            id: requestedId,
+            doctor_id: 'doctor-456',
+            patient_id: 'patient-123', // Belongs to patient-123, not different-patient
+            appointment_id: requestedAppointmentId,
+            medications: [],
+            diagnosis: 'Test diagnosis',
+            status: 'active',
+            appointment: { doctor_id: 'doctor-456', patient_id: 'patient-123' },
+          },
+          error: null,
+        })
+      }
+      return Promise.resolve({
+        data: {
+          id: requestedId,
+          doctor_id: 'doctor-456',
+          patient_id: currentUser.id,
+          appointment_id: requestedAppointmentId,
+          medications: [],
+          diagnosis: 'Test diagnosis',
+          status: 'active',
+          appointment: { doctor_id: 'doctor-456', patient_id: currentUser.id },
+        },
+        error: null,
+      })
+    }
+    
+    // For chat_messages table
+    if (tableName === 'chat_messages') {
+      return Promise.resolve({ data: [], error: null })
+    }
+    
+    // For chat_message_receipts table
+    if (tableName === 'chat_message_receipts') {
+      return Promise.resolve({ data: [], error: null })
+    }
+    
+    // For followups table (used by scheduleFollowUp)
+    if (tableName === 'followups') {
+      // Support both insert().select().single() and regular queries
+      return Promise.resolve({
+        data: {
+          id: 'followup-' + Math.random().toString(36).substring(2, 9),
+          appointment_id: 'appt-123',
+          patient_id: currentUser?.id || 'patient-123',
+          doctor_id: 'doctor-456',
+          type: 'medication_reminder',
+          scheduled_at: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
+          status: 'pending',
+          created_at: new Date().toISOString(),
+        },
+        error: null,
+      })
+    }
+    
+    // Default response
+    return Promise.resolve({
+      data: { id: currentUser.id, email: currentUser.email, role: currentUser.role },
+      error: null,
+    })
   }
+  
+  // Helper to get response for array queries (when awaited)
+  const getArrayResponse = () => {
+    if (tableName === 'chat_conversations') {
+      return Promise.resolve({
+        data: [{
+          id: 'conv-1',
+          patient_id: currentUser?.id || 'patient-123',
+          doctor_id: 'doctor-456',
+          appointment_id: null,
+          last_message_preview: 'Test message',
+          last_message_at: new Date().toISOString(),
+          is_archived: false,
+          created_at: new Date().toISOString(),
+          updated_at: new Date().toISOString(),
+        }],
+        error: null,
+      })
+    }
+    if (tableName === 'chat_messages') {
+      return Promise.resolve({ data: [], error: null })
+    }
+    if (tableName === 'chat_message_receipts') {
+      return Promise.resolve({ data: [], error: null })
+    }
+    return Promise.resolve({ data: [], error: null })
+  }
+  
+  // Create the chain object
+  const chain: Record<string, ReturnType<typeof vi.fn>> = {}
+  
+  // Chain methods that just return chain for fluent interface
+  const chainMethods = ['gt', 'lt', 'gte', 'lte', 'order', 'limit', 'delete', 'match', 'contains', 'or', 'and']
+  chainMethods.forEach(method => {
+    chain[method] = vi.fn(() => chain)
+  })
+  
+  // Methods with parameters that need to return chain
+  chain.neq = vi.fn(() => chain)
+  chain.not = vi.fn(() => chain)
+  chain.in = vi.fn(() => chain)
+  
+  // eq method that tracks filters
+  chain.eq = vi.fn((column: string, value: string) => {
+    mockCalls.eq.push({ column, value })
+    filters.push({ column, value })
+    return chain
+  })
+  
+  // select method that tracks calls
+  chain.select = vi.fn((...args: string[]) => {
+    mockCalls.select.push(args)
+    return chain
+  })
+  
+  // Methods that return data - use regular function to preserve 'this'
+  chain.single = vi.fn(function(this: typeof chain) { return getSingleResponse.call(this) })
+  chain.maybeSingle = vi.fn(function(this: typeof chain) { return getSingleResponse.call(this) })
+  
+  chain.update = vi.fn(function(this: typeof chain, data: Record<string, unknown>) {
+    mockCalls.update.push(data)
+    // Store update data so single() can return it
+    ;(this as any)._updateData = { ...data }
+    return this
+  })
+  
+  chain.insert = vi.fn(function(this: typeof chain, data: Record<string, unknown>) {
+    mockCalls.insert.push(data)
+    // Store insert data so single() can return it
+    ;(this as any)._insertData = { id: `${tableName.slice(0, -1)}-${Math.random().toString(36).substring(2, 9)}`, ...data }
+    return this
+  })
+  
+  chain.upsert = vi.fn((data: Record<string, unknown>) => {
+    mockCalls.insert.push(data)
+    return Promise.resolve({ data: { id: 'upsert-id', ...data }, error: null })
+  })
+  
+  // Make chain thenable for await support - use a real function, not a mock
+  Object.defineProperty(chain, 'then', {
+    value: (onFulfilled?: (value: unknown) => unknown, onRejected?: (reason: unknown) => unknown) => {
+      return getArrayResponse().then(onFulfilled, onRejected)
+    },
+    writable: true,
+    configurable: true,
+  })
+  
   return chain
 }
 
-export const mockFrom = vi.fn(() => createMockChain())
+export const mockFrom = vi.fn((table: string) => {
+  return createMockChain(table)
+})
 
 vi.mock('@/lib/supabase/server', () => ({
   createClient: vi.fn(() => Promise.resolve({
@@ -430,13 +633,29 @@ vi.mock('@/lib/middleware/auth', () => ({
 }))
 
 // ============================================================================
+// AUTH ERROR CLASS
+// ============================================================================
+
+export class AuthError extends Error {
+  code: 'NOT_AUTHENTICATED' | 'NOT_AUTHORIZED' | 'PROFILE_NOT_FOUND' | 'SESSION_EXPIRED'
+  constructor(
+    message: string,
+    code: 'NOT_AUTHENTICATED' | 'NOT_AUTHORIZED' | 'PROFILE_NOT_FOUND' | 'SESSION_EXPIRED'
+  ) {
+    super(message)
+    this.name = 'AuthError'
+    this.code = code
+  }
+}
+
+// ============================================================================
 // MOCK LEGACY AUTH
 // ============================================================================
 
 vi.mock('@/lib/auth', () => ({
   requireAuth: vi.fn(async () => {
     if (!currentUser) {
-      throw new Error('Unauthorized')
+      throw new AuthError('No autenticado', 'NOT_AUTHENTICATED')
     }
     return {
       user: { id: currentUser.id, email: currentUser.email },
@@ -445,10 +664,10 @@ vi.mock('@/lib/auth', () => ({
   }),
   requireRole: vi.fn(async (role: string) => {
     if (!currentUser) {
-      throw new Error('Unauthorized')
+      throw new AuthError('No autenticado', 'NOT_AUTHENTICATED')
     }
     if (currentUser.role !== role) {
-      throw new Error(`Forbidden: requires ${role} role`)
+      throw new AuthError(`Se requiere rol: ${role}`, 'NOT_AUTHORIZED')
     }
     return {
       user: { id: currentUser.id, email: currentUser.email },
@@ -462,6 +681,91 @@ vi.mock('@/lib/auth', () => ({
     }
     return null
   }),
+  AuthError: class AuthError extends Error {
+    code: string
+    constructor(message: string, code: string) {
+      super(message)
+      this.name = 'AuthError'
+      this.code = code
+    }
+  },
+}))
+
+// ============================================================================
+// MOCK MIDDLEWARE AUTH (for routes that import from @/lib/middleware/auth)
+// ============================================================================
+
+vi.mock('@/lib/middleware/auth', () => ({
+  requireAuth: vi.fn(async (allowedRoles?: string[]) => {
+    if (!currentUser) {
+      const error = new AuthError('No autenticado', 'NOT_AUTHENTICATED')
+      throw error
+    }
+    
+    if (allowedRoles && allowedRoles.length > 0 && !allowedRoles.includes(currentUser.role as unknown as any)) {
+      const error = new AuthError(`Se requiere uno de los siguientes roles: ${allowedRoles.join(', ')}`, 'NOT_AUTHORIZED')
+      throw error
+    }
+    
+    return {
+      user: {
+        id: currentUser.id,
+        email: currentUser.email,
+        app_metadata: {},
+        user_metadata: { full_name: currentUser.full_name },
+        aud: 'authenticated',
+        created_at: new Date().toISOString(),
+      },
+      profile: {
+        id: currentUser.id,
+        email: currentUser.email,
+        role: currentUser.role,
+        full_name: currentUser.full_name,
+        subscription_tier: currentUser.subscription_tier,
+      },
+      session: {
+        access_token: 'test-token',
+        refresh_token: 'test-refresh',
+        expires_at: Date.now() + 3600,
+        expires_in: 3600,
+        token_type: 'bearer',
+      },
+    }
+  }),
+  getOptionalAuth: vi.fn(async () => {
+    if (!currentUser) return null
+    return {
+      user: { id: currentUser.id, email: currentUser.email },
+      profile: { id: currentUser.id, role: currentUser.role },
+      session: { access_token: 'test-token', refresh_token: 'test-refresh', expires_at: Date.now() + 3600, expires_in: 3600, token_type: 'bearer' },
+    }
+  }),
+  hasRole: vi.fn(async (role: string) => currentUser?.role === role),
+  hasAnyRole: vi.fn(async (roles: string[]) => currentUser ? roles.includes(currentUser.role) : false),
+  getCurrentUserId: vi.fn(async () => currentUser?.id || null),
+  getUserProfile: vi.fn(async (userId: string) => {
+    if (currentUser?.id === userId) {
+      return { id: currentUser.id, role: currentUser.role, full_name: currentUser.full_name }
+    }
+    return null
+  }),
+  checkAuthForMiddleware: vi.fn(async () => ({
+    authenticated: !!currentUser,
+    authorized: true,
+    userId: currentUser?.id,
+    role: currentUser?.role,
+  })),
+  AuthError: class AuthError extends Error {
+    code: 'NOT_AUTHENTICATED' | 'NOT_AUTHORIZED' | 'PROFILE_NOT_FOUND' | 'SESSION_EXPIRED'
+    constructor(
+      message: string,
+      code: 'NOT_AUTHENTICATED' | 'NOT_AUTHORIZED' | 'PROFILE_NOT_FOUND' | 'SESSION_EXPIRED'
+    ) {
+      super(message)
+      this.name = 'AuthError'
+      this.code = code
+    }
+  },
 }))
 
 // ============================================================================

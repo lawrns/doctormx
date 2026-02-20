@@ -7,6 +7,7 @@ import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { CheckCircle, Clock, AlertTriangle, Stethoscope } from 'lucide-react'
 import { getBlurDataURL } from '@/lib/performance/image-blur'
+import { useTranslations } from 'next-intl'
 
 // Dr. Simeon Avatar Component - Now with real face and gradient ring!
 function DrSimeonAvatar({ size = 'default' }: { size?: 'default' | 'large' }) {
@@ -108,6 +109,8 @@ type Message = {
   timestamp: string
 }
 
+// Demo conversation script - This is demo content so remains in Spanish
+// In production, this would come from the AI service
 const conversationScript: Omit<Message, 'id'>[] = [
   {
     role: 'patient',
@@ -270,6 +273,7 @@ export default function DrSimeonShowcase() {
   const [messages, setMessages] = useState<Message[]>([])
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0)
   const [isShowingTyping, setIsShowingTyping] = useState(false)
+  const t = useTranslations('landing.simeon')
 
   useEffect(() => {
     if (currentMessageIndex >= conversationScript.length) {
@@ -312,6 +316,13 @@ export default function DrSimeonShowcase() {
     setIsShowingTyping(false)
   }
 
+  const features = [
+    { text: t('features.symptomEvaluation'), icon: Clock },
+    { text: t('features.emergencyDetection'), icon: AlertTriangle },
+    { text: t('features.specialistRecommendation'), icon: Stethoscope },
+    { text: t('features.available24_7'), icon: CheckCircle },
+  ]
+
   return (
     <section className="relative overflow-hidden bg-[#f9f7f4] py-24">
       <AnimatedBlobs />
@@ -327,29 +338,22 @@ export default function DrSimeonShowcase() {
             className="space-y-6"
           >
             <div className="inline-block rounded-full bg-blue-100 px-4 py-1.5 text-sm font-medium text-blue-700">
-              Asistente IA Médico
+              {t('badge')}
             </div>
 
             <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-              Dr. Simeon AI
+              {t('title')}
               <span className="block text-blue-600">
-                Tu Evaluación Inicial Inteligente
+                {t('titleHighlight')}
               </span>
             </h2>
 
             <p className="text-lg leading-relaxed text-gray-600">
-              Nuestro asistente con IA médica realiza una evaluación completa
-              de tus síntomas usando metodología OPQRST, detecta señales de
-              alerta y te conecta con el especialista adecuado en minutos.
+              {t('description')}
             </p>
 
             <ul className="space-y-3">
-              {[
-                { text: 'Evaluación de síntomas en 5 minutos', icon: Clock },
-                { text: 'Detección de emergencias médicas', icon: AlertTriangle },
-                { text: 'Recomendación de especialista ideal', icon: Stethoscope },
-                { text: 'Disponible 24/7, siempre contigo', icon: CheckCircle },
-              ].map((feature, index) => (
+              {features.map((feature, index) => (
                 <motion.li
                   key={index}
                   initial={{ opacity: 0, x: -10 }}
@@ -366,19 +370,19 @@ export default function DrSimeonShowcase() {
 
             <div className="flex flex-col gap-3 pt-4 sm:flex-row">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-                Agendar Consulta
+                {t('buttons.bookConsultation')}
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="border-blue-200 hover:bg-blue-50"
               >
-                Probar IA Ahora
+                {t('buttons.tryAI')}
               </Button>
             </div>
 
             <p className="text-sm text-gray-500">
-              La IA asiste, no diagnostica. Respaldo médico certificado.
+              {t('disclaimer')}
             </p>
           </motion.div>
 
@@ -397,13 +401,13 @@ export default function DrSimeonShowcase() {
                   <h3 className="font-semibold text-gray-900">Dr. Simeon</h3>
                   <div className="flex items-center gap-1.5">
                     <span className="h-2 w-2 rounded-full bg-teal-500"></span>
-                    <span className="text-xs text-gray-500">En línea</span>
+                    <span className="text-xs text-gray-500">{t('chat.online')}</span>
                   </div>
                 </div>
                 <button
                   onClick={resetConversation}
                   className="rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600"
-                  aria-label="Reiniciar conversación"
+                  aria-label={t('chat.restart')}
                 >
                   <svg
                     className="h-5 w-5"
@@ -448,7 +452,7 @@ export default function DrSimeonShowcase() {
                 <div className="flex items-center gap-2 rounded-full border border-gray-300 bg-white px-4 py-2 opacity-60">
                   <input
                     type="text"
-                    placeholder="Escribe tu mensaje..."
+                    placeholder={t('chat.placeholder')}
                     disabled
                     className="flex-1 bg-transparent text-sm text-gray-400 outline-none"
                   />

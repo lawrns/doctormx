@@ -3,6 +3,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useEffect, useState } from 'react'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
+import { useTranslations } from 'next-intl'
 
 function AnimatedNumber({ value, suffix = '', skipAnimation = false }: { value: number; suffix?: string; skipAnimation?: boolean }) {
   const [displayValue, setDisplayValue] = useState(skipAnimation ? value : 0)
@@ -39,7 +40,7 @@ function AnimatedNumber({ value, suffix = '', skipAnimation = false }: { value: 
 
       requestAnimationFrame(animate)
     }
-  }, [isInView, value])
+  }, [isInView, value, skipAnimation])
 
   return (
     <span ref={ref}>
@@ -47,13 +48,6 @@ function AnimatedNumber({ value, suffix = '', skipAnimation = false }: { value: 
     </span>
   )
 }
-
-const stats = [
-  { value: 500, suffix: '+', label: 'Doctores con cédula verificada', iconType: 'doctores' },
-  { value: 10000, suffix: '+', label: 'Consultas realizadas', iconType: 'consultations' },
-  { value: 50, suffix: '+', label: 'Especialidades médicas', iconType: 'specialties' },
-  { value: 98, suffix: '%', label: 'Satisfacción de pacientes', iconType: 'satisfaction' },
-]
 
 function StatIcon({ type }: { type: string }) {
   switch (type) {
@@ -88,6 +82,14 @@ function StatIcon({ type }: { type: string }) {
 
 export function StatsSection() {
   const prefersReducedMotion = useReducedMotion()
+  const t = useTranslations('landing.stats')
+
+  const stats = [
+    { value: 500, suffix: '+', label: t('doctors'), iconType: 'doctores' },
+    { value: 10000, suffix: '+', label: t('consultations'), iconType: 'consultations' },
+    { value: 50, suffix: '+', label: t('specialties'), iconType: 'specialties' },
+    { value: 98, suffix: '%', label: t('satisfaction'), iconType: 'satisfaction' },
+  ]
 
   return (
     <section className="py-20 bg-gradient-to-b from-neutral-0 to-neutral-50 relative overflow-hidden">
@@ -105,17 +107,17 @@ export function StatsSection() {
           className="text-center mb-16"
         >
           <h2 className="section-headline text-3xl sm:text-4xl mb-4">
-            Números que respaldan nuestra misión
+            {t('title')}
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            Datos actualizados • Enero 2025
+            {t('subtitle')}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, index) => (
             <motion.div
-              key={stat.label}
+              key={stat.iconType}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -153,7 +155,7 @@ export function StatsSection() {
           ))}
         </div>
         <p className="text-center text-sm text-text-muted mt-8">
-          Estadísticas basadas en datos internos de Doctor.mx. Satisfacción medida por encuestas post-consulta.
+          {t('footnote')}
         </p>
       </div>
     </section>

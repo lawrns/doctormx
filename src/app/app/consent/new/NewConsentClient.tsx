@@ -275,8 +275,8 @@ export function NewConsentClient({ userId, preselectedType }: NewConsentClientPr
       <header className="bg-white/80 backdrop-blur-md border-b border-blue-100 sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center gap-4">
           <Link href="/app/consent">
-            <Button variant="ghost" size="icon">
-              <ArrowLeft className="h-5 w-5" />
+            <Button variant="ghost" size="icon" aria-label="Regresar a consentimientos">
+              <ArrowLeft className="h-5 w-5" aria-hidden="true" />
             </Button>
           </Link>
           <div className="flex-1">

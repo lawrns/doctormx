@@ -81,13 +81,13 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
   };
   
   const sizes: Record<ButtonSize, string> = {
-    default: 'px-4 py-2 text-sm',
-    xs: 'px-2 py-1 text-xs',
-    sm: 'px-3 py-1.5 text-sm',
-    md: 'px-4 py-2 text-sm',
-    lg: 'px-6 py-3 text-base',
-    xl: 'px-8 py-4 text-lg',
-    icon: 'h-10 w-10',
+    default: 'px-4 py-2 text-sm min-h-[44px]',
+    xs: 'px-3 py-1.5 text-xs min-h-[44px]', // WCAG: minimum 44px touch target
+    sm: 'px-3 py-1.5 text-sm min-h-[44px]',
+    md: 'px-4 py-2 text-sm min-h-[44px]',
+    lg: 'px-6 py-3 text-base min-h-[48px]',
+    xl: 'px-8 py-4 text-lg min-h-[56px]',
+    icon: 'h-11 w-11 min-h-[44px] min-w-[44px]', // WCAG: 44px minimum for icon buttons
   };
   
   const iconSizes: Record<ButtonSize, 'sm' | 'md' | 'lg'> = {
@@ -206,13 +206,13 @@ export const buttonVariants = (options?: { variant?: ButtonVariant; size?: Butto
   };
   
   const sizes: Record<ButtonSize, string> = {
-    default: 'px-4 py-2 text-sm',
-    xs: 'px-2 py-1 text-xs',
-    sm: 'px-3 py-1.5 text-sm',
-    md: 'px-4 py-2 text-sm',
-    lg: 'px-6 py-3 text-base',
-    xl: 'px-8 py-4 text-lg',
-    icon: 'h-10 w-10',
+    default: 'px-4 py-2 text-sm min-h-[44px]',
+    xs: 'px-3 py-1.5 text-xs min-h-[44px]',
+    sm: 'px-3 py-1.5 text-sm min-h-[44px]',
+    md: 'px-4 py-2 text-sm min-h-[44px]',
+    lg: 'px-6 py-3 text-base min-h-[48px]',
+    xl: 'px-8 py-4 text-lg min-h-[56px]',
+    icon: 'h-11 w-11 min-h-[44px] min-w-[44px]',
   };
   
   return `${baseClasses} ${variants[variant]} ${sizes[size]} ${extraClasses}`.trim();

@@ -125,14 +125,6 @@ export function validateCURP(curp: string): ValidationResult {
 
   // Note: Check digit validation is optional as the official algorithm
   // may vary. For now, we accept any digit in the check position.
-  // Uncomment below to enable strict check digit validation:
-  // const expectedCheckDigit = calculateCURPCheckDigit(checkDigitInput)
-  // if (checkDigit !== expectedCheckDigit) {
-  //   return {
-  //     isValid: false,
-  //     error: `Dígito verificador inválido. Se esperaba '${expectedCheckDigit}' pero se recibió '${checkDigit}'.`,
-  //   }
-  // }
 
   return {
     isValid: true,

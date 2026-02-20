@@ -25,7 +25,7 @@ export function Breadcrumbs({ items, className = '' }: BreadcrumbsProps) {
             <li key={index} className="flex items-center">
               {index > 0 && (
                 <svg
-                  className="w-4 h-4 text-gray-400 mx-1 lg:mx-2 flex-shrink-0"
+                  className="w-4 h-4 text-gray-500 mx-1 lg:mx-2 flex-shrink-0"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >

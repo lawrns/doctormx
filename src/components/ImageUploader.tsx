@@ -430,7 +430,7 @@ export function ImageUploader({
                     o haz clic para seleccionar
                   </p>
                 </div>
-                <p id="image-upload-help" className="text-xs text-gray-400">
+                <p id="image-upload-help" className="text-xs text-gray-500">
                   Formatos soportados: JPG, PNG, DICOM • Máximo {maxFileSizeMB}MB
                 </p>
               </div>

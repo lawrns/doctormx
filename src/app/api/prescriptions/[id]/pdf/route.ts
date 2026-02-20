@@ -22,7 +22,7 @@ export async function GET(
       .eq('id', user.id)
       .single()
     
-    if (!profile || profile.role !== 'doctor') {
+    if (!profile) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
     }
     
@@ -32,7 +32,7 @@ export async function GET(
       .from('prescriptions')
       .select(`
         *,
-        appointment:appointments (doctor_id)
+        appointment:appointments (doctor_id, patient_id)
       `)
       .eq('id', id)
       .single()
@@ -42,7 +42,15 @@ export async function GET(
     }
 
     const appointment = Array.isArray(prescription.appointment) ? prescription.appointment[0] : prescription.appointment
-    if (appointment.doctor_id !== user.id) {
+    
+    // Doctors can access their own prescriptions, patients can access their own
+    const isDoctor = profile.role === 'doctor'
+    const isPatient = profile.role === 'patient'
+    const isOwner = appointment.doctor_id === user.id
+    const isPatientOwner = appointment.patient_id === user.id
+    
+    // Allow if: doctor is the owner, or patient is the owner
+    if (!(isDoctor && isOwner) && !(isPatient && isPatientOwner)) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
     }
 

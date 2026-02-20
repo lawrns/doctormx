@@ -3,6 +3,7 @@ import { requireRole } from '@/lib/auth'
 import { getPrescriptionPDF, markAsSent } from '@/lib/prescriptions'
 import { Resend } from 'resend'
 import { logger } from '@/lib/observability/logger'
+import { AuthError } from '@/lib/middleware/auth'
 
 // Lazy initialization of Resend client
 let resend: Resend | null = null
@@ -161,6 +162,24 @@ export async function POST(
     })
   } catch (error) {
     logger.error('Error sending prescription:', { err: error })
+    
+    // Handle authentication/authorization errors
+    if (error instanceof AuthError || (error as Error)?.name === 'AuthError') {
+      const authError = error as AuthError
+      if (authError.code === 'NOT_AUTHENTICATED') {
+        return NextResponse.json(
+          { error: 'Unauthorized' },
+          { status: 401 }
+        )
+      }
+      if (authError.code === 'NOT_AUTHORIZED') {
+        return NextResponse.json(
+          { error: 'Forbidden' },
+          { status: 403 }
+        )
+      }
+    }
+    
     return NextResponse.json(
       { error: 'Failed to send prescription' },
       { status: 500 }

@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 
 const placeholderLogos = [
   { id: 1, label: 'Logo 1' },
@@ -11,6 +12,8 @@ const placeholderLogos = [
 ]
 
 export function PressSection() {
+  const t = useTranslations('landing.press')
+
   return (
     <section className="py-12 bg-neutral-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,12 +25,12 @@ export function PressSection() {
           className="text-center"
         >
           <p className="text-sm text-text-muted font-medium mb-8">
-            Reconocido en Mexico
+            {t('recognizedIn')}
           </p>
 
           {/* Press/Trust Logos */}
           <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
-            <span className="text-xs text-text-muted mr-2">Como visto en:</span>
+            <span className="text-xs text-text-muted mr-2">{t('asSeenIn')}</span>
             {placeholderLogos.map((logo, index) => (
               <motion.div
                 key={logo.id}
@@ -56,7 +59,7 @@ export function PressSection() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-sm text-text-secondary"
           >
-            Mas de 500 doctores verificados &bull; 10,000+ consultas &bull; 98% satisfaccion &bull; Servicio 24/7
+            {t('differentiators')}
           </motion.p>
         </motion.div>
       </div>

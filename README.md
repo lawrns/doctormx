@@ -252,9 +252,19 @@ Visit [http://localhost:3000](http://localhost:3000) to see the application.
 
 ```bash
 # AI Features
+NEXT_PUBLIC_AI_PRECONSULTA_ENABLED=true
+NEXT_PUBLIC_AI_TRANSCRIPTION_ENABLED=true
+NEXT_PUBLIC_AI_FOLLOWUP_ENABLED=true
 NEXT_PUBLIC_DOCTOR_IMAGE_ANALYSIS_ENABLED=true
-VITE_ENABLE_COMMUNITY=false
-VITE_ENABLE_BROADCASTING=false
+
+# Core Features
+NEXT_PUBLIC_VIDEO_APPOINTMENTS_ENABLED=true
+NEXT_PUBLIC_PRESCRIPTIONS_ENABLED=true
+
+# Future Features
+NEXT_PUBLIC_ENABLE_COMMUNITY=false
+NEXT_PUBLIC_ENABLE_BROADCASTING=false
+NEXT_PUBLIC_ENABLE_EDUCATIONAL_CONTENT=false
 
 # Custom Instructions (Optional)
 VITE_DOCTOR_INSTRUCTIONS="Eres un médico virtual compasivo y profesional."
@@ -427,7 +437,11 @@ docker build -t doctory .
 docker run -p 3000:3000 --env-file .env doctory
 ```
 
-See `docs/operations/DEPLOYMENT_GUIDE.md` for detailed deployment instructions.
+See [Deployment Guide](docs/operations/DEPLOYMENT_GUIDE.md) for detailed deployment instructions.
+
+### Troubleshooting
+
+If you encounter issues during development or deployment, check the [Troubleshooting Guide](docs/TROUBLESHOOTING.md) for common problems and solutions.
 
 ### Pre-Deployment Checklist
 
@@ -557,6 +571,8 @@ When reporting bugs, please include:
 - [Deployment Guide](docs/operations/DEPLOYMENT_GUIDE.md)
 - [Testing Guide](docs/testing/MANUAL_TESTING_GUIDE.md)
 - [AI Architecture](docs/architecture/AI_DOCTOR_ARCHITECTURE.md)
+- [Error Codes Reference](docs/errors/ERROR_CODES.md)
+- [Troubleshooting Guide](docs/TROUBLESHOOTING.md)
 - [Decision Log](DECISIONES.md)
 
 ### Getting Help

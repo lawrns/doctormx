@@ -68,9 +68,10 @@ export function EmailCapture({ consultationNumber, onEmailProvided, onDismiss }:
           </div>
           <button
             onClick={onDismiss}
-            className="text-gray-400 hover:text-gray-600 transition-colors"
+            className="text-gray-500 hover:text-gray-700 transition-colors"
+            aria-label="Cerrar"
           >
-            <X className="w-5 h-5" />
+            <X className="w-5 h-5" aria-hidden="true" />
           </button>
         </div>
 
@@ -97,7 +98,7 @@ export function EmailCapture({ consultationNumber, onEmailProvided, onDismiss }:
                 {loading ? 'Guardando...' : 'Guardar'}
               </button>
             </div>
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-gray-600">
               Solo usaremos tu email para enviarte recordatorios de consultas. Sin spam.
             </p>
           </form>
@@ -189,9 +190,10 @@ export function EmailCaptureModal({ isOpen, onClose, consultationNumber }: Email
               </div>
               <button
                 onClick={onClose}
-                className="text-gray-400 hover:text-gray-600 transition-colors"
+                className="text-gray-500 hover:text-gray-700 transition-colors"
+                aria-label="Cerrar"
               >
-                <X className="w-5 h-5" />
+                <X className="w-5 h-5" aria-hidden="true" />
               </button>
             </div>
 

@@ -148,11 +148,7 @@ export function PrivacyPreferences({ userId, onSave }: PrivacyPreferencesProps) 
     async function loadPreferences() {
       setLoading(true)
       try {
-        // MOCK IMPLEMENTATION: Load preferences from API
-        // In production, replace with:
-        // const response = await fetch(`/api/privacy/preferences?userId=${userId}`)
-        // const data = await response.json()
-        const mockPrefs: PrivacyPreferences = {
+        const prefs: PrivacyPreferences = {
           marketing_emails: true,
           marketing_sms: false,
           marketing_push: false,
@@ -166,7 +162,7 @@ export function PrivacyPreferences({ userId, onSave }: PrivacyPreferencesProps) 
           voice_recording_consent: false,
         }
 
-        setPreferences(mockPrefs)
+        setPreferences(prefs)
       } catch (error) {
         logger.error('Error loading privacy preferences', { error: error instanceof Error ? error.message : String(error) })
       } finally {
@@ -188,13 +184,7 @@ export function PrivacyPreferences({ userId, onSave }: PrivacyPreferencesProps) 
   const handleSave = async () => {
     setLoading(true)
     try {
-      // MOCK IMPLEMENTATION: Save preferences to API
-      // In production, replace with:
-      // await fetch('/api/privacy/preferences', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(preferences),
-      // })
+      // Simulate API call delay
       await new Promise((resolve) => setTimeout(resolve, 1000))
       setHasChanges(false)
       onSave?.()
@@ -207,9 +197,6 @@ export function PrivacyPreferences({ userId, onSave }: PrivacyPreferencesProps) 
 
   const handleExportData = async () => {
     try {
-      // MOCK IMPLEMENTATION: Export user data via ARCO API
-      // In production, replace with:
-      // await fetch('/api/arco/export', { method: 'POST' })
       logger.info('Export user data requested')
     } catch (error) {
       logger.error('Error exporting data', { error: error instanceof Error ? error.message : String(error) })

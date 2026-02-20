@@ -180,7 +180,7 @@ export default function PreConsultaChat({ isOpen, onCloseAction, onCompleteActio
           </div>
           <button
             onClick={onCloseAction}
-            className="text-gray-400 hover:text-gray-600 transition-colors p-2 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="text-gray-500 hover:text-gray-700 transition-colors p-2 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
             aria-label="Cerrar chat de pre-consulta"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

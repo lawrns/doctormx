@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { useRouter, usePathname } from '@/i18n/routing'
 import { Globe, Check, ChevronDown } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -40,6 +40,7 @@ export function LanguageSelector({
   const pathname = usePathname()
   const [mounted, setMounted] = useState(false)
   const [open, setOpen] = useState(false)
+  const t = useTranslations('navigation')
 
   // Prevent hydration mismatch
   useEffect(() => {
@@ -97,7 +98,7 @@ export function LanguageSelector({
       <div className={cn("w-full", className)}>
         <div className="flex flex-col gap-2">
           <span className="text-sm font-medium text-gray-500 uppercase tracking-wider">
-            Idioma / Language
+            {t('language')}
           </span>
           <div className="flex gap-2">
             {languages.map((language) => (
@@ -111,7 +112,7 @@ export function LanguageSelector({
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 )}
                 aria-pressed={locale === language.code}
-                aria-label={`Switch to ${language.label}`}
+                aria-label={`${t('switchLanguage')}: ${language.label}`}
               >
                 <span className="text-lg" aria-hidden="true">{language.flag}</span>
                 <span>{language.code.toUpperCase()}</span>
@@ -135,7 +136,7 @@ export function LanguageSelector({
             variant="ghost"
             size="icon"
             className={cn("h-9 w-9 relative", className)}
-            aria-label={`Current language: ${currentLanguage.label}. Click to change language.`}
+            aria-label={`${t('currentLanguage')}: ${currentLanguage.label}`}
             aria-expanded={open}
             aria-haspopup="listbox"
           >
@@ -182,7 +183,7 @@ export function LanguageSelector({
             "hover:bg-gray-100 transition-colors",
             className
           )}
-          aria-label={`Current language: ${currentLanguage.label}. Click to change language.`}
+          aria-label={`${t('currentLanguage')}: ${currentLanguage.label}`}
           aria-expanded={open}
           aria-haspopup="listbox"
         >
