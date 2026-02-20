@@ -147,6 +147,46 @@ export const cache = {
     await this.invalidate(`availability:${doctorId}:*`)
     return true
   },
+
+  // Alias methods for compatibility with origin/main code
+  async getAppointmentAvailability(doctorId: string, date: string): Promise<string[]> {
+    return this.getAvailability(doctorId, date)
+  },
+
+  async setAppointmentAvailability(doctorId: string, date: string, slots: string[]): Promise<boolean> {
+    return this.setAvailability(doctorId, date, slots)
+  },
+
+  async getDoctorsBySpecialty(specialty: string): Promise<unknown[]> {
+    const result = await this.get<unknown[]>(`doctors:specialty:${specialty}`)
+    return result || []
+  },
+
+  async setDoctorsBySpecialty(specialty: string, doctors: unknown[]): Promise<boolean> {
+    return this.set(`doctors:specialty:${specialty}`, doctors, 300)
+  },
+
+  async getSpecialtiesList(): Promise<unknown[]> {
+    const result = await this.get<unknown[]>('specialties:list')
+    return result || []
+  },
+
+  async setSpecialtiesList(specialties: unknown[]): Promise<boolean> {
+    return this.set('specialties:list', specialties, 600)
+  },
+
+  async getSubscriptionStatus(userId: string): Promise<unknown> {
+    return this.get(`subscription:${userId}`)
+  },
+
+  async setSubscriptionStatus(userId: string, status: unknown): Promise<boolean> {
+    return this.set(`subscription:${userId}`, status, 300)
+  },
+
+  async invalidateSubscription(userId: string): Promise<boolean> {
+    await this.del(`subscription:${userId}`)
+    return true
+  },
 }
 
 // No-op rate limiter for when Redis is not configured

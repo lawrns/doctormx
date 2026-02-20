@@ -103,6 +103,13 @@ export type DoctorProfile = {
     name: string | null | undefined
     slug: string | null | undefined
   }>
+  doctor_subscriptions: Array<{
+    id: string
+    status: string
+    current_period_end: string
+    plan_name?: string | null
+    plan_price_cents?: number | null
+  }> | null
 }
 
 // Sistema completo: buscar doctores con filtros
@@ -287,7 +294,7 @@ export async function getAvailableSpecialties() {
 
 // Bloque: Obtener perfil completo del doctor
 export async function getDoctorProfile(doctorId: string): Promise<DoctorProfile | null> {
-  const cached = await cache.getDoctorProfile(doctorId)
+  const cached = await cache.getDoctorProfile(doctorId) as DoctorProfile | null
   if (cached) return cached
 
   const profile = await fetchDoctorProfile(doctorId)
@@ -380,6 +387,11 @@ async function fetchDoctorProfile(doctorId: string): Promise<DoctorProfile | nul
         name: ds.specialties?.name,
         slug: ds.specialties?.slug,
       })) || [],
+      doctor_subscriptions: typedDoctor.doctor_subscriptions?.map(ds => ({
+        id: ds.id,
+        status: ds.status,
+        current_period_end: ds.current_period_end,
+      })) || null,
     }
   } catch (error) {
     logger.error('Doctor profile fetch error', { error: error instanceof Error ? error.message : 'unknown', doctorId })

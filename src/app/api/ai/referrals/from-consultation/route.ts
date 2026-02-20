@@ -53,7 +53,7 @@ export async function POST(request: NextRequest) {
 
     // Increment rate limit counter (using set with TTL for expiration)
     if (redis) {
-      await redis.set(rateLimitKey, (count + 1).toString(), RATE_LIMIT_WINDOW)
+      await redis.set(rateLimitKey, (count + 1).toString(), { ex: RATE_LIMIT_WINDOW })
     }
 
     // Generate doctor recommendations using existing logic

@@ -205,11 +205,11 @@ export default async function DoctorsPage({
 
         {/* Results Count */}
         <div className="mb-4 text-neutral-600">
-          <span className="font-medium text-neutral-900">{(doctors as typeof doctors[]).length}</span> doctor{(doctors as typeof doctors[]).length !== 1 ? 'es' : ''} encontrado{(doctors as typeof doctors[]).length !== 1 ? 's' : ''}
+          <span className="font-medium text-neutral-900">{doctors.length}</span> doctor{doctors.length !== 1 ? 'es' : ''} encontrado{doctors.length !== 1 ? 's' : ''}
         </div>
 
         {/* Doctors Grid */}
-        {(doctors as typeof doctors[]).length === 0 ? (
+        {doctors.length === 0 ? (
           <Card className="text-center py-16 border-neutral-200">
             <div className="w-20 h-20 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <svg className="w-10 h-10 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>

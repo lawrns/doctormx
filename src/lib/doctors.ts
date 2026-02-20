@@ -101,7 +101,7 @@ export async function getSpecialties() {
 
 // Obtener doctor por ID con toda su info
 export async function getDoctorById(id: string): Promise<DoctorProfile | null> {
-  const cached = await cache.getDoctorProfile(id)
+  const cached = await cache.getDoctorProfile(id) as DoctorProfile | null
   if (cached) return cached
 
   const doctor = await fetchDoctorById(id)
@@ -117,6 +117,13 @@ export async function getDoctorById(id: string): Promise<DoctorProfile | null> {
 function transformToDoctorProfile(doctor: Record<string, unknown>): DoctorProfile {
   const profile = doctor.profile as Record<string, unknown> | null
   const specialties = doctor.specialties as Array<{ specialty?: { id: string; name: string; slug: string } | null }> | null
+  const doctorSubscriptions = doctor.doctor_subscriptions as Array<{
+    id: string
+    status: string
+    current_period_end: string
+    plan_name?: string | null
+    plan_price_cents?: number | null
+  }> | null
 
   return {
     id: doctor.id as string,
@@ -142,6 +149,7 @@ function transformToDoctorProfile(doctor: Record<string, unknown>): DoctorProfil
       name: s.specialty?.name,
       slug: s.specialty?.slug,
     })) || [],
+    doctor_subscriptions: doctorSubscriptions,
   }
 }
 
