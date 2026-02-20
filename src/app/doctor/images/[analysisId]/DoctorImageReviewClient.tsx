@@ -66,7 +66,7 @@ export default function DoctorImageReviewClient({
 
       if (!response.ok) {
         const error = await response.json()
-        throw new Error(error.error || 'Error al guardar la revisión')
+        throw new Error(error.error ?? 'Error al guardar la revisión')
       }
 
       setActionStatus('success')
@@ -263,7 +263,7 @@ export default function DoctorImageReviewClient({
               {analysis.followUpNeeded && (
                 <div className="p-3 bg-blue-50 border border-blue-200 rounded-lg">
                   <p className="text-sm text-blue-800">
-                    <strong>Seguimiento requerido:</strong> {analysis.followUpNotes || 'Ver recomendaciones'}
+                    <strong>Seguimiento requerido:</strong> {analysis.followUpNotes ?? 'Ver recomendaciones'}
                   </p>
                 </div>
               )}

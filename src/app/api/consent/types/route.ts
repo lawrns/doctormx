@@ -60,7 +60,7 @@ export async function GET(request: NextRequest) {
     // Parsear query params
     const { searchParams } = new URL(request.url)
     const queryData = {
-      include_versions: searchParams.get('include_versions') || 'false',
+      include_versions: searchParams.get('include_versions') ?? 'false',
       category: searchParams.get('category') || undefined,
     }
 
@@ -125,7 +125,7 @@ export async function GET(request: NextRequest) {
     const stats = {
       total_types: typesList.length,
       by_category: typesList.reduce((acc, type) => {
-        acc[type.category] = (acc[type.category] || 0) + 1
+        acc[type.category] = (acc[type.category] ?? 0) + 1
         return acc
       }, {} as Record<string, number>),
       essential_count: typesList.filter((t) => t.is_essential).length,
@@ -169,5 +169,5 @@ function getConsentTypeDescription(type: ConsentType): string {
     prescription_forwarding: 'Permiso para enviar recetas médicas a farmacias o terceros',
   }
 
-  return descriptions[type] || ''
+  return descriptions[type] ?? ''
 }

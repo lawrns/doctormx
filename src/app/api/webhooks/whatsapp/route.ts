@@ -2,13 +2,17 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServiceClient } from '@/lib/supabase/server';
 import { createSession, addMessage, conductTriage, routeHandoff } from '@/lib/whatsapp';
 import { sendWhatsAppMessage } from '@/lib/whatsapp-business-api';
-import { verifyWhatsAppWebhook } from '@/lib/webhooks';
+import { verifyWhatsAppWebhook, isWebhookIpAllowed, getClientIp } from '@/lib/webhooks';
 import { logger } from '@/lib/observability/logger';
 import type { WhatsAppMessage, WhatsAppStatusUpdate } from '@/lib/types/api';
 
 const VERIFY_TOKEN = process.env.WHATSAPP_WEBHOOK_VERIFY_TOKEN;
 
-// GET: Webhook verification for Meta
+/**
+ * GET: Webhook verification for Meta
+ *
+ * Security: Validates verify_token to confirm request is from Meta
+ */
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
   const mode = searchParams.get('hub.mode');
@@ -22,7 +26,15 @@ export async function GET(request: NextRequest) {
   return new NextResponse('Forbidden', { status: 403 });
 }
 
-// POST: Handle incoming messages
+/**
+ * POST: Handle incoming messages
+ *
+ * Security measures:
+ * - Signature verification with HMAC-SHA256
+ * - Timing-safe comparison
+ * - IP validation (delegated to Meta infrastructure)
+ * Note: Meta recommends signature verification over IP allowlisting
+ */
 export async function POST(request: NextRequest) {
   try {
     // Verify WhatsApp webhook signature
@@ -96,15 +108,15 @@ async function processMessage(message: WhatsAppMessage) {
 
   switch (message.type) {
     case 'text':
-      content = message.text?.body || '';
+      content = message.text?.body ?? '';
       break;
     case 'image':
-      content = message.image?.caption || '[Imagen recibida]';
+      content = message.image?.caption ?? '[Imagen recibida]';
       mediaId = message.image?.id;
       mediaType = 'image';
       break;
     case 'document':
-      content = message.document?.caption || '[Documento recibido]';
+      content = message.document?.caption ?? '[Documento recibido]';
       mediaId = message.document?.id;
       mediaType = 'document';
       break;
@@ -156,8 +168,7 @@ async function processMessage(message: WhatsAppMessage) {
           'Doctor.mx no reemplaza la atención de emergencia.'
         );
       } else {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const handoff = await routeHandoff(sessionId, triageResult.summary?.recommendedAction || 'general') as any;
+        const handoff = await routeHandoff(sessionId, triageResult.summary?.recommendedAction ?? 'general') as { success: boolean; bookingLink?: string };
         if (handoff.success) {
           await sendWhatsAppMessage(phone,
             '✅ *Triage completado*\n\n' +

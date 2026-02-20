@@ -59,7 +59,7 @@ export async function fetchAICompletion(message: string, history?: string[]) {
         span?.setAttribute("ai.has_history", !!history);
 
         if (!response.ok) {
-          throw new Error(data.error || "AI request failed");
+          throw new Error(data.error ?? "AI request failed");
         }
 
         return data;
@@ -98,7 +98,7 @@ export async function analyzeSymptoms(symptoms: string, context?: { instructions
 
         // Add medical context to span
         span?.setAttribute("doctor.symptoms_length", symptoms.length);
-        span?.setAttribute("doctor.response_length", data.text?.length || 0);
+        span?.setAttribute("doctor.response_length", data.text?.length ?? 0);
 
         return data;
       } catch (error) {

@@ -5,7 +5,7 @@ import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/Badge'
 import { Button } from '@/components/ui/button'
 import { searchDirectory, getDirectorySpecialties, getDirectoryCities } from '@/lib/domains/directory'
-import { purify } from '@/lib/utils/dompurify'
+import { safeJsonLd } from '@/lib/utils/safeStructuredData'
 
 interface PageProps {
   params: Promise<{ specialty: string; city: string }>
@@ -224,19 +224,19 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+          __html: safeJsonLd({
             '@context': 'https://schema.org',
             '@type': 'MedicalBusiness',
-            name: `${capitalizeWords(purify.sanitize(specialtyName))} en ${capitalizeWords(purify.sanitize(cityName))}`,
-            description: `Directorio de especialistas en ${purify.sanitize(specialtyName)} en ${purify.sanitize(cityName)}`,
+            name: `${capitalizeWords(specialtyName)} en ${capitalizeWords(cityName)}`,
+            description: `Directorio de especialistas en ${specialtyName} en ${cityName}`,
             address: {
               '@type': 'PostalAddress',
-              addressLocality: purify.sanitize(cityName),
+              addressLocality: cityName,
               addressCountry: 'MX',
             },
             areaServed: {
               '@type': 'City',
-              name: purify.sanitize(cityName),
+              name: cityName,
             },
           }),
         }}

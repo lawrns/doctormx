@@ -71,8 +71,8 @@ export function addBreadcrumb(
 ) {
   Sentry.addBreadcrumb({
     message,
-    category: category || "custom",
-    level: level || "info",
+    category: category ?? "custom",
+    level: level ?? "info",
   });
 }
 

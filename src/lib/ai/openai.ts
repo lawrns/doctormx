@@ -10,17 +10,33 @@
  * Pricing (per 1M tokens):
  * - Input: $2.50
  * - Output: $10.00
+ * 
+ * @module lib/ai/openai
+ * @example
+ * ```typescript
+ * import { openai, openaiChatCompletion, openaiStreamingCompletion } from '@/lib/ai/openai';
+ * 
+ * const result = await openaiChatCompletion({
+ *   messages: [{ role: 'user', content: 'Hello' }],
+ *   system: 'You are a medical assistant'
+ * });
+ * ```
  */
 
 import OpenAI from 'openai'
 import { logger } from '@/lib/observability/logger'
 
 // OpenAI Client
+/**
+ * OpenAI client instance configured with API key
+ */
 export const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY || '',
+  apiKey: process.env.OPENAI_API_KEY ?? '',
 })
 
-// OpenAI Configuration
+/**
+ * OpenAI Configuration constants
+ */
 export const OPENAI_CONFIG = {
   models: {
     gpt4o: 'gpt-4o-2024-11-20',        // Best for medical reasoning
@@ -38,10 +54,16 @@ export const OPENAI_CONFIG = {
   },
 } as const
 
+/** Type for OpenAI model names */
 export type OpenAIModel = typeof OPENAI_CONFIG.models[keyof typeof OPENAI_CONFIG.models]
 
 /**
  * Check if OpenAI is configured
+ * @returns Boolean indicating if OpenAI API key is configured
+ * @example
+ * if (isOpenAIConfigured()) {
+ *   // Use OpenAI
+ * }
  */
 export function isOpenAIConfigured(): boolean {
   return !!process.env.OPENAI_API_KEY
@@ -49,6 +71,13 @@ export function isOpenAIConfigured(): boolean {
 
 /**
  * Calculate cost for OpenAI API usage
+ * @param inputTokens - Number of input tokens
+ * @param outputTokens - Number of output tokens
+ * @param model - Model used (default: gpt4o)
+ * @returns Cost in USD
+ * @example
+ * const cost = calculateOpenAICost(1000, 500, OPENAI_CONFIG.models.gpt4oMini);
+ * console.log(`Cost: $${cost.toFixed(4)}`);
  */
 export function calculateOpenAICost(
   inputTokens: number,
@@ -63,6 +92,26 @@ export function calculateOpenAICost(
 
 /**
  * OpenAI Chat Completion wrapper with cost tracking
+ * @param params - Chat completion parameters
+ * @param params.messages - Array of messages for the conversation
+ * @param params.system - System prompt (optional)
+ * @param params.model - Model to use (optional)
+ * @param params.temperature - Temperature for randomness (optional)
+ * @param params.maxTokens - Maximum tokens (optional)
+ * @param params.tools - Available tools for function calling (optional)
+ * @param params.toolChoice - Tool choice configuration (optional)
+ * @param params.jsonMode - Enable JSON response format (optional)
+ * @returns Promise with content, tool calls, usage, cost, and model info
+ * @throws {Error} If API call fails
+ * @example
+ * const result = await openaiChatCompletion({
+ *   messages: [{ role: 'user', content: 'What are diabetes symptoms?' }],
+ *   system: 'You are a medical assistant',
+ *   model: OPENAI_CONFIG.models.gpt4o,
+ *   temperature: 0.2,
+ *   jsonMode: false
+ * });
+ * console.log(result.content, result.costUSD);
  */
 export async function openaiChatCompletion(params: {
   messages: Array<{ role: 'user' | 'assistant' | 'system'; content: string }>
@@ -113,9 +162,9 @@ export async function openaiChatCompletion(params: {
     const message = choice.message
 
     const usage = {
-      inputTokens: response.usage?.prompt_tokens || 0,
-      outputTokens: response.usage?.completion_tokens || 0,
-      totalTokens: response.usage?.total_tokens || 0,
+      inputTokens: response.usage?.prompt_tokens ?? 0,
+      outputTokens: response.usage?.completion_tokens ?? 0,
+      totalTokens: response.usage?.total_tokens ?? 0,
     }
     const costUSD = calculateOpenAICost(usage.inputTokens, usage.outputTokens, model)
 
@@ -126,11 +175,11 @@ export async function openaiChatCompletion(params: {
       latencyMs,
       tokens: usage.totalTokens,
       costUSD,
-      toolCalls: message.tool_calls?.length || 0,
+      toolCalls: message.tool_calls?.length ?? 0,
     })
 
     return {
-      content: message.content || '',
+      content: message.content ?? '',
       toolCalls: message.tool_calls,
       usage,
       costUSD,
@@ -145,6 +194,23 @@ export async function openaiChatCompletion(params: {
 
 /**
  * OpenAI Streaming Chat Completion
+ * @param params - Streaming completion parameters
+ * @param params.messages - Array of messages
+ * @param params.system - System prompt (optional)
+ * @param params.model - Model to use (optional)
+ * @param params.temperature - Temperature for randomness (optional)
+ * @param params.maxTokens - Maximum tokens (optional)
+ * @returns Async generator yielding text chunks
+ * @throws {Error} If API call fails
+ * @example
+ * const stream = openaiStreamingCompletion({
+ *   messages: [{ role: 'user', content: 'Explain diabetes' }],
+ *   system: 'You are a medical assistant'
+ * });
+ * 
+ * for await (const chunk of stream) {
+ *   process.stdout.write(chunk);
+ * }
  */
 export async function* openaiStreamingCompletion(params: {
   messages: Array<{ role: 'user' | 'assistant' | 'system'; content: string }>
@@ -189,6 +255,22 @@ export async function* openaiStreamingCompletion(params: {
 
 /**
  * Unified AI client that uses OpenAI GPT-4o with GLM fallback
+ * @param params - Chat completion parameters
+ * @param params.messages - Array of messages
+ * @param params.system - System prompt (optional)
+ * @param params.temperature - Temperature for randomness (optional)
+ * @param params.maxTokens - Maximum tokens (optional)
+ * @param params.jsonMode - Enable JSON mode (optional)
+ * @param params.preferOpenAI - Whether to prefer OpenAI over GLM (default: true)
+ * @returns Promise with content, usage, cost, model, and provider info
+ * @throws {Error} If all providers fail
+ * @example
+ * const result = await aiChatCompletion({
+ *   messages: [{ role: 'user', content: 'Hello' }],
+ *   system: 'You are a medical assistant',
+ *   preferOpenAI: true
+ * });
+ * console.log(result.content, result.provider);
  */
 export async function aiChatCompletion(params: {
   messages: Array<{ role: 'user' | 'assistant' | 'system'; content: string }>
@@ -245,4 +327,3 @@ export async function aiChatCompletion(params: {
 
 // Export default client
 export default openai
-

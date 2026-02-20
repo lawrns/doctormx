@@ -140,7 +140,7 @@ async function storeAcknowledgment(
           status: 'granted',
           granted_at: timestamp,
           consent_version_id: consentVersionId,
-          granted_from: ipAddress || 'unknown',
+          granted_from: ipAddress ?? 'unknown',
           delivery_method: 'click_wrap',
           updated_at: new Date().toISOString(),
           metadata: {
@@ -166,7 +166,7 @@ async function storeAcknowledgment(
           consent_version_id: consentVersionId,
           status: 'granted',
           granted_at: timestamp,
-          granted_from: ipAddress || 'unknown',
+          granted_from: ipAddress ?? 'unknown',
           delivery_method: 'click_wrap',
           metadata: {
             disclaimer_acknowledged: true,
@@ -248,7 +248,7 @@ export default async function AcknowledgmentPage() {
     } else {
       // In a real implementation, you'd handle this error better
       // For now, we'll redirect with an error query param
-      redirect(`/consent/acknowledgment?error=${encodeURIComponent(result.error || 'Error desconocido')}`)
+      redirect(`/consent/acknowledgment?error=${encodeURIComponent(result.error ?? 'Error desconocido')}`)
     }
   }
 

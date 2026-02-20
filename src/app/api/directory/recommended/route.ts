@@ -99,19 +99,19 @@ export async function POST(req: NextRequest) {
 
         // Handle specialties - extract name safely
         const doctorSpecialty = doc.doctor_specialties?.[0];
-        const specialtyData = doctorSpecialty?.specialties as any;
+        const specialtyData = doctorSpecialty?.specialties as { name_es?: string } | Array<{ name_es?: string }> | undefined;
         const specialtyName = Array.isArray(specialtyData)
           ? specialtyData[0]?.name_es
-          : (specialtyData?.name_es as string | undefined);
+          : specialtyData?.name_es;
 
         return {
           id: doc.id,
-          name: profile?.full_name || 'Doctor',
+          name: profile?.full_name ?? 'Doctor',
           specialty: specialtyName || specialty,
           photo: profile?.photo_url || null,
-          rating: doc.rating_avg || 0,
-          reviewCount: doc.rating_count || 0,
-          yearsExperience: doc.years_experience || 0,
+          rating: doc.rating_avg ?? 0,
+          reviewCount: doc.rating_count ?? 0,
+          yearsExperience: doc.years_experience ?? 0,
           priceCents: doc.price_cents,
           city: doc.city,
           state: doc.state,

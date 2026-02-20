@@ -101,8 +101,8 @@ export async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Se
         ai_copilot_used: 0,
         image_analysis_used: 0,
         whatsapp_patients_limit: (plan.limits as { whatsapp_patients?: number })?.whatsapp_patients || 30,
-        ai_copilot_limit: (plan.limits as { ai_copilot?: number })?.ai_copilot || 0,
-        image_analysis_limit: (plan.limits as { image_analysis?: number })?.image_analysis || 0,
+        ai_copilot_limit: (plan.limits as { ai_copilot?: number })?.ai_copilot ?? 0,
+        image_analysis_limit: (plan.limits as { image_analysis?: number })?.image_analysis ?? 0,
       })
     }
 

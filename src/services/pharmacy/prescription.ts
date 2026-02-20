@@ -15,6 +15,7 @@ import { OrderStatus, DeliveryType } from './types';
 import { PharmacyIntegrationError, ProductNotFoundError, PrescriptionRequiredError } from './errors';
 import { PHARMACY_CONFIGS } from './config';
 import { CatalogService } from './catalog';
+import { TIME, LIMITS } from '@/lib/constants';
 
 // ============================================================================
 // UTILITY FUNCTIONS
@@ -38,7 +39,7 @@ async function withRetry<T>(
     backoffMultiplier?: number;
   } = {}
 ): Promise<T> {
-  const { maxRetries = 3, delayMs = 1000, backoffMultiplier = 2 } = options;
+  const { maxRetries = LIMITS.DEFAULT_MAX_RETRIES, delayMs = LIMITS.DEFAULT_RETRY_DELAY_MS, backoffMultiplier = LIMITS.RETRY_BACKOFF_MULTIPLIER } = options;
 
   let lastError: Error | undefined;
 
@@ -176,9 +177,9 @@ export class PrescriptionService {
 
     // Calculate totals
     const subtotal = orderRequest.items.reduce((sum, item) => sum + item.totalPrice, 0);
-    const deliveryCost = config?.deliveryConfig.baseCost || 49;
-    const discount = orderRequest.couponCode ? subtotal * 0.1 : 0; // 10% mock discount
-    const tax = (subtotal - discount) * 0.16; // 16% IVA
+    const deliveryCost = config?.deliveryConfig.baseCost || LIMITS.DEFAULT_DELIVERY_COST_CENTS;
+    const discount = orderRequest.couponCode ? subtotal * LIMITS.DEFAULT_COUPON_DISCOUNT_PERCENT : 0; // 10% mock discount
+    const tax = (subtotal - discount) * LIMITS.TAX_RATE_IVA; // 16% IVA
     const total = subtotal + deliveryCost - discount + tax;
 
     // Calculate affiliate commission
@@ -234,10 +235,10 @@ export class PrescriptionService {
    */
   private simulateOrderProgression(orderId: string): void {
     const stages: { status: OrderStatus; delay: number; description: string }[] = [
-      { status: OrderStatus.CONFIRMED, delay: 5000, description: 'Orden confirmada' },
-      { status: OrderStatus.PREPARING, delay: 15000, description: 'Preparando su pedido' },
-      { status: OrderStatus.OUT_FOR_DELIVERY, delay: 30000, description: 'En camino' },
-      { status: OrderStatus.DELIVERED, delay: 60000, description: 'Entregado' },
+      { status: OrderStatus.CONFIRMED, delay: TIME.ORDER_STAGE_CONFIRMED_DELAY_MS, description: 'Orden confirmada' },
+      { status: OrderStatus.PREPARING, delay: TIME.ORDER_STAGE_PREPARING_DELAY_MS, description: 'Preparando su pedido' },
+      { status: OrderStatus.OUT_FOR_DELIVERY, delay: TIME.ORDER_STAGE_OUT_FOR_DELIVERY_DELAY_MS, description: 'En camino' },
+      { status: OrderStatus.DELIVERED, delay: TIME.ORDER_STAGE_DELIVERED_DELAY_MS, description: 'Entregado' },
     ];
 
     let cumulativeDelay = 0;
@@ -317,7 +318,7 @@ export class PrescriptionService {
       order.timeline.push({
         status: OrderStatus.CANCELLED,
         timestamp: new Date(),
-        description: reason || 'Orden cancelada por el usuario',
+        description: reason ?? 'Orden cancelada por el usuario',
       });
       order.updatedAt = new Date();
 
@@ -357,9 +358,9 @@ export class PrescriptionService {
   }> {
     const config = PHARMACY_CONFIGS[pharmacyId];
     const subtotal = items.reduce((sum, item) => sum + item.totalPrice, 0);
-    const deliveryCost = config?.deliveryConfig.baseCost || 49;
+    const deliveryCost = config?.deliveryConfig.baseCost || LIMITS.DEFAULT_DELIVERY_COST_CENTS;
     const discount = 0;
-    const tax = subtotal * 0.16; // 16% IVA
+    const tax = subtotal * LIMITS.TAX_RATE_IVA; // 16% IVA
     const total = subtotal + deliveryCost + tax;
 
     return {

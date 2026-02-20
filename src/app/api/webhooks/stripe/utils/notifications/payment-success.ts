@@ -26,7 +26,7 @@ async function sendPaymentSuccessEmail(appointment: Appointment): Promise<void> 
     await sendPaymentReceipt(
       appointment.id,
       appointment.patient.email,
-      appointment.patient.full_name || 'Paciente'
+      appointment.patient.full_name ?? 'Paciente'
     )
     logger.info(`Payment receipt email sent for appointment ${appointment.id}`)
   } catch (error) {
@@ -53,13 +53,13 @@ async function sendPaymentSuccessWhatsApp(
 
     await sendWhatsAppReceipt(
       appointment.patient.phone,
-      appointment.patient.full_name || 'Paciente',
-      doctorName || 'tu médico',
+      appointment.patient.full_name ?? 'Paciente',
+      doctorName ?? 'tu médico',
       dateStr,
       timeStr,
-      appointment.price_cents || 0,
-      appointment.currency || 'MXN',
-      `${process.env.NEXT_PUBLIC_APP_URL || 'https://doctory.mx'}/consultation/${appointment.id}`
+      appointment.price_cents ?? 0,
+      appointment.currency ?? 'MXN',
+      `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://doctory.mx'}/consultation/${appointment.id}`
     )
     logger.info(`Payment receipt WhatsApp sent for appointment ${appointment.id}`)
   } catch (error) {

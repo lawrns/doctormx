@@ -110,7 +110,7 @@ export async function POST(request: NextRequest) {
     let description = data.description
     if (data.field_changes && data.field_changes.length > 0) {
       const changesList = data.field_changes.map(change => 
-        `- ${change.table}.${change.field}: "${change.current_value || 'vacío'}" → "${change.proposed_value}"`
+        `- ${change.table}.${change.field}: "${change.current_value ?? 'vacío'}" → "${change.proposed_value}"`
       ).join('\n')
       
       description = `${data.description}\n\nCambios solicitados:\n${changesList}`

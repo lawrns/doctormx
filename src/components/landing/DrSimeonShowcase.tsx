@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { CheckCircle, Clock, AlertTriangle, Stethoscope } from 'lucide-react'
+import { getBlurDataURL } from '@/lib/performance/image-blur'
 
 // Dr. Simeon Avatar Component - Now with real face and gradient ring!
 function DrSimeonAvatar({ size = 'default' }: { size?: 'default' | 'large' }) {
@@ -43,6 +44,8 @@ function DrSimeonAvatar({ size = 'default' }: { size?: 'default' | 'large' }) {
           fill
           sizes="(max-width: 768px) 40px, 56px"
           className="object-cover"
+          placeholder="blur"
+          blurDataURL={getBlurDataURL('simeon')}
         />
       </motion.div>
     </div>

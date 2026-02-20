@@ -33,6 +33,14 @@ import type OpenAI from "openai";
 let glmClient: OpenAI | null = null;
 let openaiClient: OpenAI | null = null;
 
+/**
+ * Gets or initializes the GLM AI client
+ * @returns Promise resolving to the GLM OpenAI-compatible client
+ * @throws {Error} If client initialization fails
+ * @example
+ * const client = await getGLMClient();
+ * const completion = await client.chat.completions.create({...});
+ */
 async function getGLMClient(): Promise<OpenAI> {
   if (!glmClient && typeof window === "undefined") {
     try {
@@ -54,6 +62,14 @@ async function getGLMClient(): Promise<OpenAI> {
   return glmClient;
 }
 
+/**
+ * Gets or initializes the OpenAI client
+ * @returns Promise resolving to the OpenAI client
+ * @throws {Error} If client initialization fails
+ * @example
+ * const client = await getOpenAIClient();
+ * const completion = await client.chat.completions.create({...});
+ */
 async function getOpenAIClient(): Promise<OpenAI> {
   if (!openaiClient && typeof window === "undefined") {
     try {
@@ -77,6 +93,10 @@ async function getOpenAIClient(): Promise<OpenAI> {
 /**
  * Get the appropriate AI client based on configuration
  * Uses GLM if configured, otherwise falls back to OpenAI
+ * @returns Promise resolving to the appropriate AI client
+ * @example
+ * const client = await getAIClient();
+ * const provider = getActiveProvider();
  */
 async function getAIClient(): Promise<OpenAI> {
   const provider = getActiveProvider();
@@ -90,6 +110,21 @@ async function getAIClient(): Promise<OpenAI> {
 /**
  * Chat completion con retry logic y fallback automático
  * Uses GLM as primary provider, OpenAI as fallback
+ * @param params - Chat completion parameters
+ * @param params.messages - Array of messages for the conversation
+ * @param params.systemPrompt - System prompt to guide the AI behavior
+ * @param params.maxTokens - Maximum tokens in the response (optional)
+ * @param params.temperature - Temperature for response randomness (optional)
+ * @returns Promise with AI response, usage stats, and provider info
+ * @throws {Error} If all AI providers fail
+ * @example
+ * const result = await chatCompletion({
+ *   messages: [{ id: '1', role: 'user', content: 'Hello', timestamp: new Date() }],
+ *   systemPrompt: 'You are a helpful medical assistant',
+ *   maxTokens: 500,
+ *   temperature: 0.3
+ * });
+ * console.log(result.response, result.usage, result.provider);
  */
 export async function chatCompletion(params: {
   messages: PreConsultaMessage[];
@@ -140,8 +175,8 @@ export async function chatCompletion(params: {
       });
 
       const usage = {
-        inputTokens: completion.usage?.prompt_tokens || 0,
-        outputTokens: completion.usage?.completion_tokens || 0,
+        inputTokens: completion.usage?.prompt_tokens ?? 0,
+        outputTokens: completion.usage?.completion_tokens ?? 0,
         cost: 0,
       };
 
@@ -160,8 +195,8 @@ export async function chatCompletion(params: {
 
       // GLM-4.7 returns reasoning_content instead of content
       const message = completion.choices[0]?.message;
-      const responseContent = message?.content ||
-        (message as { reasoning_content?: string })?.reasoning_content || '';
+      const responseContent = (message?.content ||
+        (message as { reasoning_content?: string })?.reasoning_content) ?? '';
 
       return {
         response: responseContent,
@@ -222,6 +257,17 @@ export async function chatCompletion(params: {
 
 /**
  * Transcripción de audio con Whisper
+ * @param params - Transcription parameters
+ * @param params.audioFile - Audio file as File or Buffer
+ * @param params.language - Language code (default: 'es')
+ * @returns Promise with transcription segments, full text, duration, and cost
+ * @throws {Error} If transcription fails
+ * @example
+ * const result = await transcribeAudio({
+ *   audioFile: audioBuffer,
+ *   language: 'es'
+ * });
+ * console.log(result.fullText, result.segments);
  */
 export async function transcribeAudio(params: {
   audioFile: File | Buffer;
@@ -258,7 +304,7 @@ export async function transcribeAudio(params: {
       confidence: s.confidence,
     })) || [];
 
-    const duration = transcription.duration || 0;
+    const duration = transcription.duration ?? 0;
     const cost = (duration / 60) * AI_CONFIG.costs.whisperPerMinute;
 
     return {
@@ -279,6 +325,22 @@ export async function transcribeAudio(params: {
 /**
  * Análisis estructurado con JSON mode
  * Uses GLM as primary provider, OpenAI as fallback
+ * @param params - Structured analysis parameters
+ * @param params.systemPrompt - System prompt for the AI
+ * @param params.userPrompt - User prompt/query
+ * @param params.schema - JSON schema description for expected output (optional)
+ * @returns Promise with parsed JSON response of type T
+ * @throws {Error} If analysis fails or response is invalid JSON
+ * @example
+ * interface Diagnosis {
+ *   condition: string;
+ *   confidence: number;
+ * }
+ * const result = await structuredAnalysis<Diagnosis>({
+ *   systemPrompt: 'You are a medical diagnostic assistant',
+ *   userPrompt: 'Analyze these symptoms: fever, cough',
+ *   schema: '{"condition": "string", "confidence": "number"}'
+ * });
  */
 export async function structuredAnalysis<T>(params: {
   systemPrompt: string;
@@ -323,8 +385,8 @@ export async function structuredAnalysis<T>(params: {
 
       // GLM-4.7 returns reasoning_content instead of content
       const message = completion.choices[0]?.message;
-      const responseText = message?.content ||
-        (message as { reasoning_content?: string })?.reasoning_content || '{}';
+      const responseText = (message?.content ||
+        (message as { reasoning_content?: string })?.reasoning_content) ?? '{}';
       return JSON.parse(responseText) as T;
     } catch (error: unknown) {
       logger.error(`[AI] Error análisis con ${provider}`, { error });
@@ -342,6 +404,13 @@ export async function structuredAnalysis<T>(params: {
 
 /**
  * Safety check - detecta si la respuesta de IA está dando consejos médicos inapropiados
+ * @param text - The AI response text to check
+ * @returns Object with safety status and detected flags
+ * @example
+ * const check = await safetyCheck('Deberías tomar paracetamol para el dolor');
+ * if (!check.safe) {
+ *   console.warn('Potentially dangerous content detected:', check.flags);
+ * }
  */
 export async function safetyCheck(text: string): Promise<{
   safe: boolean;
@@ -370,6 +439,33 @@ export async function safetyCheck(text: string): Promise<{
 
 /**
  * Auditoría de operación de IA
+ * Logs AI operations to the database for compliance and monitoring
+ * @param params - Audit log parameters
+ * @param params.operation - Type of AI operation performed
+ * @param params.userId - ID of the user who triggered the operation
+ * @param params.userType - Type of user (patient, doctor, admin)
+ * @param params.input - Input data sent to AI
+ * @param params.output - Output data received from AI
+ * @param params.tokens - Number of tokens used (optional)
+ * @param params.cost - Cost of the operation in USD (optional)
+ * @param params.latencyMs - Latency in milliseconds
+ * @param params.status - Success or error status
+ * @param params.error - Error message if status is error (optional)
+ * @param params.provider - AI provider used (optional)
+ * @returns Promise that resolves when audit log is saved
+ * @example
+ * await auditAIOperation({
+ *   operation: 'pre-consulta',
+ *   userId: 'user-123',
+ *   userType: 'patient',
+ *   input: { symptoms: ['fever', 'cough'] },
+ *   output: { triage: 'medium' },
+ *   tokens: 150,
+ *   cost: 0.002,
+ *   latencyMs: 1200,
+ *   status: 'success',
+ *   provider: 'glm'
+ * });
  */
 export async function auditAIOperation(params: {
   operation: AIAuditLog['operation'];
@@ -406,4 +502,3 @@ export async function auditAIOperation(params: {
     logger.error('Error logging AI operation to DB', { error });
   }
 }
-

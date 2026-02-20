@@ -95,7 +95,7 @@ export default function PharmacySuggestions({
         alert(`Referencia enviada a ${pharmacy.pharmacyName}`)
       } else {
         const error = await response.json()
-        alert(`Error: ${error.error || 'No se pudo enviar la referencia'}`)
+        alert(`Error: ${error.error ?? 'No se pudo enviar la referencia'}`)
       }
     } catch (error) {
       logger.error('Error sending referral', { error: error instanceof Error ? error.message : String(error) })

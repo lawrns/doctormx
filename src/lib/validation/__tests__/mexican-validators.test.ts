@@ -9,6 +9,7 @@
  * - Phone numbers (Mexican format)
  */
 
+import { describe, expect, test } from 'vitest'
 import {
   validateCURP,
   validateRFC,

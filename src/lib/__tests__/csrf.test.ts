@@ -407,7 +407,7 @@ describe('CSRF Protection', () => {
       expect(cookieToken).toBe(csrf.token)
 
       // Step 4: Validate token
-      const isValid = validateCSRFToken(mockRequest, cookieToken || '')
+      const isValid = validateCSRFToken(mockRequest, cookieToken ?? '')
       expect(isValid).toBe(true)
     })
 
@@ -426,7 +426,7 @@ describe('CSRF Protection', () => {
       )
 
       const cookieToken = getCSRFCookie(request)
-      const isValid = validateCSRFToken(request, cookieToken || '')
+      const isValid = validateCSRFToken(request, cookieToken ?? '')
 
       expect(isValid).toBe(false)
     })

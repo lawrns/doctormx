@@ -295,7 +295,7 @@ export function formatAiDisclaimerForDisplay(
  */
 export function getCurrentAiModelInfo(): AiModelInfo | null {
   const modelName = process.env.AI_MODEL_NAME || process.env.OPENAI_MODEL
-  const provider = process.env.AI_PROVIDER || 'openai'
+  const provider = process.env.AI_PROVIDER ?? 'openai'
 
   if (!modelName) {
     logger.warn('AI model not configured in environment')
@@ -304,7 +304,7 @@ export function getCurrentAiModelInfo(): AiModelInfo | null {
 
   return {
     model_name: modelName,
-    model_version: process.env.AI_MODEL_VERSION || 'unknown',
+    model_version: process.env.AI_MODEL_VERSION ?? 'unknown',
     provider: provider,
     training_cutoff: process.env.AI_TRAINING_CUTOFF,
   }
@@ -356,7 +356,7 @@ export async function recordAiUsage(
     resource: {
       type: 'ai_usage',
       id: null,
-      name: `AI Usage - ${modelInfo?.model_name || 'unknown'}`,
+      name: `AI Usage - ${modelInfo?.model_name ?? 'unknown'}`,
     },
     outcome: {
       status: 'success',
@@ -366,7 +366,7 @@ export async function recordAiUsage(
       model_name: modelInfo?.model_name,
       provider: modelInfo?.provider,
       tokens_used: tokensUsed,
-      estimated_cost: calculateCost(tokensUsed, modelInfo?.model_name || 'unknown'),
+      estimated_cost: calculateCost(tokensUsed, modelInfo?.model_name ?? 'unknown'),
     },
   })
 
@@ -394,7 +394,7 @@ function calculateCost(tokens: number, modelName: string): number {
     'claude-sonnet': 0.003,
   }
 
-  const costPer1k = COSTS_PER_1K_TOKENS[modelName.toLowerCase()] || 0.01
+  const costPer1k = COSTS_PER_1K_TOKENS[modelName.toLowerCase()] ?? 0.01
   return (tokens / 1000) * costPer1k
 }
 
@@ -444,18 +444,18 @@ export async function getAiUsageStatistics(
   for (const log of aiLogs) {
     const contentType = log.metadata?.content_type as string | undefined
     const modelName = log.metadata?.model_name as string | undefined
-    const tokens = (log.metadata?.tokens_used as number) || 0
-    const cost = (log.metadata?.estimated_cost as number) || 0
+    const tokens = (log.metadata?.tokens_used as number) ?? 0
+    const cost = (log.metadata?.estimated_cost as number) ?? 0
 
     stats.total_tokens += tokens
     stats.estimated_cost += cost
 
     if (contentType) {
-      stats.by_content_type[contentType] = (stats.by_content_type[contentType] || 0) + 1
+      stats.by_content_type[contentType] = (stats.by_content_type[contentType] ?? 0) + 1
     }
 
     if (modelName) {
-      stats.by_model[modelName] = (stats.by_model[modelName] || 0) + 1
+      stats.by_model[modelName] = (stats.by_model[modelName] ?? 0) + 1
     }
   }
 
@@ -507,8 +507,8 @@ export async function generateAiComplianceReport(
       modelsUsed.add(modelName)
     }
 
-    totalTokens += (log.metadata?.tokens_used as number) || 0
-    totalCost += (log.metadata?.estimated_cost as number) || 0
+    totalTokens += (log.metadata?.tokens_used as number) ?? 0
+    totalCost += (log.metadata?.estimated_cost as number) ?? 0
 
     if (log.metadata?.ai_disclosure_level) {
       disclosureCount++

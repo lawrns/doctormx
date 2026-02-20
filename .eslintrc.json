@@ -1,3 +1,38 @@
 {
-  "extends": ["next/core-web-vitals"]
+  "extends": ["next/core-web-vitals"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "no-console": ["warn", { "allow": ["error", "warn"] }],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "variable",
+        "types": ["function"],
+        "format": ["PascalCase"],
+        "filter": {
+          "regex": "^(use|with)[A-Z]",
+          "match": false
+        }
+      },
+      {
+        "selector": "typeLike",
+        "format": ["PascalCase"]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["src/components/ui/**/*.tsx", "src/components/ui/**/*.ts"],
+      "rules": {
+        "@typescript-eslint/naming-convention": "off"
+      }
+    },
+    {
+      "files": ["**/*.test.ts", "**/*.test.tsx"],
+      "rules": {
+        "@typescript-eslint/naming-convention": "off"
+      }
+    }
+  ]
 }

@@ -1,5 +1,6 @@
 import { createClient } from '@/lib/supabase/server';
 import { logger } from '@/lib/observability/logger';
+import { TIME, LIMITS } from '@/lib/constants';
 
 /**
  * Video Service - Daily.co Integration
@@ -42,8 +43,8 @@ export interface VideoCallConfig {
  * Get Daily.co configuration from environment variables
  */
 function getVideoConfig(): VideoCallConfig {
-  const apiKey = process.env.DAILY_API_KEY || ''
-  const domain = process.env.DAILY_DOMAIN || ''
+  const apiKey = process.env.DAILY_API_KEY ?? ''
+  const domain = process.env.DAILY_DOMAIN ?? ''
 
   if (!apiKey || !domain) {
     throw new Error('Daily.co configuration missing. Set DAILY_API_KEY and DAILY_DOMAIN environment variables.')
@@ -84,9 +85,9 @@ export async function createVideoRoom(options: CreateRoomOptions): Promise<Video
           start_audio_off: true,
           owner_only_broadcast: false,
         },
-        exp: Math.floor(new Date(scheduledFor.getTime() + 2 * 60 * 60 * 1000).getTime() / 1000), // 2 hours after appointment
-        nbf: Math.floor(new Date(scheduledFor.getTime() - 15 * 60 * 1000).getTime() / 1000), // 15 minutes before appointment
-        max_participants: 4, // Doctor, patient, and up to 2 translators/observers
+        exp: Math.floor(new Date(scheduledFor.getTime() + TIME.VIDEO_CALL_TOKEN_EXPIRY_HOURS * TIME.HOUR_IN_MS).getTime() / 1000), // 2 hours after appointment
+        nbf: Math.floor(new Date(scheduledFor.getTime() - TIME.VIDEO_CALL_PRE_START_MINUTES * TIME.MINUTE_IN_MS).getTime() / 1000), // 15 minutes before appointment
+        max_participants: LIMITS.VIDEO_CALL_MAX_PARTICIPANTS, // Doctor, patient, and up to 2 translators/observers
       }),
     })
 
@@ -114,7 +115,7 @@ export async function createVideoRoom(options: CreateRoomOptions): Promise<Video
           user_id: patientId,
           is_owner: false,
         },
-        exp: Math.floor(new Date(scheduledFor.getTime() + 2 * 60 * 60 * 1000).getTime() / 1000),
+        exp: Math.floor(new Date(scheduledFor.getTime() + TIME.VIDEO_CALL_TOKEN_EXPIRY_HOURS * TIME.HOUR_IN_MS).getTime() / 1000),
       }),
     })
 
@@ -249,7 +250,7 @@ export function isVideoAppointmentJoinable(appointment: {
 
   const now = new Date()
   const startTime = new Date(appointment.start_ts)
-  const fifteenMinutesBefore = new Date(startTime.getTime() - 15 * 60 * 1000)
+  const fifteenMinutesBefore = new Date(startTime.getTime() - TIME.VIDEO_CALL_PRE_START_MINUTES * TIME.MINUTE_IN_MS)
 
   return (
     appointment.video_status === 'ready' ||
@@ -275,7 +276,7 @@ export function getVideoCallDuration(appointment: {
   const startTime = new Date(appointment.video_started_at)
   const endTime = appointment.video_ended_at ? new Date(appointment.video_ended_at) : new Date()
 
-  return Math.floor((endTime.getTime() - startTime.getTime()) / (1000 * 60))
+  return Math.floor((endTime.getTime() - startTime.getTime()) / TIME.MINUTE_IN_MS)
 }
 
 /**

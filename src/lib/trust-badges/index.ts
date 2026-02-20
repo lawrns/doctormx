@@ -213,9 +213,9 @@ export async function calculateDoctorBadges(doctorId: string): Promise<Badge[]> 
   // Metrics for badge calculation
   const metrics: Record<string, number> = {
     verified_credentials: verification?.sep_verified ? 1 : 0,
-    experience_years: doctor.years_experience || 0,
-    patient_rating: parseFloat(doctor.rating_avg) || 0,
-    consultation_count: consultationCount || 0,
+    experience_years: doctor.years_experience ?? 0,
+    patient_rating: parseFloat(doctor.rating_avg) ?? 0,
+    consultation_count: consultationCount ?? 0,
     response_time: 12, // Default, would be calculated from actual response times
     profile_complete: profileCompleteness,
   };
@@ -357,7 +357,7 @@ export async function getPublicDoctorBadges(doctorId: string): Promise<{
   };
   
   badges.forEach(badge => {
-    byLevel[badge.badge_level] = (byLevel[badge.badge_level] || 0) + 1;
+    byLevel[badge.badge_level] = (byLevel[badge.badge_level] ?? 0) + 1;
   });
   
   // Find top badge (platinum > gold > silver > bronze)

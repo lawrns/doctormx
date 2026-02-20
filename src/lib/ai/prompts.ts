@@ -1,12 +1,28 @@
 /**
  * Prompts especializados para cada módulo de IA
  * Prompt engineering centralizado
+ * 
+ * @module lib/ai/prompts
+ * @example
+ * ```typescript
+ * import { PRECONSULTA_SYSTEM_PROMPT, fillTemplate } from '@/lib/ai/prompts';
+ * 
+ * const message = fillTemplate(
+ *   FOLLOWUP_TEMPLATES['24h-check'].template,
+ *   { patientName: 'Juan', doctorName: 'Dr. García' }
+ * );
+ * ```
  */
 
 // ============================================
 // PRE-CONSULTA INTELIGENTE
 // ============================================
 
+/**
+ * System prompt for the pre-consultation triage AI assistant
+ * Guides the AI to gather symptoms, assess urgency, and suggest specialties
+ * without making direct diagnoses or prescriptions
+ */
 export const PRECONSULTA_SYSTEM_PROMPT = `Eres un asistente médico de triaje para una plataforma de telemedicina en español.
 
 TU OBJETIVO:
@@ -39,6 +55,10 @@ EJEMPLOS DE RED FLAGS:
 DISCLAIMER AUTOMÁTICO:
 Cada 3 mensajes recuerda: "Esta conversación es solo informativa. Un médico revisará tu caso."`;
 
+/**
+ * Prompt for analyzing pre-consultation urgency
+ * Used to classify patient urgency level and recommend actions
+ */
 export const PRECONSULTA_URGENCY_PROMPT = `Analiza esta conversación de pre-consulta y clasifica la urgencia:
 
 CONVERSACIÓN:
@@ -64,6 +84,10 @@ Responde en JSON:
 // TRANSCRIPCIÓN + RESUMEN
 // ============================================
 
+/**
+ * Prompt for generating structured summaries from medical consultation transcripts
+ * Extracts diagnosis, symptoms, prescriptions, and follow-up instructions
+ */
 export const TRANSCRIPTION_SUMMARY_PROMPT = `Analiza esta transcripción de una consulta médica y genera un resumen estructurado.
 
 TRANSCRIPCIÓN:
@@ -84,6 +108,10 @@ REGLAS:
 - Si el doctor no dio diagnóstico, usa "En evaluación"
 - Prescripciones con formato exacto: "Paracetamol 500mg cada 8 horas por 5 días"`;
 
+/**
+ * Prompt for speaker diarization in medical transcripts
+ * Identifies doctor vs patient segments in the conversation
+ */
 export const TRANSCRIPTION_DIARIZATION_PROMPT = `Identifica quién está hablando en esta transcripción (doctor vs paciente).
 
 TRANSCRIPCIÓN:
@@ -105,6 +133,10 @@ Responde en JSON:
 // SEGUIMIENTO POST-CONSULTA
 // ============================================
 
+/**
+ * Follow-up message templates for post-consultation care
+ * Includes 24-hour, 7-day, and 30-day follow-up messages
+ */
 export const FOLLOWUP_TEMPLATES = {
   '24h-check': {
     subject: '¿Cómo te sientes después de tu consulta?',
@@ -152,10 +184,17 @@ Tu feedback nos ayuda a mejorar.`,
   },
 };
 
+/** Type for follow-up template keys */
+export type FollowUpTemplateKey = keyof typeof FOLLOWUP_TEMPLATES;
+
 // ============================================
 // ASISTENTE DE RECETAS (FASE 2)
 // ============================================
 
+/**
+ * Prompt for prescription assistance and verification
+ * Checks for drug interactions, contraindications, and alternatives
+ */
 export const PRESCRIPTION_ASSIST_PROMPT = `Eres un asistente farmacéutico que ayuda a doctores a verificar prescripciones.
 
 MEDICAMENTO PROPUESTO:
@@ -187,6 +226,10 @@ IMPORTANTE: Este es un ASISTENTE. El doctor tiene la decisión final.`;
 // MATCHING INTELIGENTE (FASE 2)
 // ============================================
 
+/**
+ * Prompt for intelligent doctor-patient matching
+ * Evaluates doctors based on specialty, availability, location, price, and ratings
+ */
 export const SMART_MATCHING_PROMPT = `Analiza esta solicitud de paciente y sugiere los mejores doctores.
 
 PACIENTE:
@@ -197,7 +240,7 @@ PACIENTE:
 - Preferencias: {preferences}
 
 DOCTORES DISPONIBLES:
-doctores}
+{doctors}
 
 EVALÚA:
 1. Especialidad match (más importante)
@@ -224,16 +267,28 @@ Responde con top 3 doctores en JSON:
 
 /**
  * Reemplaza variables en templates {{variable}}
+ * @param template - Template string with {{variable}} placeholders
+ * @param variables - Object with variable names and values
+ * @returns Filled template string
+ * @example
+ * const template = 'Hola {{name}}, tu cita es {{date}}';
+ * const result = fillTemplate(template, { name: 'Juan', date: '2026-02-20' });
+ * // 'Hola Juan, tu cita es 2026-02-20'
  */
 export function fillTemplate(template: string, variables: Record<string, string>): string {
-  return template.replace(/\{\{(\w+)\}\}/g, (_, key) => variables[key] || '');
+  return template.replace(/\{\{(\w+)\}\}/g, (_, key) => variables[key] ?? '');
 }
 
 /**
  * Extrae variables de un template {{variable}}
+ * @param template - Template string with {{variable}} placeholders
+ * @returns Array of variable names found in the template
+ * @example
+ * const template = 'Hola {{name}}, tu cita es {{date}}';
+ * const vars = extractTemplateVariables(template);
+ * // ['name', 'date']
  */
 export function extractTemplateVariables(template: string): string[] {
   const matches = template.match(/\{\{(\w+)\}\}/g) || [];
   return matches.map((m) => m.replace(/\{\{|\}\}/g, ''));
 }
-

@@ -216,12 +216,12 @@ export async function trackSlaCompliance(): Promise<{
     : 100
 
   return {
-    total_requests: activeRequests?.length || 0,
-    pending_requests: activeRequests?.length || 0,
+    total_requests: activeRequests?.length ?? 0,
+    pending_requests: activeRequests?.length ?? 0,
     overdue_requests: overdueCount,
     warning_requests: warningCount,
     critical_requests: criticalCount,
-    compliant_requests: (activeRequests?.length || 0) - overdueCount,
+    compliant_requests: (activeRequests?.length ?? 0) - overdueCount,
     sla_compliance_rate: slaComplianceRate,
     by_type: byType as Record<ArcoRequestType, {
       total: number
@@ -264,14 +264,14 @@ export async function getSlaMetrics(
   }
 
   // Calculate metrics
-  const totalRequests = requests?.length || 0
+  const totalRequests = requests?.length ?? 0
   const completedRequests = requests?.filter(r =>
     ['completed', 'denied', 'cancelled'].includes(r.status)
-  ).length || 0
+  ).length ?? 0
   const overdueRequests = requests?.filter(r =>
     new Date(r.due_date) < new Date() &&
     !['completed', 'denied', 'cancelled'].includes(r.status)
-  ).length || 0
+  ).length ?? 0
 
   // Calculate completion rate
   const completionRate = totalRequests > 0
@@ -591,7 +591,7 @@ export async function generateSlaReport(months = 6): Promise<{
       : 100,
   }))
 
-  const totalRequests = requests?.length || 0
+  const totalRequests = requests?.length ?? 0
   const slaComplianceRate = totalCompleted > 0
     ? Math.round((totalCompliant / totalCompleted) * 100)
     : 100

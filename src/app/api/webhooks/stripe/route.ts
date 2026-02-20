@@ -5,6 +5,7 @@ import { HTTP_STATUS } from '@/lib/constants'
 import { verifySignature } from './utils/signature-verification'
 import { dispatchEvent, SUPPORTED_EVENTS } from './handlers'
 import { logWebhookEvent, logIncomingEvent } from './utils/logging'
+import { isWebhookIpAllowed, getClientIp } from '@/lib/webhooks'
 import type Stripe from 'stripe'
 
 /**
@@ -13,6 +14,12 @@ import type Stripe from 'stripe'
  * - Card payments (payment_intent.succeeded, payment_intent.payment_failed)
  * - OXXO voucher payments (charge.succeeded, charge.failed)
  * - Subscription billing events
+ *
+ * Security measures:
+ * - Signature verification with HMAC-SHA256
+ * - Timestamp validation (replay attack prevention)
+ * - Timing-safe comparison
+ * - IP allowlist validation
  */
 export async function POST(request: Request) {
   const body = await request.text()
@@ -25,6 +32,19 @@ export async function POST(request: Request) {
     return NextResponse.json(
       { error: 'Missing stripe-signature header' },
       { status: HTTP_STATUS.UNAUTHORIZED }
+    )
+  }
+
+  // IP allowlist validation
+  const clientIp = getClientIp(headersList)
+  if (clientIp && !isWebhookIpAllowed(clientIp, 'stripe')) {
+    logger.warn('Stripe webhook received from unauthorized IP', {
+      provider: 'stripe',
+      clientIp,
+    })
+    return NextResponse.json(
+      { error: 'Forbidden' },
+      { status: HTTP_STATUS.FORBIDDEN }
     )
   }
 

@@ -11,7 +11,7 @@ import { TwilioConfig, WhatsAppResult } from './types'
 export function getTwilioConfig(): TwilioConfig {
   const TWILIO_ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID
   const TWILIO_AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN
-  const TWILIO_WHATSAPP_NUMBER = process.env.TWILIO_WHATSAPP_NUMBER || 'whatsapp:+14155238886'
+  const TWILIO_WHATSAPP_NUMBER = process.env.TWILIO_WHATSAPP_NUMBER ?? 'whatsapp:+14155238886'
 
   if (!TWILIO_ACCOUNT_SID || !TWILIO_AUTH_TOKEN) {
     throw new Error('Missing required Twilio environment variables: TWILIO_ACCOUNT_SID and TWILIO_AUTH_TOKEN')

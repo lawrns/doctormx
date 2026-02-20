@@ -1,8 +1,9 @@
 // Metrics Collection
 // Track counters, gauges, and histograms for monitoring
 
-import { createServiceClient } from '@/lib/supabase/server'
+import { createServiceClient } from '@/lib/supabase/service'
 import { logger } from '@/lib/observability/logger'
+import { TIME, LIMITS } from '@/lib/constants'
 
 export type MetricType = 'counter' | 'gauge' | 'histogram'
 
@@ -20,8 +21,9 @@ interface MetricData {
 
 // In-memory buffer for batching
 const metricsBuffer: MetricData[] = []
-const BUFFER_SIZE = 100
-const FLUSH_INTERVAL_MS = 10000
+const BUFFER_SIZE = LIMITS.PAGINATION_DEFAULT_PAGE_SIZE * 5 // 100
+// Flush interval for metrics batch (10 seconds)
+const FLUSH_INTERVAL_MS = TIME.METRICS_FLUSH_INTERVAL_MS
 
 // Interval tracking for cleanup
 let flushIntervalId: NodeJS.Timeout | null = null
@@ -55,10 +57,11 @@ async function flushMetrics() {
 /**
  * Start the metrics flush interval
  * Safe to call multiple times - will only start once
+ * @returns Cleanup function to stop the interval
  */
-export function startMetricsFlush(): void {
-  if (typeof setInterval === 'undefined') return
-  if (isInitialized) return
+export function startMetricsFlush(): () => void {
+  if (typeof setInterval === 'undefined') return () => {}
+  if (isInitialized) return () => stopMetricsFlush()
   
   isInitialized = true
   flushIntervalId = setInterval(flushMetrics, FLUSH_INTERVAL_MS)
@@ -68,6 +71,9 @@ export function startMetricsFlush(): void {
     document.addEventListener('visibilitychange', handleVisibilityChange)
     window.addEventListener('beforeunload', handleBeforeUnload)
   }
+  
+  // Return cleanup function
+  return () => stopMetricsFlush()
 }
 
 /**
@@ -190,10 +196,20 @@ export const metrics = {
   flush: flushMetrics,
 }
 
-// Auto-start in browser environment (for backwards compatibility)
-// But with proper cleanup handlers
-if (typeof setInterval !== 'undefined') {
-  startMetricsFlush()
+// Note: Auto-start removed to prevent memory leaks
+// Use startMetricsFlush() or initMetrics() instead and call cleanup on unmount/shutdown
+// Example:
+//   const cleanup = initMetrics();
+//   // ... later on shutdown/unmount:
+//   cleanup();
+
+/**
+ * Initialize metrics with explicit cleanup
+ * Use this in apps instead of startMetricsFlush for better lifecycle management
+ * @returns Cleanup function to stop all metrics flushing
+ */
+export function initMetrics(): () => void {
+  return startMetricsFlush()
 }
 
 export default metrics

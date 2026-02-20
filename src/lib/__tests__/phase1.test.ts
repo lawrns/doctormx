@@ -1,4 +1,11 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
+import * as discoveryModule from '@/lib/discovery'
+import * as paymentModule from '@/lib/payment'
+import * as bookingModule from '@/lib/booking'
+
+const { discoverDoctors } = discoveryModule
+const { handlePaymentFailure } = paymentModule
+const { reserveAppointmentSlot } = bookingModule
 
 interface MockQuery {
   select: (arg?: string) => MockQuery;
@@ -98,7 +105,6 @@ describe('Phase 1: Unit Tests', () => {
 
   it('should return doctores list', async () => {
     const { createServiceClient } = await import('@/lib/supabase/server')
-    const { discoverDoctors } = await import('@/lib/discovery')
     
     const mockData = [{ 
       id: '1', 
@@ -117,7 +123,6 @@ describe('Phase 1: Unit Tests', () => {
 
   it('should handle payment failure', async () => {
     const { createClient } = await import('@/lib/supabase/server')
-    const { handlePaymentFailure } = await import('@/lib/payment')
     
     const aptData = { id: 'apt-1', doctor_id: 'doc-1', start_ts: new Date().toISOString(), end_ts: new Date().toISOString() }
     const payData = { id: 'pay-1' }
@@ -141,7 +146,6 @@ describe('Phase 1: Unit Tests', () => {
 
   it('should reserve slot', async () => {
     const { createClient } = await import('@/lib/supabase/server')
-    const { reserveAppointmentSlot } = await import('@/lib/booking')
     const { getAvailableSlots } = await import('@/lib/availability')
     
     vi.mocked(getAvailableSlots).mockResolvedValue(['09:30'])

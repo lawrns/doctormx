@@ -287,8 +287,8 @@ export function GlobalErrorBoundary({
     <ErrorBoundary
       onError={(error) => {
         // Send to error tracking service
-        if (typeof window !== 'undefined' && (window as any).Sentry) {
-          ;(window as any).Sentry.captureException(error)
+        if (typeof window !== 'undefined' && (window as Window & { Sentry?: { captureException: (error: unknown) => void } }).Sentry) {
+          ;(window as Window & { Sentry?: { captureException: (error: unknown) => void } }).Sentry?.captureException(error)
         }
       }}
     >

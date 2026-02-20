@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, Suspense } from 'react'
+import { useState, Suspense, useRef, useCallback } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
@@ -31,6 +31,7 @@ import {
   Search,
 } from 'lucide-react'
 import { logger } from '@/lib/observability/logger'
+import { FormValidationAnnouncer, FormErrorSummary, FieldErrorMessage, InlineSuccess } from '@/components/ui/FormValidationAnnouncer'
 
 function calculatePasswordStrength(password: string): { strength: number; label: string; color: string } {
   let strength = 0
@@ -52,10 +53,10 @@ const step1Schema = z.object({
 
 const step2Schema = z.object({
   fullName: z.string().min(3, 'El nombre debe tener al menos 3 caracteres'),
-  email: z.string().email('Correo electrónico inválido'),
+  email: z.string().min(1, 'El correo es requerido').email('Correo electrónico inválido'),
   phone: z.string().optional(),
   password: z.string().min(6, 'La contraseña debe tener al menos 6 caracteres'),
-  confirmPassword: z.string(),
+  confirmPassword: z.string().min(1, 'Confirma tu contraseña'),
 }).refine((data) => data.password === data.confirmPassword, {
   message: 'Las contraseñas no coinciden',
   path: ['confirmPassword'],
@@ -89,11 +90,69 @@ const specialties = [
   'Traumatología',
 ]
 
+// Validation helper with announcement
+interface ValidationState {
+  error: string | null;
+  touched: boolean;
+  valid: boolean;
+}
+
+function useAccessibleValidation() {
+  const [announcement, setAnnouncement] = useState<string | null>(null)
+  const [fieldStates, setFieldStates] = useState<Record<string, ValidationState>>({})
+
+  const announce = useCallback((message: string) => {
+    setAnnouncement(message)
+  }, [])
+
+  const validateField = useCallback((fieldName: string, value: unknown, validator: (val: unknown) => { valid: boolean; message?: string }) => {
+    const result = validator(value)
+    
+    setFieldStates(prev => ({
+      ...prev,
+      [fieldName]: {
+        error: result.valid ? null : (result.message || 'Error de validación'),
+        touched: true,
+        valid: result.valid
+      }
+    }))
+
+    if (result.valid) {
+      announce(`${fieldName} es válido`)
+    } else if (result.message) {
+      announce(`Error en ${fieldName}: ${result.message}`)
+    }
+
+    return result.valid
+  }, [announce])
+
+  const setTouched = useCallback((fieldName: string) => {
+    setFieldStates(prev => ({
+      ...prev,
+      [fieldName]: {
+        ...prev[fieldName],
+        touched: true
+      }
+    }))
+  }, [])
+
+  return {
+    announcement,
+    fieldStates,
+    validateField,
+    setTouched,
+    announce
+  }
+}
+
 function RegisterContent() {
   const [currentStep, setCurrentStep] = useState(1)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [announcement, setAnnouncement] = useState<string | null>(null)
   const router = useRouter()
+  const formRef = useRef<HTMLFormElement>(null)
+  
   const [supabase] = useState(() => {
     try {
       return createClient()
@@ -121,34 +180,64 @@ function RegisterContent() {
 
   const [passwordStrength, setPasswordStrength] = useState({ strength: 0, label: '', color: '' })
   const [validatedFields, setValidatedFields] = useState<Record<string, boolean>>({})
+  const [touchedFields, setTouchedFields] = useState<Record<string, boolean>>({})
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({})
 
   const step1Form = useForm<Step1Data>({
     resolver: zodResolver(step1Schema),
     defaultValues: step1Data,
+    mode: 'onBlur',
   })
 
   const step2Form = useForm<Step2Data>({
     resolver: zodResolver(step2Schema),
     defaultValues: step2Data,
+    mode: 'onBlur',
   })
 
   const step3DoctorForm = useForm<Step3DoctorData>({
     resolver: zodResolver(step3DoctorSchema),
     defaultValues: step3DoctorData,
+    mode: 'onBlur',
   })
 
   const step3PatientForm = useForm<Step3PatientData>({
     resolver: zodResolver(step3PatientSchema),
     defaultValues: step3PatientData,
+    mode: 'onBlur',
   })
+
+  const announceValidation = useCallback((fieldName: string, message: string, isValid: boolean) => {
+    if (isValid) {
+      setAnnouncement(`${fieldName} es válido`)
+    } else {
+      setAnnouncement(`Error en ${fieldName}: ${message}`)
+    }
+  }, [])
 
   const handlePasswordChange = (password: string) => {
     const strength = calculatePasswordStrength(password)
     setPasswordStrength(strength)
   }
 
-  const handleFieldValidation = (fieldName: string, isValid: boolean) => {
+  const handleFieldValidation = (fieldName: string, isValid: boolean, errorMessage?: string) => {
     setValidatedFields((prev) => ({ ...prev, [fieldName]: isValid }))
+    if (!isValid && errorMessage) {
+      setFieldErrors((prev) => ({ ...prev, [fieldName]: errorMessage }))
+    } else if (isValid) {
+      setFieldErrors((prev) => {
+        const newErrors = { ...prev }
+        delete newErrors[fieldName]
+        return newErrors
+      })
+    }
+  }
+
+  const handleBlur = (fieldName: string, value: string, validator: (val: string) => boolean, errorMsg: string) => {
+    setTouchedFields((prev) => ({ ...prev, [fieldName]: true }))
+    const isValid = validator(value)
+    handleFieldValidation(fieldName, isValid, isValid ? undefined : errorMsg)
+    announceValidation(fieldName, isValid ? '' : errorMsg, isValid)
   }
 
   const handleStep1Next = async () => {
@@ -156,6 +245,13 @@ function RegisterContent() {
     if (isValid) {
       setStep1Data(step1Form.getValues())
       setCurrentStep(2)
+      setAnnouncement('Paso 1 completado. Continuando al paso 2.')
+    } else {
+      const errors = step1Form.formState.errors
+      const firstError = Object.entries(errors)[0]
+      if (firstError) {
+        announceValidation(firstError[0], firstError[1]?.message || 'Error de validación', false)
+      }
     }
   }
 
@@ -164,6 +260,13 @@ function RegisterContent() {
     if (isValid) {
       setStep2Data(step2Form.getValues())
       setCurrentStep(3)
+      setAnnouncement('Paso 2 completado. Continuando al paso 3.')
+    } else {
+      const errors = step2Form.formState.errors
+      const firstError = Object.entries(errors)[0]
+      if (firstError) {
+        announceValidation(firstError[0], firstError[1]?.message || 'Error de validación', false)
+      }
     }
   }
 
@@ -173,13 +276,22 @@ function RegisterContent() {
       ? await step3DoctorForm.trigger()
       : await step3PatientForm.trigger()
 
-    if (!step3Valid) return
+    if (!step3Valid) {
+      const errors = isDoctor ? step3DoctorForm.formState.errors : step3PatientForm.formState.errors
+      const firstError = Object.entries(errors)[0]
+      if (firstError) {
+        announceValidation(firstError[0], firstError[1]?.message || 'Error de validación', false)
+      }
+      return
+    }
 
     setLoading(true)
     setError('')
+    setAnnouncement('Creando tu cuenta...')
 
     if (!supabase) {
       setError('Authentication not available')
+      setAnnouncement('Error: Autenticación no disponible')
       setLoading(false)
       return
     }
@@ -197,6 +309,7 @@ function RegisterContent() {
 
       if (signUpError) {
         setError(signUpError.message)
+        setAnnouncement(`Error al crear cuenta: ${signUpError.message}`)
         setLoading(false)
         return
       }
@@ -211,6 +324,7 @@ function RegisterContent() {
 
         if (userError && userError.code !== '23505' && userError.code !== '409') {
           setError(userError.message)
+          setAnnouncement(`Error: ${userError.message}`)
           setLoading(false)
           return
         }
@@ -227,12 +341,15 @@ function RegisterContent() {
           }
         }
 
+        setAnnouncement('Cuenta creada exitosamente')
         const destination = step1Data.accountType === 'doctor' ? '/doctor/onboarding' : '/app'
         router.push(destination)
         router.refresh()
       }
     } catch {
-      setError('Ocurrió un error. Por favor intenta de nuevo.')
+      const errorMsg = 'Ocurrió un error. Por favor intenta de nuevo.'
+      setError(errorMsg)
+      setAnnouncement(errorMsg)
       setLoading(false)
     }
   }
@@ -240,8 +357,27 @@ function RegisterContent() {
   const progress = (currentStep / 3) * 100
   const isDoctor = step1Data.accountType === 'doctor'
 
+  // Get current form errors
+  const getCurrentErrors = () => {
+    if (currentStep === 1) return step1Form.formState.errors
+    if (currentStep === 2) return step2Form.formState.errors
+    if (currentStep === 3) {
+      return isDoctor ? step3DoctorForm.formState.errors : step3PatientForm.formState.errors
+    }
+    return {}
+  }
+
+  const currentErrors = getCurrentErrors()
+  const errorSummary = Object.entries(currentErrors).reduce((acc, [key, err]) => {
+    if (err?.message) acc[key] = err.message
+    return acc
+  }, {} as Record<string, string>)
+
   return (
     <div className="min-h-screen grid lg:grid-cols-2">
+      {/* Screen reader announcer */}
+      <FormValidationAnnouncer message={announcement} politeness="assertive" />
+
       {/* Left Panel - Image & Branding */}
       <div className="relative hidden lg:flex flex-col justify-between bg-zinc-900 p-10 text-white">
         <div
@@ -313,12 +449,17 @@ function RegisterContent() {
             </div>
 
             {/* Progress */}
-            <Progress value={progress} className="h-1.5" />
+            <Progress value={progress} className="h-1.5" aria-label={`Progreso: ${Math.round(progress)}%`} />
+
+            {/* Error Summary */}
+            {Object.keys(errorSummary).length > 0 && (
+              <FormErrorSummary errors={errorSummary} />
+            )}
 
             {/* Error */}
             {error && (
-              <Alert variant="destructive">
-                <AlertCircle className="h-4 w-4" />
+              <Alert variant="destructive" role="alert" aria-live="assertive">
+                <AlertCircle className="h-4 w-4" aria-hidden="true" />
                 <AlertDescription>{error}</AlertDescription>
               </Alert>
             )}
@@ -345,8 +486,12 @@ function RegisterContent() {
 
                   <RadioGroup
                     value={step1Form.watch('accountType')}
-                    onValueChange={(value) => step1Form.setValue('accountType', value as 'patient' | 'doctor')}
+                    onValueChange={(value) => {
+                      step1Form.setValue('accountType', value as 'patient' | 'doctor')
+                      announceValidation('Tipo de cuenta', '', true)
+                    }}
                     className="space-y-3"
+                    aria-label="Selecciona el tipo de cuenta"
                   >
                     <div className="relative">
                       <RadioGroupItem value="patient" id="patient" className="peer sr-only" />
@@ -365,6 +510,7 @@ function RegisterContent() {
                           initial={false}
                           animate={{ scale: step1Form.watch('accountType') === 'patient' ? 1 : 0 }}
                           className="w-5 h-5 bg-primary rounded-full flex items-center justify-center"
+                          aria-hidden="true"
                         >
                           <Check className="w-3 h-3 text-white" />
                         </motion.div>
@@ -388,6 +534,7 @@ function RegisterContent() {
                           initial={false}
                           animate={{ scale: step1Form.watch('accountType') === 'doctor' ? 1 : 0 }}
                           className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center"
+                          aria-hidden="true"
                         >
                           <Check className="w-3 h-3 text-white" />
                         </motion.div>
@@ -416,15 +563,28 @@ function RegisterContent() {
                   </div>
 
                   <div className="space-y-3">
+                    {/* Full Name */}
                     <div>
-                      <Label htmlFor="fullName" className="text-sm">Nombre completo</Label>
+                      <Label htmlFor="fullName" className="text-sm">
+                        Nombre completo
+                        <span className="text-destructive ml-1" aria-hidden="true">*</span>
+                        <span className="sr-only">(requerido)</span>
+                      </Label>
                       <div className="relative mt-1.5">
                         <Input
                           id="fullName"
                           {...step2Form.register('fullName', {
-                            onChange: (e) => handleFieldValidation('fullName', e.target.value.length >= 3)
+                            onChange: (e) => {
+                              const isValid = e.target.value.length >= 3
+                              handleFieldValidation('fullName', isValid, 'Mínimo 3 caracteres')
+                            }
                           })}
                           placeholder={isDoctor ? 'Dr. Juan Pérez' : 'Juan Pérez'}
+                          aria-invalid={!!step2Form.formState.errors.fullName}
+                          aria-describedby={step2Form.formState.errors.fullName ? "fullName-error" : undefined}
+                          aria-required="true"
+                          onBlur={(e) => handleBlur('Nombre completo', e.target.value, (v) => v.length >= 3, 'El nombre debe tener al menos 3 caracteres')}
+                          className={validatedFields.fullName ? "border-green-500 pr-10" : ""}
                         />
                         <AnimatePresence>
                           {validatedFields.fullName && (
@@ -433,6 +593,7 @@ function RegisterContent() {
                               animate={{ scale: 1 }}
                               exit={{ scale: 0 }}
                               className="absolute right-3 top-1/2 -translate-y-1/2"
+                              aria-hidden="true"
                             >
                               <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
                                 <Check className="w-2.5 h-2.5 text-white" />
@@ -441,21 +602,36 @@ function RegisterContent() {
                           )}
                         </AnimatePresence>
                       </div>
-                      {step2Form.formState.errors.fullName && (
-                        <p className="text-sm text-destructive mt-1">{step2Form.formState.errors.fullName.message}</p>
-                      )}
+                      <FieldErrorMessage
+                        errorId="fullName-error"
+                        error={step2Form.formState.errors.fullName?.message || null}
+                        touched={touchedFields.fullName || step2Form.formState.touchedFields.fullName || false}
+                      />
                     </div>
 
+                    {/* Email */}
                     <div>
-                      <Label htmlFor="email" className="text-sm">Correo electrónico</Label>
+                      <Label htmlFor="email" className="text-sm">
+                        Correo electrónico
+                        <span className="text-destructive ml-1" aria-hidden="true">*</span>
+                        <span className="sr-only">(requerido)</span>
+                      </Label>
                       <div className="relative mt-1.5">
                         <Input
                           id="email"
                           type="email"
                           {...step2Form.register('email', {
-                            onChange: (e) => handleFieldValidation('email', /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.target.value))
+                            onChange: (e) => {
+                              const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.target.value)
+                              handleFieldValidation('email', isValid, 'Correo inválido')
+                            }
                           })}
                           placeholder="tu@email.com"
+                          aria-invalid={!!step2Form.formState.errors.email}
+                          aria-describedby={step2Form.formState.errors.email ? "email-error" : undefined}
+                          aria-required="true"
+                          onBlur={(e) => handleBlur('Correo electrónico', e.target.value, (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), 'Correo electrónico inválido')}
+                          className={validatedFields.email ? "border-green-500 pr-10" : ""}
                         />
                         <AnimatePresence>
                           {validatedFields.email && (
@@ -464,6 +640,7 @@ function RegisterContent() {
                               animate={{ scale: 1 }}
                               exit={{ scale: 0 }}
                               className="absolute right-3 top-1/2 -translate-y-1/2"
+                              aria-hidden="true"
                             >
                               <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
                                 <Check className="w-2.5 h-2.5 text-white" />
@@ -472,41 +649,63 @@ function RegisterContent() {
                           )}
                         </AnimatePresence>
                       </div>
-                      {step2Form.formState.errors.email && (
-                        <p className="text-sm text-destructive mt-1">{step2Form.formState.errors.email.message}</p>
-                      )}
-                    </div>
-
-                    <div>
-                      <Label htmlFor="phone" className="text-sm">Teléfono (opcional)</Label>
-                      <Input
-                        id="phone"
-                        type="tel"
-                        {...step2Form.register('phone')}
-                        placeholder="55 1234 5678"
-                        className="mt-1.5"
+                      <FieldErrorMessage
+                        errorId="email-error"
+                        error={step2Form.formState.errors.email?.message || null}
+                        touched={touchedFields.email || step2Form.formState.touchedFields.email || false}
                       />
                     </div>
 
+                    {/* Phone */}
                     <div>
-                      <Label htmlFor="password" className="text-sm">Contraseña</Label>
+                      <Label htmlFor="phone" className="text-sm">Teléfono (opcional)</Label>
+                      <div className="relative mt-1.5">
+                        <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" aria-hidden="true" />
+                        <Input
+                          id="phone"
+                          type="tel"
+                          {...step2Form.register('phone')}
+                          placeholder="55 1234 5678"
+                          className="pl-10"
+                          aria-describedby="phone-hint"
+                        />
+                      </div>
+                      <p id="phone-hint" className="text-xs text-muted-foreground mt-1">
+                        Opcional, para notificaciones importantes
+                      </p>
+                    </div>
+
+                    {/* Password */}
+                    <div>
+                      <Label htmlFor="password" className="text-sm">
+                        Contraseña
+                        <span className="text-destructive ml-1" aria-hidden="true">*</span>
+                        <span className="sr-only">(requerido)</span>
+                      </Label>
                       <Input
                         id="password"
                         type="password"
                         {...step2Form.register('password', {
                           onChange: (e) => {
                             handlePasswordChange(e.target.value)
-                            handleFieldValidation('password', e.target.value.length >= 6)
+                            const isValid = e.target.value.length >= 6
+                            handleFieldValidation('password', isValid, 'Mínimo 6 caracteres')
                           }
                         })}
                         placeholder="Mínimo 6 caracteres"
                         className="mt-1.5"
+                        aria-invalid={!!step2Form.formState.errors.password}
+                        aria-describedby={step2Form.formState.errors.password ? "password-error password-strength" : "password-strength"}
+                        aria-required="true"
+                        onBlur={(e) => handleBlur('Contraseña', e.target.value, (v) => v.length >= 6, 'La contraseña debe tener al menos 6 caracteres')}
                       />
-                      {step2Form.formState.errors.password && (
-                        <p className="text-sm text-destructive mt-1">{step2Form.formState.errors.password.message}</p>
-                      )}
+                      <FieldErrorMessage
+                        errorId="password-error"
+                        error={step2Form.formState.errors.password?.message || null}
+                        touched={touchedFields.password || step2Form.formState.touchedFields.password || false}
+                      />
                       {step2Form.watch('password') && (
-                        <div className="mt-2 space-y-1.5">
+                        <div id="password-strength" className="mt-2 space-y-1.5">
                           <div className="flex items-center justify-between text-xs">
                             <span className="text-muted-foreground">Seguridad:</span>
                             <span className={`font-medium ${
@@ -517,7 +716,7 @@ function RegisterContent() {
                               {passwordStrength.label}
                             </span>
                           </div>
-                          <div className="h-1 bg-muted rounded-full overflow-hidden">
+                          <div className="h-1 bg-muted rounded-full overflow-hidden" aria-hidden="true">
                             <motion.div
                               initial={{ width: 0 }}
                               animate={{ width: `${passwordStrength.strength}%` }}
@@ -525,20 +724,39 @@ function RegisterContent() {
                               className={`h-full ${passwordStrength.color} rounded-full`}
                             />
                           </div>
+                          <p className="sr-only">
+                            Fortaleza de la contraseña: {passwordStrength.label}
+                          </p>
                         </div>
                       )}
                     </div>
 
+                    {/* Confirm Password */}
                     <div>
-                      <Label htmlFor="confirmPassword" className="text-sm">Confirmar contraseña</Label>
+                      <Label htmlFor="confirmPassword" className="text-sm">
+                        Confirmar contraseña
+                        <span className="text-destructive ml-1" aria-hidden="true">*</span>
+                        <span className="sr-only">(requerido)</span>
+                      </Label>
                       <div className="relative mt-1.5">
                         <Input
                           id="confirmPassword"
                           type="password"
                           {...step2Form.register('confirmPassword', {
-                            onChange: (e) => handleFieldValidation('confirmPassword', e.target.value === step2Form.watch('password') && e.target.value.length >= 6)
+                            onChange: (e) => {
+                              const isValid = e.target.value === step2Form.watch('password') && e.target.value.length >= 6
+                              handleFieldValidation('confirmPassword', isValid, 'Las contraseñas no coinciden')
+                            }
                           })}
                           placeholder="Confirma tu contraseña"
+                          aria-invalid={!!step2Form.formState.errors.confirmPassword}
+                          aria-describedby={step2Form.formState.errors.confirmPassword ? "confirmPassword-error" : undefined}
+                          aria-required="true"
+                          onBlur={(e) => {
+                            const password = step2Form.watch('password')
+                            handleBlur('Confirmar contraseña', e.target.value, (v) => v === password && v.length >= 6, 'Las contraseñas no coinciden')
+                          }}
+                          className={validatedFields.confirmPassword ? "border-green-500 pr-10" : ""}
                         />
                         <AnimatePresence>
                           {validatedFields.confirmPassword && (
@@ -547,6 +765,7 @@ function RegisterContent() {
                               animate={{ scale: 1 }}
                               exit={{ scale: 0 }}
                               className="absolute right-3 top-1/2 -translate-y-1/2"
+                              aria-hidden="true"
                             >
                               <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
                                 <Check className="w-2.5 h-2.5 text-white" />
@@ -555,9 +774,11 @@ function RegisterContent() {
                           )}
                         </AnimatePresence>
                       </div>
-                      {step2Form.formState.errors.confirmPassword && (
-                        <p className="text-sm text-destructive mt-1">{step2Form.formState.errors.confirmPassword.message}</p>
-                      )}
+                      <FieldErrorMessage
+                        errorId="confirmPassword-error"
+                        error={step2Form.formState.errors.confirmPassword?.message || null}
+                        touched={touchedFields.confirmPassword || step2Form.formState.touchedFields.confirmPassword || false}
+                      />
                     </div>
                   </div>
                 </motion.div>
@@ -600,12 +821,24 @@ function RegisterContent() {
                           {...step3DoctorForm.register('licenseNumber')}
                           placeholder="12345678"
                           className="mt-1.5"
+                          aria-describedby="license-hint"
                         />
+                        <p id="license-hint" className="text-xs text-muted-foreground mt-1">
+                          Puedes agregarlo más tarde en tu perfil
+                        </p>
                       </div>
 
                       <div>
-                        <Label className="text-sm">Especialidades</Label>
-                        <div className="grid grid-cols-2 gap-2 mt-2">
+                        <Label className="text-sm">
+                          Especialidades
+                          <span className="text-destructive ml-1" aria-hidden="true">*</span>
+                          <span className="sr-only">(requerido, selecciona al menos una)</span>
+                        </Label>
+                        <div 
+                          className="grid grid-cols-2 gap-2 mt-2"
+                          role="group"
+                          aria-label="Especialidades médicas"
+                        >
                           {specialties.map((specialty) => {
                             const isSelected = step3DoctorForm.watch('specialties')?.includes(specialty)
                             return (
@@ -623,19 +856,23 @@ function RegisterContent() {
                                     const current = step3DoctorForm.getValues('specialties') || []
                                     if (checked) {
                                       step3DoctorForm.setValue('specialties', [...current, specialty])
+                                      announceValidation(specialty, '', true)
                                     } else {
                                       step3DoctorForm.setValue('specialties', current.filter(s => s !== specialty))
                                     }
                                   }}
+                                  aria-label={`Especialidad: ${specialty}`}
                                 />
                                 <span className="font-medium">{specialty}</span>
                               </label>
                             )
                           })}
                         </div>
-                        {step3DoctorForm.formState.errors.specialties && (
-                          <p className="text-sm text-destructive mt-2">{step3DoctorForm.formState.errors.specialties.message}</p>
-                        )}
+                        <FieldErrorMessage
+                          errorId="specialties-error"
+                          error={step3DoctorForm.formState.errors.specialties?.message || null}
+                          touched={Boolean(step3DoctorForm.formState.touchedFields.specialties)}
+                        />
                       </div>
 
                       <Alert className="bg-green-50 border-green-200">
@@ -653,6 +890,7 @@ function RegisterContent() {
                             step3PatientForm.setValue('hasMedicalHistory', checked as boolean)
                           }
                           className="mt-0.5"
+                          aria-label="Tengo condiciones médicas previas"
                         />
                         <div>
                           <div className="font-medium text-sm">Historial médico</div>
@@ -665,13 +903,21 @@ function RegisterContent() {
                       <label className="flex items-start gap-3 p-3.5 rounded-lg border cursor-pointer hover:border-muted-foreground/25 transition-all">
                         <Checkbox
                           checked={step3PatientForm.watch('acceptTerms')}
-                          onCheckedChange={(checked) =>
+                          onCheckedChange={(checked) => {
                             step3PatientForm.setValue('acceptTerms', checked as boolean)
-                          }
+                            if (checked) {
+                              announceValidation('Términos y condiciones', '', true)
+                            }
+                          }}
                           className="mt-0.5"
+                          aria-label="Acepto los términos y condiciones"
                         />
                         <div>
-                          <div className="font-medium text-sm">Acepto los términos</div>
+                          <div className="font-medium text-sm">
+                            Acepto los términos
+                            <span className="text-destructive ml-1" aria-hidden="true">*</span>
+                            <span className="sr-only">(requerido)</span>
+                          </div>
                           <div className="text-xs text-muted-foreground mt-0.5">
                             He leído y acepto los{' '}
                             <Link href="/terms" className="underline underline-offset-4 hover:text-primary">
@@ -684,9 +930,11 @@ function RegisterContent() {
                           </div>
                         </div>
                       </label>
-                      {step3PatientForm.formState.errors.acceptTerms && (
-                        <p className="text-sm text-destructive">{step3PatientForm.formState.errors.acceptTerms.message}</p>
-                      )}
+                      <FieldErrorMessage
+                        errorId="acceptTerms-error"
+                        error={step3PatientForm.formState.errors.acceptTerms?.message || null}
+                        touched={step3PatientForm.formState.touchedFields.acceptTerms || false}
+                      />
                     </div>
                   )}
                 </motion.div>
@@ -699,7 +947,7 @@ function RegisterContent() {
                 href="/doctores"
                 className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
               >
-                <Search className="w-4 h-4" />
+                <Search className="w-4 h-4" aria-hidden="true" />
                 <span className="hidden sm:inline">Buscar doctores</span>
                 <span className="sm:hidden">Doctores</span>
               </Link>
@@ -707,11 +955,14 @@ function RegisterContent() {
                 <Button
                   type="button"
                   variant="outline"
-                  onClick={() => setCurrentStep(currentStep - 1)}
+                  onClick={() => {
+                    setCurrentStep(currentStep - 1)
+                    setAnnouncement(`Volviendo al paso ${currentStep - 1}`)
+                  }}
                   className="flex-1"
                   disabled={loading}
                 >
-                  <ChevronLeft className="w-4 h-4 mr-1" />
+                  <ChevronLeft className="w-4 h-4 mr-1" aria-hidden="true" />
                   Atrás
                 </Button>
               )}
@@ -726,7 +977,7 @@ function RegisterContent() {
                   }`}
                 >
                   Siguiente
-                  <ChevronRight className="w-4 h-4 ml-1" />
+                  <ChevronRight className="w-4 h-4 ml-1" aria-hidden="true" />
                 </Button>
               ) : (
                 <Button
@@ -739,13 +990,13 @@ function RegisterContent() {
                 >
                   {loading ? (
                     <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
                       Creando cuenta...
                     </>
                   ) : (
                     <>
                       Crear cuenta
-                      <Check className="w-4 h-4 ml-1" />
+                      <Check className="w-4 h-4 ml-1" aria-hidden="true" />
                     </>
                   )}
                 </Button>
@@ -769,8 +1020,9 @@ function RegisterContent() {
 export default function RegisterPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen flex items-center justify-center">
-        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+      <div className="min-h-screen flex items-center justify-center" role="status" aria-live="polite">
+        <span className="sr-only">Cargando...</span>
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" aria-hidden="true" />
       </div>
     }>
       <RegisterContent />

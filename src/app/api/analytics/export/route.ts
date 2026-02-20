@@ -7,7 +7,7 @@ export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url)
     const type = (searchParams.get('type') as 'admin' | 'doctor') || 'admin'
-    const format = searchParams.get('format') || 'json'
+    const format = searchParams.get('format') ?? 'json'
 
     const { user } = await requireRole(type === 'admin' ? 'admin' : 'doctor')
     

@@ -103,7 +103,7 @@ export function RecommendedDoctorsCard({
 
                 <div className="flex-1 min-w-0">
                   <h4 className="font-semibold text-gray-900 truncate">
-                    {match.doctor?.profile?.full_name || 'Especialista'}
+                    {match.doctor?.profile?.full_name ?? 'Especialista'}
                   </h4>
 
                   {/* Specialty */}

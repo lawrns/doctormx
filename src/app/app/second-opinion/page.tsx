@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import AppNavigation from '@/components/app/AppNavigation'
-import { AIConsultaClient } from '../ai-consulta/ai-consulta-client'
+import { AIConsultaClient } from '../ai-consulta/AiConsultaClient'
 
 export default async function SecondOpinionPage() {
   const supabase = await createClient()

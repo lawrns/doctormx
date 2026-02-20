@@ -224,19 +224,19 @@ export async function conductOPQRSTAssessment(
         // Suggest specialty
         const suggestedSpecialty = suggestSpecialty(
             symptoms,
-            opqrstData.chiefComplaint || ''
+            opqrstData.chiefComplaint ?? ''
         )
 
         // Generate summary
         const summary: TriageSummary = {
-            chiefComplaint: opqrstData.chiefComplaint || 'No especificado',
+            chiefComplaint: opqrstData.chiefComplaint ?? 'No especificado',
             symptoms: symptoms,
-            onsetTime: opqrstData.onset || 'No especificado',
-            provocation: opqrstData.provocation || 'No especificado',
-            quality: opqrstData.quality || 'No especificado',
-            radiation: opqrstData.radiation || 'No especificado',
+            onsetTime: opqrstData.onset ?? 'No especificado',
+            provocation: opqrstData.provocation ?? 'No especificado',
+            quality: opqrstData.quality ?? 'No especificado',
+            radiation: opqrstData.radiation ?? 'No especificado',
             severity: severityScore,
-            timing: opqrstData.timing || 'No especificado',
+            timing: opqrstData.timing ?? 'No especificado',
             urgencyLevel,
             redFlags,
             suggestedSpecialty,
@@ -309,8 +309,7 @@ Banderas rojas que requieren 911:
         )
 
         return (
-            response.content ||
-            'Lo siento, no pude procesar tu mensaje. Por favor intenta de nuevo.'
+            response.content ?? 'Lo siento, no pude procesar tu mensaje. Por favor intenta de nuevo.'
         )
     } catch (error) {
         logger.error('Error generating Dr. Simeon response', { error: (error as Error).message }, error as Error)

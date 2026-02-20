@@ -422,8 +422,8 @@ export function getRedisConfig(): RedisConfig {
   }
   
   return {
-    restUrl: restUrl || '',
-    restToken: restToken || '',
+    restUrl: restUrl ?? '',
+    restToken: restToken ?? '',
   };
 }
 

@@ -192,7 +192,7 @@ export function useLiveRegion(defaultRole: LiveRegionRole = 'status'): UseLiveRe
     options?: { role?: LiveRegionRole; politeness?: 'polite' | 'assertive' }
   ) => {
     setRole(options?.role || defaultRole)
-    setPoliteness(options?.politeness || 'polite')
+    setPoliteness(options?.politeness ?? 'polite')
     setAnnouncement(message)
   }
 
@@ -228,7 +228,7 @@ export function MultiLiveRegion({
       {regions.map((region) => (
         <div
           key={region.id}
-          role={region.role || 'status'}
+          role={region.role ?? 'status'}
           aria-live={region.role === 'alert' ? 'assertive' : 'polite'}
           aria-atomic
           className="sr-only"

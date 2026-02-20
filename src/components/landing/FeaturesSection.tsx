@@ -4,52 +4,47 @@ import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/card'
 import { BadgeCheck, Video, Calendar, FileText, Shield, MessageSquare } from 'lucide-react'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
+import { useTranslations } from 'next-intl'
 
-const features = [
+const featuresConfig = [
   {
+    key: 'verified',
     icon: BadgeCheck,
-    title: 'Doctores con cédula verificada',
-    description: 'Cada especialista está validado con su cédula profesional ante la SEP. Consulta perfiles completos antes de agendar.',
     color: 'text-blue-600',
     bgColor: 'bg-blue-50',
     featured: false,
   },
   {
+    key: 'video',
     icon: Video,
-    title: 'Videoconsulta HD desde casa',
-    description: 'Consultas por video con calidad HD y conexión segura. Tu doctor te ve y escucha como si estuvieras en su consultorio.',
     color: 'text-primary-500',
     bgColor: 'bg-primary-50',
     featured: false,
   },
   {
+    key: 'appointments',
     icon: Calendar,
-    title: 'Citas en menos de 24 horas',
-    description: 'Encuentra disponibilidad en tiempo real. Agenda tu consulta en minutos, no en semanas.',
     color: 'text-amber-500',
     bgColor: 'bg-amber-50',
     featured: false,
   },
   {
+    key: 'simeon',
     icon: FileText,
-    title: 'Dr. Simeon: tu copiloto de salud',
-    description: 'Nuestro asistente con IA te ayuda a entender síntomas y preparar preguntas para tu doctor. No diagnostica, orienta.',
     color: 'text-white',
     bgColor: 'bg-white/20',
     featured: true,
   },
   {
+    key: 'privacy',
     icon: Shield,
-    title: 'Privacidad de grado médico',
-    description: 'Encriptación punto a punto y cumplimiento con normativas mexicanas de protección de datos de salud.',
     color: 'text-blue-500',
     bgColor: 'bg-blue-50',
     featured: false,
   },
   {
+    key: 'followup',
     icon: MessageSquare,
-    title: 'Seguimiento continuo',
-    description: 'Mensajea a tu doctor antes y después de la consulta. Tu historial médico siempre accesible.',
     color: 'text-teal-600',
     bgColor: 'bg-teal-50',
     featured: false,
@@ -58,6 +53,7 @@ const features = [
 
 export function FeaturesSection() {
   const prefersReducedMotion = useReducedMotion()
+  const t = useTranslations('landing.features')
 
   return (
     <section
@@ -83,23 +79,23 @@ export function FeaturesSection() {
             transition={{ duration: 0.4, ease: [0, 0, 0.2, 1] }}
             className="inline-block px-4 py-1.5 bg-primary-50 text-primary-500 text-sm font-semibold rounded-full mb-4"
           >
-            Cómo funciona
+            {t('badge')}
           </motion.span>
           <h2
             id="features-section-heading"
             className="section-headline text-3xl sm:text-4xl lg:text-5xl mb-4"
           >
-            Salud digital, atencion humana
+            {t('title')}
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            Una plataforma diseñada para conectarte con especialistas mexicanos certificados, de forma rápida, segura y privada.
+            {t('description')}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {features.map((feature, index) => (
+          {featuresConfig.map((feature, index) => (
             <motion.div
-              key={feature.title}
+              key={feature.key}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -117,7 +113,7 @@ export function FeaturesSection() {
                 }`}
                 tabIndex={0}
                 role="article"
-                aria-label={feature.title}
+                aria-label={t(`items.${feature.key}.title`)}
               >
                 {/* Hover gradient overlay - only for non-featured */}
                 {!feature.featured && (
@@ -144,12 +140,12 @@ export function FeaturesSection() {
                     ? 'text-white'
                     : 'text-text-primary group-hover:text-primary-600'
                 }`}>
-                  {feature.title}
+                  {t(`items.${feature.key}.title`)}
                 </h3>
                 <p className={`relative leading-relaxed ${
                   feature.featured ? 'text-white/90' : 'text-text-secondary'
                 }`}>
-                  {feature.description}
+                  {t(`items.${feature.key}.description`)}
                 </p>
 
                 {/* Arrow indicator on hover - smooth slide-in */}

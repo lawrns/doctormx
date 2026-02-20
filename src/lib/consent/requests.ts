@@ -250,7 +250,7 @@ export async function sendConsentRequestReminder(
   const { data, error } = await supabase
     .from('consent_requests')
     .update({
-      reminder_count: (request.reminder_count || 0) + 1,
+      reminder_count: (request.reminder_count ?? 0) + 1,
       last_reminder_at: new Date().toISOString(),
     })
     .eq('id', requestId)
@@ -290,7 +290,7 @@ export async function expireOldConsentRequests(): Promise<number> {
     return 0
   }
 
-  return data?.length || 0
+  return data?.length ?? 0
 }
 
 /**

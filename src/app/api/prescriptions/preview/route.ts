@@ -34,8 +34,19 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Appointment not found' }, { status: 404 })
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const apt = appointment as any
+    const apt = appointment as unknown as {
+      patient?: Array<{ full_name: string; date_of_birth: string | null }> | { full_name: string; date_of_birth: string | null } | undefined
+      doctor?: Array<{
+        profile?: Array<{ full_name: string }> | { full_name: string }
+        license_number?: string | null
+        specialty?: string | null
+      }> | {
+        profile?: Array<{ full_name: string }> | { full_name: string }
+        license_number?: string | null
+        specialty?: string | null
+      } | undefined
+      start_ts: string
+    }
     const patient = Array.isArray(apt.patient) ? apt.patient[0] : apt.patient
     const doctor = Array.isArray(apt.doctor) ? apt.doctor[0] : apt.doctor
     const doctorProfile = doctor?.profile ? (Array.isArray(doctor.profile) ? doctor.profile[0] : doctor.profile) : null
@@ -46,16 +57,16 @@ export async function POST(request: NextRequest) {
         appointment_id: appointmentId,
         diagnosis,
         medications: JSON.stringify(medications),
-        instructions: instructions || '',
+        instructions: instructions ?? '',
       },
       {
-        full_name: doctorProfile?.full_name || 'Doctor',
-        license_number: doctor.license_number,
-        specialty: doctor.specialty,
+        full_name: doctorProfile?.full_name ?? 'Doctor',
+        license_number: doctor?.license_number ?? null,
+        specialty: doctor?.specialty ?? null,
       },
       {
-        full_name: patient.full_name,
-        date_of_birth: patient.date_of_birth,
+        full_name: patient?.full_name ?? 'Paciente',
+        date_of_birth: patient?.date_of_birth ?? null,
       },
       new Date(apt.start_ts)
     )

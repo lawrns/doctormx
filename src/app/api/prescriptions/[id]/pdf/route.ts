@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { requireRole } from '@/lib/auth'
+import { createClient } from '@/lib/supabase/server'
 import { getPrescriptionPDF } from '@/lib/prescriptions'
 import { logger } from '@/lib/observability/logger'
 
@@ -8,7 +8,24 @@ export async function GET(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { user, supabase } = await requireRole('doctor')
+    const supabase = await createClient()
+    const { data: { user } } = await supabase.auth.getUser()
+    
+    if (!user) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+    
+    // Check user role
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('role')
+      .eq('id', user.id)
+      .single()
+    
+    if (!profile || profile.role !== 'doctor') {
+      return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+    }
+    
     const { id } = await params
 
     const { data: prescription } = await supabase

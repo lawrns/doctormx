@@ -80,7 +80,7 @@ export async function GET(request: NextRequest) {
 
     // Get date range from query params (default: last 30 days)
     const url = new URL(request.url)
-    const days = parseInt(url.searchParams.get('days') || '30')
+    const days = parseInt(url.searchParams.get('days') ?? '30')
     const startDate = new Date()
     startDate.setDate(startDate.getDate() - days)
 
@@ -111,10 +111,10 @@ export async function GET(request: NextRequest) {
     // Build metrics
     const metrics: AIMetrics = {
       overview: {
-        totalRequests: aiLogs?.length || 0,
-        totalCostUSD: aiLogs?.reduce((sum, log) => sum + (log.cost_usd || 0), 0) || 0,
+        totalRequests: aiLogs?.length ?? 0,
+        totalCostUSD: aiLogs?.reduce((sum, log) => sum + (log.cost_usd ?? 0), 0) || 0,
         avgLatencyMs: aiLogs?.length
-          ? aiLogs.reduce((sum, log) => sum + (log.latency_ms || 0), 0) / aiLogs.length
+          ? aiLogs.reduce((sum, log) => sum + (log.latency_ms ?? 0), 0) / aiLogs.length
           : 0,
         activeDoctors: 0, // Would need to aggregate unique doctor_ids
       },
@@ -122,25 +122,25 @@ export async function GET(request: NextRequest) {
       byEndpoint: [],
       byDay: [],
       copilotStats: {
-        totalSessions: copilotSessions?.length || 0,
+        totalSessions: copilotSessions?.length ?? 0,
         avgSessionLength: copilotSessions?.length
-          ? copilotSessions.reduce((sum, s) => sum + (s.messages?.length || 0), 0) / copilotSessions.length
+          ? copilotSessions.reduce((sum, s) => sum + (s.messages?.length ?? 0), 0) / copilotSessions.length
           : 0,
-        totalSOAPNotes: copilotSessions?.filter(s => s.soap_note)?.length || 0,
+        totalSOAPNotes: copilotSessions?.filter(s => s.soap_note)?.length ?? 0,
         totalDifferentialDiagnoses: 0, // Would need to parse suggestions
       },
       ragStats: {
-        totalDocuments: knowledgeStats?.length || 0,
+        totalDocuments: knowledgeStats?.length ?? 0,
         avgRetrievalScore: 0.75, // Placeholder
         topSpecialties: aggregateSpecialties(knowledgeStats || []),
       },
       recentActivity: (aiLogs || []).slice(0, 20).map(log => ({
         timestamp: log.created_at,
-        endpoint: log.endpoint || 'unknown',
-        provider: log.provider || 'unknown',
-        model: log.model || 'unknown',
-        costUSD: log.cost_usd || 0,
-        latencyMs: log.latency_ms || 0,
+        endpoint: log.endpoint ?? 'unknown',
+        provider: log.provider ?? 'unknown',
+        model: log.model ?? 'unknown',
+        costUSD: log.cost_usd ?? 0,
+        latencyMs: log.latency_ms ?? 0,
       })),
     }
 
@@ -148,7 +148,7 @@ export async function GET(request: NextRequest) {
     if (aiLogs) {
       const providerMap = new Map<string, { requests: number; cost: number; latency: number; count: number }>()
       for (const log of aiLogs) {
-        const provider = log.provider || 'unknown'
+        const provider = log.provider ?? 'unknown'
         if (!providerMap.has(provider)) {
           providerMap.set(provider, { requests: 0, cost: 0, latency: 0, count: 0 })
         }
@@ -157,8 +157,8 @@ export async function GET(request: NextRequest) {
           throw new Error(`Provider stats not found for: ${provider}`)
         }
         stats.requests++
-        stats.cost += log.cost_usd || 0
-        stats.latency += log.latency_ms || 0
+        stats.cost += log.cost_usd ?? 0
+        stats.latency += log.latency_ms ?? 0
         stats.count++
       }
       metrics.byProvider = Array.from(providerMap.entries()).map(([provider, stats]) => ({
@@ -173,7 +173,7 @@ export async function GET(request: NextRequest) {
     if (aiLogs) {
       const endpointMap = new Map<string, { requests: number; cost: number; latency: number; count: number }>()
       for (const log of aiLogs) {
-        const endpoint = log.endpoint || 'unknown'
+        const endpoint = log.endpoint ?? 'unknown'
         if (!endpointMap.has(endpoint)) {
           endpointMap.set(endpoint, { requests: 0, cost: 0, latency: 0, count: 0 })
         }
@@ -182,8 +182,8 @@ export async function GET(request: NextRequest) {
           throw new Error(`Endpoint stats not found for: ${endpoint}`)
         }
         stats.requests++
-        stats.cost += log.cost_usd || 0
-        stats.latency += log.latency_ms || 0
+        stats.cost += log.cost_usd ?? 0
+        stats.latency += log.latency_ms ?? 0
         stats.count++
       }
       metrics.byEndpoint = Array.from(endpointMap.entries()).map(([endpoint, stats]) => ({
@@ -207,7 +207,7 @@ export async function GET(request: NextRequest) {
           throw new Error(`Day stats not found for: ${day}`)
         }
         stats.requests++
-        stats.cost += log.cost_usd || 0
+        stats.cost += log.cost_usd ?? 0
       }
       metrics.byDay = Array.from(dayMap.entries())
         .map(([date, stats]) => ({ date, requests: stats.requests, costUSD: stats.cost }))
@@ -228,8 +228,8 @@ export async function GET(request: NextRequest) {
 function aggregateSpecialties(documents: Array<{ specialty: string }>) {
   const specialtyMap = new Map<string, number>()
   for (const doc of documents) {
-    const specialty = doc.specialty || 'General'
-    specialtyMap.set(specialty, (specialtyMap.get(specialty) || 0) + 1)
+    const specialty = doc.specialty ?? 'General'
+    specialtyMap.set(specialty, (specialtyMap.get(specialty) ?? 0) + 1)
   }
   return Array.from(specialtyMap.entries())
     .map(([specialty, count]) => ({ specialty, count }))
@@ -279,13 +279,13 @@ export async function POST(request: NextRequest) {
       // Generate CSV
       const headers = ['Date', 'Endpoint', 'Provider', 'Model', 'Cost (USD)', 'Latency (ms)', 'User ID']
       const rows = aiLogs.map(log => [
-        log.created_at || '',
-        log.endpoint || '',
-        log.provider || '',
-        log.model || '',
-        (log.cost_usd || 0).toFixed(4),
-        log.latency_ms || 0,
-        log.user_id || '',
+        log.created_at ?? '',
+        log.endpoint ?? '',
+        log.provider ?? '',
+        log.model ?? '',
+        (log.cost_usd ?? 0).toFixed(4),
+        log.latency_ms ?? 0,
+        log.user_id ?? '',
       ])
       const csv = [headers.join(','), ...rows.map(r => r.join(','))].join('\n')
 

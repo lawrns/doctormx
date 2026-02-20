@@ -65,7 +65,18 @@ const createMockSupabaseClient = () => {
     limitCount: null as number | null,
   }
 
-  const mockQueryBuilder = (tableName: string, dataMap: Map<string, Record<string, unknown>>) => {
+  const mockQueryBuilder = (tableName: string, dataMap: Map<string, Record<string, unknown>>): {
+    select: ReturnType<typeof vi.fn>;
+    eq: ReturnType<typeof vi.fn>;
+    neq: ReturnType<typeof vi.fn>;
+    order: ReturnType<typeof vi.fn>;
+    limit: ReturnType<typeof vi.fn>;
+    single: ReturnType<typeof vi.fn>;
+    maybeSingle: ReturnType<typeof vi.fn>;
+    insert: ReturnType<typeof vi.fn>;
+    update: ReturnType<typeof vi.fn>;
+    delete: ReturnType<typeof vi.fn>;
+  } => {
     let selectFields = '*'
     let insertData: Record<string, unknown> | Record<string, unknown>[] | null = null
     let updateData: Record<string, unknown> | null = null
@@ -78,8 +89,8 @@ const createMockSupabaseClient = () => {
       }
       if (clientState.orderConfig) {
         items.sort((a, b) => {
-          const aVal = a[clientState.orderConfig!.column]
-          const bVal = b[clientState.orderConfig!.column]
+          const aVal = a[clientState.orderConfig!.column] as string | number
+          const bVal = b[clientState.orderConfig!.column] as string | number
           if (aVal < bVal) return clientState.orderConfig!.ascending ? -1 : 1
           if (aVal > bVal) return clientState.orderConfig!.ascending ? 1 : -1
           return 0
@@ -106,11 +117,11 @@ const createMockSupabaseClient = () => {
         return mockQueryBuilder(tableName, dataMap)
       }),
       in: vi.fn((column: string, values: unknown[]) => {
-        clientState.filters.push((items) => items.filter((item) => values.includes(item[column])))
+        clientState.filters.push((items) => items.filter((item) => values.includes(item[column as string])))
         return mockQueryBuilder(tableName, dataMap)
       }),
       is: vi.fn((column: string, value: unknown) => {
-        clientState.filters.push((items) => items.filter((item) => item[column] === value))
+        clientState.filters.push((items) => items.filter((item) => item[column as string] === value))
         return mockQueryBuilder(tableName, dataMap)
       }),
       or: vi.fn((query: string) => {

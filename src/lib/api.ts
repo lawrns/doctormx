@@ -25,7 +25,7 @@ export interface APIRequestOptions {
    * HTTP method
    * @default 'GET'
    */
-  method?: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE'
+  method?: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE' | 'HEAD'
   /**
    * Request body - automatically stringified if object
    */
@@ -100,8 +100,10 @@ const CSRF_COOKIE_NAME = 'csrf_token'
 /** CSRF header name */
 const CSRF_HEADER_NAME = 'x-csrf-token'
 
-/** Default request timeout in milliseconds */
-const DEFAULT_TIMEOUT = 30000
+import { TIME } from '@/lib/constants'
+
+/** Default request timeout in milliseconds - using shared constant */
+const DEFAULT_TIMEOUT = TIME.DEFAULT_TIMEOUT_MS
 
 // ============================================================================
 // CSRF TOKEN MANAGEMENT
@@ -186,13 +188,13 @@ async function parseErrorResponse(response: Response): Promise<{
     if (contentType?.includes('application/json')) {
       const data = await response.json()
       return {
-        message: data.message || data.error || 'An error occurred',
+        message: (data.message || data.error) ?? 'An error occurred',
         code: data.code,
         details: data.details,
       }
     }
     return {
-      message: await response.text() || 'An error occurred',
+      message: await response.text() ?? 'An error occurred',
     }
   } catch {
     return {
@@ -290,7 +292,7 @@ export async function apiRequest<T = unknown>(
   }
 
   // Build full URL
-  const fullUrl = url.startsWith('http') ? url : `${process.env.NEXT_PUBLIC_API_URL || ''}${url}`
+  const fullUrl = url.startsWith('http') ? url : `${process.env.NEXT_PUBLIC_API_URL ?? ''}${url}`
 
   // Create abort controller for timeout
   const controller = new AbortController()

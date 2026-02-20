@@ -82,7 +82,7 @@ export async function matchPharmacy(
     throw new Error('Prescription not found')
   }
 
-  const medications = JSON.parse(prescription.medications || '[]') as string[]
+  const medications = JSON.parse(prescription.medications ?? '[]') as string[]
 
   let query = supabase
     .from('pharmacy_sponsors')
@@ -118,7 +118,7 @@ export async function matchPharmacy(
       estimatedTotal: medications.length * 100, // Placeholder
       distance,
       savings: null,
-      hasDelivery: pharmacy.offers_delivery || false,
+      hasDelivery: pharmacy.offers_delivery ?? false,
       deliveryTime: pharmacy.delivery_time_hours || null,
       discountCode: pharmacy.doctory_discount_code || null,
       availability: medications.length,

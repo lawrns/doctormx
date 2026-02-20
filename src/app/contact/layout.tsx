@@ -1,20 +1,25 @@
 import type { Metadata } from 'next'
+import { getLocale } from 'next-intl/server'
+import { generateSEOMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Contacto | Doctor.mx',
-  description: '¿Tienes preguntas? Contáctanos en Doctor.mx. Estamos aquí para ayudarte con soporte técnico, facturación o información general.',
-  keywords: ['contacto Doctor.mx', 'soporte médico', 'ayuda telemedicina', 'atención al cliente'],
-  alternates: {
-    canonical: 'https://doctor.mx/contact',
-  },
-  openGraph: {
-    title: 'Contacto | Doctor.mx',
-    description: '¿Tienes preguntas? Contáctanos. Estamos aquí para ayudarte.',
-    type: 'website',
-    locale: 'es_MX',
-    url: 'https://doctor.mx/contact',
-    siteName: 'Doctor.mx',
-  },
+// I18N-007: Generate locale-aware metadata for contact page
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale()
+  return generateSEOMetadata(
+    {
+      path: '/contact',
+      title: locale === 'en'
+        ? "Contact | Doctor.mx"
+        : "Contacto | Doctor.mx",
+      description: locale === 'en'
+        ? "Have questions? Contact us at Doctor.mx. We're here to help with technical support, billing or general information."
+        : "¿Tienes preguntas? Contáctanos en Doctor.mx. Estamos aquí para ayudarte con soporte técnico, facturación o información general.",
+      keywords: locale === 'en'
+        ? "contact Doctor.mx, medical support, telemedicine help, customer service"
+        : "contacto Doctor.mx, soporte médico, ayuda telemedicina, atención al cliente",
+    },
+    locale
+  )
 }
 
 export default function ContactLayout({

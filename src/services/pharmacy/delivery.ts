@@ -14,6 +14,7 @@ import type {
 import { DeliveryType } from './types';
 import { DeliveryNotAvailableError } from './errors';
 import { PHARMACY_CONFIGS, MOCK_PHARMACY_LOCATIONS } from './config';
+import { LIMITS } from '@/lib/constants';
 
 // ============================================================================
 // UTILITY FUNCTIONS
@@ -54,7 +55,7 @@ async function withRetry<T>(
     backoffMultiplier?: number;
   } = {}
 ): Promise<T> {
-  const { maxRetries = 3, delayMs = 1000, backoffMultiplier = 2 } = options;
+  const { maxRetries = LIMITS.DEFAULT_MAX_RETRIES, delayMs = LIMITS.DEFAULT_RETRY_DELAY_MS, backoffMultiplier = LIMITS.RETRY_BACKOFF_MULTIPLIER } = options;
 
   let lastError: Error | undefined;
 
@@ -189,7 +190,7 @@ export class DeliveryService {
       const specific = estimates.find(e => e.pharmacyId === pharmacyId);
       return {
         available: specific?.available ?? false,
-        message: specific?.message || 'Farmacia no disponible',
+        message: specific?.message ?? 'Farmacia no disponible',
       };
     }
 

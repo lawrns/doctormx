@@ -1,4 +1,5 @@
 import { rateLimit } from './cache'
+import { TIME, LIMITS } from '@/lib/constants'
 
 // Type for rate limiter (either real Ratelimit or noop)
 type RateLimiterLike = {
@@ -11,12 +12,12 @@ export type RateLimitConfig = {
 }
 
 export const endpointRateLimits: Record<string, RateLimitConfig> = {
-  '/api/chat': { limit: 20, windowMs: 60000 },
-  '/api/ai/*': { limit: 10, windowMs: 60000 },
-  '/api/ai/copilot': { limit: 10, windowMs: 60000 },
-  '/api/ai/clinical': { limit: 10, windowMs: 60000 },
-  '/api/auth/*': { limit: 5, windowMs: 60000 },
-  '/api/*': { limit: 100, windowMs: 60000 },
+  '/api/chat': { limit: LIMITS.RATE_LIMIT_CHAT, windowMs: TIME.MINUTE_IN_MS },
+  '/api/ai/*': { limit: LIMITS.RATE_LIMIT_AI, windowMs: TIME.MINUTE_IN_MS },
+  '/api/ai/copilot': { limit: LIMITS.RATE_LIMIT_AI, windowMs: TIME.MINUTE_IN_MS },
+  '/api/ai/clinical': { limit: LIMITS.RATE_LIMIT_AI, windowMs: TIME.MINUTE_IN_MS },
+  '/api/auth/*': { limit: LIMITS.RATE_LIMIT_AUTH, windowMs: TIME.MINUTE_IN_MS },
+  '/api/*': { limit: LIMITS.RATE_LIMIT_GENERAL, windowMs: TIME.MINUTE_IN_MS },
 }
 
 export function getRateLimiter(endpoint: string): RateLimiterLike {

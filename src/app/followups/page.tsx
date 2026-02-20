@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Calendar, Clock, MessageSquare, CheckCircle, AlertCircle, Phone } from 'lucide-react'
 import { logger } from '@/lib/observability/logger'
+import { apiRequest, APIError } from '@/lib/api'
 import AppNavigation from '@/components/app/AppNavigation'
 
 interface FollowUp {
@@ -37,18 +38,26 @@ export default function FollowupsPage() {
     setErrorMessage(null)
 
     try {
-      const response = await fetch('/api/patient/follow-ups')
-      const data = await response.json()
-
-      if (response.ok) {
-        setFollowUps(data.followUps || [])
-      } else {
-        setErrorMessage(data.error || 'Error al cargar seguimientos')
-        logger.error('Error fetching follow-ups', { error: data.error || 'Error desconocido' })
-      }
+      const response = await apiRequest<{ followUps: FollowUp[] }>('/api/patient/follow-ups', {
+        method: 'GET',
+      })
+      setFollowUps(response.data.followUps || [])
     } catch (error) {
-      setErrorMessage('Error al cargar seguimientos')
-      logger.error('Error fetching follow-ups', { error })
+      const apiError = error as APIError
+      
+      if (apiError.code === 'TIMEOUT') {
+        setErrorMessage('La solicitud tardó demasiado. Por favor, intenta de nuevo.')
+      } else if (apiError.code === 'NETWORK_ERROR') {
+        setErrorMessage('Error de conexión. Verifica tu internet e intenta de nuevo.')
+      } else {
+        setErrorMessage(apiError.message ?? 'Error al cargar seguimientos')
+      }
+      
+      logger.error('Error fetching follow-ups', { 
+        error: apiError.message,
+        code: apiError.code,
+        status: apiError.status 
+      })
     } finally {
       setIsLoading(false)
     }
@@ -62,7 +71,7 @@ export default function FollowupsPage() {
       responded: 'bg-green-100 text-green-700',
       cancelled: 'bg-gray-100 text-gray-700',
     }
-    return styles[status] || 'bg-gray-100 text-gray-700'
+    return styles[status] ?? 'bg-gray-100 text-gray-700'
   }
 
   const getStatusLabel = (status: string) => {
@@ -201,7 +210,7 @@ export default function FollowupsPage() {
                         <span className="text-sm text-gray-500">{getTypeLabel(followUp.type)}</span>
                       </div>
                       <p className="font-medium text-gray-900">
-                        {followUp.appointment?.doctor?.profile?.full_name || 'Doctor'}
+                        {followUp.appointment?.doctor?.profile?.full_name ?? 'Doctor'}
                       </p>
                     </div>
                   </div>

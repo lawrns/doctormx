@@ -234,7 +234,7 @@ function getEmbeddedCriticalRules(): Rule[] {
           'dolor de pecho que irradia', 'dolor en el pecho que va hacia', 
           'siento que me muero del pecho', 'siento que me mueren del pecho',
           'dolor de pecho con sudor', 'opresión torácica', 'dolor pectoral',
-          // Variaciones adicionales para tests
+          // Variaciones adicionales para tests - incluyendo formas verbales
           'opresivo', 'presión fuerte en el pecho', 'dolor torácico intenso',
           'sensación de muerte inminente', 'como si fuera a morir',
           'mandíbula', 'irradia al brazo', 'extiende a la espalda',
@@ -242,7 +242,12 @@ function getEmbeddedCriticalRules(): Rule[] {
           // English patterns for chest pain
           'chest pain', 'chest pressure', 'crushing chest', 'radiating to arm',
           'chest pain radiating', 'severe chest', 'pressure in center of chest',
-          'chest tightness', 'chest discomfort'
+          'chest tightness', 'chest discomfort',
+          // Additional patterns to catch verbal forms like "Me duele el pecho"
+          // Note: Patterns must include 'pecho' to avoid matching other body parts (abdomen, head, etc.)
+          'duele el pecho', 'duele en el pecho', 'me duele el pecho', 'me duele en el pecho',
+          'duele mucho el pecho', 'me duele mucho el pecho',
+          'siento dolor en el pecho', 'tengo dolor en el pecho', 'siento el pecho'
         ] 
       }
     },
@@ -2357,7 +2362,7 @@ export function evaluateRedFlags(input: {
       // Build evaluation context
       const ctx = {
         symptomsLow: symptoms.map(s => s.toLowerCase()),
-        textLow: (input.message || '').toLowerCase(),
+        textLow: (input.message ?? '').toLowerCase(),
         intake
       };
 
@@ -2424,7 +2429,7 @@ export function evaluateRedFlags(input: {
     },
     {
       operation: 'red_flags_evaluation',
-      message_length: String(input.message?.length || 0),
+      message_length: String(input.message?.length ?? 0),
       has_intake: String(Boolean(input.intake)),
     }
   ).result;
@@ -2493,13 +2498,15 @@ export function getCareLevelInfoExport(level: CareLevel): {
   color: string;
   icon: string;
   description: string;
+  severity_score: number;
 } {
   const info = getCareLevelInfo(level);
   return {
     label: info.label,
     color: info.color,
     icon: info.icon,
-    description: info.description
+    description: info.description,
+    severity_score: info.severity_score
   };
 }
 

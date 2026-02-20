@@ -137,16 +137,16 @@ export async function getDoctorEarnings(doctorId: string): Promise<DoctorEarning
 
   if (referralsError) throw referralsError
 
-  const totalReferrals = referrals?.length || 0
-  const redeemedReferrals = referrals?.filter((r) => r.status === 'redeemed').length || 0
+  const totalReferrals = referrals?.length ?? 0
+  const redeemedReferrals = referrals?.filter((r) => r.status === 'redeemed').length ?? 0
   const pendingReferrals = referrals?.filter(
     (r) => r.status !== 'redeemed' && r.status !== 'cancelled' && r.status !== 'expired'
-  ).length || 0
+  ).length ?? 0
 
-  const totalReferralFees = commissions?.reduce((sum, c) => sum + (c.referral_fee_cents || 0), 0) || 0
-  const totalCommissions = commissions?.reduce((sum, c) => sum + (c.commission_amount_cents || 0), 0) || 0
-  const platformFees = commissions?.reduce((sum, c) => sum + (c.platform_fee_cents || 0), 0) || 0
-  const netEarnings = commissions?.reduce((sum, c) => sum + (c.net_doctor_earnings_cents || 0), 0) || 0
+  const totalReferralFees = commissions?.reduce((sum, c) => sum + (c.referral_fee_cents ?? 0), 0) || 0
+  const totalCommissions = commissions?.reduce((sum, c) => sum + (c.commission_amount_cents ?? 0), 0) || 0
+  const platformFees = commissions?.reduce((sum, c) => sum + (c.platform_fee_cents ?? 0), 0) || 0
+  const netEarnings = commissions?.reduce((sum, c) => sum + (c.net_doctor_earnings_cents ?? 0), 0) || 0
 
   return {
     totalReferrals,
@@ -179,17 +179,17 @@ export async function getPharmacyEarnings(pharmacyId: string): Promise<PharmacyE
 
   if (referralsError) throw referralsError
 
-  const totalPayouts = commissions?.reduce((sum, c) => sum + (c.total_payout_cents || 0), 0) || 0
+  const totalPayouts = commissions?.reduce((sum, c) => sum + (c.total_payout_cents ?? 0), 0) || 0
   const pendingPayouts = commissions
     ?.filter((c) => c.status === 'pending')
-    .reduce((sum, c) => sum + (c.total_payout_cents || 0), 0) || 0
+    .reduce((sum, c) => sum + (c.total_payout_cents ?? 0), 0) || 0
   const paidPayouts = commissions
     ?.filter((c) => c.status === 'paid')
-    .reduce((sum, c) => sum + (c.total_payout_cents || 0), 0) || 0
+    .reduce((sum, c) => sum + (c.total_payout_cents ?? 0), 0) || 0
 
   return {
-    totalReferrals: referrals?.length || 0,
-    redeemedReferrals: referrals?.filter((r) => r.status === 'redeemed').length || 0,
+    totalReferrals: referrals?.length ?? 0,
+    redeemedReferrals: referrals?.filter((r) => r.status === 'redeemed').length ?? 0,
     totalPayouts,
     pendingPayouts,
     paidPayouts,
@@ -216,9 +216,9 @@ export async function getPharmacyStats(pharmacyId: string): Promise<PharmacyStat
     .eq('pharmacy_id', pharmacyId)
     .eq('status', 'approved')
 
-  const totalReferrals = referrals?.length || 0
-  const redeemedReferrals = referrals?.filter((r) => r.status === 'redeemed').length || 0
-  const pendingReferrals = referrals?.filter((r) => r.status === 'sent').length || 0
+  const totalReferrals = referrals?.length ?? 0
+  const redeemedReferrals = referrals?.filter((r) => r.status === 'redeemed').length ?? 0
+  const pendingReferrals = referrals?.filter((r) => r.status === 'sent').length ?? 0
 
   const totalRevenue = commissions?.reduce((sum, c) => sum + c.total_payout_cents, 0) || 0
   const thisMonthRevenue = commissions

@@ -16,9 +16,59 @@
  *   await cache.invalidateTag(CacheTags.DOCTOR_PROFILE)
  */
 
+// Re-export rate limiters (must be before other imports that might use them)
+import { Ratelimit } from '@upstash/ratelimit'
+import { Redis } from '@upstash/redis'
+import { logger } from '@/lib/observability/logger'
+import { getCacheClient as getClient } from './client'
+import { TIME, LIMITS } from '@/lib/constants'
+
+// No-op rate limiter for when Redis is not configured
+type RateLimitResult = { success: boolean; limit: number; remaining: number; reset: number }
+const noopRateLimiter = {
+  limit: async (): Promise<RateLimitResult> => ({ 
+    success: true, 
+    limit: LIMITS.PAGINATION_MAX_LIMIT, 
+    remaining: 999, 
+    reset: Date.now() + TIME.MINUTE_IN_MS 
+  }),
+}
+
+// Create rate limiters only when Redis is available
+function createRateLimiter(windowSize: number, windowDuration: string, prefix: string) {
+  const client = getClient()
+
+  // Check if we're using Redis (has required methods)
+  if ('ping' in client && typeof client.ping === 'function') {
+    try {
+      return new Ratelimit({
+        redis: client as unknown as Redis, // Type assertion for Upstash compatibility
+        limiter: Ratelimit.slidingWindow(windowSize, windowDuration as Parameters<typeof Ratelimit.slidingWindow>[1]),
+        analytics: true,
+        prefix,
+      })
+    } catch (error) {
+      logger.warn('Failed to create rate limiter, using noop', { prefix, error })
+      return noopRateLimiter
+    }
+  }
+
+  return noopRateLimiter
+}
+
+export const rateLimit = {
+  ai: createRateLimiter(LIMITS.RATE_LIMIT_AI, '1 m', 'ratelimit:ai'),
+  chat: createRateLimiter(LIMITS.RATE_LIMIT_CHAT, '1 m', 'ratelimit:chat'),
+  general: createRateLimiter(LIMITS.RATE_LIMIT_GENERAL, '1 m', 'ratelimit:general'),
+  auth: createRateLimiter(LIMITS.RATE_LIMIT_AUTH, '1 m', 'ratelimit:auth'),
+  payment: createRateLimiter(LIMITS.RATE_LIMIT_AI, '1 m', 'ratelimit:payment'),
+  write: createRateLimiter(30, '1 m', 'ratelimit:write'),
+  read: createRateLimiter(LIMITS.RATE_LIMIT_GENERAL, '1 m', 'ratelimit:read'),
+}
+
 // Core cache operations
 export { cache } from './cache'
-export { getCacheClient } from './client'
+export { getCacheClient, redis } from './client'
 
 // Re-export core types
 export type { CacheResult, CacheSetOptions, CacheStats } from './cache'
@@ -160,5 +210,5 @@ export default {
   CacheTags,
   getCacheClient,
   getCacheHealth,
+  rateLimit,
 }
-

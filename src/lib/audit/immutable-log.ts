@@ -475,10 +475,10 @@ export async function getComplianceStatus(): Promise<ComplianceStatus> {
 
   for (const log of logs) {
     // Count by category
-    byCategory[log.category] = (byCategory[log.category] || 0) + 1
+    byCategory[log.category] = (byCategory[log.category] ?? 0) + 1
 
     // Count by event type
-    byEventType[log.event_type] = (byEventType[log.event_type] || 0) + 1
+    byEventType[log.event_type] = (byEventType[log.event_type] ?? 0) + 1
 
     // Track dates
     if (!oldestDate || log.created_at < oldestDate) {

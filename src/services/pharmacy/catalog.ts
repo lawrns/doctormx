@@ -110,7 +110,7 @@ export class CatalogService {
           comparison = a.delivery.estimatedTime - b.delivery.estimatedTime;
           break;
         case 'rating':
-          comparison = (b.rating?.average || 0) - (a.rating?.average || 0);
+          comparison = (b.rating?.average ?? 0) - (a.rating?.average ?? 0);
           break;
         case 'relevance':
         default:
@@ -150,7 +150,7 @@ export class CatalogService {
   async getPopularMedications(limit: number = 10): Promise<Product[]> {
     return MOCK_PRODUCTS
       .filter(p => p.rating && p.rating.count > 50)
-      .sort((a, b) => (b.rating?.count || 0) - (a.rating?.count || 0))
+      .sort((a, b) => (b.rating?.count ?? 0) - (a.rating?.count ?? 0))
       .slice(0, limit)
       .map(p => ({
         ...p,

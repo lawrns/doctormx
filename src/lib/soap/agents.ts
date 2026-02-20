@@ -11,6 +11,7 @@
 import pLimit from 'p-limit'
 import { glmChatCompletion, GLM_CONFIG } from '@/lib/ai/glm'
 import { logger } from '@/lib/observability/logger'
+import { AI, LIMITS } from '@/lib/constants'
 import type {
   SpecialistRole,
   SpecialistAssessment,
@@ -40,7 +41,7 @@ import {
 
 // Limit to 2 concurrent API requests to avoid rate limits from GLM provider
 // 4 simultaneous calls were causing 429 errors and quota exhaustion
-const apiConcurrencyLimit = pLimit(2)
+const apiConcurrencyLimit = pLimit(AI.SOAP_CONCURRENCY_LIMIT)
 
 // ============================================
 // SPECIALIST CONSULTATION
@@ -86,8 +87,8 @@ async function consultSpecialist(
         { role: 'user', content: userPrompt },
       ],
       model: GLM_CONFIG.models.reasoning, // Use best model for medical reasoning
-      temperature: 0.3,
-      maxTokens: 2000,
+      temperature: AI.TEMPERATURE_DEFAULT,
+      maxTokens: AI.MAX_TOKENS_REASONING,
       jsonMode: true,
     })
 
@@ -107,7 +108,7 @@ async function consultSpecialist(
     } catch (parseError) {
       logger.error('[SOAP] Failed to parse specialist response', {
         role,
-        content: response.content.substring(0, 500),
+        content: response.content.substring(0, LIMITS.SUBSTRING_PREVIEW_LENGTH),
         error: parseError,
       })
       throw new Error(`Invalid JSON from ${role}: ${response.content.substring(0, 200)}`)
@@ -148,17 +149,17 @@ async function consultSpecialist(
     return {
       specialistId: role,
       specialist: specialistInfo[role],
-      confidence: parsedResponse.confidence || 0.7,
-      relevance: parsedResponse.relevance || 0.5,
-      clinicalImpression: parsedResponse.clinicalImpression || '',
+      confidence: parsedResponse.confidence ?? AI.CONFIDENCE_DEFAULT,
+      relevance: parsedResponse.relevance ?? AI.RELEVANCE_DEFAULT,
+      clinicalImpression: parsedResponse.clinicalImpression ?? '',
       differentialDiagnoses: parsedResponse.differentialDiagnoses || [],
       redFlags: parsedResponse.redFlags || [],
       contributingFactors: parsedResponse.contributingFactors || [],
       recommendedTests: parsedResponse.recommendedTests || [],
-      urgencyLevel: parsedResponse.urgencyLevel || 'routine',
-      shouldRefer: parsedResponse.shouldRefer || false,
+      urgencyLevel: parsedResponse.urgencyLevel ?? 'routine',
+      shouldRefer: parsedResponse.shouldRefer ?? false,
       referralReason: parsedResponse.referralReason,
-      reasoningNotes: parsedResponse.reasoningNotes || '',
+      reasoningNotes: parsedResponse.reasoningNotes ?? '',
       tokensUsed: response.usage.totalTokens,
       costUSD: response.costUSD,
       latencyMs,
@@ -192,10 +193,10 @@ export async function consultSpecialists(
 
   logger.info('[SOAP] Starting parallel specialist consultations', {
     specialists: roles,
-    concurrencyLimit: 2,
+    concurrencyLimit: AI.SOAP_CONCURRENCY_LIMIT,
   })
 
-  // Run consultations with limited concurrency (2 at a time) to avoid rate limits
+  // Run consultations with limited concurrency to avoid rate limits
   // This prevents 429 errors from the GLM API while still providing parallelism
   const results = await Promise.allSettled(
     roles.map((role) =>
@@ -277,7 +278,7 @@ export function calculateKendallW(specialists: SpecialistAssessment[]): number {
 
   // Normalize to 0-1 range
   // Max variance for 5-point scale = 4 (when half say 1, half say 5)
-  const maxVariance = 4
+  const maxVariance = LIMITS.KENDALL_W_MAX_VARIANCE
   const agreement = 1 - (variance / maxVariance)
 
   // Also consider confidence agreement
@@ -287,19 +288,19 @@ export function calculateKendallW(specialists: SpecialistAssessment[]): number {
     .reduce((a, b) => a + b, 0) / n
   const confAgreement = 1 - confVariance // Confidence is already 0-1
 
-  // Weight urgency agreement more (60%) than confidence agreement (40%)
-  const kendallW = Math.max(0, Math.min(1, 0.6 * agreement + 0.4 * confAgreement))
+  // Weight urgency agreement more than confidence agreement
+  const kendallW = Math.max(0, Math.min(1, LIMITS.KENDALL_W_URGENCY_WEIGHT * agreement + LIMITS.KENDALL_W_CONFIDENCE_WEIGHT * confAgreement))
 
-  return Math.round(kendallW * 100) / 100
+  return Math.round(kendallW * 100) / 100  // Round to 2 decimal places
 }
 
 /**
  * Get agreement level description
  */
 export function getAgreementLevel(kendallW: number): AgreementLevel {
-  if (kendallW >= 0.8) return 'strong'
-  if (kendallW >= 0.6) return 'moderate'
-  if (kendallW >= 0.4) return 'weak'
+  if (kendallW >= AI.KENDALL_W_STRONG_AGREEMENT) return 'strong'
+  if (kendallW >= AI.KENDALL_W_MODERATE_AGREEMENT) return 'moderate'
+  if (kendallW >= AI.KENDALL_W_WEAK_AGREEMENT) return 'weak'
   return 'disagreement'
 }
 
@@ -361,8 +362,8 @@ export async function buildConsensus(
         { role: 'user', content: userPrompt },
       ],
       model: GLM_CONFIG.models.reasoning,
-      temperature: 0.2, // Lower for more deterministic consensus
-      maxTokens: 2000,
+      temperature: AI.TEMPERATURE_CONSENSUS,
+      maxTokens: AI.MAX_TOKENS_REASONING,
       jsonMode: true,
     })
 
@@ -380,26 +381,26 @@ export async function buildConsensus(
       parsed = JSON.parse(content)
     } catch (parseError) {
       logger.error('[SOAP] Failed to parse consensus response', {
-        content: response.content.substring(0, 500),
+        content: response.content.substring(0, LIMITS.SUBSTRING_PREVIEW_LENGTH),
         error: parseError,
       })
-      throw new Error(`Invalid consensus JSON: ${response.content.substring(0, 200)}`)
+      throw new Error(`Invalid consensus JSON: ${response.content.substring(0, LIMITS.SUBSTRING_ERROR_PREVIEW)}`)
     }
 
     // Build consensus result
     const consensus: ConsensusResult = {
       kendallW,
       agreementLevel,
-      consensusCategory: parsed.consensusCategory || 'independent',
+      consensusCategory: parsed.consensusCategory ?? 'independent',
       primaryDiagnosis: parsed.primaryDiagnosis,
       differentialDiagnoses: parsed.differentialDiagnoses || [],
-      urgencyLevel: parsed.urgencyLevel || 'moderate',
+      urgencyLevel: parsed.urgencyLevel ?? 'moderate',
       combinedRedFlags: parsed.combinedRedFlags || [],
       recommendedSpecialty: parsed.recommendedSpecialty,
       recommendedTests: parsed.recommendedTests || [],
-      supervisorSummary: parsed.supervisorSummary || '',
+      supervisorSummary: parsed.supervisorSummary ?? '',
       confidenceScore: parsed.confidenceScore || kendallW,
-      requiresHumanReview: parsed.requiresHumanReview ?? (kendallW < 0.6),
+      requiresHumanReview: parsed.requiresHumanReview ?? (kendallW < AI.HUMAN_REVIEW_THRESHOLD),
     }
 
     logger.info('[SOAP] Consensus built', {
@@ -473,8 +474,8 @@ export async function generatePlan(
         { role: 'user', content: userPrompt },
       ],
       model: GLM_CONFIG.models.costEffective, // Plan generation can use cheaper model
-      temperature: 0.3,
-      maxTokens: 1500,
+      temperature: AI.TEMPERATURE_DEFAULT,
+      maxTokens: AI.MAX_TOKENS_PLAN,
       jsonMode: true,
     })
 
@@ -495,15 +496,15 @@ export async function generatePlan(
         content: response.content.substring(0, 500),
         error: parseError,
       })
-      throw new Error(`Invalid plan JSON: ${response.content.substring(0, 200)}`)
+      throw new Error(`Invalid plan JSON: ${response.content.substring(0, LIMITS.SUBSTRING_ERROR_PREVIEW)}`)
     }
 
     const plan: TreatmentPlan = {
       recommendations: parsed.recommendations || [],
       selfCareInstructions: parsed.selfCareInstructions || [],
       suggestedMedications: parsed.suggestedMedications,
-      followUpTiming: parsed.followUpTiming || '1 semana',
-      followUpType: parsed.followUpType || 'telemedicine',
+      followUpTiming: parsed.followUpTiming ?? '1 semana',
+      followUpType: parsed.followUpType ?? 'telemedicine',
       referralNeeded: parsed.referralNeeded ?? consensus.recommendedSpecialty !== null,
       referralSpecialty: parsed.referralSpecialty || consensus.recommendedSpecialty || undefined,
       referralUrgency: parsed.referralUrgency || consensus.urgencyLevel,

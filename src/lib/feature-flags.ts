@@ -54,7 +54,7 @@ const CACHE_TTL_MS = 60_000
  * Preserves privacy while allowing pattern analysis
  */
 function hashContext(context: FlagContext): string {
-  const str = `${context.userId || 'anon'}:${context.subscriptionTier || 'none'}:${context.doctorId || 'none'}`
+  const str = `${context.userId ?? 'anon'}:${context.subscriptionTier ?? 'none'}:${context.doctorId ?? 'none'}`
   return simpleHash(str).toString(36)
 }
 
@@ -237,7 +237,7 @@ export async function incrementRollout(
     .eq('key', flagKey)
     .single()
   
-  const newPercentage = Math.min(100, (current?.rollout_percentage || 0) + incrementBy)
+  const newPercentage = Math.min(100, (current?.rollout_percentage ?? 0) + incrementBy)
   
   const { error } = await supabase
     .from('feature_flags')

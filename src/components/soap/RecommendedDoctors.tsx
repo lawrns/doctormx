@@ -16,6 +16,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import type { ConsensusResult } from '@/lib/soap/types';
 import { logger } from '@/lib/observability/logger';
+import { getBlurDataURL } from '@/lib/performance/image-blur';
 
 interface Doctor {
   id: string;
@@ -51,7 +52,7 @@ export function RecommendedDoctors({
   const [error, setError] = useState<string | null>(null);
 
   // Extract diagnosis name for use throughout component
-  const primaryDiagnosisName = consensus.primaryDiagnosis?.name || 'general';
+  const primaryDiagnosisName = consensus.primaryDiagnosis?.name ?? 'general';
   const specialty = mapDiagnosisToSpecialty(primaryDiagnosisName);
 
   useEffect(() => {
@@ -68,7 +69,7 @@ export function RecommendedDoctors({
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           specialty,
-          urgencyLevel: (consensus as any).urgencyLevel || 'routine',
+          urgencyLevel: (consensus as { urgencyLevel?: string }).urgencyLevel ?? 'routine',
           consultationId,
           limit: 3,
         }),
@@ -108,7 +109,7 @@ export function RecommendedDoctors({
     return (
       <div className="bg-blue-50 border-2 border-blue-200 rounded-2xl p-6">
         <h3 className="text-xl font-bold text-gray-900 mb-3">
-          {error || 'No hay especialistas disponibles en este momento'}
+          {error ?? 'No hay especialistas disponibles en este momento'}
         </h3>
         <Link
           href="/doctores"
@@ -227,6 +228,8 @@ function DoctorCard({
                   alt={doctor.name}
                   fill
                   className="object-cover"
+                  placeholder="blur"
+                  blurDataURL={getBlurDataURL('doctor-avatar')}
                 />
               ) : (
                 <div className="w-full h-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-white text-2xl font-bold">

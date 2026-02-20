@@ -12,7 +12,9 @@ import {
 } from '@/components/ui/sheet'
 import { cn } from '@/lib/utils'
 import { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu } from 'lucide-react'
+import { useTranslations } from 'next-intl'
+import { LanguageSelector } from '@/components/LanguageSelector'
 
 interface HeaderProps {
   variant?: 'default' | 'transparent'
@@ -22,6 +24,7 @@ interface HeaderProps {
 export function Header({ variant = 'default', showAuth = true }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const t = useTranslations()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,10 +35,10 @@ export function Header({ variant = 'default', showAuth = true }: HeaderProps) {
   }, [])
 
   const navLinks = [
-    { href: '/doctores', label: 'Buscar doctores' },
-    { href: '/app/second-opinion', label: 'Consulta IA' },
-    { href: '/specialties', label: 'Especialidades' },
-    { href: '/for-doctors', label: 'Para doctores' },
+    { href: '/doctores', label: t('navigation.searchDoctors') },
+    { href: '/app/second-opinion', label: t('navigation.aiConsultation') },
+    { href: '/specialties', label: t('navigation.specialties') },
+    { href: '/for-doctors', label: t('navigation.forDoctors') },
   ]
 
   return (
@@ -85,6 +88,11 @@ export function Header({ variant = 'default', showAuth = true }: HeaderProps) {
             ))}
           </nav>
 
+          {/* Desktop Language Selector */}
+          <div className="hidden md:flex items-center">
+            <LanguageSelector variant="default" />
+          </div>
+
           {/* Desktop Auth buttons */}
           {showAuth && (
             <div className="hidden md:flex items-center gap-3">
@@ -93,12 +101,12 @@ export function Header({ variant = 'default', showAuth = true }: HeaderProps) {
                   variant="ghost"
                   className="text-sm font-medium text-gray-600 hover:text-gray-900"
                 >
-                  Iniciar sesión
+                  {t('navigation.login')}
                 </Button>
               </Link>
               <Link href="/auth/register">
                 <Button className="bg-primary-500 hover:bg-primary-600 text-sm font-medium">
-                  Registrarse
+                  {t('navigation.register')}
                 </Button>
               </Link>
             </div>
@@ -108,8 +116,8 @@ export function Header({ variant = 'default', showAuth = true }: HeaderProps) {
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
               <button 
-                className="md:hidden p-2 text-gray-600 hover:text-gray-900"
-                aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+                className="md:hidden p-2 text-gray-600 hover:text-gray-900 min-w-[44px] min-h-[44px] flex items-center justify-center"
+                aria-label={mobileMenuOpen ? t('navigation.closeMenu') : t('navigation.openMenu')}
                 aria-expanded={mobileMenuOpen}
                 aria-controls="mobile-menu"
               >
@@ -140,12 +148,12 @@ export function Header({ variant = 'default', showAuth = true }: HeaderProps) {
                 </SheetTitle>
               </SheetHeader>
               
-              <nav className="flex flex-col gap-4 mt-8">
+              <nav className="flex flex-col gap-2 mt-8">
                 {navLinks.map((link) => (
                   <SheetClose asChild key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-base font-medium text-gray-600 hover:text-gray-900 transition-colors py-2 border-b border-gray-100"
+                      className="text-base font-medium text-gray-600 hover:text-gray-900 transition-colors py-3 px-2 rounded-lg hover:bg-gray-50 min-h-[44px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {link.label}
@@ -154,22 +162,27 @@ export function Header({ variant = 'default', showAuth = true }: HeaderProps) {
                 ))}
               </nav>
 
+              {/* Mobile Language Selector */}
+              <div className="mt-6 pt-6 border-t border-gray-100">
+                <LanguageSelector variant="mobile" />
+              </div>
+
               {showAuth && (
-                <div className="flex flex-col gap-3 mt-8">
+                <div className="flex flex-col gap-3 mt-6">
                   <SheetClose asChild>
-                    <Link href="/auth/login">
+                    <Link href="/auth/login" className="w-full">
                       <Button
                         variant="outline"
-                        className="w-full text-base font-medium"
+                        className="w-full text-base font-medium min-h-[44px]"
                       >
-                        Iniciar sesión
+                        {t('navigation.login')}
                       </Button>
                     </Link>
                   </SheetClose>
                   <SheetClose asChild>
-                    <Link href="/auth/register">
-                      <Button className="w-full bg-primary-500 hover:bg-primary-600 text-base font-medium">
-                        Registrarse
+                    <Link href="/auth/register" className="w-full">
+                      <Button className="w-full bg-primary-500 hover:bg-primary-600 text-base font-medium min-h-[44px]">
+                        {t('navigation.register')}
                       </Button>
                     </Link>
                   </SheetClose>

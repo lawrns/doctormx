@@ -13,6 +13,7 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
+    "types": ["vitest/globals"],
     "plugins": [
       {
         "name": "next"
@@ -39,7 +40,12 @@
     "src/contexts",
     "vitest.config.ts",
     "playwright.config.ts",
-    "worktrees"
+    "worktrees",
+    "tests",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.spec.ts",
+    "**/*.spec.tsx"
   ]
 }
 

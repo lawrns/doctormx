@@ -51,7 +51,7 @@ export default function UploadImagePage() {
     <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-blue-50">
       <AppNavigation currentPage="/app/upload-image" />
       
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main id="main-content" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Análisis de Imagen con IA

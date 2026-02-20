@@ -368,7 +368,7 @@ export function createCSRFErrorResponse(
     {
       error: 'CSRF validation failed',
       code: result.error,
-      message: result.message || 'Invalid or missing CSRF token',
+      message: result.message ?? 'Invalid or missing CSRF token',
     },
     { status: 403 }
   )

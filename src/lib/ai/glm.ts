@@ -11,6 +11,17 @@
  * - Input: $0.60
  * - Output: $2.20
  * - Cached: $0.11
+ * 
+ * @module lib/ai/glm
+ * @example
+ * ```typescript
+ * import { glm, glmChatCompletion, glmVisionAnalysis } from '@/lib/ai/glm';
+ * 
+ * const result = await glmChatCompletion({
+ *   messages: [{ role: 'user', content: 'Hello' }],
+ *   model: GLM_CONFIG.models.reasoning
+ * });
+ * ```
  */
 
 import OpenAI from 'openai'
@@ -19,14 +30,20 @@ import { AI_CONFIG } from './config'
 
 // GLM Client - OpenAI SDK compatible with timeout configuration
 // Uses GLM Coding Plan endpoint (different from standard API)
+/**
+ * GLM OpenAI-compatible client instance
+ * Configured with timeout and retry settings from AI_CONFIG
+ */
 export const glm = new OpenAI({
-  apiKey: process.env.GLM_API_KEY || '',
+  apiKey: process.env.GLM_API_KEY ?? '',
   baseURL: AI_CONFIG.glm.baseURL, // GLM Coding Plan endpoint from config
   timeout: AI_CONFIG.limits.timeoutMs, // 30 second timeout from config
   maxRetries: AI_CONFIG.limits.maxRetries, // 3 retries from config
 })
 
-// GLM Configuration
+/**
+ * GLM Configuration constants
+ */
 export const GLM_CONFIG = {
   models: {
     reasoning: 'glm-4.7',        // Best for medical reasoning, differential diagnosis
@@ -45,10 +62,18 @@ export const GLM_CONFIG = {
   },
 } as const
 
+/** Type for GLM model names */
 export type GLMModel = typeof GLM_CONFIG.models[keyof typeof GLM_CONFIG.models]
 
 /**
  * Calculate cost for GLM API usage
+ * @param inputTokens - Number of input tokens
+ * @param outputTokens - Number of output tokens
+ * @param cachedTokens - Number of cached tokens (default: 0)
+ * @returns Cost in USD
+ * @example
+ * const cost = calculateGLMCost(1000, 500);
+ * console.log(`Cost: $${cost.toFixed(4)}`);
  */
 export function calculateGLMCost(
   inputTokens: number,
@@ -63,6 +88,11 @@ export function calculateGLMCost(
 
 /**
  * Check if GLM is configured
+ * @returns Boolean indicating if GLM API key is configured
+ * @example
+ * if (isGLMConfigured()) {
+ *   // Use GLM
+ * }
  */
 export function isGLMConfigured(): boolean {
   return !!process.env.GLM_API_KEY
@@ -70,6 +100,11 @@ export function isGLMConfigured(): boolean {
 
 /**
  * Get recommended GLM model for use case
+ * @param useCase - Use case: 'reasoning', 'chat', or 'vision'
+ * @returns Recommended GLM model name
+ * @example
+ * const model = getGLMModel('reasoning'); // 'glm-4.7'
+ * const chatModel = getGLMModel('chat'); // 'glm-4.5-air'
  */
 export function getGLMModel(useCase: 'reasoning' | 'chat' | 'vision'): GLMModel {
   switch (useCase) {
@@ -85,6 +120,25 @@ export function getGLMModel(useCase: 'reasoning' | 'chat' | 'vision'): GLMModel 
 
 /**
  * GLM Chat Completion wrapper with cost tracking
+ * @param params - Chat completion parameters
+ * @param params.messages - Array of messages for the conversation
+ * @param params.model - GLM model to use (optional, defaults to costEffective)
+ * @param params.temperature - Temperature for response randomness (optional)
+ * @param params.maxTokens - Maximum tokens in response (optional)
+ * @param params.jsonMode - Enable JSON response format (optional)
+ * @returns Promise with content, usage stats, cost, and model info
+ * @throws {Error} If API call fails
+ * @example
+ * const result = await glmChatCompletion({
+ *   messages: [
+ *     { role: 'system', content: 'You are a medical AI' },
+ *     { role: 'user', content: 'What causes headaches?' }
+ *   ],
+ *   model: GLM_CONFIG.models.reasoning,
+ *   temperature: 0.3,
+ *   maxTokens: 1000
+ * });
+ * console.log(result.content, result.costUSD);
  */
 export async function glmChatCompletion(params: {
   messages: Array<{ role: 'system' | 'user' | 'assistant'; content: string }>
@@ -120,13 +174,12 @@ export async function glmChatCompletion(params: {
     // GLM may return content in different fields depending on model
     const message = response.choices[0]?.message
     // Check for reasoning_content (GLM-4.7 thinking models) or regular content
-    const content = message?.content
-      || (message as unknown as { reasoning_content?: string })?.reasoning_content
-      || ''
+    const content = (message?.content
+      || (message as unknown as { reasoning_content?: string })?.reasoning_content) ?? ''
     const usage = {
-      inputTokens: response.usage?.prompt_tokens || 0,
-      outputTokens: response.usage?.completion_tokens || 0,
-      totalTokens: response.usage?.total_tokens || 0,
+      inputTokens: response.usage?.prompt_tokens ?? 0,
+      outputTokens: response.usage?.completion_tokens ?? 0,
+      totalTokens: response.usage?.total_tokens ?? 0,
     }
     const costUSD = calculateGLMCost(usage.inputTokens, usage.outputTokens)
 
@@ -154,6 +207,21 @@ export async function glmChatCompletion(params: {
 
 /**
  * GLM Streaming Chat Completion
+ * @param params - Streaming completion parameters
+ * @param params.messages - Array of messages for the conversation
+ * @param params.model - GLM model to use (optional)
+ * @param params.temperature - Temperature for response randomness (optional)
+ * @param params.maxTokens - Maximum tokens in response (optional)
+ * @returns Async generator yielding text chunks
+ * @throws {Error} If API call fails
+ * @example
+ * const stream = glmStreamingCompletion({
+ *   messages: [{ role: 'user', content: 'Tell me about diabetes' }]
+ * });
+ * 
+ * for await (const chunk of stream) {
+ *   process.stdout.write(chunk);
+ * }
  */
 export async function* glmStreamingCompletion(params: {
   messages: Array<{ role: 'system' | 'user' | 'assistant'; content: string }>
@@ -191,6 +259,21 @@ export async function* glmStreamingCompletion(params: {
 
 /**
  * GLM Vision Analysis for medical images
+ * @param params - Vision analysis parameters
+ * @param params.imageUrl - URL of the image to analyze
+ * @param params.prompt - Analysis prompt/question
+ * @param params.systemPrompt - System prompt for context (optional)
+ * @param params.detail - Image detail level: 'low', 'high', or 'auto' (optional)
+ * @returns Promise with content, usage stats, cost, and model info
+ * @throws {Error} If API call fails
+ * @example
+ * const result = await glmVisionAnalysis({
+ *   imageUrl: 'https://example.com/xray.jpg',
+ *   prompt: 'Analyze this chest X-ray for abnormalities',
+ *   systemPrompt: 'You are a radiologist AI assistant',
+ *   detail: 'high'
+ * });
+ * console.log(result.content);
  */
 export async function glmVisionAnalysis(params: {
   imageUrl: string
@@ -241,11 +324,11 @@ export async function glmVisionAnalysis(params: {
       temperature: 0.2,
     })
 
-    const content = response.choices[0]?.message?.content || ''
+    const content = response.choices[0]?.message?.content ?? ''
     const usage = {
-      inputTokens: response.usage?.prompt_tokens || 0,
-      outputTokens: response.usage?.completion_tokens || 0,
-      totalTokens: response.usage?.total_tokens || 0,
+      inputTokens: response.usage?.prompt_tokens ?? 0,
+      outputTokens: response.usage?.completion_tokens ?? 0,
+      totalTokens: response.usage?.total_tokens ?? 0,
     }
     const costUSD = calculateGLMCost(usage.inputTokens, usage.outputTokens)
 
@@ -273,4 +356,3 @@ export async function glmVisionAnalysis(params: {
 
 // Export default client for backwards compatibility
 export default glm
-

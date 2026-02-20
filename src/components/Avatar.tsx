@@ -71,7 +71,7 @@ export function Avatar({
   showStatus = false,
   status = 'offline',
 }: AvatarProps) {
-  const displayName = name || 'Usuario'
+  const displayName = name ?? 'Usuario'
   const initials = getInitials(displayName)
   const bgColor = getColorFromName(displayName)
 

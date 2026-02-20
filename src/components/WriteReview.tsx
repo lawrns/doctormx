@@ -6,6 +6,7 @@ import { LoadingButton } from './LoadingButton'
 import { Modal, ModalFooter } from './Modal'
 import { FormTextarea } from '@/components/ui/form-input'
 import type { Review } from '@/lib/reviews'
+import { apiRequest, APIError } from '@/lib/api'
 
 interface WriteReviewProps {
   appointmentId: string
@@ -40,32 +41,33 @@ export function WriteReview({
     setIsLoading(true)
 
     try {
-      const response = await fetch('/api/reviews', {
+      const response = await apiRequest<Review>('/api/reviews', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
+        body: {
           appointmentId,
           doctorId,
           rating,
           comment: comment.trim() || null,
-        }),
+        },
       })
-
-      const data = await response.json()
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Error al enviar la reseña')
-      }
 
       setIsOpen(false)
       setRating(0)
       setComment('')
 
       if (onSuccess) {
-        onSuccess(data)
+        onSuccess(response.data)
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Error al enviar la reseña')
+      const apiError = err as APIError
+      
+      if (apiError.code === 'TIMEOUT') {
+        setError('La solicitud tardó demasiado. Por favor, intenta de nuevo.')
+      } else if (apiError.code === 'NETWORK_ERROR') {
+        setError('Error de conexión. Verifica tu internet e intenta de nuevo.')
+      } else {
+        setError(apiError.message ?? 'Error al enviar la reseña')
+      }
     } finally {
       setIsLoading(false)
     }

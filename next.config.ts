@@ -1,9 +1,13 @@
 import type { NextConfig } from "next";
+import createNextIntlPlugin from 'next-intl/plugin';
 
 // Bundle analyzer - only enabled when ANALYZE=true
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
+
+// Create next-intl plugin
+const withNextIntl = createNextIntlPlugin('./src/i18n.ts');
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
@@ -170,4 +174,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withBundleAnalyzer(nextConfig);
+export default withNextIntl(withBundleAnalyzer(nextConfig));

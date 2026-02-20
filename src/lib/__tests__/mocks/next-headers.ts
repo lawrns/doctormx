@@ -39,7 +39,7 @@ export const mockHeaders = vi.fn(() =>
  * Mock function for cookies() from next/headers
  * Returns a mock cookies object with getAll(), set(), and get() methods
  */
-export const mockCookiesGetAll = vi.fn(() => [])
+export const mockCookiesGetAll = vi.fn((): Array<{ name: string; value: string }> => [])
 export const mockCookiesSet = vi.fn()
 export const mockCookiesGet = vi.fn()
 

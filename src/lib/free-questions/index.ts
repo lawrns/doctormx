@@ -253,7 +253,7 @@ export async function getQuotaStats(): Promise<{
   if (!quotas) {
     return {
       total_users: 0,
-      premium_users: premiumCount || 0,
+      premium_users: premiumCount ?? 0,
       free_users: 0,
       questions_asked_this_month: 0,
       users_at_limit: 0,
@@ -266,7 +266,7 @@ export async function getQuotaStats(): Promise<{
   
   return {
     total_users: quotas.length,
-    premium_users: premiumCount || 0,
+    premium_users: premiumCount ?? 0,
     free_users: freeUsers.length,
     questions_asked_this_month: totalQuestions,
     users_at_limit: usersAtLimit.length,

@@ -6,6 +6,7 @@ import { PricingBadge, FeatureLimitIndicator } from '@/components/PricingBadge'
 import { INDIVIDUAL_PREMIUM_FEATURES, type PremiumFeature, type SubscriptionTier } from '@/lib/premium-features-shared'
 import { LoadingButton } from '@/components/LoadingButton'
 import { logger } from '@/lib/observability/logger'
+import { apiRequest, APIError } from '@/lib/api'
 import AppNavigation from '@/components/app/AppNavigation'
 import Link from 'next/link'
 
@@ -32,19 +33,27 @@ function PremiumFeatureCard({ feature, tier, onPurchase, loading }: PremiumFeatu
   const isUnlimited = tierAccess.limit === -1
   const canPurchase = !isIncluded && tier !== 'starter'
 
-  const [usage, setUsage] = useState({ used: 0, limit: tierAccess.limit || 0 })
+  const [usage, setUsage] = useState({ used: 0, limit: tierAccess.limit ?? 0 })
   const [loadingUsage, setLoadingUsage] = useState(true)
 
   useEffect(() => {
     const fetchUsage = async () => {
       try {
-        const response = await fetch(`/api/premium/status?feature=${feature}`)
-        if (response.ok) {
-          const data = await response.json()
-          setUsage({ used: data.used, limit: data.limit })
-        }
+        const response = await apiRequest<{ used: number; limit: number }>(`/api/premium/status?feature=${feature}`, {
+          method: 'GET',
+        })
+        setUsage({ used: response.data.used, limit: response.data.limit })
       } catch (error) {
-        logger.error('Error fetching usage', { feature }, error as Error)
+        const apiError = error as APIError
+        
+        // Log specific error codes for debugging
+        if (apiError.code === 'TIMEOUT') {
+          logger.warn('Timeout fetching usage', { feature })
+        } else if (apiError.code === 'NETWORK_ERROR') {
+          logger.warn('Network error fetching usage', { feature })
+        } else {
+          logger.error('Error fetching usage', { feature }, new Error(apiError.message))
+        }
       } finally {
         setLoadingUsage(false)
       }
@@ -256,13 +265,20 @@ export default function PremiumMarketplacePage() {
       const { data: { user } } = await supabase.auth.getUser()
       if (user) {
         try {
-          const response = await fetch('/api/premium/status')
-          if (response.ok) {
-            const data = await response.json()
-            setTier(data.tier)
-          }
+          const response = await apiRequest<{ tier: SubscriptionTier }>('/api/premium/status', {
+            method: 'GET',
+          })
+          setTier(response.data.tier)
         } catch (error) {
-          logger.error('Error fetching tier', { error: (error as Error).message })
+          const apiError = error as APIError
+          
+          if (apiError.code === 'TIMEOUT') {
+            logger.warn('Timeout fetching tier')
+          } else if (apiError.code === 'NETWORK_ERROR') {
+            logger.warn('Network error fetching tier')
+          } else {
+            logger.error('Error fetching tier', { error: apiError.message })
+          }
         }
       }
     }
@@ -273,22 +289,24 @@ export default function PremiumMarketplacePage() {
     setLoading(true)
     setPurchasingFeature(feature)
     try {
-      const response = await fetch('/api/premium/purchase', {
+      const response = await apiRequest<{ url: string }>('/api/premium/purchase', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ feature, purchaseType: type }),
+        body: { feature, purchaseType: type },
       })
 
-      if (response.ok) {
-        const { url } = await response.json()
-        window.location.href = url
-      } else {
-        const error = await response.json()
-        alert(error.error || 'Error al procesar la compra')
-      }
+      window.location.href = response.data.url
     } catch (error) {
-      logger.error('Error purchasing', { feature, type }, error as Error)
-      alert('Error al procesar la compra')
+      const apiError = error as APIError
+      
+      if (apiError.code === 'TIMEOUT') {
+        alert('La solicitud tardó demasiado. Por favor, intenta de nuevo.')
+      } else if (apiError.code === 'NETWORK_ERROR') {
+        alert('Error de conexión. Verifica tu internet e intenta de nuevo.')
+      } else {
+        alert(apiError.message ?? 'Error al procesar la compra')
+      }
+      
+      logger.error('Error purchasing', { feature, type }, new Error(apiError.message))
     } finally {
       setLoading(false)
       setPurchasingFeature(null)

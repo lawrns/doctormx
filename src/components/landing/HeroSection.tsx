@@ -5,6 +5,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Zap, Shield, Gift, ArrowRight, BadgeCheck, Clock, Users, Lock, ShieldCheck } from 'lucide-react'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
+import { useTranslations } from 'next-intl'
+import { getBlurDataURL, LCP_DEFAULT_PROPS } from '@/lib/performance/image-blur'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -40,6 +42,14 @@ const floatVariants = {
 
 export function HeroSection() {
   const prefersReducedMotion = useReducedMotion()
+  const t = useTranslations('landing.hero')
+
+  const trustItems = [
+    { icon: ShieldCheck, text: t('trust.cofepris'), value: t('trust.verified') },
+    { icon: BadgeCheck, text: t('trust.doctors'), value: t('trust.doctorsCount') },
+    { icon: Users, text: t('trust.consultations'), value: t('trust.consultationsCount') },
+    { icon: Clock, text: t('trust.availability'), value: t('trust.availabilityValue') },
+  ]
 
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 pb-16">
@@ -75,17 +85,18 @@ export function HeroSection() {
               <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-xl">
                 <Image
                   src="/images/simeon.png"
-                  alt="Dr. Simeon - Tu asistente médico IA"
+                  alt={t('drSimeon')}
                   width={80}
                   height={80}
                   className="w-full h-full object-cover"
-                  priority
+                  {...LCP_DEFAULT_PROPS}
+                  blurDataURL={getBlurDataURL('simeon')}
                 />
               </div>
               {/* Online indicator */}
               <span
                 className="absolute bottom-1 right-1 w-5 h-5 bg-green-500 border-2 border-white rounded-full flex items-center justify-center"
-                aria-label="En linea"
+                aria-label={t('online')}
                 role="status"
               >
                 <span className="w-2 h-2 bg-white rounded-full animate-pulse" aria-hidden="true" />
@@ -99,10 +110,10 @@ export function HeroSection() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
-                <span className="text-xs font-medium text-green-700">En línea ahora</span>
+                <span className="text-xs font-medium text-green-700">{t('onlineNow')}</span>
               </div>
-              <p className="text-sm font-semibold text-text-primary">Dr. Simeon</p>
-              <p className="text-xs text-text-muted">Asistente médico IA</p>
+              <p className="text-sm font-semibold text-text-primary">{t('drSimeon')}</p>
+              <p className="text-xs text-text-secondary">{t('aiAssistant')}</p>
             </div>
           </div>
         </motion.div>
@@ -110,14 +121,13 @@ export function HeroSection() {
         {/* Main Headline - HUGE, Doctronic style - EMPHASIZE FREE */}
         <motion.h1
           variants={itemVariants}
-          className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-text-primary mb-6 leading-[1.1] tracking-tight"
-          style={{ fontFamily: 'var(--font-serif)' }}
+          className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-text-primary mb-6 leading-[1.1] tracking-tight font-sans"
         >
-          5 Consultas Medicas
+          {t('headline')}
           <br />
           <span className="relative inline-block">
             <span className="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 bg-clip-text text-transparent font-black">
-              100% GRATIS
+              {t('headlineFree')}
             </span>
             {/* Animated underline */}
             <motion.span
@@ -134,7 +144,7 @@ export function HeroSection() {
           variants={itemVariants}
           className="text-xl sm:text-2xl text-text-secondary max-w-3xl mx-auto mb-8 leading-relaxed"
         >
-          Salud accesible para todos. Consulta con IA médica las veces que necesites — <strong className="text-blue-600">sin registrar, sin pagar</strong>. Cuando necesites un doctor real, te conectamos con especialistas verificados.
+          {t('subheadlinePart1')} <strong className="text-blue-600">{t('subheadlineBold')}</strong> {t('subheadlinePart2')}
         </motion.p>
 
         {/* Key Benefits - Lighter, Less Prominent - EMPHASIZE FREE */}
@@ -144,17 +154,17 @@ export function HeroSection() {
         >
           <span className="flex items-center gap-1.5 bg-blue-50 text-blue-700 px-3 py-1.5 rounded-full">
             <Zap className="w-4 h-4 text-blue-500" aria-hidden="true" />
-            5 consultas GRATIS
+            {t('benefit1')}
           </span>
-          <span className="text-neutral-300" aria-hidden="true">•</span>
+          <span className="text-neutral-500" aria-hidden="true">•</span>
           <span className="flex items-center gap-1.5">
             <Shield className="w-4 h-4 text-blue-500" aria-hidden="true" />
-            Sin registro requerido
+            {t('benefit2')}
           </span>
-          <span className="text-neutral-300" aria-hidden="true">•</span>
+          <span className="text-neutral-500" aria-hidden="true">•</span>
           <span className="flex items-center gap-1.5">
             <Gift className="w-4 h-4 text-blue-500" aria-hidden="true" />
-            Para todos los mexicanos
+            {t('benefit3')}
           </span>
         </motion.div>
 
@@ -174,7 +184,7 @@ export function HeroSection() {
               <span className="absolute inset-0 rounded-2xl animate-pulse-ring" />
 
               <span className="relative z-10 flex items-center justify-center gap-3">
-                CONSULTAR AHORA — GRATIS
+                {t('ctaPrimary')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </span>
               {/* Shimmer Effect - subtle, respects reduced motion */}
@@ -195,7 +205,7 @@ export function HeroSection() {
               whileTap={{ scale: 0.98 }}
               className="w-full sm:w-auto px-6 py-3 min-h-[44px] text-text-secondary hover:text-text-primary font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded-lg"
             >
-              Buscar un Especialista
+              {t('ctaSecondary')}
             </motion.button>
           </Link>
         </motion.div>
@@ -206,7 +216,7 @@ export function HeroSection() {
             href="/for-doctors"
             className="text-sm text-text-muted hover:text-primary-600 transition-colors"
           >
-            Eres doctor? Unete a la red
+            {t('forDoctors')}
           </Link>
         </motion.div>
 
@@ -215,12 +225,7 @@ export function HeroSection() {
           variants={itemVariants}
           className="inline-flex flex-wrap items-center justify-center gap-4 sm:gap-6 px-4 sm:px-6 py-3 bg-white/60 backdrop-blur-sm rounded-full border border-neutral-200/50 shadow-sm"
         >
-          {[
-            { icon: ShieldCheck, text: 'COFEPRIS', value: 'Verificado' },
-            { icon: BadgeCheck, text: 'Doctores con cédula SEP', value: '500+' },
-            { icon: Users, text: 'Consultas realizadas', value: '10,000+' },
-            { icon: Clock, text: 'Disponible', value: '24/7' },
-          ].map((item, i) => (
+          {trustItems.map((item, i) => (
             <div key={i} className="flex items-center gap-2 text-text-secondary text-sm">
               {i > 0 && <div className="hidden sm:block w-px h-6 bg-neutral-300/50 -ml-2 mr-2" />}
               <item.icon className={`w-5 h-5 flex-shrink-0 ${i === 0 ? 'text-green-500' : 'text-primary-500'}`} aria-hidden="true" />
@@ -235,7 +240,7 @@ export function HeroSection() {
           variants={itemVariants}
           className="text-xs text-text-muted max-w-md mx-auto mt-4"
         >
-          Servicio de orientacion medica. No sustituye la consulta presencial.
+          {t('compliance')}
         </motion.p>
       </motion.div>
 
@@ -251,26 +256,28 @@ export function HeroSection() {
             <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary-100">
               <Image
                 src="/images/simeon.png"
-                alt="Dr. Simeon"
+                alt={t('drSimeon')}
                 width={48}
                 height={48}
                 className="w-full h-full object-cover"
+                placeholder="blur"
+                blurDataURL={getBlurDataURL('simeon')}
               />
             </div>
             <div>
-              <p className="font-semibold text-sm text-text-primary">Dr. Simeon</p>
+              <p className="font-semibold text-sm text-text-primary">{t('drSimeon')}</p>
               <p className="text-xs text-green-500 flex items-center gap-1">
                 <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
-                En línea
+                {t('online')}
               </p>
             </div>
           </div>
           <div className="bg-neutral-50 rounded-xl p-3 mb-2">
-            <p className="text-sm text-text-secondary">¡Hola! Soy tu asistente médico. ¿En qué puedo ayudarte hoy?</p>
+            <p className="text-sm text-text-secondary">{t('chatCard.greeting')}</p>
           </div>
           <div className="flex items-center gap-2 text-xs text-text-muted">
             <Lock className="w-3 h-3" aria-hidden="true" />
-            <span>Conversacion privada y segura</span>
+            <span>{t('chatCard.secure')}</span>
           </div>
         </div>
       </motion.div>

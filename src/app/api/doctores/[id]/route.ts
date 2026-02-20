@@ -21,15 +21,9 @@ export async function GET(
 
     const subscriptionStatus = await checkSubscriptionStatus(id)
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const doc = doctor as any
-    const isActive = (doc.doctor_subscriptions as Array<{ status: string; current_period_end: string }> | null | undefined)?.some(
-      sub => sub.status === 'active' && new Date(sub.current_period_end) > new Date()
-    ) || false
-
     return NextResponse.json({
       ...doctor,
-      subscription_status: isActive ? 'active' : 'inactive',
+      subscription_status: subscriptionStatus.isActive ? 'active' : 'inactive',
       subscription_details: subscriptionStatus.subscription,
     })
   } catch {

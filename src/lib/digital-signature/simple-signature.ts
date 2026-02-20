@@ -532,7 +532,7 @@ export async function getUserSignatures(
   }
 
   if (options?.offset) {
-    query = query.range(options.offset, (options.offset || 0) + (options.limit || 10) - 1)
+    query = query.range(options.offset, (options.offset ?? 0) + (options.limit || 10) - 1)
   }
 
   const { data, error } = await query

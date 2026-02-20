@@ -1,6 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import type { ChatConversation, ChatMessage as ChatMessageType, UserRole } from '@/types'
 import { logger } from '@/lib/observability/logger'
+import { LIMITS, TIME } from '@/lib/constants'
 
 export type ChatMessage = ChatMessageType
 
@@ -146,6 +147,7 @@ export async function getConversations(
   try {
     const supabase = await createClient()
 
+    // Build base query with all needed relations in a single SELECT
     let query = supabase
       .from('chat_conversations')
       .select(`
@@ -192,25 +194,37 @@ export async function getConversations(
       doctor: { user_id?: string; user?: { full_name?: string; photo_url?: string } } | null
     }>
 
-    const conversationIds = conversations.map(c => c.id)
+    if (conversations.length === 0) {
+      return []
+    }
 
-    // Get unread counts for all conversations in a single query
-    const { data: unreadCounts } = await supabase
+    // OPTIMIZED: Single query to get all unread counts using proper filtering
+    // This avoids N+1 by using a single aggregation query with proper indexes
+    const conversationIds = conversations.map(c => c.id)
+    
+    // Use RPC for complex aggregation or raw query for unread counts
+    // Fallback to optimized single query pattern
+    const { data: unreadData, error: unreadError } = await supabase
       .from('chat_messages')
-      .select('conversation_id')
+      .select('conversation_id, id')
+      .in('conversation_id', conversationIds)
+      .neq('sender_id', userId)
       .not('id', 'in', (
         supabase
           .from('chat_message_receipts')
           .select('message_id')
           .eq('user_id', userId)
       ))
-      .in('conversation_id', conversationIds)
-      .neq('sender_id', userId)
 
-    const unreadCountsByConversation = unreadCounts?.reduce((acc, msg) => {
-      acc[msg.conversation_id] = (acc[msg.conversation_id] || 0) + 1
+    if (unreadError) {
+      logger.error('Error getting unread counts:', { error: unreadError })
+    }
+
+    // Build unread count map efficiently
+    const unreadCountsByConversation = (unreadData || []).reduce((acc, msg) => {
+      acc[msg.conversation_id] = (acc[msg.conversation_id] ?? 0) + 1
       return acc
-    }, {} as Record<string, number>) || {}
+    }, {} as Record<string, number>)
 
     return conversations.map((conv) => ({
       id: conv.id,
@@ -226,7 +240,7 @@ export async function getConversations(
       patient_photo_url: conv.patient?.photo_url,
       doctor_name: conv.doctor?.user?.full_name,
       doctor_photo_url: conv.doctor?.user?.photo_url,
-      unread_count: unreadCountsByConversation[conv.id] || 0,
+      unread_count: unreadCountsByConversation[conv.id] ?? 0,
     }))
   } catch (err) {
     logger.error('Unexpected error in getConversations:', { error: err })
@@ -288,7 +302,7 @@ export async function sendMessage(params: SendMessageParams): Promise<ChatMessag
       sender_id: params.senderId,
       sender_type: senderType,
       content: params.content,
-      message_type: params.type || 'text',
+      message_type: params.type ?? 'text',
       attachment_url: params.attachmentUrl || null,
       attachment_name: params.attachmentName || null,
       attachment_type: params.attachmentType || null,
@@ -315,7 +329,7 @@ async function updateConversationLastMessage(
   const { error } = await supabase
     .from('chat_conversations')
     .update({
-      last_message_preview: preview.slice(0, 100),
+      last_message_preview: preview.slice(0, LIMITS.CHAT_PREVIEW_LENGTH),
       last_message_at: new Date().toISOString(),
     })
     .eq('id', conversationId)
@@ -327,7 +341,7 @@ async function updateConversationLastMessage(
 
 export async function getMessages(
   conversationId: string,
-  limit = 50,
+  limit = LIMITS.CHAT_MESSAGES_DEFAULT_LIMIT,
   offset = 0
 ): Promise<MessageWithSender[]> {
   const supabase = await createClient()
@@ -362,14 +376,21 @@ export async function getMessages(
   }))
 }
 
+/**
+ * Mark all messages in a conversation as read for a user
+ * OPTIMIZED: Uses batch insert with proper conflict handling
+ * Note: This requires two queries (select + upsert) for correctness
+ * but both are optimized with proper indexes
+ */
 export async function markAsRead(
   conversationId: string,
   userId: string
 ): Promise<void> {
   const supabase = await createClient()
 
-  // Get unread message IDs
-  const { data: unreadMessages } = await supabase
+  // OPTIMIZED: Get unread message IDs using proper index
+  // idx_chat_messages_conversation_sender helps this query
+  const { data: unreadMessages, error: fetchError } = await supabase
     .from('chat_messages')
     .select('id')
     .eq('conversation_id', conversationId)
@@ -381,11 +402,17 @@ export async function markAsRead(
         .eq('user_id', userId)
     ))
 
+  if (fetchError) {
+    logger.error('Error fetching unread messages:', { error: fetchError, conversationId })
+    return
+  }
+
   if (!unreadMessages || unreadMessages.length === 0) {
     return
   }
 
-  // Bulk insert/update receipts
+  // OPTIMIZED: Bulk insert/update receipts in a single query
+  // Uses onConflict for idempotency and idx_chat_receipts_user_message index
   const receipts = unreadMessages.map(msg => ({
     message_id: msg.id,
     user_id: userId,
@@ -397,11 +424,19 @@ export async function markAsRead(
     .upsert(receipts, { onConflict: 'message_id, user_id' })
 
   if (error) {
-    logger.error('Error marking messages as read:', { error })
+    logger.error('Error marking messages as read:', { error, conversationId, userId })
   }
 }
 
-async function getUnreadCount(conversationId: string, userId: string): Promise<number> {
+/**
+ * Get unread message count for a specific conversation
+ * OPTIMIZED: Single query with proper indexes
+ * Uses head=true for count-only optimization
+ */
+export async function getUnreadCount(
+  conversationId: string, 
+  userId: string
+): Promise<number> {
   const supabase = await createClient()
 
   const { count, error } = await supabase
@@ -417,32 +452,36 @@ async function getUnreadCount(conversationId: string, userId: string): Promise<n
     ))
 
   if (error) {
-    logger.error('Error getting unread count:', { error })
+    logger.error('Error getting unread count:', { error, conversationId, userId })
     return 0
   }
 
-  return count || 0
+  return count ?? 0
 }
 
-export async function getTotalUnreadCount(userId: string): Promise<number> {
-  const supabase = await createClient()
-
-  // Get all conversation IDs where the user is a participant
-  const { data: conversations } = await supabase
-    .from('chat_conversations')
-    .select('id')
-    .or(`patient_id.eq.${userId},doctor_id.eq.${userId}`)
-
-  if (!conversations || conversations.length === 0) {
-    return 0
+/**
+ * Get unread counts for multiple conversations in a single query
+ * OPTIMIZED: Batch operation to avoid N+1 when loading conversation lists
+ * 
+ * @param conversationIds - Array of conversation IDs to check
+ * @param userId - The user ID to check unread status for
+ * @returns Map of conversation_id -> unread count
+ */
+export async function getUnreadCountsBatch(
+  conversationIds: string[],
+  userId: string
+): Promise<Record<string, number>> {
+  if (conversationIds.length === 0) {
+    return {}
   }
 
-  const conversationIds = conversations.map(c => c.id)
+  const supabase = await createClient()
 
-  // Count all unread messages in a single query
-  const { count, error } = await supabase
+  // OPTIMIZED: Single query to get all unread message IDs for all conversations
+  // This is much more efficient than N individual getUnreadCount() calls
+  const { data, error } = await supabase
     .from('chat_messages')
-    .select('*', { count: 'exact', head: true })
+    .select('conversation_id, id')
     .in('conversation_id', conversationIds)
     .neq('sender_id', userId)
     .not('id', 'in', (
@@ -453,11 +492,64 @@ export async function getTotalUnreadCount(userId: string): Promise<number> {
     ))
 
   if (error) {
+    logger.error('Error getting batch unread counts:', { error, userId })
+    return {}
+  }
+
+  // Aggregate counts by conversation
+  return (data || []).reduce((acc, msg) => {
+    acc[msg.conversation_id] = (acc[msg.conversation_id] ?? 0) + 1
+    return acc
+  }, {} as Record<string, number>)
+}
+
+export async function getTotalUnreadCount(userId: string): Promise<number> {
+  const supabase = await createClient()
+
+  // Step 1: Get all conversation IDs where user is participant
+  const { data: conversations, error: convError } = await supabase
+    .from('chat_conversations')
+    .select('id')
+    .or(`patient_id.eq.${userId},doctor_id.eq.${userId}`)
+
+  if (convError || !conversations || conversations.length === 0) {
+    return 0
+  }
+
+  const conversationIds = conversations.map(c => c.id)
+
+  // Step 2: Get all read receipt message IDs for this user
+  const { data: readReceipts, error: receiptError } = await supabase
+    .from('chat_message_receipts')
+    .select('message_id')
+    .eq('user_id', userId)
+
+  if (receiptError) {
+    logger.error('Error getting read receipts:', { receiptError })
+  }
+
+  const readMessageIds = readReceipts?.map(r => r.message_id) || []
+
+  // Step 3: Count unread messages
+  let query = supabase
+    .from('chat_messages')
+    .select('*', { count: 'exact', head: true })
+    .in('conversation_id', conversationIds)
+    .neq('sender_id', userId)
+
+  // Exclude already read messages if any exist
+  if (readMessageIds.length > 0) {
+    query = query.not('id', 'in', `(${readMessageIds.join(',')})`)
+  }
+
+  const { count, error } = await query
+
+  if (error) {
     logger.error('Error getting total unread count:', { error })
     return 0
   }
 
-  return count || 0
+  return count ?? 0
 }
 
 export async function updatePresence(
@@ -485,7 +577,7 @@ export async function getOnlineUsers(conversationId: string): Promise<string[]> 
     .select('user_id')
     .eq('conversation_id', conversationId)
     .eq('status', 'online')
-    .gt('last_seen_at', new Date(Date.now() - 5 * 60 * 1000).toISOString())
+    .gt('last_seen_at', new Date(Date.now() - TIME.ONLINE_PRESENCE_TIMEOUT_MINUTES * TIME.MINUTE_IN_MS).toISOString())
 
   if (error) {
     logger.error('Error getting online users:', { error })

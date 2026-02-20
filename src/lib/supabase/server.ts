@@ -1,6 +1,9 @@
 import { createServerClient } from '@supabase/ssr'
-import { createClient as createSupabaseClient } from '@supabase/supabase-js'
 import { cookies } from 'next/headers'
+import { createServiceClient } from './service'
+
+// Re-export for backwards compatibility
+export { createServiceClient }
 
 // Helper to get Supabase URL from either standard or VITE_ prefixed env vars
 function getSupabaseUrl(): string {
@@ -59,16 +62,4 @@ export async function createClient() {
   )
 }
 
-/**
- * Service role client for server-side operations that bypass RLS
- */
-export function createServiceClient() {
-  const supabaseUrl = getSupabaseUrl()
-  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY
 
-  if (!serviceRoleKey) {
-    throw new Error('SUPABASE_SERVICE_ROLE_KEY must be set')
-  }
-
-  return createSupabaseClient(supabaseUrl, serviceRoleKey)
-}

@@ -38,7 +38,7 @@ function getLedgerTypeBadge(type: LedgerEntryType) {
     refund: 'error',
     payout: 'info',
   }
-  return variants[type] || 'neutral'
+  return variants[type] ?? 'neutral'
 }
 
 export default async function DoctorFinancesPage() {
@@ -129,7 +129,7 @@ export default async function DoctorFinancesPage() {
     }
   }
 
-  const currency = doctor?.currency || 'MXN'
+  const currency = doctor?.currency ?? 'MXN'
 
   if (!profile) {
     redirect('/auth/complete-profile')
@@ -206,7 +206,7 @@ export default async function DoctorFinancesPage() {
                             </Badge>
                           </td>
                           <td className="px-4 py-3 text-sm text-gray-900">
-                            {entry.description || '—'}
+                            {entry.description ?? '—'}
                           </td>
                           <td className={`px-4 py-3 text-sm font-medium text-right whitespace-nowrap ${
                             entry.type === 'charge' ? 'text-green-600' :

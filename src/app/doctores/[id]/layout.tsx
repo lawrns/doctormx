@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const doctorName = formatDoctorName(doctor.profile?.full_name)
-  const specialties = doctor.specialties?.map(s => s.name).filter(Boolean).join(', ') || 'Especialista'
+  const specialties = doctor.specialties?.map(s => s.name).filter(Boolean).join(', ') ?? 'Especialista'
   const location = doctor.city ? `${doctor.city}, ${doctor.state}` : 'México'
   const price = doctor.price_cents 
     ? `$${(doctor.price_cents / 100).toLocaleString('es-MX')} MXN`

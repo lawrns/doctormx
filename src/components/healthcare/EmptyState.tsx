@@ -115,7 +115,7 @@ export function EmptyState({
           {action && (
             <Button
               onClick={action.onClick}
-              variant={action.variant || 'default'}
+              variant={action.variant ?? 'default'}
               className="min-w-[140px]"
             >
               {action.label}

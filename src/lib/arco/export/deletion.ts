@@ -87,7 +87,7 @@ async function getRecordCount(table: string, userId: string): Promise<number> {
     .select('*', { count: 'exact', head: true })
     .eq('patient_id', userId)
 
-  return count || 0
+  return count ?? 0
 }
 
 /**
@@ -293,9 +293,9 @@ export async function getDeletionStatus(requestId: string): Promise<{
   const tables = deletions?.map((d) => d.table_name) || []
 
   return {
-    total_deletions: deletions?.length || 0,
-    completed_deletions: deletions?.filter((d) => d.executed_at).length || 0,
-    pending_deletions: deletions?.filter((d) => !d.executed_at).length || 0,
+    total_deletions: deletions?.length ?? 0,
+    completed_deletions: deletions?.filter((d) => d.executed_at).length ?? 0,
+    pending_deletions: deletions?.filter((d) => !d.executed_at).length ?? 0,
     tables_affected: [...new Set(tables)],
   }
 }

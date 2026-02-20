@@ -50,8 +50,11 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     }
     
     // Check access
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const ref = referral as any
+    const ref = referral as unknown as {
+      referring_doctor_id: string
+      receiving_doctor_id: string
+      patient_id: string
+    }
     if (
       ref.referring_doctor_id !== user.id &&
       ref.receiving_doctor_id !== user.id &&

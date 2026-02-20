@@ -136,7 +136,7 @@ async function handlePaymentResult(
   // TypeScript knows the exact type based on the 'type' field
   switch (error.type) {
     case 'ValidationError':
-      return `Please correct: ${error.field || 'field'}`
+      return `Please correct: ${error.field ?? 'field'}`
 
     case 'PaymentError':
       if (error.code === 'PAYMENT_FAILED') {
@@ -299,7 +299,7 @@ async function getDoctorApi(
  */
 async function handleApiRequest(request: Request) {
   const { searchParams } = new URL(request.url)
-  const doctorId = searchParams.get('doctorId') || ''
+  const doctorId = searchParams.get('doctorId') ?? ''
 
   const response = await getDoctorApi(doctorId)
 
@@ -316,7 +316,7 @@ async function handleApiRequest(request: Request) {
 
   if (isValidationError(error)) {
     return Response.json(
-      { error: `Validation failed for ${error.field || 'field'}` },
+      { error: `Validation failed for ${error.field ?? 'field'}` },
       { status: 400 }
     )
   }

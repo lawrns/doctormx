@@ -7,6 +7,7 @@ export const AI = {
   // Temperature settings
   TEMPERATURE_DEFAULT: 0.3,
   TEMPERATURE_DETERMINISTIC: 0.2, // For structured analysis
+  TEMPERATURE_CONSENSUS: 0.2, // Lower for more deterministic consensus
 
   // Max tokens
   MAX_TOKENS_MINIMAL: 300,
@@ -14,6 +15,8 @@ export const AI = {
   MAX_TOKENS_DEFAULT: 500,
   MAX_TOKENS_MEDIUM: 1000,
   MAX_TOKENS_LARGE: 1024,
+  MAX_TOKENS_REASONING: 2000,
+  MAX_TOKENS_PLAN: 1500,
 
   // Feature flags
   PRECONSULTA_ENABLED: true,
@@ -101,7 +104,21 @@ export const AI = {
     MEXICO_911: '911',
     VIDA_LINE: '800 911 2000',
   },
+
+  // Confidence thresholds
+  CONFIDENCE_DEFAULT: 0.7,
+  RELEVANCE_DEFAULT: 0.5,
+
+  // Kendall's W thresholds
+  KENDALL_W_STRONG_AGREEMENT: 0.8,
+  KENDALL_W_MODERATE_AGREEMENT: 0.6,
+  KENDALL_W_WEAK_AGREEMENT: 0.4,
+
+  // Human review threshold
+  HUMAN_REVIEW_THRESHOLD: 0.6,
+
+  // SOAP Consultation
+  SOAP_CONCURRENCY_LIMIT: 2,
 } as const
 
 export type AIKey = keyof typeof AI
-

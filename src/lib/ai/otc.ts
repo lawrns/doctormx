@@ -66,7 +66,7 @@ export async function generateOTCRecommendations(
     try {
         const symptomsText = symptoms.join(', ')
         const patientContext = patientInfo
-            ? `Paciente: ${patientInfo.age} años, ${patientInfo.gender}. Alergias: ${patientInfo.allergies?.join(', ') || 'ninguna'}. Medicamentos actuales: ${patientInfo.medications?.join(', ') || 'ninguno'}. Condiciones: ${patientInfo.conditions?.join(', ') || 'ninguna'}`
+            ? `Paciente: ${patientInfo.age} años, ${patientInfo.gender}. Alergias: ${patientInfo.allergies?.join(', ') ?? 'ninguna'}. Medicamentos actuales: ${patientInfo.medications?.join(', ') ?? 'ninguno'}. Condiciones: ${patientInfo.conditions?.join(', ') ?? 'ninguna'}`
             : ''
 
         const recommendationPrompt = `${patientContext}
@@ -129,22 +129,22 @@ Reglas:
 
         // Validate recommendations - ensure no prohibited medications
         const validated = (recommendationData.recommendations || []).filter((rec: { medicationName?: string }) => {
-            const medName = rec.medicationName?.toLowerCase() || ''
+            const medName = rec.medicationName?.toLowerCase() ?? ''
             return !PROHIBITED_MEDICATIONS.some(prohibited =>
                 medName.includes(prohibited.toLowerCase())
             )
         })
 
         return validated.map((rec: { medicationName?: string; category?: string; dosage?: string; frequency?: string; duration?: string; warnings?: string; contraindications?: string; purpose?: string; durationDays?: number; whenToStop?: string }) => ({
-            medicationName: rec.medicationName || '',
-            category: rec.category || 'supplement',
-            dosage: rec.dosage || '',
-            frequency: rec.frequency || '',
+            medicationName: rec.medicationName ?? '',
+            category: rec.category ?? 'supplement',
+            dosage: rec.dosage ?? '',
+            frequency: rec.frequency ?? '',
             durationDays: rec.durationDays || 3,
             warnings: rec.warnings || [],
             contraindications: rec.contraindications || [],
-            whenToStop: rec.whenToStop || '',
-            purpose: rec.purpose || '',
+            whenToStop: rec.whenToStop ?? '',
+            purpose: rec.purpose ?? '',
         }))
     } catch (error) {
         logger.error('Error parsing OTC recommendations', { error: (error as Error).message }, error as Error)

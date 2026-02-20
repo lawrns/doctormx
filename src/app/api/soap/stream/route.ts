@@ -341,9 +341,9 @@ RESPONDE ÚNICAMENTE en JSON válido:
   "returnPrecautions": ["Signos de alarma: cuándo buscar atención inmediata"]
 }`
 
-  const patientContext = `DIAGNÓSTICO: ${consensus.primaryDiagnosis || 'Pendiente evaluación'}
+  const patientContext = `DIAGNÓSTICO: ${consensus.primaryDiagnosis ?? 'Pendiente evaluación'}
 URGENCIA: ${consensus.urgencyLevel}
-SIGNOS DE ALARMA: ${consensus.combinedRedFlags.join(', ') || 'Ninguno identificado'}
+SIGNOS DE ALARMA: ${consensus.combinedRedFlags.join(', ') ?? 'Ninguno identificado'}
 SÍNTOMA PRINCIPAL: ${subjective.chiefComplaint}
 SEVERIDAD: ${subjective.symptomSeverity}/10
 DURACIÓN: ${subjective.symptomDuration}`
@@ -364,8 +364,8 @@ DURACIÓN: ${subjective.symptomDuration}`
     return {
       recommendations: parsed.recommendations || [],
       selfCareInstructions: parsed.selfCareInstructions || parsed.lifestyle || [],
-      followUpTiming: parsed.followUpTiming || parsed.followUp?.timing || '1 semana',
-      followUpType: parsed.followUpType || parsed.followUp?.type || 'telemedicine',
+      followUpTiming: (parsed.followUpTiming || parsed.followUp?.timing) ?? '1 semana',
+      followUpType: (parsed.followUpType || parsed.followUp?.type) ?? 'telemedicine',
       returnPrecautions: parsed.returnPrecautions || parsed.redFlagWarnings || [],
     }
   } catch {
@@ -392,7 +392,7 @@ export async function POST(request: NextRequest) {
 
       try {
         // Rate limiting
-        const identifier = request.headers.get('x-forwarded-for') || 'anonymous'
+        const identifier = request.headers.get('x-forwarded-for') ?? 'anonymous'
         const { success } = await rateLimit.ai.limit(identifier)
 
         if (!success) {

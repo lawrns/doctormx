@@ -85,17 +85,17 @@ export async function createConsentAuditLog(params: {
     occurred_at: new Date(),
     actor: {
       user_id: params.actor?.user_id || params.user_id,
-      role: (params.actor?.role as string) || 'user',
+      role: (params.actor?.role as string) ?? 'user',
       user_name: params.actor?.user_name || null,
-      type: (params.actor?.role as 'user' | 'admin' | 'system' | 'api' | 'webhook') || 'user',
+      type: (params.actor?.role as 'user' | 'admin' | 'system' | 'api' | 'webhook') ?? 'user',
     },
     resource: {
       type: 'consent',
       id: params.consent_record_id || null,
-      name: params.consent_type || 'unknown',
+      name: params.consent_type ?? 'unknown',
     },
     outcome: {
-      status: params.action_result || 'success',
+      status: params.action_result ?? 'success',
       error_message: params.error_message || undefined,
     },
     ip_address: params.ip_address || undefined,
@@ -126,10 +126,10 @@ export async function createConsentAuditLog(params: {
     consent_record_id: params.consent_record_id || null,
     consent_request_id: null,
     action: params.event_type,
-    action_result: params.action_result || 'success',
+    action_result: params.action_result ?? 'success',
     error_message: params.error_message,
     actor_user_id: params.actor?.user_id || params.user_id,
-    actor_role: params.actor?.role || 'user',
+    actor_role: params.actor?.role ?? 'user',
     actor_ip_address: params.ip_address,
     actor_user_agent: params.user_agent,
     session_id: params.session_id,
@@ -444,7 +444,7 @@ export async function logBulkConsentOperation(
 ): Promise<void> {
   await createConsentAuditLog({
     event_type: 'bulk_consent_operation',
-    user_id: actor.user_id || 'system',
+    user_id: actor.user_id ?? 'system',
     actor,
     action_result: results.failed > 0 ? 'partial' : 'success',
     ip_address: metadata?.ip_address,
@@ -589,10 +589,10 @@ export async function exportConsentAuditLogs(
   const rows = logs.map((log) => [
     log.occurred_at,
     log.event_type,
-    log.metadata?.consent_type || 'N/A',
+    log.metadata?.consent_type ?? 'N/A',
     log.outcome.status,
     log.actor.type,
-    log.ip_address || 'N/A',
+    log.ip_address ?? 'N/A',
   ])
 
   const csvContent = [

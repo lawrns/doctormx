@@ -54,8 +54,8 @@ export { PricingBadge, PricingBadgeCompact, FeatureLimitIndicator } from './Pric
 // Pharmacy Components
 export { default as PharmacySuggestions } from './PharmacySuggestions'
 
-// Analytics Components
-export { Chart, MiniSparkline } from './Chart'
+// Analytics Components - Lazy loaded to avoid recharts in initial bundle (~80KB)
+export { DynamicChart as Chart, DynamicMiniSparkline as MiniSparkline } from './Chart.dynamic'
 export { AnalyticsFilters, ExportButton } from './AnalyticsFilters'
 
 // Onboarding Components

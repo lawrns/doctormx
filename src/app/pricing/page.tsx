@@ -268,7 +268,7 @@ export default function PricingPage() {
 
       if (!response.ok) {
         const error = await response.json()
-        throw new Error(error.error || 'Error al procesar la suscripción')
+        throw new Error(error.error ?? 'Error al procesar la suscripción')
       }
 
       const { url } = await response.json()

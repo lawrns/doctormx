@@ -29,7 +29,7 @@ export async function GET(request: NextRequest) {
     const { user } = await requireRole('doctor')
 
     const searchParams = request.nextUrl.searchParams
-    const timeframe = searchParams.get('timeframe') || 'month'
+    const timeframe = searchParams.get('timeframe') ?? 'month'
 
     const supabase = await createClient()
 
@@ -77,8 +77,8 @@ export async function GET(request: NextRequest) {
     const weeklyTrend = calculateWeeklyTrend(referrals || [], startDate, now)
 
     // Calculate conversion rate
-    const totalReferrals = referrals?.length || 0
-    const convertedReferrals = referrals?.filter((r: AIDoctorReferral) => r.status === 'booked').length || 0
+    const totalReferrals = referrals?.length ?? 0
+    const convertedReferrals = referrals?.filter((r: AIDoctorReferral) => r.status === 'booked').length ?? 0
     const conversionRate = totalReferrals > 0 ? (convertedReferrals / totalReferrals) * 100 : 0
 
     // Get previous period for comparison
@@ -90,12 +90,12 @@ export async function GET(request: NextRequest) {
       .gte('created_at', previousStartDate.toISOString())
       .lt('created_at', startDate.toISOString())
 
-    const lastMonth = previousReferrals?.length || 0
+    const lastMonth = previousReferrals?.length ?? 0
 
     // Aggregate by specialty
     const specialtyCounts = referrals?.reduce((acc: Record<string, number>, r: AIDoctorReferral) => {
-      const specialty = r.referral_context?.specialty || 'Otro'
-      acc[specialty] = (acc[specialty] || 0) + 1
+      const specialty = r.referral_context?.specialty ?? 'Otro'
+      acc[specialty] = (acc[specialty] ?? 0) + 1
       return acc
     }, {})
 
@@ -106,7 +106,7 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({
       totalReferrals,
-      thisMonth: referrals?.length || 0,
+      thisMonth: referrals?.length ?? 0,
       lastMonth,
       conversionRate: Math.round(conversionRate),
       avgResponseTime: 2.4, // Mock data - would calculate from actual data

@@ -151,8 +151,8 @@ export async function PUT(req: NextRequest) {
       .single();
 
     const variables = {
-      patientName: appointment.profiles?.full_name || 'Paciente',
-      doctorName: doctor?.full_name || 'Dr./Dra.',
+      patientName: appointment.profiles?.full_name ?? 'Paciente',
+      doctorName: doctor?.full_name ?? 'Dr./Dra.',
       chiefComplaint: 'tu consulta reciente',
     };
 

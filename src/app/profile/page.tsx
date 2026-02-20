@@ -51,17 +51,17 @@ export default function ProfilePage() {
       if (response.ok) {
         setProfile(data.profile)
         setFormData({
-          full_name: data.profile.full_name || '',
-          phone: data.profile.phone || '',
-          date_of_birth: data.profile.date_of_birth || '',
-          gender: data.profile.gender || '',
-          city: data.profile.city || '',
-          state: data.profile.state || '',
-          country: data.profile.country || '',
+          full_name: data.profile.full_name ?? '',
+          phone: data.profile.phone ?? '',
+          date_of_birth: data.profile.date_of_birth ?? '',
+          gender: data.profile.gender ?? '',
+          city: data.profile.city ?? '',
+          state: data.profile.state ?? '',
+          country: data.profile.country ?? '',
         })
       } else {
-        setErrorMessage(data.error || 'Error al cargar perfil')
-        logger.error('Error fetching profile', { error: data.error || 'Error desconocido' })
+        setErrorMessage(data.error ?? 'Error al cargar perfil')
+        logger.error('Error fetching profile', { error: data.error ?? 'Error desconocido' })
       }
     } catch (error) {
       setErrorMessage('Error al cargar perfil')
@@ -85,7 +85,7 @@ export default function ProfilePage() {
         setEditing(false)
       } else {
         const data = await response.json()
-        setErrorMessage(data.error || 'Error al actualizar perfil')
+        setErrorMessage(data.error ?? 'Error al actualizar perfil')
       }
     } catch (error) {
       setErrorMessage('Error al actualizar perfil')
@@ -98,13 +98,13 @@ export default function ProfilePage() {
   const handleCancel = () => {
     if (profile) {
       setFormData({
-        full_name: profile.full_name || '',
-        phone: profile.phone || '',
-        date_of_birth: profile.date_of_birth || '',
-        gender: profile.gender || '',
-        city: profile.city || '',
-        state: profile.state || '',
-        country: profile.country || '',
+        full_name: profile.full_name ?? '',
+        phone: profile.phone ?? '',
+        date_of_birth: profile.date_of_birth ?? '',
+        gender: profile.gender ?? '',
+        city: profile.city ?? '',
+        state: profile.state ?? '',
+        country: profile.country ?? '',
       })
     }
     setEditing(false)
@@ -128,7 +128,7 @@ export default function ProfilePage() {
       other: 'Otro',
       prefer_not_to_say: 'Prefiero no decirlo',
     }
-    return labels[gender || ''] || 'No especificado'
+    return labels[gender ?? ''] ?? 'No especificado'
   }
 
   if (isLoading) {
@@ -173,7 +173,7 @@ export default function ProfilePage() {
                   {profile.photo_url ? (
                     <img
                       src={profile.photo_url}
-                      alt={profile.full_name || 'Perfil'}
+                      alt={profile.full_name ?? 'Perfil'}
                       className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg"
                     />
                   ) : (
@@ -187,7 +187,7 @@ export default function ProfilePage() {
                 </div>
                 <div className="text-center sm:text-left">
                   <h2 className="text-2xl font-bold mb-1">{profile.full_name}</h2>
-                  <p className="text-primary-100">{profile.email || ''}</p>
+                  <p className="text-primary-100">{profile.email ?? ''}</p>
                 </div>
               </div>
             </div>
@@ -223,7 +223,7 @@ export default function ProfilePage() {
                       </div>
                       <div>
                         <p className="text-sm text-gray-500">Correo electrónico</p>
-                        <p className="font-medium text-gray-900">{profile.email || 'No registrado'}</p>
+                        <p className="font-medium text-gray-900">{profile.email ?? 'No registrado'}</p>
                       </div>
                     </div>
 
@@ -233,7 +233,7 @@ export default function ProfilePage() {
                       </div>
                       <div>
                         <p className="text-sm text-gray-500">Teléfono</p>
-                        <p className="font-medium text-gray-900">{profile.phone || 'No registrado'}</p>
+                        <p className="font-medium text-gray-900">{profile.phone ?? 'No registrado'}</p>
                       </div>
                     </div>
 
@@ -243,7 +243,7 @@ export default function ProfilePage() {
                       </div>
                       <div>
                         <p className="text-sm text-gray-500">Fecha de nacimiento</p>
-                        <p className="font-medium text-gray-900">{formatDate(profile.date_of_birth || '')}</p>
+                        <p className="font-medium text-gray-900">{formatDate(profile.date_of_birth ?? '')}</p>
                       </div>
                     </div>
 
@@ -264,7 +264,7 @@ export default function ProfilePage() {
                       <div>
                         <p className="text-sm text-gray-500">Ubicación</p>
                         <p className="font-medium text-gray-900">
-                          {[profile.city, profile.state, profile.country].filter(Boolean).join(', ') || 'No registrada'}
+                          {[profile.city, profile.state, profile.country].filter(Boolean).join(', ') ?? 'No registrada'}
                         </p>
                       </div>
                     </div>

@@ -43,10 +43,10 @@ export function ResultsStep({
       <div className="flex justify-center">
         <Badge
           className={`px-6 py-2 text-white ${
-            URGENCY_COLORS[consultation.assessment?.consensus.urgencyLevel || 'routine']
+            URGENCY_COLORS[consultation.assessment?.consensus.urgencyLevel ?? 'routine']
           }`}
         >
-          Urgencia: {consultation.assessment?.consensus.urgencyLevel || 'routine'}
+          Urgencia: {consultation.assessment?.consensus.urgencyLevel ?? 'routine'}
         </Badge>
       </div>
 

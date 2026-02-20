@@ -350,5 +350,5 @@ export function getErrorCategory(code: ErrorCode): string {
     PAY: 'PAYMENT',
     VID: 'VIDEO',
   }
-  return categoryMap[prefix] || 'UNKNOWN'
+  return categoryMap[prefix] ?? 'UNKNOWN'
 }

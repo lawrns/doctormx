@@ -251,7 +251,7 @@ export type {
 export type {
   // PaymentStatus ya existe en database.ts
   PaymentProvider,
-  // Payment ya existe arriba (Application Types)
+  Payment,
 } from './global'
 
 // Prescription types

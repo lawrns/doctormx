@@ -57,8 +57,8 @@ export default async function PharmacyAffiliatePage({ params, searchParams }: Pa
     }
   }
 
-  const medications = prescription ? JSON.parse(prescription.medications || '[]') : []
-  const instructions = prescription?.instructions || ''
+  const medications = prescription ? JSON.parse(prescription.medications ?? '[]') : []
+  const instructions = prescription?.instructions ?? ''
 
   const formatCurrency = (cents: number) => {
     return new Intl.NumberFormat('es-MX', {
@@ -92,7 +92,7 @@ export default async function PharmacyAffiliatePage({ params, searchParams }: Pa
               <div className="p-6">
                 <div className="mb-6">
                   <h3 className="font-semibold text-ink-primary mb-2">Diagnóstico</h3>
-                  <p className="text-ink-secondary">{prescription?.diagnosis || 'No especificado'}</p>
+                  <p className="text-ink-secondary">{prescription?.diagnosis ?? 'No especificado'}</p>
                 </div>
 
                 <div className="mb-6">

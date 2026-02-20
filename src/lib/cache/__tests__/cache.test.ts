@@ -5,6 +5,7 @@
  */
 
 import { describe, it, expect, beforeEach, vi } from 'vitest'
+import type { DoctorProfile } from '@/lib/discovery'
 import {
   cache,
   getCacheClient,
@@ -16,6 +17,31 @@ import {
   subscriptionStatusKey,
   specialtiesListKey,
 } from '../index'
+
+// Proper mock DoctorProfile matching the expected type
+const mockDoctorProfile: DoctorProfile = {
+  id: '123',
+  status: 'approved',
+  bio: 'Experienced doctor',
+  languages: ['es', 'en'],
+  years_experience: 10,
+  city: 'Mexico City',
+  state: 'CDMX',
+  country: 'MX',
+  price_cents: 50000,
+  currency: 'MXN',
+  rating_avg: 4.8,
+  rating_count: 25,
+  profile: {
+    id: 'prof-123',
+    full_name: 'Dr. Smith',
+    photo_url: 'https://example.com/photo.jpg',
+    phone: '+52-123-456-7890',
+  },
+  specialties: [
+    { id: 'spec-1', name: 'Cardiology', slug: 'cardiology' },
+  ],
+}
 
 // Note: Tests use the real in-memory cache client
 // This provides better test coverage and avoids mock complexity
@@ -87,20 +113,16 @@ describe('Cache Module', () => {
 
   describe('Doctor Cache Operations', () => {
     it('should get doctor profile from cache', async () => {
-      const mockDoctor = { id: '123', name: 'Dr. Smith' }
-
       // Set doctor profile
-      await cache.setDoctorProfile('123', mockDoctor)
+      await cache.setDoctorProfile('123', mockDoctorProfile)
 
       // Get doctor profile
       const result = await cache.getDoctorProfile('123')
-      expect(result).toEqual(mockDoctor)
+      expect(result).toEqual(mockDoctorProfile)
     })
 
     it('should set doctor profile in cache', async () => {
-      const mockDoctor = { id: '123', name: 'Dr. Smith' }
-
-      const result = await cache.setDoctorProfile('123', mockDoctor)
+      const result = await cache.setDoctorProfile('123', mockDoctorProfile)
       expect(result).toBe(true)
     })
 

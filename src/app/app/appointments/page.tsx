@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Calendar, Clock, FileText, Video, MapPin, User } from 'lucide-react'
 import { logger } from '@/lib/observability/logger'
+import { apiRequest, APIError } from '@/lib/api'
 import AppNavigation from '@/components/app/AppNavigation'
 
 interface DoctorInfo {
@@ -44,21 +45,28 @@ export default function AppointmentsPage() {
 
     try {
       const statusFilter = activeTab === 'all' ? '' : `&status=${activeTab}`
-      const response = await fetch(`/api/appointments?${statusFilter}`, {
-        headers: { 'Content-Type': 'application/json' },
+      const response = await apiRequest<{ appointments: Appointment[] }>(`/api/appointments?${statusFilter}`, {
+        method: 'GET',
       })
 
-      const data = await response.json()
-
-      if (response.ok) {
-        setAppointments(data.appointments || [])
-      } else {
-        setErrorMessage(data.error || 'Error al cargar citas')
-        logger.error('Error fetching appointments', { error: data.error || 'Error desconocido' })
-      }
+      setAppointments(response.data.appointments || [])
     } catch (error) {
-      setErrorMessage('Error al cargar citas')
-      logger.error('Error fetching appointments', { error })
+      const apiError = error as APIError
+      
+      // Handle timeout error specifically
+      if (apiError.code === 'TIMEOUT') {
+        setErrorMessage('La solicitud tardó demasiado. Por favor, intenta de nuevo.')
+      } else if (apiError.code === 'NETWORK_ERROR') {
+        setErrorMessage('Error de conexión. Verifica tu internet e intenta de nuevo.')
+      } else {
+        setErrorMessage(apiError.message ?? 'Error al cargar citas')
+      }
+      
+      logger.error('Error fetching appointments', { 
+        error: apiError.message, 
+        code: apiError.code,
+        status: apiError.status 
+      })
     } finally {
       setIsLoading(false)
     }
@@ -72,7 +80,7 @@ export default function AppointmentsPage() {
       cancelled: 'bg-gray-100 text-gray-700',
       missed: 'bg-red-100 text-red-700',
     }
-    return styles[status] || 'bg-gray-100 text-gray-700'
+    return styles[status] ?? 'bg-gray-100 text-gray-700'
   }
 
   const getStatusLabel = (status: string) => {
@@ -210,7 +218,7 @@ export default function AppointmentsPage() {
                   {appointment.doctor?.profile?.photo_url ? (
                     <img
                       src={appointment.doctor.profile.photo_url}
-                      alt={appointment.doctor.profile.full_name || 'Doctor'}
+                      alt={appointment.doctor.profile.full_name ?? 'Doctor'}
                       className="w-12 h-12 rounded-full object-cover"
                     />
                   ) : (
@@ -220,10 +228,10 @@ export default function AppointmentsPage() {
                   )}
                   <div>
                     <p className="font-semibold text-gray-900">
-                      {appointment.doctor?.profile?.full_name || 'Doctor'}
+                      {appointment.doctor?.profile?.full_name ?? 'Doctor'}
                     </p>
                     <p className="text-sm text-gray-500">
-                      {appointment.doctor?.specialty || 'Médico General'}
+                      {appointment.doctor?.specialty ?? 'Médico General'}
                     </p>
                   </div>
                 </div>

@@ -35,6 +35,8 @@ class OfflineConsultationNotes {
   private readonly STORAGE_KEY = 'doctor_mx_offline_notes';
   private readonly SYNC_STATUS_KEY = 'doctor_mx_sync_status';
   private syncCallbacks: Array<(status: SyncStatus) => void> = [];
+  private onlineHandler: (() => void) | null = null;
+  private offlineHandler: (() => void) | null = null;
 
   // Get all offline notes
   getNotes(): OfflineNote[] {
@@ -145,7 +147,7 @@ class OfflineConsultationNotes {
       isOnline: this.isOnline(),
       lastSync: status.lastSync || null,
       pendingCount: pendingNotes.length,
-      syncing: status.syncing || false
+      syncing: status.syncing ?? false
     };
   }
 
@@ -214,14 +216,36 @@ class OfflineConsultationNotes {
   setupListeners(): void {
     if (typeof window === 'undefined') return;
 
-    window.addEventListener('online', () => {
+    // Store handler references for cleanup
+    this.onlineHandler = () => {
       this.notifySyncStatusChange();
       this.syncNotes();
-    });
+    };
 
-    window.addEventListener('offline', () => {
+    this.offlineHandler = () => {
       this.notifySyncStatusChange();
-    });
+    };
+
+    window.addEventListener('online', this.onlineHandler);
+    window.addEventListener('offline', this.offlineHandler);
+  }
+
+  // Cleanup online/offline listeners
+  cleanupListeners(): void {
+    if (typeof window === 'undefined') return;
+
+    if (this.onlineHandler) {
+      window.removeEventListener('online', this.onlineHandler);
+      this.onlineHandler = null;
+    }
+
+    if (this.offlineHandler) {
+      window.removeEventListener('offline', this.offlineHandler);
+      this.offlineHandler = null;
+    }
+
+    // Clear sync callbacks to prevent memory leaks
+    this.syncCallbacks = [];
   }
 
   // Private helper methods

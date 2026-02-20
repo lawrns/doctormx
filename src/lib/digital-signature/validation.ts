@@ -84,7 +84,7 @@ export async function validateCertificate(
       revocationStatus = revocationResult.status
 
       if (revocationStatus === RevocationStatus.REVOKED) {
-        errors.push(`Certificate revoked: ${revocationResult.reason || 'No reason provided'}`)
+        errors.push(`Certificate revoked: ${revocationResult.reason ?? 'No reason provided'}`)
       } else if (revocationStatus === RevocationStatus.UNKNOWN) {
         warnings.push('Unable to determine certificate revocation status')
       }

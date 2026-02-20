@@ -241,7 +241,7 @@ export async function verifyCedulaSEP(
   // Calculate name similarity
   const nameMatchScore = calculateNameSimilarity(
     providedName,
-    searchResult.name || ''
+    searchResult.name ?? ''
   );
   
   const nameMatch = nameMatchScore >= 70; // 70% threshold
@@ -339,13 +339,13 @@ export async function getDoctorVerification(doctorId: string): Promise<Verificat
   
   return {
     verified: data.sep_verified,
-    confidence: data.verification_data?.confidence || 0,
+    confidence: data.verification_data?.confidence ?? 0,
     data: {
       found: true,
       cedula: data.cedula,
       ...data.verification_data,
     },
-    message: data.verification_data?.message || '',
+    message: data.verification_data?.message ?? '',
     matchDetails: data.verification_data?.matchDetails,
   };
 }

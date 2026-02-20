@@ -28,13 +28,13 @@ function ScrollArea({
   )
 }
 
-function ScrollBar({
-  className,
-  orientation = "vertical",
-  ...props
-}: React.ComponentProps<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>) {
-  return (
+const ScrollBar = React.forwardRef<
+  React.ElementRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>,
+  React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>
+>(
+  ({ className, orientation = "vertical", ...props }, ref) => (
     <ScrollAreaPrimitive.ScrollAreaScrollbar
+      ref={ref}
       data-slot="scroll-area-scrollbar"
       orientation={orientation}
       className={cn(
@@ -53,6 +53,7 @@ function ScrollBar({
       />
     </ScrollAreaPrimitive.ScrollAreaScrollbar>
   )
-}
+)
+ScrollBar.displayName = "ScrollBar"
 
 export { ScrollArea, ScrollBar }

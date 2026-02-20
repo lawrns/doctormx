@@ -9,7 +9,7 @@ import { Building2 } from 'lucide-react'
 export default async function PharmacyAffiliateDashboard() {
   const { user } = await requireRole('doctor')
 
-  const pharmacy = await getPharmacyByEmail(user.email || '')
+  const pharmacy = await getPharmacyByEmail(user.email ?? '')
 
   if (!pharmacy) {
     return (

@@ -103,9 +103,10 @@ describe('AI Router', () => {
     it('should fallback to OpenAI when GLM and OpenRouter not available', async () => {
       vi.mocked(openrouter.isConfigured).mockReturnValue(false)
       vi.mocked(openai.chat.completions.create).mockResolvedValue({
-        choices: [{ message: { content: 'OpenAI result' } }],
+        model: 'gpt-4o',
+        choices: [{ message: { role: 'assistant', content: 'OpenAI result' } }],
         usage: { prompt_tokens: 100, completion_tokens: 50 },
-            } as ChatCompletionResponse)
+            } as unknown as ChatCompletionResponse)
 
       const result = await router.routeVision(
         'https://example.com/image.jpg',
@@ -122,9 +123,10 @@ describe('AI Router', () => {
     it('should calculate cost correctly for OpenAI', async () => {
       vi.mocked(openrouter.isConfigured).mockReturnValue(false)
       vi.mocked(openai.chat.completions.create).mockResolvedValue({
-        choices: [{ message: { content: 'Result' } }],
+        model: 'gpt-4o',
+        choices: [{ message: { role: 'assistant', content: 'Result' } }],
         usage: { prompt_tokens: 1000, completion_tokens: 500 },
-      } as ChatCompletionResponse)
+      } as unknown as ChatCompletionResponse)
 
       const result = await router.routeVision(
         'https://example.com/image.jpg',
@@ -169,9 +171,10 @@ describe('AI Router', () => {
     it('should fallback to OpenAI when GLM and DeepSeek unavailable', async () => {
       vi.mocked(deepseek.isConfigured).mockReturnValue(false)
       vi.mocked(openai.chat.completions.create).mockResolvedValue({
-        choices: [{ message: { content: 'OpenAI reasoning' } }],
+        model: 'gpt-4-turbo',
+        choices: [{ message: { role: 'assistant', content: 'OpenAI reasoning' } }],
         usage: { prompt_tokens: 200, completion_tokens: 100 },
-      } as ChatCompletionResponse)
+      } as unknown as ChatCompletionResponse)
 
       const result = await router.routeReasoning(
         [{ role: 'user', content: 'Test' }],
@@ -187,9 +190,10 @@ describe('AI Router', () => {
     it('should use OpenAI for general chat when GLM not configured', async () => {
       // GLM is mocked as not configured (default), so falls through to OpenAI
       vi.mocked(openai.chat.completions.create).mockResolvedValue({
-        choices: [{ message: { content: 'Chat response' } }],
+        model: 'gpt-4o-mini',
+        choices: [{ message: { role: 'assistant', content: 'Chat response' } }],
         usage: { prompt_tokens: 50, completion_tokens: 30 },
-      } as ChatCompletionResponse)
+      } as unknown as ChatCompletionResponse)
 
       const result = await router.routeChat(
         [{ role: 'user', content: 'Hello' }],

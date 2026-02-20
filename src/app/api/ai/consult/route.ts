@@ -111,7 +111,7 @@ export async function POST(request: NextRequest) {
     }
 
     const { messages, patientId } = parsed.data
-    const userMessage = messages[messages.length - 1]?.content || ''
+    const userMessage = messages[messages.length - 1]?.content ?? ''
     
     // Determine conversation state
     const conversationLength = messages.filter(m => m.role === 'user').length
@@ -141,7 +141,7 @@ export async function POST(request: NextRequest) {
       }
 
       // Get relevant specialty for RAG filter
-      const relevantSpecialty = specialists.find(s => specialtyMap[s]) || 'general_practitioner'
+      const relevantSpecialty = specialists.find(s => specialtyMap[s]) ?? 'general_practitioner'
       const specialtyFilter = specialtyMap[relevantSpecialty]
 
       ragContext = await retrieveMedicalContext(userMessage, {

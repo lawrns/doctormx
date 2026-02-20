@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
     }
 
-    const ip = request.headers.get('x-forwarded-for') || 'unknown'
+    const ip = request.headers.get('x-forwarded-for') ?? 'unknown'
     const rateLimitResult = await checkRateLimit(ip, '/api/cache/invalidate')
     if (!rateLimitResult.success) {
       return NextResponse.json(

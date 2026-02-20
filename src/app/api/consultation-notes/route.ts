@@ -62,10 +62,9 @@ export async function POST(request: NextRequest) {
 
     if (!isPatient && !isDoctor) {
       // Log security event for IDOR attempt
-      const ipAddress = request.headers.get('x-forwarded-for') || 
-                       request.headers.get('x-real-ip') || 
-                       'unknown'
-      const userAgent = request.headers.get('user-agent') || 'unknown'
+      const ipAddress = (request.headers.get('x-forwarded-for') ?? 
+                       request.headers.get('x-real-ip')) ?? 'unknown'
+      const userAgent = request.headers.get('user-agent') ?? 'unknown'
       
       await logSecurityEvent({
         eventType: 'permission_denied',
@@ -200,10 +199,9 @@ export async function GET(request: NextRequest) {
 
     if (!isPatient && !isDoctor && !isAdmin) {
       // Log security event for IDOR attempt
-      const ipAddress = request.headers.get('x-forwarded-for') || 
-                       request.headers.get('x-real-ip') || 
-                       'unknown'
-      const userAgent = request.headers.get('user-agent') || 'unknown'
+      const ipAddress = (request.headers.get('x-forwarded-for') ?? 
+                       request.headers.get('x-real-ip')) ?? 'unknown'
+      const userAgent = request.headers.get('user-agent') ?? 'unknown'
       
       await logSecurityEvent({
         eventType: 'permission_denied',
@@ -254,12 +252,12 @@ export async function GET(request: NextRequest) {
     logger.info('Consultation notes retrieved successfully', {
       userId: user.id,
       appointmentId,
-      count: data?.length || 0,
+      count: data?.length ?? 0,
     })
 
     return NextResponse.json({
       notes: data || [],
-      count: data?.length || 0,
+      count: data?.length ?? 0,
     })
   } catch (error) {
     logger.error('Consultation notes error:', { err: error })

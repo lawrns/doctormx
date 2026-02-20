@@ -74,7 +74,7 @@ export async function createArcoRequest(
       data_scope: input.data_scope,
       specific_records: input.specific_records || null,
       justification: input.justification?.trim() || null,
-      submitted_via: input.submitted_via || 'web',
+      submitted_via: input.submitted_via ?? 'web',
       ip_address: input.ip_address || null,
       user_agent: input.user_agent || null,
       due_date: dueDate.toISOString(),
@@ -231,7 +231,7 @@ export async function getArcoRequest(
     history: history || [],
     attachments: attachments || [],
     communications: communications || [],
-  } as unknown as ArcoRequestWithDetails
+  } as ArcoRequestWithDetails
 }
 
 /**
@@ -522,7 +522,7 @@ export async function getAllArcoRequests(
     )
   }
 
-  const total = count || 0
+  const total = count ?? 0
   const totalPages = Math.ceil(total / perPage)
 
   // Calculate business days for each request
@@ -538,10 +538,10 @@ export async function getAllArcoRequests(
 
     return {
       ...request,
-      user_name: (request.user as any)?.full_name,
-      user_email: (request.user as any)?.email,
-      user_phone: (request.user as any)?.phone,
-      assigned_to_name: (request.assignee as any)?.full_name,
+      user_name: (request.user as { full_name?: string } | null)?.full_name,
+      user_email: (request.user as { email?: string } | null)?.email,
+      user_phone: (request.user as { phone?: string } | null)?.phone,
+      assigned_to_name: (request.assignee as { full_name?: string } | null)?.full_name,
       business_days_elapsed: businessDaysElapsed,
       business_days_remaining: Math.max(0, businessDaysRemaining),
       is_overdue:
@@ -551,7 +551,7 @@ export async function getAllArcoRequests(
         (new Date(request.due_date).getTime() - new Date().getTime()) /
           (1000 * 60 * 60 * 24)
       ),
-    } as unknown as ArcoRequestWithDetails
+    } as ArcoRequestWithDetails
   })
 
   return {

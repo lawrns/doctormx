@@ -176,7 +176,7 @@ export const TIER_UPGRADE_PRICING: Record<SubscriptionTier, TierUpgradePricing> 
     nameEs: 'Pro',
     priceCents: 99900,
     priceMXN: 999,
-    stripePriceId: process.env.STRIPE_PRO_PRICE_ID || 'price_pro',
+    stripePriceId: process.env.STRIPE_PRO_PRICE_ID ?? 'price_pro',
     features: ['clinical_copilot'],
     aiFeatures: {
       imageAnalysis: { included: false, limit: 0 },
@@ -192,7 +192,7 @@ export const TIER_UPGRADE_PRICING: Record<SubscriptionTier, TierUpgradePricing> 
     nameEs: 'Elite',
     priceCents: 199900,
     priceMXN: 1999,
-    stripePriceId: process.env.STRIPE_ELITE_PRICE_ID || 'price_elite',
+    stripePriceId: process.env.STRIPE_ELITE_PRICE_ID ?? 'price_elite',
     features: ['image_analysis', 'clinical_copilot', 'extended_transcription', 'priority_ai_response'],
     aiFeatures: {
       imageAnalysis: { included: true, limit: 10 },
@@ -213,7 +213,7 @@ export function getTierFromPlanId(planId: string): SubscriptionTier {
     pro: 'pro',
     elite: 'elite',
   }
-  return tierMap[planId] || 'starter'
+  return tierMap[planId] ?? 'starter'
 }
 
 export async function getDoctorPremiumStatus(doctorId: string): Promise<{
@@ -264,8 +264,8 @@ export async function getDoctorPremiumStatus(doctorId: string): Promise<{
     }
     if (purchases[feature]) {
       purchases[feature] = {
-        quantity: record.bundle_quantity || 0,
-        remaining: record.bundle_remaining || 0,
+        quantity: record.bundle_quantity ?? 0,
+        remaining: record.bundle_remaining ?? 0,
       }
     }
   }
@@ -407,7 +407,7 @@ export async function trackFeatureUsage(
       .from('premium_feature_usage')
       .update({
         usage_count: existingUsage.usage_count + amount,
-        bundle_remaining: Math.max(0, (existingUsage.bundle_remaining || 0) - amount),
+        bundle_remaining: Math.max(0, (existingUsage.bundle_remaining ?? 0) - amount),
         updated_at: new Date().toISOString(),
       })
       .eq('id', existingUsage.id)
@@ -520,7 +520,7 @@ export async function createFeaturePurchase(
 
   return {
     sessionId: session.id,
-    url: session.url || '',
+    url: session.url ?? '',
   }
 }
 

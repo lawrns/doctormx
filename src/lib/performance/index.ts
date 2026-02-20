@@ -9,3 +9,7 @@ export type { PerformanceOperation, PerformanceConfig } from './monitor'
 export * from './web-vitals'
 export type { WebVitalsMetric, WebVitalsConfig, WebVitalMetric } from './web-vitals'
 
+// Image blur placeholders for LCP optimization
+export * from './image-blur'
+export type { LCPImageProps } from './image-blur'
+

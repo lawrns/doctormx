@@ -62,7 +62,7 @@ export async function sendWhatsAppMessage(
 
     if (!response.ok) {
       const error = await response.json();
-      return { success: false, error: error.error?.message || 'API error' };
+      return { success: false, error: error.error?.message ?? 'API error' };
     }
 
     const data = await response.json();
@@ -112,7 +112,7 @@ export async function sendTemplateMessage(
 
     if (!response.ok) {
       const error = await response.json();
-      return { success: false, error: error.error?.message || 'API error' };
+      return { success: false, error: error.error?.message ?? 'API error' };
     }
 
     const data = await response.json();

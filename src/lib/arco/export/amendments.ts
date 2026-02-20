@@ -200,5 +200,5 @@ export async function getPendingAmendmentsCount(requestId: string): Promise<numb
     .eq('arco_request_id', requestId)
     .is('applied_at', null)
 
-  return count || 0
+  return count ?? 0
 }

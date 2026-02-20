@@ -3,6 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.2-blue)](https://www.typescriptlang.org/)
+[![Coverage](https://img.shields.io/badge/Coverage-80%25-brightgreen)](./docs/testing/COVERAGE_REQUIREMENTS.md)
 
 > Plataforma moderna de teleconsultas médicas que conecta pacientes con doctores a través de videollamadas, integrando IA cooperativa para mejorar la experiencia de atención médica en México.
 

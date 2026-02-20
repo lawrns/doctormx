@@ -89,6 +89,16 @@ export {
   toSpanish,
 } from '@/lib/constants/medical-terminology'
 
+/**
+ * Numeric constants
+ * - Percentages and conversion factors
+ * - Time conversion multipliers
+ * - File size conversions
+ * - Rate limiting defaults
+ */
+export { NUMERIC } from '@/lib/constants/numeric'
+export type { NumericKey } from '@/lib/constants/numeric'
+
 // ============================================================================
 // APPOINTMENT CONSTANTS
 // ============================================================================

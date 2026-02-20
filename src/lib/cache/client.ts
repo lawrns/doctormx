@@ -132,7 +132,7 @@ class MemoryCacheClient implements CacheClient {
 
   async incr(key: string): Promise<number> {
     const entry = this.getEntry(key)
-    const current = entry ? parseInt(entry.value, 10) || 0 : 0
+    const current = entry ? parseInt(entry.value, 10) ?? 0 : 0
     const newValue = current + 1
 
     await this.set(key, newValue)
@@ -141,7 +141,7 @@ class MemoryCacheClient implements CacheClient {
 
   async incrby(key: string, increment: number): Promise<number> {
     const entry = this.getEntry(key)
-    const current = entry ? parseInt(entry.value, 10) || 0 : 0
+    const current = entry ? parseInt(entry.value, 10) ?? 0 : 0
     const newValue = current + increment
 
     await this.set(key, newValue)

@@ -406,7 +406,7 @@ export function getConsultationStatus(stateValue: string | { [key: string]: stri
     error: 'error',
   }
 
-  return statusMap[state] || 'intake'
+  return statusMap[state] ?? 'intake'
 }
 
 /**

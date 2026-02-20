@@ -1,13 +1,18 @@
 'use client'
 
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, useRef, useCallback } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { APPOINTMENT_CONFIG } from '@/config/constants'
 import PreConsultaChat from '@/components/PreConsultaChat'
 import { AI_CONFIG } from '@/lib/ai/config'
-import { User } from 'lucide-react'
+import { apiRequest, APIError } from '@/lib/api'
+import { logger } from '@/lib/observability/logger'
+import { User, Check, AlertCircle, Loader2 } from 'lucide-react'
+import { getBlurDataURL } from '@/lib/performance/image-blur'
+import { FormValidationAnnouncer, FormErrorSummary } from '@/components/ui/FormValidationAnnouncer'
+import { Button } from '@/components/ui/button'
 
 export type DoctorProfile = {
   id: string
@@ -48,6 +53,11 @@ type BookingFormProps = {
   currentUser: UserProfile | null
 }
 
+type FormErrors = {
+  date?: string
+  time?: string
+}
+
 const WEEKDAYS = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb']
 const MONTHS = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
 
@@ -70,13 +80,25 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
     suggestedSpecialty: string
   } | null>(null)
   const [consultationId, setConsultationId] = useState<string | null>(null)
+  const [errors, setErrors] = useState<FormErrors>({})
+  const [touched, setTouched] = useState<Record<string, boolean>>({})
+  const [announcement, setAnnouncement] = useState<string | null>(null)
+  const formRef = useRef<HTMLFormElement>(null)
+  const dateRef = useRef<HTMLDivElement>(null)
+  const timeRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const dateParam = searchParams.get('date')
     const timeParam = searchParams.get('time')
     const consultationIdParam = searchParams.get('consultationId')
-    if (dateParam) setSelectedDate(dateParam)
-    if (timeParam) setSelectedTime(timeParam)
+    if (dateParam) {
+      setSelectedDate(dateParam)
+      setTouched(prev => ({ ...prev, date: true }))
+    }
+    if (timeParam) {
+      setSelectedTime(timeParam)
+      setTouched(prev => ({ ...prev, time: true }))
+    }
     if (consultationIdParam) setConsultationId(consultationIdParam)
   }, [searchParams])
 
@@ -89,13 +111,18 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
       maxDate.setDate(maxDate.getDate() + APPOINTMENT_CONFIG.MAX_ADVANCE_DAYS)
       
       try {
-        const res = await fetch(
-          `/api/doctores/${doctor.id}/available-dates?start=${today.toISOString().split('T')[0]}&end=${maxDate.toISOString().split('T')[0]}`
+        const res = await apiRequest<{ dates: string[] }>(
+          `/api/doctores/${doctor.id}/available-dates?start=${today.toISOString().split('T')[0]}&end=${maxDate.toISOString().split('T')[0]}`,
+          { method: 'GET' }
         )
-        const data = await res.json()
-        setAvailableDates(data.dates || [])
-      } catch {
-        // Silently fail - calendar is enhancement, not critical
+        setAvailableDates(res.data.dates || [])
+      } catch (error) {
+        const apiError = error as APIError
+        if (apiError.code === 'TIMEOUT') {
+          logger.warn('Timeout loading available dates', { doctorId: doctor.id })
+        } else if (apiError.code === 'NETWORK_ERROR') {
+          logger.warn('Network error loading available dates', { doctorId: doctor.id })
+        }
       } finally {
         setLoadingCalendar(false)
       }
@@ -108,41 +135,169 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
     if (selectedDate) {
       setLoadingSlots(true)
       setSelectedTime('')
-      fetch(`/api/doctores/${doctor.id}/slots?date=${selectedDate}`)
-        .then(res => res.json())
-        .then(data => { setAvailableSlots(data.slots || []); setLoadingSlots(false) })
-        .catch(() => {
+      setTouched(prev => ({ ...prev, time: false }))
+      apiRequest<{ slots: string[] }>(`/api/doctores/${doctor.id}/slots?date=${selectedDate}`, { method: 'GET' })
+        .then(res => { 
+          setAvailableSlots(res.data.slots || []); 
+          setLoadingSlots(false) 
+        })
+        .catch((error) => {
+          const apiError = error as APIError
+          if (apiError.code === 'TIMEOUT') {
+            logger.warn('Timeout loading slots', { doctorId: doctor.id, date: selectedDate })
+          } else if (apiError.code === 'NETWORK_ERROR') {
+            logger.warn('Network error loading slots', { doctorId: doctor.id, date: selectedDate })
+          }
           setAvailableSlots([])
           setLoadingSlots(false)
         })
     }
   }, [selectedDate, doctor.id])
 
+  // Validation functions
+  const validateDate = useCallback((date: string): boolean => {
+    if (!date) {
+      setErrors(prev => ({ ...prev, date: 'Selecciona una fecha' }))
+      return false
+    }
+    if (!availableDates.includes(date)) {
+      setErrors(prev => ({ ...prev, date: 'Fecha no disponible' }))
+      return false
+    }
+    setErrors(prev => {
+      const newErrors = { ...prev }
+      delete newErrors.date
+      return newErrors
+    })
+    return true
+  }, [availableDates])
+
+  const validateTime = useCallback((time: string): boolean => {
+    if (!time) {
+      setErrors(prev => ({ ...prev, time: 'Selecciona un horario' }))
+      return false
+    }
+    if (!availableSlots.includes(time)) {
+      setErrors(prev => ({ ...prev, time: 'Horario no disponible' }))
+      return false
+    }
+    setErrors(prev => {
+      const newErrors = { ...prev }
+      delete newErrors.time
+      return newErrors
+    })
+    return true
+  }, [availableSlots])
+
+  const validateForm = useCallback((): boolean => {
+    const isDateValid = validateDate(selectedDate)
+    const isTimeValid = validateTime(selectedTime)
+    
+    if (!isDateValid || !isTimeValid) {
+      const errorMessages = []
+      if (!isDateValid) errorMessages.push('Fecha: Selecciona una fecha válida')
+      if (!isTimeValid) errorMessages.push('Horario: Selecciona un horario válido')
+      setAnnouncement(`Errores en el formulario: ${errorMessages.join('. ')}`)
+      return false
+    }
+    
+    return true
+  }, [selectedDate, selectedTime, validateDate, validateTime])
+
+  const handleDateSelect = (date: string) => {
+    setSelectedDate(date)
+    setTouched(prev => ({ ...prev, date: true }))
+    const isValid = availableDates.includes(date)
+    if (isValid) {
+      setErrors(prev => {
+        const newErrors = { ...prev }
+        delete newErrors.date
+        return newErrors
+      })
+      setAnnouncement(`Fecha seleccionada: ${formatDateDisplay(date)}`)
+    } else {
+      setErrors(prev => ({ ...prev, date: 'Fecha no disponible' }))
+      setAnnouncement('Error: Fecha no disponible')
+    }
+  }
+
+  const handleTimeSelect = (time: string) => {
+    setSelectedTime(time)
+    setTouched(prev => ({ ...prev, time: true }))
+    const isValid = availableSlots.includes(time)
+    if (isValid) {
+      setErrors(prev => {
+        const newErrors = { ...prev }
+        delete newErrors.time
+        return newErrors
+      })
+      setAnnouncement(`Horario seleccionado: ${time}`)
+    } else {
+      setErrors(prev => ({ ...prev, time: 'Horario no disponible' }))
+      setAnnouncement('Error: Horario no disponible')
+    }
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    
     if (!currentUser) {
       const redirectPath = window.location.pathname + window.location.search
       router.push(`/auth/login?redirect=${encodeURIComponent(redirectPath)}`)
       return
     }
-    if (AI_CONFIG.features.preConsulta && !preConsultaCompleted) { setShowPreConsulta(true); return }
+    
+    if (!validateForm()) {
+      // Focus first error
+      if (errors.date && dateRef.current) {
+        dateRef.current.focus()
+        dateRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      } else if (errors.time && timeRef.current) {
+        timeRef.current.focus()
+        timeRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      }
+      return
+    }
+    
+    if (AI_CONFIG.features.preConsulta && !preConsultaCompleted) { 
+      setShowPreConsulta(true)
+      setAnnouncement('Iniciando pre-consulta con IA')
+      return 
+    }
+    
     setSubmitting(true)
+    setAnnouncement('Creando tu cita...')
+    
     try {
-      const res = await fetch('/api/appointments', {
+      const res = await apiRequest<{ appointmentId: string }>('/api/appointments', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
+        body: {
           doctorId: doctor.id,
           date: selectedDate,
           time: selectedTime,
           preConsultaSummary,
           consultationId: consultationId || undefined
-        }),
+        },
       })
-      const data = await res.json()
-      if (res.ok) router.push(`/checkout/${data.appointmentId}`)
-      else { alert(data.error || 'Error al crear la cita'); setSubmitting(false) }
-    } catch { alert('Error al crear la cita'); setSubmitting(false) }
+      setAnnouncement('Cita creada exitosamente')
+      router.push(`/checkout/${res.data.appointmentId}`)
+    } catch (error) {
+      const apiError = error as APIError
+      
+      if (apiError.code === 'TIMEOUT') {
+        setAnnouncement('Error: La solicitud tardó demasiado. Por favor intenta de nuevo.')
+        alert('La solicitud tardó demasiado. Por favor, intenta de nuevo.')
+      } else if (apiError.code === 'NETWORK_ERROR') {
+        setAnnouncement('Error de conexión. Verifica tu internet e intenta de nuevo.')
+        alert('Error de conexión. Verifica tu internet e intenta de nuevo.')
+      } else {
+        const msg = apiError.message ?? 'Error al crear la cita'
+        setAnnouncement(`Error: ${msg}`)
+        alert(msg)
+      }
+      
+      setSubmitting(false)
+    }
   }
 
   // Generate calendar days for current month view
@@ -247,8 +402,18 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
     return nextMonth > maxMonth
   }
 
+  // Error summary for screen readers
+  const errorSummary = Object.entries(errors).reduce((acc, [key, err]) => {
+    if (err && touched[key]) {
+      acc[key] = err
+    }
+    return acc
+  }, {} as Record<string, string>)
+
   return (
     <div className="min-h-screen bg-gradient-hero">
+      <FormValidationAnnouncer message={announcement} politeness="polite" />
+
       <header className="glass-nav sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2">
@@ -272,7 +437,15 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
             <div className="bg-secondary-50 p-4 rounded-xl mb-6 flex items-center gap-4 border border-border">
               <div className="w-16 h-16 bg-gradient-to-br from-primary-100 to-accent-100 rounded-xl overflow-hidden">
                 {doctor.profile?.photo_url ? (
-                  <Image src={doctor.profile.photo_url} alt={doctor.profile.full_name} width={64} height={64} className="object-cover w-full h-full" />
+                  <Image 
+                    src={doctor.profile.photo_url} 
+                    alt={doctor.profile.full_name} 
+                    width={64} 
+                    height={64} 
+                    className="object-cover w-full h-full" 
+                    placeholder="blur"
+                    blurDataURL={getBlurDataURL('doctor-avatar')}
+                  />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center"><User className="w-8 h-8 text-gray-400" /></div>
                 )}
@@ -286,11 +459,21 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                 <p className="text-xs text-ink-muted">por consulta</p>
               </div>
             </div>
-            <form onSubmit={handleSubmit} className="space-y-6">
+
+            {/* Error Summary */}
+            {Object.keys(errorSummary).length > 0 && (
+              <div className="mb-4">
+                <FormErrorSummary errors={errorSummary} title="Por favor selecciona:" />
+              </div>
+            )}
+
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6" noValidate>
               {/* Mini Calendar */}
-              <div>
+              <div ref={dateRef} tabIndex={-1}>
                 <label className="block text-sm font-medium text-ink-primary mb-3">
                   Selecciona una fecha
+                  <span className="text-destructive ml-1" aria-hidden="true">*</span>
+                  <span className="sr-only">(requerido)</span>
                 </label>
                 
                 {/* Calendar Header */}
@@ -300,12 +483,13 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                     onClick={goToPreviousMonth}
                     disabled={isPrevMonthDisabled()}
                     className="p-2 rounded-lg hover:bg-secondary-100 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                    aria-label="Mes anterior"
                   >
-                    <svg className="w-5 h-5 text-ink-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-ink-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                     </svg>
                   </button>
-                  <span className="font-semibold text-ink-primary">
+                  <span className="font-semibold text-ink-primary" aria-live="polite">
                     {MONTHS[currentMonth.getMonth()]} {currentMonth.getFullYear()}
                   </span>
                   <button
@@ -313,8 +497,9 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                     onClick={goToNextMonth}
                     disabled={isNextMonthDisabled()}
                     className="p-2 rounded-lg hover:bg-secondary-100 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                    aria-label="Mes siguiente"
                   >
-                    <svg className="w-5 h-5 text-ink-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-ink-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </button>
@@ -330,13 +515,17 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                 </div>
 
                 {/* Calendar Grid */}
-                <div className="grid grid-cols-7 gap-1">
+                <div 
+                  className="grid grid-cols-7 gap-1"
+                  role="grid"
+                  aria-label="Calendario de disponibilidad"
+                >
                   {calendarDays.map((day, index) => (
                     <button
                       key={index}
                       type="button"
                       disabled={!day.date || day.isPast}
-                      onClick={() => day.date && setSelectedDate(day.date)}
+                      onClick={() => day.date && handleDateSelect(day.date)}
                       className={`
                         relative aspect-square rounded-lg text-sm font-medium transition-all
                         ${!day.date ? 'invisible' : ''}
@@ -345,13 +534,18 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                         ${day.isAvailable && selectedDate !== day.date ? 'text-success-700 bg-success-50' : ''}
                         ${!day.isAvailable && !day.isPast && selectedDate !== day.date ? 'text-ink-primary' : ''}
                         ${day.isToday && selectedDate !== day.date ? 'ring-2 ring-primary-400' : ''}
+                        ${errors.date && touched.date && selectedDate === day.date ? 'ring-2 ring-destructive' : ''}
                       `}
+                      role="gridcell"
+                      aria-selected={selectedDate === day.date}
+                      aria-disabled={!day.date || day.isPast}
+                      aria-label={day.date ? formatDateDisplay(day.date) : undefined}
                     >
                       {day.date && new Date(day.date + 'T00:00:00').getDate()}
                       
                       {/* Availability indicator dot */}
                       {day.isAvailable && selectedDate !== day.date && (
-                        <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-success-500 rounded-full"></span>
+                        <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-success-500 rounded-full" aria-hidden="true"></span>
                       )}
                     </button>
                   ))}
@@ -360,24 +554,35 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                 {/* Calendar Legend */}
                 <div className="flex items-center justify-center gap-4 mt-3 text-xs text-ink-secondary">
                   <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 bg-success-500 rounded-full"></span>
+                    <span className="w-2 h-2 bg-success-500 rounded-full" aria-hidden="true"></span>
                     <span>Disponible</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <span className="w-4 h-4 border-2 border-primary-400 rounded"></span>
+                    <span className="w-4 h-4 border-2 border-primary-400 rounded" aria-hidden="true"></span>
                     <span>Hoy</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <span className="w-4 h-4 bg-primary-500 rounded"></span>
+                    <span className="w-4 h-4 bg-primary-500 rounded" aria-hidden="true"></span>
                     <span>Seleccionado</span>
                   </div>
                 </div>
+
+                {/* Error message */}
+                {errors.date && touched.date && (
+                  <p className="mt-2 text-sm text-destructive flex items-center gap-1" role="alert" aria-live="polite">
+                    <AlertCircle className="w-4 h-4" aria-hidden="true" />
+                    {errors.date}
+                  </p>
+                )}
 
                 {/* Hidden native date input for accessibility and form validation */}
                 <input 
                   type="date" 
                   value={selectedDate} 
-                  onChange={(e) => { setSelectedDate(e.target.value); setSelectedTime('') }} 
+                  onChange={(e) => { 
+                    const newDate = e.target.value
+                    handleDateSelect(newDate)
+                  }} 
                   min={today} 
                   max={max} 
                   required 
@@ -388,13 +593,16 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
               </div>
 
               {selectedDate && (
-                <div>
+                <div ref={timeRef} tabIndex={-1}>
                   <label className="block text-sm font-medium text-ink-primary mb-3">
                     Horarios para {formatDateDisplay(selectedDate)}
+                    <span className="text-destructive ml-1" aria-hidden="true">*</span>
+                    <span className="sr-only">(requerido)</span>
                   </label>
                   {loadingSlots ? (
-                    <div className="flex items-center justify-center py-8">
-                      <div className="animate-spin h-8 w-8 border-4 border-primary-500 border-t-transparent rounded-full"></div>
+                    <div className="flex items-center justify-center py-8" role="status" aria-live="polite">
+                      <span className="sr-only">Cargando horarios disponibles...</span>
+                      <div className="animate-spin h-8 w-8 border-4 border-primary-500 border-t-transparent rounded-full" aria-hidden="true"></div>
                     </div>
                   ) : availableSlots.length === 0 ? (
                     <div className="space-y-4">
@@ -416,7 +624,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                               <button
                                 key={date}
                                 type="button"
-                                onClick={() => setSelectedDate(date)}
+                                onClick={() => handleDateSelect(date)}
                                 className="px-3 py-2 bg-white text-primary-700 rounded-lg border border-primary-300 hover:bg-primary-100 hover:border-primary-500 text-sm font-medium transition-colors"
                               >
                                 {formatShortDate(date)}
@@ -431,12 +639,16 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                       <p className="text-sm text-ink-secondary">
                         {availableSlots.length} horario{availableSlots.length !== 1 ? 's' : ''} disponible{availableSlots.length !== 1 ? 's' : ''}
                       </p>
-                      <div className="grid grid-cols-4 gap-2">
+                      <div 
+                        className="grid grid-cols-4 gap-2"
+                        role="radiogroup"
+                        aria-label="Horarios disponibles"
+                      >
                         {availableSlots.map((slot) => (
                           <button 
                             key={slot} 
                             type="button" 
-                            onClick={() => setSelectedTime(slot)} 
+                            onClick={() => handleTimeSelect(slot)} 
                             className={`
                               px-4 py-3 rounded-xl border-2 text-sm font-medium transition-all
                               ${selectedTime === slot 
@@ -444,11 +656,21 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                                 : 'bg-white text-ink-secondary border-border hover:border-primary-300 hover:bg-primary-50'
                               }
                             `}
+                            role="radio"
+                            aria-checked={selectedTime === slot}
                           >
                             {slot}
                           </button>
                         ))}
                       </div>
+                      
+                      {/* Error message */}
+                      {errors.time && touched.time && (
+                        <p className="mt-2 text-sm text-destructive flex items-center gap-1" role="alert" aria-live="polite">
+                          <AlertCircle className="w-4 h-4" aria-hidden="true" />
+                          {errors.time}
+                        </p>
+                      )}
                     </div>
                   )}
                 </div>
@@ -456,7 +678,8 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
               
               {preConsultaCompleted && (
                 <div className="bg-success-50 border border-success-200 rounded-xl p-4">
-                  <p className="text-sm text-success-700 font-medium">
+                  <p className="text-sm text-success-700 font-medium flex items-center gap-2">
+                    <Check className="w-4 h-4" aria-hidden="true" />
                     Pre-consulta completada con Dr. Simeon IA
                   </p>
                 </div>
@@ -483,13 +706,24 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
               )}
               
               {selectedDate && selectedTime && (
-                <button 
+                <Button 
                   type="submit" 
-                  disabled={submitting} 
+                  disabled={submitting}
                   className="w-full py-4 bg-primary-500 text-white rounded-xl hover:bg-primary-600 font-semibold text-lg disabled:opacity-50 transition-colors"
                 >
-                  {submitting ? 'Creando cita...' : currentUser ? (AI_CONFIG.features.preConsulta && !preConsultaCompleted ? 'Iniciar pre-consulta con IA' : 'Continuar al pago →') : 'Iniciar sesión y continuar'}
-                </button>
+                  {submitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
+                      Creando cita...
+                    </>
+                  ) : currentUser ? (
+                    AI_CONFIG.features.preConsulta && !preConsultaCompleted ? 
+                      'Iniciar pre-consulta con IA' : 
+                      'Continuar al pago →'
+                  ) : (
+                    'Iniciar sesión y continuar'
+                  )}
+                </Button>
               )}
             </form>
           </div>

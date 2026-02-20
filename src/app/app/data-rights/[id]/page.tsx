@@ -9,7 +9,7 @@
 
 import { redirect, notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
-import { ArcoRequestDetailClient } from './arco-request-detail-client'
+import { ArcoRequestDetailClient } from './ArcoRequestDetailClient'
 
 interface ArcoRequestResponse {
   success: boolean

@@ -5,9 +5,11 @@
  * @module services/pharmacy/inventory
  */
 
-import type { Product, PharmacyChain, StockCheckResult } from './types';
+import type { Product, StockCheckResult } from './types';
+import type { PharmacyChain } from './types';
 import { OutOfStockError } from './errors';
 import { CatalogService } from './catalog';
+import { TIME } from '@/lib/constants';
 
 // ============================================================================
 // INVENTORY SERVICE CLASS
@@ -54,7 +56,7 @@ export class InventoryService {
         available,
         availableQuantity,
         estimatedRestock: !product.stock.available
-          ? new Date(Date.now() + 24 * 60 * 60 * 1000) // Mock: restock tomorrow
+          ? new Date(Date.now() + TIME.INVENTORY_RESTOCK_HOURS * TIME.HOUR_IN_MS) // Mock: restock tomorrow
           : undefined,
       };
     });
@@ -154,7 +156,7 @@ export class InventoryService {
     const inStock = pharmacyProducts.filter(p => p.stock.available && p.stock.quantity >= 10).length;
     const lowStock = pharmacyProducts.filter(p => p.stock.available && p.stock.quantity > 0 && p.stock.quantity < 10).length;
     const outOfStock = pharmacyProducts.filter(p => !p.stock.available || p.stock.quantity === 0).length;
-    const totalItems = pharmacyProducts.reduce((sum, p) => sum + (p.stock.quantity || 0), 0);
+    const totalItems = pharmacyProducts.reduce((sum, p) => sum + (p.stock.quantity ?? 0), 0);
 
     return {
       totalProducts: pharmacyProducts.length,

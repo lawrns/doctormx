@@ -53,7 +53,7 @@ export class SearchService {
       const searchable = [
         product.name,
         product.genericName,
-        product.genericName ? `${product.genericName} ${product.dosage || ''}` : '',
+        product.genericName ? `${product.genericName} ${product.dosage ?? ''}` : '',
       ]
         .filter(Boolean)
         .join(' ');

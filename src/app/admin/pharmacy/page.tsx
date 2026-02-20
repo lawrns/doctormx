@@ -21,8 +21,8 @@ export default async function AdminPharmacyPage() {
     .from('pharmacy_commissions')
     .select('total_payout_cents, pharmacy_id')
 
-  const totalReferrals = allReferrals?.length || 0
-  const totalRevenue = allCommissions?.reduce((sum, c) => sum + (c.total_payout_cents || 0), 0) || 0
+  const totalReferrals = allReferrals?.length ?? 0
+  const totalRevenue = allCommissions?.reduce((sum, c) => sum + (c.total_payout_cents ?? 0), 0) || 0
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -99,7 +99,7 @@ export default async function AdminPharmacyPage() {
                     const pharmacyReferrals = allReferrals?.filter((r) => r.pharmacy_id === pharmacy.id) || []
                     const pharmacyRevenue = allCommissions
                       ?.filter((c) => c.pharmacy_id === pharmacy.id)
-                      .reduce((sum, c) => sum + (c.total_payout_cents || 0), 0) || 0
+                      .reduce((sum, c) => sum + (c.total_payout_cents ?? 0), 0) || 0
 
                     return (
                       <div key={pharmacy.id} className="flex items-center justify-between p-4 bg-secondary-50 rounded-lg">

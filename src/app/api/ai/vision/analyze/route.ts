@@ -72,7 +72,7 @@ export async function POST(req: NextRequest) {
         .eq('patient_id', user.id)
         .gte('created_at', monthStart)
 
-      currentUsage = patientAnalyses?.length || 0
+      currentUsage = patientAnalyses?.length ?? 0
       limit = 3
       tier = 'patient'
 
@@ -112,7 +112,7 @@ export async function POST(req: NextRequest) {
         )
       }
 
-      tier = subscription.plan_id || 'starter'
+      tier = subscription.plan_id ?? 'starter'
 
       const tierLimits: Record<string, number> = {
         none: 0,
@@ -121,7 +121,7 @@ export async function POST(req: NextRequest) {
         elite: 10,
       }
 
-      limit = tierLimits[tier] || 0
+      limit = tierLimits[tier] ?? 0
 
       if (tier !== 'pro' && tier !== 'elite') {
         return NextResponse.json(
@@ -144,7 +144,7 @@ export async function POST(req: NextRequest) {
         .eq('period_start', subscription.current_period_start)
         .single()
 
-      currentUsage = usageRecord?.usage_count || 0
+      currentUsage = usageRecord?.usage_count ?? 0
 
       if (currentUsage >= limit && limit > 0) {
         return NextResponse.json(
@@ -311,7 +311,7 @@ export async function GET(req: NextRequest) {
     }
 
     const { searchParams } = new URL(req.url)
-    const status = searchParams.get('status') || 'all'
+    const status = searchParams.get('status') ?? 'all'
 
     let query = supabase
       .from('medical_image_analyses')

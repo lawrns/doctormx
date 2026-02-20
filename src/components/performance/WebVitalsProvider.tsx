@@ -3,7 +3,7 @@
 /**
  * Web Vitals Provider Component
  * 
- * Initializes Web Vitals tracking in the browser.
+ * Initializes Web Vitals tracking and metrics flush in the browser.
  * Place this component in your root layout to track metrics across all pages.
  * 
  * @example
@@ -26,6 +26,7 @@
 
 import { useEffect, useRef } from 'react'
 import { initWebVitals, type WebVitalsConfig } from '@/lib/performance/web-vitals'
+import { initMetrics } from '@/lib/observability/metrics'
 
 export interface WebVitalsProviderProps {
   /** Enable debug logging */
@@ -55,7 +56,7 @@ export function WebVitalsProvider({
     initialized.current = true
 
     // Initialize Web Vitals tracking
-    const cleanup = initWebVitals({
+    const cleanupWebVitals = initWebVitals({
       debug,
       sampleRate,
       endpoint,
@@ -63,8 +64,14 @@ export function WebVitalsProvider({
       ...config,
     })
 
+    // Initialize metrics flush with cleanup
+    const cleanupMetrics = initMetrics()
+
     // Cleanup on unmount
-    return cleanup
+    return () => {
+      cleanupWebVitals?.()
+      cleanupMetrics?.()
+    }
   }, [debug, sampleRate, endpoint, enableSentry, config])
 
   // This component doesn't render anything

@@ -1,6 +1,7 @@
 import { vi, beforeEach, afterEach } from 'vitest'
 import '@testing-library/jest-dom'
 import { config } from 'dotenv'
+import { cleanup } from '@testing-library/react'
 
 // Load environment variables from .env file
 config({ path: '.env' })
@@ -86,4 +87,5 @@ beforeEach(() => {
 
 afterEach(() => {
   vi.clearAllMocks()
+  cleanup()
 })

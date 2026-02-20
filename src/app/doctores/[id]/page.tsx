@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import { DoctorReviews } from '@/components/DoctorReviews'
+import { getBlurDataURL, LCP_DEFAULT_PROPS } from '@/lib/performance/image-blur'
 import { ArrowLeft } from 'lucide-react'
 
 export default async function DoctorProfilePage({
@@ -27,8 +28,8 @@ export default async function DoctorProfilePage({
     getDoctorRatingSummary(id).then(result => result || null),
   ])
 
-  const totalConsultations = ratingSummary?.rating_count || 0
-  const averageRating = doc.rating_avg || ratingSummary?.rating_avg || 0
+  const totalConsultations = ratingSummary?.rating_count ?? 0
+  const averageRating = (doc.rating_avg || ratingSummary?.rating_avg) ?? 0
 
   return (
     <div className="min-h-screen bg-neutral-50">
@@ -69,6 +70,8 @@ export default async function DoctorProfilePage({
                         width={112}
                         height={112}
                         className="object-cover w-full h-full"
+                        {...LCP_DEFAULT_PROPS}
+                        blurDataURL={getBlurDataURL('doctor-avatar')}
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary-100 to-info-100">
@@ -103,7 +106,7 @@ export default async function DoctorProfilePage({
                         key={s.id}
                         className="bg-primary-100 text-primary-700 px-3 py-1.5 rounded-full text-sm font-medium"
                       >
-                        {s.name || 'Especialidad'}
+                        {s.name ?? 'Especialidad'}
                       </span>
                     ))}
                   </div>

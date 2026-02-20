@@ -83,7 +83,7 @@ export async function GET(request: NextRequest) {
           .eq('patient_id', userId)
           .gte('created_at', monthStart)
 
-        const used = patientUsage?.length || 0
+        const used = patientUsage?.length ?? 0
         const limit = 3
         const remaining = Math.max(0, limit - used)
         const hasAccess = used < limit
@@ -140,7 +140,7 @@ export async function GET(request: NextRequest) {
             .eq('patient_id', userId)
             .gte('created_at', monthStart)
 
-          const used = patientUsage?.length || 0
+          const used = patientUsage?.length ?? 0
           featureStatus[key] = {
             hasAccess: used < 3,
             used,
@@ -191,7 +191,7 @@ export async function GET(request: NextRequest) {
       const featureKey = featureParam as PremiumFeature
       const isIncluded = includedFeatures[tier].includes(featureKey)
       const limit = limitMap[featureParam]?.[tier] ?? null
-      const used = usageRecords?.find(r => r.feature_key === featureParam)?.usage_count || 0
+      const used = usageRecords?.find(r => r.feature_key === featureParam)?.usage_count ?? 0
       const remaining = limit === null ? -1 : Math.max(0, limit - used)
       const hasAccess = isIncluded && (limit === null || used < limit)
 
@@ -236,7 +236,7 @@ export async function GET(request: NextRequest) {
     for (const key of Object.keys(limitMap)) {
       const isIncluded = includedFeatures[tier].includes(key)
       const limit = limitMap[key]?.[tier] ?? null
-      const used = usageRecords?.find(r => r.feature_key === key)?.usage_count || 0
+      const used = usageRecords?.find(r => r.feature_key === key)?.usage_count ?? 0
       const remaining = limit === null ? -1 : Math.max(0, limit - used)
       const hasAccess = isIncluded && (limit === null || used < limit)
 

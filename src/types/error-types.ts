@@ -459,7 +459,7 @@ export function handleError(error: AppError): never {
   const errorObj: Error = {
     name: error.type,
     message: error.message,
-    stack: (error as any).stack,
+    stack: (error as { stack?: string }).stack,
   } as Error
   logger.error(`[${error.type}] ${error.message}`, { type: error.type }, errorObj)
 

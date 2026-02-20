@@ -14,7 +14,7 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url)
     const sessionId = searchParams.get('sessionId')
     const specialty = searchParams.get('specialty')
-    const limit = Math.min(parseInt(searchParams.get('limit') || '100'), 1000)
+    const limit = Math.min(parseInt(searchParams.get('limit') ?? '100'), 1000)
 
     const supabase = await createServiceClient()
 
@@ -43,22 +43,22 @@ export async function GET(request: NextRequest) {
 
     // Calculate aggregate stats
     const stats: AnalyticsStats = {
-      total: analytics?.length || 0,
-      avgScore: analytics?.reduce((sum: number, a: AIReferralAnalytics) => sum + (a.avg_score || 0), 0) / (analytics?.length || 1) || 0,
-      avgDoctorsAvailable: analytics?.reduce((sum: number, a: AIReferralAnalytics) => sum + (a.doctores_available || 0), 0) / (analytics?.length || 1) || 0,
-      avgDoctorsMatched: analytics?.reduce((sum: number, a: AIReferralAnalytics) => sum + (a.doctores_matched || 0), 0) / (analytics?.length || 1) || 0,
+      total: analytics?.length ?? 0,
+      avgScore: analytics?.reduce((sum: number, a: AIReferralAnalytics) => sum + (a.avg_score ?? 0), 0) / (analytics?.length || 1) ?? 0,
+      avgDoctorsAvailable: analytics?.reduce((sum: number, a: AIReferralAnalytics) => sum + (a.doctores_available ?? 0), 0) / (analytics?.length || 1) ?? 0,
+      avgDoctorsMatched: analytics?.reduce((sum: number, a: AIReferralAnalytics) => sum + (a.doctores_matched ?? 0), 0) / (analytics?.length || 1) ?? 0,
       bySpecialty: {},
       byUrgency: {},
     }
 
     // Group by specialty
     analytics?.forEach((a: AIReferralAnalytics) => {
-      const specialty = a.specialty || 'unknown'
+      const specialty = a.specialty ?? 'unknown'
       if (!stats.bySpecialty[specialty]) {
         stats.bySpecialty[specialty] = { count: 0, avgScore: 0 }
       }
       stats.bySpecialty[specialty].count++
-      stats.bySpecialty[specialty].avgScore += a.avg_score || 0
+      stats.bySpecialty[specialty].avgScore += a.avg_score ?? 0
     })
 
     // Calculate averages by specialty
@@ -68,22 +68,22 @@ export async function GET(request: NextRequest) {
 
     // Group by urgency
     analytics?.forEach((a: AIReferralAnalytics) => {
-      const urgency = a.urgency || 'unknown'
+      const urgency = a.urgency ?? 'unknown'
       if (!stats.byUrgency[urgency]) {
         stats.byUrgency[urgency] = { count: 0, avgScore: 0 }
       }
       stats.byUrgency[urgency].count++
-      stats.byUrgency[urgency].avgScore += a.avg_score || 0
+      stats.byUrgency[urgency].avgScore += a.avg_score ?? 0
     })
 
     // Group by urgency
     analytics?.forEach((a: AIReferralAnalytics) => {
-      const urgency = a.urgency || 'unknown'
+      const urgency = a.urgency ?? 'unknown'
       if (!stats.byUrgency[urgency]) {
         stats.byUrgency[urgency] = { count: 0, avgScore: 0 }
       }
       stats.byUrgency[urgency].count++
-      stats.byUrgency[urgency].avgScore += a.avg_score || 0
+      stats.byUrgency[urgency].avgScore += a.avg_score ?? 0
     })
 
     // Calculate averages by urgency

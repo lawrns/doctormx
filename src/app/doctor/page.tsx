@@ -55,8 +55,8 @@ export default async function DoctorDashboard() {
       .select('*', { count: 'exact', head: true })
       .eq('status', 'pending')
     
-    queuePosition = count || 0
-    totalPending = totalCount || 0
+    queuePosition = count ?? 0
+    totalPending = totalCount ?? 0
   }
 
   if (!isPending) {
@@ -79,7 +79,7 @@ export default async function DoctorDashboard() {
       .gte('start_ts', startOfToday)
       .lt('start_ts', endOfToday)
 
-    todayCount = todayAppointments || 0
+    todayCount = todayAppointments ?? 0
 
     // Count this week's appointments
     const { count: weekAppointments } = await supabase
@@ -90,7 +90,7 @@ export default async function DoctorDashboard() {
       .gte('start_ts', startOfWeek.toISOString())
       .lt('start_ts', endOfWeek.toISOString())
 
-    weekCount = weekAppointments || 0
+    weekCount = weekAppointments ?? 0
 
     // Count unique patients
     const { data: patientData } = await supabase
@@ -112,7 +112,7 @@ export default async function DoctorDashboard() {
       .eq('status', 'pending_payment')
       .gte('start_ts', now.toISOString())
 
-    pendingPaymentCount = pendingPayment || 0
+    pendingPaymentCount = pendingPayment ?? 0
 
     // Get upcoming appointments (next 5)
     const { data: appointmentsData } = await supabase
@@ -134,7 +134,7 @@ export default async function DoctorDashboard() {
     if (appointmentsData) {
       upcomingAppointments = appointmentsData.map(apt => ({
         id: apt.id,
-        patient_name: (apt.patient as unknown as { full_name: string } | null)?.full_name || 'Paciente',
+        patient_name: (apt.patient as unknown as { full_name: string } | null)?.full_name ?? 'Paciente',
         start_ts: apt.start_ts,
         end_ts: apt.end_ts,
         status: apt.status,

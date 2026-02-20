@@ -201,7 +201,7 @@ export async function appointmentBookingRoute(request: NextRequest) {
 //
 //       if (!response.ok) {
 //         const error = await response.json();
-//         throw new Error(error.error?.message || 'Consultation failed');
+//         throw new Error(error.error?.message ?? 'Consultation failed');
 //       }
 //
 //       const result = await response.json();

@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { searchDirectory, getDirectorySpecialties, getDirectoryCities } from '@/lib/domains/directory'
-import { purify } from '@/lib/utils/dompurify'
+import { safeJsonLd } from '@/lib/utils/safeStructuredData'
 
 interface PageProps {
   params: Promise<{ specialty: string }>
@@ -192,11 +192,11 @@ export default async function SpecialtyPage({ params }: PageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+          __html: safeJsonLd({
             '@context': 'https://schema.org',
             '@type': 'MedicalSpecialty',
-            name: capitalizeWords(purify.sanitize(specialtyName)),
-            description: `Directorio de especialistas en ${purify.sanitize(specialtyName)} en México`,
+            name: capitalizeWords(specialtyName),
+            description: `Directorio de especialistas en ${specialtyName} en México`,
           }),
         }}
       />

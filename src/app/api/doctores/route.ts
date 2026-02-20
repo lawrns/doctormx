@@ -34,7 +34,7 @@ export async function GET(request: NextRequest) {
     const specialtySlug = searchParams.get('specialty')
     const city = searchParams.get('city')
     const searchQuery = searchParams.get('search')
-    const sortBy = searchParams.get('sort') || 'rating'
+    const sortBy = searchParams.get('sort') ?? 'rating'
 
     const supabase = await createClient()
 
@@ -177,8 +177,8 @@ export async function GET(request: NextRequest) {
         id: doc.id,
         bio: doc.bio,
         price_cents: doc.price_cents,
-        rating_avg: doc.rating_avg || 0,
-        rating_count: doc.rating_count || 0,
+        rating_avg: doc.rating_avg ?? 0,
+        rating_count: doc.rating_count ?? 0,
         city: doc.city,
         state: doc.state,
         years_experience: doc.years_experience,

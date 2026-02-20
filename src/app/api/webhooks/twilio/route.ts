@@ -7,12 +7,17 @@ import {
     type TriageSummary,
 } from '@/lib/whatsapp'
 import { generateDrSimeonResponse, isTriageComplete } from '@/lib/ai/drSimeon'
-import { verifyTwilioWebhook } from '@/lib/webhooks'
+import { verifyTwilioWebhook, isWebhookIpAllowed, getClientIp } from '@/lib/webhooks'
 import { logger } from '@/lib/observability/logger'
 
 /**
  * POST /api/webhooks/twilio
  * Handle incoming WhatsApp messages from Twilio
+ *
+ * Security measures:
+ * - Signature verification with HMAC-SHA1
+ * - Timing-safe comparison
+ * - IP allowlist validation
  */
 export async function POST(request: NextRequest) {
     try {
@@ -29,6 +34,16 @@ export async function POST(request: NextRequest) {
         if (!signature) {
             logger.warn('Twilio webhook received without signature', { provider: 'twilio' })
             return new NextResponse('Unauthorized', { status: 401 })
+        }
+
+        // IP allowlist validation
+        const clientIp = getClientIp(request.headers)
+        if (clientIp && !isWebhookIpAllowed(clientIp, 'twilio')) {
+            logger.warn('Twilio webhook received from unauthorized IP', {
+                provider: 'twilio',
+                clientIp,
+            })
+            return new NextResponse('Forbidden', { status: 403 })
         }
 
         // Get the raw body for signature verification
@@ -154,14 +169,13 @@ export async function POST(request: NextRequest) {
                     suggestedSpecialty: drSimeonSummary.suggestedSpecialty,
                     recommendedAction: drSimeonSummary.urgencyLevel === 'red' ? 'emergency_redirect' : 'book_consultation',
                     aiConfidence: drSimeonSummary.aiConfidence,
-                    severity: urgencyToSeverity[drSimeonSummary.urgencyLevel] || 'medium',
+                    severity: urgencyToSeverity[drSimeonSummary.urgencyLevel] ?? 'medium',
                     completed: true
                 }
 
                 // Route to doctor if appropriate
                 if (triageSummary.urgencyLevel !== 'red') {
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    const handoff = await routeHandoff(sessionId, triageSummary.suggestedSpecialty || 'general') as any
+                    const handoff = await routeHandoff(sessionId, triageSummary.suggestedSpecialty ?? 'general') as { success: boolean; bookingLink?: string }
                     if (handoff.success) {
                         responseMessage = `Perfecto. Te conectaremos con un médico especialista. Aquí está el enlace para agendar: ${handoff.bookingLink}\n\nRecuerda: La IA asiste, no diagnostica.`
                     }

@@ -159,6 +159,6 @@ export function getTierFromPlanId(planId: string): SubscriptionTier {
     pro: 'pro',
     elite: 'elite',
   }
-  return tierMap[planId] || 'starter'
+  return tierMap[planId] ?? 'starter'
 }
 

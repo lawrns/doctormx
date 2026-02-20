@@ -25,7 +25,7 @@ export function useQuestionNavigation({
       medium: 'bg-yellow-500',
       low: 'bg-green-500'
     }
-    return colorMap[level] || 'bg-gray-500'
+    return colorMap[level] ?? 'bg-gray-500'
   }, [])
 
   const getUrgencyLabel = useCallback((level: UrgencyLevel | string): string => {
@@ -44,7 +44,7 @@ export function useQuestionNavigation({
       focused_inquiry: 'Evaluación detallada',
       synthesis: 'Generando diagnóstico'
     }
-    return phaseMap[phase] || 'Procesando'
+    return phaseMap[phase] ?? 'Procesando'
   }, [])
 
   const canGoBack = state ? state.questionCount > 1 : false

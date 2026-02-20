@@ -205,7 +205,7 @@ export default function PricingPage() {
             const data = await response.json()
 
             if (!response.ok) {
-                throw new Error(data.error || 'Failed to create subscription')
+                throw new Error(data.error ?? 'Failed to create subscription')
             }
 
             if (data.checkoutUrl) {
@@ -339,7 +339,7 @@ export default function PricingPage() {
                                                     className="w-full"
                                                     variant={plan.highlight ? 'primary' : 'secondary'}
                                                 >
-                                                    {SUBSCRIPTION_TIERS.indexOf(tier) > SUBSCRIPTION_TIERS.indexOf(currentPlanId || 'starter') 
+                                                    {SUBSCRIPTION_TIERS.indexOf(tier) > SUBSCRIPTION_TIERS.indexOf(currentPlanId ?? 'starter') 
                                                         ? 'Mejorar a este Plan' 
                                                         : 'Cambiar a este Plan'}
                                                 </LoadingButton>

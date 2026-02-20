@@ -9,6 +9,11 @@ const config: Config = {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        // PERF-006: Optimized font families
+        sans: ['var(--font-geist-sans)', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        mono: ['var(--font-geist-mono)', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+      },
       colors: {
         // CSS Variable-based colors (shadcn/ui pattern)
         background: 'hsl(var(--background))',
@@ -95,6 +100,10 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    // I18N-008: RTL support plugin
+    // Provides utilities like ms-*, me-*, ps-*, pe-* for logical properties
+    require('tailwindcss-rtl'),
+  ],
 }
 export default config

@@ -1,0 +1,626 @@
+{
+  "metadata": {
+    "title": "Doctor.mx | Telemedicina y Doctores Verificados en México | 24/7",
+    "description": "Consulta médica en línea con doctores verificados en México. Telemedicina segura, videoconsultas HD, y Dr. Simeon - tu asistente de salud con IA. Más de 500 especialistas disponibles 24/7.",
+    "keywords": "telemedicina México, doctores en línea, consulta médica virtual, doctores verificados México, videoconsulta médica, Dr Simeon, salud digital México, cita médica en línea, especialistas certificados, segunda opinión médica",
+    "ogTitle": "Doctor.mx | Telemedicina y Doctores Verificados en México",
+    "ogDescription": "Conectamos pacientes con los mejores especialistas de México. Consultas virtuales seguras, confiables y accesibles."
+  },
+  "navigation": {
+    "home": "Inicio",
+    "doctors": "Doctores",
+    "specialties": "Especialidades",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "logout": "Cerrar sesión",
+    "dashboard": "Panel",
+    "appointments": "Citas",
+    "profile": "Perfil",
+    "settings": "Configuración",
+    "emergency": "Emergencia",
+    "help": "Ayuda",
+    "notifications": "Notificaciones",
+    "searchDoctors": "Buscar doctores",
+    "aiConsultation": "Consulta IA",
+    "forDoctors": "Para doctores",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "language": "Idioma",
+    "switchLanguage": "Cambiar idioma"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ha ocurrido un error",
+    "retry": "Reintentar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "close": "Cerrar",
+    "search": "Buscar",
+    "continue": "Continuar",
+    "back": "Regresar",
+    "next": "Siguiente",
+    "submit": "Enviar",
+    "yes": "Sí",
+    "no": "No",
+    "confirm": "Confirmar",
+    "success": "Éxito",
+    "warning": "Advertencia",
+    "info": "Información",
+    "required": "Requerido",
+    "optional": "Opcional",
+    "view": "Ver",
+    "download": "Descargar",
+    "share": "Compartir",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "minutes": "minutos",
+    "hours": "horas",
+    "days": "días",
+    "and": "y",
+    "or": "o",
+    "notAvailable": "No disponible",
+    "comingSoon": "Próximamente"
+  },
+  "hero": {
+    "title": "Tu salud, a un clic de distancia",
+    "subtitle": "Conectamos pacientes con los mejores especialistas de México. Consultas virtuales seguras, confiables y accesibles.",
+    "ctaPrimary": "Agendar consulta",
+    "ctaSecondary": "Conocer doctores"
+  },
+  "footer": {
+    "copyright": "© {year} Doctor.mx. Todos los derechos reservados.",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "support": "Soporte",
+    "faq": "Preguntas frecuentes",
+    "careers": "Carreras",
+    "description": "La plataforma de salud digital más confiable de México.",
+    "forPatients": "Para pacientes",
+    "forDoctors": "Para doctores",
+    "company": "Compañía",
+    "legal": "Legal",
+    "secondOpinion": "Segunda opinión",
+    "videoConsultation": "Videoconsulta",
+    "joinDoctor": "Únete a Doctor.mx",
+    "pricing": "Precios",
+    "claimProfile": "Reclama tu perfil",
+    "referrals": "Referidos",
+    "aboutUs": "Sobre nosotros",
+    "blog": "Blog",
+    "cookies": "Cookies",
+    "madeWith": "Hecho con",
+    "inMexico": "en México",
+    "social": {
+      "twitter": "Twitter",
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Iniciar sesión",
+      "subtitle": "Bienvenido de vuelta a Doctor.mx",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "forgotPassword": "¿Olvidaste tu contraseña?",
+      "noAccount": "¿No tienes una cuenta?",
+      "registerLink": "Regístrate aquí",
+      "submit": "Iniciar sesión",
+      "success": "Inicio de sesión exitoso",
+      "error": "Correo o contraseña incorrectos"
+    },
+    "register": {
+      "title": "Crear cuenta",
+      "subtitle": "Únete a la plataforma de telemedicina líder en México",
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "confirmPassword": "Confirmar contraseña",
+      "phone": "Teléfono",
+      "acceptTerms": "Acepto los términos y condiciones",
+      "haveAccount": "¿Ya tienes una cuenta?",
+      "loginLink": "Inicia sesión aquí",
+      "submit": "Crear cuenta",
+      "success": "Cuenta creada exitosamente",
+      "error": "Error al crear la cuenta"
+    },
+    "logout": {
+      "title": "Cerrar sesión",
+      "confirm": "¿Estás seguro de que deseas cerrar sesión?",
+      "submit": "Cerrar sesión",
+      "success": "Sesión cerrada exitosamente"
+    },
+    "forgotPassword": {
+      "title": "Recuperar contraseña",
+      "subtitle": "Ingresa tu correo electrónico para recibir instrucciones",
+      "email": "Correo electrónico",
+      "submit": "Enviar instrucciones",
+      "success": "Revisa tu correo para continuar",
+      "backToLogin": "Regresar al inicio de sesión"
+    },
+    "resetPassword": {
+      "title": "Restablecer contraseña",
+      "newPassword": "Nueva contraseña",
+      "confirmPassword": "Confirmar contraseña",
+      "submit": "Restablecer contraseña",
+      "success": "Contraseña actualizada exitosamente"
+    },
+    "errors": {
+      "invalidEmail": "Correo electrónico inválido",
+      "weakPassword": "La contraseña debe tener al menos 8 caracteres",
+      "passwordMismatch": "Las contraseñas no coinciden",
+      "requiredField": "Este campo es requerido",
+      "invalidCredentials": "Credenciales inválidas",
+      "accountLocked": "Cuenta bloqueada temporalmente",
+      "sessionExpired": "Sesión expirada. Inicia sesión nuevamente"
+    }
+  },
+  "booking": {
+    "title": "Agendar consulta",
+    "subtitle": "Selecciona fecha, hora y especialista",
+    "steps": {
+      "selectDoctor": "Seleccionar doctor",
+      "selectDate": "Seleccionar fecha",
+      "confirm": "Confirmar"
+    },
+    "selectDoctor": {
+      "title": "Selecciona un especialista",
+      "search": "Buscar por nombre o especialidad",
+      "specialty": "Especialidad",
+      "allSpecialties": "Todas las especialidades",
+      "rating": "Calificación",
+      "experience": "Experiencia",
+      "price": "Precio",
+      "availability": "Disponibilidad",
+      "noResults": "No se encontraron doctores",
+      "filters": {
+        "title": "Filtros",
+        "clear": "Limpiar filtros",
+        "apply": "Aplicar filtros"
+      }
+    },
+    "selectDate": {
+      "title": "Selecciona fecha y hora",
+      "calendar": "Calendario",
+      "availableSlots": "Horarios disponibles",
+      "noSlots": "No hay horarios disponibles para esta fecha",
+      "morning": "Mañana",
+      "afternoon": "Tarde",
+      "evening": "Noche",
+      "selectTime": "Seleccionar hora",
+      "duration": "Duración de la consulta",
+      "timezone": "Zona horaria"
+    },
+    "confirm": {
+      "title": "Confirmar cita",
+      "doctor": "Doctor",
+      "date": "Fecha",
+      "time": "Hora",
+      "duration": "Duración",
+      "price": "Precio",
+      "total": "Total",
+      "notes": "Notas para el doctor",
+      "notesPlaceholder": "Describe tus síntomas o motivo de consulta",
+      "terms": "Acepto las políticas de cancelación",
+      "submit": "Confirmar y pagar",
+      "modality": {
+        "title": "Modalidad",
+        "video": "Videollamada",
+        "inPerson": "Consulta presencial"
+      }
+    },
+    "success": {
+      "title": "¡Cita agendada!",
+      "message": "Tu consulta ha sido programada exitosamente",
+      "emailSent": "Te hemos enviado un correo de confirmación",
+      "addToCalendar": "Agregar al calendario",
+      "viewDetails": "Ver detalles de la cita"
+    },
+    "errors": {
+      "slotTaken": "El horario seleccionado ya no está disponible",
+      "insufficientFunds": "Fondos insuficientes",
+      "paymentFailed": "El pago no pudo ser procesado",
+      "pastDate": "No puedes agendar en fechas pasadas"
+    },
+    "upcoming": {
+      "title": "Próximas citas",
+      "noAppointments": "No tienes citas programadas",
+      "joinCall": "Unirse a la llamada",
+      "reschedule": "Reprogramar",
+      "cancel": "Cancelar cita"
+    },
+    "history": {
+      "title": "Historial de citas",
+      "noHistory": "No tienes citas anteriores",
+      "viewSummary": "Ver resumen",
+      "downloadReceipt": "Descargar recibo"
+    }
+  },
+  "payment": {
+    "title": "Pago",
+    "checkout": {
+      "title": "Finalizar compra",
+      "summary": "Resumen del pedido",
+      "items": "Servicios",
+      "subtotal": "Subtotal",
+      "tax": "Impuestos",
+      "total": "Total",
+      "securePayment": "Pago seguro con encriptación SSL"
+    },
+    "methods": {
+      "title": "Método de pago",
+      "card": "Tarjeta de crédito/débito",
+      "paypal": "PayPal",
+      "oxxo": "OXXO Pay",
+      "spei": "Transferencia SPEI"
+    },
+    "card": {
+      "number": "Número de tarjeta",
+      "holder": "Titular de la tarjeta",
+      "expiry": "Fecha de expiración",
+      "cvc": "CVC",
+      "saveCard": "Guardar tarjeta para futuras compras"
+    },
+    "oxxo": {
+      "title": "Pago en OXXO",
+      "instructions": "Genera tu ficha de pago y acude a cualquier tienda OXXO",
+      "generate": "Generar ficha",
+      "reference": "Referencia",
+      "amount": "Monto",
+      "expires": "Vence en",
+      "download": "Descargar ficha"
+    },
+    "spei": {
+      "title": "Transferencia SPEI",
+      "instructions": "Realiza tu transferencia desde tu banca en línea",
+      "clabe": "CLABE",
+      "bank": "Banco",
+      "reference": "Referencia",
+      "amount": "Monto"
+    },
+    "confirm": {
+      "title": "Confirmar pago",
+      "processing": "Procesando pago...",
+      "success": "¡Pago exitoso!",
+      "failed": "Pago rechazado",
+      "tryAgain": "Intentar nuevamente",
+      "contactSupport": "Contactar soporte"
+    },
+    "errors": {
+      "cardDeclined": "Tarjeta rechazada",
+      "insufficientFunds": "Fondos insuficientes",
+      "expiredCard": "Tarjeta expirada",
+      "invalidCard": "Tarjeta inválida",
+      "3dSecureFailed": "Autenticación 3D Secure fallida"
+    },
+    "receipt": {
+      "title": "Recibo de pago",
+      "download": "Descargar PDF",
+      "email": "Enviar por correo",
+      "print": "Imprimir"
+    }
+  },
+  "doctor": {
+    "profile": {
+      "title": "Perfil del doctor",
+      "about": "Acerca de",
+      "specialties": "Especialidades",
+      "education": "Educación",
+      "experience": "Experiencia",
+      "certifications": "Certificaciones",
+      "languages": "Idiomas",
+      "reviews": "Reseñas",
+      "rating": "Calificación",
+      "patients": "Pacientes atendidos",
+      "consultations": "Consultas realizadas",
+      "bookNow": "Agendar cita"
+    },
+    "specialties": {
+      "general": "Medicina General",
+      "cardiology": "Cardiología",
+      "dermatology": "Dermatología",
+      "endocrinology": "Endocrinología",
+      "gastroenterology": "Gastroenterología",
+      "gynecology": "Ginecología",
+      "neurology": "Neurología",
+      "nutrition": "Nutrición",
+      "ophthalmology": "Oftalmología",
+      "orthopedics": "Ortopedia",
+      "pediatrics": "Pediatría",
+      "psychology": "Psicología",
+      "psychiatry": "Psiquiatría",
+      "urology": "Urología",
+      "dentistry": "Odontología"
+    },
+    "availability": {
+      "title": "Disponibilidad",
+      "today": "Hoy",
+      "thisWeek": "Esta semana",
+      "nextAvailable": "Próxima disponibilidad",
+      "noAvailability": "No disponible"
+    },
+    "reviews": {
+      "title": "Reseñas de pacientes",
+      "ratingBreakdown": "Desglose de calificaciones",
+      "writeReview": "Escribir reseña",
+      "noReviews": "Sin reseñas aún",
+      "verified": "Paciente verificado"
+    }
+  },
+  "landing": {
+    "announcement": {
+      "title": "5 CONSULTAS MÉDICAS GRATIS PARA TODOS LOS MEXICANOS",
+      "cofepris": "Verificado por COFEPRIS"
+    },
+    "loading": {
+      "demo": "Cargando demo interactivo..."
+    },
+    "nav": {
+      "freeConsultations": "5 Consultas GRATIS",
+      "searchDoctors": "Buscar doctores",
+      "forDoctors": "Para doctores",
+      "login": "Iniciar sesión",
+      "startFree": "Empezar GRATIS →"
+    },
+    "hero": {
+      "drSimeon": "Dr. Simeon",
+      "aiAssistant": "Asistente médico IA",
+      "online": "En línea",
+      "onlineNow": "En línea ahora",
+      "headline": "5 Consultas Medicas",
+      "headlineFree": "100% GRATIS",
+      "subheadlinePart1": "Salud accesible para todos. Consulta con IA médica las veces que necesites —",
+      "subheadlinePart2": ". Cuando necesites un doctor real, te conectamos con especialistas verificados.",
+      "subheadlineBold": "sin registrar, sin pagar",
+      "benefit1": "5 consultas GRATIS",
+      "benefit2": "Sin registro requerido",
+      "benefit3": "Para todos los mexicanos",
+      "ctaPrimary": "CONSULTAR AHORA — GRATIS",
+      "ctaSecondary": "Buscar un Especialista",
+      "forDoctors": "¿Eres doctor? Únete a la red",
+      "trust": {
+        "cofepris": "COFEPRIS",
+        "verified": "Verificado",
+        "doctors": "Doctores con cédula SEP",
+        "doctorsCount": "500+",
+        "consultations": "Consultas realizadas",
+        "consultationsCount": "10,000+",
+        "availability": "Disponible",
+        "availabilityValue": "24/7"
+      },
+      "compliance": "Servicio de orientación médica. No sustituye la consulta presencial.",
+      "chatCard": {
+        "greeting": "¡Hola! Soy tu asistente médico. ¿En qué puedo ayudarte hoy?",
+        "secure": "Conversación privada y segura"
+      }
+    },
+    "features": {
+      "badge": "Cómo funciona",
+      "title": "Salud digital, atención humana",
+      "description": "Una plataforma diseñada para conectarte con especialistas mexicanos certificados, de forma rápida, segura y privada.",
+      "items": {
+        "verified": {
+          "title": "Doctores con cédula verificada",
+          "description": "Cada especialista está validado con su cédula profesional ante la SEP. Consulta perfiles completos antes de agendar."
+        },
+        "video": {
+          "title": "Videoconsulta HD desde casa",
+          "description": "Consultas por video con calidad HD y conexión segura. Tu doctor te ve y escucha como si estuvieras en su consultorio."
+        },
+        "appointments": {
+          "title": "Citas en menos de 24 horas",
+          "description": "Encuentra disponibilidad en tiempo real. Agenda tu consulta en minutos, no en semanas."
+        },
+        "simeon": {
+          "title": "Dr. Simeon: tu copiloto de salud",
+          "description": "Nuestro asistente con IA te ayuda a entender síntomas y preparar preguntas para tu doctor. No diagnostica, orienta."
+        },
+        "privacy": {
+          "title": "Privacidad de grado médico",
+          "description": "Encriptación punto a punto y cumplimiento con normativas mexicanas de protección de datos de salud."
+        },
+        "followup": {
+          "title": "Seguimiento continuo",
+          "description": "Mensajea a tu doctor antes y después de la consulta. Tu historial médico siempre accesible."
+        }
+      }
+    },
+    "testimonials": {
+      "badge": "Historias reales",
+      "title": "Pacientes y doctores confían en nosotros",
+      "description": "Más de 10,000 consultas realizadas con un 98% de satisfacción",
+      "testimonialFrom": "Testimonio de",
+      "verifiedPatient": "Paciente verificada",
+      "verifiedUser": "Usuario verificado",
+      "cardiologist": "Cardiólogo · Cédula 8745632",
+      "ratingLabel": "Calificación: {{rating}} de 5 estrellas",
+      "content": {
+        "maria": "Encontré un cardiólogo excelente en 10 minutos. La videoconsulta fue tan profesional como ir al consultorio, pero sin perder 3 horas en traslados. Ya llevo 4 consultas de seguimiento.",
+        "carlos": "Doctor.mx me permite atender pacientes de todo México sin limitarme a mi consultorio físico. El sistema de pagos es confiable y el soporte resuelve cualquier duda en minutos.",
+        "ana": "Usé Dr. Simeon para entender mis síntomas antes de mi consulta. Me ayudó a preparar las preguntas correctas. La segunda opinión que obtuve me dio tranquilidad antes de decidir mi tratamiento."
+      },
+      "roles": {
+        "verifiedPatient": "Paciente verificada",
+        "cardiologist": "Cardiólogo · Cédula 8745632"
+      }
+    },
+    "cta": {
+      "liveBadge": "Más de 100 especialistas en línea ahora",
+      "title": "Tu salud merece",
+      "titleHighlight": "atención inmediata",
+      "description": "Más de 10,000 consultas realizadas. Únete a los mexicanos que ya cuidan su salud con Doctor.mx.",
+      "primary": "Comenzar consulta gratuita",
+      "forDoctors": "¿Eres médico? Conoce cómo crecer tu práctica",
+      "trust": {
+        "encrypted": "Datos encriptados",
+        "noCard": "Sin tarjeta requerida",
+        "reviews": "4.9 de 2,500+ reseñas"
+      },
+      "footerNote": "Primera consulta gratis - Sin compromiso - Cancela cuando quieras"
+    },
+    "footer": {
+      "description": "La plataforma de salud digital más confiable de México. Conectamos pacientes con los mejores especialistas certificados.",
+      "patients": "Pacientes",
+      "doctors": "Doctores",
+      "support": "Soporte",
+      "links": {
+        "searchDoctors": "Buscar doctores",
+        "specialties": "Especialidades",
+        "secondOpinion": "Segunda opinión",
+        "myAccount": "Mi cuenta",
+        "joinDoctor": "Únete como doctor",
+        "doctorPortal": "Portal de doctores",
+        "pricing": "Planes y precios",
+        "help": "Centro de ayuda",
+        "contact": "Contacto",
+        "privacy": "Privacidad",
+        "terms": "Términos"
+      },
+      "copyright": "Todos los derechos reservados.",
+      "social": {
+        "facebook": "Facebook",
+        "instagram": "Instagram",
+        "twitter": "Twitter"
+      }
+    }
+  },
+  "emergency": {
+    "title": "Emergencia",
+    "warning": "Si estás experimentando una emergencia médica de vida o muerte, llama inmediatamente al 911.",
+    "subtitle": "Atención inmediata para casos urgentes",
+    "call911": "Llamar al 911",
+    "urgentCare": {
+      "title": "Atención Urgente",
+      "description": "Para casos que no ponen en riesgo la vida pero requieren atención inmediata"
+    },
+    "availableDoctors": {
+      "title": "Doctores disponibles ahora",
+      "description": "Especialistas disponibles para consulta inmediata",
+      "waitTime": "Tiempo de espera estimado: {minutes} minutos"
+    },
+    "symptoms": {
+      "title": "¿Qué síntomas tienes?",
+      "severePain": "Dolor intenso",
+      "bleeding": "Sangrado",
+      "difficultyBreathing": "Dificultad para respirar",
+      "chestPain": "Dolor en el pecho",
+      "fever": "Fiebre alta",
+      "other": "Otros"
+    },
+    "contacts": {
+      "title": "Números de emergencia",
+      "emergency911": "Emergencias 911",
+      "redCross": "Cruz Roja",
+      "firefighters": "Bomberos",
+      "police": "Policía"
+    },
+    "disclaimer": "Doctor.mx no reemplaza los servicios de emergencia. En casos de emergencia grave, contacta directamente al 911."
+  },
+  "errors": {
+    "medical": {
+      "recordError": "Hubo un problema al acceder a su expediente médico. Por favor, intente nuevamente.",
+      "dataInvalid": "Los datos médicos proporcionados no son válidos. Por favor, verifique la información.",
+      "symptomAnalysisFailed": "No pudimos analizar sus síntomas correctamente. Por favor, intente nuevamente.",
+      "redFlagDetected": "Detectamos información importante que requiere atención médica."
+    },
+    "emergency": {
+      "detected": "Según los síntomas que describe, podría requerir atención médica urgente.",
+      "criticalSymptoms": "Ha descrito síntomas que requieren atención médica inmediata.",
+      "urgentCareNeeded": "Sus síntomas sugieren que debe buscar atención médica pronto.",
+      "redirect": "Por su seguridad, le recomendamos contactar servicios de emergencia.",
+      "contact911": "Si sus síntomas son graves, llame al 911 o acuda a urgencias."
+    },
+    "prescription": {
+      "generationFailed": "No pudimos generar su receta. Por favor, contacte a su médico.",
+      "drugInteraction": "Existe una posible interacción entre medicamentos. Su médico será notificado.",
+      "dosageError": "La dosis del medicamento necesita revisión. Su médico será notificado.",
+      "allergyAlert": "Detectamos una posible alergia al medicamento. Su médico será notificado.",
+      "contraindication": "Este medicamento puede no ser adecuado para usted. Su médico será notificado.",
+      "expired": "Esta receta ha expirado. Por favor, solicite una nueva a su médico."
+    },
+    "diagnosis": {
+      "lowConfidence": "Necesitamos más información para darle un diagnóstico preciso.",
+      "insufficientData": "Por favor, proporcione más detalles sobre sus síntomas.",
+      "conflict": "Hay información contradictoria. Por favor, revise sus respuestas.",
+      "symptomMismatch": "Los síntomas descritos no coinciden. Por favor, verifique."
+    },
+    "appointment": {
+      "conflict": "Este horario ya no está disponible. Por favor, seleccione otro.",
+      "doctorUnavailable": "El médico no está disponible en este horario.",
+      "invalidTimeSlot": "El horario seleccionado no es válido.",
+      "cancelled": "Esta cita ha sido cancelada.",
+      "expired": "Esta cita ha expirado. Por favor, agende una nueva.",
+      "notFound": "No encontramos la cita especificada."
+    },
+    "auth": {
+      "invalidCredentials": "El correo o contraseña son incorrectos.",
+      "sessionExpired": "Su sesión ha expirado. Por favor, inicie sesión nuevamente.",
+      "tokenInvalid": "Su sesión no es válida. Por favor, inicie sesión nuevamente.",
+      "unauthorized": "No tiene autorización para acceder a esta sección."
+    },
+    "access": {
+      "denied": "No tiene permiso para realizar esta acción.",
+      "insufficientPermissions": "Su cuenta no tiene los permisos necesarios.",
+      "roleRequired": "Esta función está disponible solo para personal médico."
+    },
+    "validation": {
+      "failed": "Por favor, verifique que todos los datos sean correctos.",
+      "invalidInput": "La información ingresada no es válida.",
+      "missingRequiredField": "Falta completar información requerida.",
+      "invalidFormat": "El formato de la información no es correcto."
+    },
+    "notFound": {
+      "resource": "No encontramos la información solicitada.",
+      "user": "No encontramos el usuario en nuestro sistema.",
+      "doctor": "No encontramos el médico en nuestro sistema."
+    },
+    "rateLimit": {
+      "exceeded": "Ha excedido el límite de solicitudes. Por favor, espere unos minutos.",
+      "tooManyRequests": "Demasiadas solicitudes. Por favor, intente más tarde.",
+      "quotaExceeded": "Ha alcanzado el límite de uso de su cuenta."
+    },
+    "external": {
+      "serviceDown": "El servicio no está disponible. Por favor, intente más tarde.",
+      "aiServiceError": "El servicio de IA no está disponible. Por favor, intente más tarde.",
+      "paymentServiceError": "Hubo un problema con el procesamiento del pago.",
+      "smsServiceError": "No pudimos enviar el mensaje de texto. Por favor, intente nuevamente."
+    },
+    "consent": {
+      "required": "Debe aceptar los términos para continuar.",
+      "outdated": "Hemos actualizado nuestros términos. Por favor, revíselos.",
+      "withdrawn": "Ha retirado su consentimiento. Ya no podemos continuar.",
+      "privacyPolicyUpdated": "Hemos actualizado nuestra política de privacidad."
+    },
+    "payment": {
+      "failed": "El pago no pudo ser procesado. Por favor, intente con otro método.",
+      "declined": "El pago fue rechazado. Por favor, verifique sus datos.",
+      "cancelled": "El pago fue cancelado.",
+      "refundFailed": "No pudimos procesar el reembolso. Por favor, contacte a soporte."
+    },
+    "video": {
+      "setupFailed": "No pudimos configurar la videollamada. Por favor, intente nuevamente.",
+      "connectionError": "Hubo un problema con la conexión de video.",
+      "permissionDenied": "Necesita permisos de cámara y micrófono para la videollamada.",
+      "recordingFailed": "No pudimos grabar la consulta."
+    },
+    "generic": {
+      "unknown": "Ha ocurrido un error. Por favor, intente nuevamente.",
+      "internalError": "Ha ocurrido un error interno. Por favor, intente nuevamente.",
+      "unexpected": "Ha ocurrido un error inesperado. Por favor, intente nuevamente."
+    },
+    "titles": {
+      "error": "Error",
+      "attentionRequired": "Atención Requerida",
+      "validation": "Validación",
+      "authentication": "Autenticación",
+      "limitReached": "Límite Alcanzado",
+      "medicalAttentionRequired": "Atención Médica Requerida",
+      "somethingWentWrong": "Algo Salió Mal"
+    }
+  }
+}

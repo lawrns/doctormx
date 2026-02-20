@@ -116,7 +116,7 @@ export function GuardianConsentForm({
     } else {
       const rfcResult = validateRFC(formData.guardian_rfc.trim())
       if (!rfcResult.isValid) {
-        newErrors.guardian_rfc = rfcResult.error || 'Formato de RFC inválido (ejemplo: XAXX000000XXX)'
+        newErrors.guardian_rfc = rfcResult.error ?? 'Formato de RFC inválido (ejemplo: XAXX000000XXX)'
       }
     }
 
@@ -248,7 +248,7 @@ export function GuardianConsentForm({
                 <Select
                   value={formData.guardian_relationship}
                   onValueChange={(value) =>
-                    setFormData({ ...formData, guardian_relationship: value as any })
+                    setFormData({ ...formData, guardian_relationship: value as GuardianConsentData['guardian_relationship'] })
                   }
                   disabled={loading}
                 >

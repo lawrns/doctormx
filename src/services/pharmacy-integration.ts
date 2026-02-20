@@ -3,8 +3,9 @@
  * This file is kept for backward compatibility
  */
 
-// Re-export everything from the new pharmacy module
+// Re-export everything from the pharmacy module
 export * from './pharmacy';
 
-// Default export
-export { default } from './pharmacy';
+// Import and re-export pharmacyAPI as the default
+import { pharmacyAPI } from './pharmacy-api';
+export default pharmacyAPI;

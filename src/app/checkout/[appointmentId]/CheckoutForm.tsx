@@ -38,7 +38,7 @@ export default function CheckoutForm({
     })
 
     if (error) {
-      setMessage(error.message || 'Error al procesar el pago')
+      setMessage(error.message ?? 'Error al procesar el pago')
       setIsLoading(false)
     }
   }

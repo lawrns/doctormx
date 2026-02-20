@@ -68,8 +68,8 @@ export async function POST(request: NextRequest) {
     }
 
     const metric = result.data
-    const url = metric.url || request.headers.get('referer') || 'unknown'
-    const userAgent = metric.userAgent || request.headers.get('user-agent') || 'unknown'
+    const url = (metric.url ?? request.headers.get('referer')) ?? 'unknown'
+    const userAgent = (metric.userAgent ?? request.headers.get('user-agent')) ?? 'unknown'
 
     // Log metric for debugging
     logger.info('Web Vitals metric received', {
@@ -82,8 +82,8 @@ export async function POST(request: NextRequest) {
     // Record metric for aggregation
     const metricName = `web_vitals_${metric.name.toLowerCase()}`
     metrics.histogram(metricName, metric.value, {
-      rating: metric.rating || 'unknown',
-      navigation_type: metric.navigationType || 'navigate',
+      rating: metric.rating ?? 'unknown',
+      navigation_type: metric.navigationType ?? 'navigate',
     })
 
     // Track rating distribution

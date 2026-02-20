@@ -92,7 +92,7 @@ export async function requireAuth(allowedRoles?: UserRole[]): Promise<AuthContex
 
   // Check role authorization if roles specified
   if (allowedRoles && allowedRoles.length > 0) {
-    if (!allowedRoles.includes(profile.role as UserRole)) {
+    if (!allowedRoles.includes(profile.role as unknown as UserRole)) {
       throw new AuthError(
         `Se requiere uno de los siguientes roles: ${allowedRoles.join(', ')}`,
         'NOT_AUTHORIZED'

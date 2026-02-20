@@ -123,10 +123,10 @@ export function getGuidelinesStats(): {
   const byYear: Record<number, number> = {};
   
   ALL_GUIDELINES.forEach(g => {
-    bySpecialty[g.specialty] = (bySpecialty[g.specialty] || 0) + 1;
-    bySource[g.source] = (bySource[g.source] || 0) + 1;
-    byType[g.type] = (byType[g.type] || 0) + 1;
-    byYear[g.year] = (byYear[g.year] || 0) + 1;
+    bySpecialty[g.specialty] = (bySpecialty[g.specialty] ?? 0) + 1;
+    bySource[g.source] = (bySource[g.source] ?? 0) + 1;
+    byType[g.type] = (byType[g.type] ?? 0) + 1;
+    byYear[g.year] = (byYear[g.year] ?? 0) + 1;
   });
   
   return {

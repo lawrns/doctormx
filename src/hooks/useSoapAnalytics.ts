@@ -55,7 +55,7 @@ export function useSoapAnalytics(userId: string, abTestVariant: string) {
       consulting: 100,
       results: 100,
     };
-    return stepWeights[step] || 0;
+    return stepWeights[step] ?? 0;
   }, []);
 
   // Initialize step metrics
@@ -139,7 +139,7 @@ export function useSoapAnalytics(userId: string, abTestVariant: string) {
       user_id: userId,
       step,
       time_on_step_ms: String(timeOnStep),
-      interactions: String(stepMetric?.interactions || 0),
+      interactions: String(stepMetric?.interactions ?? 0),
       used_autocomplete: String(usedAutocomplete),
       ab_test_variant: abTestVariant,
     });
@@ -249,7 +249,7 @@ export function useSoapAnalytics(userId: string, abTestVariant: string) {
     metrics.increment('soap_consultation_completed', 1, {
       user_id: userId,
       total_time_ms: String(totalTime),
-      satisfaction_rating: String(satisfactionRating || 0),
+      satisfaction_rating: String(satisfactionRating ?? 0),
       would_repeat: String(wouldRepeat),
       ab_test_variant: abTestVariant,
     });
@@ -443,7 +443,7 @@ export function useSoapAnalytics(userId: string, abTestVariant: string) {
       user_id: userId,
       category: category,
       sentiment: sentiment,
-      text_length: String(feedbackText?.length || 0),
+      text_length: String(feedbackText?.length ?? 0),
       ab_test_variant: abTestVariant,
     });
   }, [userId, abTestVariant]);
@@ -498,14 +498,14 @@ export function useSoapAnalytics(userId: string, abTestVariant: string) {
     if (eventType === 'received' && data?.latency) {
       metrics.histogram('soap_sse_latency_ms', data.latency, {
         user_id: userId,
-        event_type: data.sseEventType || 'unknown',
+        event_type: data.sseEventType ?? 'unknown',
         ab_test_variant: abTestVariant,
       });
     } else if (eventType === 'error' && data) {
       metrics.increment('soap_sse_error', 1, {
         user_id: userId,
-        error_type: data.errorType || 'unknown',
-        events_received: String(data.eventsReceived || 0),
+        error_type: data.errorType ?? 'unknown',
+        events_received: String(data.eventsReceived ?? 0),
         ab_test_variant: abTestVariant,
       });
     } else if (eventType === 'reconnect' && data?.attemptNumber) {
@@ -655,23 +655,25 @@ export function detectCompletionEmotion(
   return 'uncertain';
 }
 
+import { TIME } from '@/lib/constants'
+
 /**
  * Calculate if user is struggling based on time spent
  */
 export function detectUserStruggle(timeOnStepMs: number, step: IntakeStep): boolean {
   const thresholds: Record<IntakeStep, number> = {
-    welcome: 30000,      // 30 seconds
-    'chief-complaint': 60000,  // 1 minute
-    symptoms: 120000,    // 2 minutes
-    duration: 45000,     // 45 seconds
-    severity: 60000,     // 1 minute
-    onset: 30000,        // 30 seconds
-    associated: 90000,   // 90 seconds
-    factors: 90000,      // 90 seconds
-    history: 60000,      // 1 minute
+    welcome: 30 * TIME.SECOND_IN_MS,      // 30 seconds
+    'chief-complaint': TIME.MINUTE_IN_MS,  // 1 minute
+    symptoms: 2 * TIME.MINUTE_IN_MS,    // 2 minutes
+    duration: 45 * TIME.SECOND_IN_MS,     // 45 seconds
+    severity: TIME.MINUTE_IN_MS,     // 1 minute
+    onset: 30 * TIME.SECOND_IN_MS,        // 30 seconds
+    associated: 90 * TIME.SECOND_IN_MS,   // 90 seconds
+    factors: 90 * TIME.SECOND_IN_MS,      // 90 seconds
+    history: TIME.MINUTE_IN_MS,      // 1 minute
     consulting: 0,       // N/A (processing step)
     results: 0,          // N/A (results view)
   };
 
-  return timeOnStepMs > (thresholds[step] || 60000);
+  return timeOnStepMs > (thresholds[step] || TIME.MINUTE_IN_MS);
 }

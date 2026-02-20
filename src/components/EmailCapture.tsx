@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Mail, Check, X } from 'lucide-react'
 import { logger } from '@/lib/observability/logger'
@@ -15,6 +15,13 @@ export function EmailCapture({ consultationNumber, onEmailProvided, onDismiss }:
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [hasExistingEmail, setHasExistingEmail] = useState<boolean | null>(null)
+
+  // Check localStorage only on client-side to prevent hydration mismatch
+  useEffect(() => {
+    const existingEmail = localStorage.getItem('doctor_mx_email')
+    setHasExistingEmail(!!existingEmail)
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -32,9 +39,8 @@ export function EmailCapture({ consultationNumber, onEmailProvided, onDismiss }:
     localStorage.setItem('doctor_mx_email', email)
   }
 
-  // Don't show if already submitted or email exists
-  const existingEmail = typeof window !== 'undefined' ? localStorage.getItem('doctor_mx_email') : null
-  if (existingEmail || submitted) {
+  // Don't show during SSR/hydration check or if email exists
+  if (hasExistingEmail === null || hasExistingEmail || submitted) {
     return null
   }
 

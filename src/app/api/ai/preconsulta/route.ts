@@ -88,17 +88,17 @@ export async function POST(req: NextRequest) {
       try {
         const matchedDoctors = await matchDoctorsForReferral({
           symptoms: summary?.redFlags || [],
-          urgency: summary?.urgency || 'low',
-          specialty: summary?.specialty || 'general',
+          urgency: summary?.urgency ?? 'low',
+          specialty: summary?.specialty ?? 'general',
           sessionId,
-          patientId: user?.id || 'anonymous'
+          patientId: user?.id ?? 'anonymous'
         });
 
         // Transform to PreConsultaReferral format
         referrals = matchedDoctors.map((m) => ({
           id: m.doctor.id,
-          name: m.doctor.profile?.full_name || 'Doctor',
-          specialty: summary?.specialty || 'general',
+          name: m.doctor.profile?.full_name ?? 'Doctor',
+          specialty: summary?.specialty ?? 'general',
           availability: 'available',
           nextAvailable: 'Consultar disponibilidad'
         })) as PreConsultaReferral[];
@@ -112,11 +112,11 @@ export async function POST(req: NextRequest) {
         patient_id: user?.id || null,
         messages: messages,
         summary: {
-          chiefComplaint: summary?.specialty || 'general',
+          chiefComplaint: summary?.specialty ?? 'general',
           symptoms: [],
-          urgencyLevel: summary?.urgency || 'low',
-          suggestedSpecialty: summary?.specialty || 'general',
-          aiConfidence: summary?.confidence || 0.5,
+          urgencyLevel: summary?.urgency ?? 'low',
+          suggestedSpecialty: summary?.specialty ?? 'general',
+          aiConfidence: summary?.confidence ?? 0.5,
         },
         status: summary?.urgency === 'emergency' ? 'redirected-to-emergency' : 'completed',
         completed_at: new Date().toISOString(),
@@ -140,7 +140,7 @@ export async function POST(req: NextRequest) {
     // Auditoría
     await auditAIOperation({
       operation: 'pre-consulta',
-      userId: user?.id || 'anonymous',
+      userId: user?.id ?? 'anonymous',
       userType: 'patient',
       input: { sessionId, messageCount: messages.length, anonymous },
       output: { response, summary, referralCount: referrals.length },

@@ -82,7 +82,7 @@ export class ConsentManager {
       user_id: this.config.userId,
       consent_type: consentType,
       consent_version_id: version.id,
-      delivery_method: options?.deliveryMethod || 'click_wrap',
+      delivery_method: options?.deliveryMethod ?? 'click_wrap',
       date_of_birth: options?.dateOfBirth,
       guardian_consent_record_id: options?.guardianConsentId,
       metadata: {
@@ -127,7 +127,7 @@ export class ConsentManager {
       user_id: this.config.userId,
       consent_type: consentType,
       consent_version_id: version.id,
-      delivery_method: options?.deliveryMethod || 'click_wrap',
+      delivery_method: options?.deliveryMethod ?? 'click_wrap',
       metadata: {
         ...options?.metadata,
         ip_address: this.config.ipAddress,

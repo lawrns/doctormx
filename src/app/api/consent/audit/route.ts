@@ -98,7 +98,7 @@ export async function GET(request: NextRequest) {
       end_date: searchParams.get('end_date') || undefined,
       limit: searchParams.get('limit') ? parseInt(searchParams.get('limit')!) : 100,
       offset: searchParams.get('offset') ? parseInt(searchParams.get('offset')!) : 0,
-      include_stats: searchParams.get('include_stats') || 'false',
+      include_stats: searchParams.get('include_stats') ?? 'false',
     }
 
     const validationResult = AuditQuerySchema.safeParse(queryData)

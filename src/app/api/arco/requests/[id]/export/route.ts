@@ -10,11 +10,12 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { 
-  getUserDataExport, 
   exportUserDataToJson, 
   exportUserDataToText,
+} from '@/lib/arco/export'
+import { 
   exportPortabilityJson 
-} from '@/lib/arco/data-export'
+} from '@/lib/arco/export/portability'
 import { ArcoError } from '@/types/arco'
 import { logger } from '@/lib/observability/logger'
 
@@ -127,7 +128,7 @@ export async function GET(
 
     // Get format from query params
     const { searchParams } = new URL(request.url)
-    const format = searchParams.get('format') || 'json'
+    const format = searchParams.get('format') ?? 'json'
     const download = searchParams.get('download') !== 'false' // default: true
 
     // Validate format

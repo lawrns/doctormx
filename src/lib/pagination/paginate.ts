@@ -18,7 +18,7 @@ export function parsePaginationParams(searchParams: URLSearchParams): Required<O
     cursor = rawCursor
   }
 
-  let limit = PAGINATION_DEFAULTS.DEFAULT_LIMIT
+  let limit: number = PAGINATION_DEFAULTS.DEFAULT_LIMIT
   if (rawLimit) {
     const parsedLimit = parseInt(rawLimit, 10)
     if (!isNaN(parsedLimit)) {

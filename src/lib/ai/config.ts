@@ -6,15 +6,34 @@
  * - Cost effective: 90% cheaper than GPT-4
  * - Better multilingual support (Spanish)
  * - OpenAI SDK compatible
+ * 
+ * @module lib/ai/config
+ * @example
+ * ```typescript
+ * import { AI_CONFIG, validateAIConfig, estimateCost, getActiveProvider } from '@/lib/ai/config';
+ * 
+ * // Validate configuration
+ * const validation = validateAIConfig();
+ * if (!validation.valid) {
+ *   console.error(validation.errors);
+ * }
+ * 
+ * // Estimate cost
+ * const cost = estimateCost({ type: 'chat', inputTokens: 1000, outputTokens: 500 });
+ * ```
  */
 
 import { AI, TIME, LIMITS } from '@/lib/constants';
 
+/**
+ * AI configuration object
+ * Contains settings for all AI providers and features
+ */
 export const AI_CONFIG = {
   // GLM - Primary AI Provider (z.ai)
   // Docs: https://docs.z.ai/guides/overview/quick-start
   glm: {
-    apiKey: process.env.GLM_API_KEY || '',
+    apiKey: process.env.GLM_API_KEY ?? '',
     baseURL: 'https://api.z.ai/api/coding/paas/v4/', // GLM Coding Plan endpoint
     models: {
       reasoning: 'glm-4.7',        // Latest flagship - complex reasoning (returns reasoning_content only)
@@ -28,7 +47,7 @@ export const AI_CONFIG = {
 
   // OpenAI - Fallback provider
   openai: {
-    apiKey: process.env.OPENAI_API_KEY || '',
+    apiKey: process.env.OPENAI_API_KEY ?? '',
     model: 'gpt-4o-mini', // Fallback model
     temperature: 0.3,
     maxTokens: AI.MAX_TOKENS_DEFAULT,
@@ -36,7 +55,7 @@ export const AI_CONFIG = {
 
   // Whisper - Audio transcription (still uses OpenAI)
   whisper: {
-    apiKey: process.env.OPENAI_API_KEY || '', // Whisper requires OpenAI key
+    apiKey: process.env.OPENAI_API_KEY ?? '', // Whisper requires OpenAI key
     model: 'whisper-1',
     language: 'es', // Spanish default
     responseFormat: 'json' as const,
@@ -81,7 +100,16 @@ export const AI_CONFIG = {
 } as const;
 
 /**
- * Valida que las API keys estén configuradas
+ * Validates that the AI API keys are configured
+ * @returns Validation result with status, errors, and warnings
+ * @example
+ * const result = validateAIConfig();
+ * if (!result.valid) {
+ *   console.error('Configuration errors:', result.errors);
+ * }
+ * if (result.warnings.length > 0) {
+ *   console.warn('Warnings:', result.warnings);
+ * }
  */
 export function validateAIConfig(): { valid: boolean; errors: string[]; warnings: string[] } {
   const errors: string[] = [];
@@ -110,6 +138,12 @@ export function validateAIConfig(): { valid: boolean; errors: string[]; warnings
 
 /**
  * Get the active AI provider based on configuration
+ * @returns Active provider name ('glm' or 'openai')
+ * @example
+ * const provider = getActiveProvider();
+ * if (provider === 'glm') {
+ *   // Use GLM client
+ * }
  */
 export function getActiveProvider(): 'glm' | 'openai' {
   if (AI_CONFIG.features.useGLM && AI_CONFIG.glm.apiKey) {
@@ -119,7 +153,28 @@ export function getActiveProvider(): 'glm' | 'openai' {
 }
 
 /**
- * Calcula costo estimado de una operación
+ * Calculate estimated cost of an operation
+ * @param operation - Operation details
+ * @param operation.type - Type of operation: 'chat' or 'transcription'
+ * @param operation.inputTokens - Number of input tokens (for chat)
+ * @param operation.outputTokens - Number of output tokens (for chat)
+ * @param operation.audioMinutes - Audio duration in minutes (for transcription)
+ * @param operation.provider - Provider to use for calculation (optional)
+ * @returns Estimated cost in USD
+ * @example
+ * // Estimate chat cost
+ * const chatCost = estimateCost({
+ *   type: 'chat',
+ *   inputTokens: 1000,
+ *   outputTokens: 500,
+ *   provider: 'glm'
+ * });
+ * 
+ * // Estimate transcription cost
+ * const transcriptionCost = estimateCost({
+ *   type: 'transcription',
+ *   audioMinutes: 30
+ * });
  */
 export function estimateCost(operation: {
   type: 'chat' | 'transcription';
@@ -131,20 +186,19 @@ export function estimateCost(operation: {
   if (operation.type === 'chat') {
     const provider = operation.provider || getActiveProvider();
     if (provider === 'glm') {
-      const inputCost = ((operation.inputTokens || 0) / 1_000_000) * AI_CONFIG.costs.glmInputPer1M;
-      const outputCost = ((operation.outputTokens || 0) / 1_000_000) * AI_CONFIG.costs.glmOutputPer1M;
+      const inputCost = ((operation.inputTokens ?? 0) / 1_000_000) * AI_CONFIG.costs.glmInputPer1M;
+      const outputCost = ((operation.outputTokens ?? 0) / 1_000_000) * AI_CONFIG.costs.glmOutputPer1M;
       return inputCost + outputCost;
     } else {
-      const inputCost = ((operation.inputTokens || 0) / 1_000_000) * AI_CONFIG.costs.gpt4oMiniInputPer1M;
-      const outputCost = ((operation.outputTokens || 0) / 1_000_000) * AI_CONFIG.costs.gpt4oMiniOutputPer1M;
+      const inputCost = ((operation.inputTokens ?? 0) / 1_000_000) * AI_CONFIG.costs.gpt4oMiniInputPer1M;
+      const outputCost = ((operation.outputTokens ?? 0) / 1_000_000) * AI_CONFIG.costs.gpt4oMiniOutputPer1M;
       return inputCost + outputCost;
     }
   }
 
   if (operation.type === 'transcription') {
-    return (operation.audioMinutes || 0) * AI_CONFIG.costs.whisperPerMinute;
+    return (operation.audioMinutes ?? 0) * AI_CONFIG.costs.whisperPerMinute;
   }
 
   return 0;
 }
-

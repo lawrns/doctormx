@@ -33,7 +33,7 @@ export async function handlePaymentIntentSucceeded(paymentIntent: Stripe.Payment
       .from('payments')
       .update({
         status: 'paid',
-        payment_method: paymentIntent.payment_method_types?.[0] || 'card',
+        payment_method: paymentIntent.payment_method_types?.[0] ?? 'card',
         updated_at: new Date().toISOString(),
       })
       .eq('stripe_payment_intent_id', paymentIntent.id)

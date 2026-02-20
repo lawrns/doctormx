@@ -65,7 +65,7 @@ export async function getDoctorReviews(doctorId: string, options?: {
 }): Promise<Review[]> {
   const supabase = createServiceClient()
   const limit = options?.limit || 20
-  const offset = options?.offset || 0
+  const offset = options?.offset ?? 0
 
   const { data: reviews, error } = await supabase
     .from('reviews')
@@ -205,13 +205,12 @@ export async function getPatientReviewableAppointments(patientId: string): Promi
   }
 
   // Filter out appointments that already have reviews (done in-memory after single query)
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const reviewableAppointments = ((appointments || []) as any as Array<AppointmentWithDoctor & { reviews?: Array<{ id: string }> | null }>)
+  const reviewableAppointments = ((appointments || []) as unknown as Array<AppointmentWithDoctor & { reviews?: Array<{ id: string }> | null }>)
     .filter(apt => !apt.reviews || apt.reviews.length === 0)
     .map(apt => ({
       id: apt.id,
       doctor_id: apt.doctor_id,
-      doctor_name: apt.doctor?.profile?.full_name || 'Doctor',
+      doctor_name: apt.doctor?.profile?.full_name ?? 'Doctor',
       appointment_date: apt.start_ts,
     }))
 

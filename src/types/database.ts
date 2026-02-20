@@ -131,15 +131,15 @@ export interface AppointmentRow extends DatabaseRow {
   status: AppointmentStatus
   reason_for_visit: string | null
   notes: string | null
-  video_room_url: string | null
+  video_room_url?: string | null
   appointment_type?: 'in_person' | 'video'
   video_status?: VideoStatus
   video_room_id?: string | null
   video_started_at?: string | null
   video_ended_at?: string | null
   consultation_notes?: string | null
-  cancellation_reason: string | null
-  cancelled_by: string | null
+  cancellation_reason?: string | null
+  cancelled_by?: string | null
 }
 
 /**
@@ -330,14 +330,14 @@ export interface ConversationWithRelations extends ChatConversationRow {
 /**
  * Insert type for Profile (excludes id and timestamps)
  */
-export type ProfileInsert = Omit<ProfileRow, 'id' | 'created_at' | 'updated_at'>
+export type ProfileInsert = Omit<ProfileRow, 'created_at' | 'updated_at'>
 
 /**
  * Insert type for Doctor
  */
 export type DoctorInsert = Omit<
   DoctorRow,
-  'id' | 'created_at' | 'updated_at' | 'rating_avg' | 'rating_count'
+  'created_at' | 'updated_at' | 'rating_avg' | 'rating_count'
 >
 
 /**

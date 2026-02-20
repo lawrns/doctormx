@@ -30,16 +30,16 @@ export default async function PatientDashboard() {
       no_show: 'bg-gray-50 text-gray-600',
       refunded: 'bg-gray-50 text-gray-600',
     }
-    return styles[status] || 'bg-gray-50 text-gray-600'
+    return styles[status] ?? 'bg-gray-50 text-gray-600'
   }
 
   return (
     <div className="min-h-screen bg-gray-50">
       <AppNavigation currentPage="/app" />
 
-      <div className="p-6 lg:p-8">
+      <main id="main-content" className="p-6 lg:p-8">
         <div className="max-w-7xl mx-auto">
-          <WelcomeBanner patientName={profile?.full_name?.split(' ')[0] || 'Usuario'} />
+          <WelcomeBanner patientName={profile?.full_name?.split(' ')[0] ?? 'Usuario'} />
 
           {upcomingAppointments.length > 0 && (
             <Card className="mb-8 border-l-4 border-l-blue-500">
@@ -131,7 +131,7 @@ export default async function PatientDashboard() {
             </div>
           </Card>
         </div>
-      </div>
+      </main>
     </div>
   )
 }

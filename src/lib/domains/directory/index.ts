@@ -128,9 +128,9 @@ export async function searchDirectory(
   
   return {
     doctores: (data || []) as unknown as DirectoryDoctor[],
-    total: count || 0,
+    total: count ?? 0,
     page,
-    pages: Math.ceil((count || 0) / limit),
+    pages: Math.ceil((count ?? 0) / limit),
     filters_applied: params,
   }
 }

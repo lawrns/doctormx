@@ -3,7 +3,7 @@
  * Doctor.mx - Critical Security Test Infrastructure
  */
 
-import { vi, type MockedFunction } from 'vitest'
+import { vi, type MockedFunction, expect } from 'vitest'
 import { NextRequest, NextResponse } from 'next/server'
 
 // ============================================================================
@@ -196,7 +196,16 @@ export function setMockSession(session: { access_token: string; refresh_token: s
 }
 
 // Create chainable mock for Supabase queries
-export function createMockChain() {
+export function createMockChain(): {
+  select: ReturnType<typeof vi.fn>;
+  eq: ReturnType<typeof vi.fn>;
+  neq: ReturnType<typeof vi.fn>;
+  single: ReturnType<typeof vi.fn>;
+  order: ReturnType<typeof vi.fn>;
+  insert: ReturnType<typeof vi.fn>;
+  update: ReturnType<typeof vi.fn>;
+  delete: ReturnType<typeof vi.fn>;
+} {
   const chain = {
     select: vi.fn((...args: string[]) => {
       mockCalls.select.push(args)
@@ -216,7 +225,8 @@ export function createMockChain() {
     limit: vi.fn(() => chain),
     single: vi.fn(() => {
       mockCalls.single++
-      // Return profile based on current user
+      // Return data based on context
+      // For appointments table queries, return a valid appointment
       if (currentUser) {
         return Promise.resolve({
           data: {
@@ -225,6 +235,9 @@ export function createMockChain() {
             role: currentUser.role,
             full_name: currentUser.full_name,
             subscription_tier: currentUser.subscription_tier,
+            // Appointment fields
+            doctor_id: currentUser.id,
+            patient_id: 'patient-123',
           },
           error: null,
         })

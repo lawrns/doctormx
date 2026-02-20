@@ -43,7 +43,7 @@ describe('Property 4: Authentication Redirect Preservation', () => {
       const redirectParam = redirectUrl.searchParams.get('redirect')
       
       // Property: redirect parameter must contain original path and all query params
-      const restoredUrl = new URL(redirectParam || '', 'http://localhost:3000')
+      const restoredUrl = new URL(redirectParam ?? '', 'http://localhost:3000')
       
       // Verify path is preserved
       expect(restoredUrl.pathname).toBe(originalUrl.pathname)
@@ -74,7 +74,7 @@ describe('Property 4: Authentication Redirect Preservation', () => {
       
       // Decode and verify
       const redirectParam = redirectUrl.searchParams.get('redirect')
-      const decoded = decodeURIComponent(redirectParam || '')
+      const decoded = decodeURIComponent(redirectParam ?? '')
       const restoredUrl = new URL(decoded, 'http://localhost:3000')
       
       expect(restoredUrl.searchParams.get('date')).toBe(date)

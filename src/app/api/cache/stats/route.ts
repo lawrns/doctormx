@@ -46,7 +46,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
     }
 
-    const ip = request.headers.get('x-forwarded-for') || 'unknown'
+    const ip = request.headers.get('x-forwarded-for') ?? 'unknown'
     const rateLimitResult = await checkRateLimit(ip, '/api/cache/stats')
     if (!rateLimitResult.success) {
       return NextResponse.json(

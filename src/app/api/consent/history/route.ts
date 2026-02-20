@@ -59,7 +59,7 @@ export async function GET(request: NextRequest) {
     // Parsear query params
     const { searchParams } = new URL(request.url)
     const queryData = {
-      format: searchParams.get('format') || 'json',
+      format: searchParams.get('format') ?? 'json',
       consent_type: searchParams.get('consent_type') || undefined,
       start_date: searchParams.get('start_date') || undefined,
       end_date: searchParams.get('end_date') || undefined,
@@ -153,12 +153,12 @@ export async function GET(request: NextRequest) {
     const stats = {
       total_entries: enrichedHistory.length,
       by_action: enrichedHistory.reduce((acc, entry) => {
-        acc[entry.action] = (acc[entry.action] || 0) + 1
+        acc[entry.action] = (acc[entry.action] ?? 0) + 1
         return acc
       }, {} as Record<string, number>),
       by_consent_type: enrichedHistory.reduce((acc, entry) => {
-        const type = entry.consent_type || 'unknown'
-        acc[type] = (acc[type] || 0) + 1
+        const type = entry.consent_type ?? 'unknown'
+        acc[type] = (acc[type] ?? 0) + 1
         return acc
       }, {} as Record<string, number>),
     }

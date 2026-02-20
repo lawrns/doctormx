@@ -33,7 +33,7 @@ interface ErrorStateProps {
   /**
    * Error type for styling and messaging
    */
-  type?: 'network' | 'validation' | 'medical' | 'generic' | 'notFound'
+  type?: 'network' | 'validation' | 'medical' | 'generic' | 'notFound' | 'server' | 'permission' | 'timeout'
 
   /**
    * Retry handler
@@ -95,6 +95,21 @@ const errorMessages = {
   notFound: {
     title: 'No encontrado',
     message: 'La información que buscas no está disponible.',
+    icon: AlertCircle,
+  },
+  server: {
+    title: 'Error del servidor',
+    message: 'Tuvimos un problema interno. Intenta de nuevo en unos momentos.',
+    icon: AlertCircle,
+  },
+  permission: {
+    title: 'Acceso denegado',
+    message: 'No tienes permisos para acceder a esta información.',
+    icon: AlertTriangle,
+  },
+  timeout: {
+    title: 'Tiempo de espera agotado',
+    message: 'La operación tomó demasiado tiempo. Intenta de nuevo.',
     icon: AlertCircle,
   },
   generic: {

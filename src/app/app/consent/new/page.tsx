@@ -9,7 +9,7 @@
 
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
-import { NewConsentClient } from './new-consent-client'
+import { NewConsentClient } from './NewConsentClient'
 
 export default async function NewConsentPage({
   searchParams,

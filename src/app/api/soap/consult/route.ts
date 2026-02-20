@@ -74,9 +74,8 @@ export async function POST(request: NextRequest) {
 
   try {
     // Rate limiting for expensive AI endpoint
-    const identifier = request.headers.get('x-forwarded-for') ||
-                       request.headers.get('x-real-ip') ||
-                       'anonymous'
+    const identifier = (request.headers.get('x-forwarded-for') ??
+                       request.headers.get('x-real-ip')) ?? 'anonymous'
     const { success } = await rateLimit.ai.limit(identifier)
 
     if (!success) {
@@ -172,18 +171,18 @@ export async function POST(request: NextRequest) {
         metadata: consultation.metadata,
       },
       summary: {
-        urgency: consultation.assessment?.consensus.urgencyLevel || 'moderate',
+        urgency: consultation.assessment?.consensus.urgencyLevel ?? 'moderate',
         primaryDiagnosis: consultation.assessment?.consensus.primaryDiagnosis?.name || null,
-        confidence: consultation.assessment?.consensus.confidenceScore || 0,
+        confidence: consultation.assessment?.consensus.confidenceScore ?? 0,
         recommendedAction: getRecommendedAction(
-          consultation.assessment?.consensus.urgencyLevel || 'moderate'
+          consultation.assessment?.consensus.urgencyLevel ?? 'moderate'
         ),
         keyFindings: [
           ...(consultation.assessment?.consensus.combinedRedFlags || []),
           ...(consultation.assessment?.consensus.differentialDiagnoses.slice(0, 3).map(d => d.name) || []),
         ],
-        specialistAgreement: consultation.assessment?.consensus.agreementLevel || 'unknown',
-        kendallW: consultation.assessment?.consensus.kendallW || 0,
+        specialistAgreement: consultation.assessment?.consensus.agreementLevel ?? 'unknown',
+        kendallW: consultation.assessment?.consensus.kendallW ?? 0,
       },
     }
 

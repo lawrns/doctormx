@@ -44,7 +44,7 @@ export async function POST(request: Request) {
       conversationId,
       senderId: user.id,
       content,
-      type: type || 'text',
+      type: type ?? 'text',
       attachmentUrl,
       attachmentName,
       attachmentType,

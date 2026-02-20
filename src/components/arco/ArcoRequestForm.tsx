@@ -264,14 +264,14 @@ export function ArcoRequestForm({
                 <div>
                   <Label htmlFor="field_name">Campo a Corregir</Label>
                   <Select
-                    value={rectificationData?.field_name || ''}
+                    value={rectificationData?.field_name ?? ''}
                     onValueChange={(value) =>
                       setRectificationData({
                         field_name: value,
-                        current_value: rectificationData?.current_value || '',
-                        new_value: rectificationData?.new_value || '',
-                        table_name: rectificationData?.table_name || 'profiles',
-                        record_id: rectificationData?.record_id || '',
+                        current_value: rectificationData?.current_value ?? '',
+                        new_value: rectificationData?.new_value ?? '',
+                        table_name: rectificationData?.table_name ?? 'profiles',
+                        record_id: rectificationData?.record_id ?? '',
                       })
                     }
                     disabled={loading}
@@ -292,14 +292,14 @@ export function ArcoRequestForm({
                   <Label htmlFor="current_value">Valor Actual</Label>
                   <Input
                     id="current_value"
-                    value={rectificationData?.current_value || ''}
+                    value={rectificationData?.current_value ?? ''}
                     onChange={(e) =>
                       setRectificationData({
-                        field_name: rectificationData?.field_name || '',
+                        field_name: rectificationData?.field_name ?? '',
                         current_value: e.target.value,
-                        new_value: rectificationData?.new_value || '',
-                        table_name: rectificationData?.table_name || 'profiles',
-                        record_id: rectificationData?.record_id || '',
+                        new_value: rectificationData?.new_value ?? '',
+                        table_name: rectificationData?.table_name ?? 'profiles',
+                        record_id: rectificationData?.record_id ?? '',
                       })
                     }
                     placeholder="Valor actual que deseas corregir"
@@ -311,14 +311,14 @@ export function ArcoRequestForm({
                   <Label htmlFor="new_value">Valor Corregido</Label>
                   <Input
                     id="new_value"
-                    value={rectificationData?.new_value || ''}
+                    value={rectificationData?.new_value ?? ''}
                     onChange={(e) =>
                       setRectificationData({
-                        field_name: rectificationData?.field_name || '',
-                        current_value: rectificationData?.current_value || '',
+                        field_name: rectificationData?.field_name ?? '',
+                        current_value: rectificationData?.current_value ?? '',
                         new_value: e.target.value,
-                        table_name: rectificationData?.table_name || 'profiles',
-                        record_id: rectificationData?.record_id || '',
+                        table_name: rectificationData?.table_name ?? 'profiles',
+                        record_id: rectificationData?.record_id ?? '',
                       })
                     }
                     placeholder="Nuevo valor correcto"
@@ -331,14 +331,14 @@ export function ArcoRequestForm({
                 <Label htmlFor="table_name">Tabla (opcional)</Label>
                 <Input
                   id="table_name"
-                  value={rectificationData?.table_name || ''}
+                  value={rectificationData?.table_name ?? ''}
                   onChange={(e) =>
                     setRectificationData({
-                      field_name: rectificationData?.field_name || '',
-                      current_value: rectificationData?.current_value || '',
-                      new_value: rectificationData?.new_value || '',
+                      field_name: rectificationData?.field_name ?? '',
+                      current_value: rectificationData?.current_value ?? '',
+                      new_value: rectificationData?.new_value ?? '',
                       table_name: e.target.value,
-                      record_id: rectificationData?.record_id || '',
+                      record_id: rectificationData?.record_id ?? '',
                     })}
                     placeholder="ej: profiles"
                     disabled={loading}
@@ -349,13 +349,13 @@ export function ArcoRequestForm({
                 <Label htmlFor="record_id">ID del Registro (opcional)</Label>
                 <Input
                   id="record_id"
-                  value={rectificationData?.record_id || ''}
+                  value={rectificationData?.record_id ?? ''}
                   onChange={(e) =>
                     setRectificationData({
-                      field_name: rectificationData?.field_name || '',
-                      current_value: rectificationData?.current_value || '',
-                      new_value: rectificationData?.new_value || '',
-                      table_name: rectificationData?.table_name || 'profiles',
+                      field_name: rectificationData?.field_name ?? '',
+                      current_value: rectificationData?.current_value ?? '',
+                      new_value: rectificationData?.new_value ?? '',
+                      table_name: rectificationData?.table_name ?? 'profiles',
                       record_id: e.target.value,
                     })}
                     placeholder="ID del registro a corregir"

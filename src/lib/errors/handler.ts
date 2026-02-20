@@ -16,11 +16,12 @@
  */
 
 import { NextResponse } from 'next/server';
-import type { AppError } from './AppError';
+import { AppError, ValidationError } from './AppError';
 import type { EmergencyDetectedError } from './AppError';
 import { logger } from '@/lib/observability/logger';
 import {
   getPatientMessage,
+  getPatientMessageAsync,
   getDeveloperMessage,
   isEmergencyError,
 } from './messages';
@@ -46,6 +47,7 @@ export interface ErrorContext {
   userAgent?: string;
   ipAddress?: string;
   timestamp?: string;
+  locale?: string;
   additionalData?: Record<string, unknown>;
 }
 
@@ -143,7 +145,7 @@ function determineSeverity(error: AppError): ErrorSeverity {
   // Emergency errors are always critical
   if (error.name === 'EmergencyDetectedError') {
     const emergencyError = error as EmergencyDetectedError;
-    const severity = emergencyError.severity || 'critical';
+    const severity = emergencyError.severity ?? 'critical';
     // Convert lowercase severity to enum
     const severityMap: Record<string, ErrorSeverity> = {
       'low': ErrorSeverity.LOW,
@@ -181,6 +183,9 @@ function determineSeverity(error: AppError): ErrorSeverity {
 /**
  * Handle error and return appropriate NextResponse
  * This is the main error handler for API routes
+ * 
+ * Note: For i18n support, use handleErrorAsync instead
+ * @deprecated Use handleErrorAsync for full i18n support
  */
 export async function handleError(
   error: unknown,
@@ -195,7 +200,7 @@ export async function handleError(
 
     // Check for emergency errors - may need special handling
     if (isEmergencyError(appError)) {
-      return handleEmergencyError(appError);
+      return handleEmergencyError(appError, context.locale);
     }
 
     // Return formatted error response
@@ -220,7 +225,9 @@ export async function handleError(
         success: false,
         error: {
           code: 'INTERNAL_ERROR',
-          message: 'Ha ocurrido un error interno. Por favor, intente nuevamente.',
+          message: context.locale === 'en' 
+            ? 'An internal error has occurred. Please try again.'
+            : 'Ha ocurrido un error interno. Por favor, intente nuevamente.',
           developerMessage: error.message
         }
       },
@@ -234,7 +241,9 @@ export async function handleError(
       success: false,
       error: {
         code: 'UNKNOWN_ERROR',
-        message: 'Ha ocurrido un error inesperado. Por favor, intente nuevamente.',
+        message: context.locale === 'en'
+          ? 'An unexpected error has occurred. Please try again.'
+          : 'Ha ocurrido un error inesperado. Por favor, intente nuevamente.',
         developerMessage: String(error)
       }
     },
@@ -243,10 +252,98 @@ export async function handleError(
 }
 
 /**
- * Handle emergency-detected errors with special response
+ * Handle error with i18n support
+ * This is the recommended error handler for API routes with full translation support
+ * 
+ * Usage:
+ * ```ts
+ * return await handleErrorAsync(error, { locale: 'es' });
+ * ```
  */
-function handleEmergencyError(error: AppError): NextResponse {
+export async function handleErrorAsync(
+  error: unknown,
+  context: ErrorContext = {}
+): Promise<NextResponse> {
+  // Log the error
+  logError(error, context);
+
+  // Determine if it's an AppError
+  if (error instanceof Error && 'code' in error) {
+    const appError = error as AppError;
+
+    // Get translated message
+    const patientMessage = await getPatientMessageAsync(appError, context.locale);
+
+    // Check for emergency errors - may need special handling
+    if (isEmergencyError(appError)) {
+      return handleEmergencyErrorAsync(appError, context.locale);
+    }
+
+    // Return formatted error response
+    return NextResponse.json(
+      {
+        success: false,
+        error: {
+          code: appError.code,
+          message: patientMessage,
+          developerMessage: getDeveloperMessage(appError),
+          ...(appError.toJSON() as object)
+        }
+      },
+      { status: appError.statusCode }
+    );
+  }
+
+  // Handle standard errors
+  if (error instanceof Error) {
+    const genericMessage = await getGenericErrorMessage(context.locale, 'internalError');
+    return NextResponse.json(
+      {
+        success: false,
+        error: {
+          code: 'INTERNAL_ERROR',
+          message: genericMessage,
+          developerMessage: error.message
+        }
+      },
+      { status: 500 }
+    );
+  }
+
+  // Handle unknown errors
+  const genericMessage = await getGenericErrorMessage(context.locale, 'unexpected');
+  return NextResponse.json(
+    {
+      success: false,
+      error: {
+        code: 'UNKNOWN_ERROR',
+        message: genericMessage,
+        developerMessage: String(error)
+      }
+    },
+    { status: 500 }
+  );
+}
+
+/**
+ * Helper to get generic error messages with i18n
+ */
+async function getGenericErrorMessage(locale: string | undefined, key: 'unknown' | 'internalError' | 'unexpected'): Promise<string> {
+  const { getTranslations } = await import('next-intl/server');
+  const t = await getTranslations({ locale: locale ?? 'es', namespace: 'errors' });
+  return t(`generic.${key}`);
+}
+
+/**
+ * Handle emergency-detected errors with special response
+ * @deprecated Use handleEmergencyErrorAsync for i18n support
+ */
+function handleEmergencyError(error: AppError, locale?: string): NextResponse {
   const emergencyError = error as EmergencyDetectedError;
+
+  const emergencyContactMessage = locale === 'en'
+    ? 'If your symptoms are severe, call 911 or go to the emergency room.'
+    : 'Si sus síntomas son graves, llame al 911 o acuda a urgencias.';
 
   return NextResponse.json(
     {
@@ -260,7 +357,39 @@ function handleEmergencyError(error: AppError): NextResponse {
         requiresImmediateAction: true,
         emergencyContact: {
           phone: '911',
-          message: 'Si sus síntomas son graves, llame al 911 o acuda a urgencias.'
+          message: emergencyContactMessage
+        }
+      }
+    },
+    { status: emergencyError.statusCode || 422 }
+  );
+}
+
+/**
+ * Handle emergency-detected errors with i18n support
+ */
+async function handleEmergencyErrorAsync(error: AppError, locale?: string): Promise<NextResponse> {
+  const emergencyError = error as EmergencyDetectedError;
+
+  const { getTranslations } = await import('next-intl/server');
+  const t = await getTranslations({ locale: locale ?? 'es', namespace: 'errors' });
+  
+  const patientMessage = await getPatientMessageAsync(error, locale);
+  const emergencyContactMessage = t('emergency.contact911');
+
+  return NextResponse.json(
+    {
+      success: false,
+      error: {
+        code: emergencyError.code,
+        message: patientMessage,
+        developerMessage: getDeveloperMessage(emergencyError),
+        severity: emergencyError.severity,
+        detectedSymptoms: emergencyError.detectedSymptoms,
+        requiresImmediateAction: true,
+        emergencyContact: {
+          phone: '911',
+          message: emergencyContactMessage
         }
       }
     },
@@ -271,6 +400,8 @@ function handleEmergencyError(error: AppError): NextResponse {
 /**
  * Wrap an async function with error handling
  * Useful for API route handlers
+ * 
+ * @deprecated Use withErrorHandlingAsync for i18n support
  */
 export function withErrorHandling<T>(
   handler: () => Promise<T>,
@@ -280,8 +411,30 @@ export function withErrorHandling<T>(
 }
 
 /**
+ * Wrap an async function with error handling and i18n support
+ * Useful for API route handlers
+ * 
+ * Usage:
+ * ```ts
+ * export async function GET(request: NextRequest) {
+ *   return withErrorHandlingAsync(async () => {
+ *     // Your handler code
+ *   }, { locale: 'es' });
+ * }
+ * ```
+ */
+export function withErrorHandlingAsync<T>(
+  handler: () => Promise<T>,
+  context?: ErrorContext
+): Promise<T | NextResponse> {
+  return handler().catch((error) => handleErrorAsync(error, context));
+}
+
+/**
  * Create an error handler for a specific route
  * Provides route-specific context automatically
+ * 
+ * @deprecated Use createRouteHandlerAsync for i18n support
  */
 export function createRouteHandler(route: string, method: string) {
   return async (
@@ -303,8 +456,40 @@ export function createRouteHandler(route: string, method: string) {
 }
 
 /**
+ * Create an error handler for a specific route with i18n support
+ * Provides route-specific context automatically
+ * 
+ * Usage:
+ * ```ts
+ * const handler = createRouteHandlerAsync('/api/consult', 'POST');
+ * return await handler(async () => { ... }, { locale: 'es' });
+ * ```
+ */
+export function createRouteHandlerAsync(route: string, method: string) {
+  return async (
+    handler: () => Promise<NextResponse>,
+    requestContext?: Partial<ErrorContext>
+  ): Promise<NextResponse> => {
+    const context: ErrorContext = {
+      route,
+      method,
+      ...requestContext
+    };
+
+    try {
+      return await handler();
+    } catch (error) {
+      return handleErrorAsync(error, context);
+    }
+  };
+}
+
+/**
  * Client-side error handler for React components
  * Returns user-friendly message and logs to console
+ * 
+ * Note: This is kept in server handler for backward compatibility.
+ * For client components, import from '@/lib/errors/client-handler' instead.
  */
 export function handleClientError(
   error: unknown,
@@ -316,20 +501,25 @@ export function handleClientError(
     return getPatientMessage(error as AppError);
   }
 
-  return 'Ha ocurrido un error. Por favor, intente nuevamente.';
+  return context?.locale === 'en'
+    ? 'An error has occurred. Please try again.'
+    : 'Ha ocurrido un error. Por favor, intente nuevamente.';
 }
 
 /**
  * Create a toast/notification friendly error object
  * for use with UI components like Sonner
+ * 
+ * Note: This is kept in server handler for backward compatibility.
+ * For client components, import from '@/lib/errors/client-handler' instead.
  */
-export function createToastError(error: unknown): {
+export function createToastError(error: unknown, locale?: string): {
   title: string;
   description: string;
   variant?: 'destructive' | 'warning' | 'default';
 } {
-  let title = 'Error';
-  let description = handleClientError(error);
+  let title = locale === 'en' ? 'Error' : 'Error';
+  let description = handleClientError(error, { locale });
   let variant: 'destructive' | 'warning' | 'default' = 'default';
 
   if (error instanceof Error && 'code' in error) {
@@ -345,19 +535,19 @@ export function createToastError(error: unknown): {
     // Set title based on error type
     switch (appError.name) {
       case 'EmergencyDetectedError':
-        title = 'Atención Requerida';
+        title = locale === 'en' ? 'Attention Required' : 'Atención Requerida';
         break;
       case 'ValidationError':
-        title = 'Validación';
+        title = locale === 'en' ? 'Validation' : 'Validación';
         break;
       case 'AuthenticationError':
-        title = 'Autenticación';
+        title = locale === 'en' ? 'Authentication' : 'Autenticación';
         break;
       case 'RateLimitError':
-        title = 'Límite Alcanzado';
+        title = locale === 'en' ? 'Limit Reached' : 'Límite Alcanzado';
         break;
       default:
-        title = 'Error';
+        title = locale === 'en' ? 'Error' : 'Error';
     }
   }
 
@@ -368,7 +558,7 @@ export function createToastError(error: unknown): {
  * Error boundary fallback component helper
  * Extracts error info for display
  */
-export function getErrorInfo(error: unknown): {
+export function getErrorInfo(error: unknown, locale?: string): {
   title: string;
   message: string;
   showRetry: boolean;
@@ -384,9 +574,9 @@ export function getErrorInfo(error: unknown): {
 
   return {
     title: isEmergency
-      ? 'Atención Médica Requerida'
-      : 'Algo Saló Mal',
-    message: handleClientError(error),
+      ? (locale === 'en' ? 'Medical Attention Required' : 'Atención Médica Requerida')
+      : (locale === 'en' ? 'Something Went Wrong' : 'Algo Salió Mal'),
+    message: handleClientError(error, { locale }),
     showRetry: isOperational && !isEmergency,
     showHome: !isEmergency
   };
@@ -414,12 +604,11 @@ export function assertPresent<T>(
   code = 'VAL_003'
 ): asserts value is T {
   if (value === null || value === undefined) {
-    const error = new Error(`Field "${fieldName}" is required`) as any;
-    error.code = code;
-    error.statusCode = 400;
-    error.isOperational = true;
-    error.field = fieldName;
-    throw error;
+    throw new ValidationError(
+      code,
+      `Field "${fieldName}" is required`,
+      fieldName
+    );
   }
 }
 
@@ -434,12 +623,6 @@ export async function throwOnError<T>(
   try {
     return await promise;
   } catch (error) {
-    const appError = new Error(errorMessage) as any;
-    appError.code = errorCode;
-    appError.statusCode = 500;
-    appError.isOperational = true;
-    appError.originalError = error;
-    throw appError;
+    throw new AppError(errorCode, 500, errorMessage, true);
   }
 }
-

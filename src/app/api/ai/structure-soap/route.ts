@@ -96,10 +96,10 @@ Si una sección no tiene contenido, usa string vacío.`
     if (content) {
       const parsed = JSON.parse(content);
       return {
-        subjective: parsed.subjective || currentSOAP.subjective || '',
-        objective: parsed.objective || currentSOAP.objective || '',
-        assessment: parsed.assessment || currentSOAP.assessment || '',
-        plan: parsed.plan || currentSOAP.plan || '',
+        subjective: (parsed.subjective || currentSOAP.subjective) ?? '',
+        objective: (parsed.objective || currentSOAP.objective) ?? '',
+        assessment: (parsed.assessment || currentSOAP.assessment) ?? '',
+        plan: (parsed.plan || currentSOAP.plan) ?? '',
       };
     }
   } catch (error) {

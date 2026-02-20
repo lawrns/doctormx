@@ -12,6 +12,7 @@ import type {
   ConsentHistoryEntry,
   ConsentAuditLog,
   ConsentAuditEventType,
+  ConsentType,
 } from './types'
 import {
   logConsentGranted,
@@ -118,13 +119,13 @@ export async function trackConsentWithdrawn(
       consent_record_id: consentRecordId,
       user_id: userId,
       action: 'withdrawn',
-      old_status: currentConsent?.status || 'granted',
+      old_status: currentConsent?.status ?? 'granted',
       new_status: 'withdrawn',
       old_consent_version_id: currentConsent?.consent_version_id || null,
       new_consent_version_id: currentConsent?.consent_version_id,
       changed_by: userId,
-      changed_by_role: metadata?.withdrawn_by || 'user',
-      change_reason: metadata?.reason || 'Usuario retiró consentimiento',
+      changed_by_role: metadata?.withdrawn_by ?? 'user',
+      change_reason: metadata?.reason ?? 'Usuario retiró consentimiento',
       ip_address: null,
       user_agent: null,
       session_id: null,
@@ -147,10 +148,10 @@ export async function trackConsentWithdrawn(
   if (currentConsent) {
     await logConsentWithdrawn(
       currentConsent,
-      metadata?.reason || 'Usuario retiró consentimiento',
+      metadata?.reason ?? 'Usuario retiró consentimiento',
       {
         user_id: userId,
-        role: (metadata?.withdrawn_by === 'guardian' ? 'admin' : metadata?.withdrawn_by) || 'user',
+        role: (metadata?.withdrawn_by === 'guardian' ? 'admin' : metadata?.withdrawn_by) ?? 'user',
       }
     )
   }
@@ -206,12 +207,12 @@ export async function trackConsentModified(
       user_id: userId,
       action: 'modified',
       old_status: currentConsent?.status || null,
-      new_status: metadata?.status as ConsentHistoryEntry['new_status'] || currentConsent?.status || 'granted',
+      new_status: (metadata?.status as ConsentHistoryEntry['new_status'] || currentConsent?.status) ?? 'granted',
       old_consent_version_id: currentConsent?.consent_version_id || null,
       new_consent_version_id: (metadata?.new_version as string) || currentConsent?.consent_version_id || null,
       changed_by: userId,
       changed_by_role: 'user',
-      change_reason: metadata?.reason as string || 'Consentimiento modificado',
+      change_reason: metadata?.reason as string ?? 'Consentimiento modificado',
       ip_address: null,
       user_agent: null,
       session_id: null,
@@ -264,7 +265,7 @@ export async function trackConsentExpired(
       consent_record_id: consentRecordId,
       user_id: userId,
       action: 'expired',
-      old_status: currentConsent?.status || 'granted',
+      old_status: currentConsent?.status ?? 'granted',
       new_status: 'expired',
       old_consent_version_id: currentConsent?.consent_version_id || null,
       new_consent_version_id: currentConsent?.consent_version_id,
@@ -555,7 +556,7 @@ export async function getAllAuditLogs(options?: {
   }
 
   if (options?.offset) {
-    query = query.range(options.offset, (options.offset || 0) + (options.limit || 100))
+    query = query.range(options.offset, (options.offset ?? 0) + (options.limit || 100))
   }
 
   const { data, error } = await query.order('occurred_at', { ascending: false })
@@ -592,14 +593,14 @@ export async function getAuditLogStatistics(
 
   for (const log of logs) {
     // Count by type
-    eventsByType[log.event_type] = (eventsByType[log.event_type] || 0) + 1
+    eventsByType[log.event_type] = (eventsByType[log.event_type] ?? 0) + 1
 
     // Count by date
     const date = new Date(log.occurred_at).toISOString().split('T')[0]
-    eventsByDate[date] = (eventsByDate[date] || 0) + 1
+    eventsByDate[date] = (eventsByDate[date] ?? 0) + 1
 
     // Count by user
-    userEventCounts[log.user_id] = (userEventCounts[log.user_id] || 0) + 1
+    userEventCounts[log.user_id] = (userEventCounts[log.user_id] ?? 0) + 1
   }
 
   // Get most active users
@@ -675,7 +676,7 @@ export async function trackBatchConsentOperations(
     await createAuditLog({
       event_type: eventType,
       user_id: userId,
-      consent_type: (operation.consent_type || 'unknown') as any,
+      consent_type: (operation.consent_type ?? 'data_processing') as ConsentType,
       consent_record_id: operation.consent_record_id || null,
       consent_request_id: null,
       action: operation.action,
@@ -758,11 +759,11 @@ export async function exportConsentHistory(
   const rows = history.map((entry) => [
     entry.created_at,
     entry.action,
-    entry.old_status || 'N/A',
+    entry.old_status ?? 'N/A',
     entry.new_status,
-    entry.old_consent_version_id || 'N/A',
+    entry.old_consent_version_id ?? 'N/A',
     entry.new_consent_version_id,
-    entry.change_reason || 'N/A',
+    entry.change_reason ?? 'N/A',
     entry.changed_by,
   ])
 

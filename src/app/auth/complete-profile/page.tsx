@@ -59,7 +59,7 @@ export default function CompleteProfilePage() {
                     .eq('id', user.id)
 
                 if (updateError) {
-                    throw new Error(updateError.message || 'Failed to update user profile')
+                    throw new Error(updateError.message ?? 'Failed to update user profile')
                 }
             } else {
                 // User doesn't exist, create new record
@@ -73,7 +73,7 @@ export default function CompleteProfilePage() {
                     })
 
                 if (insertError) {
-                    throw new Error(insertError.message || 'Failed to create user profile')
+                    throw new Error(insertError.message ?? 'Failed to create user profile')
                 }
             }
 

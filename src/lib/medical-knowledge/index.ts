@@ -198,7 +198,7 @@ export async function retrieveMedicalContext(
         created_at: doc.created_at,
         updated_at: doc.updated_at,
       })),
-      relevance_scores: (data as MedicalDocumentWithSimilarity[]).map((doc) => doc.similarity || 0.7),
+      relevance_scores: (data as MedicalDocumentWithSimilarity[]).map((doc) => doc.similarity ?? 0.7),
       total_results: data.length,
       query,
     };
@@ -269,7 +269,7 @@ export function generateAugmentedPrompt(
       const score = retrievedContext.relevance_scores[index];
       const title = doc.metadata?.title || doc.source;
       const relevanceLabel = score >= 0.8 ? '⭐' : score >= 0.6 ? '✓' : '';
-      return `📋 **${title}** ${relevanceLabel} (${doc.source}, ${doc.metadata?.year || 'N/A'})\n${doc.content.substring(0, 400)}...`;
+      return `📋 **${title}** ${relevanceLabel} (${doc.source}, ${doc.metadata?.year ?? 'N/A'})\n${doc.content.substring(0, 400)}...`;
     })
     .join('\n\n');
   
@@ -309,8 +309,8 @@ export async function getMedicalKnowledgeStats(): Promise<KnowledgeBaseStats> {
   const sourceCount: Record<string, number> = {};
   
   data.forEach(doc => {
-    specialtyCount[doc.specialty] = (specialtyCount[doc.specialty] || 0) + 1;
-    sourceCount[doc.source] = (sourceCount[doc.source] || 0) + 1;
+    specialtyCount[doc.specialty] = (specialtyCount[doc.specialty] ?? 0) + 1;
+    sourceCount[doc.source] = (sourceCount[doc.source] ?? 0) + 1;
   });
   
   const lastUpdated = data

@@ -2,7 +2,7 @@ import { stripe } from '@/lib/stripe'
 import { verifyStripeWebhook } from '@/lib/webhooks'
 import { logger } from '@/lib/observability/logger'
 
-const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || ''
+const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET ?? ''
 
 /**
  * Verify Stripe webhook signature using double verification

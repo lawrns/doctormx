@@ -113,11 +113,11 @@ function SpecialistCard({ agent }: SpecialistCardProps) {
 
   // Word-based truncation instead of character-based
   const WORD_LIMIT = 100;
-  const totalWordCount = countWords(agent.assessment || '');
+  const totalWordCount = countWords(agent.assessment ?? '');
   const needsTruncation = totalWordCount > WORD_LIMIT;
   const displayedText = isExpanded || !needsTruncation
     ? agent.assessment
-    : truncateToWords(agent.assessment || '', WORD_LIMIT);
+    : truncateToWords(agent.assessment ?? '', WORD_LIMIT);
 
   // Animate confidence from 0 to actual value with proper cleanup
   React.useEffect(() => {
@@ -162,7 +162,7 @@ function SpecialistCard({ agent }: SpecialistCardProps) {
           <Avatar
             className={cn(
               'h-14 w-14 ring-2 ring-offset-2 shadow-sm',
-              specialtyColors[agent.specialty]?.replace('bg-', 'ring-') || 'ring-gray-500'
+              specialtyColors[agent.specialty]?.replace('bg-', 'ring-') ?? 'ring-gray-500'
             )}
             aria-label={`Avatar de ${agent.name}`}
           >
@@ -174,7 +174,7 @@ function SpecialistCard({ agent }: SpecialistCardProps) {
             <AvatarFallback
               className={cn(
                 'text-white text-base font-semibold',
-                specialtyColors[agent.specialty] || 'bg-gray-500'
+                specialtyColors[agent.specialty] ?? 'bg-gray-500'
               )}
             >
               {getSpecialistInitials(agent.name)}

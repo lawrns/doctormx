@@ -51,13 +51,14 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Appointment not found' }, { status: 404 })
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const apt = appointment as any
+    const apt = appointment as unknown as {
+      patient?: Array<{ full_name: string; email: string | null }> | { full_name: string; email: string | null } | undefined
+    }
     const patient = Array.isArray(apt.patient) ? apt.patient[0] : apt.patient
     // const doctor = Array.isArray(appointment.doctor) ? appointment.doctor[0] : appointment.doctor
 
-    const patientEmail = patient.email
-    const patientName = patient.full_name
+    const patientEmail = patient?.email
+    const patientName = patient?.full_name
 
     if (!patientEmail) {
       return NextResponse.json(
@@ -81,7 +82,7 @@ export async function POST(request: NextRequest) {
           appointment_id: appointmentId,
           diagnosis,
           medications: JSON.stringify(medications),
-          instructions: instructions || '',
+          instructions: instructions ?? '',
         })
         .select()
         .single()
@@ -94,7 +95,7 @@ export async function POST(request: NextRequest) {
         .update({
           diagnosis,
           medications: JSON.stringify(medications),
-          instructions: instructions || '',
+          instructions: instructions ?? '',
           updated_at: new Date().toISOString(),
         })
         .eq('id', prescriptionId)
@@ -102,7 +103,7 @@ export async function POST(request: NextRequest) {
 
     const { pdfBuffer } = await generateAndStorePDF(prescriptionId)
 
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://doctory.com.mx'
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'https://doctory.com.mx'
     const verificationUrl = `${appUrl}/verify-prescription/${prescriptionId}`
 
     const emailHtml = `

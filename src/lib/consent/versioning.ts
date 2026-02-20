@@ -13,6 +13,8 @@ import type {
   CreateConsentVersionInput,
   VersionComparison,
   ConsentChange,
+  ConsentType,
+  ConsentCategory,
 } from './types'
 import { logConsentVersionUpdated } from './audit'
 import { logger } from '@/lib/observability/logger'
@@ -62,8 +64,8 @@ export async function createConsentVersion(
       title: input.title,
       description: input.description,
       legal_text: input.legal_text,
-      privacy_policy_reference: input.privacy_policy_reference || '',
-      terms_of_service_reference: input.terms_of_service_reference || '',
+      privacy_policy_reference: input.privacy_policy_reference ?? '',
+      terms_of_service_reference: input.terms_of_service_reference ?? '',
       effective_date: input.effective_date,
       deprecated_date: null,
       required_for_new_users: input.required_for_new_users ?? true,
@@ -513,7 +515,7 @@ export async function incrementConsentVersion(
     // No version exists, create 1.0.0
     return createConsentVersion(
       {
-        consent_type: consentType as any,
+        consent_type: consentType as ConsentType,
         version: '1.0.0',
         title: `Consentimiento de ${consentType}`,
         description: 'Descripción del consentimiento',
@@ -551,14 +553,14 @@ export async function incrementConsentVersion(
   // Create new version with same content but new version number
   return createConsentVersion(
     {
-      consent_type: consentType as any,
+      consent_type: consentType as ConsentType,
       version: newVersion,
       title: latestVersion.title,
       description: latestVersion.description,
       legal_text: latestVersion.legal_text,
       privacy_policy_reference: latestVersion.privacy_policy_reference,
       terms_of_service_reference: latestVersion.terms_of_service_reference,
-      category: latestVersion.category as any,
+      category: latestVersion.category as ConsentCategory,
       effective_date: new Date().toISOString(),
       required_for_new_users: true,
       requires_re_consent: incrementType === 'major',

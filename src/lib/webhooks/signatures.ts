@@ -521,16 +521,16 @@ export function createWebhookVerifier(
       // Extract signature based on provider
       switch (provider) {
         case 'stripe':
-          signature = request.headers.get('stripe-signature') || ''
+          signature = request.headers.get('stripe-signature') ?? ''
           break
 
         case 'twilio':
-          signature = request.headers.get('X-Twilio-Signature') || ''
+          signature = request.headers.get('X-Twilio-Signature') ?? ''
           url = request.url
           break
 
         case 'whatsapp':
-          signature = request.headers.get('X-Hub-Signature-256') || ''
+          signature = request.headers.get('X-Hub-Signature-256') ?? ''
           break
       }
 

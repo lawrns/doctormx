@@ -36,7 +36,7 @@ async function sendPaymentFailureEmail(appointment: Appointment, reason: string)
   <tr>
     <td style="padding: 16px;">
       <p style="margin: 0; color: #991b1b; font-size: 14px; line-height: 1.6;">
-        ${reasonMessages[reason] || 'Hubo un problema con el pago. Por favor intenta nuevamente.'}
+        ${reasonMessages[reason] ?? 'Hubo un problema con el pago. Por favor intenta nuevamente.'}
       </p>
     </td>
   </tr>
@@ -45,7 +45,7 @@ async function sendPaymentFailureEmail(appointment: Appointment, reason: string)
   Si necesitas ayuda, contacta a nuestro equipo de soporte.
 </p>
 `
-    const html = getEmailTemplate(content, appointment.patient.full_name || 'Paciente')
+    const html = getEmailTemplate(content, appointment.patient.full_name ?? 'Paciente')
 
     await sendEmail({
       to: appointment.patient.email,
@@ -76,7 +76,7 @@ async function sendPaymentFailureWhatsApp(appointment: Appointment, reason: stri
       'appointment_confirmation',
       {
         patientName: appointment.patient.full_name,
-        bookingLink: `${process.env.NEXT_PUBLIC_APP_URL || 'https://doctory.mx'}/dashboard`,
+        bookingLink: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://doctory.mx'}/dashboard`,
       }
     )
     logger.info(`Payment failure WhatsApp sent for appointment ${appointment.id}`)

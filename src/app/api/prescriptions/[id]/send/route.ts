@@ -62,7 +62,7 @@ export async function POST(
 
     const pdfBuffer = await getPrescriptionPDF(id)
 
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://doctory.com.mx'
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'https://doctory.com.mx'
     const verificationUrl = `${appUrl}/verify-prescription/${id}`
 
     const emailHtml = `

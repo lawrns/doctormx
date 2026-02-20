@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const doctorName = formatDoctorName(doctor.profile?.full_name)
-  const specialties = doctor.specialties?.map(s => s.name).join(', ') || 'Especialista'
+  const specialties = doctor.specialties?.map(s => s.name).join(', ') ?? 'Especialista'
 
   return {
     title: `Agendar con ${doctorName} | Doctor.mx`,

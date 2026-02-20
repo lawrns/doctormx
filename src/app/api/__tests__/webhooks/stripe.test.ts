@@ -42,7 +42,15 @@ let singleResponse: { data: unknown; error: unknown } = { data: null, error: nul
 let singleResponses: { data: unknown; error: unknown }[] = []
 let singleCallIndex = 0
 
-const createMockChain = () => {
+const createMockChain = (): {
+  select: ReturnType<typeof vi.fn>;
+  eq: ReturnType<typeof vi.fn>;
+  single: ReturnType<typeof vi.fn>;
+  order: ReturnType<typeof vi.fn>;
+  insert: ReturnType<typeof vi.fn>;
+  update: ReturnType<typeof vi.fn>;
+  delete: ReturnType<typeof vi.fn>;
+} => {
   const chain = {
     select: vi.fn((...args: string[]) => {
       mockCalls.select.push(args)
@@ -129,6 +137,8 @@ vi.mock('@/lib/webhooks', () => ({
   verifyStripeWebhook: vi.fn().mockReturnValue(true),
   verifyTwilioWebhook: vi.fn().mockReturnValue(true),
   verifyWhatsAppWebhook: vi.fn().mockReturnValue(true),
+  isWebhookIpAllowed: vi.fn().mockReturnValue(true),
+  getClientIp: vi.fn().mockReturnValue('3.18.12.63'),
 }))
 
 // Mock signature verification to avoid Stripe initialization issues
@@ -213,8 +223,8 @@ class MockNextRequest {
   
   constructor(url: string, init?: { method?: string; body?: string; headers?: Record<string, string> }) {
     this.url = url
-    this.method = init?.method || 'GET'
-    this.body = init?.body || ''
+    this.method = init?.method ?? 'GET'
+    this.body = init?.body ?? ''
     this.headers = new Headers(init?.headers)
   }
   

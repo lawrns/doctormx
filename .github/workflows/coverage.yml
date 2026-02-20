@@ -1,0 +1,168 @@
+name: Code Coverage
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  coverage:
+    name: Coverage Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests with coverage
+        run: npm run test:coverage
+        env:
+          CI: true
+          NODE_ENV: test
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coverage-report-${{ github.run_number }}
+          path: |
+            coverage/
+          retention-days: 30
+
+      - name: Upload coverage to Codecov
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: codecov/codecov-action@v4
+        with:
+          files: ./coverage/lcov.info
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: false
+          verbose: true
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Generate coverage summary
+        if: always()
+        run: |
+          echo "## 📊 Code Coverage Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ -f coverage/coverage-summary.json ]; then
+            LINES=$(cat coverage/coverage-summary.json | grep -o '"lines":{"total":[0-9]*,"covered":[0-9]*,"skipped":[0-9]*,"pct":[0-9.]*' | grep -o '"pct":[0-9.]*' | cut -d':' -f2)
+            FUNCTIONS=$(cat coverage/coverage-summary.json | grep -o '"functions":{"total":[0-9]*,"covered":[0-9]*,"skipped":[0-9]*,"pct":[0-9.]*' | grep -o '"pct":[0-9.]*' | cut -d':' -f2 | sed -n '2p')
+            BRANCHES=$(cat coverage/coverage-summary.json | grep -o '"branches":{"total":[0-9]*,"covered":[0-9]*,"skipped":[0-9]*,"pct":[0-9.]*' | grep -o '"pct":[0-9.]*' | cut -d':' -f2)
+            STATEMENTS=$(cat coverage/coverage-summary.json | grep -o '"statements":{"total":[0-9]*,"covered":[0-9]*,"skipped":[0-9]*,"pct":[0-9.]*' | grep -o '"pct":[0-9.]*' | cut -d':' -f2 | sed -n '3p')
+            
+            echo "| Metric | Coverage | Threshold | Status |" >> $GITHUB_STEP_SUMMARY
+            echo "|--------|----------|-----------|--------|" >> $GITHUB_STEP_SUMMARY
+            
+            check_threshold() {
+              local value=$1
+              local threshold=$2
+              local name=$3
+              if (( $(echo "$value >= $threshold" | bc -l) )); then
+                echo "| $name | $value% | $threshold% | ✅ |" >> $GITHUB_STEP_SUMMARY
+              else
+                echo "| $name | $value% | $threshold% | ❌ |" >> $GITHUB_STEP_SUMMARY
+              fi
+            }
+            
+            check_threshold $LINES 80 "Lines"
+            check_threshold $FUNCTIONS 80 "Functions"
+            check_threshold $BRANCHES 70 "Branches"
+            check_threshold $STATEMENTS 80 "Statements"
+          else
+            echo "Coverage summary not found. Check the artifacts for detailed reports." >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📋 Threshold Requirements" >> $GITHUB_STEP_SUMMARY
+          echo "- **Overall**: 80% (lines, functions, statements)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Branches**: 70%" >> $GITHUB_STEP_SUMMARY
+          echo "- **Per File**: 60% minimum" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "📁 [View detailed coverage report](../../actions/runs/${{ github.run_id }}/artifacts)" >> $GITHUB_STEP_SUMMARY
+
+      - name: Comment coverage on PR
+        if: github.event_name == 'pull_request' && always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            
+            let coverageText = '### 📊 Code Coverage Report\n\n';
+            coverageText += '| Metric | Coverage | Threshold | Status |\n';
+            coverageText += '|--------|----------|-----------|--------|\n';
+            
+            // Default values
+            const metrics = {
+              lines: { pct: 0, threshold: 80 },
+              functions: { pct: 0, threshold: 80 },
+              branches: { pct: 0, threshold: 70 },
+              statements: { pct: 0, threshold: 80 }
+            };
+            
+            try {
+              const summaryPath = path.join(process.cwd(), 'coverage', 'coverage-summary.json');
+              if (fs.existsSync(summaryPath)) {
+                const summary = JSON.parse(fs.readFileSync(summaryPath, 'utf8'));
+                const total = summary.total || summary;
+                
+                if (total.lines) metrics.lines.pct = total.lines.pct;
+                if (total.functions) metrics.functions.pct = total.functions.pct;
+                if (total.branches) metrics.branches.pct = total.branches.pct;
+                if (total.statements) metrics.statements.pct = total.statements.pct;
+              }
+            } catch (e) {
+              console.log('Could not parse coverage summary:', e.message);
+            }
+            
+            const formatStatus = (pct, threshold) => pct >= threshold ? '✅' : '❌';
+            
+            coverageText += `| Lines | ${metrics.lines.pct.toFixed(2)}% | ${metrics.lines.threshold}% | ${formatStatus(metrics.lines.pct, metrics.lines.threshold)} |\n`;
+            coverageText += `| Functions | ${metrics.functions.pct.toFixed(2)}% | ${metrics.functions.threshold}% | ${formatStatus(metrics.functions.pct, metrics.functions.threshold)} |\n`;
+            coverageText += `| Branches | ${metrics.branches.pct.toFixed(2)}% | ${metrics.branches.threshold}% | ${formatStatus(metrics.branches.pct, metrics.branches.threshold)} |\n`;
+            coverageText += `| Statements | ${metrics.statements.pct.toFixed(2)}% | ${metrics.statements.threshold}% | ${formatStatus(metrics.statements.pct, metrics.statements.threshold)} |\n`;
+            
+            coverageText += '\n**Per File Minimum**: 60%\n\n';
+            coverageText += '> 📁 [View detailed coverage report](../../actions/runs/${{ github.run_id }}/artifacts)\n';
+            
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            
+            const botComment = comments.find(comment => 
+              comment.user.type === 'Bot' && 
+              comment.body.includes('📊 Code Coverage Report')
+            );
+            
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: coverageText
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: coverageText
+              });
+            }

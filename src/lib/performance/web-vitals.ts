@@ -117,7 +117,7 @@ async function sendToEndpoint(metric: WebVitalsMetric, config: WebVitalsConfig):
     entries: metric.entries.map(entry => ({
       name: entry.name,
       startTime: entry.startTime,
-      duration: (entry as PerformanceEntry).duration || 0,
+      duration: (entry as PerformanceEntry).duration ?? 0,
     })),
     navigationType: metric.navigationType,
     timestamp: new Date().toISOString(),

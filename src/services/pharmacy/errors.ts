@@ -1,12 +1,16 @@
 /**
  * Pharmacy Error Classes
  * Custom error types for pharmacy integration
- *
+ * 
  * @module services/pharmacy/errors
  */
 
-import type { PharmacyError, PharmacyChain } from './types';
+import type { PharmacyError } from './types';
+import type { PharmacyChain } from './types';
 
+/**
+ * Base error class for pharmacy integration errors
+ */
 export class PharmacyIntegrationError extends Error implements PharmacyError {
   code: string;
   pharmacyId?: PharmacyChain;
@@ -27,6 +31,9 @@ export class PharmacyIntegrationError extends Error implements PharmacyError {
   }
 }
 
+/**
+ * Error thrown when a product is not found
+ */
 export class ProductNotFoundError extends PharmacyIntegrationError {
   constructor(productId: string, pharmacyId?: PharmacyChain) {
     super(
@@ -38,6 +45,9 @@ export class ProductNotFoundError extends PharmacyIntegrationError {
   }
 }
 
+/**
+ * Error thrown when a product is out of stock
+ */
 export class OutOfStockError extends PharmacyIntegrationError {
   constructor(productId: string, pharmacyId: PharmacyChain) {
     super(
@@ -49,6 +59,9 @@ export class OutOfStockError extends PharmacyIntegrationError {
   }
 }
 
+/**
+ * Error thrown when a prescription is required but not provided
+ */
 export class PrescriptionRequiredError extends PharmacyIntegrationError {
   constructor(productName: string) {
     super(
@@ -60,6 +73,9 @@ export class PrescriptionRequiredError extends PharmacyIntegrationError {
   }
 }
 
+/**
+ * Error thrown when delivery is not available to a location
+ */
 export class DeliveryNotAvailableError extends PharmacyIntegrationError {
   constructor(pharmacyId: PharmacyChain, address: string) {
     super(
@@ -68,5 +84,33 @@ export class DeliveryNotAvailableError extends PharmacyIntegrationError {
       { pharmacyId, retryable: false }
     );
     this.name = 'DeliveryNotAvailableError';
+  }
+}
+
+/**
+ * Error thrown when an order is not found
+ */
+export class OrderNotFoundError extends PharmacyIntegrationError {
+  constructor(orderId: string) {
+    super(
+      `Order ${orderId} not found`,
+      'ORDER_NOT_FOUND',
+      { retryable: false }
+    );
+    this.name = 'OrderNotFoundError';
+  }
+}
+
+/**
+ * Error thrown when an order cannot be cancelled
+ */
+export class OrderCancellationError extends PharmacyIntegrationError {
+  constructor(orderId: string, status: string) {
+    super(
+      `Cannot cancel order ${orderId} with status: ${status}`,
+      'CANCEL_NOT_ALLOWED',
+      { retryable: false }
+    );
+    this.name = 'OrderCancellationError';
   }
 }

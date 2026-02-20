@@ -61,7 +61,7 @@ export async function GET(
       .eq('id', user.id)
       .single()
 
-    const userName = profile?.full_name || 'Paciente'
+    const userName = profile?.full_name ?? 'Paciente'
 
     // Get join token
     const token = await getJoinToken(

@@ -5,9 +5,10 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { createClient } from '@/lib/supabase/client'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef, useCallback } from 'react'
 import { LucideIcon } from 'lucide-react'
 import { logger } from '@/lib/observability/logger'
+import { TIME } from '@/lib/constants'
 
 interface PatientLayoutProps {
   children: React.ReactNode
@@ -26,6 +27,9 @@ interface Profile {
   [key: string]: unknown
 }
 
+// Refresh interval for badge checks (30 seconds) - using shared constant
+const BADGE_REFRESH_INTERVAL_MS = TIME.BADGE_REFRESH_INTERVAL_MS
+
 export function PatientLayout({ children }: PatientLayoutProps) {
   const pathname = usePathname()
   const [profile, setProfile] = useState<Profile | null>(null)
@@ -34,6 +38,10 @@ export function PatientLayout({ children }: PatientLayoutProps) {
     messages: 0,
     appointmentsJoinable: false,
   })
+  
+  // Refs for focus trap
+  const mobileSidebarRef = useRef<HTMLElement>(null)
+  const firstFocusableRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
     async function loadProfile() {
@@ -66,7 +74,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
             .select('*', { count: 'exact', head: true })
             .eq('receiver_id', user.id)
             .is('read_at', null)
-          messagesCount = count || 0
+          messagesCount = count ?? 0
         } catch (e) {
           // chat_messages table may not exist yet
           logger.info('chat_messages check failed', { error: e instanceof Error ? e.message : String(e) })
@@ -74,17 +82,18 @@ export function PatientLayout({ children }: PatientLayoutProps) {
 
         // Check for joinable appointments (within 15 minutes, have video_room_url, and are video type)
         try {
-          const fifteenMinutesFromNow = new Date(Date.now() + 15 * 60 * 1000).toISOString()
+          const fifteenMinutesFromNow = new Date(Date.now() + 15 * 60 * 1000)
+          const fifteenMinutesFromNowISO = fifteenMinutesFromNow.toISOString()
           const { data: appointments } = await supabase
             .from('appointments')
             .select('id, start_ts, video_room_url')
             .eq('patient_id', user.id)
             .in('status', ['confirmed', 'pending_payment'])
-            .lte('start_ts', fifteenMinutesFromNow)
+            .lte('start_ts', fifteenMinutesFromNowISO)
             .order('start_ts', { ascending: true })
 
           joinableAppointment = appointments?.some((apt: { video_room_url: string | null; start_ts: string }) =>
-            apt.video_room_url && new Date(apt.start_ts) <= new Date(Date.now() + 15 * 60 * 1000)
+            apt.video_room_url && new Date(apt.start_ts) <= fifteenMinutesFromNow
           ) || false
         } catch (e) {
           // Appointments query may fail due to schema issues
@@ -102,9 +111,55 @@ export function PatientLayout({ children }: PatientLayoutProps) {
 
     checkBadges()
     // Refresh badges every 30 seconds
-    const interval = setInterval(checkBadges, 30000)
+    const interval = setInterval(checkBadges, BADGE_REFRESH_INTERVAL_MS)
     return () => clearInterval(interval)
   }, [])
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [mobileMenuOpen])
+
+  // Focus trap for mobile sidebar
+  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      setMobileMenuOpen(false)
+      return
+    }
+    
+    if (e.key !== 'Tab' || !mobileSidebarRef.current) return
+
+    const focusableElements = mobileSidebarRef.current.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    )
+    
+    if (focusableElements.length === 0) return
+
+    const firstElement = focusableElements[0] as HTMLElement
+    const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement
+
+    if (e.shiftKey && document.activeElement === firstElement) {
+      e.preventDefault()
+      lastElement.focus()
+    } else if (!e.shiftKey && document.activeElement === lastElement) {
+      e.preventDefault()
+      firstElement.focus()
+    }
+  }, [])
+
+  // Focus first element when menu opens
+  useEffect(() => {
+    if (mobileMenuOpen && firstFocusableRef.current) {
+      setTimeout(() => firstFocusableRef.current?.focus(), 100)
+    }
+  }, [mobileMenuOpen])
 
   const navItems: NavItem[] = [
     { href: '/app', icon: LayoutDashboard, label: 'Dashboard' },
@@ -148,14 +203,16 @@ export function PatientLayout({ children }: PatientLayoutProps) {
 
       {/* Mobile Header */}
       <header className="lg:hidden fixed top-0 left-0 right-0 bg-white border-b border-gray-200 z-30">
-        <div className="flex items-center justify-between px-4 py-3">
-          <div className="flex items-center gap-3">
+        <div className="flex items-center justify-between px-4 py-2 min-h-[56px]">
+          <div className="flex items-center gap-2">
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="p-2 -ml-2 rounded-md text-gray-600 hover:bg-gray-100"
-              aria-label="Abrir menú"
+              className="p-2.5 -ml-2 rounded-md text-gray-600 hover:bg-gray-100 min-w-[44px] min-h-[44px] flex items-center justify-center"
+              aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="patient-sidebar"
             >
-              <Menu className="w-6 h-6" />
+              <Menu className="w-6 h-6" aria-hidden="true" />
             </button>
             <Link href="/" className="flex items-center gap-2">
               <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
@@ -167,7 +224,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
             </Link>
           </div>
           <Link href="/app/ai-consulta">
-            <Button size="sm" className="bg-blue-500 hover:bg-blue-600">
+            <Button size="sm" className="bg-blue-500 hover:bg-blue-600 min-h-[40px]">
               <Bot className="w-4 h-4 mr-1" />
               Consulta
             </Button>
@@ -198,10 +255,10 @@ export function PatientLayout({ children }: PatientLayoutProps) {
               <item.icon className="w-5 h-5" aria-hidden="true" />
               <span className="flex-1">{item.label}</span>
               {item.badge?.dot && (
-                <span className={`w-2 h-2 rounded-full ${item.badge.color || 'bg-red-500'}`} />
+                <span className={`w-2 h-2 rounded-full ${item.badge.color ?? 'bg-red-500'}`} />
               )}
               {item.badge?.count && item.badge.count > 0 && (
-                <span className={`min-w-[1.25rem] h-5 px-1.5 rounded-full text-xs font-bold text-white ${item.badge.color || 'bg-red-500'} flex items-center justify-center`}>
+                <span className={`min-w-[1.25rem] h-5 px-1.5 rounded-full text-xs font-bold text-white ${item.badge.color ?? 'bg-red-500'} flex items-center justify-center`}>
                   {item.badge.count > 99 ? '99+' : item.badge.count}
                 </span>
               )}
@@ -210,17 +267,21 @@ export function PatientLayout({ children }: PatientLayoutProps) {
           ))}
         </nav>
         <div className="p-4 border-t border-gray-100">
-          <div className="flex items-center gap-3 px-4 py-3 mb-2">
-            <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+          <div className="flex items-center gap-3 px-4 py-3 mb-2 min-h-[44px]">
+            <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
               <User className="w-5 h-5 text-blue-600" />
             </div>
             <div className="flex-1 min-w-0">
-              <p className="font-medium text-gray-900 truncate">{profile?.full_name || 'Usuario'}</p>
+              <p className="font-medium text-gray-900 truncate">{profile?.full_name ?? 'Usuario'}</p>
               <p className="text-xs text-gray-500">Paciente</p>
             </div>
           </div>
           <form action="/auth/signout" method="post">
-            <Button variant="ghost" type="submit" className="w-full justify-start text-red-600 hover:text-red-700 hover:bg-red-50">
+            <Button 
+              variant="ghost" 
+              type="submit" 
+              className="w-full justify-start text-red-600 hover:text-red-700 hover:bg-red-50 min-h-[44px]"
+            >
               <LogOut className="w-5 h-5 mr-2" />
               Cerrar sesión
             </Button>
@@ -230,12 +291,16 @@ export function PatientLayout({ children }: PatientLayoutProps) {
 
       {/* Mobile Sidebar (slides in) */}
       <aside
+        ref={mobileSidebarRef}
         id="patient-sidebar"
+        onKeyDown={handleKeyDown}
         className={`
-          fixed lg:hidden inset-y-0 left-0 z-50 w-72 bg-white border-r transform transition-transform duration-200 ease-in-out
+          fixed lg:hidden inset-y-0 left-0 z-50 w-72 bg-white border-r transform transition-transform duration-300 ease-in-out
           ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}
         `}
         aria-label="Navegación del paciente"
+        role="dialog"
+        aria-modal="true"
       >
         {/* Mobile sidebar header */}
         <div className="flex items-center justify-between p-4 border-b">
@@ -248,11 +313,12 @@ export function PatientLayout({ children }: PatientLayoutProps) {
             <span className="text-lg font-bold text-gray-900">Doctor.mx</span>
           </Link>
           <button
+            ref={firstFocusableRef}
             onClick={() => setMobileMenuOpen(false)}
-            className="p-2 rounded-md text-gray-600 hover:bg-gray-100"
+            className="p-2.5 rounded-md text-gray-600 hover:bg-gray-100 min-w-[44px] min-h-[44px] flex items-center justify-center"
             aria-label="Cerrar menú"
           >
-            <X className="w-5 h-5" />
+            <X className="w-6 h-6" aria-hidden="true" />
           </button>
         </div>
 
@@ -262,16 +328,16 @@ export function PatientLayout({ children }: PatientLayoutProps) {
               key={item.href} 
               href={item.href} 
               onClick={() => setMobileMenuOpen(false)}
-              className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${item.highlight && isActive(item.href) ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg' : isActive(item.href) ? 'bg-gray-100 text-gray-900 font-medium' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}`}
+              className={`flex items-center gap-3 px-4 py-3.5 rounded-xl transition-all min-h-[44px] ${item.highlight && isActive(item.href) ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg' : isActive(item.href) ? 'bg-gray-100 text-gray-900 font-medium' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}`}
               aria-current={isActive(item.href) ? 'page' : undefined}
             >
-              <item.icon className="w-5 h-5" aria-hidden="true" />
+              <item.icon className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
               <span className="flex-1">{item.label}</span>
               {item.badge?.dot && (
-                <span className={`w-2 h-2 rounded-full ${item.badge.color || 'bg-red-500'}`} />
+                <span className={`w-2.5 h-2.5 rounded-full flex-shrink-0 ${item.badge.color ?? 'bg-red-500'}`} />
               )}
               {item.badge?.count && item.badge.count > 0 && (
-                <span className={`min-w-[1.25rem] h-5 px-1.5 rounded-full text-xs font-bold text-white ${item.badge.color || 'bg-red-500'} flex items-center justify-center`}>
+                <span className={`min-w-[1.5rem] h-6 px-1.5 rounded-full text-xs font-bold text-white ${item.badge.color ?? 'bg-red-500'} flex items-center justify-center flex-shrink-0`}>
                   {item.badge.count > 99 ? '99+' : item.badge.count}
                 </span>
               )}
@@ -285,7 +351,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
               <User className="w-5 h-5 text-blue-600" />
             </div>
             <div className="flex-1 min-w-0">
-              <p className="font-medium text-gray-900 truncate">{profile?.full_name || 'Usuario'}</p>
+              <p className="font-medium text-gray-900 truncate">{profile?.full_name ?? 'Usuario'}</p>
               <p className="text-xs text-gray-500">Paciente</p>
             </div>
           </div>

@@ -79,7 +79,7 @@ export function PatientDashboardContent({ appointments }: PatientDashboardConten
         appointments={reviewableAppointments.map(apt => ({
           id: apt.id,
           doctor_id: apt.doctor_id,
-          doctor_name: apt.doctor?.profile?.full_name || 'Doctor',
+          doctor_name: apt.doctor?.profile?.full_name ?? 'Doctor',
           appointment_date: apt.start_ts,
         }))}
         onReviewSubmitted={() => setShown(true)}
@@ -161,7 +161,7 @@ export function QuickStats({ appointments }: { appointments: Appointment[] }) {
           <p className="text-blue-100 text-sm font-medium">
             {completed > 0 ? 'Consultas completadas' : 'Agenda tu primera consulta →'}
           </p>
-          <p className="text-3xl font-bold">{completed || '→'}</p>
+          <p className="text-3xl font-bold">{completed ?? '→'}</p>
         </div>
       </Link>
       <Link href="/doctores" className="block">
@@ -169,7 +169,7 @@ export function QuickStats({ appointments }: { appointments: Appointment[] }) {
           <p className="text-blue-100 text-sm font-medium">
             {upcoming > 0 ? 'Próximas consultas' : 'No tienes citas próximas'}
           </p>
-          <p className="text-3xl font-bold">{upcoming || 'Buscar'}</p>
+          <p className="text-3xl font-bold">{upcoming ?? 'Buscar'}</p>
         </div>
       </Link>
     </div>

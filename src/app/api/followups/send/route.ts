@@ -61,7 +61,7 @@ export async function POST(request: NextRequest) {
     }
 
     if (!result || !result.success) {
-      return NextResponse.json({ error: result?.error || 'Failed to send follow-up' }, { status: 500 })
+      return NextResponse.json({ error: result?.error ?? 'Failed to send follow-up' }, { status: 500 })
     }
 
     return NextResponse.json({ success: true, messageSid: result.messageSid })

@@ -31,7 +31,7 @@ export default async function DoctorProfilePage() {
       .eq('doctor_id', user.id)
       .eq('status', 'completed')
 
-    completedCount = count || 0
+    completedCount = count ?? 0
   }
 
   return (
@@ -50,7 +50,7 @@ export default async function DoctorProfilePage() {
               </label>
               <input
                 type="text"
-                value={profile?.full_name || ''}
+                value={profile?.full_name ?? ''}
                 disabled
                 className="w-full px-3 lg:px-4 py-2 border rounded-lg bg-gray-50 text-gray-500 text-sm lg:text-base"
               />
@@ -61,7 +61,7 @@ export default async function DoctorProfilePage() {
               </label>
               <input
                 type="email"
-                value={user.email || ''}
+                value={user.email ?? ''}
                 disabled
                 className="w-full px-3 lg:px-4 py-2 border rounded-lg bg-gray-50 text-gray-500 text-sm lg:text-base truncate"
               />
@@ -72,7 +72,7 @@ export default async function DoctorProfilePage() {
               </label>
               <input
                 type="tel"
-                value={profile?.phone || ''}
+                value={profile?.phone ?? ''}
                 disabled
                 className="w-full px-3 lg:px-4 py-2 border rounded-lg bg-gray-50 text-gray-500 text-sm lg:text-base"
               />
@@ -90,7 +90,7 @@ export default async function DoctorProfilePage() {
               </label>
               <input
                 type="text"
-                value={doctor.license_number || ''}
+                value={doctor.license_number ?? ''}
                 disabled
                 className="w-full px-3 lg:px-4 py-2 border rounded-lg bg-gray-50 text-gray-500 text-sm lg:text-base"
               />
@@ -101,7 +101,7 @@ export default async function DoctorProfilePage() {
               </label>
               <input
                 type="number"
-                value={doctor.years_experience || ''}
+                value={doctor.years_experience ?? ''}
                 disabled
                 className="w-full px-3 lg:px-4 py-2 border rounded-lg bg-gray-50 text-gray-500 text-sm lg:text-base"
               />
@@ -111,7 +111,7 @@ export default async function DoctorProfilePage() {
                 Biografía profesional
               </label>
               <textarea
-                value={doctor.bio || ''}
+                value={doctor.bio ?? ''}
                 disabled
                 rows={4}
                 className="w-full px-3 lg:px-4 py-2 border rounded-lg bg-gray-50 text-gray-500 text-sm lg:text-base"
@@ -148,12 +148,12 @@ export default async function DoctorProfilePage() {
               <div>
                 <p className="text-sm text-gray-600 mb-1">Calificación promedio</p>
                 <p className="text-2xl lg:text-3xl font-bold text-gray-900">
-                  {doctor.rating_avg?.toFixed(1) || '—'}
+                  {doctor.rating_avg?.toFixed(1) ?? '—'}
                 </p>
               </div>
               <div>
                 <p className="text-sm text-gray-600 mb-1">Total de reseñas</p>
-                <p className="text-2xl lg:text-3xl font-bold text-gray-900">{doctor.rating_count || 0}</p>
+                <p className="text-2xl lg:text-3xl font-bold text-gray-900">{doctor.rating_count ?? 0}</p>
               </div>
               <div>
                 <p className="text-sm text-gray-600 mb-1">Consultas completadas</p>

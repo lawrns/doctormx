@@ -9,7 +9,7 @@
 
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
-import { ConsentManagementClient } from './consent-client'
+import { ConsentManagementClient } from './ConsentClient'
 
 interface ConsentHistoryResponse {
   success: boolean

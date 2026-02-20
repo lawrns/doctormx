@@ -48,9 +48,19 @@ export const createMockAppointment = (overrides: Partial<Appointment> = {}): App
   start_ts: new Date(Date.now() + 86400000).toISOString(),
   end_ts: new Date(Date.now() + 86400000 + 1800000).toISOString(),
   status: 'pending_payment',
+  appointment_type: 'video',
+  video_status: 'pending',
+  video_room_url: null,
+  video_room_id: null,
+  video_started_at: null,
+  video_ended_at: null,
+  consultation_notes: null,
   cancellation_reason: null,
   cancelled_by: null,
+  reason_for_visit: null,
+  notes: null,
   created_at: new Date().toISOString(),
+  updated_at: new Date().toISOString(),
   ...overrides,
 })
 
@@ -64,6 +74,8 @@ export const createMockPayment = (overrides: Partial<Payment> = {}): Payment => 
   status: 'pending',
   fee_cents: 2500,
   net_cents: 47500,
+  payment_method: null,
+  created_at: new Date().toISOString(),
   ...overrides,
 })
 

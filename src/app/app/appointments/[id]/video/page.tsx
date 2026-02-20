@@ -58,7 +58,7 @@ export default function VideoCallPage() {
         const data = await response.json()
 
         if (!response.ok) {
-          throw new Error(data.error || 'Error al cargar la videoconsulta')
+          throw new Error(data.error ?? 'Error al cargar la videoconsulta')
         }
 
         setRoomData(data)

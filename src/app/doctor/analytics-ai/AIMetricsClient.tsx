@@ -68,7 +68,7 @@ export function AIMetricsClient() {
           ].map((tf) => (
             <button
               key={tf.value}
-              onClick={() => setTimeframe(tf.value as any)}
+              onClick={() => setTimeframe(tf.value as 'month' | 'quarter' | 'year')}
               className={`px-4 py-2 rounded-lg font-medium transition-all ${
                 timeframe === tf.value
                   ? 'bg-emerald-500 text-white'
@@ -173,7 +173,7 @@ export function AIMetricsClient() {
                 />
                 <InsightCard
                   title="Mejor Especialidad"
-                  description={`${metrics.topSpecialties[0]?.specialty || 'General'} es tu categoría con más referencias`}
+                  description={`${metrics.topSpecialties[0]?.specialty ?? 'General'} es tu categoría con más referencias`}
                 />
                 <InsightCard
                   title="Oportunidad"

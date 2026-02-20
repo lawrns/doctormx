@@ -27,7 +27,7 @@ export async function retrieveMedicalContext(patientId: string): Promise<string>
       .order('created_at', { ascending: false })
       .limit(5)
 
-    let context = `Paciente: ${profile?.full_name || 'Unknown'}\n`
+    let context = `Paciente: ${profile?.full_name ?? 'Unknown'}\n`
 
     if (profile?.allergies) {
       context += `Alergias: ${profile.allergies}\n`

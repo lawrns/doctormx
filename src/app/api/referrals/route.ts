@@ -71,7 +71,7 @@ export async function POST(request: NextRequest) {
         receiving_doctor_id: receiving_doctor_id || null,
         patient_id,
         specialty_needed,
-        urgency: urgency || 'routine',
+        urgency: urgency ?? 'routine',
         reason,
         clinical_notes,
         status: receiving_doctor_id ? 'pending' : 'pending',
@@ -123,9 +123,9 @@ export async function GET(request: NextRequest) {
     
     // Get query params
     const { searchParams } = new URL(request.url)
-    const type = searchParams.get('type') || 'all' // sent, received, all
+    const type = searchParams.get('type') ?? 'all' // sent, received, all
     const status = searchParams.get('status')
-    const limit = Math.min(parseInt(searchParams.get('limit') || '20'), 50)
+    const limit = Math.min(parseInt(searchParams.get('limit') ?? '20'), 50)
     
     // Build query
     let query = supabase

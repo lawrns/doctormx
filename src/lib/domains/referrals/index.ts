@@ -82,7 +82,7 @@ export async function createReferral(input: CreateReferralInput): Promise<{ id: 
       receiving_doctor_id: input.receiving_doctor_id,
       patient_id: input.patient_id,
       specialty_needed: input.specialty_needed,
-      urgency: input.urgency || 'routine',
+      urgency: input.urgency ?? 'routine',
       reason: input.reason,
       clinical_notes: input.clinical_notes,
       status: 'pending',
@@ -239,10 +239,10 @@ export async function getReferralStats(doctorId: string): Promise<{
   }
   
   return {
-    referrals_sent: data?.referrals_sent || 0,
-    referrals_received: data?.referrals_received || 0,
-    referrals_completed: data?.referrals_completed || 0,
-    total_fees_earned: data?.total_referral_fees_earned_cents || 0,
+    referrals_sent: data?.referrals_sent ?? 0,
+    referrals_received: data?.referrals_received ?? 0,
+    referrals_completed: data?.referrals_completed ?? 0,
+    total_fees_earned: data?.total_referral_fees_earned_cents ?? 0,
   }
 }
 

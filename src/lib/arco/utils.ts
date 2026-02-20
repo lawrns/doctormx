@@ -416,7 +416,7 @@ export function formatArcoError(
     RATE_LIMITED: 'Ha excedido el límite de solicitudes. Por favor inténtelo más tarde.',
   }
 
-  const baseMessage = messages[code] || 'Ocurrió un error al procesar su solicitud.'
+  const baseMessage = messages[code] ?? 'Ocurrió un error al procesar su solicitud.'
 
   if (context && Object.keys(context).length > 0) {
     return `${baseMessage} Contexto: ${JSON.stringify(context)}`

@@ -1,7 +1,7 @@
 'use client'
 
 import { SearchAssistant } from '@/components/SearchAssistant'
-import { Header } from '@/components/layout/Header'
+import Header from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { motion } from 'framer-motion'
 import { Sparkles } from 'lucide-react'

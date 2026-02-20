@@ -229,7 +229,7 @@ describe('Error Types', () => {
     function handleErrorExample(error: AppError): string {
       switch (error.type) {
         case 'ValidationError':
-          return `Validation failed for ${error.field || 'unknown field'}`
+          return `Validation failed for ${error.field ?? 'unknown field'}`
         case 'AuthError':
           return `Auth error: ${error.code}`
         case 'NotFoundError':
@@ -237,11 +237,11 @@ describe('Error Types', () => {
         case 'DatabaseError':
           return `Database error: ${error.message}`
         case 'NetworkError':
-          return `Network error: ${error.status || 'unknown status'}`
+          return `Network error: ${error.status ?? 'unknown status'}`
         case 'HealthcareError':
           return `Healthcare error: ${error.code}`
         case 'PaymentError':
-          return `Payment error: ${error.provider || 'unknown provider'}`
+          return `Payment error: ${error.provider ?? 'unknown provider'}`
         case 'RateLimitError':
           return `Rate limit: ${error.remaining}/${error.limit}`
         case 'ConfigurationError':

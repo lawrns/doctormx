@@ -29,52 +29,94 @@ export function ChatList({ initialConversations, userRole }: ChatListProps) {
 
     const fetchConversations = async () => {
       try {
-        // Fetch conversations separately to avoid complex join issues
-        const { data: conversationsData } = await supabase
+        // OPTIMIZED: Use single query with joins instead of N+1 pattern
+        // This fetches all conversation data including profiles in one round-trip
+        const { data: conversationsData, error: convError } = await supabase
           .from('chat_conversations')
-          .select('*')
+          .select(`
+            *,
+            patient:profiles!chat_conversations_patient_id_fkey(
+              full_name,
+              photo_url
+            ),
+            doctor:doctors!chat_conversations_doctor_id_fkey(
+              id,
+              user_id,
+              user:profiles!doctors_user_id_fkey(
+                full_name,
+                photo_url
+              )
+            )
+          `)
           .order('last_message_at', { ascending: false })
 
+        if (convError) {
+          logger.error('Error fetching conversations', { error: convError.message })
+          return
+        }
+
         if (conversationsData && conversationsData.length > 0) {
-          // Get unique patient and doctor IDs
-          const patientIds = [...new Set(conversationsData.map((c: { patient_id: string }) => c.patient_id))]
-          const doctorIds = [...new Set(conversationsData.map((c: { doctor_id: string }) => c.doctor_id))]
+          // Extract conversation IDs for batch unread count query
+          const conversationIds = conversationsData.map((c: { id: string }) => c.id)
 
-          // Fetch patient profiles
-          const { data: patientProfiles } = await supabase
-            .from('profiles')
-            .select('id, full_name, photo_url')
-            .in('id', patientIds)
+          // OPTIMIZED: Single batch query for all unread counts
+          // Instead of N queries, we do 1 query for all conversations
+          const { data: userData } = await supabase.auth.getUser()
+          const userId = userData.user?.id
 
-          // Fetch doctor data with user_id
-          const { data: doctoresData } = await supabase
-            .from('doctores')
-            .select('id, user_id')
-            .in('id', doctorIds)
+          let unreadCountsByConversation: Record<string, number> = {}
+          
+          if (userId && conversationIds.length > 0) {
+            const { data: unreadData, error: unreadError } = await supabase
+              .from('chat_messages')
+              .select('conversation_id')
+              .in('conversation_id', conversationIds)
+              .neq('sender_id', userId)
+              .not('id', 'in', (
+                supabase
+                  .from('chat_message_receipts')
+                  .select('message_id')
+                  .eq('user_id', userId)
+              ))
 
-          // Fetch doctor profiles
-          const doctorUserIds = doctoresData?.map((d: { user_id: string }) => d.user_id) || []
-          const { data: doctorProfiles } = await supabase
-            .from('profiles')
-            .select('id, full_name, photo_url')
-            .in('id', doctorUserIds)
-
-          const patientMap = new Map<string, { id: string; full_name?: string; photo_url?: string }>(patientProfiles?.map((p: { id: string; full_name?: string; photo_url?: string }) => [p.id, p]) || [])
-          const doctorToUserMap = new Map<string, string>(doctoresData?.map((d: { id: string; user_id: string }) => [d.id, d.user_id]) || [])
-          const doctorProfileMap = new Map<string, { id: string; full_name?: string; photo_url?: string }>(doctorProfiles?.map((p: { id: string; full_name?: string; photo_url?: string }) => [p.id, p]) || [])
-
-          const conversationsWithDetails = conversationsData.map((conv: ChatConversationRow) => {
-            const patient = patientMap.get(conv.patient_id)
-            const doctorUserId = doctorToUserMap.get(conv.doctor_id)
-            const doctorProfile = doctorUserId ? doctorProfileMap.get(doctorUserId) : undefined
-            return {
-              ...conv,
-              patient_name: patient?.full_name,
-              patient_photo_url: patient?.photo_url,
-              doctor_name: doctorProfile?.full_name,
-              doctor_photo_url: doctorProfile?.photo_url,
+            if (!unreadError && unreadData) {
+              unreadCountsByConversation = unreadData.reduce((acc: Record<string, number>, msg: { conversation_id: string }) => {
+                acc[msg.conversation_id] = (acc[msg.conversation_id] ?? 0) + 1
+                return acc
+              }, {} as Record<string, number>)
             }
-          })
+          }
+
+          // Transform the joined data into the expected format
+          const conversationsWithDetails = conversationsData.map((conv: {
+            id: string
+            patient_id: string
+            doctor_id: string
+            appointment_id: string | null
+            last_message_preview: string | null
+            last_message_at: string | null
+            is_archived: boolean
+            created_at: string
+            updated_at: string
+            patient?: { full_name?: string; photo_url?: string }
+            doctor?: { user?: { full_name?: string; photo_url?: string } }
+          }) => ({
+            id: conv.id,
+            patient_id: conv.patient_id,
+            doctor_id: conv.doctor_id,
+            appointment_id: conv.appointment_id,
+            last_message_preview: conv.last_message_preview,
+            last_message_at: conv.last_message_at,
+            is_archived: conv.is_archived,
+            created_at: conv.created_at,
+            updated_at: conv.updated_at,
+            patient_name: conv.patient?.full_name,
+            patient_photo_url: conv.patient?.photo_url,
+            doctor_name: conv.doctor?.user?.full_name,
+            doctor_photo_url: conv.doctor?.user?.photo_url,
+            unread_count: unreadCountsByConversation[conv.id] ?? 0,
+          }))
+
           setConversations(conversationsWithDetails)
         }
       } catch (error) {
@@ -183,7 +225,7 @@ export function ChatList({ initialConversations, userRole }: ChatListProps) {
                       className="w-full h-full object-cover"
                     />
                   ) : (
-                    (otherParty.name?.charAt(0) || '?').toUpperCase()
+                    (otherParty.name?.charAt(0) ?? '?').toUpperCase()
                   )}
                 </div>
                 <span className="absolute bottom-0 right-0 w-3 h-3 bg-success-500 border-2 border-white rounded-full" />
@@ -198,7 +240,7 @@ export function ChatList({ initialConversations, userRole }: ChatListProps) {
                   </span>
                 </div>
                 <p className="text-sm text-ink-secondary truncate">
-                  {conv.last_message_preview || 'Sin mensajes aún'}
+                  {conv.last_message_preview ?? 'Sin mensajes aún'}
                 </p>
               </div>
               {conv.unread_count && conv.unread_count > 0 && (

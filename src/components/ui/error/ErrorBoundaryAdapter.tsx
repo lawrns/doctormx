@@ -27,7 +27,7 @@ export interface FallbackRenderProps {
 /**
  * Default error fallback using our ErrorState component
  */
-function DefaultErrorFallback({ error, resetErrorBoundary }: FallbackRenderProps) {
+export function DefaultErrorFallback({ error, resetErrorBoundary }: FallbackRenderProps) {
   // Narrow error from unknown to Error for display
   const errorObj = error instanceof Error ? error : new Error(String(error))
 
@@ -102,8 +102,8 @@ export function ErrorBoundaryAdapter({
     }
 
     // Log to observability platform if available
-    if (typeof window !== 'undefined' && (window as any).logger) {
-      ;(window as any).logger.error('[ErrorBoundaryAdapter]', {
+    if (typeof window !== 'undefined' && (window as Window & { logger?: { error: (msg: string, ctx: Record<string, unknown>) => void } }).logger) {
+      ;(window as Window & { logger?: { error: (msg: string, ctx: Record<string, unknown>) => void } }).logger?.error('[ErrorBoundaryAdapter]', {
         error: errorObj.message,
         stack: errorObj.stack,
         componentStack: errorInfo.componentStack,

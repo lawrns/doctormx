@@ -270,11 +270,11 @@ export default function ChatPage({ params }: ChatPageProps) {
                 
                               <img
                   src={otherParty.photoUrl}
-                  alt={otherParty.name || ''}
+                  alt={otherParty.name ?? ''}
                   className="w-full h-full object-cover"
                 />
               ) : (
-                (otherParty.name?.charAt(0) || '?').toUpperCase()
+                (otherParty.name?.charAt(0) ?? '?').toUpperCase()
               )}
             </div>
             <div>
@@ -330,11 +330,11 @@ export default function ChatPage({ params }: ChatPageProps) {
                             
                               <img
                               src={message.sender_photo_url}
-                              alt={message.sender_name || ''}
+                              alt={message.sender_name ?? ''}
                               className="w-full h-full object-cover"
                             />
                           ) : (
-                            (message.sender_name?.charAt(0) || '?').toUpperCase()
+                            (message.sender_name?.charAt(0) ?? '?').toUpperCase()
                           )}
                         </div>
                         <span className="text-xs text-ink-muted">{message.sender_name}</span>
@@ -353,7 +353,7 @@ export default function ChatPage({ params }: ChatPageProps) {
                             
                               <img
                               src={message.attachment_url}
-                              alt={message.attachment_name || 'Imagen'}
+                              alt={message.attachment_name ?? 'Imagen'}
                               className="max-w-full rounded-lg"
                             />
                           ) : (
@@ -367,7 +367,7 @@ export default function ChatPage({ params }: ChatPageProps) {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
                               </svg>
                               <span className="text-sm text-ink-primary truncate max-w-[200px]">
-                                {message.attachment_name || 'Archivo'}
+                                {message.attachment_name ?? 'Archivo'}
                               </span>
                             </a>
                           )}

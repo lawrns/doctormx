@@ -61,7 +61,7 @@ export async function GET(request: NextRequest) {
           results.successful++
         } else {
           results.failed++
-          results.errors.push(`Failed to send ${followUp.type}: ${result?.error || 'Unknown error'}`)
+          results.errors.push(`Failed to send ${followUp.type}: ${result?.error ?? 'Unknown error'}`)
         }
       } catch (error) {
         results.failed++

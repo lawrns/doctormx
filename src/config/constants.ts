@@ -1,7 +1,8 @@
 // Configuración centralizada - Principio 5: Todo debe poder cambiar
+import { TIME, LIMITS } from '@/lib/constants'
 
 export const APPOINTMENT_CONFIG = {
-  DURATION_MINUTES: 30,
+  DURATION_MINUTES: TIME.DEFAULT_APPOINTMENT_DURATION_MINUTES,
   MAX_ADVANCE_DAYS: 30,
   SLOT_INTERVAL_MINUTES: 30,
   PRE_CONSULTATION_ACCESS_MINUTES: 10,

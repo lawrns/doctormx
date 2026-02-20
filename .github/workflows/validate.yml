@@ -28,8 +28,36 @@ jobs:
     - name: Type-check
       run: npm run typecheck
 
-    - name: Unit Tests
-      run: npm test
+    - name: Unit Tests with Coverage
+      run: npm run test:coverage
+      env:
+        CI: true
+        NODE_ENV: test
+        NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+        NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+
+    - name: Upload coverage report
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: coverage-report
+        path: |
+          coverage/
+        retention-days: 30
+
+    - name: Check coverage thresholds
+      run: |
+        echo "Checking coverage thresholds..."
+        echo "Required: Lines 80%, Functions 80%, Branches 70%, Statements 80%, Per-file 60%"
+        
+        # The coverage check is already enforced by vitest
+        # This step provides additional visibility
+        if [ -f coverage/coverage-summary.json ]; then
+          echo "✅ Coverage report generated successfully"
+          cat coverage/coverage-summary.json | head -50
+        else
+          echo "⚠️ Coverage summary not found"
+        fi
 
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps chromium

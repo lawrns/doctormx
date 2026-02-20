@@ -222,10 +222,10 @@ export async function grantConsent(
       user_id: input.user_id,
       role: 'user',
     }, {
-      ip_address: (input.metadata as any)?.ip_address,
-      user_agent: (input.metadata as any)?.user_agent,
-      session_id: (input.metadata as any)?.session_id,
-      request_id: (input.metadata as any)?.request_id,
+      ip_address: (input.metadata as Record<string, unknown> | undefined)?.ip_address as string | undefined,
+      user_agent: (input.metadata as Record<string, unknown> | undefined)?.user_agent as string | undefined,
+      session_id: (input.metadata as Record<string, unknown> | undefined)?.session_id as string | undefined,
+      request_id: (input.metadata as Record<string, unknown> | undefined)?.request_id as string | undefined,
     })
   }
 
@@ -286,7 +286,7 @@ export async function withdrawConsent(
     .update({
       status: 'withdrawn',
       withdrawn_at: new Date().toISOString(),
-      withdrawn_by: input.withdrawn_by || 'user',
+      withdrawn_by: input.withdrawn_by ?? 'user',
       withdrawal_reason: input.withdrawal_reason,
       updated_at: new Date().toISOString(),
     })
@@ -305,18 +305,18 @@ export async function withdrawConsent(
   // Track the withdrawal in history
   await trackConsentWithdrawn(input.consent_record_id, consent.user_id, {
     reason: input.withdrawal_reason,
-    withdrawn_by: input.withdrawn_by || 'user',
+    withdrawn_by: input.withdrawn_by ?? 'user',
   })
 
   // Log to unified audit system with additional context
-  await auditLogConsentWithdrawn(data, input.withdrawal_reason || 'Usuario retiró consentimiento', {
+  await auditLogConsentWithdrawn(data, input.withdrawal_reason ?? 'Usuario retiró consentimiento', {
     user_id: consent.user_id,
-    role: (input.withdrawn_by === 'guardian' ? 'admin' : input.withdrawn_by) || 'user',
+    role: (input.withdrawn_by === 'guardian' ? 'admin' : input.withdrawn_by) ?? 'user',
   }, {
-    ip_address: (input as any)?.ip_address,
-    user_agent: (input as any)?.user_agent,
-    session_id: (input as any)?.session_id,
-    request_id: (input as any)?.request_id,
+    ip_address: (input as unknown as Record<string, unknown> | undefined)?.ip_address as string | undefined,
+    user_agent: (input as unknown as Record<string, unknown> | undefined)?.user_agent as string | undefined,
+    session_id: (input as unknown as Record<string, unknown> | undefined)?.session_id as string | undefined,
+    request_id: (input as unknown as Record<string, unknown> | undefined)?.request_id as string | undefined,
   })
 
   return data
@@ -616,7 +616,7 @@ export async function generateComplianceReport(
       end: endDate.toISOString(),
     },
     user_statistics: {
-      total_users: users?.length || 0,
+      total_users: users?.length ?? 0,
       users_with_all_consents: 0,
       users_with_partial_consents: 0,
       users_with_expired_consents: 0,
@@ -624,17 +624,17 @@ export async function generateComplianceReport(
     },
     consent_type_breakdown: [],
     version_statistics: {
-      active_versions: versions?.length || 0,
+      active_versions: versions?.length ?? 0,
       deprecated_versions: 0,
       pending_migrations: 0,
     },
     guardian_statistics: {
-      total_guardian_consents: guardianConsents?.length || 0,
-      active_guardian_consents: guardianConsents?.filter((g) => g.status === 'active').length || 0,
-      expired_guardian_consents: guardianConsents?.filter((g) => g.status === 'expired').length || 0,
+      total_guardian_consents: guardianConsents?.length ?? 0,
+      active_guardian_consents: guardianConsents?.filter((g) => g.status === 'active').length ?? 0,
+      expired_guardian_consents: guardianConsents?.filter((g) => g.status === 'expired').length ?? 0,
     },
     audit_summary: {
-      total_events: auditLogs?.length || 0,
+      total_events: auditLogs?.length ?? 0,
       events_by_type: {},
       most_common_actions: [],
     },

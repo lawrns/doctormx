@@ -9,7 +9,7 @@
 
 import { redirect, notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
-import { ConsentDetailClient } from './consent-detail-client'
+import { ConsentDetailClient } from './ConsentDetailClient'
 
 interface ConsentDetailParams {
   id: string

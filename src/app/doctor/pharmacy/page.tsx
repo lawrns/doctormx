@@ -47,10 +47,10 @@ export default async function DoctorPharmacyPage() {
     const totalReferrals = referrals.length
     const redeemedReferrals = referrals.filter((r) => r.status === 'redeemed').length
     const pendingReferrals = referrals.filter((r) => r.status !== 'redeemed' && r.status !== 'cancelled' && r.status !== 'expired').length
-    const totalReferralFees = earningsData?.reduce((sum, c) => sum + (c.referral_fee_cents || 0), 0) || 0
-    const totalCommissions = earningsData?.reduce((sum, c) => sum + (c.commission_amount_cents || 0), 0) || 0
-    const platformFees = earningsData?.reduce((sum, c) => sum + (c.platform_fee_cents || 0), 0) || 0
-    const netEarnings = earningsData?.reduce((sum, c) => sum + (c.net_doctor_earnings_cents || 0), 0) || 0
+    const totalReferralFees = earningsData?.reduce((sum, c) => sum + (c.referral_fee_cents ?? 0), 0) || 0
+    const totalCommissions = earningsData?.reduce((sum, c) => sum + (c.commission_amount_cents ?? 0), 0) || 0
+    const platformFees = earningsData?.reduce((sum, c) => sum + (c.platform_fee_cents ?? 0), 0) || 0
+    const netEarnings = earningsData?.reduce((sum, c) => sum + (c.net_doctor_earnings_cents ?? 0), 0) || 0
 
     earnings = {
       totalReferrals,
@@ -215,7 +215,7 @@ export default async function DoctorPharmacyPage() {
                               )}
                               <div>
                                 <p className="font-medium text-ink-primary">
-                                  {(referral.pharmacy as { name: string })?.name || 'Farmacia'}
+                                  {(referral.pharmacy as { name: string })?.name ?? 'Farmacia'}
                                 </p>
                                 <p className="text-sm text-ink-muted">
                                   {(referral.pharmacy as { city: string })?.city}
@@ -224,7 +224,7 @@ export default async function DoctorPharmacyPage() {
                             </div>
                           </td>
                           <td className="px-6 py-4 text-sm text-ink-secondary">
-                            {referral.medications_summary as string || 'Sin especificar'}
+                            {referral.medications_summary as string ?? 'Sin especificar'}
                           </td>
                           <td className="px-6 py-4 text-sm text-ink-muted">
                             {format(new Date(referral.created_at as string), 'dd MMM yyyy', { locale: es })}

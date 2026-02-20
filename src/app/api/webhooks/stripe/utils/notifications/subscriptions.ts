@@ -40,7 +40,7 @@ export async function sendSubscriptionWelcomeNotification(doctorId: string, tier
   Si tienes alguna pregunta, no dudes en contactarnos.
 </p>
 `
-    const html = getEmailTemplate(content, profile.full_name || 'Doctor')
+    const html = getEmailTemplate(content, profile.full_name ?? 'Doctor')
 
     await sendEmail({
       to: profile.email,
@@ -92,7 +92,7 @@ export async function sendSubscriptionCanceledNotification(doctorId: string): Pr
   Esperamos verte de nuevo pronto.
 </p>
 `
-    const html = getEmailTemplate(content, profile.full_name || 'Doctor')
+    const html = getEmailTemplate(content, profile.full_name ?? 'Doctor')
 
     await sendEmail({
       to: profile.email,
@@ -143,7 +143,7 @@ export async function sendSubscriptionPaymentFailedNotification(doctorId: string
   Puedes actualizar tu método de pago desde tu panel de control.
 </p>
 `
-    const html = getEmailTemplate(content, profile.full_name || 'Doctor')
+    const html = getEmailTemplate(content, profile.full_name ?? 'Doctor')
 
     await sendEmail({
       to: profile.email,

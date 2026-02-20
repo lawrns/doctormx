@@ -28,9 +28,11 @@ export interface CursorData {
   [key: string]: unknown
 }
 
+import { LIMITS } from '@/lib/constants'
+
 export const PAGINATION_DEFAULTS = {
-  DEFAULT_LIMIT: 20,
-  MAX_LIMIT: 100,
-  MIN_LIMIT: 1,
+  DEFAULT_LIMIT: LIMITS.PAGINATION_DEFAULT_PAGE_SIZE,
+  MAX_LIMIT: LIMITS.PAGINATION_MAX_LIMIT,
+  MIN_LIMIT: LIMITS.PAGINATION_MIN_LIMIT,
 }
 

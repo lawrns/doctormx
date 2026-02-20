@@ -248,20 +248,20 @@ export function buildPrescriptionData(
     ? calculateAge(new Date(patient.date_of_birth))
     : 0
 
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://doctory.com.mx'
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'https://doctory.com.mx'
   const verificationUrl = `${appUrl}/verify-prescription/${prescription.id}`
 
   return {
     id: prescription.id,
     doctorName: doctor.full_name,
-    doctorLicense: doctor.license_number || 'N/A',
-    doctorSpecialty: doctor.specialty || 'Medicina General',
+    doctorLicense: doctor.license_number ?? 'N/A',
+    doctorSpecialty: doctor.specialty ?? 'Medicina General',
     patientName: patient.full_name,
     patientAge,
     date: appointmentDate,
-    diagnosis: prescription.diagnosis || '',
+    diagnosis: prescription.diagnosis ?? '',
     medications,
-    instructions: prescription.instructions || '',
+    instructions: prescription.instructions ?? '',
     verificationUrl,
   }
 }

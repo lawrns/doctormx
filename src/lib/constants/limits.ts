@@ -20,6 +20,8 @@ export const LIMITS = {
   // Pagination
   PAGINATION_DEFAULT_LIMIT: 100,
   PAGINATION_MAX_LIMIT: 1000,
+  PAGINATION_DEFAULT_PAGE_SIZE: 20,
+  PAGINATION_MIN_LIMIT: 1,
 
   // Performance thresholds
   PERFORMANCE_P95_THRESHOLD_MS: 300,
@@ -42,6 +44,62 @@ export const LIMITS = {
 
   // Webhook timestamp tolerance
   WEBHOOK_TIMESTAMP_TOLERANCE_SECONDS: 300, // 5 minutes
+
+  // Chat
+  CHAT_MESSAGES_DEFAULT_LIMIT: 50,
+  CHAT_PREVIEW_LENGTH: 100,
+
+  // Rate limits (requests per minute)
+  RATE_LIMIT_AI: 10,
+  RATE_LIMIT_CHAT: 30,
+  RATE_LIMIT_GENERAL: 60,
+  RATE_LIMIT_AUTH: 5,
+
+  // Video call
+  VIDEO_CALL_MAX_PARTICIPANTS: 4,
+  VIDEO_CALL_TOKEN_EXPIRY_HOURS: 2,
+
+  // Retryable fetch defaults
+  DEFAULT_MAX_RETRIES: 3,
+  DEFAULT_RETRY_DELAY_MS: 1000,
+  DEFAULT_BACKOFF_MULTIPLIER: 2,
+
+  // Random ID generation
+  RANDOM_ID_LENGTH_SHORT: 9,
+  RANDOM_ID_LENGTH_LONG: 11,
+
+  // SLA tracking
+  MAX_FOLLOWUP_RETRY_BATCH_SIZE: 50,
+
+  // SOAP consultation
+  SOAP_CONSULTATION_MAX_CONCURRENCY: 2,
+  SOAP_MAX_TOKENS_REASONING: 2000,
+  SOAP_MAX_TOKENS_PLAN: 1500,
+
+  // Substring defaults
+  SUBSTRING_PREVIEW_LENGTH: 500,
+  SUBSTRING_ERROR_PREVIEW: 200,
+
+  // Array defaults
+  MAX_SPECIALISTS: 4,
+
+  // Video bandwidth
+  VIDEO_BANDWIDTH_KBPS: 5000,
+
+  // Kendall's W calculation
+  KENDALL_W_MAX_VARIANCE: 4,
+  KENDALL_W_URGENCY_WEIGHT: 0.6,
+  KENDALL_W_CONFIDENCE_WEIGHT: 0.4,
+
+  // Tax rate
+  TAX_RATE_IVA: 0.16, // 16% IVA in Mexico
+
+  // Delivery
+  DEFAULT_DELIVERY_COST_CENTS: 49,
+  DEFAULT_DELIVERY_TIME_MINUTES: 60,
+
+  // Discount
+  DEFAULT_COUPON_DISCOUNT_PERCENT: 0.10, // 10%
 } as const
 
 export type LimitsKey = keyof typeof LIMITS

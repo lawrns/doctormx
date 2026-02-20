@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
         .eq('id', user.id)
         .single()
       
-      nameToVerify = profile?.full_name || ''
+      nameToVerify = profile?.full_name ?? ''
     }
 
     // Verify the cédula
@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
     // If verified, extract and return additional data for auto-fill
     let autoFillData = null
     if (verificationResult.verified && verificationResult.data) {
-      const specialty = mapTitleToSpecialty(verificationResult.data.title || '')
+      const specialty = mapTitleToSpecialty(verificationResult.data.title ?? '')
       
       autoFillData = {
         fullName: verificationResult.data.name,

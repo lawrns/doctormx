@@ -7,6 +7,8 @@
  * @see {@link ../config/constants.ts} - Original source
  */
 
+import { LIMITS, TIME } from '@/lib/constants'
+
 /**
  * Supported video call providers
  */
@@ -44,7 +46,7 @@ export const VIDEO_QUALITY = {
   HIGH: {
     resolution: '1080p',
     frameRate: 30,
-    bandwidth: 5000, // kbps
+    bandwidth: LIMITS.VIDEO_BANDWIDTH_KBPS, // kbps
   },
 } as const
 
@@ -53,7 +55,7 @@ export const VIDEO_QUALITY = {
  */
 export const VIDEO_LIMITS = {
   /** Maximum duration for a video consultation in minutes */
-  MAX_DURATION_MINUTES: 60,
+  MAX_DURATION_MINUTES: TIME.MAX_AUDIO_MINUTES,
 
   /** Grace period after consultation ends in minutes */
   GRACE_PERIOD_MINUTES: 5,

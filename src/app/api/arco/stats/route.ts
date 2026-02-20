@@ -84,7 +84,7 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url)
 
     // Parse query params
-    const period = searchParams.get('period') || '30d'
+    const period = searchParams.get('period') ?? '30d'
     const detailed = searchParams.get('detailed') === 'true'
     const includeOverdue = searchParams.get('include_overdue') !== 'false'
     const includeEscalations = searchParams.get('include_escalations') !== 'false'
@@ -141,7 +141,7 @@ export async function GET(request: NextRequest) {
 
     for (const request of statusCounts || []) {
       // Count by status
-      byStatus[request.status] = (byStatus[request.status] || 0) + 1
+      byStatus[request.status] = (byStatus[request.status] ?? 0) + 1
 
       // Count by type
       if (byType[request.request_type as ArcoRequestType]) {
@@ -225,11 +225,11 @@ export async function GET(request: NextRequest) {
       data: {
         summary: {
           period: `${startDate.toISOString().split('T')[0]} to ${now.toISOString().split('T')[0]}`,
-          total_requests: statusCounts?.length || 0,
+          total_requests: statusCounts?.length ?? 0,
           active_requests: slaMetrics.pending_requests,
-          completed_requests: byStatus['completed'] || 0,
-          cancelled_requests: byStatus['cancelled'] || 0,
-          denied_requests: byStatus['denied'] || 0,
+          completed_requests: byStatus['completed'] ?? 0,
+          cancelled_requests: byStatus['cancelled'] ?? 0,
+          denied_requests: byStatus['denied'] ?? 0,
           overdue_count: slaMetrics.overdue_requests,
           sla_compliance_rate: slaMetrics.sla_compliance_rate,
         },
@@ -388,11 +388,11 @@ export async function POST(request: NextRequest) {
           req.request_type,
           req.status,
           `"${(req.title as string)?.replace(/"/g, '""')}"`,
-          (req.user as { full_name?: string })?.full_name || '',
-          (req.user as { email?: string })?.email || '',
+          (req.user as { full_name?: string })?.full_name ?? '',
+          (req.user as { email?: string })?.email ?? '',
           req.created_at,
           req.due_date,
-          req.completed_at || '',
+          req.completed_at ?? '',
           req.escalation_level,
           req.priority,
         ])

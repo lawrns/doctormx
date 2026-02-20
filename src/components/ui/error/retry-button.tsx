@@ -167,7 +167,7 @@ export function RetryButton({
         className={cn(
           'inline-flex items-center justify-center gap-2',
           'rounded-md font-medium',
-          'focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
+          'focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
           'disabled:opacity-50 disabled:cursor-not-allowed',
           'transition-colors',
           sizeClasses[size],

@@ -4,35 +4,36 @@ import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/card'
 import { BadgeCheck, Star, MapPin } from 'lucide-react'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
+import { useTranslations } from 'next-intl'
 
 const testimonials = [
   {
     name: 'María García L.',
-    role: 'Paciente verificada',
+    roleKey: 'verifiedPatient',
     location: 'Ciudad de México',
     initials: 'MG',
     gradient: 'from-rose-400 to-pink-500',
-    content: 'Encontré un cardiólogo excelente en 10 minutos. La videoconsulta fue tan profesional como ir al consultorio, pero sin perder 3 horas en traslados. Ya llevo 4 consultas de seguimiento.',
+    contentKey: 'maria',
     rating: 5,
     verified: true,
   },
   {
     name: 'Dr. Carlos Mendoza R.',
-    role: 'Cardiólogo · Cédula 8745632',
+    roleKey: 'cardiologist',
     location: 'Guadalajara, Jal.',
     initials: 'CM',
     gradient: 'from-blue-400 to-indigo-500',
-    content: 'Doctor.mx me permite atender pacientes de todo México sin limitarme a mi consultorio físico. El sistema de pagos es confiable y el soporte resuelve cualquier duda en minutos.',
+    contentKey: 'carlos',
     rating: 5,
     verified: true,
   },
   {
     name: 'Ana Rodríguez P.',
-    role: 'Paciente verificada',
+    roleKey: 'verifiedPatient',
     location: 'Monterrey, N.L.',
     initials: 'AR',
     gradient: 'from-teal-400 to-cyan-500',
-    content: 'Usé Dr. Simeon para entender mis síntomas antes de mi consulta. Me ayudó a preparar las preguntas correctas. La segunda opinión que obtuve me dio tranquilidad antes de decidir mi tratamiento.',
+    contentKey: 'ana',
     rating: 5,
     verified: true,
   },
@@ -40,6 +41,7 @@ const testimonials = [
 
 export function TestimonialsSection() {
   const prefersReducedMotion = useReducedMotion()
+  const t = useTranslations('landing.testimonials')
 
   return (
     <section className="py-24 bg-gradient-to-b from-neutral-50 to-neutral-0 relative overflow-hidden">
@@ -61,13 +63,13 @@ export function TestimonialsSection() {
             transition={{ duration: 0.4, ease: [0, 0, 0.2, 1] }}
             className="inline-block px-4 py-1.5 bg-primary-50 text-primary-500 text-sm font-semibold rounded-full mb-4"
           >
-            Historias reales
+            {t('badge')}
           </motion.span>
           <h2 className="section-headline text-3xl sm:text-4xl lg:text-5xl mb-4">
-            Pacientes y doctores confían en nosotros
+            {t('title')}
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            Más de 10,000 consultas realizadas con un 98% de satisfacción
+            {t('description')}
           </p>
         </motion.div>
 
@@ -93,18 +95,18 @@ export function TestimonialsSection() {
                 }}
                 tabIndex={0}
                 role="article"
-                aria-label={`Testimonio de ${testimonial.name}`}
+                aria-label={`${t('testimonialFrom')} ${testimonial.name}`}
               >
                 {/* Quote icon */}
-                <div className="absolute top-6 right-6 text-6xl text-primary-100 font-serif leading-none select-none" aria-hidden="true">
-                  "
+                <div className="absolute top-6 right-6 text-6xl text-primary-100 font-sans leading-none select-none" aria-hidden="true">
+                  &quot;
                 </div>
 
                 {/* Stars - Using Lucide Star with stagger animation */}
                 <div
                   className="flex gap-1 mb-4"
                   role="img"
-                  aria-label={`Calificacion: ${testimonial.rating} de 5 estrellas`}
+                  aria-label={t('ratingLabel', { rating: testimonial.rating })}
                 >
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <motion.div
@@ -126,7 +128,7 @@ export function TestimonialsSection() {
 
                 {/* Content */}
                 <p className="text-text-primary text-lg leading-relaxed mb-6 relative z-10">
-                  "{testimonial.content}"
+                  &quot;{t(`content.${testimonial.contentKey}`)}&quot;
                 </p>
 
                 {/* Author - With gradient avatar and verified badge */}
@@ -140,13 +142,13 @@ export function TestimonialsSection() {
                       {testimonial.verified && (
                         <BadgeCheck
                           className="w-4 h-4 text-blue-500"
-                          aria-label="Usuario verificado"
+                          aria-label={t('verifiedUser')}
                           role="img"
                         />
                       )}
                     </div>
                     <p className="text-sm text-text-muted flex items-center gap-1">
-                      {testimonial.role}
+                      {t(`roles.${testimonial.roleKey}`)}
                       <span className="text-neutral-300 mx-1" aria-hidden="true">•</span>
                       <MapPin className="w-3 h-3" aria-hidden="true" />
                       <span>{testimonial.location}</span>

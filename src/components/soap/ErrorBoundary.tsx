@@ -124,7 +124,7 @@ export function withSOAPErrorBoundary<P extends object>(
   fallback?: React.ReactNode
 ): React.FC<P> {
   const displayName =
-    WrappedComponent.displayName || WrappedComponent.name || 'Component';
+    (WrappedComponent.displayName || WrappedComponent.name) ?? 'Component';
 
   const ComponentWithErrorBoundary: React.FC<P> = (props) => {
     return (

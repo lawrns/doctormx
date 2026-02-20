@@ -15,7 +15,7 @@ export async function GET() {
                 currency: plan.currency,
                 features: plan.features,
                 limits: plan.limits,
-                highlight: plan.highlight || false,
+                highlight: plan.highlight ?? false,
             }
         })
 

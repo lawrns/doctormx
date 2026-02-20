@@ -297,10 +297,17 @@ describe('Prescriptions System', () => {
       vi.mocked(createServiceClient).mockResolvedValue(mockClient as never)
       vi.mocked(generatePrescriptionPDF).mockResolvedValue(Buffer.from('test pdf'))
       vi.mocked(buildPrescriptionData).mockReturnValue({
-        patient: { full_name: 'Test Patient', date_of_birth: '1990-01-01' },
-        doctor: { full_name: 'Dr. Test', license_number: '12345', specialty: 'General' },
-        prescription: { id: 'test', diagnosis: 'Test', medications: 'Test', instructions: 'Test' },
+        id: 'test',
+        doctorName: 'Dr. Test',
+        doctorLicense: '12345',
+        doctorSpecialty: 'General',
+        patientName: 'Test Patient',
+        patientAge: 34,
         date: new Date(),
+        diagnosis: 'Test',
+        medications: [{ name: 'Test', dosage: '1 tablet', duration: '7 days', quantity: '7', frequency: 'once daily' }],
+        instructions: 'Test',
+        verificationUrl: 'https://test.com/verify/test',
       })
 
       const { generateAndStorePDF } = await import('@/lib/prescriptions')

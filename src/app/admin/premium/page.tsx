@@ -23,7 +23,7 @@ async function getPremiumStats() {
   }
 
   for (const sub of subscriptions || []) {
-    const tier = tierMap[sub.plan_id] || 'none'
+    const tier = tierMap[sub.plan_id] ?? 'none'
     tierCounts[tier as keyof typeof tierCounts]++
   }
 
@@ -56,7 +56,7 @@ async function getPremiumStats() {
     revenueByFeature,
     totalRevenue,
     pendingRevenue,
-    transactionCount: billingRecords?.length || 0,
+    transactionCount: billingRecords?.length ?? 0,
   }
 }
 

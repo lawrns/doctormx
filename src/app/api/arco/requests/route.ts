@@ -96,9 +96,9 @@ export async function GET(request: NextRequest) {
     }
 
     // Pagination params (admin only)
-    const page = parseInt(searchParams.get('page') || '1', 10)
-    const perPage = parseInt(searchParams.get('per_page') || '20', 10)
-    const sort = (searchParams.get('sort') || 'created_at') as 'created_at' | 'due_date' | 'status' | 'priority' | 'request_type'
+    const page = parseInt(searchParams.get('page') ?? '1', 10)
+    const perPage = parseInt(searchParams.get('per_page') ?? '20', 10)
+    const sort = (searchParams.get('sort') ?? 'created_at') as 'created_at' | 'due_date' | 'status' | 'priority' | 'request_type'
 
     let response
 

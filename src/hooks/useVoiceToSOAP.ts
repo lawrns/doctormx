@@ -167,7 +167,7 @@ export function useVoiceToSOAP() {
       ...prev,
       soapNote: {
         ...prev.soapNote,
-        [currentSectionRef.current]: (prev.soapNote[currentSectionRef.current] || '') + text,
+        [currentSectionRef.current]: (prev.soapNote[currentSectionRef.current] ?? '') + text,
       },
     }));
   }, []);

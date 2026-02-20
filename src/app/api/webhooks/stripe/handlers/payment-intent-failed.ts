@@ -47,7 +47,7 @@ export async function handlePaymentIntentFailed(paymentIntent: Stripe.PaymentInt
       .from('appointments')
       .update({
         status: 'cancelled',
-        cancellation_reason: 'Payment failed: ' + (paymentIntent.last_payment_error?.message || 'Unknown error'),
+        cancellation_reason: 'Payment failed: ' + (paymentIntent.last_payment_error?.message ?? 'Unknown error'),
         cancelled_at: new Date().toISOString(),
         updated_at: new Date().toISOString(),
       })

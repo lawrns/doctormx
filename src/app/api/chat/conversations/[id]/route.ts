@@ -54,10 +54,9 @@ export async function GET(
 
     if (!isParticipant) {
       // Log security event for IDOR attempt
-      const ipAddress = request.headers.get('x-forwarded-for') || 
-                       request.headers.get('x-real-ip') || 
-                       'unknown'
-      const userAgent = request.headers.get('user-agent') || 'unknown'
+      const ipAddress = (request.headers.get('x-forwarded-for') ?? 
+                       request.headers.get('x-real-ip')) ?? 'unknown'
+      const userAgent = request.headers.get('user-agent') ?? 'unknown'
       
       await logSecurityEvent({
         eventType: 'permission_denied',
@@ -101,10 +100,10 @@ export async function GET(
     }
 
     const { searchParams } = new URL(request.url)
-    const limit = parseInt(searchParams.get('limit') || '50')
-    const offset = parseInt(searchParams.get('offset') || '0')
+    const limit = parseInt(searchParams.get('limit') ?? '50')
+    const offset = parseInt(searchParams.get('offset') ?? '0')
 
-    const messages = await getMessages(conversationId, limit, offset)
+    const messages = await getMessages(conversationId, limit as 50, offset)
 
     logger.info('Conversation accessed successfully', {
       userId: user.id,

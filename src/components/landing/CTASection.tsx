@@ -4,9 +4,11 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Shield, CheckCircle, Star, ArrowRight } from 'lucide-react'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
+import { useTranslations } from 'next-intl'
 
 export function CTASection() {
   const prefersReducedMotion = useReducedMotion()
+  const t = useTranslations('landing.cta')
 
   return (
     <section className="py-24 relative overflow-hidden bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-800">
@@ -61,16 +63,16 @@ export function CTASection() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-400"></span>
               </span>
-              Más de 100 especialistas en línea ahora
+              {t('liveBadge')}
             </motion.div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
-              Tu salud merece
-              <span className="block text-blue-200">atención inmediata</span>
+              {t('title')}
+              <span className="block text-blue-200">{t('titleHighlight')}</span>
             </h2>
 
             <p className="text-white/80 text-lg mb-8">
-              Más de 10,000 consultas realizadas. Únete a los mexicanos que ya cuidan su salud con Doctor.mx.
+              {t('description')}
             </p>
 
             {/* Single dominant CTA */}
@@ -81,7 +83,7 @@ export function CTASection() {
                 className="w-full sm:w-auto px-8 sm:px-10 py-4 min-h-[48px] bg-white text-blue-600 font-bold rounded-xl shadow-xl hover:shadow-2xl hover:shadow-white/20 transition-all flex items-center justify-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-blue-600"
                 aria-label="Comenzar consulta gratuita - Registrate ahora"
               >
-                Comenzar consulta gratuita
+                {t('primary')}
                 <ArrowRight className="w-5 h-5" aria-hidden="true" />
               </motion.button>
             </Link>
@@ -91,19 +93,19 @@ export function CTASection() {
               href="/for-doctors"
               className="block mt-4 text-white/80 hover:text-white text-sm underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-indigo-700 rounded py-2 min-h-[44px] flex items-center justify-center sm:inline-block sm:min-h-0 sm:py-0"
             >
-              ¿Eres médico? Conoce como crecer tu práctica
+              {t('forDoctors')}
             </Link>
 
             {/* Trust badges */}
             <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-6 mt-8 text-white/60 text-sm">
               <span className="flex items-center gap-1.5">
-                <Shield className="w-4 h-4 flex-shrink-0" aria-hidden="true" /> Datos encriptados
+                <Shield className="w-4 h-4 flex-shrink-0" aria-hidden="true" /> {t('trust.encrypted')}
               </span>
               <span className="flex items-center gap-1.5">
-                <CheckCircle className="w-4 h-4 flex-shrink-0" aria-hidden="true" /> Sin tarjeta requerida
+                <CheckCircle className="w-4 h-4 flex-shrink-0" aria-hidden="true" /> {t('trust.noCard')}
               </span>
               <span className="flex items-center gap-1.5">
-                <Star className="w-4 h-4 fill-current flex-shrink-0" aria-hidden="true" /> 4.9 de 2,500+ resenas
+                <Star className="w-4 h-4 fill-current flex-shrink-0" aria-hidden="true" /> {t('trust.reviews')}
               </span>
             </div>
           </motion.div>
@@ -111,7 +113,7 @@ export function CTASection() {
 
         {/* Additional trust text */}
         <p className="text-center text-white/50 text-sm mt-8">
-          Primera consulta gratis - Sin compromiso - Cancela cuando quieras
+          {t('footerNote')}
         </p>
       </div>
     </section>

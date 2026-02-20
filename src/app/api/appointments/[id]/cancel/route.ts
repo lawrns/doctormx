@@ -10,7 +10,7 @@ export async function POST(
   try {
     // Validate CSRF token
     const csrfToken = getCSRFCookie(request)
-    const csrfResult = validateCSRFToken(request, csrfToken || '', true)
+    const csrfResult = validateCSRFToken(request, csrfToken ?? '', true)
     if (typeof csrfResult === 'object' && !csrfResult.valid) {
       return createCSRFErrorResponse(csrfResult)
     }
@@ -60,7 +60,7 @@ export async function POST(
       .from('appointments')
       .update({
         status: 'cancelled',
-        cancellation_reason: reason || 'Cancelled by patient',
+        cancellation_reason: reason ?? 'Cancelled by patient',
         cancelled_by: user.id,
         cancelled_at: new Date().toISOString()
       })

@@ -30,7 +30,7 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {
         price_cents: 49900,
         price_mxn: 499,
         currency: 'MXN',
-        stripe_price_id: process.env.STRIPE_STARTER_PRICE_ID || 'price_starter',
+        stripe_price_id: process.env.STRIPE_STARTER_PRICE_ID ?? 'price_starter',
         features: {
             profile_visibility: true,
             patient_appointments: true,
@@ -60,7 +60,7 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {
         price_cents: 99900,
         price_mxn: 999,
         currency: 'MXN',
-        stripe_price_id: process.env.STRIPE_PRO_PRICE_ID || 'price_pro',
+        stripe_price_id: process.env.STRIPE_PRO_PRICE_ID ?? 'price_pro',
         features: {
             profile_visibility: true,
             patient_appointments: true,
@@ -96,7 +96,7 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {
         price_cents: 199900,
         price_mxn: 1999,
         currency: 'MXN',
-        stripe_price_id: process.env.STRIPE_ELITE_PRICE_ID || 'price_elite',
+        stripe_price_id: process.env.STRIPE_ELITE_PRICE_ID ?? 'price_elite',
         features: {
             profile_visibility: true,
             patient_appointments: true,

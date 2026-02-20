@@ -7,6 +7,7 @@ import { createServiceClient } from '@/lib/supabase/server'
 import { stripe } from '@/lib/stripe'
 import { logger } from '@/lib/observability/logger'
 import { cache } from '@/lib/cache'
+import { TIME } from '@/lib/constants'
 
 export type SubscriptionTier = 'starter' | 'pro' | 'elite'
 
@@ -38,7 +39,7 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {
         price_cents: 49900,
         price_mxn: 499,
         currency: 'MXN',
-        stripe_price_id: process.env.STRIPE_STARTER_PRICE_ID || 'price_starter',
+        stripe_price_id: process.env.STRIPE_STARTER_PRICE_ID ?? 'price_starter',
         features: {
             profile_visibility: true,
             patient_appointments: true,
@@ -68,7 +69,7 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {
         price_cents: 99900,
         price_mxn: 999,
         currency: 'MXN',
-        stripe_price_id: process.env.STRIPE_PRO_PRICE_ID || 'price_pro',
+        stripe_price_id: process.env.STRIPE_PRO_PRICE_ID ?? 'price_pro',
         features: {
             profile_visibility: true,
             patient_appointments: true,
@@ -103,7 +104,7 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {
         price_cents: 199900,
         price_mxn: 1999,
         currency: 'MXN',
-        stripe_price_id: process.env.STRIPE_ELITE_PRICE_ID || 'price_elite',
+        stripe_price_id: process.env.STRIPE_ELITE_PRICE_ID ?? 'price_elite',
         features: {
             profile_visibility: true,
             patient_appointments: true,
@@ -463,7 +464,7 @@ export async function checkSubscriptionStatus(doctorId: string): Promise<Subscri
             daysUntilRenewal: isActive
                 ? Math.ceil(
                     (new Date(subscription.current_period_end).getTime() - Date.now()) /
-                    (1000 * 60 * 60 * 24)
+                    TIME.DAY_IN_MS
                 )
                 : 0,
         }
@@ -591,8 +592,8 @@ export async function trackWhatsAppUsage(doctorId: string, increment: number = 1
             throw new Error('No active subscription found')
         }
 
-        const newUsed = (subscription.whatsapp_messages_used || 0) + increment
-        const limit = subscription.whatsapp_messages_limit || 0
+        const newUsed = (subscription.whatsapp_messages_used ?? 0) + increment
+        const limit = subscription.whatsapp_messages_limit ?? 0
 
         await supabase
             .from('doctor_subscriptions')
@@ -633,8 +634,8 @@ export async function trackAiCopilotUsage(doctorId: string, increment: number = 
             throw new Error('No active subscription found')
         }
 
-        const newUsed = (subscription.ai_copilot_used || 0) + increment
-        const limit = subscription.ai_copilot_limit || 0
+        const newUsed = (subscription.ai_copilot_used ?? 0) + increment
+        const limit = subscription.ai_copilot_limit ?? 0
 
         await supabase
             .from('doctor_subscriptions')
@@ -675,8 +676,8 @@ export async function trackImageAnalysisUsage(doctorId: string, increment: numbe
             throw new Error('No active subscription found')
         }
 
-        const newUsed = (subscription.image_analysis_used || 0) + increment
-        const limit = subscription.image_analysis_limit || 0
+        const newUsed = (subscription.image_analysis_used ?? 0) + increment
+        const limit = subscription.image_analysis_limit ?? 0
 
         await supabase
             .from('doctor_subscriptions')
@@ -730,37 +731,37 @@ export async function getUsageStats(doctorId: string) {
         const plan = getPlanById(subscription.plan_id)
 
         return {
-            plan: plan?.name_es || 'Unknown',
+            plan: plan?.name_es ?? 'Unknown',
             usage: {
                 whatsapp: {
-                    used: subscription.whatsapp_messages_used || 0,
-                    limit: subscription.whatsapp_messages_limit || 0,
+                    used: subscription.whatsapp_messages_used ?? 0,
+                    limit: subscription.whatsapp_messages_limit ?? 0,
                     percentage: subscription.whatsapp_messages_limit === -1 
                         ? 0 
-                        : ((subscription.whatsapp_messages_used || 0) / subscription.whatsapp_messages_limit) * 100,
+                        : ((subscription.whatsapp_messages_used ?? 0) / subscription.whatsapp_messages_limit) * 100,
                     remaining: subscription.whatsapp_messages_limit === -1 
                         ? -1 
-                        : Math.max(0, (subscription.whatsapp_messages_limit || 0) - (subscription.whatsapp_messages_used || 0)),
+                        : Math.max(0, (subscription.whatsapp_messages_limit ?? 0) - (subscription.whatsapp_messages_used ?? 0)),
                 },
                 aiCopilot: {
-                    used: subscription.ai_copilot_used || 0,
-                    limit: subscription.ai_copilot_limit || 0,
+                    used: subscription.ai_copilot_used ?? 0,
+                    limit: subscription.ai_copilot_limit ?? 0,
                     percentage: subscription.ai_copilot_limit === -1 
                         ? 0 
-                        : ((subscription.ai_copilot_used || 0) / subscription.ai_copilot_limit) * 100,
+                        : ((subscription.ai_copilot_used ?? 0) / subscription.ai_copilot_limit) * 100,
                     remaining: subscription.ai_copilot_limit === -1 
                         ? -1 
-                        : Math.max(0, (subscription.ai_copilot_limit || 0) - (subscription.ai_copilot_used || 0)),
+                        : Math.max(0, (subscription.ai_copilot_limit ?? 0) - (subscription.ai_copilot_used ?? 0)),
                 },
                 imageAnalysis: {
-                    used: subscription.image_analysis_used || 0,
-                    limit: subscription.image_analysis_limit || 0,
+                    used: subscription.image_analysis_used ?? 0,
+                    limit: subscription.image_analysis_limit ?? 0,
                     percentage: subscription.image_analysis_limit === -1 
                         ? 0 
-                        : ((subscription.image_analysis_used || 0) / subscription.image_analysis_limit) * 100,
+                        : ((subscription.image_analysis_used ?? 0) / subscription.image_analysis_limit) * 100,
                     remaining: subscription.image_analysis_limit === -1 
                         ? -1 
-                        : Math.max(0, (subscription.image_analysis_limit || 0) - (subscription.image_analysis_used || 0)),
+                        : Math.max(0, (subscription.image_analysis_limit ?? 0) - (subscription.image_analysis_used ?? 0)),
                 },
             },
         }
@@ -806,8 +807,8 @@ export async function checkFeatureAccess(
 
         switch (feature) {
             case 'whatsapp': {
-                const used = subscription.whatsapp_messages_used || 0
-                const limit = subscription.whatsapp_messages_limit || 0
+                const used = subscription.whatsapp_messages_used ?? 0
+                const limit = subscription.whatsapp_messages_limit ?? 0
                 const isUnlimited = limit === -1
                 const isExceeded = !isUnlimited && used >= limit
                 return {
@@ -821,8 +822,8 @@ export async function checkFeatureAccess(
                 if (!plan.features.ai_copilot) {
                     return { allowed: false, reason: 'AI Copilot not included in your plan' }
                 }
-                const used = subscription.ai_copilot_used || 0
-                const limit = subscription.ai_copilot_limit || 0
+                const used = subscription.ai_copilot_used ?? 0
+                const limit = subscription.ai_copilot_limit ?? 0
                 const isUnlimited = limit === -1
                 const isExceeded = !isUnlimited && used >= limit
                 return {
@@ -836,8 +837,8 @@ export async function checkFeatureAccess(
                 if (!plan.features.image_analysis) {
                     return { allowed: false, reason: 'Image Analysis not included in your plan' }
                 }
-                const used = subscription.image_analysis_used || 0
-                const limit = subscription.image_analysis_limit || 0
+                const used = subscription.image_analysis_used ?? 0
+                const limit = subscription.image_analysis_limit ?? 0
                 const isExceeded = used >= limit
                 return {
                     allowed: !isExceeded,

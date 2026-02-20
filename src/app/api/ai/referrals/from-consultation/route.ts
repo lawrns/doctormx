@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
       patientId: body.patientId,
       location: body.location,
       budget: body.budget,
-      language: body.language || 'es',
+      language: body.language ?? 'es',
     })
 
     // Add metadata to response

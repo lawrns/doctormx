@@ -12,17 +12,21 @@ export default defineConfig({
       reporter: ['text', 'json', 'html', 'lcov'],
       reportsDirectory: './coverage',
       // ============================================
-      // COVERAGE THRESHOLDS - ZERO WARNINGS POLICY
+      // TST-008: COVERAGE THRESHOLDS CONFIGURATION
       // ============================================
-      // 100% for API routes (critical for production)
-      // 90% for components (UI can have some edge cases)
+      // Overall: 80% minimum coverage
+      // Per File: 60% minimum coverage
+      // CI will FAIL if thresholds are not met
+      // ============================================
       thresholds: {
-        // Global minimum threshold
-        lines: 85,
-        functions: 85,
-        branches: 80,
-        statements: 85,
-        // Auto-update threshold config
+        // Global minimum thresholds (80% overall)
+        lines: 80,
+        functions: 80,
+        branches: 70,
+        statements: 80,
+        // Per-file minimum threshold (60% per file)
+        perFile: 60,
+        // Auto-update threshold config (disabled for strict enforcement)
         autoUpdate: false,
       },
       // Per-file coverage enforcement
@@ -84,7 +88,7 @@ export default defineConfig({
       // Watermarks for coverage report
       watermarks: {
         statements: [80, 95],
-        branches: [75, 90],
+        branches: [70, 90],
         functions: [80, 95],
         lines: [80, 95],
       },

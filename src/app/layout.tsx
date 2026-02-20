@@ -1,29 +1,53 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, Hedvig_Letters_Serif } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ToastProvider } from "@/components/Toast";
 import { StructuredData } from "@/components/StructuredData";
 import { WebVitalsProvider } from "@/components/performance/WebVitalsProvider";
+import { WebVitalsReporter } from "@/components/performance/WebVitalsReporter";
 import { SkipLink } from "@/components/ui/skip-link";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
+import { routing } from "@/i18n/routing";
+import { ServiceWorkerProvider } from "@/components/performance/ServiceWorkerProvider";
+import { isRTL, getTextDirection } from "@/lib/i18n/rtl";
 
+// PERF-006: Optimized font loading
+// - Reduced to 2 font families (max recommended for performance)
+// - Using font-display: swap for faster FCP
+// - Latin subset only for smaller download
+// - Preload critical font (Geist Sans)
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap", // Ensures text is visible while font loads
+  preload: true,   // Preload critical font for FCP improvement
+  weight: ["400", "500", "600", "700"], // Only used weights
+  fallback: ["system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+  preload: false, // Mono font is secondary, lazy load
+  weight: ["400", "500", "600"], // Only used weights for mono
+  fallback: ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "monospace"],
 });
 
-const hedvigLettersSerif = Hedvig_Letters_Serif({
-  variable: "--font-serif",
-  weight: ["400"],
-  subsets: ["latin"],
-});
+// Viewport configuration for responsive design
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#ffffff",
+};
 
+// I18N-007: Base metadata configuration with hreflang support
+const baseUrl = 'https://doctor.mx';
+
+// Static metadata for root layout - locale-specific layouts override this
 export const metadata: Metadata = {
-  metadataBase: new URL('https://doctor.mx'),
+  metadataBase: new URL(baseUrl),
   title: "Doctor.mx | Telemedicina y Doctores Verificados en México | 24/7",
   description:
     "Consulta médica en línea con doctores verificados en México. Telemedicina segura, videoconsultas HD, y Dr. Simeon - tu asistente de salud con IA. Más de 500 especialistas disponibles 24/7.",
@@ -43,16 +67,23 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  // I18N-007: Hreflang tags for SEO - alternate language versions
   alternates: {
-    canonical: "https://doctor.mx",
+    canonical: baseUrl,
+    languages: {
+      'es': baseUrl,
+      'en': `${baseUrl}/en`,
+      'x-default': baseUrl,
+    },
   },
+  // I18N-007: OpenGraph locale will be set dynamically per page
   openGraph: {
     title: "Doctor.mx | Telemedicina y Doctores Verificados en México | 24/7",
     description:
       "Consulta médica en línea con doctores verificados en México. Telemedicina segura, videoconsultas HD, y Dr. Simeon - tu asistente de salud con IA. Más de 500 especialistas disponibles 24/7.",
     type: "website",
     locale: "es_MX",
-    url: "https://doctor.mx",
+    url: baseUrl,
     siteName: "Doctor.mx",
     images: [
       {
@@ -78,22 +109,57 @@ export const metadata: Metadata = {
   category: "health",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+  const messages = await getMessages();
+  
+  // I18N-008: RTL support - determine text direction for locale
+  const dir = getTextDirection(locale);
+  const rtl = isRTL(locale);
+
   return (
-    <html lang="es" className={`${hedvigLettersSerif.variable}`} data-scroll-behavior="smooth">
+    <html lang={locale} dir={dir} data-scroll-behavior="smooth" data-rtl={rtl}>
+      <head>
+        {/* PERF-005: Preconnect and DNS Prefetch for External Domains */}
+        {/* Preconnect to critical third-party origins for performance */}
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link rel="preconnect" href="https://api.supabase.co" />
+        <link rel="preconnect" href="https://js.stripe.com" />
+        <link rel="preconnect" href="https://api.stripe.com" />
+        <link rel="preconnect" href="https://vitals.vercel-insights.com" />
+        <link rel="preconnect" href="https://browser.sentry.io" />
+
+        {/* DNS prefetch for faster domain resolution (fallback for older browsers) */}
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://api.supabase.co" />
+        <link rel="dns-prefetch" href="https://js.stripe.com" />
+        <link rel="dns-prefetch" href="https://api.stripe.com" />
+        <link rel="dns-prefetch" href="https://vitals.vercel-insights.com" />
+        <link rel="dns-prefetch" href="https://browser.sentry.io" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <WebVitalsProvider />
-        <SkipLink targetId="main-content" />
-        <ToastProvider>
-          {children}
-        </ToastProvider>
-        <StructuredData />
+        <NextIntlClientProvider messages={messages}>
+          <ServiceWorkerProvider>
+            <WebVitalsProvider />
+            <WebVitalsReporter debug={process.env.NODE_ENV === 'development'} />
+            <SkipLink targetId="main-content" />
+            <ToastProvider>
+              {children}
+            </ToastProvider>
+            <StructuredData />
+          </ServiceWorkerProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

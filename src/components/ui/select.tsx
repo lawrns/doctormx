@@ -6,9 +6,11 @@ import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+export interface SelectProps extends React.ComponentProps<typeof SelectPrimitive.Root> {}
+
 function Select({
   ...props
-}: React.ComponentProps<typeof SelectPrimitive.Root>) {
+}: SelectProps) {
   return <SelectPrimitive.Root data-slot="select" {...props} />
 }
 
@@ -24,14 +26,37 @@ function SelectValue({
   return <SelectPrimitive.Value data-slot="select-value" {...props} />
 }
 
+export interface SelectTriggerProps extends React.ComponentProps<typeof SelectPrimitive.Trigger> {
+  size?: "sm" | "default"
+  /** Accessible label for the select trigger. Required when no visible label is present */
+  'aria-label'?: string
+  /** ID of element(s) that describe the select */
+  'aria-describedby'?: string
+  /** ID of element that provides error message */
+  errorId?: string
+  /** ID of element that provides additional description */
+  descriptionId?: string
+}
+
 function SelectTrigger({
   className,
   size = "default",
   children,
+  errorId,
+  descriptionId,
   ...props
-}: React.ComponentProps<typeof SelectPrimitive.Trigger> & {
-  size?: "sm" | "default"
-}) {
+}: SelectTriggerProps) {
+  // Build aria-describedby from description and error IDs
+  const ariaDescribedBy = React.useMemo(() => {
+    const ids: string[] = [];
+    if (props['aria-describedby']) {
+      return props['aria-describedby'];
+    }
+    if (descriptionId) ids.push(descriptionId);
+    if (errorId) ids.push(errorId);
+    return ids.length > 0 ? ids.join(' ') : undefined;
+  }, [props['aria-describedby'], descriptionId, errorId]);
+
   return (
     <SelectPrimitive.Trigger
       data-slot="select-trigger"
@@ -40,11 +65,12 @@ function SelectTrigger({
         "border-input data-[placeholder]:text-muted-foreground [&_svg:not([class*='text-'])]:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 dark:hover:bg-input/50 flex w-fit items-center justify-between gap-2 rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 data-[size=default]:h-9 data-[size=sm]:h-8 *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
+      aria-describedby={ariaDescribedBy}
       {...props}
     >
       {children}
       <SelectPrimitive.Icon asChild>
-        <ChevronDownIcon className="size-4 opacity-50" />
+        <ChevronDownIcon className="size-4 opacity-50" aria-hidden="true" />
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
   )
@@ -94,7 +120,7 @@ function SelectLabel({
 }: React.ComponentProps<typeof SelectPrimitive.Label>) {
   return (
     <SelectPrimitive.Label
-      data-slot="select-label"
+      data-slot="select-separator"
       className={cn("text-muted-foreground px-2 py-1.5 text-xs", className)}
       {...props}
     />
@@ -121,7 +147,7 @@ function SelectItem({
         className="absolute right-2 flex size-3.5 items-center justify-center"
       >
         <SelectPrimitive.ItemIndicator>
-          <CheckIcon className="size-4" />
+          <CheckIcon className="size-4" aria-hidden="true" />
         </SelectPrimitive.ItemIndicator>
       </span>
       <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
@@ -153,9 +179,10 @@ function SelectScrollUpButton({
         "flex cursor-default items-center justify-center py-1",
         className
       )}
+      aria-label="Scroll up"
       {...props}
     >
-      <ChevronUpIcon className="size-4" />
+      <ChevronUpIcon className="size-4" aria-hidden="true" />
     </SelectPrimitive.ScrollUpButton>
   )
 }
@@ -171,9 +198,10 @@ function SelectScrollDownButton({
         "flex cursor-default items-center justify-center py-1",
         className
       )}
+      aria-label="Scroll down"
       {...props}
     >
-      <ChevronDownIcon className="size-4" />
+      <ChevronDownIcon className="size-4" aria-hidden="true" />
     </SelectPrimitive.ScrollDownButton>
   )
 }

@@ -46,16 +46,16 @@ export async function GET(request: NextRequest) {
 
     const doctorMap: Record<string, { name: string; email: string }> = {}
     for (const p of profiles || []) {
-      doctorMap[p.id] = { name: p.full_name, email: p.email || '' }
+      doctorMap[p.id] = { name: p.full_name, email: p.email ?? '' }
     }
 
     for (const sub of subscriptions || []) {
-      const tier = tierMap[sub.plan_id] || 'none'
+      const tier = tierMap[sub.plan_id] ?? 'none'
       const doctor = doctorMap[sub.doctor_id]
       doctorsByTier[tier].push({
         id: sub.doctor_id,
-        name: doctor?.name || 'Unknown',
-        email: doctor?.email || '',
+        name: doctor?.name ?? 'Unknown',
+        email: doctor?.email ?? '',
         periodStart: sub.current_period_start,
         periodEnd: sub.current_period_end,
       })
@@ -77,9 +77,9 @@ export async function GET(request: NextRequest) {
     let pendingRevenue = 0
 
     for (const record of billingRecords || []) {
-      const tier = tierMap[subscriptions?.find(s => s.doctor_id === record.doctor_id)?.plan_id || ''] || 'none'
+      const tier = tierMap[subscriptions?.find(s => s.doctor_id === record.doctor_id)?.plan_id ?? ''] ?? 'none'
       revenueByFeature[record.feature_key] =
-        (revenueByFeature[record.feature_key] || 0) + record.amount_cents
+        (revenueByFeature[record.feature_key] ?? 0) + record.amount_cents
       revenueByTier[tier] += record.amount_cents
       totalRevenue += record.amount_cents
       if (record.status === 'pending') {
@@ -107,7 +107,7 @@ export async function GET(request: NextRequest) {
         ),
         totalDoctorsWithAccess: doctorsWithAccess.length,
         totalUsage: featureUsage,
-        revenue: revenueByFeature[feature] || 0,
+        revenue: revenueByFeature[feature] ?? 0,
       })
     }
 
@@ -129,7 +129,7 @@ export async function GET(request: NextRequest) {
         byTier: revenueByTier,
       },
       usage: (usageRecords || []).reduce((sum, r) => sum + r.usage_count, 0),
-      transactions: billingRecords?.length || 0,
+      transactions: billingRecords?.length ?? 0,
     })
   } catch (error) {
     logger.error('Error getting admin premium status:', { err: error })

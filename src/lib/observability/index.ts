@@ -4,6 +4,6 @@
 export { logger } from './logger'
 export type { LogLevel, LogContext } from './logger'
 
-export { metrics } from './metrics'
+export { metrics, startMetricsFlush, stopMetricsFlush, initMetrics } from './metrics'
 export type { MetricType, MetricLabels } from './metrics'
 

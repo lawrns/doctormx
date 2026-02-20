@@ -80,7 +80,7 @@ export async function POST(request: NextRequest, { params }: RouteParams) {
     }
     
     // Generate file path
-    const fileExt = file.name.split('.').pop() || 'bin'
+    const fileExt = file.name.split('.').pop() ?? 'bin'
     const fileName = `${id}/${Date.now()}-${Math.random().toString(36).slice(2)}.${fileExt}`
     const filePath = `second-opinions/${fileName}`
     
@@ -105,7 +105,7 @@ export async function POST(request: NextRequest, { params }: RouteParams) {
       .from('second_opinion_documents')
       .insert({
         request_id: id,
-        type: documentType || 'other',
+        type: documentType ?? 'other',
         file_name: file.name,
         file_path: filePath,
         mime_type: file.type,

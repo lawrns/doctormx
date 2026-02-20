@@ -215,7 +215,7 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
         </aside>
 
         {/* Main content */}
-        <main className="flex-1 p-4 lg:p-8 min-w-0">
+        <main id="main-content" className="flex-1 p-4 lg:p-8 min-w-0">
           {children}
         </main>
       </div>

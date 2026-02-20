@@ -161,7 +161,7 @@ export async function generateSuggestions(
 
         suggestedQuestions = [...new Set(suggestedQuestions)].slice(0, 8)
 
-        const redFlags = detectRedFlags(symptoms.join(' ') + ' ' + (history?.join(' ') || ''))
+        const redFlags = detectRedFlags(symptoms.join(' ') + ' ' + (history?.join(' ') ?? ''))
 
         return {
             questions: suggestedQuestions,
@@ -287,7 +287,7 @@ export async function suggestDifferentialDiagnosis(
     try {
         const symptomsText = symptoms.join('\n- ')
         const contextText = patientInfo
-            ? `Edad: ${patientInfo.age || 'No especificada'}\nGenero: ${patientInfo.gender || 'No especificado'}\nAntecedentes: ${patientInfo.medicalHistory?.join(', ') || 'Sin antecedentes relevantes'}`
+            ? `Edad: ${patientInfo.age ?? 'No especificada'}\nGenero: ${patientInfo.gender ?? 'No especificado'}\nAntecedentes: ${patientInfo.medicalHistory?.join(', ') ?? 'Sin antecedentes relevantes'}`
             : ''
 
         // Use DeepSeek R1 for superior medical reasoning (98% cost savings)
@@ -332,9 +332,9 @@ Responde en JSON valido con esta estructura:
         })
 
         return (diagnosisData.diagnoses || []).map((d: { diagnosis?: string; probability?: number; reasoning?: string }) => ({
-            diagnosis: d.diagnosis || '',
-            probability: d.probability || 0,
-            reasoning: d.reasoning || '',
+            diagnosis: d.diagnosis ?? '',
+            probability: d.probability ?? 0,
+            reasoning: d.reasoning ?? '',
         }))
     } catch (error) {
         logger.error('Error suggesting differential diagnosis:', { error })
@@ -389,12 +389,12 @@ Responde en JSON valido con esta estructura:
         })
 
         return {
-            chiefComplaint: summaryData.chiefComplaint || '',
+            chiefComplaint: summaryData.chiefComplaint ?? '',
             symptoms: summaryData.symptoms || [],
-            diagnosis: summaryData.diagnosis || '',
-            treatment: summaryData.treatment || '',
-            followUp: summaryData.followUp || '',
-            notes: summaryData.notes || '',
+            diagnosis: summaryData.diagnosis ?? '',
+            treatment: summaryData.treatment ?? '',
+            followUp: summaryData.followUp ?? '',
+            notes: summaryData.notes ?? '',
         }
     } catch (error) {
         logger.error('Error generating consultation summary:', { error })
@@ -429,7 +429,7 @@ export async function suggestICDCodes(
                 model,
                 messages: [
                     { role: 'system', content: 'Eres un coder médico especializado en ICD-10. Sugiere los códigos más apropiados.' },
-                    { role: 'user', content: `Sintomas: ${symptoms.join(', ')}\nDiagnostico: ${diagnosis || 'No especificado'}\nSugiere hasta 3 codigos ICD-10 relevantes. Responde en JSON: { "codes": [{ "code": "X00.0", "description": "descripcion", "category": "categoria" }] }` },
+                    { role: 'user', content: `Sintomas: ${symptoms.join(', ')}\nDiagnostico: ${diagnosis ?? 'No especificado'}\nSugiere hasta 3 codigos ICD-10 relevantes. Responde en JSON: { "codes": [{ "code": "X00.0", "description": "descripcion", "category": "categoria" }] }` },
                 ],
                 temperature: 0.2,
                 max_tokens: 500,
@@ -491,8 +491,8 @@ Responde en JSON valido con esta estructura:
                     role: 'user',
                     content: `Diagnostico: ${consultationData.diagnosis}
 Sintomas: ${consultationData.symptoms.join(', ')}
-Alergias conocidas: ${consultationData.patientHistory?.allergies?.join(', ') || 'Ninguna'}
-Medicamentos actuales: ${consultationData.patientHistory?.currentMedications?.map(m => m.name).join(', ') || 'Ninguno'}
+Alergias conocidas: ${consultationData.patientHistory?.allergies?.join(', ') ?? 'Ninguna'}
+Medicamentos actuales: ${consultationData.patientHistory?.currentMedications?.map(m => m.name).join(', ') ?? 'Ninguno'}
 
 Genera una plantilla de prescripcion apropiada para este caso.`,
                 },
@@ -582,10 +582,10 @@ Responde en JSON con esta estructura:
         })
 
         return {
-            subjective: soapData.subjective || '',
-            objective: soapData.objective || '',
-            assessment: soapData.assessment || '',
-            plan: soapData.plan || '',
+            subjective: soapData.subjective ?? '',
+            objective: soapData.objective ?? '',
+            assessment: soapData.assessment ?? '',
+            plan: soapData.plan ?? '',
         }
     } catch (error) {
         logger.error('Error generating SOAP note:', { error })
@@ -664,9 +664,9 @@ Importante:
         })
 
         return (diagnosisData.diagnoses || []).map((d: { diagnosis?: string; probability?: number; reasoning?: string }) => ({
-            diagnosis: d.diagnosis || '',
-            probability: d.probability || 0,
-            reasoning: d.reasoning || '',
+            diagnosis: d.diagnosis ?? '',
+            probability: d.probability ?? 0,
+            reasoning: d.reasoning ?? '',
         }))
     } catch (error) {
         logger.error('Error generating differential diagnoses:', { error })

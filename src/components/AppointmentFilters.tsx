@@ -28,9 +28,9 @@ export function AppointmentFilters() {
   const router = useRouter()
   const searchParams = useSearchParams()
 
-  const currentStatus = searchParams.get('status') || 'all'
-  const currentTime = searchParams.get('time') || 'upcoming'
-  const currentSearch = searchParams.get('search') || ''
+  const currentStatus = searchParams.get('status') ?? 'all'
+  const currentTime = searchParams.get('time') ?? 'upcoming'
+  const currentSearch = searchParams.get('search') ?? ''
 
   const [searchInput, setSearchInput] = useState(currentSearch)
 

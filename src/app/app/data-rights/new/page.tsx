@@ -9,7 +9,7 @@
 
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
-import { NewArcoRequestClient } from './new-arco-request-client'
+import { NewArcoRequestClient } from './NewArcoRequestClient'
 
 export default async function NewArcoRequestPage({
   searchParams,

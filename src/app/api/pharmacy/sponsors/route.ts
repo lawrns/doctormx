@@ -114,7 +114,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({
       success: true,
       pharmacies: pharmacies || [],
-      count: pharmacies?.length || 0,
+      count: pharmacies?.length ?? 0,
     })
   } catch (error) {
     logger.error('Error fetching pharmacies:', { err: error })

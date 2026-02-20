@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
     const result = await sendFollowUp(
       appointmentId,
       profile.email,
-      profile.full_name || 'Paciente',
+      profile.full_name ?? 'Paciente',
       followUpNotes
     )
 

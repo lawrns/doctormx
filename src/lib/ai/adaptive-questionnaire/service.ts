@@ -285,14 +285,14 @@ export class AdaptiveQuestionnaireService {
     }
 
     const summary = {
-      chiefComplaint: state.collected_symptoms[0]?.name || 'No especificado',
+      chiefComplaint: state.collected_symptoms[0]?.name ?? 'No especificado',
       symptoms: state.collected_symptoms.map(s => s.name),
       urgencyLevel: state.urgency_level,
       redFlags: state.red_flags,
       differentialDiagnoses: state.diagnostic_hypotheses,
-      recommendedAction: triageResult?.message || 'Consulta médica recomendada',
-      recommendedSpecialty: triageResult?.specialty || 'Medicina General',
-      estimatedWaitTime: triageResult?.timeframe || '24-48 horas'
+      recommendedAction: triageResult?.message ?? 'Consulta médica recomendada',
+      recommendedSpecialty: triageResult?.specialty ?? 'Medicina General',
+      estimatedWaitTime: triageResult?.timeframe ?? '24-48 horas'
     }
 
     return {
@@ -330,7 +330,7 @@ export class AdaptiveQuestionnaireService {
       throw new Error(`Failed to count turns: ${countError.message}`)
     }
 
-    const turnNumber = (count || 0) + 1
+    const turnNumber = (count ?? 0) + 1
 
     const { error } = await supabase
       .from('conversation_turns')
@@ -374,7 +374,7 @@ export class AdaptiveQuestionnaireService {
       return {
         success: true,
         imageUrl: 'placeholder-url',
-        analysis: description || 'Image uploaded for review'
+        analysis: description ?? 'Image uploaded for review'
       }
     } catch (error) {
       logger.error('[AdaptiveQuestionnaire] Failed to upload image', { error, conversationId })

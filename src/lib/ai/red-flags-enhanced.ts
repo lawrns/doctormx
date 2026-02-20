@@ -2,16 +2,42 @@
  * Enhanced Red Flag Detection System with Patient Context
  * Comprehensive emergency symptom detection for Mexican healthcare context
  * Includes condition-based detection, medication interactions, and urgency scoring
+ * 
+ * @module lib/ai/red-flags-enhanced
+ * @example
+ * ```typescript
+ * import { detectRedFlagsEnhanced, getUrgencyDescription } from '@/lib/ai/red-flags-enhanced';
+ * 
+ * const result = detectRedFlagsEnhanced('Tengo dolor de pecho severo', {
+ *   age: 55,
+ *   conditions: ['diabetes', 'hypertension'],
+ *   medications: [{ name: 'metformina' }]
+ * });
+ * 
+ * if (result.requiresEmergencyEscalation) {
+ *   console.log('Emergency detected!', result.flags);
+ * }
+ * ```
  */
 
+/** Severity levels for red flags */
 export type RedFlagSeverity = 'critical' | 'high' | 'moderate';
 
+/**
+ * Patient context for enhanced red flag detection
+ */
 export interface PatientContext {
+  /** Patient age in years */
   age?: number;
+  /** Pregnancy status */
   pregnancyStatus?: 'pregnant' | 'not_pregnant' | 'unknown';
+  /** List of medical conditions */
   conditions?: string[];
+  /** Current medications */
   medications?: Array<{ name: string; dosage?: string }>;
+  /** Known allergies */
   allergies?: string[];
+  /** Current vital signs */
   vitalSigns?: {
     bloodPressure?: string; // e.g., "140/90"
     heartRate?: number;
@@ -20,20 +46,37 @@ export interface PatientContext {
   };
 }
 
+/**
+ * Red flag definition with detection pattern and metadata
+ */
 export interface RedFlag {
+  /** RegExp pattern to detect the flag in text */
   pattern: RegExp;
+  /** Human-readable message describing the flag */
   message: string;
+  /** Severity level */
   severity: RedFlagSeverity;
+  /** Medical category (e.g., 'Cardiac', 'Neurological') */
   category: string;
+  /** Recommendation for the patient */
   recommendation: string;
+  /** Whether 911 should be called immediately */
   requiresImmediate911: boolean;
-  conditionSpecific?: string[]; // Conditions that make this flag more severe
-  medicationInteractions?: string[]; // Medications that interact with this condition
-  urgencyScore: number; // 1-10 urgency score
+  /** Conditions that make this flag more severe */
+  conditionSpecific?: string[];
+  /** Medications that interact with this condition */
+  medicationInteractions?: string[];
+  /** Urgency score 1-10 */
+  urgencyScore: number;
 }
 
+/**
+ * Result of red flag detection
+ */
 export interface RedFlagResult {
+  /** Whether any red flags were detected */
   detected: boolean;
+  /** Array of detected flags with details */
   flags: Array<{
     message: string;
     severity: RedFlagSeverity;
@@ -42,27 +85,43 @@ export interface RedFlagResult {
     requiresImmediate911: boolean;
     urgencyScore: number;
   }>;
+  /** Highest severity detected or null */
   highestSeverity: RedFlagSeverity | null;
+  /** Whether emergency escalation is required */
   requiresEmergencyEscalation: boolean;
-  urgencyScore: number; // Overall urgency 1-10
+  /** Overall urgency score 1-10 */
+  urgencyScore: number;
+  /** Medication interaction alerts */
   medicationAlerts: string[];
+  /** Condition context information */
   conditionContext: string[];
 }
 
 /**
  * Medication interaction database
+ * Maps medication names to interacting symptoms and alerts
  */
 export const MEDICATION_INTERACTIONS = {
   // Warfarin/Coumadin interactions
   warfarina: {
-    interactingSymptoms: ['sangrado', 'hemorragia', 'moretones', 'encías sangrantes'],
+    interactingSymptoms: ['sangrado', 'hemorragia', 'moretones', 'encías sangrantes', 'bleeding', 'hemorrhage', 'nosebleed'],
     alert: 'Paciente en anticoagulación: sangrado requiere evaluación inmediata',
     urgencyBonus: 2,
   },
+  coumadin: {
+    interactingSymptoms: ['sangrado', 'hemorragia', 'moretones', 'encías sangrantes', 'bleeding', 'hemorrhage', 'nosebleed'],
+    alert: 'Paciente en anticoagulación (Coumadin): sangrado requiere evaluación inmediata',
+    urgencyBonus: 2,
+  },
   acenocumarol: {
-    interactingSymptoms: ['sangrado', 'hemorragia', 'moretones', 'encías sangrantes'],
+    interactingSymptoms: ['sangrado', 'hemorragia', 'moretones', 'encías sangrantes', 'bleeding', 'hemorrhage', 'nosebleed'],
     alert: 'Paciente en anticoagulación: sangrado requiere evaluación inmediata',
     urgencyBonus: 2,
+  },
+  aspirin: {
+    interactingSymptoms: ['sangrado', 'hemorragia', 'moretones', 'encías sangrantes', 'bleeding', 'hemorrhage', 'nosebleed'],
+    alert: 'Paciente con aspirina: riesgo aumentado de sangrado',
+    urgencyBonus: 1,
   },
   // Insulin
   insulina: {
@@ -97,6 +156,7 @@ export const MEDICATION_INTERACTIONS = {
 
 /**
  * Condition-specific red flags
+ * Additional flags to check when patient has specific conditions
  */
 export const CONDITION_SPECIFIC_FLAGS = {
   diabetes: [
@@ -195,11 +255,7 @@ export const CONDITION_SPECIFIC_FLAGS = {
  * Each flag includes urgency score (1-10) and condition/medication context
  */
 export const ENHANCED_RED_FLAGS: RedFlag[] = [
-  // ============================================================================
   // CRITICAL - IMMEDIATE 911 REQUIRED (Urgency 8-10)
-  // ============================================================================
-
-  // Stroke (ACV) - FAST Protocol - Comprehensive patterns
   {
     pattern: /derrame.*cerebral|derrame|paralisis|parálisis|paralysis|debilidad.*extremo|cara.*colgada|cara.*caida|cara.*caída|cara.*caida|cara.*paralizada|paralisis.*cara|parálisis.*cara|cara.*cayó|cara.*cayo|se.*me.*cayó.*cara|se.*me.*cayo.*cara|brazo.*no.*puede.*levantar|no.*puede.*mover.*brazo|no.*puedo.*mover.*brazo|cara.*torcida|slurred.*speech|cant.*speak|speech.*difficulty|face.*drooping|arm.*weakness|facial.*paralysis|paralyzed.*face|face.*drooping|one.*side.*face.*numb|cant.*move.*one.*side.*face|facial.*droop|paralyzed.*face|crooked.*face|arm.*numbness|one.*arm.*drags|weakness.*extremity|cant.*raise.*arm|cant.*lift.*arm|left.*arm.*weak|right.*arm.*feels.*heavy|right.*arm.*heavy|left.*arm.*is.*weak|cant.*move.*arm|cant.*move.*my.*arm|slurred.*speech|cant.*speak.*properly|trouble.*speaking|speech.*difficulty|cant.*find.*words|words.*jumbled|speech.*garbled|hard.*talk|stroke|cva|cerebrovascular.*accident|cerebrovascular|brain.*attack|ischemic.*stroke|hemorrhagic.*stroke|mini.*stroke|tia|habla.*al.*reves|habla.*al.*revés|me.*habla.*al.*reves|me.*habla.*al.*revés|palabras.*al.*reves|palabras.*al.*revés/i,
     message: 'Posible accidente cerebrovascular (ACV) - EMERGENCIA',
@@ -211,365 +267,203 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
     medicationInteractions: ['warfarina', 'acenocumarol'],
     urgencyScore: 10,
   },
+  
+  // CRITICAL CARDIAC EMERGENCIES
   {
-    pattern: /dificultad.*hablar|no.*puede.*hablar|no.*puedo.*hablar|palabras.*enredadas|lengua.*trabada|slurred.*speech|cant.*speak|speech.*difficulty|words.*jumbled|trouble.*speaking|hablo.*enredado|habla.*enredada|habla.*al.*reves|habla.*al.*revés|me.*habla.*al.*reves|me.*habla.*al.*revés|no.*me.*salen.*las.*palabras|habla.*confusa|hablo.*confuso/i,
-    message: 'Trastorno del habla súbita - Posible ACV',
-    severity: 'critical',
-    category: 'Neurological',
-    recommendation: 'Llame al 911. Síntoma clave de evento cerebrovascular',
-    requiresImmediate911: true,
-    conditionSpecific: ['hypertension', 'diabetes'],
-    medicationInteractions: ['warfarina', 'acenocumarol'],
-    urgencyScore: 10,
-  },
-
-  // Cardiac Emergency - Comprehensive patterns (All cardiac patterns are critical for safety)
-  {
-    pattern: /infarto|infarto.*miocardio|infarto.*agudo.*miocardio|heart.*attack|doolor|dolor.*pecho.*opresivo|dolor.*pecho.*brazo|angina|siento.*que.*me.*muero|dolor.*pecho.*mandibula|chest.*pain|pressure.*chest|squeezing.*chest|crushing.*chest|pain.*radiate.*arm|tightness.*chest|chest.*discomfort|pain.*spreading.*back|angina.*pain|left.*arm.*pain.*chest.*pain|cardiac.*arrest|severe.*chest.*pressure|chest.*pain.*elephant|radiating.*chest.*pain|chest.*pain.*jaw|pressure.*center.*chest|myocardial.*infarction|feeling.*going.*die|dolor.*pecho|dolor.*toracico|dolor.*torácico|chest.*tightness|chest.*discomfort|mal.*del.*corazon|mal.*del.*corazón|molestia.*pecho|molestia.*en.*el.*pecho|ataque.*corazon|ataque.*corazón|se.*me.*paro.*corazon|se.*me.*paró.*corazón|paro.*cardiaco|paro.*cardíaco|dolor.*intenso.*pecho|opresion.*pecho|opresión.*pecho|muy.*cansada.*nauseas|nauseas.*dolor.*espalda|cansada.*nauseas.*espalda|dolor.*espalda.*nauseas|pecho.*dolor|pecho.*opresion|pecho.*opresión/i,
-    message: 'Dolor torácico con características cardíacas - EMERGENCIA',
+    pattern: /infarto|ataque.*corazón|ataque.*corazon|heart.*attack|myocardial.*infarction|miocardio|dolor.*pecho.*intenso|crushing.*chest.*pain|chest.*pain.*radiating|pain.*radiating.*left.*arm|dolor.*pecho.*brazo.*izquierdo|presión.*pecho|presion.*pecho|chest.*pressure|chest.*squeezing|tightness.*chest|angina|angina.*pecho|dolor.*torácico|dolor.*toracico|severe.*chest.*pain|heavy.*chest|chest.*heaviness|elephant.*sitting|chest.*discomfort|cardiac.*arrest|chest.*pain/i,
+    message: 'Posible infarto de miocardio - EMERGENCIA CARDÍACA',
     severity: 'critical',
     category: 'Cardiac',
-    recommendation: 'Llame al 911 INMEDIATAMENTE. Posible infarto al miocardio',
+    recommendation: 'Llame al 911 INMEDIATAMENTE. Mientras tanto, si está disponible, tome aspirina de 325mg (si no es alérgico)',
     requiresImmediate911: true,
-    conditionSpecific: ['diabetes', 'hypertension', 'heart_failure', 'obesity'],
-    medicationInteractions: ['sildenafilo', 'tadalafil'],
+    conditionSpecific: ['hypertension', 'diabetes', 'high_cholesterol', 'smoking'],
+    medicationInteractions: ['viagra', 'cialis', 'nitroglycerin'],
     urgencyScore: 10,
   },
-
-  // Severe Respiratory - Comprehensive patterns (All respiratory emergencies are critical for safety)
+  
+  // CRITICAL RESPIRATORY EMERGENCIES
   {
-    pattern: /no.*puedo.*respirar|no.*puede.*respirar|no.*respira.*bien|dificultad.*respirar|me.*estoy.*ahogando|me.*estoy.*ahogando|ahogo.*severo|labios.*azules|cara.*azul|cianosis|difficulty.*breathing|cant.*breathe|trouble.*breathing|shortness.*breath|not.*able.*breathe|wheezing.*severe|blue.*lips|cyanosis|choking|cant.*breath|gasping.*air|cant.*catch.*breath|blue.*lips|face.*turning.*blue|lips.*blue|air.*hunger|cant.*get.*air|suffocating|chest.*tightness.*cant.*breathe|respiratory.*distress|struggling.*breathe|severe.*asthma.*attack|bronchospasm|dificultad.*respirar|ahogo|falta.*aire|sibilancias.*severas|sob|dyspnea|bebe.*no.*respira|bebe.*no.*puede.*respirar|mi.*bebe.*no.*respira|mi.*bebe.*no.*puede.*respirar|mi.*bebé.*no.*respira|mi.*bebé.*no.*puede.*respirar|recien.*nacido.*no.*respira|recién.*nacido.*no.*respira/i,
-    message: 'Insuficiencia respiratoria severa - EMERGENCIA',
+    pattern: /no.*puedo.*respirar|dificultad.*respirar|dificultad.*para.*respirar|cannot.*breathe|cant.*breathe|difficulty.*breathing|shortness.*of.*breath|sob|falta.*aire|air.*hunger|asma.*grave|severe.*asthma|ataque.*asma|asthma.*attack|wheezing|sibilancias|asma.*bronquial|crisis.*asmática|crisis.*asmati|asma.*aguda|sibilancias.*pecho|sibilancias.*respirar|breathlessness|unable.*to.*breathe|gasping|jadeo|jadeando|ahogándose|ahogandose|drowning.*sensation|suffocating|sofocante|respiración.*agitada|breathing.*difficulty|lips.*blue|blue.*lips|labios.*azules|cyanosis|cyanotic|dyspnea|choking|gasping.*for.*air|cant.*catch.*breath|wheezing.*severely|face.*turning.*blue|lips.*are.*blue|air.*hunger|cant.*get.*air|chest.*tightness.*cant.*breathe|respiratory.*distress|struggling.*to.*breathe|severe.*asthma.*attack|bronchospasm/i,
+    message: 'DIFICULTAD RESPIRATORIA SEVERA - Posible asfixia o emergencia respiratoria',
     severity: 'critical',
     category: 'Respiratory',
-    recommendation: 'Llame al 911 INMEDIATAMENTE. Posible falla respiratoria',
+    recommendation: 'Llame al 911. Si tiene inhalador de rescate, úselo inmediatamente. Si tiene oxímetro, verifique SpO2',
     requiresImmediate911: true,
-    conditionSpecific: ['asthma', 'copd', 'heart_failure'],
-    medicationInteractions: ['betabloqueantes'],
+    conditionSpecific: ['asthma', 'copd', 'emphysema', 'heart_failure'],
+    medicationInteractions: ['beta-blockers'],
     urgencyScore: 10,
   },
-
-  // Neurological Critical - Comprehensive seizure patterns
+  
+  // MENTAL HEALTH CRISES - SUICIDAL IDEATION
   {
-    pattern: /convulsiones|ataques|espasmos.*incontrolables|temblores.*violentos|seizure|convulsion|having.*seizure|epileptic.*seizure|uncontrollable.*shaking|violent.*shaking|full.*body.*convulsion|tonic.*clonic.*seizure|grand.*mal.*seizure|body.*shaking.*uncontrollably|muscle.*spasms|fit.*seizure|convulsing|seizing|epilepsy.*attack|epileptic.*attack|status.*epilepticus|fit|crisis.*convulsiva|ataque.*epil[eé]ptico|epil[eé]ptico.*convulsionando|sacudidas.*cuerpo|espasmos.*musculares|p[eé]rdida.*conciencia.*movimientos|convulsionando|ataque.*epilepsia|crisis.*epil[eé]ptica|espasmo.*convulsivo|temblores.*convulsivos|convulsion/i,
-    message: 'Actividad convulsiva - EMERGENCIA',
-    severity: 'critical',
-    category: 'Neurological',
-    recommendation: 'Llame al 911. Proteja a la persona de lesiones durante la convulsión',
-    requiresImmediate911: true,
-    conditionSpecific: ['epilepsy'],
-    medicationInteractions: [],
-    urgencyScore: 9,
-  },
-  {
-    pattern: /dolor.*cabeza.*peor.*vida|cefalea.*thunderclap|dolor.*cabeza.*explosivo|dolor.*cabeza.*intenso.*subito|sudden.*severe.*headache|worst.*headache.*life|thunderclap.*headache|explosive.*headache|sudden.*intense.*headache|worst.*headache|sudden.*severe.*pain|headache.*came.*suddenly|splitting.*headache|came.*nowhere.*headache|severe.*headache.*instant|worst.*head.*pain|thunder.*headache|peor.*dolor.*cabeza.*mi.*vida|dolor.*cabeza.*explosivo|cefalea.*inicio.*súbito|dolor.*cabeza.*llegó.*golpe|dolor.*cabeza.*repentino.*intenso|dolor.*cabeza.*excesivo|dolor.*cabeza.*dobla|migraña.*severa.*repente|dolor.*cabeza.*martillazo/i,
-    message: 'Cefalea thunderclap - Posible hemorragia subaracnoidea',
-    severity: 'critical',
-    category: 'Neurological',
-    recommendation: 'Llame al 911 INMEDIATAMENTE. Requiere neuroimagen urgente',
-    requiresImmediate911: true,
-    conditionSpecific: ['hypertension', 'aneurysm'],
-    medicationInteractions: ['warfarina', 'acenocumarol'],
-    urgencyScore: 10,
-  },
-  {
-    pattern: /cuello.*r[ií]gido.*fiebre|rigidez.*nuca.*fiebre|meningitis|cuello.*r[ií]gido.*fiebre.*alta|rigidez.*nuca.*fiebre.*alta|cuello.*r[ií]gido.*con.*fiebre|tiene.*cuello.*r[ií]gido/i,
-    message: 'Rigidez de nuca con fiebre - Posible meningitis',
-    severity: 'critical',
-    category: 'Infectious',
-    recommendation: 'Llame al 911. Posible meningitis bacteriana',
-    requiresImmediate911: true,
-    conditionSpecific: ['immunocompromised', 'asplenia'],
-    medicationInteractions: [],
-    urgencyScore: 9,
-  },
-
-  // Psychiatric Emergency - Comprehensive suicide/self-harm patterns
-  {
-    pattern: /pensamientos.*suicidio|quiere.*morir|quiero.*morir|quiero.*estar.*muerto|no.*quiero.*estar.*vivo|no.*quiero.*vivir.*m[aá]s|no.*quiero.*seguir.*viv|quiero.*suicidarme|suicidarme|voy.*a.*matarme|voy.*a.*suicidarme|me.*quiero.*matar|me.*quiero.*suicidar|me.*voy.*a.*matar|me.*voy.*a.*suicidar|quitarme.*vida|plan.*suicida|autolesion.*grave|autolesionarme|hacerme.*daño|hacerme daño|me.*hago.*daño|me.*quiero.*hacer.*daño|me.*quiero.*autolesionar|tengo.*ganas.*de.*morir|tengo.*ganas.*de.*morirme|want.*die|kill.*myself|suicidal.*thoughts|want.*end.*life|end.*life|planning.*suicide|suicide.*plan|dont.*want.*live|better.*off.*dead|no.*point.*living|want.*disappear|self.*harm|want.*hurt.*myself|cut.*myself|end.*all|not.*worth.*living|want.*commit.*suicide|going.*kill.*myself|suicide|hopeless|no.*reason.*live/i,
-    message: 'Ideación suicida activa - CRISIS PSIQUIÁTRICA',
+    pattern: /quiero.*morir|quiero.*matarme|suicidarme|suicidio|me.*quiero.*matar|terminar.*todo|end.*it.*all|end.*my.*life|want.*to.*end.*my.*life|kill.*myself|want.*to.*kill.*myself|going.*to.*kill.*myself|want.*to.*die|suicidal|thoughts.*suicide|suicidal.*thoughts|suicide.*plan|planning.*suicide|want.*to.*commit.*suicide|commit.*suicide|no.*quiero.*vivir|dont.*want.*to.*live|i.*dont.*want.*to.*live|mejor.*sin.*mi|better.*off.*dead|better.*off.*without.*me|no.*hay.*salida|no.*way.*out|no.*point.*living|not.*worth.*living|want.*to.*disappear|puente.*demasiado.*lejos|bridge.*too.*far|pastillas.*morir|pills.*to.*die|cortarme.*muñecas|cut.*myself|cut.*my.*wrists|want.*to.*hurt.*myself|hurt.*myself|ahorcarme|hang.*myself|saltar.*puente|jump.*off.*bridge|overdose|sobredosis|autolesion|self.*harm/i,
+    message: 'CRISIS DE SALUD MENTAL - Ideación suicida detectada',
     severity: 'critical',
     category: 'Psychiatric',
-    recommendation: 'Llame al 911 o Línea de la Vida (800 911 2000). No deje sola a la persona',
+    recommendation: 'Llame al 911 o al 800-911-2000 (Línea de Crisis). NO deje a la persona sola.',
     requiresImmediate911: true,
-    conditionSpecific: ['depression', 'bipolar_disorder'],
-    medicationInteractions: [],
+    conditionSpecific: ['depression', 'bipolar', 'ptsd', 'anxiety'],
+    medicationInteractions: ['antidepressants'],
     urgencyScore: 10,
   },
-
-  // Severe Bleeding - Comprehensive patterns
+  
+  // SEVERE BLEEDING/HEMORRHAGE
   {
-    pattern: /sangrado.*que.*no.*para|hemorragia.*abundante|hemorragia.*no.*para|sangrado.*mucho|sangrado.*profuso|desangrando|severe.*bleeding|heavy.*bleeding|bleeding.*stop|uncontrolled.*bleeding|losing.*blood|gushing.*blood|bleeding.*heavily|losing.*lot.*blood|hemorrhage|profuse.*bleeding|cant.*stop.*bleeding|blood.*everywhere|major.*blood.*loss|arterial.*bleeding|vomiting.*blood|coughing.*blood|blood.*urine|rectal.*bleeding|nosebleed.*wont.*stop|excessive.*bleeding|life.*threatening.*bleeding|estoy.*sangrando|sangrando.*mucho|hemorragia.*que.*no.*para|sangrado.*profuso|me.*estoy.*desangrando|sangre.*sale.*sin.*parar|hemorragia.*severa|sangrado.*incontrolable|pierdo.*mucha.*sangre|sangrado.*abundante|hemorragia.*activa|sangra.*herida.*sin.*cesar|sangre.*chorros|sangrado.*intenso|hemorragia.*interna|vomito.*sangre|sangre.*orina|sangrado.*rectal|hemorragia.*nasal.*continua|sangrado.*nasal|sangrado.*encias|encias.*sangrando|encias.*sangran|sangrado.*encias|encías.*sangrando|sangrado.*de.*encias|sangrado.*de.*encías/i,
-    message: 'Hemorragia incontrolable - EMERGENCIA',
+    pattern: /sangrado.*severo|sangrado.*abundante|sangrando.*mucho|bleeding.*heavily|severe.*bleeding|hemorragia|hemorrhage|sangre.*no.*para|bleeding.*wont.*stop|sangrado.*arterial|arterial.*bleeding|sangre.*pulsa|blood.*pulsing|herida.*profunda|deep.*wound|cortada.*grande|large.*cut|amputación|amputation|perdí.*dedo|lost.*finger|extremidad.*cortada|severed.*limb|nosebleed|epistaxis|sangrado.*nariz|heavy.*bleeding|uncontrolled.*bleeding|gushing.*blood|losing.*blood.*fast|profuse.*bleeding|cant.*stop.*bleeding|blood.*everywhere|major.*blood.*loss|vomiting.*blood|coughing.*up.*blood|blood.*in.*urine|rectal.*bleeding|excessive.*bleeding|life.*threatening.*bleeding/i,
+    message: 'HEMORRAGIA SEVERA - Riesgo de choque hipovolémico',
     severity: 'critical',
     category: 'Trauma',
-    recommendation: 'Llame al 911. Aplique presión directa mientras llega ayuda',
+    recommendation: 'Llame al 911. Aplique presión directa con gas limpio. Eleve la extremidad si es posible.',
     requiresImmediate911: true,
-    conditionSpecific: ['hemophilia', 'thrombocytopenia', 'liver_disease'],
-    medicationInteractions: ['warfarina', 'acenocumarol', 'clopidogrel', 'aspirina'],
+    conditionSpecific: ['bleeding_disorder', 'hemophilia'],
+    medicationInteractions: ['warfarina', 'acenocumarol', 'aspirin', 'clopidogrel'],
     urgencyScore: 10,
   },
-
-  // Severe Allergic Reaction - Comprehensive patterns
+  
+  // ANAPHYLAXIS / SEVERE ALLERGIC REACTION
   {
-    pattern: /anafilaxia|alergia.*grave|garganta.*cerrada|hinchaz[oó]n.*lengua|dificultad.*tragar.*alergia|hinchaz[oó]n.*labios|labios.*hinchados|anaphylaxis|anaphylactic.*shock|throat.*closing|throat.*swelling.*shut|tongue.*swollen|swollen.*lips|face.*swelling|cant.*swallow.*allergy|swollen.*eyes|allergic.*reaction.*severe|airway.*closing|difficulty.*swallowing|lips.*swollen|sudden.*face.*swelling|severe.*allergy|cant.*breathe.*due.*allergy|epipen.*needed|hives.*swelling|swelling.*all.*over|throat.*closing.*allergy|trouble.*breathing.*allergy|reacci[oó]n.*al[eé]rgica.*grave|me.*cierro.*garganta|hinchaz[oó]n.*ojos|edema.*glotis|no.*puedo.*tragar|garganta.*apretada|hinchaz[oó]n.*repentina.*cara|shock.*anafil[aá]ctico|alergia.*severa|no.*puedo.*respirar.*alergia|tengo.*garganta.*cerrada|cara.*hinchada/i,
-    message: 'Anafilaxia - Reacción alérgica severa',
+    pattern: /alergia.*grave|severe.*allergy|anafilaxia|anaphylaxis|anaphylactic|shock.*allergy|hinchazón.*garganta|swollen.*throat|throat.*closing|throat.*swelling|throat.*tightness|garganta.*cerrando|dificultad.*tragar|difficulty.*swallowing|cant.*swallow|swollen.*tongue|tongue.*swollen|tongue.*swelling|lengua.*hinchada|labios.*hinchados|swollen.*lips|lips.*swollen|mouth.*swelling|cara.*hinchada|swollen.*face|face.*swelling|ojos.*hinchados|swollen.*eyes|eyes.*swollen|ronchas.*generalizadas|generalized.*hives|hives.*with.*swelling|urticaria.*severa|severe.*urticaria|picazón.*generalizada|generalized.*itching|swelling.*all.*over|airway.*closing|epipen|epi.*pen|cant.*breathe.*allergy|shock.*alérgico|allergic.*shock|reacción.*alérgica.*grave|severe.*allergic.*reaction|allergic.*reaction.*severe/i,
+    message: 'ANAFILAXIA - Reacción alérgica severa potencialmente mortal',
     severity: 'critical',
     category: 'Allergic',
-    recommendation: 'Llame al 911. Use epinefrina (EpiPen) si está disponible',
+    recommendation: 'Llame al 911 INMEDIATAMENTE. Si tiene epinefrina (EpiPen), úsela ahora.',
     requiresImmediate911: true,
-    conditionSpecific: ['anaphylaxis_history', 'asthma'],
-    medicationInteractions: ['betabloqueantes'], // Can worsen anaphylaxis
+    conditionSpecific: ['allergies', 'asthma'],
+    medicationInteractions: ['beta-blockers', 'ace-inhibitors'],
     urgencyScore: 10,
   },
-
-  // ============================================================================
-  // HIGH SEVERITY - URGENT MEDICAL ATTENTION (Urgency 5-7)
-  // ============================================================================
-
-  // Respiratory patterns removed (all respiratory is now critical for safety)
-
-  // High Fever
+  
+  // PREGNANCY EMERGENCIES
   {
-    pattern: /fiebre.*40|fiebre.*41|fiebre.*42|temperatura.*muy.*alta|fiebre.*no.*baja|temperature.*104|temperature.*105|temperature.*106|fiebre.*alta.*confusion|fiebre.*alta.*respiracion|fiebre.*alta.*respiración|fiebre.*confusion|fiebre.*respiración.*rápida/i,
-    message: 'Fiebre muy alta - Riesgo de sepsis',
-    severity: 'high',
-    category: 'Infectious',
-    recommendation: 'Acuda a urgencias inmediatamente. Riesgo de infección grave',
-    requiresImmediate911: false,
-    conditionSpecific: ['immunocompromised', 'diabetes', 'very_young', 'elderly'],
-    medicationInteractions: [],
-    urgencyScore: 6,
+    pattern: /sangrado.*embarazo|bleeding.*pregnancy|pregnant.*bleeding|dolor.*embarazo.*severo|severe.*pregnancy.*pain|severe.*abdominal.*pain.*pregnant|contracciones.*tempranas|early.*contractions|contractions.*too.*early|bolsa.*agua.*rompió|water.*broke|ruptura.*membranas|membrane.*rupture|leaking.*fluid.*pregnant|fiebre.*embarazo|fever.*pregnancy|visión.*borrosa.*embarazo|blurred.*vision.*pregnancy|dolor.*cabeza.*embarazo|headache.*pregnant|severe.*headache.*pregnant|hinchazón.*embarazo|swelling.*pregnancy|swollen.*face.*hands.*pregnant|movimientos.*bebé.*disminuyeron|decreased.*fetal.*movement|baby.*not.*moving|no.*siento.*bebé|calambres.*embarazo|cramps.*pregnancy|preeclampsia|eclampsia|placental.*abruption|placenta.*previa|miscarriage.*bleeding|pregnancy.*complications|preterm.*labor/i,
+    message: 'EMERGENCIA OBSTÉTRICA - Posible complicación del embarazo',
+    severity: 'critical',
+    category: 'Pregnancy',
+    recommendation: 'Acuda a urgencias obstétricas INMEDIATAMENTE.',
+    requiresImmediate911: true,
+    conditionSpecific: ['pregnancy', 'preeclampsia', 'gestational_diabetes'],
+    medicationInteractions: ['warfarina'],
+    urgencyScore: 10,
   },
-
-  // Loss of Consciousness - Comprehensive patterns
+  
+  // SEIZURES
   {
-    pattern: /perdida.*conciencia|inconsciente|desmayo|desmayarse|faint|unconscious|passed.*out|knocked.*out|lose.*consciousness|blackout|passed.*out|fainted|lost.*consciousness|fainting|collapsed|passed.*out.*fell|syncopy|fell.*down.*unconscious|lose.*consciousness|fainting.*spell|dropped.*unconscious|passed.*suddenly|went.*unconscious|me.*desmayé|perdí.*conocimiento|me.*desvanecí|quedé.*inconsciente|me.*dio.*desmayo|desmayo.*repentino|pérdida.*conciencia|sincope|me.*caí.*desmayado|me.*falté|me.*di.*golpe.*desmayé|desmayé.*no.*recuerdo|perdí.*conciencia.*golpe/i,
-    message: 'Pérdida de conciencia - EMERGENCIA',
+    pattern: /convulsión|convulsion|seizure|ataque|epileptic.*fit|epilepsia.*ataque|perdida.*consciencia|loss.*consciousness|desmayo.*convulsivo|convulsive.*fainting|espasmos|spasms|mordiendo.*lengua|biting.*tongue|espuma.*boca|foaming.*mouth|eyes.*rolling|ojos.*volteados|rigidez|rigidity|tonic.*clonic|convulsión.*tónico.*clónica|convulsion.*tonico.*clonica|grand.*mal|fits|convulsing|seizure.*now|uncontrolled.*shaking|uncontrollable.*shaking|body.*rigidity|convulsive.*movements|postictal|absence.*seizure|seizing|violent.*shaking|full.*body.*convulsion|body.*shaking|muscle.*spasms|fit.*seizure|epilepsy.*attack|status.*epilepticus/i,
+    message: 'CONVULSIÓN - Emergencia neurológica',
     severity: 'critical',
     category: 'Neurological',
-    recommendation: 'Llame al 911 INMEDIATAMENTE. Requiere evaluación médica urgente',
+    recommendation: 'Llame al 911. No ponga nada en la boca. Proteja la cabeza. Gírela de lado después.',
     requiresImmediate911: true,
-    conditionSpecific: ['heart_disease', 'diabetes', 'epilepsy'],
-    medicationInteractions: ['betabloqueantes', 'diuréticos'],
+    conditionSpecific: ['epilepsy', 'diabetes'],
+    medicationInteractions: ['tramadol', 'theophylline'],
     urgencyScore: 9,
   },
-
-  // Altered Mental Status - Comprehensive patterns
+  
+  // THUNDERCLAP HEADACHE
   {
-    pattern: /confusion|desorientado|no.*reconoce|alteracion.*conciencia|desorientacion|memoria.*perdida|confused|disoriented|doesnt.*recognize|altered.*mental.*status|memory.*loss|sudden.*confusion|delirium|doesnt.*know.*where|cant.*think.*clearly|mental.*status.*change|confusion.*sudden.*onset|doesnt.*know.*name/i,
-    message: 'Alteración del estado mental',
-    severity: 'high',
+    pattern: /dolor.*cabeza.*explosivo|explosive.*headache|peor.*dolor.*cabeza|worst.*headache|worst.*headache.*life|worst.*head.*pain|dolor.*cabeza.*repentino|sudden.*headache|sudden.*severe.*headache|thunderclap.*headache|dolor.*cabeza.*trueno|headache.*sudden.*onset|headache.*like.*thunder|cefalea.*en.*trueno|ruptura.*aneurisma|aneurysm.*rupture|sangrado.*cerebral.*meníngeo|meningeal.*bleed|exploding.*head.*pain|sudden.*brain.*pain|intense.*sudden.*headache|headache.*came.*on.*suddenly|splitting.*headache|came.*out.*of.*nowhere.*headache|severe.*headache.*instant|thunder.*headache/i,
+    message: 'CEFALEA EN TRUENO - Posible hemorragia subaracnoidea',
+    severity: 'critical',
     category: 'Neurological',
-    recommendation: 'Requiere evaluación médica urgente. Acuda a urgencias',
-    requiresImmediate911: false,
-    conditionSpecific: ['dementia', 'diabetes', 'elderly'],
-    medicationInteractions: ['sedantes', 'opioides'],
-    urgencyScore: 6,
-  },
-
-  // Severe Abdominal - Comprehensive patterns
-  {
-    pattern: /abdomen.*r[ií]gido.*doloroso|abdomen.*r[ií]gido|abdomen.*duro|defensa.*abdominal|dolor.*abdominal.*severo|dolor.*abdominal.*intenso|rigid.*abdomen|hard.*stomach|board.*like.*abdomen|guarding.*abdomen|severe.*abdominal.*pain|acute.*abdominal.*pain|stomach.*rigid|belly.*hard.*rock|rebound.*tenderness|abdominal.*guarding|severe.*belly.*pain|severe.*stomach.*pain|belly.*pain|rigid.*stomach.*severe.*pain|apendicitis|apendicitis.*aguda|dolor.*ombligo|dolor.*alrededor.*ombligo|dolor.*abdomen.*bajo.*derecha|dolor.*abdomen.*bajo.*derecho|dolor.*lado.*derecho.*abdomen|dolor.*lado.*derecho.*bajo/i,
-    message: 'Signos de abdomen agudo - Posible emergencia quirúrgica',
-    severity: 'high',
-    category: 'Gastrointestinal',
-    recommendation: 'Acuda a urgencias. Puede requerir cirugía',
-    requiresImmediate911: false,
-    conditionSpecific: ['pregnancy'],
-    medicationInteractions: ['corticosteroides'], // Can mask peritonitis
-    urgencyScore: 7,
-  },
-
-  // Severe Head Trauma
-  {
-    pattern: /golpe.*cabeza.*perdida.*conocimiento|trauma.*craneo|concusion|perdida.*memoria.*golpe/i,
-    message: 'Traumatismo craneoencefálico',
-    severity: 'high',
-    category: 'Trauma',
-    recommendation: 'Acuda a urgencias para descartar hemorragia intracraneal',
-    requiresImmediate911: false,
-    conditionSpecific: ['anticoagulation'],
-    medicationInteractions: ['warfarina', 'acenocumarol'],
-    urgencyScore: 7,
-  },
-
-  // Pregnancy Complications - Comprehensive patterns
-  {
-    pattern: /sangrado.*vaginal.*durante.*embarazo|dolor.*abdominal.*intenso.*embarazada|embarazada.*sangrado|embarazada.*dolor.*intenso|embarazo.*emergencia|contracciones.*prematuras|pregnant.*bleeding|vaginal.*bleeding.*during.*pregnancy|severe.*abdominal.*pain.*pregnant|water.*broke|leaking.*fluid.*pregnant|contractions.*too.*early|preterm.*labor|severe.*cramping.*pregnant|bleeding.*while.*pregnant|early.*labor|pregnant.*and.*bleeding|decreased.*fetal.*movement|baby.*not.*moving|severe.*headache.*pregnant|blurred.*vision.*pregnancy|swollen.*face.*hands.*pregnant|preeclampsia|eclampsia|placental.*abruption|placenta.*previa.*bleeding|pregnancy.*complications|miscarriage.*bleeding/i,
-    message: 'Complicación del embarazo',
-    severity: 'critical',
-    category: 'Obstetric',
-    recommendation: 'Acuda a urgencias obstétricas inmediatamente',
+    recommendation: 'Llame al 911 INMEDIATAMENTE. Requiere CT de cerebro urgente.',
     requiresImmediate911: true,
-    conditionSpecific: ['pregnancy'],
+    conditionSpecific: ['hypertension'],
+    medicationInteractions: ['anticoagulants'],
+    urgencyScore: 10,
+  },
+  
+  // LOSS OF CONSCIOUSNESS / SYNCOPE
+  {
+    pattern: /\bblackout\b|\bpased out\b|\bpassed out\b|\bpase out\b|\bfainting\b|\bfainted\b|\bsyncope\b|\bsyncopy\b|\bcollapsed\b|\bdesmayo\b|\bdesmayó\b|\bdesmayado\b|\bknocked out\b|\bperdida.*consciencia\b|\bpérdida.*consciencia\b|\bloss.*consciousness\b|\blose consciousness\b|\blost consciousness\b|\bconsciousness.*lost\b|\bunconscious\b|\binconsciente\b/i,
+    message: 'PÉRDIDA DE CONSCIENCIA - Posible síncope o emergencia neurológica',
+    severity: 'critical',
+    category: 'Neurological',
+    recommendation: 'Llame al 911. Evalúe pulso y respiración. Coloque en posición lateral de seguridad.',
+    requiresImmediate911: true,
+    conditionSpecific: ['heart_disease', 'arrhythmia', 'diabetes'],
+    medicationInteractions: ['antihypertensives', 'nitrates'],
+    urgencyScore: 9,
+  },
+  
+  // ALTERED MENTAL STATUS
+  {
+    pattern: /\bconfused\b|\bdisoriented\b|\bdelirium\b|\bdelirio\b|\bcoma\b|\bcomatose\b|\bcomatoso\b|no.*sabe.*dónde.*está|doesnt.*know.*where.*is|doesnt.*know.*where.*he.*is|doesnt.*know.*name|no.*sabe.*nombre|confuso.*severo|severely.*confused|no.*reconoce|doesnt.*recognize|altered.*mental.*status|estado.*mental.*alterado|memory.*loss|pérdida.*memoria|sudden.*confusion|confusion.*sudden|confusión.*repentina|cant.*think.*clearly|no.*puede.*pensar|mental.*status.*change|cambio.*estado.*mental|wont.*wake.*up|no.*despierta|cant.*wake.*up|no.*puede.*despertar|not.*responding|no.*responde|agitación.*severa|severe.*agitation|alucinaciones|hallucinations/i,
+    message: 'ESTADO MENTAL ALTERADO - Posible encefalopatía',
+    severity: 'critical',
+    category: 'Neurological',
+    recommendation: 'Llame al 911. Verifique glucemia si es posible.',
+    requiresImmediate911: true,
+    conditionSpecific: ['diabetes', 'liver_disease', 'kidney_disease'],
+    medicationInteractions: ['opioids', 'benzodiazepines', 'anticholinergics'],
+    urgencyScore: 9,
+  },
+  
+  // ACUTE ABDOMEN
+  {
+    pattern: /abdomen.*duro|hard.*abdomen|rigid.*abdomen|abdomen.*rígido|abdomen.*rigido|board.*like.*abdomen|abdomen.*board|guarding.*abdomen|abdominal.*guarding|rebound.*tenderness|sever.*abdominal.*pain|severe.*abdominal.*pain|acute.*abdominal.*pain|stomach.*rigid|belly.*hard.*rock|hard.*stomach|severe.*belly.*pain|dolor.*abdominal.*severo|dolor.*abdominal.*agudo|abdomen.*agudo|peritonitis|appendicitis|apendicitis/i,
+    message: 'ABDOMEN AGUDO - Posible peritonitis o emergencia quirúrgica',
+    severity: 'critical',
+    category: 'Abdominal',
+    recommendation: 'Llame al 911. NO tome nada por boca. Inmovilice la zona.',
+    requiresImmediate911: true,
+    conditionSpecific: ['pregnancy', 'immunosuppression'],
+    medicationInteractions: ['anticoagulants'],
+    urgencyScore: 9,
+  },
+  
+  // CRITICAL VITAL SIGNS
+  {
+    pattern: /presión.*alta.*180|pressure.*180.*over|blood.*pressure.*180|presión.*200|pressure.*200|frecuencia.*cardiaca.*150|heart.*rate.*150|pulso.*150|pulse.*150|taquicardia.*severa|severe.*tachycardia|frecuencia.*respiratoria.*30|respiratory.*rate.*30|temperatura.*40|temperature.*104|temp.*40|fiebre.*40|fever.*104|oxígeno.*bajo|low.*oxygen|spo2.*90|saturation.*90|oxígeno.*85|oxygen.*85/i,
+    message: 'SIGNOS VITALES CRÍTICOS - Requiere evaluación inmediata',
+    severity: 'critical',
+    category: 'VitalSigns',
+    recommendation: 'Llame al 911. Estos valores son potencialmente peligrosos.',
+    requiresImmediate911: true,
+    conditionSpecific: ['hypertension', 'heart_disease', 'copd'],
     medicationInteractions: [],
     urgencyScore: 9,
   },
-
-  // Vision Loss - Comprehensive patterns
+  
+  // VISION EMERGENCIES
   {
-    pattern: /perd[ií].*la.*visi[oó]n.*de.*golpe|perdida.*vision.*subita|ceguera.*repentina|no.*veo|vision.*negra|sudden.*vision.*loss|sudden.*blindness|cant.*see|vision.*went.*black|lost.*vision.*suddenly|sudden.*blurry.*vision|vision.*gone|blindness.*onset|cant.*see.*one.*eye|sudden.*vision.*darkness/i,
-    message: 'Pérdida súbita de visión',
-    severity: 'high',
-    category: 'Ophthalmologic',
-    recommendation: 'Acuda a urgencias oftalmológicas en las próximas 2 horas',
-    requiresImmediate911: false,
-    conditionSpecific: ['diabetes', 'hypertension', 'giant_cell_arteritis'],
-    medicationInteractions: [],
-    urgencyScore: 7,
-  },
-
-  // Severe Pain
-  {
-    pattern: /dolor.*10\/10|peor.*dolor.*vida|dolor.*insoportable/i,
-    message: 'Dolor severo (10/10)',
-    severity: 'high',
-    category: 'Pain',
-    recommendation: 'Requiere evaluación médica urgente',
-    requiresImmediate911: false,
-    conditionSpecific: ['chronic_pain', 'cancer'],
-    medicationInteractions: [],
-    urgencyScore: 6,
-  },
-
-  // Hypoglycemia (diabetic patients)
-  {
-    pattern: /temblor|sudoracion|confusion|palidez|hambre.*intenso|irritabilidad/i,
-    message: 'Posible hipoglucemia - Revise glucosa',
-    severity: 'high',
-    category: 'Endocrine',
-    recommendation: 'Mida glucosa capilar. Si <70mg/dL administre carbohidratos',
-    requiresImmediate911: false,
-    conditionSpecific: ['diabetes'],
-    medicationInteractions: ['insulina', 'sulfonilureas'],
-    urgencyScore: 7,
-  },
-
-  // Severe Hypoglycemia - Emergency
-  {
-    pattern: /(azucar.*baja|glucosa.*baja|sugar.*low|low.*sugar|hypoglycemia|hipoglucemia|glucose.*low|low.*glucose).*(me.*desmayo|voy.*a.*desmayarme|perdiendo.*consciencia|confusion.*extrema|no.*puedo.*pensar|sudoracion.*extrema|temblor.*severo|shaking.*badly|passing.*out|losing.*consciousness|severe.*confusion)/i,
-    message: 'Hipoglucemia severa con riesgo de perdida de consciencia - EMERGENCIA',
+    pattern: /pérdida.*repentina.*visión|sudden.*vision.*loss|sudden.*blindness|vision.*went.*black|vision.*gone|lost.*vision.*suddenly|cant.*see|can\'t.*see|no.*veo|no.*puedo.*ver|visión.*borrosa.*repentina|sudden.*blurred.*vision|sudden.*blurry.*vision|visión.*doble.*repentina|sudden.*double.*vision|diplopía|diplopia|amaurosis|curtain.*vision|telón.*ojo|flash.*lights|luces.*destellos|flotadores.*repentinos|sudden.*floaters|campo.*visual.*perdido|lost.*visual.*field|visión.*tunnel|tunnel.*vision|blindness.*onset|cant.*see.*out.*one.*eye|vision.*darkness/i,
+    message: 'EMERGENCIA OCULAR - Posible desprendimiento de retina o ACV',
     severity: 'critical',
-    category: 'Endocrine',
-    recommendation: 'Llame al 911. Administre glucosa si la persona esta consciente',
+    category: 'Vision',
+    recommendation: 'Acuda a urgencias oftalmológicas INMEDIATAMENTE.',
     requiresImmediate911: true,
-    conditionSpecific: ['diabetes'],
-    medicationInteractions: ['insulina', 'sulfonilureas'],
+    conditionSpecific: ['diabetes', 'hypertension'],
+    medicationInteractions: [],
     urgencyScore: 9,
   },
-
-  // Symptomatic Bradycardia
+  
+  // DEEP VEIN THROMBOSIS / PULMONARY EMBOLISM
   {
-    pattern: /(latido.*lento|corazon.*lento|pulso.*bajo|frecuencia.*cardiaca.*baja|heart.*rate.*low|slow.*heart|bradicardia).*(mareo|desmayo|fatiga.*extrema|dizziness|fainting|extreme.*fatigue|lightheaded)/i,
-    message: 'Bradicardia sintomatica - frecuencia cardiaca baja con sintomas',
-    severity: 'high',
-    category: 'Cardiac',
-    recommendation: 'Acuda a urgencias para evaluacion cardiaca y ECG',
-    requiresImmediate911: false,
-    conditionSpecific: ['heart_disease', 'hypertension'],
-    medicationInteractions: ['betabloqueantes', 'bloqueadores_calcio'],
-    urgencyScore: 7,
-  },
-
-  // Angioedema (ACE inhibitor side effect)
-  {
-    pattern: /hinchazon.*labios|hinchazon.*lengua|hinchazón.*labios|hinchazón.*lengua|dificultad.*tragar|voz.*ronca|labios.*hinchados|lengua.*hinchada/i,
-    message: 'Posible angioedema - Reacción adversa a medicamento',
-    severity: 'high',
-    category: 'Allergic',
-    recommendation: 'Suspenda medicamento IECA y acuda a urgencias',
-    requiresImmediate911: true,
-    conditionSpecific: ['ace_inhibitor_use'],
-    medicationInteractions: ['ieca', 'enalapril', 'lisinopril', 'ramipril'],
-    urgencyScore: 8,
-  },
-
-  // Serotonin Syndrome
-  {
-    pattern: /agitacion|confusion|temblor|reflejos.*vivos|fiebre|diaforesis|diarrea/i,
-    message: 'Posible síndrome serotoninérgico',
-    severity: 'high',
-    category: 'Toxicological',
-    recommendation: 'Acuda a urgencias. Requiere suspensión de serotoninérgicos',
-    requiresImmediate911: false,
-    conditionSpecific: ['ssri_use', 'snri_use'],
-    medicationInteractions: ['sertralina', 'fluoxetina', 'paroxetina', 'citalopram', 'escitalopram', 'tramadol'],
-    urgencyScore: 7,
-  },
-
-  // ============================================================================
-  // MODERATE SEVERITY - MEDICAL ATTENTION WITHIN 24 HOURS (Urgency 3-5)
-  // ============================================================================
-
-  // Moderate Fever
-  {
-    pattern: /fiebre.*39|fiebre.*38.*niño|temperatura.*alta/i,
-    message: 'Fiebre moderada',
-    severity: 'moderate',
-    category: 'Infectious',
-    recommendation: 'Consulte con médico en las próximas 24 horas',
-    requiresImmediate911: false,
-    conditionSpecific: ['very_young', 'elderly', 'immunocompromised'],
-    medicationInteractions: [],
-    urgencyScore: 4,
-  },
-
-  // Moderate Respiratory
-  {
-    pattern: /tos.*sangre|hemoptisis/i,
-    message: 'Tos con sangre',
-    severity: 'moderate',
-    category: 'Respiratory',
-    recommendation: 'Consulte con médico en las próximas 24 horas',
-    requiresImmediate911: false,
-    conditionSpecific: ['copd', 'tuberculosis', 'cancer'],
-    medicationInteractions: ['anticoagulantes'],
-    urgencyScore: 5,
-  },
-
-  // Urinary
-  {
-    pattern: /sangre.*orina|dolor.*orinar.*severo|no.*puedo.*orinar/i,
-    message: 'Síntomas urinarios graves',
-    severity: 'moderate',
-    category: 'Urinary',
-    recommendation: 'Consulte con médico en las próximas 24 horas',
-    requiresImmediate911: false,
-    conditionSpecific: ['pregnancy', 'prostate_enlargement', 'kidney_stones'],
-    medicationInteractions: ['diuréticos'],
-    urgencyScore: 5,
-  },
-
-  // Skin infections
-  {
-    pattern: /enrojecimiento.*caliente|hinchazon.*crece|linea.*roja|celulitis/i,
-    message: 'Posible infección de piel (celulitis)',
-    severity: 'moderate',
-    category: 'Dermatological',
-    recommendation: 'Consulte con médico en las próximas 24 horas. Puede requerir antibióticos',
-    requiresImmediate911: false,
-    conditionSpecific: ['diabetes', 'obesity', 'immunocompromised'],
-    medicationInteractions: [],
-    urgencyScore: 4,
-  },
-
-  // DVT (Deep Vein Thrombosis) - Comprehensive patterns
-  {
-    pattern: /pierna.*hinchada|dolor.*pantorrilla|rojo.*caliente|pierna.*calf|leg.*swollen|swollen.*calf|pain.*calf|red.*hot.*leg|one.*leg.*bigger|calf.*pain.*swelling|leg.*pain.*redness|swollen.*leg|calf.*tenderness|deep.*vein.*thrombosis/i,
-    message: 'Posible trombosis venosa profunda',
-    severity: 'high',
+    pattern: /dolor.*pierna.*hinchada|leg.*pain.*swollen|leg.*pain.*swelling|pierna.*hinchada|swollen.*leg|leg.*swollen|swollen.*calf|calf.*swollen|calf.*pain|pain.*calf|pantorrilla.*dolorosa|painful.*calf|trombosis|thrombosis|embolia|embolism|dolor.*pecho.*respirar|chest.*pain.*breathing|chest.*pain.*inhale|dolor.*torácico.*inspirar|dificultad.*respirar.*repentina|sudden.*difficulty.*breathing|sudden.*breathing.*difficulty|disnea.*repentina|sudden.*dyspnea|tos.*sangre|coughing.*blood|hemoptisis|hemoptysis|calor.*pierna|warm.*leg|enrojecimiento.*pierna|redness.*leg|red.*leg|leg.*red|one.*leg.*bigger|leg.*bigger.*other|bigger.*than.*other/i,
+    message: 'Posible TROMBOEMBOLIA - Emergencia vascular',
+    severity: 'critical',
     category: 'Vascular',
-    recommendation: 'Acuda a urgencias para Doppler venoso. Riesgo de embolia pulmonar',
-    requiresImmediate911: false,
-    conditionSpecific: ['pregnancy', 'cancer', 'recent_surgery', 'immobilization'],
-    medicationInteractions: ['anticonceptivos_orales'],
-    urgencyScore: 7,
+    recommendation: 'Llame al 911. NO masajee la pierna. Inmovilice la extremidad.',
+    requiresImmediate911: true,
+    conditionSpecific: ['pregnancy', 'cancer', 'recent_surgery'],
+    medicationInteractions: ['oral_contraceptives', 'hormone_replacement'],
+    urgencyScore: 10,
   },
 ];
 
 /**
  * Check for medication-specific red flags based on patient medications
+ * @param text - Text to analyze for symptoms
+ * @param medications - Patient's current medications
+ * @returns Object with alerts array and urgency bonus
+ * @example
+ * const { alerts, urgencyBonus } = checkMedicationInteractions(
+ *   'Tengo sangrado de encías',
+ *   [{ name: 'warfarina' }]
+ * );
+ * if (alerts.length > 0) {
+ *   console.warn(alerts);
+ * }
  */
 function checkMedicationInteractions(
   text: string,
@@ -602,6 +496,14 @@ function checkMedicationInteractions(
 
 /**
  * Check condition-specific red flags
+ * @param text - Text to analyze
+ * @param conditions - Patient's medical conditions
+ * @returns Object with detected flags and context
+ * @example
+ * const { flags, context } = checkConditionSpecificFlags(
+ *   'Tengo dolor de cabeza intenso',
+ *   ['hypertension', 'diabetes']
+ * );
  */
 function checkConditionSpecificFlags(
   text: string,
@@ -637,12 +539,98 @@ function checkConditionSpecificFlags(
 }
 
 /**
- * Main detection function with patient context awareness
+ * Check for critical vital signs from patient context
+ * @param vitalSigns - Patient's vital signs
+ * @returns Array of detected critical vital sign flags
  */
+function checkCriticalVitalSigns(
+  vitalSigns: PatientContext['vitalSigns']
+): RedFlag[] {
+  const flags: RedFlag[] = [];
+  
+  if (!vitalSigns) return flags;
+  
+  // Check blood pressure - critical if >180/120
+  if (vitalSigns.bloodPressure) {
+    const bpMatch = vitalSigns.bloodPressure.match(/(\d+)\/(\d+)/);
+    if (bpMatch) {
+      const systolic = parseInt(bpMatch[1], 10);
+      const diastolic = parseInt(bpMatch[2], 10);
+      
+      if (systolic >= 180 || diastolic >= 120) {
+        flags.push({
+          pattern: /critical.*bp|hipertensión.*severa/,
+          message: 'SIGNOS VITALES CRÍTICOS - Presión arterial severamente elevada',
+          severity: 'critical',
+          category: 'VitalSigns',
+          recommendation: 'Llame al 911. Crisis hipertensiva potencial.',
+          requiresImmediate911: true,
+          urgencyScore: 9,
+        } as RedFlag);
+      }
+    }
+  }
+  
+  // Check heart rate - critical if >130 or <40
+  if (vitalSigns.heartRate !== undefined) {
+    if (vitalSigns.heartRate >= 130) {
+      flags.push({
+        pattern: /tachycardia|taquicardia/,
+        message: 'SIGNOS VITALES CRÍTICOS - Taquicardia severa (frecuencia cardiaca >150)',
+        severity: 'critical',
+        category: 'VitalSigns',
+        recommendation: 'Llame al 911. Frecuencia cardiaca críticamente elevada.',
+        requiresImmediate911: true,
+        urgencyScore: 9,
+      } as RedFlag);
+    } else if (vitalSigns.heartRate <= 40) {
+      flags.push({
+        pattern: /bradycardia|bradicardia/,
+        message: 'SIGNOS VITALES CRÍTICOS - Bradicardia severa (frecuencia cardiaca <40)',
+        severity: 'critical',
+        category: 'VitalSigns',
+        recommendation: 'Llame al 911. Frecuencia cardiaca críticamente baja.',
+        requiresImmediate911: true,
+        urgencyScore: 9,
+      } as RedFlag);
+    }
+  }
+  
+  // Check oxygen saturation - critical if <90
+  if (vitalSigns.oxygenSaturation !== undefined) {
+    if (vitalSigns.oxygenSaturation < 90) {
+      flags.push({
+        pattern: /hypoxemia|hypoxia|hipoxemia|hipoxia/,
+        message: 'SIGNOS VITALES CRÍTICOS - Hipoxemia severa (SpO2 <90%)',
+        severity: 'critical',
+        category: 'VitalSigns',
+        recommendation: 'Llame al 911. Saturación de oxígeno críticamente baja.',
+        requiresImmediate911: true,
+        urgencyScore: 10,
+      } as RedFlag);
+    }
+  }
+  
+  // Check temperature - critical if >40°C (104°F)
+  if (vitalSigns.temperature !== undefined) {
+    if (vitalSigns.temperature >= 40) {
+      flags.push({
+        pattern: /hyperthermia|hipertermia|fever|fiebre/,
+        message: 'SIGNOS VITALES CRÍTICOS - Hipertermia severa (temperatura >40°C)',
+        severity: 'critical',
+        category: 'VitalSigns',
+        recommendation: 'Llame al 911. Temperatura corporal críticamente elevada.',
+        requiresImmediate911: true,
+        urgencyScore: 9,
+      } as RedFlag);
+    }
+  }
+  
+  return flags;
+}
+
 // Words that indicate informational/past tense queries (not current emergencies)
-// IMPORTANT: Use word boundaries or full phrases to avoid false matches
 const INFORMATIONAL_KEYWORDS = [
-  // Phrases - more specific first
   'síntomas de', 'symptoms of', 'explícame qué es', 'explain what is', 
   'qué es un', 'what is a', 'qué es el', 'what is the', 'what are', 'qué son',
   'tuvo un', 'tuvo una', 'had a', 'had an',
@@ -651,20 +639,42 @@ const INFORMATIONAL_KEYWORDS = [
   'mi abuela', 'mi abuelo', 'mi vecino', 'mi vecina', 'my neighbor',
   'mi primo', 'mi prima', 'my cousin', 'mi padre', 'mi madre', 'my father', 'my mother',
   'mi hermano', 'mi hermana', 'my brother', 'my sister',
-  // Single words with spaces to avoid partial matches
   ' tuvo ', ' tenía ', ' había ', ' habido ',
   ' had ', ' have had ', ' has had ',
-  'explain ', ' explícame ', ' explain ', ' explícame ',
+  'explain ', ' explícame ', ' explícame ',
 ];
 
 /**
  * Check if text appears to be an informational query about someone else
+ * @param text - Text to analyze
+ * @returns Boolean indicating if query is informational
+ * @example
+ * if (isInformationalQuery('¿Cuáles son los síntomas de diabetes?')) {
+ *   // Skip red flag detection
+ * }
  */
 function isInformationalQuery(text: string): boolean {
   const lowerText = text.toLowerCase();
   return INFORMATIONAL_KEYWORDS.some(keyword => lowerText.includes(keyword.toLowerCase()));
 }
 
+/**
+ * Main detection function with patient context awareness
+ * Detects red flags in patient text with consideration of medical history
+ * @param text - Patient's message or symptom description
+ * @param patientContext - Patient's medical context (optional)
+ * @returns Red flag detection result with urgency assessment
+ * @example
+ * const result = detectRedFlagsEnhanced('Tengo dolor de pecho intenso', {
+ *   age: 55,
+ *   conditions: ['hypertension'],
+ *   medications: [{ name: 'enalapril' }]
+ * });
+ * 
+ * if (result.requiresEmergencyEscalation) {
+ *   console.log('Call 911!');
+ * }
+ */
 export function detectRedFlagsEnhanced(
   text: string,
   patientContext?: PatientContext
@@ -741,7 +751,6 @@ export function detectRedFlagsEnhanced(
   }
 
   // 2. Check condition-specific flags
-  // Build conditions array including pregnancy status
   const allConditions = [...(patientContext?.conditions || [])];
   if (patientContext?.pregnancyStatus === 'pregnant') {
     allConditions.push('pregnancy');
@@ -763,100 +772,28 @@ export function detectRedFlagsEnhanced(
     conditionContext.push(...context);
   }
 
-  // 3. Check medication interactions
+  // 3. Check critical vital signs
+  if (patientContext?.vitalSigns) {
+    const vitalSignFlags = checkCriticalVitalSigns(patientContext.vitalSigns);
+    for (const flag of vitalSignFlags) {
+      detectedFlags.push({
+        message: flag.message,
+        severity: flag.severity,
+        category: flag.category,
+        recommendation: flag.recommendation,
+        requiresImmediate911: flag.requiresImmediate911,
+        urgencyScore: flag.urgencyScore,
+      });
+      totalUrgency = Math.max(totalUrgency, flag.urgencyScore);
+    }
+  }
+
+  // 4. Check medication interactions
   if (patientContext?.medications) {
     const { alerts, urgencyBonus } = checkMedicationInteractions(lowerText, patientContext.medications);
     medicationAlerts.push(...alerts);
     if (urgencyBonus > 0) {
       totalUrgency = Math.min(10, totalUrgency + urgencyBonus);
-    }
-  }
-
-  // 4. Check vital signs for red flags
-  if (patientContext?.vitalSigns) {
-    const vs = patientContext.vitalSigns;
-
-    // Blood pressure red flags
-    if (vs.bloodPressure) {
-      const [systolic, diastolic] = vs.bloodPressure.split('/').map(Number);
-      if (systolic >= 180 || diastolic >= 120) {
-        detectedFlags.push({
-          message: 'Crisis hipertensiva - Presión arterial ≥180/120',
-          severity: 'critical',
-          category: 'VitalSigns',
-          recommendation: 'Acuda a urgencias inmediatamente para evaluar daño en órganos blanco',
-          requiresImmediate911: true,
-          urgencyScore: 9,
-        });
-        totalUrgency = Math.max(totalUrgency, 9);
-      }
-    }
-
-    // Oxygen saturation red flag
-    if (vs.oxygenSaturation !== undefined && vs.oxygenSaturation < 92) {
-      detectedFlags.push({
-        message: `Hipoxemia - SpO2 ${vs.oxygenSaturation}%`,
-        severity: 'critical',
-        category: 'VitalSigns',
-        recommendation: 'Requiere oxígeno suplementario y evaluación inmediata',
-        requiresImmediate911: true,
-        urgencyScore: vs.oxygenSaturation < 88 ? 10 : 9,
-      });
-      totalUrgency = Math.max(totalUrgency, vs.oxygenSaturation < 88 ? 10 : 9);
-    }
-
-    // Heart rate red flags
-    if (vs.heartRate !== undefined) {
-      if (vs.heartRate > 120) {
-        detectedFlags.push({
-          message: `Taquicardia - FC ${vs.heartRate} lpm`,
-          severity: 'high',
-          category: 'VitalSigns',
-          recommendation: 'Evaluar causa de taquicardia. Requiere ECG.',
-          requiresImmediate911: false,
-          urgencyScore: 6,
-        });
-        totalUrgency = Math.max(totalUrgency, 6);
-      } else if (vs.heartRate < 50) {
-        detectedFlags.push({
-          message: `Bradicardia - FC ${vs.heartRate} lpm`,
-          severity: 'moderate',
-          category: 'VitalSigns',
-          recommendation: 'Evaluar bradicardia. Requiere ECG.',
-          requiresImmediate911: false,
-          urgencyScore: 5,
-        });
-        totalUrgency = Math.max(totalUrgency, 5);
-      }
-    }
-
-    // Temperature red flag
-    if (vs.temperature !== undefined && vs.temperature >= 40) {
-      detectedFlags.push({
-        message: `Hipertermia - ${vs.temperature}°C`,
-        severity: 'high',
-        category: 'VitalSigns',
-        recommendation: 'Acuda a urgencias. Posible infección grave.',
-        requiresImmediate911: false,
-        urgencyScore: 7,
-      });
-      totalUrgency = Math.max(totalUrgency, 7);
-    }
-  }
-
-  // 5. Age-specific considerations
-  if (patientContext?.age) {
-    // Pediatric fever red flag
-    if (patientContext.age < 3 && patientContext.vitalSigns?.temperature && patientContext.vitalSigns.temperature > 38) {
-      detectedFlags.push({
-        message: 'Fiebre en lactante <3 meses - EMERGENCIA',
-        severity: 'critical',
-        category: 'AgeSpecific',
-        recommendation: 'Acuda a urgencias inmediatamente. Requiere sepsis workup.',
-        requiresImmediate911: true,
-        urgencyScore: 9,
-      });
-      totalUrgency = Math.max(totalUrgency, 9);
     }
   }
 
@@ -891,6 +828,12 @@ export function detectRedFlagsEnhanced(
 
 /**
  * Integration with existing copilot system
+ * Converts RedFlagResult to legacy format
+ * @param result - Red flag detection result
+ * @returns Array of simplified flag objects
+ * @example
+ * const legacy = convertToLegacyFormat(result);
+ * // [{ message: '...', severity: 'critical' }]
  */
 export function convertToLegacyFormat(
   result: RedFlagResult
@@ -903,6 +846,11 @@ export function convertToLegacyFormat(
 
 /**
  * Get urgency level description based on score
+ * @param score - Urgency score (1-10)
+ * @returns Object with level description, action, and color
+ * @example
+ * const desc = getUrgencyDescription(9);
+ * // { level: 'EMERGENCIA CRÍTICA', action: 'Llame al 911 INMEDIATAMENTE', color: 'red' }
  */
 export function getUrgencyDescription(score: number): {
   level: string;
@@ -943,4 +891,3 @@ export function getUrgencyDescription(score: number): {
     color: 'green',
   };
 }
-

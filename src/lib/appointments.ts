@@ -2,6 +2,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { getOccupiedSlots, getDoctorAvailability, generateTimeSlots } from './availability'
 import { markAppointmentCompleted } from './followup'
+import { TIME } from '@/lib/constants'
 
 // Helper: Obtener slots disponibles para una fecha específica
 export async function getAvailableSlots(doctorId: string, date: string) {
@@ -39,11 +40,11 @@ export async function createAppointment(data: {
 }) {
   const supabase = await createClient()
 
-  const { durationMinutes = 30 } = data
+  const { durationMinutes = TIME.DEFAULT_APPOINTMENT_DURATION_MINUTES } = data
 
   // Construir timestamps
   const startTs = new Date(`${data.date}T${data.time}:00`)
-  const endTs = new Date(startTs.getTime() + durationMinutes * 60000)
+  const endTs = new Date(startTs.getTime() + durationMinutes * TIME.MINUTE_IN_MS)
 
   const { data: appointment, error } = await supabase
     .from('appointments')

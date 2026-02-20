@@ -29,7 +29,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     await supabase
       .from('unclaimed_doctor_profiles')
       .update({ 
-        page_views: (profile.page_views || 0) + 1,
+        page_views: (profile.page_views ?? 0) + 1,
         last_viewed_at: new Date().toISOString(),
       })
       .eq('id', id)

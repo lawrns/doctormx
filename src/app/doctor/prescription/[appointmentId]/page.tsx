@@ -1,6 +1,6 @@
 import { requireRole } from '@/lib/auth'
 import { notFound } from 'next/navigation'
-import PrescriptionPageClient from './prescription-form'
+import PrescriptionPageClient from './PrescriptionForm'
 
 export default async function PrescriptionPage({
   params,
@@ -41,7 +41,7 @@ export default async function PrescriptionPage({
         end_ts: appointment.end_ts,
         status: appointment.status,
         patient: {
-          full_name: patient?.full_name || 'Paciente',
+          full_name: patient?.full_name ?? 'Paciente',
           date_of_birth: patient?.date_of_birth,
           phone: patient?.phone,
           email: patient?.email,

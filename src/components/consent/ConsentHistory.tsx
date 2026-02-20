@@ -151,9 +151,9 @@ export function ConsentHistory({ userId }: ConsentHistoryProps) {
         entry.occurred_at,
         TYPE_LABELS[entry.consent_type] || entry.consent_type,
         ACTION_LABELS[entry.action],
-        entry.previous_status || 'N/A',
+        entry.previous_status ?? 'N/A',
         entry.new_status,
-        entry.change_reason || 'N/A',
+        entry.change_reason ?? 'N/A',
         entry.changed_by,
       ].join(',')),
     ].join('\n')
@@ -209,7 +209,7 @@ export function ConsentHistory({ userId }: ConsentHistoryProps) {
             </label>
             <select
               className="w-full px-3 py-2 border rounded-md"
-              value={filter.consentType || ''}
+              value={filter.consentType ?? ''}
               onChange={(e) => setFilter({ ...filter, consentType: e.target.value || undefined })}
             >
               <option value="">Todos</option>
@@ -227,7 +227,7 @@ export function ConsentHistory({ userId }: ConsentHistoryProps) {
             </label>
             <select
               className="w-full px-3 py-2 border rounded-md"
-              value={filter.action || ''}
+              value={filter.action ?? ''}
               onChange={(e) => setFilter({ ...filter, action: e.target.value || undefined })}
             >
               <option value="">Todas</option>
@@ -342,7 +342,7 @@ export function ConsentHistory({ userId }: ConsentHistoryProps) {
                         <div>
                           <span className="font-medium">Estado Anterior:</span>
                           <span className="text-gray-600 ml-2">
-                            {entry.previous_status || 'N/A'}
+                            {entry.previous_status ?? 'N/A'}
                           </span>
                         </div>
                         <div>

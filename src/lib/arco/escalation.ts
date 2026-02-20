@@ -244,7 +244,7 @@ export async function escalateRequest(
         ...request.metadata,
         escalated_at: new Date().toISOString(),
         escalated_by: adminId,
-        escalation_reason: reason || 'Escalación automática por tiempo',
+        escalation_reason: reason ?? 'Escalación automática por tiempo',
         previous_level: request.escalation_level,
       },
     })
@@ -429,7 +429,7 @@ export async function autoEscalateRequests(): Promise<{
   }
 
   return {
-    checked: requests?.length || 0,
+    checked: requests?.length ?? 0,
     escalated,
     already_max_level: alreadyMaxLevel,
     errors,
@@ -649,7 +649,7 @@ export async function getEscalationStats(): Promise<{
 
     if (request.metadata?.escalation_reason) {
       const reason = String(request.metadata.escalation_reason)
-      reasonCounts[reason] = (reasonCounts[reason] || 0) + 1
+      reasonCounts[reason] = (reasonCounts[reason] ?? 0) + 1
     }
   }
 
@@ -673,7 +673,7 @@ export async function getEscalationStats(): Promise<{
 
   return {
     by_level: byLevel,
-    escalations_last_30_days: recentEscalations?.length || 0,
+    escalations_last_30_days: recentEscalations?.length ?? 0,
     avg_escalation_time: 0, // Would need more complex query
     most_common_reasons: mostCommonReasons,
   }

@@ -3,7 +3,7 @@ import * as Sentry from "@sentry/react";
 import { consoleLoggingIntegration } from "@sentry/react";
 
 // Get environment from process.env (Next.js standard)
-const environment = process.env.NODE_ENV || "production";
+const environment = process.env.NODE_ENV ?? "production";
 const isDev = environment === "development";
 
 Sentry.init({
@@ -78,7 +78,7 @@ Sentry.init({
   },
 
   // Release version
-  release: process.env.npm_package_version || '0.1.0',
+  release: process.env.npm_package_version ?? '0.1.0',
 
   // Debug mode (development only)
   debug: isDev,

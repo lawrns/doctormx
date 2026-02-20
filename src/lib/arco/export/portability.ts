@@ -196,7 +196,7 @@ function formatPortabilityPayments(
   return payments.map((payment) => ({
     id: payment.id,
     date: payment.created_at,
-    amount: (payment.amount_cents || 0) / 100,
+    amount: (payment.amount_cents ?? 0) / 100,
     currency: payment.currency,
     status: payment.status,
   }))
@@ -218,7 +218,7 @@ function calculateTotalRecords(
  * Get app URL for metadata
  */
 function getAppUrl(): string {
-  return process.env.NEXT_PUBLIC_APP_URL || 'https://doctormx.com'
+  return process.env.NEXT_PUBLIC_APP_URL ?? 'https://doctormx.com'
 }
 
 /**

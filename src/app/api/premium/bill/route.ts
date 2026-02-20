@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
       pro_499: 'pro',
       elite_999: 'elite',
     }
-    const tier = tierMap[subscription.plan_id] || 'none'
+    const tier = tierMap[subscription.plan_id] ?? 'none'
 
     const priceMap: Record<string, Record<string, number>> = {
       image_analysis: { none: 500, starter: 0, pro: 0, elite: 0 },
@@ -103,7 +103,7 @@ export async function GET(request: NextRequest) {
   try {
     const { user, supabase } = await requireRole('doctor')
     const { searchParams } = new URL(request.url)
-    const period = searchParams.get('period') || 'current'
+    const period = searchParams.get('period') ?? 'current'
 
     const { data: subscription } = await supabase
       .from('doctor_subscriptions')
@@ -144,7 +144,7 @@ export async function GET(request: NextRequest) {
     const byFeature: Record<string, number> = {}
     for (const record of billingRecords || []) {
       byFeature[record.feature_key] =
-        (byFeature[record.feature_key] || 0) + record.amount_cents
+        (byFeature[record.feature_key] ?? 0) + record.amount_cents
     }
 
     return NextResponse.json({
@@ -152,7 +152,7 @@ export async function GET(request: NextRequest) {
       totalBilled,
       pendingAmount,
       byFeature,
-      transactions: billingRecords?.length || 0,
+      transactions: billingRecords?.length ?? 0,
     })
   } catch (error) {
     logger.error('Error getting billing history:', { err: error })

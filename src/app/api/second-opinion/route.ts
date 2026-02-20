@@ -97,8 +97,8 @@ export async function GET(request: NextRequest) {
     // Get query params
     const { searchParams } = new URL(request.url)
     const status = searchParams.get('status')
-    const limit = Math.min(parseInt(searchParams.get('limit') || '20'), 50)
-    const offset = parseInt(searchParams.get('offset') || '0')
+    const limit = Math.min(parseInt(searchParams.get('limit') ?? '20'), 50)
+    const offset = parseInt(searchParams.get('offset') ?? '0')
     
     // Build query
     let query = supabase
@@ -120,7 +120,7 @@ export async function GET(request: NextRequest) {
     
     return NextResponse.json({
       requests: data,
-      total: count || 0,
+      total: count ?? 0,
       limit,
       offset,
     })

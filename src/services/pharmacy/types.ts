@@ -1,7 +1,7 @@
 /**
- * Pharmacy Integration Types
- * Shared type definitions for pharmacy services
- *
+ * Pharmacy Types and Constants
+ * Core type definitions and enums for pharmacy integration
+ * 
  * @module services/pharmacy/types
  */
 
@@ -270,6 +270,12 @@ export interface PharmacyError extends Error {
   pharmacyId?: PharmacyChain;
   retryable: boolean;
   statusCode?: number;
+}
+
+export interface StockCheckItem {
+  productId: string;
+  pharmacyId: PharmacyChain;
+  quantity: number;
 }
 
 export interface StockCheckResult {

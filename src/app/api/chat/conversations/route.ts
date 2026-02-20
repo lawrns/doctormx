@@ -135,7 +135,7 @@ export async function GET(request: Request) {
       .neq('sender_id', user.id)
 
     const unreadCountsByConversation = unreadCounts?.reduce((acc, msg) => {
-      acc[msg.conversation_id] = (acc[msg.conversation_id] || 0) + 1
+      acc[msg.conversation_id] = (acc[msg.conversation_id] ?? 0) + 1
       return acc
     }, {} as Record<string, number>) || {}
 
@@ -154,7 +154,7 @@ export async function GET(request: Request) {
       patient_photo_url: conv.patient?.photo_url ?? undefined,
       doctor_name: conv.doctor_user?.full_name ?? undefined,
       doctor_photo_url: conv.doctor_user?.photo_url ?? undefined,
-      unread_count: unreadCountsByConversation[conv.id] || 0,
+      unread_count: unreadCountsByConversation[conv.id] ?? 0,
     }))
 
     // Build pagination response

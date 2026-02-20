@@ -459,7 +459,7 @@ export function formatRequestType(requestType: ArcoRequestType): string {
  * @returns Spanish description
  */
 export function getRequestDescription(requestType: ArcoRequestType): string {
-  return ARCO_TYPE_DESCRIPTIONS[requestType] || ''
+  return ARCO_TYPE_DESCRIPTIONS[requestType] ?? ''
 }
 
 /**

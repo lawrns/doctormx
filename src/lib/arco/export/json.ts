@@ -116,8 +116,8 @@ export function getExportStats(jsonString: string): {
   const dataScope = metadata?.data_scope as string[] | undefined
 
   return {
-    totalRecords: (metadata?.total_records as number) || 0,
+    totalRecords: (metadata?.total_records as number) ?? 0,
     dataTypes: dataScope || [],
-    exportDate: (metadata?.exported_at as string) || '',
+    exportDate: (metadata?.exported_at as string) ?? '',
   }
 }

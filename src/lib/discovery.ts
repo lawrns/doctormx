@@ -190,7 +190,7 @@ async function fetchDoctors(filters?: DiscoveryFilters): Promise<Doctor[]> {
     }
 
     if (filters?.minRating !== undefined) {
-      filtered = filtered.filter(doctor => (doctor.rating_avg || 0) >= filters.minRating!)
+      filtered = filtered.filter(doctor => (doctor.rating_avg ?? 0) >= filters.minRating!)
     }
 
     // Filter by search query (name search)
@@ -220,11 +220,11 @@ async function fetchDoctors(filters?: DiscoveryFilters): Promise<Doctor[]> {
       filtered = filtered.sort((a, b) => {
         switch (filters.sortBy) {
           case 'rating':
-            return ((a.rating_avg || 0) - (b.rating_avg || 0)) * sortOrder
+            return ((a.rating_avg ?? 0) - (b.rating_avg ?? 0)) * sortOrder
           case 'price':
             return (a.price_cents - b.price_cents) * sortOrder
           case 'experience':
-            return ((a.years_experience || 0) - (b.years_experience || 0)) * sortOrder
+            return ((a.years_experience ?? 0) - (b.years_experience ?? 0)) * sortOrder
           default:
             return 0
         }
@@ -243,8 +243,8 @@ async function fetchDoctors(filters?: DiscoveryFilters): Promise<Doctor[]> {
       country: 'MX',
       price_cents: doctor.price_cents,
       currency: 'MXN',
-      rating_avg: doctor.rating_avg || 0,
-      rating_count: doctor.rating_count || 0,
+      rating_avg: doctor.rating_avg ?? 0,
+      rating_count: doctor.rating_count ?? 0,
       profile: doctor.profiles ? {
         id: doctor.profiles.id,
         full_name: doctor.profiles.full_name,
@@ -288,7 +288,7 @@ export async function getAvailableSpecialties() {
 // Bloque: Obtener perfil completo del doctor
 export async function getDoctorProfile(doctorId: string): Promise<DoctorProfile | null> {
   const cached = await cache.getDoctorProfile(doctorId)
-  if (cached) return cached as DoctorProfile
+  if (cached) return cached
 
   const profile = await fetchDoctorProfile(doctorId)
   if (profile) {
@@ -367,8 +367,8 @@ async function fetchDoctorProfile(doctorId: string): Promise<DoctorProfile | nul
       country: 'MX',
       price_cents: typedDoctor.price_cents,
       currency: 'MXN',
-      rating_avg: typedDoctor.rating_avg || 0,
-      rating_count: typedDoctor.rating_count || 0,
+      rating_avg: typedDoctor.rating_avg ?? 0,
+      rating_count: typedDoctor.rating_count ?? 0,
       profile: typedDoctor.profiles ? {
         id: typedDoctor.profiles.id,
         full_name: typedDoctor.profiles.full_name,

@@ -338,7 +338,7 @@ export async function getUserSecuritySummary(userId: string): Promise<{
 
     return {
       recentEvents: recentEvents || [],
-      failedLogins: failedLogins?.length || 0,
+      failedLogins: failedLogins?.length ?? 0,
       lastLogin: lastLogin?.created_at || null
     }
   } catch (err) {

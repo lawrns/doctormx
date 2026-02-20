@@ -45,12 +45,12 @@ function buildReferralMessage(
 
 Hola,
 
-Tu médico te ha referido a ${pharmacy?.name || 'una farmacia asociada'}.
+Tu médico te ha referido a ${pharmacy?.name ?? 'una farmacia asociada'}.
 
 📋 *Código de Referencia:* ${referralCode}
 💊 *Medicamentos:* ${(medications || []).join(', ')}
 
-📍 *Dirección:* ${pharmacy?.address || 'Consultar dirección en la aplicación'}
+📍 *Dirección:* ${pharmacy?.address ?? 'Consultar dirección en la aplicación'}
 
 📅 *Válido hasta:* ${format(new Date(expiresAt), 'dd MMMM yyyy', { locale: es })}
 

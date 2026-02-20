@@ -63,7 +63,7 @@ export default async function AdminVerificationPage() {
                   <div>
                     <p className="text-sm text-gray-600">dula profesional</p>
                     <p className="font-medium text-gray-900">
-                      {doctor.license_number || 'No proporcionada'}
+                      {doctor.license_number ?? 'No proporcionada'}
                     </p>
                   </div>
                   <div>

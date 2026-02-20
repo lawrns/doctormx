@@ -53,10 +53,9 @@ export async function POST(request: NextRequest) {
       // IDOR Protection: Verify ownership
       if (appointment.patient_id !== user.id) {
         // Log security event for IDOR attempt
-        const ipAddress = req.headers.get('x-forwarded-for') || 
-                         req.headers.get('x-real-ip') || 
-                         'unknown'
-        const userAgent = req.headers.get('user-agent') || 'unknown'
+        const ipAddress = (req.headers.get('x-forwarded-for') ?? 
+                         req.headers.get('x-real-ip')) ?? 'unknown'
+        const userAgent = req.headers.get('user-agent') ?? 'unknown'
         
         await logSecurityEvent({
           eventType: 'permission_denied',

@@ -86,8 +86,8 @@ export async function GET(
     // Parsear query params
     const { searchParams } = new URL(request.url)
     const queryData = {
-      include_history: searchParams.get('include_history') || 'false',
-      check_user_consent: searchParams.get('check_user_consent') || 'true',
+      include_history: searchParams.get('include_history') ?? 'false',
+      check_user_consent: searchParams.get('check_user_consent') ?? 'true',
     }
 
     const validationResult = VersionQuerySchema.safeParse(queryData)
@@ -137,7 +137,7 @@ export async function GET(
         has_consent: !!userConsent && userConsent.status === 'granted',
         consent_record_id: userConsent?.id || null,
         current_version_id: userConsent?.consent_version_id || null,
-        status: userConsent?.status || 'not_granted',
+        status: userConsent?.status ?? 'not_granted',
         granted_at: userConsent?.granted_at || null,
         needs_re_consent: needsReConsent,
         is_up_to_date: userConsent?.consent_version_id === currentVersion.id,

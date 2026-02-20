@@ -136,19 +136,18 @@ export async function GET(request: Request) {
       patient_id: apt.patient_id,
       start_ts: apt.start_ts,
       status: apt.status,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      price_cents: (apt as any).doctores?.price_cents,
-      currency: (apt as any).doctores?.currency,
+      price_cents: apt.doctores?.price_cents,
+      currency: apt.doctores?.currency,
       doctor: {
-        id: (apt as any).doctores?.id,
-        specialty: (apt as any).doctores?.specialty,
-        price_cents: (apt as any).doctores?.price_cents,
-        currency: (apt as any).doctores?.currency,
-        rating: (apt as any).doctores?.rating,
-        profile: (apt as any).doctores?.profiles ? {
-          id: (apt as any).doctores.profiles.id,
-          full_name: (apt as any).doctores.profiles.full_name || 'Desconocido',
-          photo_url: (apt as any).doctores.profiles.photo_url,
+        id: apt.doctores?.id,
+        specialty: apt.doctores?.specialty,
+        price_cents: apt.doctores?.price_cents,
+        currency: apt.doctores?.currency,
+        rating: apt.doctores?.rating,
+        profile: apt.doctores?.profiles ? {
+          id: apt.doctores.profiles.id,
+          full_name: apt.doctores.profiles.full_name ?? 'Desconocido',
+          photo_url: apt.doctores.profiles.photo_url,
         } : null,
       }
     }))

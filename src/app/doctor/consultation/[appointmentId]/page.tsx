@@ -68,7 +68,7 @@ export default function DoctorConsultationPage({ params }: DoctorConsultationPag
                 setAppointment({
                     ...apt,
                     patient: {
-                        full_name: apt.patient[0]?.full_name || 'Paciente',
+                        full_name: apt.patient[0]?.full_name ?? 'Paciente',
                         photo_url: apt.patient[0]?.photo_url || null,
                     },
                 })
@@ -89,8 +89,8 @@ export default function DoctorConsultationPage({ params }: DoctorConsultationPag
                     .eq('patient_id', apt.patient_id)
                     .single()
                 
-                if (profile) setPatientProfile(profile as PatientProfile)
-                if (history) setPatientHistory(history as PatientMedicalHistory)
+                if (profile) setPatientProfile(profile as unknown as PatientProfile)
+                if (history) setPatientHistory(history as unknown as PatientMedicalHistory)
             }
             setLoading(false)
         }
@@ -156,7 +156,7 @@ export default function DoctorConsultationPage({ params }: DoctorConsultationPag
 
         if (!response.ok) {
             const error = await response.json()
-            throw new Error(error.error || 'Error al generar nota SOAP')
+            throw new Error(error.error ?? 'Error al generar nota SOAP')
         }
 
         return response.json()
@@ -176,7 +176,7 @@ export default function DoctorConsultationPage({ params }: DoctorConsultationPag
 
         if (!response.ok) {
             const error = await response.json()
-            throw new Error(error.error || 'Error al aprobar nota SOAP')
+            throw new Error(error.error ?? 'Error al aprobar nota SOAP')
         }
 
         return response.json()
@@ -254,12 +254,12 @@ export default function DoctorConsultationPage({ params }: DoctorConsultationPag
                                             className="w-full h-full object-cover"
                                         />
                                     ) : (
-                                        (appointment.patient?.full_name?.charAt(0) || 'P').toUpperCase()
+                                        (appointment.patient?.full_name?.charAt(0) ?? 'P').toUpperCase()
                                     )}
                                 </div>
                                 <div>
                                     <h2 className="text-xl font-bold text-gray-900">
-                                        {appointment.patient?.full_name || 'Paciente'}
+                                        {appointment.patient?.full_name ?? 'Paciente'}
                                     </h2>
                                     <p className="text-gray-500">
                                         {patientProfile?.date_of_birth && (
@@ -270,7 +270,7 @@ export default function DoctorConsultationPage({ params }: DoctorConsultationPag
                                         )}
                                         {patientProfile?.gender === 'male' ? 'Masculino' :
                                          patientProfile?.gender === 'female' ? 'Femenino' :
-                                         patientProfile?.gender || 'No especificado'}
+                                         patientProfile?.gender ?? 'No especificado'}
                                     </p>
                                 </div>
                             </div>
@@ -381,14 +381,14 @@ export default function DoctorConsultationPage({ params }: DoctorConsultationPag
             <ClinicalCopilot
                 appointmentId={appointmentId}
                 patientId={appointment.patient_id}
-                patientName={appointment.patient?.full_name || 'Paciente'}
+                patientName={appointment.patient?.full_name ?? 'Paciente'}
                 patientAge={patientProfile?.date_of_birth ? calculateAge(patientProfile.date_of_birth) : undefined}
                 patientGender={patientProfile?.gender || undefined}
                 medicalHistory={patientHistory ? {
                     allergies: patientHistory.allergies,
                     chronicConditions: patientHistory.chronic_conditions,
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    currentMedications: patientHistory.current_medications as any,
+                    currentMedications: patientHistory.current_medications as Array<{ name: string; dosage: string; frequency: string }>,
                 } : undefined}
             />
 

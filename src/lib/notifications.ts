@@ -31,7 +31,7 @@ export function formatMexicanDateTime(dateString: string): string {
 }
 
 export function getVideoConsultationLink(appointmentId: string): string {
-  return `${process.env.NEXT_PUBLIC_APP_URL || 'https://doctory.com.mx'}/consultation/${appointmentId}`
+  return `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://doctory.com.mx'}/consultation/${appointmentId}`
 }
 
 export function getPriceDisplay(amountCents: number, currency: string): string {
@@ -143,12 +143,20 @@ export async function sendAppointmentConfirmation(
     return { success: false, error: 'Appointment not found' }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const apt = appointment as any
+  const apt = appointment as unknown as {
+    doctor?: Array<{
+      profile?: Array<{ full_name: string }> | { full_name: string }
+      specialty?: string
+    }> | {
+      profile?: Array<{ full_name: string }> | { full_name: string }
+      specialty?: string
+    }
+    start_ts: string
+  }
   const doctor = Array.isArray(apt.doctor) ? apt.doctor[0] : apt.doctor
   const doctorProfile = doctor ? (Array.isArray(doctor.profile) ? doctor.profile[0] : doctor.profile) : null
-  const doctorName = doctorProfile?.full_name || 'Doctor'
-  const specialty = doctor?.specialty || 'Especialidad'
+  const doctorName = doctorProfile?.full_name ?? 'Doctor'
+  const specialty = doctor?.specialty ?? 'Especialidad'
 
   const content = `
 <p style="margin: 0 0 20px 0; color: #1f2937; font-size: 16px; line-height: 1.5;">
@@ -227,11 +235,16 @@ export async function sendPaymentReceipt(
     return { success: false, error: 'Payment not found' }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const apt = appointment as any
+  const apt = appointment as {
+    doctor?: Array<{
+      profile?: Array<{ full_name: string }> | { full_name: string }
+    }> | {
+      profile?: Array<{ full_name: string }> | { full_name: string }
+    }
+  }
   const doctor = Array.isArray(apt.doctor) ? apt.doctor[0] : apt.doctor
   const doctorProfile = doctor ? (Array.isArray(doctor.profile) ? doctor.profile[0] : doctor.profile) : null
-  const doctorName = doctorProfile?.full_name || 'Doctor'
+  const doctorName = doctorProfile?.full_name ?? 'Doctor'
 
   const receiptNumber = `REC-${payment.id.slice(0, 8).toUpperCase()}`
   const paymentDate = formatMexicanDateTime(payment.created_at || new Date().toISOString())
@@ -309,11 +322,17 @@ export async function sendConsultationReminder(
     return { success: false, error: 'Appointment not found' }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const apt = appointment as any
+  const apt = appointment as unknown as {
+    doctor?: Array<{
+      profile?: Array<{ full_name: string }> | { full_name: string }
+    }> | {
+      profile?: Array<{ full_name: string }> | { full_name: string }
+    }
+    start_ts: string
+  }
   const doctor = Array.isArray(apt.doctor) ? apt.doctor[0] : apt.doctor
   const doctorProfile = doctor ? (Array.isArray(doctor.profile) ? doctor.profile[0] : doctor.profile) : null
-  const doctorName = doctorProfile?.full_name || 'Doctor'
+  const doctorName = doctorProfile?.full_name ?? 'Doctor'
 
   const videoLink = getVideoConsultationLink(appointmentId)
 
@@ -389,11 +408,16 @@ export async function sendFollowUp(
     return { success: false, error: 'Appointment not found' }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const apt = appointment as any
+  const apt = appointment as {
+    doctor?: Array<{
+      profile?: Array<{ full_name: string }> | { full_name: string }
+    }> | {
+      profile?: Array<{ full_name: string }> | { full_name: string }
+    }
+  }
   const doctor = Array.isArray(apt.doctor) ? apt.doctor[0] : apt.doctor
   const doctorProfile = doctor ? (Array.isArray(doctor.profile) ? doctor.profile[0] : doctor.profile) : null
-  const doctorName = doctorProfile?.full_name || 'Doctor'
+  const doctorName = doctorProfile?.full_name ?? 'Doctor'
 
   const content = `
 <p style="margin: 0 0 20px 0; color: #1f2937; font-size: 16px; line-height: 1.5;">
@@ -415,7 +439,7 @@ ${followUpNotes ? `
 <table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
   <tr>
     <td align="center" style="padding: 8px;">
-      <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://doctory.com.mx'}/doctores" style="display: inline-block; padding: 10px 20px; background-color: #0066cc; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 500; font-size: 14px;">Agendar Nueva Cita</a>
+      <a href="${process.env.NEXT_PUBLIC_APP_URL ?? 'https://doctory.com.mx'}/doctores" style="display: inline-block; padding: 10px 20px; background-color: #0066cc; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 500; font-size: 14px;">Agendar Nueva Cita</a>
     </td>
   </tr>
 </table>

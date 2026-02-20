@@ -126,10 +126,10 @@ export default function PharmacyEarningsWidget() {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-ink-primary">
-                      {referral.pharmacy_name || 'Farmacia'}
+                      {referral.pharmacy_name ?? 'Farmacia'}
                     </p>
                     <p className="text-xs text-ink-muted">
-                      {referral.medications_summary || 'Sin medicamentos'}
+                      {referral.medications_summary ?? 'Sin medicamentos'}
                     </p>
                   </div>
                 </div>

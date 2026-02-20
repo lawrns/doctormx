@@ -80,7 +80,7 @@ export default function SecondOpinionDetailPage() {
       
       if (!paymentResponse.ok) {
         const paymentData = await paymentResponse.json()
-        throw new Error(paymentData.error || 'Error creating payment')
+        throw new Error(paymentData.error ?? 'Error creating payment')
       }
       
       const { payment_intent_id } = await paymentResponse.json()
@@ -93,7 +93,7 @@ export default function SecondOpinionDetailPage() {
       
       if (!response.ok) {
         const data = await response.json()
-        throw new Error(data.error || 'Error al enviar')
+        throw new Error(data.error ?? 'Error al enviar')
       }
       
       // Refresh data
@@ -120,7 +120,7 @@ export default function SecondOpinionDetailPage() {
     return (
       <div className="flex min-h-screen items-center justify-center">
         <Card className="p-6 text-center">
-          <p className="text-red-600">{error || 'Solicitud no encontrada'}</p>
+          <p className="text-red-600">{error ?? 'Solicitud no encontrada'}</p>
           <Button className="mt-4" onClick={() => router.push('/app/second-opinion')}>
             Volver
           </Button>
@@ -215,7 +215,7 @@ export default function SecondOpinionDetailPage() {
                     <div>
                       <p className="font-medium text-gray-900">{doc.file_name}</p>
                       <p className="text-sm text-gray-500">
-                        {doc.type} • {((doc.size_bytes || 0) / 1024).toFixed(1)} KB
+                        {doc.type} • {((doc.size_bytes ?? 0) / 1024).toFixed(1)} KB
                       </p>
                     </div>
                   </li>

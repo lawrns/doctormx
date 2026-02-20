@@ -1,7 +1,24 @@
-// Sistema de Transacción de Pago - Se explica solo
-// Input: Cita, Método de pago
-// Proceso: Crear intención → Procesar pago → Confirmar cita → Registrar transacción
-// Output: Pago confirmado + Cita confirmada
+/**
+ * Sistema de Transacción de Pago - Se explica solo
+ * Input: Cita, Método de pago
+ * Proceso: Crear intención → Procesar pago → Confirmar cita → Registrar transacción
+ * Output: Pago confirmado + Cita confirmada
+ * 
+ * @module lib/payment
+ * @example
+ * ```typescript
+ * import { initializePayment, confirmSuccessfulPayment } from '@/lib/payment';
+ * 
+ * // Initialize payment
+ * const paymentIntent = await initializePayment({
+ *   appointmentId: 'apt-123',
+ *   userId: 'user-456'
+ * });
+ * 
+ * // Confirm after successful Stripe payment
+ * const result = await confirmSuccessfulPayment(paymentIntentId, appointmentId);
+ * ```
+ */
 
 import { createClient } from '@/lib/supabase/server'
 import { stripe } from './stripe'
@@ -9,19 +26,47 @@ import { sendPaymentReceipt } from './notifications'
 import { sendPaymentReceipt as sendWhatsAppReceipt, getPatientPhone, getDoctorName } from './whatsapp-notifications'
 import { logger } from '@/lib/observability/logger'
 
+/**
+ * Request parameters for initializing a payment
+ */
 export type PaymentRequest = {
+  /** Appointment ID to create payment for */
   appointmentId: string
+  /** User ID of the patient making the payment */
   userId: string
 }
 
+/**
+ * Result of payment initialization
+ */
 export type PaymentIntentResult = {
+  /** Stripe client secret for completing the payment */
   clientSecret: string
+  /** Stripe publishable key for the frontend */
   publishableKey: string
+  /** Payment amount in cents */
   amount: number
+  /** Currency code (e.g., 'MXN') */
   currency: string
 }
 
-// Sistema completo: crear intención de pago
+/**
+ * Initializes a payment for an appointment
+ * Creates a Stripe payment intent with Mexican payment methods support
+ * @param request - Payment request parameters
+ * @param request.appointmentId - Appointment ID to create payment for
+ * @param request.userId - User ID of the patient
+ * @returns Promise with payment intent result including client secret
+ * @throws {Error} If appointment not found, not authorized, or Stripe error
+ * @example
+ * const payment = await initializePayment({
+ *   appointmentId: 'apt-123',
+ *   userId: 'user-456'
+ * });
+ * 
+ * // Pass to Stripe Elements
+ * const elements = stripe.elements({ clientSecret: payment.clientSecret });
+ */
 export async function initializePayment(
   request: PaymentRequest
 ): Promise<PaymentIntentResult> {
@@ -79,7 +124,16 @@ export async function initializePayment(
   }
 }
 
-// Bloque: Obtener datos necesarios para el pago
+/**
+ * Retrieves appointment data needed for payment processing
+ * @param appointmentId - Appointment ID to fetch
+ * @param userId - User ID for authorization check
+ * @returns Promise with payment data including amount, currency, and doctor ID
+ * @throws {Error} If appointment not found or user not authorized
+ * @example
+ * const data = await getAppointmentPaymentData('apt-123', 'user-456');
+ * console.log(data.amount, data.currency);
+ */
 async function getAppointmentPaymentData(appointmentId: string, userId: string) {
   const supabase = await createClient()
 
@@ -102,18 +156,45 @@ async function getAppointmentPaymentData(appointmentId: string, userId: string) 
     throw new Error('Cita no encontrada o no autorizada')
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const apt = appointment as any
+  const apt = appointment as unknown as {
+    doctor_id: string
+    doctor?: {
+      price_cents: number
+      currency: string
+    } | {
+      price_cents: number
+      currency: string
+    }[] | undefined
+  }
   const doctor = Array.isArray(apt.doctor) ? apt.doctor[0] : apt.doctor
 
+  if (!doctor?.price_cents || !doctor?.currency) {
+    throw new Error('Doctor price or currency not configured')
+  }
+
   return {
-    amount: doctor?.price_cents,
-    currency: doctor?.currency,
+    amount: doctor.price_cents,
+    currency: doctor.currency,
     doctorId: apt.doctor_id,
   }
 }
 
-// Bloque: Registrar intento de pago
+/**
+ * Records a payment attempt in the database
+ * @param data - Payment attempt data
+ * @param data.appointmentId - Associated appointment ID
+ * @param data.providerRef - Stripe payment intent ID
+ * @param data.amount - Payment amount in cents
+ * @param data.currency - Currency code
+ * @returns Promise that resolves when record is created
+ * @example
+ * await recordPaymentAttempt({
+ *   appointmentId: 'apt-123',
+ *   providerRef: 'pi_xxx',
+ *   amount: 50000,
+ *   currency: 'MXN'
+ * });
+ */
 async function recordPaymentAttempt(data: {
   appointmentId: string
   providerRef: string
@@ -135,7 +216,19 @@ async function recordPaymentAttempt(data: {
   })
 }
 
-// Sistema completo: confirmar pago exitoso
+/**
+ * Confirms a successful payment and updates appointment status
+ * Verifies payment with Stripe, updates records, and sends receipts
+ * @param paymentIntentId - Stripe payment intent ID
+ * @param appointmentId - Appointment ID to confirm
+ * @returns Promise with success status and updated appointment
+ * @throws {Error} If payment verification fails or database error occurs
+ * @example
+ * const result = await confirmSuccessfulPayment('pi_xxx', 'apt-123');
+ * if (result.success) {
+ *   console.log('Payment confirmed, appointment:', result.appointment);
+ * }
+ */
 export async function confirmSuccessfulPayment(
   paymentIntentId: string,
   appointmentId: string
@@ -170,7 +263,14 @@ export async function confirmSuccessfulPayment(
   }
 }
 
-// Bloque: Actualizar estado del pago
+/**
+ * Updates the payment status in the database
+ * @param providerRef - Stripe payment intent ID
+ * @param status - New payment status
+ * @returns Promise that resolves when status is updated
+ * @example
+ * await updatePaymentStatus('pi_xxx', 'paid');
+ */
 async function updatePaymentStatus(providerRef: string, status: string) {
   const supabase = await createClient()
 
@@ -180,7 +280,15 @@ async function updatePaymentStatus(providerRef: string, status: string) {
     .eq('provider_ref', providerRef)
 }
 
-// Bloque: Confirmar cita (cambiar estado)
+/**
+ * Confirms an appointment by updating its status
+ * @param appointmentId - Appointment ID to confirm
+ * @returns Promise with the updated appointment
+ * @throws {Error} If appointment not found or update fails
+ * @example
+ * const appointment = await confirmAppointment('apt-123');
+ * console.log('Status:', appointment.status);
+ */
 async function confirmAppointment(appointmentId: string) {
   const supabase = await createClient()
 
@@ -201,6 +309,13 @@ async function confirmAppointment(appointmentId: string) {
  * Input: appointmentId, reason
  * Process: Cancel appointment → Release slot → Optionally refund
  * Output: Cancelled appointment
+ * @param appointmentId - Appointment ID that failed payment
+ * @param reason - Reason for the failure (default: 'Payment failed')
+ * @returns Promise with success status and cancelled appointment
+ * @throws {Error} If appointment not found or cancellation fails
+ * @example
+ * const result = await handlePaymentFailure('apt-123', 'Card declined');
+ * console.log('Appointment cancelled:', result.appointment);
  */
 export async function handlePaymentFailure(
   appointmentId: string,
@@ -271,6 +386,15 @@ export async function handlePaymentFailure(
  * Input: appointmentId, reason
  * Process: Create refund → Update payment status
  * Output: Refund record
+ * @param appointmentId - Appointment ID to refund
+ * @param reason - Reason for the refund (default: 'Patient requested')
+ * @returns Promise with success status and refund record
+ * @throws {Error} If no paid payment found or refund processing fails
+ * @example
+ * const result = await processRefund('apt-123', 'Doctor cancelled');
+ * if (result.success) {
+ *   console.log('Refund processed:', result.refund);
+ * }
  */
 export async function processRefund(
   appointmentId: string,
@@ -334,6 +458,14 @@ export async function processRefund(
   }
 }
 
+/**
+ * Sends email receipt for a payment
+ * @param patientId - Patient's unique identifier
+ * @param appointmentId - Appointment ID for the receipt
+ * @returns Promise that resolves when email is sent
+ * @example
+ * await sendReceiptEmail('pat-123', 'apt-456');
+ */
 async function sendReceiptEmail(patientId: string, appointmentId: string) {
   const supabase = await createClient()
 
@@ -351,10 +483,18 @@ async function sendReceiptEmail(patientId: string, appointmentId: string) {
   await sendPaymentReceipt(
     appointmentId,
     profile.email,
-    profile.full_name || 'Paciente'
+    profile.full_name ?? 'Paciente'
   )
 }
 
+/**
+ * Sends WhatsApp receipt for a payment
+ * @param patientId - Patient's unique identifier
+ * @param appointment - Appointment object with payment details
+ * @returns Promise that resolves when WhatsApp message is sent
+ * @example
+ * await sendReceiptWhatsApp('pat-123', appointment);
+ */
 async function sendReceiptWhatsApp(patientId: string, appointment: { id: string; doctor_id: string; start_ts: string; price_cents: number; currency: string }) {
   const supabase = await createClient()
 
@@ -382,13 +522,12 @@ async function sendReceiptWhatsApp(patientId: string, appointment: { id: string;
 
   await sendWhatsAppReceipt(
     phone,
-    profile?.full_name || 'Paciente',
+    profile?.full_name ?? 'Paciente',
     doctorName,
     dateStr,
     timeStr,
-    appointment.price_cents || 0,
-    appointment.currency || 'MXN',
-    `${process.env.NEXT_PUBLIC_APP_URL || 'https://doctory.mx'}/consultation/${appointment.id}`
+    appointment.price_cents ?? 0,
+    appointment.currency ?? 'MXN',
+    `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://doctory.mx'}/consultation/${appointment.id}`
   )
 }
-

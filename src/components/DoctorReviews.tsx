@@ -88,7 +88,7 @@ export function DoctorReviews({
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between gap-2 mb-1">
                   <h3 className="font-medium text-ink-primary">
-                    {review.patient?.full_name || 'Paciente anónimo'}
+                    {review.patient?.full_name ?? 'Paciente anónimo'}
                   </h3>
                   <span className="text-sm text-ink-muted whitespace-nowrap">
                     {formatDate(review.created_at)}

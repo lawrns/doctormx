@@ -1,7 +1,7 @@
 // Sistema de videollamadas - Simple usando Daily.co
 // Alternativa: Puedes usar Whereby, Jitsi, o Zoom API
 
-const DAILY_API_KEY = process.env.DAILY_API_KEY || ''
+const DAILY_API_KEY = process.env.DAILY_API_KEY ?? ''
 const DAILY_API_URL = 'https://api.daily.co/v1'
 
 // Helper: Crear sala de videollamada

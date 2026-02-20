@@ -78,7 +78,7 @@ export class DemographicCalculator extends BaseCalculator {
     if (demographics.smokingStatus) {
       const smokingAdjustment = this.calculateSmokingAdjustment(
         demographics.smokingStatus,
-        demographics.packYears || 0,
+        demographics.packYears ?? 0,
         condition
       );
       adjustment += smokingAdjustment.adjustment;
@@ -111,7 +111,7 @@ export class DemographicCalculator extends BaseCalculator {
     message?: string;
   } {
     const ageGroup = this.getAgeGroup(age);
-    const ageModifier = this.getAgeModifier(condition || '', ageGroup);
+    const ageModifier = this.getAgeModifier(condition ?? '', ageGroup);
     const adjustment = (ageModifier - 1) * CONFIDENCE_CALCULATION.AGE_MODIFIER_MULTIPLIER;
     
     let message: string | undefined;

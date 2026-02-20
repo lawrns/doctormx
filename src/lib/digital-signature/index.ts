@@ -246,14 +246,14 @@ export function isCertificateTypeAllowed(
  * Validate signature format against NOM-004 requirements
  */
 export function isValidSignatureFormat(format: string): boolean {
-  return NOM004_REQUIREMENTS.REQUIRED_FORMATS.includes(format as any)
+  return NOM004_REQUIREMENTS.REQUIRED_FORMATS.includes(format as 'CAdES-B' | 'CAdES-T')
 }
 
 /**
  * Check if signature algorithm is allowed
  */
 export function isAllowedAlgorithm(algorithm: string): boolean {
-  return NOM004_REQUIREMENTS.ALLOWED_ALGORITHMS.includes(algorithm as any)
+  return NOM004_REQUIREMENTS.ALLOWED_ALGORITHMS.includes(algorithm as 'RSA-SHA256' | 'RSA-SHA384' | 'RSA-SHA512' | 'ECDSA-SHA256' | 'ECDSA-SHA384' | 'ECDSA-SHA512')
 }
 
 /**

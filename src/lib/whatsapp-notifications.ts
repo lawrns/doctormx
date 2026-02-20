@@ -12,7 +12,7 @@ import { sendWhatsAppMessage, sendTemplateMessage } from './whatsapp-business-ap
 function getTwilioConfig() {
   const TWILIO_ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID
   const TWILIO_AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN
-  const TWILIO_WHATSAPP_NUMBER = process.env.TWILIO_WHATSAPP_NUMBER || 'whatsapp:+14155238886'
+  const TWILIO_WHATSAPP_NUMBER = process.env.TWILIO_WHATSAPP_NUMBER ?? 'whatsapp:+14155238886'
 
   if (!TWILIO_ACCOUNT_SID || !TWILIO_AUTH_TOKEN) {
     throw new Error('Missing required Twilio environment variables: TWILIO_ACCOUNT_SID and TWILIO_AUTH_TOKEN')
@@ -72,12 +72,12 @@ Hola${ctx.patientName ? ` ${ctx.patientName}` : ''},
 Tu cita con el Dr.${ctx.doctorName ? ` ${ctx.doctorName}` : ''} ha sido confirmada.
 
 📋 *Detalles:*
-• Especialidad: ${ctx.specialty || 'Medicina General'}
-• Fecha: ${ctx.appointmentDate || 'Por confirmar'}
-• Hora: ${ctx.appointmentTime || 'Por confirmar'}
-• Costo: ${ctx.price || 'Por confirmar'} ${ctx.currency || 'MXN'}
+• Especialidad: ${ctx.specialty ?? 'Medicina General'}
+• Fecha: ${ctx.appointmentDate ?? 'Por confirmar'}
+• Hora: ${ctx.appointmentTime ?? 'Por confirmar'}
+• Costo: ${ctx.price ?? 'Por confirmar'} ${ctx.currency ?? 'MXN'}
 
-🏥 Para acceder a tu consulta, entra a: ${ctx.bookingLink || 'https://doctory.mx/app'}
+🏥 Para acceder a tu consulta, entra a: ${ctx.bookingLink ?? 'https://doctory.mx/app'}
 
 ❓ ¿Necesitas ayuda? Responde a este mensaje.
 
@@ -88,13 +88,13 @@ Tu cita con el Dr.${ctx.doctorName ? ` ${ctx.doctorName}` : ''} ha sido confirma
 
 Hola${ctx.patientName ? ` ${ctx.patientName}` : ''},
 
-Hemos recibido tu pago por ${ctx.price || 'monto'} ${ctx.currency || 'MXN'}.
+Hemos recibido tu pago por ${ctx.price ?? 'monto'} ${ctx.currency ?? 'MXN'}.
 
 📋 *Detalles del pago:*
-• Cita con: Dr.${ctx.doctorName || 'tu médico'}
-• Fecha: ${ctx.appointmentDate || 'Por confirmar'}
-• Hora: ${ctx.appointmentTime || 'Por confirmar'}
-• Referencia: ${ctx.bookingLink?.slice(-8).toUpperCase() || 'N/A'}
+• Cita con: Dr.${ctx.doctorName ?? 'tu médico'}
+• Fecha: ${ctx.appointmentDate ?? 'Por confirmar'}
+• Hora: ${ctx.appointmentTime ?? 'Por confirmar'}
+• Referencia: ${ctx.bookingLink?.slice(-8).toUpperCase() ?? 'N/A'}
 
 Tu cita está confirmada. Te recordamos llegar 5 minutos antes.
 
@@ -105,12 +105,12 @@ Tu cita está confirmada. Te recordamos llegar 5 minutos antes.
 
 Hola${ctx.patientName ? ` ${ctx.patientName}` : ''},
 
-Tu consulta con el Dr.${ctx.doctorName || 'tu médico'} comienza en aproximadamente 1 hora.
+Tu consulta con el Dr.${ctx.doctorName ?? 'tu médico'} comienza en aproximadamente 1 hora.
 
 📅 ${ctx.appointmentDate} a las ${ctx.appointmentTime}
 
 🖥️ *Cómo acceder:*
- entra a ${ctx.bookingLink || 'https://doctory.mx/app'} y selecciona "Iniciar Consulta"
+ entra a ${ctx.bookingLink ?? 'https://doctory.mx/app'} y selecciona "Iniciar Consulta"
 
 💡 *Consejos para tu consulta:*
 • Encuentra un lugar privado y con buena conexión
@@ -157,7 +157,7 @@ Responde:
 • 👎 Sin mejoría
 • 👎 Peor
 
-*Recuerda agendar tu próxima cita si es necesario: ${ctx.bookingLink || 'doctory.mx/doctores'}*
+*Recuerda agendar tu próxima cita si es necesario: ${ctx.bookingLink ?? 'doctory.mx/doctores'}*
 
 — *Doctor.mx: Tu salud, simplificada*`
 
@@ -169,9 +169,9 @@ Hola${ctx.patientName ? ` ${ctx.patientName}` : ''},
 Tu receta de la consulta con el Dr.${ctx.doctorName ? ` ${ctx.doctorName}` : ''} está lista.
 
 📋 *Detalles:*
-• Fecha de emisión: ${ctx.appointmentDate || 'Hoy'}
+• Fecha de emisión: ${ctx.appointmentDate ?? 'Hoy'}
 • Válida por: 30 días
-• Descargar: ${ctx.prescriptionLink || 'https://doctory.mx/app/prescriptions'}
+• Descargar: ${ctx.prescriptionLink ?? 'https://doctory.mx/app/prescriptions'}
 
 🏥 *Farmacias participantes:*
 Tu receta puede redenarse en cualquier farmacia del país.
@@ -185,10 +185,10 @@ Hola${ctx.patientName ? ` ${ctx.patientName}` : ''},
 
 ${ctx.doctorName} ya está atendiendo consultas.
 
-📋 *Especialidad:* ${ctx.specialty || 'Medicina General'}
+📋 *Especialidad:* ${ctx.specialty ?? 'Medicina General'}
 
 📅 *Agenda ahora:*
-${ctx.bookingLink || 'https://doctory.mx/doctores'}
+${ctx.bookingLink ?? 'https://doctory.mx/doctores'}
 
 * Cupo limitado - Reserva tu espacio*
 
@@ -243,7 +243,7 @@ async function sendBusinessAPIWhatsApp(
   const { sendWhatsAppMessage } = await import('./whatsapp-business-api')
   const { success, messageId, error } = await sendWhatsAppMessage(to, body)
   if (!success) {
-    return { error: error || 'Unknown error' }
+    return { error: error ?? 'Unknown error' }
   }
   return { messageId }
 }
@@ -264,7 +264,7 @@ export async function sendWhatsAppNotification(
         phone_number: phone,
         template,
         status: 'failed',
-        error: businessResult.error || 'Business API failed',
+        error: businessResult.error ?? 'Business API failed',
         context: context as Record<string, unknown>,
       })
       return { success: false, error: 'Failed to send message' }

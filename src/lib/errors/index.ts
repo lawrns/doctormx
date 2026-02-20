@@ -7,6 +7,7 @@
  * - English developer messages
  * - Structured logging with context
  * - Emergency detection handling
+ * - Full i18n support via next-intl
  *
  * @example
  * ```typescript
@@ -20,11 +21,35 @@
  *   ['chest pain', 'shortness of breath']
  * );
  *
- * // Handle in API route
+ * // Handle in API route (legacy)
  * try {
  *   // ... code
  * } catch (error) {
  *   return handleError(error, { userId, route: '/api/ai/consult' });
+ * }
+ *
+ * // Handle in API route with i18n (recommended)
+ * try {
+ *   // ... code
+ * } catch (error) {
+ *   return handleErrorAsync(error, { userId, route: '/api/ai/consult', locale: 'es' });
+ * }
+ * ```
+ *
+ * @example
+ * ```tsx
+ * // In client components with i18n
+ * import { useErrorTranslations } from '@/lib/errors/client-handler';
+ * import { useTranslations } from 'next-intl';
+ *
+ * function MyComponent() {
+ *   const t = useTranslations('errors');
+ *   const { getErrorMessage, createToastError } = useErrorTranslations(t);
+ *   
+ *   const handleError = (error) => {
+ *     const { title, description } = createToastError(error);
+ *     toast.error(title, { description });
+ *   };
  * }
  * ```
  */
@@ -51,9 +76,12 @@ export {
 // Export error handler functions
 export {
   handleError,
+  handleErrorAsync,
   logError,
   withErrorHandling,
+  withErrorHandlingAsync,
   createRouteHandler,
+  createRouteHandlerAsync,
   handleClientError,
   createToastError,
   getErrorInfo,
@@ -69,13 +97,22 @@ export {
   PATIENT_MESSAGES,
   DEVELOPER_MESSAGES,
   getPatientMessage,
+  getPatientMessageAsync,
   getDeveloperMessage,
   isValidErrorCode,
   getEmergencyErrorCodes,
-  isEmergencyError
+  isEmergencyError,
+  getErrorTranslationKey,
 } from './messages';
 
 // Re-export types for convenience
 export type { AppError as AppErrorType } from './AppError';
 export type { ErrorContext } from './handler';
 
+// Client-specific exports (can be used in 'use client' components)
+// Import from '@/lib/errors/client-handler' for client-side code
+export {
+  handleClientError as handleClientErrorLegacy,
+  createToastError as createToastErrorLegacy,
+  getErrorInfo as getErrorInfoLegacy,
+} from './client-handler';

@@ -48,9 +48,9 @@ export default async function DoctorAppointmentsPage({
 
   if (!isPending) {
     const now = new Date()
-    const statusFilter = params.status || 'all'
-    const timeFilter = params.time || 'upcoming'
-    const searchFilter = params.search?.toLowerCase().trim() || ''
+    const statusFilter = params.status ?? 'all'
+    const timeFilter = params.time ?? 'upcoming'
+    const searchFilter = params.search?.toLowerCase().trim() ?? ''
 
     let query = supabase
       .from('appointments')
@@ -96,7 +96,7 @@ export default async function DoctorAppointmentsPage({
     if (appointmentsData) {
       let mapped = appointmentsData.map(apt => ({
         id: apt.id,
-        patient_name: (apt.patient as unknown as { full_name: string } | null)?.full_name || 'Paciente',
+        patient_name: (apt.patient as unknown as { full_name: string } | null)?.full_name ?? 'Paciente',
         start_ts: apt.start_ts,
         end_ts: apt.end_ts,
         status: apt.status,

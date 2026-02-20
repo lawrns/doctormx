@@ -73,7 +73,7 @@ export async function POST(request: NextRequest) {
       metadata: {
         doctor_id: user.id,
         target_tier: targetTier,
-        upgrade_from: existingSubscription?.plan_id || 'none',
+        upgrade_from: existingSubscription?.plan_id ?? 'none',
       },
       success_url: `${process.env.NEXT_PUBLIC_APP_URL}/doctor/subscription/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/doctor/subscription/cancel`,

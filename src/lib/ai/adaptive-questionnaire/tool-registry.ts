@@ -636,7 +636,7 @@ export class ToolRegistry {
     const { state, history } = context
     
     return {
-      chief_complaint: state.collected_symptoms[0]?.name || 'No especificado',
+      chief_complaint: state.collected_symptoms[0]?.name ?? 'No especificado',
       symptoms: state.collected_symptoms,
       urgency_level: state.urgency_level,
       red_flags: state.red_flags,

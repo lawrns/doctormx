@@ -29,10 +29,17 @@ const sizeClasses = {
  */
 export function Spinner({ size = 'md', className }: SpinnerProps) {
   return (
-    <Loader2
-      className={cn('animate-spin text-primary', sizeClasses[size], className)}
-      aria-hidden="true"
-    />
+    <span
+      role="status"
+      aria-label="Cargando"
+      className={cn('inline-flex items-center justify-center', className)}
+    >
+      <Loader2
+        className={cn('animate-spin text-primary', sizeClasses[size])}
+        aria-hidden="true"
+      />
+      <span className="sr-only">Cargando...</span>
+    </span>
   )
 }
 

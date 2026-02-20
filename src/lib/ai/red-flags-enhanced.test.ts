@@ -2,6 +2,7 @@
  * Tests for enhanced red flag detection with English emergency keywords
  */
 
+import { describe, expect, test } from 'vitest';
 import { detectRedFlagsEnhanced, RedFlagResult } from './red-flags-enhanced';
 
 describe('Enhanced Red Flag Detection - English Keywords', () => {

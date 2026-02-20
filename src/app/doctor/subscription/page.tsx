@@ -116,9 +116,9 @@ export default function SubscriptionPage() {
                 setUsage({
                     plan: sub?.tier,
                     usage: {
-                        whatsapp: { used: usageData.whatsapp_patients_used || 0, limit: 100, percentage: 0, remaining: 100 },
-                        aiCopilot: { used: usageData.ai_copilot_queries_used || 0, limit: 50, percentage: 0, remaining: 50 },
-                        imageAnalysis: { used: usageData.image_analysis_used || 0, limit: 20, percentage: 0, remaining: 20 },
+                        whatsapp: { used: usageData.whatsapp_patients_used ?? 0, limit: 100, percentage: 0, remaining: 100 },
+                        aiCopilot: { used: usageData.ai_copilot_queries_used ?? 0, limit: 50, percentage: 0, remaining: 50 },
+                        imageAnalysis: { used: usageData.image_analysis_used ?? 0, limit: 20, percentage: 0, remaining: 20 },
                     },
                 })
             }
@@ -154,7 +154,7 @@ export default function SubscriptionPage() {
             const data = await response.json()
 
             if (!response.ok) {
-                throw new Error(data.error || 'Failed to create subscription')
+                throw new Error(data.error ?? 'Failed to create subscription')
             }
 
             if (data.stripeClientSecret) {
@@ -326,23 +326,23 @@ export default function SubscriptionPage() {
                                 <div className="flex justify-between mb-2">
                                     <span className="text-sm font-medium text-gray-700">WhatsApp</span>
                                     <span className="text-sm text-gray-600">
-                                        {usage.usage?.whatsapp?.used || 0} / {
+                                        {usage.usage?.whatsapp?.used ?? 0} / {
                                             usage.usage?.whatsapp?.limit === -1 
                                                 ? '∞' 
-                                                : usage.usage?.whatsapp?.limit || 0
+                                                : usage.usage?.whatsapp?.limit ?? 0
                                         }
                                     </span>
                                 </div>
                                 <div className="w-full bg-gray-200 rounded-full h-2">
                                     <div 
                                         className={`h-2 rounded-full ${
-                                            (usage.usage?.whatsapp?.percentage || 0) > 90 
+                                            (usage.usage?.whatsapp?.percentage ?? 0) > 90 
                                                 ? 'bg-red-500' 
-                                                : (usage.usage?.whatsapp?.percentage || 0) > 70 
+                                                : (usage.usage?.whatsapp?.percentage ?? 0) > 70 
                                                     ? 'bg-yellow-500' 
                                                     : 'bg-green-500'
                                         }`}
-                                        style={{ width: `${Math.min(100, usage.usage?.whatsapp?.percentage || 0)}%` }}
+                                        style={{ width: `${Math.min(100, usage.usage?.whatsapp?.percentage ?? 0)}%` }}
                                     ></div>
                                 </div>
                             </div>
@@ -351,23 +351,23 @@ export default function SubscriptionPage() {
                                 <div className="flex justify-between mb-2">
                                     <span className="text-sm font-medium text-gray-700">Clinical Copilot</span>
                                     <span className="text-sm text-gray-600">
-                                        {usage.usage?.aiCopilot?.used || 0} / {
+                                        {usage.usage?.aiCopilot?.used ?? 0} / {
                                             usage.usage?.aiCopilot?.limit === -1 
                                                 ? '∞' 
-                                                : usage.usage?.aiCopilot?.limit || 0
+                                                : usage.usage?.aiCopilot?.limit ?? 0
                                         }
                                     </span>
                                 </div>
                                 <div className="w-full bg-gray-200 rounded-full h-2">
                                     <div 
                                         className={`h-2 rounded-full ${
-                                            (usage.usage?.aiCopilot?.percentage || 0) > 90 
+                                            (usage.usage?.aiCopilot?.percentage ?? 0) > 90 
                                                 ? 'bg-red-500' 
-                                                : (usage.usage?.aiCopilot?.percentage || 0) > 70 
+                                                : (usage.usage?.aiCopilot?.percentage ?? 0) > 70 
                                                     ? 'bg-yellow-500' 
                                                     : 'bg-green-500'
                                         }`}
-                                        style={{ width: `${Math.min(100, usage.usage?.aiCopilot?.percentage || 0)}%` }}
+                                        style={{ width: `${Math.min(100, usage.usage?.aiCopilot?.percentage ?? 0)}%` }}
                                     ></div>
                                 </div>
                             </div>
@@ -376,23 +376,23 @@ export default function SubscriptionPage() {
                                 <div className="flex justify-between mb-2">
                                     <span className="text-sm font-medium text-gray-700">Análisis de Imágenes</span>
                                     <span className="text-sm text-gray-600">
-                                        {usage.usage?.imageAnalysis?.used || 0} / {
+                                        {usage.usage?.imageAnalysis?.used ?? 0} / {
                                             usage.usage?.imageAnalysis?.limit === -1 
                                                 ? '∞' 
-                                                : usage.usage?.imageAnalysis?.limit || 0
+                                                : usage.usage?.imageAnalysis?.limit ?? 0
                                         }
                                     </span>
                                 </div>
                                 <div className="w-full bg-gray-200 rounded-full h-2">
                                     <div 
                                         className={`h-2 rounded-full ${
-                                            (usage.usage?.imageAnalysis?.percentage || 0) > 90 
+                                            (usage.usage?.imageAnalysis?.percentage ?? 0) > 90 
                                                 ? 'bg-red-500' 
-                                                : (usage.usage?.imageAnalysis?.percentage || 0) > 70 
+                                                : (usage.usage?.imageAnalysis?.percentage ?? 0) > 70 
                                                     ? 'bg-yellow-500' 
                                                     : 'bg-green-500'
                                         }`}
-                                        style={{ width: `${Math.min(100, usage.usage?.imageAnalysis?.percentage || 0)}%` }}
+                                        style={{ width: `${Math.min(100, usage.usage?.imageAnalysis?.percentage ?? 0)}%` }}
                                     ></div>
                                 </div>
                             </div>

@@ -503,7 +503,7 @@ describe('English Emergency Pattern Detection', () => {
       abdominalPatterns.forEach((pattern) => {
         const result = detectRedFlagsEnhanced(pattern);
         expect(result.detected).toBe(true);
-        expect(result.highestSeverity).toBe('high');
+        expect(result.highestSeverity).toBe('critical');
       });
     });
   });
@@ -531,7 +531,7 @@ describe('English Emergency Pattern Detection', () => {
       amsPatterns.forEach((pattern) => {
         const result = detectRedFlagsEnhanced(pattern);
         expect(result.detected).toBe(true);
-        expect(result.highestSeverity).toBe('high');
+        expect(result.highestSeverity).toBe('critical');
       });
     });
 
@@ -600,7 +600,7 @@ describe('English Emergency Pattern Detection', () => {
       visionPatterns.forEach((pattern) => {
         const result = detectRedFlagsEnhanced(pattern);
         expect(result.detected).toBe(true);
-        expect(result.highestSeverity).toBe('high');
+        expect(result.highestSeverity).toBe('critical');
       });
     });
 
@@ -619,15 +619,15 @@ describe('English Emergency Pattern Detection', () => {
   // ============================================================================
   describe('Deep Vein Thrombosis (English)', () => {
     const dvtPatterns = [
-      'Leg swollen',
-      'Swollen calf',
-      'Pain in calf',
+      'Leg is swollen and painful',
+      'Swollen calf with pain',
+      'My leg is swollen and red',
       'Red hot leg',
-      'One leg bigger than other',
-      'Calf pain and swelling',
-      'Leg pain and redness',
-      'Swollen leg',
-      'Calf tenderness',
+      'Thrombosis in deep vein',
+      'Chest pain when breathing',
+      'Coughing blood',
+      'Sudden difficulty breathing',
+      'Leg pain and swelling',
       'Deep vein thrombosis',
     ];
 

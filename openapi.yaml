@@ -1,0 +1,5359 @@
+openapi: 3.0.3
+info:
+  title: Doctor.mx API
+  description: |
+    Doctor.mx - Plataforma integral de telemedicina para México.
+    
+    Esta API proporciona acceso a todas las funcionalidades de la plataforma Doctor.mx,
+    incluyendo consultas médicas virtuales, gestión de citas, recetas digitales,
+    análisis de IA, consentimientos digitales, y más.
+    
+    ## Autenticación
+    La API utiliza Supabase Auth para la autenticación. Incluye el token de sesión
+    en el header `Authorization: Bearer <token>`.
+    
+    ## Roles
+    - **patient**: Pacientes que buscan atención médica
+    - **doctor**: Médicos que brindan consultas
+    - **admin**: Administradores del sistema
+    
+    ## Rate Limiting
+    Las solicitudes están limitadas por IP y usuario autenticado.
+    Headers de respuesta:
+    - `X-RateLimit-Limit`: Límite de solicitudes
+    - `X-RateLimit-Remaining`: Solicitudes restantes
+    - `X-RateLimit-Reset`: Tiempo de reinicio
+  version: 1.0.0
+  contact:
+    name: Doctor.mx Support
+    email: soporte@doctor.mx
+  license:
+    name: Propietario
+    url: https://doctor.mx/terms
+
+servers:
+  - url: https://doctor.mx
+    description: Producción
+  - url: https://staging.doctor.mx
+    description: Staging
+  - url: http://localhost:3000
+    description: Desarrollo local
+
+security:
+  - bearerAuth: []
+  - cookieAuth: []
+
+tags:
+  - name: Health
+    description: Health check y monitoreo
+  - name: Authentication
+    description: Autenticación y gestión de sesiones
+  - name: Doctores
+    description: Gestión de médicos y directorio
+  - name: Appointments
+    description: Citas médicas y agendamiento
+  - name: Patients
+    description: Gestión de pacientes y perfiles
+  - name: AI
+    description: Servicios de inteligencia artificial
+  - name: Consultation
+    description: Consultas médicas virtuales
+  - name: Prescriptions
+    description: Recetas médicas digitales
+  - name: Chat
+    description: Mensajería entre pacientes y doctores
+  - name: Payments
+    description: Pagos y facturación
+  - name: Subscriptions
+    description: Suscripciones y planes
+  - name: Premium
+    description: Funcionalidades premium
+  - name: ARCO
+    description: Derechos ARCO (Acceso, Rectificación, Cancelación, Oposición)
+  - name: Consent
+    description: Gestión de consentimientos
+  - name: Analytics
+    description: Análisis y métricas
+  - name: Admin
+    description: Funciones administrativas
+  - name: Pharmacy
+    description: Integración con farmacias
+  - name: Reviews
+    description: Reseñas y calificaciones
+  - name: Second Opinion
+    description: Segundas opiniones médicas
+  - name: Referrals
+    description: Referencias médicas entre doctores
+  - name: Followups
+    description: Seguimientos post-consulta
+  - name: SOAP Notes
+    description: Notas médicas en formato SOAP
+  - name: Digital Signature
+    description: Firmas digitales de documentos
+  - name: Questionnaire
+    description: Cuestionarios médicos adaptativos
+  - name: Triage
+    description: Evaluación de urgencia
+  - name: Upload
+    description: Subida de archivos
+  - name: Cache
+    description: Gestión de caché
+  - name: Webhooks
+    description: Webhooks para integraciones externas
+  - name: Notifications
+    description: Notificaciones por email
+  - name: Anonymous
+    description: Endpoints para usuarios no autenticados
+
+paths:
+  # ==================== HEALTH ====================
+  /api/health:
+    get:
+      summary: Health check
+      description: Verifica el estado de todos los servicios críticos y dependencias
+      tags:
+        - Health
+      security: []
+      responses:
+        '200':
+          description: Sistema saludable o degradado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+        '503':
+          description: Sistema no saludable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+    options:
+      summary: CORS preflight
+      description: Maneja solicitudes preflight CORS
+      tags:
+        - Health
+      security: []
+      responses:
+        '204':
+          description: No Content
+
+  # ==================== DOCTORES ====================
+  /api/doctores:
+    get:
+      summary: Listar doctores
+      description: Obtiene listado paginado de doctores aprobados con filtros
+      tags:
+        - Doctores
+      security: []
+      parameters:
+        - name: cursor
+          in: query
+          description: Cursor de paginación
+          schema:
+            type: string
+        - name: limit
+          in: query
+          description: Número de resultados (máx 100)
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+        - name: direction
+          in: query
+          description: Dirección de paginación
+          schema:
+            type: string
+            enum: [forward, backward]
+            default: forward
+        - name: specialty
+          in: query
+          description: Filtrar por especialidad (slug)
+          schema:
+            type: string
+        - name: city
+          in: query
+          description: Filtrar por ciudad
+          schema:
+            type: string
+        - name: search
+          in: query
+          description: Buscar por nombre de doctor
+          schema:
+            type: string
+        - name: sort
+          in: query
+          description: Ordenar resultados
+          schema:
+            type: string
+            enum: [rating, price, experience, created]
+            default: rating
+      responses:
+        '200':
+          description: Lista de doctores
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedDoctorResponse'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+  /api/doctores/{id}:
+    get:
+      summary: Obtener doctor por ID
+      description: Obtiene información detallada de un doctor específico
+      tags:
+        - Doctores
+      security: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID del doctor
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Información del doctor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DoctorDetail'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /api/doctores/{id}/available-dates:
+    get:
+      summary: Fechas disponibles
+      description: Obtiene las fechas disponibles para agendar con un doctor
+      tags:
+        - Doctores
+      security: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Fechas disponibles
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  dates:
+                    type: array
+                    items:
+                      type: string
+                      format: date
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /api/doctores/{id}/slots:
+    get:
+      summary: Horarios disponibles
+      description: Obtiene los horarios disponibles para una fecha específica
+      tags:
+        - Doctores
+      security: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: date
+          in: query
+          required: true
+          description: Fecha en formato YYYY-MM-DD
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Horarios disponibles
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  slots:
+                    type: array
+                    items:
+                      type: string
+                      pattern: '^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /api/doctor/availability:
+    post:
+      summary: Configurar disponibilidad
+      description: Doctor configura su horario de disponibilidad
+      tags:
+        - Doctores
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                enabled_0:
+                  type: string
+                  description: Domingo habilitado ("on" o ausente)
+                start_0:
+                  type: string
+                  pattern: '^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$'
+                end_0:
+                  type: string
+                  pattern: '^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$'
+                enabled_1:
+                  type: string
+                start_1:
+                  type: string
+                end_1:
+                  type: string
+                enabled_2:
+                  type: string
+                start_2:
+                  type: string
+                end_2:
+                  type: string
+                enabled_3:
+                  type: string
+                start_3:
+                  type: string
+                end_3:
+                  type: string
+                enabled_4:
+                  type: string
+                start_4:
+                  type: string
+                end_4:
+                  type: string
+                enabled_5:
+                  type: string
+                start_5:
+                  type: string
+                end_5:
+                  type: string
+                enabled_6:
+                  type: string
+                start_6:
+                  type: string
+                end_6:
+                  type: string
+      responses:
+        '302':
+          description: Redirección exitosa
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+  /api/doctor/onboarding:
+    post:
+      summary: Onboarding de doctor
+      description: Completa el proceso de registro de un nuevo doctor
+      tags:
+        - Doctores
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DoctorOnboardingInput'
+      responses:
+        '200':
+          description: Onboarding completado
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/doctor/verify-cedula:
+    post:
+      summary: Verificar cédula profesional
+      description: Verifica la cédula profesional de un médico
+      tags:
+        - Doctores
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cedulaNumber:
+                  type: string
+                specialty:
+                  type: string
+      responses:
+        '200':
+          description: Verificación exitosa
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  verified:
+                    type: boolean
+                  professionalData:
+                    type: object
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/doctor/badges:
+    get:
+      summary: Obtener insignias
+      description: Obtiene las insignias del doctor
+      tags:
+        - Doctores
+      responses:
+        '200':
+          description: Lista de insignias
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DoctorBadge'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/doctor/analytics/ai-referrals:
+    get:
+      summary: Analytics de referencias IA
+      description: Obtiene estadísticas de referencias generadas por IA
+      tags:
+        - Doctores
+        - Analytics
+      responses:
+        '200':
+          description: Estadísticas de referencias
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AIReferralAnalytics'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/directory/profiles/{id}:
+    get:
+      summary: Perfil público
+      description: Obtiene el perfil público de un doctor para el directorio
+      tags:
+        - Doctores
+      security: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Perfil público
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PublicDoctorProfile'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /api/directory/recommended:
+    get:
+      summary: Doctores recomendados
+      description: Obtiene doctores recomendados basados en IA
+      tags:
+        - Doctores
+      security: []
+      parameters:
+        - name: symptoms
+          in: query
+          description: Síntomas para matching
+          schema:
+            type: string
+        - name: specialty
+          in: query
+          description: Especialidad preferida
+          schema:
+            type: string
+        - name: location
+          in: query
+          description: Ubicación del paciente
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 5
+            maximum: 20
+      responses:
+        '200':
+          description: Doctores recomendados
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  doctors:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/RecommendedDoctor'
+                  matchedBy:
+                    type: string
+                    enum: [symptoms, specialty, location, rating]
+
+  /api/directory/claim:
+    post:
+      summary: Reclamar perfil
+      description: Doctor reclama su perfil en el directorio
+      tags:
+        - Doctores
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cedulaNumber:
+                  type: string
+                fullName:
+                  type: string
+                email:
+                  type: string
+                  format: email
+      responses:
+        '201':
+          description: Solicitud de reclamo creada
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+  /api/directory/claim/{id}/verify:
+    post:
+      summary: Verificar reclamo
+      description: Verifica el código de reclamo de perfil
+      tags:
+        - Doctores
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                verificationCode:
+                  type: string
+      responses:
+        '200':
+          description: Verificación exitosa
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+
+  # ==================== APPOINTMENTS ====================
+  /api/appointments:
+    get:
+      summary: Listar citas
+      description: Obtiene las citas del usuario autenticado
+      tags:
+        - Appointments
+      parameters:
+        - name: cursor
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+        - name: direction
+          in: query
+          schema:
+            type: string
+            enum: [forward, backward]
+            default: forward
+        - name: status
+          in: query
+          description: Filtrar por estado
+          schema:
+            type: string
+            enum: [all, upcoming, past, pending_payment, confirmed, completed, cancelled, refunded]
+      responses:
+        '200':
+          description: Lista de citas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAppointmentResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      summary: Crear cita
+      description: Agenda una nueva cita médica
+      tags:
+        - Appointments
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - doctorId
+                - date
+                - time
+              properties:
+                doctorId:
+                  type: string
+                  format: uuid
+                date:
+                  type: string
+                  format: date
+                time:
+                  type: string
+                  pattern: '^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$'
+      responses:
+        '200':
+          description: Cita creada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  appointmentId:
+                    type: string
+                    format: uuid
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/appointments/{id}/cancel:
+    post:
+      summary: Cancelar cita
+      description: Cancela una cita existente
+      tags:
+        - Appointments
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reason:
+                  type: string
+      responses:
+        '200':
+          description: Cita cancelada
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /api/appointments/{id}/video:
+    get:
+      summary: Token de video
+      description: Obtiene token para sala de video de la cita
+      tags:
+        - Appointments
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Token de video
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                  roomUrl:
+                    type: string
+                  expiresAt:
+                    type: string
+                    format: date-time
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  # ==================== PATIENTS ====================
+  /api/patients:
+    get:
+      summary: Listar pacientes
+      description: Obtiene lista de pacientes (solo doctores)
+      tags:
+        - Patients
+      responses:
+        '200':
+          description: Lista de pacientes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Patient'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  /api/patient/profile:
+    get:
+      summary: Perfil del paciente
+      description: Obtiene el perfil del paciente autenticado
+      tags:
+        - Patients
+      responses:
+        '200':
+          description: Perfil del paciente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  profile:
+                    $ref: '#/components/schemas/PatientProfile'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    put:
+      summary: Actualizar perfil
+      description: Actualiza el perfil del paciente autenticado
+      tags:
+        - Patients
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateProfileData'
+      responses:
+        '200':
+          description: Perfil actualizado
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/patient/appointments:
+    get:
+      summary: Citas del paciente
+      description: Obtiene las citas del paciente autenticado
+      tags:
+        - Patients
+      responses:
+        '200':
+          description: Lista de citas
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Appointment'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/patient/medical-history:
+    get:
+      summary: Historial médico
+      description: Obtiene el historial médico del paciente
+      tags:
+        - Patients
+      responses:
+        '200':
+          description: Historial médico
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MedicalHistory'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  # ==================== AI SERVICES ====================
+  /api/ai/consult:
+    post:
+      summary: Consulta con IA
+      description: Inicia o continúa una consulta médica con IA
+      tags:
+        - AI
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - messages
+              properties:
+                messages:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      role:
+                        type: string
+                        enum: [user, assistant, system]
+                      content:
+                        type: string
+                patientId:
+                  type: string
+                  format: uuid
+      responses:
+        '200':
+          description: Respuesta de la IA
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AIConsultResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimit'
+
+  /api/ai/transcription:
+    post:
+      summary: Transcribir audio
+      description: Transcribe audio de consulta usando Whisper
+      tags:
+        - AI
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - appointmentId
+                - audio
+              properties:
+                appointmentId:
+                  type: string
+                  format: uuid
+                audio:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Transcripción completada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TranscriptionResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  /api/ai/vision/analyze:
+    post:
+      summary: Analizar imagen médica
+      description: Analiza imágenes médicas usando IA
+      tags:
+        - AI
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - file
+                - imageType
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: Imagen (máx 5MB, jpg/png/webp)
+                imageType:
+                  type: string
+                  enum: [skin, xray, lab_result, wound, eye, other]
+                patientNotes:
+                  type: string
+      responses:
+        '200':
+          description: Análisis completado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VisionAnalysisResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  /api/ai/vision/result/{id}:
+    get:
+      summary: Resultado de análisis
+      description: Obtiene el resultado de un análisis de imagen
+      tags:
+        - AI
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Resultado del análisis
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VisionAnalysisResult'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /api/ai/preconsulta:
+    post:
+      summary: Pre-consulta IA
+      description: Inicia una pre-consulta con IA para triage inicial
+      tags:
+        - AI
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                symptoms:
+                  type: string
+                patientInfo:
+                  type: object
+      responses:
+        '200':
+          description: Pre-consulta iniciada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  recommendations:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/PreConsultaDoctor'
+                  triage:
+                    type: object
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+  /api/ai/followup:
+    post:
+      summary: Generar seguimiento
+      description: Genera mensajes de seguimiento post-consulta
+      tags:
+        - AI
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                consultationId:
+                  type: string
+                  format: uuid
+                followUpType:
+                  type: string
+                  enum: [24h, 7d, 30d]
+      responses:
+        '200':
+          description: Seguimiento generado
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/ai/referrals/from-consultation:
+    post:
+      summary: Referencia desde consulta
+      description: Genera referencia médica desde una consulta
+      tags:
+        - AI
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                consultationId:
+                  type: string
+                  format: uuid
+      responses:
+        '200':
+          description: Referencia generada
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/ai/referrals/analytics:
+    get:
+      summary: Analytics de referencias
+      description: Obtiene estadísticas de referencias de IA
+      tags:
+        - AI
+        - Analytics
+      responses:
+        '200':
+          description: Estadísticas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AIReferralAnalytics'
+
+  /api/ai/copilot/suggestions:
+    post:
+      summary: Sugerencias del copiloto
+      description: Obtiene sugerencias del copiloto clínico
+      tags:
+        - AI
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                context:
+                  type: string
+                patientData:
+                  type: object
+      responses:
+        '200':
+          description: Sugerencias generadas
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  suggestions:
+                    type: array
+                    items:
+                      type: string
+
+  /api/ai/copilot/diagnosis:
+    post:
+      summary: Soporte diagnóstico
+      description: Obtiene soporte diagnóstico del copiloto
+      tags:
+        - AI
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                symptoms:
+                  type: array
+                  items:
+                    type: string
+                history:
+                  type: string
+      responses:
+        '200':
+          description: Diagnósticos sugeridos
+
+  /api/ai/copilot/summary:
+    post:
+      summary: Resumir consulta
+      description: Genera resumen de consulta médica
+      tags:
+        - AI
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                consultationId:
+                  type: string
+                  format: uuid
+      responses:
+        '200':
+          description: Resumen generado
+
+  /api/ai/structure-soap:
+    post:
+      summary: Estructurar SOAP
+      description: Convierte notas en formato SOAP
+      tags:
+        - AI
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                notes:
+                  type: string
+      responses:
+        '200':
+          description: Nota SOAP estructurada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SOAPNote'
+
+  /api/ai/quota:
+    get:
+      summary: Cuota de IA
+      description: Obtiene el uso actual de cuota de IA
+      tags:
+        - AI
+      responses:
+        '200':
+          description: Cuota disponible
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  used:
+                    type: integer
+                  limit:
+                    type: integer
+                  remaining:
+                    type: integer
+                  resetDate:
+                    type: string
+                    format: date-time
+
+  /api/ai/questionnaire:
+    post:
+      summary: Generar cuestionario
+      description: Genera cuestionario médico basado en síntomas
+      tags:
+        - AI
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                symptoms:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Cuestionario generado
+
+  # ==================== CONSULTATION NOTES ====================
+  /api/consultation-notes:
+    post:
+      summary: Crear nota de consulta
+      description: Crea una nota médica de consulta
+      tags:
+        - Consultation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                appointmentId:
+                  type: string
+                  format: uuid
+                notes:
+                  type: string
+      responses:
+        '201':
+          description: Nota creada
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+
+  # ==================== SOAP NOTES ====================
+  /api/soap-notes/generate:
+    post:
+      summary: Generar nota SOAP
+      description: Genera nota SOAP con IA desde transcripción
+      tags:
+        - SOAP Notes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                transcriptId:
+                  type: string
+                  format: uuid
+      responses:
+        '200':
+          description: Nota SOAP generada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SOAPNote'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/soap-notes/from-consultation:
+    post:
+      summary: SOAP desde consulta
+      description: Genera nota SOAP desde datos de consulta
+      tags:
+        - SOAP Notes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                consultationId:
+                  type: string
+                  format: uuid
+      responses:
+        '200':
+          description: Nota generada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SOAPNote'
+
+  /api/soap-notes/{id}/approve:
+    post:
+      summary: Aprobar nota SOAP
+      description: Doctor aprueba nota SOAP generada
+      tags:
+        - SOAP Notes
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                approved:
+                  type: boolean
+                modifications:
+                  type: object
+      responses:
+        '200':
+          description: Nota aprobada
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /api/soap/consult:
+    post:
+      summary: Consulta SOAP
+      description: Crea consulta con formato SOAP
+      tags:
+        - SOAP Notes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SOAPNoteInput'
+      responses:
+        '201':
+          description: Consulta creada
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/soap/consult/{id}:
+    get:
+      summary: Obtener consulta SOAP
+      description: Obtiene una consulta en formato SOAP
+      tags:
+        - SOAP Notes
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Consulta SOAP
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SOAPNote'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /api/soap/stream:
+    get:
+      summary: Stream SOAP
+      description: Streaming de notas SOAP en tiempo real
+      tags:
+        - SOAP Notes
+      responses:
+        '200':
+          description: Stream de eventos
+
+  # ==================== PRESCRIPTIONS ====================
+  /api/prescriptions:
+    post:
+      summary: Crear receta
+      description: Crea o actualiza una receta médica
+      tags:
+        - Prescriptions
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - appointmentId
+                - diagnosis
+                - medications
+              properties:
+                appointmentId:
+                  type: string
+                  format: uuid
+                diagnosis:
+                  type: string
+                medications:
+                  type: string
+                instructions:
+                  type: string
+      responses:
+        '302':
+          description: Redirección exitosa
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/prescriptions/preview:
+    post:
+      summary: Previsualizar receta
+      description: Genera previsualización de receta sin guardar
+      tags:
+        - Prescriptions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                diagnosis:
+                  type: string
+                medications:
+                  type: string
+                instructions:
+                  type: string
+      responses:
+        '200':
+          description: Previsualización generada
+
+  /api/prescriptions/{id}/pdf:
+    get:
+      summary: Descargar PDF
+      description: Descarga la receta en formato PDF
+      tags:
+        - Prescriptions
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: PDF de receta
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /api/prescriptions/{id}/send:
+    post:
+      summary: Enviar receta
+      description: Envía receta por email o WhatsApp
+      tags:
+        - Prescriptions
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                method:
+                  type: string
+                  enum: [email, whatsapp]
+                destination:
+                  type: string
+      responses:
+        '200':
+          description: Receta enviada
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+  /api/prescriptions/send:
+    post:
+      summary: Enviar múltiples
+      description: Envía múltiples recetas
+      tags:
+        - Prescriptions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                prescriptionIds:
+                  type: array
+                  items:
+                    type: string
+                    format: uuid
+      responses:
+        '200':
+          description: Recetas enviadas
+
+  # ==================== CHAT ====================
+  /api/chat/conversations:
+    get:
+      summary: Listar conversaciones
+      description: Obtiene las conversaciones del usuario
+      tags:
+        - Chat
+      parameters:
+        - name: cursor
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+      responses:
+        '200':
+          description: Lista de conversaciones
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedConversationResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      summary: Crear conversación
+      description: Crea una nueva conversación
+      tags:
+        - Chat
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - patientId
+                - doctorId
+              properties:
+                patientId:
+                  type: string
+                  format: uuid
+                doctorId:
+                  type: string
+                  format: uuid
+                appointmentId:
+                  type: string
+                  format: uuid
+      responses:
+        '200':
+          description: Conversación creada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  conversation:
+                    $ref: '#/components/schemas/Conversation'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/chat/conversations/{id}:
+    get:
+      summary: Obtener conversación
+      description: Obtiene detalles de una conversación
+      tags:
+        - Chat
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Detalles de conversación
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Conversation'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /api/chat/messages:
+    post:
+      summary: Enviar mensaje
+      description: Envía un mensaje en una conversación
+      tags:
+        - Chat
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - conversationId
+                - content
+              properties:
+                conversationId:
+                  type: string
+                  format: uuid
+                content:
+                  type: string
+                attachments:
+                  type: array
+                  items:
+                    type: object
+      responses:
+        '200':
+          description: Mensaje enviado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Message'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/chat/messages/{id}/read:
+    post:
+      summary: Marcar como leído
+      description: Marca un mensaje como leído
+      tags:
+        - Chat
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Mensaje marcado como leído
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  # ==================== PAYMENTS ====================
+  /api/create-payment-intent:
+    post:
+      summary: Crear intento de pago
+      description: Crea un PaymentIntent de Stripe
+      tags:
+        - Payments
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - appointmentId
+              properties:
+                appointmentId:
+                  type: string
+                  format: uuid
+      responses:
+        '200':
+          description: PaymentIntent creado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  clientSecret:
+                    type: string
+                  amount:
+                    type: integer
+                  currency:
+                    type: string
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /api/confirm-payment:
+    post:
+      summary: Confirmar pago
+      description: Confirma un pago completado
+      tags:
+        - Payments
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                paymentIntentId:
+                  type: string
+                appointmentId:
+                  type: string
+                  format: uuid
+      responses:
+        '200':
+          description: Pago confirmado
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  # ==================== SUBSCRIPTIONS ====================
+  /api/subscriptions:
+    get:
+      summary: Estado de suscripción
+      description: Obtiene el estado de suscripción actual
+      tags:
+        - Subscriptions
+      responses:
+        '200':
+          description: Estado de suscripción
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  isActive:
+                    type: boolean
+                  plan:
+                    type: string
+                  expiresAt:
+                    type: string
+                    format: date-time
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      summary: Crear suscripción
+      description: Crea una nueva suscripción
+      tags:
+        - Subscriptions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                planId:
+                  type: string
+                  enum: [starter, pro, elite]
+                  default: starter
+      responses:
+        '200':
+          description: Suscripción creada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  subscription:
+                    type: object
+                  stripeSubscriptionId:
+                    type: string
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/subscriptions/plans:
+    get:
+      summary: Planes disponibles
+      description: Obtiene los planes de suscripción disponibles
+      tags:
+        - Subscriptions
+      security: []
+      responses:
+        '200':
+          description: Lista de planes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubscriptionPlan'
+
+  /api/subscriptions/upgrade:
+    post:
+      summary: Actualizar plan
+      description: Actualiza el plan de suscripción
+      tags:
+        - Subscriptions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - planId
+              properties:
+                planId:
+                  type: string
+                  enum: [pro, elite]
+      responses:
+        '200':
+          description: Plan actualizado
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/subscriptions/usage:
+    get:
+      summary: Uso de suscripción
+      description: Obtiene el uso actual de la suscripción
+      tags:
+        - Subscriptions
+      responses:
+        '200':
+          description: Uso de suscripción
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  used:
+                    type: integer
+                  limit:
+                    type: integer
+                  remaining:
+                    type: integer
+
+  /api/subscriptions/usage/ai:
+    get:
+      summary: Uso de IA
+      description: Obtiene el uso de funcionalidades de IA
+      tags:
+        - Subscriptions
+      responses:
+        '200':
+          description: Uso de IA
+
+  /api/subscriptions/usage/image:
+    get:
+      summary: Uso de imágenes
+      description: Obtiene el uso de análisis de imágenes
+      tags:
+        - Subscriptions
+      responses:
+        '200':
+          description: Uso de imágenes
+
+  /api/subscriptions/usage/whatsapp:
+    get:
+      summary: Uso de WhatsApp
+      description: Obtiene el uso de notificaciones WhatsApp
+      tags:
+        - Subscriptions
+      responses:
+        '200':
+          description: Uso de WhatsApp
+
+  # ==================== PREMIUM ====================
+  /api/premium/status:
+    get:
+      summary: Estado premium
+      description: Obtiene el estado de funcionalidades premium
+      tags:
+        - Premium
+      parameters:
+        - name: feature
+          in: query
+          description: Verificar acceso a función específica
+          schema:
+            type: string
+            enum: [image_analysis, clinical_copilot, extended_transcription, priority_ai_response]
+      responses:
+        '200':
+          description: Estado premium
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  tier:
+                    type: string
+                    enum: [starter, pro, elite, patient]
+                  tierName:
+                    type: string
+                  hasAccess:
+                    type: boolean
+                  used:
+                    type: integer
+                  limit:
+                    type: integer
+                    nullable: true
+                  remaining:
+                    type: integer
+                  needsUpgrade:
+                    type: boolean
+
+  /api/premium/checkout:
+    post:
+      summary: Checkout premium
+      description: Inicia el proceso de checkout para premium
+      tags:
+        - Premium
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tier:
+                  type: string
+                  enum: [pro, elite]
+      responses:
+        '200':
+          description: Sesión de checkout creada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  checkoutUrl:
+                    type: string
+                  sessionId:
+                    type: string
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/premium/purchase:
+    post:
+      summary: Compra de uso individual
+      description: Compra uso individual de función premium
+      tags:
+        - Premium
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                feature:
+                  type: string
+                quantity:
+                  type: integer
+      responses:
+        '200':
+          description: Compra realizada
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/premium/bill:
+    get:
+      summary: Obtener factura
+      description: Obtiene la última factura de suscripción
+      tags:
+        - Premium
+      responses:
+        '200':
+          description: Factura
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  invoice:
+                    type: object
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/premium/usage:
+    get:
+      summary: Uso premium detallado
+      description: Obtiene uso detallado de funciones premium
+      tags:
+        - Premium
+      responses:
+        '200':
+          description: Uso detallado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  usage:
+                    type: array
+                    items:
+                      type: object
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+
+  # ==================== ARCO ====================
+  /api/arco/requests:
+    get:
+      summary: Listar solicitudes ARCO
+      description: Obtiene las solicitudes ARCO del usuario o todas (admin)
+      tags:
+        - ARCO
+      parameters:
+        - name: request_type
+          in: query
+          description: Filtrar por tipo
+          schema:
+            type: string
+            enum: [ACCESS, RECTIFY, CANCEL, OPPOSE]
+        - name: status
+          in: query
+          description: Filtrar por estado
+          schema:
+            type: string
+            enum: [pending, acknowledged, processing, completed, denied, cancelled]
+        - name: page
+          in: query
+          description: Página (solo admin)
+          schema:
+            type: integer
+            default: 1
+        - name: per_page
+          in: query
+          description: Items por página (solo admin)
+          schema:
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: Ordenamiento
+          schema:
+            type: string
+            enum: [created_at, due_date, status, priority, request_type]
+            default: created_at
+      responses:
+        '200':
+          description: Lista de solicitudes
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: object
+                    properties:
+                      requests:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/ArcoRequest'
+                      pagination:
+                        $ref: '#/components/schemas/PaginationInfo'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      summary: Crear solicitud ARCO
+      description: Crea una nueva solicitud ARCO
+      tags:
+        - ARCO
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ArcoRequestInput'
+      responses:
+        '201':
+          description: Solicitud creada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: object
+                    properties:
+                      request:
+                        $ref: '#/components/schemas/ArcoRequest'
+                      message:
+                        type: string
+                      due_date:
+                        type: string
+                        format: date-time
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/arco/requests/{id}:
+    get:
+      summary: Obtener solicitud
+      description: Obtiene detalles de una solicitud ARCO
+      tags:
+        - ARCO
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Detalles de solicitud
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    $ref: '#/components/schemas/ArcoRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /api/arco/requests/{id}/export:
+    get:
+      summary: Exportar datos
+      description: Exporta los datos personales del usuario
+      tags:
+        - ARCO
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: format
+          in: query
+          description: Formato de exportación
+          schema:
+            type: string
+            enum: [json, csv, pdf]
+            default: json
+      responses:
+        '200':
+          description: Datos exportados
+          content:
+            application/json:
+              schema:
+                type: object
+            text/csv:
+              schema:
+                type: string
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /api/arco/cancel:
+    post:
+      summary: Solicitar cancelación
+      description: Solicita cancelación (eliminación) de datos
+      tags:
+        - ARCO
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data_scope:
+                  type: array
+                  items:
+                    type: string
+                justification:
+                  type: string
+      responses:
+        '201':
+          description: Solicitud creada
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/arco/rectify:
+    post:
+      summary: Solicitar rectificación
+      description: Solicita rectificación de datos personales
+      tags:
+        - ARCO
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                changes:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      field:
+                        type: string
+                      currentValue:
+                        type: string
+                      newValue:
+                        type: string
+                      justification:
+                        type: string
+      responses:
+        '201':
+          description: Solicitud creada
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/arco/oppose:
+    post:
+      summary: Solicitar oposición
+      description: Solicita oposición al tratamiento de datos
+      tags:
+        - ARCO
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                purpose:
+                  type: string
+                justification:
+                  type: string
+      responses:
+        '201':
+          description: Solicitud creada
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/arco/stats:
+    get:
+      summary: Estadísticas ARCO
+      description: Obtiene estadísticas de solicitudes ARCO (admin)
+      tags:
+        - ARCO
+      responses:
+        '200':
+          description: Estadísticas
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total_requests:
+                    type: integer
+                  by_status:
+                    type: object
+                  by_type:
+                    type: object
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  /api/arco/export:
+    post:
+      summary: Exportar ARCO
+      description: Endpoint de exportación ARCO
+      tags:
+        - ARCO
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+                  format: uuid
+      responses:
+        '200':
+          description: Exportación completada
+
+  # ==================== CONSENT ====================
+  /api/consent/status:
+    get:
+      summary: Estado de consentimientos
+      description: Obtiene el estado de consentimientos del usuario
+      tags:
+        - Consent
+      responses:
+        '200':
+          description: Estado de consentimientos
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    $ref: '#/components/schemas/ConsentStatus'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/consent/grant:
+    post:
+      summary: Otorgar consentimiento
+      description: Otorga un consentimiento específico
+      tags:
+        - Consent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - consent_type
+              properties:
+                consent_type:
+                  type: string
+                  enum: [medical_treatment, data_processing, telemedicine, recording, ai_analysis, data_sharing, research, marketing, emergency_contact, prescription_forwarding]
+                version_id:
+                  type: string
+                  format: uuid
+                delivery_method:
+                  type: string
+                  enum: [web, email, sms, in_person]
+      responses:
+        '200':
+          description: Consentimiento otorgado
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/consent/withdraw:
+    post:
+      summary: Retirar consentimiento
+      description: Retira un consentimiento previamente otorgado
+      tags:
+        - Consent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - consent_type
+              properties:
+                consent_type:
+                  type: string
+                reason:
+                  type: string
+      responses:
+        '200':
+          description: Consentimiento retirado
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/consent/history:
+    get:
+      summary: Historial de consentimientos
+      description: Obtiene el historial de cambios de consentimientos
+      tags:
+        - Consent
+      responses:
+        '200':
+          description: Historial
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ConsentHistory'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/consent/audit:
+    get:
+      summary: Auditoría de consentimientos
+      description: Obtiene registros de auditoría (admin)
+      tags:
+        - Consent
+      parameters:
+        - name: userId
+          in: query
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Registros de auditoría
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  /api/consent/types:
+    get:
+      summary: Tipos de consentimiento
+      description: Obtiene los tipos de consentimiento disponibles
+      tags:
+        - Consent
+      security: []
+      responses:
+        '200':
+          description: Tipos de consentimiento
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  types:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        type:
+                          type: string
+                        label:
+                          type: string
+                        category:
+                          type: string
+                        required:
+                          type: boolean
+
+  /api/consent/version/{type}:
+    get:
+      summary: Versión de consentimiento
+      description: Obtiene la versión actual de un tipo de consentimiento
+      tags:
+        - Consent
+      parameters:
+        - name: type
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Versión de consentimiento
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConsentVersion'
+
+  # ==================== ANALYTICS ====================
+  /api/analytics/admin:
+    get:
+      summary: Analytics de administrador
+      description: Obtiene métricas administrativas completas
+      tags:
+        - Analytics
+        - Admin
+      responses:
+        '200':
+          description: Métricas administrativas
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: object
+                    properties:
+                      admin:
+                        type: object
+                      revenue:
+                        type: object
+                      users:
+                        type: object
+                      appointments:
+                        type: object
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  /api/analytics/doctor:
+    get:
+      summary: Analytics de doctor
+      description: Obtiene métricas del doctor autenticado
+      tags:
+        - Analytics
+      responses:
+        '200':
+          description: Métricas del doctor
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  totalPatients:
+                    type: integer
+                  totalConsultations:
+                    type: integer
+                  averageRating:
+                    type: number
+                  revenue:
+                    type: number
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  /api/analytics/revenue:
+    get:
+      summary: Analytics de ingresos
+      description: Obtiene métricas de ingresos (admin)
+      tags:
+        - Analytics
+      responses:
+        '200':
+          description: Métricas de ingresos
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  /api/analytics/export:
+    get:
+      summary: Exportar analytics
+      description: Exporta datos analíticos en varios formatos
+      tags:
+        - Analytics
+      parameters:
+        - name: format
+          in: query
+          schema:
+            type: string
+            enum: [csv, json, xlsx]
+            default: csv
+        - name: startDate
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: endDate
+          in: query
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Datos exportados
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  # ==================== ADMIN ====================
+  /api/admin/verify-doctor:
+    post:
+      summary: Verificar doctor
+      description: Admin verifica un doctor pendiente
+      tags:
+        - Admin
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - doctorId
+                - approved
+              properties:
+                doctorId:
+                  type: string
+                  format: uuid
+                approved:
+                  type: boolean
+                reason:
+                  type: string
+      responses:
+        '200':
+          description: Verificación completada
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  /api/admin/premium:
+    post:
+      summary: Gestionar premium
+      description: Admin gestiona acceso premium manualmente
+      tags:
+        - Admin
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+                  format: uuid
+                tier:
+                  type: string
+                  enum: [starter, pro, elite]
+                action:
+                  type: string
+                  enum: [grant, revoke, extend]
+      responses:
+        '200':
+          description: Operación completada
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  /api/admin/ai/metrics:
+    get:
+      summary: Métricas de IA
+      description: Obtiene métricas de uso de IA
+      tags:
+        - Admin
+      responses:
+        '200':
+          description: Métricas de IA
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  totalRequests:
+                    type: integer
+                  totalCost:
+                    type: number
+                  byEndpoint:
+                    type: object
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  /api/admin/followups/verify:
+    post:
+      summary: Verificar seguimientos
+      description: Verifica manualmente los seguimientos completados
+      tags:
+        - Admin
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                followUpId:
+                  type: string
+                  format: uuid
+      responses:
+        '200':
+          description: Seguimiento verificado
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+
+  # ==================== PHARMACY ====================
+  /api/pharmacy/search:
+    get:
+      summary: Buscar medicamentos
+      description: Busca medicamentos en todas las farmacias
+      tags:
+        - Pharmacy
+      security: []
+      parameters:
+        - name: q
+          in: query
+          required: true
+          description: Término de búsqueda (mín 2 caracteres)
+          schema:
+            type: string
+            minLength: 2
+        - name: cache
+          in: query
+          description: Usar caché
+          schema:
+            type: boolean
+            default: true
+      responses:
+        '200':
+          description: Resultados de búsqueda
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PharmacySearchResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+    post:
+      summary: Comparar precios
+      description: Compara precios de un medicamento
+      tags:
+        - Pharmacy
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - medicationName
+              properties:
+                medicationName:
+                  type: string
+                  minLength: 3
+      responses:
+        '200':
+          description: Comparación de precios
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PriceComparisonResult'
+
+  /api/pharmacy/recommend:
+    get:
+      summary: Farmacia recomendada
+      description: Obtiene la farmacia más conveniente
+      tags:
+        - Pharmacy
+      parameters:
+        - name: medication
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Farmacia recomendada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  pharmacy:
+                    type: string
+                  price:
+                    type: number
+                  distance:
+                    type: number
+
+  /api/pharmacy/affiliate:
+    post:
+      summary: Afiliar farmacia
+      description: Registra una farmacia como afiliada
+      tags:
+        - Pharmacy
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pharmacyName:
+                  type: string
+                contactEmail:
+                  type: string
+                contactPhone:
+                  type: string
+      responses:
+        '201':
+          description: Farmacia afiliada
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  /api/pharmacy/earnings:
+    get:
+      summary: Ganancias
+      description: Obtiene ganancias de referencias (afiliados)
+      tags:
+        - Pharmacy
+      responses:
+        '200':
+          description: Ganancias
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  totalEarnings:
+                    type: number
+                  referralsCount:
+                    type: integer
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/pharmacy/refer:
+    post:
+      summary: Referir a farmacia
+      description: Crea una referencia a una farmacia específica
+      tags:
+        - Pharmacy
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pharmacyId:
+                  type: string
+                patientId:
+                  type: string
+                  format: uuid
+      responses:
+        '201':
+          description: Referencia creada
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/pharmacy/sponsors:
+    get:
+      summary: Farmacias patrocinadas
+      description: Obtiene farmacias patrocinadas
+      tags:
+        - Pharmacy
+      security: []
+      responses:
+        '200':
+          description: Lista de farmacias patrocinadas
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+
+  /api/pharmacy/webhook:
+    post:
+      summary: Webhook de farmacia
+      description: Recibe webhooks de farmacias afiliadas
+      tags:
+        - Pharmacy
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Webhook recibido
+
+  # ==================== REVIEWS ====================
+  /api/reviews:
+    get:
+      summary: Listar reseñas
+      description: Obtiene reseñas de un doctor o paciente
+      tags:
+        - Reviews
+      parameters:
+        - name: doctorId
+          in: query
+          description: ID del doctor
+          schema:
+            type: string
+            format: uuid
+        - name: patientId
+          in: query
+          description: ID del paciente (debe ser el propio)
+          schema:
+            type: string
+            format: uuid
+        - name: reviewable
+          in: query
+          description: Obtener citas reseñables
+          schema:
+            type: boolean
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+      responses:
+        '200':
+          description: Lista de reseñas
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  reviews:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Review'
+                  pagination:
+                    type: object
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      summary: Crear reseña
+      description: Crea una nueva reseña para una consulta
+      tags:
+        - Reviews
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - appointmentId
+                - doctorId
+                - rating
+              properties:
+                appointmentId:
+                  type: string
+                  format: uuid
+                doctorId:
+                  type: string
+                  format: uuid
+                rating:
+                  type: integer
+                  minimum: 1
+                  maximum: 5
+                comment:
+                  type: string
+      responses:
+        '201':
+          description: Reseña creada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Review'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/reviews/{id}:
+    get:
+      summary: Obtener reseña
+      description: Obtiene detalles de una reseña
+      tags:
+        - Reviews
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Detalles de reseña
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Review'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  # ==================== SECOND OPINION ====================
+  /api/second-opinion:
+    get:
+      summary: Listar solicitudes
+      description: Obtiene las solicitudes de segunda opinión del paciente
+      tags:
+        - Second Opinion
+      parameters:
+        - name: status
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+            maximum: 50
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            default: 0
+      responses:
+        '200':
+          description: Lista de solicitudes
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  requests:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SecondOpinionRequest'
+                  total:
+                    type: integer
+                  limit:
+                    type: integer
+                  offset:
+                    type: integer
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      summary: Crear solicitud
+      description: Crea una nueva solicitud de segunda opinión
+      tags:
+        - Second Opinion
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SecondOpinionInput'
+      responses:
+        '201':
+          description: Solicitud creada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: uuid
+                  price_cents:
+                    type: integer
+                  currency:
+                    type: string
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  /api/second-opinion/{id}:
+    get:
+      summary: Obtener solicitud
+      description: Obtiene detalles de una solicitud de segunda opinión
+      tags:
+        - Second Opinion
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Detalles de solicitud
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SecondOpinionRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /api/second-opinion/{id}/submit:
+    post:
+      summary: Enviar solicitud
+      description: Envía una solicitud para revisión
+      tags:
+        - Second Opinion
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                documents:
+                  type: array
+                  items:
+                    type: string
+                    format: uuid
+      responses:
+        '200':
+          description: Solicitud enviada
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /api/second-opinion/{id}/documents:
+    post:
+      summary: Subir documentos
+      description: Sube documentos para segunda opinión
+      tags:
+        - Second Opinion
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                documents:
+                  type: array
+                  items:
+                    type: string
+                    format: binary
+      responses:
+        '200':
+          description: Documentos subidos
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  # ==================== REFERRALS ====================
+  /api/referrals:
+    get:
+      summary: Listar referencias
+      description: Obtiene referencias médicas del doctor
+      tags:
+        - Referrals
+      parameters:
+        - name: type
+          in: query
+          description: Tipo de referencia
+          schema:
+            type: string
+            enum: [sent, received, all]
+            default: all
+        - name: status
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+            maximum: 50
+      responses:
+        '200':
+          description: Lista de referencias
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  referrals:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/DoctorReferral'
+                  stats:
+                    type: object
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      summary: Crear referencia
+      description: Crea una nueva referencia médica
+      tags:
+        - Referrals
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - patient_id
+                - specialty_needed
+                - reason
+              properties:
+                patient_id:
+                  type: string
+                  format: uuid
+                specialty_needed:
+                  type: string
+                urgency:
+                  type: string
+                  enum: [emergency, urgent, routine]
+                  default: routine
+                reason:
+                  type: string
+                clinical_notes:
+                  type: string
+                receiving_doctor_id:
+                  type: string
+                  format: uuid
+      responses:
+        '201':
+          description: Referencia creada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: uuid
+                  status:
+                    type: string
+                  expires_at:
+                    type: string
+                    format: date-time
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  /api/referrals/{id}:
+    get:
+      summary: Obtener referencia
+      description: Obtiene detalles de una referencia
+      tags:
+        - Referrals
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Detalles de referencia
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DoctorReferral'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  # ==================== FOLLOWUPS ====================
+  /api/followups/schedule:
+    get:
+      summary: Listar seguimientos
+      description: Obtiene los seguimientos programados
+      tags:
+        - Followups
+      parameters:
+        - name: appointmentId
+          in: query
+          schema:
+            type: string
+            format: uuid
+        - name: status
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Lista de seguimientos
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  followUps:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/FollowUp'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      summary: Programar seguimiento
+      description: Programa un nuevo seguimiento
+      tags:
+        - Followups
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - appointmentId
+                - type
+              properties:
+                appointmentId:
+                  type: string
+                  format: uuid
+                type:
+                  type: string
+                  enum: [follow_up_24h, follow_up_7d, medication_reminder, prescription_refill, chronic_care_check]
+                scheduledAt:
+                  type: string
+                  format: date-time
+      responses:
+        '200':
+          description: Seguimiento programado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  followUpId:
+                    type: string
+                    format: uuid
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/followups/callback:
+    post:
+      summary: Callback de seguimiento
+      description: Recibe respuestas de seguimientos
+      tags:
+        - Followups
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                followUpId:
+                  type: string
+                  format: uuid
+                response:
+                  type: string
+      responses:
+        '200':
+          description: Respuesta registrada
+
+  /api/followups/send:
+    post:
+      summary: Enviar seguimiento
+      description: Envía manualmente un seguimiento
+      tags:
+        - Followups
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                followUpId:
+                  type: string
+                  format: uuid
+                method:
+                  type: string
+                  enum: [email, sms, whatsapp]
+      responses:
+        '200':
+          description: Seguimiento enviado
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/cron/followups:
+    post:
+      summary: Procesar seguimientos
+      description: Endpoint cron para procesar seguimientos pendientes
+      tags:
+        - Followups
+      security: []
+      responses:
+        '200':
+          description: Seguimientos procesados
+
+  # ==================== DIGITAL SIGNATURE ====================
+  /api/signature/create:
+    post:
+      summary: Crear firma
+      description: Crea una firma digital para un documento
+      tags:
+        - Digital Signature
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSignatureInput'
+      responses:
+        '200':
+          description: Firma creada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SignatureResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/signature/verify:
+    post:
+      summary: Verificar firma
+      description: Verifica la validez de una firma digital
+      tags:
+        - Digital Signature
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - signatureId
+                - documentContent
+              properties:
+                signatureId:
+                  type: string
+                  format: uuid
+                documentContent:
+                  type: string
+      responses:
+        '200':
+          description: Verificación completada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  valid:
+                    type: boolean
+                  details:
+                    type: object
+
+  /api/signature/{id}:
+    get:
+      summary: Obtener firma
+      description: Obtiene detalles de una firma digital
+      tags:
+        - Digital Signature
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Detalles de firma
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DigitalSignature'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /api/signature/consent:
+    post:
+      summary: Firmar consentimiento
+      description: Crea firma digital para consentimiento
+      tags:
+        - Digital Signature
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                consentId:
+                  type: string
+                  format: uuid
+      responses:
+        '200':
+          description: Consentimiento firmado
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  # ==================== QUESTIONNAIRE ====================
+  /api/questionnaire/start:
+    post:
+      summary: Iniciar cuestionario
+      description: Inicia un cuestionario médico adaptativo
+      tags:
+        - Questionnaire
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                patientId:
+                  type: string
+                  format: uuid
+      responses:
+        '200':
+          description: Cuestionario iniciado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  conversationId:
+                    type: string
+                  firstQuestion:
+                    type: string
+
+  /api/questionnaire/message:
+    post:
+      summary: Enviar respuesta
+      description: Envía una respuesta al cuestionario
+      tags:
+        - Questionnaire
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - conversationId
+                - message
+              properties:
+                conversationId:
+                  type: string
+                message:
+                  type: string
+      responses:
+        '200':
+          description: Respuesta procesada
+
+  /api/questionnaire/{id}/complete:
+    post:
+      summary: Completar cuestionario
+      description: Marca el cuestionario como completado
+      tags:
+        - Questionnaire
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Cuestionario completado
+
+  /api/questionnaire/{id}/state:
+    get:
+      summary: Estado del cuestionario
+      description: Obtiene el estado actual del cuestionario
+      tags:
+        - Questionnaire
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Estado del cuestionario
+
+  /api/questionnaire/{id}/summary:
+    get:
+      summary: Resumen del cuestionario
+      description: Obtiene el resumen de respuestas
+      tags:
+        - Questionnaire
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Resumen del cuestionario
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  summary:
+                    type: object
+
+  /api/questionnaire/{id}/upload:
+    post:
+      summary: Subir archivo
+      description: Sube un archivo al cuestionario
+      tags:
+        - Questionnaire
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Archivo subido
+
+  # ==================== TRIAGE ====================
+  /api/triage:
+    post:
+      summary: Evaluar triage
+      description: Evalúa síntomas y determina nivel de urgencia
+      tags:
+        - Triage
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - message
+              properties:
+                message:
+                  type: string
+                  description: Descripción de síntomas
+                intake:
+                  type: object
+                  description: Datos de admisión
+                sessionId:
+                  type: string
+      responses:
+        '200':
+          description: Evaluación de triage
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  triage:
+                    $ref: '#/components/schemas/TriageResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+  # ==================== UPLOAD ====================
+  /api/upload/avatar:
+    post:
+      summary: Subir avatar
+      description: Sube una foto de perfil
+      tags:
+        - Upload
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                avatar:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Avatar subido
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  url:
+                    type: string
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/export/pdf:
+    post:
+      summary: Exportar a PDF
+      description: Exporta datos a PDF
+      tags:
+        - Upload
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+                  enum: [medical_record, prescription, appointment_summary]
+                id:
+                  type: string
+                  format: uuid
+      responses:
+        '200':
+          description: PDF generado
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+
+  # ==================== CACHE ====================
+  /api/cache/stats:
+    get:
+      summary: Estadísticas de caché
+      description: Obtiene estadísticas de caché (admin)
+      tags:
+        - Cache
+      responses:
+        '200':
+          description: Estadísticas de caché
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: object
+                  cacheKeys:
+                    type: object
+                  timestamp:
+                    type: string
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimit'
+
+  /api/cache/invalidate:
+    post:
+      summary: Invalidar caché
+      description: Invalida entradas de caché (admin)
+      tags:
+        - Cache
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pattern:
+                  type: string
+                keys:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Caché invalidado
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  # ==================== WEBHOOKS ====================
+  /api/webhooks/stripe:
+    get:
+      summary: Verificar webhook Stripe
+      description: Verifica que el endpoint está activo
+      tags:
+        - Webhooks
+      security: []
+      responses:
+        '200':
+          description: Endpoint activo
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  supportedEvents:
+                    type: array
+                    items:
+                      type: string
+    post:
+      summary: Webhook Stripe
+      description: Recibe eventos de Stripe
+      tags:
+        - Webhooks
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Evento recibido
+        '400':
+          description: Firma inválida
+        '401':
+          description: No autorizado
+
+  /api/webhooks/twilio:
+    post:
+      summary: Webhook Twilio
+      description: Recibe eventos de Twilio
+      tags:
+        - Webhooks
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Evento recibido
+
+  /api/webhooks/whatsapp:
+    get:
+      summary: Verificar webhook WhatsApp
+      description: Verificación de webhook de Meta
+      tags:
+        - Webhooks
+      security: []
+      parameters:
+        - name: hub.mode
+          in: query
+          schema:
+            type: string
+        - name: hub.verify_token
+          in: query
+          schema:
+            type: string
+        - name: hub.challenge
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Verificación exitosa
+    post:
+      summary: Webhook WhatsApp
+      description: Recibe mensajes de WhatsApp
+      tags:
+        - Webhooks
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Mensaje recibido
+
+  # ==================== NOTIFICATIONS ====================
+  /api/notifications/email/appointment-confirmed:
+    post:
+      summary: Email de confirmación
+      description: Envía email de confirmación de cita
+      tags:
+        - Notifications
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                appointmentId:
+                  type: string
+                  format: uuid
+      responses:
+        '200':
+          description: Email enviado
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/notifications/email/followup:
+    post:
+      summary: Email de seguimiento
+      description: Envía email de seguimiento
+      tags:
+        - Notifications
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                patientId:
+                  type: string
+                  format: uuid
+                template:
+                  type: string
+      responses:
+        '200':
+          description: Email enviado
+
+  /api/notifications/email/payment-receipt:
+    post:
+      summary: Recibo de pago
+      description: Envía recibo de pago por email
+      tags:
+        - Notifications
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                paymentId:
+                  type: string
+                  format: uuid
+      responses:
+        '200':
+          description: Recibo enviado
+
+  /api/notifications/email/reminder:
+    post:
+      summary: Recordatorio
+      description: Envía recordatorio de cita
+      tags:
+        - Notifications
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                appointmentId:
+                  type: string
+                  format: uuid
+      responses:
+        '200':
+          description: Recordatorio enviado
+
+  # ==================== ANONYMOUS ====================
+  /api/anonymous/capture-email:
+    post:
+      summary: Capturar email
+      description: Captura email de usuario anónimo
+      tags:
+        - Anonymous
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+              properties:
+                email:
+                  type: string
+                  format: email
+                source:
+                  type: string
+      responses:
+        '201':
+          description: Email capturado
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+  # ==================== USER ====================
+  /api/user/quota:
+    get:
+      summary: Cuota de usuario
+      description: Obtiene la cuota disponible del usuario
+      tags:
+        - User
+      responses:
+        '200':
+          description: Cuota del usuario
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  quota:
+                    type: object
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  # ==================== METRICS ====================
+  /api/metrics/web-vitals:
+    post:
+      summary: Reportar Web Vitals
+      description: Recibe métricas de Web Vitals
+      tags:
+        - Analytics
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                value:
+                  type: number
+                id:
+                  type: string
+      responses:
+        '200':
+          description: Métricas recibidas
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: Token de sesión de Supabase
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sb-access-token
+      description: Cookie de sesión de Supabase
+
+  schemas:
+    # ==================== BASE TYPES ====================
+    UUID:
+      type: string
+      format: uuid
+      example: "550e8400-e29b-41d4-a716-446655440000"
+
+    Timestamp:
+      type: string
+      format: date-time
+      example: "2024-01-15T10:30:00Z"
+
+    Date:
+      type: string
+      format: date
+      example: "2024-01-15"
+
+    Time:
+      type: string
+      pattern: "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$"
+      example: "14:30"
+
+    Currency:
+      type: integer
+      description: Monto en centavos
+      example: 50000
+
+    # ==================== PAGINATION ====================
+    PaginationInfo:
+      type: object
+      properties:
+        total:
+          type: integer
+        page:
+          type: integer
+        per_page:
+          type: integer
+        total_pages:
+          type: integer
+        has_next:
+          type: boolean
+        has_prev:
+          type: boolean
+        next_cursor:
+          type: string
+          nullable: true
+        prev_cursor:
+          type: string
+          nullable: true
+
+    PaginatedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items: {}
+        pagination:
+          $ref: '#/components/schemas/PaginationInfo'
+
+    # ==================== HEALTH ====================
+    HealthCheckResult:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: [ok, error, degraded, skipped]
+        latency:
+          type: integer
+          description: Latencia en milisegundos
+        message:
+          type: string
+          nullable: true
+
+    HealthResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: [healthy, unhealthy, degraded]
+        timestamp:
+          type: string
+          format: date-time
+        version:
+          type: string
+        uptime:
+          type: integer
+          description: Segundos desde el inicio
+        environment:
+          type: string
+        checks:
+          type: object
+          properties:
+            database:
+              $ref: '#/components/schemas/HealthCheckResult'
+            cache:
+              $ref: '#/components/schemas/HealthCheckResult'
+            stripe:
+              $ref: '#/components/schemas/HealthCheckResult'
+            whatsapp:
+              $ref: '#/components/schemas/HealthCheckResult'
+            twilio:
+              $ref: '#/components/schemas/HealthCheckResult'
+            ai:
+              $ref: '#/components/schemas/HealthCheckResult'
+
+    # ==================== DOCTORS ====================
+    DoctorSpecialty:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+        name:
+          type: string
+        slug:
+          type: string
+
+    DoctorProfile:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+        full_name:
+          type: string
+        photo_url:
+          type: string
+          nullable: true
+
+    Doctor:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+        bio:
+          type: string
+          nullable: true
+        price_cents:
+          $ref: '#/components/schemas/Currency'
+        rating_avg:
+          type: number
+        rating_count:
+          type: integer
+        city:
+          type: string
+          nullable: true
+        state:
+          type: string
+          nullable: true
+        years_experience:
+          type: integer
+          nullable: true
+        languages:
+          type: array
+          items:
+            type: string
+        video_enabled:
+          type: boolean
+        created_at:
+          $ref: '#/components/schemas/Timestamp'
+        profile:
+          $ref: '#/components/schemas/DoctorProfile'
+        specialties:
+          type: array
+          items:
+            $ref: '#/components/schemas/DoctorSpecialty'
+
+    DoctorDetail:
+      allOf:
+        - $ref: '#/components/schemas/Doctor'
+        - type: object
+          properties:
+            subscription_status:
+              type: string
+            subscription_details:
+              type: object
+
+    PublicDoctorProfile:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+        full_name:
+          type: string
+        photo_url:
+          type: string
+          nullable: true
+        specialty:
+          type: string
+        rating_avg:
+          type: number
+        review_count:
+          type: integer
+        years_experience:
+          type: integer
+        price_cents:
+          $ref: '#/components/schemas/Currency'
+        city:
+          type: string
+        state:
+          type: string
+        bio:
+          type: string
+
+    RecommendedDoctor:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+        name:
+          type: string
+        specialty:
+          type: string
+        photo:
+          type: string
+          nullable: true
+        rating:
+          type: number
+        reviewCount:
+          type: integer
+        yearsExperience:
+          type: integer
+        priceCents:
+          $ref: '#/components/schemas/Currency'
+        city:
+          type: string
+        state:
+          type: string
+        nextAvailable:
+          type: string
+          nullable: true
+        videoConsultation:
+          type: boolean
+        verified:
+          type: boolean
+
+    DoctorBadge:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+        name:
+          type: string
+        description:
+          type: string
+        icon:
+          type: string
+        earned_at:
+          $ref: '#/components/schemas/Timestamp'
+
+    DoctorOnboardingInput:
+      type: object
+      required:
+        - specialty
+        - cedulaNumber
+      properties:
+        specialty:
+          type: string
+        cedulaNumber:
+          type: string
+        bio:
+          type: string
+        price_cents:
+          $ref: '#/components/schemas/Currency'
+        languages:
+          type: array
+          items:
+            type: string
+        video_enabled:
+          type: boolean
+
+    PaginatedDoctorResponse:
+      allOf:
+        - $ref: '#/components/schemas/PaginatedResponse'
+        - type: object
+          properties:
+            data:
+              type: array
+              items:
+                $ref: '#/components/schemas/Doctor'
+
+    # ==================== APPOINTMENTS ====================
+    AppointmentStatus:
+      type: string
+      enum: [pending_payment, pending, confirmed, completed, cancelled, refunded, no_show]
+
+    Appointment:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+        doctor_id:
+          $ref: '#/components/schemas/UUID'
+        patient_id:
+          $ref: '#/components/schemas/UUID'
+        start_ts:
+          $ref: '#/components/schemas/Timestamp'
+        status:
+          $ref: '#/components/schemas/AppointmentStatus'
+        price_cents:
+          $ref: '#/components/schemas/Currency'
+        currency:
+          type: string
+        doctor:
+          type: object
+          properties:
+            id:
+              $ref: '#/components/schemas/UUID'
+            specialty:
+              type: string
+            profile:
+              $ref: '#/components/schemas/DoctorProfile'
+
+    EnrichedAppointment:
+      allOf:
+        - $ref: '#/components/schemas/Appointment'
+
+    PaginatedAppointmentResponse:
+      allOf:
+        - $ref: '#/components/schemas/PaginatedResponse'
+        - type: object
+          properties:
+            data:
+              type: array
+              items:
+                $ref: '#/components/schemas/EnrichedAppointment'
+
+    # ==================== PATIENTS ====================
+    Patient:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+        full_name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+          nullable: true
+
+    PatientProfile:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+        full_name:
+          type: string
+        email:
+          type: string
+        photo_url:
+          type: string
+          nullable: true
+        phone:
+          type: string
+          nullable: true
+        date_of_birth:
+          $ref: '#/components/schemas/Date'
+          nullable: true
+        gender:
+          type: string
+          enum: [male, female, other, prefer_not_to_say]
+          nullable: true
+        emergency_contact:
+          type: object
+          nullable: true
+
+    UpdateProfileData:
+      type: object
+      properties:
+        full_name:
+          type: string
+        photo_url:
+          type: string
+        phone:
+          type: string
+        date_of_birth:
+          $ref: '#/components/schemas/Date'
+        gender:
+          type: string
+        emergency_contact:
+          type: object
+
+    MedicalHistory:
+      type: object
+      properties:
+        conditions:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/UUID'
+              name:
+                type: string
+              diagnosed_at:
+                $ref: '#/components/schemas/Date'
+        allergies:
+          type: array
+          items:
+            type: string
+        medications:
+          type: array
+          items:
+            type: object
+        appointments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Appointment'
+
+    # ==================== AI ====================
+    AIConsultResponse:
+      type: object
+      properties:
+        message:
+          type: string
+        complete:
+          type: boolean
+        result:
+          type: object
+          properties:
+            id:
+              type: string
+            primaryDiagnosis:
+              type: string
+            confidence:
+              type: number
+            specialists:
+              type: array
+              items:
+                type: object
+            differentialDiagnoses:
+              type: array
+              items:
+                type: string
+            urgency:
+              type: string
+            recommendations:
+              type: array
+              items:
+                type: string
+            nextSteps:
+              type: array
+              items:
+                type: string
+            consensus:
+              type: object
+        specialists:
+          type: array
+          items:
+            type: string
+        citations:
+          type: array
+          items:
+            type: object
+            properties:
+              title:
+                type: string
+              source:
+                type: string
+              year:
+                type: integer
+                nullable: true
+              type:
+                type: string
+        meta:
+          type: object
+          properties:
+            latencyMs:
+              type: integer
+            provider:
+              type: string
+            model:
+              type: string
+            costUSD:
+              type: number
+
+    TranscriptionResponse:
+      type: object
+      properties:
+        transcriptId:
+          $ref: '#/components/schemas/UUID'
+        summary:
+          type: object
+          properties:
+            diagnosis:
+              type: string
+            symptoms:
+              type: array
+              items:
+                type: string
+            prescriptions:
+              type: array
+              items:
+                type: string
+            followUpInstructions:
+              type: string
+            nextSteps:
+              type: array
+              items:
+                type: string
+        duration:
+          type: integer
+          description: Duración en minutos
+        cost:
+          type: number
+
+    VisionAnalysisResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        analysisId:
+          $ref: '#/components/schemas/UUID'
+        imageUrl:
+          type: string
+        urgency:
+          type: string
+          enum: [emergency, urgent, moderate, routine]
+        confidence:
+          type: integer
+          description: Porcentaje de confianza
+        status:
+          type: string
+          enum: [completed, pending, error]
+        usage:
+          type: object
+          properties:
+            used:
+              type: integer
+            limit:
+              type: integer
+            remaining:
+              type: integer
+
+    VisionAnalysisResult:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+        image_url:
+          type: string
+        image_type:
+          type: string
+        analysis_result:
+          type: object
+        status:
+          type: string
+        created_at:
+          $ref: '#/components/schemas/Timestamp'
+
+    PreConsultaDoctor:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+        name:
+          type: string
+        specialty:
+          type: string
+        availability:
+          type: string
+        nextAvailable:
+          type: string
+
+    AIReferralAnalytics:
+      type: object
+      properties:
+        total:
+          type: integer
+        avgScore:
+          type: number
+        avgDoctorsAvailable:
+          type: number
+        avgDoctorsMatched:
+          type: number
+        bySpecialty:
+          type: object
+          additionalProperties:
+            type: object
+            properties:
+              count:
+                type: integer
+              avgScore:
+                type: number
+        byUrgency:
+          type: object
+          additionalProperties:
+            type: object
+            properties:
+              count:
+                type: integer
+              avgScore:
+                type: number
+
+    # ==================== SOAP NOTES ====================
+    SOAPNote:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+        subjective:
+          type: string
+        objective:
+          type: string
+        assessment:
+          type: string
+        plan:
+          type: string
+        appointment_id:
+          $ref: '#/components/schemas/UUID'
+        doctor_id:
+          $ref: '#/components/schemas/UUID'
+        status:
+          type: string
+          enum: [draft, pending_approval, approved, rejected]
+        created_at:
+          $ref: '#/components/schemas/Timestamp'
+        approved_at:
+          $ref: '#/components/schemas/Timestamp'
+          nullable: true
+
+    SOAPNoteInput:
+      type: object
+      properties:
+        appointment_id:
+          $ref: '#/components/schemas/UUID'
+        subjective:
+          type: string
+        objective:
+          type: string
+        assessment:
+          type: string
+        plan:
+          type: string
+
+    # ==================== CHAT ====================
+    Conversation:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+        patient_id:
+          $ref: '#/components/schemas/UUID'
+        doctor_id:
+          $ref: '#/components/schemas/UUID'
+        appointment_id:
+          $ref: '#/components/schemas/UUID'
+          nullable: true
+        last_message_preview:
+          type: string
+          nullable: true
+        last_message_at:
+          $ref: '#/components/schemas/Timestamp'
+          nullable: true
+        is_archived:
+          type: boolean
+        created_at:
+          $ref: '#/components/schemas/Timestamp'
+        patient_name:
+          type: string
+        patient_photo_url:
+          type: string
+        doctor_name:
+          type: string
+        doctor_photo_url:
+          type: string
+        unread_count:
+          type: integer
+
+    Message:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+        conversation_id:
+          $ref: '#/components/schemas/UUID'
+        sender_id:
+          $ref: '#/components/schemas/UUID'
+        content:
+          type: string
+        attachments:
+          type: array
+          items:
+            type: object
+        created_at:
+          $ref: '#/components/schemas/Timestamp'
+        read_at:
+          $ref: '#/components/schemas/Timestamp'
+          nullable: true
+
+    PaginatedConversationResponse:
+      allOf:
+        - $ref: '#/components/schemas/PaginatedResponse'
+        - type: object
+          properties:
+            data:
+              type: array
+              items:
+                $ref: '#/components/schemas/Conversation'
+
+    # ==================== SUBSCRIPTIONS ====================
+    SubscriptionPlan:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        price_cents:
+          $ref: '#/components/schemas/Currency'
+        features:
+          type: array
+          items:
+            type: string
+        ai_quota:
+          type: integer
+        image_analysis_quota:
+          type: integer
+
+    # ==================== ARCO ====================
+    ArcoRequestType:
+      type: string
+      enum: [ACCESS, RECTIFY, CANCEL, OPPOSE]
+
+    ArcoRequestStatus:
+      type: string
+      enum: [pending, acknowledged, processing, info_required, escalated, completed, denied, cancelled]
+
+    ArcoRequest:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+        user_id:
+          $ref: '#/components/schemas/UUID'
+        request_type:
+          $ref: '#/components/schemas/ArcoRequestType'
+        title:
+          type: string
+        description:
+          type: string
+        status:
+          $ref: '#/components/schemas/ArcoRequestStatus'
+        data_scope:
+          type: array
+          items:
+            type: string
+            enum: [profiles, appointments, prescriptions, soap_consultations, chat_conversations, chat_messages, payments, follow_up_schedules, all]
+        specific_records:
+          type: array
+          items:
+            type: string
+        justification:
+          type: string
+          nullable: true
+        submitted_via:
+          type: string
+        created_at:
+          $ref: '#/components/schemas/Timestamp'
+        updated_at:
+          $ref: '#/components/schemas/Timestamp'
+        due_date:
+          $ref: '#/components/schemas/Timestamp'
+        resolved_at:
+          $ref: '#/components/schemas/Timestamp'
+          nullable: true
+
+    ArcoRequestInput:
+      type: object
+      required:
+        - request_type
+        - title
+        - description
+        - data_scope
+      properties:
+        request_type:
+          $ref: '#/components/schemas/ArcoRequestType'
+        title:
+          type: string
+          minLength: 5
+          maxLength: 200
+        description:
+          type: string
+          minLength: 10
+          maxLength: 2000
+        data_scope:
+          type: array
+          items:
+            type: string
+            enum: [profiles, appointments, prescriptions, soap_consultations, chat_conversations, chat_messages, payments, follow_up_schedules, all]
+        specific_records:
+          type: array
+          items:
+            type: string
+        justification:
+          type: string
+          maxLength: 1000
+
+    # ==================== CONSENT ====================
+    ConsentType:
+      type: string
+      enum: [medical_treatment, data_processing, telemedicine, recording, ai_analysis, data_sharing, research, marketing, emergency_contact, prescription_forwarding]
+
+    ConsentStatus:
+      type: object
+      properties:
+        summary:
+          type: object
+          properties:
+            total:
+              type: integer
+            active:
+              type: integer
+            withdrawn:
+              type: integer
+            expired:
+              type: integer
+        consents:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/UUID'
+              consent_type:
+                $ref: '#/components/schemas/ConsentType'
+              consent_type_label:
+                type: string
+              status:
+                type: string
+                enum: [active, withdrawn, expired, pending]
+              granted_at:
+                $ref: '#/components/schemas/Timestamp'
+              withdrawn_at:
+                $ref: '#/components/schemas/Timestamp'
+                nullable: true
+              expires_at:
+                $ref: '#/components/schemas/Timestamp'
+                nullable: true
+              version:
+                type: object
+        pending_consents:
+          type: array
+          items:
+            type: object
+        total_pending:
+          type: integer
+
+    ConsentHistory:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+        consent_id:
+          $ref: '#/components/schemas/UUID'
+        action:
+          type: string
+          enum: [granted, withdrawn, updated]
+        performed_at:
+          $ref: '#/components/schemas/Timestamp'
+        ip_address:
+          type: string
+        user_agent:
+          type: string
+
+    ConsentVersion:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+        consent_type:
+          $ref: '#/components/schemas/ConsentType'
+        version:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        category:
+          type: string
+        effective_date:
+          $ref: '#/components/schemas/Timestamp'
+        required_for_new_users:
+          type: boolean
+
+    # ==================== REVIEWS ====================
+    Review:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+        appointment_id:
+          $ref: '#/components/schemas/UUID'
+        patient_id:
+          $ref: '#/components/schemas/UUID'
+        doctor_id:
+          $ref: '#/components/schemas/UUID'
+        rating:
+          type: integer
+          minimum: 1
+          maximum: 5
+        comment:
+          type: string
+          nullable: true
+        created_at:
+          $ref: '#/components/schemas/Timestamp'
+        is_verified:
+          type: boolean
+
+    # ==================== SECOND OPINION ====================
+    SecondOpinionType:
+      type: string
+      enum: [basic, specialist, panel]
+
+    SecondOpinionStatus:
+      type: string
+      enum: [draft, pending_payment, paid, assigned, in_review, completed, cancelled]
+
+    SecondOpinionInput:
+      type: object
+      required:
+        - chief_complaint
+      properties:
+        type:
+          $ref: '#/components/schemas/SecondOpinionType'
+          default: basic
+        chief_complaint:
+          type: string
+          minLength: 10
+        current_diagnosis:
+          type: string
+        current_treatment:
+          type: string
+        medical_history:
+          type: string
+        allergies:
+          type: string
+        medications:
+          type: string
+        questions:
+          type: array
+          items:
+            type: string
+
+    SecondOpinionRequest:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+        patient_id:
+          $ref: '#/components/schemas/UUID'
+        type:
+          $ref: '#/components/schemas/SecondOpinionType'
+        chief_complaint:
+          type: string
+        current_diagnosis:
+          type: string
+          nullable: true
+        current_treatment:
+          type: string
+          nullable: true
+        medical_history:
+          type: string
+          nullable: true
+        status:
+          $ref: '#/components/schemas/SecondOpinionStatus'
+        price_cents:
+          $ref: '#/components/schemas/Currency'
+        created_at:
+          $ref: '#/components/schemas/Timestamp'
+        updated_at:
+          $ref: '#/components/schemas/Timestamp'
+
+    # ==================== REFERRALS ====================
+    DoctorReferral:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+        referring_doctor_id:
+          $ref: '#/components/schemas/UUID'
+        receiving_doctor_id:
+          $ref: '#/components/schemas/UUID'
+          nullable: true
+        patient_id:
+          $ref: '#/components/schemas/UUID'
+        specialty_needed:
+          type: string
+        urgency:
+          type: string
+          enum: [emergency, urgent, routine]
+        reason:
+          type: string
+        clinical_notes:
+          type: string
+          nullable: true
+        status:
+          type: string
+          enum: [pending, accepted, completed, declined, expired]
+        expires_at:
+          $ref: '#/components/schemas/Timestamp'
+        created_at:
+          $ref: '#/components/schemas/Timestamp'
+
+    # ==================== FOLLOWUPS ====================
+    FollowUp:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+        appointment_id:
+          $ref: '#/components/schemas/UUID'
+        patient_id:
+          $ref: '#/components/schemas/UUID'
+        type:
+          type: string
+          enum: [follow_up_24h, follow_up_7d, medication_reminder, prescription_refill, chronic_care_check]
+        scheduled_at:
+          $ref: '#/components/schemas/Timestamp'
+        status:
+          type: string
+          enum: [scheduled, sent, completed, cancelled]
+        sent_at:
+          $ref: '#/components/schemas/Timestamp'
+          nullable: true
+        completed_at:
+          $ref: '#/components/schemas/Timestamp'
+          nullable: true
+
+    # ==================== DIGITAL SIGNATURE ====================
+    CreateSignatureInput:
+      type: object
+      required:
+        - documentId
+        - documentType
+        - documentContent
+        - userId
+        - userName
+      properties:
+        documentId:
+          $ref: '#/components/schemas/UUID'
+        documentType:
+          type: string
+        documentContent:
+          type: string
+        userId:
+          $ref: '#/components/schemas/UUID'
+        userName:
+          type: string
+        userRfc:
+          type: string
+          nullable: true
+        metadata:
+          type: object
+          additionalProperties: true
+
+    SignatureResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+        data:
+          type: object
+          properties:
+            signature:
+              type: object
+              properties:
+                id:
+                  $ref: '#/components/schemas/UUID'
+                documentId:
+                  $ref: '#/components/schemas/UUID'
+                documentType:
+                  type: string
+                userId:
+                  $ref: '#/components/schemas/UUID'
+                userName:
+                  type: string
+                signedAt:
+                  $ref: '#/components/schemas/Timestamp'
+                documentHash:
+                  type: string
+                signatureValue:
+                  type: string
+                algorithm:
+                  type: string
+            verificationHash:
+              type: string
+
+    DigitalSignature:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+        document_id:
+          $ref: '#/components/schemas/UUID'
+        document_type:
+          type: string
+        user_id:
+          $ref: '#/components/schemas/UUID'
+        user_name:
+          type: string
+        signed_at:
+          $ref: '#/components/schemas/Timestamp'
+        document_hash:
+          type: string
+        signature_value:
+          type: string
+        algorithm:
+          type: string
+        valid_until:
+          $ref: '#/components/schemas/Timestamp'
+          nullable: true
+
+    # ==================== PHARMACY ====================
+    PharmacySearchResult:
+      type: object
+      properties:
+        query:
+          type: string
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              pharmacyId:
+                type: string
+              productName:
+                type: string
+              price:
+                type: number
+              url:
+                type: string
+        total:
+          type: integer
+        searchTimeMs:
+          type: integer
+        pharmacies:
+          type: array
+          items:
+            type: string
+        cached:
+          type: boolean
+        cachedAt:
+          type: string
+
+    PriceComparisonResult:
+      type: object
+      properties:
+        medicationName:
+          type: string
+        prices:
+          type: array
+          items:
+            type: object
+            properties:
+              pharmacy:
+                type: string
+              price:
+                type: number
+              url:
+                type: string
+              inStock:
+                type: boolean
+        bestPrice:
+          type: object
+          properties:
+            pharmacy:
+              type: string
+            price:
+              type: number
+        savings:
+          type: number
+
+    # ==================== TRIAGE ====================
+    TriageAction:
+      type: string
+      enum: [EMERGENCY_CALL_911, URGENT_TELEMEDICINE, SCHEDULE_APPOINTMENT, SELF_CARE, NONE]
+
+    TriageResult:
+      type: object
+      properties:
+        action:
+          $ref: '#/components/schemas/TriageAction'
+          nullable: true
+        urgency:
+          type: string
+          enum: [emergency, urgent, moderate, routine, self-care]
+        reasons:
+          type: array
+          items:
+            type: string
+        ruleIds:
+          type: array
+          items:
+            type: string
+        careLevelInfo:
+          type: object
+          nullable: true
+        mentalHealthCrisis:
+          type: boolean
+
+    # ==================== ERROR RESPONSES ====================
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+        message:
+          type: string
+        details:
+          type: object
+          nullable: true
+
+  responses:
+    BadRequest:
+      description: Solicitud inválida
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            error: "Bad Request"
+            message: "Datos de entrada inválidos"
+            details:
+              field: "email"
+              message: "Email inválido"
+
+    Unauthorized:
+      description: No autenticado
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            error: "Unauthorized"
+            message: "Se requiere autenticación"
+
+    Forbidden:
+      description: Acceso denegado
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            error: "Forbidden"
+            message: "No tiene permisos para esta acción"
+
+    NotFound:
+      description: Recurso no encontrado
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            error: "Not Found"
+            message: "El recurso solicitado no existe"
+
+    RateLimit:
+      description: Límite de solicitudes excedido
+      headers:
+        X-RateLimit-Limit:
+          schema:
+            type: integer
+        X-RateLimit-Remaining:
+          schema:
+            type: integer
+        X-RateLimit-Reset:
+          schema:
+            type: integer
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            error: "Too Many Requests"
+            message: "Ha excedido el límite de solicitudes"
+
+    InternalError:
+      description: Error interno del servidor
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            error: "Internal Server Error"
+            message: "Ocurrió un error interno"

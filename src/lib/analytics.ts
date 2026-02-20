@@ -123,11 +123,11 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
     supabase.from('appointments').select('id, status, created_at', { count: 'exact', head: true }),
   ])
 
-  const totalDoctors = doctorResult.count || 0
-  const totalPatients = patientResult.count || 0
-  const totalAppointments = appointmentResult.count || 0
+  const totalDoctors = doctorResult.count ?? 0
+  const totalPatients = patientResult.count ?? 0
+  const totalAppointments = appointmentResult.count ?? 0
 
-  const completedCount = appointmentResult.count || 0
+  const completedCount = appointmentResult.count ?? 0
 
   const { data: monthlyPayments } = await supabase
     .from('payments')
@@ -173,8 +173,8 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
     .gte('start_ts', lastMonthStart.toISOString())
     .lt('start_ts', lastMonthEnd.toISOString())
 
-  const mrr = paymentsThisMonth?.reduce((sum, p) => sum + (p.amount_cents || 0), 0) || 0
-  const lastMonthMrr = paymentsLastMonth?.reduce((sum, p) => sum + (p.amount_cents || 0), 0) || 0
+  const mrr = paymentsThisMonth?.reduce((sum, p) => sum + (p.amount_cents ?? 0), 0) || 0
+  const lastMonthMrr = paymentsLastMonth?.reduce((sum, p) => sum + (p.amount_cents ?? 0), 0) || 0
   const mrrGrowth = lastMonthMrr > 0 ? ((mrr - lastMonthMrr) / lastMonthMrr) * 100 : 0
 
   const monthlyRevenue = eachMonthOfInterval({
@@ -188,7 +188,7 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
     ) || []
     return {
       month: format(month, 'MMM yyyy', { locale: es }),
-      revenue: monthPayments.reduce((sum, p) => sum + (p.amount_cents || 0), 0) / 100,
+      revenue: monthPayments.reduce((sum, p) => sum + (p.amount_cents ?? 0), 0) / 100,
     }
   })
 
@@ -201,13 +201,13 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
     },
     doctores: {
       total: totalDoctors,
-      newThisMonth: newDoctorsThisMonth || 0,
+      newThisMonth: newDoctorsThisMonth ?? 0,
       churnRate: 0,
       activeThisMonth: 0,
     },
     patients: {
       total: totalPatients,
-      newThisMonth: newPatientsThisMonth || 0,
+      newThisMonth: newPatientsThisMonth ?? 0,
       retentionRate: 0,
     },
     appointments: {
@@ -216,9 +216,9 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
       cancelled: 0,
       noShow: 0,
       completionRate: 0,
-      thisMonth: appointmentsThisMonth || 0,
-      lastMonth: appointmentsLastMonth || 0,
-      growth: appointmentsLastMonth ? ((appointmentsThisMonth || 0) - appointmentsLastMonth) / appointmentsLastMonth * 100 : 0,
+      thisMonth: appointmentsThisMonth ?? 0,
+      lastMonth: appointmentsLastMonth ?? 0,
+      growth: appointmentsLastMonth ? ((appointmentsThisMonth ?? 0) - appointmentsLastMonth) / appointmentsLastMonth * 100 : 0,
     },
     conversion: {
       visitToBook: 0,
@@ -305,37 +305,37 @@ export async function getDoctorMetrics(doctorId: string): Promise<DoctorMetrics>
     ) || []
     return {
       month: format(month, 'MMM', { locale: es }),
-      revenue: monthPayments.reduce((sum, p) => sum + (p.amount_cents || 0), 0) / 100,
+      revenue: monthPayments.reduce((sum, p) => sum + (p.amount_cents ?? 0), 0) / 100,
     }
   })
 
-  const grossRevenue = payments?.reduce((sum, p) => sum + (p.amount_cents || 0), 0) || 0
-  const platformFee = payments?.reduce((sum, p) => sum + (p.fee_cents || 0), 0) || 0
+  const grossRevenue = payments?.reduce((sum, p) => sum + (p.amount_cents ?? 0), 0) || 0
+  const platformFee = payments?.reduce((sum, p) => sum + (p.fee_cents ?? 0), 0) || 0
 
-  const thisMonthGross = paymentsThisMonth?.reduce((sum, p) => sum + (p.amount_cents || 0), 0) || 0
-  const thisMonthFee = paymentsThisMonth?.reduce((sum, p) => sum + (p.fee_cents || 0), 0) || 0
-  const lastMonthGross = paymentsLastMonth?.reduce((sum, p) => sum + (p.amount_cents || 0), 0) || 0
+  const thisMonthGross = paymentsThisMonth?.reduce((sum, p) => sum + (p.amount_cents ?? 0), 0) || 0
+  const thisMonthFee = paymentsThisMonth?.reduce((sum, p) => sum + (p.fee_cents ?? 0), 0) || 0
+  const lastMonthGross = paymentsLastMonth?.reduce((sum, p) => sum + (p.amount_cents ?? 0), 0) || 0
 
   const byStatus = appointmentsByStatus?.reduce((acc, apt) => {
-    acc[apt.status] = (acc[apt.status] || 0) + 1
+    acc[apt.status] = (acc[apt.status] ?? 0) + 1
     return acc
   }, {} as Record<string, number>) || {}
 
-  const cancelled = byStatus['cancelled'] || 0
-  const noShow = byStatus['no_show'] || 0
+  const cancelled = byStatus['cancelled'] ?? 0
+  const noShow = byStatus['no_show'] ?? 0
   const total = totalConsultations || 1
   const noShowRate = ((cancelled + noShow) / total) * 100
 
   const avgRating = reviews?.length 
-    ? reviews.reduce((sum, r) => sum + (r.rating || 0), 0) / reviews.length 
+    ? reviews.reduce((sum, r) => sum + (r.rating ?? 0), 0) / reviews.length 
     : 0
 
   return {
     consultations: {
-      total: totalConsultations || 0,
-      thisMonth: thisMonthConsultations || 0,
-      lastMonth: lastMonthConsultations || 0,
-      growth: lastMonthConsultations ? ((thisMonthConsultations || 0) - lastMonthConsultations) / lastMonthConsultations * 100 : 0,
+      total: totalConsultations ?? 0,
+      thisMonth: thisMonthConsultations ?? 0,
+      lastMonth: lastMonthConsultations ?? 0,
+      growth: lastMonthConsultations ? ((thisMonthConsultations ?? 0) - lastMonthConsultations) / lastMonthConsultations * 100 : 0,
     },
     revenue: {
       gross: grossRevenue / 100,
@@ -347,7 +347,7 @@ export async function getDoctorMetrics(doctorId: string): Promise<DoctorMetrics>
     },
     rating: {
       average: avgRating,
-      totalReviews: reviews?.length || 0,
+      totalReviews: reviews?.length ?? 0,
       trend: 0,
     },
     patients: {
@@ -402,7 +402,7 @@ export async function getRevenueMetrics(): Promise<RevenueMetrics> {
 
   const payments = (paymentsWithDoctors || []) as unknown as PaymentWithDoctor[]
 
-  const total = payments.reduce((sum, p) => sum + (p.amount_cents || 0), 0)
+  const total = payments.reduce((sum, p) => sum + (p.amount_cents ?? 0), 0)
 
   const byMonth = eachMonthOfInterval({ start: twelveMonthsAgo, end: now }).map(month => {
     const monthStartStr = startOfMonth(month).toISOString()
@@ -412,7 +412,7 @@ export async function getRevenueMetrics(): Promise<RevenueMetrics> {
     )
     return {
       month: format(month, 'MMM yyyy', { locale: es }),
-      amount: monthPayments.reduce((sum, p) => sum + (p.amount_cents || 0), 0) / 100,
+      amount: monthPayments.reduce((sum, p) => sum + (p.amount_cents ?? 0), 0) / 100,
       count: monthPayments.length,
     }
   })
@@ -425,16 +425,16 @@ export async function getRevenueMetrics(): Promise<RevenueMetrics> {
   payments.forEach(p => {
     const doctorId = p.appointment?.doctor_id
     if (doctorId) {
-      const current = doctorRevenue.get(doctorId) || 0
-      doctorRevenue.set(doctorId, current + (p.amount_cents || 0))
+      const current = doctorRevenue.get(doctorId) ?? 0
+      doctorRevenue.set(doctorId, current + (p.amount_cents ?? 0))
 
       // Cache specialty and city for this doctor
       if (p.appointment?.doctor) {
         if (!doctorSpecialtyMap.has(doctorId)) {
-          doctorSpecialtyMap.set(doctorId, p.appointment.doctor.specialty || 'General')
+          doctorSpecialtyMap.set(doctorId, p.appointment.doctor.specialty ?? 'General')
         }
         if (!doctorCityMap.has(doctorId)) {
-          doctorCityMap.set(doctorId, p.appointment.doctor.city || 'Unknown')
+          doctorCityMap.set(doctorId, p.appointment.doctor.city ?? 'Unknown')
         }
       }
     }
@@ -443,8 +443,8 @@ export async function getRevenueMetrics(): Promise<RevenueMetrics> {
   // Aggregate by specialty
   const specialtyRevenue = new Map<string, number>()
   doctorRevenue.forEach((revenue, doctorId) => {
-    const specialty = doctorSpecialtyMap.get(doctorId) || 'General'
-    specialtyRevenue.set(specialty, (specialtyRevenue.get(specialty) || 0) + revenue)
+    const specialty = doctorSpecialtyMap.get(doctorId) ?? 'General'
+    specialtyRevenue.set(specialty, (specialtyRevenue.get(specialty) ?? 0) + revenue)
   })
 
   const bySpecialty = Array.from(specialtyRevenue.entries())
@@ -454,8 +454,8 @@ export async function getRevenueMetrics(): Promise<RevenueMetrics> {
   // Aggregate by city
   const cityRevenue = new Map<string, number>()
   doctorRevenue.forEach((revenue, doctorId) => {
-    const city = doctorCityMap.get(doctorId) || 'Unknown'
-    cityRevenue.set(city, (cityRevenue.get(city) || 0) + revenue)
+    const city = doctorCityMap.get(doctorId) ?? 'Unknown'
+    cityRevenue.set(city, (cityRevenue.get(city) ?? 0) + revenue)
   })
 
   const byCity = Array.from(cityRevenue.entries())
@@ -496,15 +496,15 @@ export async function getUserMetrics(): Promise<UserMetrics> {
     .gte('created_at', lastMonthStart.toISOString())
     .lt('created_at', monthStart.toISOString())
 
-  const growth = newPatientsLastMonth ? ((newPatientsThisMonth || 0) - newPatientsLastMonth) / newPatientsLastMonth * 100 : 0
+  const growth = newPatientsLastMonth ? ((newPatientsThisMonth ?? 0) - newPatientsLastMonth) / newPatientsLastMonth * 100 : 0
 
   return {
     acquisition: {
-      total: totalPatients || 0,
-      thisMonth: newPatientsThisMonth || 0,
-      lastMonth: newPatientsLastMonth || 0,
+      total: totalPatients ?? 0,
+      thisMonth: newPatientsThisMonth ?? 0,
+      lastMonth: newPatientsLastMonth ?? 0,
       growth,
-      bySource: [{ source: 'Directo', count: newPatientsThisMonth || 0 }],
+      bySource: [{ source: 'Directo', count: newPatientsThisMonth ?? 0 }],
     },
     retention: {
       rate: 0,
@@ -572,10 +572,10 @@ export async function getAppointmentMetrics(): Promise<AppointmentMetrics> {
 
   aptData.forEach(apt => {
     if (apt.doctor) {
-      const specialty = apt.doctor.specialty || 'General'
-      specialtyCount.set(specialty, (specialtyCount.get(specialty) || 0) + 1)
-      const city = apt.doctor.city || 'Unknown'
-      cityCount.set(city, (cityCount.get(city) || 0) + 1)
+      const specialty = apt.doctor.specialty ?? 'General'
+      specialtyCount.set(specialty, (specialtyCount.get(specialty) ?? 0) + 1)
+      const city = apt.doctor.city ?? 'Unknown'
+      cityCount.set(city, (cityCount.get(city) ?? 0) + 1)
     }
   })
 

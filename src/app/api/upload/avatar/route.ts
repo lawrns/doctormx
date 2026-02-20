@@ -74,7 +74,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Generate unique filename
-    const fileExt = file.name.split('.').pop()?.toLowerCase() || 'jpg'
+    const fileExt = file.name.split('.').pop()?.toLowerCase() ?? 'jpg'
     const fileName = `${folder}/${userId}/${Date.now()}.${fileExt}`
 
     // Convert file to buffer

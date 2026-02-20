@@ -69,7 +69,7 @@ async function logTriageResult(
       symptoms: intake?.symptoms || null,
       intake_data: intake || null,
       triage_result: triageResult,
-      care_level: triageResult.action || 'NONE',
+      care_level: triageResult.action ?? 'NONE',
       triggered_rules: triageResult.ruleIds,
       reasons: triageResult.reasons
     })

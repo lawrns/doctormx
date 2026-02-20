@@ -60,7 +60,7 @@ export default async function AdminDashboard() {
       </header>
 
       {/* Main */}
-      <main className="container mx-auto px-4 py-8">
+      <main id="main-content" className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-2">
             Panel de Administracin
@@ -76,7 +76,7 @@ export default async function AdminDashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600">Doctores Aprobados</p>
-                <p className="text-2xl font-bold text-gray-900">{approvedCount || 0}</p>
+                <p className="text-2xl font-bold text-gray-900">{approvedCount ?? 0}</p>
               </div>
               <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
                 <svg className="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -90,7 +90,7 @@ export default async function AdminDashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600">Pendientes</p>
-                <p className="text-2xl font-bold text-yellow-600">{pendingCount || 0}</p>
+                <p className="text-2xl font-bold text-yellow-600">{pendingCount ?? 0}</p>
               </div>
               <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
                 <svg className="w-6 h-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -104,7 +104,7 @@ export default async function AdminDashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600">Borradores</p>
-                <p className="text-2xl font-bold text-gray-900">{draftCount || 0}</p>
+                <p className="text-2xl font-bold text-gray-900">{draftCount ?? 0}</p>
               </div>
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
                 <svg className="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -118,7 +118,7 @@ export default async function AdminDashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600">Pacientes</p>
-                <p className="text-2xl font-bold text-gray-900">{patientsCount || 0}</p>
+                <p className="text-2xl font-bold text-gray-900">{patientsCount ?? 0}</p>
               </div>
               <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
                 <svg className="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -183,6 +183,23 @@ export default async function AdminDashboard() {
           </Link>
 
           <Link
+            href="/admin/performance"
+            className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow"
+          >
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center">
+                <svg className="w-6 h-6 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900">Performance</h3>
+                <p className="text-sm text-gray-600">Core Web Vitals</p>
+              </div>
+            </div>
+          </Link>
+
+          <Link
             href="/admin/ai-dashboard"
             className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow"
           >
@@ -207,7 +224,7 @@ export default async function AdminDashboard() {
               Doctores Pendientes de Verificacin
             </h3>
             <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-              {pendingDoctors?.length || 0} pendientes
+              {pendingDoctors?.length ?? 0} pendientes
             </span>
           </div>
           <div className="p-6">

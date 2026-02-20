@@ -8,8 +8,6 @@ import {
   getRetryableFollowUps,
   hasPatientOptedOut,
   recordOptOut,
-} from '@/lib/followup-enhanced'
-import {
   getPendingFollowUps,
   scheduleFollowUp,
 } from '@/lib/followup'
@@ -100,7 +98,7 @@ async function checkFollowupTables(): Promise<VerificationResult> {
       name: 'Follow-up Tables',
       status: 'pass',
       message: 'All follow-up tables exist',
-      details: { totalFollowUps: followupsCount || 0 },
+      details: { totalFollowUps: followupsCount ?? 0 },
     }
   } catch (error) {
     return {

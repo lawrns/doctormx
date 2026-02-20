@@ -42,18 +42,18 @@ export default async function DoctorImageReviewPage({ params }: PageProps) {
         imageUrl: analysis.image_url,
         imageType: analysis.image_type,
         imageTypeLabel: getImageTypeLabel(analysis.image_type),
-        patientName: patient.full_name || 'Paciente',
-        patientEmail: patient.email || '',
-        patientPhone: patient.phone || '',
+        patientName: patient.full_name ?? 'Paciente',
+        patientEmail: patient.email ?? '',
+        patientPhone: patient.phone ?? '',
         patientNotes: analysis.patient_notes,
-        findings: analysis.findings || '',
+        findings: analysis.findings ?? '',
         possibleConditions: analysis.possible_conditions || [],
-        urgencyLevel: analysis.urgency_level || 'medium',
+        urgencyLevel: analysis.urgency_level ?? 'medium',
         urgencyLabel: getUrgencyLabel(analysis.urgency_level),
         recommendations: analysis.recommendations || [],
-        followUpNeeded: analysis.follow_up_needed || false,
+        followUpNeeded: analysis.follow_up_needed ?? false,
         followUpNotes: analysis.follow_up_notes,
-        confidencePercent: analysis.confidence_percent || 0,
+        confidencePercent: analysis.confidence_percent ?? 0,
         status: analysis.status,
         statusLabel: getStatusLabel(analysis.status),
         createdAt: analysis.created_at,
@@ -61,7 +61,7 @@ export default async function DoctorImageReviewPage({ params }: PageProps) {
         costCents: analysis.cost_cents || 500
       }}
       doctorId={user.id}
-      doctorName={profile?.full_name || 'Doctor'}
+      doctorName={profile?.full_name ?? 'Doctor'}
     />
   )
 }

@@ -63,9 +63,9 @@ function createProfileSection(profile: Record<string, unknown>): string[] {
 
   lines.push('1. INFORMACIÓN PERSONAL')
   lines.push('-'.repeat(80))
-  lines.push(`Nombre completo: ${(profile.full_name as string) || 'No disponible'}`)
-  lines.push(`Rol: ${(profile.role as string) || 'No disponible'}`)
-  lines.push(`Teléfono: ${(profile.phone as string) || 'No disponible'}`)
+  lines.push(`Nombre completo: ${(profile.full_name as string) ?? 'No disponible'}`)
+  lines.push(`Rol: ${(profile.role as string) ?? 'No disponible'}`)
+  lines.push(`Teléfono: ${(profile.phone as string) ?? 'No disponible'}`)
   lines.push(`Fecha de registro: ${formatDate(profile.created_at as string)}`)
   lines.push('')
 
@@ -110,7 +110,7 @@ function createAppointmentsSection(appointments: Array<Record<string, unknown>>)
     lines.push(`  - ID: ${apt.id}`)
     lines.push(`  - Fecha: ${formatDateTime(apt.start_ts as string)}`)
     lines.push(`  - Estado: ${apt.status}`)
-    lines.push(`  - Motivo: ${(apt.reason_for_visit as string) || 'No especificado'}`)
+    lines.push(`  - Motivo: ${(apt.reason_for_visit as string) ?? 'No especificado'}`)
     lines.push('')
   })
 
@@ -139,8 +139,8 @@ function createConsultationsSection(consultations: Array<Record<string, unknown>
     lines.push(`Consulta ${index + 1}:`)
     lines.push(`  - ID: ${consultation.id}`)
     lines.push(`  - Fecha: ${formatDateTime(consultation.created_at as string)}`)
-    lines.push(`  - Motivo principal: ${(consultation.chief_complaint as string) || 'No especificado'}`)
-    lines.push(`  - Diagnóstico: ${(consultation.diagnosis as string) || 'No especificado'}`)
+    lines.push(`  - Motivo principal: ${(consultation.chief_complaint as string) ?? 'No especificado'}`)
+    lines.push(`  - Diagnóstico: ${(consultation.diagnosis as string) ?? 'No especificado'}`)
     lines.push('')
   })
 
@@ -169,7 +169,7 @@ function createPrescriptionsSection(prescriptions: Array<Record<string, unknown>
     lines.push(`Receta ${index + 1}:`)
     lines.push(`  - ID: ${rx.id}`)
     lines.push(`  - Fecha: ${formatDateTime(rx.created_at as string)}`)
-    lines.push(`  - Notas: ${(rx.notes as string) || 'Sin notas'}`)
+    lines.push(`  - Notas: ${(rx.notes as string) ?? 'Sin notas'}`)
     lines.push('')
   })
 
@@ -195,7 +195,7 @@ function createPaymentsSection(payments: Array<Record<string, unknown>>): string
   lines.push('')
 
   payments.slice(0, 10).forEach((payment, index) => {
-    const amount = ((payment.amount_cents as number) || 0) / 100
+    const amount = ((payment.amount_cents as number) ?? 0) / 100
 
     lines.push(`Pago ${index + 1}:`)
     lines.push(`  - ID: ${payment.id}`)

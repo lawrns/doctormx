@@ -48,6 +48,7 @@ import {
   TTL_CACHE_TAG,
 } from './ttl'
 import { logger } from '@/lib/observability/logger'
+import type { DoctorProfile } from '@/lib/discovery'
 
 // ============================================================================
 // Types
@@ -262,9 +263,9 @@ async function invalidatePattern(pattern: string): Promise<number> {
 /**
  * Get doctor profile from cache
  */
-export async function getDoctorProfile(doctorId: string): Promise<unknown | null> {
+export async function getDoctorProfile(doctorId: string): Promise<DoctorProfile | null> {
   const key = doctorProfileKey(doctorId)
-  const result = await getFromCache<unknown>(key)
+  const result = await getFromCache<DoctorProfile>(key)
 
   if (result.hit) {
     logger.debug('Doctor profile cache hit', { doctorId, latency: result.latency })
@@ -278,7 +279,7 @@ export async function getDoctorProfile(doctorId: string): Promise<unknown | null
  */
 export async function setDoctorProfile(
   doctorId: string,
-  profile: unknown
+  profile: DoctorProfile
 ): Promise<boolean> {
   const key = doctorProfileKey(doctorId)
   return setInCache(key, profile, {
@@ -791,7 +792,7 @@ export async function getHealth(): Promise<{
   return {
     connected: health.connected,
     type: health.type,
-    latency: health.latency || 0,
+    latency: health.latency ?? 0,
     stats,
   }
 }

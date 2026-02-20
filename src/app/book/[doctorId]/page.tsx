@@ -19,7 +19,7 @@ export default async function BookAppointmentPage({
 
   // If not authenticated, redirect to login with return URL
   if (!user) {
-    const loginUrl = new URL('/auth/login', process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000')
+    const loginUrl = new URL('/auth/login', process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000')
     loginUrl.searchParams.set('redirect', `/book/${doctorId}`)
 
     // Preserve any query parameters (like date/time selection)

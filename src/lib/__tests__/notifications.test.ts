@@ -1,27 +1,10 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { mockSupabaseClient, createMockAppointment } from './mocks'
-import { createClient } from '@/lib/supabase/server'
 
-vi.mock('@/lib/supabase/server', () => ({
-  createClient: vi.fn(),
-  createServiceClient: vi.fn().mockResolvedValue({
-    from: vi.fn().mockReturnValue({
-      select: vi.fn().mockReturnValue({
-        eq: vi.fn().mockReturnValue({
-          single: vi.fn().mockResolvedValue({ data: null, error: null }),
-        }),
-      }),
-    }),
-  }),
-}))
+// Import modules after mocks are defined
+import * as notificationsModule from '@/lib/notifications'
 
-vi.mock('resend', () => ({
-  Resend: vi.fn().mockImplementation(() => ({
-    emails: {
-      send: vi.fn().mockResolvedValue({ success: true, data: { id: 'test-email-id' } }),
-    },
-  })),
-}))
+const { sendAppointmentConfirmation, sendPaymentReceipt, sendConsultationReminder, sendFollowUp, formatMexicanDateTime, getPriceDisplay, getEmailTemplate, getVideoConsultationLink } = notificationsModule
 
 describe('Notifications System', () => {
   beforeEach(() => {
@@ -61,9 +44,8 @@ describe('Notifications System', () => {
         }),
       }
 
+      const { createClient } = await import('@/lib/supabase/server')
       vi.mocked(createClient).mockResolvedValue(mockClient as never)
-
-      const { sendAppointmentConfirmation } = await import('@/lib/notifications')
       
       const result = await sendAppointmentConfirmation(
         'appointment-1',
@@ -91,9 +73,8 @@ describe('Notifications System', () => {
         }),
       }
 
+      const { createClient } = await import('@/lib/supabase/server')
       vi.mocked(createClient).mockResolvedValue(mockClient as never)
-
-      const { sendAppointmentConfirmation } = await import('@/lib/notifications')
       
       const result = await sendAppointmentConfirmation(
         'non-existent',
@@ -162,9 +143,8 @@ describe('Notifications System', () => {
         }),
       }
 
+      const { createClient } = await import('@/lib/supabase/server')
       vi.mocked(createClient).mockResolvedValue(mockClient as never)
-
-      const { sendPaymentReceipt } = await import('@/lib/notifications')
       
       const result = await sendPaymentReceipt(
         'appointment-1',
@@ -202,9 +182,8 @@ describe('Notifications System', () => {
         }),
       }
 
+      const { createClient } = await import('@/lib/supabase/server')
       vi.mocked(createClient).mockResolvedValue(mockClient as never)
-
-      const { sendConsultationReminder } = await import('@/lib/notifications')
       
       const result = await sendConsultationReminder(
         'appointment-1',
@@ -242,9 +221,8 @@ describe('Notifications System', () => {
         }),
       }
 
+      const { createClient } = await import('@/lib/supabase/server')
       vi.mocked(createClient).mockResolvedValue(mockClient as never)
-
-      const { sendFollowUp } = await import('@/lib/notifications')
       
       const result = await sendFollowUp(
         'appointment-1',
@@ -281,9 +259,8 @@ describe('Notifications System', () => {
         }),
       }
 
+      const { createClient } = await import('@/lib/supabase/server')
       vi.mocked(createClient).mockResolvedValue(mockClient as never)
-
-      const { sendFollowUp } = await import('@/lib/notifications')
       
       const result = await sendFollowUp(
         'appointment-1',
@@ -296,8 +273,7 @@ describe('Notifications System', () => {
   })
 
   describe('Date Formatting', () => {
-    it('should format Mexican date correctly', async () => {
-      const { formatMexicanDateTime } = await import('@/lib/notifications')
+    it('should format Mexican date correctly', () => {
       
       const result = formatMexicanDateTime('2025-12-31T10:30:00.000Z')
       
@@ -308,16 +284,14 @@ describe('Notifications System', () => {
   })
 
   describe('Price Display', () => {
-    it('should format price in MXN correctly', async () => {
-      const { getPriceDisplay } = await import('@/lib/notifications')
+    it('should format price in MXN correctly', () => {
       
       const result = getPriceDisplay(50000, 'MXN')
       
       expect(result).toBe('$500.00')
     })
 
-    it('should handle different currencies', async () => {
-      const { getPriceDisplay } = await import('@/lib/notifications')
+    it('should handle different currencies', () => {
       
       const resultUSD = getPriceDisplay(5000, 'USD')
       const resultEUR = getPriceDisplay(4500, 'EUR')
@@ -331,8 +305,7 @@ describe('Notifications System', () => {
   })
 
   describe('Email Template', () => {
-    it('should generate valid email HTML', async () => {
-      const { getEmailTemplate } = await import('@/lib/notifications')
+    it('should generate valid email HTML', () => {
       
       const html = getEmailTemplate('<p>Test content</p>', 'Test Patient')
       
@@ -341,8 +314,7 @@ describe('Notifications System', () => {
       expect(html).toContain('Test content')
     })
 
-    it('should include footer with copyright', async () => {
-      const { getEmailTemplate } = await import('@/lib/notifications')
+    it('should include footer with copyright', () => {
       
       const html = getEmailTemplate('', 'Test Patient')
       
@@ -352,8 +324,7 @@ describe('Notifications System', () => {
   })
 
   describe('Video Consultation Link', () => {
-    it('should generate correct consultation link', async () => {
-      const { getVideoConsultationLink } = await import('@/lib/notifications')
+    it('should generate correct consultation link', () => {
       
       const link = getVideoConsultationLink('appointment-123')
       

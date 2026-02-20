@@ -1,7 +1,30 @@
+/**
+ * Error message definitions and utilities
+ * Provides patient-friendly messages and developer messages
+ * with full i18n support through next-intl
+ * 
+ * @module lib/errors/messages
+ * @example
+ * ```typescript
+ * import { ERROR_CODES, getPatientMessageAsync, isEmergencyError } from '@/lib/errors/messages';
+ * 
+ * // Check if error is emergency
+ * if (isEmergencyError('EMG_001')) {
+ *   // Handle emergency
+ * }
+ * 
+ * // Get translated message
+ * const message = await getPatientMessageAsync('VAL_001', 'es');
+ * ```
+ */
+
 import type { AppError } from './AppError';
+import { getTranslations } from 'next-intl/server';
+import { getLocale } from 'next-intl/server';
 
 /**
  * Error code constants
+ * Organized by category for easy reference
  */
 export const ERROR_CODES = {
   // Medical errors (MED_xxx)
@@ -90,8 +113,103 @@ export const ERROR_CODES = {
   RECORDING_FAILED: 'VID_004',
 } as const;
 
+/** Type for error code values */
+export type ErrorCode = typeof ERROR_CODES[keyof typeof ERROR_CODES];
+
 /**
- * User-friendly Spanish error messages for patients
+ * Error code to translation key mapping for patient messages
+ * Maps error codes to i18n translation keys
+ */
+const ERROR_CODE_TO_PATIENT_KEY: Record<string, string> = {
+  // Medical errors
+  [ERROR_CODES.MEDICAL_RECORD_ERROR]: 'errors.medical.recordError',
+  [ERROR_CODES.MEDICAL_DATA_INVALID]: 'errors.medical.dataInvalid',
+  [ERROR_CODES.SYMPTOM_ANALYSIS_FAILED]: 'errors.medical.symptomAnalysisFailed',
+  [ERROR_CODES.RED_FLAG_DETECTED]: 'errors.medical.redFlagDetected',
+
+  // Emergency errors
+  [ERROR_CODES.EMERGENCY_DETECTED]: 'errors.emergency.detected',
+  [ERROR_CODES.CRITICAL_SYMPTOMS]: 'errors.emergency.criticalSymptoms',
+  [ERROR_CODES.URGENT_CARE_NEEDED]: 'errors.emergency.urgentCareNeeded',
+  [ERROR_CODES.EMERGENCY_REDIRECT]: 'errors.emergency.redirect',
+
+  // Prescription errors
+  [ERROR_CODES.PRESCRIPTION_GENERATION_FAILED]: 'errors.prescription.generationFailed',
+  [ERROR_CODES.DRUG_INTERACTION]: 'errors.prescription.drugInteraction',
+  [ERROR_CODES.DOSAGE_ERROR]: 'errors.prescription.dosageError',
+  [ERROR_CODES.ALLERGY_ALERT]: 'errors.prescription.allergyAlert',
+  [ERROR_CODES.CONTRAINDICATION]: 'errors.prescription.contraindication',
+  [ERROR_CODES.PRESCRIPTION_EXPIRED]: 'errors.prescription.expired',
+
+  // Diagnosis errors
+  [ERROR_CODES.DIAGNOSIS_LOW_CONFIDENCE]: 'errors.diagnosis.lowConfidence',
+  [ERROR_CODES.INSUFFICIENT_DATA]: 'errors.diagnosis.insufficientData',
+  [ERROR_CODES.DIAGNOSIS_CONFLICT]: 'errors.diagnosis.conflict',
+  [ERROR_CODES.SYMPTOM_MISMATCH]: 'errors.diagnosis.symptomMismatch',
+
+  // Appointment errors
+  [ERROR_CODES.APPOINTMENT_CONFLICT]: 'errors.appointment.conflict',
+  [ERROR_CODES.DOCTOR_UNAVAILABLE]: 'errors.appointment.doctorUnavailable',
+  [ERROR_CODES.INVALID_TIME_SLOT]: 'errors.appointment.invalidTimeSlot',
+  [ERROR_CODES.APPOINTMENT_CANCELLED]: 'errors.appointment.cancelled',
+  [ERROR_CODES.APPOINTMENT_EXPIRED]: 'errors.appointment.expired',
+  [ERROR_CODES.APPOINTMENT_NOT_FOUND]: 'errors.appointment.notFound',
+
+  // Authentication errors
+  [ERROR_CODES.AUTH_INVALID_CREDENTIALS]: 'errors.auth.invalidCredentials',
+  [ERROR_CODES.AUTH_SESSION_EXPIRED]: 'errors.auth.sessionExpired',
+  [ERROR_CODES.AUTH_TOKEN_INVALID]: 'errors.auth.tokenInvalid',
+  [ERROR_CODES.AUTH_UNAUTHORIZED]: 'errors.auth.unauthorized',
+
+  // Authorization errors
+  [ERROR_CODES.ACCESS_DENIED]: 'errors.access.denied',
+  [ERROR_CODES.INSUFFICIENT_PERMISSIONS]: 'errors.access.insufficientPermissions',
+  [ERROR_CODES.ROLE_REQUIRED]: 'errors.access.roleRequired',
+
+  // Validation errors
+  [ERROR_CODES.VALIDATION_FAILED]: 'errors.validation.failed',
+  [ERROR_CODES.INVALID_INPUT]: 'errors.validation.invalidInput',
+  [ERROR_CODES.MISSING_REQUIRED_FIELD]: 'errors.validation.missingRequiredField',
+  [ERROR_CODES.INVALID_FORMAT]: 'errors.validation.invalidFormat',
+
+  // Not found errors
+  [ERROR_CODES.RESOURCE_NOT_FOUND]: 'errors.notFound.resource',
+  [ERROR_CODES.USER_NOT_FOUND]: 'errors.notFound.user',
+  [ERROR_CODES.DOCTOR_NOT_FOUND]: 'errors.notFound.doctor',
+
+  // Rate limiting errors
+  [ERROR_CODES.RATE_LIMIT_EXCEEDED]: 'errors.rateLimit.exceeded',
+  [ERROR_CODES.TOO_MANY_REQUESTS]: 'errors.rateLimit.tooManyRequests',
+  [ERROR_CODES.QUOTA_EXCEEDED]: 'errors.rateLimit.quotaExceeded',
+
+  // External service errors
+  [ERROR_CODES.EXTERNAL_SERVICE_DOWN]: 'errors.external.serviceDown',
+  [ERROR_CODES.AI_SERVICE_ERROR]: 'errors.external.aiServiceError',
+  [ERROR_CODES.PAYMENT_SERVICE_ERROR]: 'errors.external.paymentServiceError',
+  [ERROR_CODES.SMS_SERVICE_ERROR]: 'errors.external.smsServiceError',
+
+  // Consent errors
+  [ERROR_CODES.CONSENT_REQUIRED]: 'errors.consent.required',
+  [ERROR_CODES.CONSENT_OUTDATED]: 'errors.consent.outdated',
+  [ERROR_CODES.CONSENT_WITHDRAWN]: 'errors.consent.withdrawn',
+  [ERROR_CODES.PRIVACY_POLICY_UPDATED]: 'errors.consent.privacyPolicyUpdated',
+
+  // Payment errors
+  [ERROR_CODES.PAYMENT_FAILED]: 'errors.payment.failed',
+  [ERROR_CODES.PAYMENT_DECLINED]: 'errors.payment.declined',
+  [ERROR_CODES.PAYMENT_CANCELLED]: 'errors.payment.cancelled',
+  [ERROR_CODES.REFUND_FAILED]: 'errors.payment.refundFailed',
+
+  // Video consultation errors
+  [ERROR_CODES.VIDEO_SETUP_FAILED]: 'errors.video.setupFailed',
+  [ERROR_CODES.VIDEO_CONNECTION_ERROR]: 'errors.video.connectionError',
+  [ERROR_CODES.VIDEO_PERMISSION_DENIED]: 'errors.video.permissionDenied',
+  [ERROR_CODES.RECORDING_FAILED]: 'errors.video.recordingFailed',
+};
+
+/**
+ * Legacy: User-friendly Spanish error messages for patients
+ * @deprecated Use getPatientMessageAsync or useTranslations instead
  */
 export const PATIENT_MESSAGES: Record<string, string> = {
   // Medical errors
@@ -181,7 +299,8 @@ export const PATIENT_MESSAGES: Record<string, string> = {
 };
 
 /**
- * Developer-friendly detailed error messages (English)
+ * Legacy: Developer-friendly detailed error messages (English)
+ * @deprecated Not needed when using translations - use error codes for debugging
  */
 export const DEVELOPER_MESSAGES: Record<string, string> = {
   // Medical errors
@@ -271,30 +390,116 @@ export const DEVELOPER_MESSAGES: Record<string, string> = {
 };
 
 /**
- * Get user-friendly message for patients (Spanish)
+ * Legacy: Get user-friendly message for patients (Spanish)
+ * @deprecated Use getPatientMessageAsync for server-side or useTranslations for client-side
+ * @param error - AppError instance or error code string
+ * @returns Patient-friendly error message
+ * @example
+ * const message = getPatientMessage('VAL_001');
+ * // 'Por favor, verifique que todos los datos sean correctos.'
  */
 export function getPatientMessage(error: AppError | string): string {
   const code = typeof error === 'string' ? error : error.code;
-  return PATIENT_MESSAGES[code] || 'Ha ocurrido un error. Por favor, intente nuevamente.';
+  return PATIENT_MESSAGES[code] ?? 'Ha ocurrido un error. Por favor, intente nuevamente.';
 }
 
 /**
- * Get developer-friendly message (English)
+ * Get user-friendly message using translations (async - server-side)
+ * Use this in API routes and server components
+ * @param error - AppError instance or error code string
+ * @param locale - Locale code (optional, auto-detected if not provided)
+ * @returns Promise with translated error message
+ * @example
+ * const message = await getPatientMessageAsync('VAL_001', 'es');
+ * // 'Por favor, verifique que todos los datos sean correctos.'
+ */
+export async function getPatientMessageAsync(error: AppError | string, locale?: string): Promise<string> {
+  const code = typeof error === 'string' ? error : error.code;
+  const targetLocale = locale ?? await getLocale();
+  const t = await getTranslations({ locale: targetLocale, namespace: 'errors' });
+  
+  const translationKey = ERROR_CODE_TO_PATIENT_KEY[code];
+  if (translationKey) {
+    // Extract the nested key path
+    const keyParts = translationKey.replace('errors.', '').split('.');
+    if (keyParts.length === 2) {
+      const [category, key] = keyParts;
+      const categoryMessages = t.raw(category) as Record<string, string>;
+      if (categoryMessages && categoryMessages[key]) {
+        return categoryMessages[key];
+      }
+    }
+  }
+  
+  // Fallback to generic message
+  return t('generic.unknown') ?? 'Ha ocurrido un error. Por favor, intente nuevamente.';
+}
+
+/**
+ * Legacy: Get developer-friendly message (English)
+ * @deprecated Error codes should be used for debugging instead
+ * @param error - AppError instance or error code string
+ * @returns Developer-friendly error message
+ * @example
+ * const message = getDeveloperMessage('VAL_001');
+ * // 'Input validation failed'
  */
 export function getDeveloperMessage(error: AppError | string): string {
   const code = typeof error === 'string' ? error : error.code;
-  return DEVELOPER_MESSAGES[code] || 'An unknown error occurred';
+  return DEVELOPER_MESSAGES[code] ?? 'An unknown error occurred';
+}
+
+/**
+ * Get error title based on error type (async - server-side)
+ * Use this in API routes and server components
+ * @param error - AppError instance or error code string
+ * @param locale - Locale code (optional, auto-detected if not provided)
+ * @returns Promise with translated error title
+ * @example
+ * const title = await getErrorTitleAsync('EMG_001', 'es');
+ * // 'Atención Médica Requerida'
+ */
+export async function getErrorTitleAsync(error: AppError | string, locale?: string): Promise<string> {
+  const code = typeof error === 'string' ? error : error.code;
+  const targetLocale = locale ?? await getLocale();
+  const t = await getTranslations({ locale: targetLocale, namespace: 'errors' });
+  
+  // Determine title based on error code prefix
+  if (code.startsWith('EMG_')) {
+    return t('titles.medicalAttentionRequired') ?? 'Atención Médica Requerida';
+  }
+  if (code.startsWith('AUTH_')) {
+    return t('titles.authentication') ?? 'Autenticación';
+  }
+  if (code.startsWith('VAL_')) {
+    return t('titles.validation') ?? 'Validación';
+  }
+  if (code.startsWith('RATE_')) {
+    return t('titles.limitReached') ?? 'Límite Alcanzado';
+  }
+  
+  return t('titles.error') ?? 'Error';
 }
 
 /**
  * Check if error code exists
+ * @param code - Error code to validate
+ * @returns Boolean indicating if code is valid
+ * @example
+ * if (isValidErrorCode('VAL_001')) {
+ *   // Valid error code
+ * }
  */
-export function isValidErrorCode(code: string): code is keyof typeof ERROR_CODES {
-  return Object.values(ERROR_CODES).includes(code as any);
+export function isValidErrorCode(code: string): boolean {
+  return Object.values(ERROR_CODES).includes(code as unknown as typeof ERROR_CODES[keyof typeof ERROR_CODES]);
 }
 
 /**
  * Get all emergency-related error codes
+ * @returns Array of emergency error codes
+ * @example
+ * const emergencyCodes = getEmergencyErrorCodes();
+ * // ['EMG_001', 'EMG_002', 'EMG_003', 'EMG_004']
  */
 export function getEmergencyErrorCodes(): string[] {
   return [
@@ -307,9 +512,26 @@ export function getEmergencyErrorCodes(): string[] {
 
 /**
  * Check if error is emergency-related
+ * @param error - AppError instance or error code string
+ * @returns Boolean indicating if error is an emergency
+ * @example
+ * if (isEmergencyError('EMG_001')) {
+ *   // Handle emergency
+ * }
  */
 export function isEmergencyError(error: AppError | string): boolean {
   const code = typeof error === 'string' ? error : error.code;
   return getEmergencyErrorCodes().includes(code);
 }
 
+/**
+ * Get translation key for an error code
+ * @param code - Error code
+ * @returns Translation key or undefined if not found
+ * @example
+ * const key = getErrorTranslationKey('VAL_001');
+ * // 'errors.validation.failed'
+ */
+export function getErrorTranslationKey(code: string): string | undefined {
+  return ERROR_CODE_TO_PATIENT_KEY[code];
+}

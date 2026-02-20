@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
     const errorMessage = error instanceof Error ? error.message : String(error)
     logger.error('[API /questionnaire/start] Error', { error: errorMessage })
     return NextResponse.json(
-      { success: false, error: errorMessage || 'Failed to start conversation' },
+      { success: false, error: errorMessage ?? 'Failed to start conversation' },
       { status: 500 }
     )
   }

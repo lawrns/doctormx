@@ -26,8 +26,16 @@ export default async function ConsultationRoomPage({
     .eq('patient_id', user.id)
     .single()
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const apt = appointment as any
+  const apt = appointment as {
+    id: string
+    status: string
+    start_ts: string
+    doctor?: {
+      profile?: {
+        full_name: string | null
+      } | null
+    } | null
+  } | null
   if (!apt || apt.status !== 'confirmed') {
     notFound()
   }
@@ -54,7 +62,7 @@ export default async function ConsultationRoomPage({
           {/* Info de la cita */}
           <div className="bg-primary-50 border border-primary-200 rounded-lg p-6 mb-8">
             <h3 className="font-semibold text-neutral-900 mb-4">
-              Consulta con Dr. {apt?.doctor?.profile?.full_name || 'Médico'}
+              Consulta con Dr. {apt?.doctor?.profile?.full_name ?? 'Médico'}
             </h3>
             <div className="grid grid-cols-2 gap-4 text-sm text-neutral-600">
               <div>

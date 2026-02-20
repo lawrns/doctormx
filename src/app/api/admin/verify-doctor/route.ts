@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
   
   // Validate CSRF token (after authentication)
   const csrfToken = getCSRFCookie(request)
-  const csrfResult = validateCSRFToken(request, csrfToken || '', true)
+  const csrfResult = validateCSRFToken(request, csrfToken ?? '', true)
   if (typeof csrfResult === 'object' && !csrfResult.valid) {
     return createCSRFErrorResponse(csrfResult)
   }

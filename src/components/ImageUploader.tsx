@@ -171,7 +171,7 @@ export function ImageUploader({
 
       if (!response.ok) {
         const errorData = await response.json()
-        throw new Error(errorData.error || 'Error al procesar la imagen')
+        throw new Error(errorData.error ?? 'Error al procesar la imagen')
       }
 
       setUploadProgress(100)
@@ -396,12 +396,12 @@ export function ImageUploader({
               <div className="space-y-4">
                 <img
                   src={previewUrl}
-                  alt={`Vista previa: ${selectedFile?.name || 'Imagen médica'}`}
+                  alt={`Vista previa: ${selectedFile?.name ?? 'Imagen médica'}`}
                   className="max-h-64 mx-auto rounded-lg object-contain"
                 />
                 <div className="text-sm text-gray-600">
                   <p className="font-medium">{selectedFile?.name}</p>
-                  <p className="text-gray-500">{formatFileSize(selectedFile?.size || 0)}</p>
+                  <p className="text-gray-500">{formatFileSize(selectedFile?.size ?? 0)}</p>
                 </div>
                 <button
                   type="button"

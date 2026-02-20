@@ -22,7 +22,7 @@ export default async function PatientFollowUpsPage() {
       responded: 'bg-success-100 text-success-700',
       cancelled: 'bg-secondary-100 text-ink-secondary',
     }
-    return styles[status] || 'bg-secondary-100 text-ink-secondary'
+    return styles[status] ?? 'bg-secondary-100 text-ink-secondary'
   }
 
   const getTypeLabel = (type: string) => {

@@ -45,8 +45,8 @@ export class PharmacyScraper {
   async searchAll(query: string): Promise<Partial<Product>[]> {
     const normalized = query.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     const matches = MOCK_PRODUCTS.filter(p => {
-      const name = p.name?.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '') || '';
-      const generic = p.genericName?.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '') || '';
+      const name = p.name?.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '') ?? '';
+      const generic = p.genericName?.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '') ?? '';
       return name.includes(normalized) || generic.includes(normalized);
     });
     return matches.slice(0, 12);
@@ -65,7 +65,7 @@ export class PharmacyScraper {
         pharmacyId,
         pharmacyName: this.getPharmacyName(pharmacyId),
         product: product as Product,
-        totalPrice: (product.price?.current || 0) + 49,
+        totalPrice: (product.price?.current ?? 0) + 49,
         deliveryTime: 45,
         availability: 'in_stock' as const,
         savings: 0,
@@ -94,7 +94,7 @@ export class PharmacyScraper {
       averagePrice,
       bestDeal: {
         pharmacyId: bestDeal.pharmacyId,
-        productId: bestDeal.product.id || '',
+        productId: bestDeal.product.id ?? '',
         reason: `Ahorra $${bestDeal.savings.toFixed(2)} (${bestDeal.savingsPercent.toFixed(1)}%)`
       }
     };

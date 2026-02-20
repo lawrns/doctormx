@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { useToast } from '@/components/Toast'
 import { Loader2, Camera, X } from 'lucide-react'
 import { logger } from '@/lib/observability/logger'
+import { apiRequest, APIError } from '@/lib/api'
 
 interface AvatarUploadProps {
   userId: string
@@ -82,17 +83,12 @@ export function AvatarUpload({
       formData.append('bucket', bucket)
       formData.append('folder', folder)
 
-      const response = await fetch('/api/upload/avatar', {
+      const response = await apiRequest<{ url: string }>('/api/upload/avatar', {
         method: 'POST',
-        body: formData,
+        body: formData as unknown as Record<string, unknown>,
       })
 
-      if (!response.ok) {
-        const error = await response.json()
-        throw new Error(error.message || 'Error al subir la imagen')
-      }
-
-      const { url } = await response.json()
+      const { url } = response.data
       
       // Update preview with the permanent URL
       setPreviewUrl(url)
@@ -100,7 +96,15 @@ export function AvatarUpload({
       
       addToast('Foto de perfil actualizada', 'success')
     } catch (error) {
-      logger.error('Error uploading avatar', { error: error instanceof Error ? error.message : String(error) })
+      const apiError = error as APIError
+      
+      if (apiError.code === 'TIMEOUT') {
+        addToast('La solicitud tardó demasiado. Por favor, intenta de nuevo.', 'error')
+      } else if (apiError.code === 'NETWORK_ERROR') {
+        addToast('Error de conexión. Verifica tu internet.', 'error')
+      }
+      
+      logger.error('Error uploading avatar', { error: apiError.message })
       // Revert to original on error
       setPreviewUrl(currentPhotoUrl || null)
       addToast(error instanceof Error ? error.message : 'Error al subir la imagen', 'error')
@@ -117,21 +121,24 @@ export function AvatarUpload({
     if (!previewUrl) return
 
     try {
-      const response = await fetch('/api/upload/avatar', {
+      await apiRequest('/api/upload/avatar', {
         method: 'DELETE',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ userId, bucket, folder }),
+        body: { userId, bucket, folder },
       })
-
-      if (!response.ok) {
-        throw new Error('Error al eliminar la imagen')
-      }
 
       setPreviewUrl(null)
       onUploadComplete?.('')
       addToast('Foto de perfil eliminada', 'success')
     } catch (error) {
-      logger.error('Error removing avatar', { error: error instanceof Error ? error.message : String(error) })
+      const apiError = error as APIError
+      
+      if (apiError.code === 'TIMEOUT') {
+        addToast('La solicitud tardó demasiado. Por favor, intenta de nuevo.', 'error')
+      } else if (apiError.code === 'NETWORK_ERROR') {
+        addToast('Error de conexión. Verifica tu internet.', 'error')
+      }
+      
+      logger.error('Error removing avatar', { error: apiError.message })
       addToast('Error al eliminar la imagen', 'error')
     }
   }, [userId, bucket, folder, previewUrl, onUploadComplete, addToast])
@@ -146,7 +153,7 @@ export function AvatarUpload({
         <Avatar className={`${sizeClasses[size]} ring-4 ring-white shadow-lg`}>
           <AvatarImage 
             src={previewUrl || undefined} 
-            alt={name || 'Avatar'}
+            alt={name ?? 'Avatar'}
             className="object-cover"
           />
           <AvatarFallback className="text-xl font-semibold bg-gradient-to-br from-primary-500 to-primary-600 text-white">

@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { logger } from '@/lib/observability/logger'
+import { LIMITS } from '@/lib/constants'
 
 interface ValidationResult {
   isValid: boolean
@@ -12,7 +13,7 @@ interface FileValidationOptions {
   validateMagicNumbers?: boolean
 }
 
-const MAX_FILE_SIZE = 5 * 1024 * 1024 // 5MB
+const MAX_FILE_SIZE = LIMITS.FILE_SIZE_AVATAR_MAX // 5MB
 const ALLOWED_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.webp']
 const MAGIC_NUMBERS = {
   jpeg: new Uint8Array([0xFF, 0xD8, 0xFF]),

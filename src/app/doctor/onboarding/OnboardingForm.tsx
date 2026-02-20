@@ -23,12 +23,12 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
   } | null>(null)
 
   // Todos los campos en un solo form
-  const [specialty, setSpecialty] = useState(doctor?.specialty || '')
-  const [yearsExperience, setYearsExperience] = useState(doctor?.years_experience?.toString() || '')
-  const [bio, setBio] = useState(doctor?.bio || '')
-  const [licenseNumber, setLicenseNumber] = useState(doctor?.license_number || '')
-  const [city, setCity] = useState(doctor?.city || '')
-  const [state, setState] = useState(doctor?.state || '')
+  const [specialty, setSpecialty] = useState(doctor?.specialty ?? '')
+  const [yearsExperience, setYearsExperience] = useState(doctor?.years_experience?.toString() ?? '')
+  const [bio, setBio] = useState(doctor?.bio ?? '')
+  const [licenseNumber, setLicenseNumber] = useState(doctor?.license_number ?? '')
+  const [city, setCity] = useState(doctor?.city ?? '')
+  const [state, setState] = useState(doctor?.state ?? '')
   const [price, setPrice] = useState(doctor?.price_cents ? (doctor.price_cents / 100).toString() : (PAYMENT_CONFIG.DEFAULT_PRICE_CENTS / 100).toString())
 
   const [availability, setAvailability] = useState({
@@ -91,7 +91,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
       } else {
         setVerificationStatus({
           verified: false,
-          message: data.error || 'Error al verificar'
+          message: data.error ?? 'Error al verificar'
         })
       }
     } catch {
@@ -131,7 +131,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
         router.refresh()
       } else {
         const data = await res.json()
-        alert(data.error || 'Error al guardar')
+        alert(data.error ?? 'Error al guardar')
         setSubmitting(false)
       }
     } catch {

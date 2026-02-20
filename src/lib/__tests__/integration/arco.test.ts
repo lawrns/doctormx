@@ -25,9 +25,11 @@ import {
   getUserDataExport,
   exportUserDataToJson,
   createDataExportAttachment,
+} from '@/lib/arco/export'
+import {
   planDataDeletion,
   executeDataDeletion,
-} from '@/lib/arco/data-export'
+} from '@/lib/arco/export/deletion'
 
 import {
   trackSlaCompliance,
@@ -62,7 +64,7 @@ const createMockSupabaseClient = () => {
   const generateId = () => `test_id_${Date.now()}_${idCounter++}`
 
   // Create chainable query builder for select operations
-  const createQueryBuilder = (table: string, items: any[] = null) => {
+  const createQueryBuilder = (table: string, items: any[] | null = null) => {
     let currentData = items || [...(storage[table] || [])]
     let singleMode = false
     let maybeSingleMode = false
@@ -301,7 +303,7 @@ describe('ARCO System Integration Tests', () => {
           request_type: 'OPPOSE',
           title: 'Solicitud de Oposición al Tratamiento de Datos',
           description: 'Me opongo al uso de mis datos para marketing',
-          data_scope: ['marketing_emails', 'analytics_consent'],
+          data_scope: ['profiles', 'appointments'],
         }
       )
 
@@ -550,7 +552,23 @@ describe('ARCO System Integration Tests', () => {
         ).toISOString(), // Already past due
         title: 'Old request',
         description: 'Old request',
-        data_scope: ['all'],
+        data_scope: ['all' as const],
+        specific_records: null,
+        justification: null,
+        submitted_via: 'web',
+        ip_address: null,
+        user_agent: null,
+        assigned_to: null,
+        escalation_level: 'tier_1' as const,
+        priority: 'medium' as const,
+        acknowledged_at: null,
+        completed_at: null,
+        response: null,
+        denial_reason: null,
+        denial_legal_basis: null,
+        updated_at: oldDate.toISOString(),
+        last_reminder_at: null,
+        metadata: {},
       }
 
       const compliance = await checkSlaCompliance(overdueRequest)
