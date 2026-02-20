@@ -84,6 +84,11 @@ const TYPE_DESCRIPTIONS: Record<ArcoRequestType, { title: string; description: s
     description: 'Me opongo al uso de mis datos para los siguientes fines específicos',
     icon: <Shield className="h-4 w-4" />,
   },
+  RESTRICT: {
+    title: 'Solicitud de Restricción',
+    description: 'Solicito limitar el tratamiento de mis datos personales (GDPR Art. 18)',
+    icon: <Shield className="h-4 w-4 text-blue-600" />,
+  },
 }
 
 export function ArcoRequestForm({
@@ -189,6 +194,7 @@ export function ArcoRequestForm({
                   <SelectItem value="RECTIFY">Rectificación de Datos</SelectItem>
                   <SelectItem value="CANCEL">Cancelación (Derecho al Olvido)</SelectItem>
                   <SelectItem value="OPPOSE">Oposición al Tratamiento</SelectItem>
+                  <SelectItem value="RESTRICT">Restricción de Tratamiento (GDPR)</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -419,6 +425,7 @@ export function ArcoRequestForm({
                 <li><strong>Rectificación:</strong> Corregir datos inexactos o incompletos</li>
                 <li><strong>Cancelación:</strong> Solicitar la eliminación de tus datos</li>
                 <li><strong>Oposición:</strong> Oponerte al uso de datos para fines específicos</li>
+                <li><strong>Restricción:</strong> Limitar el tratamiento (GDPR Art. 18)</li>
               </ul>
               <p className="mt-2">
                 El plazo de respuesta es de <strong>20 días hábiles</strong>. Serás notificado

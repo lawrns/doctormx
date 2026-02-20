@@ -1,9 +1,9 @@
 /**
  * ARCO Rights Constants - Doctor.mx
  *
- * Constants for the ARCO (Acceso, Rectificación, Cancelación, Oposición)
+ * Constants for the ARCO (Acceso, Rectificación, Cancelación, Oposición, Restricción)
  * rights management system. Implements LFPDPPP compliance for Mexican
- * data protection law.
+ * data protection law and GDPR Article 18.
  *
  * @module constants/arco
  * @see {@link ../lib/arco/index.ts} - Original source
@@ -45,6 +45,8 @@ export const ARCO_TYPE_DESCRIPTIONS: Record<ArcoRequestType, string> = {
     'Derecho de Cancelación: Solicito la eliminación de mis datos personales de sus sistemas',
   OPPOSE:
     'Derecho de Oposición: Me opongo al procesamiento de mis datos para los siguientes fines específicos',
+  RESTRICT:
+    'Derecho de Restricción: Solicito limitar el tratamiento de mis datos personales (GDPR Art. 18)',
 } as const
 
 /**

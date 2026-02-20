@@ -68,6 +68,7 @@ const REQUEST_COMPLEXITY = {
   RECTIFY: 3,
   OPPOSE: 4,
   CANCEL: 5, // Most complex due to retention requirements
+  RESTRICT: 3, // Similar complexity to RECTIFY
 } as const
 
 /**

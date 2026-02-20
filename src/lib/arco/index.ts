@@ -45,6 +45,28 @@ export {
   getEscalationStats,
   autoEscalateRequests,
 } from './escalation'
+
+// Re-export restriction functions (GDPR Article 18)
+export {
+  createDataRestriction,
+  isDataRestricted,
+  liftDataRestriction,
+  getUserActiveRestrictions,
+  applyRestrictionsFromRequest,
+  getRestrictionStats,
+  validateProcessingOperation,
+  formatRestriction,
+  RESTRICTION_REASON_LABELS,
+  RESTRICTION_REASON_DESCRIPTIONS,
+  type RestrictionReason,
+  type RestrictionStatus,
+  type RestrictionScope,
+  type DataRestriction,
+  type CreateRestrictionInput,
+  type DataRestrictionCheck,
+} from './restrictions'
+
+// Re-export from export module
 export {
   // Core exports
   getUserDataExport,
@@ -161,6 +183,8 @@ export const ARCO_TYPE_DESCRIPTIONS: Record<ArcoRequestType, string> = {
     'Derecho de Cancelación: Solicito la eliminación de mis datos personales de sus sistemas',
   OPPOSE:
     'Derecho de Oposición: Me opongo al procesamiento de mis datos para los siguientes fines específicos',
+  RESTRICT:
+    'Derecho de Restricción: Solicito limitar el tratamiento de mis datos personales (GDPR Art. 18)',
 } as const
 
 // ================================================
@@ -233,6 +257,13 @@ export function getArcoRequestTemplate(requestType: ArcoRequestType): {
       return {
         title: 'Solicitud de Oposición al Tratamiento de Datos',
         description: ARCO_TYPE_DESCRIPTIONS.OPPOSE,
+        defaultDataScope: ['all'],
+      }
+
+    case 'RESTRICT':
+      return {
+        title: 'Solicitud de Restricción de Tratamiento (GDPR Art. 18)',
+        description: ARCO_TYPE_DESCRIPTIONS.RESTRICT,
         defaultDataScope: ['all'],
       }
 
@@ -447,6 +478,7 @@ export function formatRequestType(requestType: ArcoRequestType): string {
     RECTIFY: 'Rectificación',
     CANCEL: 'Cancelación',
     OPPOSE: 'Oposición',
+    RESTRICT: 'Restricción',
   }
 
   return types[requestType] || requestType

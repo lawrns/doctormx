@@ -11,8 +11,9 @@
 
 /**
  * ARCO request types - Los Derechos ARCO
+ * Includes GDPR Article 18: Right to Restriction of Processing (RESTRICT)
  */
-export type ArcoRequestType = 'ACCESS' | 'RECTIFY' | 'CANCEL' | 'OPPOSE'
+export type ArcoRequestType = 'ACCESS' | 'RECTIFY' | 'CANCEL' | 'OPPOSE' | 'RESTRICT'
 
 /**
  * Human-readable labels for ARCO request types
@@ -22,6 +23,7 @@ export const ARCO_REQUEST_TYPE_LABELS: Record<ArcoRequestType, string> = {
   RECTIFY: 'Rectificación',
   CANCEL: 'Cancelación',
   OPPOSE: 'Oposición',
+  RESTRICT: 'Restricción de Tratamiento',
 }
 
 /**

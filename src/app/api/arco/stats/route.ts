@@ -137,6 +137,7 @@ export async function GET(request: NextRequest) {
       RECTIFY: { total: 0, completed: 0, pending: 0, overdue: 0 },
       CANCEL: { total: 0, completed: 0, pending: 0, overdue: 0 },
       OPPOSE: { total: 0, completed: 0, pending: 0, overdue: 0 },
+      RESTRICT: { total: 0, completed: 0, pending: 0, overdue: 0 },
     }
 
     for (const request of statusCounts || []) {

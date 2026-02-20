@@ -59,6 +59,7 @@ export function formatRequestType(requestType: ArcoRequestType): string {
     RECTIFY: 'Rectificación',
     CANCEL: 'Cancelación',
     OPPOSE: 'Oposición',
+    RESTRICT: 'Restricción',
   }
 
   return types[requestType] || requestType
