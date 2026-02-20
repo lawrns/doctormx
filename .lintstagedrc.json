@@ -1,14 +1,9 @@
 {
-  "$schema": "https://json.schemastore.org/lintstagedrc.json",
-  "_comment": "ZERO WARNINGS POLICY - All linting issues must be fixed before commit",
-  "*.{js,jsx,ts,tsx}": [
-    "npx eslint --max-warnings=0 --fix",
-    "npx prettier --write"
+  "*.{ts,tsx}": [
+    "eslint --fix --max-warnings=0",
+    "prettier --write"
   ],
-  "*.{json,md,mdx,yml,yaml}": [
-    "npx prettier --write"
-  ],
-  "*.{css,scss}": [
-    "npx prettier --write"
+  "*.{json,md}": [
+    "prettier --write"
   ]
 }
