@@ -12,11 +12,13 @@ import {
   verifyStripeWebhook,
   verifyTwilioWebhook,
   verifyWhatsAppWebhook,
+  verifyPharmacyWebhook,
   verifyWebhookSignature,
   createWebhookVerifier,
   generateTestStripeSignature,
   generateTestWhatsAppSignature,
   generateTestTwilioSignature,
+  generateTestPharmacySignature,
 } from '../signatures'
 
 describe('Webhook Signature Verification', () => {
@@ -388,6 +390,159 @@ describe('Webhook Signature Verification', () => {
 
       const result = verifyWhatsAppWebhook(payload, signature, appSecret)
       expect(result).toBe(true)
+    })
+  })
+
+  describe('verifyPharmacyWebhook', () => {
+    const webhookSecret = 'pharmacy_webhook_secret_key_12345'
+
+    it('should verify valid Pharmacy webhook signatures', () => {
+      const payload = JSON.stringify({ test: 'data' })
+      const timestamp = Date.now().toString()
+      const { signature } = generateTestPharmacySignature(payload, webhookSecret, parseInt(timestamp))
+
+      const result = verifyPharmacyWebhook(payload, signature, webhookSecret, timestamp)
+      expect(result).toBe(true)
+    })
+
+    it('should reject invalid Pharmacy webhook signatures', () => {
+      const payload = JSON.stringify({ test: 'data' })
+      const timestamp = Date.now().toString()
+
+      const result = verifyPharmacyWebhook(payload, 'invalid_signature', webhookSecret, timestamp)
+      expect(result).toBe(false)
+    })
+
+    it('should reject expired Pharmacy webhooks (older than 5 minutes)', () => {
+      const payload = JSON.stringify({ test: 'data' })
+      const oldTimestamp = (Date.now() - 6 * 60 * 1000).toString() // 6 minutes ago
+      const { signature } = generateTestPharmacySignature(payload, webhookSecret, parseInt(oldTimestamp))
+
+      const result = verifyPharmacyWebhook(payload, signature, webhookSecret, oldTimestamp)
+      expect(result).toBe(false)
+    })
+
+    it('should reject Pharmacy webhooks with future timestamps', () => {
+      const payload = JSON.stringify({ test: 'data' })
+      const futureTimestamp = (Date.now() + 6 * 60 * 1000).toString() // 6 minutes in future
+      const { signature } = generateTestPharmacySignature(payload, webhookSecret, parseInt(futureTimestamp))
+
+      const result = verifyPharmacyWebhook(payload, signature, webhookSecret, futureTimestamp)
+      expect(result).toBe(false)
+    })
+
+    it('should accept Pharmacy webhooks within 5 minute window', () => {
+      const payload = JSON.stringify({ test: 'data' })
+      const recentTimestamp = (Date.now() - 2 * 60 * 1000).toString() // 2 minutes ago
+      const { signature } = generateTestPharmacySignature(payload, webhookSecret, parseInt(recentTimestamp))
+
+      const result = verifyPharmacyWebhook(payload, signature, webhookSecret, recentTimestamp)
+      expect(result).toBe(true)
+    })
+
+    it('should reject missing parameters', () => {
+      const payload = JSON.stringify({ test: 'data' })
+      const timestamp = Date.now().toString()
+      const { signature } = generateTestPharmacySignature(payload, webhookSecret, parseInt(timestamp))
+
+      expect(verifyPharmacyWebhook('', signature, webhookSecret, timestamp)).toBe(false)
+      expect(verifyPharmacyWebhook(payload, '', webhookSecret, timestamp)).toBe(false)
+      expect(verifyPharmacyWebhook(payload, signature, '', timestamp)).toBe(false)
+      expect(verifyPharmacyWebhook(payload, signature, webhookSecret, '')).toBe(false)
+    })
+
+    it('should reject invalid timestamp format', () => {
+      const payload = JSON.stringify({ test: 'data' })
+      const invalidTimestamp = 'not_a_number'
+      const { signature } = generateTestPharmacySignature(payload, webhookSecret)
+
+      const result = verifyPharmacyWebhook(payload, signature, webhookSecret, invalidTimestamp)
+      expect(result).toBe(false)
+    })
+
+    it('should handle empty payload', () => {
+      const payload = ''
+      const timestamp = Date.now().toString()
+      const { signature } = generateTestPharmacySignature(payload, webhookSecret, parseInt(timestamp))
+
+      const result = verifyPharmacyWebhook(payload, signature, webhookSecret, timestamp)
+      expect(result).toBe(true)
+    })
+
+    it('should use timing-safe comparison', () => {
+      const payload = JSON.stringify({ test: 'data' })
+      const timestamp = Date.now().toString()
+      const { signature: validSignature } = generateTestPharmacySignature(
+        payload,
+        webhookSecret,
+        parseInt(timestamp)
+      )
+      const invalidSignature = validSignature.slice(0, -5) + '00000'
+
+      const validResult = verifyPharmacyWebhook(payload, validSignature, webhookSecret, timestamp)
+      const invalidResult = verifyPharmacyWebhook(payload, invalidSignature, webhookSecret, timestamp)
+
+      expect(validResult).toBe(true)
+      expect(invalidResult).toBe(false)
+    })
+
+    it('should handle special characters in payload', () => {
+      const payload = JSON.stringify({
+        referralCode: 'REF-123_TEST',
+        pharmacyEmail: 'pharmacy@test.com',
+        medicationTotalCents: 150000,
+        special: 'Special chars: ñáéíóú 中文 🎉',
+      })
+      const timestamp = Date.now().toString()
+      const { signature } = generateTestPharmacySignature(payload, webhookSecret, parseInt(timestamp))
+
+      const result = verifyPharmacyWebhook(payload, signature, webhookSecret, timestamp)
+      expect(result).toBe(true)
+    })
+  })
+
+  describe('createWebhookVerifier for Pharmacy', () => {
+    it('should create a verifier for Pharmacy webhooks', async () => {
+      const webhookSecret = 'pharmacy_webhook_secret_key_12345'
+      const payload = JSON.stringify({ test: 'data' })
+      const timestamp = Date.now().toString()
+      const { signature } = generateTestPharmacySignature(payload, webhookSecret, parseInt(timestamp))
+
+      const verify = createWebhookVerifier('pharmacy', () => webhookSecret)
+
+      const request = new Request('https://example.com/api/pharmacy/webhook', {
+        method: 'POST',
+        body: payload,
+        headers: {
+          'x-pharmacy-signature': signature,
+          'x-pharmacy-timestamp': timestamp,
+        },
+      })
+
+      const result = await verify(request)
+      expect(result.valid).toBe(true)
+      expect(result.provider).toBe('pharmacy')
+    })
+
+    it('should return error when timestamp header is missing for Pharmacy', async () => {
+      const webhookSecret = 'pharmacy_webhook_secret_key_12345'
+      const payload = JSON.stringify({ test: 'data' })
+      const { signature } = generateTestPharmacySignature(payload, webhookSecret)
+
+      const verify = createWebhookVerifier('pharmacy', () => webhookSecret)
+
+      const request = new Request('https://example.com/api/pharmacy/webhook', {
+        method: 'POST',
+        body: payload,
+        headers: {
+          'x-pharmacy-signature': signature,
+          // Missing x-pharmacy-timestamp
+        },
+      })
+
+      const result = await verify(request)
+      expect(result.valid).toBe(false)
+      expect(result.error).toContain('Timestamp header missing')
     })
   })
 })

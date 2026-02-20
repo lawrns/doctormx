@@ -155,7 +155,6 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 
 # OpenAI Configuration
 OPENAI_API_KEY=sk-your-openai-key
-NEXT_PUBLIC_OPENAI_API_KEY=sk-your-openai-key
 
 # Stripe Configuration
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_your-key
@@ -230,8 +229,7 @@ Visit [http://localhost:3000](http://localhost:3000) to see the application.
 |----------|-------------|---------|
 | `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL | `https://xyz.supabase.co` |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase anonymous key | `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...` |
-| `OPENAI_API_KEY` | OpenAI API key for server-side | `sk-proj-...` |
-| `NEXT_PUBLIC_OPENAI_API_KEY` | OpenAI key for client-side (optional) | `sk-proj-...` |
+| `OPENAI_API_KEY` | OpenAI API key (server-side only) | `sk-proj-...` |
 | `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | Stripe public key | `pk_test_...` |
 | `STRIPE_SECRET_KEY` | Stripe secret key | `sk_test_...` |
 | `STRIPE_WEBHOOK_SECRET` | Stripe webhook secret | `whsec_...` |

@@ -11,6 +11,8 @@ import { getLocale, getMessages } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { ServiceWorkerProvider } from "@/components/performance/ServiceWorkerProvider";
 import { isRTL, getTextDirection } from "@/lib/i18n/rtl";
+import { CookieConsent } from "@/components/CookieConsent";
+import { ConsentAwareScripts } from "@/components/ConsentAwareScripts";
 
 // PERF-006: Optimized font loading
 // - Reduced to 2 font families (max recommended for performance)
@@ -182,6 +184,8 @@ export default async function RootLayout({
               {children}
             </ToastProvider>
             <StructuredData />
+            <CookieConsent />
+            <ConsentAwareScripts />
           </ServiceWorkerProvider>
         </NextIntlClientProvider>
       </body>

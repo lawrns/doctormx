@@ -90,12 +90,40 @@ export const WEBHOOK_CONFIG = {
      */
     VERIFY_TOKEN_ENV_VAR: 'WHATSAPP_WEBHOOK_VERIFY_TOKEN',
   },
+
+  /**
+   * Pharmacy-specific configuration
+   */
+  pharmacy: {
+    /**
+     * Pharmacy webhook secret environment variable name
+     */
+    SECRET_ENV_VAR: 'PHARMACY_WEBHOOK_SECRET',
+
+    /**
+     * Pharmacy signature header name
+     */
+    SIGNATURE_HEADER: 'x-pharmacy-signature',
+
+    /**
+     * Pharmacy timestamp header name
+     */
+    TIMESTAMP_HEADER: 'x-pharmacy-timestamp',
+
+    /**
+     * Pharmacy IP allowlist (comma-separated list)
+     * Environment variable name
+     */
+    IP_ALLOWLIST_ENV_VAR: 'PHARMACY_IP_ALLOWLIST',
+  },
 } as const
 
 /**
  * Get webhook secret from environment
  */
-export function getWebhookSecret(provider: 'stripe' | 'twilio' | 'whatsapp'): string | undefined {
+export function getWebhookSecret(
+  provider: 'stripe' | 'twilio' | 'whatsapp' | 'pharmacy'
+): string | undefined {
   switch (provider) {
     case 'stripe':
       return process.env[WEBHOOK_CONFIG.stripe.SECRET_ENV_VAR]
@@ -103,7 +131,21 @@ export function getWebhookSecret(provider: 'stripe' | 'twilio' | 'whatsapp'): st
       return process.env[WEBHOOK_CONFIG.twilio.AUTH_TOKEN_ENV_VAR]
     case 'whatsapp':
       return process.env[WEBHOOK_CONFIG.whatsapp.APP_SECRET_ENV_VAR]
+    case 'pharmacy':
+      return process.env[WEBHOOK_CONFIG.pharmacy.SECRET_ENV_VAR]
     default:
       return undefined
   }
+}
+
+/**
+ * Get pharmacy IP allowlist from environment
+ * @returns Array of allowed IP addresses or empty array if not configured
+ */
+export function getPharmacyIpAllowlist(): string[] {
+  const allowlist = process.env[WEBHOOK_CONFIG.pharmacy.IP_ALLOWLIST_ENV_VAR]
+  if (!allowlist) {
+    return []
+  }
+  return allowlist.split(',').map(ip => ip.trim())
 }

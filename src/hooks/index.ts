@@ -6,3 +6,9 @@ export type {
   FieldValidationState,
   ValidationMode 
 } from './useFormValidation'
+export { useCookieConsent } from './useCookieConsent'
+export type { 
+  CookieCategory, 
+  CookiePreferences, 
+  ConsentState 
+} from './useCookieConsent'

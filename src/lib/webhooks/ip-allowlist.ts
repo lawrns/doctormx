@@ -16,6 +16,7 @@
 
 import { logger } from '@/lib/observability/logger'
 import type { WebhookProvider } from './signatures'
+import { getPharmacyIpAllowlist } from './config'
 
 // ============================================================================
 // IP Allowlists
@@ -203,6 +204,17 @@ export function isIpAllowed(ip: string, allowlist: string[]): boolean {
  * }
  * ```
  */
+/**
+ * Pharmacy IP allowlist
+ * These IPs should be configured via PHARMACY_IP_ALLOWLIST env var
+ * Format: comma-separated list of IP addresses
+ */
+export function getPharmacyWebhookIpAllowlist(): string[] {
+  const envAllowlist = getPharmacyIpAllowlist()
+  // Default fallback IPs (should be configured in production)
+  return envAllowlist.length > 0 ? envAllowlist : []
+}
+
 export function isWebhookIpAllowed(ip: string, provider: WebhookProvider): boolean {
   // Skip IP validation in development
   if (process.env.NODE_ENV === 'development') {
@@ -229,6 +241,19 @@ export function isWebhookIpAllowed(ip: string, provider: WebhookProvider): boole
         clientIp: ip,
       })
       return true
+
+    case 'pharmacy': {
+      const pharmacyIps = getPharmacyWebhookIpAllowlist()
+      // If no allowlist is configured, allow all (but log warning)
+      if (pharmacyIps.length === 0) {
+        logger.warn('Pharmacy IP allowlist not configured, allowing all IPs', {
+          provider: 'pharmacy',
+          clientIp: ip,
+        })
+        return true
+      }
+      return isIpAllowed(ip, pharmacyIps)
+    }
 
     default:
       logger.warn('Unknown webhook provider for IP validation', { provider })
