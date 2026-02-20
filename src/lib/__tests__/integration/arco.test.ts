@@ -42,11 +42,38 @@ const TEST_USER_ID = 'test_user_integration_001'
 const TEST_ADMIN_ID = 'test_admin_integration_001'
 
 /**
+ * Storage record type for mock data
+ */
+interface StorageRecord {
+  id: string
+  created_at?: string
+  updated_at?: string
+  [key: string]: unknown
+}
+
+/**
+ * Query builder interface for mock Supabase client
+ */
+interface QueryBuilder {
+  eq: (column: string, value: unknown) => QueryBuilder
+  in: (column: string, values: unknown[]) => QueryBuilder
+  not: (column: string, condition: string, values: unknown) => QueryBuilder
+  gte: (column: string, value: unknown) => QueryBuilder
+  lte: (column: string, value: unknown) => QueryBuilder
+  lt: (column: string, value: unknown) => QueryBuilder
+  order: (column: string, options?: { ascending?: boolean }) => QueryBuilder
+  single: () => QueryBuilder
+  maybeSingle: () => QueryBuilder
+  select: (columns?: string) => QueryBuilder
+  then: (resolve: (value: { data: StorageRecord | StorageRecord[] | null; error: null }) => void, reject: (reason: unknown) => void) => void
+}
+
+/**
  * Helper to create a mock Supabase client for ARCO tests
  */
 const createMockSupabaseClient = () => {
   // In-memory storage for test data
-  const storage: Record<string, any[]> = {
+  const storage: Record<string, StorageRecord[]> = {
     profiles: [],
     arco_requests: [],
     arco_request_history: [],
@@ -64,22 +91,22 @@ const createMockSupabaseClient = () => {
   const generateId = () => `test_id_${Date.now()}_${idCounter++}`
 
   // Create chainable query builder for select operations
-  const createQueryBuilder = (table: string, items: any[] | null = null) => {
+  const createQueryBuilder = (table: string, items: StorageRecord[] | null = null) => {
     let currentData = items || [...(storage[table] || [])]
     let singleMode = false
     let maybeSingleMode = false
     let orderConfig: { column: string; ascending: boolean } | null = null
 
-    const builder: any = {
-      eq: (column: string, value: any) => {
+    const builder: QueryBuilder = {
+      eq: (column: string, value: unknown) => {
         currentData = currentData.filter((item) => item[column] === value)
         return builder
       },
-      in: (column: string, values: any[]) => {
+      in: (column: string, values: unknown[]) => {
         currentData = currentData.filter((item) => values.includes(item[column]))
         return builder
       },
-      not: (column: string, condition: string, values: any) => {
+      not: (column: string, condition: string, values: unknown) => {
         if (condition === 'in' && typeof values === 'string') {
           const valueArray = values.replace(/[()]/g, '').split(',').map((v: string) => v.replace(/"/g, ''))
           currentData = currentData.filter((item) => !valueArray.includes(item[column]))
@@ -88,15 +115,15 @@ const createMockSupabaseClient = () => {
         }
         return builder
       },
-      gte: (column: string, value: any) => {
+      gte: (column: string, value: unknown) => {
         currentData = currentData.filter((item) => new Date(item[column]) >= new Date(value))
         return builder
       },
-      lte: (column: string, value: any) => {
+      lte: (column: string, value: unknown) => {
         currentData = currentData.filter((item) => new Date(item[column]) <= new Date(value))
         return builder
       },
-      lt: (column: string, value: any) => {
+      lt: (column: string, value: unknown) => {
         currentData = currentData.filter((item) => new Date(item[column]) < new Date(value))
         return builder
       },
@@ -123,7 +150,7 @@ const createMockSupabaseClient = () => {
       },
       select: (_columns?: string) => builder,
       // Execute the query
-      then: (resolve: any, reject: any) => {
+      then: (resolve, reject) => {
         if (singleMode || maybeSingleMode) {
           resolve({ data: currentData[0] || null, error: null })
         } else {
@@ -143,7 +170,7 @@ const createMockSupabaseClient = () => {
       return {
         ...createQueryBuilder(currentTable),
         // Insert operation
-        insert: (data: any | any[]) => {
+        insert: (data: StorageRecord | StorageRecord[]) => {
           const items = Array.isArray(data) ? data : [data]
           const inserted = items.map((item) => ({
             id: generateId(),
@@ -160,9 +187,9 @@ const createMockSupabaseClient = () => {
           }
         },
         // Update operation
-        update: (data: any) => {
+        update: (data: StorageRecord) => {
           return {
-            eq: (column: string, value: any) => {
+            eq: (column: string, value: unknown) => {
               const items = storage[currentTable] || []
               const itemIndex = items.findIndex((i) => i[column] === value)
               if (itemIndex >= 0) {
@@ -186,11 +213,11 @@ const createMockSupabaseClient = () => {
         // Delete operation
         delete: () => {
           return {
-            eq: (column: string, value: any) => {
+            eq: (column: string, value: unknown) => {
               storage[currentTable] = (storage[currentTable] || []).filter((i) => i[column] !== value)
               return Promise.resolve({ error: null })
             },
-            in: (column: string, values: any[]) => {
+            in: (column: string, values: unknown[]) => {
               storage[currentTable] = (storage[currentTable] || []).filter((i) => !values.includes(i[column]))
               return Promise.resolve({ error: null })
             },

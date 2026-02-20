@@ -28,6 +28,13 @@ import {
   currentUser,
 } from '../security/setup'
 
+/**
+ * Extended error with code property for auth errors
+ */
+interface AuthError extends Error {
+  code: string
+}
+
 // Mock Supabase client
 const mockGetSession = vi.fn()
 const mockGetUser = vi.fn()
@@ -472,16 +479,16 @@ describe('AUTH-004: Session Management Tests', () => {
 
     it('should redirect unauthenticated users from protected routes', async () => {
       mockRequireAuth.mockImplementation(async () => {
-        const error = new Error('No autenticado')
+        const error = new Error('No autenticado') as AuthError
         error.name = 'AuthError'
-        ;(error as any).code = 'NOT_AUTHENTICATED'
+        error.code = 'NOT_AUTHENTICATED'
         throw error
       })
 
       try {
         await mockRequireAuth()
-      } catch (error: any) {
-        expect(error.code).toBe('NOT_AUTHENTICATED')
+      } catch (error: unknown) {
+        expect((error as AuthError).code).toBe('NOT_AUTHENTICATED')
       }
     })
 
@@ -785,16 +792,16 @@ describe('AUTH-004: Session Management Tests', () => {
       setMockUser(mockUsers.patient)
 
       mockRequireAuth.mockImplementation(async () => {
-        const error = new Error('Perfil no encontrado')
+        const error = new Error('Perfil no encontrado') as AuthError
         error.name = 'AuthError'
-        ;(error as any).code = 'PROFILE_NOT_FOUND'
+        error.code = 'PROFILE_NOT_FOUND'
         throw error
       })
 
       try {
         await mockRequireAuth()
-      } catch (error: any) {
-        expect(error.code).toBe('PROFILE_NOT_FOUND')
+      } catch (error: unknown) {
+        expect((error as AuthError).code).toBe('PROFILE_NOT_FOUND')
       }
     })
 

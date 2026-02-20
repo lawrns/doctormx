@@ -1,20 +1,22 @@
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale'
 import { logger } from '@/lib/observability/logger'
+import type PDFKit from 'pdfkit'
+import type QRCodeLib from 'qrcode'
 
 // Dynamic import for pdfkit - Node.js only module
 // This must be called within async functions to avoid bundling errors
-let PDFDocument: any = null
-let QRCode: any = null
+let PDFDocument: typeof PDFKit | null = null
+let QRCode: typeof QRCodeLib | null = null
 
 async function initPdfModules() {
   if (!PDFDocument) {
     const pdfkit = await import('pdfkit')
-    PDFDocument = pdfkit.default
+    PDFDocument = pdfkit.default as unknown as typeof PDFKit
   }
   if (!QRCode) {
     const qrcode = await import('qrcode')
-    QRCode = qrcode.default || qrcode
+    QRCode = (qrcode.default || qrcode) as unknown as typeof QRCodeLib
   }
 }
 
@@ -57,7 +59,7 @@ function calculateAge(dateOfBirth: Date): number {
 async function generateQRCode(data: string): Promise<string> {
   try {
     await initPdfModules()
-    return await QRCode.toDataURL(data, {
+    return await QRCode!.toDataURL(data, {
       width: 100,
       margin: 1,
       color: {
@@ -77,7 +79,7 @@ export async function generatePrescriptionPDF(data: PrescriptionData): Promise<B
 
   return new Promise((resolve, reject) => {
     try {
-      const doc = new PDFDocument({
+      const doc = new PDFDocument!({
         size: 'A4',
         margins: { top: 50, bottom: 50, left: 60, right: 60 },
       })

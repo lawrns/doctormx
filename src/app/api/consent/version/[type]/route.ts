@@ -53,6 +53,31 @@ interface VersionRouteParams {
   }>
 }
 
+/**
+ * User consent status response
+ */
+interface UserConsentStatus {
+  has_consent: boolean
+  consent_record_id: string | null
+  current_version_id: string | null
+  status: string
+  granted_at: string | null
+  needs_re_consent: boolean
+  is_up_to_date: boolean
+  version_comparison?: {
+    current_user_version: string
+    latest_version: string
+    has_major_changes: boolean
+    has_minor_changes: boolean
+    requires_re_consent: boolean
+    changes_summary: Array<{
+      field: string
+      change_type: string
+      significance: string
+    }>
+  }
+}
+
 export async function GET(
   request: NextRequest,
   { params }: VersionRouteParams
@@ -119,8 +144,7 @@ export async function GET(
     }
 
     // Verificar estado del consentimiento del usuario
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    let userConsentStatus: any = null
+    let userConsentStatus: UserConsentStatus | null = null
     if (params_query.check_user_consent === 'true') {
       const { data: userConsent } = await supabase
         .from('user_consent_records')

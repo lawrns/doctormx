@@ -2,6 +2,10 @@ import js from "@eslint/js";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 import next from "@next/eslint-plugin-next";
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
+const customPlugin = require("./eslint-plugin-custom/index.js");
 
 export default [
   {
@@ -186,14 +190,37 @@ export default [
       "require-await": "error"
     }
   },
+  // ============================================
+  // CUSTOM PLUGIN - i18n NO HARDCODED STRINGS
+  // ============================================
+  {
+    files: ["**/*.{js,jsx,ts,tsx}"],
+    plugins: {
+      "custom": customPlugin
+    },
+    rules: {
+      // Prohibir strings hardcodeados en español
+      "custom/no-hardcoded-spanish": ["error", {
+        minLength: 3,
+        ignoredWords: [
+          // Nombres propios de personas (ejemplos)
+          "Dr. Simeon", "Dr Simeon", "Simeon",
+          // Términos específicos del dominio médico que pueden ser proper nouns
+          "DoctorMX", "Doctor MX",
+          // Añadir más nombres propios según sea necesario
+        ]
+      }]
+    }
+  },
   // Relaxed rules for scripts
   {
-    files: ["scripts/**/*.{js,mjs}", "*.config.{js,mjs,ts}"],
+    files: ["scripts/**/*.{js,mjs}", "*.config.{js,mjs,ts}", "eslint-plugin-custom/**/*"],
     rules: {
       "no-console": "off",
       "no-undef": "off",
       "@typescript-eslint/no-require-imports": "off",
-      "@typescript-eslint/explicit-function-return-type": "off"
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "custom/no-hardcoded-spanish": "off"
     }
   },
   // Relaxed rules for test files
@@ -203,7 +230,8 @@ export default [
       "no-console": "off",
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/explicit-function-return-type": "off",
-      "@typescript-eslint/naming-convention": "off"
+      "@typescript-eslint/naming-convention": "off",
+      "custom/no-hardcoded-spanish": "off"
     }
   },
   // Relaxed rules for Next.js API routes (return types handled by Next.js)

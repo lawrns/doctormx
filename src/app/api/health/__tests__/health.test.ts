@@ -53,8 +53,16 @@ const mockedGetCacheClient = vi.mocked(getCacheClient)
 const mockedIsUsingFallbackMemoryCache = vi.mocked(isUsingFallbackMemoryCache)
 const mockedStripeProductsList = vi.mocked(stripe.products.list)
 
+/**
+ * Supabase error type for mocking
+ */
+interface SupabaseError {
+  message: string
+  code: string
+}
+
 describe('Health Endpoint', () => {
-  const createMockSupabase = (error: any = null) => ({
+  const createMockSupabase = (error: SupabaseError | null = null) => ({
     from: vi.fn().mockReturnThis(),
     select: vi.fn().mockReturnThis(),
     limit: vi.fn().mockResolvedValue({ data: [], error }),
@@ -69,10 +77,10 @@ describe('Health Endpoint', () => {
     mockFetch.mockReset()
     
     // Set up default healthy mocks
-    mockedCreateServiceClient.mockReturnValue(createMockSupabase() as any)
-    mockedGetCacheClient.mockReturnValue(createMockCacheClient() as any)
+    mockedCreateServiceClient.mockReturnValue(createMockSupabase() as unknown as ReturnType<typeof createServiceClient>)
+    mockedGetCacheClient.mockReturnValue(createMockCacheClient() as unknown as ReturnType<typeof getCacheClient>)
     mockedIsUsingFallbackMemoryCache.mockReturnValue(false)
-    mockedStripeProductsList.mockResolvedValue({ data: [] } as any)
+    mockedStripeProductsList.mockResolvedValue({ data: [] })
     
     // Set required env vars
     process.env.STRIPE_SECRET_KEY = 'sk_test_123'
@@ -174,9 +182,10 @@ describe('Health Endpoint', () => {
     const response = await GET()
     const data = await response.json()
 
-    Object.values(data.checks).forEach((check: any) => {
-      expect(check.latency).toBeGreaterThanOrEqual(0)
-      expect(typeof check.latency).toBe('number')
+    Object.values(data.checks).forEach((check: unknown) => {
+      const checkObj = check as { latency: number }
+      expect(checkObj.latency).toBeGreaterThanOrEqual(0)
+      expect(typeof checkObj.latency).toBe('number')
     })
   })
 

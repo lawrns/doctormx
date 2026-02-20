@@ -21,7 +21,7 @@ vi.mock('next/headers', () => ({
 // Mock next/server
 vi.mock('next/server', () => ({
   NextResponse: {
-    json: vi.fn((data: any, init?: { status?: number }) => ({
+    json: vi.fn((data: unknown, init?: { status?: number }) => ({
       status: init?.status || 200,
       json: () => Promise.resolve(data),
     })),
@@ -110,7 +110,7 @@ const getConstructEventError = () => new Error('Invalid signature')
 vi.mock('@/lib/stripe', () => ({
   stripe: {
     webhooks: {
-      constructEvent: vi.fn((...args: any[]) => {
+      constructEvent: vi.fn((...args: unknown[]) => {
         if (shouldConstructEventThrow) {
           throw getConstructEventError()
         }
@@ -118,7 +118,7 @@ vi.mock('@/lib/stripe', () => ({
       }),
     },
     subscriptions: {
-      retrieve: vi.fn((...args: any[]) => mockSubscriptionsRetrieve(...args)),
+      retrieve: vi.fn((...args: unknown[]) => mockSubscriptionsRetrieve(...args)),
     },
   },
 }))

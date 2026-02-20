@@ -6,18 +6,35 @@ import { PatientDashboardContent, HealthTips, QuickStats } from '@/components/Pa
 import { WelcomeBanner } from '@/components/OnboardingChecklist'
 import AppNavigation from '@/components/app/AppNavigation'
 import Link from 'next/link'
-import type { AppointmentWithDoctor, Doctor } from '@/types'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+
+// Type for appointment with doctor data from the database
+interface AppointmentWithDoctorData {
+  id: string
+  doctor_id: string
+  patient_id: string
+  start_ts: string
+  end_ts: string
+  status: string
+  video_room_url: string | null
+  doctor: {
+    id: string
+    profile: {
+      full_name: string
+      photo_url: string | null
+    }
+  }
+}
 
 export default async function PatientDashboard() {
   const { user, profile } = await requireRole('patient')
   const appointments = await getPatientAppointments(user.id)
 
   // Get upcoming appointments
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const upcomingAppointments = (appointments as any[]).filter((apt: any) =>
+  const typedAppointments = appointments as unknown as AppointmentWithDoctorData[]
+  const upcomingAppointments = typedAppointments.filter((apt) =>
     ['confirmed', 'pending_payment'].includes(apt.status) && new Date(apt.start_ts) > new Date()
   )
 
@@ -68,10 +85,8 @@ export default async function PatientDashboard() {
             </Card>
           )}
 
-          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-          <PatientDashboardContent appointments={appointments as any[]} />
-          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-          <QuickStats appointments={appointments as any[]} />
+          <PatientDashboardContent appointments={typedAppointments} />
+          <QuickStats appointments={typedAppointments} />
           <HealthTips />
 
           <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -112,7 +127,7 @@ export default async function PatientDashboard() {
                 </div>
               ) : (
                 <div className="space-y-4">
-                  {appointments.slice(0, 5).map((apt: any) => (
+                  {typedAppointments.slice(0, 5).map((apt) => (
                     <div key={apt.id} className="border rounded-xl p-4 hover:bg-gray-50">
                       <div className="flex justify-between items-center">
                         <div className="flex items-center gap-4">

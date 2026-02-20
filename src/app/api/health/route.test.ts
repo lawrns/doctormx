@@ -344,9 +344,10 @@ describe('Health Check Endpoint', () => {
       expect(body.checks).toHaveProperty('ai')
 
       // Each check should have required fields
-      Object.values(body.checks).forEach((check: any) => {
-        expect(check).toHaveProperty('status')
-        expect(check).toHaveProperty('latency')
+      Object.values(body.checks).forEach((check: unknown) => {
+        const checkObj = check as { status: string; latency: number }
+        expect(checkObj).toHaveProperty('status')
+        expect(checkObj).toHaveProperty('latency')
       })
     })
   })

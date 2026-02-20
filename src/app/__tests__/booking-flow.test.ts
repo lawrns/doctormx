@@ -109,7 +109,7 @@ describe('Booking Flow Integration', () => {
             }),
             select: vi.fn().mockImplementation((columns?: string) => {
               return {
-                eq: vi.fn().mockImplementation((col: string, val: any) => {
+                eq: vi.fn().mockImplementation((col: string, val: string | number | boolean) => {
                   // Pattern for getOccupiedSlots: .eq('doctor_id', ...).gte('start_ts', ...).lte('start_ts', ...).in('status', ...)
                   if (col === 'doctor_id') {
                     return {
@@ -165,7 +165,7 @@ describe('Booking Flow Integration', () => {
                 }),
               }
             }),
-            update: vi.fn().mockImplementation((data: any) => {
+            update: vi.fn().mockImplementation((data: Record<string, unknown>) => {
               return {
                 eq: vi.fn().mockReturnValue({
                   select: vi.fn().mockReturnValue({

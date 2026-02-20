@@ -81,7 +81,11 @@ export default function ProfilePage() {
       })
 
       if (response.ok) {
-        setProfile((prev: any) => ({ ...prev, ...formData }))
+        setProfile((prev: ProfileData | null) => prev ? { 
+          ...prev, 
+          ...formData,
+          gender: formData.gender as ProfileData['gender']
+        } : null)
         setEditing(false)
       } else {
         const data = await response.json()

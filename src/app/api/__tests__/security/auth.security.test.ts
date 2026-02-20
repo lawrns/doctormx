@@ -127,8 +127,8 @@ describe('SECURITY: Authentication System', () => {
           email: 'test@test.com',
           password: 'wrong',
         })
-      } catch (error: any) {
-        expect(error.status).toBe(429)
+      } catch (error: unknown) {
+        expect((error as { status: number }).status).toBe(429)
       }
     })
 
@@ -401,8 +401,8 @@ describe('SECURITY: Authentication System', () => {
           email: 'test@test.com',
           password: 'password123',
         })
-      } catch (error: any) {
-        expect(error.message).toContain('Network')
+      } catch (error: unknown) {
+        expect((error as { message: string }).message).toContain('Network')
       }
     })
 
@@ -418,8 +418,8 @@ describe('SECURITY: Authentication System', () => {
           password: 'password123',
         })
         expect(true).toBe(false) // Should not reach here
-      } catch (error: any) {
-        expect(error.code).toBe('TIMEOUT')
+      } catch (error: unknown) {
+        expect((error as { code: string }).code).toBe('TIMEOUT')
       }
     })
   })
