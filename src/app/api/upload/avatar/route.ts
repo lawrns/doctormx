@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createServiceClient } from '@/lib/supabase/server'
 import { requireAuth } from '@/lib/auth'
 import { validateFile, createValidationErrorResponse } from '@/lib/file-security'
+import { logger } from '@/lib/observability/logger'
 
 // Allowed image types
 const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'image/gif']
@@ -63,7 +64,7 @@ export async function POST(request: NextRequest) {
       })
       
       if (createError) {
-        console.error('Error creating bucket:', createError)
+        logger.error('Error creating bucket:', { err: createError })
         return NextResponse.json(
           { error: 'Failed to create storage bucket' },
           { status: 500 }
@@ -104,7 +105,7 @@ export async function POST(request: NextRequest) {
       })
 
     if (uploadError) {
-      console.error('Upload error:', uploadError)
+      logger.error('Upload error:', { err: uploadError })
       return NextResponse.json(
         { error: 'Failed to upload file' },
         { status: 500 }
@@ -126,7 +127,7 @@ export async function POST(request: NextRequest) {
       .eq('id', userId)
 
     if (updateError) {
-      console.error('Profile update error:', updateError)
+      logger.error('Profile update error:', { err: updateError })
       // Don't fail the upload, just log the error
     }
 
@@ -136,7 +137,7 @@ export async function POST(request: NextRequest) {
     })
 
   } catch (error) {
-    console.error('Avatar upload error:', error)
+    logger.error('Avatar upload error:', { err: error })
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
@@ -183,7 +184,7 @@ export async function DELETE(request: NextRequest) {
           .remove([pathMatch[1]])
 
         if (deleteError) {
-          console.error('Error deleting file:', deleteError)
+          logger.error('Error deleting file:', { err: deleteError })
         }
       }
     }
@@ -198,7 +199,7 @@ export async function DELETE(request: NextRequest) {
       .eq('id', userId)
 
     if (updateError) {
-      console.error('Profile update error:', updateError)
+      logger.error('Profile update error:', { err: updateError })
       return NextResponse.json(
         { error: 'Failed to update profile' },
         { status: 500 }
@@ -210,7 +211,7 @@ export async function DELETE(request: NextRequest) {
     })
 
   } catch (error) {
-    console.error('Avatar delete error:', error)
+    logger.error('Avatar delete error:', { err: error })
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

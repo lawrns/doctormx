@@ -2,6 +2,7 @@
 // Provides medical context and prompt augmentation
 
 import { createServiceClient } from '@/lib/supabase/server'
+import { logger } from '@/lib/observability/logger'
 
 /**
  * Retrieve medical context for a patient
@@ -48,7 +49,7 @@ export async function retrieveMedicalContext(patientId: string): Promise<string>
 
     return context
   } catch (error) {
-    console.error('Error retrieving medical context:', error)
+    logger.error({ err: error }, 'Error retrieving medical context')
     return 'Contexto médico no disponible'
   }
 }

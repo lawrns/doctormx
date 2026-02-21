@@ -405,7 +405,14 @@ export async function cancelSubscription(
 interface SubscriptionStatusResult {
     hasSubscription: boolean
     isActive: boolean
-    subscription: any | null
+    subscription: {
+        id: string
+        doctor_id: string
+        plan_id: string
+        plan_name: string
+        status: string
+        current_period_end: string
+    } | null
     daysUntilRenewal?: number
     error?: string
 }
@@ -429,7 +436,7 @@ export async function checkSubscriptionStatus(doctorId: string): Promise<Subscri
             .maybeSingle() // Use maybeSingle to avoid 406 errors
 
         if (error) {
-            console.error('Subscription check error:', error)
+            logger.error('Subscription check error', { error })
             return {
                 hasSubscription: false,
                 isActive: false,

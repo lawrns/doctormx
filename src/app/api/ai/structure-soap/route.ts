@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { logger } from '@/lib/observability/logger'
 
 interface SOAPNote {
   subjective: string;
@@ -27,7 +28,7 @@ export async function POST(request: NextRequest) {
     
     return NextResponse.json(structured);
   } catch (error) {
-    console.error('SOAP structuring error:', error);
+    logger.error('SOAP structuring error:', { err: error });
     return NextResponse.json(
       { error: 'Failed to structure SOAP note' },
       { status: 500 }
@@ -102,7 +103,7 @@ Si una sección no tiene contenido, usa string vacío.`
       };
     }
   } catch (error) {
-    console.error('AI structuring failed, using fallback:', error);
+    logger.error('AI structuring failed, using fallback:', { err: error });
   }
 
   return fallbackStructure(rawText, currentSOAP);

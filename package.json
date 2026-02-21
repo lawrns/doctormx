@@ -34,7 +34,12 @@
     "test:a11y:screen-reader": "playwright test tests/a11y/screen-reader.spec.ts --config=playwright.config.a11y.ts",
     "test:a11y:contrast": "playwright test tests/a11y/contrast.spec.ts --config=playwright.config.a11y.ts",
     "test:a11y:mobile": "playwright test tests/a11y/mobile-a11y.spec.ts --config=playwright.config.a11y.ts",
-    "test:a11y:report": "playwright show-report --config=playwright.config.a11y.ts"
+    "test:a11y:report": "playwright show-report --config=playwright.config.a11y.ts",
+    "scan:secrets": "gitleaks detect --verbose --source . --config .gitleaks.toml",
+    "scan:secrets:staged": "gitleaks detect --verbose --source . --staged --config .gitleaks.toml",
+    "scan:install": "bash scripts/install-tools.sh",
+    "scan:verify": "bash scripts/verify-secret-scan.sh",
+    "precommit-install": "pre-commit install"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.72.1",

@@ -1,6 +1,7 @@
 import { requireAuth } from '@/lib/auth'
 import { markAsRead } from '@/lib/chat'
 import { NextResponse } from 'next/server'
+import { logger } from '@/lib/observability/logger'
 
 export async function PUT(
   request: Request,
@@ -14,7 +15,7 @@ export async function PUT(
 
     return NextResponse.json({ success: true })
   } catch (error) {
-    console.error('Error marking message as read:', error)
+    logger.error('Error marking message as read:', { err: error })
     return NextResponse.json(
       { error: 'Failed to mark as read' },
       { status: 500 }

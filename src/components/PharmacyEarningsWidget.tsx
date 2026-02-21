@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { logger } from '@/lib/observability/logger'
 
 interface EarningsData {
   totalReferrals: number
@@ -44,7 +45,7 @@ export default function PharmacyEarningsWidget() {
           setReferrals(data.recentReferrals || [])
         }
       } catch (error) {
-        console.error('Error fetching earnings:', error)
+        logger.error('Error fetching earnings', { error: error instanceof Error ? error.message : String(error) })
       } finally {
         setLoading(false)
       }

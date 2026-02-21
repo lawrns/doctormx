@@ -18,6 +18,7 @@ import {
 import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import type { TreatmentPlan } from '@/lib/soap/types';
+import { logger } from '@/lib/observability/logger';
 
 interface TreatmentPlanDisplayProps {
   plan: TreatmentPlan;
@@ -72,7 +73,7 @@ export function TreatmentPlanDisplay({
 
   const handleOrderMedication = (medicationName: string, productId: string) => {
     // In a real implementation, this would connect to the pharmacy's API
-    console.log(`Ordering medication: ${medicationName}, Product ID: ${productId}`);
+    logger.info(`Ordering medication: ${medicationName}, Product ID: ${productId}`);
     setSelectedPharmacy(prev => ({ ...prev, [medicationName]: productId }));
     setShowOrderConfirmation(productId);
     setTimeout(() => setShowOrderConfirmation(null), 3000);

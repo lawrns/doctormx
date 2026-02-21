@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { requireRole } from '@/lib/auth'
 import { getRevenueMetrics } from '@/lib/analytics'
+import { logger } from '@/lib/observability/logger'
 
 export async function GET() {
   try {
@@ -13,7 +14,7 @@ export async function GET() {
       data: metrics,
     })
   } catch (error) {
-    console.error('Revenue analytics error:', error)
+    logger.error('Revenue analytics error:', { err: error })
     return NextResponse.json(
       { success: false, error: 'Failed to fetch revenue analytics' },
       { status: 500 }

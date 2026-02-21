@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Send, Mic, Camera, Loader2, AlertTriangle, CheckCircle2, ChevronDown, Bot, User, Sparkles } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { logger } from '@/lib/observability/logger'
 
 type Question = {
   id: string
@@ -135,7 +136,7 @@ export function AdaptiveQuestionnaire({
         })
       }
     } catch (error) {
-      console.error('Failed to start conversation:', error)
+      logger.error('Failed to start conversation', { error: error instanceof Error ? error.message : String(error) })
     } finally {
       setIsLoading(false)
     }
@@ -201,7 +202,7 @@ export function AdaptiveQuestionnaire({
         }
       }
     } catch (error) {
-      console.error('Failed to send message:', error)
+      logger.error('Failed to send message', { error: error instanceof Error ? error.message : String(error) })
     } finally {
       setIsTyping(false)
     }
@@ -220,7 +221,7 @@ export function AdaptiveQuestionnaire({
         onComplete?.(data.summary)
       }
     } catch (error) {
-      console.error('Failed to fetch summary:', error)
+      logger.error('Failed to fetch summary', { error: error instanceof Error ? error.message : String(error) })
     }
   }
 

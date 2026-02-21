@@ -29,6 +29,7 @@ import {
   AlertCircle,
   Loader2,
 } from 'lucide-react'
+import { logger } from '@/lib/observability/logger'
 
 function calculatePasswordStrength(password: string): { strength: number; label: string; color: string } {
   let strength = 0
@@ -221,7 +222,7 @@ function RegisterContent() {
           })
 
           if (doctorError && doctorError.code !== '23505') {
-            console.error('Doctor insert error:', doctorError)
+            logger.error('Doctor insert error', { userId: data.user.id, error: doctorError.message })
           }
         }
 

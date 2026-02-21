@@ -7,6 +7,7 @@ import {
   encodeCursor,
 } from '@/lib/pagination'
 import type { PaginatedResult } from '@/lib/pagination'
+import { logger } from '@/lib/observability/logger'
 
 /**
  * GET /api/doctors
@@ -121,7 +122,7 @@ export async function GET(request: NextRequest) {
     const { data: rawDoctors, error } = await query
 
     if (error) {
-      console.error('Error fetching doctors:', error)
+      logger.error('Error fetching doctors:', { err: error })
       return NextResponse.json(
         { error: 'Failed to fetch doctors' },
         { status: 500 }
@@ -129,10 +130,43 @@ export async function GET(request: NextRequest) {
     }
 
     // Transform and filter doctors
-    let doctors = (rawDoctors || []).map((doctor: any) => {
-      const hasActiveSubscription = doctor.doctor_subscriptions?.some(
-        (sub: { status: string; current_period_end: string }) =>
-          sub.status === 'active' && new Date(sub.current_period_end) > new Date()
+    type DoctorWithSpecialties = {
+      id: string
+      bio: string | null
+      price_cents: number
+      rating_avg: number
+      rating_count: number
+      city: string | null
+      state: string | null
+      years_experience: number | null
+      languages: string[]
+      video_enabled: boolean
+      created_at: string
+      profile: { id: string; full_name: string | null; photo_url: string | null } | null
+      specialties: Array<{ id: string; name: string | null; slug: string | null }>
+    }
+
+    let doctors = (rawDoctors || []).map((doctor): DoctorWithSpecialties | null => {
+      // Type assertion for the complex Supabase join result
+      const doc = doctor as {
+        id: string
+        bio: string | null
+        price_cents: number
+        rating_avg: number | null
+        rating_count: number | null
+        city: string | null
+        state: string | null
+        years_experience: number | null
+        languages: string[] | null
+        video_enabled: boolean
+        created_at: string
+        profiles: { id: string; full_name: string | null; photo_url: string | null } | null
+        doctor_specialties: Array<{ specialty_id: string; specialty: { id: string; name: string; slug: string } | null }> | null
+        doctor_subscriptions: Array<{ status: string; current_period_end: string }> | null
+      }
+
+      const hasActiveSubscription = doc.doctor_subscriptions?.some(
+        (sub) => sub.status === 'active' && new Date(sub.current_period_end) > new Date()
       )
 
       if (!hasActiveSubscription) {
@@ -140,40 +174,40 @@ export async function GET(request: NextRequest) {
       }
 
       return {
-        id: doctor.id,
-        bio: doctor.bio,
-        price_cents: doctor.price_cents,
-        rating_avg: doctor.rating_avg || 0,
-        rating_count: doctor.rating_count || 0,
-        city: doctor.city,
-        state: doctor.state,
-        years_experience: doctor.years_experience,
-        languages: doctor.languages || ['es'],
-        video_enabled: doctor.video_enabled,
-        created_at: doctor.created_at,
-        profile: doctor.profiles,
-        specialties: doctor.doctor_specialties?.map((ds: any) => ({
+        id: doc.id,
+        bio: doc.bio,
+        price_cents: doc.price_cents,
+        rating_avg: doc.rating_avg || 0,
+        rating_count: doc.rating_count || 0,
+        city: doc.city,
+        state: doc.state,
+        years_experience: doc.years_experience,
+        languages: doc.languages || ['es'],
+        video_enabled: doc.video_enabled,
+        created_at: doc.created_at,
+        profile: doc.profiles,
+        specialties: doc.doctor_specialties?.map((ds) => ({
           id: ds.specialty_id,
-          name: ds.specialty?.name,
-          slug: ds.specialty?.slug,
+          name: ds.specialty?.name ?? null,
+          slug: ds.specialty?.slug ?? null,
         })) || [],
       }
-    }).filter(Boolean)
+    }).filter((doc): doc is DoctorWithSpecialties => doc !== null)
 
     // Apply additional client-side filters
     if (specialtySlug) {
-      doctors = doctors.filter((doctor: any) =>
-        doctor.specialties?.some((s: any) => s.slug === specialtySlug)
+      doctors = doctors.filter((doctor: DoctorWithSpecialties) =>
+        doctor.specialties?.some((s) => s.slug === specialtySlug)
       )
     }
 
     if (city) {
-      doctors = doctors.filter((doctor: any) => doctor.city === city)
+      doctors = doctors.filter((doctor: DoctorWithSpecialties) => doctor.city === city)
     }
 
     if (searchQuery) {
       const query = searchQuery.toLowerCase().trim()
-      doctors = doctors.filter((doctor: any) =>
+      doctors = doctors.filter((doctor: DoctorWithSpecialties) =>
         doctor.profile?.full_name?.toLowerCase().includes(query)
       )
     }
@@ -185,18 +219,18 @@ export async function GET(request: NextRequest) {
     }
 
     // Build pagination response
-    const result: PaginatedResult<any> = buildPaginatedResponse({
+    const result: PaginatedResult<DoctorWithSpecialties> = buildPaginatedResponse({
       data: doctors,
       limit,
-      getNextCursor: (doctor: any) =>
+      getNextCursor: (doctor: DoctorWithSpecialties) =>
         doctor ? encodeCursor({ id: doctor.id, created_at: doctor.created_at }) : null,
-      getPrevCursor: (doctor: any) =>
+      getPrevCursor: (doctor: DoctorWithSpecialties) =>
         doctor ? encodeCursor({ id: doctor.id, created_at: doctor.created_at }) : null,
     })
 
     return NextResponse.json(result)
   } catch (error) {
-    console.error('Error in GET /api/doctors:', error)
+    logger.error('Error in GET /api/doctors:', { err: error })
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

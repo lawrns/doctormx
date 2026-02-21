@@ -11,6 +11,7 @@ import { Card, CardHeader, CardBody, CardFooter } from '@/components/Card'
 import { useToast } from '@/components/Toast'
 import { formatPhoneNumber } from '@/lib/utils'
 import { AvatarUpload } from '@/components/AvatarUpload'
+import { logger } from '@/lib/observability/logger'
 
 const profileSchema = z.object({
   full_name: z.string().min(2, 'El nombre debe tener al menos 2 caracteres'),
@@ -232,7 +233,7 @@ export default function PatientProfilePage() {
         }
       }
     } catch (error) {
-      console.error('Error fetching profile:', error)
+      logger.error('Error fetching profile', undefined, error as Error)
       addToast('Error al cargar el perfil', 'error')
     } finally {
       setLoading(false)
@@ -254,7 +255,7 @@ export default function PatientProfilePage() {
         throw new Error('Failed to update profile')
       }
     } catch (error) {
-      console.error('Error updating profile:', error)
+      logger.error('Error updating profile', undefined, error as Error)
       addToast('Error al actualizar el perfil', 'error')
     } finally {
       setSavingProfile(false)
@@ -276,7 +277,7 @@ export default function PatientProfilePage() {
         throw new Error('Failed to update medical history')
       }
     } catch (error) {
-      console.error('Error updating medical history:', error)
+      logger.error('Error updating medical history', undefined, error as Error)
       addToast('Error al actualizar el historial médico', 'error')
     } finally {
       setSavingHistory(false)

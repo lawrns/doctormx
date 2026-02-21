@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import type { PreConsultaMessage } from '@/lib/ai/types';
 import { RecommendedDoctorsCard } from './RecommendedDoctorsCard';
 import type { DoctorMatch } from '@/lib/ai/referral';
+import { logger } from '@/lib/observability/logger';
 
 type PreConsultaChatProps = {
   isOpen: boolean;
@@ -99,7 +100,7 @@ export default function PreConsultaChat({ isOpen, onCloseAction, onCompleteActio
         }, 1500);
       }
     } catch (error) {
-      console.error('Error:', error);
+      logger.error('Error in pre-consulta chat', { error: error instanceof Error ? error.message : String(error) });
       const errorMessage: PreConsultaMessage = {
         id: crypto.randomUUID(),
         role: 'assistant',

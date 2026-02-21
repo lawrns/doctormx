@@ -1,0 +1,9 @@
+[2026-02-11 09:33:11] [INFO] ==========================================
+[2026-02-11 09:33:11] [INFO] Doctory Database Backup
+[2026-02-11 09:33:11] [INFO] ==========================================
+[2026-02-11 09:33:11] [INFO] Starting backup process...
+[2026-02-11 09:33:11] [WARNING] DRY RUN MODE - No actual changes will be made
+[2026-02-11 09:33:11] [ERROR] Missing required dependencies: psql aws
+[2026-02-11 09:33:12] [INFO] Install with:
+[2026-02-11 09:33:12] [INFO]   - psql: PostgreSQL client (install postgresql-client)
+[2026-02-11 09:33:12] [INFO]   - aws: AWS CLI v2 (for S3 upload)

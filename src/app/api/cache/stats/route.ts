@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { redis } from '@/lib/cache'
 import { createClient } from '@/lib/supabase/server'
 import { checkRateLimit } from '@/lib/rate-limit'
+import { logger } from '@/lib/observability/logger'
 
 async function getCacheStats(): Promise<{
   connected: boolean
@@ -78,7 +79,7 @@ export async function GET(request: NextRequest) {
       timestamp: new Date().toISOString(),
     })
   } catch (error) {
-    console.error('Cache stats error:', error)
+    logger.error('Cache stats error:', { err: error })
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

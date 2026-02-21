@@ -14,6 +14,8 @@
  *   const supabase = getSupabaseConfig();
  */
 
+import { logger } from './observability/logger';
+
 // ============================================================================
 // Types & Interfaces
 // ============================================================================
@@ -323,7 +325,7 @@ export function validateEnv(strict: boolean = true): EnvValidationResult {
   
   // Log warnings in non-test environments
   if (warnings.length > 0 && ENVIRONMENT !== 'test') {
-    console.warn('[ENV] Configuration warnings:\n', warnings.map(w => `  - ${w}`).join('\n'));
+    logger.warn({ warnings }, '[ENV] Configuration warnings');
   }
   
   return result;
@@ -442,7 +444,7 @@ export function getAppConfig(): AppConfig {
   const url = getEnvValue('NEXT_PUBLIC_APP_URL');
   
   if (!url && ENVIRONMENT !== 'test') {
-    console.warn('[ENV] NEXT_PUBLIC_APP_URL is not set, using default');
+    logger.warn('[ENV] NEXT_PUBLIC_APP_URL is not set, using default');
   }
   
   const defaultUrl = ENVIRONMENT === 'production' 
@@ -493,7 +495,7 @@ if (typeof window === 'undefined' && ENVIRONMENT !== 'test') {
   try {
     validateEnv(false); // Non-strict validation for development
   } catch (error) {
-    console.error('[ENV] Failed to validate environment:', error);
+    logger.error({ err: error }, '[ENV] Failed to validate environment');
   }
 }
 

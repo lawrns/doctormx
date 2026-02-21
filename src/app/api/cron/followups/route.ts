@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { logger } from '@/lib/observability/logger'
 import {
   getPendingFollowUps,
   sendFollowUp24hNotification,
@@ -74,7 +75,7 @@ export async function GET(request: NextRequest) {
       timestamp: new Date().toISOString(),
     })
   } catch (error) {
-    console.error('Error processing follow-up cron job:', error)
+    logger.error('Error processing follow-up cron job:', { err: error })
     return NextResponse.json(
       { error: 'Failed to process follow-ups', details: String(error) },
       { status: 500 }

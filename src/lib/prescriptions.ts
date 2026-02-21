@@ -1,4 +1,5 @@
 import { createClient, createServiceClient } from '@/lib/supabase/server'
+import { logger } from '@/lib/logger'
 import { generatePrescriptionPDF, buildPrescriptionData } from './prescriptions-pdf'
 import { scheduleFollowUp } from './followup'
 import { addDays } from 'date-fns'
@@ -91,7 +92,7 @@ async function scheduleMedicationReminders(prescriptionId: string, appointmentId
       scheduledAt: addDays(new Date(), 25),
     })
   } catch (error) {
-    console.error('Error scheduling medication reminders:', error)
+    logger.error({ err: error }, 'Error scheduling medication reminders')
   }
 }
 

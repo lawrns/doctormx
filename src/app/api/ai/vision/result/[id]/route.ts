@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
+import { logger } from '@/lib/observability/logger'
 import { getAnalysis, getUrgencyLabel, getImageTypeLabel } from '@/lib/ai/vision'
 
 export async function GET(
@@ -74,7 +75,7 @@ export async function GET(
       }
     })
   } catch (error) {
-    console.error('[VISION] Error fetching analysis result:', error)
+    logger.error('[VISION] Error fetching analysis result:', { err: error })
     return NextResponse.json(
       { error: 'Error al obtener el análisis' },
       { status: 500 }
@@ -143,14 +144,14 @@ export async function PATCH(
       .eq('id', id)
 
     if (updateError) {
-      console.error('[VISION] Error updating analysis:', updateError)
+      logger.error('[VISION] Error updating analysis:', { context: { analysisId: id, error: updateError } })
       return NextResponse.json(
         { error: 'Error al actualizar el análisis' },
         { status: 500 }
       )
     }
 
-    console.log('[VISION] Analysis reviewed', {
+    logger.info('[VISION] Analysis reviewed', {
       analysisId: id,
       doctorId: user.id,
       action: doctorAction
@@ -161,7 +162,7 @@ export async function PATCH(
       message: 'Análisis actualizado correctamente'
     })
   } catch (error) {
-    console.error('[VISION] Error updating analysis:', error)
+    logger.error('[VISION] Error updating analysis:', { context: { analysisId: id, error } })
     return NextResponse.json(
       { error: 'Error interno del servidor' },
       { status: 500 }

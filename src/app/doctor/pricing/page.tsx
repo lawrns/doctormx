@@ -11,6 +11,7 @@ import { Card } from '@/components/Card'
 import { LoadingButton } from '@/components/LoadingButton'
 import { Badge } from '@/components/Badge'
 import DoctorLayout from '@/components/DoctorLayout'
+import { logger } from '@/lib/observability/logger'
 
 const CheckIcon = () => (
     <svg className="w-5 h-5 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -174,7 +175,7 @@ export default function PricingPage() {
                 setSubscription({ hasSubscription: false, isActive: false, subscription: null })
             }
         } catch (error) {
-            console.error('Error loading subscription:', error)
+            logger.error('Error loading subscription', undefined, error as Error)
         } finally {
             setLoading(false)
         }
@@ -213,7 +214,7 @@ export default function PricingPage() {
                 router.push('/doctor/subscription')
             }
         } catch (error) {
-            console.error('Error:', error)
+            logger.error('Error subscribing', { planId }, error as Error)
             alert(error instanceof Error ? error.message : 'Error al procesar')
         } finally {
             setProcessing(null)

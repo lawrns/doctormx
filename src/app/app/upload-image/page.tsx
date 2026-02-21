@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { ImageUploader } from '@/components/ImageUploader'
 import { getUrgencyLabel, type UrgencyLevel } from '@/lib/ai/vision-types'
+import { logger } from '@/lib/observability/logger'
 
 interface UploadData {
   url: string
@@ -42,7 +43,7 @@ export default function UploadImagePage() {
         setFullAnalysis(result.analysis)
       }
     } catch (error) {
-      console.error('Error fetching full analysis:', error)
+      logger.error('Error fetching full analysis', { analysisId: data.analysisId }, error as Error)
     } finally {
       setLoading(false)
     }

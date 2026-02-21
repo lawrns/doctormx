@@ -13,6 +13,7 @@ import {
 } from '@/components'
 import { Calendar } from 'lucide-react'
 import { formatDoctorName } from '@/lib/utils'
+import { logger } from '@/lib/observability/logger'
 
 interface DoctorInfo {
   id: string
@@ -376,7 +377,7 @@ function AppointmentsPageContent() {
         setErrorMessage(data.error || 'Error al cargar citas')
       }
     } catch (error) {
-      console.error('Error fetching appointments:', error)
+      logger.error('Error fetching appointments', undefined, error as Error)
       setErrorMessage('Error al cargar citas')
     } finally {
       setIsLoading(false)
@@ -410,7 +411,7 @@ function AppointmentsPageContent() {
         setErrorMessage(data.error || 'Error al cancelar cita')
       }
     } catch (error) {
-      console.error('Error cancelling appointment:', error)
+      logger.error('Error cancelling appointment', { appointmentId }, error as Error)
       setErrorMessage('Error al cancelar cita')
     }
   }

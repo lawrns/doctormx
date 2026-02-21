@@ -43,6 +43,8 @@ import { ConsentError, ConsentErrorCode } from './types'
 export * from './types'
 export * from './history'
 export * from './versioning'
+export * from './consent-audit'
+export * from './consent-manager'
 
 // Import sub-modules
 import {
@@ -61,6 +63,12 @@ import {
   getActiveConsentVersions,
   checkIfReConsentRequired,
 } from './versioning'
+import {
+  logConsentGranted as auditLogConsentGranted,
+  logConsentWithdrawn as auditLogConsentWithdrawn,
+  logConsentModified as auditLogConsentModified,
+  logBulkConsentOperation,
+} from './consent-audit'
 
 // ================================================
 // CONSTANTS
@@ -290,6 +298,17 @@ export async function grantConsent(
 
     // Track the grant in history
     await trackConsentGranted(consentRecord.id, input.user_id)
+
+    // Log to unified audit system with additional context
+    await auditLogConsentGranted(consentRecord, {
+      user_id: input.user_id,
+      role: 'user',
+    }, {
+      ip_address: (input.metadata as any)?.ip_address,
+      user_agent: (input.metadata as any)?.user_agent,
+      session_id: (input.metadata as any)?.session_id,
+      request_id: (input.metadata as any)?.request_id,
+    })
   }
 
   // Update any pending consent requests
@@ -369,6 +388,17 @@ export async function withdrawConsent(
   await trackConsentWithdrawn(input.consent_record_id, consent.user_id, {
     reason: input.withdrawal_reason,
     withdrawn_by: input.withdrawn_by || 'user',
+  })
+
+  // Log to unified audit system with additional context
+  await auditLogConsentWithdrawn(data, input.withdrawal_reason || 'Usuario retiró consentimiento', {
+    user_id: consent.user_id,
+    role: input.withdrawn_by || 'user',
+  }, {
+    ip_address: (input as any)?.ip_address,
+    user_agent: (input as any)?.user_agent,
+    session_id: (input as any)?.session_id,
+    request_id: (input as any)?.request_id,
   })
 
   return data

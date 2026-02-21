@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { scheduleFollowUp, type FollowUpType } from '@/lib/followup'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(request: NextRequest) {
   const supabase = await createClient()
@@ -57,7 +58,7 @@ export async function POST(request: NextRequest) {
       followUpId: result.followUpId,
     })
   } catch (error) {
-    console.error('Error scheduling follow-up:', error)
+    logger.error('Error scheduling follow-up:', { err: error })
     return NextResponse.json(
       { error: 'Failed to schedule follow-up' },
       { status: 500 }

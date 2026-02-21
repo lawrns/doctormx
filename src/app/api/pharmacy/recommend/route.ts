@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { findSponsorPharmacies } from '@/lib/pharmacy'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(request: NextRequest) {
   try {
@@ -38,7 +39,7 @@ export async function POST(request: NextRequest) {
       })),
     })
   } catch (error) {
-    console.error('Error getting pharmacy recommendations:', error)
+    logger.error('Error getting pharmacy recommendations:', { err: error })
     return NextResponse.json(
       { error: 'Failed to get pharmacy recommendations' },
       { status: 500 }
@@ -88,7 +89,7 @@ export async function GET(request: NextRequest) {
       })),
     })
   } catch (error) {
-    console.error('Error getting pharmacy recommendations:', error)
+    logger.error('Error getting pharmacy recommendations:', { err: error })
     return NextResponse.json(
       { error: 'Failed to get pharmacy recommendations' },
       { status: 500 }

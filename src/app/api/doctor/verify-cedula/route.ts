@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
+import { logger } from '@/lib/observability/logger'
 import { 
   verifyCedulaSEP, 
   storeVerificationResult, 
@@ -76,7 +77,7 @@ export async function POST(request: NextRequest) {
       autoFillData,
     })
   } catch (error) {
-    console.error('Cédula verification error:', error)
+    logger.error('Cédula verification error:', { err: error })
     return NextResponse.json(
       { error: 'Error al verificar la cédula profesional' },
       { status: 500 }
@@ -117,7 +118,7 @@ export async function GET() {
       data: verification.verification_data,
     })
   } catch (error) {
-    console.error('Get verification error:', error)
+    logger.error('Get verification error:', { err: error })
     return NextResponse.json(
       { error: 'Error al obtener estado de verificación' },
       { status: 500 }

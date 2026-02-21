@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
+import { logger } from '@/lib/observability/logger'
 
 /**
  * POST /api/anonymous/capture-email
@@ -49,7 +50,7 @@ export async function POST(request: NextRequest) {
 
     if (error) {
       // Might be duplicate email
-      console.error('Email capture error:', error)
+      logger.error('Email capture error:', { err: error })
       return NextResponse.json({
         success: true,
         message: 'Email registrado',
@@ -65,7 +66,7 @@ export async function POST(request: NextRequest) {
       data: emailCapture,
     })
   } catch (error) {
-    console.error('Email capture API error:', error)
+    logger.error('Email capture API error:', { err: error })
     return NextResponse.json(
       { error: 'Error al registrar email' },
       { status: 500 }

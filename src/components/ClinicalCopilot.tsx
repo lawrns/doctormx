@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { Modal } from '@/components/Modal'
+import { logger } from '@/lib/observability/logger'
 
 interface ClinicalCopilotProps {
     appointmentId: string
@@ -54,7 +55,7 @@ export function ClinicalCopilot({
                     }
                 }
             } catch (error) {
-                console.error('Error checking premium access:', error)
+                logger.error('Error checking premium access', { error: error instanceof Error ? error.message : String(error) })
             }
         }
         checkAccess()
@@ -134,7 +135,7 @@ export function ClinicalCopilot({
 
             setSuggestions(newSuggestions)
         } catch (error) {
-            console.error('Error loading suggestions:', error)
+            logger.error('Error loading suggestions', { error: error instanceof Error ? error.message : String(error) })
         } finally {
             setLoading(false)
         }
@@ -189,7 +190,7 @@ export function ClinicalCopilot({
                 }])
             }
         } catch (error) {
-            console.error('Error generating summary:', error)
+            logger.error('Error generating summary', { error: error instanceof Error ? error.message : String(error) })
         } finally {
             setLoading(false)
         }
@@ -224,7 +225,7 @@ export function ClinicalCopilot({
                 })
             }
         } catch (error) {
-            console.error('Error generating ICD codes:', error)
+            logger.error('Error generating ICD codes', { error: error instanceof Error ? error.message : String(error) })
         } finally {
             setLoading(false)
         }

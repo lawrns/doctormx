@@ -2,6 +2,7 @@ import PDFDocument from 'pdfkit'
 import QRCode from 'qrcode'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale'
+import { logger } from '@/lib/logger'
 
 export interface Medication {
   name: string
@@ -50,7 +51,7 @@ async function generateQRCode(data: string): Promise<string> {
       },
     })
   } catch (error) {
-    console.error('Error generating QR code:', error)
+    logger.error({ err: error }, 'Error generating QR code')
     throw new Error('Failed to generate QR code')
   }
 }

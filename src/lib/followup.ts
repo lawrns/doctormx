@@ -1,5 +1,6 @@
 import { createClient, createServiceClient } from '@/lib/supabase/server'
 import { sendWhatsAppNotification } from '@/lib/whatsapp-notifications'
+import { logger } from '@/lib/observability/logger'
 import { addDays, addHours } from 'date-fns'
 
 export type FollowUpType =
@@ -68,7 +69,7 @@ export async function scheduleFollowUp(params: {
     .single()
 
   if (error) {
-    console.error('Error scheduling follow-up:', error)
+    logger.error('Error scheduling follow-up', { error })
     return { success: false, error: error.message }
   }
 
@@ -373,7 +374,7 @@ async function sendCustomWhatsAppNotification(
 
     if (!response.ok) {
       const error = await response.text()
-      console.error('Twilio API error:', error)
+      logger.error('Twilio API error', { error })
       return { success: false, error }
     }
 
@@ -391,7 +392,7 @@ async function sendCustomWhatsAppNotification(
     return { success: true, messageSid: twilioMessage.sid }
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : 'Unknown error'
-    console.error('Error sending WhatsApp message:', error)
+    logger.error('Error sending WhatsApp message', { error })
     return { success: false, error: errorMessage }
   }
 }
@@ -406,12 +407,12 @@ export async function getPatientFollowUps(patientId: string): Promise<FollowUp[]
       .order('scheduled_at', { ascending: false })
 
     if (error) {
-      console.error('Error fetching patient follow-ups:', error)
+      logger.error('Error fetching patient follow-ups', { error })
       return []
     }
     return data || []
   } catch (error) {
-    console.error('Exception fetching patient follow-ups:', error)
+    logger.error('Exception fetching patient follow-ups', { error })
     return []
   }
 }

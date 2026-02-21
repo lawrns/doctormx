@@ -1,0 +1,66 @@
+# Pre-commit hooks for Doctormx
+# Install: pip install pre-commit
+# Enable: pre-commit install
+# Skip on demand: git commit -n -m "message"
+
+default_language_version:
+  node: 20
+
+repos:
+  # Gitleaks - Secret detection
+  - repo: local
+    hooks:
+      - id: gitleaks
+        name: Gitleaks Secret Scan
+        entry: bash -c 'command -v gitleaks >/dev/null 2>&1 || { echo "Gitleaks not found. Run: npm run scan:install"; exit 1; } && gitleaks detect --verbose --source . --staged'
+        language: system
+        pass_filenames: false
+        run_per_staged_file: false
+
+  # TypeScript type checking
+  - repo: local
+    hooks:
+      - id: tsc
+        name: TypeScript Type Check
+        entry: npm run typecheck
+        language: system
+        pass_filenames: false
+        types: [ts, tsx]
+        files: ^(src/|tests/)
+
+  # ESLint
+  - repo: local
+    hooks:
+      - id: eslint
+        name: ESLint
+        entry: npm run lint
+        language: system
+        pass_filenames: false
+        types: [js, jsx, ts, tsx]
+
+  # Prettier
+  - repo: local
+    hooks:
+      - id: prettier
+        name: Prettier Format Check
+        entry: npx prettier --check
+        language: system
+        types_or: [javascript, jsx, ts, tsx, json, markdown, css, scss, yaml]
+
+# Exclude patterns for hooks
+exclude: |
+  (?x)^(
+    package-lock.json|
+    pnpm-lock.yaml|
+    yarn.lock|
+    .next/|
+    node_modules/|
+    build/|
+    dist/|
+    coverage/|
+    \.env\..+|
+    \.local
+  )$
+
+# Minimum pre-commit version
+minimum_pre_commit_version: 3.0.0

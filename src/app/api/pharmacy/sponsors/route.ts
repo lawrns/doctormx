@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServiceClient } from '@/lib/supabase/server'
 import { matchPharmacy, getPharmacySponsorById } from '@/lib/pharmacy'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(request: NextRequest) {
   try {
@@ -75,7 +76,7 @@ export async function POST(request: NextRequest) {
       count: pharmacies.length,
     })
   } catch (error) {
-    console.error('Error getting pharmacy sponsors:', error)
+    logger.error('Error getting pharmacy sponsors:', { err: error })
     return NextResponse.json(
       { error: 'Failed to get pharmacy sponsors' },
       { status: 500 }
@@ -116,7 +117,7 @@ export async function GET(request: NextRequest) {
       count: pharmacies?.length || 0,
     })
   } catch (error) {
-    console.error('Error fetching pharmacies:', error)
+    logger.error('Error fetching pharmacies:', { err: error })
     return NextResponse.json(
       { error: 'Failed to fetch pharmacies' },
       { status: 500 }

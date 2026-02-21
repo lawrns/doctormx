@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
+import { logger } from '@/lib/observability/logger'
 import {
   fillTemplate,
   FOLLOWUP_TEMPLATES,
@@ -86,7 +87,7 @@ export async function POST(req: NextRequest) {
         : 'Gracias por tu respuesta',
     });
   } catch (error: unknown) {
-    console.error('[FOLLOW-UP ERROR]:', error);
+    logger.error('[FOLLOW-UP ERROR]:', { err: error });
 
     const errorMessage = error instanceof Error ? error.message : 'Error desconocido';
 
@@ -190,7 +191,7 @@ export async function PUT(req: NextRequest) {
 
     return NextResponse.json({ success: true, count: 3 });
   } catch (error: unknown) {
-    console.error('[CREATE FOLLOW-UPS ERROR]:', error);
+    logger.error('[CREATE FOLLOW-UPS ERROR]:', { err: error });
     return NextResponse.json(
       { error: 'Error creando seguimientos' },
       { status: 500 }

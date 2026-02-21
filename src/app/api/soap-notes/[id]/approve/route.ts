@@ -4,6 +4,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { approveSoapNote, getSoapNote } from '@/lib/domains/soap-notes'
+import { logger } from '@/lib/observability/logger'
 
 interface RouteParams {
   params: Promise<{ id: string }>
@@ -53,7 +54,7 @@ export async function POST(request: NextRequest, { params }: RouteParams) {
     })
     
   } catch (error) {
-    console.error('[SOAPNotes] Approve error:', error)
+    logger.error('[SOAPNotes] Approve error:', { err: error })
     return NextResponse.json(
       { error: 'Failed to approve SOAP note' },
       { status: 500 }

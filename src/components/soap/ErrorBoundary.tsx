@@ -3,6 +3,7 @@
 import React from 'react';
 import { AlertTriangle, RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { logger } from '@/lib/observability/logger';
 
 interface ErrorBoundaryState {
   hasError: boolean;
@@ -41,10 +42,10 @@ export class SOAPErrorBoundary extends React.Component<
       this.props.onError(error, errorInfo);
     }
 
-    // Log to console in development
+    // Log to logger in development
     if (process.env.NODE_ENV === 'development') {
-      console.error('SOAP Error Boundary caught an error:', error);
-      console.error('Component stack:', errorInfo.componentStack);
+      logger.error('SOAP Error Boundary caught an error', { error: error.message });
+      logger.error('Component stack', { componentStack: errorInfo.componentStack });
     }
   }
 

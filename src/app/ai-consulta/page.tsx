@@ -8,6 +8,7 @@ import { QuotaBanner } from '@/components/QuotaCounter'
 import { WhatsAppShareCard } from '@/components/WhatsAppShare'
 import { EmailCapture, EmailCaptureModal } from '@/components/EmailCapture'
 import { PremiumUpgradeModal, QuotaExceededBanner } from '@/components/PremiumUpgradeModal'
+import { logger } from '@/lib/observability/logger'
 
 interface ConsultationSummary {
   urgency: string
@@ -76,7 +77,7 @@ export default function AnonymousConsultaPage() {
         setQuota(data.quota)
       }
     } catch (error) {
-      console.error('Error checking quota:', error)
+      logger.error('Error checking quota', { sessionId: sid }, error as Error)
     }
   }
 
@@ -134,7 +135,7 @@ export default function AnonymousConsultaPage() {
         }
       }
     } catch (error) {
-      console.error('Error sending message:', error)
+      logger.error('Error sending message', { sessionId }, error as Error)
       setMessages((prev) => [
         ...prev,
         { role: 'assistant', content: 'Lo siento, hubo un error. Por favor intenta de nuevo.' },

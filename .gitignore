@@ -72,3 +72,17 @@ dev.log
 # Untracked project documentation drafts
 *_DRAFT.md
 *_BACKUP.md
+
+# Secret scanning - Allowlist files (may contain sensitive patterns)
+.gitleaks.allow
+.gitleaks-report.*
+
+# Security scanning reports
+security-reports/
+sarif-reports/
+
+# Pre-commit cache
+.pre-commit-cache/
+
+# Temporary secret storage (for testing)
+.secrets-test/

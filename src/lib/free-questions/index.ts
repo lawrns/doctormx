@@ -4,6 +4,7 @@
  */
 
 import { createClient } from '@/lib/supabase/server'
+import { logger } from '@/lib/logger'
 
 export interface FreeQuestionsQuota {
   user_id: string;
@@ -92,7 +93,7 @@ export async function getUserQuota(userId: string): Promise<FreeQuestionsQuota> 
       .single();
     
     if (insertError) {
-      console.error('Error creating quota:', insertError);
+      logger.error({ err: insertError }, 'Error creating quota');
       // Return default quota
       return {
         user_id: userId,
@@ -212,7 +213,7 @@ export async function useQuestion(userId: string): Promise<{
     .eq('user_id', userId);
   
   if (error) {
-    console.error('Error updating quota:', error);
+    logger.error({ err: error }, 'Error updating quota');
     return {
       success: false,
       quota: quotaCheck,

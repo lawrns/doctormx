@@ -173,7 +173,7 @@ export async function findSponsorPharmacies(
   const { data: pharmacies, error } = await query.order('name')
 
   if (error || !pharmacies) {
-    console.error('Error fetching pharmacies:', error)
+    logger.error({ err: error }, 'Error fetching pharmacies')
     return []
   }
 
@@ -408,7 +408,7 @@ export async function redeemReferral(
     })
 
   if (commissionError) {
-    console.error('Error creating commission:', commissionError)
+    logger.error({ err: commissionError }, 'Error creating commission')
   }
 
   return { success: true }
@@ -475,7 +475,7 @@ export async function processPharmacyPayout(
     .lte('created_at', endDate.toISOString())
 
   if (updateCommissionsError) {
-    console.error('Error updating commissions:', updateCommissionsError)
+    logger.error({ err: updateCommissionsError }, 'Error updating commissions')
   }
 
   return { success: true, payoutId: payout.id }
@@ -565,7 +565,7 @@ export async function matchPharmacy(
   const { data: pharmacies, error } = await query.order('priority', { ascending: false }).order('name', { ascending: true })
   
   if (error || !pharmacies) {
-    console.error('Error fetching pharmacies:', error)
+    logger.error({ err: error }, 'Error fetching pharmacies')
     return []
   }
   
@@ -933,7 +933,7 @@ export async function getAppointmentSponsorship(appointmentId: string) {
 
     return sponsorship
   } catch (error) {
-    console.error('Error getting sponsorship:', error)
+    logger.error({ err: error }, 'Error getting sponsorship')
     return null
   }
 }
@@ -954,7 +954,7 @@ export async function getPharmacyDetails(pharmacyId: string) {
 
     return pharmacy
   } catch (error) {
-    console.error('Error getting pharmacy details:', error)
+    logger.error({ err: error }, 'Error getting pharmacy details')
     return null
   }
 }
@@ -975,7 +975,7 @@ export async function getActivePharmacies() {
 
     return pharmacies || []
   } catch (error) {
-    console.error('Error getting active pharmacies:', error)
+    logger.error({ err: error }, 'Error getting active pharmacies')
     return []
   }
 }
@@ -1007,7 +1007,7 @@ export async function isPharmacyAvailable(
 
     return citiesCovered && statesCovered
   } catch (error) {
-    console.error('Error checking pharmacy availability:', error)
+    logger.error({ err: error }, 'Error checking pharmacy availability')
     return false
   }
 }

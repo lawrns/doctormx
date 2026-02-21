@@ -7,6 +7,16 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import { logger } from '@/lib/observability/logger'
+
+// Type for Daily.co call object
+interface DailyCall {
+  on: (event: string, callback: (eventObject: unknown) => void) => DailyCall
+  join: (options: { url: string; token: string }) => Promise<void>
+  leave: () => void
+  setLocalAudio: (enabled: boolean) => void
+  setLocalVideo: (enabled: boolean) => void
+}
 
 interface VideoRoomData {
   roomUrl: string
@@ -38,7 +48,7 @@ export default function VideoCallPage() {
 
   const localVideoRef = useRef<HTMLVideoElement>(null)
   const remoteVideoRef = useRef<HTMLVideoElement>(null)
-  const dailyRef = useRef<any>(null)
+  const dailyRef = useRef<DailyCall | null>(null)
 
   // Load video room data
   useEffect(() => {
@@ -92,8 +102,8 @@ export default function VideoCallPage() {
         endCall()
       })
 
-      callFrame.on('error', (e: any) => {
-        console.error('Video call error:', e)
+      callFrame.on('error', (e) => {
+        logger.error('Video call error', { appointmentId }, e as Error)
         setError('Error en la llamada')
         setCallState('ended')
       })
@@ -106,7 +116,7 @@ export default function VideoCallPage() {
 
       dailyRef.current = callFrame
     } catch (err) {
-      console.error('Failed to join call:', err)
+      logger.error('Failed to join call', { appointmentId }, err as Error)
       setError('Error al unirse a la llamada')
       setCallState('ended')
     }
@@ -131,7 +141,7 @@ export default function VideoCallPage() {
       try {
         dailyRef.current.leave()
       } catch (e) {
-        console.error('Error leaving call:', e)
+        logger.error('Error leaving call', { appointmentId }, e as Error)
       }
     }
 

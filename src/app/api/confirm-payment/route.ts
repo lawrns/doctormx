@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { confirmSuccessfulPayment } from '@/lib/payment'
 import { withRateLimit } from '@/lib/rate-limit/middleware'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(request: NextRequest) {
   return withRateLimit(request, async (req) => {
@@ -30,7 +31,7 @@ export async function POST(request: NextRequest) {
       appointment: result.appointment,
     })
     } catch (error) {
-      console.error('Error confirming payment:', error)
+      logger.error('Error confirming payment:', { err: error })
       return NextResponse.json(
         { error: 'Failed to confirm payment' },
         { status: 500 }

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { sendConsultationReminder } from '@/lib/notifications'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(request: NextRequest) {
   const supabase = await createClient()
@@ -34,7 +35,7 @@ export async function POST(request: NextRequest) {
     )
 
     if (!result.success) {
-      console.error('Failed to send consultation reminder:', result.error)
+      logger.error('Failed to send consultation reminder:', { err: result.error })
       return NextResponse.json(
         { error: 'Failed to send reminder email' },
         { status: 500 }
@@ -43,7 +44,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ success: true })
   } catch (error) {
-    console.error('Error sending consultation reminder:', error)
+    logger.error('Error sending consultation reminder:', { err: error })
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

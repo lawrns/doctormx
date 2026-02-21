@@ -5,6 +5,7 @@
 
 import { createServiceClient } from '@/lib/supabase/server'
 import { formatCurrency } from '@/lib/utils'
+import { logger } from '@/lib/observability/logger'
 import { sendWhatsAppMessage, sendTemplateMessage } from './whatsapp-business-api'
 
 // Lazy initialization - only check when actually used
@@ -224,13 +225,13 @@ async function sendTwilioWhatsApp(
 
     if (!response.ok) {
       const error = await response.text()
-      console.error('Twilio API error:', error)
+      logger.error('Twilio API error', { error })
       return null
     }
 
     return await response.json() as TwilioMessage
   } catch (error) {
-    console.error('Error sending WhatsApp message:', error)
+    logger.error('Error sending WhatsApp message', { error })
     return null
   }
 }
@@ -281,7 +282,7 @@ export async function sendWhatsAppNotification(
     return { success: true, messageSid: businessResult.messageId }
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : 'Unknown error'
-    console.error('Error sending notification:', error)
+    logger.error('Error sending notification', { error })
 
     await supabase.from('notification_logs').insert({
       phone_number: phone,

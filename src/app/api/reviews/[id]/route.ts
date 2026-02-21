@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { requireAuth } from '@/lib/auth'
 import { deleteReview, updateReview } from '@/lib/reviews'
+import { logger } from '@/lib/observability/logger'
 
 export async function PUT(
   request: NextRequest,
@@ -27,7 +28,7 @@ export async function PUT(
 
     return NextResponse.json(review)
   } catch (error) {
-    console.error('Error updating review:', error)
+    logger.error('Error updating review:', { err: error })
 
     if (error instanceof Error && error.message.includes('not found')) {
       return NextResponse.json(
@@ -55,7 +56,7 @@ export async function DELETE(
 
     return NextResponse.json({ success: true })
   } catch (error) {
-    console.error('Error deleting review:', error)
+    logger.error('Error deleting review:', { err: error })
 
     if (error instanceof Error && error.message.includes('not found')) {
       return NextResponse.json(

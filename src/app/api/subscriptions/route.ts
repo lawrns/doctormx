@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { createSubscription, checkSubscriptionStatus } from '@/lib/subscription'
+import { logger } from '@/lib/observability/logger'
 
 /**
  * GET /api/subscriptions
@@ -25,7 +26,7 @@ export async function GET() {
             ...status,
         })
     } catch (error) {
-        console.error('Error checking subscription:', error)
+        logger.error('Error checking subscription:', { err: error })
         return NextResponse.json(
             { error: 'Failed to check subscription status' },
             { status: 500 }
@@ -60,7 +61,7 @@ export async function POST(request: NextRequest) {
             stripeSubscriptionId: result.stripeSubscriptionId,
         })
     } catch (error) {
-        console.error('Error creating subscription:', error)
+        logger.error('Error creating subscription:', { err: error })
         return NextResponse.json(
             { error: error instanceof Error ? error.message : 'Failed to create subscription' },
             { status: 500 }

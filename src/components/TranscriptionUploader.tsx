@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { logger } from '@/lib/observability/logger';
 
 type TranscriptionUploaderProps = {
   appointmentId: string;
@@ -70,7 +71,7 @@ export default function TranscriptionUploader({ appointmentId, onCompleteAction 
       xhr.open('POST', '/api/ai/transcription');
       xhr.send(formData);
     } catch (err) {
-      console.error(err);
+      logger.error('Error uploading transcription', { error: err instanceof Error ? err.message : String(err) });
       setError('Error inesperado');
       setUploading(false);
     }

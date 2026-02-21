@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { AlertTriangle, Phone, X } from 'lucide-react';
 import { useState } from 'react';
+import { logger } from '@/lib/observability/logger';
 
 interface EmergencyAlertProps {
   message: string;
@@ -28,7 +29,7 @@ export function EmergencyAlert({
 
   const handleCall = () => {
     // Log emergency interaction
-    console.log('[EMERGENCY] User clicked call 911:', { message, symptoms, severity });
+    logger.info('[EMERGENCY] User clicked call 911', { message, symptoms, severity });
 
     // On mobile, initiate phone call
     if (typeof window !== 'undefined' && /iPhone|iPad|Android/i.test(navigator.userAgent)) {

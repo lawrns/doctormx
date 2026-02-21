@@ -6,6 +6,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { isFeatureEnabled } from '@/lib/feature-flags'
 import { REFERRALS_CONFIG } from '@/lib/domains/referrals'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(request: NextRequest) {
   try {
@@ -80,7 +81,7 @@ export async function POST(request: NextRequest) {
       .single()
     
     if (createError) {
-      console.error('[Referrals] Create error:', createError)
+      logger.error('[Referrals] Create error:', { err: createError })
       throw createError
     }
     
@@ -102,7 +103,7 @@ export async function POST(request: NextRequest) {
     }, { status: 201 })
     
   } catch (error) {
-    console.error('[Referrals] Error:', error)
+    logger.error('[Referrals] Error:', { err: error })
     return NextResponse.json(
       { error: 'Failed to create referral' },
       { status: 500 }
@@ -182,7 +183,7 @@ export async function GET(request: NextRequest) {
     })
     
   } catch (error) {
-    console.error('[Referrals] List error:', error)
+    logger.error('[Referrals] List error:', { err: error })
     return NextResponse.json(
       { error: 'Failed to list referrals' },
       { status: 500 }

@@ -231,8 +231,8 @@ describe('Error Info Extractor', () => {
 
     expect(info.title).toBeTruthy();
     expect(info.message).toBeTruthy();
-    expect(info.showRetry).toBe(false); // Emergency errors don't show retry
-    expect(info.showHome).toBe(true);
+    expect(info.showRetry).toBe(false); // Emergency errors don't show retry (isOperational && !isEmergency = true && !true = false)
+    expect(info.showHome).toBe(false); // Emergency errors keep user on page (showHome = !isEmergency = !true = false)
   });
 });
 
@@ -307,8 +307,10 @@ describe('Real-world Usage Examples', () => {
       route: '/api/appointments/book'
     });
 
+    // Status is in the HTTP response, not in the JSON body
+    expect(response.status).toBe(409);
+
     const json = await response.json();
     expect(json.error.reason).toBe('conflict');
-    expect(json.status).toBe(409);
   });
 });

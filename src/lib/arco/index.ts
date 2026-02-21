@@ -43,7 +43,7 @@ export {
   getEscalationLevel,
   updateEscalationLevel,
 } from './escalation'
-export { getUserDataExport, exportUserDataToJson, exportUserDataToPdf } from './data-export'
+export { getUserDataExport, exportUserDataToJson, exportUserDataToPdf, exportUserDataForPortability, exportPortabilityJson, createPortabilityAttachment } from './data-export'
 
 // ================================================
 // CONSTANTS

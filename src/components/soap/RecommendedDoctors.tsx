@@ -15,6 +15,7 @@ import {
 import Link from 'next/link';
 import Image from 'next/image';
 import type { ConsensusResult } from '@/lib/soap/types';
+import { logger } from '@/lib/observability/logger';
 
 interface Doctor {
   id: string;
@@ -80,7 +81,7 @@ export function RecommendedDoctors({
       const data = await response.json();
       setDoctors(data.doctors || []);
     } catch (err) {
-      console.error('Error fetching recommended doctors:', err);
+      logger.error('Error fetching recommended doctors', { error: err instanceof Error ? err.message : String(err) });
       setError('No pudimos cargar las recomendaciones de médicos');
     } finally {
       setLoading(false);

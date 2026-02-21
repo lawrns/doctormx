@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { trackWhatsAppUsage } from '@/lib/subscription'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(request: NextRequest) {
     const supabase = await createClient()
@@ -26,7 +27,7 @@ export async function POST(request: NextRequest) {
             isExceeded: result.isExceeded,
         })
     } catch (error) {
-        console.error('Error tracking WhatsApp usage:', error)
+        logger.error('Error tracking WhatsApp usage:', { err: error })
         return NextResponse.json(
             { error: error instanceof Error ? error.message : 'Failed to track usage' },
             { status: 500 }

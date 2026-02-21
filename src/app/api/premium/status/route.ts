@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { type PremiumFeature, getTierFromPlanId } from '@/lib/premium-features'
 import { requireRole } from '@/lib/auth'
+import { logger } from '@/lib/observability/logger'
 
 const limitMap: Record<string, Record<string, number | null>> = {
   image_analysis: { starter: 0, pro: 0, elite: 10 },
@@ -256,7 +257,7 @@ export async function GET(request: NextRequest) {
       includedFeatures: includedFeatures[tier],
     })
   } catch (error) {
-    console.error('Error checking premium status:', error)
+    logger.error('Error checking premium status:', { err: error })
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'Internal server error' },
       { status: 500 }

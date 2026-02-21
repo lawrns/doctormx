@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { requireRole } from '@/lib/auth'
 import { getPrescriptionPDF, markAsSent } from '@/lib/prescriptions'
 import { Resend } from 'resend'
+import { logger } from '@/lib/observability/logger'
 
 // Lazy initialization of Resend client
 let resend: Resend | null = null
@@ -11,7 +12,7 @@ function getResendClient(): Resend | null {
   
   const apiKey = process.env.RESEND_API_KEY
   if (!apiKey) {
-    console.warn('Resend API key is missing; prescription emails will be skipped.')
+    logger.warn('Resend API key is missing; prescription emails will be skipped.')
     return null
   }
   
@@ -124,7 +125,7 @@ export async function POST(
     let emailId: string | undefined
     
     if (!client) {
-      console.warn(`Prescription email skipped (no Resend API key): ${id}`)
+      logger.warn('Prescription email skipped (no Resend API key): ${id}')
       // Continue without sending email
     } else {
       const emailResult = await client.emails.send({
@@ -141,7 +142,7 @@ export async function POST(
       })
 
       if (emailResult.error) {
-        console.error('Failed to send email:', emailResult.error)
+        logger.error('Failed to send email:', { err: emailResult.error })
         return NextResponse.json(
           { error: 'Failed to send prescription email' },
           { status: 500 }
@@ -159,7 +160,7 @@ export async function POST(
       emailId,
     })
   } catch (error) {
-    console.error('Error sending prescription:', error)
+    logger.error('Error sending prescription:', { err: error })
     return NextResponse.json(
       { error: 'Failed to send prescription' },
       { status: 500 }

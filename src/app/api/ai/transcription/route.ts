@@ -9,6 +9,7 @@ import {
 } from '@/lib/ai';
 import { validateFile, createValidationErrorResponse } from '@/lib/file-security';
 import { withRateLimit } from '@/lib/rate-limit/middleware';
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(req: NextRequest) {
   return withRateLimit(req, async (request) => {
@@ -155,7 +156,7 @@ export async function POST(req: NextRequest) {
       cost,
     });
   } catch (error: unknown) {
-    console.error('[TRANSCRIPTION ERROR]:', error);
+    logger.error('[TRANSCRIPTION ERROR]:', { err: error });
 
     const errorMessage = error instanceof Error ? error.message : 'Error desconocido';
 

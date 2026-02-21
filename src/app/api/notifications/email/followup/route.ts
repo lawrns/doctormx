@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { sendFollowUp } from '@/lib/notifications'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(request: NextRequest) {
   const supabase = await createClient()
@@ -35,7 +36,7 @@ export async function POST(request: NextRequest) {
     )
 
     if (!result.success) {
-      console.error('Failed to send follow-up:', result.error)
+      logger.error('Failed to send follow-up:', { err: result.error })
       return NextResponse.json(
         { error: 'Failed to send follow-up email' },
         { status: 500 }
@@ -44,7 +45,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ success: true })
   } catch (error) {
-    console.error('Error sending follow-up:', error)
+    logger.error('Error sending follow-up:', { err: error })
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

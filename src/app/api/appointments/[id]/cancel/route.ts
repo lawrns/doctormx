@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { requireRole } from '@/lib/auth'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(
   request: NextRequest,
@@ -58,7 +59,7 @@ export async function POST(
       .eq('id', appointmentId)
     
     if (updateError) {
-      console.error('Error cancelling appointment:', updateError)
+      logger.error('Error cancelling appointment:', { err: updateError })
       return NextResponse.json(
         { error: 'Failed to cancel appointment' },
         { status: 500 }
@@ -70,7 +71,7 @@ export async function POST(
       message: 'Appointment cancelled successfully'
     })
   } catch (error) {
-    console.error('Error in POST /api/appointments/[id]/cancel:', error)
+    logger.error('Error in POST /api/appointments/[id]/cancel:', { err: error })
     return new Response(JSON.stringify({ error: 'Internal server error' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' }

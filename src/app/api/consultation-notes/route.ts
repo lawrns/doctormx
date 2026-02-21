@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { logger } from '@/lib/observability/logger'
 
 function getSupabaseClient() {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -45,7 +46,7 @@ export async function POST(request: NextRequest) {
       .single();
 
     if (error) {
-      console.error('Database error:', error);
+      logger.error('Database error:', { err: error });
       return NextResponse.json(
         { error: 'Failed to save note' },
         { status: 500 }
@@ -58,7 +59,7 @@ export async function POST(request: NextRequest) {
       syncedAt: new Date().toISOString(),
     });
   } catch (error) {
-    console.error('Consultation notes error:', error);
+    logger.error('Consultation notes error:', { err: error });
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
@@ -90,7 +91,7 @@ export async function GET(request: NextRequest) {
       .order('created_at', { ascending: false });
 
     if (error) {
-      console.error('Database error:', error);
+      logger.error('Database error:', { err: error });
       return NextResponse.json(
         { error: 'Failed to fetch notes' },
         { status: 500 }
@@ -102,7 +103,7 @@ export async function GET(request: NextRequest) {
       count: data?.length || 0,
     });
   } catch (error) {
-    console.error('Consultation notes error:', error);
+    logger.error('Consultation notes error:', { err: error });
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

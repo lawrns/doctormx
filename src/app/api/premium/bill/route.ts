@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import type { PremiumFeature } from '@/lib/premium-features'
 import { requireRole } from '@/lib/auth'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(request: NextRequest) {
   try {
@@ -90,7 +91,7 @@ export async function POST(request: NextRequest) {
       billed: true,
     })
   } catch (error) {
-    console.error('Error billing premium feature:', error)
+    logger.error('Error billing premium feature:', { err: error })
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'Internal server error' },
       { status: 500 }
@@ -154,7 +155,7 @@ export async function GET(request: NextRequest) {
       transactions: billingRecords?.length || 0,
     })
   } catch (error) {
-    console.error('Error getting billing history:', error)
+    logger.error('Error getting billing history:', { err: error })
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'Internal server error' },
       { status: 500 }

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { requireRole } from '@/lib/auth'
 import { createReferral, markReferralSent } from '@/lib/pharmacy'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(request: NextRequest) {
   try {
@@ -64,7 +65,7 @@ export async function POST(request: NextRequest) {
       },
     })
   } catch (error) {
-    console.error('Error creating referral:', error)
+    logger.error('Error creating referral:', { err: error })
     return NextResponse.json({ error: 'Failed to create referral' }, { status: 500 })
   }
 }

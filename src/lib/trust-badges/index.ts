@@ -4,6 +4,7 @@
  */
 
 import { createClient } from '@/lib/supabase/server'
+import { logger } from '@/lib/logger'
 
 export interface Badge {
   id: string;
@@ -186,7 +187,7 @@ export async function calculateDoctorBadges(doctorId: string): Promise<Badge[]> 
     .single();
   
   if (doctorError || !doctor) {
-    console.error('Error fetching doctor:', doctorError);
+    logger.error({ err: doctorError }, 'Error fetching doctor');
     return [];
   }
   
@@ -280,7 +281,7 @@ export async function updateDoctorBadges(doctorId: string): Promise<Badge[]> {
       });
     
     if (error) {
-      console.error('Error upserting badge:', error);
+      logger.error({ err: error }, 'Error upserting badge');
     }
   }
   
@@ -309,7 +310,7 @@ export async function getDoctorBadges(doctorId: string): Promise<Badge[]> {
     .order('display_order');
   
   if (error) {
-    console.error('Error fetching badges:', error);
+    logger.error({ err: error }, 'Error fetching badges');
     return [];
   }
   
@@ -328,7 +329,7 @@ export async function getBadgeCategories(): Promise<BadgeCategory[]> {
     .order('display_order');
   
   if (error) {
-    console.error('Error fetching badge categories:', error);
+    logger.error({ err: error }, 'Error fetching badge categories');
     return [];
   }
   

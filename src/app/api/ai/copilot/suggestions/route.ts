@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { generateSuggestions, checkDrugInteractions } from '@/lib/ai/copilot'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(req: NextRequest) {
     try {
@@ -43,7 +44,7 @@ export async function POST(req: NextRequest) {
 
         return NextResponse.json(result)
     } catch (error) {
-        console.error('Error in copilot suggestions:', error)
+        logger.error('Error in copilot suggestions:', { err: error })
         return NextResponse.json({ error: 'Error procesando sugerencias' }, { status: 500 })
     }
 }

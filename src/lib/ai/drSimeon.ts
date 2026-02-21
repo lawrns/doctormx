@@ -5,6 +5,7 @@
 
 import { router } from './router'
 import { createServiceClient } from '@/lib/supabase/server'
+import { logger } from '@/lib/observability/logger'
 import { retrieveMedicalContext, generateAugmentedPrompt } from '@/lib/medical-knowledge'
 
 export type SeverityLevel = 'green' | 'yellow' | 'orange' | 'red'
@@ -246,7 +247,7 @@ export async function conductOPQRSTAssessment(
 
         return summary
     } catch (error) {
-        console.error('Error conducting OPQRST assessment:', error)
+        logger.error({ err: error }, 'Error conducting OPQRST assessment')
         throw error
     }
 }
@@ -312,7 +313,7 @@ Banderas rojas que requieren 911:
             'Lo siento, no pude procesar tu mensaje. Por favor intenta de nuevo.'
         )
     } catch (error) {
-        console.error('Error generating Dr. Simeon response:', error)
+        logger.error({ err: error }, 'Error generating Dr. Simeon response')
         throw error
     }
 }
@@ -385,9 +386,9 @@ export async function logAIOperation(
             })
 
         if (logError) {
-            console.error('Error logging AI operation:', logError)
+            logger.error({ err: logError }, 'Error logging AI operation')
         }
     } catch (error) {
-        console.error('Error logging AI operation:', error)
+        logger.error({ err: error }, 'Error logging AI operation')
     }
 }

@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { getUsageStats } from '@/lib/subscription'
+import { logger } from '@/lib/observability/logger'
 
 export async function GET() {
     const supabase = await createClient()
@@ -28,7 +29,7 @@ export async function GET() {
             ...usageStats,
         })
     } catch (error) {
-        console.error('Error fetching usage stats:', error)
+        logger.error('Error fetching usage stats:', { err: error })
         return NextResponse.json(
             { error: 'Failed to fetch usage stats' },
             { status: 500 }

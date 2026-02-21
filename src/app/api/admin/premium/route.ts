@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { INDIVIDUAL_PREMIUM_FEATURES, type PremiumFeature } from '@/lib/premium-features'
 import { requireRole } from '@/lib/auth'
+import { logger } from '@/lib/observability/logger'
 
 export const dynamic = 'force-dynamic'
 
@@ -131,7 +132,7 @@ export async function GET(request: NextRequest) {
       transactions: billingRecords?.length || 0,
     })
   } catch (error) {
-    console.error('Error getting admin premium status:', error)
+    logger.error('Error getting admin premium status:', { err: error })
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'Internal server error' },
       { status: 500 }

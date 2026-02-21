@@ -1,6 +1,7 @@
 import { requireAuth } from '@/lib/auth'
 import { getConversation, getMessages } from '@/lib/chat'
 import { NextResponse } from 'next/server'
+import { logger } from '@/lib/observability/logger'
 
 export async function GET(
   request: Request,
@@ -30,7 +31,7 @@ export async function GET(
       messages,
     })
   } catch (error) {
-    console.error('Error getting conversation:', error)
+    logger.error('Error getting conversation:', { err: error })
     return NextResponse.json(
       { error: 'Failed to get conversation' },
       { status: 500 }

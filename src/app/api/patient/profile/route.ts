@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { getPatientProfile, updatePatientProfile, type UpdateProfileData } from '@/lib/patient'
+import { logger } from '@/lib/observability/logger'
 
 export async function GET() {
   const supabase = await createClient()
@@ -19,7 +20,7 @@ export async function GET() {
 
     return NextResponse.json({ profile })
   } catch (error) {
-    console.error('Error fetching patient profile:', error)
+    logger.error('Error fetching patient profile:', { err: error })
     return NextResponse.json({ error: 'Failed to fetch profile' }, { status: 500 })
   }
 }
@@ -39,7 +40,7 @@ export async function PUT(request: NextRequest) {
 
     return NextResponse.json({ profile: updatedProfile })
   } catch (error) {
-    console.error('Error updating patient profile:', error)
+    logger.error('Error updating patient profile:', { err: error })
     return NextResponse.json({ error: 'Failed to update profile' }, { status: 500 })
   }
 }

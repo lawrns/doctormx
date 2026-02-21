@@ -5,6 +5,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
+import { logger } from '@/lib/observability/logger'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -93,7 +94,7 @@ export async function GET(request: NextRequest) {
 
     if (logsError && logsError.code !== 'PGRST116') {
       // Table might not exist, return empty metrics
-      console.warn('AI usage logs table not found:', logsError)
+      logger.warn('AI usage logs table not found:', { context: logsError })
     }
 
     // Get copilot sessions stats
@@ -216,7 +217,7 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json(metrics)
   } catch (error) {
-    console.error('[Admin AI Metrics] Error:', error)
+    logger.error('[Admin AI Metrics] Error:', { err: error })
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
@@ -298,7 +299,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ error: 'Unsupported format' }, { status: 400 })
   } catch (error) {
-    console.error('[Admin AI Metrics Export] Error:', error)
+    logger.error('[Admin AI Metrics Export] Error:', { err: error })
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

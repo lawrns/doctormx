@@ -8,6 +8,7 @@ import {
   encodeCursor,
 } from '@/lib/pagination'
 import type { PaginatedResult } from '@/lib/pagination'
+import { logger } from '@/lib/observability/logger'
 
 export async function GET(request: NextRequest) {
   try {
@@ -41,7 +42,7 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({ error: 'Parámetros inválidos' }, { status: 400 })
   } catch (error) {
-    console.error('Error fetching reviews:', error)
+    logger.error('Error fetching reviews:', { err: error })
     return NextResponse.json(
       { error: 'Error al obtener reseñas' },
       { status: 500 }
@@ -95,7 +96,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(review, { status: 201 })
   } catch (error) {
-    console.error('Error creating review:', error)
+    logger.error('Error creating review:', { err: error })
     return NextResponse.json(
       { error: 'Error al crear reseña' },
       { status: 500 }

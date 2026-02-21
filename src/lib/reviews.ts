@@ -1,4 +1,5 @@
 import { createClient, createServiceClient } from '@/lib/supabase/server'
+import { logger } from '@/lib/logger'
 
 export interface Review {
   id: string
@@ -49,7 +50,7 @@ export async function createReview(data: {
     .single()
 
   if (error) {
-    console.error('Error creating review:', error)
+    logger.error({ err: error }, 'Error creating review')
     throw error
   }
 
@@ -80,7 +81,7 @@ export async function getDoctorReviews(doctorId: string, options?: {
     .range(offset, offset + limit - 1)
 
   if (error) {
-    console.error('Error fetching reviews:', error)
+    logger.error({ err: error }, 'Error fetching reviews')
     throw error
   }
 
@@ -96,7 +97,7 @@ export async function getDoctorRatingSummary(doctorId: string): Promise<DoctorRa
     .eq('doctor_id', doctorId)
 
   if (error) {
-    console.error('Error fetching rating summary:', error)
+    logger.error({ err: error }, 'Error fetching rating summary')
     throw error
   }
 
@@ -199,7 +200,7 @@ export async function getPatientReviewableAppointments(patientId: string): Promi
     .order('start_ts', { ascending: false })
 
   if (error) {
-    console.error('Error fetching appointments:', error)
+    logger.error({ err: error }, 'Error fetching appointments')
     throw error
   }
 
@@ -236,7 +237,7 @@ export async function deleteReview(reviewId: string, userId: string): Promise<vo
     .eq('id', reviewId)
 
   if (error) {
-    console.error('Error deleting review:', error)
+    logger.error({ err: error }, 'Error deleting review')
     throw error
   }
 
@@ -272,7 +273,7 @@ export async function updateReview(reviewId: string, userId: string, data: {
     .single()
 
   if (error) {
-    console.error('Error updating review:', error)
+    logger.error({ err: error }, 'Error updating review')
     throw error
   }
 

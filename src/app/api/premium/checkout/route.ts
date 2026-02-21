@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { TIER_UPGRADE_PRICING } from '@/lib/premium-features'
 import { requireRole } from '@/lib/auth'
 import { stripe } from '@/lib/stripe'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(request: NextRequest) {
   try {
@@ -83,7 +84,7 @@ export async function POST(request: NextRequest) {
       url: session.url,
     })
   } catch (error) {
-    console.error('Error creating checkout session:', error)
+    logger.error('Error creating checkout session:', { err: error })
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'Internal server error' },
       { status: 500 }

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { cache } from '@/lib/cache'
 import { createClient } from '@/lib/supabase/server'
 import { checkRateLimit } from '@/lib/rate-limit'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(request: NextRequest) {
   try {
@@ -66,7 +67,7 @@ export async function POST(request: NextRequest) {
       message: success ? 'Cache invalidated' : 'Invalidation failed',
     })
   } catch (error) {
-    console.error('Cache invalidation error:', error)
+    logger.error('Cache invalidation error:', { err: error })
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

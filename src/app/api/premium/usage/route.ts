@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { trackFeatureUsage, type PremiumFeature } from '@/lib/premium-features'
 import { requireRole } from '@/lib/auth'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(request: NextRequest) {
   try {
@@ -43,7 +44,7 @@ export async function POST(request: NextRequest) {
       remaining: result.limit ? result.limit - result.newCount : -1,
     })
   } catch (error) {
-    console.error('Error tracking premium feature usage:', error)
+    logger.error('Error tracking premium feature usage:', { err: error })
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'Internal server error' },
       { status: 500 }
@@ -143,7 +144,7 @@ export async function GET(request: NextRequest) {
       usage,
     })
   } catch (error) {
-    console.error('Error getting premium usage:', error)
+    logger.error('Error getting premium usage:', { err: error })
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'Internal server error' },
       { status: 500 }

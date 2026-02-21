@@ -9,6 +9,7 @@
 
 import { createClient } from '@/lib/supabase/server'
 import { openai } from '@/lib/openai'
+import { logger } from '@/lib/logger'
 
 // Embeddings use OpenAI (embedding migration is a separate task)
 
@@ -633,7 +634,7 @@ export async function generateEmbedding(text: string): Promise<number[]> {
     });
     return response.data[0].embedding;
   } catch (error) {
-    console.error('Error generating embedding:', error);
+    logger.error({ err: error }, 'Error generating embedding');
     throw error;
   }
 }
@@ -643,9 +644,9 @@ export async function generateEmbedding(text: string): Promise<number[]> {
  */
 export async function initializeMedicalKnowledgeBase(): Promise<void> {
   const supabase = await createClient();
-  
-  console.log('🏥 Initializing medical knowledge base...');
-  
+
+  logger.info('Initializing medical knowledge base', { context: 'medical-knowledge' });
+
   for (const guideline of SAMPLE_GUIDELINES) {
     try {
       // Check if already exists
@@ -654,12 +655,12 @@ export async function initializeMedicalKnowledgeBase(): Promise<void> {
         .select('id')
         .eq('metadata->>title', guideline.title)
         .single();
-      
+
       if (existing) continue;
-      
+
       // Generate embedding
       const embedding = await generateEmbedding(guideline.content);
-      
+
       // Store in database
       await supabase.from('medical_knowledge').insert({
         content: guideline.content,
@@ -674,14 +675,14 @@ export async function initializeMedicalKnowledgeBase(): Promise<void> {
           keywords: guideline.keywords,
         }
       });
-      
-      console.log(`✅ Added: ${guideline.title}`);
+
+      logger.info(`Added medical guideline: ${guideline.title}`, { context: 'medical-knowledge' });
     } catch (error) {
-      console.error(`Error adding ${guideline.title}:`, error);
+      logger.error(`Error adding ${guideline.title}`, { context: 'medical-knowledge', error });
     }
   }
-  
-  console.log('✅ Medical knowledge base initialized');
+
+  logger.info('Medical knowledge base initialized', { context: 'medical-knowledge' });
 }
 
 /**
@@ -711,7 +712,7 @@ export async function retrieveMedicalContext(
     
     if (error) {
       // Fallback to keyword search if vector search fails
-      console.warn('Vector search failed, falling back to keyword search:', error);
+      logger.warn({ err: error }, 'Vector search failed, falling back to keyword search');
       return keywordSearch(supabase, query, options);
     }
     
@@ -734,7 +735,7 @@ export async function retrieveMedicalContext(
       query,
     };
   } catch (error) {
-    console.error('Error retrieving medical context:', error);
+    logger.error({ err: error }, 'Error retrieving medical context');
     return keywordSearch(supabase, query, options);
   }
 }

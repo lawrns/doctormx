@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { MapPin, DollarSign, Send, Star, Check } from 'lucide-react'
+import { logger } from '@/lib/observability/logger'
 
 interface Pharmacy {
   pharmacyId: string
@@ -52,7 +53,7 @@ export default function PharmacySuggestions({
           setPharmacies(data.recommendations || [])
         }
       } catch (error) {
-        console.error('Error fetching pharmacy recommendations:', error)
+        logger.error('Error fetching pharmacy recommendations', { error: error instanceof Error ? error.message : String(error) })
       } finally {
         setLoading(false)
       }
@@ -97,7 +98,7 @@ export default function PharmacySuggestions({
         alert(`Error: ${error.error || 'No se pudo enviar la referencia'}`)
       }
     } catch (error) {
-      console.error('Error sending referral:', error)
+      logger.error('Error sending referral', { error: error instanceof Error ? error.message : String(error) })
       alert('Error al enviar la referencia')
     } finally {
       setSending(false)

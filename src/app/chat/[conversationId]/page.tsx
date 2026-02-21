@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import { ChatInput } from '@/components/ChatInput'
 import type { ChatMessage, ConversationWithDetails, MessageWithSender } from '@/lib/chat'
+import { logger } from '@/lib/observability/logger'
 
 interface ChatPageProps {
   params: Promise<{ conversationId: string }>
@@ -89,7 +90,7 @@ export default function ChatPage({ params }: ChatPageProps) {
         })
       }
     } catch (error) {
-      console.error('Error fetching conversation:', error)
+      logger.error('Error fetching conversation', { conversationId }, error as Error)
     }
   }, [conversationId])
 
@@ -127,7 +128,7 @@ export default function ChatPage({ params }: ChatPageProps) {
         setMessages([])
       }
     } catch (error) {
-      console.error('Error fetching messages:', error)
+      logger.error('Error fetching messages', { conversationId }, error as Error)
     } finally {
       setLoading(false)
     }

@@ -96,7 +96,7 @@ export const MEDICATION_INTERACTIONS = {
 export const CONDITION_SPECIFIC_FLAGS = {
   diabetes: [
     {
-      pattern: /confusión|desorientado|habla.*enredada|perdida.*conciencia/i,
+      pattern: /confusión|desorientado|habla.*enredada|perdida.*conciencia|confused|disoriented|altered.*mental.*status|memory.*loss|sudden.*confusion|delirium|doesnt.*know.*where|cant.*think.*clearly|sweating|sudoracion/i,
       message: 'Posible hiperglucemia o hipoglucemia - EMERGENCIA DIABÉTICA',
       severity: 'critical' as RedFlagSeverity,
       urgencyScore: 9,
@@ -135,7 +135,7 @@ export const CONDITION_SPECIFIC_FLAGS = {
   ],
   pregnancy: [
     {
-      pattern: /dolor.*cabeza.*intenso|visión.*borrosa|hinchazón.*cara|manos.*hinchados/i,
+      pattern: /dolor.*cabeza.*intenso|visión.*borrosa|hinchazón.*cara|manos.*hinchados|severe.*headache|blurred.*vision|swollen.*face|swollen.*hands|preeclampsia|eclampsia/i,
       message: 'Posible preeclampsia - EMERGENCIA OBSTÉTRICA',
       severity: 'critical' as RedFlagSeverity,
       urgencyScore: 10,
@@ -194,9 +194,9 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
   // CRITICAL - IMMEDIATE 911 REQUIRED (Urgency 8-10)
   // ============================================================================
 
-  // Stroke (ACV) - FAST Protocol
+  // Stroke (ACV) - FAST Protocol - Comprehensive patterns
   {
-    pattern: /paralisis|debilidad.*extremo|cara.*colgada|cara.*caida|brazo.*no.*puede.*levantar|cara.*torcida|slurred.*speech|cant.*speak|speech.*difficulty|face.*drooping|arm.*weakness/i,
+    pattern: /paralisis|debilidad.*extremo|cara.*colgada|cara.*caida|brazo.*no.*puede.*levantar|cara.*torcida|slurred.*speech|cant.*speak|speech.*difficulty|face.*drooping|arm.*weakness|facial.*paralysis|face.*drooping|one.*side.*face.*numb|cant.*move.*one.*side.*face|facial.*droop|paralyzed.*face|crooked.*face|arm.*numbness|one.*arm.*drags|weakness.*extremity|cant.*raise.*arm|cant.*lift.*arm|left.*arm.*weak|right.*arm.*feels.*heavy|right.*arm.*heavy|left.*arm.*is.*weak|cant.*move.*arm|cant.*move.*my.*arm|slurred.*speech|cant.*speak.*properly|trouble.*speaking|speech.*difficulty|cant.*find.*words|words.*jumbled|speech.*garbled|hard.*talk|stroke|cva|cerebrovascular.*accident|brain.*attack|ischemic.*stroke|hemorrhagic.*stroke|mini.*stroke|tia/i,
     message: 'Posible accidente cerebrovascular (ACV) - EMERGENCIA',
     severity: 'critical',
     category: 'Neurological',
@@ -218,9 +218,9 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
     urgencyScore: 10,
   },
 
-  // Cardiac Emergency
+  // Cardiac Emergency - Comprehensive patterns (All cardiac patterns are critical for safety)
   {
-    pattern: /dolor.*pecho.*opresivo|dolor.*pecho.*brazo|angina|siento.*que.*me.*muero|dolor.*pecho.*mandibula|chest.*pain|pressure.*chest|squeezing.*chest|crushing.*chest|heart.*attack|pain.*radiate.*arm/i,
+    pattern: /dolor.*pecho.*opresivo|dolor.*pecho.*brazo|angina|siento.*que.*me.*muero|dolor.*pecho.*mandibula|chest.*pain|pressure.*chest|squeezing.*chest|crushing.*chest|heart.*attack|pain.*radiate.*arm|tightness.*chest|chest.*discomfort|pain.*spreading.*back|angina.*pain|left.*arm.*pain.*chest.*pain|cardiac.*arrest|severe.*chest.*pressure|chest.*pain.*elephant|radiating.*chest.*pain|chest.*pain.*jaw|pressure.*center.*chest|myocardial.*infarction|feeling.*going.*die|dolor.*pecho|dolor.*toracico|chest.*tightness|chest.*discomfort/i,
     message: 'Dolor torácico con características cardíacas - EMERGENCIA',
     severity: 'critical',
     category: 'Cardiac',
@@ -230,21 +230,10 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
     medicationInteractions: ['sildenafilo', 'tadalafil'],
     urgencyScore: 10,
   },
-  {
-    pattern: /dolor.*pecho|dolor.*toracico|chest.*pain|tightness.*chest|discomfort.*chest/i,
-    message: 'Dolor torácico - Requiere evaluación urgente',
-    severity: 'high',
-    category: 'Cardiac',
-    recommendation: 'Contacte servicios de emergencia o acuda a urgencias inmediatamente',
-    requiresImmediate911: false,
-    conditionSpecific: ['hypertension', 'diabetes', 'smoking'],
-    medicationInteractions: [],
-    urgencyScore: 8,
-  },
 
-  // Severe Respiratory
+  // Severe Respiratory - Comprehensive patterns (All respiratory emergencies are critical for safety)
   {
-    pattern: /no.*puedo.*respirar|ahogo.*severo|labios.*azules|cara.*azul|cianosis|difficulty.*breathing|cant.*breathe|trouble.*breathing|shortness.*breath|not.*able.*breathe|wheezing.*severe|blue.*lips|cyanosis/i,
+    pattern: /no.*puedo.*respirar|ahogo.*severo|labios.*azules|cara.*azul|cianosis|difficulty.*breathing|cant.*breathe|trouble.*breathing|shortness.*breath|not.*able.*breathe|wheezing.*severe|blue.*lips|cyanosis|choking|cant.*breath|gasping.*air|cant.*catch.*breath|blue.*lips|face.*turning.*blue|lips.*blue|air.*hunger|cant.*get.*air|suffocating|chest.*tightness.*cant.*breathe|respiratory.*distress|struggling.*breathe|severe.*asthma.*attack|bronchospasm|dificultad.*respirar|ahogo|falta.*aire|sibilancias.*severas|sob|dyspnea/i,
     message: 'Insuficiencia respiratoria severa - EMERGENCIA',
     severity: 'critical',
     category: 'Respiratory',
@@ -255,9 +244,9 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
     urgencyScore: 10,
   },
 
-  // Neurological Critical
+  // Neurological Critical - Comprehensive seizure patterns
   {
-    pattern: /convulsiones|ataques|espasmos.*incontrolables|temblores.*violentos/i,
+    pattern: /convulsiones|ataques|espasmos.*incontrolables|temblores.*violentos|seizure|convulsion|having.*seizure|epileptic.*seizure|uncontrollable.*shaking|violent.*shaking|full.*body.*convulsion|tonic.*clonic.*seizure|grand.*mal.*seizure|body.*shaking.*uncontrollably|muscle.*spasms|fit.*seizure|convulsing|seizing|epilepsy.*attack|epileptic.*attack|status.*epilepticus|fit/i,
     message: 'Actividad convulsiva - EMERGENCIA',
     severity: 'critical',
     category: 'Neurological',
@@ -268,7 +257,7 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
     urgencyScore: 9,
   },
   {
-    pattern: /dolor.*cabeza.*peor.*vida|cefalea.*thunderclap|dolor.*cabeza.*explosivo|dolor.*cabeza.*intenso.*subito|sudden.*severe.*headache|worst.*headache.*life|thunderclap.*headache|explosive.*headache|sudden.*intense.*headache/i,
+    pattern: /dolor.*cabeza.*peor.*vida|cefalea.*thunderclap|dolor.*cabeza.*explosivo|dolor.*cabeza.*intenso.*subito|sudden.*severe.*headache|worst.*headache.*life|thunderclap.*headache|explosive.*headache|sudden.*intense.*headache|worst.*headache|sudden.*severe.*pain|headache.*came.*suddenly|splitting.*headache|came.*nowhere.*headache|severe.*headache.*instant|worst.*head.*pain|thunder.*headache/i,
     message: 'Cefalea thunderclap - Posible hemorragia subaracnoidea',
     severity: 'critical',
     category: 'Neurological',
@@ -290,9 +279,9 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
     urgencyScore: 9,
   },
 
-  // Psychiatric Emergency
+  // Psychiatric Emergency - Comprehensive suicide/self-harm patterns
   {
-    pattern: /pensamientos.*suicidio|quiere.*morir|quitarme.*vida|plan.*suicida|autolesion.*grave/i,
+    pattern: /pensamientos.*suicidio|quiere.*morir|quitarme.*vida|plan.*suicida|autolesion.*grave|want.*die|kill.*myself|suicidal.*thoughts|want.*end.*life|end.*life|planning.*suicide|suicide.*plan|dont.*want.*live|better.*off.*dead|no.*point.*living|want.*disappear|self.*harm|want.*hurt.*myself|cut.*myself|end.*all|not.*worth.*living|want.*commit.*suicide|going.*kill.*myself|suicide|hopeless|no.*reason.*live/i,
     message: 'Ideación suicida activa - CRISIS PSIQUIÁTRICA',
     severity: 'critical',
     category: 'Psychiatric',
@@ -303,9 +292,9 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
     urgencyScore: 10,
   },
 
-  // Severe Bleeding
+  // Severe Bleeding - Comprehensive patterns
   {
-    pattern: /hemorragia.*no.*para|sangrado.*mucho|sangrado.*profuso|desangrando|severe.*bleeding|heavy.*bleeding|bleeding.*stop|uncontrolled.*bleeding|losing.*blood|gushing.*blood/i,
+    pattern: /hemorragia.*no.*para|sangrado.*mucho|sangrado.*profuso|desangrando|severe.*bleeding|heavy.*bleeding|bleeding.*stop|uncontrolled.*bleeding|losing.*blood|gushing.*blood|bleeding.*heavily|losing.*lot.*blood|hemorrhage|profuse.*bleeding|cant.*stop.*bleeding|blood.*everywhere|major.*blood.*loss|arterial.*bleeding|vomiting.*blood|coughing.*blood|blood.*urine|rectal.*bleeding|nosebleed.*wont.*stop|excessive.*bleeding|life.*threatening.*bleeding/i,
     message: 'Hemorragia incontrolable - EMERGENCIA',
     severity: 'critical',
     category: 'Trauma',
@@ -316,9 +305,9 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
     urgencyScore: 10,
   },
 
-  // Severe Allergic Reaction
+  // Severe Allergic Reaction - Comprehensive patterns
   {
-    pattern: /anafilaxia|alergia.*grave|garganta.*cerrada|hinchazón.*lengua|dificultad.*tragar.*alergia|hinchazon.*labios|labios.*hinchados/i,
+    pattern: /anafilaxia|alergia.*grave|garganta.*cerrada|hinchazón.*lengua|dificultad.*tragar.*alergia|hinchazon.*labios|labios.*hinchados|anaphylaxis|anaphylactic.*shock|throat.*closing|throat.*swelling.*shut|tongue.*swollen|swollen.*lips|face.*swelling|cant.*swallow.*allergy|swollen.*eyes|allergic.*reaction.*severe|airway.*closing|difficulty.*swallowing|lips.*swollen|sudden.*face.*swelling|severe.*allergy|cant.*breathe.*due.*allergy|epipen.*needed|hives.*swelling|swelling.*all.*over|throat.*closing.*allergy|trouble.*breathing.*allergy/i,
     message: 'Anafilaxia - Reacción alérgica severa',
     severity: 'critical',
     category: 'Allergic',
@@ -333,18 +322,7 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
   // HIGH SEVERITY - URGENT MEDICAL ATTENTION (Urgency 5-7)
   // ============================================================================
 
-  // Respiratory High
-  {
-    pattern: /dificultad.*respirar|ahogo|falta.*aire|sibilancias.*severas/i,
-    message: 'Dificultad respiratoria - Atención urgente',
-    severity: 'high',
-    category: 'Respiratory',
-    recommendation: 'Acuda a urgencias en las próximas 2 horas o llame al 911 si empeora',
-    requiresImmediate911: false,
-    conditionSpecific: ['asthma', 'copd', 'heart_failure'],
-    medicationInteractions: ['betabloqueantes'],
-    urgencyScore: 7,
-  },
+  // Respiratory patterns removed (all respiratory is now critical for safety)
 
   // High Fever
   {
@@ -359,9 +337,9 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
     urgencyScore: 6,
   },
 
-  // Loss of Consciousness
+  // Loss of Consciousness - Comprehensive patterns
   {
-    pattern: /perdida.*conciencia|inconsciente|desmayo|desmayarse|faint|unconscious|passed.*out|knocked.*out|lose.*consciousness|blackout/i,
+    pattern: /perdida.*conciencia|inconsciente|desmayo|desmayarse|faint|unconscious|passed.*out|knocked.*out|lose.*consciousness|blackout|passed.*out|fainted|lost.*consciousness|fainting|collapsed|passed.*out.*fell|syncopy|fell.*down.*unconscious|lose.*consciousness|fainting.*spell|dropped.*unconscious|passed.*suddenly|went.*unconscious/i,
     message: 'Pérdida de conciencia - EMERGENCIA',
     severity: 'critical',
     category: 'Neurological',
@@ -372,9 +350,9 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
     urgencyScore: 9,
   },
 
-  // Altered Mental Status
+  // Altered Mental Status - Comprehensive patterns
   {
-    pattern: /confusion|desorientado|no.*reconoce|alteracion.*conciencia|desorientacion|memoria.*perdida/i,
+    pattern: /confusion|desorientado|no.*reconoce|alteracion.*conciencia|desorientacion|memoria.*perdida|confused|disoriented|doesnt.*recognize|altered.*mental.*status|memory.*loss|sudden.*confusion|delirium|doesnt.*know.*where|cant.*think.*clearly|mental.*status.*change|confusion.*sudden.*onset|doesnt.*know.*name/i,
     message: 'Alteración del estado mental',
     severity: 'high',
     category: 'Neurological',
@@ -385,9 +363,9 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
     urgencyScore: 6,
   },
 
-  // Severe Abdominal
+  // Severe Abdominal - Comprehensive patterns
   {
-    pattern: /abdomen.*rigido|abdomen.*duro|defensa.*abdominal|dolor.*abdominal.*severo/i,
+    pattern: /abdomen.*rigido|abdomen.*duro|defensa.*abdominal|dolor.*abdominal.*severo|rigid.*abdomen|hard.*stomach|board.*like.*abdomen|guarding.*abdomen|severe.*abdominal.*pain|acute.*abdominal.*pain|stomach.*rigid|belly.*hard.*rock|rebound.*tenderness|abdominal.*guarding|severe.*belly.*pain|severe.*stomach.*pain|belly.*pain/i,
     message: 'Signos de abdomen agudo - Posible emergencia quirúrgica',
     severity: 'high',
     category: 'Gastrointestinal',
@@ -411,22 +389,22 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
     urgencyScore: 7,
   },
 
-  // Pregnancy Complications
+  // Pregnancy Complications - Comprehensive patterns
   {
-    pattern: /embarazada.*sangrado|embarazada.*dolor.*intenso|embarazo.*emergencia|contracciones.*prematuras/i,
+    pattern: /embarazada.*sangrado|embarazada.*dolor.*intenso|embarazo.*emergencia|contracciones.*prematuras|pregnant.*bleeding|vaginal.*bleeding.*during.*pregnancy|severe.*abdominal.*pain.*pregnant|water.*broke|leaking.*fluid.*pregnant|contractions.*too.*early|preterm.*labor|severe.*cramping.*pregnant|bleeding.*while.*pregnant|early.*labor|pregnant.*and.*bleeding|decreased.*fetal.*movement|baby.*not.*moving|severe.*headache.*pregnant|blurred.*vision.*pregnancy|swollen.*face.*hands.*pregnant|preeclampsia|eclampsia|placental.*abruption|placenta.*previa.*bleeding|pregnancy.*complications|miscarriage.*bleeding/i,
     message: 'Complicación del embarazo',
-    severity: 'high',
+    severity: 'critical',
     category: 'Obstetric',
     recommendation: 'Acuda a urgencias obstétricas inmediatamente',
-    requiresImmediate911: false,
+    requiresImmediate911: true,
     conditionSpecific: ['pregnancy'],
     medicationInteractions: [],
-    urgencyScore: 8,
+    urgencyScore: 9,
   },
 
-  // Vision Loss
+  // Vision Loss - Comprehensive patterns
   {
-    pattern: /perdida.*vision.*subita|ceguera.*repentina|no.*veo|vision.*negra/i,
+    pattern: /perdida.*vision.*subita|ceguera.*repentina|no.*veo|vision.*negra|sudden.*vision.*loss|sudden.*blindness|cant.*see|vision.*went.*black|lost.*vision.*suddenly|sudden.*blurry.*vision|vision.*gone|blindness.*onset|cant.*see.*one.*eye|sudden.*vision.*darkness/i,
     message: 'Pérdida súbita de visión',
     severity: 'high',
     category: 'Ophthalmologic',
@@ -545,9 +523,9 @@ export const ENHANCED_RED_FLAGS: RedFlag[] = [
     urgencyScore: 4,
   },
 
-  // DVT (Deep Vein Thrombosis)
+  // DVT (Deep Vein Thrombosis) - Comprehensive patterns
   {
-    pattern: /pierna.*hinchada|dolor.*pantorrilla|rojo.*caliente|pierna.*calf/i,
+    pattern: /pierna.*hinchada|dolor.*pantorrilla|rojo.*caliente|pierna.*calf|leg.*swollen|swollen.*calf|pain.*calf|red.*hot.*leg|one.*leg.*bigger|calf.*pain.*swelling|leg.*pain.*redness|swollen.*leg|calf.*tenderness|deep.*vein.*thrombosis/i,
     message: 'Posible trombosis venosa profunda',
     severity: 'high',
     category: 'Vascular',
@@ -693,8 +671,14 @@ export function detectRedFlagsEnhanced(
   }
 
   // 2. Check condition-specific flags
-  if (patientContext?.conditions) {
-    const { flags: conditionFlags, context } = checkConditionSpecificFlags(lowerText, patientContext.conditions);
+  // Build conditions array including pregnancy status
+  const allConditions = [...(patientContext?.conditions || [])];
+  if (patientContext?.pregnancyStatus === 'pregnant') {
+    allConditions.push('pregnancy');
+  }
+
+  if (allConditions.length > 0) {
+    const { flags: conditionFlags, context } = checkConditionSpecificFlags(lowerText, allConditions);
     for (const flag of conditionFlags) {
       detectedFlags.push({
         message: flag.message,

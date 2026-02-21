@@ -4,6 +4,7 @@
 // Output: Boolean indicating if feature is enabled
 
 import { createServiceClient } from '@/lib/supabase/server'
+import { logger } from '@/lib/logger'
 import { FEATURE_FLAGS, type FeatureFlagKey } from './flags'
 
 export { FEATURE_FLAGS, type FeatureFlagKey } from './flags'
@@ -41,7 +42,7 @@ async function refreshFlagCache(): Promise<void> {
       .select('*')
 
     if (error) {
-      console.error('[FeatureFlags] Failed to fetch flags:', error.message)
+      logger.error({ err: error }, '[FeatureFlags] Failed to fetch flags')
       return
     }
 
@@ -51,7 +52,7 @@ async function refreshFlagCache(): Promise<void> {
     }
     cacheTimestamp = now
   } catch (err) {
-    console.error('[FeatureFlags] Error refreshing cache:', err)
+    logger.error({ err: err }, '[FeatureFlags] Error refreshing cache')
   }
 }
 
@@ -65,7 +66,7 @@ export async function isFeatureEnabled(
   // Get default flag config
   const defaultFlag = FEATURE_FLAGS[flagKey]
   if (!defaultFlag) {
-    console.warn(`[FeatureFlags] Unknown flag: ${flagKey}`)
+    logger.warn(`[FeatureFlags] Unknown flag: ${flagKey}`)
     return false
   }
 

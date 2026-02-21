@@ -10,6 +10,7 @@ import {
   encodeCursor,
 } from '@/lib/pagination'
 import type { PaginatedResult } from '@/lib/pagination'
+import { logger } from '@/lib/observability/logger'
 
 /**
  * POST /api/appointments
@@ -35,7 +36,7 @@ export async function POST(request: NextRequest) {
   // Explicitly ignore any patientId from request body for security
   // Always use authenticated session user ID
   if (bodyPatientId) {
-    console.warn('Security: Ignoring patientId from request body, using session user ID')
+    logger.warn('Security: Ignoring patientId from request body, using session user ID')
   }
 
   if (!doctorId || !date || !time) {
@@ -74,7 +75,7 @@ export async function POST(request: NextRequest) {
       appointmentId: result.appointment.id,
     })
   } catch (error) {
-    console.error('Error creating appointment:', error)
+    logger.error('Error creating appointment:', { err: error })
     return NextResponse.json(
       { error: 'Failed to create appointment' },
       { status: 500 }
@@ -153,7 +154,7 @@ export async function GET(request: Request) {
     const { data: appointmentsData, error: appointmentsError } = await query
 
     if (appointmentsError) {
-      console.error('Error fetching appointments:', appointmentsError)
+      logger.error('Error fetching appointments:', { err: appointmentsError })
       return new Response(JSON.stringify({ error: 'Failed to fetch appointments', details: appointmentsError.message }), {
         status: 500,
         headers: { 'Content-Type': 'application/json' }
@@ -208,9 +209,9 @@ export async function GET(request: Request) {
     const result: PaginatedResult<EnrichedAppointment> = buildPaginatedResponse({
       data: enrichedAppointments,
       limit,
-      getNextCursor: (apt: any) =>
+      getNextCursor: (apt: EnrichedAppointment) =>
         apt ? encodeCursor({ id: apt.id, start_ts: apt.start_ts }) : null,
-      getPrevCursor: (apt: any) =>
+      getPrevCursor: (apt: EnrichedAppointment) =>
         apt ? encodeCursor({ id: apt.id, start_ts: apt.start_ts }) : null,
     })
 
@@ -219,7 +220,7 @@ export async function GET(request: Request) {
       headers: { 'Content-Type': 'application/json' }
     })
   } catch (error: unknown) {
-    console.error('Error in GET /api/appointments:', error)
+    logger.error('Error in GET /api/appointments:', { err: error })
     const errorMessage = error instanceof Error ? error.message : 'Unknown error'
     return new Response(JSON.stringify({ error: 'Unauthorized', details: errorMessage }), {
       status: 401,

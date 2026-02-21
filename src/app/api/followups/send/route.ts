@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServiceClient } from '@/lib/supabase/server'
+import { logger } from '@/lib/observability/logger'
 import {
   sendFollowUp24hNotification,
   sendFollowUp7dNotification,
@@ -65,7 +66,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ success: true, messageSid: result.messageSid })
   } catch (error) {
-    console.error('Error sending follow-up:', error)
+    logger.error('Error sending follow-up:', { err: error })
     return NextResponse.json({ error: 'Failed to send follow-up' }, { status: 500 })
   }
 }

@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { logger } from '@/lib/observability/logger'
 import {
   getAnonymousQuota,
   canAnonymousConsult,
@@ -18,7 +19,7 @@ export async function GET(request: NextRequest) {
       ...result,
     })
   } catch (error) {
-    console.error('Get quota error:', error)
+    logger.error('Get quota error:', { err: error })
     return NextResponse.json(
       { error: 'Error al verificar el cupón' },
       { status: 500 }
@@ -67,7 +68,7 @@ export async function POST(request: NextRequest) {
       { status: 400 }
     )
   } catch (error) {
-    console.error('Quota action error:', error)
+    logger.error('Quota action error:', { err: error })
     return NextResponse.json(
       { error: 'Error al procesar la solicitud' },
       { status: 500 }

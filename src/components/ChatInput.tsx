@@ -2,6 +2,7 @@
 
 import { useState, useRef, useCallback } from 'react'
 import { createClient } from '@/lib/supabase/client'
+import { logger } from '@/lib/observability/logger'
 
 interface ChatInputProps {
   conversationId: string
@@ -35,7 +36,7 @@ export function ChatInput({ conversationId, onMessageSent, userId }: ChatInputPr
           .upload(fileName, attachment)
 
         if (uploadError) {
-          console.error('Error uploading file:', uploadError)
+          logger.error('Error uploading file', { error: uploadError.message })
           throw uploadError
         }
 
@@ -62,7 +63,7 @@ export function ChatInput({ conversationId, onMessageSent, userId }: ChatInputPr
         })
 
       if (error) {
-        console.error('Error sending message:', error)
+        logger.error('Error sending message', { error: error.message })
         throw error
       }
 
@@ -71,7 +72,7 @@ export function ChatInput({ conversationId, onMessageSent, userId }: ChatInputPr
       setAttachmentPreview(null)
       onMessageSent()
     } catch (error) {
-      console.error('Error sending message:', error)
+      logger.error('Error sending message', { error: error instanceof Error ? error.message : String(error) })
     } finally {
       setSending(false)
     }

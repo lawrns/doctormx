@@ -101,24 +101,60 @@ export async function GET(request: Request) {
     }
 
     // Check if there are more results
-    const rawAppointments = (appointmentsData || []) as Array<any>
+    const rawAppointments = (appointmentsData || []) as Array<{
+      id: string
+      start_ts: string
+      end_ts: string | null
+      status: string
+      patient_id: string
+      doctor_id: string
+      reason_for_visit: string | null
+      notes: string | null
+      created_at: string
+      updated_at: string
+      doctors: {
+        id: string
+        specialty: string | null
+        price_cents: number
+        currency: string | null
+        rating: number | null
+        profiles: {
+          id: string
+          full_name: string | null
+          photo_url: string | null
+        }
+      }
+    }>
     const hasMore = rawAppointments.length > limit
     const paginatedAppointments = hasMore ? rawAppointments.slice(0, limit) : rawAppointments
 
     // Map results to enriched appointments format
     // The join query returns data with nested structure: { doctors: { profiles: {...} } }
-    const appointments = paginatedAppointments.map((apt: any) => ({
-      ...apt,
-      doctor: apt.doctors || null
+    const appointments = paginatedAppointments.map((apt) => ({
+      id: apt.id,
+      doctor_id: apt.doctor_id,
+      patient_id: apt.patient_id,
+      start_ts: apt.start_ts,
+      status: apt.status,
+      price_cents: apt.doctors.price_cents,
+      currency: apt.doctors.currency,
+      doctor: {
+        id: apt.doctors.id,
+        specialty: apt.doctors.specialty,
+        price_cents: apt.doctors.price_cents,
+        currency: apt.doctors.currency,
+        rating: apt.doctors.rating,
+        profile: apt.doctors.profiles,
+      }
     }))
 
     // Build pagination response
     const result: PaginatedResult<EnrichedAppointment> = buildPaginatedResponse({
       data: appointments,
       limit,
-      getNextCursor: (apt: any) =>
+      getNextCursor: (apt: EnrichedAppointment) =>
         apt ? encodeCursor({ id: apt.id, start_ts: apt.start_ts }) : null,
-      getPrevCursor: (apt: any) =>
+      getPrevCursor: (apt: EnrichedAppointment) =>
         apt ? encodeCursor({ id: apt.id, start_ts: apt.start_ts }) : null,
     })
 

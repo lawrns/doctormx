@@ -182,7 +182,7 @@ export async function measurePerformance<T>(
 /**
  * Performance monitoring wrapper for API routes
  */
-export function withPerformanceMonitoring<T extends (...args: any[]) => Promise<any>>(
+export function withPerformanceMonitoring<T extends (...args: unknown[]) => Promise<unknown>>(
   operation: PerformanceOperation,
   handler: T,
   options?: {

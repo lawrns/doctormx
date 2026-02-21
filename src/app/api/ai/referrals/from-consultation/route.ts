@@ -4,6 +4,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { matchDoctorsForReferral } from '@/lib/ai/referral'
 import { redis } from '@/lib/cache'
+import { logger } from '@/lib/observability/logger'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -79,7 +80,7 @@ export async function POST(request: NextRequest) {
     })
 
   } catch (error) {
-    console.error('[AI Referrals] Error generating recommendations:', error)
+    logger.error('[AI Referrals] Error generating recommendations:', { err: error })
     return NextResponse.json(
       { error: 'Failed to generate doctor recommendations' },
       { status: 500 }

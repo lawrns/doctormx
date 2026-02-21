@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { requireRole } from '@/lib/auth'
 import { getDoctorEarnings, getDoctorReferrals } from '@/lib/pharmacy'
+import { logger } from '@/lib/observability/logger'
 
 export async function GET() {
   try {
@@ -65,7 +66,7 @@ export async function GET() {
       })),
     })
   } catch (error) {
-    console.error('Error getting earnings:', error)
+    logger.error('Error getting earnings:', { err: error })
     return NextResponse.json(
       { error: 'Failed to get earnings' },
       { status: 500 }

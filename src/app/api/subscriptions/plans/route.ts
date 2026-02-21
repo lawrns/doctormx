@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { SUBSCRIPTION_PLANS, SUBSCRIPTION_TIERS } from '@/lib/subscription'
+import { logger } from '@/lib/observability/logger'
 
 export async function GET() {
     try {
@@ -23,7 +24,7 @@ export async function GET() {
             plans,
         })
     } catch (error) {
-        console.error('Error fetching plans:', error)
+        logger.error('Error fetching plans:', { err: error })
         return NextResponse.json(
             { error: 'Failed to fetch plans' },
             { status: 500 }

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { requireRole } from '@/lib/auth'
 import { getPrescriptionPDF } from '@/lib/prescriptions'
+import { logger } from '@/lib/observability/logger'
 
 export async function GET(
   request: NextRequest,
@@ -39,7 +40,7 @@ export async function GET(
       },
     })
   } catch (error) {
-    console.error('Error generating PDF:', error)
+    logger.error('Error generating PDF:', { err: error })
     return NextResponse.json(
       { error: 'Failed to generate PDF' },
       { status: 500 }

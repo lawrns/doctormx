@@ -8,6 +8,7 @@ import {
   encodeCursor,
 } from '@/lib/pagination'
 import type { PaginatedResult } from '@/lib/pagination'
+import { logger } from '@/lib/observability/logger'
 
 /**
  * GET /api/patients
@@ -78,7 +79,7 @@ export async function GET(request: NextRequest) {
     const { data: appointments, error: appointmentsError } = await patientsQuery
 
     if (appointmentsError) {
-      console.error('Error fetching patient appointments:', appointmentsError)
+      logger.error('Error fetching patient appointments:', { err: appointmentsError })
       return NextResponse.json(
         { error: 'Failed to fetch patients' },
         { status: 500 }
@@ -87,7 +88,7 @@ export async function GET(request: NextRequest) {
 
     // Extract unique patient IDs
     const patientEntries = (appointments || [])
-      .map((apt: any) => ({
+      .map((apt: { patient_id: string; created_at: string }) => ({
         patient_id: apt.patient_id,
         created_at: apt.created_at,
       }))
@@ -117,7 +118,7 @@ export async function GET(request: NextRequest) {
     const { data: profiles, error: profilesError } = await profilesQuery
 
     if (profilesError) {
-      console.error('Error fetching patient profiles:', profilesError)
+      logger.error('Error fetching patient profiles:', { err: profilesError })
       return NextResponse.json(
         { error: 'Failed to fetch patient profiles' },
         { status: 500 }
@@ -134,18 +135,27 @@ export async function GET(request: NextRequest) {
     })
 
     // Build pagination response
-    const result: PaginatedResult<any> = buildPaginatedResponse({
-      data: enrichedPatients,
+    type EnrichedPatient = {
+      id: string
+      full_name: string | null
+      photo_url: string | null
+      email: string | null
+      phone: string | null
+      first_appointment_at: string | undefined
+    }
+
+    const result: PaginatedResult<EnrichedPatient> = buildPaginatedResponse({
+      data: enrichedPatients as EnrichedPatient[],
       limit,
-      getNextCursor: (patient: any) =>
+      getNextCursor: (patient: EnrichedPatient) =>
         patient ? encodeCursor({ id: patient.id, created_at: patient.first_appointment_at }) : null,
-      getPrevCursor: (patient: any) =>
+      getPrevCursor: (patient: EnrichedPatient) =>
         patient ? encodeCursor({ id: patient.id, created_at: patient.first_appointment_at }) : null,
     })
 
     return NextResponse.json(result)
   } catch (error) {
-    console.error('Error in GET /api/patients:', error)
+    logger.error('Error in GET /api/patients:', { err: error })
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

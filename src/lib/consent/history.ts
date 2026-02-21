@@ -13,6 +13,14 @@ import type {
   ConsentAuditLog,
   ConsentAuditEventType,
 } from './types'
+import {
+  logConsentGranted,
+  logConsentWithdrawn,
+  logConsentModified,
+  logConsentViewed,
+  createConsentAuditLog,
+} from './consent-audit'
+import { logger } from '@/lib/logger'
 
 // ================================================
 // CONSENT HISTORY FUNCTIONS
@@ -32,6 +40,13 @@ export async function trackConsentGranted(
   metadata?: Record<string, unknown>
 ): Promise<ConsentHistoryEntry> {
   const supabase = await createClient()
+
+  // Get the consent record to log properly
+  const { data: consentRecord } = await supabase
+    .from('user_consent_records')
+    .select('*')
+    .eq('id', consentRecordId)
+    .single()
 
   const { data, error } = await supabase
     .from('consent_history')
@@ -57,32 +72,17 @@ export async function trackConsentGranted(
     .single()
 
   if (error) {
-    console.error('Error tracking consent granted:', error)
+    logger.error({ err: error }, 'Error tracking consent granted')
     throw error
   }
 
-  // Also create audit log entry
-  await createAuditLog({
-    event_type: 'consent_granted',
-    user_id: userId,
-    consent_type: 'unknown' as any, // Will be updated by trigger
-    consent_record_id: consentRecordId,
-    consent_request_id: null,
-    action: 'grant',
-    action_result: 'success',
-    error_message: null,
-    actor_user_id: userId,
-    actor_role: 'user',
-    actor_ip_address: null,
-    actor_user_agent: null,
-    session_id: null,
-    request_id: null,
-    correlation_id: null,
-    before_state: null,
-    after_state: data,
-    data_changes: null,
-    occurred_at: new Date().toISOString(),
-  })
+  // Use the unified audit system
+  if (consentRecord) {
+    await logConsentGranted(consentRecord, {
+      user_id: userId,
+      role: 'user',
+    })
+  }
 
   return data
 }
@@ -139,34 +139,21 @@ export async function trackConsentWithdrawn(
     .single()
 
   if (error) {
-    console.error('Error tracking consent withdrawn:', error)
+    logger.error({ err: error }, 'Error tracking consent withdrawn')
     throw error
   }
 
-  // Also create audit log entry
-  await createAuditLog({
-    event_type: 'consent_withdrawn',
-    user_id: userId,
-    consent_type: currentConsent?.consent_type || 'unknown',
-    consent_record_id: consentRecordId,
-    consent_request_id: null,
-    action: 'withdraw',
-    action_result: 'success',
-    error_message: null,
-    actor_user_id: userId,
-    actor_role: metadata?.withdrawn_by || 'user',
-    actor_ip_address: null,
-    actor_user_agent: null,
-    session_id: null,
-    request_id: null,
-    correlation_id: null,
-    before_state: currentConsent,
-    after_state: data,
-    data_changes: {
-      status: { old: currentConsent?.status, new: 'withdrawn' },
-    },
-    occurred_at: new Date().toISOString(),
-  })
+  // Use the unified audit system
+  if (currentConsent) {
+    await logConsentWithdrawn(
+      currentConsent,
+      metadata?.reason || 'Usuario retiró consentimiento',
+      {
+        user_id: userId,
+        role: metadata?.withdrawn_by || 'user',
+      }
+    )
+  }
 
   return data
 }
@@ -193,6 +180,25 @@ export async function trackConsentModified(
     .eq('id', consentRecordId)
     .single()
 
+  // Generate changes array for audit logging
+  const changes: Array<{
+    field: string
+    old_value: unknown
+    new_value: unknown
+  }> = []
+
+  if (metadata && currentConsent) {
+    for (const [key, value] of Object.entries(metadata)) {
+      if (key in currentConsent && currentConsent[key as keyof typeof currentConsent] !== value) {
+        changes.push({
+          field: key,
+          old_value: currentConsent[key as keyof typeof currentConsent],
+          new_value: value,
+        })
+      }
+    }
+  }
+
   const { data, error } = await supabase
     .from('consent_history')
     .insert({
@@ -217,32 +223,17 @@ export async function trackConsentModified(
     .single()
 
   if (error) {
-    console.error('Error tracking consent modified:', error)
+    logger.error({ err: error }, 'Error tracking consent modified')
     throw error
   }
 
-  // Also create audit log entry
-  await createAuditLog({
-    event_type: 'consent_modified',
-    user_id: userId,
-    consent_type: currentConsent?.consent_type || 'unknown',
-    consent_record_id: consentRecordId,
-    consent_request_id: null,
-    action: 'modify',
-    action_result: 'success',
-    error_message: null,
-    actor_user_id: userId,
-    actor_role: 'user',
-    actor_ip_address: null,
-    actor_user_agent: null,
-    session_id: null,
-    request_id: null,
-    correlation_id: null,
-    before_state: currentConsent,
-    after_state: metadata || null,
-    data_changes: (metadata || {}) as Record<string, { old: unknown; new: unknown }>,
-    occurred_at: new Date().toISOString(),
-  })
+  // Use the unified audit system
+  if (currentConsent && changes.length > 0) {
+    await logConsentModified(currentConsent, changes, {
+      user_id: userId,
+      role: 'user',
+    })
+  }
 
   return data
 }
@@ -293,34 +284,32 @@ export async function trackConsentExpired(
     .single()
 
   if (error) {
-    console.error('Error tracking consent expired:', error)
+    logger.error({ err: error }, 'Error tracking consent expired')
     throw error
   }
 
-  // Also create audit log entry
-  await createAuditLog({
-    event_type: 'consent_expired',
-    user_id: userId,
-    consent_type: currentConsent?.consent_type || 'unknown',
-    consent_record_id: consentRecordId,
-    consent_request_id: null,
-    action: 'expire',
-    action_result: 'success',
-    error_message: null,
-    actor_user_id: null,
-    actor_role: 'system',
-    actor_ip_address: null,
-    actor_user_agent: null,
-    session_id: null,
-    request_id: null,
-    correlation_id: null,
-    before_state: currentConsent,
-    after_state: { expired_at: new Date().toISOString() },
-    data_changes: {
-      status: { old: currentConsent?.status, new: 'expired' },
-    },
-    occurred_at: new Date().toISOString(),
-  })
+  // Use the unified audit system for consent expiration
+  if (currentConsent) {
+    await createConsentAuditLog({
+      event_type: 'consent_expired',
+      user_id: userId,
+      consent_type: currentConsent.consent_type,
+      consent_record_id: consentRecordId,
+      actor: {
+        user_id: null,
+        role: 'system',
+      },
+      action_result: 'success',
+      before_state: {
+        status: currentConsent.status,
+        expires_at: currentConsent.expires_at,
+      },
+      after_state: {
+        status: 'expired',
+        expired_at: new Date().toISOString(),
+      },
+    })
+  }
 
   return data
 }
@@ -343,7 +332,7 @@ export async function getConsentHistory(
     .order('created_at', { ascending: false })
 
   if (error) {
-    console.error('Error getting consent history:', error)
+    logger.error({ err: error }, 'Error getting consent history')
     return []
   }
 
@@ -389,7 +378,7 @@ export async function getConsentHistoryForUser(
   const { data, error } = await query.order('created_at', { ascending: false })
 
   if (error) {
-    console.error('Error getting user consent history:', error)
+    logger.error({ err: error }, 'Error getting user consent history')
     return []
   }
 
@@ -437,7 +426,7 @@ export async function getConsentHistoryForUsers(
   const { data, error } = await query.order('created_at', { ascending: false })
 
   if (error) {
-    console.error('Error getting users consent history:', error)
+    logger.error({ err: error }, 'Error getting users consent history')
     return []
   }
 
@@ -476,7 +465,7 @@ export async function createAuditLog(
     .single()
 
   if (error) {
-    console.error('Error creating audit log:', error)
+    logger.error({ err: error }, 'Error creating audit log')
     throw error
   }
 
@@ -525,7 +514,7 @@ export async function getAuditLogsForUser(
   const { data, error } = await query.order('occurred_at', { ascending: false })
 
   if (error) {
-    console.error('Error getting audit logs:', error)
+    logger.error({ err: error }, 'Error getting audit logs')
     return []
   }
 
@@ -572,7 +561,7 @@ export async function getAllAuditLogs(options?: {
   const { data, error } = await query.order('occurred_at', { ascending: false })
 
   if (error) {
-    console.error('Error getting all audit logs:', error)
+    logger.error({ err: error }, 'Error getting all audit logs')
     return []
   }
 
@@ -645,7 +634,7 @@ export async function getAuditLogsByCorrelationId(
     .order('occurred_at', { ascending: true })
 
   if (error) {
-    console.error('Error getting audit logs by correlation ID:', error)
+    logger.error({ err: error }, 'Error getting audit logs by correlation ID')
     return []
   }
 

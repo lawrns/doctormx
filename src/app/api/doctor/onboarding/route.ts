@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(request: NextRequest) {
   const supabase = await createClient()
@@ -29,13 +30,13 @@ export async function POST(request: NextRequest) {
     });
 
     if (error) {
-      console.error(error);
+      logger.error('Error occurred', { err: error });
       throw error;
     }
 
     return NextResponse.json({ success: true })
   } catch (error) {
-    console.error('Error saving onboarding:', error)
+    logger.error('Error saving onboarding:', { err: error })
     return NextResponse.json(
       { error: 'Failed to save onboarding data' },
       { status: 500 }

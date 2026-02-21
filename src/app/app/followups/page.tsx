@@ -1,6 +1,7 @@
 import { requireRole } from '@/lib/auth'
 import { getPatientFollowUps } from '@/lib/followup'
 import Link from 'next/link'
+import { logger } from '@/lib/observability/logger'
 
 export default async function PatientFollowUpsPage() {
   const { user } = await requireRole('patient')
@@ -8,7 +9,7 @@ export default async function PatientFollowUpsPage() {
   try {
     followUps = await getPatientFollowUps(user.id)
   } catch (error) {
-    console.error('Error loading follow-ups:', error)
+    logger.error('Error loading follow-ups', { userId: user.id }, error as Error)
     followUps = []
   }
 

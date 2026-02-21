@@ -5,6 +5,7 @@
 
 import { getAIClient, glm } from '@/lib/openai'
 import { createServiceClient } from '@/lib/supabase/server'
+import { logger } from '@/lib/observability/logger'
 import { GLM_CONFIG, isGLMConfigured } from './glm'
 
 export type OTCCategory =
@@ -146,7 +147,7 @@ Reglas:
             purpose: rec.purpose || '',
         }))
     } catch (error) {
-        console.error('Error generating OTC recommendations:', error)
+        logger.error({ err: error }, 'Error generating OTC recommendations')
         return []
     }
 }
@@ -193,7 +194,7 @@ export async function saveOTCRecommendation(
             record,
         }
     } catch (error) {
-        console.error('Error saving OTC recommendation:', error)
+        logger.error({ err: error }, 'Error saving OTC recommendation')
         throw error
     }
 }
@@ -220,7 +221,7 @@ export async function getOTCRecommendations(patientId: string) {
 
         return recommendations || []
     } catch (error) {
-        console.error('Error getting OTC recommendations:', error)
+        logger.error({ err: error }, 'Error getting OTC recommendations')
         return []
     }
 }
@@ -247,7 +248,7 @@ export async function getAppointmentOTCRecommendations(appointmentId: string) {
 
         return recommendations || []
     } catch (error) {
-        console.error('Error getting appointment OTC recommendations:', error)
+        logger.error({ err: error }, 'Error getting appointment OTC recommendations')
         return []
     }
 }
@@ -274,7 +275,7 @@ export async function getRecommendationsByCategory(category: OTCCategory) {
 
         return recommendations || []
     } catch (error) {
-        console.error('Error getting recommendations by category:', error)
+        logger.error({ err: error }, 'Error getting recommendations by category')
         return []
     }
 }
@@ -332,7 +333,7 @@ Responde en JSON con esta estructura:
 
         return interactionData.interactions || []
     } catch (error) {
-        console.error('Error checking drug interactions:', error)
+        logger.error({ err: error }, 'Error checking drug interactions')
         return []
     }
 }
@@ -383,7 +384,7 @@ Responde en JSON con esta estructura:
 
         return alternativeData.alternatives || []
     } catch (error) {
-        console.error('Error getting safe alternatives:', error)
+        logger.error({ err: error }, 'Error getting safe alternatives')
         return []
     }
 }

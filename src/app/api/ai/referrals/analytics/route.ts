@@ -4,6 +4,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServiceClient } from '@/lib/supabase/server'
 import type { AIReferralAnalytics, AnalyticsStats } from '@/lib/types/api'
+import { logger } from '@/lib/observability/logger'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -96,7 +97,7 @@ export async function GET(request: NextRequest) {
     })
 
   } catch (error) {
-    console.error('[AI Referrals Analytics] Error:', error)
+    logger.error('[AI Referrals Analytics] Error:', { err: error })
     return NextResponse.json(
       { error: 'Failed to retrieve referral analytics' },
       { status: 500 }

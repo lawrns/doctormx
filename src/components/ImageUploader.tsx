@@ -5,6 +5,7 @@ import { LoadingButton } from './LoadingButton'
 import { Select } from './Select'
 import { Textarea } from './Input'
 import { Modal } from './Modal'
+import { logger } from '@/lib/observability/logger'
 
 export interface ImageUploaderProps {
   onUploadComplete?: (data: UploadResult & { analysisId: string; urgency: string; confidence: number }) => void
@@ -69,7 +70,7 @@ export function ImageUploader({
             }
           }
         } catch (error) {
-          console.error('Error checking premium access:', error)
+          logger.error('Error checking premium access', { error: error instanceof Error ? error.message : String(error) })
         } finally {
           setLoadingUsage(false)
         }

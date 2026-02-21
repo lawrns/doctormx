@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { INDIVIDUAL_PREMIUM_FEATURES, createFeaturePurchase, type PremiumFeature } from '@/lib/premium-features'
 import { requireRole } from '@/lib/auth'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(request: NextRequest) {
   try {
@@ -33,7 +34,7 @@ export async function POST(request: NextRequest) {
       url: session.url,
     })
   } catch (error) {
-    console.error('Error creating purchase session:', error)
+    logger.error('Error creating purchase session:', { err: error })
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'Internal server error' },
       { status: 500 }

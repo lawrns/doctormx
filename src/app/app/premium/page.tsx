@@ -5,6 +5,7 @@ import { createClient } from '@/lib/supabase/client'
 import { PricingBadge, FeatureLimitIndicator } from '@/components/PricingBadge'
 import { INDIVIDUAL_PREMIUM_FEATURES, type PremiumFeature, type SubscriptionTier } from '@/lib/premium-features-shared'
 import { LoadingButton } from '@/components/LoadingButton'
+import { logger } from '@/lib/observability/logger'
 
 interface PremiumFeatureCardProps {
   feature: PremiumFeature
@@ -42,7 +43,7 @@ function PremiumFeatureCard({ feature, tier, onPurchase, loading }: PremiumFeatu
           setUsage({ used: data.used, limit: data.limit })
         }
       } catch (error) {
-        console.error('Error fetching usage:', error)
+        logger.error('Error fetching usage', { feature }, error as Error)
       } finally {
         setLoadingUsage(false)
       }
@@ -260,7 +261,7 @@ export default function PremiumMarketplacePage() {
             setTier(data.tier)
           }
         } catch (error) {
-          console.error('Error fetching tier:', error)
+          logger.error('Error fetching tier', undefined, error as Error)
         }
       }
     }
@@ -285,7 +286,7 @@ export default function PremiumMarketplacePage() {
         alert(error.error || 'Error al procesar la compra')
       }
     } catch (error) {
-      console.error('Error purchasing:', error)
+      logger.error('Error purchasing', { feature, type }, error as Error)
       alert('Error al procesar la compra')
     } finally {
       setLoading(false)

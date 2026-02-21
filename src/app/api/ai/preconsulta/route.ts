@@ -11,6 +11,7 @@ import {
 import { matchDoctorsForReferral } from '@/lib/ai/referral';
 import type { PreConsultaMessage, TriageResult } from '@/lib/ai/types';
 import type { PreConsultaReferral } from '@/lib/types/api';
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(req: NextRequest) {
   if (!AI_CONFIG.features.preConsulta) {
@@ -102,7 +103,7 @@ export async function POST(req: NextRequest) {
           nextAvailable: 'Consultar disponibilidad'
         })) as PreConsultaReferral[];
       } catch (err) {
-        console.error('[REFERRAL ERROR]:', err);
+        logger.error('[REFERRAL ERROR]:', { err: err });
       }
 
       // Guardar sesión en DB
@@ -165,7 +166,7 @@ export async function POST(req: NextRequest) {
       quota,
     });
   } catch (error: unknown) {
-    console.error('[PRE-CONSULTA ERROR]:', error);
+    logger.error('[PRE-CONSULTA ERROR]:', { err: error });
 
     const errorMessage = error instanceof Error ? error.message : 'Error desconocido';
 

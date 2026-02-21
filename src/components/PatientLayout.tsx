@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { createClient } from '@/lib/supabase/client'
 import { useEffect, useState } from 'react'
 import { LucideIcon } from 'lucide-react'
+import { logger } from '@/lib/observability/logger'
 
 interface PatientLayoutProps {
   children: React.ReactNode
@@ -68,7 +69,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
           messagesCount = count || 0
         } catch (e) {
           // chat_messages table may not exist yet
-          console.log('chat_messages check failed:', e)
+          logger.info('chat_messages check failed', { error: e instanceof Error ? e.message : String(e) })
         }
 
         // Check for joinable appointments (within 15 minutes, have video_room_url, and are video type)
@@ -87,7 +88,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
           ) || false
         } catch (e) {
           // Appointments query may fail due to schema issues
-          console.log('Appointments check failed:', e)
+          logger.info('Appointments check failed', { error: e instanceof Error ? e.message : String(e) })
         }
 
         setBadges({
@@ -95,7 +96,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
           appointmentsJoinable: joinableAppointment,
         })
       } catch (error) {
-        console.error('Error checking badges:', error)
+        logger.error('Error checking badges', { error: error instanceof Error ? error.message : String(error) })
       }
     }
 

@@ -1,0 +1,236 @@
+name: Database Backup
+
+on:
+  # Daily backup at 3 AM CST (9 AM UTC)
+  schedule:
+    - cron: '0 9 * * *'
+
+  # Manual trigger
+  workflow_dispatch:
+    inputs:
+      local_only:
+        description: 'Skip cloud upload (local only)'
+        required: false
+        type: boolean
+        default: false
+      skip_verify:
+        description: 'Skip backup verification'
+        required: false
+        type: boolean
+        default: false
+
+  # Also run on push to main (for testing)
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/backup/**'
+      - '.github/workflows/backup.yml'
+      - 'supabase/migrations/**'
+
+jobs:
+  backup:
+    name: Automated Database Backup
+    runs-on: ubuntu-latest
+
+    # Prevent concurrent backups
+    concurrency:
+      group: backup
+      cancel-in-progress: false
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Supabase CLI
+        run: |
+          curl -fsSL https://supabase.com/install.sh | bash
+          echo "$HOME/supabase/bin" >> $GITHUB_PATH
+
+      - name: Install backup dependencies
+        run: |
+          # Install PostgreSQL client
+          sudo apt-get update
+          sudo apt-get install -y postgresql-client
+
+          # Install AWS CLI for S3 upload
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip -q awscliv2.zip
+          sudo ./aws/install
+
+      - name: Create backup directory
+        run: mkdir -p backups
+
+      - name: Run database backup
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          BACKUP_STORAGE_TYPE: s3
+          BACKUP_RETENTION_DAYS: 30
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" && "${{ inputs.local_only }}" == "true" ]]; then
+            ./scripts/backup/backup-db.sh --local-only
+          else
+            ./scripts/backup/backup-db.sh
+          fi
+
+      - name: Upload backup as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: database-backup-${{ github.run_number }}
+          path: backups/doctory_backup_*.sql.gz
+          retention-days: 7
+          if-no-files-found: error
+
+      - name: Upload logs as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: backup-logs-${{ github.run_number }}
+          path: scripts/backup/backup_*.log
+          retention-days: 7
+
+  verify:
+    name: Verify Backup Integrity
+    runs-on: ubuntu-latest
+    needs: backup
+
+    # Only run verification on weekly schedule or manual trigger
+    if: github.event.schedule == '0 9 * * 0' || github.event_name == 'workflow_dispatch'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql-client
+
+      - name: Download latest backup
+        uses: actions/download-artifact@v4
+        with:
+          name: database-backup-${{ github.run_number }}
+          path: backups/
+
+      - name: Find backup file
+        id: find-backup
+        run: |
+          BACKUP_FILE=$(find backups -name "doctory_backup_*.sql.gz" -type f | head -1)
+          echo "file=$BACKUP_FILE" >> $GITHUB_OUTPUT
+          echo "Found backup: $BACKUP_FILE"
+
+      - name: Run restore test
+        env:
+          TEST_DATABASE_URL: ${{ secrets.TEST_DATABASE_URL }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          if [[ "${{ inputs.skip_verify }}" == "true" ]]; then
+            ./scripts/backup/restore-test.sh "${{ steps.find-backup.outputs.file }}" --skip-verify
+          else
+            ./scripts/backup/restore-test.sh "${{ steps.find-backup.outputs.file }}"
+          fi
+
+      - name: Upload verification logs
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verification-logs-${{ github.run_number }}
+          path: scripts/backup/restore_test_*.log
+          retention-days: 30
+
+  cleanup:
+    name: Cleanup Old Artifacts
+    runs-on: ubuntu-latest
+    needs: [backup, verify]
+
+    # Only run once a week
+    if: github.event.schedule == '0 9 * * 0'
+
+    steps:
+      - name: Delete old artifacts
+        uses: geekyeggo/delete-artifact@v4
+        with:
+          name: |
+            database-backup-*
+            backup-logs-*
+            verification-logs-*
+          skipRecentVersions: 10
+          minAge: 259200 # 3 days in seconds
+
+  notify-failure:
+    name: Send Failure Notification
+    runs-on: ubuntu-latest
+    needs: [backup]
+    if: failure()
+
+    steps:
+      - name: Send Slack notification
+        uses: slackapi/slack-github-action@v1
+        with:
+          payload: |
+            {
+              "text": "🚨 Database Backup Failed",
+              "blocks": [
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "🚨 Database Backup Failed"
+                  }
+                },
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Project:*\nDoctory"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Workflow:*\n${{ github.workflow }}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Run:*\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|#${{ github.run_number }}>"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Time:*\n$(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+                    }
+                  ]
+                },
+                {
+                  "type": "actions",
+                  "elements": [
+                    {
+                      "type": "button",
+                      "text": {
+                        "type": "plain_text",
+                        "text": "View Logs"
+                      },
+                      "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                    }
+                  ]
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { initializePayment } from '@/lib/payment'
 import { withRateLimit } from '@/lib/rate-limit/middleware'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(request: NextRequest) {
   return withRateLimit(request, async (req) => {
@@ -30,7 +31,7 @@ export async function POST(request: NextRequest) {
 
       return NextResponse.json(result)
     } catch (error) {
-      console.error('Error creating payment intent:', error)
+      logger.error('Error creating payment intent:', { err: error })
       return NextResponse.json(
         { error: 'Failed to create payment' },
         { status: 500 }

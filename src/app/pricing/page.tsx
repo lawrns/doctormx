@@ -14,6 +14,7 @@ import {
   ArrowRight,
   Star,
 } from 'lucide-react'
+import { logger } from '@/lib/observability/logger'
 
 interface PricingPlan {
   id: string
@@ -271,7 +272,7 @@ export default function PricingPage() {
       const { url } = await response.json()
       window.location.href = url
     } catch (error) {
-      console.error('Error subscribing:', error)
+      logger.error('Error subscribing', { planId }, error as Error)
       alert(error instanceof Error ? error.message : 'Error al procesar la suscripción')
     } finally {
       setLoading(false)

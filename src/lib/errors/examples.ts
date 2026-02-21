@@ -306,14 +306,14 @@ async function processDiagnosis(symptoms: string[]): Promise<Diagnosis> {
   };
 }
 
-async function validatePrescription(prescription: any): Promise<PrescriptionValidation> {
+async function validatePrescription(prescription: unknown): Promise<PrescriptionValidation> {
   // Drug interaction checking
   return {
     isValid: true
   };
 }
 
-async function generatePrescription(prescription: any): Promise<any> {
+async function generatePrescription(prescription: unknown): Promise<Record<string, unknown>> {
   // Prescription generation
   return {};
 }
@@ -328,7 +328,7 @@ async function checkDoctorAvailability(
   };
 }
 
-async function bookAppointment(details: any): Promise<any> {
+async function bookAppointment(details: unknown): Promise<Record<string, unknown>> {
   // Booking logic
   return {};
 }
@@ -376,7 +376,7 @@ async function incrementRateLimit(identifier: string): Promise<void> {
 //     return { hasError: true, error };
 //   }
 //
-//   componentDidCatch(error: Error, errorInfo: any) {
+//   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
 //     const info = getErrorInfo(error);
 //
 //     // Log the error
@@ -456,7 +456,7 @@ export class AIService {
     }
   }
 
-  private async callAIAPI(symptoms: string[]): Promise<any> {
+  private async callAIAPI(symptoms: string[]): Promise<Record<string, unknown>> {
     // AI API call implementation
     return {};
   }
@@ -467,7 +467,7 @@ export class AIService {
  */
 export class PrescriptionService {
   async validatePrescription(
-    prescription: any,
+    prescription: { medications: Array<{ name: string }> },
     patientAllergies: string[],
     patientConditions: string[]
   ) {
@@ -500,7 +500,7 @@ export class PrescriptionService {
 
     // Check for drug-drug interactions
     const interactions = await this.checkDrugInteractions(
-      prescription.medications.map((m: any) => m.name)
+      prescription.medications.map((m) => m.name)
     );
 
     if (interactions.length > 0) {

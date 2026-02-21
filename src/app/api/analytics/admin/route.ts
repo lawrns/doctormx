@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { requireRole } from '@/lib/auth'
 import { getAdminMetrics, getRevenueMetrics, getUserMetrics, getAppointmentMetrics } from '@/lib/analytics'
+import { logger } from '@/lib/observability/logger'
 
 export async function GET() {
   try {
@@ -23,7 +24,7 @@ export async function GET() {
       },
     })
   } catch (error) {
-    console.error('Admin analytics error:', error)
+    logger.error('Admin analytics error:', { err: error })
     return NextResponse.json(
       { success: false, error: 'Failed to fetch analytics' },
       { status: 500 }

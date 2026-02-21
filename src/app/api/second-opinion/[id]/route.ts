@@ -4,6 +4,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
+import { logger } from '@/lib/observability/logger'
 import { 
   getSecondOpinionRequest, 
   getSecondOpinionDocuments 
@@ -45,7 +46,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     })
     
   } catch (error) {
-    console.error('[SecondOpinion] Get error:', error)
+    logger.error('[SecondOpinion] Get error:', { err: error })
     return NextResponse.json(
       { error: 'Failed to get second opinion request' },
       { status: 500 }
@@ -122,7 +123,7 @@ export async function PATCH(request: NextRequest, { params }: RouteParams) {
     return NextResponse.json(updated)
     
   } catch (error) {
-    console.error('[SecondOpinion] Update error:', error)
+    logger.error('[SecondOpinion] Update error:', { err: error })
     return NextResponse.json(
       { error: 'Failed to update second opinion request' },
       { status: 500 }

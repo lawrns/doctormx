@@ -3,6 +3,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
+import { logger } from '@/lib/observability/logger'
 
 interface RouteParams {
   params: Promise<{ id: string }>
@@ -36,7 +37,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     return NextResponse.json({ profile })
     
   } catch (error) {
-    console.error('[DirectoryProfile] Error:', error)
+    logger.error('[DirectoryProfile] Error:', { err: error })
     return NextResponse.json(
       { error: 'Failed to fetch profile' },
       { status: 500 }

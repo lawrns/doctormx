@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import type { ConversationWithDetails } from '@/lib/chat'
+import { logger } from '@/lib/observability/logger'
 
 interface ChatConversationRow {
   id: string
@@ -77,7 +78,7 @@ export function ChatList({ initialConversations, userRole }: ChatListProps) {
           setConversations(conversationsWithDetails)
         }
       } catch (error) {
-        console.error('Error fetching conversations:', error)
+        logger.error('Error fetching conversations', { error: error instanceof Error ? error.message : String(error) })
       } finally {
         setLoading(false)
       }

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { getLevelColor } from '@/lib/trust-badges'
+import { logger } from '@/lib/observability/logger'
 
 interface Badge {
   id: string
@@ -87,7 +88,7 @@ export default function DoctorBadges({ doctorId, compact = false, showAll = fals
           setSummary(data.summary || null)
         }
       } catch (error) {
-        console.error('Error fetching badges:', error)
+        logger.error('Error fetching badges', { error: error instanceof Error ? error.message : String(error) })
       } finally {
         setLoading(false)
       }

@@ -14,6 +14,8 @@ import type {
   VersionComparison,
   ConsentChange,
 } from './types'
+import { logConsentVersionUpdated } from './consent-audit'
+import { logger } from '@/lib/logger'
 
 // ================================================
 // CONSENT VERSION FUNCTIONS
@@ -36,6 +38,9 @@ export async function createConsentVersion(
   if (!isValidSemanticVersion(input.version)) {
     throw new Error('Formato de versión inválido. Use versionamiento semántico (ej: 1.0.0)')
   }
+
+  // Get the previous version for audit logging
+  const previousVersion = await getLatestConsentVersion(input.consent_type)
 
   // Check if version already exists for this consent type
   const { data: existing } = await supabase
@@ -77,6 +82,12 @@ export async function createConsentVersion(
     throw new Error(`Error al crear versión de consentimiento: ${error.message}`)
   }
 
+  // Log the version update to audit system
+  await logConsentVersionUpdated(previousVersion, data, {
+    user_id: createdBy,
+    role: 'admin',
+  })
+
   // If this is a new version, deprecate old versions if re-consent is required
   if (input.requires_re_consent) {
     await deprecateOldConsentVersions(input.consent_type, data.id, input.effective_date)
@@ -108,7 +119,7 @@ export async function getLatestConsentVersion(
     .maybeSingle()
 
   if (error) {
-    console.error('Error getting latest consent version:', error)
+    logger.error({ err: error }, 'Error getting latest consent version')
     return null
   }
 
@@ -133,7 +144,7 @@ export async function getConsentVersion(
     .maybeSingle()
 
   if (error) {
-    console.error('Error getting consent version:', error)
+    logger.error({ err: error }, 'Error getting consent version')
     return null
   }
 
@@ -161,7 +172,7 @@ export async function getConsentVersionByNumber(
     .maybeSingle()
 
   if (error) {
-    console.error('Error getting consent version by number:', error)
+    logger.error({ err: error }, 'Error getting consent version by number')
     return null
   }
 
@@ -194,7 +205,7 @@ export async function getActiveConsentVersions(
   const { data, error } = await query
 
   if (error) {
-    console.error('Error getting active consent versions:', error)
+    logger.error({ err: error }, 'Error getting active consent versions')
     return []
   }
 
@@ -225,7 +236,7 @@ export async function getAllConsentVersions(
   const { data, error } = await query
 
   if (error) {
-    console.error('Error getting all consent versions:', error)
+    logger.error({ err: error }, 'Error getting all consent versions')
     return []
   }
 
@@ -245,6 +256,9 @@ export async function deprecateConsentVersion(
 ): Promise<ConsentVersion> {
   const supabase = await createClient()
 
+  // Get the version before deprecation for audit logging
+  const versionBefore = await getConsentVersion(versionId)
+
   const { data, error } = await supabase
     .from('consent_versions')
     .update({
@@ -257,6 +271,14 @@ export async function deprecateConsentVersion(
 
   if (error) {
     throw new Error(`Error al deprecar versión de consentimiento: ${error.message}`)
+  }
+
+  // Log the deprecation to audit system
+  if (versionBefore) {
+    await logConsentVersionUpdated(versionBefore, data, {
+      user_id: data.created_by,
+      role: 'admin',
+    })
   }
 
   return data
@@ -566,7 +588,7 @@ export async function getConsentVersionHistory(
     .order('created_at', { ascending: false })
 
   if (error) {
-    console.error('Error getting consent version history:', error)
+    logger.error({ err: error }, 'Error getting consent version history')
     return []
   }
 
@@ -633,7 +655,7 @@ export async function getScheduledConsentVersions(): Promise<ConsentVersion[]> {
     .order('effective_date', { ascending: true })
 
   if (error) {
-    console.error('Error getting scheduled consent versions:', error)
+    logger.error({ err: error }, 'Error getting scheduled consent versions')
     return []
   }
 

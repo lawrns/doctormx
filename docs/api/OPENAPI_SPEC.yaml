@@ -1,0 +1,2008 @@
+openapi: 3.0.3
+info:
+  title: Doctor.mx API
+  description: |
+    API REST completa para la plataforma de telemedicina Doctor.mx.
+
+    ## Autenticación
+
+    La API utiliza autenticación basada en sesiones de Supabase. Incluye el token de acceso en el header `Authorization` o gestiona la sesión mediante cookies.
+
+    **Roles de Usuario:**
+    - `patient`: Pacientes que buscan atención médica
+    - `doctor`: Médicos que proporcionan consultas
+    - `admin`: Administradores del sistema
+
+    ## Rate Limiting
+
+    La API implementa rate limiting con los siguientes límites por defecto:
+
+    | Endpoint Tipo | Límite | Ventana |
+    |---------------|--------|---------|
+    | Autenticación | 5-10 requests | 5 minutos |
+    | AI Consult | 20 requests | 1 minuto |
+    | AI Vision | 15 requests | 1 minuto |
+    | AI General | 20 requests | 1 minuto |
+    | API Read | 200 requests | 1 minuto |
+    | API Write | 50 requests | 1 minuto |
+    | Premium Users | 500 requests | 1 minuto |
+
+    Los usuarios Premium tienen límites más altos.
+
+    ## Seguridad
+
+    - CSRF protection enabled para métodos que modifican estado
+    - Rate limiting por IP y usuario
+    - Validación de esquemas con Zod
+    - Sanitización de inputs para prevenir inyección
+
+    ## Errores
+
+    La API utiliza códigos de estado HTTP estándar:
+
+    - `200` - Success
+    - `201` - Created
+    - `400` - Bad Request (validación fallida)
+    - `401` - Unauthorized (no autenticado)
+    - `403` - Forbidden (sin permisos)
+    - `404` - Not Found
+    - `429` - Too Many Requests (rate limit)
+    - `500` - Internal Server Error
+
+  version: 1.0.0
+  contact:
+    name: Doctor.mx API Support
+    email: api@doctormx.com
+  license:
+    name: Proprietary
+
+servers:
+  - url: https://doctormx.com/api
+    description: Producción
+  - url: https://staging.doctormx.com/api
+    description: Staging
+  - url: http://localhost:3000/api
+    description: Desarrollo local
+
+tags:
+  - name: Authentication
+    description: Endpoints de autenticación y gestión de sesiones
+  - name: Appointments
+    description: Gestión de citas médicas
+  - name: AI Consultation
+    description: Consultas médicas asistidas por IA
+  - name: AI Copilot
+    description: Copiloto AI para médicos
+  - name: Prescriptions
+    description: Gestión de recetas médicas
+  - name: Patient
+    description: Gestión de perfiles y datos de pacientes
+  - name: Doctor
+    description: Gestión de perfiles y disponibilidad de médicos
+  - name: Directory
+    description: Directorio médico y búsqueda
+  - name: Payments
+    description: Procesamiento de pagos y suscripciones
+  - name: Webhooks
+    description: Webhooks de servicios externos
+  - name: Questionnaire
+    description: Cuestionarios médicos adaptativos
+  - name: Analytics
+    description: Análisis y métricas
+  - name: Notifications
+    description: Sistema de notificaciones
+  - name: Chat
+    description: Sistema de mensajería
+
+paths:
+  /appointments:
+    post:
+      tags:
+        - Appointments
+      summary: Crear nueva cita
+      description: |
+        Crea una nueva cita médica. Requiere autenticación de paciente.
+
+        **Security:** El patientId se obtiene exclusivamente de la sesión autenticada, nunca del cuerpo de la solicitud.
+      security:
+        - sessionAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - doctorId
+                - date
+                - time
+              properties:
+                doctorId:
+                  type: string
+                  format: uuid
+                  description: ID del médico
+                  example: "550e8400-e29b-41d4-a716-446655440000"
+                date:
+                  type: string
+                  format: date
+                  description: Fecha de la cita (YYYY-MM-DD)
+                  example: "2026-03-15"
+                time:
+                  type: string
+                  description: Hora de la cita (HH:MM)
+                  example: "14:30"
+                patientId:
+                  type: string
+                  format: uuid
+                  deprecated: true
+                  description: |
+                    ⚠️ IGNORADO - El ID del paciente se obtiene de la sesión autenticada.
+                    Este campo es ignorado por seguridad.
+      responses:
+        '200':
+          description: Cita creada exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  appointmentId:
+                    type: string
+                    format: uuid
+        '400':
+          description: Error de validación
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: No autenticado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /appointments/{id}/cancel:
+    post:
+      tags:
+        - Appointments
+      summary: Cancelar cita
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Cita cancelada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+
+  /appointments/{id}/video:
+    get:
+      tags:
+        - Appointments
+      summary: Obtener enlace de videoconsulta
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Enlace de video obtenido
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  videoUrl:
+                    type: string
+                    format: uri
+
+  /ai/consult:
+    post:
+      tags:
+        - AI Consultation
+      summary: Consulta médica AI conversacional
+      description: |
+        Inicia una consulta médica asistida por IA con múltiples especialistas.
+
+        **Características:**
+        - Selección dinámica de especialistas basada en síntomas
+        - Detección de banderas rojas (emergencias)
+        - Consulta multi-especialista en paralelo
+        - RAG (Retrieval-Augmented Generation) con conocimiento médico
+        - Citas de fuentes médicas
+
+        **Rate Limit:** 20 requests por minuto (100 para Premium)
+      security:
+        - sessionAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - messages
+              properties:
+                messages:
+                  type: array
+                  description: Historial de conversación
+                  items:
+                    type: object
+                    required:
+                      - role
+                      - content
+                    properties:
+                      role:
+                        type: string
+                        enum: [user, assistant, system]
+                      content:
+                        type: string
+                patientId:
+                  type: string
+                  format: uuid
+                  description: ID opcional del paciente
+      responses:
+        '200':
+          description: Respuesta de la consulta
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Respuesta del asistente
+                  complete:
+                    type: boolean
+                    description: True si el análisis está completo
+                  specialists:
+                    type: array
+                    description: Especialistas consultados
+                    items:
+                      type: string
+                  result:
+                    $ref: '#/components/schemas/ConsultationResult'
+                  citations:
+                    type: array
+                    description: Fuentes médicas citadas
+                    items:
+                      $ref: '#/components/schemas/MedicalCitation'
+                  meta:
+                    $ref: '#/components/schemas/ResponseMetadata'
+
+  /ai/copilot/diagnosis:
+    post:
+      tags:
+        - AI Copilot
+      summary: Obtener sugerencias de diagnóstico
+      description: Copiloto AI para asistir a médicos en el diagnóstico
+      security:
+        - sessionAuth: []
+        - doctorRole: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - symptoms
+                - patientInfo
+              properties:
+                symptoms:
+                  type: string
+                  description: Descripción de síntomas
+                patientInfo:
+                  type: object
+                  description: Información del paciente
+      responses:
+        '200':
+          description: Sugerencias de diagnóstico
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  diagnoses:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        condition:
+                          type: string
+                        probability:
+                          type: number
+                          format: float
+                        recommendations:
+                          type: array
+                          items:
+                            type: string
+
+  /ai/copilot/suggestions:
+    post:
+      tags:
+        - AI Copilot
+      summary: Obtener sugerencias de tratamiento
+      security:
+        - sessionAuth: []
+        - doctorRole: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - diagnosis
+              properties:
+                diagnosis:
+                  type: string
+                patientContext:
+                  type: object
+      responses:
+        '200':
+          description: Sugerencias de tratamiento
+
+  /ai/copilot/summary:
+    post:
+      tags:
+        - AI Copilot
+      summary: Generar resumen de consulta
+      security:
+        - sessionAuth: []
+        - doctorRole: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - consultationId
+              properties:
+                consultationId:
+                  type: string
+                  format: uuid
+                includeNotes:
+                  type: boolean
+                  default: false
+      responses:
+        '200':
+          description: Resumen generado
+
+  /ai/vision/analyze:
+    post:
+      tags:
+        - AI Consultation
+      summary: Analizar imagen médica con AI
+      description: |
+        Analiza imágenes médicas (lesiones de piel, radiografías, etc.)
+
+        **Rate Limit:** 15 requests por minuto
+      security:
+        - sessionAuth: []
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - image
+                - type
+              properties:
+                image:
+                  type: string
+                  format: binary
+                  description: Imagen a analizar
+                type:
+                  type: string
+                  enum: [skin, xray, injury, other]
+                  description: Tipo de imagen
+                context:
+                  type: string
+                  description: Contexto adicional
+      responses:
+        '200':
+          description: Análisis completado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  analysisId:
+                    type: string
+                    format: uuid
+                  findings:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        condition:
+                          type: string
+                        confidence:
+                          type: number
+                          format: float
+                        description:
+                          type: string
+                  urgency:
+                    type: string
+                    enum: [emergency, urgent, moderate, routine]
+                  recommendations:
+                    type: array
+                    items:
+                      type: string
+
+  /ai/vision/result/{id}:
+    get:
+      tags:
+        - AI Consultation
+      summary: Obtener resultado de análisis de imagen
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Resultado del análisis
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum: [processing, completed, failed]
+                  result:
+                    type: object
+
+  /ai/transcription:
+    post:
+      tags:
+        - AI Consultation
+      summary: Transcribir audio de consulta
+      description: |
+        Transcribe audio de consultas médicas a texto.
+
+        **Rate Limit:** 10 requests por minuto
+      security:
+        - sessionAuth: []
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - audio
+              properties:
+                audio:
+                  type: string
+                  format: binary
+                  description: Archivo de audio (MP3, WAV, M4A)
+                language:
+                  type: string
+                  default: es
+                  description: Código de idioma (es, en)
+      responses:
+        '200':
+          description: Transcripción completada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  transcription:
+                    type: string
+                  duration:
+                    type: number
+                    description: Duración en segundos
+                  confidence:
+                    type: number
+                    format: float
+
+  /soap/stream:
+    post:
+      tags:
+        - AI Consultation
+      summary: Consulta SOAP con streaming
+      description: |
+        Consulta médica multi-especialista usando Server-Sent Events (SSE).
+
+        **Características:**
+        - 4 especialistas en paralelo (médico general, dermatólogo, internista, psiquiatra)
+        - Streaming de resultados en tiempo real
+        - Timeout extendido (60s)
+        - Genera SOAP note completo
+
+        **Rate Limit:** 20 requests por minuto
+      security:
+        - sessionAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - patientId
+                - subjective
+              properties:
+                patientId:
+                  type: string
+                  format: uuid
+                subjective:
+                  $ref: '#/components/schemas/SubjectiveData'
+                objective:
+                  $ref: '#/components/schemas/ObjectiveData'
+      responses:
+        '200':
+          description: Stream de eventos SSE
+          content:
+            text/event-stream:
+              schema:
+                type: object
+                description: |
+                  Eventos SSE:
+                  - start: Inicio de consulta
+                  - specialists_start: Inicio de especialistas
+                  - specialist_done: Especialista completado
+                  - specialists_complete: Todos los especialistas
+                  - consensus_done: Consenso generado
+                  - plan_done: Plan de tratamiento
+                  - complete: Consulta completa
+                  - error: Error
+
+  /prescriptions:
+    post:
+      tags:
+        - Prescriptions
+      summary: Crear receta médica
+      security:
+        - sessionAuth: []
+        - doctorRole: []
+      requestBody:
+        required: true
+        content:
+          application/form-data:
+            schema:
+              type: object
+              required:
+                - appointmentId
+                - diagnosis
+                - medications
+              properties:
+                appointmentId:
+                  type: string
+                  format: uuid
+                diagnosis:
+                  type: string
+                medications:
+                  type: string
+                instructions:
+                  type: string
+      responses:
+        '200':
+          description: Receta creada
+        '403':
+          description: No autorizado (solo doctores)
+
+  /prescriptions/{id}/pdf:
+    get:
+      tags:
+        - Prescriptions
+      summary: Descargar receta en PDF
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Archivo PDF
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+
+  /prescriptions/{id}/send:
+    post:
+      tags:
+        - Prescriptions
+      summary: Enviar receta al paciente
+      security:
+        - sessionAuth: []
+        - doctorRole: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                method:
+                  type: string
+                  enum: [email, whatsapp, both]
+                  default: both
+      responses:
+        '200':
+          description: Receta enviada
+
+  /patient/profile:
+    get:
+      tags:
+        - Patient
+      summary: Obtener perfil del paciente
+      security:
+        - sessionAuth: []
+        - patientRole: []
+      responses:
+        '200':
+          description: Perfil del paciente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  profile:
+                    $ref: '#/components/schemas/PatientProfile'
+    put:
+      tags:
+        - Patient
+      summary: Actualizar perfil del paciente
+      security:
+        - sessionAuth: []
+        - patientRole: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatientProfileUpdate'
+      responses:
+        '200':
+          description: Perfil actualizado
+
+  /patient/medical-history:
+    get:
+      tags:
+        - Patient
+      summary: Obtener historial médico
+      security:
+        - sessionAuth: []
+        - patientRole: []
+      responses:
+        '200':
+          description: Historial médico
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  conditions:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/MedicalCondition'
+                  medications:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Medication'
+                  allergies:
+                    type: array
+                    items:
+                      type: string
+                  procedures:
+                    type: array
+                    items:
+                      type: object
+
+  /patient/appointments:
+    get:
+      tags:
+        - Patient
+      summary: Obtener citas del paciente
+      security:
+        - sessionAuth: []
+        - patientRole: []
+      parameters:
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [upcoming, past, cancelled, all]
+            default: upcoming
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 10
+      responses:
+        '200':
+          description: Lista de citas
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  appointments:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Appointment'
+
+  /doctor/availability:
+    post:
+      tags:
+        - Doctor
+      summary: Configurar disponibilidad
+      security:
+        - sessionAuth: []
+        - doctorRole: []
+      requestBody:
+        required: true
+        content:
+          application/form-data:
+            schema:
+              type: object
+              properties:
+                availability:
+                  type: array
+                  description: Array de configuración por día
+                  items:
+                    type: object
+                    properties:
+                      day_of_week:
+                        type: integer
+                        minimum: 0
+                        maximum: 6
+                      start_time:
+                        type: string
+                        pattern: "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$"
+                      end_time:
+                        type: string
+                        pattern: "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$"
+      responses:
+        '200':
+          description: Disponibilidad actualizada
+
+  /doctor/onboarding:
+    post:
+      tags:
+        - Doctor
+      summary: Completar onboarding de médico
+      security:
+        - sessionAuth: []
+        - doctorRole: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - yearsExperience
+                - bio
+                - licenseNumber
+                - priceCents
+              properties:
+                yearsExperience:
+                  type: integer
+                  minimum: 0
+                  maximum: 50
+                  description: Años de experiencia
+                bio:
+                  type: string
+                  minLength: 50
+                  maxLength: 500
+                  description: Biografía profesional
+                licenseNumber:
+                  type: string
+                  description: Número de cédula profesional
+                priceCents:
+                  type: integer
+                  description: Precio por consulta en centavos
+                availability:
+                  type: array
+                  description: Disponibilidad semanal
+                  items:
+                    type: object
+      responses:
+        '200':
+          description: Onboarding completado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+
+  /doctor/badges:
+    get:
+      tags:
+        - Doctor
+      summary: Obtener insignias del médico
+      security:
+        - sessionAuth: []
+        - doctorRole: []
+      responses:
+        '200':
+          description: Insignias obtenidas
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  badges:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        name:
+                          type: string
+                        description:
+                          type: string
+                        icon:
+                          type: string
+                        earnedAt:
+                          type: string
+                          format: date-time
+
+  /doctors/{id}:
+    get:
+      tags:
+        - Directory
+      summary: Obtener perfil de médico
+      description: Obtiene el perfil público de un médico
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Perfil del médico
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DoctorProfile'
+
+  /doctors/{id}/available-dates:
+    get:
+      tags:
+        - Directory
+      summary: Obtener fechas disponibles
+      description: Obtiene las fechas disponibles para agendar cita
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: startDate
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: endDate
+          in: query
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Fechas disponibles
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  dates:
+                    type: array
+                    items:
+                      type: string
+                      format: date
+
+  /doctors/{id}/slots:
+    get:
+      tags:
+        - Directory
+      summary: Obtener horarios disponibles
+      description: Obtiene los horarios disponibles para una fecha específica
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: date
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Horarios disponibles
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  slots:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        time:
+                          type: string
+                          pattern: "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$"
+                        available:
+                          type: boolean
+
+  /directory/recommended:
+    get:
+      tags:
+        - Directory
+      summary: Obtener médicos recomendados
+      description: |
+        Obtiene una lista de médicos recomendados basado en especialidad y ubicación.
+
+        **Rate Limit:** 50 requests por minuto
+      parameters:
+        - name: specialty
+          in: query
+          schema:
+            type: string
+          description: Filtrar por especialidad
+        - name: location
+          in: query
+          schema:
+            type: string
+          description: Filtrar por ubicación
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 10
+            maximum: 50
+      responses:
+        '200':
+          description: Lista de médicos recomendados
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  doctors:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/DoctorProfile'
+
+  /questionnaire/start:
+    post:
+      tags:
+        - Questionnaire
+      summary: Iniciar cuestionario médico adaptativo
+      description: |
+        Inicia un cuestionario médico que se adapta según las respuestas del paciente.
+
+        **Rate Limit:** 10 requests por minuto
+      security:
+        - sessionAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - patientId
+              properties:
+                patientId:
+                  type: string
+                  format: uuid
+                specialty:
+                  type: string
+                  description: Especialidad médica objetivo
+      responses:
+        '200':
+          description: Cuestionario iniciado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  conversationId:
+                    type: string
+                    format: uuid
+                  firstQuestion:
+                    type: object
+                    properties:
+                      questionId:
+                        type: string
+                      text:
+                        type: string
+                      type:
+                        type: string
+                        enum: [choice, text, scale, multiple]
+                      options:
+                        type: array
+                        items:
+                          type: string
+
+  /questionnaire/message:
+    post:
+      tags:
+        - Questionnaire
+      summary: Enviar respuesta al cuestionario
+      security:
+        - sessionAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - conversationId
+                - answer
+              properties:
+                conversationId:
+                  type: string
+                  format: uuid
+                answer:
+                  type: string
+                questionId:
+                  type: string
+      responses:
+        '200':
+          description: Próxima pregunta o resumen
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  nextQuestion:
+                    type: object
+                    nullable: true
+                  isComplete:
+                    type: boolean
+                  summary:
+                    type: object
+                    nullable: true
+
+  /questionnaire/{id}/complete:
+    post:
+      tags:
+        - Questionnaire
+      summary: Marcar cuestionario como completado
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Cuestionario completado
+
+  /subscriptions/plans:
+    get:
+      tags:
+        - Payments
+      summary: Obtener planes de suscripción
+      description: Obtiene la lista de planes de suscripción disponibles
+      responses:
+        '200':
+          description: Planes disponibles
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  plans:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        name:
+                          type: string
+                        name_es:
+                          type: string
+                        price_mxn:
+                          type: number
+                        price_cents:
+                          type: integer
+                        currency:
+                          type: string
+                          default: MXN
+                        features:
+                          type: array
+                          items:
+                            type: string
+                        limits:
+                          type: object
+                          properties:
+                            whatsapp_patients:
+                              type: integer
+                            ai_copilot:
+                              type: integer
+                            image_analysis:
+                              type: integer
+                        highlight:
+                          type: boolean
+
+  /subscriptions:
+    get:
+      tags:
+        - Payments
+      summary: Obtener suscripción actual
+      security:
+        - sessionAuth: []
+        - doctorRole: []
+      responses:
+        '200':
+          description: Suscripción actual
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  subscription:
+                    type: object
+                    properties:
+                      tier:
+                        type: string
+                        enum: [free, pro, elite]
+                      status:
+                        type: string
+                        enum: [active, past_due, canceled, incomplete]
+                      current_period_end:
+                        type: string
+                        format: date-time
+                      cancel_at_period_end:
+                        type: boolean
+
+  /webhooks/stripe:
+    post:
+      tags:
+        - Webhooks
+      summary: Webhook de Stripe
+      description: |
+        Procesa eventos de webhook de Stripe para pagos y suscripciones.
+
+        **Eventos soportados:**
+        - payment_intent.succeeded
+        - payment_intent.payment_failed
+        - payment_intent.canceled
+        - charge.succeeded (OXXO)
+        - charge.failed (OXXO)
+        - checkout.session.completed
+        - customer.subscription.created
+        - customer.subscription.updated
+        - customer.subscription.deleted
+        - invoice.payment_succeeded
+        - invoice.payment_failed
+
+        **Rate Limit:** 100 requests por minuto
+      security:
+        - webhookSignature: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              description: Event payload de Stripe
+      responses:
+        '200':
+          description: Evento procesado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  received:
+                    type: boolean
+                  event:
+                    type: string
+        '400':
+          description: Firma inválida o error de validación
+
+  /webhooks/twilio:
+    post:
+      tags:
+        - Webhooks
+      summary: Webhook de Twilio
+      description: Procesa eventos de webhook de Twilio para WhatsApp/SMS
+      security:
+        - webhookSignature: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                MessageSid:
+                  type: string
+                From:
+                  type: string
+                To:
+                  type: string
+                Body:
+                  type: string
+                NumMedia:
+                  type: integer
+      responses:
+        '200':
+          description: XML de respuesta de Twilio
+          content:
+            application/xml:
+              schema:
+                type: string
+
+  /webhooks/whatsapp:
+    post:
+      tags:
+        - Webhooks
+      summary: Webhook de WhatsApp
+      description: Procesa mensajes entrantes de WhatsApp
+      security:
+        - webhookSignature: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Mensaje procesado
+
+  /analytics/admin:
+    get:
+      tags:
+        - Analytics
+      summary: Métricas de administrador
+      security:
+        - sessionAuth: []
+        - adminRole: []
+      parameters:
+        - name: startDate
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: endDate
+          in: query
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Métricas administrativas
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  totalRevenue:
+                    type: number
+                  totalAppointments:
+                    type: integer
+                  activeDoctors:
+                    type: integer
+                  activePatients:
+                    type: integer
+
+  /analytics/doctor:
+    get:
+      tags:
+        - Analytics
+      summary: Métricas del médico
+      security:
+        - sessionAuth: []
+        - doctorRole: []
+      parameters:
+        - name: period
+          in: query
+          schema:
+            type: string
+            enum: [week, month, quarter, year]
+            default: month
+      responses:
+        '200':
+          description: Métricas del médico
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  appointments:
+                    type: integer
+                  revenue:
+                    type: number
+                  rating:
+                    type: number
+                  patients:
+                    type: integer
+
+  /chat/conversations:
+    get:
+      tags:
+        - Chat
+      summary: Listar conversaciones
+      security:
+        - sessionAuth: []
+      responses:
+        '200':
+          description: Lista de conversaciones
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  conversations:
+                    type: array
+                    items:
+                      type: object
+    post:
+      tags:
+        - Chat
+      summary: Crear nueva conversación
+      security:
+        - sessionAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - participantId
+              properties:
+                participantId:
+                  type: string
+                  format: uuid
+      responses:
+        '201':
+          description: Conversación creada
+
+  /chat/messages:
+    post:
+      tags:
+        - Chat
+      summary: Enviar mensaje
+      security:
+        - sessionAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - conversationId
+                - content
+              properties:
+                conversationId:
+                  type: string
+                  format: uuid
+                content:
+                  type: string
+                type:
+                  type: string
+                  enum: [text, image, file]
+      responses:
+        '201':
+          description: Mensaje enviado
+
+  /cache/stats:
+    get:
+      tags:
+        - System
+      summary: Obtener estadísticas de caché
+      security:
+        - sessionAuth: []
+        - adminRole: []
+      responses:
+        '200':
+          description: Estadísticas de caché
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  hitRate:
+                    type: number
+                  missRate:
+                    type: number
+                  size:
+                    type: integer
+                  keys:
+                    type: integer
+
+  /cache/invalidate:
+    post:
+      tags:
+        - System
+      summary: Invalidar caché
+      security:
+        - sessionAuth: []
+        - adminRole: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pattern:
+                  type: string
+                  description: Patrón de keys a invalidar
+      responses:
+        '200':
+          description: Caché invalidado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  invalidated:
+                    type: integer
+
+components:
+  securitySchemes:
+    sessionAuth:
+      type: apiKey
+      in: cookie
+      name: sb-access-token
+      description: Autenticación mediante sesión de Supabase
+
+    doctorRole:
+      type: apiKey
+      in: header
+      name: X-User-Role
+      description: Requiere rol de doctor (user.role = 'doctor')
+
+    patientRole:
+      type: apiKey
+      in: header
+      name: X-User-Role
+      description: Requiere rol de paciente (user.role = 'patient')
+
+    adminRole:
+      type: apiKey
+      in: header
+      name: X-User-Role
+      description: Requiere rol de administrador (user.role = 'admin')
+
+    webhookSignature:
+      type: apiKey
+      in: header
+      name: stripe-signature
+      description: Firma del webhook para verificación
+
+  schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Mensaje de error
+        redirect:
+          type: string
+          format: uri
+          description: URL de redirección (opcional)
+        details:
+          type: object
+          description: Detalles adicionales del error
+
+    ConsultationResult:
+      type: object
+      description: Resultado de consulta multi-especialista
+      properties:
+        id:
+          type: string
+          format: uuid
+        primaryDiagnosis:
+          type: string
+          description: Diagnóstico principal
+        confidence:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 1
+          description: Nivel de confianza (0-1)
+        specialists:
+          type: array
+          description: Opiniones de especialistas
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              name:
+                type: string
+              specialty:
+                type: string
+              primaryDiagnosis:
+                type: string
+              confidence:
+                type: number
+                format: float
+              assessment:
+                type: string
+              differentialDiagnoses:
+                type: array
+                items:
+                  type: string
+              recommendations:
+                type: array
+                items:
+                  type: string
+              urgency:
+                type: string
+                enum: [emergency, urgent, moderate, routine, self-care]
+        differentialDiagnoses:
+          type: array
+          description: Diagnósticos diferenciales
+          items:
+            type: string
+        urgency:
+          type: string
+          enum: [emergency, urgent, moderate, routine, self-care]
+          description: Nivel de urgencia recomendado
+        recommendations:
+          type: array
+          description: Recomendaciones médicas
+          items:
+            type: string
+        nextSteps:
+          type: array
+          description: Próximos pasos sugeridos
+          items:
+            type: string
+        consensus:
+          type: object
+          properties:
+            kendallW:
+              type: number
+              format: float
+            agreementLevel:
+              type: string
+              enum: [strong, moderate, weak, disagreement]
+            primaryDiagnosis:
+              type: string
+              nullable: true
+            differentialDiagnoses:
+              type: array
+              items:
+                type: string
+            consensusCategory:
+              type: string
+            urgencyLevel:
+              type: string
+            combinedRedFlags:
+              type: array
+              items:
+                type: string
+            recommendedSpecialty:
+              type: string
+              nullable: true
+            recommendedTests:
+              type: array
+              items:
+                type: string
+            supervisorSummary:
+              type: string
+            confidenceScore:
+              type: number
+              format: float
+            requiresHumanReview:
+              type: boolean
+
+    MedicalCitation:
+      type: object
+      description: Cita de fuente médica
+      properties:
+        title:
+          type: string
+          description: Título del documento
+        source:
+          type: string
+          description: Fuente de la información
+        year:
+          type: integer
+          description: Año de publicación
+        type:
+          type: string
+          enum: [guideline, study, review, other]
+          description: Tipo de documento
+
+    ResponseMetadata:
+      type: object
+      description: Metadatos de la respuesta
+      properties:
+        latencyMs:
+          type: integer
+          description: Latencia en milisegundos
+        provider:
+          type: string
+          enum: [openai, anthropic, glm]
+          description: Proveedor de AI utilizado
+        model:
+          type: string
+          description: Modelo específico utilizado
+        costUSD:
+          type: number
+          format: float
+          description: Costo en USD
+
+    SubjectiveData:
+      type: object
+      description: Datos subjetivos del paciente (S de SOAP)
+      properties:
+        chiefComplaint:
+          type: string
+          minLength: 5
+          description: Motivo de consulta
+        symptomsDescription:
+          type: string
+          minLength: 10
+          description: Descripción detallada de síntomas
+        symptomDuration:
+          type: string
+          description: Duración de los síntomas
+        symptomSeverity:
+          type: integer
+          minimum: 1
+          maximum: 10
+          description: Severidad (escala 1-10)
+        onsetType:
+          type: string
+          enum: [sudden, gradual]
+          description: Tipo de inicio
+        associatedSymptoms:
+          type: array
+          items:
+            type: string
+          description: Síntomas asociados
+        aggravatingFactors:
+          type: array
+          items:
+            type: string
+          description: Factores agravantes
+        relievingFactors:
+          type: array
+          items:
+            type: string
+          description: Factores atenuantes
+        previousTreatments:
+          type: array
+          items:
+            type: string
+          description: Tratamientos previos
+        medicalHistory:
+          type: string
+          description: Historial médico relevante
+        medications:
+          type: array
+          items:
+            type: string
+          description: Medicamentos actuales
+        allergies:
+          type: array
+          items:
+            type: string
+          description: Alergias conocidas
+
+    ObjectiveData:
+      type: object
+      description: Datos objetivos del paciente (O de SOAP)
+      properties:
+        patientAge:
+          type: integer
+          minimum: 0
+          maximum: 150
+          description: Edad del paciente
+        patientGender:
+          type: string
+          enum: [male, female, other]
+          description: Género del paciente
+        vitalSigns:
+          type: object
+          properties:
+            bloodPressure:
+              type: string
+              pattern: "^[0-9]+/[0-9]+$"
+            heartRate:
+              type: integer
+            temperature:
+              type: number
+            respiratoryRate:
+              type: integer
+            oxygenSaturation:
+              type: number
+          description: Signos vitales
+
+    PatientProfile:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        userId:
+          type: string
+          format: uuid
+        fullName:
+          type: string
+        email:
+          type: string
+          format: email
+        phone:
+          type: string
+        dateOfBirth:
+          type: string
+          format: date
+        gender:
+          type: string
+          enum: [male, female, other]
+        address:
+          type: object
+          properties:
+            street:
+              type: string
+            city:
+              type: string
+            state:
+              type: string
+            zipCode:
+              type: string
+            country:
+              type: string
+        emergencyContact:
+          type: object
+          properties:
+            name:
+              type: string
+            phone:
+              type: string
+            relationship:
+              type: string
+
+    PatientProfileUpdate:
+      type: object
+      properties:
+        fullName:
+          type: string
+          minLength: 2
+        phone:
+          type: string
+        dateOfBirth:
+          type: string
+          format: date
+        gender:
+          type: string
+          enum: [male, female, other]
+        address:
+          type: object
+          properties:
+            street:
+              type: string
+            city:
+              type: string
+            state:
+              type: string
+            zipCode:
+              type: string
+        emergencyContact:
+          type: object
+          properties:
+            name:
+              type: string
+            phone:
+              type: string
+            relationship:
+              type: string
+
+    DoctorProfile:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        userId:
+          type: string
+          format: uuid
+        fullName:
+          type: string
+        specialty:
+          type: string
+        subSpecialties:
+          type: array
+          items:
+            type: string
+        licenseNumber:
+          type: string
+        yearsExperience:
+          type: integer
+        bio:
+          type: string
+        profileImage:
+          type: string
+          format: uri
+        rating:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 5
+        totalReviews:
+          type: integer
+        priceCents:
+          type: integer
+          description: Precio por consulta en centavos
+        currency:
+          type: string
+          default: MXN
+        languages:
+          type: array
+          items:
+            type: string
+        education:
+          type: array
+          items:
+            type: object
+            properties:
+              degree:
+                type: string
+              institution:
+                type: string
+              year:
+                type: integer
+        availability:
+          type: array
+          items:
+            type: object
+            properties:
+              dayOfWeek:
+                type: integer
+              startTime:
+                type: string
+              endTime:
+                type: string
+
+    Appointment:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        patientId:
+          type: string
+          format: uuid
+        doctorId:
+          type: string
+          format: uuid
+        startTs:
+          type: string
+          format: date-time
+        endTs:
+          type: string
+          format: date-time
+        status:
+          type: string
+          enum: [pending, pending_payment, confirmed, completed, cancelled, no_show]
+        type:
+          type: string
+          enum: [in_person, video]
+        priceCents:
+          type: integer
+        currency:
+          type: string
+          default: MXN
+        notes:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+
+    MedicalCondition:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        code:
+          type: string
+          description: Código CIE-10
+        diagnosedDate:
+          type: string
+          format: date
+        status:
+          type: string
+          enum: [active, resolved, chronic]
+        notes:
+          type: string
+
+    Medication:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        dosage:
+          type: string
+        frequency:
+          type: string
+        startDate:
+          type: string
+          format: date
+        endDate:
+          type: string
+          format: date
+          nullable: true
+        prescribedBy:
+          type: string
+        notes:
+          type: string

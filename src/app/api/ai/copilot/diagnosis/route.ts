@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { suggestDifferentialDiagnosis, suggestICDCodes } from '@/lib/ai/copilot'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(req: NextRequest) {
     try {
@@ -37,7 +38,7 @@ export async function POST(req: NextRequest) {
             icdCodes,
         })
     } catch (error) {
-        console.error('Error in copilot diagnosis:', error)
+        logger.error('Error in copilot diagnosis:', { err: error })
         return NextResponse.json({ error: 'Error procesando diagnostico' }, { status: 500 })
     }
 }

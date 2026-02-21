@@ -5,6 +5,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { REFERRALS_CONFIG } from '@/lib/domains/referrals'
+import { logger } from '@/lib/observability/logger'
 
 interface RouteParams {
   params: Promise<{ id: string }>
@@ -60,7 +61,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     return NextResponse.json({ referral })
     
   } catch (error) {
-    console.error('[Referrals] Get error:', error)
+    logger.error('[Referrals] Get error:', { err: error })
     return NextResponse.json(
       { error: 'Failed to get referral' },
       { status: 500 }
@@ -189,7 +190,7 @@ export async function PATCH(request: NextRequest, { params }: RouteParams) {
     })
     
   } catch (error) {
-    console.error('[Referrals] Update error:', error)
+    logger.error('[Referrals] Update error:', { err: error })
     return NextResponse.json(
       { error: 'Failed to update referral' },
       { status: 500 }

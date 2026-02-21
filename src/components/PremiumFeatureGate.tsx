@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Modal } from '@/components/Modal'
 import { PricingBadge } from './PricingBadge'
 import type { PremiumFeature, SubscriptionTier } from '@/lib/premium-features'
+import { logger } from '@/lib/observability/logger'
 
 interface PremiumFeatureGateProps {
   feature: PremiumFeature
@@ -42,7 +43,7 @@ export function PremiumFeatureGate({
         }
       }
     } catch (error) {
-      console.error('Error checking premium access:', error)
+      logger.error('Error checking premium access', { error: error instanceof Error ? error.message : String(error) })
     }
   }
 
@@ -62,7 +63,7 @@ export function PremiumFeatureGate({
         window.location.href = url
       }
     } catch (error) {
-      console.error('Error creating checkout session:', error)
+      logger.error('Error creating checkout session', { error: error instanceof Error ? error.message : String(error) })
     } finally {
       setLoading(false)
     }

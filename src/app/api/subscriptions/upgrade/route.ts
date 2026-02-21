@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { upgradeSubscription, SUBSCRIPTION_TIERS } from '@/lib/subscription'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(request: NextRequest) {
     const supabase = await createClient()
@@ -32,7 +33,7 @@ export async function POST(request: NextRequest) {
             stripeSubscriptionId: result.stripeSubscriptionId,
         })
     } catch (error) {
-        console.error('Error upgrading subscription:', error)
+        logger.error('Error upgrading subscription:', { err: error })
         return NextResponse.json(
             { error: error instanceof Error ? error.message : 'Failed to upgrade subscription' },
             { status: 500 }

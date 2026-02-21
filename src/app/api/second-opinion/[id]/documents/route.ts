@@ -4,6 +4,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
+import { logger } from '@/lib/observability/logger'
 import { 
   getSecondOpinionRequest, 
   getSecondOpinionDocuments,
@@ -92,7 +93,7 @@ export async function POST(request: NextRequest, { params }: RouteParams) {
       })
     
     if (uploadError) {
-      console.error('[SecondOpinion] Upload error:', uploadError)
+      logger.error('[SecondOpinion] Upload error:', { err: uploadError })
       return NextResponse.json(
         { error: 'Failed to upload file' },
         { status: 500 }
@@ -123,7 +124,7 @@ export async function POST(request: NextRequest, { params }: RouteParams) {
     return NextResponse.json(document, { status: 201 })
     
   } catch (error) {
-    console.error('[SecondOpinion] Document upload error:', error)
+    logger.error('[SecondOpinion] Document upload error:', { err: error })
     return NextResponse.json(
       { error: 'Failed to upload document' },
       { status: 500 }
@@ -160,7 +161,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     return NextResponse.json({ documents })
     
   } catch (error) {
-    console.error('[SecondOpinion] List documents error:', error)
+    logger.error('[SecondOpinion] List documents error:', { err: error })
     return NextResponse.json(
       { error: 'Failed to list documents' },
       { status: 500 }

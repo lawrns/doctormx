@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
+import { logger } from '@/lib/observability/logger'
 import { 
   getDoctorBadges, 
   updateDoctorBadges, 
@@ -41,7 +42,7 @@ export async function GET(request: NextRequest) {
       categories,
     })
   } catch (error) {
-    console.error('Get badges error:', error)
+    logger.error('Get badges error:', { err: error })
     return NextResponse.json(
       { error: 'Error al obtener insignias' },
       { status: 500 }
@@ -70,7 +71,7 @@ export async function POST() {
       message: `Se calcularon ${badges.length} insignias`,
     })
   } catch (error) {
-    console.error('Update badges error:', error)
+    logger.error('Update badges error:', { err: error })
     return NextResponse.json(
       { error: 'Error al actualizar insignias' },
       { status: 500 }

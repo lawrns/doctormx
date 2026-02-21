@@ -4,6 +4,7 @@
  */
 
 import { createClient } from '@/lib/supabase/server'
+import { logger } from '@/lib/logger'
 
 export interface CedulaSearchResult {
   found: boolean;
@@ -304,7 +305,7 @@ export async function storeVerificationResult(
     });
   
   if (error) {
-    console.error('Error storing verification result:', error);
+    logger.error({ err: error }, 'Error storing verification result');
     throw error;
   }
   

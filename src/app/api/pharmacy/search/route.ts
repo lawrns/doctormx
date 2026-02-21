@@ -3,6 +3,7 @@ import { pharmacyScraper } from '@/lib/pharmacy-scraper';
 import { createClient } from '@supabase/supabase-js';
 import type { CachedResult, PharmacySearchResult } from '@/lib/types/api';
 import type { PharmacyChain, PriceComparisonResult } from '@/services/pharmacy-integration';
+import { logger } from '@/lib/observability/logger'
 
 function getSupabaseClient() {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -77,7 +78,7 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json(response);
   } catch (error) {
-    console.error('Pharmacy search error:', error);
+    logger.error('Pharmacy search error:', { err: error });
     return NextResponse.json(
       { error: 'Failed to search pharmacies' },
       { status: 500 }
@@ -118,7 +119,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(comparison);
   } catch (error) {
-    console.error('Price comparison error:', error);
+    logger.error('Price comparison error:', { err: error });
     return NextResponse.json(
       { error: 'Failed to compare prices' },
       { status: 500 }

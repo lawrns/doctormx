@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Mail, Check, X } from 'lucide-react'
+import { logger } from '@/lib/observability/logger'
 
 interface EmailCaptureProps {
   consultationNumber: number
@@ -148,7 +149,7 @@ export function EmailCaptureModal({ isOpen, onClose, consultationNumber }: Email
         }, 2000)
       }
     } catch (error) {
-      console.error('Error saving email:', error)
+      logger.error('Error saving email', { error: error instanceof Error ? error.message : String(error) })
     } finally {
       setLoading(false)
     }

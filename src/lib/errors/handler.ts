@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { AppError } from './AppError';
 import type { EmergencyDetectedError } from './AppError';
+import { logger } from '@/lib/logger';
 import {
   getPatientMessage,
   getDeveloperMessage,
@@ -103,13 +104,13 @@ export function logError(error: unknown, context: ErrorContext = {}): void {
   switch (logEntry.severity) {
     case ErrorSeverity.CRITICAL:
     case ErrorSeverity.HIGH:
-      console.error('[ERROR]', logString);
+      logger.error(logEntry, '[ERROR]');
       break;
     case ErrorSeverity.MEDIUM:
-      console.warn('[WARN]', logString);
+      logger.warn(logEntry, '[WARN]');
       break;
     case ErrorSeverity.LOW:
-      console.log('[INFO]', logString);
+      logger.info(logEntry, '[INFO]');
       break;
   }
 

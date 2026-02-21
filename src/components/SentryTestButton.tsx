@@ -4,6 +4,7 @@
  */
 
 import * as Sentry from "@sentry/react";
+import { logger } from "@/lib/observability/logger";
 
 export function SentryTestButton() {
   const handleTestButtonClick = () => {
@@ -22,7 +23,7 @@ export function SentryTestButton() {
         span?.setAttribute("metric", metric);
 
         // Simulate some work
-        console.log("Button clicked - work performed");
+        logger.info("Button clicked - work performed");
       }
     );
   };

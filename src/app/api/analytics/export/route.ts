@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { requireRole } from '@/lib/auth'
 import { exportAnalyticsData } from '@/lib/analytics'
+import { logger } from '@/lib/observability/logger'
 
 export async function GET(request: Request) {
   try {
@@ -30,7 +31,7 @@ export async function GET(request: Request) {
       exportedAt: new Date().toISOString(),
     })
   } catch (error) {
-    console.error('Export analytics error:', error)
+    logger.error('Export analytics error:', { err: error })
     return NextResponse.json(
       { success: false, error: 'Failed to export analytics' },
       { status: 500 }

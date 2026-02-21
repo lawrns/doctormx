@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServiceClient } from '@/lib/supabase/server'
 import { redeemReferral, getPharmacyByEmail } from '@/lib/pharmacy'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(request: NextRequest) {
   try {
@@ -51,7 +52,7 @@ export async function POST(request: NextRequest) {
       message: 'Referral redeemed successfully',
     })
   } catch (error) {
-    console.error('Error redeeming referral:', error)
+    logger.error('Error redeeming referral:', { err: error })
     return NextResponse.json({ error: 'Failed to redeem referral' }, { status: 500 })
   }
 }

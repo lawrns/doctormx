@@ -8,6 +8,7 @@ import { getAvailableSlots } from './availability'
 import { APPOINTMENT_CONFIG, STATUS } from '@/config/constants'
 import { sendAppointmentConfirmation } from './notifications'
 import { sendAppointmentConfirmation as sendWhatsAppConfirmation, getPatientPhone } from './whatsapp-notifications'
+import { logger } from '@/lib/observability/logger'
 
 export type ReservationRequest = {
   patientId: string
@@ -45,12 +46,12 @@ export async function reserveAppointmentSlot(
 
   // Enviar email de confirmación (no bloquea el flujo principal)
   sendConfirmationEmail(request.patientId, appointment.id).catch((err) => {
-    console.error('Failed to send confirmation email:', err)
+    logger.error('Failed to send confirmation email', { error: err })
   })
 
   // Enviar WhatsApp de confirmación (no bloquea el flujo principal)
   sendWhatsAppNotification(request.patientId, appointment.id).catch((err) => {
-    console.error('Failed to send WhatsApp confirmation:', err)
+    logger.error('Failed to send WhatsApp confirmation', { error: err })
   })
 
   return {
@@ -124,7 +125,7 @@ async function sendConfirmationEmail(patientId: string, appointmentId: string) {
     .single()
 
   if (!profile?.email) {
-    console.warn('No email found for patient:', patientId)
+    logger.warn('No email found for patient', { patientId })
     return
   }
 
@@ -140,7 +141,7 @@ async function sendWhatsAppNotification(patientId: string, appointmentId: string
 
   const phone = await getPatientPhone(patientId)
   if (!phone) {
-    console.warn('No phone found for patient:', patientId)
+    logger.warn('No phone found for patient', { patientId })
     return
   }
 

@@ -2,6 +2,7 @@ import { requireAuth } from '@/lib/auth'
 import { sendMessage } from '@/lib/chat'
 import { NextResponse } from 'next/server'
 import { evaluateRedFlags, getCareLevelInfo, isMentalHealthCrisis, getMentalHealthResources } from '@/lib/triage'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(request: Request) {
   try {
@@ -61,7 +62,7 @@ export async function POST(request: Request) {
       triageAlert, // Include triage alert if detected
     })
   } catch (error) {
-    console.error('Error sending message:', error)
+    logger.error('Error sending message:', { err: error })
     return NextResponse.json(
       { error: 'Failed to send message' },
       { status: 500 }

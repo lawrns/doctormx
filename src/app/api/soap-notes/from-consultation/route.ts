@@ -7,6 +7,7 @@ import { createServiceClient } from '@/lib/supabase/server'
 import { createClient } from '@/lib/supabase/client'
 import { generateSoapNote } from '@/lib/domains/soap-notes'
 import { isFeatureEnabled } from '@/lib/feature-flags'
+import { logger } from '@/lib/observability/logger'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -115,7 +116,7 @@ export async function POST(request: NextRequest) {
     }, { status: 201 })
 
   } catch (error) {
-    console.error('[SOAP Notes] Error generating from consultation:', error)
+    logger.error('[SOAP Notes] Error generating from consultation:', { err: error })
     return NextResponse.json(
       { error: 'Failed to generate SOAP note from consultation' },
       { status: 500 }
@@ -175,7 +176,7 @@ export async function GET(request: NextRequest) {
     })
 
   } catch (error) {
-    console.error('[SOAP Notes] Error retrieving note:', error)
+    logger.error('[SOAP Notes] Error retrieving note:', { err: error })
     return NextResponse.json(
       { error: 'Failed to retrieve SOAP note' },
       { status: 500 }

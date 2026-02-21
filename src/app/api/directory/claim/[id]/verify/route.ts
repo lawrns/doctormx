@@ -4,6 +4,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
+import { logger } from '@/lib/observability/logger'
 
 interface RouteParams {
   params: Promise<{ id: string }>
@@ -66,7 +67,7 @@ export async function POST(request: NextRequest, { params }: RouteParams) {
         .upload(idPath, idDocument, { contentType: idDocument.type })
       
       if (uploadError) {
-        console.error('[Verify] ID upload error:', uploadError)
+        logger.error('[Verify] ID upload error:', { err: uploadError })
         return NextResponse.json({ error: 'Failed to upload ID document' }, { status: 500 })
       }
       updates.id_document_path = idPath
@@ -80,7 +81,7 @@ export async function POST(request: NextRequest, { params }: RouteParams) {
         .upload(cedulaPath, cedulaDocument, { contentType: cedulaDocument.type })
       
       if (uploadError) {
-        console.error('[Verify] Cedula upload error:', uploadError)
+        logger.error('[Verify] Cedula upload error:', { err: uploadError })
         return NextResponse.json({ error: 'Failed to upload cedula document' }, { status: 500 })
       }
       updates.cedula_document_path = cedulaPath
@@ -94,7 +95,7 @@ export async function POST(request: NextRequest, { params }: RouteParams) {
         .upload(selfiePath, selfie, { contentType: selfie.type })
       
       if (uploadError) {
-        console.error('[Verify] Selfie upload error:', uploadError)
+        logger.error('[Verify] Selfie upload error:', { err: uploadError })
         return NextResponse.json({ error: 'Failed to upload selfie' }, { status: 500 })
       }
       updates.selfie_path = selfiePath
@@ -137,7 +138,7 @@ export async function POST(request: NextRequest, { params }: RouteParams) {
     })
     
   } catch (error) {
-    console.error('[Verify] Error:', error)
+    logger.error('[Verify] Error:', { err: error })
     return NextResponse.json(
       { error: 'Failed to submit verification' },
       { status: 500 }
@@ -185,7 +186,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     return NextResponse.json({ claim })
     
   } catch (error) {
-    console.error('[Verify] Get error:', error)
+    logger.error('[Verify] Get error:', { err: error })
     return NextResponse.json(
       { error: 'Failed to get claim status' },
       { status: 500 }

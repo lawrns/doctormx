@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
+import { logger } from '@/lib/observability/logger'
 
 export const dynamic = 'force-dynamic'
 
@@ -54,7 +55,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.redirect(new URL('/admin/verify', request.url))
   } catch (error) {
-    console.error('Error verifying doctor:', error)
+    logger.error('Error verifying doctor:', { err: error })
     return NextResponse.json(
       { error: 'Failed to verify doctor' },
       { status: 500 }

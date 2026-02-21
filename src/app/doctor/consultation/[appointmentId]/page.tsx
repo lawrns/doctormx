@@ -6,6 +6,7 @@ import { ClinicalCopilot } from '@/components/ClinicalCopilot'
 import { SOAPNotesReview } from '@/components/soap'
 import type { PatientMedicalHistory, PatientProfile } from '@/lib/patient-types'
 import type { SoapNote } from '@/lib/domains/soap-notes'
+import { logger } from '@/lib/observability/logger'
 
 interface DoctorConsultationPageProps {
     params: Promise<{ appointmentId: string }>
@@ -199,7 +200,7 @@ export default function DoctorConsultationPage({ params }: DoctorConsultationPag
 
     const handleExportPDF = async () => {
         // TODO: Implement PDF export
-        console.log('Export to PDF not implemented yet')
+        logger.info('Export to PDF not implemented yet', { appointmentId })
     }
 
     if (loading) {

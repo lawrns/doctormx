@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import { logger } from '@/lib/observability/logger'
 
 export default function CompleteProfilePage() {
     const [fullName, setFullName] = useState('')
@@ -98,22 +99,22 @@ export default function CompleteProfilePage() {
                             })
                         
                         if (doctorError) {
-                            console.error('Doctor insert error:', doctorError)
+                            logger.error('Doctor insert error', { userId: user.id, error: doctorError.message })
                         }
                     }
                 } catch (doctorError) {
-                    console.error('Doctor record error (non-blocking):', doctorError)
+                    logger.error('Doctor record error (non-blocking)', { userId: user.id }, doctorError as Error)
                     // Don't throw - doctor record will be created in onboarding if needed
                 }
             }
 
             // Redirect to appropriate dashboard
-            console.log('Redirecting to:', role === 'doctor' ? '/doctor/onboarding' : '/app')
+            logger.info('Redirecting after profile completion', { role, destination: role === 'doctor' ? '/doctor/onboarding' : '/app' })
             await router.push(role === 'doctor' ? '/doctor/onboarding' : '/app')
             router.refresh()
         } catch (err) {
             const errorMessage = err instanceof Error ? err.message : 'Error al crear perfil'
-            console.error('Profile creation error:', errorMessage)
+            logger.error('Profile creation error', { role, error: errorMessage })
             setError('Error al crear perfil. Por favor intenta de nuevo.')
         } finally {
             setLoading(false)

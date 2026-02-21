@@ -5,6 +5,7 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import { useToast } from '@/components/Toast'
 import { Loader2, Camera, X } from 'lucide-react'
+import { logger } from '@/lib/observability/logger'
 
 interface AvatarUploadProps {
   userId: string
@@ -99,7 +100,7 @@ export function AvatarUpload({
       
       addToast('Foto de perfil actualizada', 'success')
     } catch (error) {
-      console.error('Error uploading avatar:', error)
+      logger.error('Error uploading avatar', { error: error instanceof Error ? error.message : String(error) })
       // Revert to original on error
       setPreviewUrl(currentPhotoUrl || null)
       addToast(error instanceof Error ? error.message : 'Error al subir la imagen', 'error')
@@ -130,7 +131,7 @@ export function AvatarUpload({
       onUploadComplete?.('')
       addToast('Foto de perfil eliminada', 'success')
     } catch (error) {
-      console.error('Error removing avatar:', error)
+      logger.error('Error removing avatar', { error: error instanceof Error ? error.message : String(error) })
       addToast('Error al eliminar la imagen', 'error')
     }
   }, [userId, bucket, folder, previewUrl, onUploadComplete, addToast])

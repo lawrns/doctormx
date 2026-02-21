@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { createPrescription, updatePrescription, getPrescriptionByAppointment } from '@/lib/prescriptions'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(request: NextRequest) {
   const supabase = await createClient()
@@ -53,7 +54,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.redirect(new URL('/doctor', request.url))
   } catch (error) {
-    console.error('Error saving prescription:', error)
+    logger.error('Error saving prescription:', { err: error })
     return NextResponse.json(
       { error: 'Failed to save prescription' },
       { status: 500 }

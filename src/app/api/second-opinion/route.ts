@@ -11,6 +11,7 @@ import {
   type SecondOpinionType 
 } from '@/lib/domains/second-opinion'
 import { isFeatureEnabled } from '@/lib/feature-flags'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(request: NextRequest) {
   try {
@@ -74,7 +75,7 @@ export async function POST(request: NextRequest) {
     }, { status: 201 })
     
   } catch (error) {
-    console.error('[SecondOpinion] Create error:', error)
+    logger.error('[SecondOpinion] Create error:', { err: error })
     return NextResponse.json(
       { error: 'Failed to create second opinion request' },
       { status: 500 }
@@ -124,7 +125,7 @@ export async function GET(request: NextRequest) {
     })
     
   } catch (error) {
-    console.error('[SecondOpinion] List error:', error)
+    logger.error('[SecondOpinion] List error:', { err: error })
     return NextResponse.json(
       { error: 'Failed to list second opinion requests' },
       { status: 500 }

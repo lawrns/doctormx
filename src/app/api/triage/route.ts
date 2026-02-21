@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { evaluateRedFlags, getCareLevelInfo, isMentalHealthCrisis, getMentalHealthResources, type TriageResult } from '@/lib/triage'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(request: NextRequest) {
   try {
@@ -32,7 +33,7 @@ export async function POST(request: NextRequest) {
       : null
 
     // Log triage result to database (async, don't block response)
-    logTriageResult(message, intake, triageResult, sessionId).then(null, console.error)
+    logTriageResult(message, intake, triageResult, sessionId).then(null, (err) => logger.error("Async error", { err }))
 
     return NextResponse.json({
       success: true,
@@ -43,7 +44,7 @@ export async function POST(request: NextRequest) {
       }
     })
   } catch (error) {
-    console.error('Triage API error:', error)
+    logger.error('Triage API error:', { err: error })
     return NextResponse.json(
       { error: 'Failed to evaluate symptoms' },
       { status: 500 }
@@ -73,6 +74,6 @@ async function logTriageResult(
       reasons: triageResult.reasons
     })
   } catch (error) {
-    console.error('Failed to log triage result:', error)
+    logger.error('Failed to log triage result:', { err: error })
   }
 }

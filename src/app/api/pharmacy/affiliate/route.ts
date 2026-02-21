@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { requireRole } from '@/lib/auth'
+import { logger } from '@/lib/observability/logger'
 import {
   applyToBePharmacy,
   approvePharmacy,
@@ -30,7 +31,7 @@ export async function GET(request: NextRequest) {
       })),
     })
   } catch (error) {
-    console.error('Error getting pharmacies:', error)
+    logger.error('Error getting pharmacies:', { err: error })
     return NextResponse.json({ error: 'Failed to get pharmacies' }, { status: 500 })
   }
 }
@@ -88,7 +89,7 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({ error: 'Invalid action' }, { status: 400 })
     }
   } catch (error) {
-    console.error('Error processing pharmacy request:', error)
+    logger.error('Error processing pharmacy request:', { err: error })
     return NextResponse.json({ error: 'Failed to process request' }, { status: 500 })
   }
 }

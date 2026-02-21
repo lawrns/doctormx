@@ -8,6 +8,7 @@ import {
   encodeCursor,
 } from '@/lib/pagination'
 import type { PaginatedResult } from '@/lib/pagination'
+import { logger } from '@/lib/observability/logger'
 
 /**
  * GET /api/chat/conversations
@@ -93,7 +94,7 @@ export async function GET(request: Request) {
     const { data: rawConversations, error } = await query
 
     if (error) {
-      console.error('Error getting conversations:', { error })
+      logger.error('Error getting conversations:', { err: { error } })
       return NextResponse.json(
         { error: 'Failed to get conversations' },
         { status: 500 }
@@ -101,7 +102,20 @@ export async function GET(request: Request) {
     }
 
     // Check if there are more results
-    const conversations = (rawConversations || []) as any[]
+    const conversations = (rawConversations || []) as Array<{
+      id: string
+      patient_id: string
+      doctor_id: string
+      appointment_id: string | null
+      last_message_preview: string | null
+      last_message_at: string | null
+      is_archived: boolean
+      created_at: string
+      updated_at: string
+      patient: { full_name: string | null; photo_url: string | null } | null
+      doctor: { user_id: string } | null
+      doctor_user: { full_name: string | null; photo_url: string | null } | null
+    }>
     const hasMore = conversations.length > limit
     const paginatedConversations = hasMore ? conversations.slice(0, limit) : conversations
 
@@ -126,7 +140,7 @@ export async function GET(request: Request) {
     }, {} as Record<string, number>) || {}
 
     // Transform conversations
-    const enrichedConversations = paginatedConversations.map((conv: any) => ({
+    const enrichedConversations = paginatedConversations.map((conv: typeof conversations[number]) => ({
       id: conv.id,
       patient_id: conv.patient_id,
       doctor_id: conv.doctor_id,
@@ -136,10 +150,10 @@ export async function GET(request: Request) {
       is_archived: conv.is_archived,
       created_at: conv.created_at,
       updated_at: conv.updated_at,
-      patient_name: conv.patient?.full_name,
-      patient_photo_url: conv.patient?.photo_url,
-      doctor_name: conv.doctor_user?.full_name,
-      doctor_photo_url: conv.doctor_user?.photo_url,
+      patient_name: conv.patient?.full_name ?? undefined,
+      patient_photo_url: conv.patient?.photo_url ?? undefined,
+      doctor_name: conv.doctor_user?.full_name ?? undefined,
+      doctor_photo_url: conv.doctor_user?.photo_url ?? undefined,
       unread_count: unreadCountsByConversation[conv.id] || 0,
     }))
 
@@ -147,15 +161,15 @@ export async function GET(request: Request) {
     const result: PaginatedResult<ConversationWithDetails> = buildPaginatedResponse({
       data: enrichedConversations,
       limit,
-      getNextCursor: (conv: any) =>
+      getNextCursor: (conv: ConversationWithDetails) =>
         conv ? encodeCursor({ id: conv.id, last_message_at: conv.last_message_at }) : null,
-      getPrevCursor: (conv: any) =>
+      getPrevCursor: (conv: ConversationWithDetails) =>
         conv ? encodeCursor({ id: conv.id, last_message_at: conv.last_message_at }) : null,
     })
 
     return NextResponse.json(result)
   } catch (error) {
-    console.error('Error getting conversations:', error)
+    logger.error('Error getting conversations:', { err: error })
     return NextResponse.json(
       { error: 'Failed to get conversations' },
       { status: 500 }
@@ -223,7 +237,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ conversation })
   } catch (error) {
-    console.error('Error creating conversation:', error)
+    logger.error('Error creating conversation:', { err: error })
     return NextResponse.json(
       { error: 'Failed to create conversation' },
       { status: 500 }

@@ -13,6 +13,7 @@ import {
   Brain,
   BookOpen,
 } from 'lucide-react'
+import { logger } from '@/lib/observability/logger'
 
 interface AIMetrics {
   overview: {
@@ -104,7 +105,7 @@ export default function AIDashboardPage() {
       a.download = `ai-metrics-${new Date().toISOString().split('T')[0]}.csv`
       a.click()
     } catch (err) {
-      console.error('Export error:', err)
+      logger.error('Export error', undefined, err as Error)
     }
   }
 

@@ -1,4 +1,5 @@
 import { createClient } from '@/lib/supabase/server';
+import { logger } from '@/lib/logger';
 
 /**
  * Video Service - Daily.co Integration
@@ -131,7 +132,7 @@ export async function createVideoRoom(options: CreateRoomOptions): Promise<Video
       expiresAt: new Date(scheduledFor.getTime() + 2 * 60 * 60 * 1000),
     }
   } catch (error) {
-    console.error('[VideoService] Error creating video room:', error)
+    logger.error({ err: error }, '[VideoService] Error creating video room')
     throw error
   }
 }
@@ -221,7 +222,7 @@ export async function updateVideoStatus(
     .eq('id', appointmentId)
 
   if (error) {
-    console.error('[VideoService] Error updating video status:', error)
+    logger.error({ err: error }, '[VideoService] Error updating video status')
     throw new Error(`Failed to update video status: ${error.message}`)
   }
 }

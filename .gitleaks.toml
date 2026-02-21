@@ -1,0 +1,136 @@
+# Gitleaks Configuration for Doctormx
+# Version: 1.0.0
+# Documentation: https://github.com/gitleaks/gitleaks
+
+title = "Doctormx Gitleaks Configuration"
+
+# Extend default rules with custom configuration
+[extend]
+useDefault = true
+
+# Custom rules specific to Doctormx
+[[rules]]
+id = "doctormx-supabase-service-key"
+description = "Supabase service role key pattern"
+regex = '''eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\.'''
+keywords = ["eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9", "service_role"]
+
+[[rules]]
+id = "doctormx-stripe-webhook-secret"
+description = "Stripe webhook signing secret"
+regex = '''whsec_[a-zA-Z0-9]{24,}'''
+keywords = ["whsec_"]
+
+[[rules]]
+id = "doctormx-sentry-dsn"
+description = "Sentry DSN with auth token"
+regex = '''https://[a-zA-Z0-9]+@[a-zA-Z0-9-]+\.ingest\.sentry\.io/[0-9]+'''
+keywords = ["ingest.sentry.io", "@", "sentry"]
+
+[[rules]]
+id = "doctormx-resend-key"
+description = "Resend API key"
+regex = '''re_[a-zA-Z0-9]{32,}'''
+keywords = ["re_"]
+
+# Allowlists - patterns that should NOT trigger alerts
+[allowlist]
+description = "Global allow list for Doctormx"
+
+# Paths to exclude from scanning
+paths = [
+    '''node_modules''',
+    '''.next''',
+    '''build''',
+    '''dist''',
+    '''coverage''',
+    '''\.vscode''',
+    '''\.idea''',
+    '''\.local''',
+    '''\.env\.example''',
+    '''\.env\.sample''',
+    '''\.env\.test''',
+    '''\.env\.local''',
+    '''fixtures''',
+    '''mock''',
+    '''spec\.ts''',
+    '''test\.ts''',
+    '''\.test\.ts''',
+    '''\.spec\.ts''',
+    '''tests/fixtures''',
+    '''__tests__/fixtures''',
+    '''\.github/workflows/.*\.yml''',
+    '''public/.*''',
+    '''\.md$''',
+]
+
+# Regex patterns to exclude
+regexes = [
+    # Environment variable references (safe)
+    '''process\.env\.[A-Z_]+''',
+    '''\{\{.*process\.env\.[A-Z_]+.*\}\}''',
+
+    # Next.js public env vars (safe to expose)
+    '''NEXT_PUBLIC_[A-Z_]+''',
+
+    # Example/placeholder patterns (not real secrets)
+    '''YOUR_[A-Z_]+_HERE''',
+    '''your-[a-z]+-key''',
+    '''your_api_key''',
+    '''placeholder''',
+    '''example\.com''',
+
+    # Test data patterns
+    '''test_[a-z]+_key''',
+    '''mock_[a-z]+_secret''',
+    '''fake-[a-z]+-token''',
+    '''test_sk_''',
+    '''test_at_''',
+    '''test_ak_''',
+
+    # Documentation patterns
+    '''<!-- gitleaks:allow -->''',
+    '''# gitleaks:allow''',
+    '''\/\/ gitleaks:allow''',
+
+    # Public keys (safe)
+    '''-----BEGIN PUBLIC KEY-----''',
+    '''-----BEGIN RSA PUBLIC KEY-----''',
+]
+
+# Specific commits to ignore
+commits = [
+    # Add commit SHAs here if needed for historical exceptions
+    # "abc123def456...",
+]
+
+# Stopword allows for entropy-based secrets
+stopwords = [
+    # Add words that, when present, indicate false positives
+]
+
+# Allowlist for specific rule IDs
+[[rules.allowlist]]
+ruleID = "doctormx-sentry-dsn"
+description = "Allow public Sentry DSNs for monitoring"
+regexes = [
+    '''process\.env\.NEXT_PUBLIC_SENTRY_DSN''',
+]
+
+# Severity configuration
+[severity]
+default = "medium"
+
+# Report configuration
+[report]
+filename = "gitleaks-report.sarif"
+format = "sarif"
+
+# Maximum entropy for generic secrets
+entropy = 4.5
+
+# Maximum entropy per character
+entropyPerChar = 3.0
+
+# Minimum character count for entropy checks
+minEntropy = 4

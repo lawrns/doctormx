@@ -5,6 +5,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { isFeatureEnabled } from '@/lib/feature-flags'
 import { generateSoapNote, SOAP_NOTES_CONFIG } from '@/lib/domains/soap-notes'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(request: NextRequest) {
   try {
@@ -74,7 +75,7 @@ export async function POST(request: NextRequest) {
     }, { status: 201 })
     
   } catch (error) {
-    console.error('[SOAPNotes] Generate error:', error)
+    logger.error('[SOAPNotes] Generate error:', { err: error })
     return NextResponse.json(
       { error: 'Failed to generate SOAP note' },
       { status: 500 }

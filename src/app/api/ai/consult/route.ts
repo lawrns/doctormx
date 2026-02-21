@@ -15,6 +15,7 @@ import {
   getMedicalKnowledgeStats
 } from '@/lib/medical-knowledge'
 import { withRateLimit } from '@/lib/rate-limit/middleware'
+import { logger } from '@/lib/observability/logger'
 
 const consultRequestSchema = z.object({
   messages: z.array(z.object({
@@ -148,7 +149,7 @@ export async function POST(request: NextRequest) {
         limit: 3,
       })
     } catch (ragError) {
-      console.warn('[AI Consult] RAG retrieval failed, continuing without medical context:', ragError)
+      logger.warn('[AI Consult] RAG retrieval failed, continuing without medical context:', { context: ragError })
     }
 
     // Build base system prompt
@@ -233,7 +234,7 @@ Cuando tengas suficiente información para un análisis completo, incluye al fin
     })
 
     } catch (error) {
-      console.error('[AI Consult] Error:', error)
+      logger.error('[AI Consult] Error:', { err: error })
       return NextResponse.json(
         { error: 'Internal server error' },
         { status: 500 }
