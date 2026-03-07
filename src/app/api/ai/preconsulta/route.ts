@@ -362,6 +362,25 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // Any error propagated from the AI layer should surface as service_unavailable (503), not a
+    // raw 500 — this covers network timeouts, unexpected provider responses, and any other
+    // AI-layer failure that didn't match a more specific pattern above.
+    if (
+      errorMessage.startsWith('Error de IA:') ||
+      errorMessage.startsWith('Error de análisis:') ||
+      errorMessage.startsWith('Error de transcripción:') ||
+      errorMessage.includes('Error de IA')
+    ) {
+      return NextResponse.json(
+        {
+          error: 'service_unavailable',
+          message: 'El servicio de IA no está disponible temporalmente. Intenta más tarde.',
+          technical: errorMessage,
+        },
+        { status: 503 }
+      );
+    }
+
     return NextResponse.json(
       { error: 'Error procesando consulta', technical: errorMessage },
       { status: 500 }

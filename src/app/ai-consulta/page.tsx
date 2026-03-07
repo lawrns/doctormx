@@ -54,7 +54,7 @@ export default function AnonymousConsultaPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className={isComplete ? 'min-h-screen bg-background flex flex-col' : 'h-dvh bg-background flex flex-col overflow-hidden'}>
       {/* Header */}
       <header className="bg-[hsl(var(--card)/0.85)] backdrop-blur-md border-b border-[hsl(var(--border))] sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
@@ -97,9 +97,9 @@ export default function AnonymousConsultaPage() {
         </div>
       )}
 
-      {/* Chat — flex-1 so it fills the remaining viewport */}
+      {/* Chat — flex-1 + min-h-0 so it fills the remaining viewport without overflow */}
       {!isComplete && sessionId && (
-        <div className="flex-1 flex flex-col px-4 pb-4">
+        <div className="flex-1 flex flex-col min-h-0 px-4 pb-4">
           <PreConsultaChat
             isOpen={true}
             onCloseAction={() => undefined}

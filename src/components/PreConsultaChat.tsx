@@ -157,11 +157,11 @@ export default function PreConsultaChat({
 
   const containerClasses = mode === 'modal'
     ? 'fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 p-4 backdrop-blur-xl'
-    : 'relative';
+    : 'flex-1 flex flex-col min-h-0';
 
   const panelClasses = mode === 'modal'
     ? 'relative flex h-[min(88vh,860px)] w-full max-w-6xl overflow-hidden rounded-[32px] border border-white/15 bg-slate-950 shadow-[0_40px_120px_rgba(15,23,42,0.45)]'
-    : 'relative overflow-hidden rounded-[32px] border border-[hsl(var(--border))] bg-[hsl(var(--card))] shadow-[0_20px_80px_rgba(15,23,42,0.08)] lg:flex min-h-[75dvh] lg:min-h-[82dvh]';
+    : 'flex-1 flex flex-col min-h-0 overflow-hidden rounded-[32px] border border-[hsl(var(--border))] bg-[hsl(var(--card))] shadow-[0_20px_80px_rgba(15,23,42,0.08)] lg:flex-row';
 
   const userMessageCount = useMemo(
     () => messages.filter((m) => m.role === 'user').length,
@@ -339,7 +339,7 @@ export default function PreConsultaChat({
           </div>
         </div>
 
-        <div className="flex min-w-0 flex-1 self-stretch flex-col bg-[linear-gradient(180deg,#f8fbff_0%,#ffffff_24%,#f8fafc_100%)]">
+        <div className="flex min-w-0 flex-1 min-h-0 flex-col bg-[linear-gradient(180deg,#f8fbff_0%,#ffffff_24%,#f8fafc_100%)]">
           <div className="border-b border-slate-200/70 bg-white/80 px-5 py-4 backdrop-blur-xl sm:px-6">
             <div className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-3">
