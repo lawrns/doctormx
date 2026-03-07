@@ -225,7 +225,6 @@ export async function POST(req: NextRequest) {
         try {
           const chiefComplaint = userMessages[0]?.content || summary.specialty;
           const careTriage = buildCareTriage(summary, chiefComplaint);
-          const routingDecision = mapRecommendedAction(summary.recommendedAction);
 
           // If we didn't create the care case earlier (ongoing session), create it now
           if (!careCaseId) {
@@ -237,7 +236,23 @@ export async function POST(req: NextRequest) {
           }
 
           await careOrch.updateCaseTriage({ careCaseId, triage: careTriage });
-          await careOrch.routeCase({ careCaseId, decision: routingDecision });
+          const routing = careOrch.deriveCareRouting(careTriage);
+          await careOrch.routeCaseWithContext({ careCaseId, routing });
+
+          if (routing.recommendedPartnerType) {
+            await careOrch.createPartnerHandoff({
+              careCaseId,
+              partnerType: routing.recommendedPartnerType,
+              reason: routing.reason,
+              metadata: {
+                specialty: routing.specialty,
+                urgency: routing.urgency,
+                source: 'preconsulta',
+                sessionId,
+              },
+            });
+          }
+
           await careOrch.linkPreConsultaSession(sessionId, careCaseId);
         } catch (err) {
           console.error('[PRE-CONSULTA] Failed to update care case triage:', err);

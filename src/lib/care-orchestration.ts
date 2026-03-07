@@ -8,9 +8,15 @@ import type {
   CareCase,
   CareEvent,
   CareEventType,
+  CareMemoryItem,
+  CareRouteReason,
+  CareRouting,
   CareStatus,
   CareTriage,
   CreateCareCaseInput,
+  FamilyCareProfile,
+  PartnerHandoff,
+  PartnerType,
   RouteCaseInput,
   RoutingDecision,
   UpdateCaseTriageInput,
@@ -48,6 +54,49 @@ interface CareEventRow {
   actor_id: string | null
   payload: Record<string, unknown> | null
   created_at: string
+}
+
+interface FamilyCareProfileRow {
+  id: string
+  owner_patient_id: string
+  related_patient_id: string | null
+  relationship: string
+  display_name: string
+  birth_date: string | null
+  sex: string | null
+  blood_type: string | null
+  allergies: string[] | null
+  chronic_conditions: string[] | null
+  medications: string[] | null
+  notes: string | null
+  created_at: string
+  updated_at: string
+}
+
+interface CareMemoryItemRow {
+  id: string
+  care_case_id: string | null
+  patient_id: string | null
+  family_profile_id: string | null
+  title: string
+  summary: string
+  tags: string[] | null
+  source_type: string
+  source_id: string | null
+  created_at: string
+  updated_at: string
+}
+
+interface PartnerHandoffRow {
+  id: string
+  care_case_id: string
+  partner_type: string
+  partner_id: string | null
+  status: string
+  reason: string
+  metadata: Record<string, unknown> | null
+  created_at: string
+  updated_at: string
 }
 
 function toCareCase(row: CareCaseRow): CareCase {
@@ -92,6 +141,119 @@ function toCareEvent(row: CareEventRow): CareEvent {
   }
 }
 
+function toFamilyCareProfile(row: FamilyCareProfileRow): FamilyCareProfile {
+  return {
+    id: row.id,
+    ownerPatientId: row.owner_patient_id,
+    relatedPatientId: row.related_patient_id,
+    relationship: row.relationship as FamilyCareProfile['relationship'],
+    displayName: row.display_name,
+    birthDate: row.birth_date,
+    sex: row.sex,
+    bloodType: row.blood_type,
+    allergies: row.allergies ?? [],
+    chronicConditions: row.chronic_conditions ?? [],
+    medications: row.medications ?? [],
+    notes: row.notes,
+    createdAt: row.created_at,
+    updatedAt: row.updated_at,
+  }
+}
+
+function toCareMemoryItem(row: CareMemoryItemRow): CareMemoryItem {
+  return {
+    id: row.id,
+    careCaseId: row.care_case_id,
+    patientId: row.patient_id,
+    familyProfileId: row.family_profile_id,
+    title: row.title,
+    summary: row.summary,
+    tags: row.tags ?? [],
+    sourceType: row.source_type as CareMemoryItem['sourceType'],
+    sourceId: row.source_id,
+    createdAt: row.created_at,
+    updatedAt: row.updated_at,
+  }
+}
+
+function toPartnerHandoff(row: PartnerHandoffRow): PartnerHandoff {
+  return {
+    id: row.id,
+    careCaseId: row.care_case_id,
+    partnerType: row.partner_type as PartnerType,
+    partnerId: row.partner_id,
+    status: row.status as PartnerHandoff['status'],
+    reason: row.reason,
+    metadata: row.metadata,
+    createdAt: row.created_at,
+    updatedAt: row.updated_at,
+  }
+}
+
+export function deriveCareRouting(triage: CareTriage): CareRouting {
+  const hasHighRiskFlags = triage.redFlags.length > 0
+
+  if (triage.urgency === 'emergency') {
+    return {
+      decision: 'emergency',
+      specialty: triage.specialty,
+      urgency: triage.urgency,
+      reason: 'red-flag-emergency',
+      notes: triage.reasoning,
+    }
+  }
+
+  if (triage.recommendedAction === 'pharmacy') {
+    return {
+      decision: 'pharmacy',
+      specialty: triage.specialty,
+      urgency: triage.urgency,
+      reason: 'medication-fulfillment',
+      recommendedPartnerType: 'pharmacy',
+      notes: triage.reasoning,
+    }
+  }
+
+  if (triage.recommendedAction === 'lab') {
+    return {
+      decision: 'lab',
+      specialty: triage.specialty,
+      urgency: triage.urgency,
+      reason: 'diagnostic-workup',
+      recommendedPartnerType: 'lab',
+      notes: triage.reasoning,
+    }
+  }
+
+  if (triage.urgency === 'high' && hasHighRiskFlags) {
+    return {
+      decision: 'doctor',
+      specialty: triage.specialty,
+      urgency: triage.urgency,
+      reason: 'urgent-symptom-pattern',
+      notes: triage.reasoning,
+    }
+  }
+
+  if (triage.recommendedAction === 'self-care' && !hasHighRiskFlags) {
+    return {
+      decision: 'self-care',
+      specialty: triage.specialty,
+      urgency: triage.urgency,
+      reason: 'patient-request',
+      notes: triage.reasoning,
+    }
+  }
+
+  return {
+    decision: 'doctor',
+    specialty: triage.specialty,
+    urgency: triage.urgency,
+    reason: 'specialty-match',
+    notes: triage.reasoning,
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Public API
 // ---------------------------------------------------------------------------
@@ -117,6 +279,28 @@ export async function createCareCase(input: CreateCareCaseInput): Promise<CareCa
 
   await appendCareEvent(careCase.id, 'created', 'system', null, {
     channel: input.channel,
+  })
+
+  return careCase
+}
+
+export async function routeCaseWithContext(input: {
+  careCaseId: string
+  routing: CareRouting
+}): Promise<CareCase> {
+  const careCase = await routeCase({
+    careCaseId: input.careCaseId,
+    decision: input.routing.decision,
+    assignedDoctorId: input.routing.assignedDoctorId ?? undefined,
+  })
+
+  await appendCareEvent(careCase.id, 'routed', 'system', null, {
+    reason: input.routing.reason satisfies CareRouteReason,
+    specialty: input.routing.specialty,
+    urgency: input.routing.urgency,
+    recommendedPartnerType: input.routing.recommendedPartnerType ?? null,
+    recommendedPartnerId: input.routing.recommendedPartnerId ?? null,
+    notes: input.routing.notes ?? null,
   })
 
   return careCase
@@ -375,6 +559,131 @@ export async function linkFollowup(followupId: string, careCaseId: string): Prom
     .eq('id', followupId)
 
   if (error) throw new Error(`Failed to link followup: ${error.message}`)
+}
+
+export async function linkSecondOpinionRequest(requestId: string, careCaseId: string): Promise<void> {
+  await appendCareEvent(careCaseId, 'routed', 'system', null, {
+    secondOpinionRequestId: requestId,
+    workflow: 'second-opinion',
+  })
+}
+
+export async function createPartnerHandoff(input: {
+  careCaseId: string
+  partnerType: PartnerType
+  partnerId?: string | null
+  reason: string
+  metadata?: Record<string, unknown>
+}): Promise<PartnerHandoff> {
+  const supabase = createServiceClient()
+
+  const { data, error } = await supabase
+    .from('care_partner_handoffs')
+    .insert({
+      care_case_id: input.careCaseId,
+      partner_type: input.partnerType,
+      partner_id: input.partnerId ?? null,
+      status: 'recommended',
+      reason: input.reason,
+      metadata: input.metadata ?? null,
+    })
+    .select()
+    .single()
+
+  if (error) throw new Error(`Failed to create partner handoff: ${error.message}`)
+
+  await appendCareEvent(input.careCaseId, 'routed', 'system', null, {
+    partnerType: input.partnerType,
+    partnerId: input.partnerId ?? null,
+    handoffReason: input.reason,
+  })
+
+  return toPartnerHandoff(data as PartnerHandoffRow)
+}
+
+export async function createFamilyCareProfile(input: {
+  ownerPatientId: string
+  relatedPatientId?: string | null
+  relationship: FamilyCareProfile['relationship']
+  displayName: string
+  birthDate?: string | null
+  sex?: string | null
+  bloodType?: string | null
+  allergies?: string[]
+  chronicConditions?: string[]
+  medications?: string[]
+  notes?: string | null
+}): Promise<FamilyCareProfile> {
+  const supabase = createServiceClient()
+
+  const { data, error } = await supabase
+    .from('family_care_profiles')
+    .insert({
+      owner_patient_id: input.ownerPatientId,
+      related_patient_id: input.relatedPatientId ?? null,
+      relationship: input.relationship,
+      display_name: input.displayName,
+      birth_date: input.birthDate ?? null,
+      sex: input.sex ?? null,
+      blood_type: input.bloodType ?? null,
+      allergies: input.allergies ?? [],
+      chronic_conditions: input.chronicConditions ?? [],
+      medications: input.medications ?? [],
+      notes: input.notes ?? null,
+    })
+    .select()
+    .single()
+
+  if (error) throw new Error(`Failed to create family care profile: ${error.message}`)
+
+  return toFamilyCareProfile(data as FamilyCareProfileRow)
+}
+
+export async function addCareMemory(input: {
+  title: string
+  summary: string
+  sourceType: CareMemoryItem['sourceType']
+  sourceId?: string | null
+  careCaseId?: string | null
+  patientId?: string | null
+  familyProfileId?: string | null
+  tags?: string[]
+}): Promise<CareMemoryItem> {
+  const supabase = createServiceClient()
+
+  const { data, error } = await supabase
+    .from('care_memory_items')
+    .insert({
+      care_case_id: input.careCaseId ?? null,
+      patient_id: input.patientId ?? null,
+      family_profile_id: input.familyProfileId ?? null,
+      title: input.title,
+      summary: input.summary,
+      source_type: input.sourceType,
+      source_id: input.sourceId ?? null,
+      tags: input.tags ?? [],
+    })
+    .select()
+    .single()
+
+  if (error) throw new Error(`Failed to create care memory item: ${error.message}`)
+
+  return toCareMemoryItem(data as CareMemoryItemRow)
+}
+
+export async function getDoctorInboxCases(doctorId: string): Promise<CareCase[]> {
+  const supabase = createServiceClient()
+
+  const { data, error } = await supabase
+    .from('care_cases')
+    .select()
+    .eq('assigned_doctor_id', doctorId)
+    .in('status', ['routed', 'in_care'] satisfies CareStatus[])
+    .order('updated_at', { ascending: false })
+
+  if (error) throw new Error(`Failed to get doctor inbox cases: ${error.message}`)
+
+  return (data as CareCaseRow[]).map(toCareCase)
 }
 
 // ---------------------------------------------------------------------------

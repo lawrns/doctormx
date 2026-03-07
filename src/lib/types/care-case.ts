@@ -29,7 +29,30 @@ export type RoutingDecision =
   | 'emergency'
   | 'doctor'
   | 'pharmacy'
-  | 'lab';
+  | 'lab'
+  | 'second-opinion';
+
+export type CareRouteReason =
+  | 'red-flag-emergency'
+  | 'urgent-symptom-pattern'
+  | 'specialty-match'
+  | 'medication-fulfillment'
+  | 'diagnostic-workup'
+  | 'follow-up-review'
+  | 'patient-request'
+  | 'longitudinal-complexity';
+
+export type PartnerType = 'pharmacy' | 'lab' | 'imaging' | 'insurer' | 'care-navigator';
+
+export type FamilyRelationship =
+  | 'self'
+  | 'spouse'
+  | 'child'
+  | 'parent'
+  | 'sibling'
+  | 'guardian'
+  | 'dependent'
+  | 'other';
 
 /** Specialty slugs currently supported by Doctor.mx */
 export type SpecialtySlug =
@@ -57,6 +80,17 @@ export interface CareTriage {
   redFlags: string[];
   recommendedAction: RoutingDecision;
   reasoning?: string;                // LLM explanation
+}
+
+export interface CareRouting {
+  decision: RoutingDecision;
+  specialty: SpecialtySlug | null;
+  urgency: UrgencyLevel;
+  reason: CareRouteReason;
+  assignedDoctorId?: string | null;
+  recommendedPartnerType?: PartnerType | null;
+  recommendedPartnerId?: string | null;
+  notes?: string;
 }
 
 /** The central domain object -- one per patient interaction */
@@ -115,4 +149,47 @@ export interface RouteCaseInput {
   careCaseId: string;
   decision: RoutingDecision;
   assignedDoctorId?: string;
+}
+
+export interface FamilyCareProfile {
+  id: string;
+  ownerPatientId: string;
+  relatedPatientId: string | null;
+  relationship: FamilyRelationship;
+  displayName: string;
+  birthDate: string | null;
+  sex: string | null;
+  bloodType: string | null;
+  allergies: string[];
+  chronicConditions: string[];
+  medications: string[];
+  notes: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface CareMemoryItem {
+  id: string;
+  careCaseId: string | null;
+  patientId: string | null;
+  familyProfileId: string | null;
+  title: string;
+  summary: string;
+  tags: string[];
+  sourceType: 'preconsulta' | 'appointment' | 'second-opinion' | 'followup' | 'manual';
+  sourceId: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface PartnerHandoff {
+  id: string;
+  careCaseId: string;
+  partnerType: PartnerType;
+  partnerId: string | null;
+  status: 'recommended' | 'initiated' | 'completed' | 'cancelled';
+  reason: string;
+  metadata: Record<string, unknown> | null;
+  createdAt: string;
+  updatedAt: string;
 }

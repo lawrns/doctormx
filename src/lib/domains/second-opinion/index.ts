@@ -4,6 +4,15 @@
 // Output: Validated second opinion with doctor sign-off
 
 import { createServiceClient } from '@/lib/supabase/server'
+import {
+  addCareMemory,
+  appendCareEvent,
+  createCareCase,
+  getActiveCareCaseForPatient,
+  linkSecondOpinionRequest,
+  routeCaseWithContext,
+} from '@/lib/care-orchestration'
+import type { CareTriage } from '@/lib/types/care-case'
 
 export const SECOND_OPINION_CONFIG = {
   // Pricing in MXN cents
@@ -120,12 +129,18 @@ export interface CreateSecondOpinionInput {
  */
 export async function createSecondOpinionRequest(
   input: CreateSecondOpinionInput
-): Promise<{ id: string }> {
+): Promise<{ id: string; careCaseId: string }> {
   const supabase = await createServiceClient()
   
   const price_cents = SECOND_OPINION_CONFIG.PRICES[input.type]
   const expires_at = new Date()
   expires_at.setHours(expires_at.getHours() + SECOND_OPINION_CONFIG.REVIEW_WINDOW_HOURS)
+
+  const activeCareCase = await getActiveCareCaseForPatient(input.patient_id)
+  const careCase = activeCareCase ?? await createCareCase({
+    channel: 'web',
+    patientId: input.patient_id,
+  })
   
   const { data, error } = await supabase
     .from('second_opinion_requests')
@@ -151,8 +166,19 @@ export async function createSecondOpinionRequest(
   if (error) {
     throw new Error(`Failed to create second opinion request: ${error.message}`)
   }
+
+  await linkSecondOpinionRequest(data.id, careCase.id)
+  await addCareMemory({
+    careCaseId: careCase.id,
+    patientId: input.patient_id,
+    sourceType: 'second-opinion',
+    sourceId: data.id,
+    title: 'Solicitud de segunda opinión creada',
+    summary: input.chief_complaint,
+    tags: ['second-opinion', input.type],
+  })
   
-  return { id: data.id }
+  return { id: data.id, careCaseId: careCase.id }
 }
 
 /**
@@ -177,6 +203,42 @@ export async function submitSecondOpinionRequest(
   
   if (error) {
     throw new Error(`Failed to submit request: ${error.message}`)
+  }
+
+  const request = await getSecondOpinionRequest(requestId)
+  if (!request) {
+    return
+  }
+
+  const careCase = await getActiveCareCaseForPatient(request.patient_id)
+  if (careCase) {
+    const triage: CareTriage = {
+      chiefComplaint: request.chief_complaint,
+      symptoms: [],
+      urgency: 'medium',
+      specialty: request.ai_suggested_specialty || 'medicina-general',
+      specialtyConfidence: request.ai_suggested_specialty ? 0.75 : 0.4,
+      redFlags: [],
+      recommendedAction: 'second-opinion',
+      reasoning: request.ai_preliminary_summary || 'Paciente solicitó segunda opinión clínica.',
+    }
+
+    await routeCaseWithContext({
+      careCaseId: careCase.id,
+      routing: {
+        decision: 'second-opinion',
+        specialty: triage.specialty,
+        urgency: triage.urgency,
+        reason: 'follow-up-review',
+        notes: 'Second opinion submitted after payment',
+      },
+    })
+
+    await appendCareEvent(careCase.id, 'message', 'patient', request.patient_id, {
+      workflow: 'second-opinion',
+      requestId,
+      paymentId,
+    })
   }
 }
 
@@ -203,6 +265,20 @@ export async function assignDoctorToRequest(
   
   if (error) {
     throw new Error(`Failed to assign doctor: ${error.message}`)
+  }
+
+  const request = await getSecondOpinionRequest(requestId)
+  if (!request) {
+    return
+  }
+
+  const careCase = await getActiveCareCaseForPatient(request.patient_id)
+  if (careCase) {
+    await appendCareEvent(careCase.id, 'doctor_assigned', 'system', doctorId, {
+      workflow: 'second-opinion',
+      requestId,
+      notes: notes ?? null,
+    })
   }
 }
 
@@ -234,6 +310,31 @@ export async function submitDoctorOpinion(
   
   if (error) {
     throw new Error(`Failed to submit opinion: ${error.message}`)
+  }
+
+  const request = await getSecondOpinionRequest(requestId)
+  if (!request) {
+    return
+  }
+
+  const careCase = await getActiveCareCaseForPatient(request.patient_id)
+  if (careCase) {
+    await addCareMemory({
+      careCaseId: careCase.id,
+      patientId: request.patient_id,
+      sourceType: 'second-opinion',
+      sourceId: requestId,
+      title: 'Segunda opinión completada',
+      summary: opinion,
+      tags: ['second-opinion', 'completed'],
+    })
+
+    await appendCareEvent(careCase.id, 'follow_up_sent', 'doctor', doctorId, {
+      workflow: 'second-opinion',
+      requestId,
+      recommendations: recommendations ?? null,
+      followUpNeeded: followUpNeeded ?? false,
+    })
   }
 }
 

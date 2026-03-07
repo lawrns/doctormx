@@ -1,4 +1,5 @@
 import { requireRole } from '@/lib/auth'
+import { getDoctorInboxCases } from '@/lib/care-orchestration'
 import { redirect } from 'next/navigation'
 import DoctorLayout from '@/components/DoctorLayout'
 import { AppointmentCardCompact, EmptyState } from '@/components'
@@ -27,6 +28,7 @@ export default async function DoctorDashboard() {
   let weekCount = 0
   let totalPatients = 0
   let pendingPaymentCount = 0
+  let inboxCases: Awaited<ReturnType<typeof getDoctorInboxCases>> = []
   let upcomingAppointments: Array<{
     id: string
     patient_name: string
@@ -109,6 +111,12 @@ export default async function DoctorDashboard() {
       .gte('start_ts', now.toISOString())
 
     pendingPaymentCount = pendingPayment || 0
+
+    try {
+      inboxCases = await getDoctorInboxCases(user.id)
+    } catch {
+      inboxCases = []
+    }
 
     // Get upcoming appointments (next 5)
     const { data: appointmentsData } = await supabase
@@ -363,6 +371,52 @@ export default async function DoctorDashboard() {
                   label: "Ver mi perfil público",
                   href: `/doctors/${user.id}`
                 }}
+              />
+            )}
+          </div>
+
+          <div className="bg-white rounded-lg shadow border p-6 mt-8">
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <h3 className="text-xl font-semibold text-neutral-900">Inbox de casos</h3>
+                <p className="text-sm text-neutral-600 mt-1">Casos activos enroutados hacia ti desde preconsulta y seguimiento</p>
+              </div>
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-50 text-blue-700">
+                {inboxCases.length} activos
+              </span>
+            </div>
+
+            {inboxCases.length > 0 ? (
+              <div className="space-y-3">
+                {inboxCases.slice(0, 5).map((careCase) => (
+                  <div key={careCase.id} className="rounded-lg border border-neutral-200 p-4">
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
+                      <div>
+                        <p className="font-medium text-neutral-900">
+                          {careCase.triage?.chiefComplaint || 'Caso sin motivo principal capturado'}
+                        </p>
+                        <p className="text-sm text-neutral-600 mt-1">
+                          {careCase.triage?.specialty || 'medicina-general'} · urgencia {careCase.triage?.urgency || 'media'}
+                        </p>
+                        {careCase.triage?.redFlags?.length ? (
+                          <p className="text-sm text-amber-700 mt-2">
+                            Red flags: {careCase.triage.redFlags.slice(0, 3).join(', ')}
+                          </p>
+                        ) : null}
+                      </div>
+                      <div className="text-sm text-neutral-500">
+                        <p>Estado: {careCase.status}</p>
+                        <p>Canal: {careCase.channel}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <EmptyState
+                title="No tienes casos en inbox"
+                description="Los casos triageados y asignados aparecerán aquí para darte contexto antes de la consulta."
+                iconName="clipboard"
               />
             )}
           </div>
