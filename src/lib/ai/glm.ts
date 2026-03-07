@@ -22,8 +22,8 @@ import { AI_CONFIG } from './config'
 export const glm = new OpenAI({
   apiKey: process.env.GLM_API_KEY || '',
   baseURL: AI_CONFIG.glm.baseURL, // GLM Coding Plan endpoint from config
-  timeout: AI_CONFIG.limits.timeoutMs, // 30 second timeout from config
-  maxRetries: AI_CONFIG.limits.maxRetries, // 3 retries from config
+  timeout: 8000, // 8s — fail fast so fallback providers have time within Netlify's function limit
+  maxRetries: 0, // No retries — let the fallback chain handle provider failure
 })
 
 // GLM Configuration
