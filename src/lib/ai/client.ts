@@ -140,9 +140,9 @@ export async function chatCompletion(params: {
 
   for (const provider of providers) {
     // Skip if no API key for this provider
-    if (provider === 'glm' && !AI_CONFIG.glm.apiKey) continue;
-    if (provider === 'kimi' && !AI_CONFIG.kimi.apiKey) continue;
-    if (provider === 'openai' && !AI_CONFIG.openai.apiKey) continue;
+    if (provider === 'glm' && !AI_CONFIG.glm.apiKey) { console.warn('[AI] Skipping GLM: no API key'); continue; }
+    if (provider === 'kimi' && !AI_CONFIG.kimi.apiKey) { console.warn('[AI] Skipping Kimi: no API key'); continue; }
+    if (provider === 'openai' && !AI_CONFIG.openai.apiKey) { console.warn('[AI] Skipping OpenAI: no API key'); continue; }
 
     try {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -167,7 +167,7 @@ export async function chatCompletion(params: {
           ? AI_CONFIG.kimi.temperature
           : AI_CONFIG.openai.temperature;
 
-      console.log(`[AI] Intentando con ${provider}...`);
+      console.log(`[AI] Intentando con ${provider} (model=${model})...`);
 
       const completion = await client.chat.completions.create({
         model,
@@ -197,7 +197,7 @@ export async function chatCompletion(params: {
           (usage.outputTokens / 1_000_000) * AI_CONFIG.costs.gpt4oMiniOutputPer1M;
       }
 
-      console.log(`[AI] Éxito con ${provider}`);
+      console.log(`[AI] Éxito con ${provider} (model=${model})`);
 
       // GLM-4.7 returns reasoning_content instead of content
       const message = completion.choices[0]?.message;
@@ -210,7 +210,9 @@ export async function chatCompletion(params: {
         provider,
       };
     } catch (error: unknown) {
-      console.error(`[AI] Error con ${provider}:`, error);
+      const errStatus = error && typeof error === 'object' && 'status' in error ? error.status : null;
+      const errMsg = error && typeof error === 'object' && 'message' in error ? error.message : String(error);
+      console.error(`[AI] Error con ${provider} (status=${errStatus}):`, errMsg);
       lastError = error;
 
       if (provider === 'kimi' && isKimiPolicyRestricted(error)) {
@@ -348,9 +350,9 @@ export async function structuredAnalysis<T>(params: {
 
   for (const provider of providers) {
     // Skip if no API key for this provider
-    if (provider === 'glm' && !AI_CONFIG.glm.apiKey) continue;
-    if (provider === 'kimi' && !AI_CONFIG.kimi.apiKey) continue;
-    if (provider === 'openai' && !AI_CONFIG.openai.apiKey) continue;
+    if (provider === 'glm' && !AI_CONFIG.glm.apiKey) { console.warn('[AI] Skipping GLM (analysis): no API key'); continue; }
+    if (provider === 'kimi' && !AI_CONFIG.kimi.apiKey) { console.warn('[AI] Skipping Kimi (analysis): no API key'); continue; }
+    if (provider === 'openai' && !AI_CONFIG.openai.apiKey) { console.warn('[AI] Skipping OpenAI (analysis): no API key'); continue; }
 
     try {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -365,6 +367,8 @@ export async function structuredAnalysis<T>(params: {
           ? AI_CONFIG.kimi.defaultModel
           : AI_CONFIG.openai.model;
 
+      console.log(`[AI] Intentando análisis con ${provider} (model=${model})...`);
+
       const completion = await client.chat.completions.create({
         model,
         messages,
@@ -378,9 +382,12 @@ export async function structuredAnalysis<T>(params: {
         (message as { reasoning_content?: string })?.reasoning_content || '{}';
       // Strip markdown code fences that some models wrap around JSON responses
       const responseText = raw.replace(/^```(?:json)?\s*/i, '').replace(/\s*```\s*$/, '').trim();
+      console.log(`[AI] Éxito análisis con ${provider}`);
       return JSON.parse(responseText) as T;
     } catch (error: unknown) {
-      console.error(`[AI] Error análisis con ${provider}:`, error);
+      const errStatus = error && typeof error === 'object' && 'status' in error ? error.status : null;
+      const errMsg = error && typeof error === 'object' && 'message' in error ? error.message : String(error);
+      console.error(`[AI] Error análisis con ${provider} (status=${errStatus}):`, errMsg);
       lastError = error;
 
       if (provider === 'kimi' && isKimiPolicyRestricted(error)) {

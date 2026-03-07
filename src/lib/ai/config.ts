@@ -41,7 +41,7 @@ export const AI_CONFIG = {
 
   // OpenAI - Fallback provider
   openai: {
-    apiKey: process.env.OPENAI_API_KEY || '',
+    apiKey: process.env.OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY || '',
     model: 'gpt-4o-mini', // Fallback model
     temperature: 0.3,
     maxTokens: 500,
@@ -49,7 +49,7 @@ export const AI_CONFIG = {
 
   // Whisper - Audio transcription (still uses OpenAI)
   whisper: {
-    apiKey: process.env.OPENAI_API_KEY || '', // Whisper requires OpenAI key
+    apiKey: process.env.OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY || '', // Whisper requires OpenAI key
     model: 'whisper-1',
     language: 'es', // Spanish default
     responseFormat: 'json' as const,
