@@ -15,13 +15,15 @@ export const AI_CONFIG = {
     apiKey: process.env.GLM_API_KEY || '',
     baseURL: 'https://api.z.ai/api/coding/paas/v4/', // GLM Coding Plan endpoint
     models: {
-      reasoning: 'glm-5',          // Latest flagship - complex reasoning
-      chat: 'glm-5',               // Keep same family to reduce prompt drift on coding plan
-      vision: 'glm-5',             // Use newest available multimodal-capable GLM 5 on special plan
+      reasoning: 'glm-5',          // Deep reasoning — use for structured analysis (accepts 10-12s)
+      chat: 'glm-4.5-air',         // Fast chat — no CoT overhead (~3-4s), enough for triage dialog
+      vision: 'glm-5',             // Best multimodal available on coding plan
     },
-    defaultModel: 'glm-5',         // Use latest GLM 5 by default
+    defaultModel: 'glm-4.5-air',   // Fast model for conversational paths
+    chatMaxTokens: 1000,            // glm-4.5-air: ~700 CoT + short answer fits in 1000
+    analysisMaxTokens: 2000,        // glm-5: ~1500 CoT + detailed answer
     temperature: 0.3,              // Less creative, more consistent
-    maxTokens: 2000,               // GLM-5 is a reasoning model — needs ~1500 tokens for CoT + answer
+    maxTokens: 1000,               // Default; analysis overrides to 2000
   },
 
   // Kimi - Secondary AI Provider (Moonshot)

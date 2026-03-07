@@ -21,14 +21,16 @@ async function testProvider(name: string, apiKey: string, baseURL: string | unde
 }
 
 export async function GET() {
-  const [glm, kimi, openai] = await Promise.allSettled([
-    testProvider('glm', AI_CONFIG.glm.apiKey, AI_CONFIG.glm.baseURL, 'glm-5'),
+  const [glmChat, glmReasoning, kimi, openai] = await Promise.allSettled([
+    testProvider('glm-chat', AI_CONFIG.glm.apiKey, AI_CONFIG.glm.baseURL, AI_CONFIG.glm.models.chat),
+    testProvider('glm-reasoning', AI_CONFIG.glm.apiKey, AI_CONFIG.glm.baseURL, AI_CONFIG.glm.models.reasoning),
     testProvider('kimi', AI_CONFIG.kimi.apiKey, AI_CONFIG.kimi.baseURL, 'kimi-for-coding'),
     testProvider('openai', AI_CONFIG.openai.apiKey, undefined, 'gpt-4o-mini'),
   ])
 
   return NextResponse.json({
-    glm: glm.status === 'fulfilled' ? glm.value : { ok: false, error: String(glm.reason) },
+    'glm-chat': glmChat.status === 'fulfilled' ? glmChat.value : { ok: false, error: String(glmChat.reason) },
+    'glm-reasoning': glmReasoning.status === 'fulfilled' ? glmReasoning.value : { ok: false, error: String(glmReasoning.reason) },
     kimi: kimi.status === 'fulfilled' ? kimi.value : { ok: false, error: String(kimi.reason) },
     openai: openai.status === 'fulfilled' ? openai.value : { ok: false, error: String(openai.reason) },
     env: {

@@ -154,13 +154,14 @@ export async function chatCompletion(params: {
         : provider === 'kimi'
           ? await getKimiClient()
           : await getOpenAIClient() as unknown as any;
+      // Chat path: use fast model (glm-4.5-air ~3s) not reasoning model (glm-5 ~12s)
       const model = provider === 'glm'
-        ? AI_CONFIG.glm.defaultModel
+        ? AI_CONFIG.glm.models.chat
         : provider === 'kimi'
           ? AI_CONFIG.kimi.defaultModel
           : AI_CONFIG.openai.model;
       const configuredMaxTokens = provider === 'glm'
-        ? AI_CONFIG.glm.maxTokens
+        ? AI_CONFIG.glm.chatMaxTokens
         : provider === 'kimi'
           ? AI_CONFIG.kimi.maxTokens
           : AI_CONFIG.openai.maxTokens;
@@ -364,17 +365,20 @@ export async function structuredAnalysis<T>(params: {
         : provider === 'kimi'
           ? await getKimiClient()
           : await getOpenAIClient() as unknown as any;
+      // Analysis path: use reasoning model (glm-5) for better structured output quality
       const model = provider === 'glm'
-        ? AI_CONFIG.glm.defaultModel
+        ? AI_CONFIG.glm.models.reasoning
         : provider === 'kimi'
           ? AI_CONFIG.kimi.defaultModel
           : AI_CONFIG.openai.model;
+      const analysisMaxTokens = provider === 'glm' ? AI_CONFIG.glm.analysisMaxTokens : undefined;
 
       console.log(`[AI] Intentando análisis con ${provider} (model=${model})...`);
 
       const completion = await client.chat.completions.create({
         model,
         messages,
+        ...(analysisMaxTokens ? { max_tokens: analysisMaxTokens } : {}),
         response_format: { type: 'json_object' }, // Fuerza JSON
         temperature: 0.2, // Más determinístico para análisis
       });
