@@ -21,16 +21,19 @@ async function testProvider(name: string, apiKey: string, baseURL: string | unde
 }
 
 export async function GET() {
-  const [glmChat, glmReasoning, kimi, openai] = await Promise.allSettled([
-    testProvider('glm-chat', AI_CONFIG.glm.apiKey, AI_CONFIG.glm.baseURL, AI_CONFIG.glm.models.chat),
-    testProvider('glm-reasoning', AI_CONFIG.glm.apiKey, AI_CONFIG.glm.baseURL, AI_CONFIG.glm.models.reasoning),
+  const [glmCodingAir, glmCodingReasoning, glmStandard, kimi, openai] = await Promise.allSettled([
+    testProvider('glm-coding-air', AI_CONFIG.glm.apiKey, AI_CONFIG.glm.baseURL, AI_CONFIG.glm.models.chat),
+    testProvider('glm-coding-5', AI_CONFIG.glm.apiKey, AI_CONFIG.glm.baseURL, AI_CONFIG.glm.models.reasoning),
+    // Test standard BigModel endpoint connectivity (different routing than coding paas)
+    testProvider('glm-bigmodel-std', AI_CONFIG.glm.apiKey, 'https://open.bigmodel.cn/api/paas/v4/', 'glm-4-plus'),
     testProvider('kimi', AI_CONFIG.kimi.apiKey, AI_CONFIG.kimi.baseURL, 'kimi-for-coding'),
     testProvider('openai', AI_CONFIG.openai.apiKey, undefined, 'gpt-4o-mini'),
   ])
 
   return NextResponse.json({
-    'glm-chat': glmChat.status === 'fulfilled' ? glmChat.value : { ok: false, error: String(glmChat.reason) },
-    'glm-reasoning': glmReasoning.status === 'fulfilled' ? glmReasoning.value : { ok: false, error: String(glmReasoning.reason) },
+    'glm-coding-air': glmCodingAir.status === 'fulfilled' ? glmCodingAir.value : { ok: false, error: String(glmCodingAir.reason) },
+    'glm-coding-5': glmCodingReasoning.status === 'fulfilled' ? glmCodingReasoning.value : { ok: false, error: String(glmCodingReasoning.reason) },
+    'glm-bigmodel-std': glmStandard.status === 'fulfilled' ? glmStandard.value : { ok: false, error: String(glmStandard.reason) },
     kimi: kimi.status === 'fulfilled' ? kimi.value : { ok: false, error: String(kimi.reason) },
     openai: openai.status === 'fulfilled' ? openai.value : { ok: false, error: String(openai.reason) },
     env: {
