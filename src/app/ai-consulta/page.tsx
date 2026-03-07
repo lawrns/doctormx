@@ -54,7 +54,7 @@ export default function AnonymousConsultaPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       {/* Header */}
       <header className="bg-[hsl(var(--card)/0.85)] backdrop-blur-md border-b border-[hsl(var(--border))] sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
@@ -90,11 +90,16 @@ export default function AnonymousConsultaPage() {
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto px-4 py-8">
-        {/* Quota Banner */}
-        {quota && <QuotaBanner used={quota.used} limit={quota.limit} />}
+      {/* Quota Banner */}
+      {quota && (
+        <div className="max-w-4xl mx-auto px-4 pt-4 w-full">
+          <QuotaBanner used={quota.used} limit={quota.limit} />
+        </div>
+      )}
 
-        {!isComplete && sessionId && (
+      {/* Chat — flex-1 so it fills the remaining viewport */}
+      {!isComplete && sessionId && (
+        <div className="flex-1 flex flex-col px-4 pb-4">
           <PreConsultaChat
             isOpen={true}
             onCloseAction={() => undefined}
@@ -110,14 +115,16 @@ export default function AnonymousConsultaPage() {
             initialSessionId={sessionId}
             showQuota={true}
           />
-        )}
+        </div>
+      )}
 
-        {/* Results Section */}
-        {isComplete && summary && (
+      {/* Results Section */}
+      {isComplete && summary && (
+        <main className="max-w-4xl mx-auto px-4 py-8 w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mt-8 space-y-6"
+            className="space-y-6"
           >
             {/* Summary Card */}
             <div className="bg-[hsl(var(--card))] rounded-2xl shadow-lg border border-[hsl(var(--border))] p-6">
@@ -180,14 +187,14 @@ export default function AnonymousConsultaPage() {
               />
             )}
           </motion.div>
-        )}
+        </main>
+      )}
 
-        {/* Compliance Notice */}
-        <div className="mt-6 text-center text-xs text-[hsl(var(--text-muted))]">
-          <p>Servicio de orientación médica con IA. No sustituye la consulta presencial.</p>
-          <p className="mt-1">En caso de emergencia, llama al 911.</p>
-        </div>
-      </main>
+      {/* Compliance Notice */}
+      <div className="mt-auto py-6 text-center text-xs text-[hsl(var(--text-muted))]">
+        <p>Servicio de orientación médica con IA. No sustituye la consulta presencial.</p>
+        <p className="mt-1">En caso de emergencia, llama al 911.</p>
+      </div>
 
       {/* Modals */}
       {showEmailModal && (

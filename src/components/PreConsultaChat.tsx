@@ -3,17 +3,21 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
-import { AlertTriangle, CheckCircle2, Clock3, Crown, SendHorizonal, Shield, Sparkles, Stethoscope, X } from 'lucide-react';
+import { AlertTriangle, CheckCircle2, Crown, SendHorizonal, Stethoscope, X } from 'lucide-react';
 import type { PreConsultaMessage } from '@/lib/ai/types';
 import type { DoctorMatch } from '@/lib/ai/referral';
 import { DoctorAvatar, UserAvatar } from '@/components/ui/avatar';
 import { QuotaCounter } from '@/components/QuotaCounter';
+import { ReasoningVisualizer } from '@/components/ReasoningVisualizer';
 import { cn, formatCurrency, formatDoctorName } from '@/lib/utils';
 
 type PreConsultaSummary = {
   chiefComplaint: string;
   urgencyLevel: 'low' | 'medium' | 'high' | 'emergency';
   suggestedSpecialty: string;
+  confidence?: number;
+  reasoning?: string;
+  redFlags?: string[];
 };
 
 type QuotaState = {
@@ -61,6 +65,9 @@ function toSummary(summary: Record<string, unknown> | null | undefined): PreCons
       : typeof summary.specialty === 'string'
         ? summary.specialty
         : 'Medicina general',
+    confidence: typeof summary.confidence === 'number' ? summary.confidence : undefined,
+    reasoning: typeof summary.reasoning === 'string' ? summary.reasoning : undefined,
+    redFlags: Array.isArray(summary.redFlags) ? summary.redFlags as string[] : undefined,
   };
 }
 
@@ -154,7 +161,12 @@ export default function PreConsultaChat({
 
   const panelClasses = mode === 'modal'
     ? 'relative flex h-[min(88vh,860px)] w-full max-w-6xl overflow-hidden rounded-[32px] border border-white/15 bg-slate-950 shadow-[0_40px_120px_rgba(15,23,42,0.45)]'
-    : 'relative overflow-hidden rounded-[32px] border border-[hsl(var(--border))] bg-[hsl(var(--card))] shadow-[0_20px_80px_rgba(15,23,42,0.08)] lg:flex lg:min-h-[780px]';
+    : 'relative overflow-hidden rounded-[32px] border border-[hsl(var(--border))] bg-[hsl(var(--card))] shadow-[0_20px_80px_rgba(15,23,42,0.08)] lg:flex min-h-[75dvh] lg:min-h-[82dvh]';
+
+  const userMessageCount = useMemo(
+    () => messages.filter((m) => m.role === 'user').length,
+    [messages],
+  );
 
   const statusTone = useMemo(() => {
     if (summary?.urgencyLevel === 'emergency') {
@@ -289,42 +301,18 @@ export default function PreConsultaChat({
               )}
             </div>
 
-            <div className="mt-6 flex flex-1 flex-col justify-between gap-6">
-              <div className="rounded-[28px] border border-slate-800 bg-slate-900/70 p-6">
-                <p className="text-sm leading-7 text-slate-100">
+            <div className="mt-6 flex flex-1 flex-col gap-5 overflow-y-auto">
+              <div className="rounded-[24px] border border-slate-800 bg-slate-900/70 p-5">
+                <p className="text-sm leading-7 text-slate-200">
                   Resume tus síntomas con claridad, detecta alertas importantes y llega a tu consulta con una ruta clínica mejor estructurada.
                 </p>
               </div>
 
-              <div className="space-y-6 rounded-[28px] border border-slate-800 bg-slate-900/78 p-6">
-                <div className="flex items-start gap-3">
-                  <Sparkles className="mt-0.5 h-5 w-5 text-sky-300" />
-                  <div>
-                    <p className="font-medium text-white">Resumen inteligente</p>
-                    <p className="mt-1 text-sm leading-6 text-slate-200">
-                      Sintetizo tus síntomas, detecto alertas y preparo un resumen clínico útil para el doctor.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Shield className="mt-0.5 h-5 w-5 text-emerald-300" />
-                  <div>
-                    <p className="font-medium text-white">Seguridad primero</p>
-                    <p className="mt-1 text-sm leading-6 text-slate-200">
-                      Si aparecen red flags o urgencia alta, te lo indicaré con prioridad clara.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Clock3 className="mt-0.5 h-5 w-5 text-violet-300" />
-                  <div>
-                    <p className="font-medium text-white">Experiencia rápida</p>
-                    <p className="mt-1 text-sm leading-6 text-slate-200">
-                      En 3 a 5 mensajes obtendrás una ruta clara para agendar mejor tu consulta.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <ReasoningVisualizer
+                isLoading={isLoading}
+                messageCount={userMessageCount}
+                summary={summary}
+              />
 
               <div className="rounded-[28px] border border-slate-800 bg-slate-900/82 p-6">
                 <p className="text-xs uppercase tracking-[0.24em] text-slate-300">Estado actual</p>
