@@ -2,22 +2,21 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { MessageCircle, Sparkles, AlertCircle, Check, Home } from 'lucide-react'
+import { Check, Home } from 'lucide-react'
 import Link from 'next/link'
 import { QuotaBanner } from '@/components/QuotaCounter'
 import { WhatsAppShareCard } from '@/components/WhatsAppShare'
 import { EmailCapture, EmailCaptureModal } from '@/components/EmailCapture'
-import { PremiumUpgradeModal, QuotaExceededBanner } from '@/components/PremiumUpgradeModal'
+import { PremiumUpgradeModal } from '@/components/PremiumUpgradeModal'
+import PreConsultaChat from '@/components/PreConsultaChat'
+import type { DoctorMatch } from '@/lib/ai/referral'
 
 export default function AnonymousConsultaPage() {
   const [sessionId, setSessionId] = useState<string>('')
   const [quota, setQuota] = useState<{ used: number; limit: number; remaining: number } | null>(null)
-  const [messages, setMessages] = useState<Array<{ role: 'user' | 'assistant'; content: string }>>([])
-  const [input, setInput] = useState('')
-  const [isLoading, setIsLoading] = useState(false)
   const [isComplete, setIsComplete] = useState(false)
   const [summary, setSummary] = useState<any>(null)
-  const [referrals, setReferrals] = useState<any[]>([])
+  const [referrals, setReferrals] = useState<DoctorMatch[]>([])
 
   // New states
   const [showEmailCapture, setShowEmailCapture] = useState(false)
@@ -36,14 +35,6 @@ export default function AnonymousConsultaPage() {
       setSessionId(newSession)
       checkQuota(newSession)
     }
-
-    // Add welcome message
-    setMessages([
-      {
-        role: 'assistant',
-        content: '¡Hola! Soy tu asistente médico IA. ¿Qué síntomas o preocupación de salud tienes hoy?',
-      },
-    ])
   }, [])
 
   const checkQuota = async (sid: string) => {
@@ -59,70 +50,6 @@ export default function AnonymousConsultaPage() {
       }
     } catch (error) {
       console.error('Error checking quota:', error)
-    }
-  }
-
-  const sendMessage = async () => {
-    if (!input.trim() || isLoading) return
-
-    const userMessage = input.trim()
-    setInput('')
-    setMessages((prev) => [...prev, { role: 'user', content: userMessage }])
-    setIsLoading(true)
-
-    try {
-      const res = await fetch('/api/ai/preconsulta', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          sessionId,
-          messages: [...messages, { role: 'user', content: userMessage }],
-          anonymous: true,
-        }),
-      })
-
-      const data = await res.json()
-
-      if (data.error === 'quota_exceeded') {
-        setMessages((prev) => [
-          ...prev,
-          {
-            role: 'assistant',
-            content: 'Has usado tus 5 consultas gratis. Regístrate para obtener más consultas o actualiza a Premium para consultas ilimitadas.',
-          },
-        ])
-        setIsComplete(true)
-        return
-      }
-
-      setMessages((prev) => [...prev, { role: 'assistant', content: data.response }])
-
-      if (data.completed) {
-        setIsComplete(true)
-        setSummary(data.summary)
-        setReferrals(data.referrals || [])
-        if (data.quota) {
-          setQuota(data.quota)
-
-          // Show email capture after 2nd consultation (3 used means this is the 2nd complete)
-          if (data.quota.used === 3) {
-            setShowEmailCapture(true)
-          }
-
-          // Show premium modal after 5 consultations
-          if (data.quota.remaining === 0) {
-            setTimeout(() => setShowPremiumModal(true), 1000)
-          }
-        }
-      }
-    } catch (error) {
-      console.error('Error sending message:', error)
-      setMessages((prev) => [
-        ...prev,
-        { role: 'assistant', content: 'Lo siento, hubo un error. Por favor intenta de nuevo.' },
-      ])
-    } finally {
-      setIsLoading(false)
     }
   }
 
@@ -167,80 +94,23 @@ export default function AnonymousConsultaPage() {
         {/* Quota Banner */}
         {quota && <QuotaBanner used={quota.used} limit={quota.limit} />}
 
-        {/* Chat Interface */}
-        <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
-          <div className="bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-4">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                <Sparkles className="w-6 h-6 text-white" />
-              </div>
-              <div className="text-white">
-                <h2 className="font-bold">Dr. Simeon</h2>
-                <p className="text-sm text-blue-50">Asistente médico IA • En línea</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Messages */}
-          <div className="p-6 space-y-4 min-h-[400px] max-h-[500px] overflow-y-auto">
-            {messages.map((msg, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
-              >
-                <div
-                  className={`max-w-[80%] rounded-2xl px-4 py-3 ${
-                    msg.role === 'user'
-                      ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white'
-                      : 'bg-gray-100 text-gray-800'
-                  }`}
-                >
-                  {msg.content}
-                </div>
-              </motion.div>
-            ))}
-
-            {isLoading && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="flex justify-start"
-              >
-                <div className="bg-gray-100 rounded-2xl px-4 py-3 flex items-center gap-2">
-                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" />
-                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-100" />
-                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-200" />
-                </div>
-              </motion.div>
-            )}
-          </div>
-
-          {/* Input */}
-          {!isComplete && (
-            <div className="border-t border-gray-200 p-4">
-              <div className="flex gap-3">
-                <input
-                  type="text"
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
-                  placeholder="Describe tus síntomas..."
-                  className="flex-1 px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  disabled={isLoading}
-                />
-                <button
-                  onClick={sendMessage}
-                  disabled={isLoading || !input.trim()}
-                  className="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
-                >
-                  Enviar
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
+        {!isComplete && sessionId && (
+          <PreConsultaChat
+            isOpen={true}
+            onCloseAction={() => undefined}
+            onCompleteAction={(_, nextSummary, nextReferrals) => {
+              setIsComplete(true)
+              setSummary(nextSummary)
+              setReferrals(nextReferrals || [])
+              checkQuota(sessionId)
+              setShowEmailCapture(true)
+            }}
+            mode="embedded"
+            anonymous={true}
+            initialSessionId={sessionId}
+            showQuota={true}
+          />
+        )}
 
         {/* Results Section */}
         {isComplete && summary && (
@@ -258,11 +128,11 @@ export default function AnonymousConsultaPage() {
               <div className="space-y-3">
                 <div className="flex justify-between">
                   <span className="text-gray-600">Nivel de urgencia:</span>
-                  <span className="font-semibold text-blue-600">{summary.urgency}</span>
+                  <span className="font-semibold text-blue-600">{summary.urgencyLevel || summary.urgency}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Especialidad sugerida:</span>
-                  <span className="font-semibold">{summary.specialty}</span>
+                  <span className="font-semibold">{summary.suggestedSpecialty || summary.specialty}</span>
                 </div>
               </div>
             </div>
@@ -272,7 +142,7 @@ export default function AnonymousConsultaPage() {
               <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
                 <h3 className="font-bold text-gray-900 mb-4">Doctores Recomendados</h3>
                 <div className="space-y-4">
-                  {referrals.map((referral: any) => (
+                  {referrals.map((referral) => (
                     <div
                       key={referral.doctorId}
                       className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all"
@@ -299,11 +169,11 @@ export default function AnonymousConsultaPage() {
             <WhatsAppShareCard
               patientName="Un usuario"
               symptoms="síntomas médicos"
-              aiRecommendation={summary.specialty}
+              aiRecommendation={summary.suggestedSpecialty || summary.specialty}
             />
 
             {/* Email Capture (after 2nd consultation) */}
-            {quota && quota.used >= 2 && quota.used < 5 && (
+            {showEmailCapture && quota && quota.used >= 2 && quota.used < 5 && (
               <EmailCapture
                 consultationNumber={quota.used}
                 onDismiss={() => setShowEmailCapture(false)}

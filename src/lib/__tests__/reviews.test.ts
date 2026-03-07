@@ -3,6 +3,66 @@ import * as fc from 'fast-check'
 import { mockSupabaseClient, createMockReview } from './mocks'
 import { createClient } from '@/lib/supabase/server'
 
+function createEqChain<T>(result: { data: T; error: unknown }) {
+  const chain = {
+    eq: vi.fn().mockReturnThis(),
+    single: vi.fn().mockResolvedValue(result),
+    order: vi.fn().mockReturnThis(),
+    range: vi.fn().mockResolvedValue({ data: Array.isArray(result.data) ? result.data : [], error: result.error }),
+  }
+
+  return chain
+}
+
+function createReviewClient(options?: {
+  reviewInsertResult?: { data: unknown; error: unknown }
+  reviewsLookupResult?: { data: unknown; error: unknown }
+  appointmentLookupResult?: { data: unknown; error: unknown }
+  doctorRatingsResult?: { data: Array<{ rating: number }>; error: unknown }
+}) {
+  return {
+    ...mockSupabaseClient,
+    from: vi.fn().mockImplementation((table: string) => {
+      if (table === 'reviews') {
+        return {
+          insert: vi.fn().mockReturnValue({
+            select: vi.fn().mockReturnValue({
+              single: vi.fn().mockResolvedValue(options?.reviewInsertResult ?? { data: createMockReview(), error: null }),
+            }),
+          }),
+          select: vi.fn().mockImplementation((query?: string) => {
+            if (query === 'rating') {
+              return {
+                eq: vi.fn().mockResolvedValue(options?.doctorRatingsResult ?? { data: [{ rating: 5 }], error: null }),
+              }
+            }
+
+            return createEqChain(options?.reviewsLookupResult ?? { data: null, error: { code: 'PGRST116' } })
+          }),
+        }
+      }
+
+      if (table === 'appointments') {
+        return {
+          select: vi.fn().mockReturnValue(
+            createEqChain(options?.appointmentLookupResult ?? { data: null, error: { code: 'PGRST116' } })
+          ),
+        }
+      }
+
+      if (table === 'doctors') {
+        return {
+          update: vi.fn().mockReturnValue({
+            eq: vi.fn().mockResolvedValue({ error: null }),
+          }),
+        }
+      }
+
+      return mockSupabaseClient.from(table)
+    }),
+  }
+}
+
 vi.mock('@/lib/supabase/server', () => ({
   createClient: vi.fn(),
   createServiceClient: vi.fn().mockResolvedValue(mockSupabaseClient),
@@ -19,25 +79,15 @@ describe('Reviews System', () => {
 
   describe('Review Creation', () => {
     it('should create review successfully', async () => {
-      const mockReview = createMockReview()
+      const mockReview = createMockReview({ comment: 'Great doctor!' })
 
-      const mockClient = {
-        ...mockSupabaseClient,
-        from: vi.fn().mockImplementation((table) => {
-          if (table === 'reviews') {
-            return {
-              insert: vi.fn().mockReturnValue({
-                select: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: mockReview, error: null }),
-                }),
-              }),
-            }
-          }
-          return mockSupabaseClient.from(table)
-        }),
-      }
+      const mockClient = createReviewClient({
+        reviewInsertResult: { data: mockReview, error: null },
+      })
+      const { createServiceClient } = await import('@/lib/supabase/server')
 
       vi.mocked(createClient).mockResolvedValue(mockClient as never)
+      vi.mocked(createServiceClient).mockReturnValue(mockClient as never)
 
       const { createReview } = await import('@/lib/reviews')
       
@@ -54,21 +104,9 @@ describe('Reviews System', () => {
     })
 
     it('should throw error when appointment not found', async () => {
-      const mockClient = {
-        ...mockSupabaseClient,
-        from: vi.fn().mockImplementation((table) => {
-          if (table === 'reviews') {
-            return {
-              insert: vi.fn().mockReturnValue({
-                select: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: null, error: { message: 'Error' } }),
-                }),
-              }),
-            }
-          }
-          return mockSupabaseClient.from(table)
-        }),
-      }
+      const mockClient = createReviewClient({
+        reviewInsertResult: { data: null, error: { message: 'Error' } },
+      })
 
       vi.mocked(createClient).mockResolvedValue(mockClient as never)
 
@@ -150,21 +188,9 @@ describe('Reviews System', () => {
 
   describe('Review Limits', () => {
     it('should allow only one review per appointment', async () => {
-      const mockClient = {
-        ...mockSupabaseClient,
-        from: vi.fn().mockImplementation((table) => {
-          if (table === 'reviews') {
-            return {
-              select: vi.fn().mockReturnValue({
-                eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: { id: 'existing-review' }, error: null }),
-                }),
-              }),
-            }
-          }
-          return mockSupabaseClient.from(table)
-        }),
-      }
+      const mockClient = createReviewClient({
+        reviewsLookupResult: { data: { id: 'existing-review' }, error: null },
+      })
 
       vi.mocked(createClient).mockResolvedValue(mockClient as never)
 
@@ -175,21 +201,9 @@ describe('Reviews System', () => {
     })
 
     it('should allow review when none exists', async () => {
-      const mockClient = {
-        ...mockSupabaseClient,
-        from: vi.fn().mockImplementation((table) => {
-          if (table === 'reviews') {
-            return {
-              select: vi.fn().mockReturnValue({
-                eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: null, error: { code: 'PGRST116' } }),
-                }),
-              }),
-            }
-          }
-          return mockSupabaseClient.from(table)
-        }),
-      }
+      const mockClient = createReviewClient({
+        reviewsLookupResult: { data: null, error: { code: 'PGRST116' } },
+      })
 
       vi.mocked(createClient).mockResolvedValue(mockClient as never)
 
@@ -202,33 +216,10 @@ describe('Reviews System', () => {
 
   describe('Review Eligibility', () => {
     it('should allow review for completed appointments only', async () => {
-      const mockClient = {
-        ...mockSupabaseClient,
-        from: vi.fn().mockImplementation((table) => {
-          if (table === 'appointments') {
-            return {
-              select: vi.fn().mockReturnValue({
-                eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ 
-                    data: { id: 'appointment-1', status: 'completed' }, 
-                    error: null 
-                  }),
-                }),
-              }),
-            }
-          }
-          if (table === 'reviews') {
-            return {
-              select: vi.fn().mockReturnValue({
-                eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: null, error: { code: 'PGRST116' } }),
-                }),
-              }),
-            }
-          }
-          return mockSupabaseClient.from(table)
-        }),
-      }
+      const mockClient = createReviewClient({
+        appointmentLookupResult: { data: { id: 'appointment-1', status: 'completed' }, error: null },
+        reviewsLookupResult: { data: null, error: { code: 'PGRST116' } },
+      })
 
       vi.mocked(createClient).mockResolvedValue(mockClient as never)
 
@@ -239,24 +230,9 @@ describe('Reviews System', () => {
     })
 
     it('should not allow review for pending appointments', async () => {
-      const mockClient = {
-        ...mockSupabaseClient,
-        from: vi.fn().mockImplementation((table) => {
-          if (table === 'appointments') {
-            return {
-              select: vi.fn().mockReturnValue({
-                eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ 
-                    data: { id: 'appointment-1', status: 'pending_payment' }, 
-                    error: null 
-                  }),
-                }),
-              }),
-            }
-          }
-          return mockSupabaseClient.from(table)
-        }),
-      }
+      const mockClient = createReviewClient({
+        appointmentLookupResult: { data: { id: 'appointment-1', status: 'pending_payment' }, error: null },
+      })
 
       vi.mocked(createClient).mockResolvedValue(mockClient as never)
 
@@ -272,7 +248,7 @@ describe('Reviews System', () => {
       fc.assert(
         fc.property(
           fc.integer({ min: 1, max: 5 }),
-          (rating) => {
+          (rating: number) => {
             return rating >= 1 && rating <= 5
           }
         ),
@@ -288,7 +264,7 @@ describe('Reviews System', () => {
           fc.uuid(),
           fc.integer({ min: 1, max: 5 }),
           fc.option(fc.string({ maxLength: 1000 })),
-          (appointmentId, patientId, doctorId, rating, comment) => {
+          (appointmentId: string, patientId: string, doctorId: string, rating: number, comment: string | null) => {
             return (
               typeof appointmentId === 'string' &&
               typeof patientId === 'string' &&

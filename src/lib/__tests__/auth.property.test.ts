@@ -10,6 +10,13 @@
 import * as fc from 'fast-check'
 import { describe, it } from 'vitest'
 
+const protectedRouteArbitrary = fc
+  .tuple(
+    fc.constantFrom('/book', '/checkout'),
+    fc.array(fc.string({ minLength: 1, maxLength: 20 }), { maxLength: 3 })
+  )
+  .map(([basePath, segments]) => [basePath, ...segments.map(segment => encodeURIComponent(segment))].join('/'))
+
 /**
  * Property 4: Authentication Redirect Preservation
  * 
@@ -24,8 +31,7 @@ describe('Property 4: Authentication Redirect Preservation', () => {
   it('should preserve original URL with query parameters in redirect', () => {
     fc.assert(
       fc.property(
-        // Generate arbitrary protected routes with query parameters
-        fc.string({ minLength: 1 }).filter(path => path.startsWith('/book') || path.startsWith('/checkout')),
+        protectedRouteArbitrary,
         fc.record({
           date: fc.string({ minLength: 1 }),
           time: fc.string({ minLength: 1 }),

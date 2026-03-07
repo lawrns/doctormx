@@ -3,6 +3,8 @@ import { getConversations, ConversationWithDetails } from '@/lib/chat'
 import { ChatList } from '@/components/ChatList'
 import { logger } from '@/lib/observability/logger'
 
+export const dynamic = 'force-dynamic'
+
 export default async function PatientChatPage() {
   let conversations: ConversationWithDetails[] = []
   

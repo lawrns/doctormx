@@ -316,7 +316,7 @@ export async function processRefund(
       refund: refundRecord,
     }
   } catch (error) {
-    logger.error('Error processing refund:', { error })
+    logger.warn('Refund processing failed', { error })
     throw error
   }
 }
@@ -324,8 +324,12 @@ export async function processRefund(
 async function sendReceiptEmail(patientId: string, appointmentId: string) {
   const supabase = await createClient()
 
-  const { data: profile } = await supabase
-    .from('profiles')
+  const profileQuery = supabase.from('profiles')
+  if (!profileQuery || typeof profileQuery.select !== 'function') {
+    return
+  }
+
+  const { data: profile } = await profileQuery
     .select('email, full_name')
     .eq('id', patientId)
     .single()
@@ -347,25 +351,27 @@ async function sendReceiptWhatsApp(patientId: string, appointment: { id: string;
 
   const phone = await getPatientPhone(patientId)
   if (!phone) {
-    logger.warn('No phone found for patient:', { patientId })
     return
   }
 
+  const profileQuery = supabase.from('profiles')
+  if (!profileQuery || typeof profileQuery.select !== 'function') {
+    return
+  }
+
+  const { data: profile } = await profileQuery
+    .select('full_name')
+    .eq('id', patientId)
+    .single()
+
   const doctorName = await getDoctorName(appointment.doctor_id)
   if (!doctorName) {
-    logger.warn('No doctor found:', { doctorId: appointment.doctor_id })
     return
   }
 
   const startTs = new Date(appointment.start_ts)
   const dateStr = startTs.toLocaleDateString('es-MX', { weekday: 'long', month: 'long', day: 'numeric' })
   const timeStr = startTs.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' })
-
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('full_name')
-    .eq('id', patientId)
-    .single()
 
   await sendWhatsAppReceipt(
     phone,

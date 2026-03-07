@@ -1,11 +1,21 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import * as fc from 'fast-check'
 import { discoverDoctors, getDoctorProfile, getAvailableSpecialties, type DiscoveryFilters } from '@/lib/discovery'
+import { createServiceClient } from '@/lib/supabase/server'
 import { mockSupabaseClient, mockDoctor } from './mocks'
 
 vi.mock('@/lib/supabase/server', () => ({
-  createClient: vi.fn().mockResolvedValue(mockSupabaseClient),
-  createServiceClient: vi.fn().mockResolvedValue(mockSupabaseClient),
+  createClient: vi.fn().mockImplementation(async () => mockSupabaseClient),
+  createServiceClient: vi.fn(),
+}))
+
+vi.mock('@/lib/cache', () => ({
+  cache: {
+    get: vi.fn().mockResolvedValue(null),
+    set: vi.fn().mockResolvedValue(true),
+    getDoctorProfile: vi.fn().mockResolvedValue(null),
+    setDoctorProfile: vi.fn().mockResolvedValue(true),
+  },
 }))
 
 describe('Doctor Discovery System', () => {
@@ -37,9 +47,7 @@ describe('Doctor Discovery System', () => {
         }),
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createServiceClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      vi.mocked(createServiceClient).mockReturnValue(mockClient as never)
 
       const result = await discoverDoctors()
       expect(result).toEqual([])
@@ -72,9 +80,7 @@ describe('Doctor Discovery System', () => {
         }),
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createServiceClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      vi.mocked(createServiceClient).mockReturnValue(mockClient as never)
 
       const result = await discoverDoctors()
       expect(Array.isArray(result)).toBe(true)
@@ -112,9 +118,7 @@ describe('Doctor Discovery System', () => {
         }),
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createServiceClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      vi.mocked(createServiceClient).mockReturnValue(mockClient as never)
 
       const result = await discoverDoctors()
       expect(Array.isArray(result) ? result.length : 0).toBeLessThanOrEqual(50)
@@ -130,7 +134,9 @@ describe('Doctor Discovery System', () => {
             return {
               select: vi.fn().mockReturnValue({
                 eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: null, error: { code: 'PGRST116' } }),
+                  eq: vi.fn().mockReturnValue({
+                    single: vi.fn().mockResolvedValue({ data: null, error: { code: 'PGRST116', message: 'Not found' } }),
+                  }),
                 }),
               }),
             }
@@ -139,9 +145,7 @@ describe('Doctor Discovery System', () => {
         }),
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createServiceClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      vi.mocked(createServiceClient).mockReturnValue(mockClient as never)
 
       const result = await getDoctorProfile('non-existent-id')
       expect(result).toBeNull()
@@ -155,14 +159,21 @@ describe('Doctor Discovery System', () => {
             return {
               select: vi.fn().mockReturnValue({
                 eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ 
-                    data: {
-                      ...mockDoctor,
-                      doctor_specialties: [],
-                      profiles: mockDoctor.profile,
-                      doctor_subscriptions: [{ status: 'active', current_period_end: '2026-01-01' }],
-                    }, 
-                    error: null 
+                  eq: vi.fn().mockReturnValue({
+                    single: vi.fn().mockResolvedValue({ 
+                      data: {
+                        ...mockDoctor,
+                        doctor_specialties: [],
+                        profiles: {
+                          id: mockDoctor.profile.id,
+                          full_name: mockDoctor.profile.full_name,
+                          photo_url: mockDoctor.profile.photo_url,
+                          phone: null,
+                        },
+                        doctor_subscriptions: [{ status: 'active', current_period_end: '2026-01-01' }],
+                      }, 
+                      error: null 
+                    }),
                   }),
                 }),
               }),
@@ -172,9 +183,7 @@ describe('Doctor Discovery System', () => {
         }),
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createServiceClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      vi.mocked(createServiceClient).mockReturnValue(mockClient as never)
 
       const result = await getDoctorProfile('test-doctor-id')
       
@@ -203,9 +212,7 @@ describe('Doctor Discovery System', () => {
         }),
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createServiceClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      vi.mocked(createServiceClient).mockReturnValue(mockClient as never)
 
       const result = await getAvailableSpecialties()
       expect(result).toEqual([])
@@ -231,9 +238,7 @@ describe('Doctor Discovery System', () => {
         }),
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createServiceClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      vi.mocked(createServiceClient).mockReturnValue(mockClient as never)
 
       const result = await getAvailableSpecialties()
       expect(Array.isArray(result)).toBe(true)
@@ -246,7 +251,7 @@ describe('Doctor Discovery System', () => {
       fc.assert(
         fc.property(
           fc.stringMatching(/^[a-z-]+$/),
-          (slug) => {
+          (slug: string) => {
             const filters: DiscoveryFilters = { specialtySlug: slug }
             return filters.specialtySlug === slug
           }
@@ -259,9 +264,9 @@ describe('Doctor Discovery System', () => {
       fc.assert(
         fc.property(
           fc.integer({ min: 0, max: 1000000 }),
-          (price) => {
+          (price: number) => {
             const filters: DiscoveryFilters = { maxPrice: price }
-            return filters.maxPrice === price && filters.maxPrice >= 0
+            return typeof filters.maxPrice === 'number' && filters.maxPrice === price && filters.maxPrice >= 0
           }
         ),
         { numRuns: 50 }
@@ -271,10 +276,10 @@ describe('Doctor Discovery System', () => {
     it('should handle valid rating ranges', () => {
       fc.assert(
         fc.property(
-          fc.float({ min: 0, max: 5 }),
-          (rating) => {
+          fc.float({ min: 0, max: 5, noNaN: true }),
+          (rating: number) => {
             const filters: DiscoveryFilters = { minRating: rating }
-            return filters.minRating === rating && filters.minRating >= 0 && filters.minRating <= 5
+            return typeof filters.minRating === 'number' && filters.minRating === rating && filters.minRating >= 0 && filters.minRating <= 5
           }
         ),
         { numRuns: 50 }
@@ -286,7 +291,7 @@ describe('Doctor Discovery System', () => {
         fc.property(
           fc.string({ minLength: 1 }),
           fc.string({ minLength: 1 }),
-          (city, state) => {
+          (city: string, state: string) => {
             const filters: DiscoveryFilters = { city, state }
             return filters.city === city && filters.state === state
           }

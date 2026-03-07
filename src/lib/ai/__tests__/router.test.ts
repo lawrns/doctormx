@@ -4,6 +4,10 @@ import { openrouter } from '../openrouter'
 import { deepseek } from '../deepseek'
 import { openai } from '@/lib/openai'
 
+const { mockChatCompletionsCreate } = vi.hoisted(() => ({
+  mockChatCompletionsCreate: vi.fn(),
+}))
+
 // Mock dependencies
 vi.mock('../openrouter', () => ({
   openrouter: {
@@ -46,9 +50,37 @@ vi.mock('../glm', () => ({
 
 vi.mock('../config', () => ({
   AI_CONFIG: {
+    kimi: {
+      baseURL: 'https://kimi.test',
+      models: {
+        reasoning: 'kimi-reasoning',
+        chat: 'kimi-chat',
+        vision: 'kimi-vision',
+      },
+      temperature: 0.3,
+      maxTokens: 2000,
+    },
+    limits: {
+      timeoutMs: 30000,
+      maxRetries: 2,
+    },
+    costs: {
+      kimiInputPer1M: 0.5,
+      kimiOutputPer1M: 1.5,
+    },
     features: {
       useGLM: true,
     },
+  },
+}))
+
+vi.mock('openai', () => ({
+  default: class MockOpenAI {
+    chat = {
+      completions: {
+        create: mockChatCompletionsCreate,
+      },
+    }
   },
 }))
 
@@ -56,7 +88,7 @@ vi.mock('@/lib/openai', () => ({
   openai: {
     chat: {
       completions: {
-        create: vi.fn(),
+        create: mockChatCompletionsCreate,
       },
     },
   },

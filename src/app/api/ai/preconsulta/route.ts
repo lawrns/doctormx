@@ -10,6 +10,97 @@ import {
 } from '@/lib/ai';
 import { matchDoctorsForReferral } from '@/lib/ai/referral';
 import type { PreConsultaMessage, TriageResult } from '@/lib/ai/types';
+import type { CareTriage, RoutingDecision } from '@/lib/types/care-case';
+
+/** Map TriageResult.recommendedAction to CareTriage RoutingDecision */
+function mapRecommendedAction(action: TriageResult['recommendedAction']): RoutingDecision {
+  switch (action) {
+    case 'book-appointment': return 'doctor';
+    case 'seek-emergency': return 'emergency';
+    case 'self-care': return 'self-care';
+    default: return 'doctor';
+  }
+}
+
+function isMessageRole(value: unknown): value is PreConsultaMessage['role'] {
+  return value === 'system' || value === 'user' || value === 'assistant';
+}
+
+function normalizeMessages(input: unknown): PreConsultaMessage[] {
+  if (!Array.isArray(input)) {
+    return [];
+  }
+
+  return input
+    .map((message) => {
+      if (!message || typeof message !== 'object') {
+        return null;
+      }
+
+      const candidate = message as Partial<PreConsultaMessage> & { role?: unknown; content?: unknown; id?: unknown; timestamp?: unknown };
+      if (!isMessageRole(candidate.role) || typeof candidate.content !== 'string') {
+        return null;
+      }
+
+      const normalizedTimestamp = candidate.timestamp instanceof Date
+        ? candidate.timestamp
+        : typeof candidate.timestamp === 'string' || typeof candidate.timestamp === 'number'
+          ? new Date(candidate.timestamp)
+          : new Date();
+
+      return {
+        id: typeof candidate.id === 'string' ? candidate.id : crypto.randomUUID(),
+        role: candidate.role,
+        content: candidate.content.trim(),
+        timestamp: Number.isNaN(normalizedTimestamp.getTime()) ? new Date() : normalizedTimestamp,
+      } satisfies PreConsultaMessage;
+    })
+    .filter((message): message is PreConsultaMessage => Boolean(message?.content));
+}
+
+function isConfigurationError(message: string) {
+  return message.includes('No hay API key')
+    || message.includes('must be set')
+    || message.includes('no configurad');
+}
+
+async function safeUpsertSession(
+  supabase: Awaited<ReturnType<typeof createClient>>,
+  payload: Record<string, unknown>
+) {
+  try {
+    const { error } = await supabase.from('pre_consulta_sessions').upsert(payload);
+    if (error) {
+      console.error('[PRE-CONSULTA] Failed to persist session:', error);
+    }
+  } catch (error) {
+    console.error('[PRE-CONSULTA] Unexpected persistence error:', error);
+  }
+}
+
+/** Build a CareTriage from the AI TriageResult and conversation context */
+function buildCareTriage(triage: TriageResult, chiefComplaint: string): CareTriage {
+  return {
+    chiefComplaint,
+    symptoms: [],
+    urgency: triage.urgency,
+    specialty: triage.specialty,
+    specialtyConfidence: triage.confidence,
+    redFlags: triage.redFlags,
+    recommendedAction: mapRecommendedAction(triage.recommendedAction),
+    reasoning: triage.reasoning,
+  };
+}
+
+/** Safely import and call care orchestration functions. Returns null if module not available. */
+async function tryGetCareOrchestration() {
+  try {
+    return await import('@/lib/care-orchestration');
+  } catch {
+    console.warn('[PRE-CONSULTA] care-orchestration module not available yet, skipping care case tracking');
+    return null;
+  }
+}
 
 export async function POST(req: NextRequest) {
   if (!AI_CONFIG.features.preConsulta) {
@@ -25,11 +116,13 @@ export async function POST(req: NextRequest) {
   try {
     const { data: { user } } = await supabase.auth.getUser();
 
-    const { sessionId, messages, anonymous } = await req.json() as {
+    const { sessionId, messages: rawMessages, anonymous } = await req.json() as {
       sessionId: string;
-      messages: PreConsultaMessage[];
+      messages: unknown;
       anonymous?: boolean;
     };
+
+    const messages = normalizeMessages(rawMessages);
 
     if (!sessionId || !messages || messages.length === 0) {
       return NextResponse.json(
@@ -40,7 +133,7 @@ export async function POST(req: NextRequest) {
 
     // For anonymous users, check quota before proceeding
     if (anonymous && !user) {
-      const { canAnonymousConsult, useAnonymousConsultation } = await import('@/lib/anonymous-quota')
+      const { canAnonymousConsult } = await import('@/lib/anonymous-quota')
       const quotaCheck = await canAnonymousConsult(sessionId)
 
       if (!quotaCheck.canConsult) {
@@ -53,6 +146,22 @@ export async function POST(req: NextRequest) {
           },
           { status: 403 }
         )
+      }
+    }
+
+    // --- Care Case: create on first interaction ---
+    let careCaseId: string | null = null;
+    const careOrch = await tryGetCareOrchestration();
+    const userMessageCount = messages.filter((m) => m.role === 'user').length;
+    if (careOrch && userMessageCount <= 1) {
+      try {
+        const careCase = await careOrch.createCareCase({
+          channel: 'web',
+          patientId: user?.id,
+        });
+        careCaseId = careCase.id;
+      } catch (err) {
+        console.error('[PRE-CONSULTA] Failed to create care case:', err);
       }
     }
 
@@ -96,7 +205,7 @@ export async function POST(req: NextRequest) {
       }
 
       // Guardar sesión en DB
-      await supabase.from('pre_consulta_sessions').upsert({
+      await safeUpsertSession(supabase, {
         id: sessionId,
         patient_id: user?.id || null,
         messages: messages,
@@ -110,9 +219,33 @@ export async function POST(req: NextRequest) {
         status: summary.urgency === 'emergency' ? 'redirected-to-emergency' : 'completed',
         completed_at: new Date().toISOString(),
       });
+
+      // --- Care Case: update triage, route, and link session ---
+      if (careOrch && summary) {
+        try {
+          const chiefComplaint = userMessages[0]?.content || summary.specialty;
+          const careTriage = buildCareTriage(summary, chiefComplaint);
+          const routingDecision = mapRecommendedAction(summary.recommendedAction);
+
+          // If we didn't create the care case earlier (ongoing session), create it now
+          if (!careCaseId) {
+            const careCase = await careOrch.createCareCase({
+              channel: 'web',
+              patientId: user?.id,
+            });
+            careCaseId = careCase.id;
+          }
+
+          await careOrch.updateCaseTriage({ careCaseId, triage: careTriage });
+          await careOrch.routeCase({ careCaseId, decision: routingDecision });
+          await careOrch.linkPreConsultaSession(sessionId, careCaseId);
+        } catch (err) {
+          console.error('[PRE-CONSULTA] Failed to update care case triage:', err);
+        }
+      }
     } else {
       // Guardar progreso
-      await supabase.from('pre_consulta_sessions').upsert({
+      await safeUpsertSession(supabase, {
         id: sessionId,
         patient_id: user?.id || null,
         messages: messages,
@@ -151,6 +284,7 @@ export async function POST(req: NextRequest) {
       completed: isComplete,
       summary: isComplete ? summary : null,
       referrals: referrals.slice(0, 3),
+      careCaseId: careCaseId || undefined,
       anonymous,
       quota,
     });
@@ -186,7 +320,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    if (errorMessage.includes('No hay API key')) {
+    if (isConfigurationError(errorMessage)) {
       return NextResponse.json(
         {
           error: 'configuration_error',
@@ -194,6 +328,13 @@ export async function POST(req: NextRequest) {
           technical: errorMessage,
         },
         { status: 503 }
+      );
+    }
+
+    if (errorMessage.includes('Datos inválidos')) {
+      return NextResponse.json(
+        { error: 'invalid_request', message: 'La solicitud de chat no es válida.', technical: errorMessage },
+        { status: 400 }
       );
     }
 

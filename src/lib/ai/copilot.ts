@@ -337,7 +337,7 @@ Responde en JSON valido con esta estructura:
             reasoning: d.reasoning || '',
         }))
     } catch (error) {
-        logger.error('Error suggesting differential diagnosis:', { error })
+        logger.warn('Differential diagnosis fallback triggered', { error })
         return []
     }
 }

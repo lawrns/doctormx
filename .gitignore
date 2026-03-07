@@ -51,3 +51,6 @@ doctoralia_scraper/test-page-source.html
 
 # Sentry - Don't commit auth tokens
 .sentryclirc
+
+# Build artifacts
+/dist

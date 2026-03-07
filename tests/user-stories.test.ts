@@ -1,10 +1,12 @@
 import { describe, it, expect } from 'vitest'
 import { createClient } from '@supabase/supabase-js'
 
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-
-const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
+const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+const hasSupabaseEnv = Boolean(SUPABASE_URL && SUPABASE_KEY)
+const describeIfSupabase = hasSupabaseEnv ? describe : describe.skip
+const supabase = hasSupabaseEnv ? createClient(SUPABASE_URL!, SUPABASE_KEY!) : null
+const testSupabase = supabase as NonNullable<typeof supabase>
 
 // Test accounts
 const TEST_ACCOUNTS = {
@@ -22,9 +24,9 @@ const TEST_ACCOUNTS = {
   },
 }
 
-describe('User Story: Patient Registration', () => {
+describeIfSupabase('User Story: Patient Registration', () => {
   it('should allow patient to register with valid credentials', async () => {
-    const { data, error } = await supabase.auth.signUp({
+    const { data, error } = await testSupabase.auth.signUp({
       email: `patient-${Date.now()}@test.com`,
       password: 'TestPass123!',
       options: {
@@ -40,7 +42,7 @@ describe('User Story: Patient Registration', () => {
   })
 
   it('should reject registration with weak password', async () => {
-    const { error } = await supabase.auth.signUp({
+    const { error } = await testSupabase.auth.signUp({
       email: `patient-${Date.now()}@test.com`,
       password: '123',
     })
@@ -49,7 +51,7 @@ describe('User Story: Patient Registration', () => {
   })
 
   it('should reject registration with invalid email', async () => {
-    const { error } = await supabase.auth.signUp({
+    const { error } = await testSupabase.auth.signUp({
       email: 'invalid-email',
       password: 'TestPass123!',
     })
@@ -58,9 +60,9 @@ describe('User Story: Patient Registration', () => {
   })
 })
 
-describe('User Story: Patient Login', () => {
+describeIfSupabase('User Story: Patient Login', () => {
   it('should allow patient to login with correct credentials', async () => {
-    const { data, error } = await supabase.auth.signInWithPassword({
+    const { data, error } = await testSupabase.auth.signInWithPassword({
       email: TEST_ACCOUNTS.patient.email,
       password: TEST_ACCOUNTS.patient.password,
     })
@@ -71,7 +73,7 @@ describe('User Story: Patient Login', () => {
   })
 
   it('should reject login with incorrect password', async () => {
-    const { error } = await supabase.auth.signInWithPassword({
+    const { error } = await testSupabase.auth.signInWithPassword({
       email: TEST_ACCOUNTS.patient.email,
       password: 'WrongPassword123!',
     })
@@ -80,7 +82,7 @@ describe('User Story: Patient Login', () => {
   })
 
   it('should reject login with non-existent email', async () => {
-    const { error } = await supabase.auth.signInWithPassword({
+    const { error } = await testSupabase.auth.signInWithPassword({
       email: 'nonexistent@test.com',
       password: 'TestPass123!',
     })
@@ -89,16 +91,16 @@ describe('User Story: Patient Login', () => {
   })
 })
 
-describe('User Story: Doctor Registration', () => {
+describeIfSupabase('User Story: Doctor Registration', () => {
   it('should create doctor profile after registration', async () => {
-    const { data: { user } } = await supabase.auth.signInWithPassword({
+    const { data: { user } } = await testSupabase.auth.signInWithPassword({
       email: TEST_ACCOUNTS.doctor.email,
       password: TEST_ACCOUNTS.doctor.password,
     })
 
     expect(user).toBeDefined()
 
-    const { data: doctor, error } = await supabase
+    const { data: doctor, error } = await testSupabase
       .from('doctors')
       .select('*')
       .eq('user_id', user!.id)
@@ -109,9 +111,9 @@ describe('User Story: Doctor Registration', () => {
   })
 })
 
-describe('User Story: Doctor Login', () => {
+describeIfSupabase('User Story: Doctor Login', () => {
   it('should allow doctor to login with correct credentials', async () => {
-    const { data, error } = await supabase.auth.signInWithPassword({
+    const { data, error } = await testSupabase.auth.signInWithPassword({
       email: TEST_ACCOUNTS.doctor.email,
       password: TEST_ACCOUNTS.doctor.password,
     })
@@ -121,9 +123,9 @@ describe('User Story: Doctor Login', () => {
   })
 })
 
-describe('User Story: Browse Doctors', () => {
+describeIfSupabase('User Story: Browse Doctors', () => {
   it('should retrieve list of verified doctors', async () => {
-    const { data: doctors, error } = await supabase
+    const { data: doctors, error } = await testSupabase
       .from('doctors')
       .select('*')
       .eq('verified', true)
@@ -133,7 +135,7 @@ describe('User Story: Browse Doctors', () => {
   })
 
   it('should retrieve doctor details by ID', async () => {
-    const { data: doctors, error: listError } = await supabase
+    const { data: doctors, error: listError } = await testSupabase
       .from('doctors')
       .select('user_id')
       .eq('verified', true)
@@ -144,7 +146,7 @@ describe('User Story: Browse Doctors', () => {
 
     if (doctors && doctors.length > 0) {
       const doctorId = doctors[0].user_id
-      const { data: doctor, error } = await supabase
+      const { data: doctor, error } = await testSupabase
         .from('doctors')
         .select('*')
         .eq('user_id', doctorId)
@@ -156,16 +158,16 @@ describe('User Story: Browse Doctors', () => {
   })
 })
 
-describe('User Story: Doctor Profile Management', () => {
+describeIfSupabase('User Story: Doctor Profile Management', () => {
   it('should allow doctor to update profile', async () => {
-    const { data: { user } } = await supabase.auth.signInWithPassword({
+    const { data: { user } } = await testSupabase.auth.signInWithPassword({
       email: TEST_ACCOUNTS.doctor.email,
       password: TEST_ACCOUNTS.doctor.password,
     })
 
     expect(user).toBeDefined()
 
-    const { error } = await supabase
+    const { error } = await testSupabase
       .from('doctors')
       .update({
         bio: 'Updated bio',
@@ -177,14 +179,14 @@ describe('User Story: Doctor Profile Management', () => {
   })
 
   it('should retrieve doctor profile', async () => {
-    const { data: { user } } = await supabase.auth.signInWithPassword({
+    const { data: { user } } = await testSupabase.auth.signInWithPassword({
       email: TEST_ACCOUNTS.doctor.email,
       password: TEST_ACCOUNTS.doctor.password,
     })
 
     expect(user).toBeDefined()
 
-    const { data: doctor, error } = await supabase
+    const { data: doctor, error } = await testSupabase
       .from('doctors')
       .select('*')
       .eq('user_id', user!.id)
@@ -195,9 +197,9 @@ describe('User Story: Doctor Profile Management', () => {
   })
 })
 
-describe('User Story: Doctor Availability', () => {
+describeIfSupabase('User Story: Doctor Availability', () => {
   it('should allow doctor to set availability', async () => {
-    const { data: { user } } = await supabase.auth.signInWithPassword({
+    const { data: { user } } = await testSupabase.auth.signInWithPassword({
       email: TEST_ACCOUNTS.doctor.email,
       password: TEST_ACCOUNTS.doctor.password,
     })
@@ -214,7 +216,7 @@ describe('User Story: Doctor Availability', () => {
       sunday: null,
     }
 
-    const { error } = await supabase
+    const { error } = await testSupabase
       .from('doctors')
       .update({ availability_slots: availability })
       .eq('user_id', user!.id)
@@ -223,16 +225,16 @@ describe('User Story: Doctor Availability', () => {
   })
 })
 
-describe('User Story: Book Appointment', () => {
+describeIfSupabase('User Story: Book Appointment', () => {
   it('should create appointment for patient', async () => {
-    const { data: { user: patientUser } } = await supabase.auth.signInWithPassword({
+    const { data: { user: patientUser } } = await testSupabase.auth.signInWithPassword({
       email: TEST_ACCOUNTS.patient.email,
       password: TEST_ACCOUNTS.patient.password,
     })
 
     expect(patientUser).toBeDefined()
 
-    const { data: doctors } = await supabase
+    const { data: doctors } = await testSupabase
       .from('doctors')
       .select('user_id')
       .eq('verified', true)
@@ -249,7 +251,7 @@ describe('User Story: Book Appointment', () => {
         notes: 'Test appointment',
       }
 
-      const { data: appointment, error } = await supabase
+      const { data: appointment, error } = await testSupabase
         .from('appointments')
         .insert([appointmentData])
         .select()
@@ -260,16 +262,16 @@ describe('User Story: Book Appointment', () => {
   })
 })
 
-describe('User Story: View Appointments', () => {
+describeIfSupabase('User Story: View Appointments', () => {
   it('should retrieve patient appointments', async () => {
-    const { data: { user } } = await supabase.auth.signInWithPassword({
+    const { data: { user } } = await testSupabase.auth.signInWithPassword({
       email: TEST_ACCOUNTS.patient.email,
       password: TEST_ACCOUNTS.patient.password,
     })
 
     expect(user).toBeDefined()
 
-    const { data: appointments, error } = await supabase
+    const { data: appointments, error } = await testSupabase
       .from('appointments')
       .select('*')
       .eq('patient_id', user!.id)
@@ -279,14 +281,14 @@ describe('User Story: View Appointments', () => {
   })
 
   it('should retrieve doctor appointments', async () => {
-    const { data: { user } } = await supabase.auth.signInWithPassword({
+    const { data: { user } } = await testSupabase.auth.signInWithPassword({
       email: TEST_ACCOUNTS.doctor.email,
       password: TEST_ACCOUNTS.doctor.password,
     })
 
     expect(user).toBeDefined()
 
-    const { data: appointments, error } = await supabase
+    const { data: appointments, error } = await testSupabase
       .from('appointments')
       .select('*')
       .eq('doctor_id', user!.id)
@@ -296,16 +298,16 @@ describe('User Story: View Appointments', () => {
   })
 })
 
-describe('User Story: Admin Verification', () => {
+describeIfSupabase('User Story: Admin Verification', () => {
   it('should allow admin to verify doctors', async () => {
-    const { data: { user: adminUser } } = await supabase.auth.signInWithPassword({
+    const { data: { user: adminUser } } = await testSupabase.auth.signInWithPassword({
       email: TEST_ACCOUNTS.admin.email,
       password: TEST_ACCOUNTS.admin.password,
     })
 
     expect(adminUser).toBeDefined()
 
-    const { data: users } = await supabase
+    const { data: users } = await testSupabase
       .from('users')
       .select('id')
       .eq('role', 'admin')
@@ -314,16 +316,16 @@ describe('User Story: Admin Verification', () => {
   })
 })
 
-describe('User Story: Chat System', () => {
+describeIfSupabase('User Story: Chat System', () => {
   it('should create conversation between patient and doctor', async () => {
-    const { data: { user: patientUser } } = await supabase.auth.signInWithPassword({
+    const { data: { user: patientUser } } = await testSupabase.auth.signInWithPassword({
       email: TEST_ACCOUNTS.patient.email,
       password: TEST_ACCOUNTS.patient.password,
     })
 
     expect(patientUser).toBeDefined()
 
-    const { data: doctors } = await supabase
+    const { data: doctors } = await testSupabase
       .from('doctors')
       .select('user_id')
       .eq('verified', true)
@@ -338,7 +340,7 @@ describe('User Story: Chat System', () => {
         last_message: 'Test message',
       }
 
-      await supabase
+      await testSupabase
         .from('conversations')
         .insert([conversationData])
         .select()
@@ -349,9 +351,9 @@ describe('User Story: Chat System', () => {
   })
 })
 
-describe('User Story: Logout', () => {
+describeIfSupabase('User Story: Logout', () => {
   it('should allow user to logout', async () => {
-    const { error } = await supabase.auth.signOut()
+    const { error } = await testSupabase.auth.signOut()
     expect(error).toBeNull()
   })
 })

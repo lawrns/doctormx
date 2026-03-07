@@ -3,10 +3,11 @@
  * Wrapper centralizado con error handling, retry logic, y auditoría
  *
  * GLM z.ai es el proveedor principal para Doctor.mx
- * OpenAI se usa como fallback y para transcripción con Whisper
+ * Kimi se usa como proveedor secundario y OpenAI como fallback/transcripción
  */
 
 import { AI_CONFIG, getActiveProvider } from './config';
+import { isKimiPolicyRestricted } from './kimi';
 import { createClient } from '@/lib/supabase/server';
 import type {
   PreConsultaMessage,
@@ -22,6 +23,7 @@ import type {
 import type OpenAI from "openai";
 
 let glmClient: OpenAI | null = null;
+let kimiClient: OpenAI | null = null;
 let openaiClient: OpenAI | null = null;
 
 async function getGLMClient(): Promise<OpenAI> {
@@ -43,6 +45,27 @@ async function getGLMClient(): Promise<OpenAI> {
   }
 
   return glmClient;
+}
+
+async function getKimiClient(): Promise<OpenAI> {
+  if (!kimiClient && typeof window === "undefined") {
+    try {
+      const { default: OpenAI } = (await import("openai")) as typeof import("openai");
+      kimiClient = new OpenAI({
+        apiKey: AI_CONFIG.kimi.apiKey,
+        baseURL: AI_CONFIG.kimi.baseURL,
+      });
+    } catch (error) {
+      console.error("Error al inicializar Kimi client:", error);
+      throw new Error("Kimi client no disponible");
+    }
+  }
+
+  if (!kimiClient) {
+    throw new Error("Kimi client no inicializado");
+  }
+
+  return kimiClient;
 }
 
 async function getOpenAIClient(): Promise<OpenAI> {
@@ -67,12 +90,15 @@ async function getOpenAIClient(): Promise<OpenAI> {
 
 /**
  * Get the appropriate AI client based on configuration
- * Uses GLM if configured, otherwise falls back to OpenAI
+ * Uses GLM if configured, then Kimi, otherwise falls back to OpenAI
  */
 async function getAIClient(): Promise<OpenAI> {
   const provider = getActiveProvider();
   if (provider === 'glm' && AI_CONFIG.glm.apiKey) {
     return getGLMClient();
+  }
+  if (provider === 'kimi' && AI_CONFIG.kimi.apiKey) {
+    return getKimiClient();
   }
   return getOpenAIClient();
 }
@@ -80,7 +106,7 @@ async function getAIClient(): Promise<OpenAI> {
 
 /**
  * Chat completion con retry logic y fallback automático
- * Uses GLM as primary provider, OpenAI as fallback
+ * Uses GLM as primary provider, Kimi as secondary, OpenAI as fallback
  */
 export async function chatCompletion(params: {
   messages: PreConsultaMessage[];
@@ -90,7 +116,7 @@ export async function chatCompletion(params: {
 }): Promise<{
   response: string;
   usage: { inputTokens: number; outputTokens: number; cost: number };
-  provider: 'glm' | 'openai';
+  provider: 'glm' | 'kimi' | 'openai';
 }> {
   const { messages, systemPrompt, maxTokens, temperature } = params;
 
@@ -104,23 +130,42 @@ export async function chatCompletion(params: {
 
   // Try GLM first if configured
   const primaryProvider = getActiveProvider();
-  const providers: Array<'glm' | 'openai'> = primaryProvider === 'glm' && AI_CONFIG.glm.apiKey
-    ? ['glm', 'openai']
-    : ['openai'];
+  const providers: Array<'glm' | 'kimi' | 'openai'> = primaryProvider === 'glm' && AI_CONFIG.glm.apiKey
+    ? ['glm', 'kimi', 'openai']
+    : primaryProvider === 'kimi' && AI_CONFIG.kimi.apiKey
+      ? ['kimi', 'openai']
+      : ['openai'];
 
   let lastError: unknown = null;
 
   for (const provider of providers) {
     // Skip if no API key for this provider
     if (provider === 'glm' && !AI_CONFIG.glm.apiKey) continue;
+    if (provider === 'kimi' && !AI_CONFIG.kimi.apiKey) continue;
     if (provider === 'openai' && !AI_CONFIG.openai.apiKey) continue;
 
     try {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const client = provider === 'glm' ? await getGLMClient() : await getOpenAIClient() as unknown as any;
-      const model = provider === 'glm' ? AI_CONFIG.glm.defaultModel : AI_CONFIG.openai.model;
-      const configuredMaxTokens = provider === 'glm' ? AI_CONFIG.glm.maxTokens : AI_CONFIG.openai.maxTokens;
-      const configuredTemp = provider === 'glm' ? AI_CONFIG.glm.temperature : AI_CONFIG.openai.temperature;
+      const client = provider === 'glm'
+        ? await getGLMClient()
+        : provider === 'kimi'
+          ? await getKimiClient()
+          : await getOpenAIClient() as unknown as any;
+      const model = provider === 'glm'
+        ? AI_CONFIG.glm.defaultModel
+        : provider === 'kimi'
+          ? AI_CONFIG.kimi.defaultModel
+          : AI_CONFIG.openai.model;
+      const configuredMaxTokens = provider === 'glm'
+        ? AI_CONFIG.glm.maxTokens
+        : provider === 'kimi'
+          ? AI_CONFIG.kimi.maxTokens
+          : AI_CONFIG.openai.maxTokens;
+      const configuredTemp = provider === 'glm'
+        ? AI_CONFIG.glm.temperature
+        : provider === 'kimi'
+          ? AI_CONFIG.kimi.temperature
+          : AI_CONFIG.openai.temperature;
 
       console.log(`[AI] Intentando con ${provider}...`);
 
@@ -142,6 +187,10 @@ export async function chatCompletion(params: {
         usage.cost =
           (usage.inputTokens / 1_000_000) * AI_CONFIG.costs.glmInputPer1M +
           (usage.outputTokens / 1_000_000) * AI_CONFIG.costs.glmOutputPer1M;
+      } else if (provider === 'kimi') {
+        usage.cost =
+          (usage.inputTokens / 1_000_000) * AI_CONFIG.costs.kimiInputPer1M +
+          (usage.outputTokens / 1_000_000) * AI_CONFIG.costs.kimiOutputPer1M;
       } else {
         usage.cost =
           (usage.inputTokens / 1_000_000) * AI_CONFIG.costs.gpt4oMiniInputPer1M +
@@ -163,6 +212,11 @@ export async function chatCompletion(params: {
     } catch (error: unknown) {
       console.error(`[AI] Error con ${provider}:`, error);
       lastError = error;
+
+      if (provider === 'kimi' && isKimiPolicyRestricted(error)) {
+        console.warn('[AI] Kimi restringido por política del proveedor - usando fallback...');
+        continue;
+      }
 
       // Check for specific errors
       const status = error && typeof error === 'object' && 'status' in error ? error.status : null;
@@ -197,8 +251,8 @@ export async function chatCompletion(params: {
   console.error('[AI] Todos los proveedores fallaron');
 
   // Provide helpful error message
-  if (!AI_CONFIG.glm.apiKey && !AI_CONFIG.openai.apiKey) {
-    throw new Error('No hay API key configurada. Configura GLM_API_KEY o OPENAI_API_KEY.');
+  if (!AI_CONFIG.glm.apiKey && !AI_CONFIG.kimi.apiKey && !AI_CONFIG.openai.apiKey) {
+    throw new Error('No hay API key configurada. Configura GLM_API_KEY, KIMI_API_KEY o OPENAI_API_KEY.');
   }
 
   const errorMessage = lastError && typeof lastError === 'object' && 'message' in lastError && typeof lastError.message === 'string'
@@ -206,7 +260,7 @@ export async function chatCompletion(params: {
     : 'Error desconocido';
 
   if (errorMessage.includes('Insufficient balance')) {
-    throw new Error('Sin saldo en GLM. Recarga tu cuenta en z.ai o configura OPENAI_API_KEY como fallback.');
+    throw new Error('Sin saldo en el proveedor primario. Recarga tu cuenta o configura KIMI_API_KEY / OPENAI_API_KEY como fallback.');
   }
 
   throw new Error(`Error de IA: ${errorMessage}`);
@@ -263,7 +317,7 @@ export async function transcribeAudio(params: {
 
 /**
  * Análisis estructurado con JSON mode
- * Uses GLM as primary provider, OpenAI as fallback
+ * Uses GLM as primary provider, Kimi as secondary, OpenAI as fallback
  */
 export async function structuredAnalysis<T>(params: {
   systemPrompt: string;
@@ -284,21 +338,32 @@ export async function structuredAnalysis<T>(params: {
 
   // Try GLM first if configured
   const primaryProvider = getActiveProvider();
-  const providers: Array<'glm' | 'openai'> = primaryProvider === 'glm' && AI_CONFIG.glm.apiKey
-    ? ['glm', 'openai']
-    : ['openai'];
+  const providers: Array<'glm' | 'kimi' | 'openai'> = primaryProvider === 'glm' && AI_CONFIG.glm.apiKey
+    ? ['glm', 'kimi', 'openai']
+    : primaryProvider === 'kimi' && AI_CONFIG.kimi.apiKey
+      ? ['kimi', 'openai']
+      : ['openai'];
 
   let lastError: unknown = null;
 
   for (const provider of providers) {
     // Skip if no API key for this provider
     if (provider === 'glm' && !AI_CONFIG.glm.apiKey) continue;
+    if (provider === 'kimi' && !AI_CONFIG.kimi.apiKey) continue;
     if (provider === 'openai' && !AI_CONFIG.openai.apiKey) continue;
 
     try {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const client = provider === 'glm' ? await getGLMClient() : await getOpenAIClient() as unknown as any;
-      const model = provider === 'glm' ? AI_CONFIG.glm.defaultModel : AI_CONFIG.openai.model;
+      const client = provider === 'glm'
+        ? await getGLMClient()
+        : provider === 'kimi'
+          ? await getKimiClient()
+          : await getOpenAIClient() as unknown as any;
+      const model = provider === 'glm'
+        ? AI_CONFIG.glm.defaultModel
+        : provider === 'kimi'
+          ? AI_CONFIG.kimi.defaultModel
+          : AI_CONFIG.openai.model;
 
       const completion = await client.chat.completions.create({
         model,
@@ -315,6 +380,11 @@ export async function structuredAnalysis<T>(params: {
     } catch (error: unknown) {
       console.error(`[AI] Error análisis con ${provider}:`, error);
       lastError = error;
+
+      if (provider === 'kimi' && isKimiPolicyRestricted(error)) {
+        console.warn('[AI] Kimi restringido por política del proveedor en análisis - usando fallback...');
+      }
+
       continue; // Try next provider
     }
   }
@@ -368,11 +438,15 @@ export async function auditAIOperation(params: {
   latencyMs: number;
   status: 'success' | 'error';
   error?: string;
-  provider?: 'glm' | 'openai';
+  provider?: 'glm' | 'kimi' | 'openai';
 }): Promise<void> {
   const supabase = await createClient();
   const provider = params.provider || getActiveProvider();
-  const model = provider === 'glm' ? AI_CONFIG.glm.defaultModel : AI_CONFIG.openai.model;
+  const model = provider === 'glm'
+    ? AI_CONFIG.glm.defaultModel
+    : provider === 'kimi'
+      ? AI_CONFIG.kimi.defaultModel
+      : AI_CONFIG.openai.model;
 
   try {
     await supabase.from('ai_audit_logs').insert({

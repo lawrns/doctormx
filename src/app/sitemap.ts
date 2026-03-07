@@ -13,6 +13,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/auth/login`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
     { url: `${BASE_URL}/auth/register`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
   )
+
+  if (!process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    return entries
+  }
   
   try {
     // Get specialties and cities for programmatic pages

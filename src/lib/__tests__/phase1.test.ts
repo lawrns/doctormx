@@ -67,6 +67,11 @@ vi.mock('@/lib/availability', () => ({
   getAvailableSlots: vi.fn().mockResolvedValue(['09:30'])
 }))
 
+vi.mock('@/lib/whatsapp-notifications', () => ({
+  getPatientPhone: vi.fn().mockResolvedValue('+525511111111'),
+  sendAppointmentConfirmation: vi.fn().mockResolvedValue({ success: true }),
+}))
+
 vi.mock('@/lib/openai', () => ({
   openai: {
     chat: {
@@ -117,21 +122,32 @@ describe('Phase 1: Unit Tests', () => {
   })
 
   it('should handle payment failure', async () => {
-    const { createClient } = await import('@/lib/supabase/server')
+    const { createClient, createServiceClient } = await import('@/lib/supabase/server')
     const { handlePaymentFailure } = await import('@/lib/payment')
     
     const aptData = { id: 'apt-1', doctor_id: 'doc-1', start_ts: new Date().toISOString(), end_ts: new Date().toISOString() }
     const payData = { id: 'pay-1' }
 
+    const lockReleaseQuery = {
+      eq: vi.fn().mockReturnThis(),
+      gte: vi.fn().mockReturnThis(),
+      lte: vi.fn().mockResolvedValue({ error: null }),
+    }
+
     const mockFrom = vi.fn()
       .mockReturnValueOnce(createMockQuery(aptData))
       .mockReturnValueOnce(createMockQuery())
-      .mockReturnValueOnce(createMockQuery())
+      .mockReturnValueOnce({ delete: vi.fn().mockReturnValue(lockReleaseQuery) })
       .mockReturnValueOnce(createMockQuery(payData))
       .mockReturnValueOnce(createMockQuery())
 
     vi.mocked(createClient).mockResolvedValue({
       from: mockFrom,
+      auth: { getUser: vi.fn() }
+    } as never)
+
+    vi.mocked(createServiceClient).mockReturnValue({
+      from: vi.fn().mockReturnValue(createMockQuery({ phone: null, full_name: null })),
       auth: { getUser: vi.fn() }
     } as never)
 
@@ -151,7 +167,7 @@ describe('Phase 1: Unit Tests', () => {
       .mockReturnValueOnce(createMockQuery(mockAppointment))
       .mockReturnValueOnce(createMockQuery({ email: 't@t.com' }))
       .mockReturnValueOnce(createMockQuery({ id: 'a1', start_ts: new Date().toISOString(), doctor: { profile: { full_name: 'D' } } }))
-      .mockReturnValueOnce(createMockQuery({ full_name: 'P' }))
+      .mockReturnValueOnce(createMockQuery({ full_name: 'P', phone: '+525511111111' }))
 
     vi.mocked(createClient).mockResolvedValue({
       from: mockFrom,
@@ -172,7 +188,7 @@ describe('Phase 1: Unit Tests', () => {
 describe('Phase 1: Property Tests', () => {
   it('should validate redirect URLs', () => {
     fc.assert(
-      fc.property(fc.string({minLength: 1}), (path) => {
+      fc.property(fc.string({minLength: 1}), (path: string) => {
         const url = new URL('/auth/login', 'http://localhost')
         url.searchParams.set('redirect', path)
         return url.searchParams.get('redirect') === path

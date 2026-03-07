@@ -35,7 +35,7 @@ export interface StripeConfig {
 export interface AIConfig {
   primaryKey: string;
   fallbackKey?: string;
-  provider: 'glm' | 'openai' | 'fallback';
+  provider: 'glm' | 'kimi' | 'openai' | 'fallback';
 }
 
 export interface RedisConfig {
@@ -376,13 +376,22 @@ export function getStripeConfig(): StripeConfig {
  */
 export function getAIConfig(): AIConfig {
   const glmKey = getEnvValue('GLM_API_KEY');
+  const kimiKey = getEnvValue('KIMI_API_KEY');
   const openAIKey = getEnvValue('OPENAI_API_KEY');
   
   if (glmKey) {
     return {
       primaryKey: glmKey,
-      fallbackKey: openAIKey || undefined,
+      fallbackKey: kimiKey || openAIKey || undefined,
       provider: 'glm',
+    };
+  }
+
+  if (kimiKey) {
+    return {
+      primaryKey: kimiKey,
+      fallbackKey: openAIKey || undefined,
+      provider: 'kimi',
     };
   }
   

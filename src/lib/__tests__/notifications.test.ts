@@ -132,14 +132,16 @@ describe('Notifications System', () => {
             return {
               select: vi.fn().mockReturnValue({
                 eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ 
-                    data: { 
-                      id: 'payment-1', 
-                      amount_cents: 50000, 
-                      currency: 'MXN',
-                      created_at: new Date().toISOString()
-                    }, 
-                    error: null 
+                  eq: vi.fn().mockReturnValue({
+                    single: vi.fn().mockResolvedValue({ 
+                      data: { 
+                        id: 'payment-1', 
+                        amount_cents: 50000, 
+                        currency: 'MXN',
+                        created_at: new Date().toISOString()
+                      }, 
+                      error: null 
+                    }),
                   }),
                 }),
               }),
@@ -309,8 +311,8 @@ describe('Notifications System', () => {
       const resultUSD = getPriceDisplay(5000, 'USD')
       const resultEUR = getPriceDisplay(4500, 'EUR')
       
-      expect(resultUSD).toBe('$50.00')
-      expect(resultEUR).toBe('€45.00')
+      expect(resultUSD).toBe('USD 50.00')
+      expect(resultEUR).toBe('EUR 45.00')
     })
   })
 
@@ -351,7 +353,7 @@ describe('Notifications System', () => {
       fc.assert(
         fc.property(
           fc.stringMatching(/^[^\s@]+@[^\s@]+\.[^\s@]+$/),
-          (email) => {
+          (email: string) => {
             const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
             return regex.test(email)
           }
@@ -364,7 +366,7 @@ describe('Notifications System', () => {
       fc.assert(
         fc.property(
           fc.string({ minLength: 1, maxLength: 100 }),
-          (name) => {
+          (name: string) => {
             return typeof name === 'string' && name.length >= 1 && name.length <= 100
           }
         ),

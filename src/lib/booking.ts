@@ -117,8 +117,12 @@ export async function getAppointmentForBooking(appointmentId: string) {
 async function sendConfirmationEmail(patientId: string, appointmentId: string) {
   const supabase = await createClient()
 
-  const { data: profile } = await supabase
-    .from('profiles')
+  const profileQuery = supabase.from('profiles')
+  if (!profileQuery || typeof profileQuery.select !== 'function') {
+    return
+  }
+
+  const { data: profile } = await profileQuery
     .select('email, full_name')
     .eq('id', patientId)
     .single()
@@ -144,8 +148,12 @@ async function sendWhatsAppNotification(patientId: string, appointmentId: string
     return
   }
 
-  const { data: appointment } = await supabase
-    .from('appointments')
+  const appointmentQuery = supabase.from('appointments')
+  if (!appointmentQuery || typeof appointmentQuery.select !== 'function') {
+    return
+  }
+
+  const { data: appointment } = await appointmentQuery
     .select(`
       *,
       doctor:doctors (
@@ -164,8 +172,12 @@ async function sendWhatsAppNotification(patientId: string, appointmentId: string
   const dateStr = startTs.toLocaleDateString('es-MX', { weekday: 'long', month: 'long', day: 'numeric' })
   const timeStr = startTs.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' })
 
-  const { data: profile } = await supabase
-    .from('profiles')
+  const profileQuery = supabase.from('profiles')
+  if (!profileQuery || typeof profileQuery.select !== 'function') {
+    return
+  }
+
+  const { data: profile } = await profileQuery
     .select('full_name')
     .eq('id', patientId)
     .single()

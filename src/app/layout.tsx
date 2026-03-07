@@ -20,7 +20,10 @@ const hedvigLettersSerif = Hedvig_Letters_Serif({
   subsets: ["latin"],
 });
 
+const SITE_URL = process.env.NEXT_PUBLIC_APP_URL || "https://doctor.mx";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Doctor.mx | Telemedicina y Doctores Verificados en México | 24/7",
   description:
     "Consulta médica en línea con doctores verificados en México. Telemedicina segura, videoconsultas HD, y Dr. Simeon - tu asistente de salud con IA. Más de 500 especialistas disponibles 24/7.",

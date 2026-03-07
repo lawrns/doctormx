@@ -169,6 +169,59 @@ function getEmbeddedCriticalRules(): Rule[] {
       action: 'ER',
       reason: 'Saturación de oxígeno baja es una emergencia',
       when: { 'vitals.spo2_lt': 90 }
+    },
+    {
+      id: 'pregnancy_bleeding_emergency',
+      action: 'ER',
+      reason: 'Sangrado abundante durante el embarazo requiere atención inmediata',
+      when: {
+        all: [
+          { isPregnant: true },
+          { text_contains_any: ['sangrado vaginal abundante', 'sangrado abundante', 'sangrado en embarazo'] }
+        ]
+      }
+    },
+    {
+      id: 'high_fever_urgent',
+      action: 'URGENT',
+      reason: 'Fiebre alta persistente requiere valoración médica en menos de 24 horas',
+      when: { text_contains_any: ['fiebre de 40', '40 grados', 'fiebre alta'] }
+    },
+    {
+      id: 'severe_pain_urgent',
+      action: 'URGENT',
+      reason: 'Dolor intenso o insoportable requiere evaluación prioritaria',
+      when: { text_contains_any: ['dolor insoportable', 'dolor muy fuerte', 'dolor severo'] }
+    },
+    {
+      id: 'infection_urgent',
+      action: 'URGENT',
+      reason: 'Signos de infección activa pueden empeorar rápidamente y deben revisarse pronto',
+      when: { text_contains_any: ['pus', 'muy roja y caliente', 'herida infectada'] }
+    },
+    {
+      id: 'chronic_pain_primary',
+      action: 'PRIMARY',
+      reason: 'Síntomas persistentes por semanas ameritan consulta médica regular',
+      when: { text_contains_any: ['desde hace semanas', 'desde hace meses', 'dolor de espalda'] }
+    },
+    {
+      id: 'skin_issue_primary',
+      action: 'PRIMARY',
+      reason: 'Problemas de piel no urgentes suelen resolverse con consulta de atención primaria o dermatología',
+      when: { text_contains_any: ['acné', 'manchas en la piel', 'erupción leve'] }
+    },
+    {
+      id: 'cold_selfcare',
+      action: 'SELFCARE',
+      reason: 'Un resfriado leve normalmente puede manejarse en casa con medidas básicas',
+      when: { text_contains_any: ['nariz tapada', 'estornudos', 'gripa leve'] }
+    },
+    {
+      id: 'minor_injury_selfcare',
+      action: 'SELFCARE',
+      reason: 'Lesiones superficiales menores suelen manejarse con limpieza y vigilancia en casa',
+      when: { text_contains_any: ['raspón pequeño', 'raspon pequeño', 'golpe leve'] }
     }
   ];
 }

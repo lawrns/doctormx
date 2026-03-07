@@ -10,10 +10,11 @@ import { openai } from '@/lib/openai'
 import { openrouter } from './openrouter'
 import { deepseek, type DeepSeekMessage } from './deepseek'
 import { glm as glmClient, GLM_CONFIG, isGLMConfigured, calculateGLMCost } from './glm'
+import { kimi, KIMI_CONFIG, isKimiConfigured, calculateKimiCost, isKimiPolicyRestricted } from './kimi'
 import { AI_CONFIG } from './config'
 import { logger } from '@/lib/observability/logger'
 
-export type AIProvider = 'glm' | 'openai' | 'openrouter' | 'deepseek'
+export type AIProvider = 'glm' | 'kimi' | 'openai' | 'openrouter' | 'deepseek'
 
 export type UseCase =
   | 'vision-analysis'      // Medical image analysis
@@ -47,19 +48,19 @@ export interface RouterResponse {
 const USE_CASE_ROUTING: Record<UseCase, { primary: AIProvider; fallbacks: AIProvider[] }> = {
   'vision-analysis': {
     primary: 'glm',         // GLM-4.5v for medical images (cost effective)
-    fallbacks: ['openrouter', 'openai'],
+    fallbacks: ['kimi', 'openrouter', 'openai'],
   },
   'differential-diagnosis': {
     primary: 'glm',         // GLM-4.7 for complex reasoning
-    fallbacks: ['deepseek', 'openai'],
+    fallbacks: ['kimi', 'deepseek', 'openai'],
   },
   'triage': {
     primary: 'glm',         // GLM-4.5-air for fast triage
-    fallbacks: ['deepseek', 'openai'],
+    fallbacks: ['kimi', 'deepseek', 'openai'],
   },
   'prescription': {
     primary: 'glm',         // GLM for evidence-based recommendations
-    fallbacks: ['deepseek', 'openai'],
+    fallbacks: ['kimi', 'deepseek', 'openai'],
   },
   'transcription': {
     primary: 'openai',      // Whisper is still best for transcription
@@ -67,11 +68,11 @@ const USE_CASE_ROUTING: Record<UseCase, { primary: AIProvider; fallbacks: AIProv
   },
   'general-chat': {
     primary: 'glm',         // GLM-4.5-air for fast, cost-effective chat
-    fallbacks: ['openai', 'deepseek'],
+    fallbacks: ['kimi', 'openai', 'deepseek'],
   },
   'soap-notes': {
     primary: 'glm',         // GLM-4.7 for structured output
-    fallbacks: ['deepseek', 'openai'],
+    fallbacks: ['kimi', 'deepseek', 'openai'],
   },
 }
 
@@ -225,82 +226,116 @@ class AIRouter {
     const routing = USE_CASE_ROUTING[useCase]
     const provider = config.preferredProvider || routing.primary
 
-    try {
-      // Try GLM first (primary provider for reasoning)
-      if (provider === 'glm' && isGLMConfigured()) {
-        logger.info('[ROUTER] Routing reasoning to GLM')
+    const providersToTry: AIProvider[] = [provider, ...routing.fallbacks.filter((fallback) => fallback !== provider)]
+    let lastError: unknown = null
 
-        const response = await glmClient.chat.completions.create({
-          model: GLM_CONFIG.models.reasoning,
-          messages,
-          temperature: 0.3,
-          max_tokens: 2000,
-        })
+    for (const candidate of providersToTry) {
+      try {
+        if (candidate === 'glm' && isGLMConfigured()) {
+          logger.info('[ROUTER] Routing reasoning to GLM')
 
-        const content = response.choices[0]?.message?.content || ''
-        const usage = response.usage || { prompt_tokens: 0, completion_tokens: 0 }
-        const costUSD = calculateGLMCost(usage.prompt_tokens, usage.completion_tokens)
-
-        return {
-          content,
-          provider: 'glm',
-          model: GLM_CONFIG.models.reasoning,
-          costUSD,
-          latencyMs: Date.now() - startTime,
-        }
-      }
-
-      // Try DeepSeek as fallback (98% cheaper than GPT-4, better reasoning)
-      if ((provider === 'deepseek' || (provider === 'glm' && !isGLMConfigured())) && deepseek.isConfigured()) {
-        logger.info('[ROUTER] Routing reasoning to DeepSeek')
-
-        const response = await deepseek.chatCompletion(
-          messages as DeepSeekMessage[],
-          {
+          const response = await glmClient.chat.completions.create({
+            model: GLM_CONFIG.models.reasoning,
+            messages,
             temperature: 0.3,
-            maxTokens: 2000,
+            max_tokens: 2000,
+          })
+
+          const content = response.choices[0]?.message?.content || ''
+          const usage = response.usage || { prompt_tokens: 0, completion_tokens: 0 }
+          const costUSD = calculateGLMCost(usage.prompt_tokens, usage.completion_tokens)
+
+          return {
+            content,
+            provider: 'glm',
+            model: GLM_CONFIG.models.reasoning,
+            costUSD,
+            latencyMs: Date.now() - startTime,
           }
-        )
-
-        return {
-          content: response.content,
-          provider: 'deepseek',
-          model: 'deepseek-reasoner',
-          costUSD: response.costUSD,
-          latencyMs: Date.now() - startTime,
-          reasoning: response.reasoning,
         }
+
+        if (candidate === 'kimi' && isKimiConfigured()) {
+          logger.info('[ROUTER] Routing reasoning to Kimi')
+
+          const response = await kimi.chat.completions.create({
+            model: KIMI_CONFIG.models.reasoning,
+            messages,
+            temperature: 0.3,
+            max_tokens: 2000,
+          })
+
+          const content = response.choices[0]?.message?.content || ''
+          const usage = response.usage || { prompt_tokens: 0, completion_tokens: 0 }
+          const costUSD = calculateKimiCost(usage.prompt_tokens, usage.completion_tokens)
+
+          return {
+            content,
+            provider: 'kimi',
+            model: KIMI_CONFIG.models.reasoning,
+            costUSD,
+            latencyMs: Date.now() - startTime,
+          }
+        }
+
+        if (candidate === 'deepseek' && deepseek.isConfigured()) {
+          logger.info('[ROUTER] Routing reasoning to DeepSeek')
+
+          const response = await deepseek.chatCompletion(
+            messages as DeepSeekMessage[],
+            {
+              temperature: 0.3,
+              maxTokens: 2000,
+            }
+          )
+
+          return {
+            content: response.content,
+            provider: 'deepseek',
+            model: 'deepseek-reasoner',
+            costUSD: response.costUSD,
+            latencyMs: Date.now() - startTime,
+            reasoning: response.reasoning,
+          }
+        }
+
+        if (candidate === 'openai') {
+          logger.info('[ROUTER] Routing reasoning to OpenAI (fallback)')
+
+          const response = await openai.chat.completions.create({
+            model: 'gpt-4-turbo',
+            messages,
+            temperature: 0.3,
+            max_tokens: 2000,
+          })
+
+          const content = response.choices[0]?.message?.content || ''
+          const usage = response.usage || { prompt_tokens: 0, completion_tokens: 0 }
+          const costUSD =
+            (usage.prompt_tokens / 1_000_000) * 10.0 +
+            (usage.completion_tokens / 1_000_000) * 30.0
+
+          return {
+            content,
+            provider: 'openai',
+            model: 'gpt-4-turbo',
+            costUSD,
+            latencyMs: Date.now() - startTime,
+          }
+        }
+      } catch (error) {
+        lastError = error
+
+        if (candidate === 'kimi' && isKimiPolicyRestricted(error)) {
+          logger.warn('[ROUTER] Kimi blocked by provider policy, skipping fallback candidate', { candidate })
+          continue
+        }
+
+        logger.warn('[ROUTER] Reasoning provider failed, trying next fallback', { candidate, error })
       }
-
-      // Fallback to OpenAI GPT-4 Turbo
-      logger.info('[ROUTER] Routing reasoning to OpenAI (fallback)')
-
-      const response = await openai.chat.completions.create({
-        model: 'gpt-4-turbo',
-        messages,
-        temperature: 0.3,
-        max_tokens: 2000,
-      })
-
-      const content = response.choices[0]?.message?.content || ''
-      const usage = response.usage || { prompt_tokens: 0, completion_tokens: 0 }
-
-      // GPT-4 Turbo pricing: $10.00 input, $30.00 output per 1M tokens
-      const costUSD =
-        (usage.prompt_tokens / 1_000_000) * 10.0 +
-        (usage.completion_tokens / 1_000_000) * 30.0
-
-      return {
-        content,
-        provider: 'openai',
-        model: 'gpt-4-turbo',
-        costUSD,
-        latencyMs: Date.now() - startTime,
-      }
-    } catch (error) {
-      logger.error('[ROUTER] Reasoning routing failed', { error, provider })
-      throw error
     }
+
+    logger.warn('[ROUTER] Reasoning routing exhausted fallbacks', { error: lastError, provider })
+    throw lastError instanceof Error ? lastError : new Error('Reasoning routing failed')
   }
 
   /**
@@ -315,86 +350,116 @@ class AIRouter {
     const routing = USE_CASE_ROUTING[useCase]
     const provider = config.preferredProvider || routing.primary
 
-    try {
-      // GLM is primary for general chat (cost effective)
-      if (provider === 'glm' && isGLMConfigured()) {
-        logger.info('[ROUTER] Routing chat to GLM')
+    const providersToTry: AIProvider[] = [provider, ...routing.fallbacks.filter((fallback) => fallback !== provider)]
+    let lastError: unknown = null
 
-        const response = await glmClient.chat.completions.create({
-          model: GLM_CONFIG.models.costEffective,
-          messages,
-          temperature: 0.7,
-          max_tokens: 500,
-        })
+    for (const candidate of providersToTry) {
+      try {
+        if (candidate === 'glm' && isGLMConfigured()) {
+          logger.info('[ROUTER] Routing chat to GLM')
 
-        const content = response.choices[0]?.message?.content || ''
-        const usage = response.usage || { prompt_tokens: 0, completion_tokens: 0 }
-        const costUSD = calculateGLMCost(usage.prompt_tokens, usage.completion_tokens)
-
-        return {
-          content,
-          provider: 'glm',
-          model: GLM_CONFIG.models.costEffective,
-          costUSD,
-          latencyMs: Date.now() - startTime,
-        }
-      }
-
-      // OpenAI as fallback for general chat
-      if (provider === 'openai' || (provider === 'glm' && !isGLMConfigured())) {
-        logger.info('[ROUTER] Routing chat to OpenAI')
-
-        const response = await openai.chat.completions.create({
-          model: 'gpt-4o-mini',
-          messages,
-          temperature: 0.7,
-          max_tokens: 500,
-        })
-
-        const content = response.choices[0]?.message?.content || ''
-        const usage = response.usage || { prompt_tokens: 0, completion_tokens: 0 }
-
-        // GPT-4o-mini pricing: $0.15 input, $0.60 output per 1M tokens
-        const costUSD =
-          (usage.prompt_tokens / 1_000_000) * 0.15 +
-          (usage.completion_tokens / 1_000_000) * 0.6
-
-        return {
-          content,
-          provider: 'openai',
-          model: 'gpt-4o-mini',
-          costUSD,
-          latencyMs: Date.now() - startTime,
-        }
-      }
-
-      // DeepSeek as another fallback option
-      if (provider === 'deepseek' && deepseek.isConfigured()) {
-        logger.info('[ROUTER] Routing chat to DeepSeek')
-
-        const response = await deepseek.chatCompletion(
-          messages as DeepSeekMessage[],
-          {
+          const response = await glmClient.chat.completions.create({
+            model: GLM_CONFIG.models.costEffective,
+            messages,
             temperature: 0.7,
-            maxTokens: 500,
+            max_tokens: 500,
+          })
+
+          const content = response.choices[0]?.message?.content || ''
+          const usage = response.usage || { prompt_tokens: 0, completion_tokens: 0 }
+          const costUSD = calculateGLMCost(usage.prompt_tokens, usage.completion_tokens)
+
+          return {
+            content,
+            provider: 'glm',
+            model: GLM_CONFIG.models.costEffective,
+            costUSD,
+            latencyMs: Date.now() - startTime,
           }
-        )
-
-        return {
-          content: response.content,
-          provider: 'deepseek',
-          model: 'deepseek-reasoner',
-          costUSD: response.costUSD,
-          latencyMs: Date.now() - startTime,
-          reasoning: response.reasoning,
         }
-      }
 
-      throw new Error('No configured AI provider available')
-    } catch (error) {
-      logger.error('[ROUTER] Chat routing failed', { error, provider })
-      throw error
+        if (candidate === 'kimi' && isKimiConfigured()) {
+          logger.info('[ROUTER] Routing chat to Kimi')
+
+          const response = await kimi.chat.completions.create({
+            model: KIMI_CONFIG.models.costEffective,
+            messages,
+            temperature: 0.7,
+            max_tokens: 500,
+          })
+
+          const content = response.choices[0]?.message?.content || ''
+          const usage = response.usage || { prompt_tokens: 0, completion_tokens: 0 }
+          const costUSD = calculateKimiCost(usage.prompt_tokens, usage.completion_tokens)
+
+          return {
+            content,
+            provider: 'kimi',
+            model: KIMI_CONFIG.models.costEffective,
+            costUSD,
+            latencyMs: Date.now() - startTime,
+          }
+        }
+
+        if (candidate === 'openai') {
+          logger.info('[ROUTER] Routing chat to OpenAI')
+
+          const response = await openai.chat.completions.create({
+            model: 'gpt-4o-mini',
+            messages,
+            temperature: 0.7,
+            max_tokens: 500,
+          })
+
+          const content = response.choices[0]?.message?.content || ''
+          const usage = response.usage || { prompt_tokens: 0, completion_tokens: 0 }
+          const costUSD =
+            (usage.prompt_tokens / 1_000_000) * 0.15 +
+            (usage.completion_tokens / 1_000_000) * 0.6
+
+          return {
+            content,
+            provider: 'openai',
+            model: 'gpt-4o-mini',
+            costUSD,
+            latencyMs: Date.now() - startTime,
+          }
+        }
+
+        if (candidate === 'deepseek' && deepseek.isConfigured()) {
+          logger.info('[ROUTER] Routing chat to DeepSeek')
+
+          const response = await deepseek.chatCompletion(
+            messages as DeepSeekMessage[],
+            {
+              temperature: 0.7,
+              maxTokens: 500,
+            }
+          )
+
+          return {
+            content: response.content,
+            provider: 'deepseek',
+            model: 'deepseek-reasoner',
+            costUSD: response.costUSD,
+            latencyMs: Date.now() - startTime,
+            reasoning: response.reasoning,
+          }
+        }
+      } catch (error) {
+        lastError = error
+
+        if (candidate === 'kimi' && isKimiPolicyRestricted(error)) {
+          logger.warn('[ROUTER] Kimi blocked by provider policy, skipping fallback candidate', { candidate })
+          continue
+        }
+
+        logger.warn('[ROUTER] Chat provider failed, trying next fallback', { candidate, error })
+      }
     }
+
+    logger.error('[ROUTER] Chat routing failed', { error: lastError, provider })
+    throw lastError instanceof Error ? lastError : new Error('Chat routing failed')
   }
 
   /**
@@ -405,6 +470,7 @@ class AIRouter {
   ): Promise<Record<AIProvider, number>> {
     return {
       glm: (estimatedTokens.input / 1_000_000) * GLM_CONFIG.pricing.input + (estimatedTokens.output / 1_000_000) * GLM_CONFIG.pricing.output,
+      kimi: (estimatedTokens.input / 1_000_000) * KIMI_CONFIG.pricing.input + (estimatedTokens.output / 1_000_000) * KIMI_CONFIG.pricing.output,
       openai: (estimatedTokens.input / 1_000_000) * 10.0 + (estimatedTokens.output / 1_000_000) * 30.0,
       deepseek: (estimatedTokens.input / 1_000_000) * 0.14 + (estimatedTokens.output / 1_000_000) * 0.28,
       openrouter: (estimatedTokens.input / 1_000_000) * 0.125 + (estimatedTokens.output / 1_000_000) * 0.375,
@@ -417,6 +483,7 @@ class AIRouter {
   getProviderStatus(): Record<AIProvider, boolean> {
     return {
       glm: isGLMConfigured(),
+      kimi: isKimiConfigured(),
       openai: !!process.env.OPENAI_API_KEY,
       openrouter: openrouter.isConfigured(),
       deepseek: deepseek.isConfigured(),
@@ -429,6 +496,9 @@ class AIRouter {
   getPrimaryProvider(): AIProvider {
     if (AI_CONFIG.features.useGLM && isGLMConfigured()) {
       return 'glm'
+    }
+    if (isKimiConfigured()) {
+      return 'kimi'
     }
     if (deepseek.isConfigured()) {
       return 'deepseek'

@@ -1,12 +1,43 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { mockSupabaseClient, mockStripePaymentIntent, mockStripePaymentIntentSucceeded, mockStripeRefund, createMockAppointment, createMockPayment } from '@/lib/__tests__/mocks'
 
+function createEqSingleChain<T>(result: { data: T; error: unknown }) {
+  return {
+    eq: vi.fn().mockReturnValue({
+      eq: vi.fn().mockReturnValue({
+        single: vi.fn().mockResolvedValue(result),
+      }),
+      single: vi.fn().mockResolvedValue(result),
+    }),
+  }
+}
+
+function createDeleteRangeChain() {
+  return {
+    eq: vi.fn().mockReturnValue({
+      gte: vi.fn().mockReturnValue({
+        lte: vi.fn().mockResolvedValue({ error: null }),
+      }),
+    }),
+  }
+}
+
+function createUpdateSelectSingleChain<T>(result: { data: T; error: unknown }) {
+  return {
+    eq: vi.fn().mockReturnValue({
+      select: vi.fn().mockReturnValue({
+        single: vi.fn().mockResolvedValue(result),
+      }),
+    }),
+  }
+}
+
 vi.mock('@/lib/supabase/server', () => ({
   createClient: vi.fn().mockResolvedValue(mockSupabaseClient),
   createServiceClient: vi.fn().mockResolvedValue(mockSupabaseClient),
 }))
 
-vi.mock('stripe', () => ({
+vi.mock('@/lib/stripe', () => ({
   stripe: {
     paymentIntents: {
       create: vi.fn().mockResolvedValue(mockStripePaymentIntent),
@@ -16,14 +47,20 @@ vi.mock('stripe', () => ({
       create: vi.fn().mockResolvedValue(mockStripeRefund),
     },
   },
+  createPaymentIntent: vi.fn(async () => mockStripePaymentIntent),
+  verifyPayment: vi.fn(async () => true),
 }))
 
 vi.mock('@/lib/notifications', () => ({
   sendPaymentReceipt: vi.fn().mockResolvedValue({ success: true }),
+  sendReceiptEmail: vi.fn().mockResolvedValue({ success: true }),
 }))
 
 vi.mock('@/lib/whatsapp-notifications', () => ({
   sendPaymentReceipt: vi.fn().mockResolvedValue({ success: true }),
+  sendReceiptWhatsApp: vi.fn().mockResolvedValue({ success: true }),
+  getPatientPhone: vi.fn().mockResolvedValue('+525511111111'),
+  getDoctorName: vi.fn().mockResolvedValue('Dr. Test'),
 }))
 
 describe('Payment Flow Integration', () => {
@@ -37,6 +74,7 @@ describe('Payment Flow Integration', () => {
 
   describe('Complete Payment Flow', () => {
     it('should complete full payment: initialize → confirm → receipt', async () => {
+      const { createClient } = await import('@/lib/supabase/server')
       const mockPayment = createMockPayment()
       const mockAppointment = createMockAppointment({ status: 'confirmed' })
 
@@ -47,20 +85,18 @@ describe('Payment Flow Integration', () => {
             return {
               select: vi.fn().mockReturnValue({
                 eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ 
-                    data: { 
-                      ...mockAppointment, 
-                      doctor: { price_cents: 50000, currency: 'MXN' }
-                    }, 
-                    error: null 
+                  eq: vi.fn().mockReturnValue({
+                    single: vi.fn().mockResolvedValue({ 
+                      data: { 
+                        ...mockAppointment, 
+                        doctor: { price_cents: 50000, currency: 'MXN' }
+                      }, 
+                      error: null 
+                    }),
                   }),
                 }),
               }),
-              update: vi.fn().mockReturnValue({
-                select: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: mockAppointment, error: null }),
-                }),
-              }),
+              update: vi.fn().mockReturnValue(createUpdateSelectSingleChain({ data: mockAppointment, error: null })),
             }
           }
           if (table === 'payments') {
@@ -80,13 +116,27 @@ describe('Payment Flow Integration', () => {
               }),
             }
           }
+          if (table === 'profiles') {
+            return {
+              select: vi.fn().mockReturnValue({
+                eq: vi.fn().mockReturnValue({
+                  single: vi.fn().mockResolvedValue({
+                    data: { email: 'patient@test.com', full_name: 'Paciente Test' },
+                    error: null,
+                  }),
+                }),
+              }),
+            }
+          }
           return mockSupabaseClient.from(table)
         }),
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      vi.mocked(createClient).mockResolvedValue(mockClient as never)
+
+      const stripeModule = await import('@/lib/stripe')
+      vi.mocked(stripeModule.stripe.paymentIntents.create).mockResolvedValue(mockStripePaymentIntent as never)
+      vi.mocked(stripeModule.stripe.paymentIntents.retrieve).mockResolvedValue(mockStripePaymentIntentSucceeded as never)
 
       const { initializePayment } = await import('@/lib/payment')
       const { confirmSuccessfulPayment } = await import('@/lib/payment')
@@ -110,6 +160,7 @@ describe('Payment Flow Integration', () => {
     })
 
     it('should handle payment failure scenario', async () => {
+      const { createClient } = await import('@/lib/supabase/server')
       const mockAppointment = createMockAppointment({ status: 'cancelled' })
       const mockPayment = createMockPayment({ status: 'failed' })
 
@@ -142,18 +193,14 @@ describe('Payment Flow Integration', () => {
           }
           if (table === 'slot_locks') {
             return {
-              delete: vi.fn().mockReturnValue({
-                eq: vi.fn().mockResolvedValue({ error: null }),
-              }),
+              delete: vi.fn().mockReturnValue(createDeleteRangeChain()),
             }
           }
           return mockSupabaseClient.from(table)
         }),
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      vi.mocked(createClient).mockResolvedValue(mockClient as never)
 
       const { handlePaymentFailure } = await import('@/lib/payment')
 
@@ -165,6 +212,7 @@ describe('Payment Flow Integration', () => {
 
   describe('Refund Flow', () => {
     it('should process full refund', async () => {
+      const { createClient } = await import('@/lib/supabase/server')
       const mockClient = {
         ...mockSupabaseClient,
         from: vi.fn().mockImplementation((table) => {
@@ -172,7 +220,9 @@ describe('Payment Flow Integration', () => {
             return {
               select: vi.fn().mockReturnValue({
                 eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: createMockPayment(), error: null }),
+                  eq: vi.fn().mockReturnValue({
+                    single: vi.fn().mockResolvedValue({ data: createMockPayment(), error: null }),
+                  }),
                 }),
               }),
               update: vi.fn().mockReturnValue({
@@ -193,9 +243,10 @@ describe('Payment Flow Integration', () => {
         }),
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      vi.mocked(createClient).mockResolvedValue(mockClient as never)
+
+      const stripeModule = await import('@/lib/stripe')
+      vi.mocked(stripeModule.stripe.refunds.create).mockResolvedValue(mockStripeRefund as never)
 
       const { processRefund } = await import('@/lib/payment')
 
@@ -206,6 +257,7 @@ describe('Payment Flow Integration', () => {
     })
 
     it('should reject refund for unpaid appointment', async () => {
+      const { createClient } = await import('@/lib/supabase/server')
       const mockClient = {
         ...mockSupabaseClient,
         from: vi.fn().mockImplementation((table) => {
@@ -213,7 +265,9 @@ describe('Payment Flow Integration', () => {
             return {
               select: vi.fn().mockReturnValue({
                 eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: null, error: { message: 'Not found' } }),
+                  eq: vi.fn().mockReturnValue({
+                    single: vi.fn().mockResolvedValue({ data: null, error: { message: 'Not found' } }),
+                  }),
                 }),
               }),
             }
@@ -222,9 +276,7 @@ describe('Payment Flow Integration', () => {
         }),
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      vi.mocked(createClient).mockResolvedValue(mockClient as never)
 
       const { processRefund } = await import('@/lib/payment')
 
@@ -234,6 +286,7 @@ describe('Payment Flow Integration', () => {
 
   describe('Payment Status Transitions', () => {
     it('should transition from pending to paid', async () => {
+      const { createClient } = await import('@/lib/supabase/server')
       const mockClient = {
         ...mockSupabaseClient,
         from: vi.fn().mockImplementation((table) => {
@@ -246,20 +299,17 @@ describe('Payment Flow Integration', () => {
           }
           if (table === 'appointments') {
             return {
-              update: vi.fn().mockReturnValue({
-                select: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: createMockAppointment({ status: 'confirmed' }), error: null }),
-                }),
-              }),
+              update: vi.fn().mockReturnValue(createUpdateSelectSingleChain({ data: createMockAppointment({ status: 'confirmed' }), error: null })),
             }
           }
           return mockSupabaseClient.from(table)
         }),
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      vi.mocked(createClient).mockResolvedValue(mockClient as never)
+
+      const stripeModule = await import('@/lib/stripe')
+      vi.mocked(stripeModule.stripe.paymentIntents.retrieve).mockResolvedValue(mockStripePaymentIntentSucceeded as never)
 
       const { confirmSuccessfulPayment } = await import('@/lib/payment')
 
@@ -269,6 +319,7 @@ describe('Payment Flow Integration', () => {
     })
 
     it('should transition from paid to refunded', async () => {
+      const { createClient } = await import('@/lib/supabase/server')
       const mockClient = {
         ...mockSupabaseClient,
         from: vi.fn().mockImplementation((table) => {
@@ -276,7 +327,9 @@ describe('Payment Flow Integration', () => {
             return {
               select: vi.fn().mockReturnValue({
                 eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ data: createMockPayment({ status: 'paid' }), error: null }),
+                  eq: vi.fn().mockReturnValue({
+                    single: vi.fn().mockResolvedValue({ data: createMockPayment({ status: 'paid' }), error: null }),
+                  }),
                 }),
               }),
               update: vi.fn().mockReturnValue({
@@ -297,9 +350,10 @@ describe('Payment Flow Integration', () => {
         }),
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      vi.mocked(createClient).mockResolvedValue(mockClient as never)
+
+      const stripeModule = await import('@/lib/stripe')
+      vi.mocked(stripeModule.stripe.refunds.create).mockResolvedValue(mockStripeRefund as never)
 
       const { processRefund } = await import('@/lib/payment')
 
@@ -311,6 +365,7 @@ describe('Payment Flow Integration', () => {
 
   describe('Multi-currency Support', () => {
     it('should handle MXN currency', async () => {
+      const { createClient } = await import('@/lib/supabase/server')
       const mockClient = {
         ...mockSupabaseClient,
         from: vi.fn().mockImplementation((table) => {
@@ -318,11 +373,13 @@ describe('Payment Flow Integration', () => {
             return {
               select: vi.fn().mockReturnValue({
                 eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ 
-                    data: { 
-                      doctor: { price_cents: 50000, currency: 'MXN' }
-                    }, 
-                    error: null 
+                  eq: vi.fn().mockReturnValue({
+                    single: vi.fn().mockResolvedValue({ 
+                      data: { 
+                        doctor: { price_cents: 50000, currency: 'MXN' }
+                      }, 
+                      error: null 
+                    }),
                   }),
                 }),
               }),
@@ -341,9 +398,10 @@ describe('Payment Flow Integration', () => {
         }),
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      vi.mocked(createClient).mockResolvedValue(mockClient as never)
+
+      const stripeModule = await import('@/lib/stripe')
+      vi.mocked(stripeModule.stripe.paymentIntents.create).mockResolvedValue(mockStripePaymentIntent as never)
 
       const { initializePayment } = await import('@/lib/payment')
 
@@ -356,6 +414,7 @@ describe('Payment Flow Integration', () => {
     })
 
     it('should handle USD currency', async () => {
+      const { createClient } = await import('@/lib/supabase/server')
       const mockClient = {
         ...mockSupabaseClient,
         from: vi.fn().mockImplementation((table) => {
@@ -363,11 +422,13 @@ describe('Payment Flow Integration', () => {
             return {
               select: vi.fn().mockReturnValue({
                 eq: vi.fn().mockReturnValue({
-                  single: vi.fn().mockResolvedValue({ 
-                    data: { 
-                      doctor: { price_cents: 2500, currency: 'USD' }
-                    }, 
-                    error: null 
+                  eq: vi.fn().mockReturnValue({
+                    single: vi.fn().mockResolvedValue({ 
+                      data: { 
+                        doctor: { price_cents: 2500, currency: 'USD' }
+                      }, 
+                      error: null 
+                    }),
                   }),
                 }),
               }),
@@ -386,9 +447,13 @@ describe('Payment Flow Integration', () => {
         }),
       }
 
-      vi.mock('@/lib/supabase/server', () => ({
-        createClient: vi.fn().mockResolvedValue(mockClient),
-      }))
+      vi.mocked(createClient).mockResolvedValue(mockClient as never)
+
+      const stripeModule = await import('@/lib/stripe')
+      vi.mocked(stripeModule.stripe.paymentIntents.create).mockResolvedValue({
+        ...mockStripePaymentIntent,
+        currency: 'usd',
+      } as never)
 
       const { initializePayment } = await import('@/lib/payment')
 

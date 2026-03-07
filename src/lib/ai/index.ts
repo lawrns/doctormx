@@ -10,6 +10,7 @@ export * from './prompts';
 export * from './client';
 export * from './vision';
 export * from './glm';
+export * from './kimi';
 
 // Re-exportar constantes útiles
 export { AI_CONFIG, validateAIConfig, estimateCost, getActiveProvider } from './config';
@@ -24,6 +25,13 @@ export {
   glmStreamingCompletion,
   glmVisionAnalysis
 } from './glm';
+export {
+  kimi,
+  KIMI_CONFIG,
+  isKimiConfigured,
+  calculateKimiCost,
+  kimiChatCompletion
+} from './kimi';
 export {
   PRECONSULTA_SYSTEM_PROMPT,
   PRECONSULTA_URGENCY_PROMPT,

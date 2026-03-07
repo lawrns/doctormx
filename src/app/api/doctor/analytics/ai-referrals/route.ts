@@ -2,6 +2,15 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { requireRole } from '@/lib/auth'
 
+type ReferralRecord = {
+  created_at: string
+  booked_at?: string | null
+  status?: string | null
+  referral_context?: {
+    specialty?: string
+  } | null
+}
+
 /**
  * GET /api/doctor/analytics/ai-referrals
  * Get AI referral metrics for doctor dashboard
@@ -56,12 +65,14 @@ export async function GET(request: NextRequest) {
     }
 
     // Calculate weekly trend
-    const weeklyTrend = calculateWeeklyTrend(referrals || [], startDate, now)
+    const typedReferrals = (referrals || []) as ReferralRecord[]
+    const weeklyTrend = calculateWeeklyTrend(typedReferrals, startDate, now)
 
     // Calculate conversion rate
-    const totalReferrals = referrals?.length || 0
-    const convertedReferrals = referrals?.filter((r: any) => r.status === 'booked').length || 0
+    const totalReferrals = typedReferrals.length
+    const convertedReferrals = typedReferrals.filter((r) => r.status === 'booked').length
     const conversionRate = totalReferrals > 0 ? (convertedReferrals / totalReferrals) * 100 : 0
+    const avgResponseTime = calculateAverageResponseTimeHours(typedReferrals)
 
     // Get previous period for comparison
     const previousStartDate = new Date(startDate.getTime() - (now.getTime() - startDate.getTime()))
@@ -75,7 +86,7 @@ export async function GET(request: NextRequest) {
     const lastMonth = previousReferrals?.length || 0
 
     // Aggregate by specialty
-    const specialtyCounts = referrals?.reduce((acc: any, r: any) => {
+    const specialtyCounts = typedReferrals.reduce((acc: Record<string, number>, r) => {
       const specialty = r.referral_context?.specialty || 'Otro'
       acc[specialty] = (acc[specialty] || 0) + 1
       return acc
@@ -88,10 +99,10 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({
       totalReferrals,
-      thisMonth: referrals?.length || 0,
+      thisMonth: typedReferrals.length,
       lastMonth,
       conversionRate: Math.round(conversionRate),
-      avgResponseTime: 2.4, // Mock data - would calculate from actual data
+      avgResponseTime,
       topSpecialties,
       weeklyTrend,
     })
@@ -104,7 +115,7 @@ export async function GET(request: NextRequest) {
   }
 }
 
-function calculateWeeklyTrend(referrals: any[], startDate: Date, endDate: Date) {
+function calculateWeeklyTrend(referrals: ReferralRecord[], startDate: Date, endDate: Date) {
   const weeks = []
   const currentWeek = new Date(startDate)
 
@@ -136,4 +147,23 @@ function calculateWeeklyTrend(referrals: any[], startDate: Date, endDate: Date) 
   }
 
   return weeks
+}
+
+function calculateAverageResponseTimeHours(referrals: ReferralRecord[]) {
+  const completed = referrals.filter((referral) => referral.booked_at && referral.created_at)
+
+  if (completed.length === 0) {
+    return 0
+  }
+
+  const totalHours = completed.reduce((sum, referral) => {
+    const createdAt = new Date(referral.created_at).getTime()
+    const bookedAt = new Date(referral.booked_at as string).getTime()
+    if (Number.isNaN(createdAt) || Number.isNaN(bookedAt) || bookedAt < createdAt) {
+      return sum
+    }
+    return sum + ((bookedAt - createdAt) / (1000 * 60 * 60))
+  }, 0)
+
+  return Number((totalHours / completed.length).toFixed(1))
 }

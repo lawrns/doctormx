@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 
+function isValidEmail(email: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}
+
 /**
  * POST /api/anonymous/capture-email
  * Capture email from anonymous user after consultation
@@ -9,12 +13,14 @@ export async function POST(request: NextRequest) {
   try {
     const { email, sessionId, consultationNumber } = await request.json()
 
-    if (!email) {
+    if (!email || typeof email !== 'string' || !isValidEmail(email.trim().toLowerCase())) {
       return NextResponse.json(
         { error: 'Email is required' },
         { status: 400 }
       )
     }
+
+    const normalizedEmail = email.trim().toLowerCase()
 
     const supabase = await createClient()
 
@@ -22,7 +28,7 @@ export async function POST(request: NextRequest) {
     const { data: existingProfile } = await supabase
       .from('profiles')
       .select('id, email')
-      .eq('email', email.toLowerCase())
+      .eq('email', normalizedEmail)
       .single()
 
     if (existingProfile) {
@@ -39,7 +45,7 @@ export async function POST(request: NextRequest) {
     const { data: emailCapture, error } = await supabase
       .from('anonymous_email_captures')
       .insert({
-        email: email.toLowerCase(),
+        email: normalizedEmail,
         session_id: sessionId || null,
         consultation_number: consultationNumber || 1,
         captured_at: new Date().toISOString(),
@@ -56,13 +62,11 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    // TODO: Send welcome email with magic link to create account
-    // await sendWelcomeEmail(email)
-
     return NextResponse.json({
       success: true,
       message: 'Email registrado correctamente',
       data: emailCapture,
+      nextStepUrl: `/auth/register?email=${encodeURIComponent(normalizedEmail)}`,
     })
   } catch (error) {
     console.error('Email capture API error:', error)

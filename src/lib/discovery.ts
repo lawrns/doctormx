@@ -204,7 +204,7 @@ async function fetchDoctors(filters?: DiscoveryFilters) {
       })) || [],
     }))
   } catch (error) {
-    logger.error('Discovery fetch error', { error: error instanceof Error ? error.message : 'unknown' })
+    logger.warn('Discovery fetch fallback triggered', { error: error instanceof Error ? error.message : 'unknown' })
     return []
   }
 }

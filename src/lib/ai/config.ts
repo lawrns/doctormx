@@ -1,6 +1,6 @@
 /**
  * Configuración central para servicios de IA
- * GLM (Primary), OpenAI (Fallback), Whisper, y otros modelos
+ * GLM (Primary), Kimi (Secondary), OpenAI (Fallback), Whisper, y otros modelos
  *
  * GLM z.ai is the primary provider for Doctor.mx
  * - Cost effective: 90% cheaper than GPT-4
@@ -15,13 +15,28 @@ export const AI_CONFIG = {
     apiKey: process.env.GLM_API_KEY || '',
     baseURL: 'https://api.z.ai/api/coding/paas/v4/', // GLM Coding Plan endpoint
     models: {
-      reasoning: 'glm-4.7',        // Latest flagship - complex reasoning (returns reasoning_content only)
-      chat: 'glm-4.5-air',         // Fast chat model - returns proper content field
-      vision: 'glm-4.6v',          // Multimodal with 128K context - medical image analysis
+      reasoning: 'glm-5',          // Latest flagship - complex reasoning
+      chat: 'glm-5',               // Keep same family to reduce prompt drift on coding plan
+      vision: 'glm-5',             // Use newest available multimodal-capable GLM 5 on special plan
     },
-    defaultModel: 'glm-4.5-air',   // Use air model for chat - returns clean responses
+    defaultModel: 'glm-5',         // Use latest GLM 5 by default
     temperature: 0.3,              // Less creative, more consistent
     maxTokens: 500,                // Concise responses
+  },
+
+  // Kimi - Secondary AI Provider (Moonshot)
+  // Supports custom base URL so coding/special plan endpoints can be used if needed.
+  kimi: {
+    apiKey: process.env.KIMI_API_KEY || '',
+    baseURL: process.env.KIMI_BASE_URL || 'https://api.kimi.com/coding/v1',
+    models: {
+      reasoning: process.env.KIMI_REASONING_MODEL || 'kimi-for-coding',
+      chat: process.env.KIMI_CHAT_MODEL || 'kimi-for-coding',
+      vision: process.env.KIMI_VISION_MODEL || 'kimi-for-coding',
+    },
+    defaultModel: process.env.KIMI_CHAT_MODEL || 'kimi-for-coding',
+    temperature: 0.3,
+    maxTokens: 500,
   },
 
   // OpenAI - Fallback provider
@@ -54,6 +69,9 @@ export const AI_CONFIG = {
     glmInputPer1M: 0.60,
     glmOutputPer1M: 2.20,
     glmCachedPer1M: 0.11,
+    // Kimi pricing
+    kimiInputPer1M: 0.50,
+    kimiOutputPer1M: 2.80,
     // OpenAI pricing (fallback)
     gpt4oMiniInputPer1M: 0.15,
     gpt4oMiniOutputPer1M: 0.60,
@@ -74,6 +92,7 @@ export const AI_CONFIG = {
   // Provider priority
   providers: {
     primary: 'glm' as const,
+    secondary: 'kimi' as const,
     fallback: 'openai' as const,
   },
 } as const;
@@ -87,11 +106,15 @@ export function validateAIConfig(): { valid: boolean; errors: string[]; warnings
 
   // Check GLM (primary provider)
   if (!AI_CONFIG.glm.apiKey && AI_CONFIG.features.useGLM && AI_CONFIG.features.preConsulta) {
-    if (!AI_CONFIG.openai.apiKey) {
-      errors.push('GLM_API_KEY no configurada y no hay fallback OpenAI disponible');
+    if (!AI_CONFIG.kimi.apiKey && !AI_CONFIG.openai.apiKey) {
+      errors.push('GLM_API_KEY no configurada y no hay fallback KIMI/OpenAI disponible');
     } else {
-      warnings.push('GLM_API_KEY no configurada - usando OpenAI como fallback');
+      warnings.push('GLM_API_KEY no configurada - usando Kimi/OpenAI como fallback');
     }
+  }
+
+  if (!AI_CONFIG.kimi.apiKey) {
+    warnings.push('KIMI_API_KEY no configurada - Kimi no estará disponible como proveedor secundario');
   }
 
   // Check OpenAI (fallback and Whisper)
@@ -109,9 +132,12 @@ export function validateAIConfig(): { valid: boolean; errors: string[]; warnings
 /**
  * Get the active AI provider based on configuration
  */
-export function getActiveProvider(): 'glm' | 'openai' {
+export function getActiveProvider(): 'glm' | 'kimi' | 'openai' {
   if (AI_CONFIG.features.useGLM && AI_CONFIG.glm.apiKey) {
     return 'glm';
+  }
+  if (AI_CONFIG.kimi.apiKey) {
+    return 'kimi';
   }
   return 'openai';
 }
@@ -124,13 +150,17 @@ export function estimateCost(operation: {
   inputTokens?: number;
   outputTokens?: number;
   audioMinutes?: number;
-  provider?: 'glm' | 'openai';
+  provider?: 'glm' | 'kimi' | 'openai';
 }): number {
   if (operation.type === 'chat') {
     const provider = operation.provider || getActiveProvider();
     if (provider === 'glm') {
       const inputCost = ((operation.inputTokens || 0) / 1_000_000) * AI_CONFIG.costs.glmInputPer1M;
       const outputCost = ((operation.outputTokens || 0) / 1_000_000) * AI_CONFIG.costs.glmOutputPer1M;
+      return inputCost + outputCost;
+    } else if (provider === 'kimi') {
+      const inputCost = ((operation.inputTokens || 0) / 1_000_000) * AI_CONFIG.costs.kimiInputPer1M;
+      const outputCost = ((operation.outputTokens || 0) / 1_000_000) * AI_CONFIG.costs.kimiOutputPer1M;
       return inputCost + outputCost;
     } else {
       const inputCost = ((operation.inputTokens || 0) / 1_000_000) * AI_CONFIG.costs.gpt4oMiniInputPer1M;

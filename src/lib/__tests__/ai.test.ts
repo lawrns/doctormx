@@ -7,9 +7,9 @@ vi.mock('@/lib/supabase/server', () => ({
   createServiceClient: vi.fn().mockResolvedValue(mockSupabaseClient),
 }))
 
-vi.mock('openai', () => ({
-  openai: {
-    chat: {
+vi.mock('openai', () => {
+  class MockOpenAI {
+    chat = {
       completions: {
         create: vi.fn().mockResolvedValue({
           choices: [{
@@ -23,9 +23,13 @@ vi.mock('openai', () => ({
           }]
         }),
       },
-    },
-  },
-}))
+    }
+  }
+
+  return {
+    default: MockOpenAI,
+  }
+})
 
 describe('AI Copilot System', () => {
   beforeEach(() => {
@@ -72,7 +76,7 @@ describe('AI Copilot System', () => {
     it('should detect critical severity red flags', async () => {
       const { generateSuggestions } = await import('@/lib/ai/copilot')
       
-      const result = await generateSuggestions(['parálisis', 'debilidad en un lado de la cara'])
+      const result = await generateSuggestions(['parálisis', 'cara colgada'])
       
       const hasCritical = result.redFlags.some(f => f.severity === 'critical')
       expect(hasCritical).toBe(true)

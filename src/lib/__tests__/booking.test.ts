@@ -74,6 +74,12 @@ vi.mock('@/lib/notifications', () => ({
 
 vi.mock('@/lib/whatsapp-notifications', () => ({
   sendAppointmentConfirmation: vi.fn(),
+  getPatientPhone: vi.fn().mockResolvedValue('+525511111111'),
+  getDoctorName: vi.fn().mockResolvedValue('Dr. Test'),
+}))
+
+vi.mock('@/lib/availability', () => ({
+  getAvailableSlots: vi.fn(),
 }))
 
 describe('Booking System', () => {
@@ -87,6 +93,7 @@ describe('Booking System', () => {
 
   describe('Appointment Reservation', () => {
     it('should create appointment successfully with valid request', async () => {
+      const { getAvailableSlots } = await import('@/lib/availability')
       const mockAppointment = createMockAppointment()
       const mockClient = {
         ...mockSupabaseClient,
@@ -107,6 +114,7 @@ describe('Booking System', () => {
       const { createClient } = await import('@/lib/supabase/server')
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       vi.mocked(createClient).mockResolvedValue(mockClient as any)
+      vi.mocked(getAvailableSlots).mockResolvedValue(['11:00'])
 
       const { reserveAppointmentSlot } = await import('@/lib/booking')
       
@@ -122,6 +130,7 @@ describe('Booking System', () => {
     })
 
     it('should fail when slot is unavailable', async () => {
+      const { getAvailableSlots } = await import('@/lib/availability')
       const mockClient = {
         ...mockSupabaseClient,
         from: vi.fn().mockImplementation((table: string) => {
@@ -141,6 +150,7 @@ describe('Booking System', () => {
       const { createClient } = await import('@/lib/supabase/server')
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       vi.mocked(createClient).mockResolvedValue(mockClient as any)
+      vi.mocked(getAvailableSlots).mockResolvedValue([])
 
       const { reserveAppointmentSlot } = await import('@/lib/booking')
       
@@ -205,7 +215,7 @@ describe('Booking System', () => {
           fc.string({ minLength: 1 }),
           fc.stringMatching(/^\d{4}-\d{2}-\d{2}$/),
           fc.stringMatching(/^([0-1][0-9]|2[0-3]):[0-5][0-9]$/),
-          (patientId, doctorId, date, time) => {
+          (patientId: string, doctorId: string, date: string, time: string) => {
             const request: ReservationRequest = {
               patientId,
               doctorId,
@@ -228,7 +238,7 @@ describe('Booking System', () => {
       fc.assert(
         fc.property(
           fc.array(fc.stringMatching(/^([0-1][0-9]|2[0-3]):[0-5][0-9]$/), { minLength: 1, maxLength: 20 }),
-          (slots) => {
+          (slots: string[]) => {
             const sortedSlots = [...slots].sort((a, b) => {
               const aMinutes = parseInt(a.split(':')[0]) * 60 + parseInt(a.split(':')[1])
               const bMinutes = parseInt(b.split(':')[0]) * 60 + parseInt(b.split(':')[1])
@@ -254,7 +264,7 @@ describe('Booking System', () => {
           fc.integer({ min: 2025, max: 2030 }),
           fc.integer({ min: 1, max: 12 }),
           fc.integer({ min: 1, max: 31 }),
-          (year, month, day) => {
+          (year: number, month: number, day: number) => {
             const dateStr = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`
             const regex = /^\d{4}-\d{2}-\d{2}$/
             return regex.test(dateStr)

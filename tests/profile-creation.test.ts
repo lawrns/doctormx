@@ -1,18 +1,20 @@
 import { describe, it, expect } from 'vitest'
 import { createClient } from '@supabase/supabase-js'
 
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
+const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+const hasSupabaseEnv = Boolean(SUPABASE_URL && SUPABASE_KEY)
+const describeIfSupabase = hasSupabaseEnv ? describe : describe.skip
+const supabase = hasSupabaseEnv ? createClient(SUPABASE_URL!, SUPABASE_KEY!) : null
+const testSupabase = supabase as NonNullable<typeof supabase>
 
-const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
-
-describe('Profile Creation Flow', () => {
+describeIfSupabase('Profile Creation Flow', () => {
   it('should create user record in users table', async () => {
     const testEmail = `profile-test-${Date.now()}@test.com`
     const testPassword = 'TestPass123!'
 
     // Register new user
-    const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
+    const { data: signUpData, error: signUpError } = await testSupabase.auth.signUp({
       email: testEmail,
       password: testPassword,
     })
@@ -23,7 +25,7 @@ describe('Profile Creation Flow', () => {
     const userId = signUpData.user!.id
 
     // Simulate profile completion by inserting user record
-    const { error: insertError } = await supabase
+    const { error: insertError } = await testSupabase
       .from('users')
       .insert({
         id: userId,
@@ -36,7 +38,7 @@ describe('Profile Creation Flow', () => {
     expect(insertError).toBeNull()
 
     // Verify user record was created
-    const { data: userData, error: selectError } = await supabase
+    const { data: userData, error: selectError } = await testSupabase
       .from('users')
       .select('*')
       .eq('id', userId)
@@ -53,7 +55,7 @@ describe('Profile Creation Flow', () => {
     const testPassword = 'TestPass123!'
 
     // Register new user
-    const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
+    const { data: signUpData, error: signUpError } = await testSupabase.auth.signUp({
       email: testEmail,
       password: testPassword,
     })
@@ -63,7 +65,7 @@ describe('Profile Creation Flow', () => {
     const userId = signUpData.user!.id
 
     // Insert initial user record
-    const { error: firstInsertError } = await supabase
+    const { error: firstInsertError } = await testSupabase
       .from('users')
       .insert({
         id: userId,
@@ -75,7 +77,7 @@ describe('Profile Creation Flow', () => {
     expect(firstInsertError).toBeNull()
 
     // Try to insert again (should fail with duplicate key)
-    const { error: duplicateError } = await supabase
+    const { error: duplicateError } = await testSupabase
       .from('users')
       .insert({
         id: userId,
@@ -88,7 +90,7 @@ describe('Profile Creation Flow', () => {
     expect(duplicateError?.code).toBe('23505') // Duplicate key error
 
     // Update the record instead
-    const { error: updateError } = await supabase
+    const { error: updateError } = await testSupabase
       .from('users')
       .update({
         full_name: 'Updated Name',
@@ -99,7 +101,7 @@ describe('Profile Creation Flow', () => {
     expect(updateError).toBeNull()
 
     // Verify update worked
-    const { data: userData } = await supabase
+    const { data: userData } = await testSupabase
       .from('users')
       .select('*')
       .eq('id', userId)
@@ -114,7 +116,7 @@ describe('Profile Creation Flow', () => {
     const testPassword = 'TestPass123!'
 
     // Register new user
-    const { data: signUpData } = await supabase.auth.signUp({
+    const { data: signUpData } = await testSupabase.auth.signUp({
       email: testEmail,
       password: testPassword,
     })
@@ -122,7 +124,7 @@ describe('Profile Creation Flow', () => {
     const userId = signUpData.user!.id
 
     // Create user record
-    const { error: userError } = await supabase
+    const { error: userError } = await testSupabase
       .from('users')
       .insert({
         id: userId,
@@ -134,7 +136,7 @@ describe('Profile Creation Flow', () => {
     expect(userError).toBeNull()
 
     // Create doctor record
-    const { error: doctorError } = await supabase
+    const { error: doctorError } = await testSupabase
       .from('doctors')
       .insert({
         user_id: userId,
@@ -146,7 +148,7 @@ describe('Profile Creation Flow', () => {
     expect(doctorError).toBeNull()
 
     // Verify doctor record exists
-    const { data: doctorData } = await supabase
+    const { data: doctorData } = await testSupabase
       .from('doctors')
       .select('*')
       .eq('user_id', userId)
@@ -162,7 +164,7 @@ describe('Profile Creation Flow', () => {
     const testPassword = 'TestPass123!'
 
     // Register new user
-    const { data: signUpData } = await supabase.auth.signUp({
+    const { data: signUpData } = await testSupabase.auth.signUp({
       email: testEmail,
       password: testPassword,
     })
@@ -170,7 +172,7 @@ describe('Profile Creation Flow', () => {
     const userId = signUpData.user!.id
 
     // Try to insert without full_name (required field)
-    const { error } = await supabase
+    const { error } = await testSupabase
       .from('users')
       .insert({
         id: userId,

@@ -6,6 +6,7 @@
     "dev": "next dev",
     "start": "next start",
     "build": "next build",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
     "lint": "next lint",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -95,6 +96,7 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@types/react-router-dom": "5.3.3",
+    "fast-check": "^4.5.3",
     "typescript": "5.2.2",
     "vitest": "^4.0.18",
     "yaml": "^2.8.2"
