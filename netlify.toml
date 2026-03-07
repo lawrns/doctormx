@@ -12,3 +12,8 @@
 # Extended function timeout for AI-heavy endpoints (SOAP multi-agent consultation)
 [functions]
   node_bundler = "esbuild"
+  external_node_modules = ["openai"]
+
+# AI endpoints need longer timeout (default 10s is too short for multi-provider fallback)
+[functions."___netlify-server-handler"]
+  timeout = 26
