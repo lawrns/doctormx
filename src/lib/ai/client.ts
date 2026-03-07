@@ -33,7 +33,7 @@ async function getGLMClient(): Promise<OpenAI> {
       glmClient = new OpenAI({
         apiKey: AI_CONFIG.glm.apiKey,
         baseURL: AI_CONFIG.glm.baseURL,
-        timeout: 20000, // 20s — GLM-5 is a reasoning model, needs ~10-15s to complete CoT + answer
+        timeout: 14000, // 14s — GLM-5 takes ~10-12s; leaves ~12s budget for fallbacks within Netlify 26s cap
       });
     } catch (error) {
       console.error("Error al inicializar GLM client:", error);
@@ -55,7 +55,7 @@ async function getKimiClient(): Promise<OpenAI> {
       kimiClient = new OpenAI({
         apiKey: AI_CONFIG.kimi.apiKey,
         baseURL: AI_CONFIG.kimi.baseURL,
-        timeout: 8000, // 8s per-provider timeout to leave room for fallbacks
+        timeout: 3000, // 3s — Kimi coding endpoint is typically policy-restricted; fail fast
       });
     } catch (error) {
       console.error("Error al inicializar Kimi client:", error);
@@ -76,7 +76,7 @@ async function getOpenAIClient(): Promise<OpenAI> {
       const { default: OpenAI } = (await import("openai")) as typeof import("openai");
       openaiClient = new OpenAI({
         apiKey: AI_CONFIG.openai.apiKey,
-        timeout: 15000, // 15s for final fallback — more generous since it's the last resort
+        timeout: 8000, // 8s — gpt-4o-mini typically responds in 2-5s
       });
     } catch (error) {
       console.error("Error al inicializar OpenAI client:", error);

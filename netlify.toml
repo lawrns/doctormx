@@ -16,4 +16,4 @@
 
 # AI endpoints need longer timeout (default 10s is too short for multi-provider fallback)
 [functions."___netlify-server-handler"]
-  timeout = 30
+  timeout = 26

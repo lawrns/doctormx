@@ -22,7 +22,7 @@ import { AI_CONFIG } from './config'
 export const glm = new OpenAI({
   apiKey: process.env.GLM_API_KEY || '',
   baseURL: AI_CONFIG.glm.baseURL, // GLM Coding Plan endpoint from config
-  timeout: 20000, // 20s — GLM-5 reasoning model needs ~10-15s for CoT + answer
+  timeout: 14000, // 14s — GLM-5 takes ~10-12s; leaves budget for fallbacks within Netlify 26s cap
   maxRetries: 0, // No retries — let the fallback chain handle provider failure
 })
 
