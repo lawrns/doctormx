@@ -28,7 +28,7 @@ export async function GET(request: NextRequest) {
     const { data: doctor } = await supabase
       .from('doctors')
       .select('id, specialty_id')
-      .eq('user_id', user.id)
+      .eq('id', user.id)
       .single()
 
     if (!doctor) {

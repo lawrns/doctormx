@@ -64,21 +64,11 @@ export default function ChatPage({ params }: ChatPageProps) {
           .single()
 
         // Fetch doctor data and profile
-        const { data: doctorData } = await supabase
-          .from('doctors')
-          .select('user_id')
+        const { data: doctorProfile } = await supabase
+          .from('profiles')
+          .select('full_name, photo_url')
           .eq('id', convData.doctor_id)
           .single()
-
-        let doctorProfile = null
-        if (doctorData?.user_id) {
-          const { data: profile } = await supabase
-            .from('profiles')
-            .select('full_name, photo_url')
-            .eq('id', doctorData.user_id)
-            .single()
-          doctorProfile = profile
-        }
 
         setConversation({
           ...convData,
@@ -143,18 +133,13 @@ export default function ChatPage({ params }: ChatPageProps) {
   useEffect(() => {
     if (userId && conversationId) {
       const markRead = async () => {
-        await supabase
-          .from('chat_message_receipts')
-          .upsert(
-            messages
-              .filter((m) => m.sender_id !== userId)
-              .map((m) => ({
-                message_id: m.id,
-                user_id: userId,
-                read_at: new Date().toISOString(),
-              })),
-            { onConflict: 'message_id, user_id' }
-          )
+        if (!messages.some((message) => message.sender_id !== userId)) {
+          return
+        }
+
+        await fetch(`/api/chat/messages/${conversationId}/read`, {
+          method: 'PUT',
+        })
       }
       markRead()
     }

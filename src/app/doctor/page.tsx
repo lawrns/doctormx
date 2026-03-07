@@ -1,4 +1,5 @@
 import { requireRole } from '@/lib/auth'
+import { getDoctorRecordByUserId, getDoctorOperationalRecordId } from '@/lib/doctor-record'
 import { getDoctorInboxCases } from '@/lib/care-orchestration'
 import { redirect } from 'next/navigation'
 import DoctorLayout from '@/components/DoctorLayout'
@@ -8,12 +9,8 @@ import { Calendar, CheckCircle, Clock, Video, FileText, HelpCircle } from 'lucid
 
 export default async function DoctorDashboard() {
   const { user, profile, supabase } = await requireRole('doctor')
-
-  const { data: doctor } = await supabase
-    .from('doctors')
-    .select('*')
-    .eq('id', user.id)
-    .single()
+  const doctor = await getDoctorRecordByUserId(user.id)
+  const doctorRecordId = getDoctorOperationalRecordId(doctor, user.id)
 
   // Solo redirigir si nunca completó onboarding (draft)
   if (doctor?.status === 'draft') {
@@ -72,7 +69,7 @@ export default async function DoctorDashboard() {
     const { count: todayAppointments } = await supabase
       .from('appointments')
       .select('*', { count: 'exact', head: true })
-      .eq('doctor_id', user.id)
+      .eq('doctor_id', doctorRecordId)
       .in('status', ['confirmed', 'completed'])
       .gte('start_ts', startOfToday)
       .lt('start_ts', endOfToday)
@@ -83,7 +80,7 @@ export default async function DoctorDashboard() {
     const { count: weekAppointments } = await supabase
       .from('appointments')
       .select('*', { count: 'exact', head: true })
-      .eq('doctor_id', user.id)
+      .eq('doctor_id', doctorRecordId)
       .in('status', ['confirmed', 'completed'])
       .gte('start_ts', startOfWeek.toISOString())
       .lt('start_ts', endOfWeek.toISOString())
@@ -94,7 +91,7 @@ export default async function DoctorDashboard() {
     const { data: patientData } = await supabase
       .from('appointments')
       .select('patient_id')
-      .eq('doctor_id', user.id)
+      .eq('doctor_id', doctorRecordId)
       .in('status', ['confirmed', 'completed'])
 
     if (patientData) {
@@ -106,7 +103,7 @@ export default async function DoctorDashboard() {
     const { count: pendingPayment } = await supabase
       .from('appointments')
       .select('*', { count: 'exact', head: true })
-      .eq('doctor_id', user.id)
+      .eq('doctor_id', doctorRecordId)
       .eq('status', 'pending_payment')
       .gte('start_ts', now.toISOString())
 
@@ -129,7 +126,7 @@ export default async function DoctorDashboard() {
         patient:profiles!appointments_patient_id_fkey(full_name),
         service:doctor_services(name)
       `)
-      .eq('doctor_id', user.id)
+      .eq('doctor_id', doctorRecordId)
       .in('status', ['confirmed', 'pending_payment'])
       .gte('start_ts', now.toISOString())
       .order('start_ts', { ascending: true })

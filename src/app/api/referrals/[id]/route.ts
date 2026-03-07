@@ -27,18 +27,16 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
       .select(`
         *,
         referring_doctor:doctors!doctor_referrals_referring_doctor_id_fkey(
-          user_id,
-          full_name,
-          specialties,
+          id,
           city,
-          state
+          state,
+          profile:profiles!doctors_id_fkey(full_name)
         ),
         receiving_doctor:doctors!doctor_referrals_receiving_doctor_id_fkey(
-          user_id,
-          full_name,
-          specialties,
+          id,
           city,
-          state
+          state,
+          profile:profiles!doctors_id_fkey(full_name)
         )
       `)
       .eq('id', id)

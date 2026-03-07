@@ -28,8 +28,8 @@ export async function POST(request: NextRequest) {
     // Verify user is a doctor
     const { data: doctor } = await supabase
       .from('doctors')
-      .select('user_id, subscription_tier')
-      .eq('user_id', user.id)
+      .select('id')
+      .eq('id', user.id)
       .single()
     
     if (!doctor) {

@@ -52,16 +52,36 @@ export function PatientLayout({ children }: PatientLayoutProps) {
         let messagesCount = 0
         let joinableAppointment = false
 
-        // Check for messages - wrap in try/catch as table may not exist
+        // Check for unread chat messages using existing conversation and receipt schema
         try {
-          const { count } = await supabase
-            .from('chat_messages')
-            .select('*', { count: 'exact', head: true })
-            .eq('receiver_id', user.id)
-            .is('read_at', null)
-          messagesCount = count || 0
+          const { data: conversations } = await supabase
+            .from('chat_conversations')
+            .select('id')
+            .eq('patient_id', user.id)
+
+          const conversationIds = conversations?.map((conversation: { id: string }) => conversation.id) || []
+
+          if (conversationIds.length > 0) {
+            const { data: incomingMessages } = await supabase
+              .from('chat_messages')
+              .select('id')
+              .in('conversation_id', conversationIds)
+              .neq('sender_id', user.id)
+
+            const messageIds = incomingMessages?.map((message: { id: string }) => message.id) || []
+
+            if (messageIds.length > 0) {
+              const { data: receipts } = await supabase
+                .from('chat_message_receipts')
+                .select('message_id')
+                .eq('user_id', user.id)
+                .in('message_id', messageIds)
+
+              const readMessageIds = new Set((receipts || []).map((receipt: { message_id: string }) => receipt.message_id))
+              messagesCount = messageIds.filter((messageId: string) => !readMessageIds.has(messageId)).length
+            }
+          }
         } catch (e) {
-          // chat_messages table may not exist yet
           console.log('chat_messages check failed:', e)
         }
 

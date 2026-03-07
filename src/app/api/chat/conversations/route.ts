@@ -1,5 +1,6 @@
 import { requireAuth } from '@/lib/auth'
 import { getConversations, createConversation } from '@/lib/chat'
+import { getDoctorRecordByUserId, getDoctorOperationalRecordId } from '@/lib/doctor-record'
 import { NextResponse } from 'next/server'
 
 export async function GET() {
@@ -60,13 +61,7 @@ export async function POST(request: Request) {
     if (role === 'patient') {
       actualPatientId = user.id
     } else if (role === 'doctor') {
-      actualDoctorId = user.id
-
-      const { data: doctor } = await supabase
-        .from('doctors')
-        .select('id')
-        .eq('id', user.id)
-        .single()
+      const doctor = await getDoctorRecordByUserId(user.id)
 
       if (!doctor) {
         return NextResponse.json(
@@ -74,6 +69,8 @@ export async function POST(request: Request) {
           { status: 403 }
         )
       }
+
+      actualDoctorId = getDoctorOperationalRecordId(doctor, user.id)
     }
 
     const conversation = await createConversation({

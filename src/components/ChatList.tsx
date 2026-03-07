@@ -36,27 +36,18 @@ export function ChatList({ initialConversations, userRole }: ChatListProps) {
             .select('id, full_name, photo_url')
             .in('id', patientIds)
 
-          // Fetch doctor data with user_id
-          const { data: doctorsData } = await supabase
-            .from('doctors')
-            .select('id, user_id')
-            .in('id', doctorIds)
-
           // Fetch doctor profiles
-          const doctorUserIds = doctorsData?.map((d: { user_id: string }) => d.user_id) || []
           const { data: doctorProfiles } = await supabase
             .from('profiles')
             .select('id, full_name, photo_url')
-            .in('id', doctorUserIds)
+            .in('id', doctorIds)
 
           const patientMap = new Map<string, { id: string; full_name?: string; photo_url?: string }>(patientProfiles?.map((p: { id: string; full_name?: string; photo_url?: string }) => [p.id, p]) || [])
-          const doctorToUserMap = new Map<string, string>(doctorsData?.map((d: { id: string; user_id: string }) => [d.id, d.user_id]) || [])
           const doctorProfileMap = new Map<string, { id: string; full_name?: string; photo_url?: string }>(doctorProfiles?.map((p: { id: string; full_name?: string; photo_url?: string }) => [p.id, p]) || [])
 
           const conversationsWithDetails = conversationsData.map((conv: any) => {
             const patient = patientMap.get(conv.patient_id)
-            const doctorUserId = doctorToUserMap.get(conv.doctor_id)
-            const doctorProfile = doctorUserId ? doctorProfileMap.get(doctorUserId) : undefined
+            const doctorProfile = doctorProfileMap.get(conv.doctor_id)
             return {
               ...conv,
               patient_name: patient?.full_name,

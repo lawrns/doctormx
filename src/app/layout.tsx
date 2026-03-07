@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Hedvig_Letters_Serif } from "next/font/google";
 import "./globals.css";
+import { SupportWidget } from "@/components/SupportWidget";
 import { ToastProvider } from "@/components/Toast";
 import { StructuredData } from "@/components/StructuredData";
 
@@ -90,6 +91,7 @@ export default function RootLayout({
       >
         <ToastProvider>
           {children}
+          <SupportWidget />
         </ToastProvider>
         <StructuredData />
       </body>

@@ -102,22 +102,12 @@ export async function getConversation(
     .eq('id', conversation.patient_id)
     .single()
 
-  // Fetch doctor data and profile
-  const { data: doctorData } = await supabase
-    .from('doctors')
-    .select('user_id')
+  // Fetch doctor profile
+  const { data: doctorProfile } = await supabase
+    .from('profiles')
+    .select('full_name, photo_url')
     .eq('id', conversation.doctor_id)
     .single()
-
-  let doctorProfile = null
-  if (doctorData?.user_id) {
-    const { data: profile } = await supabase
-      .from('profiles')
-      .select('full_name, photo_url')
-      .eq('id', doctorData.user_id)
-      .single()
-    doctorProfile = profile
-  }
 
   return {
     ...conversation,
@@ -164,28 +154,19 @@ export async function getConversations(
       .select('id, full_name, photo_url')
       .in('id', patientIds)
 
-    // Get doctor data with user_id (profile_id)
-    const { data: doctorsData } = await supabase
-      .from('doctors')
-      .select('id, user_id')
-      .in('id', doctorIds)
-
-    // Get doctor profiles using their user_id
-    const doctorUserIds = doctorsData?.map(d => d.user_id) || []
+    // Get doctor profiles
     const { data: doctorProfiles } = await supabase
       .from('profiles')
       .select('id, full_name, photo_url')
-      .in('id', doctorUserIds)
+      .in('id', doctorIds)
 
     const patientMap = new Map(patientProfiles?.map(p => [p.id, p]) || [])
-    const doctorToUserMap = new Map(doctorsData?.map(d => [d.id, d.user_id]) || [])
     const doctorProfileMap = new Map(doctorProfiles?.map(p => [p.id, p]) || [])
 
     const conversationsWithDetails = await Promise.all(
       conversations.map(async (conv) => {
         const patient = patientMap.get(conv.patient_id)
-        const doctorUserId = doctorToUserMap.get(conv.doctor_id)
-        const doctorProfile = doctorUserId ? doctorProfileMap.get(doctorUserId) : undefined
+        const doctorProfile = doctorProfileMap.get(conv.doctor_id)
         const unreadCount = await getUnreadCount(conv.id, userId)
         
         return {

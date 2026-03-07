@@ -29,8 +29,8 @@ export async function POST(request: NextRequest) {
     // Verify user is a doctor
     const { data: doctor } = await supabase
       .from('doctors')
-      .select('user_id, subscription_tier')
-      .eq('user_id', user.id)
+      .select('id')
+      .eq('id', user.id)
       .single()
     
     if (!doctor) {
@@ -132,14 +132,16 @@ export async function GET(request: NextRequest) {
       .select(`
         *,
         referring_doctor:doctors!doctor_referrals_referring_doctor_id_fkey(
-          user_id,
-          full_name,
-          specialties
+          id,
+          city,
+          state,
+          profile:profiles!doctors_id_fkey(full_name)
         ),
         receiving_doctor:doctors!doctor_referrals_receiving_doctor_id_fkey(
-          user_id,
-          full_name,
-          specialties
+          id,
+          city,
+          state,
+          profile:profiles!doctors_id_fkey(full_name)
         )
       `)
       .order('created_at', { ascending: false })

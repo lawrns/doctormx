@@ -1,16 +1,12 @@
 import { requireRole } from '@/lib/auth'
 import { getConversations } from '@/lib/chat'
+import { getDoctorRecordByUserId } from '@/lib/doctor-record'
 import { ChatList } from '@/components/ChatList'
 import DoctorLayout from '@/components/DoctorLayout'
 
 export default async function DoctorChatPage() {
-  const { user, profile, supabase } = await requireRole('doctor')
-
-  const { data: doctor } = await supabase
-    .from('doctors')
-    .select('*')
-    .eq('id', user.id)
-    .single()
+  const { user, profile } = await requireRole('doctor')
+  const doctor = await getDoctorRecordByUserId(user.id)
 
   const conversations = await getConversations(user.id, 'doctor')
 

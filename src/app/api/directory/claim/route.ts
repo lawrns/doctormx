@@ -75,8 +75,8 @@ export async function POST(request: NextRequest) {
     // Check if user already has a doctor profile
     const { data: existingDoctor } = await supabase
       .from('doctors')
-      .select('user_id')
-      .eq('user_id', user.id)
+      .select('id')
+      .eq('id', user.id)
       .single()
     
     if (existingDoctor) {
