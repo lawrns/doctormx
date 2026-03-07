@@ -45,7 +45,7 @@ export function TestimonialsSection() {
   return (
     <section className="public-section bg-gradient-to-b from-neutral-50 to-neutral-0 relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-100/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-100/10 rounded-full blur-3xl" aria-hidden="true" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div
@@ -77,7 +77,7 @@ export function TestimonialsSection() {
               }}
             >
               <Card
-                className="surface-panel h-full border-0 p-8 shadow-[0_16px_40px_rgba(15,23,42,0.08)] transition-shadow duration-300 hover:shadow-[0_22px_56px_rgba(15,23,42,0.12)] focus-within:ring-2 focus-within:ring-primary-500 focus-within:ring-offset-2"
+                className="surface-panel relative h-full border-0 p-8 shadow-[0_16px_40px_rgba(15,23,42,0.08)] transition-shadow duration-300 hover:shadow-[0_22px_56px_rgba(15,23,42,0.12)] focus-within:ring-2 focus-within:ring-primary-500 focus-within:ring-offset-2"
                 tabIndex={0}
                 role="article"
                 aria-label={`Testimonio de ${testimonial.name}`}

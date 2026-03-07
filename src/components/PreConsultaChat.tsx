@@ -154,7 +154,7 @@ export default function PreConsultaChat({
 
   const panelClasses = mode === 'modal'
     ? 'relative flex h-[min(88vh,860px)] w-full max-w-6xl overflow-hidden rounded-[32px] border border-white/15 bg-slate-950 shadow-[0_40px_120px_rgba(15,23,42,0.45)]'
-    : 'relative overflow-hidden rounded-[32px] border border-slate-200/80 bg-white shadow-[0_20px_80px_rgba(15,23,42,0.08)] lg:flex lg:min-h-[780px]';
+    : 'relative overflow-hidden rounded-[32px] border border-[hsl(var(--border))] bg-[hsl(var(--card))] shadow-[0_20px_80px_rgba(15,23,42,0.08)] lg:flex lg:min-h-[780px]';
 
   const statusTone = useMemo(() => {
     if (summary?.urgencyLevel === 'emergency') {
@@ -424,7 +424,7 @@ export default function PreConsultaChat({
                   className="flex items-end gap-3"
                 >
                   <DoctorAvatar src={AI_AVATAR_URL} alt={AI_DOCTOR_NAME} name={AI_DOCTOR_NAME} size="default" isOnline />
-                  <div className="rounded-[24px] rounded-bl-md border border-slate-200 bg-white px-4 py-3 shadow-[0_12px_30px_rgba(15,23,42,0.08)]">
+                  <div className="rounded-[24px] rounded-bl-md border border-slate-200 bg-white px-4 py-3 shadow-[0_12px_30px_rgba(15,23,42,0.08)]" role="status" aria-live="polite">
                     <div className="flex items-center gap-2">
                       <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-sky-500" />
                       <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-sky-400 [animation-delay:160ms]" />
@@ -566,7 +566,7 @@ export default function PreConsultaChat({
                   <button
                     onClick={sendMessage}
                     disabled={!input.trim() || isLoading}
-                    className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#2563eb_0%,#1d4ed8_40%,#0f172a_100%)] px-5 text-sm font-semibold text-white shadow-[0_16px_40px_rgba(37,99,235,0.28)] transition disabled:cursor-not-allowed disabled:opacity-50"
+                    className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#2563eb_0%,#1d4ed8_40%,#0f172a_100%)] px-5 text-sm font-semibold text-white shadow-[0_16px_40px_rgba(37,99,235,0.28)] transition focus-visible:ring-2 focus-visible:ring-[hsl(var(--brand-ocean))] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                   >
                     {quota?.remaining === 0 ? <Crown className="h-4 w-4" /> : <SendHorizonal className="h-4 w-4" />}
                     {isLoading ? 'Analizando…' : 'Enviar'}

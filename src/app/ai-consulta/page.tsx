@@ -54,32 +54,32 @@ export default function AnonymousConsultaPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-blue-50">
+    <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-white/80 backdrop-blur-md border-b border-blue-100 sticky top-0 z-50">
+      <header className="bg-[hsl(var(--card)/0.85)] backdrop-blur-md border-b border-[hsl(var(--border))] sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 bg-blue-500 rounded-xl flex items-center justify-center shadow-sm">
+            <div className="w-9 h-9 bg-[hsl(var(--brand-ocean))] rounded-xl flex items-center justify-center shadow-sm">
               <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
             </div>
-            <span className="text-xl font-bold text-gray-900">Doctor.mx</span>
+            <span className="text-xl font-bold text-[hsl(var(--text-primary))]">Doctor.mx</span>
           </Link>
           <div className="flex items-center gap-3">
-            <Link href="/" className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors">
+            <Link href="/" className="flex items-center gap-2 text-[hsl(var(--text-secondary))] hover:text-[hsl(var(--text-primary))] transition-colors">
               <Home className="w-4 h-4" />
               <span className="text-sm font-medium">Inicio</span>
             </Link>
             {quota && (
               <div className="text-right">
-                <p className="text-sm font-medium text-gray-700">{quota.remaining} consultas gratis</p>
+                <p className="text-sm font-medium text-[hsl(var(--text-primary))]">{quota.remaining} consultas gratis</p>
                 <div className="flex gap-1 mt-1">
                   {Array.from({ length: quota.limit }).map((_, i) => (
                     <div
                       key={i}
                       className={`w-2 h-2 rounded-full ${
-                        i < quota.used ? 'bg-blue-500' : 'bg-gray-200'
+                        i < quota.used ? 'bg-[hsl(var(--brand-ocean))]' : 'bg-[hsl(var(--border))]'
                       }`}
                     />
                   ))}
@@ -120,18 +120,18 @@ export default function AnonymousConsultaPage() {
             className="mt-8 space-y-6"
           >
             {/* Summary Card */}
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+            <div className="bg-[hsl(var(--card))] rounded-2xl shadow-lg border border-[hsl(var(--border))] p-6">
               <div className="flex items-center gap-2 mb-4">
-                <Check className="w-5 h-5 text-blue-500" />
-                <h3 className="font-bold text-gray-900">Evaluación Completada</h3>
+                <Check className="w-5 h-5 text-[hsl(var(--brand-ocean))]" />
+                <h3 className="font-bold text-[hsl(var(--text-primary))]">Evaluación Completada</h3>
               </div>
               <div className="space-y-3">
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Nivel de urgencia:</span>
-                  <span className="font-semibold text-blue-600">{summary.urgencyLevel || summary.urgency}</span>
+                  <span className="text-[hsl(var(--text-secondary))]">Nivel de urgencia:</span>
+                  <span className="font-semibold text-[hsl(var(--brand-ocean))]">{summary.urgencyLevel || summary.urgency}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Especialidad sugerida:</span>
+                  <span className="text-[hsl(var(--text-secondary))]">Especialidad sugerida:</span>
                   <span className="font-semibold">{summary.suggestedSpecialty || summary.specialty}</span>
                 </div>
               </div>
@@ -139,19 +139,19 @@ export default function AnonymousConsultaPage() {
 
             {/* Referrals */}
             {referrals.length > 0 && (
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
-                <h3 className="font-bold text-gray-900 mb-4">Doctores Recomendados</h3>
+              <div className="bg-[hsl(var(--card))] rounded-2xl shadow-lg border border-[hsl(var(--border))] p-6">
+                <h3 className="font-bold text-[hsl(var(--text-primary))] mb-4">Doctores Recomendados</h3>
                 <div className="space-y-4">
                   {referrals.map((referral) => (
                     <div
                       key={referral.doctorId}
-                      className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all"
+                      className="border border-[hsl(var(--border))] rounded-xl p-4 hover:shadow-md hover:border-[hsl(var(--border)/0.5)] transition-all"
                     >
-                      <p className="font-semibold text-gray-900">{referral.doctor?.profile?.full_name}</p>
-                      <p className="text-sm text-gray-600">{referral.doctor?.specialties?.[0]?.name}</p>
+                      <p className="font-semibold text-[hsl(var(--text-primary))]">{referral.doctor?.profile?.full_name}</p>
+                      <p className="text-sm text-[hsl(var(--text-secondary))]">{referral.doctor?.specialties?.[0]?.name}</p>
                       <div className="flex items-center gap-2 mt-2">
                         <span className="text-yellow-500">★</span>
-                        <span className="text-sm text-gray-700">{referral.doctor?.rating_avg}</span>
+                        <span className="text-sm text-[hsl(var(--text-primary))]">{referral.doctor?.rating_avg}</span>
                       </div>
                       <a
                         href={`/doctors/${referral.doctorId}`}
@@ -183,7 +183,7 @@ export default function AnonymousConsultaPage() {
         )}
 
         {/* Compliance Notice */}
-        <div className="mt-6 text-center text-xs text-gray-500">
+        <div className="mt-6 text-center text-xs text-[hsl(var(--text-muted))]">
           <p>Servicio de orientación médica con IA. No sustituye la consulta presencial.</p>
           <p className="mt-1">En caso de emergencia, llama al 911.</p>
         </div>

@@ -9,24 +9,28 @@ export function CTASection() {
   const prefersReducedMotion = useReducedMotion()
 
   return (
-    <section className="py-24 relative overflow-hidden bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-800">
+    <section className="py-24 relative overflow-hidden bg-gradient-to-br from-[hsl(var(--brand-ocean))] via-blue-700 to-indigo-800">
       {/* Background orbs - positioned absolutely to prevent layout shifts, respect reduced motion */}
       <div
         className={`absolute top-0 left-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl ${prefersReducedMotion ? '' : 'animate-pulse'}`}
         style={{ willChange: 'opacity' }}
+        aria-hidden="true"
       />
       <div
         className={`absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500/30 rounded-full blur-3xl ${prefersReducedMotion ? '' : 'animate-pulse'}`}
         style={{ animationDelay: prefersReducedMotion ? undefined : '1s', willChange: 'opacity' }}
+        aria-hidden="true"
       />
       <div
         className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl ${prefersReducedMotion ? '' : 'animate-pulse'}`}
         style={{ animationDelay: prefersReducedMotion ? undefined : '0.5s', willChange: 'opacity' }}
+        aria-hidden="true"
       />
 
       {/* Subtle plus pattern - medical theme */}
-      <div 
+      <div
         className="absolute inset-0 opacity-[0.03]"
+        aria-hidden="true"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` 
         }}
@@ -95,7 +99,7 @@ export function CTASection() {
             </Link>
 
             {/* Trust badges */}
-            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-6 mt-8 text-white/60 text-sm">
+            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-6 mt-8 text-white/70 text-sm">
               <span className="flex items-center gap-1.5">
                 <Shield className="w-4 h-4 flex-shrink-0" aria-hidden="true" /> Datos encriptados
               </span>

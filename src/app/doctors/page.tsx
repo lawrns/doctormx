@@ -142,7 +142,7 @@ export default async function DoctorsPage({
                     name="search"
                     placeholder="Ej. cardiólogo, pediatra, Dra. Herrera"
                     defaultValue={params.search}
-                    className="h-12 rounded-2xl border-border/80 bg-[hsl(var(--surface-quiet))] pl-11"
+                    className="h-12 rounded-2xl border-border/80 bg-[hsl(var(--surface-quiet))] pl-11 focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2"
                   />
                 </div>
                 {params.specialty && <input type="hidden" name="specialty" value={params.specialty} />}
@@ -263,8 +263,8 @@ export default async function DoctorsPage({
             ) : (
               <div className="grid gap-5 md:grid-cols-2 2xl:grid-cols-3">
                 {doctorList.map((doctor) => (
-                  <Link key={doctor.id} href={`/doctors/${doctor.id}`} className="group">
-                    <Card className="surface-panel h-full gap-0 overflow-hidden border-border/80 p-0 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[var(--shadow-medium)]">
+                  <Link key={doctor.id} href={`/doctors/${doctor.id}`} className="group rounded-2xl focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 outline-none">
+                    <Card className="surface-panel h-full gap-0 overflow-hidden border-border/80 p-0 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-md">
                       <div className="surface-tint px-6 py-5">
                         <div className="mb-4 flex items-start gap-4">
                           <div className="relative flex-shrink-0">
@@ -293,7 +293,7 @@ export default async function DoctorsPage({
                               <h3 className="truncate text-xl font-semibold tracking-[-0.03em] text-[hsl(var(--text-primary))] transition-colors group-hover:text-[hsl(var(--brand-ocean))]">
                                 {formatDoctorName(doctor.profile?.full_name)}
                               </h3>
-                              <Badge variant="success" className="normal-case tracking-[0.05em]">
+                              <Badge variant="success" className="normal-case tracking-[0.05em]" aria-label="Doctor verificado">
                                 Verificado
                               </Badge>
                             </div>
@@ -330,8 +330,8 @@ export default async function DoctorsPage({
                         </div>
 
                         {doctor.rating_avg > 0 && (
-                          <div className="flex items-center gap-2 rounded-2xl bg-[hsl(var(--surface-soft))] px-4 py-3 text-sm text-[hsl(var(--text-secondary))]">
-                            <Star className="h-4 w-4 fill-[hsl(var(--brand-gold))] text-[hsl(var(--brand-gold))]" />
+                          <div className="flex items-center gap-2 rounded-2xl bg-[hsl(var(--surface-soft))] px-4 py-3 text-sm text-[hsl(var(--text-secondary))]" aria-label={`Calificación ${doctor.rating_avg.toFixed(1)} de 5 estrellas basada en ${doctor.rating_count} reseñas`}>
+                            <Star className="h-4 w-4 fill-[hsl(var(--brand-gold))] text-[hsl(var(--brand-gold))]" aria-hidden="true" />
                             <span className="font-semibold text-[hsl(var(--text-primary))]">{doctor.rating_avg.toFixed(1)}</span>
                             <span>({doctor.rating_count} reseñas)</span>
                           </div>

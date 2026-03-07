@@ -48,13 +48,13 @@ export function PublicSectionHeading({
       <h2
         className={cn(
           'section-headline text-balance',
-          isDark ? 'text-white' : 'text-slate-950',
+          isDark ? 'text-white' : '',
           titleClassName,
         )}
       >
         {title}
         {accent ? (
-          <span className={cn('block', isDark ? 'text-sky-200' : 'text-blue-600')}>
+          <span className={cn('block', isDark ? 'text-sky-300' : 'text-[hsl(var(--brand-ocean))]')}>
             {accent}
           </span>
         ) : null}

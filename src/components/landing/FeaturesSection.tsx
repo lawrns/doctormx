@@ -62,12 +62,12 @@ export function FeaturesSection() {
 
   return (
     <section
-      className="public-section bg-neutral-0 relative overflow-hidden"
+      className="public-section bg-transparent relative overflow-hidden"
       role="region"
       aria-labelledby="features-section-heading"
     >
       {/* Background decoration */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--border-subtle)] to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--border-subtle)] to-transparent" aria-hidden="true" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div

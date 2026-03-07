@@ -142,8 +142,8 @@ export default function SpecialtiesPage() {
                   ease: [0.16, 1, 0.3, 1]
                 }}
               >
-                <Link href={`/doctors?specialty=${encodeURIComponent(specialty.name)}`} className="group block h-full">
-                  <Card className={`relative p-8 h-full bg-white/70 backdrop-blur-sm border-neutral-100 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.08)] transition-all duration-500 ${specialty.borderColor} group-hover:-translate-y-1`}>
+                <Link href={`/doctors?specialty=${encodeURIComponent(specialty.name)}`} className="group block h-full rounded-2xl focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 outline-none">
+                  <Card className={`relative p-8 h-full bg-white/70 backdrop-blur-sm border-neutral-100 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.08)] transition-all duration-200 ${specialty.borderColor} group-hover:-translate-y-1`}>
                     <div className={`w-14 h-14 ${specialty.bg} rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500`}>
                       <specialty.icon className={`w-7 h-7 ${specialty.color}`} />
                     </div>
@@ -196,7 +196,7 @@ export default function SpecialtiesPage() {
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: "0 20px 40px -10px rgba(59,130,246,0.3)" }}
                 whileTap={{ scale: 0.98 }}
-                className="px-10 py-5 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-500 transition-all flex items-center gap-3 mx-auto shadow-xl shadow-blue-600/20"
+                className="px-10 py-5 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-500 transition-all flex items-center gap-3 mx-auto shadow-xl shadow-blue-600/20 focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2"
               >
                 <Sparkles className="w-5 h-5" />
                 Iniciar Consulta IA Gratis

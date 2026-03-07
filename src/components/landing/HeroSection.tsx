@@ -110,7 +110,7 @@ export function HeroSection() {
         {/* Main Headline - HUGE, Doctronic style - EMPHASIZE FREE */}
         <motion.h1
           variants={itemVariants}
-          className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-text-primary mb-6 leading-[1.05] tracking-[-0.04em]"
+          className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-semibold text-text-primary mb-6 leading-[1.05] tracking-[-0.04em]"
         >
           5 Consultas Medicas
           <br />
