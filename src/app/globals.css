@@ -282,6 +282,26 @@ a {
   );
 }
 
+.public-section {
+  @apply py-20 sm:py-24;
+}
+
+.public-section-compact {
+  @apply py-16 sm:py-20;
+}
+
+.public-heading-stack {
+  @apply space-y-4;
+}
+
+.public-content-gap {
+  @apply gap-6 sm:gap-8;
+}
+
+.public-panel {
+  @apply rounded-[28px] p-6 sm:p-8;
+}
+
 .text-balance {
   text-wrap: balance;
 }

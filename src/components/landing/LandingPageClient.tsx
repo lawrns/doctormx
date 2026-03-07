@@ -4,6 +4,14 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet'
 import { HeroSection } from './HeroSection'
 import DrSimeonShowcase from './DrSimeonShowcase'
 import { StatsSection } from './StatsSection'
@@ -11,7 +19,8 @@ import { FeaturesSection } from './FeaturesSection'
 import { TestimonialsSection } from './TestimonialsSection'
 import { CTASection } from './CTASection'
 import { TrustFooter } from '@/components/TrustSignals'
-import { Stethoscope, Search, UserPlus, Sparkles, ShieldCheck, ArrowUpRight, HeartHandshake } from 'lucide-react'
+import { Stethoscope, Sparkles, ShieldCheck, ArrowUpRight, HeartHandshake } from 'lucide-react'
+import { landingNavItems } from '@/lib/public-nav'
 
 export function LandingPageClient() {
   return (
@@ -59,24 +68,61 @@ export function LandingPageClient() {
             </Link>
 
             <nav className="hidden items-center gap-1 lg:flex">
-              {[
-                { href: '/ai-consulta', label: '5 Consultas GRATIS', icon: Sparkles },
-                { href: '/doctors', label: 'Buscar doctores', icon: Search },
-                { href: '/for-doctors', label: 'Para doctores', icon: UserPlus },
-              ].map((link) => (
-                <Link key={link.href} href={link.href}>
-                  <motion.span
-                    whileHover={{ y: -1 }}
-                    className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-[hsl(var(--text-secondary))] transition-colors hover:bg-secondary/70 hover:text-[hsl(var(--text-primary))]"
-                  >
-                    <link.icon className="h-4 w-4" />
-                    {link.label}
-                  </motion.span>
-                </Link>
-              ))}
+              {landingNavItems.map((link) => {
+                const Icon = link.icon
+                return (
+                  <Link key={link.href} href={link.href}>
+                    <motion.span
+                      whileHover={{ y: -1 }}
+                      className="inline-flex items-center gap-2 whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-[hsl(var(--text-secondary))] transition-colors hover:bg-secondary/70 hover:text-[hsl(var(--text-primary))]"
+                    >
+                      {Icon ? <Icon className="h-4 w-4" /> : null}
+                      {link.compactLabel}
+                    </motion.span>
+                  </Link>
+                )
+              })}
             </nav>
 
             <div className="flex items-center gap-3">
+              <Sheet>
+                <SheetTrigger asChild>
+                  <button className="rounded-full p-2 text-[hsl(var(--text-secondary))] transition-colors hover:bg-secondary/70 hover:text-[hsl(var(--text-primary))] lg:hidden" aria-label="Abrir menú de navegación">
+                    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                  </button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[88%] max-w-sm border-l border-slate-200 bg-white">
+                  <SheetHeader className="border-b border-slate-100 pb-4">
+                    <SheetTitle>Explora Doctor.mx</SheetTitle>
+                    <SheetDescription>Navega por las principales rutas públicas desde cualquier pantalla.</SheetDescription>
+                  </SheetHeader>
+                  <nav className="flex flex-col gap-2 px-4 pb-6">
+                    {landingNavItems.map((item) => {
+                      const Icon = item.icon
+                      return (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 hover:text-slate-950"
+                        >
+                          {Icon ? <Icon className="h-4 w-4 text-blue-600" /> : null}
+                          {item.label}
+                        </Link>
+                      )
+                    })}
+                    <div className="mt-4 grid gap-3 border-t border-slate-100 pt-4">
+                      <Link href="/auth/login">
+                        <Button variant="ghost" className="w-full justify-center">Iniciar sesión</Button>
+                      </Link>
+                      <Link href="/auth/register">
+                        <Button variant="hero" className="w-full justify-center">Empezar gratis</Button>
+                      </Link>
+                    </div>
+                  </nav>
+                </SheetContent>
+              </Sheet>
               <Badge variant="luxe" className="hidden lg:inline-flex">Disponibilidad 24/7</Badge>
               <Link href="/auth/login">
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { PublicSectionHeading } from '@/components/PublicSectionHeading'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Header } from '@/components/layout/Header'
@@ -184,15 +185,15 @@ export default function ForDoctorsPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20">
+      <section className="public-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Todo lo que necesitas para tu práctica
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Herramientas profesionales diseñadas para médicos mexicanos
-            </p>
+          <div className="mb-16">
+            <PublicSectionHeading
+              eyebrow="Herramientas clave"
+              title="Todo lo que necesitas"
+              accent="para tu práctica"
+              description="Herramientas profesionales diseñadas para médicos mexicanos"
+            />
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -220,12 +221,14 @@ export default function ForDoctorsPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-gray-50">
+      <section className="public-section bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Lo que dicen nuestros doctores
-            </h2>
+          <div className="mb-16">
+            <PublicSectionHeading
+              eyebrow="Prueba social"
+              title="Lo que dicen"
+              accent="nuestros doctores"
+            />
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
@@ -261,14 +264,15 @@ export default function ForDoctorsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-indigo-700">
+      <section className="public-section bg-gradient-to-br from-blue-600 to-indigo-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-            Empieza a crecer hoy
-          </h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Crea tu perfil gratuito y comienza a recibir pacientes esta semana
-          </p>
+          <PublicSectionHeading
+            eyebrow="Listo para empezar"
+            title="Empieza a crecer"
+            accent="hoy"
+            description="Crea tu perfil gratuito y comienza a recibir pacientes esta semana"
+            theme="dark"
+          />
           <Link href="/auth/register?role=doctor">
             <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-10 py-6">
               Registrarme gratis

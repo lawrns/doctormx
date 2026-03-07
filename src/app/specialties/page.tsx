@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { PublicSectionHeading } from '@/components/PublicSectionHeading'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Card } from '@/components/ui/card'
@@ -102,7 +103,7 @@ export default function SpecialtiesPage() {
       <Header />
       
       {/* Hero Section with Ambient Glow */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative overflow-hidden public-section pt-32">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full opacity-30 pointer-events-none">
           <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-200 rounded-full blur-[120px]" />
           <div className="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-indigo-100 rounded-full blur-[100px]" />
@@ -115,16 +116,12 @@ export default function SpecialtiesPage() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-center"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-bold uppercase tracking-wider mb-6">
-              <Sparkles className="w-3.5 h-3.5" />
-              Directorio de Especialistas
-            </div>
-            <h1 className="text-5xl sm:text-6xl font-extrabold text-neutral-900 tracking-tight mb-6">
-              Encuentra al <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">especialista ideal</span>
-            </h1>
-            <p className="text-xl text-neutral-600 max-w-2xl mx-auto leading-relaxed">
-              Cuidado médico de alta precisión con los mejores doctores certificados de México.
-            </p>
+            <PublicSectionHeading
+              eyebrow="Directorio de especialistas"
+              title="Encuentra al"
+              accent="especialista ideal"
+              description="Cuidado médico de alta precisión con los mejores doctores certificados de México."
+            />
           </motion.div>
         </div>
       </section>
@@ -177,7 +174,7 @@ export default function SpecialtiesPage() {
       </section>
 
       {/* Modern AI CTA */}
-      <section className="py-24 relative overflow-hidden">
+      <section className="public-section relative overflow-hidden">
         <div className="absolute inset-0 bg-neutral-900" />
         <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
         
@@ -188,12 +185,13 @@ export default function SpecialtiesPage() {
             viewport={{ once: true }}
             className="p-12 rounded-[2.5rem] bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 backdrop-blur-md"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-              ¿No sabes qué especialista necesitas?
-            </h2>
-            <p className="text-neutral-400 text-lg mb-10 max-w-2xl mx-auto">
-              Dr. Simeon IA puede analizar tus síntomas y recomendarte al especialista adecuado en segundos.
-            </p>
+            <PublicSectionHeading
+              eyebrow="Orientación asistida"
+              title="¿No sabes qué"
+              accent="especialista necesitas?"
+              description="Dr. Simeon IA puede analizar tus síntomas y recomendarte al especialista adecuado en segundos."
+              theme="dark"
+            />
             <Link href="/app/second-opinion">
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: "0 20px 40px -10px rgba(59,130,246,0.3)" }}

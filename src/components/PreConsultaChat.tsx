@@ -272,29 +272,36 @@ export default function PreConsultaChat({
         animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
         className={panelClasses}
       >
-        <div className="hidden w-[360px] shrink-0 border-r border-white/10 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.24),_transparent_42%),linear-gradient(180deg,#0f172a_0%,#111827_52%,#020617_100%)] text-white lg:flex lg:flex-col">
-          <div className="p-8">
-            <div className="mb-6 flex items-center justify-between">
+        <div className="hidden w-[360px] shrink-0 border-r border-slate-800 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.18),_transparent_38%),linear-gradient(180deg,#0f172a_0%,#111827_48%,#020617_100%)] text-white lg:flex lg:flex-col">
+          <div className="flex h-full flex-col p-8">
+            <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <DoctorAvatar src={AI_AVATAR_URL} alt={AI_DOCTOR_NAME} name={AI_DOCTOR_NAME} size="xl" isOnline />
                 <div>
-                  <p className="text-sm uppercase tracking-[0.28em] text-sky-200/80">Asistente clínico</p>
+                  <p className="text-sm uppercase tracking-[0.28em] text-sky-100">Asistente clínico</p>
                   <h2 className="text-2xl font-semibold">{AI_DOCTOR_NAME}</h2>
                 </div>
               </div>
               {mode === 'modal' && (
-                <button onClick={onCloseAction} className="rounded-full border border-white/15 p-2 text-slate-200 transition hover:bg-white/10" aria-label="Cerrar">
+                <button onClick={onCloseAction} className="rounded-full border border-slate-700 bg-slate-900/70 p-2 text-slate-100 transition hover:bg-slate-800" aria-label="Cerrar">
                   <X className="h-4 w-4" />
                 </button>
               )}
             </div>
 
-            <div className="space-y-4 rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
-              <div className="flex items-start gap-3">
+            <div className="mt-6 flex flex-1 flex-col justify-between space-y-6">
+              <div className="rounded-[28px] border border-slate-800 bg-slate-900/70 p-6">
+                <p className="text-sm leading-7 text-slate-100">
+                  Resume tus síntomas con claridad, detecta alertas importantes y llega a tu consulta con una ruta clínica mejor estructurada.
+                </p>
+              </div>
+
+              <div className="space-y-6 rounded-[28px] border border-slate-800 bg-slate-900/78 p-6">
+                <div className="flex items-start gap-3">
                 <Sparkles className="mt-0.5 h-5 w-5 text-sky-300" />
                 <div>
                   <p className="font-medium text-white">Resumen inteligente</p>
-                  <p className="mt-1 text-sm leading-6 text-slate-300">
+                  <p className="mt-1 text-sm leading-6 text-slate-200">
                     Sintetizo tus síntomas, detecto alertas y preparo un resumen clínico útil para el doctor.
                   </p>
                 </div>
@@ -303,7 +310,7 @@ export default function PreConsultaChat({
                 <Shield className="mt-0.5 h-5 w-5 text-emerald-300" />
                 <div>
                   <p className="font-medium text-white">Seguridad primero</p>
-                  <p className="mt-1 text-sm leading-6 text-slate-300">
+                  <p className="mt-1 text-sm leading-6 text-slate-200">
                     Si aparecen red flags o urgencia alta, te lo indicaré con prioridad clara.
                   </p>
                 </div>
@@ -312,30 +319,34 @@ export default function PreConsultaChat({
                 <Clock3 className="mt-0.5 h-5 w-5 text-violet-300" />
                 <div>
                   <p className="font-medium text-white">Experiencia rápida</p>
-                  <p className="mt-1 text-sm leading-6 text-slate-300">
+                  <p className="mt-1 text-sm leading-6 text-slate-200">
                     En 3 a 5 mensajes obtendrás una ruta clara para agendar mejor tu consulta.
                   </p>
                 </div>
               </div>
-            </div>
-
-            <div className="mt-6 rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
-              <p className="text-xs uppercase tracking-[0.24em] text-slate-300">Estado actual</p>
-              <div className={cn('mt-3 flex items-center gap-2 text-sm font-medium', statusTone)}>
-                <span className="inline-flex h-2.5 w-2.5 rounded-full bg-current" />
-                {summary ? 'Evaluación lista para compartir con el especialista' : isLoading ? 'Analizando tu conversación en tiempo real' : 'Esperando tu siguiente mensaje'}
               </div>
-              {summary && (
-                <div className="mt-4 rounded-2xl border border-white/10 bg-slate-950/30 p-4 text-sm text-slate-200">
-                  <div className="mb-3 flex items-center justify-between gap-3">
-                    <span className="font-medium">Urgencia clínica</span>
-                    <span className={cn('rounded-full border px-3 py-1 text-xs font-semibold', urgencyBadge(summary.urgencyLevel).className)}>
-                      {urgencyBadge(summary.urgencyLevel).label}
-                    </span>
-                  </div>
-                  <p className="text-slate-300">Especialidad sugerida: <span className="font-medium text-white">{summary.suggestedSpecialty}</span></p>
+
+              <div className="rounded-[28px] border border-slate-800 bg-slate-900/82 p-6">
+                <p className="text-xs uppercase tracking-[0.24em] text-slate-300">Estado actual</p>
+                <div className={cn('mt-3 flex items-center gap-3 text-sm font-medium', statusTone)}>
+                  <span className="inline-flex h-2.5 w-2.5 rounded-full bg-current" />
+                  {summary ? 'Evaluación lista para compartir con el especialista' : isLoading ? 'Analizando tu conversación en tiempo real' : 'Esperando tu siguiente mensaje'}
                 </div>
-              )}
+                {summary ? (
+                  <div className="mt-6 space-y-4 rounded-[24px] border border-slate-800 bg-slate-950/90 p-6 text-sm text-slate-100">
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="font-medium text-white">Urgencia clínica</span>
+                      <span className={cn('rounded-full border px-3 py-1 text-xs font-semibold', urgencyBadge(summary.urgencyLevel).className)}>
+                        {urgencyBadge(summary.urgencyLevel).label}
+                      </span>
+                    </div>
+                    <div className="space-y-2">
+                      <p className="text-slate-300">Especialidad sugerida</p>
+                      <p className="font-medium text-white">{summary.suggestedSpecialty}</p>
+                    </div>
+                  </div>
+                ) : null}
+              </div>
             </div>
           </div>
         </div>

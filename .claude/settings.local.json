@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "mcp__notebooklm-mcp__notebook_create"
+      "mcp__notebooklm-mcp__notebook_create",
+      "mcp__claude_ai_Supabase__list_projects",
+      "mcp__claude_ai_Supabase__apply_migration"
     ]
   }
 }

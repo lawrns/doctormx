@@ -1,0 +1,254 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Codebase Analysis & Marketing Integration Points",
+      "description": "Analyze DoctorMX platform architecture to identify user touchpoints, API endpoints, and integration opportunities for marketing automation.",
+      "status": "pending",
+      "priority": "high",
+      "details": "Map every user journey from landing to consultation completion. Document AI doctor features with marketing angles. Extract unique value propositions.",
+      "testStrategy": "Verify all integration points work correctly with marketing automation tools.",
+      "dependencies": []
+    },
+    {
+      "id": "2", 
+      "title": "Marketing Technology Infrastructure Setup",
+      "description": "Deploy core marketing automation infrastructure including n8n workflows, analytics tracking, and data architecture.",
+      "status": "pending",
+      "priority": "high",
+      "details": "Set up n8n for workflow automation, configure Supabase for user analytics, implement tracking pixels and conversion events.",
+      "testStrategy": "Test all automation workflows and data collection mechanisms.",
+      "dependencies": ["1"]
+    },
+    {
+      "id": "3",
+      "title": "WhatsApp Business API Integration",
+      "description": "Implement WhatsApp Business API for automated messaging, critical for Mexican market penetration.",
+      "status": "pending", 
+      "priority": "high",
+      "details": "Set up WhatsApp Business account, configure automated flows, implement conversation management.",
+      "testStrategy": "Test message delivery, conversation flows, and compliance features.",
+      "dependencies": ["2"]
+    },
+    {
+      "id": "4",
+      "title": "User Registration & Onboarding Automation",
+      "description": "Create automated user onboarding sequences with email capture and engagement triggers.",
+      "status": "pending",
+      "priority": "high", 
+      "details": "Build 7-email onboarding sequence, implement welcome WhatsApp messages, set up user scoring.",
+      "testStrategy": "Test email delivery rates, message timing, and user engagement metrics.",
+      "dependencies": ["2", "3"]
+    },
+    {
+      "id": "5",
+      "title": "Social Media Automation - Reddit Strategy",
+      "description": "Implement automated Reddit engagement strategy for Mexican health subreddits.",
+      "status": "pending",
+      "priority": "medium",
+      "details": "Create karma building strategy, automated posting schedules, crisis response protocols.",
+      "testStrategy": "Monitor engagement rates, karma growth, and community feedback.",
+      "dependencies": ["2"]
+    },
+    {
+      "id": "6",
+      "title": "Social Media Automation - Twitter/X Healthcare",
+      "description": "Deploy Twitter automation for health crisis monitoring and influencer engagement.",
+      "status": "pending",
+      "priority": "medium",
+      "details": "Set up real-time health hashtag monitoring, automated thread creation, influencer outreach.",
+      "testStrategy": "Test response times, engagement rates, and compliance with Twitter policies.",
+      "dependencies": ["2"]
+    },
+    {
+      "id": "7",
+      "title": "Content Marketing Engine Development",
+      "description": "Build automated content generation and distribution system for health education.",
+      "status": "pending",
+      "priority": "high",
+      "details": "Create 100+ article templates, SEO optimization, multi-platform distribution automation.",
+      "testStrategy": "Test content quality, SEO performance, and distribution effectiveness.",
+      "dependencies": ["2"]
+    },
+    {
+      "id": "8",
+      "title": "Email Marketing Automation Workflows",
+      "description": "Implement segmented email campaigns for different user lifecycles and health conditions.",
+      "status": "pending",
+      "priority": "high",
+      "details": "Build abandoned consultation recovery, health tip newsletters, referral campaigns.",
+      "testStrategy": "Test email deliverability, open rates, and conversion metrics.",
+      "dependencies": ["4"]
+    },
+    {
+      "id": "9",
+      "title": "COFEPRIS Compliance Automation",
+      "description": "Implement automated compliance checking for Mexican healthcare regulations.",
+      "status": "pending",
+      "priority": "high",
+      "details": "Build disclaimer insertion system, medical claim verification, license validation.",
+      "testStrategy": "Verify all content meets COFEPRIS requirements and legal compliance.",
+      "dependencies": ["1"]
+    },
+    {
+      "id": "10",
+      "title": "User Behavioral Tracking & Scoring System",
+      "description": "Implement user engagement scoring and behavioral trigger system for personalized marketing.",
+      "status": "pending",
+      "priority": "medium",
+      "details": "Create user scoring algorithms, behavioral triggers, personalization engine.",
+      "testStrategy": "Test scoring accuracy, trigger timing, and personalization effectiveness.",
+      "dependencies": ["2", "4"]
+    },
+    {
+      "id": "11",
+      "title": "Geographic Targeting & Local Provider Integration",
+      "description": "Build location-based targeting system for local healthcare provider recommendations.",
+      "status": "pending",
+      "priority": "medium",
+      "details": "Integrate location APIs, build provider database, create local targeting rules.",
+      "testStrategy": "Test location accuracy, provider recommendations, and local relevance.",
+      "dependencies": ["2"]
+    },
+    {
+      "id": "12",
+      "title": "A/B Testing Framework Implementation",
+      "description": "Deploy automated A/B testing system for campaigns, content, and user flows.",
+      "status": "pending",
+      "priority": "medium",
+      "details": "Build testing infrastructure, statistical significance calculators, automated optimization.",
+      "testStrategy": "Verify statistical accuracy, test automation, and result reporting.",
+      "dependencies": ["2"]
+    },
+    {
+      "id": "13",
+      "title": "Performance Analytics Dashboard",
+      "description": "Create real-time dashboard for monitoring all marketing automation performance metrics.",
+      "status": "pending",
+      "priority": "high",
+      "details": "Build comprehensive dashboard with KPIs, attribution modeling, ROI calculations.",
+      "testStrategy": "Test data accuracy, real-time updates, and dashboard responsiveness.",
+      "dependencies": ["2", "10"]
+    },
+    {
+      "id": "14",
+      "title": "Crisis Response Automation System",
+      "description": "Implement automated response system for health crises and trending medical topics.",
+      "status": "pending",
+      "priority": "medium",
+      "details": "Build trend monitoring, automated content generation, rapid response protocols.",
+      "testStrategy": "Test response speed, content relevance, and crisis management effectiveness.",
+      "dependencies": ["6", "7"]
+    },
+    {
+      "id": "15",
+      "title": "Referral Program Automation",
+      "description": "Create automated referral tracking and reward system to encourage user growth.",
+      "status": "pending",
+      "priority": "medium",
+      "details": "Build referral tracking, automated rewards, social sharing optimization.",
+      "testStrategy": "Test referral attribution, reward delivery, and program effectiveness.",
+      "dependencies": ["4", "8"]
+    },
+    {
+      "id": "16",
+      "title": "Multi-Channel Attribution Modeling",
+      "description": "Implement sophisticated attribution system to track user journey across all touchpoints.",
+      "status": "pending",
+      "priority": "medium",
+      "details": "Build cross-device tracking, touchpoint attribution, conversion path analysis.",
+      "testStrategy": "Verify attribution accuracy, cross-device tracking, and data consistency.",
+      "dependencies": ["13"]
+    },
+    {
+      "id": "17",
+      "title": "Automated Customer Support Integration",
+      "description": "Integrate marketing automation with customer support for seamless user experience.",
+      "status": "pending",
+      "priority": "low",
+      "details": "Connect support tickets with user journey, automated escalation, satisfaction tracking.",
+      "testStrategy": "Test support integration, escalation rules, and user satisfaction metrics.",
+      "dependencies": ["4", "10"]
+    },
+    {
+      "id": "18",
+      "title": "Mexican Market Localization Automation",
+      "description": "Implement cultural and regional customization for different Mexican markets.",
+      "status": "pending",
+      "priority": "medium",
+      "details": "Build regional content variations, local health topic customization, cultural adaptation.",
+      "testStrategy": "Test regional relevance, cultural appropriateness, and local engagement.",
+      "dependencies": ["7", "11"]
+    },
+    {
+      "id": "19",
+      "title": "Prescription & Medication Tracking Integration",
+      "description": "Connect medication recommendations with marketing automation for follow-up campaigns.",
+      "status": "pending",
+      "priority": "medium",
+      "details": "Integrate prescription data, medication adherence tracking, automated reminders.",
+      "testStrategy": "Test prescription tracking, reminder accuracy, and adherence improvement.",
+      "dependencies": ["1", "4"]
+    },
+    {
+      "id": "20",
+      "title": "Influencer Partnership Automation",
+      "description": "Build automated system for identifying, reaching out to, and managing health influencers.",
+      "status": "pending",
+      "priority": "low",
+      "details": "Create influencer database, automated outreach, performance tracking, payment processing.",
+      "testStrategy": "Test influencer identification, outreach effectiveness, and partnership ROI.",
+      "dependencies": ["6"]
+    },
+    {
+      "id": "21",
+      "title": "Competitive Intelligence Automation",
+      "description": "Implement automated monitoring of competitor activities and market trends.",
+      "status": "pending",
+      "priority": "low",
+      "details": "Build competitor tracking, pricing monitoring, feature comparison, market analysis.",
+      "testStrategy": "Test monitoring accuracy, trend identification, and competitive insights.",
+      "dependencies": ["2"]
+    },
+    {
+      "id": "22",
+      "title": "Advanced Segmentation & Personalization",
+      "description": "Implement AI-powered user segmentation and hyper-personalized marketing campaigns.",
+      "status": "pending",
+      "priority": "medium",
+      "details": "Build ML segmentation models, dynamic content personalization, predictive analytics.",
+      "testStrategy": "Test segmentation accuracy, personalization effectiveness, and engagement lift.",
+      "dependencies": ["10", "12"]
+    },
+    {
+      "id": "23",
+      "title": "Mobile App Integration & Push Notifications",
+      "description": "Integrate mobile app events with marketing automation for push notification campaigns.",
+      "status": "pending",
+      "priority": "medium",
+      "details": "Connect app events, build push notification workflows, optimize delivery timing.",
+      "testStrategy": "Test app integration, notification delivery, and engagement rates.",
+      "dependencies": ["2", "4"]
+    },
+    {
+      "id": "24",
+      "title": "Revenue Attribution & ROI Optimization",
+      "description": "Implement comprehensive revenue tracking and ROI optimization across all channels.",
+      "status": "pending",
+      "priority": "high",
+      "details": "Build revenue attribution models, lifetime value calculations, ROI optimization algorithms.",
+      "testStrategy": "Verify revenue tracking accuracy, attribution models, and optimization effectiveness.",
+      "dependencies": ["16", "13"]
+    },
+    {
+      "id": "25",
+      "title": "Scalability Testing & Performance Optimization",
+      "description": "Test system scalability for 10,000+ users and optimize performance bottlenecks.",
+      "status": "pending",
+      "priority": "high",
+      "details": "Conduct load testing, optimize database queries, implement caching, monitor performance.",
+      "testStrategy": "Test system performance under load, verify scalability, and optimize bottlenecks.",
+      "dependencies": ["2", "13", "24"]
+    }
+  ]
+} 

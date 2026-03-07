@@ -2,6 +2,15 @@
 
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet'
+import { sharedHeaderNavItems } from '@/lib/public-nav'
 import { cn } from '@/lib/utils'
 import { useState, useEffect } from 'react'
 
@@ -56,31 +65,16 @@ export function Header({ variant = 'default', showAuth = true }: HeaderProps) {
           </Link>
 
           {/* Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            <Link
-              href="/doctors"
-              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              Buscar doctores
-            </Link>
-            <Link
-              href="/app/second-opinion"
-              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              Consulta IA
-            </Link>
-            <Link
-              href="/specialties"
-              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              Especialidades
-            </Link>
-            <Link
-              href="/for-doctors"
-              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              Para doctores
-            </Link>
+          <nav className="hidden lg:flex items-center gap-1">
+            {sharedHeaderNavItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-50 hover:text-gray-900"
+              >
+                {item.compactLabel}
+              </Link>
+            ))}
           </nav>
 
           {/* Auth buttons */}
@@ -103,21 +97,56 @@ export function Header({ variant = 'default', showAuth = true }: HeaderProps) {
           )}
 
           {/* Mobile menu button */}
-          <button className="md:hidden p-2 text-gray-600 hover:text-gray-900">
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
+          <Sheet>
+            <SheetTrigger asChild>
+              <button className="lg:hidden p-2 text-gray-600 hover:text-gray-900" aria-label="Abrir menú de navegación">
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[88%] max-w-sm border-l border-slate-200 bg-white">
+              <SheetHeader className="border-b border-slate-100 pb-4">
+                <SheetTitle>Navegación</SheetTitle>
+                <SheetDescription>Explora las principales rutas públicas de Doctor.mx.</SheetDescription>
+              </SheetHeader>
+              <nav className="flex flex-col gap-2 px-4 pb-6">
+                {sharedHeaderNavItems.map((item) => {
+                  const Icon = item.icon
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 hover:text-slate-950"
+                    >
+                      {Icon ? <Icon className="h-4 w-4 text-blue-600" /> : null}
+                      {item.label}
+                    </Link>
+                  )
+                })}
+                {showAuth ? (
+                  <div className="mt-4 grid gap-3 border-t border-slate-100 pt-4">
+                    <Link href="/auth/login">
+                      <Button variant="ghost" className="w-full justify-center">Iniciar sesión</Button>
+                    </Link>
+                    <Link href="/auth/register">
+                      <Button className="w-full justify-center bg-primary-500 hover:bg-primary-600">Registrarse</Button>
+                    </Link>
+                  </div>
+                ) : null}
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>
