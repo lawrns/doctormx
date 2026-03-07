@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/card'
+import { PublicSectionHeading } from '@/components/PublicSectionHeading'
 import { BadgeCheck, Star, MapPin } from 'lucide-react'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 
@@ -42,7 +43,7 @@ export function TestimonialsSection() {
   const prefersReducedMotion = useReducedMotion()
 
   return (
-    <section className="py-24 bg-gradient-to-b from-neutral-50 to-neutral-0 relative overflow-hidden">
+    <section className="public-section bg-gradient-to-b from-neutral-50 to-neutral-0 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-100/10 rounded-full blur-3xl" />
 
@@ -52,23 +53,14 @@ export function TestimonialsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
-          className="text-center mb-16"
+          className="mb-16"
         >
-          <motion.span
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, ease: [0, 0, 0.2, 1] }}
-            className="inline-block px-4 py-1.5 bg-primary-50 text-primary-500 text-sm font-semibold rounded-full mb-4"
-          >
-            Historias reales
-          </motion.span>
-          <h2 className="section-headline text-3xl sm:text-4xl lg:text-5xl mb-4">
-            Pacientes y doctores confían en nosotros
-          </h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            Más de 10,000 consultas realizadas con un 98% de satisfacción
-          </p>
+          <PublicSectionHeading
+            eyebrow="Historias reales"
+            title="Pacientes y doctores"
+            accent="confían en nosotros"
+            description="Más de 10,000 consultas realizadas con un 98% de satisfacción"
+          />
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6">

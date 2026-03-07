@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import { PublicSectionHeading } from '@/components/PublicSectionHeading'
 import { EmptyState } from '@/components/EmptyState'
 import { Input } from '@/components/ui/input'
 import { ArrowUpRight, MapPin, Search, ShieldCheck, Star, Stethoscope, Video } from 'lucide-react'
@@ -69,17 +70,18 @@ export default async function DoctorsPage({
   return (
     <div className="min-h-screen bg-transparent">
       <main className="editorial-shell py-8 sm:py-10 lg:py-12">
-        <section className="surface-panel-strong overflow-hidden px-6 py-8 sm:px-8 lg:px-10 lg:py-10">
+        <section className="surface-panel-strong overflow-hidden public-panel sm:px-8 lg:px-10 lg:py-10">
           <div className="grid gap-10 lg:grid-cols-[1.3fr_0.7fr] lg:items-end">
             <div className="space-y-6">
               <Badge variant="luxe">Marketplace clínico verificado</Badge>
-              <div className="space-y-4">
-                <h1 className="section-headline max-w-4xl text-balance">
-                  Encuentra al especialista correcto con la calma y la confianza de una clínica premium.
-                </h1>
-                <p className="max-w-2xl text-lg leading-relaxed text-[hsl(var(--text-secondary))]">
-                  Explora perfiles verificados, compara experiencia y agenda con médicos reales en México. Cada perfil combina claridad clínica, disponibilidad y confianza institucional.
-                </p>
+              <div className="max-w-4xl">
+                <PublicSectionHeading
+                  align="left"
+                  eyebrow="Descubrimiento premium"
+                  title="Encuentra al especialista correcto"
+                  accent="con calma y confianza"
+                  description="Explora perfiles verificados, compara experiencia y agenda con médicos reales en México. Cada perfil combina claridad clínica, disponibilidad y confianza institucional."
+                />
               </div>
 
               <div className="grid gap-3 sm:grid-cols-3">
@@ -120,8 +122,12 @@ export default async function DoctorsPage({
         <section className="mt-8 grid gap-8 xl:grid-cols-[0.9fr_2.1fr]">
           <Card className="surface-panel border-border/80 p-0 xl:sticky xl:top-28 xl:self-start">
             <div className="border-b border-border/70 px-6 py-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[hsl(var(--text-soft))]">Refinar búsqueda</p>
-              <h2 className="mt-2 text-2xl font-semibold tracking-[-0.04em] text-[hsl(var(--text-primary))]">Encuentra por perfil, modalidad y especialidad</h2>
+              <PublicSectionHeading
+                align="left"
+                eyebrow="Refinar búsqueda"
+                title="Encuentra por perfil,"
+                accent="modalidad y especialidad"
+              />
             </div>
 
             <div className="space-y-6 px-6 py-6">
@@ -227,10 +233,13 @@ export default async function DoctorsPage({
             <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[hsl(var(--text-soft))]">Resultados curados</p>
-                <h2 className="mt-1 text-2xl font-semibold tracking-[-0.04em] text-[hsl(var(--text-primary))]">
-                  <span className="mr-2">{doctorList.length}</span>
-                  doctor{doctorList.length !== 1 ? 'es' : ''} listo{doctorList.length !== 1 ? 's' : ''} para atender
-                </h2>
+                <div className="mt-2">
+                  <PublicSectionHeading
+                    align="left"
+                    title={`${doctorList.length} doctor${doctorList.length !== 1 ? 'es' : ''}`}
+                    accent={`listo${doctorList.length !== 1 ? 's' : ''} para atender`}
+                  />
+                </div>
               </div>
               <div className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-card/70 px-4 py-2 text-sm text-[hsl(var(--text-secondary))]">
                 <ShieldCheck className="h-4 w-4 text-[hsl(var(--brand-leaf))]" />
