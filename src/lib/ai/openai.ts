@@ -226,22 +226,43 @@ export async function aiChatCompletion(params: {
     }
   }
 
-  // Fall back to GLM
-  const { glmChatCompletion } = await import('./glm')
-  const glmResult = await glmChatCompletion({
-    messages: params.messages.map(m => ({ role: m.role === 'assistant' ? 'assistant' : 'user', content: m.content })),
-    temperature: params.temperature,
-    maxTokens: params.maxTokens,
-    jsonMode: params.jsonMode,
-  })
+  // Try GLM
+  try {
+    const { glmChatCompletion } = await import('./glm')
+    const glmResult = await glmChatCompletion({
+      messages: params.messages.map(m => ({ role: m.role === 'assistant' ? 'assistant' : 'user', content: m.content })),
+      temperature: params.temperature,
+      maxTokens: params.maxTokens,
+      jsonMode: params.jsonMode,
+    })
 
-  return {
-    content: glmResult.content,
-    usage: glmResult.usage,
-    costUSD: glmResult.costUSD,
-    model: glmResult.model,
-    provider: 'glm',
+    return {
+      content: glmResult.content,
+      usage: glmResult.usage,
+      costUSD: glmResult.costUSD,
+      model: glmResult.model,
+      provider: 'glm',
+    }
+  } catch (glmError) {
+    logger.warn('[AI] GLM failed, falling back to OpenAI', { error: glmError })
   }
+
+  // Final fallback: OpenAI (if not already tried)
+  if (!preferOpenAI && isOpenAIConfigured()) {
+    const result = await openaiChatCompletion({
+      ...openaiParams,
+      messages: openaiParams.messages.filter(m => m.role !== 'system') as Array<{ role: 'user' | 'assistant'; content: string }>,
+    })
+    return {
+      content: result.content,
+      usage: result.usage,
+      costUSD: result.costUSD,
+      model: result.model,
+      provider: 'openai',
+    }
+  }
+
+  throw new Error('All AI providers failed')
 }
 
 // Export default client

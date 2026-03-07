@@ -21,7 +21,7 @@ export const AI_CONFIG = {
     },
     defaultModel: 'glm-5',         // Use latest GLM 5 by default
     temperature: 0.3,              // Less creative, more consistent
-    maxTokens: 500,                // Concise responses
+    maxTokens: 2000,               // GLM-5 is a reasoning model — needs ~1500 tokens for CoT + answer
   },
 
   // Kimi - Secondary AI Provider (Moonshot)

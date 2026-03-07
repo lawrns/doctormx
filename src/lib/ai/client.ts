@@ -33,7 +33,7 @@ async function getGLMClient(): Promise<OpenAI> {
       glmClient = new OpenAI({
         apiKey: AI_CONFIG.glm.apiKey,
         baseURL: AI_CONFIG.glm.baseURL,
-        timeout: 8000, // 8s per-provider timeout to leave room for fallbacks
+        timeout: 20000, // 20s — GLM-5 is a reasoning model, needs ~10-15s to complete CoT + answer
       });
     } catch (error) {
       console.error("Error al inicializar GLM client:", error);
