@@ -1,57 +1,61 @@
 /**
  * Configuración central para servicios de IA
- * GLM (Primary), Kimi (Secondary), OpenAI (Fallback), Whisper, y otros modelos
- *
- * GLM z.ai is the primary provider for Doctor.mx
- * - Cost effective: 90% cheaper than GPT-4
- * - Better multilingual support (Spanish)
- * - OpenAI SDK compatible
+ * OpenRouter (Kimi K2.5) — sole active LLM provider
+ * OpenAI Whisper — audio transcription only
  */
 
 export const AI_CONFIG = {
-  // GLM - Primary AI Provider (z.ai)
-  // Docs: https://docs.z.ai/guides/overview/quick-start
-  glm: {
-    apiKey: process.env.GLM_API_KEY || '',
-    baseURL: 'https://api.z.ai/api/coding/paas/v4/', // GLM Coding Plan endpoint
-    models: {
-      reasoning: 'glm-5',          // Deep reasoning — use for structured analysis (accepts 10-12s)
-      chat: 'glm-4.5-air',         // Fast chat — no CoT overhead (~3-4s), enough for triage dialog
-      vision: 'glm-5',             // Best multimodal available on coding plan
-    },
-    defaultModel: 'glm-4.5-air',   // Fast model for conversational paths
-    chatMaxTokens: 1000,            // glm-4.5-air: ~700 CoT + short answer fits in 1000
-    analysisMaxTokens: 2000,        // glm-5: ~1500 CoT + detailed answer
-    temperature: 0.3,              // Less creative, more consistent
-    maxTokens: 1000,               // Default; analysis overrides to 2000
+  // OpenRouter — sole LLM provider (OpenAI-compatible)
+  openrouter: {
+    apiKey: process.env.OPENROUTER_API_KEY || '',
+    baseURL: 'https://openrouter.ai/api/v1',
+    model: 'moonshotai/kimi-k2',        // Kimi K2.5 on OpenRouter
+    temperature: 0.3,
+    maxTokens: 1500,
+    analysisMaxTokens: 2000,
   },
 
-  // Kimi - Secondary AI Provider (Moonshot)
-  // Supports custom base URL so coding/special plan endpoints can be used if needed.
-  kimi: {
-    apiKey: process.env.KIMI_API_KEY || '',
-    baseURL: process.env.KIMI_BASE_URL || 'https://api.kimi.com/coding/v1',
+  // GLM — disabled (kept as stub to avoid breaking legacy references)
+  glm: {
+    apiKey: '',
+    baseURL: 'https://api.z.ai/api/coding/paas/v4/',
     models: {
-      reasoning: process.env.KIMI_REASONING_MODEL || 'kimi-for-coding',
-      chat: process.env.KIMI_CHAT_MODEL || 'kimi-for-coding',
-      vision: process.env.KIMI_VISION_MODEL || 'kimi-for-coding',
+      reasoning: 'glm-5',
+      chat: 'glm-4.5-air',
+      vision: 'glm-5',
     },
-    defaultModel: process.env.KIMI_CHAT_MODEL || 'kimi-for-coding',
+    defaultModel: 'glm-4.5-air',
+    chatMaxTokens: 1000,
+    analysisMaxTokens: 2000,
+    temperature: 0.3,
+    maxTokens: 1000,
+  },
+
+  // Kimi — disabled (kept as stub to avoid breaking legacy references)
+  kimi: {
+    apiKey: '',
+    baseURL: 'https://api.kimi.com/coding/v1',
+    models: {
+      reasoning: 'kimi-for-coding',
+      chat: 'kimi-for-coding',
+      vision: 'kimi-for-coding',
+    },
+    defaultModel: 'kimi-for-coding',
     temperature: 0.3,
     maxTokens: 500,
   },
 
-  // OpenAI - Fallback provider
+  // OpenAI — Whisper transcription only (not used for chat/analysis)
   openai: {
     apiKey: process.env.OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY || '',
-    model: 'gpt-4o-mini', // Fallback model
+    model: 'gpt-4o-mini',
     temperature: 0.3,
     maxTokens: 500,
   },
 
-  // Whisper - Audio transcription (still uses OpenAI)
+  // Whisper — Audio transcription (still uses OpenAI)
   whisper: {
-    apiKey: process.env.OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY || '', // Whisper requires OpenAI key
+    apiKey: process.env.OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY || '',
     model: 'whisper-1',
     language: 'es', // Spanish default
     responseFormat: 'json' as const,
@@ -59,25 +63,24 @@ export const AI_CONFIG = {
 
   // Limits and quotas
   limits: {
-    maxMessagesPerSession: 20, // Pre-consultation limits
-    maxAudioMinutes: 60,       // Typical consultation 20-40min
-    maxRetries: 3,
-    timeoutMs: 30000,          // 30 seconds
+    maxMessagesPerSession: 20,
+    maxAudioMinutes: 60,
+    maxRetries: 0,
+    timeoutMs: 20000, // 20 seconds
   },
 
-  // Cost tracking (per 1M tokens)
+  // Cost tracking (per 1M tokens) — Kimi K2.5 via OpenRouter
   costs: {
-    // GLM pricing
+    openrouterInputPer1M: 0.15,   // Kimi K2.5 estimated
+    openrouterOutputPer1M: 0.60,  // Kimi K2.5 estimated
+    // Legacy keys kept for any existing audit/reporting references
     glmInputPer1M: 0.60,
     glmOutputPer1M: 2.20,
     glmCachedPer1M: 0.11,
-    // Kimi pricing
     kimiInputPer1M: 0.50,
     kimiOutputPer1M: 2.80,
-    // OpenAI pricing (fallback)
     gpt4oMiniInputPer1M: 0.15,
     gpt4oMiniOutputPer1M: 0.60,
-    // Whisper
     whisperPerMinute: 0.006,
   },
 
@@ -86,15 +89,15 @@ export const AI_CONFIG = {
     preConsulta: process.env.NEXT_PUBLIC_AI_PRECONSULTA === 'true' || true,
     transcription: process.env.NEXT_PUBLIC_AI_TRANSCRIPTION === 'true' || true,
     followUp: process.env.NEXT_PUBLIC_AI_FOLLOWUP === 'true' || true,
-    prescriptionAssist: false, // Phase 2
-    smartMatching: false,      // Phase 2
-    useGLM: true,              // Use GLM as primary provider
+    prescriptionAssist: false,
+    smartMatching: false,
+    useGLM: false, // Disabled — using OpenRouter
   },
 
   // Provider priority
   providers: {
-    primary: 'glm' as const,
-    secondary: 'kimi' as const,
+    primary: 'openrouter' as const,
+    secondary: 'openrouter' as const,
     fallback: 'openai' as const,
   },
 } as const;
@@ -106,20 +109,10 @@ export function validateAIConfig(): { valid: boolean; errors: string[]; warnings
   const errors: string[] = [];
   const warnings: string[] = [];
 
-  // Check GLM (primary provider)
-  if (!AI_CONFIG.glm.apiKey && AI_CONFIG.features.useGLM && AI_CONFIG.features.preConsulta) {
-    if (!AI_CONFIG.kimi.apiKey && !AI_CONFIG.openai.apiKey) {
-      errors.push('GLM_API_KEY no configurada y no hay fallback KIMI/OpenAI disponible');
-    } else {
-      warnings.push('GLM_API_KEY no configurada - usando Kimi/OpenAI como fallback');
-    }
+  if (!AI_CONFIG.openrouter.apiKey) {
+    errors.push('OPENROUTER_API_KEY no configurada');
   }
 
-  if (!AI_CONFIG.kimi.apiKey) {
-    warnings.push('KIMI_API_KEY no configurada - Kimi no estará disponible como proveedor secundario');
-  }
-
-  // Check OpenAI (fallback and Whisper)
   if (!AI_CONFIG.whisper.apiKey && AI_CONFIG.features.transcription) {
     errors.push('OPENAI_API_KEY requerida para transcripción con Whisper');
   }
@@ -132,14 +125,11 @@ export function validateAIConfig(): { valid: boolean; errors: string[]; warnings
 }
 
 /**
- * Get the active AI provider based on configuration
+ * Get the active AI provider
  */
-export function getActiveProvider(): 'glm' | 'kimi' | 'openai' {
-  if (AI_CONFIG.features.useGLM && AI_CONFIG.glm.apiKey) {
-    return 'glm';
-  }
-  if (AI_CONFIG.kimi.apiKey) {
-    return 'kimi';
+export function getActiveProvider(): 'openrouter' | 'openai' {
+  if (AI_CONFIG.openrouter.apiKey) {
+    return 'openrouter';
   }
   return 'openai';
 }
@@ -152,23 +142,12 @@ export function estimateCost(operation: {
   inputTokens?: number;
   outputTokens?: number;
   audioMinutes?: number;
-  provider?: 'glm' | 'kimi' | 'openai';
+  provider?: 'openrouter' | 'openai';
 }): number {
   if (operation.type === 'chat') {
-    const provider = operation.provider || getActiveProvider();
-    if (provider === 'glm') {
-      const inputCost = ((operation.inputTokens || 0) / 1_000_000) * AI_CONFIG.costs.glmInputPer1M;
-      const outputCost = ((operation.outputTokens || 0) / 1_000_000) * AI_CONFIG.costs.glmOutputPer1M;
-      return inputCost + outputCost;
-    } else if (provider === 'kimi') {
-      const inputCost = ((operation.inputTokens || 0) / 1_000_000) * AI_CONFIG.costs.kimiInputPer1M;
-      const outputCost = ((operation.outputTokens || 0) / 1_000_000) * AI_CONFIG.costs.kimiOutputPer1M;
-      return inputCost + outputCost;
-    } else {
-      const inputCost = ((operation.inputTokens || 0) / 1_000_000) * AI_CONFIG.costs.gpt4oMiniInputPer1M;
-      const outputCost = ((operation.outputTokens || 0) / 1_000_000) * AI_CONFIG.costs.gpt4oMiniOutputPer1M;
-      return inputCost + outputCost;
-    }
+    const inputCost = ((operation.inputTokens || 0) / 1_000_000) * AI_CONFIG.costs.openrouterInputPer1M;
+    const outputCost = ((operation.outputTokens || 0) / 1_000_000) * AI_CONFIG.costs.openrouterOutputPer1M;
+    return inputCost + outputCost;
   }
 
   if (operation.type === 'transcription') {

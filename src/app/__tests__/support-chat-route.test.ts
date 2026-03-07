@@ -36,7 +36,7 @@ describe('/api/support/chat POST', () => {
       usage: { inputTokens: 10, outputTokens: 10, totalTokens: 20 },
       costUSD: 0.001,
       model: 'glm-5',
-      provider: 'glm',
+      provider: 'openrouter',
     })
 
     const request = new Request('http://localhost/api/support/chat', {

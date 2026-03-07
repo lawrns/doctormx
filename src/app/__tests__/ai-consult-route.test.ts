@@ -60,7 +60,7 @@ describe('/api/ai/consult POST', () => {
         usage: { inputTokens: 10, outputTokens: 10, totalTokens: 20 },
         costUSD: 0.001,
         model: 'glm-5',
-        provider: 'glm',
+        provider: 'openrouter',
       })
       .mockResolvedValueOnce({
         content: JSON.stringify({
@@ -73,14 +73,14 @@ describe('/api/ai/consult POST', () => {
         usage: { inputTokens: 10, outputTokens: 10, totalTokens: 20 },
         costUSD: 0.001,
         model: 'glm-5',
-        provider: 'glm',
+        provider: 'openrouter',
       })
       .mockResolvedValueOnce({
         content: '¿Tienes fiebre o tos?',
         usage: { inputTokens: 10, outputTokens: 10, totalTokens: 20 },
         costUSD: 0.001,
         model: 'glm-5',
-        provider: 'glm',
+        provider: 'openrouter',
       })
 
     const request = new Request('http://localhost/api/ai/consult', {
@@ -125,7 +125,7 @@ describe('/api/ai/consult POST', () => {
         usage: { inputTokens: 10, outputTokens: 10, totalTokens: 20 },
         costUSD: 0.001,
         model: 'glm-5',
-        provider: 'glm',
+        provider: 'openrouter',
       })
       .mockResolvedValueOnce({
         content: JSON.stringify({
@@ -138,14 +138,14 @@ describe('/api/ai/consult POST', () => {
         usage: { inputTokens: 10, outputTokens: 10, totalTokens: 20 },
         costUSD: 0.001,
         model: 'glm-5',
-        provider: 'glm',
+        provider: 'openrouter',
       })
       .mockResolvedValueOnce({
         content: 'Gracias. Ya tengo suficiente información. [READY_FOR_ANALYSIS: true]',
         usage: { inputTokens: 10, outputTokens: 10, totalTokens: 20 },
         costUSD: 0.001,
         model: 'glm-5',
-        provider: 'glm',
+        provider: 'openrouter',
       })
 
     vi.mocked(runSOAPConsultation).mockResolvedValue({

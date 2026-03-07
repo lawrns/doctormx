@@ -1,13 +1,10 @@
 /**
- * Cliente de IA para operaciones de AI
- * Wrapper centralizado con error handling, retry logic, y auditoría
- *
- * GLM z.ai es el proveedor principal para Doctor.mx
- * Kimi se usa como proveedor secundario y OpenAI como fallback/transcripción
+ * Cliente de IA para Doctor.mx
+ * Proveedor único: OpenRouter (Kimi K2.5)
+ * Transcripción de audio: OpenAI Whisper
  */
 
-import { AI_CONFIG, getActiveProvider } from './config';
-import { isKimiPolicyRestricted } from './kimi';
+import { AI_CONFIG } from './config';
 import { createClient } from '@/lib/supabase/server';
 import type {
   PreConsultaMessage,
@@ -15,101 +12,43 @@ import type {
   AIAuditLog
 } from './types';
 
-/**
- * Cliente de IA singleton
- * Lazy-loaded para evitar errores en build
- * Usa GLM como proveedor principal, OpenAI como fallback
- */
-import type OpenAI from "openai";
+import type OpenAI from 'openai';
 
-let glmClient: OpenAI | null = null;
-let kimiClient: OpenAI | null = null;
+let openrouterClient: OpenAI | null = null;
 let openaiClient: OpenAI | null = null;
 
-async function getGLMClient(): Promise<OpenAI> {
-  if (!glmClient && typeof window === "undefined") {
-    try {
-      const { default: OpenAI } = (await import("openai")) as typeof import("openai");
-      glmClient = new OpenAI({
-        apiKey: AI_CONFIG.glm.apiKey,
-        baseURL: AI_CONFIG.glm.baseURL,
-        timeout: 14000, // 14s — GLM-5 takes ~10-12s; leaves ~12s budget for fallbacks within Netlify 26s cap
-      });
-    } catch (error) {
-      console.error("Error al inicializar GLM client:", error);
-      throw new Error("GLM client no disponible");
-    }
+async function getOpenRouterClient(): Promise<OpenAI> {
+  if (!openrouterClient && typeof window === 'undefined') {
+    const { default: OpenAISDK } = await import('openai');
+    openrouterClient = new OpenAISDK({
+      apiKey: AI_CONFIG.openrouter.apiKey,
+      baseURL: AI_CONFIG.openrouter.baseURL,
+      timeout: 20000,
+      maxRetries: 0,
+      defaultHeaders: {
+        'HTTP-Referer': process.env.NEXT_PUBLIC_APP_URL || 'https://doctormx.com',
+        'X-Title': 'Doctor.mx Telemedicine',
+      },
+    });
   }
-
-  if (!glmClient) {
-    throw new Error("GLM client no inicializado");
-  }
-
-  return glmClient;
-}
-
-async function getKimiClient(): Promise<OpenAI> {
-  if (!kimiClient && typeof window === "undefined") {
-    try {
-      const { default: OpenAI } = (await import("openai")) as typeof import("openai");
-      kimiClient = new OpenAI({
-        apiKey: AI_CONFIG.kimi.apiKey,
-        baseURL: AI_CONFIG.kimi.baseURL,
-        timeout: 3000, // 3s — Kimi coding endpoint is typically policy-restricted; fail fast
-      });
-    } catch (error) {
-      console.error("Error al inicializar Kimi client:", error);
-      throw new Error("Kimi client no disponible");
-    }
-  }
-
-  if (!kimiClient) {
-    throw new Error("Kimi client no inicializado");
-  }
-
-  return kimiClient;
+  if (!openrouterClient) throw new Error('OpenRouter client not initialized');
+  return openrouterClient;
 }
 
 async function getOpenAIClient(): Promise<OpenAI> {
-  if (!openaiClient && typeof window === "undefined") {
-    try {
-      const { default: OpenAI } = (await import("openai")) as typeof import("openai");
-      openaiClient = new OpenAI({
-        apiKey: AI_CONFIG.openai.apiKey,
-        timeout: 8000, // 8s — gpt-4o-mini typically responds in 2-5s
-      });
-    } catch (error) {
-      console.error("Error al inicializar OpenAI client:", error);
-      throw new Error("OpenAI client no disponible");
-    }
+  if (!openaiClient && typeof window === 'undefined') {
+    const { default: OpenAISDK } = await import('openai');
+    openaiClient = new OpenAISDK({
+      apiKey: AI_CONFIG.openai.apiKey,
+      timeout: 15000,
+    });
   }
-
-  if (!openaiClient) {
-    throw new Error("OpenAI client no inicializado");
-  }
-
+  if (!openaiClient) throw new Error('OpenAI client not initialized');
   return openaiClient;
 }
 
 /**
- * Get the appropriate AI client based on configuration
- * Uses GLM if configured, then Kimi, otherwise falls back to OpenAI
- */
-async function getAIClient(): Promise<OpenAI> {
-  const provider = getActiveProvider();
-  if (provider === 'glm' && AI_CONFIG.glm.apiKey) {
-    return getGLMClient();
-  }
-  if (provider === 'kimi' && AI_CONFIG.kimi.apiKey) {
-    return getKimiClient();
-  }
-  return getOpenAIClient();
-}
-
-
-/**
- * Chat completion con retry logic y fallback automático
- * Uses GLM as primary provider, Kimi as secondary, OpenAI as fallback
+ * Chat completion via OpenRouter (Kimi K2.5)
  */
 export async function chatCompletion(params: {
   messages: PreConsultaMessage[];
@@ -119,161 +58,59 @@ export async function chatCompletion(params: {
 }): Promise<{
   response: string;
   usage: { inputTokens: number; outputTokens: number; cost: number };
-  provider: 'glm' | 'kimi' | 'openai';
+  provider: 'openrouter';
 }> {
   const { messages, systemPrompt, maxTokens, temperature } = params;
 
+  if (!AI_CONFIG.openrouter.apiKey) {
+    throw new Error('No hay API key configurada. Configura OPENROUTER_API_KEY.');
+  }
+
   const apiMessages = [
-    { role: 'system', content: systemPrompt },
+    { role: 'system' as const, content: systemPrompt },
     ...messages.map((m) => ({
-      role: m.role === 'system' ? 'system' : m.role === 'user' ? 'user' : 'assistant',
+      role: (m.role === 'system' ? 'system' : m.role === 'user' ? 'user' : 'assistant') as 'system' | 'user' | 'assistant',
       content: m.content,
     })),
   ];
 
-  // Try GLM first if configured
-  const primaryProvider = getActiveProvider();
-  const providers: Array<'glm' | 'kimi' | 'openai'> = primaryProvider === 'glm' && AI_CONFIG.glm.apiKey
-    ? ['glm', 'kimi', 'openai']
-    : primaryProvider === 'kimi' && AI_CONFIG.kimi.apiKey
-      ? ['kimi', 'openai']
-      : ['openai'];
+  console.log(`[AI] Intentando con openrouter (model=${AI_CONFIG.openrouter.model})...`);
 
-  let lastError: unknown = null;
+  try {
+    const client = await getOpenRouterClient();
+    const completion = await client.chat.completions.create({
+      model: AI_CONFIG.openrouter.model,
+      messages: apiMessages,
+      max_tokens: maxTokens || AI_CONFIG.openrouter.maxTokens,
+      temperature: temperature ?? AI_CONFIG.openrouter.temperature,
+    });
 
-  for (const provider of providers) {
-    // Skip if no API key for this provider
-    if (provider === 'glm' && !AI_CONFIG.glm.apiKey) { console.warn('[AI] Skipping GLM: no API key'); continue; }
-    if (provider === 'kimi' && !AI_CONFIG.kimi.apiKey) { console.warn('[AI] Skipping Kimi: no API key'); continue; }
-    if (provider === 'openai' && !AI_CONFIG.openai.apiKey) { console.warn('[AI] Skipping OpenAI: no API key'); continue; }
+    const msg = completion.choices[0]?.message;
+    const responseContent = msg?.content || '';
 
-    try {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const client = provider === 'glm'
-        ? await getGLMClient()
-        : provider === 'kimi'
-          ? await getKimiClient()
-          : await getOpenAIClient() as unknown as any;
-      // Chat path: use fast model (glm-4.5-air ~3s) not reasoning model (glm-5 ~12s)
-      const model = provider === 'glm'
-        ? AI_CONFIG.glm.models.chat
-        : provider === 'kimi'
-          ? AI_CONFIG.kimi.defaultModel
-          : AI_CONFIG.openai.model;
-      const configuredMaxTokens = provider === 'glm'
-        ? AI_CONFIG.glm.chatMaxTokens
-        : provider === 'kimi'
-          ? AI_CONFIG.kimi.maxTokens
-          : AI_CONFIG.openai.maxTokens;
-      const configuredTemp = provider === 'glm'
-        ? AI_CONFIG.glm.temperature
-        : provider === 'kimi'
-          ? AI_CONFIG.kimi.temperature
-          : AI_CONFIG.openai.temperature;
+    const inputTokens = completion.usage?.prompt_tokens || 0;
+    const outputTokens = completion.usage?.completion_tokens || 0;
+    const cost =
+      (inputTokens / 1_000_000) * AI_CONFIG.costs.openrouterInputPer1M +
+      (outputTokens / 1_000_000) * AI_CONFIG.costs.openrouterOutputPer1M;
 
-      console.log(`[AI] Intentando con ${provider} (model=${model})...`);
+    console.log(`[AI] Éxito con openrouter (model=${AI_CONFIG.openrouter.model})`);
 
-      const completion = await client.chat.completions.create({
-        model,
-        messages: apiMessages,
-        max_tokens: maxTokens || configuredMaxTokens,
-        temperature: temperature ?? configuredTemp,
-      });
-
-      const usage = {
-        inputTokens: completion.usage?.prompt_tokens || 0,
-        outputTokens: completion.usage?.completion_tokens || 0,
-        cost: 0,
-      };
-
-      // Calculate cost based on provider
-      if (provider === 'glm') {
-        usage.cost =
-          (usage.inputTokens / 1_000_000) * AI_CONFIG.costs.glmInputPer1M +
-          (usage.outputTokens / 1_000_000) * AI_CONFIG.costs.glmOutputPer1M;
-      } else if (provider === 'kimi') {
-        usage.cost =
-          (usage.inputTokens / 1_000_000) * AI_CONFIG.costs.kimiInputPer1M +
-          (usage.outputTokens / 1_000_000) * AI_CONFIG.costs.kimiOutputPer1M;
-      } else {
-        usage.cost =
-          (usage.inputTokens / 1_000_000) * AI_CONFIG.costs.gpt4oMiniInputPer1M +
-          (usage.outputTokens / 1_000_000) * AI_CONFIG.costs.gpt4oMiniOutputPer1M;
-      }
-
-      console.log(`[AI] Éxito con ${provider} (model=${model})`);
-
-      // GLM-4.7 returns reasoning_content instead of content
-      const message = completion.choices[0]?.message;
-      const responseContent = message?.content ||
-        (message as { reasoning_content?: string })?.reasoning_content || '';
-
-      return {
-        response: responseContent,
-        usage,
-        provider,
-      };
-    } catch (error: unknown) {
-      const errStatus = error && typeof error === 'object' && 'status' in error ? error.status : null;
-      const errMsg = error && typeof error === 'object' && 'message' in error ? error.message : String(error);
-      console.error(`[AI] Error con ${provider} (status=${errStatus}):`, errMsg);
-      lastError = error;
-
-      if (provider === 'kimi' && isKimiPolicyRestricted(error)) {
-        console.warn('[AI] Kimi restringido por política del proveedor - usando fallback...');
-        continue;
-      }
-
-      // Check for specific errors
-      const status = error && typeof error === 'object' && 'status' in error ? error.status : null;
-      const errorMessage = error && typeof error === 'object' && 'message' in error && typeof error.message === 'string'
-        ? error.message
-        : '';
-
-      // Check for insufficient balance (GLM specific)
-      if (status === 429 && errorMessage.includes('Insufficient balance')) {
-        console.warn(`[AI] ${provider} sin saldo - intentando fallback...`);
-        continue; // Try next provider
-      }
-
-      // Check for rate limit
-      if (status === 429) {
-        console.warn(`[AI] ${provider} rate limit - intentando fallback...`);
-        continue; // Try next provider
-      }
-
-      // Check for auth error
-      if (status === 401) {
-        console.warn(`[AI] ${provider} API key inválida - intentando fallback...`);
-        continue; // Try next provider
-      }
-
-      // For other errors, continue to fallback
-      continue;
-    }
+    return {
+      response: responseContent,
+      usage: { inputTokens, outputTokens, cost },
+      provider: 'openrouter',
+    };
+  } catch (error: unknown) {
+    const errStatus = error && typeof error === 'object' && 'status' in error ? error.status : null;
+    const errMsg = error && typeof error === 'object' && 'message' in error ? error.message : String(error);
+    console.error(`[AI] Error con openrouter (status=${errStatus}):`, errMsg);
+    throw new Error(`Error de IA: ${errMsg}`);
   }
-
-  // All providers failed
-  console.error('[AI] Todos los proveedores fallaron');
-
-  // Provide helpful error message
-  if (!AI_CONFIG.glm.apiKey && !AI_CONFIG.kimi.apiKey && !AI_CONFIG.openai.apiKey) {
-    throw new Error('No hay API key configurada. Configura GLM_API_KEY, KIMI_API_KEY o OPENAI_API_KEY.');
-  }
-
-  const errorMessage = lastError && typeof lastError === 'object' && 'message' in lastError && typeof lastError.message === 'string'
-    ? lastError.message
-    : 'Error desconocido';
-
-  if (errorMessage.includes('Insufficient balance')) {
-    throw new Error('Sin saldo en el proveedor primario. Recarga tu cuenta o configura KIMI_API_KEY / OPENAI_API_KEY como fallback.');
-  }
-
-  throw new Error(`Error de IA: ${errorMessage}`);
 }
 
 /**
- * Transcripción de audio con Whisper
+ * Transcripción de audio con Whisper (OpenAI)
  */
 export async function transcribeAudio(params: {
   audioFile: File | Buffer;
@@ -293,10 +130,9 @@ export async function transcribeAudio(params: {
       file: audioFile,
       model: AI_CONFIG.whisper.model,
       language: language || AI_CONFIG.whisper.language,
-      response_format: 'verbose_json', // Incluye timestamps
+      response_format: 'verbose_json',
     });
 
-    // Whisper verbose_json incluye segments con timestamps
     const segments: TranscriptionSegment[] = transcription.segments?.map((s: { text: string; start: number; confidence?: number }) => ({
       text: s.text,
       timestamp: s.start,
@@ -306,12 +142,7 @@ export async function transcribeAudio(params: {
     const duration = transcription.duration || 0;
     const cost = (duration / 60) * AI_CONFIG.costs.whisperPerMinute;
 
-    return {
-      segments,
-      fullText: transcription.text,
-      duration,
-      cost,
-    };
+    return { segments, fullText: transcription.text, duration, cost };
   } catch (error: unknown) {
     console.error('Error en transcripción:', error);
     const message = error && typeof error === 'object' && 'message' in error && typeof error.message === 'string'
@@ -322,15 +153,18 @@ export async function transcribeAudio(params: {
 }
 
 /**
- * Análisis estructurado con JSON mode
- * Uses GLM as primary provider, Kimi as secondary, OpenAI as fallback
+ * Análisis estructurado con JSON mode via OpenRouter
  */
 export async function structuredAnalysis<T>(params: {
   systemPrompt: string;
   userPrompt: string;
-  schema?: string; // Descripción del schema esperado
+  schema?: string;
 }): Promise<T> {
   const { systemPrompt, userPrompt, schema } = params;
+
+  if (!AI_CONFIG.openrouter.apiKey) {
+    throw new Error('No hay API key configurada. Configura OPENROUTER_API_KEY.');
+  }
 
   let systemContent = systemPrompt;
   if (schema) {
@@ -338,106 +172,57 @@ export async function structuredAnalysis<T>(params: {
   }
 
   const messages = [
-    { role: 'system', content: systemContent },
-    { role: 'user', content: userPrompt },
+    { role: 'system' as const, content: systemContent },
+    { role: 'user' as const, content: userPrompt },
   ];
 
-  // Try GLM first if configured
-  const primaryProvider = getActiveProvider();
-  const providers: Array<'glm' | 'kimi' | 'openai'> = primaryProvider === 'glm' && AI_CONFIG.glm.apiKey
-    ? ['glm', 'kimi', 'openai']
-    : primaryProvider === 'kimi' && AI_CONFIG.kimi.apiKey
-      ? ['kimi', 'openai']
-      : ['openai'];
+  console.log(`[AI] Intentando análisis con openrouter (model=${AI_CONFIG.openrouter.model})...`);
 
-  let lastError: unknown = null;
+  try {
+    const client = await getOpenRouterClient();
+    const completion = await client.chat.completions.create({
+      model: AI_CONFIG.openrouter.model,
+      messages,
+      max_tokens: AI_CONFIG.openrouter.analysisMaxTokens,
+      response_format: { type: 'json_object' },
+      temperature: 0.2,
+    });
 
-  for (const provider of providers) {
-    // Skip if no API key for this provider
-    if (provider === 'glm' && !AI_CONFIG.glm.apiKey) { console.warn('[AI] Skipping GLM (analysis): no API key'); continue; }
-    if (provider === 'kimi' && !AI_CONFIG.kimi.apiKey) { console.warn('[AI] Skipping Kimi (analysis): no API key'); continue; }
-    if (provider === 'openai' && !AI_CONFIG.openai.apiKey) { console.warn('[AI] Skipping OpenAI (analysis): no API key'); continue; }
-
-    try {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const client = provider === 'glm'
-        ? await getGLMClient()
-        : provider === 'kimi'
-          ? await getKimiClient()
-          : await getOpenAIClient() as unknown as any;
-      // Analysis path: use reasoning model (glm-5) for better structured output quality
-      const model = provider === 'glm'
-        ? AI_CONFIG.glm.models.reasoning
-        : provider === 'kimi'
-          ? AI_CONFIG.kimi.defaultModel
-          : AI_CONFIG.openai.model;
-      const analysisMaxTokens = provider === 'glm' ? AI_CONFIG.glm.analysisMaxTokens : undefined;
-
-      console.log(`[AI] Intentando análisis con ${provider} (model=${model})...`);
-
-      const completion = await client.chat.completions.create({
-        model,
-        messages,
-        ...(analysisMaxTokens ? { max_tokens: analysisMaxTokens } : {}),
-        response_format: { type: 'json_object' }, // Fuerza JSON
-        temperature: 0.2, // Más determinístico para análisis
-      });
-
-      // GLM-4.7 returns reasoning_content instead of content
-      const message = completion.choices[0]?.message;
-      const raw = message?.content ||
-        (message as { reasoning_content?: string })?.reasoning_content || '{}';
-      // Strip markdown code fences that some models wrap around JSON responses
-      const responseText = raw.replace(/^```(?:json)?\s*/i, '').replace(/\s*```\s*$/, '').trim();
-      console.log(`[AI] Éxito análisis con ${provider}`);
-      return JSON.parse(responseText) as T;
-    } catch (error: unknown) {
-      const errStatus = error && typeof error === 'object' && 'status' in error ? error.status : null;
-      const errMsg = error && typeof error === 'object' && 'message' in error ? error.message : String(error);
-      console.error(`[AI] Error análisis con ${provider} (status=${errStatus}):`, errMsg);
-      lastError = error;
-
-      if (provider === 'kimi' && isKimiPolicyRestricted(error)) {
-        console.warn('[AI] Kimi restringido por política del proveedor en análisis - usando fallback...');
-      }
-
-      continue; // Try next provider
-    }
+    const msg = completion.choices[0]?.message;
+    const raw = msg?.content || '{}';
+    const responseText = raw.replace(/^```(?:json)?\s*/i, '').replace(/\s*```\s*$/, '').trim();
+    console.log(`[AI] Éxito análisis con openrouter`);
+    return JSON.parse(responseText) as T;
+  } catch (error: unknown) {
+    const errStatus = error && typeof error === 'object' && 'status' in error ? error.status : null;
+    const errMsg = error && typeof error === 'object' && 'message' in error ? error.message : String(error);
+    console.error(`[AI] Error análisis con openrouter (status=${errStatus}):`, errMsg);
+    throw new Error(`Error de análisis: ${errMsg}`);
   }
-
-  // All providers failed
-  const errorMessage = lastError && typeof lastError === 'object' && 'message' in lastError && typeof lastError.message === 'string'
-    ? lastError.message
-    : 'Desconocido';
-  throw new Error(`Error de análisis: ${errorMessage}`);
 }
 
 /**
- * Safety check - detecta si la respuesta de IA está dando consejos médicos inapropiados
+ * Safety check — detecta si la respuesta de IA está dando consejos médicos inapropiados
  */
 export async function safetyCheck(text: string): Promise<{
   safe: boolean;
   flags: string[];
 }> {
   const dangerousPatterns = [
-    /tienes|padeces|sufres de/i, // Diagnóstico directo
-    /deberías tomar|toma este medicamento/i, // Prescripción
-    /no es urgente|no te preocupes/i, // Minimizar emergencias
-    /no necesitas doctor/i, // Desalentar atención médica
+    /tienes|padeces|sufres de/i,
+    /deberías tomar|toma este medicamento/i,
+    /no es urgente|no te preocupes/i,
+    /no necesitas doctor/i,
   ];
 
   const flags: string[] = [];
-
   for (const pattern of dangerousPatterns) {
     if (pattern.test(text)) {
       flags.push(`Patrón peligroso detectado: ${pattern.source}`);
     }
   }
 
-  return {
-    safe: flags.length === 0,
-    flags,
-  };
+  return { safe: flags.length === 0, flags };
 }
 
 /**
@@ -454,15 +239,10 @@ export async function auditAIOperation(params: {
   latencyMs: number;
   status: 'success' | 'error';
   error?: string;
-  provider?: 'glm' | 'kimi' | 'openai';
+  provider?: 'openrouter' | 'openai' | 'glm' | 'kimi';
 }): Promise<void> {
   const supabase = await createClient();
-  const provider = params.provider || getActiveProvider();
-  const model = provider === 'glm'
-    ? AI_CONFIG.glm.defaultModel
-    : provider === 'kimi'
-      ? AI_CONFIG.kimi.defaultModel
-      : AI_CONFIG.openai.model;
+  const model = AI_CONFIG.openrouter.model;
 
   try {
     await supabase.from('ai_audit_logs').insert({
@@ -471,7 +251,7 @@ export async function auditAIOperation(params: {
       user_type: params.userType,
       input: params.input,
       output: params.output,
-      model: model,
+      model,
       tokens: params.tokens,
       cost: params.cost,
       latency_ms: params.latencyMs,

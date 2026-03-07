@@ -1,48 +1,40 @@
 /**
  * AI Client Wrapper
- * Provides singleton clients for GLM (primary) and OpenAI (fallback)
- *
- * GLM z.ai is the primary provider for Doctor.mx
- * OpenAI is maintained for Whisper transcription and as a fallback
+ * Primary: OpenRouter (Kimi K2.5)
+ * Fallback: OpenAI (Whisper transcription)
  */
 
 import OpenAI from 'openai'
-import { AI_CONFIG, getActiveProvider } from './ai/config'
+import { AI_CONFIG } from './ai/config'
 
-// GLM Client - Primary provider
-// Uses OpenAI SDK with custom baseURL (z.ai is OpenAI-compatible)
+// OpenRouter Client — primary LLM provider
 export const glm = new OpenAI({
-    apiKey: process.env.GLM_API_KEY || AI_CONFIG.glm.apiKey,
-    baseURL: AI_CONFIG.glm.baseURL,
+    apiKey: AI_CONFIG.openrouter.apiKey,
+    baseURL: AI_CONFIG.openrouter.baseURL,
+    defaultHeaders: {
+        'HTTP-Referer': process.env.NEXT_PUBLIC_APP_URL || 'https://doctormx.com',
+        'X-Title': 'Doctor.mx Telemedicine',
+    },
 })
 
-// OpenAI Client - Fallback provider and Whisper transcription
+// OpenAI Client — Whisper transcription only
 export const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY || AI_CONFIG.openai.apiKey,
 })
 
 /**
- * Get the appropriate AI client based on configuration
- * Returns GLM if configured, otherwise OpenAI
+ * Get the appropriate AI client — always OpenRouter
  */
 export function getAIClient(): OpenAI {
-    const provider = getActiveProvider()
-    if (provider === 'glm') {
-        return glm
-    }
-    return openai
+    return glm
 }
 
 /**
  * Get the default model for the active provider
  */
 export function getDefaultModel(): string {
-    const provider = getActiveProvider()
-    if (provider === 'glm') {
-        return AI_CONFIG.glm.defaultModel
-    }
-    return AI_CONFIG.openai.model
+    return AI_CONFIG.openrouter.model
 }
 
-// Export default as the primary client (GLM if configured)
+// Export default as the primary client (OpenRouter)
 export default getAIClient()

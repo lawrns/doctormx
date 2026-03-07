@@ -8,6 +8,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { z } from 'zod'
 import { aiChatCompletion } from '@/lib/ai/openai'
+import { classifyMessage, getTier0Response } from '@/lib/ai/classifier'
 import { PRECONSULTA_SYSTEM_PROMPT, PRECONSULTA_URGENCY_PROMPT } from '@/lib/ai/prompts'
 import { runSOAPConsultation } from '@/lib/soap/agents'
 import type { ConsensusResult } from '@/lib/soap/types'
@@ -309,7 +310,26 @@ export async function POST(request: NextRequest) {
     const { messages, patientId } = parsed.data
     const conversation = sanitizeConversation(messages as ConsultMessage[])
     const userMessage = conversation[conversation.length - 1]?.content || ''
-    
+
+    // ── Tier 0 fast-path: social/admin messages skip all AI processing ────────
+    if (userMessage) {
+      const classification = classifyMessage(userMessage)
+      if (classification.tier === 0) {
+        const fastResponse = getTier0Response(userMessage, classification.bucket)
+        if (fastResponse) {
+          return NextResponse.json({
+            message: fastResponse,
+            complete: false,
+            specialists: [],
+            responseMode: 'fast-path',
+            classification: classification.bucket,
+            meta: { latencyMs: Date.now() - startTime, provider: 'fast-path', model: 'none', costUSD: 0 },
+          })
+        }
+      }
+    }
+    // ── End Tier 0 ────────────────────────────────────────────────────────────
+
     // Determine conversation state
     const conversationLength = conversation.filter(m => m.role === 'user').length
     

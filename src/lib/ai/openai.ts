@@ -189,7 +189,7 @@ export async function* openaiStreamingCompletion(params: {
 }
 
 /**
- * Unified AI client that uses OpenAI GPT-4o with GLM fallback
+ * Unified AI client — uses OpenRouter (Kimi K2.5) as primary, OpenAI as fallback
  */
 export async function aiChatCompletion(params: {
   messages: Array<{ role: 'user' | 'assistant' | 'system'; content: string }>
@@ -203,55 +203,67 @@ export async function aiChatCompletion(params: {
   usage: { inputTokens: number; outputTokens: number; totalTokens: number }
   costUSD: number
   model: string
-  provider: 'openai' | 'glm'
+  provider: 'openrouter' | 'openai'
 }> {
-  const { preferOpenAI = true, ...openaiParams } = params
+  const { messages, system, temperature, maxTokens, jsonMode } = params
 
-  // Try OpenAI first if preferred and configured
-  if (preferOpenAI && isOpenAIConfigured()) {
+  const { AI_CONFIG: cfg } = await import('./config')
+
+  // Build full message list with optional system message
+  const allMessages: Array<{ role: 'system' | 'user' | 'assistant'; content: string }> = [
+    ...(system ? [{ role: 'system' as const, content: system }] : []),
+    ...messages,
+  ]
+
+  // Try OpenRouter (Kimi K2.5) first
+  if (cfg.openrouter.apiKey) {
     try {
-      const result = await openaiChatCompletion({
-        ...openaiParams,
-        messages: openaiParams.messages.filter(m => m.role !== 'system') as Array<{ role: 'user' | 'assistant'; content: string }>,
+      const { default: OpenAISDK } = await import('openai')
+      const client = new OpenAISDK({
+        apiKey: cfg.openrouter.apiKey,
+        baseURL: cfg.openrouter.baseURL,
+        timeout: 20000,
+        maxRetries: 0,
+        defaultHeaders: {
+          'HTTP-Referer': process.env.NEXT_PUBLIC_APP_URL || 'https://doctormx.com',
+          'X-Title': 'Doctor.mx Telemedicine',
+        },
       })
-      return {
-        content: result.content,
-        usage: result.usage,
-        costUSD: result.costUSD,
-        model: result.model,
-        provider: 'openai',
+
+      const response = await client.chat.completions.create({
+        model: cfg.openrouter.model,
+        messages: allMessages,
+        temperature: temperature ?? cfg.openrouter.temperature,
+        max_tokens: maxTokens || cfg.openrouter.maxTokens,
+        ...(jsonMode ? { response_format: { type: 'json_object' as const } } : {}),
+      })
+
+      const content = response.choices[0]?.message?.content || ''
+      const usage = {
+        inputTokens: response.usage?.prompt_tokens || 0,
+        outputTokens: response.usage?.completion_tokens || 0,
+        totalTokens: response.usage?.total_tokens || 0,
       }
+      const costUSD =
+        (usage.inputTokens / 1_000_000) * cfg.costs.openrouterInputPer1M +
+        (usage.outputTokens / 1_000_000) * cfg.costs.openrouterOutputPer1M
+
+      logger.info('[OpenRouter] Chat completion successful', { model: cfg.openrouter.model, tokens: usage.totalTokens, costUSD })
+
+      return { content, usage, costUSD, model: cfg.openrouter.model, provider: 'openrouter' }
     } catch (error) {
-      logger.warn('[AI] OpenAI failed, falling back to GLM', { error })
+      logger.warn('[OpenRouter] Failed, falling back to OpenAI', { error })
     }
   }
 
-  // Try GLM
-  try {
-    const { glmChatCompletion } = await import('./glm')
-    const glmResult = await glmChatCompletion({
-      messages: params.messages.map(m => ({ role: m.role === 'assistant' ? 'assistant' : 'user', content: m.content })),
-      temperature: params.temperature,
-      maxTokens: params.maxTokens,
-      jsonMode: params.jsonMode,
-    })
-
-    return {
-      content: glmResult.content,
-      usage: glmResult.usage,
-      costUSD: glmResult.costUSD,
-      model: glmResult.model,
-      provider: 'glm',
-    }
-  } catch (glmError) {
-    logger.warn('[AI] GLM failed, falling back to OpenAI', { error: glmError })
-  }
-
-  // Final fallback: OpenAI (if not already tried)
-  if (!preferOpenAI && isOpenAIConfigured()) {
+  // Fallback: OpenAI
+  if (isOpenAIConfigured()) {
     const result = await openaiChatCompletion({
-      ...openaiParams,
-      messages: openaiParams.messages.filter(m => m.role !== 'system') as Array<{ role: 'user' | 'assistant'; content: string }>,
+      messages: messages.filter(m => m.role !== 'system') as Array<{ role: 'user' | 'assistant'; content: string }>,
+      system,
+      temperature,
+      maxTokens,
+      jsonMode,
     })
     return {
       content: result.content,

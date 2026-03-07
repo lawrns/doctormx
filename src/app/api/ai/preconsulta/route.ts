@@ -8,6 +8,7 @@ import {
   PRECONSULTA_URGENCY_PROMPT,
   AI_CONFIG
 } from '@/lib/ai';
+import { classifyMessage, getTier0Response } from '@/lib/ai/classifier';
 import { matchDoctorsForReferral } from '@/lib/ai/referral';
 import type { PreConsultaMessage, TriageResult } from '@/lib/ai/types';
 import type { CareTriage, RoutingDecision } from '@/lib/types/care-case';
@@ -135,6 +136,27 @@ export async function POST(req: NextRequest) {
         { status: 400 }
       );
     }
+
+    // ── Tier 0 fast-path: classify the latest user message ──────────────────
+    const lastUserMsg = [...messages].reverse().find((m) => m.role === 'user');
+    if (lastUserMsg) {
+      const classification = classifyMessage(lastUserMsg.content);
+
+      if (classification.tier === 0) {
+        const fastResponse = getTier0Response(lastUserMsg.content, classification.bucket);
+        if (fastResponse) {
+          return NextResponse.json({
+            response: fastResponse,
+            completed: false,
+            summary: null,
+            referrals: [],
+            responseMode: 'fast-path',
+            classification: classification.bucket,
+          });
+        }
+      }
+    }
+    // ── End Tier 0 fast-path ─────────────────────────────────────────────────
 
     // For anonymous users, check quota before proceeding
     if (anonymous && !user) {
