@@ -61,7 +61,12 @@ function normalizeMessages(input: unknown): PreConsultaMessage[] {
 function isConfigurationError(message: string) {
   return message.includes('No hay API key')
     || message.includes('must be set')
-    || message.includes('no configurad');
+    || message.includes('no configurad')
+    || message.includes('Incorrect API key')
+    || message.includes('Invalid API key')
+    || message.includes('Unauthorized')
+    || message.includes('authentication')
+    || message.includes('API key');
 }
 
 async function safeUpsertSession(
@@ -308,19 +313,23 @@ export async function POST(req: NextRequest) {
 
     const errorMessage = error instanceof Error ? error.message : 'Error desconocido';
 
-    // Auditoría de error
-    const { data: { user } } = await supabase.auth.getUser();
-    if (user) {
-      await auditAIOperation({
-        operation: 'pre-consulta',
-        userId: user.id,
-        userType: 'patient',
-        input: { error: 'Request failed' },
-        output: {},
-        latencyMs: Date.now() - startTime,
-        status: 'error',
-        error: errorMessage,
-      });
+    // Auditoría de error — best-effort, don't let it swallow the real error response
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user) {
+        await auditAIOperation({
+          operation: 'pre-consulta',
+          userId: user.id,
+          userType: 'patient',
+          input: { error: 'Request failed' },
+          output: {},
+          latencyMs: Date.now() - startTime,
+          status: 'error',
+          error: errorMessage,
+        });
+      }
+    } catch (auditErr) {
+      console.error('[PRE-CONSULTA] Audit logging failed:', auditErr);
     }
 
     // Return user-friendly error messages

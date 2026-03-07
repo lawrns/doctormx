@@ -374,8 +374,10 @@ export async function structuredAnalysis<T>(params: {
 
       // GLM-4.7 returns reasoning_content instead of content
       const message = completion.choices[0]?.message;
-      const responseText = message?.content ||
+      const raw = message?.content ||
         (message as { reasoning_content?: string })?.reasoning_content || '{}';
+      // Strip markdown code fences that some models wrap around JSON responses
+      const responseText = raw.replace(/^```(?:json)?\s*/i, '').replace(/\s*```\s*$/, '').trim();
       return JSON.parse(responseText) as T;
     } catch (error: unknown) {
       console.error(`[AI] Error análisis con ${provider}:`, error);
