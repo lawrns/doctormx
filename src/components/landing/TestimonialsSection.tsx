@@ -77,12 +77,7 @@ export function TestimonialsSection() {
               }}
             >
               <Card
-                className="h-full p-8 hover:shadow-lg interactive group relative overflow-hidden focus-within:ring-2 focus-within:ring-primary-500 focus-within:ring-offset-2"
-                style={{
-                  borderColor: 'var(--border-subtle)',
-                  backgroundColor: 'rgba(255, 255, 255, 0.8)',
-                  backdropFilter: 'blur(8px)'
-                }}
+                className="surface-panel h-full border-0 p-8 shadow-[0_16px_40px_rgba(15,23,42,0.08)] transition-shadow duration-300 hover:shadow-[0_22px_56px_rgba(15,23,42,0.12)] focus-within:ring-2 focus-within:ring-primary-500 focus-within:ring-offset-2"
                 tabIndex={0}
                 role="article"
                 aria-label={`Testimonio de ${testimonial.name}`}
@@ -145,9 +140,6 @@ export function TestimonialsSection() {
                     </p>
                   </div>
                 </div>
-
-                {/* Hover gradient - subtle warmth effect */}
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary-500/0 to-accent-500/0 group-hover:from-primary-500/[0.02] group-hover:to-accent-500/[0.02] transition-all duration-300 ease-out" />
               </Card>
             </motion.div>
           ))}

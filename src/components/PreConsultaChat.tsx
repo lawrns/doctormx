@@ -154,7 +154,7 @@ export default function PreConsultaChat({
 
   const panelClasses = mode === 'modal'
     ? 'relative flex h-[min(88vh,860px)] w-full max-w-6xl overflow-hidden rounded-[32px] border border-white/15 bg-slate-950 shadow-[0_40px_120px_rgba(15,23,42,0.45)]'
-    : 'relative overflow-hidden rounded-[32px] border border-slate-200/80 bg-white shadow-[0_20px_80px_rgba(15,23,42,0.08)]';
+    : 'relative overflow-hidden rounded-[32px] border border-slate-200/80 bg-white shadow-[0_20px_80px_rgba(15,23,42,0.08)] lg:flex lg:min-h-[780px]';
 
   const statusTone = useMemo(() => {
     if (summary?.urgencyLevel === 'emergency') {
@@ -272,8 +272,8 @@ export default function PreConsultaChat({
         animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
         className={panelClasses}
       >
-        <div className="hidden w-[360px] shrink-0 border-r border-slate-800 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.18),_transparent_38%),linear-gradient(180deg,#0f172a_0%,#111827_48%,#020617_100%)] text-white lg:flex lg:flex-col">
-          <div className="flex h-full flex-col p-8">
+        <div className="hidden w-[360px] shrink-0 self-stretch border-r border-slate-800 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.18),_transparent_38%),linear-gradient(180deg,#0f172a_0%,#111827_48%,#020617_100%)] text-white lg:flex lg:flex-col">
+          <div className="flex h-full min-h-full flex-col p-8">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <DoctorAvatar src={AI_AVATAR_URL} alt={AI_DOCTOR_NAME} name={AI_DOCTOR_NAME} size="xl" isOnline />
@@ -289,7 +289,7 @@ export default function PreConsultaChat({
               )}
             </div>
 
-            <div className="mt-6 flex flex-1 flex-col justify-between space-y-6">
+            <div className="mt-6 flex flex-1 flex-col justify-between gap-6">
               <div className="rounded-[28px] border border-slate-800 bg-slate-900/70 p-6">
                 <p className="text-sm leading-7 text-slate-100">
                   Resume tus síntomas con claridad, detecta alertas importantes y llega a tu consulta con una ruta clínica mejor estructurada.
@@ -298,32 +298,32 @@ export default function PreConsultaChat({
 
               <div className="space-y-6 rounded-[28px] border border-slate-800 bg-slate-900/78 p-6">
                 <div className="flex items-start gap-3">
-                <Sparkles className="mt-0.5 h-5 w-5 text-sky-300" />
-                <div>
-                  <p className="font-medium text-white">Resumen inteligente</p>
-                  <p className="mt-1 text-sm leading-6 text-slate-200">
-                    Sintetizo tus síntomas, detecto alertas y preparo un resumen clínico útil para el doctor.
-                  </p>
+                  <Sparkles className="mt-0.5 h-5 w-5 text-sky-300" />
+                  <div>
+                    <p className="font-medium text-white">Resumen inteligente</p>
+                    <p className="mt-1 text-sm leading-6 text-slate-200">
+                      Sintetizo tus síntomas, detecto alertas y preparo un resumen clínico útil para el doctor.
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Shield className="mt-0.5 h-5 w-5 text-emerald-300" />
-                <div>
-                  <p className="font-medium text-white">Seguridad primero</p>
-                  <p className="mt-1 text-sm leading-6 text-slate-200">
-                    Si aparecen red flags o urgencia alta, te lo indicaré con prioridad clara.
-                  </p>
+                <div className="flex items-start gap-3">
+                  <Shield className="mt-0.5 h-5 w-5 text-emerald-300" />
+                  <div>
+                    <p className="font-medium text-white">Seguridad primero</p>
+                    <p className="mt-1 text-sm leading-6 text-slate-200">
+                      Si aparecen red flags o urgencia alta, te lo indicaré con prioridad clara.
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Clock3 className="mt-0.5 h-5 w-5 text-violet-300" />
-                <div>
-                  <p className="font-medium text-white">Experiencia rápida</p>
-                  <p className="mt-1 text-sm leading-6 text-slate-200">
-                    En 3 a 5 mensajes obtendrás una ruta clara para agendar mejor tu consulta.
-                  </p>
+                <div className="flex items-start gap-3">
+                  <Clock3 className="mt-0.5 h-5 w-5 text-violet-300" />
+                  <div>
+                    <p className="font-medium text-white">Experiencia rápida</p>
+                    <p className="mt-1 text-sm leading-6 text-slate-200">
+                      En 3 a 5 mensajes obtendrás una ruta clara para agendar mejor tu consulta.
+                    </p>
+                  </div>
                 </div>
-              </div>
               </div>
 
               <div className="rounded-[28px] border border-slate-800 bg-slate-900/82 p-6">
@@ -351,7 +351,7 @@ export default function PreConsultaChat({
           </div>
         </div>
 
-        <div className="flex min-w-0 flex-1 flex-col bg-[linear-gradient(180deg,#f8fbff_0%,#ffffff_24%,#f8fafc_100%)]">
+        <div className="flex min-w-0 flex-1 self-stretch flex-col bg-[linear-gradient(180deg,#f8fbff_0%,#ffffff_24%,#f8fafc_100%)]">
           <div className="border-b border-slate-200/70 bg-white/80 px-5 py-4 backdrop-blur-xl sm:px-6">
             <div className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-3">

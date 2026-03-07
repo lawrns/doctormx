@@ -94,7 +94,7 @@ export function HeroSection() {
 
             {/* Live status badge */}
             <div className="text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-50 border border-green-200 rounded-full mb-1">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-green-50 border border-green-200 rounded-full mb-1">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
@@ -110,18 +110,17 @@ export function HeroSection() {
         {/* Main Headline - HUGE, Doctronic style - EMPHASIZE FREE */}
         <motion.h1
           variants={itemVariants}
-          className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-text-primary mb-6 leading-[1.1] tracking-tight"
-          style={{ fontFamily: 'var(--font-serif)' }}
+          className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-text-primary mb-6 leading-[1.05] tracking-[-0.04em]"
         >
           5 Consultas Medicas
           <br />
           <span className="relative inline-block">
-            <span className="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 bg-clip-text text-transparent font-black">
+            <span className="text-blue-600 font-black">
               100% GRATIS
             </span>
             {/* Animated underline */}
             <motion.span
-              className="absolute -bottom-2 left-0 h-1.5 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full"
+              className="absolute -bottom-2 left-0 h-1.5 rounded-full bg-blue-200"
               initial={{ width: 0 }}
               animate={{ width: '100%' }}
               transition={{ delay: 0.8, duration: 0.6, ease: 'easeOut' }}
