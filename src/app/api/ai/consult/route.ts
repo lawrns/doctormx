@@ -8,7 +8,10 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { z } from 'zod'
 import { aiChatCompletion } from '@/lib/ai/openai'
+import { PRECONSULTA_SYSTEM_PROMPT, PRECONSULTA_URGENCY_PROMPT } from '@/lib/ai/prompts'
+import { runSOAPConsultation } from '@/lib/soap/agents'
 import type { ConsensusResult } from '@/lib/soap/types'
+import type { SubjectiveData, SpecialistAssessment, UrgencyLevel } from '@/lib/soap/types'
 
 const consultRequestSchema = z.object({
   messages: z.array(z.object({
@@ -60,6 +63,32 @@ const RED_FLAGS = [
   'quemaduras graves', 'trauma craneoencefálico', 'embarazo con dolor severo',
 ]
 
+type ConsultMessage = { role: 'user' | 'assistant' | 'system'; content: string }
+
+type ExtractedSubjective = SubjectiveData & {
+  enoughInformation: boolean
+  followUpQuestion?: string
+  urgencyHint?: UrgencyLevel
+}
+
+type ConsultationResult = {
+  id: string
+  primaryDiagnosis: string
+  confidence: number
+  specialists: Array<{
+    id: string
+    name: string
+    specialty: string
+    assessment: string
+    confidence: number
+  }>
+  differentialDiagnoses: string[]
+  urgency: UrgencyLevel
+  recommendations: string[]
+  nextSteps: string[]
+  consensus: ConsensusResult
+}
+
 function detectRedFlags(symptoms: string): { hasRedFlag: boolean; urgency: string } {
   const symptomLower = symptoms.toLowerCase()
   const hasRedFlag = RED_FLAGS.some(flag => symptomLower.includes(flag))
@@ -77,6 +106,181 @@ function detectRedFlags(symptoms: string): { hasRedFlag: boolean; urgency: strin
   }
   
   return { hasRedFlag: false, urgency: 'moderate' }
+}
+
+function sanitizeConversation(messages: ConsultMessage[]): ConsultMessage[] {
+  return messages.filter((message) => message.content.trim().length > 0)
+}
+
+function buildIntakePrompt(specialists: string[], hasEmergency: boolean): string {
+  return `${PRECONSULTA_SYSTEM_PROMPT}
+
+ESPECIALISTAS RELEVANTES PARA ESTA CONSULTA: ${specialists.join(', ')}
+${hasEmergency ? '⚠️ ALERTA: Se detectaron posibles síntomas de emergencia. Indica atención inmediata si se confirma riesgo actual.' : ''}
+
+INSTRUCCIONES ADICIONALES:
+- Haz solo una pregunta de alto valor por turno.
+- Si ya hay información suficiente para análisis, responde con un resumen corto y agrega [READY_FOR_ANALYSIS: true] al final.
+- Mantén el enfoque en triaje seguro, no diagnóstico definitivo.`
+}
+
+async function extractSubjectiveData(messages: ConsultMessage[]): Promise<ExtractedSubjective> {
+  const conversation = messages
+    .filter((message) => message.role !== 'system')
+    .map((message) => `${message.role === 'user' ? 'Paciente' : 'Asistente'}: ${message.content}`)
+    .join('\n')
+
+  const extractionPrompt = `Analiza esta conversación clínica y extrae un estado estructurado para pre-consulta.
+
+CONVERSACIÓN:
+${conversation}
+
+Responde SOLO en JSON válido con este esquema:
+{
+  "chiefComplaint": "motivo principal en una frase",
+  "symptomsDescription": "resumen clínico breve y fiel a lo dicho",
+  "symptomDuration": "duración o 'No especificada'",
+  "symptomSeverity": 1,
+  "onsetType": "sudden|gradual",
+  "associatedSymptoms": ["síntoma"],
+  "aggravatingFactors": ["factor"],
+  "relievingFactors": ["factor"],
+  "previousTreatments": ["tratamiento"],
+  "medicalHistory": "texto breve o vacío",
+  "medications": ["medicamento"],
+  "allergies": ["alergia"],
+  "familyHistory": "texto breve o vacío",
+  "socialHistory": "texto breve o vacío",
+  "enoughInformation": true,
+  "followUpQuestion": "siguiente mejor pregunta si falta información",
+  "urgencyHint": "emergency|urgent|moderate|routine|self-care"
+}`
+
+  const extracted = await aiChatCompletion({
+    messages: [{ role: 'user', content: extractionPrompt }],
+    temperature: 0.1,
+    maxTokens: 1200,
+    jsonMode: true,
+    preferOpenAI: false,
+  })
+
+  const parsed = JSON.parse(extracted.content) as Partial<ExtractedSubjective>
+
+  return {
+    chiefComplaint: parsed.chiefComplaint || 'Consulta general',
+    symptomsDescription: parsed.symptomsDescription || conversation.slice(0, 500),
+    symptomDuration: parsed.symptomDuration || 'No especificada',
+    symptomSeverity: Math.min(10, Math.max(1, Number(parsed.symptomSeverity || 5))),
+    onsetType: parsed.onsetType === 'sudden' ? 'sudden' : 'gradual',
+    associatedSymptoms: Array.isArray(parsed.associatedSymptoms) ? parsed.associatedSymptoms : [],
+    aggravatingFactors: Array.isArray(parsed.aggravatingFactors) ? parsed.aggravatingFactors : [],
+    relievingFactors: Array.isArray(parsed.relievingFactors) ? parsed.relievingFactors : [],
+    previousTreatments: Array.isArray(parsed.previousTreatments) ? parsed.previousTreatments : [],
+    medicalHistory: parsed.medicalHistory || '',
+    medications: Array.isArray(parsed.medications) ? parsed.medications : [],
+    allergies: Array.isArray(parsed.allergies) ? parsed.allergies : [],
+    familyHistory: parsed.familyHistory || '',
+    socialHistory: parsed.socialHistory || '',
+    enoughInformation: Boolean(parsed.enoughInformation),
+    followUpQuestion: parsed.followUpQuestion || '¿Desde cuándo comenzaron los síntomas y qué tan intensos son del 1 al 10?',
+    urgencyHint: parsed.urgencyHint || 'moderate',
+  }
+}
+
+async function classifyUrgency(messages: ConsultMessage[]): Promise<{ urgency: UrgencyLevel; specialty: string; confidence: number; redFlags: string[]; recommendedAction: string }> {
+  const conversation = messages
+    .filter((message) => message.role !== 'system')
+    .map((message) => `${message.role === 'user' ? 'Paciente' : 'Asistente'}: ${message.content}`)
+    .join('\n')
+
+  const response = await aiChatCompletion({
+    messages: [{ role: 'user', content: PRECONSULTA_URGENCY_PROMPT.replace('{conversation}', conversation) }],
+    temperature: 0.1,
+    maxTokens: 800,
+    jsonMode: true,
+    preferOpenAI: false,
+  })
+
+  const parsed = JSON.parse(response.content) as {
+    urgency?: UrgencyLevel
+    specialty?: string
+    confidence?: number
+    redFlags?: string[]
+    recommendedAction?: string
+  }
+
+  return {
+    urgency: parsed.urgency || 'moderate',
+    specialty: parsed.specialty || 'medicina general',
+    confidence: typeof parsed.confidence === 'number' ? parsed.confidence : 0.5,
+    redFlags: Array.isArray(parsed.redFlags) ? parsed.redFlags : [],
+    recommendedAction: parsed.recommendedAction || 'book-appointment',
+  }
+}
+
+function buildNextSteps(urgency: UrgencyLevel, referralNeeded: boolean): string[] {
+  if (urgency === 'emergency') {
+    return ['Ve al hospital o llama a emergencias inmediatamente.']
+  }
+
+  if (urgency === 'urgent') {
+    return ['Programa una cita médica en las próximas 24-48 horas.']
+  }
+
+  if (referralNeeded) {
+    return ['Agenda una consulta con el especialista recomendado lo antes posible.']
+  }
+
+  if (urgency === 'self-care') {
+    return ['Sigue las medidas de autocuidado y monitorea cualquier empeoramiento.']
+  }
+
+  return ['Programa una cita de seguimiento en 1-2 semanas si no mejoras.']
+}
+
+function mapSpecialists(specialists: SpecialistAssessment[]): ConsultationResult['specialists'] {
+  return specialists.map((specialist) => ({
+    id: specialist.specialistId,
+    name: specialist.specialist.name,
+    specialty: specialist.specialist.description,
+    assessment: specialist.clinicalImpression || specialist.reasoningNotes || 'Evaluación completada',
+    confidence: specialist.confidence,
+  }))
+}
+
+function mapConsultationResult(consultation: Awaited<ReturnType<typeof runSOAPConsultation>>): ConsultationResult {
+  const consensus = consultation.assessment?.consensus
+  const specialists = consultation.assessment?.specialists || []
+  const plan = consultation.plan
+  const primaryDiagnosis = consensus?.primaryDiagnosis?.name || specialists[0]?.differentialDiagnoses?.[0]?.name || 'En evaluación'
+
+  return {
+    id: consultation.id,
+    primaryDiagnosis,
+    confidence: consensus?.confidenceScore || 0.5,
+    specialists: mapSpecialists(specialists),
+    differentialDiagnoses: (consensus?.differentialDiagnoses || [])
+      .map((diagnosis) => diagnosis.name)
+      .filter(Boolean)
+      .slice(0, 3),
+    urgency: consensus?.urgencyLevel || 'moderate',
+    recommendations: plan?.recommendations || [consensus?.supervisorSummary || 'Consulta médica recomendada.'],
+    nextSteps: buildNextSteps(consensus?.urgencyLevel || 'moderate', Boolean(plan?.referralNeeded)),
+    consensus: consensus || {
+      kendallW: 0,
+      agreementLevel: 'disagreement',
+      primaryDiagnosis: null,
+      differentialDiagnoses: [],
+      consensusCategory: 'conflict',
+      urgencyLevel: 'moderate',
+      combinedRedFlags: [],
+      recommendedSpecialty: null,
+      recommendedTests: [],
+      supervisorSummary: 'No fue posible generar consenso.',
+      confidenceScore: 0,
+      requiresHumanReview: true,
+    },
+  }
 }
 
 export async function POST(request: NextRequest) {
@@ -103,52 +307,42 @@ export async function POST(request: NextRequest) {
     }
 
     const { messages, patientId } = parsed.data
-    const userMessage = messages[messages.length - 1]?.content || ''
+    const conversation = sanitizeConversation(messages as ConsultMessage[])
+    const userMessage = conversation[conversation.length - 1]?.content || ''
     
     // Determine conversation state
-    const conversationLength = messages.filter(m => m.role === 'user').length
-    const hasEnoughInfo = conversationLength >= 3
+    const conversationLength = conversation.filter(m => m.role === 'user').length
     
     // Extract symptoms and select specialists
     const specialists = selectSpecialists(userMessage)
     const redFlagCheck = detectRedFlags(userMessage)
+    const subjective = await extractSubjectiveData(conversation)
+    const urgencyAssessment = await classifyUrgency(conversation)
     
     // Build system prompt
-    const systemPrompt = `Eres un asistente médico AI de Doctor.mx, diseñado para ayudar a pacientes a entender sus síntomas de manera conversacional y natural.
+    const systemPrompt = buildIntakePrompt(specialists, redFlagCheck.hasRedFlag || urgencyAssessment.urgency === 'emergency')
 
-REGLAS IMPORTANTES:
-1. Habla en español de México de forma natural y empática
-2. Haz preguntas de seguimiento para obtener más detalles
-3. No des diagnósticos definitivos, solo posibilidades
-4. Si detectas síntomas de emergencia (rojos), advierte inmediatamente
-5. Después de 3-4 intercambios, ofrece un análisis preliminar
-
-ESPECIALISTAS RELEVANTES PARA ESTA CONSULTA: ${specialists.join(', ')}
-${redFlagCheck.hasRedFlag ? '\n⚠️ ALERTA: Se detectaron síntomas de EMERGENCIA. Aconseja buscar atención médica inmediata.' : ''}
-
-INSTRUCCIONES DE FLUJO:
-- Intercambio 1-2: Recopila información básica (qué siente, desde cuándo)
-- Intercambio 3: Pide detalles sobre severidad y factores
-- Intercambio 4+: Si tienes suficiente información, indica que estás listo para el análisis
-
-Cuando tengas suficiente información para un análisis completo, incluye al final de tu respuesta:
-[READY_FOR_ANALYSIS: true]`
-
-    // Call OpenAI for conversation
+    // Call AI for conversation
     const response = await aiChatCompletion({
-      messages: messages.map(m => ({ role: m.role as 'user' | 'assistant' | 'system', content: m.content })),
+      messages: conversation.map(m => ({ role: m.role as 'user' | 'assistant' | 'system', content: m.content })),
       system: systemPrompt,
       temperature: 0.3,
       maxTokens: 1024,
-      preferOpenAI: true,
+      preferOpenAI: false,
     })
 
-    const isReadyForAnalysis = response.content.includes('[READY_FOR_ANALYSIS: true]') || hasEnoughInfo
+    const isReadyForAnalysis = response.content.includes('[READY_FOR_ANALYSIS: true]') || subjective.enoughInformation || conversationLength >= 4
     const cleanedContent = response.content.replace('[READY_FOR_ANALYSIS: true]', '').trim()
 
     // If ready for analysis, run multi-specialist consultation
     if (isReadyForAnalysis && conversationLength >= 3) {
-      const analysisResult = await runMultiSpecialistAnalysis(messages, specialists, user.id)
+      const consultation = await runSOAPConsultation(patientId || user.id, subjective)
+
+      if (consultation.status === 'error' || !consultation.assessment || !consultation.plan) {
+        throw new Error('SOAP consultation failed')
+      }
+
+      const analysisResult = mapConsultationResult(consultation)
       
       return NextResponse.json({
         message: `${cleanedContent}\n\nHe completado el análisis con nuestro panel de especialistas. Aquí están los resultados:`,
@@ -166,7 +360,7 @@ Cuando tengas suficiente información para un análisis completo, incluye al fin
 
     // Continue conversation
     return NextResponse.json({
-      message: cleanedContent,
+      message: cleanedContent || subjective.followUpQuestion,
       complete: false,
       specialists,
       meta: {
@@ -183,120 +377,5 @@ Cuando tengas suficiente información para un análisis completo, incluye al fin
       { error: 'Internal server error' },
       { status: 500 }
     )
-  }
-}
-
-async function runMultiSpecialistAnalysis(
-  messages: Array<{ role: string; content: string }>,
-  selectedSpecialists: string[],
-  patientId: string
-): Promise<any> {
-  const caseSummary = messages
-    .filter(m => m.role !== 'system')
-    .map(m => `${m.role === 'user' ? 'Paciente' : 'Asistente'}: ${m.content}`)
-    .join('\n')
-
-  // Run specialist consultations in parallel
-  const specialistResults = await Promise.all(
-    selectedSpecialists.map(async (specialty) => {
-      const specialtyPrompts: Record<string, string> = {
-        general_practitioner: 'Eres un médico general con 15 años de experiencia. Proporciona una evaluación amplia y considera todas las posibilidades.',
-        cardiology: 'Eres un cardiólogo especializado. Evalúa síntomas cardiovasculares y riesgo cardíaco.',
-        dermatology: 'Eres un dermatólogo. Evalúa condiciones de piel y enfermedades dermatológicas.',
-        orthopedics: 'Eres un ortopedista. Evalúa problemas musculoesqueléticos y lesiones.',
-        neurology: 'Eres un neurólogo. Evalúa síntomas neurológicos y trastornos del sistema nervioso.',
-        gastroenterology: 'Eres un gastroenterólogo. Evalúa problemas digestivos y abdominales.',
-        pulmonology: 'Eres un neumólogo. Evalúa problemas respiratorios y pulmonares.',
-        urology: 'Eres un urólogo. Evalúa problemas urinarios y del tracto urinario.',
-        endocrinology: 'Eres un endocrinólogo. Evalúa problemas hormonales y metabólicos.',
-        psychiatry: 'Eres un psiquiatra. Evalúa síntomas psicológicos y de salud mental.',
-        infectious_disease: 'Eres un infectólogo. Evalúa infecciones y enfermedades infecciosas.',
-      }
-
-      const response = await aiChatCompletion({
-        messages: [{ role: 'user' as const, content: caseSummary }],
-        system: `${specialtyPrompts[specialty] || specialtyPrompts.general_practitioner}
-
-Proporciona tu evaluación en formato JSON:
-{
-  "primaryDiagnosis": "diagnóstico principal",
-  "confidence": 0.0-1.0,
-  "assessment": "explicación detallada en español",
-  "differentialDiagnoses": ["otra posibilidad 1", "otra posibilidad 2"],
-  "recommendations": ["recomendación 1", "recomendación 2"],
-  "urgency": "emergency|urgent|moderate|routine|self-care"
-}`,
-        temperature: 0.2,
-        maxTokens: 1500,
-        jsonMode: true,
-        preferOpenAI: true,
-      })
-
-      try {
-        const parsed = JSON.parse(response.content)
-        return {
-          id: specialty,
-          name: specialty.charAt(0).toUpperCase() + specialty.slice(1).replace('_', ' '),
-          specialty: specialty.replace('_', ' '),
-          ...parsed,
-        }
-      } catch {
-        return {
-          id: specialty,
-          name: specialty.charAt(0).toUpperCase() + specialty.slice(1).replace('_', ' '),
-          specialty: specialty.replace('_', ' '),
-          primaryDiagnosis: 'No determinado',
-          confidence: 0.5,
-          assessment: response.content,
-          differentialDiagnoses: [],
-          recommendations: [],
-          urgency: 'moderate',
-        }
-      }
-    })
-  )
-
-  // Build consensus
-  const diagnoses = specialistResults.map(s => s.primaryDiagnosis)
-  const urgencies = specialistResults.map(s => s.urgency)
-  const confidences = specialistResults.map(s => s.confidence)
-  
-  // Determine final urgency (highest concern wins)
-  const urgencyPriority = ['emergency', 'urgent', 'moderate', 'routine', 'self-care']
-  const finalUrgency = urgencyPriority.find(u => urgencies.includes(u)) || 'moderate'
-  
-  // Calculate average confidence
-  const avgConfidence = confidences.reduce((a, b) => a + b, 0) / confidences.length
-
-  // Build consensus result
-  const consensus: ConsensusResult = {
-    kendallW: avgConfidence,
-    agreementLevel: avgConfidence >= 0.8 ? 'strong' : avgConfidence >= 0.6 ? 'moderate' : avgConfidence >= 0.4 ? 'weak' : 'disagreement',
-    primaryDiagnosis: null,
-    differentialDiagnoses: [],
-    consensusCategory: avgConfidence >= 0.6 ? 'consistent' : 'conflict',
-    urgencyLevel: finalUrgency as any,
-    combinedRedFlags: [],
-    recommendedSpecialty: null,
-    recommendedTests: [],
-    supervisorSummary: 'Análisis multi-especialista completado',
-    confidenceScore: avgConfidence,
-    requiresHumanReview: finalUrgency === 'emergency' || finalUrgency === 'urgent',
-  }
-
-  return {
-    id: `cons-${Date.now()}`,
-    primaryDiagnosis: diagnoses[0],
-    confidence: avgConfidence,
-    specialists: specialistResults,
-    differentialDiagnoses: [...new Set(diagnoses)].slice(0, 3),
-    urgency: finalUrgency,
-    recommendations: [...new Set(specialistResults.flatMap(s => s.recommendations))],
-    nextSteps: finalUrgency === 'emergency' 
-      ? ['Ve al hospital o llama a emergencias inmediatamente']
-      : finalUrgency === 'urgent'
-      ? ['Programa una cita médica en las próximas 24-48 horas']
-      : ['Programa una cita de seguimiento en 1-2 semanas'],
-    consensus,
   }
 }
