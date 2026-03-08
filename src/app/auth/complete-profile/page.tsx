@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import { useToast } from '@/components/Toast'
 
 export default function CompleteProfilePage() {
     const [fullName, setFullName] = useState('')
@@ -11,7 +12,9 @@ export default function CompleteProfilePage() {
     const [role, setRole] = useState<'patient' | 'doctor'>('patient')
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState<string | null>(null)
+    const [successMessage, setSuccessMessage] = useState<string | null>(null)
     const router = useRouter()
+    const { addToast } = useToast()
     const [supabase] = useState(() => {
         try {
             return createClient()
@@ -24,6 +27,7 @@ export default function CompleteProfilePage() {
         e.preventDefault()
         setLoading(true)
         setError(null)
+        setSuccessMessage(null)
 
         if (!supabase) {
             setError('Authentication not available')
@@ -108,8 +112,12 @@ export default function CompleteProfilePage() {
             }
 
             // Redirect to appropriate dashboard
-            console.log('Redirecting to:', role === 'doctor' ? '/doctor/onboarding' : '/app')
-            await router.push(role === 'doctor' ? '/doctor/onboarding' : '/app')
+            const nextPath = role === 'doctor' ? '/doctor/onboarding' : '/app'
+            setSuccessMessage(role === 'doctor'
+                ? 'Perfil guardado. Ahora te llevaremos a completar tu perfil profesional.'
+                : 'Perfil guardado. Ahora te llevaremos a tu panel para empezar a usar Doctor.mx.')
+            addToast('Perfil guardado correctamente.', 'success')
+            await router.push(nextPath)
             router.refresh()
         } catch (err) {
             const errorMessage = err instanceof Error ? err.message : 'Error al crear perfil'
@@ -144,9 +152,23 @@ export default function CompleteProfilePage() {
                         Necesitamos algunos datos para continuar
                     </p>
 
+                    <div className="mb-6 grid gap-3">
+                        <div className={`rounded-xl border p-3 text-sm ${role === 'patient' ? 'border-blue-200 bg-blue-50 text-blue-900' : 'border-emerald-200 bg-emerald-50 text-emerald-900'}`}>
+                            {role === 'patient'
+                                ? 'Completa tu perfil para guardar tus citas, consultas y seguimiento en un solo lugar.'
+                                : 'Completa tu perfil para continuar con onboarding, verificación y configuración de tu práctica.'}
+                        </div>
+                    </div>
+
                     {error && (
                         <div className="mb-4 p-3 bg-error-50 border border-error-200 rounded-xl text-error-700 text-sm">
                             {error}
+                        </div>
+                    )}
+
+                    {successMessage && (
+                        <div className="mb-4 p-3 bg-green-50 border border-green-200 rounded-xl text-green-700 text-sm">
+                            {successMessage}
                         </div>
                     )}
 

@@ -11,6 +11,7 @@ import {
   Modal,
   ModalFooter,
 } from '@/components'
+import { useToast } from '@/components/Toast'
 import { Calendar } from 'lucide-react'
 import { formatDoctorName } from '@/lib/utils'
 
@@ -352,6 +353,7 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
 function AppointmentsPageContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
+  const { addToast } = useToast()
 
   const [activeTab, setActiveTab] = useState<TabType>('all')
   const [appointments, setAppointments] = useState<Appointment[]>([])
@@ -405,7 +407,15 @@ function AppointmentsPageContent() {
       const data = await response.json()
 
       if (response.ok) {
-        window.location.reload()
+        setAppointments((current) => current.map((appointment) => (
+          appointment.id === appointmentId
+            ? {
+                ...appointment,
+                status: data.appointment?.status || 'cancelled',
+              }
+            : appointment
+        )))
+        addToast('La cita fue cancelada correctamente.', 'success')
       } else {
         setErrorMessage(data.error || 'Error al cancelar cita')
       }

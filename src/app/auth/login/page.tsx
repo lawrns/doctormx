@@ -36,6 +36,7 @@ function LoginContent() {
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
   const searchParams = useSearchParams()
+  const redirectTarget = searchParams.get('redirect')
   const [supabase] = useState(() => {
     try {
       return createClient()
@@ -72,7 +73,7 @@ function LoginContent() {
       if (authError) {
         form.setError('root', { message: authError.message })
       } else {
-        const redirectUrl = searchParams.get('redirect') ||
+        const redirectUrl = redirectTarget ||
           (data.userType === 'doctor' ? '/doctor' : '/app')
         router.push(redirectUrl)
         router.refresh()
@@ -159,6 +160,11 @@ function LoginContent() {
               <p className="text-sm text-muted-foreground">
                 Ingresa tu correo y contraseña para acceder
               </p>
+              {redirectTarget && (
+                <div className="rounded-md border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-900 text-left">
+                  Iniciar sesión te llevará de regreso a donde estabas para continuar tu flujo sin perder contexto.
+                </div>
+              )}
             </div>
 
             {/* Form */}
@@ -364,7 +370,7 @@ function LoginContent() {
             <p className="text-center text-sm text-muted-foreground">
               ¿No tienes cuenta?{' '}
               <Link
-                href="/auth/register"
+                href={redirectTarget ? `/auth/register?redirect=${encodeURIComponent(redirectTarget)}` : '/auth/register'}
                 className="underline underline-offset-4 hover:text-primary"
               >
                 Regístrate gratis
