@@ -88,7 +88,7 @@ export function SupportPanel({ onMinimize }: SupportPanelProps) {
   }
 
   return (
-    <div className="flex h-full flex-col overflow-hidden rounded-[2rem] border border-white/60 bg-[linear-gradient(180deg,rgba(255,255,255,0.97),rgba(248,250,252,0.97))] shadow-[0_28px_90px_rgba(15,23,42,0.20)] backdrop-blur-2xl">
+    <div className="flex max-h-full flex-col overflow-hidden rounded-[2rem] border border-white/60 bg-[linear-gradient(180deg,rgba(255,255,255,0.97),rgba(248,250,252,0.97))] shadow-[0_28px_90px_rgba(15,23,42,0.20)] backdrop-blur-2xl">
       <div className="relative overflow-hidden border-b border-slate-200/70 px-5 py-5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(14,165,233,0.20),transparent_50%),radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.10),transparent_45%)]" />
         <div className="relative flex items-start justify-between gap-4">

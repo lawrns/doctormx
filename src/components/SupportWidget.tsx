@@ -6,7 +6,7 @@ import { MessageSquareMore, X } from 'lucide-react'
 import { SupportPresenceOrb } from '@/components/support/SupportPresenceOrb'
 import { SupportPanel } from '@/components/support/SupportPanel'
 import { Button } from '@/components/ui/button'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from '@/components/ui/sheet'
 
 export function SupportWidget() {
   const [open, setOpen] = useState(false)
@@ -65,6 +65,8 @@ export function SupportWidget() {
             </Button>
           </SheetTrigger>
           <SheetContent side="bottom" className="h-[85vh] rounded-t-[2rem] border-0 bg-transparent p-3 shadow-none">
+            <SheetTitle className="sr-only">Doctor Simeon Support Chat</SheetTitle>
+            <SheetDescription className="sr-only">Support chat widget for Doctor.mx navigation and guidance</SheetDescription>
             <SupportPanel onMinimize={() => setOpen(false)} />
           </SheetContent>
         </Sheet>
