@@ -15,7 +15,12 @@ export function SupportWidget() {
   return (
     <>
       <div className="fixed bottom-4 right-4 z-50 hidden w-[min(320px,calc(100vw-32px))] max-w-[320px] md:block">
-        <Sheet open={open} onOpenChange={setOpen}>
+        <Sheet open={open} onOpenChange={(value) => {
+          if (!value && document.activeElement instanceof HTMLElement) {
+            document.activeElement.blur()
+          }
+          setOpen(value)
+        }}>
           <SheetTrigger asChild>
             <motion.div
               animate={reducedMotion ? undefined : { y: [0, -4, 0] }}
@@ -51,7 +56,12 @@ export function SupportWidget() {
       </div>
 
       <div className="fixed bottom-4 right-4 z-50 md:hidden">
-        <Sheet open={open} onOpenChange={setOpen}>
+        <Sheet open={open} onOpenChange={(value) => {
+          if (!value && document.activeElement instanceof HTMLElement) {
+            document.activeElement.blur()
+          }
+          setOpen(value)
+        }}>
           <SheetTrigger asChild>
             <Button
               type="button"
