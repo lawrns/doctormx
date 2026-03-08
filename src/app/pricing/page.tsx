@@ -192,11 +192,10 @@ export default function PricingPage() {
             className="text-center"
           >
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
-              Simple, Transparent Pricing
+              Precios claros y transparentes
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Choose the plan that fits your needs. No hidden fees, no surprises. 
-              Quality healthcare at affordable prices.
+              Elige la opción que mejor se adapta a tus necesidades. Sin cargos sorpresa y con una experiencia pensada para pacientes y doctores en México.
             </p>
             
             {/* Tab Switcher */}
@@ -209,7 +208,7 @@ export default function PricingPage() {
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
-                For Patients
+                Pacientes
               </button>
               <button
                 onClick={() => setActiveTab('doctor')}
@@ -219,7 +218,7 @@ export default function PricingPage() {
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
-                For Doctors
+                Doctores
               </button>
             </div>
           </motion.div>
@@ -243,7 +242,7 @@ export default function PricingPage() {
                       <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                         <Badge className="bg-blue-600 text-white px-4 py-1">
                           <Star className="w-3 h-3 mr-1" />
-                          Most Popular
+                          Más popular
                         </Badge>
                       </div>
                     )}
@@ -304,7 +303,7 @@ export default function PricingPage() {
                       <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                         <Badge className="bg-blue-600 text-white px-4 py-1">
                           <TrendingUp className="w-3 h-3 mr-1" />
-                          Best Value
+                          Mejor valor
                         </Badge>
                       </div>
                     )}
@@ -363,9 +362,9 @@ export default function PricingPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Compare Features</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Compara beneficios</h2>
             <p className="text-lg text-gray-600">
-              See what's included in each plan
+              Revisa qué incluye cada opción antes de decidir.
             </p>
           </motion.div>
           
@@ -375,7 +374,7 @@ export default function PricingPage() {
                 <thead className="bg-gray-50">
                   <tr>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Feature
+                      Beneficio
                     </th>
                     <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Single
@@ -391,7 +390,7 @@ export default function PricingPage() {
                 <tbody className="bg-white divide-y divide-gray-200">
                   <tr>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      Video Consultations
+                      Videoconsultas
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-center">
                       <CheckCircle className="w-5 h-5 text-green-500 mx-auto" />
@@ -405,7 +404,7 @@ export default function PricingPage() {
                   </tr>
                   <tr className="bg-gray-50">
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      Monthly Consultations
+                      Consultas al mes
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-600">
                       1
@@ -414,15 +413,15 @@ export default function PricingPage() {
                       4
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-600">
-                      Unlimited
+                      Ilimitadas
                     </td>
                   </tr>
                   <tr>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      Messaging
+                      Mensajería
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-600">
-                      7 days
+                      7 días
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-center">
                       <CheckCircle className="w-5 h-5 text-green-500 mx-auto" />
@@ -433,7 +432,7 @@ export default function PricingPage() {
                   </tr>
                   <tr className="bg-gray-50">
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      Specialist Access
+                      Acceso a especialistas
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-center">
                       <X className="w-5 h-5 text-gray-400 mx-auto" />
@@ -462,7 +461,7 @@ export default function PricingPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Preguntas frecuentes</h2>
           </motion.div>
           
           <div className="space-y-4">
@@ -494,20 +493,20 @@ export default function PricingPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold text-white mb-4">
-              Ready to Get Started?
+              ¿Listo para comenzar?
             </h2>
             <p className="text-xl text-blue-100 mb-8">
-              Join thousands of patients and doctors already using Doctor.mx
+              Súmate a una experiencia más simple para reservar, atender y dar seguimiento en línea.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/doctors">
                 <Button size="lg" variant="secondary">
-                  Find a Doctor
+                  Encontrar un doctor
                 </Button>
               </Link>
               <Link href="/for-doctors">
                 <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
-                  Join as Doctor
+                  Unirme como doctor
                 </Button>
               </Link>
             </div>

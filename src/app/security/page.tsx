@@ -6,6 +6,7 @@ import { Footer } from '@/components/layout/Footer'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import Link from 'next/link'
 import {
   Shield,
   Lock,
@@ -133,24 +134,23 @@ export default function SecurityPage() {
               <Shield className="w-10 h-10 text-green-600" />
             </div>
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
-              Security & Privacy
+              Seguridad y privacidad
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Protecting your health information is our highest priority. We use industry-leading 
-              security measures to ensure your data remains confidential and secure.
+              Proteger tu información de salud es una prioridad. Aplicamos controles de seguridad, privacidad y acceso para cuidar tus datos en cada interacción.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Badge variant="secondary" className="text-sm py-2 px-4">
                 <CheckCircle className="w-4 h-4 mr-2" />
-                HIPAA Compliant
+                Controles tipo HIPAA
               </Badge>
               <Badge variant="secondary" className="text-sm py-2 px-4">
                 <Lock className="w-4 h-4 mr-2" />
-                AES-256 Encrypted
+                Cifrado AES-256
               </Badge>
               <Badge variant="secondary" className="text-sm py-2 px-4">
                 <Shield className="w-4 h-4 mr-2" />
-                COFEPRIS Certified
+                Alineado con COFEPRIS
               </Badge>
             </div>
           </motion.div>
@@ -167,9 +167,9 @@ export default function SecurityPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">How We Protect Your Data</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Cómo protegemos tu información</h2>
             <p className="text-lg text-gray-600">
-              Multi-layered security measures to safeguard your health information
+              Múltiples capas de protección para resguardar información clínica y datos personales.
             </p>
           </motion.div>
           
@@ -217,9 +217,9 @@ export default function SecurityPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Compliance & Certifications</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Cumplimiento y certificaciones</h2>
             <p className="text-lg text-gray-600">
-              We adhere to strict healthcare industry standards and regulations
+              Operamos con estándares y marcos de referencia para salud digital, privacidad y seguridad.
             </p>
           </motion.div>
           
@@ -289,9 +289,9 @@ export default function SecurityPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Your Rights & Control</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Tus derechos y control</h2>
             <p className="text-lg text-gray-600">
-              You have full control over your health information
+              Puedes gestionar el acceso y uso de tu información de salud dentro de la plataforma.
             </p>
           </motion.div>
           
@@ -299,24 +299,24 @@ export default function SecurityPage() {
             <Card className="p-6">
               <div className="flex items-center gap-3 mb-4">
                 <Users className="w-6 h-6 text-blue-600" />
-                <h3 className="font-semibold text-gray-900">Patient Rights</h3>
+                <h3 className="font-semibold text-gray-900">Derechos del paciente</h3>
               </div>
               <ul className="space-y-3">
                 <li className="flex items-start text-sm text-gray-600">
                   <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                  Access your complete medical history
+                  Acceder a tu historial clínico disponible
                 </li>
                 <li className="flex items-start text-sm text-gray-600">
                   <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                  Request corrections to your information
+                  Solicitar correcciones de información
                 </li>
                 <li className="flex items-start text-sm text-gray-600">
                   <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                  Obtain a copy of your data
+                  Obtener una copia de tus datos
                 </li>
                 <li className="flex items-start text-sm text-gray-600">
                   <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                  Delete your account and data
+                  Solicitar la eliminación de cuenta y datos aplicables
                 </li>
               </ul>
             </Card>
@@ -324,24 +324,24 @@ export default function SecurityPage() {
             <Card className="p-6">
               <div className="flex items-center gap-3 mb-4">
                 <AlertTriangle className="w-6 h-6 text-orange-600" />
-                <h3 className="font-semibold text-gray-900">Security Best Practices</h3>
+                <h3 className="font-semibold text-gray-900">Buenas prácticas de seguridad</h3>
               </div>
               <ul className="space-y-3">
                 <li className="flex items-start text-sm text-gray-600">
                   <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                  Use strong, unique passwords
+                  Usa contraseñas fuertes y únicas
                 </li>
                 <li className="flex items-start text-sm text-gray-600">
                   <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                  Enable two-factor authentication
+                  Activa la autenticación en dos pasos cuando esté disponible
                 </li>
                 <li className="flex items-start text-sm text-gray-600">
                   <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                  Review access logs regularly
+                  Revisa actividad y accesos con frecuencia
                 </li>
                 <li className="flex items-start text-sm text-gray-600">
                   <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                  Report suspicious activity
+                  Reporta actividad sospechosa de inmediato
                 </li>
               </ul>
             </Card>
@@ -358,30 +358,30 @@ export default function SecurityPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Security Team</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Equipo de seguridad</h2>
             <p className="text-lg text-gray-600 mb-8">
-              Our dedicated security team monitors and protects our platform 24/7
+              Mantenemos procesos de monitoreo, revisión y respuesta para proteger la plataforma.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="p-6">
                 <Shield className="w-8 h-8 text-blue-600 mb-3 mx-auto" />
-                <h3 className="font-semibold text-gray-900 mb-1">24/7 Monitoring</h3>
+                <h3 className="font-semibold text-gray-900 mb-1">Monitoreo continuo</h3>
                 <p className="text-sm text-gray-600">
-                  Continuous security monitoring and threat detection
+                  Vigilancia operativa y detección temprana de anomalías.
                 </p>
               </Card>
               <Card className="p-6">
                 <Activity className="w-8 h-8 text-green-600 mb-3 mx-auto" />
-                <h3 className="font-semibold text-gray-900 mb-1">Regular Audits</h3>
+                <h3 className="font-semibold text-gray-900 mb-1">Revisiones periódicas</h3>
                 <p className="text-sm text-gray-600">
-                  Quarterly security assessments and penetration testing
+                  Evaluaciones regulares de controles y exposición de riesgo.
                 </p>
               </Card>
               <Card className="p-6">
                 <FileText className="w-8 h-8 text-purple-600 mb-3 mx-auto" />
-                <h3 className="font-semibold text-gray-900 mb-1">Incident Response</h3>
+                <h3 className="font-semibold text-gray-900 mb-1">Respuesta a incidentes</h3>
                 <p className="text-sm text-gray-600">
-                  Rapid response team for any security incidents
+                  Procedimientos de respuesta para investigar y contener incidentes.
                 </p>
               </Card>
             </div>
@@ -398,13 +398,15 @@ export default function SecurityPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Security Concerns?</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">¿Tienes dudas de seguridad?</h2>
             <p className="text-lg text-gray-600 mb-8">
-              If you have any security questions or concerns, our team is here to help
+              Si necesitas ayuda con privacidad, seguridad o acceso a tus datos, nuestro equipo puede orientarte.
             </p>
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-              Contact Security Team
-            </Button>
+            <Link href="/contact">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+                Contactar al equipo
+              </Button>
+            </Link>
           </motion.div>
         </div>
       </section>
