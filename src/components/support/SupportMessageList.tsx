@@ -23,15 +23,15 @@ export function SupportMessageList({ messages }: SupportMessageListProps) {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 8 }}
               transition={{ duration: 0.24, ease: 'easeOut' }}
-              className={`flex ${isAssistant ? 'justify-start' : 'justify-end'}`}
+              className="flex w-full"
             >
-              <div className={`flex max-w-[92%] items-end gap-2.5 ${isAssistant ? '' : 'flex-row-reverse'}`}>
+              <div className={`flex w-full min-w-0 items-end gap-2.5 ${isAssistant ? 'justify-start' : 'justify-end'}`}>
                 {isAssistant ? (
                   <div className={`shrink-0 transition-opacity ${showAssistantIdentity ? 'opacity-100' : 'opacity-0'}`}>
                     <SupportPresenceOrb size="sm" />
                   </div>
                 ) : null}
-                <div>
+                <div className="min-w-0 max-w-[82%]">
                   {showAssistantIdentity ? (
                     <div className="mb-1.5 ml-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-sky-700/85">
                       Doctor Simeon
@@ -39,10 +39,10 @@ export function SupportMessageList({ messages }: SupportMessageListProps) {
                   ) : null}
                   <div
                     className={isAssistant
-                      ? 'max-w-[88%] rounded-[1.35rem] rounded-bl-md border border-slate-200/80 bg-white px-4 py-3 text-sm leading-6 text-slate-800 shadow-[0_14px_32px_rgba(15,23,42,0.07)]'
-                      : 'max-w-[82%] rounded-[1.35rem] rounded-br-md bg-[linear-gradient(135deg,hsl(var(--brand-ocean)),hsl(var(--brand-sky)))] px-4 py-3 text-sm leading-6 text-white shadow-[0_16px_34px_rgba(14,165,233,0.30)]'}
+                      ? 'w-fit max-w-full break-words rounded-[1.35rem] rounded-bl-md border border-slate-200/80 bg-white px-4 py-3 text-sm leading-[1.55] text-slate-800 shadow-[0_8px_20px_rgba(15,23,42,0.06)]'
+                      : 'ml-auto w-fit min-w-[3rem] max-w-full break-words rounded-[1.35rem] rounded-br-md bg-[linear-gradient(135deg,hsl(var(--brand-ocean)),hsl(var(--brand-sky)))] px-4 py-3 text-sm leading-[1.55] text-white shadow-[0_8px_20px_rgba(14,165,233,0.24)]'}
                   >
-                    <p className="whitespace-pre-wrap break-words">{message.content}</p>
+                    <p className="whitespace-pre-wrap">{message.content}</p>
                   </div>
                 </div>
               </div>

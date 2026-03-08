@@ -14,7 +14,7 @@ export function SupportQuickActions({ actions, onSelect }: SupportQuickActionsPr
   }
 
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
       {actions.map((action, index) => (
         <motion.div
           key={action}

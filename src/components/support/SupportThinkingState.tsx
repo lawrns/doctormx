@@ -17,7 +17,7 @@ export function SupportThinkingState() {
           <BrainCircuit className="h-5 w-5" />
         </motion.div>
         <div className="min-w-0 flex-1">
-          <p className="text-sm font-semibold text-slate-900">GLM 5 está preparando una respuesta</p>
+          <p className="text-sm font-medium text-slate-700">Simeon está pensando…</p>
           <div className="mt-2 flex items-center gap-1.5">
             {[0, 1, 2].map((index) => (
               <motion.span
