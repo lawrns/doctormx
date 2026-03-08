@@ -75,8 +75,7 @@ export function TrustFooter() {
         {/* Regulatory info */}
         <div className="mt-6 pt-6 border-t border-gray-200">
           <p className="text-xs text-gray-600 text-center">
-            Doctor.mx es una plataforma de telemedicina registrada bajo la NOM-024-SSA3-2012 •
-            Registro COFEPRIS: [Número] • RFC: [RFC]
+            Doctor.mx opera con controles orientados a la NOM-024-SSA3-2012 y a la protección de datos personales en México.
             <br />
             Todos los servicios médicos son proporcionados por profesionales de la salud
             certificados y con cédula profesional vigente.

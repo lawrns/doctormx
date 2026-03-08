@@ -17,35 +17,35 @@ export default function CheckoutPage({
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
 
-  useEffect(() => {
-    const createPaymentIntent = async () => {
-      setLoading(true)
-      setError('')
+  const createPaymentIntent = async () => {
+    setLoading(true)
+    setError('')
 
-      try {
-        const response = await fetch('/api/create-payment-intent', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ appointmentId: params.appointmentId }),
-        })
+    try {
+      const response = await fetch('/api/create-payment-intent', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ appointmentId: params.appointmentId }),
+      })
 
-        const data = await response.json()
+      const data = await response.json()
 
-        if (!response.ok || !data.clientSecret || !data.publishableKey) {
-          throw new Error(data.error || 'No pudimos preparar el pago de esta cita.')
-        }
-
-        setClientSecret(data.clientSecret)
-        setStripePromise(loadStripe(data.publishableKey))
-      } catch (err) {
-        setError(err instanceof Error ? err.message : 'No pudimos preparar tu pago. Intenta nuevamente en unos segundos.')
-      } finally {
-        setLoading(false)
+      if (!response.ok || !data?.clientSecret) {
+        throw new Error(data?.error || 'No fue posible iniciar el pago en este momento.')
       }
-    }
 
-    void createPaymentIntent()
-  }, [params.appointmentId, router])
+      setClientSecret(data.clientSecret)
+      setStripePromise(loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!))
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'No fue posible iniciar el pago en este momento.')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    createPaymentIntent()
+  }, [params.appointmentId])
 
   if (loading) {
     return (
@@ -80,10 +80,11 @@ export default function CheckoutPage({
             <div className="flex flex-col gap-3 sm:flex-row">
               <button
                 type="button"
-                onClick={() => window.location.reload()}
+                onClick={createPaymentIntent}
                 className="inline-flex flex-1 items-center justify-center rounded-lg bg-primary-500 px-4 py-3 font-medium text-white hover:bg-primary-600"
+                disabled={loading}
               >
-                Reintentar pago
+                {loading ? 'Reintentando...' : 'Reintentar pago'}
               </button>
               <button
                 type="button"
