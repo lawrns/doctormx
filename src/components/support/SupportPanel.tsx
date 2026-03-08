@@ -3,15 +3,16 @@
 import { useMemo, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Compass, SendHorizonal, ShieldCheck } from 'lucide-react'
+import { Compass, Minimize2, SendHorizonal, ShieldCheck } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { useToast } from '@/components/Toast'
 import { SupportQuickActions } from './SupportQuickActions'
 import { SupportActionCards } from './SupportActionCards'
 import { SupportMessageList } from './SupportMessageList'
+import { SupportPresenceOrb } from './SupportPresenceOrb'
 import { SupportThinkingState } from './SupportThinkingState'
-import type { SupportChatResponse, SupportMessage } from '@/lib/support/types'
+import type { SupportChatResponse, SupportLink, SupportMessage } from '@/lib/support/types'
 
 const DEFAULT_STARTERS = [
   '¿Qué es Doctor.mx?',
@@ -19,13 +20,17 @@ const DEFAULT_STARTERS = [
   '¿Cuál es el siguiente paso recomendado?',
 ]
 
-export function SupportPanel() {
+interface SupportPanelProps {
+  onMinimize?: () => void
+}
+
+export function SupportPanel({ onMinimize }: SupportPanelProps) {
   const pathname = usePathname() || '/'
   const { addToast } = useToast()
   const [messages, setMessages] = useState<SupportMessage[]>([
     {
       role: 'assistant',
-      content: 'Hola, soy el asistente de Doctor.mx. Puedo explicarte esta página, orientarte dentro de la plataforma y sugerirte el siguiente paso útil.',
+      content: 'Hola, soy Doctor Simeon. Puedo orientarte dentro de Doctor.mx, explicarte esta página y ayudarte a dar el siguiente paso útil sin perder el contexto.',
     },
   ])
   const [input, setInput] = useState('')
@@ -36,6 +41,12 @@ export function SupportPanel() {
   const canSend = input.trim().length > 0 && !loading
 
   const requestHistory = useMemo(() => messages.slice(-6), [messages])
+
+  const handleNavigate = (link: SupportLink) => {
+    if (link.minimizeOnClick !== false) {
+      onMinimize?.()
+    }
+  }
 
   const submitMessage = async (value: string) => {
     const content = value.trim()
@@ -77,39 +88,54 @@ export function SupportPanel() {
   }
 
   return (
-    <div className="flex h-full flex-col overflow-hidden rounded-[2rem] border border-white/40 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(248,250,252,0.96))] shadow-[0_24px_80px_rgba(15,23,42,0.18)] backdrop-blur-2xl">
+    <div className="flex h-full flex-col overflow-hidden rounded-[2rem] border border-white/60 bg-[linear-gradient(180deg,rgba(255,255,255,0.97),rgba(248,250,252,0.97))] shadow-[0_28px_90px_rgba(15,23,42,0.20)] backdrop-blur-2xl">
       <div className="relative overflow-hidden border-b border-slate-200/70 px-5 py-5">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(14,165,233,0.18),transparent_50%),radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.10),transparent_45%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(14,165,233,0.20),transparent_50%),radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.10),transparent_45%)]" />
         <div className="relative flex items-start justify-between gap-4">
-          <div className="space-y-1">
-            <div className="inline-flex items-center gap-2 rounded-full border border-sky-200/60 bg-white/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-sky-700">
+          <div className="flex items-start gap-3">
+            <SupportPresenceOrb size="lg" />
+            <div className="space-y-1.5">
+              <div className="inline-flex items-center gap-2 rounded-full border border-sky-200/60 bg-white/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-sky-700">
               <ShieldCheck className="h-3.5 w-3.5" />
-              Asistente Doctor.mx
+                Doctor Simeon
+              </div>
+              <h2 className="text-lg font-semibold tracking-[-0.03em] text-slate-950">Guía clínica y navegación en Doctor.mx</h2>
+              <p className="max-w-md text-sm leading-6 text-slate-600">
+                Te ayudo a entender dónde estás, qué hacer aquí y cómo avanzar sin que el widget te tape la página cuando ya toca actuar.
+              </p>
             </div>
-            <h2 className="text-lg font-semibold tracking-[-0.03em] text-slate-950">Soporte inteligente con GLM 5</h2>
-            <p className="max-w-md text-sm leading-6 text-slate-600">
-              Te ayudo a entender Doctor.mx, ubicarte dentro de la página actual y avanzar al siguiente paso útil.
-            </p>
           </div>
-          <div className="hidden rounded-2xl border border-white/60 bg-white/60 px-3 py-2 text-xs font-medium text-slate-600 shadow-sm sm:block">
-            Ruta actual: <span className="text-slate-900">{pathname}</span>
+          <div className="flex items-center gap-2">
+            <div className="hidden rounded-2xl border border-white/70 bg-white/70 px-3 py-2 text-xs font-medium text-slate-600 shadow-sm sm:block">
+              Ruta actual: <span className="text-slate-900">{pathname}</span>
+            </div>
+            <Button
+              type="button"
+              variant="ghost"
+              size="icon"
+              onClick={onMinimize}
+              className="rounded-2xl text-slate-500 hover:bg-white/80 hover:text-slate-800"
+              aria-label="Minimizar widget"
+            >
+              <Minimize2 className="h-4 w-4" />
+            </Button>
           </div>
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto px-4 py-4 sm:px-5">
+      <div className="flex-1 overflow-y-auto bg-[linear-gradient(180deg,rgba(255,255,255,0.16),transparent)] px-4 py-4 sm:px-5">
         <div className="space-y-4">
           <SupportQuickActions actions={suggestions} onSelect={submitMessage} />
           <SupportMessageList messages={messages} />
           <AnimatePresence>{loading ? <SupportThinkingState /> : null}</AnimatePresence>
-          <SupportActionCards links={links || []} />
+          <SupportActionCards links={links || []} onNavigate={handleNavigate} />
         </div>
       </div>
 
-      <div className="border-t border-slate-200/70 bg-white/70 px-4 py-4 backdrop-blur-xl sm:px-5">
+      <div className="border-t border-slate-200/70 bg-white/80 px-4 py-4 backdrop-blur-xl sm:px-5">
         <div className="mb-3 flex items-center gap-2 text-xs font-medium text-slate-500">
           <Compass className="h-4 w-4 text-sky-600" />
-          Puedo ayudarte con navegación, funcionamiento de la plataforma y próximos pasos.
+          Simeon te orienta y luego se hace a un lado para que puedas usar la página.
         </div>
         <div className="flex items-center gap-2">
           <Input
@@ -121,8 +147,8 @@ export function SupportPanel() {
                 void submitMessage(input)
               }
             }}
-            placeholder="Pregúntame qué hace esta página o qué deberías hacer aquí"
-            className="h-12 rounded-2xl border-slate-200 bg-white/90 px-4 shadow-[0_8px_24px_rgba(15,23,42,0.04)]"
+            placeholder="Pregúntale a Doctor Simeon qué hace esta página o cuál es el mejor siguiente paso"
+            className="h-12 rounded-2xl border-slate-200 bg-white px-4 shadow-[0_10px_26px_rgba(15,23,42,0.05)]"
           />
           <Button
             type="button"

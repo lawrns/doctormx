@@ -24,7 +24,7 @@ export function SupportWidget() {
               transition={{ duration: 0.28, ease: 'easeOut' }}
               className="mb-4 h-[min(72vh,760px)] w-[420px]"
             >
-              <SupportPanel />
+              <SupportPanel onMinimize={() => setOpen(false)} />
             </motion.div>
           ) : null}
         </AnimatePresence>
@@ -37,13 +37,13 @@ export function SupportWidget() {
           <Button
             type="button"
             onClick={() => setOpen((current) => !current)}
-            className="group relative h-auto rounded-[1.75rem] border border-white/30 bg-[linear-gradient(135deg,rgba(2,132,199,0.92),rgba(14,165,233,0.96))] px-4 py-3 text-white shadow-[0_24px_50px_rgba(14,165,233,0.32)] backdrop-blur-xl hover:-translate-y-1"
+            className="group relative h-auto rounded-[1.75rem] border border-white/30 bg-[linear-gradient(145deg,rgba(2,132,199,0.94),rgba(14,165,233,0.98))] px-4 py-3 text-white shadow-[0_24px_50px_rgba(14,165,233,0.32)] backdrop-blur-xl transition-all hover:-translate-y-1"
           >
             <div className="flex items-center gap-3">
-              <SupportPresenceOrb />
+              <SupportPresenceOrb size="md" />
               <div className="text-left">
-                <div className="text-sm font-semibold tracking-[-0.02em]">Asistente Doctor.mx</div>
-                <div className="text-xs text-sky-100/90">Te explica la página y te guía</div>
+                <div className="text-sm font-semibold tracking-[-0.02em]">Doctor Simeon</div>
+                <div className="text-xs text-sky-100/90">Te guía dentro de Doctor.mx</div>
               </div>
               <div className="rounded-full bg-white/14 p-2 text-white/95">
                 {open ? <X className="h-4 w-4" /> : <MessageSquareMore className="h-4 w-4" />}
@@ -61,11 +61,11 @@ export function SupportWidget() {
               size="icon-lg"
               className="h-16 w-16 rounded-[1.6rem] bg-[linear-gradient(135deg,rgba(2,132,199,0.94),rgba(14,165,233,0.98))] text-white shadow-[0_24px_50px_rgba(14,165,233,0.38)]"
             >
-              <MessageSquareMore className="h-7 w-7" />
+              <SupportPresenceOrb size="sm" />
             </Button>
           </SheetTrigger>
           <SheetContent side="bottom" className="h-[85vh] rounded-t-[2rem] border-0 bg-transparent p-3 shadow-none">
-            <SupportPanel />
+            <SupportPanel onMinimize={() => setOpen(false)} />
           </SheetContent>
         </Sheet>
       </div>

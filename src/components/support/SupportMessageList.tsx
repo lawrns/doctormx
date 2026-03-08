@@ -1,6 +1,7 @@
 'use client'
 
 import { motion, AnimatePresence } from 'framer-motion'
+import { SupportPresenceOrb } from './SupportPresenceOrb'
 import type { SupportMessage } from '@/lib/support/types'
 
 interface SupportMessageListProps {
@@ -13,6 +14,7 @@ export function SupportMessageList({ messages }: SupportMessageListProps) {
       <AnimatePresence initial={false}>
         {messages.map((message, index) => {
           const isAssistant = message.role === 'assistant'
+          const showAssistantIdentity = isAssistant && (index === 0 || messages[index - 1]?.role !== 'assistant')
 
           return (
             <motion.div
@@ -23,12 +25,26 @@ export function SupportMessageList({ messages }: SupportMessageListProps) {
               transition={{ duration: 0.24, ease: 'easeOut' }}
               className={`flex ${isAssistant ? 'justify-start' : 'justify-end'}`}
             >
-              <div
-                className={isAssistant
-                  ? 'max-w-[88%] rounded-[1.35rem] rounded-bl-md border border-slate-200/80 bg-white/90 px-4 py-3 text-sm leading-6 text-slate-800 shadow-[0_10px_30px_rgba(15,23,42,0.06)]'
-                  : 'max-w-[82%] rounded-[1.35rem] rounded-br-md bg-[linear-gradient(135deg,hsl(var(--brand-ocean)),hsl(var(--brand-sky)))] px-4 py-3 text-sm leading-6 text-white shadow-[0_12px_30px_rgba(14,165,233,0.30)]'}
-              >
-                <p className="whitespace-pre-wrap break-words">{message.content}</p>
+              <div className={`flex max-w-[92%] items-end gap-2.5 ${isAssistant ? '' : 'flex-row-reverse'}`}>
+                {isAssistant ? (
+                  <div className={`shrink-0 transition-opacity ${showAssistantIdentity ? 'opacity-100' : 'opacity-0'}`}>
+                    <SupportPresenceOrb size="sm" />
+                  </div>
+                ) : null}
+                <div>
+                  {showAssistantIdentity ? (
+                    <div className="mb-1.5 ml-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-sky-700/85">
+                      Doctor Simeon
+                    </div>
+                  ) : null}
+                  <div
+                    className={isAssistant
+                      ? 'max-w-[88%] rounded-[1.35rem] rounded-bl-md border border-slate-200/80 bg-white px-4 py-3 text-sm leading-6 text-slate-800 shadow-[0_14px_32px_rgba(15,23,42,0.07)]'
+                      : 'max-w-[82%] rounded-[1.35rem] rounded-br-md bg-[linear-gradient(135deg,hsl(var(--brand-ocean)),hsl(var(--brand-sky)))] px-4 py-3 text-sm leading-6 text-white shadow-[0_16px_34px_rgba(14,165,233,0.30)]'}
+                  >
+                    <p className="whitespace-pre-wrap break-words">{message.content}</p>
+                  </div>
+                </div>
               </div>
             </motion.div>
           )
