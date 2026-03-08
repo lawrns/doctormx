@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { motion, useReducedMotion } from 'framer-motion'
 import { MessageSquareMore, X } from 'lucide-react'
 import { SupportPresenceOrb } from '@/components/support/SupportPresenceOrb'
 import { SupportPanel } from '@/components/support/SupportPanel'
@@ -12,8 +11,6 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 export function SupportWidget() {
   const [open, setOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
-  const reducedMotion = useReducedMotion()
-
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 767px)')
     const updateViewport = (event?: MediaQueryListEvent) => {
@@ -67,11 +64,7 @@ export function SupportWidget() {
     <div className="fixed bottom-[calc(1rem+env(safe-area-inset-bottom))] right-[calc(1rem+env(safe-area-inset-right))] z-50 w-[min(320px,calc(100vw-32px))] max-w-[320px]">
       <Popover open={open} onOpenChange={handleOpenChange}>
         <PopoverTrigger asChild>
-          <motion.div
-            animate={reducedMotion ? undefined : { y: [0, -4, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-            className="flex justify-end"
-          >
+          <div className="flex justify-end">
             <Button
               type="button"
               aria-label="Abrir asistente Doctor Simeon"
@@ -89,7 +82,7 @@ export function SupportWidget() {
                 </div>
               </div>
             </Button>
-          </motion.div>
+          </div>
         </PopoverTrigger>
         <PopoverContent
           side="top"
