@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useReducedMotion } from 'framer-motion'
-import { Stethoscope } from 'lucide-react'
+import Image from 'next/image'
 
 interface SupportPresenceOrbProps {
   size?: 'sm' | 'md' | 'lg'
@@ -51,9 +51,14 @@ export function SupportPresenceOrb({ size = 'md' }: SupportPresenceOrbProps) {
       ) : null}
       <div className={`relative flex items-center justify-center overflow-hidden rounded-full border border-white/65 bg-[radial-gradient(circle_at_30%_20%,rgba(191,219,254,0.95),rgba(14,165,233,0.92)_42%,rgba(12,74,110,0.98))] text-white shadow-[0_14px_30px_rgba(14,165,233,0.28)] ${current.outer}`}>
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.24),transparent_42%)]" />
-        <div className="relative flex flex-col items-center justify-center leading-none">
-          <span className="font-semibold tracking-[0.08em]">DS</span>
-          <Stethoscope className={`${current.icon} -mt-0.5 opacity-90`} />
+        <div className="relative h-full w-full overflow-hidden rounded-full">
+          <Image
+            src="/images/simeon.png"
+            alt="Doctor Simeon"
+            fill
+            sizes="(max-width: 768px) 40px, 48px, 56px"
+            className="object-cover"
+          />
         </div>
       </div>
     </div>
