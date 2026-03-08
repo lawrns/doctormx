@@ -15,30 +15,86 @@ export default function CheckoutPage({
   const [clientSecret, setClientSecret] = useState('')
   const [stripePromise, setStripePromise] = useState<Promise<import('@stripe/stripe-js').Stripe | null> | null>(null)
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
 
   useEffect(() => {
-    // Crear payment intent
-    fetch('/api/create-payment-intent', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ appointmentId: params.appointmentId }),
-    })
-      .then(res => res.json())
-      .then(data => {
+    const createPaymentIntent = async () => {
+      setLoading(true)
+      setError('')
+
+      try {
+        const response = await fetch('/api/create-payment-intent', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ appointmentId: params.appointmentId }),
+        })
+
+        const data = await response.json()
+
+        if (!response.ok || !data.clientSecret || !data.publishableKey) {
+          throw new Error(data.error || 'No pudimos preparar el pago de esta cita.')
+        }
+
         setClientSecret(data.clientSecret)
         setStripePromise(loadStripe(data.publishableKey))
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'No pudimos preparar tu pago. Intenta nuevamente en unos segundos.')
+      } finally {
         setLoading(false)
-      })
-      .catch(() => {
-        alert('Error al procesar el pago')
-        router.push('/app')
-      })
+      }
+    }
+
+    void createPaymentIntent()
   }, [params.appointmentId, router])
 
-  if (loading || !clientSecret) {
+  if (loading) {
     return (
       <div className="min-h-screen bg-neutral-50 flex items-center justify-center">
         <p className="text-neutral-600">Preparando pago...</p>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-neutral-50">
+        <header className="bg-white shadow">
+          <div className="container mx-auto px-4 py-6">
+            <h1 className="text-2xl font-bold text-neutral-900">Doctor.mx</h1>
+          </div>
+        </header>
+
+        <main className="container mx-auto px-4 py-8 max-w-xl">
+          <div className="bg-white rounded-lg shadow p-6 space-y-5">
+            <div>
+              <h1 className="text-2xl font-bold text-neutral-900 mb-2">No pudimos preparar tu pago</h1>
+              <p className="text-neutral-600">
+                Tu cita todavía no se ha confirmado. Puedes intentar nuevamente o volver a tus citas para revisar el estado.
+              </p>
+            </div>
+
+            <div className="rounded-lg border border-red-200 bg-red-50 p-4">
+              <p className="text-sm text-red-900">{error}</p>
+            </div>
+
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <button
+                type="button"
+                onClick={() => window.location.reload()}
+                className="inline-flex flex-1 items-center justify-center rounded-lg bg-primary-500 px-4 py-3 font-medium text-white hover:bg-primary-600"
+              >
+                Reintentar pago
+              </button>
+              <button
+                type="button"
+                onClick={() => router.push('/app/appointments')}
+                className="inline-flex flex-1 items-center justify-center rounded-lg border border-neutral-300 px-4 py-3 font-medium text-neutral-900 hover:bg-neutral-100"
+              >
+                Volver a mis citas
+              </button>
+            </div>
+          </div>
+        </main>
       </div>
     )
   }
@@ -56,6 +112,12 @@ export default function CheckoutPage({
           <h1 className="text-2xl font-bold text-neutral-900 mb-6">
             Completar Pago
           </h1>
+
+          <div className="mb-6 rounded-lg border border-blue-200 bg-blue-50 p-4">
+            <p className="text-sm text-blue-900">
+              Tu cita quedará confirmada en cuanto se procese el pago. Si interrumpes este paso, podrás retomarlo después desde <strong>Mis citas</strong>.
+            </p>
+          </div>
 
           {stripePromise && clientSecret && (
             <Elements

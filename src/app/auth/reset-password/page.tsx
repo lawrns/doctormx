@@ -316,9 +316,19 @@ function ResetPasswordContent() {
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="flex justify-center"
+                    className="space-y-4"
                   >
-                    <Loader2 className="h-6 w-6 animate-spin text-primary-500" />
+                    <div className="flex justify-center">
+                      <Loader2 className="h-6 w-6 animate-spin text-primary-500" />
+                    </div>
+                    <div className="rounded-lg border border-blue-200 bg-blue-50 p-4 text-sm text-blue-900 text-center">
+                      Siguiente paso: inicia sesión con tu nueva contraseña. Si no eres redirigido automáticamente, puedes continuar manualmente.
+                    </div>
+                    <Link href="/auth/login">
+                      <Button className="w-full h-11 bg-primary-500 hover:bg-primary-600 text-white font-semibold shadow-sm hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5">
+                        Ir a iniciar sesión
+                      </Button>
+                    </Link>
                   </motion.div>
                 ) : (
                   <Form {...form}>
@@ -433,6 +443,9 @@ function ResetPasswordContent() {
                           >
                             <p className="text-sm text-error-500 font-medium">
                               {form.formState.errors.root.message}
+                            </p>
+                            <p className="mt-2 text-xs text-error-500/80">
+                              Si el enlace expiró, solicita uno nuevo desde la pantalla de recuperación.
                             </p>
                           </motion.div>
                         )}

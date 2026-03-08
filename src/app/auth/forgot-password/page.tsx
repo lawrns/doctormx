@@ -223,6 +223,12 @@ function ForgotPasswordContent() {
                       </p>
                     </motion.div>
 
+                    <motion.div variants={itemVariants}>
+                      <div className="rounded-lg border border-blue-200 bg-blue-50 p-4 text-sm text-blue-900">
+                        El enlace de recuperación te llevará a una página segura para crear una nueva contraseña. Si tardas demasiado en usarlo, podrás solicitar uno nuevo.
+                      </div>
+                    </motion.div>
+
                     <motion.div variants={itemVariants} className="pt-2">
                       <Button
                         type="button"

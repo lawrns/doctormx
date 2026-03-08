@@ -3,6 +3,7 @@
 import { useState, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import { SPECIALTIES, PAYMENT_CONFIG } from '@/config/constants'
+import { useToast } from '@/components/Toast'
 import type { Doctor, Profile } from '@/types'
 
 type OnboardingFormProps = {
@@ -12,7 +13,10 @@ type OnboardingFormProps = {
 
 export default function OnboardingForm({ doctor, profile }: OnboardingFormProps) {
   const router = useRouter()
+  const { addToast } = useToast()
   const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState('')
+  const [submitMessage, setSubmitMessage] = useState('')
 
   // SEP Verification state
   const [verifying, setVerifying] = useState(false)
@@ -43,6 +47,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
 
   const isComplete = yearsExperience && bio && licenseNumber && price
   const isVerified = doctor?.status === 'approved'
+  const hasAvailability = Object.values(availability).some((config) => config.enabled)
 
   // SEP Verification handler
   const handleVerifyCedula = useCallback(async () => {
@@ -108,6 +113,13 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
     e.preventDefault()
     if (!isComplete) return
 
+    if (!hasAvailability) {
+      setSubmitError('Configura al menos un día de disponibilidad para poder publicar tu perfil y recibir pacientes.')
+      return
+    }
+
+    setSubmitError('')
+    setSubmitMessage('')
     setSubmitting(true)
 
     try {
@@ -127,15 +139,19 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
       })
 
       if (res.ok) {
+        addToast('Perfil guardado correctamente.', 'success')
+        setSubmitMessage(isVerified
+          ? 'Tus cambios se guardaron y tu perfil sigue publicado.'
+          : 'Tu perfil quedó guardado. Revisaremos tu información antes de activarlo.')
         router.push('/doctor')
         router.refresh()
       } else {
         const data = await res.json()
-        alert(data.error || 'Error al guardar')
+        setSubmitError(data.error || 'No pudimos guardar tu perfil. Revisa los campos e intenta nuevamente.')
         setSubmitting(false)
       }
     } catch {
-      alert('Error al guardar')
+      setSubmitError('Ocurrió un problema de conexión al guardar tu perfil. Intenta nuevamente en unos segundos.')
       setSubmitting(false)
     }
   }
@@ -220,7 +236,30 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                   : 'Completa tu información para comenzar a recibir pacientes'
               }
             </p>
+            <div className="mt-4 grid gap-3 md:grid-cols-3">
+              <div className={`rounded-lg border p-3 text-sm ${licenseNumber ? 'border-green-200 bg-green-50 text-green-800' : 'border-gray-200 bg-white text-gray-600'}`}>
+                Cédula y perfil profesional
+              </div>
+              <div className={`rounded-lg border p-3 text-sm ${hasAvailability ? 'border-green-200 bg-green-50 text-green-800' : 'border-gray-200 bg-white text-gray-600'}`}>
+                Disponibilidad para pacientes
+              </div>
+              <div className={`rounded-lg border p-3 text-sm ${price ? 'border-green-200 bg-green-50 text-green-800' : 'border-gray-200 bg-white text-gray-600'}`}>
+                Precio y preparación operativa
+              </div>
+            </div>
           </div>
+
+          {submitError && (
+            <div className="mb-6 rounded-lg border border-red-200 bg-red-50 p-4 text-sm text-red-800">
+              {submitError}
+            </div>
+          )}
+
+          {submitMessage && (
+            <div className="mb-6 rounded-lg border border-green-200 bg-green-50 p-4 text-sm text-green-800">
+              {submitMessage}
+            </div>
+          )}
 
           <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow">
             <div className="p-6 space-y-8">
@@ -523,6 +562,11 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
             <div className="p-6 bg-gray-50 border-t flex justify-between items-center">
               <div className="text-sm text-gray-600">
                 {!isComplete && <span>* Completa todos los campos requeridos</span>}
+                {isComplete && !hasAvailability && (
+                  <span className="text-yellow-700">
+                    Activa al menos un horario para que los pacientes puedan reservar contigo.
+                  </span>
+                )}
                 {isComplete && !isVerified && (
                   <span className="text-yellow-700">
                     Tu perfil está en revisión. Serás notificado cuando sea verificado.
@@ -536,7 +580,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
               </div>
               <button
                 type="submit"
-                disabled={!isComplete || submitting}
+                disabled={!isComplete || !hasAvailability || submitting}
                 title={submitting ? 'Guardando...' : 'Guardar cambios'}
                 className="group relative w-12 h-12 bg-blue-600 text-white rounded-full hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:scale-110 disabled:hover:scale-100 flex items-center justify-center shadow-lg"
               >

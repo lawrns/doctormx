@@ -1,6 +1,7 @@
 'use client'
 
 import { FormEvent, useState } from 'react'
+import Link from 'next/link'
 import {
   PaymentElement,
   useStripe,
@@ -44,9 +45,21 @@ export default function CheckoutForm({
     <form onSubmit={handleSubmit} className="space-y-6">
       <PaymentElement />
 
+      <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4">
+        <p className="text-sm text-neutral-700">
+          Si tu pago se interrumpe o tu banco lo rechaza, podrás volver a intentarlo sin perder el seguimiento de la cita.
+        </p>
+      </div>
+
       {message && (
         <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-          <p className="text-sm text-red-900">{message}</p>
+          <p className="text-sm font-medium text-red-900">No se pudo confirmar el pago.</p>
+          <p className="mt-1 text-sm text-red-900">{message}</p>
+          <div className="mt-3 text-sm">
+            <Link href="/app/appointments" className="font-medium text-red-800 underline underline-offset-2">
+              Revisar el estado de mi cita
+            </Link>
+          </div>
         </div>
       )}
 

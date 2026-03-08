@@ -1,6 +1,7 @@
 import { requireRole } from '@/lib/auth'
 import { getDoctorAvailability } from '@/lib/availability'
 import DoctorLayout from '@/components/DoctorLayout'
+import { EmptyState } from '@/components'
 import { redirect } from 'next/navigation'
 
 const DAYS = [
@@ -16,6 +17,7 @@ const DAYS = [
 export default async function DoctorAvailabilityPage() {
   const { user, profile, supabase } = await requireRole('doctor')
   const availability = await getDoctorAvailability(user.id)
+  const hasAvailability = availability.length > 0
 
   const { data: doctor } = await supabase
     .from('doctors')
@@ -35,6 +37,21 @@ export default async function DoctorAvailabilityPage() {
       <div className="max-w-4xl">
         <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Disponibilidad</h2>
         <p className="text-gray-600 mb-6 lg:mb-8">Configura tus horarios de atención</p>
+
+        {!hasAvailability && (
+          <div className="mb-6">
+            <EmptyState
+              iconName="calendar"
+              title="Aún no has abierto horarios para pacientes"
+              description="Configura al menos un bloque de atención para que tu perfil pueda empezar a recibir reservas con claridad." 
+              className="items-start text-left"
+            >
+              <div className="w-full rounded-xl border border-blue-100 bg-blue-50 p-4 text-sm text-blue-900">
+                Recomendación: comienza con 2 o 3 bloques semanales y ajusta tu agenda cuando lleguen tus primeras reservas.
+              </div>
+            </EmptyState>
+          </div>
+        )}
 
         <div className="bg-white rounded-lg shadow border p-4 lg:p-6">
           <h3 className="text-lg lg:text-xl font-semibold text-gray-900 mb-4 lg:mb-6">

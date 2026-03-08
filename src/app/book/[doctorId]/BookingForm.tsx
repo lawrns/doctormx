@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { APPOINTMENT_CONFIG } from '@/config/constants'
 import PreConsultaChat from '@/components/PreConsultaChat'
+import { useToast } from '@/components/Toast'
 import { AI_CONFIG } from '@/lib/ai/config'
 import { User } from 'lucide-react'
 
@@ -54,6 +55,7 @@ const MONTHS = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 
 export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
+  const { addToast } = useToast()
   const [selectedDate, setSelectedDate] = useState('')
   const [selectedTime, setSelectedTime] = useState('')
   const [availableSlots, setAvailableSlots] = useState<string[]>([])
@@ -70,6 +72,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
     suggestedSpecialty: string
   } | null>(null)
   const [consultationId, setConsultationId] = useState<string | null>(null)
+  const [submitError, setSubmitError] = useState<string>('')
 
   useEffect(() => {
     const dateParam = searchParams.get('date')
@@ -122,10 +125,12 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
     e.preventDefault()
     if (!currentUser) {
       const redirectPath = window.location.pathname + window.location.search
+      addToast('Inicia sesión para reservar tu consulta sin perder la fecha seleccionada.', 'info')
       router.push(`/auth/login?redirect=${encodeURIComponent(redirectPath)}`)
       return
     }
     if (AI_CONFIG.features.preConsulta && !preConsultaCompleted) { setShowPreConsulta(true); return }
+    setSubmitError('')
     setSubmitting(true)
     try {
       const res = await fetch('/api/appointments', {
@@ -140,9 +145,17 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
         }),
       })
       const data = await res.json()
-      if (res.ok) router.push(`/checkout/${data.appointmentId}`)
-      else { alert(data.error || 'Error al crear la cita'); setSubmitting(false) }
-    } catch { alert('Error al crear la cita'); setSubmitting(false) }
+      if (res.ok) {
+        addToast('Cita creada. Te llevamos al pago para confirmarla.', 'success')
+        router.push(`/checkout/${data.appointmentId}`)
+      } else {
+        setSubmitError(data.error || 'No pudimos crear la cita. Intenta nuevamente o elige otro horario.')
+        setSubmitting(false)
+      }
+    } catch {
+      setSubmitError('No pudimos crear la cita por un problema de conexión. Verifica tu internet e intenta nuevamente.')
+      setSubmitting(false)
+    }
   }
 
   // Generate calendar days for current month view
@@ -479,6 +492,13 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                   <p className="text-lg font-semibold text-ink-primary">
                     {formatDateDisplay(selectedDate)} a las {selectedTime}
                   </p>
+                </div>
+              )}
+
+              {submitError && (
+                <div className="rounded-xl border border-red-200 bg-red-50 p-4">
+                  <p className="text-sm font-medium text-red-800">No se pudo continuar con la reserva.</p>
+                  <p className="mt-1 text-sm text-red-700">{submitError}</p>
                 </div>
               )}
               
