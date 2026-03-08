@@ -15,6 +15,18 @@ export const AI_CONFIG = {
     analysisMaxTokens: 2000,
   },
 
+  // Ollama proxy — self-hosted fallback (ngrok tunnel, Ollama-native API)
+  ollama: {
+    proxyUrl: process.env.OLLAMA_PROXY_URL || '',
+    proxyKey: process.env.OLLAMA_PROXY_KEY || '',
+    models: {
+      default: 'qwen3.5:latest',     // 9.7B general-purpose, fast
+      reasoning: 'kimi-k2.5:cloud',  // cloud-hosted, high quality
+    },
+    timeoutMs: 30000,      // 30s for standard calls
+    longTimeoutMs: 120000, // 120s for long-form generation
+  },
+
   // GLM — disabled (kept as stub to avoid breaking legacy references)
   glm: {
     apiKey: '',

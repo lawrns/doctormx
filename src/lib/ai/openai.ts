@@ -189,7 +189,8 @@ export async function* openaiStreamingCompletion(params: {
 }
 
 /**
- * Unified AI client — uses OpenRouter (Kimi K2.5) as primary, OpenAI as fallback
+ * Unified AI client
+ * Chain: OpenRouter (Kimi K2.5) → OpenAI → Ollama proxy
  */
 export async function aiChatCompletion(params: {
   messages: Array<{ role: 'user' | 'assistant' | 'system'; content: string }>
@@ -203,7 +204,7 @@ export async function aiChatCompletion(params: {
   usage: { inputTokens: number; outputTokens: number; totalTokens: number }
   costUSD: number
   model: string
-  provider: 'openrouter' | 'openai'
+  provider: 'openrouter' | 'openai' | 'ollama'
 }> {
   const { messages, system, temperature, maxTokens, jsonMode } = params
 
@@ -215,7 +216,7 @@ export async function aiChatCompletion(params: {
     ...messages,
   ]
 
-  // Try OpenRouter (Kimi K2.5) first
+  // ── Primary: OpenRouter ────────────────────────────────────────────────────
   if (cfg.openrouter.apiKey) {
     try {
       const { default: OpenAISDK } = await import('openai')
@@ -256,25 +257,47 @@ export async function aiChatCompletion(params: {
     }
   }
 
-  // Fallback: OpenAI
+  // ── Fallback 1: OpenAI ─────────────────────────────────────────────────────
   if (isOpenAIConfigured()) {
-    const result = await openaiChatCompletion({
-      messages: messages.filter(m => m.role !== 'system') as Array<{ role: 'user' | 'assistant'; content: string }>,
-      system,
-      temperature,
-      maxTokens,
-      jsonMode,
-    })
-    return {
-      content: result.content,
-      usage: result.usage,
-      costUSD: result.costUSD,
-      model: result.model,
-      provider: 'openai',
+    try {
+      const result = await openaiChatCompletion({
+        messages: messages.filter(m => m.role !== 'system') as Array<{ role: 'user' | 'assistant'; content: string }>,
+        system,
+        temperature,
+        maxTokens,
+        jsonMode,
+      })
+      return {
+        content: result.content,
+        usage: result.usage,
+        costUSD: result.costUSD,
+        model: result.model,
+        provider: 'openai',
+      }
+    } catch (error) {
+      logger.warn('[OpenAI] Failed, falling back to Ollama proxy', { error })
     }
   }
 
-  throw new Error('All AI providers failed')
+  // ── Fallback 2: Ollama proxy ───────────────────────────────────────────────
+  if (cfg.ollama.proxyUrl && cfg.ollama.proxyKey) {
+    try {
+      const { ollamaChatCompletion } = await import('./ollama')
+      const result = await ollamaChatCompletion({ messages: allMessages })
+      logger.info('[Ollama] Fallback successful', { model: result.model })
+      return {
+        content: result.content,
+        usage: { ...result.usage, totalTokens: result.usage.totalTokens },
+        costUSD: 0,
+        model: result.model,
+        provider: 'ollama',
+      }
+    } catch (ollamaError) {
+      logger.error('[Ollama] Fallback failed', { error: ollamaError })
+    }
+  }
+
+  throw new Error('All AI providers failed (OpenRouter → OpenAI → Ollama)')
 }
 
 // Export default client

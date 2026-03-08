@@ -1,7 +1,8 @@
 /**
  * Cliente de IA para Doctor.mx
- * Proveedor único: OpenRouter (Kimi K2.5)
- * Transcripción de audio: OpenAI Whisper
+ * Primary:  OpenRouter (Kimi K2.5)
+ * Fallback: Ollama proxy (qwen3.5:latest / kimi-k2.5:cloud)
+ * Audio:    OpenAI Whisper
  */
 
 import { AI_CONFIG } from './config';
@@ -48,7 +49,7 @@ async function getOpenAIClient(): Promise<OpenAI> {
 }
 
 /**
- * Chat completion via OpenRouter (Kimi K2.5)
+ * Chat completion — OpenRouter primary, Ollama proxy fallback
  */
 export async function chatCompletion(params: {
   messages: PreConsultaMessage[];
@@ -58,13 +59,9 @@ export async function chatCompletion(params: {
 }): Promise<{
   response: string;
   usage: { inputTokens: number; outputTokens: number; cost: number };
-  provider: 'openrouter';
+  provider: 'openrouter' | 'ollama';
 }> {
   const { messages, systemPrompt, maxTokens, temperature } = params;
-
-  if (!AI_CONFIG.openrouter.apiKey) {
-    throw new Error('No hay API key configurada. Configura OPENROUTER_API_KEY.');
-  }
 
   const apiMessages = [
     { role: 'system' as const, content: systemPrompt },
@@ -74,39 +71,51 @@ export async function chatCompletion(params: {
     })),
   ];
 
-  console.log(`[AI] Intentando con openrouter (model=${AI_CONFIG.openrouter.model})...`);
+  // ── Primary: OpenRouter ──────────────────────────────────────────────────
+  if (AI_CONFIG.openrouter.apiKey) {
+    console.log(`[AI] Intentando con openrouter (model=${AI_CONFIG.openrouter.model})...`);
+    try {
+      const client = await getOpenRouterClient();
+      const completion = await client.chat.completions.create({
+        model: AI_CONFIG.openrouter.model,
+        messages: apiMessages,
+        max_tokens: maxTokens || AI_CONFIG.openrouter.maxTokens,
+        temperature: temperature ?? AI_CONFIG.openrouter.temperature,
+      });
 
-  try {
-    const client = await getOpenRouterClient();
-    const completion = await client.chat.completions.create({
-      model: AI_CONFIG.openrouter.model,
-      messages: apiMessages,
-      max_tokens: maxTokens || AI_CONFIG.openrouter.maxTokens,
-      temperature: temperature ?? AI_CONFIG.openrouter.temperature,
-    });
+      const msg = completion.choices[0]?.message;
+      const responseContent = msg?.content || '';
+      const inputTokens = completion.usage?.prompt_tokens || 0;
+      const outputTokens = completion.usage?.completion_tokens || 0;
+      const cost =
+        (inputTokens / 1_000_000) * AI_CONFIG.costs.openrouterInputPer1M +
+        (outputTokens / 1_000_000) * AI_CONFIG.costs.openrouterOutputPer1M;
 
-    const msg = completion.choices[0]?.message;
-    const responseContent = msg?.content || '';
-
-    const inputTokens = completion.usage?.prompt_tokens || 0;
-    const outputTokens = completion.usage?.completion_tokens || 0;
-    const cost =
-      (inputTokens / 1_000_000) * AI_CONFIG.costs.openrouterInputPer1M +
-      (outputTokens / 1_000_000) * AI_CONFIG.costs.openrouterOutputPer1M;
-
-    console.log(`[AI] Éxito con openrouter (model=${AI_CONFIG.openrouter.model})`);
-
-    return {
-      response: responseContent,
-      usage: { inputTokens, outputTokens, cost },
-      provider: 'openrouter',
-    };
-  } catch (error: unknown) {
-    const errStatus = error && typeof error === 'object' && 'status' in error ? error.status : null;
-    const errMsg = error && typeof error === 'object' && 'message' in error ? error.message : String(error);
-    console.error(`[AI] Error con openrouter (status=${errStatus}):`, errMsg);
-    throw new Error(`Error de IA: ${errMsg}`);
+      console.log(`[AI] Éxito con openrouter`);
+      return { response: responseContent, usage: { inputTokens, outputTokens, cost }, provider: 'openrouter' };
+    } catch (error: unknown) {
+      const errMsg = error && typeof error === 'object' && 'message' in error ? error.message : String(error);
+      console.warn(`[AI] OpenRouter falló, intentando Ollama fallback: ${errMsg}`);
+    }
   }
+
+  // ── Fallback: Ollama proxy ───────────────────────────────────────────────
+  if (AI_CONFIG.ollama.proxyUrl && AI_CONFIG.ollama.proxyKey) {
+    try {
+      const { ollamaChatCompletion } = await import('./ollama');
+      const result = await ollamaChatCompletion({ messages: apiMessages });
+      return {
+        response: result.content,
+        usage: { inputTokens: result.usage.inputTokens, outputTokens: result.usage.outputTokens, cost: 0 },
+        provider: 'ollama',
+      };
+    } catch (ollamaError: unknown) {
+      const errMsg = ollamaError instanceof Error ? ollamaError.message : String(ollamaError);
+      console.error(`[AI] Ollama fallback también falló: ${errMsg}`);
+    }
+  }
+
+  throw new Error('Error de IA: todos los proveedores fallaron (OpenRouter + Ollama)');
 }
 
 /**
@@ -162,10 +171,6 @@ export async function structuredAnalysis<T>(params: {
 }): Promise<T> {
   const { systemPrompt, userPrompt, schema } = params;
 
-  if (!AI_CONFIG.openrouter.apiKey) {
-    throw new Error('No hay API key configurada. Configura OPENROUTER_API_KEY.');
-  }
-
   let systemContent = systemPrompt;
   if (schema) {
     systemContent += `\n\nRespuesta DEBE ser JSON válido con este formato:\n${schema}`;
@@ -176,29 +181,50 @@ export async function structuredAnalysis<T>(params: {
     { role: 'user' as const, content: userPrompt },
   ];
 
-  console.log(`[AI] Intentando análisis con openrouter (model=${AI_CONFIG.openrouter.model})...`);
+  // ── Primary: OpenRouter ──────────────────────────────────────────────────
+  if (AI_CONFIG.openrouter.apiKey) {
+    console.log(`[AI] Intentando análisis con openrouter (model=${AI_CONFIG.openrouter.model})...`);
+    try {
+      const client = await getOpenRouterClient();
+      const completion = await client.chat.completions.create({
+        model: AI_CONFIG.openrouter.model,
+        messages,
+        max_tokens: AI_CONFIG.openrouter.analysisMaxTokens,
+        response_format: { type: 'json_object' },
+        temperature: 0.2,
+      });
 
-  try {
-    const client = await getOpenRouterClient();
-    const completion = await client.chat.completions.create({
-      model: AI_CONFIG.openrouter.model,
-      messages,
-      max_tokens: AI_CONFIG.openrouter.analysisMaxTokens,
-      response_format: { type: 'json_object' },
-      temperature: 0.2,
-    });
-
-    const msg = completion.choices[0]?.message;
-    const raw = msg?.content || '{}';
-    const responseText = raw.replace(/^```(?:json)?\s*/i, '').replace(/\s*```\s*$/, '').trim();
-    console.log(`[AI] Éxito análisis con openrouter`);
-    return JSON.parse(responseText) as T;
-  } catch (error: unknown) {
-    const errStatus = error && typeof error === 'object' && 'status' in error ? error.status : null;
-    const errMsg = error && typeof error === 'object' && 'message' in error ? error.message : String(error);
-    console.error(`[AI] Error análisis con openrouter (status=${errStatus}):`, errMsg);
-    throw new Error(`Error de análisis: ${errMsg}`);
+      const msg = completion.choices[0]?.message;
+      const raw = msg?.content || '{}';
+      const responseText = raw.replace(/^```(?:json)?\s*/i, '').replace(/\s*```\s*$/, '').trim();
+      console.log(`[AI] Éxito análisis con openrouter`);
+      return JSON.parse(responseText) as T;
+    } catch (error: unknown) {
+      const errMsg = error && typeof error === 'object' && 'message' in error ? error.message : String(error);
+      console.warn(`[AI] OpenRouter análisis falló, intentando Ollama: ${errMsg}`);
+    }
   }
+
+  // ── Fallback: Ollama proxy (ask it to return JSON directly) ──────────────
+  if (AI_CONFIG.ollama.proxyUrl && AI_CONFIG.ollama.proxyKey) {
+    try {
+      const { ollamaChatCompletion } = await import('./ollama');
+      // Append explicit JSON instruction to system message for Ollama
+      const ollamaMessages = [
+        { ...messages[0], content: messages[0].content + '\n\nResponde SOLO con JSON válido, sin texto adicional ni código fences.' },
+        ...messages.slice(1),
+      ];
+      const result = await ollamaChatCompletion({ messages: ollamaMessages, useReasoning: true });
+      const raw = result.content.replace(/^```(?:json)?\s*/i, '').replace(/\s*```\s*$/, '').trim();
+      console.log(`[AI] Éxito análisis con ollama`);
+      return JSON.parse(raw) as T;
+    } catch (ollamaError: unknown) {
+      const errMsg = ollamaError instanceof Error ? ollamaError.message : String(ollamaError);
+      console.error(`[AI] Ollama análisis también falló: ${errMsg}`);
+    }
+  }
+
+  throw new Error('Error de análisis: todos los proveedores fallaron (OpenRouter + Ollama)');
 }
 
 /**
