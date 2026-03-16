@@ -3,12 +3,12 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
-import { SUBSCRIPTION_PLANS, type SubscriptionTier } from '@/lib/subscription-types'
+import { SUBSCRIPTION_PLANS, type SubscriptionTier, getAnnualPrice, getMonthlySavings, ANNUAL_DISCOUNT } from '@/lib/subscription-types'
 import { Card } from '@/components/Card'
 import { LoadingButton } from '@/components/LoadingButton'
 import { Badge } from '@/components/Badge'
 import DoctorLayout from '@/components/DoctorLayout'
-import { Check } from 'lucide-react'
+import { Check, Calendar, Percent, Building, Users } from 'lucide-react'
 
 export default function SubscriptionPage() {
     const router = useRouter()
@@ -43,6 +43,7 @@ export default function SubscriptionPage() {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState<string | null>(null)
     const [processing, setProcessing] = useState(false)
+    const [billingInterval, setBillingInterval] = useState<'month' | 'year'>('month')
 
     useEffect(() => {
         if (!supabase) {
@@ -148,7 +149,7 @@ export default function SubscriptionPage() {
             const response = await fetch('/api/subscriptions', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ planId }),
+                body: JSON.stringify({ planId, billingInterval }),
             })
 
             const data = await response.json()
@@ -221,7 +222,40 @@ export default function SubscriptionPage() {
                     </Card>
                 )}
 
-                <div className="grid lg:grid-cols-3 gap-8 mb-8">
+                {/* Billing Interval Toggle */}
+                {!subscription?.hasSubscription && (
+                    <div className="flex justify-center mb-8">
+                        <div className="inline-flex items-center bg-gray-100 rounded-lg p-1">
+                            <button
+                                onClick={() => setBillingInterval('month')}
+                                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                                    billingInterval === 'month'
+                                        ? 'bg-white text-gray-900 shadow-sm'
+                                        : 'text-gray-600 hover:text-gray-900'
+                                }`}
+                            >
+                                Mensual
+                            </button>
+                            <button
+                                onClick={() => setBillingInterval('year')}
+                                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-2 ${
+                                    billingInterval === 'year'
+                                        ? 'bg-white text-green-700 shadow-sm'
+                                        : 'text-gray-600 hover:text-gray-900'
+                                }`}
+                            >
+                                <Calendar className="w-4 h-4" />
+                                Anual
+                                <Badge className="bg-green-100 text-green-700 text-xs">
+                                    <Percent className="w-3 h-3 mr-1" />
+                                    Ahorra {ANNUAL_DISCOUNT.discountPercent}%
+                                </Badge>
+                            </button>
+                        </div>
+                    </div>
+                )}
+
+                <div className="grid lg:grid-cols-2 xl:grid-cols-4 gap-6 mb-8">
                     {Object.entries(SUBSCRIPTION_PLANS).map(([planId, plan]) => {
                         const isCurrentPlan = currentPlan === planId
                         const canUpgrade = currentPlan ? 

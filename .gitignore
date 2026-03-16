@@ -54,3 +54,6 @@ doctoralia_scraper/test-page-source.html
 
 # Build artifacts
 /dist
+
+# Supabase local temp/link state
+supabase/.temp/
