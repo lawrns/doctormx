@@ -3,10 +3,14 @@ import { pharmacyScraper } from '@/lib/pharmacy-scraper';
 import { createClient } from '@supabase/supabase-js';
 
 function getSupabaseClient() {
-  return createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
-  );
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+  if (!supabaseUrl || !serviceRoleKey) {
+    return null;
+  }
+
+  return createClient(supabaseUrl, serviceRoleKey);
 }
 
 // Cache duration: 5 minutes
@@ -56,12 +60,14 @@ export async function GET(request: NextRequest) {
     const searchTime = Date.now() - startTime;
 
     // Store in database for analytics
-    await supabase.from('pharmacy_search_logs').insert({
-      query,
-      results_count: results.length,
-      search_time_ms: searchTime,
-      created_at: new Date().toISOString(),
-    });
+    if (supabase) {
+      await supabase.from('pharmacy_search_logs').insert({
+        query,
+        results_count: results.length,
+        search_time_ms: searchTime,
+        created_at: new Date().toISOString(),
+      });
+    }
 
     const response = {
       query,
@@ -90,7 +96,6 @@ export async function GET(request: NextRequest) {
  */
 export async function POST(request: NextRequest) {
   try {
-    const supabase = getSupabaseClient();
     const { medicationName } = await request.json();
 
     if (!medicationName || medicationName.length < 3) {

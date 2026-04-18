@@ -2,6 +2,9 @@ import { createBrowserClient } from '@supabase/ssr'
 
 let supabaseInstance: ReturnType<typeof createBrowserClient> | null = null
 
+const FALLBACK_SUPABASE_URL = 'http://127.0.0.1:54321'
+const FALLBACK_SUPABASE_ANON_KEY = 'local-test-anon-key'
+
 export function createClient() {
   // Return cached instance if available
   if (supabaseInstance) {
@@ -19,11 +22,9 @@ export function createClient() {
   const supabaseAnonKey =
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.VITE_SUPABASE_ANON_KEY
 
-  if (!supabaseUrl || !supabaseAnonKey) {
-    // Return a mock client for build-time
-    throw new Error('Supabase credentials not configured')
-  }
+  const browserSupabaseUrl = supabaseUrl || FALLBACK_SUPABASE_URL
+  const browserSupabaseAnonKey = supabaseAnonKey || FALLBACK_SUPABASE_ANON_KEY
 
-  supabaseInstance = createBrowserClient(supabaseUrl, supabaseAnonKey)
+  supabaseInstance = createBrowserClient(browserSupabaseUrl, browserSupabaseAnonKey)
   return supabaseInstance
 }
