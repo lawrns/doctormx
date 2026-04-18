@@ -97,7 +97,7 @@ export async function POST(request: NextRequest) {
       links: normalizedLinks,
       escalate: Boolean(parsedResponse?.escalate),
       meta: {
-        provider: response.provider,
+        provider: response.provider === 'openrouter' ? 'glm' : response.provider,
         model: response.model,
         latencyMs: Date.now() - startedAt,
         costUSD: response.costUSD,

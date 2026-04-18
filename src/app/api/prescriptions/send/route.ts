@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { requireRole } from '@/lib/auth'
 import { generateAndStorePDF, markAsSent } from '@/lib/prescriptions'
 import { Resend } from 'resend'
+import { ANALYTICS_EVENTS, trackServerEvent } from '@/lib/analytics/posthog'
 
 // Lazy initialization of Resend client
 let resend: Resend | null = null
@@ -36,6 +37,7 @@ export async function POST(request: NextRequest) {
       .from('appointments')
       .select(`
         *,
+        patient_id,
         patient:profiles!appointments_patient_id_fkey (full_name, date_of_birth, email),
         doctor:doctors!appointments_doctor_id_fkey (
           *,
@@ -190,6 +192,19 @@ export async function POST(request: NextRequest) {
     }
 
     await markAsSent(prescriptionId)
+
+    await trackServerEvent({
+      event: ANALYTICS_EVENTS.PRESCRIPTION_RECEIVED,
+      distinctId: appointment.patient_id,
+      userId: appointment.patient_id,
+      pathname: '/api/prescriptions/send',
+      properties: {
+        appointmentId,
+        prescriptionId,
+        doctorId: user.id,
+        deliveryMethod: client ? 'email' : 'email-skipped',
+      },
+    })
 
     return NextResponse.json({
       success: true,

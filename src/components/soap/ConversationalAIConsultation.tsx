@@ -2,11 +2,13 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Send, Sparkles, User, Bot, Loader2, AlertCircle, ChevronRight, Home } from 'lucide-react'
+import { Send, Sparkles, User, Loader2, AlertCircle, ChevronRight, Home } from 'lucide-react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { ScrollArea } from '@/components/ui/scroll-area'
+import { SupportPresenceOrb } from '@/components/support/SupportPresenceOrb'
+import { ANALYTICS_EVENTS, trackClientEvent } from '@/lib/analytics/posthog'
 import { cn } from '@/lib/utils'
 import { RecommendedDoctors } from '@/components/soap/RecommendedDoctors'
 import { TreatmentPlanDisplay } from '@/components/soap/TreatmentPlanDisplay'
@@ -54,12 +56,26 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
   const [result, setResult] = useState<ConsultationResult | null>(null)
   const [isComplete, setIsComplete] = useState(false)
   const scrollRef = useRef<HTMLDivElement>(null)
+  const hasTrackedStart = useRef(false)
+  const hasTrackedComplete = useRef(false)
 
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight
     }
   }, [messages])
+
+  useEffect(() => {
+    if (hasTrackedStart.current) {
+      return
+    }
+
+    hasTrackedStart.current = true
+    void trackClientEvent(ANALYTICS_EVENTS.AI_CONSULT_STARTED, {
+      surface: 'soap-consultation',
+      userId,
+    })
+  }, [userId])
 
   const sendMessage = async () => {
     if (!input.trim() || isLoading) return
@@ -94,6 +110,16 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
       if (data.complete) {
         setResult(data.result)
         setIsComplete(true)
+        if (!hasTrackedComplete.current) {
+          hasTrackedComplete.current = true
+          void trackClientEvent(ANALYTICS_EVENTS.AI_CONSULT_COMPLETED, {
+            surface: 'soap-consultation',
+            userId,
+            consultationId: data.result?.id,
+            diagnosis: data.result?.primaryDiagnosis,
+            urgency: data.result?.urgency,
+          })
+        }
         setMessages((prev) => [
           ...prev,
           {
@@ -137,6 +163,12 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
         result={result}
         messages={messages}
         onNewConsultation={() => {
+          hasTrackedComplete.current = false
+          void trackClientEvent(ANALYTICS_EVENTS.AI_CONSULT_STARTED, {
+            surface: 'soap-consultation',
+            userId,
+            restarted: true,
+          })
           setIsComplete(false)
           setResult(null)
           setMessages([
@@ -214,8 +246,8 @@ function MessageBubble({ message }: { message: Message }) {
       className={cn('flex gap-3', isUser ? 'justify-end' : 'justify-start')}
     >
       {!isUser && (
-        <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-          <Bot className="w-4 h-4 text-blue-600" />
+        <div className="flex-shrink-0 pt-0.5">
+          <SupportPresenceOrb size="sm" imageClassName="object-cover object-top scale-[1.06]" />
         </div>
       )}
       <div

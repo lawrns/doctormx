@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
@@ -21,8 +22,15 @@ import { CTASection } from './CTASection'
 import { TrustFooter } from '@/components/TrustSignals'
 import { Stethoscope, Sparkles, ShieldCheck, ArrowUpRight, HeartHandshake } from 'lucide-react'
 import { landingNavItems } from '@/lib/public-nav'
+import { ANALYTICS_EVENTS, trackClientEvent } from '@/lib/analytics/posthog'
 
 export function LandingPageClient() {
+  useEffect(() => {
+    void trackClientEvent(ANALYTICS_EVENTS.LANDING_VIEW, {
+      surface: 'landing-hero',
+    })
+  }, [])
+
   return (
     <main className="min-h-screen overflow-x-hidden bg-transparent text-[hsl(var(--text-primary))]">
       <motion.div

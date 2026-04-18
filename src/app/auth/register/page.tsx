@@ -1,8 +1,8 @@
 'use client'
 
-import { useState, Suspense } from 'react'
+import { useEffect, useState, Suspense } from 'react'
 import { createClient } from '@/lib/supabase/client'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useForm } from 'react-hook-form'
@@ -15,6 +15,10 @@ import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Progress } from '@/components/ui/progress'
+import { ReferralShareCard } from '@/components/referrals'
+import { ANALYTICS_EVENTS, trackClientEvent } from '@/lib/analytics/posthog'
+import type { ReferralSummary } from '@/lib/domains/patient-referrals'
+import { formatCurrency } from '@/lib/utils'
 import {
   Check,
   ChevronLeft,
@@ -52,6 +56,7 @@ const step2Schema = z.object({
   fullName: z.string().min(3, 'El nombre debe tener al menos 3 caracteres'),
   email: z.string().email('Correo electrónico inválido'),
   phone: z.string().optional(),
+  referralCode: z.string().optional(),
   password: z.string().min(6, 'La contraseña debe tener al menos 6 caracteres'),
   confirmPassword: z.string(),
 }).refine((data) => data.password === data.confirmPassword, {
@@ -88,10 +93,15 @@ const specialties = [
 ]
 
 function RegisterContent() {
+  const searchParams = useSearchParams()
   const [currentStep, setCurrentStep] = useState(1)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const router = useRouter()
+  const initialAccountType = searchParams.get('role') === 'doctor' ? 'doctor' : 'patient'
+  const initialEmail = searchParams.get('email') || ''
+  const initialReferralCode = (searchParams.get('ref') || '').trim().toUpperCase()
+  const redirectTarget = searchParams.get('redirect')
   const [supabase] = useState(() => {
     try {
       return createClient()
@@ -100,11 +110,12 @@ function RegisterContent() {
     }
   })
 
-  const [step1Data, setStep1Data] = useState<Step1Data>({ accountType: 'patient' })
+  const [step1Data, setStep1Data] = useState<Step1Data>({ accountType: initialAccountType })
   const [step2Data, setStep2Data] = useState<Step2Data>({
     fullName: '',
-    email: '',
+    email: initialEmail,
     phone: '',
+    referralCode: initialReferralCode,
     password: '',
     confirmPassword: '',
   })
@@ -119,6 +130,7 @@ function RegisterContent() {
 
   const [passwordStrength, setPasswordStrength] = useState({ strength: 0, label: '', color: '' })
   const [validatedFields, setValidatedFields] = useState<Record<string, boolean>>({})
+  const [referralSummary, setReferralSummary] = useState<ReferralSummary | null>(null)
 
   const step1Form = useForm<Step1Data>({
     resolver: zodResolver(step1Schema),
@@ -148,6 +160,16 @@ function RegisterContent() {
   const handleFieldValidation = (fieldName: string, isValid: boolean) => {
     setValidatedFields((prev) => ({ ...prev, [fieldName]: isValid }))
   }
+
+  useEffect(() => {
+    void trackClientEvent(ANALYTICS_EVENTS.SIGNUP_STARTED, {
+      surface: 'register',
+      accountType: initialAccountType,
+      referralCodePresent: Boolean(initialReferralCode),
+    })
+  // We want one event per page load, not per render.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const handleStep1Next = async () => {
     const isValid = await step1Form.trigger()
@@ -225,8 +247,53 @@ function RegisterContent() {
           }
         }
 
-        const destination = step1Data.accountType === 'doctor' ? '/doctor/onboarding' : '/app'
-        router.push(destination)
+        if (step1Data.accountType === 'doctor') {
+          void trackClientEvent(ANALYTICS_EVENTS.SIGNUP_COMPLETED, {
+            surface: 'register',
+            accountType: 'doctor',
+          })
+          router.push('/doctor/onboarding')
+          router.refresh()
+          return
+        }
+
+        const referralCode = (step2Data.referralCode || initialReferralCode || '').trim().toUpperCase() || null
+        let referralResult: ReferralSummary | null = null
+
+        try {
+          const referralResponse = await fetch('/api/patient-referrals', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ referralCode }),
+          })
+
+          const referralPayload = await referralResponse.json().catch(() => null)
+
+          if (referralResponse.ok && referralPayload?.summary) {
+            referralResult = referralPayload.summary as ReferralSummary
+          } else if (referralPayload?.error) {
+            console.warn('[Register] Referral redemption warning:', referralPayload.error)
+          }
+        } catch (referralError) {
+          console.warn('[Register] Referral redemption failed:', referralError)
+        }
+
+        void trackClientEvent(ANALYTICS_EVENTS.SIGNUP_COMPLETED, {
+          surface: 'register',
+          accountType: 'patient',
+          referralCodePresent: Boolean(referralCode),
+          referralRewardGranted: Boolean(referralResult),
+        })
+
+        if (referralResult) {
+          setReferralSummary(referralResult)
+          setLoading(false)
+          return
+        }
+
+        router.push(redirectTarget || '/app')
         router.refresh()
       }
     } catch {
@@ -237,6 +304,70 @@ function RegisterContent() {
 
   const progress = (currentStep / 3) * 100
   const isDoctor = step1Data.accountType === 'doctor'
+  const hasReferralSuccess = Boolean(referralSummary && step1Data.accountType === 'patient')
+
+  if (hasReferralSuccess && referralSummary) {
+    const destination = redirectTarget || '/app'
+
+    return (
+      <div className="min-h-screen grid lg:grid-cols-2">
+        <div className="relative hidden lg:flex flex-col justify-between bg-[linear-gradient(180deg,#062437,#0b4f6c)] p-10 text-white">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(45,212,191,0.28),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.26),transparent_34%)]" />
+          <div className="relative z-10 flex items-center gap-2.5">
+            <div className="w-9 h-9 bg-white/12 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/15">
+              <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </div>
+            <span className="text-lg font-semibold">Doctor.mx</span>
+          </div>
+
+          <div className="relative z-10 max-w-xl space-y-5">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-white/90">
+              Cuenta lista
+            </div>
+            <h1 className="text-4xl font-semibold tracking-[-0.04em] leading-tight">
+              Ya tienes tu código listo para compartir.
+            </h1>
+            <p className="text-base leading-7 text-white/78">
+              Terminaste el registro. Ahora puedes enviar tu enlace por WhatsApp, copiarlo o mostrar el QR a tu familia.
+            </p>
+            <div className="grid grid-cols-2 gap-3 max-w-md">
+              <div className="rounded-2xl border border-white/10 bg-white/10 px-4 py-3">
+                <div className="text-xs uppercase tracking-[0.16em] text-white/60">Tu beneficio</div>
+                <div className="mt-1 text-lg font-semibold">1 consulta gratis</div>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/10 px-4 py-3">
+                <div className="text-xs uppercase tracking-[0.16em] text-white/60">Crédito</div>
+                <div className="mt-1 text-lg font-semibold">
+                  {referralSummary.creditsCents > 0
+                    ? formatCurrency(referralSummary.creditsCents)
+                    : 'Se acumula con tus referidos'}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col justify-center p-4 sm:p-8 bg-slate-50">
+          <div className="mx-auto w-full max-w-3xl">
+            <ReferralShareCard
+              code={referralSummary.code}
+              shareUrl={referralSummary.shareUrl}
+              freeConsultsRemaining={referralSummary.freeConsultsRemaining}
+              creditsCents={referralSummary.creditsCents}
+              patientName={step2Data.fullName}
+              continueLabel="Ir a mi panel"
+              onContinue={() => {
+                router.push(destination)
+                router.refresh()
+              }}
+            />
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="min-h-screen grid lg:grid-cols-2">
@@ -484,6 +615,24 @@ function RegisterContent() {
                         placeholder="55 1234 5678"
                         className="mt-1.5"
                       />
+                    </div>
+
+                    <div>
+                      <Label htmlFor="referralCode" className="text-sm">Código de referido (opcional)</Label>
+                      <Input
+                        id="referralCode"
+                        {...step2Form.register('referralCode')}
+                        placeholder="AB12CD"
+                        className="mt-1.5 font-mono tracking-[0.24em]"
+                      />
+                      <p className="mt-1 text-xs text-muted-foreground">
+                        Si alguien te invitó, pega su código aquí. Si no, déjalo vacío.
+                      </p>
+                      {initialReferralCode && (
+                        <p className="mt-1 text-xs font-medium text-emerald-700">
+                          Código aplicado desde tu enlace: <span className="font-mono">{initialReferralCode}</span>
+                        </p>
+                      )}
                     </div>
 
                     <div>

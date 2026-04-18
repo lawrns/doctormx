@@ -15,6 +15,7 @@ import {
 import Link from 'next/link';
 import Image from 'next/image';
 import type { ConsensusResult } from '@/lib/soap/types';
+import { ANALYTICS_EVENTS, trackClientEvent } from '@/lib/analytics/posthog';
 
 interface Doctor {
   id: string;
@@ -294,7 +295,17 @@ function DoctorCard({
               </div>
               <Link
                 href={`/book/${doctor.id}?from=ai-consultation&consultationId=${consultationId}`}
-                onClick={onSelect}
+                onClick={() => {
+                  onSelect()
+                  void trackClientEvent(ANALYTICS_EVENTS.BOOKING_STARTED, {
+                    surface: 'soap-recommended-doctors',
+                    consultationId,
+                    doctorId: doctor.id,
+                    doctorName: doctor.name,
+                    specialty: doctor.specialty,
+                    priority,
+                  })
+                }}
                 className={`
                   inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold
                   shadow-md hover:shadow-lg transform hover:scale-105

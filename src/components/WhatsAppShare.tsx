@@ -66,7 +66,8 @@ export function WhatsAppShare({
 
       {/* Pulse effect */}
       <motion.span
-        className="absolute inset-0 rounded-xl bg-green-400"
+        className="pointer-events-none absolute inset-0 rounded-xl bg-green-400"
+        aria-hidden="true"
         initial={{ scale: 1, opacity: 0.5 }}
         animate={{ scale: 1.2, opacity: 0 }}
         transition={{
@@ -83,12 +84,14 @@ interface WhatsAppShareCardProps {
   patientName?: string
   symptoms?: string
   aiRecommendation?: string
+  onShare?: () => void
 }
 
 export function WhatsAppShareCard({
   patientName = 'Un paciente',
   symptoms = 'síntomas',
   aiRecommendation = 'consulta médica',
+  onShare,
 }: WhatsAppShareCardProps) {
   const [shared, setShared] = useState(false)
 
@@ -117,7 +120,10 @@ export function WhatsAppShareCard({
       <WhatsAppShare
         title="Compartir en WhatsApp"
         message={defaultText + ' '}
-        onShare={() => setShared(true)}
+        onShare={() => {
+          setShared(true)
+          onShare?.()
+        }}
       />
 
       {shared && (

@@ -1,17 +1,20 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import { MessageSquareMore, X } from 'lucide-react'
 import { SupportPresenceOrb } from '@/components/support/SupportPresenceOrb'
 import { SupportPanel } from '@/components/support/SupportPanel'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from '@/components/ui/sheet'
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 
 export function SupportWidget() {
   const [open, setOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
   useEffect(() => {
+    setMounted(true)
     const mediaQuery = window.matchMedia('(max-width: 767px)')
     const updateViewport = (event?: MediaQueryListEvent) => {
       setIsMobile(event ? event.matches : mediaQuery.matches)
@@ -30,6 +33,10 @@ export function SupportWidget() {
       document.activeElement.blur()
     }
     setOpen(value)
+  }
+
+  if (!mounted) {
+    return null
   }
 
   if (isMobile) {
@@ -62,37 +69,39 @@ export function SupportWidget() {
 
   return (
     <div className="fixed bottom-[calc(1rem+env(safe-area-inset-bottom))] right-[calc(1rem+env(safe-area-inset-right))] z-50 w-[min(320px,calc(100vw-32px))] max-w-[320px]">
-      <Popover open={open} onOpenChange={handleOpenChange}>
-        <PopoverTrigger asChild>
-          <div className="flex justify-end">
-            <Button
-              type="button"
-              aria-label="Abrir asistente Doctor Simeon"
-              aria-expanded={open}
-              className="group relative h-auto w-full rounded-[1.75rem] border border-white/30 bg-[linear-gradient(145deg,rgba(2,132,199,0.94),rgba(14,165,233,0.98))] px-4 py-3 text-white shadow-[0_24px_50px_rgba(14,165,233,0.32)] backdrop-blur-xl transition-all hover:-translate-y-1"
-            >
-              <div className="flex items-center gap-3">
-                <SupportPresenceOrb size="md" />
-                <div className="min-w-0 flex-1 text-left">
-                  <div className="text-sm font-semibold tracking-[-0.02em]">Doctor Simeon</div>
-                  <div className="truncate text-xs text-sky-100/90">Te guía dentro de Doctor.mx</div>
-                </div>
-                <div className="rounded-full bg-white/14 p-2 text-white/95" aria-hidden="true">
-                  {open ? <X className="h-4 w-4" /> : <MessageSquareMore className="h-4 w-4" />}
-                </div>
-              </div>
-            </Button>
-          </div>
-        </PopoverTrigger>
-        <PopoverContent
-          side="top"
-          align="end"
-          sideOffset={12}
-          className="w-[min(420px,calc(100vw-32px))] max-w-[420px] border-0 bg-transparent p-0 shadow-none"
+      <AnimatePresence>
+        {open ? (
+          <motion.div
+            initial={{ opacity: 0, y: 18, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 14, scale: 0.97 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 28 }}
+            className="pointer-events-auto absolute bottom-[calc(100%+12px)] right-0 w-[min(420px,calc(100vw-32px))] max-w-[420px] origin-bottom-right"
+          >
+            <SupportPanel layout="desktop" onDismiss={() => setOpen(false)} />
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
+      <div className="flex justify-end">
+        <Button
+          type="button"
+          aria-label="Abrir asistente Doctor Simeon"
+          aria-expanded={open}
+          onClick={() => handleOpenChange(!open)}
+          className="group relative h-auto w-full rounded-[1.75rem] border border-white/30 bg-[linear-gradient(145deg,rgba(2,132,199,0.94),rgba(14,165,233,0.98))] px-4 py-3 text-white shadow-[0_24px_50px_rgba(14,165,233,0.32)] backdrop-blur-xl transition-all hover:-translate-y-1"
         >
-          <SupportPanel layout="desktop" onDismiss={() => setOpen(false)} />
-        </PopoverContent>
-      </Popover>
+          <div className="flex items-center gap-3">
+            <SupportPresenceOrb size="md" isLoading={open} />
+            <div className="min-w-0 flex-1 text-left">
+              <div className="text-sm font-semibold tracking-[-0.02em]">Doctor Simeon</div>
+              <div className="truncate text-xs text-sky-100/90">Te guía dentro de Doctor.mx</div>
+            </div>
+            <div className="rounded-full bg-white/14 p-2 text-white/95" aria-hidden="true">
+              {open ? <X className="h-4 w-4" /> : <MessageSquareMore className="h-4 w-4" />}
+            </div>
+          </div>
+        </Button>
+      </div>
     </div>
   )
 }
