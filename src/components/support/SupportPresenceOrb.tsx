@@ -5,9 +5,11 @@ import Image from 'next/image'
 
 interface SupportPresenceOrbProps {
   size?: 'sm' | 'md' | 'lg'
+  isLoading?: boolean
+  imageClassName?: string
 }
 
-export function SupportPresenceOrb({ size = 'md' }: SupportPresenceOrbProps) {
+export function SupportPresenceOrb({ size = 'md', isLoading = false, imageClassName = 'object-cover' }: SupportPresenceOrbProps) {
   const reducedMotion = useReducedMotion()
 
   const sizeClasses = {
@@ -34,7 +36,11 @@ export function SupportPresenceOrb({ size = 'md' }: SupportPresenceOrbProps) {
   const current = sizeClasses[size]
 
   return (
-    <div className={`relative flex items-center justify-center ${current.frame}`}>
+    <motion.div
+      className={`relative flex items-center justify-center ${current.frame}`}
+      animate={!reducedMotion && isLoading ? { scale: [1, 1.08, 1] } : undefined}
+      transition={!reducedMotion && isLoading ? { duration: 2.4, repeat: Infinity, ease: 'easeInOut' } : undefined}
+    >
       {!reducedMotion ? (
         <>
           <motion.span
@@ -44,8 +50,8 @@ export function SupportPresenceOrb({ size = 'md' }: SupportPresenceOrbProps) {
           />
           <motion.span
             className={`absolute rounded-full bg-cyan-300/14 ${current.ringInset}`}
-            animate={{ scale: [1, 1.1, 1], opacity: [0.35, 0.08, 0.35] }}
-            transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut', delay: 0.2 }}
+            animate={isLoading ? { scale: [1, 1.16, 1], opacity: [0.45, 0.14, 0.45] } : { scale: [1, 1.1, 1], opacity: [0.35, 0.08, 0.35] }}
+            transition={isLoading ? { duration: 1.8, repeat: Infinity, ease: 'easeInOut', delay: 0.1 } : { duration: 2.4, repeat: Infinity, ease: 'easeInOut', delay: 0.2 }}
           />
         </>
       ) : null}
@@ -57,10 +63,10 @@ export function SupportPresenceOrb({ size = 'md' }: SupportPresenceOrbProps) {
             alt="Doctor Simeon"
             fill
             sizes="(max-width: 768px) 40px, 48px, 56px"
-            className="object-cover"
+            className={imageClassName}
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

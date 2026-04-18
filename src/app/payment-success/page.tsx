@@ -1,16 +1,18 @@
 'use client'
 
-import { useEffect, useState, Suspense } from 'react'
+import { useEffect, useRef, useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { Mail } from 'lucide-react'
 import type { Appointment, Doctor } from '@/types'
+import { ANALYTICS_EVENTS, trackClientEvent } from '@/lib/analytics/posthog'
 
 function PaymentSuccessContent() {
   const searchParams = useSearchParams()
   const [loading, setLoading] = useState(true)
   const [appointment, setAppointment] = useState<Appointment & { doctor: Doctor } | null>(null)
   const [error, setError] = useState('')
+  const hasTrackedBookingPaid = useRef(false)
 
   const appointmentId = searchParams.get('appointmentId')
   const paymentIntent = searchParams.get('payment_intent')
@@ -41,6 +43,19 @@ function PaymentSuccessContent() {
         setLoading(false)
       })
   }, [appointmentId, paymentIntent])
+
+  useEffect(() => {
+    if (!appointment || hasTrackedBookingPaid.current) {
+      return
+    }
+
+    hasTrackedBookingPaid.current = true
+    void trackClientEvent(ANALYTICS_EVENTS.BOOKING_PAID, {
+      appointmentId: appointment.id,
+      doctorId: appointment.doctor_id,
+      paymentIntent,
+    })
+  }, [appointment, paymentIntent])
 
   if (loading) {
     return (

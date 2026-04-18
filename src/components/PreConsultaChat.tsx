@@ -9,6 +9,7 @@ import type { DoctorMatch } from '@/lib/ai/referral';
 import { DoctorAvatar, UserAvatar } from '@/components/ui/avatar';
 import { QuotaCounter } from '@/components/QuotaCounter';
 import { ReasoningVisualizer } from '@/components/ReasoningVisualizer';
+import { ANALYTICS_EVENTS, trackClientEvent } from '@/lib/analytics/posthog';
 import { cn, formatCurrency, formatDoctorName } from '@/lib/utils';
 
 type PreConsultaSummary = {
@@ -131,6 +132,8 @@ export default function PreConsultaChat({
   const [errorCode, setErrorCode] = useState<string | null>(null);
   const [sessionId] = useState(() => initialSessionId || crypto.randomUUID());
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const hasTrackedStart = useRef(false);
+  const hasTrackedComplete = useRef(false);
 
   useEffect(() => {
     if (!isOpen) {
@@ -154,6 +157,20 @@ export default function PreConsultaChat({
       messagesEndRef.current?.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
     }
   }, [messages, referrals, prefersReducedMotion]);
+
+  useEffect(() => {
+    if (!isOpen || hasTrackedStart.current) {
+      return;
+    }
+
+    hasTrackedStart.current = true
+    void trackClientEvent(ANALYTICS_EVENTS.AI_CONSULT_STARTED, {
+      sessionId,
+      anonymous,
+      mode,
+      surface: 'preconsulta',
+    })
+  }, [anonymous, isOpen, mode, sessionId])
 
   const containerClasses = mode === 'modal'
     ? 'fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 p-4 backdrop-blur-xl'
@@ -244,6 +261,18 @@ export default function PreConsultaChat({
         const normalizedSummary = toSummary(data.summary);
         if (normalizedSummary) {
           setSummary(normalizedSummary);
+          if (!hasTrackedComplete.current) {
+            hasTrackedComplete.current = true
+            void trackClientEvent(ANALYTICS_EVENTS.AI_CONSULT_COMPLETED, {
+              sessionId,
+              anonymous,
+              mode,
+              urgency: normalizedSummary.urgencyLevel,
+              specialty: normalizedSummary.suggestedSpecialty,
+              referralCount: Array.isArray(data.referrals) ? data.referrals.length : 0,
+              messagesSent: nextMessages.length,
+            })
+          }
           setTimeout(() => {
             onCompleteAction(sessionId, normalizedSummary, Array.isArray(data.referrals) ? data.referrals : []);
           }, 900);

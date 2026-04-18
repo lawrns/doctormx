@@ -9,13 +9,21 @@ import { WhatsAppShareCard } from '@/components/WhatsAppShare'
 import { EmailCapture, EmailCaptureModal } from '@/components/EmailCapture'
 import { PremiumUpgradeModal } from '@/components/PremiumUpgradeModal'
 import PreConsultaChat from '@/components/PreConsultaChat'
+import { ANALYTICS_EVENTS, trackClientEvent } from '@/lib/analytics/posthog'
 import type { DoctorMatch } from '@/lib/ai/referral'
+
+type AnonymousConsultaSummary = {
+  urgencyLevel?: string
+  urgency?: string
+  suggestedSpecialty?: string
+  specialty?: string
+}
 
 export default function AnonymousConsultaPage() {
   const [sessionId, setSessionId] = useState<string>('')
   const [quota, setQuota] = useState<{ used: number; limit: number; remaining: number } | null>(null)
   const [isComplete, setIsComplete] = useState(false)
-  const [summary, setSummary] = useState<any>(null)
+  const [summary, setSummary] = useState<AnonymousConsultaSummary | null>(null)
   const [referrals, setReferrals] = useState<DoctorMatch[]>([])
 
   // New states
@@ -162,6 +170,14 @@ export default function AnonymousConsultaPage() {
                       </div>
                       <a
                         href={`/doctors/${referral.doctorId}`}
+                        onClick={() => {
+                          void trackClientEvent(ANALYTICS_EVENTS.BOOKING_STARTED, {
+                            surface: 'ai-consulta-results',
+                            doctorId: referral.doctorId,
+                            doctorName: referral.doctor?.profile?.full_name,
+                            specialty: referral.doctor?.specialties?.[0]?.name,
+                          })
+                        }}
                         className="mt-3 inline-block px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-semibold rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all"
                       >
                         Agendar Cita
@@ -177,6 +193,11 @@ export default function AnonymousConsultaPage() {
               patientName="Un usuario"
               symptoms="síntomas médicos"
               aiRecommendation={summary.suggestedSpecialty || summary.specialty}
+              onShare={() => {
+                void trackClientEvent(ANALYTICS_EVENTS.SHARED_WHATSAPP, {
+                  surface: 'ai-consulta-results',
+                })
+              }}
             />
 
             {/* Email Capture (after 2nd consultation) */}

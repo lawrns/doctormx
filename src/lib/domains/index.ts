@@ -5,4 +5,5 @@
 export * from './second-opinion'
 export * from './directory'
 export * from './referrals'
+export * from './patient-referrals'
 export * from './soap-notes'

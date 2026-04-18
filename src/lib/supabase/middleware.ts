@@ -30,6 +30,12 @@ export async function updateSession(request: NextRequest) {
   const supabaseResponse = NextResponse.next({
     request,
   })
+  const path = request.nextUrl.pathname
+
+  // Public routes should not pay the Supabase auth round-trip.
+  if (ROUTES.public.some(route => path === route || path.startsWith(route))) {
+    return supabaseResponse
+  }
 
   // Skip Supabase client creation during build
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
@@ -60,7 +66,6 @@ export async function updateSession(request: NextRequest) {
   )
 
   const { data: { user } } = await supabase.auth.getUser()
-  const path = request.nextUrl.pathname
 
   // Rutas públicas - permitir acceso
   if (ROUTES.public.some(route => path === route || path.startsWith(route))) {

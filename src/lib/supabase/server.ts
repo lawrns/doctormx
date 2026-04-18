@@ -2,28 +2,127 @@ import { createServerClient } from '@supabase/ssr'
 import { createClient as createSupabaseClient } from '@supabase/supabase-js'
 import { cookies } from 'next/headers'
 
-// Helper to get Supabase URL from either standard or VITE_ prefixed env vars
-function getSupabaseUrl(): string {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.VITE_SUPABASE_URL
-  if (!url) {
-    throw new Error('Supabase URL must be set via NEXT_PUBLIC_SUPABASE_URL or VITE_SUPABASE_URL')
+function createDisabledQuery(mode: 'collection' | 'single' = 'collection') {
+  const resolvedValue =
+    mode === 'collection'
+      ? { data: [], error: null as null, count: 0 }
+      : { data: null, error: null as null, count: 0 }
+
+  let proxy: any
+  proxy = new Proxy(() => proxy, {
+    apply: () => proxy,
+    get(_target, prop) {
+      if (prop === 'then') {
+        return (resolve: (value: typeof resolvedValue) => void) =>
+          resolve(resolvedValue)
+      }
+
+      if (prop === 'single' || prop === 'maybeSingle') {
+        return async () => ({ data: null, error: null })
+      }
+
+      if (prop === 'select') {
+        return (..._args: unknown[]) => proxy
+      }
+
+      if (prop === 'getPublicUrl') {
+        return () => ({
+          data: {
+            publicUrl: '',
+          },
+          error: null,
+        })
+      }
+
+      if (
+        prop === 'createSignedUrl' ||
+        prop === 'createSignedUrls' ||
+        prop === 'upload' ||
+        prop === 'update' ||
+        prop === 'upsert' ||
+        prop === 'insert' ||
+        prop === 'delete' ||
+        prop === 'remove' ||
+        prop === 'move' ||
+        prop === 'list' ||
+        prop === 'download' ||
+        prop === 'rpc'
+      ) {
+        return async () => ({ data: null, error: null })
+      }
+
+      return (..._args: unknown[]) => proxy
+    },
+  })
+
+  return proxy
+}
+
+function createDisabledAuth() {
+  return {
+    getUser: async () => ({ data: { user: null }, error: null }),
+    getSession: async () => ({ data: { session: null }, error: null }),
+    signInWithPassword: async () => ({
+      data: { user: null, session: null },
+      error: null,
+    }),
+    signInWithOAuth: async () => ({
+      data: { provider: null, url: null },
+      error: null,
+    }),
+    signUp: async () => ({
+      data: { user: null, session: null },
+      error: null,
+    }),
+    signOut: async () => ({ error: null }),
+    onAuthStateChange: () => ({
+      data: {
+        subscription: {
+          unsubscribe() {},
+        },
+      },
+    }),
   }
-  return url
+}
+
+function createDisabledStorage() {
+  return {
+    from: () => createDisabledQuery(),
+  }
+}
+
+function createFallbackSupabaseClient() {
+  return {
+    auth: createDisabledAuth(),
+    from: () => createDisabledQuery(),
+    rpc: async () => ({ data: null, error: null }),
+    storage: createDisabledStorage(),
+  }
+}
+
+// Helper to get Supabase URL from either standard or VITE_ prefixed env vars
+function getSupabaseUrl(): string | null {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.VITE_SUPABASE_URL
+  return url || null
 }
 
 // Helper to get Supabase anon key from either standard or VITE_ prefixed env vars
-function getSupabaseAnonKey(): string {
+function getSupabaseAnonKey(): string | null {
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.VITE_SUPABASE_ANON_KEY
-  if (!key) {
-    throw new Error('Supabase anon key must be set via NEXT_PUBLIC_SUPABASE_ANON_KEY or VITE_SUPABASE_ANON_KEY')
-  }
-  return key
+  return key || null
 }
 
 export async function createClient() {
-  const cookieStore = await cookies()
   const supabaseUrl = getSupabaseUrl()
   const supabaseAnonKey = getSupabaseAnonKey()
+
+  if (!supabaseUrl || !supabaseAnonKey) {
+    return createFallbackSupabaseClient() as unknown as ReturnType<
+      typeof createServerClient
+    >
+  }
+
+  const cookieStore = await cookies()
 
   return createServerClient(
     supabaseUrl,
@@ -57,8 +156,10 @@ export function createServiceClient() {
   const supabaseUrl = getSupabaseUrl()
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY
   
-  if (!serviceRoleKey) {
-    throw new Error('SUPABASE_SERVICE_ROLE_KEY must be set')
+  if (!supabaseUrl || !serviceRoleKey) {
+    return createFallbackSupabaseClient() as unknown as ReturnType<
+      typeof createSupabaseClient
+    >
   }
   
   return createSupabaseClient(supabaseUrl, serviceRoleKey)
