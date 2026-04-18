@@ -8,15 +8,16 @@ test.describe('Home Page & Navigation', () => {
 
   test('should navigate to doctors page from home', async ({ page }) => {
     await page.goto('/');
-    
-    // Find and click doctors link
-    const doctorsLink = page.locator('a[href*="doctor"], nav a:has-text("Doctor"), button:has-text("Doctor")').first();
-    
-    if (await doctorsLink.isVisible().catch(() => false)) {
-      await doctorsLink.click();
-      await page.waitForTimeout(1000);
-      await expect(page.url()).toContain('doctor');
-    }
+
+    const doctorsLink = page.locator('a[href="/doctors"]').first();
+    await expect(doctorsLink).toBeVisible();
+
+    await Promise.all([
+      page.waitForURL(/\/doctors(?:\?.*)?$/),
+      doctorsLink.click(),
+    ]);
+
+    await expect(page).toHaveURL(/\/doctors(?:\?.*)?$/);
   });
 
   test('should have working navigation menu', async ({ page }) => {
