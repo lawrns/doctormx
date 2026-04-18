@@ -71,6 +71,7 @@ function collectChangedFiles() {
 
 const changedFiles = collectChangedFiles()
 const lintTargets = changedFiles.filter((file) => !IGNORE_PATTERNS.some((pattern) => pattern.test(file)))
+  .filter((file) => /\.(c|m)?[jt]sx?$/.test(file))
 
 if (lintTargets.length === 0) {
   console.log('No lint targets changed.')
