@@ -12,11 +12,18 @@ import PreConsultaChat from '@/components/PreConsultaChat'
 import { ANALYTICS_EVENTS, trackClientEvent } from '@/lib/analytics/posthog'
 import type { DoctorMatch } from '@/lib/ai/referral'
 
+type AnonymousConsultaSummary = {
+  urgencyLevel?: string
+  urgency?: string
+  suggestedSpecialty?: string
+  specialty?: string
+}
+
 export default function AnonymousConsultaPage() {
   const [sessionId, setSessionId] = useState<string>('')
   const [quota, setQuota] = useState<{ used: number; limit: number; remaining: number } | null>(null)
   const [isComplete, setIsComplete] = useState(false)
-  const [summary, setSummary] = useState<any>(null)
+  const [summary, setSummary] = useState<AnonymousConsultaSummary | null>(null)
   const [referrals, setReferrals] = useState<DoctorMatch[]>([])
 
   // New states

@@ -24,9 +24,6 @@ import {
   ChevronLeft,
   ChevronRight,
   User,
-  Mail,
-  Lock,
-  Phone,
   Stethoscope,
   Heart,
   Shield,
@@ -168,7 +165,6 @@ function RegisterContent() {
       referralCodePresent: Boolean(initialReferralCode),
     })
   // We want one event per page load, not per render.
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const handleStep1Next = async () => {

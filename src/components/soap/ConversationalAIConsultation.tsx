@@ -1,17 +1,15 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Send, Sparkles, User, Loader2, AlertCircle, ChevronRight, Home } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { Send, Sparkles, User, Loader2, ChevronRight, Home } from 'lucide-react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { ScrollArea } from '@/components/ui/scroll-area'
 import { SupportPresenceOrb } from '@/components/support/SupportPresenceOrb'
 import { ANALYTICS_EVENTS, trackClientEvent } from '@/lib/analytics/posthog'
 import { cn } from '@/lib/utils'
 import { RecommendedDoctors } from '@/components/soap/RecommendedDoctors'
-import { TreatmentPlanDisplay } from '@/components/soap/TreatmentPlanDisplay'
 import type { ConsensusResult } from '@/lib/soap/types'
 
 interface Message {
@@ -42,6 +40,18 @@ interface ConsultationResult {
   nextSteps: string[]
   consensus: ConsensusResult
 }
+
+type ConsultationApiResponse =
+  | {
+      complete: true
+      message: string
+      result: ConsultationResult
+    }
+  | {
+      complete: false
+      message: string
+      result?: never
+    }
 
 export function ConversationalAIConsultation({ userId }: { userId: string }) {
   const [messages, setMessages] = useState<Message[]>([
@@ -105,7 +115,7 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
 
       if (!response.ok) throw new Error('Failed to get response')
 
-      const data = await response.json()
+      const data: ConsultationApiResponse = await response.json()
 
       if (data.complete) {
         setResult(data.result)
@@ -127,7 +137,7 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
             role: 'assistant',
             content: data.message,
             metadata: {
-              specialists: data.result.specialists.map((s: any) => s.name),
+              specialists: data.result.specialists.map((specialist) => specialist.name),
               confidence: data.result.confidence,
               urgency: data.result.urgency,
             },
@@ -144,6 +154,7 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
         ])
       }
     } catch (error) {
+      console.error('Failed to get consultation response', error)
       setMessages((prev) => [
         ...prev,
         {
@@ -161,7 +172,6 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
     return (
       <ResultsView
         result={result}
-        messages={messages}
         onNewConsultation={() => {
           hasTrackedComplete.current = false
           void trackClientEvent(ANALYTICS_EVENTS.AI_CONSULT_STARTED, {
@@ -179,7 +189,6 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
             },
           ])
         }}
-        userId={userId}
       />
     )
   }
@@ -269,14 +278,10 @@ function MessageBubble({ message }: { message: Message }) {
 
 function ResultsView({
   result,
-  messages,
   onNewConsultation,
-  userId,
 }: {
   result: ConsultationResult
-  messages: Message[]
   onNewConsultation: () => void
-  userId: string
 }) {
   return (
     <div className="max-w-4xl mx-auto space-y-6">
@@ -359,7 +364,6 @@ function ResultsView({
       <RecommendedDoctors
         consultationId={result.id}
         consensus={result.consensus}
-        patientHistory={{}}
         onSelectDoctor={() => {}}
       />
     </div>

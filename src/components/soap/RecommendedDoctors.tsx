@@ -36,7 +36,7 @@ interface Doctor {
 interface RecommendedDoctorsProps {
   consultationId: string;
   consensus: ConsensusResult;
-  patientHistory: Record<string, unknown>;
+  patientHistory?: Record<string, unknown>;
   onSelectDoctor: (doctorId: string) => void;
 }
 
@@ -68,8 +68,9 @@ export function RecommendedDoctors({
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           specialty,
-          urgencyLevel: (consensus as any).urgencyLevel || 'routine',
+          urgencyLevel: consensus.urgencyLevel || 'routine',
           consultationId,
+          patientHistory: patientHistory || {},
           limit: 3,
         }),
       });
