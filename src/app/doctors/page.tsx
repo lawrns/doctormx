@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { discoverDoctors, getAvailableSpecialties } from '@/lib/discovery'
 import { formatDoctorName } from '@/lib/utils'
 import { createClient } from '@/lib/supabase/server'
@@ -11,6 +12,31 @@ import { EmptyState } from '@/components/EmptyState'
 import { Input } from '@/components/ui/input'
 import { ArrowUpRight, MapPin, Search, ShieldCheck, Star, Stethoscope, Video } from 'lucide-react'
 import { SortSelect } from '@/components/SortSelect'
+
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ specialty?: string; search?: string }>
+}): Promise<Metadata> {
+  const params = await searchParams
+  const title = params.specialty
+    ? `${params.specialty.charAt(0).toUpperCase() + params.specialty.slice(1).replace(/-/g, ' ')} - Doctores | Doctor.mx`
+    : params.search
+      ? `Busqueda: ${params.search} | Doctores | Doctor.mx`
+      : 'Doctores y Especialistas en Mexico | Doctor.mx'
+  const description = params.specialty
+    ? `Encuentra doctores especializados en ${params.specialty.replace(/-/g, ' ')} en Mexico. Agenda citas en linea con medicos certificados.`
+    : 'Directorio de doctores y especialistas en Mexico. Busca por especialidad, nombre o ubicacion. Agenda citas en linea.'
+  return {
+    title,
+    description,
+    keywords: params.specialty
+      ? `${params.specialty}, doctores ${params.specialty}, especialistas Mexico`
+      : 'doctores Mexico, especialistas medicos, citas en linea, medicos certificados',
+    alternates: { canonical: 'https://doctor.mx/doctors' },
+    openGraph: { title, description, url: 'https://doctor.mx/doctors' },
+  }
+}
 
 export default async function DoctorsPage({
   searchParams,

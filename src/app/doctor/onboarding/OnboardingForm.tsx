@@ -34,6 +34,18 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
   const [city, setCity] = useState(doctor?.city || '')
   const [state, setState] = useState(doctor?.state || '')
   const [price, setPrice] = useState(doctor?.price_cents ? (doctor.price_cents / 100).toString() : (PAYMENT_CONFIG.DEFAULT_PRICE_CENTS / 100).toString())
+  const [selectedInsurances, setSelectedInsurances] = useState<string[]>([])
+  const [availableInsurances, setAvailableInsurances] = useState<{id: string; name: string; type: string}[]>([])
+
+  // Load insurances on mount
+  useState(() => {
+    fetch('/api/insurances')
+      .then(res => res.json())
+      .then(data => {
+        if (data.insurances) setAvailableInsurances(data.insurances)
+      })
+      .catch(() => {})
+  })
 
   const [availability, setAvailability] = useState({
     monday: { enabled: false, start: '09:00', end: '17:00' },
@@ -452,6 +464,39 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                     </select>
                   </div>
                 </div>
+              </div>
+
+              {/* Sección: Seguros médicos */}
+              <div>
+                <h2 className="text-lg font-semibold text-gray-900 mb-4 pb-2 border-b">
+                  Seguros médicos aceptados
+                </h2>
+                <p className="text-sm text-gray-600 mb-4">
+                  Selecciona los seguros con los que trabajas. Esto ayudará a los pacientes asegurados a encontrarte.
+                </p>
+                {availableInsurances.length > 0 ? (
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2 max-h-48 overflow-y-auto border rounded-lg p-3">
+                    {availableInsurances.map((insurance) => (
+                      <label key={insurance.id} className="flex items-center gap-2 p-2 rounded hover:bg-gray-50 cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={selectedInsurances.includes(insurance.id)}
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setSelectedInsurances([...selectedInsurances, insurance.id])
+                            } else {
+                              setSelectedInsurances(selectedInsurances.filter(id => id !== insurance.id))
+                            }
+                          }}
+                          className="w-4 h-4"
+                        />
+                        <span className="text-sm text-gray-900">{insurance.name}</span>
+                      </label>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-sm text-gray-500">Cargando seguros...</p>
+                )}
               </div>
 
               {/* Sección: Disponibilidad */}

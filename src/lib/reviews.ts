@@ -332,3 +332,71 @@ export async function getReviewByAppointment(appointmentId: string): Promise<Rev
 
   return review
 }
+
+// --- Review Moderation & Responses (Doctoralia parity) ---
+
+export async function reportReview(reviewId: string, reporterId: string, reason: string): Promise<void> {
+  const supabase = await createClient()
+  const { error } = await supabase
+    .from('review_reports')
+    .insert({
+      review_id: reviewId,
+      reporter_id: reporterId,
+      reason,
+      status: 'pending',
+    })
+  if (error) throw error
+}
+
+export async function getReportedReviews(limit = 20): Promise<Array<Review & { report_reason: string; reported_at: string }>> {
+  const supabase = await createClient()
+  const { data, error } = await supabase
+    .from('review_reports')
+    .select('reason, created_at, review:reviews(*, patient:profiles!reviews_patient_id_fkey(full_name, photo_url))')
+    .eq('status', 'pending')
+    .order('created_at', { ascending: false })
+    .limit(limit)
+  if (error) throw error
+  return (data || []).map((d: { reason: string; created_at: string; review: Review }) => ({
+    ...d.review,
+    report_reason: d.reason,
+    reported_at: d.created_at,
+  }))
+}
+
+export async function moderateReview(reportId: string, action: 'dismiss' | 'remove', moderatorId: string): Promise<void> {
+  const supabase = await createClient()
+  if (action === 'remove') {
+    const { data: report } = await supabase
+      .from('review_reports')
+      .select('review_id')
+      .eq('id', reportId)
+      .single()
+    if (report) {
+      await supabase.from('reviews').delete().eq('id', report.review_id)
+    }
+  }
+  await supabase
+    .from('review_reports')
+    .update({ status: action === 'remove' ? 'resolved_removed' : 'dismissed', resolved_by: moderatorId, resolved_at: new Date().toISOString() })
+    .eq('id', reportId)
+}
+
+export async function respondToReview(reviewId: string, doctorId: string, response: string): Promise<void> {
+  const supabase = await createClient()
+  const { error } = await supabase
+    .from('review_responses')
+    .insert({ review_id: reviewId, doctor_id: doctorId, response })
+  if (error) throw error
+}
+
+export async function getReviewResponses(reviewId: string): Promise<Array<{ id: string; response: string; created_at: string }>> {
+  const supabase = createServiceClient()
+  const { data, error } = await supabase
+    .from('review_responses')
+    .select('*')
+    .eq('review_id', reviewId)
+    .order('created_at', { ascending: true })
+  if (error) return []
+  return data || []
+}

@@ -10,13 +10,20 @@ import { logger } from '@/lib/observability/logger'
 export type DiscoveryFilters = {
   specialtySlug?: string
   city?: string
+  citySlug?: string
   state?: string
+  districtId?: string
+  insuranceSlug?: string
   maxPrice?: number
   minRating?: number
   searchQuery?: string
   sortBy?: 'rating' | 'price' | 'experience'
   sortOrder?: 'asc' | 'desc'
   appointmentType?: 'all' | 'video' | 'in_person'
+  onlineOnly?: boolean
+  minExperience?: number
+  gender?: string
+  language?: string
 }
 
 // Type for the raw doctor data from Supabase
@@ -132,12 +139,44 @@ async function fetchDoctors(filters?: DiscoveryFilters) {
       filtered = filtered.filter(doctor => doctor.city === filters.city)
     }
 
+    if (filters?.districtId) {
+      filtered = filtered.filter(doctor => (doctor as RawDoctor & { district_id?: string }).district_id === filters.districtId)
+    }
+
+    if (filters?.onlineOnly) {
+      filtered = filtered.filter(doctor => doctor.video_enabled === true)
+    }
+
+    if (filters?.minExperience) {
+      filtered = filtered.filter(doctor => (doctor.years_experience || 0) >= filters.minExperience!)
+    }
+
     if (filters?.maxPrice !== undefined) {
       filtered = filtered.filter(doctor => doctor.price_cents <= filters.maxPrice!)
     }
 
     if (filters?.minRating !== undefined) {
       filtered = filtered.filter(doctor => (doctor.rating_avg || 0) >= filters.minRating!)
+    }
+
+    // Filter by insurance provider
+    if (filters?.insuranceSlug) {
+      const insuranceDoctorIds = await getDoctorIdsByInsurance(filters.insuranceSlug)
+      if (insuranceDoctorIds.length > 0) {
+        filtered = filtered.filter(doctor => insuranceDoctorIds.includes(doctor.id))
+      } else {
+        filtered = []
+      }
+    }
+
+    // Filter by city slug (resolved from cities table)
+    if (filters?.citySlug) {
+      const cityDoctors = await getDoctorIdsByCitySlug(filters.citySlug)
+      if (cityDoctors.length > 0) {
+        filtered = filtered.filter(doctor => cityDoctors.includes(doctor.id))
+      } else {
+        filtered = []
+      }
     }
 
     // Filter by search query (name search)
@@ -332,4 +371,21 @@ async function fetchDoctorProfile(doctorId: string) {
     logger.error('Doctor profile fetch error', { error: error instanceof Error ? error.message : 'unknown', doctorId })
     return null
   }
+}
+
+async function getDoctorIdsByInsurance(insuranceSlug: string): Promise<string[]> {
+  const supabase = createServiceClient()
+  const { data } = await supabase
+    .from('doctor_insurances')
+    .select('doctor_id, insurances!inner(slug)')
+    .eq('insurances.slug', insuranceSlug)
+  return (data || []).map((d: { doctor_id: string }) => d.doctor_id)
+}
+
+async function getDoctorIdsByCitySlug(citySlug: string): Promise<string[]> {
+  const supabase = createServiceClient()
+  const { data: city } = await supabase.from('cities').select('name').eq('slug', citySlug).single()
+  if (!city) return []
+  const { data } = await supabase.from('doctors').select('id').eq('city', city.name).eq('status', 'approved')
+  return (data || []).map((d: { id: string }) => d.id)
 }

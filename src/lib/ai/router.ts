@@ -47,11 +47,11 @@ export interface RouterResponse {
  */
 const USE_CASE_ROUTING: Record<UseCase, { primary: AIProvider; fallbacks: AIProvider[] }> = {
   'vision-analysis': {
-    primary: 'glm',         // GLM-4.5v for medical images (cost effective)
+    primary: 'glm',         // GLM-5.1 for medical images (flagship model)
     fallbacks: ['kimi', 'openrouter', 'openai'],
   },
   'differential-diagnosis': {
-    primary: 'glm',         // GLM-4.7 for complex reasoning
+    primary: 'glm',         // GLM-5.1 for complex reasoning
     fallbacks: ['kimi', 'deepseek', 'openai'],
   },
   'triage': {
@@ -59,7 +59,7 @@ const USE_CASE_ROUTING: Record<UseCase, { primary: AIProvider; fallbacks: AIProv
     fallbacks: ['kimi', 'deepseek', 'openai'],
   },
   'prescription': {
-    primary: 'glm',         // GLM for evidence-based recommendations
+    primary: 'glm',         // GLM-5.1 for evidence-based recommendations
     fallbacks: ['kimi', 'deepseek', 'openai'],
   },
   'transcription': {
@@ -71,7 +71,7 @@ const USE_CASE_ROUTING: Record<UseCase, { primary: AIProvider; fallbacks: AIProv
     fallbacks: ['kimi', 'openai', 'deepseek'],
   },
   'soap-notes': {
-    primary: 'glm',         // GLM-4.7 for structured output
+    primary: 'glm',         // GLM-5.1 for structured output
     fallbacks: ['kimi', 'deepseek', 'openai'],
   },
 }

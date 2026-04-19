@@ -154,7 +154,7 @@ export async function createClient() {
 // Service role client for server-side operations that bypass RLS
 export function createServiceClient() {
   const supabaseUrl = getSupabaseUrl()
-  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.VITE_SUPABASE_SERVICE_ROLE_KEY
   
   if (!supabaseUrl || !serviceRoleKey) {
     return createFallbackSupabaseClient() as unknown as ReturnType<

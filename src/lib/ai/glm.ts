@@ -3,9 +3,9 @@
  * OpenAI SDK compatible - uses z.ai API endpoint
  *
  * Models:
- * - GLM-4.7: Advanced reasoning (comparable to GPT-4)
+ * - GLM-5.1: Flagship model - advanced reasoning (comparable to GPT-4)
  * - GLM-4.5-Air: Cost-effective for general tasks
- * - GLM-4.5v: Vision model for medical image analysis
+ * - GLM-5.1: Vision model for medical image analysis
  *
  * Pricing (per 1M tokens):
  * - Input: $0.60
@@ -22,16 +22,16 @@ import { AI_CONFIG } from './config'
 export const glm = new OpenAI({
   apiKey: process.env.GLM_API_KEY || '',
   baseURL: AI_CONFIG.glm.baseURL, // GLM Coding Plan endpoint from config
-  timeout: 14000, // 14s — GLM-5 takes ~10-12s; leaves budget for fallbacks within Netlify 26s cap
+  timeout: 14000, // 14s — GLM-5.1 takes ~10-12s; leaves budget for fallbacks within Netlify 26s cap
   maxRetries: 0, // No retries — let the fallback chain handle provider failure
 })
 
 // GLM Configuration
 export const GLM_CONFIG = {
   models: {
-    reasoning: 'glm-4.7',        // Best for medical reasoning, differential diagnosis
+    reasoning: 'glm-5.1',        // Flagship model - best for medical reasoning, differential diagnosis
     costEffective: 'glm-4.5-air', // Good for general chat, triage
-    vision: 'glm-4.5v',          // Medical image analysis
+    vision: 'glm-5.1',          // Flagship model for medical image analysis
   },
   pricing: {
     input: 0.60,    // USD per 1M tokens
@@ -40,7 +40,7 @@ export const GLM_CONFIG = {
   },
   defaults: {
     temperature: 0.3,      // Lower for medical accuracy
-    maxTokens: 2000,       // GLM-5 reasoning model: ~1500 CoT tokens + answer
+    maxTokens: 2000,       // GLM-5.1 reasoning model: ~1500 CoT tokens + answer
     topP: 0.95,
   },
 } as const

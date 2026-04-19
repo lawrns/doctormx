@@ -127,3 +127,148 @@ export interface ChatUserPresence {
   created_at: string
   updated_at: string
 }
+
+// Insurance system
+export interface Insurance {
+  id: string
+  name: string
+  slug: string
+  logo_url: string | null
+  type: 'public' | 'private' | 'social_security'
+  website: string | null
+  phone: string | null
+  is_active: boolean
+}
+
+export interface DoctorInsurance {
+  id: string
+  doctor_id: string
+  insurance_id: string
+  plan_name: string | null
+  notes: string | null
+  insurance: Insurance
+}
+
+// Location system
+export interface City {
+  id: string
+  name: string
+  slug: string
+  state: string
+  state_code: string | null
+  country: string
+  latitude: number | null
+  longitude: number | null
+  population: number | null
+  is_major: boolean
+}
+
+export interface District {
+  id: string
+  name: string
+  slug: string
+  city_id: string
+  latitude: number | null
+  longitude: number | null
+  postal_code: string | null
+  city?: City
+}
+
+// Disease system
+export interface Disease {
+  id: string
+  name: string
+  slug: string
+  description: string | null
+  symptoms: string[] | null
+  causes: string | null
+  treatments: string | null
+  prevention: string | null
+  popular: boolean
+  search_count: number
+}
+
+// Treatment system
+export interface Treatment {
+  id: string
+  name: string
+  slug: string
+  description: string | null
+  category: string | null
+  popular: boolean
+  search_count: number
+  specialties?: Specialty[]
+}
+
+// Clinic system
+export interface Clinic {
+  id: string
+  name: string
+  slug: string
+  description: string | null
+  address: string | null
+  city_id: string | null
+  district_id: string | null
+  latitude: number | null
+  longitude: number | null
+  phone: string | null
+  website: string | null
+  logo_url: string | null
+  rating_avg: number
+  rating_count: number
+  verified: boolean
+  city?: City
+  specialties?: Specialty[]
+}
+
+// Expert Q&A system
+export interface ExpertQuestion {
+  id: string
+  patient_id: string | null
+  specialty_id: string | null
+  question: string
+  email: string
+  display_name: string | null
+  status: 'pending' | 'approved' | 'rejected' | 'answered' | 'closed'
+  is_anonymous: boolean
+  view_count: number
+  created_at: string
+  specialty?: Specialty
+  answers?: ExpertAnswer[]
+}
+
+export interface ExpertAnswer {
+  id: string
+  question_id: string
+  doctor_id: string
+  answer: string
+  is_featured: boolean
+  helpful_count: number
+  created_at: string
+}
+
+// Blog system
+export interface BlogCategory {
+  id: string
+  name: string
+  slug: string
+  description: string | null
+}
+
+export interface BlogPost {
+  id: string
+  title: string
+  slug: string
+  excerpt: string | null
+  content: string
+  category_id: string | null
+  featured_image: string | null
+  author_id: string | null
+  status: 'draft' | 'published' | 'archived'
+  published_at: string | null
+  meta_description: string | null
+  view_count: number
+  created_at: string
+  updated_at: string
+  category?: BlogCategory
+}
