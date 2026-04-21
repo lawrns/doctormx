@@ -2,10 +2,11 @@
 
 import { useEffect, useState } from 'react'
 import { useParams, useRouter } from 'next/navigation'
-import { Button } from '@/components/Button'
-import { Card } from '@/components/Card'
-import { Input } from '@/components/Input'
-import { Badge } from '@/components/Badge'
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
+import { Badge } from '@/components/ui/badge'
+import { Label } from '@/components/ui/label'
 import { Clock } from 'lucide-react'
 
 interface UnclaimedProfile {
@@ -154,17 +155,17 @@ export default function ClaimProfilePage() {
 
   if (step === 'loading') {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-gray-50">
-        <div className="text-gray-600">Cargando...</div>
+      <div className="flex min-h-screen items-center justify-center bg-background">
+        <div className="text-muted-foreground">Cargando...</div>
       </div>
     )
   }
 
   if (step === 'error') {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-gray-50">
-        <Card className="max-w-md p-6 text-center">
-          <p className="text-red-600">{error}</p>
+      <div className="flex min-h-screen items-center justify-center bg-background">
+        <Card className="max-w-md p-6 text-center bg-card rounded-2xl border border-border shadow-dx-1">
+          <p className="text-destructive">{error}</p>
           <Button className="mt-4" onClick={() => router.push('/doctors')}>
             Volver al directorio
           </Button>
@@ -174,20 +175,20 @@ export default function ClaimProfilePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-background py-8">
       <div className="mx-auto max-w-xl px-4">
         {/* Profile Card */}
         {profile && (
-          <Card className="mb-6">
+          <Card className="mb-6 bg-card rounded-2xl border border-border shadow-dx-1 p-6">
             <div className="text-center">
-              <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-blue-100 text-2xl font-bold text-blue-600">
+              <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 text-2xl font-bold text-primary">
                 {profile.full_name.charAt(0)}
               </div>
-              <h1 className="text-xl font-bold text-gray-900">{profile.full_name}</h1>
-              <p className="text-gray-600">{profile.specialty}</p>
-              <p className="text-sm text-gray-500">{profile.city}, {profile.state}</p>
+              <h1 className="text-xl font-bold text-foreground">{profile.full_name}</h1>
+              <p className="text-muted-foreground">{profile.specialty}</p>
+              <p className="text-sm text-muted-foreground">{profile.city}, {profile.state}</p>
               {profile.cedula_profesional && (
-                <p className="mt-2 text-sm text-gray-500">
+                <p className="mt-2 text-sm text-muted-foreground">
                   Cédula: {profile.cedula_profesional}
                 </p>
               )}
@@ -197,29 +198,30 @@ export default function ClaimProfilePage() {
 
         {/* Step: Info - Initiate Claim */}
         {step === 'info' && (
-          <Card>
-            <h2 className="mb-4 text-lg font-semibold">¿Es este tu perfil?</h2>
-            <p className="mb-6 text-gray-600">
+          <Card className="bg-card rounded-2xl border border-border shadow-dx-1 p-6">
+            <h2 className="mb-4 text-lg font-semibold text-foreground">¿Es este tu perfil?</h2>
+            <p className="mb-6 text-muted-foreground">
               Si eres el Dr./Dra. {profile?.full_name}, puedes reclamar este perfil 
               para administrar tu información y recibir pacientes a través de la plataforma.
             </p>
             
             <div className="mb-6">
-              <label className="mb-1 block text-sm font-medium text-gray-700">
+              <Label htmlFor="cedula" className="mb-1 block text-sm font-medium text-foreground">
                 Cédula Profesional
-              </label>
+              </Label>
               <Input
+                id="cedula"
                 placeholder="Ej: 12345678"
                 value={cedula}
                 onChange={(e) => setCedula(e.target.value)}
               />
-              <p className="mt-1 text-xs text-gray-500">
+              <p className="mt-1 text-xs text-muted-foreground">
                 Ingresa tu cédula profesional para verificar tu identidad
               </p>
             </div>
             
             {error && (
-              <div className="mb-4 rounded-lg bg-red-50 p-3 text-sm text-red-700">
+              <div className="mb-4 rounded-lg bg-destructive/10 border border-destructive/20 p-3 text-sm text-destructive">
                 {error}
               </div>
             )}
@@ -236,56 +238,56 @@ export default function ClaimProfilePage() {
 
         {/* Step: Verify - Upload Documents */}
         {step === 'verify' && (
-          <Card>
-            <h2 className="mb-4 text-lg font-semibold">Verificación de Identidad</h2>
-            <p className="mb-6 text-gray-600">
+          <Card className="bg-card rounded-2xl border border-border shadow-dx-1 p-6">
+            <h2 className="mb-4 text-lg font-semibold text-foreground">Verificación de Identidad</h2>
+            <p className="mb-6 text-muted-foreground">
               Para completar el reclamo, necesitamos verificar tu identidad. 
               Por favor sube los siguientes documentos:
             </p>
             
             <div className="space-y-4">
               <div>
-                <label className="mb-1 block text-sm font-medium text-gray-700">
+                <Label htmlFor="id-document" className="mb-1 block text-sm font-medium text-foreground">
                   1. Identificación oficial (INE/Pasaporte) *
-                </label>
-                <input
+                </Label>
+                <Input
+                  id="id-document"
                   type="file"
                   accept="image/*,.pdf"
                   onChange={(e) => setIdFile(e.target.files?.[0] || null)}
-                  className="w-full rounded-lg border border-gray-300 p-2 text-sm"
                 />
               </div>
               
               <div>
-                <label className="mb-1 block text-sm font-medium text-gray-700">
+                <Label htmlFor="cedula-document" className="mb-1 block text-sm font-medium text-foreground">
                   2. Cédula Profesional (foto o PDF) *
-                </label>
-                <input
+                </Label>
+                <Input
+                  id="cedula-document"
                   type="file"
                   accept="image/*,.pdf"
                   onChange={(e) => setCedulaFile(e.target.files?.[0] || null)}
-                  className="w-full rounded-lg border border-gray-300 p-2 text-sm"
                 />
               </div>
               
               <div>
-                <label className="mb-1 block text-sm font-medium text-gray-700">
+                <Label htmlFor="selfie" className="mb-1 block text-sm font-medium text-foreground">
                   3. Selfie sosteniendo tu identificación *
-                </label>
-                <input
+                </Label>
+                <Input
+                  id="selfie"
                   type="file"
                   accept="image/*"
                   onChange={(e) => setSelfieFile(e.target.files?.[0] || null)}
-                  className="w-full rounded-lg border border-gray-300 p-2 text-sm"
                 />
-                <p className="mt-1 text-xs text-gray-500">
+                <p className="mt-1 text-xs text-muted-foreground">
                   Una foto tuya sosteniendo tu INE junto a tu rostro
                 </p>
               </div>
             </div>
             
             {error && (
-              <div className="mt-4 rounded-lg bg-red-50 p-3 text-sm text-red-700">
+              <div className="mt-4 rounded-lg bg-destructive/10 border border-destructive/20 p-3 text-sm text-destructive">
                 {error}
               </div>
             )}
@@ -310,13 +312,13 @@ export default function ClaimProfilePage() {
 
         {/* Step: Pending - Waiting for Review */}
         {step === 'pending' && (
-          <Card className="text-center">
-            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-yellow-100">
-              <Clock className="w-8 h-8 text-yellow-600" />
+          <Card className="text-center bg-card rounded-2xl border border-border shadow-dx-1 p-6">
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-secondary">
+              <Clock className="w-8 h-8 text-muted-foreground" />
             </div>
-            <h2 className="mb-2 text-lg font-semibold">Verificación en Proceso</h2>
+            <h2 className="mb-2 text-lg font-semibold text-foreground">Verificación en Proceso</h2>
             <Badge variant="warning">Pendiente de revisión</Badge>
-            <p className="mt-4 text-gray-600">
+            <p className="mt-4 text-muted-foreground">
               Tu solicitud ha sido enviada y será revisada en las próximas 24-48 horas.
               Te notificaremos por correo electrónico cuando tu perfil sea verificado.
             </p>

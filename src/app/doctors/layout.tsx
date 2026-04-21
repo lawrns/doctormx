@@ -9,14 +9,14 @@ export default function DoctorsLayout({
   children: React.ReactNode
 }) {
   const { user, isLoading } = useUser()
-  
+
   if (isLoading) {
-    return <div className="min-h-screen bg-neutral-50" />
+    return <div className="min-h-screen bg-background" />
   }
-  
+
   if (user) {
     return <PatientLayout>{children}</PatientLayout>
   }
-  
+
   return <>{children}</>
 }

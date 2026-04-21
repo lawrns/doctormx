@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import { EmptyState } from '@/components/EmptyState'
+import { Skeleton } from '@/components/ui/skeleton'
 import type { ConversationWithDetails } from '@/lib/chat'
 
 interface ChatListProps {
@@ -114,15 +115,13 @@ export function ChatList({ initialConversations, userRole }: ChatListProps) {
 
   if (loading) {
     return (
-      <div className="space-y-4">
+      <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-4 space-y-4">
         {[1, 2, 3].map((i) => (
-          <div key={i} className="bg-white p-4 rounded-xl border border-border animate-pulse">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-gray-200 rounded-full" />
-              <div className="flex-1">
-                <div className="h-4 bg-gray-200 rounded w-1/3 mb-2" />
-                <div className="h-3 bg-gray-200 rounded w-2/3" />
-              </div>
+          <div key={i} className="flex items-center gap-4 p-2">
+            <Skeleton className="w-12 h-12 rounded-full" />
+            <div className="flex-1 space-y-2">
+              <Skeleton className="h-4 w-1/3" />
+              <Skeleton className="h-3 w-2/3" />
             </div>
           </div>
         ))}
@@ -150,55 +149,56 @@ export function ChatList({ initialConversations, userRole }: ChatListProps) {
   }
 
   return (
-    <div className="space-y-2">
-      {conversations.map((conv) => {
-        const otherParty = getOtherParty(conv)
-        return (
-          <Link
-            key={conv.id}
-            href={`/chat/${conv.id}`}
-            className="block bg-white p-4 rounded-xl border border-border hover:border-primary-200 hover:shadow-sm transition-all"
-          >
-            <div className="flex items-center gap-4">
-              <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-br from-primary-100 to-accent-100 rounded-full flex items-center justify-center text-xl overflow-hidden">
-                  {otherParty.photoUrl ? (
-                    
-                              <img
-                      src={otherParty.photoUrl}
-                      alt={otherParty.name}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    (otherParty.name?.charAt(0) || '?').toUpperCase()
-                  )}
+    <div className="bg-card rounded-2xl border border-border shadow-dx-1 overflow-hidden">
+      <div className="divide-y divide-border">
+        {conversations.map((conv) => {
+          const otherParty = getOtherParty(conv)
+          return (
+            <Link
+              key={conv.id}
+              href={`/chat/${conv.id}`}
+              className="block p-4 hover:bg-secondary transition-colors"
+            >
+              <div className="flex items-center gap-4">
+                <div className="relative">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/30 rounded-full flex items-center justify-center text-xl overflow-hidden text-foreground">
+                    {otherParty.photoUrl ? (
+                      <img
+                        src={otherParty.photoUrl}
+                        alt={otherParty.name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      (otherParty.name?.charAt(0) || '?').toUpperCase()
+                    )}
+                  </div>
+                  <span className="absolute bottom-0 right-0 w-3 h-3 bg-primary border-2 border-card rounded-full" />
                 </div>
-                <span className="absolute bottom-0 right-0 w-3 h-3 bg-success-500 border-2 border-white rounded-full" />
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between mb-1">
+                    <h3 className="font-semibold text-foreground truncate">
+                      {userRole === 'patient' ? `Dr. ${otherParty.name}` : otherParty.name}
+                    </h3>
+                    <span className="text-xs text-muted-foreground ml-2">
+                      {formatTime(conv.last_message_at)}
+                    </span>
+                  </div>
+                  <p className="text-sm text-muted-foreground truncate">
+                    {conv.last_message_preview || 'Sin mensajes aún'}
+                  </p>
+                </div>
+                {conv.unread_count && conv.unread_count > 0 && (
+                  <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                    <span className="text-xs text-primary-foreground font-medium">
+                      {conv.unread_count > 9 ? '9+' : conv.unread_count}
+                    </span>
+                  </div>
+                )}
               </div>
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center justify-between mb-1">
-                  <h3 className="font-semibold text-ink-primary truncate">
-                    {userRole === 'patient' ? `Dr. ${otherParty.name}` : otherParty.name}
-                  </h3>
-                  <span className="text-xs text-ink-muted ml-2">
-                    {formatTime(conv.last_message_at)}
-                  </span>
-                </div>
-                <p className="text-sm text-ink-secondary truncate">
-                  {conv.last_message_preview || 'Sin mensajes aún'}
-                </p>
-              </div>
-              {conv.unread_count && conv.unread_count > 0 && (
-                <div className="w-6 h-6 bg-primary-500 rounded-full flex items-center justify-center">
-                  <span className="text-xs text-white font-medium">
-                    {conv.unread_count > 9 ? '9+' : conv.unread_count}
-                  </span>
-                </div>
-              )}
-            </div>
-          </Link>
-        )
-      })}
+            </Link>
+          )
+        })}
+      </div>
     </div>
   )
 }

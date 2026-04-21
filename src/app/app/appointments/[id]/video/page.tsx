@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import { Input } from '@/components/ui/input'
 
 interface VideoRoomData {
   roomUrl: string
@@ -194,11 +195,11 @@ export default function VideoCallPage() {
   // Pre-call checklist
   if (callState === 'precall' && roomData) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-background flex items-center justify-center p-4">
         <Card className="w-full max-w-2xl p-8">
           <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold text-gray-900 mb-2">Videoconsulta</h1>
-            <p className="text-gray-600">
+            <h1 className="font-display text-2xl font-bold tracking-tight text-foreground mb-2">Videoconsulta</h1>
+            <p className="text-muted-foreground">
               {new Date(roomData.appointment.startTs).toLocaleString('es-MX', {
                 weekday: 'long',
                 day: 'numeric',
@@ -210,39 +211,39 @@ export default function VideoCallPage() {
           </div>
 
           <div className="space-y-6">
-            <div className="flex items-center gap-3 p-4 bg-green-50 border border-green-200 rounded-lg">
-              <svg className="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="flex items-center gap-3 p-4 bg-vital-soft border border-border rounded-xl">
+              <svg className="w-6 h-6 text-vital" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <div>
-                <p className="font-medium text-green-900">Sala lista</p>
-                <p className="text-sm text-green-700">La videoconsulta está configurada y lista para comenzar</p>
+                <p className="font-medium text-foreground">Sala lista</p>
+                <p className="text-sm text-muted-foreground">La videoconsulta está configurada y lista para comenzar</p>
               </div>
             </div>
 
             <div className="space-y-4">
-              <h3 className="font-semibold text-gray-900">Antes de unirte:</h3>
-              <ul className="space-y-2 text-sm text-gray-600">
+              <h3 className="font-display font-semibold text-foreground">Antes de unirte:</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-5 h-5 text-vital mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   Asegúrate de estar en un lugar con buena iluminación
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-5 h-5 text-vital mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   Conexión a internet estable
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-5 h-5 text-vital mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   Usa auriculares para mejor calidad de audio
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-green-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-5 h-5 text-vital mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   Ten a la mano tus síntomas o preguntas
@@ -254,7 +255,7 @@ export default function VideoCallPage() {
               <Button
                 onClick={joinCall}
                 size="lg"
-                className="flex-1 bg-green-600 hover:bg-green-700"
+                className="flex-1 bg-primary hover:bg-primary/90"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
@@ -277,10 +278,10 @@ export default function VideoCallPage() {
   // Loading state
   if (callState === 'loading') {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <div className="w-16 h-16 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-gray-600">Cargando videoconsulta...</p>
+          <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <p className="text-muted-foreground">Cargando videoconsulta...</p>
         </div>
       </div>
     )
@@ -289,15 +290,15 @@ export default function VideoCallPage() {
   // Error state
   if (error) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-background flex items-center justify-center p-4">
         <Card className="w-full max-w-md p-8 text-center">
-          <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg className="w-8 h-8 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg className="w-8 h-8 text-destructive" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
-          <h2 className="text-xl font-bold text-gray-900 mb-2">Error</h2>
-          <p className="text-gray-600 mb-6">{error}</p>
+          <h2 className="font-display text-xl font-bold tracking-tight text-foreground mb-2">Error</h2>
+          <p className="text-muted-foreground mb-6">{error}</p>
           <div className="flex gap-3 justify-center">
             <Button onClick={() => router.push('/app/appointments')} variant="outline">
               Volver a mis citas
@@ -310,17 +311,17 @@ export default function VideoCallPage() {
 
   // Main video call interface
   return (
-    <div className="h-screen bg-gray-900 flex flex-col">
+    <div className="h-screen bg-background flex flex-col">
       {/* Top bar */}
-      <div className="bg-gray-800 px-4 py-3 flex items-center justify-between">
+      <div className="glass-nav sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <Link href="/app/appointments" className="text-white hover:text-gray-300">
+          <Link href="/app/appointments" className="text-foreground hover:text-muted-foreground">
             <ArrowLeft className="w-5 h-5" />
           </Link>
           <div>
-            <h1 className="text-white font-semibold">Videoconsulta</h1>
+            <h1 className="text-foreground font-semibold">Videoconsulta</h1>
             {callState === 'connected' && (
-              <p className="text-gray-400 text-sm">{formatDuration(callDuration)}</p>
+              <p className="text-muted-foreground text-sm">{formatDuration(callDuration)}</p>
             )}
           </div>
         </div>
@@ -328,13 +329,15 @@ export default function VideoCallPage() {
         <div className="flex items-center gap-3">
           {callState === 'connected' && (
             <>
-              <Badge className="bg-green-500 text-white">En curso</Badge>
-              <button
+              <Badge variant="success">En curso</Badge>
+              <Button
+                variant="ghost"
+                size="icon"
                 onClick={() => setShowChat(!showChat)}
-                className="text-white hover:text-gray-300 relative"
+                className="text-foreground hover:text-muted-foreground relative"
               >
                 <MessageSquare className="w-5 h-5" />
-              </button>
+              </Button>
             </>
           )}
         </div>
@@ -345,9 +348,9 @@ export default function VideoCallPage() {
         {/* Video area */}
         <div className="flex-1 relative bg-black">
           {callState === 'connecting' && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
-              <div className="text-center text-white">
-                <div className="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+            <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+              <div className="text-center text-foreground">
+                <div className="w-16 h-16 border-4 border-foreground border-t-transparent rounded-full animate-spin mx-auto mb-4" />
                 <p>Conectando...</p>
               </div>
             </div>
@@ -357,62 +360,70 @@ export default function VideoCallPage() {
           <div id="daily-call-frame" className="w-full h-full" />
 
           {/* Control bar */}
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+          <div className="absolute bottom-0 left-0 right-0 bg-card border-t border-border p-6">
             <div className="flex items-center justify-center gap-4">
-              <button
+              <Button
                 onClick={toggleMute}
-                className={`p-4 rounded-full transition-colors ${
-                  isMuted ? 'bg-gray-600 text-white' : 'bg-white text-gray-900'
+                variant="outline"
+                size="icon"
+                className={`rounded-full h-14 w-14 ${
+                  isMuted ? 'bg-muted text-foreground' : 'bg-card text-foreground'
                 }`}
               >
                 {isMuted ? <MicOff className="w-6 h-6" /> : <Mic className="w-6 h-6" />}
-              </button>
+              </Button>
 
-              <button
+              <Button
                 onClick={toggleVideo}
-                className={`p-4 rounded-full transition-colors ${
-                  isVideoOff ? 'bg-gray-600 text-white' : 'bg-white text-gray-900'
+                variant="outline"
+                size="icon"
+                className={`rounded-full h-14 w-14 ${
+                  isVideoOff ? 'bg-muted text-foreground' : 'bg-card text-foreground'
                 }`}
               >
                 {isVideoOff ? <VideoOff className="w-6 h-6" /> : <Video className="w-6 h-6" />}
-              </button>
+              </Button>
 
-              <button
+              <Button
                 onClick={endCall}
-                className="p-4 rounded-full bg-red-600 text-white hover:bg-red-700 transition-colors"
+                variant="destructive"
+                size="icon"
+                className="rounded-full h-14 w-14"
               >
                 <PhoneOff className="w-6 h-6" />
-              </button>
+              </Button>
             </div>
           </div>
 
           {/* Self view (picture-in-picture) */}
           {!isVideoOff && (
-            <div className="absolute top-4 right-4 w-40 h-30 bg-gray-800 rounded-lg overflow-hidden border-2 border-white shadow-lg">
+            <div className="absolute top-4 right-4 w-40 h-30 bg-card rounded-xl overflow-hidden border-2 border-border shadow-lg">
               {/* Self video would be rendered here by Daily.co */}
             </div>
           )}
 
           {/* Connection quality indicator */}
           {callState === 'connected' && (
-            <div className="absolute top-4 left-4 flex items-center gap-2 bg-black bg-opacity-50 px-3 py-2 rounded-full">
-              <div className="w-2 h-2 bg-green-500 rounded-full" />
-              <span className="text-white text-sm">Buena conexión</span>
+            <div className="absolute top-4 left-4 flex items-center gap-2 bg-black/50 px-3 py-2 rounded-full">
+              <div className="w-2 h-2 bg-vital rounded-full" />
+              <span className="text-foreground text-sm">Buena conexión</span>
             </div>
           )}
         </div>
 
         {/* Chat sidebar */}
         {showChat && (
-          <div className="w-80 bg-gray-800 flex flex-col">
-            <div className="p-4 border-b border-gray-700 flex items-center justify-between">
-              <h3 className="text-white font-semibold">Chat</h3>
-              <button
+          <div className="w-80 bg-card border-l border-border flex flex-col">
+            <div className="p-4 border-b border-border flex items-center justify-between">
+              <h3 className="text-foreground font-semibold">Chat</h3>
+              <Button
+                variant="ghost"
+                size="icon"
                 onClick={() => setShowChat(false)}
-                className="text-gray-400 hover:text-white"
+                className="text-muted-foreground hover:text-foreground"
               >
                 <X className="w-5 h-5" />
-              </button>
+              </Button>
             </div>
 
             <div className="flex-1 overflow-y-auto p-4 space-y-3">
@@ -426,8 +437,8 @@ export default function VideoCallPage() {
                   <div
                     className={`inline-block max-w-[80%] px-3 py-2 rounded-lg ${
                       msg.sender === 'me'
-                        ? 'bg-blue-600 text-white'
-                        : 'bg-gray-700 text-white'
+                        ? 'bg-primary text-primary-foreground'
+                        : 'bg-muted text-foreground'
                     }`}
                   >
                     <p className="text-sm">{msg.message}</p>
@@ -437,24 +448,25 @@ export default function VideoCallPage() {
               ))}
             </div>
 
-            <div className="p-4 border-t border-gray-700">
+            <div className="p-4 border-t border-border">
               <div className="flex gap-2">
-                <input
+                <Input
                   type="text"
                   value={chatInput}
                   onChange={(e) => setChatInput(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && sendChatMessage()}
                   placeholder="Escribe un mensaje..."
-                  className="flex-1 px-3 py-2 bg-gray-700 text-white rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="flex-1"
                 />
-                <button
+                <Button
                   onClick={sendChatMessage}
-                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                  variant="default"
+                  size="icon"
                 >
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18 9 18-2z" />
                   </svg>
-                </button>
+                </Button>
               </div>
             </div>
           </div>

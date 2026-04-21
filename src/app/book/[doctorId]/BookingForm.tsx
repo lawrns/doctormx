@@ -9,6 +9,7 @@ import PreConsultaChat from '@/components/PreConsultaChat'
 import { useToast } from '@/components/Toast'
 import { AI_CONFIG } from '@/lib/ai/config'
 import { User } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 type DoctorProfile = {
   id: string
@@ -261,82 +262,86 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-hero">
-      <header className="glass-nav sticky top-0 z-50">
+    <div className="min-h-screen bg-background">
+      <header className="glass-nav sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center">
-              <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+              <svg className="w-6 h-6 text-primary-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
             </div>
-            <span className="text-2xl font-bold text-ink-primary">Doctor.mx</span>
+            <span className="font-display text-2xl font-bold tracking-tight text-foreground">Doctor.mx</span>
           </Link>
-          <Link href={`/doctors/${doctor.id}`} className="text-ink-secondary hover:text-primary-600 font-medium">← Volver al perfil</Link>
+          <Link href={`/doctors/${doctor.id}`} className="text-muted-foreground hover:text-primary font-medium">← Volver al perfil</Link>
         </div>
       </header>
       <main className="max-w-2xl mx-auto px-4 py-8">
-        <div className="bg-white rounded-2xl shadow-xl border border-border overflow-hidden">
-          <div className="bg-gradient-to-r from-primary-500 to-accent-500 p-6 text-white">
-            <h1 className="text-2xl font-bold">Agendar Consulta</h1>
-            <p className="text-white/80 mt-1">Selecciona la fecha y hora de tu cita</p>
+        <div className="bg-card rounded-2xl border border-border shadow-dx-1 overflow-hidden">
+          <div className="bg-primary p-6 text-primary-foreground">
+            <h1 className="font-display text-2xl font-bold tracking-tight">Agendar Consulta</h1>
+            <p className="text-primary-foreground/80 mt-1 text-sm">Selecciona la fecha y hora de tu cita</p>
           </div>
           <div className="p-6">
-            <div className="bg-secondary-50 p-4 rounded-xl mb-6 flex items-center gap-4 border border-border">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary-100 to-accent-100 rounded-xl overflow-hidden">
+            <div className="bg-secondary/50 p-4 rounded-xl mb-6 flex items-center gap-4 border border-border">
+              <div className="w-16 h-16 bg-gradient-to-br from-cobalt-100 to-cobalt-200 rounded-xl overflow-hidden">
                 {doctor.profile?.photo_url ? (
                   <Image src={doctor.profile.photo_url} alt={doctor.profile.full_name} width={64} height={64} className="object-cover w-full h-full" />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center"><User className="w-8 h-8 text-gray-400" /></div>
+                  <div className="w-full h-full flex items-center justify-center"><User className="w-8 h-8 text-muted-foreground" /></div>
                 )}
               </div>
               <div className="flex-1">
-                <p className="font-semibold text-ink-primary text-lg">Dr. {doctor.profile?.full_name}</p>
-                <p className="text-sm text-ink-secondary">Consulta en línea</p>
+                <p className="font-semibold text-foreground text-lg">Dr. {doctor.profile?.full_name}</p>
+                <p className="text-sm text-muted-foreground">Consulta en línea</p>
               </div>
               <div className="text-right">
-                <p className="text-xl font-bold text-primary-600">{formatPrice(doctor.price_cents, doctor.currency)}</p>
-                <p className="text-xs text-ink-muted">por consulta</p>
+                <p className="text-xl font-bold text-primary">{formatPrice(doctor.price_cents, doctor.currency)}</p>
+                <p className="text-xs text-muted-foreground">por consulta</p>
               </div>
             </div>
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Mini Calendar */}
               <div>
-                <label className="block text-sm font-medium text-ink-primary mb-3">
+                <label className="block text-sm font-medium text-foreground mb-3">
                   Selecciona una fecha
                 </label>
                 
                 {/* Calendar Header */}
                 <div className="flex items-center justify-between mb-4">
-                  <button
+                  <Button
                     type="button"
+                    variant="ghost"
+                    size="icon"
                     onClick={goToPreviousMonth}
                     disabled={isPrevMonthDisabled()}
-                    className="p-2 rounded-lg hover:bg-secondary-100 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                    className="rounded-lg disabled:opacity-30"
                   >
-                    <svg className="w-5 h-5 text-ink-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                     </svg>
-                  </button>
-                  <span className="font-semibold text-ink-primary">
+                  </Button>
+                  <span className="font-semibold text-foreground">
                     {MONTHS[currentMonth.getMonth()]} {currentMonth.getFullYear()}
                   </span>
-                  <button
+                  <Button
                     type="button"
+                    variant="ghost"
+                    size="icon"
                     onClick={goToNextMonth}
                     disabled={isNextMonthDisabled()}
-                    className="p-2 rounded-lg hover:bg-secondary-100 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                    className="rounded-lg disabled:opacity-30"
                   >
-                    <svg className="w-5 h-5 text-ink-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                  </button>
+                  </Button>
                 </div>
 
                 {/* Weekday Headers */}
                 <div className="grid grid-cols-7 gap-1 mb-2">
                   {WEEKDAYS.map(day => (
-                    <div key={day} className="text-center text-xs font-medium text-ink-secondary py-1">
+                    <div key={day} className="text-center text-xs font-medium text-muted-foreground py-1">
                       {day}
                     </div>
                   ))}
@@ -345,43 +350,44 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                 {/* Calendar Grid */}
                 <div className="grid grid-cols-7 gap-1">
                   {calendarDays.map((day, index) => (
-                    <button
+                    <Button
                       key={index}
                       type="button"
+                      variant="ghost"
                       disabled={!day.date || day.isPast}
                       onClick={() => day.date && setSelectedDate(day.date)}
                       className={`
-                        relative aspect-square rounded-lg text-sm font-medium transition-all
+                        relative aspect-square h-auto w-full p-0 text-sm font-medium rounded-lg transition-all
                         ${!day.date ? 'invisible' : ''}
-                        ${day.isPast ? 'text-ink-muted cursor-not-allowed' : 'hover:bg-secondary-100'}
-                        ${selectedDate === day.date ? 'bg-primary-500 text-white hover:bg-primary-600 shadow-md' : ''}
-                        ${day.isAvailable && selectedDate !== day.date ? 'text-success-700 bg-success-50' : ''}
-                        ${!day.isAvailable && !day.isPast && selectedDate !== day.date ? 'text-ink-primary' : ''}
-                        ${day.isToday && selectedDate !== day.date ? 'ring-2 ring-primary-400' : ''}
+                        ${day.isPast ? 'text-muted-foreground cursor-not-allowed' : 'hover:bg-secondary'}
+                        ${selectedDate === day.date ? 'bg-primary text-primary-foreground hover:bg-primary/90' : ''}
+                        ${day.isAvailable && selectedDate !== day.date ? 'text-vital bg-vital-soft' : ''}
+                        ${!day.isAvailable && !day.isPast && selectedDate !== day.date ? 'text-foreground' : ''}
+                        ${day.isToday && selectedDate !== day.date ? 'ring-2 ring-primary' : ''}
                       `}
                     >
                       {day.date && new Date(day.date + 'T00:00:00').getDate()}
                       
                       {/* Availability indicator dot */}
                       {day.isAvailable && selectedDate !== day.date && (
-                        <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-success-500 rounded-full"></span>
+                        <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-vital rounded-full"></span>
                       )}
-                    </button>
+                    </Button>
                   ))}
                 </div>
 
                 {/* Calendar Legend */}
-                <div className="flex items-center justify-center gap-4 mt-3 text-xs text-ink-secondary">
+                <div className="flex items-center justify-center gap-4 mt-3 text-xs text-muted-foreground">
                   <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 bg-success-500 rounded-full"></span>
+                    <span className="w-2 h-2 bg-vital rounded-full"></span>
                     <span>Disponible</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <span className="w-4 h-4 border-2 border-primary-400 rounded"></span>
+                    <span className="w-4 h-4 border-2 border-primary rounded"></span>
                     <span>Hoy</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <span className="w-4 h-4 bg-primary-500 rounded"></span>
+                    <span className="w-4 h-4 bg-primary rounded"></span>
                     <span>Seleccionado</span>
                   </div>
                 </div>
@@ -402,38 +408,39 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
 
               {selectedDate && (
                 <div>
-                  <label className="block text-sm font-medium text-ink-primary mb-3">
+                  <label className="block text-sm font-medium text-foreground mb-3">
                     Horarios para {formatDateDisplay(selectedDate)}
                   </label>
                   {loadingSlots ? (
                     <div className="flex items-center justify-center py-8">
-                      <div className="animate-spin h-8 w-8 border-4 border-primary-500 border-t-transparent rounded-full"></div>
+                      <div className="animate-spin h-8 w-8 border-4 border-primary border-t-transparent rounded-full"></div>
                     </div>
                   ) : availableSlots.length === 0 ? (
                     <div className="space-y-4">
-                      <div className="text-warning-700 bg-warning-50 p-4 rounded-xl border border-warning-200">
+                      <div className="text-foreground bg-secondary/50 p-4 rounded-xl border border-border">
                         <p className="font-medium">No hay horarios disponibles para esta fecha.</p>
-                        <p className="text-sm text-warning-600 mt-1">
+                        <p className="text-sm text-muted-foreground mt-1">
                           El doctor no tiene agenda disponible para el {formatDateDisplay(selectedDate)}.
                         </p>
                       </div>
                       
                       {/* Suggested alternative dates */}
                       {nextAvailableDates.length > 0 && (
-                        <div className="bg-primary-50 p-4 rounded-xl border border-primary-200">
-                          <p className="text-sm font-medium text-primary-800 mb-3">
+                        <div className="bg-secondary/50 p-4 rounded-xl border border-border">
+                          <p className="text-sm font-medium text-foreground mb-3">
                             Próximas fechas con disponibilidad:
                           </p>
                           <div className="flex flex-wrap gap-2">
                             {nextAvailableDates.map(date => (
-                              <button
+                              <Button
                                 key={date}
                                 type="button"
+                                variant="outline"
+                                size="sm"
                                 onClick={() => setSelectedDate(date)}
-                                className="px-3 py-2 bg-white text-primary-700 rounded-lg border border-primary-300 hover:bg-primary-100 hover:border-primary-500 text-sm font-medium transition-colors"
                               >
                                 {formatShortDate(date)}
-                              </button>
+                              </Button>
                             ))}
                           </div>
                         </div>
@@ -441,25 +448,21 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                     </div>
                   ) : (
                     <div className="space-y-3">
-                      <p className="text-sm text-ink-secondary">
+                      <p className="text-sm text-muted-foreground">
                         {availableSlots.length} horario{availableSlots.length !== 1 ? 's' : ''} disponible{availableSlots.length !== 1 ? 's' : ''}
                       </p>
                       <div className="grid grid-cols-4 gap-2">
                         {availableSlots.map((slot) => (
-                          <button 
+                          <Button 
                             key={slot} 
                             type="button" 
+                            variant={selectedTime === slot ? 'default' : 'outline'}
+                            size="sm"
                             onClick={() => setSelectedTime(slot)} 
-                            className={`
-                              px-4 py-3 rounded-xl border-2 text-sm font-medium transition-all
-                              ${selectedTime === slot 
-                                ? 'bg-primary-500 text-white border-primary-500 shadow-md' 
-                                : 'bg-white text-ink-secondary border-border hover:border-primary-300 hover:bg-primary-50'
-                              }
-                            `}
+                            className="rounded-xl"
                           >
                             {slot}
-                          </button>
+                          </Button>
                         ))}
                       </div>
                     </div>
@@ -468,48 +471,49 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
               )}
               
               {preConsultaCompleted && (
-                <div className="bg-success-50 border border-success-200 rounded-xl p-4">
-                  <p className="text-sm text-success-700 font-medium">
+                <div className="bg-vital-soft border border-vital/20 rounded-xl p-4">
+                  <p className="text-sm text-vital font-medium">
                     Pre-consulta completada con Dr. Simeon IA
                   </p>
                 </div>
               )}
               
               {consultationId && (
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
-                  <p className="text-sm text-blue-700 font-medium">
+                <div className="bg-secondary/50 border border-border rounded-xl p-4">
+                  <p className="text-sm text-foreground font-medium">
                     ✨ Referido desde tu consulta de IA multi-especialista
                   </p>
-                  <p className="text-xs text-blue-600 mt-1">
+                  <p className="text-xs text-muted-foreground mt-1">
                     Tu expediente médico será compartido con el doctor para continuidad de atención
                   </p>
                 </div>
               )}
               
               {selectedDate && selectedTime && (
-                <div className="bg-secondary-50 rounded-xl p-4 border border-border">
-                  <p className="text-sm text-ink-secondary mb-1">Cita seleccionada:</p>
-                  <p className="text-lg font-semibold text-ink-primary">
+                <div className="bg-secondary/50 rounded-xl p-4 border border-border">
+                  <p className="text-sm text-muted-foreground mb-1">Cita seleccionada:</p>
+                  <p className="text-lg font-semibold text-foreground">
                     {formatDateDisplay(selectedDate)} a las {selectedTime}
                   </p>
                 </div>
               )}
 
               {submitError && (
-                <div className="rounded-xl border border-red-200 bg-red-50 p-4">
-                  <p className="text-sm font-medium text-red-800">No se pudo continuar con la reserva.</p>
-                  <p className="mt-1 text-sm text-red-700">{submitError}</p>
+                <div className="rounded-xl border border-destructive/20 bg-destructive/10 p-4">
+                  <p className="text-sm font-medium text-destructive">No se pudo continuar con la reserva.</p>
+                  <p className="mt-1 text-sm text-destructive">{submitError}</p>
                 </div>
               )}
               
               {selectedDate && selectedTime && (
-                <button 
+                <Button 
                   type="submit" 
+                  size="lg"
                   disabled={submitting} 
-                  className="w-full py-4 bg-primary-500 text-white rounded-xl hover:bg-primary-600 font-semibold text-lg disabled:opacity-50 transition-colors"
+                  className="w-full"
                 >
                   {submitting ? 'Creando cita...' : currentUser ? (AI_CONFIG.features.preConsulta && !preConsultaCompleted ? 'Iniciar pre-consulta con IA' : 'Continuar al pago →') : 'Iniciar sesión y continuar'}
-                </button>
+                </Button>
               )}
             </form>
           </div>

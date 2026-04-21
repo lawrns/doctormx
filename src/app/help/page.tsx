@@ -7,6 +7,7 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 import {
   HelpCircle,
   MessageSquare,
@@ -87,14 +88,15 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false)
   
   return (
-    <div className="border-b border-gray-100 last:border-0">
-      <button
+    <div className="border-b border-border last:border-0">
+      <Button
+        variant="ghost"
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-4 flex items-center justify-between text-left hover:bg-gray-50 px-4 -mx-4 rounded-lg transition-colors"
+        className="w-full py-4 flex items-center justify-between text-left hover:bg-accent px-4 -mx-4 rounded-lg transition-colors h-auto"
       >
-        <span className="font-medium text-gray-900">{question}</span>
-        <ChevronDown className={`w-5 h-5 text-gray-400 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
-      </button>
+        <span className="font-medium text-foreground text-left">{question}</span>
+        <ChevronDown className={`w-5 h-5 text-muted-foreground transition-transform shrink-0 ml-2 ${isOpen ? 'rotate-180' : ''}`} />
+      </Button>
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -104,7 +106,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
             transition={{ duration: 0.2 }}
             className="overflow-hidden"
           >
-            <p className="pb-4 text-gray-600">{answer}</p>
+            <p className="pb-4 text-muted-foreground">{answer}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -116,31 +118,31 @@ export default function HelpPage() {
   const [searchQuery, setSearchQuery] = useState('')
   
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-background">
       <Header />
       
       {/* Hero */}
-      <section className="pt-24 pb-12 bg-gradient-to-b from-blue-50 to-white">
+      <section className="pt-24 pb-12 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <HelpCircle className="w-8 h-8 text-blue-600" />
+          <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <HelpCircle className="w-8 h-8 text-primary" />
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="font-display text-4xl font-bold tracking-tight text-foreground mb-4">
             Centro de Ayuda
           </h1>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-xl text-muted-foreground mb-8">
             ¿Cómo podemos ayudarte hoy?
           </p>
           
           {/* Search */}
           <div className="relative max-w-xl mx-auto">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-            <input
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+            <Input
               type="text"
               placeholder="Buscar en preguntas frecuentes..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+              className="w-full pl-12 pr-4 py-4 text-lg"
             />
           </div>
         </div>
@@ -151,29 +153,29 @@ export default function HelpPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-6">
             <Card className="p-6 text-center hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <MessageSquare className="w-6 h-6 text-blue-600" />
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <MessageSquare className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">Chat en vivo</h3>
-              <p className="text-gray-500 text-sm mb-4">Respuesta en minutos</p>
+              <h3 className="font-display font-semibold text-foreground mb-2">Chat en vivo</h3>
+              <p className="text-muted-foreground text-sm mb-4">Respuesta en minutos</p>
               <Button variant="outline" className="w-full">Iniciar chat</Button>
             </Card>
             
             <Card className="p-6 text-center hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Phone className="w-6 h-6 text-green-600" />
+              <div className="w-12 h-12 bg-vital-soft rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Phone className="w-6 h-6 text-vital" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">Llámanos</h3>
-              <p className="text-gray-500 text-sm mb-4">Lun-Vie 9am-6pm</p>
+              <h3 className="font-display font-semibold text-foreground mb-2">Llámanos</h3>
+              <p className="text-muted-foreground text-sm mb-4">Lun-Vie 9am-6pm</p>
               <Button variant="outline" className="w-full">55 1234 5678</Button>
             </Card>
             
             <Card className="p-6 text-center hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Mail className="w-6 h-6 text-purple-600" />
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Mail className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">Email</h3>
-              <p className="text-gray-500 text-sm mb-4">Respuesta en 24h</p>
+              <h3 className="font-display font-semibold text-foreground mb-2">Email</h3>
+              <p className="text-muted-foreground text-sm mb-4">Respuesta en 24h</p>
               <Link href="/contact">
                 <Button variant="outline" className="w-full">Enviar mensaje</Button>
               </Link>
@@ -183,9 +185,9 @@ export default function HelpPage() {
       </section>
 
       {/* FAQs */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+          <h2 className="font-display text-2xl font-bold tracking-tight text-foreground mb-8 text-center">
             Preguntas Frecuentes
           </h2>
           
@@ -193,10 +195,10 @@ export default function HelpPage() {
             {faqs.map((category) => (
               <Card key={category.category} className="p-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <category.icon className="w-5 h-5 text-blue-600" />
+                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <category.icon className="w-5 h-5 text-primary" />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">{category.category}</h3>
+                  <h3 className="font-display text-lg font-semibold text-foreground">{category.category}</h3>
                 </div>
                 <div className="space-y-0">
                   {category.questions.map((faq, index) => (
@@ -212,14 +214,14 @@ export default function HelpPage() {
       {/* Still need help */}
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+          <h2 className="font-display text-2xl font-bold tracking-tight text-foreground mb-4">
             ¿Aún necesitas ayuda?
           </h2>
-          <p className="text-gray-600 mb-6">
+          <p className="text-muted-foreground mb-6">
             Nuestro equipo de soporte está listo para asistirte
           </p>
           <Link href="/contact">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+            <Button size="lg" className="bg-primary hover:bg-primary/90">
               Contactar soporte
             </Button>
           </Link>

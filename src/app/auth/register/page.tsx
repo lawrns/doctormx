@@ -20,6 +20,14 @@ import { ANALYTICS_EVENTS, trackClientEvent } from '@/lib/analytics/posthog'
 import type { ReferralSummary } from '@/lib/domains/patient-referrals'
 import { formatCurrency } from '@/lib/utils'
 import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form'
+import {
   Check,
   ChevronLeft,
   ChevronRight,
@@ -31,7 +39,7 @@ import {
   Loader2,
 } from 'lucide-react'
 
-function calculatePasswordStrength(password: string): { strength: number; label: string; color: string } {
+function calculatePasswordStrength(password: string): { strength: number; label: string; color: string; textColor: string } {
   let strength = 0
   if (password.length >= 8) strength += 25
   if (password.length >= 12) strength += 15
@@ -40,9 +48,9 @@ function calculatePasswordStrength(password: string): { strength: number; label:
   if (/[0-9]/.test(password)) strength += 15
   if (/[^a-zA-Z0-9]/.test(password)) strength += 15
 
-  if (strength < 40) return { strength, label: 'Débil', color: 'bg-red-500' }
-  if (strength < 70) return { strength, label: 'Media', color: 'bg-yellow-500' }
-  return { strength, label: 'Fuerte', color: 'bg-green-500' }
+  if (strength < 40) return { strength, label: 'Débil', color: 'bg-destructive', textColor: 'text-destructive' }
+  if (strength < 70) return { strength, label: 'Media', color: 'bg-amber', textColor: 'text-amber' }
+  return { strength, label: 'Fuerte', color: 'bg-vital', textColor: 'text-vital' }
 }
 
 const step1Schema = z.object({
@@ -125,7 +133,7 @@ function RegisterContent() {
     acceptTerms: false,
   })
 
-  const [passwordStrength, setPasswordStrength] = useState({ strength: 0, label: '', color: '' })
+  const [passwordStrength, setPasswordStrength] = useState({ strength: 0, label: '', color: '', textColor: '' })
   const [validatedFields, setValidatedFields] = useState<Record<string, boolean>>({})
   const [referralSummary, setReferralSummary] = useState<ReferralSummary | null>(null)
 
@@ -307,10 +315,9 @@ function RegisterContent() {
 
     return (
       <div className="min-h-screen grid lg:grid-cols-2">
-        <div className="relative hidden lg:flex flex-col justify-between bg-[linear-gradient(180deg,#062437,#0b4f6c)] p-10 text-white">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(45,212,191,0.28),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.26),transparent_34%)]" />
+        <div className="relative hidden lg:flex flex-col justify-between bg-ink p-10 text-white">
           <div className="relative z-10 flex items-center gap-2.5">
-            <div className="w-9 h-9 bg-white/12 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/15">
+            <div className="w-9 h-9 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/20">
               <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
@@ -345,7 +352,7 @@ function RegisterContent() {
           </div>
         </div>
 
-        <div className="flex flex-col justify-center p-4 sm:p-8 bg-slate-50">
+        <div className="flex flex-col justify-center p-4 sm:p-8 bg-background">
           <div className="mx-auto w-full max-w-3xl">
             <ReferralShareCard
               code={referralSummary.code}
@@ -368,7 +375,7 @@ function RegisterContent() {
   return (
     <div className="min-h-screen grid lg:grid-cols-2">
       {/* Left Panel - Image & Branding */}
-      <div className="relative hidden lg:flex flex-col justify-between bg-zinc-900 p-10 text-white">
+      <div className="relative hidden lg:flex flex-col justify-between bg-ink p-10 text-white">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -377,7 +384,7 @@ function RegisterContent() {
               : 'url(https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop)',
           }}
         />
-        <div className="absolute inset-0 bg-zinc-900/70" />
+        <div className="absolute inset-0 bg-ink/70" />
 
         <div className="relative z-20 flex items-center gap-2.5">
           <div className="w-9 h-9 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/20">
@@ -395,7 +402,7 @@ function RegisterContent() {
                 <p className="text-lg leading-relaxed">
                   &ldquo;Desde que me registré en Doctor.mx, he aumentado mi base de pacientes un 40%. La plataforma me permite ofrecer consultas virtuales y presenciales de forma sencilla.&rdquo;
                 </p>
-                <footer className="text-sm text-zinc-300">
+                <footer className="text-sm text-white/70">
                   Dr. Carlos Mendoza &mdash; Cardiólogo, Monterrey
                 </footer>
               </>
@@ -404,7 +411,7 @@ function RegisterContent() {
                 <p className="text-lg leading-relaxed">
                   &ldquo;Encontré a mi especialista en minutos. La consulta por IA me orientó antes de ver al doctor. Una experiencia de salud digital increíble.&rdquo;
                 </p>
-                <footer className="text-sm text-zinc-300">
+                <footer className="text-sm text-white/70">
                   Ana Rodríguez &mdash; Paciente, Guadalajara
                 </footer>
               </>
@@ -414,22 +421,22 @@ function RegisterContent() {
       </div>
 
       {/* Right Panel - Registration Form */}
-      <div className="flex flex-col">
+      <div className="flex flex-col bg-background">
         {/* Mobile logo */}
-        <div className="lg:hidden flex items-center gap-2.5 p-6 border-b">
-          <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
+        <div className="lg:hidden flex items-center justify-center gap-2.5 p-6">
+          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
             <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
             </svg>
           </div>
-          <span className="text-lg font-bold text-neutral-900">Doctor.mx</span>
+          <span className="text-lg font-bold text-foreground">Doctor.mx</span>
         </div>
 
-        <div className="flex-1 flex items-center justify-center p-6 sm:p-8">
-          <div className="w-full max-w-[420px] space-y-6">
+        <div className="flex-1 flex items-center justify-center p-4">
+          <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-8 max-w-md w-full space-y-6">
             {/* Header */}
             <div className="flex flex-col space-y-2 text-center">
-              <h1 className="text-2xl font-semibold tracking-tight">
+              <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">
                 Crear cuenta
               </h1>
               <p className="text-sm text-muted-foreground">
@@ -461,64 +468,66 @@ function RegisterContent() {
                   className="space-y-4"
                 >
                   <div className="text-center mb-2">
-                    <div className={`w-14 h-14 ${isDoctor ? 'bg-green-50' : 'bg-primary/10'} rounded-xl flex items-center justify-center mx-auto mb-3`}>
-                      <Shield className={`w-7 h-7 ${isDoctor ? 'text-green-600' : 'text-primary'}`} />
+                    <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                      <Shield className="w-7 h-7 text-primary" />
                     </div>
-                    <h2 className="text-lg font-medium">Selecciona tu cuenta</h2>
+                    <h2 className="text-lg font-medium text-foreground">Selecciona tu cuenta</h2>
                     <p className="text-sm text-muted-foreground mt-1">¿Eres paciente o médico?</p>
                   </div>
 
-                  <RadioGroup
-                    value={step1Form.watch('accountType')}
-                    onValueChange={(value) => step1Form.setValue('accountType', value as 'patient' | 'doctor')}
-                    className="space-y-3"
-                  >
-                    <div className="relative">
-                      <RadioGroupItem value="patient" id="patient" className="peer sr-only" />
-                      <Label
-                        htmlFor="patient"
-                        className="flex items-center gap-4 p-4 rounded-lg border-2 cursor-pointer transition-all peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/5 hover:border-muted-foreground/25"
-                      >
-                        <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
-                          <User className="w-5 h-5 text-primary" />
-                        </div>
-                        <div className="flex-1">
-                          <div className="font-medium">Soy paciente</div>
-                          <div className="text-sm text-muted-foreground">Busco atención médica</div>
-                        </div>
-                        <motion.div
-                          initial={false}
-                          animate={{ scale: step1Form.watch('accountType') === 'patient' ? 1 : 0 }}
-                          className="w-5 h-5 bg-primary rounded-full flex items-center justify-center"
+                  <Form {...step1Form}>
+                    <RadioGroup
+                      value={step1Form.watch('accountType')}
+                      onValueChange={(value) => step1Form.setValue('accountType', value as 'patient' | 'doctor')}
+                      className="space-y-3"
+                    >
+                      <div className="relative">
+                        <RadioGroupItem value="patient" id="patient" className="peer sr-only" />
+                        <Label
+                          htmlFor="patient"
+                          className="flex items-center gap-4 p-4 rounded-lg border-2 cursor-pointer transition-all peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/5 hover:border-muted-foreground/25"
                         >
-                          <Check className="w-3 h-3 text-white" />
-                        </motion.div>
-                      </Label>
-                    </div>
+                          <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                            <User className="w-5 h-5 text-primary" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="font-medium text-foreground">Soy paciente</div>
+                            <div className="text-sm text-muted-foreground">Busco atención médica</div>
+                          </div>
+                          <motion.div
+                            initial={false}
+                            animate={{ scale: step1Form.watch('accountType') === 'patient' ? 1 : 0 }}
+                            className="w-5 h-5 bg-primary rounded-full flex items-center justify-center"
+                          >
+                            <Check className="w-3 h-3 text-white" />
+                          </motion.div>
+                        </Label>
+                      </div>
 
-                    <div className="relative">
-                      <RadioGroupItem value="doctor" id="doctor" className="peer sr-only" />
-                      <Label
-                        htmlFor="doctor"
-                        className="flex items-center gap-4 p-4 rounded-lg border-2 cursor-pointer transition-all peer-data-[state=checked]:border-green-500 peer-data-[state=checked]:bg-green-50 hover:border-muted-foreground/25"
-                      >
-                        <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center shrink-0">
-                          <Stethoscope className="w-5 h-5 text-green-600" />
-                        </div>
-                        <div className="flex-1">
-                          <div className="font-medium">Soy médico</div>
-                          <div className="text-sm text-muted-foreground">Ofreceré servicios médicos</div>
-                        </div>
-                        <motion.div
-                          initial={false}
-                          animate={{ scale: step1Form.watch('accountType') === 'doctor' ? 1 : 0 }}
-                          className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center"
+                      <div className="relative">
+                        <RadioGroupItem value="doctor" id="doctor" className="peer sr-only" />
+                        <Label
+                          htmlFor="doctor"
+                          className="flex items-center gap-4 p-4 rounded-lg border-2 cursor-pointer transition-all peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/5 hover:border-muted-foreground/25"
                         >
-                          <Check className="w-3 h-3 text-white" />
-                        </motion.div>
-                      </Label>
-                    </div>
-                  </RadioGroup>
+                          <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                            <Stethoscope className="w-5 h-5 text-primary" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="font-medium text-foreground">Soy médico</div>
+                            <div className="text-sm text-muted-foreground">Ofreceré servicios médicos</div>
+                          </div>
+                          <motion.div
+                            initial={false}
+                            animate={{ scale: step1Form.watch('accountType') === 'doctor' ? 1 : 0 }}
+                            className="w-5 h-5 bg-primary rounded-full flex items-center justify-center"
+                          >
+                            <Check className="w-3 h-3 text-white" />
+                          </motion.div>
+                        </Label>
+                      </div>
+                    </RadioGroup>
+                  </Form>
                 </motion.div>
               )}
 
@@ -533,176 +542,217 @@ function RegisterContent() {
                   className="space-y-4"
                 >
                   <div className="text-center mb-2">
-                    <div className={`w-14 h-14 ${isDoctor ? 'bg-green-50' : 'bg-primary/10'} rounded-xl flex items-center justify-center mx-auto mb-3`}>
-                      <User className={`w-7 h-7 ${isDoctor ? 'text-green-600' : 'text-primary'}`} />
+                    <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                      <User className="w-7 h-7 text-primary" />
                     </div>
-                    <h2 className="text-lg font-medium">Información personal</h2>
+                    <h2 className="text-lg font-medium text-foreground">Información personal</h2>
                     <p className="text-sm text-muted-foreground mt-1">Ingresa tus datos de acceso</p>
                   </div>
 
-                  <div className="space-y-3">
-                    <div>
-                      <Label htmlFor="fullName" className="text-sm">Nombre completo</Label>
-                      <div className="relative mt-1.5">
-                        <Input
-                          id="fullName"
-                          {...step2Form.register('fullName', {
-                            onChange: (e) => handleFieldValidation('fullName', e.target.value.length >= 3)
-                          })}
-                          placeholder={isDoctor ? 'Dr. Juan Pérez' : 'Juan Pérez'}
-                        />
-                        <AnimatePresence>
-                          {validatedFields.fullName && (
-                            <motion.div
-                              initial={{ scale: 0 }}
-                              animate={{ scale: 1 }}
-                              exit={{ scale: 0 }}
-                              className="absolute right-3 top-1/2 -translate-y-1/2"
-                            >
-                              <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
-                                <Check className="w-2.5 h-2.5 text-white" />
+                  <Form {...step2Form}>
+                    <form className="space-y-3">
+                      <FormField
+                        control={step2Form.control}
+                        name="fullName"
+                        render={({ field }) => (
+                          <FormItem className="relative">
+                            <FormLabel>Nombre completo</FormLabel>
+                            <FormControl>
+                              <div className="relative">
+                                <Input
+                                  placeholder={isDoctor ? 'Dr. Juan Pérez' : 'Juan Pérez'}
+                                  className="pr-10"
+                                  {...field}
+                                  onChange={(e) => {
+                                    field.onChange(e)
+                                    handleFieldValidation('fullName', e.target.value.length >= 3)
+                                  }}
+                                />
+                                <AnimatePresence>
+                                  {validatedFields.fullName && (
+                                    <motion.div
+                                      initial={{ scale: 0 }}
+                                      animate={{ scale: 1 }}
+                                      exit={{ scale: 0 }}
+                                      className="absolute right-3 top-1/2 -translate-y-1/2"
+                                    >
+                                      <div className="w-4 h-4 bg-primary rounded-full flex items-center justify-center">
+                                        <Check className="w-2.5 h-2.5 text-white" />
+                                      </div>
+                                    </motion.div>
+                                  )}
+                                </AnimatePresence>
                               </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </div>
-                      {step2Form.formState.errors.fullName && (
-                        <p className="text-sm text-destructive mt-1">{step2Form.formState.errors.fullName.message}</p>
-                      )}
-                    </div>
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
 
-                    <div>
-                      <Label htmlFor="email" className="text-sm">Correo electrónico</Label>
-                      <div className="relative mt-1.5">
-                        <Input
-                          id="email"
-                          type="email"
-                          {...step2Form.register('email', {
-                            onChange: (e) => handleFieldValidation('email', /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.target.value))
-                          })}
-                          placeholder="tu@email.com"
-                        />
-                        <AnimatePresence>
-                          {validatedFields.email && (
-                            <motion.div
-                              initial={{ scale: 0 }}
-                              animate={{ scale: 1 }}
-                              exit={{ scale: 0 }}
-                              className="absolute right-3 top-1/2 -translate-y-1/2"
-                            >
-                              <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
-                                <Check className="w-2.5 h-2.5 text-white" />
+                      <FormField
+                        control={step2Form.control}
+                        name="email"
+                        render={({ field }) => (
+                          <FormItem className="relative">
+                            <FormLabel>Correo electrónico</FormLabel>
+                            <FormControl>
+                              <div className="relative">
+                                <Input
+                                  type="email"
+                                  placeholder="tu@email.com"
+                                  className="pr-10"
+                                  {...field}
+                                  onChange={(e) => {
+                                    field.onChange(e)
+                                    handleFieldValidation('email', /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.target.value))
+                                  }}
+                                />
+                                <AnimatePresence>
+                                  {validatedFields.email && (
+                                    <motion.div
+                                      initial={{ scale: 0 }}
+                                      animate={{ scale: 1 }}
+                                      exit={{ scale: 0 }}
+                                      className="absolute right-3 top-1/2 -translate-y-1/2"
+                                    >
+                                      <div className="w-4 h-4 bg-primary rounded-full flex items-center justify-center">
+                                        <Check className="w-2.5 h-2.5 text-white" />
+                                      </div>
+                                    </motion.div>
+                                  )}
+                                </AnimatePresence>
                               </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </div>
-                      {step2Form.formState.errors.email && (
-                        <p className="text-sm text-destructive mt-1">{step2Form.formState.errors.email.message}</p>
-                      )}
-                    </div>
-
-                    <div>
-                      <Label htmlFor="phone" className="text-sm">Teléfono (opcional)</Label>
-                      <Input
-                        id="phone"
-                        type="tel"
-                        {...step2Form.register('phone')}
-                        placeholder="55 1234 5678"
-                        className="mt-1.5"
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
                       />
-                    </div>
 
-                    <div>
-                      <Label htmlFor="referralCode" className="text-sm">Código de referido (opcional)</Label>
-                      <Input
-                        id="referralCode"
-                        {...step2Form.register('referralCode')}
-                        placeholder="AB12CD"
-                        className="mt-1.5 font-mono tracking-[0.24em]"
+                      <FormField
+                        control={step2Form.control}
+                        name="phone"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Teléfono (opcional)</FormLabel>
+                            <FormControl>
+                              <Input
+                                type="tel"
+                                placeholder="55 1234 5678"
+                                {...field}
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
                       />
-                      <p className="mt-1 text-xs text-muted-foreground">
-                        Si alguien te invitó, pega su código aquí. Si no, déjalo vacío.
-                      </p>
-                      {initialReferralCode && (
-                        <p className="mt-1 text-xs font-medium text-emerald-700">
-                          Código aplicado desde tu enlace: <span className="font-mono">{initialReferralCode}</span>
-                        </p>
-                      )}
-                    </div>
 
-                    <div>
-                      <Label htmlFor="password" className="text-sm">Contraseña</Label>
-                      <Input
-                        id="password"
-                        type="password"
-                        {...step2Form.register('password', {
-                          onChange: (e) => {
-                            handlePasswordChange(e.target.value)
-                            handleFieldValidation('password', e.target.value.length >= 6)
-                          }
-                        })}
-                        placeholder="Mínimo 6 caracteres"
-                        className="mt-1.5"
+                      <FormField
+                        control={step2Form.control}
+                        name="referralCode"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Código de referido (opcional)</FormLabel>
+                            <FormControl>
+                              <Input
+                                placeholder="AB12CD"
+                                className="font-mono tracking-[0.24em]"
+                                {...field}
+                              />
+                            </FormControl>
+                            <p className="mt-1 text-xs text-muted-foreground">
+                              Si alguien te invitó, pega su código aquí. Si no, déjalo vacío.
+                            </p>
+                            {initialReferralCode && (
+                              <p className="mt-1 text-xs font-medium text-primary">
+                                Código aplicado desde tu enlace: <span className="font-mono">{initialReferralCode}</span>
+                              </p>
+                            )}
+                            <FormMessage />
+                          </FormItem>
+                        )}
                       />
-                      {step2Form.formState.errors.password && (
-                        <p className="text-sm text-destructive mt-1">{step2Form.formState.errors.password.message}</p>
-                      )}
-                      {step2Form.watch('password') && (
-                        <div className="mt-2 space-y-1.5">
-                          <div className="flex items-center justify-between text-xs">
-                            <span className="text-muted-foreground">Seguridad:</span>
-                            <span className={`font-medium ${
-                              passwordStrength.strength < 40 ? 'text-red-500' :
-                              passwordStrength.strength < 70 ? 'text-yellow-500' :
-                              'text-green-500'
-                            }`}>
-                              {passwordStrength.label}
-                            </span>
-                          </div>
-                          <div className="h-1 bg-muted rounded-full overflow-hidden">
-                            <motion.div
-                              initial={{ width: 0 }}
-                              animate={{ width: `${passwordStrength.strength}%` }}
-                              transition={{ duration: 0.3 }}
-                              className={`h-full ${passwordStrength.color} rounded-full`}
-                            />
-                          </div>
-                        </div>
-                      )}
-                    </div>
 
-                    <div>
-                      <Label htmlFor="confirmPassword" className="text-sm">Confirmar contraseña</Label>
-                      <div className="relative mt-1.5">
-                        <Input
-                          id="confirmPassword"
-                          type="password"
-                          {...step2Form.register('confirmPassword', {
-                            onChange: (e) => handleFieldValidation('confirmPassword', e.target.value === step2Form.watch('password') && e.target.value.length >= 6)
-                          })}
-                          placeholder="Confirma tu contraseña"
-                        />
-                        <AnimatePresence>
-                          {validatedFields.confirmPassword && (
-                            <motion.div
-                              initial={{ scale: 0 }}
-                              animate={{ scale: 1 }}
-                              exit={{ scale: 0 }}
-                              className="absolute right-3 top-1/2 -translate-y-1/2"
-                            >
-                              <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
-                                <Check className="w-2.5 h-2.5 text-white" />
+                      <FormField
+                        control={step2Form.control}
+                        name="password"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Contraseña</FormLabel>
+                            <FormControl>
+                              <Input
+                                type="password"
+                                placeholder="Mínimo 6 caracteres"
+                                {...field}
+                                onChange={(e) => {
+                                  field.onChange(e)
+                                  handlePasswordChange(e.target.value)
+                                  handleFieldValidation('password', e.target.value.length >= 6)
+                                }}
+                              />
+                            </FormControl>
+                            {step2Form.watch('password') && (
+                              <div className="mt-2 space-y-1.5">
+                                <div className="flex items-center justify-between text-xs">
+                                  <span className="text-muted-foreground">Seguridad:</span>
+                                  <span className={`font-medium ${passwordStrength.textColor}`}>
+                                    {passwordStrength.label}
+                                  </span>
+                                </div>
+                                <div className="h-1 bg-muted rounded-full overflow-hidden">
+                                  <motion.div
+                                    initial={{ width: 0 }}
+                                    animate={{ width: `${passwordStrength.strength}%` }}
+                                    transition={{ duration: 0.3 }}
+                                    className={`h-full ${passwordStrength.color} rounded-full`}
+                                  />
+                                </div>
                               </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </div>
-                      {step2Form.formState.errors.confirmPassword && (
-                        <p className="text-sm text-destructive mt-1">{step2Form.formState.errors.confirmPassword.message}</p>
-                      )}
-                    </div>
-                  </div>
+                            )}
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      <FormField
+                        control={step2Form.control}
+                        name="confirmPassword"
+                        render={({ field }) => (
+                          <FormItem className="relative">
+                            <FormLabel>Confirmar contraseña</FormLabel>
+                            <FormControl>
+                              <div className="relative">
+                                <Input
+                                  type="password"
+                                  placeholder="Confirma tu contraseña"
+                                  className="pr-10"
+                                  {...field}
+                                  onChange={(e) => {
+                                    field.onChange(e)
+                                    handleFieldValidation('confirmPassword', e.target.value === step2Form.watch('password') && e.target.value.length >= 6)
+                                  }}
+                                />
+                                <AnimatePresence>
+                                  {validatedFields.confirmPassword && (
+                                    <motion.div
+                                      initial={{ scale: 0 }}
+                                      animate={{ scale: 1 }}
+                                      exit={{ scale: 0 }}
+                                      className="absolute right-3 top-1/2 -translate-y-1/2"
+                                    >
+                                      <div className="w-4 h-4 bg-primary rounded-full flex items-center justify-center">
+                                        <Check className="w-2.5 h-2.5 text-white" />
+                                      </div>
+                                    </motion.div>
+                                  )}
+                                </AnimatePresence>
+                              </div>
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </form>
+                  </Form>
                 </motion.div>
               )}
 
@@ -717,14 +767,14 @@ function RegisterContent() {
                   className="space-y-4"
                 >
                   <div className="text-center mb-2">
-                    <div className={`w-14 h-14 ${isDoctor ? 'bg-green-50' : 'bg-primary/10'} rounded-xl flex items-center justify-center mx-auto mb-3`}>
+                    <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3">
                       {isDoctor ? (
-                        <Stethoscope className="w-7 h-7 text-green-600" />
+                        <Stethoscope className="w-7 h-7 text-primary" />
                       ) : (
                         <Heart className="w-7 h-7 text-primary" />
                       )}
                     </div>
-                    <h2 className="text-lg font-medium">
+                    <h2 className="text-lg font-medium text-foreground">
                       {isDoctor ? 'Perfil profesional' : 'Completa tu registro'}
                     </h2>
                     <p className="text-sm text-muted-foreground mt-1">
@@ -733,104 +783,129 @@ function RegisterContent() {
                   </div>
 
                   {isDoctor ? (
-                    <div className="space-y-4">
-                      <div>
-                        <Label htmlFor="licenseNumber" className="text-sm">
-                          Número de cédula profesional (opcional)
-                        </Label>
-                        <Input
-                          id="licenseNumber"
-                          {...step3DoctorForm.register('licenseNumber')}
-                          placeholder="12345678"
-                          className="mt-1.5"
+                    <Form {...step3DoctorForm}>
+                      <form className="space-y-4">
+                        <FormField
+                          control={step3DoctorForm.control}
+                          name="licenseNumber"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>Número de cédula profesional (opcional)</FormLabel>
+                              <FormControl>
+                                <Input placeholder="12345678" {...field} />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
                         />
-                      </div>
 
-                      <div>
-                        <Label className="text-sm">Especialidades</Label>
-                        <div className="grid grid-cols-2 gap-2 mt-2">
-                          {specialties.map((specialty) => {
-                            const isSelected = step3DoctorForm.watch('specialties')?.includes(specialty)
-                            return (
-                              <label
-                                key={specialty}
-                                className={`flex items-center gap-2 p-2.5 rounded-md border cursor-pointer transition-all text-sm ${
-                                  isSelected
-                                    ? 'border-green-500 bg-green-50 text-green-700'
-                                    : 'border-input hover:border-muted-foreground/25'
-                                }`}
-                              >
-                                <Checkbox
-                                  checked={isSelected}
-                                  onCheckedChange={(checked) => {
-                                    const current = step3DoctorForm.getValues('specialties') || []
-                                    if (checked) {
-                                      step3DoctorForm.setValue('specialties', [...current, specialty])
-                                    } else {
-                                      step3DoctorForm.setValue('specialties', current.filter(s => s !== specialty))
-                                    }
-                                  }}
-                                />
-                                <span className="font-medium">{specialty}</span>
-                              </label>
-                            )
-                          })}
-                        </div>
-                        {step3DoctorForm.formState.errors.specialties && (
-                          <p className="text-sm text-destructive mt-2">{step3DoctorForm.formState.errors.specialties.message}</p>
-                        )}
-                      </div>
+                        <FormField
+                          control={step3DoctorForm.control}
+                          name="specialties"
+                          render={() => (
+                            <FormItem>
+                              <FormLabel>Especialidades</FormLabel>
+                              <div className="grid grid-cols-2 gap-2 mt-2">
+                                {specialties.map((specialty) => {
+                                  const isSelected = step3DoctorForm.watch('specialties')?.includes(specialty)
+                                  return (
+                                    <label
+                                      key={specialty}
+                                      className={`flex items-center gap-2 p-2.5 rounded-md border cursor-pointer transition-all text-sm ${
+                                        isSelected
+                                          ? 'border-primary bg-primary/5 text-primary'
+                                          : 'border-input hover:border-muted-foreground/25'
+                                      }`}
+                                    >
+                                      <Checkbox
+                                        checked={isSelected}
+                                        onCheckedChange={(checked) => {
+                                          const current = step3DoctorForm.getValues('specialties') || []
+                                          if (checked) {
+                                            step3DoctorForm.setValue('specialties', [...current, specialty])
+                                          } else {
+                                            step3DoctorForm.setValue('specialties', current.filter(s => s !== specialty))
+                                          }
+                                        }}
+                                      />
+                                      <span className="font-medium">{specialty}</span>
+                                    </label>
+                                  )
+                                })}
+                              </div>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
 
-                      <Alert className="bg-green-50 border-green-200">
-                        <AlertDescription className="text-green-700 text-sm">
-                          Después del registro, completarás tu perfil profesional con más detalles.
-                        </AlertDescription>
-                      </Alert>
-                    </div>
+                        <Alert className="bg-primary/10 border-primary/20">
+                          <AlertDescription className="text-primary text-sm">
+                            Después del registro, completarás tu perfil profesional con más detalles.
+                          </AlertDescription>
+                        </Alert>
+                      </form>
+                    </Form>
                   ) : (
-                    <div className="space-y-3">
-                      <label className="flex items-start gap-3 p-3.5 rounded-lg border cursor-pointer hover:border-muted-foreground/25 transition-all">
-                        <Checkbox
-                          checked={step3PatientForm.watch('hasMedicalHistory')}
-                          onCheckedChange={(checked) =>
-                            step3PatientForm.setValue('hasMedicalHistory', checked as boolean)
-                          }
-                          className="mt-0.5"
+                    <Form {...step3PatientForm}>
+                      <form className="space-y-3">
+                        <FormField
+                          control={step3PatientForm.control}
+                          name="hasMedicalHistory"
+                          render={({ field }) => (
+                            <FormItem>
+                              <label className="flex items-start gap-3 p-3.5 rounded-lg border cursor-pointer hover:border-muted-foreground/25 transition-all">
+                                <FormControl>
+                                  <Checkbox
+                                    checked={field.value}
+                                    onCheckedChange={field.onChange}
+                                    className="mt-0.5"
+                                  />
+                                </FormControl>
+                                <div>
+                                  <div className="font-medium text-sm text-foreground">Historial médico</div>
+                                  <div className="text-xs text-muted-foreground mt-0.5">
+                                    Tengo condiciones médicas previas que deben conocer
+                                  </div>
+                                </div>
+                              </label>
+                              <FormMessage />
+                            </FormItem>
+                          )}
                         />
-                        <div>
-                          <div className="font-medium text-sm">Historial médico</div>
-                          <div className="text-xs text-muted-foreground mt-0.5">
-                            Tengo condiciones médicas previas que deben conocer
-                          </div>
-                        </div>
-                      </label>
 
-                      <label className="flex items-start gap-3 p-3.5 rounded-lg border cursor-pointer hover:border-muted-foreground/25 transition-all">
-                        <Checkbox
-                          checked={step3PatientForm.watch('acceptTerms')}
-                          onCheckedChange={(checked) =>
-                            step3PatientForm.setValue('acceptTerms', checked as boolean)
-                          }
-                          className="mt-0.5"
+                        <FormField
+                          control={step3PatientForm.control}
+                          name="acceptTerms"
+                          render={({ field }) => (
+                            <FormItem>
+                              <label className="flex items-start gap-3 p-3.5 rounded-lg border cursor-pointer hover:border-muted-foreground/25 transition-all">
+                                <FormControl>
+                                  <Checkbox
+                                    checked={field.value}
+                                    onCheckedChange={field.onChange}
+                                    className="mt-0.5"
+                                  />
+                                </FormControl>
+                                <div>
+                                  <div className="font-medium text-sm text-foreground">Acepto los términos</div>
+                                  <div className="text-xs text-muted-foreground mt-0.5">
+                                    He leído y acepto los{' '}
+                                    <Link href="/terms" className="underline underline-offset-4 hover:text-primary">
+                                      Términos de Servicio
+                                    </Link>
+                                    {' '}y la{' '}
+                                    <Link href="/privacy" className="underline underline-offset-4 hover:text-primary">
+                                      Política de Privacidad
+                                    </Link>
+                                  </div>
+                                </div>
+                              </label>
+                              <FormMessage />
+                            </FormItem>
+                          )}
                         />
-                        <div>
-                          <div className="font-medium text-sm">Acepto los términos</div>
-                          <div className="text-xs text-muted-foreground mt-0.5">
-                            He leído y acepto los{' '}
-                            <Link href="/terms" className="underline underline-offset-4 hover:text-primary">
-                              Términos de Servicio
-                            </Link>
-                            {' '}y la{' '}
-                            <Link href="/privacy" className="underline underline-offset-4 hover:text-primary">
-                              Política de Privacidad
-                            </Link>
-                          </div>
-                        </div>
-                      </label>
-                      {step3PatientForm.formState.errors.acceptTerms && (
-                        <p className="text-sm text-destructive">{step3PatientForm.formState.errors.acceptTerms.message}</p>
-                      )}
-                    </div>
+                      </form>
+                    </Form>
                   )}
                 </motion.div>
               )}
@@ -854,11 +929,7 @@ function RegisterContent() {
                 <Button
                   type="button"
                   onClick={currentStep === 1 ? handleStep1Next : handleStep2Next}
-                  className={`flex-1 ${
-                    isDoctor && currentStep > 1
-                      ? 'bg-green-600 hover:bg-green-700'
-                      : ''
-                  }`}
+                  className="flex-1"
                 >
                   Siguiente
                   <ChevronRight className="w-4 h-4 ml-1" />
@@ -868,9 +939,7 @@ function RegisterContent() {
                   type="button"
                   onClick={handleStep3Submit}
                   disabled={loading}
-                  className={`flex-1 ${
-                    isDoctor ? 'bg-green-600 hover:bg-green-700' : ''
-                  }`}
+                  className="flex-1"
                 >
                   {loading ? (
                     <>

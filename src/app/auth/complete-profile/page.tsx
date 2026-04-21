@@ -5,253 +5,314 @@ import { createClient } from '@/lib/supabase/client'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { useToast } from '@/components/Toast'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import * as z from 'zod'
+import { Loader2 } from 'lucide-react'
+
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Card, CardContent } from '@/components/ui/card'
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form'
+import { cn } from '@/lib/utils'
+
+const profileSchema = z.object({
+  fullName: z.string().min(1, 'El nombre es obligatorio'),
+  phone: z.string().optional(),
+  role: z.enum(['patient', 'doctor']),
+})
+
+type ProfileFormValues = z.infer<typeof profileSchema>
 
 export default function CompleteProfilePage() {
-    const [fullName, setFullName] = useState('')
-    const [phone, setPhone] = useState('')
-    const [role, setRole] = useState<'patient' | 'doctor'>('patient')
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState<string | null>(null)
-    const [successMessage, setSuccessMessage] = useState<string | null>(null)
-    const router = useRouter()
-    const { addToast } = useToast()
-    const [supabase] = useState(() => {
-        try {
-            return createClient()
-        } catch {
-            return null
-        }
-    })
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const [successMessage, setSuccessMessage] = useState<string | null>(null)
+  const router = useRouter()
+  const { addToast } = useToast()
+  const [supabase] = useState(() => {
+    try {
+      return createClient()
+    } catch {
+      return null
+    }
+  })
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault()
-        setLoading(true)
-        setError(null)
-        setSuccessMessage(null)
+  const form = useForm<ProfileFormValues>({
+    resolver: zodResolver(profileSchema),
+    defaultValues: {
+      fullName: '',
+      phone: '',
+      role: 'patient',
+    },
+  })
 
-        if (!supabase) {
-            setError('Authentication not available')
-            setLoading(false)
-            return
-        }
+  const onSubmit = async (data: ProfileFormValues) => {
+    setLoading(true)
+    setError(null)
+    setSuccessMessage(null)
 
-        try {
-            const { data: { user } } = await supabase.auth.getUser()
-
-            if (!user) {
-                router.push('/auth/login')
-                return
-            }
-
-            // Check if user record already exists
-            const { data: existingUser } = await supabase
-                .from('profiles')
-                .select('id')
-                .eq('id', user.id)
-                .single()
-
-            if (existingUser) {
-                // User exists, update the record
-                const { error: updateError } = await supabase
-                    .from('profiles')
-                    .update({
-                        full_name: fullName,
-                        phone: phone || null,
-                        role: role,
-                    })
-                    .eq('id', user.id)
-
-                if (updateError) {
-                    throw new Error(updateError.message || 'Failed to update user profile')
-                }
-            } else {
-                // User doesn't exist, create new record
-                const { error: insertError } = await supabase
-                    .from('profiles')
-                    .insert({
-                        id: user.id,
-                        full_name: fullName,
-                        phone: phone || null,
-                        role: role,
-                    })
-
-                if (insertError) {
-                    throw new Error(insertError.message || 'Failed to create user profile')
-                }
-            }
-
-            // If doctor, create doctor record (will be completed in onboarding)
-            if (role === 'doctor') {
-                try {
-                    // Check if doctor record already exists
-                    const { data: existingDoctor } = await supabase
-                        .from('doctors')
-                        .select('id')
-                        .eq('id', user.id)
-                        .single()
-
-                    if (!existingDoctor) {
-                        // Doctor doesn't exist, create new record with defaults
-                        // The id references profiles.id directly
-                        const { error: doctorError } = await supabase
-                            .from('doctors')
-                            .insert({
-                                id: user.id,
-                                price_cents: 50000, // Default $500 MXN
-                                status: 'draft',
-                            })
-                        
-                        if (doctorError) {
-                            console.error('Doctor insert error:', doctorError)
-                        }
-                    }
-                } catch (doctorError) {
-                    console.error('Doctor record error (non-blocking):', doctorError)
-                    // Don't throw - doctor record will be created in onboarding if needed
-                }
-            }
-
-            // Redirect to appropriate dashboard
-            const nextPath = role === 'doctor' ? '/doctor/onboarding' : '/app'
-            setSuccessMessage(role === 'doctor'
-                ? 'Perfil guardado. Ahora te llevaremos a completar tu perfil profesional.'
-                : 'Perfil guardado. Ahora te llevaremos a tu panel para empezar a usar Doctor.mx.')
-            addToast('Perfil guardado correctamente.', 'success')
-            await router.push(nextPath)
-            router.refresh()
-        } catch (err) {
-            const errorMessage = err instanceof Error ? err.message : 'Error al crear perfil'
-            console.error('Profile creation error:', errorMessage)
-            setError('Error al crear perfil. Por favor intenta de nuevo.')
-        } finally {
-            setLoading(false)
-        }
+    if (!supabase) {
+      setError('Authentication not available')
+      setLoading(false)
+      return
     }
 
-    return (
-        <div className="min-h-screen bg-gradient-hero flex items-center justify-center p-4">
-            <div className="w-full max-w-md">
-                {/* Logo */}
-                <div className="text-center mb-8">
-                    <Link href="/" className="inline-flex items-center gap-2">
-                        <div className="w-12 h-12 bg-primary-500 rounded-xl flex items-center justify-center">
-                            <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                            </svg>
-                        </div>
-                        <span className="text-3xl font-bold text-ink-primary">Doctor.mx</span>
-                    </Link>
-                </div>
+    try {
+      const { data: { user } } = await supabase.auth.getUser()
 
-                {/* Form Card */}
-                <div className="bg-white rounded-2xl shadow-card border border-border p-8">
-                    <h1 className="text-2xl font-bold text-ink-primary mb-2 text-center">
-                        Completa tu perfil
-                    </h1>
-                    <p className="text-ink-secondary text-center mb-6">
-                        Necesitamos algunos datos para continuar
-                    </p>
+      if (!user) {
+        router.push('/auth/login')
+        return
+      }
 
-                    <div className="mb-6 grid gap-3">
-                        <div className={`rounded-xl border p-3 text-sm ${role === 'patient' ? 'border-blue-200 bg-blue-50 text-blue-900' : 'border-emerald-200 bg-emerald-50 text-emerald-900'}`}>
-                            {role === 'patient'
-                                ? 'Completa tu perfil para guardar tus citas, consultas y seguimiento en un solo lugar.'
-                                : 'Completa tu perfil para continuar con onboarding, verificación y configuración de tu práctica.'}
-                        </div>
-                    </div>
+      // Check if user record already exists
+      const { data: existingUser } = await supabase
+        .from('profiles')
+        .select('id')
+        .eq('id', user.id)
+        .single()
 
-                    {error && (
-                        <div className="mb-4 p-3 bg-error-50 border border-error-200 rounded-xl text-error-700 text-sm">
-                            {error}
-                        </div>
-                    )}
+      if (existingUser) {
+        // User exists, update the record
+        const { error: updateError } = await supabase
+          .from('profiles')
+          .update({
+            full_name: data.fullName,
+            phone: data.phone || null,
+            role: data.role,
+          })
+          .eq('id', user.id)
 
-                    {successMessage && (
-                        <div className="mb-4 p-3 bg-green-50 border border-green-200 rounded-xl text-green-700 text-sm">
-                            {successMessage}
-                        </div>
-                    )}
+        if (updateError) {
+          throw new Error(updateError.message || 'Failed to update user profile')
+        }
+      } else {
+        // User doesn't exist, create new record
+        const { error: insertError } = await supabase
+          .from('profiles')
+          .insert({
+            id: user.id,
+            full_name: data.fullName,
+            phone: data.phone || null,
+            role: data.role,
+          })
 
-                    <form onSubmit={handleSubmit} className="space-y-4">
-                        <div>
-                            <label htmlFor="fullName" className="block text-sm font-medium text-ink-primary mb-1">
-                                Nombre completo
-                            </label>
-                            <input
-                                id="fullName"
-                                type="text"
-                                value={fullName}
-                                onChange={(e) => setFullName(e.target.value)}
-                                required
-                                className="w-full px-4 py-3 border border-border rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
-                                placeholder="Tu nombre completo"
-                            />
-                        </div>
+        if (insertError) {
+          throw new Error(insertError.message || 'Failed to create user profile')
+        }
+      }
 
-                        <div>
-                            <label htmlFor="phone" className="block text-sm font-medium text-ink-primary mb-1">
-                                Teléfono (opcional)
-                            </label>
-                            <input
-                                id="phone"
-                                type="tel"
-                                value={phone}
-                                onChange={(e) => setPhone(e.target.value)}
-                                className="w-full px-4 py-3 border border-border rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
-                                placeholder="+52 55 1234 5678"
-                            />
-                        </div>
+      // If doctor, create doctor record (will be completed in onboarding)
+      if (data.role === 'doctor') {
+        try {
+          // Check if doctor record already exists
+          const { data: existingDoctor } = await supabase
+            .from('doctors')
+            .select('id')
+            .eq('id', user.id)
+            .single()
 
-                        <div>
-                            <label className="block text-sm font-medium text-ink-primary mb-2">
-                                ¿Cómo usarás Doctor.mx?
-                            </label>
-                            <div className="grid grid-cols-2 gap-3">
-                                <button
-                                    type="button"
-                                    onClick={() => setRole('patient')}
-                                    className={`p-4 rounded-xl border-2 transition-all ${role === 'patient'
-                                            ? 'border-primary-500 bg-primary-50'
-                                            : 'border-border hover:border-primary-200'
-                                        }`}
-                                >
-                                    <div className="w-10 h-10 mx-auto mb-2 bg-blue-100 rounded-lg flex items-center justify-center">
-                                        <svg className="w-6 h-6 text-[#0066CC]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                        </svg>
-                                    </div>
-                                    <div className="font-medium text-ink-primary">Paciente</div>
-                                    <div className="text-xs text-ink-secondary">Buscar doctores</div>
-                                </button>
-                                <button
-                                    type="button"
-                                    onClick={() => setRole('doctor')}
-                                    className={`p-4 rounded-xl border-2 transition-all ${role === 'doctor'
-                                            ? 'border-primary-500 bg-primary-50'
-                                            : 'border-border hover:border-primary-200'
-                                        }`}
-                                >
-                                    <div className="w-10 h-10 mx-auto mb-2 bg-blue-100 rounded-lg flex items-center justify-center">
-                                        <svg className="w-6 h-6 text-[#0066CC]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                    </div>
-                                    <div className="font-medium text-ink-primary">Doctor</div>
-                                    <div className="text-xs text-ink-secondary">Ofrecer consultas</div>
-                                </button>
-                            </div>
-                        </div>
+          if (!existingDoctor) {
+            // Doctor doesn't exist, create new record with defaults
+            // The id references profiles.id directly
+            const { error: doctorError } = await supabase
+              .from('doctors')
+              .insert({
+                id: user.id,
+                price_cents: 50000, // Default $500 MXN
+                status: 'draft',
+              })
 
-                        <button
-                            type="submit"
-                            disabled={loading || !fullName}
-                            className="w-full py-3 px-4 bg-primary-500 text-white rounded-xl font-medium hover:bg-primary-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-button hover:shadow-button-hover"
-                        >
-                            {loading ? 'Guardando...' : 'Continuar'}
-                        </button>
-                    </form>
-                </div>
+            if (doctorError) {
+              console.error('Doctor insert error:', doctorError)
+            }
+          }
+        } catch (doctorError) {
+          console.error('Doctor record error (non-blocking):', doctorError)
+          // Don't throw - doctor record will be created in onboarding if needed
+        }
+      }
+
+      // Redirect to appropriate dashboard
+      const nextPath = data.role === 'doctor' ? '/doctor/onboarding' : '/app'
+      setSuccessMessage(data.role === 'doctor'
+        ? 'Perfil guardado. Ahora te llevaremos a completar tu perfil profesional.'
+        : 'Perfil guardado. Ahora te llevaremos a tu panel para empezar a usar Doctor.mx.')
+      addToast('Perfil guardado correctamente.', 'success')
+      await router.push(nextPath)
+      router.refresh()
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : 'Error al crear perfil'
+      console.error('Profile creation error:', errorMessage)
+      setError('Error al crear perfil. Por favor intenta de nuevo.')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  return (
+    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+      <div className="w-full max-w-md">
+        {/* Logo */}
+        <div className="text-center mb-8">
+          <Link href="/" className="inline-flex items-center gap-2">
+            <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
+              <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
             </div>
+            <span className="text-3xl font-bold text-foreground">Doctor.mx</span>
+          </Link>
         </div>
-    )
+
+        {/* Form Card */}
+        <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-8">
+          <h1 className="font-display text-2xl font-bold text-foreground mb-2 text-center">
+            Completa tu perfil
+          </h1>
+          <p className="text-sm text-muted-foreground text-center mb-6">
+            Necesitamos algunos datos para continuar
+          </p>
+
+          <div className="mb-6 grid gap-3">
+            <div className={cn(
+              'rounded-xl border p-3 text-sm',
+              form.watch('role') === 'patient'
+                ? 'bg-muted border-border text-foreground'
+                : 'bg-muted border-border text-foreground'
+            )}>
+              {form.watch('role') === 'patient'
+                ? 'Completa tu perfil para guardar tus citas, consultas y seguimiento en un solo lugar.'
+                : 'Completa tu perfil para continuar con onboarding, verificación y configuración de tu práctica.'}
+            </div>
+          </div>
+
+          {error && (
+            <div className="mb-4 p-3 bg-destructive/10 border border-destructive/20 rounded-xl text-destructive text-sm">
+              {error}
+            </div>
+          )}
+
+          {successMessage && (
+            <div className="mb-4 p-3 bg-primary/10 border border-primary/20 rounded-xl text-primary text-sm">
+              {successMessage}
+            </div>
+          )}
+
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+              <FormField
+                control={form.control}
+                name="fullName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Nombre completo</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Tu nombre completo"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="phone"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Teléfono (opcional)</FormLabel>
+                    <FormControl>
+                      <Input
+                        type="tel"
+                        placeholder="+52 55 1234 5678"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="role"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>¿Cómo usarás Doctor.mx?</FormLabel>
+                    <div className="grid grid-cols-2 gap-3">
+                      <Card
+                        className={cn(
+                          'cursor-pointer transition-all hover:border-primary',
+                          field.value === 'patient'
+                            ? 'border-primary bg-primary/5'
+                            : 'border-border'
+                        )}
+                        onClick={() => field.onChange('patient')}
+                      >
+                        <CardContent className="p-4 flex flex-col items-center text-center">
+                          <div className="w-10 h-10 mb-2 bg-primary/10 rounded-lg flex items-center justify-center">
+                            <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            </svg>
+                          </div>
+                          <div className="font-medium text-foreground">Paciente</div>
+                          <div className="text-xs text-muted-foreground">Buscar doctores</div>
+                        </CardContent>
+                      </Card>
+                      <Card
+                        className={cn(
+                          'cursor-pointer transition-all hover:border-primary',
+                          field.value === 'doctor'
+                            ? 'border-primary bg-primary/5'
+                            : 'border-border'
+                        )}
+                        onClick={() => field.onChange('doctor')}
+                      >
+                        <CardContent className="p-4 flex flex-col items-center text-center">
+                          <div className="w-10 h-10 mb-2 bg-primary/10 rounded-lg flex items-center justify-center">
+                            <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                          </div>
+                          <div className="font-medium text-foreground">Doctor</div>
+                          <div className="text-xs text-muted-foreground">Ofrecer consultas</div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <Button
+                type="submit"
+                disabled={loading || !form.watch('fullName')}
+                className="w-full"
+              >
+                {loading ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Guardando...
+                  </>
+                ) : (
+                  'Continuar'
+                )}
+              </Button>
+            </form>
+          </Form>
+        </div>
+      </div>
+    </div>
+  )
 }

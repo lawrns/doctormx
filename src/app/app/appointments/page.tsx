@@ -3,17 +3,22 @@
 import { useState, useEffect, useCallback, Suspense } from 'react'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
-import {
-  Badge,
-  EmptyState,
-  LoadingButton,
-  Avatar,
-  Modal,
-  ModalFooter,
-} from '@/components'
-import { useToast } from '@/components/Toast'
 import { Calendar } from 'lucide-react'
-import { formatDoctorName } from '@/lib/utils'
+import { formatDoctorName, cn } from '@/lib/utils'
+import { useToast } from '@/components/Toast'
+
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Skeleton } from '@/components/ui/skeleton'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog'
 
 interface DoctorInfo {
   id: string
@@ -71,16 +76,16 @@ function formatPrice(cents: number, currency: string): string {
   }).format(cents / 100)
 }
 
-function getStatusInfo(status: string): { label: string; variant: 'success' | 'warning' | 'error' | 'info' | 'neutral'; colorClass: string } {
-  const statusMap: Record<string, { label: string; variant: 'success' | 'warning' | 'error' | 'info' | 'neutral'; colorClass: string }> = {
-    pending_payment: { label: 'Pago pendiente', variant: 'warning', colorClass: 'bg-yellow-100 text-yellow-800' },
-    confirmed: { label: 'Confirmada', variant: 'success', colorClass: 'bg-teal-50 text-teal-800' },
-    completed: { label: 'Completada', variant: 'info', colorClass: 'bg-blue-100 text-blue-800' },
-    cancelled: { label: 'Cancelada', variant: 'error', colorClass: 'bg-red-100 text-red-800' },
-    refunded: { label: 'Reembolsada', variant: 'neutral', colorClass: 'bg-gray-100 text-gray-800' },
-    no_show: { label: 'No asistió', variant: 'error', colorClass: 'bg-red-100 text-red-800' },
+function getStatusInfo(status: string): { label: string; variant: 'default' | 'secondary' | 'destructive' | 'outline' | 'warning' | 'info' } {
+  const statusMap: Record<string, { label: string; variant: 'default' | 'secondary' | 'destructive' | 'outline' | 'warning' | 'info' }> = {
+    pending_payment: { label: 'Pago pendiente', variant: 'warning' },
+    confirmed: { label: 'Confirmada', variant: 'default' },
+    completed: { label: 'Completada', variant: 'info' },
+    cancelled: { label: 'Cancelada', variant: 'destructive' },
+    refunded: { label: 'Reembolsada', variant: 'secondary' },
+    no_show: { label: 'No asistió', variant: 'destructive' },
   }
-  return statusMap[status] || { label: status, variant: 'neutral', colorClass: 'bg-gray-100 text-gray-800' }
+  return statusMap[status] || { label: status, variant: 'secondary' }
 }
 
 function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; onCancel: (id: string) => void }) {
@@ -143,8 +148,8 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
 
     if (isInProgress) {
       return (
-        <Badge className="bg-red-100 text-red-800 border-red-200">
-          <span className="relative flex h-2 w-2 mr-1">
+        <Badge variant="destructive" className="gap-1.5">
+          <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
           </span>
@@ -155,8 +160,8 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
 
     if (isInLobby || appointment.video_status === 'ready') {
       return (
-        <Badge className="bg-green-100 text-green-800 border-green-200">
-          <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+        <Badge variant="default" className="gap-1.5">
+          <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
           </svg>
           Lista para unirse
@@ -169,29 +174,32 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
 
   return (
     <>
-      <div className={`bg-white rounded-lg border hover:shadow-md transition-shadow p-4 ${isInProgress ? 'border-l-4 border-l-red-500' : isInLobby ? 'border-l-4 border-l-green-500' : ''}`}>
+      <div className={cn(
+        "bg-card rounded-2xl border border-border shadow-dx-1 p-4 hover:shadow-card transition-shadow",
+        isInProgress && "border-l-4 border-l-red-500",
+        isInLobby && "border-l-4 border-l-green-500"
+      )}>
         <div className="flex items-start gap-4">
-          <Avatar
-            name={doctorName}
-            src={appointment.doctor?.profile?.photo_url}
-            size="lg"
-          />
+          <Avatar size="lg" className="flex-shrink-0">
+            <AvatarImage src={appointment.doctor?.profile?.photo_url || undefined} alt={doctorName} />
+            <AvatarFallback>{formatDoctorName(doctorName).charAt(0)}</AvatarFallback>
+          </Avatar>
 
           <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between gap-2">
               <div>
-                <Link href={`/doctors/${doctorId}`} className="font-medium text-gray-900 hover:text-blue-600 transition-colors">
+                <Link href={`/doctors/${doctorId}`} className="font-medium text-foreground hover:text-primary transition-colors">
                   {formatDoctorName(doctorName)}
                 </Link>
-                <p className="text-sm text-gray-500">{specialty}</p>
+                <p className="text-sm text-muted-foreground">{specialty}</p>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 flex-wrap justify-end">
                 {getVideoStatusBadge()}
                 <Badge variant={statusInfo.variant}>{statusInfo.label}</Badge>
               </div>
             </div>
 
-            <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-gray-600">
+            <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
               <span className="flex items-center gap-1">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -205,7 +213,7 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
                 {time}
               </span>
               {isVideo ? (
-                <span className="flex items-center gap-1 text-blue-600">
+                <span className="flex items-center gap-1 text-primary">
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
@@ -223,129 +231,113 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
             </div>
 
             <div className="mt-3 flex items-center justify-between">
-              <span className="text-sm font-medium text-gray-900">
+              <span className="text-sm font-medium text-foreground">
                 {formatPrice(price, currency)}
               </span>
 
               <div className="flex gap-2 flex-wrap">
                 {/* Video call states */}
                 {isVideo && isInProgress && (
-                  <Link
-                    href={`/app/appointments/${appointment.id}/video`}
-                    className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-md transition-colors"
-                  >
-                    <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    Volver a llamada
-                  </Link>
+                  <Button asChild size="sm" variant="destructive">
+                    <Link href={`/app/appointments/${appointment.id}/video`}>
+                      <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                      Volver a llamada
+                    </Link>
+                  </Button>
                 )}
 
                 {isVideo && isInLobby && (
-                  <Link
-                    href={`/app/appointments/${appointment.id}/video`}
-                    className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-white bg-green-600 hover:bg-green-700 rounded-md transition-colors"
-                  >
-                    <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    Unirse
-                  </Link>
+                  <Button asChild size="sm" variant="default">
+                    <Link href={`/app/appointments/${appointment.id}/video`}>
+                      <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      Unirse
+                    </Link>
+                  </Button>
                 )}
 
                 {/* Completed state actions */}
                 {isCompleted && (
                   <>
-                    <Link
-                      href={`/app/appointments/${appointment.id}`}
-                      className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-gray-600 hover:text-gray-700 hover:bg-gray-100 rounded-md transition-colors"
-                    >
-                      <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                      </svg>
-                      Ver resumen
-                    </Link>
-                    <Link
-                      href={`/doctors/${doctorId}`}
-                      className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded-md transition-colors"
-                    >
-                      <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                      </svg>
-                      Agendar seguimiento
-                    </Link>
+                    <Button asChild size="sm" variant="outline">
+                      <Link href={`/app/appointments/${appointment.id}`}>
+                        <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        Ver resumen
+                      </Link>
+                    </Button>
+                    <Button asChild size="sm" variant="outline">
+                      <Link href={`/doctors/${doctorId}`}>
+                        <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                        </svg>
+                        Agendar seguimiento
+                      </Link>
+                    </Button>
                   </>
                 )}
 
                 {/* Rebook button */}
                 {canRebook && !isCompleted && (
-                  <Link
-                    href={`/doctors/${doctorId}`}
-                    className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded-md transition-colors"
-                  >
-                    <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                    </svg>
-                    Nueva cita
-                  </Link>
+                  <Button asChild size="sm" variant="outline">
+                    <Link href={`/doctors/${doctorId}`}>
+                      <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                      </svg>
+                      Nueva cita
+                    </Link>
+                  </Button>
                 )}
 
                 {/* Cancel button */}
                 {canCancel && (
-                  <button
-                    onClick={() => setShowCancelModal(true)}
-                    className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-red-600 hover:text-red-700 hover:bg-red-50 rounded-md transition-colors"
-                  >
+                  <Button size="sm" variant="ghost" className="text-destructive hover:text-destructive hover:bg-destructive/10" onClick={() => setShowCancelModal(true)}>
                     <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                     Cancelar
-                  </button>
+                  </Button>
                 )}
 
                 {/* Details button */}
-                <Link
-                  href={`/app/appointments/${appointment.id}`}
-                  className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-gray-600 hover:text-gray-700 hover:bg-gray-100 rounded-md transition-colors"
-                >
-                  <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                  </svg>
-                  Ver detalles
-                </Link>
+                <Button asChild size="sm" variant="outline">
+                  <Link href={`/app/appointments/${appointment.id}`}>
+                    <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    Ver detalles
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <Modal
-        isOpen={showCancelModal}
-        onClose={() => setShowCancelModal(false)}
-        title="Cancelar Cita"
-        size="sm"
-      >
-        <p className="text-gray-600">
-          ¿Estás seguro de que deseas cancelar esta cita? Esta acción no se puede deshacer.
-        </p>
-        <ModalFooter>
-          <button
-            onClick={() => setShowCancelModal(false)}
-            className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-700 hover:bg-gray-100 rounded-md transition-colors"
-          >
-            Mantener cita
-          </button>
-          <LoadingButton
-            isLoading={isCancelling}
-            onClick={handleCancel}
-            variant="danger"
-          >
-            Sí, cancelar
-          </LoadingButton>
-        </ModalFooter>
-      </Modal>
+      <Dialog open={showCancelModal} onOpenChange={setShowCancelModal}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Cancelar Cita</DialogTitle>
+            <DialogDescription>
+              ¿Estás seguro de que deseas cancelar esta cita? Esta acción no se puede deshacer.
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setShowCancelModal(false)}>
+              Mantener cita
+            </Button>
+            <Button variant="destructive" onClick={handleCancel} disabled={isCancelling}>
+              {isCancelling ? 'Cancelando...' : 'Sí, cancelar'}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </>
   )
 }
@@ -450,26 +442,28 @@ function AppointmentsPageContent() {
     <div className="p-6 lg:p-8">
       <div className="max-w-5xl mx-auto">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">Mis Citas</h1>
-          <p className="text-gray-600">Gestiona tus consultas médicas</p>
+          <h1 className="font-display text-2xl font-bold tracking-tight text-foreground mb-2">Mis Citas</h1>
+          <p className="text-sm text-muted-foreground">Gestiona tus consultas médicas</p>
         </div>
         <div className="mb-6">
-          <div className="border-b border-gray-200">
+          <div className="border-b border-border">
             <nav className="flex gap-4">
               {tabs.map(tab => (
                 <button
                   key={tab.key}
                   onClick={() => handleTabChange(tab.key)}
-                  className={`pb-3 px-1 text-sm font-medium border-b-2 transition-colors ${
+                  className={cn(
+                    "pb-3 px-1 text-sm font-medium border-b-2 transition-colors",
                     activeTab === tab.key
-                      ? 'border-blue-600 text-blue-600'
-                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                  }`}
+                      ? 'border-primary text-primary'
+                      : 'border-transparent text-muted-foreground hover:text-foreground hover:border-border'
+                  )}
                 >
                   {tab.label}
-                  <span className={`ml-2 px-2 py-0.5 rounded-full text-xs ${
-                    activeTab === tab.key ? 'bg-blue-100 text-blue-600' : 'bg-gray-100 text-gray-600'
-                  }`}>
+                  <span className={cn(
+                    "ml-2 px-2 py-0.5 rounded-full text-xs",
+                    activeTab === tab.key ? 'bg-primary/10 text-primary' : 'bg-secondary text-muted-foreground'
+                  )}>
                     {getFilteredCount(tab.key)}
                   </span>
                 </button>
@@ -479,7 +473,7 @@ function AppointmentsPageContent() {
         </div>
 
         {errorMessage && (
-          <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
+          <div className="mb-4 p-4 bg-destructive/10 border border-destructive/20 rounded-xl text-destructive text-sm">
             {errorMessage}
           </div>
         )}
@@ -487,41 +481,41 @@ function AppointmentsPageContent() {
         {isLoading ? (
           <div className="space-y-4">
             {[1, 2, 3].map(i => (
-              <div key={i} className="bg-white rounded-lg border p-4 animate-pulse">
+              <div key={i} className="bg-card rounded-2xl border border-border shadow-dx-1 p-4">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gray-200 rounded-full" />
+                  <Skeleton className="w-12 h-12 rounded-full" />
                   <div className="flex-1 space-y-2">
-                    <div className="h-4 bg-gray-200 rounded w-1/3" />
-                    <div className="h-3 bg-gray-200 rounded w-1/4" />
-                    <div className="h-3 bg-gray-200 rounded w-1/2" />
+                    <Skeleton className="h-4 w-1/3" />
+                    <Skeleton className="h-3 w-1/4" />
+                    <Skeleton className="h-3 w-1/2" />
                   </div>
                 </div>
               </div>
             ))}
           </div>
         ) : appointments.length === 0 ? (
-          <EmptyState
-            iconName="calendar"
-            title={
-              activeTab === 'all'
+          <div className="text-center py-16">
+            <Calendar className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
+            <h3 className="text-lg font-semibold text-foreground mb-1">
+              {activeTab === 'all'
                 ? 'No tienes citas programadas'
                 : activeTab === 'upcoming'
                 ? 'No tienes citas próximas'
                 : activeTab === 'completed'
                 ? 'No tienes citas completadas'
-                : 'No tienes citas canceladas'
-            }
-            description={
-              activeTab === 'all'
+                : 'No tienes citas canceladas'}
+            </h3>
+            <p className="text-sm text-muted-foreground mb-4">
+              {activeTab === 'all'
                 ? 'Cuando reserves una cita con un doctor, aparecerá aquí.'
-                : 'No se encontraron citas en esta categoría.'
-            }
-            action={
-              activeTab === 'all' || activeTab === 'upcoming'
-                ? { label: 'Buscar un doctor', href: '/doctors' }
-                : undefined
-            }
-          />
+                : 'No se encontraron citas en esta categoría.'}
+            </p>
+            {(activeTab === 'all' || activeTab === 'upcoming') && (
+              <Button asChild>
+                <Link href="/doctors">Buscar un doctor</Link>
+              </Button>
+            )}
+          </div>
         ) : (
           <div className="space-y-4">
             {appointments.map(appointment => (
@@ -540,7 +534,11 @@ function AppointmentsPageContent() {
 
 export default function AppointmentsPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-gray-50 flex items-center justify-center"><div className="text-gray-500">Cargando...</div></div>}>
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-muted-foreground text-sm">Cargando...</div>
+      </div>
+    }>
       <AppointmentsPageContent />
     </Suspense>
   )

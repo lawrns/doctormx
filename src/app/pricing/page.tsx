@@ -179,11 +179,11 @@ export default function PricingPage() {
   const [activeTab, setActiveTab] = useState<'patient' | 'doctor'>('patient')
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-background">
       <Header />
       
       {/* Hero */}
-      <section className="pt-24 pb-16 bg-gradient-to-b from-blue-50 to-white">
+      <section className="pt-24 pb-16 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -191,35 +191,29 @@ export default function PricingPage() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="font-display text-5xl font-bold tracking-tight text-foreground mb-6">
               Precios claros y transparentes
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               Elige la opción que mejor se adapta a tus necesidades. Sin cargos sorpresa y con una experiencia pensada para pacientes y doctores en México.
             </p>
             
             {/* Tab Switcher */}
-            <div className="inline-flex rounded-lg bg-gray-100 p-1 mb-8">
-              <button
+            <div className="inline-flex rounded-lg bg-muted p-1 mb-8">
+              <Button
                 onClick={() => setActiveTab('patient')}
-                className={`px-6 py-2 rounded-md text-sm font-medium transition-colors ${
-                  activeTab === 'patient'
-                    ? 'bg-white text-blue-600 shadow-sm'
-                    : 'text-gray-600 hover:text-gray-900'
-                }`}
+                variant={activeTab === 'patient' ? 'default' : 'ghost'}
+                className="px-6 py-2 rounded-md text-sm font-medium"
               >
                 Pacientes
-              </button>
-              <button
+              </Button>
+              <Button
                 onClick={() => setActiveTab('doctor')}
-                className={`px-6 py-2 rounded-md text-sm font-medium transition-colors ${
-                  activeTab === 'doctor'
-                    ? 'bg-white text-blue-600 shadow-sm'
-                    : 'text-gray-600 hover:text-gray-900'
-                }`}
+                variant={activeTab === 'doctor' ? 'default' : 'ghost'}
+                className="px-6 py-2 rounded-md text-sm font-medium"
               >
                 Doctores
-              </button>
+              </Button>
             </div>
           </motion.div>
         </div>
@@ -227,7 +221,7 @@ export default function PricingPage() {
 
       {/* Patient Pricing */}
       {activeTab === 'patient' && (
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-background">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-3 gap-8">
               {patientPlans.map((plan, index) => (
@@ -237,27 +231,27 @@ export default function PricingPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <Card className={`relative h-full ${plan.popular ? 'border-blue-500 shadow-lg' : ''}`}>
+                  <Card className={`relative h-full bg-card rounded-2xl border border-border shadow-dx-1 ${plan.popular ? 'ring-2 ring-primary' : ''}`}>
                     {plan.popular && (
                       <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <Badge className="bg-blue-600 text-white px-4 py-1">
+                        <Badge className="bg-primary text-primary-foreground px-4 py-1">
                           <Star className="w-3 h-3 mr-1" />
                           Más popular
                         </Badge>
                       </div>
                     )}
                     <div className="p-8">
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">{plan.name}</h3>
-                      <p className="text-gray-600 mb-6">{plan.description}</p>
+                      <h3 className="text-xl font-semibold text-foreground mb-2">{plan.name}</h3>
+                      <p className="text-muted-foreground mb-6">{plan.description}</p>
                       <div className="mb-6">
-                        <span className="text-4xl font-bold text-gray-900">
+                        <span className="text-4xl font-bold text-foreground">
                           ${plan.price}
                         </span>
-                        <span className="text-gray-600 ml-2">{plan.unit}</span>
+                        <span className="text-muted-foreground ml-2">{plan.unit}</span>
                       </div>
                       <Link href={plan.ctaLink}>
                         <Button 
-                          className={`w-full mb-8 ${plan.popular ? 'bg-blue-600 hover:bg-blue-700' : ''}`}
+                          className={`w-full mb-8 ${plan.popular ? 'bg-primary hover:bg-primary/90' : ''}`}
                           variant={plan.popular ? 'default' : 'outline'}
                         >
                           {plan.cta}
@@ -266,14 +260,14 @@ export default function PricingPage() {
                       <ul className="space-y-3">
                         {plan.features.map((feature, idx) => (
                           <li key={idx} className="flex items-start text-sm">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                            <span className="text-gray-600">{feature}</span>
+                            <CheckCircle className="w-4 h-4 text-vital mr-2 mt-0.5 flex-shrink-0" />
+                            <span className="text-muted-foreground">{feature}</span>
                           </li>
                         ))}
                         {plan.notIncluded.map((feature, idx) => (
                           <li key={idx} className="flex items-start text-sm opacity-50">
-                            <X className="w-4 h-4 text-gray-400 mr-2 mt-0.5 flex-shrink-0" />
-                            <span className="text-gray-500">{feature}</span>
+                            <X className="w-4 h-4 text-muted-foreground mr-2 mt-0.5 flex-shrink-0" />
+                            <span className="text-muted-foreground">{feature}</span>
                           </li>
                         ))}
                       </ul>
@@ -288,7 +282,7 @@ export default function PricingPage() {
 
       {/* Doctor Pricing */}
       {activeTab === 'doctor' && (
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-background">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-3 gap-8">
               {doctorPlans.map((plan, index) => (
@@ -298,32 +292,32 @@ export default function PricingPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <Card className={`relative h-full ${plan.popular ? 'border-blue-500 shadow-lg' : ''}`}>
+                  <Card className={`relative h-full bg-card rounded-2xl border border-border shadow-dx-1 ${plan.popular ? 'ring-2 ring-primary' : ''}`}>
                     {plan.popular && (
                       <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <Badge className="bg-blue-600 text-white px-4 py-1">
+                        <Badge className="bg-primary text-primary-foreground px-4 py-1">
                           <TrendingUp className="w-3 h-3 mr-1" />
                           Mejor valor
                         </Badge>
                       </div>
                     )}
                     <div className="p-8">
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">{plan.name}</h3>
-                      <p className="text-gray-600 mb-6">{plan.description}</p>
+                      <h3 className="text-xl font-semibold text-foreground mb-2">{plan.name}</h3>
+                      <p className="text-muted-foreground mb-6">{plan.description}</p>
                       <div className="mb-6">
-                        <span className="text-4xl font-bold text-gray-900">
+                        <span className="text-4xl font-bold text-foreground">
                           ${plan.price}
                         </span>
-                        <span className="text-gray-600 ml-2">{plan.unit}</span>
+                        <span className="text-muted-foreground ml-2">{plan.unit}</span>
                       </div>
                       {plan.commission && (
-                        <div className="text-sm text-gray-600 mb-6">
+                        <div className="text-sm text-muted-foreground mb-6">
                           <span className="font-medium">{plan.commission}</span>
                         </div>
                       )}
                       <Link href={plan.ctaLink}>
                         <Button 
-                          className={`w-full mb-8 ${plan.popular ? 'bg-blue-600 hover:bg-blue-700' : ''}`}
+                          className={`w-full mb-8 ${plan.popular ? 'bg-primary hover:bg-primary/90' : ''}`}
                           variant={plan.popular ? 'default' : 'outline'}
                         >
                           {plan.cta}
@@ -332,14 +326,14 @@ export default function PricingPage() {
                       <ul className="space-y-3">
                         {plan.features.map((feature, idx) => (
                           <li key={idx} className="flex items-start text-sm">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                            <span className="text-gray-600">{feature}</span>
+                            <CheckCircle className="w-4 h-4 text-vital mr-2 mt-0.5 flex-shrink-0" />
+                            <span className="text-muted-foreground">{feature}</span>
                           </li>
                         ))}
                         {plan.notIncluded.map((feature, idx) => (
                           <li key={idx} className="flex items-start text-sm opacity-50">
-                            <X className="w-4 h-4 text-gray-400 mr-2 mt-0.5 flex-shrink-0" />
-                            <span className="text-gray-500">{feature}</span>
+                            <X className="w-4 h-4 text-muted-foreground mr-2 mt-0.5 flex-shrink-0" />
+                            <span className="text-muted-foreground">{feature}</span>
                           </li>
                         ))}
                       </ul>
@@ -353,7 +347,7 @@ export default function PricingPage() {
       )}
 
       {/* Features Comparison */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-muted">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -362,86 +356,86 @@ export default function PricingPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Compara beneficios</h2>
-            <p className="text-lg text-gray-600">
+            <h2 className="font-display text-3xl font-bold tracking-tight text-foreground mb-4">Compara beneficios</h2>
+            <p className="text-lg text-muted-foreground">
               Revisa qué incluye cada opción antes de decidir.
             </p>
           </motion.div>
           
-          <Card className="overflow-hidden">
+          <Card className="overflow-hidden bg-card rounded-2xl border border-border shadow-dx-1">
             <div className="overflow-x-auto">
               <table className="w-full">
-                <thead className="bg-gray-50">
+                <thead className="bg-muted">
                   <tr>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">
                       Beneficio
                     </th>
-                    <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-center text-xs font-medium text-muted-foreground uppercase tracking-wider">
                       Single
                     </th>
-                    <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-center text-xs font-medium text-muted-foreground uppercase tracking-wider">
                       Care Plus
                     </th>
-                    <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-center text-xs font-medium text-muted-foreground uppercase tracking-wider">
                       Premium
                     </th>
                   </tr>
                 </thead>
-                <tbody className="bg-white divide-y divide-gray-200">
+                <tbody className="bg-card divide-y divide-border">
                   <tr>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-foreground">
                       Videoconsultas
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-center">
-                      <CheckCircle className="w-5 h-5 text-green-500 mx-auto" />
+                      <CheckCircle className="w-5 h-5 text-vital mx-auto" />
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-center">
-                      <CheckCircle className="w-5 h-5 text-green-500 mx-auto" />
+                      <CheckCircle className="w-5 h-5 text-vital mx-auto" />
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-center">
-                      <CheckCircle className="w-5 h-5 text-green-500 mx-auto" />
+                      <CheckCircle className="w-5 h-5 text-vital mx-auto" />
                     </td>
                   </tr>
-                  <tr className="bg-gray-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                  <tr className="bg-muted/50">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-foreground">
                       Consultas al mes
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-600">
+                    <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-muted-foreground">
                       1
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-600">
+                    <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-muted-foreground">
                       4
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-600">
+                    <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-muted-foreground">
                       Ilimitadas
                     </td>
                   </tr>
                   <tr>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-foreground">
                       Mensajería
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-600">
+                    <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-muted-foreground">
                       7 días
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-center">
-                      <CheckCircle className="w-5 h-5 text-green-500 mx-auto" />
+                      <CheckCircle className="w-5 h-5 text-vital mx-auto" />
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-center">
-                      <CheckCircle className="w-5 h-5 text-green-500 mx-auto" />
+                      <CheckCircle className="w-5 h-5 text-vital mx-auto" />
                     </td>
                   </tr>
-                  <tr className="bg-gray-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                  <tr className="bg-muted/50">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-foreground">
                       Acceso a especialistas
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-center">
-                      <X className="w-5 h-5 text-gray-400 mx-auto" />
+                      <X className="w-5 h-5 text-muted-foreground mx-auto" />
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-center">
-                      <X className="w-5 h-5 text-gray-400 mx-auto" />
+                      <X className="w-5 h-5 text-muted-foreground mx-auto" />
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-center">
-                      <CheckCircle className="w-5 h-5 text-green-500 mx-auto" />
+                      <CheckCircle className="w-5 h-5 text-vital mx-auto" />
                     </td>
                   </tr>
                 </tbody>
@@ -452,7 +446,7 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-background">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -461,7 +455,7 @@ export default function PricingPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Preguntas frecuentes</h2>
+            <h2 className="font-display text-3xl font-bold tracking-tight text-foreground mb-4">Preguntas frecuentes</h2>
           </motion.div>
           
           <div className="space-y-4">
@@ -473,9 +467,9 @@ export default function PricingPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="p-6">
-                  <h3 className="font-semibold text-gray-900 mb-2">{faq.q}</h3>
-                  <p className="text-gray-600">{faq.a}</p>
+                <Card className="p-6 bg-card rounded-2xl border border-border shadow-dx-1">
+                  <h3 className="font-semibold text-foreground mb-2">{faq.q}</h3>
+                  <p className="text-muted-foreground">{faq.a}</p>
                 </Card>
               </motion.div>
             ))}
@@ -484,7 +478,7 @@ export default function PricingPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-blue-600">
+      <section className="py-16 bg-primary">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -492,10 +486,10 @@ export default function PricingPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="font-display text-3xl font-bold tracking-tight text-primary-foreground mb-4">
               ¿Listo para comenzar?
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-primary-foreground/80 mb-8">
               Súmate a una experiencia más simple para reservar, atender y dar seguimiento en línea.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -505,7 +499,7 @@ export default function PricingPage() {
                 </Button>
               </Link>
               <Link href="/for-doctors">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+                <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
                   Unirme como doctor
                 </Button>
               </Link>

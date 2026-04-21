@@ -7,19 +7,20 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { SUBSCRIPTION_PLANS, SUBSCRIPTION_TIERS, type SubscriptionTier } from '@/lib/subscription-types'
-import { Card } from '@/components/Card'
-import { LoadingButton } from '@/components/LoadingButton'
-import { Badge } from '@/components/Badge'
+import { Card, CardContent } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
+import { Skeleton } from '@/components/ui/skeleton'
 import DoctorLayout from '@/components/DoctorLayout'
 
 const CheckIcon = () => (
-    <svg className="w-5 h-5 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <svg className="w-5 h-5 text-vital flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
     </svg>
 )
 
 const XIcon = () => (
-    <svg className="w-5 h-5 text-gray-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <svg className="w-5 h-5 text-muted-foreground flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
     </svg>
 )
@@ -226,9 +227,16 @@ export default function PricingPage() {
 
     if (loading) {
         return (
-            <div className="flex items-center justify-center min-h-screen">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
-            </div>
+            <DoctorLayout profile={profile || { full_name: 'Doctor' }} isPending={isPending} currentPath="/doctor/pricing">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+                    <Skeleton className="h-64 w-full rounded-2xl" />
+                    <div className="grid md:grid-cols-3 gap-8">
+                        <Skeleton className="h-96 rounded-2xl" />
+                        <Skeleton className="h-96 rounded-2xl" />
+                        <Skeleton className="h-96 rounded-2xl" />
+                    </div>
+                </div>
+            </DoctorLayout>
         )
     }
 
@@ -236,13 +244,13 @@ export default function PricingPage() {
 
     return (
         <DoctorLayout profile={profile || { full_name: 'Doctor' }} isPending={isPending} currentPath="/doctor/pricing">
-            <div className="min-h-screen bg-gray-50">
-                <div className="bg-gradient-to-b from-blue-600 to-blue-800 text-white py-20">
-                    <div className="max-w-6xl mx-auto px-4 text-center">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <div>
+                <div className="bg-gradient-to-b from-cobalt-600 to-cobalt-800 text-white py-20">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <h1 className="font-display text-4xl md:text-5xl font-bold tracking-tight mb-4">
                             Planes diseñados para médicos mexicanos
                         </h1>
-                        <p className="text-xl text-blue-100 mb-8">
+                        <p className="text-xl text-white/80 mb-8">
                             Elige el plan ideal para tu práctica. Sin contratos a largo plazo.
                         </p>
                         <div className="flex items-center justify-center gap-4 text-sm flex-wrap">
@@ -259,14 +267,14 @@ export default function PricingPage() {
                     </div>
                 </div>
 
-                <div className="max-w-7xl mx-auto px-4 -mt-8">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8">
                     <div className="grid md:grid-cols-3 gap-8 mb-16">
                         {SUBSCRIPTION_TIERS.map((tier) => {
                             const plan = SUBSCRIPTION_PLANS[tier]
                             const isCurrentPlan = currentPlanId === tier
 
                             return (
-                                <Card key={tier} className={`flex flex-col relative ${plan.highlight ? 'ring-2 ring-blue-500 shadow-xl scale-105 z-10' : ''}`}>
+                                <Card key={tier} className={`flex flex-col relative rounded-2xl border border-border shadow-dx-1 ${plan.highlight ? 'ring-2 ring-primary scale-105 z-10' : ''}`}>
                                     {plan.highlight && (
                                         <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                                             <Badge variant="info">
@@ -283,15 +291,15 @@ export default function PricingPage() {
                                         </div>
                                     )}
 
-                                    <div className="text-center pb-6 border-b border-gray-100">
-                                        <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                                    <div className="text-center pb-6 border-b border-border">
+                                        <h3 className="text-2xl font-bold text-foreground mb-2">
                                             {plan.name_es}
                                         </h3>
                                         <div className="flex items-baseline justify-center gap-1">
-                                            <span className="text-5xl font-bold text-gray-900">
+                                            <span className="text-5xl font-bold text-foreground">
                                                 ${plan.price_mxn}
                                             </span>
-                                            <span className="text-gray-600">MXN/mes</span>
+                                            <span className="text-muted-foreground">MXN/mes</span>
                                         </div>
                                     </div>
 
@@ -310,9 +318,9 @@ export default function PricingPage() {
                                                         ) : isFalse ? (
                                                             <XIcon />
                                                         ) : (
-                                                            <span className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5 font-semibold text-sm">{displayValue}</span>
+                                                            <span className="w-5 h-5 text-primary flex-shrink-0 mt-0.5 font-semibold text-sm">{displayValue}</span>
                                                         )}
-                                                        <span className={`${isFalse ? 'text-gray-400' : 'text-gray-700'}`}>
+                                                        <span className={`${isFalse ? 'text-muted-foreground' : 'text-foreground'}`}>
                                                             {feature.name}
                                                         </span>
                                                     </li>
@@ -324,33 +332,33 @@ export default function PricingPage() {
                                     <div className="p-6 pt-0">
                                         {subscription?.hasSubscription ? (
                                             isCurrentPlan ? (
-                                                <LoadingButton
+                                                <Button
                                                     onClick={handleManageSubscription}
                                                     className="w-full"
                                                     variant="secondary"
                                                 >
                                                     Gestionar Mi Plan
-                                                </LoadingButton>
+                                                </Button>
                                             ) : (
-                                                <LoadingButton
+                                                <Button
                                                     onClick={() => handleSubscribe(tier)}
-                                                    isLoading={processing === tier}
+                                                    disabled={processing === tier}
                                                     className="w-full"
-                                                    variant={plan.highlight ? 'primary' : 'secondary'}
+                                                    variant={plan.highlight ? 'default' : 'secondary'}
                                                 >
                                                     {SUBSCRIPTION_TIERS.indexOf(tier) > SUBSCRIPTION_TIERS.indexOf(currentPlanId || 'starter') 
                                                         ? 'Mejorar a este Plan' 
                                                         : 'Cambiar a este Plan'}
-                                                </LoadingButton>
+                                                </Button>
                                             )
                                         ) : (
-                                            <LoadingButton
+                                            <Button
                                                 onClick={() => router.push('/auth/register')}
                                                 className="w-full"
-                                                variant={plan.highlight ? 'primary' : 'secondary'}
+                                                variant={plan.highlight ? 'default' : 'secondary'}
                                             >
                                                 Comenzar Prueba Gratis
-                                            </LoadingButton>
+                                            </Button>
                                         )}
                                     </div>
                                 </Card>
@@ -359,42 +367,42 @@ export default function PricingPage() {
                     </div>
 
                     <div className="mb-16">
-                        <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
+                        <h2 className="font-display text-3xl font-bold tracking-tight text-center text-foreground mb-8">
                             Compara los Planes
                         </h2>
                         <div className="overflow-x-auto">
-                            <table className="w-full bg-white rounded-xl shadow-lg">
+                            <table className="w-full bg-card rounded-2xl border border-border shadow-dx-1">
                                 <thead>
-                                    <tr className="border-b border-gray-200">
-                                        <th className="text-left p-4 font-semibold text-gray-900">Características</th>
-                                        <th className="text-center p-4 font-semibold text-gray-900 bg-blue-50">Starter</th>
-                                        <th className="text-center p-4 font-semibold text-gray-900 bg-blue-50">Pro</th>
-                                        <th className="text-center p-4 font-semibold text-gray-900 bg-blue-50">Elite</th>
+                                    <tr className="border-b border-border">
+                                        <th className="text-left p-4 font-semibold text-foreground">Características</th>
+                                        <th className="text-center p-4 font-semibold text-foreground bg-secondary/50">Starter</th>
+                                        <th className="text-center p-4 font-semibold text-foreground bg-secondary/50">Pro</th>
+                                        <th className="text-center p-4 font-semibold text-foreground bg-secondary/50">Elite</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {FEATURES.map((feature, idx) => (
-                                        <tr key={idx} className="border-b border-gray-100">
-                                            <td className="p-4 text-gray-700">{feature.name}</td>
+                                        <tr key={idx} className="border-b border-border">
+                                            <td className="p-4 text-foreground">{feature.name}</td>
                                             <td className="text-center p-4">
                                                 {typeof feature.starter === 'boolean' ? (
                                                     feature.starter ? <CheckIcon /> : <XIcon />
                                                 ) : (
-                                                    <span className="font-medium text-gray-900">{feature.starter}</span>
+                                                    <span className="font-medium text-foreground">{feature.starter}</span>
                                                 )}
                                             </td>
-                                            <td className="text-center p-4 bg-blue-50/30">
+                                            <td className="text-center p-4 bg-secondary/30">
                                                 {typeof feature.pro === 'boolean' ? (
                                                     feature.pro ? <CheckIcon /> : <XIcon />
                                                 ) : (
-                                                    <span className="font-medium text-gray-900">{feature.pro}</span>
+                                                    <span className="font-medium text-foreground">{feature.pro}</span>
                                                 )}
                                             </td>
                                             <td className="text-center p-4">
                                                 {typeof feature.elite === 'boolean' ? (
                                                     feature.elite ? <CheckIcon /> : <XIcon />
                                                 ) : (
-                                                    <span className="font-medium text-gray-900">{feature.elite}</span>
+                                                    <span className="font-medium text-foreground">{feature.elite}</span>
                                                 )}
                                             </td>
                                         </tr>
@@ -405,41 +413,39 @@ export default function PricingPage() {
                     </div>
 
                     <div className="mb-16">
-                        <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
+                        <h2 className="font-display text-3xl font-bold tracking-tight text-center text-foreground mb-8">
                             Preguntas Frecuentes
                         </h2>
                         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                             {FAQS.map((faq, idx) => (
-                                <Card key={idx}>
-                                    <h3 className="font-semibold text-gray-900 mb-2">{faq.question}</h3>
-                                    <p className="text-gray-600">{faq.answer}</p>
+                                <Card key={idx} className="rounded-2xl border border-border shadow-dx-1 p-6">
+                                    <h3 className="font-semibold text-foreground mb-2">{faq.question}</h3>
+                                    <p className="text-muted-foreground">{faq.answer}</p>
                                 </Card>
                             ))}
                         </div>
                     </div>
 
-                    <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 md:p-12 text-white text-center mb-8">
-                        <h2 className="text-3xl font-bold mb-4">
+                    <div className="bg-gradient-to-r from-cobalt-600 to-cobalt-800 rounded-2xl p-8 md:p-12 text-white text-center mb-8">
+                        <h2 className="font-display text-3xl font-bold tracking-tight mb-4">
                             ¿Aún tienes dudas?
                         </h2>
-                        <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+                        <p className="text-white/80 mb-6 max-w-2xl mx-auto">
                             Nuestro equipo de soporte está disponible para ayudarte a elegir el plan ideal para tu práctica médica.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <a
-                                href="mailto:doctores@doctor.mx"
-                                className="flex items-center gap-2 bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition"
-                            >
-                                <PhoneIcon />
-                                Agendar llamada con ventas
-                            </a>
-                            <a
-                                href="/support"
-                                className="flex items-center gap-2 border border-white/30 px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition"
-                            >
-                                <ShieldIcon />
-                                Ver preguntas frecuentes
-                            </a>
+                            <Button variant="secondary" asChild className="gap-2">
+                                <a href="mailto:doctores@doctor.mx">
+                                    <PhoneIcon />
+                                    Agendar llamada con ventas
+                                </a>
+                            </Button>
+                            <Button variant="outline" asChild className="gap-2 border-white/30 text-white hover:bg-white/10 hover:text-white">
+                                <a href="/support">
+                                    <ShieldIcon />
+                                    Ver preguntas frecuentes
+                                </a>
+                            </Button>
                         </div>
                     </div>
                 </div>

@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { Mail } from 'lucide-react'
 import type { Appointment, Doctor } from '@/types'
 import { ANALYTICS_EVENTS, trackClientEvent } from '@/lib/analytics/posthog'
+import { Button } from '@/components/ui/button'
 
 function PaymentSuccessContent() {
   const searchParams = useSearchParams()
@@ -59,56 +60,54 @@ function PaymentSuccessContent() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-neutral-50 flex items-center justify-center">
-        <p className="text-neutral-600">Confirmando pago...</p>
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <p className="text-muted-foreground">Confirmando pago...</p>
       </div>
     )
   }
 
   if (error) {
     return (
-      <div className="min-h-screen bg-neutral-50">
-        <header className="bg-white shadow">
-          <div className="container mx-auto px-4 py-6">
-            <Link href="/" className="text-2xl font-bold text-neutral-900">
+      <div className="min-h-screen bg-background">
+        <header className="glass-nav sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <Link href="/" className="font-display text-2xl font-bold tracking-tight text-foreground">
               Doctor.mx
             </Link>
           </div>
         </header>
 
-        <main className="container mx-auto px-4 py-8 max-w-2xl">
-          <div className="bg-white rounded-lg shadow p-8 text-center">
-            <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg className="w-8 h-8 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-2xl">
+          <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-8 text-center">
+            <div className="w-16 h-16 bg-secondary/50 rounded-full flex items-center justify-center mx-auto mb-4 border border-border">
+              <svg className="w-8 h-8 text-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
 
-            <h1 className="text-3xl font-bold text-neutral-900 mb-4">
+            <h1 className="font-display text-2xl font-bold tracking-tight text-foreground mb-4">
               Estamos revisando tu pago
             </h1>
 
-            <p className="text-neutral-600 mb-4">
+            <p className="text-muted-foreground mb-4">
               Tu pago pudo haberse procesado, pero no logramos confirmar el estado automáticamente.
             </p>
 
-            <div className="mb-8 rounded-lg border border-yellow-200 bg-yellow-50 p-4 text-left text-sm text-yellow-900">
+            <div className="mb-8 rounded-xl border border-border bg-secondary/50 p-4 text-left text-sm text-foreground">
               {error}
             </div>
 
             <div className="space-y-3">
-              <Link
-                href="/app/appointments"
-                className="block w-full bg-primary-500 text-white py-3 rounded-lg hover:bg-primary-600 font-medium"
-              >
-                Revisar mis citas
-              </Link>
-              <Link
-                href="/contact"
-                className="block w-full border border-neutral-300 text-neutral-700 py-3 rounded-lg hover:bg-neutral-50 font-medium"
-              >
-                Contactar soporte
-              </Link>
+              <Button asChild className="w-full">
+                <Link href="/app/appointments">
+                  Revisar mis citas
+                </Link>
+              </Button>
+              <Button asChild variant="outline" className="w-full">
+                <Link href="/contact">
+                  Contactar soporte
+                </Link>
+              </Button>
             </div>
           </div>
         </main>
@@ -117,41 +116,41 @@ function PaymentSuccessContent() {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-50">
-      <header className="bg-white shadow">
-        <div className="container mx-auto px-4 py-6">
-          <Link href="/" className="text-2xl font-bold text-neutral-900">
+    <div className="min-h-screen bg-background">
+      <header className="glass-nav sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <Link href="/" className="font-display text-2xl font-bold tracking-tight text-foreground">
             Doctor.mx
           </Link>
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8 max-w-2xl">
-        <div className="bg-white rounded-lg shadow p-8 text-center">
-          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg className="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-2xl">
+        <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-8 text-center">
+          <div className="w-16 h-16 bg-vital-soft rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg className="w-8 h-8 text-vital" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
           </div>
 
-          <h1 className="text-3xl font-bold text-neutral-900 mb-4">
+          <h1 className="font-display text-2xl font-bold tracking-tight text-foreground mb-4">
             ¡Pago Exitoso!
           </h1>
 
-          <p className="text-neutral-600 mb-8">
+          <p className="text-muted-foreground mb-8">
             Tu consulta ha sido agendada y confirmada
           </p>
 
-          <div className="mb-8 rounded-lg border border-blue-200 bg-blue-50 p-4 text-left text-sm text-blue-900">
+          <div className="mb-8 rounded-xl border border-border bg-secondary/50 p-4 text-left text-sm text-foreground">
             Siguiente paso: revisa tu cita, guarda la fecha y entra a la videollamada desde <strong>Mis consultas</strong> cuando llegue la hora.
           </div>
 
           {appointment && (
-            <div className="bg-neutral-50 p-6 rounded-lg mb-8 text-left">
-              <h3 className="font-semibold text-neutral-900 mb-4">
+            <div className="bg-secondary/50 p-6 rounded-xl mb-8 text-left border border-border">
+              <h3 className="font-semibold text-foreground mb-4">
                 Detalles de la consulta
               </h3>
-              <div className="space-y-2 text-sm text-neutral-600">
+              <div className="space-y-2 text-sm text-muted-foreground">
                 <p>
                   <strong>Fecha:</strong>{' '}
                   {new Date(appointment.start_ts).toLocaleDateString('es-MX')}
@@ -171,22 +170,20 @@ function PaymentSuccessContent() {
           )}
 
           <div className="space-y-3">
-            <Link
-              href="/app/appointments"
-              className="block w-full bg-primary-500 text-white py-3 rounded-lg hover:bg-primary-600 font-medium"
-            >
-              Ir a Mis Consultas
-            </Link>
-            <Link
-              href="/doctors"
-              className="block w-full border border-neutral-300 text-neutral-700 py-3 rounded-lg hover:bg-neutral-50 font-medium"
-            >
-              Buscar Otro Doctor
-            </Link>
+            <Button asChild className="w-full">
+              <Link href="/app/appointments">
+                Ir a Mis Consultas
+              </Link>
+            </Button>
+            <Button asChild variant="outline" className="w-full">
+              <Link href="/doctors">
+                Buscar Otro Doctor
+              </Link>
+            </Button>
           </div>
 
-          <p className="text-sm text-neutral-500 mt-6 flex items-center justify-center gap-2">
-            <Mail className="w-4 h-4 text-primary-500" />
+          <p className="text-sm text-muted-foreground mt-6 flex items-center justify-center gap-2">
+            <Mail className="w-4 h-4 text-primary" />
             Recibirás un email de confirmación con los detalles de tu consulta
           </p>
         </div>
@@ -197,7 +194,7 @@ function PaymentSuccessContent() {
 
 export default function PaymentSuccessPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-neutral-50 flex items-center justify-center"><p>Cargando...</p></div>}>
+    <Suspense fallback={<div className="min-h-screen bg-background flex items-center justify-center"><p>Cargando...</p></div>}>
       <PaymentSuccessContent />
     </Suspense>
   )

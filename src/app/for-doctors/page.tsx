@@ -2,11 +2,18 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { PublicSectionHeading } from '@/components/PublicSectionHeading'
 import { Button } from '@/components/ui/button'
-import { Card } from '@/components/ui/card'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import {
+  PageHero,
+  ChapterHeader,
+  EditorialSection,
+  HeroStat,
+  SignatureCard,
+  Eyebrow,
+  ColorFeature,
+} from '@/components/editorial'
 import {
   CheckCircle,
   Users,
@@ -16,47 +23,47 @@ import {
   TrendingUp,
   Shield,
   Star,
-  ArrowRight
+  ArrowRight,
+  Stethoscope,
 } from 'lucide-react'
 
 const benefits = [
   {
     icon: Users,
     title: 'Pacientes de todo México',
-    description: 'Tu perfil visible para miles de pacientes que buscan especialistas como tú. Verificación de cédula incluida.',
+    description:
+      'Tu perfil visible para miles de pacientes que buscan especialistas como tú. Verificación de cédula profesional incluida.',
   },
   {
     icon: Calendar,
-    title: 'Agenda que trabaja por ti',
-    description: 'Sincronización con Google Calendar. Recordatorios automáticos. Cero citas perdidas.',
+    title: 'Agenda inteligente',
+    description:
+      'Sincronización con Google Calendar. Recordatorios automáticos por WhatsApp y email. Cero citas perdidas.',
   },
   {
     icon: Video,
-    title: 'Telemedicina de primer nivel',
-    description: 'Video HD cifrado, recetas digitales válidas, y expediente clínico integrado.',
+    title: 'Telemedicina HD cifrada',
+    description:
+      'Videoconsultas con calidad profesional. Recetas digitales COFEPRIS. Expediente clínico integrado.',
   },
   {
     icon: CreditCard,
-    title: 'Cobra sin perseguir',
-    description: 'Pagos directos a tu cuenta en 48 horas. Tarjetas, SPEI, y OXXO Pay.',
+    title: 'Cobro directo a tu cuenta',
+    description:
+      'Pagos en 48 horas vía Stripe. Tarjetas, SPEI, y OXXO Pay. Tu dinero, sin intermediarios.',
   },
   {
     icon: TrendingUp,
     title: 'Analítica para crecer',
-    description: 'Dashboard con métricas de tu práctica: pacientes nuevos, retención, ingresos mensuales.',
+    description:
+      'Métricas de tu práctica: pacientes nuevos, retención, ingresos mensuales, y referencias de IA.',
   },
   {
     icon: Shield,
     title: 'Cumplimiento garantizado',
-    description: 'Plataforma alineada con NOM y LFPDPPP. Tus datos y los de tus pacientes, protegidos.',
+    description:
+      'Plataforma alineada con NOM y LFPDPPP. Cifrado end-to-end. Seguro de responsabilidad profesional.',
   },
-]
-
-const stats = [
-  { value: '500+', label: 'Doctores activos' },
-  { value: '10,000+', label: 'Consultas realizadas' },
-  { value: '98%', label: 'Satisfacción' },
-  { value: '48h', label: 'Tiempo de pago' },
 ]
 
 const testimonials = [
@@ -64,223 +71,256 @@ const testimonials = [
     name: 'Dr. Carlos Mendoza',
     specialty: 'Cardiólogo',
     location: 'Guadalajara',
-    content: 'Doctor.mx me ha permitido expandir mi práctica y llegar a pacientes que antes no podía atender. La plataforma es intuitiva y el soporte es excelente.',
-    rating: 5,
+    content:
+      'Doctor.mx me permitió expandir mi práctica y llegar a pacientes que antes no podía atender. La plataforma es intuitiva y el soporte es excelente.',
   },
   {
     name: 'Dra. Ana López',
     specialty: 'Dermatóloga',
     location: 'CDMX',
-    content: 'Las videoconsultas han transformado mi práctica. Ahora puedo atender a pacientes de todo el país sin sacrificar la calidad de la atención.',
-    rating: 5,
+    content:
+      'Las videoconsultas transformaron mi práctica. Ahora atiendo pacientes de todo el país sin sacrificar la calidad de la atención.',
   },
 ]
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.08 },
+  },
+}
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+}
+
 export default function ForDoctorsPage() {
   return (
-    <main className="min-h-screen bg-[hsl(var(--background))]">
+    <main className="min-h-screen bg-background">
       <Header />
-      
-      {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-b from-[hsl(var(--surface-tint))] to-[hsl(var(--background))]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-[hsl(var(--surface-tint))] text-[hsl(var(--brand-ocean))] rounded-full text-sm font-medium mb-6">
-                <Star className="w-4 h-4 fill-[hsl(var(--brand-ocean))]" />
-                Más de 500 médicos ya crecen con nosotros
-              </span>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[hsl(var(--text-primary))] mb-6 leading-tight">
-                Más pacientes. Menos administración.{' '}
-                <span className="text-[hsl(var(--brand-ocean))]">Crece con Doctor.mx</span>
+      {/* ─── HERO ─── */}
+      <div className="pt-24 md:pt-32 pb-16 md:pb-20">
+        <div className="max-w-[1100px] mx-auto px-6 md:px-12">
+          <Eyebrow className="mb-8">Para médicos</Eyebrow>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-end">
+            <div>
+              <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[0.95] mb-8">
+                Más pacientes.
+                <br />
+                Menos{' '}
+                <em className="font-serif font-normal">papeleo</em>.
               </h1>
-
-              <p className="text-xl text-[hsl(var(--text-secondary))] mb-8 leading-relaxed">
-                La plataforma de telemedicina #1 en México. Conecta con pacientes de todo el país, gestiona citas automáticamente, y recibe pagos seguros — sin complicaciones técnicas.
+              <p className="text-lg md:text-xl text-muted-foreground max-w-lg mb-10">
+                La plataforma de telemedicina líder en México. Conecta con
+                pacientes de todo el país, gestiona citas automáticamente, y
+                recibe pagos seguros.
               </p>
-              
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/auth/register?role=doctor">
-                  <Button size="lg" className="bg-[hsl(var(--brand-ocean))] hover:bg-[hsl(var(--brand-ocean))]/90 text-lg px-8 py-6 focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2">
+                  <Button
+                    size="lg"
+                    className="h-14 px-8 bg-ink hover:bg-cobalt-800 text-white rounded-xl text-[15px] font-medium tracking-tight transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_rgba(15,37,95,0.35)]"
+                  >
                     Registrarme gratis
-                    <ArrowRight className="w-5 h-5 ml-2" />
+                    <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
                 <Link href="/doctor/pricing">
-                  <Button size="lg" variant="outline" className="text-lg px-8 py-6 focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="h-14 px-8 rounded-xl text-[15px] font-medium tracking-tight"
+                  >
                     Ver planes y precios
                   </Button>
                 </Link>
               </div>
-              
-              <div className="flex items-center gap-6 mt-8 text-sm text-[hsl(var(--text-muted))]">
+              <div className="flex items-center gap-6 mt-8 text-sm text-muted-foreground">
                 <span className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-green-500" />
+                  <CheckCircle className="w-4 h-4 text-vital" />
                   Sin costo de registro
                 </span>
                 <span className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-green-500" />
+                  <CheckCircle className="w-4 h-4 text-vital" />
                   Cancela cuando quieras
                 </span>
               </div>
-            </motion.div>
-            
+            </div>
+
+            {/* Feature card */}
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
             >
-              <div className="relative bg-gradient-to-br from-[hsl(var(--surface-tint))] to-[hsl(var(--surface-quiet))] rounded-3xl p-8 shadow-2xl">
-                <div className="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium">
-                  ¡Nuevo!
+              <div className="bg-card rounded-3xl border border-border shadow-dx-1 p-8 md:p-10 relative overflow-hidden">
+                <div className="absolute top-4 right-4">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+                    AI.REFERRALS
+                  </span>
                 </div>
-                <div className="text-center">
-                  <div className="w-24 h-24 mx-auto mb-4 bg-[hsl(var(--card))] rounded-full flex items-center justify-center shadow-lg">
-                    <Video className="w-12 h-12 text-[hsl(var(--brand-ocean))]" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-[hsl(var(--text-primary))] mb-2">Videoconsultas HD</h3>
-                  <p className="text-[hsl(var(--text-secondary))] mb-6">Atiende pacientes desde cualquier lugar</p>
-                  <div className="grid grid-cols-2 gap-4 text-left">
-                    {['Grabación opcional', 'Chat integrado', 'Recetas digitales', 'Pagos seguros'].map((feature) => (
-                      <div key={feature} className="flex items-center gap-2 text-sm text-[hsl(var(--text-secondary))]">
-                        <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                        {feature}
-                      </div>
-                    ))}
-                  </div>
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cobalt-600 to-cobalt-800 flex items-center justify-center mb-6">
+                  <Video className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="font-display text-2xl font-bold text-foreground mb-3">
+                  Videoconsultas HD
+                </h3>
+                <p className="text-muted-foreground mb-8">
+                  Atiende pacientes desde cualquier lugar con calidad
+                  profesional y cifrado end-to-end.
+                </p>
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    'Grabación opcional',
+                    'Chat integrado',
+                    'Recetas digitales',
+                    'Pagos seguros',
+                  ].map((feature) => (
+                    <div
+                      key={feature}
+                      className="flex items-center gap-2 text-sm text-muted-foreground"
+                    >
+                      <CheckCircle className="w-4 h-4 text-vital flex-shrink-0" />
+                      {feature}
+                    </div>
+                  ))}
                 </div>
               </div>
             </motion.div>
           </div>
-        </div>
-      </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-[hsl(var(--surface-quiet))]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-4xl md:text-5xl font-bold text-[hsl(var(--brand-ocean))] mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-[hsl(var(--text-secondary))]">{stat.label}</div>
-              </motion.div>
+          {/* Stats row */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-10 border-t border-border">
+            {[
+              { value: '500+', label: 'Doctores activos' },
+              { value: '10,000+', label: 'Consultas realizadas' },
+              { value: '98%', label: 'Satisfacción' },
+              { value: '48h', label: 'Tiempo de pago' },
+            ].map((s, i) => (
+              <HeroStat key={i} value={s.value} label={s.label} />
             ))}
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Benefits Section */}
-      <section className="public-section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-16">
-            <PublicSectionHeading
-              eyebrow="Herramientas clave"
-              title="Todo lo que necesitas"
-              accent="para tu práctica"
-              description="Herramientas profesionales diseñadas para médicos mexicanos"
-            />
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={benefit.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card className="p-6 h-full hover:shadow-lg transition-shadow">
-                  <div className="w-12 h-12 bg-[hsl(var(--surface-tint))] rounded-xl flex items-center justify-center mb-4">
-                    <benefit.icon className="w-6 h-6 text-[hsl(var(--brand-ocean))]" />
+      {/* ─── CHAPTER 1: BENEFICIOS ─── */}
+      <EditorialSection>
+        <div className="max-w-[1100px] mx-auto px-6 md:px-12">
+          <ChapterHeader
+            number="01"
+            title="Todo lo que necesitas"
+            lead="Herramientas profesionales diseñadas específicamente para médicos mexicanos."
+          />
+
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            {benefits.map((b, i) => (
+              <motion.div key={i} variants={item}>
+                <SignatureCard>
+                  <div className="w-10 h-10 rounded-xl bg-cobalt-800 flex items-center justify-center mb-5">
+                    <b.icon className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold text-[hsl(var(--text-primary))] mb-2">
-                    {benefit.title}
+                  <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+                    {b.title}
                   </h3>
-                  <p className="text-[hsl(var(--text-secondary))]">{benefit.description}</p>
-                </Card>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {b.description}
+                  </p>
+                </SignatureCard>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </EditorialSection>
 
-      {/* Testimonials */}
-      <section className="public-section bg-[hsl(var(--surface-quiet))]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-16">
-            <PublicSectionHeading
-              eyebrow="Prueba social"
-              title="Lo que dicen"
-              accent="nuestros doctores"
-            />
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {testimonials.map((testimonial, index) => (
+      {/* ─── CHAPTER 2: TESTIMONIOS ─── */}
+      <EditorialSection>
+        <div className="max-w-[1100px] mx-auto px-6 md:px-12">
+          <ChapterHeader
+            number="02"
+            title="Lo que dicen nuestros doctores"
+            lead="Médicos de todo México que ya crecen con Doctor.mx."
+          />
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {testimonials.map((t, i) => (
               <motion.div
-                key={testimonial.name}
+                key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
               >
-                <Card className="p-8">
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-amber-400 fill-amber-400" />
+                <SignatureCard className="h-full flex flex-col">
+                  <div className="flex gap-1 mb-6">
+                    {[...Array(5)].map((_, j) => (
+                      <Star
+                        key={j}
+                        className="w-4 h-4 text-amber fill-amber"
+                      />
                     ))}
                   </div>
-                  <p className="text-[hsl(var(--text-secondary))] text-lg mb-6">"{testimonial.content}"</p>
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center text-white font-bold">
-                      {testimonial.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                  <p className="text-foreground italic leading-relaxed mb-8 flex-1">
+                    &ldquo;{t.content}&rdquo;
+                  </p>
+                  <div className="flex items-center gap-4 pt-6 border-t border-border">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cobalt-300 to-cobalt-800 flex items-center justify-center text-white font-display text-sm font-light">
+                      {t.name
+                        .split(' ')
+                        .map((n) => n[0])
+                        .filter(Boolean)
+                        .slice(0, 2)
+                        .join('')}
                     </div>
                     <div>
-                      <div className="font-semibold text-[hsl(var(--text-primary))]">{testimonial.name}</div>
-                      <div className="text-sm text-[hsl(var(--text-muted))]">{testimonial.specialty} • {testimonial.location}</div>
+                      <p className="font-display font-semibold text-foreground text-sm">
+                        {t.name}
+                      </p>
+                      <p className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+                        {t.specialty} · {t.location}
+                      </p>
                     </div>
                   </div>
-                </Card>
+                </SignatureCard>
               </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </EditorialSection>
 
-      {/* CTA Section */}
-      <section className="public-section bg-gradient-to-br from-blue-600 to-indigo-700">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <PublicSectionHeading
-            eyebrow="Listo para empezar"
-            title="Empieza a crecer"
-            accent="hoy"
-            description="Crea tu perfil gratuito y comienza a recibir pacientes esta semana"
-            theme="dark"
-          />
+      {/* ─── CTA ─── */}
+      <section className="py-20 md:py-28 bg-cobalt-800 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(58,102,245,0.25),transparent_50%)]" />
+        <div className="max-w-[1100px] mx-auto px-6 md:px-12 relative z-10 text-center">
+          <Eyebrow className="text-white/60 mb-6">Empezar es gratis</Eyebrow>
+          <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
+            Tu práctica,{' '}
+            <em className="font-serif font-normal">sin límites</em>
+          </h2>
+          <p className="text-lg text-white/70 max-w-2xl mx-auto mb-10">
+            Crea tu perfil gratuito y comienza a recibir pacientes esta semana.
+          </p>
           <Link href="/auth/register?role=doctor">
-            <Button size="lg" className="bg-white text-[hsl(var(--brand-ocean))] hover:bg-[hsl(var(--surface-quiet))] text-lg px-10 py-6 focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2">
+            <Button
+              size="lg"
+              className="h-14 px-10 bg-white text-cobalt-900 hover:bg-white/90 rounded-xl text-[15px] font-medium tracking-tight transition-all duration-200 hover:-translate-y-0.5"
+            >
               Registrarme gratis
-              <ArrowRight className="w-5 h-5 ml-2" />
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>
-          <p className="text-blue-200 text-sm mt-6">
-            Registro gratuito - Perfil listo en 10 minutos - Sin cuota mensual obligatoria
+          <p className="text-white/50 text-sm mt-6 font-mono uppercase tracking-wider">
+            Registro gratuito · Perfil listo en 10 minutos · Sin cuota mensual
+            obligatoria
           </p>
         </div>
       </section>

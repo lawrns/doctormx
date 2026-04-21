@@ -5,22 +5,23 @@ import { redirect } from 'next/navigation'
 import DoctorLayout from '@/components/DoctorLayout'
 import { AppointmentCardCompact, EmptyState } from '@/components'
 import Link from 'next/link'
-import { Calendar, CheckCircle, Clock, Video, FileText, HelpCircle } from 'lucide-react'
+import { Calendar, CheckCircle, Clock, Video, FileText, HelpCircle, ArrowRight } from 'lucide-react'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Eyebrow, SignatureCard, HeroStat } from '@/components/editorial'
 
 export default async function DoctorDashboard() {
   const { user, profile, supabase } = await requireRole('doctor')
   const doctor = await getDoctorRecordByUserId(user.id)
   const doctorRecordId = getDoctorOperationalRecordId(doctor, user.id)
 
-  // Solo redirigir si nunca completó onboarding (draft)
   if (doctor?.status === 'draft') {
     redirect('/doctor/onboarding')
   }
 
-  // Si doctor es null (cache issue), mostrar dashboard con valores por defecto
   const isPending = doctor?.status === 'pending' || doctor?.status === 'rejected'
 
-  // Fetch stats and appointments only for approved doctors
   let todayCount = 0
   let weekCount = 0
   let totalPatients = 0
@@ -35,7 +36,6 @@ export default async function DoctorDashboard() {
     service_name: string | null
   }> = []
 
-  // Fetch pending doctors count for queue position (if pending)
   let queuePosition = 0
   let totalPending = 0
   if (isPending) {
@@ -44,12 +44,12 @@ export default async function DoctorDashboard() {
       .select('*', { count: 'exact', head: true })
       .eq('status', 'pending')
       .lte('created_at', doctor?.created_at || new Date().toISOString())
-    
+
     const { count: totalCount } = await supabase
       .from('doctors')
       .select('*', { count: 'exact', head: true })
       .eq('status', 'pending')
-    
+
     queuePosition = count || 0
     totalPending = totalCount || 0
   }
@@ -65,7 +65,6 @@ export default async function DoctorDashboard() {
     const endOfWeek = new Date(startOfWeek)
     endOfWeek.setDate(startOfWeek.getDate() + 7)
 
-    // Count today's appointments
     const { count: todayAppointments } = await supabase
       .from('appointments')
       .select('*', { count: 'exact', head: true })
@@ -76,7 +75,6 @@ export default async function DoctorDashboard() {
 
     todayCount = todayAppointments || 0
 
-    // Count this week's appointments
     const { count: weekAppointments } = await supabase
       .from('appointments')
       .select('*', { count: 'exact', head: true })
@@ -87,7 +85,6 @@ export default async function DoctorDashboard() {
 
     weekCount = weekAppointments || 0
 
-    // Count unique patients
     const { data: patientData } = await supabase
       .from('appointments')
       .select('patient_id')
@@ -95,11 +92,10 @@ export default async function DoctorDashboard() {
       .in('status', ['confirmed', 'completed'])
 
     if (patientData) {
-      const uniquePatients = new Set(patientData.map(a => a.patient_id))
+      const uniquePatients = new Set(patientData.map((a: { patient_id: string }) => a.patient_id))
       totalPatients = uniquePatients.size
     }
 
-    // Count pending payment appointments
     const { count: pendingPayment } = await supabase
       .from('appointments')
       .select('*', { count: 'exact', head: true })
@@ -115,17 +111,18 @@ export default async function DoctorDashboard() {
       inboxCases = []
     }
 
-    // Get upcoming appointments (next 5)
     const { data: appointmentsData } = await supabase
       .from('appointments')
-      .select(`
+      .select(
+        `
         id,
         start_ts,
         end_ts,
         status,
         patient:profiles!appointments_patient_id_fkey(full_name),
         service:doctor_services(name)
-      `)
+      `
+      )
       .eq('doctor_id', doctorRecordId)
       .in('status', ['confirmed', 'pending_payment'])
       .gte('start_ts', now.toISOString())
@@ -133,290 +130,343 @@ export default async function DoctorDashboard() {
       .limit(5)
 
     if (appointmentsData) {
-      upcomingAppointments = appointmentsData.map(apt => ({
-        id: apt.id,
-        patient_name: (apt.patient as unknown as { full_name: string } | null)?.full_name || 'Paciente',
-        start_ts: apt.start_ts,
-        end_ts: apt.end_ts,
-        status: apt.status,
-        service_name: (apt.service as unknown as { name: string } | null)?.name || null,
-      }))
+      upcomingAppointments = appointmentsData.map(
+        (apt: {
+          id: string
+          start_ts: string
+          end_ts: string
+          status: string
+          patient: unknown
+          service: unknown
+        }) => ({
+          id: apt.id,
+          patient_name:
+            (apt.patient as unknown as { full_name: string } | null)?.full_name ||
+            'Paciente',
+          start_ts: apt.start_ts,
+          end_ts: apt.end_ts,
+          status: apt.status,
+          service_name:
+            (apt.service as unknown as { name: string } | null)?.name || null,
+        })
+      )
     }
   }
 
   return (
-    <DoctorLayout profile={profile!} isPending={isPending} currentPath="/doctor" pendingAppointments={pendingPaymentCount}>
+    <DoctorLayout
+      profile={profile!}
+      isPending={isPending}
+      currentPath="/doctor"
+      pendingAppointments={pendingPaymentCount}
+    >
       {isPending ? (
-        /* Vista mejorada para doctores pendientes */
+        /* ─── PENDING VIEW ─── */
         <div className="max-w-4xl mx-auto">
           {doctor?.status === 'rejected' ? (
-            <div className="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-lg mb-8">
-              <div className="flex items-start">
-                <svg className="w-6 h-6 text-red-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
-                </svg>
-                <div className="ml-4">
-                  <h3 className="text-lg font-semibold text-red-900">Tu perfil fue rechazado</h3>
-                  <p className="text-red-700 mt-1">
-                    Por favor revisa tu información y vuelve a enviarla para verificación.
-                    Puedes editar tu perfil usando el botón de abajo.
+            <SignatureCard className="mb-8 border-l-4 border-l-destructive">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-xl bg-destructive/10 flex items-center justify-center flex-shrink-0">
+                  <svg
+                    className="w-5 h-5 text-destructive"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-display text-lg font-semibold text-destructive">
+                    Tu perfil fue rechazado
+                  </h3>
+                  <p className="text-muted-foreground mt-1">
+                    Revisa tu información y vuelve a enviarla para verificación.
                   </p>
                 </div>
               </div>
-            </div>
+            </SignatureCard>
           ) : (
-            <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg mb-8">
-              <div className="flex items-start">
-                <Clock className="w-6 h-6 text-yellow-600 mt-0.5" />
-                <div className="ml-4 flex-1">
-                  <h3 className="text-lg font-semibold text-yellow-900">Tu perfil está en revisión</h3>
-                  <p className="text-yellow-700 mt-1">
+            <SignatureCard className="mb-8 border-l-4 border-l-amber-500">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-5 h-5 text-amber-600" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-display text-lg font-semibold text-foreground">
+                    Tu perfil está en revisión
+                  </h3>
+                  <p className="text-muted-foreground mt-1">
                     Estamos verificando tu información profesional con la SEP.
                   </p>
-                  
-                  {/* Queue position indicator */}
+
                   {totalPending > 0 && (
-                    <div className="mt-4 bg-white rounded-lg p-4 border border-yellow-200">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm font-medium text-gray-700">Tu posición en la fila:</span>
-                        <span className="text-lg font-bold text-yellow-700">
+                    <div className="mt-6 bg-secondary/50 rounded-2xl p-5 border border-border">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+                          Tu posición en la fila
+                        </span>
+                        <span className="font-display text-xl font-bold text-foreground">
                           #{queuePosition} de {totalPending}
                         </span>
                       </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div 
-                          className="bg-yellow-500 h-2 rounded-full transition-all"
-                          style={{ width: `${Math.max(5, ((totalPending - queuePosition) / totalPending) * 100)}%` }}
+                      <div className="w-full bg-background rounded-full h-2">
+                        <div
+                          className="bg-amber-500 h-2 rounded-full transition-all"
+                          style={{
+                            width: `${Math.max(
+                              5,
+                              ((totalPending - queuePosition) / totalPending) *
+                                100
+                            )}%`,
+                          }}
                         />
                       </div>
-                      <p className="text-xs text-gray-500 mt-2">
+                      <p className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground mt-3">
                         Tiempo estimado: ~{Math.max(1, Math.round(queuePosition * 2))} horas hábiles
                       </p>
                     </div>
                   )}
                 </div>
               </div>
-            </div>
+            </SignatureCard>
           )}
 
-          <h2 className="text-2xl font-bold text-neutral-900 mb-6">Mientras esperas</h2>
+          <Eyebrow className="mb-6">Mientras esperas</Eyebrow>
 
-          {/* Progress checklist */}
-          <div className="bg-white rounded-lg shadow border p-6 mb-6">
-            <h3 className="text-lg font-semibold text-neutral-900 mb-4">Lista de verificación</h3>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3 text-green-700">
-                <CheckCircle className="w-5 h-5" />
-                <span className="flex-1">Perfil completado</span>
-                <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Completado</span>
-              </div>
-              <div className="flex items-center gap-3 text-green-700">
-                <CheckCircle className="w-5 h-5" />
-                <span className="flex-1">Disponibilidad configurada</span>
-                <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Completado</span>
-              </div>
-              <div className="flex items-center gap-3 text-yellow-700">
-                <Clock className="w-5 h-5" />
-                <span className="flex-1">Verificación de cédula SEP</span>
-                <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded">En proceso</span>
-              </div>
-              <Link 
-                href="/doctor/availability" 
-                className="flex items-center gap-3 text-neutral-600 hover:text-blue-600 p-2 rounded-lg hover:bg-blue-50 transition-colors"
-              >
-                <Video className="w-5 h-5" />
-                <span className="flex-1">Prueba tu cámara y micrófono</span>
-                <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">Recomendado</span>
-              </Link>
-              <Link 
-                href="/help" 
-                className="flex items-center gap-3 text-neutral-600 hover:text-blue-600 p-2 rounded-lg hover:bg-blue-50 transition-colors"
-              >
-                <FileText className="w-5 h-5" />
-                <span className="flex-1">Lee la guía de primera consulta</span>
-                <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Opcional</span>
-              </Link>
-            </div>
-          </div>
-
-          {/* Quick actions */}
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white p-6 rounded-lg shadow border">
-              <div className="flex items-center gap-3 mb-3">
-                <span className="text-2xl">👤</span>
-                <h3 className="text-lg font-semibold text-neutral-900">Completa tu perfil</h3>
-              </div>
-              <p className="text-neutral-600 mb-4">
-                Asegúrate de que toda tu información esté actualizada y completa.
-              </p>
-              <Link
-                href="/doctor/onboarding"
-                className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium"
-              >
-                Editar perfil
-                <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow border">
-              <div className="flex items-center gap-3 mb-3">
-                <Calendar className="w-6 h-6 text-blue-500" />
-                <h3 className="text-lg font-semibold text-neutral-900">Configura tu disponibilidad</h3>
-              </div>
-              <p className="text-neutral-600 mb-4">
-                Define tus horarios para empezar a recibir pacientes una vez aprobado.
-              </p>
-              <Link
-                href="/doctor/availability"
-                className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium"
-              >
-                Ver disponibilidad
-                <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </div>
-          </div>
-
-          {/* Help section */}
-          <div className="mt-8 bg-blue-50 p-6 rounded-lg border border-blue-100">
-            <div className="flex items-start gap-3">
-              <HelpCircle className="w-5 h-5 text-blue-600 mt-0.5" />
-              <div>
-                <h4 className="font-medium text-blue-900">¿Tienes preguntas?</h4>
-                <p className="text-sm text-blue-700 mt-1">
-                  Si tienes alguna duda sobre el proceso de verificación, contacta a nuestro equipo de soporte.
-                </p>
-                <a 
-                  href="mailto:soporte@doctor.mx?subject=Pregunta sobre verificación de perfil" 
-                  className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 font-medium mt-2"
-                >
-                  Contactar soporte →
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      ) : (
-        /* Vista para doctores aprobados */
-        <div className="max-w-6xl">
-          <h2 className="text-3xl font-bold text-neutral-900 mb-2">Panel del doctor</h2>
-          <p className="text-neutral-600 mb-8">Gestiona tus consultas y disponibilidad</p>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6 mb-8">
-            <div className="bg-white p-4 lg:p-6 rounded-lg shadow border">
-              <p className="text-sm text-neutral-600 mb-1">Hoy</p>
-              <p className="text-2xl lg:text-3xl font-bold text-neutral-900">{todayCount}</p>
-            </div>
-            <div className="bg-white p-4 lg:p-6 rounded-lg shadow border">
-              <p className="text-sm text-neutral-600 mb-1">Esta semana</p>
-              <p className="text-2xl lg:text-3xl font-bold text-neutral-900">{weekCount}</p>
-            </div>
-            <div className="bg-white p-4 lg:p-6 rounded-lg shadow border">
-              <p className="text-sm text-neutral-600 mb-1">Calificación</p>
-              <p className="text-2xl lg:text-3xl font-bold text-neutral-900">{doctor?.rating_avg ? doctor.rating_avg.toFixed(1) : '—'}</p>
-            </div>
-            <div className="bg-white p-4 lg:p-6 rounded-lg shadow border">
-              <p className="text-sm text-neutral-600 mb-1">Pacientes</p>
-              <p className="text-2xl lg:text-3xl font-bold text-neutral-900">{totalPatients}</p>
-            </div>
-            <Link
-              href="/doctor/chat"
-              className="bg-white p-4 lg:p-6 rounded-lg shadow border hover:shadow-md hover:border-primary-200 transition-all group"
-            >
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <svg className="w-5 h-5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-sm text-neutral-600">Mensajes</p>
-                  <p className="text-lg font-bold text-neutral-900">Ver chats</p>
-                </div>
-              </div>
-            </Link>
-          </div>
-
-          {/* Próximas consultas */}
-          <div className="bg-white rounded-lg shadow border p-6">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-xl font-semibold text-neutral-900">Próximas consultas</h3>
-              <Link
-                href="/doctor/appointments"
-                className="text-sm text-primary-600 hover:text-primary-700 font-medium"
-              >
-                Ver todas
-              </Link>
-            </div>
-
-            {upcomingAppointments.length > 0 ? (
-              <div className="divide-y">
-                {upcomingAppointments.map((apt) => (
-                  <AppointmentCardCompact key={apt.id} appointment={apt} />
-                ))}
-              </div>
-            ) : (
-              <EmptyState
-                title="No tienes consultas programadas"
-                description="Las citas aparecerán aquí cuando los pacientes reserven contigo. Comparte tu perfil para empezar a recibir pacientes."
-                iconName="calendar"
-                action={{
-                  label: "Ver mi perfil público",
-                  href: `/doctors/${user.id}`
-                }}
-              />
-            )}
-          </div>
-
-          <div className="bg-white rounded-lg shadow border p-6 mt-8">
-            <div className="flex items-center justify-between mb-4">
-              <div>
-                <h3 className="text-xl font-semibold text-neutral-900">Inbox de casos</h3>
-                <p className="text-sm text-neutral-600 mt-1">Casos activos enroutados hacia ti desde preconsulta y seguimiento</p>
-              </div>
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-50 text-blue-700">
-                {inboxCases.length} activos
-              </span>
-            </div>
-
-            {inboxCases.length > 0 ? (
+          {/* Checklist */}
+          <Card className="rounded-2xl border border-border shadow-dx-1 mb-6">
+            <CardHeader>
+              <CardTitle className="font-display text-lg font-semibold">
+                Lista de verificación
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
               <div className="space-y-3">
-                {inboxCases.slice(0, 5).map((careCase) => (
-                  <div key={careCase.id} className="rounded-lg border border-neutral-200 p-4">
-                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
-                      <div>
-                        <p className="font-medium text-neutral-900">
-                          {careCase.triage?.chiefComplaint || 'Caso sin motivo principal capturado'}
-                        </p>
-                        <p className="text-sm text-neutral-600 mt-1">
-                          {careCase.triage?.specialty || 'medicina-general'} · urgencia {careCase.triage?.urgency || 'media'}
-                        </p>
-                        {careCase.triage?.redFlags?.length ? (
-                          <p className="text-sm text-amber-700 mt-2">
-                            Red flags: {careCase.triage.redFlags.slice(0, 3).join(', ')}
-                          </p>
-                        ) : null}
-                      </div>
-                      <div className="text-sm text-neutral-500">
-                        <p>Estado: {careCase.status}</p>
-                        <p>Canal: {careCase.channel}</p>
-                      </div>
-                    </div>
+                {[
+                  { icon: CheckCircle, text: 'Perfil completado', done: true },
+                  { icon: CheckCircle, text: 'Disponibilidad configurada', done: true },
+                  { icon: Clock, text: 'Verificación de cédula SEP', done: false },
+                ].map((check, i) => (
+                  <div
+                    key={i}
+                    className={`flex items-center gap-3 p-3 rounded-xl ${
+                      check.done
+                        ? 'bg-vital-soft/50 text-vital'
+                        : 'bg-secondary/50 text-foreground'
+                    }`}
+                  >
+                    <check.icon className="w-5 h-5 flex-shrink-0" />
+                    <span className="flex-1 text-sm">{check.text}</span>
+                    <Badge
+                      variant={check.done ? 'default' : 'secondary'}
+                      className={check.done ? 'bg-vital text-white' : ''}
+                    >
+                      {check.done ? 'Completado' : 'En proceso'}
+                    </Badge>
                   </div>
                 ))}
               </div>
-            ) : (
-              <EmptyState
-                title="No tienes casos en inbox"
-                description="Los casos triageados y asignados aparecerán aquí para darte contexto antes de la consulta."
-                iconName="clipboard"
-              />
-            )}
+            </CardContent>
+          </Card>
+
+          {/* Quick actions */}
+          <div className="grid md:grid-cols-2 gap-6">
+            <SignatureCard>
+              <div className="w-10 h-10 rounded-xl bg-cobalt-800 flex items-center justify-center mb-4">
+                <Video className="w-5 h-5 text-white" />
+              </div>
+              <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+                Prueba tu equipo
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Verifica que tu cámara y micrófono funcionen correctamente.
+              </p>
+              <Button asChild variant="outline" size="sm">
+                <Link href="/doctor/availability">
+                  Probar ahora
+                  <ArrowRight className="w-4 h-4 ml-1" />
+                </Link>
+              </Button>
+            </SignatureCard>
+
+            <SignatureCard>
+              <div className="w-10 h-10 rounded-xl bg-cobalt-800 flex items-center justify-center mb-4">
+                <FileText className="w-5 h-5 text-white" />
+              </div>
+              <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+                Guía de primera consulta
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Consejos para ofrecer la mejor experiencia a tus pacientes.
+              </p>
+              <Button asChild variant="outline" size="sm">
+                <Link href="/help">
+                  Leer guía
+                  <ArrowRight className="w-4 h-4 ml-1" />
+                </Link>
+              </Button>
+            </SignatureCard>
           </div>
+        </div>
+      ) : (
+        /* ─── APPROVED VIEW ─── */
+        <div className="max-w-6xl">
+          <Eyebrow className="mb-3">Dashboard</Eyebrow>
+          <h2 className="font-display text-3xl font-bold tracking-tight text-foreground mb-2">
+            Panel del doctor
+          </h2>
+          <p className="text-muted-foreground mb-8">
+            Gestiona tus consultas, disponibilidad y pacientes.
+          </p>
+
+          {/* Stats */}
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6 mb-8">
+            {[
+              { label: 'Hoy', value: todayCount },
+              { label: 'Esta semana', value: weekCount },
+              {
+                label: 'Calificación',
+                value: doctor?.rating_avg
+                  ? doctor.rating_avg.toFixed(1)
+                  : '—',
+              },
+              { label: 'Pacientes', value: totalPatients },
+            ].map((stat, i) => (
+              <SignatureCard key={i} hover={false} className="p-4 lg:p-5">
+                <p className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground mb-2">
+                  {stat.label}
+                </p>
+                <p className="font-display text-3xl font-bold text-foreground">
+                  {stat.value}
+                </p>
+              </SignatureCard>
+            ))}
+            <Link href="/doctor/chat" className="block">
+              <SignatureCard className="p-4 lg:p-5 h-full flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-cobalt-800 flex items-center justify-center flex-shrink-0">
+                  <svg
+                    className="w-5 h-5 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+                    Mensajes
+                  </p>
+                  <p className="font-display text-lg font-bold text-foreground">
+                    Ver chats
+                  </p>
+                </div>
+              </SignatureCard>
+            </Link>
+          </div>
+
+          {/* Upcoming appointments */}
+          <Card className="rounded-2xl border border-border shadow-dx-1">
+            <CardHeader className="flex flex-row items-center justify-between px-6 py-5">
+              <CardTitle className="font-display text-lg font-semibold">
+                Próximas consultas
+              </CardTitle>
+              <Link
+                href="/doctor/appointments"
+                className="text-sm text-cobalt-700 hover:text-cobalt-800 font-medium"
+              >
+                Ver todas
+              </Link>
+            </CardHeader>
+            <CardContent className="px-6 pb-6">
+              {upcomingAppointments.length > 0 ? (
+                <div className="divide-y divide-border">
+                  {upcomingAppointments.map((apt) => (
+                    <AppointmentCardCompact
+                      key={apt.id}
+                      appointment={apt}
+                    />
+                  ))}
+                </div>
+              ) : (
+                <EmptyState
+                  title="No tienes consultas programadas"
+                  description="Las citas aparecerán aquí cuando los pacientes reserven contigo."
+                  iconName="calendar"
+                  action={{
+                    label: 'Ver mi perfil público',
+                    href: `/doctors/${user.id}`,
+                  }}
+                />
+              )}
+            </CardContent>
+          </Card>
+
+          {/* Inbox */}
+          <Card className="rounded-2xl border border-border shadow-dx-1 mt-8">
+            <CardHeader className="flex flex-row items-center justify-between px-6 py-5">
+              <div>
+                <CardTitle className="font-display text-lg font-semibold">
+                  Inbox de casos
+                </CardTitle>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Casos activos enrutados desde preconsulta y seguimiento
+                </p>
+              </div>
+              <Badge variant="info">{inboxCases.length} activos</Badge>
+            </CardHeader>
+            <CardContent className="px-6 pb-6">
+              {inboxCases.length > 0 ? (
+                <div className="space-y-3">
+                  {inboxCases.slice(0, 5).map((careCase) => (
+                    <SignatureCard
+                      key={careCase.id}
+                      hover={false}
+                      className="p-5"
+                    >
+                      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
+                        <div>
+                          <p className="font-display font-semibold text-foreground">
+                            {careCase.triage?.chiefComplaint ||
+                              'Caso sin motivo principal'}
+                          </p>
+                          <p className="text-sm text-muted-foreground mt-1">
+                            {careCase.triage?.specialty || 'medicina-general'} ·
+                            urgencia {careCase.triage?.urgency || 'media'}
+                          </p>
+                          {careCase.triage?.redFlags?.length ? (
+                            <p className="text-sm text-amber-600 mt-2">
+                              Red flags:{' '}
+                              {careCase.triage.redFlags.slice(0, 3).join(', ')}
+                            </p>
+                          ) : null}
+                        </div>
+                        <div className="text-sm text-muted-foreground font-mono text-[10px] uppercase tracking-wider">
+                          <p>{careCase.status}</p>
+                          <p>{careCase.channel}</p>
+                        </div>
+                      </div>
+                    </SignatureCard>
+                  ))}
+                </div>
+              ) : (
+                <EmptyState
+                  title="No tienes casos en inbox"
+                  description="Los casos triageados aparecerán aquí para darte contexto antes de la consulta."
+                  iconName="clipboard"
+                />
+              )}
+            </CardContent>
+          </Card>
         </div>
       )}
     </DoctorLayout>

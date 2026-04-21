@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { TrendingUp, Users, Calendar, Clock, Activity, ArrowUp, ArrowDown } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 interface AIMetrics {
   totalReferrals: number
@@ -37,21 +39,21 @@ export function AIMetricsClient() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <div className="w-16 h-16 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-gray-600">Cargando métricas...</p>
+          <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <p className="text-muted-foreground">Cargando métricas...</p>
         </div>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <header className="bg-card border-b border-border sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <h1 className="text-2xl font-bold text-gray-900">
+          <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">
             Métricas de Referencias IA
           </h1>
         </div>
@@ -65,17 +67,13 @@ export function AIMetricsClient() {
             { value: 'quarter', label: 'Este Trimestre' },
             { value: 'year', label: 'Este Año' },
           ].map((tf) => (
-            <button
+            <Button
               key={tf.value}
               onClick={() => setTimeframe(tf.value as any)}
-              className={`px-4 py-2 rounded-lg font-medium transition-all ${
-                timeframe === tf.value
-                  ? 'bg-emerald-500 text-white'
-                  : 'bg-white text-gray-700 hover:bg-gray-100'
-              }`}
+              variant={timeframe === tf.value ? 'default' : 'outline'}
             >
               {tf.label}
-            </button>
+            </Button>
           ))}
         </div>
 
@@ -117,52 +115,60 @@ export function AIMetricsClient() {
             {/* Charts */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
               {/* Weekly Trend */}
-              <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
-                <h3 className="font-bold text-gray-900 mb-4">Tendencia Semanal</h3>
-                <div className="h-64 flex items-end justify-between gap-2">
-                  {metrics.weeklyTrend.map((week, i) => (
-                    <div key={i} className="flex-1 flex flex-col items-center gap-2">
-                      <div
-                        className="w-full bg-emerald-500 rounded-t-lg transition-all hover:bg-emerald-600"
-                        style={{
-                          height: `${(week.referrals / Math.max(...metrics.weeklyTrend.map(w => w.referrals))) * 100}%`,
-                          minHeight: '20px',
-                        }}
-                      />
-                      <span className="text-xs text-gray-500">{week.week}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <Card className="rounded-2xl border border-border shadow-dx-1 p-6">
+                <CardHeader className="p-0 pb-4">
+                  <CardTitle className="font-bold text-foreground">Tendencia Semanal</CardTitle>
+                </CardHeader>
+                <CardContent className="p-0">
+                  <div className="h-64 flex items-end justify-between gap-2">
+                    {metrics.weeklyTrend.map((week, i) => (
+                      <div key={i} className="flex-1 flex flex-col items-center gap-2">
+                        <div
+                          className="w-full bg-primary rounded-t-lg transition-all hover:bg-primary/80"
+                          style={{
+                            height: `${(week.referrals / Math.max(...metrics.weeklyTrend.map(w => w.referrals))) * 100}%`,
+                            minHeight: '20px',
+                          }}
+                        />
+                        <span className="text-xs text-muted-foreground">{week.week}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
 
               {/* Top Specialties */}
-              <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
-                <h3 className="font-bold text-gray-900 mb-4">Especialidades Top</h3>
-                <div className="space-y-4">
-                  {metrics.topSpecialties.map((spec, i) => (
-                    <div key={i} className="flex items-center justify-between">
-                      <span className="text-gray-700">{spec.specialty}</span>
-                      <div className="flex items-center gap-2">
-                        <div className="w-32 bg-gray-200 rounded-full h-2">
-                          <div
-                            className="bg-emerald-500 h-2 rounded-full"
-                            style={{
-                              width: `${(spec.count / metrics.topSpecialties[0].count) * 100}%`,
-                            }}
-                          />
+              <Card className="rounded-2xl border border-border shadow-dx-1 p-6">
+                <CardHeader className="p-0 pb-4">
+                  <CardTitle className="font-bold text-foreground">Especialidades Top</CardTitle>
+                </CardHeader>
+                <CardContent className="p-0">
+                  <div className="space-y-4">
+                    {metrics.topSpecialties.map((spec, i) => (
+                      <div key={i} className="flex items-center justify-between">
+                        <span className="text-foreground">{spec.specialty}</span>
+                        <div className="flex items-center gap-2">
+                          <div className="w-32 bg-secondary rounded-full h-2">
+                            <div
+                              className="bg-primary h-2 rounded-full"
+                              style={{
+                                width: `${(spec.count / metrics.topSpecialties[0].count) * 100}%`,
+                              }}
+                            />
+                          </div>
+                          <span className="text-sm font-medium text-foreground">{spec.count}</span>
                         </div>
-                        <span className="text-sm font-medium text-gray-900">{spec.count}</span>
                       </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
             </div>
 
             {/* Insights */}
-            <div className="bg-gradient-to-r from-emerald-50 to-green-50 rounded-2xl p-6 border border-emerald-200">
-              <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <TrendingUp className="w-5 h-5 text-emerald-600" />
+            <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-6">
+              <h3 className="font-bold text-foreground mb-4 flex items-center gap-2">
+                <TrendingUp className="w-5 h-5 text-vital" />
                 Insights IA
               </h3>
               <div className="grid md:grid-cols-3 gap-4">
@@ -198,26 +204,26 @@ interface KPICardProps {
 
 function KPICard({ title, value, change, icon: Icon, color, isPercentage }: KPICardProps) {
   const colorClasses = {
-    emerald: 'bg-emerald-50 text-emerald-700 border-emerald-200',
-    blue: 'bg-blue-50 text-blue-700 border-blue-200',
-    purple: 'bg-purple-50 text-purple-700 border-purple-200',
-    amber: 'bg-amber-50 text-amber-700 border-amber-200',
+    emerald: 'bg-vital-soft text-vital border-vital/20',
+    blue: 'bg-primary/10 text-primary border-primary/20',
+    purple: 'bg-secondary/50 text-primary border-border',
+    amber: 'bg-secondary/50 text-amber border-border',
   }
 
   const isPositive = change >= 0
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
+    <Card className="rounded-2xl border border-border shadow-dx-1 p-6">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-sm font-medium text-gray-600">{title}</h3>
+        <h3 className="text-sm font-medium text-muted-foreground">{title}</h3>
         <div className={`p-2 rounded-lg ${colorClasses[color as keyof typeof colorClasses]}`}>
           <Icon className="w-4 h-4" />
         </div>
       </div>
       <div className="flex items-end justify-between">
-        <p className="text-3xl font-bold text-gray-900">{value}</p>
+        <p className="text-3xl font-bold text-foreground">{value}</p>
         <div className={`flex items-center gap-1 text-sm ${
-          isPositive ? 'text-emerald-600' : 'text-red-600'
+          isPositive ? 'text-vital' : 'text-coral'
         }`}>
           {isPositive ? (
             <ArrowUp className="w-4 h-4" />
@@ -227,7 +233,7 @@ function KPICard({ title, value, change, icon: Icon, color, isPercentage }: KPIC
           {Math.abs(change)}%
         </div>
       </div>
-    </div>
+    </Card>
   )
 }
 
@@ -238,9 +244,9 @@ interface InsightCardProps {
 
 function InsightCard({ title, description }: InsightCardProps) {
   return (
-    <div className="bg-white rounded-xl p-4 border border-emerald-200">
-      <h4 className="font-semibold text-gray-900 mb-1">{title}</h4>
-      <p className="text-sm text-gray-600">{description}</p>
+    <div className="bg-secondary/50 rounded-xl p-4 border border-border">
+      <h4 className="font-semibold text-foreground mb-1">{title}</h4>
+      <p className="text-sm text-muted-foreground">{description}</p>
     </div>
   )
 }

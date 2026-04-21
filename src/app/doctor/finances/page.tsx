@@ -1,8 +1,18 @@
 import { requireRole } from '@/lib/auth'
 import { redirect } from 'next/navigation'
 import DoctorLayout from '@/components/DoctorLayout'
-import { Badge, EmptyState } from '@/components'
+import { EmptyState } from '@/components'
 import { Wallet } from 'lucide-react'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table'
 
 function formatCurrency(cents: number, currency = 'MXN') {
   return new Intl.NumberFormat('es-MX', {
@@ -24,7 +34,7 @@ type LedgerEntryType = 'charge' | 'fee' | 'refund' | 'payout'
 function getLedgerTypeLabel(type: LedgerEntryType) {
   const labels: Record<LedgerEntryType, string> = {
     charge: 'Cobro',
-    fee: 'Comisión',
+    fee: 'Comisi\u00F3n',
     refund: 'Reembolso',
     payout: 'Pago',
   }
@@ -32,13 +42,13 @@ function getLedgerTypeLabel(type: LedgerEntryType) {
 }
 
 function getLedgerTypeBadge(type: LedgerEntryType) {
-  const variants: Record<LedgerEntryType, 'success' | 'warning' | 'error' | 'info'> = {
+  const variants: Record<LedgerEntryType, 'success' | 'warning' | 'destructive' | 'info'> = {
     charge: 'success',
     fee: 'warning',
-    refund: 'error',
+    refund: 'destructive',
     payout: 'info',
   }
-  return variants[type] || 'neutral'
+  return variants[type] || 'default'
 }
 
 export default async function DoctorFinancesPage() {
@@ -50,12 +60,12 @@ export default async function DoctorFinancesPage() {
     .eq('id', user.id)
     .single()
 
-  // Solo redirigir si nunca completó onboarding
+  // Solo redirigir si nunca complet\u00F3 onboarding
   if (doctor?.status === 'draft') {
     redirect('/doctor/onboarding')
   }
 
-  // Si doctor es null (cache) o no está aprobado, mostrar como pending
+  // Si doctor es null (cache) o no est\u00E1 aprobado, mostrar como pending
   const isPending = !doctor || doctor.status !== 'approved'
 
   // Fetch financial data
@@ -85,7 +95,7 @@ export default async function DoctorFinancesPage() {
       .lt('created_at', endOfMonth)
 
     if (monthlyCharges) {
-      monthlyIncome = monthlyCharges.reduce((sum, entry) => sum + entry.amount_cents, 0)
+      monthlyIncome = monthlyCharges.reduce((sum: number, entry: { amount_cents: number }) => sum + entry.amount_cents, 0)
     }
 
     // Get pending payouts
@@ -96,7 +106,7 @@ export default async function DoctorFinancesPage() {
       .eq('status', 'pending')
 
     if (pendingPayouts) {
-      pendingAmount = pendingPayouts.reduce((sum, payout) => sum + payout.amount_cents, 0)
+      pendingAmount = pendingPayouts.reduce((sum: number, payout: { amount_cents: number }) => sum + payout.amount_cents, 0)
     }
 
     // Get total paid out
@@ -107,7 +117,7 @@ export default async function DoctorFinancesPage() {
       .eq('status', 'paid')
 
     if (paidPayouts) {
-      totalPaid = paidPayouts.reduce((sum, payout) => sum + payout.amount_cents, 0)
+      totalPaid = paidPayouts.reduce((sum: number, payout: { amount_cents: number }) => sum + payout.amount_cents, 0)
     }
 
     // Get recent ledger entries
@@ -133,98 +143,91 @@ export default async function DoctorFinancesPage() {
 
   return (
     <DoctorLayout profile={profile!} isPending={isPending} currentPath="/doctor/finances">
-      <div className="max-w-6xl">
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">Finanzas</h2>
-        <p className="text-gray-600 mb-8">Gestiona tus pagos y transacciones</p>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <h2 className="font-display text-2xl font-bold tracking-tight text-foreground mb-2">Finanzas</h2>
+        <p className="text-muted-foreground mb-8">Gestiona tus pagos y transacciones</p>
 
         {isPending ? (
-          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
-            <p className="text-yellow-900">
-              Esta sección estará disponible una vez que tu perfil sea aprobado.
+          <Card className="rounded-2xl border border-border shadow-dx-1 p-6">
+            <p className="text-foreground">
+              Esta secci\u00F3n estar\u00E1 disponible una vez que tu perfil sea aprobado.
             </p>
-          </div>
+          </Card>
         ) : (
           <div className="space-y-6">
             {/* Resumen financiero */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-              <div className="bg-white p-4 md:p-6 rounded-lg shadow border">
-                <p className="text-sm text-gray-600 mb-1">Ingresos este mes</p>
-                <p className="text-2xl md:text-3xl font-bold text-green-600">
+              <Card className="rounded-2xl border border-border shadow-dx-1 p-4 md:p-6 gap-2">
+                <p className="text-sm text-muted-foreground mb-1">Ingresos este mes</p>
+                <p className="text-2xl md:text-3xl font-bold text-vital">
                   {formatCurrency(monthlyIncome, currency)}
                 </p>
-              </div>
-              <div className="bg-white p-4 md:p-6 rounded-lg shadow border">
-                <p className="text-sm text-gray-600 mb-1">Pendiente de cobro</p>
-                <p className="text-2xl md:text-3xl font-bold text-yellow-600">
+              </Card>
+              <Card className="rounded-2xl border border-border shadow-dx-1 p-4 md:p-6 gap-2">
+                <p className="text-sm text-muted-foreground mb-1">Pendiente de cobro</p>
+                <p className="text-2xl md:text-3xl font-bold text-amber">
                   {formatCurrency(pendingAmount, currency)}
                 </p>
-              </div>
-              <div className="bg-white p-4 md:p-6 rounded-lg shadow border">
-                <p className="text-sm text-gray-600 mb-1">Total cobrado</p>
-                <p className="text-2xl md:text-3xl font-bold text-gray-900">
+              </Card>
+              <Card className="rounded-2xl border border-border shadow-dx-1 p-4 md:p-6 gap-2">
+                <p className="text-sm text-muted-foreground mb-1">Total cobrado</p>
+                <p className="text-2xl md:text-3xl font-bold text-foreground">
                   {formatCurrency(totalPaid, currency)}
                 </p>
-              </div>
+              </Card>
             </div>
 
             {/* Transacciones */}
-            <div className="bg-white rounded-lg shadow border p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Transacciones recientes</h3>
-
-              {ledgerEntries.length > 0 ? (
-                <div className="overflow-x-auto">
-                  <table className="min-w-full divide-y divide-gray-200">
-                    <thead>
-                      <tr>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                          Fecha
-                        </th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                          Tipo
-                        </th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                          Descripción
-                        </th>
-                        <th className="px-4 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-                          Monto
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-gray-100">
+            <Card className="rounded-2xl border border-border shadow-dx-1 p-6 gap-4">
+              <CardHeader className="p-0 pb-0">
+                <CardTitle className="text-xl font-semibold">Transacciones recientes</CardTitle>
+              </CardHeader>
+              <CardContent className="p-0">
+                {ledgerEntries.length > 0 ? (
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Fecha</TableHead>
+                        <TableHead>Tipo</TableHead>
+                        <TableHead>Descripci\u00F3n</TableHead>
+                        <TableHead className="text-right">Monto</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
                       {ledgerEntries.map((entry) => (
-                        <tr key={entry.id} className="hover:bg-gray-50">
-                          <td className="px-4 py-3 text-sm text-gray-600 whitespace-nowrap">
+                        <TableRow key={entry.id}>
+                          <TableCell className="text-sm text-muted-foreground whitespace-nowrap">
                             {formatDate(entry.created_at)}
-                          </td>
-                          <td className="px-4 py-3 whitespace-nowrap">
+                          </TableCell>
+                          <TableCell className="whitespace-nowrap">
                             <Badge variant={getLedgerTypeBadge(entry.type)}>
                               {getLedgerTypeLabel(entry.type)}
                             </Badge>
-                          </td>
-                          <td className="px-4 py-3 text-sm text-gray-900">
-                            {entry.description || '—'}
-                          </td>
-                          <td className={`px-4 py-3 text-sm font-medium text-right whitespace-nowrap ${
-                            entry.type === 'charge' ? 'text-green-600' :
-                            entry.type === 'refund' || entry.type === 'fee' ? 'text-red-600' :
-                            'text-gray-900'
+                          </TableCell>
+                          <TableCell className="text-sm text-foreground">
+                            {entry.description || '\u2014'}
+                          </TableCell>
+                          <TableCell className={`text-sm font-medium text-right whitespace-nowrap ${
+                            entry.type === 'charge' ? 'text-vital' :
+                            entry.type === 'refund' || entry.type === 'fee' ? 'text-coral' :
+                            'text-foreground'
                           }`}>
                             {entry.type === 'fee' || entry.type === 'refund' ? '-' : '+'}
                             {formatCurrency(Math.abs(entry.amount_cents), currency)}
-                          </td>
-                        </tr>
+                          </TableCell>
+                        </TableRow>
                       ))}
-                    </tbody>
-                  </table>
-                </div>
-              ) : (
-                <EmptyState
-                  title="No hay transacciones"
-                  description="Las transacciones aparecerán aquí cuando recibas pagos por tus consultas."
-                  iconName="wallet"
-                />
-              )}
-            </div>
+                    </TableBody>
+                  </Table>
+                ) : (
+                  <EmptyState
+                    title="No hay transacciones"
+                    description="Las transacciones aparecer\u00E1n aqu\u00ED cuando recibas pagos por tus consultas."
+                    iconName="wallet"
+                  />
+                )}
+              </CardContent>
+            </Card>
           </div>
         )}
       </div>

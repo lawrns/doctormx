@@ -5,6 +5,10 @@ import { createClient } from '@/lib/supabase/client'
 import { PricingBadge, FeatureLimitIndicator } from '@/components/PricingBadge'
 import { INDIVIDUAL_PREMIUM_FEATURES, type PremiumFeature, type SubscriptionTier } from '@/lib/premium-features-shared'
 import { LoadingButton } from '@/components/LoadingButton'
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import Link from 'next/link'
 
 interface PremiumFeatureCardProps {
   feature: PremiumFeature
@@ -20,9 +24,9 @@ function PremiumFeatureCard({ feature, tier, onPurchase, loading }: PremiumFeatu
   // Defensive checks - handle undefined tierAccess
   if (!tierAccess) {
     return (
-      <div className="bg-white rounded-xl border border-gray-200 p-6">
-        <p className="text-gray-500">Feature configuration not available</p>
-      </div>
+      <Card className="bg-card rounded-2xl border border-border shadow-dx-1 p-6">
+        <p className="text-muted-foreground">Feature configuration not available</p>
+      </Card>
     )
   }
   
@@ -51,36 +55,36 @@ function PremiumFeatureCard({ feature, tier, onPurchase, loading }: PremiumFeatu
   }, [feature])
 
   const iconColors = {
-    ai: 'from-blue-500 to-cyan-500',
+    ai: 'from-primary to-cyan-500',
     transcription: 'from-purple-500 to-pink-500',
     priority: 'from-amber-500 to-orange-500',
   }
 
   return (
-    <div className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
+    <Card className="bg-card rounded-2xl border border-border shadow-dx-1 overflow-hidden hover:shadow-dx-2 transition-shadow">
       <div className="p-6">
         <div className="flex items-start justify-between mb-4">
           <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${iconColors[featureConfig.category]} flex items-center justify-center`}>
             <FeatureIcon category={featureConfig.category} />
           </div>
           {isIncluded ? (
-            <span className="px-3 py-1 bg-teal-50 text-teal-700 text-xs font-medium rounded-full">
+            <Badge variant="success" className="bg-vital-soft text-vital">
               Incluido
-            </span>
+            </Badge>
           ) : (
             <PricingBadge tier={tier} size="sm" />
           )}
         </div>
 
-        <h3 className="text-lg font-semibold text-gray-900 mb-2">{featureConfig.nameEs}</h3>
-        <p className="text-sm text-gray-600 mb-4">{featureConfig.descriptionEs}</p>
+        <h3 className="text-lg font-semibold text-foreground mb-2">{featureConfig.nameEs}</h3>
+        <p className="text-sm text-muted-foreground mb-4">{featureConfig.descriptionEs}</p>
 
         {loadingUsage ? (
-          <div className="h-16 bg-gray-100 rounded-lg animate-pulse mb-4" />
+          <div className="h-16 bg-muted rounded-lg animate-pulse mb-4" />
         ) : isIncluded ? (
           <div className="mb-4">
             {isUnlimited ? (
-              <div className="flex items-center gap-2 text-teal-600">
+              <div className="flex items-center gap-2 text-vital">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
@@ -97,39 +101,40 @@ function PremiumFeatureCard({ feature, tier, onPurchase, loading }: PremiumFeatu
         ) : null}
 
         <div className="space-y-3">
-          <div className="p-4 bg-gray-50 rounded-lg">
+          <div className="p-4 bg-secondary/50 rounded-lg border border-border">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium text-gray-900">Uso único</span>
-              <span className="text-lg font-bold text-gray-900">${featureConfig.singlePurchase.priceMXN} MXN</span>
+              <span className="text-sm font-medium text-foreground">Uso único</span>
+              <span className="text-lg font-bold text-foreground">${featureConfig.singlePurchase.priceMXN} MXN</span>
             </div>
-            <p className="text-xs text-gray-500">Por {featureConfig.singlePurchase.unit}</p>
+            <p className="text-xs text-muted-foreground">Por {featureConfig.singlePurchase.unit}</p>
           </div>
 
-          <div className="p-4 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-lg">
+          <div className="p-4 bg-secondary/50 border border-border rounded-lg">
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-2">
-                <span className="text-sm font-medium text-gray-900">Pack Mensual</span>
-                <span className="px-2 py-0.5 bg-amber-500 text-white text-xs font-bold rounded-full">
+                <span className="text-sm font-medium text-foreground">Pack Mensual</span>
+                <span className="px-2 py-0.5 bg-primary text-primary-foreground text-xs font-bold rounded-full">
                   -{featureConfig.monthlyBundle.savingsPercent}% OFF
                 </span>
               </div>
-              <span className="text-lg font-bold text-gray-900">${featureConfig.monthlyBundle.priceMXN} MXN</span>
+              <span className="text-lg font-bold text-foreground">${featureConfig.monthlyBundle.priceMXN} MXN</span>
             </div>
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-muted-foreground">
               {featureConfig.monthlyBundle.quantity} usos por mes
             </p>
           </div>
         </div>
       </div>
 
-      <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
+      <div className="px-6 py-4 bg-secondary/50 border-t border-border">
         {isIncluded ? (
-          <button
+          <Button
             disabled
-            className="w-full py-2 px-4 bg-teal-50 text-teal-700 font-medium rounded-lg cursor-not-allowed"
+            variant="secondary"
+            className="w-full cursor-not-allowed"
           >
             Activado
-          </button>
+          </Button>
         ) : canPurchase ? (
           <div className="grid grid-cols-2 gap-3">
             <LoadingButton
@@ -149,15 +154,14 @@ function PremiumFeatureCard({ feature, tier, onPurchase, loading }: PremiumFeatu
             </LoadingButton>
           </div>
         ) : (
-          <a
-            href="/app/premium/upgrade"
-            className="block w-full py-2 px-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-medium rounded-lg hover:from-amber-600 hover:to-orange-600 transition-all text-center"
-          >
-            Upgrade a Pro
-          </a>
+          <Link href="/app/premium/upgrade" className="block w-full">
+            <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+              Upgrade a Pro
+            </Button>
+          </Link>
         )}
       </div>
-    </div>
+    </Card>
   )
 }
 
@@ -190,8 +194,8 @@ function TierComparison() {
     <div className="overflow-x-auto">
       <table className="w-full text-sm">
         <thead>
-          <tr className="border-b border-gray-200">
-            <th className="text-left py-3 px-4 font-medium text-gray-900">Característica</th>
+          <tr className="border-b border-border">
+            <th className="text-left py-3 px-4 font-medium text-foreground">Característica</th>
             {tiers.map(tier => (
               <th key={tier} className="text-center py-3 px-4">
                 <PricingBadge tier={tier} />
@@ -203,25 +207,25 @@ function TierComparison() {
           {features.map(feature => {
             const featureConfig = INDIVIDUAL_PREMIUM_FEATURES[feature]
             return (
-              <tr key={feature} className="border-b border-gray-100">
-                <td className="py-3 px-4 text-gray-700">{featureConfig.nameEs}</td>
+              <tr key={feature} className="border-b border-border/50">
+                <td className="py-3 px-4 text-muted-foreground">{featureConfig.nameEs}</td>
                 {tiers.map(tier => {
                   const access = featureConfig.tierAccess[tier]
                   return (
                     <td key={tier} className="text-center py-3 px-4">
                       {access.included ? (
                         access.limit === -1 ? (
-                          <span className="inline-flex items-center gap-1 text-teal-600">
+                          <span className="inline-flex items-center gap-1 text-vital">
                             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                             </svg>
                             Ilimitado
                           </span>
                         ) : (
-                          <span className="text-gray-600">{access.limit}/mes</span>
+                          <span className="text-muted-foreground">{access.limit}/mes</span>
                         )
                       ) : (
-                        <span className="text-gray-400">—</span>
+                        <span className="text-muted-foreground/60">—</span>
                       )}
                     </td>
                   )
@@ -299,32 +303,31 @@ export default function PremiumMarketplacePage() {
     <div className="p-6 lg:p-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">
+          <h1 className="font-display text-3xl font-bold tracking-tight text-foreground mb-4">
             Funcionalidades Premium de IA
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Desbloquea el poder de la inteligencia artificial para mejorar tu práctica médica.
             Compra funcionalidades individualmente o upgrade tu plan.
           </p>
         </div>
 
         {tier !== 'elite' && (
-          <div className="mb-12 p-6 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl text-white">
+          <Card className="mb-12 p-6 bg-primary rounded-2xl border border-border shadow-dx-1 text-primary-foreground">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-xl font-bold mb-2">¿Quieres todas las funcionalidades?</h2>
-                <p className="text-purple-100">
+                <p className="text-primary-foreground/80">
                   Upgrade a Elite para obtener acceso ilimitado a todas las funciones de IA
                 </p>
               </div>
-              <a
-                href="/app/premium/upgrade"
-                className="px-6 py-3 bg-white text-purple-600 font-medium rounded-lg hover:bg-purple-50 transition-colors"
-              >
-                Ver Planes
-              </a>
+              <Link href="/app/premium/upgrade">
+                <Button className="px-6 py-3 bg-primary-foreground text-primary hover:bg-primary-foreground/90">
+                  Ver Planes
+                </Button>
+              </Link>
             </div>
-          </div>
+          </Card>
         )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
@@ -339,19 +342,19 @@ export default function PremiumMarketplacePage() {
           ))}
         </div>
 
-        <div className="bg-white rounded-xl shadow-sm overflow-hidden">
-          <div className="p-6 border-b border-gray-200">
-            <h2 className="text-xl font-bold text-gray-900">Comparación por Plan</h2>
+        <Card className="bg-card rounded-2xl border border-border shadow-dx-1 overflow-hidden">
+          <div className="p-6 border-b border-border">
+            <h2 className="text-xl font-bold text-foreground">Comparación por Plan</h2>
           </div>
           <TierComparison />
-        </div>
+        </Card>
 
         <div className="mt-12 text-center">
-          <p className="text-gray-500 text-sm">
+          <p className="text-muted-foreground text-sm">
             ¿Tienes preguntas sobre los planes premium?{' '}
-            <a href="/contact" className="text-blue-600 hover:underline">
+            <Link href="/contact" className="text-primary hover:underline">
               Contáctanos
-            </a>
+            </Link>
           </p>
         </div>
       </div>

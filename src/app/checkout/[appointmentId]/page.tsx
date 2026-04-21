@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { Elements } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
 import CheckoutForm from './CheckoutForm'
+import { Button } from '@/components/ui/button'
 
 export default function CheckoutPage({
   params,
@@ -49,50 +50,51 @@ export default function CheckoutPage({
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-neutral-50 flex items-center justify-center">
-        <p className="text-neutral-600">Preparando pago...</p>
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <p className="text-muted-foreground">Preparando pago...</p>
       </div>
     )
   }
 
   if (error) {
     return (
-      <div className="min-h-screen bg-neutral-50">
-        <header className="bg-white shadow">
-          <div className="container mx-auto px-4 py-6">
-            <h1 className="text-2xl font-bold text-neutral-900">Doctor.mx</h1>
+      <div className="min-h-screen bg-background">
+        <header className="glass-nav sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">Doctor.mx</h1>
           </div>
         </header>
 
-        <main className="container mx-auto px-4 py-8 max-w-xl">
-          <div className="bg-white rounded-lg shadow p-6 space-y-5">
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-xl">
+          <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-6 space-y-5">
             <div>
-              <h1 className="text-2xl font-bold text-neutral-900 mb-2">No pudimos preparar tu pago</h1>
-              <p className="text-neutral-600">
+              <h1 className="font-display text-2xl font-bold tracking-tight text-foreground mb-2">No pudimos preparar tu pago</h1>
+              <p className="text-muted-foreground">
                 Tu cita todavía no se ha confirmado. Puedes intentar nuevamente o volver a tus citas para revisar el estado.
               </p>
             </div>
 
-            <div className="rounded-lg border border-red-200 bg-red-50 p-4">
-              <p className="text-sm text-red-900">{error}</p>
+            <div className="rounded-xl border border-destructive/20 bg-destructive/10 p-4">
+              <p className="text-sm text-destructive">{error}</p>
             </div>
 
             <div className="flex flex-col gap-3 sm:flex-row">
-              <button
+              <Button
                 type="button"
                 onClick={createPaymentIntent}
-                className="inline-flex flex-1 items-center justify-center rounded-lg bg-primary-500 px-4 py-3 font-medium text-white hover:bg-primary-600"
+                className="flex-1"
                 disabled={loading}
               >
                 {loading ? 'Reintentando...' : 'Reintentar pago'}
-              </button>
-              <button
+              </Button>
+              <Button
                 type="button"
+                variant="outline"
                 onClick={() => router.push('/app/appointments')}
-                className="inline-flex flex-1 items-center justify-center rounded-lg border border-neutral-300 px-4 py-3 font-medium text-neutral-900 hover:bg-neutral-100"
+                className="flex-1"
               >
                 Volver a mis citas
-              </button>
+              </Button>
             </div>
           </div>
         </main>
@@ -101,21 +103,21 @@ export default function CheckoutPage({
   }
 
   return (
-    <div className="min-h-screen bg-neutral-50">
-      <header className="bg-white shadow">
-        <div className="container mx-auto px-4 py-6">
-          <h1 className="text-2xl font-bold text-neutral-900">Doctor.mx</h1>
+    <div className="min-h-screen bg-background">
+      <header className="glass-nav sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">Doctor.mx</h1>
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8 max-w-xl">
-        <div className="bg-white rounded-lg shadow p-6">
-          <h1 className="text-2xl font-bold text-neutral-900 mb-6">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-xl">
+        <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-6">
+          <h1 className="font-display text-2xl font-bold tracking-tight text-foreground mb-6">
             Completar Pago
           </h1>
 
-          <div className="mb-6 rounded-lg border border-blue-200 bg-blue-50 p-4">
-            <p className="text-sm text-blue-900">
+          <div className="mb-6 rounded-xl border border-border bg-secondary/50 p-4">
+            <p className="text-sm text-foreground">
               Tu cita quedará confirmada en cuanto se procese el pago. Si interrumpes este paso, podrás retomarlo después desde <strong>Mis citas</strong>.
             </p>
           </div>

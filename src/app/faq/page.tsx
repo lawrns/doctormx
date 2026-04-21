@@ -193,13 +193,13 @@ const faqSections: FAQSection[] = [
 
 function FAQAccordion({ section }: { section: FAQSection }) {
   return (
-    <Card className="surface-panel border-border/80 overflow-hidden">
+    <Card className="bg-card rounded-2xl border border-border shadow-dx-1 overflow-hidden">
       <div className="border-b border-border/70 px-6 py-5">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[hsl(var(--surface-tint))] text-[hsl(var(--brand-ocean))]">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
             {section.icon}
           </div>
-          <h2 className="text-xl font-semibold tracking-[-0.03em] text-[hsl(var(--text-primary))]">
+          <h2 className="font-display text-xl font-semibold tracking-[-0.03em] text-foreground">
             {section.title}
           </h2>
         </div>
@@ -207,11 +207,11 @@ function FAQAccordion({ section }: { section: FAQSection }) {
       <div className="divide-y divide-border/50">
         {section.items.map((item, index) => (
           <details key={index} className="group">
-            <summary className="flex cursor-pointer items-center justify-between px-6 py-4 text-[hsl(var(--text-primary))] hover:bg-[hsl(var(--surface-quiet))] transition-colors">
+            <summary className="flex cursor-pointer items-center justify-between px-6 py-4 text-foreground hover:bg-accent transition-colors">
               <span className="font-medium pr-4">{item.question}</span>
-              <ChevronDown className="h-4 w-4 flex-shrink-0 text-[hsl(var(--text-soft))] transition-transform duration-200 group-open:rotate-180" />
+              <ChevronDown className="h-4 w-4 flex-shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180" />
             </summary>
-            <div className="px-6 pb-4 text-sm leading-relaxed text-[hsl(var(--text-secondary))]">
+            <div className="px-6 pb-4 text-sm leading-relaxed text-muted-foreground">
               {item.answer}
             </div>
           </details>
@@ -223,10 +223,10 @@ function FAQAccordion({ section }: { section: FAQSection }) {
 
 export default function FAQPage() {
   return (
-    <div className="min-h-screen bg-transparent">
+    <div className="min-h-screen bg-background">
       <main className="editorial-shell py-8 sm:py-10 lg:py-12">
         {/* Hero */}
-        <section className="surface-panel-strong overflow-hidden public-panel sm:px-8 lg:px-10 lg:py-10">
+        <section className="bg-card rounded-2xl border border-border shadow-dx-1 overflow-hidden sm:px-8 lg:px-10 lg:py-10">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <Badge variant="luxe">Centro de ayuda</Badge>
             <PublicSectionHeading
@@ -246,11 +246,11 @@ export default function FAQPage() {
 
         {/* Still have questions CTA */}
         <section className="mt-12 text-center">
-          <Card className="surface-panel inline-block p-8 sm:p-10">
-            <h2 className="text-xl font-semibold tracking-[-0.03em] text-[hsl(var(--text-primary))]">
+          <Card className="bg-card rounded-2xl border border-border shadow-dx-1 inline-block p-8 sm:p-10">
+            <h2 className="font-display text-xl font-semibold tracking-[-0.03em] text-foreground">
               No encontraste tu respuesta?
             </h2>
-            <p className="mt-2 text-[hsl(var(--text-secondary))]">
+            <p className="mt-2 text-muted-foreground">
               Nuestro equipo de soporte esta disponible para ayudarte.
             </p>
             <div className="mt-6 flex justify-center gap-3">

@@ -1,11 +1,12 @@
 'use client'
 
-import { Calendar, MessageCircle, User, ClipboardList, Image as ImageIcon, Sparkles, Users, Home, Stethoscope, LogOut, Bot, LayoutDashboard, Menu, X } from 'lucide-react'
+import { Calendar, MessageCircle, User, ClipboardList, Home, LogOut, Menu, X } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { createClient } from '@/lib/supabase/client'
 import { useEffect, useState } from 'react'
+import { cn } from '@/lib/utils'
 
 interface PatientLayoutProps {
   children: React.ReactNode
@@ -15,7 +16,6 @@ interface NavItem {
   href: string
   icon: any
   label: string
-  highlight?: boolean
   badge?: { count?: number; dot?: boolean; color?: string }
 }
 
@@ -120,25 +120,21 @@ export function PatientLayout({ children }: PatientLayoutProps) {
   }, [])
 
   const navItems: NavItem[] = [
-    { href: '/app', icon: LayoutDashboard, label: 'Dashboard' },
-    { href: '/app/ai-consulta', icon: Bot, label: 'Consulta IA', highlight: true },
-    { href: '/app/second-opinion', icon: Users, label: 'IA Multi-Especialista' },
-    { href: '/doctors', icon: Stethoscope, label: 'Buscar Doctor' },
+    { href: '/app', icon: Home, label: 'Inicio' },
     {
       href: '/app/appointments',
       icon: Calendar,
-      label: 'Mis Citas',
+      label: 'Citas',
       badge: { dot: badges.appointmentsJoinable, color: 'bg-green-500' }
     },
     {
       href: '/app/chat',
       icon: MessageCircle,
-      label: 'Mensajes',
+      label: 'Chat',
       badge: badges.messages > 0 ? { count: badges.messages, color: 'bg-red-500' } : undefined
     },
     { href: '/app/followups', icon: ClipboardList, label: 'Seguimientos' },
-    { href: '/app/upload-image', icon: ImageIcon, label: 'Análisis Imagen' },
-    { href: '/app/profile', icon: User, label: 'Mi Perfil' },
+    { href: '/app/profile', icon: User, label: 'Perfil' },
   ]
 
   const isActive = (href: string) => {
@@ -150,7 +146,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="min-h-screen bg-background">
       {/* Mobile overlay */}
       {mobileMenuOpen && (
         <div 
@@ -160,153 +156,150 @@ export function PatientLayout({ children }: PatientLayoutProps) {
       )}
 
       {/* Mobile Header */}
-      <header className="lg:hidden fixed top-0 left-0 right-0 bg-white border-b border-gray-200 z-30">
+      <header className="lg:hidden glass-nav sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
         <div className="flex items-center justify-between px-4 py-3">
           <div className="flex items-center gap-3">
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="p-2 -ml-2 rounded-md text-gray-600 hover:bg-gray-100"
+              className="p-2 -ml-2 rounded-md text-muted-foreground hover:bg-secondary"
               aria-label="Abrir menú"
             >
               <Menu className="w-6 h-6" />
             </button>
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-                <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              </div>
-              <span className="text-lg font-bold text-gray-900">Doctor.mx</span>
+              <div className="w-8 h-8 bg-gradient-to-br from-cobalt-600 to-cobalt-800 rounded-lg" />
+              <span className="font-display text-xl font-bold text-foreground">Doctor.mx</span>
             </Link>
           </div>
-          <Link href="/app/ai-consulta">
-            <Button size="sm" className="bg-blue-500 hover:bg-blue-600">
-              <Bot className="w-4 h-4 mr-1" />
-              Consulta
-            </Button>
-          </Link>
         </div>
       </header>
 
-      {/* Sidebar - Desktop (always visible) */}
-      <aside className="hidden lg:flex flex-col w-64 bg-white border-r border-gray-200 h-screen sticky top-0">
-        <div className="p-6 border-b border-gray-100">
-          <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center shadow-sm">
-              <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-              </svg>
-            </div>
-            <span className="text-xl font-bold text-gray-900">Doctor.mx</span>
-          </Link>
-        </div>
-        <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
-          {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${item.highlight && isActive(item.href) ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg' : isActive(item.href) ? 'bg-gray-100 text-gray-900 font-medium' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}`}>
-              <item.icon className="w-5 h-5" />
-              <span className="flex-1">{item.label}</span>
-              {item.badge?.dot && (
-                <span className={`w-2 h-2 rounded-full ${item.badge.color || 'bg-red-500'}`} />
-              )}
-              {item.badge?.count && item.badge.count > 0 && (
-                <span className={`min-w-[1.25rem] h-5 px-1.5 rounded-full text-xs font-bold text-white ${item.badge.color || 'bg-red-500'} flex items-center justify-center`}>
-                  {item.badge.count > 99 ? '99+' : item.badge.count}
-                </span>
-              )}
-              {item.highlight && isActive(item.href) && <Sparkles className="w-4 h-4 ml-auto" />}
+      <div className="flex">
+        {/* Sidebar - Desktop */}
+        <aside className="hidden lg:flex w-64 flex-col border-r border-border bg-background sticky top-0 h-screen">
+          <div className="p-6">
+            <Link href="/" className="flex items-center gap-2.5">
+              <div className="w-8 h-8 bg-gradient-to-br from-cobalt-600 to-cobalt-800 rounded-lg" />
+              <span className="font-display text-xl font-bold text-foreground">Doctor.mx</span>
             </Link>
-          ))}
-        </nav>
-        <div className="p-4 border-t border-gray-100">
-          <div className="flex items-center gap-3 px-4 py-3 mb-2">
-            <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-              <User className="w-5 h-5 text-blue-600" />
-            </div>
-            <div className="flex-1 min-w-0">
-              <p className="font-medium text-gray-900 truncate">{profile?.full_name || 'Usuario'}</p>
-              <p className="text-xs text-gray-500">Paciente</p>
-            </div>
           </div>
-          <form action="/auth/signout" method="post">
-            <Button variant="ghost" type="submit" className="w-full justify-start text-red-600 hover:text-red-700 hover:bg-red-50">
-              <LogOut className="w-5 h-5 mr-2" />
-              Cerrar sesión
-            </Button>
-          </form>
-        </div>
-      </aside>
-
-      {/* Mobile Sidebar (slides in) */}
-      <aside
-        className={`
-          fixed lg:hidden inset-y-0 left-0 z-50 w-72 bg-white border-r transform transition-transform duration-200 ease-in-out
-          ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}
-        `}
-      >
-        {/* Mobile sidebar header */}
-        <div className="flex items-center justify-between p-4 border-b">
-          <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
-            <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-              <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-              </svg>
+          <nav className="flex-1 px-4 space-y-1">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors",
+                  isActive(item.href)
+                    ? "bg-cobalt-50 text-cobalt-700"
+                    : "text-muted-foreground hover:bg-secondary hover:text-foreground"
+                )}
+              >
+                <item.icon className="w-5 h-5" />
+                <span className="flex-1">{item.label}</span>
+                {item.badge?.dot && (
+                  <span className={cn("w-2 h-2 rounded-full", item.badge.color || 'bg-red-500')} />
+                )}
+                {item.badge?.count && item.badge.count > 0 && (
+                  <span className={cn("min-w-[1.25rem] h-5 px-1.5 rounded-full text-xs font-bold text-white flex items-center justify-center", item.badge.color || 'bg-red-500')}>
+                    {item.badge.count > 99 ? '99+' : item.badge.count}
+                  </span>
+                )}
+              </Link>
+            ))}
+          </nav>
+          <div className="p-4 border-t border-border">
+            <div className="flex items-center gap-3 px-3 py-3 mb-2">
+              <div className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center">
+                <User className="w-5 h-5 text-muted-foreground" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="font-medium text-foreground truncate text-sm">{profile?.full_name || 'Usuario'}</p>
+                <p className="text-xs text-muted-foreground">Paciente</p>
+              </div>
             </div>
-            <span className="text-lg font-bold text-gray-900">Doctor.mx</span>
-          </Link>
-          <button
-            onClick={() => setMobileMenuOpen(false)}
-            className="p-2 rounded-md text-gray-600 hover:bg-gray-100"
-            aria-label="Cerrar menú"
-          >
-            <X className="w-5 h-5" />
-          </button>
-        </div>
+            <form action="/auth/signout" method="post">
+              <Button variant="ghost" type="submit" className="w-full justify-start text-destructive hover:text-destructive hover:bg-destructive/10">
+                <LogOut className="w-5 h-5 mr-2" />
+                Cerrar sesión
+              </Button>
+            </form>
+          </div>
+        </aside>
 
-        <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
-          {navItems.map((item) => (
-            <Link 
-              key={item.href} 
-              href={item.href} 
+        {/* Mobile Sidebar (slides in) */}
+        <aside
+          className={cn(
+            "fixed lg:hidden inset-y-0 left-0 z-50 w-72 bg-background border-r border-border transform transition-transform duration-200 ease-in-out",
+            mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+          )}
+        >
+          {/* Mobile sidebar header */}
+          <div className="flex items-center justify-between p-4 border-b border-border">
+            <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
+              <div className="w-8 h-8 bg-gradient-to-br from-cobalt-600 to-cobalt-800 rounded-lg" />
+              <span className="font-display text-lg font-bold text-foreground">Doctor.mx</span>
+            </Link>
+            <button
               onClick={() => setMobileMenuOpen(false)}
-              className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${item.highlight && isActive(item.href) ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg' : isActive(item.href) ? 'bg-gray-100 text-gray-900 font-medium' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}`}
+              className="p-2 rounded-md text-muted-foreground hover:bg-secondary"
+              aria-label="Cerrar menú"
             >
-              <item.icon className="w-5 h-5" />
-              <span className="flex-1">{item.label}</span>
-              {item.badge?.dot && (
-                <span className={`w-2 h-2 rounded-full ${item.badge.color || 'bg-red-500'}`} />
-              )}
-              {item.badge?.count && item.badge.count > 0 && (
-                <span className={`min-w-[1.25rem] h-5 px-1.5 rounded-full text-xs font-bold text-white ${item.badge.color || 'bg-red-500'} flex items-center justify-center`}>
-                  {item.badge.count > 99 ? '99+' : item.badge.count}
-                </span>
-              )}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="p-4 border-t border-gray-100">
-          <div className="flex items-center gap-3 px-4 py-3 mb-2">
-            <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-              <User className="w-5 h-5 text-blue-600" />
-            </div>
-            <div className="flex-1 min-w-0">
-              <p className="font-medium text-gray-900 truncate">{profile?.full_name || 'Usuario'}</p>
-              <p className="text-xs text-gray-500">Paciente</p>
-            </div>
+              <X className="w-5 h-5" />
+            </button>
           </div>
-          <form action="/auth/signout" method="post">
-            <Button variant="ghost" type="submit" className="w-full justify-start text-red-600 hover:text-red-700 hover:bg-red-50">
-              <LogOut className="w-5 h-5 mr-2" />
-              Cerrar sesión
-            </Button>
-          </form>
-        </div>
-      </aside>
 
-      {/* Main content */}
-      <main className="flex-1 flex flex-col min-w-0 pt-14 lg:pt-0">
-        {children}
-      </main>
+          <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
+            {navItems.map((item) => (
+              <Link 
+                key={item.href} 
+                href={item.href} 
+                onClick={() => setMobileMenuOpen(false)}
+                className={cn(
+                  "flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors",
+                  isActive(item.href)
+                    ? "bg-cobalt-50 text-cobalt-700"
+                    : "text-muted-foreground hover:bg-secondary hover:text-foreground"
+                )}
+              >
+                <item.icon className="w-5 h-5" />
+                <span className="flex-1">{item.label}</span>
+                {item.badge?.dot && (
+                  <span className={cn("w-2 h-2 rounded-full", item.badge.color || 'bg-red-500')} />
+                )}
+                {item.badge?.count && item.badge.count > 0 && (
+                  <span className={cn("min-w-[1.25rem] h-5 px-1.5 rounded-full text-xs font-bold text-white flex items-center justify-center", item.badge.color || 'bg-red-500')}>
+                    {item.badge.count > 99 ? '99+' : item.badge.count}
+                  </span>
+                )}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="p-4 border-t border-border">
+            <div className="flex items-center gap-3 px-3 py-3 mb-2">
+              <div className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center">
+                <User className="w-5 h-5 text-muted-foreground" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="font-medium text-foreground truncate text-sm">{profile?.full_name || 'Usuario'}</p>
+                <p className="text-xs text-muted-foreground">Paciente</p>
+              </div>
+            </div>
+            <form action="/auth/signout" method="post">
+              <Button variant="ghost" type="submit" className="w-full justify-start text-destructive hover:text-destructive hover:bg-destructive/10">
+                <LogOut className="w-5 h-5 mr-2" />
+                Cerrar sesión
+              </Button>
+            </form>
+          </div>
+        </aside>
+
+        {/* Main content */}
+        <main className="flex-1 min-w-0 pt-14 lg:pt-0">
+          {children}
+        </main>
+      </div>
     </div>
   )
 }

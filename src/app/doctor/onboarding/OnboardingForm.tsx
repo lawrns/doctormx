@@ -5,6 +5,19 @@ import { useRouter } from 'next/navigation'
 import { SPECIALTIES, PAYMENT_CONFIG } from '@/config/constants'
 import { useToast } from '@/components/Toast'
 import type { Doctor, Profile } from '@/types'
+import { cn } from '@/lib/utils'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select'
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
+import { Label } from '@/components/ui/label'
+import { Badge } from '@/components/ui/badge'
+import { Separator } from '@/components/ui/separator'
+import { Switch } from '@/components/ui/switch'
+import { Checkbox } from '@/components/ui/checkbox'
+import { Check, Loader2, Shield, AlertCircle, CheckCircle, Stethoscope, ArrowRight } from 'lucide-react'
+import Link from 'next/link'
 
 type OnboardingFormProps = {
   doctor: Doctor | null
@@ -17,6 +30,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
   const [submitting, setSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState('')
   const [submitMessage, setSubmitMessage] = useState('')
+  const [currentStep, setCurrentStep] = useState(1)
 
   // SEP Verification state
   const [verifying, setVerifying] = useState(false)
@@ -208,122 +222,180 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
 
   const availableCities = state ? (cityByState[state] || [state]) : []
 
+  const steps = [
+    { num: 1, label: 'Profesional' },
+    { num: 2, label: 'Ubicación' },
+    { num: 3, label: 'Disponibilidad' },
+  ]
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white shadow">
-        <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-gray-900">Doctor.mx</h1>
-          <div className="flex items-center gap-4">
-            <span className="text-sm text-gray-600">Dr. {profile?.full_name}</span>
-            {isVerified && (
-              <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-medium">
-                Verificado
-              </span>
-            )}
-            {!isVerified && isComplete && (
-              <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-medium">
-                En revisión
-              </span>
-            )}
+    <div className="min-h-screen bg-background">
+      <header className="glass-nav sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
+        <div className="max-w-3xl mx-auto px-6 py-4 flex justify-between items-center">
+          <Link href="/" className="flex items-center gap-2.5">
+            <div className="w-8 h-8 bg-gradient-to-br from-cobalt-600 to-cobalt-800 rounded-lg flex items-center justify-center">
+              <Stethoscope className="w-4 h-4 text-white" />
+            </div>
+            <span className="font-display text-xl font-bold text-foreground">Doctor.mx</span>
+          </Link>
+          <div className="flex items-center gap-3">
+            <span className="text-sm font-medium text-foreground hidden sm:inline">Dr. {profile?.full_name}</span>
+            <Badge variant={isVerified ? 'default' : 'secondary'} className={isVerified ? 'bg-vital text-white' : ''}>
+              {isVerified ? 'Verificado' : 'En revisión'}
+            </Badge>
             <form action="/auth/signout" method="post">
-              <button type="submit" className="text-sm text-red-600 hover:text-red-700">
+              <Button type="submit" variant="ghost" size="sm" className="text-muted-foreground hover:text-destructive">
                 Cerrar sesión
-              </button>
+              </Button>
             </form>
           </div>
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-6">
-            <h1 className="text-2xl font-bold text-gray-900">
-              {isComplete ? 'Mi perfil profesional' : 'Completa tu perfil'}
-            </h1>
-            <p className="text-gray-600 mt-1">
-              {isVerified
-                ? 'Tu perfil está verificado y publicado en el catálogo'
-                : isComplete
-                  ? 'Tu perfil está en revisión. Puedes actualizarlo mientras tanto.'
-                  : 'Completa tu información para comenzar a recibir pacientes'
-              }
-            </p>
-            <div className="mt-4 grid gap-3 md:grid-cols-3">
-              <div className={`rounded-lg border p-3 text-sm ${licenseNumber ? 'border-green-200 bg-green-50 text-green-800' : 'border-gray-200 bg-white text-gray-600'}`}>
-                Cédula y perfil profesional
-              </div>
-              <div className={`rounded-lg border p-3 text-sm ${hasAvailability ? 'border-green-200 bg-green-50 text-green-800' : 'border-gray-200 bg-white text-gray-600'}`}>
-                Disponibilidad para pacientes
-              </div>
-              <div className={`rounded-lg border p-3 text-sm ${price ? 'border-green-200 bg-green-50 text-green-800' : 'border-gray-200 bg-white text-gray-600'}`}>
-                Precio y preparación operativa
-              </div>
+      <main className="max-w-3xl mx-auto px-6 py-10">
+        <div className="mb-2">
+          <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+            Onboarding
+          </span>
+        </div>
+        <h1 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-3">
+          {isComplete ? 'Mi perfil profesional' : 'Completa tu perfil'}
+        </h1>
+        <p className="text-muted-foreground mb-8 max-w-lg">
+          {isVerified
+            ? 'Tu perfil está verificado y publicado en el catálogo'
+            : isComplete
+              ? 'Tu perfil está en revisión. Puedes actualizarlo mientras tanto.'
+              : 'Completa tu información para comenzar a recibir pacientes'
+          }
+        </p>
+
+        {/* Progress pills */}
+        <div className="flex gap-2 mb-10">
+          {[
+            { label: 'Cédula y perfil', done: Boolean(licenseNumber && bio) },
+            { label: 'Disponibilidad', done: hasAvailability },
+            { label: 'Precio', done: Boolean(price) },
+          ].map((p, i) => (
+            <div
+              key={i}
+              className={cn(
+                'px-3 py-1.5 rounded-lg text-xs font-medium border transition-colors',
+                p.done
+                  ? 'bg-vital-soft border-vital/20 text-vital'
+                  : 'bg-secondary/50 border-border text-muted-foreground'
+              )}
+            >
+              {p.done && <Check className="w-3 h-3 inline mr-1" />}
+              {p.label}
             </div>
+          ))}
+        </div>
+
+        {submitError && (
+          <div className="mb-6 rounded-xl border border-destructive/20 bg-destructive/10 p-4 text-sm text-destructive">
+            {submitError}
           </div>
+        )}
 
-          {submitError && (
-            <div className="mb-6 rounded-lg border border-red-200 bg-red-50 p-4 text-sm text-red-800">
-              {submitError}
+        {submitMessage && (
+          <div className="mb-6 rounded-xl border border-vital/20 bg-vital-soft p-4 text-sm text-vital">
+            {submitMessage}
+          </div>
+        )}
+
+        {/* Stepper */}
+        <div className="flex items-center mb-10">
+          {steps.map((step, idx) => (
+            <div key={step.num} className="flex items-center flex-1">
+              <button
+                type="button"
+                onClick={() => currentStep > step.num && setCurrentStep(step.num)}
+                className={cn(
+                  'flex flex-col items-center flex-1 group cursor-default',
+                  currentStep > step.num && 'cursor-pointer'
+                )}
+              >
+                <div className={cn(
+                  'w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-300 border-2',
+                  currentStep === step.num
+                    ? 'bg-ink text-white border-ink'
+                    : currentStep > step.num
+                      ? 'bg-vital text-white border-vital'
+                      : 'bg-background text-muted-foreground border-border'
+                )}>
+                  {currentStep > step.num ? <Check className="w-5 h-5" /> : step.num}
+                </div>
+                <span className={cn(
+                  'text-[11px] mt-2 font-medium hidden sm:block transition-colors',
+                  currentStep === step.num ? 'text-foreground' :
+                  currentStep > step.num ? 'text-vital' :
+                  'text-muted-foreground'
+                )}>
+                  {step.label}
+                </span>
+              </button>
+              {idx < 2 && (
+                <div className={cn(
+                  'flex-1 h-0.5 mx-2 sm:mx-4 mb-5 transition-colors duration-300',
+                  currentStep > step.num ? 'bg-vital' : 'bg-border'
+                )} />
+              )}
             </div>
-          )}
+          ))}
+        </div>
 
-          {submitMessage && (
-            <div className="mb-6 rounded-lg border border-green-200 bg-green-50 p-4 text-sm text-green-800">
-              {submitMessage}
-            </div>
-          )}
-
-          <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow">
-            <div className="p-6 space-y-8">
-              {/* Sección: Información Profesional */}
-              <div>
-                <h2 className="text-lg font-semibold text-gray-900 mb-4 pb-2 border-b">
+        <form onSubmit={handleSubmit}>
+          {/* Step 1: Professional Info */}
+          {currentStep === 1 && (
+            <Card className="rounded-2xl border border-border shadow-dx-1 overflow-hidden">
+              <CardHeader className="bg-secondary/30 border-b border-border px-6 py-5">
+                <CardTitle className="font-display text-lg font-semibold text-foreground">
                   Información profesional
-                </h2>
+                </CardTitle>
+                <p className="text-sm text-muted-foreground">
+                  Datos que aparecerán en tu perfil público
+                </p>
+              </CardHeader>
+              <CardContent className="space-y-6 p-6">
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-900 mb-2">
-                      Especialidad *
-                    </label>
-                    <select
-                      value={specialty}
-                      onChange={(e) => setSpecialty(e.target.value)}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-gray-900 bg-white"
-                    >
-                      <option value="">Selecciona una especialidad</option>
-                      {SPECIALTIES.map((spec) => (
-                        <option key={spec.slug} value={spec.slug}>
-                          {spec.name}
-                        </option>
-                      ))}
-                    </select>
+                  <div className="space-y-2">
+                    <Label className="text-sm font-medium text-foreground">Especialidad *</Label>
+                    <Select value={specialty} onValueChange={setSpecialty} required>
+                      <SelectTrigger className="w-full">
+                        <SelectValue placeholder="Selecciona una especialidad" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {SPECIALTIES.map((spec) => (
+                          <SelectItem key={spec.slug} value={spec.slug}>
+                            {spec.name}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
                   </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-gray-900 mb-2">
-                      Años de experiencia *
-                    </label>
-                    <input
+                  <div className="space-y-2">
+                    <Label className="text-sm font-medium text-foreground">Años de experiencia *</Label>
+                    <Input
                       type="number"
                       value={yearsExperience}
                       onChange={(e) => setYearsExperience(e.target.value)}
                       min="0"
                       max="50"
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-gray-900"
                     />
                   </div>
 
-                  <div className="md:col-span-2">
-                    <label className="block text-sm font-medium text-gray-900 mb-2">
-                      Cédula profesional * 
-                      <span className="text-xs text-gray-500 font-normal ml-2">
+                  <div className="md:col-span-2 space-y-2">
+                    <Label className="text-sm font-medium text-foreground">
+                      Cédula profesional *
+                      <span className="text-xs text-muted-foreground font-normal ml-2">
                         Verificamos con la SEP
                       </span>
-                    </label>
-                    <div className="flex gap-2">
-                      <input
+                    </Label>
+                    <div className="flex gap-2 items-center">
+                      <Input
                         type="text"
                         value={licenseNumber}
                         onChange={(e) => {
@@ -332,53 +404,53 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                         }}
                         required
                         placeholder="Ej: 12345678"
-                        className={`flex-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 text-gray-900 ${
-                          verificationStatus?.verified 
-                            ? 'border-green-500 bg-green-50' 
+                        className={cn(
+                          'flex-1',
+                          verificationStatus?.verified
+                            ? 'border-vital bg-vital-soft'
                             : verificationStatus && !verificationStatus.verified
-                              ? 'border-red-300 bg-red-50'
-                              : 'border-gray-300'
-                        }`}
+                              ? 'border-destructive/50 bg-destructive/5'
+                              : ''
+                        )}
                       />
-                      <button
+                      {verificationStatus?.verified && (
+                        <Badge variant="success">Verificado</Badge>
+                      )}
+                      {verificationStatus && !verificationStatus.verified && (
+                        <Badge variant="destructive">Pendiente</Badge>
+                      )}
+                      <Button
                         type="button"
+                        variant="outline"
                         onClick={handleVerifyCedula}
                         disabled={verifying || !licenseNumber}
-                        className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 whitespace-nowrap"
+                        className="whitespace-nowrap"
                       >
                         {verifying ? (
                           <>
-                            <svg className="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24">
-                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
-                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
-                            </svg>
+                            <Loader2 className="animate-spin h-4 w-4" />
                             Verificando...
                           </>
                         ) : (
                           <>
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                            </svg>
+                            <Shield className="w-4 h-4" />
                             Verificar SEP
                           </>
                         )}
-                      </button>
+                      </Button>
                     </div>
                     {verificationStatus && (
-                      <div className={`mt-2 p-3 rounded-lg text-sm ${
-                        verificationStatus.verified 
-                          ? 'bg-green-100 text-green-800 border border-green-200' 
-                          : 'bg-red-100 text-red-800 border border-red-200'
-                      }`}>
+                      <div className={cn(
+                        'mt-2 p-3 rounded-xl text-sm border',
+                        verificationStatus.verified
+                          ? 'bg-vital-soft text-vital border-vital/20'
+                          : 'bg-destructive/10 text-destructive border-destructive/20'
+                      )}>
                         <div className="flex items-start gap-2">
                           {verificationStatus.verified ? (
-                            <svg className="w-5 h-5 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+                            <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
                           ) : (
-                            <svg className="w-5 h-5 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+                            <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
                           )}
                           <div>
                             <p className="font-medium">
@@ -396,137 +468,166 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                     )}
                   </div>
 
-                  <div className="md:col-span-2">
-                    <label className="block text-sm font-medium text-gray-900 mb-2">
-                      Biografía profesional *
-                    </label>
-                    <textarea
+                  <div className="md:col-span-2 space-y-2">
+                    <Label className="text-sm font-medium text-foreground">Biografía profesional *</Label>
+                    <Textarea
                       value={bio}
                       onChange={(e) => setBio(e.target.value)}
                       rows={3}
                       required
                       maxLength={500}
                       placeholder="Describe tu experiencia y enfoque profesional..."
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-gray-900"
                     />
-                    <p className="text-xs text-gray-500 mt-1">{bio.length}/500</p>
+                    <p className="text-xs text-muted-foreground">{bio.length}/500</p>
                   </div>
                 </div>
-              </div>
 
-              {/* Sección: Ubicación */}
-              <div>
-                <h2 className="text-lg font-semibold text-gray-900 mb-4 pb-2 border-b">
-                  Ubicación
-                </h2>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-900 mb-2">
-                      Estado *
-                    </label>
-                    <select
-                      value={state}
-                      onChange={(e) => {
-                        setState(e.target.value)
-                        setCity('') // Reset city when state changes
-                      }}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-gray-900 bg-white"
-                    >
-                      <option value="">Selecciona un estado</option>
-                      {stateOptions.map((s) => (
-                        <option key={s} value={s}>
-                          {s}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-900 mb-2">
-                      Ciudad *
-                    </label>
-                    <select
-                      value={city}
-                      onChange={(e) => setCity(e.target.value)}
-                      required
-                      disabled={!state}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-gray-900 bg-white disabled:bg-gray-100 disabled:cursor-not-allowed"
-                    >
-                      <option value="">
-                        {state ? 'Selecciona una ciudad' : 'Primero selecciona un estado'}
-                      </option>
-                      {availableCities.map((c) => (
-                        <option key={c} value={c}>
-                          {c}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
+                <div className="flex justify-end pt-4">
+                  <Button
+                    type="button"
+                    onClick={() => setCurrentStep(2)}
+                    className="h-12 px-6 bg-ink hover:bg-cobalt-800 text-white rounded-xl"
+                  >
+                    Siguiente
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
                 </div>
-              </div>
+              </CardContent>
+            </Card>
+          )}
 
-              {/* Sección: Seguros médicos */}
-              <div>
-                <h2 className="text-lg font-semibold text-gray-900 mb-4 pb-2 border-b">
-                  Seguros médicos aceptados
-                </h2>
-                <p className="text-sm text-gray-600 mb-4">
-                  Selecciona los seguros con los que trabajas. Esto ayudará a los pacientes asegurados a encontrarte.
+          {/* Step 2: Location & Insurance */}
+          {currentStep === 2 && (
+            <Card className="rounded-2xl border border-border shadow-dx-1 overflow-hidden">
+              <CardHeader className="bg-secondary/30 border-b border-border px-6 py-5">
+                <CardTitle className="font-display text-lg font-semibold text-foreground">
+                  Ubicación y seguros
+                </CardTitle>
+                <p className="text-sm text-muted-foreground">
+                  Ayuda a los pacientes a encontrarte
                 </p>
-                {availableInsurances.length > 0 ? (
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2 max-h-48 overflow-y-auto border rounded-lg p-3">
-                    {availableInsurances.map((insurance) => (
-                      <label key={insurance.id} className="flex items-center gap-2 p-2 rounded hover:bg-gray-50 cursor-pointer">
-                        <input
-                          type="checkbox"
-                          checked={selectedInsurances.includes(insurance.id)}
-                          onChange={(e) => {
-                            if (e.target.checked) {
-                              setSelectedInsurances([...selectedInsurances, insurance.id])
-                            } else {
-                              setSelectedInsurances(selectedInsurances.filter(id => id !== insurance.id))
-                            }
-                          }}
-                          className="w-4 h-4"
-                        />
-                        <span className="text-sm text-gray-900">{insurance.name}</span>
-                      </label>
-                    ))}
+              </CardHeader>
+              <CardContent className="space-y-6 p-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label className="text-sm font-medium text-foreground">Estado *</Label>
+                    <Select value={state} onValueChange={(val) => { setState(val); setCity(''); }} required>
+                      <SelectTrigger className="w-full">
+                        <SelectValue placeholder="Selecciona un estado" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {stateOptions.map((s) => (
+                          <SelectItem key={s} value={s}>
+                            {s}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
                   </div>
-                ) : (
-                  <p className="text-sm text-gray-500">Cargando seguros...</p>
-                )}
-              </div>
 
-              {/* Sección: Disponibilidad */}
-              <div>
-                <h2 className="text-lg font-semibold text-gray-900 mb-4 pb-2 border-b">
-                  Horarios disponibles
-                </h2>
+                  <div className="space-y-2">
+                    <Label className="text-sm font-medium text-foreground">Ciudad *</Label>
+                    <Select value={city} onValueChange={setCity} required disabled={!state}>
+                      <SelectTrigger className="w-full">
+                        <SelectValue placeholder={state ? 'Selecciona una ciudad' : 'Primero selecciona un estado'} />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {availableCities.map((c) => (
+                          <SelectItem key={c} value={c}>
+                            {c}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+
                 <div className="space-y-3">
+                  <h3 className="font-display text-lg font-semibold text-foreground">
+                    Seguros médicos aceptados
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    Selecciona los seguros con los que trabajas. Esto ayudará a los pacientes asegurados a encontrarte.
+                  </p>
+                  {availableInsurances.length > 0 ? (
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-2 max-h-48 overflow-y-auto bg-secondary/50 rounded-xl p-3">
+                      {availableInsurances.map((insurance) => (
+                        <div key={insurance.id} className="flex items-center gap-2 p-2 rounded-lg hover:bg-secondary/70">
+                          <Checkbox
+                            id={`insurance-${insurance.id}`}
+                            checked={selectedInsurances.includes(insurance.id)}
+                            onCheckedChange={(checked) => {
+                              if (checked) {
+                                setSelectedInsurances([...selectedInsurances, insurance.id])
+                              } else {
+                                setSelectedInsurances(selectedInsurances.filter(id => id !== insurance.id))
+                              }
+                            }}
+                          />
+                          <Label htmlFor={`insurance-${insurance.id}`} className="text-sm text-foreground cursor-pointer">
+                            {insurance.name}
+                          </Label>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-sm text-muted-foreground">Cargando seguros...</p>
+                  )}
+                </div>
+
+                <div className="flex justify-between pt-4">
+                  <Button type="button" variant="outline" onClick={() => setCurrentStep(1)} className="h-12 px-6 rounded-xl">
+                    Atrás
+                  </Button>
+                  <Button
+                    type="button"
+                    onClick={() => setCurrentStep(3)}
+                    className="h-12 px-6 bg-ink hover:bg-cobalt-800 text-white rounded-xl"
+                  >
+                    Siguiente
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
+          {/* Step 3: Availability & Pricing */}
+          {currentStep === 3 && (
+            <Card className="rounded-2xl border border-border shadow-dx-1 overflow-hidden">
+              <CardHeader className="bg-secondary/30 border-b border-border px-6 py-5">
+                <CardTitle className="font-display text-lg font-semibold text-foreground">
+                  Disponibilidad y precio
+                </CardTitle>
+                <p className="text-sm text-muted-foreground">
+                  Configura cuándo y a qué precio te pueden reservar
+                </p>
+              </CardHeader>
+              <CardContent className="space-y-6 p-6">
+                <div className="space-y-3">
+                  <h3 className="font-display text-lg font-semibold text-foreground">
+                    Horarios disponibles
+                  </h3>
                   {Object.entries(availability).map(([day, config]) => (
                     <div
                       key={day}
-                      className="flex items-center gap-4 p-3 border rounded-lg hover:bg-gray-50"
+                      className="flex items-center gap-4 p-4 border border-border rounded-xl bg-card hover:bg-secondary/30 transition-colors"
                     >
-                      <input
-                        type="checkbox"
+                      <Switch
                         checked={config.enabled}
-                        onChange={(e) =>
+                        onCheckedChange={(checked) =>
                           setAvailability({
                             ...availability,
-                            [day]: { ...config, enabled: e.target.checked },
+                            [day]: { ...config, enabled: checked },
                           })
                         }
-                        className="w-5 h-5"
                       />
-                      <span className="w-24 font-medium text-gray-900">
+                      <span className="w-24 font-medium text-foreground">
                         {dayNames[day]}
                       </span>
                       {config.enabled && (
                         <>
-                          <input
+                          <Input
                             type="time"
                             value={config.start}
                             onChange={(e) =>
@@ -535,10 +636,10 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                                 [day]: { ...config, start: e.target.value },
                               })
                             }
-                            className="px-3 py-1 border border-gray-300 rounded text-gray-900"
+                            className="w-28"
                           />
-                          <span className="text-gray-900 font-medium">a</span>
-                          <input
+                          <span className="text-foreground font-medium">a</span>
+                          <Input
                             type="time"
                             value={config.end}
                             onChange={(e) =>
@@ -547,7 +648,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                                 [day]: { ...config, end: e.target.value },
                               })
                             }
-                            className="px-3 py-1 border border-gray-300 rounded text-gray-900"
+                            className="w-28"
                           />
                         </>
                       )}
@@ -555,35 +656,27 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                   ))}
                 </div>
 
-              </div>
-
-              {/* Sección: Precio */}
-              <div>
-                <h2 className="text-lg font-semibold text-gray-900 mb-4 pb-2 border-b">
-                  Precio de consulta
-                </h2>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="md:col-span-2 bg-gray-50 p-4 rounded-lg">
-                    <h3 className="font-medium text-gray-900 mb-2 text-sm">
-                      Precios de referencia
-                    </h3>
-                    <ul className="text-xs text-gray-600 space-y-1">
+                <div className="space-y-4">
+                  <h3 className="font-display text-lg font-semibold text-foreground">
+                    Precio de consulta
+                  </h3>
+                  <div className="bg-secondary/50 rounded-xl p-4 space-y-2">
+                    <h4 className="font-medium text-foreground text-sm">Precios de referencia</h4>
+                    <ul className="text-xs text-muted-foreground space-y-1">
                       <li>• Medicina General: $300 - $500 MXN</li>
                       <li>• Especialistas: $500 - $1,000 MXN</li>
                       <li>• Psicología/Nutrición: $400 - $800 MXN</li>
                     </ul>
-                    <p className="text-xs text-gray-500 mt-2">
+                    <p className="text-xs text-muted-foreground">
                       Rango: ${PAYMENT_CONFIG.MIN_PRICE_CENTS / 100} - ${PAYMENT_CONFIG.MAX_PRICE_CENTS / 100} MXN
                     </p>
                   </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-gray-900 mb-2">
-                      Precio por consulta *
-                    </label>
+                  <div className="space-y-2">
+                    <Label className="text-sm font-medium text-foreground">Precio por consulta *</Label>
                     <div className="flex items-center gap-2">
-                      <span className="text-lg font-bold text-gray-900">$</span>
-                      <input
+                      <span className="text-lg font-bold text-foreground">$</span>
+                      <Input
                         type="number"
                         value={price}
                         onChange={(e) => setPrice(e.target.value)}
@@ -591,63 +684,62 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                         max={PAYMENT_CONFIG.MAX_PRICE_CENTS / 100}
                         step="50"
                         required
-                        className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-gray-900"
+                        className="flex-1"
                       />
-                      <span className="text-gray-900">{PAYMENT_CONFIG.CURRENCY}</span>
+                      <span className="text-foreground">{PAYMENT_CONFIG.CURRENCY}</span>
                     </div>
-                    <p className="text-xs text-gray-500 mt-1">
+                    <p className="text-xs text-muted-foreground">
                       Puedes cambiar tu precio en cualquier momento
                     </p>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            {/* Botón submit */}
-            <div className="p-6 bg-gray-50 border-t flex justify-between items-center">
-              <div className="text-sm text-gray-600">
-                {!isComplete && <span>* Completa todos los campos requeridos</span>}
-                {isComplete && !hasAvailability && (
-                  <span className="text-yellow-700">
-                    Activa al menos un horario para que los pacientes puedan reservar contigo.
-                  </span>
-                )}
-                {isComplete && !isVerified && (
-                  <span className="text-yellow-700">
-                    Tu perfil está en revisión. Serás notificado cuando sea verificado.
-                  </span>
-                )}
-                {isVerified && (
-                  <span className="text-green-700">
-                    Perfil verificado y publicado
-                  </span>
-                )}
-              </div>
-              <button
-                type="submit"
-                disabled={!isComplete || !hasAvailability || submitting}
-                title={submitting ? 'Guardando...' : 'Guardar cambios'}
-                className="group relative w-12 h-12 bg-blue-600 text-white rounded-full hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:scale-110 disabled:hover:scale-100 flex items-center justify-center shadow-lg"
-              >
-                {submitting ? (
-                  <svg className="animate-spin h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                  </svg>
-                ) : (
-                  <svg
-                    className="w-6 h-6 transition-transform duration-300 group-hover:scale-110"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                  </svg>
-                )}
-              </button>
-            </div>
-          </form>
-        </div>
+                <Separator />
+
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
+                    {!isComplete && <span>* Completa todos los campos requeridos</span>}
+                    {isComplete && !hasAvailability && (
+                      <span className="text-amber-700">
+                        Activa al menos un horario para que los pacientes puedan reservar contigo.
+                      </span>
+                    )}
+                    {isComplete && !isVerified && (
+                      <span className="text-amber-700">
+                        Tu perfil está en revisión. Serás notificado cuando sea verificado.
+                      </span>
+                    )}
+                    {isVerified && (
+                      <span className="text-vital">
+                        Perfil verificado y publicado
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Button type="button" variant="outline" onClick={() => setCurrentStep(2)} className="h-12 px-6 rounded-xl">
+                      Atrás
+                    </Button>
+                    <Button
+                      type="submit"
+                      disabled={!isComplete || !hasAvailability || submitting}
+                      className="h-12 px-8 bg-ink hover:bg-cobalt-800 text-white rounded-xl font-medium"
+                    >
+                      {submitting ? (
+                        <>
+                          <Loader2 className="animate-spin h-4 w-4 mr-2" />
+                          Guardando...
+                        </>
+                      ) : (
+                        <>
+                          Guardar perfil
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </>
+                      )}
+                    </Button>
+                  </div>
+              </CardContent>
+            </Card>
+          )}
+        </form>
       </main>
     </div>
   )

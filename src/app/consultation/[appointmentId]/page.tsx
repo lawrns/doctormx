@@ -3,6 +3,7 @@ import { getOrCreateVideoRoom } from '@/lib/video'
 import { formatDate, formatTime } from '@/lib/utils'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { Button } from '@/components/ui/button'
 
 export default async function ConsultationRoomPage({
   params,
@@ -34,27 +35,27 @@ export default async function ConsultationRoomPage({
   const videoRoom = await getOrCreateVideoRoom(appointmentId)
 
   return (
-    <div className="min-h-screen bg-neutral-50">
-      <header className="bg-white shadow">
+    <div className="min-h-screen bg-background">
+      <header className="glass-nav sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
         <div className="container mx-auto px-4 py-6">
-          <Link href="/app" className="text-2xl font-bold text-neutral-900">
+          <Link href="/app" className="text-2xl font-bold text-foreground">
             Doctor.mx
           </Link>
         </div>
       </header>
 
       <main className="container mx-auto px-4 py-8 max-w-4xl">
-        <div className="bg-white rounded-lg shadow p-8">
-          <h1 className="text-3xl font-bold text-neutral-900 mb-6">
+        <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-8">
+          <h1 className="font-display text-2xl font-bold tracking-tight text-foreground mb-6">
             Sala de Consulta
           </h1>
 
           {/* Info de la cita */}
-          <div className="bg-primary-50 border border-primary-200 rounded-lg p-6 mb-8">
-            <h3 className="font-semibold text-neutral-900 mb-4">
+          <div className="bg-secondary/50 rounded-xl border border-border p-6 mb-8">
+            <h3 className="font-semibold text-foreground mb-4">
               Consulta con Dr. {appointment.doctor.profile.full_name}
             </h3>
-            <div className="grid grid-cols-2 gap-4 text-sm text-neutral-600">
+            <div className="grid grid-cols-2 gap-4 text-sm text-muted-foreground">
               <div>
                 <strong>Fecha:</strong> {formatDate(appointment.start_ts)}
               </div>
@@ -66,27 +67,32 @@ export default async function ConsultationRoomPage({
 
           {/* Ingresar a videollamada */}
           <div className="text-center">
-            <p className="text-neutral-600 mb-6">
+            <p className="text-muted-foreground mb-6">
               Haz clic en el botón para ingresar a la videollamada con tu doctor
             </p>
 
-            <a
-              href={videoRoom.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-primary-500 text-white px-8 py-4 rounded-lg hover:bg-primary-600 font-semibold text-lg"
+            <Button
+              asChild
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 font-semibold text-lg"
             >
-              📹 Ingresar a Consulta
-            </a>
+              <a
+                href={videoRoom.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                📹 Ingresar a Consulta
+              </a>
+            </Button>
 
-            <p className="text-sm text-neutral-500 mt-4">
+            <p className="text-sm text-muted-foreground mt-4">
               La videollamada se abrirá en una nueva pestaña
             </p>
           </div>
 
           {/* Instrucciones */}
-          <div className="mt-8 pt-8 border-t space-y-3 text-sm text-neutral-600">
-            <p className="font-semibold text-neutral-900">Instrucciones:</p>
+          <div className="mt-8 pt-8 border-t border-border space-y-3 text-sm text-muted-foreground">
+            <p className="font-semibold text-foreground">Instrucciones:</p>
             <ul className="list-disc list-inside space-y-2">
               <li>Asegúrate de tener una conexión a internet estable</li>
               <li>Permite el acceso a tu cámara y micrófono</li>

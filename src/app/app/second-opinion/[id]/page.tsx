@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from 'react'
 import { useParams, useRouter } from 'next/navigation'
-import { Button } from '@/components/Button'
-import { Card } from '@/components/Card'
-import { Badge } from '@/components/Badge'
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
 import { 
   type SecondOpinionRequest, 
   type SecondOpinionDocument,
@@ -15,17 +15,17 @@ interface RequestWithDocuments extends SecondOpinionRequest {
   documents: SecondOpinionDocument[]
 }
 
-type BadgeVariant = 'success' | 'warning' | 'error' | 'info' | 'neutral'
+type BadgeVariant = 'success' | 'warning' | 'destructive' | 'info' | 'secondary'
 
 const STATUS_LABELS: Record<string, { label: string; color: BadgeVariant }> = {
-  draft: { label: 'Borrador', color: 'neutral' },
+  draft: { label: 'Borrador', color: 'secondary' },
   submitted: { label: 'Enviada', color: 'info' },
   ai_processing: { label: 'Procesando', color: 'info' },
   pending_review: { label: 'Pendiente revisión', color: 'warning' },
   in_review: { label: 'En revisión', color: 'warning' },
   completed: { label: 'Completada', color: 'success' },
-  expired: { label: 'Expirada', color: 'error' },
-  cancelled: { label: 'Cancelada', color: 'error' },
+  expired: { label: 'Expirada', color: 'destructive' },
+  cancelled: { label: 'Cancelada', color: 'destructive' },
 }
 
 export default function SecondOpinionDetailPage() {
@@ -110,17 +110,17 @@ export default function SecondOpinionDetailPage() {
 
   if (loading) {
     return (
-      <div className="flex min-h-screen items-center justify-center">
-        <div className="text-gray-600">Cargando...</div>
+      <div className="flex min-h-screen items-center justify-center bg-background">
+        <div className="text-muted-foreground">Cargando...</div>
       </div>
     )
   }
 
   if (error || !request) {
     return (
-      <div className="flex min-h-screen items-center justify-center">
+      <div className="flex min-h-screen items-center justify-center bg-background">
         <Card className="p-6 text-center">
-          <p className="text-red-600">{error || 'Solicitud no encontrada'}</p>
+          <p className="text-destructive">{error || 'Solicitud no encontrada'}</p>
           <Button className="mt-4" onClick={() => router.push('/app/second-opinion')}>
             Volver
           </Button>
@@ -129,19 +129,19 @@ export default function SecondOpinionDetailPage() {
     )
   }
 
-  const statusInfo = STATUS_LABELS[request.status] || { label: request.status, color: 'gray' as const }
+  const statusInfo = STATUS_LABELS[request.status] || { label: request.status, color: 'secondary' as const }
   const price = SECOND_OPINION_CONFIG.PRICES[request.type] / 100
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-background py-8">
       <div className="mx-auto max-w-3xl px-4">
         {/* Header */}
         <div className="mb-6 flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">
+            <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">
               Segunda Opinión
             </h1>
-            <p className="text-sm text-gray-500">ID: {request.id.slice(0, 8)}...</p>
+            <p className="text-sm text-muted-foreground">ID: {request.id.slice(0, 8)}...</p>
           </div>
           <Badge variant={statusInfo.color}>{statusInfo.label}</Badge>
         </div>
@@ -149,50 +149,50 @@ export default function SecondOpinionDetailPage() {
         {/* Main Content */}
         <div className="space-y-6">
           {/* Clinical Information */}
-          <Card>
-            <h2 className="mb-4 text-lg font-semibold">Información Clínica</h2>
+          <Card className="p-6">
+            <h2 className="font-display text-lg font-semibold text-foreground mb-4">Información Clínica</h2>
             
             <div className="space-y-4">
               <div>
-                <label className="text-sm font-medium text-gray-500">
+                <label className="text-sm font-medium text-muted-foreground">
                   Motivo de consulta
                 </label>
-                <p className="mt-1 text-gray-900">{request.chief_complaint}</p>
+                <p className="mt-1 text-foreground">{request.chief_complaint}</p>
               </div>
 
               {request.current_diagnosis && (
                 <div>
-                  <label className="text-sm font-medium text-gray-500">
+                  <label className="text-sm font-medium text-muted-foreground">
                     Diagnóstico actual
                   </label>
-                  <p className="mt-1 text-gray-900">{request.current_diagnosis}</p>
+                  <p className="mt-1 text-foreground">{request.current_diagnosis}</p>
                 </div>
               )}
 
               {request.current_treatment && (
                 <div>
-                  <label className="text-sm font-medium text-gray-500">
+                  <label className="text-sm font-medium text-muted-foreground">
                     Tratamiento actual
                   </label>
-                  <p className="mt-1 text-gray-900">{request.current_treatment}</p>
+                  <p className="mt-1 text-foreground">{request.current_treatment}</p>
                 </div>
               )}
 
               {request.medical_history && (
                 <div>
-                  <label className="text-sm font-medium text-gray-500">
+                  <label className="text-sm font-medium text-muted-foreground">
                     Historial médico
                   </label>
-                  <p className="mt-1 text-gray-900">{request.medical_history}</p>
+                  <p className="mt-1 text-foreground">{request.medical_history}</p>
                 </div>
               )}
 
               {request.questions && request.questions.length > 0 && (
                 <div>
-                  <label className="text-sm font-medium text-gray-500">
+                  <label className="text-sm font-medium text-muted-foreground">
                     Preguntas para el médico
                   </label>
-                  <ul className="mt-1 list-inside list-disc text-gray-900">
+                  <ul className="mt-1 list-inside list-disc text-foreground">
                     {request.questions.map((q, i) => (
                       <li key={i}>{q}</li>
                     ))}
@@ -203,18 +203,18 @@ export default function SecondOpinionDetailPage() {
           </Card>
 
           {/* Documents */}
-          <Card>
-            <h2 className="mb-4 text-lg font-semibold">Documentos</h2>
+          <Card className="p-6">
+            <h2 className="font-display text-lg font-semibold text-foreground mb-4">Documentos</h2>
             
             {request.documents.length === 0 ? (
-              <p className="text-gray-500">No se han subido documentos</p>
+              <p className="text-muted-foreground">No se han subido documentos</p>
             ) : (
-              <ul className="divide-y">
+              <ul className="divide-y divide-border space-y-3">
                 {request.documents.map((doc) => (
-                  <li key={doc.id} className="flex items-center justify-between py-3">
+                  <li key={doc.id} className="flex items-center justify-between py-3 bg-secondary/50 rounded-xl border border-border px-4">
                     <div>
-                      <p className="font-medium text-gray-900">{doc.file_name}</p>
-                      <p className="text-sm text-gray-500">
+                      <p className="font-medium text-foreground">{doc.file_name}</p>
+                      <p className="text-sm text-muted-foreground">
                         {doc.type} • {((doc.size_bytes || 0) / 1024).toFixed(1)} KB
                       </p>
                     </div>
@@ -234,25 +234,25 @@ export default function SecondOpinionDetailPage() {
 
           {/* Doctor Opinion (if completed) */}
           {request.status === 'completed' && request.doctor_opinion && (
-            <Card className="border-teal-200 bg-teal-50">
-              <h2 className="mb-4 text-lg font-semibold text-teal-800">
+            <Card className="p-6">
+              <h2 className="font-display text-lg font-semibold text-foreground mb-4">
                 Opinión del Médico
               </h2>
               <div className="space-y-4">
-                <p className="text-gray-900">{request.doctor_opinion}</p>
+                <p className="text-foreground">{request.doctor_opinion}</p>
                 
                 {request.doctor_recommendations && (
                   <div>
-                    <label className="text-sm font-medium text-teal-700">
+                    <label className="text-sm font-medium text-muted-foreground">
                       Recomendaciones
                     </label>
-                    <p className="mt-1 text-gray-900">{request.doctor_recommendations}</p>
+                    <p className="mt-1 text-foreground">{request.doctor_recommendations}</p>
                   </div>
                 )}
                 
                 {request.doctor_follow_up_needed && (
-                  <div className="rounded-lg bg-yellow-100 p-3">
-                    <p className="text-sm font-medium text-yellow-800">
+                  <div className="rounded-xl bg-secondary/50 border border-border p-3">
+                    <p className="text-sm font-medium text-foreground">
                       El médico recomienda seguimiento
                     </p>
                   </div>
@@ -263,26 +263,26 @@ export default function SecondOpinionDetailPage() {
 
           {/* AI Summary (if available) */}
           {request.ai_preliminary_summary && (
-            <Card className="border-blue-200 bg-blue-50">
-              <h2 className="mb-2 text-lg font-semibold text-blue-800">
+            <Card className="p-6">
+              <h2 className="font-display text-lg font-semibold text-foreground mb-2">
                 Resumen Preliminar (IA)
               </h2>
-              <p className="text-xs text-blue-600 mb-3">
+              <p className="text-xs text-muted-foreground mb-3">
                 Este es un análisis automatizado. La opinión final será del médico.
               </p>
-              <p className="text-gray-900">{request.ai_preliminary_summary}</p>
+              <p className="text-foreground">{request.ai_preliminary_summary}</p>
             </Card>
           )}
 
           {/* Payment & Submit */}
           {request.status === 'draft' && (
-            <Card>
+            <Card className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-lg font-bold text-gray-900">
+                  <p className="font-display text-lg font-bold tracking-tight text-foreground">
                     Total: ${price.toLocaleString()} MXN
                   </p>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-muted-foreground">
                     Revisión en hasta 72 horas
                   </p>
                 </div>

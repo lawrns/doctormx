@@ -4,6 +4,15 @@ import { StatCard, MetricCard, Chart } from '@/components'
 import DoctorLayout from '@/components/DoctorLayout'
 import { DollarSign, Users, Star, Calendar, TrendingUp, Clock, Activity, Award } from 'lucide-react'
 import { Suspense } from 'react'
+import { Button } from '@/components/ui/button'
+import { Skeleton } from '@/components/ui/skeleton'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 
 const formatCurrency = (value: number) =>
   new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', minimumFractionDigits: 0 }).format(value)
@@ -27,28 +36,35 @@ async function DoctorAnalyticsContent() {
 
   return (
     <DoctorLayout profile={profile!} isPending={isPending} currentPath="/doctor/analytics">
-      <div className="max-w-6xl mx-auto py-8 px-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">Mis Analytics</h1>
-            <p className="text-gray-600 mt-1">Tu rendimiento y métricas personales</p>
+            <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">Mis Analytics</h1>
+            <p className="text-muted-foreground mt-1">Tu rendimiento y métricas personales</p>
           </div>
           <div className="flex items-center gap-3">
-            <select className="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500">
-              <option>Este mes</option>
-              <option>Últimos 3 meses</option>
-              <option>Últimos 6 meses</option>
-              <option>Último año</option>
-            </select>
-            <a
-              href="/api/analytics/export?type=doctor&format=csv"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600 text-white rounded-lg text-sm font-medium hover:bg-primary-700"
-            >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-              </svg>
-              Exportar
-            </a>
+            <Select defaultValue="month">
+              <SelectTrigger className="w-[180px]">
+                <SelectValue placeholder="Seleccionar período" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="month">Este mes</SelectItem>
+                <SelectItem value="3months">Últimos 3 meses</SelectItem>
+                <SelectItem value="6months">Últimos 6 meses</SelectItem>
+                <SelectItem value="year">Último año</SelectItem>
+              </SelectContent>
+            </Select>
+            <Button asChild>
+              <a
+                href="/api/analytics/export?type=doctor&format=csv"
+                className="inline-flex items-center gap-2"
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                Exportar
+              </a>
+            </Button>
           </div>
         </div>
 
@@ -61,7 +77,7 @@ async function DoctorAnalyticsContent() {
               changeLabel="vs mes anterior"
               format="number"
               trend={metrics.consultations.growth > 0 ? 'up' : metrics.consultations.growth < 0 ? 'down' : 'neutral'}
-              icon={<Calendar className="w-6 h-6 text-blue-600" />}
+              icon={<Calendar className="w-6 h-6 text-primary" />}
             />
             <StatCard
               title="Ingresos Este Mes"
@@ -70,7 +86,7 @@ async function DoctorAnalyticsContent() {
               changeLabel="vs mes anterior"
               format="currency"
               trend={metrics.revenue.growth > 0 ? 'up' : metrics.revenue.growth < 0 ? 'down' : 'neutral'}
-              icon={<DollarSign className="w-6 h-6 text-green-600" />}
+              icon={<DollarSign className="w-6 h-6 text-vital" />}
             />
             <StatCard
               title="Calificación Promedio"
@@ -78,7 +94,7 @@ async function DoctorAnalyticsContent() {
               change={metrics.rating.trend}
               changeLabel="vs mes anterior"
               format="percentage"
-              icon={<Star className="w-6 h-6 text-yellow-500" />}
+              icon={<Star className="w-6 h-6 text-amber" />}
             />
             <StatCard
               title="Tasa No-Show"
@@ -87,7 +103,7 @@ async function DoctorAnalyticsContent() {
               changeLabel="citas perdidas"
               format="percentage"
               trend={metrics.appointments.noShowRate > 10 ? 'down' : 'up'}
-              icon={<Users className="w-6 h-6 text-red-600" />}
+              icon={<Users className="w-6 h-6 text-coral" />}
             />
           </div>
 
@@ -116,56 +132,56 @@ async function DoctorAnalyticsContent() {
                 />
               ) : (
                 <div className="flex flex-col items-center justify-center py-12 text-center">
-                  <Activity className="w-16 h-16 text-gray-400 mb-4" />
-                  <p className="text-gray-500">No hay citas aún</p>
+                  <Activity className="w-16 h-16 text-muted-foreground mb-4" />
+                  <p className="text-muted-foreground">No hay citas aún</p>
                 </div>
               )}
             </MetricCard>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-xl border border-gray-200 p-6">
+            <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-6">
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-blue-100 rounded-lg">
-                  <TrendingUp className="w-5 h-5 text-blue-600" />
+                <div className="p-2 bg-primary/10 rounded-lg">
+                  <TrendingUp className="w-5 h-5 text-primary" />
                 </div>
-                <h3 className="font-semibold text-gray-900">Consultas Totales</h3>
+                <h3 className="font-semibold text-foreground">Consultas Totales</h3>
               </div>
-              <p className="text-3xl font-bold text-gray-900">{metrics.consultations.total}</p>
-              <p className="text-sm text-gray-500 mt-1">Histórico</p>
+              <p className="text-3xl font-bold text-foreground">{metrics.consultations.total}</p>
+              <p className="text-sm text-muted-foreground mt-1">Histórico</p>
             </div>
 
-            <div className="bg-white rounded-xl border border-gray-200 p-6">
+            <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-6">
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-green-100 rounded-lg">
-                  <DollarSign className="w-5 h-5 text-green-600" />
+                <div className="p-2 bg-vital-soft rounded-lg">
+                  <DollarSign className="w-5 h-5 text-vital" />
                 </div>
-                <h3 className="font-semibold text-gray-900">Ingresos Totales</h3>
+                <h3 className="font-semibold text-foreground">Ingresos Totales</h3>
               </div>
-              <p className="text-3xl font-bold text-gray-900">{formatCurrency(metrics.revenue.gross)}</p>
-              <p className="text-sm text-gray-500 mt-1">Bruto</p>
+              <p className="text-3xl font-bold text-foreground">{formatCurrency(metrics.revenue.gross)}</p>
+              <p className="text-sm text-muted-foreground mt-1">Bruto</p>
             </div>
 
-            <div className="bg-white rounded-xl border border-gray-200 p-6">
+            <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-6">
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-purple-100 rounded-lg">
-                  <Award className="w-5 h-5 text-purple-600" />
+                <div className="p-2 bg-secondary rounded-lg">
+                  <Award className="w-5 h-5 text-primary" />
                 </div>
-                <h3 className="font-semibold text-gray-900">Reviews</h3>
+                <h3 className="font-semibold text-foreground">Reviews</h3>
               </div>
-              <p className="text-3xl font-bold text-gray-900">{metrics.rating.totalReviews}</p>
-              <p className="text-sm text-gray-500 mt-1">Recibidos</p>
+              <p className="text-3xl font-bold text-foreground">{metrics.rating.totalReviews}</p>
+              <p className="text-sm text-muted-foreground mt-1">Recibidos</p>
             </div>
 
-            <div className="bg-white rounded-xl border border-gray-200 p-6">
+            <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-6">
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-orange-100 rounded-lg">
-                  <Clock className="w-5 h-5 text-orange-600" />
+                <div className="p-2 bg-secondary/50 rounded-lg">
+                  <Clock className="w-5 h-5 text-amber" />
                 </div>
-                <h3 className="font-semibold text-gray-900">Duración Promedio</h3>
+                <h3 className="font-semibold text-foreground">Duración Promedio</h3>
               </div>
-              <p className="text-3xl font-bold text-gray-900">{metrics.appointments.avgDuration}min</p>
-              <p className="text-sm text-gray-500 mt-1">Por consulta</p>
+              <p className="text-3xl font-bold text-foreground">{metrics.appointments.avgDuration}min</p>
+              <p className="text-sm text-muted-foreground mt-1">Por consulta</p>
             </div>
           </div>
 
@@ -173,11 +189,11 @@ async function DoctorAnalyticsContent() {
             <MetricCard title="Horarios Pico">
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                 {metrics.peakHours.slice(0, 6).map((peak) => (
-                  <div key={peak.hour} className="bg-gray-50 rounded-lg p-4 text-center">
-                    <p className="text-lg font-semibold text-gray-900">
+                  <div key={peak.hour} className="bg-secondary/50 rounded-xl p-4 text-center">
+                    <p className="text-lg font-semibold text-foreground">
                       {peak.hour}:00
                     </p>
-                    <p className="text-sm text-gray-500">{peak.count} citas</p>
+                    <p className="text-sm text-muted-foreground">{peak.count} citas</p>
                   </div>
                 ))}
               </div>
@@ -186,20 +202,20 @@ async function DoctorAnalyticsContent() {
 
           <MetricCard title="Resumen de Rendimiento">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center p-6 bg-gray-50 rounded-lg">
-                <p className="text-sm text-gray-600 mb-2">Ingresos Netos ( después de fees )</p>
-                <p className="text-3xl font-bold text-green-600">{formatCurrency(metrics.revenue.net)}</p>
-                <p className="text-xs text-gray-500 mt-1">Fee de plataforma: {formatCurrency(metrics.revenue.platformFee)}</p>
+              <div className="text-center p-6 bg-secondary/50 rounded-xl">
+                <p className="text-sm text-muted-foreground mb-2">Ingresos Netos ( después de fees )</p>
+                <p className="text-3xl font-bold text-vital">{formatCurrency(metrics.revenue.net)}</p>
+                <p className="text-xs text-muted-foreground mt-1">Fee de plataforma: {formatCurrency(metrics.revenue.platformFee)}</p>
               </div>
-              <div className="text-center p-6 bg-gray-50 rounded-lg">
-                <p className="text-sm text-gray-600 mb-2">Pacientes Únicos</p>
-                <p className="text-3xl font-bold text-blue-600">{metrics.patients.unique}</p>
-                <p className="text-xs text-gray-500 mt-1">Pacientes que te han visitado</p>
+              <div className="text-center p-6 bg-secondary/50 rounded-xl">
+                <p className="text-sm text-muted-foreground mb-2">Pacientes Únicos</p>
+                <p className="text-3xl font-bold text-primary">{metrics.patients.unique}</p>
+                <p className="text-xs text-muted-foreground mt-1">Pacientes que te han visitado</p>
               </div>
-              <div className="text-center p-6 bg-gray-50 rounded-lg">
-                <p className="text-sm text-gray-600 mb-2">Retención de Pacientes</p>
-                <p className="text-3xl font-bold text-purple-600">{metrics.patients.retentionRate.toFixed(1)}%</p>
-                <p className="text-xs text-gray-500 mt-1">Pacientes que regresan</p>
+              <div className="text-center p-6 bg-secondary/50 rounded-xl">
+                <p className="text-sm text-muted-foreground mb-2">Retención de Pacientes</p>
+                <p className="text-3xl font-bold text-primary">{metrics.patients.retentionRate.toFixed(1)}%</p>
+                <p className="text-xs text-muted-foreground mt-1">Pacientes que regresan</p>
               </div>
             </div>
           </MetricCard>
@@ -214,9 +230,9 @@ function LoadingSkeleton() {
     <div className="space-y-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {[1, 2, 3, 4].map(i => (
-          <div key={i} className="bg-white rounded-xl border border-gray-200 p-6 animate-pulse">
-            <div className="h-4 bg-gray-200 rounded w-24 mb-4"></div>
-            <div className="h-8 bg-gray-200 rounded w-32"></div>
+          <div key={i} className="bg-card rounded-2xl border border-border shadow-dx-1 p-6">
+            <Skeleton className="h-4 w-24 mb-4" />
+            <Skeleton className="h-8 w-32" />
           </div>
         ))}
       </div>

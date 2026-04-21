@@ -3,15 +3,20 @@ import { getDoctorAvailability } from '@/lib/availability'
 import DoctorLayout from '@/components/DoctorLayout'
 import { EmptyState } from '@/components'
 import { redirect } from 'next/navigation'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Button } from '@/components/ui/button'
+import { Switch } from '@/components/ui/switch'
 
 const DAYS = [
   { value: 0, label: 'Domingo' },
   { value: 1, label: 'Lunes' },
   { value: 2, label: 'Martes' },
-  { value: 3, label: 'Miércoles' },
+  { value: 3, label: 'Mi\u00E9rcoles' },
   { value: 4, label: 'Jueves' },
   { value: 5, label: 'Viernes' },
-  { value: 6, label: 'Sábado' },
+  { value: 6, label: 'S\u00E1bado' },
 ]
 
 export default async function DoctorAvailabilityPage() {
@@ -25,7 +30,7 @@ export default async function DoctorAvailabilityPage() {
     .eq('id', user.id)
     .single()
 
-  // Solo redirigir si nunca completó onboarding
+  // Solo redirigir si nunca complet\u00F3 onboarding
   if (doctor?.status === 'draft') {
     redirect('/doctor/onboarding')
   }
@@ -34,96 +39,93 @@ export default async function DoctorAvailabilityPage() {
 
   return (
     <DoctorLayout profile={profile!} isPending={isPending} currentPath="/doctor/availability">
-      <div className="max-w-4xl">
-        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Disponibilidad</h2>
-        <p className="text-gray-600 mb-6 lg:mb-8">Configura tus horarios de atención</p>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <h2 className="font-display text-2xl font-bold tracking-tight text-foreground mb-2">Disponibilidad</h2>
+        <p className="text-muted-foreground mb-6 lg:mb-8">Configura tus horarios de atenci\u00F3n</p>
 
         {!hasAvailability && (
           <div className="mb-6">
             <EmptyState
               iconName="calendar"
-              title="Aún no has abierto horarios para pacientes"
-              description="Configura al menos un bloque de atención para que tu perfil pueda empezar a recibir reservas con claridad." 
+              title="A\u00FAn no has abierto horarios para pacientes"
+              description="Configura al menos un bloque de atenci\u00F3n para que tu perfil pueda empezar a recibir reservas con claridad." 
               className="items-start text-left"
             >
-              <div className="w-full rounded-xl border border-blue-100 bg-blue-50 p-4 text-sm text-blue-900">
-                Recomendación: comienza con 2 o 3 bloques semanales y ajusta tu agenda cuando lleguen tus primeras reservas.
+              <div className="w-full rounded-2xl border border-border bg-secondary/50 p-4 text-sm text-foreground">
+                Recomendaci\u00F3n: comienza con 2 o 3 bloques semanales y ajusta tu agenda cuando lleguen tus primeras reservas.
               </div>
             </EmptyState>
           </div>
         )}
 
-        <div className="bg-white rounded-lg shadow border p-4 lg:p-6">
-          <h3 className="text-lg lg:text-xl font-semibold text-gray-900 mb-4 lg:mb-6">
-            Horarios de atención
-          </h3>
+        <Card className="rounded-2xl border border-border shadow-dx-1 p-4 lg:p-6 gap-4">
+          <CardHeader className="p-0 pb-0">
+            <CardTitle className="text-lg lg:text-xl font-semibold">Horarios de atenci\u00F3n</CardTitle>
+          </CardHeader>
+          <CardContent className="p-0">
+            <form action="/api/doctor/availability" method="POST" className="space-y-4 lg:space-y-6">
+              {DAYS.map((day) => {
+                const dayAvailability = availability.filter((a: { day_of_week: number; start_time: string; end_time: string }) => a.day_of_week === day.value)
+                const isEnabled = dayAvailability.length > 0
+                const startTime = isEnabled ? dayAvailability[0].start_time : '09:00'
+                const endTime = isEnabled ? dayAvailability[0].end_time : '17:00'
 
-          <form action="/api/doctor/availability" method="POST" className="space-y-4 lg:space-y-6">
-            {DAYS.map((day) => {
-              const dayAvailability = availability.filter((a: { day_of_week: number; start_time: string; end_time: string }) => a.day_of_week === day.value)
-              const isEnabled = dayAvailability.length > 0
-              const startTime = isEnabled ? dayAvailability[0].start_time : '09:00'
-              const endTime = isEnabled ? dayAvailability[0].end_time : '17:00'
-
-              return (
-                <div key={day.value} className="border rounded-lg p-3 lg:p-4">
-                  <div className="flex items-center justify-between mb-3 lg:mb-4">
-                    <label className="flex items-center gap-2 lg:gap-3">
-                      <input
-                        type="checkbox"
-                        name={`enabled_${day.value}`}
-                        defaultChecked={isEnabled}
-                        className="w-4 h-4 lg:w-5 lg:h-5 text-blue-600 rounded"
-                      />
-                      <span className="font-medium text-gray-900 text-sm lg:text-base">
-                        {day.label}
-                      </span>
-                    </label>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-3 lg:gap-4 ml-6 lg:ml-8">
-                    <div>
-                      <label className="block text-xs lg:text-sm text-gray-600 mb-1 lg:mb-2">
-                        Hora inicio
-                      </label>
-                      <input
-                        type="time"
-                        name={`start_${day.value}`}
-                        defaultValue={startTime}
-                        className="w-full px-2 lg:px-3 py-1.5 lg:py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 text-sm lg:text-base"
-                      />
+                return (
+                  <div key={day.value} className="border border-border rounded-xl p-3 lg:p-4">
+                    <div className="flex items-center justify-between mb-3 lg:mb-4">
+                      <div className="flex items-center gap-2 lg:gap-3">
+                        <Switch
+                          name={`enabled_${day.value}`}
+                          defaultChecked={isEnabled}
+                          id={`enabled_${day.value}`}
+                        />
+                        <Label htmlFor={`enabled_${day.value}`} className="font-medium text-foreground text-sm lg:text-base">
+                          {day.label}
+                        </Label>
+                      </div>
                     </div>
-                    <div>
-                      <label className="block text-xs lg:text-sm text-gray-600 mb-1 lg:mb-2">
-                        Hora fin
-                      </label>
-                      <input
-                        type="time"
-                        name={`end_${day.value}`}
-                        defaultValue={endTime}
-                        className="w-full px-2 lg:px-3 py-1.5 lg:py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 text-sm lg:text-base"
-                      />
+
+                    <div className="grid grid-cols-2 gap-3 lg:gap-4 ml-6 lg:ml-8">
+                      <div>
+                        <Label className="block text-xs lg:text-sm text-muted-foreground mb-1 lg:mb-2">
+                          Hora inicio
+                        </Label>
+                        <Input
+                          type="time"
+                          name={`start_${day.value}`}
+                          defaultValue={startTime}
+                          className="w-full"
+                        />
+                      </div>
+                      <div>
+                        <Label className="block text-xs lg:text-sm text-muted-foreground mb-1 lg:mb-2">
+                          Hora fin
+                        </Label>
+                        <Input
+                          type="time"
+                          name={`end_${day.value}`}
+                          defaultValue={endTime}
+                          className="w-full"
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
-              )
-            })}
+                )
+              })}
 
-            <div className="flex gap-4 pt-2">
-              <button
-                type="submit"
-                className="px-4 lg:px-6 py-2.5 lg:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium text-sm lg:text-base"
-              >
-                Guardar disponibilidad
-              </button>
-            </div>
-          </form>
-        </div>
+              <div className="flex gap-4 pt-2">
+                <Button type="submit">
+                  Guardar disponibilidad
+                </Button>
+              </div>
+            </form>
+          </CardContent>
+        </Card>
 
-        <div className="mt-4 lg:mt-6 bg-blue-50 border border-blue-200 rounded-lg p-3 lg:p-4">
-          <p className="text-xs lg:text-sm text-blue-900">
-            <strong>Consejo:</strong> Las citas se generan en bloques de 30 minutos.
-            Los pacientes podrán reservar solo en horarios que marques como disponibles.
+        <div className="mt-4 lg:mt-6 bg-card rounded-2xl border border-border shadow-dx-1 p-3 lg:p-4">
+          <p className="text-xs lg:text-sm text-muted-foreground">
+            <strong className="text-foreground">Consejo:</strong> Las citas se generan en bloques de 30 minutos.
+            Los pacientes podr\u00E1n reservar solo en horarios que marques como disponibles.
           </p>
         </div>
       </div>

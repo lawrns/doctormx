@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { SUBSCRIPTION_PLANS, type SubscriptionTier, getAnnualPrice, getMonthlySavings, ANNUAL_DISCOUNT } from '@/lib/subscription-types'
-import { Card } from '@/components/Card'
-import { LoadingButton } from '@/components/LoadingButton'
-import { Badge } from '@/components/Badge'
+import { Card, CardContent } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
 import DoctorLayout from '@/components/DoctorLayout'
-import { Check, Calendar, Percent, Building, Users } from 'lucide-react'
+import { Check, Calendar, Percent, Loader2 } from 'lucide-react'
 
 export default function SubscriptionPage() {
     const router = useRouter()
@@ -173,7 +173,7 @@ export default function SubscriptionPage() {
     if (loading) {
         return (
             <div className="flex items-center justify-center min-h-screen">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+                <Loader2 className="animate-spin h-12 w-12 text-primary" />
             </div>
         )
     }
@@ -184,73 +184,72 @@ export default function SubscriptionPage() {
         <DoctorLayout profile={profile || { full_name: 'Doctor' }} isPending={isPending} currentPath="/doctor/subscription">
             <div className="max-w-6xl mx-auto py-8 px-4">
                 <div className="mb-8">
-                    <h1 className="text-3xl font-bold text-gray-900 mb-2">
+                    <h1 className="font-display text-3xl font-bold tracking-tight text-foreground mb-2">
                         Mi Suscripción
                     </h1>
-                    <p className="text-gray-600">
+                    <p className="text-muted-foreground">
                         Gestiona tu plan y revisa el uso de tus funcionalidades
                     </p>
                 </div>
 
                 {subscription?.hasSubscription && (
-                    <Card className="mb-8 border-green-200 bg-green-50">
-                        <div className="flex items-start justify-between">
-                            <div>
-                                <h3 className="text-lg font-semibold text-green-900 mb-2">
-                                    Suscripción Activa
-                                </h3>
-                                <p className="text-green-700 mb-4">
-                                    Plan: {subscription.subscription?.plan_name}
-                                </p>
-                                <p className="text-sm text-green-600">
-                                    Renovación: {subscription.subscription?.current_period_end ? new Date(subscription.subscription.current_period_end).toLocaleDateString('es-MX') : 'N/A'}
-                                </p>
-                                {subscription.daysUntilRenewal && (
-                                    <p className="text-sm text-green-600 mt-2">
-                                        Días restantes: {subscription.daysUntilRenewal}
+                    <Card className="mb-8 border-vital/20 bg-vital-soft">
+                        <CardContent className="p-6">
+                            <div className="flex items-start justify-between">
+                                <div>
+                                    <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+                                        Suscripción Activa
+                                    </h3>
+                                    <p className="text-vital mb-4">
+                                        Plan: {subscription.subscription?.plan_name}
                                     </p>
-                                )}
+                                    <p className="text-sm text-vital/80">
+                                        Renovación: {subscription.subscription?.current_period_end ? new Date(subscription.subscription.current_period_end).toLocaleDateString('es-MX') : 'N/A'}
+                                    </p>
+                                    {subscription.daysUntilRenewal && (
+                                        <p className="text-sm text-vital/80 mt-2">
+                                            Días restantes: {subscription.daysUntilRenewal}
+                                        </p>
+                                    )}
+                                </div>
+                                <Badge variant="success">Activo</Badge>
                             </div>
-                            <Badge variant="success">Activo</Badge>
-                        </div>
+                        </CardContent>
                     </Card>
                 )}
 
                 {error && (
-                    <Card className="mb-8 border-red-200 bg-red-50">
-                        <p className="text-red-700">{error}</p>
+                    <Card className="mb-8 border-destructive/20 bg-destructive/10">
+                        <CardContent className="p-6">
+                            <p className="text-destructive">{error}</p>
+                        </CardContent>
                     </Card>
                 )}
 
                 {/* Billing Interval Toggle */}
                 {!subscription?.hasSubscription && (
                     <div className="flex justify-center mb-8">
-                        <div className="inline-flex items-center bg-gray-100 rounded-lg p-1">
-                            <button
+                        <div className="inline-flex items-center bg-secondary rounded-xl p-1">
+                            <Button
+                                variant={billingInterval === 'month' ? 'default' : 'ghost'}
+                                size="sm"
                                 onClick={() => setBillingInterval('month')}
-                                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                                    billingInterval === 'month'
-                                        ? 'bg-white text-gray-900 shadow-sm'
-                                        : 'text-gray-600 hover:text-gray-900'
-                                }`}
                             >
                                 Mensual
-                            </button>
-                            <button
+                            </Button>
+                            <Button
+                                variant={billingInterval === 'year' ? 'default' : 'ghost'}
+                                size="sm"
                                 onClick={() => setBillingInterval('year')}
-                                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-2 ${
-                                    billingInterval === 'year'
-                                        ? 'bg-white text-green-700 shadow-sm'
-                                        : 'text-gray-600 hover:text-gray-900'
-                                }`}
+                                className="flex items-center gap-2"
                             >
                                 <Calendar className="w-4 h-4" />
                                 Anual
-                                <Badge className="bg-green-100 text-green-700 text-xs">
+                                <Badge variant="success" className="text-xs">
                                     <Percent className="w-3 h-3 mr-1" />
                                     Ahorra {ANNUAL_DISCOUNT.discountPercent}%
                                 </Badge>
-                            </button>
+                            </Button>
                         </div>
                     </div>
                 )}
@@ -258,6 +257,7 @@ export default function SubscriptionPage() {
                 <div className="grid lg:grid-cols-2 xl:grid-cols-4 gap-6 mb-8">
                     {Object.entries(SUBSCRIPTION_PLANS).map(([planId, plan]) => {
                         const isCurrentPlan = currentPlan === planId
+                        const isRecommended = plan.price_mxn === 499
                         const canUpgrade = currentPlan ? 
                             SUBSCRIPTION_PLANS[currentPlan as keyof typeof SUBSCRIPTION_PLANS].price_cents < plan.price_cents : 
                             false
@@ -266,86 +266,95 @@ export default function SubscriptionPage() {
                             false
 
                         return (
-                            <Card key={planId} className={`flex flex-col ${plan.highlight ? 'ring-2 ring-blue-500' : ''}`}>
-                                {plan.highlight && (
-                                    <div className="bg-blue-500 text-white text-center py-1 text-sm font-medium -mt-6 mx-4 rounded-t-lg">
-                                        Más Popular
+                            <Card key={planId} className={`flex flex-col overflow-hidden ${isRecommended ? 'ring-2 ring-primary' : ''}`}>
+                                {isRecommended && (
+                                    <div className="bg-primary text-primary-foreground text-center py-1.5 text-sm font-medium">
+                                        Recomendado
                                     </div>
                                 )}
-                                <div className="mb-6 pt-4">
-                                    <h3 className="text-xl font-bold text-gray-900 mb-2">
-                                        {plan.name_es}
-                                    </h3>
-                                    <div className="flex items-baseline gap-2 mb-4">
-                                        <span className="text-4xl font-bold text-blue-600">
-                                            ${plan.price_mxn}
-                                        </span>
-                                        <span className="text-gray-600">/mes</span>
+                                <CardContent className="pt-6 flex flex-col flex-1">
+                                    <div className="mb-6">
+                                        <h3 className="font-display text-xl font-bold text-foreground mb-2">
+                                            {plan.name_es}
+                                        </h3>
+                                        <div className="flex items-baseline gap-2 mb-4">
+                                            <span className="text-4xl font-bold text-primary">
+                                                ${plan.price_mxn}
+                                            </span>
+                                            <span className="text-muted-foreground">/mes</span>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div className="flex-1 mb-6">
-                                    <h4 className="font-semibold text-gray-900 mb-3">Incluye:</h4>
-                                    <ul className="space-y-2">
-                                        <li className="flex items-center gap-2 text-gray-700">
-                                            <Check className="w-4 h-4 text-green-600 flex-shrink-0" />
-                                            Perfil público visible
-                                        </li>
-                                        <li className="flex items-center gap-2 text-gray-700">
-                                            <Check className="w-4 h-4 text-green-600 flex-shrink-0" />
-                                            {plan.limits.whatsapp_patients === -1 
-                                                ? 'WhatsApp ilimitado' 
-                                                : `${plan.limits.whatsapp_patients} pacientes WhatsApp/mes`}
-                                        </li>
-                                        {plan.features.priority_search_ranking && (
-                                            <li className="flex items-center gap-2 text-gray-700">
-                                                <Check className="w-4 h-4 text-green-600 flex-shrink-0" />
-                                                Búsqueda prioritaria (+20%)
+                                    <div className="flex-1 mb-6">
+                                        <h4 className="font-semibold text-foreground mb-3">Incluye:</h4>
+                                        <ul className="space-y-2">
+                                            <li className="flex items-center gap-2 text-foreground">
+                                                <Check className="w-4 h-4 text-vital flex-shrink-0" />
+                                                Perfil público visible
                                             </li>
-                                        )}
-                                        {plan.features.featured_listing && (
-                                            <li className="flex items-center gap-2 text-gray-700">
-                                                <Check className="w-4 h-4 text-green-600 flex-shrink-0" />
-                                                Destacado en homepage
+                                            <li className="flex items-center gap-2 text-foreground">
+                                                <Check className="w-4 h-4 text-vital flex-shrink-0" />
+                                                {plan.limits.whatsapp_patients === -1 
+                                                    ? 'WhatsApp ilimitado' 
+                                                    : `${plan.limits.whatsapp_patients} pacientes WhatsApp/mes`}
                                             </li>
-                                        )}
-                                        {plan.features.ai_copilot && (
-                                            <li className="flex items-center gap-2 text-gray-700">
-                                                <Check className="w-4 h-4 text-green-600 flex-shrink-0" />
-                                                Clinical Copilot
-                                            </li>
-                                        )}
-                                        {plan.features.image_analysis && (
-                                            <li className="flex items-center gap-2 text-gray-700">
-                                                <Check className="w-4 h-4 text-green-600 flex-shrink-0" />
-                                                Análisis de imágenes ({plan.limits.image_analysis}/mes)
-                                            </li>
-                                        )}
-                                        {plan.features.api_access && (
-                                            <li className="flex items-center gap-2 text-gray-700">
-                                                <Check className="w-4 h-4 text-green-600 flex-shrink-0" />
-                                                Acceso API
-                                            </li>
-                                        )}
-                                    </ul>
-                                </div>
+                                            {plan.features.priority_search_ranking && (
+                                                <li className="flex items-center gap-2 text-foreground">
+                                                    <Check className="w-4 h-4 text-vital flex-shrink-0" />
+                                                    Búsqueda prioritaria (+20%)
+                                                </li>
+                                            )}
+                                            {plan.features.featured_listing && (
+                                                <li className="flex items-center gap-2 text-foreground">
+                                                    <Check className="w-4 h-4 text-vital flex-shrink-0" />
+                                                    Destacado en homepage
+                                                </li>
+                                            )}
+                                            {plan.features.ai_copilot && (
+                                                <li className="flex items-center gap-2 text-foreground">
+                                                    <Check className="w-4 h-4 text-vital flex-shrink-0" />
+                                                    Clinical Copilot
+                                                </li>
+                                            )}
+                                            {plan.features.image_analysis && (
+                                                <li className="flex items-center gap-2 text-foreground">
+                                                    <Check className="w-4 h-4 text-vital flex-shrink-0" />
+                                                    Análisis de imágenes ({plan.limits.image_analysis}/mes)
+                                                </li>
+                                            )}
+                                            {plan.features.api_access && (
+                                                <li className="flex items-center gap-2 text-foreground">
+                                                    <Check className="w-4 h-4 text-vital flex-shrink-0" />
+                                                    Acceso API
+                                                </li>
+                                            )}
+                                        </ul>
+                                    </div>
 
-                                <LoadingButton
-                                    onClick={() => handleSubscribe(planId)}
-                                    isLoading={processing}
-                                    disabled={isCurrentPlan}
-                                    className="w-full"
-                                >
-                                    {isCurrentPlan 
-                                        ? 'Plan Actual' 
-                                        : !subscription?.hasSubscription 
-                                            ? 'Suscribirse' 
-                                            : canUpgrade 
-                                                ? 'Mejorar Plan' 
-                                                : canDowngrade 
-                                                    ? 'Cambiar a este Plan' 
-                                                    : 'Seleccionar'}
-                                </LoadingButton>
+                                    <Button
+                                        size="lg"
+                                        onClick={() => handleSubscribe(planId)}
+                                        disabled={isCurrentPlan || processing}
+                                        className="w-full"
+                                    >
+                                        {processing ? (
+                                            <>
+                                                <Loader2 className="animate-spin h-4 w-4" />
+                                                Procesando...
+                                            </>
+                                        ) : (
+                                            isCurrentPlan 
+                                                ? 'Plan Actual' 
+                                                : !subscription?.hasSubscription 
+                                                    ? 'Suscribirse' 
+                                                    : canUpgrade 
+                                                        ? 'Mejorar Plan' 
+                                                        : canDowngrade 
+                                                            ? 'Cambiar a este Plan' 
+                                                            : 'Seleccionar'
+                                        )}
+                                    </Button>
+                                </CardContent>
                             </Card>
                         )
                     })}
@@ -353,132 +362,136 @@ export default function SubscriptionPage() {
 
                 {usage && subscription?.hasSubscription && (
                     <Card className="mb-8">
-                        <h3 className="text-lg font-bold text-gray-900 mb-6">Uso del Mes Actual</h3>
-                        
-                        <div className="grid md:grid-cols-3 gap-6">
-                            <div>
-                                <div className="flex justify-between mb-2">
-                                    <span className="text-sm font-medium text-gray-700">WhatsApp</span>
-                                    <span className="text-sm text-gray-600">
-                                        {usage.usage?.whatsapp?.used || 0} / {
-                                            usage.usage?.whatsapp?.limit === -1 
-                                                ? '∞' 
-                                                : usage.usage?.whatsapp?.limit || 0
-                                        }
-                                    </span>
+                        <CardContent className="p-6">
+                            <h3 className="font-display text-lg font-bold text-foreground mb-6">Uso del Mes Actual</h3>
+                            
+                            <div className="grid md:grid-cols-3 gap-6">
+                                <div>
+                                    <div className="flex justify-between mb-2">
+                                        <span className="text-sm font-medium text-foreground">WhatsApp</span>
+                                        <span className="text-sm text-muted-foreground">
+                                            {usage.usage?.whatsapp?.used || 0} / {
+                                                usage.usage?.whatsapp?.limit === -1 
+                                                    ? '∞' 
+                                                    : usage.usage?.whatsapp?.limit || 0
+                                            }
+                                        </span>
+                                    </div>
+                                    <div className="w-full bg-secondary rounded-full h-2">
+                                        <div 
+                                            className={`h-2 rounded-full ${
+                                                (usage.usage?.whatsapp?.percentage || 0) > 90 
+                                                    ? 'bg-destructive' 
+                                                    : (usage.usage?.whatsapp?.percentage || 0) > 70 
+                                                        ? 'bg-amber-500' 
+                                                        : 'bg-vital'
+                                            }`}
+                                            style={{ width: `${Math.min(100, usage.usage?.whatsapp?.percentage || 0)}%` }}
+                                        ></div>
+                                    </div>
                                 </div>
-                                <div className="w-full bg-gray-200 rounded-full h-2">
-                                    <div 
-                                        className={`h-2 rounded-full ${
-                                            (usage.usage?.whatsapp?.percentage || 0) > 90 
-                                                ? 'bg-red-500' 
-                                                : (usage.usage?.whatsapp?.percentage || 0) > 70 
-                                                    ? 'bg-yellow-500' 
-                                                    : 'bg-green-500'
-                                        }`}
-                                        style={{ width: `${Math.min(100, usage.usage?.whatsapp?.percentage || 0)}%` }}
-                                    ></div>
-                                </div>
-                            </div>
 
-                            <div>
-                                <div className="flex justify-between mb-2">
-                                    <span className="text-sm font-medium text-gray-700">Clinical Copilot</span>
-                                    <span className="text-sm text-gray-600">
-                                        {usage.usage?.aiCopilot?.used || 0} / {
-                                            usage.usage?.aiCopilot?.limit === -1 
-                                                ? '∞' 
-                                                : usage.usage?.aiCopilot?.limit || 0
-                                        }
-                                    </span>
+                                <div>
+                                    <div className="flex justify-between mb-2">
+                                        <span className="text-sm font-medium text-foreground">Clinical Copilot</span>
+                                        <span className="text-sm text-muted-foreground">
+                                            {usage.usage?.aiCopilot?.used || 0} / {
+                                                usage.usage?.aiCopilot?.limit === -1 
+                                                    ? '∞' 
+                                                    : usage.usage?.aiCopilot?.limit || 0
+                                            }
+                                        </span>
+                                    </div>
+                                    <div className="w-full bg-secondary rounded-full h-2">
+                                        <div 
+                                            className={`h-2 rounded-full ${
+                                                (usage.usage?.aiCopilot?.percentage || 0) > 90 
+                                                    ? 'bg-destructive' 
+                                                    : (usage.usage?.aiCopilot?.percentage || 0) > 70 
+                                                        ? 'bg-amber-500' 
+                                                        : 'bg-vital'
+                                            }`}
+                                            style={{ width: `${Math.min(100, usage.usage?.aiCopilot?.percentage || 0)}%` }}
+                                        ></div>
+                                    </div>
                                 </div>
-                                <div className="w-full bg-gray-200 rounded-full h-2">
-                                    <div 
-                                        className={`h-2 rounded-full ${
-                                            (usage.usage?.aiCopilot?.percentage || 0) > 90 
-                                                ? 'bg-red-500' 
-                                                : (usage.usage?.aiCopilot?.percentage || 0) > 70 
-                                                    ? 'bg-yellow-500' 
-                                                    : 'bg-green-500'
-                                        }`}
-                                        style={{ width: `${Math.min(100, usage.usage?.aiCopilot?.percentage || 0)}%` }}
-                                    ></div>
-                                </div>
-                            </div>
 
-                            <div>
-                                <div className="flex justify-between mb-2">
-                                    <span className="text-sm font-medium text-gray-700">Análisis de Imágenes</span>
-                                    <span className="text-sm text-gray-600">
-                                        {usage.usage?.imageAnalysis?.used || 0} / {
-                                            usage.usage?.imageAnalysis?.limit === -1 
-                                                ? '∞' 
-                                                : usage.usage?.imageAnalysis?.limit || 0
-                                        }
-                                    </span>
-                                </div>
-                                <div className="w-full bg-gray-200 rounded-full h-2">
-                                    <div 
-                                        className={`h-2 rounded-full ${
-                                            (usage.usage?.imageAnalysis?.percentage || 0) > 90 
-                                                ? 'bg-red-500' 
-                                                : (usage.usage?.imageAnalysis?.percentage || 0) > 70 
-                                                    ? 'bg-yellow-500' 
-                                                    : 'bg-green-500'
-                                        }`}
-                                        style={{ width: `${Math.min(100, usage.usage?.imageAnalysis?.percentage || 0)}%` }}
-                                    ></div>
+                                <div>
+                                    <div className="flex justify-between mb-2">
+                                        <span className="text-sm font-medium text-foreground">Análisis de Imágenes</span>
+                                        <span className="text-sm text-muted-foreground">
+                                            {usage.usage?.imageAnalysis?.used || 0} / {
+                                                usage.usage?.imageAnalysis?.limit === -1 
+                                                    ? '∞' 
+                                                    : usage.usage?.imageAnalysis?.limit || 0
+                                            }
+                                        </span>
+                                    </div>
+                                    <div className="w-full bg-secondary rounded-full h-2">
+                                        <div 
+                                            className={`h-2 rounded-full ${
+                                                (usage.usage?.imageAnalysis?.percentage || 0) > 90 
+                                                    ? 'bg-destructive' 
+                                                    : (usage.usage?.imageAnalysis?.percentage || 0) > 70 
+                                                        ? 'bg-amber-500' 
+                                                        : 'bg-vital'
+                                            }`}
+                                            style={{ width: `${Math.min(100, usage.usage?.imageAnalysis?.percentage || 0)}%` }}
+                                        ></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </CardContent>
                     </Card>
                 )}
 
                 <Card>
-                    <h3 className="text-lg font-bold text-gray-900 mb-4">Preguntas Frecuentes</h3>
+                    <CardContent className="p-6">
+                        <h3 className="font-display text-lg font-bold text-foreground mb-4">Preguntas Frecuentes</h3>
 
-                    <div className="space-y-4">
-                        <div>
-                            <h4 className="font-semibold text-gray-900 mb-2">
-                                ¿Puedo cambiar de plan?
-                            </h4>
-                            <p className="text-gray-600">
-                                Sí, puedes cambiar de plan en cualquier momento. Los cambios se aplicarán de forma inmediata y se prorateará la diferencia.
-                            </p>
-                        </div>
+                        <div className="space-y-4">
+                            <div>
+                                <h4 className="font-semibold text-foreground mb-2">
+                                    ¿Puedo cambiar de plan?
+                                </h4>
+                                <p className="text-muted-foreground">
+                                    Sí, puedes cambiar de plan en cualquier momento. Los cambios se aplicarán de forma inmediata y se prorateará la diferencia.
+                                </p>
+                            </div>
 
-                        <div>
-                            <h4 className="font-semibold text-gray-900 mb-2">
-                                ¿Qué pasa si excedo mis límites?
-                            </h4>
-                            <p className="text-gray-600">
-                                Cuando alcances tu límite, podrás mejorar tu plan para obtener más funcionalidades. También puedes adquirir paquetes adicionales.
-                            </p>
-                        </div>
+                            <div>
+                                <h4 className="font-semibold text-foreground mb-2">
+                                    ¿Qué pasa si excedo mis límites?
+                                </h4>
+                                <p className="text-muted-foreground">
+                                    Cuando alcances tu límite, podrás mejorar tu plan para obtener más funcionalidades. También puedes adquirir paquetes adicionales.
+                                </p>
+                            </div>
 
-                        <div>
-                            <h4 className="font-semibold text-gray-900 mb-2">
-                                ¿Hay contrato a largo plazo?
-                            </h4>
-                            <p className="text-gray-600">
-                                No, tu suscripción es mes a mes. Puedes cancelar en cualquier momento sin penalización.
-                            </p>
-                        </div>
+                            <div>
+                                <h4 className="font-semibold text-foreground mb-2">
+                                    ¿Hay contrato a largo plazo?
+                                </h4>
+                                <p className="text-muted-foreground">
+                                    No, tu suscripción es mes a mes. Puedes cancelar en cualquier momento sin penalización.
+                                </p>
+                            </div>
 
-                        <div>
-                            <h4 className="font-semibold text-gray-900 mb-2">
-                                ¿Qué métodos de pago aceptan?
-                            </h4>
-                            <p className="text-gray-600">
-                                Aceptamos todas las tarjetas de crédito y débito a través de Stripe.
-                            </p>
+                            <div>
+                                <h4 className="font-semibold text-foreground mb-2">
+                                    ¿Qué métodos de pago aceptan?
+                                </h4>
+                                <p className="text-muted-foreground">
+                                    Aceptamos todas las tarjetas de crédito y débito a través de Stripe.
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                    </CardContent>
                 </Card>
 
-                <div className="mt-8 text-center text-sm text-gray-600">
+                <div className="mt-8 text-center text-sm text-muted-foreground">
                     <p>
-                        ¿Necesitas ayuda? <a href="/support" className="text-blue-600 hover:underline">Contáctanos</a>
+                        ¿Necesitas ayuda? <a href="/support" className="text-primary hover:underline">Contáctanos</a>
                     </p>
                 </div>
             </div>

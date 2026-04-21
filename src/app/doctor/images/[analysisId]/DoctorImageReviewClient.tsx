@@ -2,7 +2,10 @@
 
 import { useState } from 'react'
 import { LoadingButton } from '@/components/LoadingButton'
-import { Textarea } from '@/components/Input'
+import { Textarea } from '@/components/ui/textarea'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import Link from 'next/link'
 
 interface AnalysisData {
@@ -86,79 +89,87 @@ export default function DoctorImageReviewClient({
     })
   }
 
+  const getUrgencyBadgeVariant = (level: string) => {
+    switch (level) {
+      case 'emergency':
+        return 'destructive'
+      case 'high':
+        return 'destructive'
+      case 'medium':
+        return 'warning'
+      default:
+        return 'secondary'
+    }
+  }
+
   if (actionStatus === 'success') {
     return (
-      <div className="min-h-screen bg-gray-50">
-        <header className="bg-white border-b border-gray-200">
+      <div className="min-h-screen bg-background">
+        <header className="bg-card border-b border-border">
           <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <Link href="/doctor/appointments" className="flex items-center gap-2 text-gray-600 hover:text-gray-900">
+              <Link href="/doctor/appointments" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
                 <span>Volver</span>
               </Link>
-              <div className="h-6 w-px bg-gray-300" />
-              <h1 className="text-xl font-semibold text-gray-900">Revisión completada</h1>
+              <div className="h-6 w-px bg-border" />
+              <h1 className="text-xl font-semibold text-foreground">Revisión completada</h1>
             </div>
           </div>
         </header>
 
         <main className="max-w-2xl mx-auto px-4 py-12">
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 text-center">
-            <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <svg className="w-10 h-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-              </svg>
-            </div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Revisión guardada</h2>
-            <p className="text-gray-600 mb-6">
-              Tu revisión del análisis de imagen ha sido guardada correctamente.
-              El paciente podrá verla en su expediente.
-            </p>
-            <div className="flex gap-4 justify-center">
-              <Link
-                href="/doctor/appointments"
-                className="px-6 py-3 bg-gray-100 text-gray-700 rounded-xl font-medium hover:bg-gray-200 transition-colors"
-              >
-                Volver a consultas
-              </Link>
-              <Link
-                href="/doctor/images"
-                className="px-6 py-3 bg-primary-500 text-white rounded-xl font-medium hover:bg-primary-600 transition-colors"
-              >
-                Ver más análisis
-              </Link>
-            </div>
-          </div>
+          <Card className="bg-card rounded-2xl border border-border shadow-dx-1 p-8 text-center">
+            <CardContent className="p-0">
+              <div className="w-20 h-20 bg-vital-soft rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-10 h-10 text-vital" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h2 className="font-display text-2xl font-bold tracking-tight text-foreground mb-2">Revisión guardada</h2>
+              <p className="text-muted-foreground mb-6">
+                Tu revisión del análisis de imagen ha sido guardada correctamente.
+                El paciente podrá verla en su expediente.
+              </p>
+              <div className="flex gap-4 justify-center">
+                <Button asChild variant="outline">
+                  <Link href="/doctor/appointments">
+                    Volver a consultas
+                  </Link>
+                </Button>
+                <Button asChild>
+                  <Link href="/doctor/images">
+                    Ver más análisis
+                  </Link>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </main>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
+    <div className="min-h-screen bg-background">
+      <header className="bg-card border-b border-border sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Link href="/doctor/appointments" className="flex items-center gap-2 text-gray-600 hover:text-gray-900">
+            <Link href="/doctor/appointments" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
               <span>Volver</span>
             </Link>
-            <div className="h-6 w-px bg-gray-300" />
-            <h1 className="text-xl font-semibold text-gray-900">Revisar Imagen Médica</h1>
+            <div className="h-6 w-px bg-border" />
+            <h1 className="text-xl font-semibold text-foreground">Revisar Imagen Médica</h1>
           </div>
           <div className="flex items-center gap-2">
-            <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-              analysis.urgencyLevel === 'emergency' ? 'bg-red-100 text-red-800' :
-              analysis.urgencyLevel === 'high' ? 'bg-orange-100 text-orange-800' :
-              analysis.urgencyLevel === 'medium' ? 'bg-yellow-100 text-yellow-800' :
-              'bg-green-100 text-green-800'
-            }`}>
+            <Badge variant={getUrgencyBadgeVariant(analysis.urgencyLevel)}>
               Urgencia: {analysis.urgencyLabel}
-            </span>
+            </Badge>
           </div>
         </div>
       </header>
@@ -166,181 +177,190 @@ export default function DoctorImageReviewClient({
       <main className="max-w-7xl mx-auto px-4 py-8">
         <div className="grid lg:grid-cols-2 gap-8">
           <div className="space-y-6">
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
-              <div className="px-6 py-4 border-b border-gray-200">
-                <h2 className="font-semibold text-gray-900">Imagen Original</h2>
-              </div>
-              <div className="p-6">
-                /* eslint-disable-next-line @next/next/no-img-element */ <img
+            <Card className="bg-card rounded-2xl border border-border shadow-dx-1 overflow-hidden">
+              <CardHeader className="py-4 border-b border-border">
+                <CardTitle className="font-semibold text-foreground text-base">Imagen Original</CardTitle>
+              </CardHeader>
+              <CardContent className="p-6">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src={analysis.imageUrl}
                   alt="Imagen médica"
                   className="w-full rounded-lg object-contain max-h-[500px]"
                 />
-              </div>
-            </div>
+              </CardContent>
+            </Card>
 
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h3 className="font-semibold text-gray-900 mb-4">Información del Paciente</h3>
-              <dl className="space-y-3">
-                <div>
-                  <dt className="text-sm text-gray-500">Nombre</dt>
-                  <dd className="text-gray-900">{analysis.patientName}</dd>
-                </div>
-                {analysis.patientEmail && (
+            <Card className="bg-card rounded-2xl border border-border shadow-dx-1">
+              <CardContent className="p-6">
+                <h3 className="font-semibold text-foreground mb-4">Información del Paciente</h3>
+                <dl className="space-y-3">
                   <div>
-                    <dt className="text-sm text-gray-500">Email</dt>
-                    <dd className="text-gray-900">{analysis.patientEmail}</dd>
+                    <dt className="text-sm text-muted-foreground">Nombre</dt>
+                    <dd className="text-foreground">{analysis.patientName}</dd>
                   </div>
-                )}
-                {analysis.patientPhone && (
+                  {analysis.patientEmail && (
+                    <div>
+                      <dt className="text-sm text-muted-foreground">Email</dt>
+                      <dd className="text-foreground">{analysis.patientEmail}</dd>
+                    </div>
+                  )}
+                  {analysis.patientPhone && (
+                    <div>
+                      <dt className="text-sm text-muted-foreground">Teléfono</dt>
+                      <dd className="text-foreground">{analysis.patientPhone}</dd>
+                    </div>
+                  )}
                   <div>
-                    <dt className="text-sm text-gray-500">Teléfono</dt>
-                    <dd className="text-gray-900">{analysis.patientPhone}</dd>
+                    <dt className="text-sm text-muted-foreground">Tipo de imagen</dt>
+                    <dd className="text-foreground">{analysis.imageTypeLabel}</dd>
                   </div>
-                )}
-                <div>
-                  <dt className="text-sm text-gray-500">Tipo de imagen</dt>
-                  <dd className="text-gray-900">{analysis.imageTypeLabel}</dd>
-                </div>
-                {analysis.patientNotes && (
-                  <div>
-                    <dt className="text-sm text-gray-500">Notas del paciente</dt>
-                    <dd className="text-gray-900 text-sm">{analysis.patientNotes}</dd>
-                  </div>
-                )}
-              </dl>
-            </div>
+                  {analysis.patientNotes && (
+                    <div>
+                      <dt className="text-sm text-muted-foreground">Notas del paciente</dt>
+                      <dd className="text-foreground text-sm">{analysis.patientNotes}</dd>
+                    </div>
+                  )}
+                </dl>
+              </CardContent>
+            </Card>
           </div>
 
           <div className="space-y-6">
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="font-semibold text-gray-900">Análisis de IA</h3>
-                <div className="flex items-center gap-2 text-sm text-gray-500">
-                  <span>Confianza: {analysis.confidencePercent}%</span>
-                  <span className="px-2 py-0.5 bg-gray-100 rounded">{analysis.statusLabel}</span>
+            <Card className="bg-card rounded-2xl border border-border shadow-dx-1">
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="font-semibold text-foreground">Análisis de IA</h3>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <span>Confianza: {analysis.confidencePercent}%</span>
+                    <Badge variant="secondary">{analysis.statusLabel}</Badge>
+                  </div>
                 </div>
-              </div>
 
-              {analysis.findings && (
+                {analysis.findings && (
+                  <div className="mb-6">
+                    <h4 className="text-sm font-medium text-foreground mb-2">Hallazgos</h4>
+                    <p className="text-muted-foreground whitespace-pre-wrap">{analysis.findings}</p>
+                  </div>
+                )}
+
+                {analysis.possibleConditions.length > 0 && (
+                  <div className="mb-6">
+                    <h4 className="text-sm font-medium text-foreground mb-2">Posibles condiciones</h4>
+                    <ul className="space-y-2">
+                      {analysis.possibleConditions.map((condition, index) => (
+                        <li key={index} className="flex items-center gap-2 text-sm">
+                          <span className="w-2 h-2 bg-primary rounded-full" />
+                          <span className="text-muted-foreground">{condition.condition}</span>
+                          <span className="text-muted-foreground/70">({condition.probability})</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {analysis.recommendations.length > 0 && (
+                  <div className="mb-6">
+                    <h4 className="text-sm font-medium text-foreground mb-2">Recomendaciones</h4>
+                    <ul className="space-y-2">
+                      {analysis.recommendations.map((rec, index) => (
+                        <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <svg className="w-4 h-4 text-vital mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          {rec}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {analysis.followUpNeeded && (
+                  <div className="p-3 bg-secondary/50 border border-border rounded-lg">
+                    <p className="text-sm text-foreground">
+                      <strong>Seguimiento requerido:</strong> {analysis.followUpNotes || 'Ver recomendaciones'}
+                    </p>
+                  </div>
+                )}
+
+                <div className="mt-4 pt-4 border-t border-border text-xs text-muted-foreground">
+                  <p>Analizado: {formatDate(analysis.createdAt)}</p>
+                  <p>Costo: ${(analysis.costCents / 100).toFixed(2)} MXN</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card rounded-2xl border border-border shadow-dx-1">
+              <CardContent className="p-6">
+                <h3 className="font-semibold text-foreground mb-4">Tu Revisión</h3>
+
+                <div className="mb-4">
+                  <label className="block text-sm font-medium text-foreground mb-2">
+                    Notas del doctor
+                  </label>
+                  <Textarea
+                    placeholder="Agrega tus observaciones, correcciones o comentarios..."
+                    value={doctorNotes}
+                    onChange={(e) => setDoctorNotes(e.target.value)}
+                    rows={4}
+                  />
+                </div>
+
                 <div className="mb-6">
-                  <h4 className="text-sm font-medium text-gray-700 mb-2">Hallazgos</h4>
-                  <p className="text-gray-600 whitespace-pre-wrap">{analysis.findings}</p>
+                  <label className="block text-sm font-medium text-foreground mb-2">
+                    Modificar hallazgos (opcional)
+                  </label>
+                  <Textarea
+                    rows={4}
+                    value={modifiedFindings}
+                    onChange={(e) => setModifiedFindings(e.target.value)}
+                    placeholder="Corrige o amplía los hallazgos de la IA..."
+                  />
                 </div>
-              )}
 
-              {analysis.possibleConditions.length > 0 && (
-                <div className="mb-6">
-                  <h4 className="text-sm font-medium text-gray-700 mb-2">Posibles condiciones</h4>
-                  <ul className="space-y-2">
-                    {analysis.possibleConditions.map((condition, index) => (
-                      <li key={index} className="flex items-center gap-2 text-sm">
-                        <span className="w-2 h-2 bg-primary-500 rounded-full" />
-                        <span className="text-gray-600">{condition.condition}</span>
-                        <span className="text-gray-400">({condition.probability})</span>
-                      </li>
-                    ))}
-                  </ul>
+                {errorMessage && (
+                  <div className="mb-4 p-3 bg-destructive/10 border border-destructive/20 rounded-lg">
+                    <p className="text-sm text-destructive">{errorMessage}</p>
+                  </div>
+                )}
+
+                <div className="flex gap-3">
+                  <LoadingButton
+                    onClick={() => handleAction('approved')}
+                    isLoading={actionStatus === 'submitting' && action === 'approved'}
+                    variant="primary"
+                    className="flex-1 bg-primary hover:bg-primary/95 text-primary-foreground"
+                  >
+                    Aprobar análisis
+                  </LoadingButton>
+                  <LoadingButton
+                    onClick={() => handleAction('modified')}
+                    isLoading={actionStatus === 'submitting' && action === 'modified'}
+                    variant="secondary"
+                    className="flex-1 bg-secondary hover:bg-secondary/90 text-secondary-foreground"
+                  >
+                    Modificar
+                  </LoadingButton>
+                  <LoadingButton
+                    onClick={() => handleAction('rejected')}
+                    isLoading={actionStatus === 'submitting' && action === 'rejected'}
+                    variant="danger"
+                    className="flex-1 bg-destructive hover:bg-destructive/90 text-white"
+                  >
+                    Rechazar
+                  </LoadingButton>
                 </div>
-              )}
+              </CardContent>
+            </Card>
 
-              {analysis.recommendations.length > 0 && (
-                <div className="mb-6">
-                  <h4 className="text-sm font-medium text-gray-700 mb-2">Recomendaciones</h4>
-                  <ul className="space-y-2">
-                    {analysis.recommendations.map((rec, index) => (
-                      <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
-                        <svg className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        {rec}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {analysis.followUpNeeded && (
-                <div className="p-3 bg-blue-50 border border-blue-200 rounded-lg">
-                  <p className="text-sm text-blue-800">
-                    <strong>Seguimiento requerido:</strong> {analysis.followUpNotes || 'Ver recomendaciones'}
-                  </p>
-                </div>
-              )}
-
-              <div className="mt-4 pt-4 border-t border-gray-200 text-xs text-gray-400">
-                <p>Analizado: {formatDate(analysis.createdAt)}</p>
-                <p>Costo: ${(analysis.costCents / 100).toFixed(2)} MXN</p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h3 className="font-semibold text-gray-900 mb-4">Tu Revisión</h3>
-
-              <Textarea
-                label="Notas del doctor"
-                placeholder="Agrega tus observaciones, correcciones o comentarios..."
-                value={doctorNotes}
-                onChange={(e) => setDoctorNotes(e.target.value)}
-                rows={4}
-                containerClassName="mb-4"
-              />
-
-              <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Modificar hallazgos (opcional)
-                </label>
-                <textarea
-                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  rows={4}
-                  value={modifiedFindings}
-                  onChange={(e) => setModifiedFindings(e.target.value)}
-                  placeholder="Corrige o amplía los hallazgos de la IA..."
-                />
-              </div>
-
-              {errorMessage && (
-                <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
-                  <p className="text-sm text-red-600">{errorMessage}</p>
-                </div>
-              )}
-
+            <div className="bg-secondary/50 border border-border rounded-xl p-4">
               <div className="flex gap-3">
-                <LoadingButton
-                  onClick={() => handleAction('approved')}
-                  isLoading={actionStatus === 'submitting' && action === 'approved'}
-                  variant="primary"
-                  className="flex-1 bg-green-600 hover:bg-green-700 focus:ring-green-500"
-                >
-                  Aprobar análisis
-                </LoadingButton>
-                <LoadingButton
-                  onClick={() => handleAction('modified')}
-                  isLoading={actionStatus === 'submitting' && action === 'modified'}
-                  variant="secondary"
-                  className="flex-1"
-                >
-                  Modificar
-                </LoadingButton>
-                <LoadingButton
-                  onClick={() => handleAction('rejected')}
-                  isLoading={actionStatus === 'submitting' && action === 'rejected'}
-                  variant="danger"
-                  className="flex-1"
-                >
-                  Rechazar
-                </LoadingButton>
-              </div>
-            </div>
-
-            <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4">
-              <div className="flex gap-3">
-                <svg className="w-5 h-5 text-yellow-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-5 h-5 text-amber-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                 </svg>
-                <div className="text-sm text-yellow-800">
-                  <p className="font-medium">Recuerda</p>
-                  <p className="mt-1">
+                <div className="text-sm text-amber-700">
+                  <p className="font-medium text-foreground">Recuerda</p>
+                  <p className="mt-1 text-muted-foreground">
                     Este análisis de IA es una herramienta de apoyo. Tu evaluación clínica es la que prevalece para el diagnóstico y tratamiento del paciente.
                   </p>
                 </div>

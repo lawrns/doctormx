@@ -107,15 +107,15 @@ function LoginContent() {
 
   return (
     <div className="min-h-screen grid lg:grid-cols-2">
-      {/* Left Panel - Image & Branding */}
-      <div className="relative hidden lg:flex flex-col justify-between bg-zinc-900 p-10 text-white">
+      {/* Left Panel - Branding */}
+      <div className="relative hidden lg:flex flex-col justify-between bg-ink p-10 text-white">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: 'url(https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=2091&auto=format&fit=crop)',
           }}
         />
-        <div className="absolute inset-0 bg-zinc-900/70" />
+        <div className="absolute inset-0 bg-ink/70" />
 
         <div className="relative z-20 flex items-center gap-2.5">
           <div className="w-9 h-9 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/20">
@@ -131,7 +131,7 @@ function LoginContent() {
             <p className="text-lg leading-relaxed">
               &ldquo;Doctor.mx ha transformado la forma en que atiendo a mis pacientes. La plataforma es intuitiva y el sistema de IA me ayuda a dar mejores diagnósticos.&rdquo;
             </p>
-            <footer className="text-sm text-zinc-300">
+            <footer className="text-sm text-white/70">
               Dra. María García &mdash; Medicina General, CDMX
             </footer>
           </blockquote>
@@ -139,29 +139,29 @@ function LoginContent() {
       </div>
 
       {/* Right Panel - Login Form */}
-      <div className="flex flex-col">
+      <div className="flex flex-col bg-background">
         {/* Mobile logo */}
-        <div className="lg:hidden flex items-center gap-2.5 p-6 border-b">
-          <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
+        <div className="lg:hidden flex items-center justify-center gap-2.5 p-6">
+          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
             <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
             </svg>
           </div>
-          <span className="text-lg font-bold text-neutral-900">Doctor.mx</span>
+          <span className="text-lg font-bold text-foreground">Doctor.mx</span>
         </div>
 
-        <div className="flex-1 flex items-center justify-center p-6 sm:p-8">
-          <div className="w-full max-w-[350px] space-y-6">
+        <div className="flex-1 flex items-center justify-center p-4">
+          <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-8 max-w-md w-full space-y-6">
             {/* Header */}
             <div className="flex flex-col space-y-2 text-center">
-              <h1 className="text-2xl font-semibold tracking-tight">
+              <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">
                 Iniciar sesión
               </h1>
               <p className="text-sm text-muted-foreground">
                 Ingresa tu correo y contraseña para acceder
               </p>
               {redirectTarget && (
-                <div className="rounded-md border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-900 text-left">
+                <div className="rounded-md border border-border bg-muted px-4 py-3 text-sm text-foreground text-left">
                   Iniciar sesión te llevará de regreso a donde estabas para continuar tu flujo sin perder contexto.
                 </div>
               )}
@@ -181,19 +181,16 @@ function LoginContent() {
                           { value: 'patient', label: 'Paciente', icon: UserCircle2 },
                           { value: 'doctor', label: 'Doctor', icon: Stethoscope },
                         ].map((type) => (
-                          <button
+                          <Button
                             key={type.value}
                             type="button"
+                            variant={field.value === type.value ? 'default' : 'outline'}
                             onClick={() => field.onChange(type.value)}
-                            className={`flex items-center justify-center gap-2 px-3 py-2.5 rounded-md border text-sm font-medium transition-colors ${
-                              field.value === type.value
-                                ? 'border-primary bg-primary/5 text-primary'
-                                : 'border-input bg-background hover:bg-accent hover:text-accent-foreground'
-                            }`}
+                            className="flex items-center justify-center gap-2"
                           >
                             <type.icon className="w-4 h-4" />
                             {type.label}
-                          </button>
+                          </Button>
                         ))}
                       </div>
                     </FormItem>
@@ -319,7 +316,7 @@ function LoginContent() {
                 <span className="w-full border-t" />
               </div>
               <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-background px-2 text-muted-foreground">
+                <span className="bg-card px-2 text-muted-foreground">
                   O continúa con
                 </span>
               </div>
