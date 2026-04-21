@@ -74,10 +74,10 @@ export function ConsultationProgress({
               initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3 }}
-              className="flex items-center gap-1.5 rounded-full bg-blue-50 px-3 py-1.5 dark:bg-blue-950/50"
+              className="flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1.5 dark:bg-primary/20"
             >
-              <Clock className="h-3.5 w-3.5 text-blue-600 dark:text-blue-400" aria-hidden="true" />
-              <span className="text-xs font-medium text-blue-600 dark:text-blue-400 tabular-nums">
+              <Clock className="h-3.5 w-3.5 text-primary dark:text-primary" aria-hidden="true" />
+              <span className="text-xs font-medium text-primary dark:text-primary tabular-nums">
                 {formatTimeRemaining(progress.estimatedTimeRemaining)}
               </span>
               <span className="sr-only">
@@ -134,7 +134,7 @@ export function ConsultationProgress({
                     {/* Pulse Ring */}
                     {!shouldReduceMotion && (
                       <motion.div
-                        className="absolute inset-0 rounded-full border-2 border-blue-500"
+                        className="absolute inset-0 rounded-full border-2 border-primary"
                         animate={{
                           scale: [1, 1.3],
                           opacity: [0.6, 0],
@@ -151,7 +151,7 @@ export function ConsultationProgress({
 
                     {/* Thinking Indicator */}
                     <motion.div
-                      className="absolute -bottom-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full border-2 border-background bg-blue-500"
+                      className="absolute -bottom-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full border-2 border-background bg-primary"
                       animate={{
                         scale: shouldReduceMotion ? 1 : [1, 1.1, 1],
                       }}
@@ -163,7 +163,7 @@ export function ConsultationProgress({
                       aria-label="Pensando"
                     >
                       <motion.div
-                        className="h-1.5 w-1.5 rounded-full bg-white"
+                        className="h-1.5 w-1.5 rounded-full bg-card"
                         animate={{
                           opacity: shouldReduceMotion ? 1 : [1, 0.5, 1],
                         }}
@@ -188,7 +188,7 @@ export function ConsultationProgress({
                         {[0, 1, 2].map((i) => (
                           <motion.div
                             key={i}
-                            className="h-1 w-1 rounded-full bg-blue-500"
+                            className="h-1 w-1 rounded-full bg-primary"
                             animate={{
                               y: shouldReduceMotion ? 0 : [-2, 0, -2],
                               opacity: shouldReduceMotion ? 0.7 : [0.5, 1, 0.5],
@@ -215,12 +215,12 @@ export function ConsultationProgress({
         )}
 
         {/* Current Phase Indicator */}
-        <div className="rounded-lg border-l-4 border-blue-500 bg-blue-50 px-4 py-3 dark:bg-blue-950/30">
+        <div className="rounded-lg border-l-4 border-primary bg-primary/10 px-4 py-3 dark:bg-primary/20">
           <p className="text-sm">
-            <span className="font-medium text-blue-900 dark:text-blue-100">
+            <span className="font-medium text-primary dark:text-primary-foreground">
               Fase actual:
             </span>{' '}
-            <span className="text-blue-700 dark:text-blue-300">
+            <span className="text-primary dark:text-primary/80">
               {progress.currentPhase === 'subjective' && 'Recopilación de síntomas'}
               {progress.currentPhase === 'objective' && 'Análisis de datos clínicos'}
               {progress.currentPhase === 'assessment' && 'Evaluación diagnóstica'}

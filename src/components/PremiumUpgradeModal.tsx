@@ -66,7 +66,7 @@ export function PremiumUpgradeModal({ isOpen, onClose, consultationCount }: Prem
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.95 }}
-        className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+        className="bg-card rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
       >
         {/* Header */}
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-8 text-center relative overflow-hidden">
@@ -84,13 +84,13 @@ export function PremiumUpgradeModal({ isOpen, onClose, consultationCount }: Prem
             ))}
           </div>
           <div className="relative z-10">
-            <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+            <div className="w-16 h-16 bg-card/20 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
               <Crown className="w-8 h-8 text-white" />
             </div>
             <h2 className="text-3xl font-bold text-white mb-2">
               ¡Has usado tus 5 consultas gratis!
             </h2>
-            <p className="text-blue-50 text-lg">
+            <p className="text-primary-foreground/80 text-lg">
               Actualiza a Premium para continuar accediendo a salud ilimitada
             </p>
           </div>
@@ -100,7 +100,7 @@ export function PremiumUpgradeModal({ isOpen, onClose, consultationCount }: Prem
         <div className="p-8">
           {/* Why Upgrade */}
           <div className="mb-8">
-            <h3 className="font-bold text-gray-900 text-xl mb-4 text-center">
+            <h3 className="font-bold text-foreground text-xl mb-4 text-center">
               ¿Por qué actualizar a Premium?
             </h3>
             <div className="grid md:grid-cols-3 gap-4">
@@ -121,11 +121,11 @@ export function PremiumUpgradeModal({ isOpen, onClose, consultationCount }: Prem
                   description: 'Prioridad en todas tus consultas',
                 },
               ].map((benefit, i) => (
-                <div key={i} className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl">
-                  <benefit.icon className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
+                <div key={i} className="flex items-start gap-3 p-4 bg-secondary/50 rounded-xl">
+                  <benefit.icon className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">{benefit.title}</h4>
-                    <p className="text-sm text-gray-600">{benefit.description}</p>
+                    <h4 className="font-semibold text-foreground mb-1">{benefit.title}</h4>
+                    <p className="text-sm text-muted-foreground">{benefit.description}</p>
                   </div>
                 </div>
               ))}
@@ -139,8 +139,8 @@ export function PremiumUpgradeModal({ isOpen, onClose, consultationCount }: Prem
                 key={i}
                 className={`relative rounded-2xl border-2 p-6 ${
                   plan.popular
-                    ? 'border-blue-500 shadow-xl shadow-blue-500/20'
-                    : 'border-gray-200'
+                    ? 'border-primary shadow-xl shadow-primary/20'
+                    : 'border-border'
                 } ${plan.disabled ? 'opacity-60' : ''}`}
               >
                 {plan.popular && (
@@ -152,18 +152,18 @@ export function PremiumUpgradeModal({ isOpen, onClose, consultationCount }: Prem
                 )}
 
                 <div className="text-center mb-6">
-                  <h4 className="font-bold text-gray-900 text-2xl mb-2">{plan.name}</h4>
+                  <h4 className="font-bold text-foreground text-2xl mb-2">{plan.name}</h4>
                   <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
-                    <span className="text-gray-500">{plan.period}</span>
+                    <span className="text-4xl font-bold text-foreground">{plan.price}</span>
+                    <span className="text-muted-foreground">{plan.period}</span>
                   </div>
                 </div>
 
                 <ul className="space-y-3 mb-6">
                   {plan.features.map((feature, fi) => (
                     <li key={fi} className="flex items-center gap-2 text-sm">
-                      <Check className="w-4 h-4 text-blue-500 flex-shrink-0" />
-                      <span className="text-gray-700">{feature}</span>
+                      <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                      <span className="text-muted-foreground">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -176,12 +176,12 @@ export function PremiumUpgradeModal({ isOpen, onClose, consultationCount }: Prem
                     disabled={plan.disabled}
                     className={`w-full py-3 rounded-xl font-semibold transition-all ${
                       plan.disabled
-                        ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                        ? 'bg-secondary text-muted-foreground cursor-not-allowed'
                         : plan.color === 'emerald'
                         ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 shadow-lg'
                         : plan.color === 'blue'
                         ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white hover:from-blue-600 hover:to-indigo-700'
-                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                        : 'bg-muted text-muted-foreground hover:bg-muted'
                     }`}
                   >
                     {plan.cta}
@@ -196,7 +196,7 @@ export function PremiumUpgradeModal({ isOpen, onClose, consultationCount }: Prem
           <div className="text-center">
             <button
               onClick={onClose}
-              className="text-gray-500 hover:text-gray-700 text-sm font-medium transition-colors"
+              className="text-muted-foreground hover:text-muted-foreground text-sm font-medium transition-colors"
             >
               Continuar con el plan gratis
             </button>
@@ -220,10 +220,10 @@ export function QuotaExceededBanner({ onUpgrade }: QuotaExceededBannerProps) {
             <Crown className="w-6 h-6 text-amber-600" />
           </div>
           <div>
-            <h3 className="font-bold text-gray-900 text-lg">
+            <h3 className="font-bold text-foreground text-lg">
               ¡Has usado tus 5 consultas gratis!
             </h3>
-            <p className="text-gray-600 text-sm">
+            <p className="text-muted-foreground text-sm">
               Actualiza a Premium para continuar accediendo a consultas ilimitadas
             </p>
           </div>

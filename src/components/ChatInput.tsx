@@ -115,7 +115,7 @@ export function ChatInput({ conversationId, onMessageSent, userId }: ChatInputPr
   }
 
   return (
-    <div className="bg-white border-t border-border p-4">
+    <div className="bg-card border-t border-border p-4">
       {attachment && (
         <div className="mb-3 p-3 bg-secondary-50 rounded-lg flex items-center gap-3">
           {attachmentPreview ? (

@@ -9,7 +9,7 @@ import Image from 'next/image';
  */
 export function TrustFooter() {
   return (
-    <div className="bg-gradient-to-br from-gray-50 to-gray-100 border-t border-gray-200">
+    <div className="bg-gradient-to-br from-gray-50 to-gray-100 border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Main trust badges */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
@@ -36,34 +36,34 @@ export function TrustFooter() {
         </div>
 
         {/* Detailed credentials */}
-        <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
-          <h3 className="text-lg font-bold text-gray-900 mb-4">
+        <div className="bg-card rounded-2xl p-6 shadow-sm border border-border">
+          <h3 className="text-lg font-bold text-foreground mb-4">
             Credenciales y Certificaciones
           </h3>
-          <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-700">
+          <div className="grid md:grid-cols-2 gap-4 text-sm text-muted-foreground">
             <div className="flex items-start gap-2">
-              <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
               <div>
                 <strong>Médicos Certificados:</strong> Todos nuestros médicos cuentan con
                 cédula profesional verificada ante la Secretaría de Educación Pública (SEP)
               </div>
             </div>
             <div className="flex items-start gap-2">
-              <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
               <div>
                 <strong>Licencias Estatales:</strong> Autorizados para operar en Ciudad de
                 México, Estado de México, Jalisco, Nuevo León y más
               </div>
             </div>
             <div className="flex items-start gap-2">
-              <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
               <div>
                 <strong>Privacidad Garantizada:</strong> Cumplimos con la Ley Federal de
                 Protección de Datos Personales (LFPDPPP)
               </div>
             </div>
             <div className="flex items-start gap-2">
-              <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
               <div>
                 <strong>Prescripciones Digitales:</strong> Recetas electrónicas válidas en
                 todas las farmacias de México
@@ -73,8 +73,8 @@ export function TrustFooter() {
         </div>
 
         {/* Regulatory info */}
-        <div className="mt-6 pt-6 border-t border-gray-200">
-          <p className="text-xs text-gray-600 text-center">
+        <div className="mt-6 pt-6 border-t border-border">
+          <p className="text-xs text-muted-foreground text-center">
             Doctor.mx opera con controles orientados a la NOM-024-SSA3-2012 y a la protección de datos personales en México.
             <br />
             Todos los servicios médicos son proporcionados por profesionales de la salud
@@ -96,10 +96,10 @@ function TrustBadge({
   description: string;
 }) {
   return (
-    <div className="flex flex-col items-center text-center p-4 bg-white rounded-xl border border-gray-200 hover:shadow-md transition-shadow">
-      <div className="text-blue-600 mb-2">{icon}</div>
-      <h4 className="font-bold text-gray-900 text-sm mb-1">{title}</h4>
-      <p className="text-xs text-gray-600">{description}</p>
+    <div className="flex flex-col items-center text-center p-4 bg-card rounded-xl border border-border hover:shadow-md transition-shadow">
+      <div className="text-primary mb-2">{icon}</div>
+      <h4 className="font-bold text-foreground text-sm mb-1">{title}</h4>
+      <p className="text-xs text-muted-foreground">{description}</p>
     </div>
   );
 }
@@ -119,14 +119,14 @@ export function VerificationBadge({
   showDetails?: boolean;
 }) {
   return (
-    <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-3 py-1.5 rounded-lg border border-green-200">
+    <div className="inline-flex items-center gap-2 bg-primary/5 text-green-700 px-3 py-1.5 rounded-lg border border-green-200">
       <CheckCircle2 className="w-4 h-4 fill-current" />
       <span className="font-semibold text-sm">Verificado</span>
       {showDetails && (
         <div className="group relative">
-          <button className="text-green-600 hover:text-green-800">ⓘ</button>
+          <button className="text-primary hover:text-green-800">ⓘ</button>
           <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block z-10">
-            <div className="bg-gray-900 text-white text-xs rounded-lg p-3 shadow-xl whitespace-nowrap">
+            <div className="bg-foreground text-primary-foreground text-xs rounded-lg p-3 shadow-xl whitespace-nowrap">
               <p className="font-semibold mb-1">Cédula Profesional Verificada</p>
               <p>Número: {cedula}</p>
               <p>Verificado: {verifiedDate.toLocaleDateString('es-MX')}</p>
@@ -134,7 +134,7 @@ export function VerificationBadge({
                 href={`https://www.cedulaprofesional.sep.gob.mx/cedula/presidencia/indexAvanzada.action?&cedula=${cedula}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-300 hover:text-blue-200 underline mt-1 block"
+                className="text-primary/70 hover:text-primary/80 underline mt-1 block"
               >
                 Verificar en SEP →
               </a>
@@ -181,13 +181,13 @@ export function PatientTestimonials() {
   ];
 
   return (
-    <div className="bg-white py-16">
+    <div className="bg-card py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-3">
+          <h2 className="text-3xl font-bold text-foreground mb-3">
             Lo Que Dicen Nuestros Pacientes
           </h2>
-          <p className="text-gray-600">
+          <p className="text-muted-foreground">
             Miles de mexicanos confían en Doctor.mx para su salud
           </p>
         </div>
@@ -223,20 +223,20 @@ function TestimonialCard({
   verified: boolean;
 }) {
   return (
-    <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+    <div className="bg-secondary/50 rounded-2xl p-6 border border-border hover:shadow-lg transition-shadow">
       <div className="flex items-center gap-1 mb-3">
         {[...Array(rating)].map((_, i) => (
           <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
         ))}
       </div>
-      <p className="text-gray-700 mb-4 italic">"{text}"</p>
+      <p className="text-muted-foreground mb-4 italic">"{text}"</p>
       <div className="flex items-center justify-between">
         <div>
-          <p className="font-semibold text-gray-900">{name}</p>
-          <p className="text-sm text-gray-600">{city}</p>
+          <p className="font-semibold text-foreground">{name}</p>
+          <p className="text-sm text-muted-foreground">{city}</p>
         </div>
         {verified && (
-          <div className="text-green-600 text-xs font-semibold flex items-center gap-1">
+          <div className="text-primary text-xs font-semibold flex items-center gap-1">
             <CheckCircle2 className="w-4 h-4" />
             Verificado
           </div>
@@ -249,8 +249,8 @@ function TestimonialCard({
 function TrustStat({ number, label }: { number: string; label: string }) {
   return (
     <div className="text-center">
-      <div className="text-3xl font-bold text-blue-600 mb-1">{number}</div>
-      <div className="text-sm text-gray-600">{label}</div>
+      <div className="text-3xl font-bold text-primary mb-1">{number}</div>
+      <div className="text-sm text-muted-foreground">{label}</div>
     </div>
   );
 }
@@ -262,7 +262,7 @@ export function SecurityFeatures() {
   return (
     <div className="bg-gradient-to-br from-blue-50 to-indigo-50 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
+        <h3 className="text-2xl font-bold text-foreground text-center mb-8">
           Tu Información Está Segura
         </h3>
         <div className="grid md:grid-cols-4 gap-6">
@@ -302,10 +302,10 @@ function SecurityFeature({
   description: string;
 }) {
   return (
-    <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-      <div className="text-blue-600 mb-3">{icon}</div>
-      <h4 className="font-bold text-gray-900 mb-2">{title}</h4>
-      <p className="text-sm text-gray-600">{description}</p>
+    <div className="bg-card rounded-xl p-6 shadow-sm border border-border">
+      <div className="text-primary mb-3">{icon}</div>
+      <h4 className="font-bold text-foreground mb-2">{title}</h4>
+      <p className="text-sm text-muted-foreground">{description}</p>
     </div>
   );
 }

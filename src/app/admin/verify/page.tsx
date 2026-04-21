@@ -17,10 +17,10 @@ export default async function AdminVerificationPage() {
     .order('created_at', { ascending: false })
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white shadow">
+    <div className="min-h-screen bg-secondary/50">
+      <header className="bg-card shadow">
         <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-          <Link href="/admin" className="text-2xl font-bold text-gray-900">
+          <Link href="/admin" className="text-2xl font-bold text-foreground">
             Doctor.mx Admin
           </Link>
         </div>
@@ -28,30 +28,30 @@ export default async function AdminVerificationPage() {
 
       <main className="container mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+          <h1 className="text-3xl font-bold text-foreground mb-2">
             Verificación de doctores
           </h1>
-          <p className="text-gray-600">
+          <p className="text-muted-foreground">
             Revisa y aprueba doctores pendientes de verificación
           </p>
         </div>
 
         {!pendingDoctors || pendingDoctors.length === 0 ? (
-          <div className="bg-white rounded-lg shadow p-12 text-center">
-            <p className="text-gray-500">No hay doctores pendientes de verificación</p>
+          <div className="bg-card rounded-lg shadow p-12 text-center">
+            <p className="text-muted-foreground">No hay doctores pendientes de verificación</p>
           </div>
         ) : (
           <div className="space-y-4">
             {pendingDoctors.map((doctor: Doctor) => (
-              <div key={doctor.id} className="bg-white rounded-lg shadow p-6">
+              <div key={doctor.id} className="bg-card rounded-lg shadow p-6">
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900">
+                    <h3 className="text-xl font-semibold text-foreground">
                       Dr. {doctor.profile.full_name}
                     </h3>
-                    <p className="text-sm text-gray-600">{doctor.profile.email}</p>
+                    <p className="text-sm text-muted-foreground">{doctor.profile.email}</p>
                     {doctor.profile.phone && (
-                      <p className="text-sm text-gray-600">{doctor.profile.phone}</p>
+                      <p className="text-sm text-muted-foreground">{doctor.profile.phone}</p>
                     )}
                   </div>
                   <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">
@@ -61,28 +61,28 @@ export default async function AdminVerificationPage() {
 
                 <div className="grid md:grid-cols-2 gap-4 mb-6">
                   <div>
-                    <p className="text-sm text-gray-600">Cédula profesional</p>
-                    <p className="font-medium text-gray-900">
+                    <p className="text-sm text-muted-foreground">Cédula profesional</p>
+                    <p className="font-medium text-foreground">
                       {doctor.license_number || 'No proporcionada'}
                     </p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600">Experiencia</p>
-                    <p className="font-medium text-gray-900">
+                    <p className="text-sm text-muted-foreground">Experiencia</p>
+                    <p className="font-medium text-foreground">
                       {doctor.years_experience ? `${doctor.years_experience} años` : 'No especificada'}
                     </p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600">Ubicación</p>
-                    <p className="font-medium text-gray-900">
+                    <p className="text-sm text-muted-foreground">Ubicación</p>
+                    <p className="font-medium text-foreground">
                       {doctor.city && doctor.state
                         ? `${doctor.city}, ${doctor.state}`
                         : 'No especificada'}
                     </p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600">Precio de consulta</p>
-                    <p className="font-medium text-gray-900">
+                    <p className="text-sm text-muted-foreground">Precio de consulta</p>
+                    <p className="font-medium text-foreground">
                       ${(doctor.price_cents / 100).toFixed(2)} {doctor.currency}
                     </p>
                   </div>
@@ -90,8 +90,8 @@ export default async function AdminVerificationPage() {
 
                 {doctor.bio && (
                   <div className="mb-6">
-                    <p className="text-sm text-gray-600 mb-1">Biografía</p>
-                    <p className="text-gray-700">{doctor.bio}</p>
+                    <p className="text-sm text-muted-foreground mb-1">Biografía</p>
+                    <p className="text-muted-foreground">{doctor.bio}</p>
                   </div>
                 )}
 
@@ -109,7 +109,7 @@ export default async function AdminVerificationPage() {
 
                   <Link
                     href={`/admin/verify/${doctor.id}`}
-                    className="flex-1 border border-gray-300 text-gray-700 py-2 rounded-lg hover:bg-gray-50 font-medium text-center"
+                    className="flex-1 border border-border text-muted-foreground py-2 rounded-lg hover:bg-secondary/50 font-medium text-center"
                   >
                     Ver detalles
                   </Link>

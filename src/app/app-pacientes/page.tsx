@@ -122,7 +122,7 @@ export default function AppPacientesPage() {
                     </div>
                   </div>
                   {/* App content mockup */}
-                  <div className="flex-1 bg-white p-4 space-y-4">
+                  <div className="flex-1 bg-card p-4 space-y-4">
                     <div className="flex items-center gap-2">
                       <div className="h-6 w-6 rounded-md bg-[hsl(var(--brand-ocean))] flex items-center justify-center">
                         <Smartphone className="h-3 w-3 text-white" />
@@ -159,7 +159,7 @@ export default function AppPacientesPage() {
                     </div>
                   </div>
                   {/* Bottom nav mockup */}
-                  <div className="bg-white border-t border-[hsl(var(--border))] px-6 py-2 flex justify-around">
+                  <div className="bg-card border-t border-[hsl(var(--border))] px-6 py-2 flex justify-around">
                     <div className="w-5 h-5 rounded bg-[hsl(var(--surface-quiet))]" />
                     <div className="w-5 h-5 rounded bg-[hsl(var(--surface-quiet))]" />
                     <div className="w-5 h-5 rounded bg-[hsl(var(--brand-ocean))]" />

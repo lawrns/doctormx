@@ -177,17 +177,17 @@ export default function ExpertQAPage() {
 
       {/* Breadcrumb */}
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-4">
-        <ol className="flex items-center gap-2 text-sm text-neutral-500">
-          <li><Link href="/" className="hover:text-blue-600 transition-colors">Inicio</Link></li>
+        <ol className="flex items-center gap-2 text-sm text-muted-foreground">
+          <li><Link href="/" className="hover:text-primary transition-colors">Inicio</Link></li>
           <li><ChevronRight className="w-3 h-3" /></li>
-          <li className="text-neutral-900 font-medium">Preguntas y Respuestas</li>
+          <li className="text-foreground font-medium">Preguntas y Respuestas</li>
         </ol>
       </nav>
 
       {/* Hero Section */}
       <section className="relative overflow-hidden public-section">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full opacity-30 pointer-events-none">
-          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-200 rounded-full blur-[120px]" />
+          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/20 rounded-full blur-[120px]" />
           <div className="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-emerald-100 rounded-full blur-[100px]" />
         </div>
 
@@ -214,16 +214,16 @@ export default function ExpertQAPage() {
             className="grid grid-cols-3 gap-6 max-w-2xl mx-auto mt-12"
           >
             <div className="text-center">
-              <p className="text-3xl font-bold text-neutral-900">{stats.totalAnswered}+</p>
-              <p className="text-sm text-neutral-500 mt-1">Preguntas respondidas</p>
+              <p className="text-3xl font-bold text-foreground">{stats.totalAnswered}+</p>
+              <p className="text-sm text-muted-foreground mt-1">Preguntas respondidas</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl font-bold text-neutral-900">{stats.totalDoctors}+</p>
-              <p className="text-sm text-neutral-500 mt-1">Especialistas</p>
+              <p className="text-3xl font-bold text-foreground">{stats.totalDoctors}+</p>
+              <p className="text-sm text-muted-foreground mt-1">Especialistas</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl font-bold text-neutral-900">100%</p>
-              <p className="text-sm text-neutral-500 mt-1">Gratuito</p>
+              <p className="text-3xl font-bold text-foreground">100%</p>
+              <p className="text-sm text-muted-foreground mt-1">Gratuito</p>
             </div>
           </motion.div>
         </div>
@@ -238,8 +238,8 @@ export default function ExpertQAPage() {
                 icon: MessageCircleQuestion,
                 title: '1. Escribe tu pregunta',
                 description: 'Describe tu sintoma o duda de salud. Puedes hacerlo de forma anonima.',
-                color: 'text-blue-600',
-                bg: 'bg-blue-50',
+                color: 'text-primary',
+                bg: 'bg-primary/10',
               },
               {
                 icon: Stethoscope,
@@ -267,8 +267,8 @@ export default function ExpertQAPage() {
                 <div className={`w-14 h-14 ${step.bg} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
                   <step.icon className={`w-7 h-7 ${step.color}`} />
                 </div>
-                <h3 className="font-semibold text-neutral-900 mb-2">{step.title}</h3>
-                <p className="text-sm text-neutral-500 leading-relaxed">{step.description}</p>
+                <h3 className="font-semibold text-foreground mb-2">{step.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
               </motion.div>
             ))}
           </div>
@@ -278,16 +278,16 @@ export default function ExpertQAPage() {
       {/* Question Form */}
       <section className="pb-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="p-8 bg-white border-neutral-100">
-            <h2 className="text-xl font-bold text-neutral-900 mb-6">Haz tu pregunta</h2>
+          <Card className="p-8 bg-card border-border">
+            <h2 className="text-xl font-bold text-foreground mb-6">Haz tu pregunta</h2>
 
             {formSuccess ? (
               <div className="text-center py-8">
                 <div className="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-4">
                   <CheckCircle2 className="w-8 h-8 text-emerald-600" />
                 </div>
-                <h3 className="text-lg font-semibold text-neutral-900 mb-2">Pregunta enviada</h3>
-                <p className="text-neutral-500 mb-6">
+                <h3 className="text-lg font-semibold text-foreground mb-2">Pregunta enviada</h3>
+                <p className="text-muted-foreground mb-6">
                   Nuestro equipo de medicos la revisara. Recibiras la respuesta en tu correo electronico.
                 </p>
                 <Button variant="outline" onClick={() => setFormSuccess(false)}>
@@ -297,13 +297,13 @@ export default function ExpertQAPage() {
             ) : (
               <form onSubmit={handleSubmitQuestion} className="space-y-5">
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-1.5">
+                  <label className="block text-sm font-medium text-muted-foreground mb-1.5">
                     Especialidad (opcional)
                   </label>
                   <select
                     value={formSpecialty}
                     onChange={(e) => setFormSpecialty(e.target.value)}
-                    className="w-full rounded-lg border border-neutral-200 bg-white px-4 py-2.5 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"
+                    className="w-full rounded-lg border border-border bg-card px-4 py-2.5 text-sm focus:border-ring focus:ring-2 focus:ring-ring/20 outline-none transition-all"
                   >
                     <option value="">Selecciona una especialidad</option>
                     <option value="dermatologia">Dermatologia</option>
@@ -320,7 +320,7 @@ export default function ExpertQAPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-1.5">
+                  <label className="block text-sm font-medium text-muted-foreground mb-1.5">
                     Tu pregunta *
                   </label>
                   <textarea
@@ -331,14 +331,14 @@ export default function ExpertQAPage() {
                     required
                     minLength={20}
                     maxLength={2000}
-                    className="w-full rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all resize-none"
+                    className="w-full rounded-lg border border-border bg-card px-4 py-3 text-sm focus:border-ring focus:ring-2 focus:ring-ring/20 outline-none transition-all resize-none"
                   />
-                  <p className="text-xs text-neutral-400 mt-1">{formQuestion.length}/2000 caracteres</p>
+                  <p className="text-xs text-muted-foreground mt-1">{formQuestion.length}/2000 caracteres</p>
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-1.5">
+                    <label className="block text-sm font-medium text-muted-foreground mb-1.5">
                       Nombre (opcional)
                     </label>
                     <input
@@ -347,11 +347,11 @@ export default function ExpertQAPage() {
                       onChange={(e) => setFormName(e.target.value)}
                       placeholder="Tu nombre o alias"
                       maxLength={50}
-                      className="w-full rounded-lg border border-neutral-200 bg-white px-4 py-2.5 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"
+                      className="w-full rounded-lg border border-border bg-card px-4 py-2.5 text-sm focus:border-ring focus:ring-2 focus:ring-ring/20 outline-none transition-all"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-1.5">
+                    <label className="block text-sm font-medium text-muted-foreground mb-1.5">
                       Correo electronico *
                     </label>
                     <input
@@ -360,13 +360,13 @@ export default function ExpertQAPage() {
                       onChange={(e) => setFormEmail(e.target.value)}
                       placeholder="tu@correo.com"
                       required
-                      className="w-full rounded-lg border border-neutral-200 bg-white px-4 py-2.5 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"
+                      className="w-full rounded-lg border border-border bg-card px-4 py-2.5 text-sm focus:border-ring focus:ring-2 focus:ring-ring/20 outline-none transition-all"
                     />
                   </div>
                 </div>
 
-                <div className="flex items-start gap-2 text-xs text-neutral-500 bg-neutral-50 rounded-lg p-3">
-                  <Shield className="w-4 h-4 text-neutral-400 mt-0.5 shrink-0" />
+                <div className="flex items-start gap-2 text-xs text-muted-foreground bg-secondary/50 rounded-lg p-3">
+                  <Shield className="w-4 h-4 text-muted-foreground mt-0.5 shrink-0" />
                   <span>Tu pregunta sera publicada de forma anonima. Tu correo solo se usa para notificarte la respuesta.</span>
                 </div>
 
@@ -377,7 +377,7 @@ export default function ExpertQAPage() {
                 <Button
                   type="submit"
                   disabled={formSubmitting || formQuestion.length < 20}
-                  className="w-full bg-blue-600 hover:bg-blue-500 text-white"
+                  className="w-full bg-primary hover:bg-primary text-primary-foreground"
                 >
                   {formSubmitting ? (
                     <>
@@ -412,12 +412,12 @@ export default function ExpertQAPage() {
 
             <TabsContent value="featured">
               {loading ? (
-                <div className="text-center py-12 text-neutral-400">
+                <div className="text-center py-12 text-muted-foreground">
                   <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4" />
                   Cargando preguntas...
                 </div>
               ) : featuredQA.length === 0 ? (
-                <div className="text-center py-12 text-neutral-400">
+                <div className="text-center py-12 text-muted-foreground">
                   <MessageCircleQuestion className="w-12 h-12 mx-auto mb-4 opacity-50" />
                   <p>Aun no hay preguntas destacadas.</p>
                   <p className="text-sm mt-1">Se el primero en preguntar.</p>
@@ -432,11 +432,11 @@ export default function ExpertQAPage() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: index * 0.05 }}
                     >
-                      <Card className="p-6 bg-white border-neutral-100 hover:shadow-md transition-shadow">
+                      <Card className="p-6 bg-card border-border hover:shadow-md transition-shadow">
                         {/* Question */}
                         <div className="flex items-start gap-3 mb-4">
-                          <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
-                            <MessageCircleQuestion className="w-5 h-5 text-blue-600" />
+                          <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                            <MessageCircleQuestion className="w-5 h-5 text-primary" />
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-2 mb-1 flex-wrap">
@@ -445,12 +445,12 @@ export default function ExpertQAPage() {
                                   {question.specialty.name}
                                 </Badge>
                               )}
-                              <span className="text-xs text-neutral-400 flex items-center gap-1">
+                              <span className="text-xs text-muted-foreground flex items-center gap-1">
                                 <Eye className="w-3 h-3" />{question.view_count} vistas
                               </span>
                             </div>
-                            <p className="text-neutral-900 leading-relaxed">{question.question}</p>
-                            <p className="text-xs text-neutral-400 mt-1">
+                            <p className="text-foreground leading-relaxed">{question.question}</p>
+                            <p className="text-xs text-muted-foreground mt-1">
                               {question.display_name || 'Anonimo'} - {formatDate(question.created_at)}
                             </p>
                           </div>
@@ -463,7 +463,7 @@ export default function ExpertQAPage() {
                               <div className="w-6 h-6 rounded-full bg-emerald-50 flex items-center justify-center">
                                 <Stethoscope className="w-3 h-3 text-emerald-600" />
                               </div>
-                              <span className="text-sm font-medium text-neutral-700">
+                              <span className="text-sm font-medium text-muted-foreground">
                                 {answer.doctor?.full_name || 'Doctor especialista'}
                               </span>
                               {answer.is_featured && (
@@ -472,11 +472,11 @@ export default function ExpertQAPage() {
                                 </Badge>
                               )}
                             </div>
-                            <p className="text-sm text-neutral-600 leading-relaxed whitespace-pre-line">
+                            <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
                               {truncateAnswer(answer.answer, 300)}
                             </p>
                             <div className="flex items-center gap-4 mt-3">
-                              <span className="text-xs text-neutral-400 flex items-center gap-1">
+                              <span className="text-xs text-muted-foreground flex items-center gap-1">
                                 <ThumbsUp className="w-3 h-3" />{answer.helpful_count} personas encontraron util esta respuesta
                               </span>
                             </div>
@@ -484,9 +484,9 @@ export default function ExpertQAPage() {
                         )}
 
                         {/* CTA */}
-                        <div className="mt-4 pt-4 border-t border-neutral-50 flex justify-end">
+                        <div className="mt-4 pt-4 border-t border-border flex justify-end">
                           <Link href="/doctors">
-                            <Button variant="outline" size="sm" className="text-blue-600 border-blue-200 hover:bg-blue-50">
+                            <Button variant="outline" size="sm" className="text-primary border-primary/20 hover:bg-primary/10">
                               Agendar cita <ArrowRight className="w-3 h-3 ml-1" />
                             </Button>
                           </Link>
@@ -500,12 +500,12 @@ export default function ExpertQAPage() {
 
             <TabsContent value="recent">
               {loading ? (
-                <div className="text-center py-12 text-neutral-400">
+                <div className="text-center py-12 text-muted-foreground">
                   <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4" />
                   Cargando preguntas...
                 </div>
               ) : questions.length === 0 ? (
-                <div className="text-center py-12 text-neutral-400">
+                <div className="text-center py-12 text-muted-foreground">
                   <MessageCircleQuestion className="w-12 h-12 mx-auto mb-4 opacity-50" />
                   <p>No hay preguntas recientes.</p>
                 </div>
@@ -519,7 +519,7 @@ export default function ExpertQAPage() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: index * 0.03 }}
                     >
-                      <Card className="p-5 bg-white border-neutral-100 hover:shadow-sm transition-shadow">
+                      <Card className="p-5 bg-card border-border hover:shadow-sm transition-shadow">
                         <div className="flex items-start justify-between gap-4">
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-2 mb-1.5 flex-wrap">
@@ -531,12 +531,12 @@ export default function ExpertQAPage() {
                                   Respondida
                                 </Badge>
                               )}
-                              <span className="text-xs text-neutral-400 flex items-center gap-1">
+                              <span className="text-xs text-muted-foreground flex items-center gap-1">
                                 <Eye className="w-3 h-3" />{q.view_count}
                               </span>
                             </div>
-                            <p className="text-sm text-neutral-800 leading-relaxed line-clamp-2">{q.question}</p>
-                            <div className="flex items-center gap-3 mt-2 text-xs text-neutral-400">
+                            <p className="text-sm text-foreground leading-relaxed line-clamp-2">{q.question}</p>
+                            <div className="flex items-center gap-3 mt-2 text-xs text-muted-foreground">
                               <span>{q.display_name || 'Anonimo'}</span>
                               <span className="flex items-center gap-1">
                                 <Clock className="w-3 h-3" />{formatDate(q.created_at)}
@@ -563,7 +563,7 @@ export default function ExpertQAPage() {
 
       {/* CTA Section */}
       <section className="public-section relative overflow-hidden">
-        <div className="absolute inset-0 bg-neutral-900" />
+        <div className="absolute inset-0 bg-foreground" />
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center py-20">
           <motion.div
@@ -582,7 +582,7 @@ export default function ExpertQAPage() {
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: '0 20px 40px -10px rgba(59,130,246,0.3)' }}
                 whileTap={{ scale: 0.98 }}
-                className="px-10 py-5 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-500 transition-all flex items-center gap-3 mx-auto shadow-xl shadow-blue-600/20 mt-8"
+                className="px-10 py-5 bg-primary text-primary-foreground font-bold rounded-2xl hover:bg-primary transition-all flex items-center gap-3 mx-auto shadow-xl shadow-primary/20 mt-8"
               >
                 <Users className="w-5 h-5" />
                 Buscar un especialista

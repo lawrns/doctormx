@@ -16,14 +16,14 @@ const Button = ({
   const baseClasses = 'inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
   
   const variants = {
-    primary: 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 shadow-sm',
-    secondary: 'bg-gray-100 text-gray-900 hover:bg-gray-200 focus:ring-gray-500',
+    primary: 'bg-primary text-primary-foreground hover:bg-primary focus:ring-ring shadow-sm',
+    secondary: 'bg-secondary text-foreground hover:bg-muted focus:ring-gray-500',
     success: 'bg-green-600 text-white hover:bg-green-700 focus:ring-green-500 shadow-sm',
     warning: 'bg-yellow-600 text-white hover:bg-yellow-700 focus:ring-yellow-500 shadow-sm',
     error: 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500 shadow-sm',
-    outline: 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:ring-blue-500',
-    ghost: 'text-gray-700 hover:bg-gray-100 focus:ring-gray-500',
-    link: 'text-blue-600 hover:text-blue-700 underline-offset-4 hover:underline focus:ring-blue-500',
+    outline: 'border border-border bg-card text-muted-foreground hover:bg-secondary/50 focus:ring-ring',
+    ghost: 'text-muted-foreground hover:bg-secondary focus:ring-gray-500',
+    link: 'text-primary hover:text-primary underline-offset-4 hover:underline focus:ring-ring',
   };
   
   const sizes = {

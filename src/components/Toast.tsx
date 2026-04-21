@@ -29,9 +29,9 @@ export function useToast() {
 
 const toastStyles: Record<ToastType, { bg: string; icon: string; border: string }> = {
   success: {
-    bg: 'bg-green-50',
+    bg: 'bg-primary/5',
     border: 'border-green-200',
-    icon: 'text-green-500',
+    icon: 'text-vital',
   },
   error: {
     bg: 'bg-red-50',
@@ -44,9 +44,9 @@ const toastStyles: Record<ToastType, { bg: string; icon: string; border: string 
     icon: 'text-yellow-500',
   },
   info: {
-    bg: 'bg-blue-50',
-    border: 'border-blue-200',
-    icon: 'text-blue-500',
+    bg: 'bg-primary/10',
+    border: 'border-primary/20',
+    icon: 'text-primary',
   },
 }
 
@@ -82,10 +82,10 @@ function ToastItem({ toast, onRemove }: { toast: Toast; onRemove: () => void }) 
       role="alert"
     >
       <span className={styles.icon}>{icons[toast.type]}</span>
-      <p className="text-sm font-medium text-gray-900 flex-1">{toast.message}</p>
+      <p className="text-sm font-medium text-foreground flex-1">{toast.message}</p>
       <button
         onClick={onRemove}
-        className="text-gray-400 hover:text-gray-600 transition-colors"
+        className="text-muted-foreground hover:text-muted-foreground transition-colors"
       >
         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
           <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />

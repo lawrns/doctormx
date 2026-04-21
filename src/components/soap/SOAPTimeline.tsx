@@ -74,7 +74,7 @@ export function SOAPTimeline({
               {/* Connector line to next step */}
               {!isLast && (
                 <div
-                  className="absolute left-[calc(50%+24px)] right-[calc(-50%+24px)] top-6 h-0.5 bg-neutral-200"
+                  className="absolute left-[calc(50%+24px)] right-[calc(-50%+24px)] top-6 h-0.5 bg-muted"
                   aria-hidden="true"
                 >
                   <motion.div
@@ -108,7 +108,7 @@ export function SOAPTimeline({
                       'flex h-12 w-12 items-center justify-center rounded-full border-2 transition-all duration-300',
                       isCompleted && 'border-primary-500 bg-primary-500',
                       isInProgress && 'border-accent-500 bg-accent-50',
-                      !isCompleted && !isInProgress && 'border-neutral-200 bg-neutral-50'
+                      !isCompleted && !isInProgress && 'border-border bg-secondary/50'
                     )}
                     animate={{
                       scale: isInProgress && !shouldReduceMotion ? [1, 1.05, 1] : 1,
@@ -131,7 +131,7 @@ export function SOAPTimeline({
                       </motion.div>
                     )}
                     {!isCompleted && !isInProgress && (
-                      <Icon className="h-6 w-6 text-neutral-400" aria-hidden="true" />
+                      <Icon className="h-6 w-6 text-muted-foreground" aria-hidden="true" />
                     )}
                   </motion.div>
 
@@ -153,19 +153,19 @@ export function SOAPTimeline({
                       'text-sm font-semibold transition-colors',
                       isCompleted && 'text-primary-700',
                       isInProgress && 'text-accent-700',
-                      !isCompleted && !isInProgress && 'text-neutral-400'
+                      !isCompleted && !isInProgress && 'text-muted-foreground'
                     )}
                   >
                     {config.label}
                   </h3>
-                  <p className="mt-0.5 text-xs text-neutral-500 max-w-[120px]">
+                  <p className="mt-0.5 text-xs text-muted-foreground max-w-[120px]">
                     {config.description}
                   </p>
 
                   {/* Timestamp */}
                   {phaseStatus.timestamp && (
                     <time
-                      className="mt-1 block text-xs text-neutral-400"
+                      className="mt-1 block text-xs text-muted-foreground"
                       dateTime={phaseStatus.timestamp.toISOString()}
                     >
                       {new Intl.DateTimeFormat('es-MX', {
@@ -200,7 +200,7 @@ export function SOAPTimeline({
               {/* Vertical connector line */}
               {!isLast && (
                 <div
-                  className="absolute left-6 top-12 bottom-0 w-0.5 -translate-x-1/2 bg-neutral-200"
+                  className="absolute left-6 top-12 bottom-0 w-0.5 -translate-x-1/2 bg-muted"
                   aria-hidden="true"
                 >
                   <motion.div
@@ -222,13 +222,13 @@ export function SOAPTimeline({
                     'flex h-12 w-12 items-center justify-center rounded-full border-2 transition-all',
                     isCompleted && 'border-primary-500 bg-primary-500',
                     isInProgress && 'border-accent-500 bg-accent-50',
-                    !isCompleted && !isInProgress && 'border-neutral-200 bg-neutral-50'
+                    !isCompleted && !isInProgress && 'border-border bg-secondary/50'
                   )}
                 >
                   {isCompleted && <Check className="h-6 w-6 text-white" />}
                   {isInProgress && <Loader2 className="h-6 w-6 text-accent-600 animate-spin" />}
                   {!isCompleted && !isInProgress && (
-                    <Icon className="h-6 w-6 text-neutral-400" />
+                    <Icon className="h-6 w-6 text-muted-foreground" />
                   )}
                 </div>
               </div>
@@ -240,14 +240,14 @@ export function SOAPTimeline({
                     'text-sm font-semibold',
                     isCompleted && 'text-primary-700',
                     isInProgress && 'text-accent-700',
-                    !isCompleted && !isInProgress && 'text-neutral-400'
+                    !isCompleted && !isInProgress && 'text-muted-foreground'
                   )}
                 >
                   {config.label}
                 </h3>
-                <p className="text-xs text-neutral-500">{config.description}</p>
+                <p className="text-xs text-muted-foreground">{config.description}</p>
                 {phaseStatus.timestamp && (
-                  <time className="mt-1 block text-xs text-neutral-400">
+                  <time className="mt-1 block text-xs text-muted-foreground">
                     {new Intl.DateTimeFormat('es-MX', {
                       hour: '2-digit',
                       minute: '2-digit',

@@ -97,11 +97,11 @@ export function WriteReview({
       >
         <form onSubmit={handleSubmit}>
           <div className="space-y-4">
-            <div className="bg-gray-50 rounded-lg p-3">
-              <p className="text-sm font-medium text-gray-900">
+            <div className="bg-secondary/50 rounded-lg p-3">
+              <p className="text-sm font-medium text-foreground">
                 Dr. {doctorName}
               </p>
-              <p className="text-xs text-gray-500">
+              <p className="text-xs text-muted-foreground">
                 Consulta del {formattedDate}
               </p>
             </div>
@@ -133,7 +133,7 @@ export function WriteReview({
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
+              className="px-4 py-2 text-sm font-medium text-muted-foreground bg-secondary rounded-lg hover:bg-muted transition-colors"
             >
               Cancelar
             </button>

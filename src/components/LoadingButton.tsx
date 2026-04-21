@@ -11,10 +11,10 @@ interface LoadingButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const variantClasses = {
-  primary: 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 disabled:bg-blue-400',
-  secondary: 'bg-gray-100 text-gray-700 hover:bg-gray-200 focus:ring-gray-500 border border-gray-300',
+  primary: 'bg-primary text-primary-foreground hover:bg-primary focus:ring-ring disabled:bg-primary/60',
+  secondary: 'bg-secondary text-muted-foreground hover:bg-muted focus:ring-gray-500 border border-border',
   danger: 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500 disabled:bg-red-400',
-  ghost: 'bg-transparent text-gray-600 hover:bg-gray-100 focus:ring-gray-500',
+  ghost: 'bg-transparent text-muted-foreground hover:bg-secondary focus:ring-gray-500',
 }
 
 const sizeClasses = {

@@ -77,24 +77,24 @@ function estimateReadTime(content: string) {
 function renderMarkdownToHtml(markdown: string) {
   let html = markdown
     // Headers
-    .replace(/^### (.+)$/gm, '<h3 class="text-xl font-semibold text-neutral-900 mt-8 mb-3">$1</h3>')
-    .replace(/^## (.+)$/gm, '<h2 class="text-2xl font-bold text-neutral-900 mt-10 mb-4">$1</h2>')
-    .replace(/^# (.+)$/gm, '<h1 class="text-3xl font-bold text-neutral-900 mt-12 mb-6">$1</h1>')
+    .replace(/^### (.+)$/gm, '<h3 class="text-xl font-semibold text-foreground mt-8 mb-3">$1</h3>')
+    .replace(/^## (.+)$/gm, '<h2 class="text-2xl font-bold text-foreground mt-10 mb-4">$1</h2>')
+    .replace(/^# (.+)$/gm, '<h1 class="text-3xl font-bold text-foreground mt-12 mb-6">$1</h1>')
     // Bold
-    .replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold text-neutral-900">$1</strong>')
+    .replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold text-foreground">$1</strong>')
     // Italic
     .replace(/\*(.+?)\*/g, '<em>$1</em>')
     // Numbered lists
-    .replace(/^(\d+)\. (.+)$/gm, '<li class="text-neutral-700 leading-relaxed ml-6 list-decimal">$2</li>')
+    .replace(/^(\d+)\. (.+)$/gm, '<li class="text-muted-foreground leading-relaxed ml-6 list-decimal">$2</li>')
     // Bullet lists
-    .replace(/^- (.+)$/gm, '<li class="text-neutral-700 leading-relaxed ml-6 list-disc">$1</li>')
+    .replace(/^- (.+)$/gm, '<li class="text-muted-foreground leading-relaxed ml-6 list-disc">$1</li>')
     // Paragraphs (split on double newlines)
-    .replace(/\n\n/g, '</p><p class="text-neutral-700 leading-relaxed mb-4">')
+    .replace(/\n\n/g, '</p><p class="text-muted-foreground leading-relaxed mb-4">')
     // Line breaks within paragraphs
     .replace(/\n(?!<)/g, '<br/>')
 
   if (!html.startsWith('<h')) {
-    html = `<p class="text-neutral-700 leading-relaxed mb-4">${html}</p>`
+    html = `<p class="text-muted-foreground leading-relaxed mb-4">${html}</p>`
   }
 
   return html
@@ -155,17 +155,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Breadcrumb */}
       <nav className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-4">
-        <ol className="flex items-center gap-2 text-sm text-neutral-500 flex-wrap">
-          <li><Link href="/" className="hover:text-blue-600 transition-colors">Inicio</Link></li>
+        <ol className="flex items-center gap-2 text-sm text-muted-foreground flex-wrap">
+          <li><Link href="/" className="hover:text-primary transition-colors">Inicio</Link></li>
           <li><ChevronRight className="w-3 h-3" /></li>
-          <li><Link href="/blog" className="hover:text-blue-600 transition-colors">Blog</Link></li>
+          <li><Link href="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
           {post.category && (
             <>
               <li><ChevronRight className="w-3 h-3" /></li>
               <li>
                 <Link
                   href={`/blog?category=${post.category.slug}`}
-                  className="hover:text-blue-600 transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   {post.category.name}
                 </Link>
@@ -173,7 +173,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </>
           )}
           <li><ChevronRight className="w-3 h-3" /></li>
-          <li className="text-neutral-900 font-medium truncate max-w-[200px]">{post.title}</li>
+          <li className="text-foreground font-medium truncate max-w-[200px]">{post.title}</li>
         </ol>
       </nav>
 
@@ -183,7 +183,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           {/* Back link */}
           <Link
             href="/blog"
-            className="inline-flex items-center gap-1 text-sm text-neutral-500 hover:text-blue-600 transition-colors mb-6"
+            className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors mb-6"
           >
             <ArrowLeft className="w-3 h-3" />Volver al blog
           </Link>
@@ -194,23 +194,23 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </Badge>
           )}
 
-          <h1 className="text-3xl sm:text-4xl font-bold text-neutral-900 leading-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold text-foreground leading-tight mb-4">
             {post.title}
           </h1>
 
           {post.excerpt && (
-            <p className="text-lg text-neutral-600 leading-relaxed mb-6">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               {post.excerpt}
             </p>
           )}
 
-          <div className="flex items-center gap-4 flex-wrap text-sm text-neutral-500 border-b border-neutral-100 pb-6">
+          <div className="flex items-center gap-4 flex-wrap text-sm text-muted-foreground border-b border-border pb-6">
             {post.author && (
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center">
-                  <BookOpen className="w-4 h-4 text-blue-600" />
+                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                  <BookOpen className="w-4 h-4 text-primary" />
                 </div>
-                <span className="font-medium text-neutral-700">{post.author.full_name}</span>
+                <span className="font-medium text-muted-foreground">{post.author.full_name}</span>
               </div>
             )}
             <span className="flex items-center gap-1">
@@ -235,9 +235,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         />
 
         {/* Share */}
-        <div className="border-t border-neutral-100 pt-6 mb-12">
+        <div className="border-t border-border pt-6 mb-12">
           <div className="flex items-center justify-between flex-wrap gap-4">
-            <div className="flex items-center gap-2 text-sm text-neutral-500">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <Share2 className="w-4 h-4" />
               <span>Compartir:</span>
             </div>
@@ -246,7 +246,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`${siteUrl}/blog/${post.slug}`)}&text=${encodeURIComponent(post.title)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 rounded-lg bg-neutral-100 text-sm text-neutral-600 hover:bg-neutral-200 transition-colors"
+                className="px-4 py-2 rounded-lg bg-secondary text-sm text-muted-foreground hover:bg-muted transition-colors"
               >
                 Twitter
               </a>
@@ -254,7 +254,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`${siteUrl}/blog/${post.slug}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 rounded-lg bg-neutral-100 text-sm text-neutral-600 hover:bg-neutral-200 transition-colors"
+                className="px-4 py-2 rounded-lg bg-secondary text-sm text-muted-foreground hover:bg-muted transition-colors"
               >
                 Facebook
               </a>
@@ -274,22 +274,22 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Related Posts */}
       {relatedPosts.length > 0 && (
         <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-          <h2 className="text-2xl font-bold text-neutral-900 mb-6">Articulos relacionados</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-6">Articulos relacionados</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {relatedPosts.map((relPost) => (
               <Link key={relPost.id} href={`/blog/${relPost.slug}`} className="group">
-                <Card className="h-full p-0 overflow-hidden bg-white border-neutral-100 hover:shadow-md transition-all group-hover:-translate-y-1">
+                <Card className="h-full p-0 overflow-hidden bg-card border-border hover:shadow-md transition-all group-hover:-translate-y-1">
                   <div className="h-36 bg-gradient-to-br from-neutral-100 to-neutral-50 flex items-center justify-center">
-                    <BookOpen className="w-10 h-10 text-neutral-200" />
+                    <BookOpen className="w-10 h-10 text-muted-foreground" />
                   </div>
                   <div className="p-5">
                     {relPost.category && (
                       <Badge variant="secondary" className="text-xs mb-2">{relPost.category.name}</Badge>
                     )}
-                    <h3 className="font-semibold text-neutral-900 text-sm group-hover:text-blue-600 transition-colors line-clamp-2 mb-2">
+                    <h3 className="font-semibold text-foreground text-sm group-hover:text-primary transition-colors line-clamp-2 mb-2">
                       {relPost.title}
                     </h3>
-                    <p className="text-xs text-neutral-400">
+                    <p className="text-xs text-muted-foreground">
                       {formatDate(relPost.published_at)}
                     </p>
                   </div>
@@ -301,14 +301,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       )}
 
       {/* CTA */}
-      <section className="border-t border-neutral-100 bg-neutral-50">
+      <section className="border-t border-border bg-secondary/50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-          <h2 className="text-2xl font-bold text-neutral-900 mb-3">Necesitas consulta medica?</h2>
-          <p className="text-neutral-500 mb-6">
+          <h2 className="text-2xl font-bold text-foreground mb-3">Necesitas consulta medica?</h2>
+          <p className="text-muted-foreground mb-6">
             Agenda una consulta en linea con un doctor certificado. Rapido, seguro y profesional.
           </p>
           <Link href="/doctors">
-            <Button className="bg-blue-600 hover:bg-blue-500 text-white px-8">
+            <Button className="bg-primary hover:bg-primary text-primary-foreground px-8">
               Agendar consulta <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </Link>

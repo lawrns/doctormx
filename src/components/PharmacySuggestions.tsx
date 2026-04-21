@@ -107,15 +107,15 @@ export default function PharmacySuggestions({
 
   if (loading) {
     return (
-      <div className="bg-white rounded-lg shadow p-6">
-        <h3 className="text-lg font-semibold text-gray-900 mb-4">Farmacias Recomendadas</h3>
+      <div className="bg-card rounded-lg shadow p-6">
+        <h3 className="text-lg font-semibold text-foreground mb-4">Farmacias Recomendadas</h3>
         <div className="space-y-4">
           {[1, 2, 3].map((i) => (
             <div key={i} className="animate-pulse flex gap-4">
-              <div className="w-12 h-12 bg-gray-200 rounded-lg"></div>
+              <div className="w-12 h-12 bg-muted rounded-lg"></div>
               <div className="flex-1">
-                <div className="h-4 bg-gray-200 rounded w-1/2 mb-2"></div>
-                <div className="h-3 bg-gray-200 rounded w-1/3"></div>
+                <div className="h-4 bg-muted rounded w-1/2 mb-2"></div>
+                <div className="h-3 bg-muted rounded w-1/3"></div>
               </div>
             </div>
           ))}
@@ -129,12 +129,12 @@ export default function PharmacySuggestions({
   }
 
   return (
-    <div className="bg-white rounded-lg shadow p-6">
-      <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-        <MapPin className="w-5 h-5 text-green-600" />
+    <div className="bg-card rounded-lg shadow p-6">
+      <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+        <MapPin className="w-5 h-5 text-primary" />
         Farmacias Recomendadas
       </h3>
-      <p className="text-sm text-gray-600 mb-4">
+      <p className="text-sm text-muted-foreground mb-4">
         Farmacias cercanas con los mejores precios para tus medicamentos
       </p>
 
@@ -142,28 +142,28 @@ export default function PharmacySuggestions({
         {pharmacies.map((pharmacy) => (
           <div
             key={pharmacy.pharmacyId}
-            className="border rounded-lg p-4 hover:bg-gray-50 transition-colors"
+            className="border rounded-lg p-4 hover:bg-secondary/50 transition-colors"
           >
             <div className="flex justify-between items-start">
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-1">
-                  <h4 className="font-medium text-gray-900">{pharmacy.pharmacyName}</h4>
+                  <h4 className="font-medium text-foreground">{pharmacy.pharmacyName}</h4>
                   {pharmacy.matchScore >= 70 && (
-                    <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-primary/10 text-green-800">
                       <Star className="w-3 h-3 inline mr-1" />Mejor opción
                     </span>
                   )}
                 </div>
-                <p className="text-sm text-gray-600 mb-2">{pharmacy.pharmacyAddress}</p>
+                <p className="text-sm text-muted-foreground mb-2">{pharmacy.pharmacyAddress}</p>
 
                 <div className="flex flex-wrap gap-4 text-sm">
                   {pharmacy.distanceKm !== null && (
-                    <div className="flex items-center gap-1 text-gray-600">
+                    <div className="flex items-center gap-1 text-muted-foreground">
                       <MapPin className="w-4 h-4" />
                       {pharmacy.distanceKm} km
                     </div>
                   )}
-                  <div className="flex items-center gap-1 text-gray-600">
+                  <div className="flex items-center gap-1 text-muted-foreground">
                     <DollarSign className="w-4 h-4" />
                     {(pharmacy.estimatedPrice / 100).toLocaleString('es-MX', {
                       style: 'currency',
@@ -171,7 +171,7 @@ export default function PharmacySuggestions({
                     })}
                   </div>
                   {pharmacy.savingsVsAverage > 0 && (
-                    <div className="flex items-center gap-1 text-green-600">
+                    <div className="flex items-center gap-1 text-primary">
                       <DollarSign className="w-4 h-4" />
                       Ahorro: ${pharmacy.savingsVsAverage} MXN
                     </div>
@@ -183,7 +183,7 @@ export default function PharmacySuggestions({
                 {sentPharmacy === pharmacy.pharmacyId ? (
                   <button
                     disabled
-                    className="px-4 py-2 bg-green-100 text-green-700 rounded-lg text-sm font-medium cursor-default"
+                    className="px-4 py-2 bg-primary/10 text-green-700 rounded-lg text-sm font-medium cursor-default"
                   >
                     <Check className="w-4 h-4 inline mr-1" />Enviado
                   </button>
@@ -191,7 +191,7 @@ export default function PharmacySuggestions({
                   <button
                     onClick={() => handleSendToPharmacy(pharmacy)}
                     disabled={sending || !patientPhone}
-                    className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm font-medium flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary text-sm font-medium flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <Send className="w-4 h-4" />
                     {sending && selectedPharmacy === pharmacy.pharmacyId

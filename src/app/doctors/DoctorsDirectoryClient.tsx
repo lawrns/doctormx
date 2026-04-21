@@ -134,7 +134,7 @@ function ModeToggle() {
       <button
         onClick={toggle}
         className={`w-[30px] h-[30px] flex items-center justify-center rounded-md border text-xs transition-all ${
-          !isDark ? 'bg-cobalt-800 border-cobalt-800 text-white' : 'bg-background border-border text-muted-foreground'
+          !isDark ? 'bg-ink border-ink text-primary-foreground' : 'bg-background border-border text-muted-foreground'
         }`}
         aria-label="Modo claro"
       >
@@ -143,7 +143,7 @@ function ModeToggle() {
       <button
         onClick={toggle}
         className={`w-[30px] h-[30px] flex items-center justify-center rounded-md border text-xs transition-all ${
-          isDark ? 'bg-cobalt-800 border-cobalt-800 text-white' : 'bg-background border-border text-muted-foreground'
+          isDark ? 'bg-ink border-ink text-primary-foreground' : 'bg-background border-border text-muted-foreground'
         }`}
         aria-label="Modo oscuro"
       >
@@ -255,8 +255,8 @@ function DoctorCard({
       onClick={onSelect}
       className={`bg-card border rounded-2xl grid grid-cols-1 md:grid-cols-[1fr_210px] overflow-hidden cursor-pointer transition-all duration-200 ease-dx ${
         isSelected
-          ? 'border-cobalt-700 shadow-[0_0_0_2px_#dbe7ff]'
-          : 'border-border hover:border-cobalt-500 hover:shadow-dx-2'
+          ? 'border-ink shadow-[0_0_0_2px_hsl(var(--primary)/0.2)]'
+          : 'border-border hover:border-primary hover:shadow-dx-2'
       }`}
     >
       {/* LEFT */}
@@ -351,7 +351,7 @@ function DoctorCard({
                 onClick={(e) => e.stopPropagation()}
                 className={`py-1.5 px-0.5 border rounded-md text-center text-[10px] transition-all font-sans ${
                   isActive
-                    ? 'bg-cobalt-800 border-cobalt-800 text-white'
+                    ? 'bg-ink border-ink text-primary-foreground'
                     : isStrike
                     ? 'opacity-45 line-through pointer-events-none bg-background border-border text-foreground'
                     : 'bg-card border-border text-foreground hover:bg-secondary hover:border-primary/30 hover:text-primary'
@@ -477,7 +477,7 @@ function CdmxMap({
             className={`absolute w-9 h-9 flex items-center justify-center rounded-[50%_50%_50%_0] border-2 border-white shadow-md transition-all duration-200 ${
               isSelected
                 ? 'bg-vital scale-[1.15] -rotate-45'
-                : 'bg-cobalt-800 -rotate-45 hover:bg-vital hover:scale-110'
+                : 'bg-ink -rotate-45 hover:bg-vital hover:scale-110'
             }`}
             style={{ left: pos.left, top: pos.top }}
             title={doctor.profile?.full_name}
@@ -592,7 +592,7 @@ export function DoctorsDirectoryClient({
             />
             <button
               type="submit"
-              className="px-4 py-2 bg-cobalt-800 text-white text-[13px] font-semibold hover:bg-cobalt-700 transition-colors shrink-0"
+              className="px-4 py-2 bg-ink text-primary-foreground text-[13px] font-semibold hover:bg-ink/90 transition-colors shrink-0"
             >
               Buscar
             </button>
@@ -711,14 +711,14 @@ export function DoctorsDirectoryClient({
                   key={p}
                   className={`w-8 h-8 border rounded-md text-xs font-semibold transition-all ${
                     p === 1
-                      ? 'bg-cobalt-800 border-cobalt-800 text-white'
-                      : 'bg-card border-border text-foreground hover:bg-cobalt-800 hover:border-cobalt-800 hover:text-white'
+                      ? 'bg-ink border-ink text-primary-foreground'
+                      : 'bg-card border-border text-foreground hover:bg-ink hover:border-ink hover:text-primary-foreground'
                   }`}
                 >
                   {p}
                 </button>
               ))}
-              <button className="w-8 h-8 border rounded-md text-xs font-semibold bg-card border-border text-foreground hover:bg-cobalt-800 hover:border-cobalt-800 hover:text-white transition-all">
+              <button className="w-8 h-8 border rounded-md text-xs font-semibold bg-card border-border text-foreground hover:bg-ink hover:border-ink hover:text-primary-foreground transition-all">
                 ›
               </button>
             </div>

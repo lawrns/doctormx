@@ -62,11 +62,11 @@ export function EmptyState({
     >
       {/* Icon or Illustration */}
       {(illustration || icon) && (
-        <div className="mb-6 text-gray-400">
+        <div className="mb-6 text-muted-foreground">
           {illustration || (
             <div
               className={cn(
-                'flex items-center justify-center rounded-full bg-gray-100',
+                'flex items-center justify-center rounded-full bg-secondary',
                 iconSizes[size]
               )}
             >
@@ -79,19 +79,19 @@ export function EmptyState({
       {/* Content */}
       <h2
         className={cn(
-          'font-semibold text-gray-900 mb-2',
+          'font-semibold text-foreground mb-2',
           titleSizes[size]
         )}
       >
         {title}
       </h2>
-      <p className="text-gray-500 max-w-sm mb-6 text-sm leading-relaxed">
+      <p className="text-muted-foreground max-w-sm mb-6 text-sm leading-relaxed">
         {description}
       </p>
 
       {/* Hint */}
       {hint && (
-        <p className="text-xs text-gray-400 mb-6 flex items-center gap-1.5">
+        <p className="text-xs text-muted-foreground mb-6 flex items-center gap-1.5">
           <svg
             className="w-3.5 h-3.5"
             fill="none"

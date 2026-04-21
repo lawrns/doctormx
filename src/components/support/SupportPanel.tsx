@@ -91,9 +91,9 @@ export function SupportPanel({ layout = 'desktop', onDismiss }: SupportPanelProp
   const panelHeight = layout === 'mobile' ? 'h-full' : 'h-[min(580px,calc(100dvh-120px))]'
 
   return (
-    <div className={`flex ${panelHeight} flex-col overflow-hidden overflow-x-hidden rounded-[1.75rem] border border-white/60 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.16)]`}>
+    <div className={`flex ${panelHeight} flex-col overflow-hidden overflow-x-hidden rounded-[1.75rem] border border-border bg-card shadow-[0_20px_60px_rgba(15,23,42,0.16)]`}>
       {/* Header */}
-      <div className="relative shrink-0 border-b border-slate-100 px-4 pb-3 pt-4">
+      <div className="relative shrink-0 border-b border-border px-4 pb-3 pt-4">
         <div className="absolute inset-x-0 top-0 h-[2px] rounded-t-[1.75rem] bg-gradient-to-r from-sky-400/40 via-sky-300/60 to-sky-400/40" />
         {/* Row 1: identity + dismiss */}
         <div className="flex items-center justify-between gap-2">
@@ -109,7 +109,7 @@ export function SupportPanel({ layout = 'desktop', onDismiss }: SupportPanelProp
             variant="ghost"
             size="icon"
             onClick={onDismiss}
-            className="h-8 w-8 rounded-xl text-slate-400 hover:bg-slate-100 hover:text-slate-700"
+            className="h-8 w-8 rounded-xl text-muted-foreground hover:bg-secondary hover:text-foreground"
             aria-label="Cerrar asistente"
           >
             <X className="h-4 w-4" aria-hidden="true" />
@@ -117,10 +117,10 @@ export function SupportPanel({ layout = 'desktop', onDismiss }: SupportPanelProp
         </div>
         {/* Row 2: title + route chip */}
         <div className="mt-2.5 flex min-w-0 items-center gap-2">
-          <h2 className="shrink-0 text-sm font-semibold tracking-tight text-slate-900">
+          <h2 className="shrink-0 text-sm font-semibold tracking-tight text-foreground">
             Guía de navegación
           </h2>
-          <span className="flex min-w-0 items-center gap-1 truncate rounded-full border border-slate-200 bg-slate-50 px-2 py-0.5 text-[11px] text-slate-500">
+          <span className="flex min-w-0 items-center gap-1 truncate rounded-full border border-border bg-secondary px-2 py-0.5 text-[11px] text-muted-foreground">
             <Compass className="h-3 w-3 shrink-0 text-sky-500" aria-hidden="true" />
             <span className="truncate">{pathname}</span>
           </span>
@@ -138,7 +138,7 @@ export function SupportPanel({ layout = 'desktop', onDismiss }: SupportPanelProp
       </div>
 
       {/* Composer — sticky bottom */}
-      <div className="shrink-0 border-t border-slate-100 bg-white/95 px-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] pt-3 backdrop-blur-xl">
+      <div className="shrink-0 border-t border-border bg-card/95 px-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] pt-3 backdrop-blur-xl">
         <div className="flex items-center gap-2">
           <Input
             value={input}
@@ -151,7 +151,7 @@ export function SupportPanel({ layout = 'desktop', onDismiss }: SupportPanelProp
             }}
             placeholder="Pregúntale a Simeon…"
             aria-label="Mensaje para Doctor Simeon"
-            className="h-10 rounded-2xl border-slate-200 bg-white px-4 text-sm shadow-none focus-visible:ring-sky-300"
+            className="h-10 rounded-2xl border-border bg-background px-4 text-sm shadow-none focus-visible:ring-ring"
           />
           <Button
             type="button"

@@ -82,15 +82,15 @@ export default function DoctorReferrals() {
     <div className="space-y-6">
       {/* Header */}
       <div className="flex items-center gap-3">
-        <Gift className="w-8 h-8 text-blue-600" />
+        <Gift className="w-8 h-8 text-primary" />
         <div>
           <h1 className="text-2xl font-bold">Programa de Referidos</h1>
-          <p className="text-gray-600">Invita colegas y gana meses gratis</p>
+          <p className="text-muted-foreground">Invita colegas y gana meses gratis</p>
         </div>
       </div>
 
       {/* Referral Code Card */}
-      <Card className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
+      <Card className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 border-primary/20">
         <h2 className="text-lg font-semibold mb-4">Tu Código de Referido</h2>
         
         <div className="flex items-center gap-3 mb-4">
@@ -98,7 +98,7 @@ export default function DoctorReferrals() {
             <Input
               value={stats?.code || ''}
               readOnly
-              className="text-center text-xl font-mono bg-white"
+              className="text-center text-xl font-mono bg-card"
             />
             <Button
               variant="ghost"
@@ -106,13 +106,13 @@ export default function DoctorReferrals() {
               className="absolute right-2 top-1/2 -translate-y-1/2"
               onClick={() => copyToClipboard(stats?.code || '')}
             >
-              {copied ? <CheckCircle className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
+              {copied ? <CheckCircle className="w-4 h-4 text-vital" /> : <Copy className="w-4 h-4" />}
             </Button>
           </div>
         </div>
 
-        <div className="flex items-center gap-2 p-3 bg-white rounded-lg mb-4">
-          <LinkIcon className="w-4 h-4 text-gray-400" />
+        <div className="flex items-center gap-2 p-3 bg-card rounded-lg mb-4">
+          <LinkIcon className="w-4 h-4 text-muted-foreground" />
           <Input
             value={stats?.url || ''}
             readOnly
@@ -160,21 +160,21 @@ export default function DoctorReferrals() {
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Card className="p-4 text-center">
-          <Users className="w-8 h-8 text-blue-500 mx-auto mb-2" />
+          <Users className="w-8 h-8 text-primary mx-auto mb-2" />
           <p className="text-3xl font-bold">{stats?.totalReferrals || 0}</p>
-          <p className="text-gray-500">Total Referidos</p>
+          <p className="text-muted-foreground">Total Referidos</p>
         </Card>
 
         <Card className="p-4 text-center">
-          <CheckCircle className="w-8 h-8 text-green-500 mx-auto mb-2" />
+          <CheckCircle className="w-8 h-8 text-vital mx-auto mb-2" />
           <p className="text-3xl font-bold">{stats?.converted || 0}</p>
-          <p className="text-gray-500">Convertidos</p>
+          <p className="text-muted-foreground">Convertidos</p>
         </Card>
 
         <Card className="p-4 text-center">
           <Clock className="w-8 h-8 text-orange-500 mx-auto mb-2" />
           <p className="text-3xl font-bold">{stats?.pending || 0}</p>
-          <p className="text-gray-500">Pendientes</p>
+          <p className="text-muted-foreground">Pendientes</p>
         </Card>
       </div>
 
@@ -194,8 +194,8 @@ export default function DoctorReferrals() {
             <Badge variant="secondary">
               {stats.totalReferrals + 1}° referido
             </Badge>
-            <ArrowRight className="w-4 h-4 text-gray-400" />
-            <Badge className="bg-purple-100 text-purple-700">
+            <ArrowRight className="w-4 h-4 text-muted-foreground" />
+            <Badge className="bg-secondary text-purple-700">
               {stats.nextReward.description}
             </Badge>
           </div>
@@ -217,15 +217,15 @@ export default function DoctorReferrals() {
               key={milestone.count}
               className={`flex items-center justify-between p-3 rounded-lg ${
                 milestone.active 
-                  ? 'bg-green-50 border border-green-200' 
-                  : 'bg-gray-50'
+                  ? 'bg-primary/5 border border-green-200' 
+                  : 'bg-secondary/50'
               }`}
             >
               <div className="flex items-center gap-3">
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
                   milestone.active 
                     ? 'bg-green-500 text-white' 
-                    : 'bg-gray-200 text-gray-500'
+                    : 'bg-muted text-muted-foreground'
                 }`}>
                   {milestone.active ? (
                     <CheckCircle className="w-5 h-5" />
@@ -233,12 +233,12 @@ export default function DoctorReferrals() {
                     <span className="text-sm font-medium">{milestone.count}</span>
                   )}
                 </div>
-                <span className={milestone.active ? 'font-medium' : 'text-gray-500'}>
+                <span className={milestone.active ? 'font-medium' : 'text-muted-foreground'}>
                   {milestone.reward}
                 </span>
               </div>
               
-              {milestone.active && <Badge className="bg-green-100 text-green-700">Ganado</Badge>}
+              {milestone.active && <Badge className="bg-primary/10 text-green-700">Ganado</Badge>}
             </div>
           ))}
         </div>
@@ -251,12 +251,12 @@ export default function DoctorReferrals() {
           
           <div className="space-y-2">
             {stats.totalRewards.map((reward, index) => (
-              <div key={index} className="flex items-center justify-between p-3 bg-green-50 rounded-lg">
+              <div key={index} className="flex items-center justify-between p-3 bg-primary/5 rounded-lg">
                 <div className="flex items-center gap-3">
-                  <Gift className="w-5 h-5 text-green-600" />
+                  <Gift className="w-5 h-5 text-primary" />
                   <span>{reward.description}</span>
                 </div>
-                <span className="text-sm text-gray-500">
+                <span className="text-sm text-muted-foreground">
                   {new Date(reward.created_at).toLocaleDateString('es-MX')}
                 </span>
               </div>

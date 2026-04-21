@@ -70,8 +70,8 @@ export default async function DoctorPharmacyPage() {
     <DoctorLayout profile={profile!} isPending={isPending} currentPath="/doctor/pharmacy">
       <div className="max-w-6xl">
         <div className="mb-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-2">Farmacias & Ganancias</h2>
-          <p className="text-gray-600">Gestiona tus referidos a farmacias y consulta tus ganancias</p>
+          <h2 className="text-3xl font-bold text-foreground mb-2">Farmacias & Ganancias</h2>
+          <p className="text-muted-foreground">Gestiona tus referidos a farmacias y consulta tus ganancias</p>
         </div>
 
         {isPending ? (
@@ -91,7 +91,7 @@ export default async function DoctorPharmacyPage() {
         ) : earnings ? (
           <>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
-              <div className="bg-white rounded-xl shadow-card border border-border p-6">
+              <div className="bg-card rounded-xl shadow-card border border-border p-6">
                 <div className="flex items-center justify-between mb-4">
                   <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center">
                     <svg className="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -103,19 +103,19 @@ export default async function DoctorPharmacyPage() {
                 <p className="text-2xl font-bold text-ink-primary">{earnings.totalReferrals}</p>
               </div>
 
-              <div className="bg-white rounded-xl shadow-card border border-border p-6">
+              <div className="bg-card rounded-xl shadow-card border border-border p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                    <svg className="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
                 </div>
                 <p className="text-sm text-ink-muted mb-1">Canjeados</p>
-                <p className="text-2xl font-bold text-green-600">{earnings.redeemedReferrals}</p>
+                <p className="text-2xl font-bold text-primary">{earnings.redeemedReferrals}</p>
               </div>
 
-              <div className="bg-white rounded-xl shadow-card border border-border p-6">
+              <div className="bg-card rounded-xl shadow-card border border-border p-6">
                 <div className="flex items-center justify-between mb-4">
                   <div className="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center">
                     <svg className="w-6 h-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -127,9 +127,9 @@ export default async function DoctorPharmacyPage() {
                 <p className="text-2xl font-bold text-yellow-600">{earnings.pendingReferrals}</p>
               </div>
 
-              <div className="bg-white rounded-xl shadow-card border border-border p-6">
+              <div className="bg-card rounded-xl shadow-card border border-border p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center">
                     <svg className="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
@@ -141,21 +141,21 @@ export default async function DoctorPharmacyPage() {
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-white rounded-xl shadow-card border border-border p-6">
+              <div className="bg-card rounded-xl shadow-card border border-border p-6">
                 <h4 className="font-medium text-ink-primary mb-2">Tarifa por Referido</h4>
                 <p className="text-3xl font-bold text-primary-600">{formatCurrency(earnings.totalReferralFees)}</p>
                 <p className="text-sm text-ink-muted mt-1">
                   {formatCurrency(5000)} por referido canjeado (50 MXN)
                 </p>
               </div>
-              <div className="bg-white rounded-xl shadow-card border border-border p-6">
+              <div className="bg-card rounded-xl shadow-card border border-border p-6">
                 <h4 className="font-medium text-ink-primary mb-2">Comisiones</h4>
-                <p className="text-3xl font-bold text-green-600">{formatCurrency(earnings.totalCommissions)}</p>
+                <p className="text-3xl font-bold text-primary">{formatCurrency(earnings.totalCommissions)}</p>
                 <p className="text-sm text-ink-muted mt-1">
                   3-5% de ventas de medicamentos
                 </p>
               </div>
-              <div className="bg-white rounded-xl shadow-card border border-border p-6">
+              <div className="bg-card rounded-xl shadow-card border border-border p-6">
                 <h4 className="font-medium text-ink-primary mb-2">Tarifa Plataforma</h4>
                 <p className="3xl font-bold text-red-600">{formatCurrency(earnings.platformFees)}</p>
                 <p className="text-sm text-ink-muted mt-1">
@@ -164,7 +164,7 @@ export default async function DoctorPharmacyPage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-xl shadow-card border border-border overflow-hidden">
+            <div className="bg-card rounded-xl shadow-card border border-border overflow-hidden">
               <div className="px-6 py-4 border-b border-border">
                 <h3 className="text-lg font-semibold text-ink-primary">Historial de Referidos</h3>
               </div>
@@ -228,15 +228,15 @@ export default async function DoctorPharmacyPage() {
                           <td className="px-6 py-4">
                             <span className={`inline-flex px-2 py-1 text-xs rounded-full ${
                               referral.status === 'redeemed'
-                                ? 'bg-green-100 text-green-700'
+                                ? 'bg-primary/10 text-green-700'
                                 : referral.status === 'sent'
                                 ? 'bg-yellow-100 text-yellow-700'
                                 : referral.status === 'viewed'
-                                ? 'bg-blue-100 text-blue-700'
+                                ? 'bg-primary/10 text-primary'
                                 : referral.status === 'cancelled'
                                 ? 'bg-red-100 text-red-700'
                                 : referral.status === 'expired'
-                                ? 'bg-gray-100 text-gray-700'
+                                ? 'bg-secondary text-muted-foreground'
                                 : 'bg-secondary-100 text-secondary-700'
                             }`}>
                               {referral.status === 'redeemed' ? 'Canjeado' :
@@ -277,7 +277,7 @@ export default async function DoctorPharmacyPage() {
             </div>
           </>
         ) : (
-          <div className="bg-white rounded-xl shadow-card p-8 text-center">
+          <div className="bg-card rounded-xl shadow-card p-8 text-center">
             <p className="text-ink-muted">Cargando información...</p>
           </div>
         )}

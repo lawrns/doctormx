@@ -68,12 +68,12 @@ export function AppointmentFilters() {
     <div className="space-y-4 mb-6">
       {/* Search bar */}
       <div className="relative">
-        <label htmlFor="search-filter" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="search-filter" className="block text-sm font-medium text-muted-foreground mb-1">
           Buscar paciente
         </label>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <svg className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="h-5 w-5 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
           </div>
@@ -83,13 +83,13 @@ export function AppointmentFilters() {
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
             placeholder="Nombre del paciente..."
-            className="block w-full pl-10 pr-10 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+            className="block w-full pl-10 pr-10 py-2 border border-border rounded-lg focus:ring-ring focus:border-ring sm:text-sm"
           />
           {searchInput && (
             <button
               type="button"
               onClick={clearSearch}
-              className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
+              className="absolute inset-y-0 right-0 pr-3 flex items-center text-muted-foreground hover:text-muted-foreground"
             >
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -102,14 +102,14 @@ export function AppointmentFilters() {
       {/* Status and time filters */}
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="flex-1">
-          <label htmlFor="status-filter" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="status-filter" className="block text-sm font-medium text-muted-foreground mb-1">
             Estado
           </label>
           <select
             id="status-filter"
             value={currentStatus}
             onChange={(e) => updateFilter('status', e.target.value)}
-            className="block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm py-2"
+            className="block w-full rounded-lg border-border shadow-sm focus:border-ring focus:ring-ring sm:text-sm py-2"
           >
             {statusOptions.map((option) => (
               <option key={option.value} value={option.value}>
@@ -120,14 +120,14 @@ export function AppointmentFilters() {
         </div>
 
         <div className="flex-1">
-          <label htmlFor="time-filter" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="time-filter" className="block text-sm font-medium text-muted-foreground mb-1">
             Período
           </label>
           <select
             id="time-filter"
             value={currentTime}
             onChange={(e) => updateFilter('time', e.target.value)}
-            className="block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm py-2"
+            className="block w-full rounded-lg border-border shadow-sm focus:border-ring focus:ring-ring sm:text-sm py-2"
           >
             {timeOptions.map((option) => (
               <option key={option.value} value={option.value}>
@@ -142,9 +142,9 @@ export function AppointmentFilters() {
       {(currentStatus !== 'all' || currentTime !== 'upcoming' || currentSearch) && (
         <div className="flex flex-wrap gap-2 pt-2">
           {currentSearch && (
-            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-800">
+            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm bg-primary/10 text-primary">
               Búsqueda: {currentSearch}
-              <button onClick={clearSearch} className="hover:text-blue-600">
+              <button onClick={clearSearch} className="hover:text-primary">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
@@ -152,9 +152,9 @@ export function AppointmentFilters() {
             </span>
           )}
           {currentStatus !== 'all' && (
-            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm bg-gray-100 text-gray-800">
+            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm bg-secondary text-foreground">
               {statusOptions.find(o => o.value === currentStatus)?.label}
-              <button onClick={() => updateFilter('status', 'all')} className="hover:text-gray-600">
+              <button onClick={() => updateFilter('status', 'all')} className="hover:text-muted-foreground">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
@@ -162,9 +162,9 @@ export function AppointmentFilters() {
             </span>
           )}
           {currentTime !== 'upcoming' && (
-            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm bg-gray-100 text-gray-800">
+            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm bg-secondary text-foreground">
               {timeOptions.find(o => o.value === currentTime)?.label}
-              <button onClick={() => updateFilter('time', 'upcoming')} className="hover:text-gray-600">
+              <button onClick={() => updateFilter('time', 'upcoming')} className="hover:text-muted-foreground">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
@@ -177,7 +177,7 @@ export function AppointmentFilters() {
               updateFilter('status', 'all')
               updateFilter('time', 'upcoming')
             }}
-            className="text-sm text-blue-600 hover:text-blue-800 font-medium"
+            className="text-sm text-primary hover:text-primary font-medium"
           >
             Limpiar filtros
           </button>

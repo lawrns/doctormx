@@ -40,7 +40,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
         {label && (
           <label
             htmlFor={selectId}
-            className="block text-sm font-medium text-gray-700 mb-1"
+            className="block text-sm font-medium text-muted-foreground mb-1"
           >
             {label}
             {props.required && <span className="text-red-500 ml-1">*</span>}
@@ -54,11 +54,11 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             className={`
               block w-full rounded-lg border shadow-sm transition-colors appearance-none
               focus:outline-none focus:ring-2 focus:ring-offset-0
-              disabled:bg-gray-50 disabled:text-gray-500 disabled:cursor-not-allowed
+              disabled:bg-secondary/50 disabled:text-muted-foreground disabled:cursor-not-allowed
               px-3 lg:px-4 py-2 pr-10 text-sm lg:text-base
               ${hasError
                 ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
-                : 'border-gray-300 focus:border-blue-500 focus:ring-blue-500'
+                : 'border-border focus:border-ring focus:ring-ring'
               }
               ${className}
             `}
@@ -87,7 +87,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
           {/* Dropdown arrow */}
           <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
             <svg
-              className="w-4 h-4 text-gray-400"
+              className="w-4 h-4 text-muted-foreground"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -109,7 +109,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
         )}
 
         {hint && !error && (
-          <p id={`${selectId}-hint`} className="mt-1 text-sm text-gray-500">
+          <p id={`${selectId}-hint`} className="mt-1 text-sm text-muted-foreground">
             {hint}
           </p>
         )}

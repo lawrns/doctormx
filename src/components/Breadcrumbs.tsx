@@ -25,7 +25,7 @@ export function Breadcrumbs({ items, className = '' }: BreadcrumbsProps) {
             <li key={index} className="flex items-center">
               {index > 0 && (
                 <svg
-                  className="w-4 h-4 text-gray-400 mx-1 lg:mx-2 flex-shrink-0"
+                  className="w-4 h-4 text-muted-foreground mx-1 lg:mx-2 flex-shrink-0"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -40,7 +40,7 @@ export function Breadcrumbs({ items, className = '' }: BreadcrumbsProps) {
               {item.href && !isLast ? (
                 <Link
                   href={item.href}
-                  className="flex items-center gap-1.5 text-gray-500 hover:text-gray-700 transition-colors"
+                  className="flex items-center gap-1.5 text-muted-foreground hover:text-muted-foreground transition-colors"
                 >
                   {item.icon && <span className="flex-shrink-0">{item.icon}</span>}
                   <span className="truncate max-w-[100px] sm:max-w-[150px] lg:max-w-none">
@@ -50,7 +50,7 @@ export function Breadcrumbs({ items, className = '' }: BreadcrumbsProps) {
               ) : (
                 <span
                   className={`flex items-center gap-1.5 truncate max-w-[120px] sm:max-w-[180px] lg:max-w-none ${
-                    isLast ? 'text-gray-900 font-medium' : 'text-gray-500'
+                    isLast ? 'text-foreground font-medium' : 'text-muted-foreground'
                   }`}
                   aria-current={isLast ? 'page' : undefined}
                 >

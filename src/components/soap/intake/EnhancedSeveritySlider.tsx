@@ -102,7 +102,7 @@ export function EnhancedSeveritySlider({
             className="flex items-center justify-center gap-2"
           >
             <Icon className="w-5 h-5" style={{ color: currentConfig.color }} />
-            <span className="text-xl font-semibold text-gray-900">{currentConfig.label}</span>
+            <span className="text-xl font-semibold text-foreground">{currentConfig.label}</span>
           </motion.div>
 
           <Badge
@@ -174,7 +174,7 @@ export function EnhancedSeveritySlider({
         </div>
 
         {/* Scale Labels */}
-        <div className="flex justify-between text-xs text-gray-500 px-1">
+        <div className="flex justify-between text-xs text-muted-foreground px-1">
           <span>Muy leve</span>
           <span>Moderado</span>
           <span>Muy severo</span>
@@ -190,7 +190,7 @@ export function EnhancedSeveritySlider({
                 'py-2 px-3 rounded-lg text-sm font-medium transition-all hover:shadow-md',
                 value === level
                   ? 'shadow-lg transform scale-105'
-                  : 'bg-gray-100 hover:bg-gray-200'
+                  : 'bg-secondary hover:bg-muted'
               )}
               style={{
                 backgroundColor: value === level ? currentConfig.color : undefined,
@@ -208,7 +208,7 @@ export function EnhancedSeveritySlider({
         key={`description-${value}`}
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-center text-sm text-gray-600 bg-blue-50 rounded-lg p-3"
+        className="text-center text-sm text-muted-foreground bg-primary/10 rounded-lg p-3"
       >
         {getContextMessage(value)}
       </motion.div>

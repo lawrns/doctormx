@@ -137,7 +137,7 @@ export function SymptomAutocomplete({
               >
                 <Badge
                   variant="secondary"
-                  className="px-3 py-1.5 text-sm bg-blue-100 text-blue-700 hover:bg-blue-200 pr-2 cursor-pointer"
+                  className="px-3 py-1.5 text-sm bg-primary/10 text-primary hover:bg-primary/20 pr-2 cursor-pointer"
                   onClick={() => handleRemoveTag(tag)}
                 >
                   {tag}
@@ -151,7 +151,7 @@ export function SymptomAutocomplete({
 
       {/* Input Field */}
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
         <input
           ref={inputRef}
           type="text"
@@ -162,9 +162,9 @@ export function SymptomAutocomplete({
           placeholder={placeholder}
           className={cn(
             'w-full pl-10 pr-4 py-3 text-base border-2 rounded-xl',
-            'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent',
+            'focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent',
             'transition-all',
-            showSuggestions ? 'border-blue-500' : 'border-gray-200'
+            showSuggestions ? 'border-primary' : 'border-border'
           )}
           role="combobox"
           aria-expanded={showSuggestions}
@@ -181,9 +181,9 @@ export function SymptomAutocomplete({
               setInputValue('');
               inputRef.current?.focus();
             }}
-            className="absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded-full hover:bg-gray-100"
+            className="absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded-full hover:bg-secondary"
           >
-            <X className="w-4 h-4 text-gray-400" />
+            <X className="w-4 h-4 text-muted-foreground" />
           </motion.button>
         )}
       </div>
@@ -196,11 +196,11 @@ export function SymptomAutocomplete({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute z-10 w-full mt-2 bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden"
+            className="absolute z-10 w-full mt-2 bg-card border border-border rounded-xl shadow-lg overflow-hidden"
           >
             <div className="max-h-64 overflow-y-auto">
               <div className="p-2">
-                <p className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase">
+                <p className="px-3 py-2 text-xs font-semibold text-muted-foreground uppercase">
                   {inputValue.trim() ? 'Sugerencias' : 'Síntomas comunes'}
                 </p>
                 {filteredSuggestions.map((suggestion, index) => {
@@ -216,18 +216,18 @@ export function SymptomAutocomplete({
                       className={cn(
                         'w-full text-left px-3 py-2.5 rounded-lg text-sm',
                         'transition-colors flex items-center justify-between',
-                        'hover:bg-blue-50',
+                        'hover:bg-primary/10',
                         isSelected
-                          ? 'text-gray-400 cursor-not-allowed'
-                          : 'text-gray-700'
+                          ? 'text-muted-foreground cursor-not-allowed'
+                          : 'text-muted-foreground'
                       )}
                     >
                       <span className="flex items-center gap-2">
-                        <BadgeIcon className="w-3 h-3 text-gray-400" />
+                        <BadgeIcon className="w-3 h-3 text-muted-foreground" />
                         {suggestion}
                       </span>
                       {isSelected && (
-                        <span className="text-xs text-gray-400">Añadido</span>
+                        <span className="text-xs text-muted-foreground">Añadido</span>
                       )}
                     </motion.button>
                   );
@@ -236,9 +236,9 @@ export function SymptomAutocomplete({
             </div>
 
             {/* Footer hint */}
-            <div className="px-3 py-2 bg-gray-50 border-t border-gray-200">
-              <p className="text-xs text-gray-500">
-                Presiona <kbd className="px-1.5 py-0.5 bg-gray-200 rounded text-xs">Enter</kbd> para añadir síntoma
+            <div className="px-3 py-2 bg-secondary/50 border-t border-border">
+              <p className="text-xs text-muted-foreground">
+                Presiona <kbd className="px-1.5 py-0.5 bg-muted rounded text-xs">Enter</kbd> para añadir síntoma
               </p>
             </div>
           </motion.div>
@@ -246,7 +246,7 @@ export function SymptomAutocomplete({
       </AnimatePresence>
 
       {/* Character count hint */}
-      <div className="mt-2 flex justify-between items-center text-xs text-gray-500">
+      <div className="mt-2 flex justify-between items-center text-xs text-muted-foreground">
         <span>{selectedTags.length} síntoma(s) seleccionado(s)</span>
         {inputValue.length > 0 && (
           <span>Escribe y presiona Enter para añadir</span>

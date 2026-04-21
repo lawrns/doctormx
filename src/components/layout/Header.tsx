@@ -36,7 +36,7 @@ export function Header({ variant = 'default', showAuth = true }: HeaderProps) {
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         variant === 'transparent' && !scrolled
           ? 'bg-transparent'
-          : 'bg-white/95 backdrop-blur-md border-b border-gray-100',
+          : 'bg-background/95 backdrop-blur-md border-b border-border',
         scrolled && 'shadow-sm'
       )}
     >
@@ -44,9 +44,9 @@ export function Header({ variant = 'default', showAuth = true }: HeaderProps) {
         <div className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 rounded focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2" aria-label="Doctor.mx - Inicio">
-            <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
               <svg
-                className="w-5 h-5 text-white"
+                className="w-5 h-5 text-primary-foreground"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -59,7 +59,7 @@ export function Header({ variant = 'default', showAuth = true }: HeaderProps) {
                 />
               </svg>
             </div>
-            <span className="text-xl font-bold text-gray-900">
+            <span className="text-xl font-bold text-foreground">
               Doctor.mx
             </span>
           </Link>
@@ -70,7 +70,7 @@ export function Header({ variant = 'default', showAuth = true }: HeaderProps) {
               <Link
                 key={item.href}
                 href={item.href}
-                className="whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-50 hover:text-gray-900 focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2"
+                className="whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2"
               >
                 {item.compactLabel}
               </Link>
@@ -83,13 +83,13 @@ export function Header({ variant = 'default', showAuth = true }: HeaderProps) {
               <Link href="/auth/login">
                 <Button
                   variant="ghost"
-                  className="text-sm font-medium text-gray-600 hover:text-gray-900 focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2"
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2"
                 >
                   Iniciar sesión
                 </Button>
               </Link>
               <Link href="/auth/register">
-                <Button className="bg-primary-500 hover:bg-primary-600 text-sm font-medium focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2">
+                <Button className="bg-primary hover:bg-primary/90 text-sm font-medium focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2">
                   Registrarse
                 </Button>
               </Link>
@@ -99,7 +99,7 @@ export function Header({ variant = 'default', showAuth = true }: HeaderProps) {
           {/* Mobile menu button */}
           <Sheet>
             <SheetTrigger asChild>
-              <button className="lg:hidden p-2 text-gray-600 hover:text-gray-900 rounded focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2" aria-label="Abrir menú de navegación">
+              <button className="lg:hidden p-2 text-muted-foreground hover:text-foreground rounded focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2" aria-label="Abrir menú de navegación">
                 <svg
                   className="w-6 h-6"
                   fill="none"
@@ -115,8 +115,8 @@ export function Header({ variant = 'default', showAuth = true }: HeaderProps) {
                 </svg>
               </button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[88%] max-w-sm border-l border-slate-200 bg-white">
-              <SheetHeader className="border-b border-slate-100 pb-4">
+            <SheetContent side="right" className="w-[88%] max-w-sm border-l border-border bg-background">
+              <SheetHeader className="border-b border-border pb-4">
                 <SheetTitle>Navegación</SheetTitle>
                 <SheetDescription>Explora las principales rutas públicas de Doctor.mx.</SheetDescription>
               </SheetHeader>
@@ -127,20 +127,20 @@ export function Header({ variant = 'default', showAuth = true }: HeaderProps) {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 hover:text-slate-950"
+                      className="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary hover:text-foreground"
                     >
-                      {Icon ? <Icon className="h-4 w-4 text-blue-600" /> : null}
+                      {Icon ? <Icon className="h-4 w-4 text-primary" /> : null}
                       {item.label}
                     </Link>
                   )
                 })}
                 {showAuth ? (
-                  <div className="mt-4 grid gap-3 border-t border-slate-100 pt-4">
+                  <div className="mt-4 grid gap-3 border-t border-border pt-4">
                     <Link href="/auth/login">
                       <Button variant="ghost" className="w-full justify-center">Iniciar sesión</Button>
                     </Link>
                     <Link href="/auth/register">
-                      <Button className="w-full justify-center bg-primary-500 hover:bg-primary-600">Registrarse</Button>
+                      <Button className="w-full justify-center bg-primary hover:bg-primary/90">Registrarse</Button>
                     </Link>
                   </div>
                 ) : null}

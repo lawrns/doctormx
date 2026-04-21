@@ -167,7 +167,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
               <Menu className="w-6 h-6" />
             </button>
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-cobalt-600 to-cobalt-800 rounded-lg" />
+              <div className="w-8 h-8 bg-primary rounded-lg" />
               <span className="font-display text-xl font-bold text-foreground">Doctor.mx</span>
             </Link>
           </div>
@@ -179,7 +179,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
         <aside className="hidden lg:flex w-64 flex-col border-r border-border bg-background sticky top-0 h-screen">
           <div className="p-6">
             <Link href="/" className="flex items-center gap-2.5">
-              <div className="w-8 h-8 bg-gradient-to-br from-cobalt-600 to-cobalt-800 rounded-lg" />
+              <div className="w-8 h-8 bg-primary rounded-lg" />
               <span className="font-display text-xl font-bold text-foreground">Doctor.mx</span>
             </Link>
           </div>
@@ -191,7 +191,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
                 className={cn(
                   "flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors",
                   isActive(item.href)
-                    ? "bg-cobalt-50 text-cobalt-700"
+                    ? "bg-primary/10 text-primary"
                     : "text-muted-foreground hover:bg-secondary hover:text-foreground"
                 )}
               >
@@ -237,7 +237,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
           {/* Mobile sidebar header */}
           <div className="flex items-center justify-between p-4 border-b border-border">
             <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
-              <div className="w-8 h-8 bg-gradient-to-br from-cobalt-600 to-cobalt-800 rounded-lg" />
+              <div className="w-8 h-8 bg-primary rounded-lg" />
               <span className="font-display text-lg font-bold text-foreground">Doctor.mx</span>
             </Link>
             <button
@@ -258,7 +258,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
                 className={cn(
                   "flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors",
                   isActive(item.href)
-                    ? "bg-cobalt-50 text-cobalt-700"
+                    ? "bg-primary/10 text-primary"
                     : "text-muted-foreground hover:bg-secondary hover:text-foreground"
                 )}
               >

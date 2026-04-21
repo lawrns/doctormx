@@ -39,12 +39,12 @@ export default async function AdminCommunicationsPage() {
   }).length
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white shadow">
+    <div className="min-h-screen bg-secondary/50">
+      <header className="bg-card shadow">
         <div className="container mx-auto px-4 py-6 flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">Comunicaciones</h1>
-            <p className="mt-1 text-gray-600">Visibilidad operativa inicial para doctor connect y soporte.</p>
+            <h1 className="text-2xl font-bold text-foreground">Comunicaciones</h1>
+            <p className="mt-1 text-muted-foreground">Visibilidad operativa inicial para doctor connect y soporte.</p>
           </div>
           <Link href="/admin" className="text-sm font-medium text-primary-600 hover:text-primary-700">
             Volver al admin
@@ -54,103 +54,103 @@ export default async function AdminCommunicationsPage() {
 
       <main className="container mx-auto px-4 py-8 space-y-8">
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+          <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
             <div className="mb-4 flex items-center gap-3">
-              <div className="rounded-lg bg-blue-100 p-2 text-blue-600">
+              <div className="rounded-lg bg-primary/10 p-2 text-primary">
                 <MessageSquareMore className="h-5 w-5" />
               </div>
-              <h2 className="font-semibold text-gray-900">Conversaciones</h2>
+              <h2 className="font-semibold text-foreground">Conversaciones</h2>
             </div>
-            <p className="text-3xl font-bold text-gray-900">{conversationCount || 0}</p>
-            <p className="mt-1 text-sm text-gray-500">Threads doctor-paciente registrados</p>
+            <p className="text-3xl font-bold text-foreground">{conversationCount || 0}</p>
+            <p className="mt-1 text-sm text-muted-foreground">Threads doctor-paciente registrados</p>
           </div>
 
-          <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+          <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
             <div className="mb-4 flex items-center gap-3">
               <div className="rounded-lg bg-emerald-100 p-2 text-emerald-600">
                 <Activity className="h-5 w-5" />
               </div>
-              <h2 className="font-semibold text-gray-900">Mensajes</h2>
+              <h2 className="font-semibold text-foreground">Mensajes</h2>
             </div>
-            <p className="text-3xl font-bold text-gray-900">{messageCount || 0}</p>
-            <p className="mt-1 text-sm text-gray-500">Volumen total de mensajes</p>
+            <p className="text-3xl font-bold text-foreground">{messageCount || 0}</p>
+            <p className="mt-1 text-sm text-muted-foreground">Volumen total de mensajes</p>
           </div>
 
-          <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+          <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
             <div className="mb-4 flex items-center gap-3">
               <div className="rounded-lg bg-amber-100 p-2 text-amber-600">
                 <BellRing className="h-5 w-5" />
               </div>
-              <h2 className="font-semibold text-gray-900">Actividad 24h</h2>
+              <h2 className="font-semibold text-foreground">Actividad 24h</h2>
             </div>
-            <p className="text-3xl font-bold text-gray-900">{activeConversations24h}</p>
-            <p className="mt-1 text-sm text-gray-500">Conversaciones con mensajes recientes</p>
+            <p className="text-3xl font-bold text-foreground">{activeConversations24h}</p>
+            <p className="mt-1 text-sm text-muted-foreground">Conversaciones con mensajes recientes</p>
           </div>
 
-          <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+          <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
             <div className="mb-4 flex items-center gap-3">
-              <div className="rounded-lg bg-purple-100 p-2 text-purple-600">
+              <div className="rounded-lg bg-secondary p-2 text-purple-600">
                 <ShieldCheck className="h-5 w-5" />
               </div>
-              <h2 className="font-semibold text-gray-900">Recibos de lectura</h2>
+              <h2 className="font-semibold text-foreground">Recibos de lectura</h2>
             </div>
-            <p className="text-3xl font-bold text-gray-900">{receiptCount || 0}</p>
-            <p className="mt-1 text-sm text-gray-500">Lecturas registradas por usuarios</p>
+            <p className="text-3xl font-bold text-foreground">{receiptCount || 0}</p>
+            <p className="mt-1 text-sm text-muted-foreground">Lecturas registradas por usuarios</p>
           </div>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
-          <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-            <h2 className="font-semibold text-gray-900">Integridad doctor</h2>
-            <p className="mt-3 text-3xl font-bold text-gray-900">{missingDoctorProfilesCount || 0}</p>
-            <p className="mt-1 text-sm text-gray-500">Conversaciones con doctor sin perfil enlazado</p>
+          <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
+            <h2 className="font-semibold text-foreground">Integridad doctor</h2>
+            <p className="mt-3 text-3xl font-bold text-foreground">{missingDoctorProfilesCount || 0}</p>
+            <p className="mt-1 text-sm text-muted-foreground">Conversaciones con doctor sin perfil enlazado</p>
           </div>
 
-          <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-            <h2 className="font-semibold text-gray-900">Integridad paciente</h2>
-            <p className="mt-3 text-3xl font-bold text-gray-900">{missingPatientProfilesCount || 0}</p>
-            <p className="mt-1 text-sm text-gray-500">Conversaciones con paciente sin perfil enlazado</p>
+          <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
+            <h2 className="font-semibold text-foreground">Integridad paciente</h2>
+            <p className="mt-3 text-3xl font-bold text-foreground">{missingPatientProfilesCount || 0}</p>
+            <p className="mt-1 text-sm text-muted-foreground">Conversaciones con paciente sin perfil enlazado</p>
           </div>
 
-          <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-            <h2 className="font-semibold text-gray-900">Sin primera respuesta</h2>
-            <p className="mt-3 text-3xl font-bold text-gray-900">{conversationsAwaitingFirstReply}</p>
-            <p className="mt-1 text-sm text-gray-500">Threads que podrían requerir seguimiento operativo</p>
+          <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
+            <h2 className="font-semibold text-foreground">Sin primera respuesta</h2>
+            <p className="mt-3 text-3xl font-bold text-foreground">{conversationsAwaitingFirstReply}</p>
+            <p className="mt-1 text-sm text-muted-foreground">Threads que podrían requerir seguimiento operativo</p>
           </div>
         </div>
 
-        <div className="rounded-xl border border-gray-200 bg-white shadow-sm">
-          <div className="border-b border-gray-100 px-6 py-4">
-            <h2 className="text-lg font-semibold text-gray-900">Conversaciones recientes</h2>
-            <p className="mt-1 text-sm text-gray-500">Vista operativa rápida para revisar actividad reciente.</p>
+        <div className="rounded-xl border border-border bg-card shadow-sm">
+          <div className="border-b border-border px-6 py-4">
+            <h2 className="text-lg font-semibold text-foreground">Conversaciones recientes</h2>
+            <p className="mt-1 text-sm text-muted-foreground">Vista operativa rápida para revisar actividad reciente.</p>
           </div>
 
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200 text-sm">
-              <thead className="bg-gray-50">
+              <thead className="bg-secondary/50">
                 <tr>
-                  <th className="px-6 py-3 text-left font-medium uppercase tracking-wide text-gray-500">Conversación</th>
-                  <th className="px-6 py-3 text-left font-medium uppercase tracking-wide text-gray-500">Paciente</th>
-                  <th className="px-6 py-3 text-left font-medium uppercase tracking-wide text-gray-500">Doctor</th>
-                  <th className="px-6 py-3 text-left font-medium uppercase tracking-wide text-gray-500">Último mensaje</th>
-                  <th className="px-6 py-3 text-left font-medium uppercase tracking-wide text-gray-500">Actividad</th>
+                  <th className="px-6 py-3 text-left font-medium uppercase tracking-wide text-muted-foreground">Conversación</th>
+                  <th className="px-6 py-3 text-left font-medium uppercase tracking-wide text-muted-foreground">Paciente</th>
+                  <th className="px-6 py-3 text-left font-medium uppercase tracking-wide text-muted-foreground">Doctor</th>
+                  <th className="px-6 py-3 text-left font-medium uppercase tracking-wide text-muted-foreground">Último mensaje</th>
+                  <th className="px-6 py-3 text-left font-medium uppercase tracking-wide text-muted-foreground">Actividad</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100 bg-white">
+              <tbody className="divide-y divide-gray-100 bg-card">
                 {(conversations || []).length === 0 ? (
                   <tr>
-                    <td colSpan={5} className="px-6 py-12 text-center text-gray-500">
+                    <td colSpan={5} className="px-6 py-12 text-center text-muted-foreground">
                       No hay conversaciones para mostrar todavía.
                     </td>
                   </tr>
                 ) : (
                   (conversations || []).map((conversation) => (
                     <tr key={conversation.id}>
-                      <td className="px-6 py-4 font-medium text-gray-900">{conversation.id.slice(0, 8)}…</td>
-                      <td className="px-6 py-4 text-gray-600">{conversation.patient_id}</td>
-                      <td className="px-6 py-4 text-gray-600">{conversation.doctor_id}</td>
-                      <td className="px-6 py-4 text-gray-600">{conversation.last_message_preview || 'Sin mensajes'}</td>
-                      <td className="px-6 py-4 text-gray-600">{conversation.last_message_at ? new Date(conversation.last_message_at).toLocaleString('es-MX') : 'Sin actividad'}</td>
+                      <td className="px-6 py-4 font-medium text-foreground">{conversation.id.slice(0, 8)}…</td>
+                      <td className="px-6 py-4 text-muted-foreground">{conversation.patient_id}</td>
+                      <td className="px-6 py-4 text-muted-foreground">{conversation.doctor_id}</td>
+                      <td className="px-6 py-4 text-muted-foreground">{conversation.last_message_preview || 'Sin mensajes'}</td>
+                      <td className="px-6 py-4 text-muted-foreground">{conversation.last_message_at ? new Date(conversation.last_message_at).toLocaleString('es-MX') : 'Sin actividad'}</td>
                     </tr>
                   ))
                 )}

@@ -233,13 +233,13 @@ const Icon = ({
 
   const colorClasses = {
     current: 'text-current',
-    primary: 'text-blue-600',
-    secondary: 'text-gray-600',
-    success: 'text-green-600',
+    primary: 'text-primary',
+    secondary: 'text-muted-foreground',
+    success: 'text-primary',
     warning: 'text-yellow-600',
     error: 'text-red-600',
     white: 'text-white',
-    gray: 'text-gray-500',
+    gray: 'text-muted-foreground',
   };
 
   // Handle emoji names (legacy support)

@@ -52,8 +52,8 @@ export function DoctorCard({
     <Card
       className={cn(
         'group relative overflow-hidden transition-all duration-200',
-        'hover:shadow-lg hover:border-gray-300',
-        'bg-white border border-gray-200',
+        'hover:shadow-lg hover:border-border',
+        'bg-card border border-border',
         className
       )}
     >
@@ -68,10 +68,10 @@ export function DoctorCard({
           </Avatar>
 
           <div className="flex-1 min-w-0">
-            <h3 className="font-semibold text-gray-900 truncate text-base">
+            <h3 className="font-semibold text-foreground truncate text-base">
               {formatDoctorName(name)}
             </h3>
-            <p className="text-sm text-gray-500 truncate">{specialty}</p>
+            <p className="text-sm text-muted-foreground truncate">{specialty}</p>
 
             {/* Badges */}
             <div className="flex flex-wrap gap-1.5 mt-2">
@@ -104,7 +104,7 @@ export function DoctorCard({
               {videoConsultation && (
                 <Badge
                   variant="secondary"
-                  className="bg-blue-50 text-blue-700 border-blue-200 text-xs px-2 py-0.5"
+                  className="bg-primary/10 text-primary border-primary/20 text-xs px-2 py-0.5"
                 >
                   <svg
                     className="w-3 h-3 mr-1"
@@ -139,7 +139,7 @@ export function DoctorCard({
                       'w-4 h-4',
                       i < Math.floor(rating)
                         ? 'text-yellow-400 fill-yellow-400'
-                        : 'text-gray-200 fill-gray-200'
+                        : 'text-border fill-border'
                     )}
                     viewBox="0 0 20 20"
                   >
@@ -147,16 +147,16 @@ export function DoctorCard({
                   </svg>
                 ))}
               </div>
-              <span className="font-medium text-gray-900">{rating.toFixed(1)}</span>
-              <span className="text-gray-400">({reviewCount} opiniones)</span>
+              <span className="font-medium text-foreground">{rating.toFixed(1)}</span>
+              <span className="text-muted-foreground">({reviewCount} opiniones)</span>
             </div>
           )}
 
           {/* Location */}
           {location && (
-            <div className="flex items-center gap-2 text-sm text-gray-500">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <svg
-                className="w-4 h-4 text-gray-400"
+                className="w-4 h-4 text-muted-foreground"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -180,9 +180,9 @@ export function DoctorCard({
 
           {/* Availability */}
           {availability && (
-            <div className="flex items-center gap-2 text-sm text-gray-500">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <svg
-                className="w-4 h-4 text-gray-400"
+                className="w-4 h-4 text-muted-foreground"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -200,13 +200,13 @@ export function DoctorCard({
         </div>
 
         {/* Footer */}
-        <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+        <div className="flex items-center justify-between pt-4 border-t border-border">
           {price && (
             <div>
-              <span className="text-lg font-semibold text-gray-900">
+              <span className="text-lg font-semibold text-foreground">
                 ${price}
               </span>
-              <span className="text-sm text-gray-500 ml-1">MXN</span>
+              <span className="text-sm text-muted-foreground ml-1">MXN</span>
             </div>
           )}
           <Link href={`/doctors/${id}`} className="ml-auto">

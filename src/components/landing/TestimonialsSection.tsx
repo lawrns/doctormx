@@ -49,7 +49,7 @@ export function TestimonialsSection() {
   const prefersReducedMotion = useReducedMotion()
 
   return (
-    <section className="relative overflow-hidden bg-white py-16 sm:py-20">
+    <section className="relative overflow-hidden bg-card py-16 sm:py-20">
       {/* Subtle background orb */}
       <div
         className="absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#eef4ff]/40 blur-3xl"

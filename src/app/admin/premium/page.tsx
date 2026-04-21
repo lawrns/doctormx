@@ -72,12 +72,12 @@ export default async function AdminPremiumPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white shadow">
+    <div className="min-h-screen bg-secondary/50">
+      <header className="bg-card shadow">
         <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-gray-900">Doctor.mx Admin</h1>
+          <h1 className="text-2xl font-bold text-foreground">Doctor.mx Admin</h1>
           <div className="flex items-center gap-4">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary text-purple-800">
               Premium Dashboard
             </span>
           </div>
@@ -86,18 +86,18 @@ export default async function AdminPremiumPage() {
 
       <main className="container mx-auto px-4 py-8">
         <div className="mb-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-2">
+          <h2 className="text-3xl font-bold text-foreground mb-2">
             Premium Features Dashboard
           </h2>
-          <p className="text-gray-600">
+          <p className="text-muted-foreground">
             Monitorea ingresos, uso de features y actividad de doctores premium
           </p>
         </div>
 
         <div className="grid md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white p-6 rounded-lg shadow">
-            <p className="text-sm text-gray-600">Total Doctores Premium</p>
-            <p className="text-3xl font-bold text-gray-900">{stats.totalDoctors}</p>
+          <div className="bg-card p-6 rounded-lg shadow">
+            <p className="text-sm text-muted-foreground">Total Doctores Premium</p>
+            <p className="text-3xl font-bold text-foreground">{stats.totalDoctors}</p>
             <div className="mt-4 space-y-2">
               {Object.entries(stats.tierCounts).map(([tier, count]) => (
                 <div key={tier} className="flex justify-between text-sm">
@@ -108,34 +108,34 @@ export default async function AdminPremiumPage() {
             </div>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow">
-            <p className="text-sm text-gray-600">Ingresos del Mes</p>
-            <p className="text-3xl font-bold text-green-600">{formatMXN(stats.totalRevenue)}</p>
-            <p className="text-sm text-gray-500 mt-2">
+          <div className="bg-card p-6 rounded-lg shadow">
+            <p className="text-sm text-muted-foreground">Ingresos del Mes</p>
+            <p className="text-3xl font-bold text-primary">{formatMXN(stats.totalRevenue)}</p>
+            <p className="text-sm text-muted-foreground mt-2">
               {formatMXN(stats.pendingRevenue)} pendiente de cobro
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow">
-            <p className="text-sm text-gray-600">Transacciones</p>
-            <p className="text-3xl font-bold text-gray-900">{stats.transactionCount}</p>
-            <p className="text-sm text-gray-500 mt-2">Este mes</p>
+          <div className="bg-card p-6 rounded-lg shadow">
+            <p className="text-sm text-muted-foreground">Transacciones</p>
+            <p className="text-3xl font-bold text-foreground">{stats.transactionCount}</p>
+            <p className="text-sm text-muted-foreground mt-2">Este mes</p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow">
-            <p className="text-sm text-gray-600">ARPM</p>
-            <p className="text-3xl font-bold text-blue-600">
+          <div className="bg-card p-6 rounded-lg shadow">
+            <p className="text-sm text-muted-foreground">ARPM</p>
+            <p className="text-3xl font-bold text-primary">
               {stats.transactionCount > 0
                 ? formatMXN(Math.round(stats.totalRevenue / stats.transactionCount))
                 : '$0'}
             </p>
-            <p className="text-sm text-gray-500 mt-2">Promedio por transacción</p>
+            <p className="text-sm text-muted-foreground mt-2">Promedio por transacción</p>
           </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="bg-white rounded-lg shadow p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">
+          <div className="bg-card rounded-lg shadow p-6">
+            <h3 className="text-lg font-semibold text-foreground mb-4">
               Ingresos por Feature
             </h3>
             <div className="space-y-4">
@@ -145,9 +145,9 @@ export default async function AdminPremiumPage() {
                     <span className="capitalize">{feature.replace(/_/g, ' ')}</span>
                     <span className="font-medium">{formatMXN(revenue)}</span>
                   </div>
-                  <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                  <div className="h-2 bg-muted rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-blue-500 rounded-full"
+                      className="h-full bg-primary rounded-full"
                       style={{
                         width: `${stats.totalRevenue > 0 ? (revenue / stats.totalRevenue) * 100 : 0}%`,
                       }}
@@ -158,8 +158,8 @@ export default async function AdminPremiumPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">
+          <div className="bg-card rounded-lg shadow p-6">
+            <h3 className="text-lg font-semibold text-foreground mb-4">
               Distribución de Planes
             </h3>
             <div className="flex items-center justify-center h-64">
@@ -202,8 +202,8 @@ export default async function AdminPremiumPage() {
                 </svg>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
-                    <p className="text-2xl font-bold text-gray-900">{stats.totalDoctors}</p>
-                    <p className="text-sm text-gray-500">Doctores</p>
+                    <p className="text-2xl font-bold text-foreground">{stats.totalDoctors}</p>
+                    <p className="text-sm text-muted-foreground">Doctores</p>
                   </div>
                 </div>
               </div>
@@ -212,15 +212,15 @@ export default async function AdminPremiumPage() {
               {Object.entries(stats.tierCounts).map(([tier, count]) => {
                 if (count === 0) return null
                 const colors: Record<string, string> = {
-                  none: 'bg-gray-400',
-                  starter: 'bg-blue-500',
+                  none: 'bg-muted-foreground',
+                  starter: 'bg-primary',
                   pro: 'bg-amber-500',
                   elite: 'bg-purple-500',
                 }
                 return (
                   <div key={tier} className="flex items-center gap-2">
                     <div className={`w-3 h-3 rounded-full ${colors[tier]}`} />
-                    <span className="text-sm text-gray-600 capitalize">{tier}: {count}</span>
+                    <span className="text-sm text-muted-foreground capitalize">{tier}: {count}</span>
                   </div>
                 )
               })}
@@ -228,8 +228,8 @@ export default async function AdminPremiumPage() {
           </div>
         </div>
 
-        <div className="mt-8 bg-white rounded-lg shadow p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">
+        <div className="mt-8 bg-card rounded-lg shadow p-6">
+          <h3 className="text-lg font-semibold text-foreground mb-4">
             Pricing Tiers
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
@@ -238,16 +238,16 @@ export default async function AdminPremiumPage() {
               .map(([key, pricing]) => (
                 <div key={key} className="border rounded-lg p-4">
                   <div className="flex items-center justify-between mb-3">
-                    <h4 className="font-semibold text-gray-900 capitalize">{key}</h4>
-                    <span className="text-lg font-bold text-gray-900">
+                    <h4 className="font-semibold text-foreground capitalize">{key}</h4>
+                    <span className="text-lg font-bold text-foreground">
                       {formatMXN(pricing.priceCents)}
-                      <span className="text-sm font-normal text-gray-500">/mes</span>
+                      <span className="text-sm font-normal text-muted-foreground">/mes</span>
                     </span>
                   </div>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-muted-foreground">
                     {pricing.features.map((feature) => (
                       <li key={feature} className="flex items-center gap-2">
-                        <svg className="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="w-4 h-4 text-vital" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                         {feature.replace(/_/g, ' ')}

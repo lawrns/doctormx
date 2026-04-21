@@ -328,7 +328,7 @@ export default function ChatPage({ params }: ChatPageProps) {
                       className={`px-4 py-2 rounded-2xl ${
                         isOwn
                           ? 'bg-primary-500 text-white rounded-br-md'
-                          : 'bg-white border border-border text-ink-primary rounded-bl-md'
+                          : 'bg-card border border-border text-foreground rounded-bl-md'
                       }`}
                     >
                       {message.attachment_url && (

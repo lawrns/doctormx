@@ -70,10 +70,10 @@ export function ConversationalWelcome({
           transition={{ delay: shouldReduceMotion ? 0 : 0.3 }}
           className="space-y-3"
         >
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground">
             {userName ? `¡Hola, ${userName}!` : '¡Hola!'}
           </h1>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-muted-foreground">
             Soy tu asistente de consulta médica. Estoy aquí para ayudarte.
           </p>
         </motion.div>
@@ -91,14 +91,14 @@ export function ConversationalWelcome({
               duration: 0.4,
             }}
           >
-            <Card className="p-5 bg-gradient-to-br from-white to-blue-50/50 border-blue-100 hover:shadow-md transition-all">
+            <Card className="p-5 bg-gradient-to-br from-white to-blue-50/50 border-primary/20 hover:shadow-md transition-all">
               <div className="flex flex-col items-center text-center space-y-3">
-                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                  <message.icon className="w-6 h-6 text-blue-600" />
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                  <message.icon className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 text-sm">{message.title}</h3>
-                  <p className="text-xs text-gray-600 mt-1">{message.description}</p>
+                  <h3 className="font-semibold text-foreground text-sm">{message.title}</h3>
+                  <p className="text-xs text-muted-foreground mt-1">{message.description}</p>
                 </div>
               </div>
             </Card>
@@ -118,8 +118,8 @@ export function ConversationalWelcome({
               <Sparkles className="w-5 h-5 text-teal-600 mt-0.5" />
             </div>
             <div className="flex-1">
-              <p className="text-sm text-gray-700 leading-relaxed">
-                <strong className="text-gray-900">¿Cómo te sientes hoy?</strong> Cuéntame qué te molesta y te haré algunas preguntas para entender mejor tu situación.
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                <strong className="text-foreground">¿Cómo te sientes hoy?</strong> Cuéntame qué te molesta y te haré algunas preguntas para entender mejor tu situación.
               </p>
             </div>
           </div>

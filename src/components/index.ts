@@ -1,10 +1,6 @@
 // Re-exportar componentes - Claridad en imports
-export { DashboardHeader } from './DashboardHeader'
-export { QuickActionCard } from './QuickActionCard'
 export { StatCard, SimpleStatCard, MetricCard, EmptyMetricState } from './StatCard'
-export { Icons } from './Icons'
 export { default as PreConsultaChat } from './PreConsultaChat'
-export { default as TranscriptionUploader } from './TranscriptionUploader'
 export { default as ImageUploader, type ImageUploaderProps, type UploadResult } from './ImageUploader'
 
 // New components
@@ -22,14 +18,12 @@ export { ChatInput } from './ChatInput'
 // UI Components
 export { ToastProvider, useToast } from './Toast'
 export { Modal, ModalFooter } from './Modal'
-export { ConfirmDialog } from './ConfirmDialog'
 export { LoadingButton } from './LoadingButton'
 export { PublicSectionHeading } from './PublicSectionHeading'
 export { Breadcrumbs, HomeIcon } from './Breadcrumbs'
 export type { BreadcrumbItem } from './Breadcrumbs'
 export { AppBreadcrumbs } from './AppBreadcrumbs'
 export { Avatar, AvatarGroup } from './Avatar'
-export { Pagination, PaginationInfo } from './Pagination'
 export { Input, Textarea } from './Input'
 export { Select } from './Select'
 export { Card, CardHeader, CardBody, CardFooter, StatCard as StatCardNew } from './Card'
@@ -44,7 +38,6 @@ export { ReviewTrigger } from './ReviewTrigger'
 export { ClinicalCopilot } from './ClinicalCopilot'
 
 // Premium Features
-export { PremiumFeatureGate, PremiumFeatureBadge } from './PremiumFeatureGate'
 export { PricingBadge, PricingBadgeCompact, FeatureLimitIndicator } from './PricingBadge'
 
 // Pharmacy Components
@@ -52,7 +45,6 @@ export { default as PharmacySuggestions } from './PharmacySuggestions'
 
 // Analytics Components
 export { Chart, MiniSparkline } from './Chart'
-export { AnalyticsFilters, ExportButton } from './AnalyticsFilters'
 
 // Onboarding Components
 export { OnboardingChecklist, WelcomeBanner } from './OnboardingChecklist'

@@ -50,7 +50,7 @@ const statusVariants = cva(
     variants: {
       status: {
         online: "bg-green-500",
-        offline: "bg-gray-400",
+        offline: "bg-muted-foreground",
         away: "bg-yellow-500",
         busy: "bg-red-500",
       },

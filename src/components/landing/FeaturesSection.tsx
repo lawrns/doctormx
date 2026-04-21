@@ -87,7 +87,7 @@ export function FeaturesSection() {
               }}
             >
               <Card
-                className="group h-full overflow-hidden border-[#e3e6ee]/80 bg-white p-5 shadow-[0_1px_2px_rgba(15,37,95,0.06)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_4px_14px_rgba(15,37,95,0.1)]"
+                className="group h-full overflow-hidden border-[#e3e6ee]/80 bg-card p-5 shadow-[0_1px_2px_rgba(15,37,95,0.06)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_4px_14px_rgba(15,37,95,0.1)]"
                 role="article"
                 aria-label={feature.title}
               >

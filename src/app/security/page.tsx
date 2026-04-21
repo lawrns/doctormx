@@ -118,11 +118,11 @@ const complianceAreas = [
 
 export default function SecurityPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-background">
       <Header />
-      
+
       {/* Hero */}
-      <section className="pt-24 pb-16 bg-gradient-to-b from-green-50 to-white">
+      <section className="pt-24 pb-16 bg-gradient-to-b from-primary/5 to-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -130,13 +130,13 @@ export default function SecurityPage() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <div className="w-20 h-20 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <Shield className="w-10 h-10 text-green-600" />
+            <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <Shield className="w-10 h-10 text-primary" />
             </div>
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-5xl font-bold text-foreground mb-6">
               Seguridad y privacidad
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               Proteger tu información de salud es una prioridad. Aplicamos controles de seguridad, privacidad y acceso para cuidar tus datos en cada interacción.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -158,7 +158,7 @@ export default function SecurityPage() {
       </section>
 
       {/* Security Features */}
-      <section className="py-16 bg-white">
+      <section className="py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -167,12 +167,12 @@ export default function SecurityPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Cómo protegemos tu información</h2>
-            <p className="text-lg text-gray-600">
+            <h2 className="text-3xl font-bold text-foreground mb-4">Cómo protegemos tu información</h2>
+            <p className="text-lg text-muted-foreground">
               Múltiples capas de protección para resguardar información clínica y datos personales.
             </p>
           </motion.div>
-          
+
           <div className="grid md:grid-cols-2 gap-8">
             {securityFeatures.map((feature, index) => (
               <motion.div
@@ -184,16 +184,16 @@ export default function SecurityPage() {
               >
                 <Card className="p-6 h-full">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <feature.icon className="w-6 h-6 text-green-600" />
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <feature.icon className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">{feature.title}</h3>
-                      <p className="text-gray-600 mb-4">{feature.description}</p>
+                      <h3 className="text-xl font-semibold text-foreground mb-2">{feature.title}</h3>
+                      <p className="text-muted-foreground mb-4">{feature.description}</p>
                       <ul className="space-y-2">
                         {feature.details.map((detail, idx) => (
-                          <li key={idx} className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                          <li key={idx} className="flex items-center text-sm text-muted-foreground">
+                            <CheckCircle className="w-4 h-4 text-vital mr-2 flex-shrink-0" />
                             {detail}
                           </li>
                         ))}
@@ -208,7 +208,7 @@ export default function SecurityPage() {
       </section>
 
       {/* Compliance */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-secondary/30">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -217,12 +217,12 @@ export default function SecurityPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Cumplimiento y certificaciones</h2>
-            <p className="text-lg text-gray-600">
+            <h2 className="text-3xl font-bold text-foreground mb-4">Cumplimiento y certificaciones</h2>
+            <p className="text-lg text-muted-foreground">
               Operamos con estándares y marcos de referencia para salud digital, privacidad y seguridad.
             </p>
           </motion.div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {certifications.map((cert, index) => (
               <motion.div
@@ -233,12 +233,12 @@ export default function SecurityPage() {
                 viewport={{ once: true }}
               >
                 <Card className="p-6 text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <cert.icon className="w-8 h-8 text-blue-600" />
+                  <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <cert.icon className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-1">{cert.name}</h3>
-                  <p className="text-sm text-gray-600 mb-2">{cert.description}</p>
-                  <Badge 
+                  <h3 className="font-semibold text-foreground mb-1">{cert.name}</h3>
+                  <p className="text-sm text-muted-foreground mb-2">{cert.description}</p>
+                  <Badge
                     variant={cert.status === 'Certified' ? 'default' : cert.status === 'In Progress' ? 'secondary' : 'outline'}
                     className="text-xs"
                   >
@@ -260,10 +260,10 @@ export default function SecurityPage() {
               >
                 <Card className="p-6">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                      <area.icon className="w-5 h-5 text-purple-600" />
+                    <div className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center">
+                      <area.icon className="w-5 h-5 text-foreground" />
                     </div>
-                    <h3 className="font-semibold text-gray-900">{area.area}</h3>
+                    <h3 className="font-semibold text-foreground">{area.area}</h3>
                   </div>
                   <div className="space-y-1">
                     {area.standards.map((standard, idx) => (
@@ -280,7 +280,7 @@ export default function SecurityPage() {
       </section>
 
       {/* Data Handling */}
-      <section className="py-16 bg-white">
+      <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -289,58 +289,58 @@ export default function SecurityPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Tus derechos y control</h2>
-            <p className="text-lg text-gray-600">
+            <h2 className="text-3xl font-bold text-foreground mb-4">Tus derechos y control</h2>
+            <p className="text-lg text-muted-foreground">
               Puedes gestionar el acceso y uso de tu información de salud dentro de la plataforma.
             </p>
           </motion.div>
-          
+
           <div className="grid md:grid-cols-2 gap-6">
             <Card className="p-6">
               <div className="flex items-center gap-3 mb-4">
-                <Users className="w-6 h-6 text-blue-600" />
-                <h3 className="font-semibold text-gray-900">Derechos del paciente</h3>
+                <Users className="w-6 h-6 text-primary" />
+                <h3 className="font-semibold text-foreground">Derechos del paciente</h3>
               </div>
               <ul className="space-y-3">
-                <li className="flex items-start text-sm text-gray-600">
-                  <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                <li className="flex items-start text-sm text-muted-foreground">
+                  <CheckCircle className="w-4 h-4 text-vital mr-2 mt-0.5 flex-shrink-0" />
                   Acceder a tu historial clínico disponible
                 </li>
-                <li className="flex items-start text-sm text-gray-600">
-                  <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                <li className="flex items-start text-sm text-muted-foreground">
+                  <CheckCircle className="w-4 h-4 text-vital mr-2 mt-0.5 flex-shrink-0" />
                   Solicitar correcciones de información
                 </li>
-                <li className="flex items-start text-sm text-gray-600">
-                  <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                <li className="flex items-start text-sm text-muted-foreground">
+                  <CheckCircle className="w-4 h-4 text-vital mr-2 mt-0.5 flex-shrink-0" />
                   Obtener una copia de tus datos
                 </li>
-                <li className="flex items-start text-sm text-gray-600">
-                  <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                <li className="flex items-start text-sm text-muted-foreground">
+                  <CheckCircle className="w-4 h-4 text-vital mr-2 mt-0.5 flex-shrink-0" />
                   Solicitar la eliminación de cuenta y datos aplicables
                 </li>
               </ul>
             </Card>
-            
+
             <Card className="p-6">
               <div className="flex items-center gap-3 mb-4">
-                <AlertTriangle className="w-6 h-6 text-orange-600" />
-                <h3 className="font-semibold text-gray-900">Buenas prácticas de seguridad</h3>
+                <AlertTriangle className="w-6 h-6 text-amber" />
+                <h3 className="font-semibold text-foreground">Buenas prácticas de seguridad</h3>
               </div>
               <ul className="space-y-3">
-                <li className="flex items-start text-sm text-gray-600">
-                  <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                <li className="flex items-start text-sm text-muted-foreground">
+                  <CheckCircle className="w-4 h-4 text-vital mr-2 mt-0.5 flex-shrink-0" />
                   Usa contraseñas fuertes y únicas
                 </li>
-                <li className="flex items-start text-sm text-gray-600">
-                  <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                <li className="flex items-start text-sm text-muted-foreground">
+                  <CheckCircle className="w-4 h-4 text-vital mr-2 mt-0.5 flex-shrink-0" />
                   Activa la autenticación en dos pasos cuando esté disponible
                 </li>
-                <li className="flex items-start text-sm text-gray-600">
-                  <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                <li className="flex items-start text-sm text-muted-foreground">
+                  <CheckCircle className="w-4 h-4 text-vital mr-2 mt-0.5 flex-shrink-0" />
                   Revisa actividad y accesos con frecuencia
                 </li>
-                <li className="flex items-start text-sm text-gray-600">
-                  <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                <li className="flex items-start text-sm text-muted-foreground">
+                  <CheckCircle className="w-4 h-4 text-vital mr-2 mt-0.5 flex-shrink-0" />
                   Reporta actividad sospechosa de inmediato
                 </li>
               </ul>
@@ -350,7 +350,7 @@ export default function SecurityPage() {
       </section>
 
       {/* Security Team */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-secondary/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -358,29 +358,29 @@ export default function SecurityPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Equipo de seguridad</h2>
-            <p className="text-lg text-gray-600 mb-8">
+            <h2 className="text-3xl font-bold text-foreground mb-4">Equipo de seguridad</h2>
+            <p className="text-lg text-muted-foreground mb-8">
               Mantenemos procesos de monitoreo, revisión y respuesta para proteger la plataforma.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="p-6">
-                <Shield className="w-8 h-8 text-blue-600 mb-3 mx-auto" />
-                <h3 className="font-semibold text-gray-900 mb-1">Monitoreo continuo</h3>
-                <p className="text-sm text-gray-600">
+                <Shield className="w-8 h-8 text-primary mb-3 mx-auto" />
+                <h3 className="font-semibold text-foreground mb-1">Monitoreo continuo</h3>
+                <p className="text-sm text-muted-foreground">
                   Vigilancia operativa y detección temprana de anomalías.
                 </p>
               </Card>
               <Card className="p-6">
-                <Activity className="w-8 h-8 text-green-600 mb-3 mx-auto" />
-                <h3 className="font-semibold text-gray-900 mb-1">Revisiones periódicas</h3>
-                <p className="text-sm text-gray-600">
+                <Activity className="w-8 h-8 text-vital mb-3 mx-auto" />
+                <h3 className="font-semibold text-foreground mb-1">Revisiones periódicas</h3>
+                <p className="text-sm text-muted-foreground">
                   Evaluaciones regulares de controles y exposición de riesgo.
                 </p>
               </Card>
               <Card className="p-6">
-                <FileText className="w-8 h-8 text-purple-600 mb-3 mx-auto" />
-                <h3 className="font-semibold text-gray-900 mb-1">Respuesta a incidentes</h3>
-                <p className="text-sm text-gray-600">
+                <FileText className="w-8 h-8 text-primary mb-3 mx-auto" />
+                <h3 className="font-semibold text-foreground mb-1">Respuesta a incidentes</h3>
+                <p className="text-sm text-muted-foreground">
                   Procedimientos de respuesta para investigar y contener incidentes.
                 </p>
               </Card>
@@ -390,7 +390,7 @@ export default function SecurityPage() {
       </section>
 
       {/* Contact Security */}
-      <section className="py-16 bg-white">
+      <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -398,12 +398,12 @@ export default function SecurityPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">¿Tienes dudas de seguridad?</h2>
-            <p className="text-lg text-gray-600 mb-8">
+            <h2 className="text-3xl font-bold text-foreground mb-4">¿Tienes dudas de seguridad?</h2>
+            <p className="text-lg text-muted-foreground mb-8">
               Si necesitas ayuda con privacidad, seguridad o acceso a tus datos, nuestro equipo puede orientarte.
             </p>
             <Link href="/contact">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+              <Button size="lg">
                 Contactar al equipo
               </Button>
             </Link>

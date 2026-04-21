@@ -317,7 +317,7 @@ function RegisterContent() {
       <div className="min-h-screen grid lg:grid-cols-2">
         <div className="relative hidden lg:flex flex-col justify-between bg-ink p-10 text-white">
           <div className="relative z-10 flex items-center gap-2.5">
-            <div className="w-9 h-9 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/20">
+            <div className="w-9 h-9 bg-card/10 backdrop-blur-sm rounded-lg flex items-center justify-center border border-border/20">
               <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
@@ -326,7 +326,7 @@ function RegisterContent() {
           </div>
 
           <div className="relative z-10 max-w-xl space-y-5">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-white/90">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-card/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-primary-foreground/90">
               Cuenta lista
             </div>
             <h1 className="text-4xl font-semibold tracking-[-0.04em] leading-tight">
@@ -336,11 +336,11 @@ function RegisterContent() {
               Terminaste el registro. Ahora puedes enviar tu enlace por WhatsApp, copiarlo o mostrar el QR a tu familia.
             </p>
             <div className="grid grid-cols-2 gap-3 max-w-md">
-              <div className="rounded-2xl border border-white/10 bg-white/10 px-4 py-3">
+              <div className="rounded-2xl border border-white/10 bg-card/10 px-4 py-3">
                 <div className="text-xs uppercase tracking-[0.16em] text-white/60">Tu beneficio</div>
                 <div className="mt-1 text-lg font-semibold">1 consulta gratis</div>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/10 px-4 py-3">
+              <div className="rounded-2xl border border-white/10 bg-card/10 px-4 py-3">
                 <div className="text-xs uppercase tracking-[0.16em] text-white/60">Crédito</div>
                 <div className="mt-1 text-lg font-semibold">
                   {referralSummary.creditsCents > 0
@@ -387,7 +387,7 @@ function RegisterContent() {
         <div className="absolute inset-0 bg-ink/70" />
 
         <div className="relative z-20 flex items-center gap-2.5">
-          <div className="w-9 h-9 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/20">
+          <div className="w-9 h-9 bg-card/10 backdrop-blur-sm rounded-lg flex items-center justify-center border border-border/20">
             <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
             </svg>

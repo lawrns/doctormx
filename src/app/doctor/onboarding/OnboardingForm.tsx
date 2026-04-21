@@ -486,7 +486,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                   <Button
                     type="button"
                     onClick={() => setCurrentStep(2)}
-                    className="h-12 px-6 bg-ink hover:bg-cobalt-800 text-white rounded-xl"
+                    className="h-12 px-6 bg-ink hover:bg-ink text-white rounded-xl"
                   >
                     Siguiente
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -582,7 +582,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                   <Button
                     type="button"
                     onClick={() => setCurrentStep(3)}
-                    className="h-12 px-6 bg-ink hover:bg-cobalt-800 text-white rounded-xl"
+                    className="h-12 px-6 bg-ink hover:bg-ink text-white rounded-xl"
                   >
                     Siguiente
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -721,7 +721,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                     <Button
                       type="submit"
                       disabled={!isComplete || !hasAvailability || submitting}
-                      className="h-12 px-8 bg-ink hover:bg-cobalt-800 text-white rounded-xl font-medium"
+                      className="h-12 px-8 bg-ink hover:bg-ink text-white rounded-xl font-medium"
                     >
                       {submitting ? (
                         <>

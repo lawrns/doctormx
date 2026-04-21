@@ -175,7 +175,7 @@ export default function AboutPage() {
             ].map((m, i) => (
               <motion.div key={i} variants={item}>
                 <SignatureCard>
-                  <m.icon className="w-6 h-6 text-cobalt-700 mb-4" />
+                  <m.icon className="w-6 h-6 text-primary mb-4" />
                   <h3 className="font-display text-xl font-semibold text-foreground mb-2">
                     {m.title}
                   </h3>
@@ -209,7 +209,7 @@ export default function AboutPage() {
               <motion.div key={i} variants={item}>
                 <SignatureCard>
                   <div className="flex gap-5">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cobalt-300 to-cobalt-800 flex items-center justify-center flex-shrink-0 text-white font-display text-xl font-light">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/70 to-primary flex items-center justify-center flex-shrink-0 text-primary-foreground font-display text-xl font-light">
                       {member.name
                         .split(' ')
                         .map((n) => n[0])
@@ -221,7 +221,7 @@ export default function AboutPage() {
                       <h3 className="font-display text-lg font-semibold text-foreground leading-tight">
                         {member.name}
                       </h3>
-                      <p className="text-sm text-cobalt-700 mb-1.5">
+                      <p className="text-sm text-primary mb-1.5">
                         {member.role}
                       </p>
                       <Badge
@@ -264,13 +264,13 @@ export default function AboutPage() {
             {advisors.map((advisor, i) => (
               <motion.div key={i} variants={item}>
                 <SignatureCard className="text-center">
-                  <div className="w-14 h-14 rounded-full bg-cobalt-800 flex items-center justify-center mx-auto mb-4">
-                    <Stethoscope className="w-6 h-6 text-white" />
+                  <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center mx-auto mb-4">
+                    <Stethoscope className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <h3 className="font-display text-lg font-semibold text-foreground mb-1">
                     {advisor.name}
                   </h3>
-                  <p className="text-sm text-cobalt-700 mb-2">
+                  <p className="text-sm text-primary mb-2">
                     {advisor.title}
                   </p>
                   <Badge
@@ -324,22 +324,22 @@ export default function AboutPage() {
       </EditorialSection>
 
       {/* ─── CTA ─── */}
-      <section className="py-20 md:py-28 bg-cobalt-800 relative overflow-hidden">
+      <section className="py-20 md:py-28 bg-ink relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(58,102,245,0.25),transparent_50%)]" />
         <div className="max-w-[1100px] mx-auto px-6 md:px-12 relative z-10 text-center">
-          <Eyebrow className="text-white/60 mb-6">Únete</Eyebrow>
-          <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
+          <Eyebrow className="text-foreground/60 mb-6">Únete</Eyebrow>
+          <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
             Construyamos una mejor experiencia de{' '}
             <em className="font-serif font-normal">salud</em>
           </h2>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto mb-10">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
             Ya sea que busques atención médica o quieras crecer tu práctica, Doctor.mx te acompaña.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/doctors">
               <Button
                 size="lg"
-                className="h-14 px-8 bg-white text-cobalt-900 hover:bg-white/90 rounded-xl text-[15px] font-medium tracking-tight"
+                className="h-14 px-8 bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl text-[15px] font-medium tracking-tight"
               >
                 Reservar una consulta
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -349,7 +349,7 @@ export default function AboutPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="h-14 px-8 border-white/30 text-white hover:bg-white/10 rounded-xl text-[15px] font-medium tracking-tight"
+                className="h-14 px-8 border-border text-foreground hover:bg-secondary rounded-xl text-[15px] font-medium tracking-tight"
               >
                 Unirme a la red médica
               </Button>

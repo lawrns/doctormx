@@ -46,7 +46,7 @@ function getSpecialtyConfig(specialty: string): SpecialtyConfig {
   if (lower.includes('neurol') || lower.includes('cerebro'))
     return { icon: Brain, color: '#a855f7', bg: 'bg-purple-500/15' };
   if (lower.includes('oftalm') || lower.includes('ojo') || lower.includes('vision') || lower.includes('visión'))
-    return { icon: Eye, color: '#3b82f6', bg: 'bg-blue-500/15' };
+    return { icon: Eye, color: '#3b82f6', bg: 'bg-primary/15' };
   if (lower.includes('pediatr') || lower.includes('niño') || lower.includes('infant'))
     return { icon: Baby, color: '#ec4899', bg: 'bg-pink-500/15' };
   if (lower.includes('dermatol') || lower.includes('piel') || lower.includes('cutane'))

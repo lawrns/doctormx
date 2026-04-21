@@ -138,7 +138,7 @@ export function ColorFeature({
 }) {
   const variantClasses = {
     cobalt:
-      'bg-cobalt-700 text-white relative overflow-hidden before:absolute before:-top-[40%] before:-right-[20%] before:w-[120%] before:h-[160%] before:rounded-full before:bg-[radial-gradient(circle,var(--cobalt-500)_0%,transparent_60%)] before:opacity-40',
+      'bg-ink text-primary-foreground relative overflow-hidden before:absolute before:-top-[40%] before:-right-[20%] before:w-[120%] before:h-[160%] before:rounded-full before:bg-[radial-gradient(circle,var(--cobalt-500)_0%,transparent_60%)] before:opacity-40',
     vital: 'bg-card text-foreground border border-border relative',
     coral: 'bg-coral text-white relative overflow-hidden',
   }

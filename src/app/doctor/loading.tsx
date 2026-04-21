@@ -2,9 +2,9 @@ import { Skeleton, SkeletonCard } from '@/components'
 
 export default function DoctorDashboardLoading() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary/50">
       {/* Header skeleton */}
-      <header className="bg-white shadow-sm border-b sticky top-0 z-30">
+      <header className="bg-card shadow-sm border-b sticky top-0 z-30">
         <div className="px-4 lg:px-6 py-4 flex justify-between items-center">
           <div className="flex items-center gap-3">
             <Skeleton className="w-6 h-6 lg:hidden" />
@@ -20,7 +20,7 @@ export default function DoctorDashboardLoading() {
 
       <div className="flex">
         {/* Sidebar skeleton - hidden on mobile */}
-        <aside className="hidden lg:block w-64 bg-white border-r min-h-[calc(100vh-73px)]">
+        <aside className="hidden lg:block w-64 bg-card border-r min-h-[calc(100vh-73px)]">
           <nav className="p-4 space-y-2">
             {Array.from({ length: 5 }).map((_, i) => (
               <div key={i} className="flex items-center gap-3 px-4 py-3">
@@ -45,7 +45,7 @@ export default function DoctorDashboardLoading() {
             </div>
 
             {/* Appointments skeleton */}
-            <div className="bg-white rounded-lg shadow border p-6">
+            <div className="bg-card rounded-lg shadow border p-6">
               <div className="flex items-center justify-between mb-4">
                 <Skeleton className="h-6 w-40 lg:w-48" />
                 <Skeleton className="h-4 w-16 lg:w-20" />

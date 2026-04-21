@@ -85,7 +85,7 @@ function ChatStep() {
             className={`max-w-[85%] rounded-2xl px-3 py-2 text-[11px] leading-relaxed shadow-sm ${
               msg.role === 'user'
                 ? 'rounded-br-sm bg-[#1f48de] text-white'
-                : 'rounded-bl-sm border border-[#d4d9e3] bg-white text-[#0a1533]'
+                : 'rounded-bl-sm border border-[#d4d9e3] bg-card text-[#0a1533]'
             }`}
           >
             {msg.text}
@@ -96,7 +96,7 @@ function ChatStep() {
         initial={{ opacity: 0, y: 6 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.1, duration: 0.25 }}
-        className="mt-auto flex items-center gap-2 rounded-full border border-[#d4d9e3] bg-white px-2.5 py-1.5"
+        className="mt-auto flex items-center gap-2 rounded-full border border-[#d4d9e3] bg-card px-2.5 py-1.5"
       >
         <span className="flex-1 text-[10px] text-[#5c6783]/60">Escribe tus síntomas...</span>
         <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#1f48de]">
@@ -141,7 +141,7 @@ function AnalysisStep() {
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: i * 0.3 + 0.25, duration: 0.25 }}
-            className="flex items-center gap-2 rounded-lg border border-[#d4d9e3] bg-white px-2.5 py-1.5"
+            className="flex items-center gap-2 rounded-lg border border-[#d4d9e3] bg-card px-2.5 py-1.5"
           >
             {step.done ? (
               <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-[#00a878]" />
@@ -178,7 +178,7 @@ function DoctorMatchStep() {
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.25, duration: 0.35, ease: 'easeOut' }}
-        className="rounded-xl border border-[#d4d9e3] bg-white p-3 shadow-sm"
+        className="rounded-xl border border-[#d4d9e3] bg-card p-3 shadow-sm"
       >
         <div className="flex items-center gap-2.5">
           <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#dbe7ff]">
@@ -196,7 +196,7 @@ function DoctorMatchStep() {
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.25 }}
-        className="rounded-lg border border-[#eef0f5] bg-white p-2.5 opacity-40"
+        className="rounded-lg border border-[#eef0f5] bg-card p-2.5 opacity-40"
       >
         <div className="flex items-center gap-2">
           <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#eef0f5]">
@@ -245,7 +245,7 @@ function ConfirmationStep() {
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.55 }}
-        className="w-full rounded-lg border border-[#d4d9e3] bg-white p-2.5"
+        className="w-full rounded-lg border border-[#d4d9e3] bg-card p-2.5"
       >
         <div className="flex items-center gap-2.5">
           <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#dbe7ff]">
@@ -292,7 +292,7 @@ export default function PatientFlowHyperframe() {
   return (
     <div className="relative mx-auto w-full max-w-[340px]">
       {/* Phone frame */}
-      <div className="relative rounded-[1.75rem] border border-[#d4d9e3] bg-white shadow-[0_24px_48px_-12px_rgba(10,21,51,0.14),0_0_0_1px_rgba(10,21,51,0.03)]">
+      <div className="relative rounded-[1.75rem] border border-[#d4d9e3] bg-card shadow-[0_24px_48px_-12px_rgba(10,21,51,0.14),0_0_0_1px_rgba(10,21,51,0.03)]">
         {/* Status bar */}
         <div className="flex items-center justify-between rounded-t-[1.75rem] bg-[#0a1533] px-5 py-2">
           <span className="text-[9px] font-medium text-[#f7f8fb]/70">9:41</span>

@@ -30,7 +30,7 @@ export function HowItWorks() {
   const prefersReducedMotion = useReducedMotion()
 
   return (
-    <section className="bg-white py-16 sm:py-20">
+    <section className="bg-card py-16 sm:py-20">
       <div className="mx-auto max-w-5xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

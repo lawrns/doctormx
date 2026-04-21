@@ -82,14 +82,14 @@ export function ProgressiveDisclosure({
       {showProgress && groups.length > 1 && (
         <div className="mb-6">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm font-medium text-gray-700">
+            <span className="text-sm font-medium text-muted-foreground">
               Grupo {currentIndex + 1} de {groups.length}
             </span>
-            <span className="text-sm text-gray-500">
+            <span className="text-sm text-muted-foreground">
               {Math.round(((currentIndex + 1) / groups.length) * 100)}% completado
             </span>
           </div>
-          <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+          <div className="h-2 bg-muted rounded-full overflow-hidden">
             <motion.div
               className="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"
               initial={{ width: 0 }}
@@ -102,13 +102,13 @@ export function ProgressiveDisclosure({
 
           {/* Step Labels */}
           {progressLabels && (
-            <div className="flex justify-between mt-2 text-xs text-gray-500">
+            <div className="flex justify-between mt-2 text-xs text-muted-foreground">
               {progressLabels.map((label, index) => (
                 <span
                   key={index}
                   className={cn(
                     'flex-1 text-center',
-                    index === currentIndex && 'text-blue-600 font-semibold'
+                    index === currentIndex && 'text-primary font-semibold'
                   )}
                 >
                   {label}
@@ -187,7 +187,7 @@ export function ProgressiveDisclosure({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="text-center text-sm text-gray-500 pt-2"
+          className="text-center text-sm text-muted-foreground pt-2"
         >
           Pregunta {currentIndex * questionsPerGroup + 1} de{' '}
           {children.length}

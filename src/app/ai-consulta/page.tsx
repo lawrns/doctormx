@@ -178,7 +178,7 @@ export default function AnonymousConsultaPage() {
                             specialty: referral.doctor?.specialties?.[0]?.name,
                           })
                         }}
-                        className="mt-3 inline-block px-4 py-2 bg-ink hover:bg-cobalt-800 text-white text-sm font-semibold rounded-xl transition-colors"
+                        className="mt-3 inline-block px-4 py-2 bg-ink hover:bg-ink text-primary-foreground text-sm font-semibold rounded-xl transition-colors"
                       >
                         Agendar Cita
                       </a>

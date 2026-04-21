@@ -220,14 +220,14 @@ export function ImageUploader({
   return (
     <div className="space-y-6">
       {status === 'locked' ? (
-        <div className="bg-gray-50 rounded-2xl p-8 text-center">
+        <div className="bg-secondary/50 rounded-2xl p-8 text-center">
           <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
             <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
             </svg>
           </div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">Límite de análisis alcanzado</h3>
-          <p className="text-gray-600 mb-4">
+          <h3 className="text-lg font-semibold text-foreground mb-2">Límite de análisis alcanzado</h3>
+          <p className="text-muted-foreground mb-4">
             {loadingUsage
               ? 'Verificando acceso...'
               : `Has usado tus ${usage.limit} análisis gratuitos este mes.`
@@ -235,13 +235,13 @@ export function ImageUploader({
           </p>
           {usage.limit > 0 && (
             <div className="mb-4">
-              <div className="flex justify-between text-sm text-gray-600 mb-1">
+              <div className="flex justify-between text-sm text-muted-foreground mb-1">
                 <span>Usado</span>
                 <span>{usage.used} / {usage.limit}</span>
               </div>
-              <div className="w-full bg-gray-200 rounded-full h-2">
+              <div className="w-full bg-muted rounded-full h-2">
                 <div
-                  className="bg-blue-500 h-2 rounded-full"
+                  className="bg-primary h-2 rounded-full"
                   style={{ width: `${Math.min(100, (usage.used / usage.limit) * 100)}%` }}
                 />
               </div>
@@ -264,33 +264,33 @@ export function ImageUploader({
           >
             <div className="space-y-6">
               <div className="text-center">
-                <p className="text-gray-600">
+                <p className="text-muted-foreground">
                   Has usado tus 3 análisis gratuitos este mes. Obtén más análisis actualizando a Premium.
                 </p>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 bg-gray-50 rounded-lg">
-                  <h4 className="font-medium text-gray-900 mb-2">Análisis Individual</h4>
-                  <p className="text-2xl font-bold text-gray-900">$50 MXN</p>
-                  <p className="text-sm text-gray-500">Por análisis</p>
+                <div className="p-4 bg-secondary/50 rounded-lg">
+                  <h4 className="font-medium text-foreground mb-2">Análisis Individual</h4>
+                  <p className="text-2xl font-bold text-foreground">$50 MXN</p>
+                  <p className="text-sm text-muted-foreground">Por análisis</p>
                   <button
                     onClick={() => {
                       setShowPaywall(false)
                       window.location.href = '/app/premium?purchase=image_analysis&type=single'
                     }}
-                    className="mt-3 w-full py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
+                    className="mt-3 w-full py-2 px-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary transition-colors text-sm"
                   >
                     Comprar Ahora
                   </button>
                 </div>
-                <div className="p-4 bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200 rounded-lg">
+                <div className="p-4 bg-gradient-to-r from-blue-50 to-cyan-50 border border-primary/20 rounded-lg">
                   <div className="flex items-center gap-2 mb-2">
-                    <h4 className="font-medium text-gray-900">Pack de 10</h4>
-                    <span className="px-2 py-0.5 bg-blue-500 text-white text-xs font-bold rounded-full">-20%</span>
+                    <h4 className="font-medium text-foreground">Pack de 10</h4>
+                    <span className="px-2 py-0.5 bg-primary text-primary-foreground text-xs font-bold rounded-full">-20%</span>
                   </div>
-                  <p className="text-2xl font-bold text-gray-900">$400 MXN</p>
-                  <p className="text-sm text-gray-500">$40 por análisis</p>
+                  <p className="text-2xl font-bold text-foreground">$400 MXN</p>
+                  <p className="text-sm text-muted-foreground">$40 por análisis</p>
                   <button
                     onClick={() => {
                       setShowPaywall(false)
@@ -306,7 +306,7 @@ export function ImageUploader({
               <div className="text-center">
                 <a
                   href="/app/premium"
-                  className="text-blue-600 hover:underline text-sm"
+                  className="text-primary hover:underline text-sm"
                 >
                   Ver todos los planes premium
                 </a>
@@ -317,19 +317,19 @@ export function ImageUploader({
       ) : !result ? (
         <>
           {usage.limit > 0 && (
-            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-4">
+            <div className="bg-primary/10 border border-primary/20 rounded-xl p-4 mb-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
                     <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-blue-900">
+                    <p className="text-sm font-medium text-primary">
                       {usage.limit - usage.used} análisis gratis restantes este mes
                     </p>
-                    <p className="text-xs text-blue-700">Límite mensual: {usage.limit} análisis</p>
+                    <p className="text-xs text-primary">Límite mensual: {usage.limit} análisis</p>
                   </div>
                 </div>
               </div>
@@ -347,7 +347,7 @@ export function ImageUploader({
               transition-all duration-200
               ${selectedFile
                 ? 'border-primary-300 bg-primary-50'
-                : 'border-gray-300 hover:border-primary-400 hover:bg-gray-50'
+                : 'border-border hover:border-primary-400 hover:bg-secondary/50'
               }
               ${status === 'uploading' || status === 'analyzing' ? 'pointer-events-none opacity-50' : ''}
             `}
@@ -369,9 +369,9 @@ export function ImageUploader({
                   alt="Vista previa"
                   className="max-h-64 mx-auto rounded-lg object-contain"
                 />
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-muted-foreground">
                   <p className="font-medium">{selectedFile?.name}</p>
-                  <p className="text-gray-500">{formatFileSize(selectedFile?.size || 0)}</p>
+                  <p className="text-muted-foreground">{formatFileSize(selectedFile?.size || 0)}</p>
                 </div>
                 <button
                   type="button"
@@ -392,14 +392,14 @@ export function ImageUploader({
                   </svg>
                 </div>
                 <div>
-                  <p className="text-lg font-medium text-gray-900">
+                  <p className="text-lg font-medium text-foreground">
                     Arrastra tu imagen aquí
                   </p>
-                  <p className="text-sm text-gray-500 mt-1">
+                  <p className="text-sm text-muted-foreground mt-1">
                     o haz clic para seleccionar
                   </p>
                 </div>
-                <p className="text-xs text-gray-400">
+                <p className="text-xs text-muted-foreground">
                   Formatos soportados: JPG, PNG, DICOM • Máximo {maxFileSizeMB}MB
                 </p>
               </div>
@@ -443,11 +443,11 @@ export function ImageUploader({
 
               {status === 'uploading' && (
                 <div className="space-y-2">
-                  <div className="flex justify-between text-sm text-gray-600">
+                  <div className="flex justify-between text-sm text-muted-foreground">
                     <span>Progreso</span>
                     <span>{uploadProgress}%</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div className="w-full bg-muted rounded-full h-2">
                     <div
                       className="bg-primary-500 h-2 rounded-full transition-all duration-300"
                       style={{ width: `${uploadProgress}%` }}
@@ -482,7 +482,7 @@ export function ImageUploader({
           <div className="flex gap-4">
             <button
               onClick={handleReset}
-              className="flex-1 px-4 py-3 border border-gray-300 rounded-xl text-gray-700 font-medium hover:bg-gray-50 transition-colors"
+              className="flex-1 px-4 py-3 border border-border rounded-xl text-muted-foreground font-medium hover:bg-secondary/50 transition-colors"
             >
               Subir otra imagen
             </button>

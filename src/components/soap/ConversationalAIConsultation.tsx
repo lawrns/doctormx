@@ -234,7 +234,7 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
             <Button
               onClick={sendMessage}
               disabled={isLoading || !input.trim()}
-              className="bg-ink hover:bg-cobalt-800"
+              className="bg-ink hover:bg-ink"
             >
               <Send className="w-4 h-4" />
             </Button>

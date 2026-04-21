@@ -84,9 +84,9 @@ export default async function DiseaseDetailPage({ params }: PageProps) {
 
       <nav className="pt-24 pb-4">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ol className="flex items-center gap-2 text-sm text-neutral-400">
+          <ol className="flex items-center gap-2 text-sm text-muted-foreground">
             <li>
-              <Link href="/" className="hover:text-blue-600 transition-colors">
+              <Link href="/" className="hover:text-primary transition-colors">
                 Inicio
               </Link>
             </li>
@@ -96,7 +96,7 @@ export default async function DiseaseDetailPage({ params }: PageProps) {
             <li>
               <Link
                 href="/enfermedades"
-                className="hover:text-blue-600 transition-colors"
+                className="hover:text-primary transition-colors"
               >
                 Enfermedades
               </Link>
@@ -104,7 +104,7 @@ export default async function DiseaseDetailPage({ params }: PageProps) {
             <li>
               <ChevronRight className="w-3.5 h-3.5" />
             </li>
-            <li className="text-neutral-900 font-medium">{disease.name}</li>
+            <li className="text-foreground font-medium">{disease.name}</li>
           </ol>
         </div>
       </nav>
@@ -113,11 +113,11 @@ export default async function DiseaseDetailPage({ params }: PageProps) {
       <section className="pb-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-6">
-            <h1 className="text-4xl sm:text-5xl font-bold text-neutral-900 tracking-tight">
+            <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight">
               {disease.name}
             </h1>
             {disease.description && (
-              <p className="text-lg text-neutral-600 leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 {disease.description}
               </p>
             )}
@@ -135,16 +135,16 @@ export default async function DiseaseDetailPage({ params }: PageProps) {
                 <div className="w-10 h-10 bg-rose-50 rounded-xl flex items-center justify-center">
                   <AlertCircle className="w-5 h-5 text-rose-500" />
                 </div>
-                <h2 className="text-2xl font-bold text-neutral-900">
+                <h2 className="text-2xl font-bold text-foreground">
                   Sintomas
                 </h2>
               </div>
-              <Card className="p-6 bg-white/70 backdrop-blur-sm border-neutral-100">
+              <Card className="p-6 bg-card/70 backdrop-blur-sm border-border">
                 <ul className="grid sm:grid-cols-2 gap-3">
                   {disease.symptoms.map((symptom, i) => (
                     <li
                       key={i}
-                      className="flex items-start gap-3 text-neutral-700"
+                      className="flex items-start gap-3 text-muted-foreground"
                     >
                       <span className="w-2 h-2 rounded-full bg-rose-400 mt-2 flex-shrink-0" />
                       {symptom}
@@ -162,10 +162,10 @@ export default async function DiseaseDetailPage({ params }: PageProps) {
                 <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center">
                   <AlertCircle className="w-5 h-5 text-amber-500" />
                 </div>
-                <h2 className="text-2xl font-bold text-neutral-900">Causas</h2>
+                <h2 className="text-2xl font-bold text-foreground">Causas</h2>
               </div>
-              <Card className="p-6 bg-white/70 backdrop-blur-sm border-neutral-100">
-                <p className="text-neutral-700 leading-relaxed">
+              <Card className="p-6 bg-card/70 backdrop-blur-sm border-border">
+                <p className="text-muted-foreground leading-relaxed">
                   {disease.causes}
                 </p>
               </Card>
@@ -176,15 +176,15 @@ export default async function DiseaseDetailPage({ params }: PageProps) {
           {disease.treatments && (
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center">
-                  <Stethoscope className="w-5 h-5 text-blue-500" />
+                <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
+                  <Stethoscope className="w-5 h-5 text-primary" />
                 </div>
-                <h2 className="text-2xl font-bold text-neutral-900">
+                <h2 className="text-2xl font-bold text-foreground">
                   Tratamiento
                 </h2>
               </div>
-              <Card className="p-6 bg-white/70 backdrop-blur-sm border-neutral-100">
-                <p className="text-neutral-700 leading-relaxed">
+              <Card className="p-6 bg-card/70 backdrop-blur-sm border-border">
+                <p className="text-muted-foreground leading-relaxed">
                   {disease.treatments}
                 </p>
               </Card>
@@ -195,15 +195,15 @@ export default async function DiseaseDetailPage({ params }: PageProps) {
           {disease.prevention && (
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center">
-                  <Shield className="w-5 h-5 text-green-500" />
+                <div className="w-10 h-10 bg-primary/5 rounded-xl flex items-center justify-center">
+                  <Shield className="w-5 h-5 text-vital" />
                 </div>
-                <h2 className="text-2xl font-bold text-neutral-900">
+                <h2 className="text-2xl font-bold text-foreground">
                   Prevencion
                 </h2>
               </div>
-              <Card className="p-6 bg-white/70 backdrop-blur-sm border-neutral-100">
-                <p className="text-neutral-700 leading-relaxed">
+              <Card className="p-6 bg-card/70 backdrop-blur-sm border-border">
+                <p className="text-muted-foreground leading-relaxed">
                   {disease.prevention}
                 </p>
               </Card>
@@ -217,10 +217,10 @@ export default async function DiseaseDetailPage({ params }: PageProps) {
         <section className="pb-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center">
-                <Users className="w-5 h-5 text-blue-600" />
+              <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
+                <Users className="w-5 h-5 text-primary" />
               </div>
-              <h2 className="text-2xl font-bold text-neutral-900">
+              <h2 className="text-2xl font-bold text-foreground">
                 Doctores que tratan esta enfermedad
               </h2>
             </div>
@@ -229,22 +229,22 @@ export default async function DiseaseDetailPage({ params }: PageProps) {
                 <Link
                   key={specialty.id}
                   href={`/doctors?specialty=${encodeURIComponent(specialty.name)}`}
-                  className="group flex items-center justify-between p-5 rounded-xl bg-white border border-neutral-100 hover:border-blue-200 hover:shadow-sm transition-all"
+                  className="group flex items-center justify-between p-5 rounded-xl bg-card border border-border hover:border-primary/20 hover:shadow-sm transition-all"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center group-hover:bg-blue-100 transition-colors">
-                      <Heart className="w-5 h-5 text-blue-600" />
+                    <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+                      <Heart className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <p className="font-semibold text-neutral-900 group-hover:text-blue-600 transition-colors">
+                      <p className="font-semibold text-foreground group-hover:text-primary transition-colors">
                         {specialty.name}
                       </p>
-                      <p className="text-sm text-neutral-400">
+                      <p className="text-sm text-muted-foreground">
                         Ver doctores disponibles
                       </p>
                     </div>
                   </div>
-                  <ArrowRight className="w-4 h-4 text-neutral-300 group-hover:text-blue-600 transition-colors" />
+                  <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
                 </Link>
               ))}
             </div>
@@ -254,19 +254,19 @@ export default async function DiseaseDetailPage({ params }: PageProps) {
 
       {/* CTA */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-blue-50" />
+        <div className="absolute inset-0 bg-primary/10" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative py-16">
           <div className="text-center">
-            <h2 className="text-2xl font-bold text-neutral-900 mb-4">
+            <h2 className="text-2xl font-bold text-foreground mb-4">
               Necesitas consultar un especialista?
             </h2>
-            <p className="text-neutral-600 mb-8">
+            <p className="text-muted-foreground mb-8">
               Encuentra doctores certificados que tratan{' '}
               {disease.name.toLowerCase()} y agenda tu cita en linea.
             </p>
             <Link
               href={`/doctors?search=${encodeURIComponent(disease.name)}`}
-              className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/20"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-2xl font-semibold hover:bg-primary transition-all shadow-lg shadow-primary/20"
             >
               Buscar especialistas
               <ArrowRight className="w-4 h-4" />

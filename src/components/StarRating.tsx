@@ -71,7 +71,7 @@ export function StarRating({
               aria-label={`${star} de ${maxRating} estrellas`}
             >
               <svg
-                className={`${sizeClasses[size]} ${isFilled ? 'text-yellow-400' : 'text-gray-300'}`}
+                className={`${sizeClasses[size]} ${isFilled ? 'text-yellow-400' : 'text-muted-foreground'}`}
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -82,7 +82,7 @@ export function StarRating({
         })}
       </div>
       {showValue && (
-        <span className="text-sm font-medium text-gray-700 ml-1">
+        <span className="text-sm font-medium text-muted-foreground ml-1">
           {rating.toFixed(1)}
         </span>
       )}
@@ -110,7 +110,7 @@ export function RatingInput({
   return (
     <div>
       {label && (
-        <label className="block text-sm font-medium text-gray-700 mb-2">
+        <label className="block text-sm font-medium text-muted-foreground mb-2">
           {label}
           {required && <span className="text-red-500 ml-1">*</span>}
         </label>
@@ -124,7 +124,7 @@ export function RatingInput({
         onChange={onChange}
       />
       {value > 0 && (
-        <p className="mt-1 text-sm text-gray-500">
+        <p className="mt-1 text-sm text-muted-foreground">
           {value === 1 && 'Muy malo'}
           {value === 2 && 'Malo'}
           {value === 3 && 'Regular'}

@@ -60,7 +60,7 @@ export function OXXOPayment({
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-white rounded-2xl shadow-xl border-2 border-gray-200 overflow-hidden"
+        className="bg-card rounded-2xl shadow-xl border-2 border-border overflow-hidden"
       >
         {/* Header */}
         <div className="bg-gradient-to-r from-red-500 to-orange-500 p-6 text-white">
@@ -74,7 +74,7 @@ export function OXXOPayment({
                 {formatDate(expiresAt)}
               </p>
             </div>
-            <div className="bg-white/20 rounded-xl p-4 backdrop-blur-sm">
+            <div className="bg-card/20 rounded-xl p-4 backdrop-blur-sm">
               <div className="text-3xl font-bold">{formatCurrency(amount)}</div>
             </div>
           </div>
@@ -83,19 +83,19 @@ export function OXXOPayment({
         {/* Instructions */}
         <div className="p-6 space-y-6">
           {/* Reference Number */}
-          <div className="bg-gray-50 rounded-xl p-6 border-2 border-dashed border-gray-300">
-            <label className="block text-sm font-semibold text-gray-600 mb-2">
+          <div className="bg-secondary/50 rounded-xl p-6 border-2 border-dashed border-border">
+            <label className="block text-sm font-semibold text-muted-foreground mb-2">
               Referencia de pago:
             </label>
             <div className="flex items-center gap-3">
-              <div className="flex-1 bg-white border-2 border-gray-200 rounded-lg px-4 py-3">
-                <code className="text-2xl font-mono font-bold text-gray-900 tracking-wider">
+              <div className="flex-1 bg-card border-2 border-border rounded-lg px-4 py-3">
+                <code className="text-2xl font-mono font-bold text-foreground tracking-wider">
                   {reference}
                 </code>
               </div>
               <button
                 onClick={handleCopy}
-                className="flex items-center gap-2 px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-colors"
+                className="flex items-center gap-2 px-4 py-3 bg-primary hover:bg-primary text-primary-foreground rounded-lg font-semibold transition-colors"
               >
                 {copied ? (
                   <>
@@ -114,7 +114,7 @@ export function OXXOPayment({
 
           {/* Payment Steps */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold text-gray-900">
+            <h3 className="text-lg font-bold text-foreground">
               Cómo pagar en OXXO:
             </h3>
 
@@ -127,13 +127,13 @@ export function OXXOPayment({
               </Step>
               <Step number={3}>
                 Proporciona el número de referencia:{' '}
-                <code className="font-mono font-bold text-blue-600">
+                <code className="font-mono font-bold text-primary">
                   {reference}
                 </code>
               </Step>
               <Step number={4}>
                 Realiza el pago en efectivo por{' '}
-                <span className="font-bold text-gray-900">
+                <span className="font-bold text-foreground">
                   {formatCurrency(amount)}
                 </span>
               </Step>
@@ -182,14 +182,14 @@ export function OXXOPayment({
           <div className="flex flex-col sm:flex-row gap-3 pt-4">
             <button
               onClick={handlePrint}
-              className="flex items-center justify-center gap-2 px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-900 rounded-xl font-semibold transition-colors"
+              className="flex items-center justify-center gap-2 px-6 py-3 bg-secondary hover:bg-muted text-foreground rounded-xl font-semibold transition-colors"
             >
               <Printer className="w-5 h-5" />
               Imprimir ficha
             </button>
             <button
               onClick={handleDownload}
-              className="flex items-center justify-center gap-2 px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-900 rounded-xl font-semibold transition-colors"
+              className="flex items-center justify-center gap-2 px-6 py-3 bg-secondary hover:bg-muted text-foreground rounded-xl font-semibold transition-colors"
             >
               <Download className="w-5 h-5" />
               Descargar PDF
@@ -198,11 +198,11 @@ export function OXXOPayment({
 
           {/* Already Paid */}
           {onComplete && (
-            <div className="text-center pt-4 border-t border-gray-200">
-              <p className="text-sm text-gray-600 mb-3">¿Ya realizaste el pago?</p>
+            <div className="text-center pt-4 border-t border-border">
+              <p className="text-sm text-muted-foreground mb-3">¿Ya realizaste el pago?</p>
               <button
                 onClick={onComplete}
-                className="text-blue-600 hover:text-blue-700 font-semibold underline"
+                className="text-primary hover:text-primary font-semibold underline"
               >
                 Verificar estado del pago
               </button>
@@ -213,11 +213,11 @@ export function OXXOPayment({
 
       {/* Support */}
       <div className="mt-6 text-center">
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-muted-foreground">
           ¿Problemas con tu pago?{' '}
           <a
             href="/contact"
-            className="text-blue-600 hover:text-blue-700 font-semibold underline"
+            className="text-primary hover:text-primary font-semibold underline"
           >
             Contacta soporte
           </a>
@@ -230,10 +230,10 @@ export function OXXOPayment({
 function Step({ number, children }: { number: number; children: React.ReactNode }) {
   return (
     <div className="flex gap-3">
-      <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
+      <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-sm">
         {number}
       </div>
-      <p className="flex-1 text-gray-700 pt-1">{children}</p>
+      <p className="flex-1 text-muted-foreground pt-1">{children}</p>
     </div>
   );
 }
@@ -271,7 +271,7 @@ export function SPEIPayment({
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-white rounded-2xl shadow-xl border-2 border-gray-200 overflow-hidden"
+        className="bg-card rounded-2xl shadow-xl border-2 border-border overflow-hidden"
       >
         {/* Header */}
         <div className="bg-gradient-to-r from-green-500 to-emerald-500 p-6 text-white">
@@ -316,9 +316,9 @@ export function SPEIPayment({
           />
 
           {/* Instructions */}
-          <div className="bg-blue-50 border-2 border-blue-200 rounded-xl p-4">
-            <h4 className="font-bold text-blue-900 mb-3">Instrucciones:</h4>
-            <ol className="text-sm text-blue-800 space-y-2 list-decimal list-inside">
+          <div className="bg-primary/10 border-2 border-primary/20 rounded-xl p-4">
+            <h4 className="font-bold text-primary mb-3">Instrucciones:</h4>
+            <ol className="text-sm text-primary space-y-2 list-decimal list-inside">
               <li>Ingresa a tu banca en línea o app móvil</li>
               <li>Selecciona "Transferencias SPEI"</li>
               <li>Ingresa la CLABE y el monto exacto</li>
@@ -328,7 +328,7 @@ export function SPEIPayment({
             </ol>
           </div>
 
-          <div className="bg-green-50 border-2 border-green-200 rounded-xl p-4">
+          <div className="bg-primary/5 border-2 border-green-200 rounded-xl p-4">
             <p className="text-sm text-green-800">
               <Check className="w-4 h-4 inline mr-1" />La confirmación es automática e inmediata (1-3 minutos)
             </p>
@@ -356,7 +356,7 @@ function BankDetail({
 }) {
   return (
     <div>
-      <label className="block text-sm font-semibold text-gray-600 mb-2">
+      <label className="block text-sm font-semibold text-muted-foreground mb-2">
         {label}:
       </label>
       <div className="flex items-center gap-3">
@@ -364,12 +364,12 @@ function BankDetail({
           className={`flex-1 rounded-lg px-4 py-3 ${
             highlight
               ? 'bg-yellow-100 border-2 border-yellow-400'
-              : 'bg-gray-50 border-2 border-gray-200'
+              : 'bg-secondary/50 border-2 border-border'
           }`}
         >
           <code
             className={`font-mono font-bold ${
-              highlight ? 'text-xl text-yellow-900' : 'text-lg text-gray-900'
+              highlight ? 'text-xl text-yellow-900' : 'text-lg text-foreground'
             }`}
           >
             {value}
@@ -378,7 +378,7 @@ function BankDetail({
         {copyable && onCopy && (
           <button
             onClick={onCopy}
-            className="flex items-center gap-2 px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-colors"
+            className="flex items-center gap-2 px-4 py-3 bg-primary hover:bg-primary text-primary-foreground rounded-lg font-semibold transition-colors"
           >
             {copied ? (
               <>

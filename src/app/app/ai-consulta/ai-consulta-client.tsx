@@ -1232,7 +1232,7 @@ function ResultsStep({ consultation, consensus, specialists, phases }: { consult
 
       <div className="flex gap-3 pb-8">
         <Link href="/app" className="flex-1"><Button variant="outline" className="w-full">Volver al Inicio</Button></Link>
-        <Link href="/doctors" className="flex-1"><Button className="w-full bg-ink hover:bg-cobalt-800">Buscar Doctor</Button></Link>
+        <Link href="/doctors" className="flex-1"><Button className="w-full bg-ink hover:bg-ink">Buscar Doctor</Button></Link>
       </div>
     </motion.div>
   );

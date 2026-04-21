@@ -46,9 +46,9 @@ const specialties = [
     icon: Eye, 
     description: 'Ojos y visión', 
     doctors: 28, 
-    color: 'text-blue-500', 
-    bg: 'bg-blue-50/50',
-    borderColor: 'group-hover:border-blue-200'
+    color: 'text-primary', 
+    bg: 'bg-primary/10/50',
+    borderColor: 'group-hover:border-primary/20'
   },
   { 
     name: 'Traumatología', 
@@ -73,9 +73,9 @@ const specialties = [
     icon: Stethoscope,
     description: 'Atención primaria',
     doctors: 89,
-    color: 'text-blue-600',
-    bg: 'bg-blue-50/50',
-    borderColor: 'group-hover:border-blue-200'
+    color: 'text-primary',
+    bg: 'bg-primary/10/50',
+    borderColor: 'group-hover:border-primary/20'
   },
   { 
     name: 'Dermatología', 
@@ -105,7 +105,7 @@ export default function SpecialtiesPage() {
       {/* Hero Section with Ambient Glow */}
       <section className="relative overflow-hidden public-section pt-32">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full opacity-30 pointer-events-none">
-          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-200 rounded-full blur-[120px]" />
+          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/20 rounded-full blur-[120px]" />
           <div className="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-indigo-100 rounded-full blur-[100px]" />
         </div>
 
@@ -143,24 +143,24 @@ export default function SpecialtiesPage() {
                 }}
               >
                 <Link href={`/doctors?specialty=${encodeURIComponent(specialty.name)}`} className="group block h-full rounded-2xl focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 outline-none">
-                  <Card className={`relative p-8 h-full bg-white/70 backdrop-blur-sm border-neutral-100 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.08)] transition-all duration-200 ${specialty.borderColor} group-hover:-translate-y-1`}>
+                  <Card className={`relative p-8 h-full bg-card/70 backdrop-blur-sm border-border hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.08)] transition-all duration-200 ${specialty.borderColor} group-hover:-translate-y-1`}>
                     <div className={`w-14 h-14 ${specialty.bg} rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500`}>
                       <specialty.icon className={`w-7 h-7 ${specialty.color}`} />
                     </div>
                     
                     <div className="space-y-4">
-                      <h3 className="text-2xl font-bold text-neutral-900 group-hover:text-blue-600 transition-colors">
+                      <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
                         {specialty.name}
                       </h3>
-                      <p className="text-neutral-500 leading-relaxed min-h-[3rem]">
+                      <p className="text-muted-foreground leading-relaxed min-h-[3rem]">
                         {specialty.description}
                       </p>
                       
-                      <div className="pt-6 flex items-center justify-between border-t border-neutral-50">
-                        <span className="text-sm font-medium text-neutral-400">
+                      <div className="pt-6 flex items-center justify-between border-t border-border">
+                        <span className="text-sm font-medium text-muted-foreground">
                           {specialty.doctors} doctores disponibles
                         </span>
-                        <div className="w-8 h-8 rounded-full bg-neutral-50 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                        <div className="w-8 h-8 rounded-full bg-secondary/50 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
                           <ArrowRight className="w-4 h-4" />
                         </div>
                       </div>
@@ -175,7 +175,7 @@ export default function SpecialtiesPage() {
 
       {/* Modern AI CTA */}
       <section className="public-section relative overflow-hidden">
-        <div className="absolute inset-0 bg-neutral-900" />
+        <div className="absolute inset-0 bg-foreground" />
         <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
         
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
@@ -196,7 +196,7 @@ export default function SpecialtiesPage() {
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: "0 20px 40px -10px rgba(59,130,246,0.3)" }}
                 whileTap={{ scale: 0.98 }}
-                className="px-10 py-5 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-500 transition-all flex items-center gap-3 mx-auto shadow-xl shadow-blue-600/20 focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2"
+                className="px-10 py-5 bg-primary text-primary-foreground font-bold rounded-2xl hover:bg-primary transition-all flex items-center gap-3 mx-auto shadow-xl shadow-primary/20 focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2"
               >
                 <Sparkles className="w-5 h-5" />
                 Iniciar Consulta IA Gratis

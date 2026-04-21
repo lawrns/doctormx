@@ -34,7 +34,7 @@ export default function Breadcrumb() {
   }
 
   return (
-    <nav className="flex items-center space-x-2 text-sm text-neutral-600 mb-4" aria-label="Breadcrumb">
+    <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-4" aria-label="Breadcrumb">
       <Link to="/" className="hover:text-primary-600 transition-colors">
         <Icon name="home" size="sm" />
       </Link>
@@ -45,9 +45,9 @@ export default function Breadcrumb() {
         
         return (
           <div key={name} className="flex items-center space-x-2">
-            <Icon name="chevron-right" size="xs" className="text-neutral-400" />
+            <Icon name="chevron-right" size="xs" className="text-muted-foreground" />
             {isLast ? (
-              <span className="text-neutral-900 font-medium">
+              <span className="text-foreground font-medium">
                 {getBreadcrumbName(name)}
               </span>
             ) : (

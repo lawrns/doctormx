@@ -370,7 +370,7 @@ export default function PatientProfilePage() {
                       className={cn(
                         "w-full flex items-center gap-3 px-3 py-2.5 rounded-xl transition-colors text-sm font-medium",
                         activeTab === tab.id
-                          ? 'bg-cobalt-50 text-cobalt-700'
+                          ? 'bg-primary/10 text-primary'
                           : 'text-muted-foreground hover:bg-secondary hover:text-foreground'
                       )}
                     >

@@ -99,19 +99,19 @@ export default function RevenueDashboard() {
       <Card className="p-6 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <p className="text-blue-100 text-sm">Progreso hacia $1M ARR</p>
+            <p className="text-white/90 text-sm">Progreso hacia $1M ARR</p>
             <p className="text-3xl font-bold">{formatCurrency(currentARR)}</p>
-            <p className="text-blue-100 text-sm">Meta: {formatCurrency(ARR_TARGET)}</p>
+            <p className="text-white/90 text-sm">Meta: {formatCurrency(ARR_TARGET)}</p>
           </div>
-          <Target className="w-12 h-12 text-blue-200" />
+          <Target className="w-12 h-12 text-white/70" />
         </div>
-        <div className="w-full bg-blue-800 rounded-full h-3">
+        <div className="w-full bg-primary rounded-full h-3">
           <div
-            className="bg-white rounded-full h-3 transition-all duration-500"
+            className="bg-card rounded-full h-3 transition-all duration-500"
             style={{ width: `${progressToTarget}%` }}
           />
         </div>
-        <p className="text-center mt-2 text-blue-100">
+        <p className="text-center mt-2 text-white/90">
           {progressToTarget.toFixed(1)}% de la meta
         </p>
       </Card>
@@ -121,27 +121,27 @@ export default function RevenueDashboard() {
         <Card className="p-4">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-gray-500 text-sm">Ingresos Suscripción</p>
+              <p className="text-muted-foreground text-sm">Ingresos Suscripción</p>
               <p className="text-2xl font-bold">{formatCurrency(summary?.subscriptionRevenue || 0)}</p>
             </div>
-            <CreditCard className="w-8 h-8 text-blue-500" />
+            <CreditCard className="w-8 h-8 text-primary" />
           </div>
         </Card>
 
         <Card className="p-4">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-gray-500 text-sm">Comisiones Plataforma</p>
+              <p className="text-muted-foreground text-sm">Comisiones Plataforma</p>
               <p className="text-2xl font-bold">{formatCurrency(summary?.totalPlatformFees || 0)}</p>
             </div>
-            <DollarSign className="w-8 h-8 text-green-500" />
+            <DollarSign className="w-8 h-8 text-vital" />
           </div>
         </Card>
 
         <Card className="p-4">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-gray-500 text-sm">Consultas</p>
+              <p className="text-muted-foreground text-sm">Consultas</p>
               <p className="text-2xl font-bold">{summary?.consultCount || 0}</p>
             </div>
             <Users className="w-8 h-8 text-purple-500" />
@@ -151,7 +151,7 @@ export default function RevenueDashboard() {
         <Card className="p-4">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-gray-500 text-sm">Pago a Doctores</p>
+              <p className="text-muted-foreground text-sm">Pago a Doctores</p>
               <p className="text-2xl font-bold">{formatCurrency(summary?.totalDoctorPayouts || 0)}</p>
             </div>
             <TrendingUp className="w-8 h-8 text-orange-500" />
@@ -175,11 +175,11 @@ export default function RevenueDashboard() {
             }
             
             return (
-              <div key={tier} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+              <div key={tier} className="flex items-center justify-between p-3 bg-secondary/50 rounded-lg">
                 <div className="flex items-center gap-3">
                   <div className={`w-3 h-3 rounded-full ${
-                    tier === 'starter' ? 'bg-gray-400' :
-                    tier === 'pro' ? 'bg-blue-400' :
+                    tier === 'starter' ? 'bg-muted-foreground' :
+                    tier === 'pro' ? 'bg-primary/60' :
                     tier === 'elite' ? 'bg-purple-400' :
                     'bg-orange-400'
                   }`} />
@@ -187,7 +187,7 @@ export default function RevenueDashboard() {
                 </div>
                 <div className="text-right">
                   <p className="font-semibold">{formatCurrency(tierData.fees)}</p>
-                  <p className="text-sm text-gray-500">{tierData.count} consultas</p>
+                  <p className="text-sm text-muted-foreground">{tierData.count} consultas</p>
                 </div>
               </div>
             )
@@ -200,8 +200,8 @@ export default function RevenueDashboard() {
         <h2 className="text-lg font-semibold mb-4">Ingresos Diarios</h2>
         <div className="space-y-2">
           {dailyRevenue.slice(-10).map((day) => (
-            <div key={day.date} className="flex items-center justify-between p-2 hover:bg-gray-50 rounded">
-              <span className="text-sm text-gray-600">
+            <div key={day.date} className="flex items-center justify-between p-2 hover:bg-secondary/50 rounded">
+              <span className="text-sm text-muted-foreground">
                 {new Date(day.date).toLocaleDateString('es-MX', { 
                   month: 'short', 
                   day: 'numeric' 

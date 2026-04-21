@@ -440,7 +440,7 @@ export default function PricingPage() {
                                     Agendar llamada con ventas
                                 </a>
                             </Button>
-                            <Button variant="outline" asChild className="gap-2 border-white/30 text-white hover:bg-white/10 hover:text-white">
+                            <Button variant="outline" asChild className="gap-2 border-border/30 text-white hover:bg-card/10 hover:text-white">
                                 <a href="/support">
                                     <ShieldIcon />
                                     Ver preguntas frecuentes

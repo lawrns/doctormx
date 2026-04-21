@@ -70,11 +70,11 @@ export default async function SpecialtyPage({ params }: PageProps) {
   const topCities = cities.slice(0, 20)
   
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary/50">
       {/* Hero Section */}
-      <div className="bg-blue-600 py-12 text-white">
+      <div className="bg-primary py-12 text-white">
         <div className="mx-auto max-w-6xl px-4">
-          <nav className="mb-4 text-sm text-blue-200">
+          <nav className="mb-4 text-sm text-white/70">
             <Link href="/doctors" className="hover:text-white">Directorio</Link>
             {' / '}
             <span>{capitalizeWords(specialtyName)}</span>
@@ -82,16 +82,16 @@ export default async function SpecialtyPage({ params }: PageProps) {
           <h1 className="text-3xl font-bold md:text-4xl">
             {capitalizeWords(specialtyName)} en México
           </h1>
-          <p className="mt-2 text-lg text-blue-100">
+          <p className="mt-2 text-lg text-white/90">
             {result.total} especialistas verificados en todo el país
           </p>
         </div>
       </div>
       
       {/* City Links */}
-      <div className="border-b bg-white py-6">
+      <div className="border-b bg-card py-6">
         <div className="mx-auto max-w-6xl px-4">
-          <h2 className="mb-4 text-lg font-semibold text-gray-900">
+          <h2 className="mb-4 text-lg font-semibold text-foreground">
             Buscar por ciudad
           </h2>
           <div className="flex flex-wrap gap-2">
@@ -99,7 +99,7 @@ export default async function SpecialtyPage({ params }: PageProps) {
               <Link
                 key={c.city}
                 href={`/doctor/${specialty}/${encodeURIComponent(c.city.toLowerCase().replace(/\s+/g, '-'))}`}
-                className="rounded-full bg-gray-100 px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-700"
+                className="rounded-full bg-secondary px-4 py-2 text-sm text-muted-foreground hover:bg-primary/10 hover:text-primary"
               >
                 {c.city}
               </Link>
@@ -110,13 +110,13 @@ export default async function SpecialtyPage({ params }: PageProps) {
       
       {/* Featured Doctors */}
       <div className="mx-auto max-w-6xl px-4 py-8">
-        <h2 className="mb-6 text-xl font-semibold text-gray-900">
+        <h2 className="mb-6 text-xl font-semibold text-foreground">
           Especialistas destacados
         </h2>
         
         {doctors.length === 0 ? (
           <Card className="p-8 text-center">
-            <p className="text-gray-600">
+            <p className="text-muted-foreground">
               No encontramos especialistas en esta categoría.
             </p>
           </Card>
@@ -125,14 +125,14 @@ export default async function SpecialtyPage({ params }: PageProps) {
             {doctors.map((doctor) => (
               <Card key={doctor.id} hover className="flex flex-col">
                 <div className="flex items-start gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-100 text-lg font-bold text-blue-600">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-lg font-bold text-primary">
                     {doctor.full_name.charAt(0)}
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-gray-900">
+                    <h3 className="font-semibold text-foreground">
                       Dr. {doctor.full_name}
                     </h3>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-muted-foreground">
                       {doctor.city}, {doctor.state}
                     </p>
                   </div>
@@ -156,17 +156,17 @@ export default async function SpecialtyPage({ params }: PageProps) {
         )}
         
         {/* SEO Content */}
-        <div className="mt-12 rounded-lg bg-white p-6 shadow-sm">
-          <h2 className="text-xl font-semibold text-gray-900">
+        <div className="mt-12 rounded-lg bg-card p-6 shadow-sm">
+          <h2 className="text-xl font-semibold text-foreground">
             Encuentra especialistas en {capitalizeWords(specialtyName)}
           </h2>
-          <div className="mt-4 space-y-4 text-gray-600">
+          <div className="mt-4 space-y-4 text-muted-foreground">
             <p>
               Doctor.mx es el directorio de médicos más completo de México. 
               Encuentra especialistas en {specialtyName.toLowerCase()} verificados 
               con cédula profesional y certificaciones.
             </p>
-            <h3 className="font-medium text-gray-900">
+            <h3 className="font-medium text-foreground">
               ¿Qué hace un especialista en {specialtyName.toLowerCase()}?
             </h3>
             <p>
@@ -174,7 +174,7 @@ export default async function SpecialtyPage({ params }: PageProps) {
               certificados que se enfocan en diagnóstico y tratamiento de 
               condiciones específicas de su área de especialidad.
             </p>
-            <h3 className="font-medium text-gray-900">
+            <h3 className="font-medium text-foreground">
               Servicios disponibles
             </h3>
             <ul className="list-inside list-disc">

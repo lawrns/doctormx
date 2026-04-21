@@ -92,13 +92,13 @@ export function RecommendedDoctors({
   if (loading) {
     return (
       <div className="space-y-4">
-        <h3 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-          <Sparkles className="w-6 h-6 text-blue-500" />
+        <h3 className="text-2xl font-bold text-foreground flex items-center gap-2">
+          <Sparkles className="w-6 h-6 text-primary" />
           Conectándote con especialistas...
         </h3>
         <div className="grid gap-4">
           {[1, 2, 3].map((i) => (
-            <div key={i} className="h-48 bg-gray-100 rounded-2xl animate-pulse" />
+            <div key={i} className="h-48 bg-secondary rounded-2xl animate-pulse" />
           ))}
         </div>
       </div>
@@ -107,13 +107,13 @@ export function RecommendedDoctors({
 
   if (error || doctors.length === 0) {
     return (
-      <div className="bg-blue-50 border-2 border-blue-200 rounded-2xl p-6">
-        <h3 className="text-xl font-bold text-gray-900 mb-3">
+      <div className="bg-primary/10 border-2 border-primary/20 rounded-2xl p-6">
+        <h3 className="text-xl font-bold text-foreground mb-3">
           {error || 'No hay especialistas disponibles en este momento'}
         </h3>
         <Link
           href="/doctors"
-          className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold"
+          className="inline-flex items-center gap-2 text-primary hover:text-primary font-semibold"
         >
           Ver todos los médicos
           <ArrowRight className="w-4 h-4" />
@@ -128,19 +128,19 @@ export function RecommendedDoctors({
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-2xl p-6"
+        className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-primary/20 rounded-2xl p-6"
       >
         <div className="flex items-start gap-4">
-          <div className="flex-shrink-0 p-3 bg-blue-500 rounded-xl">
+          <div className="flex-shrink-0 p-3 bg-primary rounded-xl">
             <Sparkles className="w-6 h-6 text-white" />
           </div>
           <div className="flex-1">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+            <h3 className="text-2xl font-bold text-foreground mb-2">
               Los especialistas recomiendan continuar con:
             </h3>
-            <p className="text-gray-700">
+            <p className="text-muted-foreground">
               Basado en tu diagnóstico de{' '}
-              <span className="font-semibold text-blue-700">
+              <span className="font-semibold text-primary">
                 {primaryDiagnosisName}
               </span>
               , estos médicos verificados pueden ayudarte:
@@ -178,7 +178,7 @@ export function RecommendedDoctors({
       <div className="text-center">
         <Link
           href={`/doctors?specialty=${specialty}`}
-          className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold"
+          className="inline-flex items-center gap-2 text-primary hover:text-primary font-semibold"
         >
           Ver más especialistas en {specialty}
           <ArrowRight className="w-4 h-4" />
@@ -202,9 +202,9 @@ function DoctorCard({
   return (
     <div
       className={`
-        relative bg-white rounded-2xl border-2 shadow-lg hover:shadow-xl
+        relative bg-card rounded-2xl border-2 shadow-lg hover:shadow-xl
         transition-all duration-300 overflow-hidden
-        ${priority ? 'border-blue-400 ring-2 ring-blue-200' : 'border-gray-200 hover:border-blue-300'}
+        ${priority ? 'border-primary/60 ring-2 ring-primary/20' : 'border-border hover:border-primary/30'}
       `}
     >
       {/* Priority badge */}
@@ -221,7 +221,7 @@ function DoctorCard({
         <div className="flex gap-6">
           {/* Doctor Photo */}
           <div className="flex-shrink-0">
-            <div className="relative w-24 h-24 rounded-xl overflow-hidden bg-gray-100 ring-4 ring-white">
+            <div className="relative w-24 h-24 rounded-xl overflow-hidden bg-secondary ring-4 ring-white">
               {doctor.photo ? (
                 <Image
                   src={doctor.photo}
@@ -248,24 +248,24 @@ function DoctorCard({
           {/* Doctor Info */}
           <div className="flex-1 space-y-3">
             <div>
-              <h4 className="text-xl font-bold text-gray-900 mb-1">
+              <h4 className="text-xl font-bold text-foreground mb-1">
                 {doctor.name}
               </h4>
-              <p className="text-blue-600 font-semibold">{doctor.specialty}</p>
+              <p className="text-primary font-semibold">{doctor.specialty}</p>
             </div>
 
             {/* Stats */}
             <div className="flex flex-wrap gap-4 text-sm">
-              <div className="flex items-center gap-1 text-gray-600">
+              <div className="flex items-center gap-1 text-muted-foreground">
                 <Star className="w-4 h-4 text-yellow-500 fill-current" />
                 <span className="font-semibold">{doctor.rating.toFixed(1)}</span>
                 <span>({doctor.reviewCount} reseñas)</span>
               </div>
-              <div className="flex items-center gap-1 text-gray-600">
+              <div className="flex items-center gap-1 text-muted-foreground">
                 <MapPin className="w-4 h-4" />
                 {doctor.city}, {doctor.state}
               </div>
-              <div className="text-gray-600">
+              <div className="text-muted-foreground">
                 {doctor.yearsExperience} años de experiencia
               </div>
             </div>
@@ -273,13 +273,13 @@ function DoctorCard({
             {/* Availability & Features */}
             <div className="flex flex-wrap gap-3">
               {doctor.nextAvailable && (
-                <div className="flex items-center gap-2 bg-green-50 text-green-700 px-3 py-1 rounded-lg text-sm font-semibold">
+                <div className="flex items-center gap-2 bg-primary/5 text-green-700 px-3 py-1 rounded-lg text-sm font-semibold">
                   <Calendar className="w-4 h-4" />
                   Disponible: {doctor.nextAvailable}
                 </div>
               )}
               {doctor.videoConsultation && (
-                <div className="flex items-center gap-2 bg-blue-50 text-blue-700 px-3 py-1 rounded-lg text-sm font-semibold">
+                <div className="flex items-center gap-2 bg-primary/10 text-primary px-3 py-1 rounded-lg text-sm font-semibold">
                   <Video className="w-4 h-4" />
                   Video consulta
                 </div>
@@ -289,10 +289,10 @@ function DoctorCard({
             {/* Price & CTA */}
             <div className="flex items-center justify-between pt-2">
               <div>
-                <p className="text-2xl font-bold text-gray-900">
+                <p className="text-2xl font-bold text-foreground">
                   ${(doctor.priceCents / 100).toFixed(0)} MXN
                 </p>
-                <p className="text-xs text-gray-500">por consulta</p>
+                <p className="text-xs text-muted-foreground">por consulta</p>
               </div>
               <Link
                 href={`/book/${doctor.id}?from=ai-consultation&consultationId=${consultationId}`}
@@ -314,7 +314,7 @@ function DoctorCard({
                   focus:outline-none focus:ring-4
                   ${priority
                     ? 'bg-gradient-to-r from-blue-500 to-indigo-500 text-white focus:ring-blue-300'
-                    : 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-300'
+                    : 'bg-primary text-primary-foreground hover:bg-primary focus:ring-blue-300'
                   }
                 `}
               >
@@ -326,9 +326,9 @@ function DoctorCard({
         </div>
 
         {/* AI Referral Badge */}
-        <div className="mt-4 pt-4 border-t border-gray-200">
-          <div className="flex items-center gap-2 text-sm text-gray-600">
-            <Sparkles className="w-4 h-4 text-blue-500" />
+        <div className="mt-4 pt-4 border-t border-border">
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <Sparkles className="w-4 h-4 text-primary" />
             <span>
               Tu expediente de IA será compartido con el doctor para ahorrar tiempo
             </span>

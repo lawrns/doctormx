@@ -57,9 +57,9 @@ export function EmptyState({
   return (
     <div className={cn(
       "flex flex-col items-center justify-center p-8 sm:p-12 text-center rounded-2xl border transition-all duration-500",
-      variant === 'subtle' ? "bg-transparent border-transparent" : "bg-white/50 backdrop-blur-sm border-neutral-100 shadow-sm",
-      isAI ? "bg-neutral-900 border-white/10" : "",
-      isUrgent ? "bg-red-50 border-red-100" : "",
+      variant === 'subtle' ? "bg-transparent border-transparent" : "bg-card/50 backdrop-blur-sm border-border shadow-sm",
+      isAI ? "bg-ink border-border/20" : "",
+      isUrgent ? "bg-destructive/5 border-destructive/20" : "",
       className
     )}>
       <motion.div
@@ -67,9 +67,9 @@ export function EmptyState({
         animate={{ scale: 1, opacity: 1 }}
         className={cn(
           "w-16 h-16 sm:w-20 sm:h-20 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-500",
-          isAI ? "bg-blue-600/10 text-blue-400" : 
-          isUrgent ? "bg-red-100 text-red-500" :
-          "bg-primary-50 text-primary-500"
+          isAI ? "bg-primary/10 text-primary" :
+          isUrgent ? "bg-destructive/10 text-destructive" :
+          "bg-primary/10 text-primary"
         )}
       >
         {Icon ? <Icon className="w-8 h-8 sm:w-10 sm:h-10" /> : <Sparkles className="w-8 h-8 sm:w-10 sm:h-10" />}
@@ -81,9 +81,9 @@ export function EmptyState({
         transition={{ delay: 0.1 }}
         className={cn(
           "text-xl sm:text-2xl font-bold mb-3 tracking-tight",
-          isAI ? "text-white" : 
-          isUrgent ? "text-red-900" :
-          "text-neutral-900"
+          isAI ? "text-foreground" :
+          isUrgent ? "text-destructive" :
+          "text-foreground"
         )}
       >
         {title}
@@ -95,9 +95,9 @@ export function EmptyState({
         transition={{ delay: 0.2 }}
         className={cn(
           "text-base sm:text-lg mb-8 max-w-md mx-auto leading-relaxed",
-          isAI ? "text-neutral-400" : 
-          isUrgent ? "text-red-700" :
-          "text-neutral-500"
+          isAI ? "text-muted-foreground" :
+          isUrgent ? "text-destructive/80" :
+          "text-muted-foreground"
         )}
       >
         {description}
@@ -111,9 +111,9 @@ export function EmptyState({
             <Link href={action.href}>
               <Button className={cn(
                 "h-12 px-6 sm:px-8 rounded-xl font-semibold flex items-center gap-2 transition-all w-full sm:w-auto",
-                isAI ? "bg-blue-600 hover:bg-blue-500 text-white shadow-xl shadow-blue-600/20" : 
-                isUrgent ? "bg-red-600 hover:bg-red-500 text-white" :
-                "bg-primary-600 hover:bg-primary-700 text-white"
+                isAI ? "bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20" :
+                isUrgent ? "bg-destructive hover:bg-destructive/90 text-destructive-foreground" :
+                "bg-primary hover:bg-primary/90 text-primary-foreground"
               )}>
                 {action.label}
                 <ArrowRight className="w-4 h-4" />
@@ -124,9 +124,9 @@ export function EmptyState({
               onClick={action.onClick}
               className={cn(
                 "h-12 px-6 sm:px-8 rounded-xl font-semibold flex items-center gap-2 transition-all w-full sm:w-auto",
-                isAI ? "bg-blue-600 hover:bg-blue-500 text-white shadow-xl shadow-blue-600/20" : 
-                isUrgent ? "bg-red-600 hover:bg-red-500 text-white" :
-                "bg-primary-600 hover:bg-primary-700 text-white"
+                isAI ? "bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20" :
+                isUrgent ? "bg-destructive hover:bg-destructive/90 text-destructive-foreground" :
+                "bg-primary hover:bg-primary/90 text-primary-foreground"
               )}
             >
               {action.label}
@@ -139,9 +139,9 @@ export function EmptyState({
           secondaryAction.href ? (
             <Link href={secondaryAction.href}>
               <Button variant="outline" className={cn(
-                "h-12 px-6 sm:px-8 rounded-xl font-semibold border-neutral-200 hover:bg-neutral-50 transition-all w-full sm:w-auto",
-                isAI ? "border-white/10 text-white hover:bg-white/5" : "",
-                isUrgent ? "border-red-200 text-red-700 hover:bg-red-50" : ""
+                "h-12 px-6 sm:px-8 rounded-xl font-semibold border-border hover:bg-secondary transition-all w-full sm:w-auto",
+                isAI ? "border-border/30 text-foreground hover:bg-secondary" : "",
+                isUrgent ? "border-destructive/30 text-destructive hover:bg-destructive/5" : ""
               )}>
                 {secondaryAction.label}
               </Button>
@@ -151,9 +151,9 @@ export function EmptyState({
               variant="outline"
               onClick={secondaryAction.onClick}
               className={cn(
-                "h-12 px-6 sm:px-8 rounded-xl font-semibold border-neutral-200 hover:bg-neutral-50 transition-all w-full sm:w-auto",
-                isAI ? "border-white/10 text-white hover:bg-white/5" : "",
-                isUrgent ? "border-red-200 text-red-700 hover:bg-red-50" : ""
+                "h-12 px-6 sm:px-8 rounded-xl font-semibold border-border hover:bg-secondary transition-all w-full sm:w-auto",
+                isAI ? "border-border/30 text-foreground hover:bg-secondary" : "",
+                isUrgent ? "border-destructive/30 text-destructive hover:bg-destructive/5" : ""
               )}
             >
               {secondaryAction.label}
@@ -165,7 +165,6 @@ export function EmptyState({
   )
 }
 
-// Pre-configured empty states for common scenarios
 export function NoAppointmentsEmpty({ type = 'patient' }: { type?: 'patient' | 'doctor' }) {
   if (type === 'doctor') {
     return (
@@ -234,18 +233,18 @@ export function PrescriptionPendingEmpty() {
       iconName="file"
       title="Generando tu receta..."
       description="Estamos validando la receta con nuestros estándares de calidad. Esto toma solo unos segundos."
-      className="bg-blue-50 border-blue-100"
+      className="bg-primary/5 border-primary/20"
     >
       <div className="w-full max-w-xs mb-6">
-        <div className="h-2 bg-blue-200 rounded-full overflow-hidden">
-          <motion.div 
-            className="h-full bg-blue-500 rounded-full"
+        <div className="h-2 bg-primary/20 rounded-full overflow-hidden">
+          <motion.div
+            className="h-full bg-primary rounded-full"
             initial={{ width: "0%" }}
             animate={{ width: ["0%", "40%", "60%", "80%", "95%"] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           />
         </div>
-        <p className="text-xs text-blue-600 mt-2">Validando con COFEPRIS...</p>
+        <p className="text-xs text-primary mt-2">Validando con COFEPRIS...</p>
       </div>
     </EmptyState>
   )

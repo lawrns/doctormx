@@ -65,10 +65,10 @@ export function EmergencyAlert({
             {onDismiss && (
               <button
                 onClick={handleDismiss}
-                className="absolute top-4 right-4 p-1 rounded-full hover:bg-white/50 transition-colors"
+                className="absolute top-4 right-4 p-1 rounded-full hover:bg-card/50 transition-colors"
                 aria-label="Cerrar alerta"
               >
-                <X className="w-5 h-5 text-gray-600" />
+                <X className="w-5 h-5 text-muted-foreground" />
               </button>
             )}
 
@@ -94,22 +94,22 @@ export function EmergencyAlert({
 
               <div className="flex-1 space-y-3">
                 {/* Title */}
-                <h3 className="text-xl font-bold text-gray-900">
+                <h3 className="text-xl font-bold text-foreground">
                   {isCritical ? 'EMERGENCIA MÉDICA' : 'ATENCIÓN URGENTE REQUERIDA'}
                 </h3>
 
                 {/* Message */}
-                <p className="text-gray-800 font-semibold">
+                <p className="text-foreground font-semibold">
                   {message}
                 </p>
 
                 {/* Symptoms detected */}
                 {symptoms.length > 0 && (
-                  <div className="bg-white/60 rounded-lg p-3 space-y-1">
-                    <p className="text-sm font-semibold text-gray-700">
+                  <div className="bg-card/60 rounded-lg p-3 space-y-1">
+                    <p className="text-sm font-semibold text-muted-foreground">
                       Síntomas detectados:
                     </p>
-                    <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
+                    <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
                       {symptoms.map((symptom, index) => (
                         <li key={index}>{symptom}</li>
                       ))}
@@ -142,8 +142,8 @@ export function EmergencyAlert({
                       onClick={handleDismiss}
                       className="
                         px-6 py-3 rounded-xl font-semibold
-                        bg-white border-2 border-gray-300 text-gray-700
-                        hover:bg-gray-50 hover:border-gray-400
+                        bg-card border-2 border-border text-muted-foreground
+                        hover:bg-secondary/50 hover:border-gray-400
                         transition-all duration-200
                         focus:outline-none focus:ring-2 focus:ring-gray-400
                       "
@@ -154,7 +154,7 @@ export function EmergencyAlert({
                 </div>
 
                 {/* Legal disclaimer */}
-                <p className="text-xs text-gray-600 pt-2 border-t border-gray-300">
+                <p className="text-xs text-muted-foreground pt-2 border-t border-border">
                   Esta alerta se basa en los síntomas reportados. En caso de emergencia real,
                   siempre llame al 911 o acuda al servicio de urgencias más cercano.
                 </p>

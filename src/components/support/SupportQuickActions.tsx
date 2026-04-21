@@ -26,7 +26,7 @@ export function SupportQuickActions({ actions, onSelect }: SupportQuickActionsPr
             type="button"
             variant="outline"
             size="sm"
-            className="rounded-full border-sky-200/60 bg-white/80 text-slate-700 shadow-[0_8px_24px_rgba(15,23,42,0.05)] backdrop-blur-sm hover:border-sky-300 hover:bg-sky-50"
+            className="rounded-full border-primary/30 bg-card/80 text-foreground shadow-[0_8px_24px_rgba(15,23,42,0.05)] backdrop-blur-sm hover:border-primary/40 hover:bg-primary/10"
             onClick={() => onSelect(action)}
           >
             {action}

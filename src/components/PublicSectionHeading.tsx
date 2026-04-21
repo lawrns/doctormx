@@ -37,8 +37,8 @@ export function PublicSectionHeading({
           className={cn(
             'inline-flex items-center rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em]',
             isDark
-              ? 'border-white/15 bg-white/10 text-sky-100'
-              : 'border-blue-100 bg-blue-50 text-blue-700',
+              ? 'border-border/30 bg-secondary/50 text-primary-foreground'
+              : 'border-primary/20 bg-primary/5 text-primary',
           )}
         >
           {eyebrow}
@@ -48,13 +48,13 @@ export function PublicSectionHeading({
       <h2
         className={cn(
           'section-headline text-balance',
-          isDark ? 'text-white' : '',
+          isDark ? 'text-foreground' : '',
           titleClassName,
         )}
       >
         {title}
         {accent ? (
-          <span className={cn('block', isDark ? 'text-sky-300' : 'text-[hsl(var(--brand-ocean))]')}>
+          <span className={cn('block', isDark ? 'text-primary' : 'text-primary')}>
             {accent}
           </span>
         ) : null}
@@ -64,7 +64,7 @@ export function PublicSectionHeading({
         <p
           className={cn(
             'max-w-3xl text-base leading-7 sm:text-lg',
-            isDark ? 'text-slate-200/90' : 'text-slate-600',
+            isDark ? 'text-muted-foreground' : 'text-muted-foreground',
           )}
         >
           {description}

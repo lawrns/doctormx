@@ -6,14 +6,14 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
 const statCardVariants = cva(
-  'bg-white rounded-xl border transition-all duration-200',
+  'bg-card rounded-xl border transition-all duration-200',
   {
     variants: {
       elevation: {
-        none: 'border-neutral-200 shadow-sm',
-        sm: 'border-neutral-200 shadow-md hover:shadow-lg',
-        md: 'border-neutral-200 shadow-lg hover:shadow-xl hover:-translate-y-1',
-        lg: 'border-neutral-200 shadow-xl hover:shadow-2xl hover:-translate-y-2',
+        none: 'border-border shadow-sm',
+        sm: 'border-border shadow-md hover:shadow-lg',
+        md: 'border-border shadow-lg hover:shadow-xl hover:-translate-y-1',
+        lg: 'border-border shadow-xl hover:shadow-2xl hover:-translate-y-2',
       },
       borderColor: {
         primary: 'border-l-4 border-l-primary-500',
@@ -74,16 +74,16 @@ export function StatCard({
     <div className={cn(statCardVariants({ elevation, borderColor }), 'p-6', className)}>
       <div className="flex items-start justify-between">
         <div>
-          <p className="text-sm font-medium text-neutral-600">{title}</p>
-          <p className="mt-2 text-3xl font-bold text-neutral-900">{formattedValue()}</p>
+          <p className="text-sm font-medium text-muted-foreground">{title}</p>
+          <p className="mt-2 text-3xl font-bold text-foreground">{formattedValue()}</p>
           {change !== undefined && (
             <div className="mt-2 flex items-center gap-1">
               <span
                 className={clsx(
                   'inline-flex items-center text-sm font-medium',
-                  trend === 'up' && 'text-green-600',
+                  trend === 'up' && 'text-primary',
                   trend === 'down' && 'text-red-600',
-                  trend === 'neutral' && 'text-neutral-500'
+                  trend === 'neutral' && 'text-muted-foreground'
                 )}
               >
                 {trend === 'up' && (
@@ -98,12 +98,12 @@ export function StatCard({
                 )}
                 {Math.abs(change).toFixed(1)}%
               </span>
-              {changeLabel && <span className="text-sm text-neutral-500">{changeLabel}</span>}
+              {changeLabel && <span className="text-sm text-muted-foreground">{changeLabel}</span>}
             </div>
           )}
         </div>
         {icon && (
-          <div className="p-3 bg-neutral-100 rounded-lg">
+          <div className="p-3 bg-secondary rounded-lg">
             {icon}
           </div>
         )}
@@ -128,11 +128,11 @@ export function SimpleStatCard({ label, value, icon, color = 'blue' }: SimpleSta
   }
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+    <div className="bg-card p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-sm text-neutral-600">{label}</p>
-          <p className="text-2xl font-bold text-neutral-900">{value}</p>
+          <p className="text-sm text-muted-foreground">{label}</p>
+          <p className="text-2xl font-bold text-foreground">{value}</p>
         </div>
         <div className={`w-12 h-12 ${colors[color]} rounded-lg flex items-center justify-center flex-shrink-0`}>
           {icon}
@@ -152,9 +152,9 @@ export function MetricCard({
   action?: ReactNode
 }) {
   return (
-    <div className="bg-white rounded-xl border border-neutral-200 overflow-hidden">
-      <div className="px-6 py-4 border-b border-neutral-200 flex items-center justify-between">
-        <h3 className="text-lg font-semibold text-neutral-900">{title}</h3>
+    <div className="bg-card rounded-xl border border-border overflow-hidden">
+      <div className="px-6 py-4 border-b border-border flex items-center justify-between">
+        <h3 className="text-lg font-semibold text-foreground">{title}</h3>
         {action}
       </div>
       <div className="p-6">
@@ -167,10 +167,10 @@ export function MetricCard({
 export function EmptyMetricState({ message }: { message: string }) {
   return (
     <div className="flex flex-col items-center justify-center py-12 text-center">
-      <svg className="w-16 h-16 text-neutral-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg className="w-16 h-16 text-muted-foreground mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
       </svg>
-      <p className="text-neutral-500">{message}</p>
+      <p className="text-muted-foreground">{message}</p>
     </div>
   )
 }

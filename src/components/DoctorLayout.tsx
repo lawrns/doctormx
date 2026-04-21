@@ -72,7 +72,7 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
               </svg>
             </button>
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-cobalt-600 to-cobalt-800 rounded-lg" />
+              <div className="w-8 h-8 bg-primary rounded-lg" />
               <span className="font-display text-xl font-bold text-foreground">Doctor.mx</span>
             </Link>
           </div>
@@ -88,7 +88,7 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                 </svg>
                 {pendingAppointments > 0 && (
-                  <span className="absolute -top-1 -right-1 flex items-center justify-center min-w-[18px] h-[18px] px-1 text-xs font-bold text-white bg-red-500 rounded-full">
+                  <span className="absolute -top-1 -right-1 flex items-center justify-center min-w-[18px] h-[18px] px-1 text-xs font-bold text-white bg-destructive rounded-full">
                     {pendingAppointments > 99 ? '99+' : pendingAppointments}
                   </span>
                 )}
@@ -96,11 +96,11 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
             )}
 
             {isPending ? (
-              <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+              <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-amber/10 text-amber">
                 En revisión
               </span>
             ) : (
-              <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+              <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-vital-soft text-vital">
                 Verificado
               </span>
             )}
@@ -113,7 +113,7 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
         <aside className="hidden lg:flex w-64 flex-col border-r border-border bg-background sticky top-0 h-screen">
           <div className="p-6">
             <Link href="/" className="flex items-center gap-2.5">
-              <div className="w-8 h-8 bg-gradient-to-br from-cobalt-600 to-cobalt-800 rounded-lg" />
+              <div className="w-8 h-8 bg-primary rounded-lg" />
               <span className="font-display text-xl font-bold text-foreground">Doctor.mx</span>
             </Link>
           </div>
@@ -137,7 +137,7 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
                   className={cn(
                     "flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors",
                     active
-                      ? "bg-cobalt-50 text-cobalt-700"
+                      ? "bg-primary/10 text-primary"
                       : disabled
                         ? "text-muted-foreground/50 cursor-not-allowed"
                         : "text-muted-foreground hover:bg-secondary hover:text-foreground"
@@ -217,7 +217,7 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
                   className={cn(
                     "flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors",
                     active
-                      ? "bg-cobalt-50 text-cobalt-700"
+                      ? "bg-primary/10 text-primary"
                       : disabled
                         ? "text-muted-foreground/50 cursor-not-allowed"
                         : "text-muted-foreground hover:bg-secondary hover:text-foreground"

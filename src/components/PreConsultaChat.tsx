@@ -540,7 +540,7 @@ export default function PreConsultaChat({
                               <div className="max-w-xs text-sm text-muted-foreground sm:text-right">{match.reasons?.[0] || 'Perfil recomendado para tu síntoma principal.'}</div>
                               <button
                                 onClick={() => { window.location.href = `/book/${match.doctorId}`; }}
-                                className="inline-flex items-center justify-center gap-2 rounded-xl bg-ink hover:bg-cobalt-800 px-5 py-3 text-sm font-semibold text-white transition-colors"
+                                className="inline-flex items-center justify-center gap-2 rounded-xl bg-ink hover:bg-ink px-5 py-3 text-sm font-semibold text-primary-foreground transition-colors"
                               >
                                 Agendar con este doctor
                               </button>
@@ -583,7 +583,7 @@ export default function PreConsultaChat({
                   <button
                     onClick={sendMessage}
                     disabled={!input.trim() || isLoading}
-                    className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-ink hover:bg-cobalt-800 px-5 text-sm font-semibold text-white transition focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-ink hover:bg-ink px-5 text-sm font-semibold text-primary-foreground transition focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                   >
                     {quota?.remaining === 0 ? <Crown className="h-4 w-4" /> : <SendHorizonal className="h-4 w-4" />}
                     {isLoading ? 'Analizando…' : 'Enviar'}

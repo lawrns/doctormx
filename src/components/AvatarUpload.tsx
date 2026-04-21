@@ -193,7 +193,7 @@ export function AvatarUpload({
       />
 
       {/* Helper text */}
-      <p className="text-xs text-gray-500 text-center max-w-[150px]">
+      <p className="text-xs text-muted-foreground text-center max-w-[150px]">
         {isUploading ? 'Subiendo...' : 'Haz clic para cambiar tu foto'}
       </p>
     </div>

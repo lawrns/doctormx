@@ -96,7 +96,7 @@ export function SupportWidget() {
               <div className="text-sm font-semibold tracking-[-0.02em]">Doctor Simeon</div>
               <div className="truncate text-xs text-sky-100/90">Te guía dentro de Doctor.mx</div>
             </div>
-            <div className="rounded-full bg-white/14 p-2 text-white/95" aria-hidden="true">
+            <div className="rounded-full bg-primary-foreground/14 p-2 text-white/95" aria-hidden="true">
               {open ? <X className="h-4 w-4" /> : <MessageSquareMore className="h-4 w-4" />}
             </div>
           </div>

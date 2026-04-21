@@ -140,7 +140,7 @@ function LoginContent() {
         <div className="absolute inset-0 bg-ink/70" />
 
         <div className="relative z-20 flex items-center gap-2.5">
-          <div className="w-9 h-9 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/20">
+          <div className="w-9 h-9 bg-primary-foreground/10 backdrop-blur-sm rounded-lg flex items-center justify-center border border-primary-foreground/20">
             <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
             </svg>

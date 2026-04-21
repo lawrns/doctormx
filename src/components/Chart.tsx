@@ -94,7 +94,7 @@ export function Chart({
     const legend = showLegend ? (
       <Legend
         wrapperStyle={{ paddingTop: '20px' }}
-        formatter={(value) => <span className="text-sm text-gray-600">{String(value)}</span>}
+        formatter={(value) => <span className="text-sm text-muted-foreground">{String(value)}</span>}
       />
     ) : null
 
@@ -261,7 +261,7 @@ export function Chart({
   return (
     <div className="w-full">
       {title && (
-        <h3 className="text-lg font-semibold text-gray-900 mb-4">{title}</h3>
+        <h3 className="text-lg font-semibold text-foreground mb-4">{title}</h3>
       )}
       {renderChart()}
     </div>

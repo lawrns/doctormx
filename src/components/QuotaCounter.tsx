@@ -42,7 +42,7 @@ export function QuotaCounter({ used, limit, size = 'md' }: QuotaCounterProps) {
           className={`${sizeClasses[size]} rounded-full transition-all duration-300 ${
             status === 'filled'
               ? 'bg-primary-500 shadow-sm'
-              : 'bg-gray-200 border-2 border-gray-300'
+              : 'bg-muted border-2 border-border'
           }`}
           aria-label={
             status === 'filled'
@@ -52,7 +52,7 @@ export function QuotaCounter({ used, limit, size = 'md' }: QuotaCounterProps) {
         />
       ))}
       {remaining > 0 && (
-        <span className="ml-2 text-sm font-medium text-gray-600">
+        <span className="ml-2 text-sm font-medium text-muted-foreground">
           {remaining} gratis
         </span>
       )}

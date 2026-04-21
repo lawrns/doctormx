@@ -15,9 +15,9 @@ const tierConfig: Record<SubscriptionTier, {
   gradient: string
 }> = {
   starter: {
-    bg: 'bg-blue-50',
-    text: 'text-blue-700',
-    border: 'border-blue-300',
+    bg: 'bg-primary/10',
+    text: 'text-primary',
+    border: 'border-primary/30',
     gradient: '',
   },
   pro: {
@@ -89,7 +89,7 @@ function StarIcon({ className }: { className?: string }) {
 
 export function PricingBadgeCompact({ tier }: { tier: SubscriptionTier }) {
   const colors: Record<SubscriptionTier, string> = {
-    starter: 'bg-blue-100 text-blue-700',
+    starter: 'bg-primary/10 text-primary',
     pro: 'bg-gradient-to-r from-amber-400 to-orange-500 text-white',
     elite: 'bg-gradient-to-r from-purple-500 to-pink-600 text-white',
   }
@@ -130,12 +130,12 @@ export function FeatureLimitIndicator({
   return (
     <div className="space-y-1">
       <div className="flex justify-between text-xs">
-        <span className="text-gray-600">{label}</span>
-        <span className={isExceeded ? 'text-red-600 font-medium' : isNearLimit ? 'text-orange-600' : 'text-gray-900'}>
+        <span className="text-muted-foreground">{label}</span>
+        <span className={isExceeded ? 'text-red-600 font-medium' : isNearLimit ? 'text-orange-600' : 'text-foreground'}>
           {used} / {limit}
         </span>
       </div>
-      <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+      <div className="h-2 bg-muted rounded-full overflow-hidden">
         <div
           className={`h-full rounded-full transition-all ${
             isExceeded

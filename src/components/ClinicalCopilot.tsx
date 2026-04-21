@@ -243,7 +243,7 @@ export function ClinicalCopilot({
                     }}
                     className={`fixed bottom-4 right-4 w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-colors z-50 ${
                         hasAccess
-                            ? 'bg-blue-600 text-white hover:bg-blue-700'
+                            ? 'bg-primary text-primary-foreground hover:bg-primary'
                             : 'bg-gradient-to-r from-amber-400 to-orange-500 text-white hover:from-amber-500 hover:to-orange-600'
                     }`}
                     title={hasAccess ? 'Abrir Clinical Copilot' : 'Clinical Copilot - Upgrade necesario'}
@@ -273,15 +273,15 @@ export function ClinicalCopilot({
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                                 </svg>
                             </div>
-                            <h3 className="text-lg font-semibold text-gray-900">Clinical Copilot</h3>
-                            <p className="text-gray-600 mt-2">
+                            <h3 className="text-lg font-semibold text-foreground">Clinical Copilot</h3>
+                            <p className="text-muted-foreground mt-2">
                                 Esta funcionalidad requiere un plan Pro o Elite
                             </p>
                         </div>
 
-                        <div className="bg-gray-50 rounded-lg p-4">
-                            <h4 className="font-medium text-gray-900 mb-3">Incluye:</h4>
-                            <ul className="space-y-2 text-sm text-gray-600">
+                        <div className="bg-secondary/50 rounded-lg p-4">
+                            <h4 className="font-medium text-foreground mb-3">Incluye:</h4>
+                            <ul className="space-y-2 text-sm text-muted-foreground">
                                 <li className="flex items-center gap-2">
                                     <svg className="w-5 h-5 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -312,7 +312,7 @@ export function ClinicalCopilot({
                         <div className="flex gap-3">
                             <button
                                 onClick={() => setShowPaywall(false)}
-                                className="flex-1 py-3 px-4 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+                                className="flex-1 py-3 px-4 border border-border text-muted-foreground rounded-lg hover:bg-secondary/50 transition-colors font-medium"
                             >
                                 Ahora no
                             </button>
@@ -330,18 +330,18 @@ export function ClinicalCopilot({
     }
 
     return (
-        <div className="fixed bottom-4 right-4 w-96 bg-white rounded-xl shadow-2xl overflow-hidden z-50 border border-gray-200">
+        <div className="fixed bottom-4 right-4 w-96 bg-card rounded-xl shadow-2xl overflow-hidden z-50 border border-border">
             <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-4 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
                     <span className="font-semibold">Clinical Copilot</span>
-                    <span className="ml-1 px-2 py-0.5 bg-white/20 text-xs font-bold rounded-full">ELITE</span>
+                    <span className="ml-1 px-2 py-0.5 bg-card/20 text-xs font-bold rounded-full">ELITE</span>
                 </div>
                 <button
                     onClick={() => setIsOpen(false)}
-                    className="p-1 hover:bg-blue-700 rounded"
+                    className="p-1 hover:bg-primary rounded"
                 >
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -362,8 +362,8 @@ export function ClinicalCopilot({
                             onClick={() => setActiveTab(tab.id as typeof activeTab)}
                             className={`flex-1 py-2 px-3 text-sm font-medium transition-colors ${
                                 activeTab === tab.id
-                                    ? 'text-blue-600 border-b-2 border-blue-600 bg-blue-50'
-                                    : 'text-gray-500 hover:text-gray-700'
+                                    ? 'text-primary border-b-2 border-primary bg-primary/10'
+                                    : 'text-muted-foreground hover:text-muted-foreground'
                             }`}
                         >
                             {tab.label}
@@ -375,17 +375,17 @@ export function ClinicalCopilot({
             <div className="h-80 overflow-y-auto p-4">
                 {loading ? (
                     <div className="flex items-center justify-center h-full">
-                        <div className="animate-spin w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full" />
+                        <div className="animate-spin w-8 h-8 border-4 border-primary border-t-transparent rounded-full" />
                     </div>
                 ) : (
                     <>
                         {activeTab === 'suggestions' && (
                             <div className="space-y-3">
-                                <div className="bg-gray-50 rounded-lg p-3">
-                                    <h4 className="font-medium text-sm text-gray-700 mb-2">Paciente</h4>
-                                    <p className="text-sm text-gray-600">{patientName}</p>
+                                <div className="bg-secondary/50 rounded-lg p-3">
+                                    <h4 className="font-medium text-sm text-muted-foreground mb-2">Paciente</h4>
+                                    <p className="text-sm text-muted-foreground">{patientName}</p>
                                     {(patientAge || patientGender) && (
-                                        <p className="text-xs text-gray-500">
+                                        <p className="text-xs text-muted-foreground">
                                             {patientAge && `${patientAge} años`}
                                             {patientAge && patientGender && ' • '}
                                             {patientGender}
@@ -394,20 +394,20 @@ export function ClinicalCopilot({
                                 </div>
 
                                 {medicalHistory && (
-                                    <div className="bg-gray-50 rounded-lg p-3">
-                                        <h4 className="font-medium text-sm text-gray-700 mb-2">Antecedentes</h4>
+                                    <div className="bg-secondary/50 rounded-lg p-3">
+                                        <h4 className="font-medium text-sm text-muted-foreground mb-2">Antecedentes</h4>
                                         {medicalHistory.allergies.length > 0 && (
                                             <p className="text-sm text-red-600">
                                                 <span className="font-medium">Alergias:</span> {medicalHistory.allergies.join(', ')}
                                             </p>
                                         )}
                                         {medicalHistory.chronicConditions.length > 0 && (
-                                            <p className="text-sm text-gray-600">
+                                            <p className="text-sm text-muted-foreground">
                                                 <span className="font-medium">Cronicos:</span> {medicalHistory.chronicConditions.join(', ')}
                                             </p>
                                         )}
                                         {medicalHistory.currentMedications.length > 0 && (
-                                            <p className="text-sm text-gray-600">
+                                            <p className="text-sm text-muted-foreground">
                                                 <span className="font-medium">Medicamentos:</span> {medicalHistory.currentMedications.map(m => m.name).join(', ')}
                                             </p>
                                         )}
@@ -415,11 +415,11 @@ export function ClinicalCopilot({
                                 )}
 
                                 {symptoms.length > 0 && (
-                                    <div className="bg-blue-50 rounded-lg p-3">
-                                        <h4 className="font-medium text-sm text-blue-700 mb-2">Sintomas detectados</h4>
+                                    <div className="bg-primary/10 rounded-lg p-3">
+                                        <h4 className="font-medium text-sm text-primary mb-2">Sintomas detectados</h4>
                                         <div className="flex flex-wrap gap-1">
                                             {symptoms.map((s, i) => (
-                                                <span key={i} className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">
+                                                <span key={i} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
                                                     {s}
                                                 </span>
                                             ))}
@@ -429,7 +429,7 @@ export function ClinicalCopilot({
 
                                 {suggestions.filter(s => s.type === 'question').length > 0 && (
                                     <div>
-                                        <h4 className="font-medium text-sm text-gray-700 mb-2">Preguntas sugeridas</h4>
+                                        <h4 className="font-medium text-sm text-muted-foreground mb-2">Preguntas sugeridas</h4>
                                         {suggestions.filter(s => s.type === 'question').map((s, i) => (
                                             <SuggestionCard key={i} suggestion={s} />
                                         ))}
@@ -438,7 +438,7 @@ export function ClinicalCopilot({
 
                                 {suggestions.filter(s => s.type === 'warning').length > 0 && (
                                     <div>
-                                        <h4 className="font-medium text-sm text-gray-700 mb-2">Alertas</h4>
+                                        <h4 className="font-medium text-sm text-muted-foreground mb-2">Alertas</h4>
                                         {suggestions.filter(s => s.type === 'warning').map((s, i) => (
                                             <SuggestionCard key={i} suggestion={s} />
                                         ))}
@@ -451,7 +451,7 @@ export function ClinicalCopilot({
                             <div className="space-y-3">
                                 <button
                                     onClick={generateICDCodes}
-                                    className="w-full py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+                                    className="w-full py-2 px-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary transition-colors text-sm font-medium"
                                 >
                                     Generar diagnosticos e ICD-10
                                 </button>
@@ -470,7 +470,7 @@ export function ClinicalCopilot({
                             <div className="space-y-3">
                                 <button
                                     onClick={generateSummary}
-                                    className="w-full py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+                                    className="w-full py-2 px-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary transition-colors text-sm font-medium"
                                 >
                                     Generar resumen de consulta
                                 </button>
@@ -483,8 +483,8 @@ export function ClinicalCopilot({
 
                         {activeTab === 'prescription' && (
                             <div className="space-y-3">
-                                <div className="text-center py-8 text-gray-500">
-                                    <svg className="w-12 h-12 mx-auto mb-2 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <div className="text-center py-8 text-muted-foreground">
+                                    <svg className="w-12 h-12 mx-auto mb-2 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                     </svg>
                                     <p className="text-sm">La plantilla de receta se generara al finalizar la consulta</p>
@@ -495,7 +495,7 @@ export function ClinicalCopilot({
                 )}
             </div>
 
-            <div className="bg-gray-50 p-3 text-xs text-gray-500 text-center">
+            <div className="bg-secondary/50 p-3 text-xs text-muted-foreground text-center">
                 AI assistance - Always verify clinical decisions
             </div>
         </div>
@@ -527,7 +527,7 @@ function SuggestionCard({ suggestion }: { suggestion: Suggestion }) {
     }
 
     return (
-        <div className={`rounded-lg border p-3 ${suggestion.severity ? severityColors[suggestion.severity] : 'bg-white border-gray-200'}`}>
+        <div className={`rounded-lg border p-3 ${suggestion.severity ? severityColors[suggestion.severity] : 'bg-card border-border'}`}>
             <div className="flex items-start justify-between gap-2">
                 <div className="flex-1">
                     <div className="flex items-center gap-2 mb-1">
@@ -536,13 +536,13 @@ function SuggestionCard({ suggestion }: { suggestion: Suggestion }) {
                                 {suggestion.severity.toUpperCase()}
                             </span>
                         )}
-                        <span className="text-xs font-medium text-gray-500">{suggestion.title}</span>
+                        <span className="text-xs font-medium text-muted-foreground">{suggestion.title}</span>
                     </div>
-                    <p className="text-sm text-gray-700 whitespace-pre-line">{suggestion.content}</p>
+                    <p className="text-sm text-muted-foreground whitespace-pre-line">{suggestion.content}</p>
                 </div>
                 <button
                     onClick={handleCopy}
-                    className="p-1 hover:bg-gray-100 rounded transition-colors"
+                    className="p-1 hover:bg-secondary rounded transition-colors"
                     title="Copiar"
                 >
                     {copied ? (
@@ -550,7 +550,7 @@ function SuggestionCard({ suggestion }: { suggestion: Suggestion }) {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                     ) : (
-                        <svg className="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="w-4 h-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                         </svg>
                     )}

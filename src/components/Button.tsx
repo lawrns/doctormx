@@ -27,7 +27,7 @@ const variantClasses = {
     focus-ring
   `,
   secondary: `
-    bg-white border border-[var(--border-default)] text-[var(--color-text-primary)]
+    bg-card border border-border text-foreground
     hover:border-[var(--border-hover)] hover:bg-[var(--color-neutral-50)]
     active:bg-[var(--color-neutral-100)]
   `,

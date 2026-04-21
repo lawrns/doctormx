@@ -73,7 +73,7 @@ export function ProgressStepper({
               {/* Connector Line (not for last step) */}
               {orientation === 'horizontal' && index < steps.length - 1 && (
                 <div
-                  className="absolute left-[calc(50%+24px)] right-[calc(-50%+12px)] top-6 h-0.5 bg-neutral-200"
+                  className="absolute left-[calc(50%+24px)] right-[calc(-50%+12px)] top-6 h-0.5 bg-muted"
                   aria-hidden="true"
                 >
                   <motion.div
@@ -94,7 +94,7 @@ export function ProgressStepper({
 
               {/* Vertical connector */}
               {orientation === 'vertical' && index < steps.length - 1 && (
-                <div className="absolute left-6 top-12 bottom-[-16px] w-0.5 -translate-x-1/2 bg-neutral-200">
+                <div className="absolute left-6 top-12 bottom-[-16px] w-0.5 -translate-x-1/2 bg-muted">
                   <motion.div
                     className={cn(
                       'h-full w-full origin-top rounded-full',
@@ -140,7 +140,7 @@ export function ProgressStepper({
                     'relative z-10 flex h-12 w-12 items-center justify-center rounded-xl border-2 transition-all duration-300',
                     isCompleted && 'border-primary-500 bg-primary-500 shadow-lg shadow-primary-500/30',
                     isCurrent && 'border-primary-500 bg-primary-50 shadow-md',
-                    isPending && 'border-neutral-300 bg-neutral-50'
+                    isPending && 'border-border bg-secondary/50'
                   )}
                 >
                   {isCompleted ? (
@@ -160,7 +160,7 @@ export function ProgressStepper({
                       className={cn(
                         'text-sm font-semibold',
                         isCurrent && 'text-primary-700',
-                        isPending && 'text-neutral-400'
+                        isPending && 'text-muted-foreground'
                       )}
                     >
                       {index + 1}
@@ -184,13 +184,13 @@ export function ProgressStepper({
                       'text-sm font-semibold transition-colors',
                       isCompleted && 'text-primary-700',
                       isCurrent && 'text-primary-600',
-                      isPending && 'text-neutral-500'
+                      isPending && 'text-muted-foreground'
                     )}
                   >
                     {step.label}
                   </p>
                   {step.description && (
-                    <p className="mt-0.5 text-xs text-neutral-500 max-w-[100px]">
+                    <p className="mt-0.5 text-xs text-muted-foreground max-w-[100px]">
                       {step.description}
                     </p>
                   )}
@@ -204,13 +204,13 @@ export function ProgressStepper({
                       'text-sm font-semibold transition-colors',
                       isCompleted && 'text-primary-700',
                       isCurrent && 'text-primary-600',
-                      isPending && 'text-neutral-500'
+                      isPending && 'text-muted-foreground'
                     )}
                   >
                     {step.label}
                   </p>
                   {step.description && (
-                    <p className="mt-0.5 text-xs text-neutral-500">{step.description}</p>
+                    <p className="mt-0.5 text-xs text-muted-foreground">{step.description}</p>
                   )}
                 </div>
               )}

@@ -169,8 +169,8 @@ export function CompleteIntakeExample() {
                       onClick={() => setFormData({ ...formData, duration: option })}
                       className={`p-4 rounded-xl border-2 transition-all ${
                         formData.duration === option
-                          ? 'border-blue-500 bg-blue-50 text-blue-700'
-                          : 'border-neutral-200 hover:border-neutral-300'
+                          ? 'border-primary bg-primary/10 text-primary'
+                          : 'border-border hover:border-border'
                       }`}
                     >
                       {option}
@@ -192,22 +192,22 @@ export function CompleteIntakeExample() {
               key="complete"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="text-center space-y-6 p-8 bg-white rounded-2xl shadow-lg"
+              className="text-center space-y-6 p-8 bg-card rounded-2xl shadow-lg"
             >
               <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto">
                 <Activity className="w-10 h-10 text-white" />
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                <h2 className="text-3xl font-bold text-foreground mb-2">
                   ¡Información completada!
                 </h2>
-                <p className="text-gray-600">
+                <p className="text-muted-foreground">
                   Tu consulta está lista para ser analizada por los especialistas
                 </p>
               </div>
 
-              <div className="bg-blue-50 rounded-xl p-6 text-left">
-                <h3 className="font-semibold text-gray-900 mb-4">Resumen:</h3>
+              <div className="bg-primary/10 rounded-xl p-6 text-left">
+                <h3 className="font-semibold text-foreground mb-4">Resumen:</h3>
                 <div className="space-y-2 text-sm">
                   <p><strong>Síntoma:</strong> {formData.symptom}</p>
                   <p><strong>Severidad:</strong> {formData.severity}/10</p>
@@ -313,9 +313,9 @@ export function AccessibilityExample() {
           - Screen reader announcements
       */}
 
-      <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-        <h3 className="font-bold text-blue-900 mb-2">Accessibility Features</h3>
-        <ul className="text-sm text-blue-800 space-y-1">
+      <div className="bg-primary/10 border border-primary/20 rounded-xl p-6">
+        <h3 className="font-bold text-primary mb-2">Accessibility Features</h3>
+        <ul className="text-sm text-primary space-y-1">
           <li>✓ Full keyboard navigation (Tab, Enter, Arrow keys)</li>
           <li>✓ ARIA labels and live regions</li>
           <li>✓ Focus-visible indicators</li>

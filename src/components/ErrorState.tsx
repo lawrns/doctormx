@@ -29,7 +29,7 @@ export function ErrorState({
   const errorMessage = error instanceof Error ? error.message : error
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[400px] p-8 text-center bg-white/50 backdrop-blur-sm rounded-3xl border border-neutral-100 shadow-sm">
+    <div className="flex flex-col items-center justify-center min-h-[400px] p-8 text-center bg-card/50 backdrop-blur-sm rounded-3xl border border-border shadow-sm">
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -42,7 +42,7 @@ export function ErrorState({
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.1 }}
-        className="text-2xl font-bold text-neutral-900 mb-3"
+        className="text-2xl font-bold text-foreground mb-3"
       >
         {title}
       </motion.h2>
@@ -51,7 +51,7 @@ export function ErrorState({
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2 }}
-        className="text-neutral-500 max-w-md mx-auto mb-8 leading-relaxed"
+        className="text-muted-foreground max-w-md mx-auto mb-8 leading-relaxed"
       >
         {description}
       </motion.p>
@@ -61,9 +61,9 @@ export function ErrorState({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="mb-8 p-4 bg-neutral-50 rounded-xl border border-neutral-100 w-full max-w-lg"
+          className="mb-8 p-4 bg-secondary/50 rounded-xl border border-border w-full max-w-lg"
         >
-          <p className="text-xs font-mono text-neutral-400 uppercase tracking-wider mb-2">Error Details</p>
+          <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-2">Error Details</p>
           <p className="text-sm font-mono text-rose-600 break-all">{errorMessage}</p>
         </motion.div>
       )}
@@ -90,7 +90,7 @@ export function ErrorState({
 
         {showHome && (
           <Link href="/">
-            <Button variant="outline" className="min-w-[160px] h-12 rounded-xl flex items-center gap-2 border-neutral-200 hover:bg-neutral-50">
+            <Button variant="outline" className="min-w-[160px] h-12 rounded-xl flex items-center gap-2 border-border hover:bg-secondary/50">
               <Home className="w-4 h-4" />
               Ir al inicio
             </Button>

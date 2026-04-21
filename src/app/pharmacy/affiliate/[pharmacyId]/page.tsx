@@ -68,8 +68,8 @@ export default async function PharmacyAffiliatePage({ params, searchParams }: Pa
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white shadow-sm">
+    <div className="min-h-screen bg-secondary/50">
+      <header className="bg-card shadow-sm">
         <div className="max-w-4xl mx-auto px-4 py-6 flex justify-between items-center">
           <Link href="/" className="text-2xl font-bold text-primary-600">
             Doctor.mx
@@ -83,7 +83,7 @@ export default async function PharmacyAffiliatePage({ params, searchParams }: Pa
       <main className="max-w-4xl mx-auto px-4 py-8">
         {referral ? (
           <div className="space-y-6">
-            <div className="bg-white rounded-2xl shadow-card border border-border overflow-hidden">
+            <div className="bg-card rounded-2xl shadow-card border border-border overflow-hidden">
               <div className="bg-primary-50 px-6 py-4 border-b border-primary-100">
                 <h2 className="text-xl font-bold text-primary-900">Tu Receta Médica</h2>
                 <p className="text-sm text-primary-700">Código de referencia: <span className="font-mono font-bold">{referral.referral_code}</span></p>
@@ -132,7 +132,7 @@ export default async function PharmacyAffiliatePage({ params, searchParams }: Pa
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-card border border-border p-6">
+            <div className="bg-card rounded-2xl shadow-card border border-border p-6">
               <div className="flex items-start gap-4">
                 <div className="w-16 h-16 bg-secondary-100 rounded-xl flex items-center justify-center overflow-hidden">
                   {pharmacy.logo_url ? (
@@ -200,8 +200,8 @@ export default async function PharmacyAffiliatePage({ params, searchParams }: Pa
                     href={`tel:${pharmacy.phone}`}
                     className="flex items-center gap-3 p-4 border border-border rounded-xl hover:bg-secondary-50 transition-colors"
                   >
-                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                      <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
                     </div>
@@ -247,7 +247,7 @@ export default async function PharmacyAffiliatePage({ params, searchParams }: Pa
             </div>
           </div>
         ) : (
-          <div className="bg-white rounded-2xl shadow-card border border-border p-8 text-center">
+          <div className="bg-card rounded-2xl shadow-card border border-border p-8 text-center">
             <div className="w-20 h-20 bg-secondary-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
               <svg className="w-10 h-10 text-secondary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
@@ -268,7 +268,7 @@ export default async function PharmacyAffiliatePage({ params, searchParams }: Pa
         </div>
       </main>
 
-      <footer className="bg-white border-t border-border mt-12">
+      <footer className="bg-card border-t border-border mt-12">
         <div className="max-w-4xl mx-auto px-4 py-6 text-center text-sm text-ink-muted">
           <p>© {new Date().getFullYear()} Doctor.mx - Tu salud, simplificada</p>
         </div>

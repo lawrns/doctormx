@@ -28,8 +28,8 @@ const urgencyColors = {
   emergency: 'bg-red-50 border-red-300 text-red-900',
   urgent: 'bg-orange-50 border-orange-300 text-orange-900',
   moderate: 'bg-yellow-50 border-yellow-300 text-yellow-900',
-  routine: 'bg-blue-50 border-blue-300 text-blue-900',
-  'self-care': 'bg-green-50 border-green-300 text-green-900',
+  routine: 'bg-primary/10 border-primary/30 text-primary',
+  'self-care': 'bg-primary/5 border-green-300 text-green-900',
 };
 
 const urgencyLabels = {
@@ -86,7 +86,7 @@ export function TreatmentPlanDisplay({
         animate={{ opacity: 1, y: 0 }}
         className="text-center"
       >
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">
+        <h2 className="text-2xl font-bold text-foreground mb-2">
           Plan de Tratamiento Personalizado
         </h2>
         {plan.referralUrgency && (
@@ -115,15 +115,15 @@ export function TreatmentPlanDisplay({
                 <div className="p-2 bg-green-500 rounded-lg">
                   <Leaf className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="font-bold text-lg text-gray-900">
+                <h3 className="font-bold text-lg text-foreground">
                   Remedios Naturales & Autocuidado
                 </h3>
               </div>
               <ul className="space-y-3">
                 {plan.selfCareInstructions.map((instruction, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <Heart className="w-4 h-4 text-green-600 mt-1 flex-shrink-0" />
-                    <span className="text-sm text-gray-700 leading-relaxed">
+                    <Heart className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                    <span className="text-sm text-muted-foreground leading-relaxed">
                       {instruction}
                     </span>
                   </li>
@@ -140,20 +140,20 @@ export function TreatmentPlanDisplay({
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <Card className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200">
+            <Card className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-primary/20">
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-blue-500 rounded-lg">
+                <div className="p-2 bg-primary rounded-lg">
                   <CheckCircle2 className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="font-bold text-lg text-gray-900">
+                <h3 className="font-bold text-lg text-foreground">
                   Recomendaciones Médicas
                 </h3>
               </div>
               <ul className="space-y-3">
                 {plan.recommendations.map((rec, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-4 h-4 text-blue-600 mt-1 flex-shrink-0" />
-                    <span className="text-sm text-gray-700 leading-relaxed">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                    <span className="text-sm text-muted-foreground leading-relaxed">
                       {rec}
                     </span>
                   </li>
@@ -177,10 +177,10 @@ export function TreatmentPlanDisplay({
                 <Pill className="w-5 h-5 text-white" />
               </div>
               <div className="flex-1">
-                <h3 className="font-bold text-lg text-gray-900">
+                <h3 className="font-bold text-lg text-foreground">
                   Medicamentos Sugeridos (OTC)
                 </h3>
-                <p className="text-xs text-gray-600 mt-1">
+                <p className="text-xs text-muted-foreground mt-1">
                   Disponibles sin receta - Consulta al farmacéutico
                 </p>
               </div>
@@ -192,13 +192,13 @@ export function TreatmentPlanDisplay({
                 return (
                   <div
                     key={i}
-                    className="bg-white rounded-lg p-4 border border-purple-200"
+                    className="bg-card rounded-lg p-4 border border-purple-200"
                   >
                     <div className="flex items-start justify-between mb-2">
                       <div>
-                        <h4 className="font-semibold text-gray-900">{med.name}</h4>
+                        <h4 className="font-semibold text-foreground">{med.name}</h4>
                         {med.genericName && (
-                          <p className="text-xs text-gray-500">
+                          <p className="text-xs text-muted-foreground">
                             Genérico: {med.genericName}
                           </p>
                         )}
@@ -207,24 +207,24 @@ export function TreatmentPlanDisplay({
                     </div>
                     <div className="grid grid-cols-2 gap-2 text-sm">
                       <div>
-                        <span className="font-medium text-gray-700">Dosis:</span>{' '}
-                        <span className="text-gray-600">{med.dosage}</span>
+                        <span className="font-medium text-muted-foreground">Dosis:</span>{' '}
+                        <span className="text-muted-foreground">{med.dosage}</span>
                       </div>
                       <div>
-                        <span className="font-medium text-gray-700">
+                        <span className="font-medium text-muted-foreground">
                           Frecuencia:
                         </span>{' '}
-                        <span className="text-gray-600">{med.frequency}</span>
+                        <span className="text-muted-foreground">{med.frequency}</span>
                       </div>
                       <div>
-                        <span className="font-medium text-gray-700">
+                        <span className="font-medium text-muted-foreground">
                           Duración:
                         </span>{' '}
-                        <span className="text-gray-600">{med.duration}</span>
+                        <span className="text-muted-foreground">{med.duration}</span>
                       </div>
                       <div>
-                        <span className="font-medium text-gray-700">Vía:</span>{' '}
-                        <span className="text-gray-600">
+                        <span className="font-medium text-muted-foreground">Vía:</span>{' '}
+                        <span className="text-muted-foreground">
                           {med.route === 'oral'
                             ? 'Oral'
                             : med.route === 'topical'
@@ -262,14 +262,14 @@ export function TreatmentPlanDisplay({
                               key={product.id} 
                               className={`flex items-center justify-between p-2 rounded border ${
                                 selectedPharmacy[med.name] === product.id 
-                                  ? 'border-green-500 bg-green-50' 
-                                  : 'border-gray-200'
+                                  ? 'border-green-500 bg-primary/5' 
+                                  : 'border-border'
                               }`}
                             >
                               <div>
                                 <p className="text-sm font-medium">{product.name}</p>
-                                <p className="text-xs text-gray-600">{product.pharmacy}</p>
-                                <p className="text-xs text-gray-500 flex items-center gap-1">
+                                <p className="text-xs text-muted-foreground">{product.pharmacy}</p>
+                                <p className="text-xs text-muted-foreground flex items-center gap-1">
                                   <Truck className="w-3 h-3" /> Entrega: {product.delivery}
                                 </p>
                               </div>
@@ -291,14 +291,14 @@ export function TreatmentPlanDisplay({
                         </div>
                         
                         {showOrderConfirmation === availableProducts[0].id && (
-                          <div className="mt-2 p-2 bg-green-100 text-green-800 rounded text-xs text-center">
+                          <div className="mt-2 p-2 bg-primary/10 text-green-800 rounded text-xs text-center">
                             ¡Producto ordenado exitosamente! Pronto recibirás instrucciones de entrega.
                           </div>
                         )}
                       </div>
                     ) : (
                       <div className="mt-4 pt-4 border-t border-purple-100">
-                        <p className="text-xs text-gray-500 italic">
+                        <p className="text-xs text-muted-foreground italic">
                           Este medicamento puede estar disponible en farmacias locales. 
                           Consulta con tu farmacéutico más cercano.
                         </p>
@@ -308,7 +308,7 @@ export function TreatmentPlanDisplay({
                 );
               })}
             </div>
-            <div className="mt-4 p-3 bg-purple-100 rounded-lg">
+            <div className="mt-4 p-3 bg-secondary rounded-lg">
               <p className="text-xs text-purple-900">
                 <strong>Nota importante:</strong> Estos medicamentos son solo
                 sugerencias orientativas. Consulta con tu farmacéutico o médico
@@ -333,19 +333,19 @@ export function TreatmentPlanDisplay({
                 <Stethoscope className="w-5 h-5 text-white" />
               </div>
               <div className="flex-1">
-                <h3 className="font-bold text-lg text-gray-900">
+                <h3 className="font-bold text-lg text-foreground">
                   Consulta con Especialista Recomendada
                 </h3>
-                <p className="text-sm text-gray-600 mt-1">
+                <p className="text-sm text-muted-foreground mt-1">
                   Basado en tu evaluación, te recomendamos consultar con:
                 </p>
               </div>
             </div>
-            <div className="bg-white rounded-lg p-4 border-2 border-indigo-200">
+            <div className="bg-card rounded-lg p-4 border-2 border-indigo-200">
               <p className="text-lg font-semibold text-indigo-900 mb-2">
                 {getSpecialtyLabel(plan.referralSpecialty)}
               </p>
-              <p className="text-sm text-gray-700">
+              <p className="text-sm text-muted-foreground">
                 {plan.followUpTiming}
               </p>
             </div>
@@ -365,7 +365,7 @@ export function TreatmentPlanDisplay({
               <div className="p-2 bg-red-500 rounded-lg">
                 <AlertTriangle className="w-5 h-5 text-white" />
               </div>
-              <h3 className="font-bold text-lg text-gray-900">
+              <h3 className="font-bold text-lg text-foreground">
                 Signos de Alarma - Busca atención inmediata si:
               </h3>
             </div>
@@ -373,10 +373,10 @@ export function TreatmentPlanDisplay({
               {plan.returnPrecautions.map((precaution, i) => (
                 <li
                   key={i}
-                  className="flex items-start gap-3 p-3 bg-white rounded-lg border border-red-200"
+                  className="flex items-start gap-3 p-3 bg-card rounded-lg border border-red-200"
                 >
                   <AlertTriangle className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm font-medium text-gray-900">
+                  <span className="text-sm font-medium text-foreground">
                     {precaution}
                   </span>
                 </li>
@@ -398,7 +398,7 @@ export function TreatmentPlanDisplay({
               <div className="p-2 bg-cyan-500 rounded-lg">
                 <BookOpen className="w-5 h-5 text-white" />
               </div>
-              <h3 className="font-bold text-lg text-gray-900">
+              <h3 className="font-bold text-lg text-foreground">
                 Información Educativa
               </h3>
             </div>
@@ -406,9 +406,9 @@ export function TreatmentPlanDisplay({
               {plan.patientEducation.map((info, i) => (
                 <div
                   key={i}
-                  className="p-3 bg-white rounded-lg border border-cyan-200"
+                  className="p-3 bg-card rounded-lg border border-cyan-200"
                 >
-                  <p className="text-sm text-gray-700 leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     {info}
                   </p>
                 </div>

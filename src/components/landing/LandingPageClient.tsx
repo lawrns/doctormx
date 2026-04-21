@@ -95,7 +95,7 @@ export function LandingPageClient() {
                     </svg>
                   </button>
                 </SheetTrigger>
-                <SheetContent side="right" className="w-[88%] max-w-sm border-l border-[#d4d9e3] bg-white">
+                <SheetContent side="right" className="w-[88%] max-w-sm border-l border-[#d4d9e3] bg-card">
                   <SheetHeader className="border-b border-[#eef0f5] pb-4">
                     <SheetTitle className="font-display text-[#0a1533]">Explora Doctor.mx</SheetTitle>
                     <SheetDescription className="text-[#5c6783]">Navega por las principales rutas públicas desde cualquier pantalla.</SheetDescription>

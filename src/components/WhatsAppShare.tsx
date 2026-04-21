@@ -101,18 +101,18 @@ export function WhatsAppShareCard({
     <div className="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-2xl p-6">
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h3 className="font-bold text-gray-900 text-lg">
+          <h3 className="font-bold text-foreground text-lg">
             ¿Conoces a alguien que necesite esto?
           </h3>
-          <p className="text-sm text-gray-600 mt-1">
+          <p className="text-sm text-muted-foreground mt-1">
             Comparte tu resultado con familiares o amigos en WhatsApp
           </p>
         </div>
-        <Share2 className="w-8 h-8 text-green-500" />
+        <Share2 className="w-8 h-8 text-vital" />
       </div>
 
-      <div className="bg-white rounded-xl p-4 mb-4 border border-green-100">
-        <p className="text-sm text-gray-700 leading-relaxed">
+      <div className="bg-card rounded-xl p-4 mb-4 border border-green-100">
+        <p className="text-sm text-muted-foreground leading-relaxed">
           {defaultText}
         </p>
       </div>
@@ -130,7 +130,7 @@ export function WhatsAppShareCard({
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mt-3 text-center text-sm text-green-600 font-medium"
+          className="mt-3 text-center text-sm text-primary font-medium"
         >
           ¡Gracias por compartir! Ayudas a más personas a acceder a salud gratis.
         </motion.div>

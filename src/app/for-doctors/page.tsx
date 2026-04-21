@@ -123,7 +123,7 @@ export default function ForDoctorsPage() {
                 <Link href="/auth/register?role=doctor">
                   <Button
                     size="lg"
-                    className="h-14 px-8 bg-ink hover:bg-cobalt-800 text-white rounded-xl text-[15px] font-medium tracking-tight transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_rgba(15,37,95,0.35)]"
+                    className="h-14 px-8 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl text-[15px] font-medium tracking-tight transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_rgba(15,37,95,0.35)]"
                   >
                     Registrarme gratis
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -226,8 +226,8 @@ export default function ForDoctorsPage() {
             {benefits.map((b, i) => (
               <motion.div key={i} variants={item}>
                 <SignatureCard>
-                  <div className="w-10 h-10 rounded-xl bg-cobalt-800 flex items-center justify-center mb-5">
-                    <b.icon className="w-5 h-5 text-white" />
+                  <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center mb-5">
+                    <b.icon className="w-5 h-5 text-primary-foreground" />
                   </div>
                   <h3 className="font-display text-lg font-semibold text-foreground mb-2">
                     {b.title}
@@ -273,7 +273,7 @@ export default function ForDoctorsPage() {
                     &ldquo;{t.content}&rdquo;
                   </p>
                   <div className="flex items-center gap-4 pt-6 border-t border-border">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cobalt-300 to-cobalt-800 flex items-center justify-center text-white font-display text-sm font-light">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/70 to-primary flex items-center justify-center text-primary-foreground font-display text-sm font-light">
                       {t.name
                         .split(' ')
                         .map((n) => n[0])
@@ -298,27 +298,27 @@ export default function ForDoctorsPage() {
       </EditorialSection>
 
       {/* ─── CTA ─── */}
-      <section className="py-20 md:py-28 bg-cobalt-800 relative overflow-hidden">
+      <section className="py-20 md:py-28 bg-ink relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(58,102,245,0.25),transparent_50%)]" />
         <div className="max-w-[1100px] mx-auto px-6 md:px-12 relative z-10 text-center">
-          <Eyebrow className="text-white/60 mb-6">Empezar es gratis</Eyebrow>
-          <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
+          <Eyebrow className="text-foreground/60 mb-6">Empezar es gratis</Eyebrow>
+          <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
             Tu práctica,{' '}
             <em className="font-serif font-normal">sin límites</em>
           </h2>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto mb-10">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
             Crea tu perfil gratuito y comienza a recibir pacientes esta semana.
           </p>
           <Link href="/auth/register?role=doctor">
             <Button
               size="lg"
-              className="h-14 px-10 bg-white text-cobalt-900 hover:bg-white/90 rounded-xl text-[15px] font-medium tracking-tight transition-all duration-200 hover:-translate-y-0.5"
+              className="h-14 px-10 bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl text-[15px] font-medium tracking-tight transition-all duration-200 hover:-translate-y-0.5"
             >
               Registrarme gratis
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>
-          <p className="text-white/50 text-sm mt-6 font-mono uppercase tracking-wider">
+          <p className="text-muted-foreground text-sm mt-6 font-mono uppercase tracking-wider">
             Registro gratuito · Perfil listo en 10 minutos · Sin cuota mensual
             obligatoria
           </p>

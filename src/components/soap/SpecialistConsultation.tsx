@@ -25,7 +25,7 @@ const specialtyLabels: Record<string, string> = {
 };
 
 const specialtyColors: Record<string, string> = {
-  general: 'bg-blue-500',
+  general: 'bg-primary',
   cardiology: 'bg-red-500',
   dermatology: 'bg-purple-500',
   neurology: 'bg-indigo-500',
@@ -174,7 +174,7 @@ function SpecialistCard({ agent }: SpecialistCardProps) {
             <AvatarFallback
               className={cn(
                 'text-white text-base font-semibold',
-                specialtyColors[agent.specialty] || 'bg-gray-500'
+                specialtyColors[agent.specialty] || 'bg-muted-foreground'
               )}
             >
               {getSpecialistInitials(agent.name)}
@@ -244,13 +244,13 @@ function SpecialistCard({ agent }: SpecialistCardProps) {
             <div className="space-y-2">
               <p className="text-sm text-muted-foreground leading-relaxed">
                 {displayedText} {needsTruncation && !isExpanded && (
-                  <span className="text-xs text-gray-500">({totalWordCount} palabras)</span>
+                  <span className="text-xs text-muted-foreground">({totalWordCount} palabras)</span>
                 )}
               </p>
               {needsTruncation && (
                 <button
                   onClick={() => setIsExpanded(!isExpanded)}
-                  className="text-sm font-medium text-blue-600 hover:text-blue-700 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded px-1"
+                  className="text-sm font-medium text-primary hover:text-primary hover:underline focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded px-1"
                   aria-expanded={isExpanded}
                   aria-label={isExpanded ? 'Mostrar menos' : 'Mostrar más'}
                 >
@@ -270,7 +270,7 @@ function SpecialistCard({ agent }: SpecialistCardProps) {
             transition={{ duration: 0.3 }}
           >
             <motion.div
-              className="h-2 w-2 rounded-full bg-blue-500"
+              className="h-2 w-2 rounded-full bg-primary"
               animate={{
                 scale: shouldReduceMotion ? 1 : [1, 1.2, 1],
                 opacity: shouldReduceMotion ? 0.7 : [0.7, 1, 0.7],

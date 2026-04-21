@@ -81,7 +81,7 @@ export function SupportMessageList({ messages }: SupportMessageListProps) {
                   ) : null}
                   <div
                     className={isAssistant
-                      ? 'w-fit max-w-full break-words rounded-[1.35rem] rounded-bl-md border border-slate-200/80 bg-white px-4 py-3 text-sm leading-[1.55] text-slate-800 shadow-[0_8px_20px_rgba(15,23,42,0.06)]'
+                      ? 'w-fit max-w-full break-words rounded-[1.35rem] rounded-bl-md border border-border bg-card px-4 py-3 text-sm leading-[1.55] text-foreground shadow-[0_8px_20px_rgba(15,23,42,0.06)]'
                       : 'ml-auto w-fit min-w-[3rem] max-w-full break-words rounded-[1.35rem] rounded-br-md bg-[linear-gradient(135deg,hsl(var(--brand-ocean)),hsl(var(--brand-sky)))] px-4 py-3 text-sm leading-[1.55] text-white shadow-[0_8px_20px_rgba(14,165,233,0.24)]'}
                   >
                     {shouldStream ? <StreamingText content={message.content} active={shouldStream} /> : <p className="whitespace-pre-wrap">{message.content}</p>}

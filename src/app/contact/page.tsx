@@ -89,8 +89,8 @@ export default function ContactPage() {
           <div className="grid md:grid-cols-3 gap-6">
             <SignatureCard>
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-cobalt-800 flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-5 h-5 text-white" />
+                <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-5 h-5 text-primary-foreground" />
                 </div>
                 <div>
                   <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground block mb-1">
@@ -127,8 +127,8 @@ export default function ContactPage() {
 
             <SignatureCard>
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-cobalt-800 flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-5 h-5 text-white" />
+                <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-5 h-5 text-primary-foreground" />
                 </div>
                 <div>
                   <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground block mb-1">
@@ -193,7 +193,7 @@ export default function ContactPage() {
                   </span>
                   <p className="text-foreground">
                     Si representas a una clínica, aseguradora, o institución de salud, escríbenos a{' '}
-                    <a href="mailto:alianzas@doctor.mx" className="text-cobalt-700 hover:underline">
+                    <a href="mailto:alianzas@doctor.mx" className="text-primary hover:underline">
                       alianzas@doctor.mx
                     </a>
                   </p>
@@ -313,7 +313,7 @@ export default function ContactPage() {
                       type="submit"
                       size="lg"
                       disabled={isLoading}
-                      className="w-full h-14 bg-ink hover:bg-cobalt-800 text-white rounded-xl text-[15px] font-medium tracking-tight transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_rgba(15,37,95,0.35)]"
+                      className="w-full h-14 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl text-[15px] font-medium tracking-tight transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_rgba(15,37,95,0.35)]"
                     >
                       {isLoading ? (
                         <span className="flex items-center gap-2">

@@ -5,7 +5,7 @@ import { Search } from 'lucide-react'
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-neutral-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-secondary/50 flex items-center justify-center p-4">
       <ErrorState
         icon={Search}
         title="Página no encontrada"

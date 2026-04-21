@@ -135,7 +135,7 @@ function AnimatedMessage({ message, index }: { message: Message; index: number }
           className={`rounded-2xl px-4 py-3 shadow-sm ${
             isPatient
               ? 'bg-[#1f48de] text-white'
-              : 'border border-[#d4d9e3] bg-white text-[#0a1533]'
+              : 'border border-[#d4d9e3] bg-card text-[#0a1533]'
           }`}
         >
           <p className="whitespace-pre-line text-sm leading-relaxed">
@@ -281,7 +281,7 @@ export default function DrSimeonShowcase() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Card className="relative mx-auto max-w-md overflow-hidden border-[#d4d9e3] bg-white shadow-[0_20px_40px_-12px_rgba(15,37,95,0.15)]">
+            <Card className="relative mx-auto max-w-md overflow-hidden border-[#d4d9e3] bg-card shadow-[0_20px_40px_-12px_rgba(15,37,95,0.15)]">
               {/* Chat Header — Ink background */}
               <div className="flex items-center gap-3 bg-[#0a1533] px-6 py-4">
                 <DrSimeonAvatar />
@@ -294,7 +294,7 @@ export default function DrSimeonShowcase() {
                 </div>
                 <button
                   onClick={resetConversation}
-                  className="rounded-full p-2 text-[#f7f8fb]/50 transition-colors hover:bg-white/10 hover:text-[#f7f8fb]"
+                  className="rounded-full p-2 text-[#f7f8fb]/50 transition-colors hover:bg-card/10 hover:text-[#f7f8fb]"
                   aria-label="Reiniciar conversación"
                 >
                   <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -312,7 +312,7 @@ export default function DrSimeonShowcase() {
                   {isShowingTyping && (
                     <div className="flex items-end gap-2">
                       <DrSimeonAvatar />
-                      <div className="rounded-2xl border border-[#d4d9e3] bg-white shadow-sm">
+                      <div className="rounded-2xl border border-[#d4d9e3] bg-card shadow-sm">
                         <TypingIndicator />
                       </div>
                     </div>
@@ -322,7 +322,7 @@ export default function DrSimeonShowcase() {
 
               {/* Chat Input (Disabled - Demo Only) */}
               <div className="border-t border-[#d4d9e3] bg-[#f7f8fb] p-4">
-                <div className="flex items-center gap-2 rounded-full border border-[#d4d9e3] bg-white px-4 py-2 opacity-60">
+                <div className="flex items-center gap-2 rounded-full border border-[#d4d9e3] bg-card px-4 py-2 opacity-60">
                   <input
                     type="text"
                     placeholder="Escribe tu mensaje..."

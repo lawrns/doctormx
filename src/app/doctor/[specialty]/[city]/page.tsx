@@ -87,11 +87,11 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
   const doctors = result.doctors
   
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary/50">
       {/* Hero Section */}
-      <div className="bg-blue-600 py-12 text-white">
+      <div className="bg-primary py-12 text-white">
         <div className="mx-auto max-w-6xl px-4">
-          <nav className="mb-4 text-sm text-blue-200">
+          <nav className="mb-4 text-sm text-white/70">
             <Link href="/doctors" className="hover:text-white">Directorio</Link>
             {' / '}
             <Link href={`/doctor/${specialty}`} className="hover:text-white">
@@ -103,7 +103,7 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
           <h1 className="text-3xl font-bold md:text-4xl">
             {capitalizeWords(specialtyName)} en {capitalizeWords(cityName)}
           </h1>
-          <p className="mt-2 text-lg text-blue-100">
+          <p className="mt-2 text-lg text-white/90">
             {result.total} especialistas verificados disponibles
           </p>
         </div>
@@ -113,10 +113,10 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
       <div className="mx-auto max-w-6xl px-4 py-8">
         {doctors.length === 0 ? (
           <Card className="p-8 text-center">
-            <h2 className="text-lg font-semibold text-gray-900">
+            <h2 className="text-lg font-semibold text-foreground">
               No encontramos especialistas en esta área
             </h2>
-            <p className="mt-2 text-gray-600">
+            <p className="mt-2 text-muted-foreground">
               Intenta buscar en ciudades cercanas o amplía tu búsqueda.
             </p>
             <Link href="/doctors">
@@ -128,14 +128,14 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
             {doctors.map((doctor) => (
               <Card key={doctor.id} hover className="flex flex-col">
                 <div className="flex items-start gap-4">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 text-xl font-bold text-blue-600">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-xl font-bold text-primary">
                     {doctor.full_name.charAt(0)}
                   </div>
                   <div className="flex-1">
-                    <h2 className="font-semibold text-gray-900">
+                    <h2 className="font-semibold text-foreground">
                       Dr. {doctor.full_name}
                     </h2>
-                    <p className="text-sm text-gray-600">{doctor.specialty}</p>
+                    <p className="text-sm text-muted-foreground">{doctor.specialty}</p>
                     <div className="mt-1 flex items-center gap-2">
                       {doctor.conacem_verified && (
                         <Badge variant="success">Verificado</Badge>
@@ -144,7 +144,7 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
                   </div>
                 </div>
                 <div className="mt-4 flex items-center justify-between border-t pt-4">
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-muted-foreground">
                     {doctor.city}, {doctor.state}
                   </div>
                   <Link href={`/doctors/${doctor.id}`}>
@@ -164,7 +164,7 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
                 key={i}
                 href={`/doctor/${specialty}/${city}?page=${i + 1}`}
                 className={`rounded-lg px-4 py-2 ${
-                  i === 0 ? 'bg-blue-600 text-white' : 'bg-white text-gray-700 hover:bg-gray-100'
+                  i === 0 ? 'bg-primary text-primary-foreground' : 'bg-card text-muted-foreground hover:bg-secondary'
                 }`}
               >
                 {i + 1}
@@ -174,17 +174,17 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
         )}
         
         {/* SEO Content */}
-        <div className="mt-12 rounded-lg bg-white p-6 shadow-sm">
-          <h2 className="text-xl font-semibold text-gray-900">
+        <div className="mt-12 rounded-lg bg-card p-6 shadow-sm">
+          <h2 className="text-xl font-semibold text-foreground">
             Especialistas en {capitalizeWords(specialtyName)} en {capitalizeWords(cityName)}
           </h2>
-          <div className="mt-4 text-gray-600">
+          <div className="mt-4 text-muted-foreground">
             <p>
               Encuentra a los mejores especialistas en {specialtyName.toLowerCase()} en {cityName}. 
               En Doctor.mx conectamos pacientes con médicos verificados que ofrecen 
               consultas presenciales y videoconsultas.
             </p>
-            <h3 className="mt-4 font-medium text-gray-900">
+            <h3 className="mt-4 font-medium text-foreground">
               ¿Por qué elegir Doctor.mx?
             </h3>
             <ul className="mt-2 list-inside list-disc">
@@ -199,19 +199,19 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
         
         {/* Related Searches */}
         <div className="mt-8">
-          <h3 className="mb-4 text-lg font-semibold text-gray-900">
+          <h3 className="mb-4 text-lg font-semibold text-foreground">
             Búsquedas relacionadas
           </h3>
           <div className="flex flex-wrap gap-2">
             <Link 
               href={`/doctor/${specialty}`}
-              className="rounded-full bg-gray-100 px-4 py-2 text-sm text-gray-700 hover:bg-gray-200"
+              className="rounded-full bg-secondary px-4 py-2 text-sm text-muted-foreground hover:bg-muted"
             >
               {capitalizeWords(specialtyName)} en México
             </Link>
             <Link 
               href="/segunda-opinion"
-              className="rounded-full bg-gray-100 px-4 py-2 text-sm text-gray-700 hover:bg-gray-200"
+              className="rounded-full bg-secondary px-4 py-2 text-sm text-muted-foreground hover:bg-muted"
             >
               Segunda opinión médica
             </Link>

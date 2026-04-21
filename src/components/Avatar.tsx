@@ -29,7 +29,7 @@ const statusSizeClasses = {
 
 const statusColors = {
   online: 'bg-green-500',
-  offline: 'bg-gray-400',
+  offline: 'bg-muted-foreground',
   busy: 'bg-red-500',
 }
 
@@ -43,7 +43,7 @@ function getInitials(name: string): string {
 
 function getColorFromName(name: string): string {
   const colors = [
-    'bg-blue-500',
+    'bg-primary',
     'bg-green-500',
     'bg-yellow-500',
     'bg-purple-500',
@@ -129,7 +129,7 @@ export function AvatarGroup({
       ))}
       {remaining > 0 && (
         <div
-          className={`${sizeClasses[size]} bg-gray-200 rounded-full flex items-center justify-center text-gray-600 font-medium ring-2 ring-white`}
+          className={`${sizeClasses[size]} bg-muted rounded-full flex items-center justify-center text-muted-foreground font-medium ring-2 ring-white`}
         >
           +{remaining}
         </div>

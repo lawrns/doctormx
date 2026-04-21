@@ -35,7 +35,7 @@ export function QuestionCard({
       }}
       className="w-full"
     >
-      <Card className={cn('p-6 md:p-8 bg-white/95 backdrop-blur-sm border-blue-100 shadow-lg', className)}>
+      <Card className={cn('p-6 md:p-8 bg-card/95 backdrop-blur-sm border-primary/20 shadow-lg', className)}>
         {(step !== undefined || icon) && (
           <div className="flex items-center gap-4 mb-6">
             {icon && (
@@ -55,10 +55,10 @@ export function QuestionCard({
             )}
             {step !== undefined && totalSteps && (
               <div className="flex items-center gap-2">
-                <span className="text-sm font-medium text-blue-600">
+                <span className="text-sm font-medium text-primary">
                   Paso {step} de {totalSteps}
                 </span>
-                <div className="flex-1 h-1 bg-blue-100 rounded-full overflow-hidden max-w-[100px]">
+                <div className="flex-1 h-1 bg-primary/10 rounded-full overflow-hidden max-w-[100px]">
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: `${(step / totalSteps) * 100}%` }}
@@ -89,7 +89,7 @@ export function QuestionTitle({ children, className }: QuestionTitleProps) {
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.1, duration: 0.3 }}
-      className={cn('text-2xl md:text-3xl font-bold text-gray-900 mb-2', className)}
+      className={cn('text-2xl md:text-3xl font-bold text-foreground mb-2', className)}
     >
       {children}
     </motion.h2>
@@ -107,7 +107,7 @@ export function QuestionDescription({ children, className }: QuestionDescription
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.15, duration: 0.3 }}
-      className={cn('text-gray-600 text-base', className)}
+      className={cn('text-muted-foreground text-base', className)}
     >
       {children}
     </motion.p>
@@ -181,8 +181,8 @@ export function QuestionCardNavigation({
           disabled={prevButton.isLoading || isSubmitting}
           className={cn(
             'flex-1 px-6 py-3 rounded-xl font-semibold text-sm',
-            'border-2 border-neutral-300 text-neutral-700',
-            'hover:bg-neutral-50 hover:border-neutral-400',
+            'border-2 border-border text-muted-foreground',
+            'hover:bg-secondary/50 hover:border-border',
             'disabled:opacity-50 disabled:cursor-not-allowed',
             'transition-all duration-200',
             'focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2'
@@ -203,7 +203,7 @@ export function QuestionCardNavigation({
           'disabled:opacity-50 disabled:cursor-not-allowed',
           'shadow-md hover:shadow-lg',
           'transition-all duration-200',
-          'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2',
+          'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
           'disabled:hover:shadow-md'
         )}
       >
@@ -229,16 +229,16 @@ export function QuestionCardInput({ error, label, className, ...props }: Questio
   return (
     <div className="space-y-2">
       {label && (
-        <label className="block text-sm font-medium text-gray-700">
+        <label className="block text-sm font-medium text-muted-foreground">
           {label}
         </label>
       )}
       <input
         className={cn(
           'w-full px-4 py-3 rounded-xl border-2 transition-all duration-200',
-          'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent',
+          'focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent',
           error && 'border-red-300 focus:ring-red-500',
-          !error && 'border-neutral-200',
+          !error && 'border-border',
           'disabled:opacity-50 disabled:cursor-not-allowed',
           className
         )}
