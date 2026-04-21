@@ -108,6 +108,7 @@ const config: Config = {
       boxShadow: {
         'dx-1': '0 1px 3px rgba(15,37,95,.08)',
         'dx-2': '0 4px 14px rgba(15,37,95,.1)',
+        'card': '0 1px 3px rgba(15,37,95,.08)',
       },
       transitionTimingFunction: {
         'dx': 'cubic-bezier(.2,.7,.2,1)',

@@ -92,7 +92,7 @@ export default async function PatientDashboard() {
                 </Badge>
               </div>
               <Link href="/app/appointments">
-                <Button className="h-12 px-6 bg-ink hover:bg-cobalt-800 text-white rounded-xl">
+                <Button className="h-12 px-6 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl">
                   Ver detalles
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -134,11 +134,11 @@ export default async function PatientDashboard() {
             <Link key={item.href} href={item.href}>
               <SignatureCard className="group cursor-pointer h-full">
                 <div className="flex items-center gap-5">
-                  <div className="w-12 h-12 rounded-xl bg-cobalt-800 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
-                    <item.icon className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
+                    <item.icon className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-display text-lg font-semibold text-foreground group-hover:text-cobalt-700 transition-colors">
+                    <h3 className="font-display text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
                       {item.title}
                     </h3>
                     <p className="text-sm text-muted-foreground">{item.desc}</p>
@@ -153,12 +153,12 @@ export default async function PatientDashboard() {
         <Card className="rounded-2xl border border-border shadow-dx-1 overflow-hidden">
           <CardHeader className="px-6 py-5 border-b border-border flex flex-row items-center justify-between">
             <CardTitle className="font-display text-lg font-semibold text-foreground flex items-center gap-2">
-              <Calendar className="w-5 h-5 text-cobalt-700" />
+              <Calendar className="w-5 h-5 text-primary" />
               Consultas Recientes
             </CardTitle>
             <Link
               href="/app/appointments"
-              className="text-sm text-cobalt-700 hover:text-cobalt-800 font-medium"
+              className="text-sm text-primary hover:text-primary/80 font-medium"
             >
               Ver todas
             </Link>
@@ -172,7 +172,7 @@ export default async function PatientDashboard() {
                 </p>
                 <Link
                   href="/doctors"
-                  className="text-cobalt-700 hover:text-cobalt-800 font-medium"
+                  className="text-primary hover:text-primary/80 font-medium"
                 >
                   Buscar doctor →
                 </Link>
@@ -187,7 +187,7 @@ export default async function PatientDashboard() {
                   >
                     <div className="flex items-center gap-4 min-w-0">
                       <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center flex-shrink-0">
-                        <User className="w-5 h-5 text-cobalt-700" />
+                        <User className="w-5 h-5 text-primary" />
                       </div>
                       <div className="min-w-0">
                         <p className="font-display font-semibold text-foreground truncate">
