@@ -1,24 +1,33 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Hedvig_Letters_Serif } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter, IBM_Plex_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { SupportWidget } from "@/components/SupportWidget";
 import { ToastProvider } from "@/components/Toast";
 import { StructuredData } from "@/components/StructuredData";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-display",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const hedvigLettersSerif = Hedvig_Letters_Serif({
+const ibmPlexMono = IBM_Plex_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+});
+
+const instrumentSerif = Instrument_Serif({
   variable: "--font-serif",
-  weight: ["400"],
   subsets: ["latin"],
+  weight: ["400"],
+  style: ["normal", "italic"],
 });
 
 const SITE_URL = process.env.NEXT_PUBLIC_APP_URL || "https://doctor.mx";
@@ -85,10 +94,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${hedvigLettersSerif.variable}`}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="es" className={`${plusJakarta.variable} ${inter.variable} ${ibmPlexMono.variable} ${instrumentSerif.variable}`}>
+      <body className="antialiased">
         <ToastProvider>
           {children}
           <SupportWidget />

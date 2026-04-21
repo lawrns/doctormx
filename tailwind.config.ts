@@ -9,6 +9,12 @@ const config: Config = {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        display: ['var(--font-display)', 'var(--font-sans)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
+        serif: ['var(--font-serif)', 'Georgia', 'serif'],
+      },
       colors: {
         // CSS Variable-based colors (shadcn/ui pattern)
         background: 'hsl(var(--background))',
@@ -24,17 +30,6 @@ const config: Config = {
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
-          // Blue scale for direct use
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
         },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
@@ -47,17 +42,6 @@ const config: Config = {
         accent: {
           DEFAULT: 'hsl(var(--accent))',
           foreground: 'hsl(var(--accent-foreground))',
-          // Teal scale for accents
-          50: '#f0fdfa',
-          100: '#ccfbf1',
-          200: '#99f6e4',
-          300: '#5eead4',
-          400: '#2dd4bf',
-          500: '#14b8a6',
-          600: '#0d9488',
-          700: '#0f766e',
-          800: '#115e59',
-          900: '#134e4a',
         },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
@@ -83,7 +67,35 @@ const config: Config = {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))',
         },
-        // Semantic text colors
+        // ── Doctor.mx Design System ──
+        cobalt: {
+          50: '#eef4ff',
+          100: '#dbe7ff',
+          200: '#bfd4ff',
+          300: '#93b5ff',
+          400: '#608cff',
+          500: '#3a66f5',
+          600: '#1f48de',
+          700: '#1a3ab8',
+          800: '#0f255f',
+          900: '#081635',
+        },
+        ink: {
+          DEFAULT: '#0a1533',
+          soft: '#1c2647',
+        },
+        vital: {
+          DEFAULT: '#00a878',
+          soft: '#d7f5e6',
+        },
+        coral: {
+          DEFAULT: '#ff5a3d',
+          soft: '#ffe4dc',
+        },
+        amber: {
+          DEFAULT: '#f4a736',
+        },
+        // Semantic text colors (legacy mapped to new)
         'text-primary': 'hsl(var(--text-primary))',
         'text-secondary': 'hsl(var(--text-secondary))',
         'text-muted': 'hsl(var(--text-muted))',
@@ -92,6 +104,13 @@ const config: Config = {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+      },
+      boxShadow: {
+        'dx-1': '0 1px 3px rgba(15,37,95,.08)',
+        'dx-2': '0 4px 14px rgba(15,37,95,.1)',
+      },
+      transitionTimingFunction: {
+        'dx': 'cubic-bezier(.2,.7,.2,1)',
       },
     },
   },

@@ -1,4 +1,6 @@
 export { HeroSection } from './HeroSection'
+export { SocialProofBar } from './SocialProofBar'
+export { HowItWorks } from './HowItWorks'
 export { StatsSection } from './StatsSection'
 export { FeaturesSection } from './FeaturesSection'
 export { TestimonialsSection } from './TestimonialsSection'

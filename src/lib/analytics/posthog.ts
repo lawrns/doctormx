@@ -123,9 +123,21 @@ export async function trackServerEvent(
   return captureToPosthog(input)
 }
 
+function generateUUID(): string {
+  if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
+    return crypto.randomUUID()
+  }
+  // Fallback for environments without crypto.randomUUID
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+    const r = (Math.random() * 16) | 0
+    const v = c === 'x' ? r : (r & 0x3) | 0x8
+    return v.toString(16)
+  })
+}
+
 export function getAnonymousAnalyticsId(): string {
   if (typeof window === 'undefined') {
-    return crypto.randomUUID()
+    return generateUUID()
   }
 
   const existing = window.localStorage.getItem(ANALYTICS_STORAGE_KEY)
@@ -133,7 +145,7 @@ export function getAnonymousAnalyticsId(): string {
     return existing
   }
 
-  const created = crypto.randomUUID()
+  const created = generateUUID()
   window.localStorage.setItem(ANALYTICS_STORAGE_KEY, created)
   return created
 }
