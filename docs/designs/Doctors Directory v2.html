@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ginecólogos en CDMX — Doctor.mx</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --c50:#eef4ff;--c100:#dbe7ff;--c200:#bfd4ff;--c300:#93b5ff;
+      --c500:#3a66f5;--c600:#1f48de;--c700:#1a3ab8;--c800:#0f255f;--c900:#081635;
+      --ink:#0a1533;--ink2:#1c2647;--fg-muted:#5c6783;
+      --vital:#00a878;--vital-soft:#d7f5e6;--coral:#ff5a3d;--amber:#f4a736;
+      --bg:#f4f5f8;--bg-elev:#ffffff;--bg-deep:#eaecf2;
+      --border:#dde1ec;--border-soft:#eaecf2;
+      --font-display:'Plus Jakarta Sans',sans-serif;
+      --font-sans:'Inter',sans-serif;
+      --font-mono:'IBM Plex Mono',monospace;
+      --r-sm:6px;--r-md:10px;--r-lg:16px;
+      --ease:cubic-bezier(.2,.7,.2,1);
+      --sh1:0 1px 3px rgba(15,37,95,.08);
+      --sh2:0 4px 14px rgba(15,37,95,.1);
+    }
+    body.dark{
+      --bg:#0f1419!important;--bg-elev:#1a2135!important;--bg-deep:#191f2e!important;
+      --fg:#f0f1f5!important;--fg-muted:#8a95b0!important;
+      --border:#2a3447!important;--border-soft:#1f2938!important;
+      --ink:#f0f1f5!important;--ink2:#c5cde0!important;
+    }
+    html,body{height:100%;font-family:var(--font-sans);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;font-size:14px}
+
+    /* Scrollbar */
+    ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+
+    /* ── HEADER ── */
+    .header{position:sticky;top:0;z-index:200;background:var(--bg-elev);border-bottom:1px solid var(--border);height:56px;display:flex;align-items:center}
+    .header-inner{max-width:1440px;margin:0 auto;width:100%;padding:0 24px;display:flex;align-items:center;gap:12px}
+    .logo{font-family:var(--font-display);font-size:18px;font-weight:700;color:var(--c800);text-decoration:none;flex-shrink:0}
+    .search-bar{display:flex;align-items:center;background:var(--bg);border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden;flex:1;max-width:560px;transition:border-color .2s,box-shadow .2s}
+    .search-bar:focus-within{border-color:var(--c500);box-shadow:0 0 0 3px rgba(58,102,245,.1)}
+    .search-bar input{flex:1;padding:8px 12px;border:none;background:transparent;color:var(--ink);font-family:var(--font-sans);font-size:13px;outline:none}
+    .search-bar input::placeholder{color:var(--fg-muted)}
+    .search-divider{width:1px;height:20px;background:var(--border);flex-shrink:0}
+    .search-btn{padding:8px 14px;background:var(--c800);color:white;border:none;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--font-sans);transition:background .2s;white-space:nowrap}
+    .search-btn:hover{background:var(--c700)}
+    .header-actions{margin-left:auto;display:flex;align-items:center;gap:8px}
+    .mode-toggle{display:flex;gap:4px}
+    .mode-btn{width:30px;height:30px;border:1px solid var(--border);background:var(--bg);border-radius:var(--r-sm);cursor:pointer;font-size:13px;color:var(--fg-muted);transition:all .2s;display:flex;align-items:center;justify-content:center}
+    .mode-btn.on{background:var(--c800);color:white;border-color:var(--c800)}
+
+    /* ── LAYOUT ── */
+    .page{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:220px 1fr 380px;height:calc(100vh - 56px);overflow:hidden}
+
+    /* ── SIDEBAR ── */
+    .sidebar{border-right:1px solid var(--border);overflow-y:auto;padding:18px 14px;display:flex;flex-direction:column;gap:20px;background:var(--bg-elev)}
+    .filter-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--fg-muted);margin-bottom:8px}
+    .filter-opt{display:flex;align-items:center;gap:8px;padding:5px 6px;cursor:pointer;font-size:13px;color:var(--ink);border-radius:var(--r-sm);transition:all .15s;user-select:none}
+    .filter-opt:hover{color:var(--c700);background:var(--c50)}
+    .filter-opt.active{color:var(--c700);font-weight:600}
+    .filter-opt input{width:14px;height:14px;accent-color:var(--c700);cursor:pointer;flex-shrink:0}
+    .filter-count{margin-left:auto;font-size:11px;color:var(--fg-muted);font-family:var(--font-mono)}
+    .filter-div{height:1px;background:var(--border-soft)}
+
+    /* ── RESULTS PANEL ── */
+    .results-panel{overflow-y:auto;display:flex;flex-direction:column;background:var(--bg)}
+    .results-bar{padding:12px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;background:var(--bg-elev);position:sticky;top:0;z-index:10}
+    .results-heading{font-family:var(--font-display);font-size:17px;font-weight:700;color:var(--ink);letter-spacing:-.01em;flex:1}
+    .results-sub{font-size:11px;color:var(--fg-muted);font-family:var(--font-mono);margin-top:1px}
+    .sort-sel{padding:6px 10px;border:1px solid var(--border);border-radius:var(--r-sm);background:var(--bg-elev);color:var(--ink);font-size:12px;font-family:var(--font-sans);cursor:pointer;outline:none}
+    .cards-list{padding:14px;display:flex;flex-direction:column;gap:10px}
+
+    /* ── DOCTOR CARD ── */
+    .doctor-card{background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--r-lg);display:grid;grid-template-columns:1fr 210px;overflow:hidden;cursor:pointer;transition:all .2s var(--ease)}
+    .doctor-card:hover{border-color:var(--c500);box-shadow:var(--sh2)}
+    .doctor-card.selected{border-color:var(--c700);box-shadow:0 0 0 2px var(--c100)}
+    body.dark .doctor-card.selected{box-shadow:0 0 0 2px rgba(58,102,245,.2)}
+
+    .card-left{padding:13px 15px;border-right:1px solid var(--border-soft);display:flex;flex-direction:column;gap:7px}
+    .card-header{display:flex;align-items:flex-start;gap:10px}
+    .avatar-wrap{position:relative;flex-shrink:0}
+    .avatar{width:56px;height:56px;border-radius:50%;overflow:hidden;background:linear-gradient(135deg,var(--c300),var(--c800));display:flex;align-items:center;justify-content:center}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+    .avatar-initials{color:white;font-family:var(--font-display);font-size:17px;font-weight:700}
+    .badge-dest{position:absolute;top:-5px;left:-5px;background:var(--amber);color:white;font-size:8px;font-weight:700;padding:2px 5px;border-radius:4px;font-family:var(--font-sans);text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;z-index:1}
+    .card-info{flex:1;min-width:0}
+    .doctor-name{font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--ink);letter-spacing:-.01em;display:flex;align-items:center;gap:4px;flex-wrap:wrap;line-height:1.3}
+    .verified-icon{color:var(--c600);flex-shrink:0}
+    .specialty-line{font-size:11px;color:var(--fg-muted);margin-top:2px}
+    .spec-link{color:var(--c600);text-decoration:none;font-weight:500}
+    .spec-link:hover{text-decoration:underline}
+    .rating{display:flex;align-items:center;gap:4px;font-size:11px;margin-top:4px;flex-wrap:wrap}
+    .stars{color:var(--vital);font-size:11px}
+    .rating-num{font-weight:700;color:var(--ink)}
+    .rating-cnt{color:var(--fg-muted)}
+    .ai-badge{display:inline-flex;align-items:center;gap:2px;padding:2px 6px;border-radius:20px;margin-left:3px;background:var(--c50);border:1px solid var(--c100);font-size:10px;font-weight:600;color:var(--c700);font-family:var(--font-mono)}
+    body.dark .ai-badge{background:rgba(58,102,245,.15);border-color:rgba(58,102,245,.3);color:var(--c300)}
+    .features{display:flex;flex-direction:column;gap:3px}
+    .feat{display:flex;align-items:flex-start;gap:6px;font-size:12px;color:var(--ink);line-height:1.4}
+    .feat svg{flex-shrink:0;margin-top:1px;color:var(--c600)}
+    body.dark .feat svg{color:var(--c300)}
+    .feat.muted{color:var(--fg-muted)}
+    .feat.muted svg{color:var(--fg-muted)}
+    .map-link{color:var(--c600);text-decoration:none;font-size:11px}
+    .map-link:hover{text-decoration:underline}
+
+    /* ── CARD RIGHT ── */
+    .card-right{padding:11px 12px;background:var(--bg);display:flex;flex-direction:column;gap:7px}
+    body.dark .card-right{background:var(--bg-deep)}
+    .avail-label{font-size:11px;color:var(--fg-muted);font-weight:500}
+    .date-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px}
+    .date-btn{padding:5px 2px;border:1px solid var(--border);border-radius:var(--r-sm);background:var(--bg-elev);color:var(--ink);font-size:10px;text-align:center;cursor:pointer;transition:all .15s;line-height:1.3;font-family:var(--font-sans)}
+    .date-btn .day{font-weight:600;font-size:10px;display:block}
+    .date-btn .dt{color:var(--fg-muted);font-size:9px;display:block}
+    .date-btn:hover:not(.strike){background:var(--c50);border-color:var(--c300);color:var(--c800)}
+    .date-btn:hover:not(.strike) .dt{color:var(--c600)}
+    .date-btn.active{background:var(--c800);border-color:var(--c800);color:white}
+    .date-btn.active .dt{color:rgba(255,255,255,.75)}
+    .date-btn.strike{text-decoration:line-through;opacity:.4;pointer-events:none}
+
+    /* "Agendar cita" primary CTA — THE MISSING BUTTON */
+    .book-cta{
+      display:flex;align-items:center;justify-content:center;gap:5px;
+      padding:8px;background:var(--c800);color:white;
+      border:none;border-radius:var(--r-sm);
+      font-size:12px;font-weight:700;cursor:pointer;
+      font-family:var(--font-sans);transition:all .15s;
+      letter-spacing:.01em;margin-top:2px;
+    }
+    .book-cta:hover{background:var(--c700);transform:translateY(-1px);box-shadow:0 4px 12px rgba(15,37,95,.2)}
+    .ver-mas{display:flex;align-items:center;justify-content:center;gap:3px;padding:5px;border:1px solid var(--border);border-radius:var(--r-sm);background:transparent;color:var(--fg-muted);font-size:11px;font-weight:500;cursor:pointer;transition:all .15s;font-family:var(--font-sans)}
+    .ver-mas:hover{background:var(--c50);color:var(--c700);border-color:var(--c200)}
+
+    /* Pagination */
+    .pagination{display:flex;justify-content:center;gap:5px;padding:18px 14px}
+    .page-btn{width:30px;height:30px;border:1px solid var(--border);background:var(--bg-elev);color:var(--ink);border-radius:var(--r-sm);cursor:pointer;font-size:12px;font-weight:600;transition:all .2s;display:flex;align-items:center;justify-content:center}
+    .page-btn.active,.page-btn:hover{background:var(--c800);color:white;border-color:var(--c800)}
+
+    /* ── MAP ── */
+    .map-panel{border-left:1px solid var(--border);overflow:hidden;position:relative;background:#e8eef2}
+    body.dark .map-panel{background:#141d2b}
+    .map-svg{width:100%;height:100%;position:absolute;inset:0}
+
+    /* Map pin - FIXED tooltip visibility */
+    .map-pin{position:absolute;width:34px;height:34px;background:var(--c800);border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(15,37,95,.3);cursor:pointer;transition:background .2s,transform .2s;border:2px solid white}
+    .map-pin:hover,.map-pin.selected{background:var(--vital);transform:rotate(-45deg) scale(1.15)}
+    .map-pin-inner{transform:rotate(45deg);font-family:var(--font-mono);font-size:7px;font-weight:700;color:white;display:flex;align-items:center;justify-content:center;white-space:nowrap}
+    /* Tooltip: always rendered, controlled by opacity + pointer-events */
+    .map-pin-tooltip{
+      position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%) rotate(45deg);
+      background:var(--ink2);color:white;font-size:9px;font-weight:600;
+      padding:4px 8px;border-radius:var(--r-sm);white-space:nowrap;
+      opacity:0;pointer-events:none;transition:opacity .15s;
+      font-family:var(--font-sans);box-shadow:var(--sh1);
+    }
+    .map-pin:hover .map-pin-tooltip,.map-pin.selected .map-pin-tooltip{opacity:1}
+
+    .map-overlay{position:absolute;top:14px;left:14px;right:14px;display:flex;justify-content:space-between;align-items:flex-start;z-index:10}
+    .map-search{display:flex;align-items:center;gap:8px;background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--r-md);padding:8px 12px;font-size:12px;color:var(--fg-muted);box-shadow:var(--sh1);flex:1}
+    .map-controls{display:flex;flex-direction:column;gap:3px}
+    .map-ctrl{width:30px;height:30px;background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--r-sm);cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sh1);color:var(--ink);transition:background .15s}
+    .map-ctrl:hover{background:var(--bg-deep)}
+
+    /* ── BOOKING MODAL ── */
+    .modal-overlay{position:fixed;inset:0;background:rgba(10,21,51,.5);backdrop-filter:blur(4px);z-index:500;display:flex;align-items:center;justify-content:center;padding:16px;animation:fadeIn .2s ease}
+    .modal-box{background:var(--bg-elev);border-radius:20px;padding:0;max-width:480px;width:100%;box-shadow:0 24px 60px rgba(10,21,51,.22);overflow:hidden;animation:slideUp .25s var(--ease)}
+    .modal-head{padding:20px 22px 16px;border-bottom:1px solid var(--border-soft);display:flex;align-items:center;justify-content:space-between;gap:12}
+    .modal-body{padding:20px 22px 24px}
+    .modal-close{width:30px;height:30px;border:1px solid var(--border);background:var(--bg);border-radius:var(--r-sm);cursor:pointer;font-size:15px;color:var(--fg-muted);display:flex;align-items:center;justify-content:center;transition:all .15s}
+    .modal-close:hover{background:var(--bg-deep)}
+
+    /* Doctor profile drawer */
+    .profile-overlay{position:fixed;inset:0;background:rgba(10,21,51,.4);backdrop-filter:blur(3px);z-index:400;display:flex;justify-content:flex-end;animation:fadeIn .2s ease}
+    .profile-drawer{width:min(480px,100%);height:100%;background:var(--bg-elev);overflow-y:auto;box-shadow:-8px 0 40px rgba(10,21,51,.16);animation:slideFromRight .25s var(--ease)}
+    .profile-head{padding:20px 20px 16px;border-bottom:1px solid var(--border-soft);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--bg-elev);z-index:10}
+
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    @keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+    @keyframes slideFromRight{from{transform:translateX(100%)}to{transform:translateX(0)}}
+
+    /* Responsive */
+    @media(max-width:1024px){.page{grid-template-columns:180px 1fr;}.map-panel{display:none}}
+    @media(max-width:768px){.page{grid-template-columns:1fr;}.sidebar{display:none}}
+    @media(max-width:640px){.doctor-card{grid-template-columns:1fr}.card-right{border-top:1px solid var(--border-soft);border-right:none}}
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="Homepage.html" class="logo">doctor.mx</a>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Especialidad o doctor..." value="Ginecólogo">
+      <div class="search-divider"></div>
+      <input type="text" placeholder="Ciudad..." value="Ciudad de México" style="max-width:155px">
+      <button class="search-btn" onclick="applySearch()">Buscar</button>
+    </div>
+    <div class="header-actions">
+      <div class="mode-toggle">
+        <button class="mode-btn on" onclick="setMode('light')" title="Modo claro">☀️</button>
+        <button class="mode-btn" onclick="setMode('dark')" title="Modo oscuro">🌙</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 3-column layout -->
+<div class="page">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+
+    <div>
+      <div class="filter-title">Especialidad</div>
+      <label class="filter-opt active" onclick="toggleFilter(this,'spec','ginecologia')"><input type="checkbox" checked>Ginecología<span class="filter-count">128</span></label>
+      <label class="filter-opt" onclick="toggleFilter(this,'spec','obstetricia')"><input type="checkbox">Obstetricia<span class="filter-count">54</span></label>
+      <label class="filter-opt" onclick="toggleFilter(this,'spec','reproduccion')"><input type="checkbox">Reproducción<span class="filter-count">31</span></label>
+      <label class="filter-opt" onclick="toggleFilter(this,'spec','oncologia')"><input type="checkbox">Ginecología oncológica<span class="filter-count">18</span></label>
+    </div>
+
+    <div class="filter-div"></div>
+
+    <div>
+      <div class="filter-title">Disponibilidad</div>
+      <label class="filter-opt" onclick="toggleFilter(this,'avail','hoy')"><input type="checkbox">Hoy<span class="filter-count">24</span></label>
+      <label class="filter-opt" onclick="toggleFilter(this,'avail','semana')"><input type="checkbox">Esta semana<span class="filter-count">67</span></label>
+      <label class="filter-opt" onclick="toggleFilter(this,'avail','tele')"><input type="checkbox">Teleconsulta<span class="filter-count">41</span></label>
+    </div>
+
+    <div class="filter-div"></div>
+
+    <div>
+      <div class="filter-title">Seguro médico</div>
+      <label class="filter-opt" onclick="toggleFilter(this,'ins','axa')"><input type="checkbox">AXA<span class="filter-count">88</span></label>
+      <label class="filter-opt" onclick="toggleFilter(this,'ins','metlife')"><input type="checkbox">Metlife<span class="filter-count">72</span></label>
+      <label class="filter-opt" onclick="toggleFilter(this,'ins','bbva')"><input type="checkbox">BBVA Salud<span class="filter-count">49</span></label>
+      <label class="filter-opt" onclick="toggleFilter(this,'ins','gnp')"><input type="checkbox">GNP<span class="filter-count">61</span></label>
+    </div>
+
+    <div class="filter-div"></div>
+
+    <div>
+      <div class="filter-title">Calificación</div>
+      <label class="filter-opt" onclick="toggleFilter(this,'rat','4.5')"><input type="checkbox">4.5 o más ★<span class="filter-count">43</span></label>
+      <label class="filter-opt" onclick="toggleFilter(this,'rat','4.0')"><input type="checkbox">4.0 o más ★<span class="filter-count">89</span></label>
+    </div>
+
+    <div class="filter-div"></div>
+
+    <div>
+      <div class="filter-title">Precio por consulta</div>
+      <label class="filter-opt" onclick="toggleFilter(this,'price','500')"><input type="checkbox">Hasta $500<span class="filter-count">38</span></label>
+      <label class="filter-opt" onclick="toggleFilter(this,'price','800')"><input type="checkbox">$500–$800<span class="filter-count">52</span></label>
+      <label class="filter-opt" onclick="toggleFilter(this,'price','800+')"><input type="checkbox">Más de $800<span class="filter-count">27</span></label>
+    </div>
+
+  </aside>
+
+  <!-- RESULTS -->
+  <div class="results-panel" id="resultsPanel">
+    <div class="results-bar">
+      <div>
+        <div class="results-heading">Ginecólogos en CDMX</div>
+        <div class="results-sub" id="resultsCount">128 especialistas · ordenados por relevancia IA</div>
+      </div>
+      <select class="sort-sel" onchange="applySortChange(this.value)">
+        <option value="relevance">Relevancia</option>
+        <option value="rating">Calificación ↓</option>
+        <option value="price_asc">Precio ↑</option>
+        <option value="price_desc">Precio ↓</option>
+        <option value="avail">Disponibilidad</option>
+      </select>
+    </div>
+
+    <div class="cards-list" id="cardsList"></div>
+
+    <div class="pagination">
+      <button class="page-btn active">1</button>
+      <button class="page-btn">2</button>
+      <button class="page-btn">3</button>
+      <button class="page-btn">4</button>
+      <button class="page-btn">›</button>
+    </div>
+  </div>
+
+  <!-- MAP -->
+  <div class="map-panel" id="mapPanel">
+    <svg class="map-svg" viewBox="0 0 380 700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+          <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#c8d4e0" stroke-width="0.5" opacity="0.5"/>
+        </pattern>
+      </defs>
+      <rect width="380" height="700" fill="#e8eef2"/>
+      <rect width="380" height="700" fill="url(#grid)"/>
+      <ellipse cx="190" cy="200" rx="55" ry="35" fill="#c8e6c9" opacity="0.7"/>
+      <text x="190" y="204" text-anchor="middle" font-size="8" fill="#4caf50" font-family="Inter">Bosque de Chapultepec</text>
+      <ellipse cx="80" cy="520" rx="30" ry="20" fill="#c8e6c9" opacity="0.6"/>
+      <ellipse cx="310" cy="600" rx="25" ry="18" fill="#c8e6c9" opacity="0.6"/>
+      <ellipse cx="300" cy="480" rx="20" ry="14" fill="#b3d4f5" opacity="0.7"/>
+      <g fill="#dde4ee" stroke="#c5cede" stroke-width="0.5" opacity="0.8">
+        <rect x="10" y="80" width="60" height="40" rx="2"/><rect x="80" y="70" width="45" height="50" rx="2"/>
+        <rect x="135" y="75" width="55" height="45" rx="2"/><rect x="200" y="60" width="70" height="55" rx="2"/>
+        <rect x="280" y="70" width="85" height="40" rx="2"/><rect x="10" y="140" width="75" height="35" rx="2"/>
+        <rect x="95" y="135" width="90" height="40" rx="2"/><rect x="260" y="120" width="105" height="50" rx="2"/>
+        <rect x="10" y="290" width="65" height="45" rx="2"/><rect x="85" y="280" width="80" height="55" rx="2"/>
+        <rect x="230" y="270" width="55" height="45" rx="2"/><rect x="295" y="265" width="75" height="60" rx="2"/>
+        <rect x="10" y="370" width="90" height="50" rx="2"/><rect x="110" y="360" width="70" height="55" rx="2"/>
+        <rect x="190" y="355" width="85" height="60" rx="2"/><rect x="285" y="345" width="80" height="65" rx="2"/>
+        <rect x="10" y="450" width="55" height="40" rx="2"/><rect x="75" y="455" width="90" height="40" rx="2"/>
+        <rect x="10" y="540" width="100" height="50" rx="2"/><rect x="120" y="535" width="75" height="50" rx="2"/>
+        <rect x="205" y="530" width="90" height="55" rx="2"/><rect x="305" y="540" width="60" height="40" rx="2"/>
+        <rect x="10" y="620" width="80" height="60" rx="2"/><rect x="100" y="625" width="100" height="50" rx="2"/>
+        <rect x="210" y="618" width="80" height="55" rx="2"/><rect x="300" y="610" width="70" height="65" rx="2"/>
+      </g>
+      <g stroke="#fff" fill="none" stroke-linecap="round">
+        <path d="M 50 600 Q 190 380 330 160" stroke-width="5" opacity="0.9"/>
+        <path d="M 50 600 Q 190 380 330 160" stroke="#e8b84b" stroke-width="1.5" stroke-dasharray="8,6" opacity="0.6"/>
+        <path d="M 175 680 L 180 0" stroke-width="4.5" opacity="0.85"/>
+        <path d="M 10 300 Q 20 180 100 100 Q 200 40 340 80 Q 370 180 370 320 Q 365 480 330 570 Q 260 660 180 680 Q 100 695 30 650 Q 10 580 10 490" stroke-width="3.5" opacity="0.7"/>
+        <line x1="0" y1="250" x2="380" y2="250" stroke-width="2.5" opacity="0.6"/>
+        <line x1="0" y1="340" x2="380" y2="340" stroke-width="2" opacity="0.5"/>
+        <line x1="0" y1="430" x2="380" y2="430" stroke-width="2" opacity="0.5"/>
+        <line x1="0" y1="500" x2="380" y2="500" stroke-width="2" opacity="0.4"/>
+        <line x1="90" y1="0" x2="90" y2="700" stroke-width="2" opacity="0.4"/>
+        <line x1="270" y1="0" x2="270" y2="700" stroke-width="2" opacity="0.4"/>
+      </g>
+      <text x="205" y="246" font-size="7.5" fill="#8a95b0" font-family="Inter">Av. Presidente Masaryk</text>
+      <text x="182" y="400" font-size="7.5" fill="#8a95b0" font-family="Inter" transform="rotate(90 182 400)">Insurgentes</text>
+      <text x="80" y="380" font-size="7.5" fill="#e8b84b" font-family="Inter" transform="rotate(-35 80 380)">Paseo de la Reforma</text>
+      <text x="55" y="170" text-anchor="middle" font-size="9" fill="#5c6783" font-family="Inter" font-weight="600">Polanco</text>
+      <text x="160" y="320" text-anchor="middle" font-size="9" fill="#5c6783" font-family="Inter" font-weight="600">Condesa</text>
+      <text x="275" y="160" text-anchor="middle" font-size="9" fill="#5c6783" font-family="Inter" font-weight="600">Lomas</text>
+      <text x="200" y="450" text-anchor="middle" font-size="9" fill="#5c6783" font-family="Inter" font-weight="600">Del Valle</text>
+      <text x="80" y="570" text-anchor="middle" font-size="9" fill="#5c6783" font-family="Inter" font-weight="600">Coyoacán</text>
+      <text x="310" y="390" text-anchor="middle" font-size="9" fill="#5c6783" font-family="Inter" font-weight="600">Santa Fe</text>
+    </svg>
+    <div id="mapPins"></div>
+    <div class="map-overlay">
+      <div class="map-search">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <span>Buscar zona...</span>
+      </div>
+      <div style="width:8px"></div>
+      <div class="map-controls">
+        <button class="map-ctrl">+</button>
+        <button class="map-ctrl">−</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── BOOKING MODAL ── -->
+<div class="modal-overlay" id="bookingModal" style="display:none">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-head">
+      <div>
+        <div id="modalDoctorName" style="font-family:var(--font-display);font-size:16px;font-weight:700;color:var(--ink)"></div>
+        <div id="modalDoctorSpec" style="font-size:12px;color:var(--fg-muted);margin-top:2px"></div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <!-- Date selector -->
+      <div style="margin-bottom:16px">
+        <div style="font-size:10px;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.1em;color:var(--fg-muted);margin-bottom:8px">Selecciona una fecha</div>
+        <div id="modalDates" style="display:flex;gap:6px;flex-wrap:wrap"></div>
+      </div>
+      <!-- Time slots -->
+      <div style="margin-bottom:20px">
+        <div style="font-size:10px;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.1em;color:var(--fg-muted);margin-bottom:8px">Horarios disponibles</div>
+        <div id="modalTimes" style="display:grid;grid-template-columns:repeat(4,1fr);gap:5px"></div>
+      </div>
+      <!-- Price + confirm -->
+      <div style="border-top:1px solid var(--border-soft);padding-top:16px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+          <div>
+            <div style="font-size:12px;color:var(--fg-muted)">Primera consulta</div>
+            <div id="modalPrice" style="font-size:20px;font-weight:800;color:var(--ink);font-family:var(--font-display)"></div>
+          </div>
+          <div style="font-size:11px;color:var(--fg-muted);text-align:right">
+            <div>✓ Cédula verificada SEP</div>
+            <div>✓ Pago seguro</div>
+          </div>
+        </div>
+        <button id="confirmBtn" onclick="confirmBooking()" style="width:100%;padding:12px;background:var(--c800);color:white;border:none;border-radius:var(--r-md);font-size:14px;font-weight:700;cursor:pointer;font-family:var(--font-sans);transition:background .2s">Selecciona fecha y hora</button>
+        <p style="font-size:11px;color:var(--fg-muted);text-align:center;margin-top:10px">Plataforma COFEPRIS · Puedes cancelar hasta 24h antes sin costo</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── BOOKING SUCCESS ── -->
+<div class="modal-overlay" id="successModal" style="display:none" onclick="closeSuccess()">
+  <div class="modal-box" onclick="event.stopPropagation()" style="text-align:center;padding:36px 28px">
+    <div style="width:60px;height:60px;border-radius:50%;background:var(--vital-soft);margin:0 auto 16px;display:flex;align-items:center;justify-content:center">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--vital)" stroke-width="2.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+    </div>
+    <h3 style="font-family:var(--font-display);font-size:20px;font-weight:700;color:var(--ink);margin-bottom:8px">¡Cita confirmada!</h3>
+    <p id="successText" style="font-size:14px;color:var(--fg-muted);line-height:1.6;margin-bottom:22px"></p>
+    <button onclick="closeSuccess()" style="padding:11px 28px;background:var(--c800);color:white;border:none;border-radius:var(--r-md);font-size:14px;font-weight:600;cursor:pointer;font-family:var(--font-sans)">Perfecto</button>
+  </div>
+</div>
+
+<!-- ── PROFILE DRAWER ── -->
+<div class="profile-overlay" id="profileDrawer" style="display:none" onclick="closeProfile()">
+  <div class="profile-drawer" onclick="event.stopPropagation()">
+    <div class="profile-head">
+      <span style="font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--ink)">Perfil del especialista</span>
+      <button class="modal-close" onclick="closeProfile()">×</button>
+    </div>
+    <div id="profileContent" style="padding:20px"></div>
+  </div>
+</div>
+
+<script>
+/* ── DATA ── */
+const DOCTORS = [
+  { id:0, name:'Dra. Rosa García Mendoza', spec:'Ginecóloga', specialtyKey:'ginecologia', rating:4.9, reviews:1334, price:600, match:92, featured:true, photo:'https://i.pravatar.cc/116?img=47', address:'Av. Presidente Masaryk #144, Polanco', video:true, exp:15, cedula:'MX-2834710', pin:{left:'40px',top:'155px'}, bio:'Alta Especialidad en Ginecología y Obstetricia. 15 años de experiencia. Egresada UNAM. Especialista en ginecología preventiva y salud reproductiva.', strikes:[],active:0 },
+  { id:1, name:'Dr. Enrique Ruiz Ortega', spec:'Ginecólogo', specialtyKey:'ginecologia', rating:4.7, reviews:84, price:450, match:78, featured:false, photo:'https://i.pravatar.cc/116?img=12', address:'Av. Ámsterdam #42, Condesa', video:true, exp:10, cedula:'MX-1923847', pin:{left:'148px',top:'302px'}, bio:'Especializado en Ginecología Preventiva. Teleconsulta disponible.', strikes:[0],active:1 },
+  { id:2, name:'Dra. Claudia Morales Vega', spec:'Ginecóloga y Obstetra', specialtyKey:'ginecologia', rating:4.8, reviews:156, price:800, match:88, featured:true, photo:'https://i.pravatar.cc/116?img=49', address:'Paseo de las Palmas #700, Lomas', video:false, exp:18, cedula:'MX-3847291', pin:{left:'255px',top:'138px'}, bio:'Especialista en Ginecología Cosmética. Egresada del Hospital Médica Sur. Premio Excelencia Médica 2023.', strikes:[0,1],active:3 },
+  { id:3, name:'Dra. María Jiménez Torres', spec:'Ginecóloga', specialtyKey:'ginecologia', rating:4.6, reviews:93, price:500, match:81, featured:false, photo:'https://i.pravatar.cc/116?img=45', address:'Insurgentes Sur #1605, Del Valle', video:true, exp:8, cedula:'MX-2847103', pin:{left:'185px',top:'425px'}, bio:'Formación internacional en España y EEUU. Atención con calidez y empatía.', strikes:[],active:0 },
+  { id:4, name:'Dr. Luis Pérez Sánchez', spec:'Ginecólogo Reproductivo', specialtyKey:'reproduccion', rating:4.9, reviews:201, price:950, match:95, featured:true, photo:'https://i.pravatar.cc/116?img=8', address:'Blvd. Adolfo Ruiz Cortines, Santa Fe', video:true, exp:22, cedula:'MX-1029384', pin:{left:'298px',top:'368px'}, bio:'Top especialista en Reproducción Asistida e IVF. Doctor del Año 2024 — Fertilidad México.', strikes:[0,1,2],active:3 },
+]
+
+/* Dates for each doctor */
+function getDates(doctor) {
+  const days = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb']
+  const months = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic']
+  const today = new Date()
+  return Array.from({length:8},(_,i)=>{
+    const d = new Date(today)
+    d.setDate(today.getDate()+i)
+    return {
+      label: i===0?'Hoy':i===1?'Mañana':days[d.getDay()],
+      dt: `${d.getDate()} ${months[d.getMonth()]}`,
+      strike: doctor.strikes.includes(i),
+      active: i===doctor.active
+    }
+  })
+}
+
+/* ── STATE ── */
+let selectedIdx = 0
+let bookingDoctor = null
+let selectedDate = null
+let selectedTime = null
+
+/* ── RENDER CARDS ── */
+function renderCards() {
+  const list = document.getElementById('cardsList')
+  list.innerHTML = ''
+  DOCTORS.forEach((d,i) => {
+    const dates = getDates(d)
+    const datesHTML = dates.map(dt=>`
+      <button class="date-btn${dt.active?' active':''}${dt.strike?' strike':''}" ${dt.strike?'disabled':''} onclick="event.stopPropagation();selectDate(${i},this)">
+        <span class="day">${dt.label}</span>
+        <span class="dt">${dt.dt}</span>
+      </button>`).join('')
+
+    const card = document.createElement('article')
+    card.className = `doctor-card${i===selectedIdx?' selected':''}`
+    card.dataset.id = i
+    card.innerHTML = `
+      <div class="card-left" onclick="openProfile(${i})">
+        <div class="card-header">
+          <div class="avatar-wrap">
+            ${d.featured?'<div class="badge-dest">Destacado</div>':''}
+            <div class="avatar">
+              <img src="${d.photo}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <span class="avatar-initials" style="display:none">${d.name.split(' ').map(n=>n[0]).slice(0,2).join('')}</span>
+            </div>
+          </div>
+          <div class="card-info">
+            <div class="doctor-name">
+              ${d.name}
+              <svg class="verified-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div class="specialty-line"><a class="spec-link" href="#" onclick="event.preventDefault()">${d.spec}</a></div>
+            <div class="rating">
+              <span class="stars">${'★'.repeat(Math.round(d.rating))}${'☆'.repeat(5-Math.round(d.rating))}</span>
+              <span class="rating-num">${d.rating.toFixed(1)}</span>
+              <span class="rating-cnt">${d.reviews.toLocaleString('es-MX')} opiniones</span>
+              <span class="ai-badge">✓ ${d.match}% match</span>
+            </div>
+          </div>
+        </div>
+        <div class="features">
+          <div class="feat"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 5v7a5 5 0 0 0 10 0V5"/><circle cx="7" cy="4" r="1" fill="currentColor" stroke="none"/><circle cx="17" cy="4" r="1" fill="currentColor" stroke="none"/></svg>${d.bio.slice(0,72)}…</div>
+          ${d.video?'<div class="feat"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="7" width="15" height="10" rx="2"/><polygon points="17 8 22 5 22 19 17 16"/></svg>Teleconsulta disponible</div>':''}
+          <div class="feat"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3l9 4v5c0 5-3.5 9-9 10C6.5 21 3 17 3 12V7z"/></svg>Especialista verificada · <a href="#" onclick="event.preventDefault();event.stopPropagation()" style="color:var(--c600);font-size:10px;font-family:var(--font-mono)">Cédula ${d.cedula}</a></div>
+          <div class="feat muted"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>${d.address} · <a class="map-link" href="#" onclick="event.preventDefault();event.stopPropagation();selectCard(${i})">Mapa</a></div>
+          <div class="feat muted"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Primera visita&nbsp;&nbsp;<strong style="color:var(--ink)">desde $${d.price.toLocaleString('es-MX')}</strong></div>
+        </div>
+      </div>
+      <div class="card-right">
+        <div class="avail-label">Selecciona una fecha:</div>
+        <div class="date-grid">${datesHTML}</div>
+        <button class="book-cta" onclick="event.stopPropagation();openBooking(${i})">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Agendar cita
+        </button>
+        <button class="ver-mas" onclick="event.stopPropagation();openProfile(${i})">Ver perfil completo ›</button>
+      </div>`
+    card.addEventListener('click', ()=>selectCard(i))
+    list.appendChild(card)
+  })
+  renderPins()
+}
+
+function selectCard(i) {
+  selectedIdx = i
+  document.querySelectorAll('.doctor-card').forEach((c,j)=>c.classList.toggle('selected',j===i))
+  document.querySelectorAll('.map-pin').forEach((p,j)=>p.classList.toggle('selected',j===i))
+  // Scroll to card
+  const cards = document.querySelectorAll('.doctor-card')
+  const panel = document.getElementById('resultsPanel')
+  if(cards[i]) {
+    const bar = document.querySelector('.results-bar')
+    panel.scrollTop = cards[i].offsetTop - (bar ? bar.offsetHeight + 8 : 8)
+  }
+}
+
+function selectDate(cardIdx, btn) {
+  const grid = btn.closest('.date-grid')
+  grid.querySelectorAll('.date-btn').forEach(b=>b.classList.remove('active'))
+  btn.classList.add('active')
+}
+
+/* ── MAP PINS ── */
+function renderPins() {
+  const container = document.getElementById('mapPins')
+  container.innerHTML = ''
+  DOCTORS.forEach((d,i)=>{
+    const pin = document.createElement('div')
+    pin.className = `map-pin${i===selectedIdx?' selected':''}`
+    pin.style.left = d.pin.left
+    pin.style.top = d.pin.top
+    pin.title = d.name
+    pin.innerHTML = `<div class="map-pin-inner">$${d.price >= 1000 ? Math.round(d.price/1000)+'k' : d.price}</div><div class="map-pin-tooltip">${d.name.split(' ').slice(0,3).join(' ')} · $${d.price}</div>`
+    pin.onclick = ()=>selectCard(i)
+    container.appendChild(pin)
+  })
+}
+
+/* ── BOOKING MODAL ── */
+const TIMES = ['09:00','10:30','12:00','14:00','15:30','17:00','18:30']
+const DATES_LABELS = ['Hoy 20 abr','Mañana 21 abr','Mié 22 abr','Jue 23 abr','Vie 24 abr','Lun 27 abr']
+
+function openBooking(i) {
+  bookingDoctor = DOCTORS[i]
+  selectedDate = null
+  selectedTime = null
+  document.getElementById('modalDoctorName').textContent = bookingDoctor.name
+  document.getElementById('modalDoctorSpec').textContent = bookingDoctor.spec + ' · ' + bookingDoctor.exp + ' años exp.'
+  document.getElementById('modalPrice').textContent = '$' + bookingDoctor.price.toLocaleString('es-MX')
+
+  const datesEl = document.getElementById('modalDates')
+  datesEl.innerHTML = DATES_LABELS.map((d,i)=>`
+    <button onclick="selectModalDate(this,'${d}')" style="padding:7px 13px;border-radius:var(--r-md);border:1px solid var(--border);background:var(--bg-elev);color:var(--ink);font-size:12px;font-weight:600;cursor:pointer;font-family:var(--font-sans);transition:all .15s">${d}</button>
+  `).join('')
+
+  const timesEl = document.getElementById('modalTimes')
+  timesEl.innerHTML = TIMES.map(t=>`
+    <button onclick="selectModalTime(this,'${t}')" style="padding:8px;border-radius:var(--r-sm);border:1px solid var(--border);background:var(--bg-elev);color:var(--ink);font-size:12px;font-weight:600;cursor:pointer;font-family:var(--font-mono);transition:all .15s">${t}</button>
+  `).join('')
+
+  updateConfirmBtn()
+  document.getElementById('bookingModal').style.display = 'flex'
+}
+
+function selectModalDate(btn, date) {
+  document.querySelectorAll('#modalDates button').forEach(b=>{b.style.background='var(--bg-elev)';b.style.color='var(--ink)';b.style.borderColor='var(--border)'})
+  btn.style.background = 'var(--c800)'; btn.style.color = 'white'; btn.style.borderColor = 'var(--c800)'
+  selectedDate = date; updateConfirmBtn()
+}
+
+function selectModalTime(btn, time) {
+  document.querySelectorAll('#modalTimes button').forEach(b=>{b.style.background='var(--bg-elev)';b.style.color='var(--ink)';b.style.borderColor='var(--border)'})
+  btn.style.background = 'var(--c800)'; btn.style.color = 'white'; btn.style.borderColor = 'var(--c800)'
+  selectedTime = time; updateConfirmBtn()
+}
+
+function updateConfirmBtn() {
+  const btn = document.getElementById('confirmBtn')
+  if(selectedDate && selectedTime) {
+    btn.textContent = `Confirmar · ${selectedDate} ${selectedTime}`
+    btn.style.background = 'var(--vital)'
+    btn.disabled = false
+    btn.style.cursor = 'pointer'
+  } else {
+    btn.textContent = 'Selecciona fecha y hora'
+    btn.style.background = 'var(--border)'
+    btn.style.color = 'var(--fg-muted)'
+    btn.disabled = true
+    btn.style.cursor = 'not-allowed'
+  }
+}
+
+function confirmBooking() {
+  if(!selectedDate || !selectedTime) return
+  closeModal()
+  document.getElementById('successText').textContent =
+    `Tu cita con ${bookingDoctor.name} fue agendada para el ${selectedDate} a las ${selectedTime}. Recibirás confirmación por WhatsApp y email.`
+  document.getElementById('successModal').style.display = 'flex'
+}
+
+function closeModal() { document.getElementById('bookingModal').style.display = 'none' }
+function closeSuccess() { document.getElementById('successModal').style.display = 'none' }
+
+/* ── PROFILE DRAWER ── */
+function openProfile(i) {
+  const d = DOCTORS[i]
+  const dates = getDates(d)
+  document.getElementById('profileContent').innerHTML = `
+    <div style="display:flex;align-items:flex-start;gap:14px;margin-bottom:20px">
+      <div style="width:72px;height:72px;border-radius:50%;overflow:hidden;background:linear-gradient(135deg,var(--c300),var(--c800));flex-shrink:0">
+        <img src="${d.photo}" alt="" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">
+      </div>
+      <div>
+        <h2 style="font-family:var(--font-display);font-size:18px;font-weight:700;color:var(--ink)">${d.name}</h2>
+        <div style="font-size:13px;color:var(--fg-muted);margin-top:3px">${d.spec}</div>
+        <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+          <span style="display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:999px;background:var(--vital-soft);font-size:11px;font-weight:600;color:#006b4c">★ ${d.rating.toFixed(1)} · ${d.reviews.toLocaleString('es-MX')} opiniones</span>
+          <a href="#" onclick="event.preventDefault()" style="display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:999px;background:var(--c50);border:1px solid var(--c100);font-size:11px;font-weight:600;color:var(--c700);text-decoration:none;font-family:var(--font-mono)">✓ ${d.cedula}</a>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:14px;color:var(--fg-muted);line-height:1.6;margin-bottom:18px">${d.bio}</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px">
+      ${[['Experiencia', d.exp + ' años'],['Precio', 'desde $' + d.price.toLocaleString('es-MX')],['Teleconsulta', d.video ? 'Disponible' : 'No disponible'],['Ubicación', d.address.split(',')[1]?.trim() || 'CDMX']].map(([k,v])=>`
+        <div style="padding:10px 12px;background:var(--bg);border-radius:var(--r-md);border:1px solid var(--border-soft)">
+          <div style="font-size:10px;color:var(--fg-muted);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.08em">${k}</div>
+          <div style="font-size:14px;font-weight:600;color:var(--ink);margin-top:3px">${v}</div>
+        </div>`).join('')}
+    </div>
+    <div style="margin-bottom:16px">
+      <div style="font-size:10px;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.1em;color:var(--fg-muted);margin-bottom:8px">Disponibilidad próxima</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px">
+        ${dates.map(dt=>`<div style="padding:6px 3px;border:1px solid ${dt.active?'var(--c800)':'var(--border)'};border-radius:var(--r-sm);background:${dt.active?'var(--c800)':dt.strike?'transparent':'var(--bg-elev)'};text-align:center;opacity:${dt.strike?.4:1}">
+          <div style="font-size:10px;font-weight:600;color:${dt.active?'white':dt.strike?'var(--fg-muted)':'var(--ink)'}">${dt.label}</div>
+          <div style="font-size:9px;color:${dt.active?'rgba(255,255,255,.75)':'var(--fg-muted)'}">${dt.dt}</div>
+        </div>`).join('')}
+      </div>
+    </div>
+    <button onclick="closeProfile();openBooking(${i})" style="width:100%;padding:12px;background:var(--c800);color:white;border:none;border-radius:var(--r-md);font-size:14px;font-weight:700;cursor:pointer;font-family:var(--font-sans)">
+      Agendar cita con ${d.name.split(' ')[0]} ${d.name.split(' ')[1]}
+    </button>
+  `
+  document.getElementById('profileDrawer').style.display = 'flex'
+}
+
+function closeProfile() { document.getElementById('profileDrawer').style.display = 'none' }
+
+/* ── FILTERS (visual toggle) ── */
+function toggleFilter(label, group, val) {
+  const cb = label.querySelector('input')
+  cb.checked = !cb.checked
+  label.classList.toggle('active', cb.checked)
+  // Visual feedback: update count
+  const count = document.getElementById('resultsCount')
+  const active = document.querySelectorAll('.filter-opt.active').length
+  count.textContent = `${128 - (active > 1 ? (active-1) * 15 : 0)} especialistas · filtros aplicados`
+}
+
+/* ── SORT ── */
+function applySortChange(val) {
+  // Visual sort feedback only (data is static)
+  const count = document.getElementById('resultsCount')
+  const labels = {relevance:'relevancia IA',rating:'calificación',price_asc:'precio ↑',price_desc:'precio ↓',avail:'disponibilidad'}
+  count.textContent = `128 especialistas · ordenados por ${labels[val]||val}`
+}
+
+/* ── SEARCH ── */
+function applySearch() {
+  const val = document.getElementById('searchInput').value
+  const count = document.getElementById('resultsCount')
+  if(val) count.textContent = `Resultados para "${val}" · 128 especialistas`
+}
+
+/* ── DARK MODE ── */
+function setMode(m) {
+  document.body.classList.toggle('dark', m==='dark')
+  document.querySelectorAll('.mode-btn').forEach((b,i)=>b.classList.toggle('on',i===(m==='dark'?1:0)))
+  localStorage.setItem('dx-mode', m)
+}
+const saved = localStorage.getItem('dx-mode')
+if(saved==='dark') setMode('dark')
+
+/* ── ESCAPE KEY ── */
+document.addEventListener('keydown', e=>{
+  if(e.key==='Escape'){closeModal();closeSuccess();closeProfile()}
+})
+
+/* ── INIT ── */
+renderCards()
+</script>
+</body>
+</html>

@@ -6,19 +6,27 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import {
   ShieldCheck,
-
   MapPin,
   Search,
   Video,
   Stethoscope,
   CheckCircle2,
   GraduationCap,
-
   Clock,
   ChevronRight,
   Sun,
   Moon,
+  CalendarIcon,
 } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+} from '@/components/ui/dialog'
 
 /* ────────────────────────────
    Types
@@ -46,7 +54,7 @@ interface Specialty {
 interface PageParams {
   specialty?: string
   search?: string
-  sortBy?: 'rating' | 'price' | 'experience'
+  sortBy?: 'relevance' | 'rating' | 'price_asc' | 'price_desc' | 'experience'
   sortOrder?: 'asc' | 'desc'
   appointmentType?: 'all' | 'video' | 'in_person'
 }
@@ -205,6 +213,7 @@ function DoctorCard({
   onSelect: () => void
   index: number
 }) {
+  const [bookingOpen, setBookingOpen] = useState(false)
   const name = doctor.profile?.full_name || 'Doctor'
   const initials = getInitials(name)
   const aiMatch = getAiMatch(doctor.id)
@@ -335,6 +344,16 @@ function DoctorCard({
             </div>
           ))}
         </div>
+
+        <div className="mt-2 flex items-center gap-2">
+          <Link
+            href={`/doctors/${doctor.id}`}
+            onClick={(e) => e.stopPropagation()}
+            className="text-xs font-medium text-primary hover:text-primary/80 transition-colors flex items-center gap-1"
+          >
+            Ver perfil <ChevronRight className="w-3 h-3" />
+          </Link>
+        </div>
       </div>
 
       {/* RIGHT — availability */}
@@ -365,6 +384,18 @@ function DoctorCard({
             )
           })}
         </div>
+        <Button
+          variant="default"
+          size="sm"
+          className="w-full font-bold bg-ink hover:bg-ink/90 text-primary-foreground mt-1"
+          onClick={(e) => {
+            e.stopPropagation()
+            setBookingOpen(true)
+          }}
+        >
+          <CalendarIcon className="w-3.5 h-3.5 mr-1.5" /> Agendar cita
+        </Button>
+
         <button
           onClick={(e) => e.stopPropagation()}
           className="flex items-center justify-center gap-1 py-1.5 border rounded-md text-xs font-medium text-muted-foreground hover:bg-secondary hover:text-primary hover:border-primary/30 transition-all"
@@ -372,6 +403,12 @@ function DoctorCard({
           Ver más <ChevronRight className="w-3 h-3" />
         </button>
       </div>
+
+      <BookingDialog
+        doctor={doctor}
+        open={bookingOpen}
+        onOpenChange={setBookingOpen}
+      />
     </article>
   )
 }
@@ -474,7 +511,7 @@ function CdmxMap({
           <button
             key={doctor.id}
             onClick={() => onSelectPin(idx)}
-            className={`absolute w-9 h-9 flex items-center justify-center rounded-[50%_50%_50%_0] border-2 border-white shadow-md transition-all duration-200 ${
+            className={`group absolute w-9 h-9 flex items-center justify-center rounded-[50%_50%_50%_0] border-2 border-white shadow-md transition-all duration-200 ${
               isSelected
                 ? 'bg-vital scale-[1.15] -rotate-45'
                 : 'bg-ink -rotate-45 hover:bg-vital hover:scale-110'
@@ -486,7 +523,7 @@ function CdmxMap({
               ${(doctor.price_cents / 100).toLocaleString('es-MX')}
             </div>
             {/* Tooltip */}
-            <div className="absolute bottom-[calc(100%+8px)] left-1/2 -translate-x-1/2 bg-ink text-white text-[10px] font-semibold px-2 py-1 rounded whitespace-nowrap opacity-0 pointer-events-none transition-opacity group-hover:opacity-100">
+            <div className="absolute bottom-[calc(100%+8px)] left-1/2 -translate-x-1/2 bg-ink text-white text-[10px] font-semibold px-2 py-1 rounded whitespace-nowrap opacity-0 pointer-events-none transition-opacity group-hover:opacity-100 z-20">
               {doctor.profile?.full_name} · ${(doctor.price_cents / 100).toLocaleString('es-MX')}
             </div>
           </button>
@@ -506,6 +543,135 @@ function CdmxMap({
         </div>
       </div>
     </div>
+  )
+}
+
+/* ────────────────────────────
+   Booking Dialog
+   ──────────────────────────── */
+function BookingDialog({
+  doctor,
+  open,
+  onOpenChange,
+}: {
+  doctor: Doctor
+  open: boolean
+  onOpenChange: (open: boolean) => void
+}) {
+  const [selectedDate, setSelectedDate] = useState(0)
+  const [selectedTime, setSelectedTime] = useState<string | null>(null)
+  const [confirmed, setConfirmed] = useState(false)
+
+  const { dates } = generateDates(doctor.id)
+  const timeSlots = useMemo(() => {
+    const h = hashString(doctor.id + selectedDate)
+    const slots = []
+    const startHour = 8 + (h % 4)
+    for (let i = 0; i < 8; i++) {
+      const hour = startHour + Math.floor(i / 2)
+      const min = i % 2 === 0 ? '00' : '30'
+      slots.push(`${hour.toString().padStart(2, '0')}:${min}`)
+    }
+    return slots
+  }, [doctor.id, selectedDate])
+
+  const handleConfirm = () => {
+    if (selectedTime) setConfirmed(true)
+  }
+
+  const handleClose = () => {
+    onOpenChange(false)
+    setTimeout(() => {
+      setConfirmed(false)
+      setSelectedTime(null)
+      setSelectedDate(0)
+    }, 300)
+  }
+
+  return (
+    <Dialog open={open} onOpenChange={handleClose}>
+      <DialogContent className="sm:max-w-md">
+        {!confirmed ? (
+          <>
+            <DialogHeader>
+              <DialogTitle>Agendar cita</DialogTitle>
+              <DialogDescription>
+                {doctor.profile?.full_name} · {doctor.specialties[0]?.name || 'Especialista'}
+              </DialogDescription>
+            </DialogHeader>
+
+            <div className="mt-4">
+              <div className="text-xs font-medium text-muted-foreground mb-2">Selecciona una fecha</div>
+              <div className="flex gap-1.5 overflow-x-auto pb-2">
+                {dates.map((d) => (
+                  <button
+                    key={d.index}
+                    onClick={() => setSelectedDate(d.index)}
+                    className={`flex-shrink-0 py-2 px-3 border rounded-lg text-center text-xs transition-all ${
+                      selectedDate === d.index
+                        ? 'bg-ink border-ink text-primary-foreground'
+                        : 'bg-card border-border text-foreground hover:bg-secondary'
+                    }`}
+                  >
+                    <span className="block font-semibold">{d.label}</span>
+                    <span className={selectedDate === d.index ? 'text-white/75' : 'text-muted-foreground'}>
+                      {d.dt}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-4">
+              <div className="text-xs font-medium text-muted-foreground mb-2">Selecciona un horario</div>
+              <div className="grid grid-cols-4 gap-1.5">
+                {timeSlots.map((time) => (
+                  <button
+                    key={time}
+                    onClick={() => setSelectedTime(time)}
+                    className={`py-1.5 px-1 border rounded-md text-xs transition-all ${
+                      selectedTime === time
+                        ? 'bg-ink border-ink text-primary-foreground'
+                        : 'bg-card border-border text-foreground hover:bg-secondary'
+                    }`}
+                  >
+                    {time}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <DialogFooter className="mt-6">
+              <Button
+                variant="default"
+                className="w-full bg-ink hover:bg-ink/90 text-primary-foreground font-bold"
+                disabled={!selectedTime}
+                onClick={handleConfirm}
+              >
+                Confirmar cita
+              </Button>
+            </DialogFooter>
+          </>
+        ) : (
+          <div className="py-8 text-center">
+            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
+              <CheckCircle2 className="h-7 w-7 text-primary" />
+            </div>
+            <DialogTitle className="text-base">¡Cita agendada!</DialogTitle>
+            <DialogDescription className="mt-1">
+              Tu cita con {doctor.profile?.full_name} ha sido confirmada.
+            </DialogDescription>
+            <Button
+              variant="default"
+              className="mt-6 w-full bg-ink hover:bg-ink/90 text-primary-foreground font-bold"
+              onClick={handleClose}
+            >
+              Cerrar
+            </Button>
+          </div>
+        )}
+      </DialogContent>
+    </Dialog>
   )
 }
 
@@ -607,7 +773,7 @@ export function DoctorsDirectoryClient({
       {/* PAGE */}
       <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-[220px_1fr_380px] h-[calc(100vh-56px)] overflow-hidden">
         {/* SIDEBAR */}
-        <aside className="hidden lg:flex flex-col border-r border-border overflow-y-auto p-5 gap-6 bg-card">
+        <aside className="hidden lg:flex flex-col border-r border-border overflow-y-auto p-5 gap-6 bg-card min-w-0">
           <FilterSection title="Especialidad">
             <div className="flex flex-col">
               {specialties.slice(0, 6).map((s) => (
@@ -652,7 +818,7 @@ export function DoctorsDirectoryClient({
         </aside>
 
         {/* RESULTS */}
-        <div className="flex flex-col overflow-y-auto">
+        <div className="flex flex-col overflow-y-auto min-w-0">
           <div className="sticky top-0 z-10 px-5 py-3.5 border-b border-border bg-card flex items-center justify-between gap-3">
             <div>
               <h1 className="font-display text-lg font-bold text-ink tracking-tight">{heading}</h1>
@@ -661,16 +827,17 @@ export function DoctorsDirectoryClient({
               </p>
             </div>
             <select
-              value={params.sortBy || 'rating'}
+              value={params.sortBy || 'relevance'}
               onChange={(e) => {
                 router.push(`/doctors${buildQuery({ sortBy: e.target.value })}`)
               }}
               className="px-2.5 py-1.5 border border-border rounded-md bg-card text-foreground text-xs outline-none cursor-pointer"
             >
-              <option value="rating">Relevancia</option>
+              <option value="relevance">Relevancia</option>
               <option value="rating">Calificación</option>
-              <option value="price">Precio ↑</option>
-              <option value="experience">Disponibilidad</option>
+              <option value="price_asc">Precio ↑</option>
+              <option value="price_desc">Precio ↓</option>
+              <option value="experience">Experiencia</option>
             </select>
           </div>
 
@@ -687,11 +854,7 @@ export function DoctorsDirectoryClient({
               doctors.map((doctor, idx) => (
                 <div
                   key={doctor.id}
-                  role="link"
-                  tabIndex={0}
-                  className="block outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-2xl cursor-pointer"
-                  onClick={() => router.push(`/doctors/${doctor.id}`)}
-                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') router.push(`/doctors/${doctor.id}`) }}
+                  className="block outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-2xl"
                 >
                   <DoctorCard
                     doctor={doctor}
@@ -726,7 +889,7 @@ export function DoctorsDirectoryClient({
         </div>
 
         {/* MAP */}
-        <div className="hidden lg:block border-l border-border relative overflow-hidden">
+        <div className="hidden lg:block border-l border-border relative overflow-hidden min-w-0">
           <CdmxMap doctors={doctors} selectedIndex={selectedIndex} onSelectPin={handleSelectPin} />
         </div>
       </div>

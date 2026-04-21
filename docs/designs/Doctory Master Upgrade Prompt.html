@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Doctor.mx — Master Upgrade Prompt v2</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --bg:#f4f5f8;--bg-elev:#ffffff;--bg-deep:#eaecf2;
+  --ink:#0a1533;--ink2:#1c2647;--fg-muted:#5c6783;
+  --c50:#eef4ff;--c100:#dbe7ff;--c500:#3a66f5;--c600:#1f48de;--c700:#1a3ab8;--c800:#0f255f;
+  --vital:#00a878;--vital-soft:#d7f5e6;--coral:#ff5a3d;--amber:#f4a736;
+  --border:#dde1ec;--border-soft:#eaecf2;
+  --font-display:'Plus Jakarta Sans',sans-serif;
+  --font-sans:'Inter',sans-serif;
+  --font-mono:'IBM Plex Mono',monospace;
+  --r-sm:6px;--r-md:10px;--r-lg:16px;
+  --sh1:0 2px 8px rgba(10,21,51,.08);
+  --sh2:0 8px 28px rgba(10,21,51,.12);
+}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.55}
+::selection{background:rgba(58,102,245,.15);color:var(--ink)}
+
+/* Layout */
+.shell{width:min(100%,80rem);margin-inline:auto;padding-inline:clamp(1.25rem,3vw,2.5rem)}
+
+/* Top bar */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 0}
+.brand{font-family:var(--font-display);font-size:16px;font-weight:700;color:var(--c800);display:flex;align-items:center;gap:8px}
+.brand-dot{width:8px;height:8px;border-radius:50%;background:var(--vital);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,168,120,.35)}50%{box-shadow:0 0 0 5px rgba(0,168,120,0)}}
+.top-links{display:flex;gap:1.25rem;font-size:13px;color:var(--fg-muted)}
+.top-links a{color:inherit;text-decoration:none;font-weight:500}
+.top-links a:hover{color:var(--ink)}
+.copy-btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:.5rem .9rem;border-radius:999px;background:var(--c800);color:white;border:none;cursor:pointer;font-weight:600;transition:all .15s}
+.copy-btn:hover{background:var(--c700);transform:translateY(-1px)}
+.copy-btn.ok{background:var(--vital)}
+@media(max-width:680px){.top-links{display:none}}
+
+/* Hero */
+.hero{padding:clamp(2.5rem,6vw,5rem) 0 clamp(1.5rem,4vw,3rem)}
+.eyebrow{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;background:var(--c50);border:1px solid var(--c100);font-family:var(--font-mono);font-size:10px;font-weight:600;color:var(--c700);text-transform:uppercase;letter-spacing:.14em;margin-bottom:1.25rem}
+h1.display{font-family:var(--font-display);font-size:clamp(2rem,5vw,4.5rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;color:var(--ink);margin-bottom:1.25rem}
+h1.display em{font-style:italic;color:var(--c600)}
+.hero-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:2rem;padding:1.5rem;background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--r-lg)}
+.meta-item dt{font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-muted);margin-bottom:3px}
+.meta-item dd{font-size:13px;font-weight:600;color:var(--ink)}
+
+/* Section */
+section.block{padding:clamp(2rem,5vw,4rem) 0}
+section.block+section.block{border-top:1px solid var(--border)}
+.section-num{font-family:var(--font-mono);font-size:10px;letter-spacing:.18em;color:var(--fg-muted);text-transform:uppercase;margin-bottom:.75rem}
+h2.sh{font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2.4rem);font-weight:800;letter-spacing:-.025em;color:var(--ink);margin-bottom:.5rem}
+.lede{font-size:15px;color:var(--fg-muted);line-height:1.6;max-width:64ch;margin-bottom:1.75rem}
+
+/* Issue rows */
+.issue{display:grid;grid-template-columns:48px 1fr auto;gap:12px;padding:14px 16px;background:var(--bg-elev);border:1px solid var(--border-soft);border-radius:var(--r-md);align-items:start;transition:border-color .2s}
+.issue:hover{border-color:var(--c300)}
+.issue+.issue{margin-top:8px}
+.issue .tag{font-family:var(--font-mono);font-size:10px;font-weight:700;color:var(--fg-muted);padding-top:1px}
+.issue h3{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.issue p{font-size:13px;color:var(--fg-muted);line-height:1.5;max-width:72ch}
+.sev{font-family:var(--font-mono);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:999px;white-space:nowrap;align-self:start;margin-top:1px}
+.sev.p0{background:#ffe0dc;color:#8a0a04}
+.sev.p1{background:#fef3cd;color:#8a5500}
+.sev.p2{background:var(--c50);color:var(--c700)}
+
+/* Grid */
+.grid{display:grid;gap:10px}
+.cols-2{grid-template-columns:repeat(2,1fr)}
+.cols-3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.cols-3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:580px){.cols-2,.cols-3{grid-template-columns:1fr}}
+
+/* Card */
+.card{background:var(--bg-elev);border:1px solid var(--border-soft);border-radius:var(--r-lg);padding:1.2rem 1.3rem;box-shadow:var(--sh1)}
+.card h3{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:.3rem}
+.card p{font-size:13px;color:var(--fg-muted);line-height:1.5}
+.card .meta{font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--c600);margin-bottom:.4rem}
+
+/* Page table */
+.page-table{width:100%;border-collapse:collapse;background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden}
+.page-table th{background:var(--bg-deep);padding:10px 14px;text-align:left;font-size:10px;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.1em;color:var(--fg-muted);border-bottom:1px solid var(--border);font-weight:600}
+.page-table td{padding:11px 14px;border-bottom:1px solid var(--border-soft);font-size:13px;color:var(--ink);vertical-align:top}
+.page-table tr:last-child td{border-bottom:none}
+.page-table tr:hover td{background:var(--c50)}
+.route{font-family:var(--font-mono);font-size:11px;font-weight:600;color:var(--c700);background:var(--c50);padding:2px 7px;border-radius:4px}
+.priority{font-family:var(--font-mono);font-size:10px;font-weight:700;padding:2px 7px;border-radius:999px}
+.prio-1{background:#ffe0dc;color:#8a0a04}
+.prio-2{background:#fef3cd;color:#8a5500}
+.prio-3{background:var(--c50);color:var(--c700)}
+
+/* Prompt block */
+.prompt-wrap{background:var(--ink2);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh2)}
+.prompt-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.05)}
+.prompt-dots{display:flex;gap:5px}
+.pdot{width:10px;height:10px;border-radius:50%}
+.prompt-title{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:600}
+.prompt-body{padding:1.5rem;max-height:600px;overflow-y:auto;font-family:var(--font-mono);font-size:12px;line-height:1.7;color:rgba(255,255,255,.85);white-space:pre-wrap;background:repeating-linear-gradient(0deg,transparent 0,transparent 28px,rgba(255,255,255,.02) 28px,rgba(255,255,255,.02) 29px)}
+.prompt-body strong{color:#93b5ff;font-weight:600}
+.prompt-body .cmd{color:#00a878}
+.prompt-body .comment{color:rgba(255,255,255,.35)}
+
+/* Metric wall */
+.metric-wall{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media(max-width:720px){.metric-wall{grid-template-columns:repeat(2,1fr)}}
+.metric{background:var(--bg-elev);border:1px solid var(--border-soft);border-radius:var(--r-lg);padding:1.1rem 1.2rem}
+.metric .v{font-family:var(--font-display);font-size:2rem;font-weight:800;line-height:1;letter-spacing:-.03em;color:var(--c700)}
+.metric .unit{font-size:.9rem;color:var(--fg-muted);font-family:var(--font-mono);font-weight:400;margin-left:2px}
+.metric .k{font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-muted);margin-bottom:4px}
+.metric p{font-size:12px;color:var(--fg-muted);margin-top:4px}
+
+footer{padding:2.5rem 0 3.5rem;border-top:1px solid var(--border);color:var(--fg-muted);font-size:12px}
+.footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:1.5rem 0}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="shell topbar-inner">
+    <div class="brand">
+      <div class="brand-dot"></div>
+      doctor.mx · <span style="font-weight:400;color:var(--fg-muted)">Master Upgrade Prompt v2</span>
+    </div>
+    <nav class="top-links">
+      <a href="#diagnosis">Issues</a>
+      <a href="#pages">Pages</a>
+      <a href="#ai-consulta">AI Consulta</a>
+      <a href="#doctors">Doctors</a>
+      <a href="#prompt">Prompt</a>
+    </nav>
+    <button class="copy-btn" id="copyBtn">
+      <span id="copyLabel">Copy Full Prompt</span>
+    </button>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="shell">
+    <div class="eyebrow">lawrns/doctormx@main · April 2026 · v2.0</div>
+    <h1 class="display">The complete playbook to make<br><em>Doctor.mx unforgettable.</em></h1>
+    <p class="lede">Every page. Every component. From broken buttons in /doctors to a truly agentic /ai-consulta experience. This prompt gives your AI agent a single, executable brief to take the product from good to world-class.</p>
+
+    <div class="hero-meta">
+      <div class="meta-item"><dt>Stack</dt><dd>Next 16 · Supabase · Stripe · shadcn/ui · Tailwind</dd></div>
+      <div class="meta-item"><dt>Market</dt><dd>México · COFEPRIS compliant</dd></div>
+      <div class="meta-item"><dt>Primary users</dt><dd>Patients mobile · Doctors desktop</dd></div>
+      <div class="meta-item"><dt>North star</dt><dd>First consult in ≤ 90 seconds</dd></div>
+      <div class="meta-item"><dt>Timeline</dt><dd>5 phases · 5 weeks</dd></div>
+      <div class="meta-item"><dt>Success</dt><dd>Lighthouse ≥ 95 · WCAG 2.1 AA</dd></div>
+    </div>
+  </div>
+</header>
+
+<!-- DIAGNOSIS -->
+<section class="block" id="diagnosis">
+  <div class="shell">
+    <div class="section-num">§ 01 · Diagnosis</div>
+    <h2 class="sh">What's broken right now</h2>
+    <p class="lede">Audited against the live codebase at lawrns/doctormx@main. Prioritised by user impact.</p>
+
+    <div class="issue"><div class="tag">UX-01</div><div><h3>/ai-consulta — no agentic tool calling, no clinical UX</h3><p>The current page is a thin wrapper around PreConsultaChat with no visible AI reasoning, no tool-call visualization, no urgency signal, no confidence bar, and no COFEPRIS badge. Users have no idea what the AI is doing. The referral section post-completion renders unstyled cards with dead links. This is the single most important page for conversion and trust.</p></div><span class="sev p0">P0 · Critical</span></div>
+
+    <div class="issue"><div class="tag">UX-02</div><div><h3>/doctors — "Agendar cita" button missing from every card</h3><p>The DoctorsDirectoryClient.tsx card-right panel renders a date grid and "Ver más" only. There is NO primary booking CTA on the most important page in the funnel. Users selecting a date have nowhere to go. The card click dispatches two competing handlers (onSelect + router.push), causing selection-vs-navigation confusion.</p></div><span class="sev p0">P0 · Critical</span></div>
+
+    <div class="issue"><div class="tag">UI-03</div><div><h3>/doctors — Map pin tooltips never show</h3><p>The tooltip element has <code>opacity-0 group-hover:opacity-100</code> but the parent pin button lacks the <code>group</code> Tailwind class, so no tooltip ever appears. Also, pins and cards fall out of sync when the results panel scrolls: pin selection should auto-scroll the corresponding card into view.</p></div><span class="sev p1">P1 · High</span></div>
+
+    <div class="issue"><div class="tag">UX-04</div><div><h3>/doctors — Filter sidebar is purely cosmetic</h3><p>All checkbox filters, the sort select, and the search bar on the directory page have no effect on the displayed results. The sort select has a duplicate "Calificación" option at value="rating". Specialty filter links do work (server-side via URL params) but their visual state doesn't reflect the active filters properly on load.</p></div><span class="sev p1">P1 · High</span></div>
+
+    <div class="issue"><div class="tag">UX-05</div><div><h3>/doctors — No doctor profile action after card click</h3><p>Clicking a card body triggers router.push to /doctors/:id, but that page is a full server component that may be slow or show a loading skeleton. There's no preview drawer or sheet, so the user loses their place in the results list. A profile sheet (slide-in from right) would retain context and reduce round-trips.</p></div><span class="sev p1">P1 · High</span></div>
+
+    <div class="issue"><div class="tag">TR-06</div><div><h3>Trust signals invisible on /ai-consulta and /, weak everywhere</h3><p>COFEPRIS compliance badge is absent from the AI consultation page entirely. The doctor cédula badges on cards are not clickable links to SEP verification. Every AI-generated message lacks a "Asistente IA · No es doctor" disclosure tag. The prescription generation flow has an indeterminate spinner with no phase labels (Redactando → Validando COFEPRIS → Firmando).</p></div><span class="sev p1">P1 · High</span></div>
+
+    <div class="issue"><div class="tag">MOB-07</div><div><h3>Patient portal has no mobile navigation</h3><p>The patient dashboard layout hides the sidebar below lg breakpoint with no hamburger, no bottom-nav, and no sheet fallback. 70%+ of Mexican medical traffic is mobile. This locks the majority of patients out of their own appointment history, prescriptions, and messages.</p></div><span class="sev p1">P1 · High</span></div>
+
+    <div class="issue"><div class="tag">UX-08</div><div><h3>8 empty states show "No hay datos" — all are missed moments</h3><p>Patient dashboard, messages, prescriptions, consultation history, search results, doctor queue, payment failure, and AI low-confidence all render generic placeholder copy. Every empty state is a critical decision point where the user decides whether to stay or churn. They all need action + warmth.</p></div><span class="sev p2">P2 · Important</span></div>
+
+    <div class="issue"><div class="tag">PERF-09</div><div><h3>Doctor "En revisión" limbo — 8 padlocks, no queue position</h3><p>New doctors completing onboarding see a sidebar with 8 padlock icons and "24-48 horas hábiles". No queue position, no estimated time, no productive checklist. This destroys doctor-side activation. Replace with a productive waiting room: queue position, tech check, first-consult playbook.</p></div><span class="sev p2">P2 · Important</span></div>
+  </div>
+</section>
+
+<!-- PAGES -->
+<section class="block" id="pages">
+  <div class="shell">
+    <div class="section-num">§ 02 · Page-by-page upgrade scope</div>
+    <h2 class="sh">Every route. Nothing left behind.</h2>
+    <p class="lede">Ordered by user-journey priority. Phase numbers map to the prompt below.</p>
+
+    <table class="page-table">
+      <thead>
+        <tr><th>Route</th><th>Current state</th><th>Required upgrade</th><th>Phase</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="route">/ai-consulta</span></td><td>Thin PreConsultaChat wrapper, no clinical UX</td><td>Agentic tool-calling UI, confidence bars, urgency badges, COFEPRIS trust, doctor referral cards with live "Agendar" CTA</td><td><span class="priority prio-1">Phase 1</span></td></tr>
+        <tr><td><span class="route">/doctors</span></td><td>Date grid with no "Agendar" button, broken tooltips, cosmetic filters</td><td>Working "Agendar cita" CTA per card, booking modal, profile drawer, real filter logic, fixed map pins</td><td><span class="priority prio-1">Phase 1</span></td></tr>
+        <tr><td><span class="route">/doctors/[id]</span></td><td>Full-page server component, no booking flow</td><td>Rich profile page: reviews, full bio, specialty cédula link, SlotGrid, inline booking widget with Stripe</td><td><span class="priority prio-2">Phase 2</span></td></tr>
+        <tr><td><span class="route">/</span><td>Good visual. Trust signals weak. CTA vague.</td><td>COFEPRIS announcement bar (persistent), AI disclosure, clickable stat numbers, "AI triage" entry point front-and-center</td><td><span class="priority prio-2">Phase 2</span></td></tr>
+        <tr><td><span class="route">/app-pacientes</span></td><td>Sidebar hidden on mobile, no bottom-nav, "No hay datos" states</td><td>Bottom-nav (5 items, 64px, haptic), empty states from registry, appointment slot confirmations</td><td><span class="priority prio-2">Phase 2</span></td></tr>
+        <tr><td><span class="route">/consultation</span></td><td>Daily.co embed, no AI copilot UI, indeterminate spinner</td><td>3-pane layout: patient context left, video+SOAP center, rx builder right. ProgressStrip for prescription. AI confidence on every field.</td><td><span class="priority prio-2">Phase 2</span></td></tr>
+        <tr><td><span class="route">/checkout</span></td><td>Stripe redirect. Payment failure → error page.</td><td>In-page Stripe Elements + OXXO + SPEI. Failure retry in-place, slot held 10 min. Guest-first flow.</td><td><span class="priority prio-2">Phase 2</span></td></tr>
+        <tr><td><span class="route">/doctor (dashboard)</span></td><td>8-padlock "En revisión", no queue, no ⌘K</td><td>Productive waiting room (queue #, est. time, checklist). Consult room with SOAP copilot. Global ⌘K command palette.</td><td><span class="priority prio-3">Phase 3</span></td></tr>
+        <tr><td><span class="route">/book</span></td><td>Multi-step wizard, unclear progress</td><td>Single-screen: specialty → doctor → slot → pay. ProgressStrip at top. 5-step max. Mobile-first.</td><td><span class="priority prio-3">Phase 3</span></td></tr>
+        <tr><td><span class="route">/specialties, /blog, /faq</span></td><td>Generic content pages</td><td>SEO-first, schema.org markup, rich symptom cards on /specialties, WhatsApp CTA integration</td><td><span class="priority prio-3">Phase 3</span></td></tr>
+        <tr><td><span class="route">/auth</span></td><td>Standard form</td><td>Guest-first: collect email at video-start. Magic link + WhatsApp OTP. No password walls on first visit.</td><td><span class="priority prio-3">Phase 3</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- AI CONSULTA DEEP DIVE -->
+<section class="block" id="ai-consulta">
+  <div class="shell">
+    <div class="section-num">§ 03 · /ai-consulta — agentic design spec</div>
+    <h2 class="sh">What "truly agentic" looks like</h2>
+    <p class="lede">The AI pre-triage page must show its work. Every tool call is a trust signal. Every confidence bar is a conversion moment.</p>
+
+    <div class="grid cols-3" style="margin-bottom:1.25rem">
+      <div class="card"><div class="meta">Layout</div><h3>Centered chat · max-w 720px</h3><p>Welcome state with symptom chips. Active state with chat + collapsible tool sidebar. Completion state with doctor referral cards inline.</p></div>
+      <div class="card"><div class="meta">Tool calls</div><h3>Visualize every reasoning step</h3><p><code>analyze_symptoms</code> → <code>assess_urgency</code> → <code>match_specialty</code> → <code>find_doctors</code>. Each appears sequentially with a spinner, then transitions to ✓ done with output text.</p></div>
+      <div class="card"><div class="meta">After each AI message</div><h3>Urgency badge + confidence bar</h3><p>Color-coded: leaf=low, amber=moderate, rust=high, crimson=emergency. Confidence 0–100 gradient bar. "Asistente IA · No es médico" disclosure mandatory.</p></div>
+      <div class="card"><div class="meta">Trust (always visible)</div><h3>COFEPRIS strip + encryption</h3><p>Sticky header with COFEPRIS badge. "Datos cifrados extremo a extremo". "En caso de emergencia llama al 911." Never dismissible during triage.</p></div>
+      <div class="card"><div class="meta">Doctor referral</div><h3>Inline after readyForReferral</h3><p>3 doctor cards with specialty match %, cédula badge, next available slot, price, and a primary "Agendar cita" CTA. Booking modal — no page reload.</p></div>
+      <div class="card"><div class="meta">Escalation</div><h3>"Hablar con doctor humano" always</h3><p>Ghost button always visible. After 3 AI turns → proactive suggestion. Low-confidence AI response → immediate escalate CTA. Video fallback ladder: video → audio → SMS.</p></div>
+    </div>
+
+    <div style="padding:16px;background:var(--c50);border:1px solid var(--c100);border-radius:var(--r-lg)">
+      <div style="font-family:var(--font-mono);font-size:10px;font-weight:600;color:var(--c700);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px">Claude system prompt for /ai-consulta (haiku-4-5 · 1024 token cap)</div>
+      <pre style="font-family:var(--font-mono);font-size:11px;color:var(--ink2);line-height:1.6;white-space:pre-wrap;background:white;padding:14px;border-radius:var(--r-sm);border:1px solid var(--c100)">You are Dr. IA, the AI pre-triage assistant for Doctor.mx, Mexico's leading telemedicine platform.
+CRITICAL: Respond ONLY with valid JSON. No other text. Exact structure:
+{"toolCalls":[{"tool":"analyze_symptoms","output":"finding"},{"tool":"assess_urgency","output":"assessment"},{"tool":"match_specialty","output":"specialty + confidence"}],"message":"Spanish response 2-3 sentences","urgency":"low|moderate|high|emergency","specialty":"Primary specialty","confidence":75,"readyForReferral":false,"followUp":"question if needed"}
+RULES: Spanish. Warm + professional. No diagnoses. Set readyForReferral:true after 2nd patient message. Keep messages under 60 words.</pre>
+    </div>
+  </div>
+</section>
+
+<!-- DOCTORS DEEP DIVE -->
+<section class="block" id="doctors">
+  <div class="shell">
+    <div class="section-num">§ 04 · /doctors — pixel-perfect spec</div>
+    <h2 class="sh">Every broken thing, fixed precisely</h2>
+    <p class="lede">The directory is 90% there. These 6 surgical fixes take it to production-ready.</p>
+
+    <div class="grid cols-2">
+      <div class="card"><div class="meta">Fix 1 — Missing primary CTA</div><h3>Add "Agendar cita" button to every card-right</h3><p>Below the date grid, add a full-width primary button: <code>bg-ink text-white font-bold rounded-lg py-2</code>. Clicking → opens SlotGrid sheet (not navigate away). Date selection in the grid should pre-populate the sheet.</p></div>
+      <div class="card"><div class="meta">Fix 2 — Map pin tooltips</div><h3>Add `group` class to pin button</h3><p>Change: <code>&lt;button className="..."&gt;</code> → <code>&lt;button className="group ..."&gt;</code>. The tooltip already has <code>group-hover:opacity-100</code> — it just needs the parent marker. Also add <code>z-20</code> so tooltip isn't clipped by the map container.</p></div>
+      <div class="card"><div class="meta">Fix 3 — Card click conflict</div><h3>Separate select vs. navigate intents</h3><p>Card click → <code>onSelect(idx)</code> (highlights + syncs map). "Ver perfil" button inside → <code>router.push()</code>. Never do both on the same click. Add a dedicated "Ver perfil ›" ghost button in card-left footer.</p></div>
+      <div class="card"><div class="meta">Fix 4 — Sort select</div><h3>Remove duplicate option, wire onChange</h3><p>The sort select has two <code>value="rating"</code> options. Remove one. Wire <code>onChange</code> to update <code>router.push</code> with <code>sortBy</code> and <code>sortOrder</code> query params — the server component already reads them.</p></div>
+      <div class="card"><div class="meta">Fix 5 — Profile drawer</div><h3>Sheet slides in from right on card click</h3><p>Use shadcn <code>&lt;Sheet side="right"&gt;</code>. Content: avatar + bio + reviews + map embed + SlotGrid + Stripe booking button. Retains results list context. Closes on Escape or overlay click.</p></div>
+      <div class="card"><div class="meta">Fix 6 — Overflow on small viewports</div><h3>Clamp the 3-column layout</h3><p>Change <code>grid-template-columns: 220px 1fr 380px</code> to <code>minmax(180px, 220px) 1fr minmax(320px, 380px)</code>. Map panel: <code>min-width: 0</code>. Results panel: <code>overflow-y: auto; min-width: 0</code>. Sidebar: <code>overflow-y: auto; min-width: 0</code>.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SUCCESS METRICS -->
+<section class="block">
+  <div class="shell">
+    <div class="section-num">§ 05 · What "unforgettable" measures as</div>
+    <h2 class="sh">Numbers, not vibes</h2>
+    <p class="lede">Every metric tracked from day one. Lighthouse CI blocks merges that regress.</p>
+    <div class="metric-wall">
+      <div class="metric"><div class="k">Landing → Triage</div><div class="v">≤8<span class="unit">sec</span></div><p>Time to first symptom chip tap from first paint.</p></div>
+      <div class="metric"><div class="k">Triage → Doctor</div><div class="v">≤90<span class="unit">sec</span></div><p>Median p50 time from symptom input to live video.</p></div>
+      <div class="metric"><div class="k">Lighthouse</div><div class="v">95<span class="unit">min</span></div><p>All public routes: perf, a11y, best-practice, SEO.</p></div>
+      <div class="metric"><div class="k">Mobile completion</div><div class="v">78<span class="unit">%</span></div><p>Consultation start → rx issued, mobile users.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE PROMPT -->
+<section class="block" id="prompt">
+  <div class="shell">
+    <div class="section-num">§ 06 · The master upgrade prompt</div>
+    <h2 class="sh">Copy this. Paste into Claude Code at repo root.</h2>
+    <p class="lede">Self-contained. Phase-gated. Budget-guarded. Executable by an AI agent or senior engineer without further clarification.</p>
+
+    <div class="prompt-wrap">
+      <div class="prompt-head">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div class="prompt-dots">
+            <div class="pdot" style="background:#ff5a5a"></div>
+            <div class="pdot" style="background:#f4a736"></div>
+            <div class="pdot" style="background:#00a878"></div>
+          </div>
+          <span class="prompt-title">doctor.mx.master.upgrade.v2 · 2026-04-21</span>
+        </div>
+        <button class="copy-btn" id="copyBtn2"><span id="copyLabel2">Copy</span></button>
+      </div>
+      <pre class="prompt-body" id="promptText"><strong># ROLE</strong>
+You are a principal product designer + senior frontend engineer embedded in the
+lawrns/doctormx codebase (Next.js 16, React 18, Supabase, Stripe, shadcn/ui,
+Tailwind, Framer Motion, Daily.co, XState). Your goal: make Doctor.mx
+unforgettable — the gold standard for medical UX in Latin America.
+Work phase by phase. Produce working code, not plans.
+
+<strong># CONTEXT</strong>
+Stack: Next.js 16 App Router · TypeScript · Supabase (auth + DB + realtime)
+       Stripe · shadcn/ui · Tailwind CSS · Framer Motion · Daily.co video
+       XState · PostHog analytics · Sentry
+
+Market: Mexico · COFEPRIS compliant · 70% mobile traffic (Telcel 3G/Edge)
+Primary users: Patients (mobile-first) · Doctors (desktop-first)
+North star: First consultation in ≤ 90 seconds from landing
+
+Design system: src/app/globals.css defines the canonical tokens.
+  Primary: cobalt --c800 #0f255f (dark blue-black)
+  Accent: --vital #00a878 (success/medical green)
+  Background: #f4f5f8 (cool grey) / white cards
+  Typography: Plus Jakarta Sans (display) · Inter (body) · IBM Plex Mono (labels)
+  Never add new colors outside these tokens without explicit approval.
+
+<strong># NON-NEGOTIABLES</strong>
+- Never diagnose. AI is always "Asistente IA · No es médico".
+- COFEPRIS badge always visible on /ai-consulta and /doctors.
+- Every doctor card must have a clickable cédula badge linking to SEP lookup.
+- Prescription generation must use ProgressStrip (no indeterminate spinners).
+- All primary CTAs: min 44px touch target. All focus rings visible.
+- Lighthouse must not regress on any route. Gate with CI.
+- No new emoji in UI. Lucide icons only.
+- No marketing copy on clinical surfaces (no ¡Increíble!, no exclamations during triage).
+
+<strong># PHASE 1 — /ai-consulta + /doctors (week 1)</strong>
+
+<strong>## 1.1 /ai-consulta — Full agentic rewrite</strong>
+
+Replace src/app/ai-consulta/page.tsx with a proper clinical triage UI:
+
+LAYOUT: Centered single column, max-w-[720px], h-dvh, overflow-hidden.
+Three phases: welcome → chat → referred.
+
+WELCOME STATE:
+- Hero heading "¿Cómo te sientes hoy?" — Fraunces/Plus Jakarta, 48px, letter-spacing -0.03em
+- Subtitle: warm, reassuring, 2 lines max
+- 8 symptom chips (clickable shortcuts): "Dolor de cabeza", "Fiebre", "Dolor de pecho",
+  "Dificultad para respirar", "Náuseas y vómito", "Dolor de espalda", "Ansiedad", "Estómago"
+- Trust strip: COFEPRIS badge + "Cifrado extremo a extremo" + "Doctores verificados SEP"
+- Persistent sticky header: doctor.mx logo + COFEPRIS badge + "Doctor humano →" ghost link
+
+CHAT STATE (after first message):
+- User messages: right-aligned, --c800 bg, white text, border-radius 16px 16px 4px 16px
+- AI messages: left-aligned, white card, border, border-radius 4px 16px 16px 16px
+- AI avatar: 32px circle, --c800 bg, stethoscope icon white
+- TOOL CALL CARDS (appear during AI thinking, one by one with 500ms gap):
+  Card anatomy: [spinner|✓] [tool_name in --font-mono uppercase] [output or "processing…"]
+  Tools in order: analyze_symptoms → assess_urgency → match_specialty
+  After Claude responds: all cards transition to ✓ done state, then collapse to inline chips above the message
+- Each AI message includes:
+  - "Asistente IA · No es médico" label (10px mono, --c600)
+  - Message text (14px Inter, 1.6 line-height)
+  - Urgency badge: pill, color-coded (low=vital-soft, moderate=amber/10, high=coral/10, emergency=coral)
+  - Specialty badge (when identified)
+  - Confidence bar: 3px gradient bar, labeled 0-100, color reflects confidence level
+- Quota dots in header (3 dots, filled = used)
+- "Hablar con doctor humano" ghost button always visible
+
+REFERRAL STATE (when AI sets readyForReferral: true):
+- Section header: "Especialistas recomendados · ordenados por match IA"
+- 3 doctor cards (rich format):
+  - Avatar + name + verified icon + cédula badge (clickable → SEP)
+  - Specialty + years exp + rating
+  - AI match percentage (large, colored)
+  - Next available slot (green, prominent)
+  - "Agendar cita" primary button → booking modal (no page reload)
+- "Ver todos los especialistas →" link below cards
+
+INPUT AREA (sticky bottom):
+- Auto-resize textarea, 15px, send button (cobalt-800, arrow icon)
+- Enter = send, Shift+Enter = new line
+- When quota full: "Crear cuenta gratis" CTA replaces input
+
+CLAUDE INTEGRATION (window.claude.complete or API route):
+System prompt (haiku-4-5, 1024 token output cap):
+<span class="comment">"""
+You are Dr. IA, the AI pre-triage assistant for Doctor.mx, Mexico's leading telemedicine platform.
+CRITICAL: Respond ONLY with valid JSON. No other text.
+{"toolCalls":[{"tool":"analyze_symptoms","output":"1-line finding"},{"tool":"assess_urgency","output":"urgency + reason"},{"tool":"match_specialty","output":"specialty + confidence"}],"message":"Spanish response, 2-3 sentences, warm, no diagnosis","urgency":"low|moderate|high|emergency","specialty":"Specialty in Spanish","confidence":75,"readyForReferral":false,"followUp":"question if needed"}
+Rules: Spanish. Warm. No diagnoses. readyForReferral:true after 2nd patient message. Messages under 60 words.
+"""</span>
+Add fallback JSON parser with mock responses when Claude unavailable.
+Store session in localStorage (key: doctor_mx_session).
+Persist quota state, reload from storage on mount.
+
+<strong>## 1.2 /doctors — 6 surgical fixes</strong>
+
+FILE: src/app/doctors/DoctorsDirectoryClient.tsx
+
+FIX 1 — ADD "Agendar cita" BUTTON:
+In the card-right div, after the date grid and before ver-mas:
+<span class="comment">// Add this button — this is the MISSING primary CTA</span>
+&lt;Button
+  variant="default"
+  size="sm"
+  className="w-full font-bold bg-ink hover:bg-ink/90 text-primary-foreground mt-1"
+  onClick={(e) => {
+    e.stopPropagation()
+    openBookingSheet(doctor)  <span class="comment">// see below</span>
+  }}
+&gt;
+  &lt;CalendarIcon className="w-3.5 h-3.5 mr-1.5" /&gt; Agendar cita
+&lt;/Button&gt;
+
+FIX 2 — MAP PIN TOOLTIPS:
+Add `group` class to the pin button and z-20 to tooltip:
+className={`group absolute w-9 h-9 ... `}
+<span class="comment">// tooltip:</span>
+className="absolute bottom-[calc(100%+8px)] ... opacity-0 group-hover:opacity-100 z-20 pointer-events-none"
+
+FIX 3 — SEPARATE CARD CLICK INTENTS:
+Remove router.push from the outer card wrapper.
+Add onClick={onSelect} to the outer card.
+Add a "Ver perfil" button in card-left that does router.push OR opens a Sheet.
+Sheet preferred — retains list context.
+
+FIX 4 — SORT SELECT:
+Remove duplicate option value="rating".
+Wire onChange: router.push(`/doctors${buildQuery({ sortBy: e.target.value })}`)
+Options: relevance, rating, price_asc, price_desc, experience
+
+FIX 5 — BOOKING SHEET:
+Add a &lt;Sheet&gt; (shadcn) or &lt;Dialog&gt; for the booking flow:
+State: { doctor, selectedDate, selectedTime, step: 'slots'|'confirm'|'done' }
+Slots: SlotGrid component (keyboard-navigable, timezone-aware)
+Confirm: price summary + Stripe Elements (or OXXO/SPEI toggle)
+Done: success animation + WhatsApp recap option
+Keep selected appointment slot for 10 minutes (Supabase optimistic lock).
+
+FIX 6 — GRID OVERFLOW:
+grid-template-columns: minmax(0, 220px) minmax(0, 1fr) minmax(0, 380px)
+Each column: min-w-0, overflow: hidden on the panel level.
+Map panel: overflow: hidden (it already has this, just ensure no child overflows).
+Results panel: overflow-y: auto, flex-shrink: 0 on results-bar.
+
+<strong># PHASE 2 — PATIENT EXPERIENCE (week 2)</strong>
+
+## 2.1 Homepage (/)
+- Add announcement bar (top, sticky, dismissible, persisted in localStorage):
+  "Plataforma COFEPRIS · Cédulas verificadas con SEP · IA asistida, no diagnóstico"
+- Move "AI triage" entry point to hero (primary CTA above the fold)
+- Make stat numbers clickable: "2.4M+ pacientes" → /specialties, "850+ doctores" → /doctors
+- Add "¿Cómo funciona?" 3-step visual (icon row, not cards): Describe → IA analiza → Doctor te atiende
+
+## 2.2 Patient dashboard (/app-pacientes)
+- Add fixed bottom-nav for mobile (< lg): 5 items, 64px tall, haptic on tap
+  Items: Inicio · Consultas · Recetas · Mensajes · Perfil
+- Add mobile header hamburger that opens a Sheet with full nav
+- Empty state registry (src/config/emptyStates.ts):
+  { key, headline, body, cta?: { label, href }, tone: 'warm'|'urgent'|'celebrate' }
+  Required entries: patient.dashboard.first, patient.messages.empty,
+  doctors.none.online, ai.lowConfidence, payment.failed, search.noResults,
+  video.firstCall, consultation.ended
+  No page may hard-code empty-state copy — always reference this registry.
+
+## 2.3 Consultation room (/consultation)
+- 3-pane layout (doctor view): patient context | video+SOAP | rx builder
+- ProgressStrip for prescription: Redactando → Validando COFEPRIS → Firmando
+  Each phase has a real Supabase event hook, not fake setTimeout progress.
+- SOAP block: AI drafts each field (S/O/A/P), doctor edits in-place.
+  Every AI-drafted field shows a ConfidenceBar and "Regenerar" button.
+- Drug interaction check: inline chips under Rx row, colored by severity.
+
+## 2.4 Checkout (/checkout)
+- Stripe Elements in-page (no redirect). OXXO + SPEI toggle.
+- Payment failure: retry in-place without losing the booking context.
+  Appointment slot held for 10 minutes with countdown.
+- Guest-first: collect email at video-start, not before consultation begins.
+
+<strong># PHASE 3 — DOCTOR WORKSPACE (week 3)</strong>
+
+## 3.1 Doctor onboarding limbo → productive waiting room
+Replace the 8-padlock sidebar with a "Panel previo al lanzamiento":
+- Queue position (#12 de 45), live via Supabase realtime
+- Estimated verification time ("≈ 36 horas restantes") — derived from queue position × avg_review_time
+- 5-item checklist (profile, availability, rate, tech check, first-consult playbook)
+  Each item 44px tall, completion state, link to complete it
+- Preview tiles of locked features: blurred screenshot + "Disponible al verificar"
+- No padlock icons anywhere on this page.
+
+## 3.2 Consult room keyboard-first
+- ⌘K command palette: covers patients, appointments, protocols, drug lookup, ICD-10 codes
+- All primary actions show keyboard shortcuts on hover (hint spans, mono, 10px)
+- SOAP navigation: Tab between fields, ⌘S to save, ⌘Enter to submit
+
+<strong># PHASE 4 — MOBILE, A11Y, PERFORMANCE (week 4)</strong>
+
+- Audit every route with Lighthouse CI. Target ≥ 95 all categories.
+- Reduced-data mode: ?lite=1 or localStorage dx-lite=true
+  Disables: avatars, map tiles, video previews, large images
+  Toggle in patient header. Persist. Respect on all image components.
+- SMS fallback: after 3 video failures → send "SÍNTOMAS → 55-XX-XXX" card
+- Touch targets: every interactive element ≥ 44px. Audit with axe-core CI.
+- Screen readers: live regions for AI responses, rx progress, queue position
+- Reduced-motion: @media (prefers-reduced-motion) disables Framer transitions,
+  shows final state directly.
+- Skip links at top of every page.
+- Print stylesheet for /consultation prescription output (matches on-screen layout).
+
+<strong># PHASE 5 — DARK MODE, CLEANUP, DONE (week 5)</strong>
+
+- Verify every CSS variable has a dark variant in globals.css.
+  Ocean primary must stay ocean in dark, not the current sky-blue fork.
+- Chart colors: use --chart-1 through --chart-5 consistently. One Recharts theme.
+- Route cleanup: any route file over 400 LOC → split into
+  page.tsx + view.tsx + actions.ts + schema.ts (Zod)
+- Remove the 50+ markdown planning docs from repo root. Keep only:
+  README.md · PRINCIPLES.md · DECISIONS.md · docs/DESIGN_MIGRATION.md
+- Generate docs/DESIGN_SYSTEM.md from the canonical tokens in globals.css.
+
+<strong># DELIVERY CONTRACT</strong>
+
+After each phase, open a single PR titled "Phase N · ...":
+- Before/after screenshots of at least 5 key routes
+- docs/DESIGN_MIGRATION.md updated
+- Run: pnpm lint:full && pnpm typecheck && pnpm test && pnpm playwright test
+- Lighthouse CI must not regress on any public route.
+- Bundle size: patient route initial JS ≤ 60 KB.
+
+<strong># DO NOT</strong>
+- Do not add colors, fonts, or radii outside the tokens in globals.css.
+- Do not use indeterminate spinners longer than 800ms.
+- Do not hard-code empty-state copy — use the emptyStates registry.
+- Do not add marketing copy (¡Increíble!, exclamations) to clinical surfaces.
+- Do not add emoji to UI — lucide icons only.
+- Do not regress Lighthouse, a11y, or bundle size.
+- Do not create a new design system — extend globals.css with additional tokens only.
+
+<strong># DONE LOOKS LIKE</strong>
+- /ai-consulta: tool calls visible, urgency + confidence on every message,
+  COFEPRIS badge, doctor referrals with working "Agendar cita" button.
+- /doctors: "Agendar cita" on every card, booking sheet works, map tooltips show,
+  filters have visual feedback, no layout overflow on any viewport.
+- Every page: mobile navigation works, empty states are warm and actionable.
+- Doctor workspace: no padlocks, queue position visible, ⌘K works.
+- Lighthouse ≥ 95. Zero "No hay datos" in codebase. Zero indeterminate spinners.
+- Doctor.mx feels calm, trustworthy, and unmistakably Mexican-medical.
+  Not generic shadcn. Not Linear-clone. Not Doctoralia-clone.
+  Something patients recommend to their families.</pre>
+    </div>
+
+    <p style="font-size:12px;color:var(--fg-muted);margin-top:14px;display:flex;align-items:center;gap:6px">
+      <span style="width:6px;height:6px;border-radius:50%;background:var(--vital);display:inline-block;flex-shrink:0"></span>
+      Paste this into a Claude Code session at the repo root. It will read CLAUDE.md and globals.css automatically, then execute phase by phase.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="shell footer-row">
+    <span>Doctor.mx · Master Upgrade Prompt v2 · 2026-04-21</span>
+    <span style="font-family:var(--font-mono)">lawrns/doctormx@main</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const text = document.getElementById('promptText').innerText
+    .replace(/✓/g,'✓')
+    .replace(/→/g,'->')
+
+  function bind(btnId, labelId) {
+    const btn = document.getElementById(btnId)
+    const lbl = document.getElementById(labelId)
+    if(!btn) return
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(text)
+        btn.classList.add('ok')
+        lbl.textContent = 'Copied ✓'
+        setTimeout(()=>{btn.classList.remove('ok');lbl.textContent=btnId==='copyBtn'?'Copy Full Prompt':'Copy'},2000)
+      } catch(e) {
+        const range = document.createRange()
+        range.selectNodeContents(document.getElementById('promptText'))
+        const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range)
+        lbl.textContent = 'Selected — Cmd+C'
+      }
+    })
+  }
+  bind('copyBtn','copyLabel')
+  bind('copyBtn2','copyLabel2')
+})()
+</script>
+</body>
+</html>
