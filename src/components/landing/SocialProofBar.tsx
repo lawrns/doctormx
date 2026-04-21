@@ -11,7 +11,7 @@ const outlets = [
 
 export function SocialProofBar() {
   return (
-    <section className="border-y border-[#d4d9e3] bg-[#eef0f5] py-10">
+    <section className="border-y border-[#d4d9e3] bg-[#eef0f5] py-6">
       <div className="mx-auto max-w-5xl px-6 text-center">
         <p className="mb-6 font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-[#5c6783]">
           Reconocido por

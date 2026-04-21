@@ -87,14 +87,14 @@ export function StatsSection() {
   const prefersReducedMotion = useReducedMotion()
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f8fb] py-20 sm:py-24">
+    <section className="relative overflow-hidden bg-[#f7f8fb] py-14 sm:py-16">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
-          className="mb-16 text-center"
+          className="mb-10 text-center"
         >
           <Eyebrow className="mb-4 justify-center">Impacto real</Eyebrow>
           <h2 className="font-display text-[clamp(2rem,4vw,3.5rem)] font-bold leading-[1.02] tracking-[-0.02em] text-[#0a1533]">
@@ -102,7 +102,7 @@ export function StatsSection() {
             <em className="font-serif italic font-normal text-[#1a3ab8]">nuestra misión</em>
           </h2>
           <p className="mx-auto mt-3 max-w-md font-mono text-[11px] uppercase tracking-[0.12em] text-[#5c6783]">
-            Datos actualizados · Enero 2025
+            Datos actualizados · Abril 2026
           </p>
         </motion.div>
 
@@ -151,7 +151,7 @@ export function StatsSection() {
           ))}
         </div>
 
-        <p className="mx-auto mt-10 max-w-lg text-center text-xs text-[#5c6783]/70">
+        <p className="mx-auto mt-8 max-w-lg text-center text-xs text-[#5c6783]/70">
           Estadísticas basadas en datos internos de Doctor.mx. Satisfacción medida por encuestas post-consulta.
         </p>
       </div>

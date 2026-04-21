@@ -10,7 +10,7 @@ export function CTASection() {
   const prefersReducedMotion = useReducedMotion()
 
   return (
-    <section className="relative overflow-hidden bg-[#0a1533] py-24 sm:py-28">
+    <section className="relative overflow-hidden bg-[#0a1533] py-14 sm:py-16">
       {/* Subtle noise texture */}
       <div
         className="absolute inset-0 -z-10 opacity-[0.08]"

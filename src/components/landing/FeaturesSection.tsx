@@ -44,7 +44,7 @@ export function FeaturesSection() {
 
   return (
     <section
-      className="relative overflow-hidden bg-[#f7f8fb] py-24 sm:py-28"
+      className="relative overflow-hidden bg-[#f7f8fb] py-14 sm:py-16"
       role="region"
       aria-labelledby="features-section-heading"
     >
@@ -60,7 +60,7 @@ export function FeaturesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
-          className="mb-16 text-center"
+          className="mb-10 text-center"
         >
           <div id="features-section-heading">
             <Eyebrow className="mb-4 justify-center">Plataforma</Eyebrow>

@@ -206,7 +206,7 @@ export default function DrSimeonShowcase() {
   }
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f8fb] py-24 sm:py-28">
+    <section className="relative overflow-hidden bg-[#f7f8fb] py-14 sm:py-16">
       <AnimatedBlobs />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

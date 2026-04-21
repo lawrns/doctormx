@@ -30,18 +30,18 @@ export function HowItWorks() {
   const prefersReducedMotion = useReducedMotion()
 
   return (
-    <section className="bg-white py-24 sm:py-28">
+    <section className="bg-white py-14 sm:py-16">
       <div className="mx-auto max-w-5xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
-          className="mb-16 text-center"
+          className="mb-10 text-center"
         >
           <Eyebrow className="mb-4 justify-center">Cómo funciona</Eyebrow>
           <h2 className="font-display text-[clamp(2rem,4vw,3.5rem)] font-bold leading-[1.02] tracking-[-0.02em] text-[#0a1533]">
-            Tres pasos.{''}
+            Tres pasos.{' '}
             <em className="font-serif italic font-normal text-[#1a3ab8]">
               Ninguna fila.
             </em>

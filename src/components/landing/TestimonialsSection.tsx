@@ -49,7 +49,7 @@ export function TestimonialsSection() {
   const prefersReducedMotion = useReducedMotion()
 
   return (
-    <section className="relative overflow-hidden bg-white py-24 sm:py-28">
+    <section className="relative overflow-hidden bg-white py-14 sm:py-16">
       {/* Subtle background orb */}
       <div
         className="absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#eef4ff]/40 blur-3xl"
@@ -62,7 +62,7 @@ export function TestimonialsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
-          className="mb-16 text-center"
+          className="mb-10 text-center"
         >
           <Eyebrow className="mb-4 justify-center">Historias reales</Eyebrow>
           <h2 className="font-display text-[clamp(2rem,4vw,3.5rem)] font-bold leading-[1.02] tracking-[-0.02em] text-[#0a1533]">
