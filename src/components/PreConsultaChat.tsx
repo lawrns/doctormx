@@ -96,10 +96,10 @@ function formatMessageTime(timestamp: Date) {
 
 function urgencyBadge(urgency: PreConsultaSummary['urgencyLevel']) {
   const map = {
-    low: 'bg-emerald-50 text-emerald-700 border-emerald-200',
-    medium: 'bg-amber-50 text-amber-700 border-amber-200',
-    high: 'bg-orange-50 text-orange-700 border-orange-200',
-    emergency: 'bg-rose-50 text-rose-700 border-rose-200',
+    low: 'bg-vital/10 text-vital border-vital/20',
+    medium: 'bg-coral/10 text-coral border-coral/20',
+    high: 'bg-orange-500/10 text-orange-600 border-orange-500/20',
+    emergency: 'bg-red-500/10 text-red-600 border-red-500/20',
   } as const;
 
   const label = {
@@ -173,12 +173,12 @@ export default function PreConsultaChat({
   }, [anonymous, isOpen, mode, sessionId])
 
   const containerClasses = mode === 'modal'
-    ? 'fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 p-4 backdrop-blur-xl'
+    ? 'fixed inset-0 z-50 flex items-center justify-center bg-ink/60 p-4 backdrop-blur-xl'
     : 'flex-1 flex flex-col min-h-0';
 
   const panelClasses = mode === 'modal'
-    ? 'relative flex h-[min(88vh,860px)] w-full max-w-6xl overflow-hidden rounded-[32px] border border-white/15 bg-slate-950 shadow-[0_40px_120px_rgba(15,23,42,0.45)]'
-    : 'flex-1 flex flex-col min-h-0 overflow-hidden rounded-[32px] border border-[hsl(var(--border))] bg-[hsl(var(--card))] shadow-[0_20px_80px_rgba(15,23,42,0.08)] lg:flex-row';
+    ? 'relative flex h-[min(88vh,860px)] w-full max-w-6xl overflow-hidden rounded-2xl border border-border bg-background shadow-dx-2'
+    : 'flex-1 flex flex-col min-h-0 overflow-hidden rounded-2xl border border-border bg-card shadow-dx-1 lg:flex-row';
 
   const userMessageCount = useMemo(
     () => messages.filter((m) => m.role === 'user').length,
@@ -187,12 +187,12 @@ export default function PreConsultaChat({
 
   const statusTone = useMemo(() => {
     if (summary?.urgencyLevel === 'emergency') {
-      return 'text-rose-200';
+      return 'text-red-400';
     }
     if (summary?.urgencyLevel === 'high') {
-      return 'text-orange-200';
+      return 'text-orange-400';
     }
-    return 'text-emerald-200';
+    return 'text-vital';
   }, [summary]);
 
   const sendMessage = async () => {
@@ -313,26 +313,26 @@ export default function PreConsultaChat({
         animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
         className={panelClasses}
       >
-        <div className="hidden w-[360px] shrink-0 self-stretch border-r border-slate-800 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.18),_transparent_38%),linear-gradient(180deg,#0f172a_0%,#111827_48%,#020617_100%)] text-white lg:flex lg:flex-col">
+        <div className="hidden w-[360px] shrink-0 self-stretch border-r border-border bg-muted lg:flex lg:flex-col">
           <div className="flex h-full min-h-full flex-col p-8">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <DoctorAvatar src={AI_AVATAR_URL} alt={AI_DOCTOR_NAME} name={AI_DOCTOR_NAME} size="xl" isOnline />
                 <div>
-                  <p className="text-sm uppercase tracking-[0.28em] text-sky-100">Asistente clínico</p>
-                  <h2 className="text-2xl font-semibold">{AI_DOCTOR_NAME}</h2>
+                  <p className="text-sm uppercase tracking-[0.28em] text-muted-foreground font-mono">Asistente clínico</p>
+                  <h2 className="text-2xl font-semibold font-display text-foreground">{AI_DOCTOR_NAME}</h2>
                 </div>
               </div>
               {mode === 'modal' && (
-                <button onClick={onCloseAction} className="rounded-full border border-slate-700 bg-slate-900/70 p-2 text-slate-100 transition hover:bg-slate-800" aria-label="Cerrar">
+                <button onClick={onCloseAction} className="rounded-full border border-border bg-card p-2 text-foreground transition hover:bg-secondary" aria-label="Cerrar">
                   <X className="h-4 w-4" />
                 </button>
               )}
             </div>
 
             <div className="mt-6 flex flex-1 flex-col gap-5 overflow-y-auto">
-              <div className="rounded-[24px] border border-slate-800 bg-slate-900/70 p-5">
-                <p className="text-sm leading-7 text-slate-200">
+              <div className="rounded-2xl border border-border bg-card p-5">
+                <p className="text-sm leading-7 text-muted-foreground">
                   Resume tus síntomas con claridad, detecta alertas importantes y llega a tu consulta con una ruta clínica mejor estructurada.
                 </p>
               </div>
@@ -343,23 +343,23 @@ export default function PreConsultaChat({
                 summary={summary}
               />
 
-              <div className="rounded-[28px] border border-slate-800 bg-slate-900/82 p-6">
-                <p className="text-xs uppercase tracking-[0.24em] text-slate-300">Estado actual</p>
+              <div className="rounded-2xl border border-border bg-card p-6">
+                <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground font-mono">Estado actual</p>
                 <div className={cn('mt-3 flex items-center gap-3 text-sm font-medium', statusTone)}>
                   <span className="inline-flex h-2.5 w-2.5 rounded-full bg-current" />
                   {summary ? 'Evaluación lista para compartir con el especialista' : isLoading ? 'Analizando tu conversación en tiempo real' : 'Esperando tu siguiente mensaje'}
                 </div>
                 {summary ? (
-                  <div className="mt-6 space-y-4 rounded-[24px] border border-slate-800 bg-slate-950/90 p-6 text-sm text-slate-100">
+                  <div className="mt-6 space-y-4 rounded-2xl border border-border bg-background p-6 text-sm text-foreground">
                     <div className="flex items-center justify-between gap-3">
-                      <span className="font-medium text-white">Urgencia clínica</span>
+                      <span className="font-medium text-foreground">Urgencia clínica</span>
                       <span className={cn('rounded-full border px-3 py-1 text-xs font-semibold', urgencyBadge(summary.urgencyLevel).className)}>
                         {urgencyBadge(summary.urgencyLevel).label}
                       </span>
                     </div>
                     <div className="space-y-2">
-                      <p className="text-slate-300">Especialidad sugerida</p>
-                      <p className="font-medium text-white">{summary.suggestedSpecialty}</p>
+                      <p className="text-muted-foreground">Especialidad sugerida</p>
+                      <p className="font-medium text-foreground">{summary.suggestedSpecialty}</p>
                     </div>
                   </div>
                 ) : null}
@@ -368,24 +368,24 @@ export default function PreConsultaChat({
           </div>
         </div>
 
-        <div className="flex min-w-0 flex-1 min-h-0 flex-col bg-[linear-gradient(180deg,#f8fbff_0%,#ffffff_24%,#f8fafc_100%)]">
-          <div className="border-b border-slate-200/70 bg-white/80 px-5 py-4 backdrop-blur-xl sm:px-6">
+        <div className="flex min-w-0 flex-1 min-h-0 flex-col bg-background">
+          <div className="border-b border-border bg-card/80 px-5 py-4 backdrop-blur-xl sm:px-6">
             <div className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-3">
                 <DoctorAvatar src={AI_AVATAR_URL} alt={AI_DOCTOR_NAME} name={AI_DOCTOR_NAME} size="lg" isOnline className="lg:hidden" />
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-900">Pre-consulta asistida</h3>
-                  <p className="text-sm text-slate-500">Describe tus síntomas con confianza. Yo me encargo de estructurar el caso.</p>
+                  <h3 className="text-lg font-semibold font-display text-foreground">Pre-consulta asistida</h3>
+                  <p className="text-sm text-muted-foreground">Describe tus síntomas con confianza. Yo me encargo de estructurar el caso.</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 {showQuota && quota && (
-                  <div className="hidden rounded-full border border-slate-200 bg-slate-50 px-3 py-2 sm:flex sm:items-center sm:gap-3">
+                  <div className="hidden rounded-full border border-border bg-secondary px-3 py-2 sm:flex sm:items-center sm:gap-3">
                     <QuotaCounter used={quota.used} limit={quota.limit} size="sm" />
                   </div>
                 )}
                 {mode === 'modal' && (
-                  <button onClick={onCloseAction} className="rounded-full border border-slate-200 p-2 text-slate-500 transition hover:bg-slate-100 lg:hidden" aria-label="Cerrar">
+                  <button onClick={onCloseAction} className="rounded-full border border-border p-2 text-muted-foreground transition hover:bg-secondary lg:hidden" aria-label="Cerrar">
                     <X className="h-4 w-4" />
                   </button>
                 )}
@@ -407,27 +407,27 @@ export default function PreConsultaChat({
                       className={cn('flex items-end gap-3', isAssistant ? 'justify-start' : 'justify-end')}
                     >
                       {isAssistant && (
-                        <DoctorAvatar src={AI_AVATAR_URL} alt={AI_DOCTOR_NAME} name={AI_DOCTOR_NAME} size="default" isOnline className="shadow-lg shadow-sky-100" />
+                        <DoctorAvatar src={AI_AVATAR_URL} alt={AI_DOCTOR_NAME} name={AI_DOCTOR_NAME} size="default" isOnline className="shadow-md shadow-primary/10" />
                       )}
 
                       <div className={cn('max-w-[84%] space-y-1', isAssistant ? 'items-start' : 'items-end')}>
                         <div
                           className={cn(
-                            'rounded-[24px] px-4 py-3 text-sm leading-6 shadow-sm sm:px-5',
+                            'rounded-2xl px-4 py-3 text-sm leading-6 shadow-sm sm:px-5',
                             isAssistant
-                              ? 'rounded-bl-md border border-slate-200 bg-white text-slate-700 shadow-[0_12px_30px_rgba(15,23,42,0.08)]'
-                              : 'rounded-br-md bg-[linear-gradient(135deg,#2563eb_0%,#1d4ed8_48%,#0f172a_100%)] text-white shadow-[0_16px_40px_rgba(37,99,235,0.28)]'
+                              ? 'rounded-bl-md border border-border bg-card text-foreground shadow-dx-1'
+                              : 'rounded-br-md bg-ink text-white'
                           )}
                         >
                           <p className="whitespace-pre-wrap">{message.content}</p>
                         </div>
-                        <div className={cn('px-1 text-xs text-slate-400', isAssistant ? 'text-left' : 'text-right')}>
+                        <div className={cn('px-1 text-xs text-muted-foreground', isAssistant ? 'text-left' : 'text-right')}>
                           {isAssistant ? AI_DOCTOR_NAME : 'Tú'} · {formatMessageTime(message.timestamp)}
                         </div>
                       </div>
 
                       {!isAssistant && (
-                        <UserAvatar src={PATIENT_AVATAR_URL} alt="Paciente" name="Paciente" size="default" fallbackVariant="primary" className="shadow-lg shadow-slate-200" />
+                        <UserAvatar src={PATIENT_AVATAR_URL} alt="Paciente" name="Paciente" size="default" fallbackVariant="primary" className="shadow-md shadow-border" />
                       )}
                     </motion.div>
                   );
@@ -441,12 +441,12 @@ export default function PreConsultaChat({
                   className="flex items-end gap-3"
                 >
                   <DoctorAvatar src={AI_AVATAR_URL} alt={AI_DOCTOR_NAME} name={AI_DOCTOR_NAME} size="default" isOnline />
-                  <div className="rounded-[24px] rounded-bl-md border border-slate-200 bg-white px-4 py-3 shadow-[0_12px_30px_rgba(15,23,42,0.08)]" role="status" aria-live="polite">
+                  <div className="rounded-2xl rounded-bl-md border border-border bg-card px-4 py-3 shadow-dx-1" role="status" aria-live="polite">
                     <div className="flex items-center gap-2">
-                      <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-sky-500" />
-                      <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-sky-400 [animation-delay:160ms]" />
-                      <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-indigo-400 [animation-delay:320ms]" />
-                      <span className="ml-2 text-sm text-slate-500">Analizando síntomas y contexto clínico…</span>
+                      <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-primary" />
+                      <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-primary/70 [animation-delay:160ms]" />
+                      <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-primary/40 [animation-delay:320ms]" />
+                      <span className="ml-2 text-sm text-muted-foreground">Analizando síntomas y contexto clínico…</span>
                     </div>
                   </div>
                 </motion.div>
@@ -456,13 +456,13 @@ export default function PreConsultaChat({
                 <motion.div
                   initial={prefersReducedMotion ? undefined : { opacity: 0, y: 8 }}
                   animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
-                  className="rounded-[24px] border border-amber-200 bg-amber-50 px-4 py-4 text-sm text-amber-900 shadow-sm"
+                  className="rounded-2xl border border-coral/20 bg-coral/5 px-4 py-4 text-sm text-coral-foreground shadow-sm"
                 >
                   <div className="flex items-start gap-3">
-                    <AlertTriangle className="mt-0.5 h-5 w-5 text-amber-600" />
+                    <AlertTriangle className="mt-0.5 h-5 w-5 text-coral" />
                     <div>
-                      <p className="font-semibold">Atención temporal</p>
-                      <p className="mt-1 text-amber-800">{buildErrorCopy(errorCode)}</p>
+                      <p className="font-semibold text-coral">Atención temporal</p>
+                      <p className="mt-1 text-coral/80">{buildErrorCopy(errorCode)}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -472,16 +472,16 @@ export default function PreConsultaChat({
                 <motion.div
                   initial={prefersReducedMotion ? undefined : { opacity: 0, y: 12 }}
                   animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
-                  className="rounded-[28px] border border-emerald-100 bg-white p-5 shadow-[0_18px_50px_rgba(16,185,129,0.10)]"
+                  className="rounded-2xl border border-vital/20 bg-card p-5 shadow-dx-1"
                 >
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <div className="flex items-center gap-3">
-                      <div className="rounded-2xl bg-emerald-100 p-3 text-emerald-700">
+                      <div className="rounded-2xl bg-vital/10 p-3 text-vital">
                         <CheckCircle2 className="h-5 w-5" />
                       </div>
                       <div>
-                        <h4 className="text-base font-semibold text-slate-900">Resumen clínico listo</h4>
-                        <p className="text-sm text-slate-500">Lo compartiremos al continuar con tu cita.</p>
+                        <h4 className="text-base font-semibold font-display text-foreground">Resumen clínico listo</h4>
+                        <p className="text-sm text-muted-foreground">Lo compartiremos al continuar con tu cita.</p>
                       </div>
                     </div>
                     <span className={cn('rounded-full border px-3 py-1 text-xs font-semibold', urgencyBadge(summary.urgencyLevel).className)}>
@@ -489,13 +489,13 @@ export default function PreConsultaChat({
                     </span>
                   </div>
                   <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                    <div className="rounded-2xl bg-slate-50 p-4">
-                      <p className="text-xs uppercase tracking-[0.18em] text-slate-400">Motivo principal</p>
-                      <p className="mt-2 text-sm font-medium text-slate-900">{summary.chiefComplaint}</p>
+                    <div className="rounded-2xl bg-secondary p-4">
+                      <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground font-mono">Motivo principal</p>
+                      <p className="mt-2 text-sm font-medium text-foreground">{summary.chiefComplaint}</p>
                     </div>
-                    <div className="rounded-2xl bg-slate-50 p-4">
-                      <p className="text-xs uppercase tracking-[0.18em] text-slate-400">Especialidad sugerida</p>
-                      <p className="mt-2 text-sm font-medium text-slate-900">{summary.suggestedSpecialty}</p>
+                    <div className="rounded-2xl bg-secondary p-4">
+                      <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground font-mono">Especialidad sugerida</p>
+                      <p className="mt-2 text-sm font-medium text-foreground">{summary.suggestedSpecialty}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -507,8 +507,8 @@ export default function PreConsultaChat({
                   animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
                   className="space-y-3"
                 >
-                  <div className="flex items-center gap-2 px-1 text-sm font-semibold text-slate-700">
-                    <Stethoscope className="h-4 w-4 text-sky-600" />
+                  <div className="flex items-center gap-2 px-1 text-sm font-semibold text-foreground">
+                    <Stethoscope className="h-4 w-4 text-primary" />
                     Especialistas mejor posicionados para tu caso
                   </div>
                   <div className="grid gap-4">
@@ -519,28 +519,28 @@ export default function PreConsultaChat({
                         <motion.div
                           key={match.doctorId}
                           whileHover={prefersReducedMotion ? undefined : { y: -2 }}
-                          className="overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
+                          className="overflow-hidden rounded-2xl border border-border bg-card shadow-dx-1"
                         >
                           <div className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between">
                             <div className="flex min-w-0 items-center gap-4">
-                              <div className="relative h-16 w-16 overflow-hidden rounded-2xl bg-slate-100">
+                              <div className="relative h-16 w-16 overflow-hidden rounded-2xl bg-secondary">
                                 <Image src={imageSrc} alt={doctorName} fill className="object-cover" sizes="64px" />
                               </div>
                               <div className="min-w-0">
-                                <p className="truncate text-base font-semibold text-slate-900">{doctorName}</p>
-                                <p className="truncate text-sm text-slate-500">{match.doctor?.specialties?.[0]?.name || 'Especialista recomendado'}</p>
-                                <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
+                                <p className="truncate text-base font-semibold text-foreground">{doctorName}</p>
+                                <p className="truncate text-sm text-muted-foreground">{match.doctor?.specialties?.[0]?.name || 'Especialista recomendado'}</p>
+                                <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
                                   {typeof match.doctor?.rating_avg === 'number' && <span className="rounded-full bg-amber-50 px-2.5 py-1 font-medium text-amber-700">★ {match.doctor.rating_avg.toFixed(1)}</span>}
-                                  {match.doctor?.city && <span className="rounded-full bg-slate-100 px-2.5 py-1 font-medium text-slate-600">{match.doctor.city}</span>}
-                                  {typeof match.doctor?.price_cents === 'number' && <span className="rounded-full bg-emerald-50 px-2.5 py-1 font-medium text-emerald-700">{formatCurrency(match.doctor.price_cents)}</span>}
+                                  {match.doctor?.city && <span className="rounded-full bg-secondary px-2.5 py-1 font-medium text-foreground">{match.doctor.city}</span>}
+                                  {typeof match.doctor?.price_cents === 'number' && <span className="rounded-full bg-vital/10 px-2.5 py-1 font-medium text-vital">{formatCurrency(match.doctor.price_cents)}</span>}
                                 </div>
                               </div>
                             </div>
                             <div className="flex flex-col items-stretch gap-3 sm:items-end">
-                              <div className="max-w-xs text-sm text-slate-600 sm:text-right">{match.reasons?.[0] || 'Perfil recomendado para tu síntoma principal.'}</div>
+                              <div className="max-w-xs text-sm text-muted-foreground sm:text-right">{match.reasons?.[0] || 'Perfil recomendado para tu síntoma principal.'}</div>
                               <button
                                 onClick={() => { window.location.href = `/book/${match.doctorId}`; }}
-                                className="inline-flex items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#2563eb_0%,#1d4ed8_45%,#0f172a_100%)] px-5 py-3 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(37,99,235,0.28)] transition hover:translate-y-[-1px]"
+                                className="inline-flex items-center justify-center gap-2 rounded-xl bg-ink hover:bg-cobalt-800 px-5 py-3 text-sm font-semibold text-white transition-colors"
                               >
                                 Agendar con este doctor
                               </button>
@@ -557,33 +557,33 @@ export default function PreConsultaChat({
             </div>
           </div>
 
-          <div className="border-t border-slate-200/80 bg-white/90 px-4 py-4 backdrop-blur-xl sm:px-6">
+          <div className="border-t border-border bg-card/90 px-4 py-4 backdrop-blur-xl sm:px-6">
             <div className="mx-auto max-w-3xl">
               {showQuota && quota && (
-                <div className="mb-3 flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 sm:hidden">
+                <div className="mb-3 flex items-center justify-between rounded-2xl border border-border bg-secondary px-4 py-3 sm:hidden">
                   <div>
-                    <p className="text-sm font-medium text-slate-700">Consultas disponibles</p>
-                    <p className="text-xs text-slate-500">{quota.remaining} restantes</p>
+                    <p className="text-sm font-medium text-foreground">Consultas disponibles</p>
+                    <p className="text-xs text-muted-foreground">{quota.remaining} restantes</p>
                   </div>
                   <QuotaCounter used={quota.used} limit={quota.limit} size="sm" />
                 </div>
               )}
 
-              <div className="rounded-[28px] border border-slate-200 bg-slate-50 p-2 shadow-inner shadow-slate-100">
+              <div className="rounded-2xl border border-border bg-secondary p-2 shadow-inner shadow-border/30">
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-end">
                   <textarea
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     onKeyDown={handleKeyDown}
                     placeholder="Describe tus síntomas, su duración y cualquier señal que te preocupe…"
-                    className="min-h-[72px] flex-1 resize-none rounded-[22px] border-0 bg-transparent px-4 py-3 text-sm text-slate-700 outline-none placeholder:text-slate-400 focus:ring-0"
+                    className="min-h-[72px] flex-1 resize-none rounded-xl border-0 bg-transparent px-4 py-3 text-sm text-foreground outline-none placeholder:text-muted-foreground focus:ring-0"
                     rows={3}
                     disabled={isLoading}
                   />
                   <button
                     onClick={sendMessage}
                     disabled={!input.trim() || isLoading}
-                    className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#2563eb_0%,#1d4ed8_40%,#0f172a_100%)] px-5 text-sm font-semibold text-white shadow-[0_16px_40px_rgba(37,99,235,0.28)] transition focus-visible:ring-2 focus-visible:ring-[hsl(var(--brand-ocean))] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-ink hover:bg-cobalt-800 px-5 text-sm font-semibold text-white transition focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                   >
                     {quota?.remaining === 0 ? <Crown className="h-4 w-4" /> : <SendHorizonal className="h-4 w-4" />}
                     {isLoading ? 'Analizando…' : 'Enviar'}
@@ -591,7 +591,7 @@ export default function PreConsultaChat({
                 </div>
               </div>
 
-              <p className="mt-3 text-xs leading-5 text-slate-500">
+              <p className="mt-3 text-xs leading-5 text-muted-foreground">
                 Esta conversación es informativa y no sustituye una valoración médica presencial. Si presentas dolor torácico intenso, falta de aire severa o pérdida de conciencia, busca atención de emergencia de inmediato.
               </p>
             </div>

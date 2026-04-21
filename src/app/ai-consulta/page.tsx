@@ -64,30 +64,30 @@ export default function AnonymousConsultaPage() {
   return (
     <div className={isComplete ? 'min-h-screen bg-background flex flex-col' : 'h-dvh bg-background flex flex-col overflow-hidden'}>
       {/* Header */}
-      <header className="bg-[hsl(var(--card)/0.85)] backdrop-blur-md border-b border-[hsl(var(--border))] sticky top-0 z-50">
+      <header className="glass-nav sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 bg-[hsl(var(--brand-ocean))] rounded-xl flex items-center justify-center shadow-sm">
-              <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <div className="w-9 h-9 bg-primary rounded-xl flex items-center justify-center shadow-sm">
+              <svg className="w-5 h-5 text-paper" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
             </div>
-            <span className="text-xl font-bold text-[hsl(var(--text-primary))]">Doctor.mx</span>
+            <span className="text-xl font-bold font-display text-foreground">Doctor.mx</span>
           </Link>
           <div className="flex items-center gap-3">
-            <Link href="/" className="flex items-center gap-2 text-[hsl(var(--text-secondary))] hover:text-[hsl(var(--text-primary))] transition-colors">
+            <Link href="/" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
               <Home className="w-4 h-4" />
               <span className="text-sm font-medium">Inicio</span>
             </Link>
             {quota && (
               <div className="text-right">
-                <p className="text-sm font-medium text-[hsl(var(--text-primary))]">{quota.remaining} consultas gratis</p>
-                <div className="flex gap-1 mt-1">
+                <p className="text-sm font-medium text-foreground font-mono uppercase tracking-wider">{quota.remaining} consultas gratis</p>
+                <div className="flex gap-1 mt-1 justify-end">
                   {Array.from({ length: quota.limit }).map((_, i) => (
                     <div
                       key={i}
                       className={`w-2 h-2 rounded-full ${
-                        i < quota.used ? 'bg-[hsl(var(--brand-ocean))]' : 'bg-[hsl(var(--border))]'
+                        i < quota.used ? 'bg-primary' : 'bg-border'
                       }`}
                     />
                   ))}
@@ -135,38 +135,38 @@ export default function AnonymousConsultaPage() {
             className="space-y-6"
           >
             {/* Summary Card */}
-            <div className="bg-[hsl(var(--card))] rounded-2xl shadow-lg border border-[hsl(var(--border))] p-6">
+            <div className="bg-card rounded-2xl shadow-dx-1 border border-border p-6">
               <div className="flex items-center gap-2 mb-4">
-                <Check className="w-5 h-5 text-[hsl(var(--brand-ocean))]" />
-                <h3 className="font-bold text-[hsl(var(--text-primary))]">Evaluación Completada</h3>
+                <Check className="w-5 h-5 text-primary" />
+                <h3 className="font-bold font-display text-foreground text-lg">Evaluación Completada</h3>
               </div>
               <div className="space-y-3">
                 <div className="flex justify-between">
-                  <span className="text-[hsl(var(--text-secondary))]">Nivel de urgencia:</span>
-                  <span className="font-semibold text-[hsl(var(--brand-ocean))]">{summary.urgencyLevel || summary.urgency}</span>
+                  <span className="text-muted-foreground">Nivel de urgencia:</span>
+                  <span className="font-semibold text-primary">{summary.urgencyLevel || summary.urgency}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-[hsl(var(--text-secondary))]">Especialidad sugerida:</span>
-                  <span className="font-semibold">{summary.suggestedSpecialty || summary.specialty}</span>
+                  <span className="text-muted-foreground">Especialidad sugerida:</span>
+                  <span className="font-semibold text-foreground">{summary.suggestedSpecialty || summary.specialty}</span>
                 </div>
               </div>
             </div>
 
             {/* Referrals */}
             {referrals.length > 0 && (
-              <div className="bg-[hsl(var(--card))] rounded-2xl shadow-lg border border-[hsl(var(--border))] p-6">
-                <h3 className="font-bold text-[hsl(var(--text-primary))] mb-4">Doctores Recomendados</h3>
+              <div className="bg-card rounded-2xl shadow-dx-1 border border-border p-6">
+                <h3 className="font-bold font-display text-foreground text-lg mb-4">Doctores Recomendados</h3>
                 <div className="space-y-4">
                   {referrals.map((referral) => (
                     <div
                       key={referral.doctorId}
-                      className="border border-[hsl(var(--border))] rounded-xl p-4 hover:shadow-md hover:border-[hsl(var(--border)/0.5)] transition-all"
+                      className="border border-border rounded-xl p-4 hover:shadow-dx-1 hover:border-ink/20 transition-all"
                     >
-                      <p className="font-semibold text-[hsl(var(--text-primary))]">{referral.doctor?.profile?.full_name}</p>
-                      <p className="text-sm text-[hsl(var(--text-secondary))]">{referral.doctor?.specialties?.[0]?.name}</p>
+                      <p className="font-semibold text-foreground">{referral.doctor?.profile?.full_name}</p>
+                      <p className="text-sm text-muted-foreground">{referral.doctor?.specialties?.[0]?.name}</p>
                       <div className="flex items-center gap-2 mt-2">
-                        <span className="text-yellow-500">★</span>
-                        <span className="text-sm text-[hsl(var(--text-primary))]">{referral.doctor?.rating_avg}</span>
+                        <span className="text-amber-500">★</span>
+                        <span className="text-sm text-foreground">{referral.doctor?.rating_avg}</span>
                       </div>
                       <a
                         href={`/doctors/${referral.doctorId}`}
@@ -178,7 +178,7 @@ export default function AnonymousConsultaPage() {
                             specialty: referral.doctor?.specialties?.[0]?.name,
                           })
                         }}
-                        className="mt-3 inline-block px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-semibold rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all"
+                        className="mt-3 inline-block px-4 py-2 bg-ink hover:bg-cobalt-800 text-white text-sm font-semibold rounded-xl transition-colors"
                       >
                         Agendar Cita
                       </a>
@@ -212,7 +212,7 @@ export default function AnonymousConsultaPage() {
       )}
 
       {/* Compliance Notice */}
-      <div className="mt-auto py-6 text-center text-xs text-[hsl(var(--text-muted))]">
+      <div className="mt-auto py-6 text-center text-xs text-muted-foreground border-t border-border">
         <p>Servicio de orientación médica con IA. No sustituye la consulta presencial.</p>
         <p className="mt-1">En caso de emergencia, llama al 911.</p>
       </div>

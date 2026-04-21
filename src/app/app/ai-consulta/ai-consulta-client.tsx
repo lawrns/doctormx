@@ -137,14 +137,14 @@ function getSpecialtyConfig(specialty: string): SpecialtyConfig {
   const lower = specialty.toLowerCase();
   if (/cardio|coraz[oó]n|infarto/.test(lower))      return { icon: Heart,      color: '#ef4444', bg: 'bg-red-500/15' };
   if (/neurol|cerebro|cabeza|migra/.test(lower))    return { icon: Brain,      color: '#a855f7', bg: 'bg-purple-500/15' };
-  if (/oftalm|ojo|visi[oó]n/.test(lower))           return { icon: Eye,        color: '#3b82f6', bg: 'bg-blue-500/15' };
+  if (/oftalm|ojo|visi[oó]n/.test(lower))           return { icon: Eye,        color: 'hsl(var(--primary))', bg: 'bg-primary/15' };
   if (/pediatr|ni[ñn]|infant|beb[eé]/.test(lower)) return { icon: Baby,       color: '#ec4899', bg: 'bg-pink-500/15' };
   if (/dermatol|piel|cutane|erupci/.test(lower))    return { icon: Smile,      color: '#f97316', bg: 'bg-orange-500/15' };
   if (/pulm[oó]n|respir|bronq|neum/.test(lower))   return { icon: Wind,       color: '#06b6d4', bg: 'bg-cyan-500/15' };
   if (/gastro|digest|est[oó]mag|colon/.test(lower)) return { icon: Activity,   color: '#22c55e', bg: 'bg-green-500/15' };
   if (/psiqui|psicol|mental|ansied/.test(lower))    return { icon: Sparkles,   color: '#8b5cf6', bg: 'bg-violet-500/15' };
   if (/ortop|trauma|hueso|articular/.test(lower))   return { icon: Zap,        color: '#f59e0b', bg: 'bg-amber-500/15' };
-  return { icon: Stethoscope, color: 'hsl(197 56% 55%)', bg: 'bg-sky-500/15' };
+  return { icon: Stethoscope, color: 'hsl(var(--primary))', bg: 'bg-primary/15' };
 }
 
 function detectSpecialtyFromText(text: string): { specialty: string; confidence: number } | null {
@@ -184,23 +184,23 @@ function AnalysisStatusHeader({ stage }: { stage: ConsultStage }) {
       <div className="relative flex h-8 w-8 shrink-0 items-center justify-center">
         {isActive && !prefersReducedMotion && (
           <motion.div
-            className="absolute inset-0 rounded-full bg-sky-500/20"
+            className="absolute inset-0 rounded-full bg-primary/20"
             animate={{ scale: [1, 1.4, 1], opacity: [0.6, 0.15, 0.6] }}
             transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
           />
         )}
-        <Stethoscope className={cn('relative h-4 w-4', stage === 'complete' ? 'text-emerald-400' : stage === 'error' ? 'text-rose-400' : 'text-sky-300')} />
+        <Stethoscope className={cn('relative h-4 w-4', stage === 'complete' ? 'text-vital' : stage === 'error' ? 'text-red-400' : 'text-primary')} />
       </div>
       <div>
-        <p className="text-xs uppercase tracking-[0.2em] text-slate-500">Dr. Simeon</p>
-        <p className="text-sm font-medium text-white">{STAGE_LABELS[stage]}</p>
+        <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-mono">Dr. Simeon</p>
+        <p className="text-sm font-medium text-foreground">{STAGE_LABELS[stage]}</p>
       </div>
       {isActive && (
         <div className="ml-auto flex items-center gap-1">
           {[0, 1, 2].map((i) => (
             <span
               key={i}
-              className="h-1.5 w-1.5 rounded-full bg-sky-400"
+              className="h-1.5 w-1.5 rounded-full bg-primary"
               style={{ animation: prefersReducedMotion ? 'none' : `pulse 1.2s ease-in-out ${i * 0.2}s infinite` }}
             />
           ))}
@@ -225,8 +225,8 @@ function SpecialtyMorphCard({
   const isLocked = stage === 'complete' || stage === 'consensus';
 
   return (
-    <div className="rounded-[20px] border border-slate-800 bg-slate-900/60 p-4">
-      <p className="mb-3 text-xs uppercase tracking-[0.2em] text-slate-500">Especialidad detectada</p>
+    <div className="rounded-2xl border border-border bg-card p-4">
+      <p className="mb-3 text-xs uppercase tracking-[0.2em] text-muted-foreground font-mono">Especialidad detectada</p>
       <div className="flex items-center gap-3">
         <AnimatePresence mode="wait">
           <motion.div
@@ -235,24 +235,24 @@ function SpecialtyMorphCard({
             animate={prefersReducedMotion ? undefined : { scale: 1, opacity: 1 }}
             exit={prefersReducedMotion ? undefined : { scale: 0.7, opacity: 0 }}
             transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-            className={cn('flex h-11 w-11 shrink-0 items-center justify-center rounded-xl', config?.bg ?? 'bg-slate-800')}
+            className={cn('flex h-11 w-11 shrink-0 items-center justify-center rounded-xl', config?.bg ?? 'bg-muted')}
           >
             <Icon className="h-5 w-5" style={{ color: config?.color ?? '#64748b' }} />
           </motion.div>
         </AnimatePresence>
         <div className="flex-1 min-w-0">
-          <p className="text-sm font-semibold text-white truncate">{specialty ?? 'Evaluando...'}</p>
+          <p className="text-sm font-semibold text-foreground truncate">{specialty ?? 'Evaluando...'}</p>
           {confidence > 0 && (
             <div className="mt-1.5">
-              <div className="h-1 w-full overflow-hidden rounded-full bg-slate-800">
+              <div className="h-1 w-full overflow-hidden rounded-full bg-muted">
                 <motion.div
-                  className={cn('h-full rounded-full', isLocked ? 'bg-emerald-500' : 'bg-sky-500')}
+                  className={cn('h-full rounded-full', isLocked ? 'bg-vital' : 'bg-primary')}
                   initial={prefersReducedMotion ? undefined : { width: 0 }}
                   animate={prefersReducedMotion ? undefined : { width: `${Math.round(confidence * 100)}%` }}
                   transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
                 />
               </div>
-              <p className="mt-1 text-xs text-slate-500">{Math.round(confidence * 100)}% confianza</p>
+              <p className="mt-1 text-xs text-muted-foreground">{Math.round(confidence * 100)}% confianza</p>
             </div>
           )}
         </div>
@@ -278,18 +278,18 @@ function RedFlagAlertCard({ flags, requiresEscalation }: { flags: RedFlagResult[
             animate={{ scale: [1, 1.15, 1], opacity: [1, 0.6, 1] }}
             transition={{ duration: 1.4, repeat: Infinity }}
           >
-            <AlertTriangle className={cn('h-4 w-4 shrink-0', requiresEscalation ? 'text-rose-400' : 'text-orange-400')} />
+            <AlertTriangle className={cn('h-4 w-4 shrink-0', requiresEscalation ? 'text-red-400' : 'text-orange-400')} />
           </motion.div>
         ) : (
-          <AlertTriangle className={cn('h-4 w-4 shrink-0', requiresEscalation ? 'text-rose-400' : 'text-orange-400')} />
+          <AlertTriangle className={cn('h-4 w-4 shrink-0', requiresEscalation ? 'text-red-400' : 'text-orange-400')} />
         )}
-        <p className={cn('text-xs font-semibold uppercase tracking-[0.16em]', requiresEscalation ? 'text-rose-300' : 'text-orange-300')}>
+        <p className={cn('text-xs font-semibold uppercase tracking-[0.16em]', requiresEscalation ? 'text-red-300' : 'text-orange-300')}>
           {requiresEscalation ? 'Emergencia detectada' : 'Alertas médicas'}
         </p>
       </div>
       <ul className="space-y-1">
         {flags.slice(0, 2).map((f, i) => (
-          <li key={i} className={cn('text-xs', requiresEscalation ? 'text-rose-200' : 'text-orange-200')}>
+          <li key={i} className={cn('text-xs', requiresEscalation ? 'text-red-200' : 'text-orange-200')}>
             • {f.message}
           </li>
         ))}
@@ -301,29 +301,29 @@ function RedFlagAlertCard({ flags, requiresEscalation }: { flags: RedFlagResult[
 function ReasoningTimeline({ steps }: { steps: ReasoningStep[] }) {
   const prefersReducedMotion = useReducedMotion();
   return (
-    <div className="rounded-[20px] border border-slate-800 bg-slate-900/60 p-4 space-y-2">
-      <p className="mb-3 text-xs uppercase tracking-[0.2em] text-slate-500">Pasos de análisis</p>
+    <div className="rounded-2xl border border-border bg-card p-4 space-y-2">
+      <p className="mb-3 text-xs uppercase tracking-[0.2em] text-muted-foreground font-mono">Pasos de análisis</p>
       {steps.map((step) => (
         <motion.div
           key={step.id}
           className={cn(
             'flex items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-xs transition-colors',
-            step.status === 'done'   ? 'text-emerald-300' :
-            step.status === 'active' ? 'text-sky-200' : 'text-slate-600',
+            step.status === 'done'   ? 'text-vital' :
+            step.status === 'active' ? 'text-primary' : 'text-muted-foreground',
           )}
           animate={step.status === 'active' && !prefersReducedMotion ? { x: [0, 2, 0] } : {}}
           transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
         >
           {step.status === 'done' ? (
-            <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-emerald-400" />
+            <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-vital" />
           ) : step.status === 'active' ? (
             <motion.div
-              className="h-2 w-2 shrink-0 rounded-full bg-sky-400"
+              className="h-2 w-2 shrink-0 rounded-full bg-primary"
               animate={prefersReducedMotion ? {} : { opacity: [1, 0.3, 1] }}
               transition={{ duration: 1, repeat: Infinity }}
             />
           ) : (
-            <div className="h-2 w-2 shrink-0 rounded-full border border-slate-700" />
+            <div className="h-2 w-2 shrink-0 rounded-full border border-border" />
           )}
           <span>{step.label}</span>
         </motion.div>
@@ -346,12 +346,12 @@ function UrgencyGauge({ level }: { level: string }) {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <div className="rounded-[20px] border border-slate-800 bg-slate-900/60 p-4">
+    <div className="rounded-2xl border border-border bg-card p-4">
       <div className="flex items-center justify-between mb-2">
-        <p className="text-xs uppercase tracking-[0.2em] text-slate-500">Nivel de urgencia</p>
+        <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-mono">Nivel de urgencia</p>
         <span className="text-xs font-semibold" style={{ color: config.color }}>{config.label}</span>
       </div>
-      <div className="h-2 w-full overflow-hidden rounded-full bg-slate-800">
+      <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
         <motion.div
           className="h-full rounded-full"
           style={{ backgroundColor: config.color }}
@@ -370,23 +370,23 @@ function ResponseGenerationWave({ progress }: { progress: number }) {
   const labelIndex = Math.min(Math.floor(progress / 25), labels.length - 1);
 
   return (
-    <div className="rounded-[20px] border border-sky-900/40 bg-sky-950/30 p-4">
+    <div className="rounded-2xl border border-primary/20 bg-primary/5 p-4">
       <div className="flex items-center gap-3 mb-3">
         {!prefersReducedMotion ? (
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 1.5, repeat: Infinity, ease: 'linear' }}
           >
-            <Loader2 className="h-4 w-4 text-sky-400" />
+            <Loader2 className="h-4 w-4 text-primary" />
           </motion.div>
         ) : (
-          <Loader2 className="h-4 w-4 text-sky-400" />
+          <Loader2 className="h-4 w-4 text-primary" />
         )}
-        <p className="text-sm text-sky-200">{labels[labelIndex]}...</p>
+        <p className="text-sm text-primary/80">{labels[labelIndex]}...</p>
       </div>
-      <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-800">
+      <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
         <motion.div
-          className="h-full rounded-full bg-gradient-to-r from-sky-500 to-indigo-500"
+          className="h-full rounded-full bg-primary"
           initial={prefersReducedMotion ? undefined : { width: '5%' }}
           animate={prefersReducedMotion ? undefined : { width: `${Math.max(progress, 5)}%` }}
           transition={{ duration: 0.4, ease: 'easeOut' }}
@@ -465,13 +465,13 @@ function ConversationTrail({ formData, currentStep }: { formData: FormData; curr
           className="space-y-1.5"
         >
           <div className="flex items-start gap-2">
-            <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sky-900/60 text-sky-400">
+            <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary">
               <Stethoscope className="h-3 w-3" />
             </div>
-            <p className="text-xs text-slate-400 pt-1">{STEP_META[step].question}</p>
+            <p className="text-xs text-muted-foreground pt-1">{STEP_META[step].question}</p>
           </div>
           <div className="ml-8">
-            <div className="inline-block rounded-2xl rounded-tl-sm bg-slate-800 px-3 py-2 text-sm text-white max-w-[85%]">
+            <div className="inline-block rounded-2xl rounded-tl-sm bg-muted px-3 py-2 text-sm text-foreground max-w-[85%]">
               {STEP_META[step].getAnswer(formData)}
             </div>
           </div>
@@ -820,27 +820,27 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
   };
 
   const isInIntake = !['consulting', 'results'].includes(currentStep);
-  const headerBg = 'bg-slate-950/90 backdrop-blur-md border-b border-slate-800';
+  const headerBg = 'bg-background/90 backdrop-blur-md border-b border-border';
 
   // ============================================================================
   // RENDER
   // ============================================================================
 
   return (
-    <div className="min-h-screen bg-slate-950 flex flex-col">
+    <div className="min-h-screen bg-background flex flex-col">
       {/* Header */}
       <header className={cn('sticky top-0 z-50', headerBg)}>
         <div className="flex items-center justify-between px-4 py-3">
           <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-sky-600/20">
-              <Sparkles className="h-4 w-4 text-sky-400" />
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/15">
+              <Sparkles className="h-4 w-4 text-primary" />
             </div>
             <div>
-              <p className="text-sm font-semibold text-white">Consulta Multi-Especialista</p>
-              <p className="text-xs text-slate-500">4 especialistas · Consenso médico IA</p>
+              <p className="text-sm font-semibold text-foreground">Consulta Multi-Especialista</p>
+              <p className="text-xs text-muted-foreground font-mono uppercase tracking-wider">4 especialistas · Consenso médico IA</p>
             </div>
           </div>
-          <Link href="/app" className="text-xs text-slate-400 hover:text-white transition-colors">
+          <Link href="/app" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
             Volver
           </Link>
         </div>
@@ -849,7 +849,7 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
       {/* Two-column layout */}
       <div className="flex-1 flex lg:grid lg:grid-cols-[1fr_340px]">
         {/* LEFT: Conversation / content area */}
-        <main className="flex flex-col min-h-0 lg:border-r lg:border-slate-800 overflow-y-auto">
+        <main className="flex flex-col min-h-0 lg:border-r lg:border-border overflow-y-auto">
           {/* Emergency Alert */}
           <AnimatePresence>
             {emergencyDetected?.detected && !emergencyDetected.requiresEmergencyEscalation && (
@@ -879,7 +879,7 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
 
           {/* Mobile reasoning panel — shown below header on mobile */}
           {!isInIntake && (
-            <div className="lg:hidden p-4 border-b border-slate-800">
+            <div className="lg:hidden p-4 border-b border-border">
               <ReasoningWorkspace
                 stage={consultStage}
                 primarySpecialty={primarySpecialty}
@@ -931,7 +931,7 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
         </main>
 
         {/* RIGHT: Reasoning workspace — desktop only, sticky */}
-        <aside className="hidden lg:flex flex-col bg-slate-900/50">
+        <aside className="hidden lg:flex flex-col bg-muted/50">
           <div className="sticky top-[57px] h-[calc(100vh-57px)] overflow-y-auto p-5">
             <ReasoningWorkspace
               stage={consultStage}
@@ -1000,14 +1000,14 @@ function ChiefComplaintStep({ value, onChange, onNext, onPrev }: { value: string
         <input
           type="text" value={value} onChange={(e) => onChange(e.target.value)}
           placeholder="Ej: Dolor de cabeza fuerte..."
-          className="w-full px-4 py-4 text-lg border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+          className="w-full px-4 py-4 text-lg border-2 border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-card"
           autoFocus onKeyDown={(e) => e.key === 'Enter' && value.trim() && onNext()}
         />
         <div>
-          <p className="text-sm text-gray-500 mb-2 font-medium">Sugerencias rápidas:</p>
+          <p className="text-sm text-muted-foreground mb-2 font-medium">Sugerencias rápidas:</p>
           <div className="flex flex-wrap gap-2">
             {chips.map((c) => (
-              <button key={c} onClick={() => onChange(c)} className={cn('px-3 py-1.5 text-sm rounded-full border transition-all', value === c ? 'bg-blue-500 text-white border-blue-500' : 'bg-white border-gray-200 hover:border-blue-300 hover:text-blue-600')}>
+              <button key={c} onClick={() => onChange(c)} className={cn('px-3 py-1.5 text-sm rounded-full border transition-all', value === c ? 'bg-ink text-white border-ink' : 'bg-card border-border hover:border-primary hover:text-primary')}>
                 {c}
               </button>
             ))}
@@ -1024,8 +1024,8 @@ function SymptomsStep({ value, onChange, onNext, onPrev }: { value: string; onCh
     <QuestionCard step={2} totalSteps={8}>
       <QuestionTitle>Cuéntame más sobre tus síntomas</QuestionTitle>
       <QuestionDescription>Describe con detalle lo que sientes: ubicación, tipo de molestia, intensidad</QuestionDescription>
-      <textarea value={value} onChange={(e) => onChange(e.target.value)} placeholder="Describe tus síntomas en detalle..." rows={5} className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none transition-all" />
-      <p className="text-xs text-gray-400">{value.length} caracteres</p>
+      <textarea value={value} onChange={(e) => onChange(e.target.value)} placeholder="Describe tus síntomas en detalle..." rows={5} className="w-full px-4 py-4 border-2 border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none transition-all bg-card" />
+      <p className="text-xs text-muted-foreground">{value.length} caracteres</p>
       <QuestionCardNavigation onPrev={onPrev} onNext={onNext} canNext={value.trim().length >= 10} />
     </QuestionCard>
   );
@@ -1039,7 +1039,7 @@ function DurationStep({ value, onChange, onNext, onPrev }: { value: string; onCh
       <QuestionDescription>Selecciona la opción más cercana a tu situación</QuestionDescription>
       <div className="grid grid-cols-2 gap-2">
         {opts.map((opt) => (
-          <button key={opt} onClick={() => onChange(opt)} className={cn('p-3 rounded-xl border-2 text-sm text-left transition-all', value === opt ? 'border-blue-500 bg-blue-50 text-blue-700' : 'border-gray-200 hover:border-gray-300')}>
+          <button key={opt} onClick={() => onChange(opt)} className={cn('p-3 rounded-xl border-2 text-sm text-left transition-all', value === opt ? 'border-primary bg-primary/5 text-primary' : 'border-border hover:border-primary/50')}>
             {opt}
           </button>
         ))}
@@ -1068,11 +1068,11 @@ function OnsetStep({ value, onChange, onNext, onPrev }: { value: 'sudden' | 'gra
       <div className="grid grid-cols-2 gap-4">
         {[{ key: 'sudden' as const, label: 'De repente', desc: 'Aparecieron rápidamente', icon: <AlertTriangle className="w-5 h-5 text-orange-500" /> },
           { key: 'gradual' as const, label: 'Poco a poco', desc: 'Aparecieron gradualmente', icon: <Clock className="w-5 h-5 text-green-500" /> }].map(({ key, label, desc, icon }) => (
-          <Card key={key} className={cn('p-5 cursor-pointer transition-all', value === key ? 'border-blue-500 bg-blue-50 ring-2 ring-blue-500' : 'hover:border-gray-300 hover:shadow-sm')} onClick={() => onChange(key)}>
+          <Card key={key} className={cn('p-5 cursor-pointer transition-all', value === key ? 'border-primary bg-primary/5 ring-2 ring-primary' : 'hover:border-border hover:shadow-sm')} onClick={() => onChange(key)}>
             <div className="text-center">
-              <div className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2 bg-gray-100">{icon}</div>
-              <p className="font-semibold text-sm text-gray-900">{label}</p>
-              <p className="text-xs text-gray-500">{desc}</p>
+              <div className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2 bg-secondary">{icon}</div>
+              <p className="font-semibold text-sm text-foreground">{label}</p>
+              <p className="text-xs text-muted-foreground">{desc}</p>
             </div>
           </Card>
         ))}
@@ -1102,8 +1102,8 @@ function FactorsStep({ aggravating, relieving, onAggravatingChange, onRelievingC
         {[{ label: '¿Qué lo empeora?', value: aggravating, onChange: onAggravatingChange, placeholder: 'Ej: movimiento, comida, estrés...' },
           { label: '¿Qué lo alivia?', value: relieving, onChange: onRelievingChange, placeholder: 'Ej: descanso, medicamentos...' }].map(({ label, value, onChange, placeholder }) => (
           <div key={label}>
-            <label className="block text-sm font-medium text-gray-700 mb-1.5">{label}</label>
-            <input type="text" value={value} onChange={(e) => onChange(e.target.value)} placeholder={placeholder} className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" />
+            <label className="block text-sm font-medium text-foreground mb-1.5">{label}</label>
+            <input type="text" value={value} onChange={(e) => onChange(e.target.value)} placeholder={placeholder} className="w-full px-4 py-3 border-2 border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-card" />
           </div>
         ))}
       </div>
@@ -1117,9 +1117,9 @@ function HistoryStep({ value, onChange, onNext, onPrev, isSubmitting }: { value:
     <QuestionCard step={8} totalSteps={8}>
       <QuestionTitle>Antecedentes médicos (opcional)</QuestionTitle>
       <QuestionDescription>Cualquier información que ayude al diagnóstico</QuestionDescription>
-      <textarea value={value} onChange={(e) => onChange(e.target.value)} placeholder="Ej: Tengo hipertensión, tomo medicación para la tiroides..." rows={5} className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none transition-all" />
+      <textarea value={value} onChange={(e) => onChange(e.target.value)} placeholder="Ej: Tengo hipertensión, tomo medicación para la tiroides..." rows={5} className="w-full px-4 py-4 border-2 border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none transition-all bg-card" />
       <QuestionCardNavigation onPrev={onPrev} onNext={onNext} canNext={true} nextLabel="Iniciar Consulta" isSubmitting={isSubmitting} />
-      <p className="text-center text-xs text-gray-400 mt-2">Los especialistas analizarán tu caso en ~60 segundos</p>
+      <p className="text-center text-xs text-muted-foreground mt-2">Los especialistas analizarán tu caso en ~60 segundos</p>
     </QuestionCard>
   );
 }
@@ -1140,7 +1140,7 @@ function ConsultingStep({ specialists, progress, phases, stage }: { specialists:
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6 max-w-xl mx-auto">
       <div className="text-center py-4">
         <div className="relative w-16 h-16 mx-auto mb-4">
-          <div className="absolute inset-0 rounded-full bg-sky-500/10" />
+          <div className="absolute inset-0 rounded-full bg-primary/10" />
           {!prefersReducedMotion && (
             <motion.div
               className="absolute inset-0 rounded-full border-2 border-sky-500/30"
@@ -1151,15 +1151,15 @@ function ConsultingStep({ specialists, progress, phases, stage }: { specialists:
           <div className="relative flex h-full items-center justify-center">
             {!prefersReducedMotion ? (
               <motion.div animate={{ rotate: 360 }} transition={{ duration: 2.5, repeat: Infinity, ease: 'linear' }}>
-                <Loader2 className="h-7 w-7 text-sky-400" />
+                <Loader2 className="h-7 w-7 text-primary" />
               </motion.div>
             ) : (
-              <Loader2 className="h-7 w-7 text-sky-400" />
+              <Loader2 className="h-7 w-7 text-primary" />
             )}
           </div>
         </div>
-        <h3 className="text-xl font-bold text-white mb-1">{title}</h3>
-        {sub && <p className="text-sm text-slate-400">{sub}</p>}
+        <h3 className="text-xl font-bold text-foreground mb-1">{title}</h3>
+        {sub && <p className="text-sm text-muted-foreground">{sub}</p>}
       </div>
 
       {phases.length > 0 && <SOAPTimeline phases={phases} currentPhase="assessment" />}
@@ -1172,7 +1172,7 @@ function ConsultingStep({ specialists, progress, phases, stage }: { specialists:
 function ResultsStep({ consultation, consensus, specialists, phases }: { consultation: SOAPConsultation; consensus: ConsensusResult; specialists: SpecialistAgent[]; phases: SOAPPhaseStatus[] }) {
   const urgencyColors: Record<string, string> = {
     emergency: 'bg-red-500', urgent: 'bg-orange-500', moderate: 'bg-yellow-500',
-    routine: 'bg-blue-500', 'self-care': 'bg-green-500',
+    routine: 'bg-primary', 'self-care': 'bg-vital',
   };
   const prefersReducedMotion = useReducedMotion();
 
@@ -1182,11 +1182,11 @@ function ResultsStep({ consultation, consensus, specialists, phases }: { consult
         initial={prefersReducedMotion ? undefined : { scale: 0.95, opacity: 0 }}
         animate={prefersReducedMotion ? undefined : { scale: 1, opacity: 1 }}
         transition={{ type: 'spring', stiffness: 280, damping: 22 }}
-        className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-6 text-white text-center"
+        className="bg-vital rounded-2xl p-6 text-white text-center"
       >
         <CheckCircle2 className="w-12 h-12 mx-auto mb-3" />
         <h2 className="text-2xl font-bold mb-1">Consulta Completada</h2>
-        <p className="text-emerald-100 text-sm">{specialists.length} especialistas analizaron tu caso</p>
+        <p className="text-vital text-sm">{specialists.length} especialistas analizaron tu caso</p>
       </motion.div>
 
       <SOAPTimeline phases={phases} currentPhase="plan" />
@@ -1200,7 +1200,7 @@ function ResultsStep({ consultation, consensus, specialists, phases }: { consult
       {[
         <ConsensusMatrix key="consensus" consensus={consensus} />,
         <div key="specialists">
-          <h3 className="text-lg font-bold text-white mb-3">Evaluaciones</h3>
+          <h3 className="text-lg font-bold text-foreground mb-3">Evaluaciones</h3>
           <SpecialistConsultation agents={specialists} />
         </div>,
         consultation.plan && <TreatmentPlanDisplay key="plan" plan={consultation.plan} />,
@@ -1232,7 +1232,7 @@ function ResultsStep({ consultation, consensus, specialists, phases }: { consult
 
       <div className="flex gap-3 pb-8">
         <Link href="/app" className="flex-1"><Button variant="outline" className="w-full">Volver al Inicio</Button></Link>
-        <Link href="/doctors" className="flex-1"><Button className="w-full bg-sky-600 hover:bg-sky-700">Buscar Doctor</Button></Link>
+        <Link href="/doctors" className="flex-1"><Button className="w-full bg-ink hover:bg-cobalt-800">Buscar Doctor</Button></Link>
       </div>
     </motion.div>
   );

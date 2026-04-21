@@ -196,12 +196,12 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
   return (
     <div className="flex flex-col h-[calc(100vh-80px)] max-w-3xl mx-auto">
       <Card className="flex-1 flex flex-col min-h-0 overflow-hidden">
-        <div className="p-4 border-b bg-gradient-to-r from-blue-50 to-cyan-50 flex-shrink-0">
+        <div className="p-4 border-b bg-secondary flex-shrink-0">
           <div className="flex items-center gap-2">
-            <Sparkles className="w-5 h-5 text-blue-600" />
-            <h2 className="font-semibold">Consulta con Dr. Simeon</h2>
+            <Sparkles className="w-5 h-5 text-primary" />
+            <h2 className="font-semibold font-display">Consulta con Dr. Simeon</h2>
           </div>
-          <p className="text-sm text-gray-500 mt-1">
+          <p className="text-sm text-muted-foreground mt-1">
             Describe tus síntomas de forma natural. Te ayudaré a entender qué podría estar pasando.
           </p>
         </div>
@@ -212,7 +212,7 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
               <MessageBubble key={message.id} message={message} />
             ))}
             {isLoading && (
-              <div className="flex items-center gap-2 text-gray-500">
+              <div className="flex items-center gap-2 text-muted-foreground">
                 <Loader2 className="w-4 h-4 animate-spin" />
                 <span className="text-sm">Los especialistas están analizando...</span>
               </div>
@@ -220,7 +220,7 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
           </div>
         </div>
 
-        <div className="p-4 border-t flex-shrink-0 bg-white">
+        <div className="p-4 border-t flex-shrink-0 bg-card">
           <div className="flex gap-2">
             <input
               type="text"
@@ -228,13 +228,13 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
               placeholder="Describe tus síntomas..."
-              className="flex-1 px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="flex-1 px-4 py-3 rounded-xl border border-border focus:outline-none focus:ring-2 focus:ring-primary bg-background"
               disabled={isLoading}
             />
             <Button
               onClick={sendMessage}
               disabled={isLoading || !input.trim()}
-              className="bg-blue-600 hover:bg-blue-700"
+              className="bg-ink hover:bg-cobalt-800"
             >
               <Send className="w-4 h-4" />
             </Button>
@@ -262,14 +262,14 @@ function MessageBubble({ message }: { message: Message }) {
       <div
         className={cn(
           'max-w-[80%] rounded-2xl px-4 py-3',
-          isUser ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-900'
+          isUser ? 'bg-ink text-white' : 'bg-muted text-foreground'
         )}
       >
         <p className="text-sm whitespace-pre-wrap">{message.content}</p>
       </div>
       {isUser && (
-        <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center flex-shrink-0">
-          <User className="w-4 h-4 text-gray-600" />
+        <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+          <User className="w-4 h-4 text-muted-foreground" />
         </div>
       )}
     </motion.div>
@@ -288,8 +288,8 @@ function ResultsView({
       <Card className="p-6">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h2 className="text-2xl font-bold">Resultado de tu Consulta</h2>
-            <p className="text-gray-500">Análisis multi-especialista completado</p>
+            <h2 className="text-2xl font-bold font-display">Resultado de tu Consulta</h2>
+            <p className="text-muted-foreground">Análisis multi-especialista completado</p>
           </div>
           <div className="flex gap-3">
             <Link href="/app">
@@ -305,15 +305,15 @@ function ResultsView({
         </div>
 
         <div className="grid md:grid-cols-2 gap-4 mb-6">
-          <div className="bg-blue-50 rounded-xl p-4">
-            <p className="text-sm text-blue-600 font-medium">Diagnóstico Principal</p>
-            <p className="text-lg font-semibold text-gray-900">{result.primaryDiagnosis}</p>
-            <p className="text-sm text-gray-500">Confianza: {Math.round(result.confidence * 100)}%</p>
+          <div className="bg-primary/5 rounded-xl p-4">
+            <p className="text-sm text-primary font-medium">Diagnóstico Principal</p>
+            <p className="text-lg font-semibold text-foreground">{result.primaryDiagnosis}</p>
+            <p className="text-sm text-muted-foreground">Confianza: {Math.round(result.confidence * 100)}%</p>
           </div>
-          <div className="bg-amber-50 rounded-xl p-4">
-            <p className="text-sm text-amber-600 font-medium">Nivel de Urgencia</p>
-            <p className="text-lg font-semibold text-gray-900 capitalize">{result.urgency}</p>
-            <p className="text-sm text-gray-500">
+          <div className="bg-coral/5 rounded-xl p-4">
+            <p className="text-sm text-coral font-medium">Nivel de Urgencia</p>
+            <p className="text-lg font-semibold text-foreground capitalize">{result.urgency}</p>
+            <p className="text-sm text-muted-foreground">
               {result.urgency === 'emergency' && 'Ve al hospital ahora'}
               {result.urgency === 'urgent' && 'Consulta en 24-48 horas'}
               {result.urgency === 'moderate' && 'Cita en 1-2 semanas'}
@@ -329,16 +329,16 @@ function ResultsView({
             {result.specialists.map((specialist) => (
               <Card key={specialist.id} className="p-4">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                    <span className="text-lg">{specialist.name[0]}</span>
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-lg text-primary">{specialist.name[0]}</span>
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between">
-                      <p className="font-medium">{specialist.name}</p>
-                      <span className="text-sm text-gray-500">{specialist.specialty}</span>
+                      <p className="font-medium text-foreground">{specialist.name}</p>
+                      <span className="text-sm text-muted-foreground">{specialist.specialty}</span>
                     </div>
-                    <p className="text-sm text-gray-600 mt-1">{specialist.assessment}</p>
-                    <p className="text-sm text-blue-600 mt-1">
+                    <p className="text-sm text-muted-foreground mt-1">{specialist.assessment}</p>
+                    <p className="text-sm text-primary mt-1">
                       Confianza: {Math.round(specialist.confidence * 100)}%
                     </p>
                   </div>
@@ -354,8 +354,8 @@ function ResultsView({
         <ul className="space-y-2">
           {result.recommendations.map((rec, i) => (
             <li key={i} className="flex items-start gap-2">
-              <ChevronRight className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
-              <span className="text-sm text-gray-700">{rec}</span>
+              <ChevronRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+              <span className="text-sm text-foreground">{rec}</span>
             </li>
           ))}
         </ul>
