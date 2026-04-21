@@ -1,6 +1,6 @@
 'use client'
 
-import { Suspense } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
@@ -8,7 +8,6 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
 import { Eye, EyeOff, Loader2, Stethoscope, UserCircle2 } from 'lucide-react'
-import { useState } from 'react'
 
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -37,6 +36,7 @@ function LoginContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const redirectTarget = searchParams.get('redirect')
+  const authError = searchParams.get('error')
   const [supabase] = useState(() => {
     try {
       return createClient()
@@ -54,6 +54,23 @@ function LoginContent() {
       userType: 'patient',
     },
   })
+
+  useEffect(() => {
+    if (!authError) return
+
+    const errorMessageMap: Record<string, string> = {
+      'auth-config-missing':
+        'La autenticación no está configurada en este entorno.',
+      'oauth-callback-failed':
+        'No pudimos completar el inicio de sesión con el proveedor externo.',
+    }
+
+    form.setError('root', {
+      message:
+        errorMessageMap[authError] ||
+        'No pudimos completar el inicio de sesión. Intenta de nuevo.',
+    })
+  }, [authError, form])
 
   const onSubmit = async (data: LoginFormValues) => {
     setIsLoading(true)
@@ -87,12 +104,17 @@ function LoginContent() {
 
   const handleSocialLogin = async (provider: 'google' | 'apple') => {
     if (!supabase) return
+    const userType = form.getValues('userType') || 'patient'
+    const nextPath = redirectTarget || (userType === 'doctor' ? '/doctor' : '/app')
+    const callbackUrl = new URL('/auth/callback', window.location.origin)
+    callbackUrl.searchParams.set('next', nextPath)
+
     setIsLoading(true)
     try {
       const { error: oauthError } = await supabase.auth.signInWithOAuth({
         provider,
         options: {
-          redirectTo: `${window.location.origin}/auth/callback`,
+          redirectTo: callbackUrl.toString(),
         },
       })
       if (oauthError) {

@@ -6,6 +6,9 @@ const ROUTES = {
   public: [
     '/auth/login', 
     '/auth/register', 
+    '/auth/callback',
+    '/auth/forgot-password',
+    '/auth/reset-password',
     '/auth/complete-profile', 
     '/', 
     '/doctors', 
