@@ -29,7 +29,7 @@ export function HeroSection() {
   const prefersReducedMotion = useReducedMotion()
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f8fb] pb-12 pt-8 lg:pb-16 lg:pt-14">
+    <section className="relative overflow-hidden bg-[#f7f8fb] pb-14 pt-10 lg:pb-20 lg:pt-16">
       {/* Subtle noise texture */}
       <div
         className="absolute inset-0 -z-10 opacity-[0.10] mix-blend-multiply pointer-events-none"

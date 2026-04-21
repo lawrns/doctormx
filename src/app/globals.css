@@ -28,8 +28,8 @@
     --muted: 228 22% 93%;
     --muted-foreground: 225 19% 44%;    /* #5c6783 */
 
-    --accent: 152 67% 90%;              /* #d7f5e6 */
-    --accent-foreground: 162 100% 33%;  /* #00a878 */
+    --accent: 228 22% 93%;              /* #eaecf2 — neutral grey */
+    --accent-foreground: 222 61% 12%;   /* #0a1533 */
 
     --destructive: 9 100% 62%;          /* #ff5a3d */
     --destructive-foreground: 0 0% 100%;

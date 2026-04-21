@@ -1,4 +1,5 @@
 import { redirect } from 'next/navigation'
+import { headers } from 'next/headers'
 import { getDoctorProfile } from '@/lib/discovery'
 import BookingForm from './BookingForm'
 import { createClient } from '@/lib/supabase/server'
@@ -19,7 +20,12 @@ export default async function BookAppointmentPage({
 
   // If not authenticated, redirect to login with return URL
   if (!user) {
-    const loginUrl = new URL('/auth/login', process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000')
+    const reqHeaders = await headers()
+    const host = reqHeaders.get('host') || 'doctor.mx'
+    const protocol = reqHeaders.get('x-forwarded-proto') || 'https'
+    const baseUrl = `${protocol}://${host}`
+
+    const loginUrl = new URL('/auth/login', baseUrl)
     loginUrl.searchParams.set('redirect', `/book/${doctorId}`)
 
     // Preserve any query parameters (like date/time selection)

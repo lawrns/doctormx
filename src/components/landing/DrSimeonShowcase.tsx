@@ -160,7 +160,7 @@ function AnimatedBlobs() {
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">
       <motion.div
-        className="absolute -left-20 top-20 h-72 w-72 rounded-full bg-[#d7f5e6]/40 blur-3xl"
+        className="absolute -left-20 top-20 h-72 w-72 rounded-full bg-[#dbe7ff]/30 blur-3xl"
         animate={{ x: [0, 50, 0], y: [0, 30, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
       />
@@ -206,7 +206,7 @@ export default function DrSimeonShowcase() {
   }
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f8fb] py-14 sm:py-16">
+    <section className="relative overflow-hidden bg-[#f7f8fb] py-16 sm:py-20">
       <AnimatedBlobs />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

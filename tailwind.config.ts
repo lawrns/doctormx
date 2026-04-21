@@ -81,8 +81,8 @@ const config: Config = {
           900: '#081635',
         },
         ink: {
-          DEFAULT: '#0a1533',
-          soft: '#1c2647',
+          DEFAULT: 'hsl(var(--brand-ink))',
+          soft: 'hsl(var(--brand-ink) / 0.85)',
         },
         vital: {
           DEFAULT: '#00a878',

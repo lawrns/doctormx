@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/card'
 import { Eyebrow } from '@/components/Eyebrow'
 import { BadgeCheck, Video, Calendar, FileText, Shield, MessageSquare } from 'lucide-react'
-import { useReducedMotion } from '@/hooks/useReducedMotion'
 
 const features = [
   {
@@ -40,11 +39,9 @@ const features = [
 ]
 
 export function FeaturesSection() {
-  const prefersReducedMotion = useReducedMotion()
-
   return (
     <section
-      className="relative overflow-hidden bg-[#f7f8fb] py-14 sm:py-16"
+      className="relative overflow-hidden bg-[#f7f8fb] py-16 sm:py-20"
       role="region"
       aria-labelledby="features-section-heading"
     >
@@ -76,58 +73,34 @@ export function FeaturesSection() {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{
-                duration: 0.5,
-                delay: index * 0.08,
+                duration: 0.4,
+                delay: index * 0.06,
                 ease: [0, 0, 0.2, 1],
               }}
             >
               <Card
-                className="group h-full cursor-pointer overflow-hidden border-[#e3e6ee]/80 bg-white p-6 sm:p-8 shadow-[0_1px_2px_rgba(15,37,95,0.06),0_1px_1px_rgba(15,37,95,0.03)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_4px_14px_rgba(15,37,95,0.1)] focus-within:ring-2 focus-within:ring-[#3a66f5] focus-within:ring-offset-2"
-                tabIndex={0}
+                className="group h-full overflow-hidden border-[#e3e6ee]/80 bg-white p-5 shadow-[0_1px_2px_rgba(15,37,95,0.06)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_4px_14px_rgba(15,37,95,0.1)]"
                 role="article"
                 aria-label={feature.title}
               >
-                <motion.div
-                  className="mb-5 flex h-12 w-12 items-center justify-center rounded-[10px] bg-[#eef4ff]"
-                  whileHover={
-                    prefersReducedMotion
-                      ? {}
-                      : {
-                          scale: 1.05,
-                          rotate: 3,
-                          transition: { type: 'spring', stiffness: 400, damping: 20 },
-                        }
-                  }
-                >
-                  <feature.icon className="h-5 w-5 text-[#1f48de]" aria-hidden="true" />
-                </motion.div>
+                <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-[#eef4ff]">
+                  <feature.icon className="h-4 w-4 text-[#1f48de]" aria-hidden="true" />
+                </div>
 
-                <h3 className="mb-2 font-display text-lg font-semibold text-[#0a1533] transition-colors duration-200 group-hover:text-[#1f48de]">
+                <h3 className="mb-1.5 font-display text-[15px] font-semibold text-[#0a1533]">
                   {feature.title}
                 </h3>
-                <p className="text-[15px] leading-[1.5] text-[#5c6783]">
+                <p className="text-[13px] leading-[1.5] text-[#5c6783]">
                   {feature.description}
                 </p>
-
-                {/* Arrow indicator on hover */}
-                <div
-                  className="mt-5 flex justify-end opacity-0 translate-x-2 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-x-0"
-                  aria-hidden="true"
-                >
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#eef4ff]">
-                    <svg className="h-4 w-4 text-[#1f48de]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  </div>
-                </div>
               </Card>
             </motion.div>
           ))}

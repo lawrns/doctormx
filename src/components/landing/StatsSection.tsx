@@ -87,7 +87,7 @@ export function StatsSection() {
   const prefersReducedMotion = useReducedMotion()
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f8fb] py-14 sm:py-16">
+    <section className="relative overflow-hidden bg-[#f7f8fb] py-16 sm:py-20">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

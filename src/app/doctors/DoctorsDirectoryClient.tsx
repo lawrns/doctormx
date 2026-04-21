@@ -179,7 +179,7 @@ function FilterOption({
     <Link
       href={href}
       className={`flex items-center gap-2 py-1.5 text-[13px] transition-colors rounded-md ${
-        active ? 'text-cobalt-700 font-medium' : 'text-foreground hover:text-cobalt-700'
+        active ? 'text-primary font-medium' : 'text-foreground hover:text-primary'
       }`}
     >
       <input
@@ -215,24 +215,24 @@ function DoctorCard({
     const list: { icon: React.ReactNode; text: string; muted?: boolean }[] = []
     if (doctor.bio) {
       list.push({
-        icon: <Stethoscope className="w-3.5 h-3.5 text-cobalt-600 mt-0.5" />,
+        icon: <Stethoscope className="w-3.5 h-3.5 text-primary mt-0.5" />,
         text: doctor.bio.slice(0, 80) + (doctor.bio.length > 80 ? '…' : ''),
       })
     }
     if (doctor.years_experience) {
       list.push({
-        icon: <Clock className="w-3.5 h-3.5 text-cobalt-600 mt-0.5" />,
+        icon: <Clock className="w-3.5 h-3.5 text-primary mt-0.5" />,
         text: `${doctor.years_experience} años de experiencia`,
       })
     }
     if (doctor.video_enabled) {
       list.push({
-        icon: <Video className="w-3.5 h-3.5 text-cobalt-600 mt-0.5" />,
+        icon: <Video className="w-3.5 h-3.5 text-primary mt-0.5" />,
         text: 'Teleconsulta disponible',
       })
     }
     list.push({
-      icon: <ShieldCheck className="w-3.5 h-3.5 text-cobalt-600 mt-0.5" />,
+      icon: <ShieldCheck className="w-3.5 h-3.5 text-primary mt-0.5" />,
       text: 'Especialista verificado',
     })
     if (doctor.city) {
@@ -288,7 +288,7 @@ function DoctorCard({
               <h3 className="font-display text-[15px] font-bold text-ink tracking-tight">
                 {name}
               </h3>
-              <VerifiedIcon className="text-cobalt-600 shrink-0" />
+              <VerifiedIcon className="text-primary shrink-0" />
             </div>
 
             <div className="text-xs text-muted-foreground mt-0.5">
@@ -296,7 +296,7 @@ function DoctorCard({
                 <>
                   <Link
                     href={`/doctors?specialty=${doctor.specialties[0].slug}`}
-                    className="text-cobalt-600 font-medium hover:underline"
+                    className="text-primary font-medium hover:underline"
                     onClick={(e) => e.stopPropagation()}
                   >
                     {doctor.specialties[0].name}
@@ -315,7 +315,7 @@ function DoctorCard({
               </span>
               <span className="font-bold text-ink">{doctor.rating_avg.toFixed(1)}</span>
               <span className="text-muted-foreground">({doctor.rating_count} opiniones)</span>
-              <span className="inline-flex items-center gap-0.5 ml-1 px-1.5 py-0.5 rounded-full bg-cobalt-50 border border-cobalt-100 text-[10px] font-semibold text-cobalt-700 font-mono">
+              <span className="inline-flex items-center gap-0.5 ml-1 px-1.5 py-0.5 rounded-full bg-primary/10 border border-primary/20 text-[10px] font-semibold text-primary font-mono">
                 <CheckCircle2 className="w-2.5 h-2.5" /> {aiMatch}% match
               </span>
             </div>
@@ -354,7 +354,7 @@ function DoctorCard({
                     ? 'bg-cobalt-800 border-cobalt-800 text-white'
                     : isStrike
                     ? 'opacity-45 line-through pointer-events-none bg-background border-border text-foreground'
-                    : 'bg-card border-border text-foreground hover:bg-cobalt-50 hover:border-cobalt-400 hover:text-cobalt-800'
+                    : 'bg-card border-border text-foreground hover:bg-secondary hover:border-primary/30 hover:text-primary'
                 }`}
               >
                 <span className="block font-semibold text-[11px]">{d.label}</span>
@@ -367,7 +367,7 @@ function DoctorCard({
         </div>
         <button
           onClick={(e) => e.stopPropagation()}
-          className="flex items-center justify-center gap-1 py-1.5 border rounded-md text-xs font-medium text-muted-foreground hover:bg-cobalt-50 hover:text-cobalt-700 hover:border-cobalt-300 transition-all"
+          className="flex items-center justify-center gap-1 py-1.5 border rounded-md text-xs font-medium text-muted-foreground hover:bg-secondary hover:text-primary hover:border-primary/30 transition-all"
         >
           Ver más <ChevronRight className="w-3 h-3" />
         </button>
@@ -560,7 +560,7 @@ export function DoctorsDirectoryClient({
       {/* HEADER */}
       <header className="sticky top-0 z-[200] bg-card border-b border-border h-14 flex items-center">
         <div className="max-w-[1440px] mx-auto w-full px-6 flex items-center gap-4">
-          <Link href="/" className="font-display text-lg font-bold text-cobalt-800 shrink-0">
+          <Link href="/" className="font-display text-lg font-bold text-foreground shrink-0">
             doctor.mx
           </Link>
 
@@ -677,8 +677,8 @@ export function DoctorsDirectoryClient({
           <div className="p-4 flex flex-col gap-3">
             {doctors.length === 0 ? (
               <div className="text-center py-20">
-                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-cobalt-50">
-                  <Search className="h-6 w-6 text-cobalt-600" />
+                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-secondary">
+                  <Search className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="text-base font-semibold text-foreground">No encontramos doctores</h3>
                 <p className="text-sm text-muted-foreground mt-1">Intenta con otra especialidad o término de búsqueda.</p>

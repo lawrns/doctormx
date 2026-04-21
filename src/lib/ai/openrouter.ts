@@ -165,7 +165,7 @@ class OpenRouterClient {
       headers: {
         'Authorization': `Bearer ${this.apiKey}`,
         'Content-Type': 'application/json',
-        'HTTP-Referer': process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
+        'HTTP-Referer': process.env.NEXT_PUBLIC_APP_URL || 'https://doctor.mx',
         'X-Title': 'Doctor.mx Telemedicine',
       },
       body: JSON.stringify(requestBody),
