@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
-import { SUBSCRIPTION_PLANS, type SubscriptionTier, ANNUAL_DISCOUNT } from '@/lib/subscription-types'
+import { SUBSCRIPTION_PLANS, type SubscriptionTier, ANNUAL_DISCOUNT, getAnnualPrice } from '@/lib/subscription-types'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -27,7 +27,10 @@ export default function SubscriptionPage() {
         subscription?: {
             plan_id?: string
             plan_name?: string
+            status?: string
             current_period_end?: string | number
+            grace_period_ends_at?: string | null
+            payment_recovery_url?: string | null
         } | null
     } | null>(null)
     const [usage, setUsage] = useState<{
@@ -86,7 +89,9 @@ export default function SubscriptionPage() {
                 .from('doctor_subscriptions')
                 .select('*')
                 .eq('doctor_id', user.id)
-                .eq('status', 'active')
+                .in('status', ['active', 'past_due'])
+                .order('created_at', { ascending: false })
+                .limit(1)
                 .single()
             
             // Fetch usage stats directly
@@ -100,13 +105,17 @@ export default function SubscriptionPage() {
                 const plan = SUBSCRIPTION_PLANS[sub.tier as SubscriptionTier]
                 setSubscription({
                     hasSubscription: true,
-                    isActive: true,
+                    isActive: sub.status === 'active',
                     daysUntilRenewal: sub.current_period_end 
                         ? Math.ceil((new Date(sub.current_period_end).getTime() - Date.now()) / (1000 * 60 * 60 * 24))
                         : undefined,
                     subscription: {
                         plan_id: sub.tier,
                         plan_name: plan?.name || sub.tier,
+                        status: sub.status,
+                        current_period_end: sub.current_period_end,
+                        grace_period_ends_at: sub.grace_period_ends_at,
+                        payment_recovery_url: sub.payment_recovery_url,
                     },
                 })
             } else {
@@ -192,7 +201,7 @@ export default function SubscriptionPage() {
                     </p>
                 </div>
 
-                {subscription?.hasSubscription && (
+                {subscription?.hasSubscription && subscription.subscription?.status !== 'past_due' && (
                     <Card className="mb-8 border-vital/20 bg-vital-soft">
                         <CardContent className="p-6">
                             <div className="flex items-start justify-between">
@@ -214,6 +223,29 @@ export default function SubscriptionPage() {
                                 </div>
                                 <Badge variant="success">Activo</Badge>
                             </div>
+                        </CardContent>
+                    </Card>
+                )}
+
+                {subscription?.subscription?.status === 'past_due' && (
+                    <Card className="mb-8 border-destructive/20 bg-destructive/10">
+                        <CardContent className="p-6">
+                            <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+                                Pago pendiente de actualización
+                            </h3>
+                            <p className="text-sm text-muted-foreground mb-4">
+                                Tu suscripción está en periodo de gracia. Actualiza el método de pago para mantener visible tu perfil en el directorio.
+                                {subscription.subscription.grace_period_ends_at
+                                    ? ` Fecha límite: ${new Date(subscription.subscription.grace_period_ends_at).toLocaleDateString('es-MX')}.`
+                                    : ''}
+                            </p>
+                            {subscription.subscription.payment_recovery_url && (
+                                <Button asChild>
+                                    <a href={subscription.subscription.payment_recovery_url}>
+                                        Actualizar método de pago
+                                    </a>
+                                </Button>
+                            )}
                         </CardContent>
                     </Card>
                 )}
@@ -264,6 +296,11 @@ export default function SubscriptionPage() {
                         const canDowngrade = currentPlan ? 
                             SUBSCRIPTION_PLANS[currentPlan as keyof typeof SUBSCRIPTION_PLANS].price_cents > plan.price_cents : 
                             false
+                        const displayedPriceCents = billingInterval === 'year'
+                            ? getAnnualPrice(plan.price_cents)
+                            : plan.price_cents
+                        const displayedPrice = displayedPriceCents / 100
+                        const equivalentMonthly = Math.round(displayedPrice / 12)
 
                         return (
                             <Card key={planId} className={`flex flex-col overflow-hidden ${isRecommended ? 'ring-2 ring-primary' : ''}`}>
@@ -279,10 +316,17 @@ export default function SubscriptionPage() {
                                         </h3>
                                         <div className="flex items-baseline gap-2 mb-4">
                                             <span className="text-4xl font-bold text-primary">
-                                                ${plan.price_mxn}
+                                                ${displayedPrice.toLocaleString('es-MX')}
                                             </span>
-                                            <span className="text-muted-foreground">/mes</span>
+                                            <span className="text-muted-foreground">
+                                                {billingInterval === 'year' ? '/año' : '/mes'}
+                                            </span>
                                         </div>
+                                        {billingInterval === 'year' && (
+                                            <p className="text-sm text-muted-foreground">
+                                                Equivale a ${equivalentMonthly.toLocaleString('es-MX')}/mes. Se cobra anualmente.
+                                            </p>
+                                        )}
                                     </div>
 
                                     <div className="flex-1 mb-6">
@@ -346,7 +390,7 @@ export default function SubscriptionPage() {
                                             isCurrentPlan 
                                                 ? 'Plan Actual' 
                                                 : !subscription?.hasSubscription 
-                                                    ? 'Suscribirse' 
+                                                    ? billingInterval === 'year' ? 'Suscribirse anual' : 'Suscribirse mensual'
                                                     : canUpgrade 
                                                         ? 'Mejorar Plan' 
                                                         : canDowngrade 

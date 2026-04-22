@@ -97,6 +97,9 @@ async function upsertDoctorSubscription(subscription: Stripe.Subscription) {
       status,
       current_period_start: new Date(((subscription as Stripe.Subscription & { current_period_start?: number }).current_period_start || Date.now() / 1000) * 1000).toISOString(),
       current_period_end: currentPeriodEnd,
+      payment_failed_at: null,
+      grace_period_ends_at: null,
+      payment_recovery_url: null,
       updated_at: new Date().toISOString(),
     }, {
       onConflict: 'stripe_subscription_id',
@@ -142,24 +145,34 @@ async function handleSubscriptionDeleted(subscription: Stripe.Subscription) {
     .eq('stripe_subscription_id', subscription.id)
 
   if (doctorId) {
-    await supabase
-      .from('doctors')
-      .update({
-        is_listed: false,
-        updated_at: new Date().toISOString(),
-      })
-      .eq('id', doctorId)
+    const { count: activeCount } = await supabase
+      .from('doctor_subscriptions')
+      .select('id', { count: 'exact', head: true })
+      .eq('doctor_id', doctorId)
+      .eq('status', 'active')
+
+    if (!activeCount) {
+      await supabase
+        .from('doctors')
+        .update({
+          is_listed: false,
+          updated_at: new Date().toISOString(),
+        })
+        .eq('id', doctorId)
+    }
   }
 }
 
 async function handleInvoicePaymentFailed(invoice: Stripe.Invoice) {
   const supabase = (await import('@/lib/supabase/server')).createServiceClient()
   const customerId = invoice.customer as string | undefined
-  if (!customerId) return
+  const invoiceSubscription = (invoice as Stripe.Invoice & { subscription?: string | Stripe.Subscription | null }).subscription
+  const subscriptionId = typeof invoiceSubscription === 'string' ? invoiceSubscription : invoiceSubscription?.id
+  if (!customerId || !subscriptionId) return
 
   const { data: doctor } = await supabase
     .from('doctors')
-    .select('id, profile:profiles(full_name, email, phone)')
+    .select('id, profile:profiles(full_name, phone)')
     .eq('stripe_customer_id', customerId)
     .maybeSingle()
 
@@ -171,17 +184,26 @@ async function handleInvoicePaymentFailed(invoice: Stripe.Invoice) {
       status: 'past_due',
       payment_failed_at: new Date().toISOString(),
       grace_period_ends_at: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString(),
+      payment_recovery_url: invoice.hosted_invoice_url,
       updated_at: new Date().toISOString(),
     })
-    .eq('stripe_customer_id', customerId)
+    .eq('stripe_subscription_id', subscriptionId)
 
   const profile = Array.isArray(doctor.profile) ? doctor.profile[0] : doctor.profile
   const doctorName = profile?.full_name || 'Doctor'
   const retryUrl = invoice.hosted_invoice_url || `${process.env.NEXT_PUBLIC_APP_URL || 'https://doctory.mx'}/doctor/subscription`
+  let customerEmail = invoice.customer_email || undefined
 
-  if (profile?.email) {
+  if (!customerEmail) {
+    const customer = await stripe.customers.retrieve(customerId)
+    if (!customer.deleted) {
+      customerEmail = customer.email || undefined
+    }
+  }
+
+  if (customerEmail) {
     await sendEmail({
-      to: profile.email,
+      to: customerEmail,
       subject: 'No pudimos procesar el pago de tu suscripción',
       html: getEmailTemplate(`
         <p style="margin:0 0 16px;color:#1f2937;font-size:16px;line-height:1.5;">No pudimos procesar el pago de tu suscripción de Doctory.</p>
@@ -279,13 +301,20 @@ export async function POST(request: NextRequest) {
 
       case 'invoice.payment_succeeded': {
         // Handle subscription renewals
-        const invoice = event.data.object
+        const invoice = event.data.object as Stripe.Invoice
+        const invoiceSubscription = (invoice as Stripe.Invoice & { subscription?: string | Stripe.Subscription | null }).subscription
+        const subscriptionId = typeof invoiceSubscription === 'string' ? invoiceSubscription : invoiceSubscription?.id
         
         logger.info('Subscription payment succeeded:', {
           invoiceId: invoice.id,
           customerId: invoice.customer,
-          subscriptionId: (invoice as Stripe.Invoice & { subscription?: string }).subscription,
+          subscriptionId,
         })
+
+        if (subscriptionId) {
+          const subscription = await stripe.subscriptions.retrieve(subscriptionId)
+          await upsertDoctorSubscription(subscription)
+        }
         
         break
       }

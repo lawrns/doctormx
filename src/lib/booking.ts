@@ -41,6 +41,14 @@ export async function reserveAppointmentSlot(
     }
   }
 
+  const modalityError = await validateAppointmentType(request.doctorId, request.appointmentType || 'video')
+  if (modalityError) {
+    return {
+      success: false,
+      error: modalityError,
+    }
+  }
+
   // Paso 2: Crear la cita (esto bloquea el slot)
   const appointment = await createAppointmentRecord(request)
 
@@ -58,6 +66,28 @@ export async function reserveAppointmentSlot(
     success: true,
     appointment,
   }
+}
+
+async function validateAppointmentType(
+  doctorId: string,
+  appointmentType: 'in_person' | 'video'
+): Promise<string | null> {
+  const supabase = await createClient()
+
+  const { data: doctor, error } = await supabase
+    .from('doctors')
+    .select('status, is_listed, office_address')
+    .eq('id', doctorId)
+    .single()
+
+  if (error || !doctor) return 'Doctor no encontrado'
+  if (doctor.status !== 'approved') return 'Este doctor no está disponible para nuevas citas'
+
+  if (appointmentType === 'in_person' && !doctor.office_address) {
+    return 'Este doctor aún no tiene consultorio confirmado para citas presenciales'
+  }
+
+  return null
 }
 
 // Bloque: Validar disponibilidad del slot

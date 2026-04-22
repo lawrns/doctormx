@@ -70,6 +70,27 @@ function getFirstString(value: unknown): string | undefined {
 
 type SEPRecord = Record<string, unknown>
 
+function normalizeSEPStatus(row: SEPRecord): CedulaSearchResult['status'] {
+  const rawStatus =
+    getFirstString(row.estatus) ||
+    getFirstString(row.status) ||
+    getFirstString(row.estado) ||
+    getFirstString(row.situacion)
+
+  if (!rawStatus) return 'valid'
+
+  const normalized = rawStatus
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+
+  if (normalized.includes('revoc') || normalized.includes('cancel')) return 'revoked'
+  if (normalized.includes('expir') || normalized.includes('venc')) return 'expired'
+  if (normalized.includes('vigente') || normalized.includes('valid') || normalized.includes('activo')) return 'valid'
+
+  return 'not_found'
+}
+
 function getSepRows(data: unknown): SEPRecord[] {
   if (Array.isArray(data)) return data.filter((item): item is SEPRecord => Boolean(item) && typeof item === 'object')
   if (!data || typeof data !== 'object') return []
@@ -144,6 +165,8 @@ function mapSEPResponse(data: unknown, cedula: string): CedulaSearchResult {
     ? Number(graduationYearValue)
     : undefined
 
+  const status = name || title || institution ? normalizeSEPStatus(row) : 'not_found'
+
   return {
     found: Boolean(name || title || institution),
     cedula,
@@ -154,7 +177,7 @@ function mapSEPResponse(data: unknown, cedula: string): CedulaSearchResult {
     title,
     institution,
     graduationYear,
-    status: name || title || institution ? 'valid' : 'not_found',
+    status,
     specialty: title ? mapTitleToSpecialty(title) : undefined,
     issueDate,
     verificationDate: new Date().toISOString(),

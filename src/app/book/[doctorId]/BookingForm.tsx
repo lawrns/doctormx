@@ -242,6 +242,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
   const max = maxDate.toISOString().split('T')[0]
   const formatPrice = (cents: number, currency: string) => new Intl.NumberFormat('es-MX', { style: 'currency', currency, minimumFractionDigits: 0 }).format(cents / 100)
   const officeAddress = doctor.office_address || doctor.address || [doctor.city, doctor.state].filter(Boolean).join(', ')
+  const canBookInPerson = Boolean(doctor.office_address)
 
   const goToPreviousMonth = () => {
     setCurrentMonth(prev => new Date(prev.getFullYear(), prev.getMonth() - 1, 1))
@@ -311,12 +312,14 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                 <label className="block text-sm font-medium text-foreground mb-3">
                   Tipo de consulta
                 </label>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3" role="radiogroup" aria-label="Tipo de consulta">
                   <Button
                     type="button"
                     variant={appointmentType === 'video' ? 'default' : 'outline'}
                     className="h-auto justify-start gap-3 rounded-xl p-4"
                     onClick={() => setAppointmentType('video')}
+                    role="radio"
+                    aria-checked={appointmentType === 'video'}
                   >
                     <Monitor className="h-5 w-5 shrink-0" />
                     <span className="text-left">
@@ -329,23 +332,34 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                     variant={appointmentType === 'in_person' ? 'default' : 'outline'}
                     className="h-auto justify-start gap-3 rounded-xl p-4"
                     onClick={() => setAppointmentType('in_person')}
+                    disabled={!canBookInPerson}
+                    role="radio"
+                    aria-checked={appointmentType === 'in_person'}
+                    aria-describedby={!canBookInPerson ? 'in-person-unavailable' : undefined}
                   >
                     <MapPin className="h-5 w-5 shrink-0" />
                     <span className="text-left">
                       <span className="block font-semibold">Presencial</span>
-                      <span className="block text-xs opacity-80">En consultorio</span>
+                      <span className="block text-xs opacity-80">{canBookInPerson ? 'En consultorio' : 'No disponible'}</span>
                     </span>
                   </Button>
                 </div>
                 {appointmentType === 'in_person' ? (
                   <div className="mt-3 rounded-xl border border-border bg-secondary/50 p-4 text-sm text-foreground">
                     <p className="font-medium">Dirección del consultorio</p>
-                    <p className="mt-1 text-muted-foreground">{officeAddress || 'El consultorio confirmará la dirección antes de la cita.'}</p>
+                    <p className="mt-1 text-muted-foreground">{officeAddress}</p>
                   </div>
                 ) : (
-                  <div className="mt-3 rounded-xl border border-border bg-secondary/50 p-4 text-sm text-muted-foreground">
-                    Recibirás el enlace de acceso cuando tu pago quede confirmado. Te recomendamos entrar desde un lugar privado y con buena conexión.
-                  </div>
+                  <>
+                    <div className="mt-3 rounded-xl border border-border bg-secondary/50 p-4 text-sm text-muted-foreground">
+                      Recibirás el enlace de acceso cuando tu pago quede confirmado. Te recomendamos entrar desde un lugar privado y con buena conexión.
+                    </div>
+                    {!canBookInPerson && (
+                      <p id="in-person-unavailable" className="mt-2 text-sm text-muted-foreground">
+                        Este médico solo tiene disponible la modalidad por video en este momento.
+                      </p>
+                    )}
+                  </>
                 )}
               </div>
 
@@ -542,6 +556,11 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                   <p className="text-sm text-muted-foreground mb-1">Cita seleccionada:</p>
                   <p className="text-lg font-semibold text-foreground">
                     {formatDateDisplay(selectedDate)} a las {selectedTime}
+                  </p>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    {appointmentType === 'video'
+                      ? 'Video consulta. El enlace se habilita cerca de la hora de inicio.'
+                      : `Consulta presencial. Dirección: ${officeAddress}`}
                   </p>
                 </div>
               )}

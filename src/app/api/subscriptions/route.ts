@@ -96,7 +96,7 @@ export async function POST(request: NextRequest) {
 
         const { data: profile, error: profileError } = await supabase
             .from('profiles')
-            .select('id, role, full_name, email')
+            .select('id, role, full_name')
             .eq('id', user.id)
             .single()
 
@@ -120,11 +120,25 @@ export async function POST(request: NextRequest) {
             )
         }
 
+        const { data: activeSubscription } = await supabase
+            .from('doctor_subscriptions')
+            .select('id')
+            .eq('doctor_id', user.id)
+            .eq('status', 'active')
+            .maybeSingle()
+
+        if (activeSubscription) {
+            return NextResponse.json(
+                { error: 'Doctor already has an active subscription' },
+                { status: 409 }
+            )
+        }
+
         let customerId = doctor.stripe_customer_id as string | null
 
         if (!customerId) {
             const customer = await stripe.customers.create({
-                email: profile.email || user.email || undefined,
+                email: user.email || undefined,
                 name: profile.full_name || undefined,
                 metadata: {
                     doctorId: user.id,

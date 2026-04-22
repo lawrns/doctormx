@@ -275,7 +275,6 @@ export async function ensureVideoRoomForAppointment(
     .update({
       video_room_url: videoRoom.roomUrl,
       video_room_id: videoRoom.roomId,
-      video_token: videoRoom.token,
       video_status: 'ready',
       updated_at: new Date().toISOString(),
     })
@@ -312,11 +311,7 @@ export function isVideoAppointmentJoinable(appointment: {
   const startTime = new Date(appointment.start_ts)
   const fifteenMinutesBefore = new Date(startTime.getTime() - 15 * 60 * 1000)
 
-  return (
-    appointment.video_status === 'ready' ||
-    appointment.video_status === 'in_progress' ||
-    now >= fifteenMinutesBefore
-  )
+  return appointment.video_status === 'in_progress' || now >= fifteenMinutesBefore
 }
 
 /**
