@@ -3,10 +3,11 @@
 import { useEffect, useRef, useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
-import { Mail } from 'lucide-react'
+import { CalendarCheck, Mail, ReceiptText, Video } from 'lucide-react'
 import type { Appointment, Doctor } from '@/types'
 import { ANALYTICS_EVENTS, trackClientEvent } from '@/lib/analytics/posthog'
 import { Button } from '@/components/ui/button'
+import { DoctorMxLogo } from '@/components/brand/DoctorMxLogo'
 
 function PaymentSuccessContent() {
   const searchParams = useSearchParams()
@@ -71,8 +72,12 @@ function PaymentSuccessContent() {
       <div className="min-h-screen bg-background">
         <header className="glass-nav sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <Link href="/" className="font-display text-2xl font-bold tracking-tight text-foreground">
-              Doctor.mx
+            <Link
+              href="/"
+              className="inline-flex rounded-lg transition-transform active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              aria-label="Doctor.mx - Inicio"
+            >
+              <DoctorMxLogo />
             </Link>
           </div>
         </header>
@@ -119,8 +124,12 @@ function PaymentSuccessContent() {
     <div className="min-h-screen bg-background">
       <header className="glass-nav sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <Link href="/" className="font-display text-2xl font-bold tracking-tight text-foreground">
-            Doctor.mx
+          <Link
+            href="/"
+            className="inline-flex rounded-lg transition-transform active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            aria-label="Doctor.mx - Inicio"
+          >
+            <DoctorMxLogo />
           </Link>
         </div>
       </header>
@@ -134,15 +143,26 @@ function PaymentSuccessContent() {
           </div>
 
           <h1 className="font-display text-2xl font-bold tracking-tight text-foreground mb-4">
-            ¡Pago Exitoso!
+            Pago confirmado
           </h1>
 
           <p className="text-muted-foreground mb-8">
             Tu consulta ha sido agendada y confirmada
           </p>
 
-          <div className="mb-8 rounded-xl border border-border bg-secondary/50 p-4 text-left text-sm text-foreground">
-            Siguiente paso: revisa tu cita, guarda la fecha y entra a la videollamada desde <strong>Mis consultas</strong> cuando llegue la hora.
+          <div className="mb-8 grid gap-3 rounded-xl border border-border bg-secondary/50 p-4 text-left text-sm text-foreground">
+            <p className="flex items-start gap-2">
+              <CalendarCheck className="mt-0.5 h-4 w-4 text-vital" />
+              Guarda la fecha y revisa tu cita desde Mis consultas.
+            </p>
+            <p className="flex items-start gap-2">
+              <Video className="mt-0.5 h-4 w-4 text-primary" />
+              Si es videollamada, el enlace aparecerá cerca de la hora de inicio.
+            </p>
+            <p className="flex items-start gap-2">
+              <ReceiptText className="mt-0.5 h-4 w-4 text-primary" />
+              Para cambios, cancelaciones o reembolsos, usa soporte con el ID de cita.
+            </p>
           </div>
 
           {appointment && (

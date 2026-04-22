@@ -10,7 +10,6 @@ import {
   Search,
   Video,
   Stethoscope,
-  CheckCircle2,
   GraduationCap,
   Clock,
   ChevronRight,
@@ -18,15 +17,7 @@ import {
   Moon,
   CalendarIcon,
 } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-  DialogFooter,
-} from '@/components/ui/dialog'
+import { DoctorMxLogo } from '@/components/brand/DoctorMxLogo'
 
 /* ────────────────────────────
    Types
@@ -79,11 +70,6 @@ function getInitials(name: string): string {
     .slice(0, 2)
     .join('')
     .toUpperCase()
-}
-
-function getAiMatch(id: string): number {
-  const h = hashString(id)
-  return 70 + (h % 30)
 }
 
 function generateDates(seed: string) {
@@ -206,17 +192,14 @@ function DoctorCard({
   doctor,
   isSelected,
   onSelect,
-  index,
 }: {
   doctor: Doctor
   isSelected: boolean
   onSelect: () => void
   index: number
 }) {
-  const [bookingOpen, setBookingOpen] = useState(false)
   const name = doctor.profile?.full_name || 'Doctor'
   const initials = getInitials(name)
-  const aiMatch = getAiMatch(doctor.id)
   const { dates, activeIndex, strikes } = generateDates(doctor.id)
   const isFeatured = hashString(doctor.id) % 3 === 0
 
@@ -324,9 +307,6 @@ function DoctorCard({
               </span>
               <span className="font-bold text-ink">{doctor.rating_avg.toFixed(1)}</span>
               <span className="text-muted-foreground">({doctor.rating_count} opiniones)</span>
-              <span className="inline-flex items-center gap-0.5 ml-1 px-1.5 py-0.5 rounded-full bg-primary/10 border border-primary/20 text-[10px] font-semibold text-primary font-mono">
-                <CheckCircle2 className="w-2.5 h-2.5" /> {aiMatch}% match
-              </span>
             </div>
           </div>
         </div>
@@ -384,17 +364,13 @@ function DoctorCard({
             )
           })}
         </div>
-        <Button
-          variant="default"
-          size="sm"
-          className="w-full font-bold bg-ink hover:bg-ink/90 text-primary-foreground mt-1"
-          onClick={(e) => {
-            e.stopPropagation()
-            setBookingOpen(true)
-          }}
+        <Link
+          href={`/book/${doctor.id}`}
+          className="mt-1 inline-flex h-9 w-full items-center justify-center gap-1.5 rounded-md bg-ink px-3 text-sm font-bold text-primary-foreground transition-colors hover:bg-ink/90 active:scale-[0.98]"
+          onClick={(e) => e.stopPropagation()}
         >
-          <CalendarIcon className="w-3.5 h-3.5 mr-1.5" /> Agendar cita
-        </Button>
+          <CalendarIcon className="w-3.5 h-3.5" /> Agendar cita
+        </Link>
 
         <button
           onClick={(e) => e.stopPropagation()}
@@ -404,11 +380,6 @@ function DoctorCard({
         </button>
       </div>
 
-      <BookingDialog
-        doctor={doctor}
-        open={bookingOpen}
-        onOpenChange={setBookingOpen}
-      />
     </article>
   )
 }
@@ -547,135 +518,6 @@ function CdmxMap({
 }
 
 /* ────────────────────────────
-   Booking Dialog
-   ──────────────────────────── */
-function BookingDialog({
-  doctor,
-  open,
-  onOpenChange,
-}: {
-  doctor: Doctor
-  open: boolean
-  onOpenChange: (open: boolean) => void
-}) {
-  const [selectedDate, setSelectedDate] = useState(0)
-  const [selectedTime, setSelectedTime] = useState<string | null>(null)
-  const [confirmed, setConfirmed] = useState(false)
-
-  const { dates } = generateDates(doctor.id)
-  const timeSlots = useMemo(() => {
-    const h = hashString(doctor.id + selectedDate)
-    const slots = []
-    const startHour = 8 + (h % 4)
-    for (let i = 0; i < 8; i++) {
-      const hour = startHour + Math.floor(i / 2)
-      const min = i % 2 === 0 ? '00' : '30'
-      slots.push(`${hour.toString().padStart(2, '0')}:${min}`)
-    }
-    return slots
-  }, [doctor.id, selectedDate])
-
-  const handleConfirm = () => {
-    if (selectedTime) setConfirmed(true)
-  }
-
-  const handleClose = () => {
-    onOpenChange(false)
-    setTimeout(() => {
-      setConfirmed(false)
-      setSelectedTime(null)
-      setSelectedDate(0)
-    }, 300)
-  }
-
-  return (
-    <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="sm:max-w-md">
-        {!confirmed ? (
-          <>
-            <DialogHeader>
-              <DialogTitle>Agendar cita</DialogTitle>
-              <DialogDescription>
-                {doctor.profile?.full_name} · {doctor.specialties[0]?.name || 'Especialista'}
-              </DialogDescription>
-            </DialogHeader>
-
-            <div className="mt-4">
-              <div className="text-xs font-medium text-muted-foreground mb-2">Selecciona una fecha</div>
-              <div className="flex gap-1.5 overflow-x-auto pb-2">
-                {dates.map((d) => (
-                  <button
-                    key={d.index}
-                    onClick={() => setSelectedDate(d.index)}
-                    className={`flex-shrink-0 py-2 px-3 border rounded-lg text-center text-xs transition-all ${
-                      selectedDate === d.index
-                        ? 'bg-ink border-ink text-primary-foreground'
-                        : 'bg-card border-border text-foreground hover:bg-secondary'
-                    }`}
-                  >
-                    <span className="block font-semibold">{d.label}</span>
-                    <span className={selectedDate === d.index ? 'text-white/75' : 'text-muted-foreground'}>
-                      {d.dt}
-                    </span>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="mt-4">
-              <div className="text-xs font-medium text-muted-foreground mb-2">Selecciona un horario</div>
-              <div className="grid grid-cols-4 gap-1.5">
-                {timeSlots.map((time) => (
-                  <button
-                    key={time}
-                    onClick={() => setSelectedTime(time)}
-                    className={`py-1.5 px-1 border rounded-md text-xs transition-all ${
-                      selectedTime === time
-                        ? 'bg-ink border-ink text-primary-foreground'
-                        : 'bg-card border-border text-foreground hover:bg-secondary'
-                    }`}
-                  >
-                    {time}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <DialogFooter className="mt-6">
-              <Button
-                variant="default"
-                className="w-full bg-ink hover:bg-ink/90 text-primary-foreground font-bold"
-                disabled={!selectedTime}
-                onClick={handleConfirm}
-              >
-                Confirmar cita
-              </Button>
-            </DialogFooter>
-          </>
-        ) : (
-          <div className="py-8 text-center">
-            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
-              <CheckCircle2 className="h-7 w-7 text-primary" />
-            </div>
-            <DialogTitle className="text-base">¡Cita agendada!</DialogTitle>
-            <DialogDescription className="mt-1">
-              Tu cita con {doctor.profile?.full_name} ha sido confirmada.
-            </DialogDescription>
-            <Button
-              variant="default"
-              className="mt-6 w-full bg-ink hover:bg-ink/90 text-primary-foreground font-bold"
-              onClick={handleClose}
-            >
-              Cerrar
-            </Button>
-          </div>
-        )}
-      </DialogContent>
-    </Dialog>
-  )
-}
-
-/* ────────────────────────────
    Main export
    ──────────────────────────── */
 export function DoctorsDirectoryClient({
@@ -726,8 +568,12 @@ export function DoctorsDirectoryClient({
       {/* HEADER */}
       <header className="sticky top-0 z-[200] bg-card border-b border-border h-14 flex items-center">
         <div className="max-w-[1440px] mx-auto w-full px-6 flex items-center gap-4">
-          <Link href="/" className="font-display text-lg font-bold text-foreground shrink-0">
-            doctor.mx
+          <Link
+            href="/"
+            className="shrink-0 rounded-lg transition-transform active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            aria-label="Doctor.mx - Inicio"
+          >
+            <DoctorMxLogo markClassName="h-8 w-8" textClassName="text-[1.05rem]" />
           </Link>
 
           <form
@@ -770,8 +616,64 @@ export function DoctorsDirectoryClient({
         </div>
       </header>
 
+      <form
+        action="/doctors"
+        className="sticky top-14 z-[150] grid gap-2 border-b border-border bg-card p-3 sm:hidden"
+        onSubmit={(e) => {
+          e.preventDefault()
+          const fd = new FormData(e.currentTarget)
+          const search = fd.get('search') as string
+          router.push(`/doctors${buildQuery({ search: search || undefined })}`)
+        }}
+      >
+        <div className="flex items-center gap-2 rounded-lg border border-border bg-background px-3 py-2">
+          <Search className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <input
+            name="search"
+            type="text"
+            placeholder="Especialidad o doctor"
+            defaultValue={params.search || ''}
+            className="min-w-0 flex-1 bg-transparent text-sm text-foreground outline-none placeholder:text-muted-foreground"
+          />
+          <button type="submit" className="text-sm font-semibold text-primary">
+            Buscar
+          </button>
+        </div>
+        <div className="flex gap-2 overflow-x-auto pb-1">
+          <Link
+            href="/doctors"
+            className="whitespace-nowrap rounded-full border border-border bg-background px-3 py-1.5 text-xs font-semibold text-foreground"
+          >
+            Limpiar
+          </Link>
+          <Link
+            href={`/doctors${buildQuery({ appointmentType: params.appointmentType === 'video' ? undefined : 'video' })}`}
+            className={`whitespace-nowrap rounded-full border px-3 py-1.5 text-xs font-semibold ${
+              params.appointmentType === 'video'
+                ? 'border-primary bg-primary text-primary-foreground'
+                : 'border-border bg-background text-foreground'
+            }`}
+          >
+            Teleconsulta
+          </Link>
+          {specialties.slice(0, 5).map((s) => (
+            <Link
+              key={s.id}
+              href={`/doctors${buildQuery({ specialty: s.slug === params.specialty ? undefined : s.slug })}`}
+              className={`whitespace-nowrap rounded-full border px-3 py-1.5 text-xs font-semibold ${
+                params.specialty === s.slug
+                  ? 'border-primary bg-primary text-primary-foreground'
+                  : 'border-border bg-background text-foreground'
+              }`}
+            >
+              {s.name}
+            </Link>
+          ))}
+        </div>
+      </form>
+
       {/* PAGE */}
-      <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-[220px_1fr_380px] h-[calc(100vh-56px)] overflow-hidden">
+      <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-[220px_1fr_380px] lg:h-[calc(100vh-56px)] lg:overflow-hidden">
         {/* SIDEBAR */}
         <aside className="hidden lg:flex flex-col border-r border-border overflow-y-auto p-5 gap-6 bg-card min-w-0">
           <FilterSection title="Especialidad">
@@ -818,7 +720,7 @@ export function DoctorsDirectoryClient({
         </aside>
 
         {/* RESULTS */}
-        <div className="flex flex-col overflow-y-auto min-w-0">
+        <div className="flex min-w-0 flex-col lg:overflow-y-auto">
           <div className="sticky top-0 z-10 px-5 py-3.5 border-b border-border bg-card flex items-center justify-between gap-3">
             <div>
               <h1 className="font-display text-lg font-bold text-ink tracking-tight">{heading}</h1>

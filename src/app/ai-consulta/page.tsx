@@ -22,6 +22,7 @@ import { PremiumUpgradeModal } from '@/components/PremiumUpgradeModal'
 import { ANALYTICS_EVENTS, trackClientEvent } from '@/lib/analytics/posthog'
 import type { DoctorMatch } from '@/lib/ai/referral'
 import { formatCurrency, formatDoctorName } from '@/lib/utils'
+import { DoctorMxLogo } from '@/components/brand/DoctorMxLogo'
 
 /* ── Types ── */
 
@@ -737,25 +738,19 @@ export default function AnonymousConsultaPage() {
       {/* ── Sticky Header ── */}
       <header className="sticky top-0 z-50 glass border-b border-border">
         <div className="max-w-[720px] mx-auto px-4 h-14 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                />
-              </svg>
-            </div>
-            <span className="text-lg font-bold font-display text-foreground">doctor.mx</span>
+          <Link
+            href="/"
+            className="rounded-lg transition-transform active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            aria-label="Doctor.mx - Inicio"
+          >
+            <DoctorMxLogo markClassName="h-8 w-8" textClassName="text-[1.05rem]" />
           </Link>
 
           <div className="flex items-center gap-3">
-            {/* COFEPRIS badge */}
             <div className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-vital/10 border border-vital/20">
               <Shield className="w-3 h-3 text-vital" />
               <span className="text-[10px] font-mono font-semibold text-vital uppercase tracking-wider">
-                COFEPRIS
+                Seguridad clínica
               </span>
             </div>
 
@@ -802,7 +797,7 @@ export default function AnonymousConsultaPage() {
             <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-vital/10 border border-vital/20 mb-7">
               <Shield className="w-3 h-3 text-vital" />
               <span className="text-[11px] font-mono font-semibold text-vital uppercase tracking-wider">
-                Plataforma COFEPRIS · Cifrado extremo a extremo
+                Orientación IA · No sustituye urgencias
               </span>
             </div>
 
@@ -832,8 +827,8 @@ export default function AnonymousConsultaPage() {
               {(
                 [
                   ['Asistente IA, no médico', Stethoscope],
-                  ['Datos cifrados', Shield],
-                  ['Doctores verificados SEP', CheckCircle2],
+                  ['Datos sensibles protegidos', Shield],
+                  ['Doctores revisados', CheckCircle2],
                 ] as const
               ).map(([label, Icon]) => (
                 <div key={label} className="flex items-center gap-1.5 text-[11px] text-muted-foreground font-mono">
@@ -952,32 +947,37 @@ export default function AnonymousConsultaPage() {
               </button>
             </div>
           ) : (
-            <div className="bg-card border border-border rounded-2xl p-3 flex items-end gap-2 shadow-sm focus-within:ring-2 focus-within:ring-primary/20 focus-within:border-primary/40 transition-all">
-              <textarea
-                ref={textareaRef}
-                rows={1}
-                value={input}
-                onChange={(e) => {
-                  setInput(e.target.value)
-                  handleAutoResize(e.target)
-                }}
-                onKeyDown={handleKeyDown}
-                placeholder={
-                  phase === 'welcome'
-                    ? 'Describe cómo te sientes...'
-                    : 'Continúa describiendo tus síntomas...'
-                }
-                disabled={isThinking}
-                className="flex-1 border-none bg-transparent resize-none text-sm text-foreground outline-none placeholder:text-muted-foreground min-h-[24px] max-h-[120px] leading-relaxed py-1.5"
-              />
-              <button
-                onClick={() => sendMessage(input)}
-                disabled={!input.trim() || isThinking}
-                className="w-9 h-9 rounded-lg bg-ink text-white flex items-center justify-center flex-shrink-0 hover:bg-ink/90 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-                aria-label="Enviar"
-              >
-                <Send className="w-4 h-4" />
-              </button>
+            <div className="rounded-2xl border border-border bg-card p-3 shadow-sm transition-all focus-within:border-primary/40 focus-within:ring-2 focus-within:ring-primary/20">
+              <div className="mb-3 rounded-lg border border-coral/20 bg-coral/10 px-3 py-2 text-[11px] leading-5 text-foreground">
+                Si tienes dolor de pecho, dificultad para respirar, pérdida de fuerza, confusión, sangrado intenso o ideas de hacerte daño, llama al 911 o acude a urgencias. Dr. Simeon no reemplaza atención médica.
+              </div>
+              <div className="flex items-end gap-2">
+                <textarea
+                  ref={textareaRef}
+                  rows={1}
+                  value={input}
+                  onChange={(e) => {
+                    setInput(e.target.value)
+                    handleAutoResize(e.target)
+                  }}
+                  onKeyDown={handleKeyDown}
+                  placeholder={
+                    phase === 'welcome'
+                      ? 'Describe cómo te sientes...'
+                      : 'Continúa describiendo tus síntomas...'
+                  }
+                  disabled={isThinking}
+                  className="max-h-[120px] min-h-[24px] flex-1 resize-none border-none bg-transparent py-1.5 text-sm leading-relaxed text-foreground outline-none placeholder:text-muted-foreground"
+                />
+                <button
+                  onClick={() => sendMessage(input)}
+                  disabled={!input.trim() || isThinking}
+                  className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-ink text-white transition-colors hover:bg-ink/90 disabled:cursor-not-allowed disabled:opacity-40"
+                  aria-label="Enviar"
+                >
+                  <Send className="h-4 w-4" />
+                </button>
+              </div>
             </div>
           )}
           <p className="text-center text-[11px] text-muted-foreground mt-2 font-mono">

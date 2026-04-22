@@ -10,6 +10,7 @@ import { useToast } from '@/components/Toast'
 import { AI_CONFIG } from '@/lib/ai/config'
 import { MapPin, Monitor, User } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { DoctorMxLogo } from '@/components/brand/DoctorMxLogo'
 
 type DoctorProfile = {
   id: string
@@ -279,13 +280,12 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
     <div className="min-h-screen bg-background">
       <header className="glass-nav sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-              <svg className="w-6 h-6 text-primary-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-              </svg>
-            </div>
-            <span className="font-display text-2xl font-bold tracking-tight text-foreground">Doctor.mx</span>
+          <Link
+            href="/"
+            className="rounded-lg transition-transform active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            aria-label="Doctor.mx - Inicio"
+          >
+            <DoctorMxLogo />
           </Link>
           <Link href={`/doctors/${doctor.id}`} className="text-muted-foreground hover:text-primary font-medium">← Volver al perfil</Link>
         </div>
@@ -551,7 +551,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
               {consultationId && (
                 <div className="bg-secondary/50 border border-border rounded-xl p-4">
                   <p className="text-sm text-foreground font-medium">
-                    ✨ Referido desde tu consulta de IA multi-especialista
+                    Referido desde tu consulta de IA multi-especialista
                   </p>
                   <p className="text-xs text-muted-foreground mt-1">
                     Tu expediente médico será compartido con el doctor para continuidad de atención
@@ -569,6 +569,9 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                     {appointmentType === 'video'
                       ? 'Video consulta. El enlace se habilita cerca de la hora de inicio.'
                       : `Consulta presencial. Dirección: ${officeAddress}`}
+                  </p>
+                  <p className="mt-3 rounded-lg border border-amber/30 bg-amber/10 px-3 py-2 text-xs font-medium text-foreground">
+                    Al continuar, este horario se reserva temporalmente mientras completas el pago. Si el pago no se confirma, el horario puede volver a quedar disponible.
                   </p>
                 </div>
               )}
