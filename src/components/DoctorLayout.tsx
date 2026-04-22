@@ -5,6 +5,7 @@ import { ReactNode, useState } from 'react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
+import { DoctorMxLogo } from '@/components/brand/DoctorMxLogo'
 
 interface DoctorLayoutProps {
   children: ReactNode
@@ -72,8 +73,7 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
               </svg>
             </button>
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary rounded-lg" />
-              <span className="font-display text-xl font-bold text-foreground">Doctor.mx</span>
+              <DoctorMxLogo />
             </Link>
           </div>
 
@@ -113,8 +113,7 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
         <aside className="hidden lg:flex w-64 flex-col border-r border-border bg-background sticky top-0 h-screen">
           <div className="p-6">
             <Link href="/" className="flex items-center gap-2.5">
-              <div className="w-8 h-8 bg-primary rounded-lg" />
-              <span className="font-display text-xl font-bold text-foreground">Doctor.mx</span>
+              <DoctorMxLogo />
             </Link>
           </div>
 

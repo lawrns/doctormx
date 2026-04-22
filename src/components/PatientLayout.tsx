@@ -2,6 +2,7 @@
 
 import { Calendar, MessageCircle, User, ClipboardList, Home, LogOut, Menu, X } from 'lucide-react'
 import Link from 'next/link'
+import { DoctorMxLogo } from '@/components/brand/DoctorMxLogo'
 import { usePathname } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { createClient } from '@/lib/supabase/client'
@@ -167,8 +168,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
               <Menu className="w-6 h-6" />
             </button>
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary rounded-lg" />
-              <span className="font-display text-xl font-bold text-foreground">Doctor.mx</span>
+              <DoctorMxLogo />
             </Link>
           </div>
         </div>
@@ -179,8 +179,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
         <aside className="hidden lg:flex w-64 flex-col border-r border-border bg-background sticky top-0 h-screen">
           <div className="p-6">
             <Link href="/" className="flex items-center gap-2.5">
-              <div className="w-8 h-8 bg-primary rounded-lg" />
-              <span className="font-display text-xl font-bold text-foreground">Doctor.mx</span>
+              <DoctorMxLogo />
             </Link>
           </div>
           <nav className="flex-1 px-4 space-y-1">
@@ -237,8 +236,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
           {/* Mobile sidebar header */}
           <div className="flex items-center justify-between p-4 border-b border-border">
             <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
-              <div className="w-8 h-8 bg-primary rounded-lg" />
-              <span className="font-display text-lg font-bold text-foreground">Doctor.mx</span>
+              <DoctorMxLogo />
             </Link>
             <button
               onClick={() => setMobileMenuOpen(false)}

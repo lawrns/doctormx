@@ -19,10 +19,10 @@ export function WelcomeBanner({ patientName }: { patientName: string }) {
   if (!show) return null
 
   return (
-    <div className="relative overflow-hidden rounded-2xl bg-ink p-6 text-foreground mb-8">
+    <div className="relative overflow-hidden rounded-2xl bg-ink p-6 text-[#f7f8fb] mb-8">
       {/* Subtle decorative circle */}
-      <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-primary/10 -translate-y-1/2 translate-x-1/2" />
-      <div className="absolute bottom-0 left-0 w-32 h-32 rounded-full bg-primary/10 translate-y-1/2 -translate-x-1/2" />
+      <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-[#f7f8fb]/5 -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute bottom-0 left-0 w-32 h-32 rounded-full bg-[#f7f8fb]/5 translate-y-1/2 -translate-x-1/2" />
 
       <div className="relative">
         <div className="flex items-start justify-between">
@@ -30,21 +30,21 @@ export function WelcomeBanner({ patientName }: { patientName: string }) {
             <h1 className="text-2xl font-bold font-display mb-2">
               Bienvenido a Doctor.mx, {patientName}
             </h1>
-            <p className="text-muted-foreground mb-4 max-w-lg">
+            <p className="text-[#f7f8fb]/70 mb-4 max-w-lg">
               Tu plataforma de telemedicina de confianza. Encuentra doctores verificados,
               consulta desde casa y cuida tu salud de manera fácil y segura.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/doctors"
-                className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                className="inline-flex items-center gap-2 rounded-lg bg-[#f7f8fb] px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-[#f7f8fb]/90"
               >
                 <Search className="h-4 w-4" />
                 Buscar un doctor
               </Link>
               <Link
                 href="/app/profile"
-                className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+                className="inline-flex items-center gap-2 rounded-lg border border-[#f7f8fb]/20 bg-[#f7f8fb]/10 px-4 py-2 text-sm font-medium text-[#f7f8fb] transition-colors hover:bg-[#f7f8fb]/20"
               >
                 <User className="h-4 w-4" />
                 Completar mi perfil
@@ -53,23 +53,23 @@ export function WelcomeBanner({ patientName }: { patientName: string }) {
           </div>
           <button
             onClick={() => setShow(false)}
-            className="text-muted-foreground transition-colors hover:text-foreground"
+            className="text-[#f7f8fb]/60 transition-colors hover:text-[#f7f8fb]"
           >
             <X className="h-5 w-5" />
           </button>
         </div>
 
-        <div className="mt-6 grid grid-cols-3 gap-4 border-t border-border pt-6">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <ShieldCheck className="h-4 w-4 text-primary" />
+        <div className="mt-6 grid grid-cols-3 gap-4 border-t border-[#f7f8fb]/15 pt-6">
+          <div className="flex items-center gap-2 text-sm text-[#f7f8fb]/70">
+            <ShieldCheck className="h-4 w-4 text-vital" />
             <span>Doctores verificados</span>
           </div>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Video className="h-4 w-4 text-primary" />
+          <div className="flex items-center gap-2 text-sm text-[#f7f8fb]/70">
+            <Video className="h-4 w-4 text-vital" />
             <span>Videoconsultas</span>
           </div>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <FileText className="h-4 w-4 text-primary" />
+          <div className="flex items-center gap-2 text-sm text-[#f7f8fb]/70">
+            <FileText className="h-4 w-4 text-vital" />
             <span>Recetas digitales</span>
           </div>
         </div>
