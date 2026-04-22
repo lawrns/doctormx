@@ -1,6 +1,6 @@
 /**
  * Cliente de IA para Doctor.mx
- * Primary:  OpenRouter (Kimi K2.5)
+ * Primary:  OpenRouter (MiniMax M2.7)
  * Fallback: Ollama proxy (qwen3.5:latest / kimi-k2.5:cloud)
  * Audio:    OpenAI Whisper
  */
@@ -157,7 +157,7 @@ export async function transcribeAudio(params: {
     const message = error && typeof error === 'object' && 'message' in error && typeof error.message === 'string'
       ? error.message
       : 'Desconocido';
-    throw new Error(`Error de transcripción: ${message}`);
+    throw new Error(`Error de transcripción: ${message}`, { cause: error });
   }
 }
 
@@ -183,11 +183,11 @@ export async function structuredAnalysis<T>(params: {
 
   // ── Primary: OpenRouter ──────────────────────────────────────────────────
   if (AI_CONFIG.openrouter.apiKey) {
-    console.log(`[AI] Intentando análisis con openrouter (model=${AI_CONFIG.openrouter.model})...`);
+    console.log(`[AI] Intentando análisis con openrouter (model=${AI_CONFIG.openrouter.analysisModel})...`);
     try {
       const client = await getOpenRouterClient();
       const completion = await client.chat.completions.create({
-        model: AI_CONFIG.openrouter.model,
+        model: AI_CONFIG.openrouter.analysisModel,
         messages,
         max_tokens: AI_CONFIG.openrouter.analysisMaxTokens,
         response_format: { type: 'json_object' },

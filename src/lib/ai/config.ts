@@ -1,7 +1,12 @@
 /**
  * Configuración central para servicios de IA
- * OpenRouter (Kimi K2.5) — sole active LLM provider
+ * OpenRouter (MiniMax M2.7 + Kimi K2.6) — sole active LLM provider
  * OpenAI Whisper — audio transcription only
+ *
+ * Model selection (Apr 2026 OpenRouter pricing):
+ *   • minimax/minimax-m2.7  — $0.30 / $1.20 per 1M tok  (default chat / triage)
+ *   • moonshotai/kimi-k2.6  — $0.60 / $2.80 per 1M tok  (structured analysis / SOAP)
+ *   • openai/gpt-4o-mini    — $0.15 / $0.60 per 1M tok  (vision fallback)
  */
 
 export const AI_CONFIG = {
@@ -9,7 +14,9 @@ export const AI_CONFIG = {
   openrouter: {
     apiKey: process.env.OPENROUTER_API_KEY || '',
     baseURL: 'https://openrouter.ai/api/v1',
-    model: 'moonshotai/kimi-k2',        // Kimi K2.5 on OpenRouter
+    model: 'minimax/minimax-m2.7',           // Default: fast, cheap, great for triage + JSON
+    analysisModel: 'minimax/minimax-m2.7',    // Same — M2.7 handles structured output better than K2.6 (no reasoning token overhead)
+    visionModel: 'openai/gpt-4o-mini',        // Vision analysis (cheapest reliable vision)
     temperature: 0.3,
     maxTokens: 1500,
     analysisMaxTokens: 2000,
@@ -81,10 +88,17 @@ export const AI_CONFIG = {
     timeoutMs: 20000, // 20 seconds
   },
 
-  // Cost tracking (per 1M tokens) — Kimi K2.5 via OpenRouter
+  // Cost tracking (per 1M tokens) — OpenRouter actual pricing Apr 2026
   costs: {
-    openrouterInputPer1M: 0.15,   // Kimi K2.5 estimated
-    openrouterOutputPer1M: 0.60,  // Kimi K2.5 estimated
+    // MiniMax M2.7  ($0.30 in / $1.20 out)
+    openrouterInputPer1M: 0.30,
+    openrouterOutputPer1M: 1.20,
+    // (Kimi K2.6 kept as experimental override only — $0.60/$2.80, but burns tokens on reasoning)
+    openrouterAnalysisInputPer1M: 0.30,
+    openrouterAnalysisOutputPer1M: 1.20,
+    // GPT-4o-mini vision ($0.15 in / $0.60 out)
+    openrouterVisionInputPer1M: 0.15,
+    openrouterVisionOutputPer1M: 0.60,
     // Legacy keys kept for any existing audit/reporting references
     glmInputPer1M: 0.60,
     glmOutputPer1M: 2.20,
@@ -150,7 +164,7 @@ export function getActiveProvider(): 'openrouter' | 'openai' {
  * Calcula costo estimado de una operación
  */
 export function estimateCost(operation: {
-  type: 'chat' | 'transcription';
+  type: 'chat' | 'analysis' | 'vision' | 'transcription';
   inputTokens?: number;
   outputTokens?: number;
   audioMinutes?: number;
@@ -159,6 +173,18 @@ export function estimateCost(operation: {
   if (operation.type === 'chat') {
     const inputCost = ((operation.inputTokens || 0) / 1_000_000) * AI_CONFIG.costs.openrouterInputPer1M;
     const outputCost = ((operation.outputTokens || 0) / 1_000_000) * AI_CONFIG.costs.openrouterOutputPer1M;
+    return inputCost + outputCost;
+  }
+
+  if (operation.type === 'analysis') {
+    const inputCost = ((operation.inputTokens || 0) / 1_000_000) * AI_CONFIG.costs.openrouterAnalysisInputPer1M;
+    const outputCost = ((operation.outputTokens || 0) / 1_000_000) * AI_CONFIG.costs.openrouterAnalysisOutputPer1M;
+    return inputCost + outputCost;
+  }
+
+  if (operation.type === 'vision') {
+    const inputCost = ((operation.inputTokens || 0) / 1_000_000) * AI_CONFIG.costs.openrouterVisionInputPer1M;
+    const outputCost = ((operation.outputTokens || 0) / 1_000_000) * AI_CONFIG.costs.openrouterVisionOutputPer1M;
     return inputCost + outputCost;
   }
 

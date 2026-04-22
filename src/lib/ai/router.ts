@@ -1,20 +1,16 @@
 /**
  * AI Provider Router
- * Intelligent routing between GLM (primary), OpenAI, OpenRouter, and DeepSeek
- * Optimizes for cost, latency, and accuracy based on use case
- *
- * GLM z.ai is now the primary provider for Doctor.mx
+ * OpenRouter is the sole active provider for Doctor.mx
+ * DeepSeek → OpenAI as last-resort fallbacks
  */
 
 import { openai } from '@/lib/openai'
 import { openrouter } from './openrouter'
 import { deepseek, type DeepSeekMessage } from './deepseek'
-import { glm as glmClient, GLM_CONFIG, isGLMConfigured, calculateGLMCost } from './glm'
-import { kimi, KIMI_CONFIG, isKimiConfigured, calculateKimiCost, isKimiPolicyRestricted } from './kimi'
 import { AI_CONFIG } from './config'
 import { logger } from '@/lib/observability/logger'
 
-export type AIProvider = 'glm' | 'kimi' | 'openai' | 'openrouter' | 'deepseek'
+export type AIProvider = 'openai' | 'openrouter' | 'deepseek'
 
 export type UseCase =
   | 'vision-analysis'      // Medical image analysis
@@ -42,38 +38,76 @@ export interface RouterResponse {
 }
 
 /**
- * Default routing strategy based on use case
- * GLM is now the primary provider for most use cases
+ * Default routing strategy — OpenRouter for everything LLM-related
  */
 const USE_CASE_ROUTING: Record<UseCase, { primary: AIProvider; fallbacks: AIProvider[] }> = {
-  'vision-analysis': {
-    primary: 'glm',         // GLM-5.1 for medical images (flagship model)
-    fallbacks: ['kimi', 'openrouter', 'openai'],
-  },
-  'differential-diagnosis': {
-    primary: 'glm',         // GLM-5.1 for complex reasoning
-    fallbacks: ['kimi', 'deepseek', 'openai'],
-  },
-  'triage': {
-    primary: 'glm',         // GLM-4.5-air for fast triage
-    fallbacks: ['kimi', 'deepseek', 'openai'],
-  },
-  'prescription': {
-    primary: 'glm',         // GLM-5.1 for evidence-based recommendations
-    fallbacks: ['kimi', 'deepseek', 'openai'],
-  },
-  'transcription': {
-    primary: 'openai',      // Whisper is still best for transcription
-    fallbacks: [],
-  },
-  'general-chat': {
-    primary: 'glm',         // GLM-4.5-air for fast, cost-effective chat
-    fallbacks: ['kimi', 'openai', 'deepseek'],
-  },
-  'soap-notes': {
-    primary: 'glm',         // GLM-5.1 for structured output
-    fallbacks: ['kimi', 'deepseek', 'openai'],
-  },
+  'vision-analysis':   { primary: 'openrouter', fallbacks: ['openai'] },
+  'differential-diagnosis': { primary: 'openrouter', fallbacks: ['deepseek', 'openai'] },
+  'triage':            { primary: 'openrouter', fallbacks: ['deepseek', 'openai'] },
+  'prescription':      { primary: 'openrouter', fallbacks: ['deepseek', 'openai'] },
+  'transcription':     { primary: 'openai',     fallbacks: [] },
+  'general-chat':      { primary: 'openrouter', fallbacks: ['deepseek', 'openai'] },
+  'soap-notes':        { primary: 'openrouter', fallbacks: ['deepseek', 'openai'] },
+}
+
+/**
+ * Make a chat-completion request through OpenRouter directly
+ */
+async function callOpenRouter(
+  messages: Array<{ role: 'system' | 'user' | 'assistant'; content: string }>,
+  model: string,
+  maxTokens: number,
+  temperature: number,
+  jsonMode?: boolean
+): Promise<{ content: string; usage: { promptTokens: number; completionTokens: number }; costUSD: number }> {
+  const apiKey = AI_CONFIG.openrouter.apiKey
+  if (!apiKey) {
+    throw new Error('OpenRouter API key not configured')
+  }
+
+  const body: Record<string, unknown> = {
+    model,
+    messages,
+    max_tokens: maxTokens,
+    temperature,
+  }
+
+  if (jsonMode) {
+    body.response_format = { type: 'json_object' }
+  }
+
+  const response = await fetch(`${AI_CONFIG.openrouter.baseURL}/chat/completions`, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+      'HTTP-Referer': process.env.NEXT_PUBLIC_APP_URL || 'https://doctor.mx',
+      'X-Title': 'Doctor.mx Telemedicine',
+    },
+    body: JSON.stringify(body),
+  })
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}))
+    throw new Error(
+      `OpenRouter API error: ${response.status} ${response.statusText}. ${JSON.stringify(errorData)}`
+    )
+  }
+
+  const data = await response.json()
+  const content = data.choices?.[0]?.message?.content || ''
+  const promptTokens = data.usage?.prompt_tokens || 0
+  const completionTokens = data.usage?.completion_tokens || 0
+
+  // Determine pricing based on model (all OpenRouter routes currently use MiniMax M2.7)
+  const inputPrice: number = AI_CONFIG.costs.openrouterInputPer1M
+  const outputPrice: number = AI_CONFIG.costs.openrouterOutputPer1M
+
+  const costUSD =
+    (promptTokens / 1_000_000) * inputPrice +
+    (completionTokens / 1_000_000) * outputPrice
+
+  return { content, usage: { promptTokens, completionTokens }, costUSD }
 }
 
 class AIRouter {
@@ -84,138 +118,73 @@ class AIRouter {
     imageUrl: string,
     prompt: string,
     systemPrompt: string,
-    useCase: UseCase = 'vision-analysis',
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    _useCase: UseCase = 'vision-analysis',
     config: RouterConfig = {}
   ): Promise<RouterResponse> {
     const startTime = Date.now()
-    const routing = USE_CASE_ROUTING[useCase]
-    const provider = config.preferredProvider || routing.primary
 
-    try {
-      // Try GLM first (primary provider, cost effective)
-      if (provider === 'glm' && isGLMConfigured()) {
-        logger.info('[ROUTER] Routing vision to GLM')
+    // Primary: OpenRouter vision client
+    if (openrouter.isConfigured()) {
+      logger.info('[ROUTER] Routing vision to OpenRouter')
 
-        const response = await glmClient.chat.completions.create({
-          model: GLM_CONFIG.models.vision,
-          messages: [
-            {
-              role: 'system',
-              content: systemPrompt,
-            },
-            {
-              role: 'user',
-              content: [
-                {
-                  type: 'image_url',
-                  image_url: {
-                    url: imageUrl,
-                    detail: 'high',
-                  },
-                },
-                {
-                  type: 'text',
-                  text: prompt,
-                },
-              ],
-            },
-          ],
-          max_tokens: 1500,
-          temperature: 0.2,
-        })
-
-        const content = response.choices[0]?.message?.content || ''
-        const usage = response.usage || { prompt_tokens: 0, completion_tokens: 0 }
-        const costUSD = calculateGLMCost(usage.prompt_tokens, usage.completion_tokens)
-
-        return {
-          content,
-          provider: 'glm',
-          model: GLM_CONFIG.models.vision,
-          costUSD,
-          latencyMs: Date.now() - startTime,
+      const response = await openrouter.analyzeImage(
+        imageUrl,
+        prompt,
+        systemPrompt,
+        {
+          model: config.costOptimization
+            ? openrouter.getRecommendedModel('cost')
+            : openrouter.getRecommendedModel('accuracy'),
+          detail: 'high',
         }
-      }
-
-      // Try OpenRouter as fallback (90% cheaper than OpenAI)
-      if ((provider === 'openrouter' || (provider === 'glm' && !isGLMConfigured())) && openrouter.isConfigured()) {
-        logger.info('[ROUTER] Routing vision to OpenRouter')
-
-        const response = await openrouter.analyzeImage(
-          imageUrl,
-          prompt,
-          systemPrompt,
-          {
-            model: config.costOptimization
-              ? openrouter.getRecommendedModel('cost')
-              : openrouter.getRecommendedModel('accuracy'),
-            detail: 'high',
-          }
-        )
-
-        return {
-          content: response.content,
-          provider: 'openrouter',
-          model: response.model,
-          costUSD: response.costUSD,
-          latencyMs: Date.now() - startTime,
-        }
-      }
-
-      // Fallback to OpenAI
-      logger.info('[ROUTER] Routing vision to OpenAI (fallback)')
-
-      const response = await openai.chat.completions.create({
-        model: 'gpt-4o',
-        messages: [
-          {
-            role: 'system',
-            content: systemPrompt,
-          },
-          {
-            role: 'user',
-            content: [
-              {
-                type: 'image_url',
-                image_url: {
-                  url: imageUrl,
-                  detail: 'high',
-                },
-              },
-              {
-                type: 'text',
-                text: prompt,
-              },
-            ],
-          },
-        ],
-        max_tokens: 1500,
-        temperature: 0.2,
-      })
-
-      const content = response.choices[0]?.message?.content || ''
-      const usage = response.usage || { prompt_tokens: 0, completion_tokens: 0 }
-
-      // OpenAI GPT-4o pricing: $2.50 input, $10.00 output per 1M tokens
-      const costUSD =
-        (usage.prompt_tokens / 1_000_000) * 2.5 +
-        (usage.completion_tokens / 1_000_000) * 10.0
+      )
 
       return {
-        content,
-        provider: 'openai',
-        model: 'gpt-4o',
-        costUSD,
+        content: response.content,
+        provider: 'openrouter',
+        model: response.model,
+        costUSD: response.costUSD,
         latencyMs: Date.now() - startTime,
       }
-    } catch (error) {
-      logger.error('[ROUTER] Vision routing failed', { error, provider })
-      throw error
+    }
+
+    // Fallback: OpenAI
+    logger.info('[ROUTER] Routing vision to OpenAI (fallback)')
+
+    const response = await openai.chat.completions.create({
+      model: 'gpt-4o',
+      messages: [
+        { role: 'system', content: systemPrompt },
+        {
+          role: 'user',
+          content: [
+            { type: 'image_url', image_url: { url: imageUrl, detail: 'high' } },
+            { type: 'text', text: prompt },
+          ],
+        },
+      ],
+      max_tokens: 1500,
+      temperature: 0.2,
+    })
+
+    const content = response.choices[0]?.message?.content || ''
+    const usage = response.usage || { prompt_tokens: 0, completion_tokens: 0 }
+    const costUSD =
+      (usage.prompt_tokens / 1_000_000) * 2.5 +
+      (usage.completion_tokens / 1_000_000) * 10.0
+
+    return {
+      content,
+      provider: 'openai',
+      model: 'gpt-4o',
+      costUSD,
+      latencyMs: Date.now() - startTime,
     }
   }
 
   /**
-   * Route medical reasoning request
+   * Route medical reasoning / structured output request
    */
   async routeReasoning(
     messages: Array<{ role: 'system' | 'user' | 'assistant'; content: string }>,
@@ -226,66 +195,42 @@ class AIRouter {
     const routing = USE_CASE_ROUTING[useCase]
     const provider = config.preferredProvider || routing.primary
 
-    const providersToTry: AIProvider[] = [provider, ...routing.fallbacks.filter((fallback) => fallback !== provider)]
+    const providersToTry: AIProvider[] = [provider, ...routing.fallbacks.filter((f) => f !== provider)]
     let lastError: unknown = null
 
     for (const candidate of providersToTry) {
       try {
-        if (candidate === 'glm' && isGLMConfigured()) {
-          logger.info('[ROUTER] Routing reasoning to GLM')
+        // Primary: OpenRouter (MiniMax M2.7 for everything)
+        if (candidate === 'openrouter' && AI_CONFIG.openrouter.apiKey) {
+          const model = config.costOptimization
+            ? AI_CONFIG.openrouter.model
+            : AI_CONFIG.openrouter.analysisModel
 
-          const response = await glmClient.chat.completions.create({
-            model: GLM_CONFIG.models.reasoning,
+          logger.info('[ROUTER] Routing reasoning to OpenRouter', { model })
+
+          const { content, costUSD } = await callOpenRouter(
             messages,
-            temperature: 0.3,
-            max_tokens: 2000,
-          })
-
-          const content = response.choices[0]?.message?.content || ''
-          const usage = response.usage || { prompt_tokens: 0, completion_tokens: 0 }
-          const costUSD = calculateGLMCost(usage.prompt_tokens, usage.completion_tokens)
+            model,
+            2000,
+            0.3
+          )
 
           return {
             content,
-            provider: 'glm',
-            model: GLM_CONFIG.models.reasoning,
+            provider: 'openrouter',
+            model,
             costUSD,
             latencyMs: Date.now() - startTime,
           }
         }
 
-        if (candidate === 'kimi' && isKimiConfigured()) {
-          logger.info('[ROUTER] Routing reasoning to Kimi')
-
-          const response = await kimi.chat.completions.create({
-            model: KIMI_CONFIG.models.reasoning,
-            messages,
-            temperature: 0.3,
-            max_tokens: 2000,
-          })
-
-          const content = response.choices[0]?.message?.content || ''
-          const usage = response.usage || { prompt_tokens: 0, completion_tokens: 0 }
-          const costUSD = calculateKimiCost(usage.prompt_tokens, usage.completion_tokens)
-
-          return {
-            content,
-            provider: 'kimi',
-            model: KIMI_CONFIG.models.reasoning,
-            costUSD,
-            latencyMs: Date.now() - startTime,
-          }
-        }
-
+        // Fallback 1: DeepSeek
         if (candidate === 'deepseek' && deepseek.isConfigured()) {
           logger.info('[ROUTER] Routing reasoning to DeepSeek')
 
           const response = await deepseek.chatCompletion(
             messages as DeepSeekMessage[],
-            {
-              temperature: 0.3,
-              maxTokens: 2000,
-            }
+            { temperature: 0.3, maxTokens: 2000 }
           )
 
           return {
@@ -298,6 +243,7 @@ class AIRouter {
           }
         }
 
+        // Fallback 2: OpenAI
         if (candidate === 'openai') {
           logger.info('[ROUTER] Routing reasoning to OpenAI (fallback)')
 
@@ -324,12 +270,6 @@ class AIRouter {
         }
       } catch (error) {
         lastError = error
-
-        if (candidate === 'kimi' && isKimiPolicyRestricted(error)) {
-          logger.warn('[ROUTER] Kimi blocked by provider policy, skipping fallback candidate', { candidate })
-          continue
-        }
-
         logger.warn('[ROUTER] Reasoning provider failed, trying next fallback', { candidate, error })
       }
     }
@@ -350,57 +290,52 @@ class AIRouter {
     const routing = USE_CASE_ROUTING[useCase]
     const provider = config.preferredProvider || routing.primary
 
-    const providersToTry: AIProvider[] = [provider, ...routing.fallbacks.filter((fallback) => fallback !== provider)]
+    const providersToTry: AIProvider[] = [provider, ...routing.fallbacks.filter((f) => f !== provider)]
     let lastError: unknown = null
 
     for (const candidate of providersToTry) {
       try {
-        if (candidate === 'glm' && isGLMConfigured()) {
-          logger.info('[ROUTER] Routing chat to GLM')
+        // Primary: OpenRouter with MiniMax M2.7 (fast, cheap chat)
+        if (candidate === 'openrouter' && AI_CONFIG.openrouter.apiKey) {
+          const model = AI_CONFIG.openrouter.model
+          logger.info('[ROUTER] Routing chat to OpenRouter', { model })
 
-          const response = await glmClient.chat.completions.create({
-            model: GLM_CONFIG.models.costEffective,
+          const { content, costUSD } = await callOpenRouter(
             messages,
-            temperature: 0.7,
-            max_tokens: 500,
-          })
-
-          const content = response.choices[0]?.message?.content || ''
-          const usage = response.usage || { prompt_tokens: 0, completion_tokens: 0 }
-          const costUSD = calculateGLMCost(usage.prompt_tokens, usage.completion_tokens)
+            model,
+            500,
+            0.7
+          )
 
           return {
             content,
-            provider: 'glm',
-            model: GLM_CONFIG.models.costEffective,
+            provider: 'openrouter',
+            model,
             costUSD,
             latencyMs: Date.now() - startTime,
           }
         }
 
-        if (candidate === 'kimi' && isKimiConfigured()) {
-          logger.info('[ROUTER] Routing chat to Kimi')
+        // Fallback 1: DeepSeek
+        if (candidate === 'deepseek' && deepseek.isConfigured()) {
+          logger.info('[ROUTER] Routing chat to DeepSeek')
 
-          const response = await kimi.chat.completions.create({
-            model: KIMI_CONFIG.models.costEffective,
-            messages,
-            temperature: 0.7,
-            max_tokens: 500,
-          })
-
-          const content = response.choices[0]?.message?.content || ''
-          const usage = response.usage || { prompt_tokens: 0, completion_tokens: 0 }
-          const costUSD = calculateKimiCost(usage.prompt_tokens, usage.completion_tokens)
+          const response = await deepseek.chatCompletion(
+            messages as DeepSeekMessage[],
+            { temperature: 0.7, maxTokens: 500 }
+          )
 
           return {
-            content,
-            provider: 'kimi',
-            model: KIMI_CONFIG.models.costEffective,
-            costUSD,
+            content: response.content,
+            provider: 'deepseek',
+            model: 'deepseek-reasoner',
+            costUSD: response.costUSD,
             latencyMs: Date.now() - startTime,
+            reasoning: response.reasoning,
           }
         }
 
+        // Fallback 2: OpenAI
         if (candidate === 'openai') {
           logger.info('[ROUTER] Routing chat to OpenAI')
 
@@ -425,35 +360,8 @@ class AIRouter {
             latencyMs: Date.now() - startTime,
           }
         }
-
-        if (candidate === 'deepseek' && deepseek.isConfigured()) {
-          logger.info('[ROUTER] Routing chat to DeepSeek')
-
-          const response = await deepseek.chatCompletion(
-            messages as DeepSeekMessage[],
-            {
-              temperature: 0.7,
-              maxTokens: 500,
-            }
-          )
-
-          return {
-            content: response.content,
-            provider: 'deepseek',
-            model: 'deepseek-reasoner',
-            costUSD: response.costUSD,
-            latencyMs: Date.now() - startTime,
-            reasoning: response.reasoning,
-          }
-        }
       } catch (error) {
         lastError = error
-
-        if (candidate === 'kimi' && isKimiPolicyRestricted(error)) {
-          logger.warn('[ROUTER] Kimi blocked by provider policy, skipping fallback candidate', { candidate })
-          continue
-        }
-
         logger.warn('[ROUTER] Chat provider failed, trying next fallback', { candidate, error })
       }
     }
@@ -463,17 +371,21 @@ class AIRouter {
   }
 
   /**
-   * Get cost comparison across providers
+   * Get cost comparison across active providers
    */
   async getCostComparison(
     estimatedTokens: { input: number; output: number }
   ): Promise<Record<AIProvider, number>> {
     return {
-      glm: (estimatedTokens.input / 1_000_000) * GLM_CONFIG.pricing.input + (estimatedTokens.output / 1_000_000) * GLM_CONFIG.pricing.output,
-      kimi: (estimatedTokens.input / 1_000_000) * KIMI_CONFIG.pricing.input + (estimatedTokens.output / 1_000_000) * KIMI_CONFIG.pricing.output,
-      openai: (estimatedTokens.input / 1_000_000) * 10.0 + (estimatedTokens.output / 1_000_000) * 30.0,
-      deepseek: (estimatedTokens.input / 1_000_000) * 0.14 + (estimatedTokens.output / 1_000_000) * 0.28,
-      openrouter: (estimatedTokens.input / 1_000_000) * 0.125 + (estimatedTokens.output / 1_000_000) * 0.375,
+      openrouter:
+        (estimatedTokens.input / 1_000_000) * AI_CONFIG.costs.openrouterInputPer1M +
+        (estimatedTokens.output / 1_000_000) * AI_CONFIG.costs.openrouterOutputPer1M,
+      deepseek:
+        (estimatedTokens.input / 1_000_000) * 0.14 +
+        (estimatedTokens.output / 1_000_000) * 0.28,
+      openai:
+        (estimatedTokens.input / 1_000_000) * 10.0 +
+        (estimatedTokens.output / 1_000_000) * 30.0,
     }
   }
 
@@ -482,8 +394,6 @@ class AIRouter {
    */
   getProviderStatus(): Record<AIProvider, boolean> {
     return {
-      glm: isGLMConfigured(),
-      kimi: isKimiConfigured(),
       openai: !!process.env.OPENAI_API_KEY,
       openrouter: openrouter.isConfigured(),
       deepseek: deepseek.isConfigured(),
@@ -494,11 +404,8 @@ class AIRouter {
    * Get the primary provider based on configuration
    */
   getPrimaryProvider(): AIProvider {
-    if (AI_CONFIG.features.useGLM && isGLMConfigured()) {
-      return 'glm'
-    }
-    if (isKimiConfigured()) {
-      return 'kimi'
+    if (AI_CONFIG.openrouter.apiKey) {
+      return 'openrouter'
     }
     if (deepseek.isConfigured()) {
       return 'deepseek'
