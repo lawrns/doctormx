@@ -34,7 +34,7 @@ function createEqDoubleSingleChain<T>(result: { data: T; error: unknown }) {
 
 vi.mock('@/lib/supabase/server', () => ({
   createClient: vi.fn().mockResolvedValue(mockSupabaseClient),
-  createServiceClient: vi.fn().mockResolvedValue(mockSupabaseClient),
+  createServiceClient: vi.fn().mockReturnValue(mockSupabaseClient),
 }))
 
 vi.mock('@/lib/availability', () => ({
@@ -98,6 +98,17 @@ describe('Booking Flow Integration', () => {
             return {
               select: vi.fn().mockReturnValue({
                 eq: vi.fn().mockReturnValue({
+                  single: vi.fn().mockResolvedValue({
+                    data: {
+                      status: 'approved',
+                      is_listed: true,
+                      office_address: 'Av. Reforma 123',
+                      video_enabled: true,
+                      offers_video: true,
+                      offers_in_person: true,
+                    },
+                    error: null,
+                  }),
                   order: vi.fn().mockReturnValue({
                     limit: vi.fn().mockResolvedValue({ 
                       data: [{
@@ -156,7 +167,7 @@ describe('Booking Flow Integration', () => {
       }
 
       vi.mocked(createClient).mockResolvedValue(mockClient as never)
-      vi.mocked(createServiceClient).mockResolvedValue(mockClient as never)
+      vi.mocked(createServiceClient).mockReturnValue(mockClient as never)
       vi.mocked(getAvailableSlots).mockResolvedValue(['09:30'])
 
       const stripeModule = await import('@/lib/stripe')

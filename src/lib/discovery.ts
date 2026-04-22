@@ -40,6 +40,8 @@ type RawDoctor = {
   status: string
   video_enabled: boolean | null
   office_address: string | null
+  offers_video: boolean | null
+  offers_in_person: boolean | null
   doctor_specialties: Array<{
     specialty_id: string
     specialties: {
@@ -90,6 +92,8 @@ async function fetchDoctors(filters?: DiscoveryFilters) {
         status,
         video_enabled,
         office_address,
+        offers_video,
+        offers_in_person,
         video_enabled,
         doctor_specialties (
           specialty_id,
@@ -358,6 +362,8 @@ async function fetchDoctorProfile(doctorId: string) {
       currency: 'MXN',
       video_enabled: typedDoctor.video_enabled,
       office_address: typedDoctor.office_address,
+      offers_video: typedDoctor.offers_video,
+      offers_in_person: typedDoctor.offers_in_person,
       rating_avg: typedDoctor.rating_avg || 0,
       rating_count: typedDoctor.rating_count || 0,
       profile: typedDoctor.profiles ? {

@@ -76,15 +76,23 @@ async function validateAppointmentType(
 
   const { data: doctor, error } = await supabase
     .from('doctors')
-    .select('status, is_listed, office_address')
+    .select('status, is_listed, office_address, video_enabled, offers_video, offers_in_person')
     .eq('id', doctorId)
     .single()
 
   if (error || !doctor) return 'Doctor no encontrado'
   if (doctor.status !== 'approved') return 'Este doctor no está disponible para nuevas citas'
 
+  if (appointmentType === 'video' && doctor.offers_video === false) {
+    return 'Este doctor no tiene citas por video disponibles'
+  }
+
   if (appointmentType === 'in_person' && !doctor.office_address) {
     return 'Este doctor aún no tiene consultorio confirmado para citas presenciales'
+  }
+
+  if (appointmentType === 'in_person' && doctor.offers_in_person === false) {
+    return 'Este doctor no tiene citas presenciales disponibles'
   }
 
   return null

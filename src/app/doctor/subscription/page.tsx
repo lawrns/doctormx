@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { SUBSCRIPTION_PLANS, type SubscriptionTier, ANNUAL_DISCOUNT, getAnnualPrice } from '@/lib/subscription-types'
 import { Card, CardContent } from '@/components/ui/card'
@@ -12,6 +12,7 @@ import { Check, Calendar, Percent, Loader2 } from 'lucide-react'
 
 export default function SubscriptionPage() {
     const router = useRouter()
+    const searchParams = useSearchParams()
     const [supabase] = useState(() => {
         try {
             return createClient()
@@ -46,6 +47,7 @@ export default function SubscriptionPage() {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState<string | null>(null)
     const [processing, setProcessing] = useState(false)
+    const [billingPortalLoading, setBillingPortalLoading] = useState(false)
     const [billingInterval, setBillingInterval] = useState<'month' | 'year'>('month')
 
     useEffect(() => {
@@ -179,6 +181,30 @@ export default function SubscriptionPage() {
         }
     }
 
+    async function handleBillingPortal() {
+        setBillingPortalLoading(true)
+        setError(null)
+
+        try {
+            const response = await fetch('/api/subscriptions/billing-portal', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+            })
+            const data = await response.json()
+
+            if (!response.ok) {
+                throw new Error(data.error || 'Failed to open billing portal')
+            }
+
+            if (data.portalUrl) {
+                window.location.href = data.portalUrl
+            }
+        } catch (err) {
+            setError(err instanceof Error ? err.message : 'Failed to open billing portal')
+            setBillingPortalLoading(false)
+        }
+    }
+
     if (loading) {
         return (
             <div className="flex items-center justify-center min-h-screen">
@@ -188,6 +214,7 @@ export default function SubscriptionPage() {
     }
 
     const currentPlan = subscription?.subscription?.plan_id as keyof typeof SUBSCRIPTION_PLANS | undefined
+    const checkoutSucceeded = searchParams.get('checkout') === 'success'
 
     return (
         <DoctorLayout profile={profile || { full_name: 'Doctor' }} isPending={isPending} currentPath="/doctor/subscription">
@@ -200,6 +227,19 @@ export default function SubscriptionPage() {
                         Gestiona tu plan y revisa el uso de tus funcionalidades
                     </p>
                 </div>
+
+                {checkoutSucceeded && (
+                    <Card className="mb-8 border-vital/20 bg-vital-soft">
+                        <CardContent className="p-6">
+                            <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+                                Suscripción recibida
+                            </h3>
+                            <p className="text-sm text-vital/80">
+                                Stripe confirmó tu checkout. Si tu cédula SEP ya fue validada, tu perfil se activará en el directorio; si no, quedará pendiente de revisión.
+                            </p>
+                        </CardContent>
+                    </Card>
+                )}
 
                 {subscription?.hasSubscription && subscription.subscription?.status !== 'past_due' && (
                     <Card className="mb-8 border-vital/20 bg-vital-soft">
@@ -239,11 +279,15 @@ export default function SubscriptionPage() {
                                     ? ` Fecha límite: ${new Date(subscription.subscription.grace_period_ends_at).toLocaleDateString('es-MX')}.`
                                     : ''}
                             </p>
-                            {subscription.subscription.payment_recovery_url && (
+                            {subscription.subscription.payment_recovery_url ? (
                                 <Button asChild>
                                     <a href={subscription.subscription.payment_recovery_url}>
                                         Actualizar método de pago
                                     </a>
+                                </Button>
+                            ) : (
+                                <Button onClick={handleBillingPortal} disabled={billingPortalLoading}>
+                                    {billingPortalLoading ? 'Abriendo...' : 'Abrir portal de facturación'}
                                 </Button>
                             )}
                         </CardContent>

@@ -107,6 +107,24 @@ describe('Booking System', () => {
               }),
             }
           }
+          if (table === 'doctors') {
+            return {
+              select: vi.fn().mockReturnValue({
+                eq: vi.fn().mockReturnValue({
+                  single: vi.fn().mockResolvedValue({
+                    data: {
+                      status: 'approved',
+                      is_listed: true,
+                      office_address: 'Av. Reforma 123',
+                      offers_video: true,
+                      offers_in_person: true,
+                    },
+                    error: null,
+                  }),
+                }),
+              }),
+            }
+          }
           return mockSupabaseClient.from(table)
         }),
       }
@@ -127,6 +145,52 @@ describe('Booking System', () => {
 
       const result = await reserveAppointmentSlot(request)
       expect(result.success).toBe(true)
+    })
+
+    it('should reject in-person booking when the doctor has no confirmed office', async () => {
+      const { getAvailableSlots } = await import('@/lib/availability')
+      const mockClient = {
+        ...mockSupabaseClient,
+        from: vi.fn().mockImplementation((table: string) => {
+          if (table === 'doctors') {
+            return {
+              select: vi.fn().mockReturnValue({
+                eq: vi.fn().mockReturnValue({
+                  single: vi.fn().mockResolvedValue({
+                    data: {
+                      status: 'approved',
+                      is_listed: true,
+                      office_address: null,
+                      offers_video: true,
+                      offers_in_person: false,
+                    },
+                    error: null,
+                  }),
+                }),
+              }),
+            }
+          }
+          return mockSupabaseClient.from(table)
+        }),
+      }
+
+      const { createClient } = await import('@/lib/supabase/server')
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      vi.mocked(createClient).mockResolvedValue(mockClient as any)
+      vi.mocked(getAvailableSlots).mockResolvedValue(['11:00'])
+
+      const { reserveAppointmentSlot } = await import('@/lib/booking')
+
+      const result = await reserveAppointmentSlot({
+        patientId: 'patient-1',
+        doctorId: 'doctor-1',
+        date: '2025-12-31',
+        time: '11:00',
+        appointmentType: 'in_person',
+      })
+
+      expect(result.success).toBe(false)
+      expect(result.error).toContain('consultorio confirmado')
     })
 
     it('should fail when slot is unavailable', async () => {

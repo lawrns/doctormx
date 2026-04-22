@@ -25,6 +25,8 @@ type DoctorProfile = {
   office_address?: string | null
   address?: string | null
   video_enabled?: boolean | null
+  offers_video?: boolean | null
+  offers_in_person?: boolean | null
   rating_avg: number
   rating_count: number
   profile: {
@@ -62,7 +64,11 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
   const { addToast } = useToast()
   const [selectedDate, setSelectedDate] = useState('')
   const [selectedTime, setSelectedTime] = useState('')
-  const [appointmentType, setAppointmentType] = useState<'video' | 'in_person'>('video')
+  const [appointmentType, setAppointmentType] = useState<'video' | 'in_person'>(() =>
+    doctor.offers_video === false && doctor.office_address && doctor.offers_in_person === true
+      ? 'in_person'
+      : 'video'
+  )
   const [availableSlots, setAvailableSlots] = useState<string[]>([])
   const [submitting, setSubmitting] = useState(false)
   const [loadingSlots, setLoadingSlots] = useState(false)
@@ -242,7 +248,8 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
   const max = maxDate.toISOString().split('T')[0]
   const formatPrice = (cents: number, currency: string) => new Intl.NumberFormat('es-MX', { style: 'currency', currency, minimumFractionDigits: 0 }).format(cents / 100)
   const officeAddress = doctor.office_address || doctor.address || [doctor.city, doctor.state].filter(Boolean).join(', ')
-  const canBookInPerson = Boolean(doctor.office_address)
+  const canBookVideo = doctor.offers_video !== false
+  const canBookInPerson = Boolean(doctor.office_address && doctor.offers_in_person === true)
 
   const goToPreviousMonth = () => {
     setCurrentMonth(prev => new Date(prev.getFullYear(), prev.getMonth() - 1, 1))
@@ -318,13 +325,14 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                     variant={appointmentType === 'video' ? 'default' : 'outline'}
                     className="h-auto justify-start gap-3 rounded-xl p-4"
                     onClick={() => setAppointmentType('video')}
+                    disabled={!canBookVideo}
                     role="radio"
                     aria-checked={appointmentType === 'video'}
                   >
                     <Monitor className="h-5 w-5 shrink-0" />
                     <span className="text-left">
                       <span className="block font-semibold">Video</span>
-                      <span className="block text-xs opacity-80">30 min, enlace seguro</span>
+                      <span className="block text-xs opacity-80">{canBookVideo ? '30 min, enlace seguro' : 'No disponible'}</span>
                     </span>
                   </Button>
                   <Button

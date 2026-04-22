@@ -168,7 +168,7 @@ export async function POST(request: NextRequest) {
                     quantity: 1,
                 },
             ],
-            success_url: `${origin}/doctor?subscribed=1`,
+            success_url: `${origin}/doctor/subscription?checkout=success&session_id={CHECKOUT_SESSION_ID}`,
             cancel_url: `${origin}/doctor/subscription`,
             subscription_data: {
                 metadata: {

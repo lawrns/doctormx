@@ -3,7 +3,13 @@
 ALTER TABLE doctors
   ADD COLUMN IF NOT EXISTS stripe_customer_id TEXT,
   ADD COLUMN IF NOT EXISTS is_listed BOOLEAN NOT NULL DEFAULT false,
-  ADD COLUMN IF NOT EXISTS office_address TEXT;
+  ADD COLUMN IF NOT EXISTS office_address TEXT,
+  ADD COLUMN IF NOT EXISTS offers_video BOOLEAN NOT NULL DEFAULT true,
+  ADD COLUMN IF NOT EXISTS offers_in_person BOOLEAN NOT NULL DEFAULT false;
+
+UPDATE doctors
+SET offers_video = COALESCE(video_enabled, offers_video, true),
+    offers_in_person = COALESCE(offers_in_person, office_address IS NOT NULL, false);
 
 ALTER TABLE doctor_subscriptions
   ADD COLUMN IF NOT EXISTS tier TEXT,
