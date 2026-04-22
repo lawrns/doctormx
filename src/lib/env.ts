@@ -39,8 +39,9 @@ export interface AIConfig {
 }
 
 export interface RedisConfig {
-  restUrl: string;
-  restToken: string;
+  restUrl?: string;
+  restToken?: string;
+  redisUrl?: string;
 }
 
 export interface SentryConfig {
@@ -156,15 +157,21 @@ const ENV_VARS: EnvVarDef[] = [
   // Redis (Upstash)
   {
     name: 'UPSTASH_REDIS_REST_URL',
-    required: (env) => env === 'production' || env === 'staging',
+    required: false,
     category: 'Redis',
     description: 'Upstash Redis REST API URL',
   },
   {
     name: 'UPSTASH_REDIS_REST_TOKEN',
-    required: (env) => env === 'production' || env === 'staging',
+    required: false,
     category: 'Redis',
     description: 'Upstash Redis REST API token',
+  },
+  {
+    name: 'REDIS_URL',
+    required: false,
+    category: 'Redis',
+    description: 'Redis protocol URL for Fly/Redis Cloud compatible Redis',
   },
   
   // Sentry
@@ -410,25 +417,24 @@ export function getAIConfig(): AIConfig {
 }
 
 /**
- * Get Redis (Upstash) configuration
+ * Get Redis configuration
  * @throws Error if required Redis variables are not set in production/staging
  */
 export function getRedisConfig(): RedisConfig {
   const restUrl = getEnvValue('UPSTASH_REDIS_REST_URL');
   const restToken = getEnvValue('UPSTASH_REDIS_REST_TOKEN');
+  const redisUrl = getEnvValue('REDIS_URL');
   
   if (ENVIRONMENT === 'production' || ENVIRONMENT === 'staging') {
-    if (!restUrl) {
-      throw new Error('UPSTASH_REDIS_REST_URL is required in production/staging');
-    }
-    if (!restToken) {
-      throw new Error('UPSTASH_REDIS_REST_TOKEN is required in production/staging');
+    if (!redisUrl && !(restUrl && restToken)) {
+      throw new Error('Redis is required in production/staging: set REDIS_URL or UPSTASH_REDIS_REST_URL/UPSTASH_REDIS_REST_TOKEN');
     }
   }
   
   return {
-    restUrl: restUrl || '',
-    restToken: restToken || '',
+    restUrl: restUrl || undefined,
+    restToken: restToken || undefined,
+    redisUrl: redisUrl || undefined,
   };
 }
 

@@ -1,25 +1,80 @@
 import { Redis } from '@upstash/redis'
 import { Ratelimit } from '@upstash/ratelimit'
+import IORedis from 'ioredis'
 import { logger } from '@/lib/observability/logger'
 
 // Check if Redis is properly configured
-const REDIS_URL = process.env.UPSTASH_REDIS_REST_URL
-const REDIS_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN
-const isRedisConfigured = Boolean(REDIS_URL && REDIS_TOKEN)
+const UPSTASH_REST_URL = process.env.UPSTASH_REDIS_REST_URL
+const UPSTASH_REST_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN
+const REDIS_URL = process.env.REDIS_URL
+const isUpstashRestConfigured = Boolean(UPSTASH_REST_URL && UPSTASH_REST_TOKEN)
+const isRedisUrlConfigured = Boolean(REDIS_URL)
+const isRedisConfigured = isUpstashRestConfigured || isRedisUrlConfigured
 
 // In-memory cache fallback for development/missing Redis
 const memoryCache = new Map<string, { value: string; expires: number }>()
 
 // Only create Redis client if credentials are available
-const redis = isRedisConfigured
-  ? new Redis({ url: REDIS_URL!, token: REDIS_TOKEN! })
+const upstashRedis = isUpstashRestConfigured
+  ? new Redis({ url: UPSTASH_REST_URL!, token: UPSTASH_REST_TOKEN! })
   : null
+
+const redisUrlClient = !upstashRedis && REDIS_URL
+  ? new IORedis(REDIS_URL, {
+      maxRetriesPerRequest: 2,
+      lazyConnect: true,
+      tls: REDIS_URL.startsWith('rediss://') ? {} : undefined,
+    })
+  : null
+
+const redis = upstashRedis || redisUrlClient
 
 // Log once at startup if Redis is not configured
 if (!isRedisConfigured) {
   logger.warn('Redis not configured - using in-memory cache fallback', {
-    hint: 'Set UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN for production',
+    hint: 'Set UPSTASH_REDIS_REST_URL/UPSTASH_REDIS_REST_TOKEN or REDIS_URL for production',
   })
+}
+
+async function ensureRedisUrlConnected() {
+  if (redisUrlClient && redisUrlClient.status === 'wait') {
+    await redisUrlClient.connect()
+  }
+}
+
+async function redisGet(key: string) {
+  if (upstashRedis) return upstashRedis.get(key)
+  if (!redisUrlClient) return null
+  await ensureRedisUrlConnected()
+  return redisUrlClient.get(key)
+}
+
+async function redisSetex(key: string, ttlSeconds: number, value: string) {
+  if (upstashRedis) return upstashRedis.setex(key, ttlSeconds, value)
+  if (!redisUrlClient) return null
+  await ensureRedisUrlConnected()
+  return redisUrlClient.setex(key, ttlSeconds, value)
+}
+
+async function redisDel(...keys: string[]) {
+  if (upstashRedis) return upstashRedis.del(...keys)
+  if (!redisUrlClient || keys.length === 0) return 0
+  await ensureRedisUrlConnected()
+  return redisUrlClient.del(...keys)
+}
+
+async function redisKeys(pattern: string) {
+  if (upstashRedis) return upstashRedis.keys(pattern)
+  if (!redisUrlClient) return []
+  await ensureRedisUrlConnected()
+  return redisUrlClient.keys(pattern)
+}
+
+async function redisPing() {
+  if (upstashRedis) return upstashRedis.ping()
+  if (!redisUrlClient) return null
+  await ensureRedisUrlConnected()
+  return redisUrlClient.ping()
 }
 
 export const cache = {
@@ -27,7 +82,7 @@ export const cache = {
     try {
       // Use Redis if available
       if (redis) {
-        const value = await redis.get(key)
+        const value = await redisGet(key)
         if (!value) return null
         // Handle both string and object responses from Redis
         if (typeof value === 'string') {
@@ -56,7 +111,7 @@ export const cache = {
 
       // Use Redis if available
       if (redis) {
-        await redis.setex(key, ttlSeconds, serialized)
+        await redisSetex(key, ttlSeconds, serialized)
         return true
       }
 
@@ -75,7 +130,7 @@ export const cache = {
   async del(key: string): Promise<boolean> {
     try {
       if (redis) {
-        await redis.del(key)
+        await redisDel(key)
       } else {
         memoryCache.delete(key)
       }
@@ -89,9 +144,9 @@ export const cache = {
   async invalidate(pattern: string): Promise<boolean> {
     try {
       if (redis) {
-        const keys = await redis.keys(pattern)
+        const keys = await redisKeys(pattern)
         if (keys.length > 0) {
-          await redis.del(...keys)
+          await redisDel(...keys)
         }
       } else {
         // Memory cache pattern matching
@@ -158,12 +213,50 @@ const noopRateLimiter = {
 // Create rate limiters only when Redis is available
 function createRateLimiter(windowSize: number, windowDuration: string, prefix: string) {
   if (!redis) return noopRateLimiter
-  return new Ratelimit({
-    redis,
-    limiter: Ratelimit.slidingWindow(windowSize, windowDuration as Parameters<typeof Ratelimit.slidingWindow>[1]),
-    analytics: true,
-    prefix,
-  })
+  if (upstashRedis) {
+    return new Ratelimit({
+      redis: upstashRedis,
+      limiter: Ratelimit.slidingWindow(windowSize, windowDuration as Parameters<typeof Ratelimit.slidingWindow>[1]),
+      analytics: true,
+      prefix,
+    })
+  }
+
+  if (redisUrlClient) {
+    return {
+      async limit(identifier: string): Promise<RateLimitResult> {
+        await ensureRedisUrlConnected()
+        const now = Date.now()
+        const windowMs = parseWindowDuration(windowDuration)
+        const key = `${prefix}:${identifier}:${Math.floor(now / windowMs)}`
+        const count = await redisUrlClient.incr(key)
+        if (count === 1) {
+          await redisUrlClient.pexpire(key, windowMs)
+        }
+        const reset = Math.ceil(now / windowMs) * windowMs
+        return {
+          success: count <= windowSize,
+          limit: windowSize,
+          remaining: Math.max(0, windowSize - count),
+          reset,
+        }
+      },
+    }
+  }
+
+  return noopRateLimiter
+}
+
+function parseWindowDuration(duration: string) {
+  const [amountRaw, unitRaw] = duration.trim().split(/\s+/)
+  const amount = Number(amountRaw)
+  const unit = unitRaw?.toLowerCase()
+
+  if (!Number.isFinite(amount) || amount <= 0) return 60_000
+  if (unit?.startsWith('s')) return amount * 1000
+  if (unit?.startsWith('m')) return amount * 60_000
+  if (unit?.startsWith('h')) return amount * 60 * 60_000
+  return amount
 }
 
 export const rateLimit = {
