@@ -60,6 +60,63 @@ CREATE TABLE IF NOT EXISTS webhook_events (
   CHECK (status IN ('processing', 'processed', 'failed'))
 );
 
+-- Some early remote databases have migration 004 recorded but are missing the
+-- WhatsApp tables. Recreate the 004 shape before adding launch idempotency.
+CREATE TABLE IF NOT EXISTS whatsapp_sessions (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  phone_number TEXT NOT NULL,
+  patient_id UUID REFERENCES profiles(id),
+  assigned_doctor_id UUID REFERENCES doctors(id),
+  state TEXT NOT NULL DEFAULT 'triage',
+  triage_summary JSONB,
+  handoff_at TIMESTAMPTZ,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS whatsapp_messages (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  session_id UUID NOT NULL REFERENCES whatsapp_sessions(id),
+  body TEXT NOT NULL,
+  direction TEXT NOT NULL,
+  sender_type TEXT NOT NULL,
+  sender_id UUID,
+  media_url TEXT,
+  media_type TEXT,
+  whatsapp_message_id TEXT,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+ALTER TABLE whatsapp_sessions
+  ADD COLUMN IF NOT EXISTS phone_number TEXT,
+  ADD COLUMN IF NOT EXISTS patient_id UUID REFERENCES profiles(id),
+  ADD COLUMN IF NOT EXISTS assigned_doctor_id UUID REFERENCES doctors(id),
+  ADD COLUMN IF NOT EXISTS state TEXT DEFAULT 'triage',
+  ADD COLUMN IF NOT EXISTS triage_summary JSONB,
+  ADD COLUMN IF NOT EXISTS handoff_at TIMESTAMPTZ,
+  ADD COLUMN IF NOT EXISTS created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  ADD COLUMN IF NOT EXISTS updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW();
+
+ALTER TABLE whatsapp_messages
+  ADD COLUMN IF NOT EXISTS session_id UUID REFERENCES whatsapp_sessions(id),
+  ADD COLUMN IF NOT EXISTS body TEXT,
+  ADD COLUMN IF NOT EXISTS direction TEXT,
+  ADD COLUMN IF NOT EXISTS sender_type TEXT,
+  ADD COLUMN IF NOT EXISTS sender_id UUID,
+  ADD COLUMN IF NOT EXISTS media_url TEXT,
+  ADD COLUMN IF NOT EXISTS media_type TEXT,
+  ADD COLUMN IF NOT EXISTS whatsapp_message_id TEXT,
+  ADD COLUMN IF NOT EXISTS created_at TIMESTAMPTZ NOT NULL DEFAULT NOW();
+
+CREATE INDEX IF NOT EXISTS idx_whatsapp_sessions_phone
+  ON whatsapp_sessions(phone_number);
+
+CREATE INDEX IF NOT EXISTS idx_whatsapp_messages_session
+  ON whatsapp_messages(session_id);
+
+ALTER TABLE whatsapp_sessions ENABLE ROW LEVEL SECURITY;
+ALTER TABLE whatsapp_messages ENABLE ROW LEVEL SECURITY;
+
 CREATE UNIQUE INDEX IF NOT EXISTS idx_whatsapp_messages_message_id_unique
   ON whatsapp_messages(whatsapp_message_id)
   WHERE whatsapp_message_id IS NOT NULL;

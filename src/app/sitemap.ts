@@ -181,7 +181,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     if (doctors) {
       for (const doctor of doctors) {
-        const nameSlug = (doctor.profiles as { full_name: string })?.full_name
+        const profile = Array.isArray(doctor.profiles) ? doctor.profiles[0] : doctor.profiles
+        const nameSlug = (profile as unknown as { full_name?: string })?.full_name
           ?.toLowerCase()
           .replace(/[^a-z0-9]+/g, '-')
           .replace(/^-|-$/g, '') || 'doctor'

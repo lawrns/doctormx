@@ -17,7 +17,7 @@ export type DiscoveryFilters = {
   maxPrice?: number
   minRating?: number
   searchQuery?: string
-  sortBy?: 'rating' | 'price' | 'experience'
+  sortBy?: 'relevance' | 'rating' | 'price' | 'price_asc' | 'price_desc' | 'experience'
   sortOrder?: 'asc' | 'desc'
   appointmentType?: 'all' | 'video' | 'in_person'
   onlineOnly?: boolean
@@ -226,7 +226,10 @@ async function fetchDoctors(filters?: DiscoveryFilters) {
           case 'rating':
             return ((a.rating_avg || 0) - (b.rating_avg || 0)) * sortOrder
           case 'price':
-            return (a.price_cents - b.price_cents) * sortOrder
+          case 'price_asc':
+            return (a.price_cents - b.price_cents) * (filters.sortBy === 'price_asc' ? 1 : sortOrder)
+          case 'price_desc':
+            return (b.price_cents - a.price_cents)
           case 'experience':
             return ((a.years_experience || 0) - (b.years_experience || 0)) * sortOrder
           default:

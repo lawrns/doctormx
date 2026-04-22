@@ -160,8 +160,9 @@ export async function getConversations(
       .select('id, full_name, photo_url')
       .in('id', doctorIds)
 
-    const patientMap = new Map(patientProfiles?.map(p => [p.id, p]) || [])
-    const doctorProfileMap = new Map(doctorProfiles?.map(p => [p.id, p]) || [])
+    type ChatProfile = { id: string; full_name?: string | null; photo_url?: string | null }
+    const patientMap = new Map((patientProfiles as ChatProfile[] | null | undefined)?.map(p => [p.id, p]) || [])
+    const doctorProfileMap = new Map((doctorProfiles as ChatProfile[] | null | undefined)?.map(p => [p.id, p]) || [])
 
     const conversationsWithDetails = await Promise.all(
       conversations.map(async (conv) => {
@@ -311,7 +312,8 @@ export async function getMessages(
     .select('id, full_name, photo_url')
     .in('id', senderIds)
 
-  const senderMap = new Map(senderProfiles?.map(p => [p.id, p]) || [])
+  type SenderProfile = { id: string; full_name?: string | null; photo_url?: string | null }
+  const senderMap = new Map((senderProfiles as SenderProfile[] | null | undefined)?.map(p => [p.id, p]) || [])
 
   return messages.reverse().map((msg) => {
     const sender = senderMap.get(msg.sender_id)

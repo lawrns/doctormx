@@ -111,7 +111,7 @@ export const cache = {
 
   async getDoctorList(filters?: Record<string, unknown>): Promise<unknown[]> {
     const key = `doctors:list:${JSON.stringify(filters || {})}`
-    const result = await this.get<unknown[]>(key)
+    const result = await this.get(key) as unknown[] | null
     return result || []
   },
 
@@ -129,7 +129,7 @@ export const cache = {
   },
 
   async getAvailability(doctorId: string, date: string): Promise<string[]> {
-    const result = await this.get<string[]>(`availability:${doctorId}:${date}`)
+    const result = await this.get(`availability:${doctorId}:${date}`) as string[] | null
     return result || []
   },
 

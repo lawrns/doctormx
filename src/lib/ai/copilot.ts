@@ -256,7 +256,8 @@ export async function checkDrugInteractions(
 
         for (const drug of matchingDrugs) {
             for (const [key, value] of Object.entries(interactionGroup)) {
-                if (key !== 'drugs' && typeof value === 'object') {
+                if (key !== 'drugs' && value && !Array.isArray(value) && typeof value === 'object') {
+                    const interaction = value as Pick<DrugInteraction, 'severity' | 'description' | 'recommendation'>
                     const otherDrugs = medicationNames.filter(name =>
                         name.includes(key) || (key === 'aspirin' && name.includes('aspirina'))
                     )
@@ -266,9 +267,9 @@ export async function checkDrugInteractions(
                             interactions.push({
                                 drug1: drug,
                                 drug2: other,
-                                severity: value.severity,
-                                description: value.description,
-                                recommendation: value.recommendation,
+                                severity: interaction.severity,
+                                description: interaction.description,
+                                recommendation: interaction.recommendation,
                             })
                         }
                     }

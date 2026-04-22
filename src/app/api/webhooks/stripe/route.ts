@@ -277,8 +277,8 @@ async function handleInvoicePaymentFailed(invoice: Stripe.Invoice) {
 
   if (!customerEmail) {
     const customer = await stripe.customers.retrieve(customerId)
-    if (!customer.deleted) {
-      customerEmail = customer.email || undefined
+    if (!('deleted' in customer && customer.deleted)) {
+      customerEmail = (customer as Stripe.Customer).email || undefined
     }
   }
 

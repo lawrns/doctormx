@@ -73,7 +73,7 @@ export async function getStates(): Promise<string[]> {
   const supabase = await createClient();
   const { data, error } = await supabase.from('cities').select('state').order('state');
   if (error) throw error;
-  return [...new Set(data.map((c) => c.state))];
+  return [...new Set((data as Array<{ state: string }> | null || []).map((c) => c.state).filter(Boolean))];
 }
 
 export async function searchCities(query: string, limit = 10): Promise<City[]> {

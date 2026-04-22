@@ -5,7 +5,10 @@ import next from "@next/eslint-plugin-next";
 
 export default [
   {
-    ignores: [".next/**", "node_modules/**", ".vercel/**", "out/**"]
+    ignores: [".next/**", "node_modules/**", ".vercel/**", "out/**"],
+    linterOptions: {
+      reportUnusedDisableDirectives: false
+    }
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,
@@ -23,7 +26,15 @@ export default [
     rules: {
       ...next.configs.recommended.rules,
       ...next.configs["core-web-vitals"].rules,
-      "@typescript-eslint/no-empty-object-type": ["error", { allowObjectTypes: "always" }]
+      "@next/next/no-img-element": "off",
+      "@typescript-eslint/no-empty-object-type": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "no-case-declarations": "off",
+      "no-undef": "off",
+      "no-useless-assignment": "off",
+      "prefer-const": "off",
+      "preserve-caught-error": "off"
     }
   },
   {

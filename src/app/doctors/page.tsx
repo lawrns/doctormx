@@ -34,7 +34,7 @@ export default async function DoctorsPage({
   searchParams: Promise<{
     specialty?: string
     search?: string
-    sortBy?: 'rating' | 'price' | 'experience'
+    sortBy?: 'rating' | 'price' | 'experience' | 'price_asc' | 'price_desc' | 'relevance'
     sortOrder?: 'asc' | 'desc'
     appointmentType?: 'all' | 'video' | 'in_person'
   }>
@@ -49,7 +49,7 @@ export default async function DoctorsPage({
     discoverDoctors({
       specialtySlug: params.specialty,
       searchQuery: params.search,
-      sortBy: params.sortBy,
+      sortBy: params.sortBy === 'price' ? 'price_asc' : params.sortBy,
       sortOrder: params.sortOrder,
       appointmentType: params.appointmentType as any,
     }),
@@ -63,7 +63,7 @@ export default async function DoctorsPage({
       params={{
         specialty: params.specialty,
         search: params.search,
-        sortBy: params.sortBy,
+        sortBy: params.sortBy === 'price' ? 'price_asc' : params.sortBy,
         sortOrder: params.sortOrder,
         appointmentType: params.appointmentType,
       }}
