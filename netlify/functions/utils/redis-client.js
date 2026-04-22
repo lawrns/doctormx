@@ -21,8 +21,11 @@ let redisClient = null;
  */
 function getRedisClient() {
   if (!redisClient) {
-    const redisUrl = process.env.REDIS_URL ||
-      'redis://default:qtDEYFxfMbvyZW2Tif8SnmvOnl3jT2u7@redis-14490.fcrce213.us-east-1-3.ec2.cloud.redislabs.com:14490';
+    const redisUrl = process.env.REDIS_URL;
+
+    if (!redisUrl) {
+      throw new Error('REDIS_URL is not configured');
+    }
 
     redisClient = new Redis(redisUrl, {
       maxRetriesPerRequest: 3,

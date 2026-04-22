@@ -8,7 +8,13 @@ const Redis = require('ioredis');
 async function testRedisConnection() {
   console.log('🧪 Testing Redis connection...\n');
 
-  const redisUrl = 'redis://default:qtDEYFxfMbvyZW2Tif8SnmvOnl3jT2u7@redis-14490.fcrce213.us-east-1-3.ec2.cloud.redislabs.com:14490';
+  const redisUrl = process.env.REDIS_URL;
+
+  if (!redisUrl) {
+    console.error('❌ REDIS_URL is not set.');
+    console.error('Run with REDIS_URL in the environment, for example: REDIS_URL=... node netlify/functions/test-redis.js');
+    process.exit(1);
+  }
 
   try {
     const redis = new Redis(redisUrl, {
