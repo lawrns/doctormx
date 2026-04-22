@@ -8,6 +8,7 @@ import { getAvailableSlots } from './availability'
 import { APPOINTMENT_CONFIG, STATUS } from '@/config/constants'
 import { sendAppointmentConfirmation } from './notifications'
 import { sendAppointmentConfirmation as sendWhatsAppConfirmation, getPatientPhone } from './whatsapp-notifications'
+import { cache } from '@/lib/cache'
 
 export type ReservationRequest = {
   patientId: string
@@ -49,8 +50,17 @@ export async function reserveAppointmentSlot(
     }
   }
 
-  // Paso 2: Crear la cita (esto bloquea el slot)
-  const appointment = await createAppointmentRecord(request)
+  const hold = await createAppointmentHold(request)
+  if (!hold.success) {
+    return {
+      success: false,
+      error: hold.error || 'El horario ya no está disponible',
+    }
+  }
+
+  // Paso 2: Crear la cita (esto bloquea el slot con restricción única en DB)
+  const appointment = await createAppointmentRecord(request, hold.holdId)
+  await cache.invalidateAvailability(request.doctorId)
 
   // Enviar email de confirmación (no bloquea el flujo principal)
   sendConfirmationEmail(request.patientId, appointment.id).catch((err) => {
@@ -109,7 +119,51 @@ async function validateSlotAvailability(
 }
 
 // Bloque: Crear registro de cita
-async function createAppointmentRecord(request: ReservationRequest) {
+function isUniqueViolation(error: { code?: string; message?: string } | null | undefined) {
+  return error?.code === '23505' || Boolean(error?.message?.toLowerCase().includes('duplicate key'))
+}
+
+async function createAppointmentHold(request: ReservationRequest): Promise<{ success: boolean; holdId?: string; error?: string }> {
+  const supabase = await createClient()
+
+  const startTs = new Date(`${request.date}T${request.time}:00`)
+  const endTs = new Date(startTs.getTime() + APPOINTMENT_CONFIG.DURATION_MINUTES * 60000)
+  const now = new Date()
+
+  await supabase
+    .from('appointment_holds')
+    .update({ status: 'expired', updated_at: now.toISOString() })
+    .eq('doctor_id', request.doctorId)
+    .eq('start_ts', startTs.toISOString())
+    .eq('status', 'active')
+    .lt('expires_at', now.toISOString())
+
+  const { data, error } = await supabase
+    .from('appointment_holds')
+    .insert({
+      patient_id: request.patientId,
+      doctor_id: request.doctorId,
+      start_ts: startTs.toISOString(),
+      end_ts: endTs.toISOString(),
+      status: 'active',
+      expires_at: new Date(now.getTime() + 10 * 60 * 1000).toISOString(),
+    })
+    .select('id')
+    .single()
+
+  if (error) {
+    if (isUniqueViolation(error)) {
+      return { success: false, error: 'El horario ya está reservado temporalmente' }
+    }
+
+    throw error
+  }
+
+  return { success: true, holdId: data.id }
+}
+
+// Bloque: Crear registro de cita
+async function createAppointmentRecord(request: ReservationRequest, holdId?: string) {
   const supabase = await createClient()
 
   const startTs = new Date(`${request.date}T${request.time}:00`)
@@ -129,7 +183,31 @@ async function createAppointmentRecord(request: ReservationRequest) {
     .select()
     .single()
 
-  if (error) throw error
+  if (error) {
+    if (holdId) {
+      await supabase
+        .from('appointment_holds')
+        .update({ status: 'released', updated_at: new Date().toISOString() })
+        .eq('id', holdId)
+    }
+
+    if (isUniqueViolation(error)) {
+      throw new Error('El horario ya no está disponible')
+    }
+
+    throw error
+  }
+
+  if (holdId) {
+    await supabase
+      .from('appointment_holds')
+      .update({
+        appointment_id: data.id,
+        status: 'converted',
+        updated_at: new Date().toISOString(),
+      })
+      .eq('id', holdId)
+  }
 
   return data
 }

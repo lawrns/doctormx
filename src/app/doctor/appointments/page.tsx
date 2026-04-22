@@ -40,6 +40,8 @@ export default async function DoctorAppointmentsPage({
     end_ts: string
     status: string
     service_name: string | null
+    appointment_type?: 'video' | 'in_person' | null
+    video_status?: string | null
   }> = []
 
   if (!isPending) {
@@ -55,6 +57,8 @@ export default async function DoctorAppointmentsPage({
         start_ts,
         end_ts,
         status,
+        appointment_type,
+        video_status,
         patient:profiles!appointments_patient_id_fkey(full_name),
         service:doctor_services(name)
       `)
@@ -90,14 +94,30 @@ export default async function DoctorAppointmentsPage({
     const { data: appointmentsData } = await query.limit(100)
 
     if (appointmentsData) {
-      let mapped = appointmentsData.map(apt => ({
+      type AppointmentQueryRow = {
+        id: string
+        start_ts: string
+        end_ts: string
+        status: string
+        appointment_type?: 'video' | 'in_person' | null
+        video_status?: string | null
+        patient?: { full_name: string } | { full_name: string }[] | null
+        service?: { name: string } | { name: string }[] | null
+      }
+
+      let mapped = (appointmentsData as unknown as AppointmentQueryRow[]).map((apt) => {
+        const patient = Array.isArray(apt.patient) ? apt.patient[0] : apt.patient
+        const service = Array.isArray(apt.service) ? apt.service[0] : apt.service
+        return {
         id: apt.id,
-        patient_name: (apt.patient as unknown as { full_name: string } | null)?.full_name || 'Paciente',
+        patient_name: patient?.full_name || 'Paciente',
         start_ts: apt.start_ts,
         end_ts: apt.end_ts,
         status: apt.status,
-        service_name: (apt.service as unknown as { name: string } | null)?.name || null,
-      }))
+        appointment_type: apt.appointment_type,
+        video_status: apt.video_status,
+        service_name: service?.name || null,
+      }})
 
       // Apply client-side search filter (since Supabase can't filter on joined fields)
       if (searchFilter) {

@@ -10,10 +10,15 @@ export type NotificationTemplate =
   | 'appointment_confirmation'
   | 'payment_receipt'
   | 'consultation_reminder'
+  | 'video_link_ready'
   | 'follow_up_24h'
   | 'follow_up_7d'
   | 'prescription_ready'
   | 'doctor_available'
+  | 'doctor_approved'
+  | 'doctor_rejected'
+  | 'doctor_documents_requested'
+  | 'subscription_activated'
   | 'subscription_payment_failed'
 
 interface NotificationContext {
@@ -76,6 +81,57 @@ No pudimos procesar el pago de tu suscripción.
 Tienes 3 días para actualizar tu método de pago antes de que tu perfil deje de aparecer en el directorio.
 
 Actualizar pago: ${ctx.bookingLink || 'https://doctory.mx/doctor/subscription'}
+
+— *Doctor.mx: Tu salud, simplificada*`
+
+    case 'subscription_activated':
+      return `✅ *Suscripción activa - Doctor.mx*
+
+Hola${ctx.patientName ? ` ${ctx.patientName}` : ''},
+
+Tu suscripción está activa. Si tu cédula ya fue verificada, tu perfil puede aparecer en el directorio.
+
+Gestionar plan: ${ctx.bookingLink || 'https://doctory.mx/doctor/subscription'}
+
+— *Doctor.mx: Tu salud, simplificada*`
+
+    case 'doctor_approved':
+      return `✅ *Perfil aprobado - Doctor.mx*
+
+Hola${ctx.patientName ? ` ${ctx.patientName}` : ''},
+
+Tu perfil médico fue aprobado. Ya puedes gestionar consultas desde tu panel.
+
+Entrar al panel: ${ctx.bookingLink || 'https://doctory.mx/doctor'}
+
+— *Doctor.mx: Tu salud, simplificada*`
+
+    case 'doctor_rejected':
+      return `⚠️ *Verificación no aprobada - Doctor.mx*
+
+Hola${ctx.patientName ? ` ${ctx.patientName}` : ''},
+
+No pudimos aprobar tu verificación con la información actual. Revisa tu correo para ver los siguientes pasos.
+
+— *Doctor.mx: Tu salud, simplificada*`
+
+    case 'doctor_documents_requested':
+      return `📄 *Documentos requeridos - Doctor.mx*
+
+Hola${ctx.patientName ? ` ${ctx.patientName}` : ''},
+
+Necesitamos documentos adicionales para completar tu verificación profesional. Te enviamos los detalles por correo.
+
+— *Doctor.mx: Tu salud, simplificada*`
+
+    case 'video_link_ready':
+      return `🎥 *Videoconsulta lista - Doctor.mx*
+
+Hola${ctx.patientName ? ` ${ctx.patientName}` : ''},
+
+Tu sala de videoconsulta ya está lista.
+
+Entrar: ${ctx.bookingLink || 'https://doctory.mx/app/appointments'}
 
 — *Doctor.mx: Tu salud, simplificada*`
 

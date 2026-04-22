@@ -9,6 +9,8 @@ import { calculatePlatformFee, calculateDoctorNetAmount } from './platform-fees'
 import { type SubscriptionTier } from './subscription-types'
 import { logger } from '@/lib/observability/logger'
 import { ensureVideoRoomForAppointment } from '@/lib/video/videoService'
+import { stripe } from '@/lib/stripe'
+import { validatePaymentIntentBinding } from '@/lib/payment-integrity'
 
 export interface PaymentWithFees {
   paymentId: string
@@ -69,6 +71,13 @@ export async function confirmPaymentWithFees(
     if (!doctor) {
       throw new Error('Doctor not found for appointment')
     }
+
+    const paymentIntent = await stripe.paymentIntents.retrieve(paymentIntentId)
+    await validatePaymentIntentBinding({
+      supabase,
+      paymentIntent,
+      appointmentId,
+    })
 
     // 3. Get doctor's subscription tier
     const { data: subscription } = await supabase

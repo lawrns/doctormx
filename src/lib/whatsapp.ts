@@ -4,6 +4,7 @@
 // Output: Session with routing decision
 
 import { createServiceClient } from '@/lib/supabase/server'
+import { evaluateHardSafety } from '@/lib/ai/safety'
 
 export type TriageOutcome = 'book_consultation' | 'refer_pharmacy' | 'emergency_redirect'
 
@@ -63,7 +64,8 @@ export async function addMessage(
     senderType: 'patient' | 'ai' | 'doctor',
     senderId?: string,
     mediaUrl?: string,
-    mediaType?: string
+    mediaType?: string,
+    whatsappMessageId?: string
 ) {
     const supabase = createServiceClient()
 
@@ -78,6 +80,7 @@ export async function addMessage(
                 sender_id: senderId,
                 media_url: mediaUrl,
                 media_type: mediaType,
+                whatsapp_message_id: whatsappMessageId,
             })
             .select()
             .single()
@@ -139,6 +142,38 @@ export async function conductTriage(
             role: m.sender_type === 'patient' ? 'user' : 'assistant',
             content: m.body,
         }))
+
+        const hardSafety = evaluateHardSafety([
+            ...conversationHistory.map((message) => ({ content: message.content })),
+            { content: userMessage },
+        ])
+        if (hardSafety.triggered) {
+            const aiResponse = hardSafety.response || 'Llama al 911 o acude a urgencias ahora.'
+            const summary: TriageSummary = {
+                chiefComplaint: 'Posible emergencia',
+                symptoms: [hardSafety.category || 'hard_safety_trigger'],
+                urgencyLevel: 'red',
+                suggestedSpecialty: 'urgencias',
+                recommendedAction: 'emergency_redirect',
+                aiConfidence: 1,
+            }
+
+            await addMessage(sessionId, aiResponse, 'outbound', 'ai')
+            await supabase
+                .from('whatsapp_sessions')
+                .update({
+                    triage_summary: summary,
+                    state: 'escalated',
+                })
+                .eq('id', sessionId)
+
+            return {
+                success: true,
+                aiResponse,
+                triageComplete: true,
+                summary,
+            }
+        }
 
         const { generateDrSimeonResponse, isTriageComplete: checkTriageComplete, conductOPQRSTAssessment } = await import('@/lib/ai/drSimeon')
 
@@ -238,6 +273,7 @@ export async function routeHandoff(
         )
       `)
             .eq('status', 'approved')
+            .eq('is_listed', true)
 
         if (summary.suggestedSpecialty) {
             // Filter by specialty if available

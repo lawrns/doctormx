@@ -6,9 +6,10 @@ import { headers } from 'next/headers'
 import { stripe } from '@/lib/stripe'
 import { confirmPaymentWithFees } from '@/lib/payment-with-fees'
 import { logger } from '@/lib/observability/logger'
-import { sendEmail, getEmailTemplate } from '@/lib/notifications'
+import { sendEmail, getEmailTemplate, sendDoctorStatusEmail } from '@/lib/notifications'
 import { sendWhatsAppNotification } from '@/lib/whatsapp-notifications'
 import type Stripe from 'stripe'
+import { createHash } from 'crypto'
 
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!
 
@@ -45,6 +46,69 @@ function getSubscriptionTier(subscription: Stripe.Subscription) {
 
 function getBillingInterval(subscription: Stripe.Subscription) {
   return subscription.items.data[0]?.price?.recurring?.interval || 'month'
+}
+
+async function claimWebhookEvent(event: Stripe.Event, payload: string) {
+  const supabase = (await import('@/lib/supabase/server')).createServiceClient()
+  const payloadHash = createHash('sha256').update(payload).digest('hex')
+
+  const { error } = await supabase
+    .from('webhook_events')
+    .insert({
+      provider: 'stripe',
+      event_id: event.id,
+      status: 'processing',
+      payload_hash: payloadHash,
+    })
+
+  if (!error) return true
+
+  if (error.code === '23505') {
+    const { data: existing } = await supabase
+      .from('webhook_events')
+      .select('status')
+      .eq('provider', 'stripe')
+      .eq('event_id', event.id)
+      .maybeSingle()
+
+    if (existing?.status === 'failed') {
+      await supabase
+        .from('webhook_events')
+        .update({
+          status: 'processing',
+          error: null,
+          updated_at: new Date().toISOString(),
+        })
+        .eq('provider', 'stripe')
+        .eq('event_id', event.id)
+
+      return true
+    }
+
+    logger.info('Skipping duplicate Stripe webhook event:', { eventId: event.id, type: event.type })
+    return false
+  }
+
+  if (error.code === '42P01') {
+    logger.warn('webhook_events table missing; processing Stripe event without idempotency:', { eventId: event.id })
+    return true
+  }
+
+  throw new Error(`Failed to claim Stripe webhook event: ${error.message}`)
+}
+
+async function markWebhookEvent(event: Stripe.Event, status: 'processed' | 'failed', error?: unknown) {
+  const supabase = (await import('@/lib/supabase/server')).createServiceClient()
+  await supabase
+    .from('webhook_events')
+    .update({
+      status,
+      processed_at: new Date().toISOString(),
+      error: error ? String(error instanceof Error ? error.message : error) : null,
+      updated_at: new Date().toISOString(),
+    })
+    .eq('provider', 'stripe')
+    .eq('event_id', event.id)
 }
 
 async function getDoctorIdForSubscription(subscription: Stripe.Subscription) {
@@ -111,22 +175,39 @@ async function upsertDoctorSubscription(subscription: Stripe.Subscription) {
   }
 
   if (status === 'active') {
-    const { data: verification } = await supabase
-      .from('doctor_verifications')
-      .select('sep_verified')
-      .eq('doctor_id', doctorId)
-      .eq('sep_verified', true)
+    const { data: doctor } = await supabase
+      .from('doctors')
+      .select('status')
+      .eq('id', doctorId)
       .maybeSingle()
 
-    if (verification?.sep_verified) {
-      await supabase
-        .from('doctors')
-        .update({
-          status: 'approved',
-          is_listed: true,
-          updated_at: new Date().toISOString(),
-        })
-        .eq('id', doctorId)
+    await supabase
+      .from('doctors')
+      .update({
+        is_listed: doctor?.status === 'approved',
+        updated_at: new Date().toISOString(),
+      })
+      .eq('id', doctorId)
+
+    const { data: doctorProfile } = await supabase
+      .from('profiles')
+      .select('full_name, email, phone')
+      .eq('id', doctorId)
+      .maybeSingle()
+
+    if (doctorProfile?.email) {
+      await sendDoctorStatusEmail({
+        to: doctorProfile.email,
+        doctorName: doctorProfile.full_name || 'Doctor',
+        status: 'subscription_activated',
+      })
+    }
+
+    if (doctorProfile?.phone) {
+      await sendWhatsAppNotification(doctorProfile.phone, 'subscription_activated', {
+        patientName: doctorProfile.full_name || 'Doctor',
+        bookingLink: `${process.env.NEXT_PUBLIC_APP_URL || 'https://doctory.mx'}/doctor/subscription`,
+      })
     }
   }
 }
@@ -227,7 +308,7 @@ export async function POST(request: NextRequest) {
     const payload = await request.text()
     const signature = (await headers()).get('stripe-signature')!
 
-    let event
+    let event: Stripe.Event
 
     try {
       event = stripe.webhooks.constructEvent(payload, signature, webhookSecret)
@@ -241,45 +322,41 @@ export async function POST(request: NextRequest) {
 
     logger.info('Stripe webhook received:', { type: event.type, id: event.id })
 
-    switch (event.type) {
-      case 'payment_intent.succeeded': {
-        const paymentIntent = event.data.object
-        
-        // Get appointment ID from metadata
-        const appointmentId = paymentIntent.metadata?.appointmentId
-        
-        if (!appointmentId) {
-          logger.error('Payment intent missing appointment ID:', { 
-            paymentIntentId: paymentIntent.id 
-          })
-          return NextResponse.json(
-            { error: 'Missing appointment ID' },
-            { status: 400 }
-          )
-        }
+    const shouldProcess = await claimWebhookEvent(event, payload)
+    if (!shouldProcess) {
+      return NextResponse.json({ received: true, duplicate: true })
+    }
 
-        // Process payment with platform fees
-        try {
+    try {
+      switch (event.type) {
+        case 'payment_intent.succeeded': {
+          const paymentIntent = event.data.object
+
+          // Get appointment ID from metadata
+          const appointmentId = paymentIntent.metadata?.appointmentId
+
+          if (!appointmentId) {
+            logger.error('Payment intent missing appointment ID:', {
+              paymentIntentId: paymentIntent.id
+            })
+            await markWebhookEvent(event, 'failed', 'Missing appointment ID')
+            return NextResponse.json(
+              { error: 'Missing appointment ID' },
+              { status: 400 }
+            )
+          }
+
           const result = await confirmPaymentWithFees(paymentIntent.id, appointmentId)
-          
+
           logger.info('Payment confirmed with fees:', {
             paymentIntentId: paymentIntent.id,
             appointmentId,
             platformFee: result.platformFee,
             doctorNet: result.doctorNetAmount,
           })
-        } catch (error) {
-          logger.error('Failed to confirm payment with fees:', {
-            error,
-            paymentIntentId: paymentIntent.id,
-            appointmentId,
-          })
-          // Still return 200 to Stripe to prevent retries
-          // We'll handle this manually
+
+          break
         }
-        
-        break
-      }
 
       case 'payment_intent.payment_failed': {
         const paymentIntent = event.data.object
@@ -366,9 +443,15 @@ export async function POST(request: NextRequest) {
         break
       }
 
-      default: {
-        logger.info('Unhandled webhook event:', { type: event.type })
+        default: {
+          logger.info('Unhandled webhook event:', { type: event.type })
+        }
       }
+
+      await markWebhookEvent(event, 'processed')
+    } catch (error) {
+      await markWebhookEvent(event, 'failed', error)
+      throw error
     }
 
     return NextResponse.json({ received: true })

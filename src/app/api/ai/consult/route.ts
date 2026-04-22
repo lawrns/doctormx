@@ -11,6 +11,7 @@ import { aiChatCompletion } from '@/lib/ai/openai'
 import { classifyMessage, getTier0Response } from '@/lib/ai/classifier'
 import { PRECONSULTA_SYSTEM_PROMPT, PRECONSULTA_URGENCY_PROMPT } from '@/lib/ai/prompts'
 import { runSOAPConsultation } from '@/lib/soap/agents'
+import { evaluateHardSafety } from '@/lib/ai/safety'
 import type { ConsensusResult } from '@/lib/soap/types'
 import type { SubjectiveData, SpecialistAssessment, UrgencyLevel } from '@/lib/soap/types'
 
@@ -310,6 +311,41 @@ export async function POST(request: NextRequest) {
     const { messages, patientId } = parsed.data
     const conversation = sanitizeConversation(messages as ConsultMessage[])
     const userMessage = conversation[conversation.length - 1]?.content || ''
+
+    const hardSafety = evaluateHardSafety(conversation)
+    if (hardSafety.triggered) {
+      return NextResponse.json({
+        message: hardSafety.response,
+        complete: true,
+        specialists: ['emergency_medicine'],
+        responseMode: 'hard-safety',
+        result: {
+          id: crypto.randomUUID(),
+          primaryDiagnosis: 'Emergencia posible',
+          confidence: 1,
+          specialists: [],
+          differentialDiagnoses: [],
+          urgency: 'emergency',
+          recommendations: ['Llama al 911 o acude a urgencias ahora.'],
+          nextSteps: ['No esperes una respuesta por chat ni una cita programada.'],
+          consensus: {
+            kendallW: 1,
+            agreementLevel: 'strong',
+            primaryDiagnosis: null,
+            differentialDiagnoses: [],
+            consensusCategory: 'emergency',
+            urgencyLevel: 'emergency',
+            combinedRedFlags: [hardSafety.category || 'hard_safety_trigger'],
+            recommendedSpecialty: 'urgencias',
+            recommendedTests: [],
+            supervisorSummary: 'Regla determinística de seguridad activada antes del modelo.',
+            confidenceScore: 1,
+            requiresHumanReview: true,
+          },
+        },
+        meta: { latencyMs: Date.now() - startTime, provider: 'hard-safety', model: 'none', costUSD: 0 },
+      })
+    }
 
     // ── Tier 0 fast-path: social/admin messages skip all AI processing ────────
     if (userMessage) {

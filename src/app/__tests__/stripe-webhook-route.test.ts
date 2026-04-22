@@ -56,6 +56,17 @@ vi.mock('@/lib/supabase/server', () => ({
         }
       }
 
+      if (table === 'webhook_events') {
+        return {
+          insert: vi.fn().mockResolvedValue({ error: null }),
+          update: vi.fn().mockReturnValue({
+            eq: vi.fn().mockReturnValue({
+              eq: vi.fn().mockResolvedValue({ error: null }),
+            }),
+          }),
+        }
+      }
+
       return {
         select: vi.fn().mockReturnThis(),
         eq: vi.fn().mockReturnThis(),

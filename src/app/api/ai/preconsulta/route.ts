@@ -10,6 +10,7 @@ import {
 } from '@/lib/ai';
 import { classifyMessage, getTier0Response } from '@/lib/ai/classifier';
 import { matchDoctorsForReferral } from '@/lib/ai/referral';
+import { buildEmergencyTriageSummary, evaluateHardSafety } from '@/lib/ai/safety';
 import type { PreConsultaMessage, TriageResult } from '@/lib/ai/types';
 import type { CareTriage, RoutingDecision } from '@/lib/types/care-case';
 
@@ -140,6 +141,26 @@ export async function POST(req: NextRequest) {
     // ── Tier 0 fast-path: classify the latest user message ──────────────────
     const lastUserMsg = [...messages].reverse().find((m) => m.role === 'user');
     if (lastUserMsg) {
+      const hardSafety = evaluateHardSafety(messages);
+      if (hardSafety.triggered) {
+        await safeUpsertSession(supabase, {
+          id: sessionId,
+          patient_id: user?.id || null,
+          messages,
+          summary: buildEmergencyTriageSummary(hardSafety.category),
+          status: 'redirected-to-emergency',
+          completed_at: new Date().toISOString(),
+        });
+
+        return NextResponse.json({
+          response: hardSafety.response,
+          completed: true,
+          summary: buildEmergencyTriageSummary(hardSafety.category),
+          referrals: [],
+          responseMode: 'hard-safety',
+        });
+      }
+
       const classification = classifyMessage(lastUserMsg.content);
 
       if (classification.tier === 0) {
@@ -205,7 +226,7 @@ export async function POST(req: NextRequest) {
     const isComplete = userMessages.length >= 3;
 
     let summary: TriageResult | null = null;
-    let referrals: any[] = [];
+    let referrals: unknown[] = [];
 
     if (isComplete) {
       // Análisis final de urgencia

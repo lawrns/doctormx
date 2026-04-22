@@ -10,6 +10,8 @@ export type AppointmentData = {
   end_ts: string
   status: string
   service_name?: string | null
+  appointment_type?: 'video' | 'in_person' | null
+  video_status?: string | null
 }
 
 type AppointmentCardProps = {
@@ -83,6 +85,12 @@ export function AppointmentCard({ appointment, showActions = true }: Appointment
 
         {showActions && isUpcoming && isConfirmed && (
           <div className="flex gap-2 flex-shrink-0">
+            <Link
+              href={`/doctor/consultation/${appointment.id}`}
+              className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-primary hover:text-primary hover:bg-primary/10 rounded-md transition-colors"
+            >
+              Consulta
+            </Link>
             <Link
               href={`/doctor/prescription/${appointment.id}`}
               className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-primary hover:text-primary hover:bg-primary/10 rounded-md transition-colors"

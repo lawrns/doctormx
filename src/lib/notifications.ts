@@ -119,6 +119,47 @@ export async function sendEmail({
   }
 }
 
+export async function sendDoctorStatusEmail({
+  to,
+  doctorName,
+  status,
+  note,
+}: {
+  to: string
+  doctorName: string
+  status: 'approved' | 'rejected' | 'documents_requested' | 'subscription_activated'
+  note?: string
+}) {
+  const subjects = {
+    approved: 'Tu perfil medico fue aprobado',
+    rejected: 'No pudimos aprobar tu verificacion',
+    documents_requested: 'Necesitamos documentos adicionales',
+    subscription_activated: 'Tu suscripcion esta activa',
+  }
+
+  const messages = {
+    approved: 'Tu perfil fue aprobado por nuestro equipo. Si tu suscripcion esta activa, tu perfil aparecera en el directorio de Doctor.mx.',
+    rejected: 'No pudimos aprobar tu verificacion con la informacion actual. Puedes responder a este correo si deseas apelar o enviar informacion corregida.',
+    documents_requested: 'Necesitamos documentos adicionales para completar tu verificacion profesional.',
+    subscription_activated: 'Tu suscripcion fue activada. Si tu cedula SEP ya fue validada, tu perfil puede aparecer en el directorio.',
+  }
+
+  const extraNote = note
+    ? `<p style="margin:0 0 16px;color:#1f2937;font-size:16px;line-height:1.5;"><strong>Nota:</strong> ${note}</p>`
+    : ''
+
+  return sendEmail({
+    to,
+    subject: subjects[status],
+    html: getEmailTemplate(`
+      <p style="margin:0 0 16px;color:#1f2937;font-size:16px;line-height:1.5;">${messages[status]}</p>
+      ${extraNote}
+      <p style="margin:0;"><a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://doctory.mx'}/doctor" style="color:#0066cc;">Ir al panel medico</a></p>
+    `, doctorName),
+    tags: [{ name: 'type', value: `doctor_${status}` }],
+  })
+}
+
 export async function sendAppointmentConfirmation(
   appointmentId: string,
   patientEmail: string,

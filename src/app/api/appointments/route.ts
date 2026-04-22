@@ -14,6 +14,19 @@ export async function POST(request: NextRequest) {
     )
   }
 
+  const { data: profile } = await supabase
+    .from('profiles')
+    .select('role')
+    .eq('id', user.id)
+    .single()
+
+  if (profile?.role !== 'patient') {
+    return NextResponse.json(
+      { error: 'Only patient accounts can book consultations' },
+      { status: 403 }
+    )
+  }
+
   const body = await request.json()
   const { doctorId, date, time, appointmentType = 'video', patientId: bodyPatientId } = body
 

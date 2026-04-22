@@ -91,7 +91,8 @@ export async function searchDirectory(
   let query = supabase
     .from('doctors')
     .select('*', { count: 'exact' })
-    .eq('license_status', 'verified')
+    .eq('status', 'approved')
+    .eq('is_listed', true)
   
   if (params.query) {
     query = query.ilike('full_name', `%${params.query}%`)

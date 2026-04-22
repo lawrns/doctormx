@@ -9,6 +9,7 @@ import { sendPaymentReceipt } from './notifications'
 import { sendPaymentReceipt as sendWhatsAppReceipt, getPatientPhone, getDoctorName } from './whatsapp-notifications'
 import { logger } from '@/lib/observability/logger'
 import { ensureVideoRoomForAppointment } from '@/lib/video/videoService'
+import { validatePaymentIntentBinding } from '@/lib/payment-integrity'
 
 export type PaymentRequest = {
   appointmentId: string
@@ -37,6 +38,9 @@ export async function initializePayment(
       appointmentId: request.appointmentId,
       doctorId: appointmentData.doctorId,
       patientId: request.userId,
+      amountCents: String(appointmentData.amount),
+      amount: String(appointmentData.amount),
+      currency: appointmentData.currency,
     },
     // Enable Mexican payment methods: Cards, OXXO, and SPEI
     payment_method_types: ['card', 'oxxo', 'customer_balance'],
@@ -111,29 +115,44 @@ async function recordPaymentAttempt(data: {
 }) {
   const supabase = await createClient()
 
-  await supabase.from('payments').insert({
+  const { error } = await supabase.from('payments').insert({
     appointment_id: data.appointmentId,
     provider: 'stripe',
     provider_ref: data.providerRef,
+    stripe_payment_intent_id: data.providerRef,
     amount_cents: data.amount,
     currency: data.currency,
     status: 'pending',
     fee_cents: 0,
     net_cents: data.amount,
   })
+
+  if (error) {
+    throw new Error(`Failed to record payment attempt: ${error.message}`)
+  }
 }
 
 // Sistema completo: confirmar pago exitoso
 export async function confirmSuccessfulPayment(
   paymentIntentId: string,
-  appointmentId: string
+  appointmentId: string,
+  patientId?: string
 ): Promise<{ success: boolean; appointment?: import('@/types').Appointment }> {
+  const supabase = await createClient()
+
   // Paso 1: Verificar con Stripe que el pago fue exitoso
   const paymentIntent = await stripe.paymentIntents.retrieve(paymentIntentId)
 
   if (paymentIntent.status !== 'succeeded') {
     return { success: false }
   }
+
+  await validatePaymentIntentBinding({
+    supabase,
+    paymentIntent,
+    appointmentId,
+    patientId,
+  })
 
   // Paso 2: Actualizar el registro de pago
   await updatePaymentStatus(paymentIntentId, 'paid')
@@ -226,13 +245,11 @@ export async function handlePaymentFailure(
       throw new Error(`Failed to cancel appointment: ${cancelError.message}`)
     }
 
-    // Release any slot locks
+    // Release any active appointment holds
     await supabase
-      .from('slot_locks')
-      .delete()
-      .eq('doctor_id', appointment.doctor_id)
-      .gte('start_ts', appointment.start_ts)
-      .lte('end_ts', appointment.end_ts)
+      .from('appointment_holds')
+      .update({ status: 'released', updated_at: new Date().toISOString() })
+      .eq('appointment_id', appointmentId)
 
     // Update payment status to failed
     const { data: payment } = await supabase

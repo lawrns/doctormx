@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
 
   try {
     // Sistema de confirmación maneja todo: verificar + actualizar + confirmar
-    const result = await confirmSuccessfulPayment(paymentIntentId, appointmentId)
+    const result = await confirmSuccessfulPayment(paymentIntentId, appointmentId, user.id)
 
     if (!result.success) {
       return NextResponse.json(
