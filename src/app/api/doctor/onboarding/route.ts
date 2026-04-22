@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
+import { storeVerificationResult, verifyCedulaSEP } from '@/lib/sep-verification'
 
 export async function POST(request: NextRequest) {
   const supabase = await createClient()
@@ -31,6 +32,21 @@ export async function POST(request: NextRequest) {
     if (error) {
       console.error(error);
       throw error;
+    }
+
+    if (licenseNumber) {
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('full_name')
+        .eq('id', user.id)
+        .single()
+
+      const verification = await verifyCedulaSEP(
+        licenseNumber,
+        profile?.full_name || ''
+      )
+
+      await storeVerificationResult(user.id, licenseNumber, verification)
     }
 
     return NextResponse.json({ success: true })

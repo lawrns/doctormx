@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
-import { SUBSCRIPTION_PLANS, type SubscriptionTier, getAnnualPrice, getMonthlySavings, ANNUAL_DISCOUNT } from '@/lib/subscription-types'
+import { SUBSCRIPTION_PLANS, type SubscriptionTier, ANNUAL_DISCOUNT } from '@/lib/subscription-types'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -158,8 +158,8 @@ export default function SubscriptionPage() {
                 throw new Error(data.error || 'Failed to create subscription')
             }
 
-            if (data.stripeClientSecret) {
-                router.push(`/checkout/${data.subscription.id}`)
+            if (data.checkoutUrl) {
+                window.location.href = data.checkoutUrl
             } else {
                 await loadSubscription()
             }

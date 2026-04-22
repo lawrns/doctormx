@@ -118,7 +118,20 @@ export async function updateSession(request: NextRequest) {
     .eq('id', user.id)
     .single()
 
-  if (!userProfile) return supabaseResponse
+  if (!userProfile) {
+    const url = request.nextUrl.clone()
+    url.pathname = '/auth/login'
+    url.searchParams.set('redirect', path)
+    return NextResponse.redirect(url)
+  }
+
+  if (userProfile.role === 'doctor' && path.startsWith('/app')) {
+    return NextResponse.redirect(new URL('/doctor', request.url))
+  }
+
+  if (userProfile.role === 'patient' && path.startsWith('/doctor')) {
+    return NextResponse.redirect(new URL('/app', request.url))
+  }
 
   // Redirigir al dashboard correcto si está en la ruta incorrecta
   const correctDashboard = DASHBOARDS[userProfile.role as keyof typeof DASHBOARDS]

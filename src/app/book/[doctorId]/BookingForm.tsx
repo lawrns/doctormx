@@ -8,7 +8,7 @@ import { APPOINTMENT_CONFIG } from '@/config/constants'
 import PreConsultaChat from '@/components/PreConsultaChat'
 import { useToast } from '@/components/Toast'
 import { AI_CONFIG } from '@/lib/ai/config'
-import { User } from 'lucide-react'
+import { MapPin, Monitor, User } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 type DoctorProfile = {
@@ -22,6 +22,9 @@ type DoctorProfile = {
   country: string
   price_cents: number
   currency: string
+  office_address?: string | null
+  address?: string | null
+  video_enabled?: boolean | null
   rating_avg: number
   rating_count: number
   profile: {
@@ -59,10 +62,11 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
   const { addToast } = useToast()
   const [selectedDate, setSelectedDate] = useState('')
   const [selectedTime, setSelectedTime] = useState('')
+  const [appointmentType, setAppointmentType] = useState<'video' | 'in_person'>('video')
   const [availableSlots, setAvailableSlots] = useState<string[]>([])
   const [submitting, setSubmitting] = useState(false)
   const [loadingSlots, setLoadingSlots] = useState(false)
-  const [loadingCalendar, setLoadingCalendar] = useState(false)
+  const [, setLoadingCalendar] = useState(false)
   const [availableDates, setAvailableDates] = useState<string[]>([])
   const [currentMonth, setCurrentMonth] = useState(new Date())
   const [showPreConsulta, setShowPreConsulta] = useState(false)
@@ -141,6 +145,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
           doctorId: doctor.id,
           date: selectedDate,
           time: selectedTime,
+          appointmentType,
           preConsultaSummary,
           consultationId: consultationId || undefined
         }),
@@ -236,6 +241,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
   maxDate.setDate(maxDate.getDate() + APPOINTMENT_CONFIG.MAX_ADVANCE_DAYS)
   const max = maxDate.toISOString().split('T')[0]
   const formatPrice = (cents: number, currency: string) => new Intl.NumberFormat('es-MX', { style: 'currency', currency, minimumFractionDigits: 0 }).format(cents / 100)
+  const officeAddress = doctor.office_address || doctor.address || [doctor.city, doctor.state].filter(Boolean).join(', ')
 
   const goToPreviousMonth = () => {
     setCurrentMonth(prev => new Date(prev.getFullYear(), prev.getMonth() - 1, 1))
@@ -293,7 +299,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
               </div>
               <div className="flex-1">
                 <p className="font-semibold text-foreground text-lg">Dr. {doctor.profile?.full_name}</p>
-                <p className="text-sm text-muted-foreground">Consulta en línea</p>
+                <p className="text-sm text-muted-foreground">{appointmentType === 'video' ? 'Consulta en línea' : 'Consulta presencial'}</p>
               </div>
               <div className="text-right">
                 <p className="text-xl font-bold text-primary">{formatPrice(doctor.price_cents, doctor.currency)}</p>
@@ -301,6 +307,48 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
               </div>
             </div>
             <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-3">
+                  Tipo de consulta
+                </label>
+                <div className="grid grid-cols-2 gap-3">
+                  <Button
+                    type="button"
+                    variant={appointmentType === 'video' ? 'default' : 'outline'}
+                    className="h-auto justify-start gap-3 rounded-xl p-4"
+                    onClick={() => setAppointmentType('video')}
+                  >
+                    <Monitor className="h-5 w-5 shrink-0" />
+                    <span className="text-left">
+                      <span className="block font-semibold">Video</span>
+                      <span className="block text-xs opacity-80">30 min, enlace seguro</span>
+                    </span>
+                  </Button>
+                  <Button
+                    type="button"
+                    variant={appointmentType === 'in_person' ? 'default' : 'outline'}
+                    className="h-auto justify-start gap-3 rounded-xl p-4"
+                    onClick={() => setAppointmentType('in_person')}
+                  >
+                    <MapPin className="h-5 w-5 shrink-0" />
+                    <span className="text-left">
+                      <span className="block font-semibold">Presencial</span>
+                      <span className="block text-xs opacity-80">En consultorio</span>
+                    </span>
+                  </Button>
+                </div>
+                {appointmentType === 'in_person' ? (
+                  <div className="mt-3 rounded-xl border border-border bg-secondary/50 p-4 text-sm text-foreground">
+                    <p className="font-medium">Dirección del consultorio</p>
+                    <p className="mt-1 text-muted-foreground">{officeAddress || 'El consultorio confirmará la dirección antes de la cita.'}</p>
+                  </div>
+                ) : (
+                  <div className="mt-3 rounded-xl border border-border bg-secondary/50 p-4 text-sm text-muted-foreground">
+                    Recibirás el enlace de acceso cuando tu pago quede confirmado. Te recomendamos entrar desde un lugar privado y con buena conexión.
+                  </div>
+                )}
+              </div>
+
               {/* Mini Calendar */}
               <div>
                 <label className="block text-sm font-medium text-foreground mb-3">

@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
   }
 
   const body = await request.json()
-  const { doctorId, date, time, patientId: bodyPatientId } = body
+  const { doctorId, date, time, appointmentType = 'video', patientId: bodyPatientId } = body
 
   // Property 5: Booking Security - Session-Only Patient ID
   // Explicitly ignore any patientId from request body for security
@@ -31,6 +31,13 @@ export async function POST(request: NextRequest) {
     )
   }
 
+  if (!['video', 'in_person'].includes(appointmentType)) {
+    return NextResponse.json(
+      { error: 'Invalid appointment type' },
+      { status: 400 }
+    )
+  }
+
   try {
     // Sistema de reserva maneja todo: validación + creación
     // Requirement 2.7: patient_id obtained exclusively from authenticated session
@@ -39,6 +46,7 @@ export async function POST(request: NextRequest) {
       doctorId,
       date,
       time,
+      appointmentType,
     })
 
     if (!result.success) {

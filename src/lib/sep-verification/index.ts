@@ -32,67 +32,6 @@ export interface VerificationResult {
   };
 }
 
-// Mock database of cédulas for demonstration
-// In production, this would query the actual SEP/RVOE database
-const MOCK_CEDULA_DATABASE: Record<string, CedulaSearchResult> = {
-  '12345678': {
-    found: true,
-    cedula: '12345678',
-    name: 'María García López',
-    firstName: 'María',
-    lastName: 'García',
-    secondLastName: 'López',
-    title: 'Médico Cirujano',
-    institution: 'Universidad Nacional Autónoma de México',
-    graduationYear: 2015,
-    status: 'valid',
-    specialty: 'Medicina General',
-    issueDate: '2015-07-15',
-  },
-  '87654321': {
-    found: true,
-    cedula: '87654321',
-    name: 'Carlos Hernández Martínez',
-    firstName: 'Carlos',
-    lastName: 'Hernández',
-    secondLastName: 'Martínez',
-    title: 'Médico Especialista en Cardiología',
-    institution: 'Instituto Politécnico Nacional',
-    graduationYear: 2012,
-    status: 'valid',
-    specialty: 'Cardiología',
-    issueDate: '2012-08-20',
-  },
-  '11223344': {
-    found: true,
-    cedula: '11223344',
-    name: 'Ana Rodríguez Sánchez',
-    firstName: 'Ana',
-    lastName: 'Rodríguez',
-    secondLastName: 'Sánchez',
-    title: 'Médico Especialista en Pediatría',
-    institution: 'Universidad de Guadalajara',
-    graduationYear: 2018,
-    status: 'valid',
-    specialty: 'Pediatría',
-    issueDate: '2018-06-10',
-  },
-  '99887766': {
-    found: true,
-    cedula: '99887766',
-    name: 'Roberto Pérez Gómez',
-    firstName: 'Roberto',
-    lastName: 'Pérez',
-    secondLastName: 'Gómez',
-    title: 'Médico Cirujano',
-    institution: 'Universidad Autónoma de Nuevo León',
-    graduationYear: 2010,
-    status: 'revoked',
-    specialty: 'Medicina General',
-    issueDate: '2010-07-01',
-  },
-};
-
 // Common Mexican medical specialties mapping
 const SPECIALTY_MAPPING: Record<string, string> = {
   'Médico Cirujano': 'Medicina General',
@@ -120,47 +59,137 @@ const SPECIALTY_MAPPING: Record<string, string> = {
 export async function searchCedula(cedula: string): Promise<CedulaSearchResult> {
   // Normalize cedula (remove spaces, dashes)
   const normalizedCedula = cedula.replace(/[\s-]/g, '');
-  
-  // Simulate API delay
-  await new Promise(resolve => setTimeout(resolve, 500));
-  
-  // Check mock database
-  const result = MOCK_CEDULA_DATABASE[normalizedCedula];
-  
-  if (result) {
-    return {
-      ...result,
-      verificationDate: new Date().toISOString(),
-    };
+
+  return fetchFromSEP(normalizedCedula);
+}
+
+function getFirstString(value: unknown): string | undefined {
+  if (typeof value === 'string' && value.trim()) return value.trim()
+  return undefined
+}
+
+type SEPRecord = Record<string, unknown>
+
+function getSepRows(data: unknown): SEPRecord[] {
+  if (Array.isArray(data)) return data.filter((item): item is SEPRecord => Boolean(item) && typeof item === 'object')
+  if (!data || typeof data !== 'object') return []
+
+  const record = data as SEPRecord
+  for (const key of ['items', 'results', 'resultados', 'cedulas']) {
+    const value = record[key]
+    if (Array.isArray(value)) {
+      return value.filter((item): item is SEPRecord => Boolean(item) && typeof item === 'object')
+    }
   }
-  
-  // Generate realistic mock data for unknown cédulas
-  // In production, this would return not_found
-  if (normalizedCedula.length >= 7 && normalizedCedula.length <= 10) {
-    // For demo purposes, generate plausible data
-    return {
-      found: true,
-      cedula: normalizedCedula,
-      name: 'Profesional Médico',
-      firstName: 'Nombre',
-      lastName: 'Apellido',
-      secondLastName: 'Segundo',
-      title: 'Médico Cirujano',
-      institution: 'Universidad Verificada',
-      graduationYear: 2015 + Math.floor(Math.random() * 5),
-      status: 'valid',
-      specialty: 'Medicina General',
-      issueDate: '2015-01-01',
-      verificationDate: new Date().toISOString(),
-    };
+
+  if (record.items && typeof record.items === 'object') {
+    return Object.values(record.items).filter((item): item is SEPRecord => Boolean(item) && typeof item === 'object')
   }
-  
+
+  return [record]
+}
+
+function mapSEPResponse(data: unknown, cedula: string): CedulaSearchResult {
+  const rows = getSepRows(data)
+  const row = rows.find((item) => {
+    const rowCedula = getFirstString(item.cedula) || getFirstString(item.idCedula) || getFirstString(item.numeroCedula)
+    return rowCedula?.replace(/\D/g, '') === cedula
+  }) || rows[0]
+
+  if (!row) {
+    return {
+      found: false,
+      cedula,
+      status: 'not_found',
+      verificationDate: new Date().toISOString(),
+    }
+  }
+
+  const firstName =
+    getFirstString(row.nombre) ||
+    getFirstString(row.nombres) ||
+    getFirstString(row.nombreProfesionista)
+  const lastName =
+    getFirstString(row.paterno) ||
+    getFirstString(row.apellidoPaterno) ||
+    getFirstString(row.primerApellido)
+  const secondLastName =
+    getFirstString(row.materno) ||
+    getFirstString(row.apellidoMaterno) ||
+    getFirstString(row.segundoApellido)
+  const name =
+    getFirstString(row.nombreCompleto) ||
+    getFirstString(row.nombre_completo) ||
+    [firstName, lastName, secondLastName].filter(Boolean).join(' ').trim()
+  const title =
+    getFirstString(row.titulo) ||
+    getFirstString(row.profesion) ||
+    getFirstString(row.carrera) ||
+    getFirstString(row.nombreTitulo)
+  const institution =
+    getFirstString(row.institucion) ||
+    getFirstString(row.universidad) ||
+    getFirstString(row.escuela) ||
+    getFirstString(row.nombreInstitucion)
+  const issueDate =
+    getFirstString(row.fechaExpedicion) ||
+    getFirstString(row.fechaRegistro) ||
+    getFirstString(row.fecha)
+  const graduationYearValue =
+    row.anio ||
+    row.anioRegistro ||
+    row.year ||
+    (issueDate ? new Date(issueDate).getFullYear() : undefined)
+  const graduationYear = Number.isFinite(Number(graduationYearValue))
+    ? Number(graduationYearValue)
+    : undefined
+
   return {
-    found: false,
-    cedula: normalizedCedula,
-    status: 'not_found',
+    found: Boolean(name || title || institution),
+    cedula,
+    name: name || undefined,
+    firstName,
+    lastName,
+    secondLastName,
+    title,
+    institution,
+    graduationYear,
+    status: name || title || institution ? 'valid' : 'not_found',
+    specialty: title ? mapTitleToSpecialty(title) : undefined,
+    issueDate,
     verificationDate: new Date().toISOString(),
-  };
+  }
+}
+
+async function fetchFromSEP(cedula: string): Promise<CedulaSearchResult> {
+  const controller = new AbortController()
+  const timeout = setTimeout(() => controller.abort(), 3000)
+
+  try {
+    const response = await fetch(
+      `https://www.cedulaprofesional.sep.gob.mx/cedula/presidencia/indexAvanzada.action?json=true&cedula=${encodeURIComponent(cedula)}`,
+      {
+        signal: controller.signal,
+        headers: { Accept: 'application/json' },
+      }
+    )
+
+    clearTimeout(timeout)
+
+    if (!response.ok) throw new Error(`SEP API ${response.status}`)
+
+    const data = await response.json()
+    return mapSEPResponse(data, cedula)
+  } catch (error) {
+    clearTimeout(timeout)
+    console.warn('SEP lookup failed; routing to manual review:', error)
+    return {
+      found: false,
+      cedula,
+      status: 'not_found',
+      verificationDate: new Date().toISOString(),
+    }
+  }
 }
 
 /**
@@ -308,16 +337,14 @@ export async function storeVerificationResult(
     throw error;
   }
   
-  // Update doctor record with verification status
-  if (result.verified) {
-    await supabase
-      .from('doctors')
-      .update({
-        license_number: cedula,
-        updated_at: new Date().toISOString(),
-      })
-      .eq('id', doctorId);
-  }
+  await supabase
+    .from('doctors')
+    .update({
+      license_number: cedula,
+      status: 'pending',
+      updated_at: new Date().toISOString(),
+    })
+    .eq('id', doctorId);
 }
 
 /**

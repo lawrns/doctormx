@@ -8,6 +8,7 @@ import { stripe } from './stripe'
 import { sendPaymentReceipt } from './notifications'
 import { sendPaymentReceipt as sendWhatsAppReceipt, getPatientPhone, getDoctorName } from './whatsapp-notifications'
 import { logger } from '@/lib/observability/logger'
+import { ensureVideoRoomForAppointment } from '@/lib/video/videoService'
 
 export type PaymentRequest = {
   appointmentId: string
@@ -179,6 +180,10 @@ async function confirmAppointment(appointmentId: string) {
     .single()
 
   if (error) throw error
+
+  ensureVideoRoomForAppointment(supabase, appointmentId).catch((err: unknown) => {
+    logger.error('Failed to create video room after payment confirmation:', { error: err, appointmentId })
+  })
 
   return data
 }

@@ -4,11 +4,11 @@
 // Process: Verify payment → Calculate fees → Transfer to doctor → Record everything
 // Output: Complete payment record with fee breakdown
 
-import { createClient, createServiceClient } from '@/lib/supabase/server'
-import { stripe } from './stripe'
-import { calculatePlatformFee, calculateDoctorNetAmount, calculateFeeBreakdown } from './platform-fees'
-import { SUBSCRIPTION_PLANS, type SubscriptionTier } from './subscription-types'
+import { createServiceClient } from '@/lib/supabase/server'
+import { calculatePlatformFee, calculateDoctorNetAmount } from './platform-fees'
+import { type SubscriptionTier } from './subscription-types'
 import { logger } from '@/lib/observability/logger'
+import { ensureVideoRoomForAppointment } from '@/lib/video/videoService'
 
 export interface PaymentWithFees {
   paymentId: string
@@ -71,7 +71,7 @@ export async function confirmPaymentWithFees(
     }
 
     // 3. Get doctor's subscription tier
-    const { data: subscription, error: subError } = await supabase
+    const { data: subscription } = await supabase
       .from('doctor_subscriptions')
       .select('tier')
       .eq('doctor_id', doctor.id)
@@ -86,7 +86,7 @@ export async function confirmPaymentWithFees(
     const doctorNet = calculateDoctorNetAmount(grossAmount, tier)
 
     // 5. Record platform fee
-    const { data: feeRecord, error: feeError } = await supabase
+    const { error: feeError } = await supabase
       .from('platform_fees')
       .insert({
         payment_id: payment.id,
@@ -138,6 +138,10 @@ export async function confirmPaymentWithFees(
       .from('appointments')
       .update({ status: 'confirmed' })
       .eq('id', appointmentId)
+
+    ensureVideoRoomForAppointment(supabase, appointmentId).catch((error) => {
+      logger.error('Failed to create video room after payment:', { error, appointmentId })
+    })
 
     // 8. Update payment status
     await supabase

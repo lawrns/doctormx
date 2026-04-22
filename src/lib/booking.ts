@@ -14,6 +14,7 @@ export type ReservationRequest = {
   doctorId: string
   date: string // YYYY-MM-DD
   time: string // HH:MM
+  appointmentType?: 'in_person' | 'video'
 }
 
 export type ReservationResult = {
@@ -84,6 +85,8 @@ async function createAppointmentRecord(request: ReservationRequest) {
       start_ts: startTs.toISOString(),
       end_ts: endTs.toISOString(),
       status: STATUS.APPOINTMENT.PENDING_PAYMENT, // Pago inmediato, sin hold
+      appointment_type: request.appointmentType || 'video',
+      video_status: request.appointmentType === 'in_person' ? null : 'pending',
     })
     .select()
     .single()

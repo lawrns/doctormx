@@ -5,11 +5,6 @@
 
 import { createServiceClient } from '@/lib/supabase/server'
 import { formatCurrency } from '@/lib/utils'
-import { sendWhatsAppMessage, sendTemplateMessage } from './whatsapp-business-api'
-
-const TWILIO_ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID!
-const TWILIO_AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN!
-const TWILIO_WHATSAPP_NUMBER = process.env.TWILIO_WHATSAPP_NUMBER || 'whatsapp:+14155238886'
 
 export type NotificationTemplate =
   | 'appointment_confirmation'
@@ -19,6 +14,7 @@ export type NotificationTemplate =
   | 'follow_up_7d'
   | 'prescription_ready'
   | 'doctor_available'
+  | 'subscription_payment_failed'
 
 interface NotificationContext {
   patientName?: string
@@ -30,26 +26,6 @@ interface NotificationContext {
   currency?: string
   bookingLink?: string
   prescriptionLink?: string
-}
-
-interface TwilioMessage {
-  sid: string
-  status: string
-  to: string
-  from: string
-  body: string
-  dateCreated: string
-}
-
-function getWhatsAppPhone(phone: string): string {
-  const cleaned = phone.replace(/\D/g, '')
-  if (cleaned.startsWith('52') && cleaned.length === 12) {
-    return `whatsapp:+${cleaned}`
-  }
-  if (cleaned.length === 10) {
-    return `whatsapp:+52${cleaned}`
-  }
-  return `whatsapp:+${cleaned}`
 }
 
 function formatTemplate(template: NotificationTemplate, ctx: NotificationContext): string {
@@ -87,6 +63,19 @@ Hemos recibido tu pago por ${ctx.price || 'monto'} ${ctx.currency || 'MXN'}.
 • Referencia: ${ctx.bookingLink?.slice(-8).toUpperCase() || 'N/A'}
 
 Tu cita está confirmada. Te recordamos llegar 5 minutos antes.
+
+— *Doctor.mx: Tu salud, simplificada*`
+
+    case 'subscription_payment_failed':
+      return `⚠️ *Pago no procesado - Doctor.mx*
+
+Hola${ctx.patientName ? ` ${ctx.patientName}` : ''},
+
+No pudimos procesar el pago de tu suscripción.
+
+Tienes 3 días para actualizar tu método de pago antes de que tu perfil deje de aparecer en el directorio.
+
+Actualizar pago: ${ctx.bookingLink || 'https://doctory.mx/doctor/subscription'}
 
 — *Doctor.mx: Tu salud, simplificada*`
 
@@ -186,42 +175,6 @@ ${ctx.bookingLink || 'https://doctory.mx/doctors'}
 
     default:
       return 'Mensaje de Doctor.mx'
-  }
-}
-
-// LEGACY: Twilio implementation - kept for fallback
-async function sendTwilioWhatsApp(
-  to: string,
-  body: string
-): Promise<TwilioMessage | null> {
-  const url = `https://api.twilio.com/2010-04-01/Accounts/${TWILIO_ACCOUNT_SID}/Messages.json`
-
-  const auth = Buffer.from(`${TWILIO_ACCOUNT_SID}:${TWILIO_AUTH_TOKEN}`).toString('base64')
-
-  try {
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Basic ${auth}`,
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: new URLSearchParams({
-        From: TWILIO_WHATSAPP_NUMBER,
-        To: getWhatsAppPhone(to),
-        Body: body,
-      }),
-    })
-
-    if (!response.ok) {
-      const error = await response.text()
-      console.error('Twilio API error:', error)
-      return null
-    }
-
-    return await response.json() as TwilioMessage
-  } catch (error) {
-    console.error('Error sending WhatsApp message:', error)
-    return null
   }
 }
 

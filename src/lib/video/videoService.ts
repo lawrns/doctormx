@@ -24,6 +24,21 @@ export interface VideoCallConfig {
   domain: string
 }
 
+type SupabaseQuery = {
+  select(columns?: string): SupabaseQuery
+  update(values: Record<string, unknown>): SupabaseQuery
+  eq(column: string, value: unknown): SupabaseQuery
+  single(): Promise<{ data: unknown; error: { message: string } | null }>
+  then<TResult1 = { data: unknown; error: { message: string } | null }, TResult2 = never>(
+    onfulfilled?: ((value: { data: unknown; error: { message: string } | null }) => TResult1 | PromiseLike<TResult1>) | null,
+    onrejected?: ((reason: unknown) => TResult2 | PromiseLike<TResult2>) | null
+  ): PromiseLike<TResult1 | TResult2>
+}
+
+type SupabaseLike = {
+  from(table: string): SupabaseQuery
+}
+
 /**
  * Get Daily.co configuration from environment variables
  */
@@ -46,7 +61,7 @@ function getVideoConfig(): VideoCallConfig {
  */
 export async function createVideoRoom(options: CreateRoomOptions): Promise<VideoRoom> {
   const config = getVideoConfig()
-  const { appointmentId, patientId, doctorId, scheduledFor } = options
+  const { appointmentId, patientId, scheduledFor } = options
 
   // Generate a unique room name based on appointment ID
   const roomName = `apt-${appointmentId}`
@@ -81,7 +96,7 @@ export async function createVideoRoom(options: CreateRoomOptions): Promise<Video
       throw new Error(`Failed to create video room: ${JSON.stringify(error)}`)
     }
 
-    const roomData = await response.json()
+    await response.json()
 
     // Create the room URL
     const roomUrl = `https://${config.domain}/${roomName}`
@@ -177,7 +192,7 @@ export async function getJoinToken(
  * @param status - New video status
  */
 export async function updateVideoStatus(
-  supabase: any,
+  supabase: unknown,
   appointmentId: string,
   status: 'pending' | 'ready' | 'in_progress' | 'completed' | 'missed',
   additionalData?: {
@@ -186,7 +201,7 @@ export async function updateVideoStatus(
     consultationNotes?: string
   }
 ): Promise<void> {
-  const updateData: any = {
+  const updateData: Record<string, unknown> = {
     video_status: status,
   }
 
@@ -202,7 +217,8 @@ export async function updateVideoStatus(
     updateData.consultation_notes = additionalData.consultationNotes
   }
 
-  const { error } = await supabase
+  const client = supabase as SupabaseLike
+  const { error } = await client
     .from('appointments')
     .update(updateData)
     .eq('id', appointmentId)
@@ -211,6 +227,65 @@ export async function updateVideoStatus(
     console.error('[VideoService] Error updating video status:', error)
     throw new Error(`Failed to update video status: ${error.message}`)
   }
+}
+
+export async function ensureVideoRoomForAppointment(
+  supabase: unknown,
+  appointmentId: string
+): Promise<VideoRoom | null> {
+  const client = supabase as SupabaseLike
+  const { data: appointment, error } = await client
+    .from('appointments')
+    .select('id, patient_id, doctor_id, start_ts, appointment_type, video_room_url, video_room_id')
+    .eq('id', appointmentId)
+    .single()
+
+  const appointmentRecord = appointment as {
+    id: string
+    patient_id: string
+    doctor_id: string
+    start_ts: string
+    appointment_type?: string
+    video_room_url?: string | null
+    video_room_id?: string | null
+  } | null
+
+  if (error || !appointmentRecord || appointmentRecord.appointment_type !== 'video') {
+    return null
+  }
+
+  if (appointmentRecord.video_room_url && appointmentRecord.video_room_id) {
+    return {
+      roomId: appointmentRecord.video_room_id,
+      roomUrl: appointmentRecord.video_room_url,
+      token: '',
+      expiresAt: new Date(new Date(appointmentRecord.start_ts).getTime() + 2 * 60 * 60 * 1000),
+    }
+  }
+
+  const videoRoom = await createVideoRoom({
+    appointmentId: appointmentRecord.id,
+    patientId: appointmentRecord.patient_id,
+    doctorId: appointmentRecord.doctor_id,
+    scheduledFor: new Date(appointmentRecord.start_ts),
+  })
+
+  const { error: updateError } = await client
+    .from('appointments')
+    .update({
+      video_room_url: videoRoom.roomUrl,
+      video_room_id: videoRoom.roomId,
+      video_token: videoRoom.token,
+      video_status: 'ready',
+      updated_at: new Date().toISOString(),
+    })
+    .eq('id', appointmentId)
+
+  if (updateError) {
+    throw new Error(`Failed to store video room: ${updateError.message}`)
+  }
+
+  return videoRoom
 }
 
 /**
