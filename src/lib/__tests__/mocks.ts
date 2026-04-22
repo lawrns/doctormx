@@ -41,7 +41,7 @@ export const mockDoctor: Doctor = {
 }
 
 export const createMockAppointment = (overrides: Partial<Appointment> = {}): Appointment => ({
-  id: 'test-appointment-id',
+  id: 'appointment-1',
   patient_id: 'test-patient-id',
   doctor_id: 'test-doctor-id',
   service_id: null,
@@ -56,7 +56,7 @@ export const createMockAppointment = (overrides: Partial<Appointment> = {}): App
 
 export const createMockPayment = (overrides: Partial<Payment> = {}): Payment => ({
   id: 'test-payment-id',
-  appointment_id: 'test-appointment-id',
+  appointment_id: 'appointment-1',
   provider: 'stripe',
   provider_ref: 'pi_test123',
   amount_cents: 50000,
@@ -82,31 +82,35 @@ export const createMockReview = (overrides: Partial<Review> = {}): Review => ({
   ...overrides,
 })
 
+export function createSupabaseTableMock(table: string) {
+  const dataByTable: Record<string, unknown> = {
+    appointment_holds: { id: 'test-hold-id' },
+    appointments: createMockAppointment({ id: 'appointment-1' }),
+    payments: createMockPayment({ appointment_id: 'appointment-1', provider_ref: 'pi_test123' }),
+  }
+  const result = { data: dataByTable[table] ?? null, error: null }
+
+  const chain = {
+    select: vi.fn().mockReturnThis(),
+    update: vi.fn().mockReturnThis(),
+    insert: vi.fn().mockReturnThis(),
+    delete: vi.fn().mockReturnThis(),
+    eq: vi.fn().mockReturnThis(),
+    gte: vi.fn().mockReturnThis(),
+    lte: vi.fn().mockReturnThis(),
+    lt: vi.fn().mockReturnThis(),
+    order: vi.fn().mockResolvedValue({ data: [], error: null }),
+    range: vi.fn().mockResolvedValue({ data: [], error: null }),
+    single: vi.fn().mockResolvedValue(result),
+    maybeSingle: vi.fn().mockResolvedValue(result),
+    then: vi.fn().mockImplementation((onFulfilled) => Promise.resolve({ error: null }).then(onFulfilled)),
+  }
+
+  return chain
+}
+
 export const mockSupabaseClient = {
-  from: vi.fn().mockReturnValue({
-    select: vi.fn().mockReturnValue({
-      eq: vi.fn().mockReturnValue({
-        single: vi.fn().mockResolvedValue({ data: null, error: null }),
-        order: vi.fn().mockResolvedValue({ data: [], error: null }),
-        range: vi.fn().mockResolvedValue({ data: [], error: null }),
-      }),
-      insert: vi.fn().mockReturnValue({
-        select: vi.fn().mockReturnValue({
-          single: vi.fn().mockResolvedValue({ data: {}, error: null }),
-        }),
-      }),
-      update: vi.fn().mockReturnValue({
-        eq: vi.fn().mockReturnValue({
-          select: vi.fn().mockReturnValue({
-            single: vi.fn().mockResolvedValue({ data: {}, error: null }),
-          }),
-        }),
-      }),
-      delete: vi.fn().mockReturnValue({
-        eq: vi.fn().mockResolvedValue({ error: null }),
-      }),
-    }),
-  }),
+  from: vi.fn(createSupabaseTableMock),
   storage: {
     from: vi.fn().mockReturnValue({
       upload: vi.fn().mockResolvedValue({ error: null }),
@@ -120,8 +124,16 @@ export const mockStripePaymentIntent = {
   id: 'pi_test123',
   client_secret: 'pi_test123_secret_abc',
   amount: 50000,
+  amount_received: 50000,
   currency: 'mxn',
   status: 'requires_payment_method',
+  metadata: {
+    appointmentId: 'appointment-1',
+    doctorId: 'test-doctor-id',
+    patientId: 'test-patient-id',
+    amountCents: '50000',
+    currency: 'MXN',
+  },
 }
 
 export const mockStripePaymentIntentSucceeded = {

@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import { mockSupabaseClient, mockStripePaymentIntent, mockStripePaymentIntentSucceeded, createMockAppointment } from '@/lib/__tests__/mocks'
+import { mockSupabaseClient, mockStripePaymentIntent, mockStripePaymentIntentSucceeded, createMockAppointment, createSupabaseTableMock } from '@/lib/__tests__/mocks'
 
 function createDeleteRangeChain() {
   return {
@@ -65,6 +65,7 @@ vi.mock('@/lib/cache', () => ({
     set: vi.fn().mockResolvedValue(true),
     getDoctorProfile: vi.fn().mockResolvedValue(null),
     setDoctorProfile: vi.fn().mockResolvedValue(true),
+    invalidateAvailability: vi.fn().mockResolvedValue(true),
   },
 }))
 
@@ -82,7 +83,7 @@ describe('Booking Flow Integration', () => {
   })
 
   afterEach(() => {
-    vi.restoreAllMocks()
+    vi.clearAllMocks()
   })
 
   describe('Complete Booking Flow', () => {
@@ -157,12 +158,27 @@ describe('Booking Flow Integration', () => {
                   single: vi.fn().mockResolvedValue({ data: { id: 'payment-1' }, error: null }),
                 }),
               }),
+              select: vi.fn().mockReturnValue({
+                eq: vi.fn().mockReturnValue({
+                  single: vi.fn().mockResolvedValue({
+                    data: {
+                      id: 'payment-1',
+                      appointment_id: mockAppointment.id,
+                      provider_ref: mockStripePaymentIntent.id,
+                      amount_cents: 50000,
+                      currency: 'MXN',
+                      status: 'pending',
+                    },
+                    error: null,
+                  }),
+                }),
+              }),
               update: vi.fn().mockReturnValue({
                 eq: vi.fn().mockResolvedValue({ error: null }),
               }),
             }
           }
-          return mockSupabaseClient.from(table)
+          return createSupabaseTableMock(table)
         }),
       }
 
@@ -318,12 +334,15 @@ describe('Booking Flow Integration', () => {
               }),
             }
           }
+          if (table === 'appointment_holds') {
+            return createSupabaseTableMock(table)
+          }
           if (table === 'slot_locks') {
             return {
               delete: vi.fn().mockReturnValue(createDeleteRangeChain()),
             }
           }
-          return mockSupabaseClient.from(table)
+          return createSupabaseTableMock(table)
         }),
       }
 

@@ -40,7 +40,6 @@ export interface ReferralSummary {
 function baseShareUrl(): string {
   const url =
     process.env.NEXT_PUBLIC_APP_URL ||
-    process.env.VITE_PUBLIC_APP_URL ||
     'https://doctor.mx'
   return url.replace(/\/$/, '')
 }

@@ -66,7 +66,7 @@ export const AI_CONFIG = {
 
   // OpenAI — Whisper transcription only (not used for chat/analysis)
   openai: {
-    apiKey: process.env.OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY || '',
+    apiKey: process.env.OPENAI_API_KEY || '',
     model: 'gpt-4o-mini',
     temperature: 0.3,
     maxTokens: 500,
@@ -74,7 +74,7 @@ export const AI_CONFIG = {
 
   // Whisper — Audio transcription (still uses OpenAI)
   whisper: {
-    apiKey: process.env.OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY || '',
+    apiKey: process.env.OPENAI_API_KEY || '',
     model: 'whisper-1',
     language: 'es', // Spanish default
     responseFormat: 'json' as const,

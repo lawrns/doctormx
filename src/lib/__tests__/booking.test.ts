@@ -18,29 +18,29 @@ const createMockAppointment = (overrides: Partial<Appointment> = {}): Appointmen
 })
 
 const mockSupabaseClient = {
-  from: vi.fn().mockReturnValue({
-    select: vi.fn().mockReturnValue({
-      eq: vi.fn().mockReturnValue({
-        single: vi.fn().mockResolvedValue({ data: null, error: null }),
-        order: vi.fn().mockResolvedValue({ data: [], error: null }),
-        range: vi.fn().mockResolvedValue({ data: [], error: null }),
-      }),
-      insert: vi.fn().mockReturnValue({
-        select: vi.fn().mockReturnValue({
-          single: vi.fn().mockResolvedValue({ data: {}, error: null }),
-        }),
-      }),
-      update: vi.fn().mockReturnValue({
-        eq: vi.fn().mockReturnValue({
-          select: vi.fn().mockReturnValue({
-            single: vi.fn().mockResolvedValue({ data: {}, error: null }),
-          }),
-        }),
-      }),
-      delete: vi.fn().mockReturnValue({
-        eq: vi.fn().mockResolvedValue({ error: null }),
-      }),
-    }),
+  from: vi.fn().mockImplementation((table: string) => {
+    const result =
+      table === 'appointment_holds'
+        ? { data: { id: 'test-hold-id' }, error: null }
+        : { data: null, error: null }
+
+    const chain = {
+      select: vi.fn().mockReturnThis(),
+      update: vi.fn().mockReturnThis(),
+      insert: vi.fn().mockReturnThis(),
+      delete: vi.fn().mockReturnThis(),
+      eq: vi.fn().mockReturnThis(),
+      gte: vi.fn().mockReturnThis(),
+      lte: vi.fn().mockReturnThis(),
+      lt: vi.fn().mockReturnThis(),
+      order: vi.fn().mockResolvedValue({ data: [], error: null }),
+      range: vi.fn().mockResolvedValue({ data: [], error: null }),
+      single: vi.fn().mockResolvedValue(result),
+      maybeSingle: vi.fn().mockResolvedValue(result),
+      then: vi.fn().mockImplementation((onFulfilled) => Promise.resolve({ error: null }).then(onFulfilled)),
+    }
+
+    return chain
   }),
   storage: {
     from: vi.fn().mockReturnValue({
@@ -88,7 +88,7 @@ describe('Booking System', () => {
   })
 
   afterEach(() => {
-    vi.restoreAllMocks()
+    vi.clearAllMocks()
   })
 
   describe('Appointment Reservation', () => {
@@ -121,6 +121,19 @@ describe('Booking System', () => {
                     },
                     error: null,
                   }),
+                }),
+              }),
+            }
+          }
+          if (table === 'appointment_holds') {
+            return {
+              update: vi.fn().mockReturnValue({
+                eq: vi.fn().mockReturnThis(),
+                lt: vi.fn().mockResolvedValue({ error: null }),
+              }),
+              insert: vi.fn().mockReturnValue({
+                select: vi.fn().mockReturnValue({
+                  single: vi.fn().mockResolvedValue({ data: { id: 'test-hold-id' }, error: null }),
                 }),
               }),
             }

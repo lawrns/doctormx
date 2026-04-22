@@ -7,6 +7,7 @@ interface MockQuery {
   eq: (col: string, val: unknown) => MockQuery;
   gte: (col: string, val: unknown) => MockQuery;
   lte: (col: string, val: unknown) => MockQuery;
+  lt: (col: string, val: unknown) => MockQuery;
   in: (col: string, val: unknown[]) => MockQuery;
   order: (col: string, options?: unknown) => MockQuery;
   limit: (count: number) => MockQuery;
@@ -25,6 +26,7 @@ const createMockQuery = (data: unknown = [], error: unknown = null): MockQuery =
     eq: vi.fn().mockReturnThis(),
     gte: vi.fn().mockReturnThis(),
     lte: vi.fn().mockReturnThis(),
+    lt: vi.fn().mockReturnThis(),
     in: vi.fn().mockReturnThis(),
     order: vi.fn().mockReturnThis(),
     limit: vi.fn().mockReturnThis(),
@@ -128,16 +130,10 @@ describe('Phase 1: Unit Tests', () => {
     const aptData = { id: 'apt-1', doctor_id: 'doc-1', start_ts: new Date().toISOString(), end_ts: new Date().toISOString() }
     const payData = { id: 'pay-1' }
 
-    const lockReleaseQuery = {
-      eq: vi.fn().mockReturnThis(),
-      gte: vi.fn().mockReturnThis(),
-      lte: vi.fn().mockResolvedValue({ error: null }),
-    }
-
     const mockFrom = vi.fn()
       .mockReturnValueOnce(createMockQuery(aptData))
       .mockReturnValueOnce(createMockQuery())
-      .mockReturnValueOnce({ delete: vi.fn().mockReturnValue(lockReleaseQuery) })
+      .mockReturnValueOnce(createMockQuery())
       .mockReturnValueOnce(createMockQuery(payData))
       .mockReturnValueOnce(createMockQuery())
 
@@ -163,8 +159,20 @@ describe('Phase 1: Unit Tests', () => {
     vi.mocked(getAvailableSlots).mockResolvedValue(['09:30'])
 
     const mockAppointment = { id: 'apt-1', status: 'pending_payment' }
+    const mockDoctor = {
+      status: 'approved',
+      is_listed: true,
+      office_address: 'Av. Reforma 123',
+      offers_video: true,
+      offers_in_person: true,
+    }
+    const mockHold = { id: 'hold-1' }
     const mockFrom = vi.fn()
+      .mockReturnValueOnce(createMockQuery(mockDoctor))
+      .mockReturnValueOnce(createMockQuery())
+      .mockReturnValueOnce(createMockQuery(mockHold))
       .mockReturnValueOnce(createMockQuery(mockAppointment))
+      .mockReturnValueOnce(createMockQuery())
       .mockReturnValueOnce(createMockQuery({ email: 't@t.com' }))
       .mockReturnValueOnce(createMockQuery({ id: 'a1', start_ts: new Date().toISOString(), doctor: { profile: { full_name: 'D' } } }))
       .mockReturnValueOnce(createMockQuery({ full_name: 'P', phone: '+525511111111' }))

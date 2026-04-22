@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import { mockSupabaseClient, mockStripePaymentIntent, mockStripePaymentIntentSucceeded, mockStripeRefund, createMockAppointment, createMockPayment } from '@/lib/__tests__/mocks'
+import { mockSupabaseClient, mockStripePaymentIntent, mockStripePaymentIntentSucceeded, mockStripeRefund, createMockAppointment, createMockPayment, createSupabaseTableMock } from '@/lib/__tests__/mocks'
 
 function createEqSingleChain<T>(result: { data: T; error: unknown }) {
   return {
@@ -69,7 +69,7 @@ describe('Payment Flow Integration', () => {
   })
 
   afterEach(() => {
-    vi.restoreAllMocks()
+    vi.clearAllMocks()
   })
 
   describe('Complete Payment Flow', () => {
@@ -85,6 +85,10 @@ describe('Payment Flow Integration', () => {
             return {
               select: vi.fn().mockReturnValue({
                 eq: vi.fn().mockReturnValue({
+                  single: vi.fn().mockResolvedValue({
+                    data: createMockAppointment({ id: 'appointment-1' }),
+                    error: null,
+                  }),
                   eq: vi.fn().mockReturnValue({
                     single: vi.fn().mockResolvedValue({ 
                       data: { 
@@ -128,7 +132,7 @@ describe('Payment Flow Integration', () => {
               }),
             }
           }
-          return mockSupabaseClient.from(table)
+          return createSupabaseTableMock(table)
         }),
       }
 
@@ -191,12 +195,15 @@ describe('Payment Flow Integration', () => {
               }),
             }
           }
+          if (table === 'appointment_holds') {
+            return createSupabaseTableMock(table)
+          }
           if (table === 'slot_locks') {
             return {
               delete: vi.fn().mockReturnValue(createDeleteRangeChain()),
             }
           }
-          return mockSupabaseClient.from(table)
+          return createSupabaseTableMock(table)
         }),
       }
 
@@ -292,6 +299,14 @@ describe('Payment Flow Integration', () => {
         from: vi.fn().mockImplementation((table) => {
           if (table === 'payments') {
             return {
+              select: vi.fn().mockReturnValue({
+                eq: vi.fn().mockReturnValue({
+                  single: vi.fn().mockResolvedValue({
+                    data: createMockPayment({ appointment_id: 'appointment-1', provider_ref: 'pi_test123' }),
+                    error: null,
+                  }),
+                }),
+              }),
               update: vi.fn().mockReturnValue({
                 eq: vi.fn().mockResolvedValue({ error: null }),
               }),
@@ -299,10 +314,18 @@ describe('Payment Flow Integration', () => {
           }
           if (table === 'appointments') {
             return {
+              select: vi.fn().mockReturnValue({
+                eq: vi.fn().mockReturnValue({
+                  single: vi.fn().mockResolvedValue({
+                    data: createMockAppointment({ id: 'appointment-1' }),
+                    error: null,
+                  }),
+                }),
+              }),
               update: vi.fn().mockReturnValue(createUpdateSelectSingleChain({ data: createMockAppointment({ status: 'confirmed' }), error: null })),
             }
           }
-          return mockSupabaseClient.from(table)
+          return createSupabaseTableMock(table)
         }),
       }
 

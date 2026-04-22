@@ -100,15 +100,13 @@ function createFallbackSupabaseClient() {
   }
 }
 
-// Helper to get Supabase URL from either standard or VITE_ prefixed env vars
 function getSupabaseUrl(): string | null {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.VITE_SUPABASE_URL
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
   return url || null
 }
 
-// Helper to get Supabase anon key from either standard or VITE_ prefixed env vars
 function getSupabaseAnonKey(): string | null {
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.VITE_SUPABASE_ANON_KEY
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   return key || null
 }
 
@@ -154,7 +152,7 @@ export async function createClient() {
 // Service role client for server-side operations that bypass RLS
 export function createServiceClient() {
   const supabaseUrl = getSupabaseUrl()
-  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.VITE_SUPABASE_SERVICE_ROLE_KEY
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY
   
   if (!supabaseUrl || !serviceRoleKey) {
     return createFallbackSupabaseClient() as unknown as ReturnType<

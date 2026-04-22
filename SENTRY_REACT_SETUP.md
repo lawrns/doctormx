@@ -3,9 +3,8 @@
 ## Installation Status
 
 ✅ Sentry React SDK installed
-✅ Sentry Vite Plugin installed
 ✅ Configuration files created
-✅ Import added to index.tsx
+✅ Next.js sourcemap upload scripts configured
 
 ## One-Time Manual Step Required
 
@@ -47,8 +46,8 @@ Already created with sensible defaults:
 - Sensitive data filtering
 - Development mode filtering
 
-### `vite.config.js`
-Updated with Sentry plugin for automatic sourcemap uploads.
+### `package.json`
+Configured with release, sourcemap upload, finalize, and deploy scripts that upload `.next` sourcemaps.
 
 ## Environment Variables
 
@@ -56,7 +55,6 @@ Add to your `.env` file:
 ```bash
 # Sentry
 SENTRY_AUTH_TOKEN=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
-VITE_APP_VERSION=0.1.0
 ```
 
 ## Usage
@@ -65,7 +63,7 @@ VITE_APP_VERSION=0.1.0
 Sentry is automatically disabled in development mode.
 
 ### Production
-Errors are automatically captured and sent to Sentry when `import.meta.env.MODE === "production"`.
+Errors are captured in production builds when Sentry is initialized with a valid DSN.
 
 ### Manual Error Reporting
 ```typescript
@@ -110,7 +108,7 @@ transaction.finish();
 
 ## Build & Deploy
 
-The Sentry plugin automatically:
+The Sentry scripts:
 1. Creates a new release on build
 2. Uploads sourcemaps
 3. Associates commits (if git is available)
@@ -138,12 +136,12 @@ throw new Error("Sentry test");
 ## Troubleshooting
 
 ### No events appearing
-1. Check you're in production mode (`import.meta.env.MODE === "production"`)
+1. Check you're running a production build
 2. Verify DSN is correct in `sentry.config.ts`
 3. Check browser console for errors
 
 ### Sourcemaps not working
-1. Ensure `sourcemap: true` in `vite.config.js`
+1. Ensure `npm run build` completed and `.next` sourcemaps exist
 2. Check `SENTRY_AUTH_TOKEN` is set
 3. Verify project slug in `.sentryclirc` matches dashboard
 

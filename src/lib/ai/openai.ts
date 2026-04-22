@@ -17,7 +17,7 @@ import { logger } from '@/lib/observability/logger'
 
 // OpenAI Client
 export const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY || '',
+  apiKey: process.env.OPENAI_API_KEY || '',
   timeout: 15000, // 15s timeout for serverless environments
 })
 
@@ -45,7 +45,7 @@ export type OpenAIModel = typeof OPENAI_CONFIG.models[keyof typeof OPENAI_CONFIG
  * Check if OpenAI is configured
  */
 export function isOpenAIConfigured(): boolean {
-  return !!(process.env.OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY)
+  return !!process.env.OPENAI_API_KEY
 }
 
 /**

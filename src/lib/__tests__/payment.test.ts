@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import * as fc from 'fast-check'
-import { mockSupabaseClient, createMockAppointment, createMockPayment, mockStripePaymentIntent } from './mocks'
+import { mockSupabaseClient, createMockAppointment, createMockPayment, createSupabaseTableMock, mockStripePaymentIntent } from './mocks'
 import { createClient } from '@/lib/supabase/server'
 import { stripe } from '@/lib/stripe'
 import type { PaymentRequest } from '@/lib/payment'
@@ -47,7 +47,7 @@ describe('Payment System', () => {
   })
 
   afterEach(() => {
-    vi.restoreAllMocks()
+    vi.clearAllMocks()
   })
 
   describe('Payment Creation', () => {
@@ -148,6 +148,14 @@ describe('Payment System', () => {
         from: vi.fn().mockImplementation((table) => {
           if (table === 'payments') {
             return {
+              select: vi.fn().mockReturnValue({
+                eq: vi.fn().mockReturnValue(
+                  createSingleChain({
+                    data: createMockPayment({ appointment_id: 'appointment-1', provider_ref: 'pi_test123' }),
+                    error: null,
+                  })
+                ),
+              }),
               update: vi.fn().mockReturnValue({
                 eq: vi.fn().mockResolvedValue({ error: null }),
               }),
@@ -155,6 +163,11 @@ describe('Payment System', () => {
           }
           if (table === 'appointments') {
             return {
+              select: vi.fn().mockReturnValue({
+                eq: vi.fn().mockReturnValue(
+                  createSingleChain({ data: createMockAppointment({ id: 'appointment-1' }), error: null })
+                ),
+              }),
               update: vi.fn().mockReturnValue({
                 eq: vi.fn().mockReturnValue({
                   select: vi.fn().mockReturnValue({
@@ -164,7 +177,7 @@ describe('Payment System', () => {
               }),
             }
           }
-          return mockSupabaseClient.from(table)
+          return createSupabaseTableMock(table)
         }),
       }
 
@@ -211,6 +224,9 @@ describe('Payment System', () => {
               }),
             }
           }
+          if (table === 'appointment_holds') {
+            return createSupabaseTableMock(table)
+          }
           if (table === 'payments') {
             return {
               select: vi.fn().mockReturnValue({
@@ -234,7 +250,7 @@ describe('Payment System', () => {
               }),
             }
           }
-          return mockSupabaseClient.from(table)
+          return createSupabaseTableMock(table)
         }),
       }
 
