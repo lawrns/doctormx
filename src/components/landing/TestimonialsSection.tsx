@@ -50,31 +50,24 @@ export function TestimonialsSection() {
 
   return (
     <section className="relative overflow-hidden bg-card py-16 sm:py-20">
-      {/* Subtle background orb */}
-      <div
-        className="absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#eef4ff]/40 blur-3xl"
-        aria-hidden="true"
-      />
-
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
-          className="mb-10 text-center"
+          className="mb-10 max-w-3xl"
         >
-          <Eyebrow className="mb-4 justify-center">Historias reales</Eyebrow>
+          <Eyebrow className="mb-4">Historias reales</Eyebrow>
           <h2 className="font-display text-[clamp(2rem,4vw,3.5rem)] font-bold leading-[1.02] tracking-[-0.02em] text-[#0a1533]">
-            Pacientes y doctores{' '}
-            <em className="font-serif italic font-normal text-[#1a3ab8]">confían en nosotros</em>
+            Experiencias que muestran dónde aporta Doctor.mx.
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-[15px] leading-[1.5] text-[#5c6783]">
-            Más de 10,000 consultas realizadas con un 98% de satisfacción
+          <p className="mt-4 max-w-xl text-[15px] leading-[1.5] text-[#5c6783]">
+            Testimonios enfocados en velocidad, preparación clínica y continuidad con médicos humanos.
           </p>
         </motion.div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-[1.1fr_0.9fr] lg:grid-cols-[1.1fr_0.9fr_1fr]">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
@@ -88,7 +81,7 @@ export function TestimonialsSection() {
               }}
             >
               <Card
-                className="relative h-full border-[#e3e6ee]/80 bg-gradient-to-b from-white to-[#f7f8fb] p-8 shadow-[0_16px_40px_rgba(15,37,95,0.08)] transition-shadow duration-300 hover:shadow-[0_22px_56px_rgba(15,37,95,0.12)] focus-within:ring-2 focus-within:ring-[#3a66f5] focus-within:ring-offset-2"
+                className="relative h-full border-[#e3e6ee]/80 bg-card p-8 shadow-[0_1px_2px_rgba(15,37,95,0.06)] transition-transform duration-300 hover:-translate-y-0.5 focus-within:ring-2 focus-within:ring-[#3a66f5] focus-within:ring-offset-2"
                 tabIndex={0}
                 role="article"
                 aria-label={`Testimonio de ${testimonial.name}`}

@@ -13,6 +13,7 @@ import {
 import { sharedHeaderNavItems } from '@/lib/public-nav'
 import { cn } from '@/lib/utils'
 import { useState, useEffect } from 'react'
+import { DoctorMxLogo } from '@/components/brand/DoctorMxLogo'
 
 interface HeaderProps {
   variant?: 'default' | 'transparent'
@@ -43,25 +44,12 @@ export function Header({ variant = 'default', showAuth = true }: HeaderProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 rounded focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2" aria-label="Doctor.mx - Inicio">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <svg
-                className="w-5 h-5 text-primary-foreground"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                />
-              </svg>
-            </div>
-            <span className="text-xl font-bold text-foreground">
-              Doctor.mx
-            </span>
+          <Link
+            href="/"
+            className="rounded-lg transition-transform active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2"
+            aria-label="Doctor.mx - Inicio"
+          >
+            <DoctorMxLogo showDescriptor />
           </Link>
 
           {/* Navigation */}

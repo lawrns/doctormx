@@ -8,8 +8,8 @@ import { BadgeCheck, Video, Calendar, FileText, Shield, MessageSquare } from 'lu
 const features = [
   {
     icon: BadgeCheck,
-    title: 'Doctores con cédula verificada',
-    description: 'Cada especialista está validado con su cédula profesional ante la SEP. Consulta perfiles completos antes de agendar.',
+    title: 'Doctores revisados antes de listar',
+    description: 'Cada especialista pasa por revisión interna de perfil y credenciales antes de recibir pacientes desde la plataforma.',
   },
   {
     icon: Video,
@@ -29,7 +29,7 @@ const features = [
   {
     icon: Shield,
     title: 'Privacidad de grado médico',
-    description: 'Encriptación punto a punto y cumplimiento con normativas mexicanas de protección de datos de salud.',
+    description: 'Tratamos la información de salud como sensible y limitamos su exposición dentro de los flujos de consulta.',
   },
   {
     icon: MessageSquare,
@@ -57,23 +57,20 @@ export function FeaturesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
-          className="mb-10 text-center"
+          className="mb-10 max-w-3xl"
         >
           <div id="features-section-heading">
-            <Eyebrow className="mb-4 justify-center">Plataforma</Eyebrow>
+            <Eyebrow className="mb-4">Plataforma</Eyebrow>
             <h2 className="font-display text-[clamp(2rem,4vw,3.5rem)] font-bold leading-[1.02] tracking-[-0.02em] text-[#0a1533]">
-              Salud digital,{' '}
-              <em className="font-serif italic font-normal text-[#1a3ab8]">
-                atención humana
-              </em>
+              Salud digital con puntos de control humanos.
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-[1.5] text-[#5c6783]">
+            <p className="mt-4 max-w-2xl text-[15px] leading-[1.5] text-[#5c6783]">
               Una plataforma diseñada para conectarte con especialistas mexicanos certificados, de forma rápida, segura y privada.
             </p>
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
@@ -87,7 +84,7 @@ export function FeaturesSection() {
               }}
             >
               <Card
-                className="group h-full overflow-hidden border-[#e3e6ee]/80 bg-card p-5 shadow-[0_1px_2px_rgba(15,37,95,0.06)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_4px_14px_rgba(15,37,95,0.1)]"
+                className="group h-full overflow-hidden border-[#e3e6ee]/80 bg-card p-5 shadow-[0_1px_2px_rgba(15,37,95,0.06)] transition-transform duration-200 hover:-translate-y-0.5"
                 role="article"
                 aria-label={feature.title}
               >

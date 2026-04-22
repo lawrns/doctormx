@@ -2,124 +2,134 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight, ShieldCheck, Users, Clock } from 'lucide-react'
-import { useReducedMotion } from '@/hooks/useReducedMotion'
+import { ArrowRight, CalendarCheck, CreditCard, Search, ShieldCheck, Stethoscope, Video } from 'lucide-react'
 import { Eyebrow } from '@/components/Eyebrow'
 import { DxButton } from '@/components/DxButton'
-import PatientFlowHyperframe from './PatientFlowHyperframe'
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1, delayChildren: 0.05 },
-  },
-}
+const flowSteps = [
+  { label: 'Síntomas', value: 'Dolor de garganta y fiebre', icon: Stethoscope },
+  { label: 'Triage', value: 'Sin datos de emergencia', icon: ShieldCheck },
+  { label: 'Doctor', value: 'Medicina general disponible hoy', icon: Video },
+  { label: 'Pago', value: '$499 MXN retenidos al reservar', icon: CreditCard },
+]
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.45, ease: 'easeOut' as const },
-  },
+function ConversionPreview() {
+  return (
+    <div className="rounded-2xl border border-border bg-card shadow-[0_24px_70px_-42px_rgba(15,37,95,0.45)]">
+      <div className="border-b border-border p-4 sm:p-5">
+        <div className="flex items-center justify-between gap-4">
+          <div>
+            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+              Flujo en vivo
+            </p>
+            <h2 className="mt-1 text-base font-semibold tracking-tight text-ink">
+              De síntomas a consulta pagada
+            </h2>
+          </div>
+          <span className="rounded-full border border-vital/20 bg-vital/10 px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-vital">
+            24/7
+          </span>
+        </div>
+      </div>
+
+      <div className="divide-y divide-border">
+        {flowSteps.map((step, index) => (
+          <motion.div
+            key={step.label}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.08, duration: 0.28, ease: [0.2, 0.7, 0.2, 1] }}
+            className="grid grid-cols-[2.25rem_1fr_auto] items-center gap-3 p-4 sm:p-5"
+          >
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-cobalt-50 text-cobalt-700">
+              <step.icon className="h-4 w-4" aria-hidden="true" />
+            </div>
+            <div>
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                {step.label}
+              </p>
+              <p className="mt-1 text-sm font-medium text-ink">{step.value}</p>
+            </div>
+            <span className="h-2 w-2 rounded-full bg-vital" aria-hidden="true" />
+          </motion.div>
+        ))}
+      </div>
+
+      <div className="grid gap-3 border-t border-border bg-background p-4 sm:grid-cols-[1fr_auto] sm:items-center sm:p-5">
+        <div>
+          <p className="text-sm font-semibold text-ink">Dra. Valeria Naranjo</p>
+          <p className="text-xs text-muted-foreground">Cédula revisada · 4:30 PM · Videoconsulta</p>
+        </div>
+        <Link
+          href="/doctors"
+          className="inline-flex h-10 items-center justify-center gap-2 rounded-lg bg-ink px-4 text-sm font-semibold text-primary-foreground active:scale-[0.98]"
+        >
+          Ver disponibilidad
+          <ArrowRight className="h-4 w-4" aria-hidden="true" />
+        </Link>
+      </div>
+    </div>
+  )
 }
 
 export function HeroSection() {
-  const prefersReducedMotion = useReducedMotion()
-
   return (
-    <section className="relative overflow-hidden bg-[#f7f8fb] pb-14 pt-10 lg:pb-20 lg:pt-16">
-      {/* Subtle noise texture */}
-      <div
-        className="absolute inset-0 -z-10 opacity-[0.10] mix-blend-multiply pointer-events-none"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.05 0 0 0 0 0.08 0 0 0 0 0.18 0 0 0 0.35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-        }}
-      />
-
-      {/* Single subtle orb — contained within section */}
-      {!prefersReducedMotion && (
-        <motion.div
-          className="absolute right-0 top-1/4 h-[400px] w-[400px] rounded-full bg-gradient-to-bl from-[#dbe7ff]/30 to-transparent blur-3xl"
-          animate={{ x: [0, -20, 0], y: [0, 15, 0] }}
-          transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
-        />
-      )}
-
+    <section className="relative overflow-hidden bg-[#f7f8fb] pb-12 pt-8 sm:pb-16 sm:pt-12 lg:pb-20">
       <div className="editorial-shell">
-        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-          {/* Left: editorial copy */}
+        <div className="grid gap-10 lg:grid-cols-[1.03fr_0.97fr] lg:items-center">
           <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="relative z-10"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, ease: [0.2, 0.7, 0.2, 1] }}
+            className="max-w-3xl"
           >
-            <motion.div variants={itemVariants} className="mb-4">
-              <Eyebrow>5 consultas médicas gratis para todos los mexicanos</Eyebrow>
-            </motion.div>
+            <Eyebrow className="mb-5">Consulta gratuita de orientación médica</Eyebrow>
 
-            <motion.h1
-              variants={itemVariants}
-              className="mb-4 font-display text-[clamp(2.25rem,5.5vw,4rem)] font-bold leading-[0.95] tracking-[-0.03em] text-[#0a1533]"
-            >
-              Tu salud,
-              <br />
-              <em className="font-serif italic font-normal text-[#1a3ab8]">
-                siempre a un clic
-              </em>
-            </motion.h1>
+            <h1 className="font-display text-4xl font-semibold leading-[0.98] tracking-tight text-ink sm:text-5xl lg:text-6xl">
+              Consulta médica en línea en México, hoy.
+            </h1>
 
-            <motion.p
-              variants={itemVariants}
-              className="mb-6 max-w-[46ch] font-serif text-[17px] leading-[1.5] italic text-[#1c2647] sm:text-lg"
-            >
-              Describe tus síntomas, recibe una evaluación inteligente y conecta con un
-              especialista certificado — todo en minutos, sin costo.
-            </motion.p>
+            <p className="mt-5 max-w-[62ch] text-base leading-7 text-[#34405f] sm:text-lg">
+              Describe tus síntomas, recibe una orientación segura de Dr. Simeon y agenda con un doctor verificado cuando tu caso lo necesita. Si hay señales de alarma, te guiamos hacia atención urgente.
+            </p>
 
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-3">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link href="/ai-consulta">
-                <DxButton variant="primary" size="lg">
-                  Consultar ahora — gratis
-                  <ArrowRight className="h-4 w-4" />
+                <DxButton variant="primary" size="lg" className="w-full sm:w-auto">
+                  Consulta gratis con Dr. Simeon
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </DxButton>
               </Link>
               <Link href="/doctors">
-                <DxButton variant="ghost" size="lg">
-                  Buscar especialista
+                <DxButton variant="ghost" size="lg" className="w-full sm:w-auto">
+                  <Search className="h-4 w-4" aria-hidden="true" />
+                  Buscar doctor
                 </DxButton>
               </Link>
-            </motion.div>
+            </div>
 
-            <motion.div
-              variants={itemVariants}
-              className="mt-6 flex flex-wrap items-center gap-5 text-[13px] text-[#5c6783]"
-            >
-              <span className="flex items-center gap-1.5">
-                <ShieldCheck className="h-3.5 w-3.5 text-[#00a878]" aria-hidden="true" />
-                COFEPRIS
+            <div className="mt-7 grid gap-3 border-y border-border py-5 text-sm text-muted-foreground sm:grid-cols-3">
+              <span className="inline-flex items-center gap-2">
+                <ShieldCheck className="h-4 w-4 text-vital" aria-hidden="true" />
+                Revisión médica antes de listar
               </span>
-              <span className="flex items-center gap-1.5">
-                <Users className="h-3.5 w-3.5 text-[#0f255f]" aria-hidden="true" />
-                500+ doctores
+              <span className="inline-flex items-center gap-2">
+                <CalendarCheck className="h-4 w-4 text-cobalt-700" aria-hidden="true" />
+                Agenda y pago en el mismo flujo
               </span>
-              <span className="flex items-center gap-1.5">
-                <Clock className="h-3.5 w-3.5 text-[#0f255f]" aria-hidden="true" />
-                24/7
+              <span className="inline-flex items-center gap-2">
+                <Video className="h-4 w-4 text-cobalt-700" aria-hidden="true" />
+                Videoconsulta disponible
               </span>
-            </motion.div>
+            </div>
           </motion.div>
 
-          {/* Right: hyperframe */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
-            className="relative z-10"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1, ease: [0.2, 0.7, 0.2, 1] }}
           >
-            <PatientFlowHyperframe />
+            <ConversionPreview />
           </motion.div>
         </div>
       </div>

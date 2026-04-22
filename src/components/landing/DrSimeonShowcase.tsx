@@ -155,24 +155,6 @@ function AnimatedMessage({ message, index }: { message: Message; index: number }
   )
 }
 
-// Animated background blobs
-function AnimatedBlobs() {
-  return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden">
-      <motion.div
-        className="absolute -left-20 top-20 h-72 w-72 rounded-full bg-[#dbe7ff]/30 blur-3xl"
-        animate={{ x: [0, 50, 0], y: [0, 30, 0] }}
-        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-      />
-      <motion.div
-        className="absolute -right-20 bottom-20 h-72 w-72 rounded-full bg-[#dbe7ff]/30 blur-3xl"
-        animate={{ x: [0, -50, 0], y: [0, -30, 0] }}
-        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-      />
-    </div>
-  )
-}
-
 export default function DrSimeonShowcase() {
   const [messages, setMessages] = useState<Message[]>([])
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0)
@@ -207,8 +189,6 @@ export default function DrSimeonShowcase() {
 
   return (
     <section className="relative overflow-hidden bg-[#f7f8fb] py-16 sm:py-20">
-      <AnimatedBlobs />
-
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           {/* Left Column: Info */}
@@ -223,11 +203,7 @@ export default function DrSimeonShowcase() {
 
             <h2 className="font-display text-[clamp(2rem,4vw,3.5rem)] font-bold leading-[1.02] tracking-[-0.02em] text-[#0a1533]">
               Dr. Simeon AI
-              <span className="block">
-                <em className="font-serif italic font-normal text-[#1a3ab8]">
-                  Tu evaluación inicial inteligente
-                </em>
-              </span>
+              <span className="block text-[#1a3ab8]">con límites clínicos claros</span>
             </h2>
 
             <p className="text-lg leading-relaxed text-[#5c6783]">

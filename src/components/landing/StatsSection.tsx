@@ -1,55 +1,13 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
-import { useRef, useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 import { Eyebrow } from '@/components/Eyebrow'
-import { useReducedMotion } from '@/hooks/useReducedMotion'
-
-function AnimatedNumber({
-  value,
-  suffix = '',
-  skipAnimation = false,
-}: {
-  value: number
-  suffix?: string
-  skipAnimation?: boolean
-}) {
-  const [displayValue, setDisplayValue] = useState(skipAnimation ? value : 0)
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-
-  useEffect(() => {
-    if (skipAnimation) {
-      setDisplayValue(value)
-      return
-    }
-    if (isInView) {
-      const duration = 2000
-      const startTime = Date.now()
-      const animate = () => {
-        const elapsed = Date.now() - startTime
-        const progress = Math.min(elapsed / duration, 1)
-        const easeOut = 1 - Math.pow(1 - progress, 3)
-        const current = Math.floor(value * easeOut)
-        setDisplayValue(current)
-        if (progress < 1) {
-          requestAnimationFrame(animate)
-        } else {
-          setDisplayValue(value)
-        }
-      }
-      requestAnimationFrame(animate)
-    }
-  }, [isInView, value, skipAnimation])
-
-  return <span ref={ref}>{displayValue.toLocaleString()}{suffix}</span>
-}
 
 const stats = [
-  { value: 500, suffix: '+', label: 'Doctores con cédula verificada', iconType: 'doctors' },
-  { value: 10000, suffix: '+', label: 'Consultas realizadas', iconType: 'consultations' },
-  { value: 50, suffix: '+', label: 'Especialidades médicas', iconType: 'specialties' },
-  { value: 98, suffix: '%', label: 'Satisfacción de pacientes', iconType: 'satisfaction' },
+  { value: 'Cédula', label: 'Revisión manual antes de listar', iconType: 'doctors' },
+  { value: 'Triage', label: 'Escalación para síntomas de alarma', iconType: 'consultations' },
+  { value: 'Pago', label: 'Reserva ligada a una cita concreta', iconType: 'specialties' },
+  { value: '24/7', label: 'Orientación inicial disponible en línea', iconType: 'satisfaction' },
 ]
 
 function StatIcon({ type }: { type: string }) {
@@ -84,8 +42,6 @@ function StatIcon({ type }: { type: string }) {
 }
 
 export function StatsSection() {
-  const prefersReducedMotion = useReducedMotion()
-
   return (
     <section className="relative overflow-hidden bg-[#f7f8fb] py-16 sm:py-20">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -94,15 +50,14 @@ export function StatsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
-          className="mb-10 text-center"
+          className="mb-10 max-w-3xl"
         >
-          <Eyebrow className="mb-4 justify-center">Impacto real</Eyebrow>
+          <Eyebrow className="mb-4">Sistema operativo</Eyebrow>
           <h2 className="font-display text-[clamp(2rem,4vw,3.5rem)] font-bold leading-[1.02] tracking-[-0.02em] text-[#0a1533]">
-            Números que respaldan{' '}
-            <em className="font-serif italic font-normal text-[#1a3ab8]">nuestra misión</em>
+            Los puntos que tienen que funcionar antes de escalar.
           </h2>
-          <p className="mx-auto mt-3 max-w-md font-mono text-[11px] uppercase tracking-[0.12em] text-[#5c6783]">
-            Datos actualizados · Abril 2026
+          <p className="mt-3 max-w-2xl text-[15px] leading-6 text-[#5c6783]">
+            La interfaz debe reforzar el circuito de confianza: caso clínico, revisión de seguridad, médico verificado y pago vinculado.
           </p>
         </motion.div>
 
@@ -118,41 +73,21 @@ export function StatsSection() {
                 delay: index * 0.08,
                 ease: [0, 0, 0.2, 1],
               }}
-              whileHover={
-                prefersReducedMotion
-                  ? {}
-                  : { y: -2, transition: { duration: 0.2, ease: [0, 0, 0.2, 1] } }
-              }
-              className="group text-center"
+              className="group rounded-lg border border-border bg-card p-5"
             >
-              <motion.div
-                className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-[10px] bg-[#eef4ff]"
-                whileHover={
-                  prefersReducedMotion
-                    ? {}
-                    : {
-                        scale: 1.08,
-                        rotate: 3,
-                        transition: { type: 'spring', stiffness: 400, damping: 17 },
-                      }
-                }
-              >
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-[10px] bg-[#eef4ff]">
                 <StatIcon type={stat.iconType} />
-              </motion.div>
-              <div className="font-display text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.02] tracking-[-0.02em] text-[#0a1533] mb-2">
-                <AnimatedNumber
-                  value={stat.value}
-                  suffix={stat.suffix}
-                  skipAnimation={prefersReducedMotion}
-                />
               </div>
-              <p className="text-[15px] font-medium leading-[1.5] text-[#5c6783]">{stat.label}</p>
+              <div className="mb-2 font-display text-2xl font-semibold leading-tight tracking-tight text-[#0a1533]">
+                {stat.value}
+              </div>
+              <p className="text-sm font-medium leading-6 text-[#5c6783]">{stat.label}</p>
             </motion.div>
           ))}
         </div>
 
-        <p className="mx-auto mt-8 max-w-lg text-center text-xs text-[#5c6783]/70">
-          Estadísticas basadas en datos internos de Doctor.mx. Satisfacción medida por encuestas post-consulta.
+        <p className="mt-8 max-w-lg text-xs leading-5 text-[#5c6783]/80">
+          Evitamos métricas públicas infladas. Las cifras comerciales deben aparecer aquí solo cuando estén verificadas por analítica y operaciones.
         </p>
       </div>
     </section>
