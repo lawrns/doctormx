@@ -139,8 +139,7 @@ Doctor.mx is a telemedicine platform for Mexico. We are closing competitive gaps
 - `src/components/landing/FeaturesSection.tsx` no longer uses a grid of feature cards; it now uses thin rule-separated feature rows.
 - `src/components/landing/StatsSection.tsx` no longer boxes each metric as a card; metrics sit on open dividers.
 - `src/components/public/TrustClaimBlock.tsx` uses open rule-separated claims instead of a nested card container.
-- Follow-up redesign commit added a high-contrast hero, `ClinicalFlowStage`, and `ClinicalSafetySection`.
-- `src/components/landing/FeaturesSection.tsx` was upgraded again into a dark capability-map section instead of a muted feature list.
+- Follow-up cleanup removed the loud high-contrast homepage direction from `dad04739`: `ClinicalFlowStage` and `ClinicalSafetySection` were deleted, the hero returned to a calmer light clinical layout, and `FeaturesSection` was restored as a restrained divider-led editorial section.
 
 **Support widget changes:**
 - Bottom-right launcher now uses design-system tokens (`ink`, `border`, `primary-foreground`, `shadow-color`) instead of hardcoded sky/cyan gradients.

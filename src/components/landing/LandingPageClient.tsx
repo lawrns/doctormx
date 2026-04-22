@@ -15,7 +15,7 @@ import {
 } from '@/components/ui/sheet'
 import { HeroSection } from './HeroSection'
 import { SocialProofBar } from './SocialProofBar'
-import { ClinicalSafetySection } from './ClinicalSafetySection'
+import DrSimeonShowcase from './DrSimeonShowcase'
 import { HowItWorks } from './HowItWorks'
 import { StatsSection } from './StatsSection'
 import { FeaturesSection } from './FeaturesSection'
@@ -134,7 +134,7 @@ export function LandingPageClient() {
       <HeroSection />
       <SocialProofBar />
       <TrustClaimBlock />
-      <ClinicalSafetySection />
+      <DrSimeonShowcase />
       <HowItWorks />
       <FeaturesSection />
       <StatsSection />
