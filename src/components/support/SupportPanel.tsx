@@ -91,15 +91,15 @@ export function SupportPanel({ layout = 'desktop', onDismiss }: SupportPanelProp
   const panelHeight = layout === 'mobile' ? 'h-full' : 'h-[min(580px,calc(100dvh-120px))]'
 
   return (
-    <div className={`flex ${panelHeight} flex-col overflow-hidden overflow-x-hidden rounded-[1.75rem] border border-border bg-card shadow-[0_20px_60px_rgba(15,23,42,0.16)]`}>
+    <div className={`flex ${panelHeight} flex-col overflow-hidden overflow-x-hidden rounded-[1.75rem] border border-border bg-card shadow-[0_20px_60px_hsl(var(--shadow-color)/0.16)]`}>
       {/* Header */}
       <div className="relative shrink-0 border-b border-border px-4 pb-3 pt-4">
-        <div className="absolute inset-x-0 top-0 h-[2px] rounded-t-[1.75rem] bg-gradient-to-r from-sky-400/40 via-sky-300/60 to-sky-400/40" />
+        <div className="absolute inset-x-0 top-0 h-[2px] rounded-t-[1.75rem] bg-gradient-to-r from-transparent via-primary/45 to-transparent" />
         {/* Row 1: identity + dismiss */}
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <SupportPresenceOrb size="sm" />
-            <div className="inline-flex items-center gap-1.5 rounded-full border border-sky-200/70 bg-sky-50 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-sky-700">
+            <div className="inline-flex items-center gap-1.5 rounded-full border border-primary/15 bg-primary/10 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-primary">
               <ShieldCheck className="h-3 w-3" aria-hidden="true" />
               Doctor Simeon
             </div>
@@ -121,7 +121,7 @@ export function SupportPanel({ layout = 'desktop', onDismiss }: SupportPanelProp
             Guía de navegación
           </h2>
           <span className="flex min-w-0 items-center gap-1 truncate rounded-full border border-border bg-secondary px-2 py-0.5 text-[11px] text-muted-foreground">
-            <Compass className="h-3 w-3 shrink-0 text-sky-500" aria-hidden="true" />
+            <Compass className="h-3 w-3 shrink-0 text-primary" aria-hidden="true" />
             <span className="truncate">{pathname}</span>
           </span>
         </div>
@@ -159,7 +159,7 @@ export function SupportPanel({ layout = 'desktop', onDismiss }: SupportPanelProp
             disabled={!canSend}
             size="icon"
             aria-label="Enviar mensaje"
-            className="h-10 w-10 shrink-0 rounded-2xl bg-[linear-gradient(135deg,hsl(var(--brand-ocean)),hsl(var(--brand-sky)))] shadow-[0_8px_20px_rgba(14,165,233,0.28)] hover:-translate-y-0.5 disabled:opacity-40"
+            className="h-10 w-10 shrink-0 rounded-2xl bg-ink text-primary-foreground shadow-[0_8px_20px_hsl(var(--shadow-color)/0.16)] hover:-translate-y-0.5 hover:bg-ink/90 disabled:opacity-40"
           >
             <SendHorizonal className="h-4 w-4" aria-hidden="true" />
           </Button>

@@ -27,6 +27,7 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
     { name: 'Análisis', href: '/doctor/analytics', iconType: 'chart', enabled: !isPending },
     { name: 'Recordatorios', href: '/doctor/reminders', iconType: 'bell', enabled: !isPending },
     { name: 'Formularios', href: '/doctor/intake-forms', iconType: 'form', enabled: !isPending },
+    { name: 'Widget', href: '/doctor/widget', iconType: 'widget', enabled: !isPending },
     { name: 'Perfil', href: '/doctor/profile', iconType: 'user', enabled: true },
   ]
 
@@ -51,6 +52,8 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
         return <svg className={iconClass} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
       case 'form':
         return <svg className={iconClass} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+      case 'widget':
+        return <svg className={iconClass} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 8l-4 4 4 4" /></svg>
       default:
         return <svg className={iconClass} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
     }

@@ -32,10 +32,10 @@ export function TrustClaimBlock() {
             </h2>
           </div>
 
-          <div className="divide-y divide-border rounded-lg border border-border bg-background">
+          <div className="divide-y divide-border/80 border-y border-border/80">
             {claims.map((claim) => (
-              <div key={claim.title} className="grid gap-3 p-4 sm:grid-cols-[2rem_1fr] sm:p-5">
-                <div className="flex h-8 w-8 items-center justify-center rounded-md bg-vital/10 text-vital">
+              <div key={claim.title} className="grid gap-3 py-5 sm:grid-cols-[2rem_1fr]">
+                <div className="flex h-8 w-8 items-center justify-center text-vital">
                   <claim.icon className="h-4 w-4" aria-hidden="true" />
                 </div>
                 <div>

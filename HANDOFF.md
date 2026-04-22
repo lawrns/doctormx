@@ -1,8 +1,8 @@
 # DoctorMx — AI Handoff Document
 
 **Date:** 2026-04-22  
-**Completed Phases:** 1 (Reminders + Intake Forms) and 2 (AutoSOAP Clinical Scribing)  
-**Next Phases:** 3 (Booking Widget + Insurance), 4 (Campaigns + Practice Management)
+**Completed Phases:** 1 (Reminders + Intake Forms), 2 (AutoSOAP Clinical Scribing), and 3.1 (Embeddable Booking Widget)  
+**Next Phases:** 3.2 (Insurance), 4 (Campaigns + Practice Management)
 
 ---
 
@@ -99,6 +99,53 @@ Doctor.mx is a telemedicine platform for Mexico. We are closing competitive gaps
 
 ---
 
+### Phase 3.1 — Embeddable Website Booking Widget (DONE)
+
+**Database tables:**
+- `doctor_widget_configs` — per-doctor widget colors, copy, service JSON, allowed origins, active state
+- `widget_booking_intents` — public widget payment links with hashed booking tokens
+
+**Migration:**
+- `20260422170000_booking_widget.sql`
+  - Adds `doctor_widget_configs`
+  - Adds `widget_booking_intents`
+  - Adds missing `profiles.email`
+  - Adds appointment cancellation metadata columns used by existing cancellation code
+
+**API routes:**
+- `GET/POST /api/widget/config` — public config by `doctorId` and authenticated doctor settings upsert
+- `GET /api/widget/dates` — CORS-enabled available dates for active widgets
+- `GET /api/widget/slots` — CORS-enabled available time slots
+- `POST /api/widget/book` — CORS-enabled public booking endpoint; creates/reuses patient profile, creates appointment, creates Stripe PaymentIntent, returns widget payment URL
+
+**UI pages/components:**
+- `/widget/[doctorId]/page.tsx` — iframe-safe booking surface without Doctor.mx support chrome
+- `/widget/pay/[appointmentId]/page.tsx` — token-protected public Stripe PaymentElement checkout
+- `/widget/success/page.tsx` — public post-payment confirmation surface
+- `/doctor/widget/page.tsx` — doctor settings UI with colors, services, live preview iframe, copyable embed code
+- `src/components/BookingWidget.tsx` — iframe-friendly service/calendar/time/patient form with loading, empty, error, and confirmation states
+
+**Integration notes:**
+- `next.config.ts` no longer sends `X-Frame-Options: DENY` for `/widget/*`; the rest of the app still keeps the deny header.
+- `src/components/SupportWidget.tsx` hides itself on `/widget/*` so embeds stay clean.
+- `src/lib/availability.ts` now checks active appointment holds with the service client when computing occupied slots.
+- `src/lib/payment-with-fees.ts` marks `widget_booking_intents.status = paid` after Stripe webhook payment confirmation.
+- Remote Supabase migration was applied on 2026-04-22 via `psql` and recorded in `supabase_migrations.schema_migrations`.
+
+### Homepage + Support Widget Polish (DONE)
+
+**Homepage layout changes:**
+- `src/components/landing/HowItWorks.tsx` no longer uses one large rounded card/list slab; it is now an open line-based clinical flow.
+- `src/components/landing/FeaturesSection.tsx` no longer uses a grid of feature cards; it now uses thin rule-separated feature rows.
+- `src/components/landing/StatsSection.tsx` no longer boxes each metric as a card; metrics sit on open dividers.
+- `src/components/public/TrustClaimBlock.tsx` uses open rule-separated claims instead of a nested card container.
+
+**Support widget changes:**
+- Bottom-right launcher now uses design-system tokens (`ink`, `border`, `primary-foreground`, `shadow-color`) instead of hardcoded sky/cyan gradients.
+- Support panel, send button, user messages, thinking state, and action cards were normalized to token colors and tokenized shadows.
+
+---
+
 ## 3. Architecture & Key Files
 
 ### Design System
@@ -125,27 +172,6 @@ Doctor.mx is a telemedicine platform for Mexico. We are closing competitive gaps
 ---
 
 ## 4. Pending Work (Phases 3–4)
-
-### Phase 3.1 — Embeddable Website Booking Widget (PENDING)
-
-**Goal:** Let doctors embed a booking widget on their own websites.
-
-**What to build:**
-- `src/app/api/widget/config/route.ts` — GET/POST widget config (doctorId, colors, services, allowed slots)
-- `src/app/widget/[doctorId]/page.tsx` — lightweight booking widget page (no Doctor.mx chrome)
-- `src/components/BookingWidget.tsx` — iframe-friendly React component with:
-  - Doctor profile header (name, photo, specialty, rating)
-  - Service selector with prices
-  - Calendar + time slot picker
-  - Patient info form (name, email, phone)
-  - Booking confirmation + payment redirect
-- `src/app/api/widget/book/route.ts` — CORS-enabled booking endpoint
-- `src/app/doctor/widget/page.tsx` — doctor settings for widget (copy embed code, customize colors)
-
-**Database migration needed:**
-- `doctor_widget_configs` table: `doctor_id`, `primary_color`, `accent_color`, `enabled_services JSONB`, `custom_title`, `custom_message`, `is_active`
-
----
 
 ### Phase 3.2 — Insurance Integration (PENDING)
 
@@ -213,6 +239,17 @@ Doctor.mx is a telemedicine platform for Mexico. We are closing competitive gaps
    - Phase 2 commit `936108fb` is pushed to GitHub but may not be deployed yet.
    - Run: `cd /Users/lukatenbosch/Downloads/doctory && npx netlify deploy --build --prod`
 
+7. **Booking widget payments require Stripe env vars.**
+   - `STRIPE_SECRET_KEY`, `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`, and `STRIPE_WEBHOOK_SECRET` must be configured.
+   - Public widget bookings create PaymentIntents directly; webhook confirmation remains the source of truth for marking appointments confirmed.
+
+8. **Booking widget public patient creation requires Supabase service role.**
+   - `/api/widget/book` uses `SUPABASE_SERVICE_ROLE_KEY` to create/reuse patient profiles for external website visitors.
+
+9. **Supabase CLI migration history has a remote-only entry.**
+   - `supabase db push --dry-run` reported remote migration `20260422190127` is not present locally.
+   - The booking widget migration was applied idempotently via `psql` and recorded manually; fetch or repair the remote-only migration before relying on `supabase db push` for this project.
+
 ---
 
 ## 6. Database Migrations Applied
@@ -221,6 +258,7 @@ Doctor.mx is a telemedicine platform for Mexico. We are closing competitive gaps
 |-----------|-------------|
 | `20260422100000_fix_referral_code_return.sql` | (previous session) |
 | `20260422150000_auto_soap_notes.sql` | `soap_notes`, `feature_flags` tables + RLS + trigger |
+| `20260422170000_booking_widget.sql` | `doctor_widget_configs`, `widget_booking_intents`, `profiles.email`, appointment cancellation metadata; applied to remote Supabase on 2026-04-22 |
 
 **Reminder/intake migrations from Phase 1** are also applied but were created in earlier sessions.
 
@@ -246,24 +284,32 @@ Doctor.mx is a telemedicine platform for Mexico. We are closing competitive gaps
 | Design tokens | `src/app/globals.css`, Tailwind config |
 | AI client | `src/lib/openai.ts` |
 | Video service | `src/lib/video.ts`, `src/lib/video/videoService.ts` |
+| Booking widget lib | `src/lib/widget.ts` |
+| Public booking widget | `src/components/BookingWidget.tsx` |
+| Widget settings UI | `src/app/doctor/widget/page.tsx`, `src/app/doctor/widget/WidgetSettingsClient.tsx` |
+| Widget public page | `src/app/widget/[doctorId]/page.tsx` |
+| Widget payment pages | `src/app/widget/pay/[appointmentId]/page.tsx`, `src/app/widget/success/page.tsx` |
+| Widget APIs | `src/app/api/widget/*` |
 
 ---
 
 ## 8. Next AI: Start Here
 
-1. **Deploy Phase 2** if not done:
+1. **Supabase migration status:**
+   - `20260422170000_booking_widget.sql` has been applied to the current remote Supabase project and recorded in migration history.
+   - For any other environment, apply the migration before testing the widget:
+   ```bash
+   npx supabase migration up
+   # or apply manually: supabase/migrations/20260422170000_booking_widget.sql
+   ```
+
+2. **Deploy latest main** when ready:
    ```bash
    cd /Users/lukatenbosch/Downloads/doctory
    npx netlify deploy --build --prod
    ```
 
-2. **Run Supabase migration** if needed:
-   ```bash
-   npx supabase migration up
-   # or apply manually: supabase/migrations/20260422150000_auto_soap_notes.sql
-   ```
-
-3. **Pick a Phase 3 or 4 feature** from section 4 above.
+3. **Pick the next feature:** Phase 3.2 Insurance Integration.
 
 4. **Follow taste-skill** design rules (section 1).
 

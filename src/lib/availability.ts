@@ -3,7 +3,7 @@
 // Proceso: Consultar horarios → Generar slots → Filtrar ocupados
 // Output: Lista de horarios disponibles
 
-import { createClient } from '@/lib/supabase/server'
+import { createClient, createServiceClient } from '@/lib/supabase/server'
 import { APPOINTMENT_CONFIG } from '@/config/constants'
 import { cache } from '@/lib/cache'
 
@@ -106,7 +106,7 @@ async function fetchAvailableSlots(doctorId: string, date: string) {
 
 // Helper: Obtener slots ocupados para una fecha
 export async function getOccupiedSlots(doctorId: string, date: string) {
-  const supabase = await createClient()
+  const supabase = createServiceClient()
 
   const startOfDay = new Date(date)
   startOfDay.setHours(0, 0, 0, 0)
@@ -126,7 +126,18 @@ export async function getOccupiedSlots(doctorId: string, date: string) {
 
   if (error) throw error
 
-  return (data || []).map(apt => ({
+  const { data: holds, error: holdError } = await supabase
+    .from('appointment_holds')
+    .select('start_ts, end_ts')
+    .eq('doctor_id', doctorId)
+    .eq('status', 'active')
+    .gt('expires_at', new Date().toISOString())
+    .gte('start_ts', startOfDay.toISOString())
+    .lte('start_ts', endOfDay.toISOString())
+
+  if (holdError) throw holdError
+
+  return [...(data || []), ...(holds || [])].map(apt => ({
     start: apt.start_ts.substring(11, 16), // Extract HH:MM
     end: apt.end_ts.substring(11, 16),
   }))

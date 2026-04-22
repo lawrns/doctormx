@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { AnimatePresence, motion } from 'framer-motion'
 import { MessageSquareMore, X } from 'lucide-react'
 import { SupportPresenceOrb } from '@/components/support/SupportPresenceOrb'
@@ -9,6 +10,7 @@ import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from '@/components/ui/sheet'
 
 export function SupportWidget() {
+  const pathname = usePathname()
   const [open, setOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
   const [mounted, setMounted] = useState(false)
@@ -39,6 +41,10 @@ export function SupportWidget() {
     return null
   }
 
+  if (pathname?.startsWith('/widget')) {
+    return null
+  }
+
   if (isMobile) {
     return (
       <div className="fixed bottom-[calc(1rem+env(safe-area-inset-bottom))] right-[calc(1rem+env(safe-area-inset-right))] z-50">
@@ -48,7 +54,7 @@ export function SupportWidget() {
               type="button"
               size="icon-lg"
               aria-label="Abrir asistente Doctor Simeon"
-              className="h-16 w-16 rounded-[1.6rem] bg-[linear-gradient(135deg,rgba(2,132,199,0.94),rgba(14,165,233,0.98))] text-white shadow-[0_24px_50px_rgba(14,165,233,0.38)]"
+              className="h-16 w-16 rounded-[1.6rem] border border-border/20 bg-ink text-primary-foreground shadow-[0_24px_50px_hsl(var(--shadow-color)/0.22)] hover:bg-ink/95"
             >
               <SupportPresenceOrb size="sm" />
             </Button>
@@ -88,15 +94,15 @@ export function SupportWidget() {
           aria-label="Abrir asistente Doctor Simeon"
           aria-expanded={open}
           onClick={() => handleOpenChange(!open)}
-          className="group relative h-auto w-full rounded-[1.75rem] border border-white/30 bg-[linear-gradient(145deg,rgba(2,132,199,0.94),rgba(14,165,233,0.98))] px-4 py-3 text-white shadow-[0_24px_50px_rgba(14,165,233,0.32)] backdrop-blur-xl transition-all hover:-translate-y-1"
+          className="group relative h-auto w-full rounded-[1.75rem] border border-border/20 bg-ink px-4 py-3 text-primary-foreground shadow-[0_24px_50px_hsl(var(--shadow-color)/0.2)] backdrop-blur-xl transition-all hover:-translate-y-1 hover:bg-ink/95"
         >
           <div className="flex items-center gap-3">
             <SupportPresenceOrb size="md" isLoading={open} />
             <div className="min-w-0 flex-1 text-left">
               <div className="text-sm font-semibold tracking-[-0.02em]">Doctor Simeon</div>
-              <div className="truncate text-xs text-sky-100/90">Te guía dentro de Doctor.mx</div>
+              <div className="truncate text-xs text-primary-foreground/80">Te guía dentro de Doctor.mx</div>
             </div>
-            <div className="rounded-full bg-primary-foreground/14 p-2 text-white/95" aria-hidden="true">
+            <div className="rounded-full bg-primary-foreground/14 p-2 text-primary-foreground/95" aria-hidden="true">
               {open ? <X className="h-4 w-4" /> : <MessageSquareMore className="h-4 w-4" />}
             </div>
           </div>

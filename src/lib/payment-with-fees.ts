@@ -162,6 +162,15 @@ export async function confirmPaymentWithFees(
       })
       .eq('id', payment.id)
 
+    const { error: widgetIntentError } = await supabase
+      .from('widget_booking_intents')
+      .update({ status: 'paid', updated_at: new Date().toISOString() })
+      .eq('appointment_id', appointmentId)
+
+    if (widgetIntentError && widgetIntentError.code !== '42P01') {
+      logger.warn('Failed to mark widget booking intent as paid:', { error: widgetIntentError, appointmentId })
+    }
+
     logger.info('Payment confirmed with fees:', {
       paymentId: payment.id,
       appointmentId,

@@ -27,7 +27,7 @@ export function SupportActionCards({ links, onNavigate }: SupportActionCardsProp
           <Link
             href={link.href}
             onClick={() => onNavigate?.(link)}
-            className="group flex items-center justify-between gap-3 rounded-[1.35rem] border border-border/80 bg-card/92 px-4 py-3.5 text-sm text-foreground shadow-[0_10px_30px_rgba(15,23,42,0.06)] transition-all hover:-translate-y-0.5 hover:border-sky-200 hover:bg-sky-50/70"
+            className="group flex items-center justify-between gap-3 rounded-[1.35rem] border border-border/80 bg-card/92 px-4 py-3.5 text-sm text-foreground shadow-[0_10px_30px_hsl(var(--shadow-color)/0.06)] transition-all hover:-translate-y-0.5 hover:border-primary/25 hover:bg-primary/5"
           >
             <div className="min-w-0">
               <div className="font-medium text-foreground">{link.label}</div>
@@ -35,7 +35,7 @@ export function SupportActionCards({ links, onNavigate }: SupportActionCardsProp
                 <div className="mt-1 text-xs leading-5 text-muted-foreground">{link.description}</div>
               ) : null}
             </div>
-            <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-sky-600" />
+            <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary" />
           </Link>
         </motion.div>
       ))}

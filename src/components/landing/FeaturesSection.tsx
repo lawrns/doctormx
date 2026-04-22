@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Card } from '@/components/ui/card'
 import { Eyebrow } from '@/components/Eyebrow'
 import { BadgeCheck, Video, Calendar, FileText, Shield, MessageSquare } from 'lucide-react'
 
@@ -52,55 +51,50 @@ export function FeaturesSection() {
       />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
-          className="mb-10 max-w-3xl"
-        >
-          <div id="features-section-heading">
+        <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
+            className="max-w-3xl lg:sticky lg:top-24"
+          >
             <Eyebrow className="mb-4">Plataforma</Eyebrow>
-            <h2 className="font-display text-[clamp(2rem,4vw,3.5rem)] font-bold leading-[1.02] tracking-[-0.02em] text-[#0a1533]">
+            <h2 id="features-section-heading" className="font-display text-[clamp(2rem,4vw,3.5rem)] font-bold leading-[1.02] tracking-[-0.02em] text-[#0a1533]">
               Salud digital con puntos de control humanos.
             </h2>
             <p className="mt-4 max-w-2xl text-[15px] leading-[1.5] text-[#5c6783]">
               Una plataforma diseñada para conectarte con especialistas mexicanos certificados, de forma rápida, segura y privada.
             </p>
-          </div>
-        </motion.div>
+          </motion.div>
 
-        <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2">
-          {features.map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.4,
-                delay: index * 0.06,
-                ease: [0, 0, 0.2, 1],
-              }}
-            >
-              <Card
-                className="group h-full overflow-hidden border-[#e3e6ee]/80 bg-card p-5 shadow-[0_1px_2px_rgba(15,37,95,0.06)] transition-transform duration-200 hover:-translate-y-0.5"
-                role="article"
+          <div className="grid border-t border-border/80 md:grid-cols-2 md:gap-x-10">
+            {features.map((feature, index) => (
+              <motion.article
+                key={feature.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.4,
+                  delay: index * 0.06,
+                  ease: [0, 0, 0.2, 1],
+                }}
+                className="group flex gap-4 border-b border-border/80 py-6 transition-transform duration-200 hover:-translate-y-0.5"
                 aria-label={feature.title}
               >
-                <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-[#eef4ff]">
-                  <feature.icon className="h-4 w-4 text-[#1f48de]" aria-hidden="true" />
+                <feature.icon className="mt-1 h-5 w-5 shrink-0 text-primary transition-transform duration-200 group-hover:scale-105" aria-hidden="true" />
+                <div>
+                  <h3 className="font-display text-[15px] font-semibold text-[#0a1533]">
+                    {feature.title}
+                  </h3>
+                  <p className="mt-2 text-[13px] leading-[1.55] text-[#5c6783]">
+                    {feature.description}
+                  </p>
                 </div>
-
-                <h3 className="mb-1.5 font-display text-[15px] font-semibold text-[#0a1533]">
-                  {feature.title}
-                </h3>
-                <p className="text-[13px] leading-[1.5] text-[#5c6783]">
-                  {feature.description}
-                </p>
-              </Card>
-            </motion.div>
-          ))}
+              </motion.article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
