@@ -5,10 +5,10 @@ import type { DailyCall } from '@daily-co/daily-js'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import { Button } from '@/components/ui/button'
-import { Textarea } from '@/components/ui/textarea'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { PhoneOff, Video, FileText, Pill } from 'lucide-react'
+import AutoSoapPanel from '@/components/AutoSoapPanel'
 
 interface DoctorConsultationPageProps {
   params: Promise<{ appointmentId: string }>
@@ -42,7 +42,8 @@ export default function DoctorConsultationPage({ params }: DoctorConsultationPag
   })
   const [appointment, setAppointment] = useState<AppointmentState | null>(null)
   const [roomData, setRoomData] = useState<VideoRoomData | null>(null)
-  const [notes, setNotes] = useState('')
+  const [soapNote, setSoapNote] = useState<Record<string, unknown> | null>(null)
+  const [patientIntake, setPatientIntake] = useState<Record<string, unknown> | null>(null)
   const [loading, setLoading] = useState(true)
   const [joining, setJoining] = useState(false)
   const [ending, setEnding] = useState(false)
@@ -76,13 +77,45 @@ export default function DoctorConsultationPage({ params }: DoctorConsultationPag
         setError('No pudimos cargar esta consulta.')
       } else {
         setAppointment(data as unknown as AppointmentState)
-        setNotes((data as AppointmentState).consultation_notes || '')
       }
       setLoading(false)
     }
 
     loadAppointment()
   }, [appointmentId, supabase])
+
+  // Fetch existing SOAP note and patient intake data
+  useEffect(() => {
+    if (!appointmentId) return
+
+    async function loadSoapAndIntake() {
+      // Fetch existing SOAP note
+      try {
+        const soapRes = await fetch(`/api/soap-notes/appointment/${appointmentId}`)
+        if (soapRes.ok) {
+          const soapData = await soapRes.json()
+          if (soapData.note) setSoapNote(soapData.note)
+        }
+      } catch {
+        // Silently fail — SOAP note is optional
+      }
+
+      // Fetch patient intake responses for this appointment
+      try {
+        const intakeRes = await fetch(`/api/intake/responses?appointment_id=${appointmentId}`)
+        if (intakeRes.ok) {
+          const intakeData = await intakeRes.json()
+          if (intakeData.response?.responses_json) {
+            setPatientIntake(intakeData.response.responses_json as Record<string, unknown>)
+          }
+        }
+      } catch {
+        // Silently fail — intake form is optional
+      }
+    }
+
+    loadSoapAndIntake()
+  }, [appointmentId])
 
   useEffect(() => {
     return () => {
@@ -161,7 +194,6 @@ export default function DoctorConsultationPage({ params }: DoctorConsultationPag
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           action: 'end',
-          consultationNotes: notes,
         }),
       })
 
@@ -170,7 +202,7 @@ export default function DoctorConsultationPage({ params }: DoctorConsultationPag
         throw new Error(data.error || 'No pudimos cerrar la consulta.')
       }
 
-      setAppointment((current) => current ? { ...current, status: 'completed', video_status: 'completed', consultation_notes: notes } : current)
+      setAppointment((current) => current ? { ...current, status: 'completed', video_status: 'completed' } : current)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Error al finalizar la consulta.')
     } finally {
@@ -268,22 +300,14 @@ export default function DoctorConsultationPage({ params }: DoctorConsultationPag
         </section>
 
         <aside className="space-y-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>Notas SOAP</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Textarea
-                value={notes}
-                onChange={(event) => setNotes(event.target.value)}
-                className="min-h-72"
-                placeholder="Subjetivo, objetivo, evaluacion y plan..."
-              />
-              <p className="mt-3 text-xs text-muted-foreground">
-                Se enviaran al paciente al finalizar la consulta.
-              </p>
-            </CardContent>
-          </Card>
+          <AutoSoapPanel
+            appointmentId={appointmentId}
+            initialNote={soapNote as any}
+            patientContext={{
+              name: (patient as any)?.full_name,
+              intakeResponses: patientIntake || undefined,
+            }}
+          />
 
           <Card>
             <CardHeader>
