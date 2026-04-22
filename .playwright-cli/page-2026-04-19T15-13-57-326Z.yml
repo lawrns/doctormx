@@ -1,0 +1,70 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e641]:
+    - generic [ref=e642]:
+      - generic [ref=e645]:
+        - img [ref=e647]
+        - generic [ref=e649]: Doctor.mx
+      - blockquote [ref=e651]:
+        - paragraph [ref=e652]: “Doctor.mx ha transformado la forma en que atiendo a mis pacientes. La plataforma es intuitiva y el sistema de IA me ayuda a dar mejores diagnósticos.”
+        - contentinfo [ref=e653]: Dra. María García — Medicina General, CDMX
+    - generic [ref=e656]:
+      - generic [ref=e657]:
+        - heading "Iniciar sesión" [level=1] [ref=e658]
+        - paragraph [ref=e659]: Ingresa tu correo y contraseña para acceder
+      - generic [ref=e660]:
+        - generic [ref=e662]:
+          - button "Paciente" [ref=e663] [cursor=pointer]:
+            - img [ref=e664]
+            - text: Paciente
+          - button "Doctor" [ref=e668] [cursor=pointer]:
+            - img [ref=e669]
+            - text: Doctor
+        - generic [ref=e673]:
+          - generic [ref=e674]: Correo electrónico
+          - textbox "Correo electrónico" [ref=e675]:
+            - /placeholder: nombre@ejemplo.com
+        - generic [ref=e676]:
+          - generic [ref=e677]:
+            - generic [ref=e678]: Contraseña
+            - link "¿Olvidaste tu contraseña?" [ref=e679] [cursor=pointer]:
+              - /url: /auth/forgot-password
+          - generic [ref=e680]:
+            - textbox "••••••••" [ref=e681]
+            - button [ref=e682] [cursor=pointer]:
+              - img [ref=e683]
+        - generic [ref=e686]:
+          - checkbox "Recordarme en este dispositivo" [ref=e687] [cursor=pointer]
+          - checkbox
+          - generic [ref=e688]: Recordarme en este dispositivo
+        - button "Iniciar sesión" [ref=e689] [cursor=pointer]
+      - generic [ref=e694]: O continúa con
+      - generic [ref=e695]:
+        - button "Google" [ref=e696] [cursor=pointer]:
+          - img
+          - text: Google
+        - button "Apple" [ref=e697] [cursor=pointer]:
+          - img
+          - text: Apple
+      - paragraph [ref=e698]:
+        - text: ¿No tienes cuenta?
+        - link "Regístrate gratis" [ref=e699] [cursor=pointer]:
+          - /url: /auth/register
+      - paragraph [ref=e700]:
+        - text: Al continuar, aceptas nuestros
+        - link "Términos de Servicio" [ref=e701] [cursor=pointer]:
+          - /url: /terms
+        - text: "y"
+        - link "Política de Privacidad" [ref=e702] [cursor=pointer]:
+          - /url: /privacy
+        - text: .
+  - button "Abrir asistente Doctor Simeon" [ref=e608] [cursor=pointer]:
+    - generic [ref=e609]:
+      - img "Doctor Simeon" [ref=e616]
+      - generic [ref=e617]:
+        - generic [ref=e618]: Doctor Simeon
+        - generic [ref=e619]: Te guía dentro de Doctor.mx
+      - generic [ref=e620]:
+        - img
+  - button "Open Next.js Dev Tools" [ref=e626] [cursor=pointer]:
+    - img [ref=e627]
+  - alert [ref=e630]

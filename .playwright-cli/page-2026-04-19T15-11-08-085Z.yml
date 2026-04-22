@@ -1,0 +1,283 @@
+- generic [ref=e2]:
+  - main [ref=e5]:
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - generic [ref=e16]: Disponible 24/7 · Respuesta inmediata
+        - heading "Salud gratuita para México con IA médica" [level=1] [ref=e20]:
+          - text: Salud gratuita
+          - generic [ref=e21]: para México
+          - text: con IA médica
+        - paragraph [ref=e23]:
+          - text: 5 preguntas GRATIS para cada mexicano. Segunda opinión médica instantánea.
+          - generic [ref=e24]: Sin costo inicial · Sin citas · Sin esperas
+        - generic [ref=e25]:
+          - link "¡Pregunta GRATIS ahora!" [ref=e26] [cursor=pointer]:
+            - /url: /doctor
+            - text: ¡Pregunta GRATIS ahora!
+            - img [ref=e27]
+          - link "Ver planes desde $79" [ref=e29] [cursor=pointer]:
+            - /url: "#precios"
+            - text: Ver planes
+            - generic [ref=e30]: desde $79
+        - generic [ref=e32]:
+          - generic [ref=e33]:
+            - img "Dr. Simeon" [ref=e35]
+            - img [ref=e37]
+          - generic [ref=e39]:
+            - heading "Dr. Simeon" [level=3] [ref=e40]
+            - paragraph [ref=e41]: Médico General • Nuestro Doctor de Casa
+            - generic [ref=e42]:
+              - generic [ref=e43]:
+                - img [ref=e44]
+                - text: 4.9/5
+              - generic [ref=e46]: •
+              - generic [ref=e47]: Disponible ahora
+        - generic [ref=e48]:
+          - generic [ref=e49]:
+            - generic [ref=e50]:
+              - img [ref=e51]
+              - generic [ref=e53]: 5 preguntas GRATIS
+            - generic [ref=e54]:
+              - img [ref=e55]
+              - generic [ref=e57]: Segunda opinión médica
+            - generic [ref=e58]:
+              - img [ref=e59]
+              - generic [ref=e61]: NOM-004 compliant
+          - generic [ref=e62]:
+            - generic [ref=e63]:
+              - generic [ref=e64]: "4.8"
+              - generic [ref=e65]: /5
+              - generic [ref=e66]: (1090 reseñas)
+            - generic [ref=e67]: "Consultas realizadas hoy: 0"
+      - generic [ref=e72]:
+        - generic [ref=e75]:
+          - generic [ref=e76]:
+            - img [ref=e78]
+            - generic [ref=e80]:
+              - generic [ref=e81]: Doctor IA
+              - generic [ref=e82]: En línea
+          - generic [ref=e85]:
+            - generic [ref=e86]: Escribe un mensaje...
+            - button [ref=e87] [cursor=pointer]:
+              - img [ref=e88]
+        - generic [ref=e91]:
+          - img [ref=e93]
+          - generic [ref=e95]:
+            - generic [ref=e96]: Verificado
+            - generic [ref=e97]: NOM-004
+        - generic [ref=e99]:
+          - img [ref=e101]
+          - generic [ref=e103]:
+            - generic [ref=e104]: 2 min
+            - generic [ref=e105]: respuesta
+    - generic [ref=e108]:
+      - generic [ref=e109]:
+        - heading "Atención médica en tiempo real" [level=2] [ref=e110]
+        - paragraph [ref=e111]: Más de mil personas confían en doctor.mx cada día para recibir atención médica rápida y profesional.
+        - generic [ref=e112]:
+          - generic [ref=e113]:
+            - img [ref=e115]
+            - generic [ref=e117]:
+              - generic [ref=e118]: Disponibilidad 24/7
+              - generic [ref=e119]: Acceso inmediato a doctores en cualquier momento
+          - generic [ref=e120]:
+            - img [ref=e122]
+            - generic [ref=e124]:
+              - generic [ref=e125]: Respuesta promedio en minutos
+              - generic [ref=e126]: No más esperas de semanas para una cita
+          - generic [ref=e127]:
+            - img [ref=e129]
+            - generic [ref=e131]:
+              - generic [ref=e132]: Alta satisfacción del paciente
+              - generic [ref=e133]: Calificación promedio de 4.9 de 5.0
+      - generic [ref=e135]:
+        - heading "En tiempo real" [level=3] [ref=e140]
+        - generic [ref=e141]:
+          - generic [ref=e142]:
+            - generic [ref=e143]:
+              - img [ref=e145]
+              - generic [ref=e147]: Doctores
+            - generic [ref=e148]: "6"
+            - generic [ref=e149]: en línea
+          - generic [ref=e150]:
+            - generic [ref=e151]:
+              - img [ref=e153]
+              - generic [ref=e155]: Respuesta
+            - generic [ref=e156]: "0.2"
+            - generic [ref=e157]: minutos
+          - generic [ref=e158]:
+            - generic [ref=e159]:
+              - img [ref=e161]
+              - generic [ref=e163]: Hoy
+            - generic [ref=e164]: "166"
+            - generic [ref=e165]: consultas
+          - generic [ref=e166]:
+            - generic [ref=e167]:
+              - img [ref=e169]
+              - generic [ref=e171]: Calificación
+            - generic [ref=e172]: "0.7"
+            - generic [ref=e173]: de 5.0
+    - generic [ref=e175]:
+      - generic [ref=e176]:
+        - heading "Atención médica moderna" [level=2] [ref=e177]
+        - paragraph [ref=e178]: La plataforma más rápida y accesible para consultas médicas en México
+      - generic [ref=e179]:
+        - generic [ref=e181]:
+          - img [ref=e183]
+          - heading "Respuesta instantánea" [level=3] [ref=e185]
+          - paragraph [ref=e186]: IA médica disponible 24/7. Obtén orientación en segundos, no en días. Sin citas, sin esperas.
+        - generic [ref=e188]:
+          - img [ref=e191]
+          - heading "Privacidad garantizada" [level=3] [ref=e193]
+          - paragraph [ref=e194]: Cumplimos NOM-004. Datos encriptados y protegidos por ley mexicana.
+        - generic [ref=e195]:
+          - img [ref=e198]
+          - heading "Médicos verificados" [level=3] [ref=e200]
+          - paragraph [ref=e201]: Red de especialistas certificados. Validación de cédula profesional.
+        - generic [ref=e203]:
+          - img [ref=e205]
+          - heading "100% por WhatsApp" [level=3] [ref=e207]
+          - paragraph [ref=e208]: Sin apps nuevas. Usa la app que ya tienes y conoces perfectamente. Simple, rápido, familiar.
+    - generic [ref=e211]:
+      - generic [ref=e212]:
+        - heading "Salud gratuita para todos los mexicanos" [level=2] [ref=e213]
+        - paragraph [ref=e214]: 5 preguntas GRATIS para cada usuario. Segunda opinión médica instantánea con IA.
+      - generic [ref=e215]:
+        - generic [ref=e216]:
+          - generic [ref=e217]: ¡GRATIS!
+          - generic [ref=e218]:
+            - heading "5 Preguntas Gratis" [level=3] [ref=e219]
+            - generic [ref=e220]:
+              - generic [ref=e221]: $0
+              - generic [ref=e222]: MXN
+          - list [ref=e223]:
+            - listitem [ref=e224]:
+              - img [ref=e225]
+              - text: 5 preguntas con IA médica
+            - listitem [ref=e227]:
+              - img [ref=e228]
+              - text: Segunda opinión médica
+            - listitem [ref=e230]:
+              - img [ref=e231]
+              - text: Historial de consultas
+          - link "¡Pregunta GRATIS ahora!" [ref=e233] [cursor=pointer]:
+            - /url: /doctor
+        - generic [ref=e234]:
+          - generic [ref=e235]:
+            - heading "Consulta Chat" [level=3] [ref=e236]
+            - generic [ref=e237]:
+              - generic [ref=e238]: $79
+              - generic [ref=e239]: MXN
+          - list [ref=e240]:
+            - listitem [ref=e241]:
+              - img [ref=e242]
+              - text: Doctor chat 15 min
+            - listitem [ref=e244]:
+              - img [ref=e245]
+              - text: e-Rx cuando aplique
+            - listitem [ref=e247]:
+              - img [ref=e248]
+              - text: Seguimiento 24hrs
+          - link "Consultar ahora" [ref=e250] [cursor=pointer]:
+            - /url: /doctor
+        - generic [ref=e251]:
+          - generic [ref=e252]: Popular
+          - generic [ref=e253]:
+            - heading "Video Exprés" [level=3] [ref=e254]
+            - generic [ref=e255]:
+              - generic [ref=e256]: $149
+              - generic [ref=e257]: MXN
+          - list [ref=e258]:
+            - listitem [ref=e259]:
+              - img [ref=e260]
+              - text: Videollamada 15 min
+            - listitem [ref=e262]:
+              - img [ref=e263]
+              - text: e-Rx + orden de lab
+            - listitem [ref=e265]:
+              - img [ref=e266]
+              - text: Expediente digital
+          - link "Iniciar video" [ref=e268] [cursor=pointer]:
+            - /url: /doctor
+        - generic [ref=e269]:
+          - generic [ref=e270]:
+            - heading "Familiar" [level=3] [ref=e271]
+            - generic [ref=e272]:
+              - generic [ref=e273]: $199
+              - generic [ref=e274]: /mes
+          - list [ref=e275]:
+            - listitem [ref=e276]:
+              - img [ref=e277]
+              - text: Hasta 4 miembros
+            - listitem [ref=e279]:
+              - img [ref=e280]
+              - text: Prioridad en consultas
+            - listitem [ref=e282]:
+              - img [ref=e283]
+              - text: Seguimiento 30 días
+          - link "Suscribirse" [ref=e285] [cursor=pointer]:
+            - /url: /register
+      - paragraph [ref=e286]: Acepta SPEI, OXXO, tarjeta. CFDI disponible para reembolso de seguros.
+    - generic [ref=e289]:
+      - heading "Lo que dicen nuestros pacientes" [level=2] [ref=e290]
+      - paragraph [ref=e291]: Miles de mexicanos ya confían en doctor.mx para su atención médica
+    - generic [ref=e293]:
+      - generic [ref=e294]:
+        - heading "¿Eres médico? Únete a nuestra red" [level=2] [ref=e295]
+        - paragraph [ref=e296]:
+          - text: Recibe pacientes referidos por IA médica. Consultas presenciales y telemedicina.
+          - generic [ref=e297]: $499 MXN/mes • $200+ por consulta
+      - generic [ref=e298]:
+        - generic [ref=e299]:
+          - generic [ref=e300]:
+            - generic [ref=e301]:
+              - img [ref=e303]
+              - generic [ref=e305]:
+                - heading "Referencias inteligentes" [level=3] [ref=e306]
+                - paragraph [ref=e307]: Nuestro doctor IA analiza síntomas y te refiere pacientes calificados para tu especialidad.
+            - generic [ref=e308]:
+              - img [ref=e310]
+              - generic [ref=e312]:
+                - heading "Pagos transparentes" [level=3] [ref=e313]
+                - paragraph [ref=e314]: 70% del precio de consulta va directo a ti. Sin sorpresas.
+            - generic [ref=e315]:
+              - img [ref=e317]
+              - generic [ref=e319]:
+                - heading "Sin burocracia" [level=3] [ref=e320]
+                - paragraph [ref=e321]: Registro simple. Verificación rápida en 24 horas. Empiezas de inmediato.
+          - link "Únete como médico" [ref=e323] [cursor=pointer]:
+            - /url: /connect
+            - text: Únete como médico
+            - img [ref=e324]
+        - generic [ref=e327]:
+          - heading "Especialidades más buscadas" [level=3] [ref=e328]
+          - generic [ref=e329]:
+            - generic [ref=e330]:
+              - generic [ref=e331]: Medicina General
+              - generic [ref=e333]:
+                - generic [ref=e336]: 28%
+                - generic [ref=e337]: 1,247
+            - generic [ref=e338]:
+              - generic [ref=e339]: Dermatología
+              - generic [ref=e341]:
+                - generic [ref=e344]: 18%
+                - generic [ref=e345]: "801"
+            - generic [ref=e346]:
+              - generic [ref=e347]: Psicología
+              - generic [ref=e349]:
+                - generic [ref=e352]: 15%
+                - generic [ref=e353]: "667"
+            - generic [ref=e354]:
+              - generic [ref=e355]: Nutrición
+              - generic [ref=e357]:
+                - generic [ref=e360]: 12%
+                - generic [ref=e361]: "534"
+            - generic [ref=e362]:
+              - generic [ref=e363]: Pediatría
+              - generic [ref=e365]:
+                - generic [ref=e368]: 10%
+                - generic [ref=e369]: "445"
+          - generic [ref=e371]:
+            - generic [ref=e372]: Total de consultas analizadas
+            - generic [ref=e373]: 4,451 consultas
+  - region "Notifications Alt+T"

@@ -1,0 +1,67 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e6]:
+        - img [ref=e8]
+        - generic [ref=e10]: Doctor.mx
+      - blockquote [ref=e12]:
+        - paragraph [ref=e13]: “Encontré a mi especialista en minutos. La consulta por IA me orientó antes de ver al doctor. Una experiencia de salud digital increíble.”
+        - contentinfo [ref=e14]: Ana Rodríguez — Paciente, Guadalajara
+    - generic [ref=e17]:
+      - generic [ref=e18]:
+        - heading "Crear cuenta" [level=1] [ref=e19]
+        - paragraph [ref=e20]: Paso 2 de 3
+      - progressbar [ref=e21]
+      - generic [ref=e86]:
+        - generic [ref=e87]:
+          - img [ref=e89]
+          - heading "Información personal" [level=2] [ref=e92]
+          - paragraph [ref=e93]: Ingresa tus datos de acceso
+        - generic [ref=e94]:
+          - generic [ref=e95]:
+            - generic [ref=e96]: Nombre completo
+            - textbox "Nombre completo" [ref=e98]:
+              - /placeholder: Juan Pérez
+          - generic [ref=e99]:
+            - generic [ref=e100]: Correo electrónico
+            - textbox "Correo electrónico" [ref=e102]:
+              - /placeholder: tu@email.com
+          - generic [ref=e103]:
+            - generic [ref=e104]: Teléfono (opcional)
+            - textbox "Teléfono (opcional)" [ref=e105]:
+              - /placeholder: 55 1234 5678
+          - generic [ref=e106]:
+            - generic [ref=e107]: Código de referido (opcional)
+            - textbox "Código de referido (opcional)" [ref=e108]:
+              - /placeholder: AB12CD
+            - paragraph [ref=e109]: Si alguien te invitó, pega su código aquí. Si no, déjalo vacío.
+          - generic [ref=e110]:
+            - generic [ref=e111]: Contraseña
+            - textbox "Contraseña" [ref=e112]:
+              - /placeholder: Mínimo 6 caracteres
+          - generic [ref=e113]:
+            - generic [ref=e114]: Confirmar contraseña
+            - textbox "Confirmar contraseña" [ref=e116]:
+              - /placeholder: Confirma tu contraseña
+      - generic [ref=e57]:
+        - button "Atrás" [ref=e117] [cursor=pointer]:
+          - img
+          - text: Atrás
+        - button "Siguiente" [active] [ref=e58] [cursor=pointer]:
+          - text: Siguiente
+          - img
+      - paragraph [ref=e59]:
+        - text: ¿Ya tienes cuenta?
+        - link "Inicia sesión" [ref=e60] [cursor=pointer]:
+          - /url: /auth/login
+  - button "Abrir asistente Doctor Simeon" [ref=e63] [cursor=pointer]:
+    - generic [ref=e64]:
+      - img "Doctor Simeon" [ref=e71]
+      - generic [ref=e72]:
+        - generic [ref=e73]: Doctor Simeon
+        - generic [ref=e74]: Te guía dentro de Doctor.mx
+      - generic [ref=e75]:
+        - img
+  - button "Open Next.js Dev Tools" [ref=e81] [cursor=pointer]:
+    - img [ref=e82]
+  - alert [ref=e85]

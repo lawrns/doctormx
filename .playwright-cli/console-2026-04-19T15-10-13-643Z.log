@@ -1,0 +1,2 @@
+[     218ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://127.0.0.1:5177/node_modules/.vite/deps/chunk-276SZO74.js?v=18f09df2:21550
+[     561ms] [WARNING] You may test your Stripe.js integration over HTTP. However, live Stripe.js integrations must use HTTPS. @ https://js.stripe.com/clover/stripe.js:0

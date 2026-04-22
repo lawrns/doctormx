@@ -1,0 +1,2785 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doctor.mx — Sistema de Diseño</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════════════
+   DOCTOR.MX DESIGN SYSTEM — Editorial, confident, unforgettable
+   ═══════════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* ── Brand: Cobalt & Viridian ── */
+  --cobalt-50:  #eef4ff;
+  --cobalt-100: #dbe7ff;
+  --cobalt-200: #bfd4ff;
+  --cobalt-300: #93b5ff;
+  --cobalt-400: #608cff;
+  --cobalt-500: #3a66f5;
+  --cobalt-600: #1f48de;
+  --cobalt-700: #1a3ab8;
+  --cobalt-800: #0f255f;
+  --cobalt-900: #081635;
+
+  --ink:        #0a1533;
+  --ink-soft:   #1c2647;
+  --vital:      #00a878;
+  --vital-soft: #d7f5e6;
+  --coral:      #ff5a3d;
+  --coral-soft: #ffe4dc;
+  --amber:      #f4a736;
+  --amber-soft: #fdeccb;
+
+  --font-display: 'Playfair Display', 'Instrument Serif', Georgia, serif;
+  --font-serif:   'Instrument Serif', Georgia, serif;
+  --font-sans:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:    'IBM Plex Mono', 'SF Mono', monospace;
+
+  --r-sm: 6px;   --r-md: 10px;  --r-lg: 16px;
+  --r-xl: 24px;  --r-2xl: 32px;
+  --ease: cubic-bezier(.2,.7,.2,1);
+  --ease-out: cubic-bezier(.16,1,.3,1);
+
+  /* LIGHT MODE DEFAULT */
+  --paper:        #f7f8fb;
+  --paper-soft:   #eef0f5;
+  --paper-deep:   #e3e6ee;
+  --bone:         #d4d9e3;
+  --bg:          #f7f8fb;
+  --bg-elev:     #ffffff;
+  --bg-deep:     #eef0f5;
+  --fg:          #0a1533;
+  --fg-muted:    #5c6783;
+  --border:      #d4d9e3;
+  --border-soft: #e3e6ee;
+
+  --sh-1: 0 1px 2px rgba(15,37,95,.06), 0 1px 1px rgba(15,37,95,.03);
+  --sh-2: 0 4px 14px -2px rgba(15,37,95,.08), 0 2px 6px -1px rgba(15,37,95,.04);
+  --sh-3: 0 20px 40px -12px rgba(15,37,95,.15), 0 6px 18px -6px rgba(15,37,95,.08);
+  --sh-4: 0 40px 80px -20px rgba(15,37,95,.22);
+}
+
+/* DARK MODE */
+body.dark {
+  --paper:        #0f1419;
+  --paper-soft:   #191f2e;
+  --paper-deep:   #0a0e14;
+  --bone:         #2a3447;
+  --bg:          #0f1419 !important;
+  --bg-elev:     #1a2135 !important;
+  --bg-deep:     #191f2e !important;
+  --fg:          #f5f3f0 !important;
+  --fg-muted:    #9aa4b8 !important;
+  --border:      #2a3447 !important;
+  --border-soft: #1f2938 !important;
+
+  --sh-1: 0 1px 2px rgba(0,0,0,.6) !important;
+  --sh-2: 0 4px 14px rgba(0,0,0,.5) !important;
+  --sh-3: 0 20px 40px -12px rgba(0,0,0,.65) !important;
+  --sh-4: 0 40px 80px -20px rgba(0,0,0,.75) !important;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.5;
+  font-feature-settings: "ss01","cv11","cv02";
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background 0.4s var(--ease), color 0.4s var(--ease);
+}
+
+/* Paper texture — subtle noise for warmth */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: .18;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.05 0 0 0 0 0.08 0 0 0 0 0.18 0 0 0 0.35 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+body.dark::before { opacity: .08; mix-blend-mode: overlay; }
+
+/* ═══ LAYOUT ═══ */
+.shell { display: grid; grid-template-columns: 280px 1fr; min-height: 100vh; position: relative; z-index: 2; }
+
+/* ─── Sidebar ─── */
+.nav {
+  position: sticky; top: 0; height: 100vh;
+  padding: 32px 24px;
+  border-right: 1px solid var(--border);
+  background: var(--bg-deep);
+  overflow-y: auto;
+  z-index: 10;
+}
+.nav::-webkit-scrollbar { width: 4px; }
+.nav::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+.brand {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 40px;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+}
+.brand-mark {
+  width: 32px; height: 32px;
+  background: linear-gradient(135deg, var(--cobalt-600), var(--cobalt-800));
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+}
+.brand-mark::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  border: 1.5px solid var(--vital);
+}
+.brand-mark::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 4px; height: 4px;
+  background: var(--vital);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 0 var(--vital);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(0,168,120,.6); }
+  70%  { box-shadow: 0 0 0 8px rgba(0,168,120,0); }
+  100% { box-shadow: 0 0 0 0 rgba(0,168,120,0); }
+}
+
+.nav-version {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 2px 6px;
+  background: var(--vital-soft);
+  color: var(--vital);
+  border-radius: var(--r-sm);
+  letter-spacing: 0.02em;
+}
+body.dark .nav-version { background: rgba(0,168,120,.15); }
+
+.nav-group { margin-bottom: 24px; }
+.nav-group-title {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--fg-muted);
+  margin-bottom: 8px;
+  padding: 0 8px;
+}
+.nav-item {
+  display: block;
+  padding: 6px 10px;
+  margin: 1px 0;
+  color: var(--fg-muted);
+  text-decoration: none;
+  font-size: 13px;
+  border-radius: var(--r-sm);
+  transition: all .15s var(--ease);
+  position: relative;
+}
+.nav-item:hover { color: var(--fg); background: var(--bg); }
+.nav-item.active {
+  color: var(--ink);
+  background: var(--bg);
+  font-weight: 500;
+}
+.nav-item.active::before {
+  content: ''; position: absolute;
+  left: -24px; top: 50%;
+  width: 3px; height: 16px;
+  background: var(--cobalt-800);
+  border-radius: 0 2px 2px 0;
+  transform: translateY(-50%);
+}
+body.dark .nav-item.active { color: var(--fg); }
+body.dark .nav-item.active::before { background: var(--cobalt-400); }
+
+/* ─── Main ─── */
+.main {
+  padding: 0 !important;
+  max-width: none !important;
+  background: var(--bg) !important;
+  color: var(--fg) !important;
+  transition: background 0.3s var(--ease), color 0.3s var(--ease) !important;
+}
+
+.page-wrap { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+
+/* Mode toggle */
+.mode {
+  position: fixed; top: 24px; right: 32px;
+  z-index: 100;
+  display: flex;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 3px;
+  box-shadow: var(--sh-1);
+}
+.mode button {
+  background: none;
+  border: none;
+  padding: 6px 12px;
+  font-size: 12px;
+  color: var(--fg-muted);
+  cursor: pointer;
+  border-radius: calc(var(--r-md) - 3px);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: all .2s var(--ease);
+}
+.mode button.on {
+  background: var(--ink);
+  color: var(--paper);
+}
+body.dark .mode button.on { background: var(--paper); color: var(--ink); }
+
+/* ═══ TYPOGRAPHY ═══ */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--fg-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.eyebrow::before {
+  content: ''; width: 24px; height: 1px;
+  background: currentColor;
+  display: inline-block;
+}
+
+h1.display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(64px, 9vw, 144px);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  color: var(--fg);
+}
+h1.display em {
+  font-style: italic;
+  font-weight: 400;
+  font-family: var(--font-serif);
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+}
+h2 em { font-style: italic; font-weight: 400; font-family: var(--font-serif); }
+
+h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+}
+
+h4 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+}
+
+p { color: var(--fg-muted); max-width: 65ch; }
+p.lead {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  line-height: 1.45;
+  color: var(--fg);
+  font-style: italic;
+  max-width: 52ch;
+}
+
+a { color: var(--cobalt-700); text-decoration: none; }
+body.dark a { color: var(--cobalt-400); }
+
+.mono { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.04em; }
+
+/* ═══ HERO ═══ */
+.hero {
+  min-height: 100vh;
+  padding: 120px 48px 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 80px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--fg-muted);
+}
+.hero-top .meta-row { display: flex; gap: 40px; }
+.hero-top .meta-row > div strong { display: block; color: var(--fg); font-family: var(--font-sans); font-weight: 500; font-size: 12px; margin-top: 4px; letter-spacing: 0; text-transform: none; }
+
+.hero h1 { margin-bottom: 48px; }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-top: 64px;
+  padding-top: 48px;
+  border-top: 1px solid var(--border);
+}
+.hero-grid .lead { max-width: none; }
+.hero-stat-row {
+  display: grid;
+  gap: 20px;
+}
+.hero-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-soft);
+}
+.hero-stat:last-child { border: none; }
+.hero-stat-num {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--fg);
+}
+.hero-stat-num em { font-style: italic; font-family: var(--font-serif); font-weight: 400; }
+.hero-stat-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--fg-muted);
+  text-align: right;
+  max-width: 180px;
+}
+
+/* Floating pill at bottom of hero */
+.hero-pulse {
+  position: absolute;
+  bottom: 40px;
+  left: 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--fg-muted);
+}
+.hero-pulse-dot {
+  width: 8px; height: 8px;
+  background: var(--vital);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+/* ═══ SECTIONS ═══ */
+section.chapter {
+  padding: 120px 0;
+  border-top: 1px solid var(--border);
+}
+.chapter-header {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 64px;
+  margin-bottom: 80px;
+}
+.chapter-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--vital);
+  padding-top: 24px;
+  font-weight: 500;
+}
+.chapter-title h2 { margin-bottom: 24px; }
+.chapter-title p { font-size: 18px; line-height: 1.6; max-width: 60ch; }
+
+/* ═══ COLOR SYSTEM ═══ */
+.color-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  margin-bottom: 64px;
+}
+.color-feature {
+  position: relative;
+  aspect-ratio: 4/3;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.color-feature.cobalt {
+  background: var(--cobalt-800);
+  color: white;
+}
+.color-feature.cobalt::before {
+  content: '';
+  position: absolute;
+  top: -40%; right: -20%;
+  width: 120%; height: 160%;
+  background: radial-gradient(circle, var(--cobalt-600) 0%, transparent 60%);
+  opacity: 0.6;
+}
+:root:not(.dark) .color-feature.cobalt {
+  background: var(--cobalt-700);
+  color: white;
+}
+:root:not(.dark) .color-feature.cobalt::before {
+  opacity: 0.4;
+}
+.color-feature.vital {
+  background: var(--bg-elev);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  position: relative;
+}
+.color-feature-content { position: relative; z-index: 2; }
+.color-feature h3 {
+  color: inherit;
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+.color-feature-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.7;
+  margin-bottom: auto;
+}
+.color-feature-value {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  margin-top: 16px;
+  opacity: 0.8;
+}
+.vital-chart {
+  position: relative;
+  height: 80px;
+  margin: 20px 0;
+}
+.vital-chart svg { width: 100%; height: 100%; }
+
+.color-scale {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 32px;
+  padding: 32px 0;
+  border-top: 1px solid var(--border-soft);
+}
+.color-scale-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--fg-muted);
+  padding-top: 8px;
+}
+.color-scale-label strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--fg);
+  text-transform: none;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+.color-swatches {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 4px;
+  height: 80px;
+}
+.color-sw {
+  border-radius: var(--r-sm);
+  position: relative;
+  cursor: pointer;
+  transition: transform .2s var(--ease);
+}
+.color-sw:hover { transform: translateY(-4px); }
+.color-sw-hex {
+  position: absolute;
+  bottom: 6px; left: 6px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: inherit;
+  opacity: 0;
+  transition: opacity .2s;
+}
+.color-sw:hover .color-sw-hex { opacity: 1; }
+
+/* ═══ TYPOGRAPHY DISPLAY ═══ */
+.type-specimen {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border);
+}
+.type-specimen:last-child { border: none; }
+.type-specimen-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+}
+.type-specimen-label h3 {
+  font-family: var(--font-display);
+  font-size: 36px;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+.type-specimen-sub {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--fg-muted);
+}
+.type-specimen-info {
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-muted);
+  max-width: 240px;
+}
+.type-specimen-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(80px, 12vw, 200px);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  color: var(--fg);
+}
+.type-specimen-display em {
+  font-style: italic;
+  font-weight: 400;
+  font-family: var(--font-serif);
+}
+.type-specimen.sans .type-specimen-display {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  font-size: clamp(72px, 10vw, 160px);
+}
+.type-specimen.mono .type-specimen-display {
+  font-family: var(--font-mono);
+  font-size: clamp(40px, 6vw, 96px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+/* Type scale table */
+.type-scale {
+  margin-top: 48px;
+  border-top: 1px solid var(--border);
+}
+.type-scale-row {
+  display: grid;
+  grid-template-columns: 140px 100px 80px 1fr;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-soft);
+  align-items: baseline;
+  gap: 24px;
+}
+.type-scale-row .mono { color: var(--fg-muted); }
+.type-scale-sample {
+  color: var(--fg);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ═══ ICON GRID ═══ */
+.icon-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+  padding: 48px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+}
+.icon-showcase {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink);
+  border-radius: var(--r-lg);
+  padding: 48px;
+  position: relative;
+}
+.icon-showcase::after {
+  content: 'DX-01';
+  position: absolute;
+  top: 16px; right: 16px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(251,249,244,.4);
+  letter-spacing: 0.12em;
+}
+.icon-showcase svg {
+  width: 120px; height: 120px;
+  stroke: var(--paper);
+  stroke-width: 1.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.dx-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: var(--bg-elev);
+}
+.dx-icon {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-right: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+  position: relative;
+  cursor: pointer;
+  transition: background .2s var(--ease);
+}
+.dx-icon:hover { background: var(--bg-deep); }
+.dx-icon:nth-child(6n) { border-right: none; }
+.dx-icon svg {
+  width: 28px; height: 28px;
+  stroke: var(--fg);
+  stroke-width: 1.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.dx-icon-name {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg-muted);
+}
+.dx-icon-code {
+  position: absolute;
+  top: 8px; left: 8px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--fg-muted);
+  opacity: 0.4;
+}
+
+/* ═══ COMPONENTS ═══ */
+.comp-showcase {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  margin-bottom: 32px;
+  overflow: hidden;
+}
+.comp-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 32px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-deep);
+}
+.comp-head h4 { display: flex; align-items: center; gap: 10px; }
+.comp-head h4::before {
+  content: attr(data-num);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--fg-muted);
+  padding: 3px 6px;
+  background: var(--bg-elev);
+  border-radius: var(--r-sm);
+  border: 1px solid var(--border);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+}
+.comp-head .comp-tags {
+  display: flex;
+  gap: 6px;
+}
+.comp-tag {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 3px 8px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  color: var(--fg-muted);
+}
+.comp-body {
+  padding: 48px 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  background: 
+    linear-gradient(var(--border-soft) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(90deg, var(--border-soft) 1px, transparent 1px) 0 0 / 24px 24px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  border: 1px solid transparent;
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: all .2s var(--ease);
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+.btn-primary:hover {
+  background: var(--cobalt-800);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px -8px rgba(15,37,95,.35);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--fg);
+  border-color: var(--border);
+}
+.btn-ghost:hover {
+  background: var(--bg-deep);
+  border-color: var(--fg-muted);
+}
+.btn-vital {
+  background: var(--vital);
+  color: white;
+}
+.btn-vital:hover { background: #008f65; }
+.btn-coral {
+  background: var(--coral);
+  color: white;
+}
+.btn-coral:hover { background: #e54827; }
+.btn-sm { padding: 7px 14px; font-size: 12px; border-radius: var(--r-sm); }
+.btn-lg { padding: 16px 28px; font-size: 15px; }
+
+/* Inputs */
+.inp-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 280px;
+}
+.inp-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--fg-muted);
+}
+.inp {
+  padding: 12px 14px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--bg);
+  color: var(--fg);
+  transition: all .15s var(--ease);
+  width: 100%;
+}
+.inp:focus {
+  outline: none;
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px rgba(15,37,95,.08);
+}
+body.dark .inp:focus { box-shadow: 0 0 0 3px rgba(96,140,255,.18); }
+
+/* Badges */
+.bdg {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 9px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: var(--r-sm);
+}
+.bdg-vital   { background: var(--vital-soft); color: #006b4c; }
+body.dark .bdg-vital { background: rgba(0,168,120,.2); color: var(--vital); }
+.bdg-coral   { background: var(--coral-soft); color: #b33520; }
+body.dark .bdg-coral { background: rgba(255,90,61,.15); color: var(--coral); }
+.bdg-amber   { background: var(--amber-soft); color: #8c5a00; }
+body.dark .bdg-amber { background: rgba(244,167,54,.15); color: var(--amber); }
+.bdg-ink     { background: var(--ink); color: var(--paper); }
+body.dark .bdg-ink { background: var(--paper); color: var(--ink); }
+.bdg-outline { background: transparent; border: 1px solid var(--border); color: var(--fg); }
+.bdg-dot::before {
+  content: '';
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* ═══ DOCTOR CARD — SIGNATURE COMPONENT ═══ */
+.dr-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 24px;
+  transition: all .3s var(--ease);
+  width: 100%;
+  max-width: 360px;
+  position: relative;
+  overflow: hidden;
+}
+.dr-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sh-3);
+  border-color: var(--ink);
+}
+.dr-card-hdr {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+.dr-avatar {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cobalt-300), var(--cobalt-800));
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  position: relative;
+}
+.dr-avatar::after {
+  content: '';
+  position: absolute;
+  bottom: 2px; right: 2px;
+  width: 14px; height: 14px;
+  background: var(--vital);
+  border: 2px solid var(--bg-elev);
+  border-radius: 50%;
+}
+.dr-meta { flex: 1; min-width: 0; }
+.dr-name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 2px;
+  color: var(--fg);
+}
+.dr-name em { font-style: italic; font-family: var(--font-serif); }
+.dr-spec {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--fg-muted);
+  margin-bottom: 8px;
+}
+.dr-rating { display: flex; align-items: center; gap: 6px; font-size: 13px; }
+.dr-rating strong { font-weight: 600; color: var(--fg); }
+.dr-rating-stars { color: var(--amber); letter-spacing: -1px; }
+
+.dr-bio {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--fg-muted);
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed var(--border);
+}
+.dr-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+.dr-fact {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--fg-muted);
+}
+.dr-fact svg { width: 14px; height: 14px; opacity: .7; flex-shrink: 0; }
+.dr-cta {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+
+/* ═══ AVAILABILITY GRID — SIGNATURE ═══ */
+.avail-wrap {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 24px;
+  max-width: 560px;
+}
+.avail-hdr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-soft);
+}
+.avail-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+}
+.avail-nav {
+  display: flex;
+  gap: 4px;
+}
+.avail-nav button {
+  width: 28px; height: 28px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  color: var(--fg);
+  font-size: 12px;
+}
+.avail-nav button:hover { background: var(--bg-deep); }
+.avail-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.avail-day {
+  aspect-ratio: 1;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  border-radius: var(--r-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all .15s var(--ease);
+  position: relative;
+}
+.avail-day:hover { border-color: var(--fg-muted); }
+.avail-day-wd {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg-muted);
+  margin-bottom: 2px;
+}
+.avail-day-num {
+  font-weight: 600;
+  color: var(--fg);
+}
+.avail-day.has-slots::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  width: 4px; height: 4px;
+  background: var(--vital);
+  border-radius: 50%;
+}
+.avail-day.selected {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+.avail-day.selected .avail-day-wd,
+.avail-day.selected .avail-day-num { color: var(--paper); }
+.avail-day.selected::after { background: var(--paper); }
+.avail-day.disabled { opacity: .35; cursor: not-allowed; }
+
+.avail-slots {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+.slot {
+  padding: 10px 0;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  transition: all .15s var(--ease);
+  color: var(--fg);
+}
+.slot:hover { border-color: var(--ink); background: var(--bg-deep); }
+.slot.selected {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+.slot.taken {
+  opacity: .35;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+/* ═══ AI REFERRAL — THE CENTERPIECE ═══ */
+.ai-stage {
+  background:
+    radial-gradient(ellipse at top left, rgba(58,102,245,.08), transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(0,168,120,.08), transparent 50%),
+    var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--r-2xl);
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+}
+.ai-stage::before {
+  content: 'AI.PRIMERA-OPINIÓN';
+  position: absolute;
+  top: 20px; right: 24px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--fg-muted);
+}
+
+.ai-flow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  position: relative;
+}
+.ai-step {
+  padding: 0 24px;
+  position: relative;
+}
+.ai-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 40px;
+  width: 1px; bottom: 0;
+  background: linear-gradient(to bottom, var(--border), transparent);
+}
+.ai-step-num {
+  font-family: var(--font-display);
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--cobalt-300);
+  margin-bottom: 16px;
+}
+body.dark .ai-step-num { color: var(--cobalt-800); }
+.ai-step.active .ai-step-num { color: var(--cobalt-700); }
+body.dark .ai-step.active .ai-step-num { color: var(--cobalt-400); }
+.ai-step h4 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--fg);
+  letter-spacing: 0;
+}
+.ai-step p { font-size: 13px; margin-bottom: 20px; }
+
+.ai-chat {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 12px;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+.ai-chat-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 4px 0;
+}
+.ai-chat-line.user { color: var(--fg); }
+.ai-chat-line.ai { color: var(--cobalt-700); font-weight: 500; }
+body.dark .ai-chat-line.ai { color: var(--cobalt-400); }
+.ai-chat-line::before {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--fg-muted);
+  padding-top: 2px;
+  flex-shrink: 0;
+  width: 28px;
+}
+.ai-chat-line.user::before { content: 'TÚ'; }
+.ai-chat-line.ai::before { content: 'DX'; color: var(--vital); }
+
+.ai-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+/* Match ranking — the killer feature */
+.ai-match {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 16px;
+  margin-bottom: 8px;
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  transition: all .2s var(--ease);
+}
+.ai-match:hover {
+  border-color: var(--ink);
+  transform: translateX(4px);
+}
+.ai-match-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cobalt-400), var(--cobalt-800));
+}
+.ai-match-name {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--fg);
+  line-height: 1.2;
+}
+.ai-match-spec {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--fg-muted);
+}
+.ai-match-score {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--vital);
+  text-align: right;
+}
+.ai-match-score small {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  color: var(--fg-muted);
+  margin-top: 2px;
+}
+
+/* Confidence bar */
+.ai-confidence {
+  height: 3px;
+  background: var(--border-soft);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+.ai-confidence-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--vital), var(--cobalt-600));
+}
+
+/* ═══ APPOINTMENT CARD ═══ */
+.apt {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 20px;
+  align-items: center;
+  max-width: 560px;
+}
+.apt-date {
+  text-align: center;
+  padding: 8px 14px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--r-md);
+  min-width: 72px;
+}
+.apt-date-m {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  opacity: 0.7;
+}
+.apt-date-d {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1;
+  margin: 2px 0;
+}
+.apt-date-t {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+}
+.apt-info h4 { margin-bottom: 4px; font-size: 15px; }
+.apt-info p { font-size: 12px; color: var(--fg-muted); margin-bottom: 8px; }
+.apt-info .dr-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--fg-muted);
+}
+.apt-info .dr-chip::before {
+  content: '';
+  width: 18px; height: 18px;
+  background: linear-gradient(135deg, var(--cobalt-300), var(--cobalt-800));
+  border-radius: 50%;
+}
+
+/* ═══ PATTERN LIBRARY ═══ */
+.pat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.pat {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.pat-preview {
+  aspect-ratio: 16/10;
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+.pat-info {
+  padding: 20px 24px;
+}
+.pat-info h4 { margin-bottom: 6px; font-size: 16px; }
+.pat-info p { font-size: 13px; max-width: none; }
+.pat-info .mono { color: var(--fg-muted); margin-top: 12px; display: block; }
+
+/* ═══ PRINCIPLES ═══ */
+.principles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  margin-top: 48px;
+}
+.principle {
+  padding-top: 32px;
+  border-top: 2px solid var(--ink);
+}
+body.dark .principle { border-top-color: var(--paper); }
+.principle-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--fg-muted);
+  margin-bottom: 16px;
+}
+.principle h3 {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+.principle h3 em { font-style: italic; font-family: var(--font-serif); }
+.principle p { font-size: 14px; line-height: 1.55; }
+
+/* ═══ MISC ═══ */
+hr.rule {
+  border: none;
+  height: 1px;
+  background: var(--border);
+  margin: 48px 0;
+}
+
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 24px;
+  font-size: 13px;
+}
+.spec-table th, .spec-table td {
+  padding: 12px 0;
+  text-align: left;
+  border-bottom: 1px solid var(--border-soft);
+}
+.spec-table th {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--fg-muted);
+  font-weight: 500;
+}
+.spec-table td.mono { color: var(--fg-muted); }
+
+/* Motion demos */
+.motion-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+.motion-box {
+  aspect-ratio: 1;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.motion-dot {
+  width: 32px; height: 32px;
+  background: var(--ink);
+  border-radius: 50%;
+}
+.motion-box.linear:hover .motion-dot { transform: translateX(60px); transition: transform .8s linear; }
+.motion-box.ease:hover .motion-dot { transform: translateX(60px); transition: transform .8s var(--ease); }
+.motion-box.bounce:hover .motion-dot { transform: translateX(60px); transition: transform .8s cubic-bezier(.68,-.6,.32,1.6); }
+.motion-box.spring:hover .motion-dot { transform: translateX(60px); transition: transform .8s var(--ease-out); }
+
+.footer {
+  padding: 80px 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-top: 1px solid var(--border);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+.footer-mark {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.footer-mark em { font-style: italic; font-family: var(--font-serif); }
+.footer-lead { font-family: var(--font-serif); font-style: italic; font-size: 16px; line-height: 1.5; color: var(--fg); max-width: 40ch; }
+.footer h4 { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--fg-muted); margin-bottom: 12px; font-weight: 500; }
+.footer ul { list-style: none; }
+.footer li { padding: 4px 0; font-size: 13px; color: var(--fg); }
+.footer-end {
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* Selection */
+::selection { background: var(--cobalt-700); color: var(--fg); }
+body.dark ::selection { background: var(--cobalt-600); color: var(--fg); }
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width: 900px) {
+  .shell { grid-template-columns: 1fr; }
+  .nav { position: fixed; transform: translateX(-100%); }
+  .hero-grid, .chapter-header, .icon-intro, .pat-grid, .principles, .footer-grid, .ai-flow, .color-hero { grid-template-columns: 1fr; gap: 32px; }
+  .hero, .chapter, .footer, .page-wrap { padding-left: 24px; padding-right: 24px; }
+  .ai-step:not(:last-child)::after { display: none; }
+  .type-scale-row { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .dx-icon-grid { grid-template-columns: repeat(3, 1fr); }
+  .dx-icon:nth-child(6n) { border-right: 1px solid var(--border-soft); }
+  .dx-icon:nth-child(3n) { border-right: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="mode">
+  <button class="on" onclick="setMode('light')">Light</button>
+  <button onclick="setMode('dark')">Dark</button>
+</div>
+
+<div class="shell">
+  <!-- ═══ SIDEBAR ═══ -->
+  <aside class="nav">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <span>Doctor<em style="font-family:var(--font-serif);font-style:italic;font-weight:400;color:var(--vital);">.</em>mx</span>
+      <span class="nav-version">v2.0</span>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-title">00 · Fundamentos</div>
+      <a href="#intro" class="nav-item active">Introducción</a>
+      <a href="#principles" class="nav-item">Principios</a>
+      <a href="#color" class="nav-item">Color</a>
+      <a href="#type" class="nav-item">Tipografía</a>
+      <a href="#space" class="nav-item">Espacio & Geometría</a>
+      <a href="#motion" class="nav-item">Movimiento</a>
+      <a href="#icons" class="nav-item">Iconografía</a>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-title">01 · Componentes</div>
+      <a href="#buttons" class="nav-item">Botones</a>
+      <a href="#forms" class="nav-item">Formularios</a>
+      <a href="#badges" class="nav-item">Badges & Estados</a>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-title">02 · Salud</div>
+      <a href="#doctor" class="nav-item">Perfil de Doctor</a>
+      <a href="#availability" class="nav-item">Disponibilidad</a>
+      <a href="#appointment" class="nav-item">Cita</a>
+      <a href="#ai-referral" class="nav-item">Referencia IA</a>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-title">03 · Patrones</div>
+      <a href="#patterns" class="nav-item">Páginas</a>
+      <a href="#voice" class="nav-item">Voz & Tono</a>
+    </div>
+  </aside>
+
+  <!-- ═══ MAIN ═══ -->
+  <main class="main">
+
+    <!-- ─── HERO ─── -->
+    <section class="hero" id="intro">
+      <div class="hero-top">
+        <div class="meta-row">
+          <div>
+            DX-SYSTEM
+            <strong>Design Language v2.0</strong>
+          </div>
+          <div>
+            Publicado
+            <strong>Abril 19, 2026</strong>
+          </div>
+          <div>
+            Curador
+            <strong>Equipo Doctor.mx</strong>
+          </div>
+        </div>
+        <div style="text-align:right;">
+          MX
+          <strong style="margin-top:4px;">Ciudad de México</strong>
+        </div>
+      </div>
+
+      <span class="eyebrow" style="margin-bottom:32px;">Sistema de Diseño — DX</span>
+
+      <h1 class="display">Medicina<br>con <em>carácter</em>.</h1>
+
+      <div class="hero-grid">
+        <p class="lead">
+          Un sistema construido para humanos — no para cuadrículas. Cada píxel sirve a una paciente esperando respuestas, a una doctora entre consultas, a una decisión que importa.
+        </p>
+
+        <div class="hero-stat-row">
+          <div class="hero-stat">
+            <div class="hero-stat-num">124<em>k</em></div>
+            <div class="hero-stat-label">Doctores<br>verificados en México</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">2.4<em>M</em></div>
+            <div class="hero-stat-label">Citas agendadas<br>en el último año</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">47<em>s</em></div>
+            <div class="hero-stat-label">Tiempo promedio de<br>referencia por IA</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-pulse">
+        <span class="hero-pulse-dot"></span>
+        Sistema en producción · latido cada 60s
+      </div>
+    </section>
+
+    <!-- ─── PRINCIPLES ─── -->
+    <section class="chapter" id="principles">
+      <div class="page-wrap">
+        <div class="chapter-header">
+          <div class="chapter-num">Cap. 01<br>Principios</div>
+          <div class="chapter-title">
+            <h2>Cinco creencias que <em>no negociamos</em>.</h2>
+            <p>No somos una app genérica vestida de salud. Somos un sistema para decisiones médicas en México — donde la confianza es moneda y la claridad salva tiempo.</p>
+          </div>
+        </div>
+
+        <div class="principles">
+          <div class="principle">
+            <div class="principle-num">001 — Claridad primero</div>
+            <h3>La decisión <em>médica</em> es frágil. El diseño la protege.</h3>
+            <p>Jerarquía brutal. Una acción por pantalla. Sin ambigüedades en precio, disponibilidad, o especialidad.</p>
+          </div>
+          <div class="principle">
+            <div class="principle-num">002 — Confianza editorial</div>
+            <h3>Papel antes que <em>pantalla</em>.</h3>
+            <p>Tipografía serif para los momentos importantes. Tono cálido cobre-beige, no blanco clínico. Estamos del lado del paciente.</p>
+          </div>
+          <div class="principle">
+            <div class="principle-num">003 — IA con transparencia</div>
+            <h3>La caja <em>no</em> es negra.</h3>
+            <p>Cada recomendación muestra su razonamiento. Puntaje de coincidencia, síntomas considerados, límites explícitos.</p>
+          </div>
+          <div class="principle">
+            <div class="principle-num">004 — Densidad medida</div>
+            <h3>Menos filas. <em>Más</em> aire.</h3>
+            <p>Un directorio de doctores no es una hoja de cálculo. Cada tarjeta respira. Cada horario es legible a un metro.</p>
+          </div>
+          <div class="principle">
+            <div class="principle-num">005 — Movimiento con propósito</div>
+            <h3>Animación <em>informa</em>.</h3>
+            <p>Nunca decoramos. El movimiento enseña jerarquía, anticipa estado, confirma acción. 150–300ms. Jamás más.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── COLOR ─── -->
+    <section class="chapter" id="color">
+      <div class="page-wrap">
+        <div class="chapter-header">
+          <div class="chapter-num">Cap. 02<br>Color</div>
+          <div class="chapter-title">
+            <h2>Tinta <em>cobalto</em> sobre papel cálido.</h2>
+            <p>Rompimos con el azul corporativo genérico. El azul cobalto profundo transmite autoridad sin frialdad. El papel crema nos separa del blanco clínico estéril. El verde vital marca lo bueno.</p>
+          </div>
+        </div>
+
+        <div class="color-hero">
+          <div class="color-feature cobalt">
+            <div class="color-feature-content">
+              <div class="color-feature-label">Tinta · Primaria</div>
+              <h3 style="color:inherit;">Cobalto 800</h3>
+              <div class="color-feature-value">#0F255F · OKLCH(0.24 0.13 265)</div>
+            </div>
+          </div>
+          <div class="color-feature vital">
+            <div class="color-feature-content">
+              <div class="color-feature-label" style="color:var(--vital)">Vital · Acento</div>
+              <h3>00A878</h3>
+              <div class="vital-chart">
+                <svg viewBox="0 0 300 60" preserveAspectRatio="none">
+                  <polyline points="0,30 40,30 55,30 65,10 75,50 85,20 95,30 300,30" fill="none" stroke="#00a878" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="color-feature-value">Verde signo vital · confirma · aprueba · vive</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="color-scale">
+          <div class="color-scale-label">
+            <strong>Cobalto</strong>
+            Azul autoridad
+          </div>
+          <div class="color-swatches">
+            <div class="color-sw" style="background:var(--cobalt-50)"><span class="color-sw-hex" style="color:var(--ink)">050</span></div>
+            <div class="color-sw" style="background:var(--cobalt-100)"><span class="color-sw-hex" style="color:var(--ink)">100</span></div>
+            <div class="color-sw" style="background:var(--cobalt-200)"><span class="color-sw-hex" style="color:var(--ink)">200</span></div>
+            <div class="color-sw" style="background:var(--cobalt-300)"><span class="color-sw-hex" style="color:var(--ink)">300</span></div>
+            <div class="color-sw" style="background:var(--cobalt-400)"><span class="color-sw-hex" style="color:white">400</span></div>
+            <div class="color-sw" style="background:var(--cobalt-500)"><span class="color-sw-hex" style="color:white">500</span></div>
+            <div class="color-sw" style="background:var(--cobalt-600)"><span class="color-sw-hex" style="color:white">600</span></div>
+            <div class="color-sw" style="background:var(--cobalt-700)"><span class="color-sw-hex" style="color:white">700</span></div>
+            <div class="color-sw" style="background:var(--cobalt-800)"><span class="color-sw-hex" style="color:white">800</span></div>
+          </div>
+        </div>
+
+        <div class="color-scale">
+          <div class="color-scale-label">
+            <strong>Papel</strong>
+            Superficie
+          </div>
+          <div class="color-swatches">
+            <div class="color-sw" style="background:var(--bg-elev);border:1px solid var(--border)"><span class="color-sw-hex" style="color:var(--fg)">elev</span></div>
+            <div class="color-sw" style="background:var(--paper);border:1px solid var(--border)"><span class="color-sw-hex" style="color:var(--fg)">paper</span></div>
+            <div class="color-sw" style="background:var(--paper-soft);border:1px solid var(--border)"><span class="color-sw-hex" style="color:var(--fg)">soft</span></div>
+            <div class="color-sw" style="background:var(--paper-deep)"><span class="color-sw-hex" style="color:var(--fg)">deep</span></div>
+            <div class="color-sw" style="background:var(--bone)"><span class="color-sw-hex" style="color:var(--fg)">bone</span></div>
+            <div class="color-sw" style="background:var(--border)"><span class="color-sw-hex" style="color:var(--fg)">border</span></div>
+            <div class="color-sw" style="background:var(--fg-muted)"><span class="color-sw-hex" style="color:white">muted</span></div>
+            <div class="color-sw" style="background:var(--ink-soft)"><span class="color-sw-hex" style="color:white">ink-s</span></div>
+            <div class="color-sw" style="background:var(--ink)"><span class="color-sw-hex" style="color:white">ink</span></div>
+          </div>
+        </div>
+
+        <div class="color-scale">
+          <div class="color-scale-label">
+            <strong>Vital</strong>
+            Verde confirmación
+          </div>
+          <div class="color-swatches" style="grid-template-columns: repeat(4,1fr)">
+            <div class="color-sw" style="background:var(--vital-soft);height:80px"><span class="color-sw-hex" style="color:#006b4c">soft</span></div>
+            <div class="color-sw" style="background:#6dd4a8;height:80px"><span class="color-sw-hex" style="color:white">400</span></div>
+            <div class="color-sw" style="background:var(--vital);height:80px"><span class="color-sw-hex" style="color:white">500 · 00A878</span></div>
+            <div class="color-sw" style="background:#006b4c;height:80px"><span class="color-sw-hex" style="color:white">700</span></div>
+          </div>
+        </div>
+
+        <div class="color-scale">
+          <div class="color-scale-label">
+            <strong>Coral</strong>
+            Humano & alerta
+          </div>
+          <div class="color-swatches" style="grid-template-columns: repeat(4,1fr)">
+            <div class="color-sw" style="background:var(--coral-soft);height:80px"><span class="color-sw-hex" style="color:#b33520">soft</span></div>
+            <div class="color-sw" style="background:#ff8d75;height:80px"><span class="color-sw-hex" style="color:white">300</span></div>
+            <div class="color-sw" style="background:var(--coral);height:80px"><span class="color-sw-hex" style="color:white">500 · FF5A3D</span></div>
+            <div class="color-sw" style="background:#b33520;height:80px"><span class="color-sw-hex" style="color:white">700</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── TYPOGRAPHY ─── -->
+    <section class="chapter" id="type">
+      <div class="page-wrap">
+        <div class="chapter-header">
+          <div class="chapter-num">Cap. 03<br>Tipografía</div>
+          <div class="chapter-title">
+            <h2>Fraunces para <em>momentos</em>. Inter para la máquina.</h2>
+            <p>Un serif variable moderno que respira — Fraunces — para títulos, cifras clave, nombres de doctor. Un sans neutral — Inter — para todo lo demás. Mono IBM Plex para código, horarios, metadata.</p>
+          </div>
+        </div>
+
+        <div class="type-specimen">
+          <div class="type-specimen-meta">
+            <div class="type-specimen-label">
+              <h3>Playfair Display</h3>
+              <div class="type-specimen-sub">Serif Clásico · Display</div>
+            </div>
+            <div class="type-specimen-info">
+              400, 700, 800 · opsz 6–120<br>
+              Uso: h1, h2, cifras hero, nombre de doctor
+            </div>
+          </div>
+          <div class="type-specimen-display">Cuidado <em>completo</em>.</div>
+        </div>
+
+        <div class="type-specimen sans">
+          <div class="type-specimen-meta">
+            <div class="type-specimen-label">
+              <h3>Inter</h3>
+              <div class="type-specimen-sub">Sans Variable · UI</div>
+            </div>
+            <div class="type-specimen-info">
+              300–800 · cv11 ss01<br>
+              Uso: body, UI, formularios, metadata legible
+            </div>
+          </div>
+          <div class="type-specimen-display">La claridad salva.</div>
+        </div>
+
+        <div class="type-specimen mono">
+          <div class="type-specimen-meta">
+            <div class="type-specimen-label">
+              <h3>IBM Plex Mono</h3>
+              <div class="type-specimen-sub">Mono · Metadata</div>
+            </div>
+            <div class="type-specimen-info">
+              400–600<br>
+              Uso: códigos, horarios, eyebrows, labels
+            </div>
+          </div>
+          <div class="type-specimen-display">15:30 MX · DX-001</div>
+        </div>
+
+        <table class="spec-table">
+          <thead>
+            <tr><th>Token</th><th>Tamaño</th><th>Línea</th><th>Peso</th><th>Muestra</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="mono">display/xxl</td>
+              <td class="mono">144/0.92</td>
+              <td class="mono">-0.05em</td>
+              <td class="mono">Fraunces 300</td>
+              <td style="font-family:var(--font-display); font-size:40px; font-weight:300; letter-spacing:-0.04em;">Aa</td>
+            </tr>
+            <tr>
+              <td class="mono">display/xl</td>
+              <td class="mono">72/1.02</td>
+              <td class="mono">-0.035em</td>
+              <td class="mono">Fraunces 300</td>
+              <td style="font-family:var(--font-display); font-size:32px; font-weight:300;">Título de sección</td>
+            </tr>
+            <tr>
+              <td class="mono">display/md</td>
+              <td class="mono">32/1.1</td>
+              <td class="mono">-0.02em</td>
+              <td class="mono">Fraunces 400</td>
+              <td style="font-family:var(--font-display); font-size:20px;">Nombre del doctor</td>
+            </tr>
+            <tr>
+              <td class="mono">body/lg</td>
+              <td class="mono">22/1.45</td>
+              <td class="mono">0</td>
+              <td class="mono">Serif italic</td>
+              <td style="font-family:var(--font-serif); font-style:italic; font-size:16px;">Introducción editorial</td>
+            </tr>
+            <tr>
+              <td class="mono">body/md</td>
+              <td class="mono">15/1.5</td>
+              <td class="mono">-0.005em</td>
+              <td class="mono">Inter 400</td>
+              <td style="font-size:14px;">Párrafo de cuerpo estándar.</td>
+            </tr>
+            <tr>
+              <td class="mono">body/sm</td>
+              <td class="mono">13/1.5</td>
+              <td class="mono">0</td>
+              <td class="mono">Inter 400</td>
+              <td style="font-size:12px;">Ayuda secundaria, meta</td>
+            </tr>
+            <tr>
+              <td class="mono">mono/xs</td>
+              <td class="mono">11/1.4</td>
+              <td class="mono">0.12em</td>
+              <td class="mono">Plex Mono 500</td>
+              <td style="font-family:var(--font-mono); font-size:10px; text-transform:uppercase; letter-spacing:0.12em; color:var(--fg-muted);">CÓDIGOS · ETIQUETAS</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ─── SPACE & GEOMETRY ─── -->
+    <section class="chapter" id="space">
+      <div class="page-wrap">
+        <div class="chapter-header">
+          <div class="chapter-num">Cap. 04<br>Espacio</div>
+          <div class="chapter-title">
+            <h2>Una <em>escala</em>. Sin excepciones.</h2>
+            <p>Múltiplos de 4. Nombres mnemónicos. Radios suaves (no redondeados pharmac-comic). Sombras en plomo cobalto, no negro.</p>
+          </div>
+        </div>
+
+        <table class="spec-table">
+          <thead>
+            <tr><th>Token</th><th>Valor</th><th>Uso</th><th style="text-align:right">Muestra</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="mono">space/0</td><td class="mono">0</td><td>Border reset</td><td></td></tr>
+            <tr><td class="mono">space/1</td><td class="mono">4px</td><td>Íconos internos</td><td style="text-align:right"><span style="display:inline-block;background:var(--ink);width:4px;height:16px"></span></td></tr>
+            <tr><td class="mono">space/2</td><td class="mono">8px</td><td>Chips, badges</td><td style="text-align:right"><span style="display:inline-block;background:var(--ink);width:8px;height:16px"></span></td></tr>
+            <tr><td class="mono">space/3</td><td class="mono">12px</td><td>Padding input</td><td style="text-align:right"><span style="display:inline-block;background:var(--ink);width:12px;height:16px"></span></td></tr>
+            <tr><td class="mono">space/4</td><td class="mono">16px</td><td>Tarjetas compactas</td><td style="text-align:right"><span style="display:inline-block;background:var(--ink);width:16px;height:16px"></span></td></tr>
+            <tr><td class="mono">space/6</td><td class="mono">24px</td><td>Tarjeta doctor</td><td style="text-align:right"><span style="display:inline-block;background:var(--ink);width:24px;height:16px"></span></td></tr>
+            <tr><td class="mono">space/8</td><td class="mono">32px</td><td>Secciones menores</td><td style="text-align:right"><span style="display:inline-block;background:var(--ink);width:32px;height:16px"></span></td></tr>
+            <tr><td class="mono">space/12</td><td class="mono">48px</td><td>Página</td><td style="text-align:right"><span style="display:inline-block;background:var(--ink);width:48px;height:16px"></span></td></tr>
+            <tr><td class="mono">space/20</td><td class="mono">80px</td><td>Entre capítulos</td><td style="text-align:right"><span style="display:inline-block;background:var(--ink);width:80px;height:16px"></span></td></tr>
+            <tr><td class="mono">space/30</td><td class="mono">120px</td><td>Respiro editorial</td><td style="text-align:right"><span style="display:inline-block;background:var(--ink);width:120px;height:16px"></span></td></tr>
+          </tbody>
+        </table>
+
+        <h3 style="margin-top:64px;margin-bottom:24px;">Radios</h3>
+        <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:16px;">
+          <div style="aspect-ratio:1;background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--r-sm);display:flex;align-items:flex-end;padding:12px;"><span class="mono">sm · 6</span></div>
+          <div style="aspect-ratio:1;background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--r-md);display:flex;align-items:flex-end;padding:12px;"><span class="mono">md · 10</span></div>
+          <div style="aspect-ratio:1;background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--r-lg);display:flex;align-items:flex-end;padding:12px;"><span class="mono">lg · 16</span></div>
+          <div style="aspect-ratio:1;background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--r-xl);display:flex;align-items:flex-end;padding:12px;"><span class="mono">xl · 24</span></div>
+          <div style="aspect-ratio:1;background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--r-2xl);display:flex;align-items:flex-end;padding:12px;"><span class="mono">2xl · 32</span></div>
+          <div style="aspect-ratio:1;background:var(--bg-elev);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;"><span class="mono">full</span></div>
+        </div>
+
+        <h3 style="margin-top:64px;margin-bottom:24px;">Elevación</h3>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;">
+          <div style="aspect-ratio:1;background:var(--bg-elev);border-radius:var(--r-lg);box-shadow:var(--sh-1);display:flex;flex-direction:column;justify-content:flex-end;padding:16px;">
+            <div style="font-family:var(--font-display);font-size:20px;">01</div>
+            <div class="mono">Línea base</div>
+          </div>
+          <div style="aspect-ratio:1;background:var(--bg-elev);border-radius:var(--r-lg);box-shadow:var(--sh-2);display:flex;flex-direction:column;justify-content:flex-end;padding:16px;">
+            <div style="font-family:var(--font-display);font-size:20px;">02</div>
+            <div class="mono">Tarjeta hover</div>
+          </div>
+          <div style="aspect-ratio:1;background:var(--bg-elev);border-radius:var(--r-lg);box-shadow:var(--sh-3);display:flex;flex-direction:column;justify-content:flex-end;padding:16px;">
+            <div style="font-family:var(--font-display);font-size:20px;">03</div>
+            <div class="mono">Popover / menu</div>
+          </div>
+          <div style="aspect-ratio:1;background:var(--bg-elev);border-radius:var(--r-lg);box-shadow:var(--sh-4);display:flex;flex-direction:column;justify-content:flex-end;padding:16px;">
+            <div style="font-family:var(--font-display);font-size:20px;">04</div>
+            <div class="mono">Modal / sheet</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── MOTION ─── -->
+    <section class="chapter" id="motion">
+      <div class="page-wrap">
+        <div class="chapter-header">
+          <div class="chapter-num">Cap. 05<br>Movimiento</div>
+          <div class="chapter-title">
+            <h2>150ms es casi todo lo que <em>necesitas</em>.</h2>
+            <p>Pasa el cursor sobre cada caja para ver. Nada rebota gratuitamente. El movimiento refleja jerarquía — lo importante se mueve menos.</p>
+          </div>
+        </div>
+
+        <div class="motion-grid">
+          <div class="motion-box linear">
+            <div class="motion-dot"></div>
+            <div class="mono">Linear · 800ms</div>
+            <span style="font-size:10px;color:var(--fg-muted);">Evitar · cansa</span>
+          </div>
+          <div class="motion-box ease">
+            <div class="motion-dot"></div>
+            <div class="mono">Ease · 800ms</div>
+            <span style="font-size:10px;color:var(--vital);">Preferido · UI</span>
+          </div>
+          <div class="motion-box spring">
+            <div class="motion-dot"></div>
+            <div class="mono">Spring · 800ms</div>
+            <span style="font-size:10px;color:var(--fg-muted);">Entrada</span>
+          </div>
+          <div class="motion-box bounce">
+            <div class="motion-dot"></div>
+            <div class="mono">Bounce · 800ms</div>
+            <span style="font-size:10px;color:var(--coral);">Excepcional</span>
+          </div>
+        </div>
+
+        <table class="spec-table" style="margin-top:48px;">
+          <thead>
+            <tr><th>Rol</th><th>Duración</th><th>Easing</th><th>Cuándo</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="mono">instant</td><td class="mono">100ms</td><td class="mono">linear</td><td>Hover, focus</td></tr>
+            <tr><td class="mono">quick</td><td class="mono">150ms</td><td class="mono">ease</td><td>Botones, tabs</td></tr>
+            <tr><td class="mono">standard</td><td class="mono">240ms</td><td class="mono">cubic-bezier(.2,.7,.2,1)</td><td>Tarjetas, popover</td></tr>
+            <tr><td class="mono">emphasis</td><td class="mono">400ms</td><td class="mono">cubic-bezier(.16,1,.3,1)</td><td>Modales, sheets</td></tr>
+            <tr><td class="mono">brand</td><td class="mono">2s</td><td class="mono">pulse</td><td>Latido del logo</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ─── ICONS ─── -->
+    <section class="chapter" id="icons">
+      <div class="page-wrap">
+        <div class="chapter-header">
+          <div class="chapter-num">Cap. 06<br>Iconografía</div>
+          <div class="chapter-title">
+            <h2>DX — una <em>familia</em> propia.</h2>
+            <p>Dibujados para Doctor.mx. 24×24 en grid de 1.5px. Esquinas a 2px. Terminaciones redondeadas. Cada ícono es un contrato visual — no un ornamento.</p>
+          </div>
+        </div>
+
+        <div class="icon-intro">
+          <div class="icon-showcase">
+            <svg viewBox="0 0 48 48">
+              <path d="M14 10v14a10 10 0 0 0 10 10 10 10 0 0 0 10-10V10"/>
+              <circle cx="14" cy="8" r="2"/>
+              <circle cx="34" cy="8" r="2"/>
+              <circle cx="24" cy="38" r="4"/>
+              <path d="M24 34v-4"/>
+            </svg>
+          </div>
+          <div>
+            <span class="eyebrow">DX-01 · Estetoscopio</span>
+            <h3 style="margin:16px 0 12px;">Una línea. Un concepto. Un claro <em>sí</em> o <em>no</em>.</h3>
+            <p style="font-size:14px;">No usamos filled y outlined al mismo tiempo. No mezclamos grosores. No rotamos para generar más. Cada ícono se dibuja con intención para un contexto médico específico.</p>
+          </div>
+        </div>
+
+        <div class="dx-icon-grid">
+          <div class="dx-icon"><span class="dx-icon-code">01</span>
+            <svg viewBox="0 0 24 24"><path d="M7 5v7a5 5 0 0 0 5 5 5 5 0 0 0 5-5V5"/><circle cx="7" cy="4" r="1"/><circle cx="17" cy="4" r="1"/><circle cx="12" cy="19" r="2"/><path d="M12 17v-2"/></svg>
+            <span class="dx-icon-name">Stetho</span>
+          </div>
+          <div class="dx-icon"><span class="dx-icon-code">02</span>
+            <svg viewBox="0 0 24 24"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg>
+            <span class="dx-icon-name">Vital</span>
+          </div>
+          <div class="dx-icon"><span class="dx-icon-code">03</span>
+            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/><circle cx="12" cy="15" r="1.5" fill="currentColor" stroke="none"/></svg>
+            <span class="dx-icon-name">Cita</span>
+          </div>
+          <div class="dx-icon"><span class="dx-icon-code">04</span>
+            <svg viewBox="0 0 24 24"><rect x="4" y="8" width="8" height="12" rx="4" transform="rotate(-30 8 14)"/><rect x="12" y="4" width="8" height="12" rx="4" transform="rotate(-30 16 10)"/><path d="M11 10l6-4"/></svg>
+            <span class="dx-icon-name">Pastilla</span>
+          </div>
+          <div class="dx-icon"><span class="dx-icon-code">05</span>
+            <svg viewBox="0 0 24 24"><path d="M12 21s-7-5-7-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6-7 11-7 11"/><path d="M9 11l1 2 2-3 2 3 1-2"/></svg>
+            <span class="dx-icon-name">Corazón</span>
+          </div>
+          <div class="dx-icon"><span class="dx-icon-code">06</span>
+            <svg viewBox="0 0 24 24"><path d="M12 2a6 6 0 0 0-6 6v3a6 6 0 0 0-3 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 6 6 0 0 0-3-5V8a6 6 0 0 0-6-6zM9 18v3M15 18v3"/></svg>
+            <span class="dx-icon-name">Cerebro</span>
+          </div>
+          <div class="dx-icon"><span class="dx-icon-code">07</span>
+            <svg viewBox="0 0 24 24"><path d="M12 3v8"/><path d="M8 11h8l-2 7a2 2 0 0 1-2 2h0a2 2 0 0 1-2-2z"/><path d="M9 3h6"/></svg>
+            <span class="dx-icon-name">Tubo</span>
+          </div>
+          <div class="dx-icon"><span class="dx-icon-code">08</span>
+            <svg viewBox="0 0 24 24"><path d="M12 22s-8-4-8-11a5 5 0 0 1 8-4 5 5 0 0 1 8 4c0 7-8 11-8 11z"/></svg>
+            <span class="dx-icon-name">Ubicación</span>
+          </div>
+          <div class="dx-icon"><span class="dx-icon-code">09</span>
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+            <span class="dx-icon-name">Paciente</span>
+          </div>
+          <div class="dx-icon"><span class="dx-icon-code">10</span>
+            <svg viewBox="0 0 24 24"><path d="M7 15h10M7 11h10M7 7h6"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+            <span class="dx-icon-name">Receta</span>
+          </div>
+          <div class="dx-icon"><span class="dx-icon-code">11</span>
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            <span class="dx-icon-name">Reloj</span>
+          </div>
+          <div class="dx-icon"><span class="dx-icon-code">12</span>
+            <svg viewBox="0 0 24 24"><path d="M12 3l9 4v5c0 5-3.5 9-9 10-5.5-1-9-5-9-10V7z"/><path d="M9 12l2 2 4-4"/></svg>
+            <span class="dx-icon-name">Seguro</span>
+          </div>
+          <div class="dx-icon"><span class="dx-icon-code">13</span>
+            <svg viewBox="0 0 24 24"><path d="M12 4v4M8 6l2.5 3M16 6l-2.5 3M12 21a7 7 0 0 1-7-7 7 7 0 0 1 14 0 7 7 0 0 1-7 7z"/><circle cx="12" cy="14" r="1" fill="currentColor" stroke="none"/></svg>
+            <span class="dx-icon-name">IA</span>
+          </div>
+          <div class="dx-icon"><span class="dx-icon-code">14</span>
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><circle cx="9" cy="10" r="0.5" fill="currentColor"/><circle cx="13" cy="10" r="0.5" fill="currentColor"/><circle cx="17" cy="10" r="0.5" fill="currentColor"/></svg>
+            <span class="dx-icon-name">Consulta</span>
+          </div>
+          <div class="dx-icon"><span class="dx-icon-code">15</span>
+            <svg viewBox="0 0 24 24"><path d="M15.5 2H8.5L5 5.5v13l3.5 3.5h7l3.5-3.5v-13z"/><path d="M9 12l2 2 4-4"/></svg>
+            <span class="dx-icon-name">Verificado</span>
+          </div>
+          <div class="dx-icon"><span class="dx-icon-code">16</span>
+            <svg viewBox="0 0 24 24"><path d="M5 20V8l7-4 7 4v12"/><path d="M10 20v-6h4v6M12 4v4"/></svg>
+            <span class="dx-icon-name">Clínica</span>
+          </div>
+          <div class="dx-icon"><span class="dx-icon-code">17</span>
+            <svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M3 5h18v12a0 0 0 0 1 0 0H3a0 0 0 0 1 0 0z"/><path d="M9 11l2 2 4-4"/></svg>
+            <span class="dx-icon-name">Teleconsul</span>
+          </div>
+          <div class="dx-icon"><span class="dx-icon-code">18</span>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5 2 7L12 16l-6.5 4.5 2-7L2 9h7z"/></svg>
+            <span class="dx-icon-name">Rating</span>
+          </div>
+          <div class="dx-icon"><span class="dx-icon-code">19</span>
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5"/></svg>
+            <span class="dx-icon-name">Buscar</span>
+          </div>
+          <div class="dx-icon"><span class="dx-icon-code">20</span>
+            <svg viewBox="0 0 24 24"><path d="M22 16.9a16 16 0 0 1-7 2.1 16 16 0 0 1-13-13 2 2 0 0 1 2-2h3l2 5-2.5 1.5a11 11 0 0 0 6 6l1.5-2.5 5 2v3z"/></svg>
+            <span class="dx-icon-name">Emergencia</span>
+          </div>
+          <div class="dx-icon"><span class="dx-icon-code">21</span>
+            <svg viewBox="0 0 24 24"><path d="M8 2v4M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M7 14h3M7 18h10M14 14h3"/></svg>
+            <span class="dx-icon-name">Agenda</span>
+          </div>
+          <div class="dx-icon"><span class="dx-icon-code">22</span>
+            <svg viewBox="0 0 24 24"><path d="M20 12v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"/><path d="M9 13l3 3L22 6"/></svg>
+            <span class="dx-icon-name">Completado</span>
+          </div>
+          <div class="dx-icon"><span class="dx-icon-code">23</span>
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6M9 9h1"/></svg>
+            <span class="dx-icon-name">Expediente</span>
+          </div>
+          <div class="dx-icon"><span class="dx-icon-code">24</span>
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+            <span class="dx-icon-name">Alerta</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── BUTTONS ─── -->
+    <section class="chapter" id="buttons">
+      <div class="page-wrap">
+        <div class="chapter-header">
+          <div class="chapter-num">Cap. 07<br>Botones</div>
+          <div class="chapter-title">
+            <h2>Acciones <em>claras</em>, jerarquía feroz.</h2>
+            <p>Tinta cobalto para la acción principal, fantasma para secundaria, verde vital para confirmaciones irrevocables, coral para alertas médicas.</p>
+          </div>
+        </div>
+
+        <div class="comp-showcase">
+          <div class="comp-head">
+            <h4 data-num="BTN-01">Jerarquía primaria</h4>
+            <div class="comp-tags">
+              <span class="comp-tag">A11y AA</span>
+              <span class="comp-tag">44px touch</span>
+            </div>
+          </div>
+          <div class="comp-body">
+            <button class="btn btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+              Agendar cita
+            </button>
+            <button class="btn btn-ghost">Ver todos los horarios</button>
+            <button class="btn btn-ghost btn-sm">Más detalles →</button>
+          </div>
+        </div>
+
+        <div class="comp-showcase">
+          <div class="comp-head">
+            <h4 data-num="BTN-02">Acciones de salud</h4>
+            <div class="comp-tags">
+              <span class="comp-tag">Semántica</span>
+            </div>
+          </div>
+          <div class="comp-body">
+            <button class="btn btn-vital">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              Confirmar cita
+            </button>
+            <button class="btn btn-coral">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9a16 16 0 0 1-7 2.1 16 16 0 0 1-13-13 2 2 0 0 1 2-2h3l2 5-2.5 1.5a11 11 0 0 0 6 6l1.5-2.5 5 2v3z"/></svg>
+              Llamar emergencia
+            </button>
+          </div>
+        </div>
+
+        <div class="comp-showcase">
+          <div class="comp-head">
+            <h4 data-num="BTN-03">Tamaños</h4>
+          </div>
+          <div class="comp-body">
+            <button class="btn btn-primary btn-sm">Pequeño</button>
+            <button class="btn btn-primary">Mediano</button>
+            <button class="btn btn-primary btn-lg">Grande</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FORMS ─── -->
+    <section class="chapter" id="forms">
+      <div class="page-wrap">
+        <div class="chapter-header">
+          <div class="chapter-num">Cap. 08<br>Formularios</div>
+          <div class="chapter-title">
+            <h2>Etiquetas en <em>mono</em>, campos en papel.</h2>
+            <p>El etiquetado en Plex Mono funciona como marca editorial — distingue a Doctor.mx de cualquier form genérico.</p>
+          </div>
+        </div>
+
+        <div class="comp-showcase">
+          <div class="comp-head"><h4 data-num="INP-01">Campos base</h4></div>
+          <div class="comp-body" style="flex-direction:column;align-items:flex-start;max-width:480px;margin:0 auto;">
+            <div class="inp-wrap">
+              <label class="inp-label">Nombre completo</label>
+              <input class="inp" type="text" placeholder="María Fernández García"/>
+            </div>
+            <div class="inp-wrap">
+              <label class="inp-label">Especialidad buscada</label>
+              <select class="inp">
+                <option>Medicina general</option>
+                <option>Cardiología</option>
+                <option>Dermatología</option>
+              </select>
+            </div>
+            <div class="inp-wrap">
+              <label class="inp-label">Motivo de consulta</label>
+              <textarea class="inp" rows="3" placeholder="Describe tus síntomas..."></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── BADGES ─── -->
+    <section class="chapter" id="badges">
+      <div class="page-wrap">
+        <div class="chapter-header">
+          <div class="chapter-num">Cap. 09<br>Estados</div>
+          <div class="chapter-title">
+            <h2>Señalética <em>médica</em>.</h2>
+            <p>Disponibilidad, verificación, urgencia — cada estado tiene una forma y un color dedicados. Nunca dos badges compiten por atención en la misma tarjeta.</p>
+          </div>
+        </div>
+
+        <div class="comp-showcase">
+          <div class="comp-head"><h4 data-num="BDG-01">Disponibilidad & estado</h4></div>
+          <div class="comp-body">
+            <span class="bdg bdg-vital bdg-dot">Disponible hoy</span>
+            <span class="bdg bdg-amber bdg-dot">3 horarios</span>
+            <span class="bdg bdg-coral bdg-dot">Sin espacio esta semana</span>
+            <span class="bdg bdg-ink">Verificado IMSS</span>
+            <span class="bdg bdg-outline">Teleconsulta</span>
+            <span class="bdg bdg-outline">Presencial</span>
+            <span class="bdg bdg-outline">Habla inglés</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── DOCTOR CARDS ─── -->
+    <section class="chapter" id="doctor">
+      <div class="page-wrap">
+        <div class="chapter-header">
+          <div class="chapter-num">Cap. 10<br>Perfil de doctor</div>
+          <div class="chapter-title">
+            <h2>La tarjeta es un <em>currículum en 5 segundos</em>.</h2>
+            <p>Foto, nombre, especialidad, calificación, disponibilidad, ubicación, precio, lengua — en orden de lo que decide una consulta. Nada decorativo.</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;">
+
+          <div class="dr-card">
+            <div class="dr-card-hdr">
+              <div class="dr-avatar">MG</div>
+              <div class="dr-meta">
+                <div class="dr-name">Dra. <em>María</em> García</div>
+                <div class="dr-spec">Cardiología · 12 años</div>
+                <div class="dr-rating">
+                  <span class="dr-rating-stars">★★★★★</span>
+                  <strong>4.9</strong>
+                  <span style="color:var(--fg-muted)">· 380 reseñas</span>
+                </div>
+              </div>
+            </div>
+            <p class="dr-bio">Especialista en cardiología preventiva. Enfoque en pacientes con hipertensión y diabetes tipo 2.</p>
+            <div class="dr-facts">
+              <div class="dr-fact">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4-8-11a5 5 0 0 1 8-4 5 5 0 0 1 8 4c0 7-8 11-8 11z"/></svg>
+                Polanco, CDMX
+              </div>
+              <div class="dr-fact">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5 2 7L12 16l-6.5 4.5 2-7L2 9h7z"/></svg>
+                Desde $900 MXN
+              </div>
+              <div class="dr-fact">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg>
+                Hoy y mañana
+              </div>
+              <div class="dr-fact">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Teleconsulta
+              </div>
+            </div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;">
+              <span class="bdg bdg-vital bdg-dot">Disponible 14:30</span>
+              <span class="bdg bdg-ink">Verificada</span>
+            </div>
+            <div class="dr-cta">
+              <button class="btn btn-primary" style="width:100%;">Agendar cita</button>
+              <button class="btn btn-ghost" style="padding:12px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-5-7-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6-7 11-7 11"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="dr-card">
+            <div class="dr-card-hdr">
+              <div class="dr-avatar" style="background:linear-gradient(135deg, var(--coral), #b33520);">CL</div>
+              <div class="dr-meta">
+                <div class="dr-name">Dr. <em>Carlos</em> López</div>
+                <div class="dr-spec">Dermatología · 18 años</div>
+                <div class="dr-rating">
+                  <span class="dr-rating-stars">★★★★★</span>
+                  <strong>4.8</strong>
+                  <span style="color:var(--fg-muted)">· 920 reseñas</span>
+                </div>
+              </div>
+            </div>
+            <p class="dr-bio">Dermatología clínica y estética. Experto en procedimientos de mínima invasión.</p>
+            <div class="dr-facts">
+              <div class="dr-fact">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s-8-4-8-11a5 5 0 0 1 8-4 5 5 0 0 1 8 4c0 7-8 11-8 11z"/></svg>
+                Roma Norte, CDMX
+              </div>
+              <div class="dr-fact">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 7h7l-5.5 4.5 2 7L12 16l-6.5 4.5 2-7L2 9h7z"/></svg>
+                Desde $1,400 MXN
+              </div>
+              <div class="dr-fact">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg>
+                Próximo: 24 abr
+              </div>
+              <div class="dr-fact">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 20V8l7-4 7 4v12"/></svg>
+                Presencial
+              </div>
+            </div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;">
+              <span class="bdg bdg-amber bdg-dot">3 horarios · viernes</span>
+              <span class="bdg bdg-ink">Verificado</span>
+            </div>
+            <div class="dr-cta">
+              <button class="btn btn-primary" style="width:100%;">Ver horarios</button>
+              <button class="btn btn-ghost" style="padding:12px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-5-7-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6-7 11-7 11"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="dr-card">
+            <div class="dr-card-hdr">
+              <div class="dr-avatar" style="background:linear-gradient(135deg, var(--vital), #006b4c);">AR</div>
+              <div class="dr-meta">
+                <div class="dr-name">Dra. <em>Ana</em> Ruiz</div>
+                <div class="dr-spec">Pediatría · 9 años</div>
+                <div class="dr-rating">
+                  <span class="dr-rating-stars">★★★★★</span>
+                  <strong>5.0</strong>
+                  <span style="color:var(--fg-muted)">· 124 reseñas</span>
+                </div>
+              </div>
+            </div>
+            <p class="dr-bio">Pediatra certificada. Consultas de seguimiento, vacunación y desarrollo infantil.</p>
+            <div class="dr-facts">
+              <div class="dr-fact">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s-8-4-8-11a5 5 0 0 1 8-4 5 5 0 0 1 8 4c0 7-8 11-8 11z"/></svg>
+                Monterrey, NL
+              </div>
+              <div class="dr-fact">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 7h7l-5.5 4.5 2 7L12 16l-6.5 4.5 2-7L2 9h7z"/></svg>
+                Desde $650 MXN
+              </div>
+              <div class="dr-fact">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg>
+                Hoy · 18:00
+              </div>
+              <div class="dr-fact">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Teleconsulta
+              </div>
+            </div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;">
+              <span class="bdg bdg-vital bdg-dot">Disponible hoy</span>
+              <span class="bdg bdg-outline">Habla inglés</span>
+            </div>
+            <div class="dr-cta">
+              <button class="btn btn-primary" style="width:100%;">Agendar 18:00</button>
+              <button class="btn btn-ghost" style="padding:12px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-5-7-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6-7 11-7 11"/></svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── AVAILABILITY ─── -->
+    <section class="chapter" id="availability">
+      <div class="page-wrap">
+        <div class="chapter-header">
+          <div class="chapter-num">Cap. 11<br>Disponibilidad</div>
+          <div class="chapter-title">
+            <h2>Calendario que <em>no miente</em>.</h2>
+            <p>Los días sin huecos no mienten al usuario con horarios agotados. El componente es simple, honesto, y optimizado para dedo gordo en móvil.</p>
+          </div>
+        </div>
+
+        <div class="avail-wrap">
+          <div class="avail-hdr">
+            <div>
+              <div class="avail-title">Abril 2026</div>
+              <div class="mono" style="color:var(--fg-muted);margin-top:2px;">Selecciona un día y horario</div>
+            </div>
+            <div class="avail-nav">
+              <button>←</button>
+              <button>→</button>
+            </div>
+          </div>
+
+          <div class="avail-days">
+            <div class="avail-day disabled"><div class="avail-day-wd">Lun</div><div class="avail-day-num">20</div></div>
+            <div class="avail-day has-slots"><div class="avail-day-wd">Mar</div><div class="avail-day-num">21</div></div>
+            <div class="avail-day has-slots"><div class="avail-day-wd">Mié</div><div class="avail-day-num">22</div></div>
+            <div class="avail-day has-slots"><div class="avail-day-wd">Jue</div><div class="avail-day-num">23</div></div>
+            <div class="avail-day selected has-slots"><div class="avail-day-wd">Vie</div><div class="avail-day-num">24</div></div>
+            <div class="avail-day disabled"><div class="avail-day-wd">Sáb</div><div class="avail-day-num">25</div></div>
+            <div class="avail-day disabled"><div class="avail-day-wd">Dom</div><div class="avail-day-num">26</div></div>
+          </div>
+
+          <div class="mono" style="color:var(--fg-muted);margin-bottom:8px;">Viernes 24 · 6 horarios disponibles</div>
+
+          <div class="avail-slots">
+            <div class="slot">09:00</div>
+            <div class="slot">09:30</div>
+            <div class="slot taken">10:00</div>
+            <div class="slot">10:30</div>
+            <div class="slot taken">14:00</div>
+            <div class="slot selected">14:30</div>
+            <div class="slot">15:00</div>
+            <div class="slot">17:00</div>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;padding-top:20px;border-top:1px solid var(--border-soft);">
+            <div>
+              <div class="mono" style="color:var(--fg-muted);">Seleccionado</div>
+              <div style="font-family:var(--font-display);font-size:20px;margin-top:2px;">Vie 24 · <em style="font-family:var(--font-serif);font-style:italic;">14:30</em></div>
+            </div>
+            <button class="btn btn-primary">Continuar →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── APPOINTMENT ─── -->
+    <section class="chapter" id="appointment">
+      <div class="page-wrap">
+        <div class="chapter-header">
+          <div class="chapter-num">Cap. 12<br>Cita</div>
+          <div class="chapter-title">
+            <h2>Tu cita, <em>resumida</em>.</h2>
+            <p>Fecha como sello, doctor como firma, acciones secundarias como letra pequeña. Los tres estados — próxima, en curso, completada — mantienen la misma estructura.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:16px;max-width:640px;">
+
+          <div class="apt">
+            <div class="apt-date">
+              <div class="apt-date-m">ABR</div>
+              <div class="apt-date-d">24</div>
+              <div class="apt-date-t">14:30</div>
+            </div>
+            <div class="apt-info">
+              <h4>Cardiología preventiva</h4>
+              <p>Consulta inicial · 30 min · Teleconsulta</p>
+              <div class="dr-chip">Con Dra. María García</div>
+            </div>
+            <span class="bdg bdg-vital bdg-dot">Confirmada</span>
+          </div>
+
+          <div class="apt">
+            <div class="apt-date" style="background:var(--vital);">
+              <div class="apt-date-m">HOY</div>
+              <div class="apt-date-d" style="font-size:22px;">En vivo</div>
+              <div class="apt-date-t">14:32</div>
+            </div>
+            <div class="apt-info">
+              <h4>Dermatología · seguimiento</h4>
+              <p>Iniciada hace 2 min · Sala virtual</p>
+              <div class="dr-chip">Con Dr. Carlos López</div>
+            </div>
+            <button class="btn btn-vital">Entrar a consulta</button>
+          </div>
+
+          <div class="apt" style="opacity:0.6;">
+            <div class="apt-date" style="background:var(--bg-deep);color:var(--fg-muted);border:1px solid var(--border);">
+              <div class="apt-date-m">ABR</div>
+              <div class="apt-date-d">15</div>
+              <div class="apt-date-t">10:00</div>
+            </div>
+            <div class="apt-info">
+              <h4>Pediatría · revisión</h4>
+              <p>Completada · 28 min · Ver resumen ↗</p>
+              <div class="dr-chip">Con Dra. Ana Ruiz</div>
+            </div>
+            <span class="bdg bdg-outline">Completada</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── AI REFERRAL — THE STAR ─── -->
+    <section class="chapter" id="ai-referral">
+      <div class="page-wrap">
+        <div class="chapter-header">
+          <div class="chapter-num">Cap. 13<br>IA · Referencia</div>
+          <div class="chapter-title">
+            <h2>La <em>primera opinión</em>, antes de la primera cita.</h2>
+            <p>Nuestro diferencial. Un paciente describe sus síntomas, el sistema razona con transparencia, y regresa tres especialistas ranqueados por coincidencia clínica — no por quien pagó más.</p>
+          </div>
+        </div>
+
+        <div class="ai-stage">
+          <div class="ai-flow">
+
+            <div class="ai-step">
+              <div class="ai-step-num">01</div>
+              <h4>Escuchar</h4>
+              <p>Conversación estructurada. Síntoma primario, duración, contexto. Sin jerga médica.</p>
+              <div class="ai-chat">
+                <div class="ai-chat-line ai">¿Qué sientes?</div>
+                <div class="ai-chat-line user">Dolor en el pecho al caminar rápido, hace 3 semanas.</div>
+                <div class="ai-chat-line ai">¿Algún familiar con problemas del corazón?</div>
+                <div class="ai-chat-line user">Mi papá tuvo un infarto a los 52.</div>
+              </div>
+              <div class="ai-tags">
+                <span class="bdg bdg-outline">3 semanas</span>
+                <span class="bdg bdg-outline">pecho</span>
+                <span class="bdg bdg-outline">esfuerzo</span>
+                <span class="bdg bdg-outline">hereditario</span>
+              </div>
+            </div>
+
+            <div class="ai-step active">
+              <div class="ai-step-num">02</div>
+              <h4>Razonar</h4>
+              <p>Tres especialidades candidatas, con su lógica visible. Nunca diagnostica — sólo orienta.</p>
+              <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:16px;">
+                <div style="padding:10px 12px;background:var(--bg);border:1px solid var(--border);border-radius:var(--r-md);">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                    <strong style="font-size:13px;">Cardiología</strong>
+                    <span class="mono" style="color:var(--vital);font-weight:500;">94%</span>
+                  </div>
+                  <div class="ai-confidence"><div class="ai-confidence-fill" style="width:94%"></div></div>
+                  <p style="font-size:11px;margin-top:6px;color:var(--fg-muted);">Dolor + esfuerzo + antecedente familiar</p>
+                </div>
+                <div style="padding:10px 12px;background:var(--bg);border:1px solid var(--border);border-radius:var(--r-md);">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                    <strong style="font-size:13px;">Medicina interna</strong>
+                    <span class="mono" style="color:var(--amber);font-weight:500;">68%</span>
+                  </div>
+                  <div class="ai-confidence"><div class="ai-confidence-fill" style="width:68%;background:linear-gradient(90deg, var(--amber), var(--cobalt-400));"></div></div>
+                  <p style="font-size:11px;margin-top:6px;color:var(--fg-muted);">Evaluación integral posible</p>
+                </div>
+                <div style="padding:10px 12px;background:var(--bg);border:1px solid var(--border);border-radius:var(--r-md);">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                    <strong style="font-size:13px;">Urgencias</strong>
+                    <span class="mono" style="color:var(--fg-muted);font-weight:500;">22%</span>
+                  </div>
+                  <div class="ai-confidence"><div class="ai-confidence-fill" style="width:22%;background:var(--border);"></div></div>
+                  <p style="font-size:11px;margin-top:6px;color:var(--fg-muted);">Si empeora súbitamente</p>
+                </div>
+              </div>
+              <p style="font-size:11px;color:var(--fg-muted);font-style:italic;">No es diagnóstico. Es orientación para tu primera consulta.</p>
+            </div>
+
+            <div class="ai-step">
+              <div class="ai-step-num">03</div>
+              <h4>Presentar</h4>
+              <p>Tres doctores cardiólogos verificados, ranqueados por coincidencia + disponibilidad.</p>
+
+              <div class="ai-match">
+                <div class="ai-match-avatar" style="background:linear-gradient(135deg,var(--cobalt-400),var(--cobalt-800));"></div>
+                <div>
+                  <div class="ai-match-name">Dra. María García</div>
+                  <div class="ai-match-spec">Cardiología · Polanco</div>
+                </div>
+                <div class="ai-match-score">94%<small>MATCH</small></div>
+              </div>
+
+              <div class="ai-match">
+                <div class="ai-match-avatar" style="background:linear-gradient(135deg,var(--vital),#006b4c);"></div>
+                <div>
+                  <div class="ai-match-name">Dr. Javier Ortiz</div>
+                  <div class="ai-match-spec">Cardiología · Condesa</div>
+                </div>
+                <div class="ai-match-score" style="color:var(--vital)">91%<small>MATCH</small></div>
+              </div>
+
+              <div class="ai-match">
+                <div class="ai-match-avatar" style="background:linear-gradient(135deg,var(--coral),#b33520);"></div>
+                <div>
+                  <div class="ai-match-name">Dra. Paola Reyes</div>
+                  <div class="ai-match-spec">Cardiología · Santa Fe</div>
+                </div>
+                <div class="ai-match-score" style="color:var(--cobalt-700)">88%<small>MATCH</small></div>
+              </div>
+
+              <button class="btn btn-primary" style="width:100%;margin-top:16px;">Agendar con Dra. García</button>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:48px;padding:32px;background:var(--bg-deep);border-radius:var(--r-lg);border-left:3px solid var(--vital);">
+          <div class="eyebrow">Contrato de transparencia</div>
+          <h3 style="margin:12px 0;">Por qué la <em style="font-family:var(--font-serif);font-style:italic;">caja no</em> es negra.</h3>
+          <p style="font-size:14px;max-width:none;">Todo razonamiento visible. Puntaje numérico + explicación textual. Límite explícito: no diagnosticamos, orientamos. La lista de doctores no se paga — se rankea por coincidencia real y disponibilidad. El usuario siempre puede saltar la IA y buscar manualmente.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PATTERNS ─── -->
+    <section class="chapter" id="patterns">
+      <div class="page-wrap">
+        <div class="chapter-header">
+          <div class="chapter-num">Cap. 14<br>Patrones</div>
+          <div class="chapter-title">
+            <h2>Plantillas que ya <em>saben</em> qué hacer.</h2>
+            <p>Cuatro esqueletos para las pantallas que importan. El contenido cambia, la estructura no.</p>
+          </div>
+        </div>
+
+        <div class="pat-grid">
+
+          <div class="pat">
+            <div class="pat-preview">
+              <svg viewBox="0 0 400 250" width="100%" height="100%">
+                <rect width="400" height="36" fill="#fbf9f4" opacity="0.15"/>
+                <rect x="16" y="56" width="110" height="18" rx="4" fill="#fbf9f4" opacity="0.3"/>
+                <rect x="16" y="84" width="368" height="48" rx="6" fill="#fbf9f4" opacity="0.12"/>
+                <rect x="16" y="148" width="120" height="94" rx="6" fill="#fbf9f4" opacity="0.18"/>
+                <rect x="144" y="148" width="120" height="94" rx="6" fill="#fbf9f4" opacity="0.18"/>
+                <rect x="272" y="148" width="120" height="94" rx="6" fill="#fbf9f4" opacity="0.18"/>
+                <circle cx="30" cy="172" r="10" fill="#00a878"/>
+                <circle cx="158" cy="172" r="10" fill="#fbf9f4" opacity="0.3"/>
+                <circle cx="286" cy="172" r="10" fill="#fbf9f4" opacity="0.3"/>
+              </svg>
+            </div>
+            <div class="pat-info">
+              <h4>Directorio con filtros laterales</h4>
+              <p>Búsqueda por ciudad/especialidad, filtros sticky a la izquierda, resultados en cuadrícula responsiva.</p>
+              <span class="mono">P-01 · /doctores</span>
+            </div>
+          </div>
+
+          <div class="pat">
+            <div class="pat-preview" style="background:var(--cobalt-800);">
+              <svg viewBox="0 0 400 250" width="100%" height="100%">
+                <rect x="0" y="0" width="400" height="120" fill="#1a3ab8"/>
+                <circle cx="60" cy="50" r="30" fill="#fbf9f4"/>
+                <rect x="100" y="32" width="180" height="16" rx="3" fill="#fbf9f4"/>
+                <rect x="100" y="56" width="120" height="10" rx="3" fill="#fbf9f4" opacity="0.5"/>
+                <rect x="100" y="74" width="80" height="8" rx="3" fill="#00a878"/>
+                <rect x="16" y="140" width="240" height="94" rx="6" fill="#fbf9f4" opacity="0.12"/>
+                <rect x="272" y="140" width="112" height="94" rx="6" fill="#fbf9f4" opacity="0.2"/>
+              </svg>
+            </div>
+            <div class="pat-info">
+              <h4>Perfil de doctor con booking</h4>
+              <p>Hero del doctor arriba, descripción + reseñas en columna principal, calendario sticky en sidebar.</p>
+              <span class="mono">P-02 · /doctor/:slug</span>
+            </div>
+          </div>
+
+          <div class="pat">
+            <div class="pat-preview" style="background:#1c2647;">
+              <svg viewBox="0 0 400 250" width="100%" height="100%">
+                <rect x="0" y="0" width="60" height="250" fill="#0a1533"/>
+                <rect x="8" y="16" width="44" height="6" rx="2" fill="#fbf9f4"/>
+                <rect x="8" y="40" width="44" height="4" rx="1" fill="#fbf9f4" opacity="0.5"/>
+                <rect x="8" y="52" width="44" height="4" rx="1" fill="#fbf9f4" opacity="0.5"/>
+                <rect x="8" y="64" width="44" height="4" rx="1" fill="#00a878"/>
+                <rect x="76" y="16" width="308" height="48" rx="6" fill="#fbf9f4" opacity="0.12"/>
+                <rect x="76" y="80" width="148" height="72" rx="6" fill="#fbf9f4" opacity="0.12"/>
+                <rect x="236" y="80" width="148" height="72" rx="6" fill="#fbf9f4" opacity="0.12"/>
+                <rect x="76" y="168" width="308" height="66" rx="6" fill="#fbf9f4" opacity="0.18"/>
+              </svg>
+            </div>
+            <div class="pat-info">
+              <h4>Dashboard paciente</h4>
+              <p>Sidebar con secciones, próxima cita destacada arriba, tarjetas de estado (recetas, exámenes, mensajes) en grid.</p>
+              <span class="mono">P-03 · /dashboard</span>
+            </div>
+          </div>
+
+          <div class="pat">
+            <div class="pat-preview" style="background:linear-gradient(135deg, var(--cobalt-800), var(--ink));">
+              <svg viewBox="0 0 400 250" width="100%" height="100%">
+                <rect x="120" y="40" width="160" height="6" rx="2" fill="#fbf9f4"/>
+                <rect x="80" y="54" width="240" height="16" rx="3" fill="#fbf9f4"/>
+                <rect x="40" y="110" width="100" height="110" rx="8" fill="#fbf9f4" opacity="0.12"/>
+                <rect x="150" y="110" width="100" height="110" rx="8" fill="#fbf9f4" opacity="0.2"/>
+                <rect x="260" y="110" width="100" height="110" rx="8" fill="#fbf9f4" opacity="0.12"/>
+                <circle cx="200" cy="140" r="18" fill="#00a878"/>
+                <rect x="170" y="168" width="60" height="8" rx="2" fill="#fbf9f4"/>
+                <rect x="180" y="184" width="40" height="6" rx="2" fill="#fbf9f4" opacity="0.5"/>
+              </svg>
+            </div>
+            <div class="pat-info">
+              <h4>Referencia por IA · 3 columnas</h4>
+              <p>Conversación → Razonamiento → Doctores. Progreso lineal con columna activa destacada.</p>
+              <span class="mono">P-04 · /ai-consulta</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── VOICE ─── -->
+    <section class="chapter" id="voice">
+      <div class="page-wrap">
+        <div class="chapter-header">
+          <div class="chapter-num">Cap. 15<br>Voz & Tono</div>
+          <div class="chapter-title">
+            <h2>Cercanos con el paciente. <em>Precisos</em> con el médico.</h2>
+            <p>Dos audiencias, dos registros. Nunca mezclamos. Nunca usamos jerga donde no pertenece. Nunca somos fríos donde hace falta calor.</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
+          <div style="padding:32px;background:var(--paper-soft);border-radius:var(--r-lg);border:1px solid var(--border);">
+            <span class="eyebrow">Tono A · Paciente</span>
+            <h3 style="margin:16px 0;font-family:var(--font-display);font-weight:400;font-size:28px;">Cálido, directo, <em style="font-family:var(--font-serif);font-style:italic;">tú</em>.</h3>
+            <div style="font-family:var(--font-serif);font-size:18px;font-style:italic;line-height:1.5;color:var(--fg);margin-bottom:24px;">"Encontramos tres doctores que entienden exactamente lo que sientes. El más cercano está a 15 minutos."</div>
+            <table class="spec-table" style="margin:0;">
+              <tr><td class="mono" style="width:80px">✓</td><td>Claro sobre precio y disponibilidad</td></tr>
+              <tr><td class="mono">✓</td><td>Verbos de acción en primera persona</td></tr>
+              <tr><td class="mono">✓</td><td>Sin tecnicismos sin explicación</td></tr>
+              <tr><td class="mono">✗</td><td>"Agendar slot disponible"</td></tr>
+              <tr><td class="mono">✗</td><td>"Su consulta ha sido procesada"</td></tr>
+            </table>
+          </div>
+
+          <div style="padding:32px;background:var(--ink);color:var(--paper);border-radius:var(--r-lg);">
+            <span class="eyebrow" style="color:var(--cobalt-300);">Tono B · Médico</span>
+            <h3 style="margin:16px 0;font-family:var(--font-display);font-weight:400;font-size:28px;color:var(--paper);">Denso, profesional, <em style="font-family:var(--font-serif);font-style:italic;">usted</em>.</h3>
+            <div style="font-family:var(--font-mono);font-size:13px;line-height:1.6;color:var(--paper);margin-bottom:24px;padding:16px;background:rgba(251,249,244,0.06);border-radius:var(--r-sm);">
+              <strong>Pac-2431 · F · 34 a</strong><br>
+              Síntoma primario: Dolor torácico con esfuerzo<br>
+              Duración: 3 sem · AF cardiovasc (+)<br>
+              Triage IA: 94% cardio · urgencia 22%
+            </div>
+            <table class="spec-table" style="margin:0;color:var(--paper);">
+              <tr><td class="mono" style="width:80px;color:var(--vital)">✓</td><td>Abreviaturas clínicas estándar</td></tr>
+              <tr><td class="mono" style="color:var(--vital)">✓</td><td>Estructura tabular/bullet</td></tr>
+              <tr><td class="mono" style="color:var(--vital)">✓</td><td>Datos primero, interpretación después</td></tr>
+              <tr><td class="mono" style="color:var(--coral)">✗</td><td>Lenguaje de marketing</td></tr>
+              <tr><td class="mono" style="color:var(--coral)">✗</td><td>Emojis u ornamentos gráficos</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer class="footer">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-mark">Doctor<em>.</em>mx</div>
+          <p class="footer-lead">Un sistema construido para que las decisiones médicas en México sean más rápidas, más claras, y más humanas.</p>
+        </div>
+        <div>
+          <h4>Sistema</h4>
+          <ul>
+            <li>Design System v2.0</li>
+            <li>Component Library</li>
+            <li>Figma Kit</li>
+            <li>Tailwind tokens</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Equipo</h4>
+          <ul>
+            <li>Brand · CDMX</li>
+            <li>Product · Remoto</li>
+            <li>Medical Board</li>
+            <li>Contacto</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Cambios</h4>
+          <ul>
+            <li>v2.0 — Abr 2026</li>
+            <li>v1.8 — Dic 2025</li>
+            <li>v1.5 — Sep 2025</li>
+            <li>v1.0 — Feb 2025</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-end">
+        <span>© Doctor.mx · Ciudad de México</span>
+        <span>DX-System v2.0 · Build 20260419</span>
+      </div>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+function setMode(m) {
+  document.body.classList.toggle('dark', m === 'dark');
+  document.querySelectorAll('.mode button').forEach(b => b.classList.remove('on'));
+  document.querySelectorAll('.mode button')[m === 'dark' ? 1 : 0].classList.add('on');
+  localStorage.setItem('dx-mode', m);
+}
+const saved = localStorage.getItem('dx-mode');
+if (saved === 'dark') setMode('dark');
+
+// Active nav on scroll
+const navItems = document.querySelectorAll('.nav-item');
+const sections = [...document.querySelectorAll('[id]')].filter(s => document.querySelector(`.nav-item[href="#${s.id}"]`));
+window.addEventListener('scroll', () => {
+  const y = window.scrollY + 150;
+  let active = sections[0];
+  sections.forEach(s => { if (s.offsetTop <= y) active = s; });
+  navItems.forEach(n => n.classList.remove('active'));
+  const link = document.querySelector(`.nav-item[href="#${active.id}"]`);
+  if (link) link.classList.add('active');
+}, { passive: true });
+</script>
+</body>
+</html>

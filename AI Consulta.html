@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta IA — Doctor.mx</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --c50:#eef4ff;--c100:#dbe7ff;--c300:#93b5ff;--c500:#3a66f5;--c600:#1f48de;--c700:#1a3ab8;--c800:#0f255f;
+      --vital:#00a878;--vital-soft:#d7f5e6;--amber:#f4a736;--coral:#ff5a3d;
+      --ink:#0a1533;--ink2:#1c2647;--fg-muted:#5c6783;
+      --bg:#f4f5f8;--bg-elev:#ffffff;--border:#dde1ec;--border-soft:#eaecf2;
+      --font-display:'Plus Jakarta Sans',sans-serif;--font-sans:'Inter',sans-serif;--font-mono:'IBM Plex Mono',monospace;
+      --r-sm:6px;--r-md:10px;--r-lg:16px;--r-xl:20px;
+      --ease:cubic-bezier(.2,.7,.2,1);
+    }
+    html,body{height:100%;background:var(--bg);font-family:var(--font-sans);color:var(--ink);-webkit-font-smoothing:antialiased}
+    #root{min-height:100vh;display:flex;flex-direction:column}
+
+    /* Scrollbar */
+    ::-webkit-scrollbar{width:4px}
+    ::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+
+    /* Tool card animations */
+    @keyframes toolIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes msgIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes blink{0%,80%,100%{opacity:0}40%{opacity:1}}
+    @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+    @keyframes pulseGreen{0%,100%{box-shadow:0 0 0 0 rgba(0,168,120,.35)}50%{box-shadow:0 0 0 6px rgba(0,168,120,0)}}
+    @keyframes spinnerRing{to{transform:rotate(360deg)}}
+    @keyframes welcomeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+    .tool-card{animation:toolIn 0.25s var(--ease) both}
+    .msg-animate{animation:msgIn 0.3s var(--ease) both}
+
+    /* Dots */
+    .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--fg-muted);animation:blink 1.4s ease-in-out infinite}
+    .dot:nth-child(2){animation-delay:.2s}.dot:nth-child(3){animation-delay:.4s}
+
+    /* Spinner */
+    .spinner{width:12px;height:12px;border:2px solid var(--border);border-top-color:var(--c600);border-radius:50%;animation:spinnerRing 0.7s linear infinite;flex-shrink:0}
+
+    /* Confidence bar shimmer */
+    .conf-shimmer{background:linear-gradient(90deg,var(--c500) 0%,var(--vital) 50%,var(--c500) 100%);background-size:200% 100%;animation:shimmer 2.5s linear infinite}
+
+    /* Welcome chips */
+    .chip{display:inline-flex;align-items:center;gap:5px;padding:8px 14px;border:1px solid var(--border);border-radius:999px;font-size:13px;color:var(--fg-muted);cursor:pointer;transition:all .2s var(--ease);background:var(--bg-elev);white-space:nowrap}
+    .chip:hover{border-color:var(--c500);color:var(--c700);background:var(--c50);transform:translateY(-1px)}
+
+    /* Input area */
+    .input-wrap{background:var(--bg-elev);border:1.5px solid var(--border);border-radius:var(--r-xl);padding:12px 14px 12px 16px;display:flex;align-items:flex-end;gap:10px;transition:border-color .2s;box-shadow:0 2px 8px rgba(10,21,51,.06)}
+    .input-wrap:focus-within{border-color:var(--c500);box-shadow:0 0 0 3px rgba(58,102,245,.1),0 2px 8px rgba(10,21,51,.06)}
+    .input-wrap textarea{flex:1;border:none;background:transparent;resize:none;font-family:var(--font-sans);font-size:15px;color:var(--ink);line-height:1.5;outline:none;min-height:24px;max-height:120px}
+    .input-wrap textarea::placeholder{color:var(--fg-muted)}
+    .send-btn{width:38px;height:38px;border-radius:var(--r-md);background:var(--c800);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s var(--ease);flex-shrink:0}
+    .send-btn:hover:not(:disabled){background:var(--c700);transform:scale(1.05)}
+    .send-btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+
+    /* Booking modal */
+    .modal-overlay{position:fixed;inset:0;background:rgba(10,21,51,.45);backdrop-filter:blur(4px);z-index:1000;display:flex;align-items:flex-end;justify-content:center;padding:0 0 0 0;animation:msgIn .2s ease}
+    .modal-sheet{background:var(--bg-elev);border-radius:20px 20px 0 0;padding:28px 24px 36px;width:100%;max-width:520px;box-shadow:0 -8px 40px rgba(10,21,51,.18)}
+
+    @media(max-width:600px){.hide-mobile{display:none!important}}
+  </style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState, useEffect, useRef, useCallback } = React;
+
+/* ── Design tokens ── */
+const URGENCY_MAP = {
+  low:       { label: 'Sin urgencia · Rutina',       color: '#00a878', bg: '#d7f5e6', text: '#006b4c' },
+  moderate:  { label: 'Moderada · Esta semana',      color: '#d4880a', bg: '#fef3cd', text: '#8a5500' },
+  high:      { label: 'Alta · Consultar hoy',        color: '#e05a00', bg: '#ffe8d6', text: '#a63800' },
+  emergency: { label: '🚨 EMERGENCIA — 911',         color: '#cc1a0a', bg: '#ffe0dc', text: '#8a0a04' },
+}
+
+const TOOL_META = {
+  analyze_symptoms: { label: 'Analizando síntomas', icon: '⚕', color: '#3a66f5' },
+  assess_urgency:   { label: 'Evaluando nivel de urgencia', icon: '◈', color: '#f4a736' },
+  match_specialty:  { label: 'Identificando especialidad', icon: '⬡', color: '#00a878' },
+  verify_cofepris:  { label: 'Verificando con COFEPRIS', icon: '⊛', color: '#1f48de' },
+  find_doctors:     { label: 'Buscando doctores disponibles', icon: '⬟', color: '#00a878' },
+}
+
+const SYMPTOM_CHIPS = [
+  'Dolor de cabeza', 'Fiebre alta', 'Dolor de pecho',
+  'Dificultad para respirar', 'Náuseas y vómito', 'Dolor de espalda',
+  'Ansiedad o estrés', 'Problemas de estómago',
+]
+
+const MOCK_DOCTORS = [
+  { id:'1', name:'Dra. Rosa García Mendoza', specialty:'Neurología', rating:4.9, reviews:1334, price:600, match:95, photo:'https://i.pravatar.cc/116?img=47', next:'Hoy · 15:30', city:'Polanco, CDMX', featured:true, cedula:'MX-2834710', years:15 },
+  { id:'2', name:'Dr. Carlos Mendoza Ruiz', specialty:'Medicina General', rating:4.7, reviews:84, price:450, match:82, photo:'https://i.pravatar.cc/116?img=12', next:'Mañana · 10:00', city:'Condesa, CDMX', featured:false, cedula:'MX-1923847', years:10 },
+  { id:'3', name:'Dra. Claudia Morales Vega', specialty:'Neurología', rating:4.8, reviews:156, price:800, match:78, photo:'https://i.pravatar.cc/116?img=49', next:'Mié · 09:00', city:'Lomas, CDMX', featured:true, cedula:'MX-3847291', years:18 },
+]
+
+/* ── SYSTEM PROMPT ── */
+const SYSTEM_PROMPT = `You are Dr. IA, the AI pre-triage assistant for Doctor.mx, Mexico's leading telemedicine platform. Help patients understand symptoms and recommend the right specialist.
+
+CRITICAL: Respond ONLY with valid JSON. No other text. Exact structure:
+{"toolCalls":[{"tool":"analyze_symptoms","output":"<1-line finding>"},{"tool":"assess_urgency","output":"<1-line urgency assessment>"},{"tool":"match_specialty","output":"<specialty + confidence>"}],"message":"<warm Spanish response, 2-3 sentences, no diagnosis, reassuring>","urgency":"low|moderate|high|emergency","specialty":"<Primary specialty in Spanish>","confidence":<60-95>,"readyForReferral":<true after gathering enough symptoms>,"followUp":"<brief follow-up question if not ready>"}
+
+RULES:
+- Always Spanish. Warm, professional, empathetic.
+- Never diagnose. Only triage and recommend specialists.
+- low=routine, moderate=this week, high=today, emergency=call 911
+- Set readyForReferral:true after 2nd patient message if symptoms are clear
+- Keep message under 60 words
+- confidence 60-95 range`
+
+/* ── Mock fallback responses ── */
+const MOCK_TURNS = [
+  { toolCalls:[{tool:'analyze_symptoms',output:'Síntomas cefalea + náuseas reportados'},{tool:'assess_urgency',output:'Moderada — 3 días persistentes'},{tool:'match_specialty',output:'Neurología (87%), Medicina General (71%)'}], message:'He analizado tus síntomas. Un dolor de cabeza intenso con náuseas que persiste varios días puede ser migraña u otra condición neurológica. ¿Tienes antecedentes de migraña o has tomado algún medicamento?', urgency:'moderate', specialty:'Neurología', confidence:87, readyForReferral:false, followUp:'¿Tienes antecedentes de migraña?' },
+  { toolCalls:[{tool:'analyze_symptoms',output:'Patrón compatible con migraña/cefalea tensional'},{tool:'assess_urgency',output:'Moderada — consulta esta semana'},{tool:'match_specialty',output:'Neurología (92% match confirmado)'}], message:'Con base en tus síntomas, te recomiendo consultar con un Neurólogo. Tengo especialistas verificados disponibles esta semana que pueden darte un diagnóstico preciso y un plan de tratamiento.', urgency:'moderate', specialty:'Neurología', confidence:92, readyForReferral:true },
+  { toolCalls:[{tool:'analyze_symptoms',output:'Síntomas analizados'},{tool:'assess_urgency',output:'Nivel evaluado'},{tool:'match_specialty',output:'Especialidad identificada'}], message:'Entiendo tu situación. Te recomiendo una consulta con un especialista verificado para obtener una evaluación completa y el tratamiento adecuado.', urgency:'low', specialty:'Medicina General', confidence:78, readyForReferral:true },
+]
+let mockTurnIdx = 0
+
+/* ──────────── COMPONENTS ──────────── */
+
+function VerifiedBadge({ cedula }) {
+  return (
+    <a href="#" onClick={e=>e.preventDefault()} style={{display:'inline-flex',alignItems:'center',gap:4,padding:'2px 7px',borderRadius:999,background:'#eef4ff',border:'1px solid #dbe7ff',fontSize:10,fontFamily:'var(--font-mono)',fontWeight:600,color:'#1a3ab8',textDecoration:'none',cursor:'pointer'}} title={`SEP: ${cedula}`}>
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      Cédula {cedula}
+    </a>
+  )
+}
+
+function ToolCallCard({ call, status, delay }) {
+  const meta = TOOL_META[call.tool] || TOOL_META.analyze_symptoms
+  const done = status === 'done'
+  return (
+    <div className="tool-card" style={{animationDelay:`${delay}ms`,display:'flex',alignItems:'flex-start',gap:10,padding:'9px 12px',background:done?'rgba(0,168,120,.05)':'rgba(58,102,245,.04)',border:`1px solid ${done?'rgba(0,168,120,.25)':'rgba(58,102,245,.2)'}`,borderRadius:'var(--r-md)',transition:'all .3s'}}>
+      <div style={{width:22,height:22,borderRadius:'var(--r-sm)',background:done?'var(--vital-soft)':'var(--c50)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,fontSize:11,color:done?'var(--vital)':meta.color,transition:'all .3s'}}>
+        {done ? '✓' : <div className="spinner"/>}
+      </div>
+      <div style={{flex:1,minWidth:0}}>
+        <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:8}}>
+          <span style={{fontFamily:'var(--font-mono)',fontSize:10,fontWeight:600,color:done?'var(--vital)':meta.color,textTransform:'uppercase',letterSpacing:'0.1em'}}>{call.tool}</span>
+          <span style={{fontFamily:'var(--font-mono)',fontSize:10,color:'var(--fg-muted)'}}>{done?'✓ done':'running…'}</span>
+        </div>
+        {call.output && done && (
+          <div style={{marginTop:3,fontSize:12,color:'var(--ink)',lineHeight:1.4,fontFamily:'var(--font-mono)'}}>{call.output}</div>
+        )}
+        {!done && (
+          <div style={{marginTop:3,fontSize:12,color:'var(--fg-muted)',fontFamily:'var(--font-mono)'}}>{meta.label}…</div>
+        )}
+      </div>
+    </div>
+  )
+}
+
+function ThinkingBubble({ toolCalls, doneTools }) {
+  return (
+    <div style={{display:'flex',alignItems:'flex-start',gap:10,maxWidth:'85%'}}>
+      <div style={{width:32,height:32,borderRadius:'50%',background:'var(--c800)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,animation:'pulseGreen 2s ease-in-out infinite'}}>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path strokeLinecap="round" d="M9.5 9a3 3 0 01 5 0 3 3 0 01-5 3M12 17v.01"/></svg>
+      </div>
+      <div style={{flex:1,minWidth:0,display:'flex',flexDirection:'column',gap:4}}>
+        {toolCalls.map((tc,i) => (
+          <ToolCallCard key={tc.tool} call={tc} status={doneTools.has(tc.tool)?'done':'running'} delay={i*100}/>
+        ))}
+        {toolCalls.length === 0 && (
+          <div style={{background:'var(--bg-elev)',border:'1px solid var(--border)',borderRadius:'16px 16px 16px 4px',padding:'12px 16px',display:'inline-flex',alignItems:'center',gap:6}}>
+            <span className="dot"/>
+            <span className="dot"/>
+            <span className="dot"/>
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
+function UrgencyBadge({ urgency }) {
+  const u = URGENCY_MAP[urgency] || URGENCY_MAP.low
+  return (
+    <span style={{display:'inline-flex',alignItems:'center',gap:5,padding:'4px 10px',borderRadius:999,background:u.bg,color:u.text,fontSize:11,fontWeight:600,fontFamily:'var(--font-mono)',letterSpacing:'0.05em'}}>
+      {u.label}
+    </span>
+  )
+}
+
+function ConfidenceBar({ confidence }) {
+  const pct = Math.min(100, Math.max(0, confidence))
+  const color = pct >= 85 ? 'var(--vital)' : pct >= 70 ? '#3a66f5' : '#f4a736'
+  return (
+    <div style={{marginTop:10}}>
+      <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:5}}>
+        <span style={{fontSize:10,fontFamily:'var(--font-mono)',color:'var(--fg-muted)',textTransform:'uppercase',letterSpacing:'0.1em'}}>Confianza del análisis</span>
+        <span style={{fontSize:11,fontFamily:'var(--font-mono)',fontWeight:600,color}}>{pct}%</span>
+      </div>
+      <div style={{height:3,background:'var(--border-soft)',borderRadius:2,overflow:'hidden'}}>
+        <div style={{height:'100%',width:`${pct}%`,background:`linear-gradient(90deg,var(--c500),${color})`,borderRadius:2,transition:'width 1s ease'}}/>
+      </div>
+    </div>
+  )
+}
+
+function AiMessage({ msg, isLatest }) {
+  return (
+    <div className="msg-animate" style={{display:'flex',alignItems:'flex-start',gap:10,maxWidth:'88%'}}>
+      <div style={{width:32,height:32,borderRadius:'50%',background:'var(--c800)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0}}>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path strokeLinecap="round" d="M9.5 9a3 3 0 015 0 3 3 0 01-5 3M12 17v.01"/></svg>
+      </div>
+      <div style={{flex:1,minWidth:0}}>
+        {/* Collapsed tool calls */}
+        {msg.toolCalls && msg.toolCalls.length > 0 && (
+          <div style={{marginBottom:6,display:'flex',gap:4,flexWrap:'wrap'}}>
+            {msg.toolCalls.map(tc => (
+              <span key={tc.tool} style={{display:'inline-flex',alignItems:'center',gap:3,padding:'2px 7px',borderRadius:999,background:'var(--c50)',border:'1px solid var(--c100)',fontSize:9,fontFamily:'var(--font-mono)',color:'var(--c600)',textTransform:'uppercase',letterSpacing:'0.08em'}}>
+                ✓ {tc.tool.replace('_',' ')}
+              </span>
+            ))}
+          </div>
+        )}
+        {/* Message bubble */}
+        <div style={{background:'var(--bg-elev)',border:'1px solid var(--border)',borderRadius:'4px 16px 16px 16px',padding:'14px 16px',boxShadow:'0 2px 8px rgba(10,21,51,.06)'}}>
+          {/* AI label */}
+          <div style={{display:'flex',alignItems:'center',gap:6,marginBottom:8}}>
+            <span style={{fontSize:10,fontFamily:'var(--font-mono)',fontWeight:600,color:'var(--c600)',textTransform:'uppercase',letterSpacing:'0.1em'}}>Asistente IA</span>
+            <span style={{fontSize:10,color:'var(--fg-muted)',fontFamily:'var(--font-mono)'}}>· No es médico</span>
+          </div>
+          <p style={{fontSize:14,lineHeight:1.6,color:'var(--ink)',fontFamily:'var(--font-sans)'}}>{msg.text}</p>
+          {/* Urgency + confidence */}
+          {msg.urgency && (
+            <div style={{marginTop:12,display:'flex',alignItems:'center',gap:8,flexWrap:'wrap'}}>
+              <UrgencyBadge urgency={msg.urgency}/>
+              {msg.specialty && (
+                <span style={{display:'inline-flex',alignItems:'center',gap:4,padding:'4px 10px',borderRadius:999,background:'var(--c50)',border:'1px solid var(--c100)',fontSize:11,fontWeight:600,color:'var(--c700)',fontFamily:'var(--font-sans)'}}>
+                  {msg.specialty}
+                </span>
+              )}
+            </div>
+          )}
+          {msg.confidence && <ConfidenceBar confidence={msg.confidence}/>}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function UserMessage({ msg }) {
+  return (
+    <div className="msg-animate" style={{display:'flex',justifyContent:'flex-end'}}>
+      <div style={{maxWidth:'75%',background:'var(--c800)',color:'white',borderRadius:'16px 16px 4px 16px',padding:'11px 15px',fontSize:14,lineHeight:1.6,fontFamily:'var(--font-sans)'}}>
+        {msg.text}
+      </div>
+    </div>
+  )
+}
+
+function DoctorReferralCard({ doctor, onBook }) {
+  const matchColor = doctor.match >= 90 ? 'var(--vital)' : doctor.match >= 75 ? 'var(--c600)' : 'var(--amber)'
+  return (
+    <div style={{background:'var(--bg-elev)',border:'1px solid var(--border)',borderRadius:'var(--r-lg)',overflow:'hidden',transition:'all .2s var(--ease)',cursor:'default'}} onMouseEnter={e=>e.currentTarget.style.borderColor='var(--c500)'} onMouseLeave={e=>e.currentTarget.style.borderColor='var(--border)'}>
+      <div style={{padding:'14px 16px',display:'flex',alignItems:'flex-start',gap:12}}>
+        {/* Avatar */}
+        <div style={{position:'relative',flexShrink:0}}>
+          {doctor.featured && <div style={{position:'absolute',top:-5,left:-5,background:'var(--amber)',color:'white',fontSize:8,fontWeight:700,padding:'2px 5px',borderRadius:4,fontFamily:'var(--font-sans)',textTransform:'uppercase',letterSpacing:'0.05em',zIndex:1}}>Destacado</div>}
+          <div style={{width:52,height:52,borderRadius:'50%',overflow:'hidden',background:'linear-gradient(135deg,#93b5ff,#0f255f)'}}>
+            <img src={doctor.photo} alt={doctor.name} style={{width:'100%',height:'100%',objectFit:'cover'}} onError={e=>{e.target.style.display='none'}}/>
+          </div>
+        </div>
+        {/* Info */}
+        <div style={{flex:1,minWidth:0}}>
+          <div style={{display:'flex',alignItems:'center',gap:6,flexWrap:'wrap'}}>
+            <span style={{fontSize:14,fontWeight:700,color:'var(--ink)',fontFamily:'var(--font-display)'}}>{doctor.name}</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--c600)" strokeWidth="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div style={{fontSize:11,color:'var(--fg-muted)',marginTop:2}}>{doctor.specialty} · {doctor.years} años exp.</div>
+          <div style={{display:'flex',alignItems:'center',gap:8,marginTop:6,flexWrap:'wrap'}}>
+            <div style={{display:'flex',alignItems:'center',gap:3}}>
+              <span style={{color:'var(--amber)',fontSize:11}}>{'★'.repeat(Math.round(doctor.rating))}</span>
+              <span style={{fontSize:12,fontWeight:700,color:'var(--ink)'}}>{doctor.rating}</span>
+              <span style={{fontSize:11,color:'var(--fg-muted)'}}>({doctor.reviews.toLocaleString('es-MX')})</span>
+            </div>
+            <VerifiedBadge cedula={doctor.cedula}/>
+          </div>
+        </div>
+        {/* Match */}
+        <div style={{textAlign:'center',flexShrink:0}}>
+          <div style={{fontSize:20,fontWeight:800,color:matchColor,fontFamily:'var(--font-display)',lineHeight:1}}>{doctor.match}%</div>
+          <div style={{fontSize:9,color:'var(--fg-muted)',fontFamily:'var(--font-mono)',textTransform:'uppercase',letterSpacing:'0.08em',marginTop:2}}>Match IA</div>
+        </div>
+      </div>
+      {/* Footer with avail + cta */}
+      <div style={{borderTop:'1px solid var(--border-soft)',padding:'10px 16px',display:'flex',alignItems:'center',justifyContent:'space-between',background:'rgba(244,245,248,.6)',gap:10}}>
+        <div>
+          <div style={{fontSize:10,color:'var(--fg-muted)',fontFamily:'var(--font-mono)',textTransform:'uppercase',letterSpacing:'0.08em'}}>Próxima cita</div>
+          <div style={{fontSize:13,fontWeight:600,color:'var(--vital)',marginTop:1}}>{doctor.next}</div>
+          <div style={{fontSize:11,color:'var(--fg-muted)'}}>{doctor.city} · desde ${doctor.price.toLocaleString('es-MX')}</div>
+        </div>
+        <button onClick={()=>onBook(doctor)} style={{padding:'9px 16px',background:'var(--c800)',color:'white',border:'none',borderRadius:'var(--r-md)',fontSize:13,fontWeight:600,cursor:'pointer',fontFamily:'var(--font-sans)',whiteSpace:'nowrap',transition:'background .2s'}} onMouseEnter={e=>e.target.style.background='var(--c700)'} onMouseLeave={e=>e.target.style.background='var(--c800)'}>
+          Agendar cita
+        </button>
+      </div>
+    </div>
+  )
+}
+
+function BookingModal({ doctor, onClose }) {
+  const [selectedDate, setSelectedDate] = useState(0)
+  const [selectedTime, setSelectedTime] = useState(null)
+  const [step, setStep] = useState('slots') // slots | confirm | done
+  const dates = ['Hoy 20 abr','Mañana 21 abr','Mié 22 abr','Jue 23 abr']
+  const times = ['09:00','10:30','12:00','15:30','17:00','18:30']
+
+  if (step === 'done') return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-sheet" onClick={e=>e.stopPropagation()} style={{textAlign:'center'}}>
+        <div style={{width:56,height:56,borderRadius:'50%',background:'var(--vital-soft)',margin:'0 auto 16px',display:'flex',alignItems:'center',justifyContent:'center'}}>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--vital)" strokeWidth="2.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        </div>
+        <h3 style={{fontFamily:'var(--font-display)',fontSize:20,fontWeight:700,color:'var(--ink)',marginBottom:8}}>¡Cita agendada!</h3>
+        <p style={{fontSize:14,color:'var(--fg-muted)',lineHeight:1.6,marginBottom:20}}>Tu cita con {doctor.name} fue confirmada para el {dates[selectedDate]} a las {selectedTime}. Recibirás un recordatorio por WhatsApp.</p>
+        <button onClick={onClose} style={{padding:'11px 28px',background:'var(--c800)',color:'white',border:'none',borderRadius:'var(--r-md)',fontSize:14,fontWeight:600,cursor:'pointer',fontFamily:'var(--font-sans)'}}>Perfecto</button>
+      </div>
+    </div>
+  )
+
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-sheet" onClick={e=>e.stopPropagation()}>
+        <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:20}}>
+          <div>
+            <h3 style={{fontFamily:'var(--font-display)',fontSize:18,fontWeight:700,color:'var(--ink)'}}>{doctor.name}</h3>
+            <div style={{fontSize:12,color:'var(--fg-muted)',marginTop:2}}>{doctor.specialty} · desde ${doctor.price.toLocaleString('es-MX')}</div>
+          </div>
+          <button onClick={onClose} style={{width:32,height:32,borderRadius:'var(--r-sm)',border:'1px solid var(--border)',background:'var(--bg)',cursor:'pointer',fontSize:16,color:'var(--fg-muted)',display:'flex',alignItems:'center',justifyContent:'center'}}>×</button>
+        </div>
+
+        {/* Date selector */}
+        <div style={{marginBottom:16}}>
+          <div style={{fontSize:11,fontFamily:'var(--font-mono)',textTransform:'uppercase',letterSpacing:'0.1em',color:'var(--fg-muted)',marginBottom:8}}>Selecciona fecha</div>
+          <div style={{display:'flex',gap:6,overflowX:'auto',paddingBottom:4}}>
+            {dates.map((d,i)=>(
+              <button key={i} onClick={()=>{setSelectedDate(i);setSelectedTime(null)}} style={{flexShrink:0,padding:'8px 14px',borderRadius:'var(--r-md)',border:`1px solid ${selectedDate===i?'var(--c800)':'var(--border)'}`,background:selectedDate===i?'var(--c800)':'var(--bg-elev)',color:selectedDate===i?'white':'var(--ink)',fontSize:12,fontWeight:600,cursor:'pointer',fontFamily:'var(--font-sans)',transition:'all .15s'}}>{d}</button>
+            ))}
+          </div>
+        </div>
+
+        {/* Time slots */}
+        <div style={{marginBottom:20}}>
+          <div style={{fontSize:11,fontFamily:'var(--font-mono)',textTransform:'uppercase',letterSpacing:'0.1em',color:'var(--fg-muted)',marginBottom:8}}>Horarios disponibles</div>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:6}}>
+            {times.map(t=>(
+              <button key={t} onClick={()=>setSelectedTime(t)} style={{padding:'9px 0',borderRadius:'var(--r-sm)',border:`1px solid ${selectedTime===t?'var(--c800)':'var(--border)'}`,background:selectedTime===t?'var(--c800)':'var(--bg-elev)',color:selectedTime===t?'white':'var(--ink)',fontSize:13,fontWeight:600,cursor:'pointer',fontFamily:'var(--font-mono)',transition:'all .15s'}}>{t}</button>
+            ))}
+          </div>
+        </div>
+
+        <button disabled={!selectedTime} onClick={()=>setStep('done')} style={{width:'100%',padding:'13px',background:selectedTime?'var(--c800)':'var(--border)',color:selectedTime?'white':'var(--fg-muted)',border:'none',borderRadius:'var(--r-md)',fontSize:14,fontWeight:700,cursor:selectedTime?'pointer':'not-allowed',fontFamily:'var(--font-sans)',transition:'background .2s'}}>
+          {selectedTime?`Confirmar · ${dates[selectedDate]} ${selectedTime}`:'Selecciona un horario'}
+        </button>
+
+        <p style={{fontSize:11,color:'var(--fg-muted)',textAlign:'center',marginTop:12}}>Plataforma COFEPRIS · Cédulas verificadas con SEP · Pago seguro</p>
+      </div>
+    </div>
+  )
+}
+
+function WelcomeHero({ onSend }) {
+  return (
+    <div style={{flex:1,display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',padding:'40px 24px',textAlign:'center',animation:'welcomeUp .5s var(--ease) both'}}>
+      {/* Trust strip */}
+      <div style={{display:'inline-flex',alignItems:'center',gap:8,padding:'6px 14px',borderRadius:999,background:'var(--vital-soft)',border:'1px solid rgba(0,168,120,.25)',marginBottom:28}}>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--vital)" strokeWidth="2.5"><path d="M12 3l9 4v5c0 5-3.5 9-9 10C6.5 21 3 17 3 12V7z"/></svg>
+        <span style={{fontSize:11,fontWeight:600,color:'#006b4c',fontFamily:'var(--font-mono)',textTransform:'uppercase',letterSpacing:'0.1em'}}>Plataforma COFEPRIS · Cifrado extremo a extremo</span>
+      </div>
+
+      <h1 style={{fontFamily:'var(--font-display)',fontSize:'clamp(28px,5vw,48px)',fontWeight:800,color:'var(--ink)',letterSpacing:'-0.03em',lineHeight:1.1,marginBottom:14,maxWidth:560}}>
+        ¿Cómo te sientes<br/><em style={{fontStyle:'normal',color:'var(--c600)'}}>hoy?</em>
+      </h1>
+      <p style={{fontSize:15,color:'var(--fg-muted)',lineHeight:1.6,maxWidth:440,marginBottom:32}}>
+        Describe tus síntomas. La IA analizará tu caso, evaluará la urgencia y te conectará con el especialista adecuado en menos de 90 segundos.
+      </p>
+
+      {/* Symptom chips */}
+      <div style={{display:'flex',flexWrap:'wrap',gap:8,justifyContent:'center',maxWidth:520,marginBottom:32}}>
+        {SYMPTOM_CHIPS.map(s=>(
+          <button key={s} className="chip" onClick={()=>onSend(s)}>{s}</button>
+        ))}
+      </div>
+
+      {/* AI disclosure */}
+      <div style={{display:'flex',gap:20,justifyContent:'center',flexWrap:'wrap'}}>
+        {[['⚕','Asistente IA, no médico'],['🔒','Datos cifrados'],['✓','Doctores verificados SEP']].map(([icon,label])=>(
+          <div key={label} style={{display:'flex',alignItems:'center',gap:5,fontSize:11,color:'var(--fg-muted)',fontFamily:'var(--font-mono)'}}>
+            <span>{icon}</span><span>{label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+/* ──────────── MAIN APP ──────────── */
+function App() {
+  const [messages, setMessages] = useState([])
+  const [input, setInput] = useState('')
+  const [isThinking, setIsThinking] = useState(false)
+  const [activeToolCalls, setActiveToolCalls] = useState([])
+  const [doneTools, setDoneTools] = useState(new Set())
+  const [referrals, setReferrals] = useState([])
+  const [bookingDoctor, setBookingDoctor] = useState(null)
+  const [quota, setQuota] = useState({ used:0, limit:3 })
+  const chatRef = useRef(null)
+  const inputRef = useRef(null)
+  const phase = messages.length === 0 ? 'welcome' : 'chat'
+
+  const scrollToBottom = useCallback(() => {
+    if (chatRef.current) chatRef.current.scrollTop = chatRef.current.scrollHeight
+  }, [])
+
+  useEffect(() => { scrollToBottom() }, [messages, activeToolCalls, referrals])
+
+  const sendMessage = useCallback(async (text) => {
+    const trimmed = text.trim()
+    if (!trimmed || isThinking || quota.used >= quota.limit) return
+
+    const userMsg = { id: Date.now(), role: 'user', text: trimmed }
+    setMessages(prev => [...prev, userMsg])
+    setInput('')
+    setIsThinking(true)
+    setActiveToolCalls([])
+    setDoneTools(new Set())
+
+    // Animate tool calls appearing
+    const allTools = [
+      { tool: 'analyze_symptoms', output: null },
+      { tool: 'assess_urgency', output: null },
+      { tool: 'match_specialty', output: null },
+    ]
+
+    // Show tools one by one with delay
+    const showTool = async (i, delay) => {
+      await new Promise(r => setTimeout(r, delay))
+      setActiveToolCalls(prev => [...prev, allTools[i]])
+    }
+    showTool(0, 50)
+    showTool(1, 600)
+    showTool(2, 1100)
+
+    // Call Claude (or fallback)
+    let data
+    try {
+      const history = [...messages, userMsg].map(m => `${m.role === 'user' ? 'Paciente' : 'Dr. IA'}: ${m.text}`).join('\n')
+      const claudeResponse = await window.claude.complete({
+        messages: [{ role: 'user', content: `${SYSTEM_PROMPT}\n\nConversación:\n${history}` }]
+      })
+      // Try to parse JSON
+      const match = claudeResponse.match(/\{[\s\S]*\}/)
+      data = match ? JSON.parse(match[0]) : null
+      if (!data) throw new Error('no json')
+    } catch(e) {
+      // Fallback mock response
+      data = MOCK_TURNS[Math.min(mockTurnIdx, MOCK_TURNS.length-1)]
+      mockTurnIdx++
+    }
+
+    // Wait for all tools to appear, then mark done
+    await new Promise(r => setTimeout(r, 1400))
+
+    // Update tool calls with outputs from response
+    const finalTools = allTools.map((tc, i) => ({
+      ...tc,
+      output: data.toolCalls?.[i]?.output || '✓ completado'
+    }))
+    setActiveToolCalls(finalTools)
+    setDoneTools(new Set(finalTools.map(t => t.tool)))
+
+    await new Promise(r => setTimeout(r, 600))
+
+    // Add AI message
+    const aiMsg = {
+      id: Date.now() + 1,
+      role: 'assistant',
+      text: data.message || 'He analizado tus síntomas. Te recomiendo consultar con un especialista.',
+      urgency: data.urgency || 'low',
+      specialty: data.specialty || 'Medicina General',
+      confidence: data.confidence || 75,
+      toolCalls: finalTools,
+    }
+    setMessages(prev => [...prev, aiMsg])
+    setActiveToolCalls([])
+    setDoneTools(new Set())
+    setIsThinking(false)
+    setQuota(prev => ({ ...prev, used: prev.used + 1 }))
+
+    if (data.readyForReferral) {
+      await new Promise(r => setTimeout(r, 300))
+      setReferrals(MOCK_DOCTORS)
+    }
+  }, [messages, isThinking, quota])
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(input) }
+  }
+
+  const quotaFull = quota.used >= quota.limit
+
+  return (
+    <div style={{display:'flex',flexDirection:'column',height:'100vh',background:'var(--bg)'}}>
+
+      {/* ── HEADER ── */}
+      <header style={{position:'sticky',top:0,zIndex:100,background:'rgba(255,255,255,.92)',backdropFilter:'blur(12px)',borderBottom:'1px solid var(--border)',height:56,display:'flex',alignItems:'center'}}>
+        <div style={{maxWidth:1100,margin:'0 auto',width:'100%',padding:'0 24px',display:'flex',alignItems:'center',justifyContent:'space-between',gap:16}}>
+          <a href="Homepage.html" style={{fontFamily:'var(--font-display)',fontSize:18,fontWeight:700,color:'var(--c800)',textDecoration:'none'}}>doctor.mx</a>
+          <div style={{display:'flex',alignItems:'center',gap:12}}>
+            {/* COFEPRIS badge */}
+            <div className="hide-mobile" style={{display:'flex',alignItems:'center',gap:6,padding:'5px 12px',borderRadius:999,background:'var(--vital-soft)',border:'1px solid rgba(0,168,120,.25)'}}>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--vital)" strokeWidth="2.5"><path d="M12 3l9 4v5c0 5-3.5 9-9 10C6.5 21 3 17 3 12V7z"/></svg>
+              <span style={{fontSize:10,fontWeight:700,color:'#006b4c',fontFamily:'var(--font-mono)',textTransform:'uppercase',letterSpacing:'0.1em'}}>COFEPRIS</span>
+            </div>
+            {/* Quota */}
+            {phase === 'chat' && (
+              <div style={{display:'flex',alignItems:'center',gap:6}}>
+                <span style={{fontSize:11,color:'var(--fg-muted)',fontFamily:'var(--font-mono)'}}>{quota.remaining ?? quota.limit - quota.used} restantes</span>
+                <div style={{display:'flex',gap:3}}>
+                  {Array.from({length:quota.limit}).map((_,i)=>(
+                    <div key={i} style={{width:6,height:6,borderRadius:'50%',background:i<quota.used?'var(--c600)':'var(--border)',transition:'background .3s'}}/>
+                  ))}
+                </div>
+              </div>
+            )}
+            {/* Human doctor CTA */}
+            <a href="Doctors Directory.html" style={{display:'flex',alignItems:'center',gap:5,padding:'7px 14px',borderRadius:'var(--r-md)',border:'1px solid var(--border)',background:'var(--bg-elev)',color:'var(--fg-muted)',fontSize:12,fontWeight:600,textDecoration:'none',fontFamily:'var(--font-sans)',transition:'all .2s'}} onMouseEnter={e=>{e.currentTarget.style.borderColor='var(--c500)';e.currentTarget.style.color='var(--c700)'}} onMouseLeave={e=>{e.currentTarget.style.borderColor='var(--border)';e.currentTarget.style.color='var(--fg-muted)'}}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Doctor humano
+            </a>
+          </div>
+        </div>
+      </header>
+
+      {/* ── MAIN CONTENT ── */}
+      {phase === 'welcome' ? (
+        <WelcomeHero onSend={sendMessage}/>
+      ) : (
+        <div ref={chatRef} style={{flex:1,overflowY:'auto',padding:'24px 24px 8px'}}>
+          <div style={{maxWidth:700,margin:'0 auto',display:'flex',flexDirection:'column',gap:16}}>
+            {messages.map((msg,i) => (
+              msg.role === 'user'
+                ? <UserMessage key={msg.id} msg={msg}/>
+                : <AiMessage key={msg.id} msg={msg} isLatest={i===messages.length-1}/>
+            ))}
+
+            {/* Thinking state */}
+            {isThinking && (
+              <ThinkingBubble toolCalls={activeToolCalls} doneTools={doneTools}/>
+            )}
+
+            {/* Doctor referrals */}
+            {referrals.length > 0 && !isThinking && (
+              <div className="msg-animate" style={{padding:'16px',background:'var(--c50)',border:'1px solid var(--c100)',borderRadius:'var(--r-xl)',display:'flex',flexDirection:'column',gap:10}}>
+                <div style={{display:'flex',alignItems:'center',gap:8,marginBottom:4}}>
+                  <div style={{width:24,height:24,borderRadius:'var(--r-sm)',background:'var(--c800)',display:'flex',alignItems:'center',justifyContent:'center'}}>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                  </div>
+                  <span style={{fontFamily:'var(--font-display)',fontSize:14,fontWeight:700,color:'var(--c800)'}}>Especialistas recomendados para ti</span>
+                  <span style={{fontSize:10,fontFamily:'var(--font-mono)',color:'var(--c600)',marginLeft:'auto'}}>{referrals.length} doctores · ordenados por match IA</span>
+                </div>
+                {referrals.map(doc => (
+                  <DoctorReferralCard key={doc.id} doctor={doc} onBook={setBookingDoctor}/>
+                ))}
+                <div style={{textAlign:'center',paddingTop:4}}>
+                  <a href="Doctors Directory.html" style={{fontSize:12,color:'var(--c600)',fontWeight:600,textDecoration:'none',fontFamily:'var(--font-sans)'}}>Ver todos los especialistas →</a>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* ── INPUT AREA ── */}
+      <div style={{borderTop: phase==='welcome'?'1px solid var(--border)':'none',padding:'12px 24px 20px',background:phase==='welcome'?'var(--bg-elev)':'transparent'}}>
+        <div style={{maxWidth:700,margin:'0 auto'}}>
+          {quotaFull ? (
+            <div style={{textAlign:'center',padding:'16px',background:'var(--bg-elev)',border:'1px solid var(--border)',borderRadius:'var(--r-xl)'}}>
+              <p style={{fontSize:13,color:'var(--fg-muted)',marginBottom:10}}>Has usado tus 3 consultas gratuitas. Regístrate para continuar.</p>
+              <button style={{padding:'9px 24px',background:'var(--c800)',color:'white',border:'none',borderRadius:'var(--r-md)',fontSize:13,fontWeight:600,cursor:'pointer',fontFamily:'var(--font-sans)'}}>Crear cuenta gratis</button>
+            </div>
+          ) : (
+            <div className="input-wrap">
+              <textarea
+                ref={inputRef}
+                rows={1}
+                value={input}
+                onChange={e=>{setInput(e.target.value);e.target.style.height='auto';e.target.style.height=e.target.scrollHeight+'px'}}
+                onKeyDown={handleKeyDown}
+                placeholder={phase==='welcome'?"Describe cómo te sientes...":"Continúa describiendo tus síntomas..."}
+                disabled={isThinking}
+              />
+              <button className="send-btn" disabled={!input.trim()||isThinking} onClick={()=>sendMessage(input)}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </div>
+          )}
+          <p style={{textAlign:'center',fontSize:11,color:'var(--fg-muted)',marginTop:8,fontFamily:'var(--font-mono)'}}>
+            Asistente de orientación médica · No sustituye consulta presencial · Emergencias: 911
+          </p>
+        </div>
+      </div>
+
+      {/* Booking modal */}
+      {bookingDoctor && <BookingModal doctor={bookingDoctor} onClose={()=>setBookingDoctor(null)}/>}
+    </div>
+  )
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>)
+</script>
+</body>
+</html>

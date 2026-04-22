@@ -1,0 +1,399 @@
+- main [ref=e2]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - img [ref=e6]
+      - text: 5 CONSULTAS MÉDICAS GRATIS PARA TODOS LOS MEXICANOS
+      - img [ref=e9]
+    - generic [ref=e12]: "|"
+    - generic [ref=e13]:
+      - img [ref=e14]
+      - text: Verificado por COFEPRIS
+  - generic [ref=e19]:
+    - link "Doctor.mx Telemedicina premium en México" [ref=e20] [cursor=pointer]:
+      - /url: /
+      - img [ref=e22]
+      - generic [ref=e26]:
+        - generic [ref=e27]: Doctor.mx
+        - generic [ref=e28]: Telemedicina premium en México
+    - navigation [ref=e29]:
+      - link "Consulta IA" [ref=e30] [cursor=pointer]:
+        - /url: /ai-consulta
+        - generic [ref=e31]:
+          - img [ref=e32]
+          - text: Consulta IA
+      - link "Doctores" [ref=e44] [cursor=pointer]:
+        - /url: /doctors
+        - generic [ref=e45]:
+          - img [ref=e46]
+          - text: Doctores
+      - link "Soy doctor" [ref=e49] [cursor=pointer]:
+        - /url: /for-doctors
+        - generic [ref=e50]:
+          - img [ref=e51]
+          - text: Soy doctor
+    - generic [ref=e54]:
+      - generic [ref=e55]: Disponibilidad 24/7
+      - link "Iniciar sesión" [ref=e56] [cursor=pointer]:
+        - /url: /auth/login
+        - button "Iniciar sesión" [ref=e58]
+      - link "Empezar gratis" [ref=e59] [cursor=pointer]:
+        - /url: /auth/register
+        - button "Empezar gratis" [ref=e61]:
+          - text: Empezar gratis
+          - img
+  - generic [ref=e62]:
+    - generic [ref=e67]:
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - img "Dr. Simeon - Tu asistente médico IA" [ref=e72]
+          - status "En linea" [ref=e73]
+        - generic [ref=e75]:
+          - generic [ref=e80]: En línea ahora
+          - paragraph [ref=e81]: Dr. Simeon
+          - paragraph [ref=e82]: Asistente médico IA
+      - heading "5 Consultas Medicas 100% GRATIS" [level=1] [ref=e83]:
+        - text: 5 Consultas Medicas
+        - generic [ref=e84]: 100% GRATIS
+      - paragraph [ref=e85]:
+        - text: Salud accesible para todos. Consulta con IA médica las veces que necesites —
+        - strong [ref=e86]: sin registrar, sin pagar
+        - text: . Cuando necesites un doctor real, te conectamos con especialistas verificados.
+      - generic [ref=e87]:
+        - generic [ref=e88]:
+          - img [ref=e89]
+          - text: 5 consultas GRATIS
+        - generic [ref=e91]: •
+        - generic [ref=e92]:
+          - img [ref=e93]
+          - text: Sin registro requerido
+        - generic [ref=e95]: •
+        - generic [ref=e96]:
+          - img [ref=e97]
+          - text: Para todos los mexicanos
+      - generic [ref=e101]:
+        - link "Consultar gratis - Iniciar consulta médica gratuita con IA" [ref=e102] [cursor=pointer]:
+          - /url: /ai-consulta
+          - button "Consultar gratis - Iniciar consulta médica gratuita con IA" [ref=e103]:
+            - generic [ref=e105]:
+              - text: CONSULTAR AHORA — GRATIS
+              - img [ref=e106]
+        - link "Buscar un Especialista" [ref=e109] [cursor=pointer]:
+          - /url: /doctors
+          - button "Buscar un Especialista" [ref=e110]
+      - link "Eres doctor? Unete a la red" [ref=e112] [cursor=pointer]:
+        - /url: /for-doctors
+      - generic [ref=e113]:
+        - generic [ref=e114]:
+          - img [ref=e115]
+          - generic [ref=e118]: Verificado
+          - generic [ref=e119]: COFEPRIS
+        - generic [ref=e120]:
+          - img [ref=e122]
+          - generic [ref=e125]: 500+
+          - generic [ref=e126]: Doctores con cédula SEP
+        - generic [ref=e127]:
+          - img [ref=e129]
+          - generic [ref=e134]: 10,000+
+          - generic [ref=e135]: Consultas realizadas
+        - generic [ref=e136]:
+          - img [ref=e138]
+          - generic [ref=e141]: 24/7
+          - generic [ref=e142]: Disponible
+      - paragraph [ref=e143]: Servicio de orientacion medica. No sustituye la consulta presencial.
+    - generic [ref=e145]:
+      - generic [ref=e146]:
+        - img "Dr. Simeon" [ref=e148]
+        - generic [ref=e149]:
+          - paragraph [ref=e150]: Dr. Simeon
+          - paragraph [ref=e151]: En línea
+      - paragraph [ref=e154]: ¡Hola! Soy tu asistente médico. ¿En qué puedo ayudarte hoy?
+      - generic [ref=e155]:
+        - img [ref=e156]
+        - generic [ref=e159]: Conversacion privada y segura
+  - generic [ref=e162]:
+    - generic [ref=e163]:
+      - generic [ref=e164]: Asistente IA Médico
+      - heading "Dr. Simeon AI Tu Evaluación Inicial Inteligente" [level=2] [ref=e165]:
+        - text: Dr. Simeon AI
+        - generic [ref=e166]: Tu Evaluación Inicial Inteligente
+      - paragraph [ref=e167]: Nuestro asistente con IA médica realiza una evaluación completa de tus síntomas usando metodología OPQRST, detecta señales de alerta y te conecta con el especialista adecuado en minutos.
+      - list [ref=e168]:
+        - listitem [ref=e169]:
+          - img [ref=e170]
+          - text: Evaluación de síntomas en 5 minutos
+        - listitem [ref=e173]:
+          - img [ref=e174]
+          - text: Detección de emergencias médicas
+        - listitem [ref=e176]:
+          - img [ref=e177]
+          - text: Recomendación de especialista ideal
+        - listitem [ref=e181]:
+          - img [ref=e182]
+          - text: Disponible 24/7, siempre contigo
+      - generic [ref=e185]:
+        - button "Agendar Consulta" [ref=e186] [cursor=pointer]
+        - button "Probar IA Ahora" [ref=e187] [cursor=pointer]
+      - paragraph [ref=e188]: La IA asiste, no diagnostica. Respaldo médico certificado.
+    - generic [ref=e190]:
+      - generic [ref=e191]:
+        - img "Dr. Simeon" [ref=e195]
+        - generic [ref=e196]:
+          - heading "Dr. Simeon" [level=3] [ref=e197]
+          - generic [ref=e200]: En línea
+        - button "Reiniciar conversación" [ref=e201] [cursor=pointer]:
+          - img [ref=e202]
+      - generic [ref=e206]:
+        - textbox "Escribe tu mensaje..." [disabled] [ref=e207]
+        - button [disabled] [ref=e208]:
+          - img [ref=e209]
+  - generic [ref=e213]:
+    - generic [ref=e215]:
+      - generic [ref=e216]: Impacto real
+      - heading "Números que respaldan nuestra misión" [level=2] [ref=e217]:
+        - text: Números que respaldan
+        - generic [ref=e218]: nuestra misión
+      - paragraph [ref=e219]: Datos actualizados • Enero 2025
+    - generic [ref=e220]:
+      - generic [ref=e221]:
+        - img [ref=e223]
+        - generic [ref=e226]: 0+
+        - paragraph [ref=e227]: Doctores con cédula verificada
+      - generic [ref=e228]:
+        - img [ref=e230]
+        - generic [ref=e233]: 0+
+        - paragraph [ref=e234]: Consultas realizadas
+      - generic [ref=e235]:
+        - img [ref=e237]
+        - generic [ref=e240]: 0+
+        - paragraph [ref=e241]: Especialidades médicas
+      - generic [ref=e242]:
+        - img [ref=e244]
+        - generic [ref=e247]: 0%
+        - paragraph [ref=e248]: Satisfacción de pacientes
+    - paragraph [ref=e249]: Estadísticas basadas en datos internos de Doctor.mx. Satisfacción medida por encuestas post-consulta.
+  - region "Cómo funciona Salud digital, atención humana Una plataforma diseñada para conectarte con especialistas mexicanos certificados, de forma rápida, segura y privada." [ref=e250]:
+    - generic [ref=e252]:
+      - generic [ref=e255]:
+        - generic [ref=e256]: Cómo funciona
+        - heading "Salud digital, atención humana" [level=2] [ref=e257]:
+          - text: Salud digital,
+          - generic [ref=e258]: atención humana
+        - paragraph [ref=e259]: Una plataforma diseñada para conectarte con especialistas mexicanos certificados, de forma rápida, segura y privada.
+      - generic [ref=e260]:
+        - article "Doctores con cédula verificada" [ref=e262] [cursor=pointer]:
+          - img [ref=e265]
+          - heading "Doctores con cédula verificada" [level=3] [ref=e268]
+          - paragraph [ref=e269]: Cada especialista está validado con su cédula profesional ante la SEP. Consulta perfiles completos antes de agendar.
+          - img [ref=e272]
+        - article "Videoconsulta HD desde casa" [ref=e275] [cursor=pointer]:
+          - img [ref=e278]
+          - heading "Videoconsulta HD desde casa" [level=3] [ref=e281]
+          - paragraph [ref=e282]: Consultas por video con calidad HD y conexión segura. Tu doctor te ve y escucha como si estuvieras en su consultorio.
+          - img [ref=e285]
+        - article "Citas en menos de 24 horas" [ref=e288] [cursor=pointer]:
+          - img [ref=e291]
+          - heading "Citas en menos de 24 horas" [level=3] [ref=e293]
+          - paragraph [ref=e294]: Encuentra disponibilidad en tiempo real. Agenda tu consulta en minutos, no en semanas.
+          - img [ref=e297]
+        - 'article "Dr. Simeon: tu copiloto de salud" [ref=e300] [cursor=pointer]':
+          - img [ref=e302]
+          - 'heading "Dr. Simeon: tu copiloto de salud" [level=3] [ref=e305]'
+          - paragraph [ref=e306]: Nuestro asistente con IA te ayuda a entender síntomas y preparar preguntas para tu doctor. No diagnostica, orienta.
+          - img [ref=e309]
+        - article "Privacidad de grado médico" [ref=e312] [cursor=pointer]:
+          - img [ref=e315]
+          - heading "Privacidad de grado médico" [level=3] [ref=e317]
+          - paragraph [ref=e318]: Encriptación punto a punto y cumplimiento con normativas mexicanas de protección de datos de salud.
+          - img [ref=e321]
+        - article "Seguimiento continuo" [ref=e324] [cursor=pointer]:
+          - img [ref=e327]
+          - heading "Seguimiento continuo" [level=3] [ref=e329]
+          - paragraph [ref=e330]: Mensajea a tu doctor antes y después de la consulta. Tu historial médico siempre accesible.
+          - img [ref=e333]
+  - generic [ref=e337]:
+    - generic [ref=e339]:
+      - generic [ref=e340]: Historias reales
+      - heading "Pacientes y doctores confían en nosotros" [level=2] [ref=e341]:
+        - text: Pacientes y doctores
+        - generic [ref=e342]: confían en nosotros
+      - paragraph [ref=e343]: Más de 10,000 consultas realizadas con un 98% de satisfacción
+    - generic [ref=e344]:
+      - article "Testimonio de María García L." [ref=e346]:
+        - generic [ref=e347]: "\""
+        - 'img "Calificacion: 5 de 5 estrellas" [ref=e348]'
+        - paragraph [ref=e349]: "\"Encontré un cardiólogo excelente en 10 minutos. La videoconsulta fue tan profesional como ir al consultorio, pero sin perder 3 horas en traslados. Ya llevo 4 consultas de seguimiento.\""
+        - generic [ref=e350]:
+          - generic [ref=e351]: MG
+          - generic [ref=e352]:
+            - generic [ref=e353]:
+              - paragraph [ref=e354]: María García L.
+              - img "Usuario verificado" [ref=e355]
+            - paragraph [ref=e358]:
+              - text: Paciente verificada
+              - generic [ref=e359]: •
+              - img [ref=e360]
+              - generic [ref=e363]: Ciudad de México
+      - article "Testimonio de Dr. Carlos Mendoza R." [ref=e365]:
+        - generic [ref=e366]: "\""
+        - 'img "Calificacion: 5 de 5 estrellas" [ref=e367]'
+        - paragraph [ref=e368]: "\"Doctor.mx me permite atender pacientes de todo México sin limitarme a mi consultorio físico. El sistema de pagos es confiable y el soporte resuelve cualquier duda en minutos.\""
+        - generic [ref=e369]:
+          - generic [ref=e370]: CM
+          - generic [ref=e371]:
+            - generic [ref=e372]:
+              - paragraph [ref=e373]: Dr. Carlos Mendoza R.
+              - img "Usuario verificado" [ref=e374]
+            - paragraph [ref=e377]:
+              - text: Cardiólogo · Cédula 8745632
+              - generic [ref=e378]: •
+              - img [ref=e379]
+              - generic [ref=e382]: Guadalajara, Jal.
+      - article "Testimonio de Ana Rodríguez P." [ref=e384]:
+        - generic [ref=e385]: "\""
+        - 'img "Calificacion: 5 de 5 estrellas" [ref=e386]'
+        - paragraph [ref=e387]: "\"Usé Dr. Simeon para entender mis síntomas antes de mi consulta. Me ayudó a preparar las preguntas correctas. La segunda opinión que obtuve me dio tranquilidad antes de decidir mi tratamiento.\""
+        - generic [ref=e388]:
+          - generic [ref=e389]: AR
+          - generic [ref=e390]:
+            - generic [ref=e391]:
+              - paragraph [ref=e392]: Ana Rodríguez P.
+              - img "Usuario verificado" [ref=e393]
+            - paragraph [ref=e396]:
+              - text: Paciente verificada
+              - generic [ref=e397]: •
+              - img [ref=e398]
+              - generic [ref=e401]: Monterrey, N.L.
+  - generic [ref=e407]:
+    - generic [ref=e409]:
+      - generic [ref=e410]: Mas de 100 especialistas en linea ahora
+      - heading "Tu salud merece atencion inmediata" [level=2] [ref=e414]:
+        - text: Tu salud merece
+        - generic [ref=e415]: atencion inmediata
+      - paragraph [ref=e416]: Mas de 10,000 consultas realizadas. Unete a los mexicanos que ya cuidan su salud con Doctor.mx.
+      - link "Comenzar consulta gratuita - Registrate ahora" [ref=e417] [cursor=pointer]:
+        - /url: /auth/register
+        - button "Comenzar consulta gratuita - Registrate ahora" [ref=e418]:
+          - text: Comenzar consulta gratuita
+          - img [ref=e419]
+      - link "Eres medico? Conoce como crecer tu practica" [ref=e421] [cursor=pointer]:
+        - /url: /for-doctors
+      - generic [ref=e422]:
+        - generic [ref=e423]:
+          - img [ref=e424]
+          - text: Datos encriptados
+        - generic [ref=e426]:
+          - img [ref=e427]
+          - text: Sin tarjeta requerida
+        - generic [ref=e430]:
+          - img [ref=e431]
+          - text: 4.9 de 2,500+ resenas
+    - paragraph [ref=e433]: Primera consulta gratis - Sin compromiso - Cancela cuando quieras
+  - generic [ref=e435]:
+    - generic [ref=e436]:
+      - generic [ref=e437]:
+        - img [ref=e439]
+        - heading "Certificado COFEPRIS" [level=4] [ref=e441]
+        - paragraph [ref=e442]: Aprobado por la autoridad sanitaria mexicana
+      - generic [ref=e443]:
+        - img [ref=e445]
+        - heading "Datos Encriptados" [level=4] [ref=e448]
+        - paragraph [ref=e449]: Protección con estándares HIPAA
+      - generic [ref=e450]:
+        - img [ref=e452]
+        - heading "ISO 27001" [level=4] [ref=e455]
+        - paragraph [ref=e456]: Seguridad de la información certificada
+      - generic [ref=e457]:
+        - img [ref=e459]
+        - heading "10,000+ Pacientes" [level=4] [ref=e464]
+        - paragraph [ref=e465]: Confianza comprobada en México
+    - generic [ref=e466]:
+      - heading "Credenciales y Certificaciones" [level=3] [ref=e467]
+      - generic [ref=e468]:
+        - generic [ref=e469]:
+          - img [ref=e470]
+          - generic [ref=e473]:
+            - strong [ref=e474]: "Médicos Certificados:"
+            - text: Todos nuestros médicos cuentan con cédula profesional verificada ante la Secretaría de Educación Pública (SEP)
+        - generic [ref=e475]:
+          - img [ref=e476]
+          - generic [ref=e479]:
+            - strong [ref=e480]: "Licencias Estatales:"
+            - text: Autorizados para operar en Ciudad de México, Estado de México, Jalisco, Nuevo León y más
+        - generic [ref=e481]:
+          - img [ref=e482]
+          - generic [ref=e485]:
+            - strong [ref=e486]: "Privacidad Garantizada:"
+            - text: Cumplimos con la Ley Federal de Protección de Datos Personales (LFPDPPP)
+        - generic [ref=e487]:
+          - img [ref=e488]
+          - generic [ref=e491]:
+            - strong [ref=e492]: "Prescripciones Digitales:"
+            - text: Recetas electrónicas válidas en todas las farmacias de México
+    - paragraph [ref=e494]:
+      - text: Doctor.mx opera con controles orientados a la NOM-024-SSA3-2012 y a la protección de datos personales en México.
+      - text: Todos los servicios médicos son proporcionados por profesionales de la salud certificados y con cédula profesional vigente.
+  - generic [ref=e496]:
+    - generic [ref=e497]:
+      - generic [ref=e498]:
+        - link "Doctor.mx" [ref=e499] [cursor=pointer]:
+          - /url: /
+          - img [ref=e501]
+          - generic [ref=e505]: Doctor.mx
+        - paragraph [ref=e506]: La plataforma de salud digital más confiable de México. Conectamos pacientes con los mejores especialistas certificados.
+        - generic [ref=e507]:
+          - img [ref=e508]
+          - text: Confianza clínica + diseño premium
+      - generic [ref=e510]:
+        - heading "Pacientes" [level=4] [ref=e511]
+        - list [ref=e512]:
+          - listitem [ref=e513]:
+            - link "Buscar doctores" [ref=e514] [cursor=pointer]:
+              - /url: /doctors
+          - listitem [ref=e515]:
+            - link "Especialidades" [ref=e516] [cursor=pointer]:
+              - /url: /specialties
+          - listitem [ref=e517]:
+            - link "Segunda opinión" [ref=e518] [cursor=pointer]:
+              - /url: /app/second-opinion
+          - listitem [ref=e519]:
+            - link "Mi cuenta" [ref=e520] [cursor=pointer]:
+              - /url: /app
+      - generic [ref=e521]:
+        - heading "Doctores" [level=4] [ref=e522]
+        - list [ref=e523]:
+          - listitem [ref=e524]:
+            - link "Únete como doctor" [ref=e525] [cursor=pointer]:
+              - /url: /for-doctors
+          - listitem [ref=e526]:
+            - link "Portal de doctores" [ref=e527] [cursor=pointer]:
+              - /url: /doctor
+          - listitem [ref=e528]:
+            - link "Planes y precios" [ref=e529] [cursor=pointer]:
+              - /url: /pricing
+      - generic [ref=e530]:
+        - heading "Soporte" [level=4] [ref=e531]
+        - list [ref=e532]:
+          - listitem [ref=e533]:
+            - link "Centro de ayuda" [ref=e534] [cursor=pointer]:
+              - /url: /help
+          - listitem [ref=e535]:
+            - link "Contacto" [ref=e536] [cursor=pointer]:
+              - /url: /contact
+          - listitem [ref=e537]:
+            - link "Privacidad" [ref=e538] [cursor=pointer]:
+              - /url: /privacy
+          - listitem [ref=e539]:
+            - link "Términos" [ref=e540] [cursor=pointer]:
+              - /url: /terms
+    - generic [ref=e541]:
+      - paragraph [ref=e542]: © 2026 Doctor.mx. Todos los derechos reservados.
+      - generic [ref=e543]:
+        - link [ref=e544] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e545]
+        - link [ref=e547] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e548]
+        - link [ref=e550] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e551]
