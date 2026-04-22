@@ -2,6 +2,7 @@ import { requireRole } from '@/lib/auth'
 import { redirect } from 'next/navigation'
 import DoctorLayout from '@/components/DoctorLayout'
 import { AppointmentCard, AppointmentFilters, EmptyState } from '@/components'
+import IntakeResponseReview from '@/components/IntakeResponseReview'
 import { Card, CardContent } from '@/components/ui/card'
 
 type SearchParams = {
@@ -158,7 +159,13 @@ export default async function DoctorAppointmentsPage({
               {appointments.length > 0 ? (
                 <div className="space-y-4 mt-6">
                   {appointments.map((apt) => (
-                    <AppointmentCard key={apt.id} appointment={apt} />
+                    <div key={apt.id} className="space-y-2">
+                      <AppointmentCard appointment={apt} />
+                      <IntakeResponseReview
+                        response={null}
+                        appointmentId={apt.id}
+                      />
+                    </div>
                   ))}
                 </div>
               ) : (

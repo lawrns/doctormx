@@ -9,6 +9,7 @@ import { APPOINTMENT_CONFIG, STATUS } from '@/config/constants'
 import { sendAppointmentConfirmation } from './notifications'
 import { sendAppointmentConfirmation as sendWhatsAppConfirmation, getPatientPhone } from './whatsapp-notifications'
 import { cache } from '@/lib/cache'
+import { scheduleAppointmentReminders } from './reminders'
 
 export type ReservationRequest = {
   patientId: string
@@ -70,6 +71,11 @@ export async function reserveAppointmentSlot(
   // Enviar WhatsApp de confirmación (no bloquea el flujo principal)
   sendWhatsAppNotification(request.patientId, appointment.id).catch((err) => {
     console.error('Failed to send WhatsApp confirmation:', err)
+  })
+
+  // Schedule automatic reminders (no bloquea el flujo principal)
+  scheduleAppointmentReminders(appointment.id).catch((err) => {
+    console.error('Failed to schedule reminders:', err)
   })
 
   return {

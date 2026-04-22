@@ -57,3 +57,22 @@ doctoralia_scraper/test-page-source.html
 
 # Supabase local temp/link state
 supabase/.temp/
+
+# AI assistant directories
+.adal/
+.agents/
+.augment/
+.codebuddy/
+.commandcode/
+.context/
+.continue/
+.cortex/
+.crush/
+.cursor
+.factory/
+.phoenix/
+.roo/
+.supermaven/
+.windsurf/
+.windsurfrules
+.windsurfrules.md
