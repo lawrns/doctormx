@@ -39,9 +39,9 @@ type RawDoctor = {
   languages: string[] | null
   status: string
   video_enabled: boolean | null
-  office_address: string | null
-  offers_video: boolean | null
-  offers_in_person: boolean | null
+  office_address?: string | null
+  offers_video?: boolean | null
+  offers_in_person?: boolean | null
   doctor_specialties: Array<{
     specialty_id: string
     specialties: {
@@ -77,46 +77,57 @@ async function fetchDoctors(filters?: DiscoveryFilters) {
   const supabase = createServiceClient()
 
   try {
-    const { data: doctors, error } = await supabase
-      .from('doctors')
-      .select(`
-        id,
-        bio,
-        price_cents,
-        rating_avg,
-        rating_count,
-        city,
-        state,
-        years_experience,
-        languages,
-        status,
-        video_enabled,
-        office_address,
-        offers_video,
-        offers_in_person,
-        video_enabled,
-        doctor_specialties (
-          specialty_id,
-          specialty:specialties (
-            id,
-            name,
-            slug
-          )
-        ),
-        profiles!doctors_id_fkey (
+    const doctorSelect = `
+      id,
+      bio,
+      price_cents,
+      rating_avg,
+      rating_count,
+      city,
+      state,
+      years_experience,
+      languages,
+      status,
+      video_enabled,
+      doctor_specialties (
+        specialty_id,
+        specialty:specialties (
           id,
-          full_name,
-          photo_url
-        ),
-        doctor_subscriptions (
-          id,
-          status,
-          current_period_end
+          name,
+          slug
         )
-      `)
+      ),
+      profiles!doctors_id_fkey (
+        id,
+        full_name,
+        photo_url
+      ),
+      doctor_subscriptions (
+        id,
+        status,
+        current_period_end
+      )
+    `
+
+    let result = await supabase
+      .from('doctors')
+      .select(doctorSelect)
       .eq('status', 'approved')
+      .eq('is_listed', true)
       .order('rating_avg', { ascending: false, nullsFirst: false })
       .limit(50)
+
+    if (result.error?.code === '42703' && result.error.message.includes('is_listed')) {
+      logger.warn('Discovery is_listed filter skipped because migration is not applied')
+      result = await supabase
+        .from('doctors')
+        .select(doctorSelect)
+        .eq('status', 'approved')
+        .order('rating_avg', { ascending: false, nullsFirst: false })
+        .limit(50)
+    }
+
+    const { data: doctors, error } = result
 
     if (error) {
       logger.error('Discovery error', { error: error.message, code: error.code })

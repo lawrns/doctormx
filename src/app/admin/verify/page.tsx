@@ -1,7 +1,23 @@
 import { requireRole } from '@/lib/auth'
 import Link from 'next/link'
-import type { Doctor } from '@/types'
 import { Check } from 'lucide-react'
+
+type PendingDoctor = {
+  id: string
+  specialty?: string | null
+  bio?: string | null
+  license_number?: string | null
+  years_experience?: number | null
+  city?: string | null
+  state?: string | null
+  price_cents?: number | null
+  currency?: string | null
+  profile?: { full_name?: string | null; email?: string | null; phone?: string | null } | Array<{ full_name?: string | null; email?: string | null; phone?: string | null }> | null
+}
+
+function getProfile(doctor: PendingDoctor) {
+  return Array.isArray(doctor.profile) ? doctor.profile[0] : doctor.profile
+}
 
 export default async function AdminVerificationPage() {
   const { supabase } = await requireRole('admin')
@@ -42,16 +58,20 @@ export default async function AdminVerificationPage() {
           </div>
         ) : (
           <div className="space-y-4">
-            {pendingDoctors.map((doctor: Doctor) => (
+            {(pendingDoctors as PendingDoctor[]).map((doctor) => {
+              const profile = getProfile(doctor)
+              const priceCents = doctor.price_cents || 0
+
+              return (
               <div key={doctor.id} className="bg-card rounded-lg shadow p-6">
                 <div className="flex justify-between items-start mb-4">
                   <div>
                     <h3 className="text-xl font-semibold text-foreground">
-                      Dr. {doctor.profile.full_name}
+                      Dr. {profile?.full_name || 'Sin nombre'}
                     </h3>
-                    <p className="text-sm text-muted-foreground">{doctor.profile.email}</p>
-                    {doctor.profile.phone && (
-                      <p className="text-sm text-muted-foreground">{doctor.profile.phone}</p>
+                    <p className="text-sm text-muted-foreground">{profile?.email || 'Sin email'}</p>
+                    {profile?.phone && (
+                      <p className="text-sm text-muted-foreground">{profile.phone}</p>
                     )}
                   </div>
                   <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">
@@ -83,7 +103,7 @@ export default async function AdminVerificationPage() {
                   <div>
                     <p className="text-sm text-muted-foreground">Precio de consulta</p>
                     <p className="font-medium text-foreground">
-                      ${(doctor.price_cents / 100).toFixed(2)} {doctor.currency}
+                      ${(priceCents / 100).toFixed(2)} {doctor.currency || 'MXN'}
                     </p>
                   </div>
                 </div>
@@ -99,6 +119,7 @@ export default async function AdminVerificationPage() {
                   <form action="/api/admin/verify-doctor" method="POST" className="flex-1">
                     <input type="hidden" name="doctorId" value={doctor.id} />
                     <input type="hidden" name="action" value="approve" />
+                    <input type="hidden" name="redirectTo" value="/admin/verify" />
                     <button
                       type="submit"
                       className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 font-medium"
@@ -108,7 +129,7 @@ export default async function AdminVerificationPage() {
                   </form>
 
                   <Link
-                    href={`/admin/verify/${doctor.id}`}
+                    href={`/admin/doctors/${doctor.id}`}
                     className="flex-1 border border-border text-muted-foreground py-2 rounded-lg hover:bg-secondary/50 font-medium text-center"
                   >
                     Ver detalles
@@ -116,7 +137,20 @@ export default async function AdminVerificationPage() {
 
                   <form action="/api/admin/verify-doctor" method="POST" className="flex-1">
                     <input type="hidden" name="doctorId" value={doctor.id} />
+                    <input type="hidden" name="action" value="request_docs" />
+                    <input type="hidden" name="redirectTo" value="/admin/verify" />
+                    <button
+                      type="submit"
+                      className="w-full border border-yellow-600 text-yellow-700 py-2 rounded-lg hover:bg-yellow-50 font-medium"
+                    >
+                      Solicitar docs
+                    </button>
+                  </form>
+
+                  <form action="/api/admin/verify-doctor" method="POST" className="flex-1">
+                    <input type="hidden" name="doctorId" value={doctor.id} />
                     <input type="hidden" name="action" value="reject" />
+                    <input type="hidden" name="redirectTo" value="/admin/verify" />
                     <button
                       type="submit"
                       className="w-full border border-red-600 text-red-600 py-2 rounded-lg hover:bg-red-50 font-medium"
@@ -126,7 +160,8 @@ export default async function AdminVerificationPage() {
                   </form>
                 </div>
               </div>
-            ))}
+              )
+            })}
           </div>
         )}
       </main>
