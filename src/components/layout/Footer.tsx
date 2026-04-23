@@ -164,10 +164,10 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="/privacy"
+                  href="/security"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Privacidad
+                  Seguridad
                 </Link>
               </li>
               <li>
