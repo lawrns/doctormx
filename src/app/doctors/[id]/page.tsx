@@ -222,8 +222,8 @@ export default async function DoctorProfilePage({
                   </p>
                 </div>
               </div>
-              <div className="mt-5 grid gap-3 sm:grid-cols-3">
-                <div className="rounded-[var(--public-radius-control)] border border-[hsl(var(--public-border)/0.82)] bg-[hsl(var(--public-surface-soft))] p-4">
+              <div className="mt-5 grid gap-3 sm:grid-cols-[1.15fr_0.85fr]">
+                <div className="rounded-[var(--public-radius-control)] border border-[hsl(var(--public-border)/0.82)] bg-[hsl(var(--public-surface-soft))] p-4 sm:row-span-2">
                   <p className="font-semibold text-[hsl(var(--public-ink))]">Evaluación médica</p>
                   <p className="mt-1 text-sm leading-6 text-[hsl(var(--public-muted))]">Contexto, síntomas y orientación clara.</p>
                 </div>

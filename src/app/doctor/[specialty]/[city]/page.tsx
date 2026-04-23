@@ -124,9 +124,9 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
             </Link>
           </Card>
         ) : (
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="space-y-3">
             {doctors.map((doctor) => (
-              <Card key={doctor.id} hover className="flex flex-col">
+              <Card key={doctor.id} hover className="grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
                 <div className="flex items-start gap-4">
                   <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-xl font-bold text-primary">
                     {doctor.full_name.charAt(0)}
@@ -143,7 +143,7 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
                     </div>
                   </div>
                 </div>
-                <div className="mt-4 flex items-center justify-between border-t pt-4">
+                <div className="flex items-center justify-between gap-4 border-t pt-4 md:border-t-0 md:pt-0">
                   <div className="text-sm text-muted-foreground">
                     {doctor.city}, {doctor.state}
                   </div>

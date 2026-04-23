@@ -167,11 +167,11 @@ export default async function DoctoresOnlinePage({
               </div>
             </Card>
           ) : (
-            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {onlineDoctors.map((doctor: any) => (
+            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-[1.08fr_0.92fr]">
+              {onlineDoctors.map((doctor: any, index: number) => (
                 <Card
                   key={doctor.id}
-                  className="surface-panel h-full gap-0 overflow-hidden border-border/80 p-0"
+                  className={`surface-panel h-full gap-0 overflow-hidden border-border/80 p-0 ${index === 0 ? 'xl:row-span-2' : ''}`}
                 >
                   <div className="surface-tint px-6 py-5">
                     <div className="flex items-start gap-4">

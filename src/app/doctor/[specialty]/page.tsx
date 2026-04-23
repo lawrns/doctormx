@@ -121,9 +121,9 @@ export default async function SpecialtyPage({ params }: PageProps) {
             </p>
           </Card>
         ) : (
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="space-y-3">
             {doctors.map((doctor) => (
-              <Card key={doctor.id} hover className="flex flex-col">
+              <Card key={doctor.id} hover className="grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
                 <div className="flex items-start gap-4">
                   <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-lg font-bold text-primary">
                     {doctor.full_name.charAt(0)}
@@ -137,7 +137,7 @@ export default async function SpecialtyPage({ params }: PageProps) {
                     </p>
                   </div>
                 </div>
-                <div className="mt-4 flex justify-end">
+                <div className="flex justify-end">
                   <Link href={`/doctors/${doctor.id}`}>
                     <Button size="sm">Ver perfil</Button>
                   </Link>

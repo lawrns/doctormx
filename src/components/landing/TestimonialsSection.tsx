@@ -15,6 +15,8 @@ type TestimonialsSectionProps = {
 export function TestimonialsSection({ trustData }: TestimonialsSectionProps) {
   const prefersReducedMotion = useReducedMotion()
   const reviews = trustData?.reviewHighlights || []
+  const leadReview = reviews[0]
+  const secondaryReviews = reviews.slice(1)
 
   if (reviews.length === 0) {
     return null
@@ -39,8 +41,18 @@ export function TestimonialsSection({ trustData }: TestimonialsSectionProps) {
           </p>
         </motion.div>
 
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {reviews.map((review, index) => (
+        <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.45, ease: [0, 0, 0.2, 1] }}
+          >
+            <ReviewCard review={leadReview} featured />
+          </motion.div>
+
+          <div className="grid gap-4">
+            {secondaryReviews.map((review, index) => (
             <motion.div
               key={review.id}
               initial={{ opacity: 0, y: 24 }}
@@ -52,64 +64,77 @@ export function TestimonialsSection({ trustData }: TestimonialsSectionProps) {
                 ease: [0, 0, 0.2, 1],
               }}
             >
-              <Card className="surface-panel flex h-full flex-col p-6 shadow-[0_1px_2px_rgba(15,37,95,0.06)]">
-                <div
-                  className="mb-4 flex gap-1"
-                  role="img"
-                  aria-label={`Calificación: ${review.rating} de 5 estrellas`}
-                >
-                  {[...Array(review.rating)].map((_, starIndex) => (
-                    <Star key={starIndex} className="h-5 w-5 fill-[hsl(var(--brand-gold))] text-[hsl(var(--brand-gold))]" aria-hidden="true" />
-                  ))}
-                </div>
-
-                <p className="mb-6 text-[15px] leading-7 text-[hsl(var(--public-ink))]">
-                  "{review.comment}"
-                </p>
-
-                <div className="mt-auto flex items-center gap-3">
-                  <div className="relative h-12 w-12 overflow-hidden rounded-full bg-[hsl(var(--surface-tint))]">
-                    {review.patientPhotoUrl ? (
-                      <Image
-                        src={review.patientPhotoUrl}
-                        alt={review.patientName}
-                        fill
-                        sizes="48px"
-                        className="object-cover"
-                      />
-                    ) : (
-                      <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(145deg,hsl(var(--surface-strong)),hsl(var(--surface-tint)))] text-sm font-semibold text-[hsl(var(--brand-ocean))]">
-                        {review.patientName
-                          .split(' ')
-                          .filter(Boolean)
-                          .slice(0, 2)
-                          .map((part) => part[0])
-                          .join('')
-                          .toUpperCase()}
-                      </div>
-                    )}
-                  </div>
-                  <div className="min-w-0">
-                    <div className="flex items-center gap-1.5">
-                      <p className="truncate text-sm font-semibold text-[hsl(var(--public-ink))]">
-                        {review.patientName}
-                      </p>
-                      <BadgeCheck className="h-4 w-4 text-[hsl(var(--brand-leaf))]" aria-label="Paciente verificado" />
-                    </div>
-                    <p className="mt-1 flex items-center gap-1.5 text-sm text-[hsl(var(--public-muted))]">
-                      <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
-                      <span className="truncate">
-                        {review.doctorName} · {review.doctorSpecialty}
-                        {review.doctorCity ? ` · ${review.doctorCity}` : ''}
-                      </span>
-                    </p>
-                  </div>
-                </div>
-              </Card>
+              <ReviewCard review={review} />
             </motion.div>
           ))}
+          </div>
         </div>
       </div>
     </section>
+  )
+}
+
+function ReviewCard({
+  review,
+  featured = false,
+}: {
+  review: PublicLandingData['reviewHighlights'][number]
+  featured?: boolean
+}) {
+  return (
+    <Card className={`surface-panel flex h-full flex-col p-6 shadow-[0_1px_2px_rgba(15,37,95,0.06)] ${featured ? 'lg:min-h-[25rem] lg:p-8' : ''}`}>
+      <div
+        className="mb-4 flex gap-1"
+        role="img"
+        aria-label={`Calificación: ${review.rating} de 5 estrellas`}
+      >
+        {[...Array(review.rating)].map((_, starIndex) => (
+          <Star key={starIndex} className="h-5 w-5 fill-[hsl(var(--brand-gold))] text-[hsl(var(--brand-gold))]" aria-hidden="true" />
+        ))}
+      </div>
+
+      <p className={`${featured ? 'text-xl leading-8' : 'text-[15px] leading-7'} mb-6 text-[hsl(var(--public-ink))]`}>
+        "{review.comment}"
+      </p>
+
+      <div className="mt-auto flex items-center gap-3">
+        <div className="relative h-12 w-12 overflow-hidden rounded-full bg-[hsl(var(--surface-tint))]">
+          {review.patientPhotoUrl ? (
+            <Image
+              src={review.patientPhotoUrl}
+              alt={review.patientName}
+              fill
+              sizes="48px"
+              className="object-cover"
+            />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(145deg,hsl(var(--surface-strong)),hsl(var(--surface-tint)))] text-sm font-semibold text-[hsl(var(--brand-ocean))]">
+              {review.patientName
+                .split(' ')
+                .filter(Boolean)
+                .slice(0, 2)
+                .map((part) => part[0])
+                .join('')
+                .toUpperCase()}
+            </div>
+          )}
+        </div>
+        <div className="min-w-0">
+          <div className="flex items-center gap-1.5">
+            <p className="truncate text-sm font-semibold text-[hsl(var(--public-ink))]">
+              {review.patientName}
+            </p>
+            <BadgeCheck className="h-4 w-4 text-[hsl(var(--brand-leaf))]" aria-label="Paciente verificado" />
+          </div>
+          <p className="mt-1 flex items-center gap-1.5 text-sm text-[hsl(var(--public-muted))]">
+            <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
+            <span className="truncate">
+              {review.doctorName} · {review.doctorSpecialty}
+              {review.doctorCity ? ` · ${review.doctorCity}` : ''}
+            </span>
+          </p>
+        </div>
+      </div>
+    </Card>
   )
 }

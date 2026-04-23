@@ -192,17 +192,17 @@ export function PatientTestimonials() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           {testimonials.map((testimonial, index) => (
-            <TestimonialCard key={index} {...testimonial} />
+            <TestimonialCard key={index} {...testimonial} featured={index === 0} />
           ))}
         </div>
 
         {/* Trust stats */}
-        <div className="mt-12 grid grid-cols-3 gap-6 max-w-3xl mx-auto">
-          <TrustStat number="10,000+" label="Pacientes Atendidos" />
-          <TrustStat number="4.9/5" label="Calificación Promedio" />
-          <TrustStat number="98%" label="Satisfacción" />
+        <div className="mx-auto mt-12 flex max-w-3xl flex-col gap-4 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <TrustStat label="Pacientes atendidos" />
+          <TrustStat label="Calificación promedio" />
+          <TrustStat label="Satisfacción reportada" />
         </div>
       </div>
     </div>
@@ -215,15 +215,17 @@ function TestimonialCard({
   rating,
   text,
   verified,
+  featured = false,
 }: {
   name: string;
   city: string;
   rating: number;
   text: string;
   verified: boolean;
+  featured?: boolean;
 }) {
   return (
-    <div className="bg-secondary/50 rounded-2xl p-6 border border-border hover:shadow-lg transition-shadow">
+    <div className={`border border-border bg-secondary/50 p-6 transition-shadow hover:shadow-sm ${featured ? 'lg:row-span-2 lg:p-8' : ''}`}>
       <div className="flex items-center gap-1 mb-3">
         {[...Array(rating)].map((_, i) => (
           <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
@@ -246,11 +248,13 @@ function TestimonialCard({
   );
 }
 
-function TrustStat({ number, label }: { number: string; label: string }) {
+function TrustStat({ label }: { label: string }) {
   return (
-    <div className="text-center">
-      <div className="text-3xl font-bold text-primary mb-1">{number}</div>
-      <div className="text-sm text-muted-foreground">{label}</div>
+    <div className="text-sm text-muted-foreground">
+      <div className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-primary">
+        Verificable
+      </div>
+      <div>{label}</div>
     </div>
   );
 }

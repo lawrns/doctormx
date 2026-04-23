@@ -55,18 +55,18 @@ export function CTASection({ trustData }: CTASectionProps) {
             </Button>
           </div>
 
-          <div className="mx-auto grid max-w-2xl gap-3 pt-4 sm:grid-cols-3">
-            <div className="rounded-[var(--public-radius-control)] border border-white/12 bg-white/6 px-4 py-3 text-left text-sm text-white/82">
-              <Shield className="mb-2 h-4 w-4 text-white/85" />
-              Privacidad y seguridad explicadas en el flujo
+          <div className="mx-auto grid max-w-2xl gap-3 border-t border-white/12 pt-5 text-left sm:grid-cols-[1.15fr_0.85fr]">
+            <div className="flex gap-3 text-sm leading-6 text-white/82 sm:row-span-2">
+              <Shield className="mt-1 h-4 w-4 shrink-0 text-white/85" />
+              <span>Privacidad, seguridad y reserva guiada aparecen dentro del flujo, donde el paciente toma la decisión.</span>
             </div>
-            <div className="rounded-[var(--public-radius-control)] border border-white/12 bg-white/6 px-4 py-3 text-left text-sm text-white/82">
-              <BadgeCheck className="mb-2 h-4 w-4 text-white/85" />
-              Cédula y verificación solo cuando existen
+            <div className="flex gap-3 text-sm leading-6 text-white/82">
+              <BadgeCheck className="mt-1 h-4 w-4 shrink-0 text-white/85" />
+              <span>Cédula y verificación solo cuando existen.</span>
             </div>
-            <div className="rounded-[var(--public-radius-control)] border border-white/12 bg-white/6 px-4 py-3 text-left text-sm text-white/82">
-              <ArrowRight className="mb-2 h-4 w-4 text-white/85" />
-              Reserva guiada de principio a fin
+            <div className="flex gap-3 text-sm leading-6 text-white/82">
+              <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-white/85" />
+              <span>De búsqueda a cita sin inflar señales.</span>
             </div>
           </div>
         </motion.div>
