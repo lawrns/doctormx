@@ -66,8 +66,8 @@
     --public-shadow-soft: var(--shadow-soft);
     --public-shadow-medium: var(--shadow-medium);
     --public-shadow-strong: var(--shadow-strong);
-    --public-radius-card: 1.75rem;
-    --public-radius-control: 1rem;
+    --public-radius-card: 1.25rem;
+    --public-radius-control: 0.875rem;
     --public-radius-pill: 999px;
 
     /* ── Legacy surface tokens (mapped to new bg scale) ── */
@@ -81,9 +81,9 @@
     --success-foreground: 0 0% 100%;
 
     --shadow-color: 222 73% 22%;
-    --shadow-soft: 0 4px 14px rgba(15,37,95,.1);
-    --shadow-medium: 0 8px 24px rgba(15,37,95,.12);
-    --shadow-strong: 0 16px 40px rgba(15,37,95,.16);
+    --shadow-soft: 0 1px 2px rgba(15, 37, 95, 0.04), 0 12px 28px -22px rgba(15, 37, 95, 0.14);
+    --shadow-medium: 0 10px 24px -18px rgba(15, 37, 95, 0.16);
+    --shadow-strong: 0 18px 42px -24px rgba(15, 37, 95, 0.22);
 
     --chart-1: 227 75% 41%;
     --chart-2: 162 100% 33%;
@@ -152,9 +152,9 @@
     --success-foreground: 222 30% 8%;
 
     --shadow-color: 222 40% 4%;
-    --shadow-soft: 0 4px 14px rgba(0,0,0,.35);
-    --shadow-medium: 0 8px 24px rgba(0,0,0,.45);
-    --shadow-strong: 0 16px 40px rgba(0,0,0,.55);
+    --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.22), 0 12px 28px -22px rgba(0, 0, 0, 0.5);
+    --shadow-medium: 0 10px 24px -18px rgba(0, 0, 0, 0.55);
+    --shadow-strong: 0 18px 42px -24px rgba(0, 0, 0, 0.7);
 
     --chart-1: 222 100% 69%;
     --chart-2: 162 60% 45%;
@@ -369,16 +369,16 @@
 
   .surface-panel {
     border-radius: var(--public-radius-card);
-    border: 1px solid hsl(var(--public-border) / 0.82);
-    background: hsl(var(--public-surface) / 0.96);
+    border: 1px solid hsl(var(--public-border) / 0.78);
+    background: hsl(var(--card));
     box-shadow: var(--public-shadow-soft);
   }
 
   .surface-panel-strong {
-    border-radius: calc(var(--public-radius-card) + 0.25rem);
-    border: 1px solid hsl(var(--public-border) / 0.82);
+    border-radius: calc(var(--public-radius-card) + 0.125rem);
+    border: 1px solid hsl(var(--public-border) / 0.78);
     background: linear-gradient(
-      145deg,
+      180deg,
       hsl(var(--public-surface)),
       hsl(var(--public-surface-strong))
     );
@@ -410,7 +410,6 @@
 }
 
   .public-panel {
-    border-radius: var(--public-radius-card);
     padding: 1.5rem;
   }
 

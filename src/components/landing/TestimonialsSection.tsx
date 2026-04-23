@@ -52,7 +52,7 @@ export function TestimonialsSection({ trustData }: TestimonialsSectionProps) {
                 ease: [0, 0, 0.2, 1],
               }}
             >
-              <Card className="surface-panel flex h-full flex-col rounded-[28px] p-6 shadow-[0_1px_2px_rgba(15,37,95,0.06)]">
+              <Card className="surface-panel flex h-full flex-col p-6 shadow-[0_1px_2px_rgba(15,37,95,0.06)]">
                 <div
                   className="mb-4 flex gap-1"
                   role="img"

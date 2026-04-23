@@ -54,23 +54,25 @@ function buildInitials(name: string) {
 function FilterChip({
   label,
   active,
-  href,
+  onClick,
 }: {
   label: string
   active?: boolean
-  href: string
+  onClick: () => void
 }) {
   return (
-    <Link
-      href={href}
-      className={`inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors ${
+    <button
+      type="button"
+      aria-pressed={active}
+      onClick={onClick}
+      className={`inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-semibold transition-[background-color,border-color,color,transform] active:scale-[0.98] ${
         active
-          ? 'border-[hsl(var(--brand-ocean))] bg-[hsl(var(--brand-ocean)/0.12)] text-[hsl(var(--public-ink))]'
-          : 'border-border bg-card text-[hsl(var(--public-ink))] hover:border-[hsl(var(--brand-ocean)/0.2)] hover:bg-[hsl(var(--surface-tint))]'
+          ? 'border-[hsl(var(--brand-ocean))] bg-[hsl(var(--brand-ocean)/0.1)] text-[hsl(var(--public-ink))]'
+          : 'border-border bg-card text-[hsl(var(--public-ink))] hover:border-[hsl(var(--brand-ocean)/0.18)] hover:bg-[hsl(var(--surface-tint))]'
       }`}
     >
       {label}
-    </Link>
+    </button>
   )
 }
 
@@ -83,7 +85,7 @@ function DoctorCard({ doctor }: { doctor: PublicDoctorSummary }) {
   const hasVerificationDetails = Boolean(verification?.cedula && verifiedDate)
 
   return (
-    <Card className="surface-panel overflow-hidden rounded-[28px] p-0 transition-shadow hover:shadow-[0_18px_40px_-26px_rgba(15,37,95,0.24)]">
+    <Card className="surface-panel overflow-hidden p-0 transition-[transform,box-shadow] hover:-translate-y-0.5 hover:shadow-[0_14px_32px_-22px_rgba(15,37,95,0.18)]">
       <div className="grid gap-0 lg:grid-cols-[1fr_230px]">
         <div className="border-b border-border/70 p-5 lg:border-b-0 lg:border-r">
           <div className="flex gap-4">
@@ -305,7 +307,7 @@ export function DoctorsDirectoryClient({
     <div className="min-h-screen bg-[linear-gradient(180deg,hsl(var(--surface-quiet))_0%,hsl(var(--card))_100%)]">
       <header className="sticky top-0 z-[200] border-b border-border bg-card/92 backdrop-blur-xl">
         <div className="editorial-shell">
-          <div className="flex min-h-16 items-center justify-between gap-4 py-3">
+          <div className="flex flex-col gap-3 py-3 lg:flex-row lg:items-center">
             <Link
               href="/"
               className="shrink-0 rounded-lg transition-transform active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
@@ -316,7 +318,7 @@ export function DoctorsDirectoryClient({
 
             <form
               action="/doctors"
-              className="hidden flex-1 items-center gap-3 rounded-[var(--public-radius-control)] border border-border bg-[hsl(var(--surface-quiet))] px-3 py-2.5 lg:flex"
+              className="flex w-full flex-col gap-2 rounded-[var(--public-radius-control)] border border-border bg-[hsl(var(--surface-quiet))] px-3 py-3 lg:flex-1 lg:flex-row lg:items-center lg:gap-3 lg:py-2.5"
               onSubmit={(event) => {
                 event.preventDefault()
                 const formData = new FormData(event.currentTarget)
@@ -327,44 +329,28 @@ export function DoctorsDirectoryClient({
                 )
               }}
             >
-              <Search className="h-4 w-4 shrink-0 text-[hsl(var(--public-muted))]" />
-              <input
-                name="search"
-                type="text"
-                placeholder="Especialidad o doctor"
-                defaultValue={params.search || ''}
-                className="min-w-0 flex-1 bg-transparent text-sm outline-none placeholder:text-[hsl(var(--public-muted))/0.72]"
-              />
-              <div className="h-5 w-px bg-border" />
+              <div className="flex flex-1 items-center gap-2">
+                <Search className="h-4 w-4 shrink-0 text-[hsl(var(--public-muted))]" />
+                <input
+                  name="search"
+                  type="text"
+                  placeholder="Especialidad o doctor"
+                  defaultValue={params.search || ''}
+                  className="min-w-0 flex-1 bg-transparent text-sm outline-none placeholder:text-[hsl(var(--public-muted))/0.72]"
+                />
+              </div>
+              <div className="h-px w-full bg-border lg:h-5 lg:w-px" />
               <input
                 name="city"
                 type="text"
                 placeholder="Ciudad"
                 defaultValue={params.city || ''}
-                className="w-44 bg-transparent text-sm outline-none placeholder:text-[hsl(var(--public-muted))/0.72]"
+                className="w-full bg-transparent text-sm outline-none placeholder:text-[hsl(var(--public-muted))/0.72] lg:w-44"
               />
-              <Button type="submit" variant="hero" size="sm">
+              <Button type="submit" variant="hero" size="sm" className="w-full lg:w-auto">
                 Buscar
               </Button>
             </form>
-
-            <div className="ml-auto flex items-center gap-2">
-              <Button
-                variant="ghost"
-                size="icon-sm"
-                className="lg:hidden"
-                onClick={() => {
-                  const search = window.prompt('Buscar doctor o especialidad', params.search || '')
-                  if (search !== null) {
-                    const nextSearch = search.trim()
-                    router.push(`/doctors${buildQuery({ search: nextSearch || undefined })}`)
-                  }
-                }}
-                aria-label="Buscar"
-              >
-                <Search className="h-4 w-4" />
-              </Button>
-            </div>
           </div>
         </div>
       </header>
@@ -430,24 +416,38 @@ export function DoctorsDirectoryClient({
             <div className="flex flex-wrap gap-2">
               <FilterChip
                 label="Todos"
-                href={`/doctors${buildQuery({ specialty: undefined, appointmentType: undefined })}`}
+                onClick={() =>
+                  router.push(`/doctors${buildQuery({ specialty: undefined, appointmentType: undefined })}`)
+                }
                 active={!params.specialty && (!params.appointmentType || params.appointmentType === 'all')}
               />
               <FilterChip
                 label="Videoconsulta"
-                href={`/doctors${buildQuery({ appointmentType: params.appointmentType === 'video' ? undefined : 'video' })}`}
+                onClick={() =>
+                  router.push(
+                    `/doctors${buildQuery({ appointmentType: params.appointmentType === 'video' ? undefined : 'video' })}`
+                  )
+                }
                 active={params.appointmentType === 'video'}
               />
               <FilterChip
                 label="Presencial"
-                href={`/doctors${buildQuery({ appointmentType: params.appointmentType === 'in_person' ? undefined : 'in_person' })}`}
+                onClick={() =>
+                  router.push(
+                    `/doctors${buildQuery({ appointmentType: params.appointmentType === 'in_person' ? undefined : 'in_person' })}`
+                  )
+                }
                 active={params.appointmentType === 'in_person'}
               />
               {specialties.slice(0, 6).map((specialty) => (
                 <FilterChip
                   key={specialty.id}
                   label={specialty.name}
-                  href={`/doctors${buildQuery({ specialty: params.specialty === specialty.slug ? undefined : specialty.slug })}`}
+                  onClick={() =>
+                    router.push(
+                      `/doctors${buildQuery({ specialty: params.specialty === specialty.slug ? undefined : specialty.slug })}`
+                    )
+                  }
                   active={params.specialty === specialty.slug}
                 />
               ))}
@@ -463,7 +463,7 @@ export function DoctorsDirectoryClient({
       <main className="editorial-shell py-6 sm:py-8">
         <div className="space-y-4">
           {doctors.length === 0 ? (
-            <Card className="surface-panel rounded-[28px] p-10 text-center">
+            <Card className="surface-panel p-10 text-center">
               <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[hsl(var(--surface-tint))] text-[hsl(var(--brand-ocean))]">
                 <Search className="h-6 w-6" />
               </div>
