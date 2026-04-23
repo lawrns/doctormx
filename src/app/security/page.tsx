@@ -1,413 +1,135 @@
 'use client'
 
+import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { AlertTriangle, CheckCircle, Database, FileText, Key, Lock, Shield } from 'lucide-react'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { Card } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import Link from 'next/link'
-import {
-  Shield,
-  Lock,
-  Eye,
-  CheckCircle,
-  Server,
-  Database,
-  Key,
-  FileText,
-  AlertTriangle,
-  Award,
-  Verified,
-  Users,
-  Activity
-} from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
-const securityFeatures = [
+const controls = [
   {
     icon: Lock,
-    title: 'End-to-End Encryption',
-    description: 'All consultations and patient data are encrypted using AES-256 encryption, the same standard used by banks and governments.',
-    details: [
-      'Video calls use WebRTC with DTLS-SRTP',
-      'Chat messages encrypted at rest and in transit',
-      'File uploads encrypted before storage'
-    ]
-  },
-  {
-    icon: Shield,
-    title: 'HIPAA Compliance',
-    description: 'Our platform is designed to meet HIPAA requirements for protecting sensitive patient health information.',
-    details: [
-      'Business Associate Agreements with all partners',
-      'Regular security assessments and audits',
-      'Staff training on privacy and security protocols'
-    ]
-  },
-  {
-    icon: Database,
-    title: 'Secure Data Storage',
-    description: 'Patient data is stored in secure, redundant data centers with strict access controls.',
-    details: [
-      'Encrypted databases with field-level security',
-      'Automated daily backups with point-in-time recovery',
-      'Geographic redundancy for disaster recovery'
-    ]
+    title: 'Cifrado y transporte seguro',
+    body: 'Mensajes, archivos y sesiones viajan por canales cifrados. El almacenamiento sensible se limita al flujo clínico.',
   },
   {
     icon: Key,
-    title: 'Access Control',
-    description: 'Multi-factor authentication and role-based access ensure only authorized users can access sensitive information.',
-    details: [
-      '2FA required for all healthcare providers',
-      'Role-based permissions (patient, doctor, admin)',
-      'Session timeout and automatic logout'
-    ]
-  }
-]
-
-const certifications = [
-  {
-    name: 'ISO 27001',
-    description: 'Information Security Management',
-    icon: Verified,
-    status: 'In Progress'
+    title: 'Acceso por rol',
+    body: 'Pacientes, doctores y equipo operativo tienen permisos separados para reducir exposición innecesaria.',
   },
   {
-    name: 'SOC 2 Type II',
-    description: 'Security, Availability, Processing Integrity',
-    icon: Award,
-    status: 'Planned Q2 2024'
+    icon: Database,
+    title: 'Datos clínicos controlados',
+    body: 'La información de salud se usa para consulta, reserva y seguimiento. No se muestra fuera del contexto necesario.',
   },
   {
-    name: 'COFEPRIS',
-    description: 'Mexican Health Authority Compliance',
-    icon: CheckCircle,
-    status: 'Certified'
-  },
-  {
-    name: 'HITECH',
-    description: 'Health Information Technology',
     icon: FileText,
-    status: 'Compliant'
-  }
+    title: 'Derechos del paciente',
+    body: 'Puedes solicitar acceso, corrección o eliminación aplicable de tus datos desde soporte.',
+  },
 ]
 
-const complianceAreas = [
-  {
-    area: 'Data Privacy',
-    standards: ['HIPAA', 'LFPDPPP', 'GDPR Ready'],
-    icon: Eye
-  },
-  {
-    area: 'Security Operations',
-    standards: ['ISO 27001', 'NIST CSF', 'CIS Controls'],
-    icon: Server
-  },
-  {
-    area: 'Medical Device',
-    standards: ['IEC 62304', 'FDA Guidelines', 'COFEPRIS'],
-    icon: Activity
-  },
-  {
-    area: 'Cloud Security',
-    standards: ['AWS Well-Architected', 'Cloud Controls Matrix', 'CSA STAR'],
-    icon: Database
-  }
+const commitments = [
+  'La IA no sustituye urgencias ni diagnóstico médico.',
+  'Cédula, verificación y reseñas solo se muestran como certeza cuando existen.',
+  'Los pagos y datos sensibles usan proveedores especializados.',
+  'Las páginas legales explican alcance, privacidad y condiciones de uso.',
 ]
 
 export default function SecurityPage() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-[hsl(var(--surface-soft))]">
       <Header />
 
-      {/* Hero */}
-      <section className="pt-24 pb-16 bg-gradient-to-b from-primary/5 to-background">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="pt-24 md:pt-28">
+        <div className="editorial-shell">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
+            transition={{ duration: 0.4 }}
+            className="grid gap-8 border-b border-border pb-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end"
           >
-            <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <Shield className="w-10 h-10 text-primary" />
+            <div>
+              <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
+                Seguridad y privacidad
+              </p>
+              <h1 className="mt-4 font-display text-4xl font-semibold leading-[0.98] tracking-[-0.04em] text-foreground md:text-6xl">
+                Seguridad visible, sin lenguaje inflado.
+              </h1>
             </div>
-            <h1 className="text-5xl font-bold text-foreground mb-6">
-              Seguridad y privacidad
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Proteger tu información de salud es una prioridad. Aplicamos controles de seguridad, privacidad y acceso para cuidar tus datos en cada interacción.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Badge variant="secondary" className="text-sm py-2 px-4">
-                <CheckCircle className="w-4 h-4 mr-2" />
-                Controles tipo HIPAA
-              </Badge>
-              <Badge variant="secondary" className="text-sm py-2 px-4">
-                <Lock className="w-4 h-4 mr-2" />
-                Cifrado AES-256
-              </Badge>
-              <Badge variant="secondary" className="text-sm py-2 px-4">
-                <Shield className="w-4 h-4 mr-2" />
-                Alineado con COFEPRIS
-              </Badge>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Security Features */}
-      <section className="py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-foreground mb-4">Cómo protegemos tu información</h2>
-            <p className="text-lg text-muted-foreground">
-              Múltiples capas de protección para resguardar información clínica y datos personales.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {securityFeatures.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="p-6 h-full">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <feature.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-foreground mb-2">{feature.title}</h3>
-                      <p className="text-muted-foreground mb-4">{feature.description}</p>
-                      <ul className="space-y-2">
-                        {feature.details.map((detail, idx) => (
-                          <li key={idx} className="flex items-center text-sm text-muted-foreground">
-                            <CheckCircle className="w-4 h-4 text-vital mr-2 flex-shrink-0" />
-                            {detail}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Compliance */}
-      <section className="py-16 bg-secondary/30">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-foreground mb-4">Cumplimiento y certificaciones</h2>
-            <p className="text-lg text-muted-foreground">
-              Operamos con estándares y marcos de referencia para salud digital, privacidad y seguridad.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {certifications.map((cert, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="p-6 text-center">
-                  <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <cert.icon className="w-8 h-8 text-primary" />
-                  </div>
-                  <h3 className="font-semibold text-foreground mb-1">{cert.name}</h3>
-                  <p className="text-sm text-muted-foreground mb-2">{cert.description}</p>
-                  <Badge
-                    variant={cert.status === 'Certified' ? 'default' : cert.status === 'In Progress' ? 'secondary' : 'outline'}
-                    className="text-xs"
-                  >
-                    {cert.status}
-                  </Badge>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {complianceAreas.map((area, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center">
-                      <area.icon className="w-5 h-5 text-foreground" />
-                    </div>
-                    <h3 className="font-semibold text-foreground">{area.area}</h3>
-                  </div>
-                  <div className="space-y-1">
-                    {area.standards.map((standard, idx) => (
-                      <Badge key={idx} variant="outline" className="text-xs mr-1 mb-1">
-                        {standard}
-                      </Badge>
-                    ))}
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Data Handling */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-foreground mb-4">Tus derechos y control</h2>
-            <p className="text-lg text-muted-foreground">
-              Puedes gestionar el acceso y uso de tu información de salud dentro de la plataforma.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card className="p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <Users className="w-6 h-6 text-primary" />
-                <h3 className="font-semibold text-foreground">Derechos del paciente</h3>
+            <div className="space-y-4">
+              <p className="max-w-2xl text-base leading-7 text-muted-foreground">
+                Doctor.mx protege datos de salud con controles de acceso, cifrado, proveedores de pago especializados y límites explícitos para la IA clínica.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <Badge variant="info">Privacidad por diseño</Badge>
+                <Badge variant="success">Acceso por rol</Badge>
+                <Badge variant="outline">Límites clínicos</Badge>
               </div>
-              <ul className="space-y-3">
-                <li className="flex items-start text-sm text-muted-foreground">
-                  <CheckCircle className="w-4 h-4 text-vital mr-2 mt-0.5 flex-shrink-0" />
-                  Acceder a tu historial clínico disponible
-                </li>
-                <li className="flex items-start text-sm text-muted-foreground">
-                  <CheckCircle className="w-4 h-4 text-vital mr-2 mt-0.5 flex-shrink-0" />
-                  Solicitar correcciones de información
-                </li>
-                <li className="flex items-start text-sm text-muted-foreground">
-                  <CheckCircle className="w-4 h-4 text-vital mr-2 mt-0.5 flex-shrink-0" />
-                  Obtener una copia de tus datos
-                </li>
-                <li className="flex items-start text-sm text-muted-foreground">
-                  <CheckCircle className="w-4 h-4 text-vital mr-2 mt-0.5 flex-shrink-0" />
-                  Solicitar la eliminación de cuenta y datos aplicables
-                </li>
-              </ul>
-            </Card>
-
-            <Card className="p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <AlertTriangle className="w-6 h-6 text-amber" />
-                <h3 className="font-semibold text-foreground">Buenas prácticas de seguridad</h3>
-              </div>
-              <ul className="space-y-3">
-                <li className="flex items-start text-sm text-muted-foreground">
-                  <CheckCircle className="w-4 h-4 text-vital mr-2 mt-0.5 flex-shrink-0" />
-                  Usa contraseñas fuertes y únicas
-                </li>
-                <li className="flex items-start text-sm text-muted-foreground">
-                  <CheckCircle className="w-4 h-4 text-vital mr-2 mt-0.5 flex-shrink-0" />
-                  Activa la autenticación en dos pasos cuando esté disponible
-                </li>
-                <li className="flex items-start text-sm text-muted-foreground">
-                  <CheckCircle className="w-4 h-4 text-vital mr-2 mt-0.5 flex-shrink-0" />
-                  Revisa actividad y accesos con frecuencia
-                </li>
-                <li className="flex items-start text-sm text-muted-foreground">
-                  <CheckCircle className="w-4 h-4 text-vital mr-2 mt-0.5 flex-shrink-0" />
-                  Reporta actividad sospechosa de inmediato
-                </li>
-              </ul>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Security Team */}
-      <section className="py-16 bg-secondary/30">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl font-bold text-foreground mb-4">Equipo de seguridad</h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Mantenemos procesos de monitoreo, revisión y respuesta para proteger la plataforma.
-            </p>
-            <div className="grid md:grid-cols-3 gap-6">
-              <Card className="p-6">
-                <Shield className="w-8 h-8 text-primary mb-3 mx-auto" />
-                <h3 className="font-semibold text-foreground mb-1">Monitoreo continuo</h3>
-                <p className="text-sm text-muted-foreground">
-                  Vigilancia operativa y detección temprana de anomalías.
-                </p>
-              </Card>
-              <Card className="p-6">
-                <Activity className="w-8 h-8 text-vital mb-3 mx-auto" />
-                <h3 className="font-semibold text-foreground mb-1">Revisiones periódicas</h3>
-                <p className="text-sm text-muted-foreground">
-                  Evaluaciones regulares de controles y exposición de riesgo.
-                </p>
-              </Card>
-              <Card className="p-6">
-                <FileText className="w-8 h-8 text-primary mb-3 mx-auto" />
-                <h3 className="font-semibold text-foreground mb-1">Respuesta a incidentes</h3>
-                <p className="text-sm text-muted-foreground">
-                  Procedimientos de respuesta para investigar y contener incidentes.
-                </p>
-              </Card>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Contact Security */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl font-bold text-foreground mb-4">¿Tienes dudas de seguridad?</h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Si necesitas ayuda con privacidad, seguridad o acceso a tus datos, nuestro equipo puede orientarte.
-            </p>
-            <Link href="/contact">
-              <Button size="lg">
-                Contactar al equipo
+      <section className="editorial-shell py-10">
+        <div className="grid gap-8 lg:grid-cols-[13rem_1fr]">
+          <aside className="lg:sticky lg:top-24 lg:self-start">
+            <div className="rounded-[10px] border border-border bg-card p-4">
+              <Shield className="mb-4 h-5 w-5 text-primary" />
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                Criterio
+              </p>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                Si un control, dato o certificación no puede demostrarse en producto, evitamos tratarlo como prueba absoluta.
+              </p>
+            </div>
+          </aside>
+
+          <div className="space-y-8">
+            <div className="grid gap-3 md:grid-cols-2">
+              {controls.map((control) => (
+                <article key={control.title} className="rounded-[12px] border border-border bg-card p-5">
+                  <control.icon className="mb-4 h-5 w-5 text-primary" />
+                  <h2 className="font-display text-lg font-semibold tracking-tight text-foreground">{control.title}</h2>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">{control.body}</p>
+                </article>
+              ))}
+            </div>
+
+            <div className="divide-y divide-border rounded-[12px] border border-border bg-card">
+              {commitments.map((item) => (
+                <div key={item} className="flex gap-3 p-4 text-sm leading-6 text-muted-foreground">
+                  <CheckCircle className="mt-1 h-4 w-4 shrink-0 text-vital" />
+                  {item}
+                </div>
+              ))}
+            </div>
+
+            <div className="rounded-[12px] border border-amber/30 bg-amber/5 p-5">
+              <div className="flex gap-3">
+                <AlertTriangle className="mt-1 h-5 w-5 shrink-0 text-amber" />
+                <div>
+                  <h2 className="font-display text-lg font-semibold tracking-tight text-foreground">
+                    Urgencias y señales de alarma
+                  </h2>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                    Dr. Simeon puede orientar y escalar, pero no reemplaza servicios de emergencia. Ante dolor de pecho, dificultad para respirar, pérdida de conciencia o síntomas graves, busca atención urgente.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-3 border-t border-border pt-6 sm:flex-row">
+              <Button asChild variant="hero">
+                <Link href="/contact">Contactar seguridad</Link>
               </Button>
-            </Link>
-          </motion.div>
+              <Button asChild variant="outline">
+                <Link href="/privacy">Ver privacidad</Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 

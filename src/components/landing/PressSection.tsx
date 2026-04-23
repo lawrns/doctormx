@@ -20,7 +20,7 @@ export function PressSection() {
             transition={{ duration: 0.5 }}
             className="text-sm text-text-secondary"
           >
-            Más de 500 doctores verificados &bull; 10,000+ consultas &bull; 98% satisfacción &bull; Servicio 24/7
+            Perfiles con cédula visible cuando existe &bull; Reseñas reales &bull; Modalidad y precio antes de reservar
           </motion.p>
         </motion.div>
       </div>

@@ -1,359 +1,163 @@
-'use client'
-
-import { motion } from 'framer-motion'
-import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/layout/Footer'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
 import Link from 'next/link'
 import {
-  PageHero,
-  ChapterHeader,
-  EditorialSection,
-  HeroStat,
-  SignatureCard,
-  ColorFeature,
-  Eyebrow,
-} from '@/components/editorial'
-import {
-  Shield,
-  Heart,
-  Stethoscope,
-  GraduationCap,
-  ArrowRight,
-  CheckCircle,
-  Activity,
   Award,
+  ClipboardCheck,
+  Database,
+  GraduationCap,
+  HeartHandshake,
+  ShieldCheck,
+  Stethoscope,
 } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Header } from '@/components/layout/Header'
+import { Footer } from '@/components/layout/Footer'
 
-const team = [
+const principles = [
   {
-    name: 'Dra. Ana María García',
-    role: 'Directora Médica & Co-fundadora',
-    credentials: 'MD, MPH',
-    bio: '15+ años de práctica clínica e innovación en tecnología médica. Ex Directora Médica en HealthTech MX.',
-    education: 'UNAM · Harvard MPH',
+    title: 'Evidencia antes que promesa',
+    body: 'Mostramos cédula, reseñas, modalidad y ubicación solo cuando existen datos en el expediente público o catálogo del doctor.',
+    icon: ClipboardCheck,
   },
   {
-    name: 'Dr. Carlos Rodríguez',
-    role: 'Director de Operaciones Clínicas',
-    credentials: 'MD, MBA',
-    bio: 'Lidera nuestras iniciativas de calidad clínica y expansión de la red médica.',
-    education: 'Tec de Monterrey · IPADE MBA',
+    title: 'IA con límites clínicos',
+    body: 'Dr. Simeon orienta y ayuda a escalar con médicos reales. No reemplaza urgencias, diagnóstico médico ni tratamiento presencial.',
+    icon: Stethoscope,
   },
   {
-    name: 'Dra. Sofía Hernández',
-    role: 'Directora de Tecnología',
-    credentials: 'PhD Computer Science',
-    bio: 'Pionera en aplicaciones de IA en salud con 10+ años en desarrollo de software médico.',
-    education: 'MIT · Stanford PhD',
-  },
-  {
-    name: 'Dr. Miguel Ángel López',
-    role: 'Presidente del Consejo Médico',
-    credentials: 'MD, FACC',
-    bio: 'Cardiólogo de renombre que guía nuestra gobernanza clínica y estándares de calidad.',
-    education: 'UNAM · Mayo Clinic Fellowship',
+    title: 'Privacidad como producto',
+    body: 'La información sensible se restringe al flujo clínico, con controles por rol y explicaciones visibles para pacientes y doctores.',
+    icon: ShieldCheck,
   },
 ]
 
-const advisors = [
-  {
-    name: 'Dra. Patricia Morales',
-    title: 'Experta en Política de Salud',
-    credentials: 'MD, Políticas de Salud',
-    expertise: 'Regulación de salud digital',
-  },
-  {
-    name: 'Dr. Roberto Sánchez',
-    title: 'Defensor de la Seguridad del Paciente',
-    credentials: 'MD, Mejora de Calidad',
-    expertise: 'Sistemas de calidad clínica',
-  },
-  {
-    name: 'Dra. Laura Jiménez',
-    title: 'Especialista en Telemedicina',
-    credentials: 'MD, Telehealth',
-    expertise: 'Entrega de atención virtual',
-  },
+const operatingModel = [
+  { label: 'Verificación', value: 'Cédula y estado SEP cuando el dato existe' },
+  { label: 'Red médica', value: 'Perfiles aprobados antes de aparecer en el directorio' },
+  { label: 'Reseñas', value: 'Opiniones ligadas a experiencia real de paciente' },
+  { label: 'Datos', value: 'Sin conteos inflados ni disponibilidad simulada' },
 ]
 
-const certifications = [
-  { name: 'COFEPRIS', desc: 'Registro sanitario', icon: Shield },
-  { name: 'HIPAA', desc: 'Cumplimiento de privacidad', icon: Activity },
-  { name: 'ISO 27001', desc: 'Seguridad de la información', icon: Award },
-  { name: 'Cifrado E2E', desc: 'Protección de datos', icon: CheckCircle },
+const safeguards = [
+  'La plataforma no presenta métricas clínicas como certeza si no están auditadas.',
+  'La disponibilidad se muestra desde catálogo real o se marca como pendiente.',
+  'Los perfiles médicos distinguen entre cédula visible, verificación y datos faltantes.',
+  'La orientación con IA deriva a atención humana cuando hay señales de alarma.',
 ]
-
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.08 },
-  },
-}
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-}
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-[hsl(var(--surface-soft))]">
       <Header />
 
-      {/* ─── HERO ─── */}
-      <PageHero
-        eyebrow="Nosotros"
-        title={
-          <>
-            Redefiniendo la{' '}
-            <em className="font-serif font-normal">atención médica</em> en México
-          </>
-        }
-        lead="Conectamos a pacientes con doctores verificados a través de una plataforma segura, moderna y centrada en la confianza."
-        stats={[
-          { value: '3,742+', label: 'Doctores verificados' },
-          { value: '50,000+', label: 'Pacientes atendidos' },
-          { value: '150+', label: 'Ciudades cubiertas' },
-        ]}
-      />
-
-      {/* ─── CHAPTER 1: NUESTRA MISIÓN ─── */}
-      <EditorialSection>
-        <div className="max-w-[1100px] mx-auto px-6 md:px-12">
-          <ChapterHeader
-            number="01"
-            title="Nuestra misión"
-            lead="Hacer que la atención médica de calidad sea accesible para cada persona en México."
-          />
-
-          <div className="grid lg:grid-cols-2 gap-8 mb-16">
-            <ColorFeature
-              variant="cobalt"
-              label="Propósito"
-              title={
-                <>
-                  Salud sin{' '}
-                  <em className="font-serif font-normal">barreras</em>
-                </>
-              }
-              value="Conectamos al doctor indicado en el momento correcto."
-            />
-            <ColorFeature
-              variant="vital"
-              label="Impacto"
-              title="100,000+"
-              value="Consultas realizadas a través de la plataforma"
-            />
+      <section className="editorial-shell py-12 md:py-16">
+        <div className="grid gap-10 border-b border-border pb-10 md:grid-cols-[1fr_0.9fr] md:items-end">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+              Plataforma medica verificada
+            </p>
+            <h1 className="mt-5 max-w-4xl font-display text-4xl font-semibold leading-[0.98] tracking-tight text-foreground md:text-6xl">
+              Doctor.mx existe para que elegir médico sea más claro.
+            </h1>
           </div>
-
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="grid md:grid-cols-3 gap-6"
-          >
-            {[
-              {
-                icon: Heart,
-                title: 'Primero el paciente',
-                body: 'Cada decisión prioriza la seguridad, privacidad y calidad clínica.',
-              },
-              {
-                icon: Stethoscope,
-                title: 'Impulso al médico',
-                body: 'Herramientas para crecer la práctica y atender mejor a más pacientes.',
-              },
-              {
-                icon: Shield,
-                title: 'Confianza verificada',
-                body: 'Cada doctor es verificado. Cada consulta está protegida.',
-              },
-            ].map((m, i) => (
-              <motion.div key={i} variants={item}>
-                <SignatureCard>
-                  <m.icon className="w-6 h-6 text-primary mb-4" />
-                  <h3 className="font-display text-xl font-semibold text-foreground mb-2">
-                    {m.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {m.body}
-                  </p>
-                </SignatureCard>
-              </motion.div>
-            ))}
-          </motion.div>
+          <div className="space-y-5">
+            <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
+              Construimos un marketplace de salud donde la confianza se prueba en la interfaz: perfiles reales, datos visibles, privacidad explicada y límites clínicos claros.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="outline">Sin métricas infladas</Badge>
+              <Badge variant="outline">Cédula visible cuando existe</Badge>
+              <Badge variant="outline">IA con escalamiento humano</Badge>
+            </div>
+          </div>
         </div>
-      </EditorialSection>
 
-      {/* ─── CHAPTER 2: EQUIPO LÍDER ─── */}
-      <EditorialSection>
-        <div className="max-w-[1100px] mx-auto px-6 md:px-12">
-          <ChapterHeader
-            number="02"
-            title="Equipo líder"
-            lead="Profesionales de salud y tecnología enfocados en elevar el estándar de la atención médica digital en México."
-          />
+        <div className="grid gap-8 py-10 lg:grid-cols-[240px_1fr]">
+          <aside className="h-fit border border-border bg-card p-5 shadow-[var(--public-shadow-soft)]">
+            <HeartHandshake className="h-5 w-5 text-primary" />
+            <p className="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+              Criterio operativo
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              Si un dato no está verificado, no lo convertimos en argumento de venta.
+            </p>
+          </aside>
 
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="grid md:grid-cols-2 gap-6"
-          >
-            {team.map((member, i) => (
-              <motion.div key={i} variants={item}>
-                <SignatureCard>
-                  <div className="flex gap-5">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/70 to-primary flex items-center justify-center flex-shrink-0 text-primary-foreground font-display text-xl font-light">
-                      {member.name
-                        .split(' ')
-                        .map((n) => n[0])
-                        .filter(Boolean)
-                        .slice(0, 2)
-                        .join('')}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-display text-lg font-semibold text-foreground leading-tight">
-                        {member.name}
-                      </h3>
-                      <p className="text-sm text-primary mb-1.5">
-                        {member.role}
-                      </p>
-                      <Badge
-                        variant="outline"
-                        className="font-mono text-[9px] uppercase tracking-wider mb-3"
-                      >
-                        {member.credentials}
-                      </Badge>
-                      <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                        {member.bio}
-                      </p>
-                      <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-wider">
-                        {member.education}
-                      </p>
-                    </div>
-                  </div>
-                </SignatureCard>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </EditorialSection>
-
-      {/* ─── CHAPTER 3: CONSEJO MÉDICO ─── */}
-      <EditorialSection>
-        <div className="max-w-[1100px] mx-auto px-6 md:px-12">
-          <ChapterHeader
-            number="03"
-            title="Consejo médico asesor"
-            lead="Especialistas que supervisan nuestros estándares clínicos, de seguridad y de calidad asistencial."
-          />
-
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="grid md:grid-cols-3 gap-6"
-          >
-            {advisors.map((advisor, i) => (
-              <motion.div key={i} variants={item}>
-                <SignatureCard className="text-center">
-                  <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center mx-auto mb-4">
-                    <Stethoscope className="w-6 h-6 text-primary-foreground" />
-                  </div>
-                  <h3 className="font-display text-lg font-semibold text-foreground mb-1">
-                    {advisor.name}
-                  </h3>
-                  <p className="text-sm text-primary mb-2">
-                    {advisor.title}
+          <div className="space-y-10">
+            <div className="grid gap-3 md:grid-cols-[1fr_1fr]">
+              {operatingModel.map((item) => (
+                <div key={item.label} className="border-t border-border py-5">
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+                    {item.label}
                   </p>
-                  <Badge
-                    variant="outline"
-                    className="font-mono text-[9px] uppercase tracking-wider mb-3"
-                  >
-                    {advisor.credentials}
-                  </Badge>
-                  <p className="text-xs text-muted-foreground">
-                    {advisor.expertise}
+                  <p className="mt-2 text-lg font-semibold tracking-tight text-foreground">
+                    {item.value}
                   </p>
-                </SignatureCard>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </EditorialSection>
-
-      {/* ─── CHAPTER 4: CERTIFICACIONES ─── */}
-      <EditorialSection>
-        <div className="max-w-[1100px] mx-auto px-6 md:px-12">
-          <ChapterHeader
-            number="04"
-            title="Certificaciones y cumplimiento"
-            lead="Operamos con los más altos estándares de seguridad, privacidad y calidad en salud digital."
-          />
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {certifications.map((cert, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="w-16 h-16 rounded-2xl bg-vital-soft flex items-center justify-center mx-auto mb-4">
-                  <cert.icon className="w-7 h-7 text-vital" />
                 </div>
-                <p className="font-display text-lg font-semibold text-foreground mb-0.5">
-                  {cert.name}
-                </p>
-                <p className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
-                  {cert.desc}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </EditorialSection>
+              ))}
+            </div>
 
-      {/* ─── CTA ─── */}
-      <section className="py-20 md:py-28 bg-ink relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(58,102,245,0.25),transparent_50%)]" />
-        <div className="max-w-[1100px] mx-auto px-6 md:px-12 relative z-10 text-center">
-          <Eyebrow className="text-foreground/60 mb-6">Únete</Eyebrow>
-          <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
-            Construyamos una mejor experiencia de{' '}
-            <em className="font-serif font-normal">salud</em>
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
-            Ya sea que busques atención médica o quieras crecer tu práctica, Doctor.mx te acompaña.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/doctors">
-              <Button
-                size="lg"
-                className="h-14 px-8 bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl text-[15px] font-medium tracking-tight"
-              >
-                Reservar una consulta
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-            <Link href="/for-doctors">
-              <Button
-                size="lg"
-                variant="outline"
-                className="h-14 px-8 border-border text-foreground hover:bg-secondary rounded-xl text-[15px] font-medium tracking-tight"
-              >
-                Unirme a la red médica
-              </Button>
-            </Link>
+            <section>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                Principios
+              </p>
+              <div className="mt-4 divide-y divide-border border-y border-border bg-card">
+                {principles.map((principle) => (
+                  <div key={principle.title} className="grid gap-4 p-5 md:grid-cols-[44px_1fr]">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-[8px] bg-primary/10 text-primary">
+                      <principle.icon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h2 className="text-lg font-semibold tracking-tight text-foreground">
+                        {principle.title}
+                      </h2>
+                      <p className="mt-1 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+                        {principle.body}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section className="grid gap-6 md:grid-cols-[0.8fr_1.2fr]">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                  Gobierno clínico
+                </p>
+                <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground">
+                  La confianza se mantiene con reglas, no con slogans.
+                </h2>
+              </div>
+              <div className="divide-y divide-border border-y border-border">
+                {safeguards.map((item) => (
+                  <div key={item} className="flex gap-3 py-4">
+                    <Award className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                    <p className="text-sm leading-relaxed text-muted-foreground">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section className="border border-border bg-card p-6 shadow-[var(--public-shadow-soft)] md:p-7">
+              <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+                <div>
+                  <div className="flex gap-2 text-primary">
+                    <Database className="h-5 w-5" />
+                    <GraduationCap className="h-5 w-5" />
+                  </div>
+                  <h2 className="mt-4 text-2xl font-semibold tracking-tight text-foreground">
+                    Queremos que el expediente público haga el trabajo pesado.
+                  </h2>
+                  <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                    El siguiente paso no es prometer más. Es completar más perfiles médicos con evidencia, fotografías reales y reglas de verificación visibles.
+                  </p>
+                </div>
+                <Button asChild>
+                  <Link href="/doctors">Ver directorio</Link>
+                </Button>
+              </div>
+            </section>
           </div>
         </div>
       </section>

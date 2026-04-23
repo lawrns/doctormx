@@ -21,30 +21,24 @@ const sizeClasses = {
 
 const variantClasses = {
   primary: `
-    bg-[var(--color-primary-600)] text-white shadow-sm
-    hover:bg-[var(--color-primary-700)] hover:shadow-md
-    active:bg-[var(--color-primary-800)]
-    focus-ring
+    bg-primary text-primary-foreground shadow-[var(--public-shadow-soft)]
+    hover:bg-primary/95 hover:shadow-[var(--public-shadow-medium)]
   `,
   secondary: `
     bg-card border border-border text-foreground
-    hover:border-[var(--border-hover)] hover:bg-[var(--color-neutral-50)]
-    active:bg-[var(--color-neutral-100)]
+    hover:border-primary/25 hover:bg-secondary/70
   `,
   tertiary: `
-    bg-transparent text-[var(--color-primary-600)]
-    hover:bg-[var(--color-primary-50)]
-    active:bg-[var(--color-primary-100)]
+    bg-transparent text-primary
+    hover:bg-primary/10
   `,
   ghost: `
-    bg-transparent text-[var(--color-text-secondary)]
-    hover:bg-[var(--color-neutral-100)] hover:text-[var(--color-text-primary)]
+    bg-transparent text-muted-foreground
+    hover:bg-secondary/70 hover:text-foreground
   `,
   danger: `
-    bg-[var(--color-error-500)] text-white shadow-sm
-    hover:bg-[var(--color-error-600)] hover:shadow-md
-    active:bg-[var(--color-error-700)]
-    focus-ring
+    bg-destructive text-destructive-foreground shadow-[var(--public-shadow-soft)]
+    hover:bg-destructive/90 hover:shadow-[var(--public-shadow-medium)]
   `,
 }
 
@@ -65,7 +59,7 @@ export function Button({
       disabled={loading || disabled}
       className={`
         inline-flex items-center justify-center
-        font-medium rounded-lg interactive
+        rounded-[var(--public-radius-control)] font-semibold transition-[transform,background-color,border-color,color,box-shadow] active:scale-[0.98]
         ${sizeClasses[size]}
         ${variantClasses[variant]}
         ${(loading || disabled) ? 'opacity-50 cursor-not-allowed' : ''}

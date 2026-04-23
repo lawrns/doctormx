@@ -41,7 +41,17 @@ export function SupportWidget() {
     return null
   }
 
-  if (pathname?.startsWith('/widget') || pathname?.includes('/ai-consulta')) {
+  const isTransactional =
+    pathname?.startsWith('/admin') ||
+    pathname?.startsWith('/doctor') ||
+    pathname?.startsWith('/app') ||
+    pathname?.startsWith('/auth') ||
+    pathname?.startsWith('/book') ||
+    pathname?.startsWith('/checkout') ||
+    pathname?.startsWith('/consultation') ||
+    pathname?.startsWith('/payment-success')
+
+  if (pathname?.startsWith('/widget') || pathname?.includes('/ai-consulta') || isTransactional) {
     return null
   }
 
@@ -54,7 +64,7 @@ export function SupportWidget() {
               type="button"
               size="icon-lg"
               aria-label="Abrir asistente Dr. Simeon"
-              className="h-16 w-16 rounded-xl border border-border/20 bg-ink text-primary-foreground shadow-[0_24px_50px_hsl(var(--shadow-color)/0.22)] hover:bg-ink/95"
+              className="h-14 w-14 rounded-[12px] border border-border/20 bg-ink text-primary-foreground shadow-[0_14px_32px_-18px_hsl(var(--shadow-color)/0.38)] hover:bg-ink/95"
             >
               <SupportPresenceOrb size="sm" />
             </Button>
@@ -82,7 +92,7 @@ export function SupportWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 14, scale: 0.97 }}
             transition={{ type: 'spring', stiffness: 400, damping: 28 }}
-            className="pointer-events-auto absolute bottom-[calc(100%+12px)] right-0 w-[min(420px,calc(100vw-32px))] max-w-[420px] origin-bottom-right"
+            className="pointer-events-auto absolute bottom-[calc(100%+10px)] right-0 w-[min(420px,calc(100vw-32px))] max-w-[420px] origin-bottom-right"
           >
             <SupportPanel layout="desktop" onDismiss={() => setOpen(false)} />
           </motion.div>
@@ -94,7 +104,7 @@ export function SupportWidget() {
           aria-label="Abrir asistente Dr. Simeon"
           aria-expanded={open}
           onClick={() => handleOpenChange(!open)}
-          className="group relative h-auto w-full rounded-xl border border-border/20 bg-ink px-4 py-3 text-primary-foreground shadow-[0_24px_50px_hsl(var(--shadow-color)/0.2)] backdrop-blur-xl transition-all hover:-translate-y-1 hover:bg-ink/95"
+          className="group relative h-auto w-full rounded-[12px] border border-border/20 bg-ink px-4 py-3 text-primary-foreground shadow-[0_14px_32px_-18px_hsl(var(--shadow-color)/0.38)] backdrop-blur-xl transition-all hover:-translate-y-0.5 hover:bg-ink/95"
         >
           <div className="flex items-center gap-3">
             <SupportPresenceOrb size="md" isLoading={open} />

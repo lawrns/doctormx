@@ -52,7 +52,7 @@ export function TrustClaimBlock() {
               return (
                 <div
                   key={claim.title}
-                  className="surface-panel grid gap-4 rounded-[var(--public-radius-control)] px-4 py-4 sm:grid-cols-[2rem_1fr_auto]"
+                  className="grid gap-4 border-t border-border/80 px-0 py-4 sm:grid-cols-[2rem_1fr_auto]"
                 >
                   <div className="flex h-8 w-8 items-center justify-center text-[hsl(var(--brand-ocean))]">
                     <Icon className="h-4 w-4" aria-hidden="true" />
@@ -64,7 +64,7 @@ export function TrustClaimBlock() {
                   <div className="sm:self-center">
                     <Link
                       href={claim.href}
-                      className="inline-flex rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-[hsl(var(--public-ink))] transition-colors hover:border-[hsl(var(--brand-ocean)/0.25)] hover:bg-[hsl(var(--surface-tint))]"
+                      className="inline-flex rounded-[8px] border border-border px-3 py-1.5 text-xs font-semibold text-[hsl(var(--public-ink))] transition-colors hover:border-[hsl(var(--brand-ocean)/0.25)] hover:bg-[hsl(var(--surface-tint))]"
                     >
                       {claim.label}
                     </Link>

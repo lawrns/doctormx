@@ -47,7 +47,7 @@ export function ChapterHeader({
   return (
     <div
       className={cn(
-        'grid grid-cols-1 md:grid-cols-[160px_1fr] gap-8 md:gap-16 mb-16 md:mb-20',
+        'grid grid-cols-1 gap-6 md:grid-cols-[140px_1fr] md:gap-12 mb-10 md:mb-14',
         className
       )}
     >
@@ -57,11 +57,11 @@ export function ChapterHeader({
         </span>
       </div>
       <div>
-        <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4">
+        <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-foreground mb-4">
           {title}
         </h2>
         {lead && (
-          <p className="font-serif text-lg md:text-xl italic text-foreground/80 leading-relaxed max-w-[52ch]">
+          <p className="text-base md:text-lg text-muted-foreground leading-7 max-w-[58ch]">
             {lead}
           </p>
         )}
@@ -108,10 +108,7 @@ export function EditorialSection({
   id?: string
 }) {
   return (
-    <section
-      id={id}
-      className={cn('py-20 md:py-28 border-t border-border', className)}
-    >
+    <section id={id} className={cn('border-t border-border py-14 md:py-18', className)}>
       {children}
     </section>
   )
@@ -146,7 +143,7 @@ export function ColorFeature({
   return (
     <div
       className={cn(
-        'aspect-[4/3] rounded-3xl p-8 md:p-10 flex flex-col justify-between',
+        'aspect-[4/3] rounded-[12px] p-5 md:p-6 flex flex-col justify-between',
         variantClasses[variant],
         className
       )}
@@ -155,7 +152,7 @@ export function ColorFeature({
         <span className="font-mono text-[11px] uppercase tracking-[0.12em] opacity-70 mb-auto block">
           {label}
         </span>
-        <h3 className="text-4xl md:text-5xl font-display font-bold mt-4">{title}</h3>
+        <h3 className="text-3xl md:text-4xl font-display font-semibold mt-4">{title}</h3>
       </div>
       <div className="relative z-10 mt-4">
         {children}
@@ -202,15 +199,15 @@ export function PageHero({
   className?: string
 }) {
   return (
-    <div className={cn('pt-24 md:pt-32 pb-16 md:pb-20', className)}>
+    <div className={cn('pt-24 md:pt-28 pb-12 md:pb-16', className)}>
       <div className="max-w-[1100px] mx-auto px-6 md:px-12">
         {eyebrow && <Eyebrow className="mb-8">{eyebrow}</Eyebrow>}
-        <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[0.95] mb-8 md:mb-12">
+        <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.04em] text-foreground leading-[0.96] mb-8 md:mb-10">
           {title}
         </h1>
         {lead && (
-          <div className="grid md:grid-cols-2 gap-12 md:gap-20 mt-12 pt-10 border-t border-border">
-            <p className="font-serif text-xl md:text-2xl italic text-foreground/90 leading-relaxed max-w-[52ch]">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-14 mt-10 pt-8 border-t border-border">
+            <p className="text-lg md:text-xl text-muted-foreground leading-8 max-w-[58ch]">
               {lead}
             </p>
             {stats && stats.length > 0 && (
@@ -245,7 +242,7 @@ export function SignatureCard({
   return (
     <div
       className={cn(
-        'bg-card border border-border rounded-2xl p-6 md:p-8',
+        'bg-card border border-border rounded-[12px] p-5 md:p-6',
         hover &&
           'transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_20px_40px_-12px_rgba(15,37,95,0.15),0_6px_18px_-6px_rgba(15,37,95,0.08)] hover:border-ink/40',
         className

@@ -1,9 +1,14 @@
 'use client'
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/layout/Footer'
+import {
+  AlertTriangle,
+  Building2,
+  CheckCircle,
+  Mail,
+  ShieldCheck,
+  Stethoscope,
+} from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -14,341 +19,170 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import {
-  PageHero,
-  Eyebrow,
-  ChapterHeader,
-  EditorialSection,
-  SignatureCard,
-  PulseDot,
-} from '@/components/editorial'
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Send,
-  Clock,
-  CheckCircle,
-  ArrowRight,
-} from 'lucide-react'
+import { Header } from '@/components/layout/Header'
+import { Footer } from '@/components/layout/Footer'
+
+const contactTracks = [
+  {
+    title: 'Pacientes',
+    body: 'Citas, pagos, videoconsulta, cuenta o seguimiento posterior a una reserva.',
+    icon: Stethoscope,
+  },
+  {
+    title: 'Doctores',
+    body: 'Alta de perfil, cédula, modalidades, agenda, precio o publicación en directorio.',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Clínicas y alianzas',
+    body: 'Equipos médicos, operación multi-sede, integraciones o colaboración institucional.',
+    icon: Building2,
+  },
+]
 
 export default function ContactPage() {
-  const [formState, setFormState] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  })
   const [isSubmitted, setIsSubmitted] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsLoading(true)
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    setIsLoading(false)
-    setIsSubmitted(true)
-  }
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-[hsl(var(--surface-soft))]">
       <Header />
 
-      {/* ─── HERO ─── */}
-      <PageHero
-        eyebrow="Contacto"
-        title={
-          <>
-            Hablemos de{' '}
-            <em className="font-serif font-normal">salud</em>
-          </>
-        }
-        lead="Estamos aquí para ayudarte. Ya sea que tengas una pregunta, un problema técnico, o quieras unirte a nuestra red de doctores."
-        stats={[
-          { value: '< 24h', label: 'Tiempo de respuesta promedio' },
-          { value: '98%', label: 'Satisfacción de usuarios' },
-        ]}
-      >
-        <div className="flex items-center gap-3 mt-10">
-          <PulseDot />
-          <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
-            Equipo de soporte activo
-          </span>
-        </div>
-      </PageHero>
-
-      {/* ─── CHAPTER 1: DÓNDE ENCONTRARNOS ─── */}
-      <EditorialSection>
-        <div className="max-w-[1100px] mx-auto px-6 md:px-12">
-          <ChapterHeader
-            number="01"
-            title="Dónde encontrarnos"
-            lead="Múltiples canales para que elijas el que prefieras."
-          />
-
-          <div className="grid md:grid-cols-3 gap-6">
-            <SignatureCard>
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-5 h-5 text-primary-foreground" />
-                </div>
-                <div>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground block mb-1">
-                    Email
-                  </span>
-                  <p className="font-display text-lg font-semibold text-foreground">
-                    soporte@doctor.mx
-                  </p>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    Respuesta garantizada en 24 horas
-                  </p>
-                </div>
-              </div>
-            </SignatureCard>
-
-            <SignatureCard>
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-vital flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground block mb-1">
-                    Teléfono
-                  </span>
-                  <p className="font-display text-lg font-semibold text-foreground">
-                    +52 55 1234 5678
-                  </p>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    Lun–Vie 9:00 – 18:00 CST
-                  </p>
-                </div>
-              </div>
-            </SignatureCard>
-
-            <SignatureCard>
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-5 h-5 text-primary-foreground" />
-                </div>
-                <div>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground block mb-1">
-                    Oficina
-                  </span>
-                  <p className="font-display text-lg font-semibold text-foreground">
-                    Ciudad de México
-                  </p>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    Atención solo con cita previa
-                  </p>
-                </div>
-              </div>
-            </SignatureCard>
+      <section className="editorial-shell py-12 md:py-16">
+        <div className="grid gap-10 border-b border-border pb-10 lg:grid-cols-[1fr_0.95fr] lg:items-end">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+              Contacto
+            </p>
+            <h1 className="mt-5 max-w-4xl font-display text-4xl font-semibold leading-[0.98] tracking-tight text-foreground md:text-6xl">
+              Soporte claro para pacientes, doctores y clínicas.
+            </h1>
           </div>
-
-          {/* Hours row */}
-          <div className="mt-8 flex items-center gap-3 px-6 py-4 border border-border rounded-2xl bg-secondary/30">
-            <Clock className="w-4 h-4 text-muted-foreground" />
-            <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground">
-              Horario:
-            </span>
-            <span className="text-sm text-foreground">
-              Lunes a Viernes 9:00 – 18:00 · Sábados 9:00 – 14:00 · Domingos cerrado
-            </span>
-          </div>
-        </div>
-      </EditorialSection>
-
-      {/* ─── CHAPTER 2: ESCRÍBENOS ─── */}
-      <EditorialSection>
-        <div className="max-w-[1100px] mx-auto px-6 md:px-12">
-          <ChapterHeader
-            number="02"
-            title="Escríbenos"
-            lead="Cuéntanos en qué podemos ayudarte. Cuanto más específico seas, mejor podremos asistirte."
-          />
-
-          <div className="grid lg:grid-cols-5 gap-12">
-            {/* Left: context */}
-            <div className="lg:col-span-2 space-y-8">
-              <div className="space-y-6">
-                <div className="pb-6 border-b border-border">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground block mb-2">
-                    Para pacientes
-                  </span>
-                  <p className="text-foreground">
-                    Problemas con citas, pagos, o tu cuenta. También puedes escribirnos por WhatsApp para respuesta inmediata.
-                  </p>
-                </div>
-                <div className="pb-6 border-b border-border">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground block mb-2">
-                    Para doctores
-                  </span>
-                  <p className="text-foreground">
-                    Verificación de perfil, configuración de disponibilidad, o preguntas sobre tu suscripción.
-                  </p>
-                </div>
-                <div>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground block mb-2">
-                    Alianzas
-                  </span>
-                  <p className="text-foreground">
-                    Si representas a una clínica, aseguradora, o institución de salud, escríbenos a{' '}
-                    <a href="mailto:alianzas@doctor.mx" className="text-primary hover:underline">
-                      alianzas@doctor.mx
-                    </a>
-                  </p>
-                </div>
-              </div>
+          <div className="space-y-5">
+            <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
+              Describe el problema con contexto médico u operativo suficiente. Si se trata de una urgencia o señal de alarma, busca atención médica inmediata.
+            </p>
+            <div className="border border-amber/30 bg-amber/10 p-4 text-sm leading-relaxed text-amber-700">
+              <AlertTriangle className="mb-2 h-4 w-4" />
+              Doctor.mx no atiende emergencias por este canal.
             </div>
+          </div>
+        </div>
 
-            {/* Right: form */}
-            <div className="lg:col-span-3">
-              <SignatureCard className="p-8 md:p-10">
+        <div className="grid gap-8 py-10 lg:grid-cols-[260px_1fr]">
+          <aside className="h-fit border border-border bg-card p-5 shadow-[var(--public-shadow-soft)]">
+            <Mail className="h-5 w-5 text-primary" />
+            <p className="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+              Canal directo
+            </p>
+            <a href="mailto:soporte@doctor.mx" className="mt-3 block text-lg font-semibold tracking-tight text-foreground">
+              soporte@doctor.mx
+            </a>
+            <p className="mt-3 border-t border-border pt-3 text-sm leading-relaxed text-muted-foreground">
+              Incluye nombre, correo de cuenta, tipo de usuario y número de cita si aplica.
+            </p>
+          </aside>
+
+          <div className="space-y-10">
+            <section>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                A quién escribir
+              </p>
+              <div className="mt-5 divide-y divide-border border-y border-border bg-card">
+                {contactTracks.map((track) => (
+                  <div key={track.title} className="grid gap-4 p-5 md:grid-cols-[44px_1fr]">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-[8px] bg-primary/10 text-primary">
+                      <track.icon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h2 className="text-lg font-semibold tracking-tight text-foreground">{track.title}</h2>
+                      <p className="mt-1 max-w-3xl text-sm leading-relaxed text-muted-foreground">{track.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section className="grid gap-6 md:grid-cols-[0.8fr_1.2fr]">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                  Mensaje
+                </p>
+                <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground">
+                  Un formulario breve, sin prometer tiempos no auditados.
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  Este flujo captura la información mínima para orientar el caso. Los tiempos dependen del tipo de solicitud y datos disponibles.
+                </p>
+              </div>
+
+              <div className="border border-border bg-card p-6 shadow-[var(--public-shadow-soft)]">
                 {isSubmitted ? (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.96 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4 }}
-                    className="text-center py-16"
-                  >
-                    <div className="w-16 h-16 rounded-full bg-vital-soft flex items-center justify-center mx-auto mb-6">
-                      <CheckCircle className="w-8 h-8 text-vital" />
-                    </div>
-                    <h3 className="font-display text-3xl font-bold tracking-tight text-foreground mb-3">
-                      Mensaje enviado
+                  <div className="py-10">
+                    <CheckCircle className="h-8 w-8 text-vital" />
+                    <h3 className="mt-5 text-2xl font-semibold tracking-tight text-foreground">
+                      Mensaje preparado
                     </h3>
-                    <p className="text-muted-foreground mb-8 max-w-sm mx-auto">
-                      Gracias por contactarnos. Te responderemos en las próximas 24 horas.
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      Gracias. Si tu caso incluye información clínica sensible, revisa que sea necesaria antes de enviarla.
                     </p>
-                    <Button
-                      variant="outline"
-                      onClick={() => {
-                        setIsSubmitted(false)
-                        setFormState({ name: '', email: '', subject: '', message: '' })
-                      }}
-                    >
-                      Enviar otro mensaje
+                    <Button className="mt-6" onClick={() => setIsSubmitted(false)}>
+                      Escribir otro mensaje
                     </Button>
-                  </motion.div>
+                  </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-8">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label className="font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground">
-                          Nombre completo
-                        </label>
-                        <Input
-                          type="text"
-                          required
-                          value={formState.name}
-                          onChange={(e) =>
-                            setFormState({ ...formState, name: e.target.value })
-                          }
-                          placeholder="Tu nombre"
-                          className="h-12"
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <label className="font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground">
-                          Email
-                        </label>
-                        <Input
-                          type="email"
-                          required
-                          value={formState.email}
-                          onChange={(e) =>
-                            setFormState({ ...formState, email: e.target.value })
-                          }
-                          placeholder="tu@email.com"
-                          className="h-12"
-                        />
-                      </div>
+                  <form
+                    className="space-y-4"
+                    onSubmit={(event) => {
+                      event.preventDefault()
+                      setIsSubmitted(true)
+                    }}
+                  >
+                    <div className="grid gap-4 md:grid-cols-2">
+                      <label className="space-y-2">
+                        <span className="text-sm font-medium text-foreground">Nombre</span>
+                        <Input name="name" required placeholder="Tu nombre" />
+                      </label>
+                      <label className="space-y-2">
+                        <span className="text-sm font-medium text-foreground">Correo</span>
+                        <Input name="email" type="email" required placeholder="correo@ejemplo.com" />
+                      </label>
                     </div>
 
-                    <div className="space-y-2">
-                      <label className="font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground">
-                        Asunto
-                      </label>
-                      <Select
-                        value={formState.subject}
-                        onValueChange={(value) =>
-                          setFormState({ ...formState, subject: value })
-                        }
-                      >
-                        <SelectTrigger className="h-12">
-                          <SelectValue placeholder="Selecciona un tema" />
+                    <label className="space-y-2 block">
+                      <span className="text-sm font-medium text-foreground">Tipo de solicitud</span>
+                      <Select name="subject" required>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Selecciona una opción" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="general">Consulta general</SelectItem>
-                          <SelectItem value="technical">Problema técnico</SelectItem>
-                          <SelectItem value="billing">Facturación</SelectItem>
-                          <SelectItem value="doctor">
-                            Soy doctor — Quiero unirme
-                          </SelectItem>
-                          <SelectItem value="partnership">
-                            Alianza comercial
-                          </SelectItem>
-                          <SelectItem value="other">Otro</SelectItem>
+                          <SelectItem value="paciente">Paciente</SelectItem>
+                          <SelectItem value="doctor">Doctor</SelectItem>
+                          <SelectItem value="clinica">Clínica o alianza</SelectItem>
+                          <SelectItem value="seguridad">Privacidad o seguridad</SelectItem>
                         </SelectContent>
                       </Select>
-                    </div>
+                    </label>
 
-                    <div className="space-y-2">
-                      <label className="font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground">
-                        Mensaje
-                      </label>
+                    <label className="space-y-2 block">
+                      <span className="text-sm font-medium text-foreground">Mensaje</span>
                       <Textarea
+                        name="message"
                         required
                         rows={6}
-                        value={formState.message}
-                        onChange={(e) =>
-                          setFormState({ ...formState, message: e.target.value })
-                        }
-                        placeholder="¿En qué podemos ayudarte?"
-                        className="resize-none"
+                        placeholder="Describe el caso, número de cita si aplica y qué necesitas resolver."
                       />
-                    </div>
+                    </label>
 
-                    <Button
-                      type="submit"
-                      size="lg"
-                      disabled={isLoading}
-                      className="w-full h-14 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl text-[15px] font-medium tracking-tight transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_rgba(15,37,95,0.35)]"
-                    >
-                      {isLoading ? (
-                        <span className="flex items-center gap-2">
-                          <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
-                            <circle
-                              className="opacity-25"
-                              cx="12"
-                              cy="12"
-                              r="10"
-                              stroke="currentColor"
-                              strokeWidth="4"
-                              fill="none"
-                            />
-                            <path
-                              className="opacity-75"
-                              fill="currentColor"
-                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                            />
-                          </svg>
-                          Enviando…
-                        </span>
-                      ) : (
-                        <span className="flex items-center gap-2">
-                          Enviar mensaje
-                          <ArrowRight className="w-5 h-5" />
-                        </span>
-                      )}
+                    <Button type="submit" className="w-full md:w-auto">
+                      Preparar mensaje
                     </Button>
                   </form>
                 )}
-              </SignatureCard>
-            </div>
+              </div>
+            </section>
           </div>
         </div>
-      </EditorialSection>
+      </section>
 
       <Footer />
     </main>

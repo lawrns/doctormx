@@ -1,114 +1,66 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import { AnimatePresence, motion } from 'framer-motion'
+import { Calendar, ChevronDown, CreditCard, Mail, MessageSquare, Search, Video } from 'lucide-react'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import {
-  HelpCircle,
-  MessageSquare,
-  Phone,
-  Mail,
-  ChevronDown,
-  Calendar,
-  CreditCard,
-  Video,
-  User,
-  Search
-} from 'lucide-react'
 
 const faqs = [
   {
-    category: 'Citas y Consultas',
+    category: 'Citas',
     icon: Calendar,
     questions: [
-      {
-        q: '¿Cómo agendo una cita?',
-        a: 'Busca un doctor en nuestra plataforma, selecciona el horario disponible que prefieras y confirma tu cita. Recibirás un correo de confirmación con los detalles.'
-      },
-      {
-        q: '¿Puedo cancelar o reprogramar mi cita?',
-        a: 'Sí, puedes cancelar o reprogramar tu cita desde tu panel de usuario hasta 24 horas antes de la consulta sin cargo alguno.'
-      },
-      {
-        q: '¿Cuánto tiempo dura una consulta?',
-        a: 'Las consultas generalmente duran entre 20 y 30 minutos, dependiendo de la especialidad y complejidad del caso.'
-      }
-    ]
+      ['¿Cómo agendo una cita?', 'Busca un doctor, revisa modalidad, precio y perfil. Después selecciona horario y confirma la reserva.'],
+      ['¿Puedo reprogramar?', 'Sí, desde tu cuenta cuando la política de la cita lo permita. Si el pago ya se procesó, soporte puede orientarte.'],
+    ],
   },
   {
-    category: 'Videoconsultas',
+    category: 'Videoconsulta',
     icon: Video,
     questions: [
-      {
-        q: '¿Qué necesito para una videoconsulta?',
-        a: 'Solo necesitas un dispositivo con cámara y micrófono (computadora, tablet o celular), conexión a internet estable y un lugar tranquilo.'
-      },
-      {
-        q: '¿Las videoconsultas son seguras?',
-        a: 'Sí, utilizamos encriptación de extremo a extremo para proteger tu privacidad. Todas las consultas cumplen con las normas de protección de datos.'
-      }
-    ]
+      ['¿Qué necesito?', 'Un dispositivo con cámara, micrófono, conexión estable y un espacio privado.'],
+      ['¿Es segura?', 'El flujo limita datos sensibles al contexto clínico y usa controles de acceso para proteger la sesión.'],
+    ],
   },
   {
     category: 'Pagos',
     icon: CreditCard,
     questions: [
-      {
-        q: '¿Qué métodos de pago aceptan?',
-        a: 'Aceptamos tarjetas de crédito/débito (Visa, Mastercard, American Express), transferencias bancarias y pagos en OXXO.'
-      },
-      {
-        q: '¿Puedo obtener un reembolso?',
-        a: 'Sí, si cancelas tu cita con más de 24 horas de anticipación. Para casos especiales, contacta a nuestro equipo de soporte.'
-      }
-    ]
+      ['¿Qué métodos aceptan?', 'Tarjeta, SPEI y OXXO cuando estén habilitados para la consulta seleccionada.'],
+      ['¿Dónde veo el precio?', 'El precio debe aparecer antes de confirmar la reserva y depende del doctor, modalidad y servicio.'],
+    ],
   },
-  {
-    category: 'Cuenta y Perfil',
-    icon: User,
-    questions: [
-      {
-        q: '¿Cómo creo una cuenta?',
-        a: 'Haz clic en "Registrarse", ingresa tu correo electrónico y completa tu perfil. El proceso toma menos de 2 minutos.'
-      },
-      {
-        q: '¿Cómo actualizo mi información?',
-        a: 'Ingresa a tu cuenta, ve a "Mi Perfil" y podrás editar tu información personal, historial médico y preferencias.'
-      }
-    ]
-  }
 ]
 
-function FAQItem({ question, answer }: { question: string; answer: string }) {
-  const [isOpen, setIsOpen] = useState(false)
-  
+function FAQRow({ question, answer }: { question: string; answer: string }) {
+  const [open, setOpen] = useState(false)
+
   return (
-    <div className="border-b border-border last:border-0">
-      <Button
-        variant="ghost"
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-4 flex items-center justify-between text-left hover:bg-accent px-4 -mx-4 rounded-lg transition-colors h-auto"
+    <div className="border-t border-border first:border-t-0">
+      <button
+        type="button"
+        onClick={() => setOpen((value) => !value)}
+        className="flex w-full items-center justify-between gap-4 px-0 py-4 text-left"
       >
-        <span className="font-medium text-foreground text-left">{question}</span>
-        <ChevronDown className={`w-5 h-5 text-muted-foreground transition-transform shrink-0 ml-2 ${isOpen ? 'rotate-180' : ''}`} />
-      </Button>
+        <span className="font-semibold text-foreground">{question}</span>
+        <ChevronDown className={`h-4 w-4 shrink-0 text-muted-foreground transition-transform ${open ? 'rotate-180' : ''}`} />
+      </button>
       <AnimatePresence>
-        {isOpen && (
+        {open ? (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.18 }}
             className="overflow-hidden"
           >
-            <p className="pb-4 text-muted-foreground">{answer}</p>
+            <p className="pb-4 text-sm leading-6 text-muted-foreground">{answer}</p>
           </motion.div>
-        )}
+        ) : null}
       </AnimatePresence>
     </div>
   )
@@ -116,115 +68,80 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 
 export default function HelpPage() {
   const [searchQuery, setSearchQuery] = useState('')
-  
+
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-[hsl(var(--surface-soft))]">
       <Header />
-      
-      {/* Hero */}
-      <section className="pt-24 pb-12 bg-background">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <HelpCircle className="w-8 h-8 text-primary" />
-          </div>
-          <h1 className="font-display text-4xl font-bold tracking-tight text-foreground mb-4">
-            Centro de Ayuda
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8">
-            ¿Cómo podemos ayudarte hoy?
-          </p>
-          
-          {/* Search */}
-          <div className="relative max-w-xl mx-auto">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-            <Input
-              type="text"
-              placeholder="Buscar en preguntas frecuentes..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 text-lg"
-            />
+
+      <section className="pt-24 md:pt-28">
+        <div className="editorial-shell">
+          <div className="grid gap-8 border-b border-border pb-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+            <div>
+              <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
+                Centro de ayuda
+              </p>
+              <h1 className="mt-4 font-display text-4xl font-semibold leading-[0.98] tracking-[-0.04em] text-foreground md:text-6xl">
+                Respuestas claras para reservar con confianza.
+              </h1>
+            </div>
+            <div>
+              <p className="max-w-2xl text-base leading-7 text-muted-foreground">
+                Encuentra ayuda sobre citas, videoconsulta, pagos y cuenta. Si el caso es clínico o urgente, usa atención médica directa.
+              </p>
+              <div className="relative mt-5 max-w-xl">
+                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                <Input
+                  type="text"
+                  placeholder="Buscar en ayuda..."
+                  value={searchQuery}
+                  onChange={(event) => setSearchQuery(event.target.value)}
+                  className="pl-10"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Options */}
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-6">
-            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <MessageSquare className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="font-display font-semibold text-foreground mb-2">Chat en vivo</h3>
-              <p className="text-muted-foreground text-sm mb-4">Respuesta en minutos</p>
-              <Button variant="outline" className="w-full">Iniciar chat</Button>
-            </Card>
-            
-            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-vital-soft rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Phone className="w-6 h-6 text-vital" />
-              </div>
-              <h3 className="font-display font-semibold text-foreground mb-2">Llámanos</h3>
-              <p className="text-muted-foreground text-sm mb-4">Lun-Vie 9am-6pm</p>
-              <Button variant="outline" className="w-full">55 1234 5678</Button>
-            </Card>
-            
-            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Mail className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="font-display font-semibold text-foreground mb-2">Email</h3>
-              <p className="text-muted-foreground text-sm mb-4">Respuesta en 24h</p>
-              <Link href="/contact">
-                <Button variant="outline" className="w-full">Enviar mensaje</Button>
+      <section className="editorial-shell py-10">
+        <div className="grid gap-8 lg:grid-cols-[15rem_1fr]">
+          <aside className="lg:sticky lg:top-24 lg:self-start">
+            <div className="divide-y divide-border rounded-[10px] border border-border bg-card">
+              <Link href="/contact" className="flex items-center gap-3 p-4 text-sm font-semibold text-foreground transition-colors hover:bg-secondary/60">
+                <MessageSquare className="h-4 w-4 text-primary" />
+                Contactar soporte
               </Link>
-            </Card>
-          </div>
-        </div>
-      </section>
+              <a href="mailto:soporte@doctor.mx" className="flex items-center gap-3 p-4 text-sm font-semibold text-foreground transition-colors hover:bg-secondary/60">
+                <Mail className="h-4 w-4 text-primary" />
+                soporte@doctor.mx
+              </a>
+            </div>
+          </aside>
 
-      {/* FAQs */}
-      <section className="py-12 bg-background">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-display text-2xl font-bold tracking-tight text-foreground mb-8 text-center">
-            Preguntas Frecuentes
-          </h2>
-          
-          <div className="space-y-8">
+          <div className="space-y-4">
             {faqs.map((category) => (
-              <Card key={category.category} className="p-6">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <category.icon className="w-5 h-5 text-primary" />
+              <section key={category.category} className="rounded-[12px] border border-border bg-card p-5">
+                <div className="mb-2 flex items-center gap-3">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-[8px] bg-[hsl(var(--surface-tint))] text-primary">
+                    <category.icon className="h-4 w-4" />
                   </div>
-                  <h3 className="font-display text-lg font-semibold text-foreground">{category.category}</h3>
+                  <h2 className="font-display text-lg font-semibold tracking-tight text-foreground">{category.category}</h2>
                 </div>
-                <div className="space-y-0">
-                  {category.questions.map((faq, index) => (
-                    <FAQItem key={index} question={faq.q} answer={faq.a} />
-                  ))}
-                </div>
-              </Card>
+                {category.questions.map(([question, answer]) => (
+                  <FAQRow key={question} question={question} answer={answer} />
+                ))}
+              </section>
             ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Still need help */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-2xl font-bold tracking-tight text-foreground mb-4">
-            ¿Aún necesitas ayuda?
-          </h2>
-          <p className="text-muted-foreground mb-6">
-            Nuestro equipo de soporte está listo para asistirte
-          </p>
-          <Link href="/contact">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              Contactar soporte
-            </Button>
-          </Link>
+            <div className="flex flex-col gap-3 border-t border-border pt-6 sm:flex-row">
+              <Button asChild variant="hero">
+                <Link href="/contact">Contactar soporte</Link>
+              </Button>
+              <Button asChild variant="outline">
+                <Link href="/faq">Ver FAQ completo</Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 

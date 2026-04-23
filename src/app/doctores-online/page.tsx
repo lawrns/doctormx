@@ -1,31 +1,28 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
-import { Card } from '@/components/ui/card'
+import {
+  ArrowRight,
+  Calendar,
+  Filter,
+  ShieldCheck,
+  Stethoscope,
+  Video,
+} from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { PublicSectionHeading } from '@/components/PublicSectionHeading'
+import { Header } from '@/components/layout/Header'
+import { Footer } from '@/components/layout/Footer'
 import { formatDoctorName } from '@/lib/utils'
-import {
-  Video,
-  ShieldCheck,
-  Star,
-  Stethoscope,
-  Search,
-  ArrowUpRight,
-  Clock,
-  ChevronDown,
-} from 'lucide-react'
-import Image from 'next/image'
 import { discoverDoctors, getAvailableSpecialties } from '@/lib/discovery'
 
 export const metadata: Metadata = {
   title: 'Doctores en Linea - Consulta por Video | Doctor.mx',
   description:
-    'Consulta en linea con doctores disponibles ahora. Filtra por especialidad y conectate por videoconsulta. Doctores verificados en Mexico.',
+    'Consulta en linea con doctores disponibles para videoconsulta. Filtra por especialidad y revisa perfiles verificados en Mexico.',
   openGraph: {
     title: 'Doctores en Linea - Consulta por Video | Doctor.mx',
-    description: 'Consulta en linea con doctores disponibles ahora.',
+    description: 'Consulta en linea con doctores disponibles para videoconsulta.',
     type: 'website',
     locale: 'es_MX',
   },
@@ -34,26 +31,18 @@ export const metadata: Metadata = {
   },
 }
 
-const onlineFAQ = [
+const faq = [
   {
-    question: 'Como funciona la videoconsulta?',
-    answer:
-      'Selecciona un doctor disponible, elige un horario y completa el pago. En el momento de tu cita, accede a la sala de videoconsulta desde tu navegador. El doctor se conectara y realizara la consulta.',
+    question: '¿Necesito instalar algo?',
+    answer: 'No. La videoconsulta funciona desde el navegador cuando el doctor tiene esa modalidad habilitada.',
   },
   {
-    question: 'Necesito instalar algo?',
-    answer:
-      'No. La videoconsulta funciona directamente en tu navegador web, ya sea en computadora, tablet o celular. Solo necesitas camara, microfono y conexion a internet.',
+    question: '¿La receta es automática?',
+    answer: 'No. El médico decide indicaciones, receta o seguimiento según la consulta y regulación aplicable.',
   },
   {
-    question: 'Que pasa si tengo problemas tecnicos?',
-    answer:
-      'Si la conexion se cae, puedes reconectarte. Si el problema persiste, contacta soporte y te reprogramaremos la cita sin costo.',
-  },
-  {
-    question: 'Puedo obtener una receta medica?',
-    answer:
-      'Si. Al finalizar la consulta, el doctor generara una receta digital que estara disponible en tu perfil. Las recetas electronicas son validas en farmacias de todo Mexico.',
+    question: '¿Qué pasa si es urgente?',
+    answer: 'Doctor.mx no reemplaza urgencias. Ante señales de alarma, busca atención médica inmediata.',
   },
 ]
 
@@ -63,8 +52,7 @@ export default async function DoctoresOnlinePage({
   searchParams: Promise<{ specialty?: string }>
 }) {
   const params = await searchParams
-
-  const [doctors, specialties] = await Promise.all([
+  const [doctorsResult, specialtiesResult] = await Promise.all([
     discoverDoctors({
       onlineOnly: true,
       specialtySlug: params.specialty,
@@ -73,224 +61,186 @@ export default async function DoctoresOnlinePage({
     getAvailableSpecialties(),
   ])
 
-  const onlineDoctors = doctors.filter((d) => d.video_enabled === true)
+  const specialties = Array.isArray(specialtiesResult) ? specialtiesResult : []
+  const onlineDoctors = Array.isArray(doctorsResult)
+    ? doctorsResult.filter((doctor) => doctor.video_enabled === true || doctor.offers_video === true)
+    : []
 
   return (
-    <div className="min-h-screen bg-transparent">
-      <main className="editorial-shell py-8 sm:py-10 lg:py-12">
-        {/* Hero */}
-        <section className="surface-panel-strong overflow-hidden public-panel sm:px-8 lg:px-10 lg:py-12">
-          <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
-            <div className="space-y-6">
-              <Badge variant="luxe">Doctores en linea</Badge>
-              <PublicSectionHeading
-                align="left"
-                eyebrow="Consulta en linea"
-                title="Consulta en linea con"
-                accent="doctores disponibles ahora"
-                description="Conectate por videoconsulta con especialistas certificados. Sin desplazarte, sin filas de espera."
-              />
-              <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2 rounded-full bg-green-50 px-3 py-1.5">
-                  <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
-                  <span className="text-sm font-medium text-green-700">
-                    {onlineDoctors.length} doctores en linea
-                  </span>
-                </div>
-              </div>
-            </div>
+    <main className="min-h-screen bg-[hsl(var(--surface-soft))]">
+      <Header />
 
-            {/* Specialty Filter */}
-            <Card className="surface-panel p-5 space-y-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[hsl(var(--text-soft))]">
-                Filtrar por especialidad
-              </p>
-              <form action="/doctores-online" method="GET" className="space-y-3">
-                <div className="flex flex-wrap gap-2">
-                  <Link href="/doctores-online">
-                    <Badge variant={!params.specialty ? 'default' : 'outline'} className="cursor-pointer px-3 py-1.5">
-                      Todas
-                    </Badge>
-                  </Link>
-                  {specialties.slice(0, 8).map((s: { id: string; slug: string; name: string }) => (
-                    <Link key={s.id} href={`/doctores-online?specialty=${s.slug}`}>
-                      <Badge
-                        variant={params.specialty === s.slug ? 'luxe' : 'outline'}
-                        className="cursor-pointer px-3 py-1.5 normal-case tracking-[0.04em]"
-                      >
-                        {s.name}
-                      </Badge>
+      <section className="editorial-shell py-12 md:py-16">
+        <div className="grid gap-10 border-b border-border pb-10 lg:grid-cols-[1fr_0.95fr] lg:items-end">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+              Doctores en línea
+            </p>
+            <h1 className="mt-5 max-w-4xl font-display text-4xl font-semibold leading-[0.98] tracking-tight text-foreground md:text-6xl">
+              Videoconsulta con perfiles médicos verificables.
+            </h1>
+          </div>
+          <div className="space-y-5">
+            <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
+              Mostramos doctores con modalidad de video cuando el catálogo lo confirma. Si no hay disponibilidad publicada, no inventamos “en línea ahora”.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="outline">Modalidad real</Badge>
+              <Badge variant="outline">Sin urgencias</Badge>
+              <Badge variant="outline">Cédula si existe</Badge>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid gap-8 py-10 lg:grid-cols-[260px_1fr]">
+          <aside className="h-fit border border-border bg-card p-5 shadow-[var(--public-shadow-soft)]">
+            <Filter className="h-5 w-5 text-primary" />
+            <p className="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+              Especialidad
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <Link
+                href="/doctores-online"
+                className={`rounded-[8px] border px-3 py-2 text-sm font-medium transition-colors ${
+                  !params.specialty
+                    ? 'border-primary bg-primary text-primary-foreground'
+                    : 'border-border bg-background text-muted-foreground hover:border-primary/30 hover:text-primary'
+                }`}
+              >
+                Todas
+              </Link>
+              {specialties.slice(0, 8).map((specialty: { id: string; slug: string; name: string }) => (
+                <Link
+                  key={specialty.id}
+                  href={`/doctores-online?specialty=${specialty.slug}`}
+                  className={`rounded-[8px] border px-3 py-2 text-sm font-medium transition-colors ${
+                    params.specialty === specialty.slug
+                      ? 'border-primary bg-primary text-primary-foreground'
+                      : 'border-border bg-background text-muted-foreground hover:border-primary/30 hover:text-primary'
+                  }`}
+                >
+                  {specialty.name}
+                </Link>
+              ))}
+            </div>
+          </aside>
+
+          <div className="space-y-10">
+            <section>
+              <div className="flex flex-wrap items-end justify-between gap-4">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                    Catálogo de video
+                  </p>
+                  <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground">
+                    {onlineDoctors.length > 0
+                      ? `${onlineDoctors.length} doctores con videoconsulta`
+                      : 'Sin doctores publicados para esta búsqueda'}
+                  </h2>
+                </div>
+                <Button asChild variant="outline">
+                  <Link href="/doctors">Ver directorio completo</Link>
+                </Button>
+              </div>
+
+              {onlineDoctors.length === 0 ? (
+                <div className="mt-5 border border-border bg-card p-6 text-sm leading-relaxed text-muted-foreground shadow-[var(--public-shadow-soft)]">
+                  No hay perfiles con videoconsulta publicados para este filtro. Puedes revisar el directorio completo o volver cuando el catálogo esté actualizado.
+                </div>
+              ) : (
+                <div className="mt-5 space-y-3">
+                  {onlineDoctors.map((doctor) => (
+                    <Link
+                      key={doctor.id}
+                      href={`/doctors/${doctor.id}`}
+                      className="grid gap-4 border border-border bg-card p-4 shadow-[var(--public-shadow-soft)] transition-colors hover:border-primary/30 md:grid-cols-[72px_1fr_220px]"
+                    >
+                      {doctor.profile?.photo_url ? (
+                        <Image
+                          src={doctor.profile.photo_url}
+                          alt={doctor.profile.full_name}
+                          width={72}
+                          height={72}
+                          className="h-[72px] w-[72px] object-cover"
+                        />
+                      ) : (
+                        <div className="flex h-[72px] w-[72px] items-center justify-center bg-primary/10 text-primary">
+                          <Stethoscope className="h-6 w-6" />
+                        </div>
+                      )}
+                      <div>
+                        <div className="flex flex-wrap items-center gap-2">
+                          <h3 className="text-lg font-semibold tracking-tight text-foreground">
+                            {formatDoctorName(doctor.profile?.full_name)}
+                          </h3>
+                          {doctor.verification?.sep_verified && (
+                            <Badge variant="success">SEP</Badge>
+                          )}
+                        </div>
+                        <p className="mt-1 text-sm text-muted-foreground">
+                          {doctor.specialties.map((specialty) => specialty.name).filter(Boolean).join(', ') || 'Especialidad médica'}
+                        </p>
+                        <p className="mt-2 text-sm text-muted-foreground">
+                          {doctor.city ?? 'México'} · {doctor.rating_count > 0 ? `${doctor.rating_avg.toFixed(1)} (${doctor.rating_count} reseñas)` : 'Reseñas no publicadas'}
+                        </p>
+                      </div>
+                      <div className="grid gap-2 border-t border-border pt-4 md:border-l md:border-t-0 md:pl-5 md:pt-0">
+                        <p className="flex items-center gap-2 text-sm font-medium text-foreground">
+                          <Video className="h-4 w-4 text-primary" />
+                          Videoconsulta
+                        </p>
+                        <p className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <ShieldCheck className="h-4 w-4 text-primary" />
+                          Datos verificables
+                        </p>
+                        <span className="mt-2 inline-flex items-center text-sm font-semibold text-primary">
+                          Ver perfil
+                          <ArrowRight className="ml-1 h-4 w-4" />
+                        </span>
+                      </div>
                     </Link>
                   ))}
                 </div>
-              </form>
-            </Card>
-          </div>
-        </section>
+              )}
+            </section>
 
-        {/* Doctor Grid */}
-        <section className="mt-8">
-          <div className="mb-5 flex items-center justify-between">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[hsl(var(--text-soft))]">
-                Disponibles ahora
-              </p>
-              <div className="mt-2">
-                <PublicSectionHeading
-                  align="left"
-                  title={`${onlineDoctors.length} doctor${onlineDoctors.length !== 1 ? 'es' : ''}`}
-                  accent="con videoconsulta"
-                />
+            <section className="grid gap-5 md:grid-cols-[0.85fr_1.15fr]">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                  Antes de reservar
+                </p>
+                <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground">
+                  La videoconsulta tiene límites claros.
+                </h2>
               </div>
-            </div>
-          </div>
+              <div className="divide-y divide-border border-y border-border bg-card">
+                {faq.map((item) => (
+                  <div key={item.question} className="p-5">
+                    <h3 className="font-semibold tracking-tight text-foreground">{item.question}</h3>
+                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{item.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
 
-          {onlineDoctors.length === 0 ? (
-            <Card className="surface-panel text-center py-16">
-              <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[linear-gradient(145deg,hsl(var(--surface-tint)),hsl(var(--surface-quiet)))]">
-                <Video className="h-8 w-8 text-[hsl(var(--brand-ocean))]" />
-              </div>
-              <h3 className="mb-2 text-xl font-semibold tracking-[-0.03em] text-[hsl(var(--text-primary))]">
-                No hay doctores en linea ahora
-              </h3>
-              <p className="mx-auto max-w-sm text-[hsl(var(--text-secondary))]">
-                Vuelve mas tarde o agenda una cita para otro momento. Tambien puedes consultar con
-                nuestro asistente IA.
-              </p>
-              <div className="mt-6 flex justify-center gap-3">
-                <Button asChild variant="outline">
-                  <Link href="/doctors">Ver todos los doctores</Link>
-                </Button>
-                <Button asChild variant="hero">
-                  <Link href="/ai-consulta">Dr. Simeon IA</Link>
+            <section className="border border-border bg-card p-6 shadow-[var(--public-shadow-soft)]">
+              <div className="grid gap-5 md:grid-cols-[1fr_auto] md:items-center">
+                <div>
+                  <Calendar className="h-5 w-5 text-primary" />
+                  <h2 className="mt-4 text-2xl font-semibold tracking-tight text-foreground">
+                    Busca por necesidad clínica, no por promesas de disponibilidad.
+                  </h2>
+                </div>
+                <Button asChild>
+                  <Link href="/consulta-online">Cómo funciona</Link>
                 </Button>
               </div>
-            </Card>
-          ) : (
-            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-[1.08fr_0.92fr]">
-              {onlineDoctors.map((doctor: any, index: number) => (
-                <Card
-                  key={doctor.id}
-                  className={`surface-panel h-full gap-0 overflow-hidden border-border/80 p-0 ${index === 0 ? 'xl:row-span-2' : ''}`}
-                >
-                  <div className="surface-tint px-6 py-5">
-                    <div className="flex items-start gap-4">
-                      <div className="relative flex-shrink-0">
-                        <div className="h-14 w-14 overflow-hidden rounded-[1.35rem] bg-[linear-gradient(145deg,hsl(var(--surface-quiet)),hsl(var(--surface-tint)))] ring-1 ring-white/60">
-                          {doctor.profile?.photo_url ? (
-                            <Image
-                              src={doctor.profile.photo_url}
-                              alt={doctor.profile.full_name}
-                              width={56}
-                              height={56}
-                              className="h-full w-full object-cover"
-                            />
-                          ) : (
-                            <div className="flex h-full w-full items-center justify-center">
-                              <Stethoscope className="h-6 w-6 text-[hsl(var(--brand-ocean))]" />
-                            </div>
-                          )}
-                        </div>
-                        <div className="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full border-2 border-white bg-green-500 text-white">
-                          <Video className="h-2.5 w-2.5" />
-                        </div>
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <div className="flex flex-wrap items-center gap-2">
-                          <h3 className="font-semibold tracking-[-0.02em] text-[hsl(var(--text-primary))]">
-                            {formatDoctorName(doctor.profile?.full_name)}
-                          </h3>
-                          <Badge variant="success" className="normal-case text-xs">
-                            En linea
-                          </Badge>
-                        </div>
-                        {doctor.specialties && doctor.specialties.length > 0 && (
-                          <p className="mt-1 text-sm text-[hsl(var(--brand-ocean))]">
-                            {doctor.specialties.map((s: any) => s.name).join(', ')}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-4 px-6 py-5">
-                    <div className="grid gap-2 text-sm text-[hsl(var(--text-secondary))]">
-                      {doctor.years_experience && (
-                        <p className="flex items-center gap-2">
-                          <ShieldCheck className="h-4 w-4 text-[hsl(var(--text-soft))]" />
-                          {doctor.years_experience} anos de experiencia
-                        </p>
-                      )}
-                      <p className="flex items-center gap-2">
-                        <Video className="h-4 w-4 text-[hsl(var(--text-soft))]" />
-                        Videoconsulta disponible
-                      </p>
-                    </div>
-
-                    {doctor.rating_avg > 0 && (
-                      <div className="flex items-center gap-2 rounded-xl bg-[hsl(var(--surface-soft))] px-3 py-2 text-sm">
-                        <Star className="h-4 w-4 fill-[hsl(var(--brand-gold))] text-[hsl(var(--brand-gold))]" />
-                        <span className="font-semibold text-[hsl(var(--text-primary))]">
-                          {doctor.rating_avg.toFixed(1)}
-                        </span>
-                        <span className="text-[hsl(var(--text-secondary))]">
-                          ({doctor.rating_count} resenas)
-                        </span>
-                      </div>
-                    )}
-
-                    <div className="luxury-divider" />
-
-                    <div className="flex items-end justify-between gap-4">
-                      <div>
-                        <p className="text-xs text-[hsl(var(--text-soft))]">Tarifa base</p>
-                        <p className="text-2xl font-semibold tracking-[-0.04em] text-[hsl(var(--text-primary))]">
-                          ${(doctor.price_cents / 100).toLocaleString('es-MX')}
-                          <span className="text-sm font-normal text-[hsl(var(--text-secondary))]">
-                            {' '}
-                            MXN
-                          </span>
-                        </p>
-                      </div>
-                      <Button asChild variant="hero" size="sm" className="gap-1">
-                        <Link href={`/book/${doctor.id}`}>
-                          <Video className="h-3.5 w-3.5" />
-                          Agendar consulta en linea
-                        </Link>
-                      </Button>
-                    </div>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          )}
-        </section>
-
-        {/* FAQ */}
-        <section className="mt-12 max-w-3xl mx-auto">
-          <div className="text-center mb-8">
-            <PublicSectionHeading
-              eyebrow="Preguntas frecuentes"
-              title="Sobre la consulta en linea"
-            />
+            </section>
           </div>
-          <Card className="surface-panel border-border/80 overflow-hidden">
-            <div className="divide-y divide-border/50">
-              {onlineFAQ.map((item, index) => (
-                <details key={index} className="group">
-                  <summary className="flex cursor-pointer items-center justify-between px-6 py-4 text-[hsl(var(--text-primary))] hover:bg-[hsl(var(--surface-quiet))] transition-colors">
-                    <span className="font-medium pr-4">{item.question}</span>
-                    <ChevronDown className="h-4 w-4 flex-shrink-0 text-[hsl(var(--text-soft))] transition-transform duration-200 group-open:rotate-180" />
-                  </summary>
-                  <div className="px-6 pb-4 text-sm leading-relaxed text-[hsl(var(--text-secondary))]">
-                    {item.answer}
-                  </div>
-                </details>
-              ))}
-            </div>
-          </Card>
-        </section>
-      </main>
-    </div>
+        </div>
+      </section>
+
+      <Footer />
+    </main>
   )
 }

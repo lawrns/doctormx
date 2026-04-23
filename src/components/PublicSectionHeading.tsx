@@ -16,7 +16,7 @@ export function PublicSectionHeading({
   title,
   accent,
   description,
-  align = 'center',
+  align = 'left',
   theme = 'light',
   className,
   titleClassName,
@@ -35,7 +35,7 @@ export function PublicSectionHeading({
       {eyebrow ? (
         <span
           className={cn(
-            'inline-flex items-center rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em]',
+            'inline-flex items-center rounded-[8px] border px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em]',
             isDark
               ? 'border-border/30 bg-secondary/50 text-primary-foreground'
               : 'border-primary/20 bg-primary/5 text-primary',

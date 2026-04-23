@@ -13,9 +13,9 @@ interface CardProps {
 }
 
 const variantClasses = {
-  default: 'bg-[var(--color-surface)] border border-[var(--border-default)] shadow-sm',
-  elevated: 'bg-[var(--color-surface)] shadow-md',
-  bordered: 'bg-[var(--color-surface)] border-2 border-[var(--border-default)]',
+  default: 'bg-card border border-border shadow-[0_1px_2px_rgba(15,37,95,0.04)]',
+  elevated: 'bg-card border border-border shadow-[0_10px_28px_-22px_rgba(15,37,95,0.2)]',
+  bordered: 'bg-card border border-border',
   ghost: 'bg-transparent border border-transparent',
 }
 
@@ -36,9 +36,9 @@ export function Card({
   return (
     <div
       className={`
-        rounded-lg
+        rounded-[var(--public-radius-card)]
         ${variantClasses[variant]}
-        ${hover ? 'interactive hover-lift hover:shadow-md' : ''}
+        ${hover ? 'transition-[transform,border-color,box-shadow] hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-[0_10px_28px_-22px_rgba(15,37,95,0.2)]' : ''}
         ${paddingClasses[padding]}
         ${className}
       `}
@@ -60,10 +60,10 @@ export function CardHeader({ title, subtitle, action, className = '' }: CardHead
   return (
     <div className={`flex items-start justify-between mb-4 ${className}`}>
       <div>
-        <h3 className="text-lg lg:text-xl font-semibold text-[var(--color-text-primary)] display-text">
+        <h3 className="font-display text-lg lg:text-xl font-semibold tracking-tight text-foreground">
           {title}
         </h3>
-        {subtitle && <p className="text-sm text-[var(--color-text-secondary)] mt-1">{subtitle}</p>}
+        {subtitle && <p className="mt-1 text-sm text-muted-foreground">{subtitle}</p>}
       </div>
       {action && <div className="flex-shrink-0 ml-4">{action}</div>}
     </div>
@@ -98,7 +98,7 @@ export function CardFooter({ children, className = '', align = 'right' }: CardFo
   return (
     <div
       className={`
-        flex items-center gap-3 mt-4 pt-4 border-t border-[var(--border-default)]
+        flex items-center gap-3 mt-4 pt-4 border-t border-border
         ${alignClasses[align]}
         ${className}
       `}
@@ -122,11 +122,11 @@ interface StatCardProps {
 }
 
 const colorClasses = {
-  primary: 'bg-[var(--color-primary-50)] text-[var(--color-primary-600)]',
-  accent: 'bg-[var(--color-accent-50)] text-[var(--color-accent-500)]',
-  success: 'bg-[#dcfce7] text-[#16a34a]',
-  warning: 'bg-[#fef3c7] text-[#ca8a04]',
-  error: 'bg-[#fee2e2] text-[#dc2626]',
+  primary: 'bg-primary/10 text-primary',
+  accent: 'bg-[hsl(var(--surface-tint))] text-primary',
+  success: 'bg-vital/10 text-vital',
+  warning: 'bg-amber/10 text-amber',
+  error: 'bg-destructive/10 text-destructive',
 }
 
 export function StatCard({ label, value, icon, trend, className = '', color = 'primary' }: StatCardProps) {
@@ -134,8 +134,8 @@ export function StatCard({ label, value, icon, trend, className = '', color = 'p
     <Card className={className}>
       <div className="flex items-start justify-between">
         <div>
-          <p className="text-sm text-[var(--color-text-secondary)] mb-1">{label}</p>
-          <p className="text-2xl lg:text-3xl font-bold text-[var(--color-text-primary)] display-text">
+          <p className="mb-1 text-sm text-muted-foreground">{label}</p>
+          <p className="font-display text-2xl lg:text-3xl font-semibold tracking-tight text-foreground">
             {value}
           </p>
           {trend && (

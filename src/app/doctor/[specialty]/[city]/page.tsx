@@ -21,8 +21,8 @@ export async function generateStaticParams() {
     const params: { specialty: string; city: string }[] = []
     
     // Generate top 100 combinations
-    const topCities = cities.slice(0, 20)
-    const topSpecialties = specialties.slice(0, 10)
+    const topCities = Array.isArray(cities) ? cities.slice(0, 20) : []
+    const topSpecialties = Array.isArray(specialties) ? specialties.slice(0, 10) : []
     
     for (const specialty of topSpecialties) {
       for (const city of topCities) {
@@ -72,8 +72,7 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
   const specialtyName = decodeURIComponent(specialty).replace(/-/g, ' ')
   const cityName = decodeURIComponent(city).replace(/-/g, ' ')
   
-  // Fetch doctors for this specialty and city
-  let result
+  let result: Awaited<ReturnType<typeof searchDirectory>> | null = null
   try {
     result = await searchDirectory({
       specialty: specialtyName,
@@ -84,35 +83,46 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
     notFound()
   }
   
-  const doctors = result.doctors
+  const doctors = result?.doctors ?? []
+  const total = result?.total ?? doctors.length
+  const pages = result?.pages ?? 0
   
   return (
-    <div className="min-h-screen bg-secondary/50">
-      {/* Hero Section */}
-      <div className="bg-primary py-12 text-white">
-        <div className="mx-auto max-w-6xl px-4">
-          <nav className="mb-4 text-sm text-white/70">
-            <Link href="/doctors" className="hover:text-white">Directorio</Link>
+    <div className="min-h-screen bg-[hsl(var(--surface-soft))]">
+      <div className="border-b border-border bg-card">
+        <div className="mx-auto max-w-[1180px] px-4 py-8 md:py-10">
+          <nav className="mb-5 text-sm text-muted-foreground">
+            <Link href="/doctors" className="font-medium text-primary hover:text-primary/80">Directorio</Link>
             {' / '}
-            <Link href={`/doctor/${specialty}`} className="hover:text-white">
+            <Link href={`/doctor/${specialty}`} className="font-medium text-primary hover:text-primary/80">
               {capitalizeWords(specialtyName)}
             </Link>
             {' / '}
-            <span>{capitalizeWords(cityName)}</span>
+            <span className="text-foreground">{capitalizeWords(cityName)}</span>
           </nav>
-          <h1 className="text-3xl font-bold md:text-4xl">
-            {capitalizeWords(specialtyName)} en {capitalizeWords(cityName)}
-          </h1>
-          <p className="mt-2 text-lg text-white/90">
-            {result.total} especialistas verificados disponibles
-          </p>
+          <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_340px] md:items-end">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">Búsqueda local</p>
+              <h1 className="mt-3 max-w-3xl font-display text-3xl font-semibold tracking-tight text-foreground md:text-5xl">
+                {capitalizeWords(specialtyName)} en {capitalizeWords(cityName)}
+              </h1>
+              <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground">
+                Perfiles médicos organizados para decidir con menos fricción: evidencia, ubicación y modalidad antes del contacto.
+              </p>
+            </div>
+            <div className="border-l border-border pl-5">
+              <p className="font-mono text-2xl font-semibold tracking-tight text-foreground">
+                {total > 0 ? total : 'Sin resultados'}
+              </p>
+              <p className="mt-1 text-sm text-muted-foreground">resultados disponibles en esta ciudad</p>
+            </div>
+          </div>
         </div>
       </div>
       
-      {/* Results */}
-      <div className="mx-auto max-w-6xl px-4 py-8">
+      <div className="mx-auto max-w-[1180px] px-4 py-8">
         {doctors.length === 0 ? (
-          <Card className="p-8 text-center">
+          <Card className="p-6">
             <h2 className="text-lg font-semibold text-foreground">
               No encontramos especialistas en esta área
             </h2>
@@ -126,13 +136,13 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
         ) : (
           <div className="space-y-3">
             {doctors.map((doctor) => (
-              <Card key={doctor.id} hover className="grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
+              <Card key={doctor.id} hover className="grid gap-4 p-4 md:grid-cols-[1fr_auto] md:items-center">
                 <div className="flex items-start gap-4">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-xl font-bold text-primary">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-[10px] bg-primary/10 text-lg font-bold text-primary">
                     {doctor.full_name.charAt(0)}
                   </div>
                   <div className="flex-1">
-                    <h2 className="font-semibold text-foreground">
+                    <h2 className="font-semibold tracking-tight text-foreground">
                       Dr. {doctor.full_name}
                     </h2>
                     <p className="text-sm text-muted-foreground">{doctor.specialty}</p>
@@ -156,14 +166,13 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
           </div>
         )}
         
-        {/* Pagination */}
-        {result.pages > 1 && (
+        {pages > 1 && (
           <div className="mt-8 flex justify-center gap-2">
-            {Array.from({ length: Math.min(result.pages, 5) }, (_, i) => (
+            {Array.from({ length: Math.min(pages, 5) }, (_, i) => (
               <Link
                 key={i}
                 href={`/doctor/${specialty}/${city}?page=${i + 1}`}
-                className={`rounded-lg px-4 py-2 ${
+                className={`rounded-[8px] px-4 py-2 text-sm font-medium ${
                   i === 0 ? 'bg-primary text-primary-foreground' : 'bg-card text-muted-foreground hover:bg-secondary'
                 }`}
               >
@@ -173,12 +182,11 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
           </div>
         )}
         
-        {/* SEO Content */}
-        <div className="mt-12 rounded-lg bg-card p-6 shadow-sm">
+        <div className="mt-12 border-t border-border pt-8">
           <h2 className="text-xl font-semibold text-foreground">
             Especialistas en {capitalizeWords(specialtyName)} en {capitalizeWords(cityName)}
           </h2>
-          <div className="mt-4 text-muted-foreground">
+          <div className="mt-4 max-w-3xl text-muted-foreground">
             <p>
               Encuentra a los mejores especialistas en {specialtyName.toLowerCase()} en {cityName}. 
               En Doctor.mx conectamos pacientes con médicos verificados que ofrecen 
@@ -205,13 +213,13 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
           <div className="flex flex-wrap gap-2">
             <Link 
               href={`/doctor/${specialty}`}
-              className="rounded-full bg-secondary px-4 py-2 text-sm text-muted-foreground hover:bg-muted"
+              className="rounded-[8px] border border-border bg-card px-3 py-2 text-sm font-medium text-muted-foreground hover:border-primary/30 hover:text-primary"
             >
               {capitalizeWords(specialtyName)} en México
             </Link>
             <Link 
-              href="/segunda-opinion"
-              className="rounded-full bg-secondary px-4 py-2 text-sm text-muted-foreground hover:bg-muted"
+              href="/app/second-opinion"
+              className="rounded-[8px] border border-border bg-card px-3 py-2 text-sm font-medium text-muted-foreground hover:border-primary/30 hover:text-primary"
             >
               Segunda opinión médica
             </Link>

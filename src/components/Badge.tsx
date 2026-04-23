@@ -9,9 +9,9 @@ type BadgeProps = {
 }
 
 const variantStyles: Record<BadgeVariant, string> = {
-  success: 'bg-green-100 text-green-800',
-  warning: 'bg-yellow-100 text-yellow-800',
-  error: 'bg-red-100 text-red-800',
+  success: 'bg-vital/10 text-vital',
+  warning: 'bg-amber/10 text-amber',
+  error: 'bg-destructive/10 text-destructive',
   info: 'bg-primary/10 text-primary',
   neutral: 'bg-secondary text-foreground',
 }
@@ -20,7 +20,7 @@ export function Badge({ children, variant = 'neutral', size = 'sm', className }:
   const sizeStyles = size === 'sm' ? 'px-2 py-0.5 text-xs' : 'px-3 py-1 text-sm'
 
   return (
-    <span className={`inline-flex items-center rounded-full font-medium ${variantStyles[variant]} ${sizeStyles} ${className || ''}`}>
+    <span className={`inline-flex items-center rounded-[var(--public-radius-control)] font-medium ${variantStyles[variant]} ${sizeStyles} ${className || ''}`}>
       {children}
     </span>
   )

@@ -1,7 +1,6 @@
 'use client';
 
-import { Shield, Lock, Award, CheckCircle2, Users, Star } from 'lucide-react';
-import Link from 'next/link';
+import { Shield, Lock, Award, CheckCircle2, FileCheck2, Star } from 'lucide-react';
 import Image from 'next/image';
 
 /**
@@ -29,9 +28,9 @@ export function TrustFooter() {
             description="Seguridad de la información certificada"
           />
           <TrustBadge
-            icon={<Users className="w-8 h-8" />}
-            title="10,000+ Pacientes"
-            description="Confianza comprobada en México"
+            icon={<FileCheck2 className="w-8 h-8" />}
+            title="Evidencia Visible"
+            description="Datos mostrados solo cuando existen"
           />
         </div>
 
