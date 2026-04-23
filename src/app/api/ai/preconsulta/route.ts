@@ -98,6 +98,10 @@ function buildProviderFallbackResponse(messages: PreConsultaMessage[]) {
   ].join('\n');
 }
 
+function normalizeProtocolUrgency(value: unknown) {
+  return value === 'medium' ? 'moderate' : value;
+}
+
 async function safeUpsertSession(
   supabase: Awaited<ReturnType<typeof createClient>>,
   payload: Record<string, unknown>
@@ -155,10 +159,22 @@ export async function POST(req: NextRequest) {
     const { data: { user } } = await supabase.auth.getUser();
     userIdForFallback = user?.id ?? null;
 
-    const { sessionId, messages: rawMessages, anonymous } = await req.json() as {
+    const {
+      sessionId,
+      messages: rawMessages,
+      anonymous,
+      firstName,
+      protocolStep,
+      answers,
+      caseContext,
+    } = await req.json() as {
       sessionId: string;
       messages: unknown;
       anonymous?: boolean;
+      firstName?: string;
+      protocolStep?: string;
+      answers?: Record<string, unknown>;
+      caseContext?: Record<string, unknown>;
     };
 
     sessionIdForFallback = sessionId;
@@ -189,6 +205,15 @@ export async function POST(req: NextRequest) {
 
         return NextResponse.json({
           response: hardSafety.response,
+          assistantMessage: hardSafety.response,
+          nextQuestion: 'Busca atención urgente ahora.',
+          protocolStep: 'emergency',
+          caseSummary: {
+            ...caseContext,
+            firstName,
+            urgency: 'emergency',
+            nextQuestion: 'Busca atención urgente ahora.',
+          },
           completed: true,
           summary: buildEmergencyTriageSummary(hardSafety.category),
           referrals: [],
@@ -203,6 +228,10 @@ export async function POST(req: NextRequest) {
         if (fastResponse) {
           return NextResponse.json({
             response: fastResponse,
+            assistantMessage: fastResponse,
+            nextQuestion: typeof caseContext?.nextQuestion === 'string' ? caseContext.nextQuestion : undefined,
+            protocolStep,
+            caseSummary: caseContext,
             completed: false,
             summary: null,
             referrals: [],
@@ -363,7 +392,7 @@ export async function POST(req: NextRequest) {
       userId: user?.id || 'anonymous',
       userType: 'patient',
       input: { sessionId, messageCount: messages.length, anonymous },
-      output: { response, summary, referralCount: referrals.length },
+      output: { response, summary, referralCount: referrals.length, protocolStep, hasProtocolAnswers: Boolean(answers) },
       tokens: usage.inputTokens + usage.outputTokens,
       cost: usage.cost,
       latencyMs: Date.now() - startTime,
@@ -379,6 +408,20 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({
       response,
+      assistantMessage: response,
+      nextQuestion: typeof caseContext?.nextQuestion === 'string' ? caseContext.nextQuestion : undefined,
+      protocolStep,
+      caseSummary: summary
+        ? {
+            ...caseContext,
+            firstName,
+            urgency: normalizeProtocolUrgency(summary.urgency),
+            specialty: summary.specialty,
+            summaryText: summary.reasoning,
+          }
+        : caseContext,
+      urgency: summary ? normalizeProtocolUrgency(summary.urgency) : undefined,
+      specialty: summary?.specialty,
       completed: isComplete,
       summary: isComplete ? summary : null,
       referrals: referrals.slice(0, 3),
@@ -436,8 +479,14 @@ export async function POST(req: NextRequest) {
         quota = await getAnonymousQuota(sessionIdForFallback);
       }
 
+      const fallbackResponse = buildProviderFallbackResponse(messagesForFallback);
+
       return NextResponse.json({
-        response: buildProviderFallbackResponse(messagesForFallback),
+        response: fallbackResponse,
+        assistantMessage: fallbackResponse,
+        nextQuestion: '¿Esto empezó hoy, lleva varios días o ha ido empeorando rápidamente?',
+        protocolStep: 'duration_onset',
+        caseSummary: null,
         completed: false,
         summary: null,
         referrals: [],

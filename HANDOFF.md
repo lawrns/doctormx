@@ -172,6 +172,7 @@ Doctor.mx is a telemedicine platform for Mexico. We are closing competitive gaps
 - `/ai-consulta` and `/app/ai-consulta` now share a Cody-style split workspace pattern: immediate chat-first center column, left rail for symptom quick starts and case context, and a hidden-by-default clinical review rail.
 - The authenticated consult shell was flattened to the same token/radius rules as the public route; multi-specialist emphasis, confidence bars, flashy gradients, and oversized card stacks were removed from the primary path.
 - Shared consult presentation components were normalized so specialist detail stays behind disclosure instead of dominating the default screen.
+- Follow-up protocol repair replaced the public mock flow with a shared Dr. Simeon protocol workspace for both `/ai-consulta` and `/app/ai-consulta`: first name is collected before symptoms, only the chat pane scrolls inside `100dvh`, the composer stays visible, and deterministic protocol fallback replaces fake doctors/fake specialty scores when AI providers fail.
 
 ---
 
@@ -300,6 +301,7 @@ Doctor.mx is a telemedicine platform for Mexico. We are closing competitive gaps
 | Design tokens | `src/app/globals.css`, Tailwind config |
 | AI client | `src/lib/openai.ts` |
 | Video service | `src/lib/video.ts`, `src/lib/video/videoService.ts` |
+| Dr. Simeon protocol chat | `src/components/ai-consulta/DrSimeonProtocolChat.tsx`, `src/components/ai-consulta/protocol.ts` |
 | Booking widget lib | `src/lib/widget.ts` |
 | Public booking widget | `src/components/BookingWidget.tsx` |
 | Widget settings UI | `src/app/doctor/widget/page.tsx`, `src/app/doctor/widget/WidgetSettingsClient.tsx` |
