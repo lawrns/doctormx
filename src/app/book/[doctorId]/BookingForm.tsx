@@ -8,7 +8,7 @@ import { APPOINTMENT_CONFIG } from '@/config/constants'
 import PreConsultaChat from '@/components/PreConsultaChat'
 import { useToast } from '@/components/Toast'
 import { AI_CONFIG } from '@/lib/ai/config'
-import { Clock, CreditCard, FileText, MapPin, Monitor, ShieldCheck, User, Video } from 'lucide-react'
+import { CheckCircle2, Clock, CreditCard, FileText, MapPin, Monitor, ShieldCheck, User, Video } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { DoctorMxLogo } from '@/components/brand/DoctorMxLogo'
@@ -69,15 +69,46 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
   } | null>(null)
   const [consultationId, setConsultationId] = useState<string | null>(null)
   const [submitError, setSubmitError] = useState<string>('')
+  const [hasHydratedUrlState, setHasHydratedUrlState] = useState(false)
 
   useEffect(() => {
     const dateParam = searchParams.get('date')
     const timeParam = searchParams.get('time')
+    const appointmentTypeParam = searchParams.get('appointmentType')
     const consultationIdParam = searchParams.get('consultationId')
     if (dateParam) setSelectedDate(dateParam)
     if (timeParam) setSelectedTime(timeParam)
+    if (appointmentTypeParam === 'video' || appointmentTypeParam === 'in_person') {
+      setAppointmentType(appointmentTypeParam)
+    }
     if (consultationIdParam) setConsultationId(consultationIdParam)
+    setHasHydratedUrlState(true)
   }, [searchParams])
+
+  useEffect(() => {
+    if (!hasHydratedUrlState || typeof window === 'undefined') return
+
+    const params = new URLSearchParams(window.location.search)
+
+    if (selectedDate) params.set('date', selectedDate)
+    else params.delete('date')
+
+    if (selectedTime) params.set('time', selectedTime)
+    else params.delete('time')
+
+    params.set('appointmentType', appointmentType)
+
+    if (consultationId) params.set('consultationId', consultationId)
+    else params.delete('consultationId')
+
+    const query = params.toString()
+    const nextUrl = `${window.location.pathname}${query ? `?${query}` : ''}`
+    const currentUrl = `${window.location.pathname}${window.location.search}`
+
+    if (nextUrl !== currentUrl) {
+      router.replace(nextUrl, { scroll: false })
+    }
+  }, [appointmentType, consultationId, hasHydratedUrlState, router, selectedDate, selectedTime])
 
   // Fetch available dates for calendar
   useEffect(() => {
@@ -106,12 +137,17 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
   useEffect(() => {
     if (selectedDate) {
       setLoadingSlots(true)
-      setSelectedTime('')
       fetch(`/api/doctors/${doctor.id}/slots?date=${selectedDate}`)
         .then(res => res.json())
-        .then(data => { setAvailableSlots(data.slots || []); setLoadingSlots(false) })
+        .then(data => {
+          const slots = data.slots || []
+          setAvailableSlots(slots)
+          setSelectedTime((current) => (current && slots.includes(current) ? current : ''))
+          setLoadingSlots(false)
+        })
         .catch(() => {
           setAvailableSlots([])
+          setSelectedTime('')
           setLoadingSlots(false)
         })
     }
@@ -120,7 +156,12 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!currentUser) {
-      const redirectPath = window.location.pathname + window.location.search
+      const params = new URLSearchParams(window.location.search)
+      if (selectedDate) params.set('date', selectedDate)
+      if (selectedTime) params.set('time', selectedTime)
+      params.set('appointmentType', appointmentType)
+      if (consultationId) params.set('consultationId', consultationId)
+      const redirectPath = `${window.location.pathname}?${params.toString()}`
       addToast('Inicia sesión para reservar tu consulta sin perder la fecha seleccionada.', 'info')
       router.push(`/auth/login?redirect=${encodeURIComponent(redirectPath)}`)
       return
@@ -241,6 +282,14 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
     canBookVideo ? 'Videoconsulta' : null,
     canBookInPerson ? 'Presencial' : null,
   ].filter(Boolean) as string[]
+  const selectedSlotLabel = selectedDate && selectedTime ? `${formatShortDate(selectedDate)} · ${selectedTime}` : 'Pendiente'
+  const reservationSteps = [
+    { label: 'Modalidad', complete: Boolean(appointmentType) },
+    { label: 'Fecha', complete: Boolean(selectedDate) },
+    { label: 'Horario', complete: Boolean(selectedTime) },
+    { label: 'Contexto', complete: !AI_CONFIG.features.preConsulta || preConsultaCompleted || Boolean(consultationId) },
+    { label: 'Reserva', complete: false },
+  ]
 
   const goToPreviousMonth = () => {
     setCurrentMonth(prev => new Date(prev.getFullYear(), prev.getMonth() - 1, 1))
@@ -283,15 +332,49 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
         </div>
       </header>
       <main className="editorial-shell py-8 lg:py-10">
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_22rem]">
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_21rem]">
           <div className="surface-panel-strong overflow-hidden">
-            <div className="bg-primary p-6 text-primary-foreground">
-              <h1 className="font-display text-2xl font-bold tracking-tight">Agendar consulta</h1>
-              <p className="mt-1 text-sm text-primary-foreground/80">Selecciona la fecha y hora de tu cita.</p>
+            <div className="border-b border-[hsl(var(--public-border)/0.78)] bg-[hsl(var(--card))] p-5 sm:p-6">
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[hsl(var(--brand-ocean))]">
+                Reserva médica
+              </p>
+              <div className="mt-2 flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
+                <div>
+                  <h1 className="font-display text-2xl font-semibold tracking-tight text-[hsl(var(--public-ink))]">
+                    Elige horario y confirma con confianza.
+                  </h1>
+                  <p className="mt-1 text-sm leading-6 text-[hsl(var(--public-muted))]">
+                    La disponibilidad viene de la agenda real del médico. No retenemos el horario hasta crear la reserva.
+                  </p>
+                </div>
+                <div className="text-sm font-semibold text-[hsl(var(--public-ink))]">
+                  {formatPrice(doctor.price_cents, doctor.currency)}
+                </div>
+              </div>
+              <div className="mt-5 grid gap-2 sm:grid-cols-5">
+                {reservationSteps.map((step, index) => (
+                  <div
+                    key={step.label}
+                    className={`border px-3 py-2 text-xs ${
+                      step.complete
+                        ? 'border-[hsl(var(--brand-ocean)/0.22)] bg-[hsl(var(--surface-tint))] text-[hsl(var(--public-ink))]'
+                        : 'border-[hsl(var(--public-border)/0.78)] bg-[hsl(var(--card))] text-[hsl(var(--public-muted))]'
+                    }`}
+                  >
+                    <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.12em]">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <span className="mt-1 flex items-center gap-1.5 font-semibold">
+                      {step.complete ? <CheckCircle2 className="h-3.5 w-3.5 text-[hsl(var(--brand-leaf))]" /> : null}
+                      {step.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           <div className="p-6">
-            <div className="bg-secondary/50 p-4 rounded-xl mb-6 flex items-center gap-4 border border-border">
-              <div className="w-16 h-16 bg-gradient-to-br from-cobalt-100 to-cobalt-200 rounded-xl overflow-hidden">
+            <div className="mb-6 flex items-center gap-4 border border-[hsl(var(--public-border)/0.78)] bg-[hsl(var(--public-surface-soft))] p-4">
+              <div className="h-16 w-16 overflow-hidden bg-[hsl(var(--surface-tint))]">
                 {doctorPhotoUrl ? (
                   <Image src={doctorPhotoUrl} alt={doctor.profile?.full_name || 'Doctor'} width={64} height={64} className="object-cover w-full h-full" />
                 ) : (
@@ -316,7 +399,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                   <Button
                     type="button"
                     variant={appointmentType === 'video' ? 'default' : 'outline'}
-                    className="h-auto justify-start gap-3 rounded-xl p-4"
+                    className="h-auto justify-start gap-3 rounded-[var(--public-radius-control)] p-4"
                     onClick={() => setAppointmentType('video')}
                     disabled={!canBookVideo}
                     role="radio"
@@ -331,7 +414,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                   <Button
                     type="button"
                     variant={appointmentType === 'in_person' ? 'default' : 'outline'}
-                    className="h-auto justify-start gap-3 rounded-xl p-4"
+                    className="h-auto justify-start gap-3 rounded-[var(--public-radius-control)] p-4"
                     onClick={() => setAppointmentType('in_person')}
                     disabled={!canBookInPerson}
                     role="radio"
@@ -346,13 +429,13 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                   </Button>
                 </div>
                 {appointmentType === 'in_person' ? (
-                  <div className="mt-3 rounded-xl border border-border bg-secondary/50 p-4 text-sm text-foreground">
+                  <div className="mt-3 rounded-[var(--public-radius-control)] border border-border bg-secondary/50 p-4 text-sm text-foreground">
                     <p className="font-medium">Dirección del consultorio</p>
                     <p className="mt-1 text-muted-foreground">{officeAddress}</p>
                   </div>
                 ) : (
                   <>
-                    <div className="mt-3 rounded-xl border border-border bg-secondary/50 p-4 text-sm text-muted-foreground">
+                    <div className="mt-3 rounded-[var(--public-radius-control)] border border-border bg-secondary/50 p-4 text-sm text-muted-foreground">
                       Recibirás el enlace de acceso cuando tu pago quede confirmado. Te recomendamos entrar desde un lugar privado y con buena conexión.
                     </div>
                     {!canBookInPerson && (
@@ -480,7 +563,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                     </div>
                   ) : availableSlots.length === 0 ? (
                     <div className="space-y-4">
-                      <div className="text-foreground bg-secondary/50 p-4 rounded-xl border border-border">
+                      <div className="text-foreground bg-secondary/50 p-4 rounded-[var(--public-radius-control)] border border-border">
                         <p className="font-medium">No hay horarios disponibles para esta fecha.</p>
                         <p className="text-sm text-muted-foreground mt-1">
                           El doctor no tiene agenda disponible para el {formatDateDisplay(selectedDate)}.
@@ -489,7 +572,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                       
                       {/* Suggested alternative dates */}
                       {nextAvailableDates.length > 0 && (
-                        <div className="bg-secondary/50 p-4 rounded-xl border border-border">
+                        <div className="bg-secondary/50 p-4 rounded-[var(--public-radius-control)] border border-border">
                           <p className="text-sm font-medium text-foreground mb-3">
                             Próximas fechas con disponibilidad:
                           </p>
@@ -522,7 +605,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                             variant={selectedTime === slot ? 'default' : 'outline'}
                             size="sm"
                             onClick={() => setSelectedTime(slot)} 
-                            className="rounded-xl"
+                            className="rounded-[var(--public-radius-control)]"
                           >
                             {slot}
                           </Button>
@@ -534,7 +617,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
               )}
               
               {preConsultaCompleted && (
-                <div className="bg-vital-soft border border-vital/20 rounded-xl p-4">
+                <div className="bg-vital-soft border border-vital/20 rounded-[var(--public-radius-control)] p-4">
                   <p className="text-sm text-vital font-medium">
                     Pre-consulta completada con Dr. Simeon IA
                   </p>
@@ -542,7 +625,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
               )}
               
               {consultationId && (
-                <div className="bg-secondary/50 border border-border rounded-xl p-4">
+                <div className="bg-secondary/50 border border-border rounded-[var(--public-radius-control)] p-4">
                   <p className="text-sm text-foreground font-medium">
                     Referido desde tu consulta de IA multi-especialista
                   </p>
@@ -553,7 +636,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
               )}
               
               {selectedDate && selectedTime && (
-                <div className="bg-secondary/50 rounded-xl p-4 border border-border">
+                <div className="bg-secondary/50 rounded-[var(--public-radius-control)] p-4 border border-border">
                   <p className="text-sm text-muted-foreground mb-1">Cita seleccionada:</p>
                   <p className="text-lg font-semibold text-foreground">
                     {formatDateDisplay(selectedDate)} a las {selectedTime}
@@ -570,7 +653,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
               )}
 
               {submitError && (
-                <div className="rounded-xl border border-destructive/20 bg-destructive/10 p-4">
+                <div className="rounded-[var(--public-radius-control)] border border-destructive/20 bg-destructive/10 p-4">
                   <p className="text-sm font-medium text-destructive">No se pudo continuar con la reserva.</p>
                   <p className="mt-1 text-sm text-destructive">{submitError}</p>
                 </div>
@@ -603,6 +686,10 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
               </p>
               <div className="mt-4 space-y-3 border-t border-[hsl(var(--public-border)/0.8)] pt-4 text-sm text-[hsl(var(--public-muted))]">
                 <div className="flex items-center gap-2">
+                  <Clock className="h-4 w-4 text-[hsl(var(--brand-ocean))]" />
+                  <span>Horario seleccionado: <strong className="text-[hsl(var(--public-ink))]">{selectedSlotLabel}</strong></span>
+                </div>
+                <div className="flex items-center gap-2">
                   <ShieldCheck className="h-4 w-4 text-[hsl(var(--brand-leaf))]" />
                   <span>Cédula {doctor.verification?.cedula || doctor.license_number || 'no visible'}</span>
                 </div>
@@ -616,7 +703,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                 </div>
                 <div className="flex items-center gap-2">
                   <CreditCard className="h-4 w-4 text-[hsl(var(--brand-ocean))]" />
-                  <span>Pago seguro y reserva temporal hasta confirmar</span>
+                  <span>Pago seguro; el cargo confirma la reserva.</span>
                 </div>
               </div>
             </Card>
@@ -645,11 +732,14 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                   <span>Recibir confirmación y acceso al siguiente paso.</span>
                 </li>
               </ol>
+              <div className="mt-5 border-t border-[hsl(var(--public-border)/0.78)] pt-4 text-xs leading-5 text-[hsl(var(--public-muted))]">
+                Si abandonas el pago, el bloqueo temporal vence y el horario puede volver a mostrarse. Las políticas finales dependen del médico y se muestran antes de confirmar.
+              </div>
             </Card>
 
             <Card className="surface-panel p-6">
               <div className="flex items-start gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[hsl(var(--surface-tint))] text-[hsl(var(--brand-ocean))]">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[var(--public-radius-control)] bg-[hsl(var(--surface-tint))] text-[hsl(var(--brand-ocean))]">
                   <FileText className="h-5 w-5" />
                 </div>
                 <div>

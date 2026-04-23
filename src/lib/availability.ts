@@ -6,6 +6,7 @@
 import { createClient, createServiceClient } from '@/lib/supabase/server'
 import { APPOINTMENT_CONFIG } from '@/config/constants'
 import { cache } from '@/lib/cache'
+import { expireStalePendingPaymentAppointments } from '@/lib/appointment-expiry'
 
 export type DoctorAvailability = {
   id: string
@@ -76,6 +77,8 @@ export function generateTimeSlots(startTime: string, endTime: string) {
 
 // Helper: Obtener slots disponibles para una fecha específica
 export async function getAvailableSlots(doctorId: string, date: string) {
+  await expireStalePendingPaymentAppointments({ doctorId })
+
   const cached = await cache.getAvailability(doctorId, date)
   if (cached.length > 0) return cached
 
@@ -114,8 +117,7 @@ export async function getOccupiedSlots(doctorId: string, date: string) {
   const endOfDay = new Date(date)
   endOfDay.setHours(23, 59, 59, 999)
 
-  // Slots ocupados: citas confirmadas O pendientes de pago
-  // (Stripe maneja el timeout, no nosotros)
+  // Slots ocupados: citas confirmadas o pendientes cuyo hold de pago sigue vigente.
   const { data, error } = await supabase
     .from('appointments')
     .select('start_ts, end_ts')

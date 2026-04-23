@@ -35,6 +35,10 @@ const mockSupabaseClient = {
       lt: vi.fn().mockReturnThis(),
       order: vi.fn().mockResolvedValue({ data: [], error: null }),
       range: vi.fn().mockResolvedValue({ data: [], error: null }),
+      limit: vi.fn().mockResolvedValue({ data: [], error: null }),
+      in: vi.fn().mockReturnThis(),
+      not: vi.fn().mockReturnThis(),
+      gt: vi.fn().mockReturnThis(),
       single: vi.fn().mockResolvedValue(result),
       maybeSingle: vi.fn().mockResolvedValue(result),
       then: vi.fn().mockImplementation((onFulfilled) => Promise.resolve({ error: null }).then(onFulfilled)),
@@ -83,8 +87,19 @@ vi.mock('@/lib/availability', () => ({
 }))
 
 describe('Booking System', () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     vi.clearAllMocks()
+    const { createServiceClient } = await import('@/lib/supabase/server')
+    const noExpiredHoldsQuery = {
+      select: vi.fn().mockReturnThis(),
+      eq: vi.fn().mockReturnThis(),
+      not: vi.fn().mockReturnThis(),
+      lt: vi.fn().mockResolvedValue({ data: [], error: null }),
+    }
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    vi.mocked(createServiceClient).mockReturnValue({
+      from: vi.fn().mockReturnValue(noExpiredHoldsQuery),
+    } as any)
   })
 
   afterEach(() => {
@@ -158,6 +173,87 @@ describe('Booking System', () => {
 
       const result = await reserveAppointmentSlot(request)
       expect(result.success).toBe(true)
+    })
+
+    it('should persist AI referral and pre-consulta context into existing appointment columns', async () => {
+      const { getAvailableSlots } = await import('@/lib/availability')
+      const mockAppointment = createMockAppointment({
+        consultation_id: 'soap-consultation-1',
+        reason_for_visit: 'Dolor de cabeza persistente',
+        notes: 'Preconsulta IA\nMotivo: Dolor de cabeza persistente\nUrgencia: medium\nEspecialidad sugerida: Neurología',
+      })
+      const appointmentInsert = vi.fn().mockReturnValue({
+        select: vi.fn().mockReturnValue({
+          single: vi.fn().mockResolvedValue({ data: mockAppointment, error: null }),
+        }),
+      })
+      const mockClient = {
+        ...mockSupabaseClient,
+        from: vi.fn().mockImplementation((table: string) => {
+          if (table === 'appointments') {
+            return { insert: appointmentInsert }
+          }
+          if (table === 'doctors') {
+            return {
+              select: vi.fn().mockReturnValue({
+                eq: vi.fn().mockReturnValue({
+                  single: vi.fn().mockResolvedValue({
+                    data: {
+                      status: 'approved',
+                      is_listed: true,
+                      office_address: 'Av. Reforma 123',
+                      offers_video: true,
+                      offers_in_person: true,
+                    },
+                    error: null,
+                  }),
+                }),
+              }),
+            }
+          }
+          if (table === 'appointment_holds') {
+            return {
+              update: vi.fn().mockReturnValue({
+                eq: vi.fn().mockReturnThis(),
+                lt: vi.fn().mockResolvedValue({ error: null }),
+              }),
+              insert: vi.fn().mockReturnValue({
+                select: vi.fn().mockReturnValue({
+                  single: vi.fn().mockResolvedValue({ data: { id: 'test-hold-id' }, error: null }),
+                }),
+              }),
+            }
+          }
+          return mockSupabaseClient.from(table)
+        }),
+      }
+
+      const { createClient } = await import('@/lib/supabase/server')
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      vi.mocked(createClient).mockResolvedValue(mockClient as any)
+      vi.mocked(getAvailableSlots).mockResolvedValue(['11:00'])
+
+      const { reserveAppointmentSlot } = await import('@/lib/booking')
+
+      const result = await reserveAppointmentSlot({
+        patientId: 'patient-1',
+        doctorId: 'doctor-1',
+        date: '2025-12-31',
+        time: '11:00',
+        consultationId: 'soap-consultation-1',
+        preConsultaSummary: {
+          chiefComplaint: 'Dolor de cabeza persistente',
+          urgencyLevel: 'medium',
+          suggestedSpecialty: 'Neurología',
+        },
+      })
+
+      expect(result.success).toBe(true)
+      expect(appointmentInsert).toHaveBeenCalledWith(expect.objectContaining({
+        consultation_id: 'soap-consultation-1',
+        reason_for_visit: 'Dolor de cabeza persistente',
+        notes: expect.stringContaining('Especialidad sugerida: Neurología'),
+      }))
     })
 
     it('should reject in-person booking when the doctor has no confirmed office', async () => {
@@ -241,6 +337,67 @@ describe('Booking System', () => {
       const result = await reserveAppointmentSlot(request)
       expect(result.success).toBe(false)
       expect(result.error).toBeDefined()
+    })
+
+    it('should expire stale pending-payment appointments and release converted holds', async () => {
+      const appointmentUpdate = vi.fn().mockReturnValue({
+        in: vi.fn().mockReturnValue({
+          eq: vi.fn().mockResolvedValue({ data: [{ id: 'expired-appointment-1' }], error: null }),
+        }),
+      })
+      const appointmentSelect = vi.fn().mockReturnValue({
+        in: vi.fn().mockReturnValue({
+          eq: vi.fn().mockResolvedValue({
+            data: [{ id: 'expired-appointment-1', doctor_id: 'doctor-1' }],
+            error: null,
+          }),
+        }),
+      })
+      const holdUpdate = vi.fn().mockReturnValue({
+        in: vi.fn().mockResolvedValue({ error: null }),
+      })
+      const mockClient = {
+        ...mockSupabaseClient,
+        from: vi.fn().mockImplementation((table: string) => {
+          if (table === 'appointment_holds') {
+            const chain = {
+              select: vi.fn().mockReturnThis(),
+              eq: vi.fn().mockReturnThis(),
+              not: vi.fn().mockReturnThis(),
+              lt: vi.fn().mockResolvedValue({
+                data: [{
+                  id: 'expired-hold-1',
+                  appointment_id: 'expired-appointment-1',
+                  doctor_id: 'doctor-1',
+                }],
+                error: null,
+              }),
+              update: holdUpdate,
+            }
+            return chain
+          }
+          if (table === 'appointments') {
+            return { select: appointmentSelect, update: appointmentUpdate }
+          }
+          return mockSupabaseClient.from(table)
+        }),
+      }
+
+      const { createServiceClient } = await import('@/lib/supabase/server')
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      vi.mocked(createServiceClient).mockReturnValue(mockClient as any)
+
+      const booking = await import('@/lib/booking')
+      const result = await (booking as any).expireStalePendingPaymentAppointments({ doctorId: 'doctor-1' })
+
+      expect(result.expiredCount).toBe(1)
+      expect(appointmentUpdate).toHaveBeenCalledWith(expect.objectContaining({
+        status: 'cancelled',
+        cancellation_reason: 'Payment window expired',
+      }))
+      expect(holdUpdate).toHaveBeenCalledWith(expect.objectContaining({
+        status: 'expired',
+      }))
     })
   })
 

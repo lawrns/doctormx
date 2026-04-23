@@ -1,7 +1,9 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { use, useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
+import Link from 'next/link'
 import { Elements } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
 import CheckoutForm from './CheckoutForm'
@@ -16,7 +18,7 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { Badge } from '@/components/ui/badge'
-import { CheckCircle2, CreditCard, Plus, ShieldCheck } from 'lucide-react'
+import { AlertTriangle, CalendarClock, CheckCircle2, CreditCard, LockKeyhole, MapPin, Plus, ShieldCheck, Video } from 'lucide-react'
 
 type InsuranceProvider = {
   id: string
@@ -47,6 +49,22 @@ type InsuranceEstimate = {
 
 type InsuranceOptions = {
   appointment: {
+    id: string
+    doctorId: string
+    patientId: string
+    startTs: string
+    endTs: string
+    status: string
+    appointmentType: 'video' | 'in_person' | null
+    videoStatus: string | null
+    doctorName: string
+    doctorPhotoUrl: string | null
+    doctorSpecialty: string | null
+    licenseNumber: string | null
+    city: string | null
+    state: string | null
+    officeAddress: string | null
+    holdExpiresAt: string | null
     grossAmountCents: number
     currency: string
   }
@@ -75,11 +93,37 @@ function getStatusLabel(status: InsuranceEstimate['eligibilityStatus']) {
   return labels[status]
 }
 
+function formatAppointmentDate(dateIso?: string) {
+  if (!dateIso) return 'Fecha por confirmar'
+  return new Date(dateIso).toLocaleDateString('es-MX', {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  })
+}
+
+function formatAppointmentTime(dateIso?: string) {
+  if (!dateIso) return '--:--'
+  return new Date(dateIso).toLocaleTimeString('es-MX', {
+    hour: '2-digit',
+    minute: '2-digit',
+  })
+}
+
+function formatRemainingTime(milliseconds: number) {
+  const safeMs = Math.max(0, milliseconds)
+  const minutes = Math.floor(safeMs / 60000)
+  const seconds = Math.floor((safeMs % 60000) / 1000)
+  return `${minutes}:${seconds.toString().padStart(2, '0')}`
+}
+
 export default function CheckoutPage({
   params,
 }: {
-  params: { appointmentId: string }
+  params: Promise<{ appointmentId: string }>
 }) {
+  const { appointmentId } = use(params)
   const router = useRouter()
   const [clientSecret, setClientSecret] = useState('')
   const [stripePromise, setStripePromise] = useState<Promise<import('@stripe/stripe-js').Stripe | null> | null>(null)
@@ -93,6 +137,7 @@ export default function CheckoutPage({
   const [policyNumber, setPolicyNumber] = useState('')
   const [memberId, setMemberId] = useState('')
   const [savingInsurance, setSavingInsurance] = useState(false)
+  const [now, setNow] = useState(() => Date.now())
 
   const selectedEstimate = useMemo(() => {
     if (!options) return null
@@ -102,13 +147,26 @@ export default function CheckoutPage({
     ) || options.cashEstimate
   }, [options, selectedPatientInsuranceId])
 
+  const holdRemainingMs = useMemo(() => {
+    if (!options?.appointment.holdExpiresAt) return null
+    return new Date(options.appointment.holdExpiresAt).getTime() - now
+  }, [now, options?.appointment.holdExpiresAt])
+
+  const holdExpired = holdRemainingMs !== null && holdRemainingMs <= 0
+  const appointmentPayable = options?.appointment.status === 'pending_payment' && !holdExpired
+  const appointmentLocation = [
+    options?.appointment.officeAddress,
+    options?.appointment.city,
+    options?.appointment.state,
+  ].filter(Boolean).join(', ')
+
   const loadInsuranceOptions = async () => {
     setLoadingOptions(true)
     setError('')
 
     try {
       const response = await fetch(
-        `/api/insurance/eligibility?appointmentId=${encodeURIComponent(params.appointmentId)}`
+        `/api/insurance/eligibility?appointmentId=${encodeURIComponent(appointmentId)}`
       )
       const data = await response.json()
 
@@ -130,6 +188,11 @@ export default function CheckoutPage({
   }
 
   const createPaymentIntent = async (patientInsuranceId = selectedPatientInsuranceId) => {
+    if (!appointmentPayable) {
+      setError('La reserva temporal ya no está disponible para pago. Vuelve a elegir un horario.')
+      return
+    }
+
     setLoadingPayment(true)
     setError('')
     setClientSecret('')
@@ -139,7 +202,7 @@ export default function CheckoutPage({
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          appointmentId: params.appointmentId,
+          appointmentId,
           patientInsuranceId: patientInsuranceId === 'cash' ? null : patientInsuranceId,
         }),
       })
@@ -194,22 +257,27 @@ export default function CheckoutPage({
 
   useEffect(() => {
     loadInsuranceOptions()
-  }, [params.appointmentId])
+  }, [appointmentId])
+
+  useEffect(() => {
+    const timer = window.setInterval(() => setNow(Date.now()), 1000)
+    return () => window.clearInterval(timer)
+  }, [])
 
   if (loadingOptions) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <p className="text-muted-foreground">Revisando cobertura...</p>
+      <div className="flex min-h-screen items-center justify-center bg-[linear-gradient(180deg,hsl(var(--public-bg))_0%,hsl(var(--card))_100%)]">
+        <p className="text-sm font-medium text-[hsl(var(--public-muted))]">Revisando cita, cobertura y reserva temporal...</p>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
+    <div className="min-h-screen bg-[linear-gradient(180deg,hsl(var(--public-bg))_0%,hsl(var(--card))_100%)]">
+      <header className="sticky top-0 z-50 border-b border-[hsl(var(--public-border)/0.72)] bg-[hsl(var(--card)/0.9)] backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-5 sm:px-6 lg:px-8">
-          <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">Doctor.mx</h1>
-          <Badge variant="outline" className="hidden rounded-lg sm:inline-flex">
+          <h1 className="font-display text-2xl font-semibold tracking-tight text-[hsl(var(--public-ink))]">Doctor.mx</h1>
+          <Badge variant="outline" className="hidden sm:inline-flex">
             Checkout seguro
           </Badge>
         </div>
@@ -217,27 +285,110 @@ export default function CheckoutPage({
 
       <main className="mx-auto grid max-w-6xl gap-6 px-4 py-8 sm:px-6 lg:grid-cols-[minmax(0,0.95fr)_minmax(360px,0.65fr)] lg:px-8">
         <section className="space-y-6">
-          <div className="border-b border-border pb-5">
-            <p className="text-sm font-medium text-vital">Seguro y pago</p>
-            <h1 className="mt-2 font-display text-3xl font-bold tracking-tight text-foreground">
-              Confirma como quieres cubrir tu consulta.
+          <div className="border-b border-[hsl(var(--public-border)/0.78)] pb-5">
+            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[hsl(var(--brand-ocean))]">
+              Checkout clínico
+            </p>
+            <h1 className="mt-2 font-display text-3xl font-semibold tracking-tight text-[hsl(var(--public-ink))]">
+              Confirma tu consulta antes de pagar.
             </h1>
-            <p className="mt-3 max-w-2xl text-muted-foreground">
-              Primero revisamos si tu aseguradora esta aceptada por el doctor. Despues generamos el pago con el monto correspondiente.
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-[hsl(var(--public-muted))]">
+              El pago queda ligado a esta cita, médico, horario y monto. La cobertura aparece como apoyo, no como promesa clínica.
             </p>
           </div>
 
-          <div className="rounded-xl border border-border bg-card p-5 shadow-dx-1">
+          {options?.appointment && (
+            <div className="border border-[hsl(var(--public-border)/0.78)] bg-card p-5 shadow-[var(--public-shadow-soft)]">
+              <div className="grid gap-5 md:grid-cols-[72px_1fr]">
+                <div className="relative h-[72px] w-[72px] overflow-hidden bg-[hsl(var(--surface-tint))]">
+                  {options.appointment.doctorPhotoUrl ? (
+                    <Image
+                      src={options.appointment.doctorPhotoUrl}
+                      alt={options.appointment.doctorName}
+                      fill
+                      sizes="72px"
+                      className="object-cover"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center text-[hsl(var(--brand-ocean))]">
+                      <ShieldCheck className="h-7 w-7" />
+                    </div>
+                  )}
+                </div>
+                <div className="min-w-0">
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                    <div>
+                      <p className="font-display text-xl font-semibold tracking-tight text-[hsl(var(--public-ink))]">
+                        {options.appointment.doctorName}
+                      </p>
+                      <p className="mt-1 text-sm text-[hsl(var(--public-muted))]">
+                        {options.appointment.doctorSpecialty || 'Especialidad médica'}
+                        {options.appointment.licenseNumber ? ` · Cédula ${options.appointment.licenseNumber}` : ' · Cédula no visible'}
+                      </p>
+                    </div>
+                    <Badge variant={appointmentPayable ? 'luxe' : 'destructive'} className="self-start">
+                      {appointmentPayable ? 'Reserva activa' : 'Revisar reserva'}
+                    </Badge>
+                  </div>
+
+                  <div className="mt-5 grid gap-3 sm:grid-cols-3">
+                    <div className="border border-[hsl(var(--public-border)/0.78)] bg-[hsl(var(--public-surface-soft))] p-3">
+                      <CalendarClock className="h-4 w-4 text-[hsl(var(--brand-ocean))]" />
+                      <p className="mt-2 text-sm font-semibold text-[hsl(var(--public-ink))]">
+                        {formatAppointmentDate(options.appointment.startTs)}
+                      </p>
+                      <p className="text-sm text-[hsl(var(--public-muted))]">
+                        {formatAppointmentTime(options.appointment.startTs)}
+                      </p>
+                    </div>
+                    <div className="border border-[hsl(var(--public-border)/0.78)] bg-[hsl(var(--public-surface-soft))] p-3">
+                      {options.appointment.appointmentType === 'in_person' ? (
+                        <MapPin className="h-4 w-4 text-[hsl(var(--brand-ocean))]" />
+                      ) : (
+                        <Video className="h-4 w-4 text-[hsl(var(--brand-ocean))]" />
+                      )}
+                      <p className="mt-2 text-sm font-semibold text-[hsl(var(--public-ink))]">
+                        {options.appointment.appointmentType === 'in_person' ? 'Consulta presencial' : 'Videoconsulta'}
+                      </p>
+                      <p className="text-sm text-[hsl(var(--public-muted))]">
+                        {options.appointment.appointmentType === 'in_person'
+                          ? appointmentLocation || 'Dirección por confirmar'
+                          : 'Enlace seguro al confirmar'}
+                      </p>
+                    </div>
+                    <div className="border border-[hsl(var(--public-border)/0.78)] bg-[hsl(var(--public-surface-soft))] p-3">
+                      <LockKeyhole className="h-4 w-4 text-[hsl(var(--brand-ocean))]" />
+                      <p className="mt-2 text-sm font-semibold text-[hsl(var(--public-ink))]">
+                        {holdRemainingMs !== null ? formatRemainingTime(holdRemainingMs) : 'Reserva temporal'}
+                      </p>
+                      <p className="text-sm text-[hsl(var(--public-muted))]">
+                        Tiempo para completar el pago.
+                      </p>
+                    </div>
+                  </div>
+
+                  {!appointmentPayable && (
+                    <div className="mt-4 flex items-start gap-2 border border-destructive/20 bg-destructive/10 p-3 text-sm text-destructive">
+                      <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
+                      <p>Esta reserva ya no está disponible para pago. Vuelve a la agenda para elegir otro horario real.</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+
+          <div className="border border-[hsl(var(--public-border)/0.78)] bg-card p-5 shadow-[var(--public-shadow-soft)]">
             <div className="flex items-start gap-3">
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-border bg-secondary">
+              <div className="flex size-10 shrink-0 items-center justify-center border border-border bg-secondary">
                 <ShieldCheck className="size-5 text-vital" />
               </div>
               <div className="min-w-0 flex-1">
-                <h2 className="font-display text-xl font-semibold tracking-tight text-foreground">
-                  Cobertura aceptada
+                <h2 className="font-display text-xl font-semibold tracking-tight text-[hsl(var(--public-ink))]">
+                  Cobertura opcional
                 </h2>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Estas aseguradoras estan registradas para este doctor.
+                <p className="mt-1 text-sm text-[hsl(var(--public-muted))]">
+                  Estas aseguradoras están registradas para este doctor. Si no tienes póliza, paga como particular.
                 </p>
               </div>
             </div>
@@ -252,7 +403,7 @@ export default function CheckoutPage({
                         {insurance.requires_folio ? 'Requiere folio/autorizacion' : 'Elegibilidad estimada en checkout'}
                       </p>
                     </div>
-                    <Badge variant="secondary" className="rounded-lg">
+                    <Badge variant="secondary">
                       {insurance.type === 'private' ? 'Privado' : 'Publico'}
                     </Badge>
                   </div>
@@ -265,21 +416,20 @@ export default function CheckoutPage({
             </div>
           </div>
 
-          <div className="rounded-xl border border-border bg-card p-5 shadow-dx-1">
+          <div className="border border-[hsl(var(--public-border)/0.78)] bg-card p-5 shadow-[var(--public-shadow-soft)]">
             <div className="flex items-start justify-between gap-4">
               <div>
-                <h2 className="font-display text-xl font-semibold tracking-tight text-foreground">
-                  Tu forma de pago
+                <h2 className="font-display text-xl font-semibold tracking-tight text-[hsl(var(--public-ink))]">
+                  Responsabilidad de pago
                 </h2>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Elige pago particular o una poliza guardada.
+                <p className="mt-1 text-sm text-[hsl(var(--public-muted))]">
+                  Elige pago particular o una póliza guardada. El monto final se calcula antes de abrir Stripe.
                 </p>
               </div>
               <Button
                 type="button"
                 variant="outline"
                 size="sm"
-                className="rounded-lg"
                 onClick={() => setShowAddInsurance((value) => !value)}
               >
                 <Plus className="mr-2 size-4" />
@@ -294,7 +444,7 @@ export default function CheckoutPage({
                   setSelectedPatientInsuranceId('cash')
                   setClientSecret('')
                 }}
-                className={`w-full rounded-xl border p-4 text-left transition-colors ${
+                className={`w-full rounded-[var(--public-radius-control)] border p-4 text-left transition-colors ${
                   selectedPatientInsuranceId === 'cash'
                     ? 'border-vital bg-vital/5'
                     : 'border-border bg-background hover:bg-secondary/60'
@@ -324,7 +474,7 @@ export default function CheckoutPage({
                       setSelectedPatientInsuranceId(insurance.id)
                       setClientSecret('')
                     }}
-                    className={`w-full rounded-xl border p-4 text-left transition-colors ${
+                    className={`w-full rounded-[var(--public-radius-control)] border p-4 text-left transition-colors ${
                       selectedPatientInsuranceId === insurance.id
                         ? 'border-vital bg-vital/5'
                         : 'border-border bg-background hover:bg-secondary/60'
@@ -335,13 +485,13 @@ export default function CheckoutPage({
                         <div className="flex flex-wrap items-center gap-2">
                           <p className="font-medium text-foreground">{insurance.insurance.name}</p>
                           {estimate && (
-                            <Badge variant="outline" className="rounded-lg">
+                            <Badge variant="outline">
                               {getStatusLabel(estimate.eligibilityStatus)}
                             </Badge>
                           )}
                         </div>
                         <p className="mt-1 text-sm text-muted-foreground">
-                          {insurance.policy_number || insurance.member_id || 'Poliza guardada'}
+                          {insurance.policy_number || insurance.member_id || 'Póliza guardada'}
                         </p>
                       </div>
                       <p className="font-semibold text-foreground">
@@ -360,12 +510,12 @@ export default function CheckoutPage({
             </div>
 
             {showAddInsurance && (
-              <div className="mt-5 rounded-xl border border-border bg-secondary/40 p-4">
+              <div className="mt-5 border border-border bg-secondary/40 p-4">
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="sm:col-span-2">
                     <Label htmlFor="insurance">Aseguradora</Label>
                     <Select value={newInsuranceId} onValueChange={setNewInsuranceId}>
-                      <SelectTrigger id="insurance" className="mt-2 rounded-lg">
+                      <SelectTrigger id="insurance" className="mt-2">
                         <SelectValue placeholder="Selecciona aseguradora" />
                       </SelectTrigger>
                       <SelectContent>
@@ -378,12 +528,12 @@ export default function CheckoutPage({
                     </Select>
                   </div>
                   <div>
-                    <Label htmlFor="policy">Poliza</Label>
+                    <Label htmlFor="policy">Póliza</Label>
                     <Input
                       id="policy"
                       value={policyNumber}
                       onChange={(event) => setPolicyNumber(event.target.value)}
-                      className="mt-2 rounded-lg"
+                      className="mt-2"
                     />
                   </div>
                   <div>
@@ -392,13 +542,13 @@ export default function CheckoutPage({
                       id="member"
                       value={memberId}
                       onChange={(event) => setMemberId(event.target.value)}
-                      className="mt-2 rounded-lg"
+                      className="mt-2"
                     />
                   </div>
                 </div>
                 <Button
                   type="button"
-                  className="mt-4 rounded-lg"
+                  className="mt-4"
                   onClick={saveInsurance}
                   disabled={savingInsurance || !newInsuranceId}
                 >
@@ -410,9 +560,9 @@ export default function CheckoutPage({
         </section>
 
         <aside className="space-y-5">
-          <div className="rounded-xl border border-border bg-card p-5 shadow-dx-1">
+          <div className="border border-[hsl(var(--public-border)/0.78)] bg-card p-5 shadow-[var(--public-shadow-soft)]">
             <div className="flex items-start gap-3">
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-border bg-secondary">
+              <div className="flex size-10 shrink-0 items-center justify-center border border-border bg-secondary">
                 <CreditCard className="size-5 text-foreground" />
               </div>
               <div>
@@ -426,6 +576,12 @@ export default function CheckoutPage({
             </div>
 
             <div className="mt-5 space-y-3 border-y border-border py-4">
+              <div className="flex items-center justify-between gap-3 text-sm">
+                <span className="text-muted-foreground">Cita</span>
+                <span className="text-right font-medium text-foreground">
+                  {options?.appointment ? `${formatAppointmentTime(options.appointment.startTs)} · ${options.appointment.appointmentType === 'in_person' ? 'Presencial' : 'Video'}` : 'Pendiente'}
+                </span>
+              </div>
               <div className="flex items-center justify-between gap-3 text-sm">
                 <span className="text-muted-foreground">Consulta</span>
                 <span className="font-medium text-foreground">
@@ -447,21 +603,28 @@ export default function CheckoutPage({
             </div>
 
             {selectedEstimate && (
-              <div className="mt-4 flex items-start gap-2 rounded-xl border border-border bg-secondary/40 p-3">
+              <div className="mt-4 flex items-start gap-2 rounded-[var(--public-radius-control)] border border-border bg-secondary/40 p-3">
                 <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-vital" />
                 <p className="text-sm text-muted-foreground">{selectedEstimate.message}</p>
               </div>
             )}
+
+            <div className="mt-4 border border-[hsl(var(--public-border)/0.78)] bg-[hsl(var(--public-surface-soft))] p-3">
+              <p className="text-sm font-semibold text-[hsl(var(--public-ink))]">Qué estás pagando</p>
+              <p className="mt-1 text-sm leading-6 text-[hsl(var(--public-muted))]">
+                Reserva confirmada con el médico, instrucciones de acceso y registro de pago. No es una garantía de diagnóstico ni sustituye urgencias.
+              </p>
+            </div>
 
             {!clientSecret ? (
               <Button
                 type="button"
                 size="lg"
                 onClick={() => createPaymentIntent()}
-                disabled={loadingPayment}
-                className="mt-5 w-full rounded-lg"
+                disabled={loadingPayment || !appointmentPayable}
+                className="mt-5 w-full"
               >
-                {loadingPayment ? 'Preparando pago...' : 'Continuar al pago'}
+                {loadingPayment ? 'Preparando pago...' : appointmentPayable ? 'Continuar al pago' : 'Reserva no disponible'}
               </Button>
             ) : (
               <div className="mt-5">
@@ -474,7 +637,7 @@ export default function CheckoutPage({
                       appearance: { theme: 'stripe' },
                     }}
                   >
-                    <CheckoutForm appointmentId={params.appointmentId} />
+                    <CheckoutForm appointmentId={appointmentId} />
                   </Elements>
                 )}
               </div>
@@ -482,23 +645,21 @@ export default function CheckoutPage({
           </div>
 
           {error && (
-            <div className="rounded-xl border border-destructive/20 bg-destructive/10 p-4">
+            <div className="rounded-[var(--public-radius-control)] border border-destructive/20 bg-destructive/10 p-4">
               <p className="text-sm font-medium text-destructive">No pudimos continuar</p>
               <p className="mt-1 text-sm text-destructive">{error}</p>
               <div className="mt-4 flex gap-2">
                 <Button
                   type="button"
                   variant="outline"
-                  className="rounded-lg"
                   onClick={() => router.push('/app/appointments')}
                 >
                   Mis citas
                 </Button>
                 <Button
                   type="button"
-                  className="rounded-lg"
                   onClick={() => createPaymentIntent()}
-                  disabled={loadingPayment}
+                  disabled={loadingPayment || !appointmentPayable}
                 >
                   Reintentar
                 </Button>

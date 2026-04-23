@@ -28,7 +28,15 @@ export async function POST(request: NextRequest) {
   }
 
   const body = await request.json()
-  const { doctorId, date, time, appointmentType = 'video', patientId: bodyPatientId } = body
+  const {
+    doctorId,
+    date,
+    time,
+    appointmentType = 'video',
+    patientId: bodyPatientId,
+    consultationId,
+    preConsultaSummary,
+  } = body
 
   // Property 5: Booking Security - Session-Only Patient ID
   // Explicitly ignore any patientId from request body for security
@@ -51,6 +59,20 @@ export async function POST(request: NextRequest) {
     )
   }
 
+  if (
+    preConsultaSummary &&
+    (
+      typeof preConsultaSummary.chiefComplaint !== 'string' ||
+      typeof preConsultaSummary.urgencyLevel !== 'string' ||
+      typeof preConsultaSummary.suggestedSpecialty !== 'string'
+    )
+  ) {
+    return NextResponse.json(
+      { error: 'Invalid pre-consulta context' },
+      { status: 400 }
+    )
+  }
+
   try {
     // Sistema de reserva maneja todo: validación + creación
     // Requirement 2.7: patient_id obtained exclusively from authenticated session
@@ -60,6 +82,8 @@ export async function POST(request: NextRequest) {
       date,
       time,
       appointmentType,
+      consultationId: typeof consultationId === 'string' ? consultationId : undefined,
+      preConsultaSummary,
     })
 
     if (!result.success) {

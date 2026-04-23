@@ -72,6 +72,9 @@ export interface Appointment {
   video_started_at?: string | null
   video_ended_at?: string | null
   consultation_notes?: string | null
+  consultation_id?: string | null
+  reason_for_visit?: string | null
+  notes?: string | null
   cancellation_reason: string | null
   cancelled_by: string | null
   created_at: string

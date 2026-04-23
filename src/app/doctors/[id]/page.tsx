@@ -7,6 +7,7 @@ import { VerificationBadge } from '@/components/TrustSignals'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card } from '@/components/ui/card'
+import { getAvailableSlots } from '@/lib/availability'
 import { getDoctorProfile } from '@/lib/discovery'
 import { getDoctorReviews, getDoctorRatingSummary } from '@/lib/reviews'
 import { formatCurrency, formatDoctorName, formatLanguageName } from '@/lib/utils'
@@ -31,6 +32,40 @@ function InfoTile({ label, value }: { label: string; value: string }) {
   )
 }
 
+type NextAvailability = {
+  date: string
+  time: string
+}
+
+async function findNextAvailability(doctorId: string): Promise<NextAvailability | null> {
+  const today = new Date()
+
+  for (let offset = 0; offset < 21; offset += 1) {
+    const date = new Date(today)
+    date.setDate(today.getDate() + offset)
+    const dateStr = date.toISOString().split('T')[0]
+
+    try {
+      const slots = await getAvailableSlots(doctorId, dateStr)
+      if (slots.length > 0) {
+        return { date: dateStr, time: slots[0] }
+      }
+    } catch {
+      return null
+    }
+  }
+
+  return null
+}
+
+function formatAvailabilityDate(dateStr: string) {
+  return new Date(`${dateStr}T00:00:00`).toLocaleDateString('es-MX', {
+    weekday: 'short',
+    day: 'numeric',
+    month: 'short',
+  })
+}
+
 export default async function DoctorProfilePage({
   params,
 }: {
@@ -43,9 +78,10 @@ export default async function DoctorProfilePage({
     notFound()
   }
 
-  const [reviews, ratingSummary] = await Promise.all([
+  const [reviews, ratingSummary, nextAvailability] = await Promise.all([
     getDoctorReviews(id, { limit: 10 }),
     getDoctorRatingSummary(id).then((result) => result || null),
+    findNextAvailability(id),
   ])
 
   const totalConsultations = ratingSummary?.rating_count || 0
@@ -57,6 +93,10 @@ export default async function DoctorProfilePage({
     doctor.offers_in_person ? 'Presencial' : null,
   ].filter(Boolean) as string[]
   const headlineLocation = [doctor.city, doctor.state].filter(Boolean).join(', ') || 'México'
+  const preferredAppointmentType = doctor.offers_video || doctor.video_enabled ? 'video' : 'in_person'
+  const bookingHref = nextAvailability
+    ? `/book/${doctor.id}?date=${nextAvailability.date}&time=${nextAvailability.time}&appointmentType=${preferredAppointmentType}`
+    : `/book/${doctor.id}?appointmentType=${preferredAppointmentType}`
 
   return (
     <div className="min-h-screen bg-[linear-gradient(180deg,hsl(var(--public-bg))_0%,hsl(var(--card))_100%)]">
@@ -261,8 +301,28 @@ export default async function DoctorProfilePage({
                 </Badge>
               </div>
 
-              <Button asChild variant="hero" size="lg" className="mt-6 w-full">
-                <Link href={`/book/${doctor.id}`}>Agendar consulta</Link>
+              <div className="mt-5 border border-[hsl(var(--public-border)/0.78)] bg-[hsl(var(--public-surface-soft))] p-4">
+                <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--brand-ocean))]">
+                  Próxima disponibilidad real
+                </p>
+                {nextAvailability ? (
+                  <>
+                    <p className="mt-2 text-lg font-semibold text-[hsl(var(--public-ink))]">
+                      {formatAvailabilityDate(nextAvailability.date)} · {nextAvailability.time}
+                    </p>
+                    <p className="mt-1 text-sm leading-6 text-[hsl(var(--public-muted))]">
+                      {preferredAppointmentType === 'video' ? 'Videoconsulta' : 'Presencial'} disponible según la agenda actual.
+                    </p>
+                  </>
+                ) : (
+                  <p className="mt-2 text-sm leading-6 text-[hsl(var(--public-muted))]">
+                    No hay horarios publicados en los próximos días. Puedes abrir la agenda completa.
+                  </p>
+                )}
+              </div>
+
+              <Button asChild variant="hero" size="lg" className="mt-5 w-full">
+                <Link href={bookingHref}>Agendar consulta</Link>
               </Button>
 
               <div className="mt-5 space-y-3 border-t border-[hsl(var(--public-border)/0.8)] pt-5">
@@ -277,6 +337,10 @@ export default async function DoctorProfilePage({
                 <div className="flex items-center gap-3 text-sm text-[hsl(var(--public-muted))]">
                   <BadgeCheck className="h-4 w-4 text-[hsl(var(--brand-ocean))]" />
                   <span>El pago confirma la reserva y desbloquea la siguiente etapa.</span>
+                </div>
+                <div className="flex items-center gap-3 text-sm text-[hsl(var(--public-muted))]">
+                  <FileText className="h-4 w-4 text-[hsl(var(--brand-ocean))]" />
+                  <span>Cancelación y reembolso se revisan antes del cargo final.</span>
                 </div>
               </div>
             </Card>
