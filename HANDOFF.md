@@ -1,8 +1,8 @@
 # DoctorMx — AI Handoff Document
 
-**Date:** 2026-04-22  
-**Completed Phases:** 1 (Reminders + Intake Forms), 2 (AutoSOAP Clinical Scribing), and 3.1 (Embeddable Booking Widget)  
-**Next Phases:** 3.2 (Insurance), 4 (Campaigns + Practice Management)
+**Date:** 2026-04-23  
+**Completed Phases:** 1 (Reminders + Intake Forms), 2 (AutoSOAP Clinical Scribing), 3.1 (Embeddable Booking Widget), and 3.2 (Insurance MVP)  
+**Next Phases:** 4 (Campaigns + Practice Management)
 
 ---
 
@@ -132,6 +132,26 @@ Doctor.mx is a telemedicine platform for Mexico. We are closing competitive gaps
 - `src/lib/payment-with-fees.ts` marks `widget_booking_intents.status = paid` after Stripe webhook payment confirmation.
 - Remote Supabase migration was applied on 2026-04-22 via `psql` and recorded in `supabase_migrations.schema_migrations`.
 
+### Phase 3.2 — Insurance Integration MVP (DONE)
+
+**Database changes:**
+- Existing `insurances` table was extended with `coverage_rules`, default copay, reimbursement rate, real-time eligibility flag, and folio requirement flag.
+- `patient_insurances` stores patient policy/member records linked to the existing insurance catalog.
+- `appointment_insurance_claims` tracks checkout eligibility, folio-required claims, estimated copay, and reimbursement status.
+
+**API routes:**
+- `GET/POST /api/insurance/eligibility` — checkout insurance options and selected-policy estimate.
+- `POST /api/insurance/patient` — patient adds a policy during checkout.
+- `GET /api/insurance/claims` — doctor-side claims feed.
+
+**UI / integration:**
+- `/checkout/[appointmentId]` now shows accepted doctor insurers, patient policy selection, copay/reimbursement estimate, and only then creates the Stripe PaymentIntent.
+- `src/lib/payment.ts` accepts an optional `patientInsuranceId`, reduces the PaymentIntent amount to the estimated patient responsibility when compatible, and creates an appointment claim record.
+- `/doctor/finances/page.tsx` now includes a claims dashboard with pending/recovered reimbursement totals and recent claim rows.
+
+**Scope note:**
+- This is a Doctoralia-style insurance compatibility and claims-tracking MVP. Private insurers use local rules for estimated copay; public/social-security insurers are flagged for folio review instead of claiming real-time approval.
+
 ### Homepage + Support Widget Polish (DONE)
 
 **Homepage layout changes:**
@@ -181,22 +201,6 @@ Doctor.mx is a telemedicine platform for Mexico. We are closing competitive gaps
 ---
 
 ## 4. Pending Work (Phases 3–4)
-
-### Phase 3.2 — Insurance Integration (PENDING)
-
-**Goal:** Accept IMSS, ISSSTE, GNP, AXA, MetLife, etc.
-
-**What to build:**
-- `insurance_providers` table: `id`, `name`, `type` (public/private), `logo_url`, `coverage_rules JSONB`
-- `patient_insurance` table: `patient_id`, `provider_id`, `policy_number`, `member_id`, `is_active`
-- `appointment_insurance_claims` table: `appointment_id`, `patient_insurance_id`, `status`, `claim_number`, `reimbursement_amount_cents`
-- UI in patient checkout: insurance selector, copay calculation
-- UI in doctor finances: claims dashboard, reimbursement tracking
-- API: `src/app/api/insurance/...` for eligibility checks, claim submission
-
-**Key complexity:** Public insurers (IMSS/ISSSTE) require FOLIO documents and 24-48h approval. Private insurers (GNP/AXA) have real-time APIs via WebService. Start with private first.
-
----
 
 ### Phase 4.1 — Patient Communication Campaigns (PENDING)
 
@@ -270,6 +274,7 @@ Doctor.mx is a telemedicine platform for Mexico. We are closing competitive gaps
 | `20260422150000_auto_soap_notes.sql` | `soap_notes`, `feature_flags` tables + RLS + trigger |
 | `20260422170000_booking_widget.sql` | `doctor_widget_configs`, `widget_booking_intents`, `profiles.email`, appointment cancellation metadata; applied to remote Supabase on 2026-04-22 |
 | `20260423021000_fix_auto_soap_production_schema.sql` | Reconciles legacy production `feature_flags`, seeds `ai_soap_notes_enabled`, creates `soap_notes`; applied to remote Supabase on 2026-04-22 |
+| `20260423040000_insurance_claims.sql` | Extends `insurances`, adds `patient_insurances` and `appointment_insurance_claims`; applied to remote Supabase on 2026-04-23 |
 
 **Reminder/intake migrations from Phase 1** are also applied but were created in earlier sessions.
 
@@ -301,6 +306,10 @@ Doctor.mx is a telemedicine platform for Mexico. We are closing competitive gaps
 | Widget public page | `src/app/widget/[doctorId]/page.tsx` |
 | Widget payment pages | `src/app/widget/pay/[appointmentId]/page.tsx`, `src/app/widget/success/page.tsx` |
 | Widget APIs | `src/app/api/widget/*` |
+| Insurance lib | `src/lib/insurance.ts` |
+| Insurance APIs | `src/app/api/insurance/*` |
+| Insurance checkout | `src/app/checkout/[appointmentId]/page.tsx` |
+| Insurance claims dashboard | `src/app/doctor/finances/page.tsx` |
 
 ---
 
@@ -321,7 +330,7 @@ Doctor.mx is a telemedicine platform for Mexico. We are closing competitive gaps
    npx netlify deploy --build --prod
    ```
 
-3. **Pick the next feature:** Phase 3.2 Insurance Integration.
+3. **Pick the next feature:** Phase 4.1 Patient Communication Campaigns.
 
 4. **Follow taste-skill** design rules (section 1).
 

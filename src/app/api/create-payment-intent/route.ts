@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
-  const { appointmentId } = await request.json()
+  const { appointmentId, patientInsuranceId } = await request.json()
 
   if (!appointmentId) {
     return NextResponse.json(
@@ -24,6 +24,7 @@ export async function POST(request: NextRequest) {
     const result = await initializePayment({
       appointmentId,
       userId: user.id,
+      patientInsuranceId,
     })
 
     return NextResponse.json(result)

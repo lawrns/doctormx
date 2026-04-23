@@ -2,9 +2,10 @@ import { requireRole } from '@/lib/auth'
 import { redirect } from 'next/navigation'
 import DoctorLayout from '@/components/DoctorLayout'
 import { EmptyState } from '@/components'
-import { Wallet } from 'lucide-react'
+import { ShieldCheck } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import { getDoctorInsuranceClaims } from '@/lib/insurance'
 import {
   Table,
   TableBody,
@@ -51,6 +52,32 @@ function getLedgerTypeBadge(type: LedgerEntryType) {
   return variants[type] || 'default'
 }
 
+function getClaimStatusLabel(status: string) {
+  const labels: Record<string, string> = {
+    eligibility_checked: 'Elegibilidad',
+    pending_folio: 'Folio pendiente',
+    submitted: 'Enviado',
+    approved: 'Aprobado',
+    rejected: 'Rechazado',
+    paid: 'Pagado',
+  }
+
+  return labels[status] || status
+}
+
+function getClaimStatusBadge(status: string) {
+  const variants: Record<string, 'success' | 'warning' | 'destructive' | 'info' | 'default'> = {
+    eligibility_checked: 'info',
+    pending_folio: 'warning',
+    submitted: 'info',
+    approved: 'success',
+    rejected: 'destructive',
+    paid: 'success',
+  }
+
+  return variants[status] || 'default'
+}
+
 export default async function DoctorFinancesPage() {
   const { user, profile, supabase } = await requireRole('doctor')
 
@@ -79,6 +106,7 @@ export default async function DoctorFinancesPage() {
     description: string | null
     created_at: string
   }> = []
+  let insuranceClaims: Awaited<ReturnType<typeof getDoctorInsuranceClaims>> = []
 
   if (!isPending) {
     const now = new Date()
@@ -137,9 +165,19 @@ export default async function DoctorFinancesPage() {
         created_at: string
       }>
     }
+
+    insuranceClaims = await getDoctorInsuranceClaims(user.id)
   }
 
   const currency = doctor?.currency || 'MXN'
+  const pendingClaimAmount = insuranceClaims
+    .filter((claim: any) => !['paid', 'rejected'].includes(claim.status))
+    .reduce((sum: number, claim: any) => sum + Number(claim.reimbursement_amount_cents || 0), 0)
+  const paidClaimAmount = insuranceClaims
+    .filter((claim: any) => claim.status === 'paid')
+    .reduce((sum: number, claim: any) => {
+      return sum + Number(claim.reimbursement_amount_cents_final || claim.reimbursement_amount_cents || 0)
+    }, 0)
 
   return (
     <DoctorLayout profile={profile!} isPending={isPending} currentPath="/doctor/finances">
@@ -148,7 +186,7 @@ export default async function DoctorFinancesPage() {
         <p className="text-muted-foreground mb-8">Gestiona tus pagos y transacciones</p>
 
         {isPending ? (
-          <Card className="rounded-2xl border border-border shadow-dx-1 p-6">
+          <Card className="rounded-xl border border-border shadow-dx-1 p-6">
             <p className="text-foreground">
               Esta secci\u00F3n estar\u00E1 disponible una vez que tu perfil sea aprobado.
             </p>
@@ -157,19 +195,19 @@ export default async function DoctorFinancesPage() {
           <div className="space-y-6">
             {/* Resumen financiero */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-              <Card className="rounded-2xl border border-border shadow-dx-1 p-4 md:p-6 gap-2">
+              <Card className="rounded-xl border border-border shadow-dx-1 p-4 md:p-6 gap-2">
                 <p className="text-sm text-muted-foreground mb-1">Ingresos este mes</p>
                 <p className="text-2xl md:text-3xl font-bold text-vital">
                   {formatCurrency(monthlyIncome, currency)}
                 </p>
               </Card>
-              <Card className="rounded-2xl border border-border shadow-dx-1 p-4 md:p-6 gap-2">
+              <Card className="rounded-xl border border-border shadow-dx-1 p-4 md:p-6 gap-2">
                 <p className="text-sm text-muted-foreground mb-1">Pendiente de cobro</p>
                 <p className="text-2xl md:text-3xl font-bold text-amber">
                   {formatCurrency(pendingAmount, currency)}
                 </p>
               </Card>
-              <Card className="rounded-2xl border border-border shadow-dx-1 p-4 md:p-6 gap-2">
+              <Card className="rounded-xl border border-border shadow-dx-1 p-4 md:p-6 gap-2">
                 <p className="text-sm text-muted-foreground mb-1">Total cobrado</p>
                 <p className="text-2xl md:text-3xl font-bold text-foreground">
                   {formatCurrency(totalPaid, currency)}
@@ -177,8 +215,100 @@ export default async function DoctorFinancesPage() {
               </Card>
             </div>
 
+            <Card className="rounded-xl border border-border shadow-dx-1 p-6 gap-4">
+              <CardHeader className="p-0 pb-0">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                  <div>
+                    <CardTitle className="text-xl font-semibold">Reclamos de seguro</CardTitle>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      Seguimiento de copagos, folios y reembolsos por aseguradora.
+                    </p>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3 text-sm sm:min-w-[280px]">
+                    <div className="rounded-lg border border-border bg-secondary/40 p-3">
+                      <p className="text-muted-foreground">Por recuperar</p>
+                      <p className="mt-1 font-semibold text-foreground">
+                        {formatCurrency(pendingClaimAmount, currency)}
+                      </p>
+                    </div>
+                    <div className="rounded-lg border border-border bg-secondary/40 p-3">
+                      <p className="text-muted-foreground">Recuperado</p>
+                      <p className="mt-1 font-semibold text-foreground">
+                        {formatCurrency(paidClaimAmount, currency)}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="p-0">
+                {insuranceClaims.length > 0 ? (
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Fecha</TableHead>
+                        <TableHead>Paciente</TableHead>
+                        <TableHead>Aseguradora</TableHead>
+                        <TableHead>Estado</TableHead>
+                        <TableHead className="text-right">Reembolso</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {insuranceClaims.map((claim: any) => {
+                        const appointment = Array.isArray(claim.appointment)
+                          ? claim.appointment[0]
+                          : claim.appointment
+                        const patient = Array.isArray(claim.patient)
+                          ? claim.patient[0]
+                          : claim.patient
+                        const patientInsurance = Array.isArray(claim.patient_insurance)
+                          ? claim.patient_insurance[0]
+                          : claim.patient_insurance
+                        const insurance = Array.isArray(patientInsurance?.insurance)
+                          ? patientInsurance.insurance[0]
+                          : patientInsurance?.insurance
+
+                        return (
+                          <TableRow key={claim.id}>
+                            <TableCell className="text-sm text-muted-foreground whitespace-nowrap">
+                              {appointment?.start_ts ? formatDate(appointment.start_ts) : formatDate(claim.created_at)}
+                            </TableCell>
+                            <TableCell className="text-sm text-foreground">
+                              {patient?.full_name || 'Paciente'}
+                            </TableCell>
+                            <TableCell className="text-sm text-foreground">
+                              <div className="flex items-center gap-2">
+                                <ShieldCheck className="size-4 text-vital" />
+                                <span>{insurance?.name || 'Aseguradora'}</span>
+                              </div>
+                            </TableCell>
+                            <TableCell className="whitespace-nowrap">
+                              <Badge variant={getClaimStatusBadge(claim.status)} className="rounded-lg">
+                                {getClaimStatusLabel(claim.status)}
+                              </Badge>
+                            </TableCell>
+                            <TableCell className="text-right text-sm font-medium text-foreground whitespace-nowrap">
+                              {formatCurrency(
+                                Number(claim.reimbursement_amount_cents_final || claim.reimbursement_amount_cents || 0),
+                                currency
+                              )}
+                            </TableCell>
+                          </TableRow>
+                        )
+                      })}
+                    </TableBody>
+                  </Table>
+                ) : (
+                  <EmptyState
+                    title="No hay reclamos"
+                    description="Cuando una cita use seguro, el reclamo aparecera aqui para seguimiento."
+                    iconName="wallet"
+                  />
+                )}
+              </CardContent>
+            </Card>
+
             {/* Transacciones */}
-            <Card className="rounded-2xl border border-border shadow-dx-1 p-6 gap-4">
+            <Card className="rounded-xl border border-border shadow-dx-1 p-6 gap-4">
               <CardHeader className="p-0 pb-0">
                 <CardTitle className="text-xl font-semibold">Transacciones recientes</CardTitle>
               </CardHeader>

@@ -10,10 +10,15 @@ import { sendPaymentReceipt as sendWhatsAppReceipt, getPatientPhone, getDoctorNa
 import { logger } from '@/lib/observability/logger'
 import { ensureVideoRoomForAppointment } from '@/lib/video/videoService'
 import { validatePaymentIntentBinding } from '@/lib/payment-integrity'
+import {
+  getSelectedInsuranceEstimate,
+  upsertAppointmentInsuranceClaim,
+} from '@/lib/insurance'
 
 export type PaymentRequest = {
   appointmentId: string
   userId: string
+  patientInsuranceId?: string | null
 }
 
 export type PaymentIntentResult = {
@@ -28,7 +33,11 @@ export async function initializePayment(
   request: PaymentRequest
 ): Promise<PaymentIntentResult> {
   // Paso 1: Obtener información de la cita
-  const appointmentData = await getAppointmentPaymentData(request.appointmentId, request.userId)
+  const appointmentData = await getAppointmentPaymentData(
+    request.appointmentId,
+    request.userId,
+    request.patientInsuranceId
+  )
 
   // Paso 2: Crear payment intent en Stripe with Mexican payment methods
   const paymentIntent = await stripe.paymentIntents.create({
@@ -41,6 +50,8 @@ export async function initializePayment(
       amountCents: String(appointmentData.amount),
       amount: String(appointmentData.amount),
       currency: appointmentData.currency,
+      patientInsuranceId: request.patientInsuranceId || '',
+      insuranceEstimate: appointmentData.insuranceEstimateStatus,
     },
     // Enable Mexican payment methods: Cards, OXXO, and SPEI
     payment_method_types: ['card', 'oxxo', 'customer_balance'],
@@ -66,6 +77,14 @@ export async function initializePayment(
     currency: appointmentData.currency,
   })
 
+  if (request.patientInsuranceId && appointmentData.insuranceAccepted) {
+    await upsertAppointmentInsuranceClaim({
+      appointmentId: request.appointmentId,
+      patientId: request.userId,
+      patientInsuranceId: request.patientInsuranceId,
+    })
+  }
+
   return {
     clientSecret: paymentIntent.client_secret!,
     publishableKey: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!,
@@ -75,7 +94,11 @@ export async function initializePayment(
 }
 
 // Bloque: Obtener datos necesarios para el pago
-async function getAppointmentPaymentData(appointmentId: string, userId: string) {
+async function getAppointmentPaymentData(
+  appointmentId: string,
+  userId: string,
+  patientInsuranceId?: string | null
+) {
   const supabase = await createClient()
 
   const { data: appointment, error } = await supabase
@@ -99,10 +122,29 @@ async function getAppointmentPaymentData(appointmentId: string, userId: string) 
 
   const doctor = Array.isArray(appointment.doctor) ? appointment.doctor[0] : appointment.doctor
 
+  if (!patientInsuranceId) {
+    return {
+      amount: doctor.price_cents,
+      currency: doctor.currency,
+      doctorId: appointment.doctor_id,
+      insuranceAccepted: false,
+      insuranceEstimateStatus: 'cash',
+    }
+  }
+
+  const { estimate } = await getSelectedInsuranceEstimate({
+    appointmentId,
+    patientId: userId,
+    patientInsuranceId,
+    supabase,
+  })
+
   return {
-    amount: doctor.price_cents,
+    amount: estimate.patientResponsibilityCents,
     currency: doctor.currency,
     doctorId: appointment.doctor_id,
+    insuranceAccepted: estimate.acceptedByDoctor,
+    insuranceEstimateStatus: estimate.eligibilityStatus,
   }
 }
 
