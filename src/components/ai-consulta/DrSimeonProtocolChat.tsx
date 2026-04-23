@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import {
   AlertTriangle,
   Calendar,
@@ -59,6 +59,10 @@ type ApiResponse = {
   responseMode?: string
 }
 
+const TYPEWRITER_INTERVAL_MS = 14
+const ASSISTANT_REVIEW_DELAY_MS = 520
+const REDUCED_MOTION_REVIEW_DELAY_MS = 220
+
 const QUICK_STARTS = [
   'Tengo dolor de espalda',
   'Me duele la cabeza desde ayer',
@@ -94,7 +98,110 @@ function urgencyLabel(value: CaseSummary['urgency']) {
   return labels[value]
 }
 
-function AssistantBubble({ message }: { message: ChatMessage }) {
+function AssistantTypingBubble({ reducedMotion }: { reducedMotion: boolean }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -4 }}
+      transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+      className="flex items-start gap-3"
+    >
+      <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-ink text-primary-foreground">
+        <Stethoscope className="size-4" />
+      </div>
+      <div className="rounded-xl border border-border bg-card px-4 py-3 shadow-dx-1">
+        <div className="flex items-center gap-3">
+          <span className="text-sm font-medium text-foreground">Dr. Simeon está revisando</span>
+          <div className="flex items-center gap-1.5" aria-hidden="true">
+            {[0, 1, 2].map((index) => (
+              <motion.span
+                key={index}
+                className="size-1.5 rounded-full bg-vital"
+                animate={reducedMotion ? undefined : { y: [0, -3, 0], opacity: [0.4, 1, 0.4] }}
+                transition={{ duration: 0.9, repeat: Infinity, delay: index * 0.13, ease: 'easeInOut' }}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  )
+}
+
+function TypewriterText({
+  text,
+  active,
+  reducedMotion,
+  onTick,
+  onComplete,
+}: {
+  text: string
+  active: boolean
+  reducedMotion: boolean
+  onTick: () => void
+  onComplete: () => void
+}) {
+  const [visibleText, setVisibleText] = useState(active && !reducedMotion ? '' : text)
+  const onTickRef = useRef(onTick)
+  const onCompleteRef = useRef(onComplete)
+
+  useEffect(() => {
+    onTickRef.current = onTick
+    onCompleteRef.current = onComplete
+  }, [onComplete, onTick])
+
+  useEffect(() => {
+    if (!active || reducedMotion) {
+      setVisibleText(text)
+      if (active) onCompleteRef.current()
+      return
+    }
+
+    setVisibleText('')
+    let index = 0
+    const interval = window.setInterval(() => {
+      index += 1
+      setVisibleText(text.slice(0, index))
+      onTickRef.current()
+
+      if (index >= text.length) {
+        window.clearInterval(interval)
+        onCompleteRef.current()
+      }
+    }, TYPEWRITER_INTERVAL_MS)
+
+    return () => window.clearInterval(interval)
+  }, [active, reducedMotion, text])
+
+  return (
+    <p className="whitespace-pre-wrap text-sm leading-6 text-foreground">
+      {visibleText}
+      {active && !reducedMotion ? (
+        <motion.span
+          aria-hidden="true"
+          className="ml-0.5 inline-block h-4 w-px translate-y-0.5 bg-vital"
+          animate={{ opacity: [0.25, 1, 0.25] }}
+          transition={{ duration: 0.85, repeat: Infinity, ease: 'easeInOut' }}
+        />
+      ) : null}
+    </p>
+  )
+}
+
+function AssistantBubble({
+  message,
+  isTyping,
+  reducedMotion,
+  onTypingTick,
+  onTypingComplete,
+}: {
+  message: ChatMessage
+  isTyping: boolean
+  reducedMotion: boolean
+  onTypingTick: () => void
+  onTypingComplete: () => void
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 8 }}
@@ -110,7 +217,13 @@ function AssistantBubble({ message }: { message: ChatMessage }) {
           <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-vital">Dr. Simeon</span>
           <span className="text-[10px] text-muted-foreground">Orientación clínica inicial</span>
         </div>
-        <p className="whitespace-pre-wrap text-sm leading-6 text-foreground">{message.text}</p>
+        <TypewriterText
+          text={message.text}
+          active={isTyping}
+          reducedMotion={reducedMotion}
+          onTick={onTypingTick}
+          onComplete={onTypingComplete}
+        />
       </div>
     </motion.div>
   )
@@ -278,13 +391,18 @@ export function DrSimeonProtocolChat({
   ])
   const [input, setInput] = useState('')
   const [isSending, setIsSending] = useState(false)
+  const [pendingAssistantMessage, setPendingAssistantMessage] = useState<ChatMessage | null>(null)
+  const [typingMessageId, setTypingMessageId] = useState<string | null>(null)
+  const [isTyping, setIsTyping] = useState(false)
   const [quota, setQuota] = useState<QuotaState | null>(null)
   const [referrals, setReferrals] = useState<DoctorMatch[]>([])
-  const [apiMode, setApiMode] = useState<string | null>(null)
+  const [, setApiMode] = useState<string | null>(null)
   const chatRef = useRef<HTMLDivElement>(null)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
+  const reducedMotion = Boolean(useReducedMotion())
 
   const summary = useMemo(() => getCaseSummary(protocol), [protocol])
+  const isBusy = isSending || isTyping || pendingAssistantMessage !== null
 
   useEffect(() => {
     const key = anonymous ? 'doctor_mx_session' : `doctor_mx_patient_session_${userId || 'user'}`
@@ -311,7 +429,42 @@ export function DrSimeonProtocolChat({
   useEffect(() => {
     if (!chatRef.current) return
     chatRef.current.scrollTop = chatRef.current.scrollHeight
-  }, [messages, isSending])
+  }, [messages, pendingAssistantMessage])
+
+  useEffect(() => {
+    if (!pendingAssistantMessage) return
+
+    const delay = reducedMotion ? REDUCED_MOTION_REVIEW_DELAY_MS : ASSISTANT_REVIEW_DELAY_MS
+    const timeout = window.setTimeout(() => {
+      const nextMessage = pendingAssistantMessage
+      setMessages((currentMessages) => [...currentMessages, nextMessage])
+      setPendingAssistantMessage(null)
+
+      if (reducedMotion) {
+        setTypingMessageId(null)
+        setIsTyping(false)
+        return
+      }
+
+      setTypingMessageId(nextMessage.id)
+      setIsTyping(true)
+    }, delay)
+
+    return () => window.clearTimeout(timeout)
+  }, [pendingAssistantMessage, reducedMotion])
+
+  const scrollChatToBottom = useCallback(() => {
+    if (!chatRef.current) return
+    chatRef.current.scrollTop = chatRef.current.scrollHeight
+  }, [])
+
+  const completeTyping = useCallback((messageId: string) => {
+    setTypingMessageId((currentId) => {
+      if (currentId !== messageId) return currentId
+      setIsTyping(false)
+      return null
+    })
+  }, [])
 
   const syncWithApi = useCallback(
     async (nextMessages: ChatMessage[], nextProtocol: ProtocolState) => {
@@ -350,11 +503,12 @@ export function DrSimeonProtocolChat({
   const submitText = useCallback(
     async (rawText: string, fromQuickStart = false) => {
       const text = rawText.trim()
-      if (!text || isSending || !sessionId) return
+      if (!text || isBusy || !sessionId) return
       if (anonymous && quota && quota.remaining <= 0) return
 
       setIsSending(true)
       setInput('')
+      if (textareaRef.current) textareaRef.current.style.height = 'auto'
 
       const userMessage = makeMessage('user', text)
       let result
@@ -365,15 +519,17 @@ export function DrSimeonProtocolChat({
       }
 
       const assistantMessage = makeMessage('assistant', result.assistantMessage)
-      const nextMessages = [...messages, userMessage, assistantMessage]
+      const visibleMessages = [...messages, userMessage]
+      const nextMessages = [...visibleMessages, assistantMessage]
 
-      setMessages(nextMessages)
+      setMessages(visibleMessages)
       setProtocol(result.state)
+      setPendingAssistantMessage(assistantMessage)
 
       await syncWithApi(nextMessages, result.state)
       setIsSending(false)
     },
-    [anonymous, isSending, messages, protocol, quota, sessionId, syncWithApi]
+    [anonymous, isBusy, messages, protocol, quota, sessionId, syncWithApi]
   )
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -389,6 +545,7 @@ export function DrSimeonProtocolChat({
   }
 
   const quotaFull = anonymous && quota !== null && quota.remaining <= 0
+  const canSend = input.trim().length > 0 && !isBusy && !quotaFull
 
   return (
     <div className="fixed inset-0 flex h-dvh flex-col overflow-hidden bg-background">
@@ -415,7 +572,7 @@ export function DrSimeonProtocolChat({
               <SheetContent side="left" className="w-[86vw] max-w-sm gap-0 p-0" showCloseButton>
                 <SheetTitle className="sr-only">Atajos y contexto</SheetTitle>
                 <div className="h-full overflow-hidden">
-                  <LeftRail onQuickStart={(prompt) => void submitText(prompt, true)} disabled={isSending || quotaFull} />
+                  <LeftRail onQuickStart={(prompt) => void submitText(prompt, true)} disabled={isBusy || quotaFull} />
                 </div>
               </SheetContent>
             </Sheet>
@@ -426,7 +583,7 @@ export function DrSimeonProtocolChat({
       <main className="min-h-0 flex-1 overflow-hidden">
         <div className="mx-auto grid h-full max-w-7xl lg:grid-cols-[280px_minmax(0,1fr)_320px]">
           <div className="hidden min-h-0 lg:block">
-            <LeftRail onQuickStart={(prompt) => void submitText(prompt, true)} disabled={isSending || quotaFull} />
+            <LeftRail onQuickStart={(prompt) => void submitText(prompt, true)} disabled={isBusy || quotaFull} />
           </div>
 
           <section className="flex min-h-0 flex-col border-x border-border">
@@ -437,16 +594,22 @@ export function DrSimeonProtocolChat({
                     message.role === 'user' ? (
                       <UserBubble key={message.id} message={message} />
                     ) : (
-                      <AssistantBubble key={message.id} message={message} />
+                      <AssistantBubble
+                        key={message.id}
+                        message={message}
+                        isTyping={typingMessageId === message.id}
+                        reducedMotion={reducedMotion}
+                        onTypingTick={scrollChatToBottom}
+                        onTypingComplete={() => completeTyping(message.id)}
+                      />
                     )
                   )}
                 </AnimatePresence>
-                {isSending ? (
-                  <div className="flex items-center gap-2 pl-11 text-sm text-muted-foreground">
-                    <span className="size-2 rounded-full bg-vital" />
-                    Guardando contexto clínico...
-                  </div>
-                ) : null}
+                <AnimatePresence>
+                  {pendingAssistantMessage ? (
+                    <AssistantTypingBubble key="assistant-typing" reducedMotion={reducedMotion} />
+                  ) : null}
+                </AnimatePresence>
                 {summary.urgency === 'emergency' ? (
                   <div className="rounded-xl border border-coral/20 bg-coral/5 p-4">
                     <div className="flex items-start gap-3">
@@ -460,7 +623,7 @@ export function DrSimeonProtocolChat({
               </div>
             </div>
 
-            <div className="shrink-0 border-t border-border bg-card/95 px-4 py-3">
+            <div className="shrink-0 border-t border-border bg-card/95 px-3 py-2.5 sm:px-4 sm:py-3">
               <div className="mx-auto max-w-[760px]">
                 {quotaFull ? (
                   <div className="rounded-xl border border-border bg-background p-4 text-center">
@@ -470,12 +633,13 @@ export function DrSimeonProtocolChat({
                     </Link>
                   </div>
                 ) : (
-                  <div className="rounded-xl border border-border bg-background p-3 shadow-dx-1 focus-within:border-ink/35 focus-within:ring-2 focus-within:ring-ink/10">
-                    <div className="mb-2 flex items-center justify-between gap-3 border-b border-border pb-2">
-                      <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                        {summary.nextQuestion}
-                      </span>
-                      {apiMode ? <span className="hidden text-[10px] text-muted-foreground sm:inline">{apiMode}</span> : null}
+                  <div className="rounded-xl border border-border bg-background p-2.5 shadow-dx-1 transition-colors focus-within:border-ink/35 focus-within:ring-2 focus-within:ring-ink/10 sm:p-3">
+                    <div className="mb-2 flex items-start gap-2 border-b border-border pb-2">
+                      <Stethoscope className="mt-0.5 size-3.5 shrink-0 text-vital" />
+                      <div className="min-w-0">
+                        <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-vital">Siguiente pregunta</p>
+                        <p className="mt-0.5 line-clamp-2 text-xs leading-5 text-muted-foreground">{summary.nextQuestion}</p>
+                      </div>
                     </div>
                     <div className="flex items-end gap-2">
                       <textarea
@@ -487,21 +651,32 @@ export function DrSimeonProtocolChat({
                           resizeTextarea(event.target)
                         }}
                         onKeyDown={handleKeyDown}
-                        disabled={isSending}
+                        disabled={isBusy}
                         placeholder={summary.nextQuestion}
-                        className="max-h-24 min-h-7 flex-1 resize-none border-none bg-transparent py-1.5 text-sm leading-6 text-foreground outline-none placeholder:text-muted-foreground"
+                        className="max-h-24 min-h-9 flex-1 resize-none border-none bg-transparent px-1 py-2 text-base leading-6 text-foreground outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-60 sm:text-sm"
                       />
                       <Button
                         type="button"
                         size="icon"
                         onClick={() => void submitText(input)}
-                        disabled={!input.trim() || isSending}
-                        className="h-9 w-9 rounded-lg"
+                        disabled={!canSend}
+                        className="h-10 w-10 shrink-0 rounded-lg bg-ink text-primary-foreground transition-transform active:translate-y-px disabled:bg-muted disabled:text-muted-foreground"
                         aria-label="Enviar mensaje"
                       >
-                        <Send className="size-4" />
+                        {isBusy ? (
+                          <span className="flex items-center gap-0.5" aria-hidden="true">
+                            <span className="size-1 rounded-full bg-current opacity-55" />
+                            <span className="size-1 rounded-full bg-current opacity-75" />
+                            <span className="size-1 rounded-full bg-current" />
+                          </span>
+                        ) : (
+                          <Send className="size-4" />
+                        )}
                       </Button>
                     </div>
+                    <p className="mt-2 border-t border-border pt-2 text-[11px] leading-4 text-muted-foreground">
+                      No diagnostica. En emergencias llama al 911.
+                    </p>
                   </div>
                 )}
               </div>
