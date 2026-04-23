@@ -146,6 +146,7 @@ Doctor.mx is a telemedicine platform for Mexico. We are closing competitive gaps
 - Support panel, send button, user messages, thinking state, and action cards were normalized to token colors and tokenized shadows.
 - Dr. Simeon UX personalization pass made `/ai-consulta` conversation-first, hid the support widget on AI consult surfaces, normalized naming to `Dr. Simeon`, removed exposed tool/confidence UI from the main chat, and toned down authenticated intake gradients/emoji/severity styling.
 - Redis env reads now use runtime bracket access so `REDIS_URL` is not statically inlined into Netlify build artifacts.
+- `/api/ai/preconsulta` now returns a bounded Dr. Simeon degraded-mode response when upstream AI providers are unavailable instead of hard-failing with 503.
 
 ---
 
@@ -227,6 +228,7 @@ Doctor.mx is a telemedicine platform for Mexico. We are closing competitive gaps
 2. **AutoSOAP AI generation requires OpenRouter API key.**
    - If `OPENROUTER_API_KEY` is missing, the generate endpoint will fail.
    - Fallback: mock generation or skip AI draft, let doctor type manually.
+   - Production AI health on 2026-04-22 showed provider credentials returning 401; replace the Netlify AI keys for real generation. Public preconsulta now has a safe degraded fallback, but provider-backed generation still needs valid keys.
 
 3. **Daily.co video calls require Daily API key.**
    - Already configured in env.

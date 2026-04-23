@@ -71,6 +71,33 @@ function isConfigurationError(message: string) {
     || message.includes('API key');
 }
 
+function isAIProviderUnavailableError(message: string) {
+  return message.includes('Sin saldo')
+    || message.includes('Insufficient balance')
+    || message.startsWith('Error de IA:')
+    || message.startsWith('Error de análisis:')
+    || message.startsWith('Error de transcripción:')
+    || message.includes('Error de IA')
+    || isConfigurationError(message);
+}
+
+function buildProviderFallbackResponse(messages: PreConsultaMessage[]) {
+  const latestUserMessage = [...messages].reverse().find((message) => message.role === 'user');
+  const symptomText = latestUserMessage?.content
+    ? `Lo que entendí: ${latestUserMessage.content}`
+    : 'Lo que entendí: quieres orientación clínica inicial.';
+
+  return [
+    symptomText,
+    '',
+    'En este momento voy a mantenerlo simple y seguro: no puedo diagnosticarte por aquí, pero sí puedo ayudarte a ordenar el caso.',
+    '',
+    'Para revisar señales de alarma, dime una cosa: ¿esto empezó hoy, lleva varios días o ha ido empeorando rápidamente?',
+    '',
+    'Si tienes dificultad para respirar, dolor fuerte en el pecho, desmayo, debilidad de un lado del cuerpo, confusión intensa o sangrado importante, busca urgencias o llama al 911.',
+  ].join('\n');
+}
+
 async function safeUpsertSession(
   supabase: Awaited<ReturnType<typeof createClient>>,
   payload: Record<string, unknown>
@@ -119,9 +146,14 @@ export async function POST(req: NextRequest) {
 
   const startTime = Date.now();
   const supabase = await createClient();
+  let sessionIdForFallback: string | null = null;
+  let messagesForFallback: PreConsultaMessage[] = [];
+  let anonymousForFallback = false;
+  let userIdForFallback: string | null = null;
 
   try {
     const { data: { user } } = await supabase.auth.getUser();
+    userIdForFallback = user?.id ?? null;
 
     const { sessionId, messages: rawMessages, anonymous } = await req.json() as {
       sessionId: string;
@@ -129,7 +161,10 @@ export async function POST(req: NextRequest) {
       anonymous?: boolean;
     };
 
+    sessionIdForFallback = sessionId;
+    anonymousForFallback = Boolean(anonymous);
     const messages = normalizeMessages(rawMessages);
+    messagesForFallback = messages;
 
     if (!sessionId || !messages || messages.length === 0) {
       return NextResponse.json(
@@ -375,29 +410,6 @@ export async function POST(req: NextRequest) {
       console.error('[PRE-CONSULTA] Audit logging failed:', auditErr);
     }
 
-    // Return user-friendly error messages
-    if (errorMessage.includes('Sin saldo') || errorMessage.includes('Insufficient balance')) {
-      return NextResponse.json(
-        {
-          error: 'service_unavailable',
-          message: 'El servicio de IA no está disponible temporalmente. Intenta más tarde.',
-          technical: errorMessage,
-        },
-        { status: 503 }
-      );
-    }
-
-    if (isConfigurationError(errorMessage)) {
-      return NextResponse.json(
-        {
-          error: 'configuration_error',
-          message: 'El servicio de IA no está configurado correctamente.',
-          technical: errorMessage,
-        },
-        { status: 503 }
-      );
-    }
-
     if (errorMessage.includes('Datos inválidos')) {
       return NextResponse.json(
         { error: 'invalid_request', message: 'La solicitud de chat no es válida.', technical: errorMessage },
@@ -408,20 +420,32 @@ export async function POST(req: NextRequest) {
     // Any error propagated from the AI layer should surface as service_unavailable (503), not a
     // raw 500 — this covers network timeouts, unexpected provider responses, and any other
     // AI-layer failure that didn't match a more specific pattern above.
-    if (
-      errorMessage.startsWith('Error de IA:') ||
-      errorMessage.startsWith('Error de análisis:') ||
-      errorMessage.startsWith('Error de transcripción:') ||
-      errorMessage.includes('Error de IA')
-    ) {
-      return NextResponse.json(
-        {
-          error: 'service_unavailable',
-          message: 'El servicio de IA no está disponible temporalmente. Intenta más tarde.',
-          technical: errorMessage,
-        },
-        { status: 503 }
-      );
+    if (isAIProviderUnavailableError(errorMessage)) {
+      if (sessionIdForFallback) {
+        await safeUpsertSession(supabase, {
+          id: sessionIdForFallback,
+          patient_id: userIdForFallback,
+          messages: messagesForFallback,
+          status: 'active',
+        });
+      }
+
+      let quota = null;
+      if (anonymousForFallback && !userIdForFallback && sessionIdForFallback) {
+        const { getAnonymousQuota } = await import('@/lib/anonymous-quota');
+        quota = await getAnonymousQuota(sessionIdForFallback);
+      }
+
+      return NextResponse.json({
+        response: buildProviderFallbackResponse(messagesForFallback),
+        completed: false,
+        summary: null,
+        referrals: [],
+        responseMode: 'provider-fallback',
+        degraded: true,
+        anonymous: anonymousForFallback,
+        quota,
+      });
     }
 
     return NextResponse.json(
