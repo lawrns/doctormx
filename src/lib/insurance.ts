@@ -1,4 +1,5 @@
 import { createClient, createServiceClient } from '@/lib/supabase/server'
+import { expireStalePendingPaymentAppointments } from '@/lib/appointment-expiry'
 
 type SupabaseClientLike = Awaited<ReturnType<typeof createClient>>
 
@@ -47,6 +48,19 @@ export type InsuranceCheckoutOptions = {
     id: string
     doctorId: string
     patientId: string
+    startTs: string
+    endTs: string
+    status: string
+    appointmentType: 'video' | 'in_person' | null
+    videoStatus: string | null
+    doctorName: string
+    doctorPhotoUrl: string | null
+    doctorSpecialty: string | null
+    licenseNumber: string | null
+    city: string | null
+    state: string | null
+    officeAddress: string | null
+    holdExpiresAt: string | null
     grossAmountCents: number
     currency: string
   }
@@ -145,9 +159,23 @@ async function getAppointmentContext(
       id,
       doctor_id,
       patient_id,
+      start_ts,
+      end_ts,
+      status,
+      appointment_type,
+      video_status,
       doctor:doctors (
         price_cents,
-        currency
+        currency,
+        specialty,
+        license_number,
+        city,
+        state,
+        office_address,
+        profile:profiles (
+          full_name,
+          photo_url
+        )
       )
     `)
     .eq('id', appointmentId)
@@ -161,11 +189,35 @@ async function getAppointmentContext(
   const doctor = Array.isArray(appointment.doctor)
     ? appointment.doctor[0]
     : appointment.doctor
+  const profile = Array.isArray(doctor?.profile)
+    ? doctor.profile[0]
+    : doctor?.profile
+
+  const { data: hold } = await supabase
+    .from('appointment_holds')
+    .select('expires_at')
+    .eq('appointment_id', appointmentId)
+    .order('created_at', { ascending: false })
+    .limit(1)
+    .maybeSingle()
 
   return {
     id: appointment.id,
     doctorId: appointment.doctor_id,
     patientId: appointment.patient_id,
+    startTs: appointment.start_ts,
+    endTs: appointment.end_ts,
+    status: appointment.status,
+    appointmentType: appointment.appointment_type,
+    videoStatus: appointment.video_status,
+    doctorName: profile?.full_name || 'Médico verificado',
+    doctorPhotoUrl: profile?.photo_url || null,
+    doctorSpecialty: doctor?.specialty || null,
+    licenseNumber: doctor?.license_number || null,
+    city: doctor?.city || null,
+    state: doctor?.state || null,
+    officeAddress: doctor?.office_address || null,
+    holdExpiresAt: hold?.expires_at || null,
     grossAmountCents: Number(doctor?.price_cents || 0),
     currency: doctor?.currency || 'MXN',
   }
@@ -243,6 +295,7 @@ export async function getInsuranceCheckoutOptions(
   supabase?: SupabaseClientLike
 ): Promise<InsuranceCheckoutOptions> {
   const db = supabase || (await createClient())
+  await expireStalePendingPaymentAppointments({ appointmentId })
   const appointment = await getAppointmentContext(db, appointmentId, patientId)
   const [acceptedInsurances, patientInsurances] = await Promise.all([
     getAcceptedInsurances(db, appointment.doctorId),

@@ -46,20 +46,20 @@ export default function CheckoutForm({
     <form onSubmit={handleSubmit} className="space-y-6">
       <PaymentElement />
 
-      <div className="rounded-xl border border-border bg-secondary/50 p-4">
+      <div className="rounded-[var(--public-radius-control)] border border-border bg-secondary/50 p-4">
         <p className="text-sm font-semibold text-foreground">Reserva temporal activa</p>
         <p className="mt-1 text-sm text-muted-foreground">
           El pago está ligado a esta cita. Si tu banco rechaza el cargo o abandonas el checkout, la cita puede liberarse para evitar dobles reservas.
         </p>
       </div>
 
-      <div className="sticky bottom-3 rounded-xl border border-border bg-card p-3 shadow-[0_12px_32px_rgba(15,37,95,0.12)] sm:hidden">
+      <div className="sticky bottom-3 rounded-[var(--public-radius-control)] border border-border bg-card p-3 shadow-[0_12px_32px_rgba(15,37,95,0.12)] sm:hidden">
         <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Siguiente paso</p>
         <p className="mt-1 text-sm font-medium text-foreground">Confirma el pago para bloquear tu horario con el doctor.</p>
       </div>
 
       {message && (
-        <div className="bg-destructive/10 border border-destructive/20 rounded-xl p-4">
+        <div className="rounded-[var(--public-radius-control)] border border-destructive/20 bg-destructive/10 p-4">
           <p className="text-sm font-medium text-destructive">No se pudo confirmar el pago.</p>
           <p className="mt-1 text-sm text-destructive">{message}</p>
           <div className="mt-3 text-sm">

@@ -10,6 +10,15 @@ import { sendAppointmentConfirmation } from './notifications'
 import { sendAppointmentConfirmation as sendWhatsAppConfirmation, getPatientPhone } from './whatsapp-notifications'
 import { cache } from '@/lib/cache'
 import { scheduleAppointmentReminders } from './reminders'
+import { expireStalePendingPaymentAppointments } from './appointment-expiry'
+
+export { expireStalePendingPaymentAppointments } from './appointment-expiry'
+
+export type PreConsultaSummary = {
+  chiefComplaint: string
+  urgencyLevel: string
+  suggestedSpecialty: string
+}
 
 export type ReservationRequest = {
   patientId: string
@@ -17,6 +26,8 @@ export type ReservationRequest = {
   date: string // YYYY-MM-DD
   time: string // HH:MM
   appointmentType?: 'in_person' | 'video'
+  consultationId?: string
+  preConsultaSummary?: PreConsultaSummary
 }
 
 export type ReservationResult = {
@@ -29,6 +40,8 @@ export type ReservationResult = {
 export async function reserveAppointmentSlot(
   request: ReservationRequest
 ): Promise<ReservationResult> {
+  await expireStalePendingPaymentAppointments({ doctorId: request.doctorId })
+
   // Paso 1: Validar que el slot está disponible
   const isAvailable = await validateSlotAvailability(
     request.doctorId,
@@ -174,6 +187,7 @@ async function createAppointmentRecord(request: ReservationRequest, holdId?: str
 
   const startTs = new Date(`${request.date}T${request.time}:00`)
   const endTs = new Date(startTs.getTime() + APPOINTMENT_CONFIG.DURATION_MINUTES * 60000)
+  const preConsultaNotes = formatPreConsultaNotes(request.preConsultaSummary)
 
   const { data, error } = await supabase
     .from('appointments')
@@ -185,6 +199,9 @@ async function createAppointmentRecord(request: ReservationRequest, holdId?: str
       status: STATUS.APPOINTMENT.PENDING_PAYMENT, // Pago inmediato, sin hold
       appointment_type: request.appointmentType || 'video',
       video_status: request.appointmentType === 'in_person' ? null : 'pending',
+      consultation_id: request.consultationId || null,
+      reason_for_visit: request.preConsultaSummary?.chiefComplaint || null,
+      notes: preConsultaNotes,
     })
     .select()
     .single()
@@ -216,6 +233,17 @@ async function createAppointmentRecord(request: ReservationRequest, holdId?: str
   }
 
   return data
+}
+
+function formatPreConsultaNotes(summary?: PreConsultaSummary) {
+  if (!summary) return null
+
+  return [
+    'Preconsulta IA',
+    `Motivo: ${summary.chiefComplaint}`,
+    `Urgencia: ${summary.urgencyLevel}`,
+    `Especialidad sugerida: ${summary.suggestedSpecialty}`,
+  ].join('\n')
 }
 
 // Bloque: Obtener detalles de cita para booking

@@ -235,9 +235,23 @@ async function confirmAppointment(appointmentId: string) {
 
   const { data, error } = await supabase
     .from('appointments')
-    .update({ status: 'confirmed' })
+    .update({ status: 'confirmed', updated_at: new Date().toISOString() })
     .eq('id', appointmentId)
-    .select()
+    .select(`
+      *,
+      doctor:doctors (
+        id,
+        specialty,
+        license_number,
+        city,
+        state,
+        office_address,
+        profile:profiles (
+          full_name,
+          photo_url
+        )
+      )
+    `)
     .single()
 
   if (error) throw error
