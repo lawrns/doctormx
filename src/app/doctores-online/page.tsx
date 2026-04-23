@@ -69,11 +69,11 @@ export default async function DoctoresOnlinePage({
       onlineOnly: true,
       specialtySlug: params.specialty,
       sortBy: 'rating',
-    }) as Promise<any[]>,
+    }),
     getAvailableSpecialties(),
   ])
 
-  const onlineDoctors = doctors.filter((d: any) => d.video_enabled === true)
+  const onlineDoctors = doctors.filter((d) => d.video_enabled === true)
 
   return (
     <div className="min-h-screen bg-transparent">
@@ -158,12 +158,12 @@ export default async function DoctoresOnlinePage({
                 nuestro asistente IA.
               </p>
               <div className="mt-6 flex justify-center gap-3">
-                <Link href="/doctors">
-                  <Button variant="outline">Ver todos los doctores</Button>
-                </Link>
-                <Link href="/app/ai-consulta">
-                  <Button variant="hero">Dr. Simeon IA</Button>
-                </Link>
+                <Button asChild variant="outline">
+                  <Link href="/doctors">Ver todos los doctores</Link>
+                </Button>
+                <Button asChild variant="hero">
+                  <Link href="/ai-consulta">Dr. Simeon IA</Link>
+                </Button>
               </div>
             </Card>
           ) : (
@@ -252,12 +252,12 @@ export default async function DoctoresOnlinePage({
                           </span>
                         </p>
                       </div>
-                      <Link href={`/book/${doctor.id}`}>
-                        <Button variant="hero" size="sm" className="gap-1">
+                      <Button asChild variant="hero" size="sm" className="gap-1">
+                        <Link href={`/book/${doctor.id}`}>
                           <Video className="h-3.5 w-3.5" />
                           Agendar consulta en linea
-                        </Button>
-                      </Link>
+                        </Link>
+                      </Button>
                     </div>
                   </div>
                 </Card>

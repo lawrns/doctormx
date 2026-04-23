@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { discoverDoctors, getAvailableSpecialties } from '@/lib/discovery'
-import { createClient } from '@/lib/supabase/server'
 import { DoctorsDirectoryClient } from './DoctorsDirectoryClient'
 
 export async function generateMetadata({
@@ -34,6 +33,7 @@ export default async function DoctorsPage({
   searchParams: Promise<{
     specialty?: string
     search?: string
+    city?: string
     sortBy?: 'rating' | 'price' | 'experience' | 'price_asc' | 'price_desc' | 'relevance'
     sortOrder?: 'asc' | 'desc'
     appointmentType?: 'all' | 'video' | 'in_person'
@@ -41,28 +41,26 @@ export default async function DoctorsPage({
 }) {
   const params = await searchParams
 
-  // Check if user is authenticated (kept for future use)
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-
   const [doctors, specialties] = await Promise.all([
     discoverDoctors({
       specialtySlug: params.specialty,
       searchQuery: params.search,
+      city: params.city,
       sortBy: params.sortBy === 'price' ? 'price_asc' : params.sortBy,
       sortOrder: params.sortOrder,
-      appointmentType: params.appointmentType as any,
+      appointmentType: params.appointmentType,
     }),
     getAvailableSpecialties(),
   ])
 
   return (
     <DoctorsDirectoryClient
-      doctors={doctors as any[]}
-      specialties={specialties as any[]}
+      doctors={doctors}
+      specialties={specialties}
       params={{
         specialty: params.specialty,
         search: params.search,
+        city: params.city,
         sortBy: params.sortBy === 'price' ? 'price_asc' : params.sortBy,
         sortOrder: params.sortOrder,
         appointmentType: params.appointmentType,

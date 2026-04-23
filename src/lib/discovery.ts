@@ -38,10 +38,11 @@ type RawDoctor = {
   years_experience: number | null
   languages: string[] | null
   status: string
+  license_number: string | null
   video_enabled: boolean | null
-  office_address?: string | null
-  offers_video?: boolean | null
-  offers_in_person?: boolean | null
+  office_address: string | null
+  offers_video: boolean | null
+  offers_in_person: boolean | null
   doctor_specialties: Array<{
     specialty_id: string
     specialties: {
@@ -54,18 +55,96 @@ type RawDoctor = {
     id: string
     full_name: string
     photo_url: string | null
+    phone?: string | null
   } | null
   doctor_subscriptions: Array<{
     id: string
     status: string
     current_period_end: string
   }> | null
+  doctor_verifications?: Array<{
+    cedula: string | null
+    sep_verified: boolean | null
+    verified_at: string | null
+    verification_data: Record<string, unknown> | null
+  }> | null
+}
+
+export interface DoctorVerificationSummary {
+  cedula: string | null
+  sep_verified: boolean
+  verified_at: string | null
+  institution: string | null
+}
+
+export interface PublicDoctorSummary {
+  id: string
+  status: string
+  bio: string | null
+  languages: string[]
+  years_experience: number | null
+  city: string | null
+  state: string | null
+  country: string
+  price_cents: number
+  currency: string
+  rating_avg: number
+  rating_count: number
+  license_number: string | null
+  video_enabled: boolean
+  office_address: string | null
+  offers_video: boolean
+  offers_in_person: boolean
+  verification: DoctorVerificationSummary | null
+  profile: {
+    id: string
+    full_name: string
+    photo_url: string | null
+  } | null
+  specialties: Array<{
+    id: string
+    name: string | undefined
+    slug: string | undefined
+  }>
+}
+
+export interface PublicDoctorProfile extends PublicDoctorSummary {
+  profile: {
+    id: string
+    full_name: string
+    photo_url: string | null
+    phone: string | null
+  } | null
+}
+
+function summarizeVerification(
+  verifications?: RawDoctor['doctor_verifications']
+): DoctorVerificationSummary | null {
+  if (!verifications || verifications.length === 0) {
+    return null
+  }
+
+  const verifiedRow =
+    verifications.find((row) => row.sep_verified) || verifications[0]
+
+  const verificationData = verifiedRow.verification_data || {}
+  const institutionValue =
+    typeof verificationData.institution === 'string' && verificationData.institution.trim()
+      ? verificationData.institution.trim()
+      : null
+
+  return {
+    cedula: verifiedRow.cedula,
+    sep_verified: Boolean(verifiedRow.sep_verified),
+    verified_at: verifiedRow.verified_at,
+    institution: institutionValue,
+  }
 }
 
 // Sistema completo: buscar doctores con filtros
-export async function discoverDoctors(filters?: DiscoveryFilters) {
+export async function discoverDoctors(filters?: DiscoveryFilters): Promise<PublicDoctorSummary[]> {
   const cacheKey = `discover:${JSON.stringify(filters || {})}`
-  const cached = await cache.get(cacheKey)
+  const cached = (await cache.get(cacheKey)) as PublicDoctorSummary[] | null
   if (cached) return cached
 
   const doctors = await fetchDoctors(filters)
@@ -73,7 +152,7 @@ export async function discoverDoctors(filters?: DiscoveryFilters) {
   return doctors
 }
 
-async function fetchDoctors(filters?: DiscoveryFilters) {
+async function fetchDoctors(filters?: DiscoveryFilters): Promise<PublicDoctorSummary[]> {
   const supabase = createServiceClient()
 
   try {
@@ -88,7 +167,11 @@ async function fetchDoctors(filters?: DiscoveryFilters) {
       years_experience,
       languages,
       status,
+      license_number,
       video_enabled,
+      office_address,
+      offers_video,
+      offers_in_person,
       doctor_specialties (
         specialty_id,
         specialty:specialties (
@@ -101,6 +184,12 @@ async function fetchDoctors(filters?: DiscoveryFilters) {
         id,
         full_name,
         photo_url
+      ),
+      doctor_verifications (
+        cedula,
+        sep_verified,
+        verified_at,
+        verification_data
       ),
       doctor_subscriptions (
         id,
@@ -115,7 +204,6 @@ async function fetchDoctors(filters?: DiscoveryFilters) {
       .eq('status', 'approved')
       .eq('is_listed', true)
       .order('rating_avg', { ascending: false, nullsFirst: false })
-      .limit(50)
 
     if (result.error?.code === '42703' && result.error.message.includes('is_listed')) {
       logger.warn('Discovery is_listed filter skipped because migration is not applied')
@@ -124,7 +212,6 @@ async function fetchDoctors(filters?: DiscoveryFilters) {
         .select(doctorSelect)
         .eq('status', 'approved')
         .order('rating_avg', { ascending: false, nullsFirst: false })
-        .limit(50)
     }
 
     const { data: doctors, error } = result
@@ -252,6 +339,12 @@ async function fetchDoctors(filters?: DiscoveryFilters) {
       currency: 'MXN',
       rating_avg: doctor.rating_avg || 0,
       rating_count: doctor.rating_count || 0,
+      license_number: doctor.license_number,
+      video_enabled: doctor.video_enabled ?? doctor.offers_video ?? false,
+      office_address: doctor.office_address || null,
+      offers_video: doctor.offers_video ?? doctor.video_enabled ?? false,
+      offers_in_person: doctor.offers_in_person ?? Boolean(doctor.office_address),
+      verification: summarizeVerification(doctor.doctor_verifications),
       profile: doctor.profiles ? {
         id: doctor.profiles.id,
         full_name: doctor.profiles.full_name,
@@ -270,7 +363,11 @@ async function fetchDoctors(filters?: DiscoveryFilters) {
 }
 
 // Bloque: Obtener especialidades disponibles
-export async function getAvailableSpecialties() {
+export async function getAvailableSpecialties(): Promise<Array<{
+  id: string
+  slug: string
+  name: string
+}>> {
   const supabase = createServiceClient()
 
   try {
@@ -281,7 +378,7 @@ export async function getAvailableSpecialties() {
       .order('name', { ascending: true })
 
     if (!error && specialties && specialties.length > 0) {
-      return specialties
+      return specialties as Array<{ id: string; slug: string; name: string }>
     }
 
     // Fallback: return empty array
@@ -293,8 +390,8 @@ export async function getAvailableSpecialties() {
 }
 
 // Bloque: Obtener perfil completo del doctor
-export async function getDoctorProfile(doctorId: string) {
-  const cached = await cache.getDoctorProfile(doctorId)
+export async function getDoctorProfile(doctorId: string): Promise<PublicDoctorProfile | null> {
+  const cached = (await cache.getDoctorProfile(doctorId)) as PublicDoctorProfile | null
   if (cached) return cached
 
   const profile = await fetchDoctorProfile(doctorId)
@@ -304,7 +401,7 @@ export async function getDoctorProfile(doctorId: string) {
   return profile
 }
 
-async function fetchDoctorProfile(doctorId: string) {
+async function fetchDoctorProfile(doctorId: string): Promise<PublicDoctorProfile | null> {
   const supabase = createServiceClient()
 
   try {
@@ -321,6 +418,11 @@ async function fetchDoctorProfile(doctorId: string) {
         years_experience,
         languages,
         status,
+        license_number,
+        video_enabled,
+        office_address,
+        offers_video,
+        offers_in_person,
         doctor_specialties (
           specialty_id,
           specialty:specialties (
@@ -334,6 +436,12 @@ async function fetchDoctorProfile(doctorId: string) {
           full_name,
           photo_url,
           phone
+        ),
+        doctor_verifications (
+          cedula,
+          sep_verified,
+          verified_at,
+          verification_data
         ),
         doctor_subscriptions (
           id,
@@ -374,12 +482,14 @@ async function fetchDoctorProfile(doctorId: string) {
       country: 'MX',
       price_cents: typedDoctor.price_cents,
       currency: 'MXN',
-      video_enabled: typedDoctor.video_enabled,
-      office_address: typedDoctor.office_address,
-      offers_video: typedDoctor.offers_video,
-      offers_in_person: typedDoctor.offers_in_person,
+      license_number: typedDoctor.license_number,
+      video_enabled: typedDoctor.video_enabled ?? typedDoctor.offers_video ?? false,
+      office_address: typedDoctor.office_address || null,
+      offers_video: typedDoctor.offers_video ?? typedDoctor.video_enabled ?? false,
+      offers_in_person: typedDoctor.offers_in_person ?? Boolean(typedDoctor.office_address),
       rating_avg: typedDoctor.rating_avg || 0,
       rating_count: typedDoctor.rating_count || 0,
+      verification: summarizeVerification(typedDoctor.doctor_verifications),
       profile: typedDoctor.profiles ? {
         id: typedDoctor.profiles.id,
         full_name: typedDoctor.profiles.full_name,

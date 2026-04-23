@@ -4,8 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { Card } from '@/components/ui/card'
-import { DxButton } from '@/components/DxButton'
-import { CheckCircle, Clock, AlertTriangle, Stethoscope, ArrowRight } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { CheckCircle, Clock, AlertTriangle, Stethoscope, ArrowRight, MessageCircle } from 'lucide-react'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { Eyebrow } from '@/components/Eyebrow'
 import Link from 'next/link'
@@ -56,9 +56,7 @@ function DrSimeonAvatar({ size = 'default' }: { size?: 'default' | 'large' }) {
 function PatientAvatar() {
   return (
     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#eef0f5] text-[#5c6783]">
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-      </svg>
+      <MessageCircle className="h-5 w-5" aria-hidden="true" />
     </div>
   )
 }
@@ -83,18 +81,18 @@ type Message = {
   id: number
   role: 'patient' | 'ai'
   content: string
-  timestamp: string
+  label: string
 }
 
 const conversationScript: Omit<Message, 'id'>[] = [
-  { role: 'patient', content: 'Hola, tengo un dolor de cabeza muy fuerte desde hace 2 horas', timestamp: '10:34' },
-  { role: 'ai', content: 'Entiendo, María. Vamos a evaluar esto juntos. ¿El dolor apareció de manera repentina o fue gradual?', timestamp: '10:34' },
-  { role: 'patient', content: 'Fue muy repentino, como un trueno', timestamp: '10:35' },
-  { role: 'ai', content: '¿El dolor se queda en un lugar o se extiende hacia el cuello u otra zona?', timestamp: '10:35' },
-  { role: 'patient', content: 'Se extiende hacia mi cuello y me duele al mover la cabeza', timestamp: '10:36' },
-  { role: 'ai', content: 'En una escala de 1 a 10, ¿qué tan intenso es el dolor? ¿Has tenido fiebre, náusea o vómito?', timestamp: '10:36' },
-  { role: 'patient', content: 'Es un 8/10. Sí, tengo náusea pero no he vomitado', timestamp: '10:37' },
-  { role: 'ai', content: 'Resumen: Dolor de cabeza súbito e intenso con rigidez de nuca.\n\nRecomendación: Busca atención médica urgente. Te conectaré con un neurólogo disponible ahora.', timestamp: '10:38' },
+  { role: 'patient', content: 'Tengo un dolor de cabeza muy fuerte desde hace dos horas', label: 'Contexto' },
+  { role: 'ai', content: 'Voy a evaluarlo contigo. ¿Apareció de forma repentina o fue gradual?', label: 'Pregunta clínica' },
+  { role: 'patient', content: 'Fue muy repentino, como un trueno', label: 'Respuesta' },
+  { role: 'ai', content: '¿Se queda en una zona o se extiende al cuello u otra parte?', label: 'Exploración' },
+  { role: 'patient', content: 'Se extiende al cuello y me duele mover la cabeza', label: 'Respuesta' },
+  { role: 'ai', content: 'En una escala de 1 a 10, ¿qué tan intenso es? ¿Hay fiebre, náusea o vómito?', label: 'Exploración' },
+  { role: 'patient', content: 'Es un 8/10 y tengo náusea', label: 'Respuesta' },
+  { role: 'ai', content: 'Resumen: dolor súbito e intenso con rigidez. Recomendación: atención urgente.', label: 'Salida clínica' },
 ]
 
 function AnimatedMessage({ message, index }: { message: Message; index: number }) {
@@ -145,8 +143,8 @@ function AnimatedMessage({ message, index }: { message: Message; index: number }
             )}
           </p>
         </div>
-        <span className={`mt-1 font-mono text-[11px] text-[#5c6783] ${isPatient ? 'mr-2' : 'ml-2'}`}>
-          {message.timestamp}
+        <span className={`mt-1 font-mono text-[11px] uppercase tracking-[0.12em] text-[#5c6783] ${isPatient ? 'mr-2' : 'ml-2'}`}>
+          {message.label}
         </span>
       </div>
 
@@ -199,7 +197,7 @@ export default function DrSimeonShowcase() {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <Eyebrow>Asistente IA Médico</Eyebrow>
+            <Eyebrow>Demostración guiada</Eyebrow>
 
             <h2 className="font-display text-[clamp(2rem,4vw,3.5rem)] font-bold leading-[1.02] tracking-[-0.02em] text-[#0a1533]">
               Dr. Simeon AI
@@ -207,7 +205,7 @@ export default function DrSimeonShowcase() {
             </h2>
 
             <p className="text-lg leading-relaxed text-[#5c6783]">
-              Nuestro asistente con IA médica realiza una evaluación completa de tus síntomas usando metodología OPQRST, detecta señales de alerta y te conecta con el especialista adecuado en minutos.
+              Este panel muestra un ejemplo ilustrativo de cómo Dr. Simeon orienta síntomas, detecta señales de alarma y deriva a un especialista humano cuando hace falta.
             </p>
 
             <ul className="space-y-3">
@@ -232,21 +230,19 @@ export default function DrSimeonShowcase() {
             </ul>
 
             <div className="flex flex-col gap-3 pt-4 sm:flex-row">
-              <Link href="/app/ai-consulta">
-                <DxButton variant="primary" size="lg">
+              <Button asChild variant="hero" size="lg">
+                <Link href="/app/ai-consulta">
                   Agendar Consulta
                   <ArrowRight className="h-4 w-4" />
-                </DxButton>
-              </Link>
-              <Link href="/ai-consulta">
-                <DxButton variant="ghost" size="lg">
-                  Probar IA Ahora
-                </DxButton>
-              </Link>
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <Link href="/ai-consulta">Probar IA Ahora</Link>
+              </Button>
             </div>
 
             <p className="text-sm text-[#5c6783]">
-              La IA asiste, no diagnostica. Respaldo médico certificado.
+              La IA asiste, no diagnostica. Este flujo es un ejemplo, no una consulta real.
             </p>
           </motion.div>
 
@@ -259,15 +255,15 @@ export default function DrSimeonShowcase() {
           >
             <Card className="relative mx-auto max-w-md overflow-hidden border-[#d4d9e3] bg-card shadow-[0_20px_40px_-12px_rgba(15,37,95,0.15)]">
               {/* Chat Header — Ink background */}
-              <div className="flex items-center gap-3 bg-[#0a1533] px-6 py-4">
-                <DrSimeonAvatar />
-                <div className="flex-1">
-                  <h3 className="font-display text-sm font-semibold text-[#f7f8fb]">Dr. Simeon</h3>
-                  <div className="flex items-center gap-1.5">
-                    <span className="h-2 w-2 rounded-full bg-[#00a878]" />
-                    <span className="text-xs text-[#f7f8fb]/70">En línea</span>
-                  </div>
-                </div>
+                  <div className="flex items-center gap-3 bg-[#0a1533] px-6 py-4">
+                    <DrSimeonAvatar />
+                    <div className="flex-1">
+                      <h3 className="font-display text-sm font-semibold text-[#f7f8fb]">Dr. Simeon</h3>
+                      <div className="flex items-center gap-1.5">
+                        <span className="h-2 w-2 rounded-full bg-[#00a878]" />
+                        <span className="text-xs text-[#f7f8fb]/70">Ejemplo ilustrativo</span>
+                      </div>
+                    </div>
                 <button
                   onClick={resetConversation}
                   className="rounded-full p-2 text-[#f7f8fb]/50 transition-colors hover:bg-card/10 hover:text-[#f7f8fb]"
@@ -297,14 +293,14 @@ export default function DrSimeonShowcase() {
               </div>
 
               {/* Chat Input (Disabled - Demo Only) */}
-              <div className="border-t border-[#d4d9e3] bg-[#f7f8fb] p-4">
-                <div className="flex items-center gap-2 rounded-full border border-[#d4d9e3] bg-card px-4 py-2 opacity-60">
-                  <input
-                    type="text"
-                    placeholder="Escribe tu mensaje..."
-                    disabled
-                    className="flex-1 bg-transparent text-sm text-[#5c6783] outline-none"
-                  />
+                  <div className="border-t border-[#d4d9e3] bg-[#f7f8fb] p-4">
+                  <div className="flex items-center gap-2 rounded-full border border-[#d4d9e3] bg-card px-4 py-2 opacity-60">
+                    <input
+                      type="text"
+                      placeholder="Esta es una demo"
+                      disabled
+                      className="flex-1 bg-transparent text-sm text-[#5c6783] outline-none"
+                    />
                   <button disabled className="rounded-full bg-[#1f48de] p-2 text-white opacity-50">
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />

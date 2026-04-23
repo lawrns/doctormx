@@ -1,6 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import { LandingPageClient } from '@/components/landing'
+import { getPublicLandingData } from '@/lib/public-trust'
 
 export default async function Home() {
   const hasSupabaseEnv =
@@ -34,5 +35,7 @@ export default async function Home() {
     return <LandingPageClient />
   }
 
-  return <LandingPageClient />
+  const landingData = await getPublicLandingData().catch(() => null)
+
+  return <LandingPageClient trustData={landingData} />
 }

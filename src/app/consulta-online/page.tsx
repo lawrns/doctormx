@@ -108,8 +108,17 @@ const testimonials = [
 export default async function ConsultaOnlinePage() {
   const [specialties, onlineDoctors] = await Promise.all([
     getAvailableSpecialties(),
-    discoverDoctors({ onlineOnly: true, sortBy: 'rating' }) as Promise<any[]>,
+    discoverDoctors({ onlineOnly: true, sortBy: 'rating' }),
   ])
+  const ratingTotal = onlineDoctors.reduce((sum, doctor) => sum + Math.max(doctor.rating_count, 0), 0)
+  const averageRating =
+    ratingTotal > 0
+      ? Math.round(
+          (onlineDoctors.reduce((sum, doctor) => sum + doctor.rating_avg * Math.max(doctor.rating_count, 0), 0) /
+            ratingTotal) *
+            10
+        ) / 10
+      : null
 
   return (
     <div className="min-h-screen bg-transparent">
@@ -127,17 +136,17 @@ export default async function ConsultaOnlinePage() {
                 description="Conectate con doctores verificados desde cualquier lugar de Mexico. Sin filas de espera, pago seguro y recetas digitales."
               />
               <div className="flex flex-wrap gap-3">
-                <Link href="/doctores-online">
-                  <Button variant="hero" size="lg" className="gap-2">
+                <Button asChild variant="hero" size="lg" className="gap-2">
+                  <Link href="/doctores-online">
                     <Video className="h-5 w-5" />
                     Encuentra a tu especialista
-                  </Button>
-                </Link>
-                <Link href="/doctors">
-                  <Button variant="outline" size="lg">
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <Link href="/doctors">
                     Ver todos los doctores
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               </div>
               <div className="flex items-center gap-4 text-sm text-[hsl(var(--text-secondary))]">
                 <span className="flex items-center gap-1.5">
@@ -171,11 +180,13 @@ export default async function ConsultaOnlinePage() {
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-[hsl(var(--text-secondary))]">Calificacion promedio</span>
-                  <span className="font-semibold text-[hsl(var(--text-primary))]">4.7 / 5.0</span>
+                  <span className="font-semibold text-[hsl(var(--text-primary))]">
+                    {averageRating ? `${averageRating.toFixed(1)} / 5.0` : '—'}
+                  </span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-[hsl(var(--text-secondary))]">Tiempo de conexion</span>
-                  <span className="font-semibold text-[hsl(var(--text-primary))]">&lt; 2 min</span>
+                  <span className="text-[hsl(var(--text-secondary))]">Disponibilidad actual</span>
+                  <span className="font-semibold text-[hsl(var(--text-primary))]">Según catálogo real</span>
                 </div>
               </div>
             </Card>
@@ -314,12 +325,12 @@ export default async function ConsultaOnlinePage() {
               description="Encuentra al especialista correcto y agenda tu videoconsulta en minutos."
             />
             <div className="mt-6">
-              <Link href="/doctores-online">
-                <Button variant="hero" size="lg" className="gap-2">
+              <Button asChild variant="hero" size="lg" className="gap-2">
+                <Link href="/doctores-online">
                   Encuentra a tu especialista
                   <ArrowRight className="h-5 w-5" />
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
           </Card>
         </section>

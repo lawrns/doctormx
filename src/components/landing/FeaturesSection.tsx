@@ -7,33 +7,33 @@ import { BadgeCheck, Video, Calendar, FileText, Shield, MessageSquare } from 'lu
 const features = [
   {
     icon: BadgeCheck,
-    title: 'Doctores revisados antes de listar',
-    description: 'Cada especialista pasa por revisión interna de perfil y credenciales antes de recibir pacientes desde la plataforma.',
+    title: 'Perfil y cédula visibles',
+    description: 'Cuando el expediente lo permite, el doctor muestra foto real, cédula y estado de verificación SEP.',
   },
   {
     icon: Video,
-    title: 'Videoconsulta HD desde casa',
-    description: 'Consultas por video con calidad HD y conexión segura. Tu doctor te ve y escucha como si estuvieras en su consultorio.',
+    title: 'Videoconsulta o presencial',
+    description: 'La modalidad se muestra solo cuando el doctor la tiene habilitada en su perfil y agenda.',
   },
   {
     icon: Calendar,
-    title: 'Citas en menos de 24 horas',
-    description: 'Encuentra disponibilidad en tiempo real. Agenda tu consulta en minutos, no en semanas.',
+    title: 'Disponibilidad real',
+    description: 'Los horarios vienen del calendario de reserva, no de una estimación visual.',
   },
   {
     icon: FileText,
-    title: 'Dr. Simeon: orientación con límites',
-    description: 'El asistente ayuda a entender síntomas y preparar preguntas para el doctor. No diagnostica, orienta.',
+    title: 'Dr. Simeon con límites',
+    description: 'La IA ayuda a ordenar el caso y a identificar señales de alarma antes de agendar.',
   },
   {
     icon: Shield,
-    title: 'Privacidad de grado médico',
-    description: 'Tratamos la información de salud como sensible y limitamos su exposición dentro de los flujos de consulta.',
+    title: 'Privacidad explícita',
+    description: 'La información sensible se limita al flujo clínico y se explica en la política de seguridad.',
   },
   {
     icon: MessageSquare,
-    title: 'Seguimiento continuo',
-    description: 'Mensajea a tu doctor antes y después de la consulta. Tu historial médico siempre accesible.',
+    title: 'Reseñas completadas',
+    description: 'Las historias de confianza provienen de citas terminadas y valoraciones reales.',
   },
 ]
 
@@ -57,9 +57,9 @@ export function FeaturesSection() {
             <h2 id="features-section-heading" className="font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
               Salud digital con puntos de control humanos.
             </h2>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-muted-foreground">
-              Una plataforma diseñada para conectar orientación, seguridad, agenda, pago y seguimiento sin convertir cada módulo en una superficie pesada.
-            </p>
+              <p className="mt-4 max-w-2xl text-base leading-7 text-muted-foreground">
+              Una plataforma diseñada para conectar orientación, evidencia, agenda y pago sin disfrazar la interfaz de promesa comercial.
+              </p>
 
             <div className="mt-7 hidden max-w-sm border-t border-border pt-5 lg:block">
               <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-vital">

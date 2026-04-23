@@ -8,39 +8,14 @@ import { APPOINTMENT_CONFIG } from '@/config/constants'
 import PreConsultaChat from '@/components/PreConsultaChat'
 import { useToast } from '@/components/Toast'
 import { AI_CONFIG } from '@/lib/ai/config'
-import { MapPin, Monitor, User } from 'lucide-react'
+import { Clock, CreditCard, FileText, MapPin, Monitor, ShieldCheck, User, Video } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
 import { DoctorMxLogo } from '@/components/brand/DoctorMxLogo'
+import type { PublicDoctorProfile } from '@/lib/discovery'
 
-type DoctorProfile = {
-  id: string
-  status: string
-  bio: string | null
-  languages: string[]
-  years_experience: number | null
-  city: string | null
-  state: string | null
-  country: string
-  price_cents: number
-  currency: string
-  office_address?: string | null
+type DoctorProfile = PublicDoctorProfile & {
   address?: string | null
-  video_enabled?: boolean | null
-  offers_video?: boolean | null
-  offers_in_person?: boolean | null
-  rating_avg: number
-  rating_count: number
-  profile: {
-    id: string
-    full_name: string
-    photo_url: string | null
-    phone?: string | null
-  } | null
-  specialties: Array<{
-    id: string
-    name: string | undefined
-    slug: string | undefined
-  }>
 }
 
 type UserProfile = {
@@ -58,6 +33,15 @@ type BookingFormProps = {
 
 const WEEKDAYS = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb']
 const MONTHS = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+
+function formatVerifiedDate(date: Date | null) {
+  if (!date) return 'Sin fecha pública'
+  return date.toLocaleDateString('es-MX', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  })
+}
 
 export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
   const router = useRouter()
@@ -251,6 +235,12 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
   const officeAddress = doctor.office_address || doctor.address || [doctor.city, doctor.state].filter(Boolean).join(', ')
   const canBookVideo = doctor.offers_video !== false
   const canBookInPerson = Boolean(doctor.office_address && doctor.offers_in_person === true)
+  const doctorPhotoUrl = doctor.profile?.photo_url || null
+  const verificationDate = doctor.verification?.verified_at ? new Date(doctor.verification.verified_at) : null
+  const consultationModes = [
+    canBookVideo ? 'Videoconsulta' : null,
+    canBookInPerson ? 'Presencial' : null,
+  ].filter(Boolean) as string[]
 
   const goToPreviousMonth = () => {
     setCurrentMonth(prev => new Date(prev.getFullYear(), prev.getMonth() - 1, 1))
@@ -271,7 +261,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
   const isNextMonthDisabled = () => {
     const nextMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1)
     const maxMonth = new Date()
-    maxMonth.setDate(maxDate.getDate() + APPOINTMENT_CONFIG.MAX_ADVANCE_DAYS)
+    maxMonth.setDate(maxMonth.getDate() + APPOINTMENT_CONFIG.MAX_ADVANCE_DAYS)
     maxMonth.setDate(1)
     return nextMonth > maxMonth
   }
@@ -287,26 +277,29 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
           >
             <DoctorMxLogo />
           </Link>
-          <Link href={`/doctors/${doctor.id}`} className="text-muted-foreground hover:text-primary font-medium">← Volver al perfil</Link>
+          <Link href={`/doctors/${doctor.id}`} className="text-muted-foreground font-medium hover:text-primary">
+            ← Volver al perfil
+          </Link>
         </div>
       </header>
-      <main className="max-w-2xl mx-auto px-4 py-8">
-        <div className="bg-card rounded-2xl border border-border shadow-dx-1 overflow-hidden">
-          <div className="bg-primary p-6 text-primary-foreground">
-            <h1 className="font-display text-2xl font-bold tracking-tight">Agendar Consulta</h1>
-            <p className="text-primary-foreground/80 mt-1 text-sm">Selecciona la fecha y hora de tu cita</p>
-          </div>
+      <main className="editorial-shell py-8 lg:py-10">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_22rem]">
+          <div className="surface-panel-strong overflow-hidden">
+            <div className="bg-primary p-6 text-primary-foreground">
+              <h1 className="font-display text-2xl font-bold tracking-tight">Agendar consulta</h1>
+              <p className="mt-1 text-sm text-primary-foreground/80">Selecciona la fecha y hora de tu cita.</p>
+            </div>
           <div className="p-6">
             <div className="bg-secondary/50 p-4 rounded-xl mb-6 flex items-center gap-4 border border-border">
               <div className="w-16 h-16 bg-gradient-to-br from-cobalt-100 to-cobalt-200 rounded-xl overflow-hidden">
-                {doctor.profile?.photo_url ? (
-                  <Image src={doctor.profile.photo_url} alt={doctor.profile.full_name} width={64} height={64} className="object-cover w-full h-full" />
+                {doctorPhotoUrl ? (
+                  <Image src={doctorPhotoUrl} alt={doctor.profile?.full_name || 'Doctor'} width={64} height={64} className="object-cover w-full h-full" />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center"><User className="w-8 h-8 text-muted-foreground" /></div>
                 )}
               </div>
               <div className="flex-1">
-                <p className="font-semibold text-foreground text-lg">Dr. {doctor.profile?.full_name}</p>
+                <p className="font-semibold text-foreground text-lg">Dr. {doctor.profile?.full_name || 'Doctor'}</p>
                 <p className="text-sm text-muted-foreground">{appointmentType === 'video' ? 'Consulta en línea' : 'Consulta presencial'}</p>
               </div>
               <div className="text-right">
@@ -594,7 +587,82 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                 </Button>
               )}
             </form>
+            </div>
           </div>
+
+          <aside className="space-y-4 lg:sticky lg:top-24 lg:self-start">
+            <Card className="surface-panel p-6">
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--public-muted))]">
+                Resumen del doctor
+              </p>
+              <h2 className="mt-2 font-display text-xl font-semibold tracking-tight text-[hsl(var(--public-ink))]">
+                {doctor.profile?.full_name || 'Doctor'}
+              </h2>
+              <p className="mt-1 text-sm leading-6 text-[hsl(var(--public-muted))]">
+                {formatPrice(doctor.price_cents, doctor.currency)} por consulta
+              </p>
+              <div className="mt-4 space-y-3 border-t border-[hsl(var(--public-border)/0.8)] pt-4 text-sm text-[hsl(var(--public-muted))]">
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="h-4 w-4 text-[hsl(var(--brand-leaf))]" />
+                  <span>Cédula {doctor.verification?.cedula || doctor.license_number || 'no visible'}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock className="h-4 w-4 text-[hsl(var(--brand-ocean))]" />
+                  <span>{formatVerifiedDate(verificationDate)}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Video className="h-4 w-4 text-[hsl(var(--brand-ocean))]" />
+                  <span>{consultationModes.join(' · ') || 'Modalidad por confirmar'}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CreditCard className="h-4 w-4 text-[hsl(var(--brand-ocean))]" />
+                  <span>Pago seguro y reserva temporal hasta confirmar</span>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="surface-panel p-6">
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--public-muted))]">
+                Qué pasa después
+              </p>
+              <ol className="mt-4 space-y-3 text-sm leading-6 text-[hsl(var(--public-muted))]">
+                <li className="flex gap-3">
+                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[hsl(var(--surface-tint))] font-semibold text-[hsl(var(--brand-ocean))]">
+                    1
+                  </span>
+                  <span>Elegir horario y modalidad reales.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[hsl(var(--surface-tint))] font-semibold text-[hsl(var(--brand-ocean))]">
+                    2
+                  </span>
+                  <span>Confirmar reserva y completar el pago.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[hsl(var(--surface-tint))] font-semibold text-[hsl(var(--brand-ocean))]">
+                    3
+                  </span>
+                  <span>Recibir confirmación y acceso al siguiente paso.</span>
+                </li>
+              </ol>
+            </Card>
+
+            <Card className="surface-panel p-6">
+              <div className="flex items-start gap-3">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[hsl(var(--surface-tint))] text-[hsl(var(--brand-ocean))]">
+                  <FileText className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="font-display text-lg font-semibold tracking-tight text-[hsl(var(--public-ink))]">
+                    IA con límites
+                  </p>
+                  <p className="mt-1 text-sm leading-6 text-[hsl(var(--public-muted))]">
+                    Dr. Simeon prepara el contexto, pero el médico humano toma la decisión clínica.
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </aside>
         </div>
       </main>
       <PreConsultaChat 
@@ -604,7 +672,9 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
           setPreConsultaCompleted(true); 
           setPreConsultaSummary(summary); 
           setShowPreConsulta(false); 
-          setTimeout(() => (document.querySelector('form') as HTMLFormElement)?.requestSubmit(), 500) 
+          setTimeout(() => {
+            (document.querySelector('form') as HTMLFormElement)?.requestSubmit()
+          }, 500)
         }} 
       />
     </div>

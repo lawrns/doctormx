@@ -1,151 +1,107 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { BadgeCheck, MapPin, Star } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 import { Eyebrow } from '@/components/Eyebrow'
-import { BadgeCheck, Star, MapPin } from 'lucide-react'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
+import type { PublicLandingData } from '@/lib/public-trust'
 
-const testimonials = [
-  {
-    name: 'María García L.',
-    role: 'Paciente verificada',
-    location: 'Ciudad de México',
-    initials: 'MG',
-    bg: 'bg-[#ffe4dc]',
-    text: 'text-[#0a1533]',
-    content:
-      'Encontré un cardiólogo excelente en 10 minutos. La videoconsulta fue tan profesional como ir al consultorio, pero sin perder 3 horas en traslados. Ya llevo 4 consultas de seguimiento.',
-    rating: 5,
-    verified: true,
-  },
-  {
-    name: 'Dr. Carlos Mendoza R.',
-    role: 'Cardiólogo · Cédula 8745632',
-    location: 'Guadalajara, Jal.',
-    initials: 'CM',
-    bg: 'bg-[#eef4ff]',
-    text: 'text-[#0a1533]',
-    content:
-      'Doctor.mx me permite atender pacientes de todo México sin limitarme a mi consultorio físico. El sistema de pagos es confiable y el soporte resuelve cualquier duda en minutos.',
-    rating: 5,
-    verified: true,
-  },
-  {
-    name: 'Ana Rodríguez P.',
-    role: 'Paciente verificada',
-    location: 'Monterrey, N.L.',
-    initials: 'AR',
-    bg: 'bg-[#d7f5e6]',
-    text: 'text-[#0a1533]',
-    content:
-      'Usé Dr. Simeon para entender mis síntomas antes de mi consulta. Me ayudó a preparar las preguntas correctas. La segunda opinión que obtuve me dio tranquilidad antes de decidir mi tratamiento.',
-    rating: 5,
-    verified: true,
-  },
-]
+type TestimonialsSectionProps = {
+  trustData?: PublicLandingData | null
+}
 
-export function TestimonialsSection() {
+export function TestimonialsSection({ trustData }: TestimonialsSectionProps) {
   const prefersReducedMotion = useReducedMotion()
+  const reviews = trustData?.reviewHighlights || []
+
+  if (reviews.length === 0) {
+    return null
+  }
 
   return (
-    <section className="relative overflow-hidden bg-card py-16 sm:py-20">
+    <section className="relative overflow-hidden bg-[linear-gradient(180deg,hsl(var(--card))_0%,hsl(var(--surface-quiet))_100%)] py-16 sm:py-20">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
+          transition={{ duration: 0.5, ease: [0, 0, 0.2, 1] }}
           className="mb-10 max-w-3xl"
         >
-          <Eyebrow className="mb-4">Historias reales</Eyebrow>
-          <h2 className="font-display text-[clamp(2rem,4vw,3.5rem)] font-bold leading-[1.02] tracking-[-0.02em] text-[#0a1533]">
-            Experiencias que muestran dónde aporta Doctor.mx.
+          <Eyebrow className="mb-4">Reseñas verificadas</Eyebrow>
+          <h2 className="font-display text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.02] tracking-[-0.03em] text-[hsl(var(--public-ink))]">
+            Opiniones reales de consultas completadas.
           </h2>
-          <p className="mt-4 max-w-xl text-[15px] leading-[1.5] text-[#5c6783]">
-            Testimonios enfocados en velocidad, preparación clínica y continuidad con médicos humanos.
+          <p className="mt-4 max-w-2xl text-[15px] leading-[1.6] text-[hsl(var(--public-muted))]">
+            Mostramos reseñas de pacientes que cerraron una consulta real, con nombre, contexto y el médico al que calificaron.
           </p>
         </motion.div>
 
-        <div className="grid gap-5 md:grid-cols-[1.1fr_0.9fr] lg:grid-cols-[1.1fr_0.9fr_1fr]">
-          {testimonials.map((testimonial, index) => (
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {reviews.map((review, index) => (
             <motion.div
-              key={testimonial.name}
-              initial={{ opacity: 0, y: 30 }}
+              key={review.id}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{
-                duration: 0.5,
-                delay: index * 0.1,
+                duration: 0.45,
+                delay: prefersReducedMotion ? 0 : index * 0.08,
                 ease: [0, 0, 0.2, 1],
               }}
             >
-              <Card
-                className="relative h-full border-[#e3e6ee]/80 bg-card p-8 shadow-[0_1px_2px_rgba(15,37,95,0.06)] transition-transform duration-300 hover:-translate-y-0.5 focus-within:ring-2 focus-within:ring-[#3a66f5] focus-within:ring-offset-2"
-                tabIndex={0}
-                role="article"
-                aria-label={`Testimonio de ${testimonial.name}`}
-              >
-                {/* Stars */}
+              <Card className="surface-panel flex h-full flex-col rounded-[28px] p-6 shadow-[0_1px_2px_rgba(15,37,95,0.06)]">
                 <div
                   className="mb-4 flex gap-1"
                   role="img"
-                  aria-label={`Calificación: ${testimonial.rating} de 5 estrellas`}
+                  aria-label={`Calificación: ${review.rating} de 5 estrellas`}
                 >
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      initial={prefersReducedMotion ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={
-                        prefersReducedMotion
-                          ? {}
-                          : {
-                              delay: 0.3 + i * 0.08,
-                              type: 'spring',
-                              stiffness: 400,
-                              damping: 17,
-                            }
-                      }
-                    >
-                      <Star className="h-5 w-5 fill-[#f4a736] text-[#f4a736]" aria-hidden="true" />
-                    </motion.div>
+                  {[...Array(review.rating)].map((_, starIndex) => (
+                    <Star key={starIndex} className="h-5 w-5 fill-[hsl(var(--brand-gold))] text-[hsl(var(--brand-gold))]" aria-hidden="true" />
                   ))}
                 </div>
 
-                {/* Content */}
-                <p className="relative z-10 mb-6 text-lg leading-relaxed text-[#0a1533]">
-                  "{testimonial.content}"
+                <p className="mb-6 text-[15px] leading-7 text-[hsl(var(--public-ink))]">
+                  "{review.comment}"
                 </p>
 
-                {/* Author */}
                 <div className="mt-auto flex items-center gap-3">
-                  <div
-                    className={`flex h-12 w-12 items-center justify-center rounded-full ${testimonial.bg} ${testimonial.text} font-display text-sm font-bold shadow-sm`}
-                  >
-                    {testimonial.initials}
+                  <div className="relative h-12 w-12 overflow-hidden rounded-full bg-[hsl(var(--surface-tint))]">
+                    {review.patientPhotoUrl ? (
+                      <Image
+                        src={review.patientPhotoUrl}
+                        alt={review.patientName}
+                        fill
+                        sizes="48px"
+                        className="object-cover"
+                      />
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(145deg,hsl(var(--surface-strong)),hsl(var(--surface-tint)))] text-sm font-semibold text-[hsl(var(--brand-ocean))]">
+                        {review.patientName
+                          .split(' ')
+                          .filter(Boolean)
+                          .slice(0, 2)
+                          .map((part) => part[0])
+                          .join('')
+                          .toUpperCase()}
+                      </div>
+                    )}
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <div className="flex items-center gap-1.5">
-                      <p className="font-display text-sm font-semibold text-[#0a1533]">
-                        {testimonial.name}
+                      <p className="truncate text-sm font-semibold text-[hsl(var(--public-ink))]">
+                        {review.patientName}
                       </p>
-                      {testimonial.verified && (
-                        <BadgeCheck
-                          className="h-4 w-4 text-[#00a878]"
-                          aria-label="Usuario verificado"
-                          role="img"
-                        />
-                      )}
+                      <BadgeCheck className="h-4 w-4 text-[hsl(var(--brand-leaf))]" aria-label="Paciente verificado" />
                     </div>
-                    <p className="flex items-center gap-1 text-sm text-[#5c6783]">
-                      {testimonial.role}
-                      <span className="mx-1 text-[#d4d9e3]" aria-hidden="true">
-                        •
+                    <p className="mt-1 flex items-center gap-1.5 text-sm text-[hsl(var(--public-muted))]">
+                      <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
+                      <span className="truncate">
+                        {review.doctorName} · {review.doctorSpecialty}
+                        {review.doctorCity ? ` · ${review.doctorCity}` : ''}
                       </span>
-                      <MapPin className="h-3 w-3" aria-hidden="true" />
-                      <span>{testimonial.location}</span>
                     </p>
                   </div>
                 </div>

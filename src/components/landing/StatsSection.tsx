@@ -1,63 +1,75 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Eyebrow } from '@/components/Eyebrow'
 import { BadgeCheck, ClipboardCheck, CreditCard, MessageCircle } from 'lucide-react'
+import { Eyebrow } from '@/components/Eyebrow'
+import type { PublicLandingData } from '@/lib/public-trust'
 
-const stats = [
-  { value: 'Cédula', label: 'Revisión manual antes de listar', icon: BadgeCheck },
-  { value: 'Triage', label: 'Escalación para síntomas de alarma', icon: ClipboardCheck },
-  { value: 'Pago', label: 'Reserva ligada a una cita concreta', icon: CreditCard },
-  { value: '24/7', label: 'Orientación inicial disponible en línea', icon: MessageCircle },
+type StatsSectionProps = {
+  trustData?: PublicLandingData | null
+}
+
+const defaultStats = [
+  { key: 'approvedDoctors' as const, label: 'Doctores aprobados', icon: BadgeCheck },
+  { key: 'verifiedDoctors' as const, label: 'Cédulas verificadas', icon: ClipboardCheck },
+  { key: 'reviews' as const, label: 'Reseñas reales', icon: MessageCircle },
+  { key: 'specialties' as const, label: 'Especialidades activas', icon: CreditCard },
 ]
 
-export function StatsSection() {
+export function StatsSection({ trustData }: StatsSectionProps) {
+  const metrics = trustData?.metrics
+
   return (
-    <section className="relative overflow-hidden bg-[#f7f8fb] py-16 sm:py-20">
+    <section className="relative overflow-hidden bg-[linear-gradient(180deg,hsl(var(--surface-quiet))_0%,hsl(var(--card))_100%)] py-16 sm:py-20">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
+          transition={{ duration: 0.45, ease: [0, 0, 0.2, 1] }}
           className="mb-10 max-w-3xl"
         >
-          <Eyebrow className="mb-4">Sistema operativo</Eyebrow>
-          <h2 className="font-display text-[clamp(2rem,4vw,3.5rem)] font-bold leading-[1.02] tracking-[-0.02em] text-[#0a1533]">
-            Los puntos que tienen que funcionar antes de escalar.
+          <Eyebrow className="mb-4">Señales de confianza</Eyebrow>
+          <h2 className="font-display text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.02] tracking-[-0.03em] text-[hsl(var(--public-ink))]">
+            Lo que la interfaz puede demostrar hoy.
           </h2>
-          <p className="mt-3 max-w-2xl text-[15px] leading-6 text-[#5c6783]">
-            La interfaz debe reforzar el circuito de confianza: caso clínico, revisión de seguridad, médico verificado y pago vinculado.
+          <p className="mt-3 max-w-2xl text-[15px] leading-6 text-[hsl(var(--public-muted))]">
+            Las cifras públicas solo aparecen cuando provienen de consultas reales al sistema. Si no hay dato, no se inventa.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 gap-x-8 gap-y-7 border-t border-border/80 pt-6 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.08,
-                ease: [0, 0, 0.2, 1],
-              }}
-              className="group border-b border-border/70 pb-6 sm:min-h-[132px] lg:border-b-0"
-            >
-              <div className="mb-4 text-primary">
-                <stat.icon className="h-5 w-5" aria-hidden="true" />
-              </div>
-              <div className="mb-2 font-display text-2xl font-semibold leading-tight tracking-tight text-[#0a1533]">
-                {stat.value}
-              </div>
-              <p className="text-sm font-medium leading-6 text-[#5c6783]">{stat.label}</p>
-            </motion.div>
-          ))}
+          {defaultStats.map((stat, index) => {
+            const Icon = stat.icon
+            const value = metrics ? metrics[stat.key].toLocaleString('es-MX') : '—'
+
+            return (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.45,
+                  delay: index * 0.08,
+                  ease: [0, 0, 0.2, 1],
+                }}
+                className="surface-panel rounded-[var(--public-radius-control)] p-5"
+              >
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-[hsl(var(--surface-tint))] text-[hsl(var(--brand-ocean))]">
+                  <Icon className="h-5 w-5" aria-hidden="true" />
+                </div>
+                <div className="mb-2 font-display text-2xl font-semibold leading-tight tracking-tight text-[hsl(var(--public-ink))]">
+                  {value}
+                </div>
+                <p className="text-sm font-medium leading-6 text-[hsl(var(--public-muted))]">{stat.label}</p>
+              </motion.div>
+            )
+          })}
         </div>
 
-        <p className="mt-8 max-w-lg text-xs leading-5 text-[#5c6783]/80">
-          Evitamos métricas públicas infladas. Las cifras comerciales deben aparecer aquí solo cuando estén verificadas por analítica y operaciones.
+        <p className="mt-8 max-w-2xl text-xs leading-5 text-[hsl(var(--public-muted))/0.78]">
+          Las métricas se actualizan desde el catálogo y las reseñas públicas. Se omiten si no hay datos suficientes para mostrarlas con honestidad.
         </p>
       </div>
     </section>

@@ -26,8 +26,13 @@ import { landingNavItems } from '@/lib/public-nav'
 import { ANALYTICS_EVENTS, trackClientEvent } from '@/lib/analytics/posthog'
 import { MobileCtaBar, TrustClaimBlock } from '@/components/public'
 import { DoctorMxLogo } from '@/components/brand/DoctorMxLogo'
+import type { PublicLandingData } from '@/lib/public-trust'
 
-export function LandingPageClient() {
+type LandingPageClientProps = {
+  trustData?: PublicLandingData | null
+}
+
+export function LandingPageClient({ trustData }: LandingPageClientProps) {
   useEffect(() => {
     void trackClientEvent(ANALYTICS_EVENTS.LANDING_VIEW, {
       surface: 'landing-hero',
@@ -39,7 +44,9 @@ export function LandingPageClient() {
       <div className="border-b border-[#d4d9e3]/70 bg-[#f7f8fb]/92 px-4 py-2.5 text-center backdrop-blur-xl">
         <div className="editorial-shell flex flex-col items-center justify-center gap-2 text-sm sm:flex-row sm:gap-4">
           <span className="inline-flex items-center gap-2 font-medium tracking-[-0.01em] text-[#0a1533]">
-            Orientación inicial gratis con Dr. Simeon
+            {trustData?.metrics.approvedDoctors
+              ? `${trustData.metrics.approvedDoctors.toLocaleString('es-MX')} doctores aprobados`
+              : 'Doctor.mx'}
           </span>
           <span className="hidden sm:inline text-[#d4d9e3]">|</span>
           <span className="inline-flex items-center gap-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-[#00a878]">
@@ -95,51 +102,51 @@ export function LandingPageClient() {
                     <SheetTitle className="font-display text-[#0a1533]">Explora Doctor.mx</SheetTitle>
                     <SheetDescription className="text-[#5c6783]">Navega por las principales rutas públicas desde cualquier pantalla.</SheetDescription>
                   </SheetHeader>
-                  <nav className="flex flex-col gap-2 px-4 pb-6">
-                    {landingNavItems.map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
+	                  <nav className="flex flex-col gap-2 px-4 pb-6">
+	                    {landingNavItems.map((item) => (
+	                      <Link
+	                        key={item.href}
+	                        href={item.href}
                         className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-[#1c2647] transition-colors hover:bg-[#f7f8fb] hover:text-[#0a1533]"
                       >
-                        {item.label}
-                      </Link>
-                    ))}
-                    <div className="mt-4 grid gap-3 border-t border-[#eef0f5] pt-4">
-                      <Link href="/auth/login">
-                        <Button variant="ghost" className="w-full justify-center">Iniciar sesión</Button>
-                      </Link>
-                      <Link href="/auth/register">
-                        <Button variant="hero" className="w-full justify-center">Empezar gratis</Button>
-                      </Link>
-                    </div>
-                  </nav>
-                </SheetContent>
-              </Sheet>
-              <Badge variant="luxe" className="hidden lg:inline-flex">Disponibilidad 24/7</Badge>
-              <Link href="/auth/login" className="hidden sm:inline-flex">
-                <Button variant="ghost">Iniciar sesión</Button>
-              </Link>
-              <Link href="/auth/register">
-                <Button variant="hero" className="px-5 text-sm font-semibold">
-                  Consulta gratis
-                  <ArrowUpRight className="h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
+	                        {item.label}
+	                      </Link>
+	                    ))}
+	                    <div className="mt-4 grid gap-3 border-t border-[#eef0f5] pt-4">
+	                      <Button asChild variant="ghost" className="w-full justify-center">
+	                        <Link href="/auth/login">Iniciar sesión</Link>
+	                      </Button>
+	                      <Button asChild variant="hero" className="w-full justify-center">
+	                        <Link href="/auth/register">Empezar gratis</Link>
+	                      </Button>
+	                    </div>
+	                  </nav>
+	                </SheetContent>
+	              </Sheet>
+	              <Badge variant="luxe" className="hidden lg:inline-flex">Disponibilidad 24/7</Badge>
+	              <Button asChild variant="ghost" className="hidden sm:inline-flex">
+	                <Link href="/auth/login">Iniciar sesión</Link>
+	              </Button>
+	              <Button asChild variant="hero" className="px-5 text-sm font-semibold">
+	                <Link href="/auth/register">
+	                  Consulta gratis
+	                  <ArrowUpRight className="h-4 w-4" />
+	                </Link>
+	              </Button>
+	            </div>
           </div>
         </div>
       </motion.header>
 
-      <HeroSection />
-      <SocialProofBar />
+      <HeroSection trustData={trustData} />
+      <SocialProofBar trustData={trustData} />
       <TrustClaimBlock />
       <DrSimeonShowcase />
       <HowItWorks />
       <FeaturesSection />
-      <StatsSection />
-      <TestimonialsSection />
-      <CTASection />
+      <StatsSection trustData={trustData} />
+      <TestimonialsSection trustData={trustData} />
+      <CTASection trustData={trustData} />
 
       <footer className="border-t border-[#1c2647] bg-[#0a1533] py-16 text-[#f7f8fb]">
         <div className="editorial-shell">
@@ -149,7 +156,7 @@ export function LandingPageClient() {
                 <DoctorMxLogo inverted showDescriptor />
               </Link>
               <p className="text-sm leading-relaxed text-[#f7f8fb]/70">
-                La plataforma de salud digital más confiable de México. Conectamos pacientes con los mejores especialistas certificados.
+                Una plataforma de salud digital construida para decidir con más evidencia y menos ruido.
               </p>
               <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#f7f8fb]/10 bg-[#f7f8fb]/5 px-3 py-2 font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-[#f7f8fb]/80">
                 <HeartHandshake className="h-3.5 w-3.5" />

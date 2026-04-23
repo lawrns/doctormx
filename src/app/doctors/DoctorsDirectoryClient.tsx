@@ -1,40 +1,25 @@
 'use client'
 
-import { useState, useMemo, useCallback } from 'react'
+import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import {
-  ShieldCheck,
-  MapPin,
+  ArrowRight,
   Search,
+  ShieldCheck,
   Video,
-  Stethoscope,
-  GraduationCap,
+  MapPin,
   Clock,
-  ChevronRight,
-  Sun,
-  Moon,
-  CalendarIcon,
+  Filter,
 } from 'lucide-react'
 import { DoctorMxLogo } from '@/components/brand/DoctorMxLogo'
-
-/* ────────────────────────────
-   Types
-   ──────────────────────────── */
-interface Doctor {
-  id: string
-  bio: string | null
-  price_cents: number
-  rating_avg: number
-  rating_count: number
-  city: string | null
-  state: string | null
-  years_experience: number | null
-  video_enabled: boolean | null
-  profile: { full_name: string; photo_url: string | null } | null
-  specialties: { id: string; name: string; slug: string }[]
-}
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
+import { formatCurrency, formatDoctorName } from '@/lib/utils'
+import type { PublicDoctorSummary } from '@/lib/discovery'
+import { VerificationBadge } from '@/components/TrustSignals'
 
 interface Specialty {
   id: string
@@ -45,756 +30,453 @@ interface Specialty {
 interface PageParams {
   specialty?: string
   search?: string
+  city?: string
   sortBy?: 'relevance' | 'rating' | 'price_asc' | 'price_desc' | 'experience'
   sortOrder?: 'asc' | 'desc'
   appointmentType?: 'all' | 'video' | 'in_person'
 }
 
-/* ────────────────────────────
-   Deterministic helpers
-   ──────────────────────────── */
-function hashString(str: string): number {
-  let h = 0
-  for (let i = 0; i < str.length; i++) {
-    h = (h << 5) - h + str.charCodeAt(i)
-    h |= 0
-  }
-  return Math.abs(h)
+type DoctorsDirectoryClientProps = {
+  doctors: PublicDoctorSummary[]
+  specialties: Specialty[]
+  params: PageParams
 }
 
-function getInitials(name: string): string {
+function buildInitials(name: string) {
   return name
     .split(' ')
-    .map((n) => n[0])
     .filter(Boolean)
     .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase())
     .join('')
-    .toUpperCase()
 }
 
-function generateDates(seed: string) {
-  const days = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb']
-  const today = new Date()
-  const dates = []
-  for (let i = 0; i < 8; i++) {
-    const d = new Date(today)
-    d.setDate(today.getDate() + i)
-    const label = i === 0 ? 'Hoy' : i === 1 ? 'Mañana' : days[d.getDay()]
-    const dt = `${d.getDate()} ${['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'][d.getMonth()]}`
-    dates.push({ label, dt, index: i })
-  }
-  const h = hashString(seed)
-  const activeIndex = h % dates.length
-  const strikeCount = (h >> 2) % 3
-  const strikes = new Set<number>()
-  for (let i = 0; i < strikeCount; i++) strikes.add((h >> (3 + i * 2)) % dates.length)
-  strikes.delete(activeIndex)
-  return { dates, activeIndex, strikes }
-}
-
-function pinPosition(id: string, index: number): { left: string; top: string } {
-  const h = hashString(id)
-  const cols = 4
-  const row = Math.floor(index / cols)
-  const col = index % cols
-  const baseLeft = 10 + col * 22 + (h % 12)
-  const baseTop = 12 + row * 18 + ((h >> 3) % 10)
-  return { left: `${baseLeft}%`, top: `${baseTop}%` }
-}
-
-/* ────────────────────────────
-   Icons
-   ──────────────────────────── */
-function VerifiedIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-  )
-}
-
-/* ────────────────────────────
-   Components
-   ──────────────────────────── */
-function ModeToggle() {
-  const [isDark, setIsDark] = useState(false)
-  const toggle = () => {
-    const next = !isDark
-    setIsDark(next)
-    document.documentElement.classList.toggle('dark', next)
-  }
-  return (
-    <div className="flex gap-1">
-      <button
-        onClick={toggle}
-        className={`w-[30px] h-[30px] flex items-center justify-center rounded-md border text-xs transition-all ${
-          !isDark ? 'bg-ink border-ink text-primary-foreground' : 'bg-background border-border text-muted-foreground'
-        }`}
-        aria-label="Modo claro"
-      >
-        <Sun className="w-3.5 h-3.5" />
-      </button>
-      <button
-        onClick={toggle}
-        className={`w-[30px] h-[30px] flex items-center justify-center rounded-md border text-xs transition-all ${
-          isDark ? 'bg-ink border-ink text-primary-foreground' : 'bg-background border-border text-muted-foreground'
-        }`}
-        aria-label="Modo oscuro"
-      >
-        <Moon className="w-3.5 h-3.5" />
-      </button>
-    </div>
-  )
-}
-
-function FilterSection({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div>
-      <div className="text-[10px] font-bold uppercase tracking-[0.1em] text-muted-foreground mb-2.5">
-        {title}
-      </div>
-      {children}
-    </div>
-  )
-}
-
-function FilterOption({
+function FilterChip({
   label,
-  count,
-  href,
   active,
+  href,
 }: {
   label: string
-  count: number
-  href: string
   active?: boolean
+  href: string
 }) {
   return (
     <Link
       href={href}
-      className={`flex items-center gap-2 py-1.5 text-[13px] transition-colors rounded-md ${
-        active ? 'text-primary font-medium' : 'text-foreground hover:text-primary'
+      className={`inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors ${
+        active
+          ? 'border-[hsl(var(--brand-ocean))] bg-[hsl(var(--brand-ocean)/0.12)] text-[hsl(var(--public-ink))]'
+          : 'border-border bg-card text-[hsl(var(--public-ink))] hover:border-[hsl(var(--brand-ocean)/0.2)] hover:bg-[hsl(var(--surface-tint))]'
       }`}
     >
-      <input
-        type="checkbox"
-        readOnly
-        checked={active}
-        className="w-3.5 h-3.5 accent-cobalt-700 shrink-0 cursor-pointer"
-      />
-      <span className="flex-1">{label}</span>
-      <span className="text-[11px] text-muted-foreground font-mono">{count}</span>
+      {label}
     </Link>
   )
 }
 
-function DoctorCard({
-  doctor,
-  isSelected,
-  onSelect,
-}: {
-  doctor: Doctor
-  isSelected: boolean
-  onSelect: () => void
-  index: number
-}) {
+function DoctorCard({ doctor }: { doctor: PublicDoctorSummary }) {
   const name = doctor.profile?.full_name || 'Doctor'
-  const initials = getInitials(name)
-  const { dates, activeIndex, strikes } = generateDates(doctor.id)
-  const isFeatured = hashString(doctor.id) % 3 === 0
-
-  const features = useMemo(() => {
-    const list: { icon: React.ReactNode; text: string; muted?: boolean }[] = []
-    if (doctor.bio) {
-      list.push({
-        icon: <Stethoscope className="w-3.5 h-3.5 text-primary mt-0.5" />,
-        text: doctor.bio.slice(0, 80) + (doctor.bio.length > 80 ? '…' : ''),
-      })
-    }
-    if (doctor.years_experience) {
-      list.push({
-        icon: <Clock className="w-3.5 h-3.5 text-primary mt-0.5" />,
-        text: `${doctor.years_experience} años de experiencia`,
-      })
-    }
-    if (doctor.video_enabled) {
-      list.push({
-        icon: <Video className="w-3.5 h-3.5 text-primary mt-0.5" />,
-        text: 'Teleconsulta disponible',
-      })
-    }
-    list.push({
-      icon: <ShieldCheck className="w-3.5 h-3.5 text-primary mt-0.5" />,
-      text: 'Especialista verificado',
-    })
-    if (doctor.city) {
-      list.push({
-        icon: <MapPin className="w-3.5 h-3.5 text-muted-foreground mt-0.5" />,
-        text: `${doctor.city}${doctor.state ? `, ${doctor.state}` : ''}`,
-        muted: true,
-      })
-    }
-    list.push({
-      icon: <GraduationCap className="w-3.5 h-3.5 text-muted-foreground mt-0.5" />,
-      text: `Primera visita desde $${(doctor.price_cents / 100).toLocaleString('es-MX')}`,
-      muted: true,
-    })
-    return list
-  }, [doctor])
+  const initials = buildInitials(name) || 'DM'
+  const verification = doctor.verification
+  const isVerified = Boolean(verification?.sep_verified)
+  const verifiedDate = verification?.verified_at ? new Date(verification.verified_at) : null
+  const hasVerificationDetails = Boolean(verification?.cedula && verifiedDate)
 
   return (
-    <article
-      onClick={onSelect}
-      className={`bg-card border rounded-2xl grid grid-cols-1 md:grid-cols-[1fr_210px] overflow-hidden cursor-pointer transition-all duration-200 ease-dx ${
-        isSelected
-          ? 'border-ink shadow-[0_0_0_2px_hsl(var(--primary)/0.2)]'
-          : 'border-border hover:border-primary hover:shadow-dx-2'
-      }`}
-    >
-      {/* LEFT */}
-      <div className="p-4 border-r border-border/60 flex flex-col gap-2">
-        <div className="flex items-start gap-3">
-          <div className="relative shrink-0">
-            {isFeatured && (
-              <div className="absolute -top-1 -left-1 bg-amber text-white text-[8px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider z-10">
-                Destacado
-              </div>
-            )}
-            <div className="w-[58px] h-[58px] rounded-full overflow-hidden bg-gradient-to-br from-cobalt-300 to-cobalt-800 flex items-center justify-center">
+    <Card className="surface-panel overflow-hidden rounded-[28px] p-0 transition-shadow hover:shadow-[0_18px_40px_-26px_rgba(15,37,95,0.24)]">
+      <div className="grid gap-0 lg:grid-cols-[1fr_230px]">
+        <div className="border-b border-border/70 p-5 lg:border-b-0 lg:border-r">
+          <div className="flex gap-4">
+            <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-[22px] bg-[linear-gradient(145deg,hsl(var(--surface-soft)),hsl(var(--surface-tint)))] ring-1 ring-white/70">
               {doctor.profile?.photo_url ? (
                 <Image
                   src={doctor.profile.photo_url}
                   alt={name}
-                  width={58}
-                  height={58}
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="64px"
+                  className="object-cover"
                 />
               ) : (
-                <span className="text-white font-display text-lg font-bold">{initials}</span>
-              )}
-            </div>
-          </div>
-
-          <div className="flex-1 min-w-0">
-            <div className="flex flex-wrap items-center gap-1.5">
-              <h3 className="font-display text-[15px] font-bold text-ink tracking-tight">
-                {name}
-              </h3>
-              <VerifiedIcon className="text-primary shrink-0" />
-            </div>
-
-            <div className="text-xs text-muted-foreground mt-0.5">
-              {doctor.specialties.length > 0 ? (
-                <>
-                  <Link
-                    href={`/doctors?specialty=${doctor.specialties[0].slug}`}
-                    className="text-primary font-medium hover:underline"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    {doctor.specialties[0].name}
-                  </Link>
-                  <span> · Ver más</span>
-                </>
-              ) : (
-                'Especialista médico'
+                <div className="flex h-full w-full items-center justify-center text-sm font-semibold text-[hsl(var(--brand-ocean))]">
+                  {initials}
+                </div>
               )}
             </div>
 
-            <div className="flex items-center gap-1.5 text-xs mt-1">
-              <span className="text-vital">
-                {'★'.repeat(Math.round(doctor.rating_avg))}
-                {'☆'.repeat(5 - Math.round(doctor.rating_avg))}
-              </span>
-              <span className="font-bold text-ink">{doctor.rating_avg.toFixed(1)}</span>
-              <span className="text-muted-foreground">({doctor.rating_count} opiniones)</span>
-            </div>
-          </div>
-        </div>
+            <div className="min-w-0 flex-1">
+              <div className="flex flex-wrap items-center gap-2">
+                <h3 className="truncate text-base font-semibold tracking-tight text-[hsl(var(--public-ink))]">
+                  {formatDoctorName(name)}
+                </h3>
+                {isVerified ? (
+                  <Badge variant="success" className="normal-case tracking-normal">
+                    Verificado SEP
+                  </Badge>
+                ) : (
+                  <Badge variant="outline" className="normal-case tracking-normal">
+                    Perfil aprobado
+                  </Badge>
+                )}
+              </div>
 
-        <div className="flex flex-col gap-1 mt-1">
-          {features.map((f, i) => (
-            <div
-              key={i}
-              className={`flex items-start gap-1.5 text-xs leading-relaxed ${
-                f.muted ? 'text-muted-foreground' : 'text-foreground'
-              }`}
-            >
-              {f.icon}
-              <span>{f.text}</span>
-            </div>
-          ))}
-        </div>
+              <p className="mt-1 text-sm text-[hsl(var(--public-muted))]">
+                {doctor.specialties[0]?.name || 'Especialidad médica'}
+                {doctor.city ? ` · ${doctor.city}` : ''}
+                {doctor.state ? `, ${doctor.state}` : ''}
+              </p>
 
-        <div className="mt-2 flex items-center gap-2">
-          <Link
-            href={`/doctors/${doctor.id}`}
-            onClick={(e) => e.stopPropagation()}
-            className="text-xs font-medium text-primary hover:text-primary/80 transition-colors flex items-center gap-1"
-          >
-            Ver perfil <ChevronRight className="w-3 h-3" />
-          </Link>
-        </div>
-      </div>
-
-      {/* RIGHT — availability */}
-      <div className="p-3 bg-secondary/50 flex flex-col gap-2">
-        <div className="text-[11px] text-muted-foreground font-medium">Selecciona una fecha:</div>
-        <div className="grid grid-cols-4 gap-1">
-          {dates.map((d) => {
-            const isActive = d.index === activeIndex
-            const isStrike = strikes.has(d.index)
-            return (
-              <button
-                key={d.index}
-                disabled={isStrike}
-                onClick={(e) => e.stopPropagation()}
-                className={`py-1.5 px-0.5 border rounded-md text-center text-[10px] transition-all font-sans ${
-                  isActive
-                    ? 'bg-ink border-ink text-primary-foreground'
-                    : isStrike
-                    ? 'opacity-45 line-through pointer-events-none bg-background border-border text-foreground'
-                    : 'bg-card border-border text-foreground hover:bg-secondary hover:border-primary/30 hover:text-primary'
-                }`}
-              >
-                <span className="block font-semibold text-[11px]">{d.label}</span>
-                <span className={`block ${isActive ? 'text-white/75' : 'text-muted-foreground'}`}>
-                  {d.dt}
+              <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-[hsl(var(--public-muted))]">
+                <span className="inline-flex items-center gap-1.5">
+                  <ShieldCheck className="h-4 w-4 text-[hsl(var(--brand-leaf))]" />
+                  {doctor.rating_count.toLocaleString('es-MX')} reseñas
                 </span>
-              </button>
-            )
-          })}
+                {doctor.years_experience ? (
+                  <span className="inline-flex items-center gap-1.5">
+                    <Clock className="h-4 w-4 text-[hsl(var(--brand-ocean))]" />
+                    {doctor.years_experience} años
+                  </span>
+                ) : null}
+                {doctor.offers_video || doctor.video_enabled ? (
+                  <span className="inline-flex items-center gap-1.5">
+                    <Video className="h-4 w-4 text-[hsl(var(--brand-ocean))]" />
+                    Videoconsulta
+                  </span>
+                ) : null}
+                {doctor.offers_in_person ? (
+                  <span className="inline-flex items-center gap-1.5">
+                    <MapPin className="h-4 w-4 text-[hsl(var(--brand-ocean))]" />
+                    Presencial
+                  </span>
+                ) : null}
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-4 flex flex-wrap gap-2">
+            {hasVerificationDetails ? (
+              <VerificationBadge
+                doctorId={doctor.id}
+                cedula={doctor.verification.cedula}
+                verifiedDate={verifiedDate as Date}
+                showDetails={true}
+              />
+            ) : doctor.verification?.cedula ? (
+              <Badge variant="outline" className="normal-case tracking-normal">
+                Cédula {doctor.verification.cedula}
+              </Badge>
+            ) : null}
+            {doctor.verification?.institution ? (
+              <Badge variant="outline" className="normal-case tracking-normal">
+                {doctor.verification.institution}
+              </Badge>
+            ) : null}
+          </div>
+
+          <div className="mt-4 grid gap-2 sm:grid-cols-2">
+            <p className="text-sm leading-6 text-[hsl(var(--public-muted))]">
+              {doctor.bio || 'Perfil médico verificado y listo para consulta.'}
+            </p>
+            {doctor.license_number ? (
+              <div className="rounded-[var(--public-radius-control)] border border-border bg-[hsl(var(--surface-quiet))] px-3 py-2 text-sm text-[hsl(var(--public-muted))]">
+                <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--public-muted))]">
+                  Cédula
+                </span>
+                <p className="mt-1 font-semibold text-[hsl(var(--public-ink))]">{doctor.license_number}</p>
+              </div>
+            ) : null}
+          </div>
         </div>
-        <Link
-          href={`/book/${doctor.id}`}
-          className="mt-1 inline-flex h-9 w-full items-center justify-center gap-1.5 rounded-md bg-ink px-3 text-sm font-bold text-primary-foreground transition-colors hover:bg-ink/90 active:scale-[0.98]"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <CalendarIcon className="w-3.5 h-3.5" /> Agendar cita
-        </Link>
 
-        <button
-          onClick={(e) => e.stopPropagation()}
-          className="flex items-center justify-center gap-1 py-1.5 border rounded-md text-xs font-medium text-muted-foreground hover:bg-secondary hover:text-primary hover:border-primary/30 transition-all"
-        >
-          Ver más <ChevronRight className="w-3 h-3" />
-        </button>
+        <div className="bg-[linear-gradient(180deg,hsl(var(--surface-tint))_0%,hsl(var(--surface-quiet))_100%)] p-5">
+          <div className="flex h-full flex-col justify-between gap-4">
+            <div className="rounded-[var(--public-radius-control)] border border-border bg-card p-4">
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--public-muted))]">
+                Reputación
+              </p>
+              <div className="mt-2 flex items-center gap-2">
+                <StarMeter rating={doctor.rating_avg} />
+                <span className="text-2xl font-semibold tracking-tight text-[hsl(var(--public-ink))]">
+                  {doctor.rating_avg.toFixed(1)}
+                </span>
+              </div>
+              <p className="mt-1 text-sm text-[hsl(var(--public-muted))]">
+                {doctor.rating_count.toLocaleString('es-MX')} reseñas completadas
+              </p>
+            </div>
+
+            <div className="rounded-[var(--public-radius-control)] border border-border bg-card p-4">
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--public-muted))]">
+                Consulta desde
+              </p>
+              <p className="mt-2 text-3xl font-semibold tracking-tight text-[hsl(var(--public-ink))]">
+                {formatCurrency(doctor.price_cents, doctor.currency)}
+              </p>
+            </div>
+
+            <div className="grid gap-2">
+              <Button asChild variant="outline" className="w-full">
+                <Link href={`/doctors/${doctor.id}`}>Ver perfil</Link>
+              </Button>
+              <Button asChild variant="hero" className="w-full">
+                <Link href={`/book/${doctor.id}`}>
+                  Agendar cita
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
       </div>
-
-    </article>
+    </Card>
   )
 }
 
-function CdmxMap({
-  doctors,
-  selectedIndex,
-  onSelectPin,
-}: {
-  doctors: Doctor[]
-  selectedIndex: number | null
-  onSelectPin: (idx: number) => void
-}) {
+function StarMeter({ rating }: { rating: number }) {
+  const fullStars = Math.round(rating)
+
   return (
-    <div className="relative w-full h-full bg-[#e8eef2] dark:bg-[#141d2b] overflow-hidden">
-      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 380 700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-        <defs>
-          <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
-            <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#c8d4e0" strokeWidth="0.5" opacity="0.5" />
-          </pattern>
-        </defs>
-        <rect width="380" height="700" fill="#e8eef2" className="dark:fill-[#141d2b]" />
-        <rect width="380" height="700" fill="url(#grid)" />
-
-        {/* Parks */}
-        <ellipse cx="190" cy="200" rx="55" ry="35" fill="#c8e6c9" opacity="0.7" />
-        <text x="190" y="204" textAnchor="middle" fontSize="8" fill="#4caf50" fontFamily="Inter">Bosque de Chapultepec</text>
-        <ellipse cx="80" cy="520" rx="30" ry="20" fill="#c8e6c9" opacity="0.6" />
-        <ellipse cx="310" cy="600" rx="25" ry="18" fill="#c8e6c9" opacity="0.6" />
-
-        {/* Water */}
-        <ellipse cx="300" cy="480" rx="20" ry="14" fill="#b3d4f5" opacity="0.7" />
-
-        {/* Urban blocks */}
-        <g fill="#dde4ee" stroke="#c5cede" strokeWidth="0.5" opacity="0.8">
-          <rect x="10" y="80" width="60" height="40" rx="2" />
-          <rect x="80" y="70" width="45" height="50" rx="2" />
-          <rect x="135" y="75" width="55" height="45" rx="2" />
-          <rect x="200" y="60" width="70" height="55" rx="2" />
-          <rect x="280" y="70" width="85" height="40" rx="2" />
-          <rect x="10" y="140" width="75" height="35" rx="2" />
-          <rect x="95" y="135" width="90" height="40" rx="2" />
-          <rect x="260" y="120" width="105" height="50" rx="2" />
-          <rect x="10" y="290" width="65" height="45" rx="2" />
-          <rect x="85" y="280" width="80" height="55" rx="2" />
-          <rect x="230" y="270" width="55" height="45" rx="2" />
-          <rect x="295" y="265" width="75" height="60" rx="2" />
-          <rect x="10" y="370" width="90" height="50" rx="2" />
-          <rect x="110" y="360" width="70" height="55" rx="2" />
-          <rect x="190" y="355" width="85" height="60" rx="2" />
-          <rect x="285" y="345" width="80" height="65" rx="2" />
-          <rect x="10" y="450" width="55" height="40" rx="2" />
-          <rect x="75" y="455" width="90" height="40" rx="2" />
-          <rect x="340" y="445" width="30" height="35" rx="2" />
-          <rect x="10" y="540" width="100" height="50" rx="2" />
-          <rect x="120" y="535" width="75" height="50" rx="2" />
-          <rect x="205" y="530" width="90" height="55" rx="2" />
-          <rect x="305" y="540" width="60" height="40" rx="2" />
-          <rect x="10" y="620" width="80" height="60" rx="2" />
-          <rect x="100" y="625" width="100" height="50" rx="2" />
-          <rect x="210" y="618" width="80" height="55" rx="2" />
-          <rect x="300" y="610" width="70" height="65" rx="2" />
-        </g>
-
-        {/* Roads */}
-        <g stroke="#fff" fill="none" strokeLinecap="round">
-          <path d="M 50 600 Q 190 380 330 160" strokeWidth="5" opacity="0.9" />
-          <path d="M 50 600 Q 190 380 330 160" stroke="#e8b84b" strokeWidth="1.5" strokeDasharray="8,6" opacity="0.6" />
-          <path d="M 175 680 L 180 0" strokeWidth="4.5" opacity="0.85" />
-          <path d="M 10 300 Q 20 180 100 100 Q 200 40 340 80 Q 370 180 370 320 Q 365 480 330 570 Q 260 660 180 680 Q 100 695 30 650 Q 10 580 10 490" strokeWidth="3.5" strokeDasharray="none" opacity="0.7" />
-          <line x1="0" y1="250" x2="380" y2="250" strokeWidth="2.5" opacity="0.6" />
-          <line x1="0" y1="340" x2="380" y2="340" strokeWidth="2" opacity="0.5" />
-          <line x1="0" y1="430" x2="380" y2="430" strokeWidth="2" opacity="0.5" />
-          <line x1="0" y1="500" x2="380" y2="500" strokeWidth="2" opacity="0.4" />
-          <line x1="0" y1="570" x2="380" y2="570" strokeWidth="1.5" opacity="0.4" />
-          <line x1="90" y1="0" x2="90" y2="700" strokeWidth="2" opacity="0.4" />
-          <line x1="270" y1="0" x2="270" y2="700" strokeWidth="2" opacity="0.4" />
-        </g>
-
-        {/* Labels */}
-        <text x="205" y="246" textAnchor="middle" fontSize="7.5" fill="#8a95b0" transform="rotate(-1 205 246)">Av. Presidente Masaryk</text>
-        <text x="182" y="400" textAnchor="middle" fontSize="7.5" fill="#8a95b0" transform="rotate(90 182 400)">Insurgentes</text>
-        <text x="80" y="380" textAnchor="middle" fontSize="7.5" fill="#e8b84b" transform="rotate(-35 80 380)">Paseo de la Reforma</text>
-
-        <text x="55" y="170" textAnchor="middle" fontSize="9" fill="#5c6783" fontWeight="600">Polanco</text>
-        <text x="160" y="320" textAnchor="middle" fontSize="9" fill="#5c6783" fontWeight="600">Condesa</text>
-        <text x="275" y="160" textAnchor="middle" fontSize="9" fill="#5c6783" fontWeight="600">Lomas</text>
-        <text x="200" y="450" textAnchor="middle" fontSize="9" fill="#5c6783" fontWeight="600">Del Valle</text>
-        <text x="80" y="570" textAnchor="middle" fontSize="9" fill="#5c6783" fontWeight="600">Coyoacán</text>
-        <text x="310" y="390" textAnchor="middle" fontSize="9" fill="#5c6783" fontWeight="600">Santa Fe</text>
-        <text x="160" y="590" textAnchor="middle" fontSize="9" fill="#5c6783" fontWeight="600">Tlalpan</text>
-        <text x="280" y="500" textAnchor="middle" fontSize="9" fill="#5c6783" fontWeight="600">Nápoles</text>
-      </svg>
-
-      {/* Pins */}
-      {doctors.slice(0, 8).map((doctor, idx) => {
-        const pos = pinPosition(doctor.id, idx)
-        const isSelected = selectedIndex === idx
-        return (
-          <button
-            key={doctor.id}
-            onClick={() => onSelectPin(idx)}
-            className={`group absolute w-9 h-9 flex items-center justify-center rounded-[50%_50%_50%_0] border-2 border-white shadow-md transition-all duration-200 ${
-              isSelected
-                ? 'bg-vital scale-[1.15] -rotate-45'
-                : 'bg-ink -rotate-45 hover:bg-vital hover:scale-110'
-            }`}
-            style={{ left: pos.left, top: pos.top }}
-            title={doctor.profile?.full_name}
-          >
-            <div className="rotate-45 text-white text-[8px] font-bold font-mono">
-              ${(doctor.price_cents / 100).toLocaleString('es-MX')}
-            </div>
-            {/* Tooltip */}
-            <div className="absolute bottom-[calc(100%+8px)] left-1/2 -translate-x-1/2 bg-ink text-white text-[10px] font-semibold px-2 py-1 rounded whitespace-nowrap opacity-0 pointer-events-none transition-opacity group-hover:opacity-100 z-20">
-              {doctor.profile?.full_name} · ${(doctor.price_cents / 100).toLocaleString('es-MX')}
-            </div>
-          </button>
-        )
-      })}
-
-      {/* Map overlay controls */}
-      <div className="absolute top-4 left-4 right-4 flex justify-between items-start z-10">
-        <div className="flex items-center gap-2 bg-card border rounded-xl px-3 py-2 text-xs text-foreground shadow-dx-1 flex-1">
-          <Search className="w-3 h-3 text-muted-foreground" />
-          <span className="text-muted-foreground">Buscar zona...</span>
-        </div>
-        <div className="w-2" />
-        <div className="flex flex-col gap-1">
-          <button className="w-8 h-8 bg-card border rounded-md flex items-center justify-center text-sm shadow-dx-1 hover:bg-secondary transition-colors">+</button>
-          <button className="w-8 h-8 bg-card border rounded-md flex items-center justify-center text-sm shadow-dx-1 hover:bg-secondary transition-colors">−</button>
-        </div>
-      </div>
+    <div className="flex items-center gap-1" aria-hidden="true">
+      {[...Array(5)].map((_, index) => (
+        <StarFill key={index} active={index < fullStars} />
+      ))}
     </div>
   )
 }
 
-/* ────────────────────────────
-   Main export
-   ──────────────────────────── */
+function StarFill({ active }: { active: boolean }) {
+  return (
+    <StarIcon
+      className={active ? 'text-[hsl(var(--brand-gold))]' : 'text-[hsl(var(--border))]'}
+    />
+  )
+}
+
+function StarIcon({ className }: { className?: string }) {
+  return (
+    <svg className={`h-4 w-4 fill-current ${className || ''}`} viewBox="0 0 20 20" aria-hidden="true">
+      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+    </svg>
+  )
+}
+
 export function DoctorsDirectoryClient({
   doctors,
   specialties,
   params,
-}: {
-  doctors: Doctor[]
-  specialties: Specialty[]
-  params: PageParams
-}) {
+}: DoctorsDirectoryClientProps) {
   const router = useRouter()
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(0)
+  const [sortValue, setSortValue] = useState<PageParams['sortBy']>(params.sortBy || 'relevance')
 
-  const buildQuery = useCallback(
-    (newParams: Record<string, string | undefined>) => {
-      const sp = new URLSearchParams()
-      if (params.specialty) sp.set('specialty', params.specialty)
-      if (params.search) sp.set('search', params.search)
-      if (params.sortBy) sp.set('sortBy', params.sortBy)
-      if (params.sortOrder) sp.set('sortOrder', params.sortOrder)
-      if (params.appointmentType) sp.set('appointmentType', params.appointmentType)
+  const buildQuery = (updates: Record<string, string | undefined>) => {
+    const sp = new URLSearchParams()
+    if (params.specialty) sp.set('specialty', params.specialty)
+    if (params.search) sp.set('search', params.search)
+    if (params.city) sp.set('city', params.city)
+    if (params.sortBy) sp.set('sortBy', params.sortBy)
+    if (params.sortOrder) sp.set('sortOrder', params.sortOrder)
+    if (params.appointmentType) sp.set('appointmentType', params.appointmentType)
 
-      Object.entries(newParams).forEach(([key, value]) => {
-        if (value) sp.set(key, value)
-        else sp.delete(key)
-      })
+    Object.entries(updates).forEach(([key, value]) => {
+      if (value) sp.set(key, value)
+      else sp.delete(key)
+    })
 
-      return sp.toString() ? `?${sp.toString()}` : ''
-    },
-    [params]
-  )
+    return sp.toString() ? `?${sp.toString()}` : ''
+  }
 
-  const handleSelectCard = (idx: number) => setSelectedIndex(idx)
-  const handleSelectPin = (idx: number) => setSelectedIndex(idx)
+  const heading = useMemo(() => {
+    if (params.search) return `Resultados para "${params.search}"`
+    if (params.city) return `Doctores en ${params.city}`
+    const specialty = specialties.find((specialtyItem) => specialtyItem.slug === params.specialty)
+    return specialty ? `${specialty.name} en México` : 'Doctores y especialistas verificados'
+  }, [params.search, params.city, params.specialty, specialties])
 
-  const currentSpecialty = specialties.find((s) => s.slug === params.specialty)
-  const heading = currentSpecialty
-    ? `${currentSpecialty.name} en México`
-    : params.search
-    ? `Resultados para "${params.search}"`
-    : 'Doctores y Especialistas en México'
-
-  const totalCount = doctors.length
+  const activeFilters = [
+    params.specialty ? specialties.find((item) => item.slug === params.specialty)?.name : null,
+    params.city || null,
+    params.appointmentType && params.appointmentType !== 'all'
+      ? params.appointmentType === 'video'
+        ? 'Videoconsulta'
+        : 'Presencial'
+      : null,
+  ].filter(Boolean) as string[]
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* HEADER */}
-      <header className="sticky top-0 z-[200] bg-card border-b border-border h-14 flex items-center">
-        <div className="max-w-[1440px] mx-auto w-full px-6 flex items-center gap-4">
-          <Link
-            href="/"
-            className="shrink-0 rounded-lg transition-transform active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-            aria-label="Doctor.mx - Inicio"
-          >
-            <DoctorMxLogo markClassName="h-8 w-8" textClassName="text-[1.05rem]" />
-          </Link>
-
-          <form
-            action="/doctors"
-            className="hidden sm:flex items-center bg-secondary border border-border rounded-lg overflow-hidden flex-1 max-w-[560px]"
-            onSubmit={(e) => {
-              e.preventDefault()
-              const fd = new FormData(e.currentTarget)
-              const search = fd.get('search') as string
-              const city = fd.get('city') as string
-              router.push(`/doctors${buildQuery({ search: search || undefined, city: city || undefined })}`)
-            }}
-          >
-            <input
-              name="search"
-              type="text"
-              placeholder="Especialidad o doctor..."
-              defaultValue={params.search || ''}
-              className="flex-1 px-3 py-2 bg-transparent text-foreground text-[13px] outline-none placeholder:text-muted-foreground"
-            />
-            <div className="w-px h-5 bg-border shrink-0" />
-            <input
-              name="city"
-              type="text"
-              placeholder="Ciudad..."
-              defaultValue="Ciudad de México"
-              className="px-3 py-2 bg-transparent text-foreground text-[13px] outline-none placeholder:text-muted-foreground w-[160px]"
-            />
-            <button
-              type="submit"
-              className="px-4 py-2 bg-ink text-primary-foreground text-[13px] font-semibold hover:bg-ink/90 transition-colors shrink-0"
+    <div className="min-h-screen bg-[linear-gradient(180deg,hsl(var(--surface-quiet))_0%,hsl(var(--card))_100%)]">
+      <header className="sticky top-0 z-[200] border-b border-border bg-card/92 backdrop-blur-xl">
+        <div className="editorial-shell">
+          <div className="flex min-h-16 items-center justify-between gap-4 py-3">
+            <Link
+              href="/"
+              className="shrink-0 rounded-lg transition-transform active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              aria-label="Doctor.mx - Inicio"
             >
-              Buscar
-            </button>
-          </form>
+              <DoctorMxLogo markClassName="h-8 w-8" textClassName="text-[1.05rem]" />
+            </Link>
 
-          <div className="ml-auto flex items-center gap-2">
-            <ModeToggle />
+            <form
+              action="/doctors"
+              className="hidden flex-1 items-center gap-3 rounded-[var(--public-radius-control)] border border-border bg-[hsl(var(--surface-quiet))] px-3 py-2.5 lg:flex"
+              onSubmit={(event) => {
+                event.preventDefault()
+                const formData = new FormData(event.currentTarget)
+                const search = String(formData.get('search') || '').trim()
+                const city = String(formData.get('city') || '').trim()
+                router.push(
+                  `/doctors${buildQuery({ search: search || undefined, city: city || undefined })}`
+                )
+              }}
+            >
+              <Search className="h-4 w-4 shrink-0 text-[hsl(var(--public-muted))]" />
+              <input
+                name="search"
+                type="text"
+                placeholder="Especialidad o doctor"
+                defaultValue={params.search || ''}
+                className="min-w-0 flex-1 bg-transparent text-sm outline-none placeholder:text-[hsl(var(--public-muted))/0.72]"
+              />
+              <div className="h-5 w-px bg-border" />
+              <input
+                name="city"
+                type="text"
+                placeholder="Ciudad"
+                defaultValue={params.city || ''}
+                className="w-44 bg-transparent text-sm outline-none placeholder:text-[hsl(var(--public-muted))/0.72]"
+              />
+              <Button type="submit" variant="hero" size="sm">
+                Buscar
+              </Button>
+            </form>
+
+            <div className="ml-auto flex items-center gap-2">
+              <Button
+                variant="ghost"
+                size="icon-sm"
+                className="lg:hidden"
+                onClick={() => {
+                  const search = window.prompt('Buscar doctor o especialidad', params.search || '')
+                  if (search !== null) {
+                    const nextSearch = search.trim()
+                    router.push(`/doctors${buildQuery({ search: nextSearch || undefined })}`)
+                  }
+                }}
+                aria-label="Buscar"
+              >
+                <Search className="h-4 w-4" />
+              </Button>
+            </div>
           </div>
         </div>
       </header>
 
-      <form
-        action="/doctors"
-        className="sticky top-14 z-[150] grid gap-2 border-b border-border bg-card p-3 sm:hidden"
-        onSubmit={(e) => {
-          e.preventDefault()
-          const fd = new FormData(e.currentTarget)
-          const search = fd.get('search') as string
-          router.push(`/doctors${buildQuery({ search: search || undefined })}`)
-        }}
-      >
-        <div className="flex items-center gap-2 rounded-lg border border-border bg-background px-3 py-2">
-          <Search className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
-          <input
-            name="search"
-            type="text"
-            placeholder="Especialidad o doctor"
-            defaultValue={params.search || ''}
-            className="min-w-0 flex-1 bg-transparent text-sm text-foreground outline-none placeholder:text-muted-foreground"
-          />
-          <button type="submit" className="text-sm font-semibold text-primary">
-            Buscar
-          </button>
-        </div>
-        <div className="flex gap-2 overflow-x-auto pb-1">
-          <Link
-            href="/doctors"
-            className="whitespace-nowrap rounded-full border border-border bg-background px-3 py-1.5 text-xs font-semibold text-foreground"
-          >
-            Limpiar
-          </Link>
-          <Link
-            href={`/doctors${buildQuery({ appointmentType: params.appointmentType === 'video' ? undefined : 'video' })}`}
-            className={`whitespace-nowrap rounded-full border px-3 py-1.5 text-xs font-semibold ${
-              params.appointmentType === 'video'
-                ? 'border-primary bg-primary text-primary-foreground'
-                : 'border-border bg-background text-foreground'
-            }`}
-          >
-            Teleconsulta
-          </Link>
-          {specialties.slice(0, 5).map((s) => (
-            <Link
-              key={s.id}
-              href={`/doctors${buildQuery({ specialty: s.slug === params.specialty ? undefined : s.slug })}`}
-              className={`whitespace-nowrap rounded-full border px-3 py-1.5 text-xs font-semibold ${
-                params.specialty === s.slug
-                  ? 'border-primary bg-primary text-primary-foreground'
-                  : 'border-border bg-background text-foreground'
-              }`}
-            >
-              {s.name}
-            </Link>
-          ))}
-        </div>
-      </form>
+      <section className="border-b border-border bg-[linear-gradient(180deg,hsl(var(--card))_0%,hsl(var(--surface-quiet))_100%)]">
+        <div className="editorial-shell py-6">
+          <div className="grid gap-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+            <div className="space-y-3">
+              <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[hsl(var(--brand-ocean))]">
+                Directorio verificado
+              </p>
+              <h1 className="font-display text-[clamp(2rem,4vw,3.25rem)] font-semibold leading-[1.02] tracking-[-0.03em] text-[hsl(var(--public-ink))]">
+                {heading}
+              </h1>
+              <p className="max-w-2xl text-sm leading-6 text-[hsl(var(--public-muted))]">
+                Filtros honestos, perfiles con evidencia y CTA claros. Sin mapa decorativo ni fechas inventadas.
+              </p>
 
-      {/* PAGE */}
-      <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-[220px_1fr_380px] lg:h-[calc(100vh-56px)] lg:overflow-hidden">
-        {/* SIDEBAR */}
-        <aside className="hidden lg:flex flex-col border-r border-border overflow-y-auto p-5 gap-6 bg-card min-w-0">
-          <FilterSection title="Especialidad">
-            <div className="flex flex-col">
-              {specialties.slice(0, 6).map((s) => (
-                <FilterOption
-                  key={s.id}
-                  label={s.name}
-                  count={Math.floor(hashString(s.id) % 80) + 20}
-                  href={`/doctors${buildQuery({ specialty: s.slug === params.specialty ? undefined : s.slug })}`}
-                  active={params.specialty === s.slug}
+              <div className="flex flex-wrap gap-2 pt-2">
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/doctors">Limpiar filtros</Link>
+                </Button>
+                {activeFilters.map((filter) => (
+                  <Badge key={filter} variant="luxe" className="normal-case tracking-normal">
+                    {filter}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+
+            <Card className="surface-panel p-5">
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--public-muted))]">
+                    Ordenar
+                  </p>
+                  <p className="mt-1 text-sm text-[hsl(var(--public-muted))]">
+                    {doctors.length.toLocaleString('es-MX')} resultados visibles
+                  </p>
+                </div>
+                <Filter className="h-4 w-4 text-[hsl(var(--brand-ocean))]" aria-hidden="true" />
+              </div>
+
+              <select
+                value={sortValue || 'relevance'}
+                onChange={(event) => {
+                  const nextValue = event.target.value as PageParams['sortBy']
+                  setSortValue(nextValue)
+                  router.push(`/doctors${buildQuery({ sortBy: nextValue })}`)
+                }}
+                className="mt-4 w-full rounded-[var(--public-radius-control)] border border-border bg-card px-3 py-2 text-sm outline-none"
+              >
+                <option value="relevance">Relevancia</option>
+                <option value="rating">Calificación</option>
+                <option value="price_asc">Precio ↑</option>
+                <option value="price_desc">Precio ↓</option>
+                <option value="experience">Experiencia</option>
+              </select>
+            </Card>
+          </div>
+
+          <div className="mt-5 grid gap-3 lg:grid-cols-[1fr_auto]">
+            <div className="flex flex-wrap gap-2">
+              <FilterChip
+                label="Todos"
+                href={`/doctors${buildQuery({ specialty: undefined, appointmentType: undefined })}`}
+                active={!params.specialty && (!params.appointmentType || params.appointmentType === 'all')}
+              />
+              <FilterChip
+                label="Videoconsulta"
+                href={`/doctors${buildQuery({ appointmentType: params.appointmentType === 'video' ? undefined : 'video' })}`}
+                active={params.appointmentType === 'video'}
+              />
+              <FilterChip
+                label="Presencial"
+                href={`/doctors${buildQuery({ appointmentType: params.appointmentType === 'in_person' ? undefined : 'in_person' })}`}
+                active={params.appointmentType === 'in_person'}
+              />
+              {specialties.slice(0, 6).map((specialty) => (
+                <FilterChip
+                  key={specialty.id}
+                  label={specialty.name}
+                  href={`/doctors${buildQuery({ specialty: params.specialty === specialty.slug ? undefined : specialty.slug })}`}
+                  active={params.specialty === specialty.slug}
                 />
               ))}
             </div>
-          </FilterSection>
 
-          <div className="h-px bg-border/60" />
-
-          <FilterSection title="Disponibilidad">
-            <FilterOption label="Hoy" count={Math.min(24, totalCount)} href={`/doctors${buildQuery({})}`} />
-            <FilterOption label="Esta semana" count={Math.min(67, totalCount)} href={`/doctors${buildQuery({})}`} />
-            <FilterOption
-              label="Teleconsulta"
-              count={doctors.filter((d) => d.video_enabled).length}
-              href={`/doctors${buildQuery({ appointmentType: params.appointmentType === 'video' ? undefined : 'video' })}`}
-              active={params.appointmentType === 'video'}
-            />
-          </FilterSection>
-
-          <div className="h-px bg-border/60" />
-
-          <FilterSection title="Calificación">
-            <FilterOption label="4.5 o más ★" count={doctors.filter((d) => d.rating_avg >= 4.5).length} href={`/doctors${buildQuery({})}`} />
-            <FilterOption label="4.0 o más ★" count={doctors.filter((d) => d.rating_avg >= 4).length} href={`/doctors${buildQuery({})}`} />
-          </FilterSection>
-
-          <div className="h-px bg-border/60" />
-
-          <FilterSection title="Precio por consulta">
-            <FilterOption label="Hasta $500" count={doctors.filter((d) => d.price_cents <= 50000).length} href={`/doctors${buildQuery({})}`} />
-            <FilterOption label="$500–$800" count={doctors.filter((d) => d.price_cents > 50000 && d.price_cents <= 80000).length} href={`/doctors${buildQuery({})}`} />
-            <FilterOption label="Más de $800" count={doctors.filter((d) => d.price_cents > 80000).length} href={`/doctors${buildQuery({})}`} />
-          </FilterSection>
-        </aside>
-
-        {/* RESULTS */}
-        <div className="flex min-w-0 flex-col lg:overflow-y-auto">
-          <div className="sticky top-0 z-10 px-5 py-3.5 border-b border-border bg-card flex items-center justify-between gap-3">
-            <div>
-              <h1 className="font-display text-lg font-bold text-ink tracking-tight">{heading}</h1>
-              <p className="text-xs text-muted-foreground font-mono mt-0.5">
-                {totalCount} especialista{totalCount !== 1 ? 's' : ''} · ordenados por relevancia
-              </p>
+            <div className="text-sm text-[hsl(var(--public-muted))]">
+              Los filtros actualizan los resultados de forma directa.
             </div>
-            <select
-              value={params.sortBy || 'relevance'}
-              onChange={(e) => {
-                router.push(`/doctors${buildQuery({ sortBy: e.target.value })}`)
-              }}
-              className="px-2.5 py-1.5 border border-border rounded-md bg-card text-foreground text-xs outline-none cursor-pointer"
-            >
-              <option value="relevance">Relevancia</option>
-              <option value="rating">Calificación</option>
-              <option value="price_asc">Precio ↑</option>
-              <option value="price_desc">Precio ↓</option>
-              <option value="experience">Experiencia</option>
-            </select>
           </div>
+        </div>
+      </section>
 
-          <div className="p-4 flex flex-col gap-3">
-            {doctors.length === 0 ? (
-              <div className="text-center py-20">
-                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-secondary">
-                  <Search className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="text-base font-semibold text-foreground">No encontramos doctores</h3>
-                <p className="text-sm text-muted-foreground mt-1">Intenta con otra especialidad o término de búsqueda.</p>
+      <main className="editorial-shell py-6 sm:py-8">
+        <div className="space-y-4">
+          {doctors.length === 0 ? (
+            <Card className="surface-panel rounded-[28px] p-10 text-center">
+              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[hsl(var(--surface-tint))] text-[hsl(var(--brand-ocean))]">
+                <Search className="h-6 w-6" />
               </div>
-            ) : (
-              doctors.map((doctor, idx) => (
-                <div
-                  key={doctor.id}
-                  className="block outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-2xl"
-                >
-                  <DoctorCard
-                    doctor={doctor}
-                    isSelected={selectedIndex === idx}
-                    onSelect={() => handleSelectCard(idx)}
-                    index={idx}
-                  />
-                </div>
-              ))
-            )}
-          </div>
-
-          {doctors.length > 0 && (
-            <div className="flex justify-center gap-1.5 p-5">
-              {[1, 2, 3, 4].map((p) => (
-                <button
-                  key={p}
-                  className={`w-8 h-8 border rounded-md text-xs font-semibold transition-all ${
-                    p === 1
-                      ? 'bg-ink border-ink text-primary-foreground'
-                      : 'bg-card border-border text-foreground hover:bg-ink hover:border-ink hover:text-primary-foreground'
-                  }`}
-                >
-                  {p}
-                </button>
-              ))}
-              <button className="w-8 h-8 border rounded-md text-xs font-semibold bg-card border-border text-foreground hover:bg-ink hover:border-ink hover:text-primary-foreground transition-all">
-                ›
-              </button>
-            </div>
+              <h2 className="text-lg font-semibold text-[hsl(var(--public-ink))]">No encontramos doctores</h2>
+              <p className="mx-auto mt-2 max-w-lg text-sm leading-6 text-[hsl(var(--public-muted))]">
+                Prueba con otra especialidad, ciudad o modalidad. Si no hay dato, es mejor mostrar vacío que inventar disponibilidad.
+              </p>
+            </Card>
+          ) : (
+            doctors.map((doctor) => <DoctorCard key={doctor.id} doctor={doctor} />)
           )}
         </div>
-
-        {/* MAP */}
-        <div className="hidden lg:block border-l border-border relative overflow-hidden min-w-0">
-          <CdmxMap doctors={doctors} selectedIndex={selectedIndex} onSelectPin={handleSelectPin} />
-        </div>
-      </div>
+      </main>
     </div>
   )
 }

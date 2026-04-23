@@ -14,7 +14,7 @@ export function Eyebrow({ children, className, as: Component = 'span' }: Eyebrow
       className={cn(
         'inline-flex items-center gap-2',
         'font-mono text-[11px] font-medium uppercase tracking-[0.16em]',
-        'text-[#5c6783]',
+        'text-[hsl(var(--public-muted))]',
         className
       )}
     >

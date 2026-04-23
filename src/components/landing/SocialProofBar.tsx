@@ -1,34 +1,71 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { BadgeCheck, BookOpen, HeartPulse, ShieldCheck } from 'lucide-react'
+import { Card } from '@/components/ui/card'
+import type { PublicLandingData } from '@/lib/public-trust'
 
-const outlets = [
-  { name: 'Forbes México', width: 'w-28' },
-  { name: 'Expansión', width: 'w-24' },
-  { name: 'El Financiero', width: 'w-28' },
-  { name: 'TechCrunch', width: 'w-24' },
+type SocialProofBarProps = {
+  trustData?: PublicLandingData | null
+}
+
+const proofItems = [
+  {
+    label: 'Médicos aprobados',
+    icon: ShieldCheck,
+    key: 'approvedDoctors' as const,
+  },
+  {
+    label: 'Reseñas reales',
+    icon: BookOpen,
+    key: 'reviews' as const,
+  },
+  {
+    label: 'Especialidades activas',
+    icon: HeartPulse,
+    key: 'specialties' as const,
+  },
+  {
+    label: 'Verificados SEP',
+    icon: BadgeCheck,
+    key: 'verifiedDoctors' as const,
+  },
 ]
 
-export function SocialProofBar() {
+export function SocialProofBar({ trustData }: SocialProofBarProps) {
+  const metrics = trustData?.metrics
+
   return (
-    <section className="border-y border-[#d4d9e3] bg-[#eef0f5] py-7">
-      <div className="mx-auto max-w-5xl px-6 text-center">
-        <p className="mb-6 font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-[#5c6783]">
-          Reconocido por
-        </p>
-        <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
-          {outlets.map((outlet) => (
-            <motion.span
-              key={outlet.name}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4 }}
-              className={`${outlet.width} select-none font-display text-lg font-bold tracking-tight text-[#0a1533]/25 grayscale transition-opacity hover:opacity-60 sm:text-xl`}
-            >
-              {outlet.name}
-            </motion.span>
-          ))}
+    <section className="border-y border-border bg-[linear-gradient(180deg,hsl(var(--surface-quiet))_0%,hsl(var(--surface-tint))_100%)] py-6">
+      <div className="editorial-shell">
+        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+          {proofItems.map((item, index) => {
+            const Icon = item.icon
+
+            return (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.35, delay: index * 0.06 }}
+              >
+                <Card className="surface-panel flex h-full items-center gap-4 rounded-[var(--public-radius-control)] px-4 py-4">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[hsl(var(--surface-tint))] text-[hsl(var(--brand-ocean))]">
+                    <Icon className="h-5 w-5" aria-hidden="true" />
+                  </div>
+                  <div>
+                    <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--public-muted))]">
+                      {item.label}
+                    </p>
+                    <p className="mt-1 text-2xl font-semibold tracking-tight text-[hsl(var(--public-ink))]">
+                      {metrics ? metrics[item.key].toLocaleString('es-MX') : '—'}
+                    </p>
+                  </div>
+                </Card>
+              </motion.div>
+            )
+          })}
         </div>
       </div>
     </section>

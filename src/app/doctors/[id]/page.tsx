@@ -1,11 +1,35 @@
+import Link from 'next/link'
+import Image from 'next/image'
+import { notFound } from 'next/navigation'
+import { ArrowLeft, BadgeCheck, CalendarDays, CheckCircle2, Clock, FileText, MapPin, ShieldCheck, Stethoscope, Video } from 'lucide-react'
+import { DoctorReviews } from '@/components/DoctorReviews'
+import { VerificationBadge } from '@/components/TrustSignals'
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
+import { Card } from '@/components/ui/card'
 import { getDoctorProfile } from '@/lib/discovery'
 import { getDoctorReviews, getDoctorRatingSummary } from '@/lib/reviews'
 import { formatCurrency, formatDoctorName, formatLanguageName } from '@/lib/utils'
-import { notFound } from 'next/navigation'
-import Link from 'next/link'
-import Image from 'next/image'
-import { DoctorReviews } from '@/components/DoctorReviews'
-import { ArrowLeft, Stethoscope } from 'lucide-react'
+
+function formatVerifiedDate(date: Date | null) {
+  if (!date) return 'Sin fecha pública'
+  return date.toLocaleDateString('es-MX', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  })
+}
+
+function InfoTile({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-[var(--public-radius-control)] border border-[hsl(var(--public-border)/0.82)] bg-[hsl(var(--public-surface-soft))] px-4 py-3">
+      <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--public-muted))]">
+        {label}
+      </p>
+      <p className="mt-1 text-sm font-semibold text-[hsl(var(--public-ink))]">{value}</p>
+    </div>
+  )
+}
 
 export default async function DoctorProfilePage({
   params,
@@ -19,253 +43,300 @@ export default async function DoctorProfilePage({
     notFound()
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const doc = doctor as any
-
   const [reviews, ratingSummary] = await Promise.all([
     getDoctorReviews(id, { limit: 10 }),
-    getDoctorRatingSummary(id).then(result => result || null),
+    getDoctorRatingSummary(id).then((result) => result || null),
   ])
 
   const totalConsultations = ratingSummary?.rating_count || 0
-  const averageRating = doc.rating_avg || ratingSummary?.rating_avg || 0
+  const averageRating = doctor.rating_avg || ratingSummary?.rating_avg || 0
+  const doctorPhotoUrl = doctor.profile?.photo_url || null
+  const verificationDate = doctor.verification?.verified_at ? new Date(doctor.verification.verified_at) : null
+  const consultationModes = [
+    doctor.offers_video || doctor.video_enabled ? 'Videoconsulta' : null,
+    doctor.offers_in_person ? 'Presencial' : null,
+  ].filter(Boolean) as string[]
+  const headlineLocation = [doctor.city, doctor.state].filter(Boolean).join(', ') || 'México'
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="bg-card/95 backdrop-blur-md border-b border-border sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+    <div className="min-h-screen bg-[linear-gradient(180deg,hsl(var(--public-bg))_0%,hsl(var(--card))_100%)]">
+      <header className="sticky top-0 z-50 border-b border-[hsl(var(--public-border)/0.72)] bg-[hsl(var(--card)/0.84)] backdrop-blur-xl">
+        <div className="editorial-shell flex h-16 items-center justify-between gap-4">
           <div className="flex items-center gap-4">
-            <Link href="/doctors" className="flex items-center gap-1.5 text-muted-foreground hover:text-primary transition-colors">
-              <ArrowLeft className="w-5 h-5" />
-              <span className="font-medium hidden sm:inline">Volver</span>
+            <Link href="/doctors" className="inline-flex items-center gap-1.5 text-[hsl(var(--public-muted))] transition-colors hover:text-[hsl(var(--public-ink))]">
+              <ArrowLeft className="h-5 w-5" />
+              <span className="hidden font-medium sm:inline">Volver</span>
             </Link>
             <Link href="/" className="flex items-center gap-2.5">
-              <div className="w-9 h-9 bg-gradient-to-br from-cobalt-600 to-cobalt-800 rounded-xl flex items-center justify-center shadow-sm">
-                <Stethoscope className="w-5 h-5 text-white" />
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[linear-gradient(135deg,hsl(var(--brand-ocean)),hsl(var(--brand-sky)))] shadow-[var(--public-shadow-soft)]">
+                <Stethoscope className="h-5 w-5 text-white" />
               </div>
-              <span className="text-xl font-bold text-foreground font-display">Doctor.mx</span>
+              <span className="font-display text-xl font-bold text-[hsl(var(--public-ink))]">Doctor.mx</span>
             </Link>
           </div>
+          <Badge variant="luxe" className="hidden sm:inline-flex">
+            Perfil verificado
+          </Badge>
         </div>
       </header>
 
-      {/* Main */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Main Column */}
-          <div className="lg:col-span-2 space-y-6">
-            {/* Doctor Info Card */}
-            <div className="bg-card rounded-2xl shadow-dx-1 border border-border p-8 animate-fade-in-up">
-              <div className="flex items-start gap-6">
-                <div className="relative flex-shrink-0">
-                  <div className="w-28 h-28 bg-gradient-to-br from-cobalt-100 to-cobalt-200 rounded-2xl overflow-hidden">
-                    {doc.profile?.photo_url ? (
+      <main className="editorial-shell py-8 lg:py-10">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_24rem]">
+          <div className="space-y-6">
+            <Card className="surface-panel-strong overflow-hidden p-0">
+              <div className="grid gap-0 lg:grid-cols-[auto_1fr]">
+                <div className="relative min-h-[18rem] bg-[linear-gradient(145deg,hsl(var(--surface-soft)),hsl(var(--surface-tint)))] lg:min-h-full lg:w-[18rem]">
+                  <div className="absolute inset-0">
+                    {doctorPhotoUrl ? (
                       <Image
-                        src={doc.profile.photo_url}
-                        alt={doc.profile.full_name}
-                        width={112}
-                        height={112}
-                        className="object-cover w-full h-full"
+                        src={doctorPhotoUrl}
+                        alt={doctor.profile?.full_name || 'Doctor'}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 320px"
+                        className="object-cover object-center"
                       />
                     ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-cobalt-100 to-cobalt-300">
-                        <Stethoscope className="w-14 h-14 text-primary" />
+                      <div className="flex h-full min-h-[18rem] items-center justify-center">
+                        <Stethoscope className="h-16 w-16 text-[hsl(var(--brand-ocean))]" />
                       </div>
                     )}
                   </div>
-                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-vital border-4 border-white rounded-full flex items-center justify-center shadow-lg">
-                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
+                  <div className="absolute left-4 top-4 flex flex-wrap gap-2">
+                    <Badge variant="luxe" className="bg-card/90 backdrop-blur-sm">
+                      {doctor.verification?.sep_verified ? 'SEP verificado' : 'Perfil aprobado'}
+                    </Badge>
+                    {doctor.offers_video || doctor.video_enabled ? (
+                      <Badge variant="outline" className="bg-card/90 backdrop-blur-sm normal-case tracking-normal">
+                        Videoconsulta
+                      </Badge>
+                    ) : null}
                   </div>
                 </div>
 
-                <div className="flex-1">
-                  <h1 className="text-3xl font-bold text-foreground font-display mb-3">
-                    {formatDoctorName(doc.profile?.full_name)}
-                  </h1>
+                <div className="p-6 sm:p-8">
+                  <div className="flex flex-col gap-5">
+                    <div>
+                      <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[hsl(var(--public-muted))]">
+                        Perfil médico
+                      </p>
+                      <h1 className="mt-2 font-display text-3xl font-semibold tracking-tight text-[hsl(var(--public-ink))] sm:text-4xl">
+                        {formatDoctorName(doctor.profile?.full_name)}
+                      </h1>
+                      <p className="mt-2 text-sm leading-6 text-[hsl(var(--public-muted))]">
+                        {doctor.specialties[0]?.name || 'Especialidad médica'}
+                        {' · '}
+                        {headlineLocation}
+                      </p>
+                    </div>
 
-                  {/* Badges */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="inline-flex items-center gap-1 bg-vital-soft text-vital px-3 py-1.5 rounded-full text-sm font-medium">
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                      Verificado
-                    </span>
-                    {doc.specialties?.map((s: { id: string; name: string }) => (
-                      <span
-                        key={s.id}
-                        className="bg-primary/10 text-ink px-3 py-1.5 rounded-full text-sm font-medium border border-primary/20"
-                      >
-                        {s.name}
-                      </span>
-                    ))}
-                  </div>
+                    <div className="flex flex-wrap gap-2">
+                      {doctor.verification?.cedula && verificationDate ? (
+                        <VerificationBadge
+                          doctorId={doctor.id}
+                          cedula={doctor.verification.cedula}
+                          verifiedDate={verificationDate}
+                          showDetails={true}
+                        />
+                      ) : doctor.verification?.cedula ? (
+                        <Badge variant="outline" className="normal-case tracking-normal">
+                          Cédula {doctor.verification.cedula}
+                        </Badge>
+                      ) : null}
+                      {doctor.verification?.institution ? (
+                        <Badge variant="outline" className="normal-case tracking-normal">
+                          {doctor.verification.institution}
+                        </Badge>
+                      ) : null}
+                    </div>
 
-                  {/* Stats */}
-                  <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
-                    {doc.years_experience && (
-                      <div className="flex items-center gap-2">
-                        <svg className="w-5 h-5 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span><span className="font-semibold text-foreground">{doc.years_experience}</span> años de experiencia</span>
-                      </div>
-                    )}
-                    {doc.rating_avg > 0 && (
-                      <div className="flex items-center gap-2">
-                        <svg className="w-5 h-5 text-amber" fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                        <span><span className="font-semibold text-foreground">{doc.rating_avg.toFixed(1)}</span> ({doc.rating_count} reseñas)</span>
-                      </div>
-                    )}
-                    {doc.city && (
-                      <div className="flex items-center gap-2">
-                        <svg className="w-5 h-5 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                        <span>{doc.city}, {doc.state}</span>
-                      </div>
-                    )}
+                    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                      <InfoTile label="Cédula" value={doctor.verification?.cedula || doctor.license_number || 'No visible'} />
+                      <InfoTile label="Verificada" value={formatVerifiedDate(verificationDate)} />
+                      <InfoTile label="Modalidad" value={consultationModes.join(' · ') || 'Por confirmar'} />
+                      <InfoTile label="Experiencia" value={doctor.years_experience ? `${doctor.years_experience} años` : 'No publicada'} />
+                    </div>
+
+                    <div className="flex flex-wrap items-center gap-4 text-sm text-[hsl(var(--public-muted))]">
+                      {doctor.years_experience ? (
+                        <span className="inline-flex items-center gap-2">
+                          <Clock className="h-4 w-4 text-[hsl(var(--brand-ocean))]" />
+                          {doctor.years_experience} años de experiencia
+                        </span>
+                      ) : null}
+                      {doctor.rating_avg > 0 ? (
+                        <span className="inline-flex items-center gap-2">
+                          <ShieldCheck className="h-4 w-4 text-[hsl(var(--brand-leaf))]" />
+                          {doctor.rating_avg.toFixed(1)} ({doctor.rating_count} reseñas)
+                        </span>
+                      ) : null}
+                      {doctor.city ? (
+                        <span className="inline-flex items-center gap-2">
+                          <MapPin className="h-4 w-4 text-[hsl(var(--brand-ocean))]" />
+                          {doctor.city}
+                          {doctor.state ? `, ${doctor.state}` : ''}
+                        </span>
+                      ) : null}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Card>
 
-            {/* Bio */}
-            {doc.bio && (
-              <div className="bg-card rounded-2xl shadow-dx-1 border border-border p-8 animate-fade-in-up" style={{ animationDelay: '100ms' }}>
-                <h2 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2 font-display">
-                  <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                  Sobre el Doctor
+            {doctor.bio ? (
+              <Card className="surface-panel p-6 sm:p-8">
+                <h2 className="font-display text-xl font-semibold tracking-tight text-[hsl(var(--public-ink))]">
+                  Sobre el doctor
                 </h2>
-                <p className="text-muted-foreground whitespace-pre-line leading-relaxed">{doc.bio}</p>
-              </div>
-            )}
+                <p className="mt-4 whitespace-pre-line text-sm leading-7 text-[hsl(var(--public-muted))]">
+                  {doctor.bio}
+                </p>
+              </Card>
+            ) : null}
 
-            {/* Languages */}
-            {doc.languages && doc.languages.length > 0 && (
-              <div className="bg-card rounded-2xl shadow-dx-1 border border-border p-8 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-                <h2 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2 font-display">
-                  <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
-                  </svg>
+            {doctor.languages.length > 0 ? (
+              <Card className="surface-panel p-6 sm:p-8">
+                <h2 className="font-display text-xl font-semibold tracking-tight text-[hsl(var(--public-ink))]">
                   Idiomas
                 </h2>
-                <div className="flex flex-wrap gap-2">
-                  {doc.languages.map((lang: string) => (
-                    <span
-                      key={lang}
-                      className="bg-secondary text-secondary-foreground px-4 py-2 rounded-xl text-sm font-medium"
-                    >
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {doctor.languages.map((lang) => (
+                    <Badge key={lang} variant="outline" className="normal-case tracking-normal">
                       {formatLanguageName(lang)}
-                    </span>
+                    </Badge>
                   ))}
                 </div>
-              </div>
-            )}
+              </Card>
+            ) : null}
 
-            {/* Reviews Section */}
-            <div className="animate-fade-in-up" style={{ animationDelay: '250ms' }}>
-              <DoctorReviews
-                reviews={reviews}
-                totalReviews={totalConsultations}
-                averageRating={averageRating}
-              />
+            <Card className="surface-panel p-6 sm:p-8">
+              <div className="flex items-start gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[hsl(var(--surface-tint))] text-[hsl(var(--brand-ocean))]">
+                  <FileText className="h-5 w-5" />
+                </div>
+                <div>
+                  <h2 className="font-display text-xl font-semibold tracking-tight text-[hsl(var(--public-ink))]">
+                    Qué incluye la consulta
+                  </h2>
+                  <p className="mt-2 text-sm leading-6 text-[hsl(var(--public-muted))]">
+                    La ficha debe ayudar a decidir, no solo a inspirar confianza.
+                  </p>
+                </div>
+              </div>
+              <div className="mt-5 grid gap-3 sm:grid-cols-3">
+                <div className="rounded-[var(--public-radius-control)] border border-[hsl(var(--public-border)/0.82)] bg-[hsl(var(--public-surface-soft))] p-4">
+                  <p className="font-semibold text-[hsl(var(--public-ink))]">Evaluación médica</p>
+                  <p className="mt-1 text-sm leading-6 text-[hsl(var(--public-muted))]">Contexto, síntomas y orientación clara.</p>
+                </div>
+                <div className="rounded-[var(--public-radius-control)] border border-[hsl(var(--public-border)/0.82)] bg-[hsl(var(--public-surface-soft))] p-4">
+                  <p className="font-semibold text-[hsl(var(--public-ink))]">Continuidad</p>
+                  <p className="mt-1 text-sm leading-6 text-[hsl(var(--public-muted))]">Notas y seguimiento donde aplique.</p>
+                </div>
+                <div className="rounded-[var(--public-radius-control)] border border-[hsl(var(--public-border)/0.82)] bg-[hsl(var(--public-surface-soft))] p-4">
+                  <p className="font-semibold text-[hsl(var(--public-ink))]">Modalidad</p>
+                  <p className="mt-1 text-sm leading-6 text-[hsl(var(--public-muted))]">
+                    {consultationModes.join(' · ') || 'Por confirmar'}
+                  </p>
+                </div>
+              </div>
+            </Card>
+
+            <div className="animate-fade-in-up">
+              <DoctorReviews reviews={reviews} totalReviews={totalConsultations} averageRating={averageRating} />
             </div>
           </div>
 
-          {/* Sidebar - Booking */}
-          <div className="lg:col-span-1">
-            <div className="bg-card rounded-2xl shadow-dx-2 border border-border p-6 sticky top-24 animate-fade-in-up" style={{ animationDelay: '150ms' }}>
-              <div className="mb-6">
-                <p className="text-sm text-muted-foreground mb-1">Precio de consulta</p>
-                <p className="text-4xl font-bold text-foreground font-display">
-                  {formatCurrency(doc.price_cents, doc.currency)}
-                </p>
+          <aside className="space-y-4 lg:sticky lg:top-24 lg:self-start">
+            <Card className="surface-panel-strong p-6">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--public-muted))]">
+                    Consulta desde
+                  </p>
+                  <p className="mt-1 text-4xl font-semibold tracking-tight text-[hsl(var(--public-ink))]">
+                    {formatCurrency(doctor.price_cents, doctor.currency)}
+                  </p>
+                </div>
+                <Badge variant="luxe" className="self-start">
+                  Reserva guiada
+                </Badge>
               </div>
 
-              <Link
-                href={`/book/${doc.id}`}
-                className="w-full bg-ink text-primary-foreground py-4 rounded-xl hover:bg-ink transition-all font-semibold text-center block shadow-lg"
-              >
-                Agendar Consulta
-              </Link>
+              <Button asChild variant="hero" size="lg" className="mt-6 w-full">
+                <Link href={`/book/${doctor.id}`}>Agendar consulta</Link>
+              </Button>
 
-              <div className="mt-6 pt-6 border-t border-border space-y-4">
-                <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <span>Consulta por videollamada</span>
+              <div className="mt-5 space-y-3 border-t border-[hsl(var(--public-border)/0.8)] pt-5">
+                <div className="flex items-center gap-3 text-sm text-[hsl(var(--public-muted))]">
+                  <CheckCircle2 className="h-4 w-4 text-[hsl(var(--brand-leaf))]" />
+                  <span>La verificación se muestra solo cuando existe.</span>
                 </div>
-                <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <div className="w-8 h-8 bg-vital-soft rounded-lg flex items-center justify-center">
-                    <svg className="w-4 h-4 text-vital" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
-                  </div>
-                  <span>Pago seguro en línea</span>
+                <div className="flex items-center gap-3 text-sm text-[hsl(var(--public-muted))]">
+                  <Video className="h-4 w-4 text-[hsl(var(--brand-ocean))]" />
+                  <span>Videoconsulta y presencial cuando el doctor lo ofrece.</span>
                 </div>
-                <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                  </div>
-                  <span>Receta electrónica</span>
-                </div>
-                <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <div className="w-8 h-8 bg-amber/10 rounded-lg flex items-center justify-center">
-                    <svg className="w-4 h-4 text-amber" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span>Doctor verificado</span>
+                <div className="flex items-center gap-3 text-sm text-[hsl(var(--public-muted))]">
+                  <BadgeCheck className="h-4 w-4 text-[hsl(var(--brand-ocean))]" />
+                  <span>El pago confirma la reserva y desbloquea la siguiente etapa.</span>
                 </div>
               </div>
+            </Card>
 
-              {/* AI Pre-consultation badge */}
-              <div className="mt-6 p-4 bg-gradient-to-r from-primary/10 to-vital-soft rounded-xl border border-primary/20">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-cobalt-500 to-cobalt-700 rounded-xl flex items-center justify-center">
-                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-foreground">Pre-consulta con IA</p>
-                    <p className="text-xs text-muted-foreground">Dr. Simeon prepara tu caso</p>
-                  </div>
+            <Card className="surface-panel p-6">
+              <h3 className="font-display text-lg font-semibold tracking-tight text-[hsl(var(--public-ink))]">
+                Qué pasa después
+              </h3>
+              <ol className="mt-4 space-y-3 text-sm leading-6 text-[hsl(var(--public-muted))]">
+                <li className="flex gap-3">
+                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[hsl(var(--surface-tint))] font-semibold text-[hsl(var(--brand-ocean))]">
+                    1
+                  </span>
+                  <span>Seleccionas horario y modalidad reales.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[hsl(var(--surface-tint))] font-semibold text-[hsl(var(--brand-ocean))]">
+                    2
+                  </span>
+                  <span>Confirmas la reserva y completas el pago.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[hsl(var(--surface-tint))] font-semibold text-[hsl(var(--brand-ocean))]">
+                    3
+                  </span>
+                  <span>Recibes la confirmación y la preparación previa, si aplica.</span>
+                </li>
+              </ol>
+            </Card>
+
+            <Card className="surface-panel p-6">
+              <div className="flex items-center gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[hsl(var(--surface-tint))] text-[hsl(var(--brand-ocean))]">
+                  <CalendarDays className="h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="font-display text-lg font-semibold tracking-tight text-[hsl(var(--public-ink))]">
+                    Soporte clínico
+                  </h3>
+                  <p className="text-sm leading-6 text-[hsl(var(--public-muted))]">
+                    La IA orienta antes de la cita, pero no reemplaza al médico.
+                  </p>
                 </div>
               </div>
-            </div>
-          </div>
+            </Card>
+          </aside>
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-border bg-card py-8 mt-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-cobalt-600 to-cobalt-800 rounded-lg flex items-center justify-center">
-                <Stethoscope className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-lg font-semibold text-foreground font-display">Doctor.mx</span>
+      <footer className="border-t border-[hsl(var(--public-border)/0.72)] bg-[hsl(var(--card))] py-8">
+        <div className="editorial-shell flex flex-col items-center justify-between gap-4 md:flex-row">
+          <div className="flex items-center gap-2">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[linear-gradient(135deg,hsl(var(--brand-ocean)),hsl(var(--brand-sky)))]">
+              <Stethoscope className="h-5 w-5 text-white" />
             </div>
-            <p className="text-muted-foreground text-sm">
-              © {new Date().getFullYear()} Doctor.mx. Todos los derechos reservados.
-            </p>
+            <span className="font-display text-lg font-semibold text-[hsl(var(--public-ink))]">Doctor.mx</span>
           </div>
+          <p className="text-sm text-[hsl(var(--public-muted))]">
+            © {new Date().getFullYear()} Doctor.mx. Todos los derechos reservados.
+          </p>
         </div>
       </footer>
     </div>

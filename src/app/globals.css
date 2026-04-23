@@ -54,6 +54,22 @@
     --brand-leaf: 162 100% 33%;
     --brand-gold: 36 89% 58%;
 
+    /* ── Public surface aliases ── */
+    --public-bg: var(--background);
+    --public-ink: var(--foreground);
+    --public-muted: var(--muted-foreground);
+    --public-surface: var(--card);
+    --public-surface-strong: var(--surface-strong);
+    --public-surface-soft: var(--surface-soft);
+    --public-surface-tint: var(--surface-tint);
+    --public-border: var(--border);
+    --public-shadow-soft: var(--shadow-soft);
+    --public-shadow-medium: var(--shadow-medium);
+    --public-shadow-strong: var(--shadow-strong);
+    --public-radius-card: 1.75rem;
+    --public-radius-control: 1rem;
+    --public-radius-pill: 999px;
+
     /* ── Legacy surface tokens (mapped to new bg scale) ── */
     --surface-strong: 228 22% 93%;
     --surface-soft: 228 20% 96%;
@@ -341,33 +357,33 @@
   gap: clamp(1.25rem, 2vw, 2rem);
 }
 
-.section-frame {
-  border: 1px solid hsl(var(--border) / 0.7);
-  background: linear-gradient(
-    180deg,
-    hsl(var(--card)),
-    hsl(var(--surface-quiet))
-  );
-  box-shadow: var(--shadow-soft);
-}
+  .section-frame {
+    border: 1px solid hsl(var(--border) / 0.7);
+    background: linear-gradient(
+      180deg,
+      hsl(var(--card)),
+      hsl(var(--surface-quiet))
+    );
+    box-shadow: var(--shadow-soft);
+  }
 
-.surface-panel {
-  border-radius: calc(var(--radius) + 0.25rem);
-  border: 1px solid hsl(var(--border) / 0.82);
-  background: hsl(var(--card) / 0.92);
-  box-shadow: var(--shadow-soft);
-}
+  .surface-panel {
+    border-radius: var(--public-radius-card);
+    border: 1px solid hsl(var(--public-border) / 0.82);
+    background: hsl(var(--public-surface) / 0.96);
+    box-shadow: var(--public-shadow-soft);
+  }
 
-.surface-panel-strong {
-  border-radius: calc(var(--radius) + 0.45rem);
-  border: 1px solid hsl(var(--border) / 0.82);
-  background: linear-gradient(
-    145deg,
-    hsl(var(--card)),
-    hsl(var(--surface-strong))
-  );
-  box-shadow: var(--shadow-medium);
-}
+  .surface-panel-strong {
+    border-radius: calc(var(--public-radius-card) + 0.25rem);
+    border: 1px solid hsl(var(--public-border) / 0.82);
+    background: linear-gradient(
+      145deg,
+      hsl(var(--public-surface)),
+      hsl(var(--public-surface-strong))
+    );
+    box-shadow: var(--public-shadow-medium);
+  }
 
 .surface-tint {
   background: linear-gradient(
@@ -393,9 +409,16 @@
   @apply gap-6 sm:gap-8;
 }
 
-.public-panel {
-  @apply rounded-[28px] p-6 sm:p-8;
-}
+  .public-panel {
+    border-radius: var(--public-radius-card);
+    padding: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .public-panel {
+      padding: 2rem;
+    }
+  }
 
 .text-balance {
   text-wrap: balance;

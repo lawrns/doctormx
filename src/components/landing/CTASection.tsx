@@ -1,66 +1,75 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Shield, CheckCircle, ArrowRight } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { ArrowRight, Shield, BadgeCheck } from 'lucide-react'
 import { Eyebrow } from '@/components/Eyebrow'
+import { Button } from '@/components/ui/button'
+import type { PublicLandingData } from '@/lib/public-trust'
 
-export function CTASection() {
+type CTASectionProps = {
+  trustData?: PublicLandingData | null
+}
+
+export function CTASection({ trustData }: CTASectionProps) {
+  const approvedDoctors = trustData?.metrics.approvedDoctors.toLocaleString('es-MX')
+
   return (
-    <section className="relative overflow-hidden bg-[#0a1533] py-16 sm:py-20">
-      <div className="relative z-10 mx-auto max-w-2xl px-6 text-center">
+    <section className="relative overflow-hidden bg-[linear-gradient(180deg,hsl(var(--public-ink))_0%,hsl(var(--brand-ocean))_100%)] py-16 sm:py-20">
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute left-[-10%] top-[-10%] h-64 w-64 rounded-full bg-[hsl(var(--brand-sky)/0.24)] blur-3xl" />
+        <div className="absolute bottom-[-18%] right-[-12%] h-72 w-72 rounded-full bg-[hsl(var(--brand-leaf)/0.18)] blur-3xl" />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-3xl px-6 text-center text-white">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
+          className="space-y-6"
         >
-          <Eyebrow className="mb-6 justify-center text-[#f7f8fb]/50">
-            Más de 100 especialistas en línea
+          <Eyebrow className="justify-center text-white/55">
+            {approvedDoctors ? `${approvedDoctors} doctores aprobados` : 'Doctor.mx'}
           </Eyebrow>
 
-          <h2 className="mb-4 font-display text-[clamp(2rem,4vw,3.5rem)] font-bold leading-[1.02] tracking-[-0.02em] text-[#f7f8fb]">
-            Empieza con orientación médica y termina con una cita real.
+          <h2 className="font-display text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.02] tracking-[-0.03em] text-white">
+            Empieza con evidencia y termina con una cita real.
           </h2>
 
-          <p className="mx-auto mb-10 max-w-lg text-lg text-[#f7f8fb]/70">
-            Únete a los mexicanos que ya cuidan su salud con Doctor.mx.
+          <p className="mx-auto max-w-2xl text-lg leading-8 text-white/76">
+            Busca doctores verificados, revisa perfiles con foto real y reserva sin depender de promesas infladas.
           </p>
 
-          {/* Paper button on ink — maximum contrast */}
-          <Link href="/auth/register" className="inline-block">
-            <motion.button
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-2 rounded-[10px] bg-[#f7f8fb] px-8 py-4 font-display text-sm font-semibold text-[#0a1533] shadow-[0_20px_40px_-12px_rgba(15,37,95,0.15)] transition-colors duration-200 hover:bg-[#dbe7ff] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f7f8fb] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a1533]"
-              aria-label="Comenzar consulta gratuita - Regístrate ahora"
-            >
-              Comenzar consulta gratuita
-              <ArrowRight className="h-5 w-5" aria-hidden="true" />
-            </motion.button>
-          </Link>
+          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Button asChild variant="default" size="lg" className="w-full bg-white text-[hsl(var(--public-ink))] hover:bg-white/95 sm:w-auto">
+              <Link href="/doctors">
+                Buscar doctores
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="w-full border-white/18 bg-white/6 text-white hover:bg-white/12 sm:w-auto">
+              <Link href="/for-doctors">
+                Soy médico
+              </Link>
+            </Button>
+          </div>
 
-          {/* Secondary link for doctors */}
-          <Link
-            href="/for-doctors"
-            className="mx-auto mt-5 block text-sm text-[#f7f8fb]/60 underline underline-offset-4 transition-colors hover:text-[#f7f8fb]"
-          >
-            ¿Eres médico? Conoce cómo crecer tu práctica
-          </Link>
-
-          {/* Trust badges */}
-          <div className="mt-10 flex flex-col flex-wrap items-center justify-center gap-3 text-sm text-[#f7f8fb]/50 sm:flex-row sm:gap-6">
-            <span className="flex items-center gap-1.5">
-              <Shield className="h-4 w-4 shrink-0" aria-hidden="true" /> Datos encriptados
-            </span>
-            <span className="flex items-center gap-1.5">
-              <CheckCircle className="h-4 w-4 shrink-0" aria-hidden="true" /> Sin tarjeta requerida
-            </span>
+          <div className="mx-auto grid max-w-2xl gap-3 pt-4 sm:grid-cols-3">
+            <div className="rounded-[var(--public-radius-control)] border border-white/12 bg-white/6 px-4 py-3 text-left text-sm text-white/82">
+              <Shield className="mb-2 h-4 w-4 text-white/85" />
+              Privacidad y seguridad explicadas en el flujo
+            </div>
+            <div className="rounded-[var(--public-radius-control)] border border-white/12 bg-white/6 px-4 py-3 text-left text-sm text-white/82">
+              <BadgeCheck className="mb-2 h-4 w-4 text-white/85" />
+              Cédula y verificación solo cuando existen
+            </div>
+            <div className="rounded-[var(--public-radius-control)] border border-white/12 bg-white/6 px-4 py-3 text-left text-sm text-white/82">
+              <ArrowRight className="mb-2 h-4 w-4 text-white/85" />
+              Reserva guiada de principio a fin
+            </div>
           </div>
         </motion.div>
-
-        <p className="mt-8 text-center text-sm text-[#f7f8fb]/40">
-          Primera consulta gratis · Sin compromiso · Cancela cuando quieras
-        </p>
       </div>
     </section>
   )
