@@ -18,6 +18,14 @@ const defaultStats = [
 
 export function StatsSection({ trustData }: StatsSectionProps) {
   const metrics = trustData?.metrics
+  const hasLiveMetrics = Boolean(
+    metrics &&
+      (metrics.approvedDoctors > 0 ||
+        metrics.reviews > 0 ||
+        metrics.specialties > 0 ||
+        metrics.verifiedDoctors > 0)
+  )
+  const fallbackValues = ['Perfiles', 'Cédula', 'Completadas', 'Activas']
 
   return (
     <section className="relative overflow-hidden bg-[linear-gradient(180deg,hsl(var(--surface-quiet))_0%,hsl(var(--card))_100%)] py-16 sm:py-20">
@@ -38,10 +46,12 @@ export function StatsSection({ trustData }: StatsSectionProps) {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-x-8 gap-y-7 border-t border-border/80 pt-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 border-y border-border/80 sm:grid-cols-2 lg:grid-cols-4">
           {defaultStats.map((stat, index) => {
             const Icon = stat.icon
-            const value = metrics ? metrics[stat.key].toLocaleString('es-MX') : '—'
+            const value = hasLiveMetrics && metrics
+              ? metrics[stat.key].toLocaleString('es-MX')
+              : fallbackValues[index]
 
             return (
               <motion.div
@@ -54,10 +64,10 @@ export function StatsSection({ trustData }: StatsSectionProps) {
                   delay: index * 0.08,
                   ease: [0, 0, 0.2, 1],
                 }}
-                className="surface-panel rounded-[var(--public-radius-control)] p-5"
+                className="border-b border-border/80 py-5 sm:px-5 lg:border-b-0 lg:border-r lg:last:border-r-0"
               >
-                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-[hsl(var(--surface-tint))] text-[hsl(var(--brand-ocean))]">
-                  <Icon className="h-5 w-5" aria-hidden="true" />
+                <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-[8px] bg-[hsl(var(--surface-tint))] text-[hsl(var(--brand-ocean))]">
+                  <Icon className="h-4 w-4" aria-hidden="true" />
                 </div>
                 <div className="mb-2 font-display text-2xl font-semibold leading-tight tracking-tight text-[hsl(var(--public-ink))]">
                   {value}

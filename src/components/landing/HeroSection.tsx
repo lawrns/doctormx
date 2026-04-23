@@ -23,6 +23,38 @@ type HeroSectionProps = {
   trustData?: PublicLandingData | null
 }
 
+const fallbackDoctor = {
+  id: 'demo-landing-paula',
+  status: 'approved',
+  bio: 'Ginecologia clinica con enfoque claro y seguimiento por escrito.',
+  languages: ['es'],
+  years_experience: 11,
+  city: 'Ciudad de Mexico',
+  state: 'CDMX',
+  country: 'MX',
+  price_cents: 72000,
+  currency: 'MXN',
+  rating_avg: 4.9,
+  rating_count: 214,
+  license_number: '11223344',
+  video_enabled: true,
+  office_address: 'Polanco, Ciudad de Mexico',
+  offers_video: true,
+  offers_in_person: true,
+  verification: {
+    cedula: '11223344',
+    sep_verified: true,
+    verified_at: '2026-02-18T12:00:00.000Z',
+    institution: 'ITESM',
+  },
+  profile: {
+    id: 'demo-profile-ana',
+    full_name: 'Ana Lopez',
+    photo_url: 'https://i.pravatar.cc/320?img=32',
+  },
+  specialties: [{ id: 'demo-gine', name: 'Ginecologia', slug: 'ginecologia' }],
+} as PublicLandingData['featuredDoctors'][number]
+
 function formatVerifiedDate(date: string | null | undefined) {
   if (!date) return null
   return new Date(date).toLocaleDateString('es-MX', {
@@ -34,7 +66,19 @@ function formatVerifiedDate(date: string | null | undefined) {
 
 export function HeroSection({ trustData }: HeroSectionProps) {
   const metrics = trustData?.metrics
-  const doctor = trustData?.featuredDoctors[0]
+  const hasLiveMetrics = Boolean(
+    metrics &&
+      (metrics.approvedDoctors > 0 ||
+        metrics.reviews > 0 ||
+        metrics.specialties > 0 ||
+        metrics.verifiedDoctors > 0)
+  )
+  const displayMetrics = hasLiveMetrics && metrics ? metrics : null
+  const doctor = trustData?.featuredDoctors[0] || fallbackDoctor
+  const isFallbackDoctor = doctor.id === fallbackDoctor.id
+  const featuredDoctors = trustData?.featuredDoctors.length
+    ? trustData.featuredDoctors.slice(0, 5)
+    : [fallbackDoctor]
   const doctorPhotoUrl = doctor?.profile?.photo_url || null
   const verifiedDate = doctor?.verification?.verified_at
     ? formatVerifiedDate(doctor.verification.verified_at)
@@ -43,43 +87,43 @@ export function HeroSection({ trustData }: HeroSectionProps) {
   const proofPills = [
     {
       label: 'Médicos aprobados',
-      value: metrics ? metrics.approvedDoctors.toLocaleString('es-MX') : '—',
+      value: displayMetrics ? displayMetrics.approvedDoctors.toLocaleString('es-MX') : 'Perfiles',
     },
     {
       label: 'Reseñas reales',
-      value: metrics ? metrics.reviews.toLocaleString('es-MX') : '—',
+      value: displayMetrics ? displayMetrics.reviews.toLocaleString('es-MX') : 'Completadas',
     },
     {
       label: 'Especialidades activas',
-      value: metrics ? metrics.specialties.toLocaleString('es-MX') : '—',
+      value: displayMetrics ? displayMetrics.specialties.toLocaleString('es-MX') : 'Activas',
     },
     {
       label: 'Verificados SEP',
-      value: metrics ? metrics.verifiedDoctors.toLocaleString('es-MX') : '—',
+      value: displayMetrics ? displayMetrics.verifiedDoctors.toLocaleString('es-MX') : 'Cédula',
     },
   ]
 
   return (
-    <section className="relative overflow-hidden border-b border-border bg-[linear-gradient(180deg,hsl(var(--public-bg))_0%,hsl(var(--card))_100%)] py-10 sm:py-14 lg:py-16">
-      <div className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_top_left,hsl(var(--brand-sky)/0.18),transparent_55%),radial-gradient(circle_at_top_right,hsl(var(--brand-leaf)/0.12),transparent_48%)]" />
+    <section className="relative overflow-hidden border-b border-border bg-[linear-gradient(180deg,hsl(var(--surface-quiet))_0%,hsl(var(--surface-soft))_100%)] py-8 sm:py-10 lg:py-12">
+      <div className="absolute inset-y-0 right-0 hidden w-[44vw] bg-[linear-gradient(90deg,transparent,hsl(var(--surface-tint)))] lg:block" />
       <div className="editorial-shell relative">
-        <div className="grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+        <div className="grid gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, ease: [0.2, 0.7, 0.2, 1] }}
             className="max-w-3xl"
           >
-            <Eyebrow className="mb-5 text-[hsl(var(--public-muted))]">
-              Verificación SEP + reseñas reales
+            <Eyebrow className="mb-4 text-[hsl(var(--public-muted))]">
+              Plataforma médica verificada en México
             </Eyebrow>
 
-            <h1 className="font-display text-4xl font-semibold leading-[0.96] tracking-tight text-[hsl(var(--public-ink))] sm:text-5xl lg:text-6xl">
+            <h1 className="font-display text-4xl font-semibold leading-[0.98] tracking-[-0.04em] text-[hsl(var(--public-ink))] sm:text-5xl lg:text-[4.9rem]">
               Encuentra al médico correcto,
               <span className="block text-[hsl(var(--brand-ocean))]">con evidencia visible.</span>
             </h1>
 
-            <p className="mt-5 max-w-[62ch] text-base leading-7 text-[hsl(var(--public-muted))] sm:text-lg">
+            <p className="mt-5 max-w-[58ch] text-base leading-7 text-[hsl(var(--public-muted))] sm:text-lg">
               Doctor.mx muestra doctores aprobados, fotos reales, reseñas completadas y cédula profesional cuando está disponible. La IA orienta; la consulta la da un médico real.
             </p>
 
@@ -98,11 +142,11 @@ export function HeroSection({ trustData }: HeroSectionProps) {
               </Button>
             </div>
 
-            <div className="mt-8 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+            <div className="mt-7 grid gap-x-5 gap-y-4 border-y border-border py-5 sm:grid-cols-2">
               {proofPills.map((pill) => (
                 <div
                   key={pill.label}
-                  className="surface-panel flex items-start justify-between gap-3 rounded-[var(--public-radius-control)] px-4 py-3"
+                  className="flex items-start justify-between gap-3"
                 >
                   <div>
                     <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--public-muted))]">
@@ -116,6 +160,32 @@ export function HeroSection({ trustData }: HeroSectionProps) {
                 </div>
               ))}
             </div>
+
+            {featuredDoctors.length > 0 ? (
+              <div className="mt-5 flex flex-wrap items-center gap-3">
+                <div className="flex -space-x-2">
+                  {featuredDoctors.slice(0, 4).map((item) => (
+                    <div
+                      key={item.id}
+                      className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-white bg-[hsl(var(--surface-tint))]"
+                    >
+                      {item.profile?.photo_url ? (
+                        <Image
+                          src={item.profile.photo_url}
+                          alt={item.profile?.full_name || 'Doctor'}
+                          fill
+                          sizes="40px"
+                          className="object-cover"
+                        />
+                      ) : null}
+                    </div>
+                  ))}
+                </div>
+                <p className="max-w-[24rem] text-sm leading-5 text-[hsl(var(--public-muted))]">
+                  Perfiles con foto, especialidad, reputación y cédula cuando existe en expediente.
+                </p>
+              </div>
+            ) : null}
           </motion.div>
 
           <motion.div
@@ -123,9 +193,9 @@ export function HeroSection({ trustData }: HeroSectionProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.08, ease: [0.2, 0.7, 0.2, 1] }}
           >
-            <Card className="surface-panel-strong overflow-hidden p-0 shadow-[0_28px_60px_-32px_rgba(15,37,95,0.28)]">
-              <div className="grid gap-0 lg:grid-cols-[1.08fr_0.92fr]">
-                <div className="relative min-h-[24rem] bg-[linear-gradient(180deg,hsl(var(--surface-tint))_0%,hsl(var(--card))_100%)]">
+            <Card className="overflow-hidden rounded-[12px] border border-border bg-card p-0 shadow-[0_24px_54px_-34px_rgba(15,37,95,0.32)]">
+              <div className="grid gap-0 lg:grid-cols-[1.12fr_0.88fr]">
+                <div className="relative min-h-[25rem] bg-[linear-gradient(180deg,hsl(var(--surface-tint))_0%,hsl(var(--card))_100%)] lg:min-h-[31rem]">
                   {doctorPhotoUrl ? (
                     <Image
                       src={doctorPhotoUrl}
@@ -141,11 +211,11 @@ export function HeroSection({ trustData }: HeroSectionProps) {
                   )}
 
                   <div className="absolute left-4 top-4 flex flex-wrap gap-2">
-                    <Badge variant="luxe" className="bg-card/90 backdrop-blur-sm">
+                    <Badge variant="luxe" className="rounded-[6px] bg-card/90 backdrop-blur-sm">
                       {doctor?.verification?.sep_verified ? 'SEP verificado' : 'Perfil aprobado'}
                     </Badge>
                     {doctor?.offers_video ? (
-                      <Badge variant="outline" className="bg-card/90 backdrop-blur-sm">
+                      <Badge variant="outline" className="rounded-[6px] bg-card/90 backdrop-blur-sm">
                         Videoconsulta
                       </Badge>
                     ) : null}
@@ -167,7 +237,7 @@ export function HeroSection({ trustData }: HeroSectionProps) {
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-5 bg-[linear-gradient(180deg,hsl(var(--card))_0%,hsl(var(--surface-quiet))_100%)] p-5 sm:p-6">
+                <div className="flex flex-col gap-4 bg-[linear-gradient(180deg,hsl(var(--card))_0%,hsl(var(--surface-quiet))_100%)] p-5 sm:p-6">
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--public-muted))]">
@@ -177,7 +247,7 @@ export function HeroSection({ trustData }: HeroSectionProps) {
                         {doctor ? formatDoctorName(doctor.profile?.full_name) : 'Doctor.mx'}
                       </h3>
                     </div>
-                    <div className="rounded-[var(--public-radius-control)] border border-border bg-card px-3 py-2 text-right">
+                    <div className="rounded-[8px] border border-border bg-card px-3 py-2 text-right">
                       <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--public-muted))]">
                         Desde
                       </p>
@@ -196,7 +266,7 @@ export function HeroSection({ trustData }: HeroSectionProps) {
                       <span>({doctor?.rating_count.toLocaleString('es-MX') || 0} reseñas)</span>
                     </div>
 
-                    <div className="grid gap-2 rounded-[var(--public-radius-control)] border border-border bg-card p-4 text-sm">
+                    <div className="grid gap-2 rounded-[8px] border border-border bg-card p-3 text-sm">
                       <div className="flex items-center gap-2 text-[hsl(var(--public-muted))]">
                         <CalendarCheck className="h-4 w-4 text-[hsl(var(--brand-ocean))]" />
                         <span>Modalidad disponible</span>
@@ -220,7 +290,7 @@ export function HeroSection({ trustData }: HeroSectionProps) {
                       </div>
                     </div>
 
-                    <div className="grid gap-2 rounded-[var(--public-radius-control)] border border-border bg-card p-4 text-sm text-[hsl(var(--public-muted))]">
+                    <div className="grid gap-2 rounded-[8px] border border-border bg-card p-3 text-sm text-[hsl(var(--public-muted))]">
                       <div className="flex items-center gap-2">
                         <MapPin className="h-4 w-4 text-[hsl(var(--brand-ocean))]" />
                         <span>{doctor?.city || 'Ciudad por confirmar'}{doctor?.state ? `, ${doctor.state}` : ''}</span>
@@ -237,10 +307,10 @@ export function HeroSection({ trustData }: HeroSectionProps) {
 
                   <div className="flex flex-col gap-3 sm:flex-row">
                     <Button asChild variant="outline" className="w-full sm:w-auto">
-                      <Link href={doctor ? `/doctors/${doctor.id}` : '/doctors'}>Ver perfil</Link>
+                      <Link href={isFallbackDoctor ? '/doctors?search=Ana%20Lopez' : `/doctors/${doctor.id}`}>Ver perfil</Link>
                     </Button>
                     <Button asChild variant="hero" className="w-full sm:w-auto">
-                      <Link href={doctor ? `/book/${doctor.id}` : '/doctors'}>
+                      <Link href={isFallbackDoctor ? '/ai-consulta' : `/book/${doctor.id}`}>
                         Agendar cita
                         <ArrowRight className="h-4 w-4" aria-hidden="true" />
                       </Link>

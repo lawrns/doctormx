@@ -66,8 +66,8 @@
     --public-shadow-soft: var(--shadow-soft);
     --public-shadow-medium: var(--shadow-medium);
     --public-shadow-strong: var(--shadow-strong);
-    --public-radius-card: 1.25rem;
-    --public-radius-control: 0.875rem;
+    --public-radius-card: 0.75rem;
+    --public-radius-control: 0.5rem;
     --public-radius-pill: 999px;
 
     /* ── Legacy surface tokens (mapped to new bg scale) ── */

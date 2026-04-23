@@ -46,7 +46,7 @@ export function LandingPageClient({ trustData }: LandingPageClientProps) {
           <span className="inline-flex items-center gap-2 font-medium tracking-[-0.01em] text-[#0a1533]">
             {trustData?.metrics.approvedDoctors
               ? `${trustData.metrics.approvedDoctors.toLocaleString('es-MX')} doctores aprobados`
-              : 'Doctor.mx'}
+              : 'Perfiles con evidencia visible'}
           </span>
           <span className="hidden sm:inline text-[#d4d9e3]">|</span>
           <span className="inline-flex items-center gap-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-[#00a878]">

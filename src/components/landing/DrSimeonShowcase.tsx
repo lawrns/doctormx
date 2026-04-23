@@ -130,7 +130,7 @@ function AnimatedMessage({ message, index }: { message: Message; index: number }
 
       <div className={`flex max-w-[75%] flex-col ${isPatient ? 'items-end' : 'items-start'}`}>
         <div
-          className={`rounded-2xl px-4 py-3 shadow-sm ${
+          className={`rounded-[12px] px-4 py-3 shadow-sm ${
             isPatient
               ? 'bg-[#1f48de] text-white'
               : 'border border-[#d4d9e3] bg-card text-[#0a1533]'
@@ -186,7 +186,7 @@ export default function DrSimeonShowcase() {
   }
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f8fb] py-16 sm:py-20">
+    <section className="relative overflow-hidden border-y border-border bg-[#f7f8fb] py-16 sm:py-20">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           {/* Left Column: Info */}
@@ -197,10 +197,10 @@ export default function DrSimeonShowcase() {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <Eyebrow>Demostración guiada</Eyebrow>
+            <Eyebrow>Caso ilustrativo</Eyebrow>
 
             <h2 className="font-display text-[clamp(2rem,4vw,3.5rem)] font-bold leading-[1.02] tracking-[-0.02em] text-[#0a1533]">
-              Dr. Simeon AI
+              Dr. Simeon
               <span className="block text-[#1a3ab8]">con límites clínicos claros</span>
             </h2>
 
@@ -210,10 +210,10 @@ export default function DrSimeonShowcase() {
 
             <ul className="space-y-3">
               {[
-                { text: 'Evaluación de síntomas en 5 minutos', icon: Clock },
-                { text: 'Detección de emergencias médicas', icon: AlertTriangle },
-                { text: 'Recomendación de especialista ideal', icon: Stethoscope },
-                { text: 'Disponible 24/7, siempre contigo', icon: CheckCircle },
+                { text: 'Recoge contexto antes de recomendar una especialidad', icon: Clock },
+                { text: 'Escala señales de alarma fuera del flujo comercial', icon: AlertTriangle },
+                { text: 'Conecta con médicos verificados cuando aplica', icon: Stethoscope },
+                { text: 'Explica que no reemplaza urgencias ni diagnóstico', icon: CheckCircle },
               ].map((feature, index) => (
                 <motion.li
                   key={index}
@@ -232,12 +232,12 @@ export default function DrSimeonShowcase() {
             <div className="flex flex-col gap-3 pt-4 sm:flex-row">
               <Button asChild variant="hero" size="lg">
                 <Link href="/app/ai-consulta">
-                  Agendar Consulta
+                  Iniciar orientación
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link href="/ai-consulta">Probar IA Ahora</Link>
+                <Link href="/ai-consulta">Ver límites clínicos</Link>
               </Button>
             </div>
 
@@ -253,7 +253,7 @@ export default function DrSimeonShowcase() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Card className="relative mx-auto max-w-md overflow-hidden border-[#d4d9e3] bg-card shadow-[0_20px_40px_-12px_rgba(15,37,95,0.15)]">
+            <Card className="relative mx-auto max-w-md overflow-hidden rounded-[12px] border-[#d4d9e3] bg-card p-0 shadow-[0_20px_40px_-18px_rgba(15,37,95,0.18)]">
               {/* Chat Header — Ink background */}
                   <div className="flex items-center gap-3 bg-[#0a1533] px-6 py-4">
                     <DrSimeonAvatar />
@@ -276,7 +276,7 @@ export default function DrSimeonShowcase() {
               </div>
 
               {/* Chat Messages */}
-              <div className="h-[500px] space-y-4 overflow-y-auto bg-gradient-to-b from-[#f7f8fb]/50 to-white p-6">
+              <div className="h-[440px] space-y-4 overflow-y-auto bg-gradient-to-b from-[#f7f8fb]/50 to-white p-5">
                 <AnimatePresence>
                   {messages.map((message, index) => (
                     <AnimatedMessage key={message.id} message={message} index={index} />
@@ -284,7 +284,7 @@ export default function DrSimeonShowcase() {
                   {isShowingTyping && (
                     <div className="flex items-end gap-2">
                       <DrSimeonAvatar />
-                      <div className="rounded-2xl border border-[#d4d9e3] bg-card shadow-sm">
+                      <div className="rounded-[12px] border border-[#d4d9e3] bg-card shadow-sm">
                         <TypingIndicator />
                       </div>
                     </div>
@@ -294,7 +294,7 @@ export default function DrSimeonShowcase() {
 
               {/* Chat Input (Disabled - Demo Only) */}
                   <div className="border-t border-[#d4d9e3] bg-[#f7f8fb] p-4">
-                  <div className="flex items-center gap-2 rounded-full border border-[#d4d9e3] bg-card px-4 py-2 opacity-60">
+                  <div className="flex items-center gap-2 rounded-[10px] border border-[#d4d9e3] bg-card px-4 py-2 opacity-60">
                     <input
                       type="text"
                       placeholder="Esta es una demo"

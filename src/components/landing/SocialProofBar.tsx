@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { BadgeCheck, BookOpen, HeartPulse, ShieldCheck } from 'lucide-react'
-import { Card } from '@/components/ui/card'
 import type { PublicLandingData } from '@/lib/public-trust'
 
 type SocialProofBarProps = {
@@ -34,11 +33,19 @@ const proofItems = [
 
 export function SocialProofBar({ trustData }: SocialProofBarProps) {
   const metrics = trustData?.metrics
+  const hasLiveMetrics = Boolean(
+    metrics &&
+      (metrics.approvedDoctors > 0 ||
+        metrics.reviews > 0 ||
+        metrics.specialties > 0 ||
+        metrics.verifiedDoctors > 0)
+  )
+  const fallbackValues = ['Perfiles', 'Completadas', 'Activas', 'Cédula']
 
   return (
-    <section className="border-y border-border bg-[linear-gradient(180deg,hsl(var(--surface-quiet))_0%,hsl(var(--surface-tint))_100%)] py-6">
+    <section className="border-y border-border bg-card py-4">
       <div className="editorial-shell">
-        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="grid divide-y divide-border sm:grid-cols-2 sm:divide-x sm:divide-y-0 xl:grid-cols-4">
           {proofItems.map((item, index) => {
             const Icon = item.icon
 
@@ -50,19 +57,21 @@ export function SocialProofBar({ trustData }: SocialProofBarProps) {
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: index * 0.06 }}
               >
-                <Card className="surface-panel flex h-full items-center gap-4 rounded-[var(--public-radius-control)] px-4 py-4">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[hsl(var(--surface-tint))] text-[hsl(var(--brand-ocean))]">
-                    <Icon className="h-5 w-5" aria-hidden="true" />
+                <div className="flex h-full items-center gap-3 px-0 py-3 sm:px-5">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[8px] bg-[hsl(var(--surface-tint))] text-[hsl(var(--brand-ocean))]">
+                    <Icon className="h-4 w-4" aria-hidden="true" />
                   </div>
                   <div>
                     <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--public-muted))]">
                       {item.label}
                     </p>
                     <p className="mt-1 text-2xl font-semibold tracking-tight text-[hsl(var(--public-ink))]">
-                      {metrics ? metrics[item.key].toLocaleString('es-MX') : '—'}
+                      {hasLiveMetrics && metrics
+                        ? metrics[item.key].toLocaleString('es-MX')
+                        : fallbackValues[index]}
                     </p>
                   </div>
-                </Card>
+                </div>
               </motion.div>
             )
           })}
