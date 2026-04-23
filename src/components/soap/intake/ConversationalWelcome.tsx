@@ -2,9 +2,9 @@
 
 import * as React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { Users, Heart, Sparkles, Shield, Clock } from 'lucide-react';
+import { ArrowRight, Clock, HeartPulse, ShieldCheck, Stethoscope } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
+import { SupportPresenceOrb } from '@/components/support/SupportPresenceOrb';
 import { cn } from '@/lib/utils';
 
 interface ConversationalWelcomeProps {
@@ -15,19 +15,19 @@ interface ConversationalWelcomeProps {
 
 const welcomeMessages = [
   {
-    icon: Heart,
-    title: 'Atención Personalizada',
-    description: '4 especialistas analizarán tu caso con tecnología de inteligencia artificial',
+    icon: HeartPulse,
+    title: 'Una pregunta a la vez',
+    description: 'Primero ordenamos el motivo principal, duración e intensidad.',
   },
   {
-    icon: Shield,
-    title: 'Seguridad y Confianza',
-    description: 'Tus datos están protegidos con encriptación de nivel médico',
+    icon: ShieldCheck,
+    title: 'Alertas primero',
+    description: 'Si aparece una señal de alarma, la ruta cambia a atención urgente.',
   },
   {
     icon: Clock,
-    title: 'Resultados Rápidos',
-    description: 'Obtén una orientación médica preliminar en menos de 2 minutos',
+    title: 'Resumen útil',
+    description: 'Al final tendrás contexto claro para compartir con un doctor.',
   },
 ];
 
@@ -43,122 +43,94 @@ export function ConversationalWelcome({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: shouldReduceMotion ? 0 : 0.5 }}
-      className={cn('space-y-8 max-w-2xl mx-auto', className)}
+      className={cn('mx-auto w-full max-w-3xl', className)}
     >
-      {/* Hero Section with Icon */}
-      <div className="text-center space-y-6">
-        <motion.div
-          initial={{ scale: shouldReduceMotion ? 1 : 0 }}
-          animate={{ scale: 1 }}
-          transition={{
-            delay: shouldReduceMotion ? 0 : 0.2,
-            type: 'spring',
-            stiffness: 200,
-            damping: 15,
-          }}
-          className="relative inline-block"
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-teal-400 blur-3xl opacity-20 rounded-full" />
-          <div className="relative w-24 h-24 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center shadow-xl mx-auto">
-            <Users className="w-12 h-12 text-white" />
-          </div>
-        </motion.div>
-
+      <div className="border-b border-border pb-8">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: shouldReduceMotion ? 0 : 0.3 }}
-          className="space-y-3"
+          className="flex flex-col gap-6 sm:flex-row sm:items-center"
         >
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground">
-            {userName ? `¡Hola, ${userName}!` : '¡Hola!'}
-          </h1>
-          <p className="text-xl text-muted-foreground">
-            Soy tu asistente de consulta médica. Estoy aquí para ayudarte.
-          </p>
+          <SupportPresenceOrb size="lg" imageClassName="object-cover object-top" />
+          <div>
+            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-vital">
+              Preconsulta clínica
+            </p>
+            <h1 className="mt-2 font-display text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+              {userName ? `Hola, ${userName}. Soy Dr. Simeon.` : 'Hola. Soy Dr. Simeon.'}
+            </h1>
+            <p className="mt-3 max-w-2xl text-base leading-7 text-muted-foreground">
+              Te ayudaré a ordenar lo que sientes y detectar señales de alarma. No diagnostico; preparo el caso para que un doctor pueda revisarlo mejor.
+            </p>
+          </div>
         </motion.div>
       </div>
 
-      {/* Feature Cards */}
-      <div className="grid md:grid-cols-3 gap-4">
+      <div className="grid gap-0 divide-y divide-border border-b border-border md:grid-cols-3 md:divide-x md:divide-y-0">
         {welcomeMessages.map((message, index) => (
           <motion.div
             key={message.title}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
               delay: shouldReduceMotion ? 0 : 0.4 + index * 0.1,
               duration: 0.4,
             }}
+            className="px-0 py-5 md:px-5"
           >
-            <Card className="p-5 bg-gradient-to-br from-white to-blue-50/50 border-primary/20 hover:shadow-md transition-all">
-              <div className="flex flex-col items-center text-center space-y-3">
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                  <message.icon className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground text-sm">{message.title}</h3>
-                  <p className="text-xs text-muted-foreground mt-1">{message.description}</p>
-                </div>
+            <div className="flex items-start gap-3">
+              <message.icon className="mt-0.5 h-4 w-4 shrink-0 text-vital" aria-hidden="true" />
+              <div>
+                <h3 className="text-sm font-semibold text-foreground">{message.title}</h3>
+                <p className="mt-1 text-sm leading-6 text-muted-foreground">{message.description}</p>
               </div>
-            </Card>
+            </div>
           </motion.div>
         ))}
       </div>
 
-      {/* Warm Message */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: shouldReduceMotion ? 0 : 0.7 }}
+        className="mt-6 rounded-xl border border-border bg-card px-4 py-4"
       >
-        <Card className="p-5 bg-gradient-to-r from-teal-50 to-blue-50 border-teal-100">
-          <div className="flex items-start gap-3">
-            <div className="flex-shrink-0">
-              <Sparkles className="w-5 h-5 text-teal-600 mt-0.5" />
-            </div>
-            <div className="flex-1">
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                <strong className="text-foreground">¿Cómo te sientes hoy?</strong> Cuéntame qué te molesta y te haré algunas preguntas para entender mejor tu situación.
-              </p>
-            </div>
+        <div className="flex items-start gap-3">
+          <Stethoscope className="mt-0.5 h-5 w-5 shrink-0 text-vital" aria-hidden="true" />
+          <div>
+            <p className="text-sm font-semibold text-foreground">Primera pregunta</p>
+            <p className="mt-1 text-sm leading-6 text-muted-foreground">
+              Cuéntame qué te molesta y desde cuándo. Después iré paso a paso.
+            </p>
           </div>
-        </Card>
+        </div>
       </motion.div>
 
-      {/* Important Notice */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: shouldReduceMotion ? 0 : 0.8 }}
+        className="mt-4 rounded-lg border border-coral/20 bg-coral/5 px-4 py-3"
       >
-        <Card className="p-4 bg-amber-50 border-amber-200">
-          <p className="text-sm text-amber-800 text-center">
-            <strong>Importante:</strong> Esta herramienta es orientativa. En caso de emergencia, llama al 911.
-          </p>
-        </Card>
+        <p className="text-sm leading-6 text-foreground">
+          Si tienes dolor de pecho, falta de aire intensa, pérdida de fuerza, confusión o sangrado importante, llama al 911.
+        </p>
       </motion.div>
 
-      {/* CTA Button */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: shouldReduceMotion ? 0 : 0.9 }}
-        className="pt-4"
+        className="pt-6"
       >
         <Button
           onClick={onStart}
           size="lg"
-          className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-lg shadow-lg hover:shadow-xl transition-all"
+          className="w-full rounded-lg bg-ink text-primary-foreground shadow-none transition-colors hover:bg-ink/90 active:scale-[0.98]"
         >
-          Comenzar Consulta
-          <motion.span
-            animate={{ x: shouldReduceMotion ? 0 : [0, 5, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-            className="ml-2 inline-block"
-          >
-            →
-          </motion.span>
+          Comenzar preconsulta
+          <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
         </Button>
       </motion.div>
     </motion.div>

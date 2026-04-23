@@ -31,7 +31,7 @@ export function SupportPanel({ layout = 'desktop', onDismiss }: SupportPanelProp
   const [messages, setMessages] = useState<SupportMessage[]>([
     {
       role: 'assistant',
-      content: 'Hola, soy Doctor Simeon. Puedo orientarte dentro de Doctor.mx, explicarte esta página y ayudarte a dar el siguiente paso útil sin perder el contexto.',
+      content: 'Hola, soy Dr. Simeon. Puedo orientarte dentro de Doctor.mx, explicarte esta página y ayudarte a dar el siguiente paso útil sin perder el contexto.',
     },
   ])
   const [input, setInput] = useState('')
@@ -91,17 +91,16 @@ export function SupportPanel({ layout = 'desktop', onDismiss }: SupportPanelProp
   const panelHeight = layout === 'mobile' ? 'h-full' : 'h-[min(580px,calc(100dvh-120px))]'
 
   return (
-    <div className={`flex ${panelHeight} flex-col overflow-hidden overflow-x-hidden rounded-[1.75rem] border border-border bg-card shadow-[0_20px_60px_hsl(var(--shadow-color)/0.16)]`}>
+    <div className={`flex ${panelHeight} flex-col overflow-hidden overflow-x-hidden rounded-xl border border-border bg-card shadow-[0_20px_60px_hsl(var(--shadow-color)/0.16)]`}>
       {/* Header */}
       <div className="relative shrink-0 border-b border-border px-4 pb-3 pt-4">
-        <div className="absolute inset-x-0 top-0 h-[2px] rounded-t-[1.75rem] bg-gradient-to-r from-transparent via-primary/45 to-transparent" />
         {/* Row 1: identity + dismiss */}
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <SupportPresenceOrb size="sm" />
-            <div className="inline-flex items-center gap-1.5 rounded-full border border-primary/15 bg-primary/10 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-primary">
+            <div className="inline-flex items-center gap-1.5 rounded-lg border border-vital/20 bg-vital/10 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-vital">
               <ShieldCheck className="h-3 w-3" aria-hidden="true" />
-              Doctor Simeon
+              Dr. Simeon
             </div>
           </div>
           <Button
@@ -150,8 +149,8 @@ export function SupportPanel({ layout = 'desktop', onDismiss }: SupportPanelProp
               }
             }}
             placeholder="Pregúntale a Simeon…"
-            aria-label="Mensaje para Doctor Simeon"
-            className="h-10 rounded-2xl border-border bg-background px-4 text-sm shadow-none focus-visible:ring-ring"
+            aria-label="Mensaje para Dr. Simeon"
+            className="h-10 rounded-lg border-border bg-background px-4 text-sm shadow-none focus-visible:ring-ring"
           />
           <Button
             type="button"
@@ -159,7 +158,7 @@ export function SupportPanel({ layout = 'desktop', onDismiss }: SupportPanelProp
             disabled={!canSend}
             size="icon"
             aria-label="Enviar mensaje"
-            className="h-10 w-10 shrink-0 rounded-2xl bg-ink text-primary-foreground shadow-[0_8px_20px_hsl(var(--shadow-color)/0.16)] hover:-translate-y-0.5 hover:bg-ink/90 disabled:opacity-40"
+            className="h-10 w-10 shrink-0 rounded-lg bg-ink text-primary-foreground shadow-[0_8px_20px_hsl(var(--shadow-color)/0.16)] hover:-translate-y-0.5 hover:bg-ink/90 disabled:opacity-40"
           >
             <SendHorizonal className="h-4 w-4" aria-hidden="true" />
           </Button>

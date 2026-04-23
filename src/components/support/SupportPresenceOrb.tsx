@@ -41,31 +41,17 @@ export function SupportPresenceOrb({ size = 'md', isLoading = false, imageClassN
       animate={!reducedMotion && isLoading ? { scale: [1, 1.08, 1] } : undefined}
       transition={!reducedMotion && isLoading ? { duration: 2.4, repeat: Infinity, ease: 'easeInOut' } : undefined}
     >
-      {!reducedMotion ? (
-        <>
-          <motion.span
-            className="absolute inset-0 rounded-full bg-primary/15"
-            animate={{ scale: [1, 1.25, 1], opacity: [0.45, 0.1, 0.45] }}
-            transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
-          />
-          <motion.span
-            className={`absolute rounded-full bg-vital/12 ${current.ringInset}`}
-            animate={isLoading ? { scale: [1, 1.16, 1], opacity: [0.45, 0.14, 0.45] } : { scale: [1, 1.1, 1], opacity: [0.35, 0.08, 0.35] }}
-            transition={isLoading ? { duration: 1.8, repeat: Infinity, ease: 'easeInOut', delay: 0.1 } : { duration: 2.4, repeat: Infinity, ease: 'easeInOut', delay: 0.2 }}
-          />
-        </>
-      ) : null}
-      <div className={`relative flex items-center justify-center overflow-hidden rounded-full border border-primary-foreground/60 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--card)),hsl(var(--primary))_46%,hsl(var(--brand-ink)))] text-primary-foreground shadow-[0_14px_30px_hsl(var(--shadow-color)/0.18)] ${current.outer}`}>
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,hsl(var(--primary-foreground)/0.24),transparent_42%)]" />
+      <div className={`relative flex items-center justify-center overflow-hidden rounded-full border border-border bg-card text-foreground shadow-[0_10px_24px_hsl(var(--shadow-color)/0.12)] ${current.outer}`}>
         <div className="relative h-full w-full overflow-hidden rounded-full">
           <Image
             src="/images/simeon.png"
-            alt="Doctor Simeon"
+            alt="Dr. Simeon"
             fill
             sizes="(max-width: 768px) 40px, 48px, 56px"
             className={imageClassName}
           />
         </div>
+        <span className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full border border-card bg-vital" aria-hidden="true" />
       </div>
     </motion.div>
   )

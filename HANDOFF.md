@@ -144,6 +144,8 @@ Doctor.mx is a telemedicine platform for Mexico. We are closing competitive gaps
 **Support widget changes:**
 - Bottom-right launcher now uses design-system tokens (`ink`, `border`, `primary-foreground`, `shadow-color`) instead of hardcoded sky/cyan gradients.
 - Support panel, send button, user messages, thinking state, and action cards were normalized to token colors and tokenized shadows.
+- Dr. Simeon UX personalization pass made `/ai-consulta` conversation-first, hid the support widget on AI consult surfaces, normalized naming to `Dr. Simeon`, removed exposed tool/confidence UI from the main chat, and toned down authenticated intake gradients/emoji/severity styling.
+- Redis env reads now use runtime bracket access so `REDIS_URL` is not statically inlined into Netlify build artifacts.
 
 ---
 
@@ -218,9 +220,9 @@ Doctor.mx is a telemedicine platform for Mexico. We are closing competitive gaps
 
 ## 5. Known Issues & Blockers
 
-1. **Feature flags table may not exist in production yet.**
-   - Migration `20260422150000_auto_soap_notes.sql` creates it with seed data.
-   - If deploying to existing Supabase project, run the migration.
+1. **AutoSOAP production schema was reconciled on 2026-04-22.**
+   - Production had the older `feature_flags(name, is_active)` shape and was missing `soap_notes`.
+   - Migration `20260423021000_fix_auto_soap_production_schema.sql` adds the newer feature flag columns, seeds `ai_soap_notes_enabled`, creates `soap_notes`, and was applied/recorded on the remote Supabase project.
 
 2. **AutoSOAP AI generation requires OpenRouter API key.**
    - If `OPENROUTER_API_KEY` is missing, the generate endpoint will fail.
@@ -260,6 +262,7 @@ Doctor.mx is a telemedicine platform for Mexico. We are closing competitive gaps
 | `20260422100000_fix_referral_code_return.sql` | (previous session) |
 | `20260422150000_auto_soap_notes.sql` | `soap_notes`, `feature_flags` tables + RLS + trigger |
 | `20260422170000_booking_widget.sql` | `doctor_widget_configs`, `widget_booking_intents`, `profiles.email`, appointment cancellation metadata; applied to remote Supabase on 2026-04-22 |
+| `20260423021000_fix_auto_soap_production_schema.sql` | Reconciles legacy production `feature_flags`, seeds `ai_soap_notes_enabled`, creates `soap_notes`; applied to remote Supabase on 2026-04-22 |
 
 **Reminder/intake migrations from Phase 1** are also applied but were created in earlier sessions.
 
@@ -298,6 +301,7 @@ Doctor.mx is a telemedicine platform for Mexico. We are closing competitive gaps
 
 1. **Supabase migration status:**
    - `20260422170000_booking_widget.sql` has been applied to the current remote Supabase project and recorded in migration history.
+   - `20260423021000_fix_auto_soap_production_schema.sql` has also been applied and recorded.
    - For any other environment, apply the migration before testing the widget:
    ```bash
    npx supabase migration up

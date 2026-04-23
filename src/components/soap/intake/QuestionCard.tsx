@@ -3,7 +3,6 @@
 import * as React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { Card } from '@/components/ui/card';
 import { useButtonState } from '@/hooks/useButtonState';
 import { Loader2 } from 'lucide-react';
 
@@ -35,7 +34,7 @@ export function QuestionCard({
       }}
       className="w-full"
     >
-      <Card className={cn('p-6 md:p-8 bg-card/95 backdrop-blur-sm border-primary/20 shadow-lg', className)}>
+      <div className={cn('rounded-xl border border-border bg-card p-5 shadow-[0_14px_38px_-30px_hsl(var(--shadow-color)/0.42)] md:p-7', className)}>
         {(step !== undefined || icon) && (
           <div className="flex items-center gap-4 mb-6">
             {icon && (
@@ -58,12 +57,12 @@ export function QuestionCard({
                 <span className="text-sm font-medium text-primary">
                   Paso {step} de {totalSteps}
                 </span>
-                <div className="flex-1 h-1 bg-primary/10 rounded-full overflow-hidden max-w-[100px]">
+                <div className="flex-1 h-1 bg-secondary rounded-full overflow-hidden max-w-[100px]">
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: `${(step / totalSteps) * 100}%` }}
                     transition={{ duration: shouldReduceMotion ? 0 : 0.5 }}
-                    className="h-full bg-gradient-to-r from-blue-500 to-blue-600"
+                    className="h-full bg-ink"
                   />
                 </div>
               </div>
@@ -73,7 +72,7 @@ export function QuestionCard({
         <div className="space-y-4">
           {children}
         </div>
-      </Card>
+      </div>
     </motion.div>
   );
 }
@@ -180,7 +179,7 @@ export function QuestionCardNavigation({
           onClick={handlePrev}
           disabled={prevButton.isLoading || isSubmitting}
           className={cn(
-            'flex-1 px-6 py-3 rounded-xl font-semibold text-sm',
+            'flex-1 px-6 py-3 rounded-lg font-semibold text-sm',
             'border-2 border-border text-muted-foreground',
             'hover:bg-secondary/50 hover:border-border',
             'disabled:opacity-50 disabled:cursor-not-allowed',
@@ -197,14 +196,13 @@ export function QuestionCardNavigation({
         onClick={handleNext}
         disabled={!canNext || isButtonLoading}
         className={cn(
-          'flex-1 px-6 py-3 rounded-xl font-semibold text-sm',
-          'bg-gradient-to-r from-blue-500 to-blue-600 text-white',
-          'hover:from-blue-600 hover:to-blue-700',
+          'flex-1 px-6 py-3 rounded-lg font-semibold text-sm',
+          'bg-ink text-primary-foreground',
+          'hover:bg-ink/90',
           'disabled:opacity-50 disabled:cursor-not-allowed',
-          'shadow-md hover:shadow-lg',
           'transition-all duration-200',
           'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
-          'disabled:hover:shadow-md'
+          'active:scale-[0.98]'
         )}
       >
         {isButtonLoading ? (
@@ -235,7 +233,7 @@ export function QuestionCardInput({ error, label, className, ...props }: Questio
       )}
       <input
         className={cn(
-          'w-full px-4 py-3 rounded-xl border-2 transition-all duration-200',
+          'w-full px-4 py-3 rounded-lg border-2 transition-all duration-200',
           'focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent',
           error && 'border-red-300 focus:ring-red-500',
           !error && 'border-border',

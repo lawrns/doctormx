@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Send, Sparkles, User, Loader2, ChevronRight, Home } from 'lucide-react'
+import { Send, Stethoscope, User, Loader2, ChevronRight, Home } from 'lucide-react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
@@ -185,7 +185,7 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
             {
               id: 'welcome',
               role: 'assistant',
-              content: 'Hola, soy tu asistente médico de Doctor.mx. ¿Qué te está molestando hoy?',
+              content: 'Hola, soy Dr. Simeon. ¿Qué te está molestando hoy?',
             },
           ])
         }}
@@ -198,11 +198,11 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
       <Card className="flex-1 flex flex-col min-h-0 overflow-hidden">
         <div className="p-4 border-b bg-secondary flex-shrink-0">
           <div className="flex items-center gap-2">
-            <Sparkles className="w-5 h-5 text-primary" />
-            <h2 className="font-semibold font-display">Consulta con Dr. Simeon</h2>
+            <Stethoscope className="w-5 h-5 text-ink" />
+            <h2 className="font-semibold font-display">Preconsulta con Dr. Simeon</h2>
           </div>
           <p className="text-sm text-muted-foreground mt-1">
-            Describe tus síntomas de forma natural. Te ayudaré a entender qué podría estar pasando.
+            Describe tus síntomas de forma natural. Te ayudaré a ordenar el caso antes de consultar con un doctor.
           </p>
         </div>
 
@@ -214,7 +214,7 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
             {isLoading && (
               <div className="flex items-center gap-2 text-muted-foreground">
                 <Loader2 className="w-4 h-4 animate-spin" />
-                <span className="text-sm">Los especialistas están analizando...</span>
+                <span className="text-sm">Dr. Simeon está ordenando el caso...</span>
               </div>
             )}
           </div>
@@ -228,7 +228,7 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
               placeholder="Describe tus síntomas..."
-              className="flex-1 px-4 py-3 rounded-xl border border-border focus:outline-none focus:ring-2 focus:ring-primary bg-background"
+              className="flex-1 px-4 py-3 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-ring bg-background"
               disabled={isLoading}
             />
             <Button
@@ -261,8 +261,8 @@ function MessageBubble({ message }: { message: Message }) {
       )}
       <div
         className={cn(
-          'max-w-[80%] rounded-2xl px-4 py-3',
-          isUser ? 'bg-ink text-white' : 'bg-muted text-foreground'
+          'max-w-[80%] rounded-xl px-4 py-3',
+          isUser ? 'bg-ink text-primary-foreground' : 'bg-muted text-foreground'
         )}
       >
         <p className="text-sm whitespace-pre-wrap">{message.content}</p>
@@ -288,8 +288,8 @@ function ResultsView({
       <Card className="p-6">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h2 className="text-2xl font-bold font-display">Resultado de tu Consulta</h2>
-            <p className="text-muted-foreground">Análisis multi-especialista completado</p>
+            <h2 className="text-2xl font-bold font-display">Resumen clínico listo</h2>
+            <p className="text-muted-foreground">Tu caso quedó ordenado para compartir con un doctor.</p>
           </div>
           <div className="flex gap-3">
             <Link href="/app">
@@ -306,9 +306,9 @@ function ResultsView({
 
         <div className="grid md:grid-cols-2 gap-4 mb-6">
           <div className="bg-primary/5 rounded-xl p-4">
-            <p className="text-sm text-primary font-medium">Diagnóstico Principal</p>
+            <p className="text-sm text-primary font-medium">Orientación principal</p>
             <p className="text-lg font-semibold text-foreground">{result.primaryDiagnosis}</p>
-            <p className="text-sm text-muted-foreground">Confianza: {Math.round(result.confidence * 100)}%</p>
+            <p className="text-sm text-muted-foreground">Puede cambiar tras valoración médica.</p>
           </div>
           <div className="bg-coral/5 rounded-xl p-4">
             <p className="text-sm text-coral font-medium">Nivel de Urgencia</p>
@@ -339,7 +339,7 @@ function ResultsView({
                     </div>
                     <p className="text-sm text-muted-foreground mt-1">{specialist.assessment}</p>
                     <p className="text-sm text-primary mt-1">
-                      Confianza: {Math.round(specialist.confidence * 100)}%
+                      Revisión completada
                     </p>
                   </div>
                 </div>

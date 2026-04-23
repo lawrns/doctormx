@@ -75,14 +75,14 @@ export function SupportMessageList({ messages }: SupportMessageListProps) {
                 ) : null}
                 <div className="min-w-0 max-w-[82%]">
                   {showAssistantIdentity ? (
-                    <div className="mb-1.5 ml-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary/85">
-                      Doctor Simeon
+                    <div className="mb-1.5 ml-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-vital">
+                      Dr. Simeon
                     </div>
                   ) : null}
                   <div
                     className={isAssistant
-                      ? 'w-fit max-w-full break-words rounded-[1.35rem] rounded-bl-md border border-border bg-card px-4 py-3 text-sm leading-[1.55] text-foreground shadow-[0_8px_20px_rgba(15,23,42,0.06)]'
-                      : 'ml-auto w-fit min-w-[3rem] max-w-full break-words rounded-[1.35rem] rounded-br-md bg-ink px-4 py-3 text-sm leading-[1.55] text-primary-foreground shadow-[0_8px_20px_hsl(var(--shadow-color)/0.16)]'}
+                      ? 'w-fit max-w-full break-words rounded-xl rounded-bl-md border border-border bg-card px-4 py-3 text-sm leading-[1.55] text-foreground shadow-[0_8px_20px_rgba(15,23,42,0.06)]'
+                      : 'ml-auto w-fit min-w-[3rem] max-w-full break-words rounded-xl rounded-br-md bg-ink px-4 py-3 text-sm leading-[1.55] text-primary-foreground shadow-[0_8px_20px_hsl(var(--shadow-color)/0.16)]'}
                   >
                     {shouldStream ? <StreamingText content={message.content} active={shouldStream} /> : <p className="whitespace-pre-wrap">{message.content}</p>}
                   </div>

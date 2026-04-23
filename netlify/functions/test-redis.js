@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 /**
  * Redis Connection Test
  * Run with: node netlify/functions/test-redis.js
@@ -8,7 +9,7 @@ const Redis = require('ioredis');
 async function testRedisConnection() {
   console.log('🧪 Testing Redis connection...\n');
 
-  const redisUrl = process.env.REDIS_URL;
+  const redisUrl = process.env['REDIS_URL'];
 
   if (!redisUrl) {
     console.error('❌ REDIS_URL is not set.');

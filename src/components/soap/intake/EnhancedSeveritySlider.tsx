@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { Frown, Meh, Smile, AlertTriangle } from 'lucide-react';
+import { AlertTriangle, Activity } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 
@@ -15,16 +15,16 @@ interface EnhancedSeveritySliderProps {
 }
 
 const severityConfig = [
-  { level: 1, label: 'Muy leve', color: '#22c55e', emoji: '😌', icon: Smile },
-  { level: 2, label: 'Leve', color: '#84cc16', emoji: '🙂', icon: Smile },
-  { level: 3, label: 'Leve-Moderado', color: '#a3e635', emoji: '😐', icon: Meh },
-  { level: 4, label: 'Moderado', color: '#facc15', emoji: '😕', icon: Meh },
-  { level: 5, label: 'Moderado', color: '#fbbf24', emoji: '😟', icon: Meh },
-  { level: 6, label: 'Intenso', color: '#fb923c', emoji: '😣', icon: Frown },
-  { level: 7, label: 'Intenso', color: '#f97316', emoji: '😖', icon: Frown },
-  { level: 8, label: 'Muy intenso', color: '#ef4444', emoji: '😫', icon: Frown },
-  { level: 9, label: 'Severo', color: '#dc2626', emoji: '😭', icon: Frown },
-  { level: 10, label: 'Insoportable', color: '#b91c1c', emoji: '😱', icon: AlertTriangle },
+  { level: 1, label: 'Muy leve', color: '#16a34a', icon: Activity },
+  { level: 2, label: 'Leve', color: '#22c55e', icon: Activity },
+  { level: 3, label: 'Leve a moderado', color: '#84cc16', icon: Activity },
+  { level: 4, label: 'Moderado', color: '#eab308', icon: Activity },
+  { level: 5, label: 'Moderado', color: '#f59e0b', icon: Activity },
+  { level: 6, label: 'Intenso', color: '#f97316', icon: Activity },
+  { level: 7, label: 'Intenso', color: '#ea580c', icon: Activity },
+  { level: 8, label: 'Muy intenso', color: '#ef4444', icon: AlertTriangle },
+  { level: 9, label: 'Severo', color: '#dc2626', icon: AlertTriangle },
+  { level: 10, label: 'Insoportable', color: '#b91c1c', icon: AlertTriangle },
 ];
 
 export function EnhancedSeveritySlider({
@@ -55,54 +55,26 @@ export function EnhancedSeveritySlider({
 
   return (
     <div className={cn('space-y-6', className)}>
-      {/* Large Value Display with Animation */}
       <motion.div
         key={value}
-        initial={{ scale: shouldReduceMotion ? 1 : 0.8, opacity: shouldReduceMotion ? 1 : 0 }}
+        initial={{ opacity: shouldReduceMotion ? 1 : 0, y: shouldReduceMotion ? 0 : 8 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{
           type: 'spring',
           stiffness: 200,
           damping: 15,
         }}
-        className="text-center"
+        className="rounded-xl border border-border bg-card p-4"
       >
-        <div className="relative inline-flex items-center justify-center">
-          <motion.div
-            className="absolute inset-0 rounded-full opacity-20"
-            style={{ backgroundColor: currentConfig.color }}
-            animate={
-              !shouldReduceMotion
-                ? {
-                    scale: [1, 1.2, 1],
-                    opacity: [0.2, 0.1, 0.2],
-                  }
-                : {}
-            }
-            transition={{ duration: 2, repeat: Infinity }}
-          />
-          <div
-            className="relative w-32 h-32 rounded-full flex items-center justify-center border-4 shadow-lg"
-            style={{ backgroundColor: `${currentConfig.color}10`, borderColor: currentConfig.color }}
-          >
-            <div className="text-center">
-              <div className="text-5xl font-bold mb-1" style={{ color: currentConfig.color }}>
-                {value}
-              </div>
-              <div className="text-2xl">{currentConfig.emoji}</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-4 space-y-2">
+        <div className="flex items-center justify-between gap-4">
           <motion.div
             key={`label-${value}`}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex items-center justify-center gap-2"
+            className="flex items-center gap-2"
           >
             <Icon className="w-5 h-5" style={{ color: currentConfig.color }} />
-            <span className="text-xl font-semibold text-foreground">{currentConfig.label}</span>
+            <span className="text-base font-semibold text-foreground">{currentConfig.label}</span>
           </motion.div>
 
           <Badge
@@ -118,12 +90,10 @@ export function EnhancedSeveritySlider({
       {/* Enhanced Slider */}
       <div className="space-y-4 px-4">
         <div className="relative">
-          {/* Gradient Track */}
           <div
             className="h-3 rounded-full transition-all"
             style={getGradientStyle()}
           >
-            {/* Filled portion */}
             <motion.div
               className="h-full rounded-full relative"
               style={{
@@ -131,14 +101,6 @@ export function EnhancedSeveritySlider({
                 backgroundColor: currentConfig.color,
               }}
             >
-              {/* Shine effect on filled portion */}
-              {!shouldReduceMotion && (
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                  animate={{ x: ['-100%', '200%'] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
-                />
-              )}
             </motion.div>
           </div>
 
@@ -155,21 +117,13 @@ export function EnhancedSeveritySlider({
 
           {/* Visual Thumb */}
           <motion.div
-            className="absolute top-1/2 -translate-y-1/2 w-8 h-8 rounded-full shadow-lg border-3 border-white flex items-center justify-center cursor-pointer"
+            className="absolute top-1/2 -translate-y-1/2 w-8 h-8 rounded-full shadow-sm border-2 border-card flex items-center justify-center cursor-pointer"
             style={{
               left: `calc(${((value - min) / (max - min)) * 100}% - 16px)`,
               backgroundColor: currentConfig.color,
             }}
-            animate={{
-              scale: [1, 1.1, 1],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
           >
-            <span className="text-white text-xs font-bold">{currentConfig.emoji}</span>
+            <span className="text-primary-foreground text-xs font-bold">{value}</span>
           </motion.div>
         </div>
 
@@ -189,7 +143,7 @@ export function EnhancedSeveritySlider({
               className={cn(
                 'py-2 px-3 rounded-lg text-sm font-medium transition-all hover:shadow-md',
                 value === level
-                  ? 'shadow-lg transform scale-105'
+                  ? 'shadow-sm transform scale-[1.02]'
                   : 'bg-secondary hover:bg-muted'
               )}
               style={{
@@ -208,7 +162,7 @@ export function EnhancedSeveritySlider({
         key={`description-${value}`}
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-center text-sm text-muted-foreground bg-primary/10 rounded-lg p-3"
+        className="text-center text-sm text-muted-foreground bg-secondary rounded-lg p-3"
       >
         {getContextMessage(value)}
       </motion.div>

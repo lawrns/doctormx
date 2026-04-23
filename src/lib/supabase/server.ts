@@ -35,15 +35,20 @@ function createDisabledQuery(mode: 'collection' | 'single' = 'collection') {
       }
 
       if (
-        prop === 'createSignedUrl' ||
-        prop === 'createSignedUrls' ||
-        prop === 'upload' ||
         prop === 'update' ||
         prop === 'upsert' ||
         prop === 'insert' ||
         prop === 'delete' ||
         prop === 'remove' ||
-        prop === 'move' ||
+        prop === 'move'
+      ) {
+        return (..._args: unknown[]) => proxy
+      }
+
+      if (
+        prop === 'createSignedUrl' ||
+        prop === 'createSignedUrls' ||
+        prop === 'upload' ||
         prop === 'list' ||
         prop === 'download' ||
         prop === 'rpc'

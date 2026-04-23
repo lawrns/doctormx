@@ -41,7 +41,7 @@ export function SupportWidget() {
     return null
   }
 
-  if (pathname?.startsWith('/widget')) {
+  if (pathname?.startsWith('/widget') || pathname?.includes('/ai-consulta')) {
     return null
   }
 
@@ -53,8 +53,8 @@ export function SupportWidget() {
             <Button
               type="button"
               size="icon-lg"
-              aria-label="Abrir asistente Doctor Simeon"
-              className="h-16 w-16 rounded-[1.6rem] border border-border/20 bg-ink text-primary-foreground shadow-[0_24px_50px_hsl(var(--shadow-color)/0.22)] hover:bg-ink/95"
+              aria-label="Abrir asistente Dr. Simeon"
+              className="h-16 w-16 rounded-xl border border-border/20 bg-ink text-primary-foreground shadow-[0_24px_50px_hsl(var(--shadow-color)/0.22)] hover:bg-ink/95"
             >
               <SupportPresenceOrb size="sm" />
             </Button>
@@ -64,7 +64,7 @@ export function SupportWidget() {
             showCloseButton={false}
             className="h-[85dvh] rounded-t-[2rem] border-0 bg-transparent p-3 shadow-none [overscroll-behavior:contain]"
           >
-            <SheetTitle className="sr-only">Doctor Simeon Support Chat</SheetTitle>
+            <SheetTitle className="sr-only">Dr. Simeon Support Chat</SheetTitle>
             <SheetDescription className="sr-only">Chat de soporte para navegación en Doctor.mx</SheetDescription>
             <SupportPanel layout="mobile" onDismiss={() => setOpen(false)} />
           </SheetContent>
@@ -91,15 +91,15 @@ export function SupportWidget() {
       <div className="flex justify-end">
         <Button
           type="button"
-          aria-label="Abrir asistente Doctor Simeon"
+          aria-label="Abrir asistente Dr. Simeon"
           aria-expanded={open}
           onClick={() => handleOpenChange(!open)}
-          className="group relative h-auto w-full rounded-[1.75rem] border border-border/20 bg-ink px-4 py-3 text-primary-foreground shadow-[0_24px_50px_hsl(var(--shadow-color)/0.2)] backdrop-blur-xl transition-all hover:-translate-y-1 hover:bg-ink/95"
+          className="group relative h-auto w-full rounded-xl border border-border/20 bg-ink px-4 py-3 text-primary-foreground shadow-[0_24px_50px_hsl(var(--shadow-color)/0.2)] backdrop-blur-xl transition-all hover:-translate-y-1 hover:bg-ink/95"
         >
           <div className="flex items-center gap-3">
             <SupportPresenceOrb size="md" isLoading={open} />
             <div className="min-w-0 flex-1 text-left">
-              <div className="text-sm font-semibold tracking-[-0.02em]">Doctor Simeon</div>
+              <div className="text-sm font-semibold tracking-[-0.02em]">Dr. Simeon</div>
               <div className="truncate text-xs text-primary-foreground/80">Te guía dentro de Doctor.mx</div>
             </div>
             <div className="rounded-full bg-primary-foreground/14 p-2 text-primary-foreground/95" aria-hidden="true">

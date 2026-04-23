@@ -14,7 +14,6 @@ import {
   Loader2,
   Send,
   Smile,
-  Sparkles,
   Stethoscope,
   Wind,
   Zap,
@@ -135,16 +134,16 @@ type SpecialtyConfig = { icon: React.ComponentType<{ className?: string }>; colo
 
 function getSpecialtyConfig(specialty: string): SpecialtyConfig {
   const lower = specialty.toLowerCase();
-  if (/cardio|coraz[oó]n|infarto/.test(lower))      return { icon: Heart,      color: '#ef4444', bg: 'bg-red-500/15' };
-  if (/neurol|cerebro|cabeza|migra/.test(lower))    return { icon: Brain,      color: '#a855f7', bg: 'bg-purple-500/15' };
-  if (/oftalm|ojo|visi[oó]n/.test(lower))           return { icon: Eye,        color: 'hsl(var(--primary))', bg: 'bg-primary/15' };
-  if (/pediatr|ni[ñn]|infant|beb[eé]/.test(lower)) return { icon: Baby,       color: '#ec4899', bg: 'bg-pink-500/15' };
-  if (/dermatol|piel|cutane|erupci/.test(lower))    return { icon: Smile,      color: '#f97316', bg: 'bg-orange-500/15' };
-  if (/pulm[oó]n|respir|bronq|neum/.test(lower))   return { icon: Wind,       color: '#06b6d4', bg: 'bg-cyan-500/15' };
-  if (/gastro|digest|est[oó]mag|colon/.test(lower)) return { icon: Activity,   color: '#22c55e', bg: 'bg-green-500/15' };
-  if (/psiqui|psicol|mental|ansied/.test(lower))    return { icon: Sparkles,   color: '#8b5cf6', bg: 'bg-violet-500/15' };
-  if (/ortop|trauma|hueso|articular/.test(lower))   return { icon: Zap,        color: '#f59e0b', bg: 'bg-amber-500/15' };
-  return { icon: Stethoscope, color: 'hsl(var(--primary))', bg: 'bg-primary/15' };
+  if (/cardio|coraz[oó]n|infarto/.test(lower))      return { icon: Heart,      color: 'hsl(var(--brand-ink))', bg: 'bg-secondary' };
+  if (/neurol|cerebro|cabeza|migra/.test(lower))    return { icon: Brain,      color: 'hsl(var(--brand-ink))', bg: 'bg-secondary' };
+  if (/oftalm|ojo|visi[oó]n/.test(lower))           return { icon: Eye,        color: 'hsl(var(--brand-ink))', bg: 'bg-secondary' };
+  if (/pediatr|ni[ñn]|infant|beb[eé]/.test(lower)) return { icon: Baby,       color: 'hsl(var(--brand-ink))', bg: 'bg-secondary' };
+  if (/dermatol|piel|cutane|erupci/.test(lower))    return { icon: Smile,      color: 'hsl(var(--brand-ink))', bg: 'bg-secondary' };
+  if (/pulm[oó]n|respir|bronq|neum/.test(lower))   return { icon: Wind,       color: 'hsl(var(--brand-ink))', bg: 'bg-secondary' };
+  if (/gastro|digest|est[oó]mag|colon/.test(lower)) return { icon: Activity,   color: 'hsl(var(--brand-ink))', bg: 'bg-secondary' };
+  if (/psiqui|psicol|mental|ansied/.test(lower))    return { icon: Brain,      color: 'hsl(var(--brand-ink))', bg: 'bg-secondary' };
+  if (/ortop|trauma|hueso|articular/.test(lower))   return { icon: Zap,        color: 'hsl(var(--brand-ink))', bg: 'bg-secondary' };
+  return { icon: Stethoscope, color: 'hsl(var(--brand-ink))', bg: 'bg-secondary' };
 }
 
 function detectSpecialtyFromText(text: string): { specialty: string; confidence: number } | null {
@@ -176,36 +175,15 @@ const STAGE_LABELS: Record<ConsultStage, string> = {
 };
 
 function AnalysisStatusHeader({ stage }: { stage: ConsultStage }) {
-  const prefersReducedMotion = useReducedMotion();
-  const isActive = stage === 'analyzing' || stage === 'consensus' || stage === 'generating';
-
   return (
     <div className="flex items-center gap-3">
-      <div className="relative flex h-8 w-8 shrink-0 items-center justify-center">
-        {isActive && !prefersReducedMotion && (
-          <motion.div
-            className="absolute inset-0 rounded-full bg-primary/20"
-            animate={{ scale: [1, 1.4, 1], opacity: [0.6, 0.15, 0.6] }}
-            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-          />
-        )}
-        <Stethoscope className={cn('relative h-4 w-4', stage === 'complete' ? 'text-vital' : stage === 'error' ? 'text-red-400' : 'text-primary')} />
+      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-border bg-card">
+        <Stethoscope className={cn('h-4 w-4', stage === 'complete' ? 'text-vital' : stage === 'error' ? 'text-coral' : 'text-ink')} />
       </div>
       <div>
         <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-mono">Dr. Simeon</p>
         <p className="text-sm font-medium text-foreground">{STAGE_LABELS[stage]}</p>
       </div>
-      {isActive && (
-        <div className="ml-auto flex items-center gap-1">
-          {[0, 1, 2].map((i) => (
-            <span
-              key={i}
-              className="h-1.5 w-1.5 rounded-full bg-primary"
-              style={{ animation: prefersReducedMotion ? 'none' : `pulse 1.2s ease-in-out ${i * 0.2}s infinite` }}
-            />
-          ))}
-        </div>
-      )}
     </div>
   );
 }
@@ -222,11 +200,15 @@ function SpecialtyMorphCard({
   const prefersReducedMotion = useReducedMotion();
   const config = specialty ? getSpecialtyConfig(specialty) : null;
   const Icon = config?.icon ?? Stethoscope;
-  const isLocked = stage === 'complete' || stage === 'consensus';
+  const contextCopy = stage === 'complete' || stage === 'consensus'
+    ? 'Resumen listo para continuar'
+    : confidence > 0
+      ? 'Puede ajustarse conforme respondas'
+      : 'Aparecerá cuando haya contexto suficiente';
 
   return (
-    <div className="rounded-2xl border border-border bg-card p-4">
-      <p className="mb-3 text-xs uppercase tracking-[0.2em] text-muted-foreground font-mono">Especialidad detectada</p>
+    <div className="rounded-xl border border-border bg-card p-4">
+      <p className="mb-3 text-xs uppercase tracking-[0.2em] text-muted-foreground font-mono">Especialidad probable</p>
       <div className="flex items-center gap-3">
         <AnimatePresence mode="wait">
           <motion.div
@@ -235,26 +217,14 @@ function SpecialtyMorphCard({
             animate={prefersReducedMotion ? undefined : { scale: 1, opacity: 1 }}
             exit={prefersReducedMotion ? undefined : { scale: 0.7, opacity: 0 }}
             transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-            className={cn('flex h-11 w-11 shrink-0 items-center justify-center rounded-xl', config?.bg ?? 'bg-muted')}
+            className={cn('flex h-10 w-10 shrink-0 items-center justify-center rounded-lg', config?.bg ?? 'bg-muted')}
           >
             <Icon className="h-5 w-5" style={{ color: config?.color ?? '#64748b' }} />
           </motion.div>
         </AnimatePresence>
         <div className="flex-1 min-w-0">
           <p className="text-sm font-semibold text-foreground truncate">{specialty ?? 'Evaluando...'}</p>
-          {confidence > 0 && (
-            <div className="mt-1.5">
-              <div className="h-1 w-full overflow-hidden rounded-full bg-muted">
-                <motion.div
-                  className={cn('h-full rounded-full', isLocked ? 'bg-vital' : 'bg-primary')}
-                  initial={prefersReducedMotion ? undefined : { width: 0 }}
-                  animate={prefersReducedMotion ? undefined : { width: `${Math.round(confidence * 100)}%` }}
-                  transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
-                />
-              </div>
-              <p className="mt-1 text-xs text-muted-foreground">{Math.round(confidence * 100)}% confianza</p>
-            </div>
-          )}
+          <p className="mt-1 text-xs text-muted-foreground">{contextCopy}</p>
         </div>
       </div>
     </div>
@@ -268,29 +238,20 @@ function RedFlagAlertCard({ flags, requiresEscalation }: { flags: RedFlagResult[
       initial={prefersReducedMotion ? undefined : { opacity: 0, y: 6 }}
       animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
       className={cn(
-        'rounded-[20px] border p-4',
-        requiresEscalation ? 'border-rose-700/50 bg-rose-950/40' : 'border-orange-700/50 bg-orange-950/30',
+        'rounded-xl border p-4',
+        requiresEscalation ? 'border-coral/35 bg-coral/10' : 'border-amber/35 bg-amber/10',
       )}
     >
       <div className="flex items-center gap-2 mb-2">
-        {!prefersReducedMotion ? (
-          <motion.div
-            animate={{ scale: [1, 1.15, 1], opacity: [1, 0.6, 1] }}
-            transition={{ duration: 1.4, repeat: Infinity }}
-          >
-            <AlertTriangle className={cn('h-4 w-4 shrink-0', requiresEscalation ? 'text-red-400' : 'text-orange-400')} />
-          </motion.div>
-        ) : (
-          <AlertTriangle className={cn('h-4 w-4 shrink-0', requiresEscalation ? 'text-red-400' : 'text-orange-400')} />
-        )}
-        <p className={cn('text-xs font-semibold uppercase tracking-[0.16em]', requiresEscalation ? 'text-red-300' : 'text-orange-300')}>
+        <AlertTriangle className={cn('h-4 w-4 shrink-0', requiresEscalation ? 'text-coral' : 'text-amber')} />
+        <p className={cn('text-xs font-semibold uppercase tracking-[0.16em]', requiresEscalation ? 'text-coral' : 'text-amber')}>
           {requiresEscalation ? 'Emergencia detectada' : 'Alertas médicas'}
         </p>
       </div>
       <ul className="space-y-1">
         {flags.slice(0, 2).map((f, i) => (
-          <li key={i} className={cn('text-xs', requiresEscalation ? 'text-red-200' : 'text-orange-200')}>
-            • {f.message}
+          <li key={i} className="text-xs leading-5 text-foreground">
+            {f.message}
           </li>
         ))}
       </ul>
@@ -299,35 +260,30 @@ function RedFlagAlertCard({ flags, requiresEscalation }: { flags: RedFlagResult[
 }
 
 function ReasoningTimeline({ steps }: { steps: ReasoningStep[] }) {
-  const prefersReducedMotion = useReducedMotion();
   return (
-    <div className="rounded-2xl border border-border bg-card p-4 space-y-2">
-      <p className="mb-3 text-xs uppercase tracking-[0.2em] text-muted-foreground font-mono">Pasos de análisis</p>
-      {steps.map((step) => (
-        <motion.div
-          key={step.id}
-          className={cn(
-            'flex items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-xs transition-colors',
-            step.status === 'done'   ? 'text-vital' :
-            step.status === 'active' ? 'text-primary' : 'text-muted-foreground',
-          )}
-          animate={step.status === 'active' && !prefersReducedMotion ? { x: [0, 2, 0] } : {}}
-          transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-        >
-          {step.status === 'done' ? (
-            <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-vital" />
-          ) : step.status === 'active' ? (
-            <motion.div
-              className="h-2 w-2 shrink-0 rounded-full bg-primary"
-              animate={prefersReducedMotion ? {} : { opacity: [1, 0.3, 1] }}
-              transition={{ duration: 1, repeat: Infinity }}
-            />
-          ) : (
-            <div className="h-2 w-2 shrink-0 rounded-full border border-border" />
-          )}
-          <span>{step.label}</span>
-        </motion.div>
-      ))}
+    <div className="rounded-xl border border-border bg-card p-4">
+      <p className="mb-3 text-xs uppercase tracking-[0.2em] text-muted-foreground font-mono">Lo que ya revisamos</p>
+      <div className="divide-y divide-border border-y border-border">
+        {steps.slice(0, 5).map((step) => (
+          <div
+            key={step.id}
+            className={cn(
+              'flex items-center gap-2.5 py-2 text-xs transition-colors',
+              step.status === 'done'   ? 'text-vital' :
+              step.status === 'active' ? 'text-foreground' : 'text-muted-foreground',
+            )}
+          >
+            {step.status === 'done' ? (
+              <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-vital" />
+            ) : step.status === 'active' ? (
+              <span className="h-2 w-2 shrink-0 rounded-full bg-ink" />
+            ) : (
+              <span className="h-2 w-2 shrink-0 rounded-full border border-border" />
+            )}
+            <span>{step.label}</span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -346,7 +302,7 @@ function UrgencyGauge({ level }: { level: string }) {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <div className="rounded-2xl border border-border bg-card p-4">
+    <div className="rounded-xl border border-border bg-card p-4">
       <div className="flex items-center justify-between mb-2">
         <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-mono">Nivel de urgencia</p>
         <span className="text-xs font-semibold" style={{ color: config.color }}>{config.label}</span>
@@ -370,23 +326,14 @@ function ResponseGenerationWave({ progress }: { progress: number }) {
   const labelIndex = Math.min(Math.floor(progress / 25), labels.length - 1);
 
   return (
-    <div className="rounded-2xl border border-primary/20 bg-primary/5 p-4">
+    <div className="rounded-xl border border-border bg-card p-4">
       <div className="flex items-center gap-3 mb-3">
-        {!prefersReducedMotion ? (
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: 'linear' }}
-          >
-            <Loader2 className="h-4 w-4 text-primary" />
-          </motion.div>
-        ) : (
-          <Loader2 className="h-4 w-4 text-primary" />
-        )}
-        <p className="text-sm text-primary/80">{labels[labelIndex]}...</p>
+        <Loader2 className="h-4 w-4 text-ink" />
+        <p className="text-sm text-foreground">{labels[labelIndex]}...</p>
       </div>
       <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
         <motion.div
-          className="h-full rounded-full bg-primary"
+          className="h-full rounded-full bg-ink"
           initial={prefersReducedMotion ? undefined : { width: '5%' }}
           animate={prefersReducedMotion ? undefined : { width: `${Math.max(progress, 5)}%` }}
           transition={{ duration: 0.4, ease: 'easeOut' }}
@@ -471,7 +418,7 @@ function ConversationTrail({ formData, currentStep }: { formData: FormData; curr
             <p className="text-xs text-muted-foreground pt-1">{STEP_META[step].question}</p>
           </div>
           <div className="ml-8">
-            <div className="inline-block rounded-2xl rounded-tl-sm bg-muted px-3 py-2 text-sm text-foreground max-w-[85%]">
+            <div className="inline-block rounded-xl rounded-tl-md bg-muted px-3 py-2 text-sm text-foreground max-w-[85%]">
               {STEP_META[step].getAnswer(formData)}
             </div>
           </div>
@@ -832,12 +779,12 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
       <header className={cn('sticky top-0 z-50', headerBg)}>
         <div className="flex items-center justify-between px-4 py-3">
           <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/15">
-              <Sparkles className="h-4 w-4 text-primary" />
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-card">
+              <Stethoscope className="h-4 w-4 text-ink" />
             </div>
             <div>
-              <p className="text-sm font-semibold text-foreground">Consulta Multi-Especialista</p>
-              <p className="text-xs text-muted-foreground font-mono uppercase tracking-wider">4 especialistas · Consenso médico IA</p>
+              <p className="text-sm font-semibold text-foreground">Preconsulta clínica</p>
+              <p className="text-xs text-muted-foreground font-mono uppercase tracking-wider">Dr. Simeon · Orientación inicial</p>
             </div>
           </div>
           <Link href="/app" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
@@ -1000,14 +947,14 @@ function ChiefComplaintStep({ value, onChange, onNext, onPrev }: { value: string
         <input
           type="text" value={value} onChange={(e) => onChange(e.target.value)}
           placeholder="Ej: Dolor de cabeza fuerte..."
-          className="w-full px-4 py-4 text-lg border-2 border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-card"
+          className="w-full px-4 py-4 text-lg border-2 border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all bg-card"
           autoFocus onKeyDown={(e) => e.key === 'Enter' && value.trim() && onNext()}
         />
         <div>
           <p className="text-sm text-muted-foreground mb-2 font-medium">Sugerencias rápidas:</p>
           <div className="flex flex-wrap gap-2">
             {chips.map((c) => (
-              <button key={c} onClick={() => onChange(c)} className={cn('px-3 py-1.5 text-sm rounded-full border transition-all', value === c ? 'bg-ink text-white border-ink' : 'bg-card border-border hover:border-primary hover:text-primary')}>
+              <button key={c} onClick={() => onChange(c)} className={cn('px-3 py-1.5 text-sm rounded-lg border transition-all', value === c ? 'bg-ink text-primary-foreground border-ink' : 'bg-card border-border hover:border-ink/40 hover:text-foreground')}>
                 {c}
               </button>
             ))}
@@ -1024,7 +971,7 @@ function SymptomsStep({ value, onChange, onNext, onPrev }: { value: string; onCh
     <QuestionCard step={2} totalSteps={8}>
       <QuestionTitle>Cuéntame más sobre tus síntomas</QuestionTitle>
       <QuestionDescription>Describe con detalle lo que sientes: ubicación, tipo de molestia, intensidad</QuestionDescription>
-      <textarea value={value} onChange={(e) => onChange(e.target.value)} placeholder="Describe tus síntomas en detalle..." rows={5} className="w-full px-4 py-4 border-2 border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none transition-all bg-card" />
+      <textarea value={value} onChange={(e) => onChange(e.target.value)} placeholder="Describe tus síntomas en detalle..." rows={5} className="w-full px-4 py-4 border-2 border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent resize-none transition-all bg-card" />
       <p className="text-xs text-muted-foreground">{value.length} caracteres</p>
       <QuestionCardNavigation onPrev={onPrev} onNext={onNext} canNext={value.trim().length >= 10} />
     </QuestionCard>
@@ -1039,7 +986,7 @@ function DurationStep({ value, onChange, onNext, onPrev }: { value: string; onCh
       <QuestionDescription>Selecciona la opción más cercana a tu situación</QuestionDescription>
       <div className="grid grid-cols-2 gap-2">
         {opts.map((opt) => (
-          <button key={opt} onClick={() => onChange(opt)} className={cn('p-3 rounded-xl border-2 text-sm text-left transition-all', value === opt ? 'border-primary bg-primary/5 text-primary' : 'border-border hover:border-primary/50')}>
+          <button key={opt} onClick={() => onChange(opt)} className={cn('p-3 rounded-lg border-2 text-sm text-left transition-all', value === opt ? 'border-ink bg-secondary text-foreground' : 'border-border hover:border-ink/40')}>
             {opt}
           </button>
         ))}
@@ -1097,13 +1044,13 @@ function FactorsStep({ aggravating, relieving, onAggravatingChange, onRelievingC
   return (
     <QuestionCard step={7} totalSteps={8}>
       <QuestionTitle>¿Qué afecta tus síntomas?</QuestionTitle>
-      <QuestionDescription>Ayuda a los especialistas a entenderte mejor (opcional)</QuestionDescription>
+      <QuestionDescription>Ayuda a Dr. Simeon a entender el contexto (opcional)</QuestionDescription>
       <div className="space-y-4">
         {[{ label: '¿Qué lo empeora?', value: aggravating, onChange: onAggravatingChange, placeholder: 'Ej: movimiento, comida, estrés...' },
           { label: '¿Qué lo alivia?', value: relieving, onChange: onRelievingChange, placeholder: 'Ej: descanso, medicamentos...' }].map(({ label, value, onChange, placeholder }) => (
           <div key={label}>
             <label className="block text-sm font-medium text-foreground mb-1.5">{label}</label>
-            <input type="text" value={value} onChange={(e) => onChange(e.target.value)} placeholder={placeholder} className="w-full px-4 py-3 border-2 border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-card" />
+            <input type="text" value={value} onChange={(e) => onChange(e.target.value)} placeholder={placeholder} className="w-full px-4 py-3 border-2 border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-card" />
           </div>
         ))}
       </div>
@@ -1117,9 +1064,9 @@ function HistoryStep({ value, onChange, onNext, onPrev, isSubmitting }: { value:
     <QuestionCard step={8} totalSteps={8}>
       <QuestionTitle>Antecedentes médicos (opcional)</QuestionTitle>
       <QuestionDescription>Cualquier información que ayude al diagnóstico</QuestionDescription>
-      <textarea value={value} onChange={(e) => onChange(e.target.value)} placeholder="Ej: Tengo hipertensión, tomo medicación para la tiroides..." rows={5} className="w-full px-4 py-4 border-2 border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none transition-all bg-card" />
+      <textarea value={value} onChange={(e) => onChange(e.target.value)} placeholder="Ej: Tengo hipertensión, tomo medicación para la tiroides..." rows={5} className="w-full px-4 py-4 border-2 border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none transition-all bg-card" />
       <QuestionCardNavigation onPrev={onPrev} onNext={onNext} canNext={true} nextLabel="Iniciar Consulta" isSubmitting={isSubmitting} />
-      <p className="text-center text-xs text-muted-foreground mt-2">Los especialistas analizarán tu caso en ~60 segundos</p>
+      <p className="text-center text-xs text-muted-foreground mt-2">Dr. Simeon ordenará tu caso en aproximadamente 60 segundos</p>
     </QuestionCard>
   );
 }
@@ -1127,8 +1074,8 @@ function HistoryStep({ value, onChange, onNext, onPrev, isSubmitting }: { value:
 function ConsultingStep({ specialists, progress, phases, stage }: { specialists: SpecialistAgent[]; progress: ConsultationProgressType | null; phases: SOAPPhaseStatus[]; stage: ConsultStage }) {
   const prefersReducedMotion = useReducedMotion();
   const STAGE_COPY: Record<ConsultStage, { title: string; sub: string }> = {
-    analyzing:  { title: 'Analizando tu caso...', sub: 'Los especialistas están evaluando tus síntomas' },
-    consensus:  { title: 'Formando consenso...', sub: 'Los especialistas están comparando sus evaluaciones' },
+    analyzing:  { title: 'Revisando tu caso...', sub: 'Dr. Simeon está ordenando síntomas, duración y señales de alarma' },
+    consensus:  { title: 'Preparando orientación...', sub: 'La revisión está conectando el motivo principal con el siguiente paso' },
     generating: { title: 'Generando respuesta...', sub: 'Sintetizando el plan de atención para ti' },
     complete:   { title: 'Análisis completado', sub: '' },
     intake:     { title: 'Preparando análisis...', sub: '' },
@@ -1139,22 +1086,14 @@ function ConsultingStep({ specialists, progress, phases, stage }: { specialists:
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6 max-w-xl mx-auto">
       <div className="text-center py-4">
-        <div className="relative w-16 h-16 mx-auto mb-4">
-          <div className="absolute inset-0 rounded-full bg-primary/10" />
-          {!prefersReducedMotion && (
-            <motion.div
-              className="absolute inset-0 rounded-full border-2 border-sky-500/30"
-              animate={{ scale: [1, 1.3, 1], opacity: [0.8, 0, 0.8] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
-          )}
+        <div className="relative w-16 h-16 mx-auto mb-4 rounded-xl border border-border bg-card">
           <div className="relative flex h-full items-center justify-center">
             {!prefersReducedMotion ? (
               <motion.div animate={{ rotate: 360 }} transition={{ duration: 2.5, repeat: Infinity, ease: 'linear' }}>
-                <Loader2 className="h-7 w-7 text-primary" />
+                <Loader2 className="h-7 w-7 text-ink" />
               </motion.div>
             ) : (
-              <Loader2 className="h-7 w-7 text-primary" />
+              <Loader2 className="h-7 w-7 text-ink" />
             )}
           </div>
         </div>
@@ -1182,17 +1121,17 @@ function ResultsStep({ consultation, consensus, specialists, phases }: { consult
         initial={prefersReducedMotion ? undefined : { scale: 0.95, opacity: 0 }}
         animate={prefersReducedMotion ? undefined : { scale: 1, opacity: 1 }}
         transition={{ type: 'spring', stiffness: 280, damping: 22 }}
-        className="bg-vital rounded-2xl p-6 text-white text-center"
+        className="rounded-xl border border-vital/20 bg-vital/10 p-6 text-center"
       >
-        <CheckCircle2 className="w-12 h-12 mx-auto mb-3" />
-        <h2 className="text-2xl font-bold mb-1">Consulta Completada</h2>
-        <p className="text-vital text-sm">{specialists.length} especialistas analizaron tu caso</p>
+        <CheckCircle2 className="w-12 h-12 mx-auto mb-3 text-vital" />
+        <h2 className="text-2xl font-bold mb-1 text-foreground">Resumen clínico listo</h2>
+        <p className="text-muted-foreground text-sm">Tu caso quedó ordenado para compartir con un doctor.</p>
       </motion.div>
 
       <SOAPTimeline phases={phases} currentPhase="plan" />
 
       <div className="flex justify-center">
-        <Badge className={cn('px-5 py-1.5 text-white', urgencyColors[consultation.assessment?.consensus?.urgencyLevel || 'routine'])}>
+        <Badge className={cn('px-5 py-1.5 text-primary-foreground', urgencyColors[consultation.assessment?.consensus?.urgencyLevel || 'routine'])}>
           Urgencia: {consultation.assessment?.consensus?.urgencyLevel || 'routine'}
         </Badge>
       </div>
@@ -1224,9 +1163,9 @@ function ResultsStep({ consultation, consensus, specialists, phases }: { consult
         </motion.div>
       ))}
 
-      <Card className="p-4 bg-amber-950/40 border-amber-800/40">
-        <p className="text-xs text-amber-300 text-center">
-          <strong>Aviso:</strong> Esta consulta es una orientación médica basada en IA. No sustituye la consulta presencial con un médico licenciado. En caso de emergencia, llama al 911.
+      <Card className="p-4 bg-amber/10 border-amber/30">
+        <p className="text-xs text-foreground text-center">
+          <strong>Aviso:</strong> Esta consulta es orientación clínica inicial. No diagnostica ni sustituye la consulta con un médico licenciado. En caso de emergencia, llama al 911.
         </p>
       </Card>
 

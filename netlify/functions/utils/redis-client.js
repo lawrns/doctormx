@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 /**
  * Redis Caching Layer for Netlify Functions
  *
@@ -21,7 +22,7 @@ let redisClient = null;
  */
 function getRedisClient() {
   if (!redisClient) {
-    const redisUrl = process.env.REDIS_URL;
+    const redisUrl = process.env['REDIS_URL'];
 
     if (!redisUrl) {
       throw new Error('REDIS_URL is not configured');

@@ -4,9 +4,10 @@ import IORedis from 'ioredis'
 import { logger } from '@/lib/observability/logger'
 
 // Check if Redis is properly configured
-const UPSTASH_REST_URL = process.env.UPSTASH_REDIS_REST_URL
-const UPSTASH_REST_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN
-const REDIS_URL = process.env.REDIS_URL
+const runtimeEnv = process.env as Record<string, string | undefined>
+const UPSTASH_REST_URL = runtimeEnv['UPSTASH_REDIS_REST_URL']
+const UPSTASH_REST_TOKEN = runtimeEnv['UPSTASH_REDIS_REST_TOKEN']
+const REDIS_URL = runtimeEnv['REDIS_URL']
 const isUpstashRestConfigured = Boolean(UPSTASH_REST_URL && UPSTASH_REST_TOKEN)
 const isRedisUrlConfigured = Boolean(REDIS_URL)
 const isRedisConfigured = isUpstashRestConfigured || isRedisUrlConfigured
