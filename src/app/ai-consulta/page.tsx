@@ -10,7 +10,6 @@ import {
   CheckCircle2,
   Star,
   Calendar,
-  ArrowRight,
   Home,
   Loader2,
 } from 'lucide-react'
@@ -21,7 +20,7 @@ import { EmailCapture, EmailCaptureModal } from '@/components/EmailCapture'
 import { PremiumUpgradeModal } from '@/components/PremiumUpgradeModal'
 import { ANALYTICS_EVENTS, trackClientEvent } from '@/lib/analytics/posthog'
 import type { DoctorMatch } from '@/lib/ai/referral'
-import { formatCurrency, formatDoctorName } from '@/lib/utils'
+import { formatDoctorName } from '@/lib/utils'
 import { DoctorMxLogo } from '@/components/brand/DoctorMxLogo'
 
 /* ── Types ── */
@@ -185,14 +184,14 @@ function UrgencyBadge({ urgency }: { urgency: UrgencyLevel }) {
   const u = URGENCY_MAP[urgency] || URGENCY_MAP.low
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-semibold font-mono uppercase tracking-wide ${u.className}`}
+      className={`inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] ${u.className}`}
     >
       {u.label}
     </span>
   )
 }
 
-function ToolCallCard({
+function ToolCallRow({
   call,
   status,
   delay,
@@ -207,54 +206,45 @@ function ToolCallCard({
     <motion.div
       initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: delay / 1000, duration: 0.25, ease: [0.2, 0.7, 0.2, 1] }}
-      className={`flex items-start gap-2.5 rounded-lg border p-2.5 text-xs transition-all ${
-        done
-          ? 'bg-vital/5 border-vital/20'
-          : 'bg-secondary border-border'
+      transition={{ delay: delay / 1000, duration: 0.22, ease: [0.2, 0.7, 0.2, 1] }}
+      className={`flex items-start gap-2 rounded-lg border px-3 py-2 text-xs ${
+        done ? 'border-border bg-background' : 'border-border bg-secondary/50'
       }`}
     >
       <div
-        className={`w-5 h-5 rounded-md flex items-center justify-center flex-shrink-0 text-[10px] font-bold ${
-          done ? 'bg-vital/15 text-vital' : 'bg-ink/10 text-ink'
+        className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md text-[10px] font-bold ${
+          done ? 'bg-vital/10 text-vital' : 'bg-ink/10 text-ink'
         }`}
       >
-        {done ? <Check className="w-3 h-3" /> : <Loader2 className="w-3 h-3 animate-spin" />}
+        {done ? <Check className="h-3 w-3" /> : <Loader2 className="h-3 w-3 animate-spin" />}
       </div>
-      <div className="flex-1 min-w-0">
+      <div className="min-w-0 flex-1">
         <div className="flex items-center justify-between gap-2">
-          <span className={`font-mono text-[10px] font-semibold uppercase tracking-widest ${meta.color}`}>
+          <span className={`font-mono text-[10px] font-semibold uppercase tracking-[0.14em] ${meta.color}`}>
             {call.tool.replace(/_/g, ' ')}
           </span>
-          <span className="text-[10px] font-mono text-muted-foreground">
-            {done ? 'Listo' : 'Revisando'}
-          </span>
+          <span className="font-mono text-[10px] text-muted-foreground">{done ? 'Listo' : 'Revisando'}</span>
         </div>
-        {call.output && done && (
-          <div className="mt-1 text-[11px] text-foreground font-mono leading-snug">{call.output}</div>
-        )}
-        {!done && (
-          <div className="mt-1 text-[11px] text-muted-foreground font-mono">{meta.label}…</div>
+        {call.output ? (
+          <p className={`mt-1 leading-5 ${done ? 'text-foreground' : 'text-muted-foreground'}`}>{call.output}</p>
+        ) : (
+          <p className="mt-1 text-[11px] leading-5 text-muted-foreground">{meta.label}…</p>
         )}
       </div>
     </motion.div>
   )
 }
 
-function ThinkingBubble({
-  reviewCount,
-}: {
-  reviewCount: number
-}) {
+function ThinkingBubble({ reviewCount }: { reviewCount: number }) {
   return (
-    <div className="flex items-start gap-2.5 max-w-[85%]">
-      <div className="w-8 h-8 rounded-full bg-ink flex items-center justify-center flex-shrink-0">
-        <Stethoscope className="w-4 h-4 text-primary-foreground" />
+    <div className="flex max-w-[88%] items-start gap-2.5">
+      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-ink">
+        <Stethoscope className="h-4 w-4 text-primary-foreground" />
       </div>
       <div className="rounded-xl rounded-bl-md border border-border bg-card px-4 py-3 shadow-sm">
         <p className="text-sm font-medium text-foreground">Voy a revisar señales de alarma y ordenar tu caso.</p>
         <p className="mt-1 text-xs text-muted-foreground">
-          {reviewCount > 0 ? 'Ya tengo contexto suficiente para hacer la siguiente pregunta.' : 'Empezaré con lo más urgente primero.'}
+          {reviewCount > 0 ? 'Ya tengo contexto para la siguiente pregunta.' : 'Empiezo por lo más urgente primero.'}
         </p>
       </div>
     </div>
@@ -266,29 +256,27 @@ function AiMessageBubble({ msg }: { msg: ChatMessage }) {
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, ease: [0.2, 0.7, 0.2, 1] }}
-      className="flex items-start gap-2.5 max-w-[88%]"
+      transition={{ duration: 0.28, ease: [0.2, 0.7, 0.2, 1] }}
+      className="flex max-w-[92%] items-start gap-2.5"
     >
-      <div className="w-8 h-8 rounded-full bg-ink flex items-center justify-center flex-shrink-0">
-        <Stethoscope className="w-4 h-4 text-primary-foreground" />
+      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-ink">
+        <Stethoscope className="h-4 w-4 text-primary-foreground" />
       </div>
-      <div className="flex-1 min-w-0">
-        <div className="bg-card border border-border rounded-xl rounded-bl-md shadow-sm px-4 py-3.5">
-          <div className="flex items-center gap-1.5 mb-2">
-            <span className="text-[10px] font-mono font-semibold text-vital uppercase tracking-widest">
-              Dr. Simeon
-            </span>
-            <span className="text-[10px] font-mono text-muted-foreground">· Orientación clínica inicial</span>
+      <div className="min-w-0 flex-1">
+        <div className="rounded-xl rounded-bl-md border border-border bg-card px-4 py-3.5 shadow-sm">
+          <div className="mb-2 flex items-center gap-1.5">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-vital">Dr. Simeon</span>
+            <span className="text-[10px] text-muted-foreground">· Orientación clínica inicial</span>
           </div>
-          <p className="text-sm leading-relaxed text-foreground whitespace-pre-wrap">{msg.text}</p>
-          {msg.urgency && (
+          <p className="whitespace-pre-wrap text-sm leading-relaxed text-foreground">{msg.text}</p>
+          {(msg.urgency || msg.specialty) && (
             <div className="mt-3 flex flex-wrap items-center gap-2">
-              <UrgencyBadge urgency={msg.urgency} />
-              {msg.specialty && (
+              {msg.urgency ? <UrgencyBadge urgency={msg.urgency} /> : null}
+              {msg.specialty ? (
                 <span className="inline-flex items-center rounded-lg border border-border bg-secondary px-2.5 py-1 text-[11px] font-semibold text-foreground">
                   {msg.specialty}
                 </span>
-              )}
+              ) : null}
             </div>
           )}
           {msg.toolCalls && msg.toolCalls.length > 0 && (
@@ -298,7 +286,7 @@ function AiMessageBubble({ msg }: { msg: ChatMessage }) {
               </summary>
               <div className="mt-2 grid gap-2">
                 {msg.toolCalls.map((tc, index) => (
-                  <ToolCallCard key={tc.tool} call={tc} status="done" delay={index * 80} />
+                  <ToolCallRow key={tc.tool} call={tc} status="done" delay={index * 60} />
                 ))}
               </div>
             </details>
@@ -314,215 +302,24 @@ function UserMessageBubble({ msg }: { msg: ChatMessage }) {
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, ease: [0.2, 0.7, 0.2, 1] }}
+      transition={{ duration: 0.28, ease: [0.2, 0.7, 0.2, 1] }}
       className="flex justify-end"
     >
-      <div className="max-w-[75%] bg-ink text-primary-foreground rounded-xl rounded-br-md px-4 py-3 text-sm leading-relaxed">
+      <div className="max-w-[78%] rounded-xl rounded-br-md bg-ink px-4 py-3 text-sm leading-relaxed text-primary-foreground">
         {msg.text}
       </div>
     </motion.div>
   )
 }
 
-function DoctorReferralCard({ match, onBook }: { match: DoctorMatch; onBook: () => void }) {
-  const doctorName = formatDoctorName(match.doctor?.profile?.full_name)
-  const imageSrc = match.doctor?.profile?.photo_url || ''
-  const matchPct = Math.round(match.score)
-  const matchColor = matchPct >= 90 ? 'text-vital' : matchPct >= 75 ? 'text-ink' : 'text-amber'
-
+function SafetyRow({ className = '' }: { className?: string }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="bg-card border border-border rounded-xl overflow-hidden shadow-dx-1 hover:border-ink/25 transition-colors"
-    >
-      <div className="p-4 flex items-start gap-3">
-        <div className="relative flex-shrink-0">
-          <div className="w-13 h-13 rounded-full overflow-hidden border border-border bg-secondary">
-            {imageSrc ? (
-              <Image src={imageSrc} alt={doctorName} width={52} height={52} className="object-cover w-full h-full" />
-            ) : (
-              <div className="w-full h-full flex items-center justify-center text-foreground text-sm font-bold">
-                {doctorName.charAt(0)}
-              </div>
-            )}
-          </div>
-        </div>
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-1.5 flex-wrap">
-            <span className="text-sm font-bold font-display text-foreground">{doctorName}</span>
-            <CheckCircle2 className="w-3.5 h-3.5 text-primary" />
-          </div>
-          <div className="text-[11px] text-muted-foreground mt-0.5">
-            {match.doctor?.specialties?.[0]?.name} · {match.doctor?.city}
-          </div>
-          <div className="flex items-center gap-2 mt-1.5 flex-wrap">
-            <div className="flex items-center gap-1">
-              <Star className="w-3 h-3 text-amber fill-amber" />
-              <span className="text-xs font-semibold text-foreground">{match.doctor?.rating_avg?.toFixed(1)}</span>
-            </div>
-            <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-wider">
-              {formatCurrency(match.doctor?.price_cents || 0)}
-            </span>
-          </div>
-        </div>
-        <div className="text-center flex-shrink-0">
-          <div className={`text-xl font-extrabold font-display leading-none ${matchColor}`}>{matchPct}%</div>
-          <div className="text-[9px] font-mono text-muted-foreground uppercase tracking-wider mt-0.5">
-            Afinidad
-          </div>
-        </div>
-      </div>
-      <div className="border-t border-border/60 px-4 py-3 flex items-center justify-between gap-3 bg-secondary/30">
-        <div>
-          <div className="text-[10px] font-mono text-muted-foreground uppercase tracking-wider">
-            Próxima cita
-          </div>
-          <div className="text-[13px] font-semibold text-vital mt-0.5 flex items-center gap-1">
-            <Calendar className="w-3 h-3" />
-            Hoy · 15:30
-          </div>
-        </div>
-        <Link
-          href={`/book/${match.doctorId}`}
-          onClick={(e) => {
-            e.stopPropagation()
-            onBook()
-          }}
-          className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-ink text-primary-foreground text-[13px] font-semibold px-4 py-2 hover:bg-ink/90 transition-colors whitespace-nowrap"
-        >
-          Agendar cita
-        </Link>
-      </div>
-    </motion.div>
-  )
-}
-
-function SafetyRow() {
-  return (
-    <div className="flex items-start gap-2 rounded-lg border border-coral/20 bg-coral/5 px-3 py-2 text-xs leading-5 text-foreground">
+    <div className={`flex items-start gap-2 rounded-lg border border-coral/20 bg-coral/5 px-3 py-2 text-xs leading-5 text-foreground ${className}`}>
       <Shield className="mt-0.5 h-3.5 w-3.5 shrink-0 text-coral" aria-hidden="true" />
       <p>
         Si tienes dolor de pecho, falta de aire, pérdida de fuerza, confusión, sangrado intenso o ideas de hacerte daño,
         llama al 911 o acude a urgencias. Dr. Simeon no diagnostica.
       </p>
-    </div>
-  )
-}
-
-function DrSimeonPresenceCard() {
-  return (
-    <div className="border-y border-border py-6">
-      <div className="flex items-center gap-4">
-        <div className="relative h-14 w-14 overflow-hidden rounded-full border border-border bg-card">
-          <Image
-            src="/images/simeon.png"
-            alt="Dr. Simeon"
-            fill
-            sizes="56px"
-            className="object-cover object-top"
-            priority
-          />
-        </div>
-        <div>
-          <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-vital">
-            Orientación clínica inicial
-          </p>
-          <h2 className="mt-1 font-display text-2xl font-semibold tracking-tight text-foreground">
-            Soy Dr. Simeon.
-          </h2>
-        </div>
-      </div>
-      <p className="mt-5 max-w-[54ch] text-base leading-7 text-muted-foreground">
-        Voy a escucharte, ordenar tu caso y hacerte una pregunta a la vez. Si aparece una señal de alarma, te diré que busques atención urgente.
-      </p>
-    </div>
-  )
-}
-
-function StarterGroups({ onSelect }: { onSelect: (prompt: string) => void }) {
-  return (
-    <div className="grid gap-4 sm:grid-cols-2">
-      {STARTER_GROUPS.map((group) => (
-        <div key={group.label} className="border-t border-border pt-3">
-          <p className="mb-2 font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-            {group.label}
-          </p>
-          <div className="grid gap-2">
-            {group.prompts.map((prompt) => (
-              <button
-                key={prompt}
-                type="button"
-                onClick={() => onSelect(prompt)}
-                className="rounded-lg px-2 py-2 text-left text-sm leading-5 text-foreground transition-colors hover:bg-secondary active:scale-[0.99]"
-              >
-                {prompt}
-              </button>
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
-  )
-}
-
-function WelcomeComposer({
-  input,
-  isThinking,
-  quotaFull,
-  onInputChange,
-  onSubmit,
-  onTextareaInput,
-  onKeyDown,
-}: {
-  input: string
-  isThinking: boolean
-  quotaFull: boolean
-  onInputChange: (value: string) => void
-  onSubmit: (value: string) => void
-  onTextareaInput: (el: HTMLTextAreaElement) => void
-  onKeyDown: (event: React.KeyboardEvent<HTMLTextAreaElement>) => void
-}) {
-  return (
-    <div className="rounded-xl border border-border bg-card p-4 shadow-[0_18px_46px_-34px_hsl(var(--shadow-color)/0.45)]">
-      <div className="mb-4">
-        <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-vital">
-          Primera pregunta
-        </p>
-        <h2 className="mt-1 font-display text-xl font-semibold tracking-tight text-foreground">
-          ¿Qué te preocupa hoy?
-        </h2>
-        <p className="mt-2 text-sm leading-6 text-muted-foreground">
-          Escribe como se lo contarías a un doctor. Con una frase basta para empezar.
-        </p>
-      </div>
-      <SafetyRow />
-      <div className="mt-4 rounded-lg border border-border bg-background p-3 focus-within:border-ink/35 focus-within:ring-2 focus-within:ring-ink/10">
-        <textarea
-          rows={4}
-          value={input}
-          onChange={(event) => {
-            onInputChange(event.target.value)
-            onTextareaInput(event.target)
-          }}
-          onKeyDown={onKeyDown}
-          placeholder="Ej. Tengo dolor de cabeza desde ayer y me preocupa que sea migraña..."
-          disabled={isThinking || quotaFull}
-          className="max-h-[140px] min-h-[112px] w-full resize-none border-0 bg-transparent text-sm leading-6 text-foreground outline-none placeholder:text-muted-foreground focus:ring-0"
-        />
-        <div className="mt-3 flex items-center justify-between gap-3 border-t border-border pt-3">
-          <p className="text-xs text-muted-foreground">Dr. Simeon hará una pregunta a la vez.</p>
-          <button
-            type="button"
-            onClick={() => onSubmit(input)}
-            disabled={!input.trim() || isThinking || quotaFull}
-            className="inline-flex h-10 items-center justify-center gap-2 rounded-lg bg-ink px-4 text-sm font-semibold text-primary-foreground transition-colors hover:bg-ink/90 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40"
-          >
-            Empezar
-            <Send className="h-4 w-4" aria-hidden="true" />
-          </button>
-        </div>
-      </div>
     </div>
   )
 }
@@ -536,78 +333,291 @@ function PatientContextNote({ text }: { text: string }) {
   )
 }
 
-function ClinicalReviewRail({
-  messages,
-  referrals,
+function QuickStartRail({
+  onSelect,
+  latestUser,
+  latestAssistant,
+  isThinking,
+}: {
+  onSelect: (prompt: string) => void
+  latestUser?: ChatMessage
+  latestAssistant?: ChatMessage
+  isThinking: boolean
+}) {
+  const urgency = latestAssistant?.urgency ? URGENCY_MAP[latestAssistant.urgency].label : isThinking ? 'En revisión' : 'Pendiente'
+  const specialty = latestAssistant?.specialty || (isThinking ? 'Evaluando' : 'Por definir')
+  const nextStep = latestAssistant
+    ? latestAssistant.urgency === 'emergency'
+      ? 'Buscar atención urgente'
+      : latestAssistant.specialty
+        ? 'Responder la siguiente pregunta'
+        : 'Seguir describiendo el caso'
+    : 'Compartir el motivo principal'
+
+  return (
+    <aside className="flex h-full flex-col gap-4 border-r border-border bg-card/40 px-4 py-4">
+      <div className="rounded-xl border border-border bg-background px-4 py-4 shadow-sm">
+        <div className="flex items-center gap-3">
+          <div className="relative h-11 w-11 overflow-hidden rounded-full border border-border bg-card">
+            <Image
+              src="/images/simeon.png"
+              alt="Dr. Simeon"
+              fill
+              sizes="44px"
+              className="object-cover object-top"
+              priority
+            />
+          </div>
+          <div>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-vital">Orientación clínica inicial</p>
+            <h2 className="mt-1 text-lg font-semibold tracking-tight text-foreground">Dr. Simeon</h2>
+          </div>
+        </div>
+        <p className="mt-3 max-w-[28ch] text-sm leading-6 text-muted-foreground">
+          Ordena síntomas, revisa alarmas y sigue una sola pregunta a la vez.
+        </p>
+      </div>
+
+      <section className="space-y-3">
+        <div className="flex items-center justify-between gap-3">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Atajos</p>
+          <span className="text-[10px] text-muted-foreground">Escribe o toca uno</span>
+        </div>
+        <div className="grid gap-2">
+          {STARTER_GROUPS.map((group) => (
+            <div key={group.label} className="space-y-1.5">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-ink">{group.label}</p>
+              {group.prompts.map((prompt) => (
+                <button
+                  key={prompt}
+                  type="button"
+                  disabled={isThinking}
+                  onClick={() => onSelect(prompt)}
+                  className="flex w-full items-start gap-3 rounded-lg border border-transparent bg-background px-3 py-2.5 text-left transition-colors hover:border-border hover:bg-secondary/70 disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-vital" aria-hidden="true" />
+                  <span className="text-sm leading-5 text-foreground">{prompt}</span>
+                </button>
+              ))}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="space-y-3 border-t border-border pt-4">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Seguridad</p>
+        <SafetyRow />
+      </section>
+
+      <section className="space-y-3 border-t border-border pt-4">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Contexto reciente</p>
+        <div className="space-y-2 text-sm leading-6 text-foreground">
+          <div className="rounded-lg border border-border bg-background px-3 py-2">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">Motivo</p>
+            <p className="mt-1 line-clamp-3 text-sm text-foreground">{latestUser?.text || 'Aún no descrito'}</p>
+          </div>
+          <div className="rounded-lg border border-border bg-background px-3 py-2">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">Urgencia</p>
+            <p className="mt-1 text-sm text-foreground">{urgency}</p>
+          </div>
+          <div className="rounded-lg border border-border bg-background px-3 py-2">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">Especialidad</p>
+            <p className="mt-1 text-sm text-foreground">{specialty}</p>
+          </div>
+          <div className="rounded-lg border border-border bg-background px-3 py-2">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">Siguiente paso</p>
+            <p className="mt-1 text-sm text-foreground">{nextStep}</p>
+          </div>
+        </div>
+      </section>
+    </aside>
+  )
+}
+
+function MobileSupportDrawer({
+  onSelect,
+  latestUser,
+  latestAssistant,
+  isThinking,
+}: {
+  onSelect: (prompt: string) => void
+  latestUser?: ChatMessage
+  latestAssistant?: ChatMessage
+  isThinking: boolean
+}) {
+  return (
+    <details className="lg:hidden">
+      <summary className="flex cursor-pointer items-center justify-between rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium text-foreground">
+        <span>Atajos y contexto</span>
+        <span className="text-xs text-muted-foreground">Abrir</span>
+      </summary>
+      <div className="mt-3 grid gap-4 rounded-xl border border-border bg-card px-4 py-4">
+        <section className="space-y-3">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Atajos</p>
+          <div className="grid gap-2 sm:grid-cols-2">
+            {STARTER_GROUPS.flatMap((group) =>
+              group.prompts.map((prompt) => (
+                <button
+                  key={prompt}
+                  type="button"
+                  disabled={isThinking}
+                  onClick={() => onSelect(prompt)}
+                  className="rounded-lg border border-border bg-background px-3 py-2 text-left text-sm leading-5 text-foreground transition-colors hover:bg-secondary/70 disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  {prompt}
+                </button>
+              ))
+            )}
+          </div>
+        </section>
+
+        <section className="space-y-3 border-t border-border pt-4">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Seguridad</p>
+          <SafetyRow />
+        </section>
+
+        <section className="space-y-3 border-t border-border pt-4">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Contexto reciente</p>
+          <div className="grid gap-2 text-sm leading-6 text-foreground sm:grid-cols-2">
+            <div className="rounded-lg border border-border bg-background px-3 py-2">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">Motivo</p>
+              <p className="mt-1 line-clamp-3 text-sm text-foreground">{latestUser?.text || 'Aún no descrito'}</p>
+            </div>
+            <div className="rounded-lg border border-border bg-background px-3 py-2">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">Especialidad</p>
+              <p className="mt-1 text-sm text-foreground">{latestAssistant?.specialty || 'Por definir'}</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </details>
+  )
+}
+
+function ClinicalSummaryRail({
+  latestUser,
+  latestAssistant,
   isThinking,
   activeToolCalls,
   doneTools,
+  referrals,
 }: {
-  messages: ChatMessage[]
-  referrals: DoctorMatch[]
+  latestUser?: ChatMessage
+  latestAssistant?: ChatMessage
   isThinking: boolean
   activeToolCalls: ToolCall[]
   doneTools: Set<string>
+  referrals: DoctorMatch[]
 }) {
-  const latestUser = [...messages].reverse().find((message) => message.role === 'user')
-  const latestAssistant = [...messages].reverse().find((message) => message.role === 'assistant')
   const urgency = latestAssistant?.urgency ? URGENCY_MAP[latestAssistant.urgency].label : isThinking ? 'En revisión' : 'Pendiente'
+  const specialty = latestAssistant?.specialty || 'Por definir'
   const nextStep = referrals.length > 0
-    ? 'Elige un doctor verificado'
+    ? 'Revisar derivación sugerida'
     : latestAssistant?.specialty
       ? 'Responder la siguiente pregunta'
       : isThinking
-        ? 'Revisar señales de alarma'
-        : 'Describe el motivo principal'
-
-  const items = [
-    { label: 'Síntomas', value: latestUser?.text || 'Aún no descritos', icon: Stethoscope },
-    { label: 'Urgencia', value: urgency, icon: Shield },
-    { label: 'Especialidad', value: latestAssistant?.specialty || 'Por definir', icon: CheckCircle2 },
-    { label: 'Siguiente paso', value: nextStep, icon: Calendar },
-  ]
+        ? 'Esperar revisión'
+        : 'Comparte el motivo principal'
+  const latestTools = latestAssistant?.toolCalls && latestAssistant.toolCalls.length > 0 ? latestAssistant.toolCalls : activeToolCalls
 
   return (
-    <aside className="rounded-xl border border-border bg-card p-4">
-      <div className="mb-4 flex items-center justify-between gap-3">
-        <div>
-          <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-vital">
-            Revisión clínica
-          </p>
-          <h2 className="mt-1 font-display text-lg font-semibold text-foreground">Contexto del caso</h2>
-        </div>
-        <span className="h-2 w-2 rounded-full bg-vital" aria-hidden="true" />
-      </div>
-      <div className="divide-y divide-border border-y border-border">
-        {items.map((item) => (
-          <div key={item.label} className="grid grid-cols-[1.5rem_1fr] gap-3 py-3">
-            <item.icon className="mt-0.5 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+    <aside className="flex h-full flex-col gap-4 border-l border-border bg-card/40 px-4 py-4">
+      <div className="rounded-xl border border-border bg-background px-4 py-4 shadow-sm">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-vital">Revisión clínica</p>
+        <h2 className="mt-1 text-lg font-semibold tracking-tight text-foreground">Contexto del caso</h2>
+        <div className="mt-4 grid gap-3 border-t border-border pt-4">
+          <div className="flex items-start gap-3">
+            <Stethoscope className="mt-0.5 h-4 w-4 text-muted-foreground" aria-hidden="true" />
             <div className="min-w-0">
-              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                {item.label}
-              </p>
-              <p className="mt-1 line-clamp-2 text-sm font-medium leading-5 text-foreground">{item.value}</p>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">Síntomas</p>
+              <p className="mt-1 line-clamp-3 text-sm leading-6 text-foreground">{latestUser?.text || 'Aún no descritos'}</p>
             </div>
           </div>
-        ))}
+          <div className="flex items-start gap-3">
+            <Shield className="mt-0.5 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <div className="min-w-0">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">Urgencia</p>
+              <p className="mt-1 text-sm leading-6 text-foreground">{urgency}</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <CheckCircle2 className="mt-0.5 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <div className="min-w-0">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">Especialidad</p>
+              <p className="mt-1 text-sm leading-6 text-foreground">{specialty}</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <Calendar className="mt-0.5 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <div className="min-w-0">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">Siguiente paso</p>
+              <p className="mt-1 text-sm leading-6 text-foreground">{nextStep}</p>
+            </div>
+          </div>
+        </div>
       </div>
-      {activeToolCalls.length > 0 && (
-        <details className="mt-4">
-          <summary className="cursor-pointer text-xs font-medium text-muted-foreground transition-colors hover:text-foreground">
-            Ver revisión técnica
-          </summary>
-          <div className="mt-2 grid gap-2">
-            {activeToolCalls.map((tool, index) => (
-              <ToolCallCard
-                key={tool.tool}
+
+      <details className="rounded-xl border border-border bg-background px-4 py-4 shadow-sm">
+        <summary className="cursor-pointer text-sm font-medium text-foreground">Ver revisión técnica</summary>
+        <div className="mt-3 grid gap-2">
+          {latestTools.length > 0 ? (
+            latestTools.map((tool, index) => (
+              <ToolCallRow
+                key={`${tool.tool}-${index}`}
                 call={tool}
                 status={doneTools.has(tool.tool) ? 'done' : 'running'}
-                delay={index * 80}
+                delay={index * 60}
               />
-            ))}
-          </div>
-        </details>
-      )}
+            ))
+          ) : (
+            <p className="text-sm leading-6 text-muted-foreground">Dr. Simeon aún no ha necesitado una revisión adicional.</p>
+          )}
+        </div>
+      </details>
+
+      <details className="rounded-xl border border-border bg-background px-4 py-4 shadow-sm">
+        <summary className="cursor-pointer text-sm font-medium text-foreground">
+          Ver derivación sugerida {referrals.length > 0 ? `(${referrals.length})` : ''}
+        </summary>
+        <div className="mt-3 grid gap-2">
+          {referrals.length > 0 ? (
+            referrals.map((match) => {
+              const doctorName = formatDoctorName(match.doctor?.profile?.full_name)
+              return (
+                <div key={match.doctorId} className="rounded-lg border border-border bg-card px-3 py-3">
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="min-w-0">
+                      <p className="text-sm font-medium text-foreground">{doctorName}</p>
+                      <p className="mt-0.5 text-xs leading-5 text-muted-foreground">
+                        {match.doctor?.specialties?.[0]?.name} · {match.doctor?.city}
+                      </p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-sm font-semibold text-ink">{Math.round(match.score)}%</p>
+                      <p className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground">Afinidad</p>
+                    </div>
+                  </div>
+                  <div className="mt-2 flex items-center justify-between gap-3">
+                    <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
+                      <Star className="h-3 w-3 text-amber" aria-hidden="true" />
+                      {match.doctor?.rating_avg?.toFixed(1)}
+                    </span>
+                    <Link
+                      href={`/book/${match.doctorId}`}
+                      onClick={(event) => event.stopPropagation()}
+                      className="text-xs font-semibold text-ink transition-colors hover:text-ink/80"
+                    >
+                      Agendar
+                    </Link>
+                  </div>
+                </div>
+              )
+            })
+          ) : (
+            <p className="text-sm leading-6 text-muted-foreground">La derivación sugerida aparecerá cuando Dr. Simeon la tenga clara.</p>
+          )}
+        </div>
+      </details>
     </aside>
   )
 }
@@ -632,8 +642,6 @@ export default function AnonymousConsultaPage() {
   const textareaRef = useRef<HTMLTextAreaElement>(null)
   const hasTrackedStart = useRef(false)
   const hasTrackedComplete = useRef(false)
-
-  const phase = messages.length === 0 ? 'welcome' : 'chat'
 
   /* Session & Quota */
   useEffect(() => {
@@ -902,9 +910,16 @@ export default function AnonymousConsultaPage() {
     el.style.height = `${Math.min(el.scrollHeight, 120)}px`
   }
 
+  const latestUserMessage = [...messages].reverse().find((message) => message.role === 'user')
+  const latestAssistantMessage = [...messages].reverse().find((message) => message.role === 'assistant')
   const firstUserText = messages.find((message) => message.role === 'user')?.text
   const firstUserMessageId = messages.find((message) => message.role === 'user')?.id
   const userMessageCount = messages.filter((message) => message.role === 'user').length
+  const introMessage: ChatMessage = {
+    id: 'welcome',
+    role: 'assistant',
+    text: 'Soy Dr. Simeon. Cuéntame qué te pasa y te haré una sola pregunta a la vez.',
+  }
 
   return (
     <div className="h-dvh bg-background flex flex-col overflow-hidden">
@@ -927,8 +942,7 @@ export default function AnonymousConsultaPage() {
               </span>
             </div>
 
-            {/* Quota dots */}
-            {quota && phase === 'chat' && (
+            {quota && (
               <div className="flex items-center gap-2">
                 <span className="text-[11px] text-muted-foreground font-mono">
                   {quota.remaining} restantes
@@ -957,127 +971,55 @@ export default function AnonymousConsultaPage() {
         </div>
       </header>
 
-      {/* ── Main Content ── */}
-      {phase === 'welcome' ? (
-        <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6 lg:py-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: [0.2, 0.7, 0.2, 1] }}
-            className="mx-auto grid min-h-full max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:pt-10"
-          >
-            <div>
-              <div className="inline-flex items-center gap-2 rounded-lg border border-vital/20 bg-vital/10 px-3 py-2">
-                <Shield className="w-3 h-3 text-vital" />
-                <span className="text-[10px] font-mono font-semibold text-vital uppercase tracking-[0.14em]">
-                  Orientación clínica · No sustituye urgencias
-                </span>
-              </div>
+      <main className="min-h-0 flex-1 overflow-hidden">
+        <div className="mx-auto grid h-full max-w-7xl lg:grid-cols-[280px_minmax(0,1fr)_320px]">
+          <div className="hidden lg:block">
+            <QuickStartRail
+              onSelect={(prompt) => void sendMessage(prompt)}
+              latestUser={latestUserMessage}
+              latestAssistant={latestAssistantMessage}
+              isThinking={isThinking}
+            />
+          </div>
 
-              <h1 className="mt-7 max-w-[11ch] font-display text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-                Cuéntame qué te preocupa.
-              </h1>
-              <p className="mt-5 max-w-[58ch] text-base leading-7 text-muted-foreground sm:text-lg">
-                Dr. Simeon te ayuda a ordenar síntomas, revisar señales de alarma y preparar una cita con un especialista verificado.
-              </p>
-
-              <div className="mt-8">
-                <DrSimeonPresenceCard />
-              </div>
-
-              <div className="mt-7 grid gap-3 text-sm text-muted-foreground sm:grid-cols-3">
-                <span className="inline-flex items-center gap-2">
-                  <Stethoscope className="h-4 w-4 text-vital" aria-hidden="true" />
-                  Una pregunta a la vez
-                </span>
-                <span className="inline-flex items-center gap-2">
-                  <Shield className="h-4 w-4 text-vital" aria-hidden="true" />
-                  Alertas primero
-                </span>
-                <span className="inline-flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-vital" aria-hidden="true" />
-                  Ruta hacia doctor
-                </span>
-              </div>
-            </div>
-
-            <div className="grid gap-5">
-              <WelcomeComposer
-                input={input}
+          <section className="flex min-h-0 flex-col lg:border-x lg:border-border">
+            <div className="border-b border-border bg-card/40 px-4 py-4 lg:hidden">
+              <MobileSupportDrawer
+                onSelect={(prompt) => void sendMessage(prompt)}
+                latestUser={latestUserMessage}
+                latestAssistant={latestAssistantMessage}
                 isThinking={isThinking}
-                quotaFull={quotaFull}
-                onInputChange={setInput}
-                onSubmit={(value) => void sendMessage(value)}
-                onTextareaInput={handleAutoResize}
-                onKeyDown={handleKeyDown}
               />
-              <StarterGroups onSelect={(prompt) => void sendMessage(prompt)} />
             </div>
-          </motion.div>
-        </div>
-      ) : (
-        <div className="flex-1 overflow-hidden px-4 py-5 sm:px-6">
-          <div className="mx-auto grid h-full max-w-6xl gap-5 lg:grid-cols-[minmax(0,1fr)_320px]">
-            <div ref={chatRef} className="min-h-0 overflow-y-auto">
+
+            <div ref={chatRef} className="min-h-0 flex-1 overflow-y-auto px-4 py-4 sm:px-6">
               <div className="mx-auto flex max-w-[760px] flex-col gap-4 pb-4">
+                {messages.length === 0 ? (
+                  <div className="rounded-xl border border-border bg-card px-4 py-3 shadow-sm">
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-vital">
+                      Preconsulta clínica
+                    </p>
+                    <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                      Empieza con un síntoma, una preocupación o usa un atajo de la izquierda.
+                    </p>
+                  </div>
+                ) : null}
+
                 <AnimatePresence initial={false}>
+                  {messages.length === 0 ? (
+                    <div key="welcome" className="grid gap-3">
+                      <AiMessageBubble msg={introMessage} />
+                    </div>
+                  ) : null}
                   {messages.map((msg) => (
                     <div key={msg.id} className="grid gap-3">
-                      {msg.role === 'user' ? (
-                        <UserMessageBubble msg={msg} />
-                      ) : (
-                        <AiMessageBubble msg={msg} />
-                      )}
+                      {msg.role === 'user' ? <UserMessageBubble msg={msg} /> : <AiMessageBubble msg={msg} />}
                       {msg.id === firstUserMessageId && firstUserText ? <PatientContextNote text={firstUserText} /> : null}
                     </div>
                   ))}
                 </AnimatePresence>
 
                 {isThinking && <ThinkingBubble reviewCount={userMessageCount} />}
-
-                {referrals.length > 0 && !isThinking && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="pt-2 pb-1"
-                  >
-                    <div className="flex items-center gap-2 mb-3 px-1">
-                      <div className="w-6 h-6 rounded-md bg-ink flex items-center justify-center">
-                        <Stethoscope className="w-3.5 h-3.5 text-primary-foreground" />
-                      </div>
-                      <span className="text-sm font-bold font-display text-foreground">
-                        Especialistas recomendados
-                      </span>
-                      <span className="text-[10px] font-mono text-muted-foreground ml-auto">
-                        {referrals.length} doctores verificados
-                      </span>
-                    </div>
-                    <div className="flex flex-col gap-3">
-                      {referrals.map((match) => (
-                        <DoctorReferralCard
-                          key={match.doctorId}
-                          match={match}
-                          onBook={() => {
-                            void trackClientEvent(ANALYTICS_EVENTS.BOOKING_STARTED, {
-                              surface: 'ai-consulta-referral',
-                              doctorId: match.doctorId,
-                              doctorName: match.doctor?.profile?.full_name,
-                              specialty: match.doctor?.specialties?.[0]?.name,
-                            })
-                          }}
-                        />
-                      ))}
-                    </div>
-                    <div className="text-center mt-3">
-                      <Link
-                        href="/doctors"
-                        className="text-xs font-semibold text-ink hover:text-ink/80 transition-colors inline-flex items-center gap-1"
-                      >
-                        Ver todos los especialistas <ArrowRight className="w-3 h-3" />
-                      </Link>
-                    </div>
-                  </motion.div>
-                )}
 
                 {isComplete && (
                   <motion.div
@@ -1097,78 +1039,79 @@ export default function AnonymousConsultaPage() {
                     />
 
                     {showEmailCapture && quota && quota.used >= 2 && quota.used < 5 && (
-                      <EmailCapture
-                        consultationNumber={quota.used}
-                        onDismiss={() => setShowEmailCapture(false)}
-                      />
+                      <EmailCapture consultationNumber={quota.used} onDismiss={() => setShowEmailCapture(false)} />
                     )}
                   </motion.div>
                 )}
               </div>
             </div>
 
-            <div className="hidden lg:block">
-              <ClinicalReviewRail
-                messages={messages}
-                referrals={referrals}
-                isThinking={isThinking}
-                activeToolCalls={activeToolCalls}
-                doneTools={doneTools}
-              />
+            <div className="shrink-0 border-t border-border bg-card/90 px-4 py-3 backdrop-blur">
+              <div className="mx-auto max-w-[760px]">
+                {quotaFull ? (
+                  <div className="rounded-xl border border-border bg-background px-4 py-4 text-center shadow-sm">
+                    <p className="mb-3 text-sm text-muted-foreground">
+                      Has usado tus {quota?.limit || 3} consultas gratuitas. Regístrate para continuar.
+                    </p>
+                    <button
+                      onClick={() => setShowPremiumModal(true)}
+                      className="inline-flex items-center gap-2 rounded-lg bg-ink px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-ink/90"
+                    >
+                      Crear cuenta gratis
+                    </button>
+                  </div>
+                ) : (
+                  <div className="rounded-xl border border-border bg-background px-3 py-3 shadow-sm transition-all focus-within:border-ink/35 focus-within:ring-2 focus-within:ring-ink/10">
+                    <div className="flex items-center justify-between gap-3 border-b border-border pb-2">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                        Dr. Simeon · una pregunta a la vez
+                      </p>
+                      <span className="text-[10px] text-muted-foreground">Orientación clínica inicial</span>
+                    </div>
+                    <div className="mt-3 flex items-end gap-2">
+                      <textarea
+                        ref={textareaRef}
+                        rows={1}
+                        value={input}
+                        onChange={(event) => {
+                          setInput(event.target.value)
+                          handleAutoResize(event.target)
+                        }}
+                        onKeyDown={handleKeyDown}
+                        placeholder="Cuéntame qué pasa..."
+                        disabled={isThinking}
+                        className="max-h-[120px] min-h-[24px] flex-1 resize-none border-none bg-transparent py-1.5 text-sm leading-relaxed text-foreground outline-none placeholder:text-muted-foreground"
+                      />
+                      <button
+                        onClick={() => void sendMessage(input)}
+                        disabled={!input.trim() || isThinking}
+                        className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-ink text-primary-foreground transition-colors hover:bg-ink/90 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40"
+                        aria-label="Enviar"
+                      >
+                        <Send className="h-4 w-4" />
+                      </button>
+                    </div>
+                    <p className="mt-2 text-[11px] leading-5 text-muted-foreground">
+                      Emergencias: 911. Si hay dolor de pecho, falta de aire o confusión, busca atención urgente.
+                    </p>
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-        </div>
-      )}
+          </section>
 
-      {phase === 'chat' && (
-        <div className="shrink-0 border-t border-border bg-card/80 backdrop-blur-xl px-4 py-3">
-          <div className="mx-auto max-w-[760px]">
-            {quotaFull ? (
-              <div className="text-center py-4 px-4 bg-card border border-border rounded-xl">
-                <p className="text-sm text-muted-foreground mb-3">
-                  Has usado tus {quota?.limit || 3} consultas gratuitas. Regístrate para continuar.
-                </p>
-                <button
-                  onClick={() => setShowPremiumModal(true)}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-ink text-primary-foreground text-sm font-semibold rounded-lg hover:bg-ink/90 transition-colors"
-                >
-                  Crear cuenta gratis
-                </button>
-              </div>
-            ) : (
-              <div className="rounded-xl border border-border bg-card p-3 shadow-sm transition-all focus-within:border-ink/35 focus-within:ring-2 focus-within:ring-ink/10">
-                <SafetyRow />
-                <div className="mt-3 flex items-end gap-2">
-                  <textarea
-                    ref={textareaRef}
-                    rows={1}
-                    value={input}
-                    onChange={(e) => {
-                      setInput(e.target.value)
-                      handleAutoResize(e.target)
-                    }}
-                    onKeyDown={handleKeyDown}
-                    placeholder="Continúa describiendo tus síntomas..."
-                    disabled={isThinking}
-                    className="max-h-[120px] min-h-[24px] flex-1 resize-none border-none bg-transparent py-1.5 text-sm leading-relaxed text-foreground outline-none placeholder:text-muted-foreground"
-                  />
-                  <button
-                    onClick={() => void sendMessage(input)}
-                    disabled={!input.trim() || isThinking}
-                    className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-ink text-primary-foreground transition-colors hover:bg-ink/90 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40"
-                    aria-label="Enviar"
-                  >
-                    <Send className="h-4 w-4" />
-                  </button>
-                </div>
-              </div>
-            )}
-            <p className="text-center text-[11px] text-muted-foreground mt-2 font-mono">
-              Orientación clínica inicial · No sustituye consulta presencial · Emergencias: 911
-            </p>
+          <div className="hidden lg:block">
+            <ClinicalSummaryRail
+              latestUser={latestUserMessage}
+              latestAssistant={latestAssistantMessage}
+              isThinking={isThinking}
+              activeToolCalls={activeToolCalls}
+              doneTools={doneTools}
+              referrals={referrals}
+            />
           </div>
         </div>
-      )}
+      </main>
 
       {/* ── Modals ── */}
       {showEmailModal && (

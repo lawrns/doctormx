@@ -2,9 +2,14 @@
 
 import * as React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  ChevronDown,
+  Clock3,
+  MessageSquareText,
+  Stethoscope,
+} from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Progress } from '@/components/ui/progress';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import type { SpecialistAgent } from '@/types/soap';
 
@@ -24,44 +29,32 @@ const specialtyLabels: Record<string, string> = {
   psychology: 'Psicología',
 };
 
-const specialtyColors: Record<string, string> = {
-  general: 'bg-primary',
-  cardiology: 'bg-red-500',
-  dermatology: 'bg-purple-500',
-  neurology: 'bg-indigo-500',
-  orthopedics: 'bg-green-500',
-  oncology: 'bg-orange-500',
-  radiology: 'bg-cyan-500',
-  psychology: 'bg-pink-500',
+const statusLabels: Record<SpecialistAgent['status'], string> = {
+  pending: 'En espera',
+  thinking: 'Revisando',
+  completed: 'Listo',
 };
 
-function getConfidenceColor(confidence: number): string {
-  if (confidence >= 80) return 'bg-green-500';
-  if (confidence >= 60) return 'bg-yellow-500';
-  return 'bg-orange-500';
-}
+const statusTone: Record<SpecialistAgent['status'], string> = {
+  pending: 'border-border bg-muted/60 text-muted-foreground',
+  thinking: 'border-primary/15 bg-primary/5 text-primary',
+  completed: 'border-emerald-500/20 bg-emerald-500/10 text-emerald-700',
+};
 
 function getSpecialistInitials(name: string): string {
   return name
     .split(' ')
-    .map((n) => n[0])
+    .map((segment) => segment[0])
     .join('')
     .toUpperCase()
     .slice(0, 2);
 }
 
-// Function to count words in a text
-function countWords(text: string): number {
-  if (!text) return 0;
-  return text.trim().split(/\s+/).filter(word => word.length > 0).length;
-}
-
-// Function to truncate text to a specific number of words
 function truncateToWords(text: string, maxWords: number): string {
   if (!text) return '';
-  const words = text.trim().split(/\s+/).filter(word => word.length > 0);
+  const words = text.trim().split(/\s+/).filter(Boolean);
   if (words.length <= maxWords) return text;
-  return words.slice(0, maxWords).join(' ') + '...';
+  return `${words.slice(0, maxWords).join(' ')}...`;
 }
 
 export function SpecialistConsultation({
@@ -70,229 +63,154 @@ export function SpecialistConsultation({
 }: SpecialistConsultationProps) {
   const shouldReduceMotion = useReducedMotion();
 
+  if (!agents.length) {
+    return (
+      <Card
+        className={cn('rounded-xl border-border/70 shadow-sm', className)}
+        role="region"
+        aria-label="Consulta de especialistas"
+      >
+        <CardContent className="p-5">
+          <div className="rounded-xl border border-dashed border-border/70 bg-muted/30 p-4">
+            <p className="text-sm font-medium text-foreground">
+              El detalle clínico aparecerá aquí cuando haya revisiones disponibles.
+            </p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              La vista se mantiene compacta por defecto para no competir con la conversación principal.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
+
   return (
     <section
       className={cn('w-full', className)}
       role="region"
       aria-label="Consulta de especialistas"
     >
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        {agents.map((agent, index) => (
-          <motion.div
-            key={agent.id}
-            initial={{
-              opacity: 0,
-              y: shouldReduceMotion ? 0 : 20,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.3,
-              delay: shouldReduceMotion ? 0 : index * 0.1,
-              ease: 'easeOut',
-            }}
-          >
-            <SpecialistCard agent={agent} />
-          </motion.div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-interface SpecialistCardProps {
-  agent: SpecialistAgent;
-}
-
-function SpecialistCard({ agent }: SpecialistCardProps) {
-  const shouldReduceMotion = useReducedMotion();
-  const [displayedConfidence, setDisplayedConfidence] = React.useState(0);
-  const [isExpanded, setIsExpanded] = React.useState(false);
-
-  // Word-based truncation instead of character-based
-  const WORD_LIMIT = 100;
-  const totalWordCount = countWords(agent.assessment || '');
-  const needsTruncation = totalWordCount > WORD_LIMIT;
-  const displayedText = isExpanded || !needsTruncation
-    ? agent.assessment
-    : truncateToWords(agent.assessment || '', WORD_LIMIT);
-
-  // Animate confidence from 0 to actual value with proper cleanup
-  React.useEffect(() => {
-    if (agent.status !== 'completed') return;
-
-    const duration = shouldReduceMotion ? 0 : 1000;
-    const startTime = Date.now();
-    let frameId: number;
-
-    const animate = () => {
-      const elapsed = Date.now() - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-
-      // Ease-out animation
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setDisplayedConfidence(Math.round(eased * agent.confidence));
-
-      if (progress < 1) {
-        frameId = requestAnimationFrame(animate);
-      }
-    };
-
-    frameId = requestAnimationFrame(animate);
-
-    // Cleanup: cancel animation frame on unmount or dependency change
-    return () => {
-      if (frameId) {
-        cancelAnimationFrame(frameId);
-      }
-    };
-  }, [agent.confidence, agent.status, shouldReduceMotion]);
-
-  return (
-    <Card
-      className={cn(
-        'h-full transition-shadow hover:shadow-md',
-        agent.status === 'completed' && 'border-green-200 dark:border-green-800'
-      )}
-    >
-      <CardHeader>
-        <div className="flex items-start gap-4">
-          <Avatar
-            className={cn(
-              'h-14 w-14 ring-2 ring-offset-2 shadow-sm',
-              specialtyColors[agent.specialty]?.replace('bg-', 'ring-') || 'ring-gray-500'
-            )}
-            aria-label={`Avatar de ${agent.name}`}
-          >
-            <AvatarImage
-              src={agent.avatar}
-              alt={agent.name}
-              className="object-cover"
-            />
-            <AvatarFallback
-              className={cn(
-                'text-white text-base font-semibold',
-                specialtyColors[agent.specialty] || 'bg-muted-foreground'
-              )}
-            >
-              {getSpecialistInitials(agent.name)}
-            </AvatarFallback>
-          </Avatar>
-
-          <div className="flex-1 min-w-0">
-            <CardTitle className="text-base truncate">{agent.name}</CardTitle>
-            <p className="text-sm text-muted-foreground mt-1">
-              {specialtyLabels[agent.specialty] || agent.specialty}
-            </p>
+      <Card className="overflow-hidden rounded-xl border-border/70 shadow-sm">
+        <CardHeader className="space-y-2 border-b border-border/60 px-4 py-4 md:px-5">
+          <div className="flex items-center gap-2">
+            <Stethoscope className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <CardTitle className="text-sm font-semibold text-foreground">
+              Resumen del equipo clínico
+            </CardTitle>
           </div>
-        </div>
-      </CardHeader>
+          <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
+            El razonamiento se mantiene detrás de cada revisión. Abre un especialista solo si necesitas más contexto.
+          </p>
+        </CardHeader>
 
-      <CardContent className="space-y-4">
-        {/* Confidence Bar */}
-        <div className="space-y-2">
-          <div className="flex items-center justify-between text-sm">
-            <span className="text-muted-foreground">Confianza</span>
-            <motion.span
-              className="font-semibold tabular-nums"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              aria-live="polite"
-              aria-atomic="true"
-            >
-              {displayedConfidence}%
-            </motion.span>
-          </div>
+        <CardContent className="p-0">
+          <div className="divide-y divide-border/60">
+            {agents.map((agent, index) => {
+              const needsTruncation = (agent.assessment || '').trim().split(/\s+/).filter(Boolean).length > 36;
 
-          <div className="relative">
-            <Progress
-              value={displayedConfidence}
-              className="h-2"
-              aria-label={`Nivel de confianza: ${displayedConfidence}%`}
-            />
-            <motion.div
-              className={cn(
-                'absolute top-0 left-0 h-full rounded-full',
-                getConfidenceColor(agent.confidence)
-              )}
-              initial={{ width: 0 }}
-              animate={{
-                width: shouldReduceMotion
-                  ? `${displayedConfidence}%`
-                  : `${displayedConfidence}%`,
-              }}
-              transition={{
-                duration: shouldReduceMotion ? 0 : 1,
-                ease: 'easeOut',
-              }}
-            />
-          </div>
-        </div>
-
-        {/* Assessment */}
-        {agent.status === 'completed' && (
-          <motion.div
-            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.3 }}
-            className="space-y-2"
-          >
-            <h4 className="text-sm font-medium">Evaluación</h4>
-            <div className="space-y-2">
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {displayedText} {needsTruncation && !isExpanded && (
-                  <span className="text-xs text-muted-foreground">({totalWordCount} palabras)</span>
-                )}
-              </p>
-              {needsTruncation && (
-                <button
-                  onClick={() => setIsExpanded(!isExpanded)}
-                  className="text-sm font-medium text-primary hover:text-primary hover:underline focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded px-1"
-                  aria-expanded={isExpanded}
-                  aria-label={isExpanded ? 'Mostrar menos' : 'Mostrar más'}
+              return (
+                <motion.details
+                  key={agent.id}
+                  className="group"
+                  initial={{
+                    opacity: 0,
+                    y: shouldReduceMotion ? 0 : 10,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  transition={{
+                    duration: 0.25,
+                    delay: shouldReduceMotion ? 0 : index * 0.05,
+                    ease: 'easeOut',
+                  }}
                 >
-                  {isExpanded ? '← Mostrar menos' : 'Mostrar más →'}
-                </button>
-              )}
-            </div>
-          </motion.div>
-        )}
+                  <summary className="flex cursor-pointer list-none items-start gap-3 px-4 py-4 outline-none transition-colors hover:bg-muted/40 focus-visible:bg-muted/40 md:px-5">
+                    <Avatar className="h-10 w-10 shrink-0 rounded-xl border border-border/70 bg-muted">
+                      <AvatarImage
+                        src={agent.avatar}
+                        alt={agent.name}
+                        className="object-cover"
+                      />
+                      <AvatarFallback className="rounded-xl bg-muted text-sm font-medium text-foreground">
+                        {getSpecialistInitials(agent.name)}
+                      </AvatarFallback>
+                    </Avatar>
 
-        {/* Thinking State */}
-        {agent.status === 'thinking' && (
-          <motion.div
-            className="flex items-center gap-2 text-sm text-muted-foreground"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
-          >
-            <motion.div
-              className="h-2 w-2 rounded-full bg-primary"
-              animate={{
-                scale: shouldReduceMotion ? 1 : [1, 1.2, 1],
-                opacity: shouldReduceMotion ? 0.7 : [0.7, 1, 0.7],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-              aria-hidden="true"
-            />
-            <span>Analizando...</span>
-          </motion.div>
-        )}
+                    <div className="min-w-0 flex-1 space-y-2">
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="min-w-0">
+                          <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                            <h3 className="truncate text-sm font-medium text-foreground">
+                              {agent.name}
+                            </h3>
+                            <span className="text-xs text-muted-foreground">
+                              {specialtyLabels[agent.specialty] || agent.specialty}
+                            </span>
+                          </div>
 
-        {/* Pending State */}
-        {agent.status === 'pending' && (
-          <div className="text-sm text-muted-foreground">
-            Esperando turno...
+                          {agent.responseTime ? (
+                            <p className="mt-1 flex items-center gap-1 text-xs text-muted-foreground">
+                              <Clock3 className="h-3.5 w-3.5" aria-hidden="true" />
+                              Respuesta en {agent.responseTime}s
+                            </p>
+                          ) : null}
+                        </div>
+
+                        <span
+                          className={cn(
+                            'inline-flex shrink-0 items-center rounded-lg border px-2.5 py-1 text-[11px] font-medium',
+                            statusTone[agent.status]
+                          )}
+                        >
+                          {statusLabels[agent.status]}
+                        </span>
+                      </div>
+
+                      <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                        <MessageSquareText className="h-3.5 w-3.5" aria-hidden="true" />
+                        <span>
+                          {agent.status === 'completed'
+                            ? 'Ver evaluación clínica'
+                            : agent.status === 'thinking'
+                              ? 'Análisis en curso'
+                              : 'Detalle disponible cuando haya revisión'}
+                        </span>
+                      </div>
+                    </div>
+
+                    <ChevronDown
+                      className="mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180"
+                      aria-hidden="true"
+                    />
+                  </summary>
+
+                  <div className="px-4 pb-4 md:px-5">
+                    <div className="ml-14 border-l border-border/60 pl-4">
+                      {agent.assessment ? (
+                        <p className="text-sm leading-relaxed text-muted-foreground">
+                          {truncateToWords(agent.assessment, 42)}
+                        </p>
+                      ) : (
+                        <p className="text-sm text-muted-foreground">
+                          El especialista todavía no agregó una evaluación final.
+                        </p>
+                      )}
+
+                      {needsTruncation ? (
+                        <p className="mt-2 text-xs text-muted-foreground">
+                          El resumen está recortado para mantener la vista ligera.
+                        </p>
+                      ) : null}
+                    </div>
+                  </div>
+                </motion.details>
+              );
+            })}
           </div>
-        )}
-      </CardContent>
-    </Card>
+        </CardContent>
+      </Card>
+    </section>
   );
 }

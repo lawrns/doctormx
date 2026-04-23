@@ -58,7 +58,7 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
     {
       id: 'welcome',
       role: 'assistant',
-      content: 'Hola, soy tu asistente médico de Doctor.mx. ¿Qué te está molestando hoy? Describe tus síntomas de forma natural y te ayudaré a entender qué podría estar pasando.',
+      content: 'Hola, soy Dr. Simeon. Cuéntame qué te está pasando y te ayudaré a ordenar el caso con una primera orientación clínica.',
     },
   ])
   const [input, setInput] = useState('')
@@ -185,7 +185,7 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
             {
               id: 'welcome',
               role: 'assistant',
-              content: 'Hola, soy Dr. Simeon. ¿Qué te está molestando hoy?',
+              content: 'Hola, soy Dr. Simeon. Cuéntame qué te está pasando y seguimos desde ahí.',
             },
           ])
         }}
@@ -194,9 +194,9 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
   }
 
   return (
-    <div className="flex flex-col h-[calc(100vh-80px)] max-w-3xl mx-auto">
-      <Card className="flex-1 flex flex-col min-h-0 overflow-hidden">
-        <div className="p-4 border-b bg-secondary flex-shrink-0">
+    <div className="mx-auto flex h-[calc(100dvh-80px)] max-w-3xl flex-col">
+      <Card className="flex flex-1 min-h-0 flex-col overflow-hidden rounded-xl border-border/70 shadow-sm">
+        <div className="flex-shrink-0 border-b border-border/60 bg-muted/30 p-4">
           <div className="flex items-center gap-2">
             <Stethoscope className="w-5 h-5 text-ink" />
             <h2 className="font-semibold font-display">Preconsulta con Dr. Simeon</h2>
@@ -220,7 +220,7 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
           </div>
         </div>
 
-        <div className="p-4 border-t flex-shrink-0 bg-card">
+        <div className="flex-shrink-0 border-t border-border/60 bg-card p-4">
           <div className="flex gap-2">
             <input
               type="text"
@@ -228,7 +228,7 @@ export function ConversationalAIConsultation({ userId }: { userId: string }) {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
               placeholder="Describe tus síntomas..."
-              className="flex-1 px-4 py-3 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-ring bg-background"
+              className="flex-1 rounded-lg border border-border/70 bg-background px-4 py-3 focus:outline-none focus:ring-2 focus:ring-ring"
               disabled={isLoading}
             />
             <Button
@@ -285,7 +285,7 @@ function ResultsView({
 }) {
   return (
     <div className="max-w-4xl mx-auto space-y-6">
-      <Card className="p-6">
+      <Card className="rounded-xl border-border/70 p-6 shadow-sm">
         <div className="flex items-center justify-between mb-4">
           <div>
             <h2 className="text-2xl font-bold font-display">Resumen clínico listo</h2>

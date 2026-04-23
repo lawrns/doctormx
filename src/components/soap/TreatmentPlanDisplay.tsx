@@ -1,21 +1,19 @@
 'use client';
 
 import * as React from 'react';
-import { motion } from 'framer-motion';
 import {
-  CheckCircle2,
-  Pill,
-  Heart,
   AlertTriangle,
   BookOpen,
+  CheckCircle2,
   Clock,
-  Stethoscope,
   Leaf,
-  ShoppingBag,
   Package,
-  Truck,
+  Pill,
+  ShoppingBag,
+  Stethoscope,
 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import type { TreatmentPlan } from '@/lib/soap/types';
 
@@ -24,39 +22,80 @@ interface TreatmentPlanDisplayProps {
   className?: string;
 }
 
-const urgencyColors = {
-  emergency: 'bg-red-50 border-red-300 text-red-900',
-  urgent: 'bg-orange-50 border-orange-300 text-orange-900',
-  moderate: 'bg-yellow-50 border-yellow-300 text-yellow-900',
-  routine: 'bg-primary/10 border-primary/30 text-primary',
-  'self-care': 'bg-primary/5 border-green-300 text-green-900',
-};
+const urgencyMeta = {
+  emergency: {
+    label: 'Atención inmediata',
+    tone: 'border-destructive/20 bg-destructive/5 text-destructive',
+  },
+  urgent: {
+    label: 'Cita en 24-48 horas',
+    tone: 'border-amber-500/20 bg-amber-500/10 text-amber-700',
+  },
+  moderate: {
+    label: 'Cita en 1-2 semanas',
+    tone: 'border-border bg-muted/60 text-foreground',
+  },
+  routine: {
+    label: 'Cita programada',
+    tone: 'border-border bg-muted/40 text-foreground',
+  },
+  'self-care': {
+    label: 'Monitoreo en casa',
+    tone: 'border-emerald-500/20 bg-emerald-500/10 text-emerald-700',
+  },
+} as const;
 
-const urgencyLabels = {
-  emergency: 'Emergencia - Buscar atención inmediata',
-  urgent: 'Urgente - Cita en 24-48 horas',
-  moderate: 'Moderado - Cita en 1-2 semanas',
-  routine: 'Rutina - Cita programada',
-  'self-care': 'Autocuidado - Monitoreo en casa',
-};
-
-// Mock function to simulate finding available products
 function findAvailableProducts(medicationName: string) {
-  // This would connect to a real pharmacy API in production
   const mockProducts = {
-    'Tempra': [
-      { id: 'tempra-500mg', name: 'Tempra 500mg', price: 45.50, pharmacy: 'Farmacias Guadalajara', delivery: '2-4 horas' },
-      { id: 'tempra-650mg', name: 'Tempra 650mg', price: 52.30, pharmacy: 'Farmacias del Ahorro', delivery: '1-2 horas' },
+    Tempra: [
+      {
+        id: 'tempra-500mg',
+        name: 'Tempra 500mg',
+        price: 45.5,
+        pharmacy: 'Farmacias Guadalajara',
+        delivery: '2-4 horas',
+      },
+      {
+        id: 'tempra-650mg',
+        name: 'Tempra 650mg',
+        price: 52.3,
+        pharmacy: 'Farmacias del Ahorro',
+        delivery: '1-2 horas',
+      },
     ],
-    'Advil': [
-      { id: 'advil-200mg', name: 'Advil 200mg (12 tabletas)', price: 38.90, pharmacy: 'Farmacias Similares', delivery: '1 hora' },
+    Advil: [
+      {
+        id: 'advil-200mg',
+        name: 'Advil 200mg (12 tabletas)',
+        price: 38.9,
+        pharmacy: 'Farmacias Similares',
+        delivery: '1 hora',
+      },
     ],
-    'Tabcin': [
-      { id: 'tabcin-original', name: 'Tabcin Original', price: 28.75, pharmacy: 'Farmacias Benavides', delivery: '2 horas' },
-      { id: 'tabcin-plus', name: 'Tabcin Plus', price: 35.20, pharmacy: 'Farmacias San Pablo', delivery: '2-4 horas' },
+    Tabcin: [
+      {
+        id: 'tabcin-original',
+        name: 'Tabcin Original',
+        price: 28.75,
+        pharmacy: 'Farmacias Benavides',
+        delivery: '2 horas',
+      },
+      {
+        id: 'tabcin-plus',
+        name: 'Tabcin Plus',
+        price: 35.2,
+        pharmacy: 'Farmacias San Pablo',
+        delivery: '2-4 horas',
+      },
     ],
     'Pepto-Bismol': [
-      { id: 'pepto-liquido', name: 'Pepto-Bismol Líquido 118ml', price: 42.50, pharmacy: 'Farmacias Yza', delivery: '1-2 horas' },
+      {
+        id: 'pepto-liquido',
+        name: 'Pepto-Bismol Líquido 118ml',
+        price: 42.5,
+        pharmacy: 'Farmacias Yza',
+        delivery: '1-2 horas',
+      },
     ],
   };
 
@@ -71,352 +110,298 @@ export function TreatmentPlanDisplay({
   const [showOrderConfirmation, setShowOrderConfirmation] = React.useState<string | null>(null);
 
   const handleOrderMedication = (medicationName: string, productId: string) => {
-    // In a real implementation, this would connect to the pharmacy's API
-    console.log(`Ordering medication: ${medicationName}, Product ID: ${productId}`);
-    setSelectedPharmacy(prev => ({ ...prev, [medicationName]: productId }));
+    setSelectedPharmacy((prev) => ({ ...prev, [medicationName]: productId }));
     setShowOrderConfirmation(productId);
-    setTimeout(() => setShowOrderConfirmation(null), 3000);
+    window.setTimeout(() => setShowOrderConfirmation(null), 2600);
   };
 
   return (
-    <div className={cn('space-y-6', className)}>
-      {/* Header with urgency indicator */}
-      <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-center"
-      >
-        <h2 className="text-2xl font-bold text-foreground mb-2">
-          Plan de Tratamiento Personalizado
-        </h2>
-        {plan.referralUrgency && (
-          <div
-            className={cn(
-              'inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 font-semibold text-sm',
-              urgencyColors[plan.referralUrgency]
-            )}
-          >
-            <Clock className="w-4 h-4" />
-            {urgencyLabels[plan.referralUrgency]}
-          </div>
-        )}
-      </motion.div>
-
-      <div className="grid gap-6 md:grid-cols-2">
-        {/* Natural Remedies & Self-Care */}
-        {plan.selfCareInstructions && plan.selfCareInstructions.length > 0 && (
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.1 }}
-          >
-            <Card className="p-6 bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-green-500 rounded-lg">
-                  <Leaf className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="font-bold text-lg text-foreground">
-                  Remedios Naturales & Autocuidado
-                </h3>
-              </div>
-              <ul className="space-y-3">
-                {plan.selfCareInstructions.map((instruction, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <Heart className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground leading-relaxed">
-                      {instruction}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </Card>
-          </motion.div>
-        )}
-
-        {/* Medical Recommendations */}
-        {plan.recommendations && plan.recommendations.length > 0 && (
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
-          >
-            <Card className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-primary/20">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-primary rounded-lg">
-                  <CheckCircle2 className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="font-bold text-lg text-foreground">
-                  Recomendaciones Médicas
-                </h3>
-              </div>
-              <ul className="space-y-3">
-                {plan.recommendations.map((rec, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground leading-relaxed">
-                      {rec}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </Card>
-          </motion.div>
-        )}
-      </div>
-
-      {/* Suggested Medications */}
-      {plan.suggestedMedications && plan.suggestedMedications.length > 0 && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-        >
-          <Card className="p-6 bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-200">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 bg-purple-500 rounded-lg">
-                <Pill className="w-5 h-5 text-white" />
-              </div>
-              <div className="flex-1">
-                <h3 className="font-bold text-lg text-foreground">
-                  Medicamentos Sugeridos (OTC)
-                </h3>
-                <p className="text-xs text-muted-foreground mt-1">
-                  Disponibles sin receta - Consulta al farmacéutico
-                </p>
-              </div>
+    <Card className={cn('overflow-hidden rounded-xl border-border/70 shadow-sm', className)}>
+      <div className="space-y-5 p-4 md:p-6">
+        <div className="flex items-start justify-between gap-4">
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <Stethoscope className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+              <h2 className="text-sm font-semibold text-foreground">
+                Plan de tratamiento
+              </h2>
             </div>
-            <div className="space-y-4">
-              {plan.suggestedMedications.map((med, i) => {
-                const availableProducts = findAvailableProducts(med.name);
-                
-                return (
-                  <div
-                    key={i}
-                    className="bg-card rounded-lg p-4 border border-purple-200"
-                  >
-                    <div className="flex items-start justify-between mb-2">
-                      <div>
-                        <h4 className="font-semibold text-foreground">{med.name}</h4>
-                        {med.genericName && (
-                          <p className="text-xs text-muted-foreground">
-                            Genérico: {med.genericName}
+            <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              La propuesta se presenta en bloques compactos para que el siguiente paso se entienda rápido sin saturar la pantalla.
+            </p>
+          </div>
+
+          {plan.referralUrgency ? (
+            <Badge
+              variant="outline"
+              className={cn(
+                'rounded-lg border px-2.5 py-1 text-[11px] font-medium',
+                urgencyMeta[plan.referralUrgency].tone
+              )}
+            >
+              <Clock className="mr-1 h-3.5 w-3.5" aria-hidden="true" />
+              {urgencyMeta[plan.referralUrgency].label}
+            </Badge>
+          ) : null}
+        </div>
+
+        <div className="divide-y divide-border/60 rounded-xl border border-border/70">
+          {plan.selfCareInstructions?.length ? (
+            <PlanSection
+              icon={Leaf}
+              title="Autocuidado"
+              items={plan.selfCareInstructions}
+            />
+          ) : null}
+
+          {plan.recommendations?.length ? (
+            <PlanSection
+              icon={CheckCircle2}
+              title="Recomendaciones médicas"
+              items={plan.recommendations}
+            />
+          ) : null}
+
+          {plan.suggestedMedications?.length ? (
+            <div className="px-4 py-5 md:px-5">
+              <SectionHeader
+                icon={Pill}
+                title="Medicamentos sugeridos"
+                description="Opciones de venta libre con advertencias visibles y una acción secundaria, no un escaparate."
+              />
+
+              <div className="mt-4 space-y-3">
+                {plan.suggestedMedications.map((medication) => {
+                  const availableProducts = findAvailableProducts(medication.name);
+
+                  return (
+                    <article
+                      key={medication.name}
+                      className="rounded-xl border border-border/70 bg-muted/20 p-4"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="space-y-1">
+                          <h4 className="text-sm font-semibold text-foreground">
+                            {medication.name}
+                          </h4>
+                          {medication.genericName ? (
+                            <p className="text-xs text-muted-foreground">
+                              Genérico: {medication.genericName}
+                            </p>
+                          ) : null}
+                        </div>
+                        <ShoppingBag className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                      </div>
+
+                      <div className="mt-3 grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
+                        <InfoLine label="Dosis" value={medication.dosage} />
+                        <InfoLine label="Frecuencia" value={medication.frequency} />
+                        <InfoLine label="Duración" value={medication.duration} />
+                        <InfoLine
+                          label="Vía"
+                          value={
+                            medication.route === 'oral'
+                              ? 'Oral'
+                              : medication.route === 'topical'
+                                ? 'Tópica'
+                                : medication.route === 'injection'
+                                  ? 'Inyección'
+                                  : 'Otra'
+                          }
+                        />
+                      </div>
+
+                      {medication.warnings.length ? (
+                        <div className="mt-4 rounded-lg border border-amber-500/20 bg-amber-500/10 px-3 py-2 text-xs text-amber-800">
+                          <p className="font-medium">Advertencias</p>
+                          <ul className="mt-1 space-y-1">
+                            {medication.warnings.map((warning, index) => (
+                              <li key={`${warning}-${index}`}>• {warning}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      ) : null}
+
+                      <div className="mt-4 border-t border-border/60 pt-4">
+                        {availableProducts.length ? (
+                          <>
+                            <div className="flex items-center gap-2 text-sm font-medium text-foreground">
+                              <Package className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                              Disponible para ordenar
+                            </div>
+
+                            <div className="mt-3 space-y-2">
+                              {availableProducts.map((product) => (
+                                <div
+                                  key={product.id}
+                                  className={cn(
+                                    'flex flex-col gap-3 rounded-lg border px-3 py-3 sm:flex-row sm:items-center sm:justify-between',
+                                    selectedPharmacy[medication.name] === product.id
+                                      ? 'border-primary/20 bg-primary/5'
+                                      : 'border-border/70 bg-background'
+                                  )}
+                                >
+                                  <div className="space-y-1">
+                                    <p className="text-sm font-medium text-foreground">
+                                      {product.name}
+                                    </p>
+                                    <p className="text-xs text-muted-foreground">
+                                      {product.pharmacy} · Entrega {product.delivery}
+                                    </p>
+                                  </div>
+
+                                  <div className="flex items-center justify-between gap-3 sm:justify-end">
+                                    <p className="text-sm font-semibold text-foreground">
+                                      ${product.price.toFixed(2)}
+                                    </p>
+                                    <button
+                                      onClick={() => handleOrderMedication(medication.name, product.id)}
+                                      className={cn(
+                                        'inline-flex items-center rounded-lg border px-3 py-1.5 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
+                                        selectedPharmacy[medication.name] === product.id
+                                          ? 'border-primary/20 bg-primary text-primary-foreground'
+                                          : 'border-border/70 bg-background text-foreground hover:bg-muted/60'
+                                      )}
+                                    >
+                                      {selectedPharmacy[medication.name] === product.id ? 'Ordenado' : 'Ordenar'}
+                                    </button>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+
+                            {showOrderConfirmation && availableProducts.some((product) => product.id === showOrderConfirmation) ? (
+                              <p className="mt-3 text-xs text-emerald-700">
+                                Producto ordenado. La confirmación de entrega llegará con las instrucciones.
+                              </p>
+                            ) : null}
+                          </>
+                        ) : (
+                          <p className="text-xs leading-relaxed text-muted-foreground">
+                            Este medicamento puede estar disponible en farmacias locales. Confirma con el farmacéutico antes de tomarlo.
                           </p>
                         )}
                       </div>
-                      <ShoppingBag className="w-4 h-4 text-purple-500" />
-                    </div>
-                    <div className="grid grid-cols-2 gap-2 text-sm">
-                      <div>
-                        <span className="font-medium text-muted-foreground">Dosis:</span>{' '}
-                        <span className="text-muted-foreground">{med.dosage}</span>
-                      </div>
-                      <div>
-                        <span className="font-medium text-muted-foreground">
-                          Frecuencia:
-                        </span>{' '}
-                        <span className="text-muted-foreground">{med.frequency}</span>
-                      </div>
-                      <div>
-                        <span className="font-medium text-muted-foreground">
-                          Duración:
-                        </span>{' '}
-                        <span className="text-muted-foreground">{med.duration}</span>
-                      </div>
-                      <div>
-                        <span className="font-medium text-muted-foreground">Vía:</span>{' '}
-                        <span className="text-muted-foreground">
-                          {med.route === 'oral'
-                            ? 'Oral'
-                            : med.route === 'topical'
-                            ? 'Tópica'
-                            : med.route === 'injection'
-                            ? 'Inyección'
-                            : 'Otra'}
-                        </span>
-                      </div>
-                    </div>
-                    
-                    {med.warnings && med.warnings.length > 0 && (
-                      <div className="mt-3 p-2 bg-yellow-50 rounded border border-yellow-200">
-                        <p className="text-xs font-semibold text-yellow-900 mb-1">
-                          Advertencias:
-                        </p>
-                        <ul className="text-xs text-yellow-800 space-y-1">
-                          {med.warnings.map((warning, j) => (
-                            <li key={j}>• {warning}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                    
-                    {/* Product Availability and Ordering */}
-                    {availableProducts.length > 0 ? (
-                      <div className="mt-4 pt-4 border-t border-purple-100">
-                        <h5 className="font-medium text-sm text-purple-800 mb-2 flex items-center gap-1">
-                          <Package className="w-4 h-4" /> Disponible para ordenar
-                        </h5>
-                        
-                        <div className="space-y-2">
-                          {availableProducts.map(product => (
-                            <div 
-                              key={product.id} 
-                              className={`flex items-center justify-between p-2 rounded border ${
-                                selectedPharmacy[med.name] === product.id 
-                                  ? 'border-green-500 bg-primary/5' 
-                                  : 'border-border'
-                              }`}
-                            >
-                              <div>
-                                <p className="text-sm font-medium">{product.name}</p>
-                                <p className="text-xs text-muted-foreground">{product.pharmacy}</p>
-                                <p className="text-xs text-muted-foreground flex items-center gap-1">
-                                  <Truck className="w-3 h-3" /> Entrega: {product.delivery}
-                                </p>
-                              </div>
-                              <div className="text-right">
-                                <p className="text-sm font-bold">${product.price.toFixed(2)}</p>
-                                <button
-                                  onClick={() => handleOrderMedication(med.name, product.id)}
-                                  className={`text-xs px-2 py-1 rounded ${
-                                    selectedPharmacy[med.name] === product.id
-                                      ? 'bg-green-600 text-white'
-                                      : 'bg-purple-600 text-white hover:bg-purple-700'
-                                  }`}
-                                >
-                                  {selectedPharmacy[med.name] === product.id ? 'Ordenado' : 'Ordenar'}
-                                </button>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                        
-                        {showOrderConfirmation === availableProducts[0].id && (
-                          <div className="mt-2 p-2 bg-primary/10 text-green-800 rounded text-xs text-center">
-                            ¡Producto ordenado exitosamente! Pronto recibirás instrucciones de entrega.
-                          </div>
-                        )}
-                      </div>
-                    ) : (
-                      <div className="mt-4 pt-4 border-t border-purple-100">
-                        <p className="text-xs text-muted-foreground italic">
-                          Este medicamento puede estar disponible en farmacias locales. 
-                          Consulta con tu farmacéutico más cercano.
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
+                    </article>
+                  );
+                })}
+              </div>
             </div>
-            <div className="mt-4 p-3 bg-secondary rounded-lg">
-              <p className="text-xs text-purple-900">
-                <strong>Nota importante:</strong> Estos medicamentos son solo
-                sugerencias orientativas. Consulta con tu farmacéutico o médico
-                antes de tomarlos, especialmente si tienes alergias, estás
-                embarazada, o tomas otros medicamentos.
-              </p>
-            </div>
-          </Card>
-        </motion.div>
-      )}
+          ) : null}
 
-      {/* Specialist Referral */}
-      {plan.referralNeeded && plan.referralSpecialty && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-        >
-          <Card className="p-6 bg-gradient-to-br from-indigo-50 to-blue-50 border-2 border-indigo-300">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 bg-indigo-500 rounded-lg">
-                <Stethoscope className="w-5 h-5 text-white" />
-              </div>
-              <div className="flex-1">
-                <h3 className="font-bold text-lg text-foreground">
-                  Consulta con Especialista Recomendada
-                </h3>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Basado en tu evaluación, te recomendamos consultar con:
-                </p>
-              </div>
-            </div>
-            <div className="bg-card rounded-lg p-4 border-2 border-indigo-200">
-              <p className="text-lg font-semibold text-indigo-900 mb-2">
-                {getSpecialtyLabel(plan.referralSpecialty)}
-              </p>
-              <p className="text-sm text-muted-foreground">
-                {plan.followUpTiming}
-              </p>
-            </div>
-          </Card>
-        </motion.div>
-      )}
+          {plan.referralNeeded && plan.referralSpecialty ? (
+            <PlanSection
+              icon={Stethoscope}
+              title="Referencia"
+              items={[
+                `${getSpecialtyLabel(plan.referralSpecialty)} · ${plan.followUpTiming}`,
+              ]}
+              note="La derivación se presenta como un siguiente paso claro, no como un bloque visual separado."
+            />
+          ) : null}
 
-      {/* Warning Signs - Return Precautions */}
-      {plan.returnPrecautions && plan.returnPrecautions.length > 0 && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-        >
-          <Card className="p-6 bg-gradient-to-br from-red-50 to-orange-50 border-2 border-red-300">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 bg-red-500 rounded-lg">
-                <AlertTriangle className="w-5 h-5 text-white" />
-              </div>
-              <h3 className="font-bold text-lg text-foreground">
-                Signos de Alarma - Busca atención inmediata si:
-              </h3>
+          {plan.returnPrecautions?.length ? (
+            <div className="px-4 py-5 md:px-5">
+              <SectionHeader
+                icon={AlertTriangle}
+                title="Señales de alarma"
+                description="Busca atención inmediata si aparece cualquiera de estas señales."
+              />
+              <ul className="mt-4 space-y-2">
+                {plan.returnPrecautions.map((precaution, index) => (
+                  <li
+                    key={`${precaution}-${index}`}
+                    className="flex items-start gap-2 rounded-lg border border-destructive/20 bg-destructive/5 px-3 py-2 text-sm text-foreground"
+                  >
+                    <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-destructive" aria-hidden="true" />
+                    <span>{precaution}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <ul className="space-y-3">
-              {plan.returnPrecautions.map((precaution, i) => (
-                <li
-                  key={i}
-                  className="flex items-start gap-3 p-3 bg-card rounded-lg border border-red-200"
-                >
-                  <AlertTriangle className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm font-medium text-foreground">
-                    {precaution}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </Card>
-        </motion.div>
-      )}
+          ) : null}
 
-      {/* Patient Education */}
-      {plan.patientEducation && plan.patientEducation.length > 0 && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-        >
-          <Card className="p-6 bg-gradient-to-br from-cyan-50 to-teal-50 border-2 border-cyan-200">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 bg-cyan-500 rounded-lg">
-                <BookOpen className="w-5 h-5 text-white" />
-              </div>
-              <h3 className="font-bold text-lg text-foreground">
-                Información Educativa
-              </h3>
-            </div>
-            <div className="space-y-3">
-              {plan.patientEducation.map((info, i) => (
-                <div
-                  key={i}
-                  className="p-3 bg-card rounded-lg border border-cyan-200"
-                >
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {info}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </Card>
-        </motion.div>
-      )}
+          {plan.patientEducation?.length ? (
+            <PlanSection
+              icon={BookOpen}
+              title="Información educativa"
+              items={plan.patientEducation}
+              note="Lectura auxiliar para el paciente, con el mismo peso visual que el resto del plan."
+            />
+          ) : null}
+        </div>
+      </div>
+    </Card>
+  );
+}
+
+function PlanSection({
+  icon: Icon,
+  title,
+  items,
+  note,
+}: {
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
+  items: string[];
+  note?: string;
+}) {
+  return (
+    <div className="px-4 py-5 md:px-5">
+      <SectionHeader
+        icon={Icon}
+        title={title}
+        description={note}
+      />
+
+      <ul className="mt-4 space-y-2">
+        {items.map((item, index) => (
+          <li
+            key={`${item}-${index}`}
+            className="flex items-start gap-2 rounded-lg border border-border/70 bg-muted/20 px-3 py-2 text-sm text-foreground"
+          >
+            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />
+            <span className="leading-relaxed text-muted-foreground">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function SectionHeader({
+  icon: Icon,
+  title,
+  description,
+}: {
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
+  description?: string;
+}) {
+  return (
+    <div className="flex items-start gap-2">
+      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-border/70 bg-muted/30">
+        <Icon className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+      </div>
+      <div className="space-y-1">
+        <h3 className="text-sm font-semibold text-foreground">{title}</h3>
+        {description ? (
+          <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
+            {description}
+          </p>
+        ) : null}
+      </div>
+    </div>
+  );
+}
+
+function InfoLine({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-lg border border-border/70 bg-background px-3 py-2">
+      <p className="text-[11px] uppercase tracking-wide text-muted-foreground">
+        {label}
+      </p>
+      <p className="mt-1 text-sm text-foreground">{value}</p>
     </div>
   );
 }
@@ -434,5 +419,6 @@ function getSpecialtyLabel(specialty: string): string {
     pediatrician: 'Pediatra',
     gynecologist: 'Ginecólogo/a',
   };
+
   return labels[specialty] || specialty;
 }

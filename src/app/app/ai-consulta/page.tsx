@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
-import { ConversationalAIConsultation } from '@/components/soap/ConversationalAIConsultation'
+import { AIConsultaClient } from './ai-consulta-client'
 
 export default async function AIConsultaPage() {
   const supabase = await createClient()
@@ -10,5 +10,5 @@ export default async function AIConsultaPage() {
     redirect('/auth/login?redirect=/app/ai-consulta')
   }
 
-  return <ConversationalAIConsultation userId={user.id} />
+  return <AIConsultaClient userId={user.id} />
 }

@@ -1,61 +1,27 @@
 'use client';
 
-import { useState, useEffect, useRef, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect, useMemo, useRef, useState, type ReactNode, type Dispatch, type SetStateAction } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import {
-  Activity,
   AlertTriangle,
-  Baby,
-  Brain,
   CheckCircle2,
-  Clock,
-  Eye,
-  Heart,
+  ChevronDown,
   Loader2,
   Send,
-  Smile,
   Stethoscope,
-  Wind,
-  Zap,
 } from 'lucide-react';
 import Link from 'next/link';
-import {
-  SpecialistConsultation,
-  ConsensusMatrix,
-  SOAPTimeline,
-  ConsultationProgress,
-  ConversationalWelcome,
-  EnhancedSeveritySlider,
-  SymptomAutocomplete,
-  QuestionCard,
-  QuestionTitle,
-  QuestionDescription,
-  QuestionCardNavigation,
-} from '@/components/soap';
-import type {
-  SpecialistAgent,
-  ConsensusResult,
-  SOAPPhaseStatus,
-  ConsultationProgress as ConsultationProgressType,
-} from '@/types/soap';
-import type { SubjectiveData, SOAPConsultation } from '@/lib/soap/types';
-import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { EmergencyAlert, EmergencyModal } from '@/components/EmergencyAlert';
 import { detectRedFlagsEnhanced, type RedFlagResult } from '@/lib/ai/red-flags-enhanced';
-import { RecommendedDoctors } from '@/components/soap/RecommendedDoctors';
-import { TreatmentPlanDisplay } from '@/components/soap/TreatmentPlanDisplay';
+import type { SubjectiveData, SOAPConsultation } from '@/lib/soap/types';
+import type { SpecialistAgent, ConsensusResult, SOAPPhaseStatus } from '@/types/soap';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { cn } from '@/lib/utils';
 
-// ============================================================================
-// TYPES
-// ============================================================================
-
-type IntakeStep =
+type FlowStep =
   | 'welcome'
-  | 'chief-complaint'
   | 'symptoms'
   | 'duration'
   | 'severity'
@@ -69,6 +35,15 @@ type IntakeStep =
 type ConsultStage = 'intake' | 'analyzing' | 'consensus' | 'generating' | 'complete' | 'error';
 
 type ReasoningStepStatus = 'pending' | 'active' | 'done';
+
+type ChatRole = 'assistant' | 'user' | 'system';
+
+interface ChatMessage {
+  id: string;
+  role: ChatRole;
+  content: string;
+  subtle?: boolean;
+}
 
 interface ReasoningStep {
   id: string;
@@ -92,349 +67,854 @@ interface AIConsultaClientProps {
   userId: string;
 }
 
-// ============================================================================
-// CONSTANTS
-// ============================================================================
-
-const STEPS_ORDER: IntakeStep[] = [
-  'welcome', 'chief-complaint', 'symptoms', 'duration', 'severity',
-  'onset', 'associated', 'factors', 'history', 'consulting', 'results',
+const FLOW_STEPS: FlowStep[] = [
+  'welcome',
+  'symptoms',
+  'duration',
+  'severity',
+  'onset',
+  'associated',
+  'factors',
+  'history',
+  'consulting',
+  'results',
 ];
-
-const STEP_META: Record<IntakeStep, { question: string; getAnswer: (f: FormData) => string }> = {
-  'welcome':           { question: '', getAnswer: () => '' },
-  'chief-complaint':   { question: '¿Cuál es tu motivo principal de consulta?', getAnswer: f => f.chiefComplaint },
-  'symptoms':          { question: '¿Cómo describes tus síntomas?', getAnswer: f => f.symptomsDescription },
-  'duration':          { question: '¿Cuánto tiempo llevas con estos síntomas?', getAnswer: f => f.symptomDuration },
-  'severity':          { question: '¿Qué tan intenso es tu malestar?', getAnswer: f => `${f.symptomSeverity}/10` },
-  'onset':             { question: '¿Cómo comenzaron tus síntomas?', getAnswer: f => f.onsetType === 'sudden' ? 'De repente' : f.onsetType === 'gradual' ? 'Gradualmente' : '' },
-  'associated':        { question: '¿Tienes otros síntomas asociados?', getAnswer: f => f.associatedSymptoms || 'Ninguno adicional' },
-  'factors':           { question: '¿Qué afecta tus síntomas?', getAnswer: f => [f.aggravatingFactors && `Empeora: ${f.aggravatingFactors}`, f.relievingFactors && `Alivia: ${f.relievingFactors}`].filter(Boolean).join(' · ') || 'Sin factores identificados' },
-  'history':           { question: 'Antecedentes médicos relevantes', getAnswer: f => f.medicalHistory || 'Sin antecedentes' },
-  'consulting':        { question: '', getAnswer: () => '' },
-  'results':           { question: '', getAnswer: () => '' },
-};
 
 const INITIAL_REASONING_STEPS: ReasoningStep[] = [
-  { id: 'symptoms',    label: 'Reconocimiento de síntomas',    status: 'pending' },
-  { id: 'severity',    label: 'Evaluación de gravedad',        status: 'pending' },
-  { id: 'specialty',   label: 'Detección de especialidad',     status: 'pending' },
-  { id: 'redflags',    label: 'Verificación de señales alerta', status: 'pending' },
-  { id: 'urgency',     label: 'Cálculo de urgencia',           status: 'pending' },
-  { id: 'differential',label: 'Análisis diferencial',          status: 'pending' },
-  { id: 'consensus',   label: 'Formación de consenso',         status: 'pending' },
-  { id: 'response',    label: 'Generación de respuesta',       status: 'pending' },
+  { id: 'symptoms', label: 'Lectura del motivo principal', status: 'pending' },
+  { id: 'duration', label: 'Contexto temporal', status: 'pending' },
+  { id: 'severity', label: 'Intensidad clínica', status: 'pending' },
+  { id: 'specialty', label: 'Especialidad probable', status: 'pending' },
+  { id: 'redflags', label: 'Señales de alarma', status: 'pending' },
+  { id: 'urgency', label: 'Nivel de urgencia', status: 'pending' },
+  { id: 'summary', label: 'Síntesis final', status: 'pending' },
 ];
 
-// ============================================================================
-// SPECIALTY HELPERS
-// ============================================================================
+const QUICK_STARTS = [
+  { label: 'Dolor de pecho', seed: 'Dolor de pecho y presión al respirar' },
+  { label: 'Fiebre', seed: 'Fiebre con escalofríos desde ayer' },
+  { label: 'Dolor abdominal', seed: 'Dolor abdominal que no cede' },
+  { label: 'Tos', seed: 'Tos persistente con cansancio' },
+  { label: 'Piel', seed: 'Ronchas o erupción en la piel' },
+  { label: 'No sé si es urgente', seed: 'No sé si esto requiere atención urgente' },
+] as const;
 
-type SpecialtyConfig = { icon: React.ComponentType<{ className?: string }>; color: string; bg: string };
+const STEP_COPY: Record<
+  Exclude<FlowStep, 'consulting' | 'results'>,
+  {
+    title: string;
+    helper: string;
+    placeholder?: string;
+    kind: 'text' | 'textarea' | 'choice' | 'scale' | 'pair';
+  }
+> = {
+  welcome: {
+    title: 'Dime qué te trae hoy',
+    helper: 'Voy a hacerte una sola pregunta a la vez y voy a mantener el caso ordenado.',
+    placeholder: 'Escribe tu motivo principal de consulta',
+    kind: 'text',
+  },
+  symptoms: {
+    title: 'Cuéntame cómo se siente',
+    helper: 'Ubicación, tipo de molestia, intensidad y cualquier detalle útil.',
+    placeholder: 'Describe los síntomas con tus palabras',
+    kind: 'textarea',
+  },
+  duration: {
+    title: '¿Desde cuándo pasa?',
+    helper: 'Elige la opción más cercana.',
+    kind: 'choice',
+  },
+  severity: {
+    title: '¿Qué tan intenso es?',
+    helper: 'Usa una escala sobria del 1 al 10.',
+    kind: 'scale',
+  },
+  onset: {
+    title: '¿Cómo empezó?',
+    helper: 'Esto ayuda a separar cambios bruscos de procesos graduales.',
+    kind: 'choice',
+  },
+  associated: {
+    title: '¿Hay otros síntomas?',
+    helper: 'Opcional. Agrega lo que notes, aunque no estés seguro.',
+    placeholder: 'Ej: náuseas, mareo, tos, falta de aire',
+    kind: 'text',
+  },
+  factors: {
+    title: '¿Qué lo empeora o lo calma?',
+    helper: 'Opcional. Sirve para ver el contexto funcional del caso.',
+    kind: 'pair',
+  },
+  history: {
+    title: 'Antecedentes relevantes',
+    helper: 'Opcional. Medicación, alergias o condiciones previas.',
+    placeholder: 'Ej: hipertensión, asma, medicamentos actuales, alergias',
+    kind: 'textarea',
+  },
+};
 
-function getSpecialtyConfig(specialty: string): SpecialtyConfig {
-  const lower = specialty.toLowerCase();
-  if (/cardio|coraz[oó]n|infarto/.test(lower))      return { icon: Heart,      color: 'hsl(var(--brand-ink))', bg: 'bg-secondary' };
-  if (/neurol|cerebro|cabeza|migra/.test(lower))    return { icon: Brain,      color: 'hsl(var(--brand-ink))', bg: 'bg-secondary' };
-  if (/oftalm|ojo|visi[oó]n/.test(lower))           return { icon: Eye,        color: 'hsl(var(--brand-ink))', bg: 'bg-secondary' };
-  if (/pediatr|ni[ñn]|infant|beb[eé]/.test(lower)) return { icon: Baby,       color: 'hsl(var(--brand-ink))', bg: 'bg-secondary' };
-  if (/dermatol|piel|cutane|erupci/.test(lower))    return { icon: Smile,      color: 'hsl(var(--brand-ink))', bg: 'bg-secondary' };
-  if (/pulm[oó]n|respir|bronq|neum/.test(lower))   return { icon: Wind,       color: 'hsl(var(--brand-ink))', bg: 'bg-secondary' };
-  if (/gastro|digest|est[oó]mag|colon/.test(lower)) return { icon: Activity,   color: 'hsl(var(--brand-ink))', bg: 'bg-secondary' };
-  if (/psiqui|psicol|mental|ansied/.test(lower))    return { icon: Brain,      color: 'hsl(var(--brand-ink))', bg: 'bg-secondary' };
-  if (/ortop|trauma|hueso|articular/.test(lower))   return { icon: Zap,        color: 'hsl(var(--brand-ink))', bg: 'bg-secondary' };
-  return { icon: Stethoscope, color: 'hsl(var(--brand-ink))', bg: 'bg-secondary' };
+const INITIAL_MESSAGES: ChatMessage[] = [
+  {
+    id: 'intro',
+    role: 'assistant',
+    content:
+      'Hola, soy Dr. Simeon. Voy a ayudarte a ordenar el caso, revisar señales de alarma y orientar el siguiente paso sin saturarte con mecánica interna.',
+  },
+];
+
+function getStepIndex(step: FlowStep) {
+  return FLOW_STEPS.indexOf(step);
+}
+
+function getNextStep(step: FlowStep): FlowStep {
+  const nextIndex = Math.min(getStepIndex(step) + 1, FLOW_STEPS.length - 1);
+  return FLOW_STEPS[nextIndex];
+}
+
+function getStepQuestion(step: FlowStep) {
+  return STEP_COPY[step as Exclude<FlowStep, 'consulting' | 'results'>]?.title ?? '';
+}
+
+function getStepHelper(step: FlowStep) {
+  return STEP_COPY[step as Exclude<FlowStep, 'consulting' | 'results'>]?.helper ?? '';
+}
+
+function getStepPlaceholder(step: FlowStep) {
+  return STEP_COPY[step as Exclude<FlowStep, 'consulting' | 'results'>]?.placeholder ?? 'Escribe tu respuesta';
+}
+
+function stepAllowsEmpty(step: FlowStep) {
+  return step === 'associated' || step === 'factors' || step === 'history';
+}
+
+function formatStepAnswer(step: FlowStep, formData: FormData) {
+  switch (step) {
+    case 'welcome':
+      return formData.chiefComplaint;
+    case 'symptoms':
+      return formData.symptomsDescription;
+    case 'duration':
+      return formData.symptomDuration;
+    case 'severity':
+      return `${formData.symptomSeverity}/10`;
+    case 'onset':
+      return formData.onsetType === 'sudden' ? 'De repente' : formData.onsetType === 'gradual' ? 'Gradualmente' : '';
+    case 'associated':
+      return formData.associatedSymptoms || 'Sin síntomas asociados';
+    case 'factors':
+      return [formData.aggravatingFactors && `Empeora: ${formData.aggravatingFactors}`, formData.relievingFactors && `Alivia: ${formData.relievingFactors}`].filter(Boolean).join(' · ') || 'Sin factores identificados';
+    case 'history':
+      return formData.medicalHistory || 'Sin antecedentes relevantes';
+    default:
+      return '';
+  }
+}
+
+function getDiagnosisLabel(value: string | { name: string } | null | undefined) {
+  if (!value) return 'Sin consenso todavía';
+  if (typeof value === 'string') return value;
+  return value.name;
+}
+
+function getFollowUp(step: FlowStep, answer: string) {
+  switch (step) {
+    case 'welcome':
+      return `Lo que entendí: ${answer}. Ahora voy a precisar los síntomas.`;
+    case 'symptoms':
+      return 'Entendido. Ahora dime desde cuándo te pasa.';
+    case 'duration':
+      return 'Gracias. Voy a revisar qué tan intenso se siente.';
+    case 'severity':
+      return 'Perfecto. Ahora necesito saber cómo empezó.';
+    case 'onset':
+      return 'Eso ayuda. Quiero verificar si hay otros síntomas asociados.';
+    case 'associated':
+      return 'Entendido. Ahora cierro el contexto con dos detalles más.';
+    case 'factors':
+      return 'Gracias. Solo me queda registrar antecedentes relevantes.';
+    case 'history':
+      return 'Voy a ordenar lo que me contaste y revisar señales de alarma.';
+    default:
+      return '';
+  }
+}
+
+function getSeverityLabel(value: number) {
+  if (value <= 2) return 'Muy leve';
+  if (value <= 4) return 'Leve';
+  if (value <= 6) return 'Moderada';
+  if (value <= 8) return 'Alta';
+  return 'Muy alta';
 }
 
 function detectSpecialtyFromText(text: string): { specialty: string; confidence: number } | null {
   const lower = text.toLowerCase();
   if (/coraz[oó]n|pecho.*apret|taquicard|arritmia|infarto/.test(lower)) return { specialty: 'Cardiología', confidence: 0.55 };
-  if (/cabeza|cefalea|migra[ñn]|v[eé]rtigo|convuls/.test(lower))         return { specialty: 'Neurología', confidence: 0.55 };
-  if (/ojo|vista|borros|parpad/.test(lower))                              return { specialty: 'Oftalmología', confidence: 0.55 };
-  if (/beb[eé]|ni[ñn]|infante|recién nacido/.test(lower))                return { specialty: 'Pediatría', confidence: 0.55 };
-  if (/piel|grano|acn[eé]|erupci|mancha/.test(lower))                    return { specialty: 'Dermatología', confidence: 0.55 };
-  if (/tos|respir|pulm[oó]n|bronq|asma/.test(lower))                     return { specialty: 'Neumología', confidence: 0.55 };
-  if (/est[oó]mag|n[aá]usea|v[oó]mito|diarrea|colitis/.test(lower))     return { specialty: 'Gastroenterología', confidence: 0.55 };
-  if (/ansied|depresi|estr[eé]s|p[aá]nico|insomnio/.test(lower))        return { specialty: 'Psiquiatría', confidence: 0.55 };
-  if (/rodilla|espalda|hueso|articular|fractura/.test(lower))             return { specialty: 'Traumatología', confidence: 0.55 };
+  if (/cabeza|cefalea|migra[ñn]|v[eé]rtigo|convuls/.test(lower)) return { specialty: 'Neurología', confidence: 0.55 };
+  if (/ojo|vista|borros|parpad/.test(lower)) return { specialty: 'Oftalmología', confidence: 0.55 };
+  if (/beb[eé]|ni[ñn]|infante|recién nacido/.test(lower)) return { specialty: 'Pediatría', confidence: 0.55 };
+  if (/piel|grano|acn[eé]|erupci|mancha/.test(lower)) return { specialty: 'Dermatología', confidence: 0.55 };
+  if (/tos|respir|pulm[oó]n|bronq|asma/.test(lower)) return { specialty: 'Neumología', confidence: 0.55 };
+  if (/est[oó]mag|n[aá]usea|v[oó]mito|diarrea|colitis/.test(lower)) return { specialty: 'Gastroenterología', confidence: 0.55 };
+  if (/ansied|depresi|estr[eé]s|p[aá]nico|insomnio/.test(lower)) return { specialty: 'Psiquiatría', confidence: 0.55 };
+  if (/rodilla|espalda|hueso|articular|fractura/.test(lower)) return { specialty: 'Traumatología', confidence: 0.55 };
   if (lower.length > 10) return { specialty: 'Medicina General', confidence: 0.3 };
   return null;
 }
 
-// ============================================================================
-// REASONING WORKSPACE COMPONENTS
-// ============================================================================
+function mapRoleToId(role: string): string {
+  const mapping: Record<string, string> = {
+    'general-practitioner': 'gp',
+    dermatologist: 'derm',
+    internist: 'int',
+    psychiatrist: 'psych',
+  };
+  return mapping[role] || role;
+}
 
-const STAGE_LABELS: Record<ConsultStage, string> = {
-  intake:     'Recopilando información',
-  analyzing:  'Analizando tu caso',
-  consensus:  'Formando consenso',
-  generating: 'Generando respuesta',
-  complete:   'Análisis completado',
-  error:      'Error en análisis',
-};
+function mapAgreementLevel(level: string): ConsensusResult['level'] {
+  const mapping: Record<string, ConsensusResult['level']> = {
+    strong: 'high',
+    moderate: 'moderate',
+    weak: 'low',
+    disagreement: 'low',
+  };
+  return mapping[level] || 'moderate';
+}
 
-function AnalysisStatusHeader({ stage }: { stage: ConsultStage }) {
+function setStepProgress(step: FlowStep, list: ReasoningStep[]) {
+  const doneMap: Record<string, boolean> = {
+    symptoms: step !== 'welcome',
+    duration: getStepIndex(step) >= getStepIndex('duration'),
+    severity: getStepIndex(step) >= getStepIndex('severity'),
+    specialty: false,
+    redflags: false,
+    urgency: false,
+    summary: false,
+  };
+
+  return list.map((item) => {
+    if (item.status === 'done') return item;
+    if (doneMap[item.id]) return { ...item, status: 'done' as const };
+    return item;
+  });
+}
+
+function ChatBubble({
+  role,
+  children,
+  subtle = false,
+}: {
+  role: ChatRole;
+  children: ReactNode;
+  subtle?: boolean;
+}) {
+  const isUser = role === 'user';
+  const isSystem = role === 'system';
+
   return (
-    <div className="flex items-center gap-3">
-      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-border bg-card">
-        <Stethoscope className={cn('h-4 w-4', stage === 'complete' ? 'text-vital' : stage === 'error' ? 'text-coral' : 'text-ink')} />
+    <motion.div
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+      className={cn('flex gap-3', isUser ? 'justify-end' : 'justify-start')}
+    >
+      {!isUser && (
+        <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border bg-card">
+          <Stethoscope className={cn('h-4 w-4', isSystem ? 'text-muted-foreground' : 'text-ink')} />
+        </div>
+      )}
+      <div
+        className={cn(
+          'max-w-[min(36rem,calc(100vw-6rem))] rounded-xl border px-4 py-3 text-sm shadow-[0_1px_2px_rgba(15,37,95,0.04)]',
+          isUser
+            ? 'border-primary/20 bg-primary text-primary-foreground'
+            : isSystem
+              ? 'border-border bg-muted text-foreground'
+              : subtle
+                ? 'border-border bg-secondary/70 text-foreground'
+                : 'border-border bg-card text-foreground',
+        )}
+      >
+        {children}
       </div>
-      <div>
-        <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-mono">Dr. Simeon</p>
-        <p className="text-sm font-medium text-foreground">{STAGE_LABELS[stage]}</p>
+    </motion.div>
+  );
+}
+
+function StatusPill({ label, tone = 'neutral' }: { label: string; tone?: 'neutral' | 'vital' | 'warning' }) {
+  return (
+    <span
+      className={cn(
+        'inline-flex items-center rounded-lg border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.18em]',
+        tone === 'vital'
+          ? 'border-vital/20 bg-vital/10 text-vital'
+          : tone === 'warning'
+            ? 'border-destructive/20 bg-destructive/10 text-destructive'
+            : 'border-border bg-card text-muted-foreground',
+      )}
+    >
+      {label}
+    </span>
+  );
+}
+
+function QuickStartRail({
+  formData,
+  onQuickStart,
+  emergencyDetected,
+}: {
+  formData: FormData;
+  onQuickStart: (seed: string) => void;
+  emergencyDetected: RedFlagResult | null;
+}) {
+  return (
+    <div className="flex h-full flex-col gap-5 p-4">
+      <div className="flex items-center gap-3">
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-card">
+          <Stethoscope className="h-4.5 w-4.5 text-ink" />
+        </div>
+        <div className="min-w-0">
+          <p className="text-sm font-semibold text-foreground">Dr. Simeon</p>
+          <p className="text-xs text-muted-foreground">Orientación clínica inicial</p>
+        </div>
+      </div>
+
+      <section className="space-y-3 border-t border-border pt-4">
+        <div>
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Atajos</p>
+          <p className="mt-1 text-sm text-foreground">Empieza con lo que mejor describa el caso.</p>
+        </div>
+        <div className="grid grid-cols-1 gap-2">
+          {QUICK_STARTS.map((item) => (
+            <button
+              key={item.label}
+              type="button"
+              onClick={() => onQuickStart(item.seed)}
+              className="flex items-center justify-between rounded-lg border border-border bg-card px-3 py-2 text-left text-sm text-foreground transition-colors hover:border-primary/30 hover:bg-secondary/60"
+            >
+              <span>{item.label}</span>
+              <span className="text-xs text-muted-foreground">Usar</span>
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <section className="space-y-3 border-t border-border pt-4">
+        <div>
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Contexto</p>
+          <p className="mt-1 text-sm text-foreground">Lo que ya registró el caso.</p>
+        </div>
+        <div className="space-y-2 text-sm">
+          <ContextLine label="Motivo" value={formData.chiefComplaint || 'Pendiente'} />
+          <ContextLine label="Síntomas" value={formData.symptomsDescription || 'Pendiente'} />
+          <ContextLine label="Duración" value={formData.symptomDuration || 'Pendiente'} />
+          <ContextLine label="Intensidad" value={`${formData.symptomSeverity}/10`} />
+          <ContextLine label="Inicio" value={formData.onsetType ? (formData.onsetType === 'sudden' ? 'De repente' : 'Gradual') : 'Pendiente'} />
+        </div>
+      </section>
+
+      <section className="space-y-3 border-t border-border pt-4">
+        <div>
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Seguridad</p>
+          <p className="mt-1 text-sm text-foreground">La orientación no sustituye la valoración médica.</p>
+        </div>
+        <p className="text-sm leading-6 text-muted-foreground">
+          Dr. Simeon ordena el caso, detecta señales de alarma y sugiere el siguiente paso. Si ya apareció una alerta, se muestra aquí sin ruido.
+        </p>
+        <AnimatePresence>
+          {emergencyDetected?.detected && (
+            <motion.div
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 6 }}
+              className={cn(
+                'rounded-xl border px-3 py-2 text-sm',
+                emergencyDetected.requiresEmergencyEscalation
+                  ? 'border-destructive/20 bg-destructive/10 text-destructive'
+                  : 'border-amber-300/30 bg-amber-50 text-amber-900',
+              )}
+            >
+              {emergencyDetected.flags[0]?.message}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </section>
+
+      <div className="mt-auto border-t border-border pt-4">
+        <Link href="/app" className="inline-flex items-center text-sm text-muted-foreground transition-colors hover:text-foreground">
+          Volver al inicio
+        </Link>
       </div>
     </div>
   );
 }
 
-function SpecialtyMorphCard({
-  specialty,
-  confidence,
+function ContextLine({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="flex items-start justify-between gap-3 rounded-lg border border-border bg-card px-3 py-2">
+      <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground">{label}</span>
+      <span className="max-w-[12rem] text-right text-sm text-foreground">{value}</span>
+    </div>
+  );
+}
+
+function formatConsensusDiagnosis(value: string | { name?: string } | null | undefined): string {
+  if (!value) return 'Sin consenso todavía';
+  return typeof value === 'string' ? value : value.name || 'Sin consenso todavía';
+}
+
+function ClinicalReviewRail({
+  stage,
+  primarySpecialty,
+  urgencyLevel,
+  reasoningSteps,
+  phases,
+  specialists,
+  consensus,
+  consultation,
+  generationProgress,
+}: {
+  stage: FlowStep;
+  primarySpecialty: string | null;
+  urgencyLevel: string | null;
+  reasoningSteps: ReasoningStep[];
+  phases: SOAPPhaseStatus[];
+  specialists: SpecialistAgent[];
+  consensus: ConsensusResult | null;
+  consultation: SOAPConsultation | null;
+  generationProgress: number;
+}) {
+  return (
+    <div className="flex h-full flex-col gap-4 p-4">
+      <div className="rounded-xl border border-border bg-card p-4">
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Revisión clínica</p>
+            <p className="mt-1 text-sm text-foreground">Oculta por defecto, accesible cuando quieras revisar el porqué.</p>
+          </div>
+          <StatusPill label={stage === 'results' ? 'Lista' : stage === 'consulting' ? 'En curso' : 'Activa'} tone={stage === 'results' ? 'vital' : 'neutral'} />
+        </div>
+        <div className="mt-4 space-y-2 text-sm">
+          <ContextLine label="Especialidad" value={primarySpecialty ?? 'Evaluando'} />
+          <ContextLine label="Urgencia" value={urgencyLevel ?? 'Evaluando'} />
+          <ContextLine label="Siguiente paso" value={stage === 'results' ? 'Orientación lista' : stage === 'consulting' ? 'Síntesis en proceso' : 'Recopilando contexto'} />
+        </div>
+      </div>
+
+      <details className="group rounded-xl border border-border bg-card p-4">
+        <summary className="flex cursor-pointer list-none items-center justify-between gap-3">
+          <div>
+            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Ver cómo se revisó</p>
+            <p className="mt-1 text-sm text-foreground">Pasos internos y síntesis clínica</p>
+          </div>
+          <ChevronDown className="h-4 w-4 text-muted-foreground transition-transform group-open:rotate-180" />
+        </summary>
+        <div className="mt-4 space-y-4 border-t border-border pt-4">
+          <div className="space-y-2">
+            {reasoningSteps.map((step) => (
+              <div key={step.id} className="flex items-center gap-2 text-sm">
+                {step.status === 'done' ? (
+                  <CheckCircle2 className="h-4 w-4 text-vital" />
+                ) : step.status === 'active' ? (
+                  <span className="h-2.5 w-2.5 rounded-full bg-ink" />
+                ) : (
+                  <span className="h-2.5 w-2.5 rounded-full border border-border" />
+                )}
+                <span className={cn(step.status === 'done' ? 'text-foreground' : 'text-muted-foreground')}>{step.label}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="space-y-2 text-sm">
+            <ContextLine label="Fases" value={phases.map((phase) => phase.phase).join(' · ') || 'Pendiente'} />
+            <ContextLine label="Especialistas" value={specialists.length > 0 ? `${specialists.length} revisión/es` : 'Sin detalle visible'} />
+            <ContextLine label="Consenso" value={consensus?.primaryDiagnosis || getDiagnosisLabel(consultation?.assessment?.consensus?.primaryDiagnosis) || 'Sin consenso todavía'} />
+            <ContextLine label="Progreso interno" value={`${generationProgress}%`} />
+          </div>
+
+          {specialists.length > 0 && (
+            <details className="group rounded-lg border border-border bg-muted/40 px-3 py-2">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-sm text-foreground">
+                <span>Detalle técnico</span>
+                <ChevronDown className="h-4 w-4 text-muted-foreground transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="mt-3 space-y-2 border-t border-border pt-3 text-sm text-muted-foreground">
+                {specialists.map((specialist) => (
+                  <div key={specialist.id} className="flex items-center justify-between gap-3">
+                    <span>{specialist.name}</span>
+                    <span className="text-right">{specialist.specialty}</span>
+                  </div>
+                ))}
+              </div>
+            </details>
+          )}
+        </div>
+      </details>
+    </div>
+  );
+}
+
+function CurrentPrompt({
+  step,
+  formData,
   stage,
 }: {
-  specialty: string | null;
-  confidence: number;
-  stage: ConsultStage;
+  step: FlowStep;
+  formData: FormData;
+  stage: FlowStep;
 }) {
-  const prefersReducedMotion = useReducedMotion();
-  const config = specialty ? getSpecialtyConfig(specialty) : null;
-  const Icon = config?.icon ?? Stethoscope;
-  const contextCopy = stage === 'complete' || stage === 'consensus'
-    ? 'Resumen listo para continuar'
-    : confidence > 0
-      ? 'Puede ajustarse conforme respondas'
-      : 'Aparecerá cuando haya contexto suficiente';
+  if (step === 'consulting' || step === 'results') return null;
+
+  const question = getStepQuestion(step);
+  const helper = getStepHelper(step);
+  const answerPreview = formatStepAnswer(step, formData);
 
   return (
-    <div className="rounded-xl border border-border bg-card p-4">
-      <p className="mb-3 text-xs uppercase tracking-[0.2em] text-muted-foreground font-mono">Especialidad probable</p>
-      <div className="flex items-center gap-3">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={specialty ?? 'unknown'}
-            initial={prefersReducedMotion ? undefined : { scale: 0.7, opacity: 0 }}
-            animate={prefersReducedMotion ? undefined : { scale: 1, opacity: 1 }}
-            exit={prefersReducedMotion ? undefined : { scale: 0.7, opacity: 0 }}
-            transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-            className={cn('flex h-10 w-10 shrink-0 items-center justify-center rounded-lg', config?.bg ?? 'bg-muted')}
-          >
-            <Icon className="h-5 w-5" style={{ color: config?.color ?? '#64748b' }} />
-          </motion.div>
-        </AnimatePresence>
-        <div className="flex-1 min-w-0">
-          <p className="text-sm font-semibold text-foreground truncate">{specialty ?? 'Evaluando...'}</p>
-          <p className="mt-1 text-xs text-muted-foreground">{contextCopy}</p>
+    <div className="rounded-xl border border-border bg-card px-4 py-4 shadow-[0_1px_2px_rgba(15,37,95,0.04)]">
+      <div className="flex items-start gap-3">
+        <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border bg-secondary">
+          <Stethoscope className="h-4 w-4 text-ink" />
+        </div>
+        <div className="min-w-0 flex-1">
+          <div className="flex items-center gap-2">
+            <p className="text-sm font-semibold text-foreground">Dr. Simeon</p>
+            <Badge variant="outline" className="rounded-lg border-border bg-muted/50 px-2 py-0.5 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+              {stage === 'welcome' ? 'Inicio' : 'Siguiente paso'}
+            </Badge>
+          </div>
+          <p className="mt-1 text-sm text-foreground">{question}</p>
+          <p className="mt-1 text-xs leading-5 text-muted-foreground">{helper}</p>
+          {answerPreview && step !== 'welcome' && (
+            <div className="mt-3 rounded-lg border border-border bg-muted/40 px-3 py-2 text-xs text-muted-foreground">
+              Lo que entendí: <span className="text-foreground">{answerPreview}</span>
+            </div>
+          )}
         </div>
       </div>
     </div>
   );
 }
 
-function RedFlagAlertCard({ flags, requiresEscalation }: { flags: RedFlagResult['flags']; requiresEscalation: boolean }) {
-  const prefersReducedMotion = useReducedMotion();
-  return (
-    <motion.div
-      initial={prefersReducedMotion ? undefined : { opacity: 0, y: 6 }}
-      animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
-      className={cn(
-        'rounded-xl border p-4',
-        requiresEscalation ? 'border-coral/35 bg-coral/10' : 'border-amber/35 bg-amber/10',
-      )}
-    >
-      <div className="flex items-center gap-2 mb-2">
-        <AlertTriangle className={cn('h-4 w-4 shrink-0', requiresEscalation ? 'text-coral' : 'text-amber')} />
-        <p className={cn('text-xs font-semibold uppercase tracking-[0.16em]', requiresEscalation ? 'text-coral' : 'text-amber')}>
-          {requiresEscalation ? 'Emergencia detectada' : 'Alertas médicas'}
-        </p>
-      </div>
-      <ul className="space-y-1">
-        {flags.slice(0, 2).map((f, i) => (
-          <li key={i} className="text-xs leading-5 text-foreground">
-            {f.message}
-          </li>
-        ))}
-      </ul>
-    </motion.div>
-  );
-}
-
-function ReasoningTimeline({ steps }: { steps: ReasoningStep[] }) {
-  return (
-    <div className="rounded-xl border border-border bg-card p-4">
-      <p className="mb-3 text-xs uppercase tracking-[0.2em] text-muted-foreground font-mono">Lo que ya revisamos</p>
-      <div className="divide-y divide-border border-y border-border">
-        {steps.slice(0, 5).map((step) => (
-          <div
-            key={step.id}
-            className={cn(
-              'flex items-center gap-2.5 py-2 text-xs transition-colors',
-              step.status === 'done'   ? 'text-vital' :
-              step.status === 'active' ? 'text-foreground' : 'text-muted-foreground',
-            )}
-          >
-            {step.status === 'done' ? (
-              <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-vital" />
-            ) : step.status === 'active' ? (
-              <span className="h-2 w-2 shrink-0 rounded-full bg-ink" />
-            ) : (
-              <span className="h-2 w-2 shrink-0 rounded-full border border-border" />
-            )}
-            <span>{step.label}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function UrgencyGauge({ level }: { level: string }) {
-  const config = {
-    emergency: { label: 'Emergencia',     color: '#f43f5e', width: '100%' },
-    high:      { label: 'Urgencia alta',  color: '#f97316', width: '80%' },
-    urgent:    { label: 'Urgente',        color: '#f97316', width: '80%' },
-    moderate:  { label: 'Urgencia media', color: '#f59e0b', width: '55%' },
-    routine:   { label: 'Urgencia baja',  color: '#22c55e', width: '30%' },
-    low:       { label: 'Urgencia baja',  color: '#22c55e', width: '30%' },
-    'self-care': { label: 'Autocuidado',  color: '#10b981', width: '20%' },
-  }[level.toLowerCase()] ?? { label: level, color: '#64748b', width: '40%' };
-
-  const prefersReducedMotion = useReducedMotion();
-
-  return (
-    <div className="rounded-xl border border-border bg-card p-4">
-      <div className="flex items-center justify-between mb-2">
-        <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-mono">Nivel de urgencia</p>
-        <span className="text-xs font-semibold" style={{ color: config.color }}>{config.label}</span>
-      </div>
-      <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
-        <motion.div
-          className="h-full rounded-full"
-          style={{ backgroundColor: config.color }}
-          initial={prefersReducedMotion ? undefined : { width: 0 }}
-          animate={prefersReducedMotion ? undefined : { width: config.width }}
-          transition={{ duration: 0.8, ease: [0, 0, 0.2, 1] }}
-        />
-      </div>
-    </div>
-  );
-}
-
-function ResponseGenerationWave({ progress }: { progress: number }) {
-  const prefersReducedMotion = useReducedMotion();
-  const labels = ['Analizando', 'Correlacionando', 'Sintetizando', 'Generando resumen'];
-  const labelIndex = Math.min(Math.floor(progress / 25), labels.length - 1);
-
-  return (
-    <div className="rounded-xl border border-border bg-card p-4">
-      <div className="flex items-center gap-3 mb-3">
-        <Loader2 className="h-4 w-4 text-ink" />
-        <p className="text-sm text-foreground">{labels[labelIndex]}...</p>
-      </div>
-      <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
-        <motion.div
-          className="h-full rounded-full bg-ink"
-          initial={prefersReducedMotion ? undefined : { width: '5%' }}
-          animate={prefersReducedMotion ? undefined : { width: `${Math.max(progress, 5)}%` }}
-          transition={{ duration: 0.4, ease: 'easeOut' }}
-        />
-      </div>
-    </div>
-  );
-}
-
-function ReasoningWorkspace({
-  stage,
-  primarySpecialty,
-  specialtyConfidence,
-  urgencyLevel,
-  reasoningSteps,
-  generationProgress,
-  redFlags,
+function IntakeComposer({
+  step,
+  draft,
+  setDraft,
+  formData,
+  setFormData,
+  onSubmitStep,
+  onSeveritySelect,
+  severityValue,
+  onOnsetSelect,
+  selectedDuration,
+  onDurationSelect,
+  isSubmitting,
 }: {
-  stage: ConsultStage;
-  primarySpecialty: string | null;
-  specialtyConfidence: number;
-  urgencyLevel: string | null;
+  step: FlowStep;
+  draft: string;
+  setDraft: (value: string) => void;
+  formData: FormData;
+  setFormData: Dispatch<SetStateAction<FormData>>;
+  onSubmitStep: () => void;
+  onSeveritySelect: (value: number) => void;
+  severityValue: number;
+  onOnsetSelect: (value: 'sudden' | 'gradual') => void;
+  selectedDuration: string;
+  onDurationSelect: (value: string) => void;
+  isSubmitting: boolean;
+}) {
+  if (step === 'consulting') {
+    return (
+      <div className="rounded-xl border border-border bg-card p-4">
+        <div className="flex items-center gap-3">
+          <Loader2 className="h-4 w-4 animate-spin text-ink" />
+          <div>
+            <p className="text-sm font-medium text-foreground">Revisando tu caso</p>
+            <p className="text-xs text-muted-foreground">Ordenando síntomas, señales de alarma y siguiente paso.</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (step === 'results') return null;
+
+  const config = STEP_COPY[step];
+  const canSubmit =
+    step === 'welcome'
+      ? draft.trim().length > 0
+      : step === 'symptoms'
+        ? draft.trim().length >= 10
+        : step === 'associated' || step === 'factors' || step === 'history'
+          ? true
+          : false;
+
+  return (
+    <div className="rounded-xl border border-border bg-card px-4 py-4 shadow-[0_1px_2px_rgba(15,37,95,0.04)]">
+      <div className="space-y-2">
+        <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Responde aquí</p>
+        <p className="text-sm text-foreground">{config.title}</p>
+        <p className="text-xs leading-5 text-muted-foreground">{config.helper}</p>
+      </div>
+
+      <div className="mt-4 space-y-3">
+        {step === 'welcome' && (
+          <div className="space-y-2">
+            <label className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Motivo principal</label>
+            <input
+              value={draft}
+              onChange={(e) => setDraft(e.target.value)}
+              placeholder={config.placeholder}
+              className="h-12 w-full rounded-lg border border-border bg-background px-4 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-ring/30"
+              autoFocus
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  e.preventDefault();
+                  if (canSubmit) onSubmitStep();
+                }
+              }}
+            />
+          </div>
+        )}
+
+        {step === 'symptoms' && (
+          <div className="space-y-2">
+            <label className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Síntomas</label>
+            <textarea
+              value={draft}
+              onChange={(e) => setDraft(e.target.value)}
+              placeholder={config.placeholder}
+              rows={5}
+              className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-ring/30"
+            />
+            <p className="text-xs text-muted-foreground">{draft.length} caracteres</p>
+          </div>
+        )}
+
+        {step === 'duration' && (
+          <div className="grid grid-cols-2 gap-2">
+            {['Menos de 1 hora', 'Hoy', '1-2 días', '3-7 días', '1-2 semanas', 'Más de 2 semanas', 'Meses'].map((option) => (
+              <button
+                key={option}
+                type="button"
+                onClick={() => onDurationSelect(option)}
+                className={cn(
+                  'rounded-lg border px-3 py-3 text-left text-sm transition-colors',
+                  selectedDuration === option
+                    ? 'border-primary bg-primary text-primary-foreground'
+                    : 'border-border bg-background text-foreground hover:border-primary/30 hover:bg-secondary/60',
+                )}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {step === 'severity' && (
+          <div className="space-y-3">
+            <div className="flex items-center justify-between rounded-lg border border-border bg-muted/40 px-3 py-2">
+              <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Intensidad actual</span>
+              <span className="text-sm font-medium text-foreground">{severityValue}/10 · {getSeverityLabel(severityValue)}</span>
+            </div>
+            <div className="grid grid-cols-5 gap-2 sm:grid-cols-10">
+              {Array.from({ length: 10 }, (_, index) => index + 1).map((value) => (
+                <button
+                  key={value}
+                  type="button"
+                  onClick={() => onSeveritySelect(value)}
+                  className={cn(
+                    'rounded-lg border px-0 py-2 text-sm font-medium transition-colors',
+                    severityValue === value
+                      ? 'border-primary bg-primary text-primary-foreground'
+                      : 'border-border bg-background text-foreground hover:border-primary/30 hover:bg-secondary/60',
+                  )}
+                >
+                  {value}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {step === 'onset' && (
+          <div className="grid gap-2 sm:grid-cols-2">
+            {[
+              { value: 'sudden' as const, label: 'De repente', helper: 'Apareció de forma brusca' },
+              { value: 'gradual' as const, label: 'Poco a poco', helper: 'Fue apareciendo gradualmente' },
+            ].map((option) => (
+              <button
+                key={option.value}
+                type="button"
+                onClick={() => onOnsetSelect(option.value)}
+                className={cn(
+                  'rounded-lg border px-4 py-3 text-left transition-colors',
+                  formData.onsetType === option.value
+                    ? 'border-primary bg-primary text-primary-foreground'
+                    : 'border-border bg-background text-foreground hover:border-primary/30 hover:bg-secondary/60',
+                )}
+              >
+                <p className="text-sm font-medium">{option.label}</p>
+                <p className={cn('mt-1 text-xs', formData.onsetType === option.value ? 'text-primary-foreground/80' : 'text-muted-foreground')}>
+                  {option.helper}
+                </p>
+              </button>
+            ))}
+          </div>
+        )}
+
+        {step === 'associated' && (
+          <div className="space-y-2">
+            <label className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Síntomas asociados</label>
+            <input
+              value={draft}
+              onChange={(e) => setDraft(e.target.value)}
+              placeholder={config.placeholder}
+              className="h-12 w-full rounded-lg border border-border bg-background px-4 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-ring/30"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  e.preventDefault();
+                  onSubmitStep();
+                }
+              }}
+            />
+            <div className="flex flex-wrap gap-2">
+              {['Fiebre', 'Mareo', 'Náusea', 'Tos', 'Falta de aire'].map((suggestion) => (
+                <button
+                  key={suggestion}
+                  type="button"
+                  onClick={() => setDraft(draft ? `${draft}, ${suggestion}` : suggestion)}
+                  className="rounded-lg border border-border bg-secondary/40 px-3 py-1.5 text-xs text-foreground transition-colors hover:border-primary/30 hover:bg-secondary"
+                >
+                  {suggestion}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {step === 'factors' && (
+          <div className="space-y-3">
+            <div className="space-y-2">
+              <label className="text-xs uppercase tracking-[0.18em] text-muted-foreground">¿Qué lo empeora?</label>
+              <input
+                value={formData.aggravatingFactors}
+                onChange={(e) => setFormData((prev) => ({ ...prev, aggravatingFactors: e.target.value }))}
+                placeholder="Ej: movimiento, comida, estrés"
+                className="h-12 w-full rounded-lg border border-border bg-background px-4 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-ring/30"
+              />
+            </div>
+            <div className="space-y-2">
+              <label className="text-xs uppercase tracking-[0.18em] text-muted-foreground">¿Qué lo alivia?</label>
+              <input
+                value={formData.relievingFactors}
+                onChange={(e) => setFormData((prev) => ({ ...prev, relievingFactors: e.target.value }))}
+                placeholder="Ej: reposo, agua, medicamento"
+                className="h-12 w-full rounded-lg border border-border bg-background px-4 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-ring/30"
+              />
+            </div>
+          </div>
+        )}
+
+        {step === 'history' && (
+          <div className="space-y-2">
+            <label className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Antecedentes</label>
+            <textarea
+              value={draft}
+              onChange={(e) => setDraft(e.target.value)}
+              placeholder={config.placeholder}
+              rows={5}
+              className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-ring/30"
+            />
+          </div>
+        )}
+      </div>
+
+      <div className="mt-4 flex items-center justify-between gap-3">
+        <Badge variant="outline" className="rounded-lg border-border bg-muted/40 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+          Paso {getStepIndex(step) + 1} de 8
+        </Badge>
+        {step !== 'duration' && step !== 'severity' && step !== 'onset' ? (
+          <Button
+            type="button"
+            onClick={onSubmitStep}
+            disabled={!canSubmit || isSubmitting}
+            className="rounded-lg bg-ink px-4 text-primary-foreground hover:bg-ink/90"
+          >
+            {step === 'history' ? 'Iniciar revisión' : 'Continuar'}
+            <Send className="ml-2 h-4 w-4" />
+          </Button>
+        ) : null}
+      </div>
+    </div>
+  );
+}
+
+function ConsultingStatus({
+  consultationStage,
+  reasoningSteps,
+  phases,
+}: {
+  consultationStage: ConsultStage;
   reasoningSteps: ReasoningStep[];
-  generationProgress: number;
-  redFlags: RedFlagResult | null;
+  phases: SOAPPhaseStatus[];
 }) {
   return (
-    <div className="flex flex-col gap-4">
-      <AnalysisStatusHeader stage={stage} />
-      <SpecialtyMorphCard specialty={primarySpecialty} confidence={specialtyConfidence} stage={stage} />
-      <AnimatePresence>
-        {redFlags?.detected && (
-          <motion.div key="redflags" initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}>
-            <RedFlagAlertCard flags={redFlags.flags} requiresEscalation={redFlags.requiresEmergencyEscalation} />
-          </motion.div>
-        )}
-      </AnimatePresence>
-      <ReasoningTimeline steps={reasoningSteps} />
-      <AnimatePresence>
-        {urgencyLevel && stage !== 'intake' && (
-          <motion.div key="urgency" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-            <UrgencyGauge level={urgencyLevel} />
-          </motion.div>
-        )}
-        {stage === 'generating' && (
-          <motion.div key="wave" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-            <ResponseGenerationWave progress={generationProgress} />
-          </motion.div>
-        )}
-      </AnimatePresence>
+    <div className="rounded-xl border border-border bg-card p-4">
+      <div className="flex items-center gap-3">
+        <Loader2 className="h-4 w-4 animate-spin text-ink" />
+        <div>
+          <p className="text-sm font-medium text-foreground">
+            {consultationStage === 'analyzing'
+              ? 'Revisando tu caso'
+              : consultationStage === 'consensus'
+                ? 'Sintetizando orientación'
+                : consultationStage === 'generating'
+                  ? 'Generando resumen'
+                  : consultationStage === 'complete'
+                    ? 'Orientación lista'
+                    : 'Preparando revisión'}
+          </p>
+          <p className="text-xs text-muted-foreground">Ordenando síntomas, urgencia y el siguiente paso.</p>
+        </div>
+      </div>
+      <div className="mt-4 flex flex-wrap gap-2">
+        {phases.map((phase) => (
+          <StatusPill
+            key={phase.phase}
+            label={phase.phase}
+            tone={phase.status === 'completed' ? 'vital' : phase.status === 'in-progress' ? 'warning' : 'neutral'}
+          />
+        ))}
+      </div>
+      <div className="mt-4 space-y-2 border-t border-border pt-4">
+        {reasoningSteps.map((step) => (
+          <div key={step.id} className="flex items-center gap-2 text-sm">
+            {step.status === 'done' ? (
+              <CheckCircle2 className="h-4 w-4 text-vital" />
+            ) : step.status === 'active' ? (
+              <span className="h-2.5 w-2.5 rounded-full bg-ink" />
+            ) : (
+              <span className="h-2.5 w-2.5 rounded-full border border-border" />
+            )}
+            <span className={cn(step.status === 'done' ? 'text-foreground' : 'text-muted-foreground')}>{step.label}</span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
-
-// ============================================================================
-// CONVERSATION TRAIL
-// ============================================================================
-
-function ConversationTrail({ formData, currentStep }: { formData: FormData; currentStep: IntakeStep }) {
-  const stepsBeforeCurrent = STEPS_ORDER.slice(1, STEPS_ORDER.indexOf(currentStep));
-  const answeredSteps = stepsBeforeCurrent.filter((s) => {
-    const answer = STEP_META[s].getAnswer(formData);
-    return answer.trim().length > 0;
-  });
-
-  if (answeredSteps.length === 0) return null;
-
-  return (
-    <div className="space-y-3 mb-6">
-      {answeredSteps.map((step, i) => (
-        <motion.div
-          key={step}
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: i * 0.05 }}
-          className="space-y-1.5"
-        >
-          <div className="flex items-start gap-2">
-            <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary">
-              <Stethoscope className="h-3 w-3" />
-            </div>
-            <p className="text-xs text-muted-foreground pt-1">{STEP_META[step].question}</p>
-          </div>
-          <div className="ml-8">
-            <div className="inline-block rounded-xl rounded-tl-md bg-muted px-3 py-2 text-sm text-foreground max-w-[85%]">
-              {STEP_META[step].getAnswer(formData)}
-            </div>
-          </div>
-        </motion.div>
-      ))}
-    </div>
-  );
-}
-
-// ============================================================================
-// MAIN COMPONENT
-// ============================================================================
 
 export function AIConsultaClient({ userId }: AIConsultaClientProps) {
-  // Existing form state
-  const [currentStep, setCurrentStep] = useState<IntakeStep>('welcome');
+  const prefersReducedMotion = useReducedMotion();
+  const transcriptRef = useRef<HTMLDivElement>(null);
+
+  const [flowStep, setFlowStep] = useState<FlowStep>('welcome');
+  const [draft, setDraft] = useState('');
+  const [severityValue, setSeverityValue] = useState(5);
+  const [selectedDuration, setSelectedDuration] = useState('');
+
   const [formData, setFormData] = useState<FormData>({
     chiefComplaint: '',
     symptomsDescription: '',
@@ -447,122 +927,217 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
     medicalHistory: '',
   });
 
+  const [messages, setMessages] = useState<ChatMessage[]>(INITIAL_MESSAGES);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
-  // Results state
   const [consultation, setConsultation] = useState<SOAPConsultation | null>(null);
   const [specialists, setSpecialists] = useState<SpecialistAgent[]>([]);
   const [consensus, setConsensus] = useState<ConsensusResult | null>(null);
   const [phases, setPhases] = useState<SOAPPhaseStatus[]>([]);
-  const [progress, setProgress] = useState<ConsultationProgressType | null>(null);
-
-  // Emergency detection
   const [emergencyDetected, setEmergencyDetected] = useState<RedFlagResult | null>(null);
   const [showEmergencyModal, setShowEmergencyModal] = useState(false);
-
-  // NEW: Presentation / reasoning state
-  const [consultStage, setConsultStage] = useState<ConsultStage>('intake');
+  const [consultationStage, setConsultationStage] = useState<ConsultStage>('intake');
   const [primarySpecialty, setPrimarySpecialty] = useState<string | null>(null);
-  const [specialtyConfidence, setSpecialtyConfidence] = useState(0);
   const [urgencyLevel, setUrgencyLevel] = useState<string | null>(null);
   const [reasoningSteps, setReasoningSteps] = useState<ReasoningStep[]>(INITIAL_REASONING_STEPS);
   const [generationProgress, setGenerationProgress] = useState(0);
 
-  const updateFormData = (field: keyof FormData, value: string | number) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
+  const currentPromptStep = useMemo(() => {
+    if (flowStep === 'consulting' || flowStep === 'results') return flowStep;
+    return flowStep;
+  }, [flowStep]);
+
+  const combinedText = useMemo(
+    () => [formData.chiefComplaint, formData.symptomsDescription, formData.associatedSymptoms].join(' '),
+    [formData.chiefComplaint, formData.symptomsDescription, formData.associatedSymptoms],
+  );
+
+  const updateFormData = (field: keyof FormData, value: string | number | null) => {
+    setFormData((prev) => ({ ...prev, [field]: value as never }));
     setError(null);
-    if (field === 'chiefComplaint' || field === 'symptomsDescription' || field === 'associatedSymptoms') {
-      checkForEmergencies();
-    }
   };
 
-  const checkForEmergencies = () => {
-    const combinedText = [
-      formData.chiefComplaint,
-      formData.symptomsDescription,
-      formData.associatedSymptoms,
-    ].join(' ');
-    if (combinedText.trim().length < 5) return;
-    const result = detectRedFlagsEnhanced(combinedText);
-    if (result.detected) {
-      setEmergencyDetected(result);
-      if (result.requiresEmergencyEscalation) setShowEmergencyModal(true);
-    } else {
-      setEmergencyDetected(null);
-    }
-  };
-
-  // Real-time specialty detection from formData
   useEffect(() => {
-    const combined = [formData.chiefComplaint, formData.symptomsDescription, formData.associatedSymptoms].join(' ');
-    const detected = detectSpecialtyFromText(combined);
+    if (transcriptRef.current) {
+      transcriptRef.current.scrollTop = transcriptRef.current.scrollHeight;
+    }
+  }, [messages, flowStep, consultationStage]);
+
+  useEffect(() => {
+    if (combinedText.trim().length < 5) {
+      setEmergencyDetected(null);
+      return;
+    }
+
+    const result = detectRedFlagsEnhanced(combinedText);
+    setEmergencyDetected(result.detected ? result : null);
+    if (result.detected && result.requiresEmergencyEscalation) {
+      setShowEmergencyModal(true);
+    }
+  }, [combinedText]);
+
+  useEffect(() => {
+    const detected = detectSpecialtyFromText(combinedText);
     if (detected) {
       setPrimarySpecialty(detected.specialty);
-      setSpecialtyConfidence(detected.confidence);
     }
-  }, [formData.chiefComplaint, formData.symptomsDescription, formData.associatedSymptoms]);
+  }, [combinedText]);
 
   useEffect(() => {
-    checkForEmergencies();
-  }, [formData.chiefComplaint, formData.symptomsDescription, formData.associatedSymptoms]);
-
-  // Update reasoning steps based on form progress
-  useEffect(() => {
-    setReasoningSteps((prev) => prev.map((step) => {
-      if (step.status === 'done') return step;
-      if (step.id === 'symptoms' && formData.chiefComplaint.length > 0) return { ...step, status: 'done' };
-      if (step.id === 'severity' && formData.symptomSeverity !== 5 && formData.symptomDuration) return { ...step, status: 'done' };
-      if (step.id === 'specialty' && primarySpecialty) return { ...step, status: 'done' };
-      if (step.id === 'redflags' && emergencyDetected !== null) return { ...step, status: 'done' };
-      return step;
-    }));
-  }, [formData, primarySpecialty, emergencyDetected]);
-
-  const nextStep = () => {
-    const currentIndex = STEPS_ORDER.indexOf(currentStep);
-    if (currentIndex < STEPS_ORDER.length - 1) {
-      setCurrentStep(STEPS_ORDER[currentIndex + 1]);
-    }
-  };
-
-  const prevStep = () => {
-    const currentIndex = STEPS_ORDER.indexOf(currentStep);
-    if (currentIndex > 0) setCurrentStep(STEPS_ORDER[currentIndex - 1]);
-  };
-
-  const advanceReasoningStep = (id: string) => {
     setReasoningSteps((prev) => {
-      const idx = prev.findIndex((s) => s.id === id);
-      if (idx === -1) return prev;
-      return prev.map((s, i) => {
-        if (i < idx) return { ...s, status: 'done' };
-        if (i === idx) return { ...s, status: 'active' };
-        return s;
+      const next = prev.map((step) => {
+        if (step.status === 'done') return step;
+        if (step.id === 'symptoms' && formData.chiefComplaint.trim().length > 0) return { ...step, status: 'done' as const };
+        if (step.id === 'duration' && formData.symptomDuration.trim().length > 0) return { ...step, status: 'done' as const };
+        if (step.id === 'severity' && formData.symptomSeverity > 0) return { ...step, status: 'done' as const };
+        if (step.id === 'specialty' && primarySpecialty) return { ...step, status: 'done' as const };
+        if (step.id === 'redflags' && emergencyDetected !== null) return { ...step, status: 'done' as const };
+        return step;
       });
+
+      if (flowStep === 'consulting' || flowStep === 'results') {
+        return next.map((step) => ({ ...step, status: 'done' as const }));
+      }
+
+      return next;
     });
+  }, [emergencyDetected, flowStep, formData.chiefComplaint, formData.symptomDuration, formData.symptomSeverity, primarySpecialty]);
+
+  useEffect(() => {
+    const activeIndex = getStepIndex(flowStep);
+    if (activeIndex >= getStepIndex('welcome') && activeIndex < getStepIndex('consulting')) {
+      setReasoningSteps((prev) => setStepProgress(flowStep, prev));
+      setConsultationStage('intake');
+    }
+  }, [flowStep]);
+
+  useEffect(() => {
+    if (flowStep === 'consulting') {
+      setGenerationProgress(20);
+    }
+  }, [flowStep]);
+
+  const pushTranscript = (userContent: string, assistantContent: string, subtle = false) => {
+    setMessages((prev) => [
+      ...prev,
+      { id: `${Date.now()}-user`, role: 'user', content: userContent },
+      { id: `${Date.now()}-assistant`, role: 'assistant', content: assistantContent, subtle },
+    ]);
   };
 
-  const completeReasoningStep = (id: string) => {
-    setReasoningSteps((prev) =>
-      prev.map((s) => s.id === id ? { ...s, status: 'done' } : s)
-    );
+  const commitCurrentStep = async () => {
+    if (isSubmitting || flowStep === 'consulting' || flowStep === 'results') return;
+
+    if (emergencyDetected?.requiresEmergencyEscalation) {
+      setShowEmergencyModal(true);
+      return;
+    }
+
+    const value = draft.trim();
+    const nextStep = getNextStep(flowStep);
+
+    if (!stepAllowsEmpty(flowStep) && !value) return;
+    if (flowStep === 'welcome' && !value) return;
+    if (flowStep === 'symptoms' && value.length < 10) return;
+
+    if (flowStep === 'welcome') {
+      updateFormData('chiefComplaint', value);
+      pushTranscript(value, getFollowUp(flowStep, value));
+      setDraft('');
+      setFlowStep('symptoms');
+      return;
+    }
+
+    if (flowStep === 'symptoms') {
+      updateFormData('symptomsDescription', value);
+      pushTranscript(value, getFollowUp(flowStep, value));
+      setDraft('');
+      setFlowStep(nextStep);
+      return;
+    }
+
+    if (flowStep === 'associated') {
+      updateFormData('associatedSymptoms', value);
+      pushTranscript(value || 'Sin síntomas asociados adicionales', getFollowUp(flowStep, value));
+      setDraft('');
+      setFlowStep(nextStep);
+      return;
+    }
+
+    if (flowStep === 'factors') {
+      const summary = [formData.aggravatingFactors && `Empeora: ${formData.aggravatingFactors}`, formData.relievingFactors && `Alivia: ${formData.relievingFactors}`]
+        .filter(Boolean)
+        .join(' · ') || 'Sin factores añadidos';
+      pushTranscript(summary, getFollowUp(flowStep, summary));
+      setFlowStep(nextStep);
+      return;
+    }
+
+    if (flowStep === 'history') {
+      updateFormData('medicalHistory', value);
+      pushTranscript(value || 'Sin antecedentes relevantes', getFollowUp(flowStep, value));
+      setDraft('');
+      await submitConsultation();
+    }
+  };
+
+  const onQuickStart = (seed: string) => {
+    if (isSubmitting) return;
+
+    updateFormData('chiefComplaint', seed);
+    setDraft('');
+    setMessages((prev) => [
+      ...prev,
+      { id: `${Date.now()}-quick-user`, role: 'user', content: seed },
+      {
+        id: `${Date.now()}-quick-assistant`,
+        role: 'assistant',
+        content: 'Lo entendí. Ahora voy a precisar los síntomas y revisar si hay señales de alarma.',
+      },
+    ]);
+    setFlowStep('symptoms');
+  };
+
+  const onDurationSelect = (value: string) => {
+    updateFormData('symptomDuration', value);
+    setSelectedDuration(value);
+    pushTranscript(value, getFollowUp('duration', value));
+    setFlowStep('severity');
+  };
+
+  const onSeveritySelect = (value: number) => {
+    updateFormData('symptomSeverity', value);
+    setSeverityValue(value);
+    pushTranscript(`${value}/10`, getFollowUp('severity', `${value}/10`));
+    setFlowStep('onset');
+  };
+
+  const onOnsetSelect = (value: 'sudden' | 'gradual') => {
+    updateFormData('onsetType', value);
+    pushTranscript(value === 'sudden' ? 'De repente' : 'Poco a poco', getFollowUp('onset', value));
+    setFlowStep('associated');
   };
 
   const submitConsultation = async () => {
-    checkForEmergencies();
-    if (emergencyDetected?.requiresEmergencyEscalation) { setShowEmergencyModal(true); return; }
+    if (emergencyDetected?.requiresEmergencyEscalation) {
+      setShowEmergencyModal(true);
+      return;
+    }
 
     setIsSubmitting(true);
     setError(null);
-    setConsultStage('analyzing');
-
-    // Mark urgency/differential as active
-    setReasoningSteps((prev) => prev.map((s) => {
-      if (['symptoms', 'severity', 'specialty', 'redflags'].includes(s.id)) return { ...s, status: 'done' };
-      if (s.id === 'urgency') return { ...s, status: 'active' };
-      return s;
-    }));
+    setFlowStep('consulting');
+    setConsultationStage('analyzing');
+    setGenerationProgress(10);
+    setReasoningSteps((prev) =>
+      prev.map((step) => {
+        if (['symptoms', 'duration', 'severity', 'specialty', 'redflags'].includes(step.id)) {
+          return { ...step, status: 'done' as const };
+        }
+        if (step.id === 'urgency') return { ...step, status: 'active' as const };
+        return step;
+      }),
+    );
 
     setPhases([
       { phase: 'subjective', status: 'completed', timestamp: new Date() },
@@ -571,38 +1146,18 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
       { phase: 'plan', status: 'pending' },
     ]);
 
-    setCurrentStep('consulting');
-
     const subjectiveData: SubjectiveData = {
       chiefComplaint: formData.chiefComplaint,
       symptomsDescription: formData.symptomsDescription,
       symptomDuration: formData.symptomDuration,
       symptomSeverity: formData.symptomSeverity,
       onsetType: formData.onsetType || 'gradual',
-      associatedSymptoms: formData.associatedSymptoms ? formData.associatedSymptoms.split(',').map((s) => s.trim()) : [],
-      aggravatingFactors: formData.aggravatingFactors ? formData.aggravatingFactors.split(',').map((s) => s.trim()) : [],
-      relievingFactors: formData.relievingFactors ? formData.relievingFactors.split(',').map((s) => s.trim()) : [],
+      associatedSymptoms: formData.associatedSymptoms ? formData.associatedSymptoms.split(',').map((item) => item.trim()) : [],
+      aggravatingFactors: formData.aggravatingFactors ? formData.aggravatingFactors.split(',').map((item) => item.trim()) : [],
+      relievingFactors: formData.relievingFactors ? formData.relievingFactors.split(',').map((item) => item.trim()) : [],
       previousTreatments: [],
       medicalHistory: formData.medicalHistory || undefined,
     };
-
-    const specialistAvatars: Record<string, string> = {
-      gp:    'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&h=200&fit=crop&crop=face',
-      derm:  'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&h=200&fit=crop&crop=face',
-      int:   'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=200&h=200&fit=crop&crop=face',
-      psych: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=200&h=200&fit=crop&crop=face',
-    };
-
-    const initialSpecialists: SpecialistAgent[] = [
-      { id: 'gp',    name: 'Dr. Garcia',      specialty: 'general',     avatar: specialistAvatars.gp,    confidence: 0, assessment: '', status: 'thinking' },
-      { id: 'derm',  name: 'Dra. Rodriguez',  specialty: 'dermatology', avatar: specialistAvatars.derm,  confidence: 0, assessment: '', status: 'thinking' },
-      { id: 'int',   name: 'Dr. Martinez',    specialty: 'neurology',   avatar: specialistAvatars.int,   confidence: 0, assessment: '', status: 'thinking' },
-      { id: 'psych', name: 'Dra. Lopez',      specialty: 'psychology',  avatar: specialistAvatars.psych, confidence: 0, assessment: '', status: 'thinking' },
-    ];
-
-    setSpecialists(initialSpecialists);
-    setProgress({ currentPhase: 'assessment', activeAgents: ['gp', 'derm', 'int', 'psych'], completedAgents: [], totalAgents: 4, estimatedTimeRemaining: 60 });
-    setGenerationProgress(5);
 
     try {
       const response = await fetch('/api/soap/stream', {
@@ -617,7 +1172,9 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
       }
 
       const reader = response.body?.getReader();
-      if (!reader) throw new Error('No stream available');
+      if (!reader) {
+        throw new Error('No stream available');
+      }
 
       const decoder = new TextDecoder();
       let buffer = '';
@@ -634,6 +1191,7 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
 
         for (const eventBlock of events) {
           if (!eventBlock.trim()) continue;
+
           const lines = eventBlock.split('\n');
           let eventName = '';
           let eventData: Record<string, unknown> | null = null;
@@ -641,78 +1199,95 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
           for (const line of lines) {
             if (line.startsWith('event: ')) eventName = line.slice(7).trim();
             else if (line.startsWith('data: ')) {
-              try { eventData = JSON.parse(line.slice(6).trim()); } catch { /* skip */ }
+              try {
+                eventData = JSON.parse(line.slice(6).trim());
+              } catch {
+                eventData = null;
+              }
             }
           }
+
           if (!eventData) continue;
-          const data = eventData;
 
           try {
             switch (eventName) {
               case 'specialist_done': {
-                const specialistId = mapRoleToId(data.specialist as string);
+                const specialistId = mapRoleToId(eventData.specialist as string);
                 completedSpecialistIds.push(specialistId);
-                setSpecialists((prev) => prev.map((s) =>
-                  s.id === specialistId
-                    ? { ...s, confidence: Math.round(((data.confidence as number) || 0.7) * 100), assessment: (data.diagnosis as string) || 'Evaluación completada', status: 'completed' as const }
-                    : s
-                ));
-                setProgress((prev) => prev ? { ...prev, completedAgents: [...completedSpecialistIds], activeAgents: prev.activeAgents.filter((id) => !completedSpecialistIds.includes(id)) } : null);
-                setGenerationProgress((p) => Math.min(p + 15, 60));
-                advanceReasoningStep('differential');
+                setSpecialists((prev) =>
+                  prev.map((specialist) =>
+                    specialist.id === specialistId
+                      ? {
+                          ...specialist,
+                          confidence: Math.round(((eventData.confidence as number) || 0.7) * 100),
+                          assessment: (eventData.diagnosis as string) || 'Evaluación completada',
+                          status: 'completed' as const,
+                        }
+                      : specialist,
+                  ),
+                );
+                setGenerationProgress((progress) => Math.min(progress + 12, 60));
                 break;
               }
               case 'consensus_done': {
-                setConsultStage('consensus');
-                setPhases((prev) => prev.map((p) => p.phase === 'assessment' ? { ...p, status: 'completed', timestamp: new Date() } : p));
-                const specialty = (data.specialty as string) || primarySpecialty;
-                if (specialty) {
-                  setPrimarySpecialty(specialty);
-                  setSpecialtyConfidence(Math.min((data.confidence as number) || 0.85, 1));
-                }
-                const urgency = data.urgencyLevel as string;
+                setConsultationStage('consensus');
+                const specialty = (eventData.specialty as string) || primarySpecialty;
+                if (specialty) setPrimarySpecialty(specialty);
+                const urgency = eventData.urgencyLevel as string;
                 if (urgency) setUrgencyLevel(urgency);
                 setConsensus({
-                  score: Math.round(((data.confidence as number) || 0.7) * 100),
-                  level: mapAgreementLevel((data.agreementLevel as string) || 'moderate'),
-                  primaryDiagnosis: (data.primaryDiagnosis as string) || '',
+                  score: Math.round(((eventData.confidence as number) || 0.7) * 100),
+                  level: mapAgreementLevel((eventData.agreementLevel as string) || 'moderate'),
+                  primaryDiagnosis: (eventData.primaryDiagnosis as string) || '',
                   differentialDiagnoses: [],
                   clinicalReasoning: `Urgencia: ${urgency || 'moderate'}`,
-                  agreementPercentage: Math.round(((data.confidence as number) || 0.7) * 100),
+                  agreementPercentage: Math.round(((eventData.confidence as number) || 0.7) * 100),
                 });
-                completeReasoningStep('differential');
-                completeReasoningStep('urgency');
-                completeReasoningStep('consensus');
-                advanceReasoningStep('response');
-                setGenerationProgress(65);
+                setReasoningSteps((prev) =>
+                  prev.map((step) =>
+                    step.id === 'specialty' || step.id === 'urgency' ? { ...step, status: 'done' as const } : step,
+                  ),
+                );
+                setGenerationProgress(70);
                 break;
               }
               case 'plan_done': {
-                setConsultStage('generating');
-                setPhases((prev) => prev.map((p) => p.phase === 'plan' ? { ...p, status: 'completed', timestamp: new Date() } : p));
-                setGenerationProgress(85);
+                setConsultationStage('generating');
+                setPhases((prev) =>
+                  prev.map((phase) =>
+                    phase.phase === 'plan' ? { ...phase, status: 'completed', timestamp: new Date() } : phase,
+                  ),
+                );
+                setGenerationProgress(88);
                 break;
               }
               case 'complete': {
                 finalConsultation = {
-                  id: data.consultationId as string,
+                  id: eventData.consultationId as string,
                   patientId: userId,
                   createdAt: new Date(),
                   completedAt: new Date(),
                   status: 'complete',
                   subjective: subjectiveData,
                   objective: {},
-                  assessment: { specialists: (data.specialists as SpecialistAgent[]) || [], consensus: (data.consensus as ConsensusResult) || null },
-                  plan: (data.plan as SOAPConsultation['plan']) || null,
+                  assessment: {
+                    specialists: (eventData.specialists as SpecialistAgent[]) || [],
+                    consensus: (eventData.consensus as ConsensusResult) || null,
+                  },
+                  plan: (eventData.plan as SOAPConsultation['plan']) || null,
                   metadata: { totalTokens: 0, totalCostUSD: 0, totalLatencyMs: 0, aiModel: 'glm-4-plus' },
                 } as unknown as SOAPConsultation;
                 break;
               }
               case 'error':
-                throw new Error((data.error as string) || 'Error en consulta');
+                throw new Error((eventData.error as string) || 'Error en consulta');
+              default:
+                break;
             }
-          } catch (err) {
-            if (err instanceof Error && err.message.includes('Error')) throw err;
+          } catch (processingError) {
+            if (processingError instanceof Error && processingError.message.includes('Error')) {
+              throw processingError;
+            }
             console.warn('Failed to process SSE event:', eventName, eventData);
           }
         }
@@ -720,459 +1295,262 @@ export function AIConsultaClient({ userId }: AIConsultaClientProps) {
 
       setPhases([
         { phase: 'subjective', status: 'completed', timestamp: new Date() },
-        { phase: 'objective',  status: 'completed', timestamp: new Date() },
+        { phase: 'objective', status: 'completed', timestamp: new Date() },
         { phase: 'assessment', status: 'completed', timestamp: new Date() },
-        { phase: 'plan',       status: 'completed', timestamp: new Date() },
+        { phase: 'plan', status: 'completed', timestamp: new Date() },
       ]);
-      setReasoningSteps((prev) => prev.map((s) => ({ ...s, status: 'done' })));
+      setReasoningSteps((prev) => prev.map((step) => ({ ...step, status: 'done' as const })));
       setGenerationProgress(100);
-      setConsultStage('complete');
-
+      setConsultationStage('complete');
+      setFlowStep('results');
       if (finalConsultation) setConsultation(finalConsultation);
-      setProgress(null);
-      setCurrentStep('results');
-    } catch (err) {
-      console.error('Consultation error:', err);
-      setError(err instanceof Error ? err.message : 'Error al procesar la consulta');
-      setConsultStage('error');
-      setCurrentStep('history');
-      setSpecialists([]);
-      setProgress(null);
+      setPhases((prev) => prev.map((phase) => ({ ...phase, status: 'completed', timestamp: new Date() })));
+      setUrgencyLevel(finalConsultation?.assessment?.consensus?.urgencyLevel || urgencyLevel);
+    } catch (submitError) {
+      console.error('Consultation error:', submitError);
+      setError(submitError instanceof Error ? submitError.message : 'Error al procesar la consulta');
+      setFlowStep('consulting');
+      setConsultationStage('error');
       setPhases([
         { phase: 'subjective', status: 'in-progress' },
-        { phase: 'objective',  status: 'pending' },
+        { phase: 'objective', status: 'pending' },
         { phase: 'assessment', status: 'pending' },
-        { phase: 'plan',       status: 'pending' },
+        { phase: 'plan', status: 'pending' },
       ]);
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const mapRoleToId = (role: string): string => {
-    const mapping: Record<string, string> = {
-      'general-practitioner': 'gp',
-      'dermatologist':        'derm',
-      'internist':            'int',
-      'psychiatrist':         'psych',
-    };
-    return mapping[role] || role;
+  const startOver = () => {
+    setFlowStep('welcome');
+    setDraft('');
+    setSeverityValue(5);
+    setSelectedDuration('');
+    setFormData({
+      chiefComplaint: '',
+      symptomsDescription: '',
+      symptomDuration: '',
+      symptomSeverity: 5,
+      onsetType: null,
+      associatedSymptoms: '',
+      aggravatingFactors: '',
+      relievingFactors: '',
+      medicalHistory: '',
+    });
+    setMessages(INITIAL_MESSAGES);
+    setConsultation(null);
+    setSpecialists([]);
+    setConsensus(null);
+    setPhases([]);
+    setEmergencyDetected(null);
+    setShowEmergencyModal(false);
+    setConsultationStage('intake');
+    setPrimarySpecialty(null);
+    setUrgencyLevel(null);
+    setReasoningSteps(INITIAL_REASONING_STEPS);
+    setGenerationProgress(0);
+    setError(null);
   };
 
-  const mapAgreementLevel = (level: string): ConsensusResult['level'] => {
-    const mapping: Record<string, ConsensusResult['level']> = {
-      'strong': 'high', 'moderate': 'moderate', 'weak': 'low', 'disagreement': 'low',
-    };
-    return mapping[level] || 'moderate';
-  };
-
-  const isInIntake = !['consulting', 'results'].includes(currentStep);
-  const headerBg = 'bg-background/90 backdrop-blur-md border-b border-border';
-
-  // ============================================================================
-  // RENDER
-  // ============================================================================
+  const isReviewMode = flowStep === 'consulting' || flowStep === 'results';
+  const currentPromptStepLabel = getStepQuestion(currentPromptStep);
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
-      {/* Header */}
-      <header className={cn('sticky top-0 z-50', headerBg)}>
-        <div className="flex items-center justify-between px-4 py-3">
+    <div className="min-h-[100dvh] bg-background text-foreground">
+      <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
+        <div className="mx-auto flex h-14 w-full max-w-[1600px] items-center justify-between px-4 sm:px-6">
           <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-card">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-border bg-card">
               <Stethoscope className="h-4 w-4 text-ink" />
             </div>
             <div>
               <p className="text-sm font-semibold text-foreground">Preconsulta clínica</p>
-              <p className="text-xs text-muted-foreground font-mono uppercase tracking-wider">Dr. Simeon · Orientación inicial</p>
+              <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Dr. Simeon · Orientación inicial</p>
             </div>
           </div>
-          <Link href="/app" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
-            Volver
-          </Link>
+          <div className="hidden items-center gap-2 md:flex">
+            <StatusPill label={flowStep === 'results' ? 'Listo' : flowStep === 'consulting' ? 'Revisando' : 'Activo'} tone={flowStep === 'results' ? 'vital' : 'neutral'} />
+            <Link href="/app" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+              Salir
+            </Link>
+          </div>
         </div>
       </header>
 
-      {/* Two-column layout */}
-      <div className="flex-1 flex lg:grid lg:grid-cols-[1fr_340px]">
-        {/* LEFT: Conversation / content area */}
-        <main className="flex flex-col min-h-0 lg:border-r lg:border-border overflow-y-auto">
-          {/* Emergency Alert */}
-          <AnimatePresence>
-            {emergencyDetected?.detected && !emergencyDetected.requiresEmergencyEscalation && (
-              <motion.div
-                key="emergency-alert"
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="px-4 pt-4"
-              >
-                <EmergencyAlert
-                  message={emergencyDetected.flags[0].message}
-                  symptoms={emergencyDetected.flags.map((f) => f.category)}
-                  severity="high"
-                  onDismiss={() => setEmergencyDetected(null)}
+      <div className="mx-auto grid w-full max-w-[1600px] flex-1 min-h-[calc(100dvh-3.5rem)] lg:grid-cols-[280px_minmax(0,1fr)] xl:grid-cols-[280px_minmax(0,1fr)_320px]">
+        <aside className="hidden min-h-0 border-r border-border bg-muted/20 lg:block">
+          <div className="sticky top-14 h-[calc(100dvh-3.5rem)] overflow-y-auto">
+            <QuickStartRail formData={formData} onQuickStart={onQuickStart} emergencyDetected={emergencyDetected} />
+          </div>
+        </aside>
+
+        <main className="min-h-0 min-w-0">
+          <div className="flex h-full min-h-0 flex-col">
+            <div className="border-b border-border bg-card/40 px-4 py-3 lg:hidden">
+              <details className="group rounded-xl border border-border bg-card px-4 py-3">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-3">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Atajos y contexto</p>
+                    <p className="mt-1 text-sm text-foreground">Empieza rápido o revisa lo ya registrado</p>
+                  </div>
+                  <ChevronDown className="h-4 w-4 text-muted-foreground transition-transform group-open:rotate-180" />
+                </summary>
+                <div className="mt-4 border-t border-border pt-4">
+                  <QuickStartRail formData={formData} onQuickStart={onQuickStart} emergencyDetected={emergencyDetected} />
+                </div>
+              </details>
+            </div>
+
+            <div ref={transcriptRef} className="flex-1 overflow-y-auto px-4 py-5 sm:px-6 lg:px-8">
+              <div className="mx-auto flex w-full max-w-3xl flex-col gap-4 pb-32">
+                <div className="flex items-center justify-between gap-3">
+                  <div className="min-w-0">
+                    <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Conversación</p>
+                    <h1 className="mt-1 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+                      Dr. Simeon te guía una pregunta a la vez
+                    </h1>
+                  </div>
+                  <StatusPill label={flowStep === 'consulting' ? 'En revisión' : flowStep === 'results' ? 'Lista' : 'Entrada'} tone={flowStep === 'results' ? 'vital' : 'neutral'} />
+                </div>
+
+                <p className="max-w-2xl text-sm leading-6 text-muted-foreground">
+                  Primero hablamos contigo. La revisión técnica queda en segundo plano y solo se abre si quieres ver cómo se llegó al siguiente paso.
+                </p>
+
+                <AnimatePresence mode="popLayout">
+                  {messages.map((message) => (
+                    <ChatBubble key={message.id} role={message.role} subtle={message.subtle}>
+                      <p className="whitespace-pre-wrap leading-6">{message.content}</p>
+                    </ChatBubble>
+                  ))}
+                </AnimatePresence>
+
+                {!isReviewMode && currentPromptStepLabel && (
+                  <CurrentPrompt step={currentPromptStep} stage={flowStep} formData={formData} />
+                )}
+
+                {flowStep === 'consulting' && <ConsultingStatus consultationStage={consultationStage} reasoningSteps={reasoningSteps} phases={phases} />}
+
+                {flowStep === 'results' && consultation && (
+                  <div className="rounded-xl border border-border bg-card p-4">
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Orientación lista</p>
+                        <p className="mt-1 text-sm text-foreground">Resumen clínico sin ruido adicional.</p>
+                      </div>
+                      <StatusPill label={urgencyLevel ?? 'Revisado'} tone={urgencyLevel === 'urgent' || urgencyLevel === 'emergency' ? 'warning' : 'vital'} />
+                    </div>
+                    <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                      <ContextLine
+                        label="Especialidad"
+                        value={formatConsensusDiagnosis(primarySpecialty ?? consultation.assessment?.consensus?.primaryDiagnosis)}
+                      />
+                      <ContextLine
+                        label="Urgencia"
+                        value={urgencyLevel ?? consultation.assessment?.consensus?.urgencyLevel ?? 'Evaluando'}
+                      />
+                    </div>
+                    {consultation.plan?.recommendations?.length > 0 && (
+                      <div className="mt-4 rounded-lg border border-border bg-muted/40 px-3 py-3 text-sm text-foreground">
+                        <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Recomendación principal</p>
+                        <p className="mt-2 leading-6">{consultation.plan.recommendations[0]}</p>
+                        {consultation.plan.followUpTiming && (
+                          <p className="mt-2 text-xs text-muted-foreground">Seguimiento: {consultation.plan.followUpTiming}</p>
+                        )}
+                      </div>
+                    )}
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      <Button type="button" onClick={startOver} variant="outline" className="rounded-lg border-border bg-background text-foreground">
+                        Nueva consulta
+                      </Button>
+                      <Link href="/doctors">
+                        <Button type="button" className="rounded-lg bg-ink text-primary-foreground hover:bg-ink/90">
+                          Buscar doctor
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+                )}
+
+                <AnimatePresence>
+                  {error && (
+                    <motion.div
+                      initial={prefersReducedMotion ? undefined : { opacity: 0, y: 8 }}
+                      animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+                      exit={prefersReducedMotion ? undefined : { opacity: 0, y: 8 }}
+                      className="rounded-xl border border-destructive/20 bg-destructive/10 px-4 py-3 text-sm text-destructive"
+                    >
+                      {error}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </div>
+
+            <div className="sticky bottom-0 border-t border-border bg-background/95 px-4 py-4 backdrop-blur supports-[padding:max(0px)]:pb-[max(1rem,env(safe-area-inset-bottom))]">
+              <div className="mx-auto w-full max-w-3xl">
+                <IntakeComposer
+                  step={flowStep}
+                  draft={draft}
+                  setDraft={setDraft}
+                  formData={formData}
+                  setFormData={setFormData}
+                  onSubmitStep={commitCurrentStep}
+                  onSeveritySelect={onSeveritySelect}
+                  severityValue={severityValue}
+                  onOnsetSelect={onOnsetSelect}
+                  selectedDuration={selectedDuration}
+                  onDurationSelect={onDurationSelect}
+                  isSubmitting={isSubmitting}
                 />
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          {/* Conversation trail — only during intake */}
-          {isInIntake && currentStep !== 'welcome' && (
-            <div className="px-4 pt-6">
-              <ConversationTrail formData={formData} currentStep={currentStep} />
+              </div>
             </div>
-          )}
-
-          {/* Mobile reasoning panel — shown below header on mobile */}
-          {!isInIntake && (
-            <div className="lg:hidden p-4 border-b border-border">
-              <ReasoningWorkspace
-                stage={consultStage}
-                primarySpecialty={primarySpecialty}
-                specialtyConfidence={specialtyConfidence}
-                urgencyLevel={urgencyLevel}
-                reasoningSteps={reasoningSteps}
-                generationProgress={generationProgress}
-                redFlags={emergencyDetected}
-              />
-            </div>
-          )}
-
-          {/* Main step content */}
-          <div className="flex-1 px-4 py-4">
-            <AnimatePresence mode="wait">
-              {currentStep === 'welcome' && <WelcomeStep key="welcome" onNext={nextStep} />}
-              {currentStep === 'chief-complaint' && (
-                <ChiefComplaintStep key="chief-complaint" value={formData.chiefComplaint} onChange={(v) => updateFormData('chiefComplaint', v)} onNext={nextStep} onPrev={prevStep} />
-              )}
-              {currentStep === 'symptoms' && (
-                <SymptomsStep key="symptoms" value={formData.symptomsDescription} onChange={(v) => updateFormData('symptomsDescription', v)} onNext={nextStep} onPrev={prevStep} />
-              )}
-              {currentStep === 'duration' && (
-                <DurationStep key="duration" value={formData.symptomDuration} onChange={(v) => updateFormData('symptomDuration', v)} onNext={nextStep} onPrev={prevStep} />
-              )}
-              {currentStep === 'severity' && (
-                <SeverityStep key="severity" value={formData.symptomSeverity} onChange={(v) => updateFormData('symptomSeverity', v as number)} onNext={nextStep} onPrev={prevStep} />
-              )}
-              {currentStep === 'onset' && (
-                <OnsetStep key="onset" value={formData.onsetType} onChange={(v) => updateFormData('onsetType', v as 'sudden' | 'gradual')} onNext={nextStep} onPrev={prevStep} />
-              )}
-              {currentStep === 'associated' && (
-                <AssociatedSymptomsStep key="associated" value={formData.associatedSymptoms} onChange={(v) => updateFormData('associatedSymptoms', v)} onNext={nextStep} onPrev={prevStep} />
-              )}
-              {currentStep === 'factors' && (
-                <FactorsStep key="factors" aggravating={formData.aggravatingFactors} relieving={formData.relievingFactors} onAggravatingChange={(v) => updateFormData('aggravatingFactors', v)} onRelievingChange={(v) => updateFormData('relievingFactors', v)} onNext={nextStep} onPrev={prevStep} />
-              )}
-              {currentStep === 'history' && (
-                <HistoryStep key="history" value={formData.medicalHistory} onChange={(v) => updateFormData('medicalHistory', v)} onNext={submitConsultation} onPrev={prevStep} isSubmitting={isSubmitting} />
-              )}
-              {currentStep === 'consulting' && (
-                <ConsultingStep key="consulting" specialists={specialists} progress={progress} phases={phases} stage={consultStage} />
-              )}
-              {currentStep === 'results' && consultation && consensus && (
-                <ResultsStep key="results" consultation={consultation} consensus={consensus} specialists={specialists} phases={phases} />
-              )}
-            </AnimatePresence>
           </div>
         </main>
 
-        {/* RIGHT: Reasoning workspace — desktop only, sticky */}
-        <aside className="hidden lg:flex flex-col bg-muted/50">
-          <div className="sticky top-[57px] h-[calc(100vh-57px)] overflow-y-auto p-5">
-            <ReasoningWorkspace
-              stage={consultStage}
+        <aside className="hidden min-h-0 border-l border-border bg-muted/20 xl:block">
+          <div className="sticky top-14 h-[calc(100dvh-3.5rem)] overflow-y-auto">
+            <ClinicalReviewRail
+              stage={flowStep}
               primarySpecialty={primarySpecialty}
-              specialtyConfidence={specialtyConfidence}
               urgencyLevel={urgencyLevel}
               reasoningSteps={reasoningSteps}
-              generationProgress={generationProgress}
-              redFlags={emergencyDetected}
-            />
+            phases={phases}
+            specialists={specialists}
+            consensus={consensus}
+            consultation={consultation}
+            generationProgress={generationProgress}
+          />
           </div>
         </aside>
       </div>
 
-      {/* Error toast */}
       <AnimatePresence>
-        {error && (
+        {emergencyDetected?.detected && !emergencyDetected.requiresEmergencyEscalation && (
           <motion.div
-            key="error-toast"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            className="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:w-96 z-50"
+            exit={{ opacity: 0, y: 12 }}
+            className="fixed bottom-4 left-4 right-4 z-50 md:left-auto md:right-4 md:w-[28rem]"
           >
-            <Card className="p-4 border-red-800 bg-red-950">
-              <div className="flex items-start gap-3">
-                <AlertTriangle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-semibold text-red-100 text-sm">Error en la consulta</p>
-                  <p className="text-xs text-red-300 mt-0.5">{error}</p>
-                </div>
-                <button onClick={() => setError(null)} className="ml-auto text-red-400 hover:text-red-200 text-xs">✕</button>
-              </div>
-            </Card>
+            <EmergencyAlert
+              message={emergencyDetected.flags[0].message}
+              symptoms={emergencyDetected.flags.map((flag) => flag.category)}
+              severity="high"
+              onDismiss={() => setEmergencyDetected(null)}
+            />
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Emergency Modal */}
       {showEmergencyModal && emergencyDetected?.requiresEmergencyEscalation && (
         <EmergencyModal
           message={emergencyDetected.flags[0].message}
-          symptoms={emergencyDetected.flags.map((f) => f.category)}
+          symptoms={emergencyDetected.flags.map((flag) => flag.category)}
           severity="critical"
         />
       )}
     </div>
-  );
-}
-
-// ============================================================================
-// INTAKE STEP COMPONENTS
-// ============================================================================
-
-function WelcomeStep({ onNext }: { onNext: () => void }) {
-  return <ConversationalWelcome onStart={onNext} />;
-}
-
-function ChiefComplaintStep({ value, onChange, onNext, onPrev }: { value: string; onChange: (v: string) => void; onNext: () => void; onPrev: () => void }) {
-  const chips = ['Dolor de cabeza', 'Dolor abdominal', 'Dolor en el pecho', 'Fiebre', 'Náuseas', 'Tos', 'Fatiga', 'Mareos'];
-  return (
-    <QuestionCard step={1} totalSteps={8}>
-      <QuestionTitle>¿Cuál es tu motivo principal?</QuestionTitle>
-      <QuestionDescription>Describe brevemente qué te molesta</QuestionDescription>
-      <div className="space-y-4">
-        <input
-          type="text" value={value} onChange={(e) => onChange(e.target.value)}
-          placeholder="Ej: Dolor de cabeza fuerte..."
-          className="w-full px-4 py-4 text-lg border-2 border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all bg-card"
-          autoFocus onKeyDown={(e) => e.key === 'Enter' && value.trim() && onNext()}
-        />
-        <div>
-          <p className="text-sm text-muted-foreground mb-2 font-medium">Sugerencias rápidas:</p>
-          <div className="flex flex-wrap gap-2">
-            {chips.map((c) => (
-              <button key={c} onClick={() => onChange(c)} className={cn('px-3 py-1.5 text-sm rounded-lg border transition-all', value === c ? 'bg-ink text-primary-foreground border-ink' : 'bg-card border-border hover:border-ink/40 hover:text-foreground')}>
-                {c}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-      <QuestionCardNavigation onPrev={onPrev} onNext={onNext} canNext={value.trim().length > 0} />
-    </QuestionCard>
-  );
-}
-
-function SymptomsStep({ value, onChange, onNext, onPrev }: { value: string; onChange: (v: string) => void; onNext: () => void; onPrev: () => void }) {
-  return (
-    <QuestionCard step={2} totalSteps={8}>
-      <QuestionTitle>Cuéntame más sobre tus síntomas</QuestionTitle>
-      <QuestionDescription>Describe con detalle lo que sientes: ubicación, tipo de molestia, intensidad</QuestionDescription>
-      <textarea value={value} onChange={(e) => onChange(e.target.value)} placeholder="Describe tus síntomas en detalle..." rows={5} className="w-full px-4 py-4 border-2 border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent resize-none transition-all bg-card" />
-      <p className="text-xs text-muted-foreground">{value.length} caracteres</p>
-      <QuestionCardNavigation onPrev={onPrev} onNext={onNext} canNext={value.trim().length >= 10} />
-    </QuestionCard>
-  );
-}
-
-function DurationStep({ value, onChange, onNext, onPrev }: { value: string; onChange: (v: string) => void; onNext: () => void; onPrev: () => void }) {
-  const opts = ['Menos de 1 hora', 'Hoy', '1-2 días', '3-7 días', '1-2 semanas', 'Más de 2 semanas', 'Meses'];
-  return (
-    <QuestionCard step={3} totalSteps={8}>
-      <QuestionTitle>¿Cuánto tiempo con estos síntomas?</QuestionTitle>
-      <QuestionDescription>Selecciona la opción más cercana a tu situación</QuestionDescription>
-      <div className="grid grid-cols-2 gap-2">
-        {opts.map((opt) => (
-          <button key={opt} onClick={() => onChange(opt)} className={cn('p-3 rounded-lg border-2 text-sm text-left transition-all', value === opt ? 'border-ink bg-secondary text-foreground' : 'border-border hover:border-ink/40')}>
-            {opt}
-          </button>
-        ))}
-      </div>
-      <QuestionCardNavigation onPrev={onPrev} onNext={onNext} canNext={value.length > 0} />
-    </QuestionCard>
-  );
-}
-
-function SeverityStep({ value, onChange, onNext, onPrev }: { value: number; onChange: (v: number) => void; onNext: () => void; onPrev: () => void }) {
-  return (
-    <QuestionCard step={4} totalSteps={8}>
-      <QuestionTitle>¿Qué tan intenso es tu malestar?</QuestionTitle>
-      <QuestionDescription>Del 1 (muy leve) al 10 (insoportable)</QuestionDescription>
-      <EnhancedSeveritySlider value={value} onChange={onChange} min={1} max={10} />
-      <QuestionCardNavigation onPrev={onPrev} onNext={onNext} canNext={true} />
-    </QuestionCard>
-  );
-}
-
-function OnsetStep({ value, onChange, onNext, onPrev }: { value: 'sudden' | 'gradual' | null; onChange: (v: 'sudden' | 'gradual') => void; onNext: () => void; onPrev: () => void }) {
-  return (
-    <QuestionCard step={5} totalSteps={8}>
-      <QuestionTitle>¿Cómo empezaron tus síntomas?</QuestionTitle>
-      <QuestionDescription>El tipo de inicio ayuda a entender el origen</QuestionDescription>
-      <div className="grid grid-cols-2 gap-4">
-        {[{ key: 'sudden' as const, label: 'De repente', desc: 'Aparecieron rápidamente', icon: <AlertTriangle className="w-5 h-5 text-orange-500" /> },
-          { key: 'gradual' as const, label: 'Poco a poco', desc: 'Aparecieron gradualmente', icon: <Clock className="w-5 h-5 text-green-500" /> }].map(({ key, label, desc, icon }) => (
-          <Card key={key} className={cn('p-5 cursor-pointer transition-all', value === key ? 'border-primary bg-primary/5 ring-2 ring-primary' : 'hover:border-border hover:shadow-sm')} onClick={() => onChange(key)}>
-            <div className="text-center">
-              <div className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2 bg-secondary">{icon}</div>
-              <p className="font-semibold text-sm text-foreground">{label}</p>
-              <p className="text-xs text-muted-foreground">{desc}</p>
-            </div>
-          </Card>
-        ))}
-      </div>
-      <QuestionCardNavigation onPrev={onPrev} onNext={onNext} canNext={value !== null} />
-    </QuestionCard>
-  );
-}
-
-function AssociatedSymptomsStep({ value, onChange, onNext, onPrev }: { value: string; onChange: (v: string) => void; onNext: () => void; onPrev: () => void }) {
-  return (
-    <QuestionCard step={6} totalSteps={8}>
-      <QuestionTitle>¿Tienes otros síntomas?</QuestionTitle>
-      <QuestionDescription>Selecciona o escribe los que apliquen (opcional)</QuestionDescription>
-      <SymptomAutocomplete value={value} onChange={onChange} placeholder="Escribe o selecciona síntomas..." suggestions={['Fiebre', 'Escalofríos', 'Náuseas', 'Vómitos', 'Mareos', 'Cansancio', 'Pérdida de apetito', 'Dolor muscular', 'Tos seca', 'Congestión nasal']} />
-      <QuestionCardNavigation onPrev={onPrev} onNext={onNext} canNext={true} />
-    </QuestionCard>
-  );
-}
-
-function FactorsStep({ aggravating, relieving, onAggravatingChange, onRelievingChange, onNext, onPrev }: { aggravating: string; relieving: string; onAggravatingChange: (v: string) => void; onRelievingChange: (v: string) => void; onNext: () => void; onPrev: () => void }) {
-  return (
-    <QuestionCard step={7} totalSteps={8}>
-      <QuestionTitle>¿Qué afecta tus síntomas?</QuestionTitle>
-      <QuestionDescription>Ayuda a Dr. Simeon a entender el contexto (opcional)</QuestionDescription>
-      <div className="space-y-4">
-        {[{ label: '¿Qué lo empeora?', value: aggravating, onChange: onAggravatingChange, placeholder: 'Ej: movimiento, comida, estrés...' },
-          { label: '¿Qué lo alivia?', value: relieving, onChange: onRelievingChange, placeholder: 'Ej: descanso, medicamentos...' }].map(({ label, value, onChange, placeholder }) => (
-          <div key={label}>
-            <label className="block text-sm font-medium text-foreground mb-1.5">{label}</label>
-            <input type="text" value={value} onChange={(e) => onChange(e.target.value)} placeholder={placeholder} className="w-full px-4 py-3 border-2 border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-card" />
-          </div>
-        ))}
-      </div>
-      <QuestionCardNavigation onPrev={onPrev} onNext={onNext} canNext={true} />
-    </QuestionCard>
-  );
-}
-
-function HistoryStep({ value, onChange, onNext, onPrev, isSubmitting }: { value: string; onChange: (v: string) => void; onNext: () => void; onPrev: () => void; isSubmitting: boolean }) {
-  return (
-    <QuestionCard step={8} totalSteps={8}>
-      <QuestionTitle>Antecedentes médicos (opcional)</QuestionTitle>
-      <QuestionDescription>Cualquier información que ayude al diagnóstico</QuestionDescription>
-      <textarea value={value} onChange={(e) => onChange(e.target.value)} placeholder="Ej: Tengo hipertensión, tomo medicación para la tiroides..." rows={5} className="w-full px-4 py-4 border-2 border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none transition-all bg-card" />
-      <QuestionCardNavigation onPrev={onPrev} onNext={onNext} canNext={true} nextLabel="Iniciar Consulta" isSubmitting={isSubmitting} />
-      <p className="text-center text-xs text-muted-foreground mt-2">Dr. Simeon ordenará tu caso en aproximadamente 60 segundos</p>
-    </QuestionCard>
-  );
-}
-
-function ConsultingStep({ specialists, progress, phases, stage }: { specialists: SpecialistAgent[]; progress: ConsultationProgressType | null; phases: SOAPPhaseStatus[]; stage: ConsultStage }) {
-  const prefersReducedMotion = useReducedMotion();
-  const STAGE_COPY: Record<ConsultStage, { title: string; sub: string }> = {
-    analyzing:  { title: 'Revisando tu caso...', sub: 'Dr. Simeon está ordenando síntomas, duración y señales de alarma' },
-    consensus:  { title: 'Preparando orientación...', sub: 'La revisión está conectando el motivo principal con el siguiente paso' },
-    generating: { title: 'Generando respuesta...', sub: 'Sintetizando el plan de atención para ti' },
-    complete:   { title: 'Análisis completado', sub: '' },
-    intake:     { title: 'Preparando análisis...', sub: '' },
-    error:      { title: 'Error en el análisis', sub: '' },
-  };
-  const { title, sub } = STAGE_COPY[stage] || STAGE_COPY.analyzing;
-
-  return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6 max-w-xl mx-auto">
-      <div className="text-center py-4">
-        <div className="relative w-16 h-16 mx-auto mb-4 rounded-xl border border-border bg-card">
-          <div className="relative flex h-full items-center justify-center">
-            {!prefersReducedMotion ? (
-              <motion.div animate={{ rotate: 360 }} transition={{ duration: 2.5, repeat: Infinity, ease: 'linear' }}>
-                <Loader2 className="h-7 w-7 text-ink" />
-              </motion.div>
-            ) : (
-              <Loader2 className="h-7 w-7 text-ink" />
-            )}
-          </div>
-        </div>
-        <h3 className="text-xl font-bold text-foreground mb-1">{title}</h3>
-        {sub && <p className="text-sm text-muted-foreground">{sub}</p>}
-      </div>
-
-      {phases.length > 0 && <SOAPTimeline phases={phases} currentPhase="assessment" />}
-      {progress && <ConsultationProgress progress={progress} agentDetails={specialists.map((s) => ({ id: s.id, name: s.name, avatar: s.avatar }))} />}
-      <SpecialistConsultation agents={specialists} />
-    </motion.div>
-  );
-}
-
-function ResultsStep({ consultation, consensus, specialists, phases }: { consultation: SOAPConsultation; consensus: ConsensusResult; specialists: SpecialistAgent[]; phases: SOAPPhaseStatus[] }) {
-  const urgencyColors: Record<string, string> = {
-    emergency: 'bg-red-500', urgent: 'bg-orange-500', moderate: 'bg-yellow-500',
-    routine: 'bg-primary', 'self-care': 'bg-vital',
-  };
-  const prefersReducedMotion = useReducedMotion();
-
-  return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6 max-w-xl mx-auto">
-      <motion.div
-        initial={prefersReducedMotion ? undefined : { scale: 0.95, opacity: 0 }}
-        animate={prefersReducedMotion ? undefined : { scale: 1, opacity: 1 }}
-        transition={{ type: 'spring', stiffness: 280, damping: 22 }}
-        className="rounded-xl border border-vital/20 bg-vital/10 p-6 text-center"
-      >
-        <CheckCircle2 className="w-12 h-12 mx-auto mb-3 text-vital" />
-        <h2 className="text-2xl font-bold mb-1 text-foreground">Resumen clínico listo</h2>
-        <p className="text-muted-foreground text-sm">Tu caso quedó ordenado para compartir con un doctor.</p>
-      </motion.div>
-
-      <SOAPTimeline phases={phases} currentPhase="plan" />
-
-      <div className="flex justify-center">
-        <Badge className={cn('px-5 py-1.5 text-primary-foreground', urgencyColors[consultation.assessment?.consensus?.urgencyLevel || 'routine'])}>
-          Urgencia: {consultation.assessment?.consensus?.urgencyLevel || 'routine'}
-        </Badge>
-      </div>
-
-      {[
-        <ConsensusMatrix key="consensus" consensus={consensus} />,
-        <div key="specialists">
-          <h3 className="text-lg font-bold text-foreground mb-3">Evaluaciones</h3>
-          <SpecialistConsultation agents={specialists} />
-        </div>,
-        consultation.plan && <TreatmentPlanDisplay key="plan" plan={consultation.plan} />,
-        consultation.plan?.referralNeeded && consultation.assessment?.consensus && (
-          <RecommendedDoctors
-            key="doctors"
-            consultationId={consultation.id}
-            consensus={consultation.assessment.consensus}
-            patientHistory={{ chiefComplaint: consultation.subjective.chiefComplaint, symptomsDescription: consultation.subjective.symptomsDescription, medicalHistory: consultation.subjective.medicalHistory }}
-            onSelectDoctor={(doctorId) => { window.location.href = `/book/${doctorId}?consultationId=${consultation.id}`; }}
-          />
-        ),
-      ].filter(Boolean).map((child, i) => (
-        <motion.div
-          key={i}
-          initial={prefersReducedMotion ? undefined : { opacity: 0, y: 20 }}
-          animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
-          transition={{ delay: i * 0.12 }}
-        >
-          {child}
-        </motion.div>
-      ))}
-
-      <Card className="p-4 bg-amber/10 border-amber/30">
-        <p className="text-xs text-foreground text-center">
-          <strong>Aviso:</strong> Esta consulta es orientación clínica inicial. No diagnostica ni sustituye la consulta con un médico licenciado. En caso de emergencia, llama al 911.
-        </p>
-      </Card>
-
-      <div className="flex gap-3 pb-8">
-        <Link href="/app" className="flex-1"><Button variant="outline" className="w-full">Volver al Inicio</Button></Link>
-        <Link href="/doctors" className="flex-1"><Button className="w-full bg-ink hover:bg-ink">Buscar Doctor</Button></Link>
-      </div>
-    </motion.div>
   );
 }

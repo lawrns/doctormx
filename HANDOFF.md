@@ -148,6 +148,11 @@ Doctor.mx is a telemedicine platform for Mexico. We are closing competitive gaps
 - Redis env reads now use runtime bracket access so `REDIS_URL` is not statically inlined into Netlify build artifacts.
 - `/api/ai/preconsulta` now returns a bounded Dr. Simeon degraded-mode response when upstream AI providers are unavailable instead of hard-failing with 503.
 
+**AI consult split workspace redesign:**
+- `/ai-consulta` and `/app/ai-consulta` now share a Cody-style split workspace pattern: immediate chat-first center column, left rail for symptom quick starts and case context, and a hidden-by-default clinical review rail.
+- The authenticated consult shell was flattened to the same token/radius rules as the public route; multi-specialist emphasis, confidence bars, flashy gradients, and oversized card stacks were removed from the primary path.
+- Shared consult presentation components were normalized so specialist detail stays behind disclosure instead of dominating the default screen.
+
 ---
 
 ## 3. Architecture & Key Files
