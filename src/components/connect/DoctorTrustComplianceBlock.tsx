@@ -1,6 +1,4 @@
-import Link from 'next/link'
-import { ArrowRight, FileCheck2, LockKeyhole, ShieldAlert } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { FileCheck2, LockKeyhole, ShieldAlert } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 import { IconBadge, SectionHeader } from '@/components/ui/card-patterns'
 
@@ -24,32 +22,28 @@ const rules = [
 
 export function DoctorTrustComplianceBlock() {
   return (
-    <section className="border-y border-[#d8e3f6] bg-[#071a4e] public-section text-white">
+    <section className="border-y border-[#d8e3f6] bg-[#071a4e] py-10 text-white md:py-12 lg:py-14">
       <div className="editorial-shell">
-        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-          <div>
-            <SectionHeader eyebrow="Seguridad y cumplimiento" title="La IA acelera el perfil, no reemplaza la verificación médica." className="text-white [&_h2]:text-white [&_p:first-child]:text-[#8fc4ff] [&>div]:text-white/68">
-              Esta es la regla de producto: impresionar al médico con automatización sin degradar la confianza clínica del paciente.
-            </SectionHeader>
-            <Button asChild className="mt-7 bg-white text-[#071a4e] hover:bg-white/95">
-              <Link href="/auth/register?role=doctor&connect=1">
-                Crear perfil médico
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] lg:items-start">
+          <SectionHeader
+            eyebrow="Seguridad y cumplimiento"
+            title="La IA acelera el perfil, no reemplaza la verificación médica."
+            className="mb-0 max-w-2xl text-white [&>div]:text-white/68 [&_h2]:text-[clamp(1.85rem,3vw,2.8rem)] [&_h2]:text-white [&_p:first-child]:text-[#8fc4ff]"
+          >
+            Esta es la regla de producto: impresionar al médico con automatización sin degradar la confianza clínica del paciente.
+          </SectionHeader>
 
-          <div className="grid gap-3">
-            {rules.map((rule) => (
-              <Card key={rule.title} variant="feature" tone="dark" density="compact" className="grid gap-3 md:grid-cols-[32px_1fr]">
-                <IconBadge icon={rule.icon} tone="dark" size="md" />
-                <div>
-                  <h3 className="text-[15px] font-semibold leading-5 tracking-[-0.02em]">{rule.title}</h3>
-                  <p className="mt-1.5 text-sm leading-6 text-white/68">{rule.body}</p>
+          <Card variant="chip" density="none" tone="dark" className="overflow-hidden rounded-[12px] shadow-none">
+            <div className="divide-y divide-white/10 md:grid md:grid-cols-3 md:divide-x md:divide-y-0">
+              {rules.map((rule) => (
+                <div key={rule.title} className="min-w-0 p-4">
+                  <IconBadge icon={rule.icon} tone="dark" size="sm" />
+                  <h3 className="mt-3 text-[15px] font-semibold leading-5 tracking-[-0.02em]">{rule.title}</h3>
+                  <p className="mt-1.5 text-[13px] leading-5 text-white/68">{rule.body}</p>
                 </div>
-              </Card>
-            ))}
-          </div>
+              ))}
+            </div>
+          </Card>
         </div>
       </div>
     </section>

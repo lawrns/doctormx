@@ -51,7 +51,7 @@ export function SupportWidget() {
     pathname?.startsWith('/consultation') ||
     pathname?.startsWith('/payment-success')
 
-  if (pathname?.startsWith('/widget') || pathname?.includes('/ai-consulta') || isTransactional) {
+  if (pathname?.startsWith('/widget') || pathname?.startsWith('/connect') || pathname?.includes('/ai-consulta') || isTransactional) {
     return null
   }
 
