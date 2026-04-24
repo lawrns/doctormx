@@ -35,7 +35,7 @@ export function TrustFooter() {
         </div>
 
         {/* Detailed credentials */}
-        <div className="bg-card rounded-2xl p-6 shadow-sm border border-border">
+        <div className="bg-card rounded-[12px] p-6 shadow-sm border border-border">
           <h3 className="text-lg font-bold text-foreground mb-4">
             Credenciales y Certificaciones
           </h3>
@@ -95,7 +95,7 @@ function TrustBadge({
   description: string;
 }) {
   return (
-    <div className="flex flex-col items-center text-center p-4 bg-card rounded-xl border border-border hover:shadow-md transition-shadow">
+    <div className="flex flex-col items-center text-center p-4 bg-card rounded-lg border border-border hover:shadow-md transition-shadow">
       <div className="text-primary mb-2">{icon}</div>
       <h4 className="font-bold text-foreground text-sm mb-1">{title}</h4>
       <p className="text-xs text-muted-foreground">{description}</p>
@@ -118,12 +118,12 @@ export function VerificationBadge({
   showDetails?: boolean;
 }) {
   return (
-    <div className="inline-flex items-center gap-2 bg-primary/5 text-green-700 px-3 py-1.5 rounded-lg border border-green-200">
+    <div className="inline-flex items-center gap-2 bg-primary/5 text-primary px-3 py-1.5 rounded-lg border border-primary/20">
       <CheckCircle2 className="w-4 h-4 fill-current" />
       <span className="font-semibold text-sm">Verificado</span>
       {showDetails && (
         <div className="group relative">
-          <button className="text-primary hover:text-green-800">ⓘ</button>
+          <button className="text-primary hover:text-primary/80">ⓘ</button>
           <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block z-10">
             <div className="bg-foreground text-primary-foreground text-xs rounded-lg p-3 shadow-xl whitespace-nowrap">
               <p className="font-semibold mb-1">Cédula Profesional Verificada</p>
@@ -263,7 +263,7 @@ function TrustStat({ label }: { label: string }) {
  */
 export function SecurityFeatures() {
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 py-12">
+    <div className="bg-gradient-to-br from-[#eff7ff] to-[#e8f3ff] py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h3 className="text-2xl font-bold text-foreground text-center mb-8">
           Tu Información Está Segura
@@ -305,7 +305,7 @@ function SecurityFeature({
   description: string;
 }) {
   return (
-    <div className="bg-card rounded-xl p-6 shadow-sm border border-border">
+    <div className="bg-card rounded-lg p-6 shadow-sm border border-border">
       <div className="text-primary mb-3">{icon}</div>
       <h4 className="font-bold text-foreground mb-2">{title}</h4>
       <p className="text-sm text-muted-foreground">{description}</p>

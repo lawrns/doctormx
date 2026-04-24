@@ -17,6 +17,7 @@ export function DoctorMxLogo({
 }: DoctorMxLogoProps) {
   const textColor = inverted ? 'text-[#f7f8fb]' : 'text-ink'
   const descriptorColor = inverted ? 'text-[#f7f8fb]/55' : 'text-muted-foreground'
+  const brandAccent = '#0D72D6'
 
   return (
     <span className={cn('inline-flex min-w-0 items-center gap-2.5', className)}>
@@ -42,9 +43,9 @@ export function DoctorMxLogo({
           fill={inverted ? '#0A1533' : '#F7F8FB'}
           opacity="0.16"
         />
-        <path d="M25.75 9.25V15.25" stroke="#00A878" strokeWidth="2.1" strokeLinecap="round" />
-        <path d="M22.75 12.25H28.75" stroke="#00A878" strokeWidth="2.1" strokeLinecap="round" />
-        <circle cx="30" cy="28.25" r="2" fill="#00A878" />
+        <path d="M25.75 9.25V15.25" stroke={brandAccent} strokeWidth="2.1" strokeLinecap="round" />
+        <path d="M22.75 12.25H28.75" stroke={brandAccent} strokeWidth="2.1" strokeLinecap="round" />
+        <circle cx="30" cy="28.25" r="2" fill={brandAccent} />
       </svg>
 
       <span className="grid min-w-0 gap-0.5">
@@ -55,7 +56,7 @@ export function DoctorMxLogo({
             textClassName
           )}
         >
-          Doctor<span className="text-vital">.mx</span>
+          Doctor<span className="text-[#0d72d6]">.mx</span>
         </span>
         {showDescriptor ? (
           <span className={cn('hidden font-mono text-[9px] font-semibold uppercase leading-none tracking-[0.18em] sm:block', descriptorColor)}>

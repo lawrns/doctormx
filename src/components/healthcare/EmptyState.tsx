@@ -35,15 +35,15 @@ export function EmptyState({
   size = 'md',
 }: EmptyStateProps) {
   const sizeClasses = {
-    sm: 'py-8 px-4',
-    md: 'py-12 px-6',
-    lg: 'py-16 px-8',
+    sm: 'py-6 px-4',
+    md: 'py-8 px-5',
+    lg: 'py-10 px-6',
   }
 
   const iconSizes = {
-    sm: 'w-12 h-12',
-    md: 'w-16 h-16',
-    lg: 'w-20 h-20',
+    sm: 'h-8 w-8',
+    md: 'h-9 w-9',
+    lg: 'h-10 w-10',
   }
 
   const titleSizes = {
@@ -66,7 +66,7 @@ export function EmptyState({
           {illustration || (
             <div
               className={cn(
-                'flex items-center justify-center rounded-full bg-secondary',
+                'flex items-center justify-center rounded-[8px] bg-secondary [&_svg]:h-4 [&_svg]:w-4',
                 iconSizes[size]
               )}
             >

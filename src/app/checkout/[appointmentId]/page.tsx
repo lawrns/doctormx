@@ -170,6 +170,12 @@ export default function CheckoutPage({
       )
       const data = await response.json()
 
+      if (response.status === 401) {
+        const redirectPath = `/checkout/${appointmentId}`
+        router.replace(`/auth/login?redirect=${encodeURIComponent(redirectPath)}`)
+        return
+      }
+
       if (!response.ok) {
         throw new Error(data?.error || 'No fue posible consultar tus seguros.')
       }
@@ -370,7 +376,12 @@ export default function CheckoutPage({
                   {!appointmentPayable && (
                     <div className="mt-4 flex items-start gap-2 border border-destructive/20 bg-destructive/10 p-3 text-sm text-destructive">
                       <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
-                      <p>Esta reserva ya no está disponible para pago. Vuelve a la agenda para elegir otro horario real.</p>
+                      <div>
+                        <p>Esta reserva ya no está disponible para pago. Vuelve a la agenda para elegir otro horario real.</p>
+                        <Button asChild size="sm" variant="outline" className="mt-3 border-destructive/30 text-destructive hover:bg-destructive/10">
+                          <Link href={`/book/${options.appointment.doctorId}`}>Elegir nuevo horario</Link>
+                        </Button>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -652,17 +663,23 @@ export default function CheckoutPage({
                 <Button
                   type="button"
                   variant="outline"
-                  onClick={() => router.push('/app/appointments')}
+                  onClick={() => router.push(options?.appointment ? `/app/appointments/${options.appointment.id}` : '/app/appointments')}
                 >
-                  Mis citas
+                  Ver cita
                 </Button>
-                <Button
-                  type="button"
-                  onClick={() => createPaymentIntent()}
-                  disabled={loadingPayment || !appointmentPayable}
-                >
-                  Reintentar
-                </Button>
+                {options?.appointment && !appointmentPayable ? (
+                  <Button asChild>
+                    <Link href={`/book/${options.appointment.doctorId}`}>Elegir nuevo horario</Link>
+                  </Button>
+                ) : (
+                  <Button
+                    type="button"
+                    onClick={() => createPaymentIntent()}
+                    disabled={loadingPayment || !appointmentPayable}
+                  >
+                    Reintentar
+                  </Button>
+                )}
               </div>
             </div>
           )}

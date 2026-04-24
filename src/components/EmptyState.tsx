@@ -56,8 +56,8 @@ export function EmptyState({
 
   return (
     <div className={cn(
-      "flex flex-col items-center justify-center p-8 sm:p-12 text-center rounded-2xl border transition-all duration-500",
-      variant === 'subtle' ? "bg-transparent border-transparent" : "bg-card/50 backdrop-blur-sm border-border shadow-sm",
+      "flex flex-col items-center justify-center p-5 sm:p-6 text-center rounded-[12px] border transition-all duration-300",
+      variant === 'subtle' ? "bg-transparent border-transparent" : "bg-card border-border shadow-[var(--card-shadow)]",
       isAI ? "bg-ink border-border/20" : "",
       isUrgent ? "bg-destructive/5 border-destructive/20" : "",
       className
@@ -66,13 +66,13 @@ export function EmptyState({
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         className={cn(
-          "w-16 h-16 sm:w-20 sm:h-20 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-500",
+          "mb-4 flex h-10 w-10 items-center justify-center rounded-[8px] transition-transform duration-300",
           isAI ? "bg-primary/10 text-primary" :
           isUrgent ? "bg-destructive/10 text-destructive" :
           "bg-primary/10 text-primary"
         )}
       >
-        {Icon ? <Icon className="w-8 h-8 sm:w-10 sm:h-10" /> : <Sparkles className="w-8 h-8 sm:w-10 sm:h-10" />}
+        {Icon ? <Icon className="h-5 w-5" /> : <Sparkles className="h-5 w-5" />}
       </motion.div>
 
       <motion.h3
@@ -80,7 +80,7 @@ export function EmptyState({
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.1 }}
         className={cn(
-          "text-xl sm:text-2xl font-bold mb-3 tracking-tight",
+          "mb-2 text-[17px] font-semibold leading-6 tracking-[-0.02em]",
           isAI ? "text-foreground" :
           isUrgent ? "text-destructive" :
           "text-foreground"
@@ -94,7 +94,7 @@ export function EmptyState({
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2 }}
         className={cn(
-          "text-base sm:text-lg mb-8 max-w-md mx-auto leading-relaxed",
+          "mb-5 max-w-md text-sm leading-6",
           isAI ? "text-muted-foreground" :
           isUrgent ? "text-destructive/80" :
           "text-muted-foreground"
@@ -110,8 +110,8 @@ export function EmptyState({
           action.href ? (
             <Link href={action.href}>
               <Button className={cn(
-                "h-12 px-6 sm:px-8 rounded-xl font-semibold flex items-center gap-2 transition-all w-full sm:w-auto",
-                isAI ? "bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20" :
+                "h-10 rounded-[8px] px-4 font-semibold flex items-center gap-2 transition-all w-full sm:w-auto",
+                isAI ? "bg-primary hover:bg-primary/90 text-primary-foreground" :
                 isUrgent ? "bg-destructive hover:bg-destructive/90 text-destructive-foreground" :
                 "bg-primary hover:bg-primary/90 text-primary-foreground"
               )}>
@@ -123,8 +123,8 @@ export function EmptyState({
             <Button
               onClick={action.onClick}
               className={cn(
-                "h-12 px-6 sm:px-8 rounded-xl font-semibold flex items-center gap-2 transition-all w-full sm:w-auto",
-                isAI ? "bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20" :
+                "h-10 rounded-[8px] px-4 font-semibold flex items-center gap-2 transition-all w-full sm:w-auto",
+                isAI ? "bg-primary hover:bg-primary/90 text-primary-foreground" :
                 isUrgent ? "bg-destructive hover:bg-destructive/90 text-destructive-foreground" :
                 "bg-primary hover:bg-primary/90 text-primary-foreground"
               )}
@@ -139,7 +139,7 @@ export function EmptyState({
           secondaryAction.href ? (
             <Link href={secondaryAction.href}>
               <Button variant="outline" className={cn(
-                "h-12 px-6 sm:px-8 rounded-xl font-semibold border-border hover:bg-secondary transition-all w-full sm:w-auto",
+                "h-10 rounded-[8px] px-4 font-semibold border-border hover:bg-secondary transition-all w-full sm:w-auto",
                 isAI ? "border-border/30 text-foreground hover:bg-secondary" : "",
                 isUrgent ? "border-destructive/30 text-destructive hover:bg-destructive/5" : ""
               )}>
@@ -151,7 +151,7 @@ export function EmptyState({
               variant="outline"
               onClick={secondaryAction.onClick}
               className={cn(
-                "h-12 px-6 sm:px-8 rounded-xl font-semibold border-border hover:bg-secondary transition-all w-full sm:w-auto",
+                "h-10 rounded-[8px] px-4 font-semibold border-border hover:bg-secondary transition-all w-full sm:w-auto",
                 isAI ? "border-border/30 text-foreground hover:bg-secondary" : "",
                 isUrgent ? "border-destructive/30 text-destructive hover:bg-destructive/5" : ""
               )}

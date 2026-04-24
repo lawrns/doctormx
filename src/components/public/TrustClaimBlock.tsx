@@ -4,22 +4,22 @@ import { AlertTriangle, LockKeyhole, ShieldCheck } from 'lucide-react'
 const claims = [
   {
     icon: ShieldCheck,
-    title: 'Verificación visible',
-    body: 'Mostramos cédula, reseñas y estado SEP solo cuando el dato existe en el expediente público del doctor.',
+    title: 'Handoff verificable',
+    body: 'Después de la orientación, mostramos cédula, reseñas y estado SEP solo cuando el dato existe en el expediente público del doctor.',
     href: '/security',
     label: 'Cómo verificamos',
   },
   {
     icon: LockKeyhole,
-    title: 'Privacidad por diseño',
-    body: 'Los datos sensibles se restringen al flujo clínico y se explican en nuestra política de seguridad.',
+    title: 'Privacidad en el intake',
+    body: 'Los datos sensibles del síntoma se restringen al flujo clínico y se explican en nuestra política de seguridad.',
     href: '/security',
     label: 'Ver seguridad',
   },
   {
     icon: AlertTriangle,
     title: 'La IA no reemplaza urgencias',
-    body: 'Dr. Simeon orienta y escalona. Cuando hay señales de alarma, el flujo pasa a atención humana o urgente.',
+    body: 'Dr. Simeón orienta y escala. Cuando hay señales de alarma, el flujo pasa a atención humana o urgente.',
     href: '/terms',
     label: 'Límites clínicos',
   },
@@ -38,10 +38,10 @@ export function TrustClaimBlock() {
               id="trust-claims-title"
               className="max-w-md font-display text-2xl font-semibold leading-tight tracking-tight text-[hsl(var(--public-ink))] sm:text-3xl"
             >
-              La evidencia va por delante de la promesa.
+              La confianza empieza antes de mostrar doctores.
             </h2>
             <p className="max-w-xl text-sm leading-6 text-[hsl(var(--public-muted))]">
-              Si un dato no está verificado, no lo mostramos como certeza. El objetivo es que la interfaz sea útil para decidir, no solo convincente.
+              El paciente no debe adivinar si necesita dermatología, medicina interna o urgencias. Primero orientamos; después mostramos médicos con evidencia real.
             </p>
           </div>
 

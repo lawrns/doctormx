@@ -27,14 +27,14 @@ export function MobileCtaBar() {
           className="inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-ink px-3 text-sm font-semibold text-primary-foreground active:scale-[0.98]"
         >
           <Stethoscope className="h-4 w-4" aria-hidden="true" />
-          Consulta gratis
+          Dr. Simeón
         </Link>
         <Link
           href="/doctors"
           className="inline-flex h-11 items-center justify-center gap-2 rounded-lg border border-border bg-background px-3 text-sm font-semibold text-ink active:scale-[0.98]"
         >
           <Search className="h-4 w-4" aria-hidden="true" />
-          Buscar doctor
+          Médicos
         </Link>
       </div>
     </div>

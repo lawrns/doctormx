@@ -14,11 +14,11 @@ type PublicFinalCtaProps = {
 export function PublicFinalCta({
   eyebrow = 'Siguiente paso',
   title = 'Empieza con una orientación médica segura.',
-  description = 'Cuéntale tus síntomas a Dr. Simeon o busca directamente un especialista verificado para agendar consulta.',
+  description = 'Cuéntale tus síntomas a Dr. Simeón o busca directamente un especialista verificado para agendar consulta.',
   primaryHref = '/ai-consulta',
-  primaryLabel = 'Consulta gratis con Dr. Simeon',
+  primaryLabel = 'Hablar con Dr. Simeón',
   secondaryHref = '/doctors',
-  secondaryLabel = 'Buscar doctor',
+  secondaryLabel = 'Ver médicos',
 }: PublicFinalCtaProps) {
   return (
     <section className="bg-ink py-12 text-primary-foreground sm:py-16">

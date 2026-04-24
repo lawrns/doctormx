@@ -104,7 +104,7 @@ function initials(name: string) {
 }
 
 function SkeletonBlock({ className }: { className: string }) {
-  return <div className={`animate-pulse rounded-xl bg-slate-200/80 ${className}`} />
+  return <div className={`animate-pulse rounded-lg bg-slate-200/80 ${className}`} />
 }
 
 export function BookingWidget({ doctor, config }: BookingWidgetProps) {
@@ -252,7 +252,7 @@ export function BookingWidget({ doctor, config }: BookingWidgetProps) {
       >
         <aside className="rounded-[2rem] border border-slate-200/80 bg-white p-5 shadow-[0_24px_60px_rgba(15,37,95,0.08)] lg:sticky lg:top-4 lg:self-start">
           <div className="flex items-start gap-4">
-            <div className="h-16 w-16 shrink-0 overflow-hidden rounded-2xl bg-slate-100">
+            <div className="h-16 w-16 shrink-0 overflow-hidden rounded-[10px] bg-slate-100">
               {doctor.profile?.photo_url ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
@@ -297,7 +297,7 @@ export function BookingWidget({ doctor, config }: BookingWidgetProps) {
             </div>
           </div>
 
-          <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-700">
+          <div className="mt-5 rounded-[10px] border border-slate-200 bg-slate-50 p-4 text-sm text-slate-700">
             {selectedService?.appointment_type === 'in_person' ? (
               <span className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-slate-700" />
@@ -323,7 +323,7 @@ export function BookingWidget({ doctor, config }: BookingWidgetProps) {
                 transition={{ type: 'spring', stiffness: 120, damping: 20 }}
                 className="p-2 sm:p-4"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700">
+                <div className="flex h-14 w-14 items-center justify-center rounded-[10px] bg-primary/10 text-primary">
                   <CheckCircle2 className="h-7 w-7" />
                 </div>
                 <h2 className="mt-6 font-display text-3xl font-semibold tracking-tight text-slate-950">
@@ -332,7 +332,7 @@ export function BookingWidget({ doctor, config }: BookingWidgetProps) {
                 <p className="mt-3 text-sm leading-6 text-slate-600">
                   Completa el pago para confirmar la cita con {doctorName}.
                 </p>
-                <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-700">
+                <div className="mt-6 rounded-[10px] border border-slate-200 bg-slate-50 p-4 text-sm text-slate-700">
                   <p className="font-semibold text-slate-950">{selectedService?.name}</p>
                   <p className="mt-1">{formatDate(selectedDate)} a las {selectedTime}</p>
                   <p className="mt-3 font-mono text-xs text-slate-500">ID {confirmation.appointmentId}</p>
@@ -340,7 +340,7 @@ export function BookingWidget({ doctor, config }: BookingWidgetProps) {
                 <Button
                   type="button"
                   onClick={goToPayment}
-                  className="mt-6 h-12 w-full rounded-2xl bg-[var(--widget-primary)] text-white shadow-[0_14px_30px_rgba(15,37,95,0.18)] transition-transform active:scale-[0.98]"
+                  className="mt-6 h-12 w-full rounded-[10px] bg-[var(--widget-primary)] text-white shadow-[0_14px_30px_rgba(15,37,95,0.18)] transition-transform active:scale-[0.98]"
                 >
                   Ir al pago seguro
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -371,7 +371,7 @@ export function BookingWidget({ doctor, config }: BookingWidgetProps) {
                             setSelectedServiceId(service.id)
                             setSelectedTime('')
                           }}
-                          className="min-h-[112px] rounded-2xl border bg-white p-4 text-left transition-all active:scale-[0.98]"
+                          className="min-h-[112px] rounded-[10px] border bg-white p-4 text-left transition-all active:scale-[0.98]"
                           style={{
                             borderColor: active ? config.primary_color : '#e2e8f0',
                             boxShadow: active ? '0 14px 32px rgba(15,37,95,0.10)' : 'none',
@@ -406,7 +406,7 @@ export function BookingWidget({ doctor, config }: BookingWidgetProps) {
                 </section>
 
                 <section className="grid grid-cols-1 gap-4 xl:grid-cols-[1fr_0.86fr]">
-                  <div className="rounded-2xl border border-slate-200 p-4">
+                  <div className="rounded-[10px] border border-slate-200 p-4">
                     <div className="mb-4 flex items-center justify-between">
                       <div className="flex items-center gap-2 text-sm font-semibold text-slate-950">
                         <CalendarDays className="h-4 w-4 text-slate-500" />
@@ -417,7 +417,7 @@ export function BookingWidget({ doctor, config }: BookingWidgetProps) {
                           type="button"
                           disabled={!canGoPrevious}
                           onClick={() => setCurrentMonth((month) => new Date(month.getFullYear(), month.getMonth() - 1, 1))}
-                          className="h-9 w-9 rounded-xl border border-slate-200 text-slate-700 transition active:scale-[0.98] disabled:opacity-40"
+                          className="h-9 w-9 rounded-lg border border-slate-200 text-slate-700 transition active:scale-[0.98] disabled:opacity-40"
                         >
                           <ChevronLeft className="mx-auto h-4 w-4" />
                           <span className="sr-only">Mes anterior</span>
@@ -425,7 +425,7 @@ export function BookingWidget({ doctor, config }: BookingWidgetProps) {
                         <button
                           type="button"
                           onClick={() => setCurrentMonth((month) => new Date(month.getFullYear(), month.getMonth() + 1, 1))}
-                          className="h-9 w-9 rounded-xl border border-slate-200 text-slate-700 transition active:scale-[0.98]"
+                          className="h-9 w-9 rounded-lg border border-slate-200 text-slate-700 transition active:scale-[0.98]"
                         >
                           <ChevronRight className="mx-auto h-4 w-4" />
                           <span className="sr-only">Mes siguiente</span>
@@ -457,7 +457,7 @@ export function BookingWidget({ doctor, config }: BookingWidgetProps) {
                               type="button"
                               disabled={!day.date || day.isPast || !day.isAvailable}
                               onClick={() => day.date && setSelectedDate(day.date)}
-                              className="relative aspect-square rounded-xl text-sm font-semibold transition active:scale-[0.96] disabled:cursor-not-allowed disabled:text-slate-300"
+                              className="relative aspect-square rounded-lg text-sm font-semibold transition active:scale-[0.96] disabled:cursor-not-allowed disabled:text-slate-300"
                               style={{
                                 backgroundColor: active ? config.primary_color : day.isAvailable ? '#f8fafc' : 'transparent',
                                 color: active ? '#ffffff' : day.isAvailable ? '#0f172a' : undefined,
@@ -478,13 +478,13 @@ export function BookingWidget({ doctor, config }: BookingWidgetProps) {
                     )}
                   </div>
 
-                  <div className="rounded-2xl border border-slate-200 p-4">
+                  <div className="rounded-[10px] border border-slate-200 p-4">
                     <div className="mb-4 flex items-center gap-2 text-sm font-semibold text-slate-950">
                       <Clock className="h-4 w-4 text-slate-500" />
                       Horarios
                     </div>
                     {!selectedDate ? (
-                      <div className="rounded-2xl bg-slate-50 p-4 text-sm text-slate-500">
+                      <div className="rounded-[10px] bg-slate-50 p-4 text-sm text-slate-500">
                         Selecciona una fecha disponible.
                       </div>
                     ) : loadingSlots ? (
@@ -494,7 +494,7 @@ export function BookingWidget({ doctor, config }: BookingWidgetProps) {
                         ))}
                       </div>
                     ) : availableSlots.length === 0 ? (
-                      <div className="rounded-2xl bg-slate-50 p-4 text-sm text-slate-500">
+                      <div className="rounded-[10px] bg-slate-50 p-4 text-sm text-slate-500">
                         No hay horarios para {formatDate(selectedDate)}.
                       </div>
                     ) : (
@@ -506,7 +506,7 @@ export function BookingWidget({ doctor, config }: BookingWidgetProps) {
                               key={slot}
                               type="button"
                               onClick={() => setSelectedTime(slot)}
-                              className="h-10 rounded-xl border text-sm font-semibold transition active:scale-[0.98]"
+                              className="h-10 rounded-lg border text-sm font-semibold transition active:scale-[0.98]"
                               style={{
                                 borderColor: active ? config.primary_color : '#e2e8f0',
                                 backgroundColor: active ? config.primary_color : '#ffffff',
@@ -530,7 +530,7 @@ export function BookingWidget({ doctor, config }: BookingWidgetProps) {
                       <input
                         value={patient.fullName}
                         onChange={(event) => setPatient((value) => ({ ...value, fullName: event.target.value }))}
-                        className="h-11 rounded-2xl border border-slate-200 bg-white px-4 text-slate-950 outline-none transition focus:border-slate-400 focus:ring-4 focus:ring-slate-100"
+                        className="h-11 rounded-[10px] border border-slate-200 bg-white px-4 text-slate-950 outline-none transition focus:border-slate-400 focus:ring-4 focus:ring-slate-100"
                         placeholder="Nombre del paciente"
                       />
                     </label>
@@ -540,7 +540,7 @@ export function BookingWidget({ doctor, config }: BookingWidgetProps) {
                         type="email"
                         value={patient.email}
                         onChange={(event) => setPatient((value) => ({ ...value, email: event.target.value }))}
-                        className="h-11 rounded-2xl border border-slate-200 bg-white px-4 text-slate-950 outline-none transition focus:border-slate-400 focus:ring-4 focus:ring-slate-100"
+                        className="h-11 rounded-[10px] border border-slate-200 bg-white px-4 text-slate-950 outline-none transition focus:border-slate-400 focus:ring-4 focus:ring-slate-100"
                         placeholder="paciente@correo.com"
                       />
                     </label>
@@ -550,7 +550,7 @@ export function BookingWidget({ doctor, config }: BookingWidgetProps) {
                         type="tel"
                         value={patient.phone}
                         onChange={(event) => setPatient((value) => ({ ...value, phone: event.target.value }))}
-                        className="h-11 rounded-2xl border border-slate-200 bg-white px-4 text-slate-950 outline-none transition focus:border-slate-400 focus:ring-4 focus:ring-slate-100"
+                        className="h-11 rounded-[10px] border border-slate-200 bg-white px-4 text-slate-950 outline-none transition focus:border-slate-400 focus:ring-4 focus:ring-slate-100"
                         placeholder="+52"
                       />
                     </label>
@@ -558,14 +558,14 @@ export function BookingWidget({ doctor, config }: BookingWidgetProps) {
                 </section>
 
                 {selectedDate && selectedTime && selectedService ? (
-                  <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-700">
+                  <div className="rounded-[10px] border border-slate-200 bg-slate-50 p-4 text-sm text-slate-700">
                     <p className="font-semibold text-slate-950">{selectedService.name}</p>
                     <p className="mt-1">{formatDate(selectedDate)} a las {selectedTime}</p>
                   </div>
                 ) : null}
 
                 {error ? (
-                  <div className="flex items-start gap-3 rounded-2xl border border-red-200 bg-red-50 p-4 text-sm text-red-700">
+                  <div className="flex items-start gap-3 rounded-[10px] border border-red-200 bg-red-50 p-4 text-sm text-red-700">
                     <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
                     {error}
                   </div>
@@ -575,7 +575,7 @@ export function BookingWidget({ doctor, config }: BookingWidgetProps) {
                   type="button"
                   disabled={!canSubmit || submitting}
                   onClick={submitBooking}
-                  className="h-12 w-full rounded-2xl bg-[var(--widget-primary)] text-white shadow-[0_14px_30px_rgba(15,37,95,0.18)] transition-transform active:scale-[0.98] disabled:opacity-50"
+                  className="h-12 w-full rounded-[10px] bg-[var(--widget-primary)] text-white shadow-[0_14px_30px_rgba(15,37,95,0.18)] transition-transform active:scale-[0.98] disabled:opacity-50"
                 >
                   {submitting ? 'Reservando...' : 'Reservar y continuar'}
                   {!submitting ? <ArrowRight className="ml-2 h-4 w-4" /> : null}

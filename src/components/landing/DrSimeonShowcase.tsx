@@ -6,11 +6,10 @@ import Image from 'next/image'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { CheckCircle, Clock, AlertTriangle, Stethoscope, ArrowRight, MessageCircle } from 'lucide-react'
-import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { Eyebrow } from '@/components/Eyebrow'
 import Link from 'next/link'
 
-// Dr. Simeon Avatar Component
+// Dr. Simeón Avatar Component
 function DrSimeonAvatar({ size = 'default' }: { size?: 'default' | 'large' }) {
   const sizeClasses = size === 'large' ? 'h-14 w-14' : 'h-10 w-10'
   const ringSize = size === 'large' ? 'h-[60px] w-[60px]' : 'h-[44px] w-[44px]'
@@ -19,7 +18,7 @@ function DrSimeonAvatar({ size = 'default' }: { size?: 'default' | 'large' }) {
     <div className="relative">
       {/* Vital pulse ring */}
       <motion.div
-        className={`absolute -inset-[3px] ${ringSize} rounded-full bg-gradient-to-r from-[#00a878] via-[#1f48de] to-[#00a878] bg-[length:200%_100%]`}
+        className={`absolute -inset-[3px] ${ringSize} rounded-full bg-gradient-to-r from-[#0d72d6] via-[#8fc4ff] to-[#0d72d6] bg-[length:200%_100%]`}
         animate={{
           backgroundPosition: ['0% center', '200% center'],
         }}
@@ -42,7 +41,7 @@ function DrSimeonAvatar({ size = 'default' }: { size?: 'default' | 'large' }) {
       >
         <Image
           src="/images/simeon.png"
-          alt="Dr. Simeon"
+          alt="Dr. Simeón"
           fill
           sizes="(max-width: 768px) 40px, 56px"
           className="object-cover"
@@ -132,7 +131,7 @@ function AnimatedMessage({ message, index }: { message: Message; index: number }
         <div
           className={`rounded-[12px] px-4 py-3 shadow-sm ${
             isPatient
-              ? 'bg-[#1f48de] text-white'
+              ? 'bg-[#0d72d6] text-white'
               : 'border border-[#d4d9e3] bg-card text-[#0a1533]'
           }`}
         >
@@ -197,15 +196,15 @@ export default function DrSimeonShowcase() {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <Eyebrow>Caso ilustrativo</Eyebrow>
+            <Eyebrow>Caso clínico ilustrativo</Eyebrow>
 
-            <h2 className="font-display text-[clamp(2rem,4vw,3.5rem)] font-bold leading-[1.02] tracking-[-0.02em] text-[#0a1533]">
-              Dr. Simeon
-              <span className="block text-[#1a3ab8]">con límites clínicos claros</span>
+            <h2 className="font-display text-[clamp(2rem,4vw,3.1rem)] font-semibold leading-[1.03] tracking-[-0.035em] text-[#0a1533]">
+              Dr. Simeón no fuerza una reserva.
+              <span className="block text-[#0b5fb8]">Primero cuida el contexto clínico.</span>
             </h2>
 
             <p className="text-lg leading-relaxed text-[#5c6783]">
-              Este panel muestra un ejemplo ilustrativo de cómo Dr. Simeon orienta síntomas, detecta señales de alarma y deriva a un especialista humano cuando hace falta.
+              Este panel muestra cómo una orientación seria recoge síntomas, detecta señales de alarma y deriva a atención humana cuando no conviene seguir con un flujo comercial.
             </p>
 
             <ul className="space-y-3">
@@ -223,7 +222,7 @@ export default function DrSimeonShowcase() {
                   transition={{ delay: index * 0.1 }}
                   className="flex items-center gap-3 text-[#1c2647]"
                 >
-                  <feature.icon className="h-5 w-5 shrink-0 text-[#00a878]" />
+                  <feature.icon className="h-5 w-5 shrink-0 text-[#0d72d6]" />
                   {feature.text}
                 </motion.li>
               ))}
@@ -231,13 +230,13 @@ export default function DrSimeonShowcase() {
 
             <div className="flex flex-col gap-3 pt-4 sm:flex-row">
               <Button asChild variant="hero" size="lg">
-                <Link href="/app/ai-consulta">
-                  Iniciar orientación
+                <Link href="/ai-consulta">
+                  Hablar con Dr. Simeón
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link href="/ai-consulta">Ver límites clínicos</Link>
+                <Link href="/doctors">Ver médicos verificados</Link>
               </Button>
             </div>
 
@@ -258,9 +257,9 @@ export default function DrSimeonShowcase() {
                   <div className="flex items-center gap-3 bg-[#0a1533] px-6 py-4">
                     <DrSimeonAvatar />
                     <div className="flex-1">
-                      <h3 className="font-display text-sm font-semibold text-[#f7f8fb]">Dr. Simeon</h3>
+                      <h3 className="font-display text-sm font-semibold text-[#f7f8fb]">Dr. Simeón</h3>
                       <div className="flex items-center gap-1.5">
-                        <span className="h-2 w-2 rounded-full bg-[#00a878]" />
+                        <span className="h-2 w-2 rounded-full bg-[#0d72d6]" />
                         <span className="text-xs text-[#f7f8fb]/70">Ejemplo ilustrativo</span>
                       </div>
                     </div>
@@ -297,11 +296,11 @@ export default function DrSimeonShowcase() {
                   <div className="flex items-center gap-2 rounded-[10px] border border-[#d4d9e3] bg-card px-4 py-2 opacity-60">
                     <input
                       type="text"
-                      placeholder="Esta es una demo"
+                      placeholder="Ejemplo clínico ilustrativo"
                       disabled
                       className="flex-1 bg-transparent text-sm text-[#5c6783] outline-none"
                     />
-                  <button disabled className="rounded-full bg-[#1f48de] p-2 text-white opacity-50">
+                  <button disabled className="rounded-full bg-[#0d72d6] p-2 text-white opacity-50">
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                     </svg>

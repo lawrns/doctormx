@@ -30,7 +30,7 @@ export function useToast() {
 const toastStyles: Record<ToastType, { bg: string; icon: string; border: string }> = {
   success: {
     bg: 'bg-primary/5',
-    border: 'border-green-200',
+    border: 'border-primary/20',
     icon: 'text-vital',
   },
   error: {
@@ -131,4 +131,3 @@ export function ToastProvider({ children }: { children: ReactNode }) {
     </ToastContext.Provider>
   )
 }
-

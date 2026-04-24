@@ -15,10 +15,10 @@ import {
 } from 'lucide-react'
 
 const STEPS = [
-  { id: 'chat', icon: MessageCircle, label: 'Cuéntanos', accent: '#1f48de' },
-  { id: 'analysis', icon: Brain, label: 'Analizamos', accent: '#00a878' },
-  { id: 'match', icon: Stethoscope, label: 'Conectamos', accent: '#1f48de' },
-  { id: 'confirm', icon: CalendarCheck, label: 'Listo', accent: '#00a878' },
+  { id: 'chat', icon: MessageCircle, label: 'Cuéntanos', accent: '#0d72d6' },
+  { id: 'analysis', icon: Brain, label: 'Analizamos', accent: '#0d72d6' },
+  { id: 'match', icon: Stethoscope, label: 'Conectamos', accent: '#0d72d6' },
+  { id: 'confirm', icon: CalendarCheck, label: 'Listo', accent: '#0d72d6' },
 ] as const
 
 const STEP_DURATION = 3500
@@ -34,7 +34,7 @@ function StepIndicator({ currentStep }: { currentStep: number }) {
             <div
               className="flex h-6 w-6 items-center justify-center rounded-full transition-colors duration-300"
               style={{
-                backgroundColor: isDone ? '#00a878' : isActive ? step.accent : '#eef0f5',
+                backgroundColor: isDone ? '#0d72d6' : isActive ? step.accent : '#eef0f5',
               }}
             >
               {isDone ? (
@@ -46,7 +46,7 @@ function StepIndicator({ currentStep }: { currentStep: number }) {
             {i < STEPS.length - 1 && (
               <div
                 className="mx-1.5 h-px w-4 transition-colors duration-300"
-                style={{ backgroundColor: isDone ? '#00a878' : '#eef0f5' }}
+                style={{ backgroundColor: isDone ? '#0d72d6' : '#eef0f5' }}
               />
             )}
           </div>
@@ -65,12 +65,12 @@ function ChatStep() {
   return (
     <div className="flex h-full flex-col gap-2.5 px-3.5 py-2.5">
       <div className="flex items-center gap-2 rounded-lg bg-[#f7f8fb] px-2.5 py-1.5">
-        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#1f48de] to-[#0f255f]">
+        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#0d72d6] to-[#0f255f]">
           <Heart className="h-3 w-3 text-white" />
         </div>
         <div className="min-w-0">
           <p className="text-[10px] font-semibold text-[#0a1533]">Dr. Simeon</p>
-          <p className="text-[8px] text-[#00a878]">En línea</p>
+          <p className="text-[8px] text-[#0d72d6]">En línea</p>
         </div>
       </div>
       {messages.map((msg, i) => (
@@ -82,9 +82,9 @@ function ChatStep() {
           className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
         >
           <div
-            className={`max-w-[85%] rounded-2xl px-3 py-2 text-[11px] leading-relaxed shadow-sm ${
+            className={`max-w-[85%] rounded-[10px] px-3 py-2 text-[11px] leading-relaxed shadow-sm ${
               msg.role === 'user'
-                ? 'rounded-br-sm bg-[#1f48de] text-white'
+                ? 'rounded-br-sm bg-[#0d72d6] text-white'
                 : 'rounded-bl-sm border border-[#d4d9e3] bg-card text-[#0a1533]'
             }`}
           >
@@ -99,7 +99,7 @@ function ChatStep() {
         className="mt-auto flex items-center gap-2 rounded-full border border-[#d4d9e3] bg-card px-2.5 py-1.5"
       >
         <span className="flex-1 text-[10px] text-[#5c6783]/60">Escribe tus síntomas...</span>
-        <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#1f48de]">
+        <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0d72d6]">
           <ChevronRight className="h-2.5 w-2.5 text-white" />
         </div>
       </motion.div>
@@ -117,13 +117,13 @@ function AnalysisStep() {
   return (
     <div className="flex h-full flex-col items-center justify-center gap-3 px-4 py-3">
       <motion.div
-        className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#00a878]/10"
+        className="flex h-12 w-12 items-center justify-center rounded-[8px] bg-[#0d72d6]/10"
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.4, ease: 'backOut' }}
       >
         <motion.div animate={{ rotate: 360 }} transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}>
-          <Brain className="h-6 w-6 text-[#00a878]" />
+          <Brain className="h-6 w-6 text-[#0d72d6]" />
         </motion.div>
       </motion.div>
       <motion.p
@@ -144,10 +144,10 @@ function AnalysisStep() {
             className="flex items-center gap-2 rounded-lg border border-[#d4d9e3] bg-card px-2.5 py-1.5"
           >
             {step.done ? (
-              <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-[#00a878]" />
+              <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-[#0d72d6]" />
             ) : (
               <motion.div
-                className="h-3.5 w-3.5 shrink-0 rounded-full border-2 border-[#1f48de] border-t-transparent"
+                className="h-3.5 w-3.5 shrink-0 rounded-full border-2 border-[#0d72d6] border-t-transparent"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 0.8, repeat: Infinity, ease: 'linear' }}
               />
@@ -167,9 +167,9 @@ function DoctorMatchStep() {
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35 }}
-        className="rounded-lg bg-[#d7f5e6] px-2.5 py-1.5 text-center"
+        className="rounded-lg bg-[#e8f3ff] px-2.5 py-1.5 text-center"
       >
-        <p className="text-[10px] font-medium text-[#00a878]">
+        <p className="text-[10px] font-medium text-[#0d72d6]">
           Especialidad recomendada: <strong>Neurología</strong>
         </p>
       </motion.div>
@@ -178,11 +178,11 @@ function DoctorMatchStep() {
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.25, duration: 0.35, ease: 'easeOut' }}
-        className="rounded-xl border border-[#d4d9e3] bg-card p-3 shadow-sm"
+        className="rounded-[8px] border border-[#d4d9e3] bg-card p-3 shadow-sm"
       >
         <div className="flex items-center gap-2.5">
           <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#dbe7ff]">
-            <Stethoscope className="h-4 w-4 text-[#1f48de]" />
+            <Stethoscope className="h-4 w-4 text-[#0d72d6]" />
           </div>
           <div className="min-w-0 flex-1">
             <p className="truncate text-[12px] font-semibold text-[#0a1533]">Dra. Elena Vázquez</p>
@@ -210,7 +210,7 @@ function DoctorMatchStep() {
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.7, duration: 0.25 }}
-        className="mt-auto flex items-center justify-center rounded-xl bg-[#1f48de] py-2 text-[11px] font-semibold text-white shadow-md"
+        className="mt-auto flex items-center justify-center rounded-[8px] bg-[#0d72d6] py-2 text-[11px] font-semibold text-white shadow-md"
       >
         Agendar con Dra. Vázquez
         <ChevronRight className="ml-1 h-3 w-3" />
@@ -226,9 +226,9 @@ function ConfirmationStep() {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: 0.15, duration: 0.4, ease: 'backOut' }}
-        className="flex h-12 w-12 items-center justify-center rounded-full bg-[#00a878]/10"
+        className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0d72d6]/10"
       >
-        <CheckCircle2 className="h-7 w-7 text-[#00a878]" />
+        <CheckCircle2 className="h-7 w-7 text-[#0d72d6]" />
       </motion.div>
 
       <motion.div
@@ -249,7 +249,7 @@ function ConfirmationStep() {
       >
         <div className="flex items-center gap-2.5">
           <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#dbe7ff]">
-            <Stethoscope className="h-4 w-4 text-[#1f48de]" />
+            <Stethoscope className="h-4 w-4 text-[#0d72d6]" />
           </div>
           <div>
             <p className="text-[11px] font-semibold text-[#0a1533]">Dra. Elena Vázquez</p>
@@ -292,12 +292,12 @@ export default function PatientFlowHyperframe() {
   return (
     <div className="relative mx-auto w-full max-w-[340px]">
       {/* Phone frame */}
-      <div className="relative rounded-[1.75rem] border border-[#d4d9e3] bg-card shadow-[0_24px_48px_-12px_rgba(10,21,51,0.14),0_0_0_1px_rgba(10,21,51,0.03)]">
+      <div className="relative rounded-[1.1rem] border border-[#d4d9e3] bg-card shadow-[0_24px_48px_-12px_rgba(10,21,51,0.14),0_0_0_1px_rgba(10,21,51,0.03)]">
         {/* Status bar */}
-        <div className="flex items-center justify-between rounded-t-[1.75rem] bg-[#0a1533] px-5 py-2">
+        <div className="flex items-center justify-between rounded-t-[1.1rem] bg-[#0a1533] px-5 py-2">
           <span className="text-[9px] font-medium text-[#f7f8fb]/70">9:41</span>
           <div className="h-2 w-4 rounded-sm border border-[#f7f8fb]/40">
-            <div className="h-full w-3/4 rounded-sm bg-[#00a878]" />
+            <div className="h-full w-3/4 rounded-sm bg-[#0d72d6]" />
           </div>
         </div>
 
@@ -323,7 +323,7 @@ export default function PatientFlowHyperframe() {
         </div>
 
         {/* Home indicator */}
-        <div className="flex items-center justify-center rounded-b-[1.75rem] bg-[#f7f8fb] px-5 py-1.5">
+        <div className="flex items-center justify-center rounded-b-[1.1rem] bg-[#f7f8fb] px-5 py-1.5">
           <div className="h-[3px] w-20 rounded-full bg-[#d4d9e3]" />
         </div>
       </div>

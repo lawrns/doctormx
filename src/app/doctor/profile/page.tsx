@@ -42,7 +42,7 @@ export default async function DoctorProfilePage() {
         <p className="text-muted-foreground mb-6 lg:mb-8">Información profesional y datos de contacto</p>
 
         {/* Información personal */}
-        <Card className="rounded-2xl border border-border shadow-dx-1 p-4 lg:p-6 mb-4 lg:mb-6 gap-4">
+        <Card className="mb-4 gap-4 rounded-[12px] border border-border p-4 shadow-[var(--card-shadow)] lg:mb-6 lg:p-5">
           <CardHeader className="p-0 pb-0">
             <CardTitle className="text-lg lg:text-xl font-semibold">Información personal</CardTitle>
           </CardHeader>
@@ -86,7 +86,7 @@ export default async function DoctorProfilePage() {
         </Card>
 
         {/* Información profesional */}
-        <Card className="rounded-2xl border border-border shadow-dx-1 p-4 lg:p-6 mb-4 lg:mb-6 gap-4">
+        <Card className="mb-4 gap-4 rounded-[12px] border border-border p-4 shadow-[var(--card-shadow)] lg:mb-6 lg:p-5">
           <CardHeader className="p-0 pb-0">
             <CardTitle className="text-lg lg:text-xl font-semibold">Información profesional</CardTitle>
           </CardHeader>
@@ -130,7 +130,7 @@ export default async function DoctorProfilePage() {
         </Card>
 
         {/* Tarifas */}
-        <Card className="rounded-2xl border border-border shadow-dx-1 p-4 lg:p-6 mb-4 lg:mb-6 gap-4">
+        <Card className="mb-4 gap-4 rounded-[12px] border border-border p-4 shadow-[var(--card-shadow)] lg:mb-6 lg:p-5">
           <CardHeader className="p-0 pb-0">
             <CardTitle className="text-lg lg:text-xl font-semibold">Tarifas</CardTitle>
           </CardHeader>
@@ -155,7 +155,7 @@ export default async function DoctorProfilePage() {
 
         {/* Estadísticas */}
         {!isPending && (
-          <Card className="rounded-2xl border border-border shadow-dx-1 p-4 lg:p-6 gap-4">
+          <Card className="gap-4 rounded-[12px] border border-border p-4 shadow-[var(--card-shadow)] lg:p-5">
             <CardHeader className="p-0 pb-0">
               <CardTitle className="text-lg lg:text-xl font-semibold">Estadísticas</CardTitle>
             </CardHeader>
@@ -191,7 +191,7 @@ export default async function DoctorProfilePage() {
 
         {/* Nota para pending */}
         {isPending && (
-          <div className="mt-4 lg:mt-6 bg-secondary/50 border border-border rounded-2xl p-4">
+          <div className="mt-4 rounded-[10px] border border-border bg-secondary/50 p-4 lg:mt-6">
             <p className="text-sm text-foreground">
               Tu perfil está en revisión. Algunos campos no se pueden modificar hasta que sea aprobado.
             </p>

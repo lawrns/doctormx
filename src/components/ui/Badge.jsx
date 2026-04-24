@@ -15,12 +15,12 @@ const Badge = ({
   const variants = {
     default: 'bg-secondary text-foreground',
     primary: 'bg-primary/10 text-primary',
-    success: 'bg-primary/10 text-green-800',
+    success: 'bg-primary/10 text-primary',
     warning: 'bg-yellow-100 text-yellow-800',
     error: 'bg-red-100 text-red-800',
     info: 'bg-teal-100 text-teal-800',
     medical: 'bg-primary/10 text-primary border border-primary/20',
-    verified: 'bg-primary/5 text-green-700 border border-green-200',
+    verified: 'bg-primary/5 text-primary border border-primary/20',
     pending: 'bg-yellow-50 text-yellow-700 border border-yellow-200',
     rejected: 'bg-red-50 text-red-700 border border-red-200',
   };
@@ -79,4 +79,3 @@ export const PendingBadge = (props) => <Badge variant="pending" icon="clock" {..
 export const RejectedBadge = (props) => <Badge variant="rejected" icon="x-circle" {...props} />;
 
 export default Badge;
-

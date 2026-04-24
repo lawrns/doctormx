@@ -108,7 +108,7 @@ export default async function DoctorProfilePage({
               <span className="hidden font-medium sm:inline">Volver</span>
             </Link>
             <Link href="/" className="flex items-center gap-2.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[linear-gradient(135deg,hsl(var(--brand-ocean)),hsl(var(--brand-sky)))] shadow-[var(--public-shadow-soft)]">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[linear-gradient(135deg,hsl(var(--brand-ocean)),hsl(var(--brand-sky)))] shadow-[var(--public-shadow-soft)]">
                 <Stethoscope className="h-5 w-5 text-white" />
               </div>
               <span className="font-display text-xl font-bold text-[hsl(var(--public-ink))]">Doctor.mx</span>
@@ -250,7 +250,7 @@ export default async function DoctorProfilePage({
 
             <Card className="surface-panel p-6 sm:p-8">
               <div className="flex items-start gap-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[hsl(var(--surface-tint))] text-[hsl(var(--brand-ocean))]">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[10px] bg-[hsl(var(--surface-tint))] text-[hsl(var(--brand-ocean))]">
                   <FileText className="h-5 w-5" />
                 </div>
                 <div>
@@ -373,7 +373,7 @@ export default async function DoctorProfilePage({
 
             <Card className="surface-panel p-6">
               <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[hsl(var(--surface-tint))] text-[hsl(var(--brand-ocean))]">
+                <div className="flex h-11 w-11 items-center justify-center rounded-[10px] bg-[hsl(var(--surface-tint))] text-[hsl(var(--brand-ocean))]">
                   <CalendarDays className="h-5 w-5" />
                 </div>
                 <div>

@@ -15,9 +15,12 @@ import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Progress } from '@/components/ui/progress'
+import { IconBadge } from '@/components/ui/icon-badge'
 import { ReferralShareCard } from '@/components/referrals'
 import { ANALYTICS_EVENTS, trackClientEvent } from '@/lib/analytics/posthog'
 import type { ReferralSummary } from '@/lib/domains/patient-referrals'
+import { getConnectDraft } from '@/lib/connect/session-draft'
+import type { ConnectProfileDraft } from '@/lib/connect/types'
 import { formatCurrency } from '@/lib/utils'
 import {
   Form,
@@ -99,11 +102,12 @@ const specialties = [
 
 function RegisterContent() {
   const searchParams = useSearchParams()
-  const [currentStep, setCurrentStep] = useState(1)
+  const isConnectFlow = searchParams.get('connect') === '1'
+  const [currentStep, setCurrentStep] = useState(isConnectFlow ? 2 : 1)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const router = useRouter()
-  const initialAccountType = searchParams.get('role') === 'doctor' ? 'doctor' : 'patient'
+  const initialAccountType = searchParams.get('role') === 'doctor' || isConnectFlow ? 'doctor' : 'patient'
   const initialEmail = searchParams.get('email') || ''
   const initialReferralCode = (searchParams.get('ref') || '').trim().toUpperCase()
   const redirectTarget = searchParams.get('redirect')
@@ -136,6 +140,7 @@ function RegisterContent() {
   const [passwordStrength, setPasswordStrength] = useState({ strength: 0, label: '', color: '', textColor: '' })
   const [validatedFields, setValidatedFields] = useState<Record<string, boolean>>({})
   const [referralSummary, setReferralSummary] = useState<ReferralSummary | null>(null)
+  const [connectDraft, setConnectDraft] = useState<ConnectProfileDraft | null>(null)
 
   const step1Form = useForm<Step1Data>({
     resolver: zodResolver(step1Schema),
@@ -174,6 +179,42 @@ function RegisterContent() {
     })
   // We want one event per page load, not per render.
   }, [])
+
+  useEffect(() => {
+    if (!isConnectFlow) return
+
+    const draft = getConnectDraft()
+    setConnectDraft(draft)
+    setStep1Data({ accountType: 'doctor' })
+    step1Form.setValue('accountType', 'doctor')
+
+    if (!draft) return
+
+    const fieldValue = (key: string) => draft.fields.find((field) => field.key === key)?.value || ''
+    const suggestedName = fieldValue('doctorName') || (/^(dr|dra)\.?\s/i.test(draft.practice.name) ? draft.practice.name : '')
+    const suggestedCedula = fieldValue('cedula')
+    const suggestedSpecialty = fieldValue('specialty')
+
+    if (suggestedName && !step2Form.getValues('fullName')) {
+      step2Form.setValue('fullName', suggestedName)
+      setStep2Data((current) => ({ ...current, fullName: suggestedName }))
+    }
+
+    if (suggestedCedula && !step3DoctorForm.getValues('licenseNumber')) {
+      step3DoctorForm.setValue('licenseNumber', suggestedCedula)
+    }
+
+    if (suggestedSpecialty) {
+      const matchingSpecialty = specialties.find((specialty) =>
+        specialty.toLowerCase().includes(suggestedSpecialty.toLowerCase())
+          || suggestedSpecialty.toLowerCase().includes(specialty.toLowerCase())
+      )
+
+      if (matchingSpecialty && step3DoctorForm.getValues('specialties').length === 0) {
+        step3DoctorForm.setValue('specialties', [matchingSpecialty])
+      }
+    }
+  }, [isConnectFlow, step1Form, step2Form, step3DoctorForm])
 
   const handleStep1Next = async () => {
     const isValid = await step1Form.trigger()
@@ -256,7 +297,7 @@ function RegisterContent() {
             surface: 'register',
             accountType: 'doctor',
           })
-          router.push('/doctor/onboarding')
+          router.push(isConnectFlow ? '/doctor/onboarding?connect=1' : '/doctor/onboarding')
           router.refresh()
           return
         }
@@ -336,11 +377,11 @@ function RegisterContent() {
               Terminaste el registro. Ahora puedes enviar tu enlace por WhatsApp, copiarlo o mostrar el QR a tu familia.
             </p>
             <div className="grid grid-cols-2 gap-3 max-w-md">
-              <div className="rounded-2xl border border-white/10 bg-card/10 px-4 py-3">
+              <div className="rounded-[10px] border border-white/10 bg-card/10 px-4 py-3">
                 <div className="text-xs uppercase tracking-[0.16em] text-white/60">Tu beneficio</div>
                 <div className="mt-1 text-lg font-semibold">1 consulta gratis</div>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-card/10 px-4 py-3">
+              <div className="rounded-[10px] border border-white/10 bg-card/10 px-4 py-3">
                 <div className="text-xs uppercase tracking-[0.16em] text-white/60">Crédito</div>
                 <div className="mt-1 text-lg font-semibold">
                   {referralSummary.creditsCents > 0
@@ -433,7 +474,7 @@ function RegisterContent() {
         </div>
 
         <div className="flex-1 flex items-center justify-center p-4">
-          <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-8 max-w-md w-full space-y-6">
+          <div className="w-full max-w-md space-y-5 rounded-[12px] border border-[hsl(var(--foreground)/0.07)] bg-card p-5 shadow-[var(--card-shadow)] sm:p-6">
             {/* Header */}
             <div className="flex flex-col space-y-2 text-center">
               <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">
@@ -455,6 +496,20 @@ function RegisterContent() {
               </Alert>
             )}
 
+            {isConnectFlow && (
+              <div className="rounded-[10px] border border-primary/20 bg-primary/5 p-4 text-left">
+                <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                  <Stethoscope className="h-4 w-4 text-primary" />
+                  Perfil preparado con Doctor Connect
+                </div>
+                <p className="mt-2 text-xs leading-5 text-muted-foreground">
+                  {connectDraft
+                    ? `Importaremos sugerencias de “${connectDraft.practice.name}”. Confirma cada campo antes de publicarlo.`
+                    : 'Puedes crear el perfil desde cero. Si venías de una búsqueda, vuelve a /connect para elegir una práctica.'}
+                </p>
+              </div>
+            )}
+
             {/* Step Content */}
             <AnimatePresence mode="wait">
               {/* Step 1: Account Type */}
@@ -468,10 +523,10 @@ function RegisterContent() {
                   className="space-y-4"
                 >
                   <div className="text-center mb-2">
-                    <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <Shield className="w-7 h-7 text-primary" />
+                    <div className="mb-2 flex items-center justify-center gap-2">
+                      <IconBadge icon={Shield} size="md" />
+                      <h2 className="text-lg font-medium text-foreground">Selecciona tu cuenta</h2>
                     </div>
-                    <h2 className="text-lg font-medium text-foreground">Selecciona tu cuenta</h2>
                     <p className="text-sm text-muted-foreground mt-1">¿Eres paciente o médico?</p>
                   </div>
 
@@ -541,11 +596,11 @@ function RegisterContent() {
                   transition={{ duration: 0.2 }}
                   className="space-y-4"
                 >
-                  <div className="text-center mb-2">
-                    <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <User className="w-7 h-7 text-primary" />
+                  <div className="mb-2 text-center">
+                    <div className="mb-2 flex items-center justify-center gap-2">
+                      <IconBadge icon={User} size="md" />
+                      <h2 className="text-lg font-medium text-foreground">Información personal</h2>
                     </div>
-                    <h2 className="text-lg font-medium text-foreground">Información personal</h2>
                     <p className="text-sm text-muted-foreground mt-1">Ingresa tus datos de acceso</p>
                   </div>
 
@@ -766,17 +821,13 @@ function RegisterContent() {
                   transition={{ duration: 0.2 }}
                   className="space-y-4"
                 >
-                  <div className="text-center mb-2">
-                    <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      {isDoctor ? (
-                        <Stethoscope className="w-7 h-7 text-primary" />
-                      ) : (
-                        <Heart className="w-7 h-7 text-primary" />
-                      )}
+                  <div className="mb-2 text-center">
+                    <div className="mb-2 flex items-center justify-center gap-2">
+                      <IconBadge icon={isDoctor ? Stethoscope : Heart} size="md" />
+                      <h2 className="text-lg font-medium text-foreground">
+                        {isDoctor ? 'Perfil profesional' : 'Completa tu registro'}
+                      </h2>
                     </div>
-                    <h2 className="text-lg font-medium text-foreground">
-                      {isDoctor ? 'Perfil profesional' : 'Completa tu registro'}
-                    </h2>
                     <p className="text-sm text-muted-foreground mt-1">
                       {isDoctor ? 'Información profesional' : 'Últimos detalles'}
                     </p>
@@ -805,6 +856,11 @@ function RegisterContent() {
                           render={() => (
                             <FormItem>
                               <FormLabel>Especialidades</FormLabel>
+                              {connectDraft?.fields.find((field) => field.key === 'specialty')?.value && (
+                                <p className="mt-1 text-xs leading-5 text-muted-foreground">
+                                  Sugerido por IA: {connectDraft.fields.find((field) => field.key === 'specialty')?.value}. Confírmalo solo si corresponde a tu práctica.
+                                </p>
+                              )}
                               <div className="grid grid-cols-2 gap-2 mt-2">
                                 {specialties.map((specialty) => {
                                   const isSelected = step3DoctorForm.watch('specialties')?.includes(specialty)

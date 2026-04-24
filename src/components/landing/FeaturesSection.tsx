@@ -22,7 +22,7 @@ const features = [
   },
   {
     icon: FileText,
-    title: 'Dr. Simeon con límites',
+    title: 'Dr. Simeón con límites',
     description: 'La IA ayuda a ordenar el caso y a identificar señales de alarma antes de agendar.',
   },
   {

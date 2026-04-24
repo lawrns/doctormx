@@ -172,7 +172,7 @@ function PaymentSuccessContent() {
               Tu consulta quedó confirmada.
             </h1>
             <p className="mt-3 max-w-2xl text-sm leading-6 text-[hsl(var(--public-muted))]">
-              Guardamos la cita, registramos el pago y activamos las instrucciones del siguiente paso. Revisa los datos antes de cerrar esta página.
+              Guardamos la cita, registramos el pago y activamos las instrucciones del siguiente paso. Tu panel de paciente es la fuente principal para estado, acceso e instrucciones.
             </p>
 
             <div className="mt-7 grid gap-5 border border-[hsl(var(--public-border)/0.78)] bg-[hsl(var(--public-surface-soft))] p-5 md:grid-cols-[80px_1fr]">
@@ -242,7 +242,7 @@ function PaymentSuccessContent() {
 
               <div className="mt-5 grid gap-3">
                 <Button asChild size="lg">
-                  <Link href="/app/appointments">Ver mis consultas</Link>
+                  <Link href={appointment?.id ? `/app/appointments/${appointment.id}` : '/app/appointments'}>Ver detalle de cita</Link>
                 </Button>
                 <Button asChild variant="outline">
                   <Link href="/doctors">Buscar otro doctor</Link>
