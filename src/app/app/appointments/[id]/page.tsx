@@ -193,6 +193,28 @@ export default async function AppointmentDetailPage({
                 </div>
               )}
             </div>
+
+            {appointment.clinicalSummary?.patientSummary ? (
+              <div className="border border-[hsl(var(--public-border)/0.78)] bg-card p-5 shadow-[var(--public-shadow-soft)]">
+                <div className="flex items-start gap-3">
+                  <FileText className="mt-1 h-4 w-4 shrink-0 text-[hsl(var(--brand-ocean))]" />
+                  <div>
+                    <h2 className="font-display text-xl font-semibold tracking-tight text-[hsl(var(--public-ink))]">
+                      Resumen de la consulta
+                    </h2>
+                    <p className="mt-1 text-xs font-medium text-[hsl(var(--public-muted))]">
+                      Revisado por el médico
+                      {appointment.clinicalSummary.sentToPatientAt
+                        ? ` · enviado ${formatDate(appointment.clinicalSummary.sentToPatientAt)}`
+                        : ''}
+                    </p>
+                  </div>
+                </div>
+                <p className="mt-4 whitespace-pre-line text-sm leading-7 text-[hsl(var(--public-muted))]">
+                  {appointment.clinicalSummary.patientSummary}
+                </p>
+              </div>
+            ) : null}
           </section>
 
           <aside className="space-y-4 lg:sticky lg:top-24 lg:self-start">

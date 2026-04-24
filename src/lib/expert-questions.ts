@@ -1,11 +1,12 @@
 import { createServiceClient } from '@/lib/supabase/server'
 
+const PUBLIC_QUESTION_STATUSES = ['approved', 'answered', 'closed']
+
 export interface ExpertQuestion {
   id: string
-  patient_id: string | null
+  patient_id?: string | null
   specialty_id: string | null
   question: string
-  email: string
   display_name: string | null
   status: string
   is_anonymous: boolean
@@ -28,6 +29,7 @@ export interface ExpertAnswer {
   helpful_count: number
   created_at: string
   doctor?: {
+    id?: string
     full_name: string
     photo_url: string | null
   } | null
@@ -49,20 +51,76 @@ export interface CreateAnswerData {
   is_featured?: boolean
 }
 
-export async function getQuestions(options?: {
-  status?: string
+function sanitizeQuestion(question: any): ExpertQuestion {
+  return {
+    id: question.id,
+    patient_id: question.patient_id ?? null,
+    specialty_id: question.specialty_id ?? null,
+    question: question.question,
+    display_name: question.is_anonymous ? null : question.display_name,
+    status: question.status,
+    is_anonymous: question.is_anonymous,
+    view_count: question.view_count || 0,
+    created_at: question.created_at,
+    specialty: question.specialty || null,
+    answers: (question.answers || []).map(sanitizeAnswer),
+  }
+}
+
+function sanitizeAnswer(answer: any): ExpertAnswer {
+  return {
+    id: answer.id,
+    question_id: answer.question_id,
+    doctor_id: answer.doctor_id,
+    answer: answer.answer,
+    is_featured: Boolean(answer.is_featured),
+    helpful_count: answer.helpful_count || 0,
+    created_at: answer.created_at,
+    doctor: answer.doctor
+      ? {
+          id: answer.doctor.id,
+          full_name: answer.doctor.full_name,
+          photo_url: answer.doctor.photo_url,
+        }
+      : null,
+  }
+}
+
+export async function resolveSpecialtyId(value?: string | null): Promise<string | null> {
+  if (!value) return null
+
+  const supabase = createServiceClient()
+  const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value)
+  const query = supabase
+    .from('specialties')
+    .select('id')
+
+  const { data } = await (isUuid ? query.eq('id', value) : query.eq('slug', value)).maybeSingle()
+
+  return data?.id || null
+}
+
+export async function getPublicQuestions(options?: {
   specialtyId?: string
   limit?: number
   offset?: number
 }): Promise<ExpertQuestion[]> {
   const supabase = createServiceClient()
-  const limit = options?.limit || 20
-  const offset = options?.offset || 0
+  const limit = Math.min(Math.max(options?.limit || 20, 1), 50)
+  const offset = Math.max(options?.offset || 0, 0)
 
   let query = supabase
     .from('expert_questions')
     .select(`
-      *,
+      id,
+      patient_id,
+      specialty_id,
+      question,
+      display_name,
+      status,
+      is_anonymous,
+      view_count,
+      created_at,
       specialty:specialties(id, name, slug),
       answers:expert_answers(
         id,
@@ -72,41 +130,42 @@ export async function getQuestions(options?: {
         is_featured,
         helpful_count,
         created_at,
-        doctor:profiles!expert_answers_doctor_id_fkey(full_name, photo_url)
+        doctor:profiles!expert_answers_doctor_id_fkey(id, full_name, photo_url)
       )
     `)
-
-  if (options?.status) {
-    query = query.eq('status', options.status)
-  } else {
-    query = query.in('status', ['approved', 'answered', 'closed'])
-  }
+    .in('status', PUBLIC_QUESTION_STATUSES)
 
   if (options?.specialtyId) {
     query = query.eq('specialty_id', options.specialtyId)
   }
 
-  query = query
+  const { data, error } = await query
     .order('created_at', { ascending: false })
     .range(offset, offset + limit - 1)
-
-  const { data, error } = await query
 
   if (error) {
     console.error('Error fetching expert questions:', error)
     return []
   }
 
-  return (data || []) as unknown as ExpertQuestion[]
+  return (data || []).map(sanitizeQuestion)
 }
 
-export async function getQuestionById(id: string): Promise<ExpertQuestion | null> {
+export async function getPublicQuestionById(id: string): Promise<ExpertQuestion | null> {
   const supabase = createServiceClient()
 
   const { data, error } = await supabase
     .from('expert_questions')
     .select(`
-      *,
+      id,
+      patient_id,
+      specialty_id,
+      question,
+      display_name,
+      status,
+      is_anonymous,
+      view_count,
+      created_at,
       specialty:specialties(id, name, slug),
       answers:expert_answers(
         id,
@@ -116,18 +175,108 @@ export async function getQuestionById(id: string): Promise<ExpertQuestion | null
         is_featured,
         helpful_count,
         created_at,
-        doctor:profiles!expert_answers_doctor_id_fkey(full_name, photo_url)
+        doctor:profiles!expert_answers_doctor_id_fkey(id, full_name, photo_url)
       )
     `)
     .eq('id', id)
-    .single()
+    .in('status', PUBLIC_QUESTION_STATUSES)
+    .maybeSingle()
 
   if (error) {
     console.error('Error fetching expert question:', error)
     return null
   }
 
-  return data as unknown as ExpertQuestion
+  return data ? sanitizeQuestion(data) : null
+}
+
+export async function getModerationQuestionById(id: string): Promise<ExpertQuestion | null> {
+  const supabase = createServiceClient()
+
+  const { data, error } = await supabase
+    .from('expert_questions')
+    .select(`
+      id,
+      patient_id,
+      specialty_id,
+      question,
+      display_name,
+      status,
+      is_anonymous,
+      view_count,
+      created_at,
+      specialty:specialties(id, name, slug),
+      answers:expert_answers(
+        id,
+        question_id,
+        doctor_id,
+        answer,
+        is_featured,
+        helpful_count,
+        created_at,
+        doctor:profiles!expert_answers_doctor_id_fkey(id, full_name, photo_url)
+      )
+    `)
+    .eq('id', id)
+    .maybeSingle()
+
+  if (error) {
+    console.error('Error fetching moderation question:', error)
+    return null
+  }
+
+  return data ? sanitizeQuestion(data) : null
+}
+
+export async function getModerationQuestions(options?: {
+  status?: string
+  specialtyId?: string
+  limit?: number
+}): Promise<ExpertQuestion[]> {
+  const supabase = createServiceClient()
+  const limit = Math.min(Math.max(options?.limit || 50, 1), 100)
+
+  let query = supabase
+    .from('expert_questions')
+    .select(`
+      id,
+      patient_id,
+      specialty_id,
+      question,
+      display_name,
+      status,
+      is_anonymous,
+      view_count,
+      created_at,
+      specialty:specialties(id, name, slug),
+      answers:expert_answers(
+        id,
+        question_id,
+        doctor_id,
+        answer,
+        is_featured,
+        helpful_count,
+        created_at,
+        doctor:profiles!expert_answers_doctor_id_fkey(id, full_name, photo_url)
+      )
+    `)
+
+  if (options?.status) {
+    query = query.eq('status', options.status)
+  }
+
+  if (options?.specialtyId) {
+    query = query.eq('specialty_id', options.specialtyId)
+  }
+
+  const { data, error } = await query.order('created_at', { ascending: false }).limit(limit)
+
+  if (error) {
+    console.error('Error fetching moderation questions:', error)
+    return []
+  }
+
+  return (data || []).map(sanitizeQuestion)
 }
 
 export async function createQuestion(data: CreateQuestionData): Promise<ExpertQuestion> {
@@ -144,7 +293,18 @@ export async function createQuestion(data: CreateQuestionData): Promise<ExpertQu
       patient_id: data.patient_id || null,
       status: 'pending',
     })
-    .select()
+    .select(`
+      id,
+      patient_id,
+      specialty_id,
+      question,
+      display_name,
+      status,
+      is_anonymous,
+      view_count,
+      created_at,
+      specialty:specialties(id, name, slug)
+    `)
     .single()
 
   if (error) {
@@ -152,7 +312,7 @@ export async function createQuestion(data: CreateQuestionData): Promise<ExpertQu
     throw error
   }
 
-  return question
+  return sanitizeQuestion({ ...question, answers: [] })
 }
 
 export async function createAnswer(data: CreateAnswerData): Promise<ExpertAnswer> {
@@ -166,7 +326,16 @@ export async function createAnswer(data: CreateAnswerData): Promise<ExpertAnswer
       answer: data.answer,
       is_featured: data.is_featured || false,
     })
-    .select()
+    .select(`
+      id,
+      question_id,
+      doctor_id,
+      answer,
+      is_featured,
+      helpful_count,
+      created_at,
+      doctor:profiles!expert_answers_doctor_id_fkey(id, full_name, photo_url)
+    `)
     .single()
 
   if (error) {
@@ -174,74 +343,60 @@ export async function createAnswer(data: CreateAnswerData): Promise<ExpertAnswer
     throw error
   }
 
-  // Update question status to answered
   await supabase
     .from('expert_questions')
     .update({ status: 'answered' })
     .eq('id', data.question_id)
+    .in('status', ['approved', 'answered'])
 
-  return answer
+  return sanitizeAnswer(answer)
 }
 
-export async function getFeaturedAnswers(limit: number = 5): Promise<Array<{
-  question: ExpertQuestion
-  answer: ExpertAnswer
-}>> {
+export async function getDoctorAnsweredQuestions(doctorId: string, limit = 5): Promise<ExpertQuestion[]> {
   const supabase = createServiceClient()
 
-  const { data: answers, error } = await supabase
-    .from('expert_answers')
+  const { data, error } = await supabase
+    .from('expert_questions')
     .select(`
-      *,
-      question:expert_questions(
-        *,
-        specialty:specialties(id, name, slug)
-      ),
-      doctor:profiles!expert_answers_doctor_id_fkey(full_name, photo_url)
+      id,
+      patient_id,
+      specialty_id,
+      question,
+      display_name,
+      status,
+      is_anonymous,
+      view_count,
+      created_at,
+      specialty:specialties(id, name, slug),
+      answers:expert_answers!inner(
+        id,
+        question_id,
+        doctor_id,
+        answer,
+        is_featured,
+        helpful_count,
+        created_at,
+        doctor:profiles!expert_answers_doctor_id_fkey(id, full_name, photo_url)
+      )
     `)
-    .eq('is_featured', true)
-    .order('helpful_count', { ascending: false })
+    .in('status', PUBLIC_QUESTION_STATUSES)
+    .eq('expert_answers.doctor_id', doctorId)
+    .order('created_at', { ascending: false })
     .limit(limit)
 
   if (error) {
-    console.error('Error fetching featured answers:', error)
+    console.error('Error fetching doctor answers:', error)
     return []
   }
 
-  return (answers || []).map((a: any) => ({
-    question: a.question as ExpertQuestion,
-    answer: {
-      id: a.id,
-      question_id: a.question_id,
-      doctor_id: a.doctor_id,
-      answer: a.answer,
-      is_featured: a.is_featured,
-      helpful_count: a.helpful_count,
-      created_at: a.created_at,
-      doctor: a.doctor,
-    } as ExpertAnswer,
-  }))
+  return (data || []).map(sanitizeQuestion)
 }
 
 export async function incrementViewCount(id: string): Promise<void> {
   const supabase = createServiceClient()
-
   const { error } = await supabase.rpc('increment_expert_question_views', { question_id: id })
-
-  // If the RPC doesn't exist, do a manual increment
   if (error) {
-    const { data: question } = await supabase
-      .from('expert_questions')
-      .select('view_count')
-      .eq('id', id)
-      .single()
-
-    if (question) {
-      await supabase
-        .from('expert_questions')
-        .update({ view_count: question.view_count + 1 })
-        .eq('id', id)
-    }
+    console.error('Error incrementing expert question views:', error)
   }
 }
 
@@ -253,9 +408,19 @@ export async function getQuestionStats(): Promise<{
   const supabase = createServiceClient()
 
   const [questionsResult, answeredResult, doctorsResult] = await Promise.all([
-    supabase.from('expert_questions').select('id', { count: 'exact', head: true }),
-    supabase.from('expert_questions').select('id', { count: 'exact', head: true }).in('status', ['answered', 'closed']),
-    supabase.from('expert_answers').select('doctor_id').limit(1000),
+    supabase
+      .from('expert_questions')
+      .select('id', { count: 'exact', head: true })
+      .in('status', PUBLIC_QUESTION_STATUSES),
+    supabase
+      .from('expert_questions')
+      .select('id', { count: 'exact', head: true })
+      .in('status', ['answered', 'closed']),
+    supabase
+      .from('expert_answers')
+      .select('doctor_id, question:expert_questions!inner(status)')
+      .in('question.status', PUBLIC_QUESTION_STATUSES)
+      .limit(1000),
   ])
 
   const uniqueDoctors = new Set((doctorsResult.data || []).map((d: any) => d.doctor_id))
@@ -266,3 +431,6 @@ export async function getQuestionStats(): Promise<{
     totalDoctors: uniqueDoctors.size,
   }
 }
+
+export const getQuestions = getPublicQuestions
+export const getQuestionById = getPublicQuestionById

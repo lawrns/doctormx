@@ -40,6 +40,11 @@ export type PatientAppointmentContext = {
     status: string | null
     expired: boolean
   } | null
+  clinicalSummary: {
+    patientSummary: string | null
+    sentToPatientAt: string | null
+    approvedAt: string | null
+  } | null
   canCancel: boolean
   canJoinVideo: boolean
 }
@@ -93,7 +98,7 @@ export async function getPatientAppointmentContext(
 
   const appointmentRow = appointment as AppointmentRow
 
-  const [{ data: doctor }, { data: profile }, { data: payment }, { data: hold }] = await Promise.all([
+  const [{ data: doctor }, { data: profile }, { data: payment }, { data: hold }, { data: soapNote }] = await Promise.all([
     supabase
       .from('doctors')
       .select('id, specialty, license_number, city, state, office_address, price_cents, currency')
@@ -117,6 +122,13 @@ export async function getPatientAppointmentContext(
       .eq('appointment_id', appointmentId)
       .order('created_at', { ascending: false })
       .limit(1)
+      .maybeSingle(),
+    supabase
+      .from('soap_notes')
+      .select('patient_summary, sent_to_patient_at, approved_at')
+      .eq('appointment_id', appointmentId)
+      .eq('patient_id', patientId)
+      .eq('status', 'approved')
       .maybeSingle(),
   ])
 
@@ -166,6 +178,13 @@ export async function getPatientAppointmentContext(
           expiresAt: hold.expires_at,
           status: hold.status,
           expired: hold.expires_at ? new Date(hold.expires_at).getTime() <= now : false,
+        }
+      : null,
+    clinicalSummary: soapNote
+      ? {
+          patientSummary: soapNote.patient_summary || null,
+          sentToPatientAt: soapNote.sent_to_patient_at || null,
+          approvedAt: soapNote.approved_at || null,
         }
       : null,
     canCancel: ['pending_payment', 'confirmed'].includes(appointmentRow.status) && startMs > now,

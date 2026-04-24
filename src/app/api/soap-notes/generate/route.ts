@@ -57,6 +57,40 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       )
     }
+
+    if (!appointment_id || typeof appointment_id !== 'string') {
+      return NextResponse.json(
+        { error: 'appointment_id is required' },
+        { status: 400 }
+      )
+    }
+
+    const { data: appointment, error: appointmentError } = await supabase
+      .from('appointments')
+      .select('id, doctor_id, patient_id')
+      .eq('id', appointment_id)
+      .eq('doctor_id', user.id)
+      .single()
+
+    if (appointmentError || !appointment) {
+      return NextResponse.json(
+        { error: 'Appointment not found' },
+        { status: 404 }
+      )
+    }
+
+    const { data: existingNote } = await supabase
+      .from('soap_notes')
+      .select('id')
+      .eq('appointment_id', appointment_id)
+      .maybeSingle()
+
+    if (existingNote) {
+      return NextResponse.json(
+        { error: 'SOAP note already exists for this appointment', id: existingNote.id },
+        { status: 409 }
+      )
+    }
     
     // Generate SOAP note
     const result = await generateSoapNote({
@@ -65,6 +99,7 @@ export async function POST(request: NextRequest) {
       patient_context,
       consultation_id,
       appointment_id,
+      patient_id: appointment.patient_id,
     })
     
     return NextResponse.json({

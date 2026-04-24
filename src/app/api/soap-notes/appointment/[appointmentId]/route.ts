@@ -24,16 +24,22 @@ export async function GET(
       .eq('id', user.id)
       .single()
 
-    if (!profile || !['doctor', 'admin'].includes(profile.role)) {
+    if (!profile || !['doctor', 'admin', 'patient'].includes(profile.role)) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
     }
 
-    const { data: note, error } = await supabase
+    let query = supabase
       .from('soap_notes')
       .select('*')
       .eq('appointment_id', appointmentId)
-      .eq('doctor_id', user.id)
-      .maybeSingle()
+
+    if (profile.role === 'doctor') {
+      query = query.eq('doctor_id', user.id)
+    } else if (profile.role === 'patient') {
+      query = query.eq('patient_id', user.id).eq('status', 'approved')
+    }
+
+    const { data: note, error } = await query.maybeSingle()
 
     if (error) {
       console.error('[SOAPNotes] Fetch error:', error)
@@ -155,6 +161,7 @@ export async function PATCH(
       'transcript_sources',
       'doctor_edits',
       'patient_summary',
+      'sent_to_patient_at',
       'status',
       'rejection_reason',
     ]
@@ -163,6 +170,11 @@ export async function PATCH(
       if (field in body) {
         updates[field] = body[field]
       }
+    }
+
+    const allowedStatuses = ['draft', 'generating', 'pending_review', 'approved', 'rejected', 'archived']
+    if (typeof body.status === 'string' && !allowedStatuses.includes(body.status)) {
+      return NextResponse.json({ error: 'Invalid SOAP note status' }, { status: 400 })
     }
 
     if (body.status === 'approved') {

@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge'
 import { Card } from '@/components/ui/card'
 import { getAvailableSlots } from '@/lib/availability'
 import { getDoctorProfile } from '@/lib/discovery'
+import { getDoctorAnsweredQuestions } from '@/lib/expert-questions'
 import { getDoctorReviews, getDoctorRatingSummary } from '@/lib/reviews'
 import { formatCurrency, formatDoctorName, formatLanguageName } from '@/lib/utils'
 
@@ -78,10 +79,11 @@ export default async function DoctorProfilePage({
     notFound()
   }
 
-  const [reviews, ratingSummary, nextAvailability] = await Promise.all([
+  const [reviews, ratingSummary, nextAvailability, answeredQuestions] = await Promise.all([
     getDoctorReviews(id, { limit: 10 }),
     getDoctorRatingSummary(id).then((result) => result || null),
     findNextAvailability(id),
+    getDoctorAnsweredQuestions(id, 4),
   ])
 
   const totalConsultations = ratingSummary?.rating_count || 0
@@ -283,6 +285,55 @@ export default async function DoctorProfilePage({
             <div className="animate-fade-in-up">
               <DoctorReviews reviews={reviews} totalReviews={totalConsultations} averageRating={averageRating} />
             </div>
+
+            {answeredQuestions.length > 0 ? (
+              <Card className="surface-panel p-6 sm:p-8">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--brand-ocean))]">
+                      Preguntas respondidas
+                    </p>
+                    <h2 className="mt-1 font-display text-xl font-semibold tracking-tight text-[hsl(var(--public-ink))]">
+                      Respuestas del doctor
+                    </h2>
+                  </div>
+                  <Link href="/preguntas-respuestas" className="text-sm font-semibold text-[hsl(var(--brand-ocean))] hover:underline">
+                    Ver mas preguntas
+                  </Link>
+                </div>
+                <div className="mt-5 divide-y divide-[hsl(var(--public-border)/0.8)]">
+                  {answeredQuestions.map((question) => {
+                    const answer = question.answers?.find((item) => item.doctor_id === doctor.id) || question.answers?.[0]
+                    return (
+                      <Link
+                        key={question.id}
+                        href={`/preguntas-respuestas/${question.id}`}
+                        className="block py-4 first:pt-0 last:pb-0"
+                      >
+                        <div className="flex flex-wrap items-center gap-2">
+                          {question.specialty ? (
+                            <Badge variant="outline" className="normal-case tracking-normal">
+                              {question.specialty.name}
+                            </Badge>
+                          ) : null}
+                          <span className="text-xs font-medium text-[hsl(var(--public-muted))]">
+                            Orientacion publica
+                          </span>
+                        </div>
+                        <p className="mt-2 text-sm font-semibold leading-6 text-[hsl(var(--public-ink))]">
+                          {question.question}
+                        </p>
+                        {answer ? (
+                          <p className="mt-2 line-clamp-2 text-sm leading-6 text-[hsl(var(--public-muted))]">
+                            {answer.answer}
+                          </p>
+                        ) : null}
+                      </Link>
+                    )
+                  })}
+                </div>
+              </Card>
+            ) : null}
           </div>
 
           <aside className="space-y-4 lg:sticky lg:top-24 lg:self-start">

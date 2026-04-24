@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { createClient } from '@/lib/supabase/server';
 
 interface SOAPNote {
   subjective: string;
@@ -13,13 +14,48 @@ interface SOAPNote {
  */
 export async function POST(request: NextRequest) {
   try {
-    const { rawText, currentSOAP = {} } = await request.json();
+    const supabase = await createClient();
+    const { data: { user }, error: authError } = await supabase.auth.getUser();
+
+    if (authError || !user) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    const { rawText, currentSOAP = {}, appointmentId } = await request.json();
     
     if (!rawText || rawText.length < 10) {
       return NextResponse.json(
         { error: 'Insufficient text for structuring' },
         { status: 400 }
       );
+    }
+
+    if (!appointmentId || typeof appointmentId !== 'string') {
+      return NextResponse.json(
+        { error: 'appointmentId is required' },
+        { status: 400 }
+      );
+    }
+
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('role')
+      .eq('id', user.id)
+      .single();
+
+    if (profile?.role !== 'doctor') {
+      return NextResponse.json({ error: 'Only doctors can structure SOAP notes' }, { status: 403 });
+    }
+
+    const { data: appointment } = await supabase
+      .from('appointments')
+      .select('id')
+      .eq('id', appointmentId)
+      .eq('doctor_id', user.id)
+      .single();
+
+    if (!appointment) {
+      return NextResponse.json({ error: 'Appointment not found' }, { status: 404 });
     }
 
     // Use AI to structure the dictation

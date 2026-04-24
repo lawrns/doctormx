@@ -485,9 +485,9 @@ export default function ExpertQAPage() {
 
                         {/* CTA */}
                         <div className="mt-4 pt-4 border-t border-border flex justify-end">
-                          <Link href="/doctors">
+                          <Link href={`/preguntas-respuestas/${question.id}`}>
                             <Button variant="outline" size="sm" className="text-primary border-primary/20 hover:bg-primary/10">
-                              Agendar cita <ArrowRight className="w-3 h-3 ml-1" />
+                              Leer respuesta completa <ArrowRight className="w-3 h-3 ml-1" />
                             </Button>
                           </Link>
                         </div>
@@ -551,6 +551,12 @@ export default function ExpertQAPage() {
                             </div>
                           )}
                         </div>
+                        <Link
+                          href={`/preguntas-respuestas/${q.id}`}
+                          className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline"
+                        >
+                          Ver detalle <ArrowRight className="h-3.5 w-3.5" />
+                        </Link>
                       </Card>
                     </motion.div>
                   ))}

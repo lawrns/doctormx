@@ -58,7 +58,7 @@ const SOAP_COMMANDS: VoiceCommand[] = [
 // SPEECH RECOGNITION HOOK
 // ============================================================================
 
-export function useVoiceToSOAP() {
+export function useVoiceToSOAP(appointmentId?: string) {
   const [state, setState] = useState<VoiceDictationState>({
     isListening: false,
     transcript: '',
@@ -188,7 +188,7 @@ export function useVoiceToSOAP() {
       const response = await fetch('/api/ai/structure-soap', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ rawText: state.transcript, currentSOAP: soapNote }),
+        body: JSON.stringify({ rawText: state.transcript, currentSOAP: soapNote, appointmentId }),
       });
 
       if (response.ok) {
@@ -201,7 +201,7 @@ export function useVoiceToSOAP() {
     } catch (error) {
       console.error('AI structuring failed:', error);
     }
-  }, [state.transcript, state.soapNote]);
+  }, [appointmentId, state.transcript, state.soapNote]);
 
   // Control methods
   const startListening = useCallback(() => {

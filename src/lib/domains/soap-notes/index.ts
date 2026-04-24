@@ -15,6 +15,7 @@ export const SOAP_NOTES_CONFIG = {
 } as const
 
 export type SoapNoteStatus =
+  | 'draft'
   | 'transcribing'
   | 'generating'
   | 'pending_review'
@@ -55,6 +56,7 @@ export interface GenerateSoapInput {
   }
   consultation_id?: string
   appointment_id?: string
+  patient_id?: string
 }
 
 const SOAP_PROMPT = `Eres un asistente médico experto que genera notas SOAP estructuradas en español mexicano.
@@ -92,6 +94,7 @@ export async function generateSoapNote(
       doctor_id: input.doctor_id,
       consultation_id: input.consultation_id,
       appointment_id: input.appointment_id,
+      patient_id: input.patient_id,
       transcript_raw: input.transcript,
       status: 'generating',
     })

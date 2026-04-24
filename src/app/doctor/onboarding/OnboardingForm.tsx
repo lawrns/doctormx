@@ -356,6 +356,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
             { label: 'Cédula y perfil', done: Boolean(licenseNumber && bio) },
             { label: 'Disponibilidad', done: hasAvailability },
             { label: 'Precio', done: Boolean(price) },
+            { label: 'Q&A público', done: false },
           ].map((p, i) => (
             <div
               key={i}
@@ -377,6 +378,22 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
             {submitError}
           </div>
         )}
+
+        <section className="mb-6 rounded-[12px] border border-border bg-card p-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h2 className="font-display text-lg font-semibold tracking-tight text-foreground">
+                Enriquece tu perfil con respuestas médicas
+              </h2>
+              <p className="mt-1 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                Cuando tu perfil esté aprobado, responde preguntas moderadas de pacientes. Tus respuestas aparecerán en tu perfil como evidencia pública de criterio clínico.
+              </p>
+            </div>
+            <Button asChild variant="outline" className="h-10 rounded-[8px]">
+              <Link href="/doctor/preguntas">Ver preguntas</Link>
+            </Button>
+          </div>
+        </section>
 
         {submitMessage && (
           <div className="mb-6 rounded-xl border border-vital/20 bg-vital-soft p-4 text-sm text-vital">

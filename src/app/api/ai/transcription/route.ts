@@ -39,10 +39,18 @@ export async function POST(req: NextRequest) {
     const formData = await req.formData();
     const appointmentId = formData.get('appointmentId') as string;
     const audioFile = formData.get('audio') as File;
+    const recordingConsent = formData.get('recordingConsent') === 'true';
 
     if (!appointmentId || !audioFile) {
       return NextResponse.json(
         { error: 'Faltan datos requeridos' },
+        { status: 400 }
+      );
+    }
+
+    if (!recordingConsent) {
+      return NextResponse.json(
+        { error: 'Se requiere confirmar consentimiento de grabacion' },
         { status: 400 }
       );
     }
@@ -81,22 +89,25 @@ export async function POST(req: NextRequest) {
       userPrompt: TRANSCRIPTION_SUMMARY_PROMPT.replace('{transcript}', fullText),
     });
 
-    // Guardar transcripción en Supabase Storage
+    // Guardar transcripción en Supabase Storage. Store only the private path;
+    // callers must fetch signed URLs through an authenticated endpoint.
     const fileName = `transcripts/${appointmentId}-${Date.now()}.txt`;
-    await supabase.storage
+    const { error: uploadError } = await supabase.storage
       .from('medical-records')
       .upload(fileName, fullText, { contentType: 'text/plain' });
 
-    const { data: { publicUrl } } = supabase.storage
-      .from('medical-records')
-      .getPublicUrl(fileName);
+    if (uploadError) {
+      throw uploadError;
+    }
 
     // Guardar en DB
     const { data: transcript } = await supabase
       .from('consultation_transcripts')
       .insert({
         appointment_id: appointmentId,
-        audio_url: publicUrl,
+        doctor_id: user.id,
+        patient_id: appointment.patient_id,
+        storage_path: fileName,
         segments,
         summary,
         status: 'completed',
@@ -124,6 +135,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({
       transcriptId: transcript?.id,
+      transcriptText: fullText,
       summary,
       duration: Math.round(duration / 60),
       cost,
