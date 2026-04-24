@@ -237,6 +237,14 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
 
               <div className="flex gap-2 flex-wrap">
                 {/* Video call states */}
+                {appointment.status === 'pending_payment' && (
+                  <Button asChild size="sm" variant="default">
+                    <Link href={`/app/appointments/${appointment.id}`}>
+                      Completar pago
+                    </Link>
+                  </Button>
+                )}
+
                 {isVideo && isInProgress && (
                   <Button asChild size="sm" variant="destructive">
                     <Link href={`/app/appointments/${appointment.id}/video`}>

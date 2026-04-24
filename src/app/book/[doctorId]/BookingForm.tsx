@@ -2,13 +2,12 @@
 
 import { useState, useEffect, useMemo } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import Image from 'next/image'
 import Link from 'next/link'
 import { APPOINTMENT_CONFIG } from '@/config/constants'
 import PreConsultaChat from '@/components/PreConsultaChat'
 import { useToast } from '@/components/Toast'
 import { AI_CONFIG } from '@/lib/ai/config'
-import { CheckCircle2, Clock, CreditCard, FileText, MapPin, Monitor, ShieldCheck, User, Video } from 'lucide-react'
+import { CheckCircle2, Clock, CreditCard, FileText, MapPin, Monitor, ShieldCheck, Video } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { DoctorMxLogo } from '@/components/brand/DoctorMxLogo'
@@ -57,7 +56,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
   const [availableSlots, setAvailableSlots] = useState<string[]>([])
   const [submitting, setSubmitting] = useState(false)
   const [loadingSlots, setLoadingSlots] = useState(false)
-  const [, setLoadingCalendar] = useState(false)
+  const [loadingCalendar, setLoadingCalendar] = useState(false)
   const [availableDates, setAvailableDates] = useState<string[]>([])
   const [currentMonth, setCurrentMonth] = useState(new Date())
   const [showPreConsulta, setShowPreConsulta] = useState(false)
@@ -276,7 +275,6 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
   const officeAddress = doctor.office_address || doctor.address || [doctor.city, doctor.state].filter(Boolean).join(', ')
   const canBookVideo = doctor.offers_video !== false
   const canBookInPerson = Boolean(doctor.office_address && doctor.offers_in_person === true)
-  const doctorPhotoUrl = doctor.profile?.photo_url || null
   const verificationDate = doctor.verification?.verified_at ? new Date(doctor.verification.verified_at) : null
   const consultationModes = [
     canBookVideo ? 'Videoconsulta' : null,
@@ -372,24 +370,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                 ))}
               </div>
             </div>
-          <div className="p-6">
-            <div className="mb-6 flex items-center gap-4 border border-[hsl(var(--public-border)/0.78)] bg-[hsl(var(--public-surface-soft))] p-4">
-              <div className="h-16 w-16 overflow-hidden bg-[hsl(var(--surface-tint))]">
-                {doctorPhotoUrl ? (
-                  <Image src={doctorPhotoUrl} alt={doctor.profile?.full_name || 'Doctor'} width={64} height={64} className="object-cover w-full h-full" />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center"><User className="w-8 h-8 text-muted-foreground" /></div>
-                )}
-              </div>
-              <div className="flex-1">
-                <p className="font-semibold text-foreground text-lg">Dr. {doctor.profile?.full_name || 'Doctor'}</p>
-                <p className="text-sm text-muted-foreground">{appointmentType === 'video' ? 'Consulta en línea' : 'Consulta presencial'}</p>
-              </div>
-              <div className="text-right">
-                <p className="text-xl font-bold text-primary">{formatPrice(doctor.price_cents, doctor.currency)}</p>
-                <p className="text-xs text-muted-foreground">por consulta</p>
-              </div>
-            </div>
+          <div className="p-5 sm:p-6">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-medium text-foreground mb-3">
@@ -428,6 +409,15 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                     </span>
                   </Button>
                 </div>
+                {(!canBookVideo || !canBookInPerson) && (
+                  <div className="mt-3 rounded-[10px] border border-[hsl(var(--public-border)/0.78)] bg-[hsl(var(--public-surface-soft))] p-3 text-sm leading-5 text-[hsl(var(--public-muted))]">
+                    {!canBookVideo && canBookInPerson
+                      ? 'Este médico solo tiene consulta presencial disponible en este momento.'
+                      : canBookVideo && !canBookInPerson
+                        ? 'Este médico solo tiene videoconsulta disponible en este momento.'
+                        : 'Este médico aún no tiene una modalidad confirmada para reservar.'}
+                  </div>
+                )}
                 {appointmentType === 'in_person' ? (
                   <div className="mt-3 rounded-[var(--public-radius-control)] border border-border bg-secondary/50 p-4 text-sm text-foreground">
                     <p className="font-medium">Dirección del consultorio</p>
@@ -537,6 +527,25 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                     <span>Seleccionado</span>
                   </div>
                 </div>
+
+                {!loadingCalendar && availableDates.length === 0 && (
+                  <div className="mt-4 rounded-[10px] border border-[hsl(var(--public-border)/0.78)] bg-[hsl(var(--public-surface-soft))] p-4">
+                    <p className="text-sm font-semibold text-[hsl(var(--public-ink))]">
+                      Este médico todavía no tiene horarios publicados.
+                    </p>
+                    <p className="mt-1 text-sm leading-6 text-[hsl(var(--public-muted))]">
+                      No mostramos horarios inventados. Vuelve al perfil del médico o busca otro doctor con disponibilidad visible.
+                    </p>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <Button asChild size="sm" variant="outline">
+                        <Link href={`/doctors/${doctor.id}`}>Volver al perfil</Link>
+                      </Button>
+                      <Button asChild size="sm">
+                        <Link href="/doctors">Buscar otro doctor</Link>
+                      </Button>
+                    </div>
+                  </div>
+                )}
 
                 {/* Hidden native date input for accessibility and form validation */}
                 <input 
