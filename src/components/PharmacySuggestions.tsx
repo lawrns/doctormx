@@ -149,7 +149,7 @@ export default function PharmacySuggestions({
                 <div className="flex items-center gap-2 mb-1">
                   <h4 className="font-medium text-foreground">{pharmacy.pharmacyName}</h4>
                   {pharmacy.matchScore >= 70 && (
-                    <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-primary/10 text-green-800">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-primary/10 text-primary">
                       <Star className="w-3 h-3 inline mr-1" />Mejor opción
                     </span>
                   )}
@@ -183,7 +183,7 @@ export default function PharmacySuggestions({
                 {sentPharmacy === pharmacy.pharmacyId ? (
                   <button
                     disabled
-                    className="px-4 py-2 bg-primary/10 text-green-700 rounded-lg text-sm font-medium cursor-default"
+                    className="px-4 py-2 bg-primary/10 text-primary rounded-md text-sm font-medium cursor-default"
                   >
                     <Check className="w-4 h-4 inline mr-1" />Enviado
                   </button>

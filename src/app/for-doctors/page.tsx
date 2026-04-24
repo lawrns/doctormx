@@ -4,6 +4,7 @@ import {
   CalendarCheck,
   ClipboardList,
   CreditCard,
+  Search,
   FileCheck2,
   ShieldCheck,
   Stethoscope,
@@ -62,17 +63,20 @@ export default function ForDoctorsPage() {
           </div>
           <div className="space-y-5">
             <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
-              Doctor.mx no vende magia de adquisición. Te da una presencia médica clara, verificable y preparada para convertir pacientes que necesitan decidir con confianza.
+              Doctor Connect encuentra tu práctica, prepara un borrador con IA y te deja confirmar los datos clínicos antes de publicar. Esta página queda como contexto; la adquisición empieza en /connect.
             </p>
             <div className="flex flex-wrap gap-3">
               <Button asChild size="lg">
-                <Link href="/auth/register?role=doctor">
-                  Crear perfil médico
-                  <ArrowRight className="h-4 w-4" />
+                <Link href="/connect">
+                  Reclamar perfil con IA
+                  <Search className="h-4 w-4" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link href="/pricing">Ver precios</Link>
+                <Link href="/auth/register?role=doctor&connect=1">
+                  Crear desde cero
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
               </Button>
             </div>
           </div>
@@ -164,7 +168,7 @@ export default function ForDoctorsPage() {
                   </p>
                 </div>
                 <Button asChild>
-                  <Link href="/auth/register?role=doctor">Empezar revisión</Link>
+                  <Link href="/connect">Empezar en Doctor Connect</Link>
                 </Button>
               </div>
             </section>

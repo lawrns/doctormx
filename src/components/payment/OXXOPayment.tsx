@@ -60,7 +60,7 @@ export function OXXOPayment({
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-card rounded-2xl shadow-xl border-2 border-border overflow-hidden"
+        className="bg-card rounded-[10px] shadow-xl border-2 border-border overflow-hidden"
       >
         {/* Header */}
         <div className="bg-gradient-to-r from-red-500 to-orange-500 p-6 text-white">
@@ -74,7 +74,7 @@ export function OXXOPayment({
                 {formatDate(expiresAt)}
               </p>
             </div>
-            <div className="bg-card/20 rounded-xl p-4 backdrop-blur-sm">
+            <div className="bg-card/20 rounded-lg p-4 backdrop-blur-sm">
               <div className="text-3xl font-bold">{formatCurrency(amount)}</div>
             </div>
           </div>
@@ -83,7 +83,7 @@ export function OXXOPayment({
         {/* Instructions */}
         <div className="p-6 space-y-6">
           {/* Reference Number */}
-          <div className="bg-secondary/50 rounded-xl p-6 border-2 border-dashed border-border">
+          <div className="bg-secondary/50 rounded-lg p-6 border-2 border-dashed border-border">
             <label className="block text-sm font-semibold text-muted-foreground mb-2">
               Referencia de pago:
             </label>
@@ -147,7 +147,7 @@ export function OXXOPayment({
           </div>
 
           {/* Important Notes */}
-          <div className="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-4">
+          <div className="bg-yellow-50 border-2 border-yellow-200 rounded-lg p-4">
             <h4 className="font-bold text-yellow-900 mb-2 flex items-center gap-2">
               <AlertTriangle className="w-5 h-5 text-yellow-700" />
               Importante:
@@ -163,7 +163,7 @@ export function OXXOPayment({
           </div>
 
           {/* Find OXXO */}
-          <div className="bg-red-50 border-2 border-red-200 rounded-xl p-4">
+          <div className="bg-red-50 border-2 border-red-200 rounded-lg p-4">
             <h4 className="font-bold text-red-900 mb-2 flex items-center gap-2">
               <MapPin className="w-5 h-5" />
               Encuentra un OXXO cercano:
@@ -182,14 +182,14 @@ export function OXXOPayment({
           <div className="flex flex-col sm:flex-row gap-3 pt-4">
             <button
               onClick={handlePrint}
-              className="flex items-center justify-center gap-2 px-6 py-3 bg-secondary hover:bg-muted text-foreground rounded-xl font-semibold transition-colors"
+              className="flex items-center justify-center gap-2 px-6 py-3 bg-secondary hover:bg-muted text-foreground rounded-lg font-semibold transition-colors"
             >
               <Printer className="w-5 h-5" />
               Imprimir ficha
             </button>
             <button
               onClick={handleDownload}
-              className="flex items-center justify-center gap-2 px-6 py-3 bg-secondary hover:bg-muted text-foreground rounded-xl font-semibold transition-colors"
+              className="flex items-center justify-center gap-2 px-6 py-3 bg-secondary hover:bg-muted text-foreground rounded-lg font-semibold transition-colors"
             >
               <Download className="w-5 h-5" />
               Descargar PDF
@@ -271,12 +271,12 @@ export function SPEIPayment({
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-card rounded-2xl shadow-xl border-2 border-border overflow-hidden"
+        className="bg-card rounded-[10px] shadow-xl border-2 border-border overflow-hidden"
       >
         {/* Header */}
-        <div className="bg-gradient-to-r from-green-500 to-emerald-500 p-6 text-white">
+        <div className="bg-gradient-to-r from-primary to-cobalt-500 p-6 text-white">
           <h2 className="text-2xl font-bold mb-2">Transferencia SPEI</h2>
-          <p className="text-green-50">Realiza tu pago mediante transferencia bancaria</p>
+          <p className="text-white/80">Realiza tu pago mediante transferencia bancaria</p>
         </div>
 
         {/* Bank Details */}
@@ -316,7 +316,7 @@ export function SPEIPayment({
           />
 
           {/* Instructions */}
-          <div className="bg-primary/10 border-2 border-primary/20 rounded-xl p-4">
+          <div className="bg-primary/10 border-2 border-primary/20 rounded-lg p-4">
             <h4 className="font-bold text-primary mb-3">Instrucciones:</h4>
             <ol className="text-sm text-primary space-y-2 list-decimal list-inside">
               <li>Ingresa a tu banca en línea o app móvil</li>
@@ -328,8 +328,8 @@ export function SPEIPayment({
             </ol>
           </div>
 
-          <div className="bg-primary/5 border-2 border-green-200 rounded-xl p-4">
-            <p className="text-sm text-green-800">
+          <div className="bg-primary/5 border-2 border-primary/20 rounded-lg p-4">
+            <p className="text-sm text-primary">
               <Check className="w-4 h-4 inline mr-1" />La confirmación es automática e inmediata (1-3 minutos)
             </p>
           </div>

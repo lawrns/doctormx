@@ -42,7 +42,7 @@ export default function DoctorsLoading() {
 
           <div className="p-4 flex flex-col gap-3">
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="bg-card border border-border rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-[1fr_210px]">
+              <div key={i} className="bg-card border border-border rounded-[8px] overflow-hidden grid grid-cols-1 md:grid-cols-[1fr_210px]">
                 <div className="p-4 border-r border-border/60 flex flex-col gap-2">
                   <div className="flex items-start gap-3">
                     <Skeleton className="w-[58px] h-[58px] rounded-full shrink-0" />

@@ -18,6 +18,8 @@ import { Progress } from '@/components/ui/progress'
 import { ReferralShareCard } from '@/components/referrals'
 import { ANALYTICS_EVENTS, trackClientEvent } from '@/lib/analytics/posthog'
 import type { ReferralSummary } from '@/lib/domains/patient-referrals'
+import { getConnectDraft } from '@/lib/connect/session-draft'
+import type { ConnectProfileDraft } from '@/lib/connect/types'
 import { formatCurrency } from '@/lib/utils'
 import {
   Form,
@@ -99,11 +101,12 @@ const specialties = [
 
 function RegisterContent() {
   const searchParams = useSearchParams()
-  const [currentStep, setCurrentStep] = useState(1)
+  const isConnectFlow = searchParams.get('connect') === '1'
+  const [currentStep, setCurrentStep] = useState(isConnectFlow ? 2 : 1)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const router = useRouter()
-  const initialAccountType = searchParams.get('role') === 'doctor' ? 'doctor' : 'patient'
+  const initialAccountType = searchParams.get('role') === 'doctor' || isConnectFlow ? 'doctor' : 'patient'
   const initialEmail = searchParams.get('email') || ''
   const initialReferralCode = (searchParams.get('ref') || '').trim().toUpperCase()
   const redirectTarget = searchParams.get('redirect')
@@ -136,6 +139,7 @@ function RegisterContent() {
   const [passwordStrength, setPasswordStrength] = useState({ strength: 0, label: '', color: '', textColor: '' })
   const [validatedFields, setValidatedFields] = useState<Record<string, boolean>>({})
   const [referralSummary, setReferralSummary] = useState<ReferralSummary | null>(null)
+  const [connectDraft, setConnectDraft] = useState<ConnectProfileDraft | null>(null)
 
   const step1Form = useForm<Step1Data>({
     resolver: zodResolver(step1Schema),
@@ -174,6 +178,42 @@ function RegisterContent() {
     })
   // We want one event per page load, not per render.
   }, [])
+
+  useEffect(() => {
+    if (!isConnectFlow) return
+
+    const draft = getConnectDraft()
+    setConnectDraft(draft)
+    setStep1Data({ accountType: 'doctor' })
+    step1Form.setValue('accountType', 'doctor')
+
+    if (!draft) return
+
+    const fieldValue = (key: string) => draft.fields.find((field) => field.key === key)?.value || ''
+    const suggestedName = fieldValue('doctorName') || (/^(dr|dra)\.?\s/i.test(draft.practice.name) ? draft.practice.name : '')
+    const suggestedCedula = fieldValue('cedula')
+    const suggestedSpecialty = fieldValue('specialty')
+
+    if (suggestedName && !step2Form.getValues('fullName')) {
+      step2Form.setValue('fullName', suggestedName)
+      setStep2Data((current) => ({ ...current, fullName: suggestedName }))
+    }
+
+    if (suggestedCedula && !step3DoctorForm.getValues('licenseNumber')) {
+      step3DoctorForm.setValue('licenseNumber', suggestedCedula)
+    }
+
+    if (suggestedSpecialty) {
+      const matchingSpecialty = specialties.find((specialty) =>
+        specialty.toLowerCase().includes(suggestedSpecialty.toLowerCase())
+          || suggestedSpecialty.toLowerCase().includes(specialty.toLowerCase())
+      )
+
+      if (matchingSpecialty && step3DoctorForm.getValues('specialties').length === 0) {
+        step3DoctorForm.setValue('specialties', [matchingSpecialty])
+      }
+    }
+  }, [isConnectFlow, step1Form, step2Form, step3DoctorForm])
 
   const handleStep1Next = async () => {
     const isValid = await step1Form.trigger()
@@ -256,7 +296,7 @@ function RegisterContent() {
             surface: 'register',
             accountType: 'doctor',
           })
-          router.push('/doctor/onboarding')
+          router.push(isConnectFlow ? '/doctor/onboarding?connect=1' : '/doctor/onboarding')
           router.refresh()
           return
         }
@@ -453,6 +493,20 @@ function RegisterContent() {
                 <AlertCircle className="h-4 w-4" />
                 <AlertDescription>{error}</AlertDescription>
               </Alert>
+            )}
+
+            {isConnectFlow && (
+              <div className="rounded-[10px] border border-primary/20 bg-primary/5 p-4 text-left">
+                <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                  <Stethoscope className="h-4 w-4 text-primary" />
+                  Perfil preparado con Doctor Connect
+                </div>
+                <p className="mt-2 text-xs leading-5 text-muted-foreground">
+                  {connectDraft
+                    ? `Importaremos sugerencias de “${connectDraft.practice.name}”. Confirma cada campo antes de publicarlo.`
+                    : 'Puedes crear el perfil desde cero. Si venías de una búsqueda, vuelve a /connect para elegir una práctica.'}
+                </p>
+              </div>
             )}
 
             {/* Step Content */}
@@ -805,6 +859,11 @@ function RegisterContent() {
                           render={() => (
                             <FormItem>
                               <FormLabel>Especialidades</FormLabel>
+                              {connectDraft?.fields.find((field) => field.key === 'specialty')?.value && (
+                                <p className="mt-1 text-xs leading-5 text-muted-foreground">
+                                  Sugerido por IA: {connectDraft.fields.find((field) => field.key === 'specialty')?.value}. Confírmalo solo si corresponde a tu práctica.
+                                </p>
+                              )}
                               <div className="grid grid-cols-2 gap-2 mt-2">
                                 {specialties.map((specialty) => {
                                   const isSelected = step3DoctorForm.watch('specialties')?.includes(specialty)

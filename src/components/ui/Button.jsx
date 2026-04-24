@@ -18,7 +18,7 @@ const Button = ({
   const variants = {
     primary: 'bg-primary text-primary-foreground hover:bg-primary focus:ring-ring shadow-sm',
     secondary: 'bg-secondary text-foreground hover:bg-muted focus:ring-gray-500',
-    success: 'bg-green-600 text-white hover:bg-green-700 focus:ring-green-500 shadow-sm',
+    success: 'bg-primary text-primary-foreground hover:bg-primary/95 focus:ring-ring shadow-sm',
     warning: 'bg-yellow-600 text-white hover:bg-yellow-700 focus:ring-yellow-500 shadow-sm',
     error: 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500 shadow-sm',
     outline: 'border border-border bg-card text-muted-foreground hover:bg-secondary/50 focus:ring-ring',
@@ -96,4 +96,3 @@ export const GhostButton = (props) => <Button variant="ghost" {...props} />;
 export const LinkButton = (props) => <Button variant="link" {...props} />;
 
 export default Button;
-

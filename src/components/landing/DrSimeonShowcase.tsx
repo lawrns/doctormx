@@ -18,7 +18,7 @@ function DrSimeonAvatar({ size = 'default' }: { size?: 'default' | 'large' }) {
     <div className="relative">
       {/* Vital pulse ring */}
       <motion.div
-        className={`absolute -inset-[3px] ${ringSize} rounded-full bg-gradient-to-r from-[#1f48de] via-[#93b5ff] to-[#1f48de] bg-[length:200%_100%]`}
+        className={`absolute -inset-[3px] ${ringSize} rounded-full bg-gradient-to-r from-[#0d72d6] via-[#8fc4ff] to-[#0d72d6] bg-[length:200%_100%]`}
         animate={{
           backgroundPosition: ['0% center', '200% center'],
         }}
@@ -131,7 +131,7 @@ function AnimatedMessage({ message, index }: { message: Message; index: number }
         <div
           className={`rounded-[12px] px-4 py-3 shadow-sm ${
             isPatient
-              ? 'bg-[#1f48de] text-white'
+              ? 'bg-[#0d72d6] text-white'
               : 'border border-[#d4d9e3] bg-card text-[#0a1533]'
           }`}
         >
@@ -200,7 +200,7 @@ export default function DrSimeonShowcase() {
 
             <h2 className="font-display text-[clamp(2rem,4vw,3.1rem)] font-semibold leading-[1.03] tracking-[-0.035em] text-[#0a1533]">
               Dr. Simeón no fuerza una reserva.
-              <span className="block text-[#1a3ab8]">Primero cuida el contexto clínico.</span>
+              <span className="block text-[#0b5fb8]">Primero cuida el contexto clínico.</span>
             </h2>
 
             <p className="text-lg leading-relaxed text-[#5c6783]">
@@ -222,7 +222,7 @@ export default function DrSimeonShowcase() {
                   transition={{ delay: index * 0.1 }}
                   className="flex items-center gap-3 text-[#1c2647]"
                 >
-                  <feature.icon className="h-5 w-5 shrink-0 text-[#1f48de]" />
+                  <feature.icon className="h-5 w-5 shrink-0 text-[#0d72d6]" />
                   {feature.text}
                 </motion.li>
               ))}
@@ -259,7 +259,7 @@ export default function DrSimeonShowcase() {
                     <div className="flex-1">
                       <h3 className="font-display text-sm font-semibold text-[#f7f8fb]">Dr. Simeón</h3>
                       <div className="flex items-center gap-1.5">
-                        <span className="h-2 w-2 rounded-full bg-[#1f48de]" />
+                        <span className="h-2 w-2 rounded-full bg-[#0d72d6]" />
                         <span className="text-xs text-[#f7f8fb]/70">Ejemplo ilustrativo</span>
                       </div>
                     </div>
@@ -300,7 +300,7 @@ export default function DrSimeonShowcase() {
                       disabled
                       className="flex-1 bg-transparent text-sm text-[#5c6783] outline-none"
                     />
-                  <button disabled className="rounded-full bg-[#1f48de] p-2 text-white opacity-50">
+                  <button disabled className="rounded-full bg-[#0d72d6] p-2 text-white opacity-50">
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                     </svg>

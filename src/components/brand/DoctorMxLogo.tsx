@@ -17,7 +17,7 @@ export function DoctorMxLogo({
 }: DoctorMxLogoProps) {
   const textColor = inverted ? 'text-[#f7f8fb]' : 'text-ink'
   const descriptorColor = inverted ? 'text-[#f7f8fb]/55' : 'text-muted-foreground'
-  const brandAccent = inverted ? '#1F48DE' : '#1F48DE'
+  const brandAccent = '#0D72D6'
 
   return (
     <span className={cn('inline-flex min-w-0 items-center gap-2.5', className)}>
@@ -56,7 +56,7 @@ export function DoctorMxLogo({
             textClassName
           )}
         >
-          Doctor<span className="text-[#1f48de]">.mx</span>
+          Doctor<span className="text-[#0d72d6]">.mx</span>
         </span>
         {showDescriptor ? (
           <span className={cn('hidden font-mono text-[9px] font-semibold uppercase leading-none tracking-[0.18em] sm:block', descriptorColor)}>

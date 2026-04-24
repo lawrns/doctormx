@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, BadgeCheck, HeartPulse, MapPin, Star } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
 import { formatCurrency, formatDoctorName } from '@/lib/utils'
 import type { PublicLandingData } from '@/lib/public-trust'
 
@@ -94,35 +95,42 @@ export function AIGuidedMarketplacePreview({ trustData }: AIGuidedMarketplacePre
   const review = trustData?.reviewHighlights[0]
 
   return (
-    <section className="border-b border-[#d9e3f5] bg-[#edf4ff] py-10 sm:py-12">
+    <section className="border-b border-[#d9e3f5] bg-[#edf4ff] public-section-compact">
       <div className="editorial-shell">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1fr_0.82fr] lg:items-start">
           <div>
             <div className="mb-4 flex items-center justify-between gap-4">
               <div>
-                <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[#1f48de]">
+                <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[#0d72d6]">
                   Explora si ya sabes qué necesitas
                 </p>
                 <h2 className="mt-2 text-2xl font-semibold tracking-[-0.035em] text-[#071a4e]">
                   Especialidades
                 </h2>
               </div>
-              <Link href="/specialties" className="text-sm font-semibold text-[#1f48de]">
+              <Link href="/specialties" className="text-sm font-semibold text-[#0d72d6]">
                 Ver todas
               </Link>
             </div>
 
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid gap-3 [grid-template-columns:repeat(auto-fill,minmax(200px,1fr))]">
               {specialties.map((specialty) => (
-                <Link
+                <Card
                   key={specialty.name}
-                  href={`/doctors?specialty=${encodeURIComponent(specialty.name)}`}
-                  className="rounded-[14px] border border-[#d7e3f6] bg-white px-4 py-4 shadow-[0_1px_2px_rgba(15,37,95,0.04)] transition hover:-translate-y-0.5 hover:border-[#b9cff6]"
+                  asChild
+                  variant="interactive"
+                  density="compact"
                 >
-                  <HeartPulse className="mb-3 h-5 w-5 text-[#1f48de]" aria-hidden="true" />
-                  <span className="block text-sm font-semibold text-[#071a4e]">{specialty.name}</span>
-                  <span className="mt-1 block text-xs text-[#5c6783]">{specialty.count}</span>
-                </Link>
+                  <Link href={`/doctors?specialty=${encodeURIComponent(specialty.name)}`} className="flex items-center gap-3" aria-label={`Ver médicos de ${specialty.name}`}>
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[8px] bg-[#e8f3ff] text-[#0d72d6]">
+                      <HeartPulse className="h-4 w-4" aria-hidden="true" />
+                    </span>
+                    <span>
+                      <span className="block text-[15px] font-semibold leading-5 text-[#071a4e]">{specialty.name}</span>
+                      <span className="mt-0.5 block text-[13px] leading-5 text-[#5c6783]">{specialty.count}</span>
+                    </span>
+                  </Link>
+                </Card>
               ))}
             </div>
           </div>
@@ -130,14 +138,14 @@ export function AIGuidedMarketplacePreview({ trustData }: AIGuidedMarketplacePre
           <div>
             <div className="mb-4 flex items-center justify-between gap-4">
               <div>
-                <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[#1f48de]">
+                <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[#0d72d6]">
                   Médicos recomendados por el flujo
                 </p>
                 <h2 className="mt-2 text-2xl font-semibold tracking-[-0.035em] text-[#071a4e]">
                   Verificados para reservar
                 </h2>
               </div>
-              <Link href="/doctors" className="inline-flex items-center gap-1 text-sm font-semibold text-[#1f48de]">
+              <Link href="/doctors" className="inline-flex items-center gap-1 text-sm font-semibold text-[#0d72d6]">
                 Ver todos
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
@@ -151,10 +159,10 @@ export function AIGuidedMarketplacePreview({ trustData }: AIGuidedMarketplacePre
           </div>
 
           <div>
-            <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[#1f48de]">
+            <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[#0d72d6]">
               Lo que dicen pacientes
             </p>
-            <div className="mt-4 rounded-[22px] border border-[#d7e3f6] bg-white p-6 shadow-[0_20px_50px_-36px_rgba(15,37,95,0.45)]">
+            <Card variant="testimonial" density="compact" className="mt-4">
               <div className="text-5xl leading-none text-[#9fc0ff]">“</div>
               <p className="mt-2 text-base italic leading-7 text-[#071a4e]">
                 {review?.comment ||
@@ -172,7 +180,7 @@ export function AIGuidedMarketplacePreview({ trustData }: AIGuidedMarketplacePre
                   <p className="text-sm font-semibold text-[#071a4e]">{review?.patientName || 'María Fernanda G.'}</p>
                   <p className="flex items-center gap-1.5 text-xs text-[#5c6783]">
                     Paciente verificada
-                    <BadgeCheck className="h-3.5 w-3.5 text-[#1f48de]" aria-hidden="true" />
+                    <BadgeCheck className="h-3.5 w-3.5 text-[#0d72d6]" aria-hidden="true" />
                   </p>
                 </div>
               </div>
@@ -181,7 +189,7 @@ export function AIGuidedMarketplacePreview({ trustData }: AIGuidedMarketplacePre
                   <Star key={index} className="h-4 w-4 fill-current" aria-hidden="true" />
                 ))}
               </div>
-            </div>
+            </Card>
           </div>
         </div>
       </div>
@@ -195,31 +203,31 @@ function DoctorPreviewCard({ doctor }: { doctor: PublicLandingData['featuredDoct
   return (
     <Link
       href={href}
-      className="group overflow-hidden rounded-[16px] border border-[#d7e3f6] bg-white shadow-[0_1px_2px_rgba(15,37,95,0.05)] transition hover:-translate-y-0.5 hover:border-[#b9cff6]"
+      className="group overflow-hidden rounded-[var(--card-radius-standard)] border border-[var(--card-border)] bg-white shadow-[var(--card-shadow)] transition hover:-translate-y-px hover:border-primary/18 hover:shadow-[var(--card-shadow-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 motion-reduce:hover:translate-y-0"
     >
-      <div className="relative h-32 bg-[#eaf2ff]">
+      <div className="relative aspect-[4/3] bg-[#eaf2ff]">
         {doctor.profile?.photo_url ? (
           <Image src={doctor.profile.photo_url} alt={doctor.profile.full_name} fill sizes="220px" className="object-cover" />
         ) : null}
-        <span className="absolute bottom-2 right-2 flex h-5 w-5 items-center justify-center rounded-full bg-[#1f48de] text-white ring-2 ring-white">
+        <span className="absolute bottom-2 right-2 flex h-5 w-5 items-center justify-center rounded-full bg-[#0d72d6] text-white ring-2 ring-white">
           <BadgeCheck className="h-3.5 w-3.5" aria-hidden="true" />
         </span>
       </div>
-      <div className="p-4">
+      <div className="p-3">
         <h3 className="truncate text-sm font-semibold text-[#071a4e]">{formatDoctorName(doctor.profile?.full_name)}</h3>
         <p className="mt-1 text-xs text-[#5c6783]">{doctor.specialties[0]?.name || 'Especialidad médica'}</p>
         <p className="mt-2 flex items-center gap-1.5 text-xs text-[#5c6783]">
           <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
           {[doctor.city, doctor.state].filter(Boolean).join(', ') || 'México'}
         </p>
-        <div className="mt-3 flex items-center justify-between gap-2 text-xs">
+        <div className="mt-2 flex items-center justify-between gap-2 text-xs">
           <span className="font-semibold text-[#071a4e]">{formatCurrency(doctor.price_cents, doctor.currency)}</span>
           <span className="flex items-center gap-1 text-[#5c6783]">
             <Star className="h-3.5 w-3.5 fill-[#ffb020] text-[#ffb020]" aria-hidden="true" />
             {doctor.rating_avg.toFixed(1)}
           </span>
         </div>
-        <Button asChild variant="outline" size="sm" className="mt-3 h-8 w-full rounded-[10px] text-xs">
+        <Button asChild variant="outline" size="sm" className="mt-3 h-8 w-full rounded-[8px] text-xs">
           <span>Ver disponibilidad</span>
         </Button>
       </div>

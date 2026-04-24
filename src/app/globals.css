@@ -19,7 +19,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 61% 12%;
 
-    --primary: 227 75% 41%;             /* #1a3ab8 */
+    --primary: 211 89% 45%;             /* #0d72d6 */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 228 22% 93%;           /* #eaecf2 */
@@ -36,9 +36,9 @@
 
     --border: 225 24% 90%;              /* #dde1ec */
     --input: 225 24% 90%;
-    --ring: 227 91% 59%;                /* #3a66f5 */
+    --ring: 209 92% 53%;                /* #2688e6 */
 
-    --radius: 0.625rem;                 /* 10px */
+    --radius: 0.5rem;                   /* 8px default card radius */
 
     /* ── Semantic text ── */
     --text-primary: 222 61% 12%;
@@ -46,12 +46,12 @@
     --text-muted: 225 19% 44%;
     --text-soft: 225 19% 44%;
 
-    /* ── Legacy brand tokens (mapped to cobalt) ── */
+    /* ── Legacy brand tokens (mapped to soft medical blue) ── */
     --brand-ink: 222 61% 12%;
-    --brand-ocean: 227 75% 41%;
-    --brand-sky: 222 100% 69%;
+    --brand-ocean: 211 89% 45%;
+    --brand-sky: 210 91% 68%;
     --brand-clay: 225 19% 44%;
-    --brand-leaf: 227 75% 41%;
+    --brand-leaf: 211 89% 45%;
     --brand-gold: 36 89% 58%;
 
     /* ── Public surface aliases ── */
@@ -66,34 +66,49 @@
     --public-shadow-soft: var(--shadow-soft);
     --public-shadow-medium: var(--shadow-medium);
     --public-shadow-strong: var(--shadow-strong);
-    --public-radius-card: 0.625rem;
-    --public-radius-control: 0.5rem;
+    --public-radius-card: 0.5rem;
+    --public-radius-control: 0.375rem;
     --public-radius-pill: 999px;
+
+    /* ── Card system tokens ── */
+    --card-padding-compact: 0.875rem;
+    --card-padding-default: 1rem;
+    --card-padding-comfortable: 1.25rem;
+    --card-padding-hero: 1.5rem;
+    --card-radius-standard: 0.75rem;
+    --card-radius-hero: 1rem;
+    --card-border: hsl(var(--foreground) / 0.07);
+    --card-border-dark: rgba(255, 255, 255, 0.08);
+    --card-shadow: 0 1px 2px rgba(15, 37, 95, 0.04), 0 4px 12px rgba(15, 37, 95, 0.04);
+    --card-shadow-hover: 0 2px 4px rgba(15, 37, 95, 0.05), 0 8px 18px rgba(15, 37, 95, 0.06);
+    --card-gap: 0.875rem;
+    --section-padding-y: clamp(3rem, 6vw, 6rem);
+    --section-padding-x: clamp(1rem, 4vw, 2rem);
 
     /* ── Legacy surface tokens (mapped to new bg scale) ── */
     --surface-strong: 228 22% 93%;
     --surface-soft: 228 20% 96%;
     --surface-quiet: 0 0% 100%;
-    --surface-tint: 222 100% 96%;
-    --surface-emerald: 222 100% 96%;
+    --surface-tint: 210 100% 95%;       /* #e8f3ff */
+    --surface-emerald: 210 100% 95%;
 
-    --success: 227 75% 41%;
+    --success: 211 89% 45%;
     --success-foreground: 0 0% 100%;
 
     --shadow-color: 222 73% 22%;
-    --shadow-soft: 0 1px 2px rgba(15, 37, 95, 0.04), 0 12px 28px -22px rgba(15, 37, 95, 0.14);
-    --shadow-medium: 0 10px 24px -18px rgba(15, 37, 95, 0.16);
-    --shadow-strong: 0 18px 42px -24px rgba(15, 37, 95, 0.22);
+    --shadow-soft: var(--card-shadow);
+    --shadow-medium: var(--card-shadow-hover);
+    --shadow-strong: 0 10px 24px rgba(15, 37, 95, 0.08);
 
-    --chart-1: 227 75% 41%;
-    --chart-2: 227 91% 59%;
+    --chart-1: 211 89% 45%;
+    --chart-2: 209 92% 53%;
     --chart-3: 36 89% 58%;
     --chart-4: 222 100% 69%;
     --chart-5: 9 100% 62%;
 
     --sidebar: 0 0% 100%;
     --sidebar-foreground: 222 61% 12%;
-    --sidebar-primary: 227 75% 41%;
+    --sidebar-primary: 211 89% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 228 22% 93%;
     --sidebar-accent-foreground: 222 61% 12%;
@@ -111,7 +126,7 @@
     --popover: 220 24% 13%;
     --popover-foreground: 228 20% 94%;
 
-    --primary: 222 100% 79%;            /* #93b5ff approx */
+    --primary: 210 91% 76%;             /* #8fc4ff approx */
     --primary-foreground: 222 30% 8%;
 
     --secondary: 220 18% 18%;
@@ -128,7 +143,7 @@
 
     --border: 220 20% 22%;
     --input: 220 20% 22%;
-    --ring: 222 100% 69%;
+    --ring: 210 91% 68%;
 
     --text-primary: 228 20% 94%;
     --text-secondary: 225 15% 60%;
@@ -136,10 +151,10 @@
     --text-soft: 225 15% 55%;
 
     --brand-ink: 228 20% 94%;
-    --brand-ocean: 222 100% 69%;
-    --brand-sky: 222 80% 60%;
+    --brand-ocean: 210 91% 68%;
+    --brand-sky: 210 91% 76%;
     --brand-clay: 225 15% 55%;
-    --brand-leaf: 222 100% 69%;
+    --brand-leaf: 210 91% 68%;
     --brand-gold: 36 70% 55%;
 
     --surface-strong: 220 20% 16%;
@@ -148,23 +163,23 @@
     --surface-tint: 220 30% 18%;
     --surface-emerald: 220 30% 18%;
 
-    --success: 222 100% 69%;
+    --success: 210 91% 68%;
     --success-foreground: 222 30% 8%;
 
     --shadow-color: 222 40% 4%;
-    --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.22), 0 12px 28px -22px rgba(0, 0, 0, 0.5);
-    --shadow-medium: 0 10px 24px -18px rgba(0, 0, 0, 0.55);
-    --shadow-strong: 0 18px 42px -24px rgba(0, 0, 0, 0.7);
+    --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.22), 0 4px 12px rgba(0, 0, 0, 0.18);
+    --shadow-medium: 0 2px 4px rgba(0, 0, 0, 0.24), 0 8px 18px rgba(0, 0, 0, 0.22);
+    --shadow-strong: 0 10px 24px rgba(0, 0, 0, 0.28);
 
-    --chart-1: 222 100% 69%;
-    --chart-2: 222 80% 60%;
+    --chart-1: 210 91% 68%;
+    --chart-2: 210 91% 76%;
     --chart-3: 36 70% 55%;
     --chart-4: 222 80% 60%;
     --chart-5: 9 80% 55%;
 
     --sidebar: 222 24% 12%;
     --sidebar-foreground: 228 20% 94%;
-    --sidebar-primary: 222 100% 69%;
+    --sidebar-primary: 210 91% 68%;
     --sidebar-primary-foreground: 222 30% 8%;
     --sidebar-accent: 220 18% 18%;
     --sidebar-accent-foreground: 228 20% 94%;
@@ -233,7 +248,15 @@
 .editorial-shell {
   width: min(100%, 86rem);
   margin-inline: auto;
-  padding-inline: clamp(1.25rem, 2vw, 2rem);
+  padding-inline: var(--section-padding-x);
+}
+
+.public-section {
+  padding-block: var(--section-padding-y);
+}
+
+.public-section-compact {
+  padding-block: clamp(3rem, 5vw, 4.5rem);
 }
 
 /* ============================================

@@ -1,11 +1,13 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { SPECIALTIES, PAYMENT_CONFIG } from '@/config/constants'
 import { useToast } from '@/components/Toast'
 import type { Doctor, Profile } from '@/types'
 import { cn } from '@/lib/utils'
+import { clearConnectDraft, getConnectDraft } from '@/lib/connect/session-draft'
+import type { ConnectProfileDraft } from '@/lib/connect/types'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -31,6 +33,8 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
   const [submitError, setSubmitError] = useState('')
   const [submitMessage, setSubmitMessage] = useState('')
   const [currentStep, setCurrentStep] = useState(1)
+  const [connectDraft, setConnectDraft] = useState<ConnectProfileDraft | null>(null)
+  const [connectDraftApplied, setConnectDraftApplied] = useState(false)
 
   // SEP Verification state
   const [verifying, setVerifying] = useState(false)
@@ -74,6 +78,51 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
   const isComplete = yearsExperience && bio && licenseNumber && price
   const isVerified = doctor?.status === 'approved'
   const hasAvailability = Object.values(availability).some((config) => config.enabled)
+
+  useEffect(() => {
+    if (connectDraftApplied) return
+
+    const draft = getConnectDraft()
+    if (!draft) {
+      setConnectDraftApplied(true)
+      return
+    }
+
+    const fieldValue = (key: string) => draft.fields.find((field) => field.key === key)?.value || ''
+    const suggestedSpecialty = fieldValue('specialty')
+    const suggestedBio = fieldValue('bio')
+    const suggestedCedula = fieldValue('cedula')
+
+    setConnectDraft(draft)
+
+    if (!bio && suggestedBio) {
+      setBio(suggestedBio.slice(0, 500))
+    }
+
+    if (!licenseNumber && suggestedCedula) {
+      setLicenseNumber(suggestedCedula)
+    }
+
+    if (!city && draft.practice.city) {
+      setCity(draft.practice.city)
+    }
+
+    if (!state && draft.practice.state) {
+      setState(draft.practice.state)
+    }
+
+    if (!specialty && suggestedSpecialty) {
+      const matchingSpec = SPECIALTIES.find((spec) =>
+        spec.name.toLowerCase().includes(suggestedSpecialty.toLowerCase())
+          || suggestedSpecialty.toLowerCase().includes(spec.name.toLowerCase())
+      )
+      if (matchingSpec) {
+        setSpecialty(matchingSpec.slug)
+      }
+    }
+
+    setConnectDraftApplied(true)
+  }, [bio, city, connectDraftApplied, licenseNumber, specialty, state])
 
   // SEP Verification handler
   const handleVerifyCedula = useCallback(async () => {
@@ -165,6 +214,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
       })
 
       if (res.ok) {
+        clearConnectDraft()
         addToast('Perfil guardado correctamente.', 'success')
         setSubmitMessage(isVerified
           ? 'Tus cambios se guardaron y tu perfil sigue publicado.'
@@ -269,6 +319,36 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
               : 'Completa tu información para comenzar a recibir pacientes'
           }
         </p>
+
+        {connectDraft && (
+          <section className="mb-8 rounded-[12px] border border-primary/20 bg-primary/5 p-5">
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <div className="flex items-center gap-2">
+                  <Stethoscope className="h-4 w-4 text-primary" />
+                  <h2 className="font-display text-lg font-semibold tracking-tight text-foreground">
+                    Borrador importado desde Doctor Connect
+                  </h2>
+                </div>
+                <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                  Usamos datos sugeridos para acelerar el alta de {connectDraft.practice.name}. Confirma cada campo antes de guardar; cédula y credenciales no se verifican por IA.
+                </p>
+              </div>
+              <Badge variant="info">Sugerido por IA</Badge>
+            </div>
+            <div className="mt-4 grid gap-2 sm:grid-cols-2">
+              {connectDraft.fields
+                .filter((field) => field.status === 'suggested' || field.status === 'missing')
+                .slice(0, 6)
+                .map((field) => (
+                  <div key={field.key} className="rounded-[8px] border border-border bg-card px-3 py-2">
+                    <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">{field.label}</p>
+                    <p className="mt-1 text-sm font-medium text-foreground">{field.value || 'Pendiente'}</p>
+                  </div>
+                ))}
+            </div>
+          </section>
+        )}
 
         {/* Progress pills */}
         <div className="flex gap-2 mb-10">

@@ -20,6 +20,7 @@ import {
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { TrustBar } from '@/components/ui/card-patterns'
 import { formatCurrency, formatDoctorName } from '@/lib/utils'
 import type { PublicLandingData } from '@/lib/public-trust'
 
@@ -168,14 +169,14 @@ export function HeroSection({ trustData }: HeroSectionProps) {
               Describe tus síntomas a Dr. Simeón, descubre la especialidad correcta y agenda con médicos verificados en minutos.
             </p>
 
-            <div className="mt-7 hidden gap-4 sm:grid sm:grid-cols-3">
+            <div className="mt-7 hidden gap-3 sm:grid sm:grid-cols-3">
               {trustBullets.map((item) => {
                 const Icon = item.icon
 
                 return (
                   <div key={item.title} className="flex gap-3">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] bg-white/10 text-[#9cc4ff] ring-1 ring-white/10">
-                      <Icon className="h-5 w-5" aria-hidden="true" />
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[8px] bg-white/10 text-[#9cc4ff] ring-1 ring-white/10">
+                      <Icon className="h-4 w-4" aria-hidden="true" />
                     </span>
                     <span>
                       <span className="block text-sm font-semibold leading-5 text-white">{item.title}</span>
@@ -186,14 +187,14 @@ export function HeroSection({ trustData }: HeroSectionProps) {
               })}
             </div>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 pb-6 sm:flex-row lg:pb-8">
               <Button asChild size="lg" className="w-full bg-white text-[#071a4e] shadow-[0_20px_50px_-28px_rgba(255,255,255,0.65)] hover:bg-white/94 sm:w-auto">
                 <Link href="/ai-consulta">
                   Hablar con Dr. Simeón
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>
-              <Button asChild size="lg" className="w-full border border-white/18 bg-[#1264f6] text-white shadow-[0_20px_54px_-32px_rgba(18,100,246,0.75)] hover:bg-[#1264f6]/92 sm:w-auto">
+              <Button asChild size="lg" className="w-full border border-white/18 bg-[#0d72d6] text-white shadow-[0_20px_54px_-32px_rgba(13,114,214,0.65)] hover:bg-[#0d72d6]/92 sm:w-auto">
                 <Link href="/doctors">
                   <Search className="h-4 w-4" aria-hidden="true" />
                   Ver médicos
@@ -208,7 +209,7 @@ export function HeroSection({ trustData }: HeroSectionProps) {
             transition={{ duration: 0.5, delay: 0.06, ease: [0.2, 0.7, 0.2, 1] }}
             className="relative z-10 hidden self-end lg:block"
           >
-            <div className="relative mx-auto h-[34rem] max-w-[22rem] overflow-hidden rounded-t-[34px]">
+            <div className="relative mx-auto h-[34rem] max-w-[22rem] overflow-hidden rounded-t-[18px]">
               <Image
                 src={heroDoctorImage}
                 alt="Médica de Doctor.mx"
@@ -227,8 +228,8 @@ export function HeroSection({ trustData }: HeroSectionProps) {
             transition={{ duration: 0.5, delay: 0.1, ease: [0.2, 0.7, 0.2, 1] }}
             className="relative z-20 pb-8 lg:pb-0"
           >
-            <div className="rounded-[24px] border border-white/18 bg-[#f4f8ff] p-4 text-[#071a4e] shadow-[0_32px_90px_-42px_rgba(0,0,0,0.65)]">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-[#e7efff] px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-[#1f48de]">
+            <div className="max-w-[440px] rounded-[16px] border border-white/18 bg-[#f4f8ff] p-4 text-[#071a4e] shadow-[var(--card-shadow)]">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-[#e8f3ff] px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-[#0d72d6]">
                 <Stethoscope className="h-4 w-4" aria-hidden="true" />
                 Asistente IA
               </div>
@@ -236,18 +237,18 @@ export function HeroSection({ trustData }: HeroSectionProps) {
               <div className="space-y-3">
                 <div>
                   <p className="mb-2 text-sm font-semibold">¿Qué síntomas tienes hoy?</p>
-                  <div className="ml-auto max-w-[16rem] rounded-[18px] rounded-br-[4px] bg-[#dce9ff] px-4 py-3 text-sm leading-5 text-[#0a2769]">
+                  <div className="ml-auto max-w-[16rem] rounded-[10px] rounded-br-[4px] bg-[#dce9ff] px-4 py-3 text-sm leading-5 text-[#0a2769]">
                     Tengo brotes en la cara desde hace semanas y mi piel se ve más grasa de lo normal.
                   </div>
                 </div>
 
-                <div className="max-w-[18rem] rounded-[18px] rounded-bl-[4px] bg-white px-4 py-3 text-sm leading-5 text-[#4f5d7c] shadow-sm">
+                <div className="max-w-[18rem] rounded-[10px] rounded-bl-[4px] bg-white px-4 py-3 text-sm leading-5 text-[#4f5d7c] shadow-sm">
                   Entiendo. Con base en lo que cuentas, te recomiendo consultar con:
                 </div>
 
-                <div className="rounded-[18px] border border-[#d8e3f6] bg-white p-4 shadow-[0_18px_38px_-30px_rgba(15,37,95,0.45)]">
+                <div className="rounded-[10px] border border-[#d8e3f6] bg-white p-3 shadow-[var(--card-shadow)]">
                   <div className="flex gap-4">
-                    <Link href={profileHref} className="relative h-20 w-20 shrink-0 overflow-hidden rounded-[18px] bg-[#e7efff]">
+                    <Link href={profileHref} className="relative aspect-square h-16 shrink-0 overflow-hidden rounded-[10px] bg-[#e8f3ff]">
                       {doctor.profile?.photo_url ? (
                         <Image
                           src={doctor.profile.photo_url}
@@ -258,7 +259,7 @@ export function HeroSection({ trustData }: HeroSectionProps) {
                         />
                       ) : (
                         <div className="flex h-full w-full items-center justify-center">
-                          <Stethoscope className="h-7 w-7 text-[#1f48de]" aria-hidden="true" />
+                          <Stethoscope className="h-7 w-7 text-[#0d72d6]" aria-hidden="true" />
                         </div>
                       )}
                     </Link>
@@ -266,14 +267,14 @@ export function HeroSection({ trustData }: HeroSectionProps) {
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
                         <h2 className="truncate text-lg font-semibold tracking-[-0.02em]">{specialty}</h2>
-                        <CheckCircle2 className="h-4 w-4 text-[#1f48de]" aria-label="Recomendación validada" />
+                        <CheckCircle2 className="h-4 w-4 text-[#0d72d6]" aria-label="Recomendación validada" />
                       </div>
                       <p className="text-sm text-[#5c6783]">{doctorName}</p>
                       <p className="mt-1 flex items-center gap-1.5 text-xs text-[#5c6783]">
                         <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
                         {location}
                       </p>
-                      <p className="mt-2 flex items-center gap-1.5 text-xs font-medium text-[#1f48de]">
+                      <p className="mt-2 flex items-center gap-1.5 text-xs font-medium text-[#0d72d6]">
                         <BadgeCheck className="h-3.5 w-3.5" aria-hidden="true" />
                         Céd. Prof. {cedula || 'no mostrada'}
                       </p>
@@ -282,7 +283,7 @@ export function HeroSection({ trustData }: HeroSectionProps) {
 
                   <div className="mt-4 flex flex-wrap gap-2">
                     {['09:00', '11:00', '15:30', '17:00'].map((slot) => (
-                      <span key={slot} className="rounded-full border border-[#c8d9fa] bg-[#f7faff] px-3 py-1 text-xs font-semibold text-[#1f48de]">
+                      <span key={slot} className="rounded-full border border-[#c8d9fa] bg-[#f7faff] px-3 py-1 text-xs font-semibold text-[#0d72d6]">
                         {slot}
                       </span>
                     ))}
@@ -290,15 +291,15 @@ export function HeroSection({ trustData }: HeroSectionProps) {
 
                   <div className="mt-4 grid gap-2 border-t border-[#e4ebf7] pt-4 text-xs text-[#5c6783] sm:grid-cols-2">
                     <span className="flex items-center gap-1.5">
-                      <Video className="h-3.5 w-3.5 text-[#1f48de]" aria-hidden="true" />
+                      <Video className="h-3.5 w-3.5 text-[#0d72d6]" aria-hidden="true" />
                       {doctor.offers_video ? 'En línea disponible' : 'Presencial'}
                     </span>
                     <span className="flex items-center gap-1.5">
-                      <CreditCard className="h-3.5 w-3.5 text-[#1f48de]" aria-hidden="true" />
+                      <CreditCard className="h-3.5 w-3.5 text-[#0d72d6]" aria-hidden="true" />
                       Desde {formatCurrency(doctor.price_cents, doctor.currency)}
                     </span>
                     <span className="flex items-center gap-1.5 sm:col-span-2">
-                      <ShieldCheck className="h-3.5 w-3.5 text-[#1f48de]" aria-hidden="true" />
+                      <ShieldCheck className="h-3.5 w-3.5 text-[#0d72d6]" aria-hidden="true" />
                       {verifiedDate ? `Verificada ${verifiedDate}` : 'Verificación visible cuando existe'}
                     </span>
                   </div>
@@ -324,32 +325,16 @@ export function HeroSection({ trustData }: HeroSectionProps) {
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.16, ease: [0.2, 0.7, 0.2, 1] }}
-          className="relative z-30 pb-8 lg:-mt-2"
+          className="relative z-30 pb-8"
         >
-          <div className="grid gap-0 overflow-hidden rounded-[18px] border border-[#d9e3f5] bg-white text-[#071a4e] shadow-[0_22px_70px_-40px_rgba(15,37,95,0.5)] sm:grid-cols-2 lg:grid-cols-5">
-            {heroMetrics.map((item, index) => {
-              const Icon = item.icon
-
-              return (
-                <div
-                  key={item.label}
-                  className="flex items-center gap-4 border-b border-[#e7eef9] px-5 py-4 last:border-b-0 sm:[&:nth-child(odd)]:border-r lg:border-b-0 lg:border-r lg:last:border-r-0 sm:last:border-r-0"
-                >
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px] bg-[#eaf2ff] text-[#1f48de]">
-                    <Icon className="h-5 w-5" aria-hidden="true" />
-                  </span>
-                  <span>
-                    <span className="block text-lg font-semibold tracking-[-0.02em]">
-                      {item.value}
-                    </span>
-                    <span className="mt-0.5 block text-xs leading-4 text-[#5c6783]">
-                      {item.label}
-                    </span>
-                  </span>
-                </div>
-              )
-            })}
-          </div>
+          <TrustBar
+            items={heroMetrics.map((item) => ({
+              icon: item.icon,
+              title: item.value,
+              body: item.label,
+            }))}
+            className="text-[#071a4e] shadow-[var(--card-shadow)]"
+          />
 
           <div className="mt-4 flex flex-wrap items-center justify-center gap-3 text-xs text-white/70 lg:justify-end">
             {featuredDoctors.map((item) => (

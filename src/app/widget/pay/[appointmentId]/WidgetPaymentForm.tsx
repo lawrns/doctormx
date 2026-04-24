@@ -114,8 +114,8 @@ export function WidgetPaymentForm(props: WidgetPaymentFormProps) {
               appearance: {
                 theme: 'stripe',
                 variables: {
-                  borderRadius: '14px',
-                  colorPrimary: '#1f48de',
+                  borderRadius: '8px',
+                  colorPrimary: '#0d72d6',
                   colorText: '#0f172a',
                   fontFamily: 'Plus Jakarta Sans, system-ui, sans-serif',
                 },

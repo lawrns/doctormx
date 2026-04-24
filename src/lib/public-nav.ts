@@ -24,7 +24,7 @@ export const landingNavItems: PublicNavItem[] = [
   {
     label: 'Soy doctor',
     compactLabel: 'Soy doctor',
-    href: '/for-doctors',
+    href: '/connect',
     icon: UserPlus,
   },
 ]
@@ -51,7 +51,7 @@ export const sharedHeaderNavItems: PublicNavItem[] = [
   {
     label: 'Soy doctor',
     compactLabel: 'Soy doctor',
-    href: '/for-doctors',
+    href: '/connect',
     icon: UserPlus,
   },
 ]

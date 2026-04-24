@@ -48,7 +48,7 @@ export function LandingPageClient({ trustData }: LandingPageClientProps) {
               : 'Dr. Simeón orienta primero · médicos verificados atienden después'}
           </span>
           <span className="hidden sm:inline text-[#d4d9e3]">|</span>
-          <span className="inline-flex items-center gap-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-[#1f48de]">
+          <span className="inline-flex items-center gap-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-[#0d72d6]">
             <Stethoscope className="h-3.5 w-3.5" />
             IA con límites de seguridad
           </span>
@@ -106,7 +106,7 @@ export function LandingPageClient({ trustData }: LandingPageClientProps) {
                       <Link
                         key={item.href}
                         href={item.href}
-                        className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-[#1c2647] transition-colors hover:bg-[#f7f8fb] hover:text-[#0a1533]"
+                        className="flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium text-[#1c2647] transition-colors hover:bg-[#f7f8fb] hover:text-[#0a1533]"
                       >
                         {item.label}
                       </Link>
