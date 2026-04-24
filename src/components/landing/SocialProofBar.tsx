@@ -15,17 +15,17 @@ const proofItems = [
     key: 'approvedDoctors' as const,
   },
   {
-    label: 'Reseñas reales',
+    label: 'Reseñas de consulta',
     icon: BookOpen,
     key: 'reviews' as const,
   },
   {
-    label: 'Especialidades activas',
+    label: 'Especialidades para derivar',
     icon: HeartPulse,
     key: 'specialties' as const,
   },
   {
-    label: 'Verificados SEP',
+    label: 'Verificación SEP',
     icon: BadgeCheck,
     key: 'verifiedDoctors' as const,
   },
@@ -40,10 +40,10 @@ export function SocialProofBar({ trustData }: SocialProofBarProps) {
         metrics.specialties > 0 ||
         metrics.verifiedDoctors > 0)
   )
-  const fallbackValues = ['Perfiles', 'Completadas', 'Activas', 'Cédula']
+  const fallbackValues = ['Sin inflar', 'Solo reales', 'Activas', 'Cuando existe']
 
   return (
-    <section className="border-y border-border bg-card py-4">
+    <section className="border-y border-border bg-card py-4" aria-label="Pruebas de confianza de Doctor.mx">
       <div className="editorial-shell">
         <div className="grid divide-y divide-border sm:grid-cols-2 sm:divide-x sm:divide-y-0 xl:grid-cols-4">
           {proofItems.map((item, index) => {

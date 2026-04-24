@@ -14,10 +14,8 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet'
 import { HeroSection } from './HeroSection'
-import { SocialProofBar } from './SocialProofBar'
 import DrSimeonShowcase from './DrSimeonShowcase'
 import { HowItWorks } from './HowItWorks'
-import { StatsSection } from './StatsSection'
 import { FeaturesSection } from './FeaturesSection'
 import { TestimonialsSection } from './TestimonialsSection'
 import { CTASection } from './CTASection'
@@ -45,8 +43,8 @@ export function LandingPageClient({ trustData }: LandingPageClientProps) {
         <div className="editorial-shell flex flex-col items-center justify-center gap-2 text-sm sm:flex-row sm:gap-4">
           <span className="inline-flex items-center gap-2 font-medium tracking-[-0.01em] text-[#0a1533]">
             {trustData?.metrics.approvedDoctors
-              ? `${trustData.metrics.approvedDoctors.toLocaleString('es-MX')} doctores aprobados`
-              : 'Perfiles con evidencia visible'}
+              ? `Dr. Simeón orienta primero · ${trustData.metrics.approvedDoctors.toLocaleString('es-MX')} doctores aprobados`
+              : 'Dr. Simeón orienta primero · médicos verificados atienden después'}
           </span>
           <span className="hidden sm:inline text-[#d4d9e3]">|</span>
           <span className="inline-flex items-center gap-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-[#00a878]">
@@ -99,52 +97,50 @@ export function LandingPageClient({ trustData }: LandingPageClientProps) {
                 </SheetTrigger>
                 <SheetContent side="right" className="w-[88%] max-w-sm border-l border-[#d4d9e3] bg-card">
                   <SheetHeader className="border-b border-[#eef0f5] pb-4">
-                    <SheetTitle className="font-display text-[#0a1533]">Explora Doctor.mx</SheetTitle>
-                    <SheetDescription className="text-[#5c6783]">Navega por las principales rutas públicas desde cualquier pantalla.</SheetDescription>
+                    <SheetTitle className="font-display text-[#0a1533]">Empieza con Dr. Simeón</SheetTitle>
+                    <SheetDescription className="text-[#5c6783]">Describe síntomas, recibe orientación inicial y llega a médicos verificados cuando corresponde.</SheetDescription>
                   </SheetHeader>
-	                  <nav className="flex flex-col gap-2 px-4 pb-6">
-	                    {landingNavItems.map((item) => (
-	                      <Link
-	                        key={item.href}
-	                        href={item.href}
+                  <nav className="flex flex-col gap-2 px-4 pb-6">
+                    {landingNavItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
                         className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-[#1c2647] transition-colors hover:bg-[#f7f8fb] hover:text-[#0a1533]"
                       >
-	                        {item.label}
-	                      </Link>
-	                    ))}
-	                    <div className="mt-4 grid gap-3 border-t border-[#eef0f5] pt-4">
-	                      <Button asChild variant="ghost" className="w-full justify-center">
-	                        <Link href="/auth/login">Iniciar sesión</Link>
-	                      </Button>
-	                      <Button asChild variant="hero" className="w-full justify-center">
-	                        <Link href="/auth/register">Empezar gratis</Link>
-	                      </Button>
-	                    </div>
-	                  </nav>
-	                </SheetContent>
-	              </Sheet>
-	              <Badge variant="luxe" className="hidden lg:inline-flex">Disponibilidad 24/7</Badge>
-	              <Button asChild variant="ghost" className="hidden sm:inline-flex">
-	                <Link href="/auth/login">Iniciar sesión</Link>
-	              </Button>
-	              <Button asChild variant="hero" className="px-5 text-sm font-semibold">
-	                <Link href="/auth/register">
-	                  Consulta gratis
-	                  <ArrowUpRight className="h-4 w-4" />
-	                </Link>
-	              </Button>
-	            </div>
+                        {item.label}
+                      </Link>
+                    ))}
+                    <div className="mt-4 grid gap-3 border-t border-[#eef0f5] pt-4">
+                      <Button asChild variant="ghost" className="w-full justify-center">
+                        <Link href="/auth/login">Iniciar sesión</Link>
+                      </Button>
+                      <Button asChild variant="hero" className="w-full justify-center">
+                        <Link href="/ai-consulta">Hablar con Dr. Simeón</Link>
+                      </Button>
+                    </div>
+                  </nav>
+                </SheetContent>
+              </Sheet>
+              <Badge variant="luxe" className="hidden lg:inline-flex">IA clínica + médicos verificados</Badge>
+              <Button asChild variant="ghost" className="hidden sm:inline-flex">
+                <Link href="/auth/login">Iniciar sesión</Link>
+              </Button>
+              <Button asChild variant="hero" className="hidden px-5 text-sm font-semibold sm:inline-flex">
+                <Link href="/ai-consulta">
+                  Hablar con Dr. Simeón
+                  <ArrowUpRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </motion.header>
 
       <HeroSection trustData={trustData} />
-      <SocialProofBar trustData={trustData} />
+      <HowItWorks />
       <TrustClaimBlock />
       <DrSimeonShowcase />
-      <HowItWorks />
       <FeaturesSection />
-      <StatsSection trustData={trustData} />
       <TestimonialsSection trustData={trustData} />
       <CTASection trustData={trustData} />
 
@@ -156,20 +152,20 @@ export function LandingPageClient({ trustData }: LandingPageClientProps) {
                 <DoctorMxLogo inverted showDescriptor />
               </Link>
               <p className="text-sm leading-relaxed text-[#f7f8fb]/70">
-                Una plataforma de salud digital construida para decidir con más evidencia y menos ruido.
+                Dr. Simeón orienta primero y el marketplace conecta con médicos verificados cuando la consulta es el siguiente paso.
               </p>
               <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#f7f8fb]/10 bg-[#f7f8fb]/5 px-3 py-2 font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-[#f7f8fb]/80">
                 <HeartHandshake className="h-3.5 w-3.5" />
-                Confianza clínica + diseño premium
+                Orientación clínica + médicos reales
               </div>
             </div>
 
             <div>
               <h4 className="mb-4 font-display text-sm font-semibold uppercase tracking-[0.08em]">Pacientes</h4>
               <ul className="space-y-2.5 text-sm text-[#f7f8fb]/60">
+                <li><Link href="/ai-consulta" className="transition-colors hover:text-[#f7f8fb] hover:underline hover:underline-offset-4">Hablar con Dr. Simeón</Link></li>
                 <li><Link href="/doctors" className="transition-colors hover:text-[#f7f8fb] hover:underline hover:underline-offset-4">Buscar doctores</Link></li>
                 <li><Link href="/specialties" className="transition-colors hover:text-[#f7f8fb] hover:underline hover:underline-offset-4">Especialidades</Link></li>
-                <li><Link href="/app/second-opinion" className="transition-colors hover:text-[#f7f8fb] hover:underline hover:underline-offset-4">Segunda opinión</Link></li>
                 <li><Link href="/app" className="transition-colors hover:text-[#f7f8fb] hover:underline hover:underline-offset-4">Mi cuenta</Link></li>
               </ul>
             </div>

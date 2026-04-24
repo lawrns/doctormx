@@ -7,22 +7,22 @@ import { Eyebrow } from '@/components/Eyebrow'
 const steps = [
   {
     title: 'Describe síntomas',
-    description: 'El intake recoge señales clínicas, contexto y datos básicos sin pedirte elegir especialidad desde cero.',
+    description: 'Empieza con lenguaje natural. Dr. Simeón recoge contexto, duración, intensidad y datos básicos antes de sugerir el camino.',
     icon: Stethoscope,
   },
   {
-    title: 'Revisión de seguridad',
-    description: 'Si hay dificultad para respirar, dolor de pecho u otra señal de alarma, el flujo cambia a atención urgente.',
+    title: 'Descarta señales de alarma',
+    description: 'Si aparecen datos de urgencia, el flujo no empuja una reserva: orienta hacia atención humana o urgente.',
     icon: ShieldAlert,
   },
   {
-    title: 'Doctor recomendado',
-    description: 'Cuando el caso es apto para consulta, se muestra un médico verificado con disponibilidad y precio.',
+    title: 'Especialidad y médico',
+    description: 'Cuando el caso es apto para consulta, la plataforma muestra especialidad probable y médicos verificados con modalidad y precio.',
     icon: CalendarCheck,
   },
   {
-    title: 'Reserva con pago',
-    description: 'La cita queda ligada al pago y al horario seleccionado para reducir cancelaciones y doble reserva.',
+    title: 'Reserva con contexto',
+    description: 'La cita conserva el contexto de la orientación para que booking se sienta como continuidad, no como empezar de cero.',
     icon: CreditCard,
   },
 ]
@@ -41,10 +41,10 @@ export function HowItWorks() {
           >
             <Eyebrow className="mb-4">Cómo funciona</Eyebrow>
             <h2 className="font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
-              Un flujo clínico pensado para convertir sin perder seguridad.
+              Del síntoma a la cita correcta, sin obligarte a adivinar.
             </h2>
             <p className="mt-4 max-w-[58ch] text-base leading-7 text-muted-foreground">
-              Doctor.mx no es solo un directorio. La experiencia debe llevar al paciente desde orientación hasta una consulta real, con límites claros para la IA.
+              Doctor.mx empieza con orientación clínica y termina, cuando corresponde, en una consulta real con un médico verificado.
             </p>
           </motion.div>
 

@@ -33,24 +33,24 @@ export function CTASection({ trustData }: CTASectionProps) {
             {approvedDoctors ? `${approvedDoctors} doctores aprobados` : 'Doctor.mx'}
           </Eyebrow>
 
-          <h2 className="font-display text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.02] tracking-[-0.03em] text-white">
-            Empieza con evidencia y termina con una cita real.
+          <h2 className="font-display text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.03] tracking-[-0.035em] text-white">
+            Empieza con Dr. Simeón. Agenda solo cuando tenga sentido.
           </h2>
 
           <p className="mx-auto max-w-2xl text-lg leading-8 text-white/76">
-            Busca doctores verificados, revisa perfiles con foto real y reserva sin depender de promesas infladas.
+            Describe tus síntomas, recibe orientación inicial y pasa a médicos verificados con contexto, modalidad, precio y evidencia visible.
           </p>
 
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button asChild variant="default" size="lg" className="w-full bg-white text-[hsl(var(--public-ink))] hover:bg-white/95 sm:w-auto">
-              <Link href="/doctors">
-                Buscar doctores
+              <Link href="/ai-consulta">
+                Hablar con Dr. Simeón
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="w-full border-white/18 bg-white/6 text-white hover:bg-white/12 sm:w-auto">
-              <Link href="/for-doctors">
-                Soy médico
+              <Link href="/doctors">
+                Ver médicos verificados
               </Link>
             </Button>
           </div>
@@ -66,7 +66,7 @@ export function CTASection({ trustData }: CTASectionProps) {
             </div>
             <div className="flex gap-3 text-sm leading-6 text-white/82">
               <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-white/85" />
-              <span>De búsqueda a cita sin inflar señales.</span>
+              <span>De orientación a cita sin inflar señales.</span>
             </div>
           </div>
         </motion.div>
