@@ -16,6 +16,7 @@ import {
 import { HeroSection } from './HeroSection'
 import DrSimeonShowcase from './DrSimeonShowcase'
 import { HowItWorks } from './HowItWorks'
+import { AIGuidedMarketplacePreview } from './AIGuidedMarketplacePreview'
 import { FeaturesSection } from './FeaturesSection'
 import { TestimonialsSection } from './TestimonialsSection'
 import { CTASection } from './CTASection'
@@ -137,6 +138,7 @@ export function LandingPageClient({ trustData }: LandingPageClientProps) {
       </motion.header>
 
       <HeroSection trustData={trustData} />
+      <AIGuidedMarketplacePreview trustData={trustData} />
       <HowItWorks />
       <TrustClaimBlock />
       <DrSimeonShowcase />

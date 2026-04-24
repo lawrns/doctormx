@@ -1,4 +1,5 @@
 export { HeroSection } from './HeroSection'
+export { AIGuidedMarketplacePreview } from './AIGuidedMarketplacePreview'
 export { SocialProofBar } from './SocialProofBar'
 export { HowItWorks } from './HowItWorks'
 export { StatsSection } from './StatsSection'
