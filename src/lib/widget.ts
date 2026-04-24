@@ -57,7 +57,7 @@ export type WidgetContext = {
 type SupabaseServiceClient = ReturnType<typeof createServiceClient>
 
 const DEFAULT_PRIMARY_COLOR = '#1f48de'
-const DEFAULT_ACCENT_COLOR = '#00a878'
+const DEFAULT_ACCENT_COLOR = '#1f48de'
 const HEX_COLOR = /^#[0-9A-Fa-f]{6}$/
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 

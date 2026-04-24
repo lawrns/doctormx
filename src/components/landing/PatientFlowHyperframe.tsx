@@ -16,9 +16,9 @@ import {
 
 const STEPS = [
   { id: 'chat', icon: MessageCircle, label: 'Cuéntanos', accent: '#1f48de' },
-  { id: 'analysis', icon: Brain, label: 'Analizamos', accent: '#00a878' },
+  { id: 'analysis', icon: Brain, label: 'Analizamos', accent: '#1f48de' },
   { id: 'match', icon: Stethoscope, label: 'Conectamos', accent: '#1f48de' },
-  { id: 'confirm', icon: CalendarCheck, label: 'Listo', accent: '#00a878' },
+  { id: 'confirm', icon: CalendarCheck, label: 'Listo', accent: '#1f48de' },
 ] as const
 
 const STEP_DURATION = 3500
@@ -34,7 +34,7 @@ function StepIndicator({ currentStep }: { currentStep: number }) {
             <div
               className="flex h-6 w-6 items-center justify-center rounded-full transition-colors duration-300"
               style={{
-                backgroundColor: isDone ? '#00a878' : isActive ? step.accent : '#eef0f5',
+                backgroundColor: isDone ? '#1f48de' : isActive ? step.accent : '#eef0f5',
               }}
             >
               {isDone ? (
@@ -46,7 +46,7 @@ function StepIndicator({ currentStep }: { currentStep: number }) {
             {i < STEPS.length - 1 && (
               <div
                 className="mx-1.5 h-px w-4 transition-colors duration-300"
-                style={{ backgroundColor: isDone ? '#00a878' : '#eef0f5' }}
+                style={{ backgroundColor: isDone ? '#1f48de' : '#eef0f5' }}
               />
             )}
           </div>
@@ -70,7 +70,7 @@ function ChatStep() {
         </div>
         <div className="min-w-0">
           <p className="text-[10px] font-semibold text-[#0a1533]">Dr. Simeon</p>
-          <p className="text-[8px] text-[#00a878]">En línea</p>
+          <p className="text-[8px] text-[#1f48de]">En línea</p>
         </div>
       </div>
       {messages.map((msg, i) => (
@@ -117,13 +117,13 @@ function AnalysisStep() {
   return (
     <div className="flex h-full flex-col items-center justify-center gap-3 px-4 py-3">
       <motion.div
-        className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#00a878]/10"
+        className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#1f48de]/10"
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.4, ease: 'backOut' }}
       >
         <motion.div animate={{ rotate: 360 }} transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}>
-          <Brain className="h-6 w-6 text-[#00a878]" />
+          <Brain className="h-6 w-6 text-[#1f48de]" />
         </motion.div>
       </motion.div>
       <motion.p
@@ -144,7 +144,7 @@ function AnalysisStep() {
             className="flex items-center gap-2 rounded-lg border border-[#d4d9e3] bg-card px-2.5 py-1.5"
           >
             {step.done ? (
-              <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-[#00a878]" />
+              <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-[#1f48de]" />
             ) : (
               <motion.div
                 className="h-3.5 w-3.5 shrink-0 rounded-full border-2 border-[#1f48de] border-t-transparent"
@@ -167,9 +167,9 @@ function DoctorMatchStep() {
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35 }}
-        className="rounded-lg bg-[#d7f5e6] px-2.5 py-1.5 text-center"
+        className="rounded-lg bg-[#e7efff] px-2.5 py-1.5 text-center"
       >
-        <p className="text-[10px] font-medium text-[#00a878]">
+        <p className="text-[10px] font-medium text-[#1f48de]">
           Especialidad recomendada: <strong>Neurología</strong>
         </p>
       </motion.div>
@@ -226,9 +226,9 @@ function ConfirmationStep() {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: 0.15, duration: 0.4, ease: 'backOut' }}
-        className="flex h-12 w-12 items-center justify-center rounded-full bg-[#00a878]/10"
+        className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1f48de]/10"
       >
-        <CheckCircle2 className="h-7 w-7 text-[#00a878]" />
+        <CheckCircle2 className="h-7 w-7 text-[#1f48de]" />
       </motion.div>
 
       <motion.div
@@ -297,7 +297,7 @@ export default function PatientFlowHyperframe() {
         <div className="flex items-center justify-between rounded-t-[1.75rem] bg-[#0a1533] px-5 py-2">
           <span className="text-[9px] font-medium text-[#f7f8fb]/70">9:41</span>
           <div className="h-2 w-4 rounded-sm border border-[#f7f8fb]/40">
-            <div className="h-full w-3/4 rounded-sm bg-[#00a878]" />
+            <div className="h-full w-3/4 rounded-sm bg-[#1f48de]" />
           </div>
         </div>
 

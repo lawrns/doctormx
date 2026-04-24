@@ -18,7 +18,7 @@ function DrSimeonAvatar({ size = 'default' }: { size?: 'default' | 'large' }) {
     <div className="relative">
       {/* Vital pulse ring */}
       <motion.div
-        className={`absolute -inset-[3px] ${ringSize} rounded-full bg-gradient-to-r from-[#00a878] via-[#1f48de] to-[#00a878] bg-[length:200%_100%]`}
+        className={`absolute -inset-[3px] ${ringSize} rounded-full bg-gradient-to-r from-[#1f48de] via-[#93b5ff] to-[#1f48de] bg-[length:200%_100%]`}
         animate={{
           backgroundPosition: ['0% center', '200% center'],
         }}
@@ -222,7 +222,7 @@ export default function DrSimeonShowcase() {
                   transition={{ delay: index * 0.1 }}
                   className="flex items-center gap-3 text-[#1c2647]"
                 >
-                  <feature.icon className="h-5 w-5 shrink-0 text-[#00a878]" />
+                  <feature.icon className="h-5 w-5 shrink-0 text-[#1f48de]" />
                   {feature.text}
                 </motion.li>
               ))}
@@ -259,7 +259,7 @@ export default function DrSimeonShowcase() {
                     <div className="flex-1">
                       <h3 className="font-display text-sm font-semibold text-[#f7f8fb]">Dr. Simeón</h3>
                       <div className="flex items-center gap-1.5">
-                        <span className="h-2 w-2 rounded-full bg-[#00a878]" />
+                        <span className="h-2 w-2 rounded-full bg-[#1f48de]" />
                         <span className="text-xs text-[#f7f8fb]/70">Ejemplo ilustrativo</span>
                       </div>
                     </div>

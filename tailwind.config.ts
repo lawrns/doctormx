@@ -85,8 +85,8 @@ const config: Config = {
           soft: 'hsl(var(--brand-ink) / 0.85)',
         },
         vital: {
-          DEFAULT: '#00a878',
-          soft: '#d7f5e6',
+          DEFAULT: '#1f48de',
+          soft: '#e7efff',
         },
         coral: {
           DEFAULT: '#ff5a3d',

@@ -266,7 +266,7 @@ export function HeroSection({ trustData }: HeroSectionProps) {
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
                         <h2 className="truncate text-lg font-semibold tracking-[-0.02em]">{specialty}</h2>
-                        <CheckCircle2 className="h-4 w-4 text-[#00a878]" aria-label="Recomendación validada" />
+                        <CheckCircle2 className="h-4 w-4 text-[#1f48de]" aria-label="Recomendación validada" />
                       </div>
                       <p className="text-sm text-[#5c6783]">{doctorName}</p>
                       <p className="mt-1 flex items-center gap-1.5 text-xs text-[#5c6783]">
@@ -298,7 +298,7 @@ export function HeroSection({ trustData }: HeroSectionProps) {
                       Desde {formatCurrency(doctor.price_cents, doctor.currency)}
                     </span>
                     <span className="flex items-center gap-1.5 sm:col-span-2">
-                      <ShieldCheck className="h-3.5 w-3.5 text-[#00a878]" aria-hidden="true" />
+                      <ShieldCheck className="h-3.5 w-3.5 text-[#1f48de]" aria-hidden="true" />
                       {verifiedDate ? `Verificada ${verifiedDate}` : 'Verificación visible cuando existe'}
                     </span>
                   </div>

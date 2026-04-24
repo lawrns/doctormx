@@ -48,7 +48,7 @@ export function LandingPageClient({ trustData }: LandingPageClientProps) {
               : 'Dr. Simeón orienta primero · médicos verificados atienden después'}
           </span>
           <span className="hidden sm:inline text-[#d4d9e3]">|</span>
-          <span className="inline-flex items-center gap-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-[#00a878]">
+          <span className="inline-flex items-center gap-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-[#1f48de]">
             <Stethoscope className="h-3.5 w-3.5" />
             IA con límites de seguridad
           </span>
