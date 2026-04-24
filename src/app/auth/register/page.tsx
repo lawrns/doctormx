@@ -15,6 +15,7 @@ import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Progress } from '@/components/ui/progress'
+import { IconBadge } from '@/components/ui/icon-badge'
 import { ReferralShareCard } from '@/components/referrals'
 import { ANALYTICS_EVENTS, trackClientEvent } from '@/lib/analytics/posthog'
 import type { ReferralSummary } from '@/lib/domains/patient-referrals'
@@ -376,11 +377,11 @@ function RegisterContent() {
               Terminaste el registro. Ahora puedes enviar tu enlace por WhatsApp, copiarlo o mostrar el QR a tu familia.
             </p>
             <div className="grid grid-cols-2 gap-3 max-w-md">
-              <div className="rounded-2xl border border-white/10 bg-card/10 px-4 py-3">
+              <div className="rounded-[10px] border border-white/10 bg-card/10 px-4 py-3">
                 <div className="text-xs uppercase tracking-[0.16em] text-white/60">Tu beneficio</div>
                 <div className="mt-1 text-lg font-semibold">1 consulta gratis</div>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-card/10 px-4 py-3">
+              <div className="rounded-[10px] border border-white/10 bg-card/10 px-4 py-3">
                 <div className="text-xs uppercase tracking-[0.16em] text-white/60">Crédito</div>
                 <div className="mt-1 text-lg font-semibold">
                   {referralSummary.creditsCents > 0
@@ -473,7 +474,7 @@ function RegisterContent() {
         </div>
 
         <div className="flex-1 flex items-center justify-center p-4">
-          <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-8 max-w-md w-full space-y-6">
+          <div className="w-full max-w-md space-y-5 rounded-[12px] border border-[hsl(var(--foreground)/0.07)] bg-card p-5 shadow-[var(--card-shadow)] sm:p-6">
             {/* Header */}
             <div className="flex flex-col space-y-2 text-center">
               <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">
@@ -522,10 +523,10 @@ function RegisterContent() {
                   className="space-y-4"
                 >
                   <div className="text-center mb-2">
-                    <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <Shield className="w-7 h-7 text-primary" />
+                    <div className="mb-2 flex items-center justify-center gap-2">
+                      <IconBadge icon={Shield} size="md" />
+                      <h2 className="text-lg font-medium text-foreground">Selecciona tu cuenta</h2>
                     </div>
-                    <h2 className="text-lg font-medium text-foreground">Selecciona tu cuenta</h2>
                     <p className="text-sm text-muted-foreground mt-1">¿Eres paciente o médico?</p>
                   </div>
 
@@ -595,11 +596,11 @@ function RegisterContent() {
                   transition={{ duration: 0.2 }}
                   className="space-y-4"
                 >
-                  <div className="text-center mb-2">
-                    <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <User className="w-7 h-7 text-primary" />
+                  <div className="mb-2 text-center">
+                    <div className="mb-2 flex items-center justify-center gap-2">
+                      <IconBadge icon={User} size="md" />
+                      <h2 className="text-lg font-medium text-foreground">Información personal</h2>
                     </div>
-                    <h2 className="text-lg font-medium text-foreground">Información personal</h2>
                     <p className="text-sm text-muted-foreground mt-1">Ingresa tus datos de acceso</p>
                   </div>
 
@@ -820,17 +821,13 @@ function RegisterContent() {
                   transition={{ duration: 0.2 }}
                   className="space-y-4"
                 >
-                  <div className="text-center mb-2">
-                    <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      {isDoctor ? (
-                        <Stethoscope className="w-7 h-7 text-primary" />
-                      ) : (
-                        <Heart className="w-7 h-7 text-primary" />
-                      )}
+                  <div className="mb-2 text-center">
+                    <div className="mb-2 flex items-center justify-center gap-2">
+                      <IconBadge icon={isDoctor ? Stethoscope : Heart} size="md" />
+                      <h2 className="text-lg font-medium text-foreground">
+                        {isDoctor ? 'Perfil profesional' : 'Completa tu registro'}
+                      </h2>
                     </div>
-                    <h2 className="text-lg font-medium text-foreground">
-                      {isDoctor ? 'Perfil profesional' : 'Completa tu registro'}
-                    </h2>
                     <p className="text-sm text-muted-foreground mt-1">
                       {isDoctor ? 'Información profesional' : 'Últimos detalles'}
                     </p>

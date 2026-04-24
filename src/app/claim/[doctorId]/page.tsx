@@ -7,6 +7,7 @@ import { Card } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Badge } from '@/components/ui/badge'
 import { Label } from '@/components/ui/label'
+import { IconBadge } from '@/components/ui/icon-badge'
 import { Clock } from 'lucide-react'
 
 interface UnclaimedProfile {
@@ -164,7 +165,7 @@ export default function ClaimProfilePage() {
   if (step === 'error') {
     return (
       <div className="flex min-h-screen items-center justify-center bg-background">
-        <Card className="max-w-md p-6 text-center bg-card rounded-2xl border border-border shadow-dx-1">
+        <Card className="max-w-md rounded-[12px] border border-border bg-card p-5 text-center shadow-[var(--card-shadow)]">
           <p className="text-destructive">{error}</p>
           <Button className="mt-4" onClick={() => router.push('/doctors')}>
             Volver al directorio
@@ -179,9 +180,9 @@ export default function ClaimProfilePage() {
       <div className="mx-auto max-w-xl px-4">
         {/* Profile Card */}
         {profile && (
-          <Card className="mb-6 bg-card rounded-2xl border border-border shadow-dx-1 p-6">
+          <Card className="mb-6 rounded-[12px] border border-border bg-card p-5 shadow-[var(--card-shadow)]">
             <div className="text-center">
-              <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 text-2xl font-bold text-primary">
+              <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-[8px] bg-primary/10 text-base font-semibold text-primary">
                 {profile.full_name.charAt(0)}
               </div>
               <h1 className="text-xl font-bold text-foreground">{profile.full_name}</h1>
@@ -198,7 +199,7 @@ export default function ClaimProfilePage() {
 
         {/* Step: Info - Initiate Claim */}
         {step === 'info' && (
-          <Card className="bg-card rounded-2xl border border-border shadow-dx-1 p-6">
+          <Card className="rounded-[12px] border border-border bg-card p-5 shadow-[var(--card-shadow)]">
             <h2 className="mb-4 text-lg font-semibold text-foreground">¿Es este tu perfil?</h2>
             <p className="mb-6 text-muted-foreground">
               Si eres el Dr./Dra. {profile?.full_name}, puedes reclamar este perfil 
@@ -238,7 +239,7 @@ export default function ClaimProfilePage() {
 
         {/* Step: Verify - Upload Documents */}
         {step === 'verify' && (
-          <Card className="bg-card rounded-2xl border border-border shadow-dx-1 p-6">
+          <Card className="rounded-[12px] border border-border bg-card p-5 shadow-[var(--card-shadow)]">
             <h2 className="mb-4 text-lg font-semibold text-foreground">Verificación de Identidad</h2>
             <p className="mb-6 text-muted-foreground">
               Para completar el reclamo, necesitamos verificar tu identidad. 
@@ -312,10 +313,8 @@ export default function ClaimProfilePage() {
 
         {/* Step: Pending - Waiting for Review */}
         {step === 'pending' && (
-          <Card className="text-center bg-card rounded-2xl border border-border shadow-dx-1 p-6">
-            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-secondary">
-              <Clock className="w-8 h-8 text-muted-foreground" />
-            </div>
+          <Card className="rounded-[12px] border border-border bg-card p-5 text-center shadow-[var(--card-shadow)]">
+            <IconBadge icon={Clock} size="lg" className="mx-auto mb-3 bg-secondary text-muted-foreground" />
             <h2 className="mb-2 text-lg font-semibold text-foreground">Verificación en Proceso</h2>
             <Badge variant="warning">Pendiente de revisión</Badge>
             <p className="mt-4 text-muted-foreground">

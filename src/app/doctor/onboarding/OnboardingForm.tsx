@@ -321,7 +321,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
         </p>
 
         {connectDraft && (
-          <section className="mb-8 rounded-[12px] border border-primary/20 bg-primary/5 p-5">
+        <section className="mb-6 rounded-[12px] border border-primary/20 bg-primary/5 p-4">
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div>
                 <div className="flex items-center gap-2">
@@ -351,7 +351,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
         )}
 
         {/* Progress pills */}
-        <div className="flex gap-2 mb-10">
+        <div className="mb-8 flex gap-2">
           {[
             { label: 'Cédula y perfil', done: Boolean(licenseNumber && bio) },
             { label: 'Disponibilidad', done: hasAvailability },
@@ -385,7 +385,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
         )}
 
         {/* Stepper */}
-        <div className="flex items-center mb-10">
+        <div className="mb-8 flex items-center">
           {steps.map((step, idx) => (
             <div key={step.num} className="flex items-center flex-1">
               <button
@@ -397,14 +397,14 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                 )}
               >
                 <div className={cn(
-                  'w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-300 border-2',
+                  'flex h-8 w-8 items-center justify-center rounded-[8px] border text-sm font-semibold transition-all duration-300',
                   currentStep === step.num
                     ? 'bg-ink text-white border-ink'
                     : currentStep > step.num
                       ? 'bg-vital text-white border-vital'
                       : 'bg-background text-muted-foreground border-border'
                 )}>
-                  {currentStep > step.num ? <Check className="w-5 h-5" /> : step.num}
+                  {currentStep > step.num ? <Check className="h-4 w-4" /> : step.num}
                 </div>
                 <span className={cn(
                   'text-[11px] mt-2 font-medium hidden sm:block transition-colors',
@@ -428,8 +428,8 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
         <form onSubmit={handleSubmit}>
           {/* Step 1: Professional Info */}
           {currentStep === 1 && (
-            <Card className="rounded-2xl border border-border shadow-dx-1 overflow-hidden">
-              <CardHeader className="bg-secondary/30 border-b border-border px-6 py-5">
+            <Card className="overflow-hidden rounded-[12px] border border-border shadow-[var(--card-shadow)]">
+              <CardHeader className="border-b border-border bg-secondary/30 px-5 py-4">
                 <CardTitle className="font-display text-lg font-semibold text-foreground">
                   Información profesional
                 </CardTitle>
@@ -437,7 +437,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                   Datos que aparecerán en tu perfil público
                 </p>
               </CardHeader>
-              <CardContent className="space-y-6 p-6">
+              <CardContent className="space-y-5 p-5">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label className="text-sm font-medium text-foreground">Especialidad *</Label>
@@ -566,7 +566,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                   <Button
                     type="button"
                     onClick={() => setCurrentStep(2)}
-                    className="h-12 px-6 bg-ink hover:bg-ink text-white rounded-xl"
+                    className="h-10 rounded-[8px] bg-ink px-5 text-white hover:bg-ink"
                   >
                     Siguiente
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -578,8 +578,8 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
 
           {/* Step 2: Location & Insurance */}
           {currentStep === 2 && (
-            <Card className="rounded-2xl border border-border shadow-dx-1 overflow-hidden">
-              <CardHeader className="bg-secondary/30 border-b border-border px-6 py-5">
+            <Card className="overflow-hidden rounded-[12px] border border-border shadow-[var(--card-shadow)]">
+              <CardHeader className="border-b border-border bg-secondary/30 px-5 py-4">
                 <CardTitle className="font-display text-lg font-semibold text-foreground">
                   Ubicación y seguros
                 </CardTitle>
@@ -587,7 +587,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                   Ayuda a los pacientes a encontrarte
                 </p>
               </CardHeader>
-              <CardContent className="space-y-6 p-6">
+              <CardContent className="space-y-5 p-5">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label className="text-sm font-medium text-foreground">Estado *</Label>
@@ -630,7 +630,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                     Selecciona los seguros con los que trabajas. Esto ayudará a los pacientes asegurados a encontrarte.
                   </p>
                   {availableInsurances.length > 0 ? (
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-2 max-h-48 overflow-y-auto bg-secondary/50 rounded-xl p-3">
+                    <div className="grid max-h-48 grid-cols-2 gap-2 overflow-y-auto rounded-[10px] bg-secondary/50 p-3 md:grid-cols-3">
                       {availableInsurances.map((insurance) => (
                         <div key={insurance.id} className="flex items-center gap-2 p-2 rounded-lg hover:bg-secondary/70">
                           <Checkbox
@@ -656,13 +656,13 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                 </div>
 
                 <div className="flex justify-between pt-4">
-                  <Button type="button" variant="outline" onClick={() => setCurrentStep(1)} className="h-12 px-6 rounded-xl">
+                  <Button type="button" variant="outline" onClick={() => setCurrentStep(1)} className="h-10 rounded-[8px] px-5">
                     Atrás
                   </Button>
                   <Button
                     type="button"
                     onClick={() => setCurrentStep(3)}
-                    className="h-12 px-6 bg-ink hover:bg-ink text-white rounded-xl"
+                    className="h-10 rounded-[8px] bg-ink px-5 text-white hover:bg-ink"
                   >
                     Siguiente
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -674,8 +674,8 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
 
           {/* Step 3: Availability & Pricing */}
           {currentStep === 3 && (
-            <Card className="rounded-2xl border border-border shadow-dx-1 overflow-hidden">
-              <CardHeader className="bg-secondary/30 border-b border-border px-6 py-5">
+            <Card className="overflow-hidden rounded-[12px] border border-border shadow-[var(--card-shadow)]">
+              <CardHeader className="border-b border-border bg-secondary/30 px-5 py-4">
                 <CardTitle className="font-display text-lg font-semibold text-foreground">
                   Disponibilidad y precio
                 </CardTitle>
@@ -683,7 +683,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                   Configura cuándo y a qué precio te pueden reservar
                 </p>
               </CardHeader>
-              <CardContent className="space-y-6 p-6">
+              <CardContent className="space-y-5 p-5">
                 <div className="space-y-3">
                   <h3 className="font-display text-lg font-semibold text-foreground">
                     Horarios disponibles
@@ -691,7 +691,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                   {Object.entries(availability).map(([day, config]) => (
                     <div
                       key={day}
-                      className="flex items-center gap-4 p-4 border border-border rounded-xl bg-card hover:bg-secondary/30 transition-colors"
+                      className="flex items-center gap-4 rounded-[10px] border border-border bg-card p-3 transition-colors hover:bg-secondary/30"
                     >
                       <Switch
                         checked={config.enabled}
@@ -740,7 +740,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                   <h3 className="font-display text-lg font-semibold text-foreground">
                     Precio de consulta
                   </h3>
-                  <div className="bg-secondary/50 rounded-xl p-4 space-y-2">
+                  <div className="space-y-2 rounded-[10px] bg-secondary/50 p-3">
                     <h4 className="font-medium text-foreground text-sm">Precios de referencia</h4>
                     <ul className="text-xs text-muted-foreground space-y-1">
                       <li>• Medicina General: $300 - $500 MXN</li>
@@ -795,13 +795,13 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                     )}
                   </div>
                   <div className="flex items-center gap-3">
-                    <Button type="button" variant="outline" onClick={() => setCurrentStep(2)} className="h-12 px-6 rounded-xl">
+                    <Button type="button" variant="outline" onClick={() => setCurrentStep(2)} className="h-10 rounded-[8px] px-5">
                       Atrás
                     </Button>
                     <Button
                       type="submit"
                       disabled={!isComplete || !hasAvailability || submitting}
-                      className="h-12 px-8 bg-ink hover:bg-ink text-white rounded-xl font-medium"
+                      className="h-10 rounded-[8px] bg-ink px-6 font-medium text-white hover:bg-ink"
                     >
                       {submitting ? (
                         <>

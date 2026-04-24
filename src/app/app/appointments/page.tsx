@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Skeleton } from '@/components/ui/skeleton'
+import { EmptyState } from '@/components/ui/empty-state'
 import {
   Dialog,
   DialogContent,
@@ -175,7 +176,7 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
   return (
     <>
       <div className={cn(
-        "bg-card rounded-2xl border border-border shadow-dx-1 p-4 hover:shadow-card transition-shadow",
+        "rounded-[12px] border border-border bg-card p-4 shadow-[var(--card-shadow)] transition-shadow hover:shadow-[var(--card-shadow-hover)]",
         isInProgress && "border-l-4 border-l-red-500",
         isInLobby && "border-l-4 border-l-green-500"
       )}>
@@ -489,7 +490,7 @@ function AppointmentsPageContent() {
         {isLoading ? (
           <div className="space-y-4">
             {[1, 2, 3].map(i => (
-              <div key={i} className="bg-card rounded-2xl border border-border shadow-dx-1 p-4">
+              <div key={i} className="rounded-[12px] border border-border bg-card p-4 shadow-[var(--card-shadow)]">
                 <div className="flex items-start gap-4">
                   <Skeleton className="w-12 h-12 rounded-full" />
                   <div className="flex-1 space-y-2">
@@ -502,28 +503,26 @@ function AppointmentsPageContent() {
             ))}
           </div>
         ) : appointments.length === 0 ? (
-          <div className="text-center py-16">
-            <Calendar className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
-            <h3 className="text-lg font-semibold text-foreground mb-1">
-              {activeTab === 'all'
-                ? 'No tienes citas programadas'
-                : activeTab === 'upcoming'
-                ? 'No tienes citas próximas'
-                : activeTab === 'completed'
-                ? 'No tienes citas completadas'
-                : 'No tienes citas canceladas'}
-            </h3>
-            <p className="text-sm text-muted-foreground mb-4">
-              {activeTab === 'all'
-                ? 'Cuando reserves una cita con un doctor, aparecerá aquí.'
-                : 'No se encontraron citas en esta categoría.'}
-            </p>
+          <EmptyState
+            icon={Calendar}
+            title={activeTab === 'all'
+              ? 'No tienes citas programadas'
+              : activeTab === 'upcoming'
+              ? 'No tienes citas próximas'
+              : activeTab === 'completed'
+              ? 'No tienes citas completadas'
+              : 'No tienes citas canceladas'}
+            description={activeTab === 'all'
+              ? 'Cuando reserves una cita con un doctor, aparecerá aquí.'
+              : 'No se encontraron citas en esta categoría.'}
+            className="py-10"
+          >
             {(activeTab === 'all' || activeTab === 'upcoming') && (
-              <Button asChild>
+              <Button asChild className="mt-4 rounded-[8px]">
                 <Link href="/doctors">Buscar un doctor</Link>
               </Button>
             )}
-          </div>
+          </EmptyState>
         ) : (
           <div className="space-y-4">
             {appointments.map(appointment => (

@@ -18,6 +18,9 @@ const cardVariants = cva(
         testimonial: "rounded-[var(--card-radius-standard)] p-[var(--card-padding-comfortable)]",
         preview: "rounded-[var(--card-radius-hero)] p-[var(--card-padding-comfortable)]",
         chip: "rounded-[var(--card-radius-standard)] px-3 py-2 shadow-none",
+        form: "rounded-[var(--card-radius-standard)] p-[var(--card-padding-comfortable)]",
+        panel: "rounded-[var(--card-radius-standard)] p-[var(--card-padding-default)]",
+        state: "rounded-[var(--card-radius-standard)] p-[var(--card-padding-comfortable)] text-center",
       },
       tone: {
         light: "",

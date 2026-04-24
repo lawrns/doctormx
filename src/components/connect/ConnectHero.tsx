@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { CheckCircle2, ClipboardCheck, Search, ShieldCheck, Sparkles } from 'lucide-react'
 import { TrustBar } from '@/components/ui/card-patterns'
 import { PracticeSearchPanel } from './PracticeSearchPanel'
@@ -7,6 +8,9 @@ const proofPoints = [
   'Cédula y SEP se tratan como verificación separada',
   'Perfiles existentes se reclaman con revisión de identidad',
 ]
+
+const connectDoctorPhoto =
+  'https://images.unsplash.com/photo-1758691462848-31a39258dbd8?auto=format&fit=crop&w=1200&q=82'
 
 export function ConnectHero() {
   return (
@@ -38,6 +42,19 @@ export function ConnectHero() {
                   <span>{point}</span>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-5 hidden max-w-[31rem] overflow-hidden rounded-[10px] border border-[#c8d9fa] bg-white shadow-[0_1px_2px_rgba(15,23,42,0.04)] sm:block">
+              <div className="relative aspect-[3.6/1]">
+                <Image
+                  src={connectDoctorPhoto}
+                  alt="Médica revisando el perfil digital de su práctica"
+                  fill
+                  sizes="(min-width: 1024px) 496px, 90vw"
+                  className="object-cover object-[50%_31%]"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,26,78,0.06),transparent_42%,rgba(255,255,255,0.08))]" />
+              </div>
             </div>
           </div>
 

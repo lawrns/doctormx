@@ -8,6 +8,9 @@ type IconBadgeProps = {
   className?: string
 }
 
+// Doctor.mx icon badges are intentionally capped at 40px.
+// Larger decorative icon tiles read as generic SaaS and should use photos,
+// avatars, or compact inline icons instead.
 const sizeMap = {
   sm: 'h-6 w-6 [&_svg]:h-3.5 [&_svg]:w-3.5',
   md: 'h-8 w-8 [&_svg]:h-4 [&_svg]:w-4',

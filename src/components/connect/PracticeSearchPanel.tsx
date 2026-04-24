@@ -170,7 +170,7 @@ export function PracticeSearchPanel({ className }: PracticeSearchPanelProps) {
           <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[#0d72d6]">
             Reclamar perfil
           </p>
-          <h2 className="mt-1 text-[18px] font-semibold leading-6 tracking-[-0.035em] text-[#071a4e]">
+          <h2 className="mt-1 text-[18px] font-semibold leading-6 tracking-[-0.01em] text-[#071a4e]">
             Busca tu práctica médica
           </h2>
         </div>
@@ -187,7 +187,7 @@ export function PracticeSearchPanel({ className }: PracticeSearchPanelProps) {
             <Input
               value={query}
               onChange={(event) => setQuery(event.target.value)}
-              placeholder="Ej. Dra. Ana López Polanco"
+              placeholder="Ej. Dra. Ana López, Polanco"
               className="h-10 rounded-[8px] border-[#cfdcf1] bg-[#f8fbff] pl-9 text-[#071a4e] placeholder:text-[#7d89a7]"
             />
           </span>
