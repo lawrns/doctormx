@@ -27,7 +27,7 @@ export default async function BookAppointmentPage({
         .select('*')
         .eq('id', user.id)
         .single()
-        .then(({ data }) => data || null)
+        .then(({ data }: { data: Record<string, unknown> | null }) => data || null)
     : null
 
   return <BookingForm doctor={doctorProfile} currentUser={currentUser} />

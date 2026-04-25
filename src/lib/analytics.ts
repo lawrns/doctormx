@@ -173,8 +173,8 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
     .gte('start_ts', lastMonthStart.toISOString())
     .lt('start_ts', lastMonthEnd.toISOString())
 
-  const mrr = paymentsThisMonth?.reduce((sum, p) => sum + (p.amount_cents || 0), 0) || 0
-  const lastMonthMrr = paymentsLastMonth?.reduce((sum, p) => sum + (p.amount_cents || 0), 0) || 0
+  const mrr = paymentsThisMonth?.reduce((sum: number, p: { amount_cents: number | null }) => sum + (p.amount_cents || 0), 0) || 0
+  const lastMonthMrr = paymentsLastMonth?.reduce((sum: number, p: { amount_cents: number | null }) => sum + (p.amount_cents || 0), 0) || 0
   const mrrGrowth = lastMonthMrr > 0 ? ((mrr - lastMonthMrr) / lastMonthMrr) * 100 : 0
 
   const monthlyRevenue = eachMonthOfInterval({
@@ -183,12 +183,12 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
   }).map(month => {
     const monthStartStr = startOfMonth(month).toISOString()
     const monthEndStr = endOfMonth(month).toISOString()
-    const monthPayments = monthlyPayments?.filter(p => 
+    const monthPayments = monthlyPayments?.filter((p: { created_at: string; amount_cents: number | null }) => 
       p.created_at >= monthStartStr && p.created_at < monthEndStr
     ) || []
     return {
       month: format(month, 'MMM yyyy', { locale: es }),
-      revenue: monthPayments.reduce((sum, p) => sum + (p.amount_cents || 0), 0) / 100,
+      revenue: monthPayments.reduce((sum: number, p: { amount_cents: number | null }) => sum + (p.amount_cents || 0), 0) / 100,
     }
   })
 
@@ -292,23 +292,23 @@ export async function getDoctorMetrics(doctorId: string): Promise<DoctorMetrics>
   const revenueHistory = eachMonthOfInterval({ start: sixMonthsAgo, end: now }).map(month => {
     const monthStartStr = startOfMonth(month).toISOString()
     const monthEndStr = endOfMonth(month).toISOString()
-    const monthPayments = payments?.filter(p => 
+    const monthPayments = payments?.filter((p: { created_at: string; amount_cents: number | null }) => 
       p.created_at >= monthStartStr && p.created_at < monthEndStr
     ) || []
     return {
       month: format(month, 'MMM', { locale: es }),
-      revenue: monthPayments.reduce((sum, p) => sum + (p.amount_cents || 0), 0) / 100,
+      revenue: monthPayments.reduce((sum: number, p: { amount_cents: number | null }) => sum + (p.amount_cents || 0), 0) / 100,
     }
   })
 
-  const grossRevenue = payments?.reduce((sum, p) => sum + (p.amount_cents || 0), 0) || 0
-  const platformFee = payments?.reduce((sum, p) => sum + (p.fee_cents || 0), 0) || 0
+  const grossRevenue = payments?.reduce((sum: number, p: { amount_cents: number | null }) => sum + (p.amount_cents || 0), 0) || 0
+  const platformFee = payments?.reduce((sum: number, p: { fee_cents: number | null }) => sum + (p.fee_cents || 0), 0) || 0
 
-  const thisMonthGross = paymentsThisMonth?.reduce((sum, p) => sum + (p.amount_cents || 0), 0) || 0
-  const thisMonthFee = paymentsThisMonth?.reduce((sum, p) => sum + (p.fee_cents || 0), 0) || 0
-  const lastMonthGross = paymentsLastMonth?.reduce((sum, p) => sum + (p.amount_cents || 0), 0) || 0
+  const thisMonthGross = paymentsThisMonth?.reduce((sum: number, p: { amount_cents: number | null }) => sum + (p.amount_cents || 0), 0) || 0
+  const thisMonthFee = paymentsThisMonth?.reduce((sum: number, p: { fee_cents: number | null }) => sum + (p.fee_cents || 0), 0) || 0
+  const lastMonthGross = paymentsLastMonth?.reduce((sum: number, p: { amount_cents: number | null }) => sum + (p.amount_cents || 0), 0) || 0
 
-  const byStatus = appointmentsByStatus?.reduce((acc, apt) => {
+  const byStatus = appointmentsByStatus?.reduce((acc: Record<string, number>, apt: { status: string }) => {
     acc[apt.status] = (acc[apt.status] || 0) + 1
     return acc
   }, {} as Record<string, number>) || {}
@@ -319,7 +319,7 @@ export async function getDoctorMetrics(doctorId: string): Promise<DoctorMetrics>
   const noShowRate = ((cancelled + noShow) / total) * 100
 
   const avgRating = reviews?.length 
-    ? reviews.reduce((sum, r) => sum + (r.rating || 0), 0) / reviews.length 
+    ? reviews.reduce((sum: number, r: { rating: number | null }) => sum + (r.rating || 0), 0) / reviews.length 
     : 0
 
   return {
@@ -376,24 +376,24 @@ export async function getRevenueMetrics(): Promise<RevenueMetrics> {
     .from('doctors')
     .select('id, specialty, city')
 
-  const total = payments?.reduce((sum, p) => sum + (p.amount_cents || 0), 0) || 0
+  const total = payments?.reduce((sum: number, p: { amount_cents: number | null }) => sum + (p.amount_cents || 0), 0) || 0
 
   const byMonth = eachMonthOfInterval({ start: twelveMonthsAgo, end: now }).map(month => {
     const monthStartStr = startOfMonth(month).toISOString()
     const monthEndStr = endOfMonth(month).toISOString()
-    const monthPayments = payments?.filter(p => 
+    const monthPayments = payments?.filter((p: { created_at: string; amount_cents: number | null }) => 
       p.created_at >= monthStartStr && p.created_at < monthEndStr
     ) || []
     return {
       month: format(month, 'MMM yyyy', { locale: es }),
-      amount: monthPayments.reduce((sum, p) => sum + (p.amount_cents || 0), 0) / 100,
+      amount: monthPayments.reduce((sum: number, p: { amount_cents: number | null }) => sum + (p.amount_cents || 0), 0) / 100,
       count: monthPayments.length,
     }
   })
 
   const doctorRevenue = new Map<string, number>()
-  appointments?.forEach(apt => {
-    const payment = payments?.find(p => p.created_at >= apt.start_ts)
+  appointments?.forEach((apt: { doctor_id: string; start_ts: string }) => {
+    const payment = payments?.find((p: { created_at: string; amount_cents: number | null }) => p.created_at >= apt.start_ts)
     if (payment) {
       const current = doctorRevenue.get(apt.doctor_id) || 0
       doctorRevenue.set(apt.doctor_id, current + (payment.amount_cents || 0) / 100)
@@ -401,7 +401,7 @@ export async function getRevenueMetrics(): Promise<RevenueMetrics> {
   })
 
   const specialtyRevenue = new Map<string, number>()
-  doctorData?.forEach(doc => {
+  doctorData?.forEach((doc: { id: string; specialty: string | null }) => {
     const revenue = doctorRevenue.get(doc.id) || 0
     const specialty = doc.specialty || 'General'
     specialtyRevenue.set(specialty, (specialtyRevenue.get(specialty) || 0) + revenue)
@@ -412,7 +412,7 @@ export async function getRevenueMetrics(): Promise<RevenueMetrics> {
     .sort((a, b) => b.revenue - a.revenue)
 
   const cityRevenue = new Map<string, number>()
-  doctorData?.forEach(doc => {
+  doctorData?.forEach((doc: { id: string; city: string | null }) => {
     const revenue = doctorRevenue.get(doc.id) || 0
     const city = doc.city || 'Unknown'
     cityRevenue.set(city, (cityRevenue.get(city) || 0) + revenue)
@@ -498,22 +498,22 @@ export async function getAppointmentMetrics(): Promise<AppointmentMetrics> {
     const date = subDays(now, 29 - i)
     const dayStart = startOfDay(date)
     const dayEnd = endOfDay(date)
-    const dayAppointments = appointments?.filter(a => 
+    const dayAppointments = appointments?.filter((a: { start_ts: string; status: string }) => 
       a.start_ts >= dayStart.toISOString() && a.start_ts <= dayEnd.toISOString()
     ) || []
     return {
       date: format(date, 'dd MMM', { locale: es }),
       appointments: dayAppointments.length,
-      completed: dayAppointments.filter(a => a.status === 'completed').length,
-      cancelled: dayAppointments.filter(a => a.status === 'cancelled').length,
+      completed: dayAppointments.filter((a: { status: string }) => a.status === 'completed').length,
+      cancelled: dayAppointments.filter((a: { status: string }) => a.status === 'cancelled').length,
     }
   })
 
   const specialtyCount = new Map<string, number>()
   const cityCount = new Map<string, number>()
 
-  appointments?.forEach(apt => {
-    const doctor = doctorData?.find(d => d.id === apt.doctor_id)
+  appointments?.forEach((apt: { doctor_id: string }) => {
+    const doctor = doctorData?.find((d: { id: string; specialty: string | null; city: string | null }) => d.id === apt.doctor_id)
     if (doctor) {
       const specialty = doctor.specialty || 'General'
       specialtyCount.set(specialty, (specialtyCount.get(specialty) || 0) + 1)

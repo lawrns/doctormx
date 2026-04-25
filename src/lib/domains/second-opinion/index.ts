@@ -4,6 +4,7 @@
 // Output: Validated second opinion with doctor sign-off
 
 import { createServiceClient } from '@/lib/supabase/server'
+import { requireDoctorAuth, requireDoctorRole, requireAssignedDoctor } from '@/lib/auth-guard'
 import {
   addCareMemory,
   appendCareEvent,
@@ -13,6 +14,8 @@ import {
   routeCaseWithContext,
 } from '@/lib/care-orchestration'
 import type { CareTriage } from '@/lib/types/care-case'
+import { stripe } from '@/lib/stripe'
+import { logger } from '@/lib/observability/logger'
 
 export const SECOND_OPINION_CONFIG = {
   // Pricing in MXN cents
@@ -106,9 +109,9 @@ export interface SecondOpinionMessage {
   id: string
   request_id: string
   sender_id: string
-  message: string
-  attachments: string[]
-  read_at?: string
+  sender_role: 'patient' | 'doctor' | 'system'
+  content: string
+  attachment_url?: string
   created_at: string
 }
 
@@ -188,23 +191,12 @@ export async function submitSecondOpinionRequest(
   requestId: string,
   paymentId: string
 ): Promise<void> {
+  // Any authenticated doctor can submit a request on behalf of a patient after payment
+  await requireDoctorRole()
   const supabase = await createServiceClient()
-  
-  const { error } = await supabase
-    .from('second_opinion_requests')
-    .update({
-      status: 'submitted',
-      payment_id: paymentId,
-      payment_status: 'paid',
-      submitted_at: new Date().toISOString(),
-    })
-    .eq('id', requestId)
-    .eq('status', 'draft')
-  
-  if (error) {
-    throw new Error(`Failed to submit request: ${error.message}`)
-  }
 
+  // Fetch request while still in draft — orchestration steps must succeed
+  // BEFORE we mark the payment as paid to avoid inconsistency on failure.
   const request = await getSecondOpinionRequest(requestId)
   if (!request) {
     return
@@ -240,6 +232,22 @@ export async function submitSecondOpinionRequest(
       paymentId,
     })
   }
+
+  // Mark payment as paid LAST — only after all orchestration steps succeed
+  const { error } = await supabase
+    .from('second_opinion_requests')
+    .update({
+      status: 'submitted',
+      payment_id: paymentId,
+      payment_status: 'paid',
+      submitted_at: new Date().toISOString(),
+    })
+    .eq('id', requestId)
+    .eq('status', 'draft')
+
+  if (error) {
+    throw new Error(`Failed to submit request: ${error.message}`)
+  }
 }
 
 /**
@@ -250,6 +258,8 @@ export async function assignDoctorToRequest(
   doctorId: string,
   notes?: string
 ): Promise<void> {
+  // Admin-level: any authenticated doctor can assign another doctor to a request
+  await requireDoctorRole()
   const supabase = await createServiceClient()
   
   const { error } = await supabase
@@ -292,6 +302,7 @@ export async function submitDoctorOpinion(
   recommendations?: string,
   followUpNeeded?: boolean
 ): Promise<void> {
+  await requireAssignedDoctor(requestId)
   const supabase = await createServiceClient()
   
   const { error } = await supabase
@@ -358,6 +369,124 @@ export async function getSecondOpinionRequest(
   }
   
   return data as SecondOpinionRequest
+}
+
+/**
+ * Create a Stripe payment intent for a second opinion request
+ */
+export async function createSecondOpinionPayment(
+  requestId: string,
+  patientId: string,
+  type: SecondOpinionType
+): Promise<{ clientSecret: string; amount: number; currency: string }> {
+  const amount = SECOND_OPINION_CONFIG.PRICES[type]
+  const currency = 'mxn'
+
+  try {
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount,
+      currency,
+      metadata: {
+        second_opinion_request_id: requestId,
+        patient_id: patientId,
+        type,
+        amount_cents: String(amount),
+      },
+      payment_method_types: ['card', 'oxxo', 'customer_balance'],
+      payment_method_options: {
+        oxxo: { expires_after_days: 3 },
+        customer_balance: {
+          funding_type: 'bank_transfer',
+          bank_transfer: { type: 'mx_bank_transfer' },
+        },
+      },
+    })
+
+    const supabase = await createServiceClient()
+    await supabase.from('payments').insert({
+      provider: 'stripe',
+      provider_ref: paymentIntent.id,
+      stripe_payment_intent_id: paymentIntent.id,
+      amount_cents: amount,
+      currency: currency.toUpperCase(),
+      status: 'pending',
+      fee_cents: 0,
+      net_cents: amount,
+      metadata: {
+        type: 'second_opinion',
+        second_opinion_request_id: requestId,
+      },
+    })
+
+    await supabase
+      .from('second_opinion_requests')
+      .update({
+        payment_id: paymentIntent.id,
+        payment_status: 'pending',
+      })
+      .eq('id', requestId)
+
+    return {
+      clientSecret: paymentIntent.client_secret!,
+      amount,
+      currency: currency.toUpperCase(),
+    }
+  } catch (error) {
+    logger.error('Failed to create second opinion payment', { error })
+    throw new Error('Error al crear el pago para la segunda opinión')
+  }
+}
+
+/**
+ * Get messages for a second opinion request
+ */
+export async function getSecondOpinionMessages(
+  requestId: string
+): Promise<SecondOpinionMessage[]> {
+  const supabase = await createServiceClient()
+
+  const { data, error } = await supabase
+    .from('second_opinion_messages')
+    .select('*')
+    .eq('request_id', requestId)
+    .order('created_at', { ascending: true })
+
+  if (error) {
+    throw new Error(`Failed to get messages: ${error.message}`)
+  }
+
+  return data as SecondOpinionMessage[]
+}
+
+/**
+ * Send a message in a second opinion request
+ */
+export async function sendSecondOpinionMessage(
+  requestId: string,
+  senderId: string,
+  senderRole: 'patient' | 'doctor' | 'system',
+  content: string,
+  attachmentUrl?: string
+): Promise<SecondOpinionMessage> {
+  const supabase = await createServiceClient()
+
+  const { data, error } = await supabase
+    .from('second_opinion_messages')
+    .insert({
+      request_id: requestId,
+      sender_id: senderId,
+      sender_role: senderRole,
+      content,
+      attachment_url: attachmentUrl || null,
+    })
+    .select()
+    .single()
+
+  if (error) {
+    throw new Error(`Failed to send message: ${error.message}`)
+  }
+
+  return data as SecondOpinionMessage
 }
 
 /**

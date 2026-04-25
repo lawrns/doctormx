@@ -20,6 +20,7 @@ import {
   DialogFooter,
 } from '@/components/ui/dialog'
 import { toast } from 'sonner'
+import { captureError } from '@/lib/utils'
 import {
   FileText,
   Plus,
@@ -74,7 +75,10 @@ export default function DoctorIntakeFormsPage() {
         setTemplates(data.templates || [])
         setLoading(false)
       })
-      .catch(() => setLoading(false))
+      .catch((err) => {
+        captureError(err, 'IntakeFormsPage.fetchTemplates')
+        setLoading(false)
+      })
   }, [])
 
   useEffect(() => {

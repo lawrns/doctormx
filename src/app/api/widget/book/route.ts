@@ -12,6 +12,7 @@ import {
   normalizePhone,
 } from '@/lib/widget'
 import { scheduleAppointmentReminders } from '@/lib/reminders'
+import { captureError } from '@/lib/utils'
 
 const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/
 const TIME_PATTERN = /^\d{2}:\d{2}$/
@@ -101,7 +102,7 @@ export async function POST(request: NextRequest) {
     })
 
     scheduleAppointmentReminders(appointmentId).catch((error) => {
-      console.error('Failed to schedule widget booking reminders:', error)
+      captureError(error, 'widgetBook.scheduleReminders')
     })
 
     const paymentUrl = `${getBaseUrl(request)}/widget/pay/${appointmentId}?token=${encodeURIComponent(token)}`

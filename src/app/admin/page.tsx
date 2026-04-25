@@ -1,5 +1,6 @@
 import { requireRole } from '@/lib/auth'
 import Link from 'next/link'
+import { AdminShell } from '@/components/AdminShell'
 import type { Doctor } from '@/types'
 
 export default async function AdminDashboard() {
@@ -37,38 +38,13 @@ export default async function AdminDashboard() {
     .eq('role', 'patient')
 
   return (
-    <div className="min-h-screen bg-secondary/50">
-      {/* Header */}
-      <header className="bg-card shadow">
-        <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-foreground">Doctor.mx Admin</h1>
-          <div className="flex items-center gap-4">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary text-purple-800">
-              👑 Admin
-            </span>
-            <span className="text-sm text-muted-foreground">{profile?.full_name}</span>
-            <form action="/auth/signout" method="post">
-              <button
-                type="submit"
-                className="text-sm text-red-600 hover:text-red-700"
-              >
-                Cerrar Sesión
-              </button>
-            </form>
-          </div>
-        </div>
-      </header>
-
-      {/* Main */}
-      <main className="container mx-auto px-4 py-8">
-        <div className="mb-8">
-          <h2 className="text-3xl font-bold text-foreground mb-2">
-            Panel de Administración
-          </h2>
-          <p className="text-muted-foreground">
-            Gestiona doctores, usuarios y contenido de la plataforma
-          </p>
-        </div>
+    <AdminShell profile={{ full_name: profile.full_name }} currentPath="/admin">
+        <h1 className="text-2xl font-display font-bold text-foreground mb-2">
+          Panel de Administración
+        </h1>
+        <p className="text-muted-foreground mb-8">
+          Gestiona doctores, usuarios y contenido de la plataforma
+        </p>
 
         {/* Stats */}
         <div className="grid md:grid-cols-4 gap-6 mb-8">
@@ -130,7 +106,7 @@ export default async function AdminDashboard() {
         </div>
 
         {/* Quick Actions */}
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
+        <div className="grid md:grid-cols-4 gap-6 mb-8">
           <Link
             href="/admin/doctors"
             className="bg-card p-6 rounded-lg shadow hover:shadow-md transition-shadow"
@@ -144,6 +120,23 @@ export default async function AdminDashboard() {
               <div>
                 <h3 className="font-semibold text-foreground">Gestionar Doctores</h3>
                 <p className="text-sm text-muted-foreground">Ver y verificar</p>
+              </div>
+            </div>
+          </Link>
+
+          <Link
+            href="/admin/outbound"
+            className="bg-card p-6 rounded-lg shadow hover:shadow-md transition-shadow"
+          >
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                <svg className="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="font-semibold text-foreground">Outbound WhatsApp</h3>
+                <p className="text-sm text-muted-foreground">Pipeline de adquisición</p>
               </div>
             </div>
           </Link>
@@ -233,7 +226,6 @@ export default async function AdminDashboard() {
             )}
           </div>
         </div>
-      </main>
-    </div>
+    </AdminShell>
   )
 }

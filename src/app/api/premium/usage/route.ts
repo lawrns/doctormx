@@ -99,7 +99,7 @@ export async function GET(request: NextRequest) {
         api_access: { none: 0, starter: 0, pro: 0, elite: null },
       }
 
-      const used = usageRecords?.find(r => r.feature_key === feature)?.usage_count || 0
+      const used = usageRecords?.find((r: { feature_key: string; usage_count: number }) => r.feature_key === feature)?.usage_count || 0
       const limit = limitMap[feature]?.[tier] ?? null
 
       return NextResponse.json({
@@ -130,7 +130,7 @@ export async function GET(request: NextRequest) {
     }
 
     for (const [key, limits] of Object.entries(limitMap)) {
-      const used = usageRecords?.find(r => r.feature_key === key)?.usage_count || 0
+      const used = usageRecords?.find((r: { feature_key: string; usage_count: number }) => r.feature_key === key)?.usage_count || 0
       usage[key] = {
         used,
         limit: limits[tier as keyof typeof limits] ?? null,

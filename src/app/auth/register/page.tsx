@@ -314,7 +314,10 @@ function RegisterContent() {
             body: JSON.stringify({ referralCode }),
           })
 
-          const referralPayload = await referralResponse.json().catch(() => null)
+          const referralPayload = await referralResponse.json().catch((parseErr) => {
+            console.warn('[Register] Failed to parse referral response:', parseErr)
+            return null
+          })
 
           if (referralResponse.ok && referralPayload?.summary) {
             referralResult = referralPayload.summary as ReferralSummary

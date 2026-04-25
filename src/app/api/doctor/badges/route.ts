@@ -16,7 +16,7 @@ export async function GET(request: NextRequest) {
     const supabase = await createClient()
     
     // If no doctorId provided, get current user's badges
-    let targetDoctorId = doctorId
+    let targetDoctorId: string | null = doctorId
     if (!targetDoctorId) {
       const { data: { user } } = await supabase.auth.getUser()
       if (!user) {
@@ -29,11 +29,11 @@ export async function GET(request: NextRequest) {
     }
     
     if (publicView) {
-      const result = await getPublicDoctorBadges(targetDoctorId)
+      const result = await getPublicDoctorBadges(targetDoctorId!)
       return NextResponse.json(result)
     }
     
-    const badges = await getDoctorBadges(targetDoctorId)
+    const badges = await getDoctorBadges(targetDoctorId!)
     const categories = await getBadgeCategories()
     
     return NextResponse.json({

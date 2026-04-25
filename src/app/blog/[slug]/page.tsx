@@ -109,7 +109,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   // Increment view count in the background
-  incrementViewCount(post.id).catch(() => {})
+  incrementViewCount(post.id).catch((err) => {
+    console.error('[BlogPostPage] Failed to increment view count:', err)
+  })
 
   const relatedPosts = await getRelatedPosts(post.id, post.category_id, 3)
   const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://doctor.mx'

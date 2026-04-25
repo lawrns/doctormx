@@ -8,6 +8,7 @@ import { stripe } from './stripe'
 import { sendPaymentReceipt } from './notifications'
 import { sendPaymentReceipt as sendWhatsAppReceipt, getPatientPhone, getDoctorName } from './whatsapp-notifications'
 import { logger } from '@/lib/observability/logger'
+import { captureError } from '@/lib/utils'
 import { ensureVideoRoomForAppointment } from '@/lib/video/videoService'
 import { validatePaymentIntentBinding } from '@/lib/payment-integrity'
 import {
@@ -205,11 +206,11 @@ export async function confirmSuccessfulPayment(
   // Enviar email de recibo (no bloquea el flujo principal)
   if (appointment?.patient_id) {
     sendReceiptEmail(appointment.patient_id, appointmentId).catch((err: unknown) => {
-      logger.error('Failed to send receipt email:', { error: err })
+      captureError(err, 'payment.sendReceiptEmail')
     })
 
     sendReceiptWhatsApp(appointment.patient_id, appointment).catch((err: unknown) => {
-      logger.error('Failed to send WhatsApp receipt:', { error: err })
+      captureError(err, 'payment.sendReceiptWhatsApp')
     })
   }
 
@@ -257,7 +258,7 @@ async function confirmAppointment(appointmentId: string) {
   if (error) throw error
 
   ensureVideoRoomForAppointment(supabase, appointmentId).catch((err: unknown) => {
-    logger.error('Failed to create video room after payment confirmation:', { error: err, appointmentId })
+    captureError(err, 'payment.ensureVideoRoom')
   })
 
   return data

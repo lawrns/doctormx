@@ -39,12 +39,16 @@ export async function GET(request: Request) {
       })
     }
     
+    type DoctorRef = { id: string; specialty: string | null; price_cents: number; currency: string; rating: number | null }
+    type ProfileRef = { id: string; full_name: string | null; photo_url: string | null }
+    type AptRow = { doctor_id: string }
+    
     // Get unique doctor IDs from appointments
-    const doctorIds = [...new Set((appointmentsData || []).map(apt => apt.doctor_id).filter(Boolean))]
+    const doctorIds = [...new Set((appointmentsData || []).map((apt: AptRow) => apt.doctor_id).filter(Boolean))]
     
     // Fetch doctor data separately
-    let doctorsData: any[] = []
-    let profilesData: any[] = []
+    let doctorsData: DoctorRef[] = []
+    let profilesData: ProfileRef[] = []
     
     if (doctorIds.length > 0) {
       // Fetch doctors
@@ -52,21 +56,21 @@ export async function GET(request: Request) {
         .from('doctors')
         .select('id, specialty, price_cents, currency, rating')
         .in('id', doctorIds)
-      doctorsData = doctors || []
+      doctorsData = doctors as DoctorRef[] || []
       
       // Fetch profiles - doctors.id = profiles.id
       if (doctorsData.length > 0) {
         const { data: profiles } = await supabase
           .from('profiles')
           .select('id, full_name, photo_url')
-          .in('id', doctorsData.map(d => d.id))
-        profilesData = profiles || []
+          .in('id', doctorsData.map((d: DoctorRef) => d.id))
+        profilesData = profiles as ProfileRef[] || []
       }
     }
     
     // Combine data
-    const appointments = (appointmentsData || []).map((apt: any) => {
-      const doctor = doctorsData.find(d => d.id === apt.doctor_id)
+    const appointments = (appointmentsData || []).map((apt: Record<string, unknown>) => {
+      const doctor = doctorsData.find((d: DoctorRef) => d.id === apt.doctor_id)
       const profile = doctor ? profilesData.find(p => p.id === doctor.id) : null
       
       return {
@@ -82,9 +86,9 @@ export async function GET(request: Request) {
       status: 200,
       headers: { 'Content-Type': 'application/json' }
     })
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error in GET /api/patient/appointments:', error)
-    return new Response(JSON.stringify({ error: 'Unauthorized', details: error.message }), {
+    return new Response(JSON.stringify({ error: 'Unauthorized', details: error instanceof Error ? error.message : 'Unknown error' }), {
       status: 401,
       headers: { 'Content-Type': 'application/json' }
     })

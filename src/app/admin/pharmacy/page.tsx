@@ -1,6 +1,7 @@
 import { requireRole } from '@/lib/auth'
 import { getAllPharmacies } from '@/lib/pharmacy'
 import { formatCurrency } from '@/lib/utils'
+import { AdminShell } from '@/components/AdminShell'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale'
 import Link from 'next/link'
@@ -22,45 +23,16 @@ export default async function AdminPharmacyPage() {
     .select('total_payout_cents, pharmacy_id')
 
   const totalReferrals = allReferrals?.length || 0
-  const totalRevenue = allCommissions?.reduce((sum, c) => sum + (c.total_payout_cents || 0), 0) || 0
+  const totalRevenue = allCommissions?.reduce((sum: number, c: { total_payout_cents: number | null }) => sum + (c.total_payout_cents || 0), 0) || 0
 
   return (
-    <div className="min-h-screen bg-secondary/50">
-      <header className="bg-card shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
-          <div className="flex items-center gap-4">
-            <Link href="/admin" className="text-2xl font-bold text-primary-600">
-              Doctor.mx Admin
-            </Link>
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary text-purple-800">
-              👑 Admin
-            </span>
-          </div>
-          <div className="flex items-center gap-4">
-            <span className="text-sm text-muted-foreground">{profile?.full_name}</span>
-            <form action="/auth/signout" method="post">
-              <button type="submit" className="text-sm text-red-600 hover:text-red-700">
-                Cerrar Sesión
-              </button>
-            </form>
-          </div>
-        </div>
-      </header>
+    <AdminShell profile={{ full_name: profile.full_name }} currentPath="/admin/pharmacy">
+      <div className="mb-8">
+        <h1 className="text-2xl font-display font-bold text-foreground">Gestión de Farmacias</h1>
+        <p className="text-muted-foreground mt-1">Administra farmacias afiliadas, comisiones y referidos</p>
+      </div>
 
-      <main className="max-w-7xl mx-auto px-4 py-8">
-        <div className="mb-8">
-          <Link href="/admin" className="text-sm text-primary hover:text-primary mb-4 inline-block">
-            ← Volver al Panel de Administración
-          </Link>
-          <h2 className="text-3xl font-bold text-foreground mb-2">
-            Gestión de Farmacias Asociadas
-          </h2>
-          <p className="text-muted-foreground">
-            Administra las farmacias participantes en el programa de referidos
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-5 gap-6 mb-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
           <div className="bg-card p-6 rounded-xl shadow-sm border border-border">
             <p className="text-sm text-muted-foreground mb-1">Total Farmacias</p>
             <p className="text-3xl font-bold text-foreground">{pharmacies.length}</p>
@@ -96,10 +68,10 @@ export default async function AdminPharmacyPage() {
               ) : (
                 <div className="space-y-4">
                   {approvedPharmacies.slice(0, 5).map((pharmacy) => {
-                    const pharmacyReferrals = allReferrals?.filter((r) => r.pharmacy_id === pharmacy.id) || []
+                    const pharmacyReferrals = allReferrals?.filter((r: { pharmacy_id: string }) => r.pharmacy_id === pharmacy.id) || []
                     const pharmacyRevenue = allCommissions
-                      ?.filter((c) => c.pharmacy_id === pharmacy.id)
-                      .reduce((sum, c) => sum + (c.total_payout_cents || 0), 0) || 0
+                      ?.filter((c: { pharmacy_id: string; total_payout_cents: number | null }) => c.pharmacy_id === pharmacy.id)
+                      .reduce((sum: number, c: { total_payout_cents: number | null }) => sum + (c.total_payout_cents || 0), 0) || 0
 
                     return (
                       <div key={pharmacy.id} className="flex items-center justify-between p-4 bg-secondary-50 rounded-lg">
@@ -209,8 +181,8 @@ export default async function AdminPharmacyPage() {
               </thead>
               <tbody className="divide-y divide-gray-200">
                 {pharmacies.map((pharmacy) => {
-                  const pharmacyReferrals = allReferrals?.filter((r) => r.pharmacy_id === pharmacy.id) || []
-                  const redeemed = pharmacyReferrals.filter((r) => r.status === 'redeemed').length
+                      const pharmacyReferrals = allReferrals?.filter((r: { pharmacy_id: string; status: string }) => r.pharmacy_id === pharmacy.id) || []
+                      const redeemed = pharmacyReferrals.filter((r: { status: string }) => r.status === 'redeemed').length
 
                   return (
                     <tr key={pharmacy.id} className="hover:bg-secondary/50">
@@ -277,7 +249,6 @@ export default async function AdminPharmacyPage() {
             </table>
           </div>
         </div>
-      </main>
-    </div>
+    </AdminShell>
   )
 }

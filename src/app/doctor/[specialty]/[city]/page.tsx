@@ -5,6 +5,7 @@ import { Card } from '@/components/Card'
 import { Badge } from '@/components/Badge'
 import { Button } from '@/components/Button'
 import { searchDirectory, getDirectorySpecialties, getDirectoryCities } from '@/lib/domains/directory'
+import { ArrowRight } from 'lucide-react'
 
 interface PageProps {
   params: Promise<{ specialty: string; city: string }>
@@ -120,6 +121,29 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
         </div>
       </div>
       
+      {/* Doctor Acquisition CTA — shown for underserved markets (< 5 doctors) */}
+      {doctors.length > 0 && doctors.length < 5 && (
+        <div className="mx-auto max-w-[1180px] px-4 pt-8">
+          <div className="rounded-xl border border-primary/20 bg-primary/5 p-5 md:p-6">
+            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+              <div>
+                <p className="font-semibold text-foreground">
+                  ¿Eres {capitalizeWords(specialtyName)} en {capitalizeWords(cityName)}?
+                </p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Aparece en esta página. Crea tu perfil verificado en minutos.
+                </p>
+              </div>
+              <Link href="/connect" className="flex-shrink-0">
+                <Button rightIcon={<ArrowRight className="w-4 h-4" />}>
+                  Crear perfil verificado
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="mx-auto max-w-[1180px] px-4 py-8">
         {doctors.length === 0 ? (
           <Card className="p-6">

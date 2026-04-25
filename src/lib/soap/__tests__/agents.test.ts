@@ -15,18 +15,6 @@ vi.mock('openai', () => ({
   })),
 }))
 
-// Mock GLM module
-vi.mock('@/lib/ai/glm', () => ({
-  glmChatCompletion: vi.fn(),
-  GLM_CONFIG: {
-    models: {
-      reasoning: 'glm-4.7',
-      costEffective: 'glm-4.5-air',
-      vision: 'glm-4.5v',
-    },
-  },
-}))
-
 // Import after mocks
 import {
   calculateKendallW,

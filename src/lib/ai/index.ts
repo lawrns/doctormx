@@ -9,29 +9,12 @@ export * from './types';
 export * from './prompts';
 export * from './client';
 export * from './vision';
-export * from './glm';
-export * from './kimi';
+
 
 // Re-exportar constantes útiles
 export { AI_CONFIG, validateAIConfig, estimateCost, getActiveProvider } from './config';
 export { chatCompletion, transcribeAudio, structuredAnalysis, safetyCheck, auditAIOperation } from './client';
-export {
-  glm,
-  GLM_CONFIG,
-  isGLMConfigured,
-  calculateGLMCost,
-  getGLMModel,
-  glmChatCompletion,
-  glmStreamingCompletion,
-  glmVisionAnalysis
-} from './glm';
-export {
-  kimi,
-  KIMI_CONFIG,
-  isKimiConfigured,
-  calculateKimiCost,
-  kimiChatCompletion
-} from './kimi';
+
 export {
   PRECONSULTA_SYSTEM_PROMPT,
   PRECONSULTA_URGENCY_PROMPT,

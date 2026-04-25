@@ -7,6 +7,7 @@ export type SubscriptionPlan = {
     name_es: string
     price_cents: number
     price_mxn: number
+    annual_price_cents: number
     currency: string
     stripe_price_id: string
     features: Record<string, number | boolean | string>
@@ -30,6 +31,7 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {
         name_es: 'Starter',
         price_cents: 49900,
         price_mxn: 499,
+        annual_price_cents: 499000,
         currency: 'MXN',
         stripe_price_id: process.env.STRIPE_STARTER_PRICE_ID || 'price_starter',
         features: {
@@ -60,6 +62,7 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {
         name_es: 'Pro',
         price_cents: 99900,
         price_mxn: 999,
+        annual_price_cents: 999000,
         currency: 'MXN',
         stripe_price_id: process.env.STRIPE_PRO_PRICE_ID || 'price_pro',
         features: {
@@ -96,6 +99,7 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {
         name_es: 'Elite',
         price_cents: 199900,
         price_mxn: 1999,
+        annual_price_cents: 1999000,
         currency: 'MXN',
         stripe_price_id: process.env.STRIPE_ELITE_PRICE_ID || 'price_elite',
         features: {
@@ -134,6 +138,7 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {
         name_es: 'Clínica',
         price_cents: 599900, // $5,999 MXN (~$300 USD)
         price_mxn: 5999,
+        annual_price_cents: 5999000,
         currency: 'MXN',
         stripe_price_id: process.env.STRIPE_CLINIC_PRICE_ID || 'price_clinic',
         features: {

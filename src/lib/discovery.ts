@@ -6,6 +6,7 @@
 import { createServiceClient } from '@/lib/supabase/server'
 import { cache } from '@/lib/cache'
 import { logger } from '@/lib/observability/logger'
+import { getSponsoredDoctors } from '@/lib/sponsored'
 
 export type DiscoveryFilters = {
   specialtySlug?: string
@@ -24,6 +25,54 @@ export type DiscoveryFilters = {
   minExperience?: number
   gender?: string
   language?: string
+  limit?: number
+  offset?: number
+}
+
+export interface PaginatedDoctorResult {
+  data: PublicDoctorSummary[]
+  total: number
+  offset: number
+  limit: number
+}
+
+export interface PublicDoctorSummary {
+  id: string
+  status: string
+  bio: string | null
+  languages: string[]
+  years_experience: number | null
+  city: string | null
+  state: string | null
+  country: string
+  price_cents: number
+  currency: string
+  rating_avg: number
+  rating_count: number
+  license_number: string | null
+  video_enabled: boolean
+  office_address: string | null
+  offers_video: boolean
+  offers_in_person: boolean
+  verification: DoctorVerificationSummary | null
+  profile: {
+    id: string
+    full_name: string
+    photo_url: string | null
+  } | null
+  specialties: Array<{
+    id: string
+    name: string | undefined
+    slug: string | undefined
+  }>
+  sponsored_position?: number
+}
+
+export interface PaginatedDoctorResult {
+  data: PublicDoctorSummary[]
+  total: number
+  offset: number
+  limit: number
 }
 
 // Type for the raw doctor data from Supabase
@@ -77,37 +126,6 @@ export interface DoctorVerificationSummary {
   institution: string | null
 }
 
-export interface PublicDoctorSummary {
-  id: string
-  status: string
-  bio: string | null
-  languages: string[]
-  years_experience: number | null
-  city: string | null
-  state: string | null
-  country: string
-  price_cents: number
-  currency: string
-  rating_avg: number
-  rating_count: number
-  license_number: string | null
-  video_enabled: boolean
-  office_address: string | null
-  offers_video: boolean
-  offers_in_person: boolean
-  verification: DoctorVerificationSummary | null
-  profile: {
-    id: string
-    full_name: string
-    photo_url: string | null
-  } | null
-  specialties: Array<{
-    id: string
-    name: string | undefined
-    slug: string | undefined
-  }>
-}
-
 export interface PublicDoctorProfile extends PublicDoctorSummary {
   profile: {
     id: string
@@ -143,17 +161,47 @@ function summarizeVerification(
 
 // Sistema completo: buscar doctores con filtros
 export async function discoverDoctors(filters?: DiscoveryFilters): Promise<PublicDoctorSummary[]> {
+  // Use SEO cache for hot specialty x city searches
+  if (filters?.specialtySlug && filters?.city) {
+    const filtersHash = JSON.stringify({
+      ...filters,
+      specialtySlug: undefined,
+      city: undefined,
+    })
+    const seoCached = await cache.getSEOSearchResults(filters.specialtySlug, filters.city, filtersHash)
+    if (seoCached) return seoCached as PublicDoctorSummary[]
+  }
+
   const cacheKey = `discover:${JSON.stringify(filters || {})}`
   const cached = (await cache.get(cacheKey)) as PublicDoctorSummary[] | null
   if (cached) return cached
 
-  const doctors = await fetchDoctors(filters)
+  const result = await fetchDoctors(filters)
+  const doctors = result.data
   await cache.set(cacheKey, doctors, 300)
+
+  // Populate SEO cache for hot searches
+  if (filters?.specialtySlug && filters?.city) {
+    const filtersHash = JSON.stringify({
+      ...filters,
+      specialtySlug: undefined,
+      city: undefined,
+    })
+    await cache.setSEOSearchResults(filters.specialtySlug, filters.city, filtersHash, doctors)
+  }
+
   return doctors
 }
 
-async function fetchDoctors(filters?: DiscoveryFilters): Promise<PublicDoctorSummary[]> {
+// Paginated version with total count
+export async function discoverDoctorsPaginated(filters?: DiscoveryFilters): Promise<PaginatedDoctorResult> {
+  return fetchDoctors(filters)
+}
+
+async function fetchDoctors(filters?: DiscoveryFilters): Promise<PaginatedDoctorResult> {
   const supabase = createServiceClient()
+  const limit = filters?.limit ?? 100
+  const offset = filters?.offset ?? 0
 
   try {
     const doctorSelect = `
@@ -198,31 +246,91 @@ async function fetchDoctors(filters?: DiscoveryFilters): Promise<PublicDoctorSum
       )
     `
 
-    let result = await supabase
+    let query = supabase
       .from('doctors')
-      .select(doctorSelect)
+      .select(doctorSelect, { count: 'exact' })
+      .eq('status', 'approved')
+
+    // Try is_listed filter, fallback gracefully
+    const withListedResult = await supabase
+      .from('doctors')
+      .select(doctorSelect, { count: 'exact', head: true })
       .eq('status', 'approved')
       .eq('is_listed', true)
-      .order('rating_avg', { ascending: false, nullsFirst: false })
 
-    if (result.error?.code === '42703' && result.error.message.includes('is_listed')) {
+    if (withListedResult.error?.code === '42703' && withListedResult.error.message.includes('is_listed')) {
       logger.warn('Discovery is_listed filter skipped because migration is not applied')
-      result = await supabase
+      query = supabase
         .from('doctors')
-        .select(doctorSelect)
+        .select(doctorSelect, { count: 'exact' })
         .eq('status', 'approved')
-        .order('rating_avg', { ascending: false, nullsFirst: false })
+    } else {
+      query = supabase
+        .from('doctors')
+        .select(doctorSelect, { count: 'exact' })
+        .eq('status', 'approved')
+        .eq('is_listed', true)
     }
 
-    const { data: doctors, error } = result
+    // Server-side filters pushed to database
+    if (filters?.city) {
+      query = query.eq('city', filters.city)
+    }
+
+    if (filters?.onlineOnly || filters?.appointmentType === 'video') {
+      query = query.eq('video_enabled', true)
+    }
+
+    if (filters?.minExperience) {
+      query = query.gte('years_experience', filters.minExperience)
+    }
+
+    if (filters?.maxPrice !== undefined) {
+      query = query.lte('price_cents', filters.maxPrice)
+    }
+
+    if (filters?.minRating !== undefined) {
+      query = query.gte('rating_avg', filters.minRating || 0)
+    }
+
+    // Apply ordering
+    if (filters?.sortBy) {
+      const ascending = filters.sortOrder === 'asc'
+      switch (filters.sortBy) {
+        case 'rating':
+          query = query.order('rating_avg', { ascending, nullsFirst: false })
+          break
+        case 'price':
+        case 'price_asc':
+          query = query.order('price_cents', { ascending: true })
+          break
+        case 'price_desc':
+          query = query.order('price_cents', { ascending: false })
+          break
+        case 'experience':
+          query = query.order('years_experience', { ascending, nullsFirst: false })
+          break
+        default:
+          query = query.order('rating_avg', { ascending: false, nullsFirst: false })
+      }
+    } else {
+      query = query.order('rating_avg', { ascending: false, nullsFirst: false })
+    }
+
+    // Apply pagination
+    query = query.range(offset, offset + limit - 1)
+
+    const { data: doctors, error, count } = await query
 
     if (error) {
       logger.error('Discovery error', { error: error.message, code: error.code })
-      return []
+      return { data: [], total: 0, offset, limit }
     }
 
     let filtered = (doctors || []) as unknown as RawDoctor[]
+    const totalCount = count || filtered.length
 
+    // Post-DB filtering for active subscriptions (join filter not easily expressed in Supabase JS)
     filtered = filtered.filter(doctor => {
       const hasActiveSubscription = doctor.doctor_subscriptions?.some(
         (sub: { status: string; current_period_end: string }) =>
@@ -231,7 +339,8 @@ async function fetchDoctors(filters?: DiscoveryFilters): Promise<PublicDoctorSum
       return doctor.status === 'approved' && hasActiveSubscription
     })
 
-    // Apply filters
+    // Post-DB filters that require joins or special lookups
+    // Specialty filter via join (keep client-side for nested relation)
     if (filters?.specialtySlug) {
       filtered = filtered.filter(doctor =>
         doctor.doctor_specialties?.some(
@@ -240,31 +349,7 @@ async function fetchDoctors(filters?: DiscoveryFilters): Promise<PublicDoctorSum
       )
     }
 
-    if (filters?.city) {
-      filtered = filtered.filter(doctor => doctor.city === filters.city)
-    }
-
-    if (filters?.districtId) {
-      filtered = filtered.filter(doctor => (doctor as RawDoctor & { district_id?: string }).district_id === filters.districtId)
-    }
-
-    if (filters?.onlineOnly) {
-      filtered = filtered.filter(doctor => doctor.video_enabled === true)
-    }
-
-    if (filters?.minExperience) {
-      filtered = filtered.filter(doctor => (doctor.years_experience || 0) >= filters.minExperience!)
-    }
-
-    if (filters?.maxPrice !== undefined) {
-      filtered = filtered.filter(doctor => doctor.price_cents <= filters.maxPrice!)
-    }
-
-    if (filters?.minRating !== undefined) {
-      filtered = filtered.filter(doctor => (doctor.rating_avg || 0) >= filters.minRating!)
-    }
-
-    // Filter by insurance provider
+    // Insurance filter (cross-table lookup)
     if (filters?.insuranceSlug) {
       const insuranceDoctorIds = await getDoctorIdsByInsurance(filters.insuranceSlug)
       if (insuranceDoctorIds.length > 0) {
@@ -274,7 +359,7 @@ async function fetchDoctors(filters?: DiscoveryFilters): Promise<PublicDoctorSum
       }
     }
 
-    // Filter by city slug (resolved from cities table)
+    // City slug filter (resolved from cities table)
     if (filters?.citySlug) {
       const cityDoctors = await getDoctorIdsByCitySlug(filters.citySlug)
       if (cityDoctors.length > 0) {
@@ -284,49 +369,30 @@ async function fetchDoctors(filters?: DiscoveryFilters): Promise<PublicDoctorSum
       }
     }
 
-    // Filter by search query (name search)
+    // Search query (full-text name search)
     if (filters?.searchQuery) {
-      const query = filters.searchQuery.toLowerCase().trim()
+      const queryStr = filters.searchQuery.toLowerCase().trim()
       filtered = filtered.filter(doctor =>
-        doctor.profiles?.full_name?.toLowerCase().includes(query)
+        doctor.profiles?.full_name?.toLowerCase().includes(queryStr)
       )
     }
 
-    // Filter by appointment type (video/in_person)
-    if (filters?.appointmentType && filters.appointmentType !== 'all') {
-      filtered = filtered.filter(doctor => {
-        if (filters.appointmentType === 'video') {
-          return doctor.video_enabled === true
-        }
-        if (filters.appointmentType === 'in_person') {
-          return true // Show all doctors for in_person filter (everyone can do in-person)
-        }
-        return true
-      })
+    // Gender filter (profiles join)
+    if (filters?.gender) {
+      filtered = filtered.filter(doctor => 
+        (doctor as RawDoctor & { profiles?: { gender?: string } }).profiles?.gender === filters.gender
+      )
     }
 
-    // Sort results
-    if (filters?.sortBy) {
-      const sortOrder = filters.sortOrder === 'asc' ? 1 : -1
-      filtered = filtered.sort((a, b) => {
-        switch (filters.sortBy) {
-          case 'rating':
-            return ((a.rating_avg || 0) - (b.rating_avg || 0)) * sortOrder
-          case 'price':
-          case 'price_asc':
-            return (a.price_cents - b.price_cents) * (filters.sortBy === 'price_asc' ? 1 : sortOrder)
-          case 'price_desc':
-            return (b.price_cents - a.price_cents)
-          case 'experience':
-            return ((a.years_experience || 0) - (b.years_experience || 0)) * sortOrder
-          default:
-            return 0
-        }
-      })
+    // Language filter
+    if (filters?.language) {
+      filtered = filtered.filter(doctor =>
+        (doctor.languages || []).some(lang => lang.toLowerCase() === filters.language?.toLowerCase())
+      )
     }
 
     // Transform data
-    return filtered.map(doctor => ({
+    const result = filtered.map(doctor => ({
       id: doctor.id,
       status: doctor.status,
       bio: doctor.bio,
@@ -356,9 +422,11 @@ async function fetchDoctors(filters?: DiscoveryFilters): Promise<PublicDoctorSum
         slug: ds.specialties?.slug,
       })) || [],
     }))
+
+    return { data: result, total: totalCount, offset, limit }
   } catch (error) {
     logger.warn('Discovery fetch fallback triggered', { error: error instanceof Error ? error.message : 'unknown' })
-    return []
+    return { data: [], total: 0, offset: 0, limit }
   }
 }
 

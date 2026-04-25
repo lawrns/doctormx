@@ -3,9 +3,8 @@
 // Process: Generate safe OTC recommendations
 // Output: Medications with dosage and warnings
 
-import { getAIClient, glm } from '@/lib/openai'
+import { getAIClient } from '@/lib/openai'
 import { createServiceClient } from '@/lib/supabase/server'
-import { GLM_CONFIG, isGLMConfigured } from './glm'
 
 export type OTCCategory =
     | 'analgesic'
@@ -103,8 +102,8 @@ Reglas:
 - Sé conservador con dosis`
 
         // Generate recommendations using GLM as primary provider
-        const client = isGLMConfigured() ? glm : getAIClient()
-        const model = isGLMConfigured() ? GLM_CONFIG.models.reasoning : 'gpt-4-turbo'
+        const client = getAIClient()
+        const model = 'minimax/minimax-m2.7'
 
         const response = await client.chat.completions.create({
             model,
@@ -307,8 +306,8 @@ Responde en JSON con esta estructura:
 }`
 
         // Check interactions using GLM as primary provider
-        const client = isGLMConfigured() ? glm : getAIClient()
-        const model = isGLMConfigured() ? GLM_CONFIG.models.reasoning : 'gpt-4-turbo'
+        const client = getAIClient()
+        const model = 'minimax/minimax-m2.7'
 
         const response = await client.chat.completions.create({
             model,
@@ -358,8 +357,8 @@ Responde en JSON con esta estructura:
 }`
 
         // Get alternatives using GLM as primary provider
-        const client = isGLMConfigured() ? glm : getAIClient()
-        const model = isGLMConfigured() ? GLM_CONFIG.models.costEffective : 'gpt-4-turbo'
+        const client = getAIClient()
+        const model = 'minimax/minimax-m2.7'
 
         const response = await client.chat.completions.create({
             model,

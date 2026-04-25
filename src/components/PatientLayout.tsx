@@ -1,6 +1,6 @@
 'use client'
 
-import { Calendar, MessageCircle, User, ClipboardList, Home, LogOut, Menu, X } from 'lucide-react'
+import { Calendar, MessageCircle, User, ClipboardList, Home, LogOut, Menu, X, Gift, CreditCard, FileText } from 'lucide-react'
 import Link from 'next/link'
 import { DoctorMxLogo } from '@/components/brand/DoctorMxLogo'
 import { usePathname } from 'next/navigation'
@@ -135,6 +135,9 @@ export function PatientLayout({ children }: PatientLayoutProps) {
       badge: badges.messages > 0 ? { count: badges.messages, color: 'bg-red-500' } : undefined
     },
     { href: '/app/followups', icon: ClipboardList, label: 'Seguimientos' },
+    { href: '/app/referrals', icon: Gift, label: 'Referidos' },
+    { href: '/app/suscripcion', icon: CreditCard, label: 'Suscripcion' },
+    { href: '/app/historial', icon: FileText, label: 'Historial' },
     { href: '/app/profile', icon: User, label: 'Perfil' },
   ]
 
@@ -157,7 +160,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
       )}
 
       {/* Mobile Header */}
-      <header className="lg:hidden glass-nav sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
+      <header className="lg:hidden nav-sticky sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
         <div className="flex items-center justify-between px-4 py-3">
           <div className="flex items-center gap-3">
             <button

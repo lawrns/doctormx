@@ -313,7 +313,7 @@ export default function VideoCallPage() {
   return (
     <div className="h-screen bg-background flex flex-col">
       {/* Top bar */}
-      <div className="glass-nav sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md px-4 py-3 flex items-center justify-between">
+      <div className="nav-sticky sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <Link href="/app/appointments" className="text-foreground hover:text-muted-foreground">
             <ArrowLeft className="w-5 h-5" />

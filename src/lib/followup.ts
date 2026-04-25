@@ -425,7 +425,7 @@ export async function getDoctorFollowUpResponses(doctorId: string): Promise<{
     .eq('status', 'responded')
     .order('created_at', { ascending: false })
 
-  const followUpIds = (followUps || []).map((f) => f.id)
+  const followUpIds = (followUps || []).map((f: { id: string }) => f.id)
 
   const { data: responses } = followUpIds.length > 0
     ? await supabase
@@ -440,7 +440,7 @@ export async function getDoctorFollowUpResponses(doctorId: string): Promise<{
 
   return {
     followUps: followUps || [],
-    responses: (responses || []).map((r) => ({
+    responses: (responses || []).map((r: { id: string; followup_id: string; patient: unknown; response: string; action_taken: string | null; created_at: string }) => ({
       id: r.id,
       followup_id: r.followup_id,
       patient_name: (r.patient as unknown as { full_name: string } | null)?.full_name || 'Paciente',

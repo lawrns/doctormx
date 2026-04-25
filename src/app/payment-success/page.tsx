@@ -8,9 +8,11 @@ import Link from 'next/link'
 import { AlertTriangle, CalendarCheck, CheckCircle2, Mail, MapPin, ReceiptText, ShieldCheck, Video } from 'lucide-react'
 import type { Appointment } from '@/types'
 import { ANALYTICS_EVENTS, trackClientEvent } from '@/lib/analytics/posthog'
+import { captureError } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { DoctorMxLogo } from '@/components/brand/DoctorMxLogo'
+import { PostConsultationReferral } from '@/components/referrals/PostConsultationReferral'
 
 type DoctorSummary = {
   id: string
@@ -90,6 +92,7 @@ function PaymentSuccessContent() {
         setAppointment(data.appointment)
       })
       .catch((err) => {
+        captureError(err, 'PaymentSuccess.confirmPayment')
         setError(err instanceof Error ? err.message : 'No pudimos confirmar el pago automáticamente.')
       })
       .finally(() => {
@@ -258,6 +261,10 @@ function PaymentSuccessContent() {
             </div>
           </aside>
         </div>
+
+        <section className="mt-8">
+          <PostConsultationReferral />
+        </section>
       </main>
     </div>
   )

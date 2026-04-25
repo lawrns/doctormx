@@ -9,7 +9,7 @@
  */
 
 import pLimit from 'p-limit'
-import { glmChatCompletion, GLM_CONFIG } from '@/lib/ai/glm'
+import { getAIClient } from '@/lib/openai'
 import { logger } from '@/lib/observability/logger'
 import type {
   SpecialistRole,
@@ -38,9 +38,54 @@ import {
 // CONCURRENCY LIMITING
 // ============================================
 
-// Limit to 2 concurrent API requests to avoid rate limits from GLM provider
-// 4 simultaneous calls were causing 429 errors and quota exhaustion
+// Limit to 2 concurrent API requests to avoid rate limits
 const apiConcurrencyLimit = pLimit(2)
+
+// Local adapter: OpenRouter chat completion (replaces glmChatCompletion)
+async function aiChatCompletion(params: {
+  messages: Array<{ role: 'system' | 'user' | 'assistant'; content: string }>
+  model?: string
+  temperature?: number
+  maxTokens?: number
+  jsonMode?: boolean
+}): Promise<{
+  content: string
+  usage: { inputTokens: number; outputTokens: number; totalTokens: number }
+  costUSD: number
+  model: string
+}> {
+  const client = getAIClient()
+  const model = params.model || 'minimax/minimax-m2.7'
+  const startTime = Date.now()
+
+  const response = await client.chat.completions.create({
+    model,
+    messages: params.messages,
+    temperature: params.temperature ?? 0.3,
+    max_tokens: params.maxTokens ?? 2000,
+    ...(params.jsonMode ? { response_format: { type: 'json_object' } } : {}),
+  })
+
+  const message = response.choices[0]?.message
+  const content = message?.content || ''
+  const usage = {
+    inputTokens: response.usage?.prompt_tokens || 0,
+    outputTokens: response.usage?.completion_tokens || 0,
+    totalTokens: response.usage?.total_tokens || 0,
+  }
+  const costUSD =
+    (usage.inputTokens / 1_000_000) * 0.30 +
+    (usage.outputTokens / 1_000_000) * 1.20
+
+  logger.info('[SOAP] AI chat completion', {
+    model,
+    latencyMs: Date.now() - startTime,
+    tokens: usage.totalTokens,
+    costUSD,
+  })
+
+  return { content, usage, costUSD, model }
+}
 
 // ============================================
 // SPECIALIST CONSULTATION
@@ -80,12 +125,12 @@ async function consultSpecialist(
   const userPrompt = buildPatientDataPrompt(subjective, objective)
 
   try {
-    const response = await glmChatCompletion({
+    const response = await aiChatCompletion({
       messages: [
         { role: 'system', content: systemPrompt },
         { role: 'user', content: userPrompt },
       ],
-      model: GLM_CONFIG.models.reasoning, // Use best model for medical reasoning
+      model: 'minimax/minimax-m2.7', // Use best model for medical reasoning
       temperature: 0.3,
       maxTokens: 2000,
       jsonMode: true,
@@ -355,12 +400,12 @@ export async function buildConsensus(
   const userPrompt = buildConsensusPrompt(assessmentSummaries)
 
   try {
-    const response = await glmChatCompletion({
+    const response = await aiChatCompletion({
       messages: [
         { role: 'system', content: SUPERVISOR_SYSTEM_PROMPT },
         { role: 'user', content: userPrompt },
       ],
-      model: GLM_CONFIG.models.reasoning,
+      model: 'minimax/minimax-m2.7',
       temperature: 0.2, // Lower for more deterministic consensus
       maxTokens: 2000,
       jsonMode: true,
@@ -467,12 +512,12 @@ export async function generatePlan(
   const userPrompt = buildPlanPrompt(consensusJson, subjective)
 
   try {
-    const response = await glmChatCompletion({
+    const response = await aiChatCompletion({
       messages: [
         { role: 'system', content: PLAN_GENERATOR_PROMPT },
         { role: 'user', content: userPrompt },
       ],
-      model: GLM_CONFIG.models.costEffective, // Plan generation can use cheaper model
+      model: 'minimax/minimax-m2.7', // Plan generation can use cheaper model
       temperature: 0.3,
       maxTokens: 1500,
       jsonMode: true,
@@ -588,7 +633,7 @@ export async function runSOAPConsultation(
         totalTokens,
         totalCostUSD,
         totalLatencyMs,
-        aiModel: GLM_CONFIG.models.reasoning,
+        aiModel: 'minimax/minimax-m2.7',
       },
     }
 
@@ -618,7 +663,7 @@ export async function runSOAPConsultation(
         totalTokens,
         totalCostUSD,
         totalLatencyMs: Date.now() - startTime,
-        aiModel: GLM_CONFIG.models.reasoning,
+        aiModel: 'minimax/minimax-m2.7',
       },
     }
   }

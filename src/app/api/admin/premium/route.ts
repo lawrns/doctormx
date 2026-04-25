@@ -76,7 +76,7 @@ export async function GET(request: NextRequest) {
     let pendingRevenue = 0
 
     for (const record of billingRecords || []) {
-      const tier = tierMap[subscriptions?.find(s => s.doctor_id === record.doctor_id)?.plan_id || ''] || 'none'
+      const tier = tierMap[subscriptions?.find((s: { doctor_id: string; plan_id: string }) => s.doctor_id === record.doctor_id)?.plan_id || ''] || 'none'
       revenueByFeature[record.feature_key] =
         (revenueByFeature[record.feature_key] || 0) + record.amount_cents
       revenueByTier[tier] += record.amount_cents
@@ -93,8 +93,8 @@ export async function GET(request: NextRequest) {
       ).flatMap(([, docs]) => docs)
 
       const featureUsage = (usageRecords || [])
-        .filter(r => r.feature_key === feature)
-        .reduce((sum, r) => sum + r.usage_count, 0)
+        .filter((r: { feature_key: string; usage_count: number }) => r.feature_key === feature)
+        .reduce((sum: number, r: { usage_count: number }) => sum + r.usage_count, 0)
 
       return NextResponse.json({
         feature,
@@ -112,7 +112,7 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({
       summary: {
-        totalDoctors: Object.values(doctorsByTier).reduce((sum, d) => sum + d.length, 0),
+        totalDoctors: Object.values(doctorsByTier).reduce((sum: number, d: unknown[]) => sum + d.length, 0),
         byTier: {
           none: doctorsByTier.none.length,
           starter: doctorsByTier.starter.length,
@@ -127,7 +127,7 @@ export async function GET(request: NextRequest) {
         byFeature: revenueByFeature,
         byTier: revenueByTier,
       },
-      usage: (usageRecords || []).reduce((sum, r) => sum + r.usage_count, 0),
+      usage: (usageRecords || []).reduce((sum: number, r: { usage_count: number }) => sum + r.usage_count, 0),
       transactions: billingRecords?.length || 0,
     })
   } catch (error) {

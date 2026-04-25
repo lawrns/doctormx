@@ -69,8 +69,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
 
     // Specialty + City pages: /doctor/[specialty]/[city]
-    for (const specialty of specialties) {
-      for (const city of cities) {
+    // Capped at 5000 total entries to avoid excessive sitemap bloat.
+    // TODO: Query DB for actual doctor counts per combo and only include populated combos.
+    const MAX_SITEMAP_ENTRIES = 5000
+    const majorCities = cities.filter((c: { is_major?: boolean }) => c.is_major)
+    const allCities = majorCities.length > 0 ? majorCities : cities.slice(0, 5)
+    const topSpecialties = specialties.slice(0, 50)
+
+    specialtyCityLoop:
+    for (const specialty of topSpecialties) {
+      for (const city of allCities) {
+        if (entries.length >= MAX_SITEMAP_ENTRIES) break specialtyCityLoop
         entries.push({
           url: `${BASE_URL}/doctor/${specialty.slug}/${city.slug}`,
           lastModified: new Date(),
@@ -80,10 +89,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       }
     }
 
-    // Specialty + City + Insurance pages
-    for (const specialty of specialties.slice(0, 10)) {
-      for (const city of cities.slice(0, 15)) {
+    // Specialty + City + Insurance pages (capped)
+    insuranceLoop:
+    for (const specialty of topSpecialties.slice(0, 10)) {
+      for (const city of allCities.slice(0, 10)) {
         for (const insurance of insurances) {
+          if (entries.length >= MAX_SITEMAP_ENTRIES) break insuranceLoop
           entries.push({
             url: `${BASE_URL}/doctor/${specialty.slug}/${city.slug}/${insurance.slug}`,
             lastModified: new Date(),

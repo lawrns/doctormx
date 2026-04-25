@@ -9,10 +9,48 @@ import { NextRequest } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { logger } from '@/lib/observability/logger'
 import { rateLimit } from '@/lib/cache'
-import { glmChatCompletion, GLM_CONFIG } from '@/lib/ai/glm'
+import { getAIClient } from '@/lib/openai'
 import { buildPatientDataPrompt } from '@/lib/soap/prompts'
 import type { SubjectiveData, ObjectiveData, SpecialistRole, UrgencyLevel } from '@/lib/soap/types'
 import { z } from 'zod'
+
+// Local adapter: OpenRouter chat completion (replaces glmChatCompletion)
+async function aiChatCompletion(params: {
+  messages: Array<{ role: 'system' | 'user' | 'assistant'; content: string }>
+  model?: string
+  temperature?: number
+  maxTokens?: number
+  jsonMode?: boolean
+}): Promise<{
+  content: string
+  usage: { inputTokens: number; outputTokens: number; totalTokens: number }
+  costUSD: number
+  model: string
+}> {
+  const client = getAIClient()
+  const model = params.model || 'minimax/minimax-m2.7'
+
+  const response = await client.chat.completions.create({
+    model,
+    messages: params.messages,
+    temperature: params.temperature ?? 0.3,
+    max_tokens: params.maxTokens ?? 2000,
+    ...(params.jsonMode ? { response_format: { type: 'json_object' } } : {}),
+  })
+
+  const message = response.choices[0]?.message
+  const content = message?.content || ''
+  const usage = {
+    inputTokens: response.usage?.prompt_tokens || 0,
+    outputTokens: response.usage?.completion_tokens || 0,
+    totalTokens: response.usage?.total_tokens || 0,
+  }
+  const costUSD =
+    (usage.inputTokens / 1_000_000) * 0.30 +
+    (usage.outputTokens / 1_000_000) * 1.20
+
+  return { content, usage, costUSD, model }
+}
 
 // Extended timeout for streaming
 export const maxDuration = 60
@@ -136,12 +174,12 @@ async function consultSpecialist(
   // Use the streamlined prompt directly (already includes JSON schema)
   const prompt = SPECIALIST_PROMPTS[role]
 
-  const response = await glmChatCompletion({
+  const response = await aiChatCompletion({
     messages: [
       { role: 'system', content: prompt },
       { role: 'user', content: patientData },
     ],
-    model: GLM_CONFIG.models.costEffective,
+    model: 'minimax/minimax-m2.7',
     jsonMode: false, // GLM ignores JSON mode, so we parse natural language instead
     temperature: 0.3,
     maxTokens: 500, // Need enough tokens for full response
@@ -348,12 +386,12 @@ SÍNTOMA PRINCIPAL: ${subjective.chiefComplaint}
 SEVERIDAD: ${subjective.symptomSeverity}/10
 DURACIÓN: ${subjective.symptomDuration}`
 
-  const response = await glmChatCompletion({
+  const response = await aiChatCompletion({
     messages: [
       { role: 'system', content: planPrompt },
       { role: 'user', content: patientContext },
     ],
-    model: GLM_CONFIG.models.costEffective,
+    model: 'minimax/minimax-m2.7',
     jsonMode: true,
     temperature: 0.3,
     maxTokens: 700,

@@ -1,14 +1,12 @@
-import { redirect } from 'next/navigation'
-import { createClient } from '@/lib/supabase/server'
-import { AIConsultaClient } from '../ai-consulta/ai-consulta-client'
+import { requireRole } from '@/lib/auth'
+import { PatientShell } from '@/components/PatientShell'
+import SecondOpinionContent from './SecondOpinionContent'
 
 export default async function SecondOpinionPage() {
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-
-  if (!user) {
-    redirect('/auth/login?redirect=/app/second-opinion')
-  }
-
-  return <AIConsultaClient userId={user.id} />
+  const { profile } = await requireRole('patient')
+  return (
+    <PatientShell profile={{ full_name: profile.full_name }} currentPath="/app/second-opinion">
+      <SecondOpinionContent />
+    </PatientShell>
+  )
 }

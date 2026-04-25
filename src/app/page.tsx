@@ -35,7 +35,10 @@ export default async function Home() {
     return <LandingPageClient />
   }
 
-  const landingData = await getPublicLandingData().catch(() => null)
+  const landingData = await getPublicLandingData().catch((err) => {
+    console.error('[LandingPage] Failed to fetch landing data:', err)
+    return null
+  })
 
   return <LandingPageClient trustData={landingData} />
 }

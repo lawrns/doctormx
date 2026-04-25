@@ -1,8 +1,16 @@
 {
   "completed": [
+    "ginecologo/benito-juarez",
     "ginecologo/ciudad-de-mexico",
     "ginecologo/guadalajara",
-    "ginecologo/monterrey"
+    "ginecologo/leon",
+    "ginecologo/merida",
+    "ginecologo/miguel-hidalgo",
+    "ginecologo/monterrey",
+    "ginecologo/puebla",
+    "ginecologo/santiago-de-queretaro",
+    "ginecologo/tijuana",
+    "ginecologo/zapopan"
   ],
   "currentSpecialty": null,
   "currentCity": null

@@ -29,12 +29,12 @@ export default async function AdminCommunicationsPage() {
     .select('id, patient:profiles!chat_conversations_patient_id_fkey(id)', { count: 'exact', head: true })
     .is('patient.id', null)
 
-  const activeConversations24h = (conversations || []).filter((conversation) => {
+  const activeConversations24h = (conversations || []).filter((conversation: { last_message_at: string | null; last_message_preview: string | null }) => {
     if (!conversation.last_message_at) return false
     return new Date(conversation.last_message_at).getTime() > Date.now() - 24 * 60 * 60 * 1000
   }).length
 
-  const conversationsAwaitingFirstReply = (conversations || []).filter((conversation) => {
+  const conversationsAwaitingFirstReply = (conversations || []).filter((conversation: { last_message_preview: string | null }) => {
     return Boolean(conversation.last_message_preview) && !conversation.last_message_preview?.trim().startsWith('Dr.')
   }).length
 
@@ -144,7 +144,7 @@ export default async function AdminCommunicationsPage() {
                     </td>
                   </tr>
                 ) : (
-                  (conversations || []).map((conversation) => (
+                  (conversations || []).map((conversation: { id: string; patient_id: string; doctor_id: string; last_message_preview: string | null; last_message_at: string | null }) => (
                     <tr key={conversation.id}>
                       <td className="px-6 py-4 font-medium text-foreground">{conversation.id.slice(0, 8)}…</td>
                       <td className="px-6 py-4 text-muted-foreground">{conversation.patient_id}</td>

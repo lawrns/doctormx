@@ -8,6 +8,7 @@ import { createServiceClient } from '@/lib/supabase/server'
 import { calculatePlatformFee, calculateDoctorNetAmount } from './platform-fees'
 import { type SubscriptionTier } from './subscription-types'
 import { logger } from '@/lib/observability/logger'
+import { captureError } from '@/lib/utils'
 import { ensureVideoRoomForAppointment } from '@/lib/video/videoService'
 import { stripe } from '@/lib/stripe'
 import { validatePaymentIntentBinding } from '@/lib/payment-integrity'
@@ -149,7 +150,7 @@ export async function confirmPaymentWithFees(
       .eq('id', appointmentId)
 
     ensureVideoRoomForAppointment(supabase, appointmentId).catch((error) => {
-      logger.error('Failed to create video room after payment:', { error, appointmentId })
+      captureError(error, 'paymentWithFees.ensureVideoRoom')
     })
 
     // 8. Update payment status

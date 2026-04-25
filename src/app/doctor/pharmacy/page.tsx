@@ -41,12 +41,12 @@ export default async function DoctorPharmacyPage() {
     referrals = referralsData || []
 
     const totalReferrals = referrals.length
-    const redeemedReferrals = referrals.filter((r) => r.status === 'redeemed').length
-    const pendingReferrals = referrals.filter((r) => r.status !== 'redeemed' && r.status !== 'cancelled' && r.status !== 'expired').length
-    const totalReferralFees = earningsData?.reduce((sum, c) => sum + (c.referral_fee_cents || 0), 0) || 0
-    const totalCommissions = earningsData?.reduce((sum, c) => sum + (c.commission_amount_cents || 0), 0) || 0
-    const platformFees = earningsData?.reduce((sum, c) => sum + (c.platform_fee_cents || 0), 0) || 0
-    const netEarnings = earningsData?.reduce((sum, c) => sum + (c.net_doctor_earnings_cents || 0), 0) || 0
+    const redeemedReferrals = referrals.filter((r: { status: string }) => r.status === 'redeemed').length
+    const pendingReferrals = referrals.filter((r: { status: string }) => r.status !== 'redeemed' && r.status !== 'cancelled' && r.status !== 'expired').length
+    const totalReferralFees = earningsData?.reduce((sum: number, c: { referral_fee_cents: number | null }) => sum + (c.referral_fee_cents || 0), 0) || 0
+    const totalCommissions = earningsData?.reduce((sum: number, c: { commission_amount_cents: number | null }) => sum + (c.commission_amount_cents || 0), 0) || 0
+    const platformFees = earningsData?.reduce((sum: number, c: { platform_fee_cents: number | null }) => sum + (c.platform_fee_cents || 0), 0) || 0
+    const netEarnings = earningsData?.reduce((sum: number, c: { net_doctor_earnings_cents: number | null }) => sum + (c.net_doctor_earnings_cents || 0), 0) || 0
 
     earnings = {
       totalReferrals,

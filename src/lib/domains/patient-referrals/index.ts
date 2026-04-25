@@ -104,6 +104,10 @@ export async function getReferralSummaryForUser(
  * Called when a new user completes signup. If they provided a referral code,
  * creates a patient_referrals row, grants the signup bonus, and (if the referrer
  * is under the monthly cap) grants rewards to both parties.
+ *
+ * NOTE: No auth guard is applied here because this function runs during signup
+ * flow, before the user has a session. Input validation is handled by the
+ * caller and the DB unique constraint on (referee_id).
  */
 export async function redeemReferralAtSignup(params: {
   newUserId: string
@@ -157,36 +161,38 @@ export async function redeemReferralAtSignup(params: {
     return { applied: false, reason: 'already_redeemed', refereeBonusApplied: true }
   }
 
-  // Monthly cap check on referrer
-  const monthStart = new Date()
-  monthStart.setUTCDate(1)
-  monthStart.setUTCHours(0, 0, 0, 0)
+  // Atomic redeem: count + insert in a single serialized RPC call
+  // to prevent TOCTOU race at the monthly cap boundary.
+  const { data: rpcResult, error: rpcError } = await supabase.rpc(
+    'atomic_redeem_referral',
+    {
+      p_referrer_id: referrer.id,
+      p_referee_id: newUserId,
+      p_referral_code: trimmed,
+    }
+  )
 
-  const { count: monthlyCount } = await supabase
-    .from('patient_referrals')
-    .select('id', { count: 'exact', head: true })
-    .eq('referrer_id', referrer.id)
-    .in('status', ['redeemed', 'rewarded'])
-    .gte('created_at', monthStart.toISOString())
-
-  const capExceeded =
-    (monthlyCount || 0) >= PATIENT_REFERRAL_CONFIG.MONTHLY_REWARD_CAP
-
-  const { error: insertError } = await supabase
-    .from('patient_referrals')
-    .insert({
-      referrer_id: referrer.id,
-      referee_id: newUserId,
-      code_used: trimmed,
-      status: capExceeded ? 'redeemed' : 'rewarded',
-      rewards_granted_at: capExceeded ? null : new Date().toISOString(),
-    })
-
-  if (insertError) {
+  if (rpcError) {
     return { applied: false, reason: 'invalid_code', refereeBonusApplied: true }
   }
 
-  if (capExceeded) {
+  const result = rpcResult as {
+    success: boolean
+    reason?: string
+    cap_exceeded?: boolean
+  }
+
+  if (!result.success) {
+    if (result.reason === 'already_redeemed') {
+      return { applied: false, reason: 'already_redeemed', refereeBonusApplied: true }
+    }
+    if (result.reason === 'self_referral') {
+      return { applied: false, reason: 'self_referral', refereeBonusApplied: true }
+    }
+    return { applied: false, reason: 'invalid_code', refereeBonusApplied: true }
+  }
+
+  if (result.cap_exceeded) {
     return {
       applied: true,
       reason: 'monthly_cap_exceeded',
@@ -201,6 +207,9 @@ export async function redeemReferralAtSignup(params: {
   return { applied: true, refereeBonusApplied: true }
 }
 
+// Called server-side with validated input from redeemReferralAtSignup.
+// No auth guard needed — the caller has already validated the new user's identity
+// and this is an internal helper with a trusted userId.
 async function grantSignupBonus(userId: string): Promise<void> {
   const supabase = createServiceClient()
   const { data } = await supabase
@@ -223,6 +232,9 @@ async function grantSignupBonus(userId: string): Promise<void> {
     .eq('id', userId)
 }
 
+// Called server-side with validated input from redeemReferralAtSignup.
+// No auth guard needed — the referrer has been verified via referral_code lookup
+// and this is an internal helper with a trusted userId.
 async function grantReferrerReward(userId: string): Promise<void> {
   const supabase = createServiceClient()
   const { data } = await supabase

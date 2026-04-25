@@ -265,7 +265,7 @@ export async function auditAIOperation(params: {
   latencyMs: number;
   status: 'success' | 'error';
   error?: string;
-  provider?: 'openrouter' | 'openai' | 'glm' | 'kimi';
+  provider?: 'openrouter' | 'openai';
 }): Promise<void> {
   const supabase = await createClient();
   const model = AI_CONFIG.openrouter.model;

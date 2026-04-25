@@ -3,6 +3,7 @@ import { getDoctorRecordByUserId, getDoctorOperationalRecordId } from '@/lib/doc
 import { getDoctorInboxCases } from '@/lib/care-orchestration'
 import { redirect } from 'next/navigation'
 import DoctorLayout from '@/components/DoctorLayout'
+import EmptyDashboard from '@/components/doctor/EmptyDashboard'
 import { AppointmentCardCompact, EmptyState } from '@/components'
 import Link from 'next/link'
 import { Calendar, CheckCircle, Clock, Video, FileText, HelpCircle, ArrowRight } from 'lucide-react'
@@ -159,6 +160,7 @@ export default async function DoctorDashboard() {
       isPending={isPending}
       currentPath="/doctor"
       pendingAppointments={pendingPaymentCount}
+      doctorId={user.id}
     >
       {isPending ? (
         /* ─── PENDING VIEW ─── */
@@ -315,6 +317,11 @@ export default async function DoctorDashboard() {
       ) : (
         /* ─── APPROVED VIEW ─── */
         <div className="max-w-6xl">
+          {/* Show empty state when brand new — no patients, no appointments, no revenue */}
+          {todayCount === 0 && weekCount === 0 && totalPatients === 0 && upcomingAppointments.length === 0 ? (
+            <EmptyDashboard doctorId={user.id} />
+          ) : (
+            <>
           <Eyebrow className="mb-3">Dashboard</Eyebrow>
           <h2 className="font-display text-3xl font-bold tracking-tight text-foreground mb-2">
             Panel del doctor
@@ -467,6 +474,8 @@ export default async function DoctorDashboard() {
               )}
             </CardContent>
           </Card>
+          </>
+          )}
         </div>
       )}
     </DoctorLayout>

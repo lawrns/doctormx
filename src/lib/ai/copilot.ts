@@ -1,11 +1,10 @@
 // Clinical Copilot - AI-Assisted Clinical Decision Support
 
-import { getAIClient, glm } from '@/lib/openai'
+import { getAIClient } from '@/lib/openai'
 import { router } from './router'
 import { createServiceClient } from '@/lib/supabase/server'
 import { retrieveMedicalContext, generateAugmentedPrompt } from './knowledge'
 import { logger } from '@/lib/observability/logger'
-import { GLM_CONFIG, isGLMConfigured } from './glm'
 
 export type SOAPNote = {
     subjective: string
@@ -348,8 +347,8 @@ export async function generateConsultationSummary(
 ): Promise<ConsultationSummary> {
     try {
         // Use GLM as primary provider for consultation summaries
-        const client = isGLMConfigured() ? glm : getAIClient()
-        const model = isGLMConfigured() ? GLM_CONFIG.models.reasoning : 'gpt-4-turbo'
+        const client = getAIClient()
+        const model = 'minimax/minimax-m2.7'
 
         const response = await client.chat.completions.create({
             model,
@@ -385,7 +384,7 @@ Responde en JSON valido con esta estructura:
         }
 
         logger.info('[COPILOT] Consultation summary generated', {
-            provider: isGLMConfigured() ? 'glm' : 'openai',
+            provider: 'openrouter',
             model,
         })
 
@@ -423,8 +422,8 @@ export async function suggestICDCodes(
 
         if (suggestedCodes.length === 0) {
             // Use GLM as primary provider for ICD code suggestions
-            const client = isGLMConfigured() ? glm : getAIClient()
-            const model = isGLMConfigured() ? GLM_CONFIG.models.costEffective : 'gpt-4-turbo'
+            const client = getAIClient()
+            const model = 'minimax/minimax-m2.7'
 
             const response = await client.chat.completions.create({
                 model,
@@ -464,8 +463,8 @@ export async function prefillPrescription(
 ): Promise<PrescriptionTemplate> {
     try {
         // Use GLM as primary provider for prescriptions
-        const client = isGLMConfigured() ? glm : getAIClient()
-        const model = isGLMConfigured() ? GLM_CONFIG.models.reasoning : 'gpt-4-turbo'
+        const client = getAIClient()
+        const model = 'minimax/minimax-m2.7'
 
         const response = await client.chat.completions.create({
             model,
@@ -511,7 +510,7 @@ Genera una plantilla de prescripcion apropiada para este caso.`,
         }
 
         logger.info('[COPILOT] Prescription prefilled', {
-            provider: isGLMConfigured() ? 'glm' : 'openai',
+            provider: 'openrouter',
             model,
         })
 
@@ -556,8 +555,8 @@ Responde en JSON con esta estructura:
         )
 
         // Use GLM as primary provider for SOAP notes
-        const client = isGLMConfigured() ? glm : getAIClient()
-        const model = isGLMConfigured() ? GLM_CONFIG.models.reasoning : 'gpt-4-turbo'
+        const client = getAIClient()
+        const model = 'minimax/minimax-m2.7'
 
         const response = await client.chat.completions.create({
             model,
@@ -578,7 +577,7 @@ Responde en JSON con esta estructura:
         }
 
         logger.info('[COPILOT] SOAP note generated', {
-            provider: isGLMConfigured() ? 'glm' : 'openai',
+            provider: 'openrouter',
             model,
         })
 
@@ -638,8 +637,8 @@ Importante:
         )
 
         // Use GLM as primary provider for differential diagnoses
-        const client = isGLMConfigured() ? glm : getAIClient()
-        const model = isGLMConfigured() ? GLM_CONFIG.models.reasoning : 'gpt-4-turbo'
+        const client = getAIClient()
+        const model = 'minimax/minimax-m2.7'
 
         const response = await client.chat.completions.create({
             model,
@@ -660,7 +659,7 @@ Importante:
         }
 
         logger.info('[COPILOT] Differential diagnoses generated', {
-            provider: isGLMConfigured() ? 'glm' : 'openai',
+            provider: 'openrouter',
             model,
         })
 
@@ -693,8 +692,8 @@ Responde en JSON con esta estructura:
 }`
 
         // Use GLM as primary provider for quick replies (cost effective)
-        const client = isGLMConfigured() ? glm : getAIClient()
-        const model = isGLMConfigured() ? GLM_CONFIG.models.costEffective : 'gpt-4-turbo'
+        const client = getAIClient()
+        const model = 'minimax/minimax-m2.7'
 
         const response = await client.chat.completions.create({
             model,
@@ -747,8 +746,8 @@ Responde en JSON con esta estructura:
 }`
 
         // Use GLM as primary provider for next steps (cost effective)
-        const client = isGLMConfigured() ? glm : getAIClient()
-        const model = isGLMConfigured() ? GLM_CONFIG.models.costEffective : 'gpt-4-turbo'
+        const client = getAIClient()
+        const model = 'minimax/minimax-m2.7'
 
         const response = await client.chat.completions.create({
             model,

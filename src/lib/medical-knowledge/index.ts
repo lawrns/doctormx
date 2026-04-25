@@ -367,13 +367,13 @@ export async function getMedicalKnowledgeStats(): Promise<{
   const specialtyCount: Record<string, number> = {};
   const sourceCount: Record<string, number> = {};
   
-  data.forEach(doc => {
+  data.forEach((doc: { specialty: string; source: string; updated_at: string }) => {
     specialtyCount[doc.specialty] = (specialtyCount[doc.specialty] || 0) + 1;
     sourceCount[doc.source] = (sourceCount[doc.source] || 0) + 1;
   });
   
   const lastUpdated = data
-    .map(doc => doc.updated_at)
+    .map((doc: { updated_at: string }) => doc.updated_at)
     .sort()
     .pop() || new Date().toISOString();
   

@@ -2,6 +2,7 @@ import { Search, Calendar, User, ClipboardList, Bot, ArrowRight } from 'lucide-r
 import { formatDoctorName } from '@/lib/utils'
 import { requireRole } from '@/lib/auth'
 import { getPatientAppointments } from '@/lib/appointments'
+import { PatientShell } from '@/components/PatientShell'
 import { PatientDashboardContent, HealthTips, QuickStats } from '@/components/PatientDashboardContent'
 import { WelcomeBanner } from '@/components/OnboardingChecklist'
 import Link from 'next/link'
@@ -49,9 +50,8 @@ export default async function PatientDashboard() {
   }
 
   return (
-    <div className="p-6 lg:p-8">
-      <div className="max-w-7xl mx-auto">
-        <WelcomeBanner
+    <PatientShell profile={{ full_name: profile.full_name }} currentPath="/app">
+      <WelcomeBanner
           patientName={profile?.full_name?.split(' ')[0] || 'Usuario'}
         />
 
@@ -209,7 +209,6 @@ export default async function PatientDashboard() {
             )}
           </CardContent>
         </Card>
-      </div>
-    </div>
+    </PatientShell>
   )
 }

@@ -7,7 +7,7 @@ import pLimit from 'p-limit';
 // PAI-powered scraper with resume capability
 const limit = pLimit(5); // Concurrent profile scraping
 const BASE_URL = 'https://www.doctoralia.com.mx';
-const OUTPUT_DIR = './doctors_data';
+const OUTPUT_DIR = '/Users/lukatenbosch/Downloads/doctorscraped';
 const DELAY_BETWEEN_PAGES = 500;
 const PROGRESS_FILE = './scrape_progress.json';
 

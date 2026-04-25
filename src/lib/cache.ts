@@ -14,6 +14,9 @@ const isRedisConfigured = isUpstashRestConfigured || isRedisUrlConfigured
 
 // In-memory cache fallback for development/missing Redis
 const memoryCache = new Map<string, { value: string; expires: number }>()
+const MAX_MEMORY_CACHE_SIZE = 1000
+let setOperationCount = 0
+const CLEANUP_INTERVAL = 100
 
 // Only create Redis client if credentials are available
 const upstashRedis = isUpstashRestConfigured
@@ -68,7 +71,15 @@ async function redisKeys(pattern: string) {
   if (upstashRedis) return upstashRedis.keys(pattern)
   if (!redisUrlClient) return []
   await ensureRedisUrlConnected()
-  return redisUrlClient.keys(pattern)
+  // Use SCAN instead of KEYS (non-blocking) for ioredis
+  const keys: string[] = []
+  let cursor = '0'
+  do {
+    const [nextCursor, batch] = await redisUrlClient.scan(cursor, 'MATCH', pattern, 'COUNT', 100)
+    cursor = nextCursor
+    keys.push(...batch)
+  } while (cursor !== '0')
+  return keys
 }
 
 async function redisPing() {
@@ -76,6 +87,26 @@ async function redisPing() {
   if (!redisUrlClient) return null
   await ensureRedisUrlConnected()
   return redisUrlClient.ping()
+}
+
+function pruneExpiredMemoryCache(): void {
+  const now = Date.now()
+  for (const [key, entry] of memoryCache) {
+    if (now > entry.expires) {
+      memoryCache.delete(key)
+    }
+  }
+}
+
+function evictOldestMemoryCache(): void {
+  // Evict oldest entries (by insertion order, which Map preserves)
+  const entriesToDelete = memoryCache.size - MAX_MEMORY_CACHE_SIZE
+  if (entriesToDelete <= 0) return
+
+  const keys = [...memoryCache.keys()]
+  for (let i = 0; i < Math.min(entriesToDelete, keys.length); i++) {
+    memoryCache.delete(keys[i])
+  }
 }
 
 export const cache = {
@@ -121,6 +152,19 @@ export const cache = {
         value: serialized,
         expires: Date.now() + ttlSeconds * 1000,
       })
+
+      // Enforce size limit
+      if (memoryCache.size > MAX_MEMORY_CACHE_SIZE) {
+        evictOldestMemoryCache()
+      }
+
+      // Periodic pruning of expired entries
+      setOperationCount++
+      if (setOperationCount >= CLEANUP_INTERVAL) {
+        setOperationCount = 0
+        pruneExpiredMemoryCache()
+      }
+
       return true
     } catch (error) {
       logger.debug('Cache set failed', { key, error: error instanceof Error ? error.message : 'unknown' })
@@ -165,6 +209,18 @@ export const cache = {
     }
   },
 
+  clearExpired(): number {
+    const now = Date.now()
+    let removed = 0
+    for (const [key, entry] of memoryCache) {
+      if (now > entry.expires) {
+        memoryCache.delete(key)
+        removed++
+      }
+    }
+    return removed
+  },
+
   async getDoctorList(filters?: Record<string, unknown>): Promise<unknown[]> {
     const key = `doctors:list:${JSON.stringify(filters || {})}`
     const result = await this.get(key) as unknown[] | null
@@ -196,12 +252,26 @@ export const cache = {
   async invalidateDoctor(doctorId: string): Promise<boolean> {
     await this.del(`doctor:${doctorId}`)
     await this.invalidate('doctors:list:*')
+    // Also invalidate SEO search caches for this doctor's cities/specialties
+    await this.invalidate(`search:*`)
     return true
   },
 
   async invalidateAvailability(doctorId: string): Promise<boolean> {
     await this.invalidate(`availability:${doctorId}:*`)
     return true
+  },
+
+  // SEO search caching - frequently accessed specialty x city combinations
+  async getSEOSearchResults(specialty: string, city: string, filtersHash: string): Promise<unknown[] | null> {
+    const key = `search:${specialty}:${city}:${filtersHash}`
+    return this.get<unknown[]>(key)
+  },
+
+  async setSEOSearchResults(specialty: string, city: string, filtersHash: string, results: unknown[]): Promise<boolean> {
+    const key = `search:${specialty}:${city}:${filtersHash}`
+    // Cache for 15 minutes (900 seconds)
+    return this.set(key, results, 900)
   },
 }
 

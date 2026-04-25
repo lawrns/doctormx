@@ -69,8 +69,8 @@ export default function PatientIntakePage() {
       fetch(`/api/appointments/${appointmentId}`),
     ])
       .then(async ([respRes, aptRes]) => {
-        const respData = await respRes.json().catch(() => null)
-        const aptData = await aptRes.json().catch(() => null)
+        const respData = await respRes.json().catch((e) => { console.error('[IntakeForm] Failed to parse responses:', e); return null })
+        const aptData = await aptRes.json().catch((e) => { console.error('[IntakeForm] Failed to parse appointment:', e); return null })
 
         if (respData?.response) {
           setSubmitted(true)
@@ -84,7 +84,7 @@ export default function PatientIntakePage() {
         // Fetch default template for this doctor
         if (aptData?.appointment?.doctor_id) {
           const tplRes = await fetch(`/api/intake/templates?doctor_id=${aptData.appointment.doctor_id}&defaults=true`)
-          const tplData = await tplRes.json().catch(() => null)
+          const tplData = await tplRes.json().catch((e) => { console.error('[IntakeForm] Failed to parse template:', e); return null })
           if (tplData?.templates?.[0]) {
             setTemplate(tplData.templates[0])
           }

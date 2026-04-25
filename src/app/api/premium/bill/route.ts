@@ -132,13 +132,13 @@ export async function GET(request: NextRequest) {
       .order('created_at', { ascending: false })
 
     const totalBilled = billingRecords?.reduce(
-      (sum, r) => sum + (r.status === 'completed' ? r.amount_cents : 0),
+      (sum: number, r: { status: string; amount_cents: number }) => sum + (r.status === 'completed' ? r.amount_cents : 0),
       0
     ) || 0
 
     const pendingAmount = billingRecords
-      ?.filter(r => r.status === 'pending')
-      .reduce((sum, r) => sum + r.amount_cents, 0) || 0
+      ?.filter((r: { status: string }) => r.status === 'pending')
+      .reduce((sum: number, r: { amount_cents: number }) => sum + r.amount_cents, 0) || 0
 
     const byFeature: Record<string, number> = {}
     for (const record of billingRecords || []) {

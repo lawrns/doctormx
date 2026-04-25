@@ -1,5 +1,7 @@
 import { getAdminMetrics, getRevenueMetrics, getUserMetrics, getAppointmentMetrics } from '@/lib/analytics'
 import { StatCard, MetricCard, Chart } from '@/components'
+import { AdminShell } from '@/components/AdminShell'
+import { requireRole } from '@/lib/auth'
 import { DollarSign, Users, UserPlus, Calendar, TrendingUp, Activity, Award } from 'lucide-react'
 import { Suspense } from 'react'
 
@@ -202,42 +204,36 @@ function LoadingSkeleton() {
   )
 }
 
-export default function AdminAnalyticsPage() {
+export default async function AdminAnalyticsPage() {
+  const { profile } = await requireRole('admin')
   return (
-    <div className="min-h-screen bg-secondary/50">
-      <header className="bg-card shadow">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl font-bold text-foreground">Analytics</h1>
-              <p className="text-muted-foreground mt-1">Métricas y análisis de la plataforma</p>
-            </div>
-            <div className="flex items-center gap-3">
-              <select className="px-3 py-2 border border-border rounded-lg text-sm focus:ring-2 focus:ring-primary-500">
-                <option>Últimos 30 días</option>
-                <option>Este mes</option>
-                <option>Últimos 3 meses</option>
-                <option>Último año</option>
-              </select>
-              <a
-                href="/api/analytics/export?type=admin&format=csv"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600 text-white rounded-lg text-sm font-medium hover:bg-primary-700"
-              >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                </svg>
-                Exportar
-              </a>
-            </div>
-          </div>
+    <AdminShell profile={{ full_name: profile.full_name }} currentPath="/admin/analytics">
+      <div className="flex items-center justify-between mb-8">
+        <div>
+          <h1 className="text-2xl font-display font-bold text-foreground">Analytics</h1>
+          <p className="text-muted-foreground mt-1">Métricas y análisis de la plataforma</p>
         </div>
-      </header>
-
-      <main className="container mx-auto px-4 py-8">
-        <Suspense fallback={<LoadingSkeleton />}>
-          <AdminAnalyticsContent />
-        </Suspense>
-      </main>
-    </div>
+        <div className="flex items-center gap-3">
+          <select className="px-3 py-2 border border-border rounded-lg text-sm bg-card focus:ring-2 focus:ring-ring">
+            <option>Últimos 30 días</option>
+            <option>Este mes</option>
+            <option>Últimos 3 meses</option>
+            <option>Último año</option>
+          </select>
+          <a
+            href="/api/analytics/export?type=admin&format=csv"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            Exportar
+          </a>
+        </div>
+      </div>
+      <Suspense fallback={<LoadingSkeleton />}>
+        <AdminAnalyticsContent />
+      </Suspense>
+    </AdminShell>
   )
 }

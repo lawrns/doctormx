@@ -92,3 +92,22 @@ export function formatLanguageName(code: string): string {
   }
   return languageMap[code] || code
 }
+
+/**
+ * Safe error capture — logs to console and attempts Sentry reporting.
+ * Never throws; safe in both client and server contexts.
+ */
+export function captureError(
+  err: unknown,
+  context: string,
+  level: 'warning' | 'error' = 'error',
+): void {
+  console.error(`[${context}]`, err)
+  try {
+    const Sentry = require('@sentry/react')
+    const error = err instanceof Error ? err : new Error(String(err))
+    Sentry?.captureException(error, { level })
+  } catch {
+    // Sentry not available in this context (e.g. server-side); logging is sufficient
+  }
+}

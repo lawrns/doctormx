@@ -11,6 +11,7 @@ import { CheckCircle2, Clock, CreditCard, FileText, MapPin, Monitor, ShieldCheck
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { DoctorMxLogo } from '@/components/brand/DoctorMxLogo'
+import { captureError } from '@/lib/utils'
 import type { PublicDoctorProfile } from '@/lib/discovery'
 
 type DoctorProfile = PublicDoctorProfile & {
@@ -144,7 +145,8 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
           setSelectedTime((current) => (current && slots.includes(current) ? current : ''))
           setLoadingSlots(false)
         })
-        .catch(() => {
+        .catch((err) => {
+          captureError(err, 'BookingForm.slots')
           setAvailableSlots([])
           setSelectedTime('')
           setLoadingSlots(false)
@@ -315,7 +317,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="glass-nav sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
+      <header className="nav-sticky sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <Link
             href="/"

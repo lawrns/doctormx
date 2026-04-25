@@ -13,11 +13,14 @@ function createDisabledQuery(mode: 'collection' | 'single' = 'collection') {
       ? { data: [], error: null as null, count: 0 }
       : { data: null, error: null as null, count: 0 }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let proxy: any
+  
   function proxyTarget() {
     return proxy
   }
 
-  const proxy = new Proxy(proxyTarget, {
+  proxy = new Proxy(proxyTarget, {
     apply: () => proxy,
     get(_target, prop) {
       if (prop === 'then') {

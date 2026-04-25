@@ -45,17 +45,19 @@ export function StructuredData() {
     },
   };
 
-  const organizationSchema = {
+  const socialUrls = [
+    process.env.NEXT_PUBLIC_FACEBOOK_URL,
+    process.env.NEXT_PUBLIC_TWITTER_URL,
+    process.env.NEXT_PUBLIC_INSTAGRAM_URL,
+  ].filter(Boolean)
+
+  const organizationSchema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Doctor.mx",
     url: "https://doctor.mx",
     logo: "https://doctor.mx/logo.png",
-    sameAs: [
-      "https://facebook.com/doctormx",
-      "https://twitter.com/doctormx",
-      "https://instagram.com/doctormx",
-    ],
+    ...(socialUrls.length > 0 ? { sameAs: socialUrls } : {}),
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+52-800-DOCTOR",

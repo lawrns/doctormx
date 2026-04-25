@@ -33,11 +33,11 @@ export async function GET(
       const dayOfWeek = current.getDay()
       
       // Check if doctor has availability for this day
-      const dayAvailability = availability.filter(a => a.day_of_week === dayOfWeek)
+      const dayAvailability = availability.filter((a: { day_of_week: number; start_time: string; end_time: string }) => a.day_of_week === dayOfWeek)
       
       if (dayAvailability.length > 0) {
         // Generate all possible slots for this day
-        const allSlots = dayAvailability.flatMap(slot =>
+        const allSlots = dayAvailability.flatMap((slot: { start_time: string; end_time: string }) =>
           generateTimeSlots(slot.start_time, slot.end_time)
         )
         
@@ -45,8 +45,8 @@ export async function GET(
         const occupied = await getOccupiedSlots(id, dateStr)
         
         // Check if there are any available slots
-        const availableSlots = allSlots.filter(slot => 
-          !occupied.some(o => o.start === slot)
+        const availableSlots = allSlots.filter((slot: string) => 
+          !occupied.some((o: { start: string }) => o.start === slot)
         )
         
         if (availableSlots.length > 0) {

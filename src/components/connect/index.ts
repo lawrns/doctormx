@@ -1,6 +1,8 @@
 export { AIProfileBuilderPreview } from './AIProfileBuilderPreview'
 export { ConnectFinalCta } from './ConnectFinalCta'
 export { ConnectHero } from './ConnectHero'
+export { ConnectOnboardingPreview } from './ConnectOnboardingPreview'
+export { ConnectReferralBanner } from './ConnectReferralBanner'
 export { DoctorTrustComplianceBlock } from './DoctorTrustComplianceBlock'
 export { PracticeSearchPanel } from './PracticeSearchPanel'
 export { ProgressiveCompletionGrid } from './ProgressiveCompletionGrid'

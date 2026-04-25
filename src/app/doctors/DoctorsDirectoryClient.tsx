@@ -612,10 +612,10 @@ function DoctorCard({ doctor }: { doctor: DirectoryDoctor }) {
           </div>
 
           <div className="mt-3 flex flex-wrap gap-2 pl-[4.375rem]">
-            {hasVerificationDetails ? (
+            {hasVerificationDetails && verification ? (
               <VerificationBadge
                 doctorId={doctor.id}
-                cedula={doctor.verification.cedula}
+                cedula={verification.cedula!}
                 verifiedDate={verifiedDate as Date}
                 showDetails={true}
               />

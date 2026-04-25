@@ -46,12 +46,12 @@ export async function GET() {
     const orphanConversationDoctorProfiles = orphanConversationDoctorProfilesResult.count || 0
     const orphanConversationPatientProfiles = orphanConversationPatientProfilesResult.count || 0
 
-    const activeConversations24h = conversations.filter((conversation) => {
+    const activeConversations24h = conversations.filter((conversation: { last_message_at: string | null }) => {
       if (!conversation.last_message_at) return false
       return new Date(conversation.last_message_at).getTime() > Date.now() - 24 * 60 * 60 * 1000
     }).length
 
-    const conversationsAwaitingFirstReply = conversations.filter((conversation) => {
+    const conversationsAwaitingFirstReply = conversations.filter((conversation: { last_message_preview: string | null }) => {
       return Boolean(conversation.last_message_preview) && !conversation.last_message_preview?.trim().startsWith('Dr.')
     }).length
 

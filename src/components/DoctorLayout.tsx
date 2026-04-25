@@ -6,16 +6,18 @@ import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { DoctorMxLogo } from '@/components/brand/DoctorMxLogo'
+import TrialBanner from '@/components/TrialBanner'
 
 interface DoctorLayoutProps {
   children: ReactNode
-  profile: { full_name: string }
+  profile: { full_name: string; id?: string }
   isPending: boolean
   currentPath?: string
   pendingAppointments?: number
+  doctorId?: string
 }
 
-export default function DoctorLayout({ children, profile, isPending, currentPath = '/doctor', pendingAppointments = 0 }: DoctorLayoutProps) {
+export default function DoctorLayout({ children, profile, isPending, currentPath = '/doctor', pendingAppointments = 0, doctorId }: DoctorLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   const navigation = [
@@ -29,6 +31,8 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
     { name: 'Formularios', href: '/doctor/intake-forms', iconType: 'form', enabled: !isPending },
     { name: 'Preguntas', href: '/doctor/preguntas', iconType: 'question', enabled: !isPending },
     { name: 'Widget', href: '/doctor/widget', iconType: 'widget', enabled: !isPending },
+    { name: 'Plan', href: '/doctor/subscription', iconType: 'star', enabled: true },
+    { name: 'Referidos', href: '/doctor/referrals', iconType: 'gift', enabled: !isPending },
     { name: 'Perfil', href: '/doctor/profile', iconType: 'user', enabled: true },
   ]
 
@@ -57,6 +61,10 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
         return <svg className={iconClass} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16h6m-7 5h8a4 4 0 004-4V7a4 4 0 00-4-4H8a4 4 0 00-4 4v10a4 4 0 004 4z" /></svg>
       case 'widget':
         return <svg className={iconClass} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 8l-4 4 4 4" /></svg>
+      case 'star':
+        return <svg className={iconClass} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" /></svg>
+      case 'gift':
+        return <svg className={iconClass} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" /></svg>
       default:
         return <svg className={iconClass} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
     }
@@ -73,7 +81,7 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
       )}
 
       {/* Header */}
-      <header className="lg:hidden glass-nav sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
+      <header className="lg:hidden nav-sticky sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
         <div className="px-4 py-3 flex justify-between items-center">
           <div className="flex items-center gap-3">
             <button
@@ -264,6 +272,7 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
 
         {/* Main content */}
         <main className="flex-1 min-w-0">
+          {doctorId && !isPending && <TrialBanner doctorId={doctorId} />}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             {children}
           </div>

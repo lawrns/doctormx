@@ -1,5 +1,6 @@
 // Second Opinion Domain Module - Shared Types and Constants
 // This file contains only types and constants that can be safely imported by client components
+// Unified with index.ts — uses assigned_doctor_id, ai_preliminary_summary, file_path
 
 export const SECOND_OPINION_CONFIG = {
   // Pricing in MXN cents
@@ -52,29 +53,49 @@ export interface SecondOpinionRequest {
   allergies?: string
   medications?: string
   questions: string[]
-  ai_preliminary_analysis?: string
+  price_cents: number
+  currency: string
+  payment_id?: string
+  payment_status: string
   ai_preliminary_summary?: string
-  doctor_id?: string
+  ai_suggested_specialty?: string
+  ai_urgency_score?: number
+  ai_processed_at?: string
+  assigned_doctor_id?: string
+  assigned_at?: string
+  assignment_notes?: string
   doctor_opinion?: string
   doctor_recommendations?: string
   doctor_follow_up_needed?: boolean
+  reviewed_at?: string
   created_at: string
-  updated_at: string
   submitted_at?: string
   completed_at?: string
   expires_at?: string
+  updated_at: string
 }
 
 export interface SecondOpinionDocument {
   id: string
   request_id: string
   type: SecondOpinionDocumentType
-  name: string
-  file_name?: string
-  file_url: string
-  file_size: number
-  size_bytes?: number
+  file_name: string
+  file_path: string
   mime_type: string
+  size_bytes: number
   ai_analysis?: string
+  ai_extracted_data?: Record<string, unknown>
+  ai_analyzed_at?: string
+  uploaded_by: string
+  uploaded_at: string
+}
+
+export interface SecondOpinionMessage {
+  id: string
+  request_id: string
+  sender_id: string
+  sender_role: 'patient' | 'doctor' | 'system'
+  content: string
+  attachment_url?: string
   created_at: string
 }

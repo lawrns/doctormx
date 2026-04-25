@@ -1,5 +1,6 @@
 import { requireRole } from '@/lib/auth'
 import { createServiceClient } from '@/lib/supabase/server'
+import { AdminShell } from '@/components/AdminShell'
 import { TIER_UPGRADE_PRICING } from '@/lib/premium-features'
 
 async function getPremiumStats() {
@@ -61,7 +62,7 @@ async function getPremiumStats() {
 }
 
 export default async function AdminPremiumPage() {
-  await requireRole('admin')
+  const { profile } = await requireRole('admin')
   const stats = await getPremiumStats()
 
   const formatMXN = (cents: number) => {
@@ -72,27 +73,15 @@ export default async function AdminPremiumPage() {
   }
 
   return (
-    <div className="min-h-screen bg-secondary/50">
-      <header className="bg-card shadow">
-        <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-foreground">Doctor.mx Admin</h1>
-          <div className="flex items-center gap-4">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary text-purple-800">
-              Premium Dashboard
-            </span>
-          </div>
-        </div>
-      </header>
-
-      <main className="container mx-auto px-4 py-8">
-        <div className="mb-8">
-          <h2 className="text-3xl font-bold text-foreground mb-2">
-            Premium Features Dashboard
-          </h2>
-          <p className="text-muted-foreground">
-            Monitorea ingresos, uso de features y actividad de doctores premium
-          </p>
-        </div>
+    <AdminShell profile={{ full_name: profile.full_name }} currentPath="/admin/premium">
+      <div className="mb-8">
+        <h1 className="text-2xl font-display font-bold text-foreground">
+          Premium Features Dashboard
+        </h1>
+        <p className="text-muted-foreground">
+          Monitorea ingresos, uso de features y actividad de doctores premium
+        </p>
+      </div>
 
         <div className="grid md:grid-cols-4 gap-6 mb-8">
           <div className="bg-card p-6 rounded-lg shadow">
@@ -258,7 +247,6 @@ export default async function AdminPremiumPage() {
               ))}
           </div>
         </div>
-      </main>
-    </div>
+    </AdminShell>
   )
 }

@@ -1,5 +1,6 @@
 import { cache } from '@/lib/cache'
 import { createServiceClient } from '@/lib/supabase/server'
+import { captureError } from '@/lib/utils'
 
 export type ExpireStalePendingPaymentOptions = {
   doctorId?: string
@@ -114,7 +115,7 @@ export async function expireStalePendingPaymentAppointments(
   await Promise.all(
     doctorIds.map((doctorId) =>
       cache.invalidateAvailability(doctorId).catch((error) => {
-        console.warn('Failed to invalidate availability after stale hold cleanup:', error)
+        captureError(error, 'appointmentExpiry.invalidateAvailability')
       })
     )
   )

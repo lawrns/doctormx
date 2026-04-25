@@ -36,7 +36,7 @@ export default async function ConsultationRoomPage({
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="glass-nav sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
+      <header className="nav-sticky sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
         <div className="container mx-auto px-4 py-6">
           <Link href="/app" className="text-2xl font-bold text-foreground">
             Doctor.mx

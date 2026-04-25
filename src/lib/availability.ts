@@ -92,19 +92,19 @@ async function fetchAvailableSlots(doctorId: string, date: string) {
   const dayOfWeek = dateObj.getDay()
 
   const availability = await getDoctorAvailability(doctorId)
-  const dayAvailability = availability.filter(a => a.day_of_week === dayOfWeek)
+  const dayAvailability = availability.filter((a: { day_of_week: number; start_time: string; end_time: string }) => a.day_of_week === dayOfWeek)
 
   if (dayAvailability.length === 0) {
     return []
   }
 
-  const allSlots = dayAvailability.flatMap(slot =>
+  const allSlots = dayAvailability.flatMap((slot: { start_time: string; end_time: string }) =>
     generateTimeSlots(slot.start_time, slot.end_time)
   )
 
   const occupied = await getOccupiedSlots(doctorId, date)
 
-  return allSlots.filter(slot => !occupied.some(o => o.start === slot))
+  return allSlots.filter((slot: string) => !occupied.some((o: { start: string }) => o.start === slot))
 }
 
 // Helper: Obtener slots ocupados para una fecha

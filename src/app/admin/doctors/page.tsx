@@ -1,5 +1,6 @@
 import { requireRole } from '@/lib/auth'
 import Link from 'next/link'
+import { AdminShell } from '@/components/AdminShell'
 import { CheckCircle, Clock, XCircle, Search } from 'lucide-react'
 
 type SearchParams = {
@@ -37,7 +38,7 @@ export default async function AdminDoctorsPage({
 }: {
   searchParams: Promise<SearchParams>
 }) {
-  const { supabase } = await requireRole('admin')
+  const { profile, supabase } = await requireRole('admin')
   const params = await searchParams
   const status = params.status || 'pending'
 
@@ -67,19 +68,7 @@ export default async function AdminDoctorsPage({
   const doctors = (data || []) as unknown as DoctorRow[]
 
   return (
-    <div className="min-h-screen bg-secondary/50">
-      <header className="bg-card shadow">
-        <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-          <Link href="/admin" className="text-2xl font-bold text-foreground">
-            Doctor.mx Admin
-          </Link>
-          <Link href="/admin/verify" className="text-sm font-medium text-primary">
-            Cola de verificacion
-          </Link>
-        </div>
-      </header>
-
-      <main className="container mx-auto px-4 py-8">
+    <AdminShell profile={{ full_name: profile.full_name }} currentPath="/admin/doctors">
         <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <h1 className="text-3xl font-bold text-foreground">Doctores</h1>
@@ -151,7 +140,6 @@ export default async function AdminDoctorsPage({
             })
           )}
         </div>
-      </main>
-    </div>
+    </AdminShell>
   )
 }

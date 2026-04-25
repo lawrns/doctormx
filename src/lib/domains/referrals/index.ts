@@ -4,6 +4,7 @@
 // Output: Completed referral with outcome tracking
 
 import { createServiceClient } from '@/lib/supabase/server'
+import { requireDoctorAuth, requireDoctorRole } from '@/lib/auth-guard'
 import type { DirectoryDoctor } from '../directory'
 
 export const REFERRALS_CONFIG = {
@@ -70,6 +71,7 @@ export interface ReferralSearchParams {
  * Create a new referral
  */
 export async function createReferral(input: CreateReferralInput): Promise<{ id: string }> {
+  await requireDoctorAuth(input.referring_doctor_id)
   const supabase = await createServiceClient()
   
   const expiresAt = new Date()
@@ -106,9 +108,21 @@ export async function acceptReferral(
   doctorId: string,
   notes?: string
 ): Promise<void> {
+  await requireDoctorAuth(doctorId)
   const supabase = await createServiceClient()
-  
-  const { error } = await supabase
+
+  // Verify the caller IS the receiving doctor (if the referral already has one assigned)
+  const { data: referral } = await supabase
+    .from('doctor_referrals')
+    .select('receiving_doctor_id')
+    .eq('id', referralId)
+    .single()
+
+  if (referral?.receiving_doctor_id && referral.receiving_doctor_id !== doctorId) {
+    throw new Error('No autorizado: esta referencia está dirigida a otro doctor')
+  }
+
+  const { data, error } = await supabase
     .from('doctor_referrals')
     .update({
       status: 'accepted',
@@ -118,9 +132,14 @@ export async function acceptReferral(
     })
     .eq('id', referralId)
     .eq('status', 'pending')
-  
+    .select()
+
   if (error) {
-    throw new Error(`Failed to accept referral: ${error.message}`)
+    throw new Error(`Error al aceptar la referencia: ${error.message}`)
+  }
+
+  if (!data || data.length === 0) {
+    throw new Error('La referencia ya no está disponible o ya fue aceptada.')
   }
 }
 
@@ -132,6 +151,7 @@ export async function declineReferral(
   doctorId: string,
   reason?: string
 ): Promise<void> {
+  await requireDoctorAuth(doctorId)
   const supabase = await createServiceClient()
   
   const { error } = await supabase
@@ -155,9 +175,11 @@ export async function declineReferral(
  */
 export async function completeReferral(
   referralId: string,
+  receivingDoctorId: string,
   outcomeNotes?: string,
   rating?: number
 ): Promise<void> {
+  await requireDoctorAuth(receivingDoctorId)
   const supabase = await createServiceClient()
   
   // Calculate referral fee

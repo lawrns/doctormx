@@ -1,4 +1,5 @@
 import { createClient } from '@/lib/supabase/server'
+import { requireConversationParticipant } from '@/lib/auth-guard'
 import type { ChatConversation, ChatMessage as ChatMessageType, UserRole } from '@/types'
 import { logger } from '@/lib/observability/logger'
 
@@ -145,8 +146,8 @@ export async function getConversations(
 
     // Fetch profiles separately to avoid complex join issues
     const conversations = data || []
-    const patientIds = [...new Set(conversations.map(c => c.patient_id))]
-    const doctorIds = [...new Set(conversations.map(c => c.doctor_id))]
+    const patientIds = [...new Set(conversations.map((c: { patient_id: string; doctor_id: string }) => c.patient_id))]
+    const doctorIds = [...new Set(conversations.map((c: { patient_id: string; doctor_id: string }) => c.doctor_id))]
 
     // Get patient profiles
     const { data: patientProfiles } = await supabase
@@ -164,22 +165,23 @@ export async function getConversations(
     const patientMap = new Map((patientProfiles as ChatProfile[] | null | undefined)?.map(p => [p.id, p]) || [])
     const doctorProfileMap = new Map((doctorProfiles as ChatProfile[] | null | undefined)?.map(p => [p.id, p]) || [])
 
-    const conversationsWithDetails = await Promise.all(
-      conversations.map(async (conv) => {
-        const patient = patientMap.get(conv.patient_id)
-        const doctorProfile = doctorProfileMap.get(conv.doctor_id)
-        const unreadCount = await getUnreadCount(conv.id, userId)
-        
-        return {
-          ...conv,
-          patient_name: patient?.full_name,
-          patient_photo_url: patient?.photo_url,
-          doctor_name: doctorProfile?.full_name,
-          doctor_photo_url: doctorProfile?.photo_url,
-          unread_count: unreadCount,
-        }
-      })
-    )
+    // Batch: get unread counts for all conversations in a single query
+    const conversationIds = conversations.map((c: { id: string }) => c.id)
+    const unreadCounts = await getUnreadCounts(conversationIds, userId)
+
+    const conversationsWithDetails = conversations.map((conv: { id: string; patient_id: string; doctor_id: string; last_message_preview?: string | null; last_message_at?: string | null }) => {
+      const patient = patientMap.get(conv.patient_id)
+      const doctorProfile = doctorProfileMap.get(conv.doctor_id)
+      
+      return {
+        ...conv,
+        patient_name: patient?.full_name,
+        patient_photo_url: patient?.photo_url,
+        doctor_name: doctorProfile?.full_name,
+        doctor_photo_url: doctorProfile?.photo_url,
+        unread_count: unreadCounts[conv.id] || 0,
+      }
+    })
 
     return conversationsWithDetails
   } catch (err) {
@@ -225,6 +227,7 @@ export async function getOrCreateConversation(
 }
 
 export async function sendMessage(params: SendMessageParams): Promise<ChatMessage | null> {
+  await requireConversationParticipant(params.conversationId)
   const supabase = await createClient()
 
   const { data: profile } = await supabase
@@ -284,6 +287,7 @@ export async function getMessages(
   limit = 50,
   offset = 0
 ): Promise<MessageWithSender[]> {
+  await requireConversationParticipant(conversationId)
   const supabase = await createClient()
 
   // Fetch messages separately to avoid complex join issues
@@ -304,7 +308,7 @@ export async function getMessages(
   }
 
   // Get unique sender IDs
-  const senderIds = [...new Set(messages.map(m => m.sender_id))]
+  const senderIds = [...new Set(messages.map((m: { sender_id: string }) => m.sender_id))]
 
   // Fetch sender profiles separately
   const { data: senderProfiles } = await supabase
@@ -315,7 +319,7 @@ export async function getMessages(
   type SenderProfile = { id: string; full_name?: string | null; photo_url?: string | null }
   const senderMap = new Map((senderProfiles as SenderProfile[] | null | undefined)?.map(p => [p.id, p]) || [])
 
-  return messages.reverse().map((msg) => {
+  return messages.reverse().map((msg: ChatMessage) => {
     const sender = senderMap.get(msg.sender_id)
     return {
       ...msg,
@@ -351,32 +355,52 @@ export async function markAsRead(
   }
 }
 
-async function getUnreadCount(conversationId: string, userId: string): Promise<number> {
+async function getUnreadCounts(conversationIds: string[], userId: string): Promise<Record<string, number>> {
+  if (conversationIds.length === 0) return {}
+
   const supabase = await createClient()
 
-  const { count, error } = await supabase
+  // Single query: get all unread messages grouped by conversation
+  // A message is unread if: sender != userId AND no receipt exists for userId
+  const { data: messages, error } = await supabase
     .from('chat_messages')
-    .select('*', { count: 'exact', head: true })
-    .eq('conversation_id', conversationId)
+    .select('id, conversation_id')
+    .in('conversation_id', conversationIds)
     .neq('sender_id', userId)
-    .not('id', 'in', (
-      supabase
-        .from('chat_message_receipts')
-        .select('message_id')
-        .eq('user_id', userId)
-    ))
 
-  if (error) {
-    logger.error('Error getting unread count:', { error })
-    return 0
+  if (error || !messages || messages.length === 0) {
+    return Object.fromEntries(conversationIds.map(id => [id, 0]))
   }
 
-  return count || 0
+  const messageIds = messages.map((m: { id: string }) => m.id)
+
+  // Get read receipts for these messages
+  const { data: receipts } = await supabase
+    .from('chat_message_receipts')
+    .select('message_id')
+    .in('message_id', messageIds)
+    .eq('user_id', userId)
+
+  const readSet = new Set((receipts || []).map((r: { message_id: string }) => r.message_id))
+
+  const counts: Record<string, number> = {}
+  for (const id of conversationIds) {
+    counts[id] = 0
+  }
+
+  for (const msg of messages) {
+    if (!readSet.has(msg.id)) {
+      counts[msg.conversation_id] = (counts[msg.conversation_id] || 0) + 1
+    }
+  }
+
+  return counts
 }
 
 export async function getTotalUnreadCount(userId: string): Promise<number> {
   const supabase = await createClient()
 
+  // Single query: count unread messages across all user's conversations
   const { data: conversations } = await supabase
     .from('chat_conversations')
     .select('id')
@@ -386,13 +410,32 @@ export async function getTotalUnreadCount(userId: string): Promise<number> {
     return 0
   }
 
-  let totalUnread = 0
+  const conversationIds = conversations.map((c: { id: string }) => c.id)
 
-  for (const conv of conversations) {
-    totalUnread += await getUnreadCount(conv.id, userId)
+  const { data: messages } = await supabase
+    .from('chat_messages')
+    .select('id')
+    .in('conversation_id', conversationIds)
+    .neq('sender_id', userId)
+
+  if (!messages || messages.length === 0) {
+    return 0
   }
 
-  return totalUnread
+  const messageIds = messages.map((m: { id: string }) => m.id)
+
+  const { count, error } = await supabase
+    .from('chat_message_receipts')
+    .select('*', { count: 'exact', head: true })
+    .in('message_id', messageIds)
+    .eq('user_id', userId)
+
+  if (error) {
+    logger.error('Error getting total unread count:', { error })
+    return 0
+  }
+
+  return messages.length - (count || 0)
 }
 
 export async function updatePresence(
@@ -427,7 +470,7 @@ export async function getOnlineUsers(conversationId: string): Promise<string[]> 
     return []
   }
 
-  return (data || []).map((u) => u.user_id)
+  return (data || []).map((u: { user_id: string }) => u.user_id)
 }
 
 export async function getParticipants(conversationId: string): Promise<{

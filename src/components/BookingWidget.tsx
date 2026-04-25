@@ -20,6 +20,7 @@ import {
 import { APPOINTMENT_CONFIG } from '@/config/constants'
 import { Button } from '@/components/ui/button'
 import type { WidgetConfig, WidgetDoctor, WidgetService } from '@/lib/widget'
+import { captureError } from '@/lib/utils'
 
 type BookingWidgetProps = {
   doctor: WidgetDoctor
@@ -156,7 +157,10 @@ export function BookingWidget({ doctor, config }: BookingWidgetProps) {
       .then((response) => response.json())
       .then((data) => setAvailableDates(Array.isArray(data.dates) ? data.dates : []))
       .catch((requestError) => {
-        if (requestError.name !== 'AbortError') setAvailableDates([])
+        if (requestError.name !== 'AbortError') {
+          captureError(requestError, 'BookingWidget.dates')
+          setAvailableDates([])
+        }
       })
       .finally(() => setLoadingDates(false))
 
@@ -179,7 +183,10 @@ export function BookingWidget({ doctor, config }: BookingWidgetProps) {
       .then((response) => response.json())
       .then((data) => setAvailableSlots(Array.isArray(data.slots) ? data.slots : []))
       .catch((requestError) => {
-        if (requestError.name !== 'AbortError') setAvailableSlots([])
+        if (requestError.name !== 'AbortError') {
+          captureError(requestError, 'BookingWidget.slots')
+          setAvailableSlots([])
+        }
       })
       .finally(() => setLoadingSlots(false))
 

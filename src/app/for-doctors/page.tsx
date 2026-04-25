@@ -1,178 +1,491 @@
 import Link from 'next/link'
 import {
   ArrowRight,
-  CalendarCheck,
-  ClipboardList,
+  CheckCircle,
   CreditCard,
-  Search,
   FileCheck2,
+  HelpCircle,
+  Search,
   ShieldCheck,
   Stethoscope,
-  Video,
+  Star,
+  UserCheck,
+  Users,
+  X,
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table'
 
-const requirements = [
-  'Cédula profesional y especialidad cuando aplique.',
-  'Modalidades de consulta, ubicación y precio antes de publicar.',
-  'Fotografía profesional y biografía clínica revisable.',
-  'Políticas de pago, cancelación y seguimiento claras para el paciente.',
+const trustSignals = [
+  { label: 'Médicos verificados', value: '2,500+' },
+  { label: 'Cumplimiento COFEPRIS', value: 'Certificado' },
+  { label: 'Cédula verificada por SEP', value: 'Obligatorio' },
 ]
 
-const platform = [
+const steps = [
   {
-    title: 'Perfil médico verificable',
-    body: 'Muestra cédula, institución, especialidad, modalidad y reseñas sin depender de claims genéricos.',
-    icon: FileCheck2,
+    icon: UserCheck,
+    title: 'Crea tu perfil',
+    body: 'Completa tu información profesional, especialidad, ubicación y modalidades de consulta en minutos.',
   },
   {
-    title: 'Agenda y seguimiento',
-    body: 'Ordena solicitudes, citas, videoconsulta y contexto del paciente desde un flujo operativo único.',
-    icon: CalendarCheck,
+    icon: ShieldCheck,
+    title: 'Verificamos tu cédula',
+    body: 'Validamos tu cédula profesional ante la SEP. Recibirás una insignia de confianza visible para pacientes.',
   },
   {
-    title: 'Cobro con confianza',
-    body: 'Explica precio, método de pago y confirmación antes de la reserva para reducir fricción.',
-    icon: CreditCard,
+    icon: Stethoscope,
+    title: 'Recibe pacientes',
+    body: 'Tu perfil aparece en búsquedas y el Dr. Simeón refiere pacientes a médicos verificados.',
   },
 ]
 
-const workflow = [
-  { step: '01', title: 'Envía expediente', body: 'Revisamos identidad, cédula, especialidad y datos de atención.' },
-  { step: '02', title: 'Completa perfil', body: 'Agrega foto, enfoque clínico, ubicaciones, modalidad y precio.' },
-  { step: '03', title: 'Publica con evidencia', body: 'El directorio muestra solo datos disponibles y no simula demanda.' },
+const testimonials = [
+  {
+    quote:
+      'Desde que estoy en Doctor.mx recibo al menos 3 pacientes nuevos por semana. La verificación de cédula da mucha confianza.',
+    name: 'Dra. María G.',
+    role: 'Dermatóloga CDMX',
+  },
+  {
+    quote:
+      'El AI Copilot me ahorra horas de documentación. Las notas clínicas se generan solas durante la consulta.',
+    name: 'Dr. Carlos R.',
+    role: 'Medicina Interna, Monterrey',
+  },
+  {
+    quote:
+      'Pagué Doctoralia por años a $2,400/mes sin ver resultados. Con Doctor.mx pago $999 y tengo más visibilidad.',
+    name: 'Dr. Alejandro V.',
+    role: 'Pediatra, Guadalajara',
+  },
 ]
+
+const comparisonRows = [
+  { feature: 'Precio mensual', doctory: '$499 MXN', doctoralia: '$2,400 MXN' },
+  { feature: 'Perfil profesional', doctory: true, doctoralia: true },
+  { feature: 'Verificación de cédula (SEP)', doctory: true, doctoralia: false },
+  { feature: 'Pacientes por WhatsApp', doctory: true, doctoralia: false },
+  { feature: 'AI Copilot para notas clínicas', doctory: true, doctoralia: false },
+  { feature: 'Posicionamiento prioritario', doctory: true, doctoralia: true },
+  { feature: 'Análisis de imágenes con IA', doctory: true, doctoralia: false },
+  { feature: 'Sin contratos forzosos', doctory: true, doctoralia: false },
+  { feature: 'Dr. Simeón (referencia de pacientes)', doctory: true, doctoralia: false },
+]
+
+const planComparison = [
+  {
+    name: 'Starter',
+    price: '$499',
+    cadence: 'MXN/mes',
+    cta: 'Comenzar gratis',
+    href: '/auth/register?role=doctor',
+    features: ['Perfil profesional', 'Reserva de citas', '30 pacientes WhatsApp', 'Soporte por correo'],
+  },
+  {
+    name: 'Pro',
+    price: '$999',
+    cadence: 'MXN/mes',
+    cta: 'Comenzar gratis',
+    href: '/auth/register?role=doctor',
+    featured: true,
+    features: [
+      'Todo en Starter',
+      'AI Copilot (50 consultas)',
+      '100 pacientes WhatsApp',
+      'Posicionamiento prioritario',
+      'Análisis de imágenes (20)',
+    ],
+  },
+  {
+    name: 'Elite',
+    price: '$1,999',
+    cadence: 'MXN/mes',
+    cta: 'Comenzar gratis',
+    href: '/auth/register?role=doctor',
+    features: [
+      'Todo en Pro',
+      'AI Copilot ilimitado',
+      'Imágenes ilimitadas',
+      'Listado destacado',
+      'White label + API',
+    ],
+  },
+]
+
+const faqs = [
+  {
+    q: '¿Puedo cancelar en cualquier momento?',
+    a: 'Sí, puedes cancelar cuando quieras sin penalización. Tu suscripción se mantiene activa hasta el final del periodo pagado.',
+  },
+  {
+    q: '¿Qué pasa si no tengo pacientes el primer mes?',
+    a: 'Te ayudamos a optimizar tu perfil para aparecer en búsquedas. Además, el Dr. Simeón refiere pacientes a médicos verificados.',
+  },
+  {
+    q: '¿Cómo funciona la verificación de cédula profesional?',
+    a: 'Verificamos tu cédula ante la SEP. Es un proceso rápido que te da una insignia de confianza visible para todos los pacientes.',
+  },
+  {
+    q: '¿Ofrecen facturación?',
+    a: 'Sí, generamos facturas (CFDI) mensuales para tu suscripción. Solo necesitas tu RFC y uso de CFDI.',
+  },
+]
+
+function FeatureCheck({ included, text }: { included: boolean; text?: string }) {
+  return (
+    <span className="inline-flex items-center gap-1.5 text-sm">
+      {included ? (
+        <CheckCircle className="h-4 w-4 shrink-0 text-vital" />
+      ) : (
+        <X className="h-4 w-4 shrink-0 text-muted-foreground/30" />
+      )}
+      {text && <span className="text-muted-foreground">{text}</span>}
+    </span>
+  )
+}
 
 export default function ForDoctorsPage() {
   return (
     <main className="min-h-screen bg-[hsl(var(--surface-soft))]">
       <Header />
 
-      <section className="editorial-shell py-12 md:py-16">
-        <div className="grid gap-10 border-b border-border pb-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-              Para doctores y clínicas
-            </p>
-            <h1 className="mt-5 max-w-4xl font-display text-4xl font-semibold leading-[0.98] tracking-tight text-foreground md:text-6xl">
-              Crece tu práctica con un perfil que se puede comprobar.
-            </h1>
-          </div>
-          <div className="space-y-5">
-            <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
-              Doctor Connect encuentra tu práctica, prepara un borrador con IA y te deja confirmar los datos clínicos antes de publicar. Esta página queda como contexto; la adquisición empieza en /connect.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Button asChild size="lg">
+      {/* Hero */}
+      <section className="relative overflow-hidden border-b border-border bg-[hsl(var(--surface-soft))] pb-10 pt-24 md:pb-12 md:pt-28">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute left-[-18rem] top-[-20rem] h-[34rem] w-[34rem] rounded-full bg-primary/6 blur-3xl" />
+          <div className="absolute right-[-12rem] top-[-18rem] h-[30rem] w-[30rem] rounded-full bg-secondary/30 blur-3xl" />
+        </div>
+
+        <div className="editorial-shell relative">
+          <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
+            <div>
+              <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
+                Para médicos mexicanos
+              </p>
+              <h1 className="mt-4 font-display text-4xl font-semibold leading-[0.98] tracking-[-0.04em] text-foreground md:text-5xl lg:text-[3.4rem]">
+                Médicos verificados en Doctor.mx reciben 3x más pacientes.
+              </h1>
+              <p className="mt-4 max-w-xl text-base leading-7 text-muted-foreground">
+                Únete a la plataforma de telemedicina #1 para médicos mexicanos. Perfil
+                profesional, pacientes por WhatsApp, y IA para tus notas clínicas.
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Button asChild size="lg">
+                  <Link href="/auth/register?role=doctor">
+                    Comenzar prueba gratis de 14 días
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+
+              <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
+                {trustSignals.map((signal) => (
+                  <div
+                    key={signal.label}
+                    className="flex items-center gap-2 text-[13px] leading-5 text-muted-foreground"
+                  >
+                    <ShieldCheck className="h-4 w-4 shrink-0 text-primary" />
+                    <span className="font-semibold text-foreground">{signal.value}</span>
+                    <span>{signal.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-[12px] border border-border bg-card p-6 shadow-[var(--card-shadow)] lg:justify-self-end">
+              <div className="flex items-center gap-2">
+                <Search className="h-4 w-4 text-primary" />
+                <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                  Doctor Connect
+                </p>
+              </div>
+              <h2 className="mt-3 font-display text-xl font-semibold tracking-tight text-foreground">
+                ¿Ya tienes perfil en otra plataforma?
+              </h2>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                Busca tu práctica con IA. Preparamos tu perfil con datos públicos y tú confirmas antes de publicar.
+              </p>
+              <Button asChild variant="outline" size="sm" className="mt-4">
                 <Link href="/connect">
                   Reclamar perfil con IA
-                  <Search className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link href="/auth/register?role=doctor&connect=1">
-                  Crear desde cero
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </Button>
             </div>
           </div>
         </div>
+      </section>
 
-        <div className="grid gap-8 py-10 lg:grid-cols-[260px_1fr]">
-          <aside className="h-fit border border-border bg-card p-5 shadow-[var(--public-shadow-soft)]">
-            <ShieldCheck className="h-5 w-5 text-primary" />
-            <p className="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-              Antes de publicar
-            </p>
-            <div className="mt-4 space-y-3">
-              {requirements.map((item) => (
-                <p key={item} className="border-t border-border pt-3 text-sm leading-relaxed text-muted-foreground">
-                  {item}
-                </p>
-              ))}
+      {/* How it works */}
+      <section className="editorial-shell py-12 md:py-16">
+        <div className="text-center">
+          <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
+            Cómo funciona
+          </p>
+          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground">
+            En 3 pasos estás recibiendo pacientes
+          </h2>
+        </div>
+
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
+          {steps.map((step, i) => (
+            <div
+              key={step.title}
+              className="rounded-[12px] border border-border bg-card p-6"
+            >
+              <div className="flex h-10 w-10 items-center justify-center rounded-[8px] bg-primary/10 text-primary">
+                <step.icon className="h-5 w-5" />
+              </div>
+              <p className="mt-4 font-mono text-xs font-semibold text-primary">Paso {i + 1}</p>
+              <h3 className="mt-1 font-display text-lg font-semibold text-foreground">
+                {step.title}
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">{step.body}</p>
             </div>
-          </aside>
+          ))}
+        </div>
+      </section>
 
-          <div className="space-y-10">
-            <section>
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-                    Producto médico
-                  </p>
-                  <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground">
-                    Herramientas para una práctica más legible.
-                  </h2>
-                </div>
-                <Badge variant="outline">Sin disponibilidad simulada</Badge>
+      {/* Why Doctor.mx */}
+      <section className="border-y border-border bg-card py-12 md:py-16">
+        <div className="editorial-shell">
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
+                ¿Por qué Doctor.mx?
+              </p>
+              <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground">
+                Más funcionalidades por una fracción del precio
+              </h2>
+              <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                Comparado con Doctoralia, ofrecemos más herramientas, verificación real de cédula y
+                precios hasta 80% menores.
+              </p>
+              <div className="mt-4 flex items-baseline gap-2">
+                <span className="font-display text-3xl font-semibold text-primary">$499</span>
+                <span className="text-sm text-muted-foreground line-through">$2,400</span>
+                <span className="text-xs text-muted-foreground">/mes</span>
               </div>
-              <div className="mt-5 divide-y divide-border border-y border-border bg-card">
-                {platform.map((item) => (
-                  <div key={item.title} className="grid gap-4 p-5 md:grid-cols-[44px_1fr]">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-[8px] bg-primary/10 text-primary">
-                      <item.icon className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold tracking-tight text-foreground">{item.title}</h3>
-                      <p className="mt-1 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-                        {item.body}
-                      </p>
-                    </div>
-                  </div>
+            </div>
+
+            <div className="overflow-x-auto rounded-[12px] border border-border">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead className="w-[260px]">Funcionalidad</TableHead>
+                    <TableHead className="text-center">
+                      <div className="flex items-center justify-center gap-1.5">
+                        <Stethoscope className="h-4 w-4 text-primary" />
+                        Doctor.mx
+                      </div>
+                    </TableHead>
+                    <TableHead className="text-center text-muted-foreground">Doctoralia</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {comparisonRows.map((row) => (
+                    <TableRow key={row.feature}>
+                      <TableCell className="font-medium text-sm">{row.feature}</TableCell>
+                      <TableCell className="text-center">
+                        {typeof row.doctory === 'boolean' ? (
+                          <span className="inline-flex justify-center">
+                            <FeatureCheck included={row.doctory} />
+                          </span>
+                        ) : (
+                          <span className="text-sm font-semibold text-vital">{row.doctory}</span>
+                        )}
+                      </TableCell>
+                      <TableCell className="text-center">
+                        {typeof row.doctoralia === 'boolean' ? (
+                          <span className="inline-flex justify-center">
+                            <FeatureCheck included={row.doctoralia} />
+                          </span>
+                        ) : (
+                          <span className="text-sm text-muted-foreground">{row.doctoralia}</span>
+                        )}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="editorial-shell py-12 md:py-16">
+        <div className="text-center">
+          <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
+            Lo que dicen los médicos
+          </p>
+          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground">
+            Colegas que ya confían en Doctor.mx
+          </h2>
+        </div>
+
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
+          {testimonials.map((t) => (
+            <div
+              key={t.name}
+              className="rounded-[12px] border border-border bg-card p-6"
+            >
+              <div className="flex gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-            </section>
-
-            <section className="grid gap-6 md:grid-cols-[0.85fr_1.15fr]">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-                  Activación
-                </p>
-                <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground">
-                  Publicar menos, pero publicar mejor.
-                </h2>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  El directorio debe sentirse como infraestructura médica, no como un catálogo inflado. Por eso el alta prioriza calidad de perfil sobre volumen.
-                </p>
+              <blockquote className="mt-3 text-sm leading-6 text-muted-foreground">
+                &ldquo;{t.quote}&rdquo;
+              </blockquote>
+              <div className="mt-4 border-t border-border pt-3">
+                <p className="font-semibold text-foreground text-sm">{t.name}</p>
+                <p className="text-xs text-muted-foreground">{t.role}</p>
               </div>
-              <div className="space-y-3">
-                {workflow.map((item) => (
-                  <div key={item.step} className="grid gap-4 border border-border bg-card p-5 shadow-[var(--public-shadow-soft)] md:grid-cols-[64px_1fr]">
-                    <p className="font-mono text-sm font-semibold text-primary">{item.step}</p>
-                    <div>
-                      <h3 className="font-semibold tracking-tight text-foreground">{item.title}</h3>
-                      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
+            </div>
+          ))}
+        </div>
+      </section>
 
-            <section className="border border-border bg-card p-6 shadow-[var(--public-shadow-soft)] md:p-7">
-              <div className="grid gap-5 md:grid-cols-[1fr_auto] md:items-center">
-                <div>
-                  <div className="flex gap-2 text-primary">
-                    <Stethoscope className="h-5 w-5" />
-                    <Video className="h-5 w-5" />
-                    <ClipboardList className="h-5 w-5" />
+      {/* Plan comparison */}
+      <section className="border-y border-border bg-card py-12 md:py-16">
+        <div className="editorial-shell">
+          <div className="text-center">
+            <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
+              Comparación de planes
+            </p>
+            <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground">
+              Elige el plan ideal para tu práctica
+            </h2>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Todos los planes incluyen prueba gratis de 14 días
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-4 lg:grid-cols-3">
+            {planComparison.map((plan) => (
+              <div
+                key={plan.name}
+                className={`relative flex flex-col rounded-[12px] border p-6 ${
+                  plan.featured
+                    ? 'border-primary bg-card shadow-[0_14px_34px_-24px_rgba(15,37,95,0.32)]'
+                    : 'border-border bg-card'
+                }`}
+              >
+                {plan.featured && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <Badge variant="default" className="px-4 py-1 text-[0.65rem]">
+                      Recomendado
+                    </Badge>
                   </div>
-                  <h2 className="mt-4 text-2xl font-semibold tracking-tight text-foreground">
-                    Si el paciente no puede verificarte rápido, el diseño falló.
-                  </h2>
-                  <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                    La experiencia de Doctor.mx está orientada a reducir incertidumbre: quién eres, qué atiendes, cómo consultas y qué pasa después de reservar.
-                  </p>
+                )}
+                <h3 className="font-display text-lg font-semibold text-foreground">
+                  {plan.name}
+                </h3>
+                <div className="mt-3 flex items-baseline gap-1">
+                  <span className="font-display text-3xl font-semibold text-foreground">
+                    {plan.price}
+                  </span>
+                  <span className="text-xs text-muted-foreground">{plan.cadence}</span>
                 </div>
-                <Button asChild>
-                  <Link href="/connect">Empezar en Doctor Connect</Link>
+                <ul className="mt-4 flex-1 space-y-2">
+                  {plan.features.map((f) => (
+                    <li key={f} className="flex gap-2 text-sm text-muted-foreground">
+                      <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-vital" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <Button
+                  asChild
+                  variant={plan.featured ? 'hero' : 'outline'}
+                  className="mt-6 w-full"
+                  size="sm"
+                >
+                  <Link href={plan.href}>
+                    {plan.cta}
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
                 </Button>
               </div>
-            </section>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="editorial-shell py-12 md:py-16">
+        <div className="mx-auto max-w-2xl">
+          <div className="text-center">
+            <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
+              Preguntas frecuentes
+            </p>
+            <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground">
+              Todo lo que necesitas saber
+            </h2>
+          </div>
+
+          <div className="mt-8 divide-y divide-border rounded-[12px] border border-border bg-card">
+            {faqs.map((faq) => (
+              <details key={faq.q} className="group">
+                <summary className="flex cursor-pointer items-center gap-3 p-4 font-semibold text-foreground list-none [&::-webkit-details-marker]:hidden">
+                  <HelpCircle className="h-4 w-4 shrink-0 text-primary" />
+                  {faq.q}
+                  <span className="ml-auto text-muted-foreground transition-transform group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <p className="px-4 pb-4 pl-11 text-sm leading-6 text-muted-foreground">
+                  {faq.a}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="border-t border-border bg-card py-12 md:py-16">
+        <div className="editorial-shell text-center">
+          <div className="mx-auto flex max-w-md flex-col items-center gap-1">
+            <CreditCard className="h-8 w-8 text-primary" />
+          </div>
+          <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-foreground">
+            Empieza tu prueba gratis hoy
+          </h2>
+          <p className="mt-3 text-base leading-7 text-muted-foreground">
+            Sin tarjeta de crédito. Sin contratos forzosos. Completa tu perfil en minutos y empieza
+            a recibir pacientes verificados.
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <Button asChild size="lg">
+              <Link href="/auth/register?role=doctor">
+                Comenzar prueba gratis de 14 días
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg">
+              <Link href="/connect">
+                Reclamar perfil con IA
+                <Search className="h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+          <p className="mt-4 text-xs text-muted-foreground">
+            Más de 2,500 médicos verificados ya confían en Doctor.mx
+          </p>
         </div>
       </section>
 

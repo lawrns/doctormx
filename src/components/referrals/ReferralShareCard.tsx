@@ -6,7 +6,7 @@ import QRCode from 'qrcode'
 import { Check, Copy, Gift, QrCode, Share2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { WhatsAppShare } from '@/components/WhatsAppShare'
-import { formatCurrency } from '@/lib/utils'
+import { formatCurrency, captureError } from '@/lib/utils'
 import { ANALYTICS_EVENTS, trackClientEvent } from '@/lib/analytics/posthog'
 
 export interface ReferralShareCardProps {
@@ -50,6 +50,7 @@ export function ReferralShareCard({
       })
       .catch((error) => {
         console.error('[ReferralShareCard] QR generation failed:', error)
+        captureError(error, 'ReferralShareCard.qr')
       })
 
     return () => {

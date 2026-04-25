@@ -1,4 +1,5 @@
 import { createClient, createServiceClient } from '@/lib/supabase/server'
+import { requirePatientAuth } from '@/lib/auth-guard'
 import { expireStalePendingPaymentAppointments } from '@/lib/appointment-expiry'
 
 type SupabaseClientLike = Awaited<ReturnType<typeof createClient>>
@@ -352,6 +353,7 @@ export async function createPatientInsurance({
   holderName?: string
   coverageType?: string
 }) {
+  await requirePatientAuth(patientId)
   const supabase = await createClient()
   const { data, error } = await supabase
     .from('patient_insurances')

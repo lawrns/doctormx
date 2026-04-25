@@ -1,6 +1,6 @@
 // Sistema de Reserva de Citas - Se explica solo
 // Input: Paciente, Doctor, Fecha/Hora
-// Proceso: Validar disponibilidad → Bloquear slot → Crear cita
+// Proceso: Validar disponibilidad → Verificar cuota de suscripcion → Bloquear slot → Crear cita
 // Output: Cita creada (pending_payment)
 
 import { createClient } from '@/lib/supabase/server'
@@ -9,8 +9,10 @@ import { APPOINTMENT_CONFIG, STATUS } from '@/config/constants'
 import { sendAppointmentConfirmation } from './notifications'
 import { sendAppointmentConfirmation as sendWhatsAppConfirmation, getPatientPhone } from './whatsapp-notifications'
 import { cache } from '@/lib/cache'
+import { captureError } from '@/lib/utils'
 import { scheduleAppointmentReminders } from './reminders'
 import { expireStalePendingPaymentAppointments } from './appointment-expiry'
+import { checkConsultationQuota } from './patient-subscriptions'
 
 export { expireStalePendingPaymentAppointments } from './appointment-expiry'
 
@@ -41,6 +43,17 @@ export async function reserveAppointmentSlot(
   request: ReservationRequest
 ): Promise<ReservationResult> {
   await expireStalePendingPaymentAppointments({ doctorId: request.doctorId })
+
+  // Paso 0: Verificar cuota de suscripcion del paciente
+  const quota = await checkConsultationQuota(request.patientId)
+
+  if (quota.subscriptionActive && !quota.allowed) {
+    const planName = quota.planName || 'tu plan'
+    return {
+      success: false,
+      error: `Has alcanzado tu limite de ${quota.total} consultas este mes en ${planName}. Actualiza tu plan para continuar.`,
+    }
+  }
 
   // Paso 1: Validar que el slot está disponible
   const isAvailable = await validateSlotAvailability(
@@ -78,17 +91,17 @@ export async function reserveAppointmentSlot(
 
   // Enviar email de confirmación (no bloquea el flujo principal)
   sendConfirmationEmail(request.patientId, appointment.id).catch((err) => {
-    console.error('Failed to send confirmation email:', err)
+    captureError(err, 'booking.sendConfirmationEmail')
   })
 
   // Enviar WhatsApp de confirmación (no bloquea el flujo principal)
   sendWhatsAppNotification(request.patientId, appointment.id).catch((err) => {
-    console.error('Failed to send WhatsApp confirmation:', err)
+    captureError(err, 'booking.sendWhatsAppNotification')
   })
 
   // Schedule automatic reminders (no bloquea el flujo principal)
   scheduleAppointmentReminders(appointment.id).catch((err) => {
-    console.error('Failed to schedule reminders:', err)
+    captureError(err, 'booking.scheduleAppointmentReminders')
   })
 
   return {

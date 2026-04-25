@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { storeVerificationResult, verifyCedulaSEP } from '@/lib/sep-verification'
+import { startDoctorTrial } from '@/lib/trials'
 
 export async function POST(request: NextRequest) {
   const supabase = await createClient()
@@ -17,21 +18,38 @@ export async function POST(request: NextRequest) {
     licenseNumber,
     availability,
     priceCents,
+    languages,
+    photoUrl,
   } = body
 
   try {
-    const { error } = await supabase.rpc("save_doctor_onboarding", {
-      p_doctor_id: user.id,
-      p_years_experience: yearsExperience,
-      p_bio: bio,
-      p_license_number: licenseNumber,
-      p_price_cents: priceCents,
-      p_availability: availability
-    });
+    const updateData: Record<string, unknown> = {
+      years_experience: yearsExperience,
+      bio,
+      license_number: licenseNumber,
+      price_cents: priceCents,
+    }
+    if (languages) updateData.languages = languages
+    if (photoUrl) updateData.photo_url = photoUrl
 
-    if (error) {
-      console.error(error);
-      throw error;
+    const { error: updateError } = await supabase
+      .from('doctors')
+      .update(updateData)
+      .eq('id', user.id)
+
+    if (updateError) throw updateError
+
+    if (availability) {
+      const { error: rpcError } = await supabase.rpc("save_doctor_onboarding", {
+        p_doctor_id: user.id,
+        p_years_experience: yearsExperience,
+        p_bio: bio,
+        p_license_number: licenseNumber,
+        p_price_cents: priceCents,
+        p_availability: availability
+      })
+
+      if (rpcError) throw rpcError
     }
 
     if (licenseNumber) {
@@ -48,6 +66,9 @@ export async function POST(request: NextRequest) {
 
       await storeVerificationResult(user.id, licenseNumber, verification)
     }
+
+    // Start free trial for the doctor
+    await startDoctorTrial(user.id)
 
     return NextResponse.json({ success: true })
   } catch (error) {

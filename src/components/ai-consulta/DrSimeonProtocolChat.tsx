@@ -423,7 +423,10 @@ export function DrSimeonProtocolChat({
       .then((data) => {
         if (data?.success && data.quota) setQuota(data.quota)
       })
-      .catch(() => undefined)
+      .catch((err) => {
+        console.error('[DrSimeonProtocolChat] Failed to check AI quota:', err)
+        return undefined
+      })
   }, [anonymous, sessionId])
 
   useEffect(() => {

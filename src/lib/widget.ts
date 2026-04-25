@@ -254,14 +254,25 @@ export async function getWidgetContext(
   return { doctor, config }
 }
 
-export function createCorsHeaders(origin: string | null) {
-  return {
-    'Access-Control-Allow-Origin': origin || '*',
+export function createCorsHeaders(origin: string | null, allowedOrigins?: string[]) {
+  const normalizedOrigins = allowedOrigins ?? []
+  const originStr = origin || ''
+  const corsOrigin = normalizedOrigins.includes(originStr) || normalizedOrigins.includes('*')
+    ? originStr
+    : normalizedOrigins[0] || ''
+
+  const headers: Record<string, string> = {
     'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type, Authorization',
     'Access-Control-Max-Age': '86400',
     Vary: 'Origin',
   }
+
+  if (corsOrigin) {
+    headers['Access-Control-Allow-Origin'] = corsOrigin
+  }
+
+  return headers
 }
 
 export function normalizeEmail(email: unknown) {

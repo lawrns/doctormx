@@ -259,9 +259,9 @@ export async function getQuotaStats(): Promise<{
     };
   }
   
-  const freeUsers = quotas.filter(q => q.questions_limit !== PREMIUM_LIMIT);
-  const usersAtLimit = freeUsers.filter(q => q.questions_used >= q.questions_limit);
-  const totalQuestions = quotas.reduce((sum, q) => sum + q.questions_used, 0);
+  const freeUsers = quotas.filter((q: { questions_limit: number; questions_used: number }) => q.questions_limit !== PREMIUM_LIMIT);
+  const usersAtLimit = freeUsers.filter((q: { questions_limit: number; questions_used: number }) => q.questions_used >= q.questions_limit);
+  const totalQuestions = quotas.reduce((sum: number, q: { questions_used: number }) => sum + q.questions_used, 0);
   
   return {
     total_users: quotas.length,

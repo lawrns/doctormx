@@ -238,7 +238,7 @@ export default function ChatPage({ params }: ChatPageProps) {
 
   return (
     <div className="min-h-screen bg-gradient-hero flex flex-col">
-      <header className="glass-nav sticky top-0 z-50">
+      <header className="nav-sticky sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center gap-4">
           <Link
             href={userRole === 'patient' ? '/app/chat' : '/doctor/chat'}

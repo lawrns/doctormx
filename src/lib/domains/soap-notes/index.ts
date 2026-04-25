@@ -4,8 +4,7 @@
 // Output: Approved structured SOAP note
 
 import { createServiceClient } from '@/lib/supabase/server'
-import { getAIClient, glm } from '@/lib/openai'
-import { GLM_CONFIG, isGLMConfigured } from '@/lib/ai/glm'
+import { getAIClient } from '@/lib/openai'
 
 export const SOAP_NOTES_CONFIG = {
   MAX_AUDIO_DURATION_SECONDS: 3600,
@@ -106,9 +105,9 @@ export async function generateSoapNote(
   }
   
   try {
-    // Use GLM as primary provider for SOAP note generation
-    const client = isGLMConfigured() ? glm : getAIClient()
-    const model = isGLMConfigured() ? GLM_CONFIG.models.reasoning : SOAP_NOTES_CONFIG.AI_MODEL
+    // Use OpenRouter for SOAP note generation
+    const client = getAIClient()
+    const model = 'minimax/minimax-m2.7'
 
     const contextStr = input.patient_context
       ? `\nContexto del paciente: ${JSON.stringify(input.patient_context)}`

@@ -63,5 +63,5 @@ export async function getDoctorsByInsurance(insuranceSlug: string, limit = 20) {
     .eq('insurances.slug', insuranceSlug)
     .limit(limit);
   if (error) throw error;
-  return data.map((d) => d.doctor_id);
+  return data.map((d: { doctor_id: string }) => d.doctor_id);
 }

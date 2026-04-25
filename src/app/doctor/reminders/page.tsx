@@ -75,7 +75,9 @@ export default function DoctorRemindersPage() {
         if (data.stats) setStats(data.stats)
         if (data.recent) setRecentReminders(data.recent)
       })
-      .catch(() => {})
+      .catch((err) => {
+        console.error('[RemindersPage] Failed to load reminder stats:', err)
+      })
   }, [])
 
   const save = async () => {
