@@ -1,6 +1,10 @@
+'use client'
+
+import { useState } from 'react'
 import Link from 'next/link'
 import {
   ArrowRight,
+  Calculator,
   CheckCircle,
   CreditCard,
   FileCheck2,
@@ -15,6 +19,8 @@ import {
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import {
@@ -156,6 +162,15 @@ function FeatureCheck({ included, text }: { included: boolean; text?: string }) 
 }
 
 export default function ForDoctorsPage() {
+  const [patientCount, setPatientCount] = useState(12)
+  const [consultPrice, setConsultPrice] = useState(600)
+
+  const monthlyRevenue = patientCount * consultPrice
+  const netRevenue = monthlyRevenue - 499
+  const doctoraliaCost = 2400
+  const annualSavings = (doctoraliaCost * 12) - (499 * 12)
+  const formatMxn = (amount: number) => `$${amount.toLocaleString('es-MX')}`
+
   return (
     <main className="min-h-screen bg-[hsl(var(--surface-soft))]">
       <Header />
@@ -255,6 +270,91 @@ export default function ForDoctorsPage() {
               <p className="mt-2 text-sm leading-6 text-muted-foreground">{step.body}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Revenue Calculator */}
+      <section className="border-y border-border bg-card py-12 md:py-16">
+        <div className="editorial-shell">
+          <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
+            <div>
+              <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-primary flex items-center gap-2">
+                <Calculator className="h-3.5 w-3.5" />
+                Calcula tus ingresos
+              </p>
+              <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground">
+                ¿Cuánto puedes ganar con Doctor.mx?
+              </h2>
+              <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                Ajusta los valores según tu práctica. El plan Starter cuesta solo $499/mes.
+              </p>
+
+              <div className="mt-6 space-y-4">
+                <div>
+                  <Label htmlFor="patientCount" className="text-sm font-medium">
+                    Pacientes por mes
+                  </Label>
+                  <div className="mt-1 flex items-center gap-3">
+                    <Input
+                      id="patientCount"
+                      type="range"
+                      min={1}
+                      max={80}
+                      value={patientCount}
+                      onChange={(e) => setPatientCount(Number(e.target.value))}
+                      className="flex-1"
+                    />
+                    <span className="w-10 text-right font-semibold text-foreground">{patientCount}</span>
+                  </div>
+                </div>
+                <div>
+                  <Label htmlFor="consultPrice" className="text-sm font-medium">
+                    Precio por consulta
+                  </Label>
+                  <div className="mt-1 flex items-center gap-3">
+                    <Input
+                      id="consultPrice"
+                      type="range"
+                      min={200}
+                      max={3000}
+                      step={50}
+                      value={consultPrice}
+                      onChange={(e) => setConsultPrice(Number(e.target.value))}
+                      className="flex-1"
+                    />
+                    <span className="w-16 text-right font-semibold text-foreground">{formatMxn(consultPrice)}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-4 flex items-baseline gap-2 text-sm text-muted-foreground">
+                <CheckCircle className="h-4 w-4 text-vital" />
+                Ahorras {formatMxn(annualSavings)} al año vs Doctoralia
+              </div>
+            </div>
+
+            <div className="grid gap-3">
+              <div className="rounded-xl border border-border bg-card p-5 shadow-card">
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Ingreso bruto mensual</p>
+                <p className="mt-1 font-display text-3xl font-semibold text-foreground">{formatMxn(monthlyRevenue)}</p>
+              </div>
+              <div className="rounded-xl border border-primary/30 bg-primary/5 p-5">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">Tu ganancia neta</p>
+                    <p className="mt-1 font-display text-3xl font-semibold text-primary">{formatMxn(netRevenue)}</p>
+                    <p className="mt-0.5 text-xs text-muted-foreground">Después del plan Starter ($499/mes)</p>
+                  </div>
+                  <CreditCard className="h-8 w-8 text-primary/60" />
+                </div>
+              </div>
+              <div className="rounded-xl border border-border bg-muted/50 p-4">
+                <p className="text-xs text-muted-foreground text-center">
+                  Con Doctoralia pagarías <span className="font-semibold text-foreground line-through">$2,400/mes</span> por las mismas funcionalidades
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -370,7 +470,7 @@ export default function ForDoctorsPage() {
               Elige el plan ideal para tu práctica
             </h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              Todos los planes incluyen prueba gratis de 14 días
+              Todos los planes incluyen prueba gratis de 14 días. Sin tarjeta de crédito. Sin contratos forzosos.
             </p>
           </div>
 
@@ -378,9 +478,9 @@ export default function ForDoctorsPage() {
             {planComparison.map((plan) => (
               <div
                 key={plan.name}
-                className={`relative flex flex-col rounded-[12px] border p-6 ${
+                className={`relative flex flex-col rounded-xl border p-6 ${
                   plan.featured
-                    ? 'border-primary bg-card shadow-[0_14px_34px_-24px_rgba(15,37,95,0.32)]'
+                    ? 'border-primary bg-card shadow-dx-2'
                     : 'border-border bg-card'
                 }`}
               >
@@ -411,7 +511,7 @@ export default function ForDoctorsPage() {
                 <Button
                   asChild
                   variant={plan.featured ? 'hero' : 'outline'}
-                  className="mt-6 w-full"
+                  className="mt-4 w-full"
                   size="sm"
                 >
                   <Link href={plan.href}>
@@ -419,6 +519,10 @@ export default function ForDoctorsPage() {
                     <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </Button>
+                <p className="mt-2 text-center text-[10px] text-muted-foreground">
+                  <ShieldCheck className="inline h-3 w-3 mr-0.5" />
+                  Cancela cuando quieras
+                </p>
               </div>
             ))}
           </div>
@@ -467,7 +571,7 @@ export default function ForDoctorsPage() {
           </h2>
           <p className="mt-3 text-base leading-7 text-muted-foreground">
             Sin tarjeta de crédito. Sin contratos forzosos. Completa tu perfil en minutos y empieza
-            a recibir pacientes verificados.
+            a recibir pacientes verificados. Cancela cuando quieras.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Button asChild size="lg">
@@ -483,8 +587,14 @@ export default function ForDoctorsPage() {
               </Link>
             </Button>
           </div>
-          <p className="mt-4 text-xs text-muted-foreground">
-            Más de 2,500 médicos verificados ya confían en Doctor.mx
+          <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-border bg-muted/50 px-4 py-2">
+            <ShieldCheck className="h-4 w-4 text-primary" />
+            <p className="text-xs text-muted-foreground">
+              Más de 2,500 médicos verificados ya confían en Doctor.mx
+            </p>
+          </div>
+          <p className="mt-3 text-xs text-muted-foreground">
+            14 días de prueba · Cancela cuando quieras · Sin compromiso
           </p>
         </div>
       </section>

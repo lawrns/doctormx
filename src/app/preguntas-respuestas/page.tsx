@@ -172,7 +172,7 @@ export default function ExpertQAPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#FDFCFB]">
+    <main className="min-h-screen bg-background">
       <Header />
 
       {/* Breadcrumb */}

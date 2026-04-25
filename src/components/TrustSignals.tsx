@@ -8,7 +8,7 @@ import Image from 'next/image';
  */
 export function TrustFooter() {
   return (
-    <div className="bg-gradient-to-br from-gray-50 to-gray-100 border-t border-border">
+    <div className="bg-gradient-to-br from-muted/50 to-muted border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Main trust badges */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
@@ -35,7 +35,7 @@ export function TrustFooter() {
         </div>
 
         {/* Detailed credentials */}
-        <div className="bg-card rounded-[12px] p-6 shadow-sm border border-border">
+        <div className="bg-card rounded-xl p-6 shadow-card border border-border">
           <h3 className="text-lg font-bold text-foreground mb-4">
             Credenciales y Certificaciones
           </h3>
@@ -95,7 +95,7 @@ function TrustBadge({
   description: string;
 }) {
   return (
-    <div className="flex flex-col items-center text-center p-4 bg-card rounded-lg border border-border hover:shadow-md transition-shadow">
+    <div className="flex flex-col items-center text-center p-4 bg-card rounded-xl border border-border hover:shadow-card-hover transition-shadow">
       <div className="text-primary mb-2">{icon}</div>
       <h4 className="font-bold text-foreground text-sm mb-1">{title}</h4>
       <p className="text-xs text-muted-foreground">{description}</p>
@@ -224,7 +224,7 @@ function TestimonialCard({
   featured?: boolean;
 }) {
   return (
-    <div className={`border border-border bg-secondary/50 p-6 transition-shadow hover:shadow-sm ${featured ? 'lg:row-span-2 lg:p-8' : ''}`}>
+    <div className={`border border-border bg-muted/50 p-6 transition-shadow hover:shadow-card-hover rounded-xl ${featured ? 'lg:row-span-2 lg:p-8' : ''}`}>
       <div className="flex items-center gap-1 mb-3">
         {[...Array(rating)].map((_, i) => (
           <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
@@ -263,7 +263,7 @@ function TrustStat({ label }: { label: string }) {
  */
 export function SecurityFeatures() {
   return (
-    <div className="bg-gradient-to-br from-[#eff7ff] to-[#e8f3ff] py-12">
+    <div className="bg-gradient-to-br from-surface-tint to-primary/5 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h3 className="text-2xl font-bold text-foreground text-center mb-8">
           Tu Información Está Segura
@@ -305,7 +305,7 @@ function SecurityFeature({
   description: string;
 }) {
   return (
-    <div className="bg-card rounded-lg p-6 shadow-sm border border-border">
+    <div className="bg-card rounded-xl p-6 shadow-card border border-border">
       <div className="text-primary mb-3">{icon}</div>
       <h4 className="font-bold text-foreground mb-2">{title}</h4>
       <p className="text-sm text-muted-foreground">{description}</p>

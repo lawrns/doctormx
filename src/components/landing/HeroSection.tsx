@@ -20,6 +20,7 @@ import {
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 import { TrustBar } from '@/components/ui/card-patterns'
 import { formatCurrency, formatDoctorName } from '@/lib/utils'
 import type { PublicLandingData } from '@/lib/public-trust'
@@ -140,11 +141,11 @@ export function HeroSection({ trustData }: HeroSectionProps) {
   ]
 
   return (
-    <section className="relative overflow-hidden bg-[#061a50] text-white">
+    <section className="relative overflow-hidden bg-[hsl(var(--brand-ink))] text-white">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-[36%] top-[-20%] h-[42rem] w-[42rem] rounded-full border border-white/8" />
-        <div className="absolute left-[44%] top-[4%] h-[28rem] w-[28rem] rounded-full bg-[#0d47d9]/24 blur-3xl" />
-        <div className="absolute inset-x-0 bottom-0 h-44 bg-[linear-gradient(180deg,transparent,rgba(235,241,250,0.96))]" />
+        <div className="absolute left-[44%] top-[4%] h-[28rem] w-[28rem] rounded-full bg-primary/24 blur-3xl" />
+        <div className="absolute inset-x-0 bottom-0 h-44 bg-[linear-gradient(180deg,transparent,hsl(var(--background)/0.96))]" />
       </div>
 
       <div className="editorial-shell relative z-10 pt-12 sm:pt-14 lg:pt-16">
@@ -155,14 +156,14 @@ export function HeroSection({ trustData }: HeroSectionProps) {
             transition={{ duration: 0.45, ease: [0.2, 0.7, 0.2, 1] }}
             className="relative z-20 max-w-3xl pb-2"
           >
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#c9dcff] ring-1 ring-white/12">
-              <ShieldCheck className="h-4 w-4 text-[#86b7ff]" aria-hidden="true" />
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-primary-foreground/80 ring-1 ring-white/12">
+              <ShieldCheck className="h-4 w-4 text-primary" aria-hidden="true" />
               Médicos verificados
             </div>
 
-            <h1 className="font-display text-[clamp(2.85rem,5.8vw,5rem)] font-semibold leading-[0.98] tracking-[-0.055em] text-white">
+            <h1 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] font-semibold leading-[0.98] tracking-[-0.055em] text-white">
               Tu salud merece una recomendación{' '}
-              <span className="font-serif italic tracking-[-0.04em] text-[#c7ddff]">confiable.</span>
+              <span className="font-serif italic tracking-[-0.04em] text-primary">confiable.</span>
             </h1>
 
             <p className="mt-6 max-w-[42rem] text-base leading-7 text-white/74 sm:text-lg">
@@ -175,7 +176,7 @@ export function HeroSection({ trustData }: HeroSectionProps) {
 
                 return (
                   <div key={item.title} className="flex gap-3">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[8px] bg-white/10 text-[#9cc4ff] ring-1 ring-white/10">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/10 text-primary/80 ring-1 ring-white/10">
                       <Icon className="h-4 w-4" aria-hidden="true" />
                     </span>
                     <span>
@@ -188,13 +189,13 @@ export function HeroSection({ trustData }: HeroSectionProps) {
             </div>
 
             <div className="mt-8 flex flex-col gap-3 pb-6 sm:flex-row lg:pb-8">
-              <Button asChild size="lg" className="w-full bg-white text-[#071a4e] shadow-[0_20px_50px_-28px_rgba(255,255,255,0.65)] hover:bg-white/94 sm:w-auto">
+              <Button asChild size="lg" className="w-full bg-white text-foreground shadow-[0_20px_50px_-28px_rgba(255,255,255,0.65)] hover:bg-white/94 sm:w-auto">
                 <Link href="/ai-consulta">
                   Hablar con Dr. Simeón
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>
-              <Button asChild size="lg" className="w-full border border-white/18 bg-[#0d72d6] text-white shadow-[0_20px_54px_-32px_rgba(13,114,214,0.65)] hover:bg-[#0d72d6]/92 sm:w-auto">
+              <Button asChild size="lg" className="w-full border border-white/18 bg-primary text-white shadow-[0_20px_54px_-32px_rgba(13,114,214,0.65)] hover:bg-primary/90 sm:w-auto">
                 <Link href="/doctors">
                   <Search className="h-4 w-4" aria-hidden="true" />
                   Ver médicos
@@ -228,8 +229,8 @@ export function HeroSection({ trustData }: HeroSectionProps) {
             transition={{ duration: 0.5, delay: 0.1, ease: [0.2, 0.7, 0.2, 1] }}
             className="relative z-20 pb-8 lg:pb-0"
           >
-            <div className="max-w-[440px] rounded-[16px] border border-white/18 bg-[#f4f8ff] p-4 text-[#071a4e] shadow-[var(--card-shadow)]">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-[#e8f3ff] px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-[#0d72d6]">
+            <div className="max-w-[440px] rounded-2xl border border-white/18 bg-card p-4 text-foreground shadow-card">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-surface-tint px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-primary">
                 <Stethoscope className="h-4 w-4" aria-hidden="true" />
                 Asistente IA
               </div>
@@ -237,18 +238,18 @@ export function HeroSection({ trustData }: HeroSectionProps) {
               <div className="space-y-3">
                 <div>
                   <p className="mb-2 text-sm font-semibold">¿Qué síntomas tienes hoy?</p>
-                  <div className="ml-auto max-w-[16rem] rounded-[10px] rounded-br-[4px] bg-[#dce9ff] px-4 py-3 text-sm leading-5 text-[#0a2769]">
+                  <div className="ml-auto max-w-[16rem] rounded-xl rounded-br-[4px] bg-primary/10 px-4 py-3 text-sm leading-5 text-foreground">
                     Tengo brotes en la cara desde hace semanas y mi piel se ve más grasa de lo normal.
                   </div>
                 </div>
 
-                <div className="max-w-[18rem] rounded-[10px] rounded-bl-[4px] bg-white px-4 py-3 text-sm leading-5 text-[#4f5d7c] shadow-sm">
+                <div className="max-w-[18rem] rounded-xl rounded-bl-[4px] bg-muted px-4 py-3 text-sm leading-5 text-muted-foreground">
                   Entiendo. Con base en lo que cuentas, te recomiendo consultar con:
                 </div>
 
-                <div className="rounded-[10px] border border-[#d8e3f6] bg-white p-3 shadow-[var(--card-shadow)]">
+                <div className="rounded-xl border border-border bg-card p-3 shadow-card">
                   <div className="flex gap-4">
-                    <Link href={profileHref} className="relative aspect-square h-16 shrink-0 overflow-hidden rounded-[10px] bg-[#e8f3ff]">
+                    <Link href={profileHref} className="relative aspect-square h-16 shrink-0 overflow-hidden rounded-xl bg-surface-tint">
                       {doctor.profile?.photo_url ? (
                         <Image
                           src={doctor.profile.photo_url}
@@ -266,15 +267,15 @@ export function HeroSection({ trustData }: HeroSectionProps) {
 
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
-                        <h2 className="truncate text-lg font-semibold tracking-[-0.02em]">{specialty}</h2>
-                        <CheckCircle2 className="h-4 w-4 text-[#0d72d6]" aria-label="Recomendación validada" />
+                          <h2 className="truncate text-lg font-semibold tracking-[-0.02em]">{specialty}</h2>
+                        <CheckCircle2 className="h-4 w-4 text-primary" aria-label="Recomendación validada" />
                       </div>
-                      <p className="text-sm text-[#5c6783]">{doctorName}</p>
-                      <p className="mt-1 flex items-center gap-1.5 text-xs text-[#5c6783]">
+                      <p className="text-sm text-muted-foreground">{doctorName}</p>
+                      <p className="mt-1 flex items-center gap-1.5 text-xs text-muted-foreground">
                         <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
                         {location}
                       </p>
-                      <p className="mt-2 flex items-center gap-1.5 text-xs font-medium text-[#0d72d6]">
+                      <p className="mt-2 flex items-center gap-1.5 text-xs font-medium text-primary">
                         <BadgeCheck className="h-3.5 w-3.5" aria-hidden="true" />
                         Céd. Prof. {cedula || 'no mostrada'}
                       </p>
@@ -283,36 +284,36 @@ export function HeroSection({ trustData }: HeroSectionProps) {
 
                   <div className="mt-4 flex flex-wrap gap-2">
                     {['09:00', '11:00', '15:30', '17:00'].map((slot) => (
-                      <span key={slot} className="rounded-full border border-[#c8d9fa] bg-[#f7faff] px-3 py-1 text-xs font-semibold text-[#0d72d6]">
+                      <span key={slot} className="rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold text-primary">
                         {slot}
                       </span>
                     ))}
                   </div>
 
-                  <div className="mt-4 grid gap-2 border-t border-[#e4ebf7] pt-4 text-xs text-[#5c6783] sm:grid-cols-2">
+                  <div className="mt-4 grid gap-2 border-t border-border pt-4 text-xs text-muted-foreground sm:grid-cols-2">
                     <span className="flex items-center gap-1.5">
-                      <Video className="h-3.5 w-3.5 text-[#0d72d6]" aria-hidden="true" />
+                      <Video className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
                       {doctor.offers_video ? 'En línea disponible' : 'Presencial'}
                     </span>
                     <span className="flex items-center gap-1.5">
-                      <CreditCard className="h-3.5 w-3.5 text-[#0d72d6]" aria-hidden="true" />
+                      <CreditCard className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
                       Desde {formatCurrency(doctor.price_cents, doctor.currency)}
                     </span>
                     <span className="flex items-center gap-1.5 sm:col-span-2">
-                      <ShieldCheck className="h-3.5 w-3.5 text-[#0d72d6]" aria-hidden="true" />
+                      <ShieldCheck className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
                       {verifiedDate ? `Verificada ${verifiedDate}` : 'Verificación visible cuando existe'}
                     </span>
                   </div>
                 </div>
 
-                <Button asChild variant="hero" className="h-12 w-full rounded-[12px]">
+                <Button asChild variant="hero" className="h-12 w-full rounded-xl">
                   <Link href={bookingHref}>
                     {isFallbackDoctor ? 'Iniciar orientación' : 'Ver disponibilidad'}
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </Link>
                 </Button>
 
-                <p className="flex items-center justify-center gap-2 text-xs text-[#5c6783]">
+                <p className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
                   <LockKeyhole className="h-3.5 w-3.5" aria-hidden="true" />
                   Tu información está protegida y no reemplaza urgencias.
                 </p>
@@ -327,18 +328,18 @@ export function HeroSection({ trustData }: HeroSectionProps) {
           transition={{ duration: 0.5, delay: 0.16, ease: [0.2, 0.7, 0.2, 1] }}
           className="relative z-30 pb-8"
         >
-          <TrustBar
-            items={heroMetrics.map((item) => ({
-              icon: item.icon,
-              title: item.value,
-              body: item.label,
-            }))}
-            className="text-[#071a4e] shadow-[var(--card-shadow)]"
-          />
+            <TrustBar
+              items={heroMetrics.map((item) => ({
+                icon: item.icon,
+                title: item.value,
+                body: item.label,
+              }))}
+              className="text-foreground shadow-card"
+            />
 
           <div className="mt-4 flex flex-wrap items-center justify-center gap-3 text-xs text-white/70 lg:justify-end">
             {featuredDoctors.map((item) => (
-              <Link key={item.id} href={item.id === fallbackDoctor.id ? '/doctors' : `/doctors/${item.id}`} className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2 ring-1 ring-white/12">
+              <Link key={item.id} href={item.id === fallbackDoctor.id ? '/doctors' : `/doctors/${item.id}`} className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2 ring-1 ring-white/12 hover:bg-white/15 transition-colors">
                 <span className="relative h-6 w-6 overflow-hidden rounded-full bg-white/15">
                   {item.profile?.photo_url ? (
                     <Image

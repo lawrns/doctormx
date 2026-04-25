@@ -1,18 +1,32 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { Search, Stethoscope } from 'lucide-react'
+import { Search, Stethoscope, CalendarCheck } from 'lucide-react'
 
 export function MobileCtaBar() {
   const [visible, setVisible] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 360)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    // Show after 5s delay rather than on scroll
+    const timer = setTimeout(() => setVisible(true), 4000)
+    return () => clearTimeout(timer)
   }, [])
+
+  const isDoctorProfile = pathname?.startsWith('/doctors/')
+  const isLanding = pathname === '/'
+
+  const primaryAction = isDoctorProfile
+    ? { href: pathname.replace('/doctors/', '/book/') + '?ref=mobile-bar', label: 'Reservar consulta', icon: CalendarCheck }
+    : isLanding
+    ? { href: '/ai-consulta', label: 'Hablar con Dr. Simeón', icon: Stethoscope }
+    : { href: '/ai-consulta', label: 'Dr. Simeón', icon: Stethoscope }
+
+  const secondaryAction = isDoctorProfile
+    ? { href: '/ai-consulta', label: 'Dr. Simeón', icon: Stethoscope }
+    : { href: '/doctors', label: 'Ver médicos', icon: Search }
 
   return (
     <div
@@ -23,18 +37,18 @@ export function MobileCtaBar() {
     >
       <div className="grid grid-cols-2 gap-2">
         <Link
-          href="/ai-consulta"
-          className="inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-ink px-3 text-sm font-semibold text-primary-foreground active:scale-[0.98]"
+          href={primaryAction.href}
+          className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-ink px-3 text-sm font-semibold text-primary-foreground active:scale-[0.98]"
         >
-          <Stethoscope className="h-4 w-4" aria-hidden="true" />
-          Dr. Simeón
+          {<primaryAction.icon className="h-4 w-4" aria-hidden="true" />}
+          {primaryAction.label}
         </Link>
         <Link
-          href="/doctors"
-          className="inline-flex h-11 items-center justify-center gap-2 rounded-lg border border-border bg-background px-3 text-sm font-semibold text-ink active:scale-[0.98]"
+          href={secondaryAction.href}
+          className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-border bg-background px-3 text-sm font-semibold text-ink active:scale-[0.98]"
         >
-          <Search className="h-4 w-4" aria-hidden="true" />
-          Médicos
+          {<secondaryAction.icon className="h-4 w-4" aria-hidden="true" />}
+          {secondaryAction.label}
         </Link>
       </div>
     </div>

@@ -38,8 +38,7 @@
     --input: 225 24% 90%;
     --ring: 209 92% 53%;                /* #2688e6 */
 
-    --radius: 0.5rem;                   /* 8px default card radius */
-
+    --radius: 0.75rem;                  /* 12px default card radius */
     /* ── Semantic text ── */
     --text-primary: 222 61% 12%;
     --text-secondary: 225 19% 44%;
@@ -215,18 +214,18 @@
 
 .display-title {
   font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
-  font-size: clamp(3rem, 6vw, 6.75rem);
-  line-height: 0.96;
-  letter-spacing: -0.05em;
+  font-size: clamp(2.75rem, 5vw, 5.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
   color: hsl(var(--text-primary));
 }
 
 .section-headline {
   font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
-  font-size: clamp(2rem, 3.6vw, 4rem);
+  font-size: clamp(1.75rem, 3vw, 3.5rem);
   font-weight: 700;
-  line-height: 1.06;
-  letter-spacing: -0.03em;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
   color: hsl(var(--text-primary));
 }
 
@@ -273,18 +272,18 @@
   font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: -0.005em;
-  background: #0a1533;
-  color: #f7f8fb;
+  background: hsl(var(--foreground));
+  color: hsl(var(--card));
   border: 1px solid transparent;
-  border-radius: 10px;
+  border-radius: calc(var(--radius) - 2px);
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.2, 0.7, 0.2, 1);
   white-space: nowrap;
 }
 .btn-dx-primary:hover {
-  background: #0f255f;
+  background: hsl(var(--foreground) / 0.88);
   transform: translateY(-1px);
-  box-shadow: 0 10px 24px -8px rgba(15, 37, 95, 0.35);
+  box-shadow: var(--shadow-strong);
 }
 
 .btn-dx-coral {
@@ -297,16 +296,16 @@
   font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: -0.005em;
-  background: #ff5a3d;
-  color: white;
+  background: hsl(var(--destructive));
+  color: hsl(var(--destructive-foreground));
   border: 1px solid transparent;
-  border-radius: 10px;
+  border-radius: calc(var(--radius) - 2px);
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.2, 0.7, 0.2, 1);
   white-space: nowrap;
 }
 .btn-dx-coral:hover {
-  background: #e54827;
+  background: hsl(var(--destructive) / 0.88);
   transform: translateY(-1px);
 }
 
@@ -321,16 +320,16 @@
   font-weight: 500;
   letter-spacing: -0.005em;
   background: transparent;
-  color: #0a1533;
-  border: 1px solid #d4d9e3;
-  border-radius: 10px;
+  color: hsl(var(--foreground));
+  border: 1px solid hsl(var(--border));
+  border-radius: calc(var(--radius) - 2px);
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.2, 0.7, 0.2, 1);
   white-space: nowrap;
 }
 .btn-dx-ghost:hover {
-  background: #eef0f5;
-  border-color: #5c6783;
+  background: hsl(var(--secondary));
+  border-color: hsl(var(--muted-foreground));
 }
 
 .btn-dx-lg {
@@ -347,7 +346,7 @@
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  color: #5c6783;
+  color: hsl(var(--muted-foreground));
 }
 .eyebrow-dx::before {
   content: '';

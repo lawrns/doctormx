@@ -20,7 +20,7 @@ function ConnectPageContent() {
   const referralCode = searchParams.get('ref') || ''
 
   return (
-    <main className="min-h-screen bg-[#f4f7fb]">
+    <main className="min-h-screen bg-muted/30">
       <Header />
       <ConnectReferralBanner referralCode={referralCode} />
       <ConnectHero />
@@ -39,12 +39,12 @@ export default function ConnectPage() {
   return (
     <Suspense
       fallback={
-        <main className="min-h-screen bg-[#f4f7fb]">
+    <main className="min-h-screen bg-muted/30">
           <Header />
           <div className="editorial-shell py-24">
             <div className="mx-auto max-w-md text-center">
-              <div className="h-4 w-3/5 animate-pulse rounded bg-[#dce9ff] mx-auto" />
-              <div className="mt-4 h-3 w-4/5 animate-pulse rounded bg-[#eef5ff] mx-auto" />
+              <div className="h-4 w-3/5 animate-pulse rounded bg-primary/10 mx-auto" />
+              <div className="mt-4 h-3 w-4/5 animate-pulse rounded bg-primary/5 mx-auto" />
             </div>
           </div>
           <Footer />

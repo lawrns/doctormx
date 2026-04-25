@@ -80,7 +80,7 @@ const faqs = [
 
 export default function AlternativaDoctoraliaPage() {
   return (
-    <div className="min-h-screen bg-[#f4f7fb]">
+    <div className="min-h-screen bg-muted/30">
       <Header />
 
       {/* Hero */}

@@ -14,7 +14,7 @@ const items = [
 
 export function ProgressiveCompletionGrid() {
   return (
-    <section className="bg-[#f4f7fb] py-10 md:py-12 lg:py-14">
+    <section className="bg-muted/50 py-10 md:py-12 lg:py-14">
       <div className="editorial-shell">
         <div className="grid gap-6 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:items-start">
           <SectionHeader
@@ -25,12 +25,12 @@ export function ProgressiveCompletionGrid() {
 
           <div className="grid gap-2 [grid-template-columns:repeat(auto-fill,minmax(220px,1fr))]">
             {items.map((item) => (
-              <Card key={item.title} variant="feature" density="compact" className="rounded-[10px] shadow-none">
+              <Card key={item.title} variant="feature" density="compact" className="rounded-xl shadow-none">
                 <div className="flex min-w-0 gap-2.5">
                   <IconBadge icon={item.icon} size="sm" />
                   <div className="min-w-0">
-                    <h3 className="text-[15px] font-semibold leading-5 tracking-[-0.02em] text-[#071a4e]">{item.title}</h3>
-                    <p className="mt-1 text-[13px] leading-5 text-[#5c6783]">{item.body}</p>
+                    <h3 className="text-[15px] font-semibold leading-5 tracking-[-0.02em] text-foreground">{item.title}</h3>
+                    <p className="mt-1 text-[13px] leading-5 text-muted-foreground">{item.body}</p>
                   </div>
                 </div>
               </Card>

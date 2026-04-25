@@ -104,11 +104,14 @@ const config: Config = {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+        xl: 'calc(var(--radius) + 4px)',
       },
       boxShadow: {
         'dx-1': 'var(--card-shadow)',
         'dx-2': 'var(--card-shadow-hover)',
         'card': 'var(--card-shadow)',
+        'card-hover': 'var(--card-shadow-hover)',
+        'panel': 'var(--public-shadow-medium)',
       },
       spacing: {
         'card-compact': 'var(--card-padding-compact)',

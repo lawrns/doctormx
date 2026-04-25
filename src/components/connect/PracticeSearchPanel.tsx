@@ -161,20 +161,20 @@ export function PracticeSearchPanel({ className }: PracticeSearchPanelProps) {
       variant="preview"
       density="compact"
       className={cn(
-        'overflow-hidden rounded-[12px] border-[#c8d9fa] bg-white shadow-[0_8px_24px_rgba(7,26,78,0.08)]',
+        'overflow-hidden rounded-xl border-primary/20 bg-card shadow-card',
         className
       )}
     >
       <div className="flex min-w-0 flex-wrap items-start justify-between gap-3">
         <div className="min-w-0">
-          <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[#0d72d6]">
+          <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-primary">
             Reclamar perfil
           </p>
-          <h2 className="mt-1 text-[18px] font-semibold leading-6 tracking-[-0.01em] text-[#071a4e]">
+          <h2 className="mt-1 text-[18px] font-semibold leading-6 tracking-[-0.01em] text-foreground">
             Busca tu práctica médica
           </h2>
         </div>
-        <Badge variant="info" className="rounded-[6px] bg-[#e8f3ff] text-[10px] text-[#0d72d6]">
+        <Badge variant="info" className="rounded-md bg-surface-tint text-[10px] text-primary">
           IA asistiva
         </Badge>
       </div>
@@ -183,47 +183,47 @@ export function PracticeSearchPanel({ className }: PracticeSearchPanelProps) {
         <label className="min-w-0">
           <span className="sr-only">Nombre de práctica o consultorio</span>
           <span className="relative block">
-            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#0d72d6]" />
+            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-primary" />
             <Input
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder="Ej. Dra. Ana López, Polanco"
-              className="h-10 rounded-[8px] border-[#cfdcf1] bg-[#f8fbff] pl-9 text-[#071a4e] placeholder:text-[#7d89a7]"
+              className="h-10 rounded-lg border-border bg-muted/30 pl-9 text-foreground placeholder:text-muted-foreground"
             />
           </span>
         </label>
-        <Button type="submit" disabled={loading} size="sm" className="h-10 rounded-[8px]">
+        <Button type="submit" disabled={loading} size="sm" className="h-10 rounded-lg">
           {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Search className="h-4 w-4" />}
           Buscar
         </Button>
       </form>
 
       {provider === 'directory_mock' && results.length > 0 && (
-        <p className="mt-3 rounded-[8px] border border-[#d8e3f6] bg-[#f8fbff] px-3 py-2 text-[12px] leading-5 text-[#5c6783]">
+        <p className="mt-3 rounded-lg border border-border bg-muted/30 px-3 py-2 text-[12px] leading-5 text-muted-foreground">
           Sin Google Places configurado en este entorno: mostramos resultados determinísticos de demostración sin presentarlos como datos en vivo.
         </p>
       )}
 
       {error && (
-        <p className="mt-3 rounded-[8px] border border-[#ffd2c6] bg-[#fff7f4] px-3 py-2 text-[13px] leading-5 text-[#b93720]">
+        <p className="mt-3 rounded-lg border border-destructive/20 bg-destructive/5 px-3 py-2 text-[13px] leading-5 text-destructive">
           {error}
         </p>
       )}
 
       {loading && (
-        <div className="mt-4 divide-y divide-[#e6edf8] overflow-hidden rounded-[10px] border border-[#d8e3f6] bg-white">
+        <div className="mt-4 divide-y divide-border overflow-hidden rounded-xl border border-border bg-card">
           {[0, 1, 2].map((item) => (
             <div key={item} className="grid gap-2 p-3">
-              <div className="h-4 w-3/5 animate-pulse rounded bg-[#dce9ff]" />
-              <div className="h-3 w-5/6 animate-pulse rounded bg-[#eef5ff]" />
-              <div className="h-3 w-1/2 animate-pulse rounded bg-[#eef5ff]" />
+              <div className="h-4 w-3/5 animate-pulse rounded bg-primary/10" />
+              <div className="h-3 w-5/6 animate-pulse rounded bg-primary/5" />
+              <div className="h-3 w-1/2 animate-pulse rounded bg-primary/5" />
             </div>
           ))}
         </div>
       )}
 
       {!loading && results.length > 0 && (
-        <div className="mt-4 max-h-[310px] divide-y divide-[#e6edf8] overflow-auto rounded-[10px] border border-[#d8e3f6] bg-white">
+        <div className="mt-4 max-h-[310px] divide-y divide-border overflow-auto rounded-xl border border-border bg-card">
           {results.map((result) => {
             const active = selected?.id === result.id
 
@@ -233,40 +233,40 @@ export function PracticeSearchPanel({ className }: PracticeSearchPanelProps) {
                 type="button"
                 onClick={() => void selectPractice(result)}
                 className={cn(
-                  'grid w-full min-w-0 gap-2 p-3 text-left transition-[background-color,box-shadow] hover:bg-[#f8fbff] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0d72d6] focus-visible:ring-offset-2 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center',
-                  active && 'bg-[#f2f7ff] shadow-[inset_3px_0_0_#0d72d6]'
+                  'grid w-full min-w-0 gap-2 p-3 text-left transition-colors hover:bg-muted/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center',
+                  active && 'bg-primary/5 shadow-[inset_3px_0_0_hsl(var(--primary))]'
                 )}
                 aria-label={`Preparar perfil para ${result.name}`}
               >
                 <div className="flex min-w-0 gap-3">
-                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-[8px] bg-[#e8f3ff] text-[#0d72d6]">
+                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface-tint text-primary">
                     <Building2 className="h-4 w-4" />
                   </div>
                   <div className="min-w-0">
                     <div className="flex min-w-0 flex-wrap items-center gap-1.5">
-                      <p className="min-w-0 truncate text-[15px] font-semibold leading-5 tracking-[-0.02em] text-[#071a4e]">
+                      <p className="min-w-0 truncate text-[15px] font-semibold leading-5 tracking-[-0.02em] text-foreground">
                         {result.name}
                       </p>
-                      {result.source === 'directory' && <BadgeCheck className="h-3.5 w-3.5 shrink-0 text-[#0d72d6]" />}
+                      {result.source === 'directory' && <BadgeCheck className="h-3.5 w-3.5 shrink-0 text-primary" />}
                     </div>
-                    <p className="mt-1 flex min-w-0 items-start gap-1.5 text-[13px] leading-5 text-[#5c6783]">
-                      <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#7d89a7]" />
+                    <p className="mt-1 flex min-w-0 items-start gap-1.5 text-[13px] leading-5 text-muted-foreground">
+                      <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-muted-foreground/60" />
                       <span className="min-w-0 break-words">{buildMetaLine(result)}</span>
                     </p>
                     <div className="mt-2 flex min-w-0 flex-wrap gap-1.5">
-                      <Badge variant="outline" className="rounded-[6px] px-2 py-0.5 text-[9px] normal-case tracking-[0.04em]">
+                      <Badge variant="outline" className="rounded-md px-2 py-0.5 text-[9px] normal-case tracking-[0.04em]">
                         {sourceLabel(result)}
                       </Badge>
                       <Badge
                         variant={result.claimStatus === 'claimed' ? 'secondary' : 'info'}
-                        className="rounded-[6px] px-2 py-0.5 text-[9px] normal-case tracking-[0.04em]"
+                        className="rounded-md px-2 py-0.5 text-[9px] normal-case tracking-[0.04em]"
                       >
                         {claimLabel(result)}
                       </Badge>
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-1.5 text-[13px] font-semibold text-[#0d72d6] sm:justify-end">
+                <div className="flex items-center gap-1.5 text-[13px] font-semibold text-primary sm:justify-end">
                   Preparar
                   <ArrowRight className="h-3.5 w-3.5" />
                 </div>
@@ -277,16 +277,16 @@ export function PracticeSearchPanel({ className }: PracticeSearchPanelProps) {
       )}
 
       {!loading && query && results.length === 0 && !error && (
-        <div className="mt-4 rounded-[10px] border border-dashed border-[#cfdcf1] bg-[#f8fbff] p-4">
-          <p className="text-[15px] font-semibold leading-5 text-[#071a4e]">No encontramos una práctica con ese nombre.</p>
-          <p className="mt-1 text-[13px] leading-5 text-[#5c6783]">
+        <div className="mt-4 rounded-xl border border-dashed border-border bg-muted/20 p-4">
+          <p className="text-[15px] font-semibold leading-5 text-foreground">No encontramos una práctica con ese nombre.</p>
+          <p className="mt-1 text-[13px] leading-5 text-muted-foreground">
             Puedes ajustar la búsqueda o crear un perfil desde cero con campos guiados.
           </p>
           <Button
             type="button"
             variant="outline"
             size="sm"
-            className="mt-3 h-9 rounded-[8px]"
+            className="mt-3 h-9 rounded-lg"
             onClick={() => router.push('/auth/register?role=doctor&connect=1')}
           >
             Crear perfil desde cero
@@ -295,22 +295,22 @@ export function PracticeSearchPanel({ className }: PracticeSearchPanelProps) {
       )}
 
       {(selected || enriching) && (
-        <div className="sticky bottom-0 mt-4 rounded-[10px] border border-[#c8d9fa] bg-[#f4f8ff] p-3 shadow-[0_-8px_18px_rgba(7,26,78,0.04)]">
+        <div className="sticky bottom-0 mt-4 rounded-xl border border-primary/20 bg-primary/5 p-3 shadow-card">
           <div className="flex min-w-0 flex-wrap items-start justify-between gap-2">
             <div className="min-w-0">
-              <p className="font-mono text-[9px] font-semibold uppercase tracking-[0.16em] text-[#0d72d6]">
+              <p className="font-mono text-[9px] font-semibold uppercase tracking-[0.16em] text-primary">
                 Borrador con IA
               </p>
-              <h3 className="mt-1 truncate text-[15px] font-semibold leading-5 tracking-[-0.02em] text-[#071a4e]">
+              <h3 className="mt-1 truncate text-[15px] font-semibold leading-5 tracking-[-0.02em] text-foreground">
                 {selected?.name || 'Preparando perfil'}
               </h3>
             </div>
             {enriching ? (
-              <Badge variant="info" className="rounded-[6px] px-2 py-0.5 text-[9px] normal-case tracking-[0.04em]">
+              <Badge variant="info" className="rounded-md px-2 py-0.5 text-[9px] normal-case tracking-[0.04em]">
                 <Loader2 className="h-3 w-3 animate-spin" /> Analizando
               </Badge>
             ) : (
-              <Badge variant="info" className="rounded-[6px] px-2 py-0.5 text-[9px] normal-case tracking-[0.04em]">
+              <Badge variant="info" className="rounded-md px-2 py-0.5 text-[9px] normal-case tracking-[0.04em]">
                 <Sparkles className="h-3 w-3" /> Sugerido
               </Badge>
             )}
@@ -318,30 +318,30 @@ export function PracticeSearchPanel({ className }: PracticeSearchPanelProps) {
 
           {enriching ? (
             <div className="mt-3 grid gap-2">
-              <div className="h-3.5 w-2/3 animate-pulse rounded bg-[#dce9ff]" />
-              <div className="h-3.5 w-full animate-pulse rounded bg-[#dce9ff]" />
-              <div className="h-3.5 w-4/5 animate-pulse rounded bg-[#dce9ff]" />
+              <div className="h-3.5 w-2/3 animate-pulse rounded bg-primary/10" />
+              <div className="h-3.5 w-full animate-pulse rounded bg-primary/10" />
+              <div className="h-3.5 w-4/5 animate-pulse rounded bg-primary/10" />
             </div>
           ) : draft ? (
             <>
-              <div className="mt-3 grid gap-2 text-[12px] leading-5 text-[#5c6783] sm:grid-cols-3">
+              <div className="mt-3 grid gap-2 text-[12px] leading-5 text-muted-foreground sm:grid-cols-3">
                 <p>
-                  <span className="block font-mono text-[9px] uppercase tracking-[0.13em] text-[#7d89a7]">Especialidad</span>
-                  <span className="font-semibold text-[#071a4e]">{specialty || 'Por confirmar'}</span>
+                  <span className="block font-mono text-[9px] uppercase tracking-[0.13em] text-muted-foreground/70">Especialidad</span>
+                  <span className="font-semibold text-foreground">{specialty || 'Por confirmar'}</span>
                 </p>
                 <p>
-                  <span className="block font-mono text-[9px] uppercase tracking-[0.13em] text-[#7d89a7]">Ubicación</span>
-                  <span className="font-semibold text-[#071a4e]">{selected?.city || selected?.state || 'Por completar'}</span>
+                  <span className="block font-mono text-[9px] uppercase tracking-[0.13em] text-muted-foreground/70">Ubicación</span>
+                  <span className="font-semibold text-foreground">{selected?.city || selected?.state || 'Por completar'}</span>
                 </p>
                 <p>
-                  <span className="block font-mono text-[9px] uppercase tracking-[0.13em] text-[#7d89a7]">Faltantes</span>
-                  <span className="font-semibold text-[#071a4e]">{draft.missingFields.length} campos</span>
+                  <span className="block font-mono text-[9px] uppercase tracking-[0.13em] text-muted-foreground/70">Faltantes</span>
+                  <span className="font-semibold text-foreground">{draft.missingFields.length} campos</span>
                 </p>
               </div>
 
               {(services || bio) && (
-                <p className="mt-3 line-clamp-2 text-[13px] leading-5 text-[#5c6783]">
-                  <span className="font-semibold text-[#071a4e]">Texto preparado: </span>
+                <p className="mt-3 line-clamp-2 text-[13px] leading-5 text-muted-foreground">
+                  <span className="font-semibold text-foreground">Texto preparado: </span>
                   {bio || services}
                 </p>
               )}
@@ -352,22 +352,22 @@ export function PracticeSearchPanel({ className }: PracticeSearchPanelProps) {
                   size="sm"
                   disabled={!canContinue}
                   onClick={continueSelectedFlow}
-                  className="h-9 rounded-[8px]"
+                  className="h-9 rounded-lg"
                 >
                   {selected?.source === 'directory' && selected.claimStatus === 'unclaimed'
                     ? 'Reclamar este perfil'
                     : 'Continuar con perfil IA'}
                   <ArrowRight className="h-3.5 w-3.5" />
                 </Button>
-                <div className="flex min-w-0 items-center gap-1.5 text-[12px] leading-5 text-[#5c6783]">
-                  <ShieldCheck className="h-3.5 w-3.5 shrink-0 text-[#0d72d6]" />
+                <div className="flex min-w-0 items-center gap-1.5 text-[12px] leading-5 text-muted-foreground">
+                  <ShieldCheck className="h-3.5 w-3.5 shrink-0 text-primary" />
                   <span>Cédula y credenciales no se verifican por IA.</span>
                 </div>
               </div>
 
               {(selected?.claimStatus === 'claimed' || selected?.claimStatus === 'claim_pending') && (
-                <p className="mt-2 flex items-start gap-1.5 text-[12px] leading-5 text-[#5c6783]">
-                  <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#0d72d6]" />
+                <p className="mt-2 flex items-start gap-1.5 text-[12px] leading-5 text-muted-foreground">
+                  <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary" />
                   Este perfil ya tiene un reclamo registrado. Puedes crear un perfil nuevo si representas otra sede o práctica.
                 </p>
               )}

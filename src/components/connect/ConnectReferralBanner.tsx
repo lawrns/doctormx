@@ -19,10 +19,10 @@ export function ConnectReferralBanner({ referralCode }: ConnectReferralBannerPro
   if (!visible || !referralCode) return null
 
   return (
-    <section className="bg-[#f4f7fb] pb-0 pt-6">
+    <section className="bg-muted/30 pb-0 pt-6">
       <div className="editorial-shell">
-        <div className="flex items-start gap-3 rounded-[10px] border border-primary/20 bg-primary/5 p-4">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[8px] bg-primary/10 text-primary">
+        <div className="flex items-start gap-3 rounded-xl border border-primary/20 bg-primary/5 p-4">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
             <Gift className="h-5 w-5" />
           </div>
           <div className="flex-1 min-w-0">
@@ -36,7 +36,7 @@ export function ConnectReferralBanner({ referralCode }: ConnectReferralBannerPro
           <button
             type="button"
             onClick={() => setVisible(false)}
-            className="shrink-0 rounded-[6px] p-1 text-muted-foreground hover:bg-primary/10 hover:text-foreground"
+            className="shrink-0 rounded-md p-1 text-muted-foreground hover:bg-primary/10 hover:text-foreground"
             aria-label="Cerrar banner de referido"
           >
             <X className="h-4 w-4" />

@@ -5,7 +5,7 @@ import type { ReactNode } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { AlertTriangle, CalendarCheck, CheckCircle2, Mail, MapPin, ReceiptText, ShieldCheck, Video } from 'lucide-react'
+import { AlertTriangle, CalendarCheck, CheckCircle2, Mail, MapPin, ReceiptText, ShieldCheck, Stethoscope, Video } from 'lucide-react'
 import type { Appointment } from '@/types'
 import { ANALYTICS_EVENTS, trackClientEvent } from '@/lib/analytics/posthog'
 import { captureError } from '@/lib/utils'
@@ -244,13 +244,47 @@ function PaymentSuccessContent() {
               </div>
 
               <div className="mt-5 grid gap-3">
-                <Button asChild size="lg">
-                  <Link href={appointment?.id ? `/app/appointments/${appointment.id}` : '/app/appointments'}>Ver detalle de cita</Link>
+                <Button asChild size="lg" className="h-12">
+                  <Link href={appointment?.id ? `/app/appointments/${appointment.id}` : '/app/appointments'}>
+                    Ver detalle de cita
+                  </Link>
                 </Button>
-                <Button asChild variant="outline">
+                <Button asChild size="lg" variant="outline" className="h-12">
+                  <Link href="/app/ai-consulta">
+                    <Stethoscope className="h-4 w-4" />
+                    Preparar consulta con Dr. Simeón
+                  </Link>
+                </Button>
+                <Button asChild variant="ghost" size="sm">
                   <Link href="/doctors">Buscar otro doctor</Link>
                 </Button>
               </div>
+            </div>
+
+            {/* Activation checklist */}
+            <div className="border border-border bg-card p-5 shadow-soft rounded-xl">
+              <h3 className="font-display text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-primary" />
+                Antes de tu consulta
+              </h3>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-2 text-xs text-muted-foreground">
+                  <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-primary/10 text-[10px] font-bold text-primary mt-0.5">1</span>
+                  Completa tu historial médico desde tu perfil
+                </li>
+                <li className="flex items-start gap-2 text-xs text-muted-foreground">
+                  <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-primary/10 text-[10px] font-bold text-primary mt-0.5">2</span>
+                  Sube estudios o imágenes relevantes
+                </li>
+                <li className="flex items-start gap-2 text-xs text-muted-foreground">
+                  <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-primary/10 text-[10px] font-bold text-primary mt-0.5">3</span>
+                  Prueba tu cámara y micrófono antes de la hora
+                </li>
+                <li className="flex items-start gap-2 text-xs text-muted-foreground">
+                  <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-primary/10 text-[10px] font-bold text-primary mt-0.5">4</span>
+                  <span>Habla con Dr. Simeón para preparar tu caso <Link href="/app/ai-consulta" className="underline text-primary">aquí</Link></span>
+                </li>
+              </ul>
             </div>
 
             <div className="border border-[hsl(var(--public-border)/0.78)] bg-card p-5 shadow-[var(--public-shadow-soft)]">
