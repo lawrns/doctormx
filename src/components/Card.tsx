@@ -1,5 +1,9 @@
 'use client'
 
+// @deprecated Use @/components/ui/card instead (shadcn/ui composable Card with CardHeader/CardContent/CardFooter)
+// Migration: variant/padding/hover props → className equivalents
+// Last used by: alternativa-doctoralia, para-medicos, doctor/[specialty], doctor/[specialty]/[city]
+
 import { ReactNode } from 'react'
 
 type CardVariant = 'default' | 'elevated' | 'bordered' | 'ghost'

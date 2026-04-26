@@ -1,5 +1,9 @@
 'use client'
 
+// @deprecated Use @/components/ui/button instead (shadcn/ui Button with variant="primary"|"secondary"|"ghost"|"destructive")
+// Migration: replace leftIcon/rightIcon with inline children, loading with disabled+spinner, fullWidth with className="w-full"
+// Last used by: alternativa-doctoralia, para-medicos, doctor/[specialty], doctor/[specialty]/[city]
+
 import { ButtonHTMLAttributes, ReactNode } from 'react'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

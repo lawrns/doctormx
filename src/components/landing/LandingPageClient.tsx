@@ -25,7 +25,6 @@ import { landingNavItems } from '@/lib/public-nav'
 import { ANALYTICS_EVENTS, trackClientEvent } from '@/lib/analytics/posthog'
 import { MobileCtaBar, TrustClaimBlock } from '@/components/public'
 import { DoctorMxLogo } from '@/components/brand/DoctorMxLogo'
-import { TrustStrip } from '@/components/ui/trust-strip'
 import type { PublicLandingData } from '@/lib/public-trust'
 
 type LandingPageClientProps = {
@@ -56,7 +55,6 @@ export function LandingPageClient({ trustData }: LandingPageClientProps) {
         </div>
       </div>
 
-      <TrustStrip />
 
       <motion.header
         initial={{ y: -100, opacity: 0 }}

@@ -154,7 +154,7 @@ function PremiumFeatureCard({ feature, tier, onPurchase, loading }: PremiumFeatu
             </LoadingButton>
           </div>
         ) : (
-          <Link href="/app/premium/upgrade" className="block w-full">
+          <Link href="/app/suscripcion" className="block w-full">
             <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
               Upgrade a Pro
             </Button>
@@ -321,7 +321,7 @@ function PremiumContent() {
                   Upgrade a Elite para obtener acceso ilimitado a todas las funciones de IA
                 </p>
               </div>
-              <Link href="/app/premium/upgrade">
+              <Link href="/app/suscripcion">
                 <Button className="px-6 py-3 bg-primary-foreground text-primary hover:bg-primary-foreground/90">
                   Ver Planes
                 </Button>
