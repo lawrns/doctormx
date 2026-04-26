@@ -42,7 +42,7 @@ type PreConsultaChatProps = {
 
 const AI_DOCTOR_NAME = 'Dr. Simeon';
 const AI_AVATAR_URL = '/images/simeon.png';
-const PATIENT_AVATAR_URL = 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=240&q=80';
+const PATIENT_AVATAR_URL = null;
 const WELCOME_MESSAGE = 'Hola, soy Dr. Simeon. Voy a ayudarte a ordenar tu caso y revisar señales de alarma.\n\nCuéntame cuál es el motivo principal de tu consulta y desde cuándo te sientes así.';
 
 function toSummary(summary: Record<string, unknown> | null | undefined): PreConsultaSummary | null {
@@ -427,7 +427,7 @@ export default function PreConsultaChat({
                       </div>
 
                       {!isAssistant && (
-                        <UserAvatar src={PATIENT_AVATAR_URL} alt="Paciente" name="Paciente" size="default" fallbackVariant="primary" className="shadow-md shadow-border" />
+                        <UserAvatar src={undefined} alt="Paciente" name="Paciente" size="default" fallbackVariant="primary" className="shadow-md shadow-border" />
                       )}
                     </motion.div>
                   );

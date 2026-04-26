@@ -218,6 +218,7 @@ export async function createPatientSubscriptionViaStripe(
           quantity: 1,
         }],
         metadata: {
+          type: 'patient_subscription',
           patient_id: patientId,
           plan_id: planId,
         },

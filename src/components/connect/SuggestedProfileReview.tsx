@@ -11,8 +11,7 @@ const fields = [
   { label: 'Cédula profesional', value: 'Pendiente', source: 'SEP / médico', status: 'No verificado' },
 ]
 
-const reviewPhoto =
-  'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1100&q=82'
+const reviewPhoto = null
 
 export function SuggestedProfileReview() {
   return (
@@ -29,15 +28,17 @@ export function SuggestedProfileReview() {
 
           <Card variant="preview" tone="tint" density="compact" className="w-full max-w-[560px] justify-self-end rounded-xl shadow-none">
             <div className="mb-3 grid gap-3 rounded-xl border border-border bg-card p-2.5 sm:grid-cols-[8.5rem_minmax(0,1fr)] sm:items-center">
-              <div className="relative h-20 overflow-hidden rounded-lg bg-surface-tint">
-                <Image
-                  src={reviewPhoto}
-                  alt="Revisión de información médica antes de publicar un perfil"
-                  fill
-                  sizes="136px"
-                  className="object-cover object-[52%_52%]"
-                />
-              </div>
+              {reviewPhoto && (
+                <div className="relative h-20 overflow-hidden rounded-lg bg-surface-tint">
+                  <Image
+                    src={reviewPhoto}
+                    alt="Revisión de información médica antes de publicar un perfil"
+                    fill
+                    sizes="136px"
+                    className="object-cover object-[52%_52%]"
+                  />
+                </div>
+              )}
               <div className="min-w-0">
                 <p className="text-[13px] font-semibold leading-5 text-foreground">
                   El borrador acelera la captura; la verificación sigue separada.

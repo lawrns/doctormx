@@ -131,12 +131,7 @@ function LoginContent() {
     <div className="min-h-screen grid lg:grid-cols-2">
       {/* Left Panel - Branding */}
       <div className="relative hidden lg:flex flex-col justify-between bg-ink p-10 text-white">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=2091&auto=format&fit=crop)',
-          }}
-        />
+        <div className="absolute inset-0 bg-ink" />
         <div className="absolute inset-0 bg-ink/70" />
 
         <div className="relative z-20 flex items-center gap-2.5">

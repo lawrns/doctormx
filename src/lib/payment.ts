@@ -9,7 +9,7 @@ import { sendPaymentReceipt } from './notifications'
 import { sendPaymentReceipt as sendWhatsAppReceipt, getPatientPhone, getDoctorName } from './whatsapp-notifications'
 import { logger } from '@/lib/observability/logger'
 import { captureError } from '@/lib/utils'
-import { ensureVideoRoomForAppointment } from '@/lib/video/videoService'
+import { ensureVideoRoomForAppointment } from '@/lib/video'
 import { validatePaymentIntentBinding } from '@/lib/payment-integrity'
 import {
   getSelectedInsuranceEstimate,
@@ -257,7 +257,7 @@ async function confirmAppointment(appointmentId: string) {
 
   if (error) throw error
 
-  ensureVideoRoomForAppointment(supabase, appointmentId).catch((err: unknown) => {
+  ensureVideoRoomForAppointment(appointmentId).catch((err: unknown) => {
     captureError(err, 'payment.ensureVideoRoom')
   })
 

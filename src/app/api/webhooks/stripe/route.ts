@@ -332,6 +332,28 @@ export async function POST(request: NextRequest) {
         case 'payment_intent.succeeded': {
           const paymentIntent = event.data.object
 
+          // Handle patient subscription one-time payments
+          if (paymentIntent.metadata?.type === 'patient_subscription') {
+            const { patient_id, plan_id } = paymentIntent.metadata
+            if (patient_id && plan_id) {
+              const supabase = (await import('@/lib/supabase/server')).createServiceClient()
+              await supabase
+                .from('patient_subscriptions')
+                .upsert({
+                  patient_id,
+                  plan_id,
+                  status: 'active',
+                  current_period_start: new Date().toISOString(),
+                  current_period_end: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
+                  consultations_used: 0,
+                }, { onConflict: 'patient_id' })
+                .then(({ error: dbError }) => {
+                  if (dbError) logger.error('[Webhook] Error creating patient subscription from PI:', { error: String(dbError) })
+                })
+            }
+            break
+          }
+
           // Get appointment ID from metadata
           const appointmentId = paymentIntent.metadata?.appointmentId
 
@@ -403,16 +425,21 @@ export async function POST(request: NextRequest) {
       }
 
       case 'customer.subscription.deleted': {
-        // Handle subscription cancellations
         const subscription = event.data.object as Stripe.Subscription
-        
+
         logger.info('Subscription cancelled:', {
           subscriptionId: subscription.id,
           customerId: subscription.customer,
         })
-        
+
         await handleSubscriptionDeleted(subscription)
-        
+
+        const supabase = (await import('@/lib/supabase/server')).createServiceClient()
+        await supabase
+          .from('patient_subscriptions')
+          .update({ status: 'canceled' })
+          .eq('stripe_subscription_id', subscription.id)
+
         break
       }
 
@@ -423,6 +450,29 @@ export async function POST(request: NextRequest) {
 
       case 'checkout.session.completed': {
         const session = event.data.object as Stripe.Checkout.Session
+
+        if (session.metadata?.type === 'patient_subscription') {
+          const { patient_id, plan_id } = session.metadata
+          if (patient_id && plan_id && session.subscription) {
+            const supabase = (await import('@/lib/supabase/server')).createServiceClient()
+            await supabase
+              .from('patient_subscriptions')
+              .upsert({
+                patient_id,
+                plan_id,
+                stripe_subscription_id: session.subscription,
+                status: 'active',
+                current_period_start: new Date().toISOString(),
+                current_period_end: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
+                consultations_used: 0,
+              }, { onConflict: 'patient_id' })
+              .then(({ error: dbError }) => {
+                if (dbError) logger.error('[Webhook] Error creating patient subscription:', { error: String(dbError) })
+              })
+          }
+          break
+        }
+
         if (session.mode === 'subscription' && session.subscription) {
           const subscription = await stripe.subscriptions.retrieve(session.subscription as string)
           await upsertDoctorSubscription(subscription)

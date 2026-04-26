@@ -29,8 +29,7 @@ type HeroSectionProps = {
   trustData?: PublicLandingData | null
 }
 
-const heroDoctorImage =
-  'https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=1200&q=88'
+const heroDoctorImage = null
 
 const fallbackDoctor = {
   id: 'sample-landing-paula',
@@ -59,7 +58,7 @@ const fallbackDoctor = {
   profile: {
     id: 'sample-profile-paula',
     full_name: 'Paula Ramirez',
-    photo_url: 'https://i.pravatar.cc/320?img=47',
+    photo_url: null,
   },
   specialties: [{ id: 'sample-derma', name: 'Dermatología', slug: 'dermatologia' }],
 } as PublicLandingData['featuredDoctors'][number]
@@ -215,24 +214,26 @@ export function HeroSection({ trustData }: HeroSectionProps) {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 22 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.06, ease: [0.2, 0.7, 0.2, 1] }}
-            className="relative z-10 hidden self-end lg:block"
-          >
-            <div className="relative mx-auto h-[34rem] max-w-[22rem] overflow-hidden rounded-t-[18px]">
-              <Image
-                src={heroDoctorImage}
-                alt="Médica de Doctor.mx"
-                fill
-                priority
-                sizes="360px"
-                className="object-cover object-[48%_18%]"
-              />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(6,26,80,0.78)_100%)]" />
-            </div>
-          </motion.div>
+          {heroDoctorImage && (
+            <motion.div
+              initial={{ opacity: 0, y: 22 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.06, ease: [0.2, 0.7, 0.2, 1] }}
+              className="relative z-10 hidden self-end lg:block"
+            >
+              <div className="relative mx-auto h-[34rem] max-w-[22rem] overflow-hidden rounded-t-[18px]">
+                <Image
+                  src={heroDoctorImage}
+                  alt="Médica de Doctor.mx"
+                  fill
+                  priority
+                  sizes="360px"
+                  className="object-cover object-[48%_18%]"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(6,26,80,0.78)_100%)]" />
+              </div>
+            </motion.div>
+          )}
 
           <motion.div
             initial={{ opacity: 0, y: 22 }}

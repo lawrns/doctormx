@@ -41,7 +41,7 @@ const fallbackDoctors: PublicLandingData['featuredDoctors'] = [
     offers_video: true,
     offers_in_person: true,
     verification: { cedula: '12345678', sep_verified: true, verified_at: null, institution: 'UNAM' },
-    profile: { id: 'sample-paula-profile', full_name: 'Paula Ramirez', photo_url: 'https://i.pravatar.cc/320?img=47' },
+    profile: { id: 'sample-paula-profile', full_name: 'Paula Ramirez', photo_url: null },
     specialties: [{ id: 'derma', name: 'Dermatología', slug: 'dermatologia' }],
   },
   {
@@ -63,7 +63,7 @@ const fallbackDoctors: PublicLandingData['featuredDoctors'] = [
     offers_video: true,
     offers_in_person: false,
     verification: { cedula: '87654321', sep_verified: true, verified_at: null, institution: 'UANL' },
-    profile: { id: 'sample-rodrigo-profile', full_name: 'Rodrigo Vazquez', photo_url: 'https://i.pravatar.cc/320?img=12' },
+    profile: { id: 'sample-rodrigo-profile', full_name: 'Rodrigo Vazquez', photo_url: null },
     specialties: [{ id: 'cardio', name: 'Cardiología', slug: 'cardiologia' }],
   },
   {
@@ -85,7 +85,7 @@ const fallbackDoctors: PublicLandingData['featuredDoctors'] = [
     offers_video: true,
     offers_in_person: true,
     verification: { cedula: '11223344', sep_verified: true, verified_at: null, institution: 'UdeG' },
-    profile: { id: 'sample-ana-profile', full_name: 'Ana Lopez', photo_url: 'https://i.pravatar.cc/320?img=32' },
+    profile: { id: 'sample-ana-profile', full_name: 'Ana Lopez', photo_url: null },
     specialties: [{ id: 'gine', name: 'Ginecología', slug: 'ginecologia' }],
   },
 ]
@@ -172,9 +172,7 @@ export function AIGuidedMarketplacePreview({ trustData }: AIGuidedMarketplacePre
                 <div className="relative h-11 w-11 overflow-hidden rounded-full bg-[#eaf2ff]">
                   {review?.patientPhotoUrl ? (
                     <Image src={review.patientPhotoUrl} alt={review.patientName} fill sizes="44px" className="object-cover" />
-                  ) : (
-                    <Image src="https://i.pravatar.cc/120?img=5" alt="Paciente verificada" fill sizes="44px" className="object-cover" />
-                  )}
+                  ) : null}
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-[#071a4e]">{review?.patientName || 'María Fernanda G.'}</p>

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { isVideoAppointmentJoinable } from '@/lib/video/videoService'
+import { isVideoAppointmentJoinable } from '@/lib/video'
 
 function videoAppointment(overrides: Partial<Parameters<typeof isVideoAppointmentJoinable>[0]> = {}) {
   return {

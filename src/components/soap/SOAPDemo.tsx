@@ -27,12 +27,12 @@ export function SOAPDemo() {
   const [demoTimestamp] = useState(() => Date.now());
 
   // Real doctor photos from Unsplash
-  const specialtyAvatars: Record<string, string> = {
-    cardiology: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&h=200&fit=crop&crop=face',
-    general: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&h=200&fit=crop&crop=face',
-    neurology: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=200&h=200&fit=crop&crop=face',
-    psychology: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=200&h=200&fit=crop&crop=face',
-    dermatology: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=200&h=200&fit=crop&crop=face',
+  const specialtyAvatars: Record<string, string | undefined> = {
+    cardiology: undefined,
+    general: undefined,
+    neurology: undefined,
+    psychology: undefined,
+    dermatology: undefined,
   };
 
   // Example data for specialists

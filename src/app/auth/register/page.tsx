@@ -329,14 +329,7 @@ function RegisterContent() {
     <div className="min-h-screen grid lg:grid-cols-2">
       {/* Left Panel - Image & Branding */}
       <div className="relative hidden lg:flex flex-col justify-between bg-[hsl(var(--ink))] p-10 text-white">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: isDoctor
-              ? 'url(https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080&auto=format&fit=crop)'
-              : 'url(https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop)',
-          }}
-        />
+          <div className="absolute inset-0 bg-[hsl(var(--ink))]" />
         <div className="absolute inset-0 bg-[hsl(var(--ink))]/70" />
 
         <div className="relative z-20 flex items-center gap-2.5">

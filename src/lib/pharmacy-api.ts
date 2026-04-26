@@ -1,11 +1,6 @@
-// Pharmacy API Abstraction Layer
-// Currently returns structured mock data, ready for real API integration
-// Input: search query, options
-// Process: Search across pharmacy catalogs → Return unified results
-// Output: PharmacySearchResult with products and pharmacies
-
 import { createServiceClient, createClient } from '@/lib/supabase/server'
 import { logger } from '@/lib/observability/logger'
+import { searchProducts as integrationSearch } from '@/services/pharmacy-integration'
 
 export interface PharmacyProduct {
   id: string
@@ -23,6 +18,15 @@ export interface PharmacySearchResult {
   products: PharmacyProduct[]
   pharmacies: { name: string; logo: string; delivery_available: boolean }[]
   total_results: number
+}
+
+const PHARMACY_KEY_MAP: Record<string, string> = {
+  guadalajara: 'farmacias-guadalajara',
+  ahorro: 'farmacias-del-ahorro',
+  similares: 'farmacias-similares',
+  benavides: 'farmacias-benavides',
+  san_pablo: 'farmacias-san-pablo',
+  yza: 'farmacias-yza',
 }
 
 const PHARMACY_LOGOS: Record<string, string> = {
@@ -63,7 +67,13 @@ const AFFILIATE_TRACKING_PARAMS: Record<string, string> = {
 
 const DOCTORY_AFFILIATE_ID = 'doctory-mx'
 
-// Mock product database
+function generateAffiliateUrl(productId: string, pharmacyKey: string): string {
+  const baseUrl = AFFILIATE_BASE_URLS[pharmacyKey]
+  const trackingParam = AFFILIATE_TRACKING_PARAMS[pharmacyKey]
+  if (!baseUrl || !trackingParam) return '#'
+  return `${baseUrl}/${productId}?${trackingParam}=${DOCTORY_AFFILIATE_ID}&utm_source=doctory&utm_medium=telemedicine&utm_campaign=pharmacy_referral`
+}
+
 const MOCK_PRODUCTS: Omit<PharmacyProduct, 'affiliate_url'>[] = [
   { id: 'GUA-PAR-001', name: 'Paracetamol 500mg', brand: 'Tylenol', price_cents: 4550, pharmacy: 'farmacias-guadalajara', pharmacy_logo: PHARMACY_LOGOS['farmacias-guadalajara'], in_stock: true, requires_prescription: false },
   { id: 'AHO-PAR-001', name: 'Paracetamol 500mg', brand: 'Tylenol', price_cents: 4390, pharmacy: 'farmacias-del-ahorro', pharmacy_logo: PHARMACY_LOGOS['farmacias-del-ahorro'], in_stock: true, requires_prescription: false },
@@ -96,70 +106,89 @@ const MOCK_PRODUCTS: Omit<PharmacyProduct, 'affiliate_url'>[] = [
   { id: 'YZA-PAR-001', name: 'Paracetamol 500mg', brand: 'Genérico', price_cents: 4100, pharmacy: 'farmacias-yza', pharmacy_logo: PHARMACY_LOGOS['farmacias-yza'], in_stock: true, requires_prescription: false },
 ]
 
-function generateAffiliateUrl(product: { id: string; pharmacy: string }): string {
-  const baseUrl = AFFILIATE_BASE_URLS[product.pharmacy]
-  const trackingParam = AFFILIATE_TRACKING_PARAMS[product.pharmacy]
-  if (!baseUrl || !trackingParam) return '#'
-  return `${baseUrl}/${product.id}?${trackingParam}=${DOCTORY_AFFILIATE_ID}&utm_source=doctory&utm_medium=telemedicine&utm_campaign=pharmacy_referral`
-}
-
-/**
- * Search for pharmacy products
- */
 export async function searchPharmacyProducts(
   query: string,
   options?: { location?: string; max_price?: number }
 ): Promise<PharmacySearchResult> {
-  const normalized = query.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+  try {
+    const integrationResult = await integrationSearch(query, {
+      maxPrice: options?.max_price,
+    })
 
-  let filtered = MOCK_PRODUCTS.filter((p) => {
-    const searchable = [p.name, p.brand]
-      .filter(Boolean)
-      .join(' ')
-      .toLowerCase()
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
+    const products: PharmacyProduct[] = integrationResult.products.map(p => {
+      const pharmacyKey = PHARMACY_KEY_MAP[p.pharmacyId] || p.pharmacyId
+      return {
+        id: p.id,
+        name: p.name,
+        brand: p.brand,
+        price_cents: Math.round(p.price.current * 100),
+        pharmacy: pharmacyKey,
+        pharmacy_logo: PHARMACY_LOGOS[pharmacyKey] || '',
+        in_stock: p.stock.available,
+        requires_prescription: p.requiresPrescription,
+        affiliate_url: p.affiliateLink || generateAffiliateUrl(p.id, pharmacyKey),
+      }
+    })
 
-    if (!searchable.includes(normalized)) return false
-    if (options?.max_price !== undefined && p.price_cents > options.max_price) return false
-    return true
-  })
-
-  const products = filtered.map((p) => ({
-    ...p,
-    affiliate_url: generateAffiliateUrl(p),
-  }))
-
-  const uniquePharmacies = new Map<string, { name: string; logo: string; delivery_available: boolean }>()
-  for (const p of products) {
-    if (!uniquePharmacies.has(p.pharmacy)) {
-      uniquePharmacies.set(p.pharmacy, {
-        name: PHARMACY_DISPLAY_NAMES[p.pharmacy] || p.pharmacy,
-        logo: p.pharmacy_logo,
-        delivery_available: true,
-      })
+    const uniquePharmacies = new Map<string, { name: string; logo: string; delivery_available: boolean }>()
+    for (const p of integrationResult.products) {
+      const key = PHARMACY_KEY_MAP[p.pharmacyId] || p.pharmacyId
+      if (!uniquePharmacies.has(key)) {
+        uniquePharmacies.set(key, {
+          name: PHARMACY_DISPLAY_NAMES[key] || key,
+          logo: PHARMACY_LOGOS[key] || '',
+          delivery_available: p.delivery.available,
+        })
+      }
     }
-  }
 
-  return {
-    products,
-    pharmacies: Array.from(uniquePharmacies.values()),
-    total_results: products.length,
+    return {
+      products,
+      pharmacies: Array.from(uniquePharmacies.values()),
+      total_results: integrationResult.total,
+    }
+  } catch {
+    const normalized = query.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+
+    let filtered = MOCK_PRODUCTS.filter((p) => {
+      const searchable = [p.name, p.brand]
+        .filter(Boolean).join(' ').toLowerCase()
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      if (!searchable.includes(normalized)) return false
+      if (options?.max_price !== undefined && p.price_cents > options.max_price) return false
+      return true
+    })
+
+    const products = filtered.map((p) => ({
+      ...p,
+      affiliate_url: generateAffiliateUrl(p.id, p.pharmacy),
+    }))
+
+    const uniquePharmacies = new Map<string, { name: string; logo: string; delivery_available: boolean }>()
+    for (const p of products) {
+      if (!uniquePharmacies.has(p.pharmacy)) {
+        uniquePharmacies.set(p.pharmacy, {
+          name: PHARMACY_DISPLAY_NAMES[p.pharmacy] || p.pharmacy,
+          logo: p.pharmacy_logo,
+          delivery_available: true,
+        })
+      }
+    }
+
+    return {
+      products,
+      pharmacies: Array.from(uniquePharmacies.values()),
+      total_results: products.length,
+    }
   }
 }
 
-/**
- * Get a single product by ID
- */
 export async function getProductById(productId: string): Promise<PharmacyProduct | null> {
   const product = MOCK_PRODUCTS.find((p) => p.id === productId)
   if (!product) return null
-  return { ...product, affiliate_url: generateAffiliateUrl(product) }
+  return { ...product, affiliate_url: generateAffiliateUrl(product.id, product.pharmacy) }
 }
 
-/**
- * Track a pharmacy affiliate click
- */
 export async function trackPharmacyClick(
   productId: string,
   pharmacy: string,

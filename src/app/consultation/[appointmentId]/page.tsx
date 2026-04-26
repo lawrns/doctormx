@@ -1,5 +1,5 @@
 import { requireRole } from '@/lib/auth'
-import { getOrCreateVideoRoom } from '@/lib/video'
+import { ensureVideoRoomForAppointment } from '@/lib/video'
 import { formatDate, formatTime } from '@/lib/utils'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -32,7 +32,7 @@ export default async function ConsultationRoomPage({
   }
 
   // Generar URL de videollamada
-  const videoRoom = await getOrCreateVideoRoom(appointmentId)
+  const videoRoom = await ensureVideoRoomForAppointment(appointmentId)
 
   return (
     <div className="min-h-screen bg-background">
@@ -77,7 +77,7 @@ export default async function ConsultationRoomPage({
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 font-semibold text-lg"
             >
               <a
-                href={videoRoom.url}
+                href={videoRoom.roomUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >

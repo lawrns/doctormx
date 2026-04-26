@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { requireRole } from '@/lib/auth'
-import { createVideoRoom, getJoinToken, updateVideoStatus, isVideoAppointmentJoinable } from '@/lib/video/videoService'
+import { createVideoRoom, getJoinToken, updateVideoStatus, isVideoAppointmentJoinable } from '@/lib/video'
 import { sendEmail, getEmailTemplate } from '@/lib/notifications'
 import { sendWhatsAppNotification } from '@/lib/whatsapp-notifications'
 
@@ -120,8 +120,9 @@ export async function GET(
 
     if (
       !isVideoAppointmentJoinable({
-        ...appointment,
-        video_status: appointment.video_status || undefined,
+        start_ts: appointment.start_ts,
+        appointment_type: appointment.appointment_type,
+        video_room_url: appointment.video_room_url,
       }) &&
       now < fifteenMinutesBefore
     ) {
@@ -135,8 +136,7 @@ export async function GET(
     }
 
     if (!appointment.video_room_url && role === 'doctor') {
-      const videoRoom = await createVideoRoom({
-        appointmentId: appointment.id,
+      const videoRoom = await createVideoRoom(appointment.id, {
         patientId: appointment.patient_id,
         doctorId: appointment.doctor_id,
         scheduledFor: new Date(appointment.start_ts),
@@ -248,8 +248,7 @@ export async function POST(
     }
 
     // Create new video room
-    const videoRoom = await createVideoRoom({
-      appointmentId: appointment.id,
+    const videoRoom = await createVideoRoom(appointment.id, {
       patientId: appointment.patient_id,
       doctorId: appointment.doctor_id,
       scheduledFor: new Date(appointment.start_ts),

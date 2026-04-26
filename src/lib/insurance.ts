@@ -1,6 +1,7 @@
 import { createClient, createServiceClient } from '@/lib/supabase/server'
 import { requirePatientAuth } from '@/lib/auth-guard'
 import { expireStalePendingPaymentAppointments } from '@/lib/appointment-expiry'
+import { eligibilityClient } from '@/lib/insurance/eligibility-client'
 
 type SupabaseClientLike = Awaited<ReturnType<typeof createClient>>
 
@@ -314,6 +315,48 @@ export async function getInsuranceCheckoutOptions(
     insuranceId: patientInsurance.insurance_id,
   }))
 
+  // Enrich estimates with real-time eligibility checks
+  const { data: patientProfile } = await db
+    .from('profiles')
+    .select('full_name')
+    .eq('id', patientId)
+    .single()
+
+  const patientName = patientProfile?.full_name || ''
+
+  const enrichedEstimates: InsuranceEstimate[] = await Promise.all(
+    estimates.map(async (estimate) => {
+      if (estimate.eligibilityStatus !== 'verified') return estimate
+
+      const patientInsurance = patientInsurances.find(
+        (pi) => pi.id === estimate.patientInsuranceId
+      )
+      if (!patientInsurance?.policy_number || !estimate.insuranceId) return estimate
+
+      try {
+        const result = await eligibilityClient.checkEligibility({
+          policyNumber: patientInsurance.policy_number,
+          insurerId: estimate.insuranceId,
+          patientName,
+          patientDateOfBirth: '',
+          serviceType: 'consultation',
+        })
+
+        if (result.status === 'verified') {
+          return {
+            ...estimate,
+            eligibilityStatus: 'verified',
+            message: 'Elegibilidad verificada en tiempo real.',
+          }
+        }
+      } catch (err) {
+        console.warn('[Insurance] Eligibility check failed, using estimate:', err)
+      }
+
+      return estimate
+    })
+  )
+
   const cashEstimate: InsuranceEstimate = {
     patientInsuranceId: null,
     insuranceId: null,
@@ -333,7 +376,7 @@ export async function getInsuranceCheckoutOptions(
     appointment,
     acceptedInsurances,
     patientInsurances,
-    estimates,
+    estimates: enrichedEstimates,
     cashEstimate,
   }
 }
