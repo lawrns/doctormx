@@ -1,9 +1,10 @@
-import Link from 'next/link'
+import { AdminShell } from '@/components/AdminShell'
+import { EmptyState } from '@/components/EmptyState'
 import { MessageSquareMore, Activity, BellRing, ShieldCheck } from 'lucide-react'
 import { requireRole } from '@/lib/auth'
 
 export default async function AdminCommunicationsPage() {
-  const { supabase } = await requireRole('admin')
+  const { profile, supabase } = await requireRole('admin')
 
   const { data: conversations, count: conversationCount } = await supabase
     .from('chat_conversations')
@@ -39,20 +40,13 @@ export default async function AdminCommunicationsPage() {
   }).length
 
   return (
-    <div className="min-h-screen bg-secondary/50">
-      <header className="bg-card shadow">
-        <div className="container mx-auto px-4 py-6 flex items-center justify-between">
-          <div>
-            <h1 className="text-2xl font-bold text-foreground">Comunicaciones</h1>
-            <p className="mt-1 text-muted-foreground">Visibilidad operativa inicial para doctor connect y soporte.</p>
-          </div>
-          <Link href="/admin" className="text-sm font-medium text-primary-600 hover:text-primary-700">
-            Volver al admin
-          </Link>
-        </div>
-      </header>
+    <AdminShell profile={profile} currentPath="/admin/communications">
+      <div className="mb-8">
+        <h1 className="text-2xl font-bold text-foreground">Comunicaciones</h1>
+        <p className="mt-1 text-muted-foreground">Visibilidad operativa inicial para doctor connect y soporte.</p>
+      </div>
 
-      <main className="container mx-auto px-4 py-8 space-y-8">
+      <div className="space-y-8">
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
             <div className="mb-4 flex items-center gap-3">
@@ -139,8 +133,13 @@ export default async function AdminCommunicationsPage() {
               <tbody className="divide-y divide-gray-100 bg-card">
                 {(conversations || []).length === 0 ? (
                   <tr>
-                    <td colSpan={5} className="px-6 py-12 text-center text-muted-foreground">
-                      No hay conversaciones para mostrar todavía.
+                    <td colSpan={5} className="px-6 py-12 text-center">
+                      <EmptyState
+                        iconName="message"
+                        title="No hay conversaciones"
+                        description="Las conversaciones entre doctores y pacientes aparecerán aquí."
+                        variant="subtle"
+                      />
                     </td>
                   </tr>
                 ) : (
@@ -158,7 +157,7 @@ export default async function AdminCommunicationsPage() {
             </table>
           </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </AdminShell>
   )
 }

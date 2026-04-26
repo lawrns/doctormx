@@ -1,6 +1,7 @@
 import { requireRole } from '@/lib/auth'
-import { getAnalysis, getUrgencyLabel, getImageTypeLabel, getStatusLabel } from '@/lib/ai/vision'
-import { redirect } from 'next/navigation'
+import { getUrgencyLabel, getImageTypeLabel, getStatusLabel } from '@/lib/ai/vision'
+import { redirect, notFound } from 'next/navigation'
+import DoctorLayout from '@/components/DoctorLayout'
 import DoctorImageReviewClient from './DoctorImageReviewClient'
 
 interface PageProps {
@@ -21,10 +22,16 @@ export default async function DoctorImageReviewPage({ params }: PageProps) {
   }
 
   const { analysisId } = await params
-  const analysis = await getAnalysis(analysisId)
+
+  const { data: analysis } = await supabase
+    .from('medical_image_analyses')
+    .select('*')
+    .eq('id', analysisId)
+    .eq('doctor_id', user.id)
+    .single()
 
   if (!analysis) {
-    redirect('/doctor/appointments')
+    notFound()
   }
 
   const { data: patientData } = await supabase
@@ -36,7 +43,8 @@ export default async function DoctorImageReviewPage({ params }: PageProps) {
   const patient = patientData || { full_name: 'Paciente', email: '', phone: '' }
 
   return (
-    <DoctorImageReviewClient
+    <DoctorLayout profile={profile!} isPending={false} currentPath="/doctor/images">
+      <DoctorImageReviewClient
       analysis={{
         id: analysis.id,
         imageUrl: analysis.image_url,
@@ -63,5 +71,6 @@ export default async function DoctorImageReviewPage({ params }: PageProps) {
       doctorId={user.id}
       doctorName={profile?.full_name || 'Doctor'}
     />
+    </DoctorLayout>
   )
 }

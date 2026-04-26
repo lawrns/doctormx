@@ -1,5 +1,6 @@
 import { requireRole } from '@/lib/auth'
 import { notFound } from 'next/navigation'
+import DoctorLayout from '@/components/DoctorLayout'
 import PrescriptionPageClient from './prescription-form'
 
 export default async function PrescriptionPage({
@@ -8,7 +9,16 @@ export default async function PrescriptionPage({
   params: Promise<{ appointmentId: string }>
 }) {
   const { appointmentId } = await params
-  const { user, supabase } = await requireRole('doctor')
+  const { user, profile, supabase } = await requireRole('doctor')
+
+  const { data: doctor } = await supabase
+    .from('doctors')
+    .select('id, status')
+    .eq('id', user.id)
+    .single()
+
+  const isPending = !doctor || doctor.status !== 'approved'
+  const doctorId = doctor?.id || ''
 
   const { data: appointment } = await supabase
     .from('appointments')
@@ -34,25 +44,27 @@ export default async function PrescriptionPage({
   const patient = Array.isArray(appointment.patient) ? appointment.patient[0] : appointment.patient
 
   return (
-    <PrescriptionPageClient
-      appointment={{
-        id: appointment.id,
-        start_ts: appointment.start_ts,
-        end_ts: appointment.end_ts,
-        status: appointment.status,
-        patient: {
-          full_name: patient?.full_name || 'Paciente',
-          date_of_birth: patient?.date_of_birth,
-          phone: patient?.phone,
-          email: patient?.email,
-        },
-      }}
-      existingPrescription={existingPrescription ? {
-        id: existingPrescription.id,
-        diagnosis: existingPrescription.diagnosis,
-        medications: existingPrescription.medications,
-        instructions: existingPrescription.instructions,
-      } : null}
-    />
+    <DoctorLayout profile={profile} isPending={isPending} currentPath="/doctor/prescriptions" doctorId={doctorId}>
+      <PrescriptionPageClient
+        appointment={{
+          id: appointment.id,
+          start_ts: appointment.start_ts,
+          end_ts: appointment.end_ts,
+          status: appointment.status,
+          patient: {
+            full_name: patient?.full_name || 'Paciente',
+            date_of_birth: patient?.date_of_birth,
+            phone: patient?.phone,
+            email: patient?.email,
+          },
+        }}
+        existingPrescription={existingPrescription ? {
+          id: existingPrescription.id,
+          diagnosis: existingPrescription.diagnosis,
+          medications: existingPrescription.medications,
+          instructions: existingPrescription.instructions,
+        } : null}
+      />
+    </DoctorLayout>
   )
 }

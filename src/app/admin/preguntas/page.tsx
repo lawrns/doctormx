@@ -1,32 +1,18 @@
-import { redirect } from 'next/navigation'
+import { AdminShell } from '@/components/AdminShell'
+import { EmptyState } from '@/components/EmptyState'
+import { requireRole } from '@/lib/auth'
 import { QuestionModerationActions } from '@/components/admin/QuestionModerationActions'
 import { Badge } from '@/components/ui/badge'
 import { Card } from '@/components/ui/card'
-import { createClient } from '@/lib/supabase/server'
 import { getModerationQuestions } from '@/lib/expert-questions'
 
 export default async function AdminQuestionsPage() {
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-
-  if (!user) {
-    redirect('/auth/login?redirect=/admin/preguntas')
-  }
-
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('role')
-    .eq('id', user.id)
-    .single()
-
-  if (profile?.role !== 'admin') {
-    redirect('/')
-  }
+  const { profile } = await requireRole('admin')
 
   const questions = await getModerationQuestions({ status: 'pending', limit: 50 })
 
   return (
-    <main className="min-h-screen bg-[hsl(var(--public-bg))] px-4 py-8 sm:px-6 lg:px-8">
+    <AdminShell profile={profile} currentPath="/admin/preguntas">
       <div className="mx-auto max-w-5xl">
         <Badge variant="warning">Moderacion</Badge>
         <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-[hsl(var(--public-ink))]">
@@ -38,9 +24,11 @@ export default async function AdminQuestionsPage() {
 
         <div className="mt-6 space-y-4">
           {questions.length === 0 ? (
-            <Card className="surface-panel p-6">
-              <p className="text-sm text-[hsl(var(--public-muted))]">No hay preguntas pendientes.</p>
-            </Card>
+            <EmptyState
+              iconName="message"
+              title="No hay preguntas pendientes"
+              description="Todas las preguntas de los pacientes han sido moderadas."
+            />
           ) : (
             questions.map((question) => (
               <Card key={question.id} className="surface-panel p-5">
@@ -59,6 +47,6 @@ export default async function AdminQuestionsPage() {
           )}
         </div>
       </div>
-    </main>
+    </AdminShell>
   )
 }

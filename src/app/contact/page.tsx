@@ -5,6 +5,7 @@ import {
   AlertTriangle,
   Building2,
   CheckCircle,
+  Loader2,
   Mail,
   ShieldCheck,
   Stethoscope,
@@ -42,6 +43,7 @@ const contactTracks = [
 
 export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   return (
     <main className="min-h-screen bg-[hsl(var(--surface-soft))]">
@@ -132,9 +134,28 @@ export default function ContactPage() {
                 ) : (
                   <form
                     className="space-y-4"
-                    onSubmit={(event) => {
+                    onSubmit={async (event) => {
                       event.preventDefault()
-                      setIsSubmitted(true)
+                      setIsSubmitting(true)
+                      const formData = new FormData(event.currentTarget)
+                      const data = Object.fromEntries(formData)
+
+                      try {
+                        const res = await fetch('/api/contact', {
+                          method: 'POST',
+                          headers: { 'Content-Type': 'application/json' },
+                          body: JSON.stringify(data),
+                        })
+                        if (res.ok) {
+                          setIsSubmitted(true)
+                        } else {
+                          alert('Error al enviar. Intenta de nuevo.')
+                        }
+                      } catch {
+                        alert('Error de conexión. Intenta de nuevo.')
+                      } finally {
+                        setIsSubmitting(false)
+                      }
                     }}
                   >
                     <div className="grid gap-4 md:grid-cols-2">
@@ -173,7 +194,8 @@ export default function ContactPage() {
                       />
                     </label>
 
-                    <Button type="submit" className="w-full md:w-auto">
+                    <Button type="submit" className="w-full md:w-auto" disabled={isSubmitting}>
+                      {isSubmitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
                       Preparar mensaje
                     </Button>
                   </form>
