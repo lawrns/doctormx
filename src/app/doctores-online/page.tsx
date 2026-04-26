@@ -52,14 +52,20 @@ export default async function DoctoresOnlinePage({
   searchParams: Promise<{ specialty?: string }>
 }) {
   const params = await searchParams
-  const [doctorsResult, specialtiesResult] = await Promise.all([
-    discoverDoctors({
-      onlineOnly: true,
-      specialtySlug: params.specialty,
-      sortBy: 'rating',
-    }),
-    getAvailableSpecialties(),
-  ])
+  let specialtiesResult: unknown = []
+  let doctorsResult: unknown = []
+  try {
+    ;[doctorsResult, specialtiesResult] = await Promise.all([
+      discoverDoctors({
+        onlineOnly: true,
+        specialtySlug: params.specialty,
+        sortBy: 'rating',
+      }),
+      getAvailableSpecialties(),
+    ])
+  } catch (err) {
+    console.error('Failed to load doctores-online data:', err)
+  }
 
   const specialties = Array.isArray(specialtiesResult) ? specialtiesResult : []
   const onlineDoctors = Array.isArray(doctorsResult)
@@ -178,7 +184,7 @@ export default async function DoctoresOnlinePage({
                           )}
                         </div>
                         <p className="mt-1 text-sm text-muted-foreground">
-                          {doctor.specialties.map((specialty) => specialty.name).filter(Boolean).join(', ') || 'Especialidad médica'}
+                          {doctor.specialties.map((specialty: { name: string }) => specialty.name).filter(Boolean).join(', ') || 'Especialidad médica'}
                         </p>
                         <p className="mt-2 text-sm text-muted-foreground">
                           {doctor.city ?? 'México'} · {doctor.rating_count > 0 ? `${doctor.rating_avg.toFixed(1)} (${doctor.rating_count} reseñas)` : 'Reseñas no publicadas'}

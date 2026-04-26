@@ -64,8 +64,13 @@ export default async function AdminDoctorsPage({
     query = query.eq('status', status)
   }
 
-  const { data } = await query
-  const doctors = (data || []) as unknown as DoctorRow[]
+  let doctors: DoctorRow[] = []
+  try {
+    const { data } = await query
+    doctors = (data || []) as unknown as DoctorRow[]
+  } catch (err) {
+    console.error('Failed to load doctors:', err)
+  }
 
   return (
     <AdminShell profile={{ full_name: profile.full_name }} currentPath="/admin/doctors">

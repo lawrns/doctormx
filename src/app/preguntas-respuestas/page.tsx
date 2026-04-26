@@ -24,6 +24,7 @@ import {
   CheckCircle2,
   Loader2,
 } from 'lucide-react'
+import { EmptyState } from '@/components/EmptyState'
 
 interface Specialty {
   id: string
@@ -417,11 +418,7 @@ export default function ExpertQAPage() {
                   Cargando preguntas...
                 </div>
               ) : featuredQA.length === 0 ? (
-                <div className="text-center py-12 text-muted-foreground">
-                  <MessageCircleQuestion className="w-12 h-12 mx-auto mb-4 opacity-50" />
-                  <p>Aun no hay preguntas destacadas.</p>
-                  <p className="text-sm mt-1">Se el primero en preguntar.</p>
-                </div>
+                <EmptyState iconName="message" title="Aún no hay preguntas destacadas" description="Los especialistas están listos para responder tus dudas médicas." action={{ label: "Enviar pregunta", href: "/app/ai-consulta" }} />
               ) : (
                 <div className="space-y-6">
                   {featuredQA.map(({ question, answer }, index) => (
@@ -505,10 +502,7 @@ export default function ExpertQAPage() {
                   Cargando preguntas...
                 </div>
               ) : questions.length === 0 ? (
-                <div className="text-center py-12 text-muted-foreground">
-                  <MessageCircleQuestion className="w-12 h-12 mx-auto mb-4 opacity-50" />
-                  <p>No hay preguntas recientes.</p>
-                </div>
+                <EmptyState iconName="message" title="No hay preguntas recientes" description="Sé el primero en preguntar a nuestros especialistas." action={{ label: "Enviar pregunta", href: "/app/ai-consulta" }} />
               ) : (
                 <div className="space-y-4">
                   {questions.map((q, index) => (

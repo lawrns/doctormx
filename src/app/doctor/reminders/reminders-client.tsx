@@ -9,6 +9,7 @@ import { Label } from '@/components/ui/label'
 import { Separator } from '@/components/ui/separator'
 import { Skeleton } from '@/components/ui/skeleton'
 import { toast } from 'sonner'
+import { EmptyState } from '@/components/EmptyState'
 import {
   Bell,
   Mail,
@@ -18,7 +19,6 @@ import {
   AlertTriangle,
   CheckCircle2,
   Loader2,
-  RefreshCcw,
 } from 'lucide-react'
 
 interface ReminderPrefs {
@@ -363,13 +363,12 @@ export default function RemindersClient() {
                     </AnimatePresence>
                   </div>
                 ) : (
-                  <div className="text-center py-6">
-                    <RefreshCcw className="w-8 h-8 text-muted-foreground/40 mx-auto mb-3" />
-                    <p className="text-sm text-muted-foreground">Aún no hay recordatorios enviados</p>
-                    <p className="text-xs text-muted-foreground mt-1">
-                      Los recordatorios se enviarán automáticamente cuando los pacientes agenden citas
-                    </p>
-                  </div>
+                  <EmptyState
+                    title="Aún no hay recordatorios enviados"
+                    description="Los recordatorios se enviarán automáticamente cuando los pacientes agenden citas"
+                    iconName="clock"
+                    variant="subtle"
+                  />
                 )}
               </CardContent>
             </Card>

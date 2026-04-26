@@ -11,41 +11,72 @@ import {
   Stethoscope,
   Users,
 } from 'lucide-react'
+import { EmptyState } from '@/components/EmptyState'
 import type { Doctor } from '@/types'
 
 export default async function AdminDashboard() {
   const { profile, supabase } = await requireRole('admin')
 
   // Get pending doctors
-  const { data: pendingDoctors } = await supabase
-    .from('doctors')
-    .select(`
-      *,
-      profile:profiles (full_name, email, phone)
-    `)
-    .eq('status', 'pending')
-    .order('created_at', { ascending: false })
+  let pendingDoctors: Doctor[] | null = null
+  try {
+    const { data } = await supabase
+      .from('doctors')
+      .select(`
+        *,
+        profile:profiles (full_name, email, phone)
+      `)
+      .eq('status', 'pending')
+      .order('created_at', { ascending: false })
+    pendingDoctors = data as Doctor[] | null
+  } catch (err) {
+    console.error('Failed to load pending doctors:', err)
+  }
 
   // Get all doctors count by status
-  const { count: draftCount } = await supabase
-    .from('doctors')
-    .select('*', { count: 'exact', head: true })
-    .eq('status', 'draft')
+  let draftCount: number | null = null
+  try {
+    const { count } = await supabase
+      .from('doctors')
+      .select('*', { count: 'exact', head: true })
+      .eq('status', 'draft')
+    draftCount = count
+  } catch (err) {
+    console.error('Failed to load draft count:', err)
+  }
 
-  const { count: pendingCount } = await supabase
-    .from('doctors')
-    .select('*', { count: 'exact', head: true })
-    .eq('status', 'pending')
+  let pendingCount: number | null = null
+  try {
+    const { count } = await supabase
+      .from('doctors')
+      .select('*', { count: 'exact', head: true })
+      .eq('status', 'pending')
+    pendingCount = count
+  } catch (err) {
+    console.error('Failed to load pending count:', err)
+  }
 
-  const { count: approvedCount } = await supabase
-    .from('doctors')
-    .select('*', { count: 'exact', head: true })
-    .eq('status', 'approved')
+  let approvedCount: number | null = null
+  try {
+    const { count } = await supabase
+      .from('doctors')
+      .select('*', { count: 'exact', head: true })
+      .eq('status', 'approved')
+    approvedCount = count
+  } catch (err) {
+    console.error('Failed to load approved count:', err)
+  }
 
-  const { count: patientsCount } = await supabase
-    .from('profiles')
-    .select('*', { count: 'exact', head: true })
-    .eq('role', 'patient')
+  let patientsCount: number | null = null
+  try {
+    const { count } = await supabase
+      .from('profiles')
+      .select('*', { count: 'exact', head: true })
+      .eq('role', 'patient')
+    patientsCount = count
+  } catch (err) {
+    console.error('Failed to load patients count:', err)
+  }
 
   return (
     <AdminShell profile={{ full_name: profile.full_name }} currentPath="/admin">
@@ -148,12 +179,7 @@ export default async function AdminDashboard() {
           </div>
           <div className="p-[var(--space-4)]">
             {!pendingDoctors || pendingDoctors.length === 0 ? (
-              <div className="text-center py-8 text-muted-foreground">
-                <svg className="w-16 h-16 mx-auto mb-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <p>No hay doctores pendientes de verificación</p>
-              </div>
+              <EmptyState iconName="user" title="No hay doctores pendientes" description="Todos los doctores han sido verificados." />
             ) : (
               <div className="space-y-4">
                 {pendingDoctors.map((doctor: Doctor) => (

@@ -1,6 +1,7 @@
 import { requireRole } from '@/lib/auth'
 import Link from 'next/link'
 import { MessageCircleQuestion, ShieldCheck } from 'lucide-react'
+import { EmptyState } from '@/components/EmptyState'
 import { DoctorAnswerForm } from '@/components/doctor/DoctorAnswerForm'
 import { Badge } from '@/components/ui/badge'
 import { Card } from '@/components/ui/card'
@@ -30,12 +31,7 @@ export default async function DoctorQuestionsPage() {
 
       <div className="space-y-4">
         {questions.length === 0 ? (
-          <Card className="p-[var(--space-4)]">
-            <div className="flex items-center gap-3">
-              <MessageCircleQuestion className="h-5 w-5 text-[hsl(var(--interactive))]" />
-              <p className="text-sm text-muted-foreground">No hay preguntas aprobadas pendientes.</p>
-            </div>
-          </Card>
+          <EmptyState iconName="message" title="No hay preguntas pendientes" description="Las preguntas aprobadas aparecerán aquí para que las respondas." />
         ) : (
           questions.map((question) => (
             <Card key={question.id} className="p-[var(--space-4)]">

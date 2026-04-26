@@ -51,10 +51,11 @@ export default async function DoctorAppointmentsPage({
     const timeFilter = params.time || 'upcoming'
     const searchFilter = params.search?.toLowerCase().trim() || ''
 
-    let query = supabase
+      let query = supabase
       .from('appointments')
       .select(`
         id,
+        patient_id,
         start_ts,
         end_ts,
         status,
@@ -97,6 +98,7 @@ export default async function DoctorAppointmentsPage({
     if (appointmentsData) {
       type AppointmentQueryRow = {
         id: string
+        patient_id: string
         start_ts: string
         end_ts: string
         status: string
@@ -111,6 +113,7 @@ export default async function DoctorAppointmentsPage({
         const service = Array.isArray(apt.service) ? apt.service[0] : apt.service
         return {
         id: apt.id,
+        patient_id: apt.patient_id,
         patient_name: patient?.full_name || 'Paciente',
         start_ts: apt.start_ts,
         end_ts: apt.end_ts,
@@ -128,6 +131,42 @@ export default async function DoctorAppointmentsPage({
       }
 
       appointments = mapped.slice(0, 50)
+    }
+  }
+
+  // Fetch intake responses for all appointments
+  let intakeResponseMap = new Map<string, {
+    id: string
+    responses_json: Record<string, unknown>
+    has_red_flags: boolean
+    red_flags: string[]
+    status: string
+    completed_at: string | null
+    template: { name: string; fields_json: Array<{ id: string; type: string; label: string; helpText?: string }> }
+  } | null>()
+
+  if (appointments.length > 0 && !isPending) {
+    const appointmentIds = appointments.map(a => a.id)
+    const { data: responses } = await supabase
+      .from('patient_intake_responses')
+      .select('id, responses_json, has_red_flags, red_flags, status, completed_at, appointment_id, template:intake_form_templates(name, fields_json)')
+      .in('appointment_id', appointmentIds)
+      .eq('doctor_id', user.id)
+
+    if (responses) {
+      for (const r of (responses as Array<{
+        id: string
+        appointment_id: string
+        responses_json: Record<string, unknown>
+        has_red_flags: boolean
+        red_flags: string[]
+        status: string
+        completed_at: string | null
+        template: { name: string; fields_json: Array<{ id: string; type: string; label: string; helpText?: string }> }
+      }>)) {
+        const { appointment_id, ...response } = r
+        intakeResponseMap.set(appointment_id, response)
+      }
     }
   }
 
@@ -162,7 +201,7 @@ export default async function DoctorAppointmentsPage({
                     <div key={apt.id} className="space-y-2">
                       <AppointmentCard appointment={apt} />
                       <IntakeResponseReview
-                        response={null}
+                        response={intakeResponseMap.get(apt.id) ?? null}
                         appointmentId={apt.id}
                       />
                     </div>

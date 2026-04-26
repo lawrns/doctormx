@@ -19,6 +19,7 @@ import {
   TrendingUp,
   Calendar,
 } from 'lucide-react'
+import { EmptyState } from '@/components/EmptyState'
 
 interface BlogCategory {
   id: string
@@ -249,10 +250,7 @@ export default function BlogPage() {
                   Cargando articulos...
                 </div>
               ) : posts.length === 0 ? (
-                <div className="text-center py-16 text-muted-foreground">
-                  <BookOpen className="w-12 h-12 mx-auto mb-4 opacity-50" />
-                  <p>No hay articulos en esta categoria.</p>
-                </div>
+                <EmptyState iconName="file" title="No hay artículos en esta categoría" description="Pronto publicaremos contenido sobre este tema." />
               ) : (
                 <div className="grid sm:grid-cols-2 gap-6">
                   {posts.map((post, index) => (

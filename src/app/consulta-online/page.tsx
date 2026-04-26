@@ -51,10 +51,16 @@ const steps = [
 ]
 
 export default async function ConsultaOnlinePage() {
-  const [specialtiesResult, doctorsResult] = await Promise.all([
-    getAvailableSpecialties(),
-    discoverDoctors({ onlineOnly: true, sortBy: 'rating' }),
-  ])
+  let specialtiesResult: unknown = []
+  let doctorsResult: unknown = []
+  try {
+    ;[specialtiesResult, doctorsResult] = await Promise.all([
+      getAvailableSpecialties(),
+      discoverDoctors({ onlineOnly: true, sortBy: 'rating' }),
+    ])
+  } catch (err) {
+    console.error('Failed to load consulta-online data:', err)
+  }
   const specialties = Array.isArray(specialtiesResult) ? specialtiesResult : []
   const onlineDoctors = Array.isArray(doctorsResult) ? doctorsResult : []
   const ratingTotal = onlineDoctors.reduce((sum, doctor) => sum + Math.max(doctor.rating_count, 0), 0)

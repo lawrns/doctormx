@@ -2,6 +2,7 @@ import { requireRole } from '@/lib/auth'
 import { getAllPharmacies } from '@/lib/pharmacy'
 import { formatCurrency } from '@/lib/utils'
 import { AdminShell } from '@/components/AdminShell'
+import { EmptyState } from '@/components/EmptyState'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale'
 import Link from 'next/link'
@@ -9,18 +10,35 @@ import Link from 'next/link'
 export default async function AdminPharmacyPage() {
   const { profile, supabase } = await requireRole('admin')
 
-  const pharmacies = await getAllPharmacies()
+  let pharmacies: Awaited<ReturnType<typeof getAllPharmacies>> = []
+  try {
+    pharmacies = await getAllPharmacies()
+  } catch (err) {
+    console.error('Failed to load pharmacies:', err)
+  }
 
   const pendingPharmacies = pharmacies.filter((p) => p.status === 'pending')
   const approvedPharmacies = pharmacies.filter((p) => p.status === 'approved')
 
-  const { data: allReferrals } = await supabase
-    .from('pharmacy_referrals')
-    .select('status, pharmacy_id')
+  let allReferrals: any[] | null = null
+  try {
+    const { data } = await supabase
+      .from('pharmacy_referrals')
+      .select('status, pharmacy_id')
+    allReferrals = data
+  } catch (err) {
+    console.error('Failed to load referrals:', err)
+  }
 
-  const { data: allCommissions } = await supabase
-    .from('pharmacy_commissions')
-    .select('total_payout_cents, pharmacy_id')
+  let allCommissions: any[] | null = null
+  try {
+    const { data } = await supabase
+      .from('pharmacy_commissions')
+      .select('total_payout_cents, pharmacy_id')
+    allCommissions = data
+  } catch (err) {
+    console.error('Failed to load commissions:', err)
+  }
 
   const totalReferrals = allReferrals?.length || 0
   const totalRevenue = allCommissions?.reduce((sum: number, c: { total_payout_cents: number | null }) => sum + (c.total_payout_cents || 0), 0) || 0
@@ -64,7 +82,7 @@ export default async function AdminPharmacyPage() {
             </div>
             <div className="p-6">
               {approvedPharmacies.length === 0 ? (
-                <p className="text-muted-foreground text-center py-4">No hay farmacias aprobadas</p>
+                <EmptyState iconName="wallet" title="No hay farmacias aprobadas" description="Las farmacias aprobadas aparecerán aquí." variant="subtle" />
               ) : (
                 <div className="space-y-4">
                   {approvedPharmacies.slice(0, 5).map((pharmacy) => {
@@ -112,12 +130,7 @@ export default async function AdminPharmacyPage() {
             </div>
             <div className="p-6">
               {pendingPharmacies.length === 0 ? (
-                <div className="text-center py-8 text-muted-foreground">
-                  <svg className="w-16 h-16 mx-auto mb-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <p>No hay solicitudes pendientes</p>
-                </div>
+                <EmptyState iconName="wallet" title="No hay solicitudes pendientes" description="Todas las farmacias han sido revisadas." />
               ) : (
                 <div className="space-y-4">
                   {pendingPharmacies.map((pharmacy) => (

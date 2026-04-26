@@ -63,7 +63,27 @@ async function getPremiumStats() {
 
 export default async function AdminPremiumPage() {
   const { profile } = await requireRole('admin')
-  const stats = await getPremiumStats()
+  let stats: Awaited<ReturnType<typeof getPremiumStats>> = {
+    tierCounts: { none: 0, starter: 0, pro: 0, elite: 0 },
+    totalDoctors: 0,
+    revenueByFeature: {
+      image_analysis: 0,
+      clinical_copilot: 0,
+      extended_chat: 0,
+      premium_consultation: 0,
+      priority_listing: 0,
+      featured_badge: 0,
+      api_access: 0,
+    },
+    totalRevenue: 0,
+    pendingRevenue: 0,
+    transactionCount: 0,
+  }
+  try {
+    stats = await getPremiumStats()
+  } catch (err) {
+    console.error('Failed to load premium stats:', err)
+  }
 
   const formatMXN = (cents: number) => {
     return new Intl.NumberFormat('es-MX', {

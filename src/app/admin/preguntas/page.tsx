@@ -27,7 +27,7 @@ export default async function AdminQuestionsPage() {
             <EmptyState
               iconName="message"
               title="No hay preguntas pendientes"
-              description="Todas las preguntas de los pacientes han sido moderadas."
+              description="Las preguntas enviadas por pacientes aparecerán aquí para revisión."
             />
           ) : (
             questions.map((question) => (

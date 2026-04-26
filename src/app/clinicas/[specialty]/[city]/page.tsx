@@ -44,10 +44,16 @@ export default async function ClinicsBySpecialtyCityPage({ params }: PageProps) 
   const specialtyName = capitalizeWords(specialty)
   const cityName = capitalizeWords(city)
 
-  const [clinics, cityData] = await Promise.all([
-    getClinics({ specialtySlug: specialty, citySlug: city }),
-    getCityBySlug(city),
-  ])
+  let clinics: Awaited<ReturnType<typeof getClinics>> = []
+  let cityData: Awaited<ReturnType<typeof getCityBySlug>> = null
+  try {
+    ;[clinics, cityData] = await Promise.all([
+      getClinics({ specialtySlug: specialty, citySlug: city }),
+      getCityBySlug(city),
+    ])
+  } catch (err) {
+    console.error('Failed to load clinicas city data:', err)
+  }
 
   const displayCityName = cityData?.name || cityName
   const displayState = cityData?.state || ''

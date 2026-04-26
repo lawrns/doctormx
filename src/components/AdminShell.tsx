@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 import { DoctorMxLogo } from '@/components/brand/DoctorMxLogo'
 import {
   LayoutDashboard, Users, PhoneCall, TrendingUp, Shield,
-  ArrowRightLeft, BarChart3, Star, Activity, LogOut
+  ArrowRightLeft, BarChart3, Star, Activity, LogOut, MessageSquare
 } from 'lucide-react'
 
 interface AdminShellProps {
@@ -24,6 +24,7 @@ const NAV_ITEMS = [
   { name: 'Analytics', href: '/admin/analytics', icon: BarChart3 },
   { name: 'Farmacias', href: '/admin/pharmacy', icon: Activity },
   { name: 'Premium', href: '/admin/premium', icon: Star },
+  { name: 'Comunicaciones', href: '/admin/communications', icon: MessageSquare },
 ]
 
 export function AdminShell({ children, profile, currentPath = '/admin' }: AdminShellProps) {

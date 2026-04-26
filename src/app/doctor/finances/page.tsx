@@ -114,59 +114,79 @@ export default async function DoctorFinancesPage() {
     const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1).toISOString()
 
     // Get monthly income (charges this month)
-    const { data: monthlyCharges } = await supabase
-      .from('ledger_entries')
-      .select('amount_cents')
-      .eq('doctor_id', user.id)
-      .eq('type', 'charge')
-      .gte('created_at', startOfMonth)
-      .lt('created_at', endOfMonth)
+    try {
+      const { data: monthlyCharges } = await supabase
+        .from('ledger_entries')
+        .select('amount_cents')
+        .eq('doctor_id', user.id)
+        .eq('type', 'charge')
+        .gte('created_at', startOfMonth)
+        .lt('created_at', endOfMonth)
 
-    if (monthlyCharges) {
-      monthlyIncome = monthlyCharges.reduce((sum: number, entry: { amount_cents: number }) => sum + entry.amount_cents, 0)
+      if (monthlyCharges) {
+        monthlyIncome = monthlyCharges.reduce((sum: number, entry: { amount_cents: number }) => sum + entry.amount_cents, 0)
+      }
+    } catch (err) {
+      console.error('Failed to load monthly income:', err)
     }
 
     // Get pending payouts
-    const { data: pendingPayouts } = await supabase
-      .from('payouts')
-      .select('amount_cents')
-      .eq('doctor_id', user.id)
-      .eq('status', 'pending')
+    try {
+      const { data: pendingPayouts } = await supabase
+        .from('payouts')
+        .select('amount_cents')
+        .eq('doctor_id', user.id)
+        .eq('status', 'pending')
 
-    if (pendingPayouts) {
-      pendingAmount = pendingPayouts.reduce((sum: number, payout: { amount_cents: number }) => sum + payout.amount_cents, 0)
+      if (pendingPayouts) {
+        pendingAmount = pendingPayouts.reduce((sum: number, payout: { amount_cents: number }) => sum + payout.amount_cents, 0)
+      }
+    } catch (err) {
+      console.error('Failed to load pending payouts:', err)
     }
 
     // Get total paid out
-    const { data: paidPayouts } = await supabase
-      .from('payouts')
-      .select('amount_cents')
-      .eq('doctor_id', user.id)
-      .eq('status', 'paid')
+    try {
+      const { data: paidPayouts } = await supabase
+        .from('payouts')
+        .select('amount_cents')
+        .eq('doctor_id', user.id)
+        .eq('status', 'paid')
 
-    if (paidPayouts) {
-      totalPaid = paidPayouts.reduce((sum: number, payout: { amount_cents: number }) => sum + payout.amount_cents, 0)
+      if (paidPayouts) {
+        totalPaid = paidPayouts.reduce((sum: number, payout: { amount_cents: number }) => sum + payout.amount_cents, 0)
+      }
+    } catch (err) {
+      console.error('Failed to load paid payouts:', err)
     }
 
     // Get recent ledger entries
-    const { data: entries } = await supabase
-      .from('ledger_entries')
-      .select('id, type, amount_cents, description, created_at')
-      .eq('doctor_id', user.id)
-      .order('created_at', { ascending: false })
-      .limit(20)
+    try {
+      const { data: entries } = await supabase
+        .from('ledger_entries')
+        .select('id, type, amount_cents, description, created_at')
+        .eq('doctor_id', user.id)
+        .order('created_at', { ascending: false })
+        .limit(20)
 
-    if (entries) {
-      ledgerEntries = entries as Array<{
-        id: string
-        type: LedgerEntryType
-        amount_cents: number
-        description: string | null
-        created_at: string
-      }>
+      if (entries) {
+        ledgerEntries = entries as Array<{
+          id: string
+          type: LedgerEntryType
+          amount_cents: number
+          description: string | null
+          created_at: string
+        }>
+      }
+    } catch (err) {
+      console.error('Failed to load ledger entries:', err)
     }
 
-    insuranceClaims = await getDoctorInsuranceClaims(user.id)
+    try {
+      insuranceClaims = await getDoctorInsuranceClaims(user.id)
+    } catch (err) {
+      console.error('Failed to load insurance claims:', err)
+    }
   }
 
   const currency = doctor?.currency || 'MXN'

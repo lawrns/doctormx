@@ -33,14 +33,21 @@ export default async function ClinicasPage({
 }) {
   const params = await searchParams
 
-  const [clinics, specialties, cities] = await Promise.all([
-    getClinics({
-      specialtySlug: params.specialty,
-      citySlug: params.city,
-    }),
-    getAvailableSpecialties(),
-    getMajorCities(),
-  ])
+  let clinics: Awaited<ReturnType<typeof getClinics>> = []
+  let specialties: Awaited<ReturnType<typeof getAvailableSpecialties>> = []
+  let cities: Awaited<ReturnType<typeof getMajorCities>> = []
+  try {
+    ;[clinics, specialties, cities] = await Promise.all([
+      getClinics({
+        specialtySlug: params.specialty,
+        citySlug: params.city,
+      }),
+      getAvailableSpecialties(),
+      getMajorCities(),
+    ])
+  } catch (err) {
+    console.error('Failed to load clinicas data:', err)
+  }
 
   const buildQuery = (newParams: Record<string, string | undefined>) => {
     const sp = new URLSearchParams()

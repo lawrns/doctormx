@@ -44,6 +44,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
   const [currentStep, setCurrentStep] = useState(1)
   const [connectDraft, setConnectDraft] = useState<ConnectProfileDraft | null>(null)
   const [connectDraftApplied, setConnectDraftApplied] = useState(false)
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({})
 
   // SEP Verification
   const [verifying, setVerifying] = useState(false)
@@ -82,6 +83,27 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
   const step1Complete = specialty && licenseNumber && yearsExperience
   const step2Complete = bio && price
   const isComplete = step1Complete && step2Complete && hasAvailability
+
+  const validateFields = useCallback((): boolean => {
+    const errors: Record<string, string> = {}
+
+    if (!specialty) {
+      errors.specialty = 'Selecciona una especialidad'
+    }
+    if (!licenseNumber || licenseNumber.length < 4) {
+      errors.licenseNumber = 'La cédula debe tener al menos 4 caracteres'
+    }
+    const yearsNum = parseInt(yearsExperience)
+    if (!yearsExperience || isNaN(yearsNum) || yearsNum < 0) {
+      errors.yearsExperience = 'Ingresa un valor válido (0 o mayor)'
+    }
+    if (!bio || bio.length < 20) {
+      errors.bio = 'La biografía debe tener al menos 20 caracteres'
+    }
+
+    setFieldErrors(errors)
+    return Object.keys(errors).length === 0
+  }, [specialty, licenseNumber, yearsExperience, bio])
 
   useEffect(() => {
     if (connectDraftApplied) return
@@ -192,6 +214,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
   }, [])
 
   const goNext = useCallback(async (toStep: number) => {
+    if (toStep === 2 && !validateFields()) return
     setCurrentStep(toStep)
     if (toStep === 2 && step1Complete) {
       await autoSave({
@@ -215,6 +238,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (!validateFields()) return
     if (!isComplete) return
 
     if (!hasAvailability) {
@@ -418,8 +442,8 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
               <CardContent className="space-y-5 p-5">
                 <div className="space-y-2">
                   <Label className="text-sm font-medium text-foreground">Especialidad *</Label>
-                  <Select value={specialty} onValueChange={setSpecialty} required>
-                    <SelectTrigger className="w-full">
+                  <Select value={specialty} onValueChange={(v) => { setSpecialty(v); setFieldErrors(e => { const { specialty: _, ...rest } = e; return rest; }) }} required>
+                    <SelectTrigger className={cn('w-full', fieldErrors.specialty && 'border-destructive')} aria-invalid={!!fieldErrors.specialty}>
                       <SelectValue placeholder="Selecciona una especialidad" />
                     </SelectTrigger>
                     <SelectContent>
@@ -430,6 +454,9 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                       ))}
                     </SelectContent>
                   </Select>
+                  {fieldErrors.specialty && (
+                    <p className="text-xs text-destructive">{fieldErrors.specialty}</p>
+                  )}
                 </div>
 
                 <div className="space-y-2">
@@ -446,11 +473,14 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                       onChange={(e) => {
                         setLicenseNumber(e.target.value)
                         setVerificationStatus(null)
+                        setFieldErrors(e => { const { licenseNumber: _, ...rest } = e; return rest })
                       }}
                       required
                       placeholder="Ej: 12345678"
+                      aria-invalid={!!fieldErrors.licenseNumber}
                       className={cn(
                         'flex-1',
+                        fieldErrors.licenseNumber && 'border-destructive',
                         verificationStatus?.verified
                           ? 'border-[hsl(var(--trust))] bg-[hsl(var(--trust-soft))]'
                           : verificationStatus && !verificationStatus.verified
@@ -511,6 +541,9 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                       </div>
                     </div>
                   )}
+                  {fieldErrors.licenseNumber && (
+                    <p className="text-xs text-destructive">{fieldErrors.licenseNumber}</p>
+                  )}
                 </div>
 
                 <div className="space-y-2">
@@ -518,11 +551,16 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                   <Input
                     type="number"
                     value={yearsExperience}
-                    onChange={(e) => setYearsExperience(e.target.value)}
+                    onChange={(e) => { setYearsExperience(e.target.value); setFieldErrors(e => { const { yearsExperience: _, ...rest } = e; return rest }) }}
                     min="0"
                     max="50"
                     required
+                    aria-invalid={!!fieldErrors.yearsExperience}
+                    className={cn(fieldErrors.yearsExperience && 'border-destructive')}
                   />
+                  {fieldErrors.yearsExperience && (
+                    <p className="text-xs text-destructive">{fieldErrors.yearsExperience}</p>
+                  )}
                 </div>
 
                 <div className="flex justify-end pt-4">
@@ -584,13 +622,18 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                   <Label className="text-sm font-medium text-foreground">Biografía profesional *</Label>
                   <Textarea
                     value={bio}
-                    onChange={(e) => setBio(e.target.value)}
+                    onChange={(e) => { setBio(e.target.value); setFieldErrors(e => { const { bio: _, ...rest } = e; return rest }) }}
                     rows={4}
                     required
                     maxLength={500}
                     placeholder="Describe tu experiencia y enfoque profesional..."
+                    aria-invalid={!!fieldErrors.bio}
+                    className={cn(fieldErrors.bio && 'border-destructive')}
                   />
                   <p className="text-xs text-muted-foreground">{bio.length}/500</p>
+                  {fieldErrors.bio && (
+                    <p className="text-xs text-destructive">{fieldErrors.bio}</p>
+                  )}
                 </div>
 
                 <Separator />

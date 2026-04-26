@@ -168,6 +168,10 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
       return
     }
     if (AI_CONFIG.features.preConsulta && !preConsultaCompleted) { setShowPreConsulta(true); return }
+    if (!selectedDate || !selectedTime) {
+      setSubmitError('Selecciona una fecha y hora para continuar')
+      return
+    }
     setSubmitError('')
     setSubmitting(true)
     try {

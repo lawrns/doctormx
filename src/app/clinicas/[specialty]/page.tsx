@@ -45,11 +45,18 @@ export default async function ClinicsBySpecialtyPage({ params, searchParams }: P
   const [{ specialty }, query] = await Promise.all([params, searchParams])
   const specialtyName = capitalizeWords(specialty)
 
-  const [clinics, specialties, cities] = await Promise.all([
-    getClinics({ specialtySlug: specialty, citySlug: query.city }),
-    getAvailableSpecialties(),
-    getMajorCities(),
-  ])
+  let clinics: Awaited<ReturnType<typeof getClinics>> = []
+  let specialties: Awaited<ReturnType<typeof getAvailableSpecialties>> = []
+  let cities: Awaited<ReturnType<typeof getMajorCities>> = []
+  try {
+    ;[clinics, specialties, cities] = await Promise.all([
+      getClinics({ specialtySlug: specialty, citySlug: query.city }),
+      getAvailableSpecialties(),
+      getMajorCities(),
+    ])
+  } catch (err) {
+    console.error('Failed to load clinicas specialty data:', err)
+  }
 
   // Verify the specialty exists
   const specialtyExists = specialties.some((s: { slug: string }) => s.slug === specialty)

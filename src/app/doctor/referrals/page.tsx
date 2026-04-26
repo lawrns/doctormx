@@ -98,6 +98,40 @@ async function ReferralsDashboard({ doctorId }: { doctorId: string }) {
     `Enlace: ${registerUrl}\n\nSaludos.`
   )
 
+  // Leaderboard teaser data — pre-fetched here to avoid duplicating the query
+  const lbStartOfMonth = new Date()
+  lbStartOfMonth.setDate(1)
+  lbStartOfMonth.setHours(0, 0, 0, 0)
+
+  const { data: lbReferrals } = await supabase
+    .from('referrals')
+    .select('referrer_doctor_id')
+    .eq('status', 'converted')
+    .gte('converted_at', lbStartOfMonth.toISOString())
+
+  const lbCountMap = new Map<string, number>()
+  for (const ref of lbReferrals || []) {
+    lbCountMap.set(ref.referrer_doctor_id, (lbCountMap.get(ref.referrer_doctor_id) || 0) + 1)
+  }
+
+  const lbTopIds = [...lbCountMap.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 3)
+
+  const lbDoctorIds = lbTopIds.map(([id]) => id)
+  const { data: lbDoctors } = lbDoctorIds.length > 0 ? await supabase
+    .from('doctors')
+    .select('id, profile:profiles!doctors_id_fkey(full_name)')
+    .in('id', lbDoctorIds) : { data: null }
+
+  const lbNameMap = new Map<string, string>()
+  if (lbDoctors) {
+    for (const doc of lbDoctors) {
+      const prof = Array.isArray(doc.profile) ? doc.profile[0] : doc.profile
+      lbNameMap.set(doc.id, prof?.full_name || 'Dr. Anónimo')
+    }
+  }
+
   return (
     <>
       <div className="flex items-center gap-3 mb-8">
@@ -232,7 +266,7 @@ async function ReferralsDashboard({ doctorId }: { doctorId: string }) {
             </p>
           </CardHeader>
           <CardContent>
-            <LeaderboardTeaser />
+            <LeaderboardTeaser lbTopIds={lbTopIds} lbNameMap={lbNameMap} />
             <Button asChild variant="secondary" className="w-full mt-4" size="sm">
               <Link href="/doctor/referrals/leaderboard">
                 Ver ranking completo
@@ -437,29 +471,8 @@ function HowItWorksStep({
   )
 }
 
-async function LeaderboardTeaser() {
-  const supabaseModule = await import('@/lib/supabase/server')
-  const db = await supabaseModule.createClient()
-  const startOfMonth = new Date()
-  startOfMonth.setDate(1)
-  startOfMonth.setHours(0, 0, 0, 0)
-
-  const { data: allReferrals } = await db
-    .from('referrals')
-    .select('referrer_doctor_id')
-    .eq('status', 'converted')
-    .gte('converted_at', startOfMonth.toISOString())
-
-  const countMap = new Map<string, number>()
-  for (const ref of allReferrals || []) {
-    countMap.set(ref.referrer_doctor_id, (countMap.get(ref.referrer_doctor_id) || 0) + 1)
-  }
-
-  const topIds = [...countMap.entries()]
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 3)
-
-  if (topIds.length === 0) {
+function LeaderboardTeaser({ lbTopIds, lbNameMap }: { lbTopIds: [string, number][]; lbNameMap: Map<string, string> }) {
+  if (lbTopIds.length === 0) {
     return (
       <div className="text-center py-8 text-muted-foreground text-sm">
         <Trophy className="w-8 h-8 mx-auto mb-2 text-muted-foreground/50" />
@@ -468,22 +481,9 @@ async function LeaderboardTeaser() {
     )
   }
 
-  const doctorIds = topIds.map(([id]) => id)
-  const { data: doctors } = await db.from('doctors')
-    .select('id, profile:profiles!doctors_id_fkey(full_name)')
-    .in('id', doctorIds)
-
-  const nameMap = new Map<string, string>()
-  if (doctors) {
-    for (const doc of doctors) {
-      const profile = Array.isArray(doc.profile) ? doc.profile[0] : doc.profile
-      nameMap.set(doc.id, profile?.full_name || 'Dr. Anónimo')
-    }
-  }
-
   return (
     <div className="space-y-2">
-      {topIds.map(([id, count], index) => (
+      {lbTopIds.map(([id, count], index) => (
         <div
           key={id}
           className={`flex items-center justify-between p-3 rounded-xl ${
@@ -503,7 +503,7 @@ async function LeaderboardTeaser() {
               {index + 1}
             </div>
             <span className="font-medium text-foreground">
-              {nameMap.get(id) || 'Dr. Anónimo'}
+              {lbNameMap.get(id) || 'Dr. Anónimo'}
             </span>
           </div>
           <Badge variant="secondary">{count} referidos</Badge>

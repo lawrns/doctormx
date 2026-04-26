@@ -2,19 +2,31 @@ import { requireRole } from '@/lib/auth'
 import { identifyAtRiskDoctors, recordRetentionEvent } from '@/lib/churn'
 import { createServiceClient } from '@/lib/supabase/server'
 import { AdminShell } from '@/components/AdminShell'
+import { EmptyState } from '@/components/EmptyState'
 import { Suspense } from 'react'
 
 async function ChurnDashboardContent() {
   const { supabase } = await requireRole('admin')
 
   // Get at-risk doctors
-  const atRiskDoctors = await identifyAtRiskDoctors()
+  let atRiskDoctors: Awaited<ReturnType<typeof identifyAtRiskDoctors>> = []
+  try {
+    atRiskDoctors = await identifyAtRiskDoctors()
+  } catch (err) {
+    console.error('Failed to load at-risk doctors:', err)
+  }
 
   // Get overall counts
-  const { count: totalDoctors } = await supabase
-    .from('doctors')
-    .select('*', { count: 'exact', head: true })
-    .eq('status', 'approved')
+  let totalDoctors: number | null = null
+  try {
+    const { count } = await supabase
+      .from('doctors')
+      .select('*', { count: 'exact', head: true })
+      .eq('status', 'approved')
+    totalDoctors = count
+  } catch (err) {
+    console.error('Failed to load total doctors:', err)
+  }
 
   const criticalCount = atRiskDoctors.filter(d => d.riskLevel === 'critical').length
   const highCount = atRiskDoctors.filter(d => d.riskLevel === 'high').length
@@ -24,23 +36,29 @@ async function ChurnDashboardContent() {
   const churnRate = totalDoctors ? ((atRiskCount / totalDoctors) * 100).toFixed(1) : '0'
 
   // Get re-engagement history
-  const { data: retentionHistory } = await supabase
-    .from('retention_events')
-    .select(`
-      id,
-      doctor_id,
-      event_type,
-      risk_level,
-      details,
-      created_at,
-      doctors (
+  let retentionHistory: any[] | null = null
+  try {
+    const { data } = await supabase
+      .from('retention_events')
+      .select(`
         id,
-        profiles!doctors_id_fkey (full_name)
-      )
-    `)
-    .in('event_type', ['reengagement_sent', 'saved', 'churned'])
-    .order('created_at', { ascending: false })
-    .limit(50)
+        doctor_id,
+        event_type,
+        risk_level,
+        details,
+        created_at,
+        doctors (
+          id,
+          profiles!doctors_id_fkey (full_name)
+        )
+      `)
+      .in('event_type', ['reengagement_sent', 'saved', 'churned'])
+      .order('created_at', { ascending: false })
+      .limit(50)
+    retentionHistory = data
+  } catch (err) {
+    console.error('Failed to load retention history:', err)
+  }
 
   const riskColorMap: Record<string, string> = {
     critical: 'bg-red-100 text-red-800 border-red-300',
@@ -158,12 +176,7 @@ async function ChurnDashboardContent() {
         </div>
         <div className="overflow-x-auto">
           {atRiskDoctors.length === 0 ? (
-            <div className="text-center py-12 text-muted-foreground">
-              <svg className="w-16 h-16 mx-auto mb-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <p>No hay doctores en riesgo actualmente</p>
-            </div>
+            <EmptyState iconName="alert" title="No hay doctores en riesgo" description="Actualmente no hay doctores con riesgo de abandono." />
           ) : (
             <table className="w-full">
               <thead>
@@ -238,9 +251,7 @@ async function ChurnDashboardContent() {
         </div>
         <div className="overflow-x-auto">
           {!retentionHistory || retentionHistory.length === 0 ? (
-            <div className="text-center py-12 text-muted-foreground">
-              <p>No hay historial de re-enganche aún</p>
-            </div>
+            <EmptyState iconName="clipboard" title="Sin historial de re-enganche" description="El historial de actividades de retención aparecerá aquí." />
           ) : (
             <table className="w-full">
               <thead>

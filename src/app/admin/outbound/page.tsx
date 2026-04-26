@@ -34,10 +34,24 @@ export default async function OutboundDashboard({
   const params = await searchParams
   const statusFilter = params.status || 'all'
 
-  const [stats, leads] = await Promise.all([
-    getOutboundStats(),
-    getLeads(statusFilter),
-  ])
+  let stats: Awaited<ReturnType<typeof getOutboundStats>> = {
+    total: 0,
+    new: 0,
+    contacted: 0,
+    responded: 0,
+    converted: 0,
+    unsubscribed: 0,
+    conversionRate: 0,
+  }
+  let leads: Awaited<ReturnType<typeof getLeads>> = []
+  try {
+    ;[stats, leads] = await Promise.all([
+      getOutboundStats(),
+      getLeads(statusFilter),
+    ])
+  } catch (err) {
+    console.error('Failed to load outbound data:', err)
+  }
 
   return (
     <AdminShell profile={{ full_name: profile.full_name }} currentPath="/admin/outbound">
