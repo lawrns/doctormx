@@ -90,7 +90,7 @@ export function ErrorState({
 
         {showHome && (
           <Link href="/">
-            <Button variant="outline" className="flex h-10 min-w-[160px] items-center gap-2 rounded-[8px] border-border hover:bg-secondary/50">
+            <Button variant="secondary" className="flex h-10 min-w-[160px] items-center gap-2 rounded-[8px] border-border hover:bg-secondary/50">
               <Home className="w-4 h-4" />
               Ir al inicio
             </Button>

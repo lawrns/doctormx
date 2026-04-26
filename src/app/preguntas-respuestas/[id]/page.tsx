@@ -154,7 +154,7 @@ export default async function ExpertQuestionPage({ params }: PageProps) {
                   </p>
                 </div>
               </div>
-              <Button asChild className="mt-4 w-full" variant="hero">
+              <Button asChild className="mt-4 w-full" variant="primary">
                 <Link href={question.specialty?.slug ? `/doctors?specialty=${question.specialty.slug}` : '/doctors'}>
                   Ver medicos disponibles
                 </Link>

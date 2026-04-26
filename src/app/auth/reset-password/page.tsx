@@ -33,8 +33,8 @@ const getPasswordStrength = (password: string): { strength: number; label: strin
   if (/[^a-zA-Z0-9]/.test(password)) strength++
 
   const labels = ['Muy debil', 'Debil', 'Regular', 'Fuerte', 'Muy fuerte']
-  const colorClasses = ['bg-destructive', 'bg-destructive', 'bg-amber', 'bg-vital', 'bg-vital']
-  const textClasses = ['text-destructive', 'text-destructive', 'text-amber', 'text-vital', 'text-vital']
+  const colorClasses = ['bg-destructive', 'bg-destructive', 'bg-amber', 'bg-[hsl(var(--trust))]', 'bg-[hsl(var(--trust))]']
+  const textClasses = ['text-destructive', 'text-destructive', 'text-amber', 'text-[hsl(var(--trust))]', 'text-[hsl(var(--trust))]']
 
   const idx = Math.min(strength, 4)
 
@@ -173,7 +173,7 @@ function ResetPasswordContent() {
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="w-full max-w-md"
         >
-          <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-8">
+          <div className="bg-card rounded-2xl border border-border shadow-sm p-8">
             <div className="space-y-1 pb-6 text-center">
               <motion.div
                 initial={{ scale: 0 }}
@@ -195,7 +195,7 @@ function ResetPasswordContent() {
                 </Button>
               </Link>
               <Link href="/auth/login">
-                <Button variant="outline" className="w-full">
+                <Button variant="secondary" className="w-full">
                   Volver al inicio de sesion
                 </Button>
               </Link>
@@ -214,7 +214,7 @@ function ResetPasswordContent() {
         transition={{ duration: 0.6, ease: 'easeOut' }}
         className="w-full max-w-md"
       >
-        <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-8">
+        <div className="bg-card rounded-2xl border border-border shadow-sm p-8">
           <div className="space-y-1 pb-6">
             {isSuccess ? (
               <>

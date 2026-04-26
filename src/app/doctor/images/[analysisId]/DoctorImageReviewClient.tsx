@@ -121,10 +121,10 @@ export default function DoctorImageReviewClient({
         </header>
 
         <main className="max-w-2xl mx-auto px-4 py-12">
-          <Card className="bg-card rounded-2xl border border-border shadow-dx-1 p-8 text-center">
+          <Card className="bg-card rounded-2xl border border-border shadow-sm p-8 text-center">
             <CardContent className="p-0">
-              <div className="w-20 h-20 bg-vital-soft rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-10 h-10 text-vital" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="w-20 h-20 bg-[hsl(var(--trust-soft))] rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-10 h-10 text-[hsl(var(--trust))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
@@ -134,7 +134,7 @@ export default function DoctorImageReviewClient({
                 El paciente podrá verla en su expediente.
               </p>
               <div className="flex gap-4 justify-center">
-                <Button asChild variant="outline">
+                <Button asChild variant="secondary">
                   <Link href="/doctor/appointments">
                     Volver a consultas
                   </Link>
@@ -177,7 +177,7 @@ export default function DoctorImageReviewClient({
       <main className="max-w-7xl mx-auto px-4 py-8">
         <div className="grid lg:grid-cols-2 gap-8">
           <div className="space-y-6">
-            <Card className="bg-card rounded-2xl border border-border shadow-dx-1 overflow-hidden">
+            <Card className="bg-card rounded-2xl border border-border shadow-sm overflow-hidden">
               <CardHeader className="py-4 border-b border-border">
                 <CardTitle className="font-semibold text-foreground text-base">Imagen Original</CardTitle>
               </CardHeader>
@@ -191,7 +191,7 @@ export default function DoctorImageReviewClient({
               </CardContent>
             </Card>
 
-            <Card className="bg-card rounded-2xl border border-border shadow-dx-1">
+            <Card className="bg-card rounded-2xl border border-border shadow-sm">
               <CardContent className="p-6">
                 <h3 className="font-semibold text-foreground mb-4">Información del Paciente</h3>
                 <dl className="space-y-3">
@@ -227,7 +227,7 @@ export default function DoctorImageReviewClient({
           </div>
 
           <div className="space-y-6">
-            <Card className="bg-card rounded-2xl border border-border shadow-dx-1">
+            <Card className="bg-card rounded-2xl border border-border shadow-sm">
               <CardContent className="p-6">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="font-semibold text-foreground">Análisis de IA</h3>
@@ -265,7 +265,7 @@ export default function DoctorImageReviewClient({
                     <ul className="space-y-2">
                       {analysis.recommendations.map((rec, index) => (
                         <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <svg className="w-4 h-4 text-vital mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <svg className="w-4 h-4 text-[hsl(var(--trust))] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
                           {rec}
@@ -290,7 +290,7 @@ export default function DoctorImageReviewClient({
               </CardContent>
             </Card>
 
-            <Card className="bg-card rounded-2xl border border-border shadow-dx-1">
+            <Card className="bg-card rounded-2xl border border-border shadow-sm">
               <CardContent className="p-6">
                 <h3 className="font-semibold text-foreground mb-4">Tu Revisión</h3>
 

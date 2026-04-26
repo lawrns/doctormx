@@ -115,7 +115,7 @@ export function AIMetricsClient() {
             {/* Charts */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
               {/* Weekly Trend */}
-              <Card className="rounded-2xl border border-border shadow-dx-1 p-6">
+              <Card className="rounded-2xl border border-border shadow-sm p-6">
                 <CardHeader className="p-0 pb-4">
                   <CardTitle className="font-bold text-foreground">Tendencia Semanal</CardTitle>
                 </CardHeader>
@@ -138,7 +138,7 @@ export function AIMetricsClient() {
               </Card>
 
               {/* Top Specialties */}
-              <Card className="rounded-2xl border border-border shadow-dx-1 p-6">
+              <Card className="rounded-2xl border border-border shadow-sm p-6">
                 <CardHeader className="p-0 pb-4">
                   <CardTitle className="font-bold text-foreground">Especialidades Top</CardTitle>
                 </CardHeader>
@@ -166,9 +166,9 @@ export function AIMetricsClient() {
             </div>
 
             {/* Insights */}
-            <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-6">
+            <div className="bg-card rounded-2xl border border-border shadow-sm p-6">
               <h3 className="font-bold text-foreground mb-4 flex items-center gap-2">
-                <TrendingUp className="w-5 h-5 text-vital" />
+                <TrendingUp className="w-5 h-5 text-[hsl(var(--trust))]" />
                 Insights IA
               </h3>
               <div className="grid md:grid-cols-3 gap-4">
@@ -204,7 +204,7 @@ interface KPICardProps {
 
 function KPICard({ title, value, change, icon: Icon, color, isPercentage }: KPICardProps) {
   const colorClasses = {
-    emerald: 'bg-vital-soft text-vital border-vital/20',
+    emerald: 'bg-[hsl(var(--trust-soft))] text-[hsl(var(--trust))] border-[hsl(var(--trust)/0.20)]',
     blue: 'bg-primary/10 text-primary border-primary/20',
     purple: 'bg-secondary/50 text-primary border-border',
     amber: 'bg-secondary/50 text-amber border-border',
@@ -213,7 +213,7 @@ function KPICard({ title, value, change, icon: Icon, color, isPercentage }: KPIC
   const isPositive = change >= 0
 
   return (
-    <Card className="rounded-2xl border border-border shadow-dx-1 p-6">
+    <Card className="rounded-2xl border border-border shadow-sm p-6">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-sm font-medium text-muted-foreground">{title}</h3>
         <div className={`p-2 rounded-lg ${colorClasses[color as keyof typeof colorClasses]}`}>
@@ -223,7 +223,7 @@ function KPICard({ title, value, change, icon: Icon, color, isPercentage }: KPIC
       <div className="flex items-end justify-between">
         <p className="text-3xl font-bold text-foreground">{value}</p>
         <div className={`flex items-center gap-1 text-sm ${
-          isPositive ? 'text-vital' : 'text-coral'
+          isPositive ? 'text-[hsl(var(--trust))]' : 'text-[hsl(var(--danger))]'
         }`}>
           {isPositive ? (
             <ArrowUp className="w-4 h-4" />

@@ -196,7 +196,7 @@ export default async function DiseaseDetailPage({ params }: PageProps) {
             <div>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 bg-primary/5 rounded-xl flex items-center justify-center">
-                  <Shield className="w-5 h-5 text-vital" />
+                  <Shield className="w-5 h-5 text-[hsl(var(--trust))]" />
                 </div>
                 <h2 className="text-2xl font-bold text-foreground">
                   Prevencion

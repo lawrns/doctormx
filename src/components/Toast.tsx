@@ -31,7 +31,7 @@ const toastStyles: Record<ToastType, { bg: string; icon: string; border: string 
   success: {
     bg: 'bg-primary/5',
     border: 'border-primary/20',
-    icon: 'text-vital',
+    icon: 'text-[hsl(var(--trust))]',
   },
   error: {
     bg: 'bg-red-50',

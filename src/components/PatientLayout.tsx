@@ -15,7 +15,7 @@ interface PatientLayoutProps {
 
 interface NavItem {
   href: string
-  icon: any
+  icon: React.ComponentType<{ className?: string }>
   label: string
   badge?: { count?: number; dot?: boolean; color?: string }
 }
@@ -30,93 +30,76 @@ export function PatientLayout({ children }: PatientLayoutProps) {
   })
 
   useEffect(() => {
-    async function loadProfile() {
+    async function loadProfileAndBadges() {
       const supabase = createClient()
       const { data: { user } } = await supabase.auth.getUser()
-      if (user) {
-        const { data } = await supabase.from('profiles').select('*').eq('id', user.id).single()
-        setProfile(data)
-      }
-    }
-    loadProfile()
-  }, [])
+      if (!user) return
 
-  // Check for joinable video appointments (within 15 minutes)
-  useEffect(() => {
-    async function checkBadges() {
+      // Load profile
+      const { data: profileData } = await supabase.from('profiles').select('*').eq('id', user.id).single()
+      setProfile(profileData)
+
+      // Check badges
+      let messagesCount = 0
+      let joinableAppointment = false
+
       try {
-        const supabase = createClient()
-        const { data: { user } } = await supabase.auth.getUser()
+        const { data: conversations } = await supabase
+          .from('chat_conversations')
+          .select('id')
+          .eq('patient_id', user.id)
 
-        if (!user) return
+        const conversationIds = conversations?.map((conversation: { id: string }) => conversation.id) || []
 
-        let messagesCount = 0
-        let joinableAppointment = false
-
-        // Check for unread chat messages using existing conversation and receipt schema
-        try {
-          const { data: conversations } = await supabase
-            .from('chat_conversations')
+        if (conversationIds.length > 0) {
+          const { data: incomingMessages } = await supabase
+            .from('chat_messages')
             .select('id')
-            .eq('patient_id', user.id)
+            .in('conversation_id', conversationIds)
+            .neq('sender_id', user.id)
 
-          const conversationIds = conversations?.map((conversation: { id: string }) => conversation.id) || []
+          const messageIds = incomingMessages?.map((message: { id: string }) => message.id) || []
 
-          if (conversationIds.length > 0) {
-            const { data: incomingMessages } = await supabase
-              .from('chat_messages')
-              .select('id')
-              .in('conversation_id', conversationIds)
-              .neq('sender_id', user.id)
+          if (messageIds.length > 0) {
+            const { data: receipts } = await supabase
+              .from('chat_message_receipts')
+              .select('message_id')
+              .eq('user_id', user.id)
+              .in('message_id', messageIds)
 
-            const messageIds = incomingMessages?.map((message: { id: string }) => message.id) || []
-
-            if (messageIds.length > 0) {
-              const { data: receipts } = await supabase
-                .from('chat_message_receipts')
-                .select('message_id')
-                .eq('user_id', user.id)
-                .in('message_id', messageIds)
-
-              const readMessageIds = new Set((receipts || []).map((receipt: { message_id: string }) => receipt.message_id))
-              messagesCount = messageIds.filter((messageId: string) => !readMessageIds.has(messageId)).length
-            }
+            const readMessageIds = new Set((receipts || []).map((receipt: { message_id: string }) => receipt.message_id))
+            messagesCount = messageIds.filter((messageId: string) => !readMessageIds.has(messageId)).length
           }
-        } catch (e) {
-          console.log('chat_messages check failed:', e)
         }
-
-        // Check for joinable appointments (within 15 minutes, have video_room_url, and are video type)
-        try {
-          const fifteenMinutesFromNow = new Date(Date.now() + 15 * 60 * 1000).toISOString()
-          const { data: appointments } = await supabase
-            .from('appointments')
-            .select('id, start_ts, video_room_url')
-            .eq('patient_id', user.id)
-            .in('status', ['confirmed', 'pending_payment'])
-            .lte('start_ts', fifteenMinutesFromNow)
-            .order('start_ts', { ascending: true })
-
-          joinableAppointment = appointments?.some((apt: { video_room_url: string | null; start_ts: string }) =>
-            apt.video_room_url && new Date(apt.start_ts) <= new Date(Date.now() + 15 * 60 * 1000)
-          ) || false
-        } catch (e) {
-          // Appointments query may fail due to schema issues
-          console.log('Appointments check failed:', e)
-        }
-
-        setBadges({
-          messages: messagesCount,
-          appointmentsJoinable: joinableAppointment,
-        })
-      } catch (error) {
-        console.error('Error checking badges:', error)
+      } catch (e) {
+        console.log('chat_messages check failed:', e)
       }
+
+      try {
+        const fifteenMinutesFromNow = new Date(Date.now() + 15 * 60 * 1000).toISOString()
+        const { data: appointments } = await supabase
+          .from('appointments')
+          .select('id, start_ts, video_room_url')
+          .eq('patient_id', user.id)
+          .in('status', ['confirmed', 'pending_payment'])
+          .lte('start_ts', fifteenMinutesFromNow)
+          .order('start_ts', { ascending: true })
+
+        joinableAppointment = appointments?.some((apt: { video_room_url: string | null; start_ts: string }) =>
+          apt.video_room_url && new Date(apt.start_ts) <= new Date(Date.now() + 15 * 60 * 1000)
+        ) || false
+      } catch (e) {
+        console.log('Appointments check failed:', e)
+      }
+
+      setBadges({
+        messages: messagesCount,
+        appointmentsJoinable: joinableAppointment,
+      })
     }
 
-    checkBadges()
-    // Refresh badges every 30 seconds
-    const interval = setInterval(checkBadges, 30000)
+    loadProfileAndBadges()
+    const interval = setInterval(loadProfileAndBadges, 60000)
     return () => clearInterval(interval)
   }, [])
 

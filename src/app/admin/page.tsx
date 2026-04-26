@@ -1,6 +1,16 @@
 import { requireRole } from '@/lib/auth'
 import Link from 'next/link'
 import { AdminShell } from '@/components/AdminShell'
+import { AdminLinkCard } from '@/components/AdminLinkCard'
+import {
+  BarChart3,
+  Bell,
+  MessageCircle,
+  Pill,
+  Star,
+  Stethoscope,
+  Users,
+} from 'lucide-react'
 import type { Doctor } from '@/types'
 
 export default async function AdminDashboard() {
@@ -48,7 +58,7 @@ export default async function AdminDashboard() {
 
         {/* Stats */}
         <div className="grid md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-card p-6 rounded-lg shadow">
+          <div className="bg-card p-[var(--space-4)] rounded-lg shadow">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">Doctores Aprobados</p>
@@ -62,7 +72,7 @@ export default async function AdminDashboard() {
             </div>
           </div>
 
-          <div className="bg-card p-6 rounded-lg shadow">
+          <div className="bg-card p-[var(--space-4)] rounded-lg shadow">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">Pendientes</p>
@@ -76,7 +86,7 @@ export default async function AdminDashboard() {
             </div>
           </div>
 
-          <div className="bg-card p-6 rounded-lg shadow">
+          <div className="bg-card p-[var(--space-4)] rounded-lg shadow">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">Borradores</p>
@@ -90,7 +100,7 @@ export default async function AdminDashboard() {
             </div>
           </div>
 
-          <div className="bg-card p-6 rounded-lg shadow">
+          <div className="bg-card p-[var(--space-4)] rounded-lg shadow">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">Pacientes</p>
@@ -106,79 +116,29 @@ export default async function AdminDashboard() {
         </div>
 
         {/* Quick Actions */}
-        <div className="grid md:grid-cols-4 gap-6 mb-8">
-          <Link
-            href="/admin/doctors"
-            className="bg-card p-6 rounded-lg shadow hover:shadow-md transition-shadow"
-          >
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground">Gestionar Doctores</h3>
-                <p className="text-sm text-muted-foreground">Ver y verificar</p>
-              </div>
+        <div className="mb-8 space-y-6">
+          {/* Monitoreo */}
+          <div>
+            <h3 className="font-semibold text-[hsl(var(--ink))] mb-3">Monitoreo</h3>
+            <div className="grid grid-cols-2 gap-3">
+              <AdminLinkCard href="/admin/analytics" label="Analytics" icon={BarChart3} />
+              <AdminLinkCard href="/admin/doctors" label="Doctores" icon={Stethoscope} />
             </div>
-          </Link>
+          </div>
 
-          <Link
-            href="/admin/outbound"
-            className="bg-card p-6 rounded-lg shadow hover:shadow-md transition-shadow"
-          >
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                <svg className="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground">Outbound WhatsApp</h3>
-                <p className="text-sm text-muted-foreground">Pipeline de adquisición</p>
-              </div>
+          {/* Adquisición */}
+          <div>
+            <h3 className="font-semibold text-[hsl(var(--ink))] mb-3">Adquisición</h3>
+            <div className="grid grid-cols-2 gap-3">
+              <AdminLinkCard href="/admin/outbound" label="WhatsApp Outbound" icon={MessageCircle} />
+              <AdminLinkCard href="/admin/specialties" label="Especialidades" icon={Stethoscope} />
             </div>
-          </Link>
-
-          <Link
-            href="/admin/specialties"
-            className="bg-card p-6 rounded-lg shadow hover:shadow-md transition-shadow"
-          >
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground">Especialidades</h3>
-                <p className="text-sm text-muted-foreground">Gestionar catálogo</p>
-              </div>
-            </div>
-          </Link>
-
-          <Link
-            href="/admin/analytics"
-            className="bg-card p-6 rounded-lg shadow hover:shadow-md transition-shadow"
-          >
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center">
-                <svg className="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground">Analytics</h3>
-                <p className="text-sm text-muted-foreground">Reportes y métricas</p>
-              </div>
-            </div>
-          </Link>
+          </div>
         </div>
 
         {/* Pending Doctors */}
         <div className="bg-card rounded-lg shadow">
-          <div className="px-6 py-4 border-b flex justify-between items-center">
+          <div className="px-[var(--space-4)] py-4 border-b flex justify-between items-center">
             <h3 className="text-lg font-semibold text-foreground">
               Doctores Pendientes de Verificación
             </h3>
@@ -186,7 +146,7 @@ export default async function AdminDashboard() {
               {pendingDoctors?.length || 0} pendientes
             </span>
           </div>
-          <div className="p-6">
+          <div className="p-[var(--space-4)]">
             {!pendingDoctors || pendingDoctors.length === 0 ? (
               <div className="text-center py-8 text-muted-foreground">
                 <svg className="w-16 h-16 mx-auto mb-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">

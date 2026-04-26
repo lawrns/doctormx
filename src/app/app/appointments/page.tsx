@@ -239,7 +239,7 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
               <div className="flex gap-2 flex-wrap">
                 {/* Video call states */}
                 {appointment.status === 'pending_payment' && (
-                  <Button asChild size="sm" variant="default">
+                  <Button asChild size="sm" variant="primary">
                     <Link href={`/app/appointments/${appointment.id}`}>
                       Completar pago
                     </Link>
@@ -258,7 +258,7 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
                 )}
 
                 {isVideo && isInLobby && (
-                  <Button asChild size="sm" variant="default">
+                  <Button asChild size="sm" variant="primary">
                     <Link href={`/app/appointments/${appointment.id}/video`}>
                       <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
@@ -272,7 +272,7 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
                 {/* Completed state actions */}
                 {isCompleted && (
                   <>
-                    <Button asChild size="sm" variant="outline">
+                    <Button asChild size="sm" variant="secondary">
                       <Link href={`/app/appointments/${appointment.id}`}>
                         <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -280,7 +280,7 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
                         Ver resumen
                       </Link>
                     </Button>
-                    <Button asChild size="sm" variant="outline">
+                    <Button asChild size="sm" variant="secondary">
                       <Link href={`/doctors/${doctorId}`}>
                         <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -293,7 +293,7 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
 
                 {/* Rebook button */}
                 {canRebook && !isCompleted && (
-                  <Button asChild size="sm" variant="outline">
+                  <Button asChild size="sm" variant="secondary">
                     <Link href={`/doctors/${doctorId}`}>
                       <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -314,7 +314,7 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
                 )}
 
                 {/* Details button */}
-                <Button asChild size="sm" variant="outline">
+                <Button asChild size="sm" variant="secondary">
                   <Link href={`/app/appointments/${appointment.id}`}>
                     <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -338,7 +338,7 @@ function AppointmentCard({ appointment, onCancel }: { appointment: Appointment; 
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>
-            <Button variant="outline" onClick={() => setShowCancelModal(false)}>
+            <Button variant="secondary" onClick={() => setShowCancelModal(false)}>
               Mantener cita
             </Button>
             <Button variant="destructive" onClick={handleCancel} disabled={isCancelling}>

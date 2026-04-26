@@ -170,7 +170,7 @@ export default function DesignSystemPage() {
                     <span className="flex items-center gap-2 sm:col-span-2"><ShieldCheck className="h-4 w-4 text-[#0d72d6]" /> Cédula y verificación visible</span>
                   </div>
                 </div>
-                <Button className="w-full" variant="hero">Hablar con Dr. Simeón</Button>
+                <Button className="w-full" variant="primary">Hablar con Dr. Simeón</Button>
               </div>
             </div>
           </div>
@@ -229,8 +229,8 @@ export default function DesignSystemPage() {
             <div className="rounded-[12px] border border-[#d9e3f5] bg-[#f7faff] p-6">
               <h3 className="text-xl font-semibold tracking-[-0.03em]">Buttons and badges</h3>
               <div className="mt-6 flex flex-wrap gap-3">
-                <Button variant="hero">Primary action</Button>
-                <Button variant="outline">Secondary</Button>
+                <Button variant="primary">Primary action</Button>
+                <Button variant="secondary">Secondary</Button>
                 <Button variant="ghost">Ghost</Button>
               </div>
               <div className="mt-6 flex flex-wrap gap-2">
@@ -570,7 +570,7 @@ function DoctorCardSpec() {
             <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[#5c6783]">Desde</p>
             <p className="text-2xl font-semibold">$650</p>
           </div>
-          <Button variant="hero">Ver disponibilidad</Button>
+          <Button variant="primary">Ver disponibilidad</Button>
         </div>
       </div>
     </div>

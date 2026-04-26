@@ -229,13 +229,13 @@ export default function DrSimeonShowcase() {
             </ul>
 
             <div className="flex flex-col gap-3 pt-4 sm:flex-row">
-              <Button asChild variant="hero" size="lg">
+              <Button asChild variant="primary" size="lg">
                 <Link href="/ai-consulta">
                   Hablar con Dr. Simeón
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg">
+              <Button asChild variant="secondary" size="lg">
                 <Link href="/doctors">Ver médicos verificados</Link>
               </Button>
             </div>

@@ -188,7 +188,7 @@ const comparisonFeatures = [
 
 function FeatureIcon({ included }: { included: boolean }) {
   return included ? (
-    <CheckCircle className="h-4 w-4 text-vital" />
+    <CheckCircle className="h-4 w-4 text-[hsl(var(--trust))]" />
   ) : (
     <X className="h-4 w-4 text-muted-foreground/40" />
   )
@@ -199,7 +199,7 @@ function PatientPlanCard({ plan }: { plan: (typeof patientPlans)[number] }) {
     <article
       className={`rounded-[12px] border bg-card p-5 ${
         plan.featured
-          ? 'border-primary shadow-[0_14px_34px_-24px_rgba(15,37,95,0.32)]'
+          ? 'border-[hsl(var(--interactive)/0.4)] ring-1 ring-[hsl(var(--interactive)/0.15)] shadow-lg'
           : 'border-border'
       }`}
     >
@@ -225,7 +225,7 @@ function PatientPlanCard({ plan }: { plan: (typeof patientPlans)[number] }) {
           </p>
           <p className="text-xs text-muted-foreground">{plan.cadence}</p>
         </div>
-        <Button asChild variant={plan.featured ? 'hero' : 'outline'} size="sm">
+        <Button asChild variant={plan.featured ? 'primary' : 'secondary'} size="sm">
           <Link href={plan.href}>{plan.cta}</Link>
         </Button>
       </div>
@@ -233,7 +233,7 @@ function PatientPlanCard({ plan }: { plan: (typeof patientPlans)[number] }) {
       <ul className="mt-5 space-y-2 border-t border-border pt-4">
         {plan.features.map((feature) => (
           <li key={feature} className="flex gap-2 text-sm leading-5 text-muted-foreground">
-            <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-vital" />
+            <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-[hsl(var(--trust))]" />
             {feature}
           </li>
         ))}
@@ -253,17 +253,16 @@ function DoctorPlanCard({
 
   return (
     <article
-      className={`relative flex flex-col rounded-[12px] border bg-card p-5 ${
+      className={`relative flex flex-col rounded-[12px] border bg-card p-[var(--space-4)] ${
         plan.featured
-          ? 'border-primary shadow-[0_14px_34px_-24px_rgba(15,37,95,0.32)]'
+          ? 'border-[hsl(var(--interactive)/0.4)] ring-1 ring-[hsl(var(--interactive)/0.15)] shadow-lg'
           : 'border-border'
       }`}
     >
       {plan.featured && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-          <Badge variant="default" className="px-4 py-1 text-[0.65rem]">
-            Recomendado
-          </Badge>
+        <div className="flex items-start justify-between">
+          <div />
+          <Badge variant="secondary" className="text-xs">Recomendado</Badge>
         </div>
       )}
 
@@ -281,7 +280,7 @@ function DoctorPlanCard({
             <span className="text-xs text-muted-foreground">MXN / mes</span>
           </div>
           {isAnnual && (
-            <p className="mt-1 text-xs text-vital">
+            <p className="mt-1 text-xs text-[hsl(var(--trust))]">
               Ahorras ${(plan.monthlyPrice * 12 - plan.annualPrice * 12).toLocaleString('es-MX')} MXN al año
             </p>
           )}
@@ -290,7 +289,7 @@ function DoctorPlanCard({
         <ul className="mt-4 space-y-2">
           {plan.features.map((feature) => (
             <li key={feature} className="flex gap-2 text-sm leading-5 text-muted-foreground">
-              <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-vital" />
+              <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-[hsl(var(--trust))]" />
               {feature}
             </li>
           ))}
@@ -304,7 +303,7 @@ function DoctorPlanCard({
       </div>
 
       <div className="mt-6">
-        <Button asChild variant={plan.featured ? 'hero' : 'outline'} className="w-full" size="sm">
+        <Button asChild variant={plan.featured ? 'primary' : 'secondary'} className="w-full" size="sm">
           <Link href={plan.href}>
             {plan.cta}
             <ArrowRight className="h-3.5 w-3.5" />
@@ -323,7 +322,7 @@ export default function PricingPage() {
       <Header />
 
       {/* Hero */}
-      <section className="pt-24 md:pt-28">
+      <section className="pt-16 md:pt-20">
         <div className="editorial-shell">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -381,17 +380,8 @@ export default function PricingPage() {
                 >
                   Anual
                 </span>
-                {isAnnual && (
-                  <Badge variant="success" className="ml-1">
-                    Ahorra 17%
-                  </Badge>
-                )}
               </div>
             </div>
-
-            <p className="mt-2 text-xs text-muted-foreground">
-              Ahorra 17% con pago anual — 2 meses gratis
-            </p>
 
             <div className="mt-6 grid gap-4 lg:grid-cols-3">
               {doctorPlans.map((plan) => (

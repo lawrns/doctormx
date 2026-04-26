@@ -41,7 +41,7 @@ export function TrustStrip({ className }: TrustStripProps) {
               key={item.label}
               className="flex shrink-0 items-center gap-1.5 whitespace-nowrap text-xs text-muted-foreground"
             >
-              <item.icon className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
+              <item.icon className="h-3.5 w-3.5 text-[hsl(var(--trust))]" aria-hidden="true" />
               <span>{item.label}</span>
             </div>
           ))}

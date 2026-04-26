@@ -7,6 +7,7 @@ import {
   BadgeCheck,
   CalendarCheck,
   MapPin,
+  ShieldCheck,
   Star,
   Video,
   Users,
@@ -16,6 +17,24 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
 import { formatCurrency } from '@/lib/utils'
+
+function formatRelativeSlot(slot: string | null | undefined): string | null {
+  if (!slot) return null
+  try {
+    const date = new Date(slot)
+    const now = new Date()
+    const diffDays = Math.floor((date.getTime() - now.getTime()) / (1000 * 60 * 60 * 24))
+    const time = date.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' })
+    if (diffDays === 0) return `Hoy ${time}`
+    if (diffDays === 1) return `Mañana ${time}`
+    if (diffDays < 7) {
+      return `${date.toLocaleDateString('es-MX', { weekday: 'long' })} ${time}`
+    }
+    return date.toLocaleDateString('es-MX', { day: 'numeric', month: 'short' }) + ` ${time}`
+  } catch {
+    return slot
+  }
+}
 
 interface EnhancedDoctorCardProps {
   id: string
@@ -62,7 +81,7 @@ export function EnhancedDoctorCard({
       whileTap={{ scale: 0.99 }}
       transition={{ duration: 0.2, ease: [0.2, 0.7, 0.2, 1] }}
       className={cn(
-        'group relative overflow-hidden rounded-xl border border-border bg-card p-4 shadow-card transition-shadow hover:shadow-dx-2',
+        'group relative overflow-hidden rounded-xl border border-[hsl(var(--border-color))] bg-[hsl(var(--surface-card))] p-[var(--space-4)] shadow-[var(--shadow-sm)] transition-shadow hover:shadow-[var(--shadow-md)]',
         className
       )}
     >
@@ -102,15 +121,25 @@ export function EnhancedDoctorCard({
               <p className="mt-0.5 text-sm text-muted-foreground">{specialty}</p>
             </div>
             {rating != null && (
-              <div className="flex shrink-0 items-center gap-1">
-                <Star className="h-3.5 w-3.5 fill-amber text-amber" />
-                <span className="text-sm font-semibold text-foreground">
-                  {rating.toFixed(1)}
-                </span>
+              <div className="flex items-center gap-1 mt-1">
+                <div className="flex">
+                  {[1, 2, 3, 4, 5].map((star) => {
+                    const fill = Math.min(1, Math.max(0, rating - star + 1))
+                    return (
+                      <div key={star} className="relative h-3.5 w-3.5">
+                        <Star className="h-3.5 w-3.5 text-[hsl(var(--border-color))]" />
+                        {fill > 0 && (
+                          <div className="absolute inset-0 overflow-hidden" style={{ width: `${fill * 100}%` }}>
+                            <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+                          </div>
+                        )}
+                      </div>
+                    )
+                  })}
+                </div>
+                <span className="text-xs font-semibold text-[hsl(var(--ink))]">{rating.toFixed(1)}</span>
                 {reviewCount != null && (
-                  <span className="text-xs text-muted-foreground">
-                    ({reviewCount})
-                  </span>
+                  <span className="text-xs text-[hsl(var(--ink-soft))]">({reviewCount})</span>
                 )}
               </div>
             )}
@@ -125,9 +154,9 @@ export function EnhancedDoctorCard({
               </span>
             )}
             {verified && (
-              <span className="inline-flex items-center gap-1 rounded-full bg-primary/5 px-2 py-0.5 text-xs font-medium text-primary">
-                <BadgeCheck className="h-3 w-3" />
-                Verificado SEP
+              <span className="inline-flex items-center gap-1 rounded-full bg-[hsl(var(--trust))]/5 px-2 py-0.5 text-xs font-medium text-[hsl(var(--trust))]">
+                <ShieldCheck className="h-3 w-3" />
+                Verificado
               </span>
             )}
           </div>
@@ -154,9 +183,9 @@ export function EnhancedDoctorCard({
       <div className="mt-4 space-y-2 border-t border-border pt-3">
         {/* Scarcity: next available slot */}
         {nextAvailableSlot && (
-          <div className="flex items-center gap-1.5 text-xs font-medium text-primary">
+          <div className="flex items-center gap-1.5 text-xs font-medium text-[hsl(var(--trust))]">
             <Clock className="h-3.5 w-3.5" />
-            Próxima cita: {nextAvailableSlot}
+            Próxima cita: {formatRelativeSlot(nextAvailableSlot)}
           </div>
         )}
 

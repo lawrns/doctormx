@@ -101,7 +101,7 @@ export default function SecurityPage() {
             <div className="divide-y divide-border rounded-[12px] border border-border bg-card">
               {commitments.map((item) => (
                 <div key={item} className="flex gap-3 p-4 text-sm leading-6 text-muted-foreground">
-                  <CheckCircle className="mt-1 h-4 w-4 shrink-0 text-vital" />
+                  <CheckCircle className="mt-1 h-4 w-4 shrink-0 text-[hsl(var(--trust))]" />
                   {item}
                 </div>
               ))}
@@ -122,10 +122,10 @@ export default function SecurityPage() {
             </div>
 
             <div className="flex flex-col gap-3 border-t border-border pt-6 sm:flex-row">
-              <Button asChild variant="hero">
+              <Button asChild variant="primary">
                 <Link href="/contact">Contactar seguridad</Link>
               </Button>
-              <Button asChild variant="outline">
+              <Button asChild variant="secondary">
                 <Link href="/privacy">Ver privacidad</Link>
               </Button>
             </div>

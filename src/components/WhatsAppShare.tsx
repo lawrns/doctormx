@@ -108,7 +108,7 @@ export function WhatsAppShareCard({
             Comparte tu resultado con familiares o amigos en WhatsApp
           </p>
         </div>
-        <Share2 className="w-8 h-8 text-vital" />
+        <Share2 className="w-8 h-8 text-[hsl(var(--trust))]" />
       </div>
 
       <div className="bg-card rounded-xl p-4 mb-4 border border-green-100">

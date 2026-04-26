@@ -134,7 +134,7 @@ export default function RevenueDashboard() {
               <p className="text-muted-foreground text-sm">Comisiones Plataforma</p>
               <p className="text-2xl font-bold">{formatCurrency(summary?.totalPlatformFees || 0)}</p>
             </div>
-            <DollarSign className="w-8 h-8 text-vital" />
+            <DollarSign className="w-8 h-8 text-[hsl(var(--trust))]" />
           </div>
         </Card>
 

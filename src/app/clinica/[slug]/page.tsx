@@ -265,7 +265,7 @@ export default async function ClinicProfilePage({ params }: PageProps) {
               </p>
               <div className="mt-4">
                 <Link href="/doctors">
-                  <Button variant="outline">Buscar doctores</Button>
+                  <Button variant="secondary">Buscar doctores</Button>
                 </Link>
               </div>
             </Card>
@@ -338,7 +338,7 @@ export default async function ClinicProfilePage({ params }: PageProps) {
                         </p>
                       </div>
                       <Link href={`/book/${cd.doctor.id}`}>
-                        <Button variant="hero" size="sm">
+                        <Button variant="primary" size="sm">
                           Agendar cita
                           <ArrowUpRight className="h-3.5 w-3.5" />
                         </Button>

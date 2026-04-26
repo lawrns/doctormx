@@ -25,7 +25,7 @@ export function PublicFinalCta({
       <div className="editorial-shell">
         <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
           <div>
-            <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-vital">{eyebrow}</p>
+            <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[hsl(var(--trust))]">{eyebrow}</p>
             <h2 className="mt-3 max-w-2xl font-display text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
               {title}
             </h2>

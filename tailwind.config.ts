@@ -47,6 +47,10 @@ const config: Config = {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
         },
+        success: {
+          DEFAULT: 'hsl(var(--success))',
+          foreground: 'hsl(var(--success-foreground))',
+        },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
@@ -67,34 +71,6 @@ const config: Config = {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))',
         },
-        // ── Doctor.mx Design System ──
-        cobalt: {
-          50: '#eff7ff',
-          100: '#dceeff',
-          200: '#badcff',
-          300: '#8fc4ff',
-          400: '#54a6f5',
-          500: '#2688e6',
-          600: '#0d72d6',
-          700: '#0b5fb8',
-          800: '#0b3f78',
-          900: '#071f3f',
-        },
-        ink: {
-          DEFAULT: 'hsl(var(--brand-ink))',
-          soft: 'hsl(var(--brand-ink) / 0.85)',
-        },
-        vital: {
-          DEFAULT: '#0d72d6',
-          soft: '#e8f3ff',
-        },
-        coral: {
-          DEFAULT: '#ff5a3d',
-          soft: '#ffe4dc',
-        },
-        amber: {
-          DEFAULT: '#f4a736',
-        },
         // Semantic text colors (legacy mapped to new)
         'text-primary': 'hsl(var(--text-primary))',
         'text-secondary': 'hsl(var(--text-secondary))',
@@ -107,9 +83,11 @@ const config: Config = {
         xl: 'calc(var(--radius) + 4px)',
       },
       boxShadow: {
-        'dx-1': 'var(--card-shadow)',
-        'dx-2': 'var(--card-shadow-hover)',
-        'card': 'var(--card-shadow)',
+        sm: 'var(--shadow-sm)',
+        md: 'var(--shadow-md)',
+        lg: 'var(--shadow-lg)',
+        xl: 'var(--shadow-xl)',
+        card: 'var(--card-shadow)',
         'card-hover': 'var(--card-shadow-hover)',
         'panel': 'var(--public-shadow-medium)',
       },

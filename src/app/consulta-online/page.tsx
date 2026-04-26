@@ -93,7 +93,7 @@ export default async function ConsultaOnlinePage() {
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg">
+              <Button asChild variant="secondary" size="lg">
                 <Link href="/doctors">Abrir directorio</Link>
               </Button>
             </div>

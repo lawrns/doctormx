@@ -52,7 +52,7 @@ export function ChapterHeader({
       )}
     >
       <div className="pt-1">
-        <span className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-vital">
+        <span className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-[hsl(var(--trust))]">
           {number}
         </span>
       </div>
@@ -137,7 +137,7 @@ export function ColorFeature({
     cobalt:
       'bg-ink text-primary-foreground relative overflow-hidden before:absolute before:-top-[40%] before:-right-[20%] before:w-[120%] before:h-[160%] before:rounded-full before:bg-[radial-gradient(circle,var(--cobalt-500)_0%,transparent_60%)] before:opacity-40',
     vital: 'bg-card text-foreground border border-border relative',
-    coral: 'bg-coral text-white relative overflow-hidden',
+    coral: 'bg-[hsl(var(--danger))] text-white relative overflow-hidden',
   }
 
   return (
@@ -171,7 +171,7 @@ export function PulseDot({ className }: { className?: string }) {
   return (
     <span
       className={cn(
-        'inline-block w-2 h-2 rounded-full bg-vital animate-pulse',
+        'inline-block w-2 h-2 rounded-full bg-[hsl(var(--trust))] animate-pulse',
         className
       )}
     />

@@ -64,7 +64,7 @@ export default function SpecialtiesPage() {
               <p className="mt-2 text-sm leading-6 text-muted-foreground">
                 Si no sabes que especialidad corresponde, empieza con orientacion y escala a un medico real.
               </p>
-              <Button asChild variant="outline" size="sm" className="mt-4 w-full">
+              <Button asChild variant="secondary" size="sm" className="mt-4 w-full">
                 <Link href="/ai-consulta">Orientarme</Link>
               </Button>
             </div>

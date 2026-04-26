@@ -22,7 +22,7 @@ export function SupportThinkingState() {
             {[0, 1, 2].map((index) => (
               <motion.span
                 key={index}
-                className="h-2 w-2 rounded-full bg-vital"
+                className="h-2 w-2 rounded-full bg-[hsl(var(--trust))]"
                 animate={reducedMotion ? undefined : { y: [0, -4, 0], opacity: [0.45, 1, 0.45] }}
                 transition={{ duration: 1, repeat: Infinity, delay: index * 0.14, ease: 'easeInOut' }}
               />

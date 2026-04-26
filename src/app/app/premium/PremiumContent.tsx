@@ -24,7 +24,7 @@ function PremiumFeatureCard({ feature, tier, onPurchase, loading }: PremiumFeatu
   // Defensive checks - handle undefined tierAccess
   if (!tierAccess) {
     return (
-      <Card className="bg-card rounded-2xl border border-border shadow-dx-1 p-6">
+      <Card className="bg-card rounded-2xl border border-border shadow-sm p-6">
         <p className="text-muted-foreground">Feature configuration not available</p>
       </Card>
     )
@@ -61,14 +61,14 @@ function PremiumFeatureCard({ feature, tier, onPurchase, loading }: PremiumFeatu
   }
 
   return (
-    <Card className="bg-card rounded-2xl border border-border shadow-dx-1 overflow-hidden hover:shadow-dx-2 transition-shadow">
+    <Card className="bg-card rounded-2xl border border-border shadow-sm overflow-hidden hover:shadow-md transition-shadow">
       <div className="p-6">
         <div className="flex items-start justify-between mb-4">
           <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${iconColors[featureConfig.category]} flex items-center justify-center`}>
             <FeatureIcon category={featureConfig.category} />
           </div>
           {isIncluded ? (
-            <Badge variant="success" className="bg-vital-soft text-vital">
+            <Badge variant="success" className="bg-[hsl(var(--trust-soft))] text-[hsl(var(--trust))]">
               Incluido
             </Badge>
           ) : (
@@ -84,7 +84,7 @@ function PremiumFeatureCard({ feature, tier, onPurchase, loading }: PremiumFeatu
         ) : isIncluded ? (
           <div className="mb-4">
             {isUnlimited ? (
-              <div className="flex items-center gap-2 text-vital">
+              <div className="flex items-center gap-2 text-[hsl(var(--trust))]">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
@@ -215,7 +215,7 @@ function TierComparison() {
                     <td key={tier} className="text-center py-3 px-4">
                       {access.included ? (
                         access.limit === -1 ? (
-                          <span className="inline-flex items-center gap-1 text-vital">
+                          <span className="inline-flex items-center gap-1 text-[hsl(var(--trust))]">
                             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                             </svg>
@@ -313,7 +313,7 @@ function PremiumContent() {
         </div>
 
         {tier !== 'elite' && (
-          <Card className="mb-12 p-6 bg-primary rounded-2xl border border-border shadow-dx-1 text-primary-foreground">
+          <Card className="mb-12 p-6 bg-primary rounded-2xl border border-border shadow-sm text-primary-foreground">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-xl font-bold mb-2">¿Quieres todas las funcionalidades?</h2>
@@ -342,7 +342,7 @@ function PremiumContent() {
           ))}
         </div>
 
-        <Card className="bg-card rounded-2xl border border-border shadow-dx-1 overflow-hidden">
+        <Card className="bg-card rounded-2xl border border-border shadow-sm overflow-hidden">
           <div className="p-6 border-b border-border">
             <h2 className="text-xl font-bold text-foreground">Comparación por Plan</h2>
           </div>

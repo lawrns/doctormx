@@ -58,7 +58,7 @@ export default function EmptyDashboard({ doctorId }: EmptyDashboardProps) {
       </div>
 
       {/* Checklist */}
-      <Card className="rounded-2xl border border-border shadow-dx-1 mb-8">
+      <Card className="rounded-2xl border border-border shadow-sm mb-8">
         <CardHeader>
           <CardTitle className="font-display text-lg font-semibold">
             Lista de configuración
@@ -82,7 +82,7 @@ export default function EmptyDashboard({ doctorId }: EmptyDashboardProps) {
                   </div>
                   <div className="flex items-center gap-2 flex-shrink-0">
                     {isFirst ? (
-                      <CheckCircle2 className="h-5 w-5 text-vital" />
+                      <CheckCircle2 className="h-5 w-5 text-[hsl(var(--trust))]" />
                     ) : (
                       <Circle className="h-5 w-5 text-muted-foreground" />
                     )}
@@ -96,7 +96,7 @@ export default function EmptyDashboard({ doctorId }: EmptyDashboardProps) {
       </Card>
 
       {/* Tips section */}
-      <Card className="rounded-2xl border border-border shadow-dx-1">
+      <Card className="rounded-2xl border border-border shadow-sm">
         <CardHeader>
           <div className="flex items-center gap-2">
             <Lightbulb className="h-5 w-5 text-amber-500" />
@@ -126,7 +126,7 @@ export default function EmptyDashboard({ doctorId }: EmptyDashboardProps) {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button variant="outline" asChild>
+            <Button variant="secondary" asChild>
               <Link href="/doctor/preguntas">
                 Responder preguntas
               </Link>

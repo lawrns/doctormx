@@ -61,7 +61,7 @@ export default async function ClinicasPage({
         {/* Hero Section */}
         <section className="surface-panel-strong overflow-hidden public-panel sm:px-8 lg:px-10 lg:py-10">
           <div className="max-w-4xl space-y-6">
-            <Badge variant="luxe">Directorio de clinicas verificado</Badge>
+            <Badge variant="secondary">Directorio de clinicas verificado</Badge>
             <PublicSectionHeading
               align="left"
               eyebrow="Directorio medico"
@@ -128,7 +128,7 @@ export default async function ClinicasPage({
                 </div>
                 {params.specialty && <input type="hidden" name="specialty" value={params.specialty} />}
                 {params.city && <input type="hidden" name="city" value={params.city} />}
-                <Button variant="hero" className="w-full justify-center">
+                <Button variant="primary" className="w-full justify-center">
                   Buscar clinicas
                 </Button>
               </form>
@@ -223,7 +223,7 @@ export default async function ClinicasPage({
                 </p>
                 <div className="mt-6">
                   <Link href="/doctors">
-                    <Button variant="outline">Buscar doctores</Button>
+                    <Button variant="secondary">Buscar doctores</Button>
                   </Link>
                 </div>
               </Card>
@@ -296,7 +296,7 @@ export default async function ClinicasPage({
                           ) : (
                             <div />
                           )}
-                          <Button variant="hero" size="sm" className="px-4">
+                          <Button variant="primary" size="sm" className="px-4">
                             Ver clinica
                             <ArrowUpRight className="h-4 w-4" />
                           </Button>

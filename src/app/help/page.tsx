@@ -134,10 +134,10 @@ export default function HelpPage() {
             ))}
 
             <div className="flex flex-col gap-3 border-t border-border pt-6 sm:flex-row">
-              <Button asChild variant="hero">
+              <Button asChild variant="primary">
                 <Link href="/contact">Contactar soporte</Link>
               </Button>
-              <Button asChild variant="outline">
+              <Button asChild variant="secondary">
                 <Link href="/faq">Ver FAQ completo</Link>
               </Button>
             </div>

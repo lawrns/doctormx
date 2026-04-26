@@ -63,8 +63,8 @@ function getSpecialtyConfig(specialty: string): SpecialtyConfig {
 // ─── Urgency label ────────────────────────────────────────────────────────────
 
 const URGENCY_MAP: Record<UrgencyLevel, { label: string; className: string }> = {
-  low: { label: 'Urgencia baja', className: 'text-vital border-vital/30 bg-vital/10' },
-  medium: { label: 'Urgencia media', className: 'text-coral border-coral/30 bg-coral/10' },
+  low: { label: 'Urgencia baja', className: 'text-[hsl(var(--trust))] border-[hsl(var(--trust)/0.30)] bg-[hsl(var(--trust)/0.10)]' },
+  medium: { label: 'Urgencia media', className: 'text-[hsl(var(--danger))] border-[hsl(var(--danger))]/30 bg-[hsl(var(--danger))]/10' },
   high: { label: 'Urgencia alta', className: 'text-orange-400 border-orange-500/30 bg-orange-500/10' },
   emergency: { label: 'Emergencia', className: 'text-red-400 border-red-500/30 bg-red-500/10' },
 };
@@ -117,9 +117,9 @@ export function ReasoningVisualizer({ isLoading, messageCount, summary }: Reason
                     initial={prefersReducedMotion ? undefined : { scale: 0 }}
                     animate={prefersReducedMotion ? undefined : { scale: 1 }}
                     transition={{ type: 'spring', stiffness: 500, damping: 20 }}
-                    className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-vital/20"
+                    className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[hsl(var(--trust)/0.20)]"
                   >
-                    <Check className="h-3 w-3 text-vital" />
+                    <Check className="h-3 w-3 text-[hsl(var(--trust))]" />
                   </motion.div>
                 ) : (
                   <motion.div

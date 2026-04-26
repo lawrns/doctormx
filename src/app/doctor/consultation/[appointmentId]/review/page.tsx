@@ -132,7 +132,7 @@ export default function ConsultationReviewPage() {
             <p className="text-sm text-muted-foreground mb-6">
               No pudimos cargar los datos de esta consulta.
             </p>
-            <Button asChild variant="outline">
+            <Button asChild variant="secondary">
               <Link href="/doctor/appointments">Volver a consultas</Link>
             </Button>
           </div>
@@ -310,7 +310,7 @@ export default function ConsultationReviewPage() {
                     </Button>
                     <Button
                       size="sm"
-                      variant="default"
+                      variant="primary"
                       className="gap-1.5 transition-transform active:scale-[0.98]"
                       onClick={sendToPatient}
                       disabled={sending}

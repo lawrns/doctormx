@@ -174,7 +174,7 @@ export default function CompleteProfilePage() {
         </div>
 
         {/* Form Card */}
-        <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-8">
+        <div className="bg-card rounded-2xl border border-border shadow-sm p-8">
           <h1 className="font-display text-2xl font-bold text-foreground mb-2 text-center">
             Completa tu perfil
           </h1>

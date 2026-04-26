@@ -42,13 +42,13 @@ export function CTASection({ trustData }: CTASectionProps) {
           </p>
 
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button asChild variant="default" size="lg" className="w-full bg-white text-[hsl(var(--public-ink))] hover:bg-white/95 sm:w-auto">
+            <Button asChild variant="primary" size="lg" className="w-full bg-white text-[hsl(var(--public-ink))] hover:bg-white/95 sm:w-auto">
               <Link href="/ai-consulta">
                 Hablar con Dr. Simeón
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="w-full border-white/18 bg-white/6 text-white hover:bg-white/12 sm:w-auto">
+            <Button asChild variant="secondary" size="lg" className="w-full border-white/18 bg-white/6 text-white hover:bg-white/12 sm:w-auto">
               <Link href="/doctors">
                 Ver médicos verificados
               </Link>

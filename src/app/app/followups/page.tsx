@@ -58,7 +58,7 @@ export default async function PatientFollowUpsPage() {
         </div>
 
         {followUps.length === 0 ? (
-          <Card className="bg-card rounded-2xl border border-border shadow-dx-1 p-12 text-center">
+          <Card className="bg-card rounded-2xl border border-border shadow-sm p-12 text-center">
             <div className="w-16 h-16 bg-secondary rounded-2xl flex items-center justify-center mx-auto mb-4">
               <ClipboardList className="w-8 h-8 text-muted-foreground" />
             </div>
@@ -78,7 +78,7 @@ export default async function PatientFollowUpsPage() {
             {followUps.map((followUp) => (
               <Card
                 key={followUp.id}
-                className="bg-card rounded-2xl border border-border shadow-dx-1 p-6 hover:shadow-dx-2 transition-shadow"
+                className="bg-card rounded-2xl border border-border shadow-sm p-6 hover:shadow-md transition-shadow"
               >
                 <div className="flex justify-between items-start mb-4">
                   <div>

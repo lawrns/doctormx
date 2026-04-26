@@ -30,7 +30,7 @@ export function QuestionModerationActions({ questionId }: { questionId: string }
       <Button size="sm" onClick={() => updateStatus('approved')} disabled={isPending}>
         Aprobar
       </Button>
-      <Button size="sm" variant="outline" onClick={() => updateStatus('rejected')} disabled={isPending}>
+      <Button size="sm" variant="secondary" onClick={() => updateStatus('rejected')} disabled={isPending}>
         Rechazar
       </Button>
       {message ? <span className="text-xs font-medium text-[hsl(var(--public-muted))]">{message}</span> : null}

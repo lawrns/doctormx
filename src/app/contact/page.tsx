@@ -118,7 +118,7 @@ export default function ContactPage() {
               <div className="border border-border bg-card p-6 shadow-[var(--public-shadow-soft)]">
                 {isSubmitted ? (
                   <div className="py-10">
-                    <CheckCircle className="h-8 w-8 text-vital" />
+                    <CheckCircle className="h-8 w-8 text-[hsl(var(--trust))]" />
                     <h3 className="mt-5 text-2xl font-semibold tracking-tight text-foreground">
                       Mensaje preparado
                     </h3>

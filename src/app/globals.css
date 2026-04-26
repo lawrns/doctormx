@@ -3,68 +3,126 @@
 @tailwind utilities;
 
 /* ============================================
-   DOCTOR.MX — Design System
-   Tokens from Doctor.mx Design System
+   DOCTOR.MX — Design System v3
+   Semantic design tokens
    ============================================ */
 
 @layer base {
   :root {
-    /* ── Core palette ── */
-    --background: 228 20% 96%;          /* #f4f5f8 */
-    --foreground: 222 61% 12%;          /* #0a1533 */
+    /* ── Interactive (blue — ONLY for clickable elements) ── */
+    --interactive: 211 89% 45%;
+    --interactive-hover: 211 89% 40%;
+    --interactive-soft: 211 89% 95%;
 
-    --card: 0 0% 100%;                  /* #ffffff */
-    --card-foreground: 222 61% 12%;     /* #0a1533 */
+    /* ── Trust / Success (green — completions, verifications, confirmations) ── */
+    --trust: 152 72% 38%;
+    --trust-foreground: 0 0% 100%;
+    --trust-soft: 152 72% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 61% 12%;
+    /* ── Warning (amber — attention, trials, pending) ── */
+    --warning: 36 89% 52%;
+    --warning-foreground: 222 61% 12%;
+    --warning-soft: 36 89% 95%;
 
-    --primary: 211 89% 45%;             /* #0d72d6 */
+    /* ── Danger (red — destructive, emergencies) ── */
+    --danger: 9 100% 62%;
+    --danger-foreground: 0 0% 100%;
+    --danger-soft: 9 100% 95%;
+
+    /* ── Text / Surface ── */
+    --ink: 222 61% 12%;
+    --ink-soft: 225 19% 44%;
+    --surface: 228 20% 96%;
+    --surface-card: 0 0% 100%;
+    --border-color: 225 24% 90%;
+
+    /* ── Shadows ── */
+    --shadow-sm: 0 1px 2px rgba(15,37,95,0.04);
+    --shadow-md: 0 4px 12px rgba(15,37,95,0.06);
+    --shadow-lg: 0 8px 24px rgba(15,37,95,0.08);
+    --shadow-xl: 0 16px 48px rgba(15,37,95,0.12);
+
+    /* ── Typography scale ── */
+    --text-display-xl: clamp(2.75rem, 5vw, 4.5rem);
+    --text-display-lg: clamp(2rem, 4vw, 3.5rem);
+    --text-display-md: clamp(1.5rem, 3vw, 2.5rem);
+    --text-heading: 1.25rem;
+    --text-body-lg: 1.0625rem;
+    --text-body: 0.9375rem;
+    --text-body-sm: 0.8125rem;
+    --text-caption: 0.75rem;
+    --text-eyebrow: 0.6875rem;
+
+    /* ── Spacing scale ── */
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+
+    /* ── Radius ── */
+    --radius: 0.75rem;
+
+    /* ============================================
+       shadcn/ui mapped to semantic tokens
+       ============================================ */
+    --background: var(--surface);
+    --foreground: var(--ink);
+
+    --card: var(--surface-card);
+    --card-foreground: var(--ink);
+
+    --popover: var(--surface-card);
+    --popover-foreground: var(--ink);
+
+    --primary: var(--interactive);
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 228 22% 93%;           /* #eaecf2 */
-    --secondary-foreground: 222 61% 12%;
+    --secondary: 228 22% 93%;
+    --secondary-foreground: var(--ink);
 
     --muted: 228 22% 93%;
-    --muted-foreground: 225 19% 44%;    /* #5c6783 */
+    --muted-foreground: var(--ink-soft);
 
-    --accent: 228 22% 93%;              /* #eaecf2 — neutral grey */
-    --accent-foreground: 222 61% 12%;   /* #0a1533 */
+    --accent: 228 22% 93%;
+    --accent-foreground: var(--ink);
 
-    --destructive: 9 100% 62%;          /* #ff5a3d */
-    --destructive-foreground: 0 0% 100%;
+    --destructive: var(--danger);
+    --destructive-foreground: var(--danger-foreground);
 
-    --border: 225 24% 90%;              /* #dde1ec */
-    --input: 225 24% 90%;
-    --ring: 209 92% 53%;                /* #2688e6 */
+    --border: var(--border-color);
+    --input: var(--border-color);
+    --ring: var(--interactive);
 
-    --radius: 0.75rem;                  /* 12px default card radius */
-    /* ── Semantic text ── */
-    --text-primary: 222 61% 12%;
-    --text-secondary: 225 19% 44%;
-    --text-muted: 225 19% 44%;
-    --text-soft: 225 19% 44%;
+    --success: var(--trust);
+    --success-foreground: var(--trust-foreground);
 
-    /* ── Legacy brand tokens (mapped to soft medical blue) ── */
-    --brand-ink: 222 61% 12%;
-    --brand-ocean: 211 89% 45%;
+    /* ── Semantic text (legacy mapped) ── */
+    --text-primary: var(--ink);
+    --text-secondary: var(--ink-soft);
+    --text-muted: var(--ink-soft);
+    --text-soft: var(--ink-soft);
+
+    /* ── Legacy brand tokens (mapped backward-compat) ── */
+    --brand-ink: var(--ink);
+    --brand-ocean: var(--interactive);
     --brand-sky: 210 91% 68%;
-    --brand-clay: 225 19% 44%;
-    --brand-leaf: 211 89% 45%;
+    --brand-clay: var(--ink-soft);
+    --brand-leaf: var(--interactive);
     --brand-gold: 36 89% 58%;
 
     /* ── Public surface aliases ── */
-    --public-bg: var(--background);
-    --public-ink: var(--foreground);
-    --public-muted: var(--muted-foreground);
-    --public-surface: var(--card);
-    --public-surface-strong: var(--surface-strong);
-    --public-surface-soft: var(--surface-soft);
-    --public-surface-tint: var(--surface-tint);
-    --public-border: var(--border);
-    --public-shadow-soft: var(--shadow-soft);
-    --public-shadow-medium: var(--shadow-medium);
-    --public-shadow-strong: var(--shadow-strong);
+    --public-bg: var(--surface);
+    --public-ink: var(--ink);
+    --public-muted: var(--ink-soft);
+    --public-surface: var(--surface-card);
+    --public-surface-strong: 228 22% 93%;
+    --public-surface-soft: var(--surface);
+    --public-surface-tint: 210 100% 95%;
+    --public-border: var(--border-color);
+    --public-shadow-soft: var(--shadow-sm);
+    --public-shadow-medium: var(--shadow-md);
+    --public-shadow-strong: var(--shadow-lg);
     --public-radius-card: 0.5rem;
     --public-radius-control: 0.375rem;
     --public-radius-pill: 999px;
@@ -76,113 +134,165 @@
     --card-padding-hero: 1.5rem;
     --card-radius-standard: 0.75rem;
     --card-radius-hero: 1rem;
-    --card-border: hsl(var(--foreground) / 0.07);
+    --card-border: hsl(var(--ink) / 0.07);
     --card-border-dark: rgba(255, 255, 255, 0.08);
-    --card-shadow: 0 1px 2px rgba(15, 37, 95, 0.04), 0 4px 12px rgba(15, 37, 95, 0.04);
-    --card-shadow-hover: 0 2px 4px rgba(15, 37, 95, 0.05), 0 8px 18px rgba(15, 37, 95, 0.06);
+    --card-shadow: var(--shadow-sm);
+    --card-shadow-hover: var(--shadow-md);
     --card-gap: 0.875rem;
     --section-padding-y: clamp(3rem, 6vw, 6rem);
     --section-padding-x: clamp(1rem, 4vw, 2rem);
 
     /* ── Legacy surface tokens (mapped to new bg scale) ── */
     --surface-strong: 228 22% 93%;
-    --surface-soft: 228 20% 96%;
-    --surface-quiet: 0 0% 100%;
-    --surface-tint: 210 100% 95%;       /* #e8f3ff */
+    --surface-soft: var(--surface);
+    --surface-quiet: var(--surface-card);
+    --surface-tint: 210 100% 95%;
     --surface-emerald: 210 100% 95%;
 
-    --success: 211 89% 45%;
-    --success-foreground: 0 0% 100%;
-
+    /* ── Legacy shadow tokens ── */
     --shadow-color: 222 73% 22%;
-    --shadow-soft: var(--card-shadow);
-    --shadow-medium: var(--card-shadow-hover);
-    --shadow-strong: 0 10px 24px rgba(15, 37, 95, 0.08);
+    --shadow-soft: var(--shadow-sm);
+    --shadow-medium: var(--shadow-md);
+    --shadow-strong: var(--shadow-lg);
 
+    /* ── Charts ── */
     --chart-1: 211 89% 45%;
     --chart-2: 209 92% 53%;
     --chart-3: 36 89% 58%;
     --chart-4: 222 100% 69%;
     --chart-5: 9 100% 62%;
 
-    --sidebar: 0 0% 100%;
-    --sidebar-foreground: 222 61% 12%;
-    --sidebar-primary: 211 89% 45%;
+    /* ── Sidebar ── */
+    --sidebar: var(--surface-card);
+    --sidebar-foreground: var(--ink);
+    --sidebar-primary: var(--interactive);
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 228 22% 93%;
-    --sidebar-accent-foreground: 222 61% 12%;
-    --sidebar-border: 225 24% 90%;
+    --sidebar-accent-foreground: var(--ink);
+    --sidebar-border: var(--border-color);
     --sidebar-ring: 227 91% 59%;
   }
 
   .dark {
-    --background: 222 30% 8%;           /* #0f1419 approx */
-    --foreground: 228 20% 94%;          /* #f0f1f5 approx */
+    --interactive: 210 91% 68%;
+    --interactive-hover: 210 91% 76%;
+    --interactive-soft: 220 30% 18%;
 
-    --card: 220 24% 13%;                /* #1a2135 approx */
-    --card-foreground: 228 20% 94%;
+    --trust: 152 60% 45%;
+    --trust-foreground: 0 0% 100%;
+    --trust-soft: 152 30% 15%;
 
-    --popover: 220 24% 13%;
-    --popover-foreground: 228 20% 94%;
+    --warning: 36 70% 55%;
+    --warning-foreground: 222 30% 8%;
+    --warning-soft: 36 30% 15%;
 
-    --primary: 210 91% 76%;             /* #8fc4ff approx */
+    --danger: 9 80% 55%;
+    --danger-foreground: 228 20% 94%;
+    --danger-soft: 9 30% 15%;
+
+    --ink: 228 20% 94%;
+    --ink-soft: 225 15% 60%;
+    --surface: 222 30% 8%;
+    --surface-card: 220 24% 13%;
+    --border-color: 220 20% 22%;
+
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.22);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.18);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.24);
+    --shadow-xl: 0 16px 48px rgba(0,0,0,0.32);
+
+    /* ── shadcn dark ── */
+    --background: var(--surface);
+    --foreground: var(--ink);
+
+    --card: var(--surface-card);
+    --card-foreground: var(--ink);
+
+    --popover: var(--surface-card);
+    --popover-foreground: var(--ink);
+
+    --primary: var(--interactive);
     --primary-foreground: 222 30% 8%;
 
     --secondary: 220 18% 18%;
-    --secondary-foreground: 228 20% 94%;
+    --secondary-foreground: var(--ink);
 
     --muted: 220 18% 18%;
-    --muted-foreground: 225 15% 60%;
+    --muted-foreground: var(--ink-soft);
 
     --accent: 220 18% 18%;
-    --accent-foreground: 228 20% 94%;
+    --accent-foreground: var(--ink);
 
-    --destructive: 9 80% 55%;
-    --destructive-foreground: 228 20% 94%;
+    --destructive: var(--danger);
+    --destructive-foreground: var(--danger-foreground);
 
-    --border: 220 20% 22%;
-    --input: 220 20% 22%;
+    --border: var(--border-color);
+    --input: var(--border-color);
     --ring: 210 91% 68%;
 
-    --text-primary: 228 20% 94%;
-    --text-secondary: 225 15% 60%;
-    --text-muted: 225 15% 60%;
+    --success: var(--trust);
+    --success-foreground: var(--trust-foreground);
+
+    /* ── Semantic text dark ── */
+    --text-primary: var(--ink);
+    --text-secondary: var(--ink-soft);
+    --text-muted: var(--ink-soft);
     --text-soft: 225 15% 55%;
 
-    --brand-ink: 228 20% 94%;
-    --brand-ocean: 210 91% 68%;
+    /* ── Legacy brand tokens dark ── */
+    --brand-ink: var(--ink);
+    --brand-ocean: var(--interactive);
     --brand-sky: 210 91% 76%;
-    --brand-clay: 225 15% 55%;
-    --brand-leaf: 210 91% 68%;
+    --brand-clay: var(--ink-soft);
+    --brand-leaf: var(--interactive);
     --brand-gold: 36 70% 55%;
 
+    /* ── Legacy surface dark ── */
     --surface-strong: 220 20% 16%;
     --surface-soft: 220 18% 18%;
     --surface-quiet: 222 24% 12%;
     --surface-tint: 220 30% 18%;
     --surface-emerald: 220 30% 18%;
 
-    --success: 210 91% 68%;
-    --success-foreground: 222 30% 8%;
-
+    /* ── Legacy shadow dark ── */
     --shadow-color: 222 40% 4%;
-    --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.22), 0 4px 12px rgba(0, 0, 0, 0.18);
-    --shadow-medium: 0 2px 4px rgba(0, 0, 0, 0.24), 0 8px 18px rgba(0, 0, 0, 0.22);
-    --shadow-strong: 0 10px 24px rgba(0, 0, 0, 0.28);
+    --shadow-soft: var(--shadow-sm);
+    --shadow-medium: var(--shadow-md);
+    --shadow-strong: var(--shadow-lg);
 
+    /* ── Public surface aliases dark ── */
+    --public-bg: var(--surface);
+    --public-ink: var(--ink);
+    --public-muted: var(--ink-soft);
+    --public-surface: var(--surface-card);
+    --public-surface-strong: 220 20% 16%;
+    --public-surface-soft: var(--surface);
+    --public-surface-tint: 220 30% 18%;
+    --public-border: var(--border-color);
+    --public-shadow-soft: var(--shadow-sm);
+    --public-shadow-medium: var(--shadow-md);
+    --public-shadow-strong: var(--shadow-lg);
+
+    /* ── Card system dark ── */
+    --card-shadow: var(--shadow-sm);
+    --card-shadow-hover: var(--shadow-md);
+    --card-border: var(--card-border-dark);
+
+    /* ── Charts dark ── */
     --chart-1: 210 91% 68%;
     --chart-2: 210 91% 76%;
     --chart-3: 36 70% 55%;
     --chart-4: 222 80% 60%;
     --chart-5: 9 80% 55%;
 
+    /* ── Sidebar dark ── */
     --sidebar: 222 24% 12%;
-    --sidebar-foreground: 228 20% 94%;
+    --sidebar-foreground: var(--ink);
     --sidebar-primary: 210 91% 68%;
     --sidebar-primary-foreground: 222 30% 8%;
     --sidebar-accent: 220 18% 18%;
-    --sidebar-accent-foreground: 228 20% 94%;
-    --sidebar-border: 220 20% 22%;
+    --sidebar-accent-foreground: var(--ink);
+    --sidebar-border: var(--border-color);
     --sidebar-ring: 222 100% 69%;
   }
 }
@@ -202,217 +312,19 @@
   }
 
   ::selection {
-    background: hsl(var(--primary) / 0.18);
-    color: hsl(var(--foreground));
+    background: hsl(var(--interactive) / 0.18);
+    color: hsl(var(--ink));
   }
 }
 
 /* ============================================
-   LEGACY UTILITIES (kept for compatibility,
-   mapped to new tokens)
+   LAYOUT UTILITIES
    ============================================ */
-
-.display-title {
-  font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
-  font-size: clamp(2.75rem, 5vw, 5.5rem);
-  line-height: 0.98;
-  letter-spacing: -0.045em;
-  color: hsl(var(--text-primary));
-}
-
-.section-headline {
-  font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
-  font-size: clamp(1.75rem, 3vw, 3.5rem);
-  font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: -0.025em;
-  color: hsl(var(--text-primary));
-}
-
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  border-radius: 999px;
-  border: 1px solid hsl(var(--border));
-  background: hsl(var(--surface-quiet));
-  padding: 0.55rem 0.9rem;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: hsl(var(--text-secondary));
-}
 
 .editorial-shell {
   width: min(100%, 86rem);
   margin-inline: auto;
   padding-inline: var(--section-padding-x);
-}
-
-.public-section {
-  padding-block: var(--section-padding-y);
-}
-
-.public-section-compact {
-  padding-block: clamp(3rem, 5vw, 4.5rem);
-}
-
-/* ============================================
-   DESIGN-SYSTEM ALIGNED COMPONENTS (v2)
-   ============================================ */
-
-.btn-dx-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  font-family: var(--font-sans);
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: -0.005em;
-  background: hsl(var(--foreground));
-  color: hsl(var(--card));
-  border: 1px solid transparent;
-  border-radius: calc(var(--radius) - 2px);
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.2, 0.7, 0.2, 1);
-  white-space: nowrap;
-}
-.btn-dx-primary:hover {
-  background: hsl(var(--foreground) / 0.88);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-strong);
-}
-
-.btn-dx-coral {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  font-family: var(--font-sans);
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: -0.005em;
-  background: hsl(var(--destructive));
-  color: hsl(var(--destructive-foreground));
-  border: 1px solid transparent;
-  border-radius: calc(var(--radius) - 2px);
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.2, 0.7, 0.2, 1);
-  white-space: nowrap;
-}
-.btn-dx-coral:hover {
-  background: hsl(var(--destructive) / 0.88);
-  transform: translateY(-1px);
-}
-
-.btn-dx-ghost {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  font-family: var(--font-sans);
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: -0.005em;
-  background: transparent;
-  color: hsl(var(--foreground));
-  border: 1px solid hsl(var(--border));
-  border-radius: calc(var(--radius) - 2px);
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.2, 0.7, 0.2, 1);
-  white-space: nowrap;
-}
-.btn-dx-ghost:hover {
-  background: hsl(var(--secondary));
-  border-color: hsl(var(--muted-foreground));
-}
-
-.btn-dx-lg {
-  padding: 1rem 1.75rem;
-  font-size: 0.9375rem;
-}
-
-.eyebrow-dx {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: hsl(var(--muted-foreground));
-}
-.eyebrow-dx::before {
-  content: '';
-  width: 24px;
-  height: 1px;
-  background: currentColor;
-  display: inline-block;
-}
-
-/* Noise texture utility */
-.bg-noise {
-  position: relative;
-}
-.bg-noise::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.15;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.05 0 0 0 0 0.08 0 0 0 0 0.18 0 0 0 0.35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-.dark .bg-noise::before {
-  opacity: 0.08;
-  mix-blend-mode: overlay;
-}
-
-.editorial-grid {
-  display: grid;
-  gap: clamp(1.25rem, 2vw, 2rem);
-}
-
-  .section-frame {
-    border: 1px solid hsl(var(--border) / 0.7);
-    background: linear-gradient(
-      180deg,
-      hsl(var(--card)),
-      hsl(var(--surface-quiet))
-    );
-    box-shadow: var(--shadow-soft);
-  }
-
-  .surface-panel {
-    border-radius: var(--public-radius-card);
-    border: 1px solid hsl(var(--public-border) / 0.78);
-    background: hsl(var(--card));
-    box-shadow: var(--public-shadow-soft);
-  }
-
-  .surface-panel-strong {
-    border-radius: calc(var(--public-radius-card) + 0.125rem);
-    border: 1px solid hsl(var(--public-border) / 0.78);
-    background: linear-gradient(
-      180deg,
-      hsl(var(--public-surface)),
-      hsl(var(--public-surface-strong))
-    );
-    box-shadow: var(--public-shadow-medium);
-  }
-
-.surface-tint {
-  background: linear-gradient(
-    145deg,
-    hsl(var(--surface-tint)),
-    hsl(var(--surface-quiet))
-  );
 }
 
 .public-section {
@@ -423,6 +335,74 @@
   @apply py-16 sm:py-20;
 }
 
+/* ============================================
+   SURFACE UTILITIES
+   ============================================ */
+
+.section-frame {
+  border: 1px solid hsl(var(--border-color) / 0.7);
+  background: linear-gradient(
+    180deg,
+    hsl(var(--surface-card)),
+    hsl(var(--surface))
+  );
+  box-shadow: var(--shadow-sm);
+}
+
+.surface-panel {
+  border-radius: var(--public-radius-card);
+  border: 1px solid hsl(var(--border-color) / 0.78);
+  background: hsl(var(--surface-card));
+  box-shadow: var(--shadow-sm);
+}
+
+.surface-panel-strong {
+  border-radius: calc(var(--public-radius-card) + 0.125rem);
+  border: 1px solid hsl(var(--border-color) / 0.78);
+  background: linear-gradient(
+    180deg,
+    hsl(var(--surface-card)),
+    hsl(var(--surface-strong))
+  );
+  box-shadow: var(--shadow-md);
+}
+
+.surface-tint {
+  background: linear-gradient(
+    145deg,
+    hsl(var(--surface-tint)),
+    hsl(var(--surface-card))
+  );
+}
+
+/* ============================================
+   SEMANTIC COLOR UTILITY CLASSES
+   ============================================ */
+
+.text-trust { color: hsl(var(--trust)); }
+.bg-trust { background: hsl(var(--trust)); }
+.bg-trust-soft { background: hsl(var(--trust-soft)); }
+.border-trust { border-color: hsl(var(--trust)); }
+
+.text-interactive { color: hsl(var(--interactive)); }
+.bg-interactive { background: hsl(var(--interactive)); }
+.bg-interactive-soft { background: hsl(var(--interactive-soft)); }
+
+.text-warning { color: hsl(var(--warning)); }
+.bg-warning-soft { background: hsl(var(--warning-soft)); }
+
+.text-danger { color: hsl(var(--danger)); }
+.bg-danger-soft { background: hsl(var(--danger-soft)); }
+
+.text-ink { color: hsl(var(--ink)); }
+.text-ink-soft { color: hsl(var(--ink-soft)); }
+
+.bg-surface { background: hsl(var(--surface)); }
+
+/* ============================================
+   PUBLIC LAYOUT / HEADING UTILITIES
+   ============================================ */
+
 .public-heading-stack {
   @apply space-y-4;
 }
@@ -431,15 +411,15 @@
   @apply gap-6 sm:gap-8;
 }
 
-  .public-panel {
-    padding: 1.5rem;
-  }
+.public-panel {
+  padding: 1.5rem;
+}
 
-  @media (min-width: 640px) {
-    .public-panel {
-      padding: 2rem;
-    }
+@media (min-width: 640px) {
+  .public-panel {
+    padding: 2rem;
   }
+}
 
 .text-balance {
   text-wrap: balance;
@@ -451,9 +431,19 @@
   background: linear-gradient(
     90deg,
     transparent,
-    hsl(var(--border)),
+    hsl(var(--border-color)),
     transparent
   );
+}
+
+/* ============================================
+   DIVIDER
+   ============================================ */
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background: hsl(var(--border-color));
 }
 
 /* ============================================
@@ -501,9 +491,9 @@
 .animate-shimmer {
   background: linear-gradient(
     90deg,
-    hsl(var(--brand-ocean)) 0%,
+    hsl(var(--interactive)) 0%,
     hsl(var(--brand-sky)) 50%,
-    hsl(var(--brand-ocean)) 100%
+    hsl(var(--interactive)) 100%
   );
   background-size: 200% 100%;
   animation: shimmer 3s infinite;
@@ -522,7 +512,7 @@
 .typing-indicator span {
   width: 8px;
   height: 8px;
-  background-color: hsl(var(--brand-clay));
+  background-color: hsl(var(--ink-soft));
   border-radius: 9999px;
   animation: bounceDot 1.4s ease-in-out infinite;
 }
@@ -538,9 +528,9 @@
 .skeleton-shimmer {
   background: linear-gradient(
     to right,
-    hsl(var(--surface-soft)) 0%,
+    hsl(var(--surface)) 0%,
     hsl(var(--surface-strong)) 50%,
-    hsl(var(--surface-soft)) 100%
+    hsl(var(--surface)) 100%
   );
   background-size: 1000px 100%;
   animation: shimmer 2s infinite;
@@ -550,7 +540,7 @@
   background: linear-gradient(
     to bottom,
     hsl(var(--surface-tint)) 0%,
-    hsl(var(--surface-quiet)) 100%
+    hsl(var(--surface-card)) 100%
   );
 }
 
@@ -568,17 +558,17 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--border));
+  background: hsl(var(--border-color));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--muted-foreground));
+  background: hsl(var(--ink-soft));
 }
 
-/* ── Sticky nav bar (replaces glass-nav) ── */
+/* ── Sticky nav bar ── */
 .nav-sticky {
-  background: hsl(var(--card) / 0.92);
+  background: hsl(var(--surface-card) / 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -607,6 +597,36 @@
 .stagger-animation > *:nth-child(4) { animation-delay: 150ms; }
 .stagger-animation > *:nth-child(5) { animation-delay: 200ms; }
 .stagger-animation > *:nth-child(6) { animation-delay: 250ms; }
+
+/* ============================================
+   NOISE TEXTURE
+   ============================================ */
+
+.bg-noise {
+  position: relative;
+}
+.bg-noise::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.15;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.05 0 0 0 0 0.08 0 0 0 0 0.18 0 0 0 0.35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.dark .bg-noise::before {
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+}
+
+.editorial-grid {
+  display: grid;
+  gap: clamp(1.25rem, 2vw, 2rem);
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

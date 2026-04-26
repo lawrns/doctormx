@@ -59,15 +59,15 @@ export function WelcomeBanner({ patientName }: { patientName: string }) {
 
         <div className="mt-6 grid grid-cols-3 gap-4 border-t border-card/15 pt-6">
           <div className="flex items-center gap-2 text-sm text-card/70">
-            <ShieldCheck className="h-4 w-4 text-vital" />
+            <ShieldCheck className="h-4 w-4 text-[hsl(var(--trust))]" />
             <span>Doctores verificados</span>
           </div>
           <div className="flex items-center gap-2 text-sm text-card/70">
-            <Video className="h-4 w-4 text-vital" />
+            <Video className="h-4 w-4 text-[hsl(var(--trust))]" />
             <span>Videoconsultas</span>
           </div>
           <div className="flex items-center gap-2 text-sm text-card/70">
-            <FileText className="h-4 w-4 text-vital" />
+            <FileText className="h-4 w-4 text-[hsl(var(--trust))]" />
             <span>Recetas digitales</span>
           </div>
         </div>
@@ -119,7 +119,7 @@ export function OnboardingChecklist({
   const progress = (completedSteps / steps.length) * 100
 
   return (
-    <div className="rounded-2xl border border-border bg-card p-6 shadow-dx-1 mb-8">
+    <div className="rounded-2xl border border-border bg-card p-6 shadow-sm mb-8">
       <div className="flex items-center justify-between mb-6">
         <div>
           <h2 className="text-lg font-bold font-display text-foreground">Completa tu configuración</h2>

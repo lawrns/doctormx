@@ -383,7 +383,7 @@ function DirectoryFilterRail({
             </div>
           </div>
 
-          <Button asChild variant="outline" size="sm" className="w-full">
+          <Button asChild variant="secondary" size="sm" className="w-full">
             <Link href="/doctors">Limpiar filtros</Link>
           </Button>
         </div>
@@ -674,10 +674,10 @@ function DoctorCard({ doctor }: { doctor: DirectoryDoctor }) {
                 </span>
               </div>
               <div className="grid grid-cols-2 gap-2">
-                <Button asChild variant="outline" size="sm" className="w-full rounded-[8px]">
+                <Button asChild variant="secondary" size="sm" className="w-full rounded-[8px]">
                 <Link href={profileHref}>Ver perfil</Link>
               </Button>
-                <Button asChild variant="hero" size="sm" className="w-full rounded-[8px]">
+                <Button asChild variant="primary" size="sm" className="w-full rounded-[8px]">
                 <Link href={bookingHref}>
                   {doctor.demo ? 'Orientarme' : 'Agendar cita'}
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -899,7 +899,7 @@ export function DoctorsDirectoryClient({
                 defaultValue={params.city || ''}
                 className="w-full bg-transparent text-sm outline-none placeholder:text-[hsl(var(--public-muted))/0.72] lg:w-44"
               />
-              <Button type="submit" variant="hero" size="sm" className="w-full lg:w-auto">
+              <Button type="submit" variant="primary" size="sm" className="w-full lg:w-auto">
                 Buscar
               </Button>
             </form>
@@ -922,7 +922,7 @@ export function DoctorsDirectoryClient({
             <div className="flex flex-wrap gap-2 lg:justify-end">
               {activeFilters.length > 0 ? (
                 activeFilters.map((filter) => (
-                  <Badge key={filter} variant="luxe" className="normal-case tracking-normal">
+                  <Badge key={filter} variant="secondary" className="normal-case tracking-normal">
                     {filter}
                   </Badge>
                 ))

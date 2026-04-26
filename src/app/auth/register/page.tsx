@@ -13,8 +13,6 @@ import { Input } from '@/components/ui/input'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
-import { Checkbox } from '@/components/ui/checkbox'
-import { Progress } from '@/components/ui/progress'
 import { IconBadge } from '@/components/ui/icon-badge'
 import { ReferralShareCard } from '@/components/referrals'
 import { ANALYTICS_EVENTS, trackClientEvent } from '@/lib/analytics/posthog'
@@ -42,68 +40,29 @@ import {
   Loader2,
 } from 'lucide-react'
 
-function calculatePasswordStrength(password: string): { strength: number; label: string; color: string; textColor: string } {
-  let strength = 0
-  if (password.length >= 8) strength += 25
-  if (password.length >= 12) strength += 15
-  if (/[a-z]/.test(password)) strength += 15
-  if (/[A-Z]/.test(password)) strength += 15
-  if (/[0-9]/.test(password)) strength += 15
-  if (/[^a-zA-Z0-9]/.test(password)) strength += 15
-
-  if (strength < 40) return { strength, label: 'Débil', color: 'bg-destructive', textColor: 'text-destructive' }
-  if (strength < 70) return { strength, label: 'Media', color: 'bg-amber', textColor: 'text-amber' }
-  return { strength, label: 'Fuerte', color: 'bg-vital', textColor: 'text-vital' }
-}
-
 const step1Schema = z.object({
   accountType: z.enum(['patient', 'doctor']),
-})
-
-const step2Schema = z.object({
   fullName: z.string().min(3, 'El nombre debe tener al menos 3 caracteres'),
   email: z.string().email('Correo electrónico inválido'),
-  phone: z.string().optional(),
-  referralCode: z.string().optional(),
-  password: z.string().min(6, 'La contraseña debe tener al menos 6 caracteres'),
+  password: z.string().min(8, 'La contraseña debe tener al menos 8 caracteres'),
   confirmPassword: z.string(),
 }).refine((data) => data.password === data.confirmPassword, {
   message: 'Las contraseñas no coinciden',
   path: ['confirmPassword'],
 })
 
-const step3DoctorSchema = z.object({
-  licenseNumber: z.string().optional(),
-  specialties: z.array(z.string()).min(1, 'Selecciona al menos una especialidad'),
-})
-
-const step3PatientSchema = z.object({
-  hasMedicalHistory: z.boolean(),
-  acceptTerms: z.boolean().refine((val) => val === true, {
-    message: 'Debes aceptar los términos y condiciones',
-  }),
+const step2Schema = z.object({
+  phone: z.string().optional(),
+  referralCode: z.string().optional(),
 })
 
 type Step1Data = z.infer<typeof step1Schema>
 type Step2Data = z.infer<typeof step2Schema>
-type Step3DoctorData = z.infer<typeof step3DoctorSchema>
-type Step3PatientData = z.infer<typeof step3PatientSchema>
-
-const specialties = [
-  'Medicina General',
-  'Pediatría',
-  'Cardiología',
-  'Dermatología',
-  'Ginecología',
-  'Psiquiatría',
-  'Oftalmología',
-  'Traumatología',
-]
 
 function RegisterContent() {
   const searchParams = useSearchParams()
   const isConnectFlow = searchParams.get('connect') === '1'
-  const [currentStep, setCurrentStep] = useState(isConnectFlow ? 2 : 1)
+  const [currentStep, setCurrentStep] = useState(1)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const router = useRouter()
@@ -119,25 +78,18 @@ function RegisterContent() {
     }
   })
 
-  const [step1Data, setStep1Data] = useState<Step1Data>({ accountType: initialAccountType })
-  const [step2Data, setStep2Data] = useState<Step2Data>({
+  const [step1Data, setStep1Data] = useState<Step1Data>({
+    accountType: initialAccountType,
     fullName: '',
     email: initialEmail,
-    phone: '',
-    referralCode: initialReferralCode,
     password: '',
     confirmPassword: '',
   })
-  const [step3DoctorData] = useState<Step3DoctorData>({
-    licenseNumber: '',
-    specialties: [],
-  })
-  const [step3PatientData] = useState<Step3PatientData>({
-    hasMedicalHistory: false,
-    acceptTerms: false,
+  const [step2Data, setStep2Data] = useState<Step2Data>({
+    phone: '',
+    referralCode: initialReferralCode,
   })
 
-  const [passwordStrength, setPasswordStrength] = useState({ strength: 0, label: '', color: '', textColor: '' })
   const [validatedFields, setValidatedFields] = useState<Record<string, boolean>>({})
   const [referralSummary, setReferralSummary] = useState<ReferralSummary | null>(null)
   const [connectDraft, setConnectDraft] = useState<ConnectProfileDraft | null>(null)
@@ -151,21 +103,6 @@ function RegisterContent() {
     resolver: zodResolver(step2Schema),
     defaultValues: step2Data,
   })
-
-  const step3DoctorForm = useForm<Step3DoctorData>({
-    resolver: zodResolver(step3DoctorSchema),
-    defaultValues: step3DoctorData,
-  })
-
-  const step3PatientForm = useForm<Step3PatientData>({
-    resolver: zodResolver(step3PatientSchema),
-    defaultValues: step3PatientData,
-  })
-
-  const handlePasswordChange = (password: string) => {
-    const strength = calculatePasswordStrength(password)
-    setPasswordStrength(strength)
-  }
 
   const handleFieldValidation = (fieldName: string, isValid: boolean) => {
     setValidatedFields((prev) => ({ ...prev, [fieldName]: isValid }))
@@ -185,36 +122,19 @@ function RegisterContent() {
 
     const draft = getConnectDraft()
     setConnectDraft(draft)
-    setStep1Data({ accountType: 'doctor' })
+    setStep1Data({ accountType: 'doctor', fullName: '', email: initialEmail, password: '', confirmPassword: '' })
     step1Form.setValue('accountType', 'doctor')
 
     if (!draft) return
 
     const fieldValue = (key: string) => draft.fields.find((field) => field.key === key)?.value || ''
     const suggestedName = fieldValue('doctorName') || (/^(dr|dra)\.?\s/i.test(draft.practice.name) ? draft.practice.name : '')
-    const suggestedCedula = fieldValue('cedula')
-    const suggestedSpecialty = fieldValue('specialty')
 
-    if (suggestedName && !step2Form.getValues('fullName')) {
-      step2Form.setValue('fullName', suggestedName)
-      setStep2Data((current) => ({ ...current, fullName: suggestedName }))
+    if (suggestedName && !step1Form.getValues('fullName')) {
+      step1Form.setValue('fullName', suggestedName)
+      setStep1Data((current) => ({ ...current, fullName: suggestedName }))
     }
-
-    if (suggestedCedula && !step3DoctorForm.getValues('licenseNumber')) {
-      step3DoctorForm.setValue('licenseNumber', suggestedCedula)
-    }
-
-    if (suggestedSpecialty) {
-      const matchingSpecialty = specialties.find((specialty) =>
-        specialty.toLowerCase().includes(suggestedSpecialty.toLowerCase())
-          || suggestedSpecialty.toLowerCase().includes(specialty.toLowerCase())
-      )
-
-      if (matchingSpecialty && step3DoctorForm.getValues('specialties').length === 0) {
-        step3DoctorForm.setValue('specialties', [matchingSpecialty])
-      }
-    }
-  }, [isConnectFlow, step1Form, step2Form, step3DoctorForm])
+  }, [isConnectFlow, step1Form, initialEmail])
 
   const handleStep1Next = async () => {
     const isValid = await step1Form.trigger()
@@ -224,21 +144,11 @@ function RegisterContent() {
     }
   }
 
-  const handleStep2Next = async () => {
+  const handleStep2Submit = async () => {
     const isValid = await step2Form.trigger()
-    if (isValid) {
-      setStep2Data(step2Form.getValues())
-      setCurrentStep(3)
-    }
-  }
+    if (!isValid) return
 
-  const handleStep3Submit = async () => {
-    const isDoctor = step1Data.accountType === 'doctor'
-    const step3Valid = isDoctor
-      ? await step3DoctorForm.trigger()
-      : await step3PatientForm.trigger()
-
-    if (!step3Valid) return
+    setStep2Data(step2Form.getValues())
 
     setLoading(true)
     setError('')
@@ -251,11 +161,11 @@ function RegisterContent() {
 
     try {
       const { data, error: signUpError } = await supabase.auth.signUp({
-        email: step2Data.email,
-        password: step2Data.password,
+        email: step1Data.email,
+        password: step1Data.password,
         options: {
           data: {
-            full_name: step2Data.fullName,
+            full_name: step1Data.fullName,
           },
         },
       })
@@ -269,7 +179,7 @@ function RegisterContent() {
       if (data.user) {
         const { error: userError } = await supabase.from('profiles').insert({
           id: data.user.id,
-          full_name: step2Data.fullName,
+          full_name: step1Data.fullName,
           phone: step2Data.phone || null,
           role: step1Data.accountType,
         })
@@ -297,7 +207,7 @@ function RegisterContent() {
             surface: 'register',
             accountType: 'doctor',
           })
-          router.push(isConnectFlow ? '/doctor/onboarding?connect=1' : '/doctor/onboarding')
+          router.push(isConnectFlow ? '/auth/complete-profile?connect=1' : '/auth/complete-profile')
           router.refresh()
           return
         }
@@ -341,7 +251,7 @@ function RegisterContent() {
           return
         }
 
-        router.push(redirectTarget || '/app')
+        router.push(redirectTarget || '/auth/complete-profile')
         router.refresh()
       }
     } catch {
@@ -350,7 +260,6 @@ function RegisterContent() {
     }
   }
 
-  const progress = (currentStep / 3) * 100
   const isDoctor = step1Data.accountType === 'doctor'
   const hasReferralSuccess = Boolean(referralSummary && step1Data.accountType === 'patient')
 
@@ -359,9 +268,9 @@ function RegisterContent() {
 
     return (
       <div className="min-h-screen grid lg:grid-cols-2">
-        <div className="relative hidden lg:flex flex-col justify-between bg-ink p-10 text-white">
+        <div className="relative hidden lg:flex flex-col justify-between bg-[hsl(var(--ink))] p-10 text-white">
           <div className="relative z-10 flex items-center gap-2.5">
-            <div className="w-9 h-9 bg-card/10 backdrop-blur-sm rounded-lg flex items-center justify-center border border-border/20">
+            <div className="w-9 h-9 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/15">
               <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
@@ -370,7 +279,7 @@ function RegisterContent() {
           </div>
 
           <div className="relative z-10 max-w-xl space-y-5">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-card/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-primary-foreground/90">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-white/90">
               Cuenta lista
             </div>
             <h1 className="text-4xl font-semibold tracking-[-0.04em] leading-tight">
@@ -380,11 +289,11 @@ function RegisterContent() {
               Terminaste el registro. Ahora puedes enviar tu enlace por WhatsApp, copiarlo o mostrar el QR a tu familia.
             </p>
             <div className="grid grid-cols-2 gap-3 max-w-md">
-              <div className="rounded-[10px] border border-white/10 bg-card/10 px-4 py-3">
+              <div className="rounded-[10px] border border-white/10 bg-white/10 px-4 py-3">
                 <div className="text-xs uppercase tracking-[0.16em] text-white/60">Tu beneficio</div>
                 <div className="mt-1 text-lg font-semibold">1 consulta gratis</div>
               </div>
-              <div className="rounded-[10px] border border-white/10 bg-card/10 px-4 py-3">
+              <div className="rounded-[10px] border border-white/10 bg-white/10 px-4 py-3">
                 <div className="text-xs uppercase tracking-[0.16em] text-white/60">Crédito</div>
                 <div className="mt-1 text-lg font-semibold">
                   {referralSummary.creditsCents > 0
@@ -403,7 +312,7 @@ function RegisterContent() {
               shareUrl={referralSummary.shareUrl}
               freeConsultsRemaining={referralSummary.freeConsultsRemaining}
               creditsCents={referralSummary.creditsCents}
-              patientName={step2Data.fullName}
+              patientName={step1Data.fullName}
               continueLabel="Ir a mi panel"
               onContinue={() => {
                 router.push(destination)
@@ -419,7 +328,7 @@ function RegisterContent() {
   return (
     <div className="min-h-screen grid lg:grid-cols-2">
       {/* Left Panel - Image & Branding */}
-      <div className="relative hidden lg:flex flex-col justify-between bg-ink p-10 text-white">
+      <div className="relative hidden lg:flex flex-col justify-between bg-[hsl(var(--ink))] p-10 text-white">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -428,10 +337,10 @@ function RegisterContent() {
               : 'url(https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop)',
           }}
         />
-        <div className="absolute inset-0 bg-ink/70" />
+        <div className="absolute inset-0 bg-[hsl(var(--ink))]/70" />
 
         <div className="relative z-20 flex items-center gap-2.5">
-          <div className="w-9 h-9 bg-card/10 backdrop-blur-sm rounded-lg flex items-center justify-center border border-border/20">
+          <div className="w-9 h-9 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/15">
             <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
             </svg>
@@ -468,7 +377,7 @@ function RegisterContent() {
       <div className="flex flex-col bg-background">
         {/* Mobile logo */}
         <div className="lg:hidden flex items-center justify-center gap-2.5 p-6">
-          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+          <div className="w-8 h-8 bg-[hsl(var(--interactive))] rounded-lg flex items-center justify-center">
             <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
             </svg>
@@ -477,19 +386,20 @@ function RegisterContent() {
         </div>
 
         <div className="flex-1 flex items-center justify-center p-4">
-          <div className="w-full max-w-md space-y-5 rounded-[12px] border border-[hsl(var(--foreground)/0.07)] bg-card p-5 shadow-[var(--card-shadow)] sm:p-6">
+          <div className="w-full max-w-md space-y-5 rounded-[12px] border border-[hsl(var(--foreground)/0.07)] bg-card p-5 shadow-[var(--shadow-sm)] sm:p-6">
             {/* Header */}
             <div className="flex flex-col space-y-2 text-center">
               <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">
                 Crear cuenta
               </h1>
-              <p className="text-sm text-muted-foreground">
-                Paso {currentStep} de 3
-              </p>
             </div>
 
-            {/* Progress */}
-            <Progress value={progress} className="h-1.5" />
+            {/* Step labels */}
+            <div className="flex items-center gap-3 mb-6">
+              <span className={`text-sm font-semibold ${currentStep === 1 ? 'text-[hsl(var(--ink))]' : 'text-[hsl(var(--ink-soft))]'}`}>1. Cuenta</span>
+              <span className="text-muted-foreground">→</span>
+              <span className={`text-sm font-semibold ${currentStep === 2 ? 'text-[hsl(var(--ink))]' : 'text-[hsl(var(--ink-soft))]'}`}>2. Perfil básico</span>
+            </div>
 
             {/* Error */}
             {error && (
@@ -500,14 +410,14 @@ function RegisterContent() {
             )}
 
             {isConnectFlow && (
-              <div className="rounded-[10px] border border-primary/20 bg-primary/5 p-4 text-left">
+              <div className="rounded-[10px] border border-[hsl(var(--interactive)/0.2)] bg-[hsl(var(--interactive)/0.05)] p-4 text-left">
                 <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
-                  <Stethoscope className="h-4 w-4 text-primary" />
+                  <Stethoscope className="h-4 w-4 text-[hsl(var(--interactive))]" />
                   Perfil preparado con Doctor Connect
                 </div>
                 <p className="mt-2 text-xs leading-5 text-muted-foreground">
                   {connectDraft
-                    ? `Importaremos sugerencias de “${connectDraft.practice.name}”. Confirma cada campo antes de publicarlo.`
+                    ? `Importaremos sugerencias de &ldquo;${connectDraft.practice.name}&rdquo;. Confirma cada campo antes de publicarlo.`
                     : 'Puedes crear el perfil desde cero. Si venías de una búsqueda, vuelve a /connect para elegir una práctica.'}
                 </p>
               </div>
@@ -515,7 +425,7 @@ function RegisterContent() {
 
             {/* Step Content */}
             <AnimatePresence mode="wait">
-              {/* Step 1: Account Type */}
+              {/* Step 1: Account Type + Personal Info */}
               {currentStep === 1 && (
                 <motion.div
                   key="step1"
@@ -585,32 +495,10 @@ function RegisterContent() {
                         </Label>
                       </div>
                     </RadioGroup>
-                  </Form>
-                </motion.div>
-              )}
 
-              {/* Step 2: Personal Info */}
-              {currentStep === 2 && (
-                <motion.div
-                  key="step2"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.2 }}
-                  className="space-y-4"
-                >
-                  <div className="mb-2 text-center">
-                    <div className="mb-2 flex items-center justify-center gap-2">
-                      <IconBadge icon={User} size="md" />
-                      <h2 className="text-lg font-medium text-foreground">Información personal</h2>
-                    </div>
-                    <p className="text-sm text-muted-foreground mt-1">Ingresa tus datos de acceso</p>
-                  </div>
-
-                  <Form {...step2Form}>
-                    <form className="space-y-3">
+                    <form className="space-y-3 mt-4">
                       <FormField
-                        control={step2Form.control}
+                        control={step1Form.control}
                         name="fullName"
                         render={({ field }) => (
                           <FormItem className="relative">
@@ -648,7 +536,7 @@ function RegisterContent() {
                       />
 
                       <FormField
-                        control={step2Form.control}
+                        control={step1Form.control}
                         name="email"
                         render={({ field }) => (
                           <FormItem className="relative">
@@ -687,51 +575,7 @@ function RegisterContent() {
                       />
 
                       <FormField
-                        control={step2Form.control}
-                        name="phone"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Teléfono (opcional)</FormLabel>
-                            <FormControl>
-                              <Input
-                                type="tel"
-                                placeholder="55 1234 5678"
-                                {...field}
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-
-                      <FormField
-                        control={step2Form.control}
-                        name="referralCode"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Código de referido (opcional)</FormLabel>
-                            <FormControl>
-                              <Input
-                                placeholder="AB12CD"
-                                className="font-mono tracking-[0.24em]"
-                                {...field}
-                              />
-                            </FormControl>
-                            <p className="mt-1 text-xs text-muted-foreground">
-                              Si alguien te invitó, pega su código aquí. Si no, déjalo vacío.
-                            </p>
-                            {initialReferralCode && (
-                              <p className="mt-1 text-xs font-medium text-primary">
-                                Código aplicado desde tu enlace: <span className="font-mono">{initialReferralCode}</span>
-                              </p>
-                            )}
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-
-                      <FormField
-                        control={step2Form.control}
+                        control={step1Form.control}
                         name="password"
                         render={({ field }) => (
                           <FormItem>
@@ -739,40 +583,24 @@ function RegisterContent() {
                             <FormControl>
                               <Input
                                 type="password"
-                                placeholder="Mínimo 6 caracteres"
+                                placeholder="Mínimo 8 caracteres"
                                 {...field}
                                 onChange={(e) => {
                                   field.onChange(e)
-                                  handlePasswordChange(e.target.value)
-                                  handleFieldValidation('password', e.target.value.length >= 6)
+                                  handleFieldValidation('password', e.target.value.length >= 8)
                                 }}
                               />
                             </FormControl>
-                            {step2Form.watch('password') && (
-                              <div className="mt-2 space-y-1.5">
-                                <div className="flex items-center justify-between text-xs">
-                                  <span className="text-muted-foreground">Seguridad:</span>
-                                  <span className={`font-medium ${passwordStrength.textColor}`}>
-                                    {passwordStrength.label}
-                                  </span>
-                                </div>
-                                <div className="h-1 bg-muted rounded-full overflow-hidden">
-                                  <motion.div
-                                    initial={{ width: 0 }}
-                                    animate={{ width: `${passwordStrength.strength}%` }}
-                                    transition={{ duration: 0.3 }}
-                                    className={`h-full ${passwordStrength.color} rounded-full`}
-                                  />
-                                </div>
-                              </div>
-                            )}
+                            <p className="mt-1 text-xs text-muted-foreground">
+                              Al menos 8 caracteres · Incluye una mayúscula · Incluye un número
+                            </p>
                             <FormMessage />
                           </FormItem>
                         )}
                       />
 
                       <FormField
-                        control={step2Form.control}
+                        control={step1Form.control}
                         name="confirmPassword"
                         render={({ field }) => (
                           <FormItem className="relative">
@@ -786,7 +614,7 @@ function RegisterContent() {
                                   {...field}
                                   onChange={(e) => {
                                     field.onChange(e)
-                                    handleFieldValidation('confirmPassword', e.target.value === step2Form.watch('password') && e.target.value.length >= 6)
+                                    handleFieldValidation('confirmPassword', e.target.value === step1Form.watch('password') && e.target.value.length >= 8)
                                   }}
                                 />
                                 <AnimatePresence>
@@ -814,10 +642,10 @@ function RegisterContent() {
                 </motion.div>
               )}
 
-              {/* Step 3: Final Details */}
-              {currentStep === 3 && (
+              {/* Step 2: Phone + Referral */}
+              {currentStep === 2 && (
                 <motion.div
-                  key="step3"
+                  key="step2"
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
@@ -826,146 +654,59 @@ function RegisterContent() {
                 >
                   <div className="mb-2 text-center">
                     <div className="mb-2 flex items-center justify-center gap-2">
-                      <IconBadge icon={isDoctor ? Stethoscope : Heart} size="md" />
-                      <h2 className="text-lg font-medium text-foreground">
-                        {isDoctor ? 'Perfil profesional' : 'Completa tu registro'}
-                      </h2>
+                      <IconBadge icon={User} size="md" />
+                      <h2 className="text-lg font-medium text-foreground">Perfil básico</h2>
                     </div>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      {isDoctor ? 'Información profesional' : 'Últimos detalles'}
-                    </p>
+                    <p className="text-sm text-muted-foreground mt-1">Información de contacto (opcional)</p>
                   </div>
 
-                  {isDoctor ? (
-                    <Form {...step3DoctorForm}>
-                      <form className="space-y-4">
-                        <FormField
-                          control={step3DoctorForm.control}
-                          name="licenseNumber"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Número de cédula profesional (opcional)</FormLabel>
-                              <FormControl>
-                                <Input placeholder="12345678" {...field} />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
+                  <Form {...step2Form}>
+                    <form className="space-y-3">
+                      <FormField
+                        control={step2Form.control}
+                        name="phone"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Teléfono (opcional)</FormLabel>
+                            <FormControl>
+                              <Input
+                                type="tel"
+                                placeholder="55 1234 5678"
+                                {...field}
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
 
-                        <FormField
-                          control={step3DoctorForm.control}
-                          name="specialties"
-                          render={() => (
-                            <FormItem>
-                              <FormLabel>Especialidades</FormLabel>
-                              {connectDraft?.fields.find((field) => field.key === 'specialty')?.value && (
-                                <p className="mt-1 text-xs leading-5 text-muted-foreground">
-                                  Sugerido por IA: {connectDraft.fields.find((field) => field.key === 'specialty')?.value}. Confírmalo solo si corresponde a tu práctica.
-                                </p>
-                              )}
-                              <div className="grid grid-cols-2 gap-2 mt-2">
-                                {specialties.map((specialty) => {
-                                  const isSelected = step3DoctorForm.watch('specialties')?.includes(specialty)
-                                  return (
-                                    <label
-                                      key={specialty}
-                                      className={`flex items-center gap-2 p-2.5 rounded-md border cursor-pointer transition-all text-sm ${
-                                        isSelected
-                                          ? 'border-primary bg-primary/5 text-primary'
-                                          : 'border-input hover:border-muted-foreground/25'
-                                      }`}
-                                    >
-                                      <Checkbox
-                                        checked={isSelected}
-                                        onCheckedChange={(checked) => {
-                                          const current = step3DoctorForm.getValues('specialties') || []
-                                          if (checked) {
-                                            step3DoctorForm.setValue('specialties', [...current, specialty])
-                                          } else {
-                                            step3DoctorForm.setValue('specialties', current.filter(s => s !== specialty))
-                                          }
-                                        }}
-                                      />
-                                      <span className="font-medium">{specialty}</span>
-                                    </label>
-                                  )
-                                })}
-                              </div>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-
-                        <Alert className="bg-primary/10 border-primary/20">
-                          <AlertDescription className="text-primary text-sm">
-                            Después del registro, completarás tu perfil profesional con más detalles.
-                          </AlertDescription>
-                        </Alert>
-                      </form>
-                    </Form>
-                  ) : (
-                    <Form {...step3PatientForm}>
-                      <form className="space-y-3">
-                        <FormField
-                          control={step3PatientForm.control}
-                          name="hasMedicalHistory"
-                          render={({ field }) => (
-                            <FormItem>
-                              <label className="flex items-start gap-3 p-3.5 rounded-lg border cursor-pointer hover:border-muted-foreground/25 transition-all">
-                                <FormControl>
-                                  <Checkbox
-                                    checked={field.value}
-                                    onCheckedChange={field.onChange}
-                                    className="mt-0.5"
-                                  />
-                                </FormControl>
-                                <div>
-                                  <div className="font-medium text-sm text-foreground">Historial médico</div>
-                                  <div className="text-xs text-muted-foreground mt-0.5">
-                                    Tengo condiciones médicas previas que deben conocer
-                                  </div>
-                                </div>
-                              </label>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-
-                        <FormField
-                          control={step3PatientForm.control}
-                          name="acceptTerms"
-                          render={({ field }) => (
-                            <FormItem>
-                              <label className="flex items-start gap-3 p-3.5 rounded-lg border cursor-pointer hover:border-muted-foreground/25 transition-all">
-                                <FormControl>
-                                  <Checkbox
-                                    checked={field.value}
-                                    onCheckedChange={field.onChange}
-                                    className="mt-0.5"
-                                  />
-                                </FormControl>
-                                <div>
-                                  <div className="font-medium text-sm text-foreground">Acepto los términos</div>
-                                  <div className="text-xs text-muted-foreground mt-0.5">
-                                    He leído y acepto los{' '}
-                                    <Link href="/terms" className="underline underline-offset-4 hover:text-primary">
-                                      Términos de Servicio
-                                    </Link>
-                                    {' '}y la{' '}
-                                    <Link href="/privacy" className="underline underline-offset-4 hover:text-primary">
-                                      Política de Privacidad
-                                    </Link>
-                                  </div>
-                                </div>
-                              </label>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                      </form>
-                    </Form>
-                  )}
+                      <FormField
+                        control={step2Form.control}
+                        name="referralCode"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>¿Tienes un código de referido?</FormLabel>
+                            <FormControl>
+                              <Input
+                                placeholder="AB12CD"
+                                className="font-mono tracking-[0.24em]"
+                                {...field}
+                              />
+                            </FormControl>
+                            <p className="mt-1 text-xs text-muted-foreground">
+                              Ingresa el código y obtén 50% de descuento en tu primer mes.
+                            </p>
+                            {initialReferralCode && (
+                              <p className="mt-1 text-xs font-medium text-[hsl(var(--interactive))]">
+                                Código aplicado desde tu enlace: <span className="font-mono">{initialReferralCode}</span>
+                              </p>
+                            )}
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </form>
+                  </Form>
                 </motion.div>
               )}
             </AnimatePresence>
@@ -984,10 +725,10 @@ function RegisterContent() {
                   Atrás
                 </Button>
               )}
-              {currentStep < 3 ? (
+              {currentStep === 1 ? (
                 <Button
                   type="button"
-                  onClick={currentStep === 1 ? handleStep1Next : handleStep2Next}
+                  onClick={handleStep1Next}
                   className="flex-1"
                 >
                   Siguiente
@@ -996,7 +737,7 @@ function RegisterContent() {
               ) : (
                 <Button
                   type="button"
-                  onClick={handleStep3Submit}
+                  onClick={handleStep2Submit}
                   disabled={loading}
                   className="flex-1"
                 >

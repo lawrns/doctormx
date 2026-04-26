@@ -124,7 +124,7 @@ interface StatCardProps {
 const colorClasses = {
   primary: 'bg-primary/10 text-primary',
   accent: 'bg-[hsl(var(--surface-tint))] text-primary',
-  success: 'bg-vital/10 text-vital',
+  success: 'bg-[hsl(var(--trust)/0.10)] text-[hsl(var(--trust))]',
   warning: 'bg-amber/10 text-amber',
   error: 'bg-destructive/10 text-destructive',
 }

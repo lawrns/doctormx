@@ -361,7 +361,7 @@ export default function PatientProfilePage() {
 
         <div className="flex flex-col lg:flex-row gap-8">
           <aside className="lg:w-64 flex-shrink-0">
-            <nav className="bg-card rounded-2xl border border-border shadow-dx-1 p-4 sticky top-24">
+            <nav className="bg-card rounded-2xl border border-border shadow-sm p-4 sticky top-24">
               <ul className="space-y-1">
                 {tabItems.map((tab) => (
                   <li key={tab.id}>
@@ -387,7 +387,7 @@ export default function PatientProfilePage() {
 
           <div className="flex-1">
             {activeTab === 'personal' && (
-              <Card className="rounded-2xl border border-border shadow-dx-1">
+              <Card className="rounded-2xl border border-border shadow-sm">
                 <CardHeader>
                   <CardTitle className="font-display text-lg font-semibold">Información Personal</CardTitle>
                   <p className="text-sm text-muted-foreground">Actualiza tus datos personales</p>
@@ -476,7 +476,7 @@ export default function PatientProfilePage() {
 
             {activeTab === 'medical' && (
               <form onSubmit={historyForm.handleSubmit(onSubmitMedicalHistory)} className="space-y-6">
-                <Card className="rounded-2xl border border-border shadow-dx-1">
+                <Card className="rounded-2xl border border-border shadow-sm">
                   <CardHeader>
                     <CardTitle className="font-display text-lg font-semibold">Datos Físicos</CardTitle>
                     <p className="text-sm text-muted-foreground">Información básica para cálculo de IMC</p>
@@ -524,7 +524,7 @@ export default function PatientProfilePage() {
                   </CardContent>
                 </Card>
 
-                <Card className="rounded-2xl border border-border shadow-dx-1">
+                <Card className="rounded-2xl border border-border shadow-sm">
                   <CardHeader>
                     <CardTitle className="font-display text-lg font-semibold">Alergias</CardTitle>
                     <p className="text-sm text-muted-foreground">Lista de alergias conocidas (presiona Enter para agregar)</p>
@@ -558,7 +558,7 @@ export default function PatientProfilePage() {
                   </CardContent>
                 </Card>
 
-                <Card className="rounded-2xl border border-border shadow-dx-1">
+                <Card className="rounded-2xl border border-border shadow-sm">
                   <CardHeader>
                     <CardTitle className="font-display text-lg font-semibold">Medicamentos Actuales</CardTitle>
                     <p className="text-sm text-muted-foreground">Medicamentos que tomas actualmente</p>
@@ -606,7 +606,7 @@ export default function PatientProfilePage() {
                   </CardContent>
                 </Card>
 
-                <Card className="rounded-2xl border border-border shadow-dx-1">
+                <Card className="rounded-2xl border border-border shadow-sm">
                   <CardHeader>
                     <CardTitle className="font-display text-lg font-semibold">Condiciones Crónicas</CardTitle>
                     <p className="text-sm text-muted-foreground">Enfermedades crónicas diagnosticadas (EPOC = Enfermedad Pulmonar Obstructiva Crónica)</p>
@@ -646,7 +646,7 @@ export default function PatientProfilePage() {
                   </CardContent>
                 </Card>
 
-                <Card className="rounded-2xl border border-border shadow-dx-1">
+                <Card className="rounded-2xl border border-border shadow-sm">
                   <CardHeader>
                     <CardTitle className="font-display text-lg font-semibold">Cirugías Anteriores</CardTitle>
                     <p className="text-sm text-muted-foreground">Historial de cirugías</p>
@@ -695,7 +695,7 @@ export default function PatientProfilePage() {
                   </CardContent>
                 </Card>
 
-                <Card className="rounded-2xl border border-border shadow-dx-1">
+                <Card className="rounded-2xl border border-border shadow-sm">
                   <CardHeader>
                     <CardTitle className="font-display text-lg font-semibold">Antecedentes Familiares</CardTitle>
                     <p className="text-sm text-muted-foreground">Enfermedades en la familia</p>
@@ -755,7 +755,7 @@ export default function PatientProfilePage() {
                   </CardContent>
                 </Card>
 
-                <Card className="rounded-2xl border border-border shadow-dx-1">
+                <Card className="rounded-2xl border border-border shadow-sm">
                   <CardHeader>
                     <CardTitle className="font-display text-lg font-semibold">Notas Adicionales</CardTitle>
                     <p className="text-sm text-muted-foreground">Cualquier información médica adicional relevante</p>
@@ -778,7 +778,7 @@ export default function PatientProfilePage() {
             )}
 
             {activeTab === 'insurance' && (
-              <Card className="rounded-2xl border border-border shadow-dx-1">
+              <Card className="rounded-2xl border border-border shadow-sm">
                 <CardHeader>
                   <CardTitle className="font-display text-lg font-semibold">Información del Seguro Médico</CardTitle>
                   <p className="text-sm text-muted-foreground">Datos de tu seguro de gastos médicos</p>
@@ -830,7 +830,7 @@ export default function PatientProfilePage() {
             )}
 
             {activeTab === 'emergency' && (
-              <Card className="rounded-2xl border border-border shadow-dx-1">
+              <Card className="rounded-2xl border border-border shadow-sm">
                 <CardHeader>
                   <CardTitle className="font-display text-lg font-semibold">Contacto de Emergencia</CardTitle>
                   <p className="text-sm text-muted-foreground">Persona a contactar en caso de emergencia</p>
@@ -886,7 +886,7 @@ export default function PatientProfilePage() {
             )}
 
             {activeTab === 'notifications' && (
-              <Card className="rounded-2xl border border-border shadow-dx-1">
+              <Card className="rounded-2xl border border-border shadow-sm">
                 <CardHeader>
                   <CardTitle className="font-display text-lg font-semibold">Preferencias de Notificaciones</CardTitle>
                   <p className="text-sm text-muted-foreground">Elige cómo quieres recibir notificaciones</p>

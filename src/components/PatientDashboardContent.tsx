@@ -115,7 +115,7 @@ export function HealthTips() {
   ]
 
   return (
-    <div className="mb-8 rounded-2xl border border-border bg-card p-6 shadow-dx-1">
+    <div className="mb-8 rounded-2xl border border-border bg-card p-6 shadow-sm">
       <div className="mb-6 flex items-center justify-between">
         <h2 className="flex items-center gap-2 font-display text-lg font-bold text-foreground">
           <Lightbulb className="h-5 w-5 text-amber-500" />
@@ -149,7 +149,7 @@ export function QuickStats({ appointments }: { appointments: Appointment[] }) {
   return (
     <div className="mb-8 grid grid-cols-2 gap-4">
       <Link href="/doctors" className="block">
-        <div className="rounded-2xl border border-primary/20 bg-primary/5 p-4 transition-shadow hover:shadow-dx-1">
+        <div className="rounded-2xl border border-primary/20 bg-primary/5 p-4 transition-shadow hover:shadow-sm">
           <p className="text-sm font-medium text-muted-foreground">
             {completed > 0 ? 'Consultas completadas' : 'Agenda tu primera consulta →'}
           </p>
@@ -157,7 +157,7 @@ export function QuickStats({ appointments }: { appointments: Appointment[] }) {
         </div>
       </Link>
       <Link href="/doctors" className="block">
-        <div className="rounded-2xl border border-primary/20 bg-primary/5 p-4 transition-shadow hover:shadow-dx-1">
+        <div className="rounded-2xl border border-primary/20 bg-primary/5 p-4 transition-shadow hover:shadow-sm">
           <p className="text-sm font-medium text-muted-foreground">
             {upcoming > 0 ? 'Próximas consultas' : 'No tienes citas próximas'}
           </p>

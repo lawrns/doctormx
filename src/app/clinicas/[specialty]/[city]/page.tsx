@@ -75,7 +75,7 @@ export default async function ClinicsBySpecialtyCityPage({ params }: PageProps) 
         {/* Hero */}
         <section className="surface-panel-strong overflow-hidden public-panel sm:px-8 lg:px-10 lg:py-10">
           <div className="space-y-6">
-            <Badge variant="luxe">Busqueda por ciudad</Badge>
+            <Badge variant="secondary">Busqueda por ciudad</Badge>
             <PublicSectionHeading
               align="left"
               eyebrow="Directorio medico"
@@ -126,10 +126,10 @@ export default async function ClinicsBySpecialtyCityPage({ params }: PageProps) 
               </p>
               <div className="mt-6 flex justify-center gap-3">
                 <Link href={`/clinicas/${specialty}`}>
-                  <Button variant="outline">Ver en todas las ciudades</Button>
+                  <Button variant="secondary">Ver en todas las ciudades</Button>
                 </Link>
                 <Link href="/clinicas">
-                  <Button variant="outline">Todas las clinicas</Button>
+                  <Button variant="secondary">Todas las clinicas</Button>
                 </Link>
               </div>
             </Card>
@@ -184,7 +184,7 @@ export default async function ClinicsBySpecialtyCityPage({ params }: PageProps) 
                         ) : (
                           <div />
                         )}
-                        <Button variant="hero" size="sm" className="px-3">
+                        <Button variant="primary" size="sm" className="px-3">
                           Ver clinica
                           <ArrowUpRight className="h-3.5 w-3.5" />
                         </Button>

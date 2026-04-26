@@ -284,7 +284,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
           </Link>
           <div className="flex items-center gap-3">
             <span className="text-sm font-medium text-foreground hidden sm:inline">Dr. {profile?.full_name}</span>
-            <Badge variant={isVerified ? 'default' : 'secondary'} className={isVerified ? 'bg-vital text-white' : ''}>
+            <Badge variant={isVerified ? 'default' : 'secondary'} className={isVerified ? 'bg-[hsl(var(--trust))] text-white' : ''}>
               {isVerified ? 'Verificado' : 'En revisión'}
             </Badge>
             <form action="/auth/signout" method="post">
@@ -345,7 +345,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
               className={cn(
                 'px-3 py-1.5 rounded-lg text-xs font-medium border transition-colors',
                 p.done
-                  ? 'bg-vital-soft border-vital/20 text-vital'
+                  ? 'bg-[hsl(var(--trust-soft))] border-[hsl(var(--trust)/0.20)] text-[hsl(var(--trust))]'
                   : 'bg-secondary/50 border-border text-muted-foreground'
               )}
             >
@@ -378,7 +378,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                   currentStep === step.num
                     ? 'bg-ink text-white border-ink'
                     : currentStep > step.num
-                      ? 'bg-vital text-white border-vital'
+                      ? 'bg-[hsl(var(--trust))] text-white border-[hsl(var(--trust))]'
                       : 'bg-background text-muted-foreground border-border'
                 )}>
                   {currentStep > step.num ? <Check className="h-4 w-4" /> : step.num}
@@ -387,7 +387,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                   'text-[11px] mt-2 font-medium transition-colors',
                   currentStep >= step.num ? 'sm:block' : 'sm:block',
                   currentStep === step.num ? 'text-foreground' :
-                  currentStep > step.num ? 'text-vital' :
+                  currentStep > step.num ? 'text-[hsl(var(--trust))]' :
                   'text-muted-foreground'
                 )}>
                   {step.label}
@@ -396,7 +396,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
               {idx < 2 && (
                 <div className={cn(
                   'flex-1 h-0.5 mx-2 sm:mx-4 mb-5 transition-colors duration-300',
-                  currentStep > step.num ? 'bg-vital' : 'bg-border'
+                  currentStep > step.num ? 'bg-[hsl(var(--trust))]' : 'bg-border'
                 )} />
               )}
             </div>
@@ -452,7 +452,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                       className={cn(
                         'flex-1',
                         verificationStatus?.verified
-                          ? 'border-vital bg-vital-soft'
+                          ? 'border-[hsl(var(--trust))] bg-[hsl(var(--trust-soft))]'
                           : verificationStatus && !verificationStatus.verified
                             ? 'border-destructive/50 bg-destructive/5'
                             : ''
@@ -488,7 +488,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                     <div className={cn(
                       'mt-2 p-3 rounded-xl text-sm border',
                       verificationStatus.verified
-                        ? 'bg-vital-soft text-vital border-vital/20'
+                        ? 'bg-[hsl(var(--trust-soft))] text-[hsl(var(--trust))] border-[hsl(var(--trust)/0.20)]'
                         : 'bg-destructive/10 text-destructive border-destructive/20'
                     )}>
                       <div className="flex items-start gap-2">
@@ -662,7 +662,7 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                 </div>
 
                 <div className="flex justify-between pt-4">
-                  <Button type="button" variant="outline" onClick={() => setCurrentStep(1)} className="h-10 rounded-[8px] px-5">
+                  <Button type="button" variant="secondary" onClick={() => setCurrentStep(1)} className="h-10 rounded-[8px] px-5">
                     <ArrowLeft className="mr-2 h-4 w-4" />
                     Atrás
                   </Button>
@@ -797,14 +797,14 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
                     </span>
                   )}
                   {isVerified && (
-                    <span className="text-vital text-sm">
+                    <span className="text-[hsl(var(--trust))] text-sm">
                       Perfil verificado y publicado
                     </span>
                   )}
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <Button type="button" variant="outline" onClick={() => setCurrentStep(2)} className="h-10 rounded-[8px] px-5">
+                  <Button type="button" variant="secondary" onClick={() => setCurrentStep(2)} className="h-10 rounded-[8px] px-5">
                     <ArrowLeft className="mr-2 h-4 w-4" />
                     Atrás
                   </Button>

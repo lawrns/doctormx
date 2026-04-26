@@ -173,7 +173,7 @@ function LoginContent() {
         </div>
 
         <div className="flex-1 flex items-center justify-center p-4">
-          <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-8 max-w-md w-full space-y-6">
+          <div className="bg-card rounded-2xl border border-border shadow-sm p-8 max-w-md w-full space-y-6">
             {/* Header */}
             <div className="flex flex-col space-y-2 text-center">
               <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">
@@ -206,7 +206,7 @@ function LoginContent() {
                           <Button
                             key={type.value}
                             type="button"
-                            variant={field.value === type.value ? 'default' : 'outline'}
+                            variant={field.value === type.value ? 'primary' : 'secondary'}
                             onClick={() => field.onChange(type.value)}
                             className="flex items-center justify-center gap-2"
                           >

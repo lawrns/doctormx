@@ -116,7 +116,7 @@ export default async function DoctorProfilePage({
               <span className="font-display text-xl font-bold text-[hsl(var(--public-ink))]">Doctor.mx</span>
             </Link>
           </div>
-          <Badge variant="luxe" className="hidden sm:inline-flex">
+          <Badge variant="secondary" className="hidden sm:inline-flex">
             Perfil verificado
           </Badge>
         </div>
@@ -144,7 +144,7 @@ export default async function DoctorProfilePage({
                     )}
                   </div>
                   <div className="absolute left-4 top-4 flex flex-wrap gap-2">
-                    <Badge variant="luxe" className="bg-card/90 backdrop-blur-sm">
+                    <Badge variant="secondary" className="bg-card/90 backdrop-blur-sm">
                       {doctor.verification?.sep_verified ? 'SEP verificado' : 'Perfil aprobado'}
                     </Badge>
                     {doctor.offers_video || doctor.video_enabled ? (
@@ -347,7 +347,7 @@ export default async function DoctorProfilePage({
                     {formatCurrency(doctor.price_cents, doctor.currency)}
                   </p>
                 </div>
-                <Badge variant="luxe" className="self-start">
+                <Badge variant="secondary" className="self-start">
                   Reserva guiada
                 </Badge>
               </div>
@@ -372,7 +372,7 @@ export default async function DoctorProfilePage({
                 )}
               </div>
 
-              <Button asChild variant="hero" size="lg" className="mt-5 w-full">
+              <Button asChild variant="primary" size="lg" className="mt-5 w-full">
                 <Link href={bookingHref}>Agendar consulta</Link>
               </Button>
 

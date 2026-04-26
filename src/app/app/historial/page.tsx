@@ -64,7 +64,7 @@ export default async function HistorialPage() {
                 <Calendar className="w-12 h-12 text-muted-foreground/40 mx-auto mb-4" />
                 <p className="text-muted-foreground mb-4">Aun no tienes consultas registradas.</p>
                 <Link href="/doctors">
-                  <Button variant="outline">
+                  <Button variant="secondary">
                     Buscar doctor
                     <ChevronRight className="ml-2 w-4 h-4" />
                   </Button>
@@ -235,7 +235,7 @@ export default async function HistorialPage() {
                           rel="noopener noreferrer"
                           className="flex-shrink-0"
                         >
-                          <Button variant="outline" size="sm" className="gap-1">
+                          <Button variant="secondary" size="sm" className="gap-1">
                             <FileText className="w-4 h-4" />
                             Ver PDF
                           </Button>

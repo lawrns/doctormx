@@ -241,7 +241,7 @@ export function WidgetSettingsClient({
                 <Monitor className="h-5 w-5 text-primary" />
                 <h2 className="text-lg font-semibold text-foreground">Servicios</h2>
               </div>
-              <Button type="button" variant="outline" onClick={addService} className="rounded-xl">
+              <Button type="button" variant="secondary" onClick={addService} className="rounded-xl">
                 <Plus className="mr-2 h-4 w-4" />
                 Agregar
               </Button>

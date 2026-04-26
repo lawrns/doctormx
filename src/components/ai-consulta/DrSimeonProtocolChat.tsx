@@ -110,14 +110,14 @@ function AssistantTypingBubble({ reducedMotion }: { reducedMotion: boolean }) {
       <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-ink text-primary-foreground">
         <Stethoscope className="size-4" />
       </div>
-      <div className="rounded-xl border border-border bg-card px-4 py-3 shadow-dx-1">
+      <div className="rounded-xl border border-border bg-card px-4 py-3 shadow-sm">
         <div className="flex items-center gap-3">
           <span className="text-sm font-medium text-foreground">Dr. Simeon está revisando</span>
           <div className="flex items-center gap-1.5" aria-hidden="true">
             {[0, 1, 2].map((index) => (
               <motion.span
                 key={index}
-                className="size-1.5 rounded-full bg-vital"
+                className="size-1.5 rounded-full bg-[hsl(var(--trust))]"
                 animate={reducedMotion ? undefined : { y: [0, -3, 0], opacity: [0.4, 1, 0.4] }}
                 transition={{ duration: 0.9, repeat: Infinity, delay: index * 0.13, ease: 'easeInOut' }}
               />
@@ -180,7 +180,7 @@ function TypewriterText({
       {active && !reducedMotion ? (
         <motion.span
           aria-hidden="true"
-          className="ml-0.5 inline-block h-4 w-px translate-y-0.5 bg-vital"
+          className="ml-0.5 inline-block h-4 w-px translate-y-0.5 bg-[hsl(var(--trust))]"
           animate={{ opacity: [0.25, 1, 0.25] }}
           transition={{ duration: 0.85, repeat: Infinity, ease: 'easeInOut' }}
         />
@@ -212,9 +212,9 @@ function AssistantBubble({
       <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-ink text-primary-foreground">
         <Stethoscope className="size-4" />
       </div>
-      <div className="min-w-0 max-w-[720px] rounded-xl border border-border bg-card px-4 py-3 shadow-dx-1">
+      <div className="min-w-0 max-w-[720px] rounded-xl border border-border bg-card px-4 py-3 shadow-sm">
         <div className="mb-1.5 flex flex-wrap items-center gap-1.5">
-          <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-vital">Dr. Simeon</span>
+          <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--trust))]">Dr. Simeon</span>
           <span className="text-[10px] text-muted-foreground">Orientación clínica inicial</span>
         </div>
         <TypewriterText
@@ -246,9 +246,9 @@ function UserBubble({ message }: { message: ChatMessage }) {
 
 function SafetyNote() {
   return (
-    <div className="rounded-lg border border-coral/20 bg-coral/5 p-3">
+    <div className="rounded-lg border border-[hsl(var(--danger))]/20 bg-[hsl(var(--danger))]/5 p-3">
       <div className="flex items-start gap-2">
-        <Shield className="mt-0.5 size-4 shrink-0 text-coral" />
+        <Shield className="mt-0.5 size-4 shrink-0 text-[hsl(var(--danger))]" />
         <p className="text-xs leading-5 text-foreground">
           Si hay dolor fuerte en el pecho, falta de aire, desmayo, confusión, debilidad de un lado o sangrado importante, llama al 911.
         </p>
@@ -266,13 +266,13 @@ function LeftRail({
 }) {
   return (
     <aside className="flex h-full min-h-0 flex-col border-r border-border bg-card/50 p-4">
-      <div className="shrink-0 rounded-xl border border-border bg-background p-4 shadow-dx-1">
+      <div className="shrink-0 rounded-xl border border-border bg-background p-4 shadow-sm">
         <div className="flex items-center gap-3">
           <div className="relative size-11 overflow-hidden rounded-lg border border-border bg-card">
             <Image src="/images/simeon.png" alt="Dr. Simeon" fill sizes="44px" className="object-cover object-top" priority />
           </div>
           <div className="min-w-0">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-vital">Orientación inicial</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--trust))]">Orientación inicial</p>
             <h2 className="font-display text-lg font-semibold tracking-tight text-foreground">Dr. Simeon</h2>
           </div>
         </div>
@@ -295,7 +295,7 @@ function LeftRail({
               onClick={() => onQuickStart(prompt)}
               className="flex items-start gap-3 rounded-lg border border-border bg-background px-3 py-2.5 text-left transition-colors hover:bg-secondary/70 disabled:cursor-not-allowed disabled:opacity-50"
             >
-              <span className="mt-2 size-1.5 shrink-0 rounded-full bg-vital" />
+              <span className="mt-2 size-1.5 shrink-0 rounded-full bg-[hsl(var(--trust))]" />
               <span className="text-sm leading-5 text-foreground">{prompt}</span>
             </button>
           ))}
@@ -318,8 +318,8 @@ function CaseRail({
 }) {
   return (
     <aside className="flex h-full min-h-0 flex-col border-l border-border bg-card/50 p-4">
-      <div className="rounded-xl border border-border bg-background p-4 shadow-dx-1">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-vital">Contexto del caso</p>
+      <div className="rounded-xl border border-border bg-background p-4 shadow-sm">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--trust))]">Contexto del caso</p>
         <div className="mt-4 grid gap-3">
           <CaseItem icon={User} label="Nombre" value={summary.firstName || 'Por preguntar'} />
           <CaseItem icon={Stethoscope} label="Motivo" value={summary.chiefComplaint || 'Pendiente'} />
@@ -329,7 +329,7 @@ function CaseRail({
         </div>
       </div>
 
-      <details className="mt-4 rounded-xl border border-border bg-background p-4 shadow-dx-1">
+      <details className="mt-4 rounded-xl border border-border bg-background p-4 shadow-sm">
         <summary className="cursor-pointer text-sm font-medium text-foreground">Derivación sugerida</summary>
         <div className="mt-3 grid gap-2">
           {referrals.length > 0 ? (
@@ -568,7 +568,7 @@ export function DrSimeonProtocolChat({
             </Link>
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon" className="rounded-lg lg:hidden" aria-label="Abrir contexto">
+                <Button variant="secondary" size="icon" className="rounded-lg lg:hidden" aria-label="Abrir contexto">
                   <Menu className="size-4" />
                 </Button>
               </SheetTrigger>
@@ -614,9 +614,9 @@ export function DrSimeonProtocolChat({
                   ) : null}
                 </AnimatePresence>
                 {summary.urgency === 'emergency' ? (
-                  <div className="rounded-xl border border-coral/20 bg-coral/5 p-4">
+                  <div className="rounded-xl border border-[hsl(var(--danger))]/20 bg-[hsl(var(--danger))]/5 p-4">
                     <div className="flex items-start gap-3">
-                      <AlertTriangle className="mt-0.5 size-5 shrink-0 text-coral" />
+                      <AlertTriangle className="mt-0.5 size-5 shrink-0 text-[hsl(var(--danger))]" />
                       <p className="text-sm leading-6 text-foreground">
                         Esta orientación no reemplaza urgencias. Si el síntoma sigue activo, llama al 911 o acude a urgencias.
                       </p>
@@ -636,11 +636,11 @@ export function DrSimeonProtocolChat({
                     </Link>
                   </div>
                 ) : (
-                  <div className="rounded-xl border border-border bg-background p-2.5 shadow-dx-1 transition-colors focus-within:border-ink/35 focus-within:ring-2 focus-within:ring-ink/10 sm:p-3">
+                  <div className="rounded-xl border border-border bg-background p-2.5 shadow-sm transition-colors focus-within:border-ink/35 focus-within:ring-2 focus-within:ring-ink/10 sm:p-3">
                     <div className="mb-2 flex items-start gap-2 border-b border-border pb-2">
-                      <Stethoscope className="mt-0.5 size-3.5 shrink-0 text-vital" />
+                      <Stethoscope className="mt-0.5 size-3.5 shrink-0 text-[hsl(var(--trust))]" />
                       <div className="min-w-0">
-                        <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-vital">Siguiente pregunta</p>
+                        <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--trust))]">Siguiente pregunta</p>
                         <p className="mt-0.5 line-clamp-2 text-xs leading-5 text-muted-foreground">{summary.nextQuestion}</p>
                       </div>
                     </div>

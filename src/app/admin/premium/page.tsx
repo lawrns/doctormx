@@ -236,7 +236,7 @@ export default async function AdminPremiumPage() {
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     {pricing.features.map((feature) => (
                       <li key={feature} className="flex items-center gap-2">
-                        <svg className="w-4 h-4 text-vital" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="w-4 h-4 text-[hsl(var(--trust))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                         {feature.replace(/_/g, ' ')}

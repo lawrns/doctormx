@@ -298,7 +298,7 @@ function ResultsView({
                 Volver al Dashboard
               </Button>
             </Link>
-            <Button variant="outline" onClick={onNewConsultation}>
+            <Button variant="secondary" onClick={onNewConsultation}>
               Nueva Consulta
             </Button>
           </div>
@@ -310,8 +310,8 @@ function ResultsView({
             <p className="text-lg font-semibold text-foreground">{result.primaryDiagnosis}</p>
             <p className="text-sm text-muted-foreground">Puede cambiar tras valoración médica.</p>
           </div>
-          <div className="bg-coral/5 rounded-xl p-4">
-            <p className="text-sm text-coral font-medium">Nivel de Urgencia</p>
+          <div className="bg-[hsl(var(--danger))]/5 rounded-xl p-4">
+            <p className="text-sm text-[hsl(var(--danger))] font-medium">Nivel de Urgencia</p>
             <p className="text-lg font-semibold text-foreground capitalize">{result.urgency}</p>
             <p className="text-sm text-muted-foreground">
               {result.urgency === 'emergency' && 'Ve al hospital ahora'}

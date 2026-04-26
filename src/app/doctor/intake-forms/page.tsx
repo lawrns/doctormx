@@ -545,7 +545,7 @@ function IntakeFormBuilder({
         </div>
 
         <div className="flex items-center justify-end gap-3 pt-4 border-t border-border/60">
-          <Button variant="outline" onClick={onClose}>
+          <Button variant="secondary" onClick={onClose}>
             Cancelar
           </Button>
           <Button onClick={save} disabled={saving} className="gap-2 transition-transform active:scale-[0.98]">

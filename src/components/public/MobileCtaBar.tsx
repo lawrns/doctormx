@@ -1,32 +1,18 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { Search, Stethoscope, CalendarCheck } from 'lucide-react'
+import { Search, Stethoscope } from 'lucide-react'
 
 export function MobileCtaBar() {
   const [visible, setVisible] = useState(false)
-  const pathname = usePathname()
 
   useEffect(() => {
-    // Show after 5s delay rather than on scroll
-    const timer = setTimeout(() => setVisible(true), 4000)
-    return () => clearTimeout(timer)
+    setVisible(true)
   }, [])
 
-  const isDoctorProfile = pathname?.startsWith('/doctors/')
-  const isLanding = pathname === '/'
-
-  const primaryAction = isDoctorProfile
-    ? { href: pathname.replace('/doctors/', '/book/') + '?ref=mobile-bar', label: 'Reservar consulta', icon: CalendarCheck }
-    : isLanding
-    ? { href: '/ai-consulta', label: 'Hablar con Dr. Simeón', icon: Stethoscope }
-    : { href: '/ai-consulta', label: 'Dr. Simeón', icon: Stethoscope }
-
-  const secondaryAction = isDoctorProfile
-    ? { href: '/ai-consulta', label: 'Dr. Simeón', icon: Stethoscope }
-    : { href: '/doctors', label: 'Ver médicos', icon: Search }
+  const primaryAction = { href: '/ai-consulta', label: 'Dr. Simeón', icon: Stethoscope }
+  const secondaryAction = { href: '/doctors', label: 'Ver médicos', icon: Search }
 
   return (
     <div
@@ -38,14 +24,14 @@ export function MobileCtaBar() {
       <div className="grid grid-cols-2 gap-2">
         <Link
           href={primaryAction.href}
-          className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-ink px-3 text-sm font-semibold text-primary-foreground active:scale-[0.98]"
+          className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-[hsl(var(--interactive))] px-3 text-sm font-semibold text-primary-foreground active:scale-[0.98]"
         >
           {<primaryAction.icon className="h-4 w-4" aria-hidden="true" />}
           {primaryAction.label}
         </Link>
         <Link
           href={secondaryAction.href}
-          className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-border bg-background px-3 text-sm font-semibold text-ink active:scale-[0.98]"
+          className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-border bg-[hsl(var(--surface-card))] px-3 text-sm font-semibold text-[hsl(var(--ink))] active:scale-[0.98]"
         >
           {<secondaryAction.icon className="h-4 w-4" aria-hidden="true" />}
           {secondaryAction.label}

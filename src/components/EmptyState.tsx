@@ -69,7 +69,7 @@ export function EmptyState({
           "mb-4 flex h-10 w-10 items-center justify-center rounded-[8px] transition-transform duration-300",
           isAI ? "bg-primary/10 text-primary" :
           isUrgent ? "bg-destructive/10 text-destructive" :
-          "bg-primary/10 text-primary"
+          "bg-[hsl(var(--trust))]/10 text-[hsl(var(--trust))]"
         )}
       >
         {Icon ? <Icon className="h-5 w-5" /> : <Sparkles className="h-5 w-5" />}
@@ -138,7 +138,7 @@ export function EmptyState({
         {secondaryAction && (
           secondaryAction.href ? (
             <Link href={secondaryAction.href}>
-              <Button variant="outline" className={cn(
+              <Button variant="secondary" className={cn(
                 "h-10 rounded-[8px] px-4 font-semibold border-border hover:bg-secondary transition-all w-full sm:w-auto",
                 isAI ? "border-border/30 text-foreground hover:bg-secondary" : "",
                 isUrgent ? "border-destructive/30 text-destructive hover:bg-destructive/5" : ""

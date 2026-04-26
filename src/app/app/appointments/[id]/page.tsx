@@ -103,7 +103,7 @@ export default async function AppointmentDetailPage({
               Tu consulta médica
             </h1>
           </div>
-          <Button asChild variant="outline" size="sm">
+          <Button asChild variant="secondary" size="sm">
             <Link href="/app/appointments">Volver a mis citas</Link>
           </Button>
         </div>
@@ -247,7 +247,7 @@ export default async function AppointmentDetailPage({
                     <Link href={`/book/${appointment.doctorId}`}>Agendar seguimiento</Link>
                   </Button>
                 )}
-                <Button asChild variant="outline">
+                <Button asChild variant="secondary">
                   <Link href="/contact">Contactar soporte</Link>
                 </Button>
               </div>

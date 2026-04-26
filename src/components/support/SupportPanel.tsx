@@ -98,7 +98,7 @@ export function SupportPanel({ layout = 'desktop', onDismiss }: SupportPanelProp
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <SupportPresenceOrb size="sm" />
-            <div className="inline-flex items-center gap-1.5 rounded-lg border border-vital/20 bg-vital/10 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-vital">
+            <div className="inline-flex items-center gap-1.5 rounded-lg border border-[hsl(var(--trust)/0.20)] bg-[hsl(var(--trust)/0.10)] px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--trust))]">
               <ShieldCheck className="h-3 w-3" aria-hidden="true" />
               Dr. Simeon
             </div>

@@ -4,15 +4,12 @@ Card source of truth: `src/components/ui/card.tsx`.
 
 ## Tokens
 
-- Compact padding: `--card-padding-compact` = `14px`
-- Default padding: `--card-padding-default` = `16px`
-- Comfortable padding: `--card-padding-comfortable` = `20px`
-- Hero/preview padding: `--card-padding-hero` = `24px`
+- Default padding: `--card-padding-default` = `16px` (single uniform padding)
 - Standard radius: `--card-radius-standard` = `12px`
 - Hero/preview radius: `--card-radius-hero` = `16px`
-- Border: `--card-border` = foreground at 7% opacity
-- Shadow: `--card-shadow` = one soft two-layer shadow
-- Hover shadow: `--card-shadow-hover`
+- Border: `--card-border` = ink at 7% opacity
+- Shadow: `--card-shadow` = `--shadow-sm`
+- Hover shadow: `--card-shadow-hover` = `--shadow-md`
 - Grid gap: `--card-gap` = `14px`
 
 ## Variants
@@ -38,14 +35,26 @@ Card source of truth: `src/components/ui/card.tsx`.
 - Every clickable card must be a single focusable element with an `aria-label`.
 - Hover is `translate-y: -1px` plus a shadow bump. No scale above `1.02`.
 - Every media slot must declare `aspect-ratio`; images use `next/image` with `sizes`.
+- Single 16px padding for all cards. No multiple padding tiers.
 
 ## No-Vibe UI Rules
 
 - Do not use `rounded-2xl`, `rounded-3xl`, or `rounded-[2rem]` for ordinary cards. Use `12px`; use `16px` only for hero/preview modules.
-- Do not use `shadow-2xl`, stacked custom shadows, or `shadow-dx-*` on product/public surfaces. Use `--card-shadow`.
+- Do not use `shadow-2xl`, stacked custom shadows, or `shadow-dx-*` on product/public surfaces. Use `--card-shadow` (which resolves to `--shadow-sm`).
 - Do not center a giant icon above a title for routine states. Use `IconBadge` inline with the title or `EmptyState` from `src/components/ui/empty-state.tsx`.
 - Do not use purple/pink gradient icon tiles or generic SaaS celebration treatments on healthcare flows.
 - Custom card wrappers need a comment explaining why `Card` cannot be used.
+- Use `shadow-sm`, `shadow-md`, `shadow-lg`, `shadow-xl` tokens instead of hardcoded shadow values.
+
+## Design System Integration
+
+Cards use the global design tokens:
+- `--ink` / `--ink-soft` for text colors
+- `--surface` / `--surface-card` for backgrounds
+- `--border-color` for borders
+- `--interactive` for interactive/hover states
+- `--trust` for success/verification indicators
+- `--shadow-sm` / `--shadow-md` / `--shadow-lg` / `--shadow-xl` for shadows
 
 Audit command: `npm run audit:ui`.
 

@@ -229,12 +229,12 @@ export default function SubscriptionPage() {
                 </div>
 
                 {checkoutSucceeded && (
-                    <Card className="mb-8 border-vital/20 bg-vital-soft">
+                    <Card className="mb-8 border-[hsl(var(--trust)/0.20)] bg-[hsl(var(--trust-soft))]">
                         <CardContent className="p-6">
                             <h3 className="font-display text-lg font-semibold text-foreground mb-2">
                                 Suscripción recibida
                             </h3>
-                            <p className="text-sm text-vital/80">
+                            <p className="text-sm text-[hsl(var(--trust)/0.80)]">
                                 Stripe confirmó tu checkout. Si tu cédula SEP ya fue validada, tu perfil se activará en el directorio; si no, quedará pendiente de revisión.
                             </p>
                         </CardContent>
@@ -242,21 +242,21 @@ export default function SubscriptionPage() {
                 )}
 
                 {subscription?.hasSubscription && subscription.subscription?.status !== 'past_due' && (
-                    <Card className="mb-8 border-vital/20 bg-vital-soft">
+                    <Card className="mb-8 border-[hsl(var(--trust)/0.20)] bg-[hsl(var(--trust-soft))]">
                         <CardContent className="p-6">
                             <div className="flex items-start justify-between">
                                 <div>
                                     <h3 className="font-display text-lg font-semibold text-foreground mb-2">
                                         Suscripción Activa
                                     </h3>
-                                    <p className="text-vital mb-4">
+                                    <p className="text-[hsl(var(--trust))] mb-4">
                                         Plan: {subscription.subscription?.plan_name}
                                     </p>
-                                    <p className="text-sm text-vital/80">
+                                    <p className="text-sm text-[hsl(var(--trust)/0.80)]">
                                         Renovación: {subscription.subscription?.current_period_end ? new Date(subscription.subscription.current_period_end).toLocaleDateString('es-MX') : 'N/A'}
                                     </p>
                                     {subscription.daysUntilRenewal && (
-                                        <p className="text-sm text-vital/80 mt-2">
+                                        <p className="text-sm text-[hsl(var(--trust)/0.80)] mt-2">
                                             Días restantes: {subscription.daysUntilRenewal}
                                         </p>
                                     )}
@@ -377,42 +377,42 @@ export default function SubscriptionPage() {
                                         <h4 className="font-semibold text-foreground mb-3">Incluye:</h4>
                                         <ul className="space-y-2">
                                             <li className="flex items-center gap-2 text-foreground">
-                                                <Check className="w-4 h-4 text-vital flex-shrink-0" />
+                                                <Check className="w-4 h-4 text-[hsl(var(--trust))] flex-shrink-0" />
                                                 Perfil público visible
                                             </li>
                                             <li className="flex items-center gap-2 text-foreground">
-                                                <Check className="w-4 h-4 text-vital flex-shrink-0" />
+                                                <Check className="w-4 h-4 text-[hsl(var(--trust))] flex-shrink-0" />
                                                 {plan.limits.whatsapp_patients === -1 
                                                     ? 'WhatsApp ilimitado' 
                                                     : `${plan.limits.whatsapp_patients} pacientes WhatsApp/mes`}
                                             </li>
                                             {plan.features.priority_search_ranking && (
                                                 <li className="flex items-center gap-2 text-foreground">
-                                                    <Check className="w-4 h-4 text-vital flex-shrink-0" />
+                                                    <Check className="w-4 h-4 text-[hsl(var(--trust))] flex-shrink-0" />
                                                     Búsqueda prioritaria (+20%)
                                                 </li>
                                             )}
                                             {plan.features.featured_listing && (
                                                 <li className="flex items-center gap-2 text-foreground">
-                                                    <Check className="w-4 h-4 text-vital flex-shrink-0" />
+                                                    <Check className="w-4 h-4 text-[hsl(var(--trust))] flex-shrink-0" />
                                                     Destacado en homepage
                                                 </li>
                                             )}
                                             {plan.features.ai_copilot && (
                                                 <li className="flex items-center gap-2 text-foreground">
-                                                    <Check className="w-4 h-4 text-vital flex-shrink-0" />
+                                                    <Check className="w-4 h-4 text-[hsl(var(--trust))] flex-shrink-0" />
                                                     Clinical Copilot
                                                 </li>
                                             )}
                                             {plan.features.image_analysis && (
                                                 <li className="flex items-center gap-2 text-foreground">
-                                                    <Check className="w-4 h-4 text-vital flex-shrink-0" />
+                                                    <Check className="w-4 h-4 text-[hsl(var(--trust))] flex-shrink-0" />
                                                     Análisis de imágenes ({plan.limits.image_analysis}/mes)
                                                 </li>
                                             )}
                                             {plan.features.api_access && (
                                                 <li className="flex items-center gap-2 text-foreground">
-                                                    <Check className="w-4 h-4 text-vital flex-shrink-0" />
+                                                    <Check className="w-4 h-4 text-[hsl(var(--trust))] flex-shrink-0" />
                                                     Acceso API
                                                 </li>
                                             )}
@@ -472,7 +472,7 @@ export default function SubscriptionPage() {
                                                     ? 'bg-destructive' 
                                                     : (usage.usage?.whatsapp?.percentage || 0) > 70 
                                                         ? 'bg-amber-500' 
-                                                        : 'bg-vital'
+                                                        : 'bg-[hsl(var(--trust))]'
                                             }`}
                                             style={{ width: `${Math.min(100, usage.usage?.whatsapp?.percentage || 0)}%` }}
                                         ></div>
@@ -497,7 +497,7 @@ export default function SubscriptionPage() {
                                                     ? 'bg-destructive' 
                                                     : (usage.usage?.aiCopilot?.percentage || 0) > 70 
                                                         ? 'bg-amber-500' 
-                                                        : 'bg-vital'
+                                                        : 'bg-[hsl(var(--trust))]'
                                             }`}
                                             style={{ width: `${Math.min(100, usage.usage?.aiCopilot?.percentage || 0)}%` }}
                                         ></div>
@@ -522,7 +522,7 @@ export default function SubscriptionPage() {
                                                     ? 'bg-destructive' 
                                                     : (usage.usage?.imageAnalysis?.percentage || 0) > 70 
                                                         ? 'bg-amber-500' 
-                                                        : 'bg-vital'
+                                                        : 'bg-[hsl(var(--trust))]'
                                             }`}
                                             style={{ width: `${Math.min(100, usage.usage?.imageAnalysis?.percentage || 0)}%` }}
                                         ></div>

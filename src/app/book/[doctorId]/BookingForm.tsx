@@ -499,7 +499,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                         ${!day.date ? 'invisible' : ''}
                         ${day.isPast ? 'text-muted-foreground cursor-not-allowed' : 'hover:bg-secondary'}
                         ${selectedDate === day.date ? 'bg-primary text-primary-foreground hover:bg-primary/90' : ''}
-                        ${day.isAvailable && selectedDate !== day.date ? 'text-vital bg-vital-soft' : ''}
+                        ${day.isAvailable && selectedDate !== day.date ? 'text-[hsl(var(--trust))] bg-[hsl(var(--trust-soft))]' : ''}
                         ${!day.isAvailable && !day.isPast && selectedDate !== day.date ? 'text-foreground' : ''}
                         ${day.isToday && selectedDate !== day.date ? 'ring-2 ring-primary' : ''}
                       `}
@@ -508,7 +508,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                       
                       {/* Availability indicator dot */}
                       {day.isAvailable && selectedDate !== day.date && (
-                        <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-vital rounded-full"></span>
+                        <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-[hsl(var(--trust))] rounded-full"></span>
                       )}
                     </Button>
                   ))}
@@ -517,7 +517,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                 {/* Calendar Legend */}
                 <div className="flex items-center justify-center gap-4 mt-3 text-xs text-muted-foreground">
                   <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 bg-vital rounded-full"></span>
+                    <span className="w-2 h-2 bg-[hsl(var(--trust))] rounded-full"></span>
                     <span>Disponible</span>
                   </div>
                   <div className="flex items-center gap-1.5">
@@ -539,7 +539,7 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
                       No mostramos horarios inventados. Vuelve al perfil del médico o busca otro doctor con disponibilidad visible.
                     </p>
                     <div className="mt-3 flex flex-wrap gap-2">
-                      <Button asChild size="sm" variant="outline">
+                      <Button asChild size="sm" variant="secondary">
                         <Link href={`/doctors/${doctor.id}`}>Volver al perfil</Link>
                       </Button>
                       <Button asChild size="sm">
@@ -628,8 +628,8 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
               )}
               
               {preConsultaCompleted && (
-                <div className="bg-vital-soft border border-vital/20 rounded-[var(--public-radius-control)] p-4">
-                  <p className="text-sm text-vital font-medium">
+                <div className="bg-[hsl(var(--trust-soft))] border border-[hsl(var(--trust)/0.20)] rounded-[var(--public-radius-control)] p-4">
+                  <p className="text-sm text-[hsl(var(--trust))] font-medium">
                     Pre-consulta completada con Dr. Simeon IA
                   </p>
                 </div>

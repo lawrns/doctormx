@@ -282,7 +282,7 @@ export default function DoctorConsultationPage({ params }: DoctorConsultationPag
                   <PhoneOff className="mr-2 h-4 w-4" />
                   {ending ? 'Finalizando...' : 'Finalizar consulta'}
                 </Button>
-                <Button asChild variant="outline">
+                <Button asChild variant="secondary">
                   <Link href={`/doctor/prescription/${appointment.id}`}>
                     <Pill className="mr-2 h-4 w-4" />
                     Receta

@@ -101,7 +101,7 @@ function ForgotPasswordContent() {
         transition={{ duration: 0.6, ease: 'easeOut' }}
         className="w-full max-w-md"
       >
-        <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-8">
+        <div className="bg-card rounded-2xl border border-border shadow-sm p-8">
           <div className="space-y-1 pb-6">
             {isEmailSent ? (
               <>

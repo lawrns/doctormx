@@ -58,7 +58,7 @@ export default async function DoctorAvailabilityPage() {
           </div>
         )}
 
-        <Card className="rounded-2xl border border-border shadow-dx-1 p-4 lg:p-6 gap-4">
+        <Card className="rounded-2xl border border-border shadow-sm p-4 lg:p-6 gap-4">
           <CardHeader className="p-0 pb-0">
             <CardTitle className="text-lg lg:text-xl font-semibold">Horarios de atenci\u00F3n</CardTitle>
           </CardHeader>
@@ -122,7 +122,7 @@ export default async function DoctorAvailabilityPage() {
           </CardContent>
         </Card>
 
-        <div className="mt-4 lg:mt-6 bg-card rounded-2xl border border-border shadow-dx-1 p-3 lg:p-4">
+        <div className="mt-4 lg:mt-6 bg-card rounded-2xl border border-border shadow-sm p-3 lg:p-4">
           <p className="text-xs lg:text-sm text-muted-foreground">
             <strong className="text-foreground">Consejo:</strong> Las citas se generan en bloques de 30 minutos.
             Los pacientes podr\u00E1n reservar solo en horarios que marques como disponibles.

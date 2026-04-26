@@ -179,7 +179,7 @@ function ReferralsContent() {
                     Compartir por WhatsApp
                   </a>
                 </Button>
-                <Button asChild variant="outline">
+                <Button asChild variant="secondary">
                   <a href={`mailto:?subject=${emailSubject}&body=${emailBody}`}>
                     <Mail className="w-4 h-4 mr-2" />
                     Compartir por email

@@ -68,7 +68,7 @@ export default function UploadImagePage() {
   return (
     <div className="p-6 lg:p-8">
       <div className="max-w-4xl mx-auto">
-        <Card className="bg-card rounded-2xl border border-border shadow-dx-1 p-6 mb-6">
+        <Card className="bg-card rounded-2xl border border-border shadow-sm p-6 mb-6">
           <div className="flex items-start gap-4 mb-4">
             <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
               <CheckCircle className="w-6 h-6 text-primary" />
@@ -118,7 +118,7 @@ export default function UploadImagePage() {
         </Card>
 
         {(uploadData || loading) && (
-          <Card className="bg-card rounded-2xl border border-border shadow-dx-1 p-6">
+          <Card className="bg-card rounded-2xl border border-border shadow-sm p-6">
             <h3 className="text-lg font-semibold text-foreground mb-4">Resultado del Análisis</h3>
             
             {loading ? (
@@ -181,7 +181,7 @@ export default function UploadImagePage() {
                   <ul className="space-y-2">
                     {fullAnalysis.recommendations.map((rec, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-vital mt-0.5" />
+                        <CheckCircle className="w-5 h-5 text-[hsl(var(--trust))] mt-0.5" />
                         <span className="text-muted-foreground">{rec}</span>
                       </li>
                     ))}
@@ -215,7 +215,7 @@ export default function UploadImagePage() {
         )}
 
         <div className="mt-8 grid md:grid-cols-3 gap-4">
-          <Card className="bg-card rounded-2xl border border-border shadow-dx-1 p-4">
+          <Card className="bg-card rounded-2xl border border-border shadow-sm p-4">
             <div className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center mb-3">
               <Clock className="w-5 h-5 text-primary" />
             </div>
@@ -223,7 +223,7 @@ export default function UploadImagePage() {
             <p className="text-sm text-muted-foreground mt-1">Análisis en segundos con GPT-4 Vision</p>
           </Card>
           
-          <Card className="bg-card rounded-2xl border border-border shadow-dx-1 p-4">
+          <Card className="bg-card rounded-2xl border border-border shadow-sm p-4">
             <div className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center mb-3">
               <Shield className="w-5 h-5 text-primary" />
             </div>
@@ -231,7 +231,7 @@ export default function UploadImagePage() {
             <p className="text-sm text-muted-foreground mt-1">Tus imágenes son privadas y protegidas</p>
           </Card>
           
-          <Card className="bg-card rounded-2xl border border-border shadow-dx-1 p-4">
+          <Card className="bg-card rounded-2xl border border-border shadow-sm p-4">
             <div className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center mb-3">
               <BookOpen className="w-5 h-5 text-primary" />
             </div>

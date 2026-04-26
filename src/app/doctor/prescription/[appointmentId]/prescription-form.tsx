@@ -253,7 +253,7 @@ export default function PrescriptionPageClient({
           </Link>
         </div>
 
-        <Card className="bg-card rounded-2xl border border-border shadow-dx-1 p-6">
+        <Card className="bg-card rounded-2xl border border-border shadow-sm p-6">
           <CardContent className="p-0">
             <h1 className="font-display text-2xl font-bold tracking-tight text-foreground mb-6">
               {existingPrescription ? 'Editar Receta' : 'Crear Receta'}
@@ -466,7 +466,7 @@ export default function PrescriptionPageClient({
                   {isSending ? 'Enviando...' : 'Enviar al Paciente'}
                 </Button>
 
-                <Button asChild variant="outline">
+                <Button asChild variant="secondary">
                   <Link href="/doctor">
                     Cancelar
                   </Link>

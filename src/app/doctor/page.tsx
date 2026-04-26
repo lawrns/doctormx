@@ -240,7 +240,7 @@ export default async function DoctorDashboard() {
           <Eyebrow className="mb-6">Mientras esperas</Eyebrow>
 
           {/* Checklist */}
-          <Card className="rounded-2xl border border-border shadow-dx-1 mb-6">
+          <Card className="rounded-2xl border border-border shadow-sm mb-6">
             <CardHeader>
               <CardTitle className="font-display text-lg font-semibold">
                 Lista de verificación
@@ -257,7 +257,7 @@ export default async function DoctorDashboard() {
                     key={i}
                     className={`flex items-center gap-3 p-3 rounded-xl ${
                       check.done
-                        ? 'bg-vital-soft/50 text-vital'
+                        ? 'bg-[hsl(var(--trust-soft))]/50 text-[hsl(var(--trust))]'
                         : 'bg-secondary/50 text-foreground'
                     }`}
                   >
@@ -265,7 +265,7 @@ export default async function DoctorDashboard() {
                     <span className="flex-1 text-sm">{check.text}</span>
                     <Badge
                       variant={check.done ? 'default' : 'secondary'}
-                      className={check.done ? 'bg-vital text-white' : ''}
+                      className={check.done ? 'bg-[hsl(var(--trust))] text-white' : ''}
                     >
                       {check.done ? 'Completado' : 'En proceso'}
                     </Badge>
@@ -287,7 +287,7 @@ export default async function DoctorDashboard() {
               <p className="text-sm text-muted-foreground mb-4">
                 Verifica que tu cámara y micrófono funcionen correctamente.
               </p>
-              <Button asChild variant="outline" size="sm">
+              <Button asChild variant="secondary" size="sm">
                 <Link href="/doctor/availability">
                   Probar ahora
                   <ArrowRight className="w-4 h-4 ml-1" />
@@ -305,7 +305,7 @@ export default async function DoctorDashboard() {
               <p className="text-sm text-muted-foreground mb-4">
                 Consejos para ofrecer la mejor experiencia a tus pacientes.
               </p>
-              <Button asChild variant="outline" size="sm">
+              <Button asChild variant="secondary" size="sm">
                 <Link href="/help">
                   Leer guía
                   <ArrowRight className="w-4 h-4 ml-1" />
@@ -382,7 +382,7 @@ export default async function DoctorDashboard() {
           </div>
 
           {/* Upcoming appointments */}
-          <Card className="rounded-2xl border border-border shadow-dx-1">
+          <Card className="rounded-2xl border border-border shadow-sm">
             <CardHeader className="flex flex-row items-center justify-between px-6 py-5">
               <CardTitle className="font-display text-lg font-semibold">
                 Próximas consultas
@@ -419,7 +419,7 @@ export default async function DoctorDashboard() {
           </Card>
 
           {/* Inbox */}
-          <Card className="rounded-2xl border border-border shadow-dx-1 mt-8">
+          <Card className="rounded-2xl border border-border shadow-sm mt-8">
             <CardHeader className="flex flex-row items-center justify-between px-6 py-5">
               <div>
                 <CardTitle className="font-display text-lg font-semibold">

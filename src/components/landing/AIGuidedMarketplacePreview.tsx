@@ -227,7 +227,7 @@ function DoctorPreviewCard({ doctor }: { doctor: PublicLandingData['featuredDoct
             {doctor.rating_avg.toFixed(1)}
           </span>
         </div>
-        <Button asChild variant="outline" size="sm" className="mt-3 h-8 w-full rounded-[8px] text-xs">
+        <Button asChild variant="secondary" size="sm" className="mt-3 h-8 w-full rounded-[8px] text-xs">
           <span>Ver disponibilidad</span>
         </Button>
       </div>

@@ -86,7 +86,7 @@ async function DoctorAnalyticsContent() {
               changeLabel="vs mes anterior"
               format="currency"
               trend={metrics.revenue.growth > 0 ? 'up' : metrics.revenue.growth < 0 ? 'down' : 'neutral'}
-              icon={<DollarSign className="w-6 h-6 text-vital" />}
+              icon={<DollarSign className="w-6 h-6 text-[hsl(var(--trust))]" />}
             />
             <StatCard
               title="Calificación Promedio"
@@ -103,7 +103,7 @@ async function DoctorAnalyticsContent() {
               changeLabel="citas perdidas"
               format="percentage"
               trend={metrics.appointments.noShowRate > 10 ? 'down' : 'up'}
-              icon={<Users className="w-6 h-6 text-coral" />}
+              icon={<Users className="w-6 h-6 text-[hsl(var(--danger))]" />}
             />
           </div>
 
@@ -140,7 +140,7 @@ async function DoctorAnalyticsContent() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-6">
+            <div className="bg-card rounded-2xl border border-border shadow-sm p-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 bg-primary/10 rounded-lg">
                   <TrendingUp className="w-5 h-5 text-primary" />
@@ -151,10 +151,10 @@ async function DoctorAnalyticsContent() {
               <p className="text-sm text-muted-foreground mt-1">Histórico</p>
             </div>
 
-            <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-6">
+            <div className="bg-card rounded-2xl border border-border shadow-sm p-6">
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-vital-soft rounded-lg">
-                  <DollarSign className="w-5 h-5 text-vital" />
+                <div className="p-2 bg-[hsl(var(--trust-soft))] rounded-lg">
+                  <DollarSign className="w-5 h-5 text-[hsl(var(--trust))]" />
                 </div>
                 <h3 className="font-semibold text-foreground">Ingresos Totales</h3>
               </div>
@@ -162,7 +162,7 @@ async function DoctorAnalyticsContent() {
               <p className="text-sm text-muted-foreground mt-1">Bruto</p>
             </div>
 
-            <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-6">
+            <div className="bg-card rounded-2xl border border-border shadow-sm p-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 bg-secondary rounded-lg">
                   <Award className="w-5 h-5 text-primary" />
@@ -173,7 +173,7 @@ async function DoctorAnalyticsContent() {
               <p className="text-sm text-muted-foreground mt-1">Recibidos</p>
             </div>
 
-            <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-6">
+            <div className="bg-card rounded-2xl border border-border shadow-sm p-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 bg-secondary/50 rounded-lg">
                   <Clock className="w-5 h-5 text-amber" />
@@ -204,7 +204,7 @@ async function DoctorAnalyticsContent() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="text-center p-6 bg-secondary/50 rounded-xl">
                 <p className="text-sm text-muted-foreground mb-2">Ingresos Netos ( después de fees )</p>
-                <p className="text-3xl font-bold text-vital">{formatCurrency(metrics.revenue.net)}</p>
+                <p className="text-3xl font-bold text-[hsl(var(--trust))]">{formatCurrency(metrics.revenue.net)}</p>
                 <p className="text-xs text-muted-foreground mt-1">Fee de plataforma: {formatCurrency(metrics.revenue.platformFee)}</p>
               </div>
               <div className="text-center p-6 bg-secondary/50 rounded-xl">
@@ -230,7 +230,7 @@ function LoadingSkeleton() {
     <div className="space-y-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {[1, 2, 3, 4].map(i => (
-          <div key={i} className="bg-card rounded-2xl border border-border shadow-dx-1 p-6">
+          <div key={i} className="bg-card rounded-2xl border border-border shadow-sm p-6">
             <Skeleton className="h-4 w-24 mb-4" />
             <Skeleton className="h-8 w-32" />
           </div>

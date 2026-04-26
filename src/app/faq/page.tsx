@@ -193,7 +193,7 @@ const faqSections: FAQSection[] = [
 
 function FAQAccordion({ section }: { section: FAQSection }) {
   return (
-    <Card className="bg-card rounded-2xl border border-border shadow-dx-1 overflow-hidden">
+    <Card className="bg-card rounded-2xl border border-border shadow-sm overflow-hidden">
       <div className="border-b border-border/70 px-6 py-5">
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
@@ -226,9 +226,9 @@ export default function FAQPage() {
     <div className="min-h-screen bg-background">
       <main className="editorial-shell py-8 sm:py-10 lg:py-12">
         {/* Hero */}
-        <section className="bg-card rounded-2xl border border-border shadow-dx-1 overflow-hidden sm:px-8 lg:px-10 lg:py-10">
+        <section className="bg-card rounded-2xl border border-border shadow-sm overflow-hidden sm:px-8 lg:px-10 lg:py-10">
           <div className="max-w-3xl mx-auto text-center space-y-6">
-            <Badge variant="luxe">Centro de ayuda</Badge>
+            <Badge variant="secondary">Centro de ayuda</Badge>
             <PublicSectionHeading
               eyebrow="Preguntas frecuentes"
               title="Resolvemos tus dudas"
@@ -246,7 +246,7 @@ export default function FAQPage() {
 
         {/* Still have questions CTA */}
         <section className="mt-12 text-center">
-          <Card className="bg-card rounded-2xl border border-border shadow-dx-1 inline-block p-8 sm:p-10">
+          <Card className="bg-card rounded-2xl border border-border shadow-sm inline-block p-8 sm:p-10">
             <h2 className="font-display text-xl font-semibold tracking-[-0.03em] text-foreground">
               No encontraste tu respuesta?
             </h2>
@@ -255,10 +255,10 @@ export default function FAQPage() {
             </p>
             <div className="mt-6 flex justify-center gap-3">
               <Link href="/contact">
-                <Button variant="hero">Contactar soporte</Button>
+                <Button variant="primary">Contactar soporte</Button>
               </Link>
               <Link href="/app/ai-consulta">
-                <Button variant="outline">Preguntar a Dr. Simeon IA</Button>
+                <Button variant="secondary">Preguntar a Dr. Simeon IA</Button>
               </Link>
             </div>
           </Card>

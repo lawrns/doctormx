@@ -86,7 +86,7 @@ export default function CardsDevPage() {
         title="One CTA band, no repeated bespoke shells."
         body="Use only when the page needs a final conversion prompt."
         primary={<Button>Primary CTA</Button>}
-        secondary={<Button variant="outline">Secondary</Button>}
+        secondary={<Button variant="secondary">Secondary</Button>}
       />
     </main>
   )

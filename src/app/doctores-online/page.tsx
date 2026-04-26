@@ -138,7 +138,7 @@ export default async function DoctoresOnlinePage({
                       : 'Sin doctores publicados para esta búsqueda'}
                   </h2>
                 </div>
-                <Button asChild variant="outline">
+                <Button asChild variant="secondary">
                   <Link href="/doctors">Ver directorio completo</Link>
                 </Button>
               </div>

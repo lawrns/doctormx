@@ -75,7 +75,7 @@ export default function AppPacientesPage() {
               <Button asChild size="lg">
                 <Link href="/app">Entrar a mi cuenta</Link>
               </Button>
-              <Button asChild variant="outline" size="lg">
+              <Button asChild variant="secondary" size="lg">
                 <Link href="/doctors">Buscar doctores</Link>
               </Button>
             </div>

@@ -106,7 +106,7 @@ export default function DoctorReferrals() {
               className="absolute right-2 top-1/2 -translate-y-1/2"
               onClick={() => copyToClipboard(stats?.code || '')}
             >
-              {copied ? <CheckCircle className="w-4 h-4 text-vital" /> : <Copy className="w-4 h-4" />}
+              {copied ? <CheckCircle className="w-4 h-4 text-[hsl(var(--trust))]" /> : <Copy className="w-4 h-4" />}
             </Button>
           </div>
         </div>
@@ -166,7 +166,7 @@ export default function DoctorReferrals() {
         </Card>
 
         <Card className="p-4 text-center">
-          <CheckCircle className="w-8 h-8 text-vital mx-auto mb-2" />
+          <CheckCircle className="w-8 h-8 text-[hsl(var(--trust))] mx-auto mb-2" />
           <p className="text-3xl font-bold">{stats?.converted || 0}</p>
           <p className="text-muted-foreground">Convertidos</p>
         </Card>

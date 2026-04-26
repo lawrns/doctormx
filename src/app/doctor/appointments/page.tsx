@@ -152,7 +152,7 @@ export default async function DoctorAppointmentsPage({
             </div>
           </div>
         ) : (
-          <Card className="rounded-2xl border border-border shadow-dx-1">
+          <Card className="rounded-2xl border border-border shadow-sm">
             <CardContent className="p-6">
               <AppointmentFilters />
 

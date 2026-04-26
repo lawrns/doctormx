@@ -193,8 +193,8 @@ async function ReferralsDashboard({ doctorId }: { doctorId: string }) {
           value={converted}
           label="Conversiones"
           unit="registrados"
-          color="text-vital"
-          bgColor="bg-vital/10"
+          color="text-[hsl(var(--trust))]"
+          bgColor="bg-[hsl(var(--trust)/0.10)]"
         />
         <StatBox
           icon={<Clock className="w-5 h-5" />}
@@ -233,7 +233,7 @@ async function ReferralsDashboard({ doctorId }: { doctorId: string }) {
           </CardHeader>
           <CardContent>
             <LeaderboardTeaser />
-            <Button asChild variant="outline" className="w-full mt-4" size="sm">
+            <Button asChild variant="secondary" className="w-full mt-4" size="sm">
               <Link href="/doctor/referrals/leaderboard">
                 Ver ranking completo
                 <ArrowRight className="w-4 h-4 ml-2" />

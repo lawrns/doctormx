@@ -51,7 +51,7 @@ export function SupportPresenceOrb({ size = 'md', isLoading = false, imageClassN
             className={imageClassName}
           />
         </div>
-        <span className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full border border-card bg-vital" aria-hidden="true" />
+        <span className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full border border-card bg-[hsl(var(--trust))]" aria-hidden="true" />
       </div>
     </motion.div>
   )

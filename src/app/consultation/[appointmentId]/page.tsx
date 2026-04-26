@@ -45,7 +45,7 @@ export default async function ConsultationRoomPage({
       </header>
 
       <main className="container mx-auto px-4 py-8 max-w-4xl">
-        <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-8">
+        <div className="bg-card rounded-2xl border border-border shadow-sm p-8">
           <h1 className="font-display text-2xl font-bold tracking-tight text-foreground mb-6">
             Sala de Consulta
           </h1>

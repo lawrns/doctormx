@@ -153,7 +153,7 @@ function PaymentSuccessContent() {
               <Button asChild>
                 <Link href="/app/appointments">Revisar mis citas</Link>
               </Button>
-              <Button asChild variant="outline">
+              <Button asChild variant="secondary">
                 <Link href="/contact">Contactar soporte</Link>
               </Button>
             </div>
@@ -249,7 +249,7 @@ function PaymentSuccessContent() {
                     Ver detalle de cita
                   </Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="h-12">
+                <Button asChild size="lg" variant="secondary" className="h-12">
                   <Link href="/app/ai-consulta">
                     <Stethoscope className="h-4 w-4" />
                     Preparar consulta con Dr. Simeón

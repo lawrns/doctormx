@@ -378,7 +378,7 @@ export default function CheckoutPage({
                       <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
                       <div>
                         <p>Esta reserva ya no está disponible para pago. Vuelve a la agenda para elegir otro horario real.</p>
-                        <Button asChild size="sm" variant="outline" className="mt-3 border-destructive/30 text-destructive hover:bg-destructive/10">
+                        <Button asChild size="sm" variant="secondary" className="mt-3 border-destructive/30 text-destructive hover:bg-destructive/10">
                           <Link href={`/book/${options.appointment.doctorId}`}>Elegir nuevo horario</Link>
                         </Button>
                       </div>
@@ -392,7 +392,7 @@ export default function CheckoutPage({
           <div className="border border-[hsl(var(--public-border)/0.78)] bg-card p-5 shadow-[var(--public-shadow-soft)]">
             <div className="flex items-start gap-3">
               <div className="flex size-10 shrink-0 items-center justify-center border border-border bg-secondary">
-                <ShieldCheck className="size-5 text-vital" />
+                <ShieldCheck className="size-5 text-[hsl(var(--trust))]" />
               </div>
               <div className="min-w-0 flex-1">
                 <h2 className="font-display text-xl font-semibold tracking-tight text-[hsl(var(--public-ink))]">
@@ -457,7 +457,7 @@ export default function CheckoutPage({
                 }}
                 className={`w-full rounded-[var(--public-radius-control)] border p-4 text-left transition-colors ${
                   selectedPatientInsuranceId === 'cash'
-                    ? 'border-vital bg-vital/5'
+                    ? 'border-[hsl(var(--trust))] bg-[hsl(var(--trust)/0.5)]'
                     : 'border-border bg-background hover:bg-secondary/60'
                 }`}
               >
@@ -487,7 +487,7 @@ export default function CheckoutPage({
                     }}
                     className={`w-full rounded-[var(--public-radius-control)] border p-4 text-left transition-colors ${
                       selectedPatientInsuranceId === insurance.id
-                        ? 'border-vital bg-vital/5'
+                        ? 'border-[hsl(var(--trust))] bg-[hsl(var(--trust)/0.5)]'
                         : 'border-border bg-background hover:bg-secondary/60'
                     }`}
                   >
@@ -588,6 +588,12 @@ export default function CheckoutPage({
 
             <div className="mt-5 space-y-3 border-y border-border py-4">
               <div className="flex items-center justify-between gap-3 text-sm">
+                <span className="text-muted-foreground">Consulta con {options?.appointment?.doctorName || 'Dr.'}</span>
+                <span className="font-medium text-foreground">
+                  {formatCurrency(selectedEstimate?.grossAmountCents || 0, options?.appointment.currency)}
+                </span>
+              </div>
+              <div className="flex items-center justify-between gap-3 text-sm">
                 <span className="text-muted-foreground">Cita</span>
                 <span className="text-right font-medium text-foreground">
                   {options?.appointment ? `${formatAppointmentTime(options.appointment.startTs)} · ${options.appointment.appointmentType === 'in_person' ? 'Presencial' : 'Video'}` : 'Pendiente'}
@@ -615,7 +621,7 @@ export default function CheckoutPage({
 
             {selectedEstimate && (
               <div className="mt-4 flex items-start gap-2 rounded-[var(--public-radius-control)] border border-border bg-secondary/40 p-3">
-                <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-vital" />
+                <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-[hsl(var(--trust))]" />
                 <p className="text-sm text-muted-foreground">{selectedEstimate.message}</p>
               </div>
             )}

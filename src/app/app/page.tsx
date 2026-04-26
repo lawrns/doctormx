@@ -150,7 +150,7 @@ export default async function PatientDashboard() {
         </div>
 
         {/* Recent appointments */}
-        <Card className="rounded-2xl border border-border shadow-dx-1 overflow-hidden">
+        <Card className="rounded-2xl border border-border shadow-sm overflow-hidden">
           <CardHeader className="px-6 py-5 border-b border-border flex flex-row items-center justify-between">
             <CardTitle className="font-display text-lg font-semibold text-foreground flex items-center gap-2">
               <Calendar className="w-5 h-5 text-primary" />

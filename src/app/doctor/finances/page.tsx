@@ -186,7 +186,7 @@ export default async function DoctorFinancesPage() {
         <p className="text-muted-foreground mb-8">Gestiona tus pagos y transacciones</p>
 
         {isPending ? (
-          <Card className="rounded-xl border border-border shadow-dx-1 p-6">
+          <Card className="rounded-xl border border-border shadow-sm p-6">
             <p className="text-foreground">
               Esta secci\u00F3n estar\u00E1 disponible una vez que tu perfil sea aprobado.
             </p>
@@ -195,19 +195,19 @@ export default async function DoctorFinancesPage() {
           <div className="space-y-6">
             {/* Resumen financiero */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-              <Card className="rounded-xl border border-border shadow-dx-1 p-4 md:p-6 gap-2">
+              <Card className="rounded-xl border border-border shadow-sm p-4 md:p-6 gap-2">
                 <p className="text-sm text-muted-foreground mb-1">Ingresos este mes</p>
-                <p className="text-2xl md:text-3xl font-bold text-vital">
+                <p className="text-2xl md:text-3xl font-bold text-[hsl(var(--trust))]">
                   {formatCurrency(monthlyIncome, currency)}
                 </p>
               </Card>
-              <Card className="rounded-xl border border-border shadow-dx-1 p-4 md:p-6 gap-2">
+              <Card className="rounded-xl border border-border shadow-sm p-4 md:p-6 gap-2">
                 <p className="text-sm text-muted-foreground mb-1">Pendiente de cobro</p>
                 <p className="text-2xl md:text-3xl font-bold text-amber">
                   {formatCurrency(pendingAmount, currency)}
                 </p>
               </Card>
-              <Card className="rounded-xl border border-border shadow-dx-1 p-4 md:p-6 gap-2">
+              <Card className="rounded-xl border border-border shadow-sm p-4 md:p-6 gap-2">
                 <p className="text-sm text-muted-foreground mb-1">Total cobrado</p>
                 <p className="text-2xl md:text-3xl font-bold text-foreground">
                   {formatCurrency(totalPaid, currency)}
@@ -215,7 +215,7 @@ export default async function DoctorFinancesPage() {
               </Card>
             </div>
 
-            <Card className="rounded-xl border border-border shadow-dx-1 p-6 gap-4">
+            <Card className="rounded-xl border border-border shadow-sm p-6 gap-4">
               <CardHeader className="p-0 pb-0">
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                   <div>
@@ -277,7 +277,7 @@ export default async function DoctorFinancesPage() {
                             </TableCell>
                             <TableCell className="text-sm text-foreground">
                               <div className="flex items-center gap-2">
-                                <ShieldCheck className="size-4 text-vital" />
+                                <ShieldCheck className="size-4 text-[hsl(var(--trust))]" />
                                 <span>{insurance?.name || 'Aseguradora'}</span>
                               </div>
                             </TableCell>
@@ -308,7 +308,7 @@ export default async function DoctorFinancesPage() {
             </Card>
 
             {/* Transacciones */}
-            <Card className="rounded-xl border border-border shadow-dx-1 p-6 gap-4">
+            <Card className="rounded-xl border border-border shadow-sm p-6 gap-4">
               <CardHeader className="p-0 pb-0">
                 <CardTitle className="text-xl font-semibold">Transacciones recientes</CardTitle>
               </CardHeader>
@@ -338,8 +338,8 @@ export default async function DoctorFinancesPage() {
                             {entry.description || '\u2014'}
                           </TableCell>
                           <TableCell className={`text-sm font-medium text-right whitespace-nowrap ${
-                            entry.type === 'charge' ? 'text-vital' :
-                            entry.type === 'refund' || entry.type === 'fee' ? 'text-coral' :
+                            entry.type === 'charge' ? 'text-[hsl(var(--trust))]' :
+                            entry.type === 'refund' || entry.type === 'fee' ? 'text-[hsl(var(--danger))]' :
                             'text-foreground'
                           }`}>
                             {entry.type === 'fee' || entry.type === 'refund' ? '-' : '+'}

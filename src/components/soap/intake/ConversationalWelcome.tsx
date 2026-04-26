@@ -54,7 +54,7 @@ export function ConversationalWelcome({
         >
           <SupportPresenceOrb size="lg" imageClassName="object-cover object-top" />
           <div>
-            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-vital">
+            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[hsl(var(--trust))]">
               Preconsulta clínica
             </p>
             <h1 className="mt-2 font-display text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
@@ -80,7 +80,7 @@ export function ConversationalWelcome({
             className="px-0 py-5 md:px-5"
           >
             <div className="flex items-start gap-3">
-              <message.icon className="mt-0.5 h-4 w-4 shrink-0 text-vital" aria-hidden="true" />
+              <message.icon className="mt-0.5 h-4 w-4 shrink-0 text-[hsl(var(--trust))]" aria-hidden="true" />
               <div>
                 <h3 className="text-sm font-semibold text-foreground">{message.title}</h3>
                 <p className="mt-1 text-sm leading-6 text-muted-foreground">{message.description}</p>
@@ -97,7 +97,7 @@ export function ConversationalWelcome({
         className="mt-6 rounded-xl border border-border bg-card px-4 py-4"
       >
         <div className="flex items-start gap-3">
-          <Stethoscope className="mt-0.5 h-5 w-5 shrink-0 text-vital" aria-hidden="true" />
+          <Stethoscope className="mt-0.5 h-5 w-5 shrink-0 text-[hsl(var(--trust))]" aria-hidden="true" />
           <div>
             <p className="text-sm font-semibold text-foreground">Primera pregunta</p>
             <p className="mt-1 text-sm leading-6 text-muted-foreground">
@@ -111,7 +111,7 @@ export function ConversationalWelcome({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: shouldReduceMotion ? 0 : 0.8 }}
-        className="mt-4 rounded-lg border border-coral/20 bg-coral/5 px-4 py-3"
+        className="mt-4 rounded-lg border border-[hsl(var(--danger))]/20 bg-[hsl(var(--danger))]/5 px-4 py-3"
       >
         <p className="text-sm leading-6 text-foreground">
           Si tienes dolor de pecho, falta de aire intensa, pérdida de fuerza, confusión o sangrado importante, llama al 911.

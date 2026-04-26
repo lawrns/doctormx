@@ -384,7 +384,7 @@ export default function AutoSoapPanel({
 
           <Button
             size="sm"
-            variant="default"
+            variant="primary"
             className="gap-1.5 text-xs transition-transform active:scale-[0.98]"
             onClick={finalizeNote}
             disabled={saving || status === 'approved'}

@@ -152,7 +152,7 @@ function FeatureCheck({ included, text }: { included: boolean; text?: string }) 
   return (
     <span className="inline-flex items-center gap-1.5 text-sm">
       {included ? (
-        <CheckCircle className="h-4 w-4 shrink-0 text-vital" />
+        <CheckCircle className="h-4 w-4 shrink-0 text-[hsl(var(--trust))]" />
       ) : (
         <X className="h-4 w-4 shrink-0 text-muted-foreground/30" />
       )}
@@ -183,7 +183,7 @@ export default function ForDoctorsPage() {
         </div>
 
         <div className="editorial-shell relative">
-          <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
+          <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-center">
             <div>
               <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
                 Para médicos mexicanos
@@ -197,99 +197,45 @@ export default function ForDoctorsPage() {
               </p>
 
               <div className="mt-6 flex flex-wrap gap-3">
-                <Button asChild size="lg">
-                  <Link href="/auth/register?role=doctor">
-                    Comenzar prueba gratis de 14 días
+                <Button asChild size="lg" variant="primary">
+                  <Link href="/connect">
+                    Reclamar perfil con IA
                     <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button asChild size="lg" variant="secondary">
+                  <Link href="/auth/register?role=doctor">
+                    O crear perfil nuevo
+                    <Search className="h-4 w-4" />
                   </Link>
                 </Button>
               </div>
 
-              <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
+              <div className="mt-6 flex flex-wrap gap-4">
                 {trustSignals.map((signal) => (
                   <div
                     key={signal.label}
-                    className="flex items-center gap-2 text-[13px] leading-5 text-muted-foreground"
+                    className="flex items-center gap-2 rounded-lg bg-[hsl(var(--trust-soft))] px-3 py-2"
                   >
-                    <ShieldCheck className="h-4 w-4 shrink-0 text-primary" />
-                    <span className="font-semibold text-foreground">{signal.value}</span>
-                    <span>{signal.label}</span>
+                    <ShieldCheck className="h-4 w-4 text-[hsl(var(--trust))]" />
+                    <span className="text-sm font-semibold text-[hsl(var(--ink))]">{signal.value}</span>
+                    <span className="text-xs text-[hsl(var(--ink-soft))]">{signal.label}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="rounded-[12px] border border-border bg-card p-6 shadow-[var(--card-shadow)] lg:justify-self-end">
-              <div className="flex items-center gap-2">
-                <Search className="h-4 w-4 text-primary" />
-                <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                  Doctor Connect
-                </p>
-              </div>
-              <h2 className="mt-3 font-display text-xl font-semibold tracking-tight text-foreground">
-                ¿Ya tienes perfil en otra plataforma?
-              </h2>
-              <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                Busca tu práctica con IA. Preparamos tu perfil con datos públicos y tú confirmas antes de publicar.
-              </p>
-              <Button asChild variant="outline" size="sm" className="mt-4">
-                <Link href="/connect">
-                  Reclamar perfil con IA
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* How it works */}
-      <section className="editorial-shell py-12 md:py-16">
-        <div className="text-center">
-          <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
-            Cómo funciona
-          </p>
-          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground">
-            En 3 pasos estás recibiendo pacientes
-          </h2>
-        </div>
-
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          {steps.map((step, i) => (
-            <div
-              key={step.title}
-              className="rounded-[12px] border border-border bg-card p-6"
-            >
-              <div className="flex h-10 w-10 items-center justify-center rounded-[8px] bg-primary/10 text-primary">
-                <step.icon className="h-5 w-5" />
-              </div>
-              <p className="mt-4 font-mono text-xs font-semibold text-primary">Paso {i + 1}</p>
-              <h3 className="mt-1 font-display text-lg font-semibold text-foreground">
-                {step.title}
-              </h3>
-              <p className="mt-2 text-sm leading-6 text-muted-foreground">{step.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Revenue Calculator */}
-      <section className="border-y border-border bg-card py-12 md:py-16">
-        <div className="editorial-shell">
-          <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
-            <div>
+            {/* Revenue Calculator — right column */}
+            <div className="rounded-[12px] border border-border bg-card p-5 shadow-[var(--shadow-md)]">
               <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-primary flex items-center gap-2">
                 <Calculator className="h-3.5 w-3.5" />
                 Calcula tus ingresos
               </p>
-              <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground">
+              <h2 className="mt-2 font-display text-xl font-semibold tracking-tight text-foreground">
                 ¿Cuánto puedes ganar con Doctor.mx?
               </h2>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                Ajusta los valores según tu práctica. El plan Starter cuesta solo $499/mes.
-              </p>
 
-              <div className="mt-6 space-y-4">
+              <div className="mt-4 space-y-3">
                 <div>
                   <Label htmlFor="patientCount" className="text-sm font-medium">
                     Pacientes por mes
@@ -327,34 +273,59 @@ export default function ForDoctorsPage() {
                 </div>
               </div>
 
-              <div className="mt-4 flex items-baseline gap-2 text-sm text-muted-foreground">
-                <CheckCircle className="h-4 w-4 text-vital" />
-                Ahorras {formatMxn(annualSavings)} al año vs Doctoralia
-              </div>
-            </div>
-
-            <div className="grid gap-3">
-              <div className="rounded-xl border border-border bg-card p-5 shadow-card">
-                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Ingreso bruto mensual</p>
-                <p className="mt-1 font-display text-3xl font-semibold text-foreground">{formatMxn(monthlyRevenue)}</p>
-              </div>
-              <div className="rounded-xl border border-primary/30 bg-primary/5 p-5">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">Tu ganancia neta</p>
-                    <p className="mt-1 font-display text-3xl font-semibold text-primary">{formatMxn(netRevenue)}</p>
-                    <p className="mt-0.5 text-xs text-muted-foreground">Después del plan Starter ($499/mes)</p>
-                  </div>
-                  <CreditCard className="h-8 w-8 text-primary/60" />
+              <div className="mt-4 grid gap-2">
+                <div className="rounded-xl border border-border bg-card p-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Ingreso bruto mensual</p>
+                  <p className="mt-1 font-display text-2xl font-semibold text-foreground">{formatMxn(monthlyRevenue)}</p>
                 </div>
-              </div>
-              <div className="rounded-xl border border-border bg-muted/50 p-4">
-                <p className="text-xs text-muted-foreground text-center">
-                  Con Doctoralia pagarías <span className="font-semibold text-foreground line-through">$2,400/mes</span> por las mismas funcionalidades
-                </p>
+                <div className="rounded-xl border border-[hsl(var(--interactive)/0.3)] bg-[hsl(var(--interactive)/0.05)] p-4">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[hsl(var(--interactive))]">Tu ganancia neta</p>
+                      <p className="mt-1 font-display text-2xl font-semibold text-[hsl(var(--interactive))]">{formatMxn(netRevenue)}</p>
+                      <p className="mt-0.5 text-xs text-muted-foreground">Después del plan Starter ($499/mes)</p>
+                    </div>
+                    <CreditCard className="h-8 w-8 text-primary/60" />
+                  </div>
+                </div>
+                <div className="rounded-xl border border-border bg-muted/50 p-3">
+                  <p className="text-xs text-muted-foreground text-center">
+                    Con Doctoralia pagarías <span className="font-semibold text-foreground line-through">$2,400/mes</span> por las mismas funcionalidades
+                  </p>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="editorial-shell py-12 md:py-16">
+        <div className="text-center">
+          <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
+            Cómo funciona
+          </p>
+          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground">
+            En 3 pasos estás recibiendo pacientes
+          </h2>
+        </div>
+
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
+          {steps.map((step, i) => (
+            <div
+              key={step.title}
+              className="rounded-[12px] border border-border bg-card p-[var(--space-4)]"
+            >
+              <div className="flex h-10 w-10 items-center justify-center rounded-[8px] bg-primary/10 text-primary">
+                <step.icon className="h-5 w-5" />
+              </div>
+              <p className="mt-4 font-mono text-xs font-semibold text-primary">Paso {i + 1}</p>
+              <h3 className="mt-1 font-display text-lg font-semibold text-foreground">
+                {step.title}
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">{step.body}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -380,7 +351,8 @@ export default function ForDoctorsPage() {
               </div>
             </div>
 
-            <div className="overflow-x-auto rounded-[12px] border border-border">
+            {/* Desktop: table */}
+            <div className="hidden lg:block overflow-x-auto rounded-[12px] border border-border">
               <Table>
                 <TableHeader>
                   <TableRow>
@@ -404,7 +376,7 @@ export default function ForDoctorsPage() {
                             <FeatureCheck included={row.doctory} />
                           </span>
                         ) : (
-                          <span className="text-sm font-semibold text-vital">{row.doctory}</span>
+                          <span className="text-sm font-semibold text-[hsl(var(--trust))]">{row.doctory}</span>
                         )}
                       </TableCell>
                       <TableCell className="text-center">
@@ -420,6 +392,23 @@ export default function ForDoctorsPage() {
                   ))}
                 </TableBody>
               </Table>
+            </div>
+
+            {/* Mobile: stacked list */}
+            <div className="lg:hidden space-y-1">
+              {comparisonRows.map((row) => (
+                <div key={row.feature} className="flex items-center justify-between p-3 border-b border-border">
+                  <span className="text-sm">{row.feature}</span>
+                  <div className="flex items-center gap-4">
+                    <span className="text-sm font-semibold text-[hsl(var(--trust))]">
+                      {row.doctory === true ? '✓' : row.doctory === false ? '✗' : row.doctory}
+                    </span>
+                    <span className="text-sm text-muted-foreground">
+                      {row.doctoralia === true ? '✓' : row.doctoralia === false ? '✗' : row.doctoralia}
+                    </span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -440,7 +429,7 @@ export default function ForDoctorsPage() {
           {testimonials.map((t) => (
             <div
               key={t.name}
-              className="rounded-[12px] border border-border bg-card p-6"
+              className="rounded-[12px] border border-border bg-card p-[var(--space-4)]"
             >
               <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => (
@@ -478,17 +467,16 @@ export default function ForDoctorsPage() {
             {planComparison.map((plan) => (
               <div
                 key={plan.name}
-                className={`relative flex flex-col rounded-xl border p-6 ${
+                className={`relative flex flex-col rounded-xl border p-[var(--space-4)] ${
                   plan.featured
-                    ? 'border-primary bg-card shadow-dx-2'
+                    ? 'border-[hsl(var(--interactive)/0.4)] bg-card shadow-md'
                     : 'border-border bg-card'
                 }`}
               >
                 {plan.featured && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <Badge variant="default" className="px-4 py-1 text-[0.65rem]">
-                      Recomendado
-                    </Badge>
+                  <div className="flex items-start justify-between">
+                    <div />
+                    <Badge variant="secondary" className="text-xs">Recomendado</Badge>
                   </div>
                 )}
                 <h3 className="font-display text-lg font-semibold text-foreground">
@@ -503,14 +491,14 @@ export default function ForDoctorsPage() {
                 <ul className="mt-4 flex-1 space-y-2">
                   {plan.features.map((f) => (
                     <li key={f} className="flex gap-2 text-sm text-muted-foreground">
-                      <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-vital" />
+                      <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-[hsl(var(--trust))]" />
                       {f}
                     </li>
                   ))}
                 </ul>
                 <Button
                   asChild
-                  variant={plan.featured ? 'hero' : 'outline'}
+                  variant={plan.featured ? 'primary' : 'secondary'}
                   className="mt-4 w-full"
                   size="sm"
                 >
@@ -519,7 +507,7 @@ export default function ForDoctorsPage() {
                     <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </Button>
-                <p className="mt-2 text-center text-[10px] text-muted-foreground">
+                <p className="mt-2 text-center text-xs text-muted-foreground">
                   <ShieldCheck className="inline h-3 w-3 mr-0.5" />
                   Cancela cuando quieras
                 </p>
@@ -580,7 +568,7 @@ export default function ForDoctorsPage() {
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg">
+            <Button asChild variant="secondary" size="lg">
               <Link href="/connect">
                 Reclamar perfil con IA
                 <Search className="h-4 w-4" />

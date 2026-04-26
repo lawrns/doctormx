@@ -211,8 +211,8 @@ export default function VideoCallPage() {
           </div>
 
           <div className="space-y-6">
-            <div className="flex items-center gap-3 p-4 bg-vital-soft border border-border rounded-xl">
-              <svg className="w-6 h-6 text-vital" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="flex items-center gap-3 p-4 bg-[hsl(var(--trust-soft))] border border-border rounded-xl">
+              <svg className="w-6 h-6 text-[hsl(var(--trust))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <div>
@@ -225,25 +225,25 @@ export default function VideoCallPage() {
               <h3 className="font-display font-semibold text-foreground">Antes de unirte:</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-vital mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-5 h-5 text-[hsl(var(--trust))] mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   Asegúrate de estar en un lugar con buena iluminación
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-vital mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-5 h-5 text-[hsl(var(--trust))] mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   Conexión a internet estable
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-vital mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-5 h-5 text-[hsl(var(--trust))] mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   Usa auriculares para mejor calidad de audio
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-vital mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-5 h-5 text-[hsl(var(--trust))] mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   Ten a la mano tus síntomas o preguntas
@@ -264,7 +264,7 @@ export default function VideoCallPage() {
                 Unirse a la llamada
               </Button>
               <Link href="/app/appointments">
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="secondary">
                   Cancelar
                 </Button>
               </Link>
@@ -405,7 +405,7 @@ export default function VideoCallPage() {
           {/* Connection quality indicator */}
           {callState === 'connected' && (
             <div className="absolute top-4 left-4 flex items-center gap-2 bg-black/50 px-3 py-2 rounded-full">
-              <div className="w-2 h-2 bg-vital rounded-full" />
+              <div className="w-2 h-2 bg-[hsl(var(--trust))] rounded-full" />
               <span className="text-foreground text-sm">Buena conexión</span>
             </div>
           )}
@@ -460,7 +460,7 @@ export default function VideoCallPage() {
                 />
                 <Button
                   onClick={sendChatMessage}
-                  variant="default"
+                  variant="primary"
                   size="icon"
                 >
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

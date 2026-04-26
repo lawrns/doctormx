@@ -118,18 +118,18 @@ export function LandingPageClient({ trustData }: LandingPageClientProps) {
                       <Button asChild variant="ghost" className="w-full justify-center">
                         <Link href="/auth/login">Iniciar sesión</Link>
                       </Button>
-                      <Button asChild variant="hero" className="w-full justify-center">
+                      <Button asChild variant="primary" className="w-full justify-center">
                         <Link href="/ai-consulta">Hablar con Dr. Simeón</Link>
                       </Button>
                     </div>
                   </nav>
                 </SheetContent>
               </Sheet>
-              <Badge variant="luxe" className="hidden lg:inline-flex">IA clínica + médicos verificados</Badge>
+              <Badge variant="secondary" className="hidden lg:inline-flex">IA clínica + médicos verificados</Badge>
               <Button asChild variant="ghost" className="hidden sm:inline-flex">
                 <Link href="/auth/login">Iniciar sesión</Link>
               </Button>
-              <Button asChild variant="hero" className="hidden px-5 text-sm font-semibold sm:inline-flex">
+              <Button asChild variant="primary" className="hidden px-5 text-sm font-semibold sm:inline-flex">
                 <Link href="/ai-consulta">
                   Hablar con Dr. Simeón
                   <ArrowUpRight className="h-4 w-4" />
@@ -149,58 +149,58 @@ export function LandingPageClient({ trustData }: LandingPageClientProps) {
       <TestimonialsSection trustData={trustData} />
       <CTASection trustData={trustData} />
 
-      <footer className="border-t border-[hsl(var(--foreground)/0.15)] bg-foreground py-16 text-card">
+      <footer className="border-t border-[hsl(var(--border-color))] bg-[hsl(var(--surface))] py-[var(--space-16)]">
         <div className="editorial-shell">
           <div className="mb-12 grid grid-cols-2 gap-8 md:grid-cols-4">
             <div className="col-span-2 md:col-span-1">
-              <Link href="/" className="mb-4 inline-flex rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-card focus-visible:ring-offset-2 focus-visible:ring-offset-foreground">
-                <DoctorMxLogo inverted showDescriptor />
+              <Link href="/" className="mb-4 inline-flex rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--interactive))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--surface))]">
+                <DoctorMxLogo showDescriptor />
               </Link>
-              <p className="text-sm leading-relaxed text-card/70">
+              <p className="text-sm leading-relaxed text-[hsl(var(--ink-soft))]">
                 Dr. Simeón orienta primero y el marketplace conecta con médicos verificados cuando la consulta es el siguiente paso.
               </p>
-              <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-card/10 bg-card/5 px-3 py-2 font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-card/80">
+              <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-[hsl(var(--border-color))] bg-[hsl(var(--surface-card))] px-3 py-2 font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-[hsl(var(--ink-soft))]">
                 <HeartHandshake className="h-3.5 w-3.5" />
                 Orientación clínica + médicos reales
               </div>
             </div>
 
             <div>
-              <h4 className="mb-4 font-display text-sm font-semibold uppercase tracking-[0.08em]">Pacientes</h4>
-              <ul className="space-y-2.5 text-sm text-card/60">
-                <li><Link href="/ai-consulta" className="transition-colors hover:text-card hover:underline hover:underline-offset-4">Hablar con Dr. Simeón</Link></li>
-                <li><Link href="/doctors" className="transition-colors hover:text-card hover:underline hover:underline-offset-4">Buscar doctores</Link></li>
-                <li><Link href="/specialties" className="transition-colors hover:text-card hover:underline hover:underline-offset-4">Especialidades</Link></li>
-                <li><Link href="/app" className="transition-colors hover:text-card hover:underline hover:underline-offset-4">Mi cuenta</Link></li>
+              <h4 className="mb-4 font-display text-sm font-semibold uppercase tracking-[0.08em] text-[hsl(var(--ink))]">Pacientes</h4>
+              <ul className="space-y-2.5 text-sm text-[hsl(var(--ink-soft))]">
+                <li><Link href="/ai-consulta" className="transition-colors hover:text-[hsl(var(--ink))] hover:underline hover:underline-offset-4">Hablar con Dr. Simeón</Link></li>
+                <li><Link href="/doctors" className="transition-colors hover:text-[hsl(var(--ink))] hover:underline hover:underline-offset-4">Buscar doctores</Link></li>
+                <li><Link href="/specialties" className="transition-colors hover:text-[hsl(var(--ink))] hover:underline hover:underline-offset-4">Especialidades</Link></li>
+                <li><Link href="/app" className="transition-colors hover:text-[hsl(var(--ink))] hover:underline hover:underline-offset-4">Mi cuenta</Link></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="mb-4 font-display text-sm font-semibold uppercase tracking-[0.08em]">Doctores</h4>
-              <ul className="space-y-2.5 text-sm text-card/60">
-                <li><Link href="/for-doctors" className="transition-colors hover:text-card hover:underline hover:underline-offset-4">Únete como doctor</Link></li>
-                <li><Link href="/doctor" className="transition-colors hover:text-card hover:underline hover:underline-offset-4">Portal de doctores</Link></li>
-                <li><Link href="/pricing" className="transition-colors hover:text-card hover:underline hover:underline-offset-4">Planes y precios</Link></li>
+              <h4 className="mb-4 font-display text-sm font-semibold uppercase tracking-[0.08em] text-[hsl(var(--ink))]">Doctores</h4>
+              <ul className="space-y-2.5 text-sm text-[hsl(var(--ink-soft))]">
+                <li><Link href="/for-doctors" className="transition-colors hover:text-[hsl(var(--ink))] hover:underline hover:underline-offset-4">Únete como doctor</Link></li>
+                <li><Link href="/doctor" className="transition-colors hover:text-[hsl(var(--ink))] hover:underline hover:underline-offset-4">Portal de doctores</Link></li>
+                <li><Link href="/pricing" className="transition-colors hover:text-[hsl(var(--ink))] hover:underline hover:underline-offset-4">Planes y precios</Link></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="mb-4 font-display text-sm font-semibold uppercase tracking-[0.08em]">Soporte</h4>
-              <ul className="space-y-2.5 text-sm text-card/60">
-                <li><Link href="/help" className="transition-colors hover:text-card hover:underline hover:underline-offset-4">Centro de ayuda</Link></li>
-                <li><Link href="/contact" className="transition-colors hover:text-card hover:underline hover:underline-offset-4">Contacto</Link></li>
-                <li><Link href="/privacy" className="transition-colors hover:text-card hover:underline hover:underline-offset-4">Privacidad</Link></li>
-                <li><Link href="/terms" className="transition-colors hover:text-card hover:underline hover:underline-offset-4">Términos</Link></li>
+              <h4 className="mb-4 font-display text-sm font-semibold uppercase tracking-[0.08em] text-[hsl(var(--ink))]">Soporte</h4>
+              <ul className="space-y-2.5 text-sm text-[hsl(var(--ink-soft))]">
+                <li><Link href="/help" className="transition-colors hover:text-[hsl(var(--ink))] hover:underline hover:underline-offset-4">Centro de ayuda</Link></li>
+                <li><Link href="/contact" className="transition-colors hover:text-[hsl(var(--ink))] hover:underline hover:underline-offset-4">Contacto</Link></li>
+                <li><Link href="/privacy" className="transition-colors hover:text-[hsl(var(--ink))] hover:underline hover:underline-offset-4">Privacidad</Link></li>
+                <li><Link href="/terms" className="transition-colors hover:text-[hsl(var(--ink))] hover:underline hover:underline-offset-4">Términos</Link></li>
               </ul>
             </div>
           </div>
 
-          <div className="flex flex-col items-center justify-between gap-4 border-t border-card/10 pt-8 md:flex-row">
-            <p className="text-sm text-card/50">
+          <div className="flex flex-col items-center justify-between gap-4 border-t border-[hsl(var(--border-color))] pt-8 md:flex-row">
+            <p className="text-sm text-[hsl(var(--ink-soft))]">
               © {new Date().getFullYear()} Doctor.mx. Todos los derechos reservados.
             </p>
-            <p className="text-sm text-card/50">
-              Soporte: <Link href="/contact" className="underline underline-offset-4 hover:text-card">contacto</Link>
+            <p className="text-sm text-[hsl(var(--ink-soft))]">
+              Soporte: <Link href="/contact" className="underline underline-offset-4 hover:text-[hsl(var(--ink))]">contacto</Link>
             </p>
           </div>
         </div>

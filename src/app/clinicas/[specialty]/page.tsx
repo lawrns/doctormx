@@ -87,7 +87,7 @@ export default async function ClinicsBySpecialtyPage({ params, searchParams }: P
         {/* Hero */}
         <section className="surface-panel-strong overflow-hidden public-panel sm:px-8 lg:px-10 lg:py-10">
           <div className="space-y-6">
-            <Badge variant="luxe">Clinicas especializadas</Badge>
+            <Badge variant="secondary">Clinicas especializadas</Badge>
             <PublicSectionHeading
               align="left"
               eyebrow="Directorio medico"
@@ -166,7 +166,7 @@ export default async function ClinicsBySpecialtyPage({ params, searchParams }: P
                 </p>
                 <div className="mt-6">
                   <Link href="/clinicas">
-                    <Button variant="outline">Ver todas las clinicas</Button>
+                    <Button variant="secondary">Ver todas las clinicas</Button>
                   </Link>
                 </div>
               </Card>
@@ -221,7 +221,7 @@ export default async function ClinicsBySpecialtyPage({ params, searchParams }: P
                           ) : (
                             <div />
                           )}
-                          <Button variant="hero" size="sm" className="px-3">
+                          <Button variant="primary" size="sm" className="px-3">
                             Ver clinica
                             <ArrowUpRight className="h-3.5 w-3.5" />
                           </Button>

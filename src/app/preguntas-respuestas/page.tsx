@@ -290,7 +290,7 @@ export default function ExpertQAPage() {
                 <p className="text-muted-foreground mb-6">
                   Nuestro equipo de medicos la revisara. Recibiras la respuesta en tu correo electronico.
                 </p>
-                <Button variant="outline" onClick={() => setFormSuccess(false)}>
+                <Button variant="secondary" onClick={() => setFormSuccess(false)}>
                   Hacer otra pregunta
                 </Button>
               </div>
@@ -486,7 +486,7 @@ export default function ExpertQAPage() {
                         {/* CTA */}
                         <div className="mt-4 pt-4 border-t border-border flex justify-end">
                           <Link href={`/preguntas-respuestas/${question.id}`}>
-                            <Button variant="outline" size="sm" className="text-primary border-primary/20 hover:bg-primary/10">
+                            <Button variant="secondary" size="sm" className="text-primary border-primary/20 hover:bg-primary/10">
                               Leer respuesta completa <ArrowRight className="w-3 h-3 ml-1" />
                             </Button>
                           </Link>

@@ -44,7 +44,7 @@ export default function TrialBanner({ doctorId, className }: TrialBannerProps) {
   const variant = expired ? 'expired' : trial.daysRemaining !== null && trial.daysRemaining <= 3 ? 'urgent' : 'active'
 
   const variantStyles = {
-    active: 'bg-vital-soft border-vital/20 text-vital',
+    active: 'bg-[hsl(var(--trust-soft))] border-[hsl(var(--trust)/0.20)] text-[hsl(var(--trust))]',
     urgent: 'bg-amber-50 border-amber-200 text-amber-800',
     expired: 'bg-destructive/10 border-destructive/20 text-destructive',
   }

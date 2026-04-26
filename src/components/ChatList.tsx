@@ -115,7 +115,7 @@ export function ChatList({ initialConversations, userRole }: ChatListProps) {
 
   if (loading) {
     return (
-      <div className="bg-card rounded-2xl border border-border shadow-dx-1 p-4 space-y-4">
+      <div className="bg-card rounded-2xl border border-border shadow-sm p-4 space-y-4">
         {[1, 2, 3].map((i) => (
           <div key={i} className="flex items-center gap-4 p-2">
             <Skeleton className="w-12 h-12 rounded-full" />
@@ -149,7 +149,7 @@ export function ChatList({ initialConversations, userRole }: ChatListProps) {
   }
 
   return (
-    <div className="bg-card rounded-2xl border border-border shadow-dx-1 overflow-hidden">
+    <div className="bg-card rounded-2xl border border-border shadow-sm overflow-hidden">
       <div className="divide-y divide-border">
         {conversations.map((conv) => {
           const otherParty = getOtherParty(conv)

@@ -42,7 +42,7 @@ export default async function SuscripcionPage() {
         {subscription ? (
           <>
             {/* Current Plan */}
-            <Card className="rounded-2xl border border-primary/20 shadow-[0_14px_34px_-24px_rgba(15,37,95,0.32)] overflow-hidden">
+            <Card className="rounded-2xl border border-[hsl(var(--interactive)/0.2)] shadow-lg overflow-hidden">
               <CardHeader className="px-6 py-5 border-b border-border bg-primary/5">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
@@ -108,7 +108,7 @@ export default async function SuscripcionPage() {
                     <ul className="space-y-2">
                       {subscription.plan.features.map((feature: string) => (
                         <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <CheckCircle className="w-4 h-4 text-vital flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 text-[hsl(var(--trust))] flex-shrink-0" />
                           {feature}
                         </li>
                       ))}
@@ -159,7 +159,7 @@ export default async function SuscripcionPage() {
                   key={plan.id}
                   className={`rounded-2xl border overflow-hidden ${
                     plan.id === 'familia'
-                      ? 'border-primary shadow-[0_14px_34px_-24px_rgba(15,37,95,0.32)]'
+                      ? 'border-[hsl(var(--interactive)/0.4)] shadow-lg'
                       : 'border-border'
                   }`}
                 >
@@ -188,13 +188,13 @@ export default async function SuscripcionPage() {
                     <ul className="space-y-2">
                       {plan.features?.map((feature: string) => (
                         <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <CheckCircle className="w-4 h-4 text-vital flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 text-[hsl(var(--trust))] flex-shrink-0" />
                           {feature}
                         </li>
                       ))}
                     </ul>
                     <Link href={`/app/suscripcion/contratar?plan=${plan.id}`}>
-                      <Button className="w-full" variant={plan.id === 'familia' ? 'hero' : 'outline'}>
+                      <Button className="w-full" variant={plan.id === 'familia' ? 'primary' : 'secondary'}>
                         {plan.id === 'familia' ? 'Contratar Familia' : 'Contratar Cuidado Continuo'}
                         <ArrowRight className="ml-2 w-4 h-4" />
                       </Button>
@@ -214,7 +214,7 @@ export default async function SuscripcionPage() {
                   </p>
                 </div>
                 <Link href="/doctors">
-                  <Button variant="outline">
+                  <Button variant="secondary">
                     Buscar doctores
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>

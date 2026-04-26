@@ -14,7 +14,7 @@ import { Skeleton } from '@/components/ui/skeleton'
 import DoctorLayout from '@/components/DoctorLayout'
 
 const CheckIcon = () => (
-    <svg className="w-5 h-5 text-vital flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <svg className="w-5 h-5 text-[hsl(var(--trust))] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
     </svg>
 )
@@ -274,7 +274,7 @@ export default function PricingPage() {
                             const isCurrentPlan = currentPlanId === tier
 
                             return (
-                                <Card key={tier} className={`flex flex-col relative rounded-2xl border border-border shadow-dx-1 ${plan.highlight ? 'ring-2 ring-primary scale-105 z-10' : ''}`}>
+                                <Card key={tier} className={`flex flex-col relative rounded-2xl border border-border shadow-sm ${plan.highlight ? 'ring-2 ring-primary scale-105 z-10' : ''}`}>
                                     {plan.highlight && (
                                         <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                                             <Badge variant="info">
@@ -371,7 +371,7 @@ export default function PricingPage() {
                             Compara los Planes
                         </h2>
                         <div className="overflow-x-auto">
-                            <table className="w-full bg-card rounded-2xl border border-border shadow-dx-1">
+                            <table className="w-full bg-card rounded-2xl border border-border shadow-sm">
                                 <thead>
                                     <tr className="border-b border-border">
                                         <th className="text-left p-4 font-semibold text-foreground">Características</th>
@@ -418,7 +418,7 @@ export default function PricingPage() {
                         </h2>
                         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                             {FAQS.map((faq, idx) => (
-                                <Card key={idx} className="rounded-2xl border border-border shadow-dx-1 p-6">
+                                <Card key={idx} className="rounded-2xl border border-border shadow-sm p-6">
                                     <h3 className="font-semibold text-foreground mb-2">{faq.question}</h3>
                                     <p className="text-muted-foreground">{faq.answer}</p>
                                 </Card>
@@ -440,7 +440,7 @@ export default function PricingPage() {
                                     Agendar llamada con ventas
                                 </a>
                             </Button>
-                            <Button variant="outline" asChild className="gap-2 border-border/30 text-white hover:bg-card/10 hover:text-white">
+                            <Button variant="secondary" asChild className="gap-2 border-border/30 text-white hover:bg-card/10 hover:text-white">
                                 <a href="/support">
                                     <ShieldIcon />
                                     Ver preguntas frecuentes
