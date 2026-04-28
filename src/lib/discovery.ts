@@ -250,27 +250,7 @@ async function fetchDoctors(filters?: DiscoveryFilters): Promise<PaginatedDoctor
       .from('doctors')
       .select(doctorSelect, { count: 'exact' })
       .eq('status', 'approved')
-
-    // Try is_listed filter, fallback gracefully
-    const withListedResult = await supabase
-      .from('doctors')
-      .select(doctorSelect, { count: 'exact', head: true })
-      .eq('status', 'approved')
       .eq('is_listed', true)
-
-    if (withListedResult.error?.code === '42703' && withListedResult.error.message.includes('is_listed')) {
-      logger.warn('Discovery is_listed filter skipped because migration is not applied')
-      query = supabase
-        .from('doctors')
-        .select(doctorSelect, { count: 'exact' })
-        .eq('status', 'approved')
-    } else {
-      query = supabase
-        .from('doctors')
-        .select(doctorSelect, { count: 'exact' })
-        .eq('status', 'approved')
-        .eq('is_listed', true)
-    }
 
     // Server-side filters pushed to database
     if (filters?.city) {

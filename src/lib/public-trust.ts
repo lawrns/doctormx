@@ -1,3 +1,4 @@
+import { unstable_cache } from 'next/cache'
 import { createServiceClient } from '@/lib/supabase/server'
 import { discoverDoctors, getAvailableSpecialties, getDoctorProfile, type PublicDoctorSummary } from '@/lib/discovery'
 import { getDoctorReviews } from '@/lib/reviews'
@@ -43,7 +44,7 @@ function formatAverageRating(doctors: PublicDoctorSummary[]): number | null {
   return Math.round((weighted / totalRatings) * 10) / 10
 }
 
-export async function getPublicLandingData(): Promise<PublicLandingData> {
+async function _getPublicLandingData(): Promise<PublicLandingData> {
   const supabase = createServiceClient()
 
   const [specialties, doctors, approvedDoctorsResult, reviewsResult, verifiedResult] = await Promise.all([
@@ -103,6 +104,12 @@ export async function getPublicLandingData(): Promise<PublicLandingData> {
     reviewHighlights: reviewHighlights.filter(Boolean) as PublicReviewHighlight[],
   }
 }
+
+export const getPublicLandingData = unstable_cache(
+  _getPublicLandingData,
+  ['public-landing-data'],
+  { revalidate: 60, tags: ['landing'] }
+)
 
 export async function getPublicDoctorProfile(doctorId: string) {
   return getDoctorProfile(doctorId)

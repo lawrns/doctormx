@@ -12,11 +12,18 @@ export default async function Home() {
     return <LandingPageClient />
   }
 
-  try {
-    const supabase = await createClient()
-    const { data: { user } } = await supabase.auth.getUser()
+  // Parallelize auth check + landing data fetch — both can run independently
+  const [authResult, landingResult] = await Promise.allSettled([
+    createClient().then(sb => sb.auth.getUser()),
+    getPublicLandingData(),
+  ])
 
-    if (user) {
+  const user = authResult.status === 'fulfilled' ? authResult.value.data.user : null
+  const landingData = landingResult.status === 'fulfilled' ? landingResult.value : null
+
+  if (user) {
+    try {
+      const supabase = await createClient()
       const { data: profile } = await supabase
         .from('profiles')
         .select('role')
@@ -30,15 +37,10 @@ export default async function Home() {
       } else {
         redirect('/app')
       }
+    } catch {
+      // Fall through to landing page if profile fetch fails
     }
-  } catch {
-    return <LandingPageClient />
   }
-
-  const landingData = await getPublicLandingData().catch((err) => {
-    console.error('[LandingPage] Failed to fetch landing data:', err)
-    return null
-  })
 
   return <LandingPageClient trustData={landingData} />
 }
