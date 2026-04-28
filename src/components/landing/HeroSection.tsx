@@ -58,7 +58,7 @@ const fallbackDoctor = {
   profile: {
     id: 'sample-profile-paula',
     full_name: 'Paula Ramirez',
-    photo_url: null,
+    photo_url: 'https://i.pravatar.cc/320?img=47',
   },
   specialties: [{ id: 'sample-derma', name: 'Dermatología', slug: 'dermatologia' }],
 } as PublicLandingData['featuredDoctors'][number]
@@ -148,7 +148,7 @@ export function HeroSection({ trustData }: HeroSectionProps) {
       </div>
 
       <div className="editorial-shell relative z-10 pt-12 sm:pt-14 lg:pt-16">
-        <div className="grid gap-8 lg:min-h-[34rem] lg:grid-cols-[0.98fr_0.72fr_0.82fr] lg:items-center">
+        <div className="grid gap-8 lg:min-h-[34rem] lg:grid-cols-[1fr_0.9fr] lg:items-center">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -169,34 +169,6 @@ export function HeroSection({ trustData }: HeroSectionProps) {
               Describe tus síntomas. Dr. Simeón identifica la especialidad correcta. Te mostramos 3 médicos verificados con precio, cédula y horarios reales. Primera consulta desde $500 MXN.
             </p>
 
-            <div className="mt-7 hidden gap-3 sm:grid sm:grid-cols-3">
-              {trustBullets.map((item) => {
-                const Icon = item.icon
-
-                return (
-                  <div key={item.title} className="flex gap-3">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/10 text-[hsl(var(--trust))] ring-1 ring-white/10">
-                      <Icon className="h-4 w-4" aria-hidden="true" />
-                    </span>
-                    <span>
-                      <span className="block text-sm font-semibold leading-5 text-white">{item.title}</span>
-                      <span className="mt-1 block text-xs leading-5 text-white/62">{item.body}</span>
-                    </span>
-                  </div>
-                )
-              })}
-            </div>
-
-            <div className="mt-6">
-              <TrustBar
-                items={heroMetrics.map((item) => ({
-                  icon: item.icon,
-                  title: item.value,
-                  body: item.label,
-                }))}
-                className="shadow-[var(--shadow-sm)]"
-              />
-            </div>
 
             <div className="mt-6 flex flex-col gap-3 pb-6 sm:flex-row lg:pb-8">
               <Button asChild size="lg" variant="primary" className="w-full sm:w-auto">
@@ -220,26 +192,6 @@ export function HeroSection({ trustData }: HeroSectionProps) {
             </div>
           </motion.div>
 
-          {heroDoctorImage && (
-            <motion.div
-              initial={{ opacity: 0, y: 22 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.06, ease: [0.2, 0.7, 0.2, 1] }}
-              className="relative z-10 hidden self-end lg:block"
-            >
-              <div className="relative mx-auto h-[34rem] max-w-[22rem] overflow-hidden rounded-t-[18px]">
-                <Image
-                  src={heroDoctorImage}
-                  alt="Médica de Doctor.mx"
-                  fill
-                  priority
-                  sizes="360px"
-                  className="object-cover object-[48%_18%]"
-                />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(6,26,80,0.78)_100%)]" />
-              </div>
-            </motion.div>
-          )}
 
           <motion.div
             initial={{ opacity: 0, y: 22 }}
@@ -247,131 +199,96 @@ export function HeroSection({ trustData }: HeroSectionProps) {
             transition={{ duration: 0.5, delay: 0.1, ease: [0.2, 0.7, 0.2, 1] }}
             className="relative z-20 pb-8 lg:pb-0"
           >
-            {isFallbackDoctor ? (
-              <div className="max-w-[440px] rounded-2xl border border-white/18 bg-card/40 backdrop-blur-sm p-4 text-foreground shadow-[var(--shadow-sm)]">
-                <p className="mb-3 rounded-full bg-white/10 px-3 py-1.5 text-center text-xs font-semibold uppercase tracking-[0.12em] text-white/70">
-                  Vista previa — perfil de ejemplo
-                </p>
-                <div className="rounded-xl border border-border bg-card p-4 shadow-[var(--shadow-sm)]">
-                  <div className="flex items-center gap-2 mb-3">
-                    <ShieldCheck className="h-5 w-5 text-[hsl(var(--trust))]" aria-hidden="true" />
-                    <h3 className="text-sm font-semibold">Así se ve un perfil verificado</h3>
-                  </div>
-                  <p className="text-xs leading-5 text-muted-foreground">
-                    Los médicos verificados muestran cédula, reseñas reales de pacientes y disponibilidad conectada a su agenda.
-                  </p>
-                  <div className="mt-3 grid grid-cols-2 gap-2 text-xs">
-                    <span className="flex items-center gap-1.5 text-[hsl(var(--trust))]">
-                      <CheckCircle2 className="h-3.5 w-3.5" />
-                      Cédula visible
-                    </span>
-                    <span className="flex items-center gap-1.5 text-[hsl(var(--trust))]">
-                      <CheckCircle2 className="h-3.5 w-3.5" />
-                      Reseñas reales
-                    </span>
-                    <span className="flex items-center gap-1.5 text-[hsl(var(--trust))]">
-                      <CheckCircle2 className="h-3.5 w-3.5" />
-                      Precio transparente
-                    </span>
-                    <span className="flex items-center gap-1.5 text-[hsl(var(--trust))]">
-                      <CheckCircle2 className="h-3.5 w-3.5" />
-                      Horarios en vivo
-                    </span>
-                  </div>
-                </div>
+            <div className="max-w-[440px] rounded-2xl border border-white/18 bg-card p-4 text-foreground shadow-[var(--shadow-sm)]">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-surface-tint px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-primary">
+                <Stethoscope className="h-4 w-4" aria-hidden="true" />
+                Asistente IA
               </div>
-            ) : (
-              <div className="max-w-[440px] rounded-2xl border border-white/18 bg-card p-4 text-foreground shadow-[var(--shadow-sm)]">
-                <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-surface-tint px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-primary">
-                  <Stethoscope className="h-4 w-4" aria-hidden="true" />
-                  Asistente IA
+
+              <div className="space-y-3">
+                <div>
+                  <p className="mb-2 text-sm font-semibold">¿Qué síntomas tienes hoy?</p>
+                  <div className="ml-auto max-w-[16rem] rounded-xl rounded-br-[4px] bg-primary/10 px-4 py-3 text-sm leading-5 text-foreground">
+                    Tengo brotes en la cara desde hace semanas y mi piel se ve más grasa de lo normal.
+                  </div>
                 </div>
 
-                <div className="space-y-3">
-                  <div>
-                    <p className="mb-2 text-sm font-semibold">¿Qué síntomas tienes hoy?</p>
-                    <div className="ml-auto max-w-[16rem] rounded-xl rounded-br-[4px] bg-primary/10 px-4 py-3 text-sm leading-5 text-foreground">
-                      Tengo brotes en la cara desde hace semanas y mi piel se ve más grasa de lo normal.
-                    </div>
-                  </div>
+                <div className="max-w-[18rem] rounded-xl rounded-bl-[4px] bg-muted px-4 py-3 text-sm leading-5 text-muted-foreground">
+                  Entiendo. Con base en lo que cuentas, te recomiendo consultar con:
+                </div>
 
-                  <div className="max-w-[18rem] rounded-xl rounded-bl-[4px] bg-muted px-4 py-3 text-sm leading-5 text-muted-foreground">
-                    Entiendo. Con base en lo que cuentas, te recomiendo consultar con:
-                  </div>
-
-                  <div className="rounded-xl border border-border bg-card p-3 shadow-[var(--shadow-sm)]">
-                    <div className="flex gap-4">
-                      <Link href={profileHref} className="relative aspect-square h-16 shrink-0 overflow-hidden rounded-xl bg-surface-tint">
-                        {doctor.profile?.photo_url ? (
-                          <Image
-                            src={doctor.profile.photo_url}
-                            alt={doctor.profile?.full_name || 'Doctor verificado'}
-                            fill
-                            sizes="80px"
-                            className="object-cover"
-                          />
-                        ) : (
-                          <div className="flex h-full w-full items-center justify-center">
-                            <Stethoscope className="h-7 w-7 text-[hsl(var(--interactive))]" aria-hidden="true" />
-                          </div>
-                        )}
-                      </Link>
-
-                      <div className="min-w-0 flex-1">
-                        <div className="flex items-center gap-2">
-                            <h2 className="truncate text-lg font-semibold tracking-[-0.02em]">{specialty}</h2>
-                          <CheckCircle2 className="h-4 w-4 text-[hsl(var(--trust))]" aria-label="Recomendación validada" />
+                <div className="rounded-xl border border-border bg-card p-3 shadow-[var(--shadow-sm)]">
+                  <div className="flex gap-4">
+                    <Link href={profileHref} className="relative aspect-square h-16 shrink-0 overflow-hidden rounded-xl bg-surface-tint">
+                      {doctor.profile?.photo_url ? (
+                        <Image
+                          src={doctor.profile.photo_url}
+                          alt={doctor.profile?.full_name || 'Doctor verificado'}
+                          fill
+                          sizes="80px"
+                          className="object-cover"
+                        />
+                      ) : (
+                        <div className="flex h-full w-full items-center justify-center">
+                          <Stethoscope className="h-7 w-7 text-[hsl(var(--interactive))]" aria-hidden="true" />
                         </div>
-                        <p className="text-sm text-muted-foreground">{doctorName}</p>
-                        <p className="mt-1 flex items-center gap-1.5 text-xs text-muted-foreground">
-                          <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
-                          {location}
-                        </p>
-                        <p className="mt-2 flex items-center gap-1.5 text-xs font-medium text-[hsl(var(--trust))]">
-                          <BadgeCheck className="h-3.5 w-3.5" aria-hidden="true" />
-                          Céd. Prof. {cedula || 'no mostrada'}
-                        </p>
+                      )}
+                    </Link>
+
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-2">
+                          <h2 className="truncate text-lg font-semibold tracking-[-0.02em]">{specialty}</h2>
+                        <CheckCircle2 className="h-4 w-4 text-[hsl(var(--trust))]" aria-label="Recomendación validada" />
                       </div>
-                    </div>
-
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {['09:00', '11:00', '15:30', '17:00'].map((slot) => (
-                        <span key={slot} className="rounded-full border border-[hsl(var(--interactive)/0.2)] bg-[hsl(var(--interactive)/0.05)] px-3 py-1 text-xs font-semibold text-[hsl(var(--interactive))]">
-                          {slot}
-                        </span>
-                      ))}
-                    </div>
-
-                    <div className="mt-4 grid gap-2 border-t border-border pt-4 text-xs text-muted-foreground sm:grid-cols-2">
-                      <span className="flex items-center gap-1.5">
-                        <Video className="h-3.5 w-3.5 text-[hsl(var(--trust))]" aria-hidden="true" />
-                        {doctor.offers_video ? 'En línea disponible' : 'Presencial'}
-                      </span>
-                      <span className="flex items-center gap-1.5">
-                        <CreditCard className="h-3.5 w-3.5 text-[hsl(var(--interactive))]" aria-hidden="true" />
-                        Desde {formatCurrency(doctor.price_cents, doctor.currency)}
-                      </span>
-                      <span className="flex items-center gap-1.5 sm:col-span-2">
-                        <ShieldCheck className="h-3.5 w-3.5 text-[hsl(var(--trust))]" aria-hidden="true" />
-                        {verifiedDate ? `Verificada ${verifiedDate}` : 'Verificación visible cuando existe'}
-                      </span>
+                      <p className="text-sm text-muted-foreground">{doctorName}</p>
+                      <p className="mt-1 flex items-center gap-1.5 text-xs text-muted-foreground">
+                        <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
+                        {location}
+                      </p>
+                      <p className="mt-2 flex items-center gap-1.5 text-xs font-medium text-[hsl(var(--trust))]">
+                        <BadgeCheck className="h-3.5 w-3.5" aria-hidden="true" />
+                        Céd. Prof. {cedula || 'no mostrada'}
+                      </p>
                     </div>
                   </div>
 
-                  <Button asChild variant="primary" className="h-12 w-full rounded-xl">
-                    <Link href={bookingHref}>
-                      {isFallbackDoctor ? 'Iniciar orientación' : 'Ver disponibilidad'}
-                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                    </Link>
-                  </Button>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {['09:00', '11:00', '15:30', '17:00'].map((slot) => (
+                      <span key={slot} className="rounded-full border border-[hsl(var(--interactive)/0.2)] bg-[hsl(var(--interactive)/0.05)] px-3 py-1 text-xs font-semibold text-[hsl(var(--interactive))]">
+                        {slot}
+                      </span>
+                    ))}
+                  </div>
 
-                  <p className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
-                    <LockKeyhole className="h-3.5 w-3.5" aria-hidden="true" />
-                    Tu información está protegida y no reemplaza urgencias.
-                  </p>
+                  <div className="mt-4 grid gap-2 border-t border-border pt-4 text-xs text-muted-foreground sm:grid-cols-2">
+                    <span className="flex items-center gap-1.5">
+                      <Video className="h-3.5 w-3.5 text-[hsl(var(--trust))]" aria-hidden="true" />
+                      {doctor.offers_video ? 'En línea disponible' : 'Presencial'}
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                      <CreditCard className="h-3.5 w-3.5 text-[hsl(var(--interactive))]" aria-hidden="true" />
+                      Desde {formatCurrency(doctor.price_cents, doctor.currency)}
+                    </span>
+                    <span className="flex items-center gap-1.5 sm:col-span-2">
+                      <ShieldCheck className="h-3.5 w-3.5 text-[hsl(var(--trust))]" aria-hidden="true" />
+                      {verifiedDate ? `Verificada ${verifiedDate}` : 'Verificación visible cuando existe'}
+                    </span>
+                  </div>
                 </div>
+
+                <Button asChild variant="primary" className="h-12 w-full rounded-xl">
+                  <Link href={bookingHref}>
+                    Ver disponibilidad
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                </Button>
+
+                <p className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
+                  <LockKeyhole className="h-3.5 w-3.5" aria-hidden="true" />
+                  Tu información está protegida y no reemplaza urgencias.
+                </p>
               </div>
-            )}
+            </div>
           </motion.div>
         </div>
 
