@@ -29,7 +29,7 @@ type HeroSectionProps = {
   trustData?: PublicLandingData | null
 }
 
-const heroDoctorImage = null
+const heroDoctorImage = '/images/simeon.png'
 
 const fallbackDoctor = {
   id: 'sample-landing-paula',
@@ -144,7 +144,7 @@ export function HeroSection({ trustData }: HeroSectionProps) {
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-[36%] top-[-20%] h-[42rem] w-[42rem] rounded-full border border-white/8" />
         <div className="absolute left-[44%] top-[4%] h-[28rem] w-[28rem] rounded-full bg-primary/24 blur-3xl" />
-        <div className="absolute inset-x-0 bottom-0 h-44 bg-[linear-gradient(180deg,transparent,hsl(var(--background)/0.96))]" />
+        <div className="absolute inset-x-0 bottom-0 h-44 bg-[linear-gradient(180deg,rgba(15,37,95,0),rgba(246,247,249,0.96))]" />
       </div>
 
       <div className="editorial-shell relative z-10 pt-12 sm:pt-14 lg:pt-16">

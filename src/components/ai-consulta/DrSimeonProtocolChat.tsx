@@ -265,7 +265,7 @@ function LeftRail({
   disabled: boolean
 }) {
   return (
-    <aside className="flex h-full min-h-0 flex-col border-r border-border bg-card/50 p-4">
+    <aside className="flex h-full min-h-0 flex-col border-r border-border bg-card/90 p-4">
       <div className="shrink-0 rounded-xl border border-border bg-background p-4 shadow-sm">
         <div className="flex items-center gap-3">
           <div className="relative size-11 overflow-hidden rounded-lg border border-border bg-card">
@@ -317,7 +317,7 @@ function CaseRail({
   referrals: DoctorMatch[]
 }) {
   return (
-    <aside className="flex h-full min-h-0 flex-col border-l border-border bg-card/50 p-4">
+    <aside className="flex h-full min-h-0 flex-col border-l border-border bg-card/90 p-4">
       <div className="rounded-xl border border-border bg-background p-4 shadow-sm">
         <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--trust))]">Contexto del caso</p>
         <div className="mt-4 grid gap-3">
