@@ -6,30 +6,24 @@ import { motion } from 'framer-motion'
 import {
   ArrowRight,
   BadgeCheck,
-  CalendarCheck,
   CheckCircle2,
   CreditCard,
   LockKeyhole,
   MapPin,
   Search,
   ShieldCheck,
-  Star,
   Stethoscope,
-  Users,
   Video,
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { TrustBar } from '@/components/ui/card-patterns'
 import { formatCurrency, formatDoctorName } from '@/lib/utils'
 import type { PublicLandingData } from '@/lib/public-trust'
 
 type HeroSectionProps = {
   trustData?: PublicLandingData | null
 }
-
-const heroDoctorImage = '/images/simeon.png'
 
 const fallbackDoctor = {
   id: 'sample-landing-paula',
@@ -58,7 +52,7 @@ const fallbackDoctor = {
   profile: {
     id: 'sample-profile-paula',
     full_name: 'Paula Ramirez',
-    photo_url: null,
+    photo_url: 'https://i.pravatar.cc/320?img=47',
   },
   specialties: [{ id: 'sample-derma', name: 'Dermatología', slug: 'dermatologia' }],
 } as PublicLandingData['featuredDoctors'][number]
@@ -93,52 +87,6 @@ export function HeroSection({ trustData }: HeroSectionProps) {
   const profileHref = isFallbackDoctor ? '/doctors' : `/doctors/${doctor.id}`
   const bookingHref = isFallbackDoctor ? '/ai-consulta' : `/book/${doctor.id}?ref=dr-simeon`
 
-  const trustBullets = [
-    {
-      icon: ShieldCheck,
-      title: 'Médicos con cédula',
-      body: 'Verificación visible cuando existe en el expediente.',
-    },
-    {
-      icon: Star,
-      title: 'Reseñas reales',
-      body: 'Opiniones ligadas a consultas completadas.',
-    },
-    {
-      icon: CalendarCheck,
-      title: 'Disponibilidad real',
-      body: 'Agenda conectada al flujo de reserva.',
-    },
-  ]
-
-  const heroMetrics = [
-    {
-      icon: Star,
-      value: metrics?.averageRating ? `${metrics.averageRating.toFixed(1)}/5` : '4.9/5',
-      label: 'Calificación promedio',
-    },
-    {
-      icon: Users,
-      value: formatMetric(metrics?.approvedDoctors, 'Verificados'),
-      label: 'Médicos aprobados',
-    },
-    {
-      icon: CalendarCheck,
-      value: formatMetric(metrics?.reviews, 'Sin inflar'),
-      label: 'Reseñas de consulta',
-    },
-    {
-      icon: LockKeyhole,
-      value: '100%',
-      label: 'Intake protegido',
-    },
-    {
-      icon: BadgeCheck,
-      value: formatMetric(metrics?.verifiedDoctors, 'SEP'),
-      label: 'Verificación visible',
-    },
-  ]
-
   return (
     <section className="relative overflow-hidden bg-[hsl(var(--brand-ink))] text-white">
       <div className="pointer-events-none absolute inset-0">
@@ -148,7 +96,7 @@ export function HeroSection({ trustData }: HeroSectionProps) {
       </div>
 
       <div className="editorial-shell relative z-10 pt-12 sm:pt-14 lg:pt-16">
-        <div className="grid gap-8 lg:min-h-[34rem] lg:grid-cols-[0.98fr_0.72fr_0.82fr] lg:items-center">
+        <div className="grid gap-8 lg:min-h-[34rem] lg:grid-cols-[1fr_0.9fr] lg:items-start">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -168,35 +116,6 @@ export function HeroSection({ trustData }: HeroSectionProps) {
             <p className="mt-6 max-w-[42rem] text-base leading-7 text-white/74 sm:text-lg">
               Describe tus síntomas. Dr. Simeón identifica la especialidad correcta. Te mostramos 3 médicos verificados con precio, cédula y horarios reales. Primera consulta desde $500 MXN.
             </p>
-
-            <div className="mt-7 hidden gap-3 sm:grid sm:grid-cols-3">
-              {trustBullets.map((item) => {
-                const Icon = item.icon
-
-                return (
-                  <div key={item.title} className="flex gap-3">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/10 text-[hsl(var(--trust))] ring-1 ring-white/10">
-                      <Icon className="h-4 w-4" aria-hidden="true" />
-                    </span>
-                    <span>
-                      <span className="block text-sm font-semibold leading-5 text-white">{item.title}</span>
-                      <span className="mt-1 block text-xs leading-5 text-white/62">{item.body}</span>
-                    </span>
-                  </div>
-                )
-              })}
-            </div>
-
-            <div className="mt-6">
-              <TrustBar
-                items={heroMetrics.map((item) => ({
-                  icon: item.icon,
-                  title: item.value,
-                  body: item.label,
-                }))}
-                className="shadow-[var(--shadow-sm)]"
-              />
-            </div>
 
             <div className="mt-6 flex flex-col gap-3 pb-6 sm:flex-row lg:pb-8">
               <Button asChild size="lg" variant="primary" className="w-full sm:w-auto">
@@ -220,68 +139,13 @@ export function HeroSection({ trustData }: HeroSectionProps) {
             </div>
           </motion.div>
 
-          {heroDoctorImage && (
-            <motion.div
-              initial={{ opacity: 0, y: 22 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.06, ease: [0.2, 0.7, 0.2, 1] }}
-              className="relative z-10 hidden self-end lg:block"
-            >
-              <div className="relative mx-auto h-[34rem] max-w-[22rem] overflow-hidden rounded-t-[18px]">
-                <Image
-                  src={heroDoctorImage}
-                  alt="Médica de Doctor.mx"
-                  fill
-                  priority
-                  sizes="360px"
-                  className="object-cover object-[48%_18%]"
-                />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(6,26,80,0.78)_100%)]" />
-              </div>
-            </motion.div>
-          )}
-
           <motion.div
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1, ease: [0.2, 0.7, 0.2, 1] }}
             className="relative z-20 pb-8 lg:pb-0"
           >
-            {isFallbackDoctor ? (
-              <div className="max-w-[440px] rounded-2xl border border-white/18 bg-card/40 backdrop-blur-sm p-4 text-foreground shadow-[var(--shadow-sm)]">
-                <p className="mb-3 rounded-full bg-white/10 px-3 py-1.5 text-center text-xs font-semibold uppercase tracking-[0.12em] text-white/70">
-                  Vista previa — perfil de ejemplo
-                </p>
-                <div className="rounded-xl border border-border bg-card p-4 shadow-[var(--shadow-sm)]">
-                  <div className="flex items-center gap-2 mb-3">
-                    <ShieldCheck className="h-5 w-5 text-[hsl(var(--trust))]" aria-hidden="true" />
-                    <h3 className="text-sm font-semibold">Así se ve un perfil verificado</h3>
-                  </div>
-                  <p className="text-xs leading-5 text-muted-foreground">
-                    Los médicos verificados muestran cédula, reseñas reales de pacientes y disponibilidad conectada a su agenda.
-                  </p>
-                  <div className="mt-3 grid grid-cols-2 gap-2 text-xs">
-                    <span className="flex items-center gap-1.5 text-[hsl(var(--trust))]">
-                      <CheckCircle2 className="h-3.5 w-3.5" />
-                      Cédula visible
-                    </span>
-                    <span className="flex items-center gap-1.5 text-[hsl(var(--trust))]">
-                      <CheckCircle2 className="h-3.5 w-3.5" />
-                      Reseñas reales
-                    </span>
-                    <span className="flex items-center gap-1.5 text-[hsl(var(--trust))]">
-                      <CheckCircle2 className="h-3.5 w-3.5" />
-                      Precio transparente
-                    </span>
-                    <span className="flex items-center gap-1.5 text-[hsl(var(--trust))]">
-                      <CheckCircle2 className="h-3.5 w-3.5" />
-                      Horarios en vivo
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <div className="max-w-[440px] rounded-2xl border border-white/18 bg-card p-4 text-foreground shadow-[var(--shadow-sm)]">
+            <div className="max-w-[440px] rounded-2xl border border-white/18 bg-card p-4 text-foreground shadow-[var(--shadow-sm)]">
                 <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-surface-tint px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-primary">
                   <Stethoscope className="h-4 w-4" aria-hidden="true" />
                   Asistente IA
@@ -371,7 +235,6 @@ export function HeroSection({ trustData }: HeroSectionProps) {
                   </p>
                 </div>
               </div>
-            )}
           </motion.div>
         </div>
 

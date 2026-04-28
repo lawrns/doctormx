@@ -80,7 +80,7 @@ const demoDoctors: DirectoryDoctor[] = [
     profile: {
       id: 'demo-profile-paula',
       full_name: 'Paula Ramirez',
-      photo_url: null,
+      photo_url: 'https://i.pravatar.cc/240?img=47',
     },
     specialties: [{ id: 'demo-derma', name: 'Dermatologia', slug: 'dermatologia' }],
     mapPoint: { x: 47, y: 42 },
@@ -113,7 +113,7 @@ const demoDoctors: DirectoryDoctor[] = [
     profile: {
       id: 'demo-profile-rodrigo',
       full_name: 'Rodrigo Vazquez',
-      photo_url: null,
+      photo_url: 'https://i.pravatar.cc/240?img=12',
     },
     specialties: [{ id: 'demo-cardio', name: 'Cardiologia', slug: 'cardiologia' }],
     mapPoint: { x: 28, y: 56 },
@@ -146,7 +146,7 @@ const demoDoctors: DirectoryDoctor[] = [
     profile: {
       id: 'demo-profile-ana',
       full_name: 'Ana Lopez',
-      photo_url: null,
+      photo_url: 'https://i.pravatar.cc/240?img=32',
     },
     specialties: [{ id: 'demo-gine', name: 'Ginecologia', slug: 'ginecologia' }],
     mapPoint: { x: 62, y: 32 },
@@ -179,7 +179,7 @@ const demoDoctors: DirectoryDoctor[] = [
     profile: {
       id: 'demo-profile-sofia',
       full_name: 'Sofia Herrera',
-      photo_url: null,
+      photo_url: 'https://i.pravatar.cc/240?img=49',
     },
     specialties: [{ id: 'demo-psico', name: 'Psicologia', slug: 'psicologia' }],
     mapPoint: { x: 51, y: 52 },
@@ -212,7 +212,7 @@ const demoDoctors: DirectoryDoctor[] = [
     profile: {
       id: 'demo-profile-jorge',
       full_name: 'Jorge Ramirez',
-      photo_url: null,
+      photo_url: 'https://i.pravatar.cc/240?img=15',
     },
     specialties: [{ id: 'demo-interna', name: 'Medicina interna', slug: 'medicina-interna' }],
     mapPoint: { x: 57, y: 61 },
