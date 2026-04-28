@@ -104,15 +104,15 @@ export function SupportWidget() {
           aria-label="Abrir asistente Dr. Simeon"
           aria-expanded={open}
           onClick={() => handleOpenChange(!open)}
-          className="group relative h-auto w-full rounded-[12px] border border-border/20 bg-ink px-4 py-3 text-primary-foreground shadow-[0_14px_32px_-18px_hsl(var(--shadow-color)/0.38)] backdrop-blur-xl transition-all hover:-translate-y-0.5 hover:bg-ink/95"
+          className="group relative h-auto w-full rounded-2xl border border-white/15 bg-[hsl(var(--brand-ink)_/_0.85)] px-4 py-3 text-primary-foreground shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl transition-all hover:-translate-y-0.5 hover:bg-[hsl(var(--brand-ink))] hover:shadow-xl"
         >
           <div className="flex items-center gap-3">
             <SupportPresenceOrb size="md" isLoading={open} />
             <div className="min-w-0 flex-1 text-left">
-              <div className="text-sm font-semibold tracking-[-0.02em]">Dr. Simeon</div>
-              <div className="truncate text-xs text-primary-foreground/80">Te guía dentro de Doctor.mx</div>
+              <div className="text-sm font-semibold text-white tracking-[-0.02em]">Dr. Simeon</div>
+              <div className="truncate text-xs text-white/90">Te guía dentro de Doctor.mx</div>
             </div>
-            <div className="rounded-full bg-primary-foreground/14 p-2 text-primary-foreground/95" aria-hidden="true">
+            <div className="rounded-full bg-white/15 p-2 text-white/95 group-hover:bg-white/20 transition-colors" aria-hidden="true">
               {open ? <X className="h-4 w-4" /> : <MessageSquareMore className="h-4 w-4" />}
             </div>
           </div>

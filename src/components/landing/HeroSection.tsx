@@ -92,7 +92,8 @@ export function HeroSection({ trustData }: HeroSectionProps) {
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-[36%] top-[-20%] h-[42rem] w-[42rem] rounded-full border border-white/8" />
         <div className="absolute left-[44%] top-[4%] h-[28rem] w-[28rem] rounded-full bg-primary/24 blur-3xl" />
-        <div className="absolute inset-x-0 bottom-0 h-44 bg-[linear-gradient(180deg,rgba(15,37,95,0),rgba(246,247,249,0.96))]" />
+        <div className="absolute inset-x-0 bottom-0 h-56 bg-[linear-gradient(to_bottom,transparent_0%,hsl(var(--brand-ink)_/_0.6)_40%,hsl(228_20%_96%)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_20%_60%,hsl(var(--brand-ocean)_/_0.15),transparent)]" />
       </div>
 
       <div className="editorial-shell relative z-10 pt-12 sm:pt-14 lg:pt-16">
@@ -246,8 +247,8 @@ export function HeroSection({ trustData }: HeroSectionProps) {
         >
           <div className="flex flex-wrap items-center justify-center gap-3 text-xs text-white/70 lg:justify-end">
             {featuredDoctors.map((item) => (
-              <Link key={item.id} href={item.id === fallbackDoctor.id ? '/doctors' : `/doctors/${item.id}`} className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2 ring-1 ring-white/12 hover:bg-white/15 transition-colors">
-                <span className="relative h-6 w-6 overflow-hidden rounded-full bg-white/15">
+              <Link key={item.id} href={item.id === fallbackDoctor.id ? '/doctors' : `/doctors/${item.id}`} className="inline-flex items-center gap-2 rounded-full bg-white/[0.08] px-3 py-2 ring-1 ring-white/20 backdrop-blur-md shadow-[0_2px_12px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.12)] hover:bg-white/[0.14] hover:ring-white/30 transition-all duration-200">
+                <span className="relative h-6 w-6 overflow-hidden rounded-full bg-white/15 ring-2 ring-white/20">
                   {item.profile?.photo_url ? (
                     <Image
                       src={item.profile.photo_url}
