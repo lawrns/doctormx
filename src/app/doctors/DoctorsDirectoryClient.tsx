@@ -542,7 +542,7 @@ function DoctorCard({ doctor }: { doctor: DirectoryDoctor }) {
   const isVerified = Boolean(verification?.sep_verified)
   const verifiedDate = verification?.verified_at ? new Date(verification.verified_at) : null
   const hasVerificationDetails = Boolean(verification?.cedula && verifiedDate)
-  const profileHref = doctor.demo ? `/doctors?search=${encodeURIComponent(name)}` : `/doctors/${doctor.id}`
+  const profileHref = doctor.demo ? '/ai-consulta' : `/doctors/${doctor.id}`
   const bookingHref = doctor.demo ? '/ai-consulta' : `/book/${doctor.id}`
   const specialty = doctor.specialties[0]?.name || 'Especialidad medica'
   const location = [doctor.office_address || doctor.city, doctor.state].filter(Boolean).join(', ')
@@ -787,7 +787,7 @@ function DoctorsMap({ doctors }: { doctors: DirectoryDoctor[] }) {
           {pinnedDoctors.slice(0, 4).map((doctor, index) => (
             <Link
               key={doctor.id}
-              href={doctor.demo ? `/doctors?search=${encodeURIComponent(doctor.profile?.full_name || '')}` : `/doctors/${doctor.id}`}
+              href={doctor.demo ? '/ai-consulta' : `/doctors/${doctor.id}`}
               className="grid grid-cols-[1.5rem_1fr_auto] items-center gap-3 px-3 py-2.5 text-sm transition-colors hover:bg-[hsl(var(--surface-tint))]"
             >
               <span className="flex h-6 w-6 items-center justify-center rounded-[7px] bg-[hsl(var(--surface-tint))] text-xs font-semibold text-[hsl(var(--brand-ocean))]">
