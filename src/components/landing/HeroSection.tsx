@@ -92,7 +92,7 @@ export function HeroSection({ trustData }: HeroSectionProps) {
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-[36%] top-[-20%] h-[42rem] w-[42rem] rounded-full border border-white/8" />
         <div className="absolute left-[44%] top-[4%] h-[28rem] w-[28rem] rounded-full bg-primary/24 blur-3xl" />
-        <div className="absolute inset-x-0 bottom-0 h-56 bg-[linear-gradient(to_bottom,transparent_0%,hsl(var(--brand-ink)_/_0.6)_40%,hsl(228_20%_96%)_100%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-[linear-gradient(to_bottom,transparent_0%,hsl(var(--brand-ink)_/_0.4)_60%,hsl(var(--brand-ink))_100%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_20%_60%,hsl(var(--brand-ocean)_/_0.15),transparent)]" />
       </div>
 
@@ -131,7 +131,7 @@ export function HeroSection({ trustData }: HeroSectionProps) {
                   Ver médicos
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="w-full sm:w-auto border-white/25 text-white hover:bg-white/10">
+              <Button asChild size="lg" variant="outline-inverse" className="w-full sm:w-auto">
                 <Link href="/sintomas">
                   <Stethoscope className="h-4 w-4" aria-hidden="true" />
                   ¿Cuál especialista necesito?

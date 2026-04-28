@@ -14,7 +14,9 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-white shadow-[var(--public-shadow-soft)] hover:-translate-y-0.5 hover:bg-destructive/90 hover:shadow-[var(--public-shadow-medium)] focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
         outline:
-          "border border-[hsl(var(--public-border)/0.82)] bg-[hsl(var(--public-surface)/0.9)] text-foreground shadow-[var(--public-shadow-soft)] hover:-translate-y-0.5 hover:border-primary/25 hover:bg-secondary/70 hover:text-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
+          "border border-[hsl(var(--public-border)/0.82)] bg-[hsl(var(--public-surface)/0.9)] text-foreground shadow-[var(--public-shadow-soft)] hover:-translate-y-0.5 hover:border-primary/25 hover:bg-secondary/70 hover:text-foreground dark:bg-white/[0.08] dark:border-white/25 dark:text-white dark:hover:bg-white/[0.15] dark:hover:border-white/40",
+        "outline-inverse":
+          "border border-white/30 bg-white/[0.08] text-white shadow-[0_2px_8px_rgba(0,0,0,0.2)] hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/[0.15] hover:shadow-[0_4px_16px_rgba(0,0,0,0.3)]",
         secondary:
           "bg-secondary text-secondary-foreground hover:-translate-y-0.5 hover:bg-secondary/90",
         ghost: "text-foreground/80 hover:bg-secondary/70 hover:text-foreground dark:hover:bg-accent/50",
