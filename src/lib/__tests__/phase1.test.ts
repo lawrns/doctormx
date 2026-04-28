@@ -5,6 +5,7 @@ interface MockQuery {
   select: (arg?: string) => MockQuery;
   from: (table: string) => MockQuery;
   eq: (col: string, val: unknown) => MockQuery;
+  not: (col: string, operator: string, val: unknown) => MockQuery;
   gte: (col: string, val: unknown) => MockQuery;
   lte: (col: string, val: unknown) => MockQuery;
   lt: (col: string, val: unknown) => MockQuery;
@@ -19,38 +20,56 @@ interface MockQuery {
   then: (onFulfilled: (result: { data: unknown; error: unknown }) => void) => Promise<void>;
 }
 
-const createMockQuery = (data: unknown = [], error: unknown = null): MockQuery => {
-  const query: MockQuery = {
-    select: vi.fn().mockReturnThis(),
-    from: vi.fn().mockReturnThis(),
-    eq: vi.fn().mockReturnThis(),
-    gte: vi.fn().mockReturnThis(),
-    lte: vi.fn().mockReturnThis(),
-    lt: vi.fn().mockReturnThis(),
-    in: vi.fn().mockReturnThis(),
-    order: vi.fn().mockReturnThis(),
-    limit: vi.fn().mockReturnThis(),
-    single: vi.fn().mockReturnThis(),
-    maybeSingle: vi.fn().mockReturnThis(),
-    update: vi.fn().mockReturnThis(),
-    delete: vi.fn().mockReturnThis(),
-    insert: vi.fn().mockReturnThis(),
-    then: vi.fn().mockImplementation((onFulfilled: (result: { data: unknown; error: unknown }) => void) => {
-      return Promise.resolve({ data, error }).then(onFulfilled)
-    }),
+const { mockCreateClient, mockCreateServiceClient, createMockQuery } = vi.hoisted(() => {
+  function createMockQuery(data: unknown = [], error: unknown = null) {
+    const query = {
+      select: vi.fn().mockReturnThis(),
+      from: vi.fn().mockReturnThis(),
+      eq: vi.fn().mockReturnThis(),
+      not: vi.fn().mockReturnThis(),
+      gte: vi.fn().mockReturnThis(),
+      lte: vi.fn().mockReturnThis(),
+      lt: vi.fn().mockReturnThis(),
+      in: vi.fn().mockReturnThis(),
+      order: vi.fn().mockReturnThis(),
+      limit: vi.fn().mockReturnThis(),
+      single: vi.fn().mockReturnThis(),
+      maybeSingle: vi.fn().mockReturnThis(),
+      update: vi.fn().mockReturnThis(),
+      delete: vi.fn().mockReturnThis(),
+      insert: vi.fn().mockReturnThis(),
+      then: vi.fn().mockImplementation((onFulfilled: (result: { data: unknown; error: unknown }) => void) => {
+        return Promise.resolve({ data, error }).then(onFulfilled)
+      }),
+    }
+    return query
   }
-  return query
-}
+
+  return {
+    mockCreateClient: vi.fn().mockImplementation(async () => ({
+      from: vi.fn().mockReturnValue(createMockQuery()),
+      auth: { getUser: vi.fn().mockResolvedValue({ data: { user: { id: 'test-user' } }, error: null }) }
+    })),
+    mockCreateServiceClient: vi.fn().mockImplementation(() => ({
+      from: vi.fn().mockReturnValue(createMockQuery()),
+      auth: { getUser: vi.fn().mockResolvedValue({ data: { user: { id: 'test-user' } }, error: null }) }
+    })),
+    createMockQuery,
+  }
+})
 
 vi.mock('@/lib/supabase/server', () => ({
-  createClient: vi.fn().mockImplementation(async () => ({
-    from: vi.fn().mockReturnValue(createMockQuery()),
-    auth: { getUser: vi.fn().mockResolvedValue({ data: { user: { id: 'test-user' } }, error: null }) }
-  })),
-  createServiceClient: vi.fn().mockImplementation(() => ({
-    from: vi.fn().mockReturnValue(createMockQuery()),
-    auth: { getUser: vi.fn().mockResolvedValue({ data: { user: { id: 'test-user' } }, error: null }) }
-  })),
+  createClient: mockCreateClient,
+  createServiceClient: mockCreateServiceClient,
+}))
+
+vi.mock('@/lib/patient-subscriptions', () => ({
+  checkConsultationQuota: vi.fn().mockResolvedValue({
+    allowed: true,
+    used: 0,
+    total: 0,
+    subscriptionActive: false,
+  }),
 }))
 
 vi.mock('@/lib/stripe', () => ({
@@ -102,6 +121,11 @@ describe('Phase 1: Unit Tests', () => {
   beforeEach(() => {
     vi.resetModules()
     vi.clearAllMocks()
+    const { createServiceClient } = { createServiceClient: mockCreateServiceClient }
+    mockCreateServiceClient.mockImplementation(() => ({
+      from: vi.fn().mockReturnValue(createMockQuery()),
+      auth: { getUser: vi.fn().mockResolvedValue({ data: { user: { id: 'test-user' } }, error: null }) }
+    }))
   })
 
   it('should return doctors list', async () => {

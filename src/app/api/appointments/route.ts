@@ -1,19 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@/lib/supabase/server'
 import { reserveAppointmentSlot } from '@/lib/booking'
+import { withAuth } from '@/lib/api-auth'
 
-export async function POST(request: NextRequest) {
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-
-  // Requirement 2.7, 15.5, 15.6: Authentication required, patient_id from session only
-  if (!user) {
-    return NextResponse.json(
-      { error: 'Unauthorized', redirect: '/auth/login' },
-      { status: 401 }
-    )
-  }
-
+export const POST = withAuth(async (request, { user, supabase }) => {
   const { data: profile } = await supabase
     .from('profiles')
     .select('role')
@@ -111,4 +100,4 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     )
   }
-}
+})

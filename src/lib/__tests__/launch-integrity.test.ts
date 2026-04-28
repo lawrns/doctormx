@@ -104,6 +104,27 @@ describe('launch integrity guardrails', () => {
     expect(verifyWhatsAppSignature(`${payload} `, signature, secret)).toBe(false)
   })
 
+  it('configures v8 coverage with thresholds at least 70%', () => {
+    const config = readFileSync(
+      join(process.cwd(), 'vitest.config.ts'),
+      'utf8'
+    )
+
+    expect(config).toContain("provider: 'v8'")
+
+    const thresholdPattern = /(lines|functions|branches|statements):\s*(\d+)/g
+    const thresholds: Record<string, number> = {}
+    let match: RegExpExecArray | null
+    while ((match = thresholdPattern.exec(config)) !== null) {
+      thresholds[match[1]] = parseInt(match[2], 10)
+    }
+
+    expect(thresholds.lines).toBeGreaterThanOrEqual(70)
+    expect(thresholds.functions).toBeGreaterThanOrEqual(70)
+    expect(thresholds.branches).toBeGreaterThanOrEqual(70)
+    expect(thresholds.statements).toBeGreaterThanOrEqual(70)
+  })
+
   it('ships DB-level booking and webhook idempotency constraints', () => {
     const migration = readFileSync(
       join(process.cwd(), 'supabase/migrations/20260422090000_launch_integrity_core.sql'),

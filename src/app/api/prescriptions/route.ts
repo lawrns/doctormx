@@ -1,15 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@/lib/supabase/server'
 import { createPrescription, updatePrescription, getPrescriptionByAppointment } from '@/lib/prescriptions'
+import { withAuth } from '@/lib/api-auth'
 
-export async function POST(request: NextRequest) {
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-
-  if (!user) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  }
-
+export const POST = withAuth(async (request, { user, supabase }) => {
   const formData = await request.formData()
   const appointmentId = formData.get('appointmentId') as string
   const diagnosis = formData.get('diagnosis') as string
@@ -23,40 +16,32 @@ export async function POST(request: NextRequest) {
     )
   }
 
-  try {
-    const { data: appointment } = await supabase
-      .from('appointments')
-      .select('doctor_id')
-      .eq('id', appointmentId)
-      .single()
+  const { data: appointment } = await supabase
+    .from('appointments')
+    .select('doctor_id')
+    .eq('id', appointmentId)
+    .single()
 
-    if (!appointment || appointment.doctor_id !== user.id) {
-      return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
-    }
+  if (!appointment || appointment.doctor_id !== user.id) {
+    return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+  }
 
-    const existingPrescription = await getPrescriptionByAppointment(appointmentId)
+  const existingPrescription = await getPrescriptionByAppointment(appointmentId)
 
-    if (existingPrescription) {
-      await updatePrescription(existingPrescription.id, {
-        diagnosis,
-        medications,
-        instructions,
-      })
-    } else {
-      await createPrescription(
-        appointmentId,
-        diagnosis,
-        medications,
-        instructions
-      )
-    }
-
-    return NextResponse.redirect(new URL('/doctor', request.url))
-  } catch (error) {
-    console.error('Error saving prescription:', error)
-    return NextResponse.json(
-      { error: 'Failed to save prescription' },
-      { status: 500 }
+  if (existingPrescription) {
+    await updatePrescription(existingPrescription.id, {
+      diagnosis,
+      medications,
+      instructions,
+    })
+  } else {
+    await createPrescription(
+      appointmentId,
+      diagnosis,
+      medications,
+      instructions
     )
   }
-}
+
+  return NextResponse.redirect(new URL('/doctor', request.url))
+})

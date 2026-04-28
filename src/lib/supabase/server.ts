@@ -105,6 +105,12 @@ function createFallbackSupabaseClient() {
   }
 }
 
+function warnOnce(message: string) {
+  if (typeof process !== 'undefined' && process.env?.['_SUPABASE_WARNED']) return
+  if (typeof process !== 'undefined') process.env['_SUPABASE_WARNED'] = '1'
+  console.warn(`[Supabase] ${message}`)
+}
+
 function getSupabaseUrl(): string | null {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL
   return url || null
@@ -120,6 +126,7 @@ export async function createClient() {
   const supabaseAnonKey = getSupabaseAnonKey()
 
   if (!supabaseUrl || !supabaseAnonKey) {
+    warnOnce('NEXT_PUBLIC_SUPABASE_URL or NEXT_PUBLIC_SUPABASE_ANON_KEY not set — using no-op fallback client')
     return createFallbackSupabaseClient() as unknown as ReturnType<
       typeof createServerClient
     >
@@ -160,6 +167,7 @@ export function createServiceClient() {
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY
   
   if (!supabaseUrl || !serviceRoleKey) {
+    warnOnce('SUPABASE_SERVICE_ROLE_KEY not set — using no-op fallback for createServiceClient')
     return createFallbackSupabaseClient() as unknown as ReturnType<
       typeof createSupabaseClient
     >

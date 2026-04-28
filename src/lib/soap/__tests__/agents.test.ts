@@ -4,15 +4,15 @@
 
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 
-// Mock OpenAI before importing agents
-vi.mock('openai', () => ({
-  default: vi.fn().mockImplementation(() => ({
+// Mock @/lib/openai to prevent module-level new OpenAI() execution
+vi.mock('@/lib/openai', () => ({
+  getAIClient: vi.fn().mockReturnValue({
     chat: {
       completions: {
         create: vi.fn(),
       },
     },
-  })),
+  }),
 }))
 
 // Import after mocks

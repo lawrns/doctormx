@@ -161,9 +161,11 @@ export async function expireStalePendingPaymentAppointments(
       const doctorsLink = `https://doctor.mx/doctors`
 
       // Send 15-min recovery (immediate, since we're already past expiry)
+      // Fire-and-forget: notification failure should not block expiry
       sendAbandonedBooking15m(phone, patientName, doctorName, apptDate, apptTime, checkoutLink).catch(() => {})
 
       // Schedule 24h recovery with a setTimeout (fire-and-forget)
+      // Fire-and-forget: notification failure should not block expiry
       setTimeout(() => {
         sendAbandonedBooking24h(phone, patientName, doctorName, doctorsLink).catch(() => {})
       }, 24 * 60 * 60 * 1000)

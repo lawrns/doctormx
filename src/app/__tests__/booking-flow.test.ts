@@ -77,9 +77,28 @@ vi.mock('@/lib/whatsapp-notifications', () => ({
   getDoctorName: vi.fn().mockResolvedValue('Dr. Test'),
 }))
 
+vi.mock('@/lib/patient-subscriptions', () => ({
+  checkConsultationQuota: vi.fn().mockResolvedValue({
+    allowed: true,
+    used: 0,
+    total: 0,
+    subscriptionActive: false,
+  }),
+}))
+
+import { createServiceClient } from '@/lib/supabase/server'
+
 describe('Booking Flow Integration', () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     vi.clearAllMocks()
+    const { checkConsultationQuota } = await import('@/lib/patient-subscriptions')
+    vi.mocked(checkConsultationQuota).mockResolvedValue({
+      allowed: true,
+      used: 0,
+      total: 0,
+      subscriptionActive: false,
+    })
+    vi.mocked(createServiceClient).mockReturnValue(mockSupabaseClient as never)
   })
 
   afterEach(() => {

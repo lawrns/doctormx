@@ -1,5 +1,6 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
+import { captureError as sentryCaptureError } from '@/lib/sentry'
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -104,10 +105,8 @@ export function captureError(
 ): void {
   console.error(`[${context}]`, err)
   try {
-    const Sentry = require('@sentry/react')
-    const error = err instanceof Error ? err : new Error(String(err))
-    Sentry?.captureException(error, { level })
+    sentryCaptureError(err, context, level)
   } catch {
-    // Sentry not available in this context (e.g. server-side); logging is sufficient
+    // Sentry not available in this context; logging is sufficient
   }
 }

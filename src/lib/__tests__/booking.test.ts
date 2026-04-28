@@ -86,6 +86,15 @@ vi.mock('@/lib/availability', () => ({
   getAvailableSlots: vi.fn(),
 }))
 
+vi.mock('@/lib/patient-subscriptions', () => ({
+  checkConsultationQuota: vi.fn().mockResolvedValue({
+    allowed: true,
+    used: 0,
+    total: 0,
+    subscriptionActive: false,
+  }),
+}))
+
 describe('Booking System', () => {
   beforeEach(async () => {
     vi.clearAllMocks()
@@ -100,6 +109,13 @@ describe('Booking System', () => {
     vi.mocked(createServiceClient).mockReturnValue({
       from: vi.fn().mockReturnValue(noExpiredHoldsQuery),
     } as any)
+    const { checkConsultationQuota } = await import('@/lib/patient-subscriptions')
+    vi.mocked(checkConsultationQuota).mockResolvedValue({
+      allowed: true,
+      used: 0,
+      total: 0,
+      subscriptionActive: false,
+    })
   })
 
   afterEach(() => {

@@ -19,7 +19,7 @@ vi.mock('@/lib/supabase/server', () => ({
   createServiceClient: mocks.createServiceClient,
 }))
 
-vi.mock('@/lib/video/videoService', () => ({
+vi.mock('@/lib/video', () => ({
   createVideoRoom: mocks.createVideoRoom,
   getJoinToken: mocks.getJoinToken,
   updateVideoStatus: mocks.updateVideoStatus,

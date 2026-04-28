@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Gift, Copy, CheckCircle, X } from 'lucide-react'
+import { captureError } from '@/lib/utils'
 
 const STORAGE_KEY = 'post-consultation-referral-dismissed'
 
@@ -38,7 +39,7 @@ export function PostConsultationReferral({
             setUrl(data.summary.shareUrl)
           }
         })
-        .catch(() => {})
+        .catch((err) => captureError(err, 'PostConsultationReferral.fetchReferral'))
     }
   }, [referralCode, shareUrl])
 
@@ -52,7 +53,9 @@ export function PostConsultationReferral({
       await navigator.clipboard.writeText(url || '')
       setCopied(true)
       setTimeout(() => setCopied(false), 2500)
-    } catch {}
+    } catch {
+      setCopied(false)
+    }
   }
 
   const whatsappMessage = encodeURIComponent(

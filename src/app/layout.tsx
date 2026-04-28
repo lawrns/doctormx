@@ -4,6 +4,7 @@ import "./globals.css";
 import { LazySupportWidget } from "@/components/LazySupportWidget";
 import { ToastProvider } from "@/components/Toast";
 import { StructuredData } from "@/components/StructuredData";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-sans",
@@ -84,7 +85,9 @@ export default function RootLayout({
     <html lang="es" className={`${plusJakarta.variable} ${ibmPlexMono.variable}`}>
       <body className="antialiased">
         <ToastProvider>
-          {children}
+          <ErrorBoundary>
+            {children}
+          </ErrorBoundary>
           <LazySupportWidget />
         </ToastProvider>
         <StructuredData />

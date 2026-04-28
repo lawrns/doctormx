@@ -35,7 +35,8 @@ describe('/api/patient-referrals', () => {
       },
     } as never)
 
-    const response = await GET()
+    const request = new Request('http://localhost/api/patient-referrals')
+    const response = await GET(request as never)
     const json = await response.json()
 
     expect(response.status).toBe(401)
@@ -59,7 +60,8 @@ describe('/api/patient-referrals', () => {
       freeConsultsRemaining: 2,
     })
 
-    const response = await GET()
+    const request = new Request('http://localhost/api/patient-referrals')
+    const response = await GET(request as never)
     const json = await response.json()
 
     expect(response.status).toBe(200)

@@ -96,6 +96,8 @@ export function createSupabaseTableMock(table: string) {
     insert: vi.fn().mockReturnThis(),
     delete: vi.fn().mockReturnThis(),
     eq: vi.fn().mockReturnThis(),
+    not: vi.fn().mockReturnThis(),
+    in: vi.fn().mockReturnThis(),
     gte: vi.fn().mockReturnThis(),
     lte: vi.fn().mockReturnThis(),
     lt: vi.fn().mockReturnThis(),

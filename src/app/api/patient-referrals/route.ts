@@ -1,105 +1,62 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
-import { createClient } from '@/lib/supabase/server'
 import {
   getReferralSummaryForUser,
   redeemReferralAtSignup,
 } from '@/lib/domains/patient-referrals'
 import { ANALYTICS_EVENTS, trackServerEvent } from '@/lib/analytics/posthog'
+import { withAuth } from '@/lib/api-auth'
 
 const redeemRequestSchema = z.object({
   referralCode: z.string().optional().nullable(),
 })
 
-async function getAuthenticatedUserId() {
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
+export const GET = withAuth(async (request, { user }) => {
+  const summary = await getReferralSummaryForUser(user.id)
 
-  return user?.id || null
-}
+  return NextResponse.json({
+    success: true,
+    summary,
+  })
+})
 
-export async function GET() {
-  try {
-    const userId = await getAuthenticatedUserId()
-
-    if (!userId) {
-      return NextResponse.json(
-        { success: false, error: 'Unauthorized' },
-        { status: 401 }
-      )
-    }
-
-    const summary = await getReferralSummaryForUser(userId)
-
-    return NextResponse.json({
-      success: true,
-      summary,
-    })
-  } catch (error) {
-    console.error('[PatientReferrals] Failed to load summary:', error)
-
+export const POST = withAuth(async (request, { user }) => {
+  const body = redeemRequestSchema.safeParse(await request.json().catch(() => ({})))
+  if (!body.success) {
     return NextResponse.json(
-      { success: false, error: 'Failed to load referral summary' },
-      { status: 500 }
+      {
+        success: false,
+        error: 'Invalid referral payload',
+        details: body.error.flatten().fieldErrors,
+      },
+      { status: 400 }
     )
   }
-}
 
-export async function POST(request: NextRequest) {
-  try {
-    const userId = await getAuthenticatedUserId()
+  const result = await redeemReferralAtSignup({
+    newUserId: user.id,
+    referralCode: body.data.referralCode || null,
+  })
 
-    if (!userId) {
-      return NextResponse.json(
-        { success: false, error: 'Unauthorized' },
-        { status: 401 }
-      )
-    }
+  const summary = await getReferralSummaryForUser(user.id)
 
-    const body = redeemRequestSchema.safeParse(await request.json().catch(() => ({})))
-    if (!body.success) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: 'Invalid referral payload',
-          details: body.error.flatten().fieldErrors,
-        },
-        { status: 400 }
-      )
-    }
-
-    const result = await redeemReferralAtSignup({
-      newUserId: userId,
-      referralCode: body.data.referralCode || null,
+  if (result.applied && result.reason !== 'no_code') {
+    await trackServerEvent({
+      event: ANALYTICS_EVENTS.REFERRAL_CODE_REDEEMED,
+      distinctId: user.id,
+      userId: user.id,
+      pathname: '/api/patient-referrals',
+      properties: {
+        referralCodeProvided: Boolean(body.data.referralCode),
+        reason: result.reason || 'rewarded',
+        monthlyCapExceeded: result.reason === 'monthly_cap_exceeded',
+      },
     })
-
-    const summary = await getReferralSummaryForUser(userId)
-
-    if (result.applied && result.reason !== 'no_code') {
-      await trackServerEvent({
-        event: ANALYTICS_EVENTS.REFERRAL_CODE_REDEEMED,
-        distinctId: userId,
-        userId,
-        pathname: '/api/patient-referrals',
-        properties: {
-          referralCodeProvided: Boolean(body.data.referralCode),
-          reason: result.reason || 'rewarded',
-          monthlyCapExceeded: result.reason === 'monthly_cap_exceeded',
-        },
-      })
-    }
-
-    return NextResponse.json({
-      success: true,
-      result,
-      summary,
-    })
-  } catch (error) {
-    console.error('[PatientReferrals] Failed to redeem referral:', error)
-
-    return NextResponse.json(
-      { success: false, error: 'Failed to redeem referral' },
-      { status: 500 }
-    )
   }
-}
+
+  return NextResponse.json({
+    success: true,
+    result,
+    summary,
+  })
+})

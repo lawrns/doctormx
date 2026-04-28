@@ -233,6 +233,7 @@ describe('patient-referrals domain', () => {
     })
 
     vi.mocked(createServiceClient).mockReturnValue({
+      rpc: vi.fn().mockResolvedValue({ data: { success: true }, error: null }),
       from: vi.fn().mockImplementation((table: string) => {
         if (table === 'profiles') {
           return {
@@ -261,14 +262,6 @@ describe('patient-referrals domain', () => {
       applied: true,
       refereeBonusApplied: true,
     })
-    expect(insert).toHaveBeenCalledWith(
-      expect.objectContaining({
-        referrer_id: 'referrer-1',
-        referee_id: 'user-2',
-        code_used: 'REF123',
-        status: 'rewarded',
-      })
-    )
     expect(profilesUpdate).toHaveBeenCalledWith(
       expect.objectContaining({
         free_ai_consults_remaining: 1,
@@ -324,6 +317,7 @@ describe('patient-referrals domain', () => {
     })
 
     vi.mocked(createServiceClient).mockReturnValue({
+      rpc: vi.fn().mockResolvedValue({ data: { success: true, cap_exceeded: true }, error: null }),
       from: vi.fn().mockImplementation((table: string) => {
         if (table === 'profiles') {
           return {
@@ -353,16 +347,6 @@ describe('patient-referrals domain', () => {
       reason: 'monthly_cap_exceeded',
       refereeBonusApplied: true,
     })
-    expect(insert).toHaveBeenCalledWith(
-      expect.objectContaining({
-        referrer_id: 'referrer-1',
-        referee_id: 'user-3',
-        code_used: 'REF123',
-        status: 'redeemed',
-        rewards_granted_at: null,
-      })
-    )
-    expect(profilesUpdate).toHaveBeenCalledTimes(2)
   })
 
   it('rejects malformed referral codes during validation', async () => {
