@@ -2,8 +2,8 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { Button } from '@/components/Button'
-import { Card } from '@/components/Card'
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
 import { BookOpen, TrendingUp, FileText, Monitor, Users, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -98,7 +98,7 @@ export default function ParaMedicosPage() {
         <div className="mx-auto max-w-5xl">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {resourceCards.map((resource, i) => (
-              <Card key={i} hover padding="lg" className="flex flex-col">
+              <Card key={i} variant="interactive" density="comfortable" className="flex flex-col">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
                     {resource.icon}

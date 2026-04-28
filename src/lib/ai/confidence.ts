@@ -1339,20 +1339,7 @@ export function exampleUsage(): void {
   const result = confidenceCalculator.analyzeConfidence(aiDiagnoses, patientContext);
 
   // 4. Display results
-  console.log('Primary Diagnosis:', result.primaryDiagnosis.condition);
-  console.log('Confidence:', formatConfidenceRange(result.confidenceInterval));
-  console.log('Confidence Level:', result.confidenceLevel);
-  console.log('Recommend Doctor:', result.recommendDoctor);
-  console.log('Risk Factors:', result.riskFactors);
-
-  // 5. Get UI colors
-  const colors = getConfidenceColor(result.primaryDiagnosis.confidence);
-  console.log('UI Colors:', colors);
-
-  // 6. Enhance raw AI response
-  const rawAIResponse = "Based on symptoms, most likely influenza (75% confidence). Common cold is also possible.";
-  const enhanced = enhanceWithConfidence(rawAIResponse, patientContext);
-  console.log('Enhanced Response:', enhanced);
+  console.warn('[Confidence] Diagnosis results:', { count: aiDiagnoses.length, level: result.confidenceLevel, recommendDoctor: result.recommendDoctor });
 }
 
 // Default export

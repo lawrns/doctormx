@@ -14,7 +14,6 @@ export const endpointRateLimits: Record<string, RateLimitConfig> = {
   '/api/chat': { limit: 20, windowMs: 60000 },
   '/api/ai/*': { limit: 10, windowMs: 60000 },
   '/api/ai/copilot': { limit: 10, windowMs: 60000 },
-  '/api/ai/clinical': { limit: 10, windowMs: 60000 },
   '/api/auth/*': { limit: 5, windowMs: 60000 },
   '/api/*': { limit: 100, windowMs: 60000 },
 }

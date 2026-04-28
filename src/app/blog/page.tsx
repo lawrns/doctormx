@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { PublicSectionHeading } from '@/components/PublicSectionHeading'
@@ -263,11 +264,20 @@ export default function BlogPage() {
                     >
                       <Link href={`/blog/${post.slug}`} className="group block h-full">
                         <Card className="h-full p-0 overflow-hidden bg-card border-border hover:shadow-md transition-all duration-200 group-hover:-translate-y-1">
-                          {/* Image placeholder */}
                           <div className="h-48 bg-gradient-to-br from-neutral-100 to-neutral-50 relative overflow-hidden">
-                            <div className="absolute inset-0 flex items-center justify-center">
-                              <BookOpen className="w-12 h-12 text-muted-foreground" />
-                            </div>
+                            {post.featured_image ? (
+                              <Image
+                                src={post.featured_image}
+                                alt={post.title}
+                                fill
+                                sizes="(max-width: 640px) 100vw, 50vw"
+                                className="object-cover"
+                              />
+                            ) : (
+                              <div className="absolute inset-0 flex items-center justify-center">
+                                <BookOpen className="w-12 h-12 text-muted-foreground" />
+                              </div>
+                            )}
                             {post.category && (
                               <div className="absolute top-4 left-4">
                                 <Badge className="bg-card/90 text-muted-foreground border-border">

@@ -1,9 +1,9 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Card } from '@/components/Card'
-import { Badge } from '@/components/Badge'
-import { Button } from '@/components/Button'
+import { Card } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
 import { searchDirectory, getDirectorySpecialties, getDirectoryCities } from '@/lib/domains/directory'
 import { ArrowRight } from 'lucide-react'
 
@@ -135,8 +135,8 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
                 </p>
               </div>
               <Link href="/connect" className="flex-shrink-0">
-                <Button rightIcon={<ArrowRight className="w-4 h-4" />}>
-                  Crear perfil verificado
+                <Button>
+                  Crear perfil verificado <ArrowRight className="w-4 h-4" />
                 </Button>
               </Link>
             </div>
@@ -160,7 +160,7 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
         ) : (
           <div className="space-y-3">
             {doctors.map((doctor) => (
-              <Card key={doctor.id} hover className="grid gap-4 p-4 md:grid-cols-[1fr_auto] md:items-center">
+              <Card key={doctor.id} variant="interactive" className="grid gap-4 p-4 md:grid-cols-[1fr_auto] md:items-center">
                 <div className="flex items-start gap-4">
                   <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-[10px] bg-primary/10 text-lg font-bold text-primary">
                     {doctor.full_name.charAt(0)}

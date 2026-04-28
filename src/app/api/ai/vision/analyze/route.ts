@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { getProfile } from '@/lib/auth'
 import { analyzeMedicalImage, saveAnalysis, ImageType } from '@/lib/ai/vision'
+import { logger } from '@/lib/observability/logger'
 
 export async function POST(req: NextRequest) {
   const startTime = Date.now()
@@ -175,7 +176,7 @@ export async function POST(req: NextRequest) {
       })
 
     if (uploadError) {
-      console.error('[VISION] Upload error:', uploadError)
+      logger.error('[VISION] Upload error', { error: uploadError })
       return NextResponse.json(
         { error: 'Error al subir imagen' },
         { status: 500 }
@@ -246,11 +247,10 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    console.log('[VISION] Analysis complete', {
+    logger.info('[VISION] Analysis complete', {
       analysisId: analysisRecord.id,
       imageType,
       urgency: analysisResult.urgencyLevel,
-      confidence: analysisResult.confidencePercent,
       latencyMs: Date.now() - startTime,
       tier,
       usage: currentUsage + 1,
@@ -271,7 +271,7 @@ export async function POST(req: NextRequest) {
       }
     })
   } catch (error) {
-    console.error('[VISION] Error in analyze route:', error)
+    logger.error('[VISION] Error in analyze route', { error })
     
     const errorMessage = error instanceof Error ? error.message : 'Error desconocido'
     
@@ -310,7 +310,7 @@ export async function GET(req: NextRequest) {
     const { data: analyses, error } = await query.limit(100)
 
     if (error) {
-      console.error('[VISION] Error fetching analyses:', error)
+      logger.error('[VISION] Error fetching analyses', { error })
       return NextResponse.json(
         { error: 'Error al obtener análisis' },
         { status: 500 }
@@ -321,7 +321,7 @@ export async function GET(req: NextRequest) {
       analyses: analyses || []
     })
   } catch (error) {
-    console.error('[VISION] Error in GET route:', error)
+    logger.error('[VISION] Error in GET route', { error })
     return NextResponse.json(
       { error: 'Error interno del servidor' },
       { status: 500 }

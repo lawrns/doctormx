@@ -7,6 +7,7 @@
 
 import { AI_CONFIG } from './config';
 import { createClient } from '@/lib/supabase/server';
+import { logger } from '@/lib/observability/logger';
 import type {
   PreConsultaMessage,
   TranscriptionSegment,
@@ -73,7 +74,7 @@ export async function chatCompletion(params: {
 
   // ── Primary: OpenRouter ──────────────────────────────────────────────────
   if (AI_CONFIG.openrouter.apiKey) {
-    console.log(`[AI] Intentando con openrouter (model=${AI_CONFIG.openrouter.model})...`);
+    logger.info('[AI] Attempting OpenRouter', { model: AI_CONFIG.openrouter.model });
     try {
       const client = await getOpenRouterClient();
       const completion = await client.chat.completions.create({
@@ -91,11 +92,11 @@ export async function chatCompletion(params: {
         (inputTokens / 1_000_000) * AI_CONFIG.costs.openrouterInputPer1M +
         (outputTokens / 1_000_000) * AI_CONFIG.costs.openrouterOutputPer1M;
 
-      console.log(`[AI] Éxito con openrouter`);
+      logger.info('[AI] OpenRouter success');
       return { response: responseContent, usage: { inputTokens, outputTokens, cost }, provider: 'openrouter' };
     } catch (error: unknown) {
       const errMsg = error && typeof error === 'object' && 'message' in error ? error.message : String(error);
-      console.warn(`[AI] OpenRouter falló, intentando Ollama fallback: ${errMsg}`);
+      logger.warn('[AI] OpenRouter failed, trying Ollama fallback', { error: errMsg });
     }
   }
 
@@ -111,7 +112,7 @@ export async function chatCompletion(params: {
       };
     } catch (ollamaError: unknown) {
       const errMsg = ollamaError instanceof Error ? ollamaError.message : String(ollamaError);
-      console.error(`[AI] Ollama fallback también falló: ${errMsg}`);
+      logger.error('[AI] Ollama fallback also failed', { error: errMsg });
     }
   }
 
@@ -153,7 +154,7 @@ export async function transcribeAudio(params: {
 
     return { segments, fullText: transcription.text, duration, cost };
   } catch (error: unknown) {
-    console.error('Error en transcripción:', error);
+    logger.error('[AI] Transcription error', { error });
     const message = error && typeof error === 'object' && 'message' in error && typeof error.message === 'string'
       ? error.message
       : 'Desconocido';
@@ -183,7 +184,7 @@ export async function structuredAnalysis<T>(params: {
 
   // ── Primary: OpenRouter ──────────────────────────────────────────────────
   if (AI_CONFIG.openrouter.apiKey) {
-    console.log(`[AI] Intentando análisis con openrouter (model=${AI_CONFIG.openrouter.analysisModel})...`);
+    logger.info('[AI] Attempting analysis with OpenRouter', { model: AI_CONFIG.openrouter.analysisModel });
     try {
       const client = await getOpenRouterClient();
       const completion = await client.chat.completions.create({
@@ -197,11 +198,11 @@ export async function structuredAnalysis<T>(params: {
       const msg = completion.choices[0]?.message;
       const raw = msg?.content || '{}';
       const responseText = raw.replace(/^```(?:json)?\s*/i, '').replace(/\s*```\s*$/, '').trim();
-      console.log(`[AI] Éxito análisis con openrouter`);
+      logger.info('[AI] OpenRouter analysis success');
       return JSON.parse(responseText) as T;
     } catch (error: unknown) {
       const errMsg = error && typeof error === 'object' && 'message' in error ? error.message : String(error);
-      console.warn(`[AI] OpenRouter análisis falló, intentando Ollama: ${errMsg}`);
+      logger.warn('[AI] OpenRouter analysis failed, trying Ollama', { error: errMsg });
     }
   }
 
@@ -216,11 +217,11 @@ export async function structuredAnalysis<T>(params: {
       ];
       const result = await ollamaChatCompletion({ messages: ollamaMessages, useReasoning: true });
       const raw = result.content.replace(/^```(?:json)?\s*/i, '').replace(/\s*```\s*$/, '').trim();
-      console.log(`[AI] Éxito análisis con ollama`);
+      logger.info('[AI] Ollama analysis success');
       return JSON.parse(raw) as T;
     } catch (ollamaError: unknown) {
       const errMsg = ollamaError instanceof Error ? ollamaError.message : String(ollamaError);
-      console.error(`[AI] Ollama análisis también falló: ${errMsg}`);
+      logger.error('[AI] Ollama analysis also failed', { error: errMsg });
     }
   }
 
@@ -285,6 +286,6 @@ export async function auditAIOperation(params: {
       error: params.error,
     });
   } catch (error) {
-    console.error('Error logging AI operation to DB:', error);
+    logger.error('[AI] Error logging operation to DB', { error });
   }
 }

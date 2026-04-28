@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Card } from '@/components/Card'
-import { Button } from '@/components/Button'
+import { Card } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
 import { searchDirectory, getDirectorySpecialties, getDirectoryCities } from '@/lib/domains/directory'
 
 interface PageProps {
@@ -133,7 +133,7 @@ export default async function SpecialtyPage({ params }: PageProps) {
         ) : (
           <div className="space-y-3">
             {doctors.map((doctor) => (
-              <Card key={doctor.id} hover className="grid gap-4 p-4 md:grid-cols-[1fr_auto] md:items-center">
+              <Card key={doctor.id} variant="interactive" className="grid gap-4 p-4 md:grid-cols-[1fr_auto] md:items-center">
                 <div className="flex items-start gap-4">
                   <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-[10px] bg-primary/10 text-lg font-bold text-primary">
                     {doctor.full_name.charAt(0)}

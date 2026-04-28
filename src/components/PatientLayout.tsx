@@ -72,7 +72,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
           }
         }
       } catch (e) {
-        console.log('chat_messages check failed:', e)
+        console.warn('[PatientLayout] Failed to load chat badges:', e)
       }
 
       try {
@@ -89,7 +89,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
           apt.video_room_url && new Date(apt.start_ts) <= new Date(Date.now() + 15 * 60 * 1000)
         ) || false
       } catch (e) {
-        console.log('Appointments check failed:', e)
+        console.warn('[PatientLayout] Failed to load appointment badges:', e)
       }
 
       setBadges({

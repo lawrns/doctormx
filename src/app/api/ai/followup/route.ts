@@ -6,6 +6,7 @@ import {
   auditAIOperation,
   AI_CONFIG
 } from '@/lib/ai';
+import { sendEmail, getEmailTemplate } from '@/lib/notifications';
 
 export async function POST(req: NextRequest) {
   if (!AI_CONFIG.features.followUp) {
@@ -64,7 +65,41 @@ export async function POST(req: NextRequest) {
         .update({ status: 'escalated' })
         .eq('id', followUpId);
 
-      // TODO: Notificar al doctor vía email/SMS
+      const appointmentData = followUp.appointments;
+      const doctorId = Array.isArray(appointmentData)
+        ? appointmentData[0]?.doctor_id
+        : (appointmentData as Record<string, unknown>)?.doctor_id;
+
+      if (doctorId) {
+        supabase
+          .from('profiles')
+          .select('full_name, email')
+          .eq('id', doctorId as string)
+          .single()
+          .then(({ data: doctor }: { data: { full_name: string | null; email: string | null } | null }) => {
+            if (!doctor?.email) return;
+
+            sendEmail({
+              to: doctor.email,
+              subject: '⚠️ Alerta: Paciente requiere atención urgente',
+              html: getEmailTemplate(`
+                <p style="margin:0 0 16px;color:#dc2626;font-size:16px;line-height:1.5;">
+                  <strong>Un paciente ha reportado una urgencia en su seguimiento post-consulta.</strong>
+                </p>
+                <p style="margin:0 0 16px;color:#1f2937;font-size:16px;line-height:1.5;">
+                  Respuesta del paciente: "${userResponse}"
+                </p>
+                <p style="margin:0;color:#6b7280;font-size:14px;line-height:1.5;">
+                  Ingresa al panel para revisar el detalle y contactar al paciente.
+                </p>
+              `, doctor.full_name || 'Dr./Dra.'),
+              tags: [{ name: 'type', value: 'follow_up_escalation' }],
+            });
+          })
+          .catch((err: any) => {
+            console.error('[FOLLOW-UP] Failed to send escalation email:', err);
+          });
+      }
     }
 
     // Auditoría

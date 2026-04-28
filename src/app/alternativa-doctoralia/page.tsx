@@ -2,9 +2,9 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { Button } from '@/components/Button'
-import { Card } from '@/components/Card'
-import { Badge } from '@/components/Badge'
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
 import { CheckCircle, XCircle, Zap, MessageCircle, Video, Shield, ArrowRight, Star } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -96,8 +96,8 @@ export default function AlternativaDoctoraliaPage() {
             </p>
             <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/connect">
-                <Button size="lg" rightIcon={<ArrowRight className="w-4 h-4" />}>
-                  Prueba Doctor.mx gratis por 14 días
+                <Button size="lg">
+                  Prueba Doctor.mx gratis por 14 días <ArrowRight className="w-4 h-4" />
                 </Button>
               </Link>
               <Link href="#comparativa">
@@ -166,8 +166,8 @@ export default function AlternativaDoctoraliaPage() {
 
           <div className="mt-8 text-center">
             <Link href="/connect">
-              <Button size="lg" rightIcon={<ArrowRight className="w-4 h-4" />}>
-                Crear perfil verificado gratis
+              <Button size="lg">
+                Crear perfil verificado gratis <ArrowRight className="w-4 h-4" />
               </Button>
             </Link>
           </div>
